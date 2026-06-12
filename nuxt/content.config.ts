@@ -10,6 +10,7 @@ export default defineContentConfig({
             type: 'page',
             source: 'handbook/**/*.md',
             schema: z.object({
+                description: z.string().optional(),
                 navigation: z.object({
                     group: z.string().optional(),
                 }).optional(),

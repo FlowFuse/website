@@ -20,7 +20,32 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio', '@nuxt/image'],
+    modules: ['@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image'],
+
+    site: {
+        url: 'https://flowfuse.com',
+        name: 'FlowFuse',
+        description: 'Low-code application development platform for Node-RED and industrial IoT.',
+        defaultLocale: 'en',
+    },
+
+    sitemap: {
+        // Pull all 11ty-served URLs from the legacy partial sitemap generated at build time
+        sources: ['/api/__sitemap__/urls'],
+        exclude: ['/_studio/**', '/api/**'],
+    },
+
+    robots: {
+        groups: [
+            { userAgent: ['*'], allow: ['/'] },
+            { userAgent: ['Algolia Crawler'], allow: ['/'] },
+        ],
+        sitemap: ['https://flowfuse.com/sitemap.xml'],
+    },
+
+    ogImage: {
+        defaults: { component: 'Default' },
+    },
 
     linkChecker: {
         failOnError: true,

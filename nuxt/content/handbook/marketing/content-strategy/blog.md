@@ -284,7 +284,7 @@ You can also add your own custom tags. While these won't create a new page with 
 
 #### Meta Keywords
 
-Additionally, the tags you assign to your content will also be used as [meta keywords](/handbook/marketing/website/#meta-keywords) for each article, alongside the [default keywords](/handbook/marketing/website#default-keywords).
+Additionally, the tags you assign to your content will be output as [meta keywords](/handbook/marketing/website/#meta-keywords) in the page HTML. Note that major search engines ignore meta keywords — this has no effect on Google or Bing rankings.
 
 ### Adding Images
 
