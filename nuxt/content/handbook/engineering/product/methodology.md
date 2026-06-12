@@ -65,6 +65,21 @@ We gather evidence continuously, not in a once-a-quarter research push:
 
 Interviews surface the opportunity; behavioural data confirms whether a solution changed what customers do.
 
+## Choosing which opportunity to pursue
+
+Once the opportunity space has evidence behind it, we choose where to invest by **comparing opportunities, not scoring the whole tree at once**.
+
+- **Compare siblings, top-down.** Only compare opportunities that share a parent (apples to apples). Weigh the objective's direct opportunities, pick the most promising, then compare *its* children, and so on down, so every choice stays tied to the outcome.
+- **Weigh four lenses.** Compare a set of siblings across:
+  - **Sizing:** how many customers hit this, how often, and how much it matters, which is how much addressing it would move the objective. Ground it in Fathom story counts, customer labels, and PostHog behaviour.
+  - **Market:** does it differentiate us, or meet a real and growing market need?
+  - **Company:** does it fit our strategy and the lane we are investing in?
+  - **Customer:** is the affected customer our ICP?
+- **It is a data-driven but subjective decision.** The lenses are informed by data and evidence, but the call is a judgement, not a formula. Reducing it to a score invites false precision and confirmation bias, so show the lenses and the reasoning rather than a number.
+- **Go in open-minded.** If you already know which one you will pick, you do not need the exercise; use the lenses to test that instinct, not to justify it.
+
+We prioritise in the opportunity space, then solve the chosen opportunity. Picking a solution before the opportunity is settled skips the comparison that makes the bet a good one.
+
 ## Assumptions and spikes
 
 Every solution rests on assumptions across five categories:
