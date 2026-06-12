@@ -27,7 +27,6 @@ Additionally, the Product Marketing Manager and the CEO host a monthly meeting t
 
 When required, the marketing team also leverages external vendors to maintain quality and momentum. Engaging vendors can be especially valuable when additional resources are needed to meet deadlines, sustain output levels, or enhance the team’s effectiveness with CEO approval.
 
-## Requesting Marketing support
 
 ## Requesting Marketing support
 
