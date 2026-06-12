@@ -18,6 +18,33 @@ channels; our blog, webinars, eBooks and whitepapers, and video content. All of
 which undergoes the same planning and scheduling steps to combine them into one
 cohesive strategy.
 
+## Requesting Work from Marketing
+
+All requests to the marketing team — content (blog posts, demos, emails), artwork,
+website changes, videos, social posts, or anything else — go through the
+**Marketing Request** form. This is the single entry point for any work you need
+from the team.
+
+### How to submit a request
+
+1. Open the [#marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) channel in Slack.
+2. Select the [Marketing Request](https://flowfuse.slack.com/docs/T02248RBLSU/F0BA800K0TW)
+   tab at the top of the channel.
+3. Choose the option that matches what you need and complete the form with as much
+   detail as possible.
+
+Each submission creates a task in the marketing team's Asana project and notifies
+the team with all the details you provide. There is no need to also post in the
+channel or message anyone directly.
+
+### Prioritization and deadlines
+
+As stated in the request form, the marketing team prioritizes requests based on
+their impact on the business and their alignment with current company priorities.
+The team makes every effort to meet requested deadlines, but when bottlenecks
+occur and work needs to be reprioritized, delivery dates may shift. If your
+request is time-critical, say so in the form and explain why.
+
 ## Content Funnel Stages
 
 Every piece of content we create serves a specific purpose depending on where a
