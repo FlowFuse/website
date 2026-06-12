@@ -14,8 +14,10 @@
     }
 }
 
-.catalogue-filters > label {
+.catalogue-filters--heading {
     font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
 }
 .catalogue-filters ul {
     margin-top: 12px;

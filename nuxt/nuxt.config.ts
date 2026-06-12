@@ -97,6 +97,7 @@ export default defineNuxtConfig({
             routes: [
                 '/terms',
                 '/privacy-policy',
+                '/integrations',
                 '/ebooks/beginner-guide-to-a-professional-nodered/',
                 '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                 '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -107,6 +108,23 @@ export default defineNuxtConfig({
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
             ],
             crawlLinks: false
+        }
+    },
+
+    hooks: {
+        // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
+        // Can't use Nuxt's $fetch here — it only exists at nitro runtime.
+        async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {
+            if (nitroConfig.dev) return
+            const { buildEnrichedIntegrations } = await import('./server/utils/integrations-enrich')
+            const integrations = await buildEnrichedIntegrations()
+            if (integrations.length === 0) {
+                throw new Error('[nuxt] integrations enumeration returned 0 nodes — refusing to build a site with no detail pages')
+            }
+            const routes = integrations.map(n => `/integrations/${n._id}/`)
+            nitroConfig.prerender = nitroConfig.prerender || {}
+            nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
+            console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)
         }
     },
 
