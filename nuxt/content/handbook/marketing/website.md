@@ -115,12 +115,11 @@ meta:
 ```
 ## Requesting New Website Pages
 
-New pages or significant page updates should start with a [Website Page Request](https://github.com/FlowFuse/website/issues/new/choose) issue in the website repository.
-
-The request should include a draft (Google Doc) with:
-- full copy for all sections  
-- CTA destinations and links  
-- any relevant context for the page  
+If you would like the marketing team to create a new page, landing page, or apply website
+changes, use the
+[Web Pages/Changes Request Form](https://form.asana.com/?k=nYxAzsUL57HCyN3W8IYh9w&d=1213818720452348).
+See [Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+for full details.
 
 Starting with a draft copy is often the fastest way to get feedback and move into implementation.
 
