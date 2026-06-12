@@ -4,7 +4,7 @@ subtitle: "Detect machine stops instantly, escalate automatically, and capture a
 description: "Build an event-driven workflow in FlowFuse that detects machine stops instantly, auto-escalates to supervisor and maintenance, and logs accurate timestamped downtime records, no spreadsheet required."
 date: 2026-06-12
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/06/images/why-spreadsheets-fail.png
 tags:
     - posts
 cta:
