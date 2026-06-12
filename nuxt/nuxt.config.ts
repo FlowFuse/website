@@ -20,7 +20,9 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', '@nuxt/fonts'],
+
+    css: ['~/assets/css/theme.css'],
 
     site: {
         url: 'https://flowfuse.com',
@@ -141,6 +143,10 @@ export default defineNuxtConfig({
     content: {
         build: {
             markdown: {
+                toc: {
+                    depth: 4,
+                    searchDepth: 4,
+                },
                 remarkPlugins: {
                     'handbook-links': { instance: remarkHandbookLinks },
                 },

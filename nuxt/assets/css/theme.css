@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* FlowFuse brand red scale — overrides Tailwind's default so Nuxt UI's
+   primary color tokens match the palette from the branding handbook. */
+@theme {
+    --color-red-50:  #FFE8E5;
+    --color-red-100: #FFBFB5;
+    --color-red-200: #FF8A7B;
+    --color-red-300: #FF604F;
+    --color-red-400: #FF3B27;
+    --color-red-500: #FF2400;
+    --color-red-600: #DA3D0B;
+    --color-red-700: #B32E09;
+    --color-red-800: #8D1F06;
+    --color-red-900: #671506;
+}
