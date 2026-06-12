@@ -1,5 +1,5 @@
 ---
-title: "Manufacturing Downtime Detection: Automate Alerts, Escalations, and Reporting"
+title: "Why Downtime Spreadsheets Fail and How to Automate Detection and Escalation"
 subtitle: "Detect machine stops instantly, escalate automatically, and capture accurate downtime data."
 description: "Build an event-driven workflow in FlowFuse that detects machine stops instantly, auto-escalates to supervisor and maintenance, and logs accurate timestamped downtime records, no spreadsheet required."
 date: 2026-06-12
