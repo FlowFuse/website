@@ -1,3 +1,5 @@
+@layer components {
+
 .nohero {
     color: #111827;
     font-size: 0.875em;
@@ -9,7 +11,7 @@
 }
 
 .nohero a {
-    color: theme(colors.blue.600);
+    color: var(--color-blue-600);
 }
 
 .nohero strong {
@@ -41,6 +43,10 @@
     font-size: 2.6rem;
     line-height: 2.9rem;
 }
+
+} /* end @layer components */
+
+@layer overrides {
 
 .prose code::after {
     content: '' !important;
@@ -88,7 +94,7 @@
 }
 
 .ff-prose .prose hr {
-    border-color: theme(colors.gray.400);
+    border-color: var(--color-gray-400);
     margin: 0;
 }
 
@@ -102,3 +108,5 @@
     margin-top: 2em;
     margin-bottom: 2em;
 }
+
+} /* end @layer overrides */
