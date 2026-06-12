@@ -151,12 +151,11 @@ We'll share a [new hire post](/handbook/marketing/social-media/#new-hire) when n
 
 ## Requesting a social post
 
-If you’d like something shared on FlowFuse’s social channels, please follow this process:
-
-1. Create an issue in the [customer GitHub repository](https://github.com/FlowFuse/marketing/issues).
-1. Use the Social Post Request template to make sure all relevant information is included.
-1. Assign the issue to the social media manager.
-1. Provide as much context as possible, including links, visual ideas, and deadlines if applicable.
+If you would like the marketing team to create or publish a social post submit a request through the
+**Marketing Request** tab in the
+[#marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) Slack channel. See
+[Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+for full details.
 
 This process helps ensure we can create content that matches your intent and our audience’s expectations.
 
