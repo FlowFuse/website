@@ -21,6 +21,7 @@
         "dev:postcss": "dotenv -v TAILWIND_MODE=watch -- npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
         "dev:postcss-nuxt": "dotenv -v TAILWIND_MODE=watch -- npx postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js -w",
         "docs": "node scripts/copy_docs.js",
+        "docs-nuxt": "node scripts/copy_docs_nuxt.js",
         "blueprints": "node scripts/copy_blueprints.js",
         "index:algolia": "node scripts/index-algolia.js",
         "build:indexed": "npm run build && npm run index:algolia",
@@ -33,8 +34,8 @@
         "prod:postcss-nuxt": "postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js",
         "prod:eleventy-nuxt": "npx @11ty/eleventy --output=./nuxt/public/",
         "prod:nuxt": "npm run build --workspace=nuxt",
-        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt",
-        "build:nuxt:skip-images": "dotenv -v SKIP_IMAGES=true -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
+        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs docs-nuxt blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt",
+        "build:nuxt:skip-images": "dotenv -v SKIP_IMAGES=true -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs docs-nuxt blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
     },
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",

@@ -1,6 +1,16 @@
-import { readdirSync, statSync } from 'node:fs'
+import { readdirSync, statSync, existsSync, readFileSync } from 'node:fs'
 import { join, basename } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import remarkHandbookLinks from './utils/remark-handbook-links'
+
+// Routes generated from the markdown sources by the scripts/copy_*.js steps.
+// docs.routes.json is written by scripts/copy_docs_nuxt.js before prod:nuxt;
+// missing-file fallback keeps `nuxt dev` working before the copy step runs.
+const readRoutes = (name: string): string[] => {
+    const f = fileURLToPath(new URL(`./${name}`, import.meta.url))
+    return existsSync(f) ? JSON.parse(readFileSync(f, 'utf-8')) : []
+}
+const docsRoutes = readRoutes('docs.routes.json')
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -60,6 +70,17 @@ export default defineNuxtConfig({
         'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
     },
 
+    // Algolia docs search (parity with 11ty common-js.njk): the docs page's
+    // <AlgoliaSearch> reads these public runtime values. Defaults reproduce the
+    // 11ty appId/apiKey/index (search-only key, safe to ship), overridable via env.
+    runtimeConfig: {
+        public: {
+            algoliaAppId: process.env.NUXT_PUBLIC_ALGOLIA_APP_ID || 'ISKYOHIT7D',
+            algoliaApiKey: process.env.NUXT_PUBLIC_ALGOLIA_API_KEY || '68d4032f487d66423c37e6483e067272',
+            algoliaIndexName: process.env.NUXT_PUBLIC_ALGOLIA_INDEX_NAME || 'prod_netlify',
+        },
+    },
+
     app: {
         head: {
             link: [
@@ -105,6 +126,8 @@ export default defineNuxtConfig({
                 '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                 '/resources/publications/',
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                // /docs migration: native Nuxt docs routes (generated list).
+                ...docsRoutes,
             ],
             crawlLinks: false
         }

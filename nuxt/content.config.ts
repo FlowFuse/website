@@ -61,6 +61,13 @@ export default defineContentConfig({
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
             })
+        }),
+        // Product docs are generated from src/docs (itself synced from the
+        // external FlowFuse repo by scripts/copy_docs.js) into nuxt/content/docs
+        // by scripts/copy_docs_nuxt.js. This is the /docs migration to Nuxt.
+        docs: defineCollection({
+            type: 'page',
+            source: 'docs/**/*.md'
         })
     }
 })
