@@ -6,7 +6,7 @@ title: "Metrics"
 
 Our ongoing mission is to enable data-driven decision-making, facilitating strategic product development and enhancing user experience. To achieve this, we focus on specific product metrics that illuminate user behavior, feature adoption, and overall product performance. 
 
-This handbook page provides an overview of the metrics we concentrate on, and how they contribute to our overall [product strategy](./strategy.md).
+This handbook page provides an overview of the metrics we concentrate on, and how they contribute to our overall product strategy. Metrics are how we measure whether our [Objectives](./methodology.md) are moving: an Objective is a change in customer behaviour, and these metrics are the evidence that the change is happening.
 
 ## Principles
 
@@ -16,21 +16,23 @@ Aligned with our value of [Results](../../company/values#results), we are staunc
 #### Continuous learning and improvement
 Consistent with [Iterative Improvement](../../company/values#iterative-improvement), we believe even the smallest changes can contribute to our growth. We're committed to consistently reassessing, learning, and evolving based on the insights our data provides.
 
-## Leading Product Metric
+## Business Health: Weighted Customer Index (WCI)
 
-The cornerstone of our department's evaluation is encapsulated in the Leading Product Metric, namely the Weighted Customer Index (WCI). This metric serves as our North Star, guiding strategic decisions and operational improvements. The WCI is calculated to reflect the value and distribution of our customer base across different product tiers.
-
-The formula for calculating the WCI is as follows:
+The **Weighted Customer Index (WCI)** is our top-line measure of business health: the value and distribution of our paying customer base across tiers.
 
 ```Weighted Customer Index = Number of Starter Tier customers + (Number of Teams Tier customers * 4) + (Number of Enterprise Tier customers * 8)```
 
-This metric is designed to reflect the relative value of different customer segments to the organization, with higher tiers of customers being weighted more heavily due to their greater impact on revenue and strategic value.
+Higher tiers are weighted more heavily because of their greater impact on revenue and strategic value.
 
-The metric can be found [on this dashboard](https://new-product-metrics.flowfuse.cloud/dashboard/product).
+WCI is a **lagging business metric, not a product outcome.** Per our [methodology](./methodology.md), the outcomes we steer by are changes in customer behaviour; WCI is the business result those behaviours are meant to produce. We track it to confirm that our product work is translating into business value, but an Objective is never "increase WCI" directly: it is the customer-behaviour change that moves it.
+
+WCI can be found on the [product metrics dashboard](https://new-product-metrics.flowfuse.cloud/dashboard/product).
 
 ## Available Metrics
 
-Each metric we track provides unique insights into different facets of our product. These metrics validate or disprove product hypotheses, guide product development, and assist in informed decision-making regarding feature improvements. The ultimate goal is always to create a product that fulfills the needs and preferences of our users. Here is a list of the current key metrics we track:
+Alongside WCI, we track product metrics that show how customers actually use the platform. These are closer to the customer-behaviour [Objectives](./methodology.md) we target, and act as the leading signals that an objective is moving before WCI catches up. Each validates or disproves a product hypothesis and guides where we invest.
+
+The set below is reviewed against the [product metrics dashboard](https://new-product-metrics.flowfuse.cloud/dashboard/product); validate the tier names and the list against current data before relying on them:
 
 1. **Applications with Multiple Instances**: Applications were designed to group Node-RED instances for enhanced organization, thus serving as a foundational element for numerous other features.
 
@@ -49,5 +51,3 @@ Each metric we track provides unique insights into different facets of our produ
 8. **Teams Tier Overview**: Number of teams in each tier of FlowFuse Cloud.
 
 9. **Churn**: Percentage of deleted teams on FlowFuse Cloud for each tier in the last 14 days.
-
-All metrics can be found [here](https://product-metrics.flowforge.cloud/ui/#!/0?socketid=eqAkzz9g64b4fhnSAAGx).

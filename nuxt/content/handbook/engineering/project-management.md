@@ -35,6 +35,15 @@ That cadence is anchored by two core meetings:
 * the Monday Engineering Meeting
 * Sprint Planning on Friday
 
+## Product Conversations Feed the Cadence
+
+Before engineering commits to work, two product conversations decide what that work is. They are deliberately separate (see [Product Methodology](/handbook/engineering/product/methodology/)):
+
+* **Outcome to Solution** (discovery): settles *what* to build and *why*. Product brings the outcome; product and engineering choose the solution and any spikes worth running to build confidence. Held ad hoc, per outcome.
+* **Refinement** (delivery): settles *how* to build the chosen solution. Engineering-owned. Produces story breakdown, technical path, acceptance criteria, and estimates.
+
+Refinement assumes the solution is already chosen, and its riskiest assumptions considered. If a refinement reopens whether we are building the right thing, that work belongs back in an Outcome to Solution conversation. Refinement also proposes a tentative order of operations across sprints, aligned to how product needs the work delivered. Those refined, estimated stories and tasks, and that sequence, are what [sprint planning](#sprint-planning-friday) then concludes and commits.
+
 ## Weekly Engineering Meeting (Monday)
 
 The Monday engineering meeting is the highest-level forum for alignment and discussion.
@@ -249,12 +258,8 @@ The issue is visible but intentionally not sprint-ready.
 
 ### Execution
 
-<<<<<<< HEAD:src/handbook/engineering/project-management.md
-As per our [Product Strategy](/handbook/engineering/product/strategy/), our product is broken into three pillars - Build, Manage and Deploy. Within these pillars we have a collection of [Areas](/handbook/engineering/product/strategy/#product-pillars).
-=======
 * The investigation task is worked.
 * Any additional work discovered is brought back through planning.
->>>>>>> origin/main:src/handbook/development/project-management.md
 
 This keeps work small, explicit, and intentional.
 
