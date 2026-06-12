@@ -1,6 +1,6 @@
 ---
 title: "Manufacturing Downtime Management: Automate Detection, Alerts, and Reporting"
-subtitle: "The spreadsheet only gets written after the downtime is already gone. This shows how to make the machine log its own stops, escalate them, and time-stamp every handoff, automatically."
+subtitle: "Detect machine stops instantly, escalate automatically, and capture accurate downtime data."
 description: "Build an event-driven workflow in FlowFuse that detects machine stops instantly, auto-escalates to supervisor and maintenance, and logs accurate timestamped downtime records, no spreadsheet required."
 date: 2026-06-12
 authors: ["sumit-shinde"]
