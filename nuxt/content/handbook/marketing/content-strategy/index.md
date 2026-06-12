@@ -33,7 +33,7 @@ also message anyone in Slack.
 * Social post: promotion of existing content, a product update, an event recap, or similar
 [Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
 * Email: a one-off email campaign, not part of recurring sends. For the monthly
-newsletter, see [Marketing Programs](/handbook/marketing/programs/#2-content--community-marketing).
+newsletter, see [Marketing Programs](/handbook/marketing/programs/#_2-content-community-marketing).
 [Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
 
 ### Prioritization and deadlines
