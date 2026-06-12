@@ -1,5 +1,5 @@
 ---
-title: "Manufacturing Downtime Management: Automate Detection, Alerts, and Reporting"
+title: "Manufacturing Downtime Detection: Automate Alerts, Escalations, and Reporting"
 subtitle: "Detect machine stops instantly, escalate automatically, and capture accurate downtime data."
 description: "Build an event-driven workflow in FlowFuse that detects machine stops instantly, auto-escalates to supervisor and maintenance, and logs accurate timestamped downtime records, no spreadsheet required."
 date: 2026-06-12
@@ -52,7 +52,7 @@ In most factories, downtime still lives in a spreadsheet. Someone writes down wh
 
 The problem is the person in the middle. A machine stops, someone has to notice, then open the file and type the row. Each step adds delay, and downtime doesn't wait for the paperwork. By the time the row is written, the loss is already counted.
 
-But here's the part worth sitting with: the machine already knows it stopped. We don't need a person to notice and write it down; we need the event itself to raise its hand. That's what an event-driven workflow does, and this post shows how to build one in FlowFuse that handles all three jobs on its own: detecting a stop the instant it happens, escalating alerts based on how long it lasts, and writing accurate, timestamped records without anyone touching a spreadsheet. (If event-driven architecture is new to you, [read this article](/blog/2026/02/what-is-event-driven-architecture-in-manufacturing/) first.)
+But here's the part I keep coming back to: the machine already knows it stopped. We don't need a person to notice and write it down; we need the event itself to raise its hand. That's what an event-driven workflow does, and this post shows how to build one in FlowFuse that handles all three jobs on its own: detecting a stop the instant it happens, escalating alerts based on how long it lasts, and writing accurate, timestamped records without anyone touching a spreadsheet. (If event-driven architecture is new to you, [read this article](/blog/2026/02/what-is-event-driven-architecture-in-manufacturing/) first.)
 
 ## How It Works: Detect, Escalate, Record
 
@@ -98,6 +98,6 @@ A manual log can't see that gap at all. If a stop lasts 81 minutes, the spreadsh
 
 That gap has a direct dollar value, and it's worth being precise about which part. Faster escalation doesn't make the repair shorter, a seized motor takes just as long to fix whether the supervisor hears about it in one minute or thirty. What it shrinks is the waiting: the detection and notification minutes that happen *before* anyone starts working. For a mid-sized plant at $25,000/hour, each of those minutes is worth roughly $415. If automatic escalation removes 10 minutes of pure waiting from a stoppage, that's about $4,000 recovered on that incident, not from fixing the machine faster, but from not letting it sit idle while the alert worked its way to the right person. A plant with 10 unplanned stops a month that consistently closes a 10-minute waiting gap is recovering on the order of $40,000 a month. The exact figure depends on how much of your downtime is waiting versus repair, which is the point: until you measure the two separately, you're guessing.
 
-This isn't a fix for unreliable equipment. Machines will still break, and the repair still takes as long as it takes. What it fixes is the waiting, the minutes between a stop and someone acting on it, which a spreadsheet can never shrink because it only gets written after those minutes are already gone.
+I want to be precise here: this isn't a fix for unreliable equipment. Machines will still break, and the repair still takes as long as it takes. What it fixes is the waiting, the minutes between a stop and someone acting on it, which a spreadsheet can never shrink because it only gets written after those minutes are already gone.
 
 Set up once per line, the workflow catches every stop the instant it happens, escalates on a fixed schedule from supervisor to maintenance to up the chain with no manual steps, splits a vague "down for 81 minutes" into separate detection, waiting, and repair intervals you can act on, and recovers the waiting minutes that for most plants add up to real money per incident. The spreadsheet still exists. Now it's the output, not the task, accurate, self-maintaining, and running on every shift without anyone having to remember a thing.
