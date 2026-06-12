@@ -42,7 +42,7 @@ Before engineering commits to work, two product conversations decide what that w
 * **Outcome to Solution** (discovery): settles *what* to build and *why*. Product brings the outcome; product and engineering choose the solution and any spikes worth running to build confidence. Held ad hoc, per outcome.
 * **Refinement** (delivery): settles *how* to build the chosen solution. Engineering-owned. Produces story breakdown, technical path, acceptance criteria, and estimates.
 
-Refinement assumes the solution is already chosen, and its riskiest assumptions considered. If a refinement reopens whether we are building the right thing, that work belongs back in an Outcome to Solution conversation. Refined, estimated stories and tasks are what [sprint planning](#sprint-planning-friday) then commits.
+Refinement assumes the solution is already chosen, and its riskiest assumptions considered. If a refinement reopens whether we are building the right thing, that work belongs back in an Outcome to Solution conversation. Refinement also proposes a tentative order of operations across sprints, aligned to how product needs the work delivered. Those refined, estimated stories and tasks, and that sequence, are what [sprint planning](#sprint-planning-friday) then concludes and commits.
 
 ## Weekly Engineering Meeting (Monday)
 
