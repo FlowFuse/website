@@ -137,4 +137,6 @@ Work reaches engineering through two distinct conversations. Keeping them separa
 
 If a refinement reopens whether we are building the right thing, that belongs back in an Outcome to Solution conversation.
 
+Refinement also sets a **tentative order of operations across sprints**, sequenced to match how product needs the work delivered. This prepares the ground for sprint planning, where that order is concluded and committed.
+
 These two, plus sprint planning, form one chain: **Outcome to Solution** picks the solution and the assumptions worth a spike, any **spikes** build confidence, **Refinement** breaks the chosen solution into estimated implementation issues, and [sprint planning](/handbook/engineering/project-management/#sprint-planning-friday) commits them. The same handoff is described from the delivery side under [Product Conversations Feed the Cadence](/handbook/engineering/project-management/#product-conversations-feed-the-cadence).
