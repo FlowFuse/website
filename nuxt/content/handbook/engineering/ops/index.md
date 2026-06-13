@@ -11,6 +11,7 @@ title: "Platform Ops"
  - [Incident Response](./incident-response.md)
  - [FlowFuse Dedicated](./dedicated.md)
  - [Updating Stacks](./production-stack-update.md)
+ - [Infrastructure Maintenance](./maintenance.md)
  - [Self Hosted Assistant](./self-hosted-assistant.md)
  
 
