@@ -68,6 +68,9 @@ autoLaunch = false
 command = "npm run build:nuxt:skip-images"
 publish = "nuxt/dist"
 
+[build.environment]
+NODE_OPTIONS = "--max-old-space-size=4096"
+
 [functions]
 directory = "nuxt/.netlify/functions-internal"
 

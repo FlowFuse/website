@@ -2,6 +2,7 @@
     "name": "flowfuse-website-nuxt",
     "version": "0.0.0",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "nuxt dev",
         "build": "nuxt build",
@@ -10,7 +11,7 @@
     },
     "dependencies": {
         "@resvg/resvg-js": "^2.6.2",
-        "@takumi-rs/core": "^1.7.0",
+        "@takumi-rs/core": "^1.8.4",
         "markdown-it": "^14.1.1",
         "mermaid": "^11",
         "sanitize-html": "^2.13.0",
@@ -20,6 +21,7 @@
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
         "@nuxt/image": "^2.0.0",
+        "@nuxt/ui": "^4.8.2",
         "@nuxtjs/seo": "^5.1.4",
         "@types/sanitize-html": "^2.16.1",
         "better-sqlite3": "^12.10.0",
