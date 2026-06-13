@@ -10,6 +10,7 @@
         "nuxt"
     ],
     "scripts": {
+        "test": "node --test nuxt/server/lib/*.test.mjs",
         "dev": "concurrently \"npm run dev:eleventy\" \"npm run dev:postcss\" \"npm run dev:postcss-nuxt\" \"dotenv -- npm run dev --workspace=nuxt\"",
         "start": "npm-run-all2 clean:dev build:js docs blueprints --parallel dev:*",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js _site/js/flowrenderer.min.js",
