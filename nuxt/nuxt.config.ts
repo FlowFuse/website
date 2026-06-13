@@ -20,9 +20,14 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', '@nuxt/fonts'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image'],
 
     css: ['~/assets/css/theme.css'],
+
+    // Heebo is already loaded via the Google Fonts <link> in app.head.
+    // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
+    // so it never fetches font files at build time (which exhausts Netlify's memory).
+    fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
 
     site: {
         url: 'https://flowfuse.com',
