@@ -4,14 +4,25 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 const route = useRoute()
 
-const { data: navTree } = await useAsyncData('handbook-nav', () =>
-    queryCollectionNavigation('handbook')
-)
+const { data: navTree } = await useHandbookNav()
+
+function sortNavItems(items: ContentNavigationItem[]): ContentNavigationItem[] {
+    return [...items].sort((a, b) => {
+        const orderA = (a.order as number | undefined) ?? Infinity
+        const orderB = (b.order as number | undefined) ?? Infinity
+        if (orderA !== Infinity || orderB !== Infinity) return orderA - orderB
+        // No explicit order: directories before files, then by path
+        const aIsDir = a.children !== undefined
+        const bIsDir = b.children !== undefined
+        if (aIsDir !== bIsDir) return aIsDir ? -1 : 1
+        return a.path.localeCompare(b.path)
+    })
+}
 
 function toMenuItem(item: ContentNavigationItem): NavigationMenuItem {
     const children = item.children
-        ?.filter(c => c.path !== item.path)
-        .map(toMenuItem)
+        ? sortNavItems(item.children.filter(c => c.path !== item.path)).map(toMenuItem)
+        : undefined
     return {
         label: item.title,
         to: item.path,
@@ -25,12 +36,7 @@ const navItems = computed((): NavigationMenuItem[] => {
     const root = navTree.value?.[0]
     if (!root?.children) return []
 
-    const sections = [...root.children]
-        .filter(c => c.path !== root.path)
-        .sort((a, b) => ((a.order as number) ?? Infinity) - ((b.order as number) ?? Infinity))
-        .map(toMenuItem)
-
-    return sections
+    return sortNavItems(root.children.filter(c => c.path !== root.path)).map(toMenuItem)
 })
 </script>
 

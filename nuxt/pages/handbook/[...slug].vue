@@ -35,9 +35,7 @@ useSeoMeta({
     twitterSite: '@FlowFuseinc',
 })
 
-const { data: navTree } = await useAsyncData('handbook-nav', () =>
-    queryCollectionNavigation('handbook')
-)
+const { data: navTree } = await useHandbookNav()
 
 useSchemaOrg([
     // Exclude the last crumb (current page) — nuxt-schema-org appends it automatically
