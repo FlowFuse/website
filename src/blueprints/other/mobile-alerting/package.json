@@ -1,0 +1,5 @@
+{
+    "dependencies": {
+        "node-red-contrib-signl4": "1.11.0"
+    }
+}
