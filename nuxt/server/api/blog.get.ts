@@ -122,7 +122,7 @@ export default defineEventHandler((event) => {
         date: p._date,
         url: String(p.url),
         description: String(p.description || ''),
-        image: p.image ? String(p.image) : null,
+        image: p.image ? String(p.image).replace(/^(?!\/)/, '/') : null,
         authors: ((p.authors as string[]) || []).map(id => ({ id, name: people[id] || id })),
     }))
 
