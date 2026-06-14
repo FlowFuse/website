@@ -42,8 +42,9 @@ function truncate(text: string, words = 20): string {
     return ws.length <= words ? text : `${ws.slice(0, words).join(' ')}...`
 }
 
-const prevHref = computed(() => currentPage.value === 2 ? '/blog/' : `/blog/?page=${currentPage.value - 1}`)
-const nextHref = computed(() => `/blog/?page=${currentPage.value + 1}`)
+function paginationTo(page: number) {
+    return page === 1 ? '/blog/' : { query: { page } }
+}
 </script>
 
 <template>
@@ -118,24 +119,15 @@ const nextHref = computed(() => `/blog/?page=${currentPage.value + 1}`)
 
         </ul>
 
-        <nav aria-label="Pagination" class="pagination mt-4">
-            <ol class="flex flex-row w-full justify-between text-gray-600">
-                <li
-                    class="flex md:flex-initial w-40 justify-start pl-2 ff-nav-blog-p"
-                    :style="currentPage <= 1 ? 'opacity: 0; pointer-events: none;' : ''"
-                >
-                    <NuxtLink :href="prevHref">Previous</NuxtLink>
-                </li>
-                <li>
-                    <span>{{ currentPage }} of {{ pageCount }}</span>
-                </li>
-                <li
-                    class="flex md:flex-initial w-40 justify-end pr-2 ff-nav-blog-n"
-                    :style="currentPage >= pageCount ? 'opacity: 0; pointer-events: none;' : ''"
-                >
-                    <NuxtLink :href="nextHref">Next</NuxtLink>
-                </li>
-            </ol>
-        </nav>
+        <div v-if="pageCount > 1" class="flex justify-center mt-4">
+            <UPagination
+                :page="currentPage"
+                :total="data?.total ?? 0"
+                :items-per-page="19"
+                :to="paginationTo"
+                active-color="secondary"
+                active-variant="subtle"
+            />
+        </div>
     </div>
 </template>
