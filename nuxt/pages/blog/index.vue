@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import type { BlogPost } from '~/server/api/blog.get'
+import blogTagsData from '../../../src/_data/blogTags.json'
 
 definePageMeta({ layout: 'default' })
+
+const tagLabels = Object.fromEntries(blogTagsData.map(t => [t.value, t.label]))
 
 const route = useRoute()
 const currentPage = computed(() => {
@@ -9,10 +12,11 @@ const currentPage = computed(() => {
     const n = p ? Number(p) : 1
     return Number.isFinite(n) && n >= 1 ? n : 1
 })
+const currentTag = computed(() => route.query.tag ? String(route.query.tag) : '')
 
 const { data } = await useAsyncData(
-    () => `blog-${currentPage.value}`,
-    () => $fetch<{ posts: BlogPost[]; total: number; pageCount: number }>(`/api/blog?page=${currentPage.value}`)
+    () => `blog-${currentPage.value}-${currentTag.value}`,
+    () => $fetch<{ posts: BlogPost[]; total: number; pageCount: number }>(`/api/blog?page=${currentPage.value}${currentTag.value ? `&tag=${currentTag.value}` : ''}`)
 )
 
 const posts = computed(() => data.value?.posts ?? [])
@@ -43,14 +47,17 @@ function truncate(text: string, words = 20): string {
 }
 
 function paginationTo(page: number) {
-    return page === 1 ? '/blog/' : { query: { page } }
+    const q: Record<string, string | number> = {}
+    if (currentTag.value) q.tag = currentTag.value
+    if (page > 1) q.page = page
+    return Object.keys(q).length ? { query: q } : '/blog/'
 }
 </script>
 
 <template>
     <div class="ff-blog container m-auto text-left max-w-4xl pt-8 pb-24 w-full">
         <div class="px-2">
-            <h1 class="mb-0">Blog</h1>
+            <h1 class="mb-0">Blog<template v-if="currentTag"> — {{ tagLabels[currentTag] ?? currentTag }}</template></h1>
         </div>
 
         <ul class="flex flex-wrap">

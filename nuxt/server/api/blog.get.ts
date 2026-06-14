@@ -103,6 +103,7 @@ function collectPosts(dir: string, base: string): Array<Record<string, unknown>>
 export default defineEventHandler((event) => {
     const query = getQuery(event)
     const page = Math.max(1, Number(query.page) || 1)
+    const tag = query.tag ? String(query.tag) : ''
 
     const srcDir = resolve(process.cwd(), '../src')
     const blogDir = resolve(srcDir, 'blog')
@@ -112,6 +113,7 @@ export default defineEventHandler((event) => {
     const all = collectPosts(blogDir, blogDir)
         .map(p => ({ ...p, _date: normalizeDate(String(p.date)) }))
         .filter(p => process.env.NODE_ENV !== 'production' || new Date(p._date) <= now)
+        .filter(p => !tag || (Array.isArray(p.tags) && (p.tags as string[]).includes(tag)))
         .sort((a, b) => new Date(b._date).getTime() - new Date(a._date).getTime())
 
     const total = all.length
