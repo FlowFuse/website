@@ -5,7 +5,7 @@ definePageMeta({ layout: 'default' })
 
 const route = useRoute()
 const currentPage = computed(() => {
-    const p = route.params.page
+    const p = route.query.page
     const n = p ? Number(p) : 1
     return Number.isFinite(n) && n >= 1 ? n : 1
 })
@@ -42,8 +42,8 @@ function truncate(text: string, words = 20): string {
     return ws.length <= words ? text : `${ws.slice(0, words).join(' ')}...`
 }
 
-const prevHref = computed(() => currentPage.value === 2 ? '/blog/' : `/blog/${currentPage.value - 1}/`)
-const nextHref = computed(() => `/blog/${currentPage.value + 1}/`)
+const prevHref = computed(() => currentPage.value === 2 ? '/blog/' : `/blog/?page=${currentPage.value - 1}`)
+const nextHref = computed(() => `/blog/?page=${currentPage.value + 1}`)
 </script>
 
 <template>
