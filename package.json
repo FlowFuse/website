@@ -25,7 +25,6 @@
         "docs": "node scripts/copy_docs.js",
         "blueprints": "node scripts/copy_blueprints.js",
         "index:algolia": "node scripts/index-algolia.js",
-        "build:indexed": "npm run build && npm run index:algolia",
         "dev:eleventy": "dotenv -- npx @11ty/eleventy --serve --port 8080 --quiet",
         "old_dev:eleventy": "dotenv -v NODE_ENV=development -- ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
         "prod:eleventy": "npx @11ty/eleventy",

@@ -85,7 +85,7 @@ to = "/.netlify/functions/server"
 status = 200
 
 [context.deploy-preview]
-command = "npm run build:nuxt"
+command = "npm run build:nuxt && npm run index:algolia"
 
 [context.branch-deploy]
 command = "npm run build:nuxt"
