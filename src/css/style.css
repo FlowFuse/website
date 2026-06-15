@@ -308,7 +308,7 @@ html, body {
 
 @layer base {
     main a {
-        color: var(--color-blue-600);
+        color: var(--color-blue-700);
     }
     main a:hover {
         text-decoration: underline;
@@ -318,7 +318,7 @@ html, body {
     }
 
     main .ff-bg-dark a, main .ff-bg-mid a {
-        color: var(--color-blue-600);
+        color: var(--color-blue-700);
     }
     main .ff-bg-dark a:hover, main .ff-bg-mid a:hover {
         color: var(--color-teal-500);
