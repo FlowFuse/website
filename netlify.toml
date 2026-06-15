@@ -65,7 +65,7 @@ command = "npx @11ty/eleventy --quiet --watch"
 autoLaunch = false
 
 [build]
-command = "npm run build:nuxt:skip-images"
+command = "npm run build:nuxt:skip-images && npm run index:algolia"
 publish = "nuxt/dist"
 
 [build.environment]
