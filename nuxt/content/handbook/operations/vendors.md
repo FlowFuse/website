@@ -45,7 +45,7 @@ Once an invoice is received at billing@flowfuse.com, the following workflow is i
 2. System Entry: The accounting team, Zeni, enters the invoice into Zeni Bill Pay and invites the vendor to the BILL network to facilitate secure e-payments.
 3. Verification: Accounting will contact the vendor directly if any additional information is required to process the payment.
 4. Approval Chain: Each invoice requires a minimum of **two approvers**, with the CEO (ZJ) serving as the final approver. Noubar will serve as the first approver. We can also get approval from the invoice's DRI if the person is outside the scope of the BizOps team.
-5. Payment Release: The accounting team reviews Bill.com at least twice per week to release payments for all fully approved invoices.
+5. Payment Release: The accounting team reviews Zeni Bill Pay at least twice per week to release payments for all fully approved invoices.
 
 When verifications are finalised, typically within a couple of business days,
 the vendor will receive an email with details and next steps.
