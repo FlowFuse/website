@@ -28,6 +28,6 @@
         "nuxt": "^4.4.6",
         "nuxt-link-checker": "^5.0.10",
         "nuxt-og-image": "^6.5.3",
-        "nuxt-studio": "^1.7.0"
+        "nuxt-studio": "file:.local-packages/nuxt-studio-1.7.0.tgz"
     }
 }

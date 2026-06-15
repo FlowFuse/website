@@ -142,6 +142,7 @@ export default defineNuxtConfig({
             owner: 'FlowFuse',
             repo: 'website',
             branch: 'main',
+            branchStrategy: 'feature-branch',
         }
     },
 
