@@ -11,7 +11,7 @@ As part of our ongoing efforts to maintain our infrastructure, we need to update
 
 This will require restarting any hosted Node-RED instances running on those servers, leading to a short downtime whilst they restart. Remote instances on the edge are unaffected.
 
-**We will complete this migration during a 2 hour maintenance window starting at 8am UTC on Saturday 11th July 2026.**
+**We will complete this migration during a 3 hour maintenance window starting at 8am UTC on Saturday 11th July 2026.**
 
 ### Will my instances be affected?
 
