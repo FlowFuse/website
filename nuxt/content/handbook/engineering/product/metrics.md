@@ -30,7 +30,6 @@ WCI can be found on the [product metrics dashboard](https://new-product-metrics.
 
 ## Available Metrics
 
-Alongside WCI, we track product metrics that show how customers actually use the platform. These are closer to the customer-behaviour [Objectives](./methodology.md) we target, and act as the leading signals that an objective is moving before WCI catches up. Each validates or disproves a product hypothesis and guides where we invest.
 
 The set below is reviewed against the [product metrics dashboard](https://new-product-metrics.flowfuse.cloud/dashboard/product); validate the tier names and the list against current data before relying on them:
 
