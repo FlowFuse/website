@@ -7,7 +7,7 @@ usecase:
   - production-monitoring
 logo:
 hubspot:
-    formId:
+    formId: a96fdb02-5a70-42cc-b0e8-34e44b9ca919
 story:
     brand: Energinet
     url: https://www.energinet.dk/
