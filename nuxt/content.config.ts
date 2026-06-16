@@ -8,10 +8,12 @@ export default defineContentConfig({
         }),
         handbook: defineCollection({
             type: 'page',
-            source: 'handbook/**/*.md',
+            source: 'handbook/**',
             schema: z.object({
+                description: z.string().optional(),
                 navigation: z.object({
                     group: z.string().optional(),
+                    icon: z.string().optional(),
                     // Read by useHandbookNav for sort order; without it declared
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),

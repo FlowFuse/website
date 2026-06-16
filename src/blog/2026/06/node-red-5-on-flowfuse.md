@@ -4,6 +4,7 @@ subtitle: "The biggest change to the editor since the project began, and it's al
 description: "Node-RED 5 reshapes the editor with redesigned sidebars, an Explorer panel, and a built-in dark theme. Here's what changes for teams running it in production on FlowFuse, and how to upgrade your instances."
 date: 2026-06-09
 authors: ["sumit-shinde"]
+video: fI7r7Cj-slI
 image: /blog/2026/06/images/node-red-5-flowfuse.png
 keywords: node-red 5, node-red 5.0, node-red editor, node-red dark theme, node-red explorer panel, flowfuse node-red, node-red upgrade, node-red stack, industrial node-red, node-red production
 tags:
