@@ -1,9 +1,9 @@
 ---
 title: "The Real Causes of PLC Communication Latency (And How to Fix Them)"
 subtitle: "Find the few settings draining your milliseconds and the timing follows."
-description: "Find and fix what actually causes PLC communication latency, from poll rates to protocol selection. Still seeing it after that? We can help, get in touch."
+description: "Troubleshoot PLC communication latency by identifying common causes such as poll rates, timeout settings, connection limits, and protocol selection."
 date: 2026-06-16
-authors: ["sumit-shinde","drew-gatti"]
+authors: ["drew-gatti","sumit-shinde",]
 image:
 tags:
   - post
