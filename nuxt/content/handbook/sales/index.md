@@ -1,7 +1,5 @@
 ---
-title: "Sales"
-navigation:
-  group: "Sales department"
+title: Sales
 ---
 
 # Sales department
