@@ -8,11 +8,13 @@ export default defineContentConfig({
         }),
         handbook: defineCollection({
             type: 'page',
-            source: 'handbook/**/*.md',
+            source: 'handbook/**',
             schema: z.object({
                 description: z.string().optional(),
                 navigation: z.object({
                     group: z.string().optional(),
+                    icon: z.string().optional(),
+                    order: z.number().optional(),
                 }).optional(),
             })
         }),

@@ -18,6 +18,32 @@ channels; our blog, webinars, eBooks and whitepapers, and video content. All of
 which undergoes the same planning and scheduling steps to combine them into one
 cohesive strategy.
 
+## Requesting Work from Marketing
+
+Submit the form that matches your request type. Each submission creates a task in
+the marketing team's Asana project and notifies the team — there is no need to
+also message anyone in Slack.
+
+* Content: blog post, video, or other content piece
+[Open the Content Request Form](https://form.asana.com/?k=K_dzcim2pxCeI56fklVtRA&d=1213818720452348)
+* Web page or change: new web page or changes to an existing one
+[Open the Web Pages/Changes Request Form](https://form.asana.com/?k=nYxAzsUL57HCyN3W8IYh9w&d=1213818720452348)
+* Artwork: diagram, presentation, PDF, blog tile, or other visual asset
+[Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
+* Social post: promotion of existing content, a product update, an event recap, or similar
+[Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
+* Email: a one-off email campaign, not part of recurring sends. For the monthly
+newsletter, see [Marketing Programs](/handbook/marketing/programs/#_2-content-community-marketing).
+[Open the Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348)
+
+### Prioritization and deadlines
+
+The marketing team prioritizes requests based on their impact on the business and
+their alignment with current company priorities. The team makes every effort to
+meet requested deadlines, but when bottlenecks occur and work needs to be
+re-prioritized, delivery dates may shift. If your request is time-critical, say so
+in the form and explain why.
+
 ## Content Funnel Stages
 
 Every piece of content we create serves a specific purpose depending on where a

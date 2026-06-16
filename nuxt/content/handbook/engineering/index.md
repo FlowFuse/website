@@ -1,7 +1,5 @@
 ---
 title: "Engineering"
-navigation:
-  group: "Engineering & Design Practices"
 ---
 
 # Engineering
