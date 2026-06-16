@@ -137,13 +137,13 @@ Then move the buffer in batches, not a trickle. Build an array, say a window of 
 
 And make sure the receiving end is built for the rate too. Reliability isn't only an upstream worry. A time-series database can take data at high speed, but feed it single writes at that speed and the cost climbs far above batched writes. Whatever takes the data, database, broker, or app, should be set up for the rate it's actually getting.
 
-## Is FlowFuse fast enough? The runtime isn't your variable
+## The runtime isn't your variable
 
-The runtime isn't the cause. FlowFuse runs Node-RED on Node.js rather than compiled embedded code, and that gives every flow a small, fixed overhead: a few milliseconds, the same on every pass. It doesn't drift over a long run, and it doesn't grow when a device on the line gets busy. A well-built flow holds low-millisecond timing all day.
+By the time poll rates, timeouts, protocol selection, and data handling are tuned, the runtime is just one fixed cost in the path, and a predictable one. FlowFuse runs Node-RED on Node.js rather than compiled embedded code, which adds a small overhead to each pass through a flow: a few milliseconds, the same every time. It doesn't drift over a long run, and it doesn't grow when a device on the line gets busy. A well-built flow holds low-millisecond timing all day.
 
-That fixed cost is also a useful diagnostic. A constant few-millisecond add has no way to produce a swing of tens of milliseconds. If your timing is swinging by that much, the cause is somewhere else, and it's almost always one of the four things this article has walked through: an overloaded poll rate, a timeout set by feel, a connection limit hit and ignored, or a protocol asked to guarantee timing it was never built to guarantee.
+That fixed cost is also a useful diagnostic. A constant few-millisecond add has no way to produce a swing of tens of milliseconds. So if your timing is swinging by that much, the cause is somewhere else, and it's almost always one of the four things this article has walked through: an overloaded poll rate, a timeout set by feel, a connection limit hit and ignored, or a protocol asked to guarantee timing it was never built to guarantee.
 
-There's one case worth naming on its own. Node-RED runs as a single process with one event loop, so a heavy transform or a slow database write anywhere in that instance blocks everything else in it, including the fast path, every time it fires. Putting that work on a different tab doesn't change this, since tabs in the editor share the same event loop. That isn't the runtime being slow, it's two jobs sharing a process that shouldn't be shared. The fix is the same one used everywhere else in this piece: give the fast path its own lane, by moving the heavy work to a separate instance.
+There's one case worth naming on its own. Node-RED runs as a single process with one event loop, so a heavy transform or a slow database write anywhere in that instance blocks everything else in it, including the fast path, every time it fires. Putting that work on a different tab doesn't change this, since tabs in the editor share the same event loop. That isn't the runtime being slow, it's two jobs sharing a process that shouldn't be shared. The fix is the one used everywhere else in this piece: give the fast path its own lane by moving the heavy work to a separate instance.
 
 ## Final thought
 
