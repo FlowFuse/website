@@ -21,7 +21,6 @@ This includes, but is not limited to:
 The product function defines what we build and why.
 
 - [Product Overview](./product/) - how product management works
-- [Strategy](./product/strategy.md) - where the product is headed
 - [Feedback](./product/feedback.md) - how we collect and process feedback
 - [Pricing Principles](./product/pricing.md) - how we decide feature tiers
 
