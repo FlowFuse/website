@@ -26,12 +26,12 @@ Higher tiers are weighted more heavily because of their greater impact on revenu
 
 WCI is a **lagging business metric, not a product outcome.** Per our [methodology](./methodology.md), the outcomes we steer by are changes in customer behaviour; WCI is the business result those behaviours are meant to produce. We track it to confirm that our product work is translating into business value, but an Objective is never "increase WCI" directly: it is the customer-behaviour change that moves it.
 
-WCI can be found on the [product metrics dashboard](https://new-product-metrics.flowfuse.cloud/dashboard/product).
+WCI can be found on the [product metrics dashboard](https://product-metrics.flowfuse.cloud/dashboard/product).
 
 ## Available Metrics
 
 
-The set below is reviewed against the [product metrics dashboard](https://new-product-metrics.flowfuse.cloud/dashboard/product); validate the tier names and the list against current data before relying on them:
+The set below is reviewed against the [product metrics dashboard](https://product-metrics.flowfuse.cloud/dashboard/product); validate the tier names and the list against current data before relying on them:
 
 1. **Applications with Multiple Instances**: Applications were designed to group Node-RED instances for enhanced organization, thus serving as a foundational element for numerous other features.
 
