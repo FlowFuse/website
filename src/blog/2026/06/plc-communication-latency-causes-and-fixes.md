@@ -4,7 +4,7 @@ subtitle: "Find the few settings draining your milliseconds and the timing follo
 description: "Troubleshoot PLC communication latency by identifying common causes such as poll rates, timeout settings, connection limits, and protocol selection."
 date: 2026-06-17
 authors: ["drew-gatti","sumit-shinde"]
-image:
+image: /blog/2026/06/images/fixing-plc-communication.png
 tags:
   - post
   - plc
