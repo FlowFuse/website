@@ -6,7 +6,7 @@ imageDescription: "Industrial engineer reviewing data pipelines on a laptop in a
 heroTitle: "A Modern, Open Alternative to <span class='text-orange-600'>Ignition</span>"
 meta:
     title: "A Modern Alternative to Ignition by Inductive Automation"
-    description: "FlowFuse is the open, cloud-native industrial application platform teams choose instead of Ignition. Build applications faster with a low-code, drag-and-drop approach, add integrations without per-module licensing, and work with a modern developer workflow, with no Java IDE, no proprietary Designer, and no Jython."
+    description: "FlowFuse is the cloud-native platform for teams running Ignition who want to build new applications without Java, Jython, or per-Gateway licensing. Connect OPC-UA and MQTT devices today, then migrate existing projects at your own pace."
 hero:
     buttonText: "Talk to a Migration Expert"
     buttonLink: "https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation"
@@ -28,13 +28,13 @@ table:
       flowFuse: "<span class='font-medium'>Low-code, drag-and-drop Node-RED.</span> Build applications visually by connecting nodes, with JavaScript available for custom logic when you need it. Flows are human-readable, portable JSON that you can version-control, audit, and run anywhere."
       ignition: "<span class='font-medium'>Proprietary Java-based Designer.</span> Scripting uses Jython (Python 2.7). Inductive Automation maintains its own Jython 2.7 build, but Python 3 libraries with C extensions, which include most modern data-science and ML packages, do not run natively in it."
     - feature: "Cloud & Managed Deployment"
-      flowFuse: "<span class='font-medium'>Fully managed SaaS.</span> Nothing to provision or maintain. The same applications run at the edge, on-premises, or in the cloud, with one consistent developer experience across all of them."
+      flowFuse: "<span class='font-medium'>Fully managed SaaS.</span> Nothing to provision or maintain. Build once and run the same application at the edge, on-premises, or in the cloud without changing your developer experience."
       ignition: "<span class='font-medium'>On-premises first.</span> Cloud deployments run on self-managed VMs or marketplace images, and there is no fully hosted Ignition SaaS. Ignition Cloud Edition ships without device drivers and cannot connect to PLCs directly; an on-prem Gateway or MQTT bridge handles device connectivity."
     - feature: "MQTT & Protocol Costs"
-      flowFuse: "<span class='font-medium'>Included at no extra cost.</span> MQTT, OPC-UA, Modbus, HTTP, and thousands of community integrations come with the platform, with no per-protocol add-ons."
+      flowFuse: "<span class='font-medium'>Included at no extra cost.</span> MQTT, OPC-UA, Modbus, HTTP, and thousands of community integrations come with the platform itself. There's no separate module to buy for any of them."
       ignition: "<span class='font-medium'>Core OPC-UA drivers are included; MQTT is a paid add-on.</span> Bidirectional MQTT/Sparkplug runs on the Cirrus Link MQTT Engine and MQTT Transmission modules, sold within Inductive Automation's Enterprise Integration Solution Suite rather than the base platform."
     - feature: "Developer Workflow & Version Control"
-      flowFuse: "<span class='font-medium'>DevOps-native.</span> Git integration, team workspaces, and deployment pipelines are built in. Flows ship like modern software, with no proprietary backup files to pass around."
+      flowFuse: "<span class='font-medium'>DevOps-native.</span> Git integration, team workspaces, and deployment pipelines are built in, so flows ship like modern software instead of backup files passed around manually."
       ignition: "<span class='font-medium'>No native Git integration.</span> Projects live in the Gateway and export as <code>.gwbk</code> backup files. Teams often rely on certified integrators for deployment rather than self-service pipelines."
     - feature: "Multi-Site & Team Management"
       flowFuse: "<span class='font-medium'>Built for many teams and sites.</span> Manage every team, customer, and site from a single FlowFuse platform and switch between them in one UI, designed for managed service providers and multi-site operations."
@@ -45,14 +45,14 @@ table:
 switch:
     title: How to Move Workloads <span class='text-orange-600'>from Ignition to FlowFuse</span>
     content:
-        - "<span class='font-semibold'>Start with a migration consultation:</span> We review your current Ignition architecture and pinpoint where FlowFuse adds value first: edge applications, cloud connectivity, or a full platform replacement."
-        - "<span class='font-semibold'>Validate FlowFuse against your stack:</span> Connect your OT assets over MQTT or OPC-UA and build the same applications in FlowFuse. Prove out the workflow and developer experience before you commit."
-        - "<span class='font-semibold'>Roll out gradually, with expert support:</span> Begin with new use cases and migrate existing applications at your own pace, backed by hands-on help from our team."
+        - "<span class='font-semibold'>Map what's costing you time today:</span> We look at where Jython scripting, Gateway backups, or per-module licensing are slowing your team down, and identify which application makes sense to build in FlowFuse first."
+        - "<span class='font-semibold'>Validate FlowFuse against your stack:</span> Connect your OT assets over MQTT or OPC-UA and build the same application in FlowFuse. Compare the workflow directly rather than take our word for it."
+        - "<span class='font-semibold'>Roll out gradually, with our team alongside you:</span> Begin with new use cases and migrate existing applications whenever it makes sense for your plant."
     cta: TALK TO A MIGRATION EXPERT
     ctaUrl: "/book-demo"
 cta:
     title: "Exploring Alternatives to Ignition?"
-    content: "See how FlowFuse helps industrial teams modernize their operations on an open, cloud-native application platform that grows with them, low-code by default, with no Jython and no proprietary tooling. <a href='https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation' class='font-semibold'>Book a demo with a FlowFuse expert</a>."
+    content: "Most teams don't replace Ignition overnight, they start by building the next application somewhere else. <a href='https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation' class='font-semibold'>Book a demo with a FlowFuse expert</a>."
 ---
 <!--Hero Content-->
 <div class="w-full px-6">
@@ -102,10 +102,10 @@ cta:
     <div class="max-w-screen-lg mx-auto">
         <!-- Cards -->
         {% set blueCards = [
-            {"title": "No infrastructure to manage",
-            "content": "Teams evaluating Ignition often find that cloud deployments still run on self-managed VMs or marketplace images, and <span class='font-medium'>there is no fully hosted Ignition SaaS</span>. FlowFuse is fully managed, so your engineers build applications instead of provisioning and patching gateways."},
-            {"title": "Open-source foundation, low-code workflows",
-            "content": "FlowFuse builds on Node-RED, which is <span class='font-medium'>open-source, Git-native, and low-code</span>. Build by dragging and connecting nodes, and drop to JavaScript only when you need custom logic. No Jython, no Java IDE, no proprietary Designer. Your applications live in version control and ship like modern software."}
+            {"title": "No per-protocol licensing",
+            "content": "MQTT, OPC-UA, Modbus, and thousands of community nodes come standard with FlowFuse. Bidirectional MQTT on Ignition typically runs through the Cirrus Link modules, sold as part of Inductive Automation's <span class='font-medium'>Enterprise Integration Solution Suite</span> rather than the base platform."},
+            {"title": "One console, every site",
+            "content": "Ignition centers on the individual Gateway, so multi-site estates get administered one Gateway at a time. FlowFuse manages <span class='font-medium'>every team, customer, and site from a single platform</span>, which matters most once you're running more than one facility."}
         ] %}
         <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left mb-20">
             {% for card in blueCards %}
@@ -121,7 +121,7 @@ cta:
     <div class="max-w-screen-lg mx-auto">
         <!-- From Ignition to FlowFuse -->
         <h2 class="text-center w-full md:text-left">{{ sectionTitle | safe }}</h2>
-        <p>FlowFuse and Ignition are both industrial application platforms. Teams choose FlowFuse for a more open, cloud-native, low-code approach to building, deploying, and scaling industrial applications, from edge connectivity to operational dashboards.</p>
+        <p>Ignition's reputation was built on Java and Jython, two technologies most engineering teams have spent the last decade moving away from. FlowFuse runs the same edge connectivity, OPC-UA and MQTT integrations, and operational dashboards, without that legacy stack, through a managed cloud platform instead of a Gateway you patch yourself.</p>
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
             {% for section in sections %}
             <div class="relative w-full max-md:max-w-md mx-auto">
