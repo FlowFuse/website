@@ -2,6 +2,7 @@
 title: "Why Modbus Refuses to Die"
 subtitle: "Why your factory's newest equipment still speaks a 47-year-old language"
 description: "Learn why Modbus, a 47-year-old protocol with zero security, still dominates industrial automation despite billions invested in modern alternatives"
+lastUpdated: 2026-06-17
 date: 2026-01-26
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/why-modbus-wont-dia.png
@@ -9,6 +10,31 @@ keywords: Modbus, industrial automation, PLC, OPC UA, EtherNet/IP, MQTT, legacy 
 tags:
  - flowfuse
  - modbus
+meta:
+  faq:
+    - question: "Why is Modbus still used in 2026 despite being 47 years old?"
+      answer: "Manufacturing facilities don't replace working automation systems, and industrial equipment like PLCs and process devices often runs for 10 to 30 years. New equipment still ships with Modbus as the primary interface because it integrates instantly with millions of existing installations at almost no cost."
+    - question: "How old is the Modbus protocol and who created it?"
+      answer: "Modbus was created by Modicon in 1979, making it 47 years old. The rights now belong to the Modbus Organization, a trade association that maintains the specification as an open standard."
+    - question: "How much does it cost to add Modbus support to a device?"
+      answer: "A basic Modbus RTU interface costs manufacturers roughly $5-10 in components. The protocol is completely open with zero software licensing, no royalties, no certification fees, and no vendor lock-in."
+    - question: "Why is Modbus considered vendor-neutral?"
+      answer: "No single vendor owns Modbus; the rights belong to the Modbus Organization, which keeps it an open standard. This means no vendor can kill it, paywall it, or use it to lock customers into their platform, so it works across mixed-vendor factory floors."
+    - question: "Is Modbus secure?"
+      answer: "No. Modbus has no built-in security, no authentication, and uses plaintext communication. The moment a Modbus device connects to an external network, an attacker with network access can send arbitrary commands with no password, certificate, or audit trail."
+    - question: "What are the main technical advantages of Modbus?"
+      answer: "Modbus is brutally simple (it only reads and writes registers), lightweight (frames max out at 256-260 bytes), trivial to implement (runs on 8-bit microcontrollers with as little as 10KB flash), transparent to debug, and universally compatible across RS-485, RS-232, TCP/IP, and UDP. It also offers reliable error detection via CRC-16-MODBUS."
+    - question: "When should I use a modern protocol instead of Modbus?"
+      answer: "Choose modern protocols when you need capabilities beyond simple register polling: sub-millisecond synchronized motion control (EtherCAT, Profinet IRT, SERCOS III), self-describing semantic data (OPC UA), security for internet-connected systems (OPC UA or MQTT with Sparkplug B), or high-throughput data from hundreds of sensors."
+    - question: "Can Modbus handle coordinated motion control?"
+      answer: "No. Modbus uses a poll-response cycle with 25-50 milliseconds per device at 115.2 kbaud, so it cannot synchronize multiple servo drives within microseconds. Motion applications require deterministic protocols like EtherCAT, Profinet IRT, or SERCOS III that deliver sub-millisecond cycle times."
+    - question: "How fast is Modbus?"
+      answer: "Typical Modbus response time is under 10 milliseconds for about 90% of exchanges, occasionally stretching to 150ms depending on device processing. That is fast enough for process control and monitoring, but not for coordinated motion control."
+    - question: "How do companies modernize Modbus systems without replacing equipment?"
+      answer: "The industry uses a hybrid approach favoring encapsulation over replacement. Edge gateways speak Modbus to legacy hardware while providing secure MQTT or OPC UA feeds to the cloud, and network segmentation keeps critical Modbus networks isolated from the internet."
+    - question: "How big is the Modbus market today?"
+      answer: "The Modbus TCP market alone was $1.35 billion in 2024 and is projected to reach $2.55 billion by 2032. This is active growth, not just legacy support, as companies buy new Modbus devices to integrate with existing Modbus networks."
+tldr: "Modbus persists in 2026 not because it is technically superior but because it solves real problems with minimal friction. It is open and vendor-neutral, costs only a few dollars to implement with zero licensing, and is simple, reliable, and universally compatible across decades of installed equipment. Its weaknesses (no security, no semantic modeling, and poor scaling for motion control or high data volumes) are increasingly addressed through a hybrid approach where edge gateways bridge legacy Modbus to secure modern protocols like OPC UA and MQTT."
 cta:
   type: demo
   title: Modernize Without the Rip and Replace
