@@ -185,6 +185,7 @@ To maintain a high-energy pace and respect the team's time:
    * Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
    * Visuals: Keep to 3–5 high-impact, data-informed slides.
    * Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
+   * Absences: If a DRI cannot present on their assigned day, they must still share their slides in the #general Slack channel; the presentation will not be rescheduled for a following week to prevent meeting backlog and maintain our strict schedule.
 
 4. Open Agenda (Optional Segment)
 For the latter portion of the meeting, team members are encouraged to add items to the agenda. This is an informal space to share weekend highlights, personal news, or professional updates that keep you busy.
