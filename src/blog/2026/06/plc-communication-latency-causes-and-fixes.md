@@ -2,7 +2,7 @@
 title: "The Real Causes of PLC Communication Latency (And How to Fix Them)"
 subtitle: "Find the few settings draining your milliseconds and the timing follows."
 description: "Troubleshoot PLC communication latency by identifying common causes such as poll rates, timeout settings, connection limits, and protocol selection."
-date: 2026-06-16
+date: 2026-06-17
 authors: ["drew-gatti","sumit-shinde"]
 image:
 tags:
@@ -35,8 +35,8 @@ meta:
       - name: "Spend the controller's scan budget deliberately"
         text: "Treat every request as time borrowed from the PLC's scan. Stop polling more tags than the fast tier needs, stay under each device's connection limit so requests don't queue or get refused, and keep high-volume telemetry off the same protocol driver as time-critical control data."
         url: "spend-the-controllers-scan-budget-deliberately"
-      - name: "Match the protocol to the data instead of trusting one for everything"
-        text: "Know what each protocol is actually built for: MQTT and OPC UA for volume and structure, not sub-loop response; WebSocket and Modbus TCP can hold low-millisecond reads but make no hard promise; EtherNet/IP is the surest way to guarantee single-digit-millisecond turns. Give the time-critical path its own protocol and keep its payload small, and let bulk telemetry ride a transport built for volume."
+      - name: "Match the protocol to the data instead of ranking protocols"
+        text: "At the supervisory layer, none of the common protocols, Modbus TCP, OPC UA, MQTT, EtherNet/IP's explicit messaging, are real-time by design; the determinism in a PLC system lives a layer down, in the controller's own scan and the fieldbus underneath it, which a runtime doesn't poll. So don't rank protocols: pick one the device supports and that's well implemented on both ends, apply tiered rates, measured timeouts, and source-side sampling first, and only swap protocols if the timing still won't hold. Give the time-critical path its own lane and keep its payload small either way."
         url: "match-the-protocol-to-the-data"
       - name: "Sample and timestamp at the source"
         text: "Have the controller sample at a fixed rate as it reads the signal and stamp each reading with the time it was taken, so an uneven network delivery pace never touches the timing of the measurement itself. Solving fixed-interval sampling over the wire is solving it in the wrong place."
@@ -54,10 +54,10 @@ meta:
     - question: "How do I set a timeout for a PLC connection?"
       answer: "Measure the floor rather than guessing a round number. The floor is the time to send the request, the device's own processing time, and the time to send the response back. Set the timeout at 1.5 to 2 times that floor. Too tight and the request fails under normal load, triggering retries that add more traffic; too loose and a dead request holds up everything behind it."
     - question: "Which protocol is best for low-latency PLC communication?"
-      answer: "None of the common general-purpose protocols guarantee delivery inside a fixed time window by default. EtherNet/IP, run over an Ethernet controller that prioritizes the packet, is the surest way to guarantee single-digit-millisecond turns. MQTT, OPC UA, WebSocket, and Modbus TCP can still hold reliable low-millisecond timing if the fast path carries a small payload and doesn't share a driver with bulk telemetry, but the guarantee comes from how the data is handled, not from the protocol alone."
+      answer: "There isn't a single best one. At the supervisory layer where a runtime talks to a controller, Modbus TCP, OPC UA, MQTT, and EtherNet/IP's explicit messaging are all options, and none of them is real-time by design. The determinism that exists in a PLC system lives a layer below, in the controller's own scan and the fieldbus underneath it, EtherCAT, PROFINET IRT, and similar, which a supervisory runtime never touches directly. So the right approach isn't picking a winner, it's picking a protocol the device supports that's well implemented on both ends, then holding timing with tiered poll rates, measured timeouts, a respected scan budget, and sampling at the source, and only switching protocols if the timing still won't hold after that."
     - question: "Is Node-RED or FlowFuse fast enough for real-time PLC control?"
       answer: "Yes. Running Node-RED on Node.js adds a small, fixed overhead of a few milliseconds per pass, which doesn't drift over a long run or grow when a device gets busy. A swing of tens of milliseconds has a cause other than that fixed overhead, almost always one of the poll rate, timeout, scan budget, or protocol issues this article covers. The one real exception is putting heavy work like a slow database write in the same Node-RED instance as the fast path, since the runtime is a single process with one event loop; the fix is a separate instance, not a different runtime."
-tldr: "Most PLC latency isn't the runtime, the network, or the CPU, it's a few unexamined settings. Run a SISO test to isolate the transport from your data handling. Tier poll rates to how fast each tag actually changes instead of polling everything at one rate. Set timeouts from a measured floor times 1.5 to 2, not by feel. Spend the controller's scan budget deliberately: poll only what needs the fast tier, respect connection limits, and keep telemetry off the time-critical protocol's driver. Match the protocol to the data, since none of the common ones guarantee timing by default. Then sample and timestamp at the source and batch writes instead of streaming single ones, so the timing is built in rather than fought for over the wire."
+tldr: "Most PLC latency isn't the runtime, the network, or the CPU, it's a few unexamined settings. Run a SISO test to isolate the transport from your data handling. Tier poll rates to how fast each tag actually changes instead of polling everything at one rate. Set timeouts from a measured floor times 1.5 to 2, not by feel. Spend the controller's scan budget deliberately: poll only what needs the fast tier, respect connection limits, and keep telemetry off the time-critical protocol's driver. At the supervisory layer, no protocol is a winner; pick one the device supports and that's well implemented on both ends, then hold timing with the techniques above before considering a switch. Then sample and timestamp at the source and batch writes instead of streaming single ones, so the timing is built in rather than fought for over the wire."
 ---
 
 If you run control over a PLC link, a fast loop, an interlock, a setpoint that has to land on time, you know the feeling when the timing won't come right. You change the settings, you try again, and the response you need still isn't there. It's tempting to blame the runtime for being too slow, or to decide you need a deterministic protocol. Most of the time, neither is the cause.
@@ -109,24 +109,25 @@ Rates and timeouts are two settings, but step back and there's a simple idea und
 
 ## Match the protocol to the data, not the other way around
 
-Even with a driver to itself, a protocol only holds a steady turn time if it was built to. Most of the common ones weren't, and trusting them to is its own mistake, separate from anything resources can fix.
+Even with a driver to itself, none of the protocols a runtime reaches a PLC or device through at this level, the northbound, supervisory layer, are real-time by design. That's true of Modbus TCP, OPC UA, MQTT, and EtherNet/IP's explicit messaging alike. They were built to move data reliably between a supervisory system and a controller, not to guarantee it lands inside a fixed time window. So there's no protocol to crown the winner here, only ones better or worse suited to the job in front of you.
 
-Start with what each one is for:
+Start with what each one is built for:
 
 - **MQTT** is pub/sub transport, built to move lots of telemetry, wrong for steady sub-loop response.
 - **OPC UA** is strong for structured, modeled data and a poor fit for sub-100 ms control.
 - **WebSocket** is light and often the quickest of the general-purpose options, but it makes no promise on turn time.
 - **Modbus TCP** can hold steady low-millisecond reads in good conditions, but never as a hard promise.
+- **EtherNet/IP's explicit messaging** carries structured requests over standard Ethernet and can be tuned to hold a steady turn time, but it's making the same kind of effort the others are, not a different one.
 
-None of these four guarantees delivery inside a fixed time window. They're non-deterministic by default.
+None of these guarantees delivery inside a fixed time window by default. They're non-deterministic at this layer.
 
-A real-time protocol like EtherNet/IP, with an Ethernet controller that gives the packet priority on the wire, is the surest way to guarantee single-digit-millisecond turns. But it isn't the only way. You can hold reliable single-digit-millisecond timing over the non-deterministic protocols too, as long as the fast path carries a small payload and doesn't share a driver with the telemetry. The protocol sets the ceiling on what's easy to guarantee. How you handle the data decides what you actually reach.
+The real determinism in a PLC system lives one level down, inside the controller's own I/O scan and the fieldbus underneath it, things like EtherCAT or PROFINET IRT, where timing is enforced by the hardware and the scan cycle itself, cycle after cycle, regardless of what's happening above it. A supervisory runtime doesn't poll that layer and doesn't reach it; it talks to the controller through one of the four protocols above. Treating EtherNet/IP, or any of them, as carrying that hardware-level determinism up to the supervisory layer is where a "pick protocol X and you're guaranteed real-time" claim goes wrong.
 
-So the answer is to give the time-critical path its own route, picked by testing which protocol that controller actually holds steady. Match the protocol to the data: let bulk telemetry ride a transport built for volume, and put the fast path on whatever gives it the most reliable turn time. And keep that fast path lean: carry only the points you need to make the decision, and fetch everything else after the fact from a database or a slower read. The fewer tags on the fast path, the steadier its turn time. Most slow links come from trusting one protocol to deliver timing it was never built to deliver.
+So the answer isn't a ranking, it's a method. Pick a protocol the device actually supports and that's well implemented on both ends. Apply the techniques already in this article, tiered poll rates, measured timeouts, a respected scan budget, sampling and timestamping at the source, before touching the protocol at all. Only consider switching protocols if the timing still won't hold after that. Keep the fast path lean either way: carry only the points needed to make the decision, and fetch everything else after the fact from a database or a slower read. Most slow links come from reaching for a protocol swap before doing the work above it.
 
 ## The steadiest timing is built at the source, not fixed downstream
 
-Tiering, timeouts, and protocol splits all cut wasted time. But the steadiest timing comes from a change in where the work happens: do it in the PLC, at the source, instead of trying to fix it downstream over the network.
+Tiering, timeouts, and the work above all cut wasted time. But the steadiest timing comes from a change in where the work happens: do it in the PLC, at the source, instead of trying to fix it downstream over the network.
 
 Start with sampling. If you need a fixed gap between readings, the network can't give it to you. MQTT won't, WebSocket won't, none of them will. Everything past the point where the signal is read is transport, and transport doesn't promise a fixed gap. So build the guarantee in at the source: have the controller sample at a fixed rate as it reads the signal, and stamp each reading with the time it was taken. Once a sample carries its own timestamp, it doesn't matter that the transport delivers it at an uneven pace, because the timing of the measurement is already saved. Trying to fix this by controlling when data lands over the wire is solving it in the wrong place.
 
@@ -138,11 +139,15 @@ And make sure the receiving end is built for the rate too. Reliability isn't onl
 
 ## The runtime isn't your variable
 
-By the time poll rates, timeouts, protocol selection, and data handling are tuned, the runtime is just one fixed cost in the path, and a predictable one. FlowFuse runs Node-RED on Node.js rather than compiled embedded code, which adds a small overhead to each pass through a flow: a few milliseconds, the same every time. It doesn't drift over a long run, and it doesn't grow when a device on the line gets busy. A well-built flow holds low-millisecond timing all day.
+By the time poll rates, timeouts, protocol selection, and data handling are properly tuned, the runtime becomes just one fixed cost in the path—and a predictable one.
 
-That fixed cost is also a useful diagnostic. A constant few-millisecond add has no way to produce a swing of tens of milliseconds. So if your timing is swinging by that much, the cause is somewhere else, and it's almost always one of the four things this article has walked through: an overloaded poll rate, a timeout set by feel, a connection limit hit and ignored, or a protocol asked to guarantee timing it was never built to guarantee.
+In the case of FlowFuse, which is built on Node-RED, the runtime runs on Node.js rather than on compiled embedded code. That introduces a small amount of overhead on each pass through a flow: typically a few milliseconds, and consistently so. It doesn't drift over time, and it doesn't increase when a device on the line becomes busy. A well-designed flow can maintain low-millisecond response times all day.
 
-There's one case worth naming on its own. Node-RED runs as a single process with one event loop, so a heavy transform or a slow database write anywhere in that instance blocks everything else in it, including the fast path, every time it fires. Putting that work on a different tab doesn't change this, since tabs in the editor share the same event loop. That isn't the runtime being slow, it's two jobs sharing a process that shouldn't be shared. The fix is the one used everywhere else in this piece: give the fast path its own lane by moving the heavy work to a separate instance.
+That fixed overhead is also a useful diagnostic tool. A constant delay of a few milliseconds cannot cause timing variations of tens of milliseconds. So if you're seeing swings that large, the root cause is somewhere else. In most cases, it comes down to one of the four issues covered in this article: an overloaded poll rate, a timeout chosen by guesswork, an ignored connection limit, or a protocol being asked to deliver timing guarantees it was never designed to provide.
+
+There is one exception worth calling out. Node-RED runs as a single process with a shared event loop, so a CPU-intensive transformation or a slow database write anywhere within that instance can temporarily block everything else—including the fast path—whenever it executes. Moving that work to a different tab in the editor doesn't help, because all tabs within the same instance share the same event loop.
+
+This isn't a case of the runtime being slow; it's a case of unrelated workloads competing for the same process. The solution is the same principle used throughout this article: give the fast path its own lane by moving heavy workloads into a separate instance.
 
 ## Final thought
 
