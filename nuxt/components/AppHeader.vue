@@ -71,7 +71,7 @@ onMounted(() => {
 
 <template>
   <header id="ff-header" class="ff-header">
-    <nav class="relative w-full flex items-center justify-between mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
+    <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
 
       <!-- Wordmark: visible on mobile + desktop, hidden on tablet -->
       <a class="flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row" href="/" aria-label="FlowFuse Home" style="font-family:'Baloo 2', sans-serif">
