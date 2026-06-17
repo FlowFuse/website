@@ -31,7 +31,7 @@ While individual functions own specific processes, the Commercial Organization o
 
 The Commercial Organization is composed of the following functions:
 
-- **Account Executives**
+- **[Account Executives](/handbook/peopleops/job-descriptions/account-executive/)**
   Owns opportunity qualification, deal progression, and commercial close.
 
 - **Solution Engineering**
