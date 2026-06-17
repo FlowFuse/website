@@ -22,7 +22,7 @@ sections:
       description: "Build applications visually by wiring nodes together, with no scripting required for most use cases. Drop to JavaScript only when you need custom logic. FlowFuse Expert, our industrial-tuned AI copilot, takes it further: describe what you want in plain language and it assembles flows, wires nodes, and generates code in your workspace. No Java IDE, no proprietary Designer, no Jython."
     - svgPath: "components/icons/puzzle-piece.svg"
       title: "Open integration ecosystem"
-      description: "Connect to any device, API, or cloud service using thousands of community-contributed nodes, with MQTT, OPC-UA, Modbus, REST, and SQL available at no extra licensing cost."
+      description: "Connect to any device, API, or cloud service using thousands of community-contributed nodes, with MQTT, OPC-UA, Modbus, HTTP, and SQL available at no extra licensing cost."
 table:
     - feature: "Programming Model & Scripting"
       flowFuse: "<span class='font-medium'>Low-code, drag-and-drop Node-RED.</span> Build applications visually by connecting nodes, with JavaScript available for custom logic when you need it. Flows are human-readable, portable JSON that you can version-control, audit, and run anywhere."
@@ -31,7 +31,7 @@ table:
       flowFuse: "<span class='font-medium'>Fully managed SaaS.</span> Nothing to provision or maintain. The same applications run at the edge, on-premises, or in the cloud, with one consistent developer experience across all of them."
       ignition: "<span class='font-medium'>On-premises first.</span> Cloud deployments run on self-managed VMs or marketplace images, and there is no fully hosted Ignition SaaS. Ignition Cloud Edition ships without device drivers and cannot connect to PLCs directly; an on-prem Gateway or MQTT bridge handles device connectivity."
     - feature: "MQTT & Protocol Costs"
-      flowFuse: "<span class='font-medium'>Included at no extra cost.</span> MQTT, OPC-UA, Modbus, REST, and thousands of community integrations come with the platform, with no per-protocol add-ons."
+      flowFuse: "<span class='font-medium'>Included at no extra cost.</span> MQTT, OPC-UA, Modbus, HTTP, and thousands of community integrations come with the platform, with no per-protocol add-ons."
       ignition: "<span class='font-medium'>Core OPC-UA drivers are included; MQTT is a paid add-on.</span> Bidirectional MQTT/Sparkplug runs on the Cirrus Link MQTT Engine and MQTT Transmission modules, sold within Inductive Automation's Enterprise Integration Solution Suite rather than the base platform."
     - feature: "Developer Workflow & Version Control"
       flowFuse: "<span class='font-medium'>DevOps-native.</span> Git integration, team workspaces, and deployment pipelines are built in. Flows ship like modern software, with no proprietary backup files to pass around."
@@ -65,9 +65,9 @@ cta:
                 <p class="mb-10">
                     {{ meta.description }}
                 </p>
-                <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">
+                <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:items-center md:justify-start md:m-0">
                     {% macro migrationExpertButton(desktop=true) %}
-                    <a class="ff-btn ff-btn--primary text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
+                    <a class="ff-btn ff-btn--primary text-base inline-flex items-center justify-center uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
                         href="{{ hero.buttonLink }}"
                         onclick="capture('talk-to-migration-expert', {'reference': '{{ hero.buttonReference }}'})">
                         {{ hero.buttonText }}
@@ -75,7 +75,7 @@ cta:
                     {% endmacro %}
                     {{ migrationExpertButton() }}
                     {% macro tryItOutButton(desktop=true) %}
-                    <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}"
+                    <a class="ff-btn uppercase text-base {% if desktop %}inline-flex items-center{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}"
                     href="{% include "sign-up-url.njk" %}"
                     onclick="capture('try-it-out', {'reference': '{{ hero.buttonReference }}'})">
                         <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
