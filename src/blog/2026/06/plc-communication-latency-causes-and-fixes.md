@@ -1,5 +1,5 @@
 ---
-title: "The Real Causes of PLC Communication Latency (And How to Fix Them)"
+title: "Fixing PLC Communication Latency: Where the Milliseconds Really Go"
 subtitle: "Find the few settings draining your milliseconds and the timing follows."
 description: "Troubleshoot PLC communication latency by identifying common causes such as poll rates, timeout settings, connection limits, and protocol selection."
 date: 2026-06-17
@@ -60,13 +60,13 @@ meta:
 tldr: "Most PLC latency isn't the runtime, the network, or the CPU, it's a few unexamined settings. Run a SISO test to isolate the transport from your data handling. Tier poll rates to how fast each tag actually changes instead of polling everything at one rate. Set timeouts from a measured floor times 1.5 to 2, not by feel. Spend the controller's scan budget deliberately: poll only what needs the fast tier, respect connection limits, and keep telemetry off the time-critical protocol's driver. At the supervisory layer, no protocol is a winner; pick one the device supports and that's well implemented on both ends, then hold timing with the techniques above before considering a switch. Then sample and timestamp at the source and batch writes instead of streaming single ones, so the timing is built in rather than fought for over the wire."
 ---
 
-If you run control over a PLC link, a fast loop, an interlock, a setpoint that has to land on time, you know the feeling when the timing won't come right. You change the settings, you try again, and the response you need still isn't there. It's tempting to blame the runtime for being too slow, or to decide you need a deterministic protocol. Most of the time, neither is the cause.
+If you run control over a PLC link, a fast loop, an interlock, a setpoint that has to land on time, the fix usually isn't a faster runtime or a different protocol. It's a handful of settings made once at setup and never revisited, each one quietly costing milliseconds the loop can't spare.
 
 <!--more-->
 
-Latency on a PLC link comes from how the data is handled, not the runtime, the network, or the PLC's CPU. It comes from a few choices made when the system was set up and never looked at again, each one using time the loop can't spare.
+Latency on a PLC link comes from how the data is handled, not the runtime, the network, or the PLC's CPU. Fix those settings, in order, and the timing comes back on its own.
 
-This post follows the time. Where a PLC link loses its milliseconds, and which mistake puts it there.
+This post follows the time: where a PLC link loses its milliseconds, and how to get each one back.
 
 ## First, check if it's even the transport
 
