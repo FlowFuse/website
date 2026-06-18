@@ -11,9 +11,9 @@ hero:
   secondaryCta: "CONTACT US"
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/aviation-aerospace.jpg"
-  imageAlt: "Aerospace manufacturing floor with technicians working on aircraft components and digital traceability overlays."
+  imageAlt: "Technicians assembling aircraft structures across multiple aerospace production stations in a large manufacturing facility"
   subCta: ""
-problemImage: "images/industries/aerospace-components-problem.svg"
+problemImage: "images/industries/aviation-aerospace-problem.svg"
 problems:
     - "Critical process data — torque values, weld energy, NDT results — is collected at each operation but never automatically linked to the serialized part or build record, leaving teams to reconstruct it manually for every audit or in-service event."
     - "Non-conformances are reported verbally or on paper, disposition decisions are made informally, and containment scope is determined without full part-serial traceability context."
@@ -27,7 +27,7 @@ solution:
       text: "Low-code automation built on Node-RED so engineers can <strong>ship and iterate flows without vendor lock-in or specialist IT</strong>."
     - svgPath: "components/icons/rectangle-stack.svg"
       text: "Dev/test/prod environments to <strong>safely roll out standardized workflows and enforce change control across programs and sites</strong>."
-solutionImage: "images/industries/aerospace-components-solution.svg"
+solutionImage: "images/industries/aviation-aerospace-solution.svg"
 outcomes:
   title: "Key Outcomes"
   subtitle: "for Aerospace Manufacturers"
@@ -47,14 +47,14 @@ outcomes:
 useCases:
   title: "Use Cases"
   items:
-    - image: "/images/industries/aerospace-components-use-case-1.jpg"
-      imageAlt: "Technician using a torque tool on an aircraft component with real-time data capture interface."
+    - image: "/images/industries/aviation-aerospace-use-case-1.jpg"
+      imageAlt: "Technician using an electronic torque tool to assemble an aircraft structure on the production line"
       description: "<strong>Process data capture and real-time build record linkage</strong> — torque tool, weld controller, and oven data captured via OPC-UA or MQTT and linked automatically to part serial and work order, eliminating manual transcription from safety-critical records."
-    - image: "/images/industries/aerospace-components-use-case-2.jpg"
-      imageAlt: "Quality engineer reviewing a non-conformance report on a tablet on the manufacturing floor."
+    - image: "/images/industries/aviation-aerospace-use-case-2.jpg"
+      imageAlt: "Quality engineer inspecting an aircraft component in a quality hold area before disposition"
       description: "<strong>NCR and containment workflows</strong> — quality events trigger automated routing to quality engineers, initiate hold with full part-serial context, and enforce disposition approval gates before release or scrap."
-    - image: "/images/industries/aerospace-components-use-case-3.jpg"
-      imageAlt: "Digital work order release screen showing engineering change notification propagation across shop floor stations."
+    - image: "/images/industries/aviation-aerospace-use-case-3.jpg"
+      imageAlt: "Assembly technician reviewing updated digital work instructions at an aerospace production station"
       description: "<strong>Work order release and engineering change management</strong> — ECNs propagate automatically from ERP/MRO to all affected shop floor stations, with mandatory acknowledgment before work continues."
 socialProofText: "Used by aerospace and defence manufacturing teams to standardize operations and maintain AS9100 traceability on top of Node-RED"
 cta:
