@@ -1,7 +1,5 @@
 ---
 title: "Engineering"
-navigation:
-  group: "Engineering & Design Practices"
 ---
 
 # Engineering
@@ -23,13 +21,13 @@ This includes, but is not limited to:
 The product function defines what we build and why.
 
 - [Product Overview](./product/) - how product management works
-- [Strategy](./product/strategy.md) - where the product is headed
 - [Feedback](./product/feedback.md) - how we collect and process feedback
 - [Pricing Principles](./product/pricing.md) - how we decide feature tiers
 
 ## General
 
 - [Security Policy](./security.md)
+- [Feature Flags](./feature-flags.md) - how to create, enable, and use PostHog feature flags in code
 - [Packaging](./packaging.md) - how we manage repos and npm packaging
 - [Contributing](./contributing) - tips & details on how to set up a local development environment.
 - [Dependency Updates](./dependency-updates.md) - how we triage Dependabot PRs each week

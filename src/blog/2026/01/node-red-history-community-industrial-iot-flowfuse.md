@@ -2,12 +2,40 @@
 title: "The Node-RED Story: How Visual Programming Escaped the Lab and Conquered Industry"
 subtitle: "From a single weekend hack to millions of deployments across homes and industry."
 description: "Read how Node-RED evolved from Nick O'Leary's weekend IBM project into a global phenomenon—powering millions of home assistance setups, sparking a Raspberry Pi revolution, building a 4,300+ node community, and conquering industrial IoT with FlowFuse's enterprise platform."
+lastUpdated: 2026-06-17
 date: 2026-01-05
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/node-red-story.png
 keywords:
 tags:
  - node-red
+meta:
+  faq:
+    - question: "Who created Node-RED and when?"
+      answer: "Node-RED was created by Nick O'Leary while working in IBM's Emerging Technology Group. He built the first rough prototype over a single weekend on a wet January day in 2013, and his colleague Dave Conway-Jones quickly joined in to help refine it."
+    - question: "Why is it called Node-RED?"
+      answer: "The name is a light-hearted play on words. 'Node' reflected the Node.js runtime and the flow-based model, while 'RED' was a cheeky nod to 'Code Red' as a vibrant alternative to IBM's 'Big Blue.' Some later suggested it stood for 'Rapid Event Developer,' but Nick and Dave never formalized it."
+    - question: "When was Node-RED first released publicly?"
+      answer: "The first Node-RED code was uploaded to GitHub on September 5, 2013, as a 'soft launch' to see whether the world needed a visual tool for wiring the Internet of Things."
+    - question: "What was the significance of ThingMonk 2013 for Node-RED?"
+      answer: "ThingMonk on December 3, 2013, was the first major professional and industrial stage for Node-RED. In his talk 'Wiring the Internet of Things,' Nick showed the IoT industry that visual programming was a professional-grade solution for complex integration problems, not just a beginner's shortcut."
+    - question: "How did the Raspberry Pi affect Node-RED's growth?"
+      answer: "In November 2015, Node-RED was integrated into the Raspbian Jessie image, shipping by default alongside Scratch and Python. This meant millions of $35 computers came with Node-RED pre-installed, dropping the barrier to entry to zero and causing the community to explode."
+    - question: "Why did IBM move Node-RED to the OpenJS Foundation?"
+      answer: "In 2016, IBM moved Node-RED into the newly formed JS Foundation (which merged in 2019 to become the OpenJS Foundation) to ensure the tool remained open and vendor-neutral. This gave enterprises the governance, IP protections, and community oversight they require, enabling players like Hitachi and Siemens to build on it without fear of vendor lock-in."
+    - question: "How large is the Node-RED node library?"
+      answer: "By 2023, the Node-RED library contained over 4,300 nodes, built by a global community covering popular platforms, industrial protocols, cloud services, databases, messaging systems, and AI services."
+    - question: "How widely is Node-RED used in manufacturing?"
+      answer: "According to the Node-RED community surveys, manufacturing usage grew from 31.5% in 2019 to 40% by 2023, making it the second largest industry. Just over 40% of users now use Node-RED professionally, while home automation usage held steady at around 70%."
+    - question: "What is FlowFuse and who founded it?"
+      answer: "FlowFuse (formerly FlowForge) was founded by Nick O'Leary in 2021 to scale Node-RED for enterprises, addressing how to deploy it across tens of thousands of factory instances, secure it, and enable team collaboration. In January 2022, Zeger-Jan van de Weg (ZJ), an early GitLab employee, joined as CEO while Nick continues as CTO."
+    - question: "How much funding has FlowFuse raised?"
+      answer: "FlowFuse has raised $14.5 million to build the infrastructure enterprises demand, using it to assemble a team spanning engineering, product, customer success, marketing, sales, and community."
+    - question: "What enterprise capabilities does FlowFuse add to Node-RED?"
+      answer: "Between 2021 and 2025, FlowFuse added version control, team permissions, DevOps pipelines, fleet management across thousands of remote instances, enterprise security (SSO, RBAC, SOC 2 compliance), a built-in MQTT broker, FlowFuse Tables, MCP nodes, and FlowFuse Expert — an AI that converts plain-English industrial problems into working Node-RED flows."
+    - question: "How has FlowFuse contributed to the Node-RED community?"
+      answer: "FlowFuse rebuilt Node-RED Dashboard 2.0 after the original was deprecated, runs the Certified Nodes program for security and quality testing, launched the Node-RED Academy offering certification, funded modernizing the Node-RED editor UI, and hosted the Node-RED Conference with over 1,000 live attendees."
+tldr: "Node-RED began as Nick O'Leary's weekend prototype at IBM in January 2013, went public on GitHub that September, and exploded in popularity after being bundled with the Raspberry Pi in 2015. Moving to the OpenJS Foundation in 2016 gave it the vendor-neutrality enterprises needed, and a community-built library of 4,300+ nodes pushed it from homes into industry. In 2021 Nick founded FlowFuse to scale Node-RED for enterprises, raising $14.5M and adding fleet management, security, DevOps pipelines, and AI-powered flow generation for Fortune 500 manufacturers."
 cta:
   type: sign-up
   title: Ready to Take Node-RED to Production?

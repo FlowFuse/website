@@ -74,7 +74,7 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 
 #### Project Automation
 
-All code repositories must have the Project Automation workflow added. This is done
+All repositories must have the Project Automation workflow added, including non-code repositories where issues are created. This is done
 by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/project-automation.yml).
 This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/FlowFuse/projects/3) where it can be triaged and prioritised.
 

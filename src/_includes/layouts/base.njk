@@ -169,7 +169,7 @@ eleventyComputed:
             {% include "../components/events-banner.njk" %}
             <!-- Navigation Header -->
             <header id="ff-header" class="ff-header">
-                <nav class="relative w-full flex items-center justify-between mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
+                <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
                     <a class="flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-wordmark.njk" %}
                     </a>
@@ -211,9 +211,11 @@ eleventyComputed:
                         <ul class="narrow sm:grid sm:grid-flow-col sm:grid-rows-7 sm:pr-1 align-left sm:auto-rows-auto items-center">
                             {% navoption "By Industry", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2">
+                                <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
                                     {% navoption "Automotive", "/industries/automotive/", 1, "car" %}{% endnavoption %}
                                     {% navoption "Renewables", "/industries/renewables/", 1, "wind-turbine" %}{% endnavoption %}
+                                    {% navoption "Semiconductors", "/industries/semiconductors/", 1, "chip" %}{% endnavoption %}
+                                    {% navoption "Aerospace Components", "/industries/aerospace-components/", 1, "cog-6-tooth" %}{% endnavoption %}
                                 </ul>
                             </li>
                             {% navoption "By Use Case", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1" %}{% endnavoption %}

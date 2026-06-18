@@ -97,7 +97,7 @@ The `npm run dev` (and `npm start`) commands will retrieve the documentation fro
 
 ## How to add blog posts
 
-See the [Blog section of the Marketing Handbook](https://flowfuse.com/handbook/marketing/blog/) for instructions on writing and publishing blog posts.
+See the [Blog section of the Marketing Handbook](https://flowfuse.com/handbook/marketing/content-strategy/blog/) for instructions on writing and publishing blog posts.
 
 ## Updating the FlowFuse Documentation
 
