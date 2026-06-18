@@ -51,33 +51,23 @@ cta:
 tldr: "Camera feeds usually sit idle in an NVR. The new RTSP Video Feed node turns an RTSP stream into still frames you can route through your flows, display on a dashboard, or pass to local AI nodes, all at the edge with nothing leaving the plant."
 ---
 
-On any plant floor you'll find cameras everywhere. Now ask where that video goes. Almost always into an NVR, kept for security, looked at only after something's gone wrong.
+RTSP is the protocol used by most IP cameras to deliver video streams over a network. While these streams are easy to view in an NVR or camera application, they're much harder to integrate into dashboards, automation, or AI workflows.
 
 <!--more-->
 
-That's odd, because everything else on the floor already does real work. PLC tags, sensor readings, machine counts all flow into dashboards and trigger alerts every second of the day. Video is the exception. The camera sees more than any sensor in the building, yet it's the one source still sitting idle.
+The **RTSP Video Feed** node, introduced in FlowFuse [2.31](/blog/2026/06/flowfuse-release-2-31/), solves that problem by turning a live RTSP stream into individual image frames that can be processed directly in your flows. Once a frame is available as a message, you can display it on a dashboard, pass it to AI models, trigger actions, or store it locally.
 
-The reason is the format. A PLC tag is a number you can act on instantly. A camera gives you RTSP, a continuous video stream, and a raw stream is hard to plug into anything. So while the rest of the floor got connected, the cameras stayed in their silo.
-
-The new **RTSP Video Feed** node, a FlowFuse Certified Node added in [2.31](/blog/2026/06/flowfuse-release-2-31/), closes that gap. It turns the stream into still frames you can work with, routed and analyzed right at the edge. In this post we'll get a camera's frames flowing into your applications, the same way every other signal on the floor already does.
+In this tutorial, you'll connect to an RTSP camera and display the live feed on a dashboard. You'll also see how the captured frames can be passed to local AI models or recorded straight to disk.
 
 ## Prerequisites
 
-Before you start, make sure the FlowFuse Device Agent is running on the edge device where the camera is reachable, with a FlowFuse instance deployed to it. That instance is where you'll install the node and build the flow. If you haven't set this up yet, follow the [Device Agent quickstart](/docs/device-agent/quickstart/#setup-%26-installation) first, then come back.
-
-## Why this has to happen at the edge
-
-The obvious question is why not just send the video to the cloud and process it there. On a plant floor, that falls apart fast.
-
-A single camera streaming continuously can push tens of gigabytes a day. Multiply that by every camera in the building and you're paying to haul raw video off-site around the clock, most of it showing nothing worth keeping. Plant networks are usually segmented too, with the camera VLAN walled off from anything facing the internet, so that footage often can't leave the site even if you wanted it to. And in plenty of cases it legally shouldn't, with people and processes in frame that fall under privacy or compliance rules.
-
-The fix is to stop moving video and start moving decisions. Pull a frame where the camera lives, act on it there, and send out only what matters: a count, a status, an alert. That's what processing at the edge means here. The **RTSP Video Feed** node runs right next to the line, turning a stream nobody watches into frames your flows can use the moment they're captured.
+Before you begin, ensure the FlowFuse Device Agent is installed and running on an edge device that can access the camera. This device will be managed through FlowFuse and serves as the environment where you'll install the required nodes and build the flow. If you haven't configured a device yet, complete the [Device Agent Quickstart](/docs/device-agent/quickstart/#setup-%26-installation) before continuing.
 
 ## How the node works
 
-The **RTSP Video Feed** node does one job well: it connects to a camera and pulls still frames out of the stream as PNG images. It drives `ffmpeg` under the hood, which does the heavy decoding off the main event loop, so even a high frame-rate camera won't bog down your flows. In most setups `ffmpeg` installs automatically, so there's nothing extra to set up.
+The **RTSP Video Feed** node does one job well: it connects to a camera and pulls still frames out of the stream as PNG images. It drives `ffmpeg` under the hood, which does the heavy decoding off the main event loop, so even a high frame-rate camera won't bog down your flows.
 
-You give it an RTSP URL, credentials if the camera needs them, and a capture rate. By default each frame comes out as a message with the PNG in `msg.payload`, ready to wire into anything that takes an image. Turn that output off instead and it writes a numbered sequence of PNGs straight to disk, handy when you just want plain on-site recording. We'll use the default mode here, since we want the frames in the flow.
+You give it an RTSP URL, credentials if the camera needs them, and a capture rate. It can then run in one of two modes: emit each frame as a message with the PNG in `msg.payload`, ready to wire into anything that takes an image, or write a numbered sequence of PNGs straight to disk for plain on-site recording. We'll use the message mode for most of this tutorial, since we want the frames in the flow, and cover disk recording at the end.
 
 ## Build it: a live line view
 
@@ -89,7 +79,7 @@ Let's turn a camera into something an operator can actually watch, without ever 
 
 1. In the FlowFuse editor, open the Palette Manager from the top-right menu.
 2. Switch to the Install tab and find the FlowFuse Pro Certified Nodes V2.
-3. Locate the `@flowfuse-certified-nodes/nr-rtsp` and click install. ffmpeg is pulled in automatically, so there's nothing else to set up.
+3. Locate the `@flowfuse-certified-nodes/nr-rtsp` and click install. `ffmpeg` is pulled in automatically, so there's nothing else to set up.
 
 ![FlowFuse Palette Manager open on the Install tab, with the FlowFuse Pro Certified Nodes V2 collection selected and the RTSP node's Install button highlighted](./images/flowfuse-certified-2-rtsp.jpeg)
 *Installing the RTSP Video Feed node from the FlowFuse Certified Nodes catalogue in the Palette Manager.*
@@ -149,8 +139,8 @@ FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we t
 
 That's a live line view anyone can pull up in a browser, with no NVR login and no separate video client.
 
-![FlowFuse Dashboard 2.0 page showing a live frame from the  mill camera, with the grinding mill, feed conveyor and flotation line visible](./images/dashboard-view.gif)
-*FlowFuse Dashboard 2.0 page showing a live frame from the  mill camera, with the grinding mill, feed conveyor and flotation line visible*
+![FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible](./images/dashboard-view.gif)
+*FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible*
 
 > **Watch the message size.** FlowFuse Dashboard sends data over a socket connection capped at about 1 MB per message by default, and a full-resolution frame can exceed that. When it does, the message is silently dropped and the image just doesn't appear. If that happens, lower the camera resolution, keep the FPS low, or raise [`maxHttpBufferSize`](https://dashboard.flowfuse.com/user/settings.html#maxhttpbuffersize) in your instance settings.
 
