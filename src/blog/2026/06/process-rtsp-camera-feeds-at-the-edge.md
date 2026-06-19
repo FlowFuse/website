@@ -2,7 +2,7 @@
 title: "Processing RTSP Camera Feeds at the Edge"
 subtitle: "Turn idle camera streams into live views and AI-driven decisions, all on the plant floor"
 description: "Learn how to use the FlowFuse RTSP Video Feed node to pull frames from a camera stream, display them on a dashboard, and feed them to local AI models, without sending video off-site."
-date: 2026-06-18
+date: 2026-06-19
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/rtsp-feeds-at-edge.png
 tags:
@@ -19,19 +19,19 @@ meta:
       - "FlowFuse Dashboard 2.0"
     steps:
       - name: "Install the RTSP Video Feed node"
-        text: "In the FlowFuse editor, open the Palette Manager, switch to the Install tab, and find the FlowFuse Pro Certified Nodes V2 collection. Locate @flowfuse-certified-nodes/nr-rtsp and click install. ffmpeg is pulled in automatically, so there is nothing else to set up."
+        text: "In the FlowFuse editor, open the Palette Manager, switch to the Install tab, and find the FlowFuse Pro Certified Nodes V2 collection. Locate @flowfuse-certified-nodes/nr-rtsp and click install. ffmpeg is pulled in automatically, so there is nothing else to set up. After enabling the certified nodes package, restart any existing devices or hosted instances so they pick up the new catalogue."
         url: "installing-the-node"
       - name: "Configure the node to capture frames"
-        text: "Drag the RTSP Feed node onto the canvas and open its settings. Enter your camera's RTSP URL, add a username and password if the camera needs them, set the FPS to match your use case, and leave Output image as msg.payload enabled so each frame is emitted as a message."
+        text: "Drag the RTSP Feed node onto the canvas and open its settings. Enter your camera's RTSP URL, add a username and password if the camera needs them, set the FPS to match your use case, and leave Output image as msg.payload enabled so each frame is emitted as a message. In this mode a high frame rate increases the message load on your flow, so keep the FPS no higher than your use case needs."
         url: "configuring-the-node"
       - name: "Put the live feed on a dashboard"
-        text: "Add a base64 node to convert each PNG buffer to a string, then a change node to prepend the data URI prefix the browser needs, then a ui-template node with a single image element bound to the payload. Deploy and open the dashboard to watch the line refresh with every new frame."
+        text: "Install the base64 node (node-red-node-base64) from the Palette Manager, then add it to convert each PNG buffer to a string, then a change node to prepend the data URI prefix the browser needs, then a ui-template node with a single image element bound to the payload. Deploy and open the dashboard to watch the line refresh with every new frame."
         url: "putting-the-feed-on-a-dashboard"
       - name: "Turn frames into decisions with local AI"
         text: "Wire the camera's PNG output straight into the FlowFuse AI Object Detection node, which runs vision models locally with nothing sent to an outside service. Each detection returns structured data, a label, a confidence score, and a position, which you handle like any other signal in FlowFuse."
         url: "from-a-view-to-a-decision"
       - name: "Record frames to disk instead"
-        text: "Turn off Output image as msg.payload and the node stops emitting messages. Instead ffmpeg writes a continuous numbered sequence of PNGs straight to the directory set in the File path field, handy for on-site recording where the footage shouldn't leave the building."
+        text: "Turn off Output image as msg.payload and the node stops emitting messages. Instead ffmpeg writes a continuous numbered sequence of PNGs straight to the directory set in the File path field, handy for on-site recording where the footage shouldn't leave the building. The node does not delete these frames, so at a high frame rate they will fill the drive over time."
         url: "recording-frames-to-disk"
   faq:
   - question: "What is an RTSP camera feed?"
@@ -84,6 +84,8 @@ Let's turn a camera into something an operator can actually watch, without ever 
 ![FlowFuse Palette Manager open on the Install tab, with the FlowFuse Pro Certified Nodes V2 collection selected and the RTSP node's Install button highlighted](./images/flowfuse-certified-2-rtsp.jpeg)
 *Installing the RTSP Video Feed node from the FlowFuse Certified Nodes catalogue in the Palette Manager.*
 
+> Enabling the certified nodes package updates the catalogue, but existing devices and hosted instances won't see the new nodes until they restart. Restart any device or hosted instance you plan to install the node on so it picks up the updated catalogue.
+
 Once it's installed, you'll find the **RTSP Feed** node in the left palette sidebar, ready to drag onto your canvas.
 
 ### Configuring the node
@@ -95,6 +97,8 @@ Once it's installed, you'll find the **RTSP Feed** node in the left palette side
 5. Leave Output image as `msg.payload` enabled so each frame is emitted as a message.
 
 > You'll also see a File path field. In this mode the node keeps a single working image there, falling back to the OS temp directory like `/tmp` if you leave it blank, so you can ignore it for now. It only matters in disk-writing mode, covered in [Recording frames to disk](#recording-frames-to-disk).
+
+> **Frame rate drives message load.** While Output image as `msg.payload` is enabled, every captured frame becomes a message in your flow, so a high FPS means more, larger messages to move and process. Set the FPS no higher than your use case needs. If you switch the node to disk-writing mode instead (covered in [Recording frames to disk](#recording-frames-to-disk)), note that the frames are written to the File path and are never deleted, so a high frame rate will steadily fill the drive. This is intentional behaviour for the recording use case, so point it at storage you manage and keep an eye on free space.
 
 ![The RTSP Feed node settings panel showing the RTSP URL, optional Username and Password credential fields, the FPS selector set to 10, and the Output image as msg.payload option enabled](./images/rtsp-config.png)
 _The RTSP Feed node settings panel showing the RTSP URL, optional Username and Password credential fields, the FPS selector set to 10, and the Output image as msg.payload option enabled_
@@ -112,7 +116,7 @@ A buffer in the debug sidebar confirms the feed works, but it's no use to an ope
 
 This assumes you have FlowFuse Dashboard 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
 
-FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we turn each PNG into a base64 data URI and render it with a standard image tag.
+FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we turn each PNG into a base64 data URI and render it with a standard image tag. The conversion is handled by the **base64** node, which you'll need to install: add `node-red-node-base64` from the Palette Manager the same way you installed the RTSP node.
 
 1. Add a **base64** node after the **RTSP Feed** node. With its default action, it converts the incoming PNG buffer into a base64 string.
 
@@ -154,7 +158,9 @@ That's what the [**FlowFuse AI** nodes](https://flowfuse.com/node-red/flowfuse/a
 
 One last mode worth knowing. Sometimes you don't need frames in the flow at all, just a local record of what the camera saw. Turn off **Output image as `msg.payload`** and the node stops emitting messages. Instead `ffmpeg` writes a continuous numbered sequence of PNGs (`rtsp-<node-id>-<counter>.png`) straight to disk.
 
-Where they land is set by the **File path** field. Point it at a directory you control and the frames are written there. Leave it empty and the node falls back to the OS temp directory, typically `/tmp`, which is fine for a quick test but gets cleared on reboot, so don't use it for anything you need to keep. This mode is handy for on-site recording where the footage shouldn't leave the building.
+Where they land is set by the **File path** field. Point it at a directory you control and the frames are written there. Leave it empty and the node falls back to the OS temp directory, typically `/tmp`. On many modern Linux distributions `/tmp` is a RAM-backed disk, though not on all, so frames there consume memory rather than disk and are cleared on reboot. Either way it's fine for a quick test but not for anything you need to keep.
+
+The node writes every frame and never deletes any of them, so the directory grows without bound. At a high frame rate it will fill the target volume, whether that's disk or RAM-backed `/tmp`. This is intentional: the node records exactly what the camera saw, and pruning is left to you. Point it at storage you manage, keep the FPS no higher than the use case needs, and put your own retention or cleanup in place if the node runs for any length of time. This mode is handy for on-site recording where the footage shouldn't leave the building.
 
 ## Wrapping up
 
