@@ -55,7 +55,7 @@ RTSP is the protocol used by most IP cameras to deliver video streams over a net
 
 <!--more-->
 
-The **RTSP Video Feed** node, introduced in FlowFuse [2.31](/blog/2026/06/flowfuse-release-2-31/), solves that problem by turning a live RTSP stream into individual image frames that can be processed directly in your flows. Once a frame is available as a message, you can display it on a dashboard, pass it to AI models, trigger actions, or store it locally.
+The **RTSP Video Feed** certified node published by FlowFuse solves that problem by converting a live RTSP stream into individual image frames that can be processed directly within your flows. Once a frame is available as a message, you can display it on a dashboard, send it to AI models for analysis, trigger actions based on its content, or store it locally.
 
 In this tutorial, you'll connect to an RTSP camera and display the live feed on a dashboard. You'll also see how the captured frames can be passed to local AI models or recorded straight to disk.
 
@@ -69,11 +69,12 @@ The **RTSP Video Feed** node does one job well: it connects to a camera and pull
 
 You give it an RTSP URL, credentials if the camera needs them, and a capture rate. It can then run in one of two modes: emit each frame as a message with the PNG in `msg.payload`, ready to wire into anything that takes an image, or write a numbered sequence of PNGs straight to disk for plain on-site recording. We'll use the message mode for most of this tutorial, since we want the frames in the flow, and cover disk recording at the end.
 
-## Build it: a live line view
+## Build it: A Live Line View
 
-Let's turn a camera into something an operator can actually watch, without ever opening the NVR.
+Let's turn a camera into something an operator can actually monitor—without ever opening the NVR.
 
-> Note: Certified Nodes are part of the FlowFuse Enterprise tier. If you're on Starter or Pro, you'll need to upgrade to Enterprise to install them. [Talk to us](/contact-us/) if you'd like access or want to see it in action first.
+> **Note:** The RTSP Video Feed node is a Certified Node available through the FlowFuse Hub Certified Nodes. [Contact us](/contact-us/) if you'd like access or want to learn more.
+
 
 ### Installing the node
 
@@ -83,7 +84,7 @@ Let's turn a camera into something an operator can actually watch, without ever 
 2. Switch to the Install tab and find the "FlowFuse Hub Certified Nodes".
 3. Locate the `@flowfuse-certified-nodes/rtsp` and click install. `ffmpeg` is pulled in automatically, so there's nothing else to set up.
 
-![FlowFuse Palette Manager open on the Install tab, with the FlowFuse Pro Certified Nodes V2 collection selected and the RTSP node's Install button highlighted](./images/flowfuse-certified-2-rtsp.jpeg)
+![FlowFuse Palette Manager open on the Install tab, with the FlowFuse Pro Certified Nodes V2 collection selected and the RTSP node's Install button highlighted](./images/flowfuse-hub-certified.png)
 *Installing the RTSP Video Feed node from the FlowFuse Certified Nodes catalogue in the Palette Manager.*
 
 Once it's installed, you'll find the **RTSP Feed** node in the left palette sidebar, ready to drag onto your canvas.
@@ -99,7 +100,7 @@ Once it's installed, you'll find the **RTSP Feed** node in the left palette side
 
 5. Leave Output image as `msg.payload` enabled so each frame is emitted as a message.
 
-> You'll also see a File path field. In this mode the node keeps a single working image there, falling back to the OS temp directory like `/tmp` if you leave it blank, so you can ignore it for now. It only matters in disk-writing mode, covered in [Recording frames to disk](#recording-frames-to-disk), where the frames are written to that path and never deleted.
+> You'll also see a **File path** field. In this mode, the node keeps a single working image in that location, or falls back to the operating system's temporary directory if the field is left blank. You can safely ignore it for now, as it only becomes important in disk-writing mode, covered in [Recording frames to disk](#recording-frames-to-disk). In that mode, frames are written to the specified path and are not automatically deleted.
 
 ![The RTSP Feed node settings panel showing the RTSP URL, optional Username and Password credential fields, the FPS selector set to 10, and the Output image as msg.payload option enabled](./images/rtsp-config.png)
 _The RTSP Feed node settings panel showing the RTSP URL, optional Username and Password credential fields, the FPS selector set to 10, and the Output image as msg.payload option enabled_
@@ -117,11 +118,11 @@ A buffer in the debug sidebar confirms the feed works, but it's no use to an ope
 
 This assumes you have FlowFuse Dashboard 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
 
-FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we turn each PNG into a base64 data URI and render it with a standard image tag. The conversion is handled by the **base64** node, which you'll need to install: add `node-red-node-base64` from the Palette Manager the same way you installed the RTSP node.
+FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we turn each PNG into a base64 data URI and render it with a standard image tag. The conversion is handled by the **base64** node, which you'll need to install: add `node-red-node-base64` from the Palette Manager.
 
 1. Add a **base64** node after the **RTSP Feed** node. With its default action, it converts the incoming PNG buffer into a base64 string.
 
-2. Add a **change** node after it. The payload is now a string, so this expression simply prepends the data URI prefix the browser needs:
+2. Add a **Change** node after it. The RTSP Video Feed node outputs the image as a Base64-encoded string. To display it in a dashboard image widget, prepend the required Data URI prefix using the following JSONata expression:
 
    ```
    "data:image/png;base64," & payload
