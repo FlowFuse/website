@@ -22,7 +22,7 @@ meta:
         text: "In the FlowFuse editor, open the Palette Manager, switch to the Install tab, and find the FlowFuse Pro Certified Nodes V2 collection. Locate @flowfuse-certified-nodes/nr-rtsp and click install. ffmpeg is pulled in automatically, so there is nothing else to set up. After enabling the certified nodes package, restart any existing devices or hosted instances so they pick up the new catalogue."
         url: "installing-the-node"
       - name: "Configure the node to capture frames"
-        text: "Drag the RTSP Feed node onto the canvas and open its settings. Enter your camera's RTSP URL, add a username and password if the camera needs them, set the FPS to match your use case, and leave Output image as msg.payload enabled so each frame is emitted as a message. In this mode a high frame rate increases the message load on your flow, so keep the FPS no higher than your use case needs."
+        text: "Drag the RTSP Feed node onto the canvas and open its settings. Enter your camera's RTSP URL, add a username and password if the camera needs them, set the FPS to match your use case, and leave Output image as msg.payload enabled so each frame is emitted as a message."
         url: "configuring-the-node"
       - name: "Put the live feed on a dashboard"
         text: "Install the base64 node (node-red-node-base64) from the Palette Manager, then add it to convert each PNG buffer to a string, then a change node to prepend the data URI prefix the browser needs, then a ui-template node with a single image element bound to the payload. Deploy and open the dashboard to watch the line refresh with every new frame."
@@ -94,11 +94,12 @@ Once it's installed, you'll find the **RTSP Feed** node in the left palette side
 2. In the RTSP URL field, enter your camera's stream address, for example `rtsp://192.168.1.50:554/ballmill-a2`.
 3. If the camera requires a login, fill in Username and Password. These are stored as credentials and are never written into the flow file.
 4. Set FPS to 10. Ten frames a second is smooth enough to watch a line in near real time. If your use case doesn't need that, lower it to ease the load: 1 is plenty for periodic monitoring. You can always raise it later.
+
+> **FPS drives the load.** In message mode, every captured frame becomes a message in your flow, so a high FPS means more, larger messages to move and process; keep it no higher than your use case needs. In disk-writing mode no messages are emitted, so the rate instead governs how fast frames pile up on disk.
+
 5. Leave Output image as `msg.payload` enabled so each frame is emitted as a message.
 
-> You'll also see a File path field. In this mode the node keeps a single working image there, falling back to the OS temp directory like `/tmp` if you leave it blank, so you can ignore it for now. It only matters in disk-writing mode, covered in [Recording frames to disk](#recording-frames-to-disk).
-
-> **Frame rate drives message load.** While Output image as `msg.payload` is enabled, every captured frame becomes a message in your flow, so a high FPS means more, larger messages to move and process. Set the FPS no higher than your use case needs. If you switch the node to disk-writing mode instead (covered in [Recording frames to disk](#recording-frames-to-disk)), note that the frames are written to the File path and are never deleted, so a high frame rate will steadily fill the drive. This is intentional behaviour for the recording use case, so point it at storage you manage and keep an eye on free space.
+> You'll also see a File path field. In this mode the node keeps a single working image there, falling back to the OS temp directory like `/tmp` if you leave it blank, so you can ignore it for now. It only matters in disk-writing mode, covered in [Recording frames to disk](#recording-frames-to-disk), where the frames are written to that path and never deleted.
 
 ![The RTSP Feed node settings panel showing the RTSP URL, optional Username and Password credential fields, the FPS selector set to 10, and the Output image as msg.payload option enabled](./images/rtsp-config.png)
 _The RTSP Feed node settings panel showing the RTSP URL, optional Username and Password credential fields, the FPS selector set to 10, and the Output image as msg.payload option enabled_
@@ -159,8 +160,6 @@ That's what the [**FlowFuse AI** nodes](https://flowfuse.com/node-red/flowfuse/a
 One last mode worth knowing. Sometimes you don't need frames in the flow at all, just a local record of what the camera saw. Turn off **Output image as `msg.payload`** and the node stops emitting messages. Instead `ffmpeg` writes a continuous numbered sequence of PNGs (`rtsp-<node-id>-<counter>.png`) straight to disk.
 
 Where they land is set by the **File path** field. Point it at a directory you control and the frames are written there. Leave it empty and the node falls back to the OS temp directory, typically `/tmp`. On many modern Linux distributions `/tmp` is a RAM-backed disk, though not on all, so frames there consume memory rather than disk and are cleared on reboot. Either way it's fine for a quick test but not for anything you need to keep.
-
-The node writes every frame and never deletes any of them, so the directory grows without bound. At a high frame rate it will fill the target volume, whether that's disk or RAM-backed `/tmp`. This is intentional: the node records exactly what the camera saw, and pruning is left to you. Point it at storage you manage, keep the FPS no higher than the use case needs, and put your own retention or cleanup in place if the node runs for any length of time. This mode is handy for on-site recording where the footage shouldn't leave the building.
 
 ## Wrapping up
 
