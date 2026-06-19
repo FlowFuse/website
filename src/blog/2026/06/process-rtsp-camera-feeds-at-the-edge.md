@@ -77,14 +77,14 @@ Let's turn a camera into something an operator can actually watch, without ever 
 
 ### Installing the node
 
+> Enabling the certified nodes package updates the catalogue, but existing devices and hosted instances won't see the new nodes until they restart. Restart any device or hosted instance you plan to install the node on so it picks up the updated catalogue.
+
 1. In the FlowFuse editor, open the Palette Manager from the top-right menu.
 2. Switch to the Install tab and find the FlowFuse Pro Certified Nodes V2.
 3. Locate the `@flowfuse-certified-nodes/nr-rtsp` and click install. `ffmpeg` is pulled in automatically, so there's nothing else to set up.
 
 ![FlowFuse Palette Manager open on the Install tab, with the FlowFuse Pro Certified Nodes V2 collection selected and the RTSP node's Install button highlighted](./images/flowfuse-certified-2-rtsp.jpeg)
 *Installing the RTSP Video Feed node from the FlowFuse Certified Nodes catalogue in the Palette Manager.*
-
-> Enabling the certified nodes package updates the catalogue, but existing devices and hosted instances won't see the new nodes until they restart. Restart any device or hosted instance you plan to install the node on so it picks up the updated catalogue.
 
 Once it's installed, you'll find the **RTSP Feed** node in the left palette sidebar, ready to drag onto your canvas.
 
