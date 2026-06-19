@@ -2,13 +2,50 @@
 title: "Node-RED Timer Tutorial: Create Stopwatch and Countdown Timers"
 subtitle: "Implement stopwatch and countdown timers for industrial automation and process control applications"
 description: "Node-RED timer tutorial showing how to implement stopwatch and countdown timers for industrial automation and IoT applications."
+lastUpdated: 2026-06-19
 date: 2025-12-24
-lastUpdated: 2025-12-29
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/node-red-timer.png
 keywords: node-red timers, node-red stopwatch, node-red countdown timer, node-red industrial automation, node-red iiot, node-red process control, node-red hourglass, node-red contrib countdown, flowfuse node-red  
 tags:
     - node-red
+meta:
+  howto:
+    name: "How to Create Stopwatch and Countdown Timers in Node-RED"
+    description: "Learn how to install and configure the node-red-contrib-hourglass and node-red-contrib-countdown nodes to build stopwatch and countdown timers for industrial automation."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "node-red-contrib-hourglass"
+      - "node-red-contrib-countdown"
+    steps:
+      - name: "Install the hourglass node"
+        text: "Open Manage palette in the Node-RED editor, go to the Install tab, and install node-red-contrib-hourglass for stopwatch functionality."
+        url: "installing-the-hourglass-node"
+      - name: "Understand the hourglass commands"
+        text: "Learn the control commands (start, stop, pause, reset, status) the hourglass node accepts via msg.command to control timing behavior."
+        url: "understanding-hourglass-commands"
+      - name: "Build a stopwatch timer"
+        text: "Wire inject nodes through change nodes that set msg.command to start, status, stop, and reset, feed them into the hourglass node, and add a debug node to view elapsed time."
+        url: "implementing-a-stopwatch-timer"
+      - name: "Install the countdown node"
+        text: "Use Manage palette to install node-red-contrib-countdown, which adds countdown timer functionality to your palette."
+        url: "installing-the-countdown-node"
+      - name: "Build a countdown timer"
+        text: "Set msg.payload to the duration and msg.topic to control with a change node, configure the countdown node's start/stop payloads and options, and connect a debug node to watch the remaining time."
+        url: "building-a-countdown-timer"
+  faq:
+    - question: "Which Node-RED node is used to create a stopwatch timer?"
+      answer: "The node-red-contrib-hourglass node is used to build stopwatch timers in Node-RED. It tracks elapsed time and responds to start, stop, pause, reset, and status commands sent via msg.command."
+    - question: "Which Node-RED node is used to create a countdown timer?"
+      answer: "The node-red-contrib-countdown node is used to build countdown timers. You set the duration via msg.payload with msg.topic set to control, and it triggers configurable payloads when the countdown starts and completes."
+    - question: "How do I control the hourglass timer in Node-RED?"
+      answer: "Send a control command through msg.command. The supported commands are start (begin timing), stop (stop and output elapsed time), pause (pause without resetting), reset (clear state), and status (output current state without stopping)."
+    - question: "How do I install timer nodes in Node-RED?"
+      answer: "Open the Node-RED editor, click the hamburger menu, select Manage palette, go to the Install tab, search for node-red-contrib-hourglass or node-red-contrib-countdown, and click Install."
+    - question: "Can I use these timers in production industrial applications?"
+      answer: "Yes. Both nodes are actively maintained and used in real industrial systems. In production you replace the inject nodes with actual process triggers such as machine status signals from PLCs or MQTT messages, and connect the output to databases, dashboards, or alerts."
 tldr: "Timers are foundational to industrial automation, used for tracking machine runtime, measuring downtime, scheduling maintenance, and coordinating sequential processes. This tutorial shows how to implement both stopwatch timers and countdown timers in Node-RED using dedicated nodes, with practical examples suited for production floor displays and operator terminals."
 ---
 

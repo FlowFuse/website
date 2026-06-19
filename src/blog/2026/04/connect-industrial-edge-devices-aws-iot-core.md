@@ -2,6 +2,7 @@
 title: "How to Connect Industrial Edge Devices to AWS IoT Core"
 subtitle: "Send industrial data from the edge to AWS securely over MQTT"
 description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates. This step-by-step guide covers creating an IoT Thing, generating certificates, configuring policies, and publishing your first message from FlowFuse."
+lastUpdated: 2026-06-19
 date: 2026-04-16
 keywords: FlowFuse, AWS IoT Core, MQTT, X.509, IoT, industrial IoT, edge to cloud
 authors: ["sumit-shinde"]
@@ -12,6 +13,47 @@ cta:
   type: sign-up
   title: Edge to cloud, without the complexity
   description: FlowFuse connects your industrial machines to AWS IoT Core — securely, at scale, without managing infrastructure.
+meta:
+  howto:
+    name: "How to Connect Industrial Edge Devices to AWS IoT Core"
+    description: "Connect FlowFuse to AWS IoT Core over MQTT and mutual TLS by creating an IoT Thing, generating X.509 certificates, configuring the broker in Node-RED, and publishing your first message."
+    totalTime: "PT45M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "AWS IoT Core"
+      - "MQTT"
+      - "X.509 certificates"
+    steps:
+      - name: "Create an IoT Thing in AWS"
+        text: "In the AWS IoT Core console create a single Thing, auto-generate a certificate, and attach a policy that allows connect, publish, subscribe, and receive actions."
+        url: "step-1-create-an-iot-thing-in-aws"
+      - name: "Download certificates"
+        text: "Download the device certificate, private key, and Amazon Root CA 1 before leaving the confirmation screen, since the private key cannot be retrieved again."
+        url: "step-2-download-certificates"
+      - name: "Find your AWS IoT endpoint"
+        text: "Open Connect > Domain configurations, copy your account's unique IoT Core endpoint, and store it as a FlowFuse environment variable."
+        url: "step-3-find-your-aws-iot-endpoint"
+      - name: "Configure the MQTT connection in FlowFuse"
+        text: "Add an mqtt out node, create a broker config on port 8883 with TLS enabled, and upload the three certificate files in the TLS configuration."
+        url: "step-4-configure-the-mqtt-connection-in-flowfuse"
+      - name: "Build a flow and publish your first message"
+        text: "Connect an inject node to the mqtt out node, set a JSON payload and the topic flowfuse/telemetry, deploy, and trigger a publish."
+        url: "step-5-build-a-flow-and-publish-your-first-message"
+      - name: "Verify the message in AWS"
+        text: "In the AWS IoT Core MQTT test client, subscribe to flowfuse/telemetry and confirm the published message arrives within seconds."
+        url: "step-6-verify-the-message-in-aws"
+  faq:
+    - question: "What port and protocol does AWS IoT Core use for MQTT?"
+      answer: "AWS IoT Core uses MQTT over mutual TLS on port 8883. Connecting on the plain MQTT port 1883 without TLS is rejected, because both the device and AWS must authenticate each other."
+    - question: "Why does AWS IoT Core reject my connection even with a valid certificate?"
+      answer: "A valid certificate is not enough — you must also attach a policy to it. The policy defines which actions (connect, publish, subscribe, receive) the device is allowed to perform. Without an attached policy, every connection is rejected."
+    - question: "Can I retrieve the private key again if I lose it?"
+      answer: "No. AWS only lets you download the private key once, on the certificate confirmation screen. If you lose it, you must create a new certificate and attach the policy again."
+    - question: "How do I authenticate FlowFuse to AWS IoT Core?"
+      answer: "Upload the three downloaded files into the Node-RED MQTT broker's TLS configuration: the device certificate, the private key, and the Amazon Root CA 1. Enable TLS and Verify server certificate so both sides authenticate over mutual TLS."
+    - question: "What can I do with the data once it reaches AWS IoT Core?"
+      answer: "Use AWS IoT Core Message Routing rules to forward your MQTT messages to other AWS services such as Lambda for processing, DynamoDB for storage, or S3 for archiving, with no extra infrastructure to manage."
 tldr: "This step-by-step guide walks through connecting FlowFuse to AWS IoT Core using MQTT over mutual TLS with X.509 certificates. It covers creating an IoT Thing, generating and downloading certificates, configuring the MQTT broker in Node-RED, and verifying that messages arrive in AWS. Once connected, industrial data from any protocol OPC-UA, Modbus, or others can be routed to any AWS service via IoT Core rules."
 ---
 
