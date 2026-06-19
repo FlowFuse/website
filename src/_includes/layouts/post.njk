@@ -14,6 +14,99 @@
     }
 }
 ---
+
+<!-- Article Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ title | dump | safe }},
+    {% if subtitle %}
+    "alternativeHeadline": {{ subtitle | dump | safe }},
+    {% endif %}
+    "description": {% if description %}{{ description | dump | safe }}{% else %}{{ title | dump | safe }}{% endif %},
+    "image": {% if image %}"{{ image | url | toAbsoluteUrl }}"{% else %}"https://flowfuse.com/images/og-blog.jpg"{% endif %},
+    "datePublished": "{{ date | dateToRfc3339 }}",
+    {% if lastUpdated %}
+    "dateModified": "{{ lastUpdated | dateToRfc3339 }}",
+    {% else %}
+    "dateModified": "{{ date | dateToRfc3339 }}",
+    {% endif %}
+    {% if authors and authors.length > 0 %}
+    "author": [
+        {% for author in authors %}
+        {% if people[author] %}
+        {
+            "@type": "Person",
+            "name": "{{ people[author].name }}",
+            "jobTitle": "{{ people[author].title }}",
+            {% if people[author].url %}
+            "url": "{{ people[author].url }}",
+            {% endif %}
+            {% if people[author].linkedin %}
+            "sameAs": ["https://www.linkedin.com/in/{{ people[author].linkedin }}"{% if people[author].github %}, "https://github.com/{{ people[author].github }}"{% endif %}],
+            {% endif %}
+            {% if people[author].bio %}
+            "description": {{ people[author].bio | dump | safe }},
+            {% endif %}
+            "image": "{{ ('/images/team/headshot-' + people[author].headshot) | url | toAbsoluteUrl }}",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "FlowFuse",
+                "url": "https://flowfuse.com"
+            }
+        }{% if not loop.last %},{% endif %}
+        {% endif %}
+        {% endfor %}
+    ],
+    {% endif %}
+    "publisher": {
+        "@type": "Organization",
+        "name": "FlowFuse",
+        "url": "https://flowfuse.com",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png",
+            "width": 396,
+            "height": 215
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | url | toAbsoluteUrl }}"
+    },
+    "url": "{{ page.url | url | toAbsoluteUrl }}",
+    "inLanguage": "en-US",
+    {% if tags %}
+    {% set filtered_tags = tags | reject('equalto', 'posts') | reject('equalto', 'node-red') | list %}
+    {% if filtered_tags | length > 0 %}
+    "keywords": {{ filtered_tags | join(', ') | dump | safe }},
+    {% endif %}
+    {% endif %}
+    {% if meta and meta.faq %}
+    "hasPart": {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {% for item in meta.faq %}
+            {
+                "@type": "Question",
+                "name": {{ item.question | dump | safe }},
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": {{ item.answer | dump | safe }}
+                }
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ]
+    },
+    {% endif %}
+    "isPartOf": {
+        "@type": "Blog",
+        "name": "FlowFuse Blog",
+        "url": "https://flowfuse.com/blog/"
+    }
+}
+</script>
 {% if date | isFutureDate %}
     <div class="w-full page post bg-indigo-600 text-center text-white py-4 font-bold">
     This post is scheduled to be published on {{ date | shortDate }}
