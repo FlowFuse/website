@@ -3,6 +3,22 @@
 const fs = require("fs/promises");
 const path = require("path");
 const algoliasearch = require("algoliasearch");
+const site = require("../src/_data/site.json");
+const {
+    isSearchUrl,
+    extractHeadingRecords,
+    decodeEntities,
+    extractMetaTag,
+    extractHtmlTitle,
+    normalizeImage,
+    extractSearchHtml,
+    toUnixTimestampSeconds,
+    listHtmlFiles,
+    outputPathToUrl,
+    extractMetaKeywords,
+    extractDateFromJsonLd,
+    extractArticleSection,
+} = require("../lib/search-index");
 
 const BATCH_SIZE = 1000;
 const MAX_RECORD_BYTES = 9800;
@@ -153,12 +169,58 @@ async function main() {
         );
     }
 
-    const searchIndexPath = process.argv[2]
-        ? path.resolve(process.argv[2])
-        : path.join(process.cwd(), "_site", "search-index.json");
+    const outputDir = path.resolve(process.argv[2] || "nuxt/dist");
 
-    const raw = await fs.readFile(searchIndexPath, "utf8");
-    const currentRecords = JSON.parse(raw).map(normalizeRecord);
+    const defaultKeywords = (site.messaging?.keywords || "").split(",").map((k) => k.trim());
+    const defaultDescription = site.messaging?.subtitle || "";
+    const defaultImage = `${site.baseURL || ""}/images/og-social-tile.jpg`;
+    const defaultOrigin = process.env.DEPLOY_PRIME_URL || process.env.URL || site.baseURL || "";
+
+    const scannedRecords = [];
+    const htmlFiles = await listHtmlFiles(outputDir);
+
+    for (const outputPath of htmlFiles) {
+        const url = outputPathToUrl(outputDir, outputPath);
+        if (!isSearchUrl(url)) continue;
+
+        let html = "";
+        try {
+            html = await fs.readFile(outputPath, "utf8");
+        } catch {
+            continue;
+        }
+
+        const htmlDescription =
+            extractMetaTag(html, 'name=["\\\']description["\\\']') ||
+            extractMetaTag(html, 'property=["\\\']og:description["\\\']');
+        const htmlImage = extractMetaTag(html, 'property=["\\\']og:image["\\\']');
+        const htmlKeywords = extractMetaKeywords(html);
+        const datePublishedIso =
+            extractDateFromJsonLd(html, "datePublished") ||
+            extractMetaTag(html, 'property=["\\\']article:published_time["\\\']');
+        const dateModifiedIso =
+            extractDateFromJsonLd(html, "dateModified") ||
+            extractMetaTag(html, 'property=["\\\']article:modified_time["\\\']') ||
+            datePublishedIso;
+
+        scannedRecords.push(
+            ...extractHeadingRecords({
+                url,
+                html: extractSearchHtml(url, html),
+                category: extractArticleSection(html),
+                pageTitle: extractHtmlTitle(html),
+                pageDescription: decodeEntities(htmlDescription) || defaultDescription,
+                pageImage: normalizeImage(normalizeImage(htmlImage, "") || defaultImage),
+                origin: defaultOrigin,
+                lang: "en",
+                keywords: htmlKeywords.length > 0 ? htmlKeywords : defaultKeywords,
+                datePublished: toUnixTimestampSeconds(datePublishedIso),
+                dateModified: toUnixTimestampSeconds(dateModifiedIso),
+            })
+        );
+    }
+
+    const currentRecords = scannedRecords.map(normalizeRecord);
 
     const currentById = new Map();
     for (const record of currentRecords) {

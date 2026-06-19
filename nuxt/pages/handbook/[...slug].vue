@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { findPageBreadcrumb } from '@nuxt/content/utils'
+
 definePageMeta({ layout: 'default' })
 
 const route = useRoute()
@@ -19,25 +21,44 @@ if (!page.value) {
 }
 
 const pageTitle = computed(() => page.value?.title || slugParts.value.at(-1) || 'Handbook')
+const fullTitle = computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook')
+const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
-useHead({
-    title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook'),
-    meta: [{ name: 'robots', content: 'noindex' }]
+useSeoMeta({
+    title: fullTitle,
+    description: computed(() => page.value?.description || ''),
+    ogTitle: fullTitle,
+    ogDescription: computed(() => page.value?.description || ''),
+    ogUrl: canonicalUrl,
+    ogType: 'article',
+    twitterCard: 'summary_large_image',
+    twitterSite: '@FlowFuseinc',
 })
 
-// Build breadcrumbs from URL parts
-const breadcrumbs = computed(() => {
-    const parts = ['handbook', ...slugParts.value]
-    let path = ''
-    return parts.map(part => {
-        path += '/' + part
-        return { name: part, path }
-    })
+const { data: navTree } = await useHandbookNav()
+
+useSchemaOrg([
+    // Exclude the last crumb (current page) — nuxt-schema-org appends it automatically
+    defineBreadcrumb({
+        itemListElement: findPageBreadcrumb(navTree.value ?? [], route.path)
+            .slice(0, -1)
+            .map(crumb => ({ name: crumb.title, item: crumb.path })),
+    }),
+    defineArticle({
+        headline: pageTitle,
+        description: computed(() => page.value?.description || ''),
+        author: [{ name: 'FlowFuse', url: 'https://flowfuse.com' }],
+    }),
+])
+
+defineOgImage('Default', {
+    title: pageTitle.value,
+    section: 'Handbook',
 })
 </script>
 
 <template>
-  <div class="w-full pl-6 bg-white/50">
+  <div class="light w-full pl-6 bg-white">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->
@@ -47,17 +68,9 @@ const breadcrumbs = computed(() => {
       <div class="px-10 pt-8">
         <div class="w-full">
           <!-- Breadcrumbs + Search bar -->
-          <div class="font-medium border-b pb-1 flex flex-col gap-1">
+          <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
-              <nav aria-label="Breadcrumb" class="text-sm text-gray-500">
-                <span v-for="(crumb, i) in breadcrumbs" :key="crumb.path">
-                  <NuxtLink v-if="i < breadcrumbs.length - 1"
-                    :href="crumb.path"
-                    class="hover:text-indigo-600 capitalize">{{ crumb.name }}</NuxtLink>
-                  <span v-else class="capitalize text-gray-700">{{ crumb.name }}</span>
-                  <span v-if="i < breadcrumbs.length - 1" class="mx-1">/</span>
-                </span>
-              </nav>
+              <HandbookBreadcrumbs />
             </div>
             <div class="w-full mb-1">
               <HandbookSearch />
@@ -76,9 +89,9 @@ const breadcrumbs = computed(() => {
       </div>
 
       <!-- Right sidebar: TOC -->
-      <div class="lg:border-l right-nav">
+      <div class="lg right-nav">
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
-          <HandbookToc />
+          <HandbookToc :links="page?.body?.toc?.links" />
           <ClientOnly>
             <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
               <a :href="`/_studio?redirect=${encodeURIComponent(route.path)}`" target="_blank" rel="noopener">Edit this page</a>

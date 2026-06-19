@@ -23,7 +23,7 @@ qualified leads.
 - **[Gated Resources](/handbook/marketing/leads/)**: We create and promote
   in-depth content such as whitepapers, ebooks, and guides. This content is
   gated, serving as a key tool for capturing new marketing qualified leads.
-- **[Monthly Webinars](/handbook/marketing/webinars/)**: We host regular
+- **[Monthly Webinars](/handbook/marketing/content-strategy/webinars/)**: We host regular
   webinars to educate our audience, showcase our product, and generate new
   leads. They also serve as a valuable touchpoint for existing prospects and
   customers.
@@ -34,21 +34,21 @@ qualified leads.
 ## 2. Content & Community Marketing
 
 This area focuses on building our brand's authority and fostering a loyal
-community through valuable content and engagement.
+community through valuable content and engagement. All content is planned and
+scheduled according to the [Content Strategy](/handbook/marketing/content-strategy/),
+which defines how we approach TOFU, MOFU, and BOFU content and how we operate
+the two-week rolling content calendar.
 
-- **[Content Marketing (Blog)](/handbook/marketing/blog/)**: Our blog is the
+- **[Content Marketing (Blog)](/handbook/marketing/content-strategy/blog/)**: Our blog is the
   engine of our content strategy, focused on providing educational and
   insightful articles to drive organic traffic, establish thought leadership,
   and support our other marketing initiatives.
-- **[Monthly Newsletters](/handbook/marketing/email/#community-email)**: We
+- **Monthly Newsletters**: We
   engage our community and customer base with regular email updates, sharing
   product news, valuable content, and upcoming events.
 - **[Social Media](/handbook/marketing/social-media/)**: We maintain an active
   presence on key social platforms to engage with our community, amplify our
   content, and build our [brand's voice](/handbook/marketing/brand-voice/).
-- **Podcast "Industrial Visionaries"**: Our podcast features conversations with
-  industry leaders to explore key trends, provide unique insights, and expand
-  our brand's reach to new audiences.
 - **[Community Engagement & Sponsorships](/handbook/marketing/community/)**:
   We actively support and participate in the broader community, including
   sponsoring key events like the Node-RED conference, to strengthen our
@@ -76,7 +76,7 @@ the value of our product.
     designed to validate specific use cases. Marketing supports this motion by
     providing relevant content and materials like customer stories and technical
     documentation.
-- **[Customer Stories](/handbook/marketing/customer-stories/)**: This program
+- **[Customer Stories](/handbook/marketing/content-strategy/customer-stories/)**: This program
   focuses on creating compelling case studies and stories that provide social
   proof, showcase real-world use cases, and demonstrate the value of FlowFuse to
   prospects.

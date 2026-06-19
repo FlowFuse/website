@@ -1,4 +1,4 @@
 {% set summary = item.data.excerpt or item.data.description or item.data.meta.description %}
 {% if summary %}
-{{ summary | md | safe }}
+{{ summary | md | stripLinks | safe }}
 {% endif %}
