@@ -68,10 +68,9 @@ We move quickly and focus on getting useful work done. We care more about outcom
 
 * **Initial Screening**: Resume and cover letter review for communication quality, early-stage GTM experience, and evidence of initiative and willingness to experiment
 * **First Interview**: Phone or video conversation on execution style, iteration approach, and mindset in ambiguous environments
-* **Second Interview**: In-depth discussion with the hiring manager and relevant team members on process thinking, collaboration with marketing and AEs, and what "building a playbook" means to you
-* **STAR Interview (45 mins)**: Behavioral interview focused on values alignment — ownership, iteration, learning from failure, and results over perfection — conducted by the CEO
-* **Assessment/Presentation**: Short work sample or live exercise (see below)
-* **Final Interview**: Conversation with key stakeholders
+* **Second Interview (45 mins)**: In-depth discussion and STAR behavioral interview conducted by the CEO, hiring manager, or relevant team members focused on process thinking, collaboration with marketing and AEs, what "building a playbook" means to you, and values alignment — ownership, iteration, learning from failure, and results over perfection
+* **Optional**: Culture fit interview
+* **Final Interview & Assessment**: Conversation with key stakeholders featuring a short work sample or live exercise (see below)
 * **Offer**
 
 ## Assessment

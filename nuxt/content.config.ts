@@ -14,6 +14,8 @@ export default defineContentConfig({
                 navigation: z.object({
                     group: z.string().optional(),
                     icon: z.string().optional(),
+                    // Read by useHandbookNav for sort order; without it declared
+                    // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
                 }).optional(),
             })

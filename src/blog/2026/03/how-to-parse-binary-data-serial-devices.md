@@ -2,6 +2,7 @@
 title: "How to Parse Binary Data from Serial Devices"
 subtitle: "When your device doesn't speak Modbus, here's how you read it"
 description: "Learn how to decode binary data from any legacy serial device in Node-RED. This guide walks through frame validation, byte mapping, and bitfield parsing using a real industrial weighing scale example"
+lastUpdated: 2026-06-19
 date: 2026-03-27
 keywords: binary data parsing, serial communication, Node-RED, FlowFuse, buffer parser, frame validation, checksum validation, bitfield parsing, RS-232, legacy devices, industrial IoT
 authors: ["sumit-shinde"]
@@ -12,6 +13,42 @@ cta:
   type: contact
   title: Have Legacy Serial Devices to Connect?
   description: Talk to our team about connecting your industrial hardware to FlowFuse. We'll help you go from raw bytes to structured, actionable data across your entire factory floor.
+meta:
+  howto:
+    name: "How to Parse Binary Data from Serial Devices in Node-RED"
+    description: "Decode the binary output of a legacy serial device by installing the Buffer Parser node, simulating the frame, validating it, mapping each byte to a field, and converting raw values into structured data."
+    totalTime: "PT30M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "node-red-contrib-buffer-parser"
+    steps:
+      - name: "Install the Buffer Parser node"
+        text: "Open the Node-RED Manage palette, search for node-red-contrib-buffer-parser, and install it so the node appears in your palette."
+        url: "step-1-install-the-buffer-parser-node"
+      - name: "Simulate the device"
+        text: "Add an Inject node, set its payload type to Buffer, and enter the raw byte array so the flow receives the same 10 bytes a live serial device would send."
+        url: "step-2-simulate-the-device"
+      - name: "Validate the frame"
+        text: "Add a Function node that checks the frame length, verifies the start and end markers, and validates the checksum, dropping any frame that fails."
+        url: "step-3-validate-the-frame"
+      - name: "Parse the bytes"
+        text: "Add a Buffer Parser node set to key/value output and add one row per field, mapping the weight float, unit byte, and individual status bits by offset."
+        url: "step-4-parse-the-bytes"
+      - name: "Map the unit value"
+        text: "Use a Switch node to route on the unit byte and a Change node on each branch to set the readable label kg or lb, then send the result to a Debug node."
+        url: "step-5-map-the-unit-value"
+  faq:
+    - question: "Which Node-RED node parses binary data from serial devices?"
+      answer: "The node-red-contrib-buffer-parser node parses binary buffers visually without code. You define one row per field with its name, type, offset, and bit offset, and it extracts floats, integers, and individual bits from the frame."
+    - question: "How do I validate a binary frame before parsing it?"
+      answer: "Add a Function node before the Buffer Parser that checks the frame length, verifies the start and end marker bytes, and validates the checksum. Any frame that fails a check is dropped so only clean frames are parsed."
+    - question: "How do I handle a frame that arrives split across multiple messages?"
+      answer: "Add a reassembly Function node before validation that accumulates bytes in node context until a full frame is available, then emits the complete frame. For delimiter-terminated frames, search for the end byte instead of checking a fixed length."
+    - question: "When should I use a Function node instead of the Buffer Parser?"
+      answer: "Use a Function node when the frame's structure changes based on an earlier byte's value (conditional structure), or when a field needs a multi-step calibration formula the Buffer Parser's scale field cannot handle. Let Buffer Parser do the rest."
+    - question: "How do I extract individual status bits from a single byte?"
+      answer: "In the Buffer Parser, add a row with type bool, set its Offset to the status byte, and set the Bit Offset to the specific bit you want. Each bit becomes its own boolean field in the output."
 ---
 
 Your device is sending bytes. You don't know what they mean. The device manual is a 40-page PDF from 2003, and page 12 has a table of numbers with no explanation of what to do with them.

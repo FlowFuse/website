@@ -2,6 +2,7 @@
 title: "Building an AI Vibration Anomaly Detector for Industrial Motors"
 subtitle: "Detect motor faults early using AI-driven vibration analysis and anomaly detection."
 description: "Learn how to monitor industrial motors continuously, train a custom autoencoder on healthy vibration data, and deploy real-time anomaly detection in Node-RED."
+lastUpdated: 2026-06-19
 date: 2026-02-20
 authors: ["sumit-shinde"]
 image: /blog/2026/02/images/motor-anomaly-detection-ai.png
@@ -12,6 +13,41 @@ cta:
   type: demo
   title: See How FlowFuse Catches Faults Before They Fail
   description: Book a demo and see how FlowFuse brings sensor ingestion, AI inference, and real-time alerting together on the factory floor — no separate ML infrastructure required
+meta:
+  howto:
+    name: "How to Build an AI Vibration Anomaly Detector for Industrial Motors"
+    description: "Set up vibration sensing, train an autoencoder on healthy motor data, export it to ONNX, and deploy real-time anomaly detection in Node-RED with FlowFuse."
+    totalTime: "PT1H"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "Python"
+      - "PyTorch"
+      - "ONNX"
+      - "MQTT broker"
+      - "ESP32 with ADXL345 accelerometer"
+      - "@flowfuse-nodes/nr-ai-nodes"
+    steps:
+      - name: "Set up hardware and data collection"
+        text: "Mount a vibration sensor that publishes batches of X, Y, Z acceleration readings to an MQTT broker in the expected JSON payload format on a consistent topic."
+        url: "part-1-hardware-and-data-requirements"
+      - name: "Train the autoencoder"
+        text: "Run a Python script that connects to the broker, collects healthy vibration windows while the motor runs normally, trains an autoencoder, and exports the ONNX model, scaler, and threshold files."
+        url: "part-2-training-the-autoencoder"
+      - name: "Deploy the model in Node-RED"
+        text: "Install the FlowFuse AI nodes, load the model files, and build a flow that subscribes to MQTT, extracts features, runs ONNX inference, and scores each reading as NORMAL, WARNING, or CRITICAL."
+        url: "part-3-deploying-in-node-red"
+  faq:
+    - question: "What is an autoencoder and why use one for anomaly detection?"
+      answer: "An autoencoder is a neural network trained to compress its input and reconstruct it. When trained only on healthy motor data, it reconstructs normal vibration with low error; when conditions shift, reconstruction error rises and the system flags an anomaly. This suits industry because you have abundant normal data but few labeled fault examples."
+    - question: "Do I need separate ML infrastructure to run this in Node-RED?"
+      answer: "No. FlowFuse provides an AI nodes package (@flowfuse-nodes/nr-ai-nodes) with ONNX runtime support, so the trained model runs directly inside your Node-RED flow without any separate machine learning servers or infrastructure."
+    - question: "How much vibration data do I need to train the model?"
+      answer: "Aim for at least 300 windows, which typically takes 5 to 10 minutes of collection with the motor running under its normal load. Collecting data while the motor is stopped or lightly loaded produces a model that treats idle conditions as normal and misses real faults."
+    - question: "How do I reduce false positives in the anomaly detector?"
+      answer: "The system applies a 10-window rolling average to smooth transient spikes, and you can tune the THRESHOLD_SIGMA value (default mean + 3σ). Increase it if you see too many false positives, decrease it if faults are being missed, and treat the first few weeks as a calibration period."
+    - question: "When should I retrain the model?"
+      answer: "Retrain after any significant change to the motor's operating conditions, such as a maintenance overhaul, a change in load profile, a new mounting position, or seasonal temperature shifts. Re-run the script under the new normal conditions, replace the three output files, and restart the Node-RED flow."
 tldr: "This guide walks through building an AI-based motor vibration anomaly detector using an autoencoder trained on healthy sensor data, exported to ONNX, and deployed directly in Node-RED via FlowFuse's AI nodes no separate ML infrastructure required. The system extracts 33 time-domain features per vibration window, scores each reading against a trained threshold, and classifies results as NORMAL, WARNING, or CRITICAL in real time."
 ---
 
