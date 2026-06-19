@@ -12,7 +12,7 @@
     "dependencies": {
         "@resvg/resvg-js": "^2.6.2",
         "@takumi-rs/core": "^1.8.4",
-        "markdown-it": "^14.1.1",
+        "markdown-it": "^14.2.0",
         "mermaid": "^11",
         "sanitize-html": "^2.13.0",
         "satori": "^0.26.0",
@@ -25,7 +25,7 @@
         "@nuxtjs/seo": "^5.1.4",
         "@types/sanitize-html": "^2.16.1",
         "better-sqlite3": "^12.10.0",
-        "nuxt": "^4.4.6",
+        "nuxt": "^4.4.7",
         "nuxt-link-checker": "^5.0.10",
         "nuxt-og-image": "^6.5.3",
         "nuxt-studio": "file:.local-packages/nuxt-studio-1.7.0.tgz"

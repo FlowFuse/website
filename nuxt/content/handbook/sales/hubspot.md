@@ -84,6 +84,14 @@ If you import contacts into HubSpot, it is important that the First Name and Las
 
 The ideal process for importing FlowFuse Cloud contacts is that you first split the Name field into a First Name and Last Name. Google Sheets has the ability to split a column of text into two columns based on the delimiter of a space. Once that is completed then you can import the list into HubSpot.
 
+## Data Enrichment Deletion Requests
+
+HubSpot sends Super Admins an email with the subject **"Action needed: Enriched data delete requests pending"** when a contact has requested deletion of their data from HubSpot's enrichment dataset. FlowFuse complies with these requests within 7 days by manually deleting the enriched data for the contact in HubSpot.
+
+When you receive this email, open HubSpot and action each pending request by permanently deleting the enriched data for the listed contacts. After deletion, HubSpot records a timeline event on the contact confirming the action was completed.
+
+See [HubSpot's documentation on opt-out notices for the enrichment dataset](https://knowledge.hubspot.com/records/understand-opt-out-notices-for-hubspots-enrichment-dataset) for step-by-step instructions.
+
 ## Recommended Apps
 
 Extension applications for HubSpot that can be beneficial if you're interacting with customers:
