@@ -94,8 +94,7 @@ The Head of Marketing will work closely with Sales, Product, and Leadership to a
 
 - Initial Screening: Resume and background review by the hiring manager.
 - First Interview (Role & Experience): Evaluate marketing leadership experience, KPI ownership, and startup fit.
-- Second Interview (Deep Dive & Execution): Discussion with cross-functional stakeholders on execution approach, content, events, and GTM alignment.
-- Assessment / Case Discussion: Candidate presents a high-level marketing approach or past example demonstrating KPI-driven execution.
-- STAR Interview (Behavioral Alignment): Evaluate values alignment, ownership, and collaboration style. Conducted by the CEO.
-- Final Interview: Final alignment with leadership on expectations and impact.
+- Second Interview (Deep Dive & Execution with Behavioral Alignment): In-depth discussion and STAR behavioral interview conducted by the CEO and cross-functional stakeholders focused on execution approach, content, events, GTM alignment, and values alignment — ownership and collaboration style.
+- Case Presentation & Discussion: Strategic conversation with the VP of Sales on GTM strategy, specifically focusing on pipeline generation, sales enablement, and lead-to-revenue alignment, featuring a presentation of a high-level marketing approach or past example demonstrating KPI-driven execution.
+- Optional: Final Culture fit alignment with leadership on expectations and impact.
 - Offer: Extend an offer to the selected candidate.
