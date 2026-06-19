@@ -13,7 +13,7 @@ hero:
   image: "/images/industries/electronics-appliances.jpg"
   imageAlt: "Automated SMT production line with pick-and-place machines and PCB conveyors inside a modern electronics manufacturing facility"
   subCta: ""
-problemImage: "images/industries/aviation-aerospace-problem.svg"
+problemImage: "images/industries/electronics-appliances-problem.svg"
 problems:
     - "SMT line faults and AOI rejections trigger operator-dependent, inconsistent responses — downtime reason codes entered manually at shift end, if at all, making OEE data unreliable and real-time improvement impossible."
     - "Test and inspection failures are dispositioned informally, with re-test results not linked to the original failure record or serialized unit history — creating field quality and warranty exposure."
@@ -27,7 +27,7 @@ solution:
       text: "Low-code automation built on Node-RED so engineers can <strong>configure and deploy flows across lines without custom integration work</strong>."
     - svgPath: "components/icons/rectangle-stack.svg"
       text: "Dev/test/prod environments to <strong>safely roll out standardized workflows across sites and contract manufacturers</strong> with consistent, auditable execution."
-solutionImage: "images/industries/aviation-aerospace-solution.svg"
+solutionImage: "images/industries/electronics-appliances-solution.svg"
 outcomes:
   title: "Key Outcomes"
   subtitle: "for Electronics & Appliance Manufacturers"
