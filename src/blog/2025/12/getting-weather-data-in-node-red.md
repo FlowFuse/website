@@ -2,13 +2,53 @@
 title: "Building a Weather Dashboard in Node-RED (2026)"
 subtitle: "Build a live weather dashboard in Node-RED with FlowFuse"
 description: Learn how to build a real-time weather dashboard in Node-RED using the OpenWeather API and FlowFuse Dashboard.
+lastUpdated: 2026-06-19
 date: 2025-12-05
-lastUpdated: 2025-12-29
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/building-a-weather-dashboard.png
 keywords: nodered weather, weather dashboard node-red, node-red weather dashboard
 tags:
     - node-red
+meta:
+  howto:
+    name: "How to Build a Weather Dashboard in Node-RED"
+    description: "Learn how to fetch live data from the OpenWeatherMap API in Node-RED and display it on a FlowFuse Dashboard with gauges, text, and charts."
+    totalTime: "PT15M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "@flowfuse/node-red-dashboard"
+      - "OpenWeatherMap API"
+    steps:
+      - name: "Install FlowFuse Dashboard"
+        text: "Open Manage palette in Node-RED, go to the Install tab, and install the @flowfuse/node-red-dashboard package to add the ui-gauge, ui-text, and ui-chart nodes."
+        url: "installing-flowfuse-dashboard"
+      - name: "Get your OpenWeatherMap API key"
+        text: "Sign in to your OpenWeather account, open the API keys section, and copy the default key to use in your HTTP request."
+        url: "getting-your-api-key"
+      - name: "Set up the API connection"
+        text: "Add an inject node set to repeat, wire it to an http request node configured with a GET request to the OpenWeatherMap URL and your API key, and verify the JSON response in a debug node."
+        url: "setting-up-the-api-connection"
+      - name: "Process the weather data"
+        text: "Use a function node with 5 outputs to extract temperature, humidity, weather description, wind speed, and city name from the API response into separate messages."
+        url: "processing-the-weather-data"
+      - name: "Build the dashboard"
+        text: "Add ui-text nodes for the city and conditions, ui-gauge nodes for temperature and humidity, and a ui-chart node for wind speed, organizing them into dashboard groups."
+        url: "building-the-dashboard"
+      - name: "View your dashboard"
+        text: "Deploy the flow, open the Dashboard 2.0 sidebar, and click Open Dashboard to see your live weather data displayed."
+        url: "viewing-your-dashboard"
+  faq:
+    - question: "How do I get weather data into Node-RED?"
+      answer: "Use an http request node to call a weather REST API such as OpenWeatherMap. Configure it with a GET request to the API URL including your API key and city, set it to return parsed JSON, and trigger it with an inject node on a repeating interval."
+    - question: "Is the OpenWeatherMap API free to use with Node-RED?"
+      answer: "Yes. OpenWeatherMap offers a free tier that provides enough API calls for a personal weather dashboard project. You sign up at openweathermap.org and copy your API key from the account section."
+    - question: "Which dashboard should I use to display weather data in Node-RED?"
+      answer: "This tutorial uses FlowFuse Dashboard (@flowfuse/node-red-dashboard), which provides modern ui-gauge, ui-text, and ui-chart nodes for displaying temperature, humidity, conditions, and wind speed trends."
+    - question: "Why am I getting a 401 error from the OpenWeatherMap API?"
+      answer: "A 401 error usually means your API key is still activating, which can take 10 to 15 minutes after sign-up. Wait and try again, or verify the key is correct and not mistyped."
+    - question: "How do I split the weather API response into separate values?"
+      answer: "Use a function node configured with 5 outputs that extracts temperature, humidity, description, wind speed, and city from msg.payload, then returns each value as a separate message with its own topic for routing to individual dashboard widgets."
 tldr: "Building a live weather dashboard in Node-RED is an ideal beginner project that teaches how to connect to REST APIs, process JSON responses, and display data visually. This tutorial uses the free OpenWeatherMap API and FlowFuse Dashboard to create a real-time display with gauges, text, and charts that refreshes on a configurable interval."
 ---
 
