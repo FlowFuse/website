@@ -2,7 +2,6 @@
 eleventyNavigation:
   key: OPC UA
   parent: OT
-  title: OPC UA
 meta:
   title: "OPC UA for FlowFuse - FlowFuse Certified Node"
   description: "Connect a FlowFuse instance to industrial OPC UA servers: read, write, monitor, call methods, browse, read history, work with files, or host your own OPC UA server. A FlowFuse Certified Node."
@@ -71,6 +70,8 @@ The OPC UA nodes then appear in your palette, ready to drag onto the canvas.
 
 !["The OPC UA nodes in the Node-RED palette"](./images/opcua/node-palette.png "The OPC UA nodes in the Node-RED palette"){data-zoomable}
 
+> **ℹ Note:** Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+
 > **ℹ Note:** Keep endpoint URLs, usernames, and passwords in FlowFuse Environment Variables (your instance's **Settings → Environment**) rather than hard-coding them in nodes. This keeps credentials out of your flow JSON and lets you promote the same flow across instances.
 
 ## 3. The Node Set
@@ -92,6 +93,8 @@ Each node performs one OPC UA operation and reuses the shared connection you con
 | File Operation | Read, write, append, or size files on servers implementing the FileType interface. |
 
 > **ℹ Note:** Properties of the input message take precedence over a node's own configuration. Configure a node statically, or drive it dynamically from upstream messages.
+
+> **ℹ Note:** Each node reports its state in the editor with a coloured status dot — grey (not connected), blue (operation in progress), green (success), red (failure), and on some nodes (such as History Read) yellow (partial success or quality issues). Watch it alongside the debug sidebar when wiring up a flow.
 
 ## 4. NodeIds and How to Address Data
 
@@ -151,7 +154,7 @@ Every OPC UA node depends on a connection defined by the **OPC UA Client** confi
 
    !["Adding a new OPC UA endpoint from the dropdown"](./images/opcua/endpoint-add-new.png "Adding a new OPC UA endpoint from the dropdown"){data-zoomable}
 
-3. Enter the endpoint URL — for example `opc.tcp://192.168.1.10:4840` — and the security and authentication settings.
+3. Enter the endpoint URL — for example `opc.tcp://192.168.1.10:4840` — and the security and authentication settings. Only the `opc.tcp://` protocol is supported; `http`/`https` endpoint URLs are not.
 4. Click **Save**, then **Done**.
 5. Click **Deploy**, then open the debug sidebar to confirm data flows.
 
@@ -183,6 +186,8 @@ Every OPC UA node depends on a connection defined by the **OPC UA Client** confi
 ### Certificate trust
 
 Secure connections rely on mutual certificate trust. By default the client side automatically accepts the server's certificate, so the step that usually needs action is the reverse: **the server must trust the client's certificate**. For a `Sign` or `SignAndEncrypt` connection, download the client certificate from the connection editor (in PEM or DER format) and add it to your OPC UA server's trusted list — otherwise the server refuses the connection. The client certificate lives in the connection node's PKI store at `PKI/own/certs/client_certificate.pem`.
+
+> **ℹ Note:** Auto-accepting the server certificate is convenient but means the client does not verify the server's identity. To enforce server-certificate validation, set `rejectUnauthorized` to `true` in the connection node's global settings. The client then refuses any server whose certificate is not already in its trusted store, so you must add the server's certificate to the client side first.
 
 Client and server nodes in your instance share one PKI store. On FlowFuse it lives under `<instance working directory>/opcua-for-flow-fuse/PKI`. For trust decisions to survive restarts and redeploys, that directory must be on persistent storage — see [Hosting an OPC UA server](#16.-hosting-an-opc-ua-server) for the storage details, which apply to client connections too.
 
@@ -297,6 +302,22 @@ msg.payload = {
 };
 ```
 
+Example — write an extension object using OPC UA JSON encoding, in both the 1.05 and legacy 1.04 forms:
+
+```js
+// 1.05 — UaTypeId is a NodeId string, UaBody holds the fields
+msg.payload = {
+    UaTypeId: "nsu=http://opcfoundation.org/UA/AutoID/;i=3007",
+    UaBody: { CodeType: "Ean13", ScanData: { Epc: { PC: 12, UId: "XBASE64d=" } } }
+};
+
+// 1.04 (legacy) — TypeId is an object (IdType/Namespace/Id); binary fields use a Buffer
+msg.payload = {
+    TypeId: { IdType: 0, Namespace: 3, Id: 3007 },
+    Body:   { CodeType: "Ean13", ScanData: { Epc: { PC: 12, UId: Buffer.from("Hello") } } }
+};
+```
+
 ### Output message
 
 A Write returns the original `payload` and `nodeId` plus the result: `statusCode`, the `dataType` actually written, the `attributeId`, and a `message` field carrying an error description when the write fails.
@@ -371,11 +392,11 @@ msg.payload = {
 |---|---|---|
 | Success | Good | — |
 | Parameter | BadInvalidArgument, BadArgumentsMissing, BadTypeMismatch, BadOutOfRange | No — fix inputs |
-| Method availability | BadMethodInvalid, BadNotExecutable | No |
+| Method availability | BadMethodInvalid, BadMethodNotCallable, BadNotExecutable | No |
 | Security | BadUserAccessDenied, BadNoValidCertificate | No — fix access/certs |
 | Communication | BadCommunicationError, BadTimeout, BadServerNotConnected | Yes — retry/back off |
 | Server state | BadStateNotActive, BadShutdown | Sometimes |
-| Resource | BadOutOfMemory, BadResourceUnavailable | Yes — wait and retry |
+| Resource | BadOutOfMemory, BadResourceUnavailable, BadTooManyOps | Yes — wait and retry |
 
 ## 10. Monitor
 
@@ -388,6 +409,9 @@ The Monitor node subscribes to variables and emits a message whenever a value ch
 - **Subscription** — configured on the connection (publishing interval, lifetime, priority). One subscription efficiently carries many monitored items.
 - **Monitored item** — each tracked variable, with its own sampling interval, queue size, and optional filter.
 - **Notification behaviour** — a monitored item notifies only when the value actually changes (per the OPC UA spec), and once at monitoring start: the initial value is always reported.
+- **Resilience** — the Monitor node reconnects automatically after a connection loss and re-establishes its subscription and monitored items, resuming without manual intervention.
+
+> **ℹ Note:** Each notification carries `msg.sequenceNumber`. Watch it for gaps to detect dropped notifications — for example when a server-side queue overflows under a heavy change rate.
 
 ### NodeId source (priority order)
 
@@ -409,7 +433,7 @@ The Monitor node subscribes to variables and emits a message whenever a value ch
 - `msg.deadbandType` — `None`, `Absolute`, or `Percent`.
 - `msg.deadbandValue` — the deadband threshold.
 - `msg.queueSize` — server-side queue depth (default 1000).
-- `msg.discardOldest` — when the queue is full, drop the oldest (`true`) or the newest (`false`).
+- `msg.discardOldest` — when the queue is full, drop the oldest (`true`) or the newest (`false`). Note the message property defaults to `false`, the opposite of the node's **Discard Oldest** field (which defaults to `true`): set it explicitly when injecting to avoid silently discarding the newest values.
 
 ### Quick start
 
@@ -426,6 +450,8 @@ msg.payload = [
     "ns=1;s=FlowRate"
 ];
 ```
+
+All items in the array share one subscription, sampling interval, and queue — more efficient than one Monitor node per variable. As a rough guide: under 10 items is trivial, 10–100 is the efficient sweet spot, 100–1000 may need tuned subscription parameters, and beyond 1000 split the work across multiple Monitor nodes.
 
 ### Deadband filtering
 
@@ -446,7 +472,9 @@ The Monitor Event node subscribes to events and alarms rather than value changes
 ### Filtering
 
 - **Where Clause** — a server-side filter selecting which events to receive. Far more efficient than post-filtering in a Function node.
-- **Select Clause** — comma-separated fields to retrieve (e.g. `EventId, Time, Message, Severity`). The `...` button opens a graphical selector that browses the event type hierarchy.
+- **Select Clause** — comma-separated fields to retrieve (e.g. `EventId, Time, Message, Severity`). The `...` button opens a graphical selector that browses the event type hierarchy. Request only the fields you use — smaller messages, less processing. Common sets: basic `EventId,Time,Message,Severity`; alarms add `SourceName,ActiveState,AckedState`; audits add `ActionTimeStamp,ClientUserId`.
+
+Match the subscription to the event rate: a slower publishing interval suits alarms and audits, a faster one suits high-frequency process events. For mixed workloads, use separate Monitor Event nodes on different subscriptions (see [Configure a connection](#5.-configure-a-connection)) so critical alarms don't queue behind noisy low-priority events.
 
 ### Where Clause syntax
 
@@ -517,6 +545,8 @@ The Explore node recursively traverses a subtree and returns the whole structure
 - Depth control, exclusion of empty nodes, and selection of which references to follow.
 - Output that feeds directly into the Monitor node and the Read-as-structure mode.
 
+Traversal stops at variable nodes: the explorer reads each variable (returning the selected output type) and does not recurse into a variable's own children. To inspect a variable's children, start an Explore directly on that variable node.
+
 ### Output types
 
 The output type sets what each leaf variable returns:
@@ -536,7 +566,7 @@ The output type sets what each leaf variable returns:
 
 - **followOrganizes** — `true` follows `Organizes`, `HasProperty`, and `HasComponent` (complete equipment discovery); `false` follows only `HasProperty`/`HasComponent` (direct properties).
 - **excludeEmpty** — set `msg.excludeEmpty = true` to drop branches that contain no variables, for cleaner output.
-- **Depth** — roughly 2–3 levels for one piece of equipment, 4–6 for a production line, 7–10 for a whole plant.
+- **Depth** — Explore follows the full hierarchy under the start node (default maximum depth 10). Rather than a depth setting, control scope by choosing a more specific start NodeId: roughly 2–3 levels for one piece of equipment, 4–6 for a production line, 7–10 for a whole plant.
 
 > **⚠ Warning:** Starting Explore at the Objects folder (`ns=0;i=85`) or another root node traverses the entire server and can return a very large structure. Start from a specific NodeId (or `/Server/ServerStatus` if you are just getting your bearings) and expand scope deliberately.
 
@@ -595,7 +625,7 @@ The NodeId follows the usual priority (`msg.nodeId` → `msg.topic` → `msg.pay
 - **StatusCode** — quality only.
 - **DataValueReversible** — DataValue with reversible encoding.
 
-`msg.payload` is an array of points. Always check each point's `statusCode` and filter out bad-quality points before charting or reporting.
+`msg.payload` is an array of points, and the node echoes the request (`nodeId`, `startTime`, `endTime`) alongside it. Always check each point's `statusCode` and filter out bad-quality points before charting or reporting. On failure the payload is an empty array carrying a top-level `statusCode` and a `message`; an empty array with a `Good` status simply means no data exists in the requested range — distinguish the two before treating it as an error.
 
 ```js
 msg.startTime = "1 hour ago";   msg.endTime = "now";                          // last hour, raw
@@ -644,6 +674,11 @@ Read returns content on `msg.payload` (Buffer, string, or string array per the F
 msg.nodeId = "ns=2;s=RecipeFile";
 msg.payload = "appended log line\n";   // WriteAppend mode
 ```
+
+### Safe write patterns
+
+- **Create-or-update** — run a `ReadSize` first, then branch on the result: route to `Write` when the file is missing and to `WriteAppend` when it already exists.
+- **Atomic write** — write to a temporary file, then rename it over the target once the write succeeds, so a failure mid-write cannot corrupt the original.
 
 ### File operation errors
 
@@ -774,6 +809,8 @@ const device = deviceType.instantiate({
     optionals: ["SerialNumber"],
 });
 ```
+
+Access a component of an instantiated type with `device.getComponentByName(name, namespaceIndex)` — pass the namespace index, since the same browse name can exist in several namespaces. For composite extension-object values (for example an `RfidScanResult`), build the value with `addressSpace.constructExtensionObject(dataTypeNode, fields)`, then write it with `setValueFromSource({ dataType: opcua.DataType.ExtensionObject, value: extObj })`.
 
 Load companion nodesets in dependency order (AutoID needs DI, MachineTool needs Machinery, and so on); the helper reports a clear validation error if a dependency is missing.
 
