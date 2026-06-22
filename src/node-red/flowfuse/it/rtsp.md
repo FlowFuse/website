@@ -33,7 +33,7 @@ If a prebuilt binary is not available for your platform, the node falls back to 
 
 `ffmpeg` is pulled in automatically during install.
 
-![Palette Manager open on the Install tab with the FlowFuse Hub Certified Nodes collection visible and the RTSP node's Install button highlighted](../images/manage-pallete-rtsp.png)
+![Palette Manager open on the Install tab with the FlowFuse Hub Certified Nodes collection visible and the RTSP node's Install button highlighted](./images/rtsp/manage-pallete-rtsp.png)
 *Locating and installing the RTSP Video Feed node from the FlowFuse Hub Certified Nodes catalogue.*
 
 > **ℹ Note:** Existing devices and hosted instances will not pick up newly installed nodes until they are restarted. Restart any instance you plan to use the node on after installing.
@@ -53,7 +53,7 @@ Open the node's settings by double-clicking it on the canvas.
 | **Name** | No | Optional label for the node in the FlowFuse editor. |
 | **Topic** | No | Sets `msg.topic` on emitted messages. Useful when routing frames to MQTT. |
 
-![RTSP Video Feed node settings panel showing the RTSP URL, Username, Password, FPS, File path, and Output image fields](../images/rtsp-config-node.png)
+![RTSP Video Feed node settings panel showing the RTSP URL, Username, Password, FPS, File path, and Output image fields](./images/rtsp/rtsp-config-node.png)
 *The RTSP Video Feed node configuration panel.*
 
 ## Operating modes
