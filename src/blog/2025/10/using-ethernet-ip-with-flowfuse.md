@@ -2,6 +2,7 @@
 title: "EtherNet/IP Integration with FlowFuse: Communicating with Allen-Bradley PLCs"
 subtitle: "A guide to connected and unconnected EtherNet/IP communication with FlowFuse"
 description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using EtherNet/IP. This guide covers connected and unconnected messaging, reading and writing tags, and building industrial automation workflows in Node-RED."
+lastUpdated: 2026-06-19
 date: 2025-10-10
 authors: ["sumit-shinde"]
 image: /blog/2025/10/images/allen-bradly-plc.png
@@ -11,6 +12,43 @@ tags:
   - node-red
   - post
   - plc
+meta:
+  howto:
+    name: "How to Integrate Allen-Bradley PLCs with FlowFuse Using EtherNet/IP"
+    description: "Install and configure the EtherNet/IP node in FlowFuse, then read and write Allen-Bradley PLC tags using connected or unconnected messaging."
+    totalTime: "PT30M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "node-red-contrib-cip-ethernet-ip"
+      - "Allen-Bradley PLC (ControlLogix, CompactLogix, MicroLogix)"
+    steps:
+      - name: "Install the EtherNet/IP node"
+        text: "Open the Node-RED palette manager, search for node-red-contrib-cip-ethernet-ip, and install it to add the ethernet-ip in and ethernet-ip out nodes."
+        url: "installing-the-ethernetip-node"
+      - name: "Configure the EtherNet/IP node"
+        text: "Add a PLC configuration with the IP address, slot number, cycle time, and communication mode, then add the tags you want to read or write."
+        url: "configuring-the-ethernetip-node"
+      - name: "Write data to your PLC"
+        text: "Add an ethernet-ip out node, select your PLC and tag, connect an inject or other input node, and deploy to send values to the PLC."
+        url: "writing-data-to-your-plc"
+      - name: "Read a single tag from your PLC"
+        text: "Add an ethernet-ip in node in Single Tag mode, choose the tag, connect a debug node, and deploy to read the value on your configured cycle time."
+        url: "reading-single-tag-from-your-plc"
+      - name: "Read multiple tags from your PLC"
+        text: "Set the ethernet-ip in node Mode to All tags or All tags (one per msg) to read every configured tag in a single request for efficient monitoring."
+        url: "reading-multiple-tags-from-your-plc"
+  faq:
+    - question: "Which Node-RED node is used for EtherNet/IP communication with Allen-Bradley PLCs?"
+      answer: "Use the node-red-contrib-cip-ethernet-ip node. It supports both connected and unconnected messaging and provides ethernet-ip in nodes for reading and ethernet-ip out nodes for writing tags."
+    - question: "What is the difference between connected and unconnected EtherNet/IP messaging?"
+      answer: "Connected messaging establishes a persistent session via Forward Open, giving fast, low-overhead communication ideal for frequent polling, but it consumes one of the PLC's limited connection slots. Unconnected messaging sends standalone requests without holding a connection, which suits occasional reads or writes but has higher per-message overhead."
+    - question: "Which port does EtherNet/IP use?"
+      answer: "EtherNet/IP typically uses port 44818 for both TCP and UDP. Make sure firewalls between your Node-RED device and the PLC do not block this port."
+    - question: "Do EtherNet/IP tag names need to match the PLC program exactly?"
+      answer: "Yes. Tag names are case-sensitive and must match exactly as they appear in your PLC program, and you must select the correct data type (BOOL, INT, DINT, REAL, etc.) for proper communication."
+    - question: "Can I read all PLC tags in a single message instead of one at a time?"
+      answer: "Yes. Set the ethernet-ip in node's Mode to All tags to read every configured tag together in one message, or All tags (one per msg) to send each value separately. This is more efficient than reading single tags, which adds unnecessary network overhead in production."
 ---
 
 EtherNet/IP is one of the most widely used industrial communication protocols for connecting PLCs, sensors, and controllers across manufacturing environments. If you're working with Allen-Bradley PLCs—whether it's ControlLogix, CompactLogix, or MicroLogix—you're using some of the most trusted automation hardware in the industry.

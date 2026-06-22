@@ -1,5 +1,5 @@
 ---
-title: "Brand Voice"
+title: Brand Voice
 ---
 
 # Brand Personality, Tone of Voice & Character

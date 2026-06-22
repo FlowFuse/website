@@ -2,6 +2,7 @@
 title: "How to Build an MQTT-to-InfluxDB Data Pipeline (2026)"
 subtitle: "From MQTT broker to InfluxDB bucket, the right way."
 description: "Learn how to build a reliable MQTT-to-InfluxDB data pipeline using FlowFuse and Node-RED. No custom scripts, no glue code, just a visual flow that is easy to maintain and hand off."
+lastUpdated: 2026-06-19
 date: 2026-02-26
 keywords: MQTT, InfluxDB, IIoT, FlowFuse, Node-RED, Sensor telemetry, Time-series database
 authors: ["sumit-shinde"]
@@ -13,6 +14,44 @@ cta:
   type: sign-up
   title: Build Pipelines You Can Actually Debug
   description: FlowFuse turns MQTT-to-InfluxDB and every other IIoT integration into a visual flow. No custom scripts, no silent failures, no mystery at 2am. Start your free trial today.
+meta:
+  howto:
+    name: "How to Build an MQTT-to-InfluxDB Data Pipeline in Node-RED"
+    description: "Build a visual MQTT-to-InfluxDB pipeline in FlowFuse using an MQTT in node, a change node to transform the payload, and an InfluxDB out node to write time-series data."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "node-red-contrib-influxdb"
+      - "MQTT broker"
+      - "InfluxDB"
+    steps:
+      - name: "Install the InfluxDB node"
+        text: "Open Manage Palette in the Node-RED editor, search for node-red-contrib-influxdb, and install it so the InfluxDB nodes appear in your palette."
+        url: "step-1-install-the-influxdb-node"
+      - name: "Configure the MQTT In node"
+        text: "Drag an MQTT in node onto the canvas, add a broker connection with your host, port, and credentials, then set the topic and QoS to subscribe to sensor readings."
+        url: "step-2-configure-the-mqtt-in-node"
+      - name: "Transform the payload with a change node"
+        text: "Add a change node to reshape msg.payload into the array of fields and tags that InfluxDB expects, and set the measurement name via msg.measurement."
+        url: "step-3-transform-the-payload-with-a-change-node"
+      - name: "Configure the InfluxDB Out node"
+        text: "Add an InfluxDB out node, create a connection with your InfluxDB URL and API token, then set the organization and bucket to write data into."
+        url: "step-4-configure-the-influxdb-out-node"
+      - name: "Deploy and test"
+        text: "Click Deploy, publish sensor readings, and verify the data lands in InfluxDB using Data Explorer, checking the debug panel if nothing appears."
+        url: "step-5-deploy-and-test"
+  faq:
+    - question: "How do I send MQTT data to InfluxDB?"
+      answer: "In FlowFuse or Node-RED you only need three nodes: an MQTT in node that subscribes to your broker topic, a change node that transforms the payload into InfluxDB's field-and-tag structure, and an InfluxDB out node that writes the data to your bucket."
+    - question: "What is the difference between fields and tags in InfluxDB?"
+      answer: "Fields are the values you aggregate and run math or queries over, while tags are metadata used mainly for filtering and grouping. You cannot aggregate or perform calculations on tags, only on fields, so splitting your payload correctly matters."
+    - question: "Which Node-RED node connects to InfluxDB?"
+      answer: "The node-red-contrib-influxdb package provides the InfluxDB in and out nodes. Node-RED does not include them by default, so you install the package from Manage Palette first."
+    - question: "Why isn't my data showing up in InfluxDB?"
+      answer: "The most common causes are an incorrect API token, a mismatched organization name, or a bucket that does not exist yet. Open the Node-RED debug panel and check for errors on the InfluxDB out node."
+    - question: "Do I need a separate MQTT broker for this pipeline?"
+      answer: "Not necessarily. FlowFuse Pro and Enterprise include a built-in broker whose MQTT nodes configure themselves automatically. You can also use any external broker by entering its host, port, and credentials."
 tldr: "Building an MQTT-to-InfluxDB pipeline in FlowFuse requires just three nodes: an MQTT in node to subscribe to sensor topics, a change node to transform the payload into InfluxDB's field-and-tag structure, and an InfluxDB out node to write the data. This visual approach eliminates the hidden failure modes of custom scripts and makes the entire pipeline easy to debug and hand off."
 ---
 

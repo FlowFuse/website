@@ -2,6 +2,7 @@
 title: "Building a Web HMI for Factory Equipment Control"
 subtitle: "Create web-based operator interfaces for industrial equipment"
 description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser"
+lastUpdated: 2026-06-19
 date: 2025-11-19
 usecase:
   - production-monitoring
@@ -11,6 +12,38 @@ image: /blog/2025/11/images/building-a-web-hmi-for-factory.png
 tags:
   - flowfuse
   - plc
+meta:
+  howto:
+    name: "How to Build a Web HMI for Factory Equipment Control"
+    description: "Connect FlowFuse to a PLC and build a browser-based motor control HMI with start/stop buttons and a color-coded status display, accessible locally or remotely over MQTT."
+    totalTime: "PT45M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "FlowFuse Dashboard 2.0"
+      - "PLC (Siemens, Allen-Bradley, Modbus, OPC UA)"
+      - "Edge device"
+    steps:
+      - name: "Set up FlowFuse"
+        text: "Create a FlowFuse account and install and register the FlowFuse agent on an edge device that can reach your PLC over the network."
+        url: "step-1-set-up-flowfuse"
+      - name: "Connect to your PLC"
+        text: "Install the protocol node that matches your PLC, configure the connection details, and add read and write nodes for equipment status and commands."
+        url: "step-2-connect-to-your-plc"
+      - name: "Build your HMI dashboard"
+        text: "Install Dashboard 2.0, add start/stop ui-button widgets wired to the PLC, build a status display with switch and change nodes, and style it with a ui-template."
+        url: "step-3-build-your-hmi-dashboard"
+  faq:
+    - question: "What is a web HMI and how is it different from a traditional HMI?"
+      answer: "A web HMI is an operator interface that runs in any browser on desktop, tablet, or phone, instead of being tied to a dedicated panel mounted next to the equipment. With FlowFuse you build the interface once and access it from anywhere your operators need to be."
+    - question: "Which PLC protocols can a FlowFuse HMI connect to?"
+      answer: "FlowFuse uses Node-RED protocol nodes to talk to all major controllers, including Modbus, Siemens S7, OPC UA, EtherNet/IP for Allen-Bradley, Mitsubishi MC protocol, Omron FINS, and BACnet."
+    - question: "How do I access my FlowFuse dashboard remotely?"
+      answer: "For production, use a FlowFuse-hosted instance: your edge device publishes PLC data to MQTT topics and the hosted instance subscribes to display it, while operator commands flow back through MQTT to the edge device and PLC. The dashboard is then reachable at your instance's flowfuse.cloud URL from any device."
+    - question: "What polling interval should I use for an industrial HMI?"
+      answer: "Polling intervals between 500 and 1000 ms work well for most applications. Faster polling does not improve control since the PLC handles real-time logic; it only increases network traffic."
+    - question: "Is local offline dashboard access safe for production?"
+      answer: "No. Offline access is convenient for testing, but it can bypass secure authentication and expose sensitive controls and data. For production, use a FlowFuse-hosted instance that provides proper security."
 ---
 
 Most factory HMIs are still stuck in one place. Dedicated panels mounted next to equipment, or SCADA workstations in the control room. Need to check something? You're walking over there.

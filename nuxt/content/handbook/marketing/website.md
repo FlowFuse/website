@@ -81,31 +81,30 @@ YouTube videos can be embedded directly in pages using the `<lite-youtube>` web 
 <lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 704px; height: 100%;" title="Video title"></lite-youtube>
 ```
 
-> **Do not use raw `<iframe>` tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/blog/#embedding-videos-in-article-body) for more detail.
+> **Do not use raw `<iframe>` tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
 
 ## Meta Keywords
 
-Meta keywords are a type of metadata that provide information about the content of a webpage. They are commonly used by search engines to understand the topics covered in a page and improve its visibility in search results.
+Meta keywords are a type of HTML metadata that describe the topics covered by a page. **Major search engines (Google, Bing) have not used meta keywords as a ranking signal since 2009** — setting them has no effect on search visibility or rankings.
+
+They are still output in the HTML on 11ty-served pages and may be used by site-search tools (such as Algolia) or other non-Google indexers, but they should not be treated as an SEO lever.
 
 ### Default Keywords
 
-By default, each webpage on the FlowFuse website includes a set of predefined keywords: **{{ site.messaging.keywords }}**. These default keywords are relevant to the overall theme of the website and help categorize the content.
+By default, each 11ty-served webpage on the FlowFuse website includes a set of predefined keywords: **{{ site.messaging.keywords }}**. These default keywords are relevant to the overall theme of the website.
 
 ### Priority of Keywords
 
-When adding meta keywords to the website pages, a specific priority order is followed:
+On 11ty-served pages, meta keywords are populated in this priority order:
 
-1. **Meta Keywords:** These are the keywords specified in the front matter of the webpage. They are specifically defined for each page and offer additional context.
-
-2. **Keywords:** If no `meta.keywords` are found, the `keywords` specified in the front matter of the webpage are used.
-
-3. [**Tags:**](/handbook/marketing/blog/#tags) If neither `meta.keywords` nor `keywords` are assigned, the `tags` assigned to the content are included as meta keywords. These tags are used to categorize the content and provide relevant context.
-
-4. **Default Keywords:** These are always included and provide general information about the website's content. They can be appended to the keywords obtained from previous points, or, if neither of the previous conditions are met, the default keywords are used as a fallback option.
+1. **Meta Keywords:** Keywords specified in the front matter under `meta.keywords`.
+2. **Keywords:** If no `meta.keywords` are found, the `keywords` front matter field is used.
+3. [**Tags:**](/handbook/marketing/content-strategy/blog/#tags) If neither field is set, the page's tags are used.
+4. **Default Keywords:** Always appended as a fallback.
 
 ### Adding Meta Keywords
 
-To specify meta keywords for a webpage, include them in the front matter of the Markdown file. Here's an example:
+To specify meta keywords for a page, include them in the front matter:
 
 ```yaml
 ---
@@ -116,12 +115,11 @@ meta:
 ```
 ## Requesting New Website Pages
 
-New pages or significant page updates should start with a [Website Page Request](https://github.com/FlowFuse/website/issues/new/choose) issue in the website repository.
-
-The request should include a draft (Google Doc) with:
-- full copy for all sections  
-- CTA destinations and links  
-- any relevant context for the page  
+If you would like the marketing team to create a new page, landing page, or apply website
+changes, use the
+[Web Pages/Changes Request Form](https://form.asana.com/?k=nYxAzsUL57HCyN3W8IYh9w&d=1213818720452348).
+See [Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+for full details.
 
 Starting with a draft copy is often the fastest way to get feedback and move into implementation.
 
