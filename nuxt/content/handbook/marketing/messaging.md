@@ -1,5 +1,10 @@
 ---
-title: "Company Messaging"
+title: Company Messaging
+description: |-
+  Clear and consistent messaging serves as a cornerstone for our company to
+  achieve growth and a bigger market presence. The messaging framework is
+  essential for the company to communicate its value, purpose, and
+  differentiation, to in turn effectively acquire and retain our customer base.
 ---
 
 # Company Messaging
@@ -26,7 +31,7 @@ diving into the messaging.
 
 ## Product Pillars Alignment
 
-Our core product messaging should reflect FlowFuse’s three [product pillars](/handbook/engineering/product/strategy/#product-pillars): 
+Our core product messaging should reflect FlowFuse’s three product pillars: 
 * Operational Scaling; delivering consistency at scale instead of one-off “snowflake” projects
 * System Agility; extending and adapting rigid vendor systems without rip-and-replace
 * Event-Driven Data Bridge; acting as a lightweight, event-based bridge that intelligently 
@@ -51,38 +56,16 @@ our 'ICP'. That's not to say FlowFuse shouldn't cater to this audience, but does
 
 1. Manufacturing or industrial company
    1. Tier 1: Automotive, Pharma, Renewable energy
-   1. Tier 2: Electronics, Semiconductor, Chemical, Oil & Gas
-   1. Tier 3: Food & Beverage, Mining, Water & Wastewater
-1. Greater than $500 million in annual revenue. The need to have sufficiently
+   2. Tier 2: Electronics, Semiconductor, Chemical, Oil & Gas
+   3. Tier 3: Food & Beverage, Mining, Water & Wastewater
+2. Greater than $500 million in annual revenue. The need to have sufficiently
    large budgets to purchase FlowFuse.
-1. Greater than 500 employees. The company needs to be large enough to have
+3. Greater than 500 employees. The company needs to be large enough to have
    internal IT and/or OT people on staff.
-1. Established Digitalization strategy
+4. Established Digitalization strategy
 
 See also the description of
 [our market](/handbook/company/strategy/#the-market).
-
-### Prospect Stages (Node-RED Awareness)
-
-When considering messaging, sales conversations and how we communicate our value
-as a product and company, wan important factor for us at this stage is how aware
-of Node-RED the prospect/customer is.
-
-We classify a customer into one of five "stages":
-
-- **Stage 0: Unaware of Node-RED** No knowledge of Node-RED and what is does
-- **Stage 1: Node-RED Discovery** Aware of what Node-RED is, and may have
-  dabbled with it a little, without using it in-depth
-- **Stage 2: Value of Node-RED** User has used Node-RED in their own personal
-  projects, or for professional proof-of-concepts
-- **Stage 3: Node-RED in Production** Person has built and deployed Node-RED in
-  a professional, production, environment
-- **Stage 4: Node-RED at Scale** User has over 5 x Node-RED instances running in
-  a production environment
-
-Independent of the stage a customer is at, we need to ensure we have consistent
-messaging around the value of FlowFuse, but be aware of other value (e.g. the
-pure value of Node-RED) which can still be factored into the conversation.
 
 ## Messaging
 

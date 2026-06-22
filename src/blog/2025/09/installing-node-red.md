@@ -2,14 +2,47 @@
 title: "Download Node-RED for Production: Windows, Mac, Linux, Raspberry Pi (2026)"
 subtitle: Scale Node-RED from prototype to production with centralized management and 24/7 reliability
 description: "Learn how to install and run Node-RED on various platforms, such as local computer, Raspberry Pi, Mac, Linux, or Cloud. Production-ready solutions from the creators of Node-RED."
+lastUpdated: 2026-06-19
 date: 2025-09-19
-lastUpdated: 2025-12-26
 authors: ["sumit-shinde"]
 image: /blog/2025/09/images/download-node-red.png
 keywords: "download node-red, download nodered, install nodered, install node-red, getting started with node-red"
 tags:
     - flowfuse
     - node-red
+meta:
+  howto:
+    name: "How to Run Node-RED in Production with FlowFuse"
+    description: "Set up a production-ready Node-RED instance by signing up for FlowFuse, adding a remote instance, installing the Device Agent, and opening the editor to start building flows."
+    totalTime: "PT15M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "FlowFuse Device Agent"
+    steps:
+      - name: "Add a Remote Instance"
+        text: "In the FlowFuse platform, open Remote Instances from the left sidebar, click Add Remote Instance, give it a name, select the device type, choose your application, and click Add."
+        url: "step-1-add-remote-instance"
+      - name: "Install the Device Agent"
+        text: "Use the One-Line Install to automatically install Node.js, the Device Agent, and register your device, or follow the NPM Installation instructions for Windows, Mac, or Linux."
+        url: "step-2-install-device-agent"
+      - name: "Manage your device"
+        text: "Once registered, use FlowFuse's management interface to control your remote Node-RED instance, with built-in services such as MQTT and PostgreSQL available for use."
+        url: "step-3-manage-your-device"
+      - name: "Start building flows"
+        text: "Enable Developer Mode from the top right and click Open Editor to begin building flows that run with production reliability and secure remote access."
+        url: "step-4-start-building"
+  faq:
+    - question: "How do I install Node-RED?"
+      answer: "Installing standalone Node-RED is straightforward: install Node.js, then run a single command to start the editor. It runs on Windows, Mac, Linux, Raspberry Pi, and the cloud."
+    - question: "Is standalone Node-RED suitable for production use?"
+      answer: "Standalone Node-RED works great for testing and prototypes, but production environments controlling PLCs and critical equipment need enterprise reliability, security, centralized management, and automated recovery that the basic installation cannot provide."
+    - question: "How does FlowFuse make Node-RED production-ready?"
+      answer: "FlowFuse adds High Availability mode, centralized device management via the Device Agent, DevOps deployment pipelines, secure remote access, automated snapshots, single sign-on, role-based access control, and audit logging on top of Node-RED."
+    - question: "Who created FlowFuse?"
+      answer: "FlowFuse was co-founded by Nick O'Leary, the creator and project lead of Node-RED, who built it after more than a decade of working directly with enterprise users deploying Node-RED in production."
+    - question: "How do I connect a device to FlowFuse?"
+      answer: "Add a Remote Instance in the FlowFuse platform, then install the Device Agent using the One-Line Install, which installs Node.js if missing, installs the agent, and registers your device in less than a minute."
 tldr: "Installing Node-RED is straightforward, but running it reliably across production lines with PLCs and critical equipment requires enterprise capabilities that standalone Node-RED cannot provide. FlowFuse adds high availability, centralized device management, DevOps pipelines, secure remote access, and automated snapshots to make Node-RED production-ready at scale."
 ---
 

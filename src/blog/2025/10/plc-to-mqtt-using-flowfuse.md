@@ -2,6 +2,7 @@
 title: "How to Connect Any PLC to MQTT in Under an Hour"
 subtitle: "Connect any PLC to MQTT without the typical complexity, costs, and expertise requirements"
 description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, OPC UA, and Modbus, transform it, and publish to MQTT using FlowFuse—without expensive gateways or consultants."
+lastUpdated: 2026-06-17
 date: 2025-10-27
 keywords: MQTT, PLC, Siemens, S7, Allen-Bradley, EtherNet/IP, Omron, FINS, Mitsubishi, MC Protocol, Modbus, Modbus-RTU, Modbus-TCP, OPC-UA, FlowFuse, Node-RED, Industrial IoT, IIoT
 authors: ["sumit-shinde"]
@@ -11,6 +12,57 @@ tags:
   - modbus
   - mqtt
   - plc
+meta:
+  howto:
+    name: "Connect a PLC to MQTT using FlowFuse"
+    description: "Extract data from any PLC protocol, transform and structure it, and publish it reliably to MQTT using FlowFuse and Node-RED—without expensive gateways or consultants."
+    totalTime: "PT30M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "FlowFuse Device Agent"
+      - "node-red-contrib-modbus"
+      - "node-red-contrib-s7"
+      - "node-red-contrib-opcua"
+      - "node-red-contrib-cip-ethernet-ip"
+      - "node-red-contrib-buffer-parser"
+      - "FlowFuse MQTT Broker"
+    steps:
+      - name: "Extract Data from Your PLC"
+        text: "Install the protocol node for your PLC from the palette manager (Manage palette > Install) and configure the connection visually. Node-RED offers connectors for Modbus, OPC UA, EtherNet/IP, Siemens S7, Mitsubishi MC Protocol, Omron FINS, and more, with no custom coding or per-tag licensing fees."
+        url: "step-1-extract-data-from-your-plc"
+      - name: "Transform and Structure Your Data"
+        text: "Reshape raw PLC register values, bit arrays, and timestamps into a consistent JSON format. Use Change nodes with JSONata for visual mapping and adding context, Function nodes for custom JavaScript logic, or pre-built community nodes like node-red-contrib-buffer-parser to parse raw data."
+        url: "step-2-transform-and-structure-your-data"
+      - name: "Set Up MQTT with FlowFuse"
+        text: "Drag a FlowFuse MQTT Out node onto the canvas, set the topic using the ISA-95 hierarchy (company/site/area/line/cell/device/measurement), set QoS to 1, and click Deploy. Then open Configure Access Control, edit the auto-created client, select Publish, and Confirm."
+        url: "step-3-set-up-mqtt-with-flowfuse"
+  faq:
+    - question: "Why is MQTT used for moving PLC data?"
+      answer: "MQTT has become the standard for moving PLC data because it is lightweight, handles unreliable networks well, and excels at real-time streaming. Once PLC data is published to MQTT, it creates a common pipeline that IT systems understand, flowing easily to cloud platforms, analytics tools, and dashboards while eliminating protocol translation headaches."
+    - question: "Why does connecting PLCs to the cloud get so complicated?"
+      answer: "It is complicated because factory floors use proprietary protocols from many manufacturers (Modbus, OPC-UA, Ethernet/IP, Profinet, FINS), factory networks have isolated subnets and strict firewalls requiring lengthy security approvals, cloud platforms charge per message which adds up quickly, and there is an expertise gap between plant engineers who know PLCs and IT teams who know infrastructure."
+    - question: "Which PLC protocols does FlowFuse support out of the box?"
+      answer: "Through the Node-RED ecosystem, FlowFuse supports every major PLC manufacturer including Modbus RTU/TCP (node-red-contrib-modbus), Siemens S7-300/400/1200/1500 (node-red-contrib-s7), OPC UA servers (node-red-contrib-opcua), Allen-Bradley (node-red-contrib-cip-ethernet-ip), Mitsubishi (node-red-contrib-mcprotocol), Omron (node-red-contrib-omron-fins), and many more."
+    - question: "How do I add a protocol node to my FlowFuse instance?"
+      answer: "Open the palette manager from the hamburger menu, select Manage palette, go to the Install tab, and search for the node you need. Adding a protocol node takes just a few clicks."
+    - question: "How does FlowFuse avoid opening inbound firewall ports?"
+      answer: "FlowFuse uses an edge-first architecture. The Device Agent installs directly on hardware inside the factory network and initiates outbound connections to the FlowFuse platform using HTTPS and WebSocket over port 443. The platform never initiates connections back to your network, so no new inbound rules, DMZ setup, or VPN tunnels are required."
+    - question: "What options does FlowFuse provide for transforming PLC data?"
+      answer: "FlowFuse offers Change nodes with JSONata for visual no-code transformations like mapping fields and adding context, Function nodes for full JavaScript custom logic and npm packages, and pre-built community nodes such as node-red-contrib-buffer-parser for parsing raw Modbus and PLC outputs into structured formats."
+    - question: "What plan do I need to use the FlowFuse MQTT broker?"
+      answer: "You need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker."
+    - question: "How should I structure my MQTT topics?"
+      answer: "Structure topics using the ISA-95 Equipment Hierarchy in the format company/site/area/line/cell/device/measurement (for example, acme/plant-a/assembly/line1/press-1/pressure01/bar). This builds toward a Unified Namespace (UNS), eliminates data silos, and enables powerful wildcard subscriptions. Use lowercase with hyphens for multi-word names."
+    - question: "What QoS setting should I use for the FlowFuse MQTT Out node?"
+      answer: "Set QoS to 1 in the FlowFuse MQTT Out node configuration, then click Deploy."
+    - question: "How do I configure access control for the MQTT client?"
+      answer: "After deploying, the MQTT client is created automatically. Double-click the MQTT Out node, click Configure Access Control to be redirected to the broker client management section, click the client edit, select Publish, and click Confirm."
+    - question: "How much can FlowFuse save compared to traditional PLC-to-cloud setups?"
+      answer: "Because your own team handles implementation without consultants charging $150-$250 per hour, you can save $12,000 to $30,000 on setup alone. The managed MQTT broker includes unlimited messaging with no per-message fees, protocol drivers are free and open-source with no per-tag licensing, and you can deploy on existing hardware instead of buying $10,000 proprietary gateways."
+    - question: "Can FlowFuse work on air-gapped or proxied networks?"
+      answer: "Yes. For networks with proxy servers, the Device Agent supports standard proxy configurations through environment variables. For air-gapped networks, you can pre-cache Node-RED modules and deploy without internet connectivity after the initial setup."
+tldr: "This tutorial shows how to publish PLC data to MQTT using FlowFuse and Node-RED without expensive gateways or consultants. You extract data from any PLC protocol (Modbus, OPC UA, EtherNet/IP, Siemens S7, and more) using pre-built connectors, transform and contextualize it into consistent JSON with Change, Function, or community nodes, then publish it to the built-in FlowFuse MQTT broker using an ISA-95 topic hierarchy with proper access controls. FlowFuse's edge-first architecture keeps firewalls closed to inbound traffic, letting plant engineers ship production flows in under an hour."
 ---
 
 Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand—flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.

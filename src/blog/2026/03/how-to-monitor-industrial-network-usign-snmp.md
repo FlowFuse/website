@@ -2,6 +2,7 @@
 title: "How to Monitor Industrial Network Health Using SNMP"
 subtitle: "Build production-grade SNMP monitoring pipelines with FlowFuse"
 description: "Learn how to monitor industrial network health using SNMP and FlowFuse. Poll OIDs, visualize device telemetry, and detect failures before they impact operations."
+lastUpdated: 2026-06-19
 date: 2026-03-20
 keywords: SNMP monitoring, industrial network health, FlowFuse, Node-RED SNMP, network telemetry, OID polling, industrial IoT
 authors: ["sumit-shinde"]
@@ -12,6 +13,40 @@ cta:
   type: demo
   title: "See FlowFuse SNMP Monitoring in Action"
   description: "Book a demo to see how FlowFuse can give you production-grade visibility into your industrial network without the infrastructure complexity."
+meta:
+  howto:
+    name: "How to Monitor Industrial Network Health Using SNMP"
+    description: "Build a production-grade SNMP monitoring pipeline in FlowFuse by installing the SNMP nodes, polling system metrics with GET, discovering interfaces with Walker, and fetching status with Subtree."
+    totalTime: "PT45M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "node-red-node-snmp"
+      - "SNMP"
+    steps:
+      - name: "Install the SNMP package in FlowFuse"
+        text: "Open Manage Palette in the Node-RED editor, go to the Install tab, search for node-red-node-snmp, and install it to add the SNMP nodes to your palette."
+        url: "installing-snmp-package-in-flowfuse"
+      - name: "Poll device metrics with SNMP GET"
+        text: "Use an snmp node with a list of system OIDs and a function node to convert OctetString byte arrays to text and TimeTicks to a readable uptime."
+        url: "polling-device-metrics-with-snmp-get"
+      - name: "Discover interfaces with SNMP Walker"
+        text: "Use an snmp walker node to traverse the ifTable subtree and a function node to group the results into one object per interface with name, status, and traffic counters."
+        url: "discovering-interfaces-with-snmp-walker"
+      - name: "Fetch interface data with SNMP Subtree"
+        text: "Use an snmp subtree node targeting the ifOperStatus OID and a function node to produce a concise up/down status for every interface."
+        url: "fetching-interface-data-with-snmp-subtree"
+  faq:
+    - question: "Which Node-RED package is used for SNMP monitoring?"
+      answer: "The node-red-node-snmp package provides the SNMP nodes for Node-RED, including snmp (GET), snmp walker, snmp subtree, snmp table, and snmp set. Install it from Manage Palette to communicate with SNMP-enabled devices."
+    - question: "What port does SNMP use?"
+      answer: "SNMP communicates over UDP port 161. Your FlowFuse host must be able to reach the target device on that port, so confirm firewall rules permit SNMP polling and that you have the correct community string."
+    - question: "What is the difference between SNMP GET, Walker, and Subtree?"
+      answer: "GET fetches the values of specific OIDs you name. Walker traverses from a given OID to the end of the MIB tree, useful for discovery. Subtree fetches everything beneath one OID and stops there, making it more targeted and efficient."
+    - question: "Which SNMP version should I use in production?"
+      answer: "SNMPv3 is the right choice for production because it adds user-based authentication and encryption. SNMPv1 and v2c use a plain-text community string, which is simpler but offers no real security."
+    - question: "Why does SNMP data come back as byte arrays instead of readable text?"
+      answer: "OctetString values such as sysName and sysDescr are returned as byte arrays, and sysUpTime comes back as raw TimeTicks. Use a function node to convert the byte arrays to UTF-8 strings and TimeTicks into a readable uptime format."
 ---
 
 Industrial networks fail quietly. A saturated uplink, a flapping interface, or a device nearing its resource ceiling degrades silently until a line goes down or a control loop breaks.

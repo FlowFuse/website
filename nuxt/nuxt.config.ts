@@ -20,7 +20,39 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/content', 'nuxt-link-checker', 'nuxt-studio', '@nuxt/image'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image'],
+
+    css: ['~/assets/css/theme.css'],
+
+    // Heebo is already loaded via the Google Fonts <link> in app.head.
+    // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
+    // so it never fetches font files at build time (which exhausts Netlify's memory).
+    fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
+
+    site: {
+        url: 'https://flowfuse.com',
+        name: 'FlowFuse',
+        description: 'Low-code application development platform for Node-RED and industrial IoT.',
+        defaultLocale: 'en',
+    },
+
+    sitemap: {
+        // Pull all 11ty-served URLs from the legacy partial sitemap generated at build time
+        sources: ['/api/__sitemap__/urls'],
+        exclude: ['/_studio/**', '/api/**'],
+    },
+
+    robots: {
+        groups: [
+            { userAgent: ['*'], allow: ['/'] },
+            { userAgent: ['Algolia Crawler'], allow: ['/'] },
+        ],
+        sitemap: ['https://flowfuse.com/sitemap.xml'],
+    },
+
+    ogImage: {
+        defaults: { component: 'Default' },
+    },
 
     linkChecker: {
         failOnError: true,
@@ -72,6 +104,7 @@ export default defineNuxtConfig({
             routes: [
                 '/terms',
                 '/privacy-policy',
+                '/integrations',
                 '/ebooks/beginner-guide-to-a-professional-nodered/',
                 '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                 '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -85,6 +118,23 @@ export default defineNuxtConfig({
         }
     },
 
+    hooks: {
+        // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
+        // Can't use Nuxt's $fetch here — it only exists at nitro runtime.
+        async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {
+            if (nitroConfig.dev) return
+            const { buildEnrichedIntegrations } = await import('./server/utils/integrations-enrich')
+            const integrations = await buildEnrichedIntegrations()
+            if (integrations.length === 0) {
+                throw new Error('[nuxt] integrations enumeration returned 0 nodes — refusing to build a site with no detail pages')
+            }
+            const routes = integrations.map(n => `/integrations/${n._id}/`)
+            nitroConfig.prerender = nitroConfig.prerender || {}
+            nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
+            console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)
+        }
+    },
+
     studio: {
         route: '/_studio',
         repository: {
@@ -92,12 +142,17 @@ export default defineNuxtConfig({
             owner: 'FlowFuse',
             repo: 'website',
             branch: 'main',
+            branchStrategy: 'feature-branch',
         }
     },
 
     content: {
         build: {
             markdown: {
+                toc: {
+                    depth: 4,
+                    searchDepth: 4,
+                },
                 remarkPlugins: {
                     'handbook-links': { instance: remarkHandbookLinks },
                 },

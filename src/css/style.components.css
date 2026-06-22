@@ -1,3 +1,5 @@
+@layer components {
+
 /*
     TEAM CARD
     - shows the headshot of a FF employee against their name & job title
@@ -34,13 +36,13 @@
 
 
 .team-card--sm:nth-child(3n+2) .ff-headshot {
-    background-color: theme(colors.indigo.600);
+    background-color: var(--color-indigo-600);
 }
 .team-card--sm:nth-child(3n) .ff-headshot {
-    background-color: theme(colors.indigo.300);
+    background-color: var(--color-indigo-300);
 }
 .team-card--sm:nth-child(3n+1) .ff-headshot {
-    background-color: theme(colors.indigo.900);
+    background-color: var(--color-indigo-900);
 }
 
 /*
@@ -123,7 +125,7 @@
 }
 
 .toc-wrapper .toc a {
-    color: theme(colors.blue.600);
+    color: var(--color-blue-600);
     text-decoration: none;
     display: block;
     padding: 0.2rem 0;
@@ -136,7 +138,7 @@
 }
 
 .toc-wrapper .toc a:focus {
-    outline: 2px solid theme(colors.blue.500);
+    outline: 2px solid var(--color-blue-500);
     outline-offset: 2px;
 }
 
@@ -159,77 +161,76 @@
     WEBINAR
 */
 
-@layer components {
-    .webinar-tile {
-        @apply w-full mt-2 pr-2 pb-4;
-    }
-    .webinar-tile a {
-        overflow: hidden;
-        @apply cursor-pointer;
-    }
-
-    .webinar-tile a.webinar-tile-img {
-        box-shadow: 0px 2px 5px #00000052;
-        transition: box-shadow 0.15s;
-        height: fit-content;
-    }
-
-    .webinar-tile a.webinar-tile-img:hover {
-        box-shadow: inset 0px 2px 5px #00000052;
-    }
-
-    .webinar-tile a.webinar-tile-img img,
-    .webinar-tile a.webinar-tile-img svg {
-        transition: transform 0.3s;
-    }
-
-    .webinar-tile a.webinar-tile-img:hover img,
-    .webinar-tile a.webinar-tile-img:hover svg {
-        transform: scale(1.05);
-    }
-    .webinar-tile .webinar-tile-img svg {
-        @apply rounded-lg;
-    }
-    .webinar-tile .webinar-tile-shade {
-        background-color: rgba(0, 0, 0, 0.4);
-        @apply w-full h-full rounded-lg absolute top-0 left-0;
-    }
-    .webinar-tile .webinar-tile-radialshade {
-        /* background-image: radial-gradient(at 50% 25%, transparent, transparent 30%, #0000007a 100%); */
-        box-shadow: none;
-        transition: box-shadow 0.15s;
-        @apply w-full h-full rounded-lg absolute top-0 left-0;
-    }
-    .webinar-tile .webinar-tile-radialshade:hover {
-        box-shadow: inset 0px 0px 5px #00000052;
-    }
-    .webinar-tile .webinar-tile-datetime {
-        display: flex;
-    }
-    .webinar-tile label {
-        @apply absolute left-3 bottom-3 w-11/12 text-white;
-    }
-    .webinar-tile label h4 {
-        font-size: 1.5rem;
-        font-weight: 400;
-        margin-bottom: 0.5rem;
-        @apply text-white;
-    }
-    .webinar-tile label time {
-        font-size: 1rem;
-        font-weight: 300;
-        @apply text-white;
-    }
-    .webinar time:not(:first-child),
-    .webinar-tile label time:not(:first-child) {
-        border-left: 2px solid theme(colors.gray.500);
-        margin-left: 0.5rem;
-        padding-left: 0.5rem;
-    }
-    .webinar-tile p:first-child {
-        @apply mt-0;
-    }
+.webinar-tile {
+    @apply w-full mt-2 pr-2 pb-4;
 }
+.webinar-tile a {
+    overflow: hidden;
+    @apply cursor-pointer;
+}
+
+.webinar-tile a.webinar-tile-img {
+    box-shadow: 0px 2px 5px #00000052;
+    transition: box-shadow 0.15s;
+    height: fit-content;
+}
+
+.webinar-tile a.webinar-tile-img:hover {
+    box-shadow: inset 0px 2px 5px #00000052;
+}
+
+.webinar-tile a.webinar-tile-img img,
+.webinar-tile a.webinar-tile-img svg {
+    transition: transform 0.3s;
+}
+
+.webinar-tile a.webinar-tile-img:hover img,
+.webinar-tile a.webinar-tile-img:hover svg {
+    transform: scale(1.05);
+}
+.webinar-tile .webinar-tile-img svg {
+    @apply rounded-lg;
+}
+.webinar-tile .webinar-tile-shade {
+    background-color: rgba(0, 0, 0, 0.4);
+    @apply w-full h-full rounded-lg absolute top-0 left-0;
+}
+.webinar-tile .webinar-tile-radialshade {
+    /* background-image: radial-gradient(at 50% 25%, transparent, transparent 30%, #0000007a 100%); */
+    box-shadow: none;
+    transition: box-shadow 0.15s;
+    @apply w-full h-full rounded-lg absolute top-0 left-0;
+}
+.webinar-tile .webinar-tile-radialshade:hover {
+    box-shadow: inset 0px 0px 5px #00000052;
+}
+.webinar-tile .webinar-tile-datetime {
+    display: flex;
+}
+.webinar-tile label {
+    @apply absolute left-3 bottom-3 w-11/12 text-white;
+}
+.webinar-tile label h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    @apply text-white;
+}
+.webinar-tile label time {
+    font-size: 1rem;
+    font-weight: 300;
+    @apply text-white;
+}
+.webinar time:not(:first-child),
+.webinar-tile label time:not(:first-child) {
+    border-left: 2px solid var(--color-gray-500);
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+}
+.webinar-tile p:first-child {
+    @apply mt-0;
+}
+
 
 /*
     AI EXPERT MODAL - Loading Dots and Content Styles
@@ -239,7 +240,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: theme(colors.indigo.500);
+    background-color: var(--color-indigo-500);
     animation: bounce-dot 1.4s infinite ease-in-out;
     margin: 0 1px;
 }
@@ -354,3 +355,5 @@
 .hm-promo-banner__link:hover {
     color: #fff;
 }
+
+} /* end @layer components */

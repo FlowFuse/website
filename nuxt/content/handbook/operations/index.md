@@ -1,7 +1,5 @@
 ---
 title: "Operations"
-navigation:
-  group: "Company"
 ---
 
 # Operations
