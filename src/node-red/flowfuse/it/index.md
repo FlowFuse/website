@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: IT
   parent: FlowFuse Nodes
-  order: 1
+  order: 4
 meta:
   title: IT Certified Nodes
   description: Documentation for FlowFuse Certified Nodes for Information Technology (IT), including nodes for connecting FlowFuse to enterprise systems, databases, cloud services, and business applications.
