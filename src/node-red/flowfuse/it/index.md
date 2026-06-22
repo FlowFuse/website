@@ -7,6 +7,7 @@ meta:
   title: IT Certified Nodes
   description: Documentation for FlowFuse Certified Nodes for Information Technology (IT), including nodes for connecting FlowFuse to enterprise systems, databases, cloud services, and business applications.
 ---
+
 # {{ meta.title }}
 
 This section contains documentation for **FlowFuse Certified Nodes** for **Information Technology (IT)**. These nodes connect your FlowFuse instances to enterprise systems, cloud platforms, databases, and business applications.
@@ -27,7 +28,7 @@ From there you can browse and install any available IT Certified Nodes directly 
 
 > **ℹ Note:** Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
 
-> **ℹ Note:** Access to the FlowFuse Hub Certified Nodes catalogue may need to be enabled for your account. [Contact us](/contact-us/) if you do not see the catalogue in your Palette Manager or would like to learn more.
+> **ℹ Note:** The FlowFuse Hub Certified Nodes catalogue is a paid add-on. [Contact us](/contact-us/) to get access or to learn more.
 
 ## Nodes
 
