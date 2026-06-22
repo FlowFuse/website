@@ -4,7 +4,7 @@ eleventyNavigation:
   parent: FlowFuse Nodes
   order: 4
 meta:
-  title: IT Certified Nodes
+  title: Hub Certified Nodes
   description: Documentation for FlowFuse Certified Nodes for Information Technology (IT), including nodes for connecting FlowFuse to enterprise systems, databases, cloud services, and business applications.
 ---
 
