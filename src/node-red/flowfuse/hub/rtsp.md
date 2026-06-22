@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: RTSP Video Feed
-  parent: IT
+  parent: Hub
   order: 1
 meta:
   title: RTSP Video Feed
