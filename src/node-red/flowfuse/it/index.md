@@ -1,6 +1,6 @@
 ---
 eleventyNavigation:
-  key: Hub Certified Nodes
+  key: Hub
   parent: FlowFuse Nodes
   order: 4
 meta:
