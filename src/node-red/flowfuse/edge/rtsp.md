@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: RTSP Video Feed
-  parent: Hub
+  parent: Edge
   order: 1
 meta:
   title: RTSP Video Feed
@@ -12,11 +12,11 @@ meta:
 
 The **RTSP Video Feed** node connects to an [RTSP](https://en.wikipedia.org/wiki/Real-Time_Streaming_Protocol) video stream from an IP camera or NVR and extracts still frames as PNG images.
 
-The node orchestrates `ffmpeg` to acquire and decode the video stream. This keeps frame processing off the main FlowFuse event loop, so high frame-rate streams do not affect the performance of your flows. The node is a source node with no input connector. It begins capturing frames as soon as the flow is deployed and displays a green **Running** status on the canvas when it has successfully connected to the stream. If `ffmpeg` exits unexpectedly, the node restarts it automatically after a short delay and displays the exit code in the node status.
+The node orchestrates `ffmpeg` to acquire and decode the video stream. By handling the video decoding externally, `ffmpeg` reduces the processing load on the main FlowFuse event loop. However, higher frame rates and image resolutions generate more image data, which can increase CPU and memory usage as frames are transferred and processed within your flows. The node is a source node with no input connector. It begins capturing frames as soon as the flow is deployed and displays a green **Running** status on the canvas when it has successfully connected to the stream. If `ffmpeg` exits unexpectedly, the node restarts it automatically after a short delay and displays the exit code in the node status.
 
 Extracted frames can either be emitted as messages into the flow or written directly to disk as a numbered sequence of PNG files. See [Operating modes](#operating-modes) for details.
 
-> **ℹ Note:** The RTSP Video Feed node is part of the **FlowFuse Hub Certified Nodes**, a paid add-on. [Contact us](/contact-us/) to get access or to learn more.
+> **ℹ Note:** The RTSP Video Feed node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
 
 ## Requirements
 
@@ -28,13 +28,13 @@ If a prebuilt binary is not available for your platform, the node falls back to 
 
 1. Open the **Palette Manager** from the top-right menu in the FlowFuse editor.
 2. Switch to the **Install** tab.
-3. Find the **FlowFuse Hub Certified Nodes** collection.
+3. Find the **FlowFuse Edge Certified Nodes** collection.
 4. Locate `@flowfuse-certified-nodes/rtsp` and click **Install**.
 
 `ffmpeg` is pulled in automatically during install.
 
-![Palette Manager open on the Install tab with the FlowFuse Hub Certified Nodes collection visible and the RTSP node's Install button highlighted](./images/rtsp/manage-pallete-rtsp.png)
-*Locating and installing the RTSP Video Feed node from the FlowFuse Hub Certified Nodes catalogue.*
+![Palette Manager open on the Install tab with the FlowFuse Edge Certified Nodes collection visible and the RTSP node's Install button highlighted](./images/rtsp/rtsp-edge-catalog.png)
+*Locating and installing the RTSP Video Feed node from the FlowFuse Edge Certified Nodes catalogue.*
 
 > **ℹ Note:** Existing devices and hosted instances will not pick up newly installed nodes until they are restarted. Restart any instance you plan to use the node on after installing.
 
