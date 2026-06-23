@@ -2,7 +2,7 @@
 title: "Processing RTSP Camera Feeds at the Edge"
 subtitle: "Turn idle camera streams into live views and AI-driven decisions, all on the plant floor"
 description: "Learn how to use the FlowFuse RTSP Video Feed node to pull frames from a camera stream, display them on a dashboard, and feed them to local AI models, without sending video off-site."
-date: 2026-06-19
+date: 2026-06-22
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/rtsp-feeds-at-edge.png
 tags:
