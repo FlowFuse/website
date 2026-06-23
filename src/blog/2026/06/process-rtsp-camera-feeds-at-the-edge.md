@@ -19,7 +19,7 @@ meta:
       - "FlowFuse Dashboard 2.0"
     steps:
       - name: "Install the RTSP Video Feed node"
-        text: "In the FlowFuse editor, open the Palette Manager, switch to the Install tab, and find the FlowFuse Pro Certified Nodes V2 collection. Locate @flowfuse-certified-nodes/nr-rtsp and click install. ffmpeg is pulled in automatically, so there is nothing else to set up. After enabling the certified nodes package, restart any existing devices or hosted instances so they pick up the new catalogue."
+        text: "The RTSP Video Feed node is part of the FlowFuse Edge Certified Nodes, a paid add-on that has to be enabled for your team first, including on FlowFuse Cloud, by talking to the FlowFuse sales team. Once it's enabled, open the Palette Manager in the FlowFuse editor, switch to the Install tab, and find the FlowFuse Edge Certified Nodes collection. Locate @flowfuse-certified-nodes/rtsp and click install. ffmpeg is pulled in automatically, so there is nothing else to set up. After the catalogue is enabled, restart any existing devices or hosted instances so they pick up the new catalogue."
         url: "installing-the-node"
       - name: "Configure the node to capture frames"
         text: "Drag the RTSP Feed node onto the canvas and open its settings. Enter your camera's RTSP URL, add a username and password if the camera needs them, set the FPS to match your use case, and leave Output image as msg.payload enabled so each frame is emitted as a message."
@@ -63,6 +63,8 @@ In this tutorial, you'll connect to an RTSP camera and display the live feed on 
 
 Before you begin, ensure the FlowFuse Device Agent is installed and running on an edge device that can access the camera. This device will be managed through FlowFuse and serves as the environment where you'll install the required nodes and build the flow. If you haven't configured a device yet, complete the [Device Agent Quickstart](/docs/device-agent/quickstart/#setup-%26-installation) before continuing.
 
+The RTSP Video Feed node is part of the **FlowFuse Edge Certified Nodes**, a paid add-on that isn't enabled by default. This applies to FlowFuse Cloud customers too, so the catalogue won't appear in your Palette Manager until it's switched on for your team. [Talk to our sales team](/contact-us/) to get access before you start.
+
 ## How the node works
 
 The **RTSP Video Feed** node does one job well: it connects to a camera and pulls still frames out of the stream as PNG images. It uses `ffmpeg` under the hood to handle the video decoding and frame extraction.
@@ -75,11 +77,9 @@ The capture rate and image resolution have a direct impact on performance. While
 
 Let's turn a camera into something an operator can actually monitor—without ever opening the NVR.
 
-> **Note:** The RTSP Video Feed node is a Certified Node available through the FlowFuse Edge Certified Nodes. [Contact us](/contact-us/) if you'd like access or want to learn more.
-
 ### Installing the node
 
-> Enabling the certified nodes package updates the catalogue, but existing devices and hosted instances won't see the new nodes until they restart. Restart any device or hosted instance you plan to install the node on so it picks up the updated catalogue.
+> The catalogue must be enabled for your team before you can install the node (see the note above). Once it is, enabling the certified nodes package updates the catalogue, but existing devices and hosted instances won't see the new nodes until they restart. Restart any device or hosted instance you plan to install the node on so it picks up the updated catalogue.
 
 1. In the FlowFuse editor, open the Palette Manager from the top-right menu.
 2. Switch to the Install tab and find the "FlowFuse Edge Certified Nodes".
