@@ -7,6 +7,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/06/images/rtsp-feeds-at-edge.png
 tags:
     - flowfuse
+    - post
 meta:
   howto:
     name: "How to Process RTSP Camera Feeds at the Edge with FlowFuse"
