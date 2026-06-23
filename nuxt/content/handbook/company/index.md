@@ -1,7 +1,5 @@
 ---
 title: "Company"
-navigation:
-  group: "Company"
 ---
 
 # Company

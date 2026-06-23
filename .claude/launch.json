@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev:eleventy"],
       "port": 8080
+    },
+    {
+      "name": "nuxt",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:nuxt"],
+      "port": 3000
     }
   ]
 }

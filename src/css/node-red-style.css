@@ -1,5 +1,5 @@
-@tailwind components;
-@tailwind utilities;
+
+@layer components {
 
 body.node-red-con {
     background-color: rgba(33, 33, 35, 1);
@@ -26,8 +26,10 @@ body.node-red-con .container.main {
 
 /* Cookie banner */
 body.node-red-con #cc-main {
-    --cc-btn-primary-bg: theme(colors.white);
-    --cc-btn-primary-hover-bg: theme(colors.gray.50);
-    --cc-btn-secondary-bg: theme(colors.gray.400);
-    --cc-btn-secondary-hover-bg: theme(colors.gray.400);
+    --cc-btn-primary-bg: var(--color-white);
+    --cc-btn-primary-hover-bg: var(--color-gray-50);
+    --cc-btn-secondary-bg: var(--color-gray-400);
+    --cc-btn-secondary-hover-bg: var(--color-gray-400);
 }
+
+} /* end @layer components */

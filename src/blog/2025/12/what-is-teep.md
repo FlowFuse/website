@@ -2,12 +2,14 @@
 title: "What is TEEP? Calculation, Benchmarks & TEEP vs OEE (2026)"
 subtitle: "If you're tracking OEE, you're only seeing half the picture."
 description: "Your equipment sits idle 16+ hours daily. TEEP in 2026 measures this, OEE ignores it. Get the formula, learn when 35% TEEP beats 60%, and turn hidden capacity into profit without capital investment."
+lastUpdated: 2026-06-17
 date: 2025-12-19
 keywords: TEEP, total effective equipment performance, TEEP calculation, TEEP vs OEE, OEE vs TEEP, equipment utilization, capacity planning, TEEP formula, TEEP benchmark, TEEP monitoring, overall equipment effectiveness, TEEP dashboard
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/what-is-teep.png
 tags:
   - flowfuse
+tldr: "TEEP (Total Effective Equipment Performance) measures the percentage of total calendar time (all 8,760 hours a year) that equipment spends producing good parts at speed, calculated as Utilization x OEE (Availability x Performance x Quality). Unlike OEE, which only looks at scheduled production time, TEEP exposes idle capacity created by shift patterns, demand, and maintenance strategy. TEEP scores are always lower than OEE and are most useful for capacity planning and deciding whether to add shifts before buying new equipment."
 meta:
   faq:
   - question: "How does TEEP differ from OEE and OOE?"
@@ -21,6 +23,24 @@ meta:
   
   - question: "How should I handle planned maintenance in a TEEP calculation?"
     answer: "Planned maintenance counts against total calendar time in TEEP calculations. The key is categorizing it correctly so stakeholders understand whether low TEEP results from maintenance strategy, insufficient demand, or operational losses. This transparency drives better capacity and maintenance decisions."
+
+  - question: "What is the formula for TEEP?"
+    answer: "TEEP equals Utilization multiplied by OEE, where Utilization is scheduled time divided by total calendar time, and OEE is Availability times Performance times Quality. Because it folds Utilization on top of OEE, TEEP is always equal to or lower than OEE."
+
+  - question: "What is the difference between TEEP and Utilization?"
+    answer: "Utilization is just one factor of TEEP. It measures the share of total calendar time that equipment is scheduled to run. TEEP combines that Utilization factor with OEE, so it reflects both how much you schedule the asset and how well it performs while running."
+
+  - question: "Can TEEP ever reach 100 percent?"
+    answer: "In theory only if equipment runs every hour of every day at full speed with zero defects and no downtime. In practice that is unrealistic, so 100 percent TEEP is a ceiling, not a target. The value is in tracking the gap and deciding which part of it is worth closing."
+
+  - question: "When should I use TEEP instead of OEE?"
+    answer: "Use OEE to improve performance during scheduled production, and use TEEP for capacity planning and investment decisions. TEEP answers whether you can meet rising demand by adding shifts or improving utilization before spending capital on new equipment."
+
+  - question: "How do I measure TEEP in real time?"
+    answer: "Collect equipment run, downtime, speed, and quality data from PLCs or sensors, combine it with the scheduled and calendar time baselines, and compute the factors continuously. A platform like FlowFuse can pull this shop-floor data into Node-RED and surface live TEEP on a dashboard."
+
+  - question: "Is a low TEEP score always a problem?"
+    answer: "No. A low TEEP can simply reflect a deliberate single-shift schedule or low current demand rather than poor performance. The score becomes actionable only once you separate utilization losses (scheduling and demand) from operational losses (downtime, slow cycles, defects)."
 ---
 
 Total Effective Equipment Performance (TEEP) is a manufacturing KPI used to understand how much of an equipment investment is actually being utilized. While most manufacturers rely on [Overall Equipment Effectiveness (OEE)](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/#what-is-oee%3F) to assess shop-floor performance, years of real-world use have revealed a critical blind spot: OEE only measures how well equipment runs *when it is scheduled to run*. It says nothing about the many hours assets sit idle due to planning decisions, demand patterns, labor availability, or maintenance strategy.

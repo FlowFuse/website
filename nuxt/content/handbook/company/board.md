@@ -209,6 +209,14 @@ contains the KPIs we track and editorialized information from the CEO on company
 performance. For transparency, the company includes financial performance data
 from QuickBooks, and reports on 3 key metrics: ARR, Burn, and Runway.
 
+Additional metrics available to report on:
+- State of the Union metrics
+- ARR numbers broken down by stage
+- Funnel metrics on pipeline 
+- MQL and program spend
+- Product metrics
+You can find the KPIs updated here on a monthly basis (LINK TBC)
+
 The subject is structured as: `FlowFuse <Month> <Year> Update`, for example:
 `FlowFuse May 2025 Update`.
 
