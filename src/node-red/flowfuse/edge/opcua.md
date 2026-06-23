@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: OPC UA
-  parent: OT
+  parent: Edge
 meta:
   title: "OPC UA for FlowFuse - FlowFuse Certified Node"
   description: "Connect a FlowFuse instance to industrial OPC UA servers: read, write, monitor, call methods, browse, read history, work with files, or host your own OPC UA server. A FlowFuse Certified Node."
@@ -185,7 +185,7 @@ Every OPC UA node depends on a connection defined by the **OPC UA Client** confi
 
 ### Certificate trust
 
-Secure connections rely on mutual certificate trust. By default the client side automatically accepts the server's certificate, so the step that usually needs action is the reverse: **the server must trust the client's certificate**. For a `Sign` or `SignAndEncrypt` connection, download the client certificate from the connection editor (in PEM or DER format) and add it to your OPC UA server's trusted list — otherwise the server refuses the connection. The client certificate lives in the connection node's PKI store at `PKI/own/certs/client_certificate.pem`.
+Secure connections rely on mutual certificate trust. By default the client side automatically accepts the server's certificate, so the step that usually needs action is the reverse: **the server must trust the client's certificate**. For a `Sign` or `SignAndEncrypt` connection, download the client certificate from the connection editor (in PEM or DER format) and add it to your OPC UA server's trusted list — otherwise the server refuses the connection.
 
 > **ℹ Note:** Auto-accepting the server certificate is convenient but means the client does not verify the server's identity. To enforce server-certificate validation, set `rejectUnauthorized` to `true` in the connection node's global settings. The client then refuses any server whose certificate is not already in its trusted store, so you must add the server's certificate to the client side first.
 
@@ -455,7 +455,7 @@ All items in the array share one subscription, sampling interval, and queue — 
 
 ### Deadband filtering
 
-Deadband filtering suppresses insignificant changes — essential for analog values that jitter. The server applies it, so it also reduces network traffic.
+[Deadband filtering](/blog/2026/04/stop-noisy-sensor-data-deadband-filter-flowfuse/#what-is-a-deadband-filter%3F) suppresses insignificant changes — essential for analog values that jitter. The server applies it, so it also reduces network traffic.
 
 | Type | Behaviour |
 |---|---|
