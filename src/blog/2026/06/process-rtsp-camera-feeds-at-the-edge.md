@@ -65,16 +65,17 @@ Before you begin, ensure the FlowFuse Device Agent is installed and running on a
 
 ## How the node works
 
-The **RTSP Video Feed** node does one job well: it connects to a camera and pulls still frames out of the stream as PNG images. It drives `ffmpeg` under the hood, which does the heavy decoding off the main event loop, so even a high frame-rate camera won't bog down your flows.
+The **RTSP Video Feed** node does one job well: it connects to a camera and pulls still frames out of the stream as PNG images. It uses `ffmpeg` under the hood to handle the video decoding and frame extraction.
 
 You give it an RTSP URL, credentials if the camera needs them, and a capture rate. It can then run in one of two modes: emit each frame as a message with the PNG in `msg.payload`, ready to wire into anything that takes an image, or write a numbered sequence of PNGs straight to disk for plain on-site recording. We'll use the message mode for most of this tutorial, since we want the frames in the flow, and cover disk recording at the end.
+
+The capture rate and image resolution have a direct impact on performance. While `ffmpeg` handles the video decoding, higher frame rates and resolutions result in more images being generated, transferred, and processed by downstream nodes, increasing CPU, memory, and I/O usage. For best results, configure the node to capture only as many frames as your application requires.
 
 ## Build it: A Live Line View
 
 Let's turn a camera into something an operator can actually monitor—without ever opening the NVR.
 
 > **Note:** The RTSP Video Feed node is a Certified Node available through the FlowFuse Edge Certified Nodes. [Contact us](/contact-us/) if you'd like access or want to learn more.
-
 
 ### Installing the node
 
