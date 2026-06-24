@@ -85,12 +85,9 @@ You'll install two packages: the InfluxDB nodes and the FlowFuse Edge Certified 
 
 1. Open the editor on your remote instance.
 2. From the menu (top right), select **Manage palette**, then switch to the **Install** tab.
-3. Search for **`node-red-contrib-influxdb`** and click **Install**. These nodes write to and query InfluxDB. A FlowFuse Edge Certified version is on the way; for now, this community package does the job.
-
-> **ℹ Note:** Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
-
-4. Switch the catalog using the top dropdown to **FlowFuse Edge Certified Nodes**.
-5. Search for **`@flowfuse-certified-nodes/opcua`** and click **Install**. (Once sales enables the package for your team, it shows up here.)
+3. Search for **`node-red-contrib-influxdb`** and click **Install**. These nodes write to and query InfluxDB.
+4. Switch the catalog using the top dropdown to **FlowFuse Edge Certified Nodes**. Once sales enables FlowFuse Edge Certified Nodes for your team, this catalog shows up here; restart any existing instance so it picks up the updated catalogue.
+5. Search for **`@flowfuse-certified-nodes/opcua`** and click **Install**.
 
 ![Manage palette Install tab showing the OPC UA certified package in search results](./images/opcua-manage-pallete.png)
 _Install the OPC UA certified package from the FlowFuse Edge Certified Nodes catalog._
