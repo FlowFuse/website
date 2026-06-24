@@ -4,7 +4,7 @@ subtitle: "Turn live equipment readings into a durable history you can query, ch
 description: "Learn how to connect OPC UA and InfluxDB in FlowFuse to log industrial equipment data as timestamped history, so you can spot trends, prove compliance, and catch failures before they happen."
 date: 2026-06-24
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/06/images/opcua-to-influxdb.png
 keywords: opc ua influxdb, opc ua historical data, influxdb node-red, flowfuse opc ua, industrial data logging, opc ua time series, node-red influxdb, log opc ua data, equipment data history, iiot data logging
 tags:
   - post
