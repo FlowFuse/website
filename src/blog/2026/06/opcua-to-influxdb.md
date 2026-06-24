@@ -59,6 +59,8 @@ tldr: "Real-time OPC UA values tell you what's happening now; the history is whe
 
 Industrial equipment produces data constantly: temperatures, pressures, motor speeds, tank levels, all changing by the second. Real-time values tell you what's happening now, but the history is where the value lives, spotting a degrading pump, proving a batch stayed within spec, tracing the conditions behind a fault. OPC UA gets that data out of your equipment in a vendor-neutral way, and InfluxDB stores it as timestamped history built to query at scale. In this article, you'll connect the two in FlowFuse to turn live readings into a durable record you can query, chart, and analyze.
 
+> **ℹ Note:** If you'd rather not leave FlowFuse and want a good time-series database built in, [FlowFuse Tables](https://flowfuse.com/docs/user/ff-tables/) is the answer.
+
 <!--more-->
 
 ![The finished flow on the FlowFuse canvas: inject → Read (OPC UA) → function → influxdb out](./images/opcua-to-influxdb-flow.png)
@@ -117,9 +119,9 @@ _Point the endpoint at your server's URL and match its Security Policy and Mode.
 
 ### Read the values on a schedule
 
-The Read node takes the Node ID of the tag from the incoming message, so feed it a message carrying the tag you want and it returns the value. First you need that Node ID, something like `ns=3;s=Temperature`. If your server's docs already list it, you're set, plug it in and skip to step 2. If not, the Read node can find it for you.
+The Read node takes the Node ID of the tag from the incoming message, so feed it a message carrying the tag you want and it returns the value. First you need that Node ID, something like `ns=3;s=Temperature`.
 
-1. In the **Read** node, click the tree button next to the **NodeId** field. Enter the Node ID you want to drill into (a root node such as the Objects folder is the usual starting point), and the editor renders your server's address space as an expandable tree. Drill down, click the tag you want, and its Node ID fills in automatically.
+1. In the **Read** node, click the tree button next to the **NodeId** field. Enter the Node ID you want to drill into (a root node such as the Objects folder is the usual starting point), and the node renders your server's address space as an expandable tree. Drill down, click the tag you want, and its Node ID fills in automatically.
 2. Add an **inject** node and set it to repeat at a fixed interval, say every 5 seconds, so each pulse triggers a fresh read. Wire it into the Read node.
 3. Connect a **debug** node to the Read node's output, then deploy.
 
@@ -137,18 +139,18 @@ Deploy and watch the debug output. You should see a value arriving on each inter
 ![The debug sidebar showing a reading with msg.payload, msg.statusCode, and msg.sourceTimestamp expanded](./images/read-output.png)
 _Each read returns the value in msg.payload, with timestamp and quality on separate properties._
 
-## Writing data to InfluxDB
+## Writing Data to InfluxDB
 
-The OPC UA reading and the InfluxDB write node speak different formats, so you'll add a **function** node between them to shape each reading into a measurement.
+The OPC UA Read node and InfluxDB Out node use different message formats, so add a **Function** node between them to format the data before writing it to InfluxDB.
 
-1. Drop a **function** node after the Read node and open it.
-2. Build the payload InfluxDB expects: an array of two objects, fields first, then tags. `msg.payload` holds the bare reading, and `msg.sourceTimestamp` holds the time the server sampled it, set `msg.timestamp` from it so InfluxDB stores the reading against when it actually happened:
+1. Drop a **Function** node after the Read node and open it.
+2. Configure it to build the payload InfluxDB expects. `msg.payload` contains the OPC UA value, and `msg.sourceTimestamp` contains the timestamp from the OPC UA server:
 
 ```javascript
 const value = msg.payload;
 
-msg.measurement = "equipment_readings";  // the measurement (table) to write into
-msg.timestamp = msg.sourceTimestamp;     // use the server's sample time, not write time
+msg.measurement = "equipment_readings";
+msg.timestamp = msg.sourceTimestamp;
 
 msg.payload = [
     {
@@ -159,24 +161,25 @@ msg.payload = [
         location: "plant-floor"
     }
 ];
+
 return msg;
 ```
 
-The first object holds the fields (the actual measured values). The second holds tags, the metadata you'll filter and group by later when querying. Tags make the difference between "show me every temperature" and "show me tank-1's temperature last Tuesday." Setting `msg.measurement` here keeps the measurement name in your flow rather than buried in the write node, so you can drive it from the data later if you add more tags; if you'd rather, leave this line out and set the measurement in the influxdb out node instead.
+The first object contains the field values, while the second contains tags used for filtering and grouping data during queries.
 
-3. Wire the function node into an **influxdb out** node.
-4. Open the influxdb out node and click the pencil icon next to the **Server** field to configure the connection: enter your InfluxDB URL and select the version (1.x or 2.0) that matches your instance.
-5. For InfluxDB 2.0, enter your **Token**, **Organization**, and **Bucket**. For 1.x, enter the database name and any credentials.
-6. Back in the node, set the **Measurement** name (for example `equipment_readings`) if you didn't set `msg.measurement` in the function node. This is the table your data lands in.
-7. Deploy.
+3. Wire the Function node to an **InfluxDB Out** node.
+4. Open the InfluxDB Out node and click the "+" icon next to **Server** to configure the connection. Enter your InfluxDB URL and select the appropriate version (1.x or 2.0).
+5. For InfluxDB 2.0, provide your **Token**, **Organization**, and **Bucket**. For InfluxDB 1.x, enter the database name and any required credentials.
+6. If you did not set `msg.measurement` in the Function node, specify the measurement name (for example, `equipment_readings`) in the InfluxDB Out node configuration.
+7. Deploy the flow.
 
 ![The influxdb node configuration with URL and version fields](./images/influxdb-config.png)
-_Configure the server connection with your InfluxDB URL and version._
+*Configure the server connection with your InfluxDB URL and version.*
 
 ![The influxdb out node configuration with token, org, and bucket fields](./images/influxdb-write-node-config.png)
-_Set the token, organization, and bucket so readings land in the right place._
+*Set the token, organization, and bucket so readings are written to the correct destination.*
 
-Your readings are now flowing into InfluxDB. Each interval, the Read node reads the tag, the function node shapes it, and the influxdb out node writes a timestamped point to your bucket. Because you set `msg.timestamp` from the server's sample time, each point is stored against when the reading actually happened, not when it reached the database. Drop that line and InfluxDB falls back to stamping each point with its write time instead.
+Your readings are now flowing into InfluxDB. On each interval, the Read node retrieves the OPC UA value, the Function node formats it, and the InfluxDB Out node writes the timestamped data point to your bucket.
 
 ## Verifying your data
 
@@ -191,7 +194,7 @@ _InfluxDB Data Explorer showing the temperature filling in_
 
 You'll see your readings listed in a table, one row per read interval. If new rows keep appearing as time passes, your pipeline is working end to end: equipment to OPC UA to FlowFuse to InfluxDB.
 
-Verifying in the InfluxDB UI proves the data is there, but you don't have to leave FlowFuse to use it. The influxdb in node runs a query and returns the results to your flow, so you can pull the same history back, the last hour of temperature, a daily average, whichever slice you need, and feed it straight into a [FlowFuse Dashboard](https://dashboard.flowfuse.com) chart.
+Storing data is only half the story. The InfluxDB In node lets you query readings back from InfluxDB, whether you need the latest values, historical trends, or aggregated metrics. You can then feed the results directly into a [FlowFuse Dashboard](https://dashboard.flowfuse.com) to build charts, tables, and real-time monitoring views of your OPC UA data.
 
 ## Where to go from here
 
