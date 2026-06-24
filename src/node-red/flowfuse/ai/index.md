@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: AI
   parent: FlowFuse Nodes
-  order: 4
+  order: 1
 meta:
   title: FlowFuse AI Nodes
   description: A set of Node-RED nodes for AI and machine learning, including ONNX model inference and LLM nodes for OpenAI, Anthropic, Google Gemini, and Ollama.
