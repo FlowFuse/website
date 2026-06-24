@@ -34,27 +34,6 @@ defineEmits<{ toggle: [] }>()
                             <span>Show only Certified</span>
                             <span v-if="count !== null" class="certified-toggle--count"> ({{ count }})</span>
                         </button>
-                        <!-- TODO: repoint to a proper FlowFuse-owned Certified Nodes explainer page when one exists. A year-old blog post is not the long-term destination. -->
-                        <a
-                            class="certified-hero--link inline-flex items-center gap-1 uppercase"
-                            href="/blog/2025/07/certified-nodes-v2/"
-                        >
-                            Learn more
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                class="w-4 h-4"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                                />
-                            </svg>
-                        </a>
                     </div>
                 </div>
                 <ul class="certified-pillars md:col-span-7">
@@ -65,8 +44,8 @@ defineEmits<{ toggle: [] }>()
                             </svg>
                         </span>
                         <div>
-                            <h3 class="certified-pillar--title">Vetted authors</h3>
-                            <p class="certified-pillar--body">Every Certified Node comes from a developer with a track record in their domain — not an anonymous npm publisher.</p>
+                            <h3 class="certified-pillar--title">Accountable ownership</h3>
+                            <p class="certified-pillar--body">Every Certified Node has a known, accountable owner standing behind it — not an anonymous npm publisher.</p>
                         </div>
                     </li>
                     <li class="certified-pillar">
@@ -78,17 +57,6 @@ defineEmits<{ toggle: [] }>()
                         <div>
                             <h3 class="certified-pillar--title">Supported through production</h3>
                             <p class="certified-pillar--body">FlowFuse stands behind every Certified Node after launch — patching CVEs on our own timeline. Each node is vetted for reliability, security posture, and current documentation before shipping.</p>
-                        </div>
-                    </li>
-                    <li class="certified-pillar">
-                        <span class="certified-pillar--icon" aria-hidden="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="100%" height="100%">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
-                            </svg>
-                        </span>
-                        <div>
-                            <h3 class="certified-pillar--title">Free or commercial, same bar</h3>
-                            <p class="certified-pillar--body">Some Certified Nodes are free and open; others target specific enterprise needs. The certification standard is the same.</p>
                         </div>
                     </li>
                 </ul>
