@@ -20,6 +20,7 @@ export interface IntegrationCatalogEntry {
     downloads: IntegrationDownloads
     version: string
     updatedAt: string
+    docsUrl?: string
 }
 
 export interface IntegrationExample {

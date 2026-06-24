@@ -8,13 +8,16 @@ const props = defineProps<{
 }>()
 
 const hasGeneratedPage = computed(() => props.generatedIds.has(props.node._id))
+const isInternal = computed(() => props.node.docsUrl || hasGeneratedPage.value)
 const href = computed(() =>
-    hasGeneratedPage.value
-        ? `/integrations/${props.node._id}/`
-        : `https://flows.nodered.org/node/${props.node._id}`
+    props.node.docsUrl
+        ? props.node.docsUrl
+        : hasGeneratedPage.value
+            ? `/integrations/${props.node._id}/`
+            : `https://flows.nodered.org/node/${props.node._id}`
 )
 const externalAttrs = computed(() =>
-    hasGeneratedPage.value
+    isInternal.value
         ? {}
         : { target: '_blank', rel: 'noopener noreferrer' }
 )
@@ -36,7 +39,7 @@ const shortDescription = computed(() => {
                     <span class="truncate">
                         @{{ scope }}
                         <svg
-                            v-if="!hasGeneratedPage"
+                            v-if="!isInternal"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
@@ -55,7 +58,7 @@ const shortDescription = computed(() => {
                 <h3 class="text-base font-semibold group-hover:text-indigo-600 cursor-pointer">{{ node.name }}</h3>
                 <p class="text-sm my-2 leading-5">{{ shortDescription }}</p>
             </div>
-            <div class="integration-card--meta flex justify-between bg-indigo-50/50 group-hover:bg-indigo-50 p-3 text-sm">
+            <div v-if="!node.docsUrl" class="integration-card--meta flex justify-between bg-indigo-50/50 group-hover:bg-indigo-50 p-3 text-sm">
                 <div class="integration-card--stats">
                     <span>v{{ node.version }}<span class="ff-helper left-0 after:left-1/4">Version Number</span></span>
                     <span class="flex items-center gap-1">

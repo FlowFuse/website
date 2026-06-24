@@ -18,6 +18,7 @@ onMounted(async () => {
     const raw = await fetchCatalogue()
     const enriched: CatalogueNode[] = raw.map(n => ({ ...n, _idLc: n._id.toLowerCase() }))
     enriched.sort((a, b) => {
+        if (Boolean(a.docsUrl) !== Boolean(b.docsUrl)) return a.docsUrl ? -1 : 1
         if (a.ffCertified && !b.ffCertified) return -1
         if (!a.ffCertified && b.ffCertified) return 1
         return (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0)
