@@ -731,9 +731,9 @@ Use the Browse node to discover available File objects, and the Read node to ins
 
 On **self-hosted FlowFuse**, the certified node can run an OPC UA server inside your instance using only Function nodes — no `settings.js` edit, no external module declaration, no extra npm install.
 
-{% critical %}
+{% caution %}
 Server hosting is **not supported on FlowFuse Cloud** — Cloud exposes HTTP/HTTPS only and cannot expose the arbitrary TCP port (`opc.tcp://`) a server needs. Use a self-hosted FlowFuse instance and ensure the chosen port is reachable through your container and network configuration.
-{% endcritical %}
+{% endcaution %}
 
 When the palette loads, it publishes a bootstrap helper in the Node-RED global context. Retrieve it and destructure `{ bootstrap, opcua }`: `bootstrap` carries the server helpers and `opcua` re-exports the full `node-opcua` namespace. This works even with `functionExternalModules: false`.
 
