@@ -126,7 +126,9 @@ Clicking the browse (`...`) button opens the live address space, so you can pick
 
 !["Browsing the live server address space to select a NodeId"](./images/opcua/use-node-browser-to-select-node-id.png "Browsing the live server address space to select a NodeId"){data-zoomable}
 
-> **⚠ Warning:** Namespace indexes are not guaranteed stable across servers. If you move a flow between servers, prefer browse paths or the namespace alias table over hard-coded numeric namespace indexes.
+{% warning %}
+Namespace indexes are not guaranteed stable across servers. If you move a flow between servers, prefer browse paths or the namespace alias table over hard-coded numeric namespace indexes.
+{% endwarning %}
 
 ### Browse path syntax
 
@@ -193,7 +195,9 @@ The connection is shared. Changing its parameters affects every node that uses i
 
   !["A connection rejected with BadUserAccessDenied"](./images/opcua/endpoint-verification-user-access-denied.png "A connection rejected with BadUserAccessDenied"){data-zoomable}
 
-> **⚠ Warning:** A username and password sent over message security mode `None` travel in cleartext. Combine credentials with at least `Sign` mode.
+{% warning %}
+A username and password sent over message security mode `None` travel in cleartext. Combine credentials with at least `Sign` mode.
+{% endwarning %}
 
 ### Certificate trust
 
@@ -226,7 +230,9 @@ The Read node fetches data on demand — it acts only when it receives an input 
 3. `msg.payload`
 4. The node's configured NodeId
 
-> **⚠ Warning:** A default Inject node sets `msg.payload` to a timestamp, which silently overrides the node's configured NodeId (priority rule 3). To use the node's own configuration, ensure the Inject node does **not** set `msg.nodeId`, `msg.topic`, or `msg.payload`.
+{% warning %}
+A default Inject node sets `msg.payload` to a timestamp, which silently overrides the node's configured NodeId (priority rule 3). To use the node's own configuration, ensure the Inject node does **not** set `msg.nodeId`, `msg.topic`, or `msg.payload`.
+{% endwarning %}
 
 ### Message properties
 
@@ -347,7 +353,9 @@ A Write returns the original `payload` and `nodeId` plus the result: `statusCode
 | BadNotWritable | Variable is read-only. |
 | BadConnectionClosed | Connection was lost during the write. |
 
-> **⚠ Warning:** Writes to production equipment change real-world state. Gate write nodes behind validation or an operator confirmation step before deploying to a live instance.
+{% warning %}
+Writes to production equipment change real-world state. Gate write nodes behind validation or an operator confirmation step before deploying to a live instance.
+{% endwarning %}
 
 ## 8. Extension Object
 
@@ -588,7 +596,9 @@ The output type sets what each leaf variable returns:
 - **excludeEmpty** — set `msg.excludeEmpty = true` to drop branches that contain no variables, for cleaner output.
 - **Depth** — Explore follows the full hierarchy under the start node (default maximum depth 10). Rather than a depth setting, control scope by choosing a more specific start NodeId: roughly 2–3 levels for one piece of equipment, 4–6 for a production line, 7–10 for a whole plant.
 
-> **⚠ Warning:** Starting Explore at the Objects folder (`ns=0;i=85`) or another root node traverses the entire server and can return a very large structure. Start from a specific NodeId (or `/Server/ServerStatus` if you are just getting your bearings) and expand scope deliberately.
+{% warning %}
+Starting Explore at the Objects folder (`ns=0;i=85`) or another root node traverses the entire server and can return a very large structure. Start from a specific NodeId (or `/Server/ServerStatus` if you are just getting your bearings) and expand scope deliberately.
+{% endwarning %}
 
 Example — exploring `/Server/ServerStatus` with output type `NodeId` returns a nested object whose leaves are the NodeIds of each variable:
 
@@ -721,7 +731,9 @@ Use the Browse node to discover available File objects, and the Read node to ins
 
 On **self-hosted FlowFuse**, the certified node can run an OPC UA server inside your instance using only Function nodes — no `settings.js` edit, no external module declaration, no extra npm install.
 
-> **⚠ Important:** Server hosting is **not supported on FlowFuse Cloud** — Cloud exposes HTTP/HTTPS only and cannot expose the arbitrary TCP port (`opc.tcp://`) a server needs. Use a self-hosted FlowFuse instance and ensure the chosen port is reachable through your container and network configuration.
+{% critical %}
+Server hosting is **not supported on FlowFuse Cloud** — Cloud exposes HTTP/HTTPS only and cannot expose the arbitrary TCP port (`opc.tcp://`) a server needs. Use a self-hosted FlowFuse instance and ensure the chosen port is reachable through your container and network configuration.
+{% endcritical %}
 
 When the palette loads, it publishes a bootstrap helper in the Node-RED global context. Retrieve it and destructure `{ bootstrap, opcua }`: `bootstrap` carries the server helpers and `opcua` re-exports the full `node-opcua` namespace. This works even with `functionExternalModules: false`.
 
@@ -887,7 +899,9 @@ Beyond roughly five servers per instance, prefer separate processes; the event l
 
 Authentication is declarative through the `users` array. Each entry has a username, a password, and roles. The helper bcrypt-hashes clear-text passwords at boot and maps role names to their NodeIds; a value already in bcrypt form (`$2a$`/`$2b$`/`$2y$` prefix) is passed through verbatim. The `users` array controls only session activation — per-node authorization comes from each variable's access-level attributes combined with role mapping. Set `allowAnonymous: false` to refuse anonymous sessions. The helpers `bootstrap.ensureBcryptHash(plain)` and `bootstrap.isBcryptHash(hash)` are available for tooling.
 
-> **⚠ Warning:** If you omit `users`, the helper installs a default test set (`root/secret`, `gdsadmin/admingds`, `user1/password1`, `user2/password2`) intended only for development. Always set your own `users` for any instance reachable beyond your development machine.
+{% warning %}
+If you omit `users`, the helper installs a default test set (`root/secret`, `gdsadmin/admingds`, `user1/password1`, `user2/password2`) intended only for development. Always set your own `users` for any instance reachable beyond your development machine.
+{% endwarning %}
 
 ### Security, certificates, and PKI storage
 
