@@ -13,7 +13,7 @@ hero:
   image: "/images/industries/life-sciences.jpg"
   imageAlt: "Wide view of a GMP biopharmaceutical manufacturing facility with stainless steel bioreactors, automated process equipment, and cleanroom production infrastructure."
   subCta: ""
-problemImage: "images/industries/electronics-appliances-problem.svg"
+problemImage: "images/industries/life-sciences-problem.svg"
 problems:
     - "Scientific instruments operate as isolated systems — process events on one cannot trigger actions on another without manual intervention, consuming scientist and operator time that should be spent on higher-value work."
     - "Electronic Batch Records are assembled after production by pulling data from MES, LIMS, historian, and paper logs — delaying batch release, introducing data integrity risk, and failing the contemporaneous data standard that FDA and EMA inspectors require."
@@ -27,7 +27,7 @@ solution:
       text: "Low-code automation built on Node-RED so scientists and engineers can <strong>configure and iterate workflows without vendor dependency or specialist IT</strong>."
     - svgPath: "components/icons/rectangle-stack.svg"
       text: "Dev/test/prod environments that <strong>support GMP computer system validation (CSV) requirements</strong> and enable controlled, auditable deployment across scales and sites."
-solutionImage: "images/industries/electronics-appliances-solution.svg"
+solutionImage: "images/industries/life-sciences-solution.svg"
 outcomes:
   title: "Key Outcomes"
   subtitle: "for Life Sciences Manufacturers"
