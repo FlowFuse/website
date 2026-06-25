@@ -70,9 +70,13 @@ The OPC UA nodes then appear in your palette, ready to drag onto the canvas.
 
 !["The OPC UA nodes in the Node-RED palette"](./images/opcua/node-palette.png "The OPC UA nodes in the Node-RED palette"){data-zoomable}
 
-> **ℹ Note:** Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+{% note %}
+Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+{% endnote %}
 
-> **ℹ Note:** Keep endpoint URLs, usernames, and passwords in FlowFuse Environment Variables (your instance's **Settings → Environment**) rather than hard-coding them in nodes. This keeps credentials out of your flow JSON and lets you promote the same flow across instances.
+{% note %}
+Keep endpoint URLs, usernames, and passwords in FlowFuse Environment Variables (your instance's **Settings → Environment**) rather than hard-coding them in nodes. This keeps credentials out of your flow JSON and lets you promote the same flow across instances.
+{% endnote %}
 
 ## 3. The Node Set
 
@@ -92,9 +96,13 @@ Each node performs one OPC UA operation and reuses the shared connection you con
 | History Read | Retrieve raw, modified, or aggregated historical data over a time range. |
 | File Operation | Read, write, append, or size files on servers implementing the FileType interface. |
 
-> **ℹ Note:** Properties of the input message take precedence over a node's own configuration. Configure a node statically, or drive it dynamically from upstream messages.
+{% note %}
+Properties of the input message take precedence over a node's own configuration. Configure a node statically, or drive it dynamically from upstream messages.
+{% endnote %}
 
-> **ℹ Note:** Each node reports its state in the editor with a coloured status dot — grey (not connected), blue (operation in progress), green (success), red (failure), and on some nodes (such as History Read) yellow (partial success or quality issues). Watch it alongside the debug sidebar when wiring up a flow.
+{% note %}
+Each node reports its state in the editor with a coloured status dot — grey (not connected), blue (operation in progress), green (success), red (failure), and on some nodes (such as History Read) yellow (partial success or quality issues). Watch it alongside the debug sidebar when wiring up a flow.
+{% endnote %}
 
 ## 4. NodeIds and How to Address Data
 
@@ -140,7 +148,9 @@ Every browse path starts with a reference-type separator and then a sequence of 
 | BadNoMatch | The full path does not exist on the server, or a namespace index is wrong. |
 | BadReferenceTypeIdInvalid | A reference type name in the path is unknown or not namespace-qualified. |
 
-> **ℹ Note:** Browse paths are convenient and portable, but resolution has a cost. For variables you read or write frequently, resolve the path once and use the returned NodeId, or use the verified-browse-path format that caches the NodeId alongside the path.
+{% note %}
+Browse paths are convenient and portable, but resolution has a cost. For variables you read or write frequently, resolve the path once and use the returned NodeId, or use the verified-browse-path format that caches the NodeId alongside the path.
+{% endnote %}
 
 ## 5. Configure a Connection
 
@@ -158,7 +168,9 @@ Every OPC UA node depends on a connection defined by the **OPC UA Client** confi
 4. Click **Save**, then **Done**.
 5. Click **Deploy**, then open the debug sidebar to confirm data flows.
 
-> **ℹ Note:** The connection is shared. Changing its parameters affects every node that uses it, and you must redeploy the flow for connection changes to take effect.
+{% note %}
+The connection is shared. Changing its parameters affects every node that uses it, and you must redeploy the flow for connection changes to take effect.
+{% endnote %}
 
 ### Connection editor areas
 
@@ -187,7 +199,9 @@ Every OPC UA node depends on a connection defined by the **OPC UA Client** confi
 
 Secure connections rely on mutual certificate trust. By default the client side automatically accepts the server's certificate, so the step that usually needs action is the reverse: **the server must trust the client's certificate**. For a `Sign` or `SignAndEncrypt` connection, download the client certificate from the connection editor (in PEM or DER format) and add it to your OPC UA server's trusted list — otherwise the server refuses the connection.
 
-> **ℹ Note:** Auto-accepting the server certificate is convenient but means the client does not verify the server's identity. To enforce server-certificate validation, set `rejectUnauthorized` to `true` in the connection node's global settings. The client then refuses any server whose certificate is not already in its trusted store, so you must add the server's certificate to the client side first.
+{% note %}
+Auto-accepting the server certificate is convenient but means the client does not verify the server's identity. To enforce server-certificate validation, set `rejectUnauthorized` to `true` in the connection node's global settings. The client then refuses any server whose certificate is not already in its trusted store, so you must add the server's certificate to the client side first.
+{% endnote %}
 
 Client and server nodes in your instance share one PKI store. On FlowFuse it lives under `<instance working directory>/opcua-for-flow-fuse/PKI`. For trust decisions to survive restarts and redeploys, that directory must be on persistent storage — see [Hosting an OPC UA server](#16.-hosting-an-opc-ua-server) for the storage details, which apply to client connections too.
 
@@ -411,7 +425,9 @@ The Monitor node subscribes to variables and emits a message whenever a value ch
 - **Notification behaviour** — a monitored item notifies only when the value actually changes (per the OPC UA spec), and once at monitoring start: the initial value is always reported.
 - **Resilience** — the Monitor node reconnects automatically after a connection loss and re-establishes its subscription and monitored items, resuming without manual intervention.
 
-> **ℹ Note:** Each notification carries `msg.sequenceNumber`. Watch it for gaps to detect dropped notifications — for example when a server-side queue overflows under a heavy change rate.
+{% note %}
+Each notification carries `msg.sequenceNumber`. Watch it for gaps to detect dropped notifications — for example when a server-side queue overflows under a heavy change rate.
+{% endnote %}
 
 ### NodeId source (priority order)
 
@@ -463,7 +479,9 @@ All items in the array share one subscription, sampling interval, and queue — 
 | Absolute | Report only when `abs(new − lastReported) > value`. |
 | Percent | Report only when the change exceeds a percentage of the variable's EURange. Requires the variable to expose an EURange property. |
 
-> **ℹ Note:** Deadband compares against the last reported value, not the last sampled value. The initial value is always reported. Use Absolute when a variable has no EURange — Percent silently does nothing without one.
+{% note %}
+Deadband compares against the last reported value, not the last sampled value. The initial value is always reported. Use Absolute when a variable has no EURange — Percent silently does nothing without one.
+{% endnote %}
 
 ## 11. Monitor Event
 
@@ -502,7 +520,9 @@ Where Clause:  (empty)
 Select Clause: EventId,EventType,SourceName,Time,Message,Severity
 ```
 
-> **ℹ Note:** If no events arrive, verify the server supports events (read the object's `EventNotifier` attribute — a non-zero value means it emits events), point the NodeId at an event-generating object (try `i=2253`), and clear the Where Clause. If too many arrive, tighten the Where Clause by type and severity, or point at specific equipment instead of the Server object.
+{% note %}
+If no events arrive, verify the server supports events (read the object's `EventNotifier` attribute — a non-zero value means it emits events), point the NodeId at an event-generating object (try `i=2253`), and clear the Where Clause. If too many arrive, tighten the Where Clause by type and severity, or point at specific equipment instead of the Server object.
+{% endnote %}
 
 ## 12. Browse
 
@@ -592,7 +612,9 @@ Explore a subtree once to discover all its variables, then feed that structure s
 [Inject]  →  [Explore]  →  [Monitor]  →  [Debug]
 ```
 
-> **ℹ Note:** Address spaces rarely change, so cache the Explore result (with a timestamp) and reuse it rather than re-exploring on every deploy. Re-explore periodically only if your server adds or removes variables at runtime.
+{% note %}
+Address spaces rarely change, so cache the Explore result (with a timestamp) and reuse it rather than re-exploring on every deploy. Re-explore periodically only if your server adds or removes variables at runtime.
+{% endnote %}
 
 ## 14. History Read
 
@@ -644,7 +666,9 @@ msg.startTime = "2024-11-20T08:00:00Z";  msg.endTime = "2024-11-20T17:00:00Z"; /
 | BadTimestampsToReturnInvalid | Invalid timestamp specification. |
 | BadMaxAgeInvalid | Invalid time range specified. |
 
-> **ℹ Note:** Keep time ranges and `numValuesPerNode` bounded, prefer aggregation to thin large ranges for charts, and verify the server supports history before relying on it. For very long ranges, chunk the request into smaller windows.
+{% note %}
+Keep time ranges and `numValuesPerNode` bounded, prefer aggregation to thin large ranges for charts, and verify the server supports history before relying on it. For very long ranges, chunk the request into smaller windows.
+{% endnote %}
 
 ## 15. File Operation
 
@@ -689,7 +713,9 @@ msg.payload = "appended log line\n";   // WriteAppend mode
 | BadNodeIdUnknown | File not found — for WriteAppend, create it first with Write. |
 | BadNotWritable / BadUserAccessDenied | File is read-only or your account lacks permission. |
 
-> **ℹ Note:** Use the Browse node to discover available File objects, and the Read node to inspect file metadata such as `Size`, `OpenCount`, and `UserWritable`. Garbled text usually means the wrong encoding — try a different one.
+{% note %}
+Use the Browse node to discover available File objects, and the Read node to inspect file metadata such as `Size`, `OpenCount`, and `UserWritable`. Garbled text usually means the wrong encoding — try a different one.
+{% endnote %}
 
 ## 16. Hosting an OPC UA Server
 
@@ -699,7 +725,9 @@ On **self-hosted FlowFuse**, the certified node can run an OPC UA server inside 
 
 When the palette loads, it publishes a bootstrap helper in the Node-RED global context. Retrieve it and destructure `{ bootstrap, opcua }`: `bootstrap` carries the server helpers and `opcua` re-exports the full `node-opcua` namespace. This works even with `functionExternalModules: false`.
 
-> **ℹ Note:** `global.get("sterfive")` below is the literal runtime key the certified node exposes. Keep it exactly as written in your Function nodes, or the code will not find the helper.
+{% note %}
+`global.get("sterfive")` below is the literal runtime key the certified node exposes. Keep it exactly as written in your Function nodes, or the code will not find the helper.
+{% endnote %}
 
 ### Basic pattern
 
@@ -745,7 +773,9 @@ handle.exposed.temperature.setValueFromSource({
 });
 ```
 
-> **ℹ Note:** Keep the handle in flow context, never in a local `const`/`let` — a Function node's body re-runs on every message. Prefix context keys with `$` (e.g. `$opcuaHandle`) and avoid the bare key `opcua` (it collides with other vendors), dotted keys (Node-RED reads them as nested paths), and colon-separated keys. Put construction-time options (`port`, `nodesets`, security, `users`) only in the Boot node, never in the Update node.
+{% note %}
+Keep the handle in flow context, never in a local `const`/`let` — a Function node's body re-runs on every message. Prefix context keys with `$` (e.g. `$opcuaHandle`) and avoid the bare key `opcua` (it collides with other vendors), dotted keys (Node-RED reads them as nested paths), and colon-separated keys. Put construction-time options (`port`, `nodesets`, security, `users`) only in the Boot node, never in the Update node.
+{% endnote %}
 
 ### Key `bootstrapServer` options
 
@@ -765,7 +795,9 @@ handle.exposed.temperature.setValueFromSource({
 | `onPopulate` | Callback run once when a new server is built — add your variables, objects, and methods here. |
 | `forceRebuild` | Set `true` to rebuild without a config change (e.g. after editing the trust store). |
 
-> **ℹ Note:** The server's identity is a config hash of `port`, `endpoint`, `applicationName`, `productUri`, `nodesets`, `securityPolicies`, `securityModes`, `allowAnonymous`, and `users`. Change any of these and the next deploy rebuilds the server (re-running `onPopulate`). `onPopulate` and `forceRebuild` are excluded from the hash, so editing `onPopulate` alone does not trigger a rebuild — use `forceRebuild: true` if you need one.
+{% note %}
+The server's identity is a config hash of `port`, `endpoint`, `applicationName`, `productUri`, `nodesets`, `securityPolicies`, `securityModes`, `allowAnonymous`, and `users`. Change any of these and the next deploy rebuilds the server (re-running `onPopulate`). `onPopulate` and `forceRebuild` are excluded from the hash, so editing `onPopulate` alone does not trigger a rebuild — use `forceRebuild: true` if you need one.
+{% endnote %}
 
 ### Adding methods
 
@@ -863,7 +895,9 @@ Enable secure endpoints with `securityPolicies` and `securityModes`; the server 
 
 On FlowFuse, the node stores its PKI (its own certificate, the trusted list, and the rejected list) under `<instance working directory>/opcua-for-flow-fuse/PKI`. For this to survive restarts and redeploys, that directory must be on persistent storage: on container-based FlowFuse (Cloud, Kubernetes, Docker) this is the persistent volume mounted at `/data/storage`; on the FlowFuse Device Agent the working directory is on the device's local filesystem. If you re-trust a server's certificate after every deploy, your PKI directory is not landing on persistent storage.
 
-> **ℹ Note:** Username/password over `MessageSecurityMode.None` travels in cleartext. Combine credentials with at least Sign mode. Disabling `SecurityPolicy.None` entirely can break naive clients that probe without security first.
+{% note %}
+Username/password over `MessageSecurityMode.None` travels in cleartext. Combine credentials with at least Sign mode. Disabling `SecurityPolicy.None` entirely can break naive clients that probe without security first.
+{% endnote %}
 
 ### Lifecycle, diagnostics, and stopping
 
