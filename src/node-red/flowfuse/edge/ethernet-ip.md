@@ -16,7 +16,9 @@ A Ethernet IP node for communicating with Rockwell Automation and Allen-Bradley 
 
 This node provides a robust interface for connecting FlowFuse flows to industrial control systems, specifically Rockwell Automation and Allen-Bradley programmable logic controllers (PLCs). It wraps the [st-ethernet-ip](https://www.npmjs.com/package/st-ethernet-ip) library to enable real-time tag monitoring and data collection from industrial automation equipment.
 
-> **ℹ Note:** The Ethernet IP node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+{% note %}
+The Ethernet IP node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+{% endnote %}
 
 ## What is EtherNet/IP?
 
@@ -63,7 +65,9 @@ The node subscribes to specific tags (variables) in the PLC and monitors them fo
 
 Because this node is part of the **FlowFuse Edge Certified Nodes** add-on, make sure your account has access before installing. Contact our [sales team](/contact-us/) if you don't.
 
-> **ℹ Note:** Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+{% note %}
+Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+{% endnote %}
 
 ### Install via the Palette Manager (recommended)
 
