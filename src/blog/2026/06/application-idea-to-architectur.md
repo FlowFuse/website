@@ -47,7 +47,7 @@ meta:
 tldr: "A simple four-step framework helps turn industrial application ideas into clear architectures by focusing on responsibilities, not technologies."
 ---
 
-Every industrial application starts with a requirement.
+Every industrial application starts with an idea.
 
 *"We need OEE dashboards."*
 
@@ -55,17 +55,11 @@ Every industrial application starts with a requirement.
 
 *"We need an asset registry."*
 
-The challenge isn't building the application. It's designing the architecture.
-
 <!--more-->
 
-Most teams treat architecture as a blank-sheet exercise, debating databases, protocols, deployment models, and integrations. But step back and a pattern emerges: teams assemble most industrial applications from the same small set of components.
+The challenge isn't the idea—it's turning it into a clear architecture. Instead of starting with technologies, start with the responsibilities the application must fulfil. Once you can identify those, the architecture naturally follows.
 
-An OEE dashboard, a Unified Namespace publisher, and an asset registry solve very different business problems, yet architecturally they have more in common than most people realise. They all collect, move, store, process, or present data. The difference lies in how those responsibilities combine.
-
-Once you learn to recognise those patterns, architecture becomes far more predictable. Instead of starting with technologies, you start by identifying the responsibilities the application must fulfil and the building blocks that fulfil them.
-
-This article gives you a simple framework for doing exactly that.
+This article introduces a simple four-step framework for turning application ideas into repeatable industrial architectures.
 
 ## How This Framework Works
 
