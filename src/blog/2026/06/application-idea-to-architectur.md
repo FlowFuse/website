@@ -4,7 +4,7 @@ subtitle: "A simple framework for designing industrial applications using repeat
 description: "Learn how to turn industrial application ideas into clear architectures using a structured four-step framework based on FlowFuse building blocks."
 date: 2026-06-26
 authors: ["drew-gatti","sumit-shinde"]
-image: ""
+image: /blog/2026/06/images/flowfuse-idea-to-architecture.png
 tags:
   - flowfuse
   - post
