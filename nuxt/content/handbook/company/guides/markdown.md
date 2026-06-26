@@ -151,3 +151,55 @@ console.log("Hello, world!")
 console.log("Hello, world!")
 ```
 ````
+
+## Callout boxes
+
+Use callout boxes to highlight important information that readers might otherwise skip. Three types are available:
+
+::note
+This is a **note** callout. Use it for general information worth calling out.
+::
+
+::warning
+This is a **warning** callout. Use it for something the reader should be careful about.
+::
+
+::caution
+This is a **caution** callout. Use it for potential data loss, security risks, or irreversible actions.
+::
+
+### Which syntax to use
+
+Since we're in the middle of a migration from 11ty to Nuxt, there are two syntaxes available, pick the one you need according to the location of the files.
+
+**Handbook pages** (`nuxt/content/handbook/`):
+
+```md
+::note
+Content here.
+::
+
+::warning
+Content here.
+::
+
+::caution
+Content here.
+::
+```
+
+**Docs, blog, and changelog pages** (`src/docs/`, `src/blog/`, `src/changelog/`):
+
+```
+{% note %}
+Content here.
+{% endnote %}
+
+{% warning %}
+Content here.
+{% endwarning %}
+
+{% caution %}
+Content here.
+{% endcaution %}
+```
