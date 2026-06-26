@@ -87,7 +87,7 @@ You'll install two packages: the InfluxDB nodes and the FlowFuse Edge Certified 
 2. From the menu (top right), select **Manage palette**, then switch to the **Install** tab.
 3. Search for **`node-red-contrib-influxdb`** and click **Install**. These nodes write to and query InfluxDB.
 4. Switch the catalog using the top dropdown to **FlowFuse Edge Certified Nodes**. Once sales enables FlowFuse Edge Certified Nodes for your team, this catalog shows up here; restart any existing instance so it picks up the updated catalogue.
-5. Search for **`@flowfuse-certified-nodes/opcua`** and click **Install**.
+5. Search for **`@flowfuse-certified-nodes/opcua`** and click **Install**. See the [OPC UA node documentation](/node-red/flowfuse/edge/opcua/) for the full node set and configuration options.
 
 ![Manage palette Install tab showing the OPC UA certified package in search results](./images/opcua-manage-pallete.png)
 _Install the OPC UA certified package from the FlowFuse Edge Certified Nodes catalog._
