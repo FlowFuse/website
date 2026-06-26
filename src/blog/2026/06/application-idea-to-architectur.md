@@ -57,7 +57,7 @@ Every industrial application starts with an idea.
 
 <!--more-->
 
-The challenge isn't the idea—it's turning it into a clear architecture. Instead of starting with technologies, start with the responsibilities the application must fulfil. Once you can identify those, the architecture naturally follows.
+The challenge isn't the idea. It's turning it into a clear architecture. Instead of starting with technologies, start with the responsibilities the application must fulfil. Once you can identify those, the architecture naturally follows.
 
 This article introduces a simple four-step framework for turning application ideas into repeatable industrial architectures.
 
@@ -136,9 +136,7 @@ Notice what we skipped. We never discussed protocols, flows, dashboards, databas
 
 ## Example 2: A Software Idea
 
-The process doesn't change when hardware disappears from the picture.
-
-Let's take a completely different requirement.
+The process doesn't change when hardware disappears from the picture. This time the four moves should already feel familiar, so we'll work through them as one continuous walk rather than four labelled steps.
 
 ### The Idea
 
@@ -146,13 +144,9 @@ A company wants a central asset registry where teams can view, search, and maint
 
 Operators, maintenance teams, and engineers all need the same information, and everyone should see changes immediately.
 
-### 1. Say What It Does
+### Working Through the Moves
 
-The application maintains a shared list of assets that users can view, search, and update.
-
-Again, we're describing the outcome, not the implementation.
-
-### 2. Pick the Building Block
+Said plainly, the application maintains a shared list of assets that users can view, search, and update. That's the outcome, not the implementation.
 
 This time nothing touches machines, PLCs, or sensors. The application exists entirely for people. Users open screens, search records, update information, and view results. That points us towards a software building block.
 
@@ -162,26 +156,14 @@ This time nothing touches machines, PLCs, or sensors. The application exists ent
 | **Data-Driven App**       | A user-facing application whose content is driven by data.                               |
 | **Shared Building Block** | Reusable functionality that you incorporate into other applications.                     |
 
-The requirement revolves around people viewing and managing data through an interface.
+The requirement revolves around people viewing and managing data through an interface, which makes it a **Data-Driven App**.
 
-That makes it a **Data-Driven App**.
-
-We've picked the application. Now decide where its data lives.
-
-### 3. Decide Where the Data Goes
-
-Assets are records.
-
-An asset belongs to a site. It may have an owner, a status, maintenance history, and other attributes. Users search these records, update them, and relate them to one another.
-
-This is structured business data, which makes a **Relational Database** the natural choice.
-
-The Data-Driven App reads and updates the information stored there.
+Now the data. Assets are records. An asset belongs to a site. It may have an owner, a status, maintenance history, and other attributes. Users search these records, update them, and relate them to one another. This is structured business data, which makes a **Relational Database** the natural choice. The Data-Driven App reads and updates the information stored there.
 
 ![Architecture diagram of a Software Data-Driven App reading and updating asset records in a Relational Database](./images/example-2-diagram.png)
 _Asset records live in the Relational Database; the Data-Driven App is the interface users work through_
 
-### 4. Read Off the Sentence
+### Read Off the Sentence
 
 Combine the pieces.
 
@@ -193,7 +175,7 @@ Same four moves, same single-sentence result. We started with a business require
 
 ## Example 3: Combining Hardware and Software (OEE)
 
-The first two examples were deliberately simple: one hardware application, one software application. Most real-world industrial applications combine both. This time, the moves should already feel like second nature, so we'll work through them as one continuous walk rather than four labelled steps.
+The first two examples were deliberately simple: one hardware application, one software application. Most real-world industrial applications combine both. By now the moves should feel like second nature, so we'll again work through them as one continuous walk.
 
 ### The Idea
 
