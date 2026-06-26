@@ -1,5 +1,5 @@
 ---
-title: "Why FlowFuse Certified Nodes?"
+title: "The what and the why: FlowFuse Certified Nodes"
 subtitle: "Depend on maintained, secure, and supported nodes to reliably integrate your systems."
 description: "FlowFuse Certified Nodes take the vetting, security monitoring, and support burden of community nodes off your plate. Read which four situations where they're the clear solve."
 date: 2026-06-05
