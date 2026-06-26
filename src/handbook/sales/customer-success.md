@@ -377,13 +377,14 @@ Payouts are based on two equally weighted goals (50% each). Note that weightings
 Commission payouts are denominated in USD, aligning CSM financial incentives directly with the company's primary revenue currency.
 
 ### When Transactions are Credited
-To align with SaaS market standards, commission is credited based on the Effective Date of the contract change (when the revenue officially starts or stops). _**To be confirmed**_
+Commission is credited based on the date the transaction is signed, or notice is given, ensuring CSMs are recognized in the quarter the outcome is determined.
 
 | Metric                | Credit Date for Commission   |
 | ----------------------| -----------------------------|
-| Churn                 | Contract End Date            |
-| Expansion (In-Term)   | Provisioning/Effective Date  |
-| Expansion (Renewal)   | New Contract Start Date      |
-| Renewal               | New Contract Start Date      |
-| Contraction           | New Contract Start Date      |
-_Example: If a renewal is signed in Q4 but the "Effective Start Date" is in Q1, the commission is earned in Q1._
+| Churn                 | Notice/Cancellation Date     |
+| Expansion (In-Term)   | Signing Date                 |
+| Expansion (Renewal)   | Signing Date                 |
+| Renewal               | Signing Date                 |
+| Contraction           | Notice Date                  |
+
+**Example: If a renewal is signed in Q4 but the Effective Start Date is in Q1, the commission is earned in Q4.**
