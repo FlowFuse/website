@@ -19,7 +19,7 @@ Nodes are grouped into two categories
     - Which Catalogues of Nodes to enable (Edge, Hub, or Both)
 3. Engineering member will be assigned the ticket
 4. Download the "certified-nodes-token-generator" from the [engineering](https://github.com/FlowFuse/engineering) repo
-5. Engineering will use the information from the Issue to run the tool and create the required tokens and/or configuration.
+5. Engineering will use the information from the Issue to run the tool and create the required tokens and/or configuration
     - Make required changes ff-certified-nodes instance
     - For Self Hosted customer provide token to Sales to pass to the customer
     - For Teams on FFC go to Team Settings -> Danger -> Edit Usage limits, tick Certifed nodes and add the required catalogue URLS to the box at bottom
