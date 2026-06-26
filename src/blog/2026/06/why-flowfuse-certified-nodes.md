@@ -67,11 +67,14 @@ FlowFuse Certified nodes exist to take that liability off your hands, delivering
 
 FlowFuse certifies a node against three pillars, each aimed at a specific failure mode.
 
-**Quality:** Every Certified Node is tested for operational reliability and compatibility, so it behaves predictably across versions instead of surprising you in production. This means no more guesswork, no more deep vetting, and significantly quicker time to value. We pick only the best-in-class OSS nodes, sub-license best-in-class properietary nodes, and build custom integrations for FlowFuse users. This means you get true best-in-class integrations in a single catalog - with no need to select new vendors or navigate complex licenses.
+### Quality
+Every Certified Node is tested for operational reliability and compatibility, so it behaves predictably across versions instead of surprising you in production. This means no more guesswork, no more deep vetting, and significantly quicker time to value. We pick only the best-in-class OSS nodes, sub-license best-in-class properietary nodes, and build custom integrations for FlowFuse users. This means you get true best-in-class integrations in a single catalog - with no need to select new vendors or navigate complex licenses.
 
-**Security:** FlowFuse implements secure design and architecture by default, and this process extends to the Certified Nodes platform. Every node is checked, validated, and then secured via ongoing reviews per an SLA. This means that you don't stress, especially when fixes are time sensitive, converting a worry-mode update-fest to a smooth 5-minute task.
+### Security
+FlowFuse implements secure design and architecture by default, and this process extends to the Certified Nodes platform. Every node is checked, validated, and then secured via ongoing reviews per an SLA. This means that you don't stress, especially when fixes are time sensitive, converting a worry-mode update-fest to a smooth 5-minute task.
 
-**Support:** When a Certified Node gives you trouble, you get real troubleshooting help and a defined path to resolution, not an unanswered issue queue. FlowFuse node certification also means FlowFuse supported - so you get real, human support, not automatically generated documentation that may or may not map to solutions.
+### Support
+When a Certified Node gives you trouble, you get real troubleshooting help and a defined path to resolution, not an unanswered issue queue. FlowFuse node certification also means FlowFuse supported - so you get real, human support, not automatically generated documentation that may or may not map to solutions.
 
 Let’s take a look at some specific use cases where Certified Nodes are game changers.
 
