@@ -1,23 +1,23 @@
 ---
 eleventyNavigation:
-  key: Ethernet IP Node
+  key: CIP Suite — EtherNet/IP Node
   parent: Edge
   order: 2
 meta:
-  title: Ethernet IP Node
-  description: A Ethernet IP node for communicating with Rockwell Automation and Allen-Bradley PLCs using the EtherNet/IP (Ethernet Industrial Protocol) protocol.
+  title: CIP Suite — EtherNet/IP Node
+  description: A CIP Suite node for communicating with Rockwell Automation and Allen-Bradley PLCs using the EtherNet/IP (Ethernet Industrial Protocol) protocol.
 ---
 
 # {{ meta.title }}
 
-A Ethernet IP node for communicating with Rockwell Automation and Allen-Bradley PLCs using the EtherNet/IP (Ethernet Industrial Protocol) protocol.
+A CIP Suite node for communicating with Rockwell Automation and Allen-Bradley PLCs using the EtherNet/IP (Ethernet Industrial Protocol) protocol.
 
 ## Overview
 
 This node provides a robust interface for connecting FlowFuse flows to industrial control systems, specifically Rockwell Automation and Allen-Bradley programmable logic controllers (PLCs). It wraps the [st-ethernet-ip](https://www.npmjs.com/package/st-ethernet-ip) library to enable real-time tag monitoring and data collection from industrial automation equipment.
 
 {% note %}
-The Ethernet IP node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+The CIP Suite EtherNet/IP node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
 {% endnote %}
 
 ## What is EtherNet/IP?
@@ -74,14 +74,14 @@ Existing devices and hosted instances will not see newly added nodes until they 
 1. Open the **Palette Manager** from the top-right menu in the FlowFuse editor.
 2. Switch to the **Install** tab.
 3. Search for the **FlowFuse Edge Certified Nodes** collection.
-4. Locate `@flowfuse-certified-nodes/ethernet-ip` and click **Install**.
+4. Locate `@flowfuse-certified-nodes/cip-suite` and click **Install**.
 
 ### Install via npm
 
 If you manage your palette from the command line, install the package directly:
 
 ```bash
-npm install @flowfuse-certified-nodes/ethernet-ip
+npm install @flowfuse-certified-nodes/cip-suite
 ```
 
 ## Usage
