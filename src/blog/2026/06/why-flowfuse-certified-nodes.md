@@ -63,6 +63,8 @@ For most users, this risk is minimal - but for some orgs, the idea of inheriting
 
 FlowFuse Certified nodes exist to take that liability off your hands, delivering functionality and peace of mind. A Certified Node is one that FlowFuse has put through an intense quality and security process, ensuring that it meets form and function before you ever install it. And once it is installed, FlowFuse offers long-term support and critical review capability - meaning that the vetting, monitoring, and maintenance you’d otherwise need to carry becomes something that FlowFuse can solve for you.
 
+<!--more-->
+
 ## What "Certified" Actually Means
 
 FlowFuse certifies a node against three pillars, each aimed at a specific failure mode.
