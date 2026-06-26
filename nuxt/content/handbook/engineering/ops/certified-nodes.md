@@ -6,7 +6,7 @@ title: "Certified Nodes"
 
 FlowFuse Certified Nodes are a collection of Node-RED nodes maintained and updated by FlowFuse providing trusted implementations of selected capabilities.
 
-Nodes are grouped in to two categories
+Nodes are grouped into two categories
 
 - Edge: Nodes used to connect to physical devices to collect data e.g. Modbus
 - Hub: Nodes used to carry out more IT related tasks e.g. connect to Databases
