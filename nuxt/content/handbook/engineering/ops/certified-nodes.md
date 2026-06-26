@@ -36,6 +36,6 @@ Nodes are grouped into two categories
     - `git push --mirror git@github.com:FlowFuse/ffcn-<repo-name>.git`
 5. Complete the new repository check [list](https://github.com/FlowFuse/admin/issues/new?template=new-repo.md)
 6. Make changes to the `package.json` to update
-    - the name and scope to be `@flowfuse-certified-nodes/<name>` where name should be shortest sensible name 
-    - the `homepage` link to FlowFuse documentation for the node
+    - The name and scope to be `@flowfuse-certified-nodes/<name>`, where name should be shortest sensible name 
+    - The `homepage` link to FlowFuse documentation for the node
     - Add .github/workflows/release-publish.yml` and the matching `CERTIFIED_NODES_PUBLISH_TOKEN` secret from 1Password.
