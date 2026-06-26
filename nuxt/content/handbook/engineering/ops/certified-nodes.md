@@ -22,6 +22,7 @@ Nodes are grouped in to two categories
 5. Engineering will use the information from the Issue to run the tool and create the required tokens and/or configuration.
     - Make required changes ff-certified-nodes instance
     - For Self Hosted customer provide token to Sales to pass to the customer
+    - For Teams on FFC go to Team Settings -> Danger -> Edit Usage limits, tick Certifed nodes and required catalogue URLS to box at bottom
 
 
 ## Adding New Nodes
