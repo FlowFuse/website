@@ -14,9 +14,9 @@ Nodes are grouped into two categories
 ## Enroll Customers
 
 1. Customer works with Sales team
-2. Salse Team opens an Issue on [CloudProject](https://github.com/FlowFuse/CloudProject/issues/new?template=certified-nodes-request.yml) with all required details
+2. Sales Team opens an Issue on [CloudProject](https://github.com/FlowFuse/CloudProject/issues/new?template=certified-nodes-request.yml) with all required details
     - Self Hosted or FFC Team
-    - Which Catalogues of Nodes to enable (Edge, Hub or Both)
+    - Which Catalogues of Nodes to enable (Edge, Hub, or Both)
 3. Engineering member will be assigned the ticket
 4. Download the "certified-nodes-token-generator" from the [engineering](https://github.com/FlowFuse/engineering) repo
 5. Engineering will use the information from the Issue to run the tool and create the required tokens and/or configuration.
