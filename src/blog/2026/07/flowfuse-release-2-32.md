@@ -34,8 +34,6 @@ _TODO asset: FlowFuse Expert laying out a plan and asking a clarifying question 
 
 Once the plan is set, FlowFuse Expert can carry out platform actions for you, such as creating an instance or registering a device, instead of pointing you to where to click. This is the groundwork for building flows by talking to the platform, with more to follow in upcoming releases.
 
-<!-- CONFIRM with Serban/Nick: the exact actions exposed in 2.32, and whether to frame this as shipped capability or foundation. Friday's planning drew a hard line between "ships Thursday" and "the vision." If the autonomous actions are not user-ready on Thursday, cut this subhead and let Plan Mode stand alone. -->
-
 ### In practice
 
 - You give FlowFuse Expert a task and see the plan it intends to follow before it runs
@@ -71,8 +69,6 @@ Managing edge devices means keeping each agent current, and a major version is t
 
 The Device Agent reaches version 4. Install or upgrade to v4 to use the latest remote instance and agent capabilities in this release. Where a feature needs it, the platform prompts you.
 
-<!-- CONFIRM: the user-facing one-liner for what v4 actually brings. I have the version and that it gates the new agent features, but not a clean benefit. Nick owns the changelog. -->
-
 ### In practice
 
 - You upgrade a device to Device Agent 4 to pick up this release's remote instance capabilities
@@ -90,10 +86,6 @@ The certified node catalog grows again in 2.32, so more of the systems you conne
 For the full picture of what certification covers and when it is worth it, see [Why FlowFuse Certified Nodes?](/blog/2026/06/flowfuse-certified-nodes/), and browse the current catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1).
 
 Certified Nodes are available to Teams and Enterprise tier customers. New instances get the catalog automatically, and you can contact us to add Certified Nodes to an existing instance.
-
-<!-- CONFIRM which nodes are genuinely NEW in 2.32. You said "hopefully Modbus and Redis," but Kristopher's Certified Nodes explainer (June 26) already lists Modbus as available in the catalog, so naming Modbus as new here may be wrong. Both were also go/no-go as of Friday: Modbus pending Steve's node pick and Ben packaging it, Redis paused pending a v2 branch review. Confirm the actual new-in-2.32 list with Kristopher before naming any nodes. Kristopher owns the certified-nodes narrative (PR #5152), so he may supply or rewrite this whole section. -->
-
-<!-- CONFIRM the explainer URL slug once PR #5152 merges. -->
 
 ![A certified node in the palette manager](./images/certified-node-palette.png){data-zoomable}
 _TODO asset: a certified node in the palette manager_
