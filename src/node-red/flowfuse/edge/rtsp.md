@@ -16,7 +16,9 @@ The node orchestrates `ffmpeg` to acquire and decode the video stream. By handli
 
 Extracted frames can either be emitted as messages into the flow or written directly to disk as a numbered sequence of PNG files. See [Operating modes](#operating-modes) for details.
 
-> **ℹ Note:** The RTSP Video Feed node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+{% note %}
+The RTSP Video Feed node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+{% endnote %}
 
 ## Requirements
 
@@ -36,7 +38,9 @@ If a prebuilt binary is not available for your platform, the node falls back to 
 ![Palette Manager open on the Install tab with the FlowFuse Edge Certified Nodes collection visible and the RTSP node's Install button highlighted](./images/rtsp/rtsp-edge-catalog.png)
 *Locating and installing the RTSP Video Feed node from the FlowFuse Edge Certified Nodes catalogue.*
 
-> **ℹ Note:** Existing devices and hosted instances will not pick up newly installed nodes until they are restarted. Restart any instance you plan to use the node on after installing.
+{% note %}
+Existing devices and hosted instances will not pick up newly installed nodes until they are restarted. Restart any instance you plan to use the node on after installing.
+{% endnote %}
 
 ## Configuration
 
@@ -73,7 +77,9 @@ The node emits each captured frame as a message at the configured FPS rate.
 
 The output can be wired to any node that accepts an image buffer, including [FlowFuse Dashboard widgets](https://dashboard.flowfuse.com/),[MQTT out nodes](/node-red/flowfuse/mqtt/mqtt-out/), and [FlowFuse AI nodes](/node-red/flowfuse/ai/).
 
-> **ℹ Note:** Every captured frame becomes a message in the flow. A high FPS value increases the number and size of messages being processed. Set FPS no higher than your use case requires.
+{% note %}
+Every captured frame becomes a message in the flow. A high FPS value increases the number and size of messages being processed. Set FPS no higher than your use case requires.
+{% endnote %}
 
 ### Output disabled
 
