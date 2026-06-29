@@ -1,6 +1,6 @@
 ---
 title: "FlowFuse 2.32: Introducing Plan Mode for FlowFuse Expert, Device Agent 4, & Expanded Certified Nodes"
-subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, and the Device Agent reaches version 4."
+subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
 description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also runs Insights on self-hosted instances, ships Device Agent 4, and adds new certified nodes."
 date: 2026-07-02
 authors: ["jamie-strusz"]
