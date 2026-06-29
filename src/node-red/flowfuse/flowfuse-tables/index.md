@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: FlowFuse Tables
   parent: FlowFuse Nodes
-  order: 1
+  order: 3
 meta:
   title: FlowFuse Tables
   description: FlowFuse Tables provides managed databases for Node-RED users, offering built-in nodes to query, insert, and manage data easily within FlowFuse flows.
