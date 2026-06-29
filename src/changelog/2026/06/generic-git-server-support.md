@@ -25,4 +25,4 @@ To get started:
 ![The Add Git Token dialog showing the GitHub, Azure DevOps, and Other provider options, with the Other option selected and the username and CA certificate fields visible](./images/generic-git-provider.png)
 *Creating a generic Git token for a self-hosted server.*
 
-This feature is available to Team and Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.33.
+This feature is available to Team and Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.32.
