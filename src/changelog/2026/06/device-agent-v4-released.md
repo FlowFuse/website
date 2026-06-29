@@ -55,6 +55,8 @@ device-agent --log-format json
 
 The Device Agent now supports bearer tokens as an authentication method for HTTP endpoints, alongside the existing credential model.
 
+This allows you to create HTTP endpoints in your Node-RED flows that can be accessed securely by other applications without needing to manually authenticate first. This is a capability we've had in Hosted Instances for a while - this release makes it available to Remote Instances as well.
+
 You can configure the tokens via the FlowFuse dashboard for your remote instance under the `Settings->Security` section. Enable the `FlowFuse User Authentication` option, then you can create and manage the tokens.
 
 This requires the FlowFuse v2.32 release, coming later this week, when running in a self-hosted environment, but already available on FlowFuse Cloud.
