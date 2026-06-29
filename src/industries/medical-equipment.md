@@ -13,7 +13,7 @@ hero:
   image: "/images/industries/medical-equipment.jpg"
   imageAlt: "Medical device assembly line with automated production stations, inline test equipment, and operators capturing manufacturing data in a cleanroom environment."
   subCta: ""
-problemImage: "images/industries/life-sciences-problem.svg"
+problemImage: "images/industries/medical-equipment-problem.svg"
 problems:
     - "Device History Records are assembled manually at end of production by pulling data from multiple disconnected systems — delaying product release and introducing transcription errors into regulatory records that FDA 483s consistently flag."
     - "Non-conformances are reported ad hoc, with CAPA initiated as a separate manual step — disconnected from the production data that caused the event and difficult to defend in FDA or Notified Body audits."
@@ -27,7 +27,7 @@ solution:
       text: "Low-code automation built on Node-RED so engineers can <strong>configure and deploy workflows within a validated framework</strong> — without rebuilding for every product or site."
     - svgPath: "components/icons/rectangle-stack.svg"
       text: "Dev/test/prod environments that <strong>support computer system validation (CSV) requirements</strong> and enable controlled, auditable change deployment across sites."
-solutionImage: "images/industries/life-sciences-solution.svg"
+solutionImage: "images/industries/medical-equipment-solution.svg"
 outcomes:
   title: "Key Outcomes"
   subtitle: "for Medical Device Manufacturers"
