@@ -46,6 +46,16 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Finalize this manual invoice, then void the automatically created one from the subscription conversion and send an email to accounting.
 1. If you need to void the invoice, send an email with the invoice number and reason to our accounting team through Slack for their administration.
    - Make sure to void the invoices in all necessary places in HubSpot
+  
+### Updating an Invoice
+
+If a client requests changes to an invoice (e.g. adding a PO number, VAT number, or updating an address), follow the steps below. The goal is always to preserve the original invoice date. Steps:
+
+1. **First, check if the invoice can be edited directly in HubSpot.** If individual line items or details can be updated, make those changes and resend the invoice to the client.
+2. **If the invoice cannot be edited directly**, void the original invoice in HubSpot and create a new invoice with the corrected details, using the original issue date. This is the preferred approach for changes such as adding a PO number, VAT number, or updating a billing address.
+3. **Voiding and reissuing the invoice is a FlowFuse task**, not an accounting task — do not pass this to the Zeni team.
+
+> ⚠️ Always preserve the original invoice date when reissuing. Do not create a new invoice with today's date unless explicitly instructed otherwise.
 
 #### Roles and Responsibilities: CSM vs. Accounting in Accounts Receivable
 
@@ -123,3 +133,12 @@ These settings are configurable by Stripe administrators, here: https://dashboar
 - 1–15 Days Past Due: CSM sends a friendly check-in via email to the primary contact to confirm the invoice was received and scheduled for payment.
 - 16–30 Days Past Due: CSM follows up with the customer’s Accounts Payable (AP) department directly. If no response, the CSM requests an internal update from the customer champion. (The invoice at this stage is marked as uncollectible)
 - 31–45 Days Past Due: Executive Escalation: CSM alerts the #past-due Slack channel of the past due invoice to review with the Sales & Executive team and decide if we need to send a formal "Overdue Notice" and agree on service suspension.
+
+#### Invoice Collection Email Templates
+
+When a customer has not paid their invoice, you can find two email templates (initial reminder and urgent follow-up) in the link below:
+
+[Invoice Collection Email Templates](https://docs.google.com/document/d/1eGEAWZItAklBggqcD4Bbab-VifjMa-0EVFzUiy8NgAo/edit?usp=sharing)
+
+These templates can be sent either from your own email as the account's CSM, or directly from billing@flowfuse.com if you have access to that inbox. If you need access to the billing inbox, reach out to the Finance team.
+
