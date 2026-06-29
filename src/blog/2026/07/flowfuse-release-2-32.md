@@ -9,7 +9,8 @@ tags:
    - flowfuse
    - news
    - releases
-tldr: "FlowFuse Expert now plans how to accomplish your request and asks clarifying questions when a request is unclear, rather than guessing. Self-hosted users can run Insights on their own instances, the Device Agent reaches version 4, and new certified nodes join the catalog."
+tldr: "FlowFuse Expert now plans how to accomplish your request and asks clarifying questions when a request is unclear, rather than guessing. Self-hosted users can run Insights on their own instances, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
+
 ---
 
 FlowFuse 2.32 introduces Plan Mode. FlowFuse Expert now plans how to carry out your request and asks before it guesses. It also runs Insights on self-hosted instances, ships a new major version of the Device Agent, and grows the certified node catalog.
@@ -32,6 +33,8 @@ _TODO asset: FlowFuse Expert laying out a plan and asking a clarifying question 
 ### Acting on Your Platform
 
 Once the plan is set, FlowFuse Expert can carry out platform actions for you, such as creating an instance or registering a device, instead of pointing you to where to click. This is the groundwork for building flows by talking to the platform, with more to follow in upcoming releases.
+
+<!-- CONFIRM with Serban/Nick: the exact actions exposed in 2.32, and whether to frame this as shipped capability or foundation. Friday's planning drew a hard line between "ships Thursday" and "the vision." If the autonomous actions are not user-ready on Thursday, cut this subhead and let Plan Mode stand alone. -->
 
 ### In practice
 
@@ -60,28 +63,46 @@ _TODO asset: the Insights view on a self-hosted instance_
 - You see how your flows perform on your own infrastructure
 - You keep your data where it is and still get the same visibility
 
-## Device Agent 4 and New Certified Nodes
+## Device Agent 4
 
-Managing edge devices and connecting to industrial systems often means tracking versions by hand and vetting community packages you cannot fully trust.
+Managing edge devices means keeping each agent current, and a major version is the moment that matters most.
 
-### Device Agent 4
+### A New Major Version
 
 The Device Agent reaches version 4. Install or upgrade to v4 to use the latest remote instance and agent capabilities in this release. Where a feature needs it, the platform prompts you.
 
 <!-- CONFIRM: the user-facing one-liner for what v4 actually brings. I have the version and that it gates the new agent features, but not a clean benefit. Nick owns the changelog. -->
 
-### Certified Modbus and Redis Nodes
-
-Two more certified nodes join the catalog. The certified Modbus node connects FlowFuse to Modbus devices and PLCs, one of the most common protocols on a factory floor, with the testing and support behind it that a community package cannot promise. The certified Redis node brings Redis into your flows for caching and fast data exchange. Both carry the same trust contract as the rest of the catalog: signed releases, an SBOM, and a CVE response commitment.
-
-![The certified Modbus node in a flow](./images/certified-modbus-node.png){data-zoomable}
-_TODO asset: the certified Modbus node wired into a flow_
-
 ### In practice
 
 - You upgrade a device to Device Agent 4 to pick up this release's remote instance capabilities
-- You connect to Modbus devices with a node we test and support, not a community package you vet yourself
-- You bring Redis into your flows for caching and fast data exchange, with signed releases and an SBOM behind it
+- You keep your fleet on a supported, current agent
+- You let the platform tell you when a feature needs the new version
+
+## Expanded Certified Nodes
+
+Every node in a flow is code running in your environment, and community nodes carry security, compatibility, and maintenance risk you have to manage yourself. Certified Nodes take that work on through a defined quality, security, and support process.
+
+### New Connections in the Catalog
+
+The certified node catalog grows again in 2.32, so more of the systems you connect to are covered by a node FlowFuse tests, secures, and supports. Each certified node carries the same trust contract: vetted quality, proactive security with a CVE response commitment, and a real path to support when something breaks.
+
+For the full picture of what certification covers and when it is worth it, see [Why FlowFuse Certified Nodes?](/blog/2026/06/flowfuse-certified-nodes/), and browse the current catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1).
+
+Certified Nodes are available to Teams and Enterprise tier customers. New instances get the catalog automatically, and you can contact us to add Certified Nodes to an existing instance.
+
+<!-- CONFIRM which nodes are genuinely NEW in 2.32. You said "hopefully Modbus and Redis," but Kristopher's Certified Nodes explainer (June 26) already lists Modbus as available in the catalog, so naming Modbus as new here may be wrong. Both were also go/no-go as of Friday: Modbus pending Steve's node pick and Ben packaging it, Redis paused pending a v2 branch review. Confirm the actual new-in-2.32 list with Kristopher before naming any nodes. Kristopher owns the certified-nodes narrative (PR #5152), so he may supply or rewrite this whole section. -->
+
+<!-- CONFIRM the explainer URL slug once PR #5152 merges. -->
+
+![A certified node in the palette manager](./images/certified-node-palette.png){data-zoomable}
+_TODO asset: a certified node in the palette manager_
+
+### In practice
+
+- You connect to more systems with nodes FlowFuse tests and supports, not community packages you vet yourself
+- You reach certified nodes directly in the palette manager, with no separate workflow
+- You build on a node knowing it has cleared defined quality and security checks
 
 ## What else is new?
 
