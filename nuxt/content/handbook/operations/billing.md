@@ -54,6 +54,7 @@ If a client requests changes to an invoice (e.g. adding a PO number, VAT number,
 1. **First, check if the invoice can be edited directly in HubSpot.** If individual line items or details can be updated, make those changes and resend the invoice to the client.
 2. **If the invoice cannot be edited directly**, void the original invoice in HubSpot and create a new invoice with the corrected details, using the original issue date. This is the preferred approach for changes such as adding a PO number, VAT number, or updating a billing address.
 3. **Voiding and reissuing the invoice is a FlowFuse task**, not an accounting task — do not pass this to the Zeni team.
+4. **Email Zeni at team@zeni.ai** with the number of the voided invoice so they can make the necessary changes in QBO.
 
 > ⚠️ Always preserve the original invoice date when reissuing. Do not create a new invoice with today's date unless explicitly instructed otherwise.
 
