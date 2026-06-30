@@ -96,6 +96,27 @@ _TODO asset: a certified node in the palette manager_
 - You reach certified nodes directly in the palette manager, with no separate workflow
 - You build on a node knowing it has cleared defined quality and security checks
 
+## Pipelines Connect to Any Git Server
+
+DevOps Pipeline Git stages backed up and deployed your flows through version control, but only if your team used GitHub or Azure DevOps. Self-hosted GitLab or on-prem Bitbucket? That workflow was closed to you.
+
+### Any HTTPS Git Server
+
+Git Repository stages now connect to any Git server that speaks HTTPS — GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before.
+
+For servers behind a private certificate authority, paste in a CA certificate so FlowFuse trusts the connection. No infrastructure changes on your end.
+
+This feature is available to Team and Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users.
+
+![The Add Git Token dialog with the Other provider selected, showing the username and CA certificate fields](./images/generic-git-provider.png){data-zoomable}
+_Creating a generic Git token for a self-hosted server._
+
+### In practice
+
+- You back up and deploy flows through your own GitLab, Bitbucket, Gitea, or self-hosted Git server
+- You add a Git Repository stage and point it at any HTTPS repository, not just GitHub and Azure DevOps
+- You connect to a server behind a private CA by pasting in its certificate
+
 ## What else is new?
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.32, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
