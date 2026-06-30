@@ -76,14 +76,6 @@ Existing devices and hosted instances will not see newly added nodes until they 
 3. Search for the **FlowFuse Edge Certified Nodes** collection.
 4. Locate `@flowfuse-certified-nodes/cip-suite` and click **Install**.
 
-### Install via npm
-
-If you manage your palette from the command line, install the package directly:
-
-```bash
-npm install @flowfuse-certified-nodes/cip-suite
-```
-
 ## Usage
 
 ### Input Message Format
