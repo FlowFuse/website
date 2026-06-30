@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.32: Introducing Plan Mode for FlowFuse Expert, Device Agent 4, & Expanded Certified Nodes"
-subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
-description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also runs Insights on self-hosted instances, ships Device Agent 4, and adds new certified nodes."
+title: "FlowFuse 2.32: Plan Mode for FlowFuse Expert, Git Pipelines for Any Server, Device Agent 4, & Expanded Certified Nodes"
+subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, DevOps pipelines connect to any Git server, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
+description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also connects DevOps pipelines to any Git server, runs Insights on self-hosted instances, ships Device Agent 4, and adds new certified nodes."
 date: 2026-07-02
 authors: ["jamie-strusz"]
 image: /blog/2026/07/images/flowfuse-release-2-32TODO.png
@@ -9,11 +9,11 @@ tags:
    - flowfuse
    - news
    - releases
-tldr: "FlowFuse Expert now plans how to accomplish your request and asks clarifying questions when a request is unclear, rather than guessing. Self-hosted users can run Insights on their own instances, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
+tldr: "FlowFuse Expert now plans how to accomplish your request and asks clarifying questions when a request is unclear, rather than guessing. DevOps pipelines connect to any HTTPS Git server, self-hosted users can run Insights on their own instances, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
 
 ---
 
-FlowFuse 2.32 introduces Plan Mode. FlowFuse Expert now plans how to carry out your request and asks before it guesses. It also runs Insights on self-hosted instances, ships a new major version of the Device Agent, and grows the certified node catalog.
+FlowFuse 2.32 introduces Plan Mode. FlowFuse Expert now plans how to carry out your request and asks before it guesses. It also connects DevOps pipelines to any Git server, runs Insights on self-hosted instances, ships a new major version of the Device Agent, and grows the certified node catalog.
 
 Here is what shipped. 🚀
 
