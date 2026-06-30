@@ -27,6 +27,10 @@ export default defineEventHandler(async (event) => {
     // Let Nuxt handle migrated path prefixes
     if (NUXT_PREFIXES.some(prefix => normalised === prefix || normalised.startsWith(prefix + '/'))) return
 
+    // Blog listing (/blog/, /blog/?page=N) is served by Nuxt.
+    // Tag pages (/blog/how-to/, /blog/ai/, etc.) and individual posts still proxy to 11ty.
+    if (normalised === '/blog') return
+
     // Proxy everything else to the 11ty dev server
     return proxyRequest(event, `http://localhost:8080${path}`)
 })
