@@ -42,8 +42,8 @@ An invoice should only be written off as bad debt if the client has already rece
 ### Steps
 
 1. **In HubSpot**, navigate to the client's account and locate the specific invoice. On the invoice, click the three-dot menu and select **"Create credit memo"**. When creating the credit memo, set the reason to "Other" and manually enter "bad debt" in the description field. This ensures the credit memo is tied directly to the original invoice on the client's record.
-2. **Slack the Zeni Accounting channel** with the invoice number to notify them that the invoice is being written off as bad debt.
-3. **In QBO**, the Zeni accounting team will verify that the credit memo has been applied to the invoice — either automatically through the HubSpot sync or manually if it did not sync correctly.
+2. **Email Zeni Accounting Team** at team@zeni.ai with the invoice number to notify them that the invoice is being written off as bad debt. You can also flag it in Slack as an additional notice, but the main notice should go out via email. 
+4. **In QBO**, the Zeni accounting team will verify that the credit memo has been applied to the invoice — either automatically through the HubSpot sync or manually if it did not sync correctly.
 
 ## Internal Documentation & Storage
 All finalized tax filings, monthly financial packages, and signed vendor contracts are stored in [this folder in Google Drive](https://drive.google.com/drive/folders/1xtrbFJaAmwgF9VdWnvzztevXi1MUJDMR). Access is limited to the Accounting Team and Executive Leadership.
