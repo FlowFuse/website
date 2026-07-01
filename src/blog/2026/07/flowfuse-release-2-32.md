@@ -91,31 +91,22 @@ FlowFuse now has a dark mode. Turn it on and the platform switches to a dark the
 ![FlowFuse in dark mode](https://placehold.co/1200x675?text=Dark+Mode){data-zoomable}
 _TODO asset: FlowFuse platform and the Node-RED editor in dark mode_
 
-_Note: your dark mode preference also carries through into the Node-RED editor, including Node-RED 5, so the platform and your flows share one look and you set it just once._
+_Note: on Node-RED 5 and newer, your dark mode preference also carries through into the Node-RED editor, so the platform and your flows share one look and you set it just once._
 
 <!-- TODO: confirm availability (tier / licence) for Dark Mode before publish -->
 
 ### In practice
 
-- You turn dark mode on once and it applies across FlowFuse and the Node-RED editor
-- You keep a consistent theme on Node-RED 5 and earlier versions
+- You turn dark mode on once, and it also applies in the Node-RED editor on Node-RED 5 and newer
 - You cut eye strain on long editing sessions
 
 ## Device Agent 4
 
-Bringing Insights, token auth, and Node-RED 5 to your devices needed a more secure, more modern foundation, so the Device Agent moves to a new major version.
+The Device Agent reaches a new major version. Its container now runs as an unprivileged user instead of root and on Node.js 22, a more secure, modern base that unlocks Insights, token auth, and Node-RED 5 on your devices.
 
-### More Secure, More Capable
+### What This Means for You
 
-Device Agent 4 runs its container as an unprivileged user instead of root, a safer default, and moves to Node.js 22, the baseline for Node-RED 5. That foundation is what unlocks the rest of this release on your devices:
-
-- **Insights on your devices**: the agent answers live-state and MCP requests, so the FlowFuse Expert can query real data straight from the connected hardware
-- **Token auth to remote instances**: HTTP Bearer token support, matching hosted instances
-- **Node-RED 5 ready**: new devices come up on the latest Node-RED, with structured JSON logging for easier operations
-
-### A Breaking Change, Action Needed
-
-Because the container now runs as a non-root user, this is a breaking upgrade. When you move to v4, bind-mounted state directories must be owned by the agent's user, and the platform prompts any device that needs the new version. Check the upgrade notes first.
+Device Agent 4 is a breaking upgrade. When you move to it, make your bind-mounted state directories owned by the agent's user, then upgrade. The platform flags any device that needs v4 to use this release's features. Check the upgrade notes before upgrading.
 
 ## What else is new?
 
