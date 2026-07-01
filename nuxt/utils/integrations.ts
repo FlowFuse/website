@@ -24,6 +24,10 @@ function docPathFromCatalogueUrl (url: string | undefined): string | undefined {
     }
 }
 
+const DOCS_URL_OVERRIDES: Record<string, string> = {
+    '@flowfuse-certified-nodes/opcua': '/node-red/flowfuse/edge/opcua/'
+}
+
 function normalizeCertifiedModule (m: CertifiedCatalogueModule, collection: CertifiedCollection): IntegrationCatalogEntry {
     return {
         _id: m.id,
@@ -36,7 +40,7 @@ function normalizeCertifiedModule (m: CertifiedCatalogueModule, collection: Cert
         version: m.version,
         downloads: { week: 0 },
         updatedAt: m.updated_at,
-        docsUrl: docPathFromCatalogueUrl(m.url)
+        docsUrl: DOCS_URL_OVERRIDES[m.id] ?? docPathFromCatalogueUrl(m.url)
     }
 }
 
