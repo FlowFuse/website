@@ -1,5 +1,5 @@
 ---
-title: "FlowFuse 2.32: Insights Mode for Remote Instances, Dark Mode, Git Pipelines for Any Server, & Certified Redis Integration"
+title: "FlowFuse 2.32: Certified Redis Integration, Git Pipelines for Any Server, Insights Mode for Remote Instances, & Dark Mode"
 subtitle: "The FlowFuse Expert can now answer questions about the live data on your remote instances in plain language, a dark mode arrives, DevOps pipelines connect to any Git server, and the certified catalog gains Redis."
 description: "FlowFuse 2.32 adds Insights mode, so the FlowFuse Expert can answer questions about the live data on your remote instances in plain language. It also brings a dark mode across the platform and editor, connects DevOps pipelines to any Git server, adds a Redis certified node, ships Device Agent 4, and introduces a Plan Mode for the Expert."
 date: 2026-07-02
