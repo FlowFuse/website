@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.32: Certified Redis Integration, Git Pipelines for Any Server, Insights Mode for Remote Instances, & Dark Mode"
-subtitle: "The FlowFuse Expert can now answer questions about the live data on your remote instances in plain language, a dark mode arrives, DevOps pipelines connect to any Git server, and the certified catalog gains Redis."
-description: "FlowFuse 2.32 adds Insights mode, so the FlowFuse Expert can answer questions about the live data on your remote instances in plain language. It also brings a dark mode across the platform and editor, connects DevOps pipelines to any Git server, adds a Redis certified node, ships Device Agent 4, and introduces a Plan Mode for the Expert."
+subtitle: "A Redis certified node joins the catalog, DevOps pipelines connect to any Git server, the FlowFuse Expert can now answer questions about the live data on your remote instances in plain language, and a dark mode arrives across FlowFuse and Node-RED."
+description: "FlowFuse 2.32 adds a Redis certified node, connects DevOps pipelines to any Git server, and brings Insights mode to your remote instances so the FlowFuse Expert can answer questions about their live data in plain language. It also adds a dark mode across the platform and editor, ships Device Agent 4, and introduces a Plan Mode for the Expert."
 date: 2026-07-02
 authors: ["jamie-strusz"]
 # image: /blog/2026/07/images/flowfuse-release-2-32.png  # uncomment when hero art lands; image-handler stats this path locally so it must be a real file, not a URL (falls back to default blog tile until then)
@@ -9,13 +9,11 @@ tags:
    - flowfuse
    - news
    - releases
-tldr: "Insights mode lets the FlowFuse Expert answer questions about the live data on your remote instances in plain language. A dark mode arrives across FlowFuse and Node-RED, DevOps pipelines connect to any HTTPS Git server, Certified Nodes gains Redis, the Device Agent reaches version 4, and the Expert gains a Plan Mode."
+tldr: "Certified Nodes gains Redis, DevOps pipelines connect to any HTTPS Git server, and Insights mode reaches your remote instances so the FlowFuse Expert can answer questions about their live data in plain language. A dark mode arrives across FlowFuse and Node-RED, the Device Agent reaches version 4, and the Expert gains a Plan Mode."
 
 ---
 
-FlowFuse 2.32 brings Insights mode to the FlowFuse Expert, so you can ask questions about the live data on your remote instances in plain language. It also adds a dark mode across the platform and Node-RED editor, connects DevOps pipelines to any Git server, adds a Redis certified node, ships a new major version of the Device Agent, and gives the Expert a Plan Mode.
-
-Here is what shipped. 🚀
+FlowFuse 2.32 adds a Redis certified node, connects DevOps pipelines to any Git server, and brings Insights mode to your remote instances, so you can ask questions about their live data in plain language. It also adds a dark mode across the platform and Node-RED editor, ships a new major version of the Device Agent, and gives the Expert a Plan Mode.
 
 <!--more-->
 
