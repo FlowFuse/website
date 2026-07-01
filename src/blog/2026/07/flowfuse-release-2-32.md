@@ -61,14 +61,16 @@ _TODO asset: FlowFuse Expert Insights mode answering a plain-language question a
 
 ## Dark Mode
 
-Long editing sessions in a bright interface are hard on the eyes, and FlowFuse only offered a light theme.
+FlowFuse and the Node-RED editor have only ever offered a light interface. If you spend your day building and monitoring flows, long sessions in a bright UI are tiring on the eyes, more so in a dark room or alongside the dark-themed tools most of us already run.
 
-### A Dark Theme Across FlowFuse and Node-RED
+### A Dark Theme for FlowFuse
 
-FlowFuse now has a dark mode. Turn it on and the theme carries through from the FlowFuse platform into the Node-RED editor, so the platform and your flows follow the same look. The preference syncs across FlowFuse and Node-RED (including Node-RED 5), so you set it once.
+FlowFuse now has a dark mode. Turn it on and the platform switches to a dark theme that is easier on the eyes for long editing and monitoring sessions, and a better match for a dark desktop.
 
 ![FlowFuse in dark mode](https://placehold.co/1200x675?text=Dark+Mode){data-zoomable}
 _TODO asset: FlowFuse platform and the Node-RED editor in dark mode_
+
+_Note: your dark mode preference also carries through into the Node-RED editor, including Node-RED 5, so the platform and your flows share one look and you set it just once._
 
 <!-- TODO: confirm availability (tier / licence) for Dark Mode before publish -->
 
