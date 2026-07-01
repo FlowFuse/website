@@ -120,7 +120,6 @@ Because the container now runs as a non-root user, this is a breaking upgrade. W
 ## What else is new?
 
 - **Real-time status over MQTT**: instance, device, and team status now stream over MQTT instead of HTTP polling, so the platform reflects changes faster
-- **Node-RED 5 theming**: the FlowFuse theme, including dark mode, now applies cleanly on Node-RED 5
 - **Namespace-scoped RBAC**: role-based access scoped to a namespace for shared-cluster self-hosted deployments
 - **Faster instance lists**: pagination and performance fixes on the Hosted and Remote Instances pages, plus sorting by status
 - **Polish**: descriptive page titles, a cookie-consent notice on the login page, and a fix for instances that could report as suspended while still running
