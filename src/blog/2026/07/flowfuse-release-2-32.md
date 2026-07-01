@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.32: Plan Mode for FlowFuse Expert, Dark Mode, Git Pipelines for Any Server, Device Agent 4, & a Redis Certified Node"
-subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, DevOps pipelines connect to any Git server, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
-description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also connects DevOps pipelines to any Git server, adds Insights mode so you can ask your machine data questions in plain language, brings a dark mode across the platform and editor, ships Device Agent 4, and adds a Redis certified node."
+title: "FlowFuse 2.32: Insights Mode for Remote Instances, Dark Mode, Git Pipelines for Any Server, & a Redis Certified Node"
+subtitle: "The FlowFuse Expert can now answer questions about the live data on your remote instances in plain language, a dark mode arrives, DevOps pipelines connect to any Git server, and the certified catalog gains Redis."
+description: "FlowFuse 2.32 adds Insights mode, so the FlowFuse Expert can answer questions about the live data on your remote instances in plain language. It also brings a dark mode across the platform and editor, connects DevOps pipelines to any Git server, adds a Redis certified node, ships Device Agent 4, and introduces a Plan Mode for the Expert."
 date: 2026-07-02
 authors: ["jamie-strusz"]
 # image: /blog/2026/07/images/flowfuse-release-2-32.png  # uncomment when hero art lands; image-handler stats this path locally so it must be a real file, not a URL (falls back to default blog tile until then)
@@ -9,19 +9,28 @@ tags:
    - flowfuse
    - news
    - releases
-tldr: "FlowFuse Expert now plans how to accomplish your request and asks clarifying questions when a request is unclear, rather than guessing. DevOps pipelines connect to any HTTPS Git server, Insights mode lets you ask your machine data questions in plain language, a dark mode arrives across FlowFuse and Node-RED, the Device Agent reaches version 4, and Certified Nodes gains Redis."
+tldr: "Insights mode lets the FlowFuse Expert answer questions about the live data on your remote instances in plain language. A dark mode arrives across FlowFuse and Node-RED, DevOps pipelines connect to any HTTPS Git server, Certified Nodes gains Redis, the Device Agent reaches version 4, and the Expert gains a Plan Mode."
 
 ---
 
-FlowFuse 2.32 introduces Plan Mode. FlowFuse Expert now plans how to carry out your request and asks before it guesses. It also connects DevOps pipelines to any Git server, adds Insights mode for asking your machine data questions in plain language, brings a dark mode to the platform and Node-RED editor, ships a new major version of the Device Agent, and adds a Redis certified node.
+FlowFuse 2.32 brings Insights mode to the FlowFuse Expert, so you can ask questions about the live data on your remote instances in plain language. It also adds a dark mode across the platform and Node-RED editor, connects DevOps pipelines to any Git server, adds a Redis certified node, ships a new major version of the Device Agent, and gives the Expert a Plan Mode.
 
 Here is what shipped. 🚀
 
 <!--more-->
 
-## FlowFuse Expert Plans Before It Acts
+## FlowFuse Expert
 
-FlowFuse Expert could answer your question, but it could not work through a task for you. And when a request was ambiguous, it guessed, which left you spotting and correcting the wrong answer after the fact.
+The FlowFuse Expert takes a big step this release: it can now answer questions about the live data coming off your machines on remote instances, and it plans a task before it acts instead of guessing.
+
+### Insights Mode: Ask Your Machine Data in Plain Language
+
+With Insights mode, you can point the FlowFuse Expert, or any AI agent, straight at the live data coming off your equipment and ask questions in plain language. You get answers on demand, with no dashboards to wire up, and it works right on the remote instances running at the edge. When you need to set it up, the FlowFuse Expert can also help you build the MCP servers that power it, directly in Node-RED.
+
+![The FlowFuse Expert answering a plain-language question about live machine data](https://placehold.co/1200x675?text=Insights+Mode){data-zoomable}
+_TODO asset: FlowFuse Expert Insights mode answering a plain-language question about machine data_
+
+<!-- TODO: confirm availability (tier / licence) for Insights mode before publish -->
 
 ### Plan Mode
 
@@ -32,32 +41,13 @@ _TODO asset: FlowFuse Expert laying out a plan and asking a clarifying question 
 
 ### Acting on Your Platform
 
-Once the plan is set, FlowFuse Expert can carry out platform actions for you, such as creating an instance or registering a device, instead of pointing you to where to click. This is the groundwork for building flows by talking to the platform, with more to follow in upcoming releases.
+Once the plan is set, FlowFuse Expert can begin to carry out platform actions for you, such as creating an instance or registering a device, instead of pointing you to where to click. This is the groundwork for building flows by talking to the platform, with more to follow in upcoming releases.
 
 ### In practice
 
-- You give FlowFuse Expert a task and see the plan it intends to follow before it runs
-- You get a clarifying question when a request is ambiguous, rather than a wrong answer to correct later
-- You let it carry out the plan on your platform once you are happy with it
-
-## Ask Your Machine Data in Plain Language
-
-Getting answers out of the data flowing through your machines used to mean building dashboards and queries by hand. Insights mode changes that.
-
-### Insights Mode
-
-With Insights mode, you can point the FlowFuse Expert, or any AI agent, straight at the live data coming off your equipment and ask questions in plain language. You get answers on demand, with no dashboards to wire up, and it works right on the remote instances running at the edge. When you need to set it up, the FlowFuse Expert can also help you build the MCP servers that power it, directly in Node-RED.
-
-![The FlowFuse Expert answering a plain-language question about live machine data](https://placehold.co/1200x675?text=Insights+Mode){data-zoomable}
-_TODO asset: FlowFuse Expert Insights mode answering a plain-language question about machine data_
-
-<!-- TODO: confirm availability (tier / licence) for Insights mode before publish -->
-
-### In practice
-
-- You ask questions of live data from your edge hardware, in plain language
-- You use the FlowFuse Expert or any AI agent as the interface, on demand
-- You let the FlowFuse Expert help you build the required MCP servers in Node-RED
+- You ask questions of the live data on your remote instances in plain language, and let the Expert help build the MCP servers that power Insights
+- You give the Expert a task and see its plan first, with a clarifying question when a request is ambiguous rather than a wrong answer to fix later
+- You let it begin to act on your platform once you are happy with the plan
 
 ## Dark Mode
 
@@ -147,7 +137,6 @@ _Creating a generic Git token for a self-hosted server._
 - **Real-time status over MQTT**: instance, device, and team status now stream over MQTT instead of HTTP polling, so the platform reflects changes faster
 - **Node-RED 5 theming**: the FlowFuse theme, including dark mode, now applies cleanly on Node-RED 5
 - **Namespace-scoped RBAC**: role-based access scoped to a namespace for shared-cluster self-hosted deployments
-- **More Expert canvas actions**: the FlowFuse Expert can now create subroutines, move groups across tabs, arrange and distribute nodes, set deploy mode, and control the sidebar
 - **Faster instance lists**: pagination and performance fixes on the Hosted and Remote Instances pages, plus sorting by status
 - **Polish**: descriptive page titles, a cookie-consent notice on the login page, and a fix for instances that could report as suspended while still running
 
