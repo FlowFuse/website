@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.32: Certified Redis Integration, Git Pipelines for Any Server, Insights Mode for Remote Instances, & Dark Mode"
-subtitle: "A Redis certified node joins the catalog, DevOps pipelines connect to any Git server, the FlowFuse Expert can now answer questions about the live data on your remote instances in plain language, and a dark mode arrives across FlowFuse and Node-RED."
-description: "FlowFuse 2.32 adds a Redis certified node, connects DevOps pipelines to any Git server, and brings Insights mode to your remote instances so the FlowFuse Expert can answer questions about their live data in plain language. It also adds a dark mode across the platform and editor, ships Device Agent 4, and introduces a Plan Mode for the Expert."
+title: "FlowFuse 2.32: Certified Redis Integration, Git Pipelines for Any Server, Insights on Remote Instances & Dark Mode"
+subtitle: "A Redis certified node, DevOps pipelines for any Git server, plain-language Insights on your remote instances, and a dark mode across FlowFuse and Node-RED."
+description: "FlowFuse 2.32 adds a Redis certified node, DevOps pipelines for any Git server, and Insights mode on remote instances, so the FlowFuse Expert can answer questions about their live data in plain language. It also brings a dark mode, Device Agent 4, and a Plan Mode for the Expert."
 date: 2026-07-02
 authors: ["jamie-strusz"]
 # image: /blog/2026/07/images/flowfuse-release-2-32.png  # uncomment when hero art lands; image-handler stats this path locally so it must be a real file, not a URL (falls back to default blog tile until then)
@@ -9,63 +9,47 @@ tags:
    - flowfuse
    - news
    - releases
-tldr: "Certified Nodes gains Redis, DevOps pipelines connect to any HTTPS Git server, and Insights mode reaches your remote instances so the FlowFuse Expert can answer questions about their live data in plain language. A dark mode arrives across FlowFuse and Node-RED, the Device Agent reaches version 4, and the Expert gains a Plan Mode."
+tldr: "A Redis certified node, DevOps pipelines for any HTTPS Git server, and Insights mode on remote instances so the FlowFuse Expert can answer questions about their live data in plain language. Plus a dark mode, Device Agent 4, and a Plan Mode for the Expert."
 
 ---
 
-FlowFuse 2.32 adds a Redis certified node, connects DevOps pipelines to any Git server, and brings Insights mode to your remote instances, so you can ask questions about their live data in plain language. It also adds a dark mode across the platform and Node-RED editor, ships a new major version of the Device Agent, and gives the Expert a Plan Mode.
+FlowFuse 2.32 adds a Redis certified node, DevOps pipelines for any Git server, and Insights mode on your remote instances, so you can ask questions about their live data in plain language. It also brings a dark mode, Device Agent 4, and a Plan Mode for the Expert.
 
 <!--more-->
 
 ## Certified Redis Integration
 
-Every node in a flow is code running in your environment, and community nodes carry security, compatibility, and maintenance risk you have to manage yourself. Certified Nodes take that work on through a defined quality, security, and support process.
+Community nodes are code you have to vet, secure, and maintain yourself. Certified Nodes take that on with a defined quality, security, and support process.
 
 ### Redis Joins the Catalog
 
-The certified node catalog grows again in 2.32 with a **Redis** certified node, so you can connect to Redis with a node FlowFuse tests, secures, and supports. Each certified node carries the same trust contract: vetted quality, proactive security with a CVE response commitment, and a real path to support when something breaks.
+2.32 adds a **Redis** certified node, so you can connect to Redis with a node FlowFuse tests, secures, and supports, backed by the same trust contract as every certified node: vetted quality, a CVE response commitment, and a real path to support.
 
-To see what certification covers and browse the current catalog, visit the [integrations page](https://flowfuse.com/integrations/?certified=1).
-
-Certified Nodes are available to Teams and Enterprise tier customers. New instances get the catalog automatically, and you can contact us to add Certified Nodes to an existing instance.
+Browse the full catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1). Certified Nodes are available to Teams and Enterprise customers; new instances get the catalog automatically, and you can contact us to add them to an existing one.
 
 ![The Redis certified node in the palette manager](https://placehold.co/1200x675?text=Redis+Certified+Node){data-zoomable}
 _TODO asset: the Redis certified node in the palette manager_
 
-### In practice
-
-- You connect to Redis with a node FlowFuse tests and supports, not a community package you vet yourself
-- You reach the Redis certified node directly in the palette manager, with no separate workflow
-- You build on a node knowing it has cleared defined quality and security checks
-
 ## Pipelines Connect to Any Git Server
 
-DevOps Pipeline Git stages backed up and deployed your flows through version control, but only if your team used GitHub or Azure DevOps. Self-hosted GitLab or on-prem Bitbucket? That workflow was closed to you.
+DevOps Pipeline Git stages only worked with GitHub or Azure DevOps, leaving self-hosted GitLab or on-prem Bitbucket out.
 
 ### Any HTTPS Git Server
 
-Git Repository stages now connect to any Git server that speaks HTTPS: GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before.
+Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before. For a server behind a private CA, paste in its certificate, no infrastructure changes needed.
 
-For servers behind a private certificate authority, paste in a CA certificate so FlowFuse trusts the connection. No infrastructure changes on your end.
-
-This feature is available to Team and Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users.
+Available to Team and Enterprise FlowFuse Cloud users and Enterprise licensed self-hosted users.
 
 ![The Add Git Token dialog with the Other provider selected, showing the username and CA certificate fields](./images/generic-git-provider.png){data-zoomable}
 _Creating a generic Git token for a self-hosted server._
 
-### In practice
-
-- You back up and deploy flows through your own GitLab, Bitbucket, Gitea, or self-hosted Git server
-- You add a Git Repository stage and point it at any HTTPS repository, not just GitHub and Azure DevOps
-- You connect to a server behind a private CA by pasting in its certificate
-
 ## Do More With the FlowFuse Expert
 
-The FlowFuse Expert now works from your live data and plans a task before it acts, so it does more of the work for you.
+The FlowFuse Expert now works from your live data and plans alongside you, doing more of the work.
 
 ### Ask Your Remote Instances in Plain Language
 
-Insights mode now reaches your remote instances. Point the FlowFuse Expert, or any AI agent, at the live data coming off the hardware they are connected to and ask questions in plain language, with no dashboards to build. When you need to set it up, the Expert can help you build the MCP servers that power it, right in Node-RED.
+Insights mode now reaches your remote instances. Point the FlowFuse Expert, or any AI agent, at the live data coming off the connected hardware and ask questions in plain language, no dashboards required. The Expert can even help you build the MCP servers that power it, right in Node-RED.
 
 ![The FlowFuse Expert answering a plain-language question about live machine data](https://placehold.co/1200x675?text=Insights+Mode){data-zoomable}
 _TODO asset: FlowFuse Expert Insights mode answering a plain-language question about machine data_
@@ -74,31 +58,26 @@ _TODO asset: FlowFuse Expert Insights mode answering a plain-language question a
 
 ### Plan Together, Build What You Expect
 
-With Plan Mode, the Expert plans the work alongside you. It proposes a plan and asks a clarifying question when your request is ambiguous, so what it builds lines up with what you actually expect rather than a guess you have to correct.
+With Plan Mode, the Expert plans the work alongside you, proposing a plan and asking a clarifying question when your request is ambiguous, so the result matches what you expect instead of a guess you have to correct.
 
 ### From Advice to Action
 
-Once you approve the plan, the Expert can begin to carry out platform actions for you, like creating an instance or registering a device, instead of just pointing you to where to click. This is groundwork, with more to follow in upcoming releases.
+Once you approve the plan, the Expert can begin carrying out platform actions like creating an instance or registering a device, rather than just pointing you to the button. This is groundwork, with more to follow.
 
 ## Dark Mode
 
-FlowFuse and the Node-RED editor have only ever offered a light interface. If you spend your day building and monitoring flows, long sessions in a bright UI are tiring on the eyes, more so in a dark room or alongside the dark-themed tools most of us already run.
+FlowFuse has only ever had a light interface, and long sessions in a bright UI are tiring on the eyes.
 
 ### A Dark Theme for FlowFuse
 
-FlowFuse now has a dark mode. Turn it on and the platform switches to a dark theme that is easier on the eyes for long editing and monitoring sessions, and a better match for a dark desktop.
+FlowFuse now has a dark mode. Turn it on and the platform switches to a dark theme, easier on the eyes and a better match for a dark desktop.
 
 ![FlowFuse in dark mode](https://placehold.co/1200x675?text=Dark+Mode){data-zoomable}
 _TODO asset: FlowFuse platform and the Node-RED editor in dark mode_
 
-_Note: on Node-RED 5 and newer, your dark mode preference also carries through into the Node-RED editor, so the platform and your flows share one look and you set it just once._
+_Note: on Node-RED 5 and newer, your preference also carries into the Node-RED editor, so you set it once._
 
 <!-- TODO: confirm availability (tier / licence) for Dark Mode before publish -->
-
-### In practice
-
-- You turn dark mode on once, and it also applies in the Node-RED editor on Node-RED 5 and newer
-- You cut eye strain on long editing sessions
 
 ## Device Agent 4
 
@@ -110,10 +89,10 @@ Device Agent 4 is a breaking upgrade. When you move to it, make your bind-mounte
 
 ## What else is new?
 
-- **Real-time status over MQTT**: instance, device, and team status now stream over MQTT instead of HTTP polling, so the platform reflects changes faster
+- **Real-time status over MQTT**: instance, device, and team status now stream over MQTT instead of HTTP polling, so changes show faster
 - **Namespace-scoped RBAC**: role-based access scoped to a namespace for shared-cluster self-hosted deployments
-- **Faster instance lists**: pagination and performance fixes on the Hosted and Remote Instances pages, plus sorting by status
-- **Polish**: descriptive page titles, a cookie-consent notice on the login page, and a fix for instances that could report as suspended while still running
+- **Faster instance lists**: pagination and an N+1 fix on the Hosted and Remote Instances pages, plus sorting by status
+- **Polish**: descriptive page titles, a login-page cookie-consent notice, and a fix for instances reporting suspended while still running
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.32, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
