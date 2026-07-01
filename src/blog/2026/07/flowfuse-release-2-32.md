@@ -34,14 +34,7 @@ _TODO asset: the Redis certified node in the palette manager_
 
 DevOps Pipeline Git stages only worked with GitHub or Azure DevOps, leaving self-hosted GitLab or on-prem Bitbucket out.
 
-### Any HTTPS Git Server
-
 Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before. For a server behind a private CA, paste in its certificate, no infrastructure changes needed.
-
-Available to Team and Enterprise FlowFuse Cloud users and Enterprise licensed self-hosted users.
-
-![The Add Git Token dialog with the Other provider selected, showing the username and CA certificate fields](./images/generic-git-provider.png){data-zoomable}
-_Creating a generic Git token for a self-hosted server._
 
 ## Do More With the FlowFuse Expert
 
