@@ -9,16 +9,6 @@ tags:
    - flowfuse
    - news
    - releases
-release: "2.32"
-features:
-   - heading: "Certified Redis Integration"
-     tiers:
-       cloud: enterprise
-       selfHosted: enterprise
-   - id: git-integration
-     heading: "Pipelines Connect to Any Git Server"
-   - id: ff-expert-insights
-     heading: "Ask Your Remote Instances in Plain Language"
 tldr: "A Redis certified node, DevOps pipelines for any HTTPS Git server, and Insights mode on remote instances so the FlowFuse Expert can answer questions about their live data in plain language. Plus a dark mode, Device Agent 4, and a Plan Mode for the Expert."
 
 ---
