@@ -49,9 +49,11 @@ cta:
 tldr: "Connect FlowFuse to a Siemens S7 PLC with node-red-contrib-s7, build a dashboard to control a motor and stack light, and use the Hourglass node to automatically track and display how long each device has been running."
 ---
 
-Shopfloor operators need two things from a control panel: a way to turn machines on and off, and a way to see how long those machines have been running. In this tutorial, you'll connect FlowFuse to a Siemens S7 PLC, build a FlowFuse Dashboard to control a motor and a three-color stack light, then use the Hourglass node to track and display the runtime of each device automatically.
+Operators need more than buttons to control machines—they also need visibility into what's actually happening on the shop floor. Knowing whether a motor is running is useful, but knowing how long it has been running helps with maintenance, production tracking, and troubleshooting.
 
-By the end, you'll have a working operator dashboard that controls PLC outputs and shows live runtime for every device, using a pattern you can reuse for any PLC brand or protocol.
+<!--more-->
+
+In this tutorial, you'll connect FlowFuse to a Siemens S7 PLC, build an operator dashboard to control a motor and stack light, and automatically track the runtime of each device. By the end, you'll have a dashboard that not only sends commands to the PLC but also displays live operating time for every connected device.
 
 <lite-youtube
   videoid="Fkv2x3Kv0lY"
