@@ -61,13 +61,13 @@ _Creating a generic Git token for a self-hosted server._
 - You add a Git Repository stage and point it at any HTTPS repository, not just GitHub and Azure DevOps
 - You connect to a server behind a private CA by pasting in its certificate
 
-## FlowFuse Expert
+## Do More With the FlowFuse Expert
 
-The FlowFuse Expert takes a big step this release: it can now answer questions about the live data coming off your machines on remote instances, and it plans a task before it acts instead of guessing.
+The FlowFuse Expert now works from your live data and plans a task before it acts, so it does more of the work for you.
 
-### Insights Mode: Ask Your Machine Data in Plain Language
+### Insights Mode
 
-With Insights mode, you can point the FlowFuse Expert, or any AI agent, straight at the live data coming off your equipment and ask questions in plain language. You get answers on demand, with no dashboards to wire up, and it works right on the remote instances running at the edge. When you need to set it up, the FlowFuse Expert can also help you build the MCP servers that power it, directly in Node-RED.
+Point the FlowFuse Expert, or any AI agent, at the live data on your remote instances and ask questions in plain language, with no dashboards to build. When you need to set it up, the Expert can help you build the MCP servers that power it, right in Node-RED.
 
 ![The FlowFuse Expert answering a plain-language question about live machine data](https://placehold.co/1200x675?text=Insights+Mode){data-zoomable}
 _TODO asset: FlowFuse Expert Insights mode answering a plain-language question about machine data_
@@ -76,20 +76,11 @@ _TODO asset: FlowFuse Expert Insights mode answering a plain-language question a
 
 ### Plan Mode
 
-FlowFuse Expert now plans before it acts. Give it a task and it works out the steps to get there. When your request is unclear, it asks you a question instead of guessing, so it understands what you need before it starts. You see the plan, and the result matches what you actually asked for.
-
-![FlowFuse Expert planning a task and asking a clarifying question](https://placehold.co/1200x675?text=Plan+Mode){data-zoomable}
-_TODO asset: FlowFuse Expert laying out a plan and asking a clarifying question before it runs_
+Give the Expert a task and it lays out a plan first, asking a clarifying question when your request is ambiguous rather than guessing.
 
 ### Acting on Your Platform
 
-Once the plan is set, FlowFuse Expert can begin to carry out platform actions for you, such as creating an instance or registering a device, instead of pointing you to where to click. This is the groundwork for building flows by talking to the platform, with more to follow in upcoming releases.
-
-### In practice
-
-- You ask questions of the live data on your remote instances in plain language, and let the Expert help build the MCP servers that power Insights
-- You give the Expert a task and see its plan first, with a clarifying question when a request is ambiguous rather than a wrong answer to fix later
-- You let it begin to act on your platform once you are happy with the plan
+Once you approve the plan, the Expert can begin to carry out platform actions like creating an instance or registering a device. This is groundwork, with more to follow in upcoming releases.
 
 ## Dark Mode
 
@@ -114,23 +105,19 @@ _Note: your dark mode preference also carries through into the Node-RED editor, 
 
 ## Device Agent 4
 
-The Device Agent reaches version 4.0.0, a major release that modernizes how the agent runs and unlocks this release's AI and remote-instance capabilities.
+Bringing Insights, token auth, and Node-RED 5 to your devices needed a more secure, more modern foundation, so the Device Agent moves to a new major version.
 
-### A New Major Version
+### More Secure, More Capable
 
-Device Agent 4 runs on Node.js 22 by default (the baseline for Node-RED 5), and its Docker image now runs as an unprivileged user instead of root, a more secure default. Because that is a breaking change, bind-mounted state directories need to be owned by the agent's user when you upgrade (see the upgrade notes).
+Device Agent 4 runs its container as an unprivileged user instead of root, a safer default, and moves to Node.js 22, the baseline for Node-RED 5. That foundation is what unlocks the rest of this release on your devices:
 
-On top of that, v4 is what lights up the rest of this release on your devices:
-
-- **Insights on your devices**: the agent answers live-state and MCP requests, so the FlowFuse Expert can query real data straight from the hardware a remote instance is connected to
+- **Insights on your devices**: the agent answers live-state and MCP requests, so the FlowFuse Expert can query real data straight from the connected hardware
 - **Token auth to remote instances**: HTTP Bearer token support, matching hosted instances
-- **Clearer operations**: structured JSON logging, and the agent reports its Node.js version so the platform can prompt you when an upgrade is needed
+- **Node-RED 5 ready**: new devices come up on the latest Node-RED, with structured JSON logging for easier operations
 
-### In practice
+### A Breaking Change, Action Needed
 
-- You upgrade to Device Agent 4 to use Insights mode and the latest capabilities on your remote instances
-- You run the agent on a current, more secure Node.js 22 base
-- You let the platform tell you when a device needs the new version
+Because the container now runs as a non-root user, this is a breaking upgrade. When you move to v4, bind-mounted state directories must be owned by the agent's user, and the platform prompts any device that needs the new version. Check the upgrade notes first.
 
 ## What else is new?
 
