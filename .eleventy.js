@@ -28,12 +28,18 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 // Documentation alert boxes
 const shortcodeMarkdown = new markdownIt()
 
-function renderDocsAlertBox(content, tone = 'note', title = '') {
-    const normalizedTone = tone.toLowerCase();
-    const resolvedTitle = title
-    const markdownContent = shortcodeMarkdown.render(content)
+const CALLOUT_ICONS = {
+    note: `<svg class="ff-callout__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`,
+    warning: `<svg class="ff-callout__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>`,
+    caution: `<svg class="ff-callout__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`,
+}
 
-    return `<div class="ff-callout ff-callout--${normalizedTone}"><p class="ff-callout__title">${resolvedTitle}</p><div class="ff-callout__content">${markdownContent}</div></div>`
+function renderDocsAlertBox(content, tone = 'note') {
+    const normalizedTone = tone.toLowerCase();
+    const icon = CALLOUT_ICONS[normalizedTone] || CALLOUT_ICONS.note
+    const markdownContent = shortcodeMarkdown.render(content)
+    const contentWithIcon = markdownContent.replace(/^(<\w[^>]*>)/, `$1${icon}`)
+    return `<div class="ff-callout ff-callout--${normalizedTone}"><div class="ff-callout__content">${contentWithIcon}</div></div>`
 }
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
@@ -155,16 +161,16 @@ module.exports = function(eleventyConfig) {
     });
 
     // Documentation alert boxes
-    eleventyConfig.addPairedLiquidShortcode('note', function (content, title = '') {
-        return renderDocsAlertBox(content, 'note', "Note")
+    eleventyConfig.addPairedLiquidShortcode('note', function (content) {
+        return renderDocsAlertBox(content, 'note')
     })
 
-    eleventyConfig.addPairedLiquidShortcode('warning', function (content, title = '') {
-        return renderDocsAlertBox(content, 'warning', "Warning")
+    eleventyConfig.addPairedLiquidShortcode('warning', function (content) {
+        return renderDocsAlertBox(content, 'warning')
     })
 
-    eleventyConfig.addPairedLiquidShortcode('critical', function (content, title = '') {
-        return renderDocsAlertBox(content, 'critical', "Critical")
+    eleventyConfig.addPairedLiquidShortcode('caution', function (content) {
+        return renderDocsAlertBox(content, 'caution')
     })
 
 
