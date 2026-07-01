@@ -4,7 +4,7 @@ subtitle: "FlowFuse Expert now plans how to carry out your request and asks befo
 description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also connects DevOps pipelines to any Git server, adds Insights mode so you can ask your machine data questions in plain language, ships Device Agent 4, and adds new certified nodes."
 date: 2026-07-02
 authors: ["jamie-strusz"]
-image: https://placehold.co/1200x630?text=FlowFuse+2.32
+# image: /blog/2026/07/images/flowfuse-release-2-32.png  # uncomment when hero art lands; image-handler stats this path locally so it must be a real file, not a URL (falls back to default blog tile until then)
 tags:
    - flowfuse
    - news
