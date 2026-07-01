@@ -81,7 +81,7 @@ Every node in a flow is code running in your environment, and community nodes ca
 
 The certified node catalog grows again in 2.32, so more of the systems you connect to are covered by a node FlowFuse tests, secures, and supports. Each certified node carries the same trust contract: vetted quality, proactive security with a CVE response commitment, and a real path to support when something breaks.
 
-For the full picture of what certification covers and when it is worth it, see [Why FlowFuse Certified Nodes?](/blog/2026/06/flowfuse-certified-nodes/), and browse the current catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1).
+For the full picture of what certification covers and when it is worth it, see [Why FlowFuse Certified Nodes?](/blog/2025/07/certified-nodes-v2/), and browse the current catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1).
 
 Certified Nodes are available to Teams and Enterprise tier customers. New instances get the catalog automatically, and you can contact us to add Certified Nodes to an existing instance.
 
