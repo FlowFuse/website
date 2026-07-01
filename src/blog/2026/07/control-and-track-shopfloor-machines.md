@@ -1,6 +1,6 @@
 ---
 title: "Control and Track the Shopfloor Machines"
-subtitle: "Build a Node-RED dashboard to control a PLC-connected motor and stack light, then track runtime automatically"
+subtitle: "Build a FlowFuse dashboard to control a PLC-connected motor and stack light, then track runtime automatically"
 description: "Learn how to connect FlowFuse to a Siemens S7 PLC, build an operator dashboard to control a motor and stack light, and automatically track device runtime using the Hourglass node."
 date: 2026-07-01
 authors: ["sumit-shinde"]
@@ -10,7 +10,7 @@ tags:
 meta:
   howto:
     name: "How to Control and Track Shopfloor Machines with FlowFuse"
-    description: "Connect FlowFuse to a Siemens S7 PLC, build a Node-RED dashboard to control a motor and stack light, and automatically track how long each device runs using the Hourglass node."
+    description: "Connect FlowFuse to a Siemens S7 PLC, build a FlowFuse dashboard to control a motor and stack light, and automatically track how long each device runs using the Hourglass node."
     tool:
       - "FlowFuse"
       - "FlowFuse Device Agent"
@@ -49,12 +49,15 @@ cta:
 tldr: "Connect FlowFuse to a Siemens S7 PLC with node-red-contrib-s7, build a dashboard to control a motor and stack light, and use the Hourglass node to automatically track and display how long each device has been running."
 ---
 
-
-> *(Insert demo video here.)*
-
-Shopfloor operators need two things from a control panel: a way to turn machines on and off, and a way to see how long those machines have been running. In this tutorial, you'll connect FlowFuse to a Siemens S7 PLC, build a Node-RED Dashboard to control a motor and a three-color stack light, then use the Hourglass node to track and display the runtime of each device automatically.
+Shopfloor operators need two things from a control panel: a way to turn machines on and off, and a way to see how long those machines have been running. In this tutorial, you'll connect FlowFuse to a Siemens S7 PLC, build a FlowFuse Dashboard to control a motor and a three-color stack light, then use the Hourglass node to track and display the runtime of each device automatically.
 
 By the end, you'll have a working operator dashboard that controls PLC outputs and shows live runtime for every device, using a pattern you can reuse for any PLC brand or protocol.
+
+<lite-youtube
+  videoid="Fkv2x3Kv0lY"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/02/images/demo-thumbnail.jpg'); background-size: cover; background-position: center;"
+  title="Control and Track the Shopfloor Machines">
+</lite-youtube>
 
 ## Prerequisites
 
