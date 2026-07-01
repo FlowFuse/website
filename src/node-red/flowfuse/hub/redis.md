@@ -5,12 +5,12 @@ eleventyNavigation:
     order: 1
 meta:
     title: Redis
-    description: A FlowFuse-certified node for Redis, pub/sub, lists, hashes, sets, sorted sets, Lua scripting, TLS, Cluster, custom commands, and direct client access from function nodes.
+    description: A FlowFuse-certified package that lets you connect to Redis, store and retrieve data, publish and subscribe to messages, execute commands, and integrate Redis into your flows.
 ---
 
 # {{ meta.title }}
 
-A FlowFuse-certified node for Redis, pub/sub, lists, hashes, sets, sorted sets, Lua scripting, TLS, Cluster, custom commands, and direct client access from function nodes.
+A FlowFuse-certified package that lets you connect to Redis, store and retrieve data, publish and subscribe to messages, execute commands, and integrate Redis into your flows.
 
 Built on [ioredis](https://github.com/luin/ioredis), so anything ioredis supports (Cluster, Sentinel, TLS, connection strings, IORedis options objects) is supported here too.
 
