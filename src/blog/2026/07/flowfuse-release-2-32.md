@@ -1,5 +1,5 @@
 ---
-title: "FlowFuse 2.32: Plan Mode for FlowFuse Expert, Dark Mode, Git Pipelines for Any Server, Device Agent 4, & Expanded Certified Nodes"
+title: "FlowFuse 2.32: Plan Mode for FlowFuse Expert, Dark Mode, Git Pipelines for Any Server, Device Agent 4, & a Redis Certified Node"
 subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, DevOps pipelines connect to any Git server, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
 description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also connects DevOps pipelines to any Git server, adds Insights mode so you can ask your machine data questions in plain language, brings a dark mode across the platform and editor, ships Device Agent 4, and adds a Redis certified node."
 date: 2026-07-02
@@ -98,7 +98,7 @@ On top of that, v4 is what lights up the rest of this release on your devices:
 - You run the agent on a current, more secure Node.js 22 base
 - You let the platform tell you when a device needs the new version
 
-## Expanded Certified Nodes
+## A New Certified Node: Redis
 
 Every node in a flow is code running in your environment, and community nodes carry security, compatibility, and maintenance risk you have to manage yourself. Certified Nodes take that work on through a defined quality, security, and support process.
 
@@ -110,13 +110,13 @@ To see what certification covers and browse the current catalog, visit the [inte
 
 Certified Nodes are available to Teams and Enterprise tier customers. New instances get the catalog automatically, and you can contact us to add Certified Nodes to an existing instance.
 
-![A certified node in the palette manager](https://placehold.co/1200x675?text=Certified+Nodes){data-zoomable}
-_TODO asset: a certified node in the palette manager_
+![The Redis certified node in the palette manager](https://placehold.co/1200x675?text=Redis+Certified+Node){data-zoomable}
+_TODO asset: the Redis certified node in the palette manager_
 
 ### In practice
 
-- You connect to more systems with nodes FlowFuse tests and supports, not community packages you vet yourself
-- You reach certified nodes directly in the palette manager, with no separate workflow
+- You connect to Redis with a node FlowFuse tests and supports, not a community package you vet yourself
+- You reach the Redis certified node directly in the palette manager, with no separate workflow
 - You build on a node knowing it has cleared defined quality and security checks
 
 ## Pipelines Connect to Any Git Server
