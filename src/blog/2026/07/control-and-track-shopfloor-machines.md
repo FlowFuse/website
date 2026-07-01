@@ -382,7 +382,7 @@ The `started` property indicates whether the device is currently running, while 
 
 Paste the following code into each **UI Template** widget, updating only the device label (for example **Motor**, **Red Light**, **Yellow Light**, or **Green Light**) where required.
 
-> **Note:** If you'd like a different design for the runtime widget, you can use **FlowFuse Expert**. Simply describe the UI you want in plain English, and it will generate the component for your dashboard. Learn more about [FlowFuse Expert](flowfuse.com/docs/user/expert/node-red-embedded-ai).
+> **Note:** If you'd like a different design for the runtime widget, you can use **FlowFuse Expert**. Simply describe the UI you want in plain English, and it will generate the component for your dashboard. Learn more about [FlowFuse Expert](/docs/user/expert/node-red-embedded-ai).
 
 ```html
 <template>
