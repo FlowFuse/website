@@ -359,3 +359,31 @@ When a customer requests access to the FlowFuse Assistant, do the following:
    On the deadline day, go through the remaining instances and restart them.
    Check that each one comes back online properly, and assist customers with any
    issues that come up.
+
+## Customer Success Commission Structure
+
+The Customer Success team is compensated under a quarterly commission plan that rewards retention, growth, and product engagement.
+
+### Commission Components
+Payouts are based on two equally weighted goals (50% each). Note that weightings and specific targets are subject to review at the start of each fiscal year or quarter.
+
+1. Net Retention Revenue (NRR) (50%): Measured against a 115% NRR goal. (100% NRR = 0% payout; 115% NRR = 100% payout).
+2. Quarterly KPI (50%): Focused on product engagement (e.g., 10 Customer PRs).
+**_Note: overachievement bonus applies to NRR only, and the KPI goal has no overachievement upside._**
+
+### Commission Currency
+
+Commission payouts are denominated in USD, aligning CSM financial incentives directly with the company's primary revenue currency.
+
+### When Transactions are Credited
+Commission is credited based on the date the transaction is signed, or notice is given, ensuring CSMs are recognized in the quarter the outcome is determined.
+
+| Metric                | Credit Date for Commission   |
+| ----------------------| -----------------------------|
+| Churn                 | Notice/Cancellation Date     |
+| Expansion (In-Term)   | Signing Date                 |
+| Expansion (Renewal)   | Signing Date                 |
+| Renewal               | Signing Date                 |
+| Contraction           | Notice Date                  |
+
+**Example: If a renewal is signed in Q4 but the Effective Start Date is in Q1, the commission is earned in Q4.**
