@@ -54,11 +54,11 @@ onMounted(() => {
                         <div class="flex items-center gap-3 mb-4 flex-wrap">
                             <h1 class="mb-0 text-3xl md:text-4xl font-bold break-words">{{ node._id }}</h1>
                             <div
-                                v-if="node.ffCertified"
+                                v-if="node.tier === 'recommended'"
                                 class="ff-certified-badge flex items-center gap-2 bg-indigo-100 border-2 border-indigo-600 text-indigo-700 px-4 py-2 rounded-lg font-semibold text-sm whitespace-nowrap flex-shrink-0"
                             >
                                 <IntegrationsCertifiedIcon class="w-5 h-5" />
-                                <span>FlowFuse Certified</span>
+                                <span>FlowFuse Recommended</span>
                             </div>
                         </div>
                         <p class="text-lg text-gray-700 mb-4 w-full max-w-full break-words">{{ node.description }}</p>
@@ -101,32 +101,14 @@ onMounted(() => {
         <div class="container m-auto max-w-6xl px-6 py-8">
             <div class="flex flex-col lg:flex-row gap-8 min-w-0">
                 <div class="flex-grow min-w-0 overflow-hidden">
-                    <div v-if="node.ffCertified" class="mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg overflow-hidden">
+                    <div v-if="node.tier === 'recommended'" class="mb-8 p-6 bg-indigo-50 border-l-4 border-indigo-600 rounded-r-lg overflow-hidden">
                         <h2 class="text-indigo-900 font-bold mb-2 flex items-center gap-2 text-lg">
                             <IntegrationsCertifiedIcon class="w-8 h-8 fill-indigo-900" />
-                            FlowFuse Certified Node
+                            FlowFuse Recommended Node
                         </h2>
                         <p class="text-indigo-800 mb-0">
-                            This node has been certified by FlowFuse, ensuring it meets our standards for quality, security, and support.
-                            <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="font-semibold underline hover:text-indigo-900" target="_blank" rel="noopener noreferrer">Learn more about certified nodes</a>.
+                            FlowFuse recommends this node as a well-maintained, dependable choice for production Node-RED projects.
                         </p>
-                    </div>
-                    <div v-else class="mb-8 p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg overflow-hidden">
-                        <h2 class="text-blue-900 font-bold mb-2 flex items-center gap-2 text-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
-                            </svg>
-                            Get Your Node Certified
-                        </h2>
-                        <p class="text-blue-800 mb-3">Boost your node's credibility and reach by becoming FlowFuse Certified. Certification demonstrates quality, security, and reliability to the Node-RED community.</p>
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/#contact-us-to-discuss-your-node-certification" class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm hover:no-underline" target="_blank" rel="noopener noreferrer">
-                                START CERTIFICATION PROCESS
-                            </a>
-                            <a href="https://flowfuse.com/blog/2025/07/certified-nodes-v2/" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-blue-700 border-2 border-blue-600 px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm hover:no-underline" target="_blank" rel="noopener noreferrer">
-                                LEARN MORE
-                            </a>
-                        </div>
                     </div>
 
                     <div v-if="hasExamples" class="border-b border-gray-300 mb-6">

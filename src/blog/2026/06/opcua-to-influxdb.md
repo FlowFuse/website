@@ -59,7 +59,7 @@ tldr: "Real-time OPC UA values tell you what's happening now; the history is whe
 
 Industrial equipment produces data constantly: temperatures, pressures, motor speeds, tank levels, all changing by the second. Real-time values tell you what's happening now, but the history is where the value lives, spotting a degrading pump, proving a batch stayed within spec, tracing the conditions behind a fault. OPC UA gets that data out of your equipment in a vendor-neutral way, and InfluxDB stores it as timestamped history built to query at scale. In this article, you'll connect the two in FlowFuse to turn live readings into a durable record you can query, chart, and analyze.
 
-> **ℹ Note:** If you'd rather not leave FlowFuse and want a good time-series database built in, [FlowFuse Tables](https://flowfuse.com/docs/user/ff-tables/) is the answer.
+> **Note:** If you'd rather not leave FlowFuse and want a good time-series database built in, [FlowFuse Tables](https://flowfuse.com/docs/user/ff-tables/) is the answer.
 
 <!--more-->
 
@@ -87,7 +87,7 @@ You'll install two packages: the InfluxDB nodes and the FlowFuse Edge Certified 
 2. From the menu (top right), select **Manage palette**, then switch to the **Install** tab.
 3. Search for **`node-red-contrib-influxdb`** and click **Install**. These nodes write to and query InfluxDB.
 4. Switch the catalog using the top dropdown to **FlowFuse Edge Certified Nodes**. Once sales enables FlowFuse Edge Certified Nodes for your team, this catalog shows up here; restart any existing instance so it picks up the updated catalogue.
-5. Search for **`@flowfuse-certified-nodes/opcua`** and click **Install**.
+5. Search for **`@flowfuse-certified-nodes/opcua`** and click **Install**. See the [OPC UA node documentation](/node-red/flowfuse/edge/opcua/) for the full node set and configuration options.
 
 ![Manage palette Install tab showing the OPC UA certified package in search results](./images/opcua-manage-pallete.png)
 _Install the OPC UA certified package from the FlowFuse Edge Certified Nodes catalog._
@@ -110,9 +110,9 @@ With the nodes installed, you'll build the read side of the flow: define the con
 ![The OPC UA endpoint configuration dialog with URL, Security Policy, and Security Mode fields](./images/opcua-config.png)
 _Point the endpoint at your server's URL and match its Security Policy and Mode._
 
-> **ℹ Note:** This guide uses a simulator server for convenience. On production equipment, always enable a certificate-based Security Policy and Mode rather than `None`, so the connection between FlowFuse and your OPC UA server stays encrypted and authenticated.
+> **Note:** This guide uses a simulator server for convenience. On production equipment, always enable a certificate-based Security Policy and Mode rather than `None`, so the connection between FlowFuse and your OPC UA server stays encrypted and authenticated.
 
-> **ℹ Note:** Store connection details, endpoint URLs, credentials, InfluxDB tokens, org and bucket names in environment variables rather than hardcoding them in your nodes. This keeps secrets out of your flows and lets you move the same flow between instances without editing each node. See [Using Environment Variables](/docs/user/envvar/) for how to set them.
+> **Note:** Store connection details, endpoint URLs, credentials, InfluxDB tokens, org and bucket names in environment variables rather than hardcoding them in your nodes. This keeps secrets out of your flows and lets you move the same flow between instances without editing each node. See [Using Environment Variables](/docs/user/envvar/) for how to set them.
 
 ### Read the values on a schedule
 
