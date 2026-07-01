@@ -13,31 +13,36 @@ const PAGE_SIZE = 30
 
 const catalogue = shallowRef<CatalogueNode[] | null>(null)
 
+const tierRank = (n: CatalogueNode) => (n.tier === 'certified' ? 0 : n.tier === 'recommended' ? 1 : 2)
+
 onMounted(async () => {
     if (route.query.certified === '1') filterCertified.value = true
+    if (route.query.recommended === '1') filterRecommended.value = true
     const raw = await fetchCatalogue()
     const enriched: CatalogueNode[] = raw.map(n => ({ ...n, _idLc: n._id.toLowerCase() }))
     enriched.sort((a, b) => {
-        if (a.ffCertified && !b.ffCertified) return -1
-        if (!a.ffCertified && b.ffCertified) return 1
+        const ra = tierRank(a)
+        const rb = tierRank(b)
+        if (ra !== rb) return ra - rb
         return (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0)
     })
     catalogue.value = enriched
 })
 
 const certifiedCount = computed(
-    () => (catalogue.value ?? []).filter(n => n.ffCertified).length
+    () => (catalogue.value ?? []).filter(n => n.tier === 'certified').length
 )
 
 const generatedIds = computed(() => {
     const list = catalogue.value ?? []
     const byDownloads = [...list].sort((a, b) => (b.downloads?.week ?? 0) - (a.downloads?.week ?? 0))
     const ids = new Set(byDownloads.slice(0, 50).map(n => n._id))
-    list.forEach(n => { if (n.ffCertified) ids.add(n._id) })
+    list.forEach(n => { if (n.tier === 'recommended') ids.add(n._id) })
     return ids
 })
 
 const filterCertified = ref(false)
+const filterRecommended = ref(false)
 const selectedCategories = ref<Set<string>>(new Set())
 const searchText = ref('')
 const searchQuery = ref('')
@@ -54,6 +59,12 @@ function toggleCertified () {
 
 function setCertified (next: boolean) {
     filterCertified.value = next
+    currentPage.value = 0
+    syncUrl()
+}
+
+function setRecommended (next: boolean) {
+    filterRecommended.value = next
     currentPage.value = 0
     syncUrl()
 }
@@ -75,13 +86,24 @@ function syncUrl () {
     } else {
         delete query.certified
     }
+    if (filterRecommended.value) {
+        query.recommended = '1'
+    } else {
+        delete query.recommended
+    }
     router.replace({ query })
 }
 
 const filtered = computed(() => {
     const search = searchQuery.value.toLowerCase()
+    const tierFilterActive = filterCertified.value || filterRecommended.value
     return (catalogue.value ?? []).filter((node) => {
-        if (filterCertified.value && !node.ffCertified) return false
+        if (tierFilterActive) {
+            const matchesTier =
+                (filterCertified.value && node.tier === 'certified') ||
+                (filterRecommended.value && node.tier === 'recommended')
+            if (!matchesTier) return false
+        }
         if (selectedCategories.value.size > 0) {
             for (const key of selectedCategories.value) {
                 if (!node.categories?.includes(key)) return false
@@ -125,7 +147,7 @@ watch(filtered, () => {
                 @toggle="toggleCertified"
             />
             <div class="container m-auto text-left md:max-w-6xl pt-8 pb-12 w-full ff-full-bg gap-4 flex">
-                <div class="catalogue-filters w-52 shrink-0 hidden md:block">
+                <div class="catalogue-filters w-60 shrink-0 hidden md:block">
                     <h2 class="catalogue-filters--heading">Filters</h2>
                     <ul>
                         <li>
@@ -138,6 +160,17 @@ watch(filtered, () => {
                             <label class="inline-flex gap-1 items-center" for="catalogue-filter-certified">
                                 FlowFuse Certified
                                 <IntegrationsCertifiedIcon />
+                            </label>
+                        </li>
+                        <li>
+                            <input
+                                id="catalogue-filter-recommended"
+                                type="checkbox"
+                                :checked="filterRecommended"
+                                @change="setRecommended(($event.target as HTMLInputElement).checked)"
+                            />
+                            <label class="inline-flex gap-1 items-center" for="catalogue-filter-recommended">
+                                FlowFuse Recommended 
                             </label>
                         </li>
                     </ul>

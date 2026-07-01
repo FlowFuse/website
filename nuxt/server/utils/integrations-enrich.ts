@@ -89,6 +89,8 @@ function sortCertifiedThenDownloads (a: Integration, b: Integration): number {
 async function enrichNode (entry: IntegrationCatalogEntry): Promise<{ node: Integration, failed: boolean }> {
     const node: Integration = { ...entry }
 
+    node.tier = entry.ffCertified ? 'recommended' : undefined
+
     if (!node.categories) node.categories = []
 
     node.categories = node.categories.map(c => c.includes('catalogue') ? c : `catalogue_${c}`)
