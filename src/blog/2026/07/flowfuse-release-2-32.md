@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.32: Plan Mode for FlowFuse Expert, Git Pipelines for Any Server, Device Agent 4, & Expanded Certified Nodes"
 subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, DevOps pipelines connect to any Git server, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
-description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also connects DevOps pipelines to any Git server, adds Insights mode so you can ask your machine data questions in plain language, ships Device Agent 4, and adds new certified nodes."
+description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also connects DevOps pipelines to any Git server, adds Insights mode so you can ask your machine data questions in plain language, brings a dark mode across the platform and editor, ships Device Agent 4, and adds a Redis certified node."
 date: 2026-07-02
 authors: ["jamie-strusz"]
 # image: /blog/2026/07/images/flowfuse-release-2-32.png  # uncomment when hero art lands; image-handler stats this path locally so it must be a real file, not a URL (falls back to default blog tile until then)
@@ -9,11 +9,11 @@ tags:
    - flowfuse
    - news
    - releases
-tldr: "FlowFuse Expert now plans how to accomplish your request and asks clarifying questions when a request is unclear, rather than guessing. DevOps pipelines connect to any HTTPS Git server, Insights mode lets you ask your machine data questions in plain language, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
+tldr: "FlowFuse Expert now plans how to accomplish your request and asks clarifying questions when a request is unclear, rather than guessing. DevOps pipelines connect to any HTTPS Git server, Insights mode lets you ask your machine data questions in plain language, a dark mode arrives across FlowFuse and Node-RED, the Device Agent reaches version 4, and Certified Nodes gains Redis."
 
 ---
 
-FlowFuse 2.32 introduces Plan Mode. FlowFuse Expert now plans how to carry out your request and asks before it guesses. It also connects DevOps pipelines to any Git server, adds Insights mode for asking your machine data questions in plain language, ships a new major version of the Device Agent, and grows the certified node catalog.
+FlowFuse 2.32 introduces Plan Mode. FlowFuse Expert now plans how to carry out your request and asks before it guesses. It also connects DevOps pipelines to any Git server, adds Insights mode for asking your machine data questions in plain language, brings a dark mode to the platform and Node-RED editor, ships a new major version of the Device Agent, and adds a Redis certified node.
 
 Here is what shipped. 🚀
 
@@ -59,27 +59,52 @@ _TODO asset: FlowFuse Expert Insights mode answering a plain-language question a
 - You use the FlowFuse Expert or any AI agent as the interface, on demand
 - You let the FlowFuse Expert help you build the required MCP servers in Node-RED
 
-## Device Agent 4
+## Dark Mode
 
-Managing edge devices means keeping each agent current, and a major version is the moment that matters most.
+Long editing sessions in a bright interface are hard on the eyes, and FlowFuse only offered a light theme.
 
-### A New Major Version
+### A Dark Theme Across FlowFuse and Node-RED
 
-The Device Agent reaches version 4. Install or upgrade to v4 to use the latest remote instance and agent capabilities in this release. Where a feature needs it, the platform prompts you.
+FlowFuse now has a dark mode. Turn it on and the theme carries through from the FlowFuse platform into the Node-RED editor, so the platform and your flows follow the same look. The preference syncs across FlowFuse and Node-RED (including Node-RED 5), so you set it once.
+
+![FlowFuse in dark mode](https://placehold.co/1200x675?text=Dark+Mode){data-zoomable}
+_TODO asset: FlowFuse platform and the Node-RED editor in dark mode_
+
+<!-- TODO: confirm availability (tier / licence) for Dark Mode before publish -->
 
 ### In practice
 
-- You upgrade a device to Device Agent 4 to pick up this release's remote instance capabilities
-- You keep your fleet on a supported, current agent
-- You let the platform tell you when a feature needs the new version
+- You turn dark mode on once and it applies across FlowFuse and the Node-RED editor
+- You keep a consistent theme on Node-RED 5 and earlier versions
+- You cut eye strain on long editing sessions
+
+## Device Agent 4
+
+The Device Agent reaches version 4.0.0, a major release that modernizes how the agent runs and unlocks this release's AI and remote-instance capabilities.
+
+### A New Major Version
+
+Device Agent 4 runs on Node.js 22 by default (the baseline for Node-RED 5), and its Docker image now runs as an unprivileged user instead of root, a more secure default. Because that is a breaking change, bind-mounted state directories need to be owned by the agent's user when you upgrade (see the upgrade notes).
+
+On top of that, v4 is what lights up the rest of this release on your devices:
+
+- **Insights on your devices**: the agent answers live-state and MCP requests, so the FlowFuse Expert can query real data straight from the hardware a remote instance is connected to
+- **Token auth to remote instances**: HTTP Bearer token support, matching hosted instances
+- **Clearer operations**: structured JSON logging, and the agent reports its Node.js version so the platform can prompt you when an upgrade is needed
+
+### In practice
+
+- You upgrade to Device Agent 4 to use Insights mode and the latest capabilities on your remote instances
+- You run the agent on a current, more secure Node.js 22 base
+- You let the platform tell you when a device needs the new version
 
 ## Expanded Certified Nodes
 
 Every node in a flow is code running in your environment, and community nodes carry security, compatibility, and maintenance risk you have to manage yourself. Certified Nodes take that work on through a defined quality, security, and support process.
 
-### New Connections in the Catalog
+### Redis Joins the Catalog
 
-The certified node catalog grows again in 2.32, so more of the systems you connect to are covered by a node FlowFuse tests, secures, and supports. Each certified node carries the same trust contract: vetted quality, proactive security with a CVE response commitment, and a real path to support when something breaks.
+The certified node catalog grows again in 2.32 with a **Redis** certified node, so you can connect to Redis with a node FlowFuse tests, secures, and supports. Each certified node carries the same trust contract: vetted quality, proactive security with a CVE response commitment, and a real path to support when something breaks.
 
 To see what certification covers and browse the current catalog, visit the [integrations page](https://flowfuse.com/integrations/?certified=1).
 
@@ -116,6 +141,13 @@ _Creating a generic Git token for a self-hosted server._
 - You connect to a server behind a private CA by pasting in its certificate
 
 ## What else is new?
+
+- **Real-time status over MQTT**: instance, device, and team status now stream over MQTT instead of HTTP polling, so the platform reflects changes faster
+- **Node-RED 5 theming**: the FlowFuse theme, including dark mode, now applies cleanly on Node-RED 5
+- **Namespace-scoped RBAC**: role-based access scoped to a namespace for shared-cluster self-hosted deployments
+- **More Expert canvas actions**: the FlowFuse Expert can now create subroutines, move groups across tabs, arrange and distribute nodes, set deploy mode, and control the sidebar
+- **Faster instance lists**: pagination and performance fixes on the Hosted and Remote Instances pages, plus sorting by status
+- **Polish**: descriptive page titles, a cookie-consent notice on the login page, and a fix for instances that could report as suspended while still running
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.32, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
