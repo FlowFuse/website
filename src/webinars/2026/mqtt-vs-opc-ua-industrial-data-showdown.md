@@ -7,7 +7,7 @@ image: /images/webinars/webinar-mqtt-vs-opc-ua.jpg
 date: 2026-06-30
 time: 17:00 CET (11:00am ET)
 duration: 60
-video:
+video: DJ7qc1KPU1A
 hosts: ["kudzai-manditereza", "kristopher-sandoval"]
 hubspot:
     formId: 7c09e8d2-cd23-4507-98d4-073bf032cb00
