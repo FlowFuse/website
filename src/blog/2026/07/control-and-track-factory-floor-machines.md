@@ -139,7 +139,7 @@ These addresses correspond to the example ladder logic used in this tutorial. Re
 
 After adding them, your configuration should resemble the following.
 
-![S7 Endpoint Variables tab listing Motor, Red Light, Yellow Light, and Green Light with their data block addresses](./images/s7-config-variables.png)
+![S7 Endpoint Variables tab listing Motor, Red Light, Yellow Light, and Green Light with their data block addresses](./images/s7-config-variables-counter.png)
 *The four PLC variables mapped to their data block addresses in the S7 Endpoint.*
 
 ### Add the Output Nodes
