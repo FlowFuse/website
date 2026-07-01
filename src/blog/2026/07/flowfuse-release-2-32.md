@@ -65,22 +65,22 @@ _Creating a generic Git token for a self-hosted server._
 
 The FlowFuse Expert now works from your live data and plans a task before it acts, so it does more of the work for you.
 
-### Insights Mode
+### Ask Your Machine Data in Plain Language
 
-Point the FlowFuse Expert, or any AI agent, at the live data on your remote instances and ask questions in plain language, with no dashboards to build. When you need to set it up, the Expert can help you build the MCP servers that power it, right in Node-RED.
+With Insights mode, point the FlowFuse Expert, or any AI agent, at the live data on your remote instances and ask questions in plain language, with no dashboards to build. When you need to set it up, the Expert can help you build the MCP servers that power it, right in Node-RED.
 
 ![The FlowFuse Expert answering a plain-language question about live machine data](https://placehold.co/1200x675?text=Insights+Mode){data-zoomable}
 _TODO asset: FlowFuse Expert Insights mode answering a plain-language question about machine data_
 
 <!-- TODO: confirm availability (tier / licence) for Insights mode before publish -->
 
-### Plan Mode
+### See the Plan Before It Runs
 
-Give the Expert a task and it lays out a plan first, asking a clarifying question when your request is ambiguous rather than guessing.
+With Plan Mode, give the Expert a task and it lays out a plan first, asking a clarifying question when your request is ambiguous rather than guessing.
 
-### Acting on Your Platform
+### From Advice to Action
 
-Once you approve the plan, the Expert can begin to carry out platform actions like creating an instance or registering a device. This is groundwork, with more to follow in upcoming releases.
+Once you approve the plan, the Expert can begin to carry out platform actions for you, like creating an instance or registering a device, instead of just pointing you to where to click. This is groundwork, with more to follow in upcoming releases.
 
 ## Dark Mode
 
