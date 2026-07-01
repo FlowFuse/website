@@ -1,5 +1,5 @@
 ---
-title: "FlowFuse 2.32: Plan Mode for FlowFuse Expert, Git Pipelines for Any Server, Device Agent 4, & Expanded Certified Nodes"
+title: "FlowFuse 2.32: Plan Mode for FlowFuse Expert, Dark Mode, Git Pipelines for Any Server, Device Agent 4, & Expanded Certified Nodes"
 subtitle: "FlowFuse Expert now plans how to carry out your request and asks before it guesses, DevOps pipelines connect to any Git server, the Device Agent reaches version 4, and Certified Nodes expands with new nodes."
 description: "FlowFuse 2.32 introduces Plan Mode, so FlowFuse Expert plans how to carry out your request and asks clarifying questions when it needs them. It also connects DevOps pipelines to any Git server, adds Insights mode so you can ask your machine data questions in plain language, brings a dark mode across the platform and editor, ships Device Agent 4, and adds a Redis certified node."
 date: 2026-07-02
