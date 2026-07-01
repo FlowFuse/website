@@ -59,13 +59,13 @@ _TODO asset: FlowFuse Expert Insights mode answering a plain-language question a
 
 <!-- TODO: confirm availability (tier / licence) for Insights mode before publish -->
 
+### From Advice to Action
+
+We are beginning to let the FlowFuse Expert do things inside the platform, not just advise, starting with setting up an instance for you. It is the first step toward building an application from beginning to end: you start with the Expert in the platform, it provisions the instance, and leads you straight into the Node-RED editor to build. Groundwork, with more to follow.
+
 ### Plan Together, Build What You Expect
 
 With Plan Mode, the Expert plans the work alongside you, proposing a plan and asking a clarifying question when your request is ambiguous, so the result matches what you expect instead of a guess you have to correct.
-
-### From Advice to Action
-
-Once you approve the plan, the Expert can begin carrying out platform actions like creating an instance or registering a device, rather than just pointing you to the button. This is groundwork, with more to follow.
 
 ## Dark Mode
 
