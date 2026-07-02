@@ -43,8 +43,7 @@ Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gi
 
 Your live machine data sits on your remote instances at the edge. Insights mode now reaches it directly. Point the FlowFuse Expert in "insights" mode, or any AI agent, at a remote instance and ask in plain language: "What was the average cycle time on line 3 today?" You get the answer from live data, with no dashboard to build and no query to write. The Expert can even help you build the MCP servers that feed it, right in Node-RED.
 
-![The FlowFuse Expert answering a plain-language question about live machine data](https://placehold.co/1600x900?text=Insights+Mode){data-zoomable style="border: 2px solid #E5E7EB;"}
-_TODO asset: FlowFuse Expert Insights mode answering a plain-language question about machine data_
+![The FlowFuse Expert answering a plain-language question about live machine data](./images/insights-mode.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 ### From Advice to Action
 
@@ -54,8 +53,7 @@ We are enabling the FlowFuse Expert to do things inside the platform, starting w
 
 In support mode, you decide how freely the Expert acts, and you can fine-tune its permissions separately for building flows in Node-RED and for taking actions in the FlowFuse platform. Let it run without interruption while you stand up a first proof of concept, so it builds quickly. Then tighten those same tools for production flows, where you want to see and approve each change before it lands. When a tool is set to ask, an approval card shows exactly what the Expert intends to do and waits for your call.
 
-![The FlowFuse Expert asking to run a tool, with Allow and Deny controls in the chat](https://placehold.co/1600x900?text=Expert+Approvals){data-zoomable style="border: 2px solid #E5E7EB;"}
-_TODO asset: the Expert's inline tool-approval card in chat (Allow / Always allow / Deny / Always deny), or the per-team tool-permission settings panel; real screenshots exist in FlowFuse/flowfuse#7639_
+![The FlowFuse Expert asking to run a tool, with Allow and Deny controls in the chat](./images/hitl-approvals.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 ### Plan Together, Build What You Expect
 
@@ -65,8 +63,7 @@ The Expert now understands your intent and plans with you. It asks clarifying qu
 
 FlowFuse has only ever had a light interface, and long sessions in a bright UI are tiring on the eyes. FlowFuse now has a dark mode. Turn it on and the platform switches to a dark theme, easier on the eyes and a better match for a dark desktop. Node-RED auto-switches along with you, which works especially well in combination with the new [Node-RED 5.0](/blog/2026/06/node-red-5-on-flowfuse/)!
 
-![FlowFuse in dark mode](https://placehold.co/1600x900?text=Dark+Mode){data-zoomable style="border: 2px solid #E5E7EB;"}
-_TODO asset: FlowFuse platform and the Node-RED editor in dark mode_
+![FlowFuse in dark mode](./images/dark-mode.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 _Note: on Node-RED 5 and newer, your preference also carries into the Node-RED editor, so you set it once._
 
