@@ -1,0 +1,2885 @@
+[
+    {
+        "id": "9e994c1c8fa20d7f",
+        "type": "tab",
+        "label": "operator terminal",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7ce432faafd12ae0",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Home",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "eef9e4c814429036",
+            "0c56cbc686059e2c",
+            "db620321ed7e6520",
+            "507cde3766acf7c4",
+            "9496558634fd2a55",
+            "561a3f6a653345f1",
+            "8462c9965a821fed"
+        ],
+        "x": 14,
+        "y": 139,
+        "w": 692,
+        "h": 202
+    },
+    {
+        "id": "8d8ba318187875eb",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Menu",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a4befbeb13af1b02",
+            "44fc651dc03aa1a9",
+            "3d5262bf7026e634",
+            "bb05d7a98cf51ca3",
+            "0b214e6ddbf8389c",
+            "c573ab6d6fec17f2"
+        ],
+        "x": 14,
+        "y": 379,
+        "w": 692,
+        "h": 262
+    },
+    {
+        "id": "d06a39adea28fab4",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Product information form",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "59b6280fccc6f297",
+            "7fd83c960679766a",
+            "9059c654314ada40",
+            "24d442660d627be9",
+            "a59c4f2c1cd89a3c",
+            "65789f64bc5450c8"
+        ],
+        "x": 14,
+        "y": 679,
+        "w": 692,
+        "h": 202
+    },
+    {
+        "id": "29c0e8f63abcb25d",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Production",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2ccb36a66abc0a04",
+            "debaa7057646f4c9",
+            "980e1458f0c10cd6",
+            "75fb79749819c2cb",
+            "203e0b689783c613",
+            "522b4f93b2c44f61",
+            "94d64e84a0fb8ddb",
+            "3a7960f7dadc2d90",
+            "11bec75ee75e71cf",
+            "9aae4440f930b4e1",
+            "ec0e8b63d3033100",
+            "fc3f6a7b7bf4e57d",
+            "d1ea4d2c2e09aed0",
+            "bd6e83256bf9bff1",
+            "0c5a6d92f0ebc14c",
+            "9177f83735d26262",
+            "dc7d4ab5779a6f09",
+            "c3f83d6f180c5437",
+            "a765a64c5b69f898",
+            "abebc10af30789fc",
+            "1f34b4376489cf09",
+            "3a96133f24edc274",
+            "1cd40ad942c21211",
+            "7dd2f81b59ebbc2c",
+            "3612ec0b1aea5e6a",
+            "9f3a215e6f143cbe"
+        ],
+        "x": 834,
+        "y": 139,
+        "w": 772,
+        "h": 442
+    },
+    {
+        "id": "ec1959b5ced2b5ba",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Defect form & Report",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "960497c3950a8c07",
+            "6e1eefc9c156dace",
+            "f06cd0d35a384a02",
+            "a62312aede481190",
+            "6a54f41eb13a8fb1",
+            "26b5d1dd41dad35d",
+            "e648e04237df60d2",
+            "380cc9d4b6705aa5",
+            "a181475a9294afc0",
+            "b92516e315888fb5",
+            "087cc825838b0a31",
+            "0e19b4c92c3440be",
+            "273ea6efa5d1e307",
+            "646b5d23fb5f278d"
+        ],
+        "x": 834,
+        "y": 619,
+        "w": 772,
+        "h": 342
+    },
+    {
+        "id": "a8ad8c3c83c80e38",
+        "type": "group",
+        "z": "9e994c1c8fa20d7f",
+        "name": "Interuption page",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "049cad0a55b20336",
+            "98e0b8e85d0b1c7a",
+            "4c5f86f0f4b2109e",
+            "e3e0713655d68a4b",
+            "5d17b83bcdd3121e",
+            "8d5c52064139c45f",
+            "a2b5c03b11df99e3",
+            "a731a3d8a25ebaed",
+            "fd550d39a90fe109",
+            "d5ab4fe2eecf2536",
+            "fbe3a7c0548b0476",
+            "ed236a9e5705e63f",
+            "148d3f6359893ea7",
+            "48cb83179a69fc08",
+            "760ed58968283588",
+            "829afbcc227a3a11",
+            "8dabcfb7bac1ca5d",
+            "0249a38765970a80",
+            "c924162687b18d93",
+            "7b9b500971388d57",
+            "1af9e36531786cb1",
+            "2f4a6fbf11b784ed",
+            "332b46cae1c3d489",
+            "976ef6b51e020709",
+            "b3fc80d4738a224e",
+            "9e1adabbde35db23",
+            "1914d9287f266085",
+            "426c6fd7abef0f79",
+            "dbd874219f6007a8",
+            "529540a8b1a1137d",
+            "35473b0dea4dcb6a",
+            "59aad40bb5eeb322",
+            "2de84909332476d8",
+            "a6bb8bc19cd6d860",
+            "340441fa8b7ca858",
+            "cfd5850d758deae2",
+            "d3cfe9ed57ac6665",
+            "e901c14f0a048260",
+            "253f7b1f7c4c00a0"
+        ],
+        "x": 14,
+        "y": 999,
+        "w": 1592,
+        "h": 542
+    },
+    {
+        "id": "561a3f6a653345f1",
+        "type": "junction",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "x": 220,
+        "y": 260,
+        "wires": [
+            [
+                "0c56cbc686059e2c",
+                "9496558634fd2a55",
+                "8462c9965a821fed"
+            ]
+        ]
+    },
+    {
+        "id": "7b9b500971388d57",
+        "type": "junction",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "x": 540,
+        "y": 1440,
+        "wires": [
+            [
+                "5d17b83bcdd3121e",
+                "a731a3d8a25ebaed",
+                "d5ab4fe2eecf2536",
+                "829afbcc227a3a11",
+                "fd550d39a90fe109",
+                "8d5c52064139c45f"
+            ]
+        ]
+    },
+    {
+        "id": "0c5a6d92f0ebc14c",
+        "type": "junction",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "x": 1120,
+        "y": 420,
+        "wires": [
+            [
+                "c3f83d6f180c5437"
+            ]
+        ]
+    },
+    {
+        "id": "340441fa8b7ca858",
+        "type": "junction",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "x": 1020,
+        "y": 1180,
+        "wires": [
+            [
+                "cfd5850d758deae2"
+            ]
+        ]
+    },
+    {
+        "id": "e91dfad2a32019e9",
+        "type": "ui-base",
+        "name": "FlowFuse",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ]
+    },
+    {
+        "id": "0b7f47ec55945824",
+        "type": "ui-theme",
+        "name": "dashboard",
+        "colors": {
+            "surface": "#0e1c2b",
+            "primary": "#2268dc",
+            "bgPage": "#eeeeee",
+            "groupBg": "#eeeeee",
+            "groupOutline": "#eeeeee"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "50d079857067656e",
+        "type": "ui-page",
+        "name": "Terminal",
+        "ui": "e91dfad2a32019e9",
+        "path": "/",
+        "layout": "grid",
+        "theme": "0b7f47ec55945824",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "f1761f7dd1c4d9e6",
+        "type": "ui-group",
+        "name": "Home",
+        "page": "50d079857067656e",
+        "width": "20",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "home"
+    },
+    {
+        "id": "35c9c661a926b35f",
+        "type": "ui-group",
+        "name": "Menu",
+        "page": "50d079857067656e",
+        "width": "15",
+        "height": "2",
+        "order": 2,
+        "showTitle": false,
+        "className": "menu",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "f76e3eece88ddd5a",
+        "type": "ui-group",
+        "name": "Product information form",
+        "page": "50d079857067656e",
+        "width": "15",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "product-form"
+    },
+    {
+        "id": "894eb5fdcd8dc0e4",
+        "type": "ui-group",
+        "name": "Production button row 1",
+        "page": "50d079857067656e",
+        "width": "12",
+        "height": "2",
+        "order": 5,
+        "showTitle": false,
+        "className": "button-row-one",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "19195b5eb5e18eac",
+        "type": "ui-group",
+        "name": "Production text row",
+        "page": "50d079857067656e",
+        "width": "6",
+        "height": "1",
+        "order": 4,
+        "showTitle": false,
+        "className": "production-text-row",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c0ba11a9798d7feb",
+        "type": "ui-group",
+        "name": "Interuption page",
+        "page": "50d079857067656e",
+        "width": "20",
+        "height": "1",
+        "order": 6,
+        "showTitle": false,
+        "className": ""
+    },
+    {
+        "id": "b59b4d10d299a0ee",
+        "type": "ui-group",
+        "name": "Product evalution form",
+        "page": "50d079857067656e",
+        "width": "12",
+        "height": "1",
+        "order": 8,
+        "showTitle": false,
+        "className": "product-form",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "82655e6f51fd8c44",
+        "type": "ui-group",
+        "name": "Defect form footer",
+        "page": "50d079857067656e",
+        "width": "6",
+        "height": "1",
+        "order": 9,
+        "showTitle": false,
+        "className": "defect-form-footer",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c76a1e717dc6fd44",
+        "type": "ui-group",
+        "name": "Report",
+        "page": "50d079857067656e",
+        "width": "12",
+        "height": "1",
+        "order": 10,
+        "showTitle": false,
+        "className": "report",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "4897005d4f7a399a",
+        "type": "ui-group",
+        "name": "Production footer",
+        "page": "50d079857067656e",
+        "width": "3",
+        "height": "1",
+        "order": 7,
+        "showTitle": false,
+        "className": "production-footer"
+    },
+    {
+        "id": "d267b56680b3ec11",
+        "type": "ui-group",
+        "name": "Report footer",
+        "page": "50d079857067656e",
+        "width": "25",
+        "height": "1",
+        "order": 11,
+        "showTitle": false,
+        "className": "report-footer"
+    },
+    {
+        "id": "b008b72dceb6e6ff",
+        "type": "ui-spacer",
+        "group": "35c9c661a926b35f",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 3,
+        "width": "9",
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "fd201bed7433e577",
+        "type": "ui-spacer",
+        "group": "b59b4d10d299a0ee",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 3,
+        "width": "6",
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "eef9e4c814429036",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "group": "f1761f7dd1c4d9e6",
+        "name": "",
+        "label": "Start Shift",
+        "order": 1,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "start-shift",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Menu\"],\"hide\":[\"Home\",\"Product information form\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "561a3f6a653345f1"
+            ]
+        ]
+    },
+    {
+        "id": "0c56cbc686059e2c",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 620,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4befbeb13af1b02",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "group": "35c9c661a926b35f",
+        "name": "",
+        "label": "SETUP",
+        "order": 1,
+        "width": "3",
+        "height": "2",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "setup",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 480,
+        "wires": [
+            [
+                "bb05d7a98cf51ca3"
+            ]
+        ]
+    },
+    {
+        "id": "44fc651dc03aa1a9",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "group": "35c9c661a926b35f",
+        "name": "",
+        "label": "PRODUCTION",
+        "order": 2,
+        "width": "3",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "production",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Product information form\"],\"hide\":[\"Menu\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 600,
+        "y": 480,
+        "wires": [
+            [
+                "0b214e6ddbf8389c"
+            ]
+        ]
+    },
+    {
+        "id": "3d5262bf7026e634",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "group": "35c9c661a926b35f",
+        "order": 4,
+        "width": "6",
+        "height": "2",
+        "name": "user note",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "",
+        "fontSize": "14",
+        "color": "#786d6d",
+        "wrapText": false,
+        "className": "usernote",
+        "x": 620,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "bb05d7a98cf51ca3",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "name": "Disable Production Btn",
+        "func": "//  disable product button and change user note\n\nconst state = global.get('bp-op-term.state')\nif (state == \"open\" || state == undefined || state == \"\") {\n    msg.enabled = false;\n    msg.payload = \"You can start production after setup is completed, click setup again to finish setup\"\n    global.set('bp-op-term.state', \"close\")\n    return msg;\n} else {\n    msg.enabled = true;\n    global.set('bp-op-term.state', \"open\")\n    msg.payload = \"\"\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 480,
+        "wires": [
+            [
+                "44fc651dc03aa1a9",
+                "3d5262bf7026e634"
+            ]
+        ]
+    },
+    {
+        "id": "59b6280fccc6f297",
+        "type": "ui-form",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "",
+        "group": "f76e3eece88ddd5a",
+        "label": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Product",
+                "key": "product-id",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Production Rate (parts/min)",
+                "key": "production-rate",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "product-id": "",
+            "production-rate": ""
+        },
+        "payload": "",
+        "submit": "🕑 Start Production",
+        "cancel": "❌ Cancel",
+        "resetOnSubmit": false,
+        "topic": "",
+        "topicType": "str",
+        "splitLayout": "",
+        "className": "form",
+        "dropdownOptions": [],
+        "x": 90,
+        "y": 780,
+        "wires": [
+            [
+                "7fd83c960679766a"
+            ]
+        ]
+    },
+    {
+        "id": "7fd83c960679766a",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "store Product Data",
+        "func": "global.set('bp-op-term.productInfo', msg.payload)\nconst months = [\n    \"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\",\n    \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"\n  ];\n\n  const currentDate = new Date();\n  const day = currentDate.getDate();\n  const month = months[currentDate.getMonth()];\n  const year = currentDate.getFullYear();\n  const hours = currentDate.getHours();\n  const minutes = currentDate.getMinutes();\n\n  // Add leading zeros if needed\n  const formattedDay = day < 10 ? `0${day}` : day;\n  const formattedHours = hours < 10 ? `0${hours}` : hours;\n  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;\n\n  msg.payload.currentTime =  `${formattedDay} ${month} ${year} ${formattedHours}:${formattedMinutes}`;\n  msg.payload.productionStart =  Date.now()\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 780,
+        "wires": [
+            [
+                "24d442660d627be9"
+            ]
+        ]
+    },
+    {
+        "id": "0b214e6ddbf8389c",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 620,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ccb36a66abc0a04",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "break",
+        "label": "Break                 ",
+        "order": 1,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "break",
+        "icon": "mdi-coffee-outline",
+        "iconPosition": "left",
+        "payload": "break",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 910,
+        "y": 340,
+        "wires": [
+            [
+                "0c5a6d92f0ebc14c"
+            ]
+        ]
+    },
+    {
+        "id": "debaa7057646f4c9",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "",
+        "label": "Changeover",
+        "order": 2,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "changeover",
+        "icon": "mdi-swap-horizontal",
+        "iconPosition": "left",
+        "payload": "changeover",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 930,
+        "y": 380,
+        "wires": [
+            [
+                "0c5a6d92f0ebc14c"
+            ]
+        ]
+    },
+    {
+        "id": "980e1458f0c10cd6",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "",
+        "label": "Machine Fault",
+        "order": 3,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "machine-error",
+        "icon": "mdi-alert-circle-outline",
+        "iconPosition": "left",
+        "payload": "fault",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 940,
+        "y": 420,
+        "wires": [
+            [
+                "0c5a6d92f0ebc14c"
+            ]
+        ]
+    },
+    {
+        "id": "75fb79749819c2cb",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "",
+        "label": "Waiting",
+        "order": 4,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "raw-material-storage",
+        "icon": "mdi-package-variant-closed-minus",
+        "iconPosition": "left",
+        "payload": "waiting",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 920,
+        "y": 500,
+        "wires": [
+            [
+                "0c5a6d92f0ebc14c"
+            ]
+        ]
+    },
+    {
+        "id": "203e0b689783c613",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "",
+        "label": "Maintenance",
+        "order": 6,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "maintenance",
+        "icon": "mdi-wrench-clock",
+        "iconPosition": "left",
+        "payload": "maintenance",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 930,
+        "y": 460,
+        "wires": [
+            [
+                "0c5a6d92f0ebc14c"
+            ]
+        ]
+    },
+    {
+        "id": "522b4f93b2c44f61",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "Trigger",
+        "func": "msg.payload = { \n    \"pages\": {\n        \"show\": [\"Terminal\"]\n    },\n    \"groups\": {\n        \"show\": [\n            \"Interuption page\"\n        ],\n        \"hide\": [\n            \"Production button row 1\",\n            \"Production text row\",\n            \"Production footer\"\n        ]\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 460,
+        "wires": [
+            [
+                "9177f83735d26262"
+            ]
+        ]
+    },
+    {
+        "id": "94d64e84a0fb8ddb",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "148d3f6359893ea7"
+        ],
+        "x": 1545,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "9059c654314ada40",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 560,
+        "y": 840,
+        "wires": [
+            [
+                "a59c4f2c1cd89a3c"
+            ]
+        ]
+    },
+    {
+        "id": "24d442660d627be9",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "Show / hide elements",
+        "func": "msg.payload = {\n    \"pages\": {\n        \"show\": [\"Terminal\"]\n    }, \n    \"groups\": {\n        \"show\": [\n            \"Production button row 1\",\n            \"Production text row\",\n            \"Production footer\"\n        ],\n        \"hide\": [\n            \"Product information form\"\n        ]\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 840,
+        "wires": [
+            [
+                "9059c654314ada40"
+            ]
+        ]
+    },
+    {
+        "id": "3a7960f7dadc2d90",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "19195b5eb5e18eac",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Start Time",
+        "label": "Start Time : &nbsp; ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Courier,monospace",
+        "fontSize": "20",
+        "color": "#0e1c2c",
+        "wrapText": false,
+        "className": "production-startat",
+        "x": 1510,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "11bec75ee75e71cf",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "19195b5eb5e18eac",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Product ",
+        "label": "Product &nbsp; &nbsp;: &nbsp; ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Courier,monospace",
+        "fontSize": "20",
+        "color": "#0e1c2c",
+        "wrapText": false,
+        "className": "productionId",
+        "x": 1500,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "049cad0a55b20336",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "start command",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 1320,
+        "wires": [
+            [
+                "2f4a6fbf11b784ed"
+            ]
+        ]
+    },
+    {
+        "id": "98e0b8e85d0b1c7a",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "generate status text",
+        "func": "function millisecondsToTimeString(ms) {\n    const seconds = Math.floor((ms / 1000) % 60)\n    const minutes = Math.floor((ms / (1000 * 60)) % 60)\n    const hours = Math.floor((ms / (1000 * 60 * 60)) % 24)\n\n    return `${hours}h ${minutes}m ${seconds}s`\n}\n\n\nif (msg.currentInteruption && msg.currentInteruption === msg.topic) {\n    // const { days, hours, minutes, seconds, milliseconds } = msg.elapsed.time\n    // msg.payload = `${days}:${hours}:${minutes}:${seconds}`;\n    const duration = millisecondsToTimeString(msg.elapsed.millis)\n    msg.payload = duration\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 1180,
+        "wires": [
+            [
+                "d3cfe9ed57ac6665"
+            ]
+        ]
+    },
+    {
+        "id": "4c5f86f0f4b2109e",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "group": "c0ba11a9798d7feb",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Stoppage Duration : &nbsp;",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Courier,monospace",
+        "fontSize": "20",
+        "color": "#432e57",
+        "wrapText": false,
+        "className": "down-time",
+        "x": 1400,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "e3e0713655d68a4b",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "group": "c0ba11a9798d7feb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Stoppage Reason &nbsp; : &nbsp;",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Courier,monospace",
+        "fontSize": "20",
+        "color": "#432e57",
+        "wrapText": false,
+        "className": "down-time-reason",
+        "x": 1420,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "5d17b83bcdd3121e",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "break",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 670,
+        "y": 1180,
+        "wires": [
+            [
+                "1914d9287f266085"
+            ]
+        ]
+    },
+    {
+        "id": "8d5c52064139c45f",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "changeover",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 690,
+        "y": 1240,
+        "wires": [
+            [
+                "529540a8b1a1137d"
+            ]
+        ]
+    },
+    {
+        "id": "a2b5c03b11df99e3",
+        "type": "switch",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "property": "currentInteruption",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "break",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "changeover",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fault",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "maintenance",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "waiting",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "blocked",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 470,
+        "y": 1320,
+        "wires": [
+            [
+                "5d17b83bcdd3121e"
+            ],
+            [
+                "8d5c52064139c45f"
+            ],
+            [
+                "a731a3d8a25ebaed"
+            ],
+            [
+                "fd550d39a90fe109"
+            ],
+            [
+                "d5ab4fe2eecf2536"
+            ],
+            [
+                "829afbcc227a3a11"
+            ]
+        ]
+    },
+    {
+        "id": "a731a3d8a25ebaed",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "fault",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 670,
+        "y": 1300,
+        "wires": [
+            [
+                "35473b0dea4dcb6a"
+            ]
+        ]
+    },
+    {
+        "id": "fd550d39a90fe109",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "maintenance",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 690,
+        "y": 1360,
+        "wires": [
+            [
+                "59aad40bb5eeb322"
+            ]
+        ]
+    },
+    {
+        "id": "d5ab4fe2eecf2536",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "waiting",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 680,
+        "y": 1420,
+        "wires": [
+            [
+                "2de84909332476d8"
+            ]
+        ]
+    },
+    {
+        "id": "fbe3a7c0548b0476",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "group": "c0ba11a9798d7feb",
+        "name": "",
+        "label": "Continue Production",
+        "order": 3,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "continue-production",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Production button row 1\",\"Production text row\",\"Production footer\"],\"hide\":[\"Interuption page\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 140,
+        "y": 1100,
+        "wires": [
+            [
+                "48cb83179a69fc08",
+                "976ef6b51e020709"
+            ]
+        ]
+    },
+    {
+        "id": "ed236a9e5705e63f",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "link in 4",
+        "links": [
+            "6a54f41eb13a8fb1",
+            "9496558634fd2a55"
+        ],
+        "x": 55,
+        "y": 1420,
+        "wires": [
+            [
+                "1af9e36531786cb1"
+            ]
+        ]
+    },
+    {
+        "id": "148d3f6359893ea7",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "link in 5",
+        "links": [
+            "94d64e84a0fb8ddb"
+        ],
+        "x": 55,
+        "y": 1320,
+        "wires": [
+            [
+                "049cad0a55b20336"
+            ]
+        ]
+    },
+    {
+        "id": "9aae4440f930b4e1",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 1500,
+        "y": 460,
+        "wires": [
+            [
+                "dc7d4ab5779a6f09"
+            ]
+        ]
+    },
+    {
+        "id": "48cb83179a69fc08",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 400,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "960497c3950a8c07",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "82655e6f51fd8c44",
+        "name": "",
+        "label": "Continue Production",
+        "order": 1,
+        "width": "6",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "log-data-and-continue",
+        "icon": "mdi-table-plus",
+        "iconPosition": "left",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Production button row 1\",\"Production text row\",\"Production footer\"],\"hide\":[\"Product evalution form\",\"Defect form footer\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "light-blue",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 960,
+        "y": 860,
+        "wires": [
+            [
+                "e648e04237df60d2"
+            ]
+        ]
+    },
+    {
+        "id": "6e1eefc9c156dace",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "82655e6f51fd8c44",
+        "name": "",
+        "label": "Production Finished",
+        "order": 2,
+        "width": "6",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "log-data-and-finish-production",
+        "icon": "mdi-table-check",
+        "iconPosition": "left",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Report\",\"Report footer\"],\"hide\":[\"Product evalution form\",\"Defect form footer\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 960,
+        "y": 900,
+        "wires": [
+            [
+                "f06cd0d35a384a02",
+                "e648e04237df60d2"
+            ]
+        ]
+    },
+    {
+        "id": "f06cd0d35a384a02",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "storeDataToTable",
+        "func": "let tableData = global.get('bp-op-term.data') || [];\n\nconst productInfo = global.get(\"bp-op-term.productInfo\")\nconst productId = productInfo['product-id'];\nconst productTime = productInfo['currentTime'];\nconst productStartTime = productInfo.productionStart\nconst productEndTime = Date.now()\nconst duration = millisecondsToTimeString(productEndTime - productStartTime)\n\n\n// Get the last entry from each interruption array\nconst interruptions = global.get('bp-op-term.interuptions') || {}\nconst interruptionsLookup = {}\n\nfor (const key in interruptions) {\n    const interruption = interruptions[key]\n    if (interruption?.millis > 0) {\n        const {days,hours,minutes,seconds,milliseconds} = interruption.time\n        const totalHours = (days * 24) + hours\n        interruptionsLookup[key] = `${totalHours}h ${minutes}m ${seconds}s`\n    }\n}\n\n\n// Get the number of defect and good parts\nlet badParts = +global.get(\"bp-op-term.badParts\") || 0\nlet goodParts = +global.get(\"bp-op-term.goodParts\") || 0\nif(isNaN(badParts)) { badParts = '-' }\nif(isNaN(goodParts)) { goodParts = '-' }\n\n\n// Construct the payload\nlet payload = {\n    \"Product\": `${productId}`,\n    \"Production Start Time\": `${productTime}`,\n    \"Production Duration\": duration,\n    \"Break Time\": interruptionsLookup.break || '-',\n    \"Change-Over Time\": interruptionsLookup.changeover || '-',\n    \"Machine Fault Time\": interruptionsLookup.fault || '-',\n    \"Waiting Materials Time\": interruptionsLookup.waiting || '-',\n    \"Exit Blocked Time\": interruptionsLookup.blocked || '-',\n    \"Maintenance Interruption\": interruptionsLookup.maintenance || '-',\n    \"Good Parts\": goodParts,\n    \"Defect Parts\": badParts\n};\n\ntableData.push(payload);\nglobal.set('bp-op-term.data', tableData);\n\nmsg.payload = tableData\nreturn msg;\n\nfunction millisecondsToTimeString(ms) {\n    const seconds = Math.floor((ms / 1000) % 60)\n    const minutes = Math.floor((ms / (1000 * 60)) % 60)\n    const hours = Math.floor((ms / (1000 * 60 * 60)) % 24)\n\n    return `${hours}h ${minutes}m ${seconds}s`\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 900,
+        "wires": [
+            [
+                "a62312aede481190",
+                "6a54f41eb13a8fb1"
+            ]
+        ]
+    },
+    {
+        "id": "a62312aede481190",
+        "type": "ui-table",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "c76a1e717dc6fd44",
+        "name": "production data",
+        "label": "Production Report",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "maxrows": "10",
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 1480,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a54f41eb13a8fb1",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "ed236a9e5705e63f"
+        ],
+        "x": 1415,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "26b5d1dd41dad35d",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "Obtaining production details including number of defective and functional parts",
+        "info": "hear we take production deatils such as good and defect part from user ,also we take send log data to table",
+        "x": 1150,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "ec0e8b63d3033100",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "4897005d4f7a399a",
+        "name": "",
+        "label": "Log out",
+        "order": 1,
+        "width": "2",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "logout",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Product evalution form\",\"Defect form footer\"],\"hide\":[\"Production button row 1\",\"Production text row\",\"Production footer\",\"Interuption page\"]}}",
+        "payloadType": "json",
+        "topic": "logout",
+        "topicType": "str",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1220,
+        "y": 500,
+        "wires": [
+            [
+                "9aae4440f930b4e1"
+            ]
+        ]
+    },
+    {
+        "id": "db620321ed7e6520",
+        "type": "inject",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "reset",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Home\"],\"hide\":[\"Menu\",\"Product information form\",\"Production button row 1\",\"Production text row\",\"Production footer\",\"Interuption page\",\"Product evalution form\",\"Defect form footer\",\"Report\",\"Report footer\"]}}",
+        "payloadType": "json",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "561a3f6a653345f1"
+            ]
+        ]
+    },
+    {
+        "id": "fc3f6a7b7bf4e57d",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "link in 6",
+        "links": [
+            "a59c4f2c1cd89a3c"
+        ],
+        "x": 875,
+        "y": 260,
+        "wires": [
+            [
+                "7dd2f81b59ebbc2c"
+            ]
+        ]
+    },
+    {
+        "id": "a59c4f2c1cd89a3c",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "fc3f6a7b7bf4e57d"
+        ],
+        "x": 665,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "e648e04237df60d2",
+        "type": "ui-control",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "",
+        "ui": "e91dfad2a32019e9",
+        "events": "all",
+        "x": 1200,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "507cde3766acf7c4",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "Reseting memory context and page",
+        "info": "We reset the memory context to ensure there is no previous data when someone presses 'Start Shift'. \nAdditionally, we initially hide all groups except for the 'home' group.",
+        "x": 180,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c573ab6d6fec17f2",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "8d8ba318187875eb",
+        "name": "Setting Machine and moving directly to production ",
+        "info": "By pressing Setup button We take time for setting up machines before transitioning\nto production to ensure that the setup time is not counted as part of the\nproduction time.",
+        "x": 220,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "65789f64bc5450c8",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "d06a39adea28fab4",
+        "name": "Obtaining the Product ID and defining the production's goals.",
+        "info": "Here, we capture the product ID associated with the production and establish the \nproduction quantity goal for that specific product. Additionally, we track the time\nwhen the production form is submitted that time wil be considered as start time of \nproduction.",
+        "x": 260,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d1ea4d2c2e09aed0",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "Starting production and tracking interuptions",
+        "info": "Here, we display the product ID associated with the production and the time when \nproduction has commenced. Furthermore, we enable tracking downtime events with \nvarious interruption reasons. Clicking on these buttons initiates a downtime \ncountdown specific to that reason.\"",
+        "x": 1050,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "760ed58968283588",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "Utilizing hourglass module to track interuptions",
+        "info": "Here, we utilize hourglass nodes to track interruption events. Through these nodes, we can initiate, pause, \nand resume countdowns for specific interruption events.",
+        "x": 210,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "380cc9d4b6705aa5",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "d267b56680b3ec11",
+        "name": "",
+        "label": "Close",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "restart",
+        "icon": "close",
+        "iconPosition": "left",
+        "payload": "{\"pages\":{\"show\":[\"Terminal\"]},\"groups\":{\"show\":[\"Home\"],\"hide\":[\"Report\",\"Report footer\"]}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 910,
+        "y": 820,
+        "wires": [
+            [
+                "e648e04237df60d2"
+            ]
+        ]
+    },
+    {
+        "id": "ac1d56c8f5480d74",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "name": "LICENSE",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 80,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "99643c3bcd90269e",
+        "type": "comment",
+        "z": "9e994c1c8fa20d7f",
+        "name": "README",
+        "info": "# Performance Operator Terminal\n\nThe Performance operator terminal blueprint allows an end user to track runtime and downtime information of a machine.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a page on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 240,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "bd6e83256bf9bff1",
+        "type": "ui-button",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "894eb5fdcd8dc0e4",
+        "name": "",
+        "label": "Blocked",
+        "order": 5,
+        "width": "4",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "raw-material-storage",
+        "icon": "mdi-door-closed-cancel",
+        "iconPosition": "left",
+        "payload": "blocked",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 920,
+        "y": 540,
+        "wires": [
+            [
+                "0c5a6d92f0ebc14c"
+            ]
+        ]
+    },
+    {
+        "id": "829afbcc227a3a11",
+        "type": "hourglass",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "blocked",
+        "persistId": "",
+        "humanizeLocale": "",
+        "x": 680,
+        "y": 1480,
+        "wires": [
+            [
+                "a6bb8bc19cd6d860"
+            ]
+        ]
+    },
+    {
+        "id": "8dabcfb7bac1ca5d",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "reset command",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "reset",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 1460,
+        "wires": [
+            [
+                "c924162687b18d93"
+            ]
+        ]
+    },
+    {
+        "id": "0249a38765970a80",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "link in 1",
+        "links": [
+            "c924162687b18d93",
+            "332b46cae1c3d489"
+        ],
+        "x": 475,
+        "y": 1440,
+        "wires": [
+            [
+                "7b9b500971388d57"
+            ]
+        ]
+    },
+    {
+        "id": "9496558634fd2a55",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "ed236a9e5705e63f",
+            "273ea6efa5d1e307"
+        ],
+        "x": 665,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c924162687b18d93",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "0249a38765970a80"
+        ],
+        "x": 355,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "1af9e36531786cb1",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "stop command",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "stop",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 1420,
+        "wires": [
+            [
+                "c924162687b18d93",
+                "8dabcfb7bac1ca5d"
+            ]
+        ]
+    },
+    {
+        "id": "9177f83735d26262",
+        "type": "delay",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "250",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1345,
+        "y": 460,
+        "wires": [
+            [
+                "9aae4440f930b4e1"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "dc7d4ab5779a6f09",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1465,
+        "y": 520,
+        "wires": [
+            [
+                "94d64e84a0fb8ddb"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a181475a9294afc0",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "Record goodParts",
+        "rules": [
+            {
+                "t": "set",
+                "p": "bp-op-term.goodParts",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b92516e315888fb5",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "Record badParts",
+        "rules": [
+            {
+                "t": "set",
+                "p": "bp-op-term.badParts",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c3f83d6f180c5437",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "bp-op-term.currentInteruption",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "currentInteruption",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 420,
+        "wires": [
+            [
+                "522b4f93b2c44f61"
+            ]
+        ]
+    },
+    {
+        "id": "2f4a6fbf11b784ed",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "currentInteruption",
+                "pt": "msg",
+                "to": "bp-op-term.currentInteruption",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 355,
+        "y": 1320,
+        "wires": [
+            [
+                "a2b5c03b11df99e3"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "332b46cae1c3d489",
+        "type": "link out",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "0249a38765970a80"
+        ],
+        "x": 355,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "976ef6b51e020709",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "clear current stoppage",
+        "rules": [
+            {
+                "t": "set",
+                "p": "currentInteruption",
+                "pt": "msg",
+                "to": "bp-op-term.currentInteruption",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "bp-op-term.currentInteruption",
+                "pt": "global",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 1160,
+        "wires": [
+            [
+                "426c6fd7abef0f79"
+            ]
+        ]
+    },
+    {
+        "id": "b3fc80d4738a224e",
+        "type": "catch",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "scope": [
+            "5d17b83bcdd3121e",
+            "8d5c52064139c45f",
+            "a731a3d8a25ebaed",
+            "fd550d39a90fe109",
+            "d5ab4fe2eecf2536",
+            "829afbcc227a3a11"
+        ],
+        "uncaught": false,
+        "x": 1270,
+        "y": 1480,
+        "wires": [
+            [
+                "9e1adabbde35db23"
+            ]
+        ]
+    },
+    {
+        "id": "9e1adabbde35db23",
+        "type": "debug",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "silence stop warnings",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "1914d9287f266085",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "break",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1180,
+        "wires": [
+            [
+                "340441fa8b7ca858"
+            ]
+        ]
+    },
+    {
+        "id": "426c6fd7abef0f79",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "status command",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "status",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 1200,
+        "wires": [
+            [
+                "dbd874219f6007a8",
+                "332b46cae1c3d489"
+            ]
+        ]
+    },
+    {
+        "id": "dbd874219f6007a8",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "stop command",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command",
+                "pt": "msg",
+                "to": "stop",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 1240,
+        "wires": [
+            [
+                "332b46cae1c3d489"
+            ]
+        ]
+    },
+    {
+        "id": "e901c14f0a048260",
+        "type": "inject",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "status command",
+        "props": [
+            {
+                "p": "command",
+                "v": "status",
+                "vt": "str"
+            },
+            {
+                "p": "currentInteruption",
+                "v": "bp-op-term.currentInteruption",
+                "vt": "global"
+            }
+        ],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1500,
+        "wires": [
+            [
+                "c924162687b18d93"
+            ]
+        ]
+    },
+    {
+        "id": "529540a8b1a1137d",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "changeover",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1240,
+        "wires": [
+            [
+                "340441fa8b7ca858"
+            ]
+        ]
+    },
+    {
+        "id": "35473b0dea4dcb6a",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "fault",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1300,
+        "wires": [
+            [
+                "340441fa8b7ca858"
+            ]
+        ]
+    },
+    {
+        "id": "59aad40bb5eeb322",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "maintenance",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1360,
+        "wires": [
+            [
+                "340441fa8b7ca858"
+            ]
+        ]
+    },
+    {
+        "id": "2de84909332476d8",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "waiting",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1420,
+        "wires": [
+            [
+                "340441fa8b7ca858"
+            ]
+        ]
+    },
+    {
+        "id": "a6bb8bc19cd6d860",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "blocked",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 1480,
+        "wires": [
+            [
+                "340441fa8b7ca858"
+            ]
+        ]
+    },
+    {
+        "id": "cfd5850d758deae2",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "store timer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "bp-op-term.interuptions[msg.topic]",
+                "pt": "global",
+                "to": "elapsed",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "elapsed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1130,
+        "y": 1180,
+        "wires": [
+            [
+                "98e0b8e85d0b1c7a"
+            ]
+        ]
+    },
+    {
+        "id": "d3cfe9ed57ac6665",
+        "type": "delay",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "limit 1 per 1/2s",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "0.5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1140,
+        "y": 1240,
+        "wires": [
+            [
+                "253f7b1f7c4c00a0",
+                "4c5f86f0f4b2109e"
+            ]
+        ]
+    },
+    {
+        "id": "087cc825838b0a31",
+        "type": "ui-number-input",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "b59b4d10d299a0ee",
+        "name": "",
+        "label": "Good Part Count",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "9999",
+        "step": 1,
+        "tooltip": "",
+        "passthru": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "mdi-thumb-up-outline",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "default",
+        "x": 1230,
+        "y": 740,
+        "wires": [
+            [
+                "a181475a9294afc0"
+            ]
+        ]
+    },
+    {
+        "id": "0e19b4c92c3440be",
+        "type": "ui-number-input",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "group": "b59b4d10d299a0ee",
+        "name": "",
+        "label": "Bad Part Count",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "9999",
+        "step": "1",
+        "tooltip": "",
+        "passthru": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "mdi-thumb-down-outline",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "default",
+        "x": 1220,
+        "y": 780,
+        "wires": [
+            [
+                "b92516e315888fb5"
+            ]
+        ]
+    },
+    {
+        "id": "273ea6efa5d1e307",
+        "type": "link in",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "link in 2",
+        "links": [
+            "9496558634fd2a55"
+        ],
+        "x": 875,
+        "y": 740,
+        "wires": [
+            [
+                "646b5d23fb5f278d"
+            ]
+        ]
+    },
+    {
+        "id": "646b5d23fb5f278d",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "ec1959b5ced2b5ba",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 740,
+        "wires": [
+            [
+                "0e19b4c92c3440be",
+                "087cc825838b0a31"
+            ]
+        ]
+    },
+    {
+        "id": "a765a64c5b69f898",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "19195b5eb5e18eac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Parts/min",
+        "label": "Parts/min&nbsp; : &nbsp; ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Courier,monospace",
+        "fontSize": "20",
+        "color": "#0e1c2c",
+        "wrapText": false,
+        "className": "",
+        "x": 1500,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8462c9965a821fed",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "7ce432faafd12ae0",
+        "name": "Setup",
+        "func": "let terminalData = global.get('bp-op-term')\nif (!terminalData || typeof terminalData !== \"object\") {\n    terminalData = {}\n}\nterminalData.interuptions = {}\nterminalData.productInfo = {}\nterminalData.badParts = 0\nterminalData.goodParts = 0\nterminalData.currentInteruption = ''\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "253f7b1f7c4c00a0",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "a8ad8c3c83c80e38",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "bp-op-term.currentInteruption",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 1300,
+        "wires": [
+            [
+                "e3e0713655d68a4b"
+            ]
+        ]
+    },
+    {
+        "id": "abebc10af30789fc",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "production-rate",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "productInfo[\"production-rate\"]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 260,
+        "wires": [
+            [
+                "a765a64c5b69f898"
+            ]
+        ]
+    },
+    {
+        "id": "1f34b4376489cf09",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "product",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "productInfo[\"product-id\"]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 220,
+        "wires": [
+            [
+                "11bec75ee75e71cf"
+            ]
+        ]
+    },
+    {
+        "id": "3a96133f24edc274",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "production start date",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "productInfo.currentTime",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 300,
+        "wires": [
+            [
+                "3a7960f7dadc2d90"
+            ]
+        ]
+    },
+    {
+        "id": "1cd40ad942c21211",
+        "type": "function",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "calc prod time",
+        "func": "function millisecondsToTimeString(ms) {\n    const seconds = Math.floor((ms / 1000) % 60)\n    const minutes = Math.floor((ms / (1000 * 60)) % 60)\n    const hours = Math.floor((ms / (1000 * 60 * 60)) % 24)\n\n    return `${hours}h ${minutes}m ${seconds}s`\n}\nif (!msg.productInfo) { \n    return {payload: '0h 0m 0s'}\n}\nconst productStartTime = msg.productInfo.productionStart\nconst productEndTime = Date.now()\nconst duration = millisecondsToTimeString(productEndTime - productStartTime)\nmsg.payload = duration\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 340,
+        "wires": [
+            [
+                "3612ec0b1aea5e6a"
+            ]
+        ]
+    },
+    {
+        "id": "7dd2f81b59ebbc2c",
+        "type": "change",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "productInfo",
+        "rules": [
+            {
+                "t": "set",
+                "p": "productInfo",
+                "pt": "msg",
+                "to": "bp-op-term.productInfo",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "1f34b4376489cf09",
+                "3a96133f24edc274",
+                "1cd40ad942c21211",
+                "abebc10af30789fc"
+            ]
+        ]
+    },
+    {
+        "id": "3612ec0b1aea5e6a",
+        "type": "ui-text",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "group": "19195b5eb5e18eac",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "Run Time",
+        "label": "Run Time &nbsp; : &nbsp; ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Courier,monospace",
+        "fontSize": "20",
+        "color": "#0e1c2c",
+        "wrapText": false,
+        "className": "",
+        "x": 1500,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "9f3a215e6f143cbe",
+        "type": "inject",
+        "z": "9e994c1c8fa20d7f",
+        "g": "29c0e8f63abcb25d",
+        "name": "",
+        "props": [
+            {
+                "p": "productInfo",
+                "v": "bp-op-term.productInfo",
+                "vt": "global"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1045,
+        "y": 300,
+        "wires": [
+            [
+                "1cd40ad942c21211"
+            ]
+        ],
+        "l": false
+    }
+]
