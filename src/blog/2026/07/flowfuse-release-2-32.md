@@ -15,15 +15,17 @@ tldr: "A Redis certified node, DevOps pipelines for any HTTPS Git server, and In
 
 FlowFuse 2.32 adds Redis as a certified integration, DevOps pipelines for any Git server, and Insights mode on your remote instances, so you can ask questions about their live data in plain language. Plus dark mode!
 
+<!--more-->
+
 ## Certified Redis Integration
 
 Community nodes are code you have to vet, secure, and maintain yourself. Certified Nodes take that on with a defined quality, security, and support process.
 
 ### Redis Joins the Catalog
 
-2.32 adds **Redis** as certified node, so you can integrate with Redis with a node FlowFuse tests, secures, and supports, backed by the same trust contract as every certified node: vetted quality, a CVE response commitment, and a real path to support.
+2.32 adds **Redis** as a certified node, so you can integrate with Redis using a node FlowFuse tests, secures, and supports, backed by the same trust contract as every certified node: vetted quality, a CVE response commitment, and a real path to support.
 
-Certified Nodes are belong to specific FlowFuse packages; Browse the full catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1). Contact us to get them enabled for your team or instance.
+Certified Nodes belong to specific FlowFuse packages. Browse the full catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1), and contact us to get them enabled for your team or instance.
 
 ## Pipelines Connect to Any Git Server
 
@@ -42,22 +44,22 @@ _TODO asset: FlowFuse Expert Insights mode answering a plain-language question a
 
 ### From Advice to Action
 
-We are enabling the FlowFuse Expert to do things inside the platform, starting with setting up an instances and getting information about your fleet of instances for you. It is the first step toward building any application from beginning to end: you start with the Expert in the platform, it understands the context, provisions the instance, and leads you straight into the Node-RED editor to build it for you. Groundwork, with more to follow.
+We are enabling the FlowFuse Expert to do things inside the platform, starting with setting up an instance and getting information about your fleet of instances for you. It is the first step toward building any application from beginning to end: you start with the Expert in the platform, it understands the context, provisions the instance, and leads you straight into the Node-RED editor to build it for you. Groundwork, with more to follow.
 
 ### Plan Together, Build What You Expect
 
-The expert has been improved to better understand your intents and plan with you. It will ask clarifying questions before moving forward with implementation. This way you get faster to getting built out what you need. We'll continue improving the experience of the expert, this is a solid step into that direction.
+The Expert has been improved to better understand your intents and plan with you. It will ask clarifying questions before moving forward with implementation. This way you get what you need built faster. We'll keep improving the Expert; this is a solid step in that direction.
 
 ## Dark Mode
 
-FlowFuse has only ever had a light interface, and long sessions in a bright UI are tiring on the eyes. FlowFuse now has a dark mode. Turn it on and the platform switches to a dark theme, easier on the eyes and a better match for a dark desktop. Node-RED will auto-switch along with you, this works especially well in combination with the new [Node-RED 5.0](/blog/2026/06/node-red-5-on-flowfuse/)!
+FlowFuse has only ever had a light interface, and long sessions in a bright UI are tiring on the eyes. FlowFuse now has a dark mode. Turn it on and the platform switches to a dark theme, easier on the eyes and a better match for a dark desktop. Node-RED auto-switches along with you, which works especially well in combination with the new [Node-RED 5.0](/blog/2026/06/node-red-5-on-flowfuse/)!
 
 ![FlowFuse in dark mode](https://placehold.co/1200x675?text=Dark+Mode){data-zoomable}
 _TODO asset: FlowFuse platform and the Node-RED editor in dark mode_
 
 _Note: on Node-RED 5 and newer, your preference also carries into the Node-RED editor, so you set it once._
 
-## Better security with Device Agent 4
+## Better Security with Device Agent 4
 
 The Device Agent reaches a new major version. Its container now runs as an unprivileged user instead of root and on Node.js 22, a more secure, modern base that unlocks Insights, token auth, and Node-RED 5 on your devices.
 
