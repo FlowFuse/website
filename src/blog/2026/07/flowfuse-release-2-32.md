@@ -4,7 +4,7 @@ subtitle: "Connect DevOps pipelines to any Git server, ask your live edge data q
 description: "FlowFuse 2.32 certifies the Redis node, extends DevOps Git pipelines to any HTTPS server, and adds Insights mode on remote instances, plus dark mode, Device Agent 4, and a Plan Mode for the Expert."
 date: 2026-07-02
 authors: ["jamie-strusz"]
-# image: /blog/2026/07/images/flowfuse-release-2-32.png  # uncomment when hero art lands; image-handler stats this path locally so it must be a real file, not a URL (falls back to default blog tile until then)
+image: /blog/2026/07/images/flowfuse-release-2-32.jpg
 tags:
    - flowfuse
    - news
