@@ -54,7 +54,7 @@ Everything runs inside your FlowFuse instance. Connections, certificates, and cr
 
 ## 2. Get the Certified Node in FlowFuse
 
-FlowFuse delivers Certified Nodes to your instances as a managed catalogue. The OPC UA package is part of the **FlowFuse Edge Certified Nodes** catalogue, available as an add-on. [contact us](/contact-us/) to enable it for your team
+FlowFuse delivers Certified Nodes to your instances as a managed catalogue. The OPC UA package is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. [contact us](/contact-us/) to enable it for your team
 
 ### Installation steps
 

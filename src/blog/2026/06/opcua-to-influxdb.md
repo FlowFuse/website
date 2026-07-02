@@ -75,7 +75,7 @@ Before building the flow, make sure you have:
 - **A running InfluxDB instance.** Cloud or self-hosted. Create an organization, a bucket, and an API token with write access.
 - **Endpoint details for both.** The OPC UA endpoint URL (like `opc.tcp://192.168.1.10:4840`) plus any credentials, and your InfluxDB URL, org, bucket, and token.
 
-For the OPC UA connection, this guide uses the **FlowFuse Edge Certified Nodes package**, vetted, maintained, and tested by the FlowFuse team. [Contact sales](/contact-us/) to enable it for your team. Community nodes work too, but they don't get the same vetting, maintenance, or testing, so reliability varies.
+For the OPC UA connection, this guide uses the **FlowFuse Edge Certified Nodes package**, part of the **FlowFuse Edge** offering and vetted, maintained, and tested by the FlowFuse team. [Contact sales](/contact-us/) to enable it for your team. Community nodes work too, but they don't get the same vetting, maintenance, or testing, so reliability varies.
 
 With those ready, the next step is installing the nodes that connect FlowFuse to OPC UA and InfluxDB.
 

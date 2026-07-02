@@ -16,7 +16,7 @@ This section contains documentation for **FlowFuse Hub Certified Nodes** that co
 FlowFuse Certified Nodes are packages that FlowFuse has vetted for quality, security, and support, and maintains on an ongoing basis. To learn more about what certification means and how these nodes are delivered, [read the FlowFuse Certified Nodes blog post](/blog/2025/07/certified-nodes-v2/).
 
 {% note %}
-The FlowFuse Hub Certified Nodes catalogue is a paid add-on. [Contact us](/contact-us/) to get access or to learn more.
+The FlowFuse Hub Certified Nodes catalogue is part of the **FlowFuse Hub** offering. [Contact us](/contact-us/) to get access or to learn more.
 {% endnote %}
 
 {% note %}
