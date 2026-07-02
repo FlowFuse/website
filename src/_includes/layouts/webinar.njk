@@ -37,8 +37,10 @@ layout: layouts/base.njk
                     </div>
                     {% endif %}
                 {% endif %}
-                <div class="prose">
-                    {{ content | safe }}
+                <div class="max-w-[706px]">
+                    <div class="prose">
+                        {{ content | safe }}
+                    </div>
                 </div>
             </div>
             <div class="w-72 max-w-full">

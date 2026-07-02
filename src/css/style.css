@@ -81,16 +81,12 @@
 @source not "../../nuxt/.netlify/**";
 @source "../../nuxt/**";
 
-@layer components {
-    .prose {
-        max-width: 80ch;
-    }
-}
-
 @layer overrides {
     .prose {
+        max-width: none;
         --tw-prose-body: var(--color-gray-700);
         --tw-prose-headings: var(--color-gray-600);
+        --tw-prose-links: var(--color-blue-600);
         --tw-prose-code: var(--color-red-700);
         --tw-prose-bold: var(--color-gray-500);
     }
