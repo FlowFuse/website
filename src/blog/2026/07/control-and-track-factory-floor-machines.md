@@ -9,7 +9,7 @@ tags:
   - flowfuse
 meta:
   howto:
-    name: "How to Control and Track Shopfloor Machines with FlowFuse"
+    name: "Control and Track Machines on the Factory Floor"
     description: "Connect FlowFuse to a Siemens S7 PLC, build a FlowFuse dashboard to control a motor and stack light, and automatically track how long each device runs using the Hourglass node."
     tool:
       - "FlowFuse"
@@ -49,7 +49,7 @@ cta:
 tldr: "Connect FlowFuse to a Siemens S7 PLC with node-red-contrib-s7, build a dashboard to control a motor and stack light, and use the Hourglass node to automatically track and display how long each device has been running."
 ---
 
-Operators need more than buttons to control machines—they also need visibility into what's actually happening on the shop floor. Knowing whether a motor is running is useful, but knowing how long it has been running helps with maintenance, production tracking, and troubleshooting.
+Operators need more than buttons to control machines - they also need visibility into what's actually happening on the shop floor. Knowing whether a motor is running is useful, but knowing how long it has been running helps with maintenance, production tracking, and troubleshooting.
 
 <!--more-->
 
@@ -84,7 +84,7 @@ The demo above uses a simple example PLC program with four normally open contact
 - Yellow stack light
 - Green stack light
 
-Whenever one of these data block values becomes `TRUE`, the PLC energizes the corresponding output. Setting the value back to `FALSE` turns the output off again.
+Whenever one of these data block values is set to `TRUE`, the PLC energizes the corresponding output. Setting the value back to `FALSE` turns the output off again.
 
 Throughout this tutorial, FlowFuse writes to these data block variables whenever an operator interacts with the dashboard. At the same time, it continuously reads those same variables so it always knows the current state of each device. We'll later use those live values to calculate runtime automatically.
 
