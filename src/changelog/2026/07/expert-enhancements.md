@@ -54,7 +54,8 @@ Turn on **Plan Mode** with the toggle in the chat composer. Instead of acting st
 
 This is ideal for larger or unfamiliar changes, where you want to agree on the approach before any work happens.
 
-<!-- SCREENSHOT: plan card with Approve / Edit / Request changes / Reject actions -->
+![The Expert proposing a plan, with Approve, Edit, Request changes, and Reject actions](./images/plan.png){data-zoomable}
+*The Expert proposes a plan and waits for your approval before making any changes*
 
 #### Questions and Answers
 
@@ -68,7 +69,8 @@ When it needs more detail, the Expert presents up to four questions in a single 
 
 You can revisit and change your answers before continuing, and you decide the pace: use the follow-up questions setting in the composer menu to have the Expert ask everything **all at once** or **one at a time**.
 
-<!-- SCREENSHOT: grouped clarifying questions card with single/multi-select options -->
+![The Expert asking grouped clarifying questions with single and multiple choice options](./images/questions.png){data-zoomable}
+*The Expert asks clarifying questions and collects your answers before acting*
 
 #### Human in the Loop
 
@@ -83,7 +85,8 @@ The Expert waits for your decision however long you need, and you can cancel a p
 
 You can also set this up ahead of time. In the Expert settings, each team chooses default permissions for reading, writing, and deleting — **always allow**, **ask first**, or **always deny** — and can fine-tune individual actions where needed. Permissions respect your team role too: members with read-only access cannot enable or trigger actions that write or delete.
 
-<!-- SCREENSHOT: inline approval card with Allow / Always allow / Deny / Always deny -->
+![An inline approval card showing the action, its type, and Allow, Always allow, Deny, and Always deny choices](./images/approval-card.png){data-zoomable}
+*The Expert pauses and asks for approval before running an action that needs your sign-off*
 
 
 These features are available to FlowFuse Cloud users and Self-Hosted users from v2.32.
