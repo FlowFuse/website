@@ -11,6 +11,18 @@ issues:
 
 ### Insights
 
+With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insights Agent can now work with Remote instances and Self Hosted Instances.
+
+#### Screenshots
+
+![Resource from Hosted and Remote Instances can now be selected](./images/insights-1.png){data-zoomable}
+*Resource from Hosted and Remote Instances can now be selected*
+
+![Insights querying a Remote Instance](./images/insights-2.png){data-zoomable}
+*Insights querying a Remote Instance*
+
+![Insights in an action](./images/insights.gif){data-zoomable}
+*Insights in an action - querying a Remote Instance*
 
 
 ### Platform Automations
@@ -21,7 +33,7 @@ issues:
 
 #### Plan Mode
 
-#### Questions and Answeres
+#### Questions and Answers
 
 #### Human in the loop
 
