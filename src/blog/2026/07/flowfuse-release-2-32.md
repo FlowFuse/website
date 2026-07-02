@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.32: Certified Redis Integration, Git Pipelines for Any Server, Insights on Remote Instances & Dark Mode"
-subtitle: "A Redis certified node, DevOps pipelines for any Git server, plain-language Insights on your remote instances, and a dark mode across FlowFuse and Node-RED."
-description: "FlowFuse 2.32 adds a Redis certified node, DevOps pipelines for any Git server, and Insights mode on remote instances, so the FlowFuse Expert can answer questions about their live data in plain language. It also brings a dark mode, Device Agent 4, and a Plan Mode for the Expert."
+title: "FlowFuse 2.32: Certified Redis, Git Pipelines for Any Server, Insights on Remote Instances, and Dark Mode"
+subtitle: "Connect DevOps pipelines to any Git server, ask your live edge data questions in plain language, and give your eyes a break on long sessions."
+description: "FlowFuse 2.32 certifies the Redis node, extends DevOps Git pipelines to any HTTPS server, and adds Insights mode on remote instances, plus dark mode, Device Agent 4, and a Plan Mode for the Expert."
 date: 2026-07-02
 authors: ["jamie-strusz"]
 # image: /blog/2026/07/images/flowfuse-release-2-32.png  # uncomment when hero art lands; image-handler stats this path locally so it must be a real file, not a URL (falls back to default blog tile until then)
@@ -9,11 +9,11 @@ tags:
    - flowfuse
    - news
    - releases
-tldr: "A Redis certified node, DevOps pipelines for any HTTPS Git server, and Insights mode on remote instances so the FlowFuse Expert can answer questions about their live data in plain language. Plus a dark mode, Device Agent 4, and a Plan Mode for the Expert."
+tldr: "2.32 certifies the Redis node and extends DevOps Git pipelines to any HTTPS server: GitLab, Bitbucket, Gitea, or self-hosted. Insights mode now reaches your remote instances, so the FlowFuse Expert answers plain-language questions about live edge data. Plus dark mode, Device Agent 4, and a Plan Mode for the Expert."
 
 ---
 
-FlowFuse 2.32 adds Redis as a certified integration, DevOps pipelines for any Git server, and Insights mode on your remote instances, so you can ask questions about their live data in plain language. Plus dark mode!
+This release meets your stack where it already lives. Redis becomes a certified node. DevOps pipelines connect to any HTTPS Git server, not just GitHub. And the FlowFuse Expert can now read the live data on your remote instances and answer questions about it in plain language. Dark mode lands too, so the platform stops glaring at you through long sessions.
 
 <!--more-->
 
@@ -37,7 +37,7 @@ Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gi
 
 ### Ask about your machine or operational data in Plain Language
 
-Insights mode can now work with MCP servers defined in your remote instances directly at the edge. Point the FlowFuse Expert in "insights" mode, or any AI agent, at them and ask questions in plain language to get metrics directly. The Expert can even help you build the MCP servers that power it, right in Node-RED.
+Your live machine data sits on your remote instances at the edge. Insights mode now reaches it directly. Point the FlowFuse Expert in "insights" mode, or any AI agent, at a remote instance and ask in plain language: "What was the average cycle time on line 3 today?" You get the answer from live data, with no dashboard to build and no query to write. The Expert can even help you build the MCP servers that feed it, right in Node-RED.
 
 ![The FlowFuse Expert answering a plain-language question about live machine data](https://placehold.co/1200x675?text=Insights+Mode){data-zoomable}
 _TODO asset: FlowFuse Expert Insights mode answering a plain-language question about machine data_
@@ -48,7 +48,7 @@ We are enabling the FlowFuse Expert to do things inside the platform, starting w
 
 ### Plan Together, Build What You Expect
 
-The Expert has been improved to better understand your intents and plan with you. It will ask clarifying questions before moving forward with implementation. This way you get what you need built faster. We'll keep improving the Expert; this is a solid step in that direction.
+The Expert now understands your intent and plans with you. It asks clarifying questions before it starts implementing, so you get what you need built faster and closer to what you pictured. This is a solid step, and we'll keep improving the Expert from here.
 
 ## Dark Mode
 
