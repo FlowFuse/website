@@ -46,6 +46,10 @@ _TODO asset: FlowFuse Expert Insights mode answering a plain-language question a
 
 We are enabling the FlowFuse Expert to do things inside the platform, starting with setting up an instance and getting information about your fleet of instances for you. It is the first step toward building any application from beginning to end: you start with the Expert in the platform, it understands the context, provisions the instance, and leads you straight into the Node-RED editor to build it for you. Groundwork, with more to follow.
 
+### Loose for Prototypes, Strict in Production
+
+In support mode, you decide how freely the Expert acts, and you can fine-tune its permissions separately for building flows in Node-RED and for taking actions in the FlowFuse platform. Let it run without interruption while you stand up a first proof of concept, so it builds quickly. Then tighten those same tools for production flows, where you want to see and approve each change before it lands. When a tool is set to ask, an approval card shows exactly what the Expert intends to do and waits for your call.
+
 ### Plan Together, Build What You Expect
 
 The Expert now understands your intent and plans with you. It asks clarifying questions before it starts implementing, so you get what you need built faster and closer to what you pictured. This is a solid step, and we'll keep improving the Expert from here.
