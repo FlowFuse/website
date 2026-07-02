@@ -27,7 +27,15 @@ With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insi
 
 ### Platform Automations
 
+The Expert can now take action on your FlowFuse platform directly. Instead of telling you which buttons to click, it can create instances, register devices, take snapshots, and manage applications on your behalf. You can ask the Expert to:
 
+ - Create hosted instances with the right type, stack, and template, optionally starting from a flow blueprint   
+ - Register remote instances (devices) and assign them to applications                                           
+ - Take and list snapshots of both hosted and remote instances                                                   
+ - Create applications, list what's running inside them, and check their audit logs                            
+ - Look up live status and logs for any hosted instance, or query a remote instance's state over MQTT
+
+Behind the scenes, FlowFuse exposes over 30 automation tools covering instances, devices, applications, snapshots, teams, and configuration. When you ask the Expert to do something, it picks the right tools, calls them with your permissions, and reports back.
 
 ### Support Agent
 
