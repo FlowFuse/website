@@ -14,7 +14,7 @@ issues:
 With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insights Agent can now work with Remote Instances and Self Hosted Instances.
 
 {% caution %}
-**Impoortant:**
+**Important:**
 
 In order to achieve Insights on Remote Instances and Self Hosted Instances,  we had to modify how data is routed through the platform. Your old Hosted Instances on FlowFuse Cloud will require an update to the latest Launcher Version (2.23.0 or greater) to continue working.
 
