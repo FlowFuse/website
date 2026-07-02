@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Expert Enhancements
-description: FlowFuse Expert now supports Insights on your devices, Platform automations, plan mode, Human in the loop and more...
-date: 2026-07-02 10:00:00
+description: FlowFuse Expert now supports Insights on your devices, Platform automations, Plan Mode, Human in the Loop and more...
+date: 2026-07-02 15:30:00
 authors: ["stephen-mclaughlin", "serban-costin", "andrea-palmieri"]
 tags:
   - changelog
@@ -11,7 +11,14 @@ issues:
 
 ### Insights
 
-With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insights Agent can now work with Remote instances and Self Hosted Instances.
+With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insights Agent can now work with Remote Instances and Self Hosted Instances.
+
+{% caution %}
+**Impoortant:**
+
+In order to achieve Insights on Remote Instances and Self Hosted Instances,  we had to modify how data is routed through the platform. Your old Hosted Instances on FlowFuse Cloud will require an update to the latest Launcher Version (2.23.0 or greater) to continue working.
+
+{% endcaution %}
 
 #### Screenshots
 
@@ -29,13 +36,14 @@ With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insi
 
 The Expert can now take action on your FlowFuse platform directly. Instead of telling you which buttons to click, it can create instances, register devices, take snapshots, and manage applications on your behalf. You can ask the Expert to:
 
- - Create hosted instances with the right type, stack, and template, optionally starting from a flow blueprint   
- - Register remote instances (devices) and assign them to applications                                           
- - Take and list snapshots of both hosted and remote instances                                                   
- - Create applications, list what's running inside them, and check their audit logs                            
+ - Create hosted instances with the right type, stack, and template, optionally starting from a flow blueprint
+ - Register remote instances (devices) and assign them to applications
+ - Take and list snapshots of both hosted and remote instances
+ - Create applications, list what's running inside them, and check their audit logs
  - Look up live status and logs for any hosted instance, or query a remote instance's state over MQTT
 
 Behind the scenes, FlowFuse exposes over 30 automation tools covering instances, devices, applications, snapshots, teams, and configuration. When you ask the Expert to do something, it picks the right tools, calls them with your permissions, and reports back.
+
 
 ### Support Agent
 
@@ -57,7 +65,7 @@ This is ideal for larger or unfamiliar changes, where you want to agree on the a
 ![The Expert proposing a plan, with Approve, Edit, Request changes, and Reject actions](./images/plan.png){data-zoomable}
 *The Expert proposes a plan and waits for your approval before making any changes*
 
-#### Questions and Answers
+#### Clarifying Questions
 
 The Expert now asks clarifying questions when a request could go more than one way, rather than guessing and building the wrong thing.
 
@@ -96,5 +104,6 @@ You can also set your permissions ahead of time. Open **Tool permissions** in th
 ![The Tool permissions panel in Expert settings, with default Read, Write, and Delete permissions for flow building and platform tools](./images/tools-permissions.png){data-zoomable}
 *Set default permissions per action type, and override individual tools where you need to*
 
+---
 
-These features are available to FlowFuse Cloud users and Self-Hosted users from v2.32.
+_All of these new features are available to FlowFuse Cloud users and Self-Hosted users from v2.32._
