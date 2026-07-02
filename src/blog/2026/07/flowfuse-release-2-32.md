@@ -11,9 +11,9 @@ tags:
    - releases
 tldr: "2.32 certifies the Redis node and extends DevOps Git pipelines to any HTTPS server: GitLab, Bitbucket, Gitea, or self-hosted. Insights mode now reaches your remote instances, so the FlowFuse Expert answers plain-language questions about live edge data. Plus dark mode, Device Agent 4, and a Plan Mode for the Expert."
 cta:
-  type: demo
-  title: Want to see 2.32 in your environment?
-  description: Book a demo to walk through remote Insights, namespace-scoped RBAC, and Device Agent 4 security for your fleet.
+  type: contact
+  title: Review FlowFuse for your setup
+  description: Get in touch and we'll walk through how FlowFuse empowers your production environment, including the Certified Nodes packages that cover the systems you connect to.
 
 ---
 
