@@ -1,0 +1,20 @@
+---
+layout: layouts/landing-form.njk
+title: Test
+meta:
+  description: Schedule a 30 minute free consultation with our experts and see how we can help scale your workflows.
+  robots: noindex, nofollow
+intro: >
+  Facing challenges with your Node-RED applications in industrial or enterprise environments?
+  <span class="font-bold">Schedule a free 30-minute consultation with our experts.</span>
+  We'll assess your current setup and provide tailored recommendations to help you address pain points
+  such as scalability, security, and workflow automation.
+image: images/node-red-icon.png
+imageAlt: Node-RED logo
+cardText: Our expertise has helped businesses across the world streamline Node-RED operations, developer velocity, security, and compliance.
+hubspot:
+  script: "hubspot/hs-form.njk"
+  formId: d24fa635-f19c-400b-82d4-b6f233faf38b
+  cta: "schedule-free-consult"
+  reference: "free-consultation"
+---
