@@ -80,7 +80,7 @@ Device Agent 4 is a breaking upgrade. When you move to it, make your bind-mounte
 - **Real-time status over MQTT**: instance, device, and team status now stream over MQTT instead of HTTP polling, so changes show faster
 - **Faster instance lists**: pagination and an N+1 fix on the Hosted and Remote Instances pages, plus sorting by status
 - **Namespace-scoped RBAC**: role-based access scoped to a namespace for shared-cluster self-hosted deployments
-- **Platform Polish**: descriptive page titles, a login-page cookie-consent notice, and a fix for instances reporting suspended while still running
+- **Platform polish**: descriptive page titles, a login-page cookie-consent notice, and a fix for instances reporting suspended while still running
 
 For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.32, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
