@@ -81,10 +81,15 @@ When the Expert wants to run an action that needs your sign-off, it pauses and s
 - **Allow** or **Deny**: approve or refuse this one action.
 - **Always allow** or **Always deny**: apply your choice to every matching action.
 
-Choices you make on the card apply to the current chat only, unless you decide to save one so it carries over to future chats. The Expert waits for your decision however long you need, and you can cancel a pending action at any time with the stop button.
+The Expert waits for your decision however long you need, and you can cancel a pending action at any time with the stop button.
 
 ![An inline approval card showing the action, its type, and Allow, Always allow, Deny, and Always deny choices](./images/approval-card.png){data-zoomable}
 *The Expert pauses and asks for approval before running an action that needs your sign-off*
+
+An **Always allow** or **Always deny** you set from a card applies to the current chat only, and resets when you refresh or start over. If you want to keep it, click **Make permanent** to save that choice for future chats.
+
+![Clicking Make permanent on a granted action to save it for future chats](./images/make-permanent.gif){data-zoomable}
+*Make a per-chat permission permanent so it carries over to future chats*
 
 You can also set your permissions ahead of time. Open **Tool permissions** in the Expert settings and choose a default for **Read**, **Write**, and **Delete** actions: **always allow**, **ask**, or **always deny**. Out of the box the Expert can read freely but asks before it writes or deletes anything. Flow building and platform actions each have their own defaults, and you can expand **Individual tools** to override the default for a specific action, which then stays put until you reset it. These settings are saved for you and persist across chats within the team you are working in; switching to another team starts from the defaults again.
 
