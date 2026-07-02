@@ -56,8 +56,8 @@ Operators need more than buttons to control machines - they also need visibility
 In this tutorial, you'll connect FlowFuse to a Siemens S7 PLC, build an operator dashboard to control a motor and stack light, and automatically track the runtime of each device. By the end, you'll have a dashboard that not only sends commands to the PLC but also displays live operating time for every connected device.
 
 <lite-youtube
-  videoid="Fkv2x3Kv0lY"
-  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/02/images/demo-thumbnail.jpg'); background-size: cover; background-position: center;"
+  videoid="kiOufj0ghxg"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/07/images/demo-thumbnail.jpg'); background-size: cover; background-position: center;"
   title="Control and Track the Shopfloor Machines">
 </lite-youtube>
 
