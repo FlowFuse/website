@@ -49,7 +49,7 @@ cta:
 tldr: "Connect FlowFuse to a Siemens S7 PLC with node-red-contrib-s7, build a dashboard to control a motor and stack light, and use the Hourglass node to automatically track and display how long each device has been running."
 ---
 
-Operators need more than buttons to control machines - they also need visibility into what's actually happening on the shop floor. Knowing whether a motor is running is useful, but knowing how long it has been running helps with maintenance, production tracking, and troubleshooting.
+Operators need more than buttons to control machines - they also need visibility into what's actually happening on the factory floor. Knowing whether a motor is running is useful, but knowing how long it has been running helps with maintenance, production tracking, and troubleshooting.
 
 <!--more-->
 
@@ -80,9 +80,9 @@ Before you begin, make sure you have the following:
 The demo above uses a simple example PLC program with four normally open contacts stored inside a data block, each controlling a PLC output:
 
 - Motor
-- Red stack light
-- Yellow stack light
-- Green stack light
+- RedLightCmd
+- YellowLightCmd
+- GreenLightCmd
 
 Whenever one of these data block values is set to `TRUE`, the PLC energizes the corresponding output. Setting the value back to `FALSE` turns the output off again.
 
@@ -112,7 +112,7 @@ Configure it as follows:
 3. Leave the port set to **102**.
 4. Set the connection mode to **Rack**.
 5. Enter the appropriate **Rack** and **Slot** values for your PLC.
-6. Set the **Cycle Time** to **1000 ms**.
+6. Set the **Cycle Time** and **Timeout** values according to your application's requirements.
 
 Your configuration should look similar to the example below.
 
@@ -144,7 +144,7 @@ After adding them, your configuration should resemble the following.
 
 ### Add the Output Nodes
 
-The dashboard will control each PLC output independently, so we'll create one **S7 Out** node per device.
+The dashboard will control each PLC output independently, so we'll create one **S7 Out** node per Output.
 
 1. Drag four **S7 Out** nodes onto the workspace.
 2. Configure each node to use the endpoint created earlier.
@@ -211,8 +211,6 @@ The finished dashboard will contain the following widgets.
 | Switch | Yellow Light |
 | Switch | Green Light  |
 
-Arrange the widgets as shown below.
-
 ### Control the Motor
 
 Let's start by creating the controls for the motor.
@@ -235,7 +233,7 @@ Configure each button the same way, changing only the label and payload. For exa
 
 ### Control the Stack Light
 
-Next, create controls for each section of the stack light.
+Next, create controls for each color of the stack light.
 
 Rather than using buttons, switches are a better choice because they clearly indicate whether each light is currently enabled or disabled.
 
@@ -268,8 +266,6 @@ Deploy the flow and open the dashboard in your browser. Verify that:
 - Changes made from the dashboard are immediately reflected in the PLC.
 
 You now have a functional PLC control dashboard that can operate each connected device independently.
-
-While the dashboard provides manual control, it still doesn't show how long each device has been running. In the next section we'll use the PLC status data together with the Hourglass node to automatically calculate the runtime of every device.
 
 ## Tracking Device Runtime
 
@@ -349,8 +345,6 @@ At this point, every Hourglass node is continuously tracking the runtime of its 
 
 ## Displaying the Runtime
 
-The Hourglass nodes are now tracking the runtime of each device and publishing an updated status every second. The final step is to display that information on the dashboard.
-
 We'll use **UI Template** widgets to build a simple HMI-style runtime display for each device.
 
 ### Create the Runtime Display
@@ -362,6 +356,9 @@ We'll use **UI Template** widgets to build a simple HMI-style runtime display fo
    - Red Light
    - Yellow Light
    - Green Light
+
+> **Note:** The dashboard layout, groups, and theme are intentionally left to your preference. You can organize the widgets in whatever way best suits your application. For guidance on pages, groups, navigation, layouts, and styling in FlowFuse Dashboard, see [FlowFuse Dashboard: Layout, Navigation & Styling](/blog/2024/05/node-red-dashboard-2-layout-navigation-styling/).
+
 
 Whenever an Hourglass node publishes its status, the connected UI Template receives a message similar to the following.
 
