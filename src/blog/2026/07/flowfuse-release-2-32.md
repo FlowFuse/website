@@ -10,6 +10,10 @@ tags:
    - news
    - releases
 tldr: "2.32 certifies the Redis node and extends DevOps Git pipelines to any HTTPS server: GitLab, Bitbucket, Gitea, or self-hosted. Insights mode now reaches your remote instances, so the FlowFuse Expert answers plain-language questions about live edge data. Plus dark mode, Device Agent 4, and a Plan Mode for the Expert."
+cta:
+  type: demo
+  title: Want to see 2.32 in your environment?
+  description: Book a demo to walk through remote Insights, namespace-scoped RBAC, and Device Agent 4 security for your fleet.
 
 ---
 
@@ -31,7 +35,7 @@ Certified Nodes belong to specific FlowFuse packages. Browse the full catalog on
 
 DevOps Pipeline Git stages only worked with GitHub or Azure DevOps, leaving self-hosted GitLab or on-prem Bitbucket out.
 
-Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before. For a server behind a private CA, paste in its certificate, no infrastructure changes needed.
+Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before. For a server behind a private CA, paste in its certificate, no infrastructure changes needed. Your team keeps its existing GitLab or Bitbucket workflow and its compliance setup, with no migration to GitHub.
 
 ## Do More With the FlowFuse Expert
 
