@@ -25,7 +25,7 @@ Built on [ioredis](https://github.com/luin/ioredis), so anything ioredis support
 - TLS and Redis Cluster support
 
 {% note %}
-The Redis node is not available by default. It is part of the **FlowFuse Hub Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+The Redis node is not available by default. It is part of the FlowFuse Hub Certified Nodes catalogue, which is part of the **FlowFuse Hub** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
 {% endnote %}
 
 ## Install
