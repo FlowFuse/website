@@ -17,7 +17,7 @@ A CIP Suite node for communicating with Rockwell Automation and Allen-Bradley PL
 This node provides a robust interface for connecting FlowFuse flows to industrial control systems, specifically Rockwell Automation and Allen-Bradley programmable logic controllers (PLCs). It wraps the [st-ethernet-ip](https://www.npmjs.com/package/st-ethernet-ip) library to enable real-time tag monitoring and data collection from industrial automation equipment.
 
 {% note %}
-The CIP Suite EtherNet/IP node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+The CIP Suite EtherNet/IP node is not available by default. It is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
 {% endnote %}
 
 ## What is EtherNet/IP?

@@ -17,7 +17,7 @@ The node orchestrates `ffmpeg` to acquire and decode the video stream. By handli
 Extracted frames can either be emitted as messages into the flow or written directly to disk as a numbered sequence of PNG files. See [Operating modes](#operating-modes) for details.
 
 {% note %}
-The RTSP Video Feed node is not available by default. It is part of the **FlowFuse Edge Certified Nodes** paid add-on. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
+The RTSP Video Feed node is not available by default. It is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
 {% endnote %}
 
 ## Requirements
