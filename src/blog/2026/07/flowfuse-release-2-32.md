@@ -65,7 +65,7 @@ FlowFuse has only ever had a light interface, and long sessions in a bright UI a
 
 ![FlowFuse in dark mode](./images/dark-mode.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-_Note: on Node-RED 5 and newer, your preference also carries into the Node-RED editor, so you set it once._
+_Note: the Node-RED editor only auto-switches with your FlowFuse theme on the latest Node-RED, 5.0.1 and newer, so you set it once._
 
 ## Better Security with Device Agent 4
 
