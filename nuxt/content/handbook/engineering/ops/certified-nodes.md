@@ -23,6 +23,10 @@ Nodes are grouped into two categories
     - Make required changes ff-certified-nodes instance
     - For Self Hosted customer provide token to Sales to pass to the customer
     - For Teams on FFC go to Team Settings -> Danger -> Edit Usage limits, tick Certifed nodes and add the required catalogue URLS to the box at bottom
+6. Sales provide the token to Self Hosted cutsomers. The token is to be entered on the Admin Settings -> FlowFuse Nodes page. **NOTE:** the cusomer **MUST** be running FlowFue 2.32.0 or newer before applying the token.
+
+![Screenshot of Certified Nodes token](../../images/engineering/certified-nodes-token.png)
+_Screnshot of where to enter Certfied Nodes Token_
 
 
 ## Adding New Nodes
