@@ -4,7 +4,7 @@ subtitle: "Build a FlowFuse dashboard to control a PLC-connected motor and stack
 description: "Learn how to connect FlowFuse to a Siemens S7 PLC, build an operator dashboard to control a motor and stack light, and automatically track device runtime using the Hourglass node."
 date: 2026-07-01
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/07/images/control-and-monitor-machines.png
 tags:
   - flowfuse
 meta:
