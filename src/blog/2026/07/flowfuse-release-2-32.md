@@ -35,7 +35,7 @@ Certified Nodes belong to specific FlowFuse packages. Browse the full catalog on
 
 DevOps Pipeline Git stages only worked with GitHub or Azure DevOps, leaving self-hosted GitLab or on-prem Bitbucket out.
 
-Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before. For a server behind a private CA, paste in its certificate, no infrastructure changes needed. Your team keeps its existing GitLab or Bitbucket workflow and its compliance setup, with no migration to GitHub.
+Git Repository stages now connect to any HTTPS Git server: GitLab, Bitbucket, Gitea, or a self-hosted instance. Point a pipeline at the repository and it pushes and pulls snapshots as before. For a server behind a private CA, paste in its certificate, no infrastructure changes needed. This means your team can integrate seamlessly with your existing Git workflow and its compliance setup.
 
 ## Do More With the FlowFuse Expert
 
