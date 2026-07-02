@@ -9,7 +9,7 @@ issues:
 
 ---
 
-### Insights
+## Insights
 
 With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insights Agent can now work with Remote Instances and Self Hosted Instances.
 
@@ -19,8 +19,6 @@ With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insi
 In order to achieve Insights on Remote Instances and Self Hosted Instances,  we had to modify how data is routed through the platform. Your old Hosted Instances on FlowFuse Cloud will require an update to the latest Launcher Version (2.23.0 or greater) to continue working.
 
 {% endcaution %}
-
-#### Screenshots
 
 ![Resource from Hosted and Remote Instances can now be selected](./images/insights-1.png){data-zoomable}
 *Resource from Hosted and Remote Instances can now be selected*
@@ -32,7 +30,7 @@ In order to achieve Insights on Remote Instances and Self Hosted Instances,  we 
 *Insights in an action - querying a Remote Instance*
 
 
-### Platform Automations
+## Platform Automations
 
 The Expert can now take action on your FlowFuse platform directly. Instead of telling you which buttons to click, it can create instances, register devices, take snapshots, and manage applications on your behalf. You can ask the Expert to:
 
@@ -45,11 +43,11 @@ The Expert can now take action on your FlowFuse platform directly. Instead of te
 Behind the scenes, FlowFuse exposes over 30 automation tools covering instances, devices, applications, snapshots, teams, and configuration. When you ask the Expert to do something, it picks the right tools, calls them with your permissions, and reports back.
 
 
-### Support Agent
+## Support Agent
 
 We have added three ways to stay in control of what the Expert does while it works alongside you in the editor.
 
-#### Plan Mode
+### Plan Mode
 
 The Expert can now propose a plan before it changes anything, so you can review the approach before it touches your flows.
 
@@ -65,7 +63,7 @@ This is ideal for larger or unfamiliar changes, where you want to agree on the a
 ![The Expert proposing a plan, with Approve, Edit, Request changes, and Reject actions](./images/plan.png){data-zoomable}
 *The Expert proposes a plan and waits for your approval before making any changes*
 
-#### Clarifying Questions
+### Clarifying Questions
 
 The Expert now asks clarifying questions when a request could go more than one way, rather than guessing and building the wrong thing.
 
@@ -80,7 +78,7 @@ You can revisit and change your answers before continuing, and you decide the pa
 ![The Expert asking grouped clarifying questions with single and multiple choice options](./images/questions.png){data-zoomable}
 *The Expert asks clarifying questions and collects your answers before acting*
 
-#### Human in the Loop
+### Human in the Loop
 
 You are now in charge of exactly which actions the Expert is allowed to take on your flows, so no change happens that you did not permit.
 
