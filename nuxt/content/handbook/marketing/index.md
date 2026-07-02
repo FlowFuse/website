@@ -38,7 +38,6 @@ to ensure we're tracking progress toward our KPI.
 
 | Role                                      | Contributors                                                                                   |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Marketing Manager, Product                | [Pablo Filomeno](/about#pablo-filomeno) [@PabloFilomeno83](https://github.com/PabloFilomeno83) |
 | Marketing Manager, Website & Social Media | [Yndira Escobar](/about#yndira-escobar) [@Yndira-E](https://github.com/Yndira-E)               |
 | Technical Writer                          | [Sumit Shinde](/about#sumit-shinde) [@sumitshinde-88](https://github.com/sumitshinde-84)       |
 | Developer Relations Advocate              | [Kristopher Sandoval](/about#kristopher-sandoval) |
