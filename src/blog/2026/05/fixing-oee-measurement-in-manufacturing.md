@@ -3,6 +3,8 @@ title: "OEE Is Misleading Your Factory — Here's How to Fix It"
 subtitle: "Why the OEE score on your dashboard does not match what is happening on the floor."
 description: "Most factories measure OEE wrong. Manual logs miss small stops, definitions drift, and operators game the score. A practical look at what to do about it."
 date: 2026-05-07
+usecase:
+  - production-monitoring
 keywords: 
 authors: ["sumit-shinde"]
 image: /blog/2026/05/images/oee-is-misleading.png

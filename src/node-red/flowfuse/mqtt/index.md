@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: FlowFuse MQTT Nodes 
   parent: FlowFuse Nodes
-  order: 2
+  order: 5
   title: MQTT
 meta:
   title: MQTT Nodes

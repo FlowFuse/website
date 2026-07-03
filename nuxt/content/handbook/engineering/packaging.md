@@ -74,18 +74,18 @@ This will subscribe to any notifications covering: `issues`, `pulls`, `commits`,
 
 #### Project Automation
 
-All code repositories must have the Project Automation workflow added. This is done
-by adding [`.github/workflows/project-automation.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/project-automation.yml).
+All repositories must have the Project Automation workflow added, including non-code repositories where issues are created. This is done
+by adding `.github/workflows/project-automation.yml` ([template](https://raw.githubusercontent.com/FlowFuse/.github/refs/heads/main/.github/workflows/project-automation.yml)).
 This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/FlowFuse/projects/3) where it can be triaged and prioritised.
 
 #### Release Publish
 
 For any repositories that contain modules to be published to public npm, they should also
-have a copy of [`.github/workflows/release-publish.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/release-publish.yml).
+have a copy of `.github/workflows/release-publish.yml` ([template](https://raw.githubusercontent.com/FlowFuse/flowfuse/refs/heads/main/.github/workflows/release-publish.yml)).
 
 For modules being published to the Certified Nodes npm registry this `release-publish.yml` file should be edited to point to the `https://registry.flowfuse.com` registry and to make use of the correct token.
 
-An example can be in the [flowfuse/nr-mcp-server-nodes](https://github.com/Flowfuse/nr-mcp-server-nodes/blob/main/.github/workflose/release-publish.yml) project. The `CERTIFIED_NODES_PUBLISH_TOKEN` should be added to the projects Secrets and can be found in 1Password.
+An example can be found in the [flowfuse/nr-mcp-server-nodes](https://github.com/FlowFuse/nr-mcp-server-nodes/blob/main/.github/workflows/release-publish.yml) project. The `CERTIFIED_NODES_PUBLISH_TOKEN` should be added to the projects Secrets and can be found in 1Password.
 
 This workflow will publish to npm whenever the repository is tagged with a `vX.Y.Z` format
 tag.
@@ -97,7 +97,7 @@ to match what is needed.
 #### Static Application Security Testing
 
 For any repository that contains code, the Static Application Security Testing workflow should be added.
-This is done by adding [`.github/workflows/sast.yml`](https://github.com/FlowFuse/flowfuse/blob/main/.github/workflows/sast-scan.yml) to the repository. This workflow will run on any pull request and will scan the code for any known security vulnerabilities. By default, scan results are added to The GitHub Advanced Security tab of the repository, but can be configured to also post comments on the pull request if vulnerabilities are found (see reusable workflow for details).
+This is done by adding `.github/workflows/sast.yml` ([template](https://raw.githubusercontent.com/FlowFuse/flowfuse/refs/heads/main/.github/workflows/sast-scan.yml)) to the repository. This workflow will run on any pull request and will scan the code for any known security vulnerabilities. By default, scan results are added to The GitHub Advanced Security tab of the repository, but can be configured to also post comments on the pull request if vulnerabilities are found (see reusable workflow for details).
 
 ### Labels
 

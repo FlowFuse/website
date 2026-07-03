@@ -5,7 +5,15 @@
       "name": "eleventy",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev:eleventy"],
-      "port": 8080
+      "port": 8080,
+      "autoPort": true
+    },
+    {
+      "name": "nuxt",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "--workspace=nuxt", "dev"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }

@@ -65,11 +65,19 @@ command = "npx @11ty/eleventy --quiet --watch"
 autoLaunch = false
 
 [build]
-command = "npm run build:nuxt"
+command = "npm run build:nuxt:skip-images && npm run index:algolia"
 publish = "nuxt/dist"
+
+[build.environment]
+NODE_OPTIONS = "--max-old-space-size=4096"
 
 [functions]
 directory = "nuxt/.netlify/functions-internal"
+
+[[redirects]]
+from = "/landing/accelerating-industrial-innovation-with-low-code-platforms/"
+to = "/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/"
+status = 301
 
 [[redirects]]
 from = "/*"

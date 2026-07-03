@@ -47,7 +47,13 @@ To eliminate manual entry duplication, we use automated Deel calendar feeds. Mak
 
 #### How to Subscribe to Deel OOO Sync Calendars
 
-**Links temporarily removed - they will be updated soon**
+You can subscribe to company-wide out-of-office calendars managed by Deel. Calendars are available for the whole company, or individual departments.
+
+1. Search 1password for `FlowFuse Time-Off Calendars`.
+2. Copy the URL of the calendar you want to subscribe to.
+3. In Google Calendar, scroll to the bottom of the left-hand sidebar and click the `+` under **Other Calendars**. Select the **From URL** option and enter the url
+ 
+*(Note: Google Calendar can take up to 12-24 hours to initially sync data packages from Deel, so newly approved time-off blocks may not populate instantly upon adding the calendar).*
 
 #### How to Subscribe to Team Calendars for team meetings and events
 

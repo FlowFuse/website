@@ -139,9 +139,9 @@ ctaSection:
                 </ul>
                 <div class="flex max-sm:flex-col max-sm:w-full gap-3 mt-10">
                     <a class="ff-btn ff-btn--primary no-underline text-base flex inline uppercase md:min-h-[40px] max-sm:mt-6 max-sm:w-full max-md:mx-auto"
-                    href="{{ hero.buttonLink }}"
-                    onclick="capture('cta-demo', {'reference': '{{ hero.buttonReference }}'})">
-                    {{ hero.buttonText }}
+                    href="{% include "sign-up-url.njk" %}"
+                    onclick="capture('cta-trial', {'reference': '{{ hero.buttonReference }}'})">
+                    Try it on FlowFuse Cloud
                     </a>
                 </div>
             </div>

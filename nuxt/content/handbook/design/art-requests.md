@@ -17,32 +17,20 @@ Likely places this will be required are:
 
 ## Creating an Art Request
 
-You can create an issue on any of the FlowFuse Repositories that best suits the asset required, e.g:
+Submit all art requests through the
+[Promo & Artwork Request Form](https://form.asana.com/?k=rkrkpLHIiK60ZKI4xgixLA&d=1213818720452348).
+See [Requesting Work from Marketing](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+for full details, including how requests are prioritized.
 
-- [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse): In-Product Visuals (e.g. icons, diagrams, pictograms)
-- [FlowFuse/website](https://github.com/FlowFuse/website): Markitechture Diagrams, Blog Tiles, Webinar & AMA Tiles
-- [FlowFuse/content](https://github.com/FlowFuse/marketing){rel="nofollow"}: Social Media Assets, YouTube Thumbnails Tiles and anything else that doesn't fit above 
-
-When creating an issue, you'll be presented with an option to create an "Art Request" from the Issue Templates:
-
-![Screenshot from GitHub to show the option for creating an Art Request](../images/screenshots/gh-artrequest-template.png "Screenshot from GitHub to show the option for creating an Art Request")
-
-### Details to Include
-
-Please be sure to include as much detail as possible, but most importantly:
+When submitting an art request, be sure to include:
 
 - **Type**: What type of asset is this? Blog Tile? YouTube Thumbnail?
-- **Format**: Image (e.g. `.png`, `.jpg`), Video (e.g. `mp4`), Animation (e.g. `.gif` or Lottie Animation)
-- **Deadline**: This is defined on the right-side of the issue under the "Art Requests" project, once the issue has been created.
-- **Milestone**: If this is a Product request, please add the Development Project and assign the relevant release milestone, otherwise, this is not required.
+- **Format**: Image (e.g. `.png`, `.jpg`), Video (e.g. `.mp4`), Animation (e.g. `.gif` or Lottie Animation)
+- **Deadline**: When you need the asset, and why if the date is fixed (e.g. an event or release)
+- **Context**: Where the asset will be used and any reference material
 
-![Screenshot from GitHub to show where to set the deadline for an Art Request](../images/screenshots/gh-artrequest-example.png "Screenshot from GitHub to show where to set the deadline for an Art Request")
-
-## Tracking Art Request Progress
-
-All newly created Art Requests will be tagged with `design` and `artwork` - this ensures that the issue is automatically added to our [Art Requests Project Board](https://github.com/orgs/FlowFuse/projects/10), and alerts a designer in the `#gh-art-requests` channel on Slack.
-
-When a designer assigns themselves to the issue, they should also add the issue to the Development Project Board, and assign the relevant Iteration within which the piece of work is being undertaken, this ensures that it shows on our wider Team view as to what everyone is working on at any given time.
+Each submission creates a task in the marketing team's Asana project, where
+progress is tracked.
 
 ## Delivery of Art
 

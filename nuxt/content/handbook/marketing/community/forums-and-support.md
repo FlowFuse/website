@@ -31,6 +31,6 @@ In addition to the forum, we also offer:
 - [FlowFuse Blog](/blog/): Technical content on Detailed tutorials and guides to help you get started and master advanced topics.
 - E-Books
   -  [The Ultimate Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/)
-- [FlowFuse Webinars](/handbook/marketing/webinars): These are live webinars during which experts share their knowledge, provide updates on FlowFuse, and allow community members to ask questions directly.
+- [FlowFuse Webinars](/handbook/marketing/content-strategy/webinars): These are live webinars during which experts share their knowledge, provide updates on FlowFuse, and allow community members to ask questions directly.
 - [FlowFuse Support Center](/support/): Personalized and real-time support through our help center.
 - [FlowFuse GitHub](https://github.com/FlowFuse): This is a platform for submitting issues for new features or bug reports. Provide detailed information to help our developers understand and address your issue.
