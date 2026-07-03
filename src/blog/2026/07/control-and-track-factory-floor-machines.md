@@ -92,7 +92,7 @@ If your PLC program is structured differently, that's fine: you just need to kno
 
 The example ladder logic used in this tutorial is shown below.
 
-![Example ladder logic with four normally open contacts controlling the motor, red light, yellow light, and green light outputs](./images/plc-program.png)
+![Example ladder logic with four normally open contacts controlling the motor, red light, yellow light, and green light outputs](./images/plc-program-runtime.png)
 *The example ladder logic used in this tutorial: four contacts controlling the motor and the three stack light colors.*
 
 ## Connecting FlowFuse to the PLC
