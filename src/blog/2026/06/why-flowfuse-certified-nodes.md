@@ -59,7 +59,7 @@ cta:
 
 Every flow you build on FlowFuse runs on nodes, and each node is code executing in your environment, often with access to your data, your network, and your operations. That flexibility is part of what makes FlowFuse powerful. It also means you take on some risk with each node you install.
 
-For most users, this risk is minimal - but for some orgs, the idea of inheriting risk is a step too far. When an organisation cannot have a day of downtime following a code update, or a potential risk vector unaddressed after a maintainer loses interest, something more is necessary - and FlowFuse Certified Nodes presents a solution to this problem.
+Most open source nodes are built by individual developers who assume no liability. They solved a problem for themselves, built the solution, and it worked, but they took on no obligation to maintain it for you. As a user, the vetting responsibility falls on you. For most users, that risk is minor and manageable. But for some organizations, it isn't: when a day of downtime isn't an option, or a security issue can't sit unaddressed because a maintainer has moved on, you need more than "it worked when we checked."
 
 FlowFuse Certified nodes exist to take that liability off your hands, delivering functionality and peace of mind. A Certified Node is one that FlowFuse has put through an intense quality and security process, ensuring that it meets form and function before you ever install it. And once it is installed, FlowFuse offers long-term support and critical review capability - meaning that the vetting, monitoring, and maintenance you’d otherwise need to carry becomes something that FlowFuse can solve for you.
 
