@@ -4,7 +4,7 @@ subtitle: "Bringing the same change management discipline manufacturers apply to
 description: "Manufacturing has always managed change on the factory floor with discipline. Learn how GitOps and FlowFuse DevOps Pipelines bring that same rigor to industrial software deployments."
 date: 2026-07-03
 authors: ["sumit-shinde"]
-image: /blog/2026/07/images/why-manufacturing-need-gitops.png
+image: /blog/2026/07/images/why-manufacturing-need-gitops-tile.png
 tags:
   - flowfuse
 meta:
