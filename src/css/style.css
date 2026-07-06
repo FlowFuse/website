@@ -90,6 +90,7 @@
         --tw-prose-code: var(--color-red-700);
         --tw-prose-bold: var(--color-gray-500);
     }
+    .prose img { max-width: 100%; }
 }
 
 @import "./style.page.css";
