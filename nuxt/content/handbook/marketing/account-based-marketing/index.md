@@ -17,7 +17,7 @@ ABM at FlowFuse is currently expressed through a few concrete activities
 rather than a single dedicated program page:
 
 - **Paid advertising**: targeted ABM campaigns on LinkedIn and Google Ads are
-  run as part of [Demand Generation](/handbook/marketing/programs/#1-demand-generation)
+  run as part of [Demand Generation](/handbook/marketing/programs/)
   to reach specific target accounts, drive traffic to key content, and
   generate MQLs.
 - **Intent signals**: ad interaction data from ABM platforms (e.g. ZenABM) is
