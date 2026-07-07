@@ -37,6 +37,11 @@ useSeoMeta({
 
 const { data: navTree } = await useHandbookNav()
 
+const githubEditUrl = computed(() => {
+    const stem = page.value?.stem || `handbook/${slugParts.value.join('/')}`
+    return `https://github.com/FlowFuse/website/edit/main/nuxt/content/${stem}.md`
+})
+
 useSchemaOrg([
     // Exclude the last crumb (current page) — nuxt-schema-org appends it automatically
     defineBreadcrumb({
@@ -92,11 +97,9 @@ defineOgImage('Default', {
       <div class="lg right-nav">
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
           <HandbookToc :links="page?.body?.toc?.links" />
-          <ClientOnly>
-            <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
-              <a :href="`/_studio?redirect=${encodeURIComponent(route.path)}`" target="_blank" rel="noopener">Edit this page</a>
-            </div>
-          </ClientOnly>
+          <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
+            <a :href="githubEditUrl" target="_blank" rel="noopener">Edit this page</a>
+          </div>
         </div>
       </div>
 
