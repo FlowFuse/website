@@ -46,7 +46,36 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Finalize this manual invoice, then void the automatically created one from the subscription conversion and send an email to accounting.
 1. If you need to void the invoice, send an email with the invoice number and reason to our accounting team through Slack for their administration.
    - Make sure to void the invoices in all necessary places in HubSpot
+  
+### Updating an Invoice
 
+If a client requests a change to an invoice (e.g. PO number, VAT number, or address), follow these steps.
+
+**Step 1: Try a direct edit.**
+If HubSpot allows a direct edit **and the change doesn't affect the invoice amount**, edit it and resend to the client. Done. Since this never changes the invoice amount, it's fine to do even after month-end close — nothing in closed financials is affected.
+
+Examples that typically qualify for a direct edit:
+- Adding or correcting a **PO number**
+- Adding or correcting a **VAT number**
+- Fixing a typo in the **company name** or **contact details**
+- Updating the **billing address**
+- Editing invoice **notes/memo** text
+
+If either of those isn't true — HubSpot won't allow the edit, or the change affects the amount — go to Step 2.
+
+**Step 2: Void and reissue.**
+Void the original invoice in HubSpot and create a new one with the corrected details.
+
+- **Non-financial change that HubSpot won't let you edit directly**: use the **original issue date**. Same logic as Step 1 — the amount hasn't changed, so there's nothing to protect by using today's date.
+- **Financial change, same calendar month as original issue**: use the **original issue date**. The period hasn't closed yet, so there's nothing to revise.
+- **Financial change, different calendar month (period has closed)**: use **today's date** as the issue date, but carry over the **original due date** — don't recalculate it. These adjustments are recorded prospectively in the current period; we don't revise closed months.
+- **Mixed request (financial + non-financial changes together)**: treat the whole correction as a **financial change** and follow the rule above.
+
+**Step 3: This is a FlowFuse task, not an accounting task.** Don't hand it to Zeni.
+
+**Step 4: Email Zeni** at team@zeni.ai with the voided invoice number so they can update QBO.
+
+> ⚠️ Non-financial changes (whether direct-edited or reissued) and same-month financial corrections keep the original invoice date. Financial changes made after the calendar month has closed get today's date but keep the original due date. If a request mixes both types, treat it as financial.
 #### Roles and Responsibilities: CSM vs. Accounting in Accounts Receivable
 
 **CSM (Customer Success Manager):**
@@ -123,3 +152,12 @@ These settings are configurable by Stripe administrators, here: https://dashboar
 - 1–15 Days Past Due: CSM sends a friendly check-in via email to the primary contact to confirm the invoice was received and scheduled for payment.
 - 16–30 Days Past Due: CSM follows up with the customer’s Accounts Payable (AP) department directly. If no response, the CSM requests an internal update from the customer champion. (The invoice at this stage is marked as uncollectible)
 - 31–45 Days Past Due: Executive Escalation: CSM alerts the #past-due Slack channel of the past due invoice to review with the Sales & Executive team and decide if we need to send a formal "Overdue Notice" and agree on service suspension.
+
+#### Invoice Collection Email Templates
+
+When a customer has not paid their invoice, you can find two email templates (initial reminder and urgent follow-up) in the link below:
+
+[Invoice Collection Email Templates](https://docs.google.com/document/d/1eGEAWZItAklBggqcD4Bbab-VifjMa-0EVFzUiy8NgAo/edit?usp=sharing)
+
+These templates can be sent either from your own email as the account's CSM, or directly from billing@flowfuse.com if you have access to that inbox. If you need access to the billing inbox, reach out to the Finance team.
+
