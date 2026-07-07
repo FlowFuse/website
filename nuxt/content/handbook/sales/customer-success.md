@@ -371,9 +371,7 @@ Payouts are based on two equally weighted goals (50% each). Note that weightings
 2. Quarterly KPI (50%): Focused on product engagement (e.g., 10 Customer PRs).
 **_Note: overachievement bonus applies to NRR only, and the KPI goal has no overachievement upside._**
 
-### Commission Currency
-
-Commission payouts are denominated in USD, aligning CSM financial incentives directly with the company's primary revenue currency.
+For payout timelines, submission requirements, and currency, see [Processing CSM Commission](/handbook/operations/commission-payment/#processing-csm-commission).
 
 ### When Transactions are Credited
 Commission is credited based on the date the transaction is signed, or notice is given, ensuring CSMs are recognized in the quarter the outcome is determined.
