@@ -49,15 +49,33 @@ To generate a subscription, the corresponding deal and quote must first be in pl
   
 ### Updating an Invoice
 
-If a client requests changes to an invoice (e.g. adding a PO number, VAT number, or updating an address), follow the steps below. The goal is always to preserve the original invoice date. Steps:
+If a client requests a change to an invoice (e.g. PO number, VAT number, or address), follow these steps.
 
-1. **First, check if the invoice can be edited directly in HubSpot.** If individual line items or details can be updated, make those changes and resend the invoice to the client.
-2. **If the invoice cannot be edited directly**, void the original invoice in HubSpot and create a new invoice with the corrected details, using the original issue date. This is the preferred approach for changes such as adding a PO number, VAT number, or updating a billing address.
-3. **Voiding and reissuing the invoice is a FlowFuse task**, not an accounting task — do not pass this to the Zeni team.
-4. **Email Zeni at team@zeni.ai** with the number of the voided invoice so they can make the necessary changes in QBO.
+**Step 1: Try a direct edit.**
+If HubSpot allows a direct edit **and the change doesn't affect the invoice amount**, edit it and resend to the client. Done. Since this never changes the invoice amount, it's fine to do even after month-end close — nothing in closed financials is affected.
 
-> ⚠️ Always preserve the original invoice date when reissuing. Do not create a new invoice with today's date unless explicitly instructed otherwise.
+Examples that typically qualify for a direct edit:
+- Adding or correcting a **PO number**
+- Adding or correcting a **VAT number**
+- Fixing a typo in the **company name** or **contact details**
+- Updating the **billing address**
+- Editing invoice **notes/memo** text
 
+If either of those isn't true — HubSpot won't allow the edit, or the change affects the amount — go to Step 2.
+
+**Step 2: Void and reissue.**
+Void the original invoice in HubSpot and create a new one with the corrected details.
+
+- **Non-financial change that HubSpot won't let you edit directly**: use the **original issue date**. Same logic as Step 1 — the amount hasn't changed, so there's nothing to protect by using today's date.
+- **Financial change, same calendar month as original issue**: use the **original issue date**. The period hasn't closed yet, so there's nothing to revise.
+- **Financial change, different calendar month (period has closed)**: use **today's date** as the issue date, but carry over the **original due date** — don't recalculate it. These adjustments are recorded prospectively in the current period; we don't revise closed months.
+- **Mixed request (financial + non-financial changes together)**: treat the whole correction as a **financial change** and follow the rule above.
+
+**Step 3: This is a FlowFuse task, not an accounting task.** Don't hand it to Zeni.
+
+**Step 4: Email Zeni** at team@zeni.ai with the voided invoice number so they can update QBO.
+
+> ⚠️ Non-financial changes (whether direct-edited or reissued) and same-month financial corrections keep the original invoice date. Financial changes made after the calendar month has closed get today's date but keep the original due date. If a request mixes both types, treat it as financial.
 #### Roles and Responsibilities: CSM vs. Accounting in Accounts Receivable
 
 **CSM (Customer Success Manager):**
