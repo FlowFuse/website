@@ -36,7 +36,9 @@ rather than a single dedicated program page:
 
 ## How it fits together
 
-1. Sales and marketing agree on a target account list, based on our
+1. Sales and marketing agree on a
+   [target account list](https://app-eu1.hubspot.com/contacts/26586079/objectLists/2463/filters),
+   based on our
    [Ideal Customer Profile (ICP)](/handbook/marketing/messaging/#ideal-customer-profile-icp).
 2. Marketing runs targeted paid campaigns (LinkedIn, Google Ads) against that
    account list as part of Demand Generation.
@@ -47,6 +49,7 @@ rather than a single dedicated program page:
 
 ## Related pages
 
+- [ABM target account list](https://app-eu1.hubspot.com/contacts/26586079/objectLists/2463/filters)
 - [Marketing Programs](/handbook/marketing/programs/)
 - [Lead Activation](/handbook/marketing/lead-activation/)
 - [Messaging & ICP](/handbook/marketing/messaging/)
