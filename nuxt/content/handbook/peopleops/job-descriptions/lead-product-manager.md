@@ -51,10 +51,12 @@ People management experience is welcome but not required to start.
 
 ## Hiring Plan
 
-1. Application Review: Candidates submit one real ticket or issue they wrote, exactly as the engineer received it, plus a short reflection on what they would do differently now. Done by the hiring manager.
-1. [Screening call](https://flowfuse.com/handbook/peopleops/hiring/screening-call/) for 20 minutes.
-1. Hiring Manager Interview for 45m: Assesses core product management competence, ownership, and communication. This stage gates for craft. Done by the hiring manager.
-1. Skills Assessment for 45m: Anchored on the candidate's submitted ticket as a conversation starting point, with a shared FlowFuse product scenario given to every candidate for comparability. Assesses day-to-day working style and how the candidate interacts with engineering. Done by the CTO and a product peer. This stage also indicates what level the candidate would suit.
-1. [STAR Interview](https://flowfuse.com/handbook/peopleops/hiring/star-questions/) for 45m: Values, vision, and role fit. Done by the CEO.
-1. Team Interview for 30m: Two team members not already in the interview loop assess whether the team would genuinely want to work with the candidate. Interviewers complete a scorecard and are expected to raise concerns.
+The interview process mirrors how FlowFuse hires engineers: it prioritizes demonstrated ability over polished interview answers. Every stage answers one question: can this person independently own a product area at FlowFuse and become a trusted partner to engineering?
+
+1. Application Review: Review resumes and the submitted work sample. Candidates submit one real ticket or issue they wrote, exactly as the engineer received it, plus two or three sentences on why they picked it, weighted toward what they would do differently now. Done by the hiring manager.
+1. [Screening Call](https://flowfuse.com/handbook/peopleops/hiring/screening-call/) (20m): Initial screener focused on role fit, motivation, remote and async experience, current AI workflow, and alignment with how FlowFuse works. Conducted by the hiring manager or People Ops.
+1. Hiring Manager Interview (45m): A deeper conversation covering past product work, product judgment, and a realistic FlowFuse scenario. This stage gates for core product management craft: ownership, prioritization, discovery, and the ability to protect engineering focus. Conducted by the hiring manager.
+1. Skills Assessment (45m): The candidate's submitted ticket anchors the conversation, including refinement-style pushback of the kind engineers raise every day, followed by a shared FlowFuse product scenario given to every candidate for comparability. The discussion focuses on day-to-day working style, decision-making under pressure, and how the candidate interacts with engineering, rather than grading the artifact itself. Conducted by the CTO and a product peer. This stage also indicates what level the candidate would suit.
+1. [STAR Interview](https://flowfuse.com/handbook/peopleops/hiring/star-questions/) (45m): A behavioral interview to understand past experiences and assess alignment with FlowFuse's values, initiative, and collaboration style. Conducted by the CEO.
+1. Team Interview (45m): Conversation focused on team collaboration, communication style, and culture fit. Conducted by two team members not already in the interview loop, who complete a scorecard and are expected to raise concerns.
 1. Offer: Extend an offer to the selected candidate.
