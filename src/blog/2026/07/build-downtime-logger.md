@@ -110,9 +110,6 @@ CREATE TABLE IF NOT EXISTS downtime_events (
 
 5. Click the inject node once, then check the debug sidebar. You should see a confirmation that the query ran.
 
-![Screenshot: debug sidebar showing the downtime_events table was created successfully](./images/create-table-debug.png)
-_Confirming the downtime_events table was created._
-
 Each row in this table represents one stoppage. Status tracks whether it's open or closed, reason and comments stay empty until an operator fills them in, and duration_seconds gets calculated the moment a stoppage closes.
 
 With the table in place, the application has somewhere to write to. Next, we'll set up the event that opens a record the moment a machine stops.
