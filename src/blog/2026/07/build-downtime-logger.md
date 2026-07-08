@@ -2,7 +2,7 @@
 title: "Build a Machine Downtime Tracking Application"
 subtitle: "Build a FlowFuse dashboard that logs machine stoppages, calculates downtime, and lets operators assign reasons"
 description: "Learn how to build a machine downtime tracking application in FlowFuse that captures stop and start events over MQTT, calculates downtime duration automatically, lets operators log a reason from a dashboard, and displays live KPI cards."
-date: 2026-07-02
+date: 2026-07-08
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/build-machine-downtime-tracking-application.png
 tags:
@@ -30,8 +30,8 @@ meta:
         text: "Run a single query that calculates machines down right now, stoppages missing a reason, average downtime today, and today's most common reason, then wire the result to four ui-text cards on the dashboard."
         url: "adding-the-kpi-cards"
   faq:
-  - question: "Do I need FlowFuse Tables to follow this tutorial?"
-    answer: "No. FlowFuse Tables is currently in beta and only available to Enterprise tier teams on FlowFuse Cloud or Enterprise licensed self hosted teams on Kubernetes. On any other tier, you can use an external database such as Postgres or MySQL with the standard database nodes from the palette, the SQL and flow logic work the same way."
+  - question: "Do I need FlowFuse Tables, or can I use my own database?"
+    answer: "You can use either. The same flow works with an external database such as Postgres or MySQL using the standard database nodes from the palette instead of FlowFuse Tables, the SQL and flow logic are identical either way."
   - question: "Do I need the FlowFuse Broker, or can I use my own MQTT broker?"
     answer: "You can use either. The FlowFuse Broker is available to Pro and Enterprise tier teams on FlowFuse Cloud and requires no separate config node, but the same flow works with any MQTT broker using the standard MQTT nodes instead of the ff-mqtt-in and ff-mqtt-out nodes."
   - question: "What if my machine sends different event names or a boolean instead of a string?"
