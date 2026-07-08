@@ -55,6 +55,9 @@ Many factories still record downtime on paper or in spreadsheets. Others rely on
 
 In this tutorial, you'll build a machine downtime tracking application using FlowFuse. The application records machine stop and start events, calculates downtime duration, lets operators assign downtime reasons, and displays a live dashboard with unresolved events and key metrics.
 
+![Screenshot: completed dashboard with KPI cards and stoppages table](./images/downtime-logger.png)
+_The finished dashboard: KPI cards on top, unresolved stoppages below._
+
 By the end, you'll have a foundation you can extend into OEE, production reporting, maintenance dashboards, or MES integrations.
 
 ## What You'll Need
