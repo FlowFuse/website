@@ -334,7 +334,7 @@ This includes a confirmation step before closing or discarding, and disables Sav
 
 12. Wire the template's output to a change node that maps the submitted fields into query parameters. Set four rules: first set `queryParameters` to `{}` (JSON), then set `queryParameters.id` to `payload.id` (msg), `queryParameters.reason` to `payload.reason` (msg), and `queryParameters.comments` to `payload.comments` (msg).
 
-![Screenshot: change node rules mapping the submitted id, reason, and comments into queryParameters](./images/prep-params-for-event.png)
+![Screenshot: change node rules mapping the submitted id, reason, and comments into queryParameters](./images/prep-params-2.png)
 _Resetting queryParameters first, then mapping each submitted field from the reason form._
 
 13. Add a final Query node to close the record and save the reason:
@@ -383,9 +383,6 @@ SELECT
 ```
 
 These four numbers cover different things on purpose, machines down right now, stoppages already closed but still missing a reason, average downtime in minutes today, and today's most common reason.
-
-![Screenshot: Query node with the KPI query pasted into the query field](./images/kpi-query-node.png)
-_The single query that powers all four KPI cards._
 
 2. Wire this Query node to the same link in you already have from the event flow, so the cards refresh the moment a record opens or closes, same as the table.
 
