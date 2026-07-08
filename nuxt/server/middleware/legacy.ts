@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
     const path = event.path ?? '/'
 
     // Let Nuxt handle its own internal assets and API routes
-    if (path.startsWith('/_nuxt/') || path.startsWith('/api/') || path.startsWith('/__') || path.startsWith('/_studio')) return
+    if (path.startsWith('/_nuxt/') || path.startsWith('/api/') || path.startsWith('/__') || path.startsWith('/_studio') || path.startsWith('/_og/')) return
 
     // Let Nuxt handle migrated pages (strip trailing slash and query string before matching)
     const pathWithoutQuery = path.split('?')[0]

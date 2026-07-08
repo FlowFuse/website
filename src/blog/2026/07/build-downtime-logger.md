@@ -113,9 +113,6 @@ CREATE TABLE IF NOT EXISTS downtime_events (
 
 5. Click the inject node once, then check the debug sidebar. You should see a confirmation that the query ran.
 
-![Screenshot: debug sidebar showing the downtime_events table was created successfully](./images/create-table-debug.png)
-_Confirming the downtime_events table was created._
-
 Each row in this table represents one stoppage. Status tracks whether it's open or closed, reason and comments stay empty until an operator fills them in, and duration_seconds gets calculated the moment a stoppage closes.
 
 With the table in place, the application has somewhere to write to. Next, we'll set up the event that opens a record the moment a machine stops.
@@ -140,7 +137,7 @@ _Routing incoming events by type before they reach the database._
 
 3. For downtime_started, add a change node before the Query node with two rules: set `queryParameters.machine_id` to `payload.machine_id` (msg), and set `queryParameters.timestamp` to `payload.timestamp` (msg).
 
-![Screenshot: change node rules mapping payload fields to queryParameters](./images/prep-params-2.png)
+![Screenshot: change node rules mapping payload fields to queryParameters](./images/prep-params.png)
 _Both sides of each rule set to msg, this is the step most likely to get mistyped._
 
 4. Add the Query node itself:
@@ -340,7 +337,7 @@ This includes a confirmation step before closing or discarding, and disables Sav
 
 12. Wire the template's output to a change node that maps the submitted fields into query parameters. Set four rules: first set `queryParameters` to `{}` (JSON), then set `queryParameters.id` to `payload.id` (msg), `queryParameters.reason` to `payload.reason` (msg), and `queryParameters.comments` to `payload.comments` (msg).
 
-![Screenshot: change node rules mapping the submitted id, reason, and comments into queryParameters](./images/prep-params-for-event.png)
+![Screenshot: change node rules mapping the submitted id, reason, and comments into queryParameters](./images/prep-params-2.png)
 _Resetting queryParameters first, then mapping each submitted field from the reason form._
 
 13. Add a final Query node to close the record and save the reason:
@@ -389,9 +386,6 @@ SELECT
 ```
 
 These four numbers cover different things on purpose, machines down right now, stoppages already closed but still missing a reason, average downtime in minutes today, and today's most common reason.
-
-![Screenshot: Query node with the KPI query pasted into the query field](./images/kpi-query-node.png)
-_The single query that powers all four KPI cards._
 
 2. Wire this Query node to the same link in you already have from the event flow, so the cards refresh the moment a record opens or closes, same as the table.
 
