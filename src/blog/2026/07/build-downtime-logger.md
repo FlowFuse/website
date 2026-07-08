@@ -134,7 +134,7 @@ _Routing incoming events by type before they reach the database._
 
 3. For downtime_started, add a change node before the Query node with two rules: set `queryParameters.machine_id` to `payload.machine_id` (msg), and set `queryParameters.timestamp` to `payload.timestamp` (msg).
 
-![Screenshot: change node rules mapping payload fields to queryParameters](./images/prep-params-2.png)
+![Screenshot: change node rules mapping payload fields to queryParameters](./images/prep-params.png)
 _Both sides of each rule set to msg, this is the step most likely to get mistyped._
 
 4. Add the Query node itself:
