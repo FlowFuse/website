@@ -19,8 +19,8 @@ useHead({
 <template>
   <div class="nohero w-full">
     <div class="w-full page hero">
-      <div class="content">
-        <div class="prose prose-blue container pt-12 m-auto max-w-4xl">
+      <div class="content max-w-4xl m-auto">
+        <div class="prose prose-blue container pt-12 px-6 pb-24">
           <ContentRenderer :value="page" />
         </div>
       </div>

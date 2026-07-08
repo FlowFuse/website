@@ -5,6 +5,7 @@ description: "FlowFuse 2.32 certifies the Redis node, extends DevOps Git pipelin
 date: 2026-07-02
 authors: ["jamie-strusz"]
 image: /blog/2026/07/images/flowfuse-release-2-32.jpg
+video: _OmKB4eeeUY
 tags:
    - flowfuse
    - news
