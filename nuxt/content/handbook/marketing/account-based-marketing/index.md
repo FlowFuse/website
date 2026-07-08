@@ -37,7 +37,7 @@ rather than a single dedicated program page:
 ## How it fits together
 
 1. Sales and marketing agree on a
-   [target account list][hubspot-target-list],
+   [target account list][hubspot-target-account-list],
    based on our
    [Ideal Customer Profile (ICP)](/handbook/marketing/messaging/#ideal-customer-profile-icp).
 2. Marketing runs targeted paid campaigns (LinkedIn, Google Ads) against that
@@ -47,15 +47,20 @@ rather than a single dedicated program page:
 4. Account Executives use ABM to prioritize and engage these key accounts
    directly, tracking outcomes in [HubSpot](/handbook/sales/hubspot/).
 
-## Loading the target account list into LinkedIn
+## Loading the target lists into LinkedIn
 
-LinkedIn ABM campaigns target the same
-[target account list][hubspot-target-list]
-maintained in HubSpot, loaded into LinkedIn Campaign Manager as a Matched
-Audience. To (re)load the list:
+HubSpot maintains two related target lists for ABM:
+
+- The [target account list][hubspot-target-account-list] — the companies
+  sales and marketing have agreed to target.
+- The [target contact list][hubspot-target-contact-list] — the individual
+  contacts at those companies, used to build the LinkedIn Matched Audience.
+
+LinkedIn ABM campaigns target a Matched Audience built from the target
+contact list. To (re)load the list:
 
 1. In HubSpot, open the
-   [target account list][hubspot-target-list]
+   [target contact list][hubspot-target-contact-list]
    and export it as a CSV, including the following columns: first name,
    last name, email, job title, country, Google Advertising ID (googleaid),
    and company (from the contact's company property, used as the company
@@ -74,20 +79,23 @@ Audience. To (re)load the list:
 1. Check that the active ABM campaigns are still targeting this audience
    after the refresh.
 
-The target account list is **dynamic** — accounts are added and removed by
-sales and marketing as the ICP fit and pipeline priorities change. Because
-LinkedIn does not sync the list automatically, the operator running ABM
-campaigns must repeat these steps **weekly** to re-export the latest list
-from HubSpot and re-upload it, so LinkedIn targeting stays in sync with the
-current target accounts.
+Both the target account list and target contact list are **dynamic** —
+accounts and contacts are added and removed by sales and marketing as the
+ICP fit and pipeline priorities change. Because LinkedIn does not sync the
+list automatically, the operator running ABM campaigns must repeat these
+steps **weekly** to re-export the latest contact list from HubSpot and
+re-upload it, so LinkedIn targeting stays in sync with the current target
+accounts.
 
 ## Related pages
 
-- [ABM target account list][hubspot-target-list]
+- [ABM target account list][hubspot-target-account-list]
+- [ABM target contact list][hubspot-target-contact-list]
 - [Marketing Programs](/handbook/marketing/programs/)
 - [Lead Activation](/handbook/marketing/lead-activation/)
 - [Messaging & ICP](/handbook/marketing/messaging/)
 - [Account Executive job description](/handbook/peopleops/job-descriptions/account-executive/)
 
-[hubspot-target-list]: https://app-eu1.hubspot.com/contacts/26586079/objectLists/2463/filters
+[hubspot-target-account-list]: https://app-eu1.hubspot.com/contacts/26586079/objectLists/2463/filters
+[hubspot-target-contact-list]: https://app-eu1.hubspot.com/contacts/26586079/objectLists/2464/filters
 [linkedin-campaign-manager]: https://www.linkedin.com/campaignmanager/accounts/512972960/overview?businessId=personal
