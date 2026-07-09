@@ -80,8 +80,11 @@ pipeline.
 ## Go-to-market plans
 
 Each Showcase gets one story and one go-to-market plan, tracked in Asana with
-tickets across Marketing, Sales, Product, and Engineering. Work lands with
-marketing through the same mechanisms as all other marketing work: the
+tickets across Marketing, Sales, Product, and Engineering. Stories and their
+Asana tasks come together in the
+[Use Cases project](https://app.asana.com/1/1213818720452348/project/1215720226996029/note/1216389200058782),
+the holistic overview of the PMP. Work lands with marketing through the same
+mechanisms as all other marketing work: the
 [request forms](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
 and the content calendar documented in
 [How we work](/handbook/marketing/how-we-work/).
