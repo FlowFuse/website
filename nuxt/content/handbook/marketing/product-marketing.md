@@ -8,6 +8,10 @@ description: |-
 
 # Product Marketing
 
+This page defines what we market and how it goes to market. For how the
+marketing team plans and executes content, see the
+[Content Strategy](/handbook/marketing/content-strategy/).
+
 ## The Product Marketable Product
 
 The FlowFuse platform is our strongest asset. It can entertain any scenario,
@@ -20,7 +24,9 @@ Use cases are those entry points. A use case is the customer-centric
 abstraction of the platform: a real problem customers face and how it is
 resolved with FlowFuse. Use cases are what customers recognize themselves in,
 and they are therefore what we lead with: our Product Marketable Product, or
-PMP.
+PMP. Use cases make our [company messaging](/handbook/marketing/messaging/)
+concrete: they express the product pillars as specific problems of our Ideal
+Customer Profile.
 
 A use case implementation is a starting point, not a boxed product. We show
 how the problem can be solved on FlowFuse, and customers adjust and fully own
@@ -49,7 +55,8 @@ and includes everything around it, consisting of:
 4. **Onboarding journey**: how we or the customer get the use case
    implemented, from first interest to production.
 5. **Marketing artifacts**: the show and tell; use case web pages, videos,
-   blog posts, social content, and customer stories.
+   blog posts, social content, and
+   [customer stories](/handbook/marketing/content-strategy/customer-stories/).
 
 ## Cross-functional ownership
 
@@ -66,9 +73,10 @@ it and has the time allocated to it.
 
 Two lenses set the order in which use cases are developed into Showcases:
 
-- **Account-based marketing**: each target account has specific problems,
-  needs, and desires that map to specific use cases. That mapping gives a
-  priority order directly connected to our pipeline.
+- **[Account-based marketing](/handbook/marketing/account-based-marketing/)**:
+  each target account has specific problems, needs, and desires that map to
+  specific use cases. That mapping gives a priority order directly connected
+  to our pipeline.
 - **Breadth and depth**: platform improvements either deepen what already
   exists or broaden into new use cases. Breadth aligns most directly with the
   PMP because it creates new stories to tell; depth strengthens
@@ -79,7 +87,11 @@ Two lenses set the order in which use cases are developed into Showcases:
 ## Go-to-market plans
 
 Each Showcase gets one story and one go-to-market plan, tracked in Asana with
-tickets across Marketing, Sales, Product, and Engineering.
+tickets across Marketing, Sales, Product, and Engineering. Work lands with
+marketing through the same mechanisms as all other marketing work: the
+[request forms](/handbook/marketing/content-strategy/#requesting-work-from-marketing)
+and the content calendar documented in
+[How we work](/handbook/marketing/how-we-work/).
 
 We run one storyline at a time and repeat it consistently across weeks and
 channels before moving to the next. A message must be repeated far more often

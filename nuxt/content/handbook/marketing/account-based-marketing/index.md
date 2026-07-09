@@ -50,6 +50,7 @@ rather than a single dedicated program page:
 ## Related pages
 
 - [ABM target account list](https://app-eu1.hubspot.com/contacts/26586079/objectLists/2463/filters)
+- [Product Marketing](/handbook/marketing/product-marketing/)
 - [Marketing Programs](/handbook/marketing/programs/)
 - [Lead Activation](/handbook/marketing/lead-activation/)
 - [Messaging & ICP](/handbook/marketing/messaging/)

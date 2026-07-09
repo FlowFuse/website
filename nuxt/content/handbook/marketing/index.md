@@ -10,6 +10,11 @@ We're the team that promotes our company and product of FlowFuse to the
 [core audience](/handbook/marketing/messaging/#ideal-customer-profile-icp)
 of FlowFuse.
 
+What we market is defined by our use cases, the customer-centric entry points
+into the FlowFuse platform. See
+[Product Marketing](/handbook/marketing/product-marketing/) for how these are
+developed into Showcases and brought to market.
+
 There's 3 pillars we're heavily invested in:
 1. Our [Content Strategy](./content-strategy/)
 2. [Account Based Marketing](./account-based-marketing/)
