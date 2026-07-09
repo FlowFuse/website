@@ -293,5 +293,14 @@ Purpose:
 * Any bonus issue discovered after the period ends must be flagged as a process gap, not resolved retroactively.
 * Delays in review or approval do not justify retroactive changes to bonus criteria or amounts.
 
+# Referral Partner Fees Process
 
+Referral partner fees are paid quarterly for closed won deals attributed to a referral partner, in line with the 
+applicable partnership agreement. Referral partners work with FlowFuse to help identify and close deals, and are 
+compensated for successful referrals.
 
+In the first week after the quarter has passed, calculate the commission payments:
+1. Pull closed won deals from HubSpot
+2. Calculate the fees and apply the rates in the partnership agreement (stored on Google Drive) to the applicable deal value
+3. Confirm the numbers in writing and request for an invoice
+4. Send invoice to billing to process the total fees due
