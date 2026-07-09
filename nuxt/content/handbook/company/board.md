@@ -34,7 +34,11 @@ specifically the Name Familiarity & Relationship table, which includes all BoD m
 
 When creating the calendar invite, attach the board deck (as a Google Slides link)
 so attendees have it ahead of time. The deck will be empty a few months out,
-but allows the company to iterate on the deck as the meeting comes closer.
+but allows the company to iterate on the deck as the meeting comes closer. Ensure
+that all participants of the meeting have access to the presentation slides.
+
+Confirm attendance of all participants of the invite, or their respective
+representatives prior to the scheduled meeting.
 
 ## The Strategic Timeline
 
