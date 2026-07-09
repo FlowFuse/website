@@ -69,7 +69,7 @@ Before you start building, get these ready:
 - **A FlowFuse account.** Sign up for FlowFuse Cloud, or use a self-hosted instance.
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
 - **FlowFuse Dashboard installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-button`, `ui-table`, `ui-chart`) to build the operator interface. Install it from the Palette Manager if it isn't already in your instance.
-- **The Humanizer node installed.** This is what turns raw downtime into readable text like "12 minutes." It comes from the `node-red-contrib-moment` package, install it from the Palette Manager if it isn't already in your instance.
+- **The Humanizer node installed.** This is what turns raw downtime into readable text like "12 minutes." It comes from the `node-red-contrib-moment` package, install it from the Palette Manager.
 
 You won't need a PLC or any real hardware for this tutorial. We'll simulate machine stop and start events with inject nodes, and the same flow logic applies later when you connect real signals.
 
