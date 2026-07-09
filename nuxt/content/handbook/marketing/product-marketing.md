@@ -94,6 +94,29 @@ All collateral ties back to its use case, so the use case page, blueprint,
 certified nodes, comparison pages, and customer stories interlink into one
 coherent web of resources.
 
+## Tracking success
+
+We track success on three levels, reviewed together in the weekly Product and
+Marketing sync:
+
+- **Lagging**: sales pipeline where a use case is the attributable entry
+  point, and behind it, customers won that tie back to a specific story.
+- **Leading**: behavior that predicts that pipeline; engagement on the use
+  case pages, deployments of Showcase blueprints, hand-raises (contact sales
+  submissions and trial signups attributable to use case content), and
+  engagement from the
+  [account-based marketing](/handbook/marketing/account-based-marketing/)
+  target accounts a use case maps to.
+- **Traction per story**: every story tracks the same base set for its
+  artifacts (reach, engagement, and deploys per artifact type), so stories
+  stay comparable and each go-to-market plan is judged on the same terms.
+
+These measures are not a separate scoreboard next to departmental goals: the
+lagging metrics are sales' own objectives, the leading indicators are the
+supporting metrics marketing already reports on, and blueprint deployments
+and onboarding success are product outcomes for Product and Engineering. A
+Showcase that works moves every department's existing objectives at once.
+
 ## Where to see it
 
 - Use cases on the [home page](https://flowfuse.com)
