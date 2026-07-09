@@ -104,7 +104,8 @@ Marketing sync. As this practice matures, we can consider a review that also
 includes Sales.
 
 - **Lagging**: sales pipeline where a use case is the attributable entry
-  point, and behind it, customers won that tie back to a specific story.
+  point and marketing MQL generation, with customers won that tie back to a
+  specific story behind both.
 - **Leading**: behavior that predicts that pipeline; engagement on the use
   case pages, deployments of Showcase blueprints, hand-raises (contact sales
   submissions and trial signups attributable to use case content), and
@@ -115,11 +116,16 @@ includes Sales.
   artifacts (reach, engagement, and deploys per artifact type), so stories
   stay comparable and each go-to-market plan is judged on the same terms.
 
-These measures are not a separate scoreboard next to departmental goals: the
-lagging metrics are sales' own objectives, the leading indicators are the
-supporting metrics marketing already reports on, and blueprint deployments
-and onboarding success are product outcomes for Product and Engineering. A
-Showcase that works moves every department's existing objectives at once.
+These measures are not a separate scoreboard next to departmental goals:
+
+- **Sales**: the pipeline lagging metric is sales' own objective.
+- **Marketing**: MQL generation is marketing's existing objective, fed by the
+  leading indicators.
+- **Product and Engineering**: a dedicated
+  [Product Objective](https://github.com/FlowFuse/product/issues/440) tracks
+  this behavior.
+
+A Showcase that works moves every department's existing objectives at once.
 
 ## Where to see it
 
