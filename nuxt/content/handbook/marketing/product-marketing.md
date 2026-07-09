@@ -54,15 +54,13 @@ and includes everything around it, consisting of:
 ## Cross-functional ownership
 
 The PMP is a shared artifact between Sales, Marketing, Product, and
-Engineering. Each department is both contributor and stakeholder:
+Engineering. Each department is both contributor and stakeholder, and no
+single department owns a Showcase end to end.
 
-- **Sales** defines use cases from customer conversations and contributes
-  customer stories and proof-of-concept journeys.
-- **Marketing** produces and distributes the marketing artifacts and owns the
-  differentiation content, such as comparison pages.
-- **Product and Engineering** build the demos and blueprints, write
-  implementation journeys, and feed the use cases into the product roadmap
-  through product objectives.
+Ownership is assigned per Showcase: its go-to-market plan names an owner for
+each component (use case definition, differentiation, product application,
+onboarding journey, and marketing artifacts), based on who is best placed for
+it and has the time allocated to it.
 
 ## Prioritization
 
