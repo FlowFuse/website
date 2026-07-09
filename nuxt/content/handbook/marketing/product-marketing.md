@@ -38,7 +38,8 @@ across the funnel.
 
 ## Showcases
 
-A use case is completely developed when it becomes a Showcase, consisting of:
+A Showcase makes a use case visible as it can be developed on our platform,
+and includes everything around it, consisting of:
 
 1. **Use case definition**: the customer problem and outcome, written
    customer-centric.
