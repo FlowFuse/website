@@ -17,4 +17,4 @@ communicated.
 2. Confirm all required signatures upfront — both internal and counterparty.
 3. The document must be fully filled out before circulation. No placeholder text (e.g., [INSERT DESCRIPTION]) or incomplete fields should remain.
 
-Once document has been signed by both parties, save a copy of the document and store in FlowFuse google drive.
+For where to store the signed document, see [Legal](/handbook/sales/legal).
