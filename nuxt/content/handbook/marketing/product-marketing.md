@@ -100,7 +100,8 @@ coherent web of resources.
 ## Tracking success
 
 We track success on three levels, reviewed together in the weekly Product and
-Marketing sync:
+Marketing sync. As this practice matures, we can consider a review that also
+includes Sales.
 
 - **Lagging**: sales pipeline where a use case is the attributable entry
   point, and behind it, customers won that tie back to a specific story.
