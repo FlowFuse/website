@@ -2,7 +2,7 @@
 title: "Software-Defined Manufacturing: Why FlowFuse Fits the Shift"
 subtitle: "How manufacturers are improving factories through software instead of hardware changes"
 description: "Software-defined manufacturing (SDM) is changing how factories improve operations. Learn what SDM means, why traditional manufacturing software falls short, and how FlowFuse helps manufacturers build and manage industrial applications that evolve without large-scale modernization projects."
-date: 2026-07-03
+date: 2026-07-09
 authors: ["sumit-shinde"]
 image: 
 tags:
