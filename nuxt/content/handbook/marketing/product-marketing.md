@@ -35,13 +35,6 @@ the platform: what is built stays visible and understandable end to end in
 low code, so it can be trusted, audited, and operated in production. Every
 use case story ends at the same place, the platform.
 
-This focus sharpened as [our strategy](/handbook/company/strategy/) shifted
-toward larger industrial accounts. Sales felt it first and began defining
-common use cases shared across customers, together with demos to show and
-tell how each is applied in FlowFuse. Marketing and Product follow the same
-use cases, so all departments pull in one direction and success compounds
-across the funnel.
-
 ## Showcases
 
 A Showcase makes a use case visible as it can be developed on our platform,
