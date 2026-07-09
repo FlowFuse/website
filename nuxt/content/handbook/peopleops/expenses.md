@@ -102,6 +102,17 @@ Existing team members should also ask their manager for approval for any items
 that might need to be upgraded or replaced as part of their home office
 maintenance. Existing team members can spend up to $500 per year.
 
+### Chairs and Desk
+
+Chairs and desks are covered when you join FlowFuse and don't yet have them for your
+home office, or when your existing chair or desk is broken and needs to be replaced.
+
+Use IKEA pricing as the general benchmark for a reasonable expense. Chairs and desks 
+don't need to be from IKEA, but the cost should be in line with a comparable IKEA item 
+(we suggest the [Markus Office Chair](https://www.ikea.com/ca/en/p/markus-office-chair-vissle-dark-gray-50588804/)). 
+Anything above this level will fall under an exception to the policy and require management review and
+approval before making any purchases.
+
 ### Laptops
 
 Laptops are covered separately and are provided as needed when a new hire joins
