@@ -188,6 +188,8 @@ The baseline is only used to determine the growth and is not included in the att
 
 * Being close to the target in absolute terms does not imply high attainment
 * All growth-based MBOs follow this approach unless explicitly defined otherwise
+* Any changes to a bonus structure mid-cycle must be confirmed in writing to the employee, manager, and CEO. Verbal discussions are not sufficient.
+  Without written confirmation, the original bonus structure remains in effect
 
 
 ## Bonus Review (End of Period)
