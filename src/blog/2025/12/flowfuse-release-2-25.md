@@ -5,6 +5,7 @@ description: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, 
 date: 2025-12-18
 authors: ["greg-stoutenburg"]
 image: /blog/2025/12/images/Release-2-25.png
+video: 2Q_77dmEuyU
 tags:
    - flowfuse
    - news
