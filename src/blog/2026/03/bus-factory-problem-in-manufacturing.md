@@ -6,6 +6,7 @@ date: 2026-03-02
 keywords: bus factor, Node-RED, FlowFuse, industrial automation, OT IT integration, knowledge management, IIoT integration, PLC integration
 authors: ["sumit-shinde"]
 image: /blog/2026/03/images/bus-factor-problem-tile-image.png
+video: Xp42bcf3cAs
 tags:
 - flowfuse
 cta:
