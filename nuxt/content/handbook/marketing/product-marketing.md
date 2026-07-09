@@ -46,7 +46,8 @@ and includes everything around it, consisting of:
 3. **Product application**: the use case implemented in FlowFuse, as a demo
    and, where possible, a blueprint anyone can deploy.
 4. **Onboarding journey**: how we or the customer get the use case
-   implemented, from first interest to production.
+   implemented, from first interest to production, supported by blueprints,
+   the FlowFuse Expert and our AI capabilities, and documentation.
 5. **Marketing artifacts**: the show and tell; use case web pages, videos,
    blog posts, social content, and
    [customer stories](/handbook/marketing/content-strategy/customer-stories/).
