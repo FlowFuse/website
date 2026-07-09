@@ -35,6 +35,12 @@ the platform: what is built stays visible and understandable end to end in
 low code, so it can be trusted, audited, and operated in production. Every
 use case story ends at the same place, the platform.
 
+The platform and the use cases grow together. New feature functionality
+broadens the platform and unlocks new use cases, while deepening what already
+exists makes the current use cases better supported. For AI specifically, we
+look for use cases that are enabled by AI, next to using AI to better support
+the use cases that are not.
+
 ## Showcases
 
 A Showcase makes a use case visible as it can be developed on our platform,
@@ -65,18 +71,11 @@ it and has the time allocated to it.
 
 ## Prioritization
 
-Two lenses set the order in which use cases are developed into Showcases:
-
-- **[Account-based marketing](/handbook/marketing/account-based-marketing/)**:
-  each target account has specific problems, needs, and desires that map to
-  specific use cases. That mapping gives a priority order directly connected
-  to our pipeline.
-- **Breadth and depth**: platform improvements either deepen what already
-  exists or broaden into new use cases. Breadth aligns most directly with the
-  PMP because it creates new stories to tell; depth strengthens
-  differentiation and onboarding within existing stories. For AI specifically,
-  we look for use cases that are enabled by AI, next to using AI to improve
-  the onboarding of use cases that are not.
+[Account-based marketing](/handbook/marketing/account-based-marketing/) sets
+the order in which use cases are developed into Showcases: each target
+account has specific problems, needs, and desires that map to specific use
+cases. That mapping gives a priority order directly connected to our
+pipeline.
 
 ## Go-to-market plans
 
