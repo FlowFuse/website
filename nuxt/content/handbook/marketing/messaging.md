@@ -73,16 +73,22 @@ FlowFuse is the open-source Industrial Application Platform.
 
 ### Tagline
 
-{{ site.messaging.tagLine }}
+:site-value{path="messaging.tagLine"}
 
 ### FlowFuse in one sentence - Under 150 characters
 
-{{ site.messaging.subtitle }}
+:site-value{path="messaging.subtitle"}
 
 ### About FlowFuse - Short form
 
-FlowFuse is the enterprise platform that bridges the gap between physical assets and enterprise IT, delivering consistency at scale instead of one-off project "snowflakes." Powered by Node-RED, teams unify real-time data through workflows, AI agents, and industrial applications, extending rigid vendor systems with a low-code agility layer that adapts without rip-and-replace. FlowFuse orchestrates lightweight, event-based data flows between the shop floor and the top floor only when real-world events occur, giving organizations the confidence to innovate and unlock new value in industrial automation.
-
+FlowFuse is the enterprise platform that bridges the gap between physical assets
+and enterprise IT, delivering consistency at scale instead of one-off project
+"snowflakes." Powered by Node-RED, teams unify real-time data through workflows,
+AI agents, and industrial applications, extending rigid vendor systems with a
+low-code agility layer that adapts without rip-and-replace. FlowFuse
+orchestrates lightweight, event-based data flows between the shop floor and the
+top floor only when real-world events occur, giving organizations the confidence
+to innovate and unlock new value in industrial automation.
 
 ## FlowFuse in-depth
 

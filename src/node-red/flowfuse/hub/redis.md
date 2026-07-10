@@ -28,6 +28,18 @@ Built on [ioredis](https://github.com/luin/ioredis), so anything ioredis support
 The Redis node is not available by default. It is part of the FlowFuse Hub Certified Nodes catalogue, which is part of the **FlowFuse Hub** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
 {% endnote %}
 
+## Use case
+
+Redis is commonly used with FlowFuse as a fast shared data layer between flows and instances, since Node-RED's own context is per-instance and does not span multiple instances. This package exposes Redis through several nodes, each suited to a different pattern:
+
+- **Shared state and caching**: `redis-command` runs `SET`/`GET` and other commands, so several flows or instances can read and update the same values: a cached sensor reading, a rate counter, or an inventory count. Setting an expiry (`EX`) turns any key into a time-limited cache entry.
+- **Work queues**: `redis-out` with `rpush` adds items to a list, and `redis-in` with `blpop` lets a worker flow pick them up in order as they arrive, decoupling a producer flow from a consumer.
+- **Messaging (pub/sub)**: `redis-out` `publish` broadcasts a message to every `redis-in` `subscribe` node listening on that channel at once, across instances.
+- **Atomic operations**: `redis-lua-script` runs a Lua script on the server in a single round trip, so a multi-step operation cannot interleave with another client, for example checking and decrementing stock so two concurrent orders cannot oversell the last unit.
+- **Direct client access**: for anything the nodes above do not cover (pipelines, `SCAN`, RedisJSON, or other module commands), `redis-instance` injects a live ioredis client into context for use in function nodes.
+
+Connections are pooled per config node, so pointing many nodes at the same server reuses one connection rather than opening a separate one for each. Blocking operations such as `subscribe` and `blpop` take their own dedicated connection automatically.
+
 ## Install
 
 1. Open the **Palette Manager** from the top-right menu in the FlowFuse editor.
@@ -36,7 +48,7 @@ The Redis node is not available by default. It is part of the FlowFuse Hub Certi
 4. Locate `@flowfuse-certified-nodes/redis` and click **Install**.
 
 {% note %}
-Existing devices and hosted instances will not pick up newly installed nodes until they are restarted. Restart any instance you plan to use the node on after installing.
+Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 ## Nodes in this package

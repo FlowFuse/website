@@ -11,7 +11,7 @@ meta:
 
 Connect a FlowFuse instance to industrial OPC UA servers. Read and write values, monitor changes in real time, call methods, browse the address space, read history, work with files, or host your own OPC UA server, all from within your flows.
 
-This is a **FlowFuse Certified Node**. FlowFuse vets it for quality, security, and support, and maintains it on an ongoing basis. [Read more about Certified Nodes](/blog/2025/07/certified-nodes-v2/).
+This is a **FlowFuse Certified Node**. Unlike community nodes, which vary in quality and can go unmaintained without warning, FlowFuse vets Certified Nodes for quality, security, and support, and maintains them on an ongoing basis. [Read more about Certified Nodes](/blog/2025/07/certified-nodes-v2/).
 
 ## Table of contents
 
@@ -52,6 +52,25 @@ Everything runs inside your FlowFuse instance. Connections, certificates, and cr
 - Read, write, and append files on servers that implement the OPC UA FileType interface.
 - Host an OPC UA server from within a self-hosted FlowFuse instance using Function nodes.
 
+### Use case
+
+Most industrial equipment already speaks OPC UA, but the data usually stays inside the machine's own server: readable by the vendor's tools, invisible to dashboards, brokers, and databases. This certified node closes that gap. A FlowFuse instance connects to the equipment as an OPC UA client, so the values, alarms, and history locked inside each machine become ordinary flow data you can route, transform, and act on. On self-hosted FlowFuse it also works in the other direction, exposing flow data as an OPC UA server for SCADA systems and historians to consume.
+
+#### Example: connecting a filling machine to the plant
+
+A filling machine exposes `FillLevel`, `LineSpeed`, and an alarm hierarchy through its embedded OPC UA server. Today that data lives on the machine's own panel. With one shared connection, a Monitor node streams the process values into the plant's Unified Namespace over MQTT, with a deadband filter suppressing sensor jitter before it ever reaches the network. A Monitor Event node subscribed with `Severity >= 600` routes machine alarms to the maintenance team's chat channel. And when the recipe changes, a Write node, gated behind an operator confirmation on a dashboard, pushes the new fill setpoint back to the machine. One connection replaces a per-machine SCADA tag mapping exercise, and the same flow pattern repeats for every OPC UA machine on the floor.
+
+#### Where this shows up in practice
+
+Real deployments usually combine several of the nodes on a single shared connection (see [The node set](#3.-the-node-set) for what each one does):
+
+- **Unified Namespace and broker integration**: subscribe to the variables that matter with [Monitor](#10.-monitor) and publish changes to MQTT, so every system in the plant consumes the same live equipment data instead of integrating with each machine separately.
+- **Supervisory control**: fetch current values on demand with [Read](#6.-read), push setpoints and recipe parameters back with [Write](#7.-write), and invoke machine operations such as starting a batch or acknowledging an alarm with [Call](#9.-call). Writes change real-world state, so gate them behind validation or an operator confirmation step.
+- **Alarm-driven maintenance**: subscribe to a server's alarms and events with [Monitor Event](#11.-monitor-event), filter by type and severity on the server side, and route what remains to notifications, dashboards, or logs, so the maintenance team hears about a fault from the machine, not from the operator.
+- **Shift reports, trends, and audits**: pull raw or server-aggregated values over a time range with [History Read](#14.-history-read) to build end-of-shift reports, quality trends, and incident timelines from data the equipment already recorded.
+- **Fast commissioning**: map a machine's entire address space with [Explore](#13.-explore) and feed the result straight into a Monitor node, turning hours of manual tag mapping into a single deploy.
+- **Exposing flow data to SCADA and historians**: on self-hosted FlowFuse, [host an OPC UA server](#16.-hosting-an-opc-ua-server) so external OPC UA clients, including another FlowFuse instance, can read the data your flows produce. This is not available on FlowFuse Cloud.
+
 ## 2. Get the Certified Node in FlowFuse
 
 FlowFuse delivers Certified Nodes to your instances as a managed catalogue. The OPC UA package is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. [contact us](/contact-us/) to enable it for your team
@@ -71,7 +90,7 @@ The OPC UA nodes then appear in your palette, ready to drag onto the canvas.
 !["The OPC UA nodes in the Node-RED palette"](./images/opcua/node-palette.png "The OPC UA nodes in the Node-RED palette"){data-zoomable}
 
 {% note %}
-Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 {% note %}

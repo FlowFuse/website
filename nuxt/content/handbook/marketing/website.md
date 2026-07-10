@@ -91,7 +91,7 @@ They are still output in the HTML on 11ty-served pages and may be used by site-s
 
 ### Default Keywords
 
-By default, each 11ty-served webpage on the FlowFuse website includes a set of predefined keywords: **{{ site.messaging.keywords }}**. These default keywords are relevant to the overall theme of the website.
+By default, each 11ty-served webpage on the FlowFuse website includes a set of predefined keywords: **:site-value{path="messaging.keywords"}**. These default keywords are relevant to the overall theme of the website.
 
 ### Priority of Keywords
 

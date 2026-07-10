@@ -87,7 +87,10 @@ export default defineNuxtConfig({
     },
 
     image: {
-        provider: process.env.SKIP_IMAGES === 'true' ? 'none' : 'netlify',
+        // The Netlify image provider proxies through a Netlify Image CDN function that only
+        // exists on deployed/Netlify-run infra, so it 404s under plain `nuxt dev`. Fall back to
+        // the passthrough provider outside production builds, or when SKIP_IMAGES is set.
+        provider: (process.env.NODE_ENV !== 'production' || process.env.SKIP_IMAGES === 'true') ? 'none' : 'netlify',
         domains: ['flowfuse.com', 'www.flowfuse.com'],
         quality: 80,
     },

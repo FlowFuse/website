@@ -8,8 +8,8 @@ useHead({
 <template>
   <div class="nohero w-full">
     <div class="w-full page hero">
-      <div class="content">
-        <div class="prose prose-blue container m-auto max-w-4xl">
+      <div class="content m-auto max-w-4xl">
+        <div class="prose prose-blue container px-6 pt-12 pb-24">
 
           <h1>FLOWFUSE INC.– SAAS SERVICES TERMS AND CONDITIONS</h1>
 
