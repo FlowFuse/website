@@ -124,7 +124,7 @@ If your flows run on a bench or power a low-stakes internal tool, the open libra
 
 But if your flows touch sensitive data, fall under industry regulations, carry any uptime obligations, or back a team that can't afford to debug alone, then the vetting, monitoring, and support you'd otherwise have to build yourself is exactly what FlowFuse provides. The value is not just in the nodes themselves - it's in handing off work that was quietly becoming yours by default.
 
-## Certified Ndoes Today
+## Certified Nodes Today
 
 Right now, FlowFuse offers [Certified Nodes](/integrations/?certified=1) across a focused, high-value set of integrations, split across two categories: FlowFuse Edge and FlowFuse Hub. This includes official support for [Redis](/node-red/flowfuse/hub/redis) under Hub, and the [CIP Suite](/node-red/flowfuse/edge/cip-suite) for Allen-Bradley/EtherNet-IP devices, [OPC UA](/node-red/flowfuse/edge/opcua/) and [RTSP](/node-red/flowfuse/edge/rtsp/) under Edge. We're actively expanding this catalogue, with major additions planned in the coming weeks to cover even more devices and systems.
 
