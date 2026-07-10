@@ -8,7 +8,6 @@ authors: ["sumit-shinde"]
 image: /blog/2025/10/images/building-mcp-server-node-red-with-ff.png
 video: C8UFc66onHQ
 keywords: Node-RED MCP Server, Node-RED AI, Model Context Protocol, AI agents within Node-RED
-video: troUvaF8V68
 tags:
   - flowfuse
   - AI
