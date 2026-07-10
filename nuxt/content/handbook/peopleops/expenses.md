@@ -204,15 +204,10 @@ such as travel and ticket fees.
 Licenses and software assets can be purchased for third-party software will be
 useful for particular tasks, efforts and processes at FlowFuse.
 
-If you are seeking a license of software that we do not currently use, put
-together a short summary as to the costs associated with the licenses and
-describe the value that the software would provide. If it would modify the way
-in which the company operates, then the best place to present this is as a PR to
-the Handbook. With approval from the CEO and CTO you can proceed with the
-acquisition of the licenses.
+If you are seeking a license for software we do not currently use, file an issue in the [flowfuse/admin](https://github.com/FlowFuse/admin/issues/new?template=vendor-process.md) project summarizing the costs associated with the license and the value the software would provide. Assign this issue to the CEO or CTO, and follow the steps in the issue to get the necessary approvals before proceeding with the acquisition. If the new software would modify the way in which the company operates, also raise this as a PR to the Handbook.
 
 When seeking an additional license for existing software we pay for, file an
-issue in the [flowfuse/admin][gh-admin]{rel="nofollow"} project to request it
+issue in the [flowfuse/admin](https://github.com/FlowFuse/admin/issues/new?template=vendor-process.md) project to request it
 to be provisioned with a justification on the expenditure. Assign this issue to
 the CEO or CTO.
 
