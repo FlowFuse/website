@@ -748,6 +748,13 @@ h4:hover .header-anchor::before {
     background-size: cover;
 }
 
+.solution-section-bg-flipped {
+    background: url('/images/home/home-solution-background.svg');
+    background-position: bottom;
+    background-size: cover;
+    transform: rotate(180deg);
+}
+
 .ff-image-top-rounded img,
 .ff-image-top-rounded picture {
     @apply rounded-t-lg;
