@@ -79,7 +79,7 @@ Only the source and sink nodes are protocol-specific. The transform stages of a 
 Because this suite is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering, make sure your account has access before installing. Contact our [sales team](/contact-us/) if you don't.
 
 {% note %}
-Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 ### Install via the Palette Manager (recommended)
