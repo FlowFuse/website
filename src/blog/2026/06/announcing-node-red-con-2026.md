@@ -42,7 +42,7 @@ encouraged, but any project you're proud of is welcome.
 automation, AI in industrial environments, IoT security, or the future of 
 low-code development.
 
-[Submit your talk](https://papercall.io/node-red-con-2026) **CFP closes Friday, July 31, 2026.**
+[Submit your talk](https://nrcon.nodered.org/) **CFP closes Friday, July 31, 2026.**
 
 ## Why speak
 
