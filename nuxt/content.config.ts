@@ -65,6 +65,65 @@ export default defineContentConfig({
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
             })
+        }),
+        blog: defineCollection({
+            type: 'page',
+            source: 'blog/**',
+            schema: z.object({
+                subtitle: z.string().optional(),
+                description: z.string().optional(),
+                date: z.date(),
+                lastUpdated: z.date().optional(),
+                authors: z.array(z.string()).default([]),
+                image: z.string().optional(),
+                video: z.string().optional(),
+                tags: z.array(z.string()).default([]),
+                tldr: z.union([z.string(), z.array(z.string())]).optional(),
+                keywords: z.string().optional(),
+                cta: z.object({
+                    type: z.string().optional(),
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
+                meta: z.record(z.string(), z.any()).optional(),
+            })
+        }),
+        // Author data — reads directly from 11ty's src/_data (not duplicated).
+        blogTeam: defineCollection({
+            type: 'data',
+            source: {
+                include: '*.json',
+                cwd: '../src/_data/team',
+            },
+            schema: z.object({
+                order: z.number().optional(),
+                name: z.string(),
+                title: z.string().optional(),
+                github: z.string().optional(),
+                linkedin: z.string().optional(),
+                twitter: z.string().optional(),
+                country: z.string().optional(),
+                email: z.string().optional(),
+                headshot: z.string().optional(),
+                bio: z.string().optional(),
+            })
+        }),
+        blogGuests: defineCollection({
+            type: 'data',
+            source: {
+                include: '*.json',
+                cwd: '../src/_data/guests',
+            },
+            schema: z.object({
+                name: z.string(),
+                title: z.string().optional(),
+                github: z.string().optional(),
+                linkedin: z.string().optional(),
+                twitter: z.string().optional(),
+                country: z.string().optional(),
+                headshot: z.string().optional(),
+                bio: z.string().optional(),
+            })
         })
     }
 })

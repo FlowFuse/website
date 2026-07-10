@@ -8,7 +8,12 @@ const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/integrations', '/res
 const NUXT_ROUTE_PREFIXES = ['/integrations/']
 
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/blog']
+
+// Blog post images still live under src/blog/**/images and are only passthrough-copied
+// into nuxt/public/ during a production 11ty build — in dev they only exist via 11ty's
+// own dev server output, so keep proxying them there even though /blog is Nuxt-owned.
+const BLOG_IMAGE_PATTERN = /^\/blog\/\d{4}\/\d{2}\/images\//
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
@@ -23,6 +28,9 @@ export default defineEventHandler(async (event) => {
     const normalised = pathWithoutQuery.replace(/\/$/, '') || '/'
     if (NUXT_ROUTES.has(normalised)) return
     if (NUXT_ROUTE_PREFIXES.some(prefix => pathWithoutQuery.startsWith(prefix))) return
+
+    // Blog post images: always proxy to 11ty, even though /blog is otherwise Nuxt-owned.
+    if (BLOG_IMAGE_PATTERN.test(pathWithoutQuery)) return proxyRequest(event, `http://localhost:8080${path}`)
 
     // Let Nuxt handle migrated path prefixes
     if (NUXT_PREFIXES.some(prefix => normalised === prefix || normalised.startsWith(prefix + '/'))) return

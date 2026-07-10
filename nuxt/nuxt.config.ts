@@ -1,6 +1,9 @@
 import { readdirSync, statSync } from 'node:fs'
 import { join, basename } from 'node:path'
 import remarkHandbookLinks from './utils/remark-handbook-links'
+import remarkBlogImages from './utils/remark-blog-images'
+import { blogTags } from './utils/blogTags'
+import { fixupBlogNunjucks } from './utils/blog-nunjucks-fixup'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -14,6 +17,29 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
             routes.push(slug === 'index' ? `${basePath}/` : `${basePath}/${slug}/`)
         }
     }
+    return routes
+}
+
+// Collect all blog post routes (year/month folders under src/blog) for SSG prerendering,
+// plus the index and each tag's first listing page. Pagination beyond page 1 is served
+// via a `?page=` query param at runtime (queried against @nuxt/content's API), not prerendered.
+function collectBlogRoutes(dir: string): string[] {
+    const routes: string[] = ['/blog/', ...blogTags.filter(t => t.value !== 'posts').map(t => `/blog/${t.value}/`)]
+
+    for (const year of readdirSync(dir)) {
+        const yearPath = join(dir, year)
+        if (!statSync(yearPath).isDirectory()) continue
+        for (const month of readdirSync(yearPath)) {
+            const monthPath = join(yearPath, month)
+            if (!statSync(monthPath).isDirectory()) continue
+            for (const file of readdirSync(monthPath)) {
+                if (!file.endsWith('.md')) continue
+                const slug = basename(file, '.md')
+                routes.push(`/blog/${year}/${month}/${slug}/`)
+            }
+        }
+    }
+
     return routes
 }
 
@@ -65,6 +91,7 @@ export default defineNuxtConfig({
     // This alias makes that import resolvable in the Vite bundle context.
     alias: {
         'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
+        'blog-images': join(__dirname, 'utils/remark-blog-images'),
     },
 
     app: {
@@ -116,6 +143,7 @@ export default defineNuxtConfig({
                 '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                 '/resources/publications/',
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                ...collectBlogRoutes(join(__dirname, 'content/blog')),
             ],
             crawlLinks: false
         }
@@ -135,6 +163,13 @@ export default defineNuxtConfig({
             nitroConfig.prerender = nitroConfig.prerender || {}
             nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
             console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)
+        },
+
+        // Blog posts are 11ty markdown and some embed raw Nunjucks tags 11ty resolves
+        // at build time — resolve/strip them before @nuxt/content parses the markdown.
+        'content:file:beforeParse' (ctx: { file: { path: string, body: string } }) {
+            if (!ctx.file.path.includes('/blog/')) return
+            ctx.file.body = fixupBlogNunjucks(ctx.file.body)
         }
     },
 
@@ -158,6 +193,7 @@ export default defineNuxtConfig({
                 },
                 remarkPlugins: {
                     'handbook-links': { instance: remarkHandbookLinks },
+                    'blog-images': { instance: remarkBlogImages },
                 },
             },
         },
