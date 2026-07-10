@@ -5,7 +5,7 @@ description: "FlowFuse Certified Nodes take the vetting, security monitoring, an
 date: 2026-07-10
 keywords: flowfuse certified nodes, node-red security, vetted nodes, node-red compliance, industrial node-red, node-red support, secure node-red deployment
 authors: ["kristopher-sandoval"]
-image: 
+image: /blog/2026/07/images/why-certified-nodes.png
 tags:
 - flowfuse
 meta:
