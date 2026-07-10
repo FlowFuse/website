@@ -90,7 +90,7 @@ The OPC UA nodes then appear in your palette, ready to drag onto the canvas.
 !["The OPC UA nodes in the Node-RED palette"](./images/opcua/node-palette.png "The OPC UA nodes in the Node-RED palette"){data-zoomable}
 
 {% note %}
-Existing devices and hosted instances will not see newly added nodes until they are restarted. Restart any instance you plan to install nodes on so it picks up the updated catalogue.
+Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 {% note %}
