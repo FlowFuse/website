@@ -70,7 +70,7 @@ That's what FlowFuse Certified Nodes are for. A Certified Node is one FlowFuse h
 FlowFuse certifies a node against three pillars, each aimed at a specific failure mode.
 
 ### Quality
-Every Certified Node is tested for operational reliability and compatibility, so it behaves predictably across versions instead of surprising you in production. This means no more guesswork, no more deep vetting, and significantly quicker time to value. We pick only the best-in-class OSS nodes, sub-license best-in-class properietary nodes, and build custom integrations for FlowFuse users. This means you get true best-in-class integrations in a single catalog - with no need to select new vendors or navigate complex licenses.
+Every Certified Node is tested for reliability and compatibility, so it behaves consistently across versions and in production. This reduces the vetting work on your end and shortens time to value. We select proven open-source nodes, sub-license proprietary nodes where it makes sense, and build custom integrations when needed. The result is one catalogue of dependable integrations, without having to evaluate new vendors or manage separate licenses.
 
 ### Security
 FlowFuse implements secure design and architecture by default, and this process extends to the Certified Nodes platform. Every node is checked, validated, and then secured via ongoing reviews per an SLA. This means that you don't stress, especially when fixes are time sensitive, converting a worry-mode update-fest to a smooth 5-minute task.
