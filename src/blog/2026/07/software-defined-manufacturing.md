@@ -1,6 +1,6 @@
 ---
-title: "Software-Defined Manufacturing: Why FlowFuse Fits the Shift"
-subtitle: "How manufacturers are improving factories through software instead of hardware changes"
+title: "Software-Defined Manufacturing: How Factories Improve Without New Hardware"
+subtitle: "Why manufacturing improvement is shifting from one-off hardware projects to a growing library of connected applications"
 description: "Software-defined manufacturing (SDM) is changing how factories improve operations. Learn what SDM means, why traditional manufacturing software falls short, and how FlowFuse helps manufacturers build and manage industrial applications that evolve without large-scale modernization projects."
 date: 2026-07-09
 authors: ["sumit-shinde"]
@@ -26,80 +26,70 @@ cta:
 tldr: "Software-defined manufacturing (SDM) shifts how factories improve: instead of changing hardware, manufacturers build and evolve software that connects, orchestrates, and adapts existing equipment. FlowFuse provides the platform to build, deploy, and manage these industrial applications with version control and GitOps-based deployments, letting manufacturers start small and expand without large-scale modernization projects."
 ---
 
-For decades, improving a manufacturing process usually meant changing hardware.
-
-Need another inspection step? Update the PLC program. Want to collect more production data? Install another system. Introducing a new workflow often meant bringing in a vendor, modifying equipment, or planning a maintenance window.
+For a long time, improving a manufacturing process meant touching the equipment itself. Need another inspection step? An engineer reprograms the PLC on-site. Need more production data? Install another system. Want a new workflow? That often meant modifying equipment, bringing in a vendor, or scheduling downtime.
 
 <!--more-->
 
-Today, that's changing.
+That was simply how factories evolved.
 
-PLCs, robots, and production equipment still perform the physical work, but software increasingly determines how systems connect, exchange information, and adapt to changing business needs.
+Today, the machines are still there. PLCs still control equipment, robots still move products, sensors still collect data. But many improvements now happen in software instead. Manufacturers are connecting machines, production systems, enterprise software, and cloud services in ways that weren't common a few years ago, building dashboards, maintenance workflows, quality applications, and production reports without constantly changing the machines themselves.
 
-That's the idea behind **software-defined manufacturing (SDM)**: a production paradigm where control logic, process orchestration, and operational intelligence are decoupled from specific, proprietary hardware and run in a virtualized, software-centric layer instead. The factory's machines are still the machines, but their "personality" (what they do, how they coordinate, and how quickly they can change) increasingly comes from software rather than from rewiring cabinets or reprogramming each PLC by hand.
+That's the idea behind **software-defined manufacturing (SDM)**: separating control logic, process orchestration, and operational intelligence from any single piece of hardware, and running them instead in a software layer that sits above the equipment. The machines don't change. What changes is how quickly and easily they can be connected, coordinated, and improved, through software updates instead of rewiring cabinets or reprogramming individual PLCs.
 
-## Manufacturing Is Becoming Software-Driven
+Some in the industry, including analysts at [ARC Advisory Group](https://www.arcweb.com/glossary/what-software-defined-manufacturing-sdm) and [Deloitte](https://www.deloitte.com/us/en/services/consulting/articles/software-defined-manufacturing.html), describe the fuller vision of SDM as extending all the way to AI-driven optimization and autonomous, agent-based production, where software doesn't just orchestrate equipment but continuously improves how it runs. That broader picture is real, but it starts with the same foundational shift: getting control logic and orchestration out of rigid, single-purpose implementations and into a software layer that can evolve. This article focuses on that foundational layer, the practical, incremental part of SDM that most manufacturers are building toward today.
 
-Manufacturing isn't the first industry to make this shift.
+## Manufacturing Is Becoming More Software-Centric
 
-Networking evolved into software-defined networking, and storage followed with software-defined storage. In both cases, capabilities that once depended on dedicated hardware became software running on standard infrastructure.
+Manufacturing isn't the first industry to move this way. Networking became software-defined networking. Storage became software-defined storage. Instead of adding dedicated hardware every time a new capability was needed, software took on more responsibility for configuring, managing, and coordinating those systems.
 
-Manufacturing is now moving in the same direction, though the underlying constraints are different. A factory floor has real-time control requirements, safety certifications, and physical machines with decades-long service lives that a data center switch never has to contend with. So the shift looks less like "replace the hardware with software" and more like "add a software layer that lets the same hardware be reconfigured, orchestrated, and improved without physically touching it."
+Manufacturing follows a similar pattern, with one important difference: factories still depend on deterministic control, safety systems, and equipment that may stay in production for twenty years or longer. Those systems aren't going away, but what runs around them increasingly is software rather than hardware.
 
-For years, machines operated largely in isolation. PLCs controlled equipment, operators worked through HMIs, and production data rarely travelled beyond a SCADA system or historian. Today, that same data needs to reach quality systems, maintenance teams, ERP platforms, cloud services, and increasingly, AI models.
+Software sits above those systems, connecting them, exchanging data between them, and coordinating what happens around the production process. That's increasingly important because factory data no longer stays inside the plant. Maintenance teams, quality systems, MES platforms, ERP software, historians, cloud services, and sometimes AI applications all need it. Adding a dashboard, connecting a new machine, or automating a maintenance process has become more of a software project than a hardware one. The equipment stays where it is; the software around it keeps evolving.
 
-As a result, improving a factory increasingly means improving the software that connects, orchestrates, and makes sense of these systems rather than changing the machines themselves.
+## Why Traditional Manufacturing Software Starts to Struggle
 
-Adding a quality inspection, integrating a new machine, introducing a production dashboard, or automating a maintenance workflow is increasingly becoming a software project. The hardware stays the same while the software around it continues to evolve.
+The problem is that much of today's manufacturing software wasn't designed to change this often. Many industrial systems were built around a single large implementation: install it, customize it, train everyone, then leave it running for years. That worked when production changed slowly. It becomes much harder when operations are constantly looking for new reports, additional integrations, better visibility, or another workflow. Even small requests, like adding a dashboard, connecting another PLC, or integrating a maintenance system, can turn into large projects.
 
-For manufacturers facing shorter product lifecycles, greater customization, and constant pressure to improve efficiency, that flexibility is becoming a competitive advantage.
+Vendor lock-in makes this worse. Many industrial platforms depend on proprietary tools or tightly coupled software, so even straightforward improvements take longer than expected because every change runs through the same platform.
 
-## Traditional Manufacturing Software Falls Short
+Most factories also aren't starting with a clean slate. A single production line might include PLCs installed fifteen years ago alongside modern robots, vision systems, industrial PCs, barcode scanners, cloud services, and enterprise software. The challenge usually isn't replacing those systems. It's getting them to work together reliably.
 
-The challenge is that much of today's manufacturing software wasn't built for continuous change.
+Software governance adds another layer. Manufacturing teams already have strict processes for changing production equipment; software needs the same discipline. Teams need to know what version is running, who changed it, when it was deployed, and how to roll back if something goes wrong. Without that, software becomes difficult to maintain as more applications get added across the factory. Large modernization projects don't really fix this either, since they often take months or years to deliver value, by which point the business has usually moved on to the next requirement.
 
-Many industrial platforms were designed around large implementation projects. They were deployed, customized, and expected to remain largely unchanged for years. That approach worked when production changed slowly, but modern manufacturing doesn't.
+## Building Applications That Can Grow
 
-Vendor lock-in makes even small improvements difficult when applications depend on proprietary tools or tightly coupled hardware.
+Software-defined manufacturing takes a different approach. Instead of one large application trying to handle everything, manufacturers build smaller applications that each solve a specific problem. Those applications work together, but they don't all have to change at the same time.
 
-Then there's the reality of existing factories. Most production lines combine decades-old PLCs with modern robots, vision systems, cloud platforms, and IIoT devices. Connecting all of these technologies is often harder than replacing any one of them.
+Imagine a packaging machine stops unexpectedly. One application records the downtime for OEE. Another updates the production dashboard. Another notifies the maintenance team. Later, the quality team adds an inspection step. Only the quality application needs to change. The downtime application keeps running. The dashboard doesn't need to be touched. Maintenance continues working the same way.
 
-Software change management is another challenge. Manufacturing teams carefully control changes to production equipment, but software updates don't always follow the same discipline. Manual deployments and undocumented changes make it difficult to know what's running on the factory floor.
+Each application evolves independently, which makes the whole system easier to understand, test, and improve over time. The PLC still controls the machine; the software extends what happens around it, connecting systems, sharing information, automating workflows, and giving different teams the information they need. It's the same decoupling principle behind software-defined networking and storage, applied to the factory floor: the hardware stays fixed, and the software layer above it is what keeps changing.
 
-Large transformation projects add even more complexity. They often take months, or even years, to deliver value, and by the time they're complete, production requirements have already changed.
+## From Software Projects to a Software Platform
 
-Manufacturing software needs to evolve continuously, not through occasional large-scale upgrades.
+Building an industrial application is no longer the difficult part.
 
-## Building Industrial Applications That Can Evolve
+The difficult part is what happens after that application proves its value.
 
-Software-defined manufacturing takes a different approach.
+It gets deployed to another production line. Another factory wants the same solution with a few changes. A new machine needs to be connected. Another dashboard is requested. Before long, what started as one successful application becomes dozens running across multiple lines, plants, and teams.
 
-Instead of building one large manufacturing application, manufacturers build smaller applications that each solve a specific operational problem while working together as part of a broader system.
+That's when software-defined manufacturing stops being a development challenge and becomes an operational one.
 
-Imagine a packaging machine stops unexpectedly. One application records downtime for OEE. Another updates the production dashboard. A third creates a maintenance notification. If the quality team later adds another inspection step, only that application needs to change. The rest of the system continues running without modification.
+Manufacturers need more than a way to build applications. They need a consistent way to deploy them, manage them, update them, secure them, and scale them across the organization without every site becoming its own isolated software project.
 
-This makes manufacturing software easier to improve because applications can evolve independently instead of as one tightly coupled system. It also aligns with the broader idea of software-defined manufacturing. Existing PLC logic doesn't need to be replaced. Instead, it can be exposed through services and orchestrated at a higher level, allowing software to extend manufacturing processes without changing machine control. It's similar to how a smartphone's hardware stays the same while new capabilities are added through apps.
+This is the role FlowFuse plays.
 
-FlowFuse provides the platform to build, deploy, and manage these industrial applications. It connects PLCs, industrial devices, databases, enterprise systems, and cloud services while providing version control and GitOps-based deployments so teams can review, track, and deploy changes consistently. With [FlowFuse 2.32](/blog/2026/07/flowfuse-release-2-32/#pipelines-connect-to-any-git-server), DevOps Pipelines support any Git server, including self-hosted GitLab, Bitbucket, Gitea, and other Git platforms accessible over HTTPS. That means manufacturers can adopt GitOps using the Git infrastructure they already have instead of moving repositories to a different service. If you'd like to learn more about how GitOps applies to manufacturing, read our article, **[Why Manufacturing Needs GitOps](/blog/2026/07/gitops-for-manufacturing/)**.
+Rather than being another manufacturing application, FlowFuse provides the platform that manufacturers use to build, deploy, and operate industrial applications throughout their lifecycle. It creates a common operating model for software running across the factory, whether that software connects equipment, collects production data, orchestrates workflows, or integrates with enterprise systems.
 
-Manufacturers can start with a single application that solves one problem, deliver value quickly, and gradually add more applications as operational needs evolve. Over time, these applications form a software layer that can be updated, deployed, and managed independently without disrupting existing production systems.
+As more applications are introduced, that consistency becomes increasingly valuable. Teams can standardize how applications are developed, deploy them reliably to edge devices, manage changes through version control and GitOps, track every deployment with audit logs, control access through role-based permissions, and operate applications across multiple sites from a single platform.
 
-## Considerations for Software-Defined Manufacturing
+The result is that software scales with the business instead of becoming another maintenance burden. Once an application proves its value, it can be reused, adapted, and continuously improved without rebuilding the entire solution for every production line or facility.
 
-Software-defined manufacturing creates new opportunities, but it also introduces new responsibilities.
+[Arch Systems](/customer-stories/scaling-manufacturing-automation-with-flowfuse/) experienced this challenge as its manufacturing platform expanded across customer sites. Connecting more than 100 production databases and MES systems manually was slowing every deployment. By building reusable integration components and deploying them through FlowFuse, Arch standardized its rollout process and propagated changes across production environments from a single platform.
 
-As production systems become more connected, secure access, audit logging, role-based permissions, and controlled deployments become essential parts of day-to-day operations. Each new software application at the edge is also a new point that needs to be secured, not just built.
+That same approach extends to existing development practices. FlowFuse DevOps Pipelines support GitHub, GitLab, Bitbucket, Gitea, and other Git servers, allowing manufacturers to adopt GitOps workflows without changing the infrastructure they already use.
 
-Low-code development also doesn't replace engineering expertise. Building reliable industrial applications still requires a solid understanding of manufacturing processes, control systems, and operational requirements. Real-time control loops and safety-rated functions in particular still belong on certified, deterministic hardware and PLC logic. SDM adds a coordination and orchestration layer on top of that; it doesn't replace it.
+Software-defined manufacturing isn't simply about writing software for factories. It's about creating a repeatable way to operate software as it becomes part of everyday manufacturing. FlowFuse provides the platform that turns individual software projects into a scalable software-defined manufacturing environment.
 
-Most importantly, modernization is a journey. Manufacturers don't need to transform everything at once. They can start with one problem, prove its value, and continue building from there.
+## Where Manufacturing Is Heading
 
-## The Direction Manufacturing Is Heading
-
-Software-defined manufacturing isn't about replacing PLCs, robots, or production equipment. It's about making factories easier to improve, reconfigure, and orchestrate through software.
-
-The manufacturers making the most progress aren't replacing entire production lines. They're solving operational problems one application at a time, creating software that can adapt as production requirements change.
-
-That's where FlowFuse fits. It gives manufacturers a practical way to build, deploy, and manage industrial applications that evolve alongside the factory instead of requiring large-scale modernization projects.
-
-As software becomes a bigger part of manufacturing, the competitive advantage won't come from having the newest equipment. It will come from improving existing operations faster, more safely, and more continuously.
+The factories that adapt fastest over the next decade won't necessarily be the ones with the newest equipment. They'll be the ones that can turn one operational problem into one working application, then reuse and extend it the next time the same problem shows up on another line or at another site. That's the real shift behind software-defined manufacturing: not a single large modernization project, but a growing library of applications that connect existing equipment, adapt as requirements change, and compound in value over time. FlowFuse is the platform manufacturers use to build that library, one application, one production line, one factory at a time.
