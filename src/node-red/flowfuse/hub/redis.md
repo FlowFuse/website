@@ -48,7 +48,7 @@ Connections are pooled per config node, so pointing many nodes at the same serve
 4. Locate `@flowfuse-certified-nodes/redis` and click **Install**.
 
 {% note %}
-Existing devices and hosted instances will not pick up newly installed nodes until they are restarted. Restart any instance you plan to use the node on after installing.
+Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 ## Nodes in this package

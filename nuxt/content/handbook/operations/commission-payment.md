@@ -83,6 +83,8 @@ After processing commission, update the Ops Plan spreadsheet (AE productivity ta
 
 Add this task as a recurring calendar reminder on the first Monday or Tuesday of each month.
 
+If an employee did not close any deals that month, use the values of zero and send them an email for confirmation.
+
 ### Email template that should be used:
 
 Subject line: `Commission for [Month] [YYYY]`.
