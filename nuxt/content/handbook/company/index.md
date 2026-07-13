@@ -51,7 +51,7 @@ FlowFuse's Dun (DUNS number) and Bradstreet ID is: `11-899-4742`
 
 ### SOC2 Type 2 report
 
-Our 2025, and at this time latest, SOC2 Type 2 report can be found [on our internal Google Drive](https://drive.google.com/file/d/1uBzNvSMaJXZLA24bjJmoDO8mOoUdZG4t/view?usp=sharing).
+Our 2026, and at this time latest, SOC2 Type 2 report can be found [on our internal Google Drive](https://drive.google.com/drive/u/1/folders/1b7QpBQbRu1JyeFj2mZyHHVt3rzCqEemt).
 
 ### Tax ID
 
