@@ -81,15 +81,15 @@ Before approving an expense in Deel, please verify:
 As an all-remote company, FlowFuse provides a budget to cover the cost of
 equipment for a home office environment.
 
-The budget is available for essential items needed to perform your role at
-FlowFuse.
+The budget is available for essential items needed to perform your role at FlowFuse. 
+Expenses should be reasonable, the budget exists to set up a functional home office.
 
-For most team members, essential items include: chair, desk, monitor, headset,
-keyboard, and mouse. Items such as an external microphone, external webcam,
-additional monitors, laptop stands, lighting or laptop bag/case can also be
-considered, depending on your role. For example, if 100% of your role is
-internal-facing, you probably don't need an external microphone, especially if
-you have a new laptop with high-quality audio and headphones.
+For most team members, essential items include: monitor, headset, keyboard, and mouse. 
+Chairs and desks are covered in specific cases, see the Chairs and Desk section below. 
+Items such as an external microphone, external webcam, additional monitors, laptop stands,
+lighting or laptop bag/case can also be considered, depending on your role. For example, 
+if 100% of your role is internal-facing, you probably don't need an external microphone,
+especially if you have a new laptop with high-quality audio and headphones.
 
 Any items outside this will fall under an exception to the policy and require
 management review and approval. The following items are not reimbursable:
