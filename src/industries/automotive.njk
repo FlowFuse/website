@@ -26,18 +26,20 @@ hero:
   primaryCtaLink: "/book-demo/"
   secondaryCta: "VIEW PRICING"
   secondaryCtaLink: "/pricing/"
-  testimonial:
-    quote: "We started seeing the value of FlowFuse when we had too many instances to manage on our own. Collaborating as a team in vanilla Node-RED? We tried and failed twice. FlowFuse solved that — version control, shared environments, a platform the whole team can work in together."
-    name: "Alan Yeung"
-    title: "CTO,"
-    company: "PowerWorkplace"
-    avatar: "images/industries/automotive/testimonial-alan-yeung.png"
+  image: "/images/industries/automotive.jpg"
+  imageAlt: "Aerial view of an automotive manufacturing plant floor"
+  # testimonial:
+  #   quote: "We started seeing the value of FlowFuse when we had too many instances to manage on our own. Collaborating as a team in vanilla Node-RED? We tried and failed twice. FlowFuse solved that — version control, shared environments, a platform the whole team can work in together."
+  #   name: "Alan Yeung"
+  #   title: "CTO,"
+  #   company: "PowerWorkplace"
+  #   avatar: "images/industries/automotive/testimonial-alan-yeung.png"
   trustedByText: "Trusted by Automotive Manufacturers"
 problem:
   heading: "Not Every Production Challenge Requires a New Platform"
   description: "Most production challenges don't require new hardware or replacing existing systems. The real challenge is that PLCs, robots, SCADA, MES, historians, databases, and cloud services operate separately, creating disconnected data and manual processes. FlowFuse brings these systems together to build, deploy, and manage automotive manufacturing applications using your existing infrastructure."
-  image: "/images/industries/automotive.jpg"
-  imageAlt: "Aerial view of an automotive manufacturing plant floor"
+  image: "/images/industries/automotive-line-stoppage.jpg"
+  imageAlt: "Automotive assembly line with robotic welding stations and real-time production monitoring for line stoppage detection and incident management."
 applications:
   heading: "Applications for Automotive Manufacturing"
   description: "See how FlowFuse supports automotive manufacturers with solutions for connectivity, production visibility, downtime reduction, and operational improvement."
@@ -112,7 +114,7 @@ cta:
 ============================================================ -->
 <section class="w-full relative">
     <div class="px-6 pt-16 pb-14 md:pt-20">
-        <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-start">
+        <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-stretch">
             <div class="max-md:text-center">
                 <h1 class="text-4xl md:text-5xl font-medium m-0">
                     {{ hero.heading | safe }}
@@ -132,14 +134,24 @@ cta:
                     </a>
                 </div>
             </div>
-            <div class="relative max-md:mt-16 md:pt-6 w-full md:my-auto">
-                <div class="relative rounded-lg border border-indigo-200 p-6 pt-28 bg-indigo-50/50">
-                    <div class="absolute -top-14 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 w-36 h-36 rounded-full bg-red-200 border-4 border-white shadow-lg overflow-hidden ff-image-cover">
-                        {% image hero.testimonial.avatar, hero.testimonial.name %}
+            <div class="w-full">
+                {% if hero.testimonial and hero.testimonial.quote %}
+                <div class="relative self-start md:pt-6">
+                    <div class="relative rounded-lg border border-indigo-200 p-6 pt-28 bg-indigo-50/50">
+                        <div class="absolute -top-14 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 w-36 h-36 rounded-full bg-red-200 border-4 border-white shadow-lg overflow-hidden ff-image-cover">
+                            {% image hero.testimonial.avatar, hero.testimonial.name %}
+                        </div>
+                        <p class="italic text-gray-600 font-medium m-0">&ldquo;{{ hero.testimonial.quote }}&rdquo;</p>
+                        <p class="text-gray-500 text-right mt-4 mb-0">{{ hero.testimonial.name }}, {{ hero.testimonial.title }} <span class="font-semibold text-gray-600">{{ hero.testimonial.company }}</span></p>
                     </div>
-                    <p class="italic text-gray-600 font-medium m-0">&ldquo;{{ hero.testimonial.quote }}&rdquo;</p>
-                    <p class="text-gray-500 text-right mt-4 mb-0">{{ hero.testimonial.name }}, {{ hero.testimonial.title }} <span class="font-semibold text-gray-600">{{ hero.testimonial.company }}</span></p>
                 </div>
+                {% else %}
+                <div class="relative w-full h-full">
+                    <div class="ff-image-cover ff-image-rounded w-full h-full">
+                        {% image ["./", hero.image] | join, hero.imageAlt, [496] %}
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
         <div class="max-w-screen-lg mx-auto mt-16 text-center">
@@ -154,14 +166,14 @@ cta:
 <!-- ============================================================
      NOT EVERY PRODUCTION CHALLENGE
 ============================================================ -->
-<section class="w-full py-16 md:py-24 px-6 bg-white">
-    <div class="max-w-screen-lg mx-auto flex flex-col md:flex-row gap-12 items-center">
-        <div class="md:w-1/2">
-            <div class="rounded-lg overflow-hidden ff-image-cover aspect-[480/314]">
+<section class="w-full pb-16 md:py-24 px-6 bg-white">
+    <div class="max-w-screen-lg mx-auto flex flex-col md:flex-row gap-12 items-stretch">
+        <div class="md:w-1/2 relative">
+            <div class="ff-image-cover ff-image-rounded w-full h-full">
                 {% image ["./", problem.image] | join, problem.imageAlt, [720] %}
             </div>
         </div>
-        <div class="md:w-1/2 max-md:text-center">
+        <div class="md:w-1/2 max-md:text-center self-center">
             <h2 class="text-gray-700">{{ problem.heading }}</h2>
             <p class="text-gray-700">{{ problem.description }}</p>
         </div>
@@ -179,9 +191,9 @@ cta:
         "red": { gradient: "from-red-200 via-red-100 to-red-50", border: "border-red-100", mobileGradient: "from-red-50 to-white", mobileBorder: "border-red-100" },
         "mixed": { gradient: "from-red-200 to-indigo-100", border: "border-indigo-100", mobileGradient: "from-red-50 to-indigo-50", mobileBorder: "border-indigo-100" }
     } %}
-    <div class="max-w-screen-lg mx-auto max-md:text-center mb-28 mt-10">
-        <h2 class="text-indigo-600 text-5xl">{{ applications.heading }}</h2>
-        <p class="text-gray-600 text-2xl">{{ applications.description }}</p>
+    <div class="max-w-screen-lg mx-auto max-md:text-center mb-28 md:mt-10">
+        <h2 class="text-indigo-600 text-4xl md:text-5xl">{{ applications.heading }}</h2>
+        <p class="text-gray-600 text-lgmd:text-2xl">{{ applications.description }}</p>
     </div>
 
     <div class="md:max-w-screen-lg mx-auto">
