@@ -40,3 +40,6 @@ widen it.
 You can create and manage your tokens under **User Settings > Security > Personal Access Tokens**.
 
 This feature is available to FlowFuse Cloud users as of now and Self-Hosted users from v2.33.
+
+![Creating a new scoped Personal Access Token](./images/scoped-pats.png){data-zoomable}
+*Creating a new scoped Personal Access Token*
