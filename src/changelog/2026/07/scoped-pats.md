@@ -27,15 +27,14 @@ operation will be rejected.
 ## Admin opt-in
 
 Tokens created by admin users no longer carry admin privileges by default. When you create a new token, it behaves as a regular user token, using your team
-roles instead of the admin bypass. If you need the token to have admin capabilities, you have to explicitly check the admin opt-in option.
+roles instead of full admin access. If you need the token to have admin capabilities, you have to explicitly check the admin opt-in option.
 
 Existing admin-owned tokens have been migrated with admin opt-in enabled, so they continue to work as before. Only newly created tokens default to
 non-admin.
 
 ## How scoping works
 
-A token's effective permissions are always the intersection of your real permissions and the token's restrictions. Scoping can only narrow access, never
-widen it.
+These options allow you to narrow the scope of a token's permissions; you cannot create a token with more access than your user has.
 
 You can create and manage your tokens under **User Settings > Security > Personal Access Tokens**.
 
