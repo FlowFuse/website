@@ -45,7 +45,7 @@ and includes everything around it, consisting of:
 1. **Use case definition**: the customer problem and outcome, written
    customer-centric.
 2. **Differentiation**: why FlowFuse over the alternatives, the "why us".
-3. **Product application**: the use case implemented in FlowFuse, as a demo
+3. **Product application**: how we or the customer take the use case to production as a demo
    and, where possible, a blueprint anyone can deploy.
 4. **Onboarding journey**: how we or the customer get the use case
    implemented, from first interest to production, supported by blueprints,
