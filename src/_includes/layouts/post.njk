@@ -29,28 +29,20 @@
                 {% if subtitle %}
                     <h4>{{ subtitle | safe }}</h4>
                 {% endif %}
-                <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-gray-500 mt-4">
-                    <span class="flex flex-wrap items-center gap-1">
-                        <span>By</span>
-                        {% set comma = joiner() %}
-                        {%- for author in authors %}
-                            {{ comma() }} <span class="font-medium">{{ people[author].name if people[author] else 'FlowFuse' }}</span>{% if people[author] and people[author].title %}<span class="text-gray-400">, {{ people[author].title }}</span>{% endif %}
-                        {%- endfor %}
-                        <span class="text-gray-300">|</span>
-                        {%- if lastUpdated -%}
-                        <time datetime="{{ lastUpdated | dateToRfc3339 }}">Updated {{ lastUpdated | shortDate }}</time>
-                        {%- else -%}
-                        <time datetime="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
-                        {%- endif -%}
-                        <span class="text-gray-300">|</span>
-                        <span>{{ content | readingTime }} min read</span>
-                    </span>
-                    <a class="ff-btn ff-btn--highlight !font-normal !text-sm !py-1 !px-3 max-sm:mx-auto"
-                       href="https://www.google.com/preferences/source?q=flowfuse.com"
-                       target="_blank"
-                       rel="noopener">
-                        <span class="items-center">Make us a preferred source</span>
-                    </a>
+                <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
+                    <span>By</span>
+                    {% set comma = joiner() %}
+                    {%- for author in authors %}
+                        {{ comma() }} <span class="font-medium">{{ people[author].name if people[author] else 'FlowFuse' }}</span>{% if people[author] and people[author].title %}<span class="text-gray-400">, {{ people[author].title }}</span>{% endif %}
+                    {%- endfor %}
+                    <span class="text-gray-300">|</span>
+                    {%- if lastUpdated -%}
+                    <time datetime="{{ lastUpdated | dateToRfc3339 }}">Updated {{ lastUpdated | shortDate }}</time>
+                    {%- else -%}
+                    <time datetime="{{ date | dateToRfc3339 }}">{{ date | shortDate }}</time>
+                    {%- endif -%}
+                    <span class="text-gray-300">|</span>
+                    <span>{{ content | readingTime }} min read</span>
                 </div>
             </div>
         </div>
@@ -112,6 +104,16 @@
             <div class="w-72 max-w-full flex-shrink-0">
                 <div class="mt-6 flex flex-col">
                     {% include "layouts/toc.njk" %}
+                    <div class="mb-6 pt-6 border-t-2">
+                        <h3 class="mb-3">Prefer FlowFuse in Search</h3>
+                        <a class="text-sm font-medium text-blue-700 hover:text-blue-800 hover:underline"
+                           href="https://www.google.com/preferences/source?q=flowfuse.com"
+                           target="_blank"
+                           rel="noopener">
+                            Add flowfuse.com as a preferred source
+                        </a>
+                        <p class="text-xs text-gray-500 mt-1 mb-0">On the page that opens, check the box next to flowfuse.com to see more of our articles in your results.</p>
+                    </div>
                 </div>
                 <div class="sticky top-20">
                     {%- set postsToShow = collections.posts | relatedPosts -%}
