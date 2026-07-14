@@ -5,7 +5,7 @@ sitemapPriority: 0.90
 faqTitle: "Frequently Asked <span class='text-indigo-600'>Questions</span>"
 faqSubtitle: "If you have any questions not addressed here, don't hesitate to contact us through our <a href='/contact-us'>Contact Us</a> page"
 meta:
-    description: Discover the pricing options for FlowFuse, featuring Starter, Pro, and Enterprise plans. Benefit from volume discounts on Pro and Enterprise plans. Get started with a 14-day trial period for the Pro plan.
+    description: Discover the pricing options for FlowFuse, featuring Starter, Pro, and Enterprise plans. Benefit from volume discounts on Pro and Enterprise plans. Get started with a 30-day trial period for the Pro plan.
     keywords: FlowFuse pricing, Cost, Plans, Features, Cloud, Self-hosted
     faq:
         - question: "Does FlowFuse offer annual discounts for FlowFuse Cloud?"
@@ -56,7 +56,7 @@ hubspot:
             <div class="pricing-tile-background pb-6">
                 <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
                     <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                        <h4 style="display:inline-block;">Starter</h4>
+                        <h2 class="text-2xl font-medium" style="display:inline-block;">Starter</h2>
                     </div>
                     {% if cloud %}
                     <p class="mt-7"><span class="inline font-normal">Cloud-hosted Node-RED</span> with FlowFuse development enhancements. The fastest way to <span class="inline font-normal">get started building </span>with Node-RED.</p>
@@ -127,7 +127,7 @@ hubspot:
                         <div class="pricing-tile-background pb-6">
                             <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
                                 <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                    <h4 style="display:inline-block;">Pro</h4>
+                                    <h2 class="text-2xl font-medium" style="display:inline-block;">Pro</h2>
                                 </div>
                                 <p class="mt-7"><span class="inline font-normal">Build bespoke applications collaboratively</span>, manage your Node-RED applications with improved security and control.</p>
                             </div>
@@ -181,7 +181,7 @@ hubspot:
                         <div class="pricing-tile-background pb-6">
                             <div class="flex flex-col items-center text-left md:flex-row md:px-0 md:block">
                                 <div class="flex flex-row justify-between mt-4 w-full gap-x-2">
-                                    <h4 style="display:inline-block;">Enterprise</h4>
+                                    <h2 class="text-2xl font-medium" style="display:inline-block;">Enterprise</h2>
                                 </div>
                                 <p class="mt-7">Operate <span class="inline font-normal">organization-wide</span> industrial applications with the highest security and integrity.</p>
                             </div>
@@ -246,7 +246,7 @@ hubspot:
         <div id="feature-comparison" class="product w-full px-6 md:px-0 md:pt-6">
             <!-- Scroll to anchor -->
             <div class="flex flex-col items-center mb-14 md:mb-0 -mt-4">
-                <a href="#feature-comparison-table" onclick="scrollToAnchor(event, 'feature-comparison-table')">
+                <a href="#feature-comparison-table" onclick="scrollToAnchor(event, 'feature-comparison-table')" aria-label="Scroll to feature comparison table">
                     {% include "components/icons/chevron-down.svg" %}
                 </a>
             </div>
@@ -440,4 +440,12 @@ hubspot:
     function closeInfo(id, hosting) {
         document.getElementById("ff-dialog--feature--" + id + "-" + hosting).classList.remove('active')
     }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            var activeDialog = document.querySelector('.ff-dialog-container.active');
+            if (activeDialog) {
+                activeDialog.classList.remove('active');
+            }
+        }
+    });
 </script>

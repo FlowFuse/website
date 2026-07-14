@@ -26,6 +26,8 @@ The problem isn't unique to integration systems, but it hits them harder. Integr
 
 The good news is it's a solvable problem. The first step is knowing you have it. Before you read further, take two minutes to assess where your team stands today.
 
+### Bus Factor Calculator
+
 <iframe src="https://bus-factory-problem-dashboard.flowfuse.cloud/dashboard/bus-factory-calculator" width="100%" height="650px" frameborder="0"></iframe>
 
 Now you know where you stand. The rest of this article explains how integration systems end up here, why documentation alone never fixes it, and what it actually takes to change it.
@@ -78,7 +80,7 @@ For a team inheriting flows they didn't build, this changes the equation signifi
 
 <lite-youtube
   videoid="YRc1DwkghRs"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/03/images/ff-expert-explaining-flow.jpeg'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/03/images/ff-expert-explaining-flow.jpeg'); background-size: cover; background-position: center;"
   title="FlowFuse Expert Explaining Selected Flow">
 </lite-youtube>
 

@@ -3,6 +3,8 @@ title: Scaling Manufacturing Automation with FlowFuse
 description: Arch Systems leverages FlowFuse and Node-RED to integrate MES systems, automate 100+ databases, and deliver scalable, real-time manufacturing data processing.
 image: /images/stories/arch_systems.jpeg
 date: 2025-09-29
+usecase:
+  - production-monitoring
 logo:
 hubspot:
     formId: ef56a0ea-7b50-4eed-b6aa-cf5421233e03

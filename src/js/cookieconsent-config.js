@@ -91,6 +91,27 @@ function applyAnalyticsConsent (options) {
     }
 }
 
+function clearLinkedInCookiesFallback () {
+    var linkedInCookiePattern = /^(_li_dcdm_c|_li_ss|li_sugr|lidc|bcookie|bscookie|UserMatchHistory)$/;
+    var cookieNames = document.cookie.split(';').map(function (part) {
+        return part.split('=')[0].trim();
+    }).filter(function (name) {
+        return linkedInCookiePattern.test(name);
+    });
+
+    var host = window.location.hostname;
+    var hostParts = host.split('.');
+    var rootDomain = hostParts.length > 2 ? hostParts.slice(1).join('.') : host;
+    var domains = ['', host, '.' + host, rootDomain, '.' + rootDomain];
+
+    cookieNames.forEach(function (name) {
+        domains.forEach(function (domain) {
+            var domainPart = domain ? '; domain=' + domain : '';
+            document.cookie = name + '=; Max-Age=0; path=/' + domainPart + '; SameSite=Lax';
+        });
+    });
+}
+
 function applyAdsConsent (options) {
     var accepted = options.accepted;
     var emitEvent = !!options.emitEvent;
@@ -101,6 +122,10 @@ function applyAdsConsent (options) {
         'ad_personalization': accepted ? 'granted' : 'denied',
         'personalization_storage': accepted ? 'granted' : 'denied'
     });
+
+    if (!accepted) {
+        clearLinkedInCookiesFallback();
+    }
 
     if (emitEvent) {
         gtag('event', 'cookie_consent', {
@@ -204,12 +229,24 @@ CookieConsent.run({
                     },
                     {
                         name: /^warmly_/
+                    },
+                    {
+                        name: /^_lc2_/
                     }
                 ],
                 reloadPage: false
             }
         },
-        ads: {}
+        ads: {
+            autoClear: {
+                cookies: [
+                    {
+                        name: /^(_li_dcdm_c|_li_ss|li_sugr|lidc|bcookie|bscookie|UserMatchHistory)$/
+                    }
+                ],
+                reloadPage: false
+            }
+        }
     },
     
     language: {
@@ -248,7 +285,7 @@ CookieConsent.run({
                         },
                         {
                             title: "Analytics Cookies",
-                            description: "We use tools including Google Analytics, HubSpot tracking, PostHog, and warmly.ai to understand how visitors interact with our website. This category enables HubSpot tracking, meeting embeds, and the chat widget.",
+                            description: "We use tools including Google Analytics, HubSpot tracking, PostHog, warmly.ai, and Swan AI to understand how visitors interact with our website. This category enables HubSpot tracking, meeting embeds, and the chat widget.",
                             linkedCategory: "analytics"
                         },
                         {

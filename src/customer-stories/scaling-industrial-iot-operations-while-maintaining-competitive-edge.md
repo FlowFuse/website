@@ -3,6 +3,8 @@ title: Scaling Industrial IoT Operations While Maintaining Competitive Edge
 description: Discover how Walter built a future-proof industrial application platform with FlowFuse—connecting machines, unifying data, and scaling operations without increasing IT overhead.
 image: /images/stories/walter.png
 date: 2025-12-16
+usecase:
+  - production-monitoring
 logo:
 hubspot:
     formId: 1cab86cb-5c81-40ab-be4b-a6ae94f38ac8

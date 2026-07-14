@@ -9,10 +9,12 @@ authors: ["sumit-shinde"]
 image: /blog/2026/02/images/shopfloor-to-ai.png
 tags:
 - flowfuse
+- ai
 cta:
   type: contact
   title: Build the Architecture Your AI Actually Needs
   description: FlowFuse helps you connect industrial systems, enrich signals with context, and publish to a Unified Namespace so your AI finally has something useful to work with.
+tldr: "Industrial AI fails not because of bad models but because raw signals lack the operational context product recipe, maintenance history, ambient conditions that makes them meaningful. A Unified Namespace built with FlowFuse and Node-RED unites the signal layer, context layer, and human decision layer so AI can provide real-time answers grounded in what is actually happening on the shop floor."
 ---
 
 Your industrial AI initiative is dying. Maybe it's already dead.

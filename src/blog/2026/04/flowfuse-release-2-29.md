@@ -10,6 +10,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 release: "2.29"
 features:
    - id: git-integration-azure
@@ -23,6 +24,7 @@ cta:
   type: sign-up
   title: Try the latest FlowFuse improvements in your own environment
   description: Use Expert to take action in your editor, connect Azure DevOps to your workflow, and see exactly what changed between snapshots.
+tldr: "FlowFuse 2.29 brings three main updates: FlowFuse Expert is now available for self-hosted enterprise customers and can execute actions directly in the Node-RED editor; Azure DevOps is now a supported Git provider for GitOps workflows; and snapshot comparisons now include a property-level diff sidebar with git-style line diffs. The release also ships Node-RED 4.1.8 as a stack option."
 ---
 
 FlowFuse 2.29 gives teams more control over how flows move through their stack, makes it easier to understand what changed between versions, and brings FlowFuse Expert to self-hosted enterprise customers.

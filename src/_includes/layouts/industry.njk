@@ -1,0 +1,207 @@
+---
+layout: default
+---
+<div class="w-full">
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <div class="w-full px-6">
+        <div class="w-full py-10 sm:py-12 md:pt-6">
+            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+                <div class="m-auto md:w-1/2">
+                    <h1 class="w-full mt-0 m-auto font-medium sm:text-5xl">
+                        {{ hero.heading | safe }}
+                    </h1>
+                    <p class="mb-10 text-gray-600">{{ hero.description }}</p>
+                    <div class="md:mt-3 gap-2 hidden md:flex md:flex-col md:items-start md:justify-start">
+                        <div class="flex gap-4 items-center flex-row">
+                            <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
+                                href="{{ hero.primaryCtaLink }}"
+                                onclick="capture('cta-book-demo', {'position': 'hero', 'page': '{{ slug }}'})">
+                                <span class="text-base uppercase items-center">
+                                    {{ hero.primaryCta }}
+                                </span>
+                            </a>
+                            <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                                href="{{ hero.secondaryCtaLink }}"
+                                onclick="capture('cta-contact', {'position': 'hero', 'page': '{{ slug }}'})">
+                                <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                {{ hero.secondaryCta }}
+                                {% include "components/icons/arrow-right.svg" %}
+                                </span>
+                            </a>
+                        </div>
+                        <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex-grow relative">
+                    <div class="ff-image-cover ff-image-rounded w-full h-full">
+                        {% image ["./", hero.image] | join, hero.imageAlt, [496] %}
+                    </div>
+                </div>
+                <div class="flex flex-col md:hidden gap-3 mt-8 items-center">
+                    <div class="flex flex-row gap-4 items-center justify-center flex-wrap">
+                        <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
+                            href="{{ hero.primaryCtaLink }}"
+                            onclick="capture('cta-book-demo', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
+                            <span class="text-base uppercase items-center">
+                                {{ hero.primaryCta }}
+                            </span>
+                        </a>
+                        <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                            href="{{ hero.secondaryCtaLink }}"
+                            onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
+                            <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
+                                {{ hero.secondaryCta }}
+                                {% include "components/icons/arrow-right.svg" %}
+                            </span>
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         THE PROBLEM TODAY
+    ============================================================ -->
+    <div class="w-full py-16 sm:py-24 px-6 bg-white">
+        <div class="max-w-screen-lg mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="max-md:text-center">{% if problemTitle %}{{ problemTitle | safe }}{% else %}<span class="text-red-600">The Problem</span> Today{% endif %}</h2>
+                    <ul class="mt-6 flex flex-col gap-6 list-none p-0 m-0">
+                        {% for problem in problems %}
+                        <li class="flex items-start gap-3 items-center">
+                            <span class="flex-shrink-0 w-12 h-12 bg-red-300 rounded-full flex items-center justify-center text-white">
+                                <span class="w-6 h-6">{% include "components/icons/x-mark.svg" %}</span>
+                            </span>
+                            <p class="text-gray-700 m-0 pt-2">{{ problem }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:order-first [&>svg]:max-w-full [&>svg]:h-auto">
+                    {% include problemImage %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         WHAT YOU GET WITH FLOWFUSE
+    ============================================================ -->
+    <div class="w-full bg-[radial-gradient(ellipse_120%_120%_at_50%_120%,theme(colors.indigo.600)_0%,theme(colors.indigo.900)_100%)] py-16 sm:py-24 px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-white max-md:text-center">{{ solution.title }}</h2>
+                    <ul class="mt-8 flex flex-col gap-6 list-none p-0 m-0">
+                        {% for benefit in solution.benefits %}
+                        <li class="flex items-start gap-6 items-center">
+                            <span class="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
+                                <span class="w-6 h-6">{% include benefit.svgPath %}</span>
+                            </span>
+                            <p class="text-indigo-100 m-0 font-light">{{ benefit.text | safe }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center [&>svg]:max-w-full [&>svg]:h-auto">
+                    {% include solutionImage %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         KEY OUTCOMES
+    ============================================================ -->
+    <div class="w-full py-16 sm:py-24 px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <div class="flex flex-col md:flex-row gap-12">
+                <h2 class="md:w-1/4 max-md:text-center"><span class="text-indigo-600">{{ outcomes.title }}</span> {{ outcomes.subtitle }}</h2>
+                <div class="md:w-3/4 flex flex-col gap-4">
+                    {% for item in outcomes.items %}
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-5 flex items-center gap-6">
+                        <div class="flex-shrink-0 w-8 h-8 text-indigo-500 mt-0.5">
+                            {% include item.svgPath %}
+                        </div>
+                        <p class="m-0 text-xl font-light">
+                            <strong>{{ item.title }}</strong> {{ item.description }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         USE CASES
+    ============================================================ -->
+    <div class="w-full py-16 px-6 comparison-section-bg">
+        <div class="max-w-screen-lg mx-auto">
+            <h2 class="text-center text-indigo-600 mb-10">{{ useCases.title }}</h2>
+            {% if useCases.groups %}
+                {% for group in useCases.groups %}
+                <div class="mb-10">
+                    <h3 class="text-sm font-semibold uppercase text-indigo-400 mb-4">{{ group.label }}</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                        {% for item in group.items %}
+                        <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
+                            <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
+                                {% image ["./", item.image] | join, item.imageAlt, [400] %}
+                            </div>
+                            <p class="m-0 py-1">{{ item.description | safe }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    {% for item in useCases.items %}
+                    <div class="flex flex-col gap-3 rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
+                        <div class="w-full h-48 ff-image-cover rounded overflow-hidden">
+                            {% image ["./", item.image] | join, item.imageAlt, [400] %}
+                        </div>
+                        <p class="m-0 py-1">{{ item.description | safe }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ============================================================
+         SOCIAL PROOF
+    ============================================================ -->
+    <div class="w-full py-12 px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="text-center text-indigo-800 font-semibold mb-6">{{ socialProofText }}</p>
+            <div class="max-md:max-w-xl max-md:mx-auto">
+                {% include "social-proof.njk" %}
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         CTA
+    ============================================================ -->
+    <div class="w-full px-6 pb-24">
+        <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10">
+            <h3 class="mb-4 w-full text-center">{{ cta.title }}</h3>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">{{ cta.description }}</p>
+            <div class="flex justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
+                    href="{{ cta.buttonLink }}"
+                    onclick="capture('cta-book-demo', {'position': 'cta', 'page': '{{ slug }}'})">
+                    {{ cta.buttonText }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

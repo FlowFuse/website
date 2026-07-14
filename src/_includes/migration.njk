@@ -4,7 +4,11 @@
             <div>
                 <div
                     class="ff-file-drop-zone"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Upload a flow.json file. Click or press Enter to choose a file, or drag and drop."
                     onclick="openFilePicker();"
+                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openFilePicker();}"
                     ondrop="dropHandler(event);"
                     ondragover="dragOverHandler(event);">
                     <div id="drag-instruction">

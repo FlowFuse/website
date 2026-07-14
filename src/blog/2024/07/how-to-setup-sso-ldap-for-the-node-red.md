@@ -257,7 +257,7 @@ Slappasswd -g
 
 3. Click on "Settings" from the left sidebar and switch to the SSO section.
 
-!["Screenshot showing the sso section in the admin settings"](./images/setting's-sso-setting-section.png "Screenshot showing the sso section in the admin settings")
+!["Screenshot showing the sso section in the admin settings"](./images/settings-sso-setting-section.png "Screenshot showing the sso section in the admin settings")
 
 4. Click on the top-right "Create SSO configuration".
 

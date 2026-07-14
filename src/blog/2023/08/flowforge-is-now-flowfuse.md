@@ -1,14 +1,37 @@
 ---
 title: "FlowForge is now FlowFuse"
+lastUpdated: 2026-06-03
 subtitle: New identity but same vision for industrial data integration
 description: FlowForge is being renamed to FlowFuse. Our mission and commitment to our customers stays the same.
 date: 2023-08-17
 authors: ["zeger-jan-van-de-weg"]
 image: "/blog/2023/08/images/flowforge-is-now-flowfuse.jpg"
+keywords: flowforge rebrand, flowfuse announcement, flowforge renamed flowfuse, flowfuse company name, node-red platform rebrand
 tags:
     - posts
     - community
     - news
+cta:
+  type: sign-up
+  title: "Welcome to FlowFuse"
+  description: "The name has changed but the mission hasn't. Sign up for FlowFuse and start building powerful Node-RED applications in a secure, collaborative, and scalable platform."
+meta:
+  faq:
+    - question: "Why did FlowForge change its name to FlowFuse?"
+      answer: "FlowForge changed its name to FlowFuse following a trademark challenge. The new name was chosen to better reflect the company's mission of fusing together data, ideas, processes, and technologies."
+    - question: "What does the name FlowFuse mean?"
+      answer: "Just as electricity fuses elements to create energy, the FlowFuse platform fuses data, ideas, processes, and technologies to generate innovation and transformation for industrial applications."
+    - question: "Does the rebrand affect the product or platform?"
+      answer: "No. The underlying software, platform capabilities, and cloud service remain unchanged. Only the name and branding are being updated across the website, social media, and product releases."
+    - question: "Will FlowForge Cloud be renamed?"
+      answer: "Yes. FlowForge Cloud and the FlowForge open source edition will be renamed to FlowFuse in upcoming releases. Technical details were to be shared when the changes were made."
+    - question: "Does FlowFuse keep the FF acronym?"
+      answer: "Yes. Keeping the FF acronym was one of the requirements for the new name, which helps maintain consistency in environment variable prefixes and other technical references."
+    - question: "What happens to existing FlowForge accounts and data?"
+      answer: "Existing accounts and data are unaffected. The rebrand is a renaming exercise; the platform, features, and customer commitments remain exactly the same."
+    - question: "How long did the rebranding rollout take?"
+      answer: "The rebranding was announced on 2023-08-17 and was planned to roll out over the following days and weeks, covering the website, social media accounts, and product releases."
+tldr: "FlowForge is rebranding to FlowFuse following a trademark challenge, with the new name chosen to better reflect the company's mission of fusing data, processes, and technologies together. The product, platform, and cloud service remain unchanged; the rebrand will roll out across the website, social media, and product releases over the following weeks."
 ---
 
 We are happy to announce that FlowForge is changing its name to FlowFuse. Changing our corporate identity wasn’t our top priority but a recent trademark challenge has promoted us to create a new brand for our company. 

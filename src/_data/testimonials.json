@@ -1,15 +1,25 @@
 [{
   "id": "testimonial1",
+  "imageFile": "./images/stories/walter.png",
+  "imageAlt": "Walter Tools manufacturing facility",
+  "quote": "Without FlowFuse, I would be able to support maybe one production unit, but that's it. […] It's not just about connecting machines - it's about creating the foundation that makes everything else possible",
+  "url": "/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/",
+  "author": "Felix Reck, IT Application Manager",
+  "company": "Walter",
+  "companyLogo": "./images/walter-icon.png"
+},
+{
+  "id": "testimonial2",
   "imageFile": "./images/home/home-arch.png",
   "imageAlt": " a man and woman looking at an Arch System Dashboard.",
-  "quote": "FlowFuse’s enterprise features complement our broader platform strategy, helping us scale automation and streamline deployments across complex manufacturing environments.",
+  "quote": "FlowFuse's enterprise features complement our broader platform strategy, helping us scale automation and streamline deployments across complex manufacturing environments.",
   "url": "/customer-stories/scaling-manufacturing-automation-with-flowfuse/",
   "author": "Sevan Petrosian, Senior Application Engineer",
   "company": "Arch Systems",
   "companyLogo": "./images/arch-icon.png"
 },
 {
-  "id": "testimonial2",
+  "id": "testimonial3",
   "imageFile": "./images/home/power.png",
   "imageAlt": " a 3d image of an office with sensors.",
   "quote": "FlowFuse removes concerns about scalability and reliability. It also makes it a lot easier for us to complete security audits for our customers.",
@@ -19,7 +29,7 @@
   "companyLogo": "./images/power-workplace-icon.png"
 },
 {
-  "id": "testimonial3",
+  "id": "testimonial4",
   "imageFile": "./images/home/pidd.png",
   "imageAlt": " a dam in an artificial river.",
   "quote": "FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future.",

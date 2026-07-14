@@ -8,10 +8,12 @@ authors: ["sumit-shinde"]
 image: /blog/2026/04/images/modbus-polling-best-practices.jpg
 tags:
 - flowfuse
+- modbus
 cta:
   type: contact
   title: Need help fixing your Modbus setup?
   description: If your system is still dropping data or behaving unpredictably, reach out. We can help review your polling configuration and identify what is actually causing the instability.
+tldr: "Most Modbus polling problems aren't hardware failures they're three configuration mistakes made at commissioning: polling all registers at a single scan rate instead of tiering by how fast data changes, setting timeouts based on intuition instead of measured device response times, and batching registers aggressively across gaps in the register map. Each mistake produces silent failures that trace back to configuration decisions that are straightforward to fix once identified."
 ---
 
 **Modbus polling looks simple. It is simple. That's the problem.**
@@ -24,7 +26,7 @@ Except "working" and "working correctly" are different things in Modbus polling,
 
 The mistakes aren't exotic. They're the same ones across almost every installation: polling everything at the same rate, ignoring timeouts, stacking too many registers into single requests, or hammering slow devices with back-to-back queries they were never designed to handle. None of these are obvious from the outside because Modbus doesn't complain. It just silently drops a frame or lets the device go quiet — and your polling stack fills in the gap by returning the last successfully read value, making the problem invisible until someone notices the data has stopped changing.
 
-This article isn't about the basics of how Modbus works. If you need that, start [here](/blog/2026/01/why-modbus-still-exist/). This is about the specific configuration decisions that separate a polling setup that stays stable for years from one that causes problems at the worst possible time. Part 1 covers the three mistakes made at commissioning. Part 2 covers what happens after the system is running.
+This article isn't about the basics of how Modbus works. If you need that, start [here](/blog/2026/01/why-modbus-still-exist/). This is about the specific configuration decisions that separate a polling setup that stays stable for years from one that causes problems at the worst possible time. It covers the three mistakes made at commissioning. The next article covers what happens after the system is running.
 
 ## The Myth of the Universal Scan Rate
 
@@ -139,4 +141,6 @@ The three problems this article covers, scan rate uniformity, timeout miscalcula
 
 The fix for all three is the same kind of work: deliberate, once, documented. Tier your scan rates to match how fast your data actually changes. Calculate your timeouts from the physics of your network rather than accepting defaults. Read the register map before you batch. None of this takes long. None of it requires downtime. It just requires treating these as decisions rather than defaults.
 
-If you've made these changes and your installation is still misbehaving, the problem is in the operational layer: how your polling architecture handles the network and devices once they're running. That's what Part 2 covers: serial versus TCP failure modes, unresponsive device handling, live diagnostics, and how to fix what you find without taking production down.
+If you've made these changes and your installation is still misbehaving, the problem is in the operational layer: how your polling architecture handles the network and devices once they're running. The next article covers that: serial versus TCP failure modes, unresponsive device handling, live diagnostics, and how to fix what you find without taking production down.
+
+For a complete guide to connecting Modbus PLCs — alongside OPC UA, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

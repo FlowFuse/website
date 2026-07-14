@@ -1,16 +1,76 @@
 ---
-title: How to add images to Node-RED dashboards when using FlowFuse
+title: "How to add images to Node-RED dashboards when using FlowFuse (2026)"
 subtitle: Import your images into your Node-RED dashboards, wherever you are running your instances
 description: Learn to enhance Node-RED dashboards with images using FlowFuse. Pull images from URLs, store locally, and serve them in your dashboards.
+lastUpdated: 2026-06-03
 date: 2023-07-21
-lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
 image: blog/2023/07/images/add-images-in-node-red-header.png
+keywords: node-red dashboard images, node-red static assets, flowfuse static asset service, base64 image node-red, node-red image display, dashboard image upload, node-red docker images
 tags:
     - posts
     - flowfuse
     - node-red
     - dashboard
+    - how-to
+cta:
+  type: sign-up
+  title: "Start Building Better Node-RED Dashboards"
+  description: "Sign up for FlowFuse and use the Static Asset Service to easily add and manage images in your Node-RED dashboards — no filesystem access required."
+meta:
+  howto:
+    name: "How to Add Images to Node-RED Dashboards"
+    description: "Learn how to display images in Node-RED dashboards by pulling them from URLs, storing them locally, and serving them using FlowFuse's Static Asset Service."
+    totalTime: "PT20M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "@flowfuse/node-red-dashboard"
+      - "node-red-contrib-string"
+      - "node-red-node-base64"
+    steps:
+      - name: "Access the Static Assets Service"
+        text: "Log into your FlowFuse account, navigate to your Node-RED instance, and click on the Static Assets Service tab."
+        url: "easily-add-images-to-node-red-dashboards-with-flowfuses-static-asset-service"
+      - name: "Upload your image"
+        text: "Optionally create a folder, then click Upload to select and confirm your image file."
+        url: "easily-add-images-to-node-red-dashboards-with-flowfuses-static-asset-service"
+      - name: "Copy the image path"
+        text: "Click the copy icon next to the uploaded image to get the path for use in Node-RED."
+        url: "easily-add-images-to-node-red-dashboards-with-flowfuses-static-asset-service"
+      - name: "Set up the image flow in Node-RED"
+        text: "Add an inject node and a read file node in the Node-RED editor, pasting the copied file path into the Filename field."
+        url: "easily-add-images-to-node-red-dashboards-with-flowfuses-static-asset-service"
+      - name: "Prepare the image for display"
+        text: "Add a string node to convert the buffer to base64, then use a change node to assemble the data URI."
+        url: "easily-add-images-to-node-red-dashboards-with-flowfuses-static-asset-service"
+      - name: "Display the image in the dashboard"
+        text: "Add a ui-template node with an img tag using msg.payload as the src attribute and connect all nodes together."
+        url: "easily-add-images-to-node-red-dashboards-with-flowfuses-static-asset-service"
+      - name: "Pull images from URLs and store locally"
+        text: "Use the provided flow to download images from URLs, convert them to base64, and save them to local Node-RED storage."
+        url: "the-flows"
+      - name: "Load stored images into the dashboard"
+        text: "Use the second flow to read images from local storage, prepare them as data URIs, and display them in the correct dashboard sections."
+        url: "the-flows"
+  faq:
+    - question: "Can I display images in Node-RED dashboards without access to the filesystem?"
+      answer: "Yes. FlowFuse's Static Asset Service lets you upload images directly through the FlowFuse UI and serve them to your dashboard without needing filesystem access, making it ideal for Docker and Kubernetes environments."
+    - question: "What is the FlowFuse Static Asset Service?"
+      answer: "It is a built-in feature of FlowFuse that allows you to upload, organize, and serve static files — such as images — to your Node-RED instances without writing to the host operating system's filesystem."
+    - question: "How do I convert an image to base64 in Node-RED?"
+      answer: "Install the node-red-node-base64 node, connect it after your file-read node, and it will convert the binary buffer to a base64 string that you can use as a data URI in a ui-template img tag."
+    - question: "What custom nodes are needed to display images in a Node-RED dashboard?"
+      answer: "You need @flowfuse/node-red-dashboard for the dashboard UI, node-red-contrib-string for filename manipulation, and node-red-node-base64 to encode the image data."
+    - question: "Why is pulling images from a URL better than storing them statically?"
+      answer: "Pulling images from a URL ensures the correct images are always displayed regardless of where Node-RED is hosted, which is particularly important when moving instances through a DevOps pipeline."
+    - question: "Does the FlowFuse DevOps pipeline support static assets?"
+      answer: "As of the time this article was written, moving Node-RED instances through a FlowFuse DevOps pipeline does not automatically carry static assets; this feature was expected in future updates."
+    - question: "Can I cache images locally to improve dashboard load times?"
+      answer: "Yes. The flows demonstrated in this article download images from URLs and save them to Node-RED's local storage so they load quickly when a user opens the dashboard."
+    - question: "What Node-RED nodes does FlowFuse provide for file handling?"
+      answer: "FlowFuse provides its own file and file-in nodes that integrate with the FlowFuse platform. If you are running Node-RED outside of FlowFuse, replace them with the standard Node-RED file and file-in nodes."
+tldr: "This guide covers multiple methods for displaying images in Node-RED dashboards, including pulling from URLs, encoding files as base64, and serving them via FlowFuse's Static Asset Service. The Static Asset Service approach is the simplest option for containerized environments like Docker or Kubernetes where writing to the local filesystem is not practical."
 ---
 
 Using images in your Node-RED dashboards can significantly improve your users' experience. The most common method to add images to dashboards is to store them within the filesystem of an Node-RED instance but sometimes that's not an option. How can you easily use images when working in a containerized environment such as Docker, or Kubernetes? We will also explore latest feature from FlowFuse that makes this step super easy.

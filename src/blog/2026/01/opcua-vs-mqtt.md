@@ -2,13 +2,40 @@
 title: "MQTT vs OPC UA: Why This Question Never Has a Straight Answer"
 subtitle: "Why comparing MQTT and OPC UA is a category error, and how to choose based on requirements rather than marketing"
 description: "MQTT vs OPC UA isn't a real choice; they solve different problems. Learn when to use each protocol based on your actual requirements, not vendor marketing."
-lastUpdated: 2026-01-24
+lastUpdated: 2026-06-17
 date: 2026-01-21
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/opcua-vs-mqtt.png
 keywords: MQTT vs OPC UA, MQTT protocol, OPC UA protocol, industrial communication, IIoT architecture, OPC UA PubSub, MQTT Sparkplug
 tags:
  - flowfuse
+ - opcua
+ - mqtt
+meta:
+  faq:
+    - question: "Is MQTT better than OPC UA?"
+      answer: "Neither is better; the comparison is a category error. MQTT is a lightweight publish-subscribe messaging protocol that moves bytes, while OPC UA is a semantic framework that describes what data means. They solve different problems and are often used together."
+    - question: "What is the difference between MQTT and OPC UA?"
+      answer: "MQTT moves small messages efficiently over unreliable networks with minimal overhead and no concept of data types. OPC UA defines a rich, self-describing information model with typed nodes, metadata, methods, and integrated security. Both operate at the application layer but address different architectural concerns."
+    - question: "Can OPC UA and MQTT be used together?"
+      answer: "Yes. Real factories commonly use OPC UA for machine-to-machine coordination and MQTT for high-frequency telemetry. OPC UA Part 14 (PubSub) can even use MQTT as its transport, combining semantic type information with MQTT messaging."
+    - question: "When should I use MQTT instead of OPC UA?"
+      answer: "Use MQTT when collecting data from thousands of remote assets, over cellular or satellite links where bandwidth costs matter, or when scaling horizontally to massive device fleets. Its 2-byte header and roughly 50-byte messages make it ideal for battery-powered or bandwidth-constrained sensors."
+    - question: "When should I use OPC UA instead of MQTT?"
+      answer: "Use OPC UA when systems must share a common understanding of what data means, such as an MES coordinating production states with machines. It excels for plant-floor integration over reliable networks where semantic interoperability, discovery, state, and historical access matter."
+    - question: "What is OPC UA PubSub?"
+      answer: "OPC UA PubSub, defined in Part 14 of the specification, is a publish-subscribe model that can use MQTT as its transport. An OPC UA server publishes address space updates as MQTT messages encoded with OPC UA type information, combining semantic richness with messaging efficiency."
+    - question: "Does Unified Namespace (UNS) replace the choice between MQTT and OPC UA?"
+      answer: "No. UNS is an integration pattern that centralizes data flow through a central MQTT broker, but it doesn't eliminate protocol choice; it relocates it to the edge. Machines still speak OPC UA, and edge gateways translate that data to MQTT Sparkplug before publishing to the UNS broker."
+    - question: "How do MQTT and OPC UA differ in security?"
+      answer: "OPC UA integrates security into its specification, requiring certificate-based authentication, message signing, and encryption from every implementation. MQTT delegates security to the broker and transport layer, so two MQTT brokers can have completely different security characteristics depending on configuration."
+    - question: "What is MQTT Sparkplug B and how does it relate to OPC UA?"
+      answer: "Sparkplug B adds structured payloads with type definitions and metric metadata to MQTT, inspired by OPC UA's semantic modeling. Instead of just carrying a value like 72.4, a Sparkplug message carries the type, engineering units, and timestamp alongside the value."
+    - question: "How do I choose between MQTT and OPC UA for an industrial project?"
+      answer: "Map your data flows first, then evaluate each connection against four factors: semantic requirements, network constraints, native protocol support, and scale characteristics. Choose OPC UA where systems must share meaning, MQTT where efficiency and scale matter, and OPC UA PubSub when you need both."
+    - question: "Why does bandwidth overhead differ so much between MQTT and OPC UA?"
+      answer: "MQTT uses a 2-byte header and compact binary format, so a temperature reading consumes roughly 50 bytes. OPC UA uses hundreds of bytes to kilobytes per value due to security handshakes, message signatures, and type information, making it costly over per-megabyte cellular links but negligible over plant ethernet."
+tldr: "MQTT and OPC UA are not competing solutions; MQTT efficiently moves messages while OPC UA defines what data means, and they often work together. Choose per data flow based on semantic requirements, network constraints, native protocol support, and scale rather than picking one protocol for everything. Use OPC UA where systems must share meaning, MQTT where bandwidth and scale matter, and OPC UA PubSub (or MQTT Sparkplug) when both matter."
 cta:
   type: contact
   title: Stop Choosing Protocols. Start Mapping Requirements.
@@ -258,3 +285,5 @@ The right question isn't "MQTT or OPC UA?"
 It's "MQTT where? OPC UA where? Both where?"
 
 Answer that based on your requirements, not vendor marketing.
+
+For a practical guide to connecting PLCs via both OPC UA and MQTT in FlowFuse — alongside EtherNet/IP, Siemens S7, and Modbus — see the [FlowFuse PLC integration overview](/landing/plc/).

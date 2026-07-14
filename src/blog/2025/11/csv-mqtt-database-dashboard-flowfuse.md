@@ -2,12 +2,81 @@
 title: "How to Ingest CSV Logs into MQTT, Databases, and Dashboards"
 subtitle: "Turn old CSV logs into live data streams using FlowFuse."
 description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards. Build real-time and batch processing pipelines with Node-RED and FlowFuse."
+lastUpdated: 2026-06-17
 date: 2025-11-10
 authors: ["sumit-shinde"]
 image: /blog/2025/11/images/how-to-ingest-csv-logs.png
 keywords: CSV ingestion, MQTT broker, Node-RED, FlowFuse, industrial data, PLC logging, SCADA systems, real-time data pipeline, batch processing, database integration, data visualization, manufacturing data, Node-RED dashboard, sensor data, time-series data, industrial IoT, data orchestration, legacy systems integration
 tags:
   - flowfuse
+  - mqtt
+meta:
+  howto:
+    name: "Ingest CSV Logs into MQTT, Databases, and Dashboards with FlowFuse"
+    description: "Read CSV log files from PLCs and SCADA systems and route them to MQTT brokers, databases, and dashboards using Node-RED and FlowFuse, with both real-time and batch processing pipelines."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "MQTT broker"
+      - "PostgreSQL database (FlowFuse Tables)"
+      - "Watch node"
+      - "Change node"
+      - "Read File node"
+      - "CSV node"
+      - "Function node"
+      - "ff-mqtt-out node"
+      - "ff-mqtt-in node"
+      - "Query node"
+      - "FlowFuse Dashboard (ui-chart)"
+    steps:
+      - name: "Build the real-time data pipeline"
+        text: "Monitor CSV files for changes and immediately publish new data to MQTT topics for live dashboards, alerting, and real-time coordination between systems."
+        url: "real-time-data-pipeline"
+      - name: "Monitor CSV files"
+        text: "Use a Watch node to monitor a directory, a Change node to set msg.filename via JSONata, and a Read File node to read the file as a single utf8 string when a file is created or modified."
+        url: "step-1-monitoring-csv-files"
+      - name: "Parse CSV data"
+        text: "Connect a CSV node configured with comma separator, RFC4180 parser, first row as column names, parse numerical values, and output as a single message array to convert raw text into structured objects."
+        url: "step-2-parsing-csv-data"
+      - name: "Extract the latest record"
+        text: "Use a Function node to take only the last row of the parsed array so just the most recent data point is published to MQTT."
+        url: "step-3-extracting-the-latest-record"
+      - name: "Publish to MQTT"
+        text: "Add a Change node to enrich the payload with context, then use the ff-mqtt-out node with an ISA-95 topic hierarchy and an appropriate QoS level (QoS 1 for reliable delivery) to publish the data."
+        url: "step-4-publishing-to-mqtt"
+      - name: "Build the batch processing pipeline"
+        text: "Read CSV files on a schedule and write data to databases in efficient batches for historical storage, trend analysis, and reporting."
+        url: "batch-processing-pipeline"
+      - name: "Visualize CSV data on a dashboard"
+        text: "Install the FlowFuse Dashboard, subscribe to the MQTT topic with an ff-mqtt-in node, and add a ui-chart line widget mapped to payload properties to display real-time temperature data."
+        url: "visualizing-csv-data-on-dashboard"
+  faq:
+    - question: "What does this tutorial help you build?"
+      answer: "It shows how to read CSV log files, whether real-time or historical, and route them to MQTT brokers, databases, and dashboards using Node-RED and FlowFuse."
+    - question: "Why ingest CSV logs from PLCs and SCADA systems?"
+      answer: "PLCs, legacy SCADA systems, and custom applications often log data directly to CSV files. These systems are reliable but were not built to integrate with MQTT brokers or databases, so the data must be read and ingested after the files are written to make it accessible to modern systems."
+    - question: "What are the prerequisites for this guide?"
+      answer: "You need a running FlowFuse instance, CSV log files with industrial data, access to an MQTT broker, and access to a database. Enterprise accounts include built-in MQTT broker and database services, so no external setup is required."
+    - question: "What is the difference between the real-time and batch processing pipelines?"
+      answer: "The real-time pipeline monitors CSV files for changes and immediately publishes new data to MQTT topics for live dashboards and alerting. The batch processing pipeline reads CSV files on a schedule and writes data to databases in efficient batches, suited for historical storage, trend analysis, and reporting."
+    - question: "How are CSV files monitored for changes in real time?"
+      answer: "A Watch node continuously monitors a directory and triggers whenever a file is created or modified, then a Change node sets the filename and a Read File node reads the contents as a single utf8 string."
+    - question: "How should the CSV node be configured to parse the data?"
+      answer: "Set the separator to comma, the parser to RFC4180, check 'First row contains column names' and 'Parse numerical values', and set output to 'a single message [array]'. This converts the raw text into an array of objects with named properties."
+    - question: "How do you publish only the latest reading to MQTT?"
+      answer: "Because the entire file is read each time it changes, a Function node extracts only the last row of the parsed array (rows[rows.length - 1]) so just the most recent data point is published."
+    - question: "What MQTT topic structure does the tutorial recommend?"
+      answer: "It recommends an ISA-95 hierarchy in the form company/site/area/line/cell/device/measurement, for example acme/tokyo/assembly/line-a/press-01/temperature."
+    - question: "Which QoS level should you use when publishing to MQTT?"
+      answer: "Use QoS 1 for reliable delivery so data reaches subscribers even with brief network issues. QoS 0 is suitable for high-frequency non-critical data, and QoS 2 for critical data."
+    - question: "How does the batch pipeline avoid inserting duplicate rows?"
+      answer: "A Function node tracks how many rows have already been processed using flow context (lastRowCount) and only passes new rows since the last run by slicing the array, updating the count after each run."
+    - question: "Why use batch inserts instead of writing each row individually?"
+      answer: "A single transaction containing many rows is far more efficient than many separate transactions. A 'Prepare Batch Insert' Function node builds a parameterized SQL INSERT with placeholders for all new rows so they are written in one transaction."
+    - question: "How do you visualize the ingested data on a dashboard?"
+      answer: "Install the @flowfuse/node-red-dashboard palette, subscribe to the MQTT topic with an ff-mqtt-in node, and add a ui-chart line widget with append action and timescale x-axis, mapping series to msg.payload.device, x to msg.payload.timestamp, and y to msg.payload.value."
+tldr: "This tutorial shows how to turn static CSV logs from PLCs and SCADA systems into live data using FlowFuse and Node-RED. It covers a real-time pipeline that watches CSV files and publishes the latest readings to MQTT, and a batch pipeline that reads files on a schedule and writes new rows to a database in efficient batches. Finally, it visualizes the data on a real-time FlowFuse Dashboard line chart."
 ---
 
 If you work in manufacturing, you likely have gigabytes of data in CSV files—temperature logs, production counts, machine status records. The data exists and is organized, but it's not accessible to the systems that need it.

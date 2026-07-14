@@ -1,19 +1,67 @@
 ---
-title: How to Build an Admin Dashboard with Node-RED Dashboard 2.0
+title: "How to Build an Admin Dashboard with Node-RED Dashboard 2.0 (2026)"
 subtitle: A guide to building an Admin Dashboard in Node-RED with Dashboard 2.0
 description: Discover step-by-step instructions for developing an admin-only page in Node-RED Dashboard 2.0 using the FlowFuse Multiuser addon. Additionally, learn how to secure Dashboard 2.0 and explore the features of the FlowFuse multiuser addon.
+lastUpdated: 2026-06-03
 date: 2024-04-08
 authors: ["sumit-shinde"]
 image: /blog/2024/04/images/admin-dashboard.png
+keywords: node-red admin dashboard, admin panel node-red dashboard 2, admin-only page node-red, flowfuse multiuser dashboard, role-based access node-red dashboard
 tags:
    - posts
    - dashboard 2.0
    - admin dashboard
    - admin-only page
+   - how-to
 cta:
-  type: demo
-  title: Build Dashboards Your Whole Team Can Use
-  description: FlowFuse makes it simple to secure Node-RED dashboards with user authentication, role-based access, and multi-user support. See how teams are building production-grade dashboards on the same platform.
+  type: sign-up
+  title: Build Secure Admin Dashboards with Node-RED and FlowFuse
+  description: FlowFuse makes it simple to secure Node-RED dashboards with user authentication, role-based access control, and multi-user support — so you can control exactly who sees what in your production dashboards.
+meta:
+  howto:
+    name: "How to Build an Admin Panel in Node-RED with Dashboard 2.0"
+    description: "Learn how to create a secure admin-only page in Node-RED Dashboard 2.0 by enabling FlowFuse user authentication, installing the Multiuser Addon, storing an admin list in global context, and dynamically showing or hiding pages based on user role."
+    totalTime: "PT30M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "Node-RED Dashboard 2.0"
+      - "FlowFuse Multiuser Addon"
+    steps:
+      - name: "Enable FlowFuse user authentication"
+        text: "In the FlowFuse instance settings, enable user authentication to add a login page that restricts dashboard access to registered FlowFuse users and exposes logged-in user data."
+        url: "enabling-flowfuse-user-authentication"
+      - name: "Install and explore the FlowFuse Multiuser Addon"
+        text: "Install the FlowFuse Multiuser Addon for Dashboard 2.0 to access logged-in user data such as username on the dashboard."
+        url: "exploring-flowfuse-multiuser-addon"
+      - name: "Store a list of admin users in global context"
+        text: "Use an inject node and a change node to write a JSON array of admin usernames to global.admins in Node-RED's global context."
+        url: "storing-a-list-of-admin-users"
+      - name: "Build the admin-only page with show/hide logic"
+        text: "Add a ui-event node, a switch node that checks if the logged-in username is in the admin list, and two change nodes that set the payload to show or hide the admin page, connected to a ui-control widget."
+        url: "building-an-admin-only-page"
+      - name: "Hide the admin page by default"
+        text: "In the Dashboard 2.0 sidebar layout tab, locate the admin page and set its visibility to hidden so regular users do not see it on first load."
+        url: "hidding-admin-only-page-by-default"
+      - name: "Deploy the flow and verify access"
+        text: "Deploy the flow, navigate to the dashboard URL, log in, and confirm that admin users see the admin page while regular users do not."
+        url: "deploying-the-flow"
+  faq:
+    - question: "How does Node-RED Dashboard 2.0 support role-based page visibility?"
+      answer: "Dashboard 2.0 allows you to show or hide entire pages dynamically by sending a JSON payload through a ui-control widget. By checking the logged-in user's role at login (via a ui-event node and switch node), you can show the admin page only to users whose username is in the admin list."
+    - question: "What is the FlowFuse Multiuser Addon and why is it needed?"
+      answer: "The FlowFuse Multiuser Addon is a Dashboard 2.0 plugin that surfaces the logged-in user's profile data (username, userId, image) in every message emitted by dashboard widgets via msg._client.user. Without it, flows cannot identify who is interacting with the dashboard."
+    - question: "How do I store the list of admin usernames in Node-RED?"
+      answer: "Use a change node to set global.admins to a JSON array of admin usernames (e.g. ['alice', 'bob']), triggered by an inject node on deploy. The switch node can then check whether msg._client.user.username is contained in that array."
+    - question: "Why should the admin page be hidden by default?"
+      answer: "Setting the admin page visibility to hidden in the Dashboard 2.0 layout tab ensures that a regular user who loads the dashboard before the ui-event fires does not briefly see the admin page. The show/hide logic then runs on the connection event and grants access only to verified admins."
+    - question: "Can I extend this pattern to support more than two roles?"
+      answer: "Yes. You can store multiple role lists in global context (e.g. global.admins, global.managers) and add additional outputs to the switch node to show different pages for each role."
+    - question: "Does this approach work for devices running Node-RED outside FlowFuse Cloud?"
+      answer: "FlowFuse user authentication and the Multiuser Addon require a FlowFuse-managed instance with the FlowFuse user authentication feature enabled. For self-hosted FlowFuse installations the same approach applies as long as the feature is configured."
+    - question: "What node triggers the admin check when a user opens the dashboard?"
+      answer: "A ui-event node configured for the relevant UI base fires whenever a user connects to or navigates within the dashboard. Its output carries msg._client.user, which the switch node uses to look up the user in the admin list stored in global context."
+tldr: "This guide shows how to build a secure admin-only page in Node-RED Dashboard 2.0 using FlowFuse user authentication and the Multiuser Addon. By storing admin usernames in global context and wiring a ui-event through a switch node to a ui-control widget, you can dynamically show or hide the admin page based on the logged-in user's role, while keeping the page hidden by default for all other users."
 ---
 
 Managing and analyzing increasing amounts of data becomes crucial for organizations. Dashboard 2.0 and Node-RED help organizations access the data, normalize it, and visualize it. But what about controlling who can access what data? That's where an admin-only page comes in. Now With Node-RED Dashboard 2.0, we can also create robust and secure admin-only pages easily. In this guide, we'll provide you with step-by-step instructions to Build an Admin-only page with Node-RED Dashboard 2.0.

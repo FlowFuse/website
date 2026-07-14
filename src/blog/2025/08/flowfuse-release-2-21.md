@@ -9,6 +9,7 @@ tags:
    - flowfuse
    - news
    - releases
+   - ai
 ---
 
 It's been a very busy release and we have many great new features available on FlowFuse that will provide a better Node-RED development experience, makes it easier to develop and interface with your Unified Namespace, provide more insight into Remote Instance performance and new low-code tooling for building your own custom Node-RED nodes.

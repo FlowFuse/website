@@ -27,6 +27,7 @@ meta:
     answer: "Follow one causal chain completely before exploring alternatives. Pick the most likely path, implement corrective actions, and verify results. If the problem persists, investigate other paths."
   - question: "How do I know if my corrective action actually worked?"
     answer: "Track relevant metrics for 3-6 months after implementation. Monitor failure rates, observe revised procedures in practice, or test training effectiveness. Don't declare success without data confirming the problem stopped recurring."
+tldr: "The Five Whys is a root cause analysis technique developed at Toyota that involves repeatedly asking 'why' a problem occurred typically five times until you uncover a systemic, fixable cause rather than just a symptom. It works because it's fast, accessible to front-line workers without statistical training, and forces a single causal chain to its end. Applying it correctly prevents problems from recurring by targeting the process gaps, training deficiencies, or procedural weaknesses that allowed the failure in the first place."
 ---
 
 The Five Whys is a root cause analysis technique where you ask "why" repeatedly—typically five times—until you identify the underlying systemic cause instead of just symptoms.
