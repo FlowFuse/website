@@ -35,6 +35,13 @@ hero:
    company: "PennEngineering (formerly)"
    avatar: "images/industries/automotive/headshot-lidiya-shutaya-metaltec-and-pen.png"
   trustedByText: "30+ automotive manufacturers in 20 countries have run their operations on FlowFuse"
+metrics:
+    - number: "~300"
+      text: "Automotive applications built"
+    - number: "~120"
+      text: "Plants or production lines running FlowFuse"
+    - number: "~40"
+      text: "Industrial protocols and systems supported out of the box"
 problem:
   heading: "Not Every Production Challenge Requires a New Platform"
   description: "Most production challenges don't require new hardware or replacing existing systems. The real challenge is that PLCs, robots, SCADA, MES, historians, databases, and cloud services operate separately, creating disconnected data and manual processes. FlowFuse brings these systems together to build, deploy, and manage automotive manufacturing applications using your existing infrastructure."
@@ -113,7 +120,7 @@ cta:
      HERO
 ============================================================ -->
 <section class="w-full relative">
-    <div class="px-6 pt-16 pb-14 md:pt-20">
+    <div class="px-6 pt-16 md:pt-20">
         <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-stretch">
             <div class="max-md:text-center md:flex md:flex-col md:justify-center">
                 <h1 class="text-4xl md:text-5xl font-medium m-0">
@@ -156,9 +163,21 @@ cta:
         </div>
         <div class="max-w-screen-lg mx-auto mt-16 text-center">
             <p class="text-gray-500 text-lg font-semibold">{{ hero.trustedByText }}</p>
-            <div class="mx-auto text-center -mt-0.5 bg-radial-indigo -mb-10">
+            <div class="mx-auto text-center -mt-0.5 -mb-10">
                 {% include "social-proof.njk" %}
             </div>
+        </div>
+        <div class="max-w-md sm:max-w-screen-lg mx-auto mt-16 pb-10 bg-radial-red">
+            <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
+                {% for metric in metrics %}
+                    <div class="w-full h-full rounded-lg bg-red-50/70 pb-3 px-6 pt-6">
+                        <h3 class="text-5xl font-semibold text-red-400">{{ metric.number }}</h3>
+                        <p class="mt-0 font-normal leading-6">{{ metric.text | safe }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
         </div>
     </div>
 </section>
