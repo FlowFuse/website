@@ -31,7 +31,6 @@ All Engineers are evaluated across five dimensions.
 Quality, maintainability, and soundness of engineering work.
 
 Examples:
-
 - Low rate of bugs, reverts, or rework in shipped code
 - Fast turnaround for other engineers to safely extend or modify the code, without needing the original author
 - Security and reliability posture, evidenced by incident and vulnerability history in owned areas
@@ -41,13 +40,13 @@ Examples:
 
 ### 2. Ownership and Impact
 
-Reliable delivery of meaningful engineering outcomes.
+Reliable delivery of engineering outcomes that produce real, traceable value — whether or not that value is visible to end users.
 
 Examples:
-- Delivering committed work predictably
-- Converting ambiguity into executable plans
-- Driving measurable improvements
-- Following through on commitments
+- Delivering committed work predictably, so downstream teams and customers can rely on the timeline
+- Converting ambiguity into plans that ship and hold up in production
+- Impact that's traceable to an outcome — adoption, reliability, or support load for user-facing work; incidents prevented, risk retired, or capacity unlocked for work that isn't
+- Following through on commitments without needing to be chased
 
 
 ### 3. System Thinking
