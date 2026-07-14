@@ -16,9 +16,7 @@ marketing team plans and executes content, see the
 
 The FlowFuse platform is our strongest asset. Customers can build almost anything on it, then fully inspect, adapt, and own what they build. That breadth needs concrete entry points. Customers recognize value fastest when they see their own problem being solved.
 
-Use cases are those entry points. A use case is the customer-centric
-abstraction of the platform: a real problem customers face and how it is
-resolved with FlowFuse. Use cases are what customers recognize themselves in,
+A use case is the customer's view of the platform: a real problem they face, and how FlowFuse solves it. Use cases are what customers recognize themselves in,
 and they are therefore what we lead with: our Product Marketable Product, or
 PMP. Use cases make our [company messaging](/handbook/marketing/messaging/)
 concrete: they express the product pillars as specific problems of our Ideal
