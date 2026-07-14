@@ -141,7 +141,7 @@ Demonstrates:
 - Improves architectural or operational patterns
 - Identifies recurring ecosystem or reliability friction and drives reduction
 
-Level 3 performance requires sustained domain-level impact, not isolated strong projects.
+Level 3 performance requires sustained domain-level impact, not isolated strong projects. For most engineers, Level 3 is the ceiling — sustained performance here is a strong, complete career at FlowFuse, and most engineers will not promote beyond this point.
 
 Promotion to Level 4 requires:
 - Sustained cross-team technical influence
