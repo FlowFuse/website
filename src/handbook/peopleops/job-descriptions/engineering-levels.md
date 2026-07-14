@@ -173,7 +173,8 @@ Scope: Company-wide engineering direction.
 
 Demonstrates:
 
-- Defines multi-year engineering strategy
+- Defines multi-year engineering strategy and is accountable for its outcomes
+  - Strategy is judged by what it produces, not by the act of proposing it
 - Makes high-impact architectural tradeoffs
 - Elevates engineering standards across the organization
 - Represents FlowFuse engineering at an industry level
