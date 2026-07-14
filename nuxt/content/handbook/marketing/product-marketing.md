@@ -107,8 +107,7 @@ Marketing sync. As this practice matures, we can consider a review that also
 includes Sales.
 
 - **Lagging**: sales pipeline where a use case is the attributable entry
-  point and marketing MQL generation, with customers won that tie back to a
-  specific story behind both.
+  point and marketing MQL generation, with customers we win that tie back to a specific story.
 - **Leading**: behavior that predicts that pipeline; engagement on the use
   case pages, deployments of Showcase blueprints, hand-raises (contact sales
   submissions and trial signups attributable to use case content), and
