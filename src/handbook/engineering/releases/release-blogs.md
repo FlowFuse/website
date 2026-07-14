@@ -129,35 +129,10 @@ Avoid marketing language. Do not use: exciting, powerful, seamless, robust, game
 
 ## Drafting with AI
 
-Give an AI tool your feature list — not a written draft. If you hand it a draft, it will polish rather than restructure. A bullet list of what shipped forces the grouping and framing work to happen from scratch.
-
-Paste the following prompt along with your feature list:
-
-> You are writing a FlowFuse release blog. The audience is FlowFuse users — cloud customers, self-hosted admins, and the broader Node-RED community. They care what improved for them, not what changed in the code.
->
-> Using the feature list I paste below, write a blog post that:
-> - Opens with a 2–3 sentence outcome-led intro. Do not list features. State what the release improves for users.
-> - Groups features under thematic H2 headings oriented around user outcomes, not product names or feature labels. Two features that solve the same user problem belong in the same section.
-> - Opens each H2 section with 1–2 sentences of problem framing — what was the friction before this?
-> - Uses H3 headings for individual features within a section when grouped. Each feature gets 1–2 factual paragraphs with no preamble.
-> - Ends each H2 section with an "### In practice" subheading containing exactly three bullet points. Each bullet starts with "You" and describes a user outcome, not a feature capability.
-> - Closes with a "## What else is new?" section as a bullet list covering smaller improvements and fixes.
->
-> Rules:
-> - Active voice, second person throughout
-> - Sentence case for all headings and bullets
-> - No bold mid-sentence for feature names
-> - No marketing language (exciting, powerful, seamless, etc.)
-> - Do not repeat in "In practice" what you already said in the prose above it
-> - Short paragraphs — one idea per sentence
-> - Do not include a "Try FlowFuse" section — the CTA is injected automatically and must not appear in the post body
->
-> Reference example: https://flowfuse.com/blog/2026/02/flowfuse-release-2-27/
->
-> Here is the feature list:
-> [paste here]
+Use the FlowFuse Voice skill to draft your first pass — give it your feature list, not a written draft. If you hand it a draft, it will polish rather than restructure. A bullet list of what shipped forces the grouping and framing work to happen from scratch.
 
 Always review and edit the output before publishing.
+
 
 ## Examples
 
