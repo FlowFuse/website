@@ -22,11 +22,11 @@ This applies to:
 
 Levels reflect scope of ownership and influence. "Meets Expectations" at a level represents strong performance. promotion requires sustained demonstration of next-level behaviors.
 
-# Core Dimensions
+## Core Dimensions
 
 All Engineers are evaluated across five dimensions.
 
-## 1. Technical Craft
+### 1. Technical Craft
 
 Quality, maintainability, and soundness of engineering work.
 
@@ -38,7 +38,7 @@ Examples:
 - Clear technical documentation
 
 
-## 2. Ownership and Impact
+### 2. Ownership and Impact
 
 Reliable delivery of meaningful engineering outcomes.
 
@@ -49,7 +49,7 @@ Examples:
 - Following through on commitments
 
 
-## 3. System Thinking
+### 3. System Thinking
 
 Understanding and improving the broader engineering system.
 
@@ -61,7 +61,7 @@ Examples:
 - Reducing systemic friction
 
 
-## 4. Collaboration and Influence
+### 4. Collaboration and Influence
 
 Working effectively with other engineers and amplifying impact through others.
 
@@ -72,7 +72,7 @@ Examples:
 - Cross-team alignment
 
 
-## 5. Ecosystem Stewardship
+### 5. Ecosystem Stewardship
 
 Responsible contribution to the health of our open source and user ecosystem.
 
@@ -84,12 +84,12 @@ Examples:
 
 Community work is considered real work and should be planned and visible.
 
-# Levels
+## Levels
 
 Levels represent increasing scope of ownership and influence.
 
 
-## Level 1 - Guided Contributor
+### Level 1 - Guided Contributor
 
 Scope: Well-defined tasks within a team.
 
@@ -107,7 +107,7 @@ Promotion to Level 2 requires:
 - Reduced reliance on step-by-step direction
 
 
-## Level 2 - Independent Owner
+### Level 2 - Independent Owner
 
 Scope: Features, services, or infrastructure components.
 
@@ -125,7 +125,7 @@ Promotion to Level 3 requires:
 - Evidence of mentoring or influence beyond individual contribution
 
 
-## Level 3 - Domain Leader
+### Level 3 - Domain Leader
 
 Scope: Major systems, critical infrastructure domains, or multi-person initiatives.
 
@@ -148,7 +148,7 @@ Promotion to Level 4 requires:
 - Strategic impact beyond a single domain
 
 
-## Level 4 - Cross-Team Strategist
+### Level 4 - Cross-Team Strategist
 
 Scope: Multiple teams or core engineering domains.
 
@@ -167,7 +167,7 @@ Promotion to Level 5 requires:
 - Organization-level engineering leadership
 
 
-## Level 5 - Organizational Authority
+### Level 5 - Organizational Authority
 
 Scope: Company-wide engineering direction.
 
@@ -182,13 +182,13 @@ Demonstrates:
 This level is rare and not time-based.
 
 
-# Performance and Reviews
+## Performance and Reviews
 
-## Mid-Quarter Check-Ins
+### Mid-Quarter Check-Ins
 
 Each quarter includes an informal mid-point check-in between the engineer and manager. The goal is to identify early whether anything is off-track and course-correct before the quarter closes — not to evaluate, but to make sure no one is surprised.
 
-## Quarterly Reviews
+### Quarterly Reviews
 
 Quarterly reviews are informal. The manager leads evidence gathering ahead of each conversation, drawing on:
 
@@ -201,13 +201,13 @@ The manager synthesizes this into a draft evaluation across the five core dimens
 
 In the review itself, the engineer and manager go through the evaluation together. The goal is to make sure nothing meaningful was missed and that the engineer feels accurately and well represented. Engineers should come prepared to flag anything they want to add or clarify.
 
-## Annual Reviews
+### Annual Reviews
 
 Annual reviews are formal and synthesize evidence from all four quarters of the year.
 
 The manager evaluates sustained scope and impact across dimensions, identifies patterns, and uses this as the basis for compensation and promotion decisions.
 
-## What Engineers Should Expect
+### What Engineers Should Expect
 
 - Your manager is doing the legwork. Both the engineer and manager flag notable things during the quarter as they happen.
 - Reviews are based on observable behavior and documented impact. Impact that shows up as reliability, stability, or prevented problems counts alongside shipped work.
