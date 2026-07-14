@@ -14,11 +14,7 @@ marketing team plans and executes content, see the
 
 ## The Product Marketable Product
 
-The FlowFuse platform is our strongest asset. It can entertain any scenario,
-and whatever is built on it the customer can fully inspect, adapt, and own.
-Power of that breadth needs concrete entry points to speak to an individual
-customer, because value is recognized fastest through one's own problem,
-need, or desire.
+The FlowFuse platform is our strongest asset. Customers can build almost anything on it, then fully inspect, adapt, and own what they build. That breadth needs concrete entry points. Customers recognize value fastest when they see their own problem being solved.
 
 Use cases are those entry points. A use case is the customer-centric
 abstraction of the platform: a real problem customers face and how it is
