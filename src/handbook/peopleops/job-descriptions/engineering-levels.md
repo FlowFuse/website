@@ -51,14 +51,14 @@ Examples:
 
 ### 3. System Thinking
 
-Understanding and improving the broader engineering system.
+Understanding and improving the broader engineering system — in line with FlowFuse's "think big picture" value: it's not just "your" issue once it ships, the whole system carries the consequences of how it was built.
 
 Examples:
-- Anticipating cross-service dependencies
-- Identifying architectural risk
-- Improving operational patterns
-- Designing for long-term maintainability
-- Reducing systemic friction
+- Cross-service dependency risks caught before they cause an incident, not identified during the retro
+- Architectural risk flagged with enough lead time to actually act on it, not surfaced after the fact
+- Operational patterns that measurably reduce recurring toil or on-call load
+- Design decisions that hold up without rework across multiple future releases, not just the next one
+- Reducing systemic friction, measured by fewer repeat issues in the same area
 
 
 ### 4. Collaboration and Influence
@@ -177,6 +177,7 @@ Demonstrates:
   - Strategy is judged by what it produces, not by the act of proposing it
 - Makes high-impact architectural tradeoffs
 - Elevates engineering standards across the organization
+- Elevates team throughput across the organization
 - Represents FlowFuse engineering at an industry level
 - Drives operational excellence company-wide
 
