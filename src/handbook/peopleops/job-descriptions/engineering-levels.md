@@ -31,11 +31,12 @@ All Engineers are evaluated across five dimensions.
 Quality, maintainability, and soundness of engineering work.
 
 Examples:
-- Code quality and architectural decisions
-- Infrastructure design and automation
-- Security and reliability posture
-- Testing rigor and maintainability
-- Clear technical documentation
+
+- Low rate of bugs, reverts, or rework in shipped code
+- Fast turnaround for other engineers to safely extend or modify the code, without needing the original author
+- Security and reliability posture, evidenced by incident and vulnerability history in owned areas
+- Testing that catches issues before they reach production
+- Documentation clear enough to measurably reduce onboarding or support time
 
 
 ### 2. Ownership and Impact
