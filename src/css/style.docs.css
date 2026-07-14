@@ -1,3 +1,5 @@
+@layer components {
+
 .checklist {
     
 }
@@ -86,53 +88,40 @@
     display:block;
 }
 
-.prose .ff-callout__content > :first-child {
-    margin-top: 0;
-}
-
-.prose .ff-callout__content > :last-child {
-    margin-bottom: 0;
-}
-
 .ff-callout {
-    @apply my-6 border-l-2 px-4 py-3;
+    @apply my-5 rounded-md border px-4 py-3 text-sm/6;
 }
 
-.main-content .ff-callout {
-    @apply mb-6;
-}
-
-.ff-callout__title {
-    @apply mt-0 mb-1 text-sm font-bold uppercase tracking-wide;
+.ff-callout__icon {
+    @apply inline-block size-4 shrink-0;
+    vertical-align: sub;
+    margin-right: 0.375rem;
 }
 
 .ff-callout__content > * {
     @apply text-left;
 }
 
-.ff-callout--note {
-    background-color: theme(colors.blue.50);
-    border-left-color: theme(colors.blue.500);
-}
+.ff-callout .ff-callout__content > :first-child { margin-top: 0 !important; }
+.ff-callout .ff-callout__content > :last-child { margin-bottom: 0 !important; }
+.ff-callout .ff-callout__content * { color: inherit; font-size: inherit !important; line-height: inherit !important; }
 
-.ff-callout--note .ff-callout__title {
-    color: theme(colors.blue.700);
+.ff-callout--note {
+    background-color: color-mix(in srgb, var(--color-blue-500) 10%, transparent);
+    border-color: color-mix(in srgb, var(--color-blue-500) 25%, transparent);
+    color: var(--color-blue-600);
 }
 
 .ff-callout--warning {
-    background-color: theme(colors.yellow.50);
-    border-left-color: theme(colors.yellow.500);
+    background-color: color-mix(in srgb, var(--color-yellow-500) 10%, transparent);
+    border-color: color-mix(in srgb, var(--color-yellow-500) 25%, transparent);
+    color: var(--color-yellow-600);
 }
 
-.ff-callout--warning .ff-callout__title {
-    color: theme(colors.yellow.700);
+.ff-callout--caution {
+    background-color: color-mix(in srgb, var(--color-red-500) 10%, transparent);
+    border-color: color-mix(in srgb, var(--color-red-500) 25%, transparent);
+    color: var(--color-red-600);
 }
 
-.ff-callout--critical {
-    background-color: theme(colors.red.50);
-    border-left-color: theme(colors.red.500);
-}
-
-.ff-callout--critical .ff-callout__title {
-    color: theme(colors.red.700);
-}
+} /* end @layer components */

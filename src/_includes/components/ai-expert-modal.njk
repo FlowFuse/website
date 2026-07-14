@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.0/dist/purify.min.js"></script>
 <!-- FlowFuse Expert Modal -->
 
-<div id="ai-expert-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-0 md:p-4 md:px-8 md:py-8 z-[9999]">
+<div id="ai-expert-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-0 md:p-4 md:px-8 md:py-8 z-[9999]" role="dialog" aria-modal="true" aria-labelledby="ai-expert-modal-title">
     <!-- Modal Content -->
     <div class="bg-white rounded-none md:rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
 
@@ -12,9 +12,9 @@
                 <div class="w-24 h-6">
                     {% include "components/flowfuse-wordmark.njk" %}
                 </div>
-                <h2 class="text-base font-semibold text-gray-700 -mb-1">Expert</h2>
+                <h2 id="ai-expert-modal-title" class="text-base font-semibold text-gray-700 -mb-1">Expert</h2>
             </div>
-            <button id="close-modal" class="text-gray-400 hover:text-gray-600">
+            <button id="close-modal" class="text-gray-500 hover:text-gray-600" aria-label="Close dialog">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

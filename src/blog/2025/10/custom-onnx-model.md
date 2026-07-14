@@ -8,6 +8,7 @@ authors: ["stephen-mclaughlin"]
 image: /blog/2025/10/images/flowfuse-ai-nodes.png
 tags:
   - flowfuse
+  - ai
 ---
 
 FlowFuse is introducing a new set of AI nodes to make it easier than ever to integrate AI and machine learning into your Node-RED workflows.

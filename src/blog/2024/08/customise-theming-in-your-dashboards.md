@@ -1,19 +1,65 @@
 ---
-title: Customise theming in your FlowFuse Dashboard
+title: "Customise theming in your FlowFuse Dashboard (2026)"
 subtitle: Customising Headers, Themes, and Layouts in FlowFuse Dashboard
 description: Discover the latest enhancements in FlowFuse Dashboard, including customizable headers, themes, and layout modifications to personalize your dashboard experience.
+lastUpdated: 2026-06-03
 date: 2024-08-07
-lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
 image: /blog/2024/08/images/customize-theming-flowfuse-dashboard.png
+keywords: flowfuse dashboard theming, node-red dashboard customization, dashboard 2.0 header customization, dashboard custom logo, node-red dashboard theme, ui-template teleport, dashboard header styling
 tags:
    - posts
    - dashboard
    - dashboard theming
+   - how-to
 cta:
   type: sign-up
   title: Build Branded Node-RED Dashboards Your Way
   description: FlowFuse gives you everything you need to build, customize, and deploy Node-RED Dashboard applications — with full theming control, multi-user support, and production-ready infrastructure built in.
+meta:
+  howto:
+    name: "How to Customise Theming in Your FlowFuse Dashboard"
+    description: "Add custom elements to the dashboard header, apply branded logos and buttons, style the header bar, and adjust colors and layout padding using Dashboard 2.0's theming and Vue Teleport features."
+    totalTime: "PT25M"
+    tool:
+      - "Node-RED"
+      - "FlowFuse"
+      - "Dashboard 2.0"
+      - "ui-template node"
+    steps:
+      - name: "Add Elements in the Header"
+        text: "Use Vue Teleport inside a ui-template node to inject custom elements (buttons, logos, user profiles) into specific header areas such as #app-bar-title (left) or #app-bar-actions (right) without complex CSS."
+        url: "adding-elements-in-the-header"
+      - name: "Hide the Page Name in the Header"
+        text: "Go to the FlowFuse Dashboard sidebar, click Edit Settings, and untick 'Show page name in the header bar' to prevent the default page name from clashing with custom header elements."
+        url: "hiding-the-page-name-in-the-header"
+      - name: "Add Buttons and Logos to the Header"
+        text: "Drag a ui-template node onto the canvas, select the appropriate scope, and paste a Vue snippet using Teleport targeting #app-bar-title to render branded buttons or a company logo in the header."
+        url: "example-adding-buttons"
+      - name: "Style the Header"
+        text: "In the Dashboard Edit Settings dialog, select a header style from the Header Options dropdown: Default (hides on scroll), Hidden (always hidden), or Fixed (always visible)."
+        url: "styling-header"
+      - name: "Change Dashboard Theme"
+        text: "Switch to the Theme tab in the FlowFuse Dashboard sidebar, click the edit button next to the active theme, and adjust header color, primary color, page/group backgrounds, borders, padding, and widget gaps."
+        url: "changing-dashboard-theme"
+  faq:
+    - question: "What is Vue Teleport and why is it used for header customization?"
+      answer: "Vue Teleport is a built-in Vue 3 feature that renders a component's HTML into a target DOM element elsewhere on the page. Dashboard 2.0 exposes named slots like #app-bar-title and #app-bar-actions, so Teleport lets you inject content into the header without patching core dashboard CSS."
+    - question: "What is the difference between #app-bar-title and #app-bar-actions?"
+      answer: "#app-bar-title is the left side of the header where the page name normally appears. #app-bar-actions is the right side of the header, typically used for action icons or user profiles."
+    - question: "Can I render header elements on all pages at once?"
+      answer: "Yes. Set the ui-template scope to 'ui-scope' so the widget renders across every page, rather than 'page-scope' which limits it to a single page."
+    - question: "How do I center elements I added to the header?"
+      answer: "Apply CSS in the ui-template's style tag. For the left side, set #app-bar-title { flex-grow: 1; justify-content: center; }. For the right side, set #v-toolbar__append { flex-grow: 1; }."
+    - question: "What header style options are available in Dashboard 2.0?"
+      answer: "Three options are available: Default (header hides when scrolling down), Hidden (header is never shown), and Fixed (header stays pinned at the top while scrolling)."
+    - question: "Which visual properties can I change in the Dashboard theme editor?"
+      answer: "You can change the header color, primary color (navigation sidebar, buttons, dropdowns), page background color, group background color, group border color, page padding, group gap, group border radius, and widget gap."
+    - question: "How do I add my company logo to the header?"
+      answer: "Inside a ui-template using Teleport to #app-bar-title, replace the button elements with an <img> tag pointing to your logo URL. You can also pass the URL dynamically via msg.payload."
+    - question: "Is it possible to show the logged-in user's avatar in the header?"
+      answer: "Yes. Use Teleport to #app-bar-actions together with the FlowFuse User Addon. Bind setup.socketio.auth.user.image and setup.socketio.auth.user.name inside the Teleport block to display the avatar and greeting."
+tldr: "FlowFuse Dashboard now supports deep visual customization including custom headers, themes, and layout modifications. Using Teleports inside the ui-template node, you can inject custom elements into specific dashboard areas without complex CSS. This guide covers adding header buttons, custom logos, modifying color themes, and adjusting group and page padding."
 ---
 
 A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.

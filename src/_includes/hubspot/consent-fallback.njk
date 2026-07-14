@@ -1,24 +1,24 @@
-<div id="{{ fallbackId }}" class="ff-hubspot-consent-fallback text-center border bg-red-50/25 border-red-300 rounded-lg px-4 py-6">
-    <p class="text-red-400"><strong>Hmm… there was supposed to be a {{ contentType }} here</strong></p>
+<div id="{{ fallbackId }}" class="ff-hubspot-consent-fallback text-center border {% if contentType == 'form' %}hidden bg-red-50/25 border-red-300{% else %}bg-indigo-900{% endif %} rounded-lg px-6 pt-8 pb-4">
     {% if contentType == 'form' %}
+    <p class="text-red-400"><strong>Hmm… there was supposed to be a form here</strong></p>
         <p class="text-gray-600">
             If this form does not load, try adjusting your privacy settings or switching browsers.
         </p>
     {% else %}
-        <p class="text-gray-600">
-            To load this {{ contentType }}, please accept <strong>Analytics cookies</strong>.
-            If that doesn't work, try adjusting your privacy settings, or switching browsers.
+        <h4 class="text-white font-medium">Choose a time to talk</h4>
+        <p class="text-indigo-200">
+            30-minute session with our team.
         </p>
-        <p class="mt-4">
-            <button
-                onclick="if(window.CookieConsent){CookieConsent.showPreferences()}"
-                class="inline-block ff-btn ff-btn--primary-outlined uppercase"
-            >
-                Open cookie settings
-            </button>
-        </p>
-        <p class="mt-2 text-gray-600">
-            Alternatively, you can send us a message through our <a href="/contact-us/">contact form</a>.
+        <a href="https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team"
+           class="inline-block ff-btn ff-btn--highlight uppercase mb-2"
+           style="cursor: pointer;"
+           onclick="if(typeof capture==='function') capture('calendar_fallback_cta_clicked')">
+            Pick a time →
+        </a>
+        <p class="mt-4 text-indigo-200 italic font-xs">
+            Prefer to view availability on this page?</br>
+            <a class="cursor-pointer text-indigo-200 underline" onclick="if(window.CookieConsent){CookieConsent.showPreferences()}">
+            Enable analytics cookies.</a>
         </p>
     {% endif %}
 </div>

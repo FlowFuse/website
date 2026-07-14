@@ -1,0 +1,23 @@
+---
+title: "Organizational Structure"
+---
+
+# Organizational Structure
+
+This page provides an overview of FlowFuse's organizational structure and reporting relationships.
+
+## Organization Chart
+
+::org-chart-diagram
+::
+
+## Reporting Structure
+
+The organizational structure is automatically generated from team member data files located in `src/_data/team/`. Each team member's JSON file includes a `reports_to` field that indicates their direct manager.
+
+### Executive Leadership
+
+The CEO reports to the Board of Directors.
+
+::org-chart-reports
+::

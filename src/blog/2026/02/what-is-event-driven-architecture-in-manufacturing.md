@@ -2,6 +2,7 @@
 title: "Event-Driven Architecture: 99% of Your System Requests Are Worthless"
 subtitle: "What Happens When Your Factory Stops Asking and Starts Listening"
 description: "Learn how Event-Driven Architecture enables real-time responsiveness in manufacturing by allowing systems to react instantly to production events, replacing traditional request-response models with automated, parallel processing."
+lastUpdated: 2026-06-19
 date: 2026-02-10
 keywords: event-driven architecture, manufacturing systems, real-time manufacturing, industrial automation, polling vs event-driven, MES integration, ERP integration, SCADA, industrial IoT, OT IT integration, manufacturing downtime
 authors: ["sumit-shinde"]
@@ -12,6 +13,19 @@ cta:
   type: sign-up
   title: Stop Polling. Start Reacting
   description: FlowFuse connects IT and OT systems through a single platform with a built-in MQTT broker, support for virtually any protocol, and enterprise-grade deployment.
+meta:
+  faq:
+    - question: "What is event-driven architecture in manufacturing?"
+      answer: "Event-driven architecture (EDA) is a model where systems broadcast significant occurrences, such as a completed cycle, a detected anomaly, or a failed inspection, the moment they happen. Subscribed systems react instantly and in parallel instead of polling each other on a schedule."
+    - question: "What is the difference between polling and event-driven architecture?"
+      answer: "Polling means systems ask each other for updates on a fixed schedule, and nearly all of those requests return no new information. Event-driven architecture inverts this by broadcasting events only when something actually changes, eliminating the gap between an occurrence and the response."
+    - question: "What are the main components of an event-driven architecture?"
+      answer: "Three components make it work: event producers (PLCs, sensors, vision systems) that announce what happened, event consumers (MES, ERP, maintenance platforms) that act on relevant events, and an event broker that routes events to subscribers and keeps a durable log without coupling the systems together."
+    - question: "What do I need to move to event-driven architecture in a factory?"
+      answer: "You need an event broker (MQTT for shop floor devices, Kafka for enterprise loads) and a translation layer such as Node-RED to bridge legacy systems. The hardest part is defining which occurrences actually count as events rather than replacing existing hardware."
+    - question: "How does event-driven architecture reduce manufacturing downtime costs?"
+      answer: "EDA closes the gap between what happens on the floor and what the business knows. When a fault fires as an event, it routes to maintenance, scheduling, and analytics simultaneously, so problems are detected and acted on in milliseconds rather than minutes, preventing defects and delays from propagating downstream."
+tldr: "Traditional manufacturing systems waste the vast majority of their polling requests confirming nothing changed, and the gaps between polling cycles allow faults, defects, and delays to propagate unchecked. Event-Driven Architecture inverts this model by broadcasting significant occurrences the moment they happen, letting every subscribed system react instantly and in parallel turning what was a structural latency problem into a competitive advantage."
 ---
 
 Nearly 99% of the requests your manufacturing systems make return the same answer: nothing changed. The 1% that matter? You find out too late. This isn't a monitoring problem. It's an architecture problem.

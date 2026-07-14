@@ -47,24 +47,72 @@ The MQTT In node can be configured to dynamically manage connections and topic s
 
 These inputs only apply when dynamic subscriptions are enabled:
 
-* `msg.action`: Defines the action to perform. Supported actions include:
+`msg.action`: Defines the action to perform. Supported actions include:
   `"connect"`, `"disconnect"`, `"getSubscriptions"`, `"subscribe"`, and `"unsubscribe"`.
 
-* `msg.topic`: For `"subscribe"` or `"unsubscribe"`, specifies the target topic(s). This can be:
-
-  * A string containing a single topic filter.
-  * An object containing `topic` and `qos` properties.
-  * An array of strings or objects for multiple topics.
-
-* `msg.broker`: For `"connect"`, this can override broker configuration properties such as:
+* For `"connect"`, `msg.broker` this can override broker configuration properties such as:
 
   * `broker`
   * `port`
   * `url` (overrides broker and port)
   * `username`
   * `password`
+  * `clientid`
+  * `cleansession`
 
-If a broker is already connected, an error is logged unless `force` is specified. In that case, the node disconnects, applies the new settings, and reconnects with the updated configuration.
+  If a broker is already connected, an error is logged unless `force` is specified. In that case, the node disconnects, applies the new settings, and reconnects with the updated configuration.
+
+* For `"subscribe"` or `"unsubscribe"`, `msg.topic` specifies the target topic(s). This can be:
+
+  * A string containing a single topic filter.
+  * An object containing `topic` and `qos` properties.
+  * An array of strings or objects for multiple topics.
+
+    #### Subscribe
+    Subscribes to one or more topics.
+
+    ```javascript
+    // Single topic
+    msg.action = 'subscribe';
+    msg.topic = 'sensors/temperature';
+
+    // Single topic with QoS
+    msg.action = 'subscribe';
+    msg.topic = { topic: 'sensors/temperature', qos: 1 };
+
+    // Multiple topics
+    msg.action = 'subscribe';
+    msg.topic = ['sensors/temperature', 'sensors/humidity'];
+
+    // Multiple topics with QoS
+    msg.action = 'subscribe';
+    msg.topic = [
+      { topic: 'sensors/temperature', qos: 1 },
+      { topic: 'sensors/humidity', qos: 2 }
+    ];
+    ```
+
+    #### Unsubscribe
+    Removes subscriptions from one or more topics.
+
+    ```javascript
+    // Single topic
+    msg.action = 'unsubscribe';
+    msg.topic = 'sensors/temperature';
+
+    // Multiple topics
+    msg.action = 'unsubscribe';
+    msg.topic = ['sensors/temperature', 'sensors/humidity'];
+    ```
+
+* For `getSubscriptions` the `msg.payload` output is an array of subscription objects holding the `topic` and `qos` level
+
+    ```javascript
+    [
+      { topic: 'sensors/temperature', qos: 1 },
+      { topic: 'sensors/humidity', qos: 2 }
+    ]
+    ```
 
 ## Example: Cheerlights
 

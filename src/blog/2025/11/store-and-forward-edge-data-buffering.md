@@ -2,12 +2,69 @@
 title: "Store-and-Forward at the Edge: Buffering Production Data During Network Outages"
 subtitle: "Keep collecting data when your network goes down"
 description: Learn how to implement store-and-forward buffering for data collection. This guide shows you how to build an edge system with FlowFuse that maintains complete data continuity during network outages, preventing production data loss and compliance gaps.
+lastUpdated: 2026-06-17
 date: 2025-11-21
 authors: ["sumit-shinde"]
 image: /blog/2025/11/images/store-and-forward.png
 keywords: store-and-forward, edge computing, PLC data buffering, network resilience, industrial IoT, data continuity, FlowFuse, SQLite buffering, SCADA data collection, network outage recovery
 tags:
     - flowfuse
+    - plc
+meta:
+  howto:
+    name: "Build a Store-and-Forward Buffering System at the Edge with FlowFuse"
+    description: "Build an edge store-and-forward system in FlowFuse and Node-RED that buffers production data to local SQLite during network outages and automatically forwards it in chronological order when connectivity returns, preventing data loss."
+    totalTime: "PT25M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "node-red-node-sqlite"
+      - "node-red-contrib-ping"
+    steps:
+      - name: "Set Up Data Collection"
+        text: "Establish reliable connectivity to your data sources using Node-RED's protocol nodes (Modbus, OPC UA, MQTT, Ethernet/IP, serial, and more) so data flows into FlowFuse before buffering and forwarding."
+        url: "step-1-set-up-data-collection"
+      - name: "Implement SQLite Buffering"
+        text: "Add an SQLite node, create a Read-write-create database configuration, and run a Fixed Statement to create the data_buffer table with id, timestamp, sent, payload, and created_at columns to store buffered records locally."
+        url: "step-2-implement-sqlite-buffering"
+      - name: "Store Incoming Data in Buffer"
+        text: "Stringify incoming data with a JSON node, use a Change node to build msg.params with the timestamp and payload, then write each record to SQLite with a Prepared Statement INSERT and sent=0 to mark it pending."
+        url: "step-3-store-incoming-data-in-buffer"
+      - name: "Monitor Network Connectivity"
+        text: "Use a Ping node to check the destination every 30 seconds, route results through a Switch node, and set the persistent flow.networkOnline flag (and reset flow.flowError) before triggering forwarding via a Link Out node."
+        url: "step-4-monitor-network-connectivity"
+      - name: "Build the Forwarding Logic"
+        text: "On a forward trigger, select up to 50 unsent records ordered by timestamp, split them, extract the record_id and payload with a Change node, parse the stored JSON back to an object, and pass them on with a Link Out node."
+        url: "step-5-build-the-forwarding-logic"
+      - name: "Send Data and Handle Errors"
+        text: "Verify network and error state with Switch nodes before transmitting, send via Project Out (or MQTT/HTTP), confirm delivery, mark records sent=1 and delete them, and use Catch and Status nodes to set error and offline flags on failure."
+        url: "step-6-send-data-and-handle-errors"
+  faq:
+    - question: "What is store-and-forward?"
+      answer: "Store-and-forward is a pattern where data is saved to local storage before transmission, then forwarded when network connectivity is available. The edge device writes every data point to local SQLite first; if the network is up the data transmits to its destination, and if the network is down the data stays in storage until connectivity returns."
+    - question: "What problem does store-and-forward solve?"
+      answer: "It prevents gaps in time-series data caused by network failures. Without it, a four-hour outage would mean four hours of missing production data; with store-and-forward the same outage causes zero data loss because the destination eventually receives complete chronological data, only with a delivery delay."
+    - question: "What are the three states an edge device operates in with store-and-forward?"
+      answer: "During normal operation, data writes to the buffer and forwards successfully, so the buffer stays near-empty. During a network outage, data keeps writing to the buffer but cannot forward, so the buffer grows. When connectivity returns, the device forwards the buffered backlog in chronological order while still collecting new data, and the buffer drains back to empty."
+    - question: "What do I need before implementing store-and-forward in FlowFuse?"
+      answer: "You need an edge device running the FlowFuse agent, the node-red-node-sqlite node for local data storage, and the node-red-contrib-ping node for connectivity monitoring."
+    - question: "Why is SQLite used for the buffer?"
+      answer: "SQLite provides a persistent local storage layer that is lightweight, requires no separate database server, and handles the write volumes typical of industrial data collection without issue."
+    - question: "What does the sent flag in the data_buffer table do?"
+      answer: "The sent flag indicates whether a record is still pending (0) or has been successfully delivered (1). It acts as a safety marker that prevents cleanup of unsent data, so records are only deleted after they are confirmed as forwarded."
+    - question: "How does the system monitor network connectivity?"
+      answer: "A Ping node checks the destination system (for example broker.flowfuse.cloud) automatically every 30 seconds. A Switch node routes the result: when ping fails msg.payload is false and the system sets flow.networkOnline to false; otherwise it sets the flag true and triggers forwarding."
+    - question: "Why is the network status stored in persistent storage?"
+      answer: "The flow.networkOnline flag is stored in persistent storage so the network state survives restarts and is reliably available to the forwarding logic, which checks it before attempting to send buffered data."
+    - question: "How many records are forwarded at a time?"
+      answer: "The forwarding query selects unsent records (sent = 0) ordered by timestamp ascending with a LIMIT of 50, so buffered data is processed in chronological batches of up to 50 records."
+    - question: "Why are prepared statements used for inserting and updating records?"
+      answer: "Prepared statements are used for the INSERT and UPDATE/DELETE queries because they prevent SQL injection issues and handle special characters in the data correctly."
+    - question: "How are records cleared from the buffer after sending?"
+      answer: "After a record is successfully transmitted and confirmed, an SQLite node updates it to set sent = 1, and a second SQLite node deletes the record where id matches and sent = 1, ensuring only confirmed-delivered records are removed."
+    - question: "Can I use a destination other than Project Out for sending data?"
+      answer: "Yes. The Project Out node can be replaced with any output node that suits your architecture, such as MQTT Out for publishing to brokers, HTTP Request for REST APIs, or database nodes for writing directly to databases. The confirmation mechanism should be adapted to the chosen protocol."
+tldr: "Network outages leave PLCs running while their data has nowhere to go, creating gaps in production records, audit trails, and compliance documentation. Store-and-forward solves this by writing every data point to a local SQLite buffer first, then forwarding it when connectivity is available. This guide builds the pattern in FlowFuse and Node-RED across six steps, covering data collection, SQLite buffering, connectivity monitoring with a ping node, batched forwarding of unsent records, and error handling, so no data is lost regardless of how long the outage lasts."
 ---
 
 Network outages happen. A fiber cut, a switch failure, or infrastructure maintenance can take your connectivity offline without warning. When it does, your PLCs continue operating normally—they don't wait for the network to recover.
@@ -346,3 +403,5 @@ This pattern solves a common problem in industrial environments: maintaining com
 The system you've built is production-ready as-is, but you can extend it based on your requirements—add monitoring for buffer capacity, implement data validation rules, or configure forwarding to multiple destinations. The core mechanism remains the same.
 
 If you want to get the flow template that you can use directly and modify according to your needs, check out our [latest blueprint](/blueprints/getting-started/store-and-forward/).
+
+Store-and-forward is just one part of a complete PLC integration. For the full picture — connecting Siemens, Allen-Bradley, Omron, and other PLCs to MQTT, cloud, and enterprise systems — see the [FlowFuse PLC integration overview](/landing/plc/).

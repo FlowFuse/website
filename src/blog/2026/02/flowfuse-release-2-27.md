@@ -9,6 +9,7 @@ tags:
    - flowfuse
    - news
    - releases
+tldr: "FlowFuse 2.27 brings the integrated editor experience to Remote instances and allows snapshot restores without leaving developer mode. FlowFuse Expert gains live palette and flow context awareness, and High Availability hosted instances now support rolling restarts to reduce service interruption during deployments."
 ---
 
 FlowFuse 2.27 tightens the development loop for Remote instances and makes FlowFuse Expert more aware of what is actually running in your Node-RED environment. It also improves availability for High Availability hosted deployments.

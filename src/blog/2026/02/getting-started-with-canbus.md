@@ -2,6 +2,7 @@
 title: "CAN Bus Tutorial: Connect to Dashboards, Cloud, and Industrial Systems"
 subtitle: "Build vehicle and industrial automation systems without low-level drivers or proprietary tools"
 description: "Learn how to set up SocketCAN on Linux, configure CAN interfaces, and build CAN bus applications using FlowFuse's visual programming platform."
+lastUpdated: 2026-06-19
 date: 2026-02-13
 keywords: 
 authors: ["sumit-shinde"]
@@ -12,6 +13,42 @@ cta:
   type: contact
   title: Take CAN Bus From Dev to Production
   description: FlowFuse makes it simple to deploy, monitor, and maintain Node-RED flows across your entire edge fleet, same flows, any hardware, any scale. Get in touch to discuss your project.
+meta:
+  howto:
+    name: "How to Connect CAN Bus to FlowFuse Using SocketCAN"
+    description: "Learn how to enable a CAN interface with SocketCAN on Linux, install the node-red-contrib-socketcan package in FlowFuse, and receive and transmit CAN frames with visual flows."
+    totalTime: "PT30M"
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "SocketCAN"
+      - "node-red-contrib-socketcan"
+      - "Linux"
+    steps:
+      - name: "Enable a CAN interface with SocketCAN"
+        text: "Load the vcan kernel module and bring up a virtual vcan0 interface for testing, or configure a physical can0 interface with a bitrate, then verify it is up with ip link show."
+        url: "enabling-can-interfaces-with-socketcan"
+      - name: "Install the SocketCAN node in FlowFuse"
+        text: "Open Manage palette in the Node-RED editor, go to the Install tab, search for node-red-contrib-socketcan, and install it to add the CAN input and output nodes."
+        url: "installing-the-socketcan-node"
+      - name: "Receive CAN frames"
+        text: "Add a socketcan-out node, set its interface to vcan0 or can0, connect it to a debug node, and deploy to start receiving CAN frames as JavaScript objects."
+        url: "receiving-can-frames"
+      - name: "Transmit CAN frames"
+        text: "Add a socketcan-in node in transmit mode, drive it from an inject node whose payload contains canid and data fields, and deploy to send frames onto the bus."
+        url: "transmitting-can-frames"
+  faq:
+    - question: "What is SocketCAN?"
+      answer: "SocketCAN is a Linux kernel feature that integrates CAN bus support into the networking stack. It exposes CAN hardware as standard network interfaces such as can0 or vcan0, so you can configure and use CAN with familiar Linux networking commands."
+    - question: "Can I use CAN bus in FlowFuse without physical hardware?"
+      answer: "Yes. You can create a virtual CAN (vcan) interface that exchanges CAN frames entirely in software, which is ideal for development, testing, and learning. The same FlowFuse flows work unchanged when you later switch to physical CAN hardware."
+    - question: "Which Node-RED node is used for CAN bus communication?"
+      answer: "Install the node-red-contrib-socketcan package from the Manage palette Install tab. It provides the socketcan-in and socketcan-out nodes for transmitting and receiving CAN frames over a SocketCAN interface."
+    - question: "Does CAN bus and SocketCAN work on non-Linux systems?"
+      answer: "No. SocketCAN is a Linux-only kernel feature, so FlowFuse must run on a Linux-based system to use it. If installation of node-red-contrib-socketcan fails, it is usually because the host is not Linux or the build-essential build tools are missing."
+    - question: "How do I format a CAN message to transmit in FlowFuse?"
+      answer: "Send a JavaScript object with canid and data fields (and optionally ext for extended frames), for example {\"canid\": 512, \"data\": [22, 45, 170, 255]}. Alternatively use the compact string format <canid>#{R|data}, such as 200#162DAAFF."
+tldr: "SocketCAN exposes CAN bus interfaces as standard Linux network interfaces, and combined with FlowFuse's visual flow-based programming, you can send and receive CAN frames without low-level drivers or proprietary tools. This tutorial walks through enabling SocketCAN on Linux, installing the node-red-contrib-socketcan package, and building flows to connect CAN bus devices to dashboards, cloud platforms, and industrial systems."
 ---
 
 If you work with vehicles, industrial automation, or embedded systems, you've likely encountered **CAN bus**, the communication backbone that connects ECUs, sensors, controllers, and actuators in real-world environments. The challenge isn't just reading CAN data; it's getting that data into your dashboards, cloud platforms, databases, or industrial control systems.
@@ -237,7 +274,7 @@ This makes it easy to filter, decode, or route messages using standard FlowFuse 
 
 <lite-youtube
   videoid="MoL3vw9x5eg"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/receiving-can.png'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/02/images/receiving-can.png'); background-size: cover; background-position: center;"
   title="Receiving CAN Frames">
 </lite-youtube>
 
@@ -266,7 +303,7 @@ This would send a standard CAN frame with ID `0x200` and 4 bytes of data onto th
 
 <lite-youtube
   videoid="oWI3Fs9_gyI"
-  style="width: 1024px; overflow: hidden; background-image: url('/blog/2026/02/images/transmitting-can.png'); background-size: cover; background-position: center;"
+  style="width: 100%; aspect-ratio: 16/9; background-image: url('/blog/2026/02/images/transmitting-can.png'); background-size: cover; background-position: center;"
   title="Transmitting CAN Frames">
 </lite-youtube>
 

@@ -5,27 +5,78 @@ eleventyExcludeFromCollections: true
 
 # FlowFuse
 
-> {{ site.messaging.subtitle }}
+> {{ site.messaging.tagLine }}
 
-## Blog Posts
-{% for post in collections.posts | reverse %}
-  {%- if not (post.data.date | isFuturePost) -%}
-- [{{ post.data.title | safe }}](https://flowfuse.com{{ post.url }}){% if post.data.description %}: {{ post.data.description | truncate(200) | safe }}{% endif %}
-  {% endif -%}
-{% endfor %}
+{{ site.messaging.shortDescription | safe }}
 
+## Key Pages
+
+- [Home]({{ site.baseURL }}/): FlowFuse platform overview
+- [Platform Features]({{ site.baseURL }}/platform/features/): Full list of platform capabilities
+- [Why FlowFuse]({{ site.baseURL }}/platform/why-flowfuse/): Value proposition and differentiators
+- [Pricing]({{ site.baseURL }}/pricing/): Plans and pricing information
+- [Create an account]({{ site.appURL }}/account/create): Start a free trial
+- [Book a Demo]({{ site.baseURL }}/book-demo/): Schedule a demo with the team
+- [Node-RED]({{ site.baseURL }}/node-red/): FlowFuse's Node-RED resource center
+
+## Solutions
+
+- [IT/OT Middleware]({{ site.baseURL }}/use-cases/it-ot-middleware/): Connect industrial systems with enterprise IT
+- [Edge Connectivity]({{ site.baseURL }}/use-cases/edge-connectivity/): Manage Node-RED at the edge
+- [Data Integration]({{ site.baseURL }}/use-cases/data-integration/): Integrate industrial and enterprise data sources
+- [Unified Namespace (UNS)]({{ site.baseURL }}/use-cases/uns/): UNS architecture with Node-RED and FlowFuse
+- [MES]({{ site.baseURL }}/use-cases/mes/): Manufacturing Execution Systems integration
+- [SCADA]({{ site.baseURL }}/use-cases/scada/): SCADA modernization with Node-RED
+
+## Platform
+
+- [Dashboard]({{ site.baseURL }}/platform/dashboard/): Build real-time operational dashboards
+- [Device Agent]({{ site.baseURL }}/platform/device-agent/): Deploy and manage Node-RED on edge devices
+- [Security]({{ site.baseURL }}/platform/security/): Enterprise security features
+- [Integrations]({{ site.baseURL }}/integrations/): Supported integrations and connectors
+
+## Resources
+
+- [Publications: eBooks and Whitepapers]({{ site.baseURL }}/resources/publications/): Industry whitepapers and research
+- [Webinars]({{ site.baseURL }}/webinars/): On-demand and upcoming webinars
+- [eBook: Beginner's Guide to Professional Node-RED]({{ site.baseURL }}/ebooks/beginner-guide-to-a-professional-nodered/)
+- [eBook: Building Applications with FlowFuse Dashboard]({{ site.baseURL }}/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/)
+- [Education]({{ site.baseURL }}/education/): Learning resources
+
+## Competitive Comparisons
+
+- [FlowFuse vs Kepware]({{ site.baseURL }}/vs/kepware/)
+- [FlowFuse vs Litmus]({{ site.baseURL }}/vs/litmus/)
+
+## Support & Professional Services
+
+- [Support]({{ site.baseURL }}/support/)
+- [Professional Services]({{ site.baseURL }}/professional-services/)
+- [Free Consultation]({{ site.baseURL }}/free-consultation/)
+- [Partners]({{ site.baseURL }}/partners/)
 
 ## Documentation
+
 {%- for doc in collections.docs | reverse %}
 - [{{ doc.data.navTitle }}]({{ site.baseURL }}{{ doc.url | replace(r/.$/, ".md") }}): {{ doc.data.meta.description or doc.data.description or doc.data.excerpt | truncate(100) | striptags }}
 {%- endfor %}
 
 ## Customer Stories
+
 {%- for story in collections.stories | reverse %}
 - [{{ story.data.title }}]({{ site.baseURL }}{{ story.url | replace(r/.$/, ".md") }}): {{ story.data.subtitle or story.data.description or story.data.meta.description or story.data.excerpt | truncate(100) | striptags }}
 {%- endfor %}
 
+## Blog Posts
+
+{% for post in collections.posts | reverse %}
+  {%- if not (post.data.date | isFuturePost) -%}
+- [{{ post.data.title | safe }}]({{ site.baseURL }}{{ post.url }}){% if post.data.description %}: {{ post.data.description | truncate(200) | safe }}{% endif %}
+  {% endif -%}
+{% endfor %}
+
 ## Webinars
+
 {%- for webinar in collections.webinar | reverse %}
 - [{{ webinar.data.title }}]({{ site.baseURL }}{{ webinar.url | replace(r/.$/, ".md") }}): {{ webinar.data.description or webinar.data.meta.description or webinar.data.excerpt | truncate(100) | striptags }}
 {%- endfor %}

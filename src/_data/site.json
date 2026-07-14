@@ -6,9 +6,26 @@
         "em": "https://job-boards.greenhouse.io/flowfuse/jobs/5566913004"
     },
     "messaging": {
-        "tagLine": "Connect, Collect, Build, and Scale with FlowFuse",
-        "subtitle": "FlowFuse is the Industrial Application Platform that connects any machine, moves data across any protocol, models it in any data platform, and operates industrial applications at scale—accelerated by FlowFuse Expert, an LLM-powered copilot, that uses Model Context Protocol (MCP) to connect AI directly to your live industrial data.",
+        "tagLine": "Build Industrial Applications That Scale Across Your Enterprise",
+        "subtitle": "Standardize, govern, and deploy operational applications across plants, production lines and teams from a single platform.",
         "title": "Build workflows and integrations that optimize your industrial operations",
         "keywords": "Node-RED, Application Development, IoT, IIoT, Low-Code, open source, Integration, Workflow, Automation, Data Processing, Data Integration, Data Transformation, Data Visualization, Industrial Automation, Industrial IoT, Industry 4.0"
+    },
+    "organization": {
+        "legalName": "FlowFuse Inc.",
+        "alternateName": ["FlowForge", "Flow Fuse"],
+        "foundingDate": "2021",
+        "founders": ["nick-oleary"],
+        "logo": "https://flowfuse.com/handbook/images/logos/ff-logo--wordmark--light.png",
+        "sameAs": [
+            "https://www.linkedin.com/company/flowfuse",
+            "https://github.com/FlowFuse",
+            "https://www.youtube.com/@FlowFuseInc",
+            "https://twitter.com/FlowFuseInc",
+            "https://www.crunchbase.com/organization/flowforge",
+            "https://www.g2.com/sellers/flowfuse",
+            "https://www.facebook.com/FlowFuse",
+            "https://www.reddit.com/r/FlowFuse/"
+        ]
     }
 }

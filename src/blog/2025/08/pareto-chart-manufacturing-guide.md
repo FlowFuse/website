@@ -46,6 +46,7 @@ meta:
 
     - question: "What if my Pareto chart shows an even distribution of problems?"
       answer: "If problems are evenly distributed with no clear 80/20 pattern, you may need to recategorize your data more specifically, look at cost impact instead of frequency, or consider that your process has multiple equally important issues requiring a different improvement approach."
+tldr: "A Pareto Chart is a quality control tool that combines a descending bar chart with a cumulative percentage line to visualize which problems defects, downtime causes, supplier issues account for the greatest impact, based on the 80/20 principle. Manufacturing teams use it to prioritize where to focus limited improvement resources for maximum return, and modern platforms like FlowFuse can generate Pareto charts automatically from real-time production data."
 ---
 
 A Pareto Chart helps manufacturing teams cut through the chaos when problems arrive in clusters—defects, delays, downtime, and customer complaints all competing for attention. With limited resources and time, how do you decide which fire to put out first?
@@ -185,4 +186,4 @@ The first step is always the hardest—and the most important. Choose one persis
 
 **Ready to transform your manufacturing data into actionable insights?** 
 
-Stop guessing which problems to tackle first. [Try FlowFuse free for 14 days]({% include "sign-up-url.njk" %}) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.
+Stop guessing which problems to tackle first. [Try FlowFuse free for 30 days]({% include "sign-up-url.njk" %}) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.

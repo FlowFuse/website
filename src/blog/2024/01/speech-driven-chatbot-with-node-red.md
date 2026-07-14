@@ -10,6 +10,7 @@ tags:
     - node-red
     - dashboard
     - virtual assistant
+    - ai
 ---
 
 Have you ever wanted to integrate speech recognition and synthesis into your Node-RED project and thought it was too complex? Often it has required external services or APIs. However, in this guide, we show you how you can use speech recognition and synthesis in your Node-RED projects without needing an external service or API.  

@@ -28,6 +28,33 @@ sections:
           enterprise:
             value: "Contact Support to enable"
 
+      - id: ff-expert-application-building
+        label: Application Building
+        description: "Describe what you want to build and FlowFuse Expert assembles it on your workspace, adding tabs, wiring nodes, and configuring properties."
+        docsLink: /docs/user/expert/chat/
+        changelog:
+          - url: /changelog/2026/05/expert-application-building/
+            release: "2.30"
+        subfeature: true
+        solutions: [mes, scada, uns, edge-connectivity, it-ot-middleware, data-integration]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: null
+          pro:
+            value: null
+          enterprise:
+            value: 'contact'
+            note: "On request; requires assistant tokens and the Expert MQTT bridge"
+
       - id: ff-expert-support
         label: Support Mode
         description: "Chat-based assistance for FlowFuse and Node-RED, including Node-RED instance management through natural language."
@@ -597,6 +624,31 @@ sections:
           enterprise:
             value: true
 
+      - id: immersive-editor-drawer
+        label: Customisable Immersive Editor Drawer
+        description: "Pin, move, resize, or full-screen the immersive editor drawer — your preferences are remembered between sessions."
+        docsLink: null
+        changelog:
+          - url: /changelog/2026/04/immersive-editor-drawer/
+            release: '2.30'
+        solutions: [mes, scada, edge-connectivity]
+        showOnPricing: false
+        tags: [cloud, self-hosted]
+        cloud:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+        selfHosted:
+          starter:
+            value: true
+          pro:
+            value: true
+          enterprise:
+            value: true
+
       - id: pipelines
         label: DevOps Pipelines
         description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."
@@ -632,7 +684,7 @@ sections:
         tags: [cloud, self-hosted]
         cloud:
           starter:
-            value: true
+            value: null
           pro:
             value: true
           enterprise:
@@ -954,7 +1006,7 @@ sections:
             options: ["None", "HTTP Basic Auth"]
           pro:
             value: list
-            options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
+            options: ["None", "HTTP Basic Auth"]
           enterprise:
             value: list
             options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
@@ -1003,7 +1055,8 @@ sections:
           pro:
             value: null
           enterprise:
-            value: true
+            value: 'time'
+            note: "Available from 2.32"
 
       - id: instance-monitoring
         label: Instance Monitoring
@@ -1197,7 +1250,7 @@ sections:
           starter:
             value: null
           pro:
-            value: null
+            value: true
           enterprise:
             value: true
 

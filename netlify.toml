@@ -1,8 +1,8 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
-    Content-Security-Policy = "frame-ancestors 'none';"
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "frame-ancestors 'self';"
 
 [[redirects]]
 from = "http://flowforge.com/*"
@@ -65,19 +65,35 @@ command = "npx @11ty/eleventy --quiet --watch"
 autoLaunch = false
 
 [build]
-command = "npm run build:indexed"
-publish = "_site"
+command = "npm run build:nuxt:skip-images && npm run index:algolia"
+publish = "nuxt/dist"
+
+[build.environment]
+NODE_OPTIONS = "--max-old-space-size=4096"
+
+[functions]
+directory = "nuxt/.netlify/functions-internal"
+
+[[redirects]]
+from = "/landing/accelerating-industrial-innovation-with-low-code-platforms/"
+to = "/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/"
+status = 301
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/server"
+status = 200
 
 [context.deploy-preview]
-command = "npm run build"
+command = "npm run build:nuxt"
 
 [context.branch-deploy]
-command = "npm run build"
+command = "npm run build:nuxt"
 
 [[plugins]]
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
-    "_site/img", # Eleventy Image Disk Cache
+    "nuxt/public/img", # Eleventy Image Disk Cache
     ".cache/images" # Eleventy image processing cache
   ]

@@ -9,6 +9,7 @@ image: /blog/2025/08/images/advanced-opcua-real-time-subscriptions-alarms-histor
 tags:
   - flowfuse
   - opcua
+tldr: "Polling OPC UA tags every few seconds misses critical events and wastes bandwidth; OPC UA subscriptions solve this by monitoring values server-side and pushing notifications only when they change. This advanced tutorial covers four production-ready OPC UA features in Node-RED: subscriptions for instant value updates, event and alarm handling, historical data queries, and method calls for triggering complex equipment operations."
 ---
 
 In our [previous tutorial](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), we covered OPC UA basics—connecting to servers, reading tags, and writing values. Now it's time for the features that make OPC UA truly powerful in production.
@@ -284,5 +285,7 @@ You've now mastered the advanced features that make OPC UA essential for industr
 Managing OPC UA flows across multiple sites? FlowFuse helps teams deploy Node-RED to hundreds of edge devices with one click, monitor everything from a central dashboard, and roll back instantly if something goes wrong. Built-in team collaboration, audit logs, and enterprise security keep your industrial data safe.
 
 Following our managed MQTT broker, we've now added database services built right into the platform, plus new AI features that make building flows faster than ever.
+
+Connecting PLCs beyond OPC UA? FlowFuse also supports Siemens S7, EtherNet/IP, Modbus TCP/RTU, and MQTT — see the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
 
 [Get started free]({% include "sign-up-url.njk" %}) and scale and manage your Node-RED deployments today.

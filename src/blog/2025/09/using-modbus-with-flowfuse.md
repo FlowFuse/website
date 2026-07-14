@@ -8,6 +8,8 @@ image: /blog/2025/09/images/modbus-rtu.png
 keywords: modbus rtu, modbus 485, modbus rs485, modbus 485 rtu, modbus communications, rs232, rs485, node-red, flowfuse, industrial automation, iiot
 tags:
   - flowfuse
+  - modbus
+tldr: "Modbus RTU is one of the most widely used industrial communication protocols, running over serial connections in a master-slave architecture where FlowFuse acts as master and devices such as sensors, PLCs, and meters act as slaves. This guide covers Modbus data types, register addressing conventions, and step-by-step setup of the node-red-contrib-modbus nodes in FlowFuse to read and write device data."
 ---
 
 Modbus RTU is one of the most widely used communication protocols in industrial automation. It allows you to read sensor data, monitor equipment status, and control devices through a simple master-slave architecture. This guide will walk you through everything you need to know to start reading and writing industrial data with FlowFuse (a platform built around Node-RED with enterprise-level capabilities).
@@ -172,3 +174,5 @@ Modbus RTU has stood the test of time in industrial automation because it’s si
 * Scale from a single sensor to a **factory-wide monitoring and control system**.
 
 The real value comes when you stop treating Modbus as just a communication protocol and start using FlowFuse as the **bridge between industrial devices and enterprise systems**. From dashboards to alerts, from analytics to cloud integration — the possibilities are endless once the data is in your hands.
+
+Modbus is one of several protocols FlowFuse uses to connect PLCs — see [how FlowFuse connects any PLC to MQTT, cloud, and enterprise systems](/landing/plc/) for the full picture.

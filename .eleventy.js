@@ -8,7 +8,7 @@ const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const codeClipboard = require("eleventy-plugin-code-clipboard");
-const htmlmin = require("html-minifier");
+const htmlmin = require("html-minifier-terser");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItFootnote = require("markdown-it-footnote");
@@ -17,6 +17,7 @@ const spacetime = require("spacetime");
 const { minify } = require("terser");
 const codeowners = require('codeowners');
 const pluginTOC = require('eleventy-plugin-toc');
+const { decodeHTML } = require('entities');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
 const coreNodeDoc = require("./lib/core-node-docs.js");
@@ -27,130 +28,31 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 // Documentation alert boxes
 const shortcodeMarkdown = new markdownIt()
 
-function renderDocsAlertBox(content, tone = 'note', title = '') {
-    const normalizedTone = tone.toLowerCase();
-    const resolvedTitle = title
-    const markdownContent = shortcodeMarkdown.render(content)
+const CALLOUT_ICONS = {
+    note: `<svg class="ff-callout__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>`,
+    warning: `<svg class="ff-callout__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>`,
+    caution: `<svg class="ff-callout__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>`,
+}
 
-    return `<div class="ff-callout ff-callout--${normalizedTone}"><p class="ff-callout__title">${resolvedTitle}</p><div class="ff-callout__content">${markdownContent}</div></div>`
+function renderDocsAlertBox(content, tone = 'note') {
+    const normalizedTone = tone.toLowerCase();
+    const icon = CALLOUT_ICONS[normalizedTone] || CALLOUT_ICONS.note
+    const markdownContent = shortcodeMarkdown.render(content)
+    const contentWithIcon = markdownContent.replace(/^(<\w[^>]*>)/, `$1${icon}`)
+    return `<div class="ff-callout ff-callout--${normalizedTone}"><div class="ff-callout__content">${contentWithIcon}</div></div>`
 }
 
 // Skip slow optimizations when developing i.e. serve/watch or Netlify deploy preview
-const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview" || process.env.SKIP_IMAGES === 'true'
+const DEV_MODE = process.env.ELEVENTY_RUN_MODE !== "build" || process.env.CONTEXT === "deploy-preview"
+// Image processing is skipped in dev mode or when explicitly requested via SKIP_IMAGES.
+// Kept separate from DEV_MODE so build-time image flags never affect analytics/consent script inclusion.
+const SKIP_IMAGES = DEV_MODE || process.env.SKIP_IMAGES === 'true'
 const DEPLOY_PREVIEW = process.env.CONTEXT === "deploy-preview";
 const IMAGE_BUILD_PROFILE = process.env.IMAGE_BUILD_PROFILE || "full";
 
 console.info(`[11ty] Image build profile: ${IMAGE_BUILD_PROFILE}`)
 
 module.exports = function(eleventyConfig) {
-    let searchIndexItems = [];
-
-    function extractMetaTag(html, selector) {
-        const regex = new RegExp(`<meta[^>]*${selector}[^>]*content=(["'])(.*?)\\1[^>]*>`, "i");
-        const match = html.match(regex);
-        return match?.[2] || "";
-    }
-
-    function extractHtmlTitle(html) {
-        const match = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
-        return match ? match[1].replace(/\s+/g, " ").trim() : "";
-    }
-
-    function normalizeImage(value, fallback) {
-        if (!value) {
-            return fallback;
-        }
-        if (typeof value === "string") {
-            return value;
-        }
-        if (typeof value === "object" && typeof value.src === "string") {
-            return value.src;
-        }
-        return fallback;
-    }
-
-    function extractSearchHtml(url, html = "") {
-        const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
-        let searchable = mainMatch ? mainMatch[1] : html;
-
-        if (url.startsWith("/blog/")) {
-            searchable = searchable.split("<!-- Author Bio Section -->")[0];
-        }
-
-        return searchable;
-    }
-
-    function toUnixTimestampSeconds(value) {
-        if (!value) {
-            return null;
-        }
-        const date = value instanceof Date ? value : new Date(value);
-        if (Number.isNaN(date.getTime())) {
-            return null;
-        }
-        return Math.floor(date.getTime() / 1000);
-    }
-
-    async function listHtmlFiles(rootDir) {
-        const files = [];
-        async function walk(currentDir) {
-            const entries = await fs.promises.readdir(currentDir, { withFileTypes: true });
-            for (const entry of entries) {
-                const fullPath = path.join(currentDir, entry.name);
-                if (entry.isDirectory()) {
-                    await walk(fullPath);
-                } else if (entry.isFile() && entry.name.endsWith(".html")) {
-                    files.push(fullPath);
-                }
-            }
-        }
-        await walk(rootDir);
-        return files;
-    }
-
-    function outputPathToUrl(outputRoot, outputPath) {
-        const rel = path.relative(outputRoot, outputPath).replace(/\\/g, "/");
-        if (!rel.endsWith(".html")) {
-            return "";
-        }
-        if (rel === "index.html") {
-            return "/";
-        }
-        if (rel.endsWith("/index.html")) {
-            return `/${rel.slice(0, -"index.html".length)}`;
-        }
-        return `/${rel}`;
-    }
-
-    function decodeEntities(text = "") {
-        return text
-            .replace(/&nbsp;/gi, " ")
-            .replace(/&amp;/gi, "&")
-            .replace(/&lt;/gi, "<")
-            .replace(/&gt;/gi, ">")
-            .replace(/&#39;/gi, "'")
-            .replace(/&quot;/gi, "\"")
-            .replace(/&#x2022;/gi, "•");
-    }
-
-    function extractMetaKeywords(html) {
-        const raw = extractMetaTag(html, 'name=["\\\']keywords["\\\']');
-        if (!raw) {
-            return [];
-        }
-        return raw.split(",").map((keyword) => decodeEntities(keyword.trim()));
-    }
-
-    function extractDateFromJsonLd(html, fieldName) {
-        const regex = new RegExp(`\"${fieldName}\"\\\\s*:\\\\s*\"([^\"]+)\"`, "i");
-        const match = html.match(regex);
-        return match?.[1] || "";
-    }
-
-    function extractArticleSection(html) {
-        return extractMetaTag(html, 'property=["\\\']article:section["\\\']').trim();
-    }
-
 
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
     eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
@@ -217,6 +119,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
     eleventyConfig.addLayoutAlias('solution', 'layouts/solution.njk');
+    eleventyConfig.addLayoutAlias('use-case', 'layouts/use-case.njk');
     eleventyConfig.addLayoutAlias('catalog', 'layouts/catalog.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
 
@@ -231,6 +134,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/events/hm25-invite.ics");
     eleventyConfig.addPassthroughCopy("src/webinars/2025/simplifying-opc-ua/opc-ua-webinar-flows.zip");
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
+    eleventyConfig.addPassthroughCopy("src/js/hm-promo-banner.js");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
@@ -257,16 +161,16 @@ module.exports = function(eleventyConfig) {
     });
 
     // Documentation alert boxes
-    eleventyConfig.addPairedLiquidShortcode('note', function (content, title = '') {
-        return renderDocsAlertBox(content, 'note', "Note")
+    eleventyConfig.addPairedLiquidShortcode('note', function (content) {
+        return renderDocsAlertBox(content, 'note')
     })
 
-    eleventyConfig.addPairedLiquidShortcode('warning', function (content, title = '') {
-        return renderDocsAlertBox(content, 'warning', "Warning")
+    eleventyConfig.addPairedLiquidShortcode('warning', function (content) {
+        return renderDocsAlertBox(content, 'warning')
     })
 
-    eleventyConfig.addPairedLiquidShortcode('critical', function (content, title = '') {
-        return renderDocsAlertBox(content, 'critical', "Critical")
+    eleventyConfig.addPairedLiquidShortcode('caution', function (content) {
+        return renderDocsAlertBox(content, 'caution')
     })
 
 
@@ -513,6 +417,10 @@ module.exports = function(eleventyConfig) {
     });
 
 
+    eleventyConfig.addFilter("striptags", function(text) {
+        return decodeHTML(String(text).replace(/<[^>]+>/g, ""));
+    });
+
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);
         return "<p>"+content.split(/\.\n/).join(".</p><p>")+"</p>"
@@ -522,12 +430,16 @@ module.exports = function(eleventyConfig) {
         return new URL(url, site.baseURL).href;
     })
 
+    eleventyConfig.addFilter("stripLinks", function(text) {
+        return String(text).replace(/<a\s[^>]*>([\s\S]*?)<\/a>/gi, '$1');
+    });
+
     eleventyConfig.addFilter("handbookBreadcrumbs", (url) => {
         let parts = url.split("/").filter(e => e !== '');
         if (parts[parts.length-1] === "index") {
             parts.pop();
         }
-        
+
         let path = "";
         return "/"+parts.map(p => {
             let url = `${path}/${p}`;
@@ -537,11 +449,6 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
-        // If page.inputPath looks like: ./src/handbook/abc/def.md
-        // then the url of the page will be `/handbook/abc/def/`
-        // links of the form `./` or `[^/]` must be prepended with `../`
-        // to ensure it links to the right place
-
         const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
 
         const matcher = /((href|src)="([^"]*))"/g
@@ -549,12 +456,9 @@ module.exports = function(eleventyConfig) {
         while ((match = matcher.exec(str)) !== null) {
             let url = match[3]
             if (/^(http|#|mailto:)/.test(url)) {
-                // Do not rewrite absolute urls, in-page anchors or emails
                 continue
             }
-            // */abc.md#anchor => */abc/#anchor
             url = url.replace(/.md(#.*)?$/, '$1')
-            // */README#anchor => */#anchor
             url = url.replace(/README(#.*)?$/, '$1')
             if (url[0] !== '/' && !isIndexPage) {
                 url = '../'+url
@@ -723,8 +627,9 @@ module.exports = function(eleventyConfig) {
         const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
         if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
         if (pro && enterprise && !enterpriseDimmed) return "Pro+";
-        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (on request)";
+        if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (contact us)";
         if (enterpriseDimmed) return "Enterprise (on request)";
+        if (enterprise === 'time') return "Coming soon";
         if (enterprise) return "Enterprise";
         return "Not available";
     }
@@ -765,7 +670,13 @@ module.exports = function(eleventyConfig) {
         return html;
     }
 
-    // Inject tier badges and changelog links into release blog posts based on frontmatter
+    function renderDocsLink(feature) {
+        if (!feature || !feature.docsLink) return '';
+        const label = feature.label || 'Documentation';
+        return `<div class="ff-related-docs">Docs: <a href="${feature.docsLink}">${label}</a></div>`;
+    }
+
+    // Inject tier badges, changelog links, and a docs link into release blog posts based on frontmatter
     eleventyConfig.addTransform("releaseFeatures", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
 
@@ -790,6 +701,7 @@ module.exports = function(eleventyConfig) {
         for (const entry of features) {
             let badges = '';
             let changelogs = '';
+            let docs = '';
 
             if (entry.id) {
                 // Feature from featureCatalog
@@ -798,6 +710,7 @@ module.exports = function(eleventyConfig) {
                 badges = renderTierBadges(feature);
                 const changelogUrls = release ? getChangelogUrlsForRelease(feature, release) : getChangelogUrls(feature);
                 changelogs = renderChangelogLinks(changelogUrls);
+                docs = renderDocsLink(feature);
             } else if (entry.tiers) {
                 // Inline tier specification (no feature ID)
                 const inlineFeature = {};
@@ -821,8 +734,9 @@ module.exports = function(eleventyConfig) {
                 badges = renderTierBadges(inlineFeature);
             }
 
-            if (badges || changelogs) {
-                injections.push({ heading: entry.heading, badges, changelogs });
+            if (badges || changelogs || docs) {
+                // Docs link sits on its own line below the changelog line
+                injections.push({ heading: entry.heading, badges, related: changelogs + docs });
             }
         }
 
@@ -854,12 +768,12 @@ module.exports = function(eleventyConfig) {
                 ops.push({ index: heading.index + heading.length, html: badgesWithLevel });
             }
 
-            // Insert changelogs before the next heading at the same or higher level
-            // H2 changelogs go before the next H2; H3 changelogs go before the next H2 or H3
-            if (injection.changelogs) {
+            // Insert changelog + docs links before the next heading at the same or higher level
+            // H2 links go before the next H2; H3 links go before the next H2 or H3
+            if (injection.related) {
                 const nextPeer = headingMatches.find((h, i) => i > headingIdx && h.level <= heading.level);
                 const insertBefore = nextPeer ? nextPeer.index : content.length;
-                ops.push({ index: insertBefore, html: injection.changelogs });
+                ops.push({ index: insertBefore, html: injection.related });
             }
         }
 
@@ -913,7 +827,7 @@ module.exports = function(eleventyConfig) {
     // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
     eleventyConfig.addTransform("docsFeatureBadges", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
-        if (!this.page.url || !/^(\/docs\/|\/node-red\/|\/handbook\/)/.test(this.page.url)) return content;
+        if (!this.page.url || !/^(\/docs\/|\/node-red\/)/.test(this.page.url)) return content;
 
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);
@@ -1061,7 +975,7 @@ module.exports = function(eleventyConfig) {
     
     // Eleventy Image shortcode
     // https://www.11ty.dev/docs/plugins/image/
-    if (DEV_MODE) {
+    if (SKIP_IMAGES) {
         console.info(`[11ty] Image pipeline is enabled in dev mode, copying images without any conversion or resizing`)
     } else {
         console.info(`[11ty] Image pipeline is enabled in prod mode, expect a wait for first build while images are converted and resized`)
@@ -1071,7 +985,7 @@ module.exports = function(eleventyConfig) {
         const title = null
         const currentWorkingFilePath = this.page.inputPath
 
-        return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE)
+        return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES)
     });
 
     eleventyConfig.addAsyncShortcode("tileImage", async function(item, image, defaultImage, defaultDescription, imageSize, title = null, priority = false) {
@@ -1093,14 +1007,13 @@ module.exports = function(eleventyConfig) {
 
         const currentWorkingFilePath = this.page.inputPath;
 
-        return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, DEV_MODE, priority);
+        return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES, priority);
     });
     
     // Create a collection for sidebar navigation
     eleventyConfig.addCollection('nav', function(collection) {
         let nav = {}
 
-        createNav('handbook')
         createNav('docs')
 
         function createNav(tag) {
@@ -1131,7 +1044,7 @@ module.exports = function(eleventyConfig) {
                 // recursively parse the folder hierarchy and created our collection object
                 // pass nav = {} as the first accumulator - build up hierarchy map of TOC
                 hierarchy.reduce((accumulator, currentValue, i) => {
-                    // create a nested object detailing the full handbook hierarchy
+                    // create a nested object detailing the full docs hierarchy
                     if (!accumulator[currentValue]) {
                         accumulator[currentValue] = {
                             'name': currentValue,
@@ -1182,7 +1095,6 @@ module.exports = function(eleventyConfig) {
                 }
             }
 
-            // not req'd to have handbook in Website build, so this may be empty
             if (nav[tag]) {
                 for (child of nav[tag].children) {
                     if (child.group) {
@@ -1196,7 +1108,7 @@ module.exports = function(eleventyConfig) {
                         }
                         groups[group].children.push(child)
                     } else {
-                        // capture & flag top-level handbook docs, that haven't had a group assigned
+                        // capture & flag top-level docs that haven't had a group assigned
                         groups['Other'].children.push(child)
                     }
                 }
@@ -1228,6 +1140,12 @@ module.exports = function(eleventyConfig) {
         return nav;
     });
 
+    eleventyConfig.addCollection("aiBlog", function(collectionApi) {
+        return collectionApi.getFilteredByTag("ai").filter(item => {
+            return !item.data.tags || !item.data.tags.includes("blueprints");
+        });
+    });
+
     eleventyConfig.addCollection("homeLogos", function () {
         const logosDir = path.join(__dirname, "src/images/home-logos");
         const logos = fs.readdirSync(logosDir)
@@ -1253,87 +1171,7 @@ module.exports = function(eleventyConfig) {
         });
     });
 
-    eleventyConfig.addCollection("searchIndex", function (collectionApi) {
-        searchIndexItems = collectionApi
-            .getAll()
-            .filter((item) => isSearchPage(item))
-            .sort((a, b) => a.url.localeCompare(b.url));
-        return searchIndexItems;
-    });
 
-    eleventyConfig.on("eleventy.after", async ({ dir }) => {
-        const defaultKeywords = (site.messaging?.keywords || "")
-            .split(",")
-            .map((item) => item.trim());
-        const defaultDescription = site.messaging?.subtitle || "";
-        const defaultImage = `${site.baseURL || ""}/images/og-social-tile.jpg`;
-        const defaultOrigin = process.env.DEPLOY_PRIME_URL || process.env.URL || site.baseURL || "";
-
-        const records = [];
-
-        const htmlFiles = await listHtmlFiles(dir.output);
-
-        for (const outputPath of htmlFiles) {
-            const url = outputPathToUrl(dir.output, outputPath);
-            if (!isSearchUrl(url)) {
-                continue;
-            }
-
-            let html = "";
-            try {
-                html = await fs.promises.readFile(outputPath, "utf8");
-            } catch (error) {
-                continue;
-            }
-
-            const searchableHtml = extractSearchHtml(url, html);
-            const htmlTitle = extractHtmlTitle(html);
-            const htmlDescription =
-                extractMetaTag(html, 'name=["\\\']description["\\\']') ||
-                extractMetaTag(html, 'property=["\\\']og:description["\\\']');
-            const htmlImage = extractMetaTag(html, 'property=["\\\']og:image["\\\']');
-            const htmlKeywords = extractMetaKeywords(html);
-            const htmlCategory = extractArticleSection(html);
-            const datePublishedIso =
-                extractDateFromJsonLd(html, "datePublished") ||
-                extractMetaTag(html, 'property=["\\\']article:published_time["\\\']');
-            const dateModifiedIso =
-                extractDateFromJsonLd(html, "dateModified") ||
-                extractMetaTag(html, 'property=["\\\']article:modified_time["\\\']') ||
-                datePublishedIso;
-
-            const pageDescription =
-                decodeEntities(htmlDescription) ||
-                defaultDescription;
-            const pageImage = normalizeImage(
-                normalizeImage(htmlImage, "") ||
-                defaultImage
-            );
-            const pageKeywords = htmlKeywords.length > 0 ? htmlKeywords : defaultKeywords;
-            const datePublished = toUnixTimestampSeconds(datePublishedIso);
-            const dateModified = toUnixTimestampSeconds(dateModifiedIso);
-
-            records.push(
-                ...extractHeadingRecords({
-                    url,
-                    html: searchableHtml,
-                    category: htmlCategory,
-                    pageTitle: decodeEntities(htmlTitle),
-                    pageDescription,
-                    pageImage,
-                    origin: defaultOrigin,
-                    lang: "en",
-                    keywords: pageKeywords,
-                    datePublished,
-                    dateModified,
-                })
-            );
-        }
-
-        const outputPath = path.join(dir.output, "search-index.json");
-        await fs.promises.writeFile(outputPath, JSON.stringify(records, null, 2));
-        console.log(`[11ty] Wrote ${records.length} search records to ${outputPath}`);
-    });
 
     // Plugins
     eleventyConfig.addPlugin(EleventyRenderPlugin)
@@ -1391,7 +1229,7 @@ module.exports = function(eleventyConfig) {
         const async = false // cannot run async inside markdown
 
         try {
-            let imageHtml = imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, DEV_MODE)
+            let imageHtml = imageHandler(imgSrc, imgAlt, imgTitle, widths, htmlSizes, folderPath, eleventyConfig, async, SKIP_IMAGES)
 
             // Add the additional attributes to the image
             for (let attr in attributes) {
@@ -1433,9 +1271,9 @@ module.exports = function(eleventyConfig) {
 
     if (!DEV_MODE) {
         console.info(`[11ty] Output HTML will be minified, expect a short wait`)
-        eleventyConfig.addTransform("htmlmin", function (content) {
+        eleventyConfig.addTransform("htmlmin", async function (content) {
             if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
-                let minified = htmlmin.minify(content, {
+                let minified = await htmlmin.minify(content, {
                     collapseBooleanAttributes: true,
                     collapseWhitespace: true,
                     conservativeCollapse: true,

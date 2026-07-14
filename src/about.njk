@@ -34,9 +34,9 @@ eleventyComputed:
 ---
 
 <!-- Primary Content -->
-<div class="about w-full">
+<div class="about w-full px-6">
     <div class="w-full pt-12 pb-16 md:pb-10 md:pt-12 flex flex-col items-center">
-        <div class="container text-center max-w-xl md:max-w-4xl px-6">
+        <div class="container text-center max-w-xl md:max-w-4xl">
             <h1>About FlowFuse</h1>
             <div class="flex flex-col md:flex-row gap-8 items-center mt-10">
                 <div class="md:w-1/2 text-left my-auto">
@@ -61,7 +61,7 @@ eleventyComputed:
                     <div class="w-[42px]">
                         {% image "./images/node-red-hexagon.png", "Node-RED Logo", [42] %}
                     </div>
-                    <h4 class="mt-3"><span class="inline-block text-red-700">Node-RED</span></h4>
+                    <h2 class="mt-3 text-[1.4rem] leading-[1.9rem]"><span class="inline-block text-red-700">Node-RED</span></h2>
                 </div>
                 <p class="md:w-[72%] text-justify"><span class="font-medium">We are deeply committed to the success of the Node-RED open
                         source project</span>. FlowFuse dedicates significant resources to improving the core technology of the project and fostering the growth of the Node-RED community. </p>
@@ -71,7 +71,7 @@ eleventyComputed:
                     <div class="w-[42px]">
                         {% image "./images/pictograms/opensource_red.png", "Open Source Logo", [42] %}
                     </div>
-                    <h4 class="mt-2"><span class="inline-block text-red-700">Open Source</span></h4>
+                    <h2 class="mt-2 text-[1.4rem] leading-[1.9rem]"><span class="inline-block text-red-700">Open Source</span></h2>
                 </div>
                 <div class="md:w-[72%] text-justify">
                     <p>We believe strongly that <span class="font-medium">Open Source is the heart of everything we
@@ -83,12 +83,78 @@ eleventyComputed:
     </div>
 </div>
 
+<!-- Team -->
+<div class="team w-full pb-20 pt-12 px-6">
+    <div class="container m-auto text-center max-w-xl md:max-w-4xl mb-10">
+        <h2>Meet the Team</h2>
+    </div>
+    <div class="container m-auto text-left max-w-4xl">
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {%- for member in team | dictsortBy(false, 'order') -%}
+            <div id="{{ member._key }}" class="team-headshot w-full max-w-xs m-auto">
+                {% set imageSrc = ["./images/team/headshot-", member.headshot ] | join %}
+                {% set imageAlt = ["Photo of ", member.name ] | join %}
+                {% image imageSrc, imageAlt, [256] %}
+                <ul class="member-facts">
+                    {%- for fact in member.facts -%}
+                    <li>{{ fact | safe }}</li>
+                    {%- endfor -%}
+                </ul>
+                <div class="member-info">
+                    <div class="title">
+                        <div class="name">{{ member.name }}</div>
+                        <div class="role">{{ member.title }}</div>
+                    </div>
+                    <div class="socials">
+                        {% if member.email %}
+                        <span class="">
+                            <a href="mailto:{{ member.email }}" aria-label="Email {{ member.name }}">
+                                {% include "components/mail.njk" %}
+                            </a>
+                        </span>
+                        {% endif %}
+                        {% if member.twitter %}
+                        <span class="">
+                            <a class="" target="_blank" href="https://twitter.com/{{ member.twitter }}" aria-label="{{ member.name }} on Twitter">
+                                {% include "components/twitter.njk" %}
+                            </a>
+                        </span>
+                        {% endif %}
+                        {% if member.github %}
+                        <span class="">
+                            <a class="" target="_blank" href="https://github.com/{{ member.github }}" aria-label="{{ member.name }} on GitHub">
+                                {% include "components/github.njk" %}
+                            </a>
+                        </span>
+                        {% endif %}
+                        {% if member.linkedin %}
+                        <span class="">
+                            <a class="" target="_blank" href="https://www.linkedin.com/in/{{ member.linkedin }}" aria-label="{{ member.name }} on LinkedIn">
+                                {% include "components/linkedin.njk" %}
+                            </a>
+                        </span>
+                        {% endif %}
+                        {% if member.blog %}
+                        <span class="">
+                            <a class="" target="_blank" href="{{ member.blog }}" aria-label="{{ member.name }}'s blog">
+                                {% include "components/rss.njk" %}
+                            </a>
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
+
 <!-- Company Values -->
 <div class="about w-full bg-gray-50 px-6 pt-12 pb-6 md:pt-12 md:pb-6">
     <div class="container about-values m-auto max-w-xl md:max-w-4xl px-0 sm:px-6 md:px-0">
         <div>
             <h2 class="mb-10 text-center">Corporate Values</h2>
-            <p class="text-justify">As a remote-only company, FlowFuse seeks and fosters talent from Europe, North America, and Asia. Our <a href="/handbook/company/values/">corporate values</a> encourage our team to continuously iterate using constructive candor to prioritize customer empathy.</p>
+            <p class="text-justify">As a remote-only company, FlowFuse seeks and fosters talent from Europe, North America, and Asia. Our <a href="/handbook/company/values/" class="underline">corporate values</a> encourage our team to continuously iterate using constructive candor to prioritize customer empathy.</p>
         </div>
         {% include "values.njk" %}
     </div>
@@ -121,50 +187,13 @@ eleventyComputed:
     </div>
 </div>
 <!-- Working at FlowFuse -->
-<div class="about w-full">
-    <div class="w-full bg-white px-6 pt-6 pb-12 md:px-0">
-        <div class="container m-auto text-center max-w-xl md:max-w-4xl mt-12 md:mt-3">
+<div class="about w-full bg-gray-50 px-6 pt-12 pb-12 md:pt-20 md:px-0">
+    <div class="container m-auto text-center max-w-4xl">
+        <div>
             <h2 class="mb-4">Working at FlowFuse</h2>
+            <p>Here are just some of the benefits enjoyed by our employees. We are always looking to improve and expand these too. You can read more about them in our <a href="/handbook/peopleops/" class="underline">Handbook.</a></p>
         </div>
-        <div class="grid px-6 grid-cols-1 md:grid-cols-2 md:gap-3 sm:gap-x-8 gap-y-6 mb-6 max-w-md sm:max-w-xl md:max-w-4xl m-auto mt-8 md:mt-0">
-            <!-- Team -->
-            <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
-                <div class="w-16">
-                    {% image "./images/pictograms/collaboration_blue.png", "Graphics depicting a team.", [64] %}
-                </div>
-                <div class="about-team flex flex-col justify-center">
-                    <a href="/team/">
-                        <h4 class="flex leading-8 mb-4 mt-6">
-                            <span class="font-medium">Team</span>
-                            <div class="w-5 inline self-end mb-1 ml-2">
-                                {% include "components/icons/arrow-top-right-on-square.svg" %}
-                            </div>
-                        </h4>
-                    </a>
-                    <div class="-mt-6">
-                        <p>Meet our growing team&#33;</p>
-                    </div>
-                </div>    
-            </div>
-            <!-- Careers -->
-            <div class="w-full text-left m-auto flex flex-row justify-start items-center gap-3">
-                <div class="w-16 -mt-4 md:mt-0" style="flex-shrink: 0;">
-                    {% image "./images/pictograms/briefcase_blue.png", "Graphics depicting a briefcase.", [64] %}
-                </div>
-                <div class="about-team flex flex-col justify-center">
-                    <a href="/careers/">
-                        <h4 class="flex leading-8 mb-4 md:mt-14">
-                            <span class="font-medium">Careers</span>
-                            <div class="w-5 inline self-end mb-1 ml-2">
-                                {% include "components/icons/arrow-top-right-on-square.svg" %}
-                            </div>
-                        </h4>
-                    </a>
-                    <div class="-mt-6">
-                        <p>Join our team. Check out current career opportunities.</p>
-                    </div>
-                </div>    
-            </div>
-        </div>
+        {% include "benefits.njk" %}
+        <p class="mt-8">Interested in joining FlowFuse? Check out our <a href="{{ site.jobBoard }}" class="underline">Jobs</a> page for our current openings.</p>
     </div>
 </div>

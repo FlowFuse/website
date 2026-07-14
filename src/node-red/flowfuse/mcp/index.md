@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: MCP
   parent: FlowFuse Nodes
-  order: 1
+  order: 2
 meta:
   title: MCP Nodes
   description: A set of nodes that enable the creation of MCP (Model Context Protocol) servers in your Node-RED flows for AI-integration.

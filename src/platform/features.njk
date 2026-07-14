@@ -4,7 +4,7 @@ nohero: true
 meta:
     title: FlowFuse Features
 description:
-    FlowFuse provides the features companies require to reliably deliver Node-RED applications to devices and cloud in a collaborative, secure manner.
+    FlowFuse provides the features companies require to reliably deliver industrial applications to devices and cloud in a collaborative, secure manner.
 sitemapPriority: 0.8
 hubspot:
     script: "hubspot/hs-form.njk"
@@ -29,9 +29,9 @@ hubspot:
                     <h1 class="m-auto leading-normal">
                         FlowFuse Platform <span class="text-indigo-600">Features</span>
                     </h1>
-                    <h3 class="text-xl text-indigo-400 mt-6 sm:mt-1">
+                    <h2 class="text-xl text-indigo-400 mt-6 sm:mt-1">
                         Low-Code Development Meets Industrial Strength
-                    </h3>
+                    </h2>
                     <p class="text-center m-auto mt-6">Bridging the gaps between OT and IT, FlowFuse provides a comprehensive platform for all your industrial data connectivity needs, delivered with enterprise-grade control and security.</p>
                     <div class="m-auto my-8 flex gap-6 items-center justify-center flex-row pb-2">
                         <a class="ff-btn ff-btn--primary flex flex-col" href="/contact-us"
@@ -73,7 +73,7 @@ hubspot:
                             svgPath: "components/icons/arrows.svg",
                             image1: "./images/home/connect_graphic.png",
                             image1Alt: "Icons of communication protocols",
-                            url: "/solutions/edge-connectivity/"
+                            url: "/use-cases/edge-connectivity/"
                             },
                             {
                             title: "Collect & Transform",
@@ -81,7 +81,7 @@ hubspot:
                             svgPath: "components/icons/data-block.svg",
                             image1: "./images/home/collect_graphic.png",
                             image1Alt: "Icons of files formats",
-                            url: "/solutions/data-integration/"
+                            url: "/use-cases/data-integration/"
                             },
                             {
                             title: "Visualise",
@@ -109,7 +109,7 @@ hubspot:
                                                 {% set svgPath = section.svgPath %}
                                                 {% include svgPath %}
                                             </div>
-                                            <h4 class="text-2xl font-light text-indigo-600">{{ section.title }}</h4>
+                                            <h3 class="text-2xl font-light text-indigo-600">{{ section.title }}</h3>
                                         </div>
                                         <p>{{ section.text }}</p>
                                     </div>
@@ -131,8 +131,8 @@ hubspot:
     <div class="w-full bg-gray-50 px-6">
         <div class="max-w-screen-lg flex flex-col sm:grid sm:grid-cols-2 gap-6 mx-auto pt-16 pb-20">
             <div class="col-span-2">
-            <h2 class="mb-6 max-sm:text-center">FlowFuse Operationalises Node-RED</h2>
-            <p>In an enterprise environment, Node-RED deployments need to be more robust. FlowFuse bridges the gap, offering key features like robust security protocols to protect sensitive data, streamlined management tools for effortless scaling, and compliance frameworks to ensure adherence to industry standards. With FlowFuse, your Node-RED solutions evolve from agile prototypes to enterprise-grade powerhouses, ready to tackle the complexities of your business operations.</p>
+            <h2 class="mb-6 max-sm:text-center">FlowFuse: The Industrial Application Platform</h2>
+            <p>In an enterprise environment, industrial application deployments need to be robust, secure, and scalable. FlowFuse bridges the gap between IT and OT, offering key features like robust security protocols to protect sensitive data, streamlined management tools for effortless scaling, and compliance frameworks to ensure adherence to industry standards. With FlowFuse, your solutions evolve from agile prototypes to enterprise-grade powerhouses, ready to tackle the complexities of your business operations.</p>
             </div>
             {%- for f in features -%}
             <div class="container prose border-2 border-indigo-100 rounded-lg p-6">
@@ -147,9 +147,9 @@ hubspot:
                     </div>
                     {% endif %}
                     <div>
-                        <h4 class="w-full text-center font-semibold max-sm:mt-3">
+                        <h3 class="w-full text-center font-semibold max-sm:mt-3 text-xl">
                             {{ f.title }}
-                        </h4>
+                        </h3>
                         <p class="mb-0">
                             {{ f.content | safe }}
                         </p>
