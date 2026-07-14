@@ -2,7 +2,7 @@
 layout: default
 meta:
   title: "Automotive Manufacturing Applications | FlowFuse"
-  description: "FlowFuse is a platform-agnostic, low-code platform for building, deploying, and managing industrial applications for automotive manufacturers."
+  description: "Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time."
   faq:
     - question: "Do I need to replace my existing SCADA or MES?"
       answer: >
@@ -20,8 +20,8 @@ meta:
       answer: >
         Yes. FlowFuse combines low-code development with FlowFuse AI, enabling engineering and manufacturing teams to build industrial applications faster. AI-powered expert assistance and agentic development help accelerate application creation, while developers retain full control to customize logic and integrations as needed.
 hero:
-  heading: 'Build <span class="text-red-600">Automotive Manufacturing Applications</span> with Low&#8209;code'
-  description: "FlowFuse is a platform-agnostic, low-code platform for building, deploying, and managing industrial applications. Extend your existing manufacturing software with custom applications for production monitoring, downtime tracking, quality, workflows, and AI-powered operations."
+  heading: '<span class="text-red-600">Scale automotive operations</span> without rewiring your stack'
+  description: "Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time."
   primaryCta: "BOOK A DEMO"
   primaryCtaLink: "/book-demo/"
   secondaryCta: "VIEW PRICING"
@@ -115,7 +115,7 @@ cta:
 <section class="w-full relative">
     <div class="px-6 pt-16 pb-14 md:pt-20">
         <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-stretch">
-            <div class="max-md:text-center">
+            <div class="max-md:text-center md:flex md:flex-col md:justify-center">
                 <h1 class="text-4xl md:text-5xl font-medium m-0">
                     {{ hero.heading | safe }}
                 </h1>
@@ -146,7 +146,7 @@ cta:
                     </div>
                 </div>
                 {% else %}
-                <div class="relative w-full h-full">
+                <div class="relative w-full h-full max-md:mt-10">
                     <div class="ff-image-cover ff-image-rounded w-full h-full">
                         {% image ["./", hero.image] | join, hero.imageAlt, [496] %}
                     </div>
