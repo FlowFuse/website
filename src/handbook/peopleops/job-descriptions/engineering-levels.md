@@ -104,8 +104,8 @@ Demonstrates:
 
 Promotion to Level 2 requires:
 - Independent ownership of moderately complex work
-- Reduced reliance on step-by-step direction
-
+- Reduced need for day-to-day oversight
+  - Able to scope, plan, and flag risk without step-by-step direction,
 
 ### Level 2 - Independent Owner
 
