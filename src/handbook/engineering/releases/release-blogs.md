@@ -79,7 +79,7 @@ What was the friction or gap before this? Write it as a user experience.
 > Managing flows across environments means tracking what changed, when, and by whom. When tooling gaps introduce friction here — or leave your version control workflow fragmented — they slow teams down at exactly the wrong moment.
 
 **2. Feature content**
-Use H3 headings when multiple features are grouped under one H2. Each feature gets 1–2 factual paragraphs. No preamble. No "we're excited to announce."
+Use H3 headings when multiple features are grouped under one H2, with the feature name as the heading text. Each feature gets 1–2 factual paragraphs. No preamble. No "we're excited to announce."
 
 **3. `### In practice`**
 Three bullet points, each starting with "You." Describe user outcomes, not feature capabilities.
