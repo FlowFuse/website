@@ -151,7 +151,7 @@ misunderstandings and the need for us to repeat ourselves.
 
 #### Suggested Setup
 
-- [FiFine USB Microphone](https://fifinemicrophone.com/collections/usb-mics/products/fifine-k669-669b)
+- [FiFine USB Microphone](https://fifinemicrophone.com/products/fifine-k669-669b-usb-microphone)
   (~$30)
 - [Microphone Stand](https://www.amazon.co.uk/Aokeo-AK-35-Microphone-Suspension-Scissor/dp/B01MZ99Y67)
   (~$25)

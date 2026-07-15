@@ -748,6 +748,13 @@ h4:hover .header-anchor::before {
     background-size: cover;
 }
 
+.solution-section-bg-flipped {
+    background: url('/images/home/home-solution-background.svg');
+    background-position: bottom;
+    background-size: cover;
+    transform: rotate(180deg);
+}
+
 .ff-image-top-rounded img,
 .ff-image-top-rounded picture {
     @apply rounded-t-lg;
@@ -2017,6 +2024,10 @@ lite-youtube::before {
 
 .bg-radial-indigo-small {
     background: radial-gradient(ellipse 50% 5% at center bottom, rgb(from var(--color-blue-200) r g b / 0.3) 0%, rgb(from var(--color-blue-200) r g b / 0) 100%);
+}
+
+.bg-radial-red {
+    background: radial-gradient(ellipse 30% 70% at center bottom, rgb(from var(--color-red-50) r g b / 0.3) 0%, rgb(from var(--color-red-50) r g b / 0) 100%);
 }
 
 /* AI Chat Interface Styles */

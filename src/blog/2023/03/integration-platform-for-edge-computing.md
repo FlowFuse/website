@@ -45,13 +45,13 @@ Below is a sample of the vendors offering a Node-RED solution:
 1. [Advantech](https://www.advantech.com/en-eu/products/node-red-gateways/sub_fb7246cc-cc10-486f-806b-30bb50a90f28) Node-RED Field Gateway
 2. [Bechhoff](https://infosys.beckhoff.com/english.php?content=../content/1033/tf6720_tc3_iot_data_agent/3260672139.html&id=) TwinCAT
 3. [Bivocom](https://www.bivocom.com/products/iot-gateways/edge-iot-gateway-tg452) TG452 IoT Edge Gateway
-4. [BLIIOT Edge Computing Gateway](https://www.bliiot.com/edge-computing-gateway-p00359p1.html) EdgeCom BL302
+4. [BLIIOT Edge Computing Gateway](https://bliiot.com/products/) EdgeCom BL302
 5. [Bosch CtrlX Core](https://developer.community.boschrexroth.com/t5/Store-and-How-to/ctrlX-CORE-Node-RED-App/ba-p/22366)
 5. [Broadsens](https://www.broadsens.com/wireless-gateway/) GU200 & GU 200S
 6. [Emerson](https://www.emerson.com/documents/automation/product-datasheet-pacedge-software-computing-devices-pacsystems-en-7205588.pdf) PACEdge
 7. [Hilscher Automation](https://github.com/HilscherAutomation/netPI-nodered)
 8. [Opto22](https://developer.opto22.com/nodered/general/) groov RIO & EPIC
-9. [Parallax AV](https://www.parallaxav.com/controlsystem/) Control System
+9. [Parallax AV](https://www.parallaxcontrol.com/) Control System
 10. [Particle.io](https://docs.particle.io/reference/cloud-apis/node-red/) Particle
 11. [Pepperl+Fuchs](https://www.pepperl-fuchs.com/usa/en/classid_199.htm?view=productdetails&prodid=93839) AS-Interface gateway
 12. [Raspberry Pi](https://projects.raspberrypi.org/en/projects/getting-started-with-node-red)
@@ -61,7 +61,7 @@ Below is a sample of the vendors offering a Node-RED solution:
 15. [Siemens](https://github.com/SIMATICmeetsLinux/IOT2050-NodeRed-OPCUA-Server) S7 PLC
 15. [ST-One](https://st-one.io/en/)
 16. [Tulip](https://support.tulip.co/docs/using-node-red-with-edge-mc) Edge MC & Edge IO
-17. [Wago](https://www.wago.com/us/edge-devices) Edge Controller & Computer
+17. [Wago](https://www.wago.com/us/edge-devices-overview) Edge Controller & Computer
 18. [Weidmueller](https://catalog.weidmueller.com/procat/Group.jsp;jsessionid=C885C404E7B4B798B23B8A9BB2200513?groupId=(%22group14048963834797%22)&page=Group) control web
 
 There are several key reason Node-RED is so popular for IIoT edge computing, including:
