@@ -19,7 +19,6 @@ The FlowFuse Expert consists of two internal components that each need to be ena
 2. Support/Sales needs to verify that the customer has a current Enterprise License
 3. Once confirmed, they raise a [Production Change Request](/handbook/operations/change/#flowfuse-cloud-change-control) providing details of the Customer and post a message to `#dept-engineering` with a link.
 4. Engineering needs to create **two** access tokens for the customer.
-
    1. **Assistant**: Open the Instance Settings for the `flow-gen` instance in the `Internal Tools` Application. Under the Security settings create a new HTTP Bearer Token using the customer name as the token name. The token will only be displayed once, so make a note of it - this is the **Assistant Token**.
    2. **Expert**: Open the Instance Settings for the `flowfuse-expert-api` instance in the `Internal Tools` Application. Under the Security settings create a new HTTP Bearer Token using the customer name as the token name. The token will only be displayed once, so make a note of it - this is the **Expert Token**.
 5. Engineering will provide the tokens to the Support/Sales person who raised the request.
@@ -29,8 +28,8 @@ The FlowFuse Expert consists of two internal components that each need to be ena
 
 ### Docker
 
-The feature is enabled by adding valid tokens to the `.env` file used to start the FlowFuse Platform.
-The tokens should be added to the `ASSISTANT_TOKEN` and `EXPERT_TOKEN` environment variables (find and replace the `<Assistant Token>` and `<Expert Token>` placeholders with the actual tokens provided by FlowFuse Support/Sales).
+The feature is enabled by adding valid tokens to the `.env` file used to configure a FlowFuse Platform.
+Tokens should be added to the `ASSISTANT_TOKEN` and `EXPERT_TOKEN` environment variables (find and replace the `<Assistant Token>` and `<Expert Token>` placeholders with the actual tokens provided by FlowFuse Support/Sales).
 
 ```yaml
 ASSISTANT_TOKEN="<Assistant Token>"
@@ -40,7 +39,7 @@ EXPERT_TOKEN="<Expert Token>"
 
 Restart the core application containers for the changes to take effect:
 
-```text
+```bash
 docker compose stop forge
 docker compose up -d forge
 ```
