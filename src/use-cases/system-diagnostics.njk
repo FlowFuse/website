@@ -1,0 +1,101 @@
+---
+title: "System Diagnostics"
+meta:
+  title: "System Diagnostics | Use Cases | FlowFuse"
+  description: "Correlate signals across IT and OT systems to find out why things are slow, stuck or failing. Built on Node-RED, managed with FlowFuse."
+problem: "When production IT misbehaves, the evidence is scattered across five systems and the person who can read them is on another site."
+industries: ["automotive", "semiconductors"]
+values: ["asset-reliability"]
+architecture: "it-ot-middleware"
+expertDock: true
+
+customerPain:
+  heading: "Symptoms everywhere, causes nowhere."
+  intro:
+    - "Scanners time out, interfaces queue up, a line slows for no visible reason. The cause sits somewhere between the network, the middleware, the application and the machine, and each has its own console."
+    - "Diagnosis means an expert manually joining logs, tag values and timestamps across systems that were never meant to be read together."
+  cards:
+    - icon: "bug"
+      title: "Intermittent faults defy snapshots"
+      detail: "The problem is gone by the time someone looks; without continuous correlated capture there is nothing to analyze."
+    - icon: "layers"
+      title: "Evidence split across stacks"
+      detail: "Network metrics, application logs, PLC states and device telemetry live in unconnected tools."
+    - icon: "users"
+      title: "Diagnosis depends on one person"
+      detail: "The engineer who can read all five systems is a single point of failure for every incident."
+    - icon: "clock"
+      title: "Slow hunts, long incidents"
+      detail: "Hours of manual log pulling while production runs degraded."
+  #placeholder: template copy for review, refine per Showcase
+
+outcomeFirst:
+  heading: "One place where the signals meet."
+  intro: "FlowFuse flows collect and correlate the relevant signals continuously: device telemetry, interface queues, log events and process markers, so the picture exists before anyone has to ask for it."
+  dimensions:
+    - label: "Operational"
+      title: "Continuous evidence capture"
+      detail: "The signals that matter are collected and time-aligned around the clock, catching intermittent faults in the act."
+    - label: "Organizational"
+      title: "Diagnosis without the hero engineer"
+      detail: "Correlated views let more people resolve more incidents without cross-system expertise."
+    - label: "Financial"
+      title: "Shorter degraded-mode running"
+      detail: "Faster root cause means less time producing slowly, badly, or not at all."
+
+whyItMatters:
+  heading: "Degraded is the most expensive mode."
+  intro: "Hard failures get attention; slow drips of latency and retries quietly cost more."
+  points:
+    - title: "Intermittent issues age into outages"
+      detail: "What flickers today fails on the worst possible shift. Continuous capture is the only way to catch it early."
+    - title: "Cross-system blindness doubles incident time"
+      detail: "Most diagnostic time is spent gathering evidence, not analyzing it."
+    - title: "Tribal diagnostic knowledge does not scale"
+      detail: "Documenting correlation logic in flows turns one expert's method into a team capability."
+
+competition:
+  heading: "Why the usual approaches stall."
+  intro: "Observability tooling stops at the IT boundary; OT tooling stops at the machine."
+  traps:
+    - label: "IT observability"
+      title: "APM suites never see the PLC"
+      detail: "Enterprise monitoring covers servers and services but has no view of device or process state."
+    - label: "Vendor diagnostics"
+      title: "Every system diagnoses only itself"
+      detail: "Each console is right and none of them answer the cross-system question."
+    - label: "Manual forensics"
+      title: "Log pulls after the fact"
+      detail: "Evidence assembled per incident, too late for intermittent faults."
+
+comparison:
+  without:
+    - title: "Evidence gathered per incident"
+      detail: "Manual log pulls across systems, hours after the symptom."
+    - title: "One expert on the critical path"
+      detail: "Incidents queue behind a single person's availability."
+    - title: "Intermittent faults stay unsolved"
+      detail: "No continuous capture, no pattern, no fix."
+  with:
+    - title: "Signals correlated continuously"
+      detail: "Flows join telemetry, logs and process markers in real time."
+    - title: "Shared diagnostic views"
+      detail: "Dashboards anyone on the team can read and act on."
+    - title: "Patterns surface themselves"
+      detail: "Thresholds and trends flag recurring conditions before they escalate."
+
+aiBuildLayer:
+  intro: "The FlowFuse Expert works on this use case with you, from building collectors to querying what they capture."
+  steps:
+    - title: "Describe it, get a starting flow"
+      detail: "Tell the Expert which systems to watch; it assembles a collection and correlation starting flow. Currently in open beta on FlowFuse Cloud."
+    - title: "Ask questions in plain language"
+      detail: "Expose captured diagnostics through MCP tools and query them with Expert's Insights mode (beta): 'what changed before the scanners slowed down?'"
+    - title: "Own and adapt what you built"
+      detail: "The flow explainer documents collection logic, so the diagnostic method survives team changes."
+  note: "AI capabilities noted as beta are in open beta on FlowFuse Cloud at time of writing. Placeholder template copy for internal review."
+
+closingCta:
+  heading: "Stop diagnosing by archaeology"
+  description: "Talk to an expert about cross-system diagnostics, or wire your first correlated view today."
+---

@@ -1,0 +1,101 @@
+---
+title: "Track & Trace"
+meta:
+  title: "Track & Trace | Use Cases | FlowFuse"
+  description: "Genealogy and traceability from raw material to shipped unit: capture every step with context, answer recalls in minutes. Built on Node-RED, managed with FlowFuse."
+problem: "A recall question lands, and the answer lives in three systems, two spreadsheets and a binder."
+industries: ["life-sciences", "food-beverage", "aviation-aerospace", "aerospace-components"]
+values: ["quality-compliance"]
+architecture: "data-integration"
+expertDock: true
+
+customerPain:
+  heading: "Traceability by reconstruction."
+  intro:
+    - "Which lots went into which batch, on which machine, under which conditions, shipped to whom: the data exists, but scattered across ERP, MES, machines and paper."
+    - "When an audit or recall asks the question, teams spend days reconstructing what a connected system could answer in minutes, and the exposure window stays wide open the whole time."
+  cards:
+    - icon: "queue-list"
+      title: "Genealogy gaps between systems"
+      detail: "Material moves are recorded in ERP, process steps in MES, machine conditions nowhere; the chain has holes."
+    - icon: "clip-list"
+      title: "Paper travelers, manual scans"
+      detail: "Handwritten lot numbers and missed scan points break the chain exactly where it matters."
+    - icon: "shield-exclamation"
+      title: "Recalls scoped by worst case"
+      detail: "When you cannot prove which units are affected, you recall everything that might be."
+    - icon: "book-open"
+      title: "Audit answers take days"
+      detail: "Every compliance request becomes a cross-system research project."
+  #placeholder: template copy for review, refine per Showcase
+
+outcomeFirst:
+  heading: "An unbroken chain, captured as it happens."
+  intro: "FlowFuse wires the capture points together: scanners, machines, MES and ERP feed one genealogy record per unit or batch, with process context attached at every step."
+  dimensions:
+    - label: "Compliance"
+      title: "Recall scope in minutes, not days"
+      detail: "Forward and backward trace from any lot, unit or shipment, with evidence attached."
+    - label: "Quality"
+      title: "Process context on every step"
+      detail: "Not just where a unit went, but the conditions it was produced under."
+    - label: "Financial"
+      title: "Smaller recalls, faster audits"
+      detail: "Precise scoping replaces worst-case recalls; audit requests become queries."
+
+whyItMatters:
+  heading: "Traceability is insurance you build in advance."
+  intro: "The value shows up on the worst day: a recall, an audit finding, a customer claim."
+  points:
+    - title: "Recall cost scales with uncertainty"
+      detail: "Every unit you cannot rule out is a unit you pay to recall. Precision is money."
+    - title: "Regulators expect data, not binders"
+      detail: "Digital genealogy with process context is becoming the audit baseline in regulated industries."
+    - title: "Trace data compounds into insight"
+      detail: "The same chain that answers recalls also reveals which conditions produce the best product."
+
+competition:
+  heading: "Why the usual approaches stall."
+  intro: "Traceability projects fail on the connections, not the concept."
+  traps:
+    - label: "ERP-only trace"
+      title: "Material moves without process truth"
+      detail: "ERP knows what was issued, not what actually happened at the machine."
+    - label: "Monolithic MES"
+      title: "Full-suite rollouts measured in years"
+      detail: "Enterprise MES traceability arrives with a multi-year implementation and per-site licensing."
+    - label: "Spreadsheet genealogy"
+      title: "Manual chains break silently"
+      detail: "One missed entry and the chain is fiction; nobody notices until it is needed."
+
+comparison:
+  without:
+    - title: "Chain reconstructed on demand"
+      detail: "Days of cross-system work per recall or audit question."
+    - title: "Worst-case recall scoping"
+      detail: "Recall everything that might be affected."
+    - title: "Capture depends on discipline"
+      detail: "Paper and manual scans break the chain silently."
+  with:
+    - title: "Chain captured continuously"
+      detail: "Scanners, machines and business systems feed one genealogy record automatically."
+    - title: "Precise scope with evidence"
+      detail: "Trace any direction from any point, conditions included."
+    - title: "Capture enforced by flows"
+      detail: "Missing steps block or alert in real time instead of surfacing at audit."
+
+aiBuildLayer:
+  intro: "The FlowFuse Expert works on this use case with you, from capture flows to answering trace questions."
+  steps:
+    - title: "Describe it, get a starting flow"
+      detail: "Tell the Expert your capture points and systems; it assembles a genealogy starting flow. Currently in open beta on FlowFuse Cloud."
+    - title: "Refine with in-editor assistance"
+      detail: "Function Builder and completions help with lot-number parsing, joins and record writes to your database or Tables."
+    - title: "Ask trace questions in plain language"
+      detail: "Expose the genealogy store through MCP tools and query it with Expert's Insights mode (beta): 'which shipments contain lot 4711?'"
+  note: "AI capabilities noted as beta are in open beta on FlowFuse Cloud at time of writing. Placeholder template copy for internal review."
+
+closingCta:
+  heading: "Be ready for the worst day"
+  description: "Talk to an expert about end-to-end traceability, or wire your first capture point today."
+---

@@ -1,0 +1,27 @@
+{# ============================================================
+   USE CASES FOR THIS INDUSTRY - derived grid.
+   Lists every use-case page whose `industries[]` front-matter
+   contains the current page's fileSlug. Mapping source of truth:
+   the Use Cases Asana project (Industry field).
+   ============================================================ #}
+{% set industrySlug = page.fileSlug %}
+<div class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="max-md:text-center">Use cases in <span class="text-indigo-600">{{ industryDisplayName or title }}</span></h2>
+        <p class="mt-4 max-w-3xl text-gray-600">Operational workflow patterns teams in this industry build and own with FlowFuse.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            {% for uc in collections["use-case"] | sort(false, true, "data.title") %}
+            {% if uc.data.industries and industrySlug in uc.data.industries %}
+            <a href="{{ uc.url }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ uc.data.title }}</h3>
+                <p class="m-0 text-gray-600 text-sm flex-grow">{{ uc.data.problem }}</p>
+                <span class="ff-animated-link mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
+                    View use case
+                    <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                </span>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

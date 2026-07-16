@@ -58,28 +58,37 @@ operationalSystem:
         - title: "PRODUCTION & OPERATIONS"
           items:
               - name: "Production Monitoring"
+                url: "/use-cases/production-monitoring/"
                 description: "OEE tracking across lines, shifts, and plants."
               - name: "Continuous Improvement"
+                url: "/use-cases/continuous-improvement/"
                 description: "Digital CI workflow from suggestion to closure."
         - title: "OPERATIONAL WORKFLOWS"
           items:
               - name: "Workforce Assignment"
+                url: "/use-cases/workforce-assignment/"
                 description: "Dynamic operator allocation using training, ergonomics, and demand data."
               - name: "Shop Floor Communication"
+                url: "/use-cases/shop-floor-communication/"
                 description: "Real-time alerts, escalation, and cross-site coordination."
         - title: "SYSTEM EXTENSIONS"
           items:
               - name: "Quality Validation"
+                url: "/use-cases/quality-validation/"
                 description: "Inline inspection and QA checks outside the core system."
               - name: "Track & Trace"
+                url: "/use-cases/track-and-trace/"
                 description: "Part, component, and batch traceability across the plant."
         - title: "OPERATIONAL INFRASTRUCTURE"
           items:
               - name: "Equipment Monitoring"
+                url: "/use-cases/equipment-monitoring/"
                 description: "PLC and device health monitoring across controller types."
               - name: "Operational Data Pipelines"
+                url: "/use-cases/operational-data-pipelines/"
                 description: "Structured controller data flows, diagnostics, and routing."
               - name: "System Diagnostics"
+                url: "/use-cases/system-diagnostics/"
                 description: "Error tracking and root cause analysis across deployed applications."
 meta:
     faq:
@@ -299,18 +308,18 @@ hubspot:
         <div class="mt-10 bg-white/40 border-2 border-white rounded-xl pt-8 p-5 flex flex-col gap-8">
             <p class="text-center text-indigo-600 text-3xl font-normal m-0">Operational Application System</p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-start">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {% for category in operationalSystem.categories %}
                 <div class="border border-indigo-300 rounded-lg flex flex-col">
-                    <div class="bg-indigo-600 text-white text-sm font-medium text-center uppercase px-4 py-2.5 rounded-t-lg leading-5">
+                    <div class="bg-indigo-600 text-white text-sm font-medium text-center uppercase px-4 py-2.5 rounded-t-lg leading-5 min-h-16 flex items-start justify-center">
                         {{ category.title }}
                     </div>
-                    <div class="flex flex-col gap-[18px] p-2.5">
+                    <div class="flex flex-col gap-[18px] p-2.5 flex-grow">
                         {% for item in category.items %}
-                        <div class="bg-white border border-white rounded-lg p-4 flex flex-col gap-3">
-                            <p class="text-indigo-500 font-medium m-0">{{ item.name }}</p>
+                        <a href="{{ item.url or '/use-cases/' }}" class="group bg-white border border-white rounded-lg p-4 flex flex-col gap-3 hover:no-underline hover:border-indigo-300 transition-colors">
+                            <p class="text-indigo-500 font-medium m-0"><span class="ff-animated-link">{{ item.name }}</span></p>
                             <p class="text-gray-700 font-light m-0 text-sm leading-5">{{ item.description }}</p>
-                        </div>
+                        </a>
                         {% endfor %}
                     </div>
                 </div>

@@ -3,13 +3,13 @@ layout: page
 nohero: true
 imageDescription: "Plant worker interacting with an HMI"
 meta:
-    title: "FlowFuse Expert: LLMs for Industrial Teams"
-    description: "Turn natural language into reliable industrial applications with FlowFuse Expert, or LLM-powered copilot, deeply integrated into FlowFuse and Node-RED, designed for the constraints, protocols, and governance your plants require."
+    title: "Industrial AI: FlowFuse Expert, Governed and Built In"
+    description: "Industrial AI with FlowFuse: generate flows and code with FlowFuse Expert, run models at the edge, and give your company-sanctioned AI governed access to operations. Built into FlowFuse and Node-RED with the approvals, permissions, and audit your plants require."
 hero:
-    title: "<span class='text-indigo-800'>FlowFuse Expert:</span> LLMs for Industrial Teams"
+    title: "<span class='text-indigo-800'>Industrial AI,</span> Governed and Built In"
     description:
-        - "Turn natural language into reliable industrial applications with with FlowFuse Expert, our LLM-powered copilot, deeply integrated into FlowFuse and Node-RED. Built on Model Context Protocol (MCP), it connects AI directly to your machines, databases, and brokers—so it understands your constraints, protocols, and governance, not generic templates."
-        - "Scale Your Industrial Applications with AI."
+        - "Turn natural language into working industrial flows with FlowFuse Expert, our AI copilot built into FlowFuse and Node-RED. Through Model Context Protocol (MCP) it reaches the live plant data you choose to expose, under per-tool permissions, so it works with your constraints, protocols, and governance, not generic templates."
+        - "AI capability is table stakes in 2026. Governed access to your operations is the difference."
     buttonText: "Request a Demo"
     buttonLink: "/book-demo/"
     buttonReference: "ai"
@@ -19,8 +19,8 @@ platform:
     title: "Meet your <span class='text-indigo-600'>AI-powered</span> FlowFuse Expert"
     subtitle: "Ask what you need. Let it build the application."
     description:
-        - "FlowFuse Expert is the fastest, most secure way to build industrial applications and operate at scale—now with AI powered by Model Context Protocol (MCP) that grounds every suggestion in live plant data, so it  understands your processes, systems, and governance needs in real time."
-        - "FlowFuse combines Node-RED's 5,000+ community nodes with with FlowFuse Expert, our LLM-powered copilot,  built on MCP and enterprise governance, so IT and OT teams can collaborate and deploy across plants without waiting on scarce developers. MCP connects AI to your live industrial data, making FlowFuse the fastest, most secure way to build industrial applications and operate at scale."
+        - "FlowFuse Expert grounds its suggestions in the live plant data you expose through MCP, so it works with your processes, systems, and governance needs in real time."
+        - "FlowFuse combines Node-RED's 5,000+ community nodes with FlowFuse Expert and enterprise governance, so IT and OT teams can collaborate and deploy across plants without waiting on scarce developers."
     image: images/ai/ai-ui.png
     imgAlt: "FlowFuse Expert showing AI-generated flow suggestions"
 solution:
@@ -28,20 +28,29 @@ solution:
     benefits:
         - svgPath: "components/icons/sparkles.svg"
           title: "AI-Generated Industrial Flows"
-          description: "Generate Node-RED flows, JavaScript, and SQL from natural language using an industrial-tuned LLM, so you can connect machines, transform data, and build dashboards in minutes instead of months."
+          description: "Generate Node-RED flows, JavaScript, and SQL from natural language, grounded in your live industrial context, so you can connect machines, transform data, and build dashboards in minutes instead of months."
         - svgPath: "components/icons/squares-plus.svg"
           title: "Reusable Industrial Blueprints"
           description: "Turn OT know-how into reusable blueprints for UNS, SCADA, MES, and middleware that your teams can deploy across plants with full version control and governance."
         - svgPath: "components/icons/shield-check.svg"
           title: "Governance You Trust"
-          description: "Keep humans in control with approval workflows, role-based access, audit trails, and the same enterprise-grade governance you use for all FlowFuse applications."
+          description: "Keep humans in control: approval cards on write actions, per-tool read/write/delete permissions, role-based access, and audit trails on everything AI touches."
+        - svgPath: "components/icons/chip.svg"
+          title: "AI at the Edge"
+          description: "Run ONNX models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network."
+        - svgPath: "components/icons/code-bracket.svg"
+          title: "Your Models in Your Flows"
+          description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini, or local models via Ollama into any flow with your own keys."
+        - svgPath: "components/icons/arrows-right-left.svg"
+          title: "Connect Your Company's AI"
+          description: "Expose flows as MCP tools so the AI your company already sanctioned, like Claude or Copilot, can reach operational data through a boundary you control."
 ctaSection:
     title: "With <span class='text-indigo-600'>FlowFuse Expert,</span> teams can:"
     list:
         - "<span class='font-medium'>Generate Node-RED flows from natural language descriptions</span> of a workflow or integration, so you can connect any machine and protocol faster."
         - "<span class='font-medium'>Draft and edit Function node code</span> (JavaScript), UI templates (HTML/CSS/JS), SQL queries, and JSON configurations using the FlowFuse Expert in the editor, so you can transform and model data in any platform without starting from scratch."
         - "<span class='font-medium'>Empower Operations and Process Engineers</span> to quickly build new dashboards, widgets, and queries using plain-language descriptions of the desired views or KPIs, reducing reliance on IT support."
-        - "<span class='font-medium'>Spin up LLM blueprints</span> that expose industrial data to a chat agent via Model Context Protocol (MCP), so operators and engineers can query systems in natural language and get answers grounded in live machine state, alarms, and logs—not stale documentation."
+        - "<span class='font-medium'>Spin up LLM blueprints</span> that expose industrial data to a chat agent via Model Context Protocol (MCP), so operators and engineers can query systems in natural language and get answers grounded in live machine state, alarms, and logs, not stale documentation."
     img: ./images/ai/ai-cta.png
     imgAlt: "Plant worker interacting with AI on a tablet, connected to the entire factory"
 ---
@@ -149,3 +158,15 @@ ctaSection:
     </div>
 </div>
 
+
+
+<!-- USE CASES: where AI meets operations (cross-links per web task) -->
+<div class="w-full py-16 sm:py-20 px-6 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="max-md:text-center">Where AI meets <span class="text-indigo-600">your operations</span></h2>
+        <p class="mt-4 max-w-3xl text-gray-600">The use cases teams pair with FlowFuse AI, from governed agent access to AI-assisted monitoring.</p>
+        {% set featuredUseCases = ["governed-ai-access", "operational-data-pipelines", "production-monitoring"] %}
+        {% include "components/use-case-links.njk" %}
+        <p class="mt-8"><a href="/use-cases/" class="text-indigo-600 font-semibold">See all use cases</a></p>
+    </div>
+</div>

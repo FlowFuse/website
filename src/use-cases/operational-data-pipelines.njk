@@ -1,0 +1,101 @@
+---
+title: "Operational Data Pipelines"
+meta:
+  title: "Operational Data Pipelines | Use Cases | FlowFuse"
+  description: "Move plant data where it needs to go, governed and at fleet scale. OPC UA, MQTT, SQL, historians and cloud, built on Node-RED, managed with FlowFuse."
+problem: "Every system on your plant floor speaks a different language, and every integration you build by hand becomes something nobody dares to touch."
+industries: ["automotive", "food-beverage", "life-sciences", "aviation-aerospace", "aerospace-components", "renewables", "semiconductors", "electronics-appliances"]
+values: ["ai-readiness-data-foundation"]
+architecture: "uns"
+expertDock: true
+
+customerPain:
+  heading: "Point-to-point integrations do not scale."
+  intro:
+    - "Machine data lives in PLCs, historians, SCADA and MES; business context lives in ERP and quality systems. Getting one to talk to the other means custom scripts, vendor gateways, and undocumented middleware."
+    - "It works, once, on one line. Then the estate grows to dozens of machines across multiple sites, and the integration layer becomes the riskiest, least visible part of the operation."
+  cards:
+    - icon: "link-slash"
+      title: "Protocol sprawl"
+      detail: "OPC UA here, Modbus there, S7 on the old line, CSV exports from the lab. Every connection is a one-off project with its own failure modes."
+    - icon: "server-stack"
+      title: "Unmanaged edge scripts"
+      detail: "Data movers live on plant PCs nobody owns, with no version control, no deployment process, and no answer to 'what runs where?'"
+    - icon: "lock-closed"
+      title: "Vendor-locked connectivity"
+      detail: "Proprietary connectivity platforms meter every tag and every target, and take the integration knowledge with them when the contract ends."
+    - icon: "sparkles"
+      title: "Data that AI cannot use"
+      detail: "Raw tag streams without context, units, or structure. Every analytics and AI initiative starts with the same expensive clean-up."
+  #placeholder: template copy for review, refine per Showcase
+
+outcomeFirst:
+  heading: "One governed pipeline layer, from edge to everywhere."
+  intro: "FlowFuse turns data movement into managed, visual flows: built in Node-RED, versioned, deployed to fleets of edge instances, and observable from one place. The pipeline becomes an asset you own instead of a risk you inherit."
+  dimensions:
+    - label: "Operational"
+      title: "Connect anything to anything, visibly"
+      detail: "OPC UA, MQTT, Modbus, S7, REST, SQL and historians wired in visual flows anyone on the team can read and change."
+    - label: "Scale"
+      title: "Deploy to hundreds of edge instances"
+      detail: "DevOps pipelines, snapshots and remote deployment roll the same governed flow out across lines and sites, with rollback."
+    - label: "Strategic"
+      title: "AI-ready data by construction"
+      detail: "Contextualized, structured data landing in your Unified Namespace, Tables and historians, ready for analytics and AI agents on your terms."
+
+whyItMatters:
+  heading: "The integration layer decides how fast everything else moves."
+  intro: "Every initiative that matters, from OEE to AI, arrives at the same bottleneck: can the data get there, with context, reliably?"
+  points:
+    - title: "Time-to-value is the buying criterion"
+      detail: "Connectivity programs are judged in weeks, not quarters. A pipeline you can stand up in days changes what the business is willing to attempt."
+    - title: "Unmanaged glue code is operational debt"
+      detail: "Every undocumented script is a future outage with a name nobody remembers. Governance is not bureaucracy here; it is uptime."
+    - title: "AI readiness is a data property"
+      detail: "Agents and analytics are only as good as the contextualized data they can reach. The pipeline layer is where readiness is actually built."
+
+competition:
+  heading: "Why the usual approaches stall."
+  intro: "Teams typically arrive here from one of three directions, each with the same ceiling."
+  traps:
+    - label: "Proprietary platforms"
+      title: "Per-tag pricing, closed tooling"
+      detail: "Licensed connectivity suites meter growth and lock integration logic into a vendor's black box."
+    - label: "Custom code"
+      title: "Scripts that become legacy on day one"
+      detail: "Python on a plant PC moves data until its author changes roles. Then it is archaeology."
+    - label: "Cloud-first iPaaS"
+      title: "Built for SaaS APIs, not the plant floor"
+      detail: "Generic integration platforms have no OT protocol depth and no answer for edge, offline, or on-prem constraints."
+
+comparison:
+  without:
+    - title: "Every integration is a project"
+      detail: "New machine, new script, new risk. Knowledge lives in individuals."
+    - title: "No view of what runs where"
+      detail: "Data movers scattered across plant PCs with no inventory, versioning, or rollback."
+    - title: "Data arrives raw"
+      detail: "Consumers each re-clean the same streams; AI initiatives stall at the data step."
+  with:
+    - title: "Integration is a managed capability"
+      detail: "Visual flows, shared patterns, one library of connections the whole team can maintain."
+    - title: "Fleet-scale deployment with rollback"
+      detail: "Pipelines, snapshots and device groups push governed changes to every edge instance."
+    - title: "A data foundation you own"
+      detail: "Structured, contextualized data in your UNS and Tables, feeding dashboards, MES, and AI."
+
+aiBuildLayer:
+  intro: "The FlowFuse Expert works on this use case with you: describe the pipeline you need and get a working starting flow, then refine it with AI assistance and keep full ownership of the result."
+  steps:
+    - title: "Describe it, get a starting flow"
+      detail: "Tell the Expert what should move from where to where. It assembles tabs, nodes and wiring for a working pipeline starting point. Currently in open beta on FlowFuse Cloud."
+    - title: "Refine with in-editor assistance"
+      detail: "Function Builder and inline code completions help with payload transforms and SQL; the flow explainer documents what any part does."
+    - title: "Make it AI-ready"
+      detail: "Expose pipeline data as MCP tools with the MCP nodes, and use the certified LLM nodes (OpenAI, Anthropic, Gemini, or local models via Ollama) inside flows where language models add value."
+  note: "AI capabilities noted as beta are in open beta on FlowFuse Cloud at time of writing. Placeholder template copy for internal review."
+
+closingCta:
+  heading: "See your data estate in one governed layer"
+  description: "Talk to an expert about replacing point-to-point integrations with managed pipelines, or start building today."
+---

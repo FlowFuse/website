@@ -1,0 +1,101 @@
+---
+title: "Workforce Assignment"
+meta:
+  title: "Workforce Assignment | Use Cases | FlowFuse"
+  description: "Put the right person on the right task as conditions change: live assignment boards driven by real demand, skills and availability. Built on Node-RED, managed with FlowFuse."
+problem: "The plan assigned people at 6 a.m. The floor changed by 6:40, and the plan did not."
+industries: ["automotive", "food-beverage", "electronics-appliances"]
+values: ["labor-operational-efficiency"]
+architecture: "it-ot-middleware"
+expertDock: true
+
+customerPain:
+  heading: "Static plans meet a dynamic floor."
+  intro:
+    - "Shift plans are built on yesterday's assumptions: then a machine goes down, an order is expedited, two people call in sick, and reallocation happens by supervisor intuition and hallway conversations."
+    - "Skills and certifications live in spreadsheets nobody checks in the moment, so the reshuffle is slow, and sometimes puts the wrong person on a task that requires certification."
+  cards:
+    - icon: "users"
+      title: "Reallocation by walking around"
+      detail: "Supervisors spend the first hour of every disruption finding out who is where and moving people by hand."
+    - icon: "academic-cap"
+      title: "Skills matrices nobody can see"
+      detail: "Certification and training data sits in HR files, invisible at the moment of assignment."
+    - icon: "clock"
+      title: "Idle time and bottlenecks coexist"
+      detail: "One station starves while another queues, because nobody sees both at once."
+    - icon: "clip-list"
+      title: "No record of who did what"
+      detail: "Assignment history that audits and improvement work need does not exist."
+  #placeholder: template copy for review, refine per Showcase
+
+outcomeFirst:
+  heading: "Assignment that follows the floor."
+  intro: "FlowFuse joins live demand signals, machine states, order priorities, headcounts, with skills and availability data, and drives assignment boards that update as conditions change."
+  dimensions:
+    - label: "Operational"
+      title: "Live view of people, tasks and gaps"
+      detail: "Who is where, what needs doing, and which stations are at risk, on one board that reflects now."
+    - label: "Organizational"
+      title: "Qualified people on qualified tasks"
+      detail: "Assignments checked against skills and certifications at the moment they are made."
+    - label: "Financial"
+      title: "Less idle time, fewer bottlenecks"
+      detail: "Rebalancing in minutes recovers the labor hours static plans leave on the table."
+
+whyItMatters:
+  heading: "Labor is the most flexible asset, managed the least flexibly."
+  intro: "Machines get condition monitoring; people get a morning plan and good luck."
+  points:
+    - title: "Every disruption taxes labor first"
+      detail: "Downtime, rush orders and absences all resolve into people standing in the wrong place."
+    - title: "Certification errors are compliance events"
+      detail: "In regulated production, an unqualified assignment is not inefficiency, it is a finding."
+    - title: "Assignment data feeds planning"
+      detail: "Recorded assignment history shows where skills are thin and where training pays back fastest."
+
+competition:
+  heading: "Why the usual approaches stall."
+  intro: "Workforce tools plan the shift; almost none of them react to it."
+  traps:
+    - label: "Workforce management suites"
+      title: "Great at rosters, blind to the floor"
+      detail: "Scheduling tools know who is on shift, not what the line needs right now."
+    - label: "MES task lists"
+      title: "Tasks without people context"
+      detail: "Work queues exist, but skills, availability and certifications live elsewhere."
+    - label: "Whiteboards"
+      title: "The 6 a.m. snapshot"
+      detail: "Accurate for the first forty minutes of the shift."
+
+comparison:
+  without:
+    - title: "Reallocation by intuition"
+      detail: "Supervisors move people based on what they happen to see."
+    - title: "Certification checked after the fact"
+      detail: "Qualification issues surface in audits, not at assignment."
+    - title: "No assignment record"
+      detail: "Improvement work has no data to stand on."
+  with:
+    - title: "Boards driven by live demand"
+      detail: "Machine states and order priorities reshape assignments as they change."
+    - title: "Qualification enforced in the flow"
+      detail: "Only certified people are suggested for certified tasks."
+    - title: "Every assignment recorded"
+      detail: "History for audits, staffing decisions and training plans."
+
+aiBuildLayer:
+  intro: "The FlowFuse Expert works on this use case with you, from the demand joins to the board itself."
+  steps:
+    - title: "Describe it, get a starting flow"
+      detail: "Tell the Expert your demand signals and people data sources; it assembles a working starting flow. Currently in open beta on FlowFuse Cloud."
+    - title: "Refine with in-editor assistance"
+      detail: "Function Builder and completions handle the matching logic and the Dashboard assignment board."
+    - title: "Own and adapt what you built"
+      detail: "The flow explainer keeps assignment rules readable, so team leads can evolve them as the operation changes."
+  note: "AI capabilities noted as beta are in open beta on FlowFuse Cloud at time of writing. Placeholder template copy for internal review."
+
+closingCta:
+  heading: "Put flexibility where the flexibility is"
+  description: "Talk to an expert about live workforce assignment, or connect your first demand signal today."
+---

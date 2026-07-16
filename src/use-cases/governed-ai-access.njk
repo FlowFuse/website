@@ -1,0 +1,101 @@
+---
+title: "Governed AI & Agent Access"
+meta:
+  title: "Governed AI & Agent Access | Use Cases | FlowFuse"
+  description: "Connect your company-sanctioned AI and agents to operations through governed tools: MCP, per-tool permissions, human approvals and a full audit trail. Built on Node-RED, managed with FlowFuse."
+problem: "Your company standardized on an AI. Your plant data is exactly where it cannot reach, and ungoverned workarounds are already appearing."
+industries: ["automotive", "food-beverage", "life-sciences", "aviation-aerospace", "aerospace-components", "renewables", "semiconductors", "electronics-appliances"]
+values: ["ai-readiness-data-foundation"]
+architecture: "uns"
+expertDock: true
+
+customerPain:
+  heading: "Enterprise AI stops at the plant door."
+  intro:
+    - "The company has Copilot, Claude or ChatGPT Enterprise, with policies, identity and procurement already settled. Meanwhile the operational questions those tools could answer live in PLCs, historians and MES systems they cannot see."
+    - "The pressure does not wait: engineers paste plant data into chatbots, and shadow integrations appear with no permissions, no approvals and no audit trail."
+  cards:
+    - icon: "lock-closed"
+      title: "Sanctioned AI, unreachable data"
+      detail: "The approved assistant can draft emails but cannot answer 'why did line 3 stop?', because nothing connects it to operations safely."
+    - icon: "shield-exclamation"
+      title: "Shadow AI is already happening"
+      detail: "Screenshots and CSV exports into chat windows: operational data leaving the perimeter with no control."
+    - icon: "audit-logs"
+      title: "No audit trail for AI actions"
+      detail: "If an AI reads or changes anything operational, security needs to know what, when, by whom, and with what approval."
+    - icon: "role-based-access"
+      title: "All-or-nothing access"
+      detail: "Without per-tool permissions, the choice is blocking AI entirely or trusting it with everything."
+  #placeholder: template copy for review, refine per Showcase
+
+outcomeFirst:
+  heading: "A governed boundary between AI and operations."
+  intro: "FlowFuse gives your sanctioned AI a controlled way in: operational data and actions exposed as tools you define, with role-based permissions, human approval on writes, and every call audited."
+  dimensions:
+    - label: "Governance"
+      title: "Permissions per tool, approvals on writes"
+      detail: "Read-only queries flow; anything that changes state waits for an explicit human approval. Roles decide who may allow what."
+    - label: "Operational"
+      title: "Plant questions answered where people ask them"
+      detail: "The assistant your teams already use can query live operational context through tools you control."
+    - label: "Strategic"
+      title: "Reuse the AI investment you already made"
+      detail: "No parallel AI stack: the company-sanctioned models, identity and policies extend to operations."
+
+whyItMatters:
+  heading: "AI access to operations will happen; governance is the choice."
+  intro: "The only question is whether AI reaches plant data through a controlled boundary or through workarounds."
+  points:
+    - title: "Ungoverned access is the default outcome"
+      detail: "Every week without a sanctioned path, more operational data leaves through copy-paste and shadow scripts."
+    - title: "OT safety demands approval gates"
+      detail: "Agents near production need hard limits: human-in-the-loop approvals, scoped tools, and no direct path to control systems."
+    - title: "Auditability is the adoption unlock"
+      detail: "Security teams approve AI access when every tool call is logged and attributable. The audit trail is the feature."
+
+competition:
+  heading: "Why the usual approaches stall."
+  intro: "Connecting AI to operations is easy to demo and hard to govern."
+  traps:
+    - label: "Direct connections"
+      title: "API keys taped to production systems"
+      detail: "Point integrations give models standing access with no per-tool scoping and no approval step."
+    - label: "Parallel AI stacks"
+      title: "A second assistant just for the plant"
+      detail: "Vendor-bundled plant copilots duplicate the AI your company already sanctioned, with their own models and policies."
+    - label: "Blanket bans"
+      title: "Blocking AI until shadow usage wins"
+      detail: "Prohibition does not remove the demand; it removes the visibility."
+
+comparison:
+  without:
+    - title: "AI and operations meet through workarounds"
+      detail: "Exports, screenshots and shadow scripts, invisible to security."
+    - title: "Access is all-or-nothing"
+      detail: "No scoping between reading a sensor and writing a setpoint."
+    - title: "Nobody can answer 'what did the AI do?'"
+      detail: "No log, no attribution, no approvals."
+  with:
+    - title: "One governed boundary"
+      detail: "Operational tools defined in flows, exposed over MCP to the AI your company sanctioned."
+    - title: "Permissions and approvals built in"
+      detail: "Role-based tool permissions; write actions wait for human approval cards."
+    - title: "Every call audited"
+      detail: "Full trail of which tools ran, when, for whom, with what result."
+
+aiBuildLayer:
+  intro: "This use case is built from FlowFuse's shipped AI surface, stated plainly so you can verify each piece."
+  steps:
+    - title: "Expose operations as tools (MCP)"
+      detail: "The MCP server nodes let any flow publish tools, resources and prompts that external MCP clients can call. You define exactly what is reachable."
+    - title: "Query live data with governance"
+      detail: "FlowFuse Expert's Insights mode (beta) consumes MCP tools from your instances under per-tool read/write/delete permissions with approval cards on writes."
+    - title: "Bring your model where it fits"
+      detail: "Certified LLM nodes (OpenAI, Anthropic, Gemini, or local models via Ollama) run language-model steps inside flows with your own keys."
+  note: "Insights mode is in beta at time of writing; MCP server nodes and LLM nodes are generally available. Placeholder template copy for internal review."
+
+closingCta:
+  heading: "Give your AI a governed way in"
+  description: "Talk to an expert about connecting your sanctioned AI to operations, with the guardrails your security team will ask about."
+---

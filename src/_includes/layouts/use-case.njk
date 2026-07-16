@@ -26,6 +26,7 @@ sitemapPriority: 0.7
 {% if whyItMatters %}{% set nav = nav.concat([{ id: "why-it-matters", label: "Why It Matters" }]) %}{% endif %}
 {% if competition %}{% set nav = nav.concat([{ id: "competition", label: "Why Off-the-Shelf Fails" }]) %}{% endif %}
 {% if comparison %}{% set nav = nav.concat([{ id: "with-without", label: "With / Without FlowFuse" }]) %}{% endif %}
+{% if aiBuildLayer %}{% set nav = nav.concat([{ id: "ai-build-layer", label: "Build It With AI" }]) %}{% endif %}
 
 <div class="w-full">
 
@@ -203,6 +204,34 @@ sitemapPriority: 0.7
     </div>
     {% endif %}
 
+    {% if aiBuildLayer %}
+    <!-- ============================================================
+         06. BUILD IT WITH AI (Expert build layer)
+    ============================================================ -->
+    <div id="ai-build-layer" class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100 scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">06 · Build it with AI</p>
+            <h2 class="max-md:text-center">{{ aiBuildLayer.heading or "From described to deployed, with the FlowFuse Expert" }}</h2>
+            <p class="mt-4 max-w-3xl text-gray-600">{{ aiBuildLayer.intro }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                {% for step in aiBuildLayer.steps %}
+                <div class="rounded-xl bg-white border border-gray-200 p-6 flex flex-col gap-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-6 h-6 text-indigo-500">{% include "components/icons/sparkles.svg" %}</span>
+                        <span class="text-indigo-500 text-xs font-semibold uppercase tracking-widest">Step {% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                    </div>
+                    <h4 class="m-0 text-gray-800">{{ step.title }}</h4>
+                    <p class="m-0 text-gray-600 text-sm">{{ step.detail }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% if aiBuildLayer.note %}
+            <p class="mt-8 text-sm text-gray-400">{{ aiBuildLayer.note }}</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
     {# ============================================================
        LEGACY SKELETON FALL-BACK (only when no rich blocks defined)
     ============================================================ #}
@@ -254,6 +283,11 @@ sitemapPriority: 0.7
     {% endif %}
 
     <!-- ============================================================
+         WHERE THIS FITS (outcome + industry lens links)
+    ============================================================ -->
+    {% include "components/use-case-chips.njk" %}
+
+    <!-- ============================================================
          RELATED RESOURCES (empty "More coming soon" state)
     ============================================================ -->
     {% set useCaseSlug = page.fileSlug %}
@@ -272,5 +306,9 @@ sitemapPriority: 0.7
             </div>
         </div>
     </div>
+
+    {% if expertDock %}
+    {% include "components/expert-dock.njk" %}
+    {% endif %}
 
 </div>

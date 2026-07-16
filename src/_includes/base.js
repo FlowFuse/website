@@ -164,3 +164,19 @@ function ffCreateHubSpotForm (config) {
 }
 
 window.ffCreateHubSpotForm = ffCreateHubSpotForm
+
+// Mobile nav: dropdown sections expand on tap, not hover
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('header .ff-nav-dropdown > span').forEach(function (trigger) {
+        trigger.addEventListener('click', function (e) {
+            if (window.innerWidth < 768) {
+                e.preventDefault()
+                e.stopPropagation()
+                var li = trigger.parentElement
+                var wasOpen = li.classList.contains('mobile-expanded')
+                li.parentElement.querySelectorAll('.mobile-expanded').forEach(function (el) { el.classList.remove('mobile-expanded') })
+                if (!wasOpen) li.classList.add('mobile-expanded')
+            }
+        })
+    })
+})

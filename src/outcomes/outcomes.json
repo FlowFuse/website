@@ -1,0 +1,4 @@
+{
+    "layout": "layouts/value.njk",
+    "tags": ["value-pillar"]
+}

@@ -1,0 +1,92 @@
+---
+layout: layouts/base.njk
+sitemapPriority: 0.7
+---
+{# ============================================================
+   VALUE / OUTCOME LAYOUT (thin lens page)
+
+   Per-page front-matter:
+     problem     hero sub-headline (the outcome promise in one line)
+     kpis[]      { label, detail }  the metrics this pillar moves
+     narrative[] paragraphs of outcome framing for the economic buyer
+
+   The use-case grid is DERIVED: it lists every use-case page whose
+   `values[]` front-matter contains this page's fileSlug. The mapping
+   source of truth is the Use Cases Asana project (Value field).
+   ============================================================ #}
+<div class="w-full">
+
+    <!-- HERO -->
+    <div class="w-full px-6 bg-[radial-gradient(ellipse_120%_140%_at_50%_-20%,theme(colors.indigo.50)_0%,theme(colors.white)_60%)]">
+        <div class="max-w-screen-lg mx-auto py-16 sm:py-24 text-center">
+            <p class="uppercase text-sm font-semibold text-indigo-500 mb-4">Outcome</p>
+            <h1 class="m-auto max-w-3xl font-medium"><span class="text-indigo-600">{{ title }}</span></h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">{{ problem }}</p>
+            <div class="mt-10 flex flex-wrap gap-4 justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'outcome': '{{ page.fileSlug }}'})">Talk to an expert</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NARRATIVE -->
+    {% if narrative %}
+    <div class="w-full py-16 px-6 bg-white">
+        <div class="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+            {% for paragraph in narrative %}
+            <p class="text-gray-600 m-0">{{ paragraph }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- KPIS -->
+    {% if kpis %}
+    <div class="w-full py-16 px-6 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-screen-lg mx-auto">
+            <h2 class="max-md:text-center">What this outcome <span class="text-indigo-600">moves</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                {% for kpi in kpis %}
+                <div class="rounded-xl bg-white border border-gray-200 p-6 flex flex-col gap-2">
+                    <span class="text-indigo-500 text-xs font-semibold uppercase tracking-widest">{{ kpi.label }}</span>
+                    <p class="m-0 text-gray-600 text-sm">{{ kpi.detail }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- DERIVED USE-CASE GRID -->
+    <div class="w-full py-16 sm:py-24 px-6 bg-white">
+        <div class="max-w-screen-lg mx-auto">
+            <h2 class="max-md:text-center">Use cases that deliver <span class="text-indigo-600">this outcome</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                {% for uc in collections["use-case"] | sort(false, true, "data.title") %}
+                {% if uc.data.values and page.fileSlug in uc.data.values %}
+                <a href="{{ uc.url }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                    <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ uc.data.title }}</h3>
+                    <p class="m-0 text-gray-600 text-sm flex-grow">{{ uc.data.problem }}</p>
+                    <span class="ff-animated-link mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
+                        View use case
+                        <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                    </span>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- CLOSING CTA -->
+    <div class="w-full px-6 py-20">
+        <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10 text-center">
+            <h3 class="mb-4 w-full text-center">{{ closingCta.heading or "See this outcome on your operations" }}</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">{{ closingCta.description or "Talk to an expert, or get started with FlowFuse today." }}</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'outcome': '{{ page.fileSlug }}'})">Talk to an expert</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'footer', 'outcome': '{{ page.fileSlug }}'})">Get started</a>
+            </div>
+        </div>
+    </div>
+
+</div>

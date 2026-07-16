@@ -1,0 +1,102 @@
+---
+title: "Shop Floor Communication"
+meta:
+  title: "Shop Floor Communication | Use Cases | FlowFuse"
+  description: "Andon, alerts and escalations that reach the right people in seconds: from machine events to team channels, displays and phones. Built on Node-RED, managed with FlowFuse."
+problem: "The line stopped four minutes ago. The person who can fix it will find out when someone walks over."
+industries: ["automotive", "food-beverage", "aviation-aerospace", "electronics-appliances"]
+values: ["labor-operational-efficiency"]
+architecture: "edge-connectivity"
+expertDock: true
+
+customerPain:
+  heading: "Events travel at walking speed."
+  intro:
+    - "Machines know the moment something needs attention. Getting that moment to a human still relies on stack lights someone must see, radios someone must answer, and walks across the floor."
+    - "Escalation is informal: if the first person is busy, the event waits. Response times are unmeasured because nobody records when the call for help actually started."
+  cards:
+    - icon: "bell-alert"
+      title: "Alarms without an audience"
+      detail: "Stack lights and local alarms help only whoever happens to be nearby."
+    - icon: "chat-bubble-left-right"
+      title: "Events never reach team channels"
+      detail: "The tools people actually watch, phones, Teams, Slack, displays, are disconnected from the machines."
+    - icon: "arrow-path"
+      title: "No escalation path"
+      detail: "If the first responder is occupied, nothing routes the event to the next person."
+    - icon: "clock"
+      title: "Response time is invisible"
+      detail: "Without timestamps from event to acknowledgment, response cannot be measured or improved."
+  #placeholder: template copy for review, refine per Showcase
+
+outcomeFirst:
+  heading: "From machine event to the right person, in seconds."
+  intro: "FlowFuse turns machine and operator events into routed notifications: andon displays, team-channel messages, SMS escalation chains, with acknowledgment and timing captured for every event."
+  dimensions:
+    - label: "Operational"
+      title: "Events routed, not broadcast"
+      detail: "The right role gets the right event on the channel they actually watch, with context attached."
+    - label: "Organizational"
+      title: "Escalation that runs itself"
+      detail: "Unacknowledged events climb the chain automatically; nothing waits on a walk across the floor."
+    - label: "Financial"
+      title: "Measured, shrinking response times"
+      detail: "Event-to-acknowledgment timing becomes a metric you can see and improve."
+
+whyItMatters:
+  heading: "Downtime is often waiting time in disguise."
+  intro: "A meaningful share of every stop is the gap between the event and the right person knowing about it."
+  points:
+    - title: "Minutes of waiting hide in every stop"
+      detail: "Multiply the notification gap across every stop and shift; the total is a production line's worth of capacity."
+    - title: "Informal escalation fails on bad days"
+      detail: "Exactly when the floor is busiest, word-of-mouth routing breaks down."
+    - title: "Communication data improves staffing"
+      detail: "Knowing which events, where, at what times, shapes shift coverage and skill placement."
+
+competition:
+  heading: "Why the usual approaches stall."
+  intro: "Andon exists in many forms; connected, routed, measured andon rarely does."
+  traps:
+    - label: "Hardware andon"
+      title: "Lights and towers, no routing"
+      detail: "Visual signals with no notion of who should respond or what happens if they do not."
+    - label: "MES call buttons"
+      title: "Locked to one vendor's screens"
+      detail: "Built-in call functions reach only the people logged into that system."
+    - label: "Group chat chaos"
+      title: "Everything posted to everyone"
+      detail: "Unrouted alerts train people to ignore the channel."
+  #placeholder: template copy for review, refine per Showcase
+
+comparison:
+  without:
+    - title: "Events wait for a passerby"
+      detail: "Stack lights and shouts; response depends on proximity."
+    - title: "No record of response"
+      detail: "Event-to-fix timing unmeasured, unimprovable."
+    - title: "Every plant improvises"
+      detail: "Each site wires its own ad-hoc notification hacks."
+  with:
+    - title: "Events reach the right person in seconds"
+      detail: "Routed notifications with context, on channels people watch."
+    - title: "Acknowledgment and timing captured"
+      detail: "Response becomes a measured, managed metric."
+    - title: "One pattern across sites"
+      detail: "The same escalation flows deployed fleet-wide."
+
+aiBuildLayer:
+  intro: "The FlowFuse Expert works on this use case with you, from routing logic to summarizing what happened overnight."
+  steps:
+    - title: "Describe it, get a starting flow"
+      detail: "Tell the Expert your events, roles and channels; it assembles a routing and escalation starting flow. Currently in open beta on FlowFuse Cloud."
+    - title: "Refine with in-editor assistance"
+      detail: "Function Builder and completions handle message formatting, shift calendars and escalation timers."
+    - title: "Own and adapt what you built"
+      detail: "The flow explainer documents routing rules so supervisors can read and adjust them without a developer."
+  note: "AI capabilities noted as beta are in open beta on FlowFuse Cloud at time of writing. Placeholder template copy for internal review."
+
+closingCta:
+  heading: "Close the gap between event and action"
+  description: "Talk to an expert about connected andon and escalation, or route your first event today."
+---

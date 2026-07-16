@@ -1,0 +1,101 @@
+---
+title: "Quality Validation"
+meta:
+  title: "Quality Validation | Use Cases | FlowFuse"
+  description: "In-line quality checks that catch deviations at the source: sensor thresholds, process interlocks and camera-based inspection, built on Node-RED, managed with FlowFuse."
+problem: "Defects are found at final inspection, after a full batch carries the same flaw."
+industries: ["life-sciences", "food-beverage", "automotive", "semiconductors", "electronics-appliances"]
+values: ["quality-compliance"]
+architecture: "it-ot-middleware"
+expertDock: true
+
+customerPain:
+  heading: "Quality happens too far from the process."
+  intro:
+    - "Checks live at the end of the line or in the lab, minutes to hours after the value was produced. By the time a deviation is confirmed, everything made since carries the same risk."
+    - "Operators record checks on paper, quality data lives apart from process data, and every audit is a reconstruction exercise."
+  cards:
+    - icon: "eye"
+      title: "Inspection at the end, not in line"
+      detail: "Final inspection finds what in-line checks would have prevented: entire batches at risk from one uncaught drift."
+    - icon: "clip-list"
+      title: "Paper checks, disconnected results"
+      detail: "Manual quality records disconnected from machine conditions make root cause a guessing game."
+    - icon: "bug"
+      title: "Escapes reach customers"
+      detail: "What slips past sampling-based inspection becomes returns, claims and audits."
+    - icon: "camera"
+      title: "Visual checks depend on tired eyes"
+      detail: "Human visual inspection degrades over a shift; consistency varies by person and hour."
+  #placeholder: template copy for review, refine per Showcase
+
+outcomeFirst:
+  heading: "Validate at the source, every cycle."
+  intro: "FlowFuse puts quality logic where the process runs: sensor thresholds and process interlocks in-line, camera-based checks where eyes were the only option, and every result recorded with its process context."
+  dimensions:
+    - label: "Quality"
+      title: "Deviations caught in-cycle"
+      detail: "Threshold and rule checks run against live process values and stop bad production at the first unit, not the thousandth."
+    - label: "Compliance"
+      title: "Every check recorded with context"
+      detail: "Results land in your database with machine state, timestamps and parameters attached, audit-ready by default."
+    - label: "Operational"
+      title: "Vision where it was manual"
+      detail: "Camera feeds plus inspection models automate visual checks at line speed for presence, position and defect classes."
+
+whyItMatters:
+  heading: "The cost of a defect grows with every station it passes."
+  intro: "Catching a flaw at the source costs a scrapped part; catching it at the customer costs the relationship."
+  points:
+    - title: "Batch risk is binary"
+      detail: "In regulated production, one uncaught deviation can quarantine an entire batch. In-line validation converts batch risk to unit risk."
+    - title: "Quality data belongs with process data"
+      detail: "A failed check is only actionable when you can see the machine conditions that produced it, in the same record."
+    - title: "Audits reward evidence, not effort"
+      detail: "Automatic, contextualized quality records turn audit preparation from a project into a query."
+
+competition:
+  heading: "Why the usual approaches stall."
+  intro: "Quality systems tend to be either too heavy to reach the line or too light to survive an audit."
+  traps:
+    - label: "Enterprise QMS"
+      title: "Manages documents, not processes"
+      detail: "Quality-management suites track procedures and CAPAs but never touch a live sensor value."
+    - label: "Turnkey vision systems"
+      title: "Per-station price tags, closed logic"
+      detail: "Packaged inspection cells cost like robots and cannot be adapted when the product changes."
+    - label: "Spreadsheet quality"
+      title: "Manual records, no interlocks"
+      detail: "Paper and Excel record what happened but can never stop it from happening."
+
+comparison:
+  without:
+    - title: "Defects found downstream"
+      detail: "Final inspection and customer returns are the detection mechanism."
+    - title: "Quality and process data live apart"
+      detail: "Root cause requires manually joining lab results to machine logs."
+    - title: "Visual checks are manual or unaffordable"
+      detail: "Either tired eyes or six-figure turnkey cells."
+  with:
+    - title: "Checks run in-line, every cycle"
+      detail: "Thresholds, rules and interlocks act on live values at the source."
+    - title: "One record: result plus context"
+      detail: "Every check stored with machine state, ready for root cause and audits."
+    - title: "Camera-based checks you can adapt"
+      detail: "RTSP feeds plus ONNX inspection models inside flows your team controls."
+
+aiBuildLayer:
+  intro: "The FlowFuse Expert works on this use case with you, and vision is where the AI nodes plug directly into the quality loop."
+  steps:
+    - title: "Describe it, get a starting flow"
+      detail: "Tell the Expert which checks to run and what should happen on failure; it assembles a working starting flow. Currently in open beta on FlowFuse Cloud."
+    - title: "Add camera-based inspection"
+      detail: "Bring camera streams in with the RTSP nodes and run object-detection or classification models in-flow with the FlowFuse AI nodes, models from the zoo or your own ONNX."
+    - title: "Own and adapt what you built"
+      detail: "In-editor assistance and the flow explainer keep inspection logic understandable, so product changes mean flow edits, not vendor projects."
+  note: "AI capabilities noted as beta are in open beta on FlowFuse Cloud at time of writing. Placeholder template copy for internal review."
+
+closingCta:
+  heading: "Catch it at the source"
+  description: "Talk to an expert about in-line quality validation, or start wiring your first check today."
+---
