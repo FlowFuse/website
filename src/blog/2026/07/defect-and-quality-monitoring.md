@@ -7,6 +7,7 @@ authors: ["sumit-shinde"]
 image: /blog/2026/07/images/defect-monitoring-dashboard.png
 tags:
   - flowfuse
+  - quality
 cta:
   type: contact
   title: "See What Your Team Can Build"
@@ -29,11 +30,13 @@ By the end, you'll have a foundation you can extend into broader production moni
 
 ## What You'll Need
 
-Before you start building, get these ready:
+Before you start building, make sure you have the following ready:
 
 - **A FlowFuse account.** [Sign up]({% include "sign-up-url.njk" %}) for FlowFuse Cloud, or use a self-hosted instance.
+
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
-- **FlowFuse Dashboard installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-text`, `ui-chart`, `ui-table`, `ui-template`) to build the interface. Install it from the Palette Manager if it isn't already in your instance.
+
+- **FlowFuse Dashboard installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-text`, `ui-chart`, `ui-table`, and `ui-template`) to build the interface. If it is not already installed, add it from the Node-RED Palette Manager. If you are new to FlowFuse Dashboard, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html) to become familiar with the basics before continuing.
 
 ## How the Application Works
 
@@ -188,7 +191,7 @@ With the query written, wire it up so it runs on a timer and its result reaches 
    - Set `queryParameters` to `{}` (JSON): starts clean so stale values don't linger.
    - Set `queryParameters.line` to `filters.line` (global persistent).
    - Set `queryParameters.shift` to `filters.shift` (global persistent).
-   - Set `queryParameters.daysback` to `filters.daysback` (global persistent).
+   - Set `queryParameters.daysback` to `filters.dateRange` (global persistent).
 
 ![Screenshot: Set Params change node with its four rules](./images/set-params-change-node.png)
 *The "Set Params" change node open in the edit panel, all four rules visible.*
