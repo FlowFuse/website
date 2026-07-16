@@ -125,7 +125,7 @@ On many modern Linux distributions, **chrony** is the default and has largely re
 
 If you do use chrony, a basic configuration is enough for most deployments:
 
-```conf
+```bash
 # /etc/chrony/chrony.conf
 pool pool.ntp.org iburst
 driftfile /var/lib/chrony/drift
