@@ -24,7 +24,7 @@ out how to build custom components on dashboards.
 
 ## Custom components
 
-While going through the list of components on [Vuetify](https://vuetifyjs.com/en/components/)
+While going through the list of components on [Vuetify](https://vuetifyjs.com/en/components/all/)
 there's several examples that aren't natively implemented in Dashboard 2.0.
 One example we'll use in a dashboard in this post is the
 [Progress circular](https://vuetifyjs.com/en/components/progress-circular/) to
