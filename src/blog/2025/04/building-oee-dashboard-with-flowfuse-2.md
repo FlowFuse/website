@@ -530,4 +530,4 @@ Do not worry—in the next part of this series, we will style the dashboard to m
 
 ## What Next?
 
-Part 3 of this series will follow soon. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account]({% include "sign-up-url.njk" %}) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
+In [Part 3](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/) of this series, we style the dashboard, connect it to a real data source, and scale it across production lines. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account]({% include "sign-up-url.njk" %}) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
