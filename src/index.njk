@@ -394,11 +394,14 @@ hubspot:
 
 <div class="pb-10 md:pb-12 pt-14 px-6">
     <!-- Get Started -->
-    <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center" style="background: radial-gradient(ellipse 50% 150% at 50% 100%, #6366f1, #211c64)">
-        <p class="text-white text-5xl font-medium m-0">Get Started with FlowFuse</p>
-        <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Book a demo to see how — or start a free trial and build it yourself.</p>
-        <a class="ff-btn ff-btn--highlight" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'get-started'})">BOOK A DEMO</a>
-    </div>
+    {% set cta = {
+        title: "Get Started with FlowFuse",
+        description: "Your first operational application could be running this week. Book a demo to see how — or start a free trial and build it yourself.",
+        buttonText: "BOOK A DEMO",
+        buttonLink: "/book-demo/",
+        position: "get-started"
+    } %}
+    {% include "cta-get-started.njk" %}
     <!-- FF Content -->
     <div class="max-w-screen-lg m-auto">
         <div class="pt-12 mt-10 pb-12">
