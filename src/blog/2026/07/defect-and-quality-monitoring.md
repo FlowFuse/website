@@ -8,6 +8,39 @@ image: /blog/2026/07/images/defect-monitoring-dashboard.png
 tags:
   - flowfuse
   - quality
+meta:
+  howto:
+    name: "Build a Defect Tracking and Quality Monitoring Dashboard with FlowFuse"
+    description: "Use FlowFuse Dashboard to read production defects from a database, compute every quality KPI in a single query, and render stat cards, a Pareto chart, trend and breakdown charts, an SLA table, and a status funnel that filter live by line, shift, and date range."
+    tool:
+      - "FlowFuse"
+      - "FlowFuse Dashboard"
+      - "@flowfuse/node-red-dashboard"
+      - "PostgreSQL (or any database FlowFuse connects to)"
+    steps:
+      - name: "Import the simulator"
+        text: "Import the simulator flow, which creates the defects table, seeds about six months of historical defects, and inserts a fresh defect every few seconds so the dashboard keeps updating while you build."
+        url: "importing-the-simulator"
+      - name: "Build the query"
+        text: "Write a single query that filters the defects table once and computes every KPI in one pass, then wire it to run on a timer and broadcast its result to every widget through a link out node."
+        url: "building-the-query"
+      - name: "Add the filters"
+        text: "Add Line, Shift, and Date Range dropdowns to the dashboard header, save each selection to the global filters object, and trigger a query refresh on every change."
+        url: "adding-the-filters"
+      - name: "Build the widgets"
+        text: "Add the stat cards, Pareto chart, root cause, severity and disposition charts, daily trend, resolution and SLA table, and status funnel, each reading its own field from the shared query result."
+        url: "building-the-widgets"
+  faq:
+    - question: "What KPIs does the defect tracking dashboard show?"
+      answer: "The dashboard shows total defects, open and closed counts, and cost of poor quality as stat cards, plus a Pareto chart of defect types, a daily trend line, root cause, severity, and disposition breakdowns, an average resolution time and SLA breach table, and a status funnel ordered by workflow stage."
+    - question: "Do I have to write the SQL and dashboard code myself?"
+      answer: "No. You can describe the interface in plain English to FlowFuse Expert and it will generate the ui-template code for you. The tutorial includes the query and templates it produced, so you can import them directly if you prefer."
+    - question: "Why does the dashboard use one query instead of one query per widget?"
+      answer: "Running one query per widget means a dozen database trips on every refresh. This dashboard runs a single query that filters the table once and computes every KPI in one pass, returning one row where each field holds one widget's data. Every widget reads just its own field, so the whole dashboard updates from a single source of truth."
+    - question: "How do the header filters update the dashboard?"
+      answer: "The Line, Shift, and Date Range dropdowns live in the dashboard header and save each selection to a global filters object. A change node maps those onto the query's line, shift, and daysback parameters before every run, so changing any filter recalculates every widget together."
+    - question: "Can I use the dashboard with my own data instead of the simulator?"
+      answer: "Yes. The simulator is only a stand-in for your real data. To go live, remove the simulator flow and point the query at your own defects table. Everything downstream keeps working because the dashboard only ever reads from that one query. FlowFuse also connects to MySQL, MongoDB, InfluxDB, and more, not just PostgreSQL."
 cta:
   type: contact
   title: "See What Your Team Can Build"
@@ -37,6 +70,8 @@ Before you start building, make sure you have the following ready:
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
 
 - **FlowFuse Dashboard installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-text`, `ui-chart`, `ui-table`, and `ui-template`) to build the interface. If it is not already installed, add it from the Node-RED Palette Manager. If you are new to FlowFuse Dashboard, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html) to become familiar with the basics before continuing.
+
+> Note: [FlowFuse Tables](/docs/user/ff-tables/) is currently in beta and available to Enterprise tier teams on FlowFuse Cloud, as well as Enterprise licensed self hosted teams running on Kubernetes. If you're on a different tier, you can follow along using any external database instead, Postgres, MySQL, or whatever you already have, with the standard database nodes from the palette. The SQL and flow logic in this tutorial will work the same either way.
 
 ## How the Application Works
 
