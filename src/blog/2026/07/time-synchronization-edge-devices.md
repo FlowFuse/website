@@ -214,3 +214,13 @@ Not every industrial application needs microsecond precision. For most use cases
 PTP (Precision Time Protocol) is a different story. It's designed for applications where events must be synchronized with sub-millisecond or even microsecond precision, such as motion control, synchronized robotics, or sequence-of-events recording in power systems. PTP requires compatible hardware and network infrastructure, making it more complex to deploy.
 
 If your application doesn't have strict timing requirements, NTP is usually the simpler and more practical choice.
+
+## Wrapping up
+
+Clock drift is one of those problems that's easy to ignore until it starts affecting production data. Devices keep running, dashboards continue updating, and messages still arrive, but inaccurate timestamps make troubleshooting, event correlation, and reporting increasingly difficult.
+
+Fortunately, preventing it doesn't require complex infrastructure. A reliable NTP client, multiple or local time sources, and hardware with a real-time clock where appropriate will eliminate most clock synchronization issues. Just as importantly, preserve the original device timestamps instead of replacing them with server timestamps, and monitor clock drift so problems are detected before they affect your data.
+
+FlowFuse makes this easier by giving you a central place to deploy Node-RED applications, monitor edge devices, and build flows that continuously check clock health across your fleet. Instead of discovering bad timestamps after they've corrupted historical data, you can identify drifting devices early and fix them before they impact operations.
+
+As your edge deployment grows from a handful of devices to hundreds, keeping every device on the same timeline becomes essential. Accurate clocks lead to accurate data, and accurate data leads to better operational decisions.
