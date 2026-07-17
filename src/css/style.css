@@ -2423,6 +2423,97 @@ lite-youtube::before {
     }
 }
 
+/* Mega highlight card: a promo slot at the left of every mega dropdown
+   (configured in src/_data/navHighlights.js). xl+ only: the panel switches to
+   a fixed four-track template left-aligned to the screen-xl container, so the
+   card and each column sit at identical positions in every dropdown. */
+.ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
+    display: none;
+}
+@media (min-width: 1280px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        grid-template-columns: 20rem 16.5rem 16.5rem 16.5rem !important;
+        justify-content: flex-start;
+        column-gap: 2.5rem;
+        padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
+        display: flex;
+        grid-column: 1;
+        grid-row: 1 / -1;
+        align-self: stretch;
+        padding: 0.5rem 0 0.5rem 0;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        min-height: 15rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        background-color: #1e1b4b;
+        color: #fff;
+        transition: background-color 0.15s ease;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover {
+        background-color: #312e81;
+    }
+    /* Neutralize the generic header span rules (text-center, padding) inside the card */
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span {
+        display: block;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        text-align: left;
+        white-space: normal;
+        overflow-wrap: break-word;
+        border: 0;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-arrow {
+        display: inline-block;
+        width: auto;
+        transition: transform 0.15s ease;
+    }
+    .mega-highlight-eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #a5b4fc;
+    }
+    .mega-highlight-title {
+        margin-top: 0.75rem;
+        font-size: 1.375rem;
+        line-height: 1.3;
+        font-weight: 500;
+        color: #fff;
+    }
+    .mega-highlight-desc {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 300;
+        line-height: 1.5;
+        color: #c7d2fe;
+    }
+    .mega-highlight-cta {
+        margin-top: auto;
+        padding-top: 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #fff;
+    }
+    .mega-highlight-arrow {
+        display: inline-block;
+        transition: transform 0.15s ease;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover .mega-highlight-arrow {
+        transform: translateX(0.25rem);
+    }
+}
+
 /* Mobile nav: sections expand on tap only (hover neutralized below md) */
 @media (max-width: 767px) {
     .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),

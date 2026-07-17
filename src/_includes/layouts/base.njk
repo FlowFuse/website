@@ -190,6 +190,7 @@ eleventyComputed:
                     <ul id="nav-content" class="">
                         {% navoption "Platform", null, 0 %}
                             <ul class="narrow mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(8,auto)] sm:pr-1 sm:auto-rows-auto items-center">
+                                {% set hl = navHighlights.platform %}{% include "components/nav-highlight.njk" %}
                                 {% navoption "Product", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2">
@@ -200,17 +201,18 @@ eleventyComputed:
                                         {% navoption "Pricing", "/pricing/", 1, "dollar" %}{% endnavoption %}
                                     </ul>
                                 </li>
-                                {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1" %}{% endnavoption %}
+                                {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1 xl:col-start-3" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2 xl:col-start-3">
                                         {% navoption "FlowFuse Dashboard", "/platform/dashboard/", 2, "dashboard" %}{% endnavoption %}
                                         {% navoption "Device Agent", "/platform/device-agent/", 2, "device-agent" %}{% endnavoption %}
                                         {% navoption "Node-RED", "/node-red/", 2, "code-bracket" %}{% endnavoption %}
+                                        {% navoption "FlowFuse Expert", "/docs/user/expert/", 1, "sparkles" %}{% endnavoption %}
                                     </ul>
                                 </li>
-                                {% navoption "Capabilities", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1" %}{% endnavoption %}
+                                {% navoption "Capabilities", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1 xl:col-start-4" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-[7] ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-[7] ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2 xl:col-start-4">
                                         {% navoption "Industrial AI", "/ai/", 1, "sparkles" %}{% endnavoption %}
                                         {% navoption "IT/OT middleware", "/use-cases/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
                                         {% navoption "Unified Namespace", "/use-cases/uns/", 1, "uns" %}{% endnavoption %}
@@ -224,6 +226,7 @@ eleventyComputed:
                         {% endnavoption %}
                         {% navoption "Solutions", null, 0 %}
                         <ul class="narrow mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(12,auto)] sm:pr-1 sm:auto-rows-auto items-center">
+                            {% set hl = navHighlights.solutions %}{% include "components/nav-highlight.njk" %}
                             {% navoption "By Use Case", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                             <li class="contents">
                                 <ul class="sub-menu grid grid-rows-subgrid row-span-[11] ml-7 auto-rows-auto border-l-2">
@@ -240,9 +243,9 @@ eleventyComputed:
                                     {% navoption "See all use cases", "/use-cases/", 1, "arrow-right" %}{% endnavoption %}
                                 </ul>
                             </li>
-                            {% navoption "By Industry", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1" %}{% endnavoption %}
+                            {% navoption "By Industry", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1 xl:col-start-3" %}{% endnavoption %}
                             <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-[9] ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2">
+                                <ul class="sub-menu grid grid-rows-subgrid row-span-[9] ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2 xl:col-start-3">
                                     {% navoption "Automotive", "/industries/automotive/", 1, "car" %}{% endnavoption %}
                                     {% navoption "Food & Beverage", "/industries/food-beverage/", 1, "snowflake" %}{% endnavoption %}
                                     {% navoption "Life Sciences", "/industries/life-sciences/", 1, "shield-check" %}{% endnavoption %}
@@ -254,9 +257,9 @@ eleventyComputed:
                                     {% navoption "See all industries", "/industries/", 1, "arrow-right" %}{% endnavoption %}
                                 </ul>
                             </li>
-                            {% navoption "By Outcome", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1" %}{% endnavoption %}
+                            {% navoption "By Outcome", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1 xl:col-start-4" %}{% endnavoption %}
                             <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-6 ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2">
+                                <ul class="sub-menu grid grid-rows-subgrid row-span-6 ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2 xl:col-start-4">
                                     {% navoption "Production Performance", "/outcomes/production-performance/", 1, "arrow-trending-up" %}{% endnavoption %}
                                     {% navoption "Quality & Compliance", "/outcomes/quality-compliance/", 1, "shield-check" %}{% endnavoption %}
                                     {% navoption "Labor & Operational Efficiency", "/outcomes/labor-operational-efficiency/", 1, "users" %}{% endnavoption %}
@@ -269,6 +272,7 @@ eleventyComputed:
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
                             <ul class="narrow mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(5,auto)] sm:pr-1 sm:auto-rows-auto items-center">
+                                {% set hl = navHighlights.resources %}{% include "components/nav-highlight.njk" %}
                                 {% navoption "Learn", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
@@ -278,18 +282,18 @@ eleventyComputed:
                                         {% navoption "Node-RED Academy", "https://node-red-academy.learnworlds.com/", 1, "academic-cap" %}{% endnavoption %}
                                     </ul>
                                 </li>
-                                {% navoption "Reference", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1" %}{% endnavoption %}
+                                {% navoption "Reference", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1 xl:col-start-3" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2 xl:col-start-3">
                                         {% navoption "Docs", "/docs/", 1, "document-text" %}{% endnavoption %}
                                         {% navoption "Changelog", "/changelog/", 1, "rocket-launch" %}{% endnavoption %}
                                         {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 1, "github", true %}{% endnavoption %}
                                         {% navoption "Support forums", "https://discourse.nodered.org/c/vendors/flowfuse/24/", 1, "chat-bubble-left-right-sm" %}{% endnavoption %}
                                     </ul>
                                 </li>
-                                {% navoption "Customers", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1" %}{% endnavoption %}
+                                {% navoption "Customers", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1 xl:col-start-4" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2 xl:col-start-4">
                                         {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
                                         {% navoption "Educational License", "/education/", 1, "certificate" %}{% endnavoption %}
                                     </ul>
@@ -298,6 +302,7 @@ eleventyComputed:
                         {% endnavoption %}
                         {% navoption "Company", null, 0 %}
                             <ul class="narrow mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(5,auto)] sm:pr-1 sm:auto-rows-auto items-center">
+                                {% set hl = navHighlights.company %}{% include "components/nav-highlight.njk" %}
                                 {% navoption "Company", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
@@ -307,16 +312,16 @@ eleventyComputed:
                                         {% navoption "Handbook", "/handbook/", 1, "book-open" %}{% endnavoption %}
                                     </ul>
                                 </li>
-                                {% navoption "Partners & Services", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1" %}{% endnavoption %}
+                                {% navoption "Partners & Services", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1 xl:col-start-3" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2 xl:col-start-3">
                                         {% navoption "Partnerships", "/partners/", 1, "user-group" %}{% endnavoption %}
                                         {% navoption "Professional Services", "/professional-services/", 1, "wrench-screwdriver" %}{% endnavoption %}
                                     </ul>
                                 </li>
-                                {% navoption "Support", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1" %}{% endnavoption %}
+                                {% navoption "Support", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1 xl:col-start-4" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2 xl:col-start-4">
                                         {% navoption "Service Status", "https://status.flowfuse.com/", 1, "check-badge", true %}{% endnavoption %}
                                         {% navoption "Request Support", "/support/", 1, "lifebuoy" %}{% endnavoption %}
                                         {% navoption "Contact Us", "/contact-us/", 1, "mail" %}{% endnavoption %}

@@ -1,0 +1,11 @@
+{# Mega-dropdown highlight card. Expects `hl` set by the caller:
+   {% set hl = navHighlights.platform %}{% include "components/nav-highlight.njk" %}
+   Content is configured in src/_data/navHighlights.js (marketing-owned). #}
+<li class="mega-highlight">
+    <a href="{{ hl.link }}" class="mega-highlight-card">
+        <span class="mega-highlight-eyebrow">{{ hl.eyebrow }}</span>
+        <span class="mega-highlight-title">{{ hl.title }}</span>
+        <span class="mega-highlight-desc">{{ hl.description }}</span>
+        <span class="mega-highlight-cta">{{ hl.cta }} <span class="mega-highlight-arrow">&rarr;</span></span>
+    </a>
+</li>
