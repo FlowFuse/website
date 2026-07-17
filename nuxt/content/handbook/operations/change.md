@@ -42,7 +42,7 @@ If a new repository is required within our GitHub organisation, a `New Repositor
 When bringing a new employee into the company, or saying goodbye to an existing one, use the appropriate `Onboarding` or `Offboarding` task template in Asana.
 
 To create a task from the template, go to the [BizOps Departmental Project](https://app.asana.com/1/1213818720452348/project/1213831710817565) in Asana, 
-click the **+** sign on Recruitment and Hiring group, and select the `Onboarding` or `Offboarding` template. Rename the task with the employee's name and
+click the **+** sign on Onboarding/Offboarding section, and select the `Onboarding` or `Offboarding` template. Rename the task with the employee's name and
 set due dates relative to their start date (onboarding) or last working day (offboarding).
 
 More details around Onboarding is available in the [Hiring and Onboarding](/handbook/peopleops/hiring/#onboarding) section of the handbook.
