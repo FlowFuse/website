@@ -20,7 +20,8 @@ module.exports = {
         title: "Master the Unified Namespace",
         description: "Guides and reference architectures for every capability, from UNS to MES.",
         cta: "Start learning",
-        link: "/use-cases/uns/"
+        link: "/use-cases/uns/",
+        image: "/images/home/home-uns.png"
     },
     solutions: {
         eyebrow: "Customer story",
