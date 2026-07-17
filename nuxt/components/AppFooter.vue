@@ -32,7 +32,7 @@
           </svg>
             </div>
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
-            <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr_1fr] gap-x-8 gap-y-12 text-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
                 <!-- Platform -->
                 <section class="border-t border-gray-300 pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
@@ -149,27 +149,22 @@
                         </div>
                     </div>
                 </section>
-                <!-- Company -->
-                <section class="border-t border-gray-300 pt-5">
-                    <p class="text-lg font-medium text-gray-900 mb-6">Company</p>
-                    <div class="flex flex-col">
-                        <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4 invisible" aria-hidden="true">Company</p>
-                        <ul class="flex flex-col gap-2.5">
-                            <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
-                            <li><a href="/about/">About us</a></li>
-                            <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
-                            <li><a href="/handbook/">Handbook</a></li>
-                            <li><a href="/partners/">Partnerships</a></li>
-                            <li><a href="/professional-services/">Professional Services</a></li>
-                            <li><a href="https://status.flowfuse.com/">Service Status</a></li>
-                            <li><a href="/support/">Request Support</a></li>
-                            <li><a href="/contact-us/">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </section>
             </div>
-            <!-- Legal + social bottom row -->
-            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
+                  <!-- Company quick links -->
+          <div class="mt-12 pt-6 border-t border-gray-200 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm">
+              <span class="uppercase text-xs font-semibold text-gray-400 tracking-widest">Company</span>
+              <a href="/platform/why-flowfuse/">Why FlowFuse</a>
+              <a href="/about/">About us</a>
+              <a href="https://boards.greenhouse.io/flowfuse">Jobs</a>
+              <a href="/handbook/">Handbook</a>
+              <a href="/partners/">Partnerships</a>
+              <a href="/professional-services/">Professional Services</a>
+              <a href="https://status.flowfuse.com/">Service Status</a>
+              <a href="/support/">Request Support</a>
+              <a href="/contact-us/">Contact Us</a>
+          </div>
+<!-- Legal + social bottom row -->
+            <div class="mt-6 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
                 <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
                     <span aria-hidden="true">&middot;</span>
