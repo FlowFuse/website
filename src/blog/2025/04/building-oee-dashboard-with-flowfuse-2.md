@@ -13,7 +13,7 @@ tags:
 ---
 
 In [Part 1](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/), we explored the fundamentals of OEE, outlined a basic design of the dashboard, and identified the key elements to include in the OEE dashboard. 
-In this Part 2, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](https://dashboard.flowfuse.com/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data. Following the steps below, you can have this dashboard built and deployed in about 30 minutes.
+In this Part 2, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](https://dashboard.flowfuse.com/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data, the same kind of data you'd track for torque, weld cycle time, or paint throughput on an [automotive](/industries/automotive/) line.
 
 <!--more-->
 
