@@ -1,6 +1,6 @@
 <template>
     <footer class="ff-footer bg-gray-100 w-full border-t border-white">
-        <div class="py-12 px-6 max-w-screen-xl mx-auto">
+        <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
                 <!-- Platform -->

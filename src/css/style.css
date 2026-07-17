@@ -2437,15 +2437,26 @@ lite-youtube::before {
         justify-content: flex-start;
         column-gap: 3rem;
         padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
+        /* fit the highlight card in dropdowns with few rows without letting
+           it stretch the link rows (the card itself is height-0 below) */
+        align-content: start;
+        min-height: 19.5rem;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
         display: block;
         grid-column: 1;
         grid-row: 2 / -1;
         align-self: start;
+        /* zero height: the card must not contribute to grid row sizing,
+           otherwise short panels get stretched link rows */
+        height: 0;
+        overflow: visible;
+        padding: 0;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         /* 7px matches the link padding plus line-height leading, so the image
            top aligns with the first link text in the columns */
-        padding: 7px 0 1.25rem;
+        margin-top: 7px;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         display: block;
