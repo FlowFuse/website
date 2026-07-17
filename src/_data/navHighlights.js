@@ -6,6 +6,11 @@
  * feature a campaign, webinar, customer story or launch. Keep titles short
  * (2 lines max) and descriptions to one sentence.
  *
+ * Card image: set `image` to a site-absolute path to override. Without it,
+ * the card uses the linked page's `image:` front matter (the marketing image
+ * every linkable page should carry, as blog posts do for the blog index),
+ * falling back to /images/og-blog.jpg.
+ *
  * NOTE: the Nuxt header (nuxt/components/AppHeader.vue) carries a hardcoded
  * copy of these cards for the handbook/legal pages; keep both in sync.
  */
@@ -29,13 +34,15 @@ module.exports = {
         title: "Free Node-RED training",
         description: "Structured courses that take you from first flow to production.",
         cta: "Enroll for free",
-        link: "https://node-red-academy.learnworlds.com/"
+        link: "https://node-red-academy.learnworlds.com/",
+        image: "/images/education/education_hero.jpg"
     },
     company: {
         eyebrow: "Careers",
         title: "We're hiring",
         description: "Help industrial teams own their data and applications.",
         cta: "See open roles",
-        link: "https://boards.greenhouse.io/flowfuse"
+        link: "https://boards.greenhouse.io/flowfuse",
+        image: "/images/careers/hiring.jpeg"
     }
 };

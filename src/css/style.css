@@ -2426,7 +2426,9 @@ lite-youtube::before {
 /* Mega highlight card: a promo slot at the left of every mega dropdown
    (configured in src/_data/navHighlights.js). xl+ only: the panel switches to
    a fixed four-track template left-aligned to the screen-xl container, so the
-   card and each column sit at identical positions in every dropdown. */
+   card and each column sit at identical positions in every dropdown. The card
+   keeps its natural height (it does not stretch with tall panels) and shows
+   the linked page's marketing image. */
 .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
     display: none;
 }
@@ -2438,21 +2440,19 @@ lite-youtube::before {
         padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
-        display: flex;
+        display: block;
         grid-column: 1;
         grid-row: 1 / -1;
-        align-self: stretch;
-        padding: 0.5rem 0 0.5rem 0;
+        align-self: start;
+        padding: 0.5rem 0;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
         width: 100%;
-        min-height: 15rem;
-        padding: 1.5rem;
+        padding: 0;
         border-radius: 0.5rem;
+        overflow: hidden;
         background-color: #1e1b4b;
         color: #fff;
         transition: background-color 0.15s ease;
@@ -2464,6 +2464,7 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span {
         display: block;
         padding: 0;
+        transform: none;
         width: 100%;
         max-width: 100%;
         min-width: 0;
@@ -2472,10 +2473,18 @@ lite-youtube::before {
         overflow-wrap: break-word;
         border: 0;
     }
-    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-arrow {
-        display: inline-block;
-        width: auto;
-        transition: transform 0.15s ease;
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-media {
+        height: 9.5rem;
+        flex: none;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-body {
+        padding: 1.25rem 1.5rem 1.5rem;
     }
     .mega-highlight-eyebrow {
         text-transform: uppercase;
@@ -2486,7 +2495,7 @@ lite-youtube::before {
     }
     .mega-highlight-title {
         margin-top: 0.75rem;
-        font-size: 1.375rem;
+        font-size: 1.25rem;
         line-height: 1.3;
         font-weight: 500;
         color: #fff;
@@ -2499,17 +2508,17 @@ lite-youtube::before {
         color: #c7d2fe;
     }
     .mega-highlight-cta {
-        margin-top: auto;
-        padding-top: 1.25rem;
+        margin-top: 1rem;
         font-size: 0.875rem;
         font-weight: 600;
         color: #fff;
     }
-    .mega-highlight-arrow {
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-arrow {
         display: inline-block;
+        width: auto;
         transition: transform 0.15s ease;
     }
-    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover .mega-highlight-arrow {
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover span.mega-highlight-arrow {
         transform: translateX(0.25rem);
     }
 }
@@ -2572,7 +2581,7 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown ul.mega a {
         position: relative;
     }
-    .ff-website header .ff-nav-dropdown ul.mega a::after {
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card)::after {
         content: "";
         position: absolute;
         left: 0;
@@ -2584,8 +2593,8 @@ lite-youtube::before {
         transform-origin: left center;
         transition: transform 0.22s ease;
     }
-    .ff-website header .ff-nav-dropdown ul.mega a:hover::after,
-    .ff-website header .ff-nav-dropdown ul.mega a:focus-visible::after {
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):hover::after,
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):focus-visible::after {
         transform: scaleX(1);
     }
 }

@@ -226,6 +226,12 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit ));
 
+    // Marketing image for a nav highlight card: the linked page's image front matter
+    eleventyConfig.addFilter("pageImageForUrl", (collection, url) => {
+        const match = (collection || []).find((p) => p.url === url);
+        return (match && match.data && match.data.image) || null;
+    });
+
     eleventyConfig.addFilter('console', function (value) {
         const str = util.inspect(value, { showHidden: false, depth: null });
         return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`
