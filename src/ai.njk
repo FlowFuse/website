@@ -6,7 +6,7 @@ meta:
     title: "Industrial AI: FlowFuse Expert, Governed and Built In"
     description: "Industrial AI with FlowFuse: generate flows and code with FlowFuse Expert, run models at the edge, and give your company-sanctioned AI governed access to operations. Built into FlowFuse and Node-RED with the approvals, permissions, and audit your plants require."
 hero:
-    title: "<span class='text-indigo-800'>Industrial AI,</span> Governed and Built In"
+    title: "<span class='text-indigo-300'>Industrial AI,</span> Governed and Built In"
     description:
         - "Turn natural language into working industrial flows with FlowFuse Expert, our AI copilot built into FlowFuse and Node-RED. Through Model Context Protocol (MCP) it reaches the live plant data you choose to expose, under per-tool permissions, so it works with your constraints, protocols, and governance, not generic templates."
         - "AI capability is table stakes in 2026. Governed access to your operations is the difference."
@@ -54,16 +54,23 @@ ctaSection:
     img: ./images/ai/ai-cta.png
     imgAlt: "Plant worker interacting with AI on a tablet, connected to the entire factory"
 ---
-<!--Hero Content-->
-<div class="w-full px-6">
+<!--Hero Content (background-image treatment, pattern from the homepage hero) -->
+<section class="w-full relative bg-indigo-800">
+    <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="hero-slide is-active">
+            {% image "./images/home/hero/hero-2.jpg", "Industrial shipping port with cargo containers and cranes", [1920] %}
+        </div>
+        <div class="absolute inset-0 bg-indigo-950/60"></div>
+    </div>
+    <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-20">
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
             <div class="container m-auto text-left max-w-screen-lg">
                 <div class="mx-auto">
-                    <h1 class="font-medium home m-auto text-center text-indigo-600 mt-24 mb-16 max-w-2xl">
+                    <h1 class="font-medium home m-auto text-center text-white mb-16 max-w-2xl">
                         {{ hero.title | safe }}
                     </h1>
                     {% for p in hero.description %}
-                        <p class="text-center max-w-4xl mx-auto">{{ p | safe }}</p>
+                        <p class="text-center max-w-4xl mx-auto text-indigo-100">{{ p | safe }}</p>
                     {% endfor %}
                     <div class="mt-20">
                         <!-- AI Chat Interface -->
@@ -76,6 +83,7 @@ ctaSection:
             </div>
         </div>
     </div>
+</section>
     <!--Platform-->
     <div class="w-full py-12 max-md:pb-20 mt-6 px-6">
         <div class="md:flex md:my-12 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">

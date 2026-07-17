@@ -1,11 +1,8 @@
 <template>
-  <footer class="ff-footer bg-gray-100 w-full border-t border-white">
-    <div class="py-8 px-10 md:px-6 md:pt-8 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
-      <div class="w-full grid gap-y-8 md:gap-y-0 md:grid-rows-2 md:grid-flow-col md:ff-footer-columns md:gap-x-8 md:justify-between">
-
-        <!-- Logo -->
-        <div class="w-36">
-          <svg class="max-h-full w-full" viewBox="0 0 402 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <footer class="ff-footer bg-gray-100 w-full border-t border-white">
+        <div class="py-12 px-6 max-w-screen-xl mx-auto">
+            <div class="w-40 mb-10">
+                <svg class="max-h-full w-full" viewBox="0 0 402 70" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="ft-mask0" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
               <path d="M402 0H0V70H402V0Z" fill="white"/>
             </mask>
@@ -33,38 +30,154 @@
               </g>
             </g>
           </svg>
-        </div>
-
-        <!-- Copyright -->
-        <div class="w-full self-end order-last md:order-none">
-          <div class="copyright-statement inline">
-            <div>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.
-              <br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">here</a> to manage your preferences.
             </div>
-          </div>
-        </div>
-
-        <!-- Footer links -->
-        <div class="w-full md:row-span-2">
-          <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="https://boards.greenhouse.io/flowfuse" class="py-3">Jobs</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/" class="py-3">Partnerships</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/professional-services/" class="py-3">Professional Services</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/" class="py-3">Service Status</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/support/" class="py-3">Request Support</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/" class="py-3">Contact Us</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/blog/#sign-up" class="py-3">Sign Up to Mailing List</a></li>
-          </ul>
-        </div>
-
-        <!-- Social icons -->
-        <div class="w-full md:row-span-2">
-          <ul class="flex flex-col gap-y-4 md:gap-y-6 w-full -mx-3 md:mx-0 text-base md:items-end">
-            <li class="flex flex-wrap gap-x-4 gap-y-2 lg:gap-x-6 px-3 md:px-0 justify-between sm:justify-start md:justify-end">
-              <a href="https://www.facebook.com/FlowFuse/" class="block">
+            <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
+            <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr_1fr] gap-x-8 gap-y-12 text-sm">
+                <!-- Platform -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-8">
+                        <div class="flex flex-col gap-8">
+                            <div>
+                                <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
+                                <ul class="flex flex-col gap-2.5">
+                                    <li><a href="/platform/features/">Features</a></li>
+                                    <li><a href="/integrations/">Integrations</a></li>
+                                    <li><a href="/blueprints/">Blueprint Library</a></li>
+                                    <li><a href="/platform/security/">Security Statement</a></li>
+                                    <li><a href="/pricing/">Pricing</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Components</p>
+                                <ul class="flex flex-col gap-2.5">
+                                    <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
+                                    <li><a href="/platform/device-agent/">Device Agent</a></li>
+                                    <li><a href="/node-red/">Node-RED</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Capabilities</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/ai/">Industrial AI</a></li>
+                                <li><a href="/use-cases/it-ot-middleware/">IT/OT middleware</a></li>
+                                <li><a href="/use-cases/uns/">Unified Namespace</a></li>
+                                <li><a href="/use-cases/mes/">MES</a></li>
+                                <li><a href="/use-cases/scada/">SCADA</a></li>
+                                <li><a href="/use-cases/edge-connectivity/">Edge Connectivity</a></li>
+                                <li><a href="/use-cases/data-integration/">Data Integration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Solutions -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Solutions</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Use Case</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/use-cases/production-monitoring/">Production Monitoring</a></li>
+                                <li><a href="/use-cases/operational-data-pipelines/">Operational Data Pipelines</a></li>
+                                <li><a href="/use-cases/equipment-monitoring/">Equipment Monitoring</a></li>
+                                <li><a href="/use-cases/quality-validation/">Quality Validation</a></li>
+                                <li><a href="/use-cases/track-and-trace/">Track &amp; Trace</a></li>
+                                <li><a href="/use-cases/system-diagnostics/">System Diagnostics</a></li>
+                                <li><a href="/use-cases/shop-floor-communication/">Shop Floor Communication</a></li>
+                                <li><a href="/use-cases/workforce-assignment/">Workforce Assignment</a></li>
+                                <li><a href="/use-cases/continuous-improvement/">Continuous Improvement</a></li>
+                                <li><a href="/use-cases/governed-ai-access/">Governed AI &amp; Agent Access</a></li>
+                                <li><a href="/use-cases/">See all use cases</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Industry</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/industries/automotive/">Automotive</a></li>
+                                <li><a href="/industries/food-beverage/">Food &amp; Beverage</a></li>
+                                <li><a href="/industries/life-sciences/">Life Sciences</a></li>
+                                <li><a href="/industries/electronics-appliances/">Electronics &amp; Appliances</a></li>
+                                <li><a href="/industries/renewables/">Renewables</a></li>
+                                <li><a href="/industries/semiconductors/">Semiconductors</a></li>
+                                <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
+                                <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Outcome</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/outcomes/production-performance/">Production Performance</a></li>
+                                <li><a href="/outcomes/quality-compliance/">Quality &amp; Compliance</a></li>
+                                <li><a href="/outcomes/labor-operational-efficiency/">Labor &amp; Operational Efficiency</a></li>
+                                <li><a href="/outcomes/asset-reliability/">Asset Reliability</a></li>
+                                <li><a href="/outcomes/ai-readiness-data-foundation/">AI Readiness &amp; Data Foundation</a></li>
+                                <li><a href="/outcomes/">See all outcomes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Resources -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
+                    <div class="flex flex-col gap-8">
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Learn</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/blog/">Blog</a></li>
+                                <li><a href="/webinars/">Webinars</a></li>
+                                <li><a href="/resources/publications/">Publications</a></li>
+                                <li><a href="https://node-red-academy.learnworlds.com/">Node-RED Academy</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Reference</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/docs/">Docs</a></li>
+                                <li><a href="/changelog/">Changelog</a></li>
+                                <li><a href="https://github.com/FlowFuse/flowfuse">Github</a></li>
+                                <li><a href="https://discourse.nodered.org/c/vendors/flowfuse/24/">Support forums</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Customers</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/customer-stories/">Customer Stories</a></li>
+                                <li><a href="/education/">Educational License</a></li>
+                                <li><a href="/blog/#sign-up">Sign Up to Mailing List</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Company -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Company</p>
+                    <ul class="flex flex-col gap-2.5">
+                        <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
+                        <li><a href="/about/">About us</a></li>
+                        <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
+                        <li><a href="/handbook/">Handbook</a></li>
+                        <li><a href="/partners/">Partnerships</a></li>
+                        <li><a href="/professional-services/">Professional Services</a></li>
+                        <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                        <li><a href="/support/">Request Support</a></li>
+                        <li><a href="/contact-us/">Contact Us</a></li>
+                    </ul>
+                </section>
+            </div>
+            <!-- Legal + social bottom row -->
+            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
+                <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="/privacy-policy/">Privacy</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="/terms/">Terms</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">Cookie preferences</a>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <a href="https://www.facebook.com/FlowFuse/" class="block">
                 <span class="sr-only">Visit our Facebook page</span>
                 <svg class="fill-current h-5 hover:text-red-hero" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.4286 0H2.57143C1.88944 0 1.23539 0.270918 0.753154 0.753154C0.270918 1.23539 0 1.88944 0 2.57143L0 21.4286C0 22.1106 0.270918 22.7646 0.753154 23.2468C1.23539 23.7291 1.88944 24 2.57143 24H9.92411V15.8405H6.54911V12H9.92411V9.07286C9.92411 5.74339 11.9063 3.90429 14.9421 3.90429C16.3961 3.90429 17.9164 4.16357 17.9164 4.16357V7.43143H16.2413C14.5907 7.43143 14.0759 8.45571 14.0759 9.50625V12H17.7605L17.1713 15.8405H14.0759V24H21.4286C22.1106 24 22.7646 23.7291 23.2468 23.2468C23.7291 22.7646 24 22.1106 24 21.4286V2.57143C24 1.88944 23.7291 1.23539 23.2468 0.753154C22.7646 0.270918 22.1106 0 21.4286 0Z"/></svg>
               </a>
@@ -92,11 +205,8 @@
                 <span class="sr-only">Visit our YouTube channel</span>
                 <svg class="fill-current h-5 hover:text-red-hero" width="28" height="20" viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><path d="M27.3016 2.97749C26.9889 1.80488 26.0709 0.88338 24.9028 0.569489C22.7854 0 14.3001 0 14.3001 0C14.3001 0 5.81476 0 3.69957 0.569489C2.53142 0.88338 1.61342 1.80488 1.30072 2.97749C0.733398 5.10074 0.733398 9.53333 0.733398 9.53333C0.733398 9.53333 0.733398 13.9659 1.30072 16.0892C1.61342 17.2618 2.53142 18.1833 3.69957 18.4972C5.81476 19.0667 14.3001 19.0667 14.3001 19.0667C14.3001 19.0667 22.7854 19.0667 24.9006 18.4972C26.0687 18.1833 26.9867 17.2618 27.2994 16.0892C27.8667 13.9659 27.8667 9.53333 27.8667 9.53333C27.8667 9.53333 27.8667 5.10074 27.2994 2.97749H27.3016ZM11.5863 13.6184V5.44826L18.6354 9.53333L11.5863 13.6184Z"/></svg>
               </a>
-            </li>
-          </ul>
+                </div>
+            </div>
         </div>
-
-      </div>
-    </div>
-  </footer>
+    </footer>
 </template>

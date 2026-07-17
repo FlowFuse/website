@@ -192,11 +192,12 @@ eleventyComputed:
                             <ul class="narrow mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(8,auto)] sm:pr-1 sm:auto-rows-auto items-center">
                                 {% navoption "Product", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2">
                                         {% navoption "Features", "/platform/features/", 2, "star" %}{% endnavoption %}
                                         {% navoption "Integrations", "/integrations/", 1, "squares-plus" %}{% endnavoption %}
                                         {% navoption "Blueprint Library", "/blueprints/", 1, "building-library" %}{% endnavoption %}
                                         {% navoption "Security Statement", "/platform/security/", 1, "lock-closed" %}{% endnavoption %}
+                                        {% navoption "Pricing", "/pricing/", 1, "dollar" %}{% endnavoption %}
                                     </ul>
                                 </li>
                                 {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1" %}{% endnavoption %}
@@ -217,13 +218,6 @@ eleventyComputed:
                                         {% navoption "SCADA", "/use-cases/scada/", 1, "screen" %}{% endnavoption %}
                                         {% navoption "Edge Connectivity", "/use-cases/edge-connectivity/", 1, "chip" %}{% endnavoption %}
                                         {% navoption "Data Integration", "/use-cases/data-integration/", 1, "arrows-right-left" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                                {% navoption "Company", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-4 sm:row-start-1" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 sm:col-start-4 sm:row-start-2">
-                                        {% navoption "Why FlowFuse", "/platform/why-flowfuse/", 1, "flowfuse" %}{% endnavoption %}
-                                        {% navoption "About FlowFuse", "/about/", 1, "building-office-2" %}{% endnavoption %}
                                     </ul>
                                 </li>
                             </ul>
@@ -302,9 +296,36 @@ eleventyComputed:
                                 </li>
                             </ul>
                         {% endnavoption %}
+                        {% navoption "Company", null, 0 %}
+                            <ul class="mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(5,auto)] sm:pr-1 sm:auto-rows-auto items-center">
+                                {% navoption "Company", null, 1, null, true, "pl-3 title border-l-2" %}{% endnavoption %}
+                                <li class="contents">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2">
+                                        {% navoption "Why FlowFuse", "/platform/why-flowfuse/", 1, "flowfuse" %}{% endnavoption %}
+                                        {% navoption "About FlowFuse", "/about/", 1, "building-office-2" %}{% endnavoption %}
+                                        {% navoption "Jobs", site.jobBoard, 1, "case" %}{% endnavoption %}
+                                        {% navoption "Handbook", "/handbook/", 1, "book-open" %}{% endnavoption %}
+                                    </ul>
+                                </li>
+                                {% navoption "Partners & Services", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-2 sm:row-start-1" %}{% endnavoption %}
+                                <li class="contents">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 sm:col-start-2 sm:row-start-2">
+                                        {% navoption "Partnerships", "/partners/", 1, "user-group" %}{% endnavoption %}
+                                        {% navoption "Professional Services", "/professional-services/", 1, "wrench-screwdriver" %}{% endnavoption %}
+                                    </ul>
+                                </li>
+                                {% navoption "Support", null, 1, null, true, "pl-3 title border-l-2 sm:col-start-3 sm:row-start-1" %}{% endnavoption %}
+                                <li class="contents">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 sm:col-start-3 sm:row-start-2">
+                                        {% navoption "Service Status", "https://status.flowfuse.com/", 1, "check-badge", true %}{% endnavoption %}
+                                        {% navoption "Request Support", "/support/", 1, "lifebuoy" %}{% endnavoption %}
+                                        {% navoption "Contact Us", "/contact-us/", 1, "mail" %}{% endnavoption %}
+                                    </ul>
+                                </li>
+                            </ul>
+                        {% endnavoption %}
                         {% navoption "Industrial AI", "/ai/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
                         {% navoption "Docs", "/docs/", 0, false, false, "md:hidden" %}{% endnavoption %}
-                        {% navoption "Pricing", "/pricing/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
                         <!-- More dropdown for overflow items -->
                         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
                             <span class="flex items-center gap-1">More<span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
@@ -340,66 +361,163 @@ eleventyComputed:
     {% include "components/hm-promo-banner.njk" %}
     <!-- Footer -->
     <footer class="ff-footer bg-gray-100 w-full border-t border-white">
-        <div class="py-8 px-10 md:px-6 md:pt-8 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
-            <div class="w-full grid gap-y-8 md:gap-y-0 md:grid-rows-2 md:grid-flow-col md:ff-footer-columns md:gap-x-8 md:justify-between">
-                <div class="w-36">
-                    {% include "components/ff-logo--wordmark--grey.svg" %}
-                </div>
-                <div class="w-full self-end order-last md:order-none">
-                    <div class="copyright-statement inline">
-                        <div>Copyright {% year %} FlowFuse Inc. All Rights Reserved.
-                            <br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">here</a> to manage your preferences.
+        <div class="py-12 px-6 max-w-screen-xl mx-auto">
+            <div class="w-40 mb-10">
+                {% include "components/ff-logo--wordmark--grey.svg" %}
+            </div>
+            <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
+            <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr_1fr] gap-x-8 gap-y-12 text-sm">
+                <!-- Platform -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
+                    <div class="grid grid-cols-2 gap-x-8 gap-y-8">
+                        <div class="flex flex-col gap-8">
+                            <div>
+                                <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
+                                <ul class="flex flex-col gap-2.5">
+                                    <li><a href="/platform/features/">Features</a></li>
+                                    <li><a href="/integrations/">Integrations</a></li>
+                                    <li><a href="/blueprints/">Blueprint Library</a></li>
+                                    <li><a href="/platform/security/">Security Statement</a></li>
+                                    <li><a href="/pricing/">Pricing</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Components</p>
+                                <ul class="flex flex-col gap-2.5">
+                                    <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
+                                    <li><a href="/platform/device-agent/">Device Agent</a></li>
+                                    <li><a href="/node-red/">Node-RED</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Capabilities</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/ai/">Industrial AI</a></li>
+                                <li><a href="/use-cases/it-ot-middleware/">IT/OT middleware</a></li>
+                                <li><a href="/use-cases/uns/">Unified Namespace</a></li>
+                                <li><a href="/use-cases/mes/">MES</a></li>
+                                <li><a href="/use-cases/scada/">SCADA</a></li>
+                                <li><a href="/use-cases/edge-connectivity/">Edge Connectivity</a></li>
+                                <li><a href="/use-cases/data-integration/">Data Integration</a></li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="w-full md:row-span-2">
-                    <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="{{ site.jobBoard }}" class="py-3">Jobs</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/" class="py-3">Partnerships</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/professional-services/" class="py-3">Professional Services</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/" class="py-3">Service Status</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/support/" class="py-3">Request Support</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/" class="py-3">Contact Us</a></li>
-                        <li class="inline mr-2 mb-2 md:m-0"><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})" class="py-3">Sign Up to Mailing List</a></li>
+                </section>
+                <!-- Solutions -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Solutions</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Use Case</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/use-cases/production-monitoring/">Production Monitoring</a></li>
+                                <li><a href="/use-cases/operational-data-pipelines/">Operational Data Pipelines</a></li>
+                                <li><a href="/use-cases/equipment-monitoring/">Equipment Monitoring</a></li>
+                                <li><a href="/use-cases/quality-validation/">Quality Validation</a></li>
+                                <li><a href="/use-cases/track-and-trace/">Track &amp; Trace</a></li>
+                                <li><a href="/use-cases/system-diagnostics/">System Diagnostics</a></li>
+                                <li><a href="/use-cases/shop-floor-communication/">Shop Floor Communication</a></li>
+                                <li><a href="/use-cases/workforce-assignment/">Workforce Assignment</a></li>
+                                <li><a href="/use-cases/continuous-improvement/">Continuous Improvement</a></li>
+                                <li><a href="/use-cases/governed-ai-access/">Governed AI &amp; Agent Access</a></li>
+                                <li><a href="/use-cases/">See all use cases</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Industry</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/industries/automotive/">Automotive</a></li>
+                                <li><a href="/industries/food-beverage/">Food &amp; Beverage</a></li>
+                                <li><a href="/industries/life-sciences/">Life Sciences</a></li>
+                                <li><a href="/industries/electronics-appliances/">Electronics &amp; Appliances</a></li>
+                                <li><a href="/industries/renewables/">Renewables</a></li>
+                                <li><a href="/industries/semiconductors/">Semiconductors</a></li>
+                                <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
+                                <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Outcome</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/outcomes/production-performance/">Production Performance</a></li>
+                                <li><a href="/outcomes/quality-compliance/">Quality &amp; Compliance</a></li>
+                                <li><a href="/outcomes/labor-operational-efficiency/">Labor &amp; Operational Efficiency</a></li>
+                                <li><a href="/outcomes/asset-reliability/">Asset Reliability</a></li>
+                                <li><a href="/outcomes/ai-readiness-data-foundation/">AI Readiness &amp; Data Foundation</a></li>
+                                <li><a href="/outcomes/">See all outcomes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Resources -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
+                    <div class="flex flex-col gap-8">
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Learn</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/blog/">Blog</a></li>
+                                <li><a href="/webinars/">Webinars</a></li>
+                                <li><a href="/resources/publications/">Publications</a></li>
+                                <li><a href="https://node-red-academy.learnworlds.com/">Node-RED Academy</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Reference</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/docs/">Docs</a></li>
+                                <li><a href="/changelog/">Changelog</a></li>
+                                <li><a href="https://github.com/FlowFuse/flowfuse">Github</a></li>
+                                <li><a href="https://discourse.nodered.org/c/vendors/flowfuse/24/">Support forums</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Customers</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/customer-stories/">Customer Stories</a></li>
+                                <li><a href="/education/">Educational License</a></li>
+                                <li><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Company -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Company</p>
+                    <ul class="flex flex-col gap-2.5">
+                        <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
+                        <li><a href="/about/">About us</a></li>
+                        <li><a href="{{ site.jobBoard }}">Jobs</a></li>
+                        <li><a href="/handbook/">Handbook</a></li>
+                        <li><a href="/partners/">Partnerships</a></li>
+                        <li><a href="/professional-services/">Professional Services</a></li>
+                        <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                        <li><a href="/support/">Request Support</a></li>
+                        <li><a href="/contact-us/">Contact Us</a></li>
                     </ul>
+                </section>
+            </div>
+            <!-- Legal + social bottom row -->
+            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
+                <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span>Copyright {% year %} FlowFuse Inc. All Rights Reserved.</span>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="/privacy-policy/">Privacy</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="/terms/">Terms</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">Cookie preferences</a>
                 </div>
-                <div class="w-full md:row-span-2">
-                    <ul class="flex flex-col gap-y-4 md:gap-y-6 w-full -mx-3 md:mx-0 text-base md:items-end">
-                      <!-- Social Icons -->
-                      <li class="flex flex-wrap gap-x-4 gap-y-2 lg:gap-x-6 px-3 md:px-0 justify-between sm:justify-start md:justify-end">
-                        <a href="https://www.facebook.com/FlowFuse/" class="block">
-                          <span class="sr-only">Visit our Facebook page</span>
-                          {% include "components/facebook.njk" %}
-                        </a>
-                        <a href="https://github.com/FlowFuse" class="block">
-                          <span class="sr-only">Visit our GitHub page</span>
-                          {% include "components/github.njk" %}
-                        </a>
-                        <a href="https://discord.gg/2RrvW8dkrF" class="block">
-                          <span class="sr-only">Join our Discord</span>
-                          {% include "components/discord.njk" %}
-                        </a>
-                        <a href="https://www.reddit.com/r/flowfuse" class="block">
-                          <span class="sr-only">Visit our Reddit community</span>
-                          {% include "components/reddit.njk" %}
-                        </a>
-                        <a href="/blog/index.xml" class="block">
-                          <span class="sr-only">Subscribe to our RSS feed</span>
-                          {% include "components/rss.njk" %}
-                        </a>
-                        <a href="https://www.linkedin.com/company/flowfuse" class="block">
-                          <span class="sr-only">Visit our LinkedIn page</span>
-                          {% include "components/linkedin.njk" %}
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g" class="block">
-                          <span class="sr-only">Visit our YouTube channel</span>
-                          {% include "components/youtube.njk" %}
-                        </a>
-                      </li>
-                    </ul>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <a href="https://www.facebook.com/FlowFuse/" class="block"><span class="sr-only">Visit our Facebook page</span>{% include "components/facebook.njk" %}</a>
+                    <a href="https://github.com/FlowFuse" class="block"><span class="sr-only">Visit our GitHub page</span>{% include "components/github.njk" %}</a>
+                    <a href="https://discord.gg/2RrvW8dkrF" class="block"><span class="sr-only">Join our Discord</span>{% include "components/discord.njk" %}</a>
+                    <a href="https://www.reddit.com/r/flowfuse" class="block"><span class="sr-only">Visit our Reddit community</span>{% include "components/reddit.njk" %}</a>
+                    <a href="/blog/index.xml" class="block"><span class="sr-only">Subscribe to our RSS feed</span>{% include "components/rss.njk" %}</a>
+                    <a href="https://www.linkedin.com/company/flowfuse" class="block"><span class="sr-only">Visit our LinkedIn page</span>{% include "components/linkedin.njk" %}</a>
+                    <a href="https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g" class="block"><span class="sr-only">Visit our YouTube channel</span>{% include "components/youtube.njk" %}</a>
                 </div>
             </div>
         </div>
