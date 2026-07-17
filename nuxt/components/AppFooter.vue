@@ -150,21 +150,38 @@
                     </div>
                 </section>
             </div>
-                  <!-- Company quick links -->
-          <div class="mt-12 pt-6 border-t border-gray-200 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm">
-              <span class="uppercase text-xs font-semibold text-gray-400 tracking-widest">Company</span>
-              <a href="/platform/why-flowfuse/">Why FlowFuse</a>
-              <a href="/about/">About us</a>
-              <a href="https://boards.greenhouse.io/flowfuse">Jobs</a>
-              <a href="/handbook/">Handbook</a>
-              <a href="/partners/">Partnerships</a>
-              <a href="/professional-services/">Professional Services</a>
-              <a href="https://status.flowfuse.com/">Service Status</a>
-              <a href="/support/">Request Support</a>
-              <a href="/contact-us/">Contact Us</a>
+      <!-- Company -->
+      <section class="mt-12 border-t border-gray-300 pt-5">
+          <p class="text-lg font-medium text-gray-900 mb-6">Company</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-8 text-sm">
+              <div>
+                  <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Company</p>
+                  <ul class="flex flex-col gap-2.5">
+                      <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
+                      <li><a href="/about/">About us</a></li>
+                      <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
+                      <li><a href="/handbook/">Handbook</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Partners &amp; Services</p>
+                  <ul class="flex flex-col gap-2.5">
+                      <li><a href="/partners/">Partnerships</a></li>
+                      <li><a href="/professional-services/">Professional Services</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Support</p>
+                  <ul class="flex flex-col gap-2.5">
+                      <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                      <li><a href="/support/">Request Support</a></li>
+                      <li><a href="/contact-us/">Contact Us</a></li>
+                  </ul>
+              </div>
           </div>
+      </section>
 <!-- Legal + social bottom row -->
-            <div class="mt-6 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
+            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
                 <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
                     <span aria-hidden="true">&middot;</span>
