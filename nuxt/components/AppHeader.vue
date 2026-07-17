@@ -210,7 +210,7 @@ onMounted(() => {
         <!-- Resources -->
         <li class="ff-nav-dropdown relative hover:cursor-pointer">
           <span class="flex items-center gap-1">Resources<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
-          <ul class="mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(5,auto)] sm:pr-1 sm:auto-rows-auto items-center">
+          <ul class="narrow mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(5,auto)] sm:pr-1 sm:auto-rows-auto items-center">
             <li class="pl-3 title border-l-2 border-gray-200"><span class="flex items-center gap-2">Learn</span></li>
             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 border-gray-200">
               <li><a class="flex items-center gap-2" href="/blog/"><svg class="ff-icon ff-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></svg>Blog</a></li>
@@ -236,7 +236,7 @@ onMounted(() => {
         <!-- Company -->
         <li class="ff-nav-dropdown relative hover:cursor-pointer">
           <span class="flex items-center gap-1">Company<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
-          <ul class="mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(5,auto)] sm:pr-1 sm:auto-rows-auto items-center">
+          <ul class="narrow mega sm:grid sm:grid-flow-col sm:grid-rows-[repeat(5,auto)] sm:pr-1 sm:auto-rows-auto items-center">
             <li class="pl-3 title border-l-2 border-gray-200"><span class="flex items-center gap-2">Company</span></li>
             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 border-gray-200">
               <li><a class="flex items-center gap-2" href="/platform/why-flowfuse/"><svg class="ff-icon ff-icon-sm" viewBox="0 0 20 20" fill="currentColor"><path d="M1.59385 0.00234319C0.712771 0.00234319 0.00377529 0.711833 0.00377529 1.5929C0.00246514 4.50292 0.000461073 7.41546 0 10.3255C1.88965 10.3367 3.78181 10.3802 5.66642 10.2453C8.29428 10.0057 10.6072 8.59451 13.0285 7.66784C15.231 6.73638 17.5964 6.17101 19.9975 6.2214L19.9972 1.59056C19.9982 0.709238 19.288 0 18.4072 0L1.59385 0.00234319ZM19.999 9.37235C19.7332 9.37661 19.4671 9.38387 19.2013 9.39475C16.2686 9.38346 13.6684 10.8999 11.0229 11.9621C13.0675 12.7893 15.0416 13.8402 17.2084 14.3277C18.1343 14.4682 19.0658 14.5366 20 14.5566L19.999 9.37235ZM2.0776 13.5472C1.38548 13.5487 0.693371 13.5559 0.00176078 13.5594C0.00236546 15.1759 0.00357496 16.7919 0.00618771 18.4094C0.00711994 19.2908 0.715434 20 1.59626 20H18.4091C19.2901 20 19.9991 19.2905 19.9991 18.4094V17.7095C17.9324 17.696 15.8671 17.381 13.9422 16.6075C10.9641 15.5685 8.18508 13.7227 4.95252 13.5992C3.99561 13.554 3.03718 13.5451 2.07774 13.5473L2.0776 13.5472Z"/></svg>Why FlowFuse</a></li>

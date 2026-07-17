@@ -152,17 +152,20 @@
                 <!-- Company -->
                 <section class="border-t border-gray-300 pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Company</p>
-                    <ul class="flex flex-col gap-2.5">
-                        <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
-                        <li><a href="/about/">About us</a></li>
-                        <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
-                        <li><a href="/handbook/">Handbook</a></li>
-                        <li><a href="/partners/">Partnerships</a></li>
-                        <li><a href="/professional-services/">Professional Services</a></li>
-                        <li><a href="https://status.flowfuse.com/">Service Status</a></li>
-                        <li><a href="/support/">Request Support</a></li>
-                        <li><a href="/contact-us/">Contact Us</a></li>
-                    </ul>
+                    <div class="flex flex-col">
+                        <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4 invisible" aria-hidden="true">Company</p>
+                        <ul class="flex flex-col gap-2.5">
+                            <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
+                            <li><a href="/about/">About us</a></li>
+                            <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
+                            <li><a href="/handbook/">Handbook</a></li>
+                            <li><a href="/partners/">Partnerships</a></li>
+                            <li><a href="/professional-services/">Professional Services</a></li>
+                            <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                            <li><a href="/support/">Request Support</a></li>
+                            <li><a href="/contact-us/">Contact Us</a></li>
+                        </ul>
+                    </div>
                 </section>
             </div>
             <!-- Legal + social bottom row -->
