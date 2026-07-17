@@ -3,6 +3,7 @@
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <div class="flex-grow base">
       <div class="w-full">
+        <AppUtilityBar />
         <AppHeader />
         <main id="main-content" class="flex flex-col mx-auto items-center justify-center gradient-bg">
           <slot />

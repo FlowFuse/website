@@ -2415,12 +2415,6 @@ lite-youtube::before {
         padding-left: 0.75rem;
         padding-right: 0.75rem;
     }
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu {
-        margin-left: 1rem !important;
-    }
-    .ff-website header .ff-nav-dropdown > ul.mega a {
-        font-size: 0.875rem !important;
-    }
 }
 
 /* Mega highlight card: an image-only promo slot at the left of every mega
@@ -2438,7 +2432,10 @@ lite-youtube::before {
         column-gap: 3rem;
         padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
         /* fit the highlight card in dropdowns with few rows without letting
-           it stretch the link rows (the card itself is height-0 below) */
+           it stretch the link rows (the card itself is height-0 below).
+           Budget: 1.5rem panel padding-top + title row + 7px card offset +
+           10rem image (16rem wide at 16:10) + 0.625rem title margin + two
+           title lines + 1.75rem panel padding-bottom */
         align-content: start;
         min-height: 19.5rem;
     }
@@ -2454,15 +2451,13 @@ lite-youtube::before {
         padding: 0;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
-        /* 7px matches the link padding plus line-height leading, so the image
-           top aligns with the first link text in the columns */
-        margin-top: 7px;
-    }
-    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         display: block;
         width: 16rem;
         padding: 0;
         text-align: left;
+        /* 7px matches the link padding plus line-height leading, so the image
+           top aligns with the first link text in the columns */
+        margin-top: 7px;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-media {
         display: block;
@@ -2492,7 +2487,7 @@ lite-youtube::before {
         margin-top: 0.625rem;
         padding: 0;
         transform: none;
-        text-align: center;
+        text-align: left;
         white-space: normal;
         overflow-wrap: break-word;
         font-size: 0.875rem;
@@ -2544,13 +2539,11 @@ lite-youtube::before {
         padding: 0.4375rem 0 !important;
         font-size: 0.875rem;
     }
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a span {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
 }
 
-/* De-emphasize "See all ..." index links in the mega panels and footer */
+/* De-emphasize "See all ..." index links in the mega panels and footer.
+   Keyed on the index-page hrefs so the shared stylesheet covers both the
+   11ty and Vue headers without markup changes. */
 @media (min-width: 768px) {
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"],

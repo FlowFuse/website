@@ -24,6 +24,7 @@
                                     <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
                                     <li><a href="/platform/device-agent/">Device Agent</a></li>
                                     <li><a href="/node-red/">Node-RED</a></li>
+              <li><a href="/docs/user/expert/">FlowFuse Expert</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -72,6 +73,7 @@
                                 <li><a href="/industries/semiconductors/">Semiconductors</a></li>
                                 <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
                                 <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
+              <li><a href="/industries/">See all industries</a></li>
                             </ul>
                         </div>
                         <div>

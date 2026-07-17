@@ -228,7 +228,8 @@ module.exports = function(eleventyConfig) {
 
     // Marketing image for a nav highlight card: the linked page's image front matter
     eleventyConfig.addFilter("pageImageForUrl", (collection, url) => {
-        const match = (collection || []).find((p) => p.url === url);
+        const normalized = url && !url.endsWith("/") ? `${url}/` : url;
+        const match = (collection || []).find((p) => p.url === normalized);
         return (match && match.data && match.data.image) || null;
     });
 
