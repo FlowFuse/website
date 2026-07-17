@@ -124,7 +124,9 @@
             </div>
       <!-- Company -->
       <section class="mt-12 border-t border-gray-300 pt-5">
-          <div class="w-40 mb-6">
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-8 text-sm">
+              <div class="col-span-2 sm:col-span-3 lg:col-span-2">
+                  <div class="w-40">
                 <svg class="max-h-full w-full" viewBox="0 0 402 70" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="ft-mask0" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
               <path d="M402 0H0V70H402V0Z" fill="white"/>
@@ -153,28 +155,29 @@
               </g>
             </g>
           </svg>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-8 text-sm">
+              </div>
+              </div>
               <div>
-                  <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Company</p>
                   <ul class="flex flex-col gap-2.5">
                       <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
                       <li><a href="/about/">About us</a></li>
                       <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <ul class="flex flex-col gap-2.5">
                       <li><a href="/handbook/">Handbook</a></li>
-                  </ul>
-              </div>
-              <div>
-                  <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Partners &amp; Services</p>
-                  <ul class="flex flex-col gap-2.5">
                       <li><a href="/partners/">Partnerships</a></li>
-                      <li><a href="/professional-services/">Professional Services</a></li>
                   </ul>
               </div>
               <div>
-                  <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Support</p>
                   <ul class="flex flex-col gap-2.5">
+                      <li><a href="/professional-services/">Professional Services</a></li>
                       <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <ul class="flex flex-col gap-2.5">
                       <li><a href="/support/">Request Support</a></li>
                       <li><a href="/contact-us/">Contact Us</a></li>
                   </ul>

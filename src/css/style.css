@@ -2442,7 +2442,7 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
         display: block;
         grid-column: 1;
-        grid-row: 2 / -1;
+        grid-row: 1 / -1;
         align-self: start;
         /* zero height: the card must not contribute to grid row sizing,
            otherwise short panels get stretched link rows */
@@ -2455,9 +2455,6 @@ lite-youtube::before {
         width: 16rem;
         padding: 0;
         text-align: left;
-        /* 7px matches the link padding plus line-height leading, so the image
-           top aligns with the first link text in the columns */
-        margin-top: 7px;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-media {
         display: block;
@@ -2484,7 +2481,11 @@ lite-youtube::before {
         width: auto;
         max-width: 100%;
         position: relative;
-        margin-top: 0.625rem;
+        /* the title sits level with the column eyebrows; the bottom margin
+           fills the rest of the header row so the image top still meets the
+           first link row */
+        margin: 0 0 12px;
+        top: -2px;
         padding: 0;
         transform: none;
         text-align: left;

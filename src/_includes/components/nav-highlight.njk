@@ -7,7 +7,7 @@
 {% set hlImage = hl.image or (collections.all | pageImageForUrl(hl.link)) or "/images/og-blog.jpg" %}
 <li class="mega-highlight">
     <a href="{{ hl.link }}" class="mega-highlight-card">
-        <span class="mega-highlight-media"><img src="{{ hlImage }}" alt="" loading="lazy"></span>
         <span class="mega-highlight-title">{{ hl.title }}</span>
+        <span class="mega-highlight-media"><img src="{{ hlImage }}" alt="" loading="lazy"></span>
     </a>
 </li>

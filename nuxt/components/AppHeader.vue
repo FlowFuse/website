@@ -145,7 +145,7 @@ onMounted(() => {
         <li class="ff-nav-dropdown relative hover:cursor-pointer">
           <span class="flex items-center gap-1">Platform<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('platform').link" class="mega-highlight-card"><span class="mega-highlight-media"><img :src="hl('platform').image" alt="" loading="lazy"></span><span class="mega-highlight-title">{{ hl('platform').title }}</span></a></li>
+            <li class="mega-highlight"><a :href="hl('platform').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('platform').title }}</span><span class="mega-highlight-media"><img :src="hl('platform').image" alt="" loading="lazy"></span></a></li>
             <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2">Product</span></li>
             <li class="contents">
             <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
@@ -184,7 +184,7 @@ onMounted(() => {
         <li class="ff-nav-dropdown relative hover:cursor-pointer">
           <span class="flex items-center gap-1">Solutions<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(12,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('solutions').link" class="mega-highlight-card"><span class="mega-highlight-media"><img :src="hl('solutions').image" alt="" loading="lazy"></span><span class="mega-highlight-title">{{ hl('solutions').title }}</span></a></li>
+            <li class="mega-highlight"><a :href="hl('solutions').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('solutions').title }}</span><span class="mega-highlight-media"><img :src="hl('solutions').image" alt="" loading="lazy"></span></a></li>
             <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2">By Use Case</span></li>
             <li class="contents">
             <ul class="sub-menu grid grid-rows-subgrid row-span-[11] ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
@@ -233,7 +233,7 @@ onMounted(() => {
         <li class="ff-nav-dropdown relative hover:cursor-pointer">
           <span class="flex items-center gap-1">Resources<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('resources').link" class="mega-highlight-card"><span class="mega-highlight-media"><img :src="hl('resources').image" alt="" loading="lazy"></span><span class="mega-highlight-title">{{ hl('resources').title }}</span></a></li>
+            <li class="mega-highlight"><a :href="hl('resources').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('resources').title }}</span><span class="mega-highlight-media"><img :src="hl('resources').image" alt="" loading="lazy"></span></a></li>
             <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2">Learn</span></li>
             <li class="contents">
             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
@@ -266,7 +266,7 @@ onMounted(() => {
         <li class="ff-nav-dropdown relative hover:cursor-pointer">
           <span class="flex items-center gap-1">Company<span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('company').link" class="mega-highlight-card"><span class="mega-highlight-media"><img :src="hl('company').image" alt="" loading="lazy"></span><span class="mega-highlight-title">{{ hl('company').title }}</span></a></li>
+            <li class="mega-highlight"><a :href="hl('company').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('company').title }}</span><span class="mega-highlight-media"><img :src="hl('company').image" alt="" loading="lazy"></span></a></li>
             <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2">Company</span></li>
             <li class="contents">
             <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
