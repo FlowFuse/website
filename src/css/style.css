@@ -2470,6 +2470,22 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover img {
         transform: scale(1.04);
     }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title {
+        display: block;
+        width: 100%;
+        padding: 0.625rem 0.875rem 0.75rem;
+        transform: none;
+        text-align: left;
+        white-space: normal;
+        overflow-wrap: break-word;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #1f2937;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover span.mega-highlight-title {
+        color: #4f46e5;
+    }
 }
 
 /* Mega panel polish: eyebrow column titles (matching the footer), no border
