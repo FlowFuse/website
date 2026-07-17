@@ -2449,9 +2449,6 @@ lite-youtube::before {
         display: block;
         width: 100%;
         padding: 0;
-        border-radius: 0.75rem;
-        overflow: hidden;
-        border: 1px solid #e5e7eb;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-media {
         display: block;
@@ -2459,6 +2456,9 @@ lite-youtube::before {
         width: 100%;
         aspect-ratio: 16 / 10;
         transform: none;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
         display: block;
@@ -2473,7 +2473,7 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title {
         display: block;
         width: 100%;
-        padding: 0.625rem 0.875rem 0.75rem;
+        padding: 0.625rem 0.125rem 0;
         transform: none;
         text-align: left;
         white-space: normal;
@@ -2513,6 +2513,7 @@ lite-youtube::before {
     }
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
         padding: 0.4375rem 0 !important;
+        font-size: 0.875rem;
     }
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a span {
         padding-top: 0;
