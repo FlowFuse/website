@@ -2546,23 +2546,12 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"] {
         color: #6b7280;
     }
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"]:hover {
-        color: #374151;
-    }
 }
 .ff-website footer.ff-footer a[href="/use-cases/"],
 .ff-website footer.ff-footer a[href="/industries/"],
 .ff-website footer.ff-footer a[href="/outcomes/"] {
     color: #6b7280;
 }
-.ff-website footer.ff-footer a[href="/use-cases/"]:hover,
-.ff-website footer.ff-footer a[href="/industries/"]:hover,
-.ff-website footer.ff-footer a[href="/outcomes/"]:hover {
-    color: #374151;
-}
-
 /* Mobile nav: sections expand on tap only (hover neutralized below md) */
 @media (max-width: 767px) {
     .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),
