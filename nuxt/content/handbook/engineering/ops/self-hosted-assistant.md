@@ -28,6 +28,11 @@ The FlowFuse Expert consists of two internal components that each need to be ena
 
 ### Docker
 
+::note
+Please ensure you are using the latest version of the Docker Compose file for your FlowFuse Platform installation. Check the [upgrade procedure](https://flowfuse.com/docs/install/docker/#upgrade) if needed.
+::
+
+
 The feature is enabled by adding valid tokens to the `.env` file used to configure a FlowFuse Platform.
 Tokens should be added to the `ASSISTANT_TOKEN` and `EXPERT_TOKEN` environment variables (find and replace the `<Assistant Token>` and `<Expert Token>` placeholders with the actual tokens provided by FlowFuse Support/Sales).
 
