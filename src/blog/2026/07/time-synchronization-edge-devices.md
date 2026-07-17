@@ -20,36 +20,27 @@ meta:
       - name: "Check which time synchronization service is running"
         text: "Determine whether your devices use chrony, ntpd, or systemd-timesyncd before making any configuration changes."
         url: "step-one-keep-device-clocks-synchronized"
-
       - name: "Configure an NTP client"
         text: "Configure chrony or another supported NTP client to synchronize the device clock with reliable time servers."
         url: "choose-an-ntp-client-deliberately"
-
       - name: "Configure multiple or local NTP servers"
         text: "Use multiple NTP servers for redundancy, or configure a local NTP server for air-gapped industrial networks."
         url: "use-multiple-time-sources"
-
       - name: "Synchronize devices in air-gapped networks"
         text: "Point edge devices to a local NTP server so every device shares the same time even without internet access."
         url: "air-gapped-networks-still-need-time-synchronization"
-
       - name: "Monitor clock drift with FlowFuse"
         text: "Create a FlowFuse flow that checks clock drift, generates alerts when thresholds are exceeded, and logs historical drift data."
         url: "monitoring-drift-from-flowfuse"
-
   faq:
     - question: "Why do edge device clocks drift?"
       answer: "Edge devices use hardware clocks that naturally gain or lose time. NTP periodically corrects this drift, but devices can become inaccurate if they lose access to a time server or don't have a working real-time clock."
-
     - question: "Can I use NTP without internet access?"
       answer: "Yes. In air-gapped environments, deploy a local NTP server inside the OT network and configure every edge device to synchronize with it."
-
     - question: "How accurate is NTP for industrial applications?"
       answer: "NTP typically keeps devices synchronized within a few milliseconds on a stable network, which is sufficient for historian logging, dashboards, OEE calculations, and most industrial monitoring applications."
-
     - question: "When should I use PTP instead of NTP?"
       answer: "Use PTP when your application requires sub-millisecond or microsecond synchronization, such as motion control, synchronized robotics, or sequence-of-events recording."
-
     - question: "How can I monitor clock drift in FlowFuse?"
       answer: "Use a Node-RED flow in FlowFuse to periodically run `chronyc tracking`, parse the clock offset, compare it against a threshold, and generate alerts or store the results for historical analysis."
 cta:
@@ -115,7 +106,7 @@ The impact is not usually that machines stop working. The problem is that the hi
 
 The best place to solve clock drift is at the systems that generate and store timestamps. For edge gateways, servers, and data collection systems, this usually means keeping the operating system clock synchronized. When these systems have an inaccurate clock, applications such as data collectors, SCADA connectors, historians, and logging services can create unreliable timestamps.
 
-Before changing anything, check what's actually running on your systems. Industrial deployments are rarely uniform — different hardware vendors, OS images, and software versions often ship with different defaults, so it's worth confirming rather than assuming:
+Before changing anything, check what's actually running on your systems. Industrial deployments are rarely uniform, since different hardware vendors, OS images, and software versions often ship with different defaults, so it's worth confirming rather than assuming:
 
 ```bash
 which chronyc    # chrony present?
@@ -128,7 +119,7 @@ Whichever client is present, the underlying goal is the same: keep it pointed at
 
 On many modern Linux distributions, **chrony** is the default and has largely replaced the older **ntpd** service. It tends to suit edge environments well: it synchronizes quickly after boot, keeps tracking clock drift while offline, and recovers cleanly when the network becomes available again.
 
-But it isn't universal — some minimal or vendor-specific images ship with `ntpd`, `systemd-timesyncd`, or nothing at all. Check first, and install or switch only if it makes sense for your deployment.
+But it isn't universal, since some minimal or vendor-specific images ship with `ntpd`, `systemd-timesyncd`, or nothing at all. Check first, and install or switch only if it makes sense for your deployment.
 
 If you do use chrony, a basic configuration is enough for most deployments:
 
@@ -151,7 +142,7 @@ Using several independent time sources lets the NTP client compare responses, ig
 
 No internet does not mean industrial systems have to operate with independent clocks.
 
-A common approach is to run a local time server inside the OT network and point edge gateways, servers, and data collection systems to it. The protocol does not change — only the time source does.
+A common approach is to run a local time server inside the OT network and point edge gateways, servers, and data collection systems to it. The protocol does not change. Only the time source does.
 
 For example:
 
@@ -231,9 +222,7 @@ return msg;
 
 6. Send the alert to your existing notification system, such as MQTT, email, or another monitoring platform.
 
-7. Store the output from the Parse offset function node in a database. An InfluxDB or SQLite node works well for this purpose. Tracking the offset over time is more useful than only recording failures because it helps identify systems that are gradually becoming unreliable.
-
-After deployment, trigger the inject node manually once. You should see the parsed clock status in the debug sidebar and a record written to your drift history store if you enabled data logging.
+After deployment, trigger the inject node manually once. You should see the parsed clock status in the debug sidebar.
 
 ## How accurate does your clock need to be?
 
@@ -260,7 +249,7 @@ Clock drift is one of those problems that is easy to ignore until it starts affe
 
 Machines continue running, dashboards continue updating, and messages still arrive, but inaccurate timestamps make troubleshooting, event correlation, and reporting increasingly difficult.
 
-The challenge is not usually PLC control logic itself. PLCs typically operate using scan cycles, timers, and internal execution timing. The impact of clock drift appears when data from multiple systems needs to be collected, compared, and analyzed.
+The challenge is not usually PLC control logic itself. PLCs typically operate using scan cycles, timers, and internal execution timing. The one exception is when the data changing on the PLC is faster than the protocol used to read it. In that case, the PLC has to buffer those fast-changing values in an array so nothing is lost between polls. That's a program design and memory concern, not a clock synchronization one; the PLC still isn't timestamping anything itself. The impact of clock drift appears when data from multiple systems needs to be collected, compared, and analyzed.
 
 SCADA systems, historians, HMIs, edge gateways, and industrial data platforms depend on accurate timestamps to understand production events and maintain reliable historical records.
 
@@ -268,6 +257,4 @@ Preventing clock drift does not require complex infrastructure. A reliable NTP c
 
 Just as importantly, monitor system clock health so problems are detected before they affect operational data.
 
-FlowFuse provides a practical way to deploy monitoring flows, manage edge applications, and build automated checks that identify clock issues across distributed industrial deployments.
-
-As your edge deployment grows from a handful of systems to hundreds, maintaining a consistent timeline becomes essential. Accurate timestamps lead to more reliable data, better troubleshooting, and better operational decisions.
+Clock drift monitoring is really just one small thing you can do with FlowFuse. At its core, it's a platform for collecting data from your PLCs and sensors, building applications and dashboards on top of that data, and deploying and managing all of it across your fleet from one place.
