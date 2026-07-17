@@ -175,3 +175,8 @@ Once you open the software for the first time, it'll ask you some questions:
 
 ## Internal Documentation & Storage
 All finalized tax filings, monthly financial packages, and signed vendor contracts are stored in [this folder in Google Drive](https://drive.google.com/drive/folders/1xtrbFJaAmwgF9VdWnvzztevXi1MUJDMR). Access is limited to the Accounting Team and Executive Leadership.
+
+## Quarterly Investor Reporting
+FlowFuse shares a quarterly reporting update with investors after each quarter closes.
+- Update the [reporting spreadsheet](https://docs.google.com/spreadsheets/d/10K12_RdNOu81-Ooxh1Vca6dF_EN3VWl2/edit?gid=1113941930#gid=1113941930) shared with investors using the figures from the [ops plan](https://docs.google.com/spreadsheets/d/1bj9_zIerk9wut9Mivzz2Z00kbMa4wp0omVuCb2accDs/edit?gid=829312596#gid=829312596). 
+- Complete the update within 30 days after the end of each quarter (e.g., Q1 reporting is due by April 30).
