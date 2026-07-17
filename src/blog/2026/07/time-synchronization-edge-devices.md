@@ -19,30 +19,39 @@ meta:
     steps:
       - name: "Check which time synchronization service is running"
         text: "Determine whether your devices use chrony, ntpd, or systemd-timesyncd before making any configuration changes."
-        url: "step-one-keep-device-clocks-synchronized"
+        url: "step-one-keep-system-clocks-synchronized"
+
       - name: "Configure an NTP client"
         text: "Configure chrony or another supported NTP client to synchronize the device clock with reliable time servers."
         url: "choose-an-ntp-client-deliberately"
+
       - name: "Configure multiple or local NTP servers"
         text: "Use multiple NTP servers for redundancy, or configure a local NTP server for air-gapped industrial networks."
         url: "use-multiple-time-sources"
+
       - name: "Synchronize devices in air-gapped networks"
         text: "Point edge devices to a local NTP server so every device shares the same time even without internet access."
         url: "air-gapped-networks-still-need-time-synchronization"
+
       - name: "Monitor clock drift with FlowFuse"
-        text: "Create a FlowFuse flow that checks clock drift, generates alerts when thresholds are exceeded, and logs historical drift data."
+        text: "Create a FlowFuse flow that checks clock drift and generates alerts when thresholds are exceeded."
         url: "monitoring-drift-from-flowfuse"
+
   faq:
     - question: "Why do edge device clocks drift?"
       answer: "Edge devices use hardware clocks that naturally gain or lose time. NTP periodically corrects this drift, but devices can become inaccurate if they lose access to a time server or don't have a working real-time clock."
+
     - question: "Can I use NTP without internet access?"
       answer: "Yes. In air-gapped environments, deploy a local NTP server inside the OT network and configure every edge device to synchronize with it."
+
     - question: "How accurate is NTP for industrial applications?"
       answer: "NTP typically keeps devices synchronized within a few milliseconds on a stable network, which is sufficient for historian logging, dashboards, OEE calculations, and most industrial monitoring applications."
+
     - question: "When should I use PTP instead of NTP?"
       answer: "Use PTP when your application requires sub-millisecond or microsecond synchronization, such as motion control, synchronized robotics, or sequence-of-events recording."
+
     - question: "How can I monitor clock drift in FlowFuse?"
-      answer: "Use a Node-RED flow in FlowFuse to periodically run `chronyc tracking`, parse the clock offset, compare it against a threshold, and generate alerts or store the results for historical analysis."
+      answer: "Use a Node-RED flow in FlowFuse to periodically run `chronyc tracking`, parse the clock offset, compare it against a threshold, and generate alerts when the offset is too high."
 cta:
   type: contact
   title: "Monitor and Manage Edge Devices with FlowFuse"
