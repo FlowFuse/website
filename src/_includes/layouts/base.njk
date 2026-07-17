@@ -367,9 +367,6 @@ eleventyComputed:
     <!-- Footer -->
     <footer class="ff-footer bg-gray-100 w-full border-t border-white">
         <div class="py-12 px-6 max-w-screen-xl mx-auto">
-            <div class="w-40 mb-10">
-                {% include "components/ff-logo--wordmark--grey.svg" %}
-            </div>
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
                 <!-- Platform -->
@@ -491,7 +488,9 @@ eleventyComputed:
             </div>
             <!-- Company -->
             <section class="mt-12 border-t border-gray-300 pt-5">
-                <p class="text-lg font-medium text-gray-900 mb-6">Company</p>
+                <div class="w-40 mb-6">
+                    {% include "components/ff-logo--wordmark--grey.svg" %}
+                </div>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-8 text-sm">
                     <div>
                         <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Company</p>
