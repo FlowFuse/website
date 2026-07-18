@@ -2,7 +2,7 @@
 title: "Handling Clock Drift in Distributed Edge Devices"
 subtitle: "Prevent clock drift in distributed edge deployments."
 description: "Learn how to prevent clock drift on distributed edge devices using NTP, local time servers, and FlowFuse to ensure accurate timestamps and reliable IIoT data."
-date: 2026-07-16
+date: 2026-07-17
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/clock-drift-blog.png
 tags:
@@ -40,16 +40,12 @@ meta:
   faq:
     - question: "Why do edge device clocks drift?"
       answer: "Edge devices use hardware clocks that naturally gain or lose time. NTP periodically corrects this drift, but devices can become inaccurate if they lose access to a time server or don't have a working real-time clock."
-
     - question: "Can I use NTP without internet access?"
       answer: "Yes. In air-gapped environments, deploy a local NTP server inside the OT network and configure every edge device to synchronize with it."
-
     - question: "How accurate is NTP for industrial applications?"
       answer: "NTP typically keeps devices synchronized within a few milliseconds on a stable network, which is sufficient for historian logging, dashboards, OEE calculations, and most industrial monitoring applications."
-
     - question: "When should I use PTP instead of NTP?"
       answer: "Use PTP when your application requires sub-millisecond or microsecond synchronization, such as motion control, synchronized robotics, or sequence-of-events recording."
-
     - question: "How can I monitor clock drift in FlowFuse?"
       answer: "Use a Node-RED flow in FlowFuse to periodically run `chronyc tracking`, parse the clock offset, compare it against a threshold, and generate alerts when the offset is too high."
 cta:
