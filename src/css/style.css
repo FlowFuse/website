@@ -2532,6 +2532,31 @@ lite-youtube::before {
     margin-left: 0 !important;
     border-left: 0 !important;
 }
+/* Mobile accordion: eyebrows indent to the link icon column, moderate row
+   height, and tap feedback via a text-hugging underline (the desktop
+   animated line needs a text span the link markup does not have) */
+@media (max-width: 767px) {
+    .ff-website header .ff-nav-dropdown > ul.mega li.title {
+        padding-left: 1.5rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.title span {
+        padding: 0.875rem 0 0.375rem 0 !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega a:hover,
+    .ff-website header .ff-nav-dropdown > ul.mega a:active,
+    .ff-website header #nav-content > li > a:hover,
+    .ff-website header #nav-content > li > a:active {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1.5px;
+        color: var(--color-indigo-700);
+    }
+}
+
 /* Desktop-only: panel breathing room and tight rows (mobile keeps larger
    touch targets from the base link padding) */
 @media (min-width: 768px) {
