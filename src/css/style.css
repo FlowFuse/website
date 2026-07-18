@@ -2514,27 +2514,33 @@ lite-youtube::before {
 }
 
 /* Mega panel polish: eyebrow column titles (matching the footer), no border
-   stripes, flush columns and tighter rows */
+   stripes and flush columns. Width-independent so the mobile accordion and
+   the desktop panels share the same design language. */
+.ff-website header .ff-nav-dropdown > ul.mega li.title {
+    padding-left: 0 !important;
+    border-left: 0 !important;
+}
+.ff-website header .ff-nav-dropdown > ul.mega li.title span {
+    padding: 0.5rem 0 0.625rem 0 !important;
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+}
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu {
+    margin-left: 0 !important;
+    border-left: 0 !important;
+}
+/* Desktop-only: panel breathing room and tight rows (mobile keeps larger
+   touch targets from the base link padding) */
 @media (min-width: 768px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
         padding-top: 1.5rem;
         padding-bottom: 1.75rem;
     }
-    .ff-website header .ff-nav-dropdown > ul.mega li.title {
-        padding-left: 0 !important;
-        border-left: 0 !important;
-    }
     .ff-website header .ff-nav-dropdown > ul.mega li.title span {
-        padding: 0 0 0.625rem 0 !important;
-        font-size: 0.75rem !important;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: #9ca3af;
-    }
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu {
-        margin-left: 0 !important;
-        border-left: 0 !important;
+        padding-top: 0 !important;
     }
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
         padding: 0.4375rem 0 !important;
@@ -2545,19 +2551,17 @@ lite-youtube::before {
 /* De-emphasize "See all ..." index links in the mega panels and footer.
    Keyed on the index-page hrefs so the shared stylesheet covers both the
    11ty and Vue headers without markup changes. */
-@media (min-width: 768px) {
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"],
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"] {
-        color: #6b7280;
-    }
-    /* on hover they behave like every other panel link (text-indigo-700),
-       which also colors the currentColor underline */
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
-    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"]:hover {
-        color: var(--color-indigo-700);
-    }
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"],
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"] {
+    color: #6b7280;
+}
+/* on hover they behave like every other panel link (text-indigo-700),
+   which also colors the currentColor underline */
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"]:hover {
+    color: var(--color-indigo-700);
 }
 .ff-website footer.ff-footer a[href="/use-cases/"],
 .ff-website footer.ff-footer a[href="/industries/"],
