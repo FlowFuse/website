@@ -2551,6 +2551,13 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"] {
         color: #6b7280;
     }
+    /* on hover they behave like every other panel link (text-indigo-700),
+       which also colors the currentColor underline */
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/outcomes/"]:hover {
+        color: var(--color-indigo-700);
+    }
 }
 .ff-website footer.ff-footer a[href="/use-cases/"],
 .ff-website footer.ff-footer a[href="/industries/"],
