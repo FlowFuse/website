@@ -1,5 +1,6 @@
 ---
-title: "Self Hosted Assistant"
+title: Self Hosted Assistant
+description: FlowFuse Expert is a collection of LLM based resources provided on FlowFuse Cloud.
 ---
 
 # FlowFuse Expert
@@ -27,36 +28,57 @@ The FlowFuse Expert consists of two internal components that each need to be ena
 
 ### Docker
 
-The feature is enabled by editing the `configs.flowfuse.content` section at the top of the `docker-compse.yml` file.
-Add the following after the end of the `npmRegistry` section. The `assistant` and `expert` keys should be indented 6 spaces to match.
+::note
+Please ensure you are using the latest version of the Docker Compose file for your FlowFuse Platform installation. Check the [upgrade procedure](https://flowfuse.com/docs/install/docker/#upgrade) if needed.
+::
 
-Insert the two tokens
 
-```
-      assistant:
-        enabled: true
-        service:
-          url: https://expert.flowfuse.com/v1/openai
-          token: <Assistant Token>
-      expert:
-        enabled: true
-        service:
-          url: https://expert.flowfuse.com/v4/expert
-          token: <Expert Token>
+The feature is enabled by adding valid tokens to the `.env` file used to configure a FlowFuse Platform.
+Tokens should be added to the `ASSISTANT_TOKEN` and `EXPERT_TOKEN` environment variables (find and replace the `<Assistant Token>` and `<Expert Token>` placeholders with the actual tokens provided by FlowFuse Support/Sales).
+
+```yaml
+ASSISTANT_TOKEN="<Assistant Token>"
+
+EXPERT_TOKEN="<Expert Token>"
 ```
 
-NOTE: For FlowFuse v2.29.0 and onward the urls can be omitted from the configuration as they have preset defaults
+Restart the core application containers for the changes to take effect:
 
+```bash
+docker compose stop forge
+docker compose up -d forge
+```
 
 ### Kubernetes
 
 The feature is enabled by adding the tokens to the values passed to the Helm chart.
 
- - `forge.assistant.enabled` should be set to `true`
- - `forge.assistant.service.url` should be set to `https://expert.flowfuse.com/v1/openai`
- - `forge.assistant.service.token` should be set to the provided Assistant Token
- - `forge.expert.enabled` should be set to `true`
- - `forge.expert.service.url` should be set to `https://expert.flowfuse.com/v4/expert`
- - `forge.expert.service.token` should be set to the provided Expert Token
+- `forge.assistant.enabled` should be set to `true`
+- `forge.assistant.service.url` should be set to `https://expert.flowfuse.com/v1/openai`
+- `forge.assistant.service.token` should be set to the provided Assistant Token
+- `forge.expert.enabled` should be set to `true`
+- `forge.expert.service.url` should be set to `https://expert.flowfuse.com/v4/expert`
+- `forge.expert.service.token` should be set to the provided Expert Token
+- `forge.expert.broker.address` should be set to `expert-broker.flowfuse.com`
+- `forge.expert.broker.port` should be set to `8883`
+
+Example:
+
+```yaml
+forge:
+   assistant:
+     enabled: true
+     service:
+       url: https://expert.flowfuse.com/v1/openai
+       token: Provided-Assistant-Token
+   expert:
+     enabled: true
+     service:
+       url: https://expert.flowfuse.com/v4/expert
+       token: Provided-Expert-Token
+     broker:
+       address: expert-broker.flowfuse.com
+       port: 8883
+```
 
 NOTE: For FlowFuse v2.29.0 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults
