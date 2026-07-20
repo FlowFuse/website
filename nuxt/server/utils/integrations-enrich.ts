@@ -22,8 +22,23 @@ const GITHUB_HEADERS = {
     Accept: 'application/vnd.github+json'
 }
 
+// Mirrors GitHub's own heading slugger so anchors written against a README's
+// GitHub-rendered preview (e.g. `#egm-optional` for "## EGM (optional)") keep resolving here.
+function githubSlugify (heading: string): string {
+    return encodeURIComponent(
+        heading
+            .trim()
+            .toLowerCase()
+            .replace(/[^\w一-龥\- ]/g, '')
+            .replace(/\s+/g, '-')
+    )
+}
+
 const md = new MarkdownIt({ html: true })
-    .use(MarkdownItAnchor, { permalink: MarkdownItAnchor.permalink.headerLink() })
+    .use(MarkdownItAnchor, {
+        slugify: githubSlugify,
+        permalink: MarkdownItAnchor.permalink.headerLink()
+    })
     .use(MarkdownItFootnote)
     .use(MarkdownItAttrs)
 
