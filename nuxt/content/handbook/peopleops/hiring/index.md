@@ -210,9 +210,7 @@ Our partnership with Deel as an Employer of Record involves a standard security 
 
 ## Onboarding
 
-Before your first day of work at FlowFuse, you will receive an email requesting your GitHub username
-and preferred company email address. An issue will be created on our [internal issue tracker](https://github.com/FlowFuse/admin/issues/new/choose){rel="nofollow"} with steps for you and
-the team to complete once you start.
+Before your first day of work at FlowFuse, you will receive an email requesting your GitHub username and preferred company email address. An `Onboarding` task will be created in our [BizOps Departmental Project](https://app.asana.com/1/1213818720452348/project/1213831710817565/list/1213834635476859) in Asana with steps for you and the team to complete once you start.
 
 On the day you start, a message will be sent to your personal email address to grant you access to your FlowFuse email address.
 This process ensures that all new joiners receive access either on their first day or up to 24 hours before their official start date.
@@ -283,10 +281,9 @@ If they would prefer to send a check instead of a wire transfer, mail the check 
 If the employee chooses to return the device:
 - This should be discussed with their manager.
 
-### Offboarding Issue
+### Offboarding Task
 
-After announcing the departure in Slack, the manager will create a new offboarding issue for each instance of a team member leaving.
-The template maintained on GitHub, create a new issue though [this link](https://github.com/FlowFuse/admin/issues/new/choose).
+After announcing the departure in Slack, the manager will create a new offboarding task for each instance of a team member leaving. The template is maintained in our [BizOps Departmental Project](https://app.asana.com/1/1213818720452348/project/1213831710817565/list/1213834635476859) in Asana.
 
 Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package.
 Such a package might be dependent on business requirements, standing of the employee, among other factors.
