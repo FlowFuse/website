@@ -76,6 +76,8 @@ and at least 5 days a quarter.
 Due to legal limitations, Canadian employees can not be offered unlimited PTO
 and will have the aforementioned 25 days instead.
 
+🇺🇸 US Employees: For specific guidelines and legal disclosures regarding Holiday Policy, please refer to the [US Compliance Page](https://flowfuse.com/handbook/peopleops/us-compliance).
+
 ## Sick leave
 
 Sick leave, or having limited availability, is not recorded currently. Keep your
