@@ -1,7 +1,8 @@
 <script setup>
+definePageMeta({ robots: false })
+
 useHead({
-    title: 'Terms and Conditions • FlowFuse',
-    meta: [{ name: 'robots', content: 'noindex' }]
+    title: 'Terms and Conditions • FlowFuse'
 })
 </script>
 

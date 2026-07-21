@@ -37,8 +37,13 @@ export default defineNuxtConfig({
     },
 
     sitemap: {
-        // Pull all 11ty-served URLs from the legacy partial sitemap generated at build time
-        sources: ['/api/__sitemap__/urls'],
+        sources: [
+            // 11ty-served URLs, from the legacy partial sitemap generated at build time
+            '/api/__sitemap__/urls',
+            // Nuxt-native dynamic routes (handbook, ebooks, whitepapers, integrations) that
+            // @nuxtjs/seo's static-route auto-discovery can't see
+            '/api/__sitemap__/dynamic-urls',
+        ],
         exclude: ['/_studio/**', '/api/**'],
     },
 
@@ -93,6 +98,10 @@ export default defineNuxtConfig({
         provider: (process.env.NODE_ENV !== 'production' || process.env.SKIP_IMAGES === 'true') ? 'none' : 'netlify',
         domains: ['flowfuse.com', 'www.flowfuse.com'],
         quality: 80,
+    },
+
+    routeRules: {
+        '/terms': { robots: false },
     },
 
     nitro: {
