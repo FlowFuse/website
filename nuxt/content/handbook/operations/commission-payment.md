@@ -20,6 +20,21 @@ invoice. FlowFuse might withhold commission payments or claw back payments if
 payments aren't made within 60 days after the
 [deal was closed](/handbook/sales/engagements/#closing-a-deal).
 
+### Verifying Deals Before Handoff
+ 
+Before passing the commission workbook to the sales rep for confirmation, verify
+each deal in the workbook against HubSpot. Complete the following checks:
+ 
+1. **Account name** - Confirm the account name matches between the workbook and HubSpot.
+2. **Close date** — Confirm the deal's qualifying date falls within the quarter being evaluated.
+Deals are counted by signing date only; a deal signed outside the evaluation quarter must not be included,
+even if other activity falls within it.
+3. **Amount** — Confirm the deal amount matches between the workbook and HubSpot.
+4. **Deal type** — Keep renewals separate from expansion deals. These are classified and paid
+differently and must not be combined in a single line.
+Flag any figure that isn't shown in HubSpot (e.g., highlight the cell) and confirm
+it with the relevant sales team member before finalizing sheet.
+
 ### Calculating Team Commissions
 
 In the first week after the month has passed, commission payments are
