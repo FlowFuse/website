@@ -2,7 +2,9 @@ import { defineEventHandler, proxyRequest } from 'h3'
 
 // Routes that are handled by Nuxt pages (not proxied to 11ty).
 // Extend this list as pages are migrated. Trailing slashes are matched automatically.
-const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/integrations', '/resources/publications', '/sitemap.xml'])
+// Note: /sitemap-legacy.xml is deliberately NOT listed here — it only exists in
+// nuxt/public/ after a production build, so in dev it must keep proxying to 11ty's _site/.
+const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/integrations', '/resources/publications', '/sitemap.xml', '/robots.txt'])
 
 // Path prefixes handled by Nuxt. Used for dynamic routes like /integrations/{id}.
 const NUXT_ROUTE_PREFIXES = ['/integrations/']
