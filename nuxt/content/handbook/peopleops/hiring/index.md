@@ -283,7 +283,8 @@ If the employee chooses to return the device:
 
 ### Offboarding Task
 
-After announcing the departure in Slack, the manager will create a new offboarding task for each instance of a team member leaving. The template is maintained in our [BizOps Departmental Project](https://app.asana.com/1/1213818720452348/project/1213831710817565/list/1213834635476859) in Asana.
+For each team member who is leaving, the manager creates a new offboarding task from the template maintained in our [BizOps Departmental Project](https://app.asana.com/1/1213818720452348/project/1213831710817565/list/1213834635476859) in Asana. The template is currently accessible only to
+the BizOps team, so managers should reach out to BizOps to have the offboarding task set up.
 
 Final pay consists of the statutory minimal payment dictated by our payroll provider Deel, and an optional extra severance package.
 Such a package might be dependent on business requirements, standing of the employee, among other factors.
