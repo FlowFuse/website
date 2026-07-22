@@ -791,8 +791,14 @@ h4:hover .header-anchor::before {
     Header
 */
 @layer components {
+    /* The whole header stack (utility bar + nav header) sticks as one unit so
+       the mobile drawer's top offset is a constant, not scroll-dependent. */
+    .ff-website .ff-header-stack {
+        @apply top-0 z-50 sticky;
+    }
+
     .ff-website .ff-header {
-        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
+        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0;
     }
 
     .ff-website header .ff-wordmark path,
@@ -814,8 +820,14 @@ h4:hover .header-anchor::before {
     }
 
     .ff-website header #nav-content {
-        height: calc(100% - 64px - 64px);
-        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
+        /* Height of the sticky header stack (utility bar + nav row). The mobile
+           drawer opens directly below it. Tune this one value if the stack
+           height changes. Reset to 0 at md+ (desktop mega-nav is inline). */
+        --ff-stack-h: 7.25rem;
+        top: var(--ff-stack-h);
+        height: calc(100vh - var(--ff-stack-h) - 4rem);
+        height: calc(100dvh - var(--ff-stack-h) - 4rem);
+        @apply md:top-0 transition-height fixed left-0 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
         @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row md:flex-nowrap;
     }
 

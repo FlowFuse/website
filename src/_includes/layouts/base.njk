@@ -165,6 +165,9 @@ eleventyComputed:
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <div class="flex-grow base">
         <div class="w-full">
+            <!-- Sticky header stack: utility bar + nav header pin together so the
+                 mobile drawer offset stays constant regardless of scroll position -->
+            <div class="ff-header-stack">
             <!-- Top Utility Bar (announcement + quick links) -->
             {% include "../components/top-utility-bar.njk" %}
             <!-- Navigation Header -->
@@ -354,8 +357,9 @@ eleventyComputed:
                         <a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
                     </div>
                     <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
-                </div>    
+                </div>
             </header>
+            </div><!-- /.ff-header-stack -->
             <!-- Main Content -->
             <main id="main-content" class="flex flex-col mx-auto items-center justify-center gradient-bg">
                 {{ content | safe }}
