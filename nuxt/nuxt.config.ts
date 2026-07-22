@@ -141,7 +141,7 @@ export default defineNuxtConfig({
             if (integrations.length === 0) {
                 throw new Error('[nuxt] integrations enumeration returned 0 nodes — refusing to build a site with no detail pages')
             }
-            const routes = integrations.map(n => `/integrations/${n._id}/`)
+            const routes = integrations.map(node => `/integrations/${node._id}/`)
             nitroConfig.prerender = nitroConfig.prerender || {}
             nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
             console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)

@@ -42,16 +42,11 @@ const md = new MarkdownIt({ html: true })
     .use(MarkdownItFootnote)
     .use(MarkdownItAttrs)
 
-let _enrichedCache: Promise<Integration[]> | null = null
-export function buildEnrichedIntegrations (): Promise<Integration[]> {
-    if (!_enrichedCache) {
-        _enrichedCache = _buildEnrichedIntegrations()
-        _enrichedCache.catch(() => { _enrichedCache = null })
-    }
-    return _enrichedCache
-}
-
-async function _buildEnrichedIntegrations (): Promise<Integration[]> {
+// Fetches the catalogue and picks the same set of nodes as buildEnrichedIntegrations(),
+// without the expensive per-node enrichment (npm registry, GitHub README/examples).
+// Used by the sitemap, which only needs `_id` to build /integrations/{id}/ URLs — the
+// full enrichment is slow enough that it risks timing out on a cold serverless invocation.
+export async function selectTopIntegrationNodes (): Promise<IntegrationCatalogEntry[]> {
     interface ApiResponse { catalogue: IntegrationCatalogEntry[] }
     const data = await cachedFetch<ApiResponse>(INTEGRATIONS_API, {
         ttlMs: TTL_CATALOG_MS,
@@ -73,6 +68,21 @@ async function _buildEnrichedIntegrations (): Promise<Integration[]> {
             topNodesMap.set(node._id, node)
         }
     }
+
+    return topNodes
+}
+
+let _enrichedCache: Promise<Integration[]> | null = null
+export function buildEnrichedIntegrations (): Promise<Integration[]> {
+    if (!_enrichedCache) {
+        _enrichedCache = _buildEnrichedIntegrations()
+        _enrichedCache.catch(() => { _enrichedCache = null })
+    }
+    return _enrichedCache
+}
+
+async function _buildEnrichedIntegrations (): Promise<Integration[]> {
+    const topNodes = await selectTopIntegrationNodes()
 
     const results = await Promise.all(topNodes.map(node => enrichNode(node)))
     const failed = results.filter(r => r.failed).map(r => r.node._id)
