@@ -46,6 +46,13 @@ export async function cachedFetch<T> (url: string, opts: CachedFetchOptions = {}
         timeout: 10_000,
         parseResponse: type === 'text' ? ((t: string) => t) as never : undefined
     })
-    await storage.setItem(key, { url, fetchedAt: Date.now(), data })
+    // Best-effort: the deployed serverless function's filesystem is read-only outside
+    // /tmp, so this write always fails there. Don't let a failed cache write discard
+    // data we already successfully fetched.
+    try {
+        await storage.setItem(key, { url, fetchedAt: Date.now(), data })
+    } catch (err) {
+        console.warn(`[build-cache] failed to persist cache entry for ${key}:`, err)
+    }
     return data
 }
