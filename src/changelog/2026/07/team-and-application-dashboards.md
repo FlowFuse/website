@@ -18,7 +18,7 @@ Until now, dashboards were tucked behind an "Open Dashboard" button on individua
 
 ## Switch between dashboards in place
 
-A drawer lets you switch to any other dashboard without returning to the list, so moving between them is a single click. Jump from your "Line 3 OEE" dashboard to "Energy Monitoring" and back without losing your place. Instance status updates live in the drawer, so you can see at a glance which dashboards are ready.
+A drawer lets you switch to any other dashboard in a single click, without returning to the list. Jump from your "Line 3 OEE" dashboard to "Energy Monitoring" and back without losing your place. Instance status updates live in the drawer, so you can see at a glance which dashboards are ready.
 
 ![Placeholder: an embedded dashboard with the drawer open to switch between dashboards](./images/dashboard-drawer.png){data-zoomable}
 *The drawer stays open alongside the dashboard, so switching doesn't cover what you're viewing*
