@@ -49,6 +49,16 @@ SSO admins can now map SAML groups to FlowFuse's granular roles. When someone jo
 
 *Availability: Enterprise [CONFIRM] from v2.33.*
 
+## Your Dashboards, All in One Place
+
+Dashboards now have a home. A new **Dashboards** entry in your team navigation lists every dashboard across your hosted instances, and opens each one right inside FlowFuse instead of a separate browser tab. Each application also has its own **Dashboards** tab, showing just the dashboards from that application's instances. A drawer lets you switch between dashboards in a single click, without going back to a list.
+
+Until now, dashboards were reachable only through an "Open Dashboard" button on individual instance pages: fine if you knew where to look, a dead end if you didn't. Dashboard-only users had it worst, landing on a bare list of instances with nowhere to go. Now dashboards are a first-class part of the product, with a home scoped to exactly what each user can access.
+
+![An embedded dashboard with the switcher drawer open to move between dashboards](./images/dashboard-drawer.png){data-zoomable style="border: 2px solid #E5E7EB;"}
+
+*Availability: all users of FlowFuse Cloud and all Self Hosted users from v2.33.*
+
 ## Modbus Certified Node
 
 The certified Modbus node joins the FlowFuse certified nodes catalog. Connect to Modbus TCP/RTU devices with a node that carries FlowFuse's support and maintenance commitment behind it.
