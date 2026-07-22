@@ -9,7 +9,7 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/7665
 ---
 
-Your dashboards now have a home. A new **Dashboards** entry in the team navigation lists every dashboard across your hosted instances in one place. Open one and it loads right inside FlowFuse, not in a separate browser tab. Each application has the same **Dashboards** tab, showing just the dashboards from that application's instances.
+Your dashboards now have a home. A new **Dashboards** entry in the team navigation lists every dashboard across your hosted instances in one place. Open one and it loads right inside FlowFuse, not in a separate browser tab. Each application also has its own **Dashboards** tab, showing just the dashboards from that application's instances.
 
 Until now, dashboards were tucked behind an "Open Dashboard" button on individual instance pages. Finding the one you wanted meant hunting through instances, and each one opened in a new tab. Now you get one place that shows them all, at the team or application level.
 
