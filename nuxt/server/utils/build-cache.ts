@@ -1,10 +1,15 @@
 import { createHash } from 'node:crypto'
+import { tmpdir } from 'node:os'
 import { resolve } from 'node:path'
 import { ofetch } from 'ofetch'
 import { createStorage } from 'unstorage'
 import fsDriver from 'unstorage/drivers/fs-lite'
 
-const CACHE_DIR = resolve(process.cwd(), '.cache/integrations')
+// os.tmpdir() resolves to /tmp on the deployed Netlify Function (AWS Lambda under the
+// hood), the one directory that's actually writable there — everywhere else (dev,
+// build) it's the regular OS temp dir, also writable. Avoids needing to special-case
+// the read-only deployment filesystem.
+const CACHE_DIR = resolve(tmpdir(), 'flowfuse-integrations-cache')
 
 const storage = createStorage({
     driver: fsDriver({ base: CACHE_DIR })
@@ -46,13 +51,6 @@ export async function cachedFetch<T> (url: string, opts: CachedFetchOptions = {}
         timeout: 10_000,
         parseResponse: type === 'text' ? ((t: string) => t) as never : undefined
     })
-    // Best-effort: the deployed serverless function's filesystem is read-only outside
-    // /tmp, so this write always fails there. Don't let a failed cache write discard
-    // data we already successfully fetched.
-    try {
-        await storage.setItem(key, { url, fetchedAt: Date.now(), data })
-    } catch (err) {
-        console.warn(`[build-cache] failed to persist cache entry for ${key}:`, err)
-    }
+    await storage.setItem(key, { url, fetchedAt: Date.now(), data })
     return data
 }
