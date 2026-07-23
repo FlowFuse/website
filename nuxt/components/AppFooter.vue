@@ -92,7 +92,7 @@
                 <!-- Resources -->
                 <section class="border-t border-gray-300 pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
-                    <div class="flex flex-col gap-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8">
                         <div>
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Learn</p>
                             <ul class="flex flex-col gap-2.5">
