@@ -2201,77 +2201,10 @@ lite-youtube::before {
     outline-offset: 3px;
 }
 
-/* Industrial AI hero: drifting aurora background. Its height is set by script to
-   reach the vertical middle of the AI input box, then it fades out below. Sits
-   behind the z-10 hero content and screen-blends over the dark indigo hero, so
-   text contrast is unaffected. */
-.ai-hero-anim {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 72%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-    -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
-}
-.ai-hero-anim .blob {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(60px);
-    mix-blend-mode: screen;
-    will-change: transform;
-}
-.ai-hero-anim .b1 {
-    width: 45vw;
-    height: 45vw;
-    left: 4%;
-    top: -12%;
-    opacity: 0.68;
-    background: radial-gradient(circle, #818cf8, transparent 65%);
-    animation: ai-aurora-1 13s ease-in-out infinite alternate;
-}
-.ai-hero-anim .b2 {
-    width: 38vw;
-    height: 38vw;
-    right: 2%;
-    top: -6%;
-    opacity: 0.52;
-    background: radial-gradient(circle, #DA3D0B, transparent 65%);
-    animation: ai-aurora-2 16s ease-in-out infinite alternate;
-}
-.ai-hero-anim .b3 {
-    width: 52vw;
-    height: 52vw;
-    left: 28%;
-    top: 18%;
-    opacity: 0.62;
-    background: radial-gradient(circle, #a855f7, transparent 65%);
-    animation: ai-aurora-3 14s ease-in-out infinite alternate;
-}
-@keyframes ai-aurora-1 {
-    from { transform: translate(-6%, -4%) scale(1); }
-    to   { transform: translate(22%, 18%) scale(1.32); }
-}
-@keyframes ai-aurora-2 {
-    from { transform: translate(6%, -3%) scale(1); }
-    to   { transform: translate(-24%, 16%) scale(1.28); }
-}
-@keyframes ai-aurora-3 {
-    from { transform: translate(-4%, 4%) scale(1); }
-    to   { transform: translate(18%, -16%) scale(1.36); }
-}
-@media (prefers-reduced-motion: reduce) {
-    .ai-hero-anim .blob { animation: none; }
-}
-
 /* Industrial AI hero: animated video background (container-port aerial),
-   matching the industry-page hero treatment. Height is set by the same script
-   that sizes .ai-hero-anim, so it reaches the vertical middle of the AI input
-   box, then masks out below into the solid indigo section. Sits behind the
-   aurora and the z-10 hero content. */
+   matching the industry-page hero treatment. Height is set by script so it
+   reaches the vertical middle of the AI input box, then masks out below into
+   the solid indigo section. Sits behind the z-10 hero content. */
 .ai-hero-bg {
     position: absolute;
     top: 0;
@@ -3000,6 +2933,23 @@ lite-youtube::before {
     }
 }
 
+/* Reduced-motion: silence the animated nav and mega-panel underlines and the
+   mega-highlight image zoom for users who ask for less motion. The hover
+   states still apply, just without the left-to-right sweep or the scale. */
+@media (prefers-reduced-motion: reduce) {
+    .ff-website header #nav-content > li > a::after,
+    .ff-website header #nav-content > li > span::after,
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card)::after,
+    .ff-website header .ff-nav-label::after,
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title::after,
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
+        transition: none;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover img {
+        transform: none;
+    }
+}
+
 /* Animated hover underline on card links (View use case / architecture / outcome) */
 .ff-animated-link {
     position: relative;
@@ -3062,7 +3012,7 @@ a.group:hover .ff-animated-link::after,
 }
 
 /* AI page ("/ai/") capabilities: sticky-header, scrolling-items layout.
-   The left group header pins while that group's numbered blocks scroll on
+   The left group header pins while that group's icon-marked blocks scroll on
    the right, then the next group's header takes over. These rules live in
    the UNLAYERED block on purpose: the Tailwind `utilities` layer is
    outranked by unlayered top-level rules, so the load-bearing sticky
@@ -3079,28 +3029,27 @@ a.group:hover .ff-animated-link::after,
     }
 }
 
-/* Monospaced number chip: intentional enumeration of capabilities within a
-   group, indigo-tinted to match the brand accent. */
-.ff-cap-num {
+/* Capability marker icon: the item's own icon stands in for the old number
+   chip, so the blocks read as a parallel list rather than an ordered sequence.
+   Sized slot, indigo to match the brand accent, aligned to the block top. */
+.ff-cap-icon {
     flex: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 2.25rem;
-    height: 2.25rem;
-    padding: 0 0.5rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: 0.02em;
+    width: 2.5rem;
+    height: 2.5rem;
     color: var(--color-indigo-600);
-    background-color: var(--color-indigo-100);
-    border: 1px solid var(--color-indigo-200);
-    border-radius: 0.5rem;
+}
+.ff-cap-icon svg {
+    width: 1.875rem;
+    height: 1.875rem;
 }
 
-/* "Coming soon" pill: soft FlowFuse-red accent (warm, on-brand). */
+/* "Coming soon" pill: shape and type only. The amber colour comes from utility
+   classes on the element (bg-amber-50 / text-amber-700 / border-amber-200), so
+   the palette stays in sync with the design tokens. Amber reads as
+   in-development, not the error-red it used before. */
 .ff-cap-soon {
     display: inline-flex;
     align-items: center;
@@ -3110,35 +3059,10 @@ a.group:hover .ff-animated-link::after,
     letter-spacing: 0.06em;
     padding: 0.125rem 0.5rem;
     border-radius: 9999px;
-    color: var(--color-red-700);
-    background-color: var(--color-red-50);
-    border: 1px solid var(--color-red-200);
 }
 
-/* Each capability block is keyboard-focusable for readability; give it a
-   visible focus ring and a subtle number-chip hover accent. */
+/* Capability blocks are informational, not interactive: no hover fill, no
+   focus ring, no click affordance. The rounded corners are cosmetic only. */
 .ff-cap-item {
     border-radius: 0.5rem;
-    outline: none;
-    transition: background-color 0.15s ease;
-}
-.ff-cap-item:hover {
-    background-color: var(--color-indigo-50);
-}
-.ff-cap-item:hover .ff-cap-num,
-.ff-cap-item:focus-visible .ff-cap-num {
-    color: #ffffff;
-    background-color: var(--color-indigo-600);
-    border-color: var(--color-indigo-600);
-}
-.ff-cap-item:focus-visible {
-    outline: 2px solid var(--color-indigo-500);
-    outline-offset: 4px;
-    background-color: var(--color-indigo-50);
-}
-@media (prefers-reduced-motion: reduce) {
-    .ff-cap-item,
-    .ff-cap-num {
-        transition: none;
-    }
 }

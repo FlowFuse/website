@@ -35,22 +35,22 @@ capabilityGroups:
           svgPath: "components/icons/code-bracket.svg"
           status: "Available"
           statusKind: "live"
-          description: "Generate and edit Node-RED flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up."
+          description: "Generate and edit Node-RED flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up. It works inline in the editor your team already uses, so there is no separate tool to context-switch into. That turns unfamiliar or inherited flows into something the whole team can read and maintain."
         - name: "Prompt-to-app"
           svgPath: "components/icons/sparkles.svg"
           status: "Available"
           statusKind: "live"
-          description: "Describe the application you need and FlowFuse Expert agentically builds the starting flows and logic directly in your workspace."
+          description: "Describe the application you need and FlowFuse Expert agentically builds the starting flows and logic directly in your workspace. You begin from a working draft instead of a blank canvas, then refine it like any other flow. Everything it creates stays inside the platform, so the same permissions and review apply from the first node."
         - name: "Build your own AI agents"
           svgPath: "components/icons/squares-plus.svg"
           status: "Available"
           statusKind: "live"
-          description: "Start from an agent blueprint to stand up a task-specific AI agent grounded in your own data, tools and context."
+          description: "Start from an agent blueprint to stand up a task-specific AI agent grounded in your own data, tools and context. The blueprint gives you a proven structure to adapt rather than wiring an agent up from scratch. Because it runs on the platform, the agent operates within the access you grant it."
         - name: "Built-in product expert"
           svgPath: "components/icons/book-open.svg"
           status: "Available"
           statusKind: "live"
-          description: "A chat assistant with answers grounded in FlowFuse and Node-RED documentation, so guidance comes from the product, not stale wikis."
+          description: "A chat assistant with answers grounded in FlowFuse and Node-RED documentation, so guidance comes from the product, not stale wikis. Ask how a node works or how to approach a build and get an answer without leaving your workspace. It shortens the path from question to working flow for new and experienced users alike."
     - title: "Operate with AI, safely"
       eyebrow: "Operate"
       subtitle: "AI that acts inside your flows and answers questions about live operations, always behind your controls."
@@ -59,17 +59,17 @@ capabilityGroups:
           svgPath: "components/icons/bolt.svg"
           status: "Available"
           statusKind: "live"
-          description: "Platform Automations let AI act on live systems, with every write behind an approval card, session-scoped and fully audited."
+          description: "Platform Automations let AI act on live systems, with every write behind an approval card, session-scoped and fully audited. A person approves, edits or rejects each proposed change before it reaches a machine. Nothing runs outside the permissions and RBAC that already govern your teams."
         - name: "Ask your plant anything"
           svgPath: "components/icons/chat-bubble-left-right.svg"
           status: "Available"
           statusKind: "live"
-          description: "In Insights mode, ask questions in natural language and get answers grounded in live machine state, alarms and logs. Table and MQTT-broker reading coming soon."
+          description: "In Insights mode, ask questions in natural language and get answers grounded in live machine state, alarms and logs. Operators and engineers can check what is happening on the floor without building a report or querying a database by hand. Table and MQTT-broker reading are coming soon."
         - name: "Automated visual inspection"
           svgPath: "components/icons/camera.svg"
           status: "Available"
           statusKind: "live"
-          description: "Run ONNX vision models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network."
+          description: "Run ONNX vision models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant."
     - title: "Connect and govern your AI"
       eyebrow: "Connect"
       subtitle: "Give the AI your company already trusts a governed door into operations, on a boundary you control."
@@ -78,17 +78,17 @@ capabilityGroups:
           svgPath: "components/icons/arrows-right-left.svg"
           status: "Coming soon"
           statusKind: "soon"
-          description: "Expose flows as MCP tools so the AI your company already sanctioned, like Claude or Copilot, can reach operational data through a permissioned boundary. Our most-requested capability, in active development."
+          description: "Expose flows as MCP tools so the AI your company already sanctioned, like Claude or Copilot, can reach operational data through a permissioned boundary. The AI reaches only what you expose, on the terms you set, rather than getting direct access to plant systems. This is our most-requested capability and is in active development."
         - name: "AI that uses your tools"
           svgPath: "components/icons/puzzle-piece.svg"
           status: "Available"
           statusKind: "live"
-          description: "Build your own MCP servers and let Insights-mode agents call your tools and services as part of a workflow."
+          description: "Build your own MCP servers and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register."
         - name: "Use your own model"
           svgPath: "components/icons/cog-6-tooth.svg"
           status: "Available"
           statusKind: "live"
-          description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys."
+          description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control."
 governance:
     title: "Governance you can <span class='text-indigo-600'>prove</span>"
     subtitle: "The control plane every AI action runs through, the same one that governs your teams."
@@ -111,7 +111,7 @@ ctaSection:
         - "<span class='font-medium'>Generate Node-RED flows from natural language descriptions</span> of a workflow or integration, so you can connect any machine and protocol faster."
         - "<span class='font-medium'>Draft and edit Function node code</span> (JavaScript), UI templates (HTML/CSS/JS), SQL queries, and JSON configurations using the FlowFuse Expert in the editor, so you can transform and model data in any platform without starting from scratch."
         - "<span class='font-medium'>Empower Operations and Process Engineers</span> to quickly build new dashboards, widgets, and queries using plain-language descriptions of the desired views or KPIs, reducing reliance on IT support."
-        - "<span class='font-medium'>Spin up LLM blueprints</span> that expose industrial data to a chat agent via Model Context Protocol (MCP), so operators and engineers can query systems in natural language and get answers grounded in live machine state, alarms, and logs, not stale documentation."
+        - "<span class='font-medium'>Query systems in natural language</span> with Insights-mode agents, so operators and engineers get answers grounded in live machine state, alarms, and logs, not stale documentation. Exposing that operational data to your company's own AI over Model Context Protocol (MCP) is our most-requested capability and is in active development."
     img: ./images/ai/ai-cta.png
     imgAlt: "Plant worker interacting with AI on a tablet, connected to the entire factory"
 ---
@@ -201,27 +201,28 @@ ctaSection:
             <p class="mt-3 text-gray-600">{{ capabilityIntro.subtitle }}</p>
         </div>
         {% for group in capabilityGroups %}
-        <section class="ff-cap-group md:grid md:grid-cols-5 md:gap-x-12 lg:gap-x-16 mt-16 {% if not loop.first %}pt-16 border-t border-indigo-200/70{% endif %}">
+        <section class="ff-cap-group md:grid md:grid-cols-5 md:gap-x-12 lg:gap-x-16 mt-24 {% if not loop.first %}pt-20 border-t border-indigo-200/70{% endif %}">
             <!-- LEFT: group header, pins on desktop while the right column scrolls -->
             <div class="ff-cap-sticky md:col-span-2 max-md:mb-10">
                 <p class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">
-                    <span class="font-mono text-indigo-400">0{{ loop.index }}</span>
+                    <span class="font-mono text-indigo-600">0{{ loop.index }}</span>
                     <span>{{ group.eyebrow }}</span>
                 </p>
                 <h3 class="text-3xl md:text-4xl font-medium text-gray-900 leading-tight mt-4 mb-0">{{ group.title }}</h3>
                 <p class="text-gray-600 font-light max-w-md mt-4 mb-0">{{ group.subtitle }}</p>
             </div>
-            <!-- RIGHT: the group's capabilities as numbered, scrolling blocks -->
+            <!-- RIGHT: the group's capabilities as icon-marked, scrolling blocks.
+                 These are informational, not links: no click affordance, no tabindex. -->
             <div class="md:col-span-3">
                 {% for item in group.items %}
-                <div class="ff-cap-item px-2 py-3 {% if not loop.first %}mt-8 pt-8 border-t border-indigo-100{% endif %}" tabindex="0">
+                <div class="ff-cap-item px-2 py-7 {% if not loop.first %}mt-6 pt-14 border-t border-indigo-100{% endif %}">
                     <div class="flex items-start gap-4 sm:gap-5">
-                        <span class="ff-cap-num" aria-hidden="true">0{{ loop.index }}</span>
+                        <span class="ff-cap-icon" aria-hidden="true">{% include item.svgPath %}</span>
                         <div class="flex-1 min-w-0">
                             <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
-                                <span class="text-xl font-medium text-indigo-600">{{ item.name }}</span>
+                                <span class="text-xl font-medium text-gray-900">{{ item.name }}</span>
                                 {% if item.statusKind == 'soon' %}
-                                <span class="ff-cap-soon">Coming soon</span>
+                                <span class="ff-cap-soon bg-amber-50 text-amber-700 border border-amber-200">Coming soon</span>
                                 {% endif %}
                             </div>
                             <p class="text-gray-600 font-light mt-2 mb-0">{{ item.description | safe }}</p>
