@@ -864,10 +864,11 @@ h4:hover .header-anchor::before {
 
     /* Label span wraps the nav item text (added in the navoption macro) so the
        underline can hug the text. It must not inherit the generic `header ul
-       span` padding/border, or it inflates row height on every breakpoint. */
+       span` / `ul.narrow span` padding, or it inflates row height (those
+       selectors out-specify a plain reset, so !important is required). */
     .ff-website header .ff-nav-label {
         position: relative;
-        padding: 0;
+        padding: 0 !important;
         border: 0;
     }
 
