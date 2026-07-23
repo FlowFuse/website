@@ -795,6 +795,31 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
+    /* Subtle purple color-wave sweeping left-to-right across the logo on hover,
+       echoing the animated nav underline. */
+    .ff-website header a.ff-logo-link {
+        position: relative;
+        overflow: hidden;
+    }
+    .ff-website header a.ff-logo-link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(105deg, transparent 38%, rgba(99, 102, 241, 0.45) 50%, transparent 62%);
+        transform: translateX(-130%);
+        pointer-events: none;
+    }
+    .ff-website header a.ff-logo-link:hover::after {
+        transform: translateX(130%);
+        transition: transform 0.7s ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website header a.ff-logo-link:hover::after {
+            transition: none;
+            transform: translateX(-130%);
+        }
+    }
+
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: var(--color-indigo-600);
@@ -2567,7 +2592,7 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
-        padding-left: 1.5rem !important; /* align link icons with the section eyebrow */
+        padding-left: 2.5rem !important; /* indent links under the section eyebrow (1.5rem) */
     }
     /* Animated underline matching desktop: grows left-to-right, hugging the
        label text via the .ff-nav-label span added in the navoption macro. */

@@ -5,6 +5,8 @@
 <style>
     .ff-utility-announce > .ff-utility-item { display: none; }
     .ff-utility-announce > .ff-utility-item:first-child { display: inline-flex; }
+    /* Underline links on hover (unlayered rule beats the hover:no-underline utility) */
+    .ff-utility-bar a:hover { text-decoration: underline; text-underline-offset: 2px; }
 </style>
 <div class="ff-utility-bar w-full bg-indigo-700 text-indigo-100 text-sm px-6">
     <div class="mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px] flex items-center justify-between gap-4 py-3">

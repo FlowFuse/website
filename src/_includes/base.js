@@ -172,10 +172,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (window.innerWidth < 768) {
                 e.preventDefault()
                 e.stopPropagation()
-                var li = trigger.parentElement
-                var wasOpen = li.classList.contains('mobile-expanded')
-                li.parentElement.querySelectorAll('.mobile-expanded').forEach(function (el) { el.classList.remove('mobile-expanded') })
-                if (!wasOpen) li.classList.add('mobile-expanded')
+                // Toggle this section on its own; other open sections stay open
+                trigger.parentElement.classList.toggle('mobile-expanded')
             }
         })
     })
