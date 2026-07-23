@@ -4,6 +4,8 @@ meta:
   title: "Electronics & Appliances Manufacturing Operations Platform"
   description: "Connect SMT lines, test stations, ERP, PLM, and inspection systems in one place. FlowFuse helps electronics and appliance manufacturers automate fault response, maintain traceability, and standardize execution across lines and sites."
 hero:
+  eyebrow: "Electronics & Appliances"
+  eyebrowIcon: "components/icons/computer-desktop.svg"
   heading: "Process variation visible in your data but never acted on is <span class=\"text-red-600\">what drives field failures</span>"
   description: "Connect SMT lines, test stations, ERP, PLM, and inspection systems in one place. FlowFuse helps teams turn process signals into immediate operational responses — and maintain serialized traceability from line to field."
   primaryCta: "BOOK A 30-MINUTE DEMO"
@@ -12,6 +14,9 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/electronics-appliances.jpg"
   imageAlt: "Automated SMT production line with pick-and-place machines and PCB conveyors inside a modern electronics manufacturing facility"
+  video:
+    mp4: /images/industries/hero-video/electronics-appliances.mp4
+    poster: /images/industries/hero-video/electronics-appliances.jpg
   subCta: ""
 problemImage: "images/industries/electronics-appliances-problem.svg"
 problems:

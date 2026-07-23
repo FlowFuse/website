@@ -4,6 +4,8 @@ meta:
   title: "Semiconductors & Electronics Manufacturing Platform | FlowFuse"
   description: "FlowFuse unifies cleanroom monitoring, SMT orchestration, and yield optimization—whether you're running fabs or high-mix electronics lines. No proprietary lock-in."
 hero:
+  eyebrow: "Semiconductors"
+  eyebrowIcon: "components/icons/chip.svg"
   heading: "<span class=\"text-red-600\">Zero-Downtime</span> Precision Manufacturing"
   description: "FlowFuse unifies cleanroom monitoring, SMT orchestration, and yield optimization—whether you're running fabs or high-mix electronics lines. No proprietary lock-in."
   primaryCta: "SCHEDULE PRECISION DEMO"
@@ -12,6 +14,9 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/semiconductors.jpg"
   imageAlt: "Engineers monitoring semiconductor manufacturing equipment in a cleanroom production facility"
+  video:
+    mp4: /images/industries/hero-video/semiconductors.mp4
+    poster: /images/industries/hero-video/semiconductors.jpg
   subCta: "See a sample precision manufacturing dashboard"
 problemTitle: "Shared <span class='text-red-600'>Challenges</span>"
 problemImage: "images/industries/semiconductors-problem.svg"

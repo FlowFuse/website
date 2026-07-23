@@ -6,10 +6,25 @@ layout: default
     <!-- ============================================================
          HERO
     ============================================================ -->
-    <div class="w-full px-6">
-        <div class="w-full py-10 sm:py-12 md:pt-6">
-            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+    <div class="w-full relative overflow-hidden">
+        {% if hero.video %}
+        <div class="hero-video-bg absolute inset-0" aria-hidden="true">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata"{% if hero.video.poster %} poster="{{ hero.video.poster }}"{% endif %}>
+                <source src="{{ hero.video.mp4 }}" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+        <script>(function(){var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.hero-video-bg video').forEach(function(v){if(r){v.removeAttribute('autoplay');v.pause();return;}var s=function(){v.playbackRate=0.5;};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s);});})();</script>
+        {% endif %}
+        <div class="w-full px-6 py-10 sm:py-12 md:pt-6{% if hero.video %} relative z-10{% endif %}">
+            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch{% if hero.video %} bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-xl{% endif %}">
                 <div class="m-auto md:w-1/2">
+                    {% if hero.eyebrow %}
+                    <div class="flex items-center gap-2 mb-4 max-md:justify-center">
+                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg industry-eyebrow-icon bg-red-50 border border-red-100 text-gray-800">{% if hero.eyebrowIcon %}{% include hero.eyebrowIcon %}{% endif %}</span>
+                        <span class="text-gray-800 font-medium">{{ hero.eyebrow }}</span>
+                    </div>
+                    {% endif %}
                     <h1 class="w-full mt-0 m-auto font-medium sm:text-5xl">
                         {{ hero.heading | safe }}
                     </h1>
@@ -60,6 +75,18 @@ layout: default
                     </div>
                     <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         TRUSTED BY (animated logos)
+    ============================================================ -->
+    <div class="w-full pt-12 pb-6 px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="text-center text-indigo-800 font-semibold mb-6">Trusted by global enterprises</p>
+            <div class="max-md:max-w-xl max-md:mx-auto">
+                {% include "social-proof.njk" %}
             </div>
         </div>
     </div>
@@ -180,18 +207,6 @@ layout: default
          USE CASES FOR THIS INDUSTRY (derived from use-case tags)
     ============================================================ -->
     {% include "components/industry-use-cases.njk" %}
-
-    <!-- ============================================================
-         SOCIAL PROOF
-    ============================================================ -->
-    <div class="w-full py-12 px-6">
-        <div class="max-w-screen-lg mx-auto">
-            <p class="text-center text-indigo-800 font-semibold mb-6">{{ socialProofText }}</p>
-            <div class="max-md:max-w-xl max-md:mx-auto">
-                {% include "social-proof.njk" %}
-            </div>
-        </div>
-    </div>
 
     <!-- ============================================================
          CTA

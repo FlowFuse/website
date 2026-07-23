@@ -4,6 +4,8 @@ meta:
   title: "Life Sciences Manufacturing Operations Platform"
   description: "Connect bioreactors, analytical instruments, LIMS, MES, ELN, and ERP in one place. FlowFuse helps life sciences teams automate batch coordination, maintain data integrity, and accelerate the path from development to GMP production."
 hero:
+  eyebrow: "Life Sciences"
+  eyebrowIcon: "components/icons/academic-cap.svg"
   heading: "Your Electronic Batch Record should be built during production — <span class=\"text-red-600\">not assembled after it ends</span>"
   description: "Connect bioreactors, analytical instruments, LIMS, MES, ELN, and ERP in one place. FlowFuse helps teams automate batch stage coordination, maintain 21 CFR Part 11 data integrity, and carry process logic from development through to commercial GMP production."
   primaryCta: "BOOK A 30-MINUTE DEMO"
@@ -12,6 +14,9 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/life-sciences.jpg"
   imageAlt: "Wide view of a GMP biopharmaceutical manufacturing facility with stainless steel bioreactors, automated process equipment, and cleanroom production infrastructure."
+  video:
+    mp4: /images/industries/hero-video/life-sciences.mp4
+    poster: /images/industries/hero-video/life-sciences.jpg
   subCta: ""
 problemImage: "images/industries/life-sciences-problem.svg"
 problems:

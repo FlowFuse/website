@@ -4,6 +4,8 @@ meta:
   title: "Aviation & Aerospace Manufacturing Operations Platform | FlowFuse"
   description: "Connect ERP, MES, torque tools, NDT systems, and shop floor stations in one place. FlowFuse helps aerospace manufacturing teams automate traceability, standardize workflows, and maintain build record integrity across programs and sites."
 hero:
+  eyebrow: "Aviation & Aerospace"
+  eyebrowIcon: "components/icons/airplane.svg"
   heading: "Build the complete traceability record your AS9100 audit requires — <span class=\"text-red-600\">without manual reconstruction.</span>"
   description: "Connect ERP, MES, torque tools, NDT systems, and shop floor stations in one place. FlowFuse helps teams link process data to part serials at point of operation, automate NCR workflows, and standardize execution across programs and sites."
   primaryCta: "BOOK A 30-MINUTE DEMO"
@@ -12,6 +14,9 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/aviation-aerospace.jpg"
   imageAlt: "Technicians assembling aircraft structures across multiple aerospace production stations in a large manufacturing facility"
+  video:
+    mp4: /images/industries/hero-video/aviation-aerospace.mp4
+    poster: /images/industries/hero-video/aviation-aerospace.jpg
   subCta: ""
 problemImage: "images/industries/aviation-aerospace-problem.svg"
 problems:

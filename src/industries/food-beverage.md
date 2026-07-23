@@ -4,6 +4,8 @@ meta:
   title: "Food & Beverage Manufacturing Operations Platform"
   description: "Connect filling lines, packaging equipment, MES, ERP, and lab systems in one place. FlowFuse helps food and beverage teams respond faster, standardize across sites, and maintain complete batch traceability in real time."
 hero:
+  eyebrow: "Food & Beverage"
+  eyebrowIcon: "components/icons/factory.svg"
   heading: "When a CCP breaches, containment should be automatic — <span class=\"text-red-600\">not operator-dependent.</span>"
   description: "Connect filling lines, packaging equipment, MES, ERP, and lab systems in one place. FlowFuse helps teams automate food safety response, maintain complete lot traceability, and standardize workflows across every line and site."
   primaryCta: "BOOK A 30-MINUTE DEMO"
@@ -12,6 +14,9 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/food-beverage.jpg"
   imageAlt: "Wide-angle view of a modern beverage manufacturing plant with automated bottling lines, stainless steel processing equipment, and high-speed conveyors transporting bottles through production."
+  video:
+    mp4: /images/industries/hero-video/food-beverage.mp4
+    poster: /images/industries/hero-video/food-beverage.jpg
   subCta: ""
 problemImage: "images/industries/food-beverage-problem.svg"
 problems:

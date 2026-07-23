@@ -4,6 +4,8 @@ meta:
   title: "Aerospace Component Manufacturing Platform | FlowFuse"
   description: "Connect ERP, CMMs, machining centres, and inspection systems in one place. FlowFuse helps aerospace component shops automate FAI, enforce compliance, and standardize workflows across cells and sites."
 hero:
+  eyebrow: "Aerospace Components"
+  eyebrowIcon: "components/icons/cog-6-tooth.svg"
   heading: "<span class='text-red-600'>First Article Inspection shouldn't take days to assemble.</span> Neither should a SCAR response."
   description: "Connect ERP, CMMs, machining centres, special process suppliers, and inspection systems in one place. FlowFuse helps component shops automate traceability, enforce NADCAP and customer compliance, and standardize workflows across cells and sites."
   primaryCta: "BOOK A 30-MINUTE DEMO"
@@ -12,6 +14,9 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/aerospace-components.jpg"
   imageAlt: "Quality engineer inspecting a precision-machined aerospace component using a coordinate measuring machine (CMM)"
+  video:
+    mp4: /images/industries/hero-video/aerospace-components.mp4
+    poster: /images/industries/hero-video/aerospace-components.jpg
 problemImage: "images/industries/aerospace-components-problem.svg"
 problems:
     - "FAI packages are assembled manually by quality engineers from multiple disconnected sources — machining centres, CMMs, material certs, and paper records — delaying new programme entry and customer approval."
