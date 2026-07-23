@@ -66,11 +66,29 @@ operationalSystem:
               - name: "Production Monitoring"
                 url: "/use-cases/production-monitoring/"
                 description: "OEE tracking across lines, shifts, and plants."
+              - name: "Continuous Improvement"
+                description: "Digital CI workflow from suggestion to closure."
         - title: "OPERATIONAL WORKFLOWS"
           items:
+              - name: "Workforce Assignment"
+                description: "Dynamic operator allocation using training, ergonomics, and demand data."
               - name: "Shop Floor Communication"
                 url: "/use-cases/shop-floor-communication/"
                 description: "Real-time alerts, escalation, and cross-site coordination."
+        - title: "SYSTEM EXTENSIONS"
+          items:
+              - name: "Quality Validation"
+                description: "Inline inspection and QA checks outside the core system."
+              - name: "Track & Trace"
+                description: "Part, component, and batch traceability across the plant."
+        - title: "OPERATIONAL INFRASTRUCTURE"
+          items:
+              - name: "Equipment Monitoring"
+                description: "PLC and device health monitoring across controller types."
+              - name: "Operational Data Pipelines"
+                description: "Structured controller data flows, diagnostics, and routing."
+              - name: "System Diagnostics"
+                description: "Error tracking and root cause analysis across deployed applications."
 meta:
     faq:
         - question: "What's the difference between Node-RED and FlowFuse?"
@@ -301,10 +319,17 @@ hubspot:
                     </div>
                     <div class="flex flex-col gap-[18px] p-2.5 flex-grow">
                         {% for item in category.items %}
-                        <a href="{{ item.url or '/use-cases/' }}" class="group bg-white border border-white rounded-lg p-4 flex flex-col gap-3 hover:no-underline hover:border-indigo-300 transition-colors">
+                        {% if item.url %}
+                        <a href="{{ item.url }}" class="group bg-white border border-white rounded-lg p-4 flex flex-col gap-3 hover:no-underline hover:border-indigo-300 transition-colors">
                             <p class="text-indigo-500 font-medium m-0"><span class="ff-animated-link">{{ item.name }}</span></p>
                             <p class="text-gray-700 font-light m-0 text-sm leading-5">{{ item.description }}</p>
                         </a>
+                        {% else %}
+                        <div class="bg-white border border-white rounded-lg p-4 flex flex-col gap-3">
+                            <p class="text-indigo-500 font-medium m-0">{{ item.name }}</p>
+                            <p class="text-gray-700 font-light m-0 text-sm leading-5">{{ item.description }}</p>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </div>
