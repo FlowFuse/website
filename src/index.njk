@@ -132,7 +132,7 @@ hubspot:
             <div class="container m-auto text-left max-w-screen-lg">
                 <div class="mx-auto">
                     <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-white max-w-4xl">
-                        {{ site.messaging.tagLine | safe }}
+                        The edge-native platform for industrial applications for IT, OT, and IIOT
                     </h1>
                     <p class="mt-12 text-center text-gray-200 md:text-xl m-auto max-w-4xl">
                         {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
@@ -144,10 +144,10 @@ hubspot:
                                     BOOK A DEMO
                                 </span>
                             </a>
-                            <a class="ff-btn flex flex-col mb-6" href="{% include 'sign-up-url.njk' %}"
+                            <a class="ff-btn group flex flex-col mb-6" href="{% include 'sign-up-url.njk' %}"
                             onclick="capture('cta-try-it-now', {'position': 'hero'})">
                                 <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
-                                    TRY IT OUT
+                                    <span class="ff-animated-link">TRY IT OUT</span>
                                     {% include "components/icons/arrow-right.svg" %}
                                 </span>
                             </a>

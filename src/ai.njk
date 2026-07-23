@@ -114,19 +114,16 @@ ctaSection:
 ---
 <!--Hero Content (background-image treatment, pattern from the homepage hero) -->
 <section class="w-full relative bg-indigo-800">
-    <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div class="hero-slide is-active">
-            {% image "./images/home/hero/hero-2.jpg", "Industrial shipping port with cargo containers and cranes", [1920] %}
-        </div>
-        <div class="absolute inset-0 bg-indigo-950/60"></div>
+    <!-- Animated video background (container-port aerial), sized by the script
+         below to reach the middle of the AI input box then masked out, mirroring
+         the industry-page hero video treatment. -->
+    <div class="ai-hero-bg" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" data-speed="0.6" poster="/images/ai/ai-hero-bg.jpg">
+            <source src="/images/ai/ai-hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-indigo-950/55"></div>
     </div>
-    <!-- Animated aurora background; sized by script to reach the middle of the
-         AI input box, then fades out below it. -->
-    <div class="ai-hero-anim" aria-hidden="true">
-        <span class="blob b1"></span>
-        <span class="blob b2"></span>
-        <span class="blob b3"></span>
-    </div>
+    <script>(function(){var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.ai-hero-bg video').forEach(function(v){if(r){v.removeAttribute('autoplay');v.pause();return;}var sp=parseFloat(v.getAttribute('data-speed'))||0.6;var s=function(){v.playbackRate=sp;};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s);});})();</script>
     <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-20">
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
             <div class="container m-auto text-left max-w-screen-lg">
@@ -154,11 +151,12 @@ ctaSection:
         function fit(){
             if(!section){ return; }
             var box = section.querySelector('.ai-chat-box');
-            var anim = section.querySelector('.ai-hero-anim');
-            if(!box || !anim){ return; }
+            if(!box){ return; }
             var sr = section.getBoundingClientRect();
             var br = box.getBoundingClientRect();
-            anim.style.height = ((br.top - sr.top) + br.height / 2) + 'px';
+            var h = ((br.top - sr.top) + br.height / 2) + 'px';
+            var el = section.querySelector('.ai-hero-bg');
+            if(el){ el.style.height = h; }
         }
         if(document.readyState !== 'loading'){ fit(); } else { document.addEventListener('DOMContentLoaded', fit); }
         window.addEventListener('load', fit);

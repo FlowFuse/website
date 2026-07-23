@@ -272,7 +272,7 @@ eleventyComputed:
                         {% endnavoption %}
                         {% navoption "Resources", null, 0 %}
                             <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center">
-                                {% set hl = navHighlights.resources %}{% include "components/nav-highlight.njk" %}
+                                {% set latestPost = collections.posts | reverse | first %}{% set hl = { title: latestPost.data.title, link: latestPost.url } %}{% include "components/nav-highlight.njk" %}
                                 {% navoption "Learn", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">

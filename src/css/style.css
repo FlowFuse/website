@@ -83,12 +83,18 @@
 
 @layer overrides {
     .prose {
-        max-width: none;
         --tw-prose-body: var(--color-gray-700);
         --tw-prose-headings: var(--color-gray-600);
         --tw-prose-links: var(--color-blue-600);
         --tw-prose-code: var(--color-red-700);
         --tw-prose-bold: var(--color-gray-500);
+    }
+    /* Article/markdown prose fills its own column. Exclude prose that carries an
+       explicit max-w-* utility (e.g. the security page's `prose ... max-w-4xl`
+       div): @layer overrides outranks @layer utilities, so an unscoped
+       max-width:none defeats those utilities and forces full-bleed width. */
+    .prose:not([class*="max-w-"]) {
+        max-width: none;
     }
     .prose img { max-width: 100%; }
 }
@@ -2267,6 +2273,31 @@ lite-youtube::before {
     .ai-hero-anim .blob { animation: none; }
 }
 
+/* Industrial AI hero: animated video background (container-port aerial),
+   matching the industry-page hero treatment. Height is set by the same script
+   that sizes .ai-hero-anim, so it reaches the vertical middle of the AI input
+   box, then masks out below into the solid indigo section. Sits behind the
+   aurora and the z-10 hero content. */
+.ai-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+.ai-hero-bg video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */
 
 /* View Transition styles for smooth morphing */
@@ -2438,6 +2469,13 @@ lite-youtube::before {
     border-radius: inherit;
 }
 
+/* Single left-to-right pass of the opposite brand colour on button hover,
+   echoing the header logo's colour wave. */
+@keyframes ff-btn-colour-pass {
+    from { background-position: 100% 0; }
+    to   { background-position: 0 0; }
+}
+
 @layer utilities {
     .ff-website .ff-btn {
         justify-content: center;
@@ -2447,27 +2485,42 @@ lite-youtube::before {
         padding: 8px 16px;
         border: 0;
         border-radius: 4px;
-        transition: background-color 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+        transition: background-color 0.15s ease, color 0.15s ease;
     }
-    /* Clearer hover/press feedback on the solid CTA buttons without moving them:
-       an elevation shadow plus a slight deepening on top of the darker
-       background, and an inset "pressed" shadow on click. */
+    /* Solid brand CTAs: on hover a soft band of the OPPOSITE brand colour
+       passes across left-to-right (echoing the header logo's colour wave) and
+       the button settles a shade darker than its base, as it did before. Done
+       entirely with the button's OWN background (an oversized, mostly
+       transparent gradient whose position animates), so it needs no
+       positioning/overflow changes and cannot disturb button layout; the label
+       always sits above the background. Per-variant colours are set below. */
+    .ff-website .ff-btn.ff-btn--primary,
+    .ff-website .ff-btn.ff-btn--highlight {
+        background-repeat: no-repeat;
+        background-size: 300% 100%;
+        background-position: 100% 0;
+    }
     .ff-website .ff-btn.ff-btn--primary:hover,
     .ff-website .ff-btn.ff-btn--highlight:hover {
-        box-shadow: 0 10px 22px -10px rgba(15, 23, 42, 0.55);
-        filter: saturate(1.15);
+        animation: ff-btn-colour-pass 0.55s ease;
     }
     .ff-website .ff-btn.ff-btn--primary:active,
     .ff-website .ff-btn.ff-btn--highlight:active {
-        box-shadow: inset 0 3px 8px -3px rgba(15, 23, 42, 0.5);
-        filter: brightness(0.95);
+        filter: brightness(0.97);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website .ff-btn.ff-btn--primary:hover,
+        .ff-website .ff-btn.ff-btn--highlight:hover {
+            animation: none;
+        }
     }
 
+    /* Purple button: base indigo, settles indigo-700 on hover; a red band passes. */
     .ff-website .ff-btn.ff-btn--primary {
         background-color: var(--color-indigo-600);
+        background-image: linear-gradient(105deg, transparent 44%, var(--color-red-500) 50%, transparent 56%);
         color: white;
     }
-
     .ff-website .ff-btn.ff-btn--primary:hover {
         background-color: var(--color-indigo-700);
         color: white;
@@ -2486,11 +2539,12 @@ lite-youtube::before {
         border: 1px solid var(--color-indigo-700);
     }
 
+    /* Orange/red button: base red, settles red-700 on hover; a purple band passes. */
     .ff-website .ff-btn.ff-btn--highlight {
         background-color: var(--color-red-600);
+        background-image: linear-gradient(105deg, transparent 44%, var(--color-indigo-500) 50%, transparent 56%);
         color: white;
     }
-
     .ff-website .ff-btn.ff-btn--highlight:hover {
         background-color: var(--color-red-700);
         color: white;
@@ -2822,6 +2876,37 @@ lite-youtube::before {
 .ff-website header .ff-nav-freetrial .ff-nav-label {
     color: var(--color-indigo-600);
 }
+/* The Free Trial CTA sits in the right-hand actions <ul>, outside #nav-content,
+   so the top-level desktop underline rule (#nav-content > li > a::after) never
+   reaches it and hover showed no line. Give its label the same left-to-right
+   animated underline on desktop; mobile is already covered by the shared
+   .ff-nav-label::after rule inside the max-width:767px block above. */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-freetrial .ff-nav-label {
+        position: relative;
+    }
+    .ff-website header .ff-nav-freetrial .ff-nav-label::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website header .ff-nav-freetrial:hover .ff-nav-label::after,
+    .ff-website header .ff-nav-freetrial:focus-visible .ff-nav-label::after {
+        transform: scaleX(1);
+    }
+}
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+    .ff-website header .ff-nav-freetrial .ff-nav-label::after {
+        transition: none;
+    }
+}
 /* on hover they behave like every other panel link (text-indigo-700),
    which also colors the currentColor underline */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
@@ -2836,6 +2921,14 @@ lite-youtube::before {
 .ff-website footer.ff-footer a[href="/industries/"],
 .ff-website footer.ff-footer a[href="/outcomes/"] {
     color: #6b7280;
+}
+/* ...but on hover they take the brand purple, so text + the currentColor
+   underline both go indigo (this base rule is unlayered and otherwise beats
+   the footer :hover colour). */
+.ff-website footer.ff-footer a[href="/use-cases/"]:hover,
+.ff-website footer.ff-footer a[href="/industries/"]:hover,
+.ff-website footer.ff-footer a[href="/outcomes/"]:hover {
+    color: var(--color-indigo-700);
 }
 /* Mobile nav: sections expand on tap only (hover neutralized below md) */
 @media (max-width: 767px) {
