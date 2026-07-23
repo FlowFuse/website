@@ -193,21 +193,21 @@ eleventyComputed:
                                 {% set hl = navHighlights.platform %}{% include "components/nav-highlight.njk" %}
                                 {% navoption "Product", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
                                         {% navoption "Features", "/platform/features/", 2, "star" %}{% endnavoption %}
-                                        {% navoption "Integrations", "/integrations/", 1, "squares-plus" %}{% endnavoption %}
-                                        {% navoption "Blueprint Library", "/blueprints/", 1, "building-library" %}{% endnavoption %}
                                         {% navoption "Security Statement", "/platform/security/", 1, "lock-closed" %}{% endnavoption %}
                                         {% navoption "Pricing", "/pricing/", 1, "dollar" %}{% endnavoption %}
                                     </ul>
                                 </li>
                                 {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2 md:col-start-2 md:row-start-1 xl:col-start-3" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 md:col-start-2 md:row-start-2 xl:col-start-3">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-6 ml-7 auto-rows-auto border-l-2 md:col-start-2 md:row-start-2 xl:col-start-3">
                                         {% navoption "FlowFuse Dashboard", "/platform/dashboard/", 2, "dashboard" %}{% endnavoption %}
                                         {% navoption "Device Agent", "/platform/device-agent/", 2, "device-agent" %}{% endnavoption %}
                                         {% navoption "Node-RED", "/node-red/", 2, "code-bracket" %}{% endnavoption %}
                                         {% navoption "FlowFuse Expert", "/docs/user/expert/", 1, "sparkles" %}{% endnavoption %}
+                                        {% navoption "Integrations", "/integrations/", 1, "squares-plus" %}{% endnavoption %}
+                                        {% navoption "Blueprint Library", "/blueprints/", 1, "building-library" %}{% endnavoption %}
                                     </ul>
                                 </li>
                                 {% navoption "Capabilities", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
@@ -375,8 +375,6 @@ eleventyComputed:
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
                             <ul class="flex flex-col gap-2.5">
                                 <li><a href="/platform/features/">Features</a></li>
-                                <li><a href="/integrations/">Integrations</a></li>
-                                <li><a href="/blueprints/">Blueprint Library</a></li>
                                 <li><a href="/platform/security/">Security Statement</a></li>
                                 <li><a href="/pricing/">Pricing</a></li>
                             </ul>
@@ -388,6 +386,8 @@ eleventyComputed:
                                 <li><a href="/platform/device-agent/">Device Agent</a></li>
                                 <li><a href="/node-red/">Node-RED</a></li>
                                 <li><a href="/docs/user/expert/">FlowFuse Expert</a></li>
+                                <li><a href="/integrations/">Integrations</a></li>
+                                <li><a href="/blueprints/">Blueprint Library</a></li>
                             </ul>
                         </div>
                         <div class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
