@@ -27,3 +27,8 @@ deno.lock
 
 # Claude Code local (personal) settings; shared .claude/ config stays tracked
 .claude/settings.local.json
+
+# Local-only dev container + tooling artifacts (not shared)
+.playwright-mcp/
+CLAUDE.local.md
+compose.yaml
