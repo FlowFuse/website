@@ -50,15 +50,7 @@
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Use Case</p>
                             <ul class="flex flex-col gap-2.5">
                                 <li><a href="/use-cases/production-monitoring/">Production Monitoring</a></li>
-                                <li><a href="/use-cases/operational-data-pipelines/">Operational Data Pipelines</a></li>
-                                <li><a href="/use-cases/equipment-monitoring/">Equipment Monitoring</a></li>
-                                <li><a href="/use-cases/quality-validation/">Quality Validation</a></li>
-                                <li><a href="/use-cases/track-and-trace/">Track &amp; Trace</a></li>
-                                <li><a href="/use-cases/system-diagnostics/">System Diagnostics</a></li>
                                 <li><a href="/use-cases/shop-floor-communication/">Shop Floor Communication</a></li>
-                                <li><a href="/use-cases/workforce-assignment/">Workforce Assignment</a></li>
-                                <li><a href="/use-cases/continuous-improvement/">Continuous Improvement</a></li>
-                                <li><a href="/use-cases/governed-ai-access/">Governed AI &amp; Agent Access</a></li>
                                 <li><a href="/use-cases/">See all use cases</a></li>
                             </ul>
                         </div>
@@ -74,17 +66,6 @@
                                 <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
                                 <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
               <li><a href="/industries/">See all industries</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Outcome</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/outcomes/production-performance/">Production Performance</a></li>
-                                <li><a href="/outcomes/quality-compliance/">Quality &amp; Compliance</a></li>
-                                <li><a href="/outcomes/labor-operational-efficiency/">Labor &amp; Operational Efficiency</a></li>
-                                <li><a href="/outcomes/asset-reliability/">Asset Reliability</a></li>
-                                <li><a href="/outcomes/ai-readiness-data-foundation/">AI Readiness &amp; Data Foundation</a></li>
-                                <li><a href="/outcomes/">See all outcomes</a></li>
                             </ul>
                         </div>
                     </div>
