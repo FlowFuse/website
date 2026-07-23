@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue'
-import navHighlights from '../../src/_data/navHighlights.js'
+import navHighlights from '../../src/_data/navHighlights.json'
 
 const hl = (key) => {
     const entry = navHighlights[key]
