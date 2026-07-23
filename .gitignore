@@ -20,3 +20,10 @@ src/blueprints/*
 
 
 deno.lock
+
+# In-repo npm cache and tooling config written by the dev container
+.npm/
+.config/
+
+# Claude Code local (personal) settings; shared .claude/ config stays tracked
+.claude/settings.local.json
