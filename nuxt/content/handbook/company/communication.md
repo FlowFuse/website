@@ -179,7 +179,7 @@ The rotation will follow a four-week cycle:
    * Week 3: Sales – Reporting on growth, revenue, and direct customer insights by Sales leadership
    * Week 4: Marketing – Highlighting how we are communicating our value to the market by marketing leadership
 
-4. Presenter Guidelines 
+3. Presenter Guidelines 
 To maintain a high-energy pace and respect the team's time:
    * Content: Focus on three pillars: Recent Wins, Current Challenges, and Upcoming Milestones.
    * Time Limit: 10 minutes maximum (including 2 minutes for Q&A).
@@ -187,7 +187,7 @@ To maintain a high-energy pace and respect the team's time:
    * Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
    * Absences: If a DRI cannot present on their assigned day, they must still share their slides in the #general Slack channel; the presentation will not be rescheduled for a following week to prevent meeting backlog and maintain our strict schedule.
 
-5. Open Agenda (Optional Segment - Not Recorded):
+4. Open Agenda (Optional Segment - Not Recorded):
 For the latter portion of the meeting, team members are encouraged to add items to the agenda. This is an informal space to share weekend highlights, personal news, or professional updates that keep you busy.
 Effective Date: This new format begins Monday, February 2nd, 2026.
 
