@@ -795,29 +795,21 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
-    /* Subtle purple color-wave sweeping left-to-right across the logo on hover,
-       echoing the animated nav underline. */
-    .ff-website header a.ff-logo-link {
-        position: relative;
-        overflow: hidden;
+    /* Subtle purple wave sweeping left-to-right THROUGH the logo's own fill on
+       hover: the logo paths use a horizontal gradient (defined in the SVGs) and
+       its stops turn purple in staggered sequence, so the colour flows across
+       the letterforms rather than a block passing over them. */
+    @keyframes ff-logo-wave {
+        0%, 100% { stop-color: #DA3D0B; }
+        50% { stop-color: #6366f1; }
     }
-    .ff-website header a.ff-logo-link::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(105deg, transparent 38%, rgba(99, 102, 241, 0.45) 50%, transparent 62%);
-        transform: translateX(-130%);
-        pointer-events: none;
-    }
-    .ff-website header a.ff-logo-link:hover::after {
-        transform: translateX(130%);
-        transition: transform 0.7s ease;
-    }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(1) { animation: ff-logo-wave 0.5s ease 0s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(2) { animation: ff-logo-wave 0.5s ease 0.09s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(3) { animation: ff-logo-wave 0.5s ease 0.18s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(4) { animation: ff-logo-wave 0.5s ease 0.27s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(5) { animation: ff-logo-wave 0.5s ease 0.36s; }
     @media (prefers-reduced-motion: reduce) {
-        .ff-website header a.ff-logo-link:hover::after {
-            transition: none;
-            transform: translateX(-130%);
-        }
+        .ff-website header a.ff-logo-link:hover svg stop { animation: none; }
     }
 
     .ff-website header .ff-wordmark path,
