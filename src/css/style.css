@@ -2396,13 +2396,6 @@ lite-youtube::before {
     border-radius: inherit;
 }
 
-/* Single left-to-right pass of the opposite brand colour on button hover,
-   echoing the header logo's colour wave. */
-@keyframes ff-btn-colour-pass {
-    from { background-position: 100% 0; }
-    to   { background-position: 0 0; }
-}
-
 @layer utilities {
     .ff-website .ff-btn {
         justify-content: center;
@@ -2414,38 +2407,16 @@ lite-youtube::before {
         border-radius: 4px;
         transition: background-color 0.15s ease, color 0.15s ease;
     }
-    /* Solid brand CTAs: on hover a soft band of the OPPOSITE brand colour
-       passes across left-to-right (echoing the header logo's colour wave) and
-       the button settles a shade darker than its base, as it did before. Done
-       entirely with the button's OWN background (an oversized, mostly
-       transparent gradient whose position animates), so it needs no
-       positioning/overflow changes and cannot disturb button layout; the label
-       always sits above the background. Per-variant colours are set below. */
-    .ff-website .ff-btn.ff-btn--primary,
-    .ff-website .ff-btn.ff-btn--highlight {
-        background-repeat: no-repeat;
-        background-size: 300% 100%;
-        background-position: 100% 0;
-    }
-    .ff-website .ff-btn.ff-btn--primary:hover,
-    .ff-website .ff-btn.ff-btn--highlight:hover {
-        animation: ff-btn-colour-pass 0.55s ease;
-    }
+    /* Solid brand CTAs settle a shade darker on hover (smooth via the base
+       .ff-btn background-color transition) and dim slightly while pressed. */
     .ff-website .ff-btn.ff-btn--primary:active,
     .ff-website .ff-btn.ff-btn--highlight:active {
         filter: brightness(0.97);
     }
-    @media (prefers-reduced-motion: reduce) {
-        .ff-website .ff-btn.ff-btn--primary:hover,
-        .ff-website .ff-btn.ff-btn--highlight:hover {
-            animation: none;
-        }
-    }
 
-    /* Purple button: base indigo, settles indigo-700 on hover; a red band passes. */
+    /* Purple button: base indigo, settles indigo-700 on hover. */
     .ff-website .ff-btn.ff-btn--primary {
         background-color: var(--color-indigo-600);
-        background-image: linear-gradient(105deg, transparent 44%, var(--color-red-500) 50%, transparent 56%);
         color: white;
     }
     .ff-website .ff-btn.ff-btn--primary:hover {
@@ -2466,10 +2437,9 @@ lite-youtube::before {
         border: 1px solid var(--color-indigo-700);
     }
 
-    /* Orange/red button: base red, settles red-700 on hover; a purple band passes. */
+    /* Orange/red button: base red, settles red-700 on hover. */
     .ff-website .ff-btn.ff-btn--highlight {
         background-color: var(--color-red-600);
-        background-image: linear-gradient(105deg, transparent 44%, var(--color-indigo-500) 50%, transparent 56%);
         color: white;
     }
     .ff-website .ff-btn.ff-btn--highlight:hover {
