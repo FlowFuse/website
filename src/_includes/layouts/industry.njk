@@ -20,12 +20,14 @@ layout: default
             <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch{% if hero.video %} bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-xl{% endif %}">
                 <div class="m-auto md:w-1/2">
                     {% if hero.eyebrow %}
-                    <div class="flex items-center gap-2 mb-4 max-md:justify-center">
-                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg industry-eyebrow-icon bg-red-50 border border-red-100 text-gray-800">{% if hero.eyebrowIcon %}{% include hero.eyebrowIcon %}{% endif %}</span>
-                        <span class="text-gray-800 font-medium">{{ hero.eyebrow }}</span>
+                    <div class="mb-4 max-md:flex max-md:justify-center">
+                        <span class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 industry-eyebrow-icon text-gray-800">
+                            {% if hero.eyebrowIcon %}<span class="w-5 h-5 inline-flex items-center shrink-0">{% include hero.eyebrowIcon %}</span>{% endif %}
+                            <span class="font-medium">{{ hero.eyebrow }}</span>
+                        </span>
                     </div>
                     {% endif %}
-                    <h1 class="w-full mt-0 m-auto font-medium sm:text-5xl">
+                    <h1 class="w-full mt-0 m-auto font-medium text-3xl sm:text-4xl">
                         {{ hero.heading | safe }}
                     </h1>
                     <p class="mb-10 text-gray-600">{{ hero.description }}</p>
@@ -75,18 +77,6 @@ layout: default
                     </div>
                     <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
-         TRUSTED BY (animated logos)
-    ============================================================ -->
-    <div class="w-full pt-12 pb-6 px-6">
-        <div class="max-w-screen-lg mx-auto">
-            <p class="text-center text-indigo-800 font-semibold mb-6">Trusted by global enterprises</p>
-            <div class="max-md:max-w-xl max-md:mx-auto">
-                {% include "social-proof.njk" %}
             </div>
         </div>
     </div>
@@ -162,6 +152,24 @@ layout: default
                     </div>
                     {% endfor %}
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         TRUSTED BY (animated logos) - moved below Key Outcomes, separated by a
+         footer-style hr (border-t border-gray-300)
+    ============================================================ -->
+    <div class="w-full px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <hr class="border-0 border-t border-gray-300 m-0">
+        </div>
+    </div>
+    <div class="w-full pt-12 pb-6 px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="text-center text-indigo-800 font-semibold mb-6">Trusted by global enterprises</p>
+            <div class="max-md:max-w-xl max-md:mx-auto">
+                {% include "social-proof.njk" %}
             </div>
         </div>
     </div>

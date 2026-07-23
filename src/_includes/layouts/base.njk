@@ -163,12 +163,12 @@ eleventyComputed:
 </head>
 <body class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
-    <div class="flex-grow base">
-        <div class="w-full">
-            <!-- Top Utility Bar (announcement + quick links) -->
-            {% include "../components/top-utility-bar.njk" %}
-            <!-- Navigation Header -->
-            <header id="ff-header" class="ff-header">
+    <!-- Top Utility Bar (announcement + quick links) -->
+    {% include "../components/top-utility-bar.njk" %}
+    <!-- Navigation Header: direct body child so position:sticky spans the whole page
+         (including the footer). When nested in the .base/.w-full wrapper its sticky
+         containing block ended at the main content, so the footer scrolled it away. -->
+    <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
                     <a class="ff-logo-link hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-wordmark.njk" %}
@@ -355,6 +355,10 @@ eleventyComputed:
                     <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
                 </div>
             </header>
+    <!-- Main Content: wrapped in the flex-grow base so the column layout still
+         pushes the footer to the bottom on short pages -->
+    <div class="flex-grow base">
+        <div class="w-full">
             <!-- Main Content -->
             <main id="main-content" class="flex flex-col mx-auto items-center justify-center gradient-bg">
                 {{ content | safe }}
@@ -488,7 +492,7 @@ eleventyComputed:
                 </section>
             </div>
             <!-- Company -->
-            <section class="mt-12 border-t border-gray-300 pt-5">
+            <section class="mt-12 border-t border-gray-300 pt-9">
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-8 text-sm">
                     <div class="col-span-2 sm:col-span-3 lg:col-span-2">
                         <div class="w-40">
