@@ -61,7 +61,11 @@ Until now, dashboards were reachable only through an "Open Dashboard" button on 
 
 ## Modbus Certified Node
 
-The certified Modbus node joins the FlowFuse certified nodes catalog. Connect to Modbus TCP/RTU devices with a node that carries FlowFuse's support and maintenance commitment behind it.
+FlowFuse Hub customers can now install a FlowFuse-certified Modbus node straight from the palette manager in their editor. It covers Modbus TCP and Serial — including RTU and ASCII — in a single package.
+
+Modbus is one of the most common protocols on the factory floor, but the community package most teams rely on depends on volunteer maintainers. We forked node-red-contrib-modbus and now maintain our own version, backed by FlowFuse testing, SLA-backed security patching, and a long-term maintenance commitment. A node sitting at the center of your production flows no longer carries supply-chain risk.
+
+*This feature is available exclusively to FlowFuse Hub customers, on both FlowFuse Cloud and Self Hosted, from v2.33.*
 
 ## Smoother Edge Onboarding Starts Here
 
