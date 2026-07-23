@@ -2760,8 +2760,10 @@ lite-youtube::before {
    the anchor's currentColor), so both must be de-emphasized. */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"],
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"],
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"] .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"] .ff-nav-label {
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"] .ff-nav-label,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"] .ff-nav-label {
     color: #6b7280;
 }
 /* Free Trial keeps its brand-purple colour at rest (it carries a .ff-nav-label
@@ -2804,19 +2806,23 @@ lite-youtube::before {
    which also colors the currentColor underline */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover,
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label {
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover .ff-nav-label {
     color: var(--color-indigo-700);
 }
 .ff-website footer.ff-footer a[href="/use-cases/"],
-.ff-website footer.ff-footer a[href="/industries/"] {
+.ff-website footer.ff-footer a[href="/industries/"],
+.ff-website footer.ff-footer a[href="/integrations/"] {
     color: #6b7280;
 }
 /* ...but on hover they take the brand purple, so text + the currentColor
    underline both go indigo (this base rule is unlayered and otherwise beats
    the footer :hover colour). */
 .ff-website footer.ff-footer a[href="/use-cases/"]:hover,
-.ff-website footer.ff-footer a[href="/industries/"]:hover {
+.ff-website footer.ff-footer a[href="/industries/"]:hover,
+.ff-website footer.ff-footer a[href="/integrations/"]:hover {
     color: var(--color-indigo-700);
 }
 /* Mobile nav: sections expand on tap only (hover neutralized below md) */
