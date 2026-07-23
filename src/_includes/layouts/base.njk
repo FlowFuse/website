@@ -338,7 +338,7 @@ eleventyComputed:
                     </ul>
                     <!-- CTAs -->
                     <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-			            <li class="hidden md:flex"><a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})">Free Trial</a></li>
+			            <li class="hidden md:flex"><a class="ff-nav-freetrial" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})"><span class="ff-nav-label">Free Trial</span></a></li>
                         <li class="flex">
                             <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
                                 Contact Us
@@ -375,29 +375,27 @@ eleventyComputed:
                 <!-- Platform -->
                 <section class="border-t border-gray-300 pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
-                    <div class="grid grid-cols-2 gap-x-8 gap-y-8">
-                        <div class="flex flex-col gap-8">
-                            <div>
-                                <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
-                                <ul class="flex flex-col gap-2.5">
-                                    <li><a href="/platform/features/">Features</a></li>
-                                    <li><a href="/integrations/">Integrations</a></li>
-                                    <li><a href="/blueprints/">Blueprint Library</a></li>
-                                    <li><a href="/platform/security/">Security Statement</a></li>
-                                    <li><a href="/pricing/">Pricing</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Components</p>
-                                <ul class="flex flex-col gap-2.5">
-                                    <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
-                                    <li><a href="/platform/device-agent/">Device Agent</a></li>
-                                    <li><a href="/node-red/">Node-RED</a></li>
-                                    <li><a href="/docs/user/expert/">FlowFuse Expert</a></li>
-                                </ul>
-                            </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8">
+                        <div class="lg:col-start-1 lg:row-start-1">
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/platform/features/">Features</a></li>
+                                <li><a href="/integrations/">Integrations</a></li>
+                                <li><a href="/blueprints/">Blueprint Library</a></li>
+                                <li><a href="/platform/security/">Security Statement</a></li>
+                                <li><a href="/pricing/">Pricing</a></li>
+                            </ul>
                         </div>
-                        <div>
+                        <div class="lg:col-start-1 lg:row-start-2">
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Components</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
+                                <li><a href="/platform/device-agent/">Device Agent</a></li>
+                                <li><a href="/node-red/">Node-RED</a></li>
+                                <li><a href="/docs/user/expert/">FlowFuse Expert</a></li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Capabilities</p>
                             <ul class="flex flex-col gap-2.5">
                                 <li><a href="/ai/">Industrial AI</a></li>
@@ -493,30 +491,35 @@ eleventyComputed:
             </div>
             <!-- Company -->
             <section class="mt-12 border-t border-gray-300 pt-9">
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-8 text-sm">
-                    <div class="col-span-2 sm:col-span-3 lg:col-span-2">
-                        <div class="w-40">
-                        {% include "components/ff-logo--wordmark--grey.svg" %}
-                    </div>
-                    </div>
+                <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
+                     under Platform, the three groups under Solutions' sub-columns, and the
+                     last group under Resources. -->
+                <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
                     <div>
-                        <ul class="flex flex-col gap-2.5">
-                            <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
-                            <li><a href="/about/">About us</a></li>
-                            <li><a href="{{ site.jobBoard }}">Jobs</a></li>
-                        </ul>
+                        <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
+                            {% include "components/flowfuse-wordmark-footer.njk" %}
+                        </a>
                     </div>
-                    <div>
-                        <ul class="flex flex-col gap-2.5">
-                            <li><a href="/handbook/">Handbook</a></li>
-                            <li><a href="/partners/">Partnerships</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-2.5">
-                            <li><a href="/professional-services/">Professional Services</a></li>
-                            <li><a href="https://status.flowfuse.com/">Service Status</a></li>
-                        </ul>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
+                        <div>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
+                                <li><a href="/about/">About us</a></li>
+                                <li><a href="{{ site.jobBoard }}">Jobs</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/handbook/">Handbook</a></li>
+                                <li><a href="/partners/">Partnerships</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/professional-services/">Professional Services</a></li>
+                                <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div>
                         <ul class="flex flex-col gap-2.5">
@@ -535,7 +538,7 @@ eleventyComputed:
                     <span aria-hidden="true">&middot;</span>
                     <a href="/terms/">Terms</a>
                     <span aria-hidden="true">&middot;</span>
-                    <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">Cookie preferences</a>
+                    <a class="cursor-pointer" type="button" data-cc="show-preferencesModal">Cookie preferences</a>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
                     <a href="https://www.facebook.com/FlowFuse/" class="block"><span class="sr-only">Visit our Facebook page</span>{% include "components/facebook.njk" %}</a>

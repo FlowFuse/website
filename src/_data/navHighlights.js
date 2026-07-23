@@ -17,14 +17,14 @@
  */
 module.exports = {
     platform: {
-        title: "Master the Unified Namespace",
-        link: "/use-cases/uns/",
-        image: "/images/home/home-uns.png"
+        title: "Industrial AI, governed and built in",
+        link: "/ai/",
+        image: "/images/ai/ai-hero.png"
     },
     solutions: {
-        title: "See how teams ship with FlowFuse",
-        link: "/customer-stories/",
-        image: "/images/stories/arch_systems.jpeg"
+        title: "Scale automotive operations",
+        link: "/industries/automotive/",
+        image: "/images/industries/automotive.jpg"
     },
     resources: {
         title: "Free Node-RED training",
@@ -32,8 +32,8 @@ module.exports = {
         image: "/images/education/education_hero.jpg"
     },
     company: {
-        title: "We're hiring",
-        link: "https://boards.greenhouse.io/flowfuse",
-        image: "/images/careers/hiring.jpeg"
+        title: "See how teams ship with FlowFuse",
+        link: "/customer-stories/",
+        image: "/images/stories/arch_systems.jpeg"
     }
 };

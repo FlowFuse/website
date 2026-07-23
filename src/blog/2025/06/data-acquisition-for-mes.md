@@ -35,7 +35,7 @@ Once the system gets all this information, it does more than just track numbers.
 
 This critical operational data doesn't live in one place; it's generated across a diverse and complex digital ecosystem.
 
-A vast amount comes directly from shop floor equipment—the PLCs that orchestrate your machines, the thousands of sensors measuring every variable, and the Historians that diligently archive past performance. Then you have your core business systems. The ERP provides the what and why through production orders, while Quality (QCS) and Maintenance (CMMS) systems add essential layers of inspection and machine health data.
+A vast amount comes directly from shop floor equipment, the PLCs that orchestrate your machines, the thousands of sensors measuring every variable, and the Historians that diligently archive past performance. Then you have your core business systems. The ERP provides the what and why through production orders, while Quality (QCS) and Maintenance (CMMS) systems add essential layers of inspection and machine health data.
 
 Each of these sources speaks its own digital language. A single factory floor is a cacophony of `Modbus`, `OPC UA`, `EtherNet/IP`, and `MQTT`, etc all running simultaneously. This mix of protocols defines the communication architecture of the operation.
 
@@ -77,12 +77,12 @@ Following are some of the most commonly used protocol nodes:
 
 This extensive library allows you to reliably acquire data from various assets using a simple drag-and-drop approach, bringing your factory's siloed data into a cohesive and manageable flow.
 
-In addition to protocol connectors, there are also powerful database nodes available to integrate with systems such as InfluxDB, TimescaleDB, PostgreSQL, Microsoft SQL Server, and more—making it easy to store, query, and analyze your factory data.
+In addition to protocol connectors, there are also powerful database nodes available to integrate with systems such as InfluxDB, TimescaleDB, PostgreSQL, Microsoft SQL Server, and more, making it easy to store, query, and analyze your factory data.
 
 So, With FlowFuse, you can:
 
 * **Deploy intelligent agents** directly to the edge, all managed from a central platform remotely.
-* **Connect to any industrial asset**—PLCs, sensors, SCADA—using ready-made nodes.
+* **Connect to any industrial asset**, PLCs, sensors, SCADA, using ready-made nodes.
 * **Transform raw data** with visual logic, so it’s perfectly structured for your MES.
 * **Build custom operator dashboards** with pre-built UI widgets to visualize and act on data.
 * **Automate data flows** based on schedules, machine events, or production states.
@@ -97,6 +97,6 @@ Bridging the gap between your factory floor and your MES is a huge task. The she
 
 This is precisely where FlowFuse shines. It acts as the universal translator, bringing all your systems together regardless of the language they speak. With thousands of ready-to-use connectors and an intuitive low-code interface, FlowFuse empowers you to get your data flowing exactly where it needs to go.
 
-Once that live data starts moving, your MES becomes exponentially more powerful—helping you spot problems faster, plan smarter, and run your operations with confidence.
+Once that live data starts moving, your MES becomes exponentially more powerful, helping you spot problems faster, plan smarter, and run your operations with confidence.
 
-Want to see it in action? [Book a live demo](/book-demo/) and watch FlowFuse unlock your factory data—no custom code required.
+Want to see it in action? [Book a live demo](/book-demo/) and watch FlowFuse unlock your factory data, no custom code required.

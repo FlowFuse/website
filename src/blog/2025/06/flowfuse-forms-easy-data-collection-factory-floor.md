@@ -33,7 +33,7 @@ and finally:
 
 ## Building Forms in FlowFuse Dashboard
 
-The FlowFuse Dashboard makes it easy to build interactive industrial applications using drag-and-drop components — **no coding required**. 
+The FlowFuse Dashboard makes it easy to build interactive industrial applications using drag-and-drop components, **no coding required**. 
 
 One of these components is the [Form](https://dashboard.flowfuse.com/nodes/widgets/ui-form.html) widget, which allows you to create versatile forms within your applications. The Form widget supports a wide range of input types, including:
 
@@ -60,7 +60,7 @@ Now that we have completed all the basic and necessary configurations for the fo
 ![Adding Form Elements](./images/adding-form-element.gif){data-zoomable}
 _Adding Form Elements_
 
-The widget supports various input element types that can be tailored to specific use cases — from collecting simple text to selecting dates or choosing from predefined options.
+The widget supports various input element types that can be tailored to specific use cases, from collecting simple text to selecting dates or choosing from predefined options.
 
 **To add input elements:**
 
@@ -182,7 +182,7 @@ After submission, you can access these values like this in your flow:
 - Device Serial Number: `msg.payload.serial_number`  
 - Country: `msg.payload.country`
 
-You can use this data anywhere in your flow — for example, to save it in a database or store it in [FlowFuse’s context storage](/docs/user/persistent-context/#flowfuse-persistent-context). Crucially, this collected data can also directly instruct machines on the shop floor, with FlowFuse Device Agent managing that precise control.
+You can use this data anywhere in your flow, for example, to save it in a database or store it in [FlowFuse’s context storage](/docs/user/persistent-context/#flowfuse-persistent-context). Crucially, this collected data can also directly instruct machines on the shop floor, with FlowFuse Device Agent managing that precise control.
 
 ## Building Your Dynamic Production Recipe Update Form
 

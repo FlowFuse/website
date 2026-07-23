@@ -75,7 +75,7 @@ The capture rate and image resolution have a direct impact on performance. While
 
 ## Build it: A Live Line View
 
-Let's turn a camera into something an operator can actually monitor—without ever opening the NVR.
+Let's turn a camera into something an operator can actually monitor, without ever opening the NVR.
 
 ### Installing the node
 

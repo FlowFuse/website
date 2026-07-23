@@ -3,7 +3,7 @@ layout: layouts/landing-comparison.njk
 skipIndex: true
 meta:
     title: "Building and Scaling Industrial Applications | FlowFuse"
-    description: "Most industrial teams can build — the challenge is scaling. See how FlowFuse solves it."
+    description: "Most industrial teams can build, the challenge is scaling. See how FlowFuse solves it."
 hubspot:
     formId: 65f61b7f-0cb9-4a52-978a-00c78fb1548a
     cta: "download-brief"
@@ -11,7 +11,7 @@ hubspot:
 hero:
     headline: "Building industrial applications works"
     headlineHighlight: "until you need to scale them"
-    intro1: "Most industrial teams start by solving a <span class='font-medium'>single use case</span> — connecting a machine, moving data, or building a workflow."
+    intro1: "Most industrial teams start by solving a <span class='font-medium'>single use case</span>, connecting a machine, moving data, or building a workflow."
     intro2: "That's the right approach early on, the challenge appears when those solutions need to <span class='font-medium'>scale across sites, teams, and systems.</span>"
     image: "images/building-applications.png"
     imageAlt: "Industrial engineer working at a computer workstation"
@@ -51,7 +51,7 @@ rightCard:
       - icon: "components/icons/shield-check.svg"
         text: "Designed for production environments with <span class='font-medium'>security and reliability</span>"
 takeaway:
-    para1: "Building internally may solve individual problems quickly — but scaling industrial automation requires <span class='font-medium'>operational consistency, governance, and control.</span>"
+    para1: "Building internally may solve individual problems quickly, but scaling industrial automation requires <span class='font-medium'>operational consistency, governance, and control.</span>"
     para2: "FlowFuse enables teams to move from isolated workflows to a <span class='font-medium'>globally scalable industrial application strategy.</span>"
 form:
     title: "Download the brief"

@@ -33,13 +33,13 @@ meta:
 tldr: "Mean Time to Failure (MTTF) measures the average operating lifetime of non-repairable components such as light bulbs, batteries, and electronic modules before permanent failure requiring replacement, not repair. The formula is simply total operating time divided by number of failures, providing a statistical average useful for planning preventive replacements, spare parts inventory, and procurement decisions. MTTF differs from MTBF (which applies to repairable systems) and MTTR (which measures repair time)."
 ---
 
-When a critical motor bearing assembly fails after just 6 months—half its rated lifespan—maintenance teams face a fundamental question: "How long should this component actually last?"
+When a critical motor bearing assembly fails after just 6 months, half its rated lifespan, maintenance teams face a fundamental question: "How long should this component actually last?"
 
 <!--more-->
 
 Mean Time to Failure (MTTF) provides the answer. It measures the average operational lifetime of non-repairable components before permanent failure, enabling data-driven decisions about replacement timing, spare parts inventory, and component selection.
 
-MTTF emerged as a core reliability engineering metric in the 1950s during the development of military and aerospace reliability theory. Today, it remains essential across industries where component reliability determines operational success—from semiconductor manufacturing to data centers to industrial automation.
+MTTF emerged as a core reliability engineering metric in the 1950s during the development of military and aerospace reliability theory. Today, it remains essential across industries where component reliability determines operational success, from semiconductor manufacturing to data centers to industrial automation.
 
 This guide explains what MTTF measures, how to calculate it correctly with real examples, how it differs from related metrics, and how to use MTTF data for strategic maintenance planning.
 
@@ -51,7 +51,7 @@ MTTF is commonly used for items such as light bulbs, batteries, sealed bearings,
 
 MTTF is a core concept in reliability engineering and is widely used in maintenance planning, lifecycle cost analysis, and dependability studies. It is formally supported by industry standards such as **[MIL-HDBK-217](https://www.sre.org/mil-hdbk-217-the-perceived-standard/)**, **[IEEE Standard 1413](https://standards.ieee.org/ieee/1413/3764/)**, and **[IEC 60300-3-1](https://webstore.iec.ch/en/publication/1294)**, which provide guidance on reliability and dependability analysis across the equipment life cycle.
 
-**Important**: MTTF represents a statistical average—some components will fail earlier while others last longer. Use it for planning and forecasting, not for predicting exact failure times of individual components.
+**Important**: MTTF represents a statistical average, some components will fail earlier while others last longer. Use it for planning and forecasting, not for predicting exact failure times of individual components.
 
 ## Mean Time to Failure (MTTF) Formula
 
@@ -79,7 +79,7 @@ The failure rate is simply the inverse of MTTF. If MTTF is 10,000 hours, your fa
 
 ### What This Formula Assumes
 
-The basic MTTF formula works when you're tracking non-repairable parts, failures occur randomly during their normal lifespan, and operating conditions remain roughly consistent. You also need enough failures to make the average meaningful—ideally 30 or more data points. 
+The basic MTTF formula works when you're tracking non-repairable parts, failures occur randomly during their normal lifespan, and operating conditions remain roughly consistent. You also need enough failures to make the average meaningful, ideally 30 or more data points. 
 
 **When basic MTTF doesn't apply**: If you have components still running at the end of your observation period, or if failure patterns follow a bathtub curve (high early failures, stable middle period, increasing wear-out failures), you'll need advanced statistical methods like Weibull analysis or censored data techniques.
 
@@ -174,12 +174,12 @@ MTTF has limitations. Don't use it when:
 
 ## Bottom Line
 
-Stop guessing when parts will fail. Start tracking installation dates and failure times today. After 20-30 failures, you'll have better data than any manufacturer spec sheet—data that reflects your actual operating conditions, not laboratory ideals.
+Stop guessing when parts will fail. Start tracking installation dates and failure times today. After 20-30 failures, you'll have better data than any manufacturer spec sheet, data that reflects your actual operating conditions, not laboratory ideals.
 
-Use that data to schedule replacements during planned downtime rather than waiting for 2am emergency breakdowns. Stock the right number of spares—not too many tying up working capital, not too few forcing expedited shipping and production delays. Compare suppliers based on actual performance in your facility, not who's cheapest on paper.
+Use that data to schedule replacements during planned downtime rather than waiting for 2am emergency breakdowns. Stock the right number of spares, not too many tying up working capital, not too few forcing expedited shipping and production delays. Compare suppliers based on actual performance in your facility, not who's cheapest on paper.
 
 The math is straightforward: unplanned breakdowns cost 3-5x more than scheduled replacements when you factor in overtime labor, rush parts shipping, and lost production. MTTF transforms reactive firefighting into predictable maintenance.
 
 Your facility is unique. Your conditions, loads, and environment create a reliability profile unlike any other operation. The only MTTF numbers that truly matter are the ones you measure yourself.
 
-As your equipment base grows, manual tracking becomes cumbersome. [FlowFuse](/) automates this by connecting to [PLCs](/blog/2025/12/what-is-plc/), [SCADA](/solutions/scada/) systems, [MES](/solutions/mes/) platforms, and your CMMS—pulling operating hours directly from equipment through industrial protocols like [Modbus](/node-red/protocol/modbus/), [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/), then capturing failure events to recalculate MTTF in real-time across your entire facility.
+As your equipment base grows, manual tracking becomes cumbersome. [FlowFuse](/) automates this by connecting to [PLCs](/blog/2025/12/what-is-plc/), [SCADA](/solutions/scada/) systems, [MES](/solutions/mes/) platforms, and your CMMS, pulling operating hours directly from equipment through industrial protocols like [Modbus](/node-red/protocol/modbus/), [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/), then capturing failure events to recalculate MTTF in real-time across your entire facility.

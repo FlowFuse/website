@@ -120,6 +120,13 @@ ctaSection:
         </div>
         <div class="absolute inset-0 bg-indigo-950/60"></div>
     </div>
+    <!-- Animated aurora background; sized by script to reach the middle of the
+         AI input box, then fades out below it. -->
+    <div class="ai-hero-anim" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+    </div>
     <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-20">
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
             <div class="container m-auto text-left max-w-screen-lg">
@@ -141,6 +148,23 @@ ctaSection:
             </div>
         </div>
     </div>
+    <script>
+    (function(){
+        var section = document.currentScript.closest('section');
+        function fit(){
+            if(!section){ return; }
+            var box = section.querySelector('.ai-chat-box');
+            var anim = section.querySelector('.ai-hero-anim');
+            if(!box || !anim){ return; }
+            var sr = section.getBoundingClientRect();
+            var br = box.getBoundingClientRect();
+            anim.style.height = ((br.top - sr.top) + br.height / 2) + 'px';
+        }
+        if(document.readyState !== 'loading'){ fit(); } else { document.addEventListener('DOMContentLoaded', fit); }
+        window.addEventListener('load', fit);
+        window.addEventListener('resize', fit);
+    })();
+    </script>
 </section>
     <!--Platform: the unifying statement (control plane + accelerator)-->
     <div class="w-full py-12 max-md:pb-20 mt-6 px-6">

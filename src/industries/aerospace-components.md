@@ -19,9 +19,9 @@ hero:
     poster: /images/industries/hero-video/aerospace-components.jpg
 problemImage: "images/industries/aerospace-components-problem.svg"
 problems:
-    - "FAI packages are assembled manually by quality engineers from multiple disconnected sources — machining centres, CMMs, material certs, and paper records — delaying new programme entry and customer approval."
+    - "FAI packages are assembled manually by quality engineers from multiple disconnected sources, machining centres, CMMs, material certs, and paper records, delaying new programme entry and customer approval."
     - "Job travelers are printed at job release with no guarantee of revision currency; engineering changes reach some active jobs late or not at all, creating non-conformance and AS9100 audit exposure."
-    - "NADCAP and customer-specific approval status is tracked in spreadsheets, not enforced at point of production — expired approvals are discovered after parts have already been processed."
+    - "NADCAP and customer-specific approval status is tracked in spreadsheets, not enforced at point of production, expired approvals are discovered after parts have already been processed."
 solution:
   title: "What You Get with FlowFuse"
   benefits:
@@ -38,28 +38,28 @@ outcomes:
   items:
     - svgPath: "components/icons/bolt.svg"
       title: "Cut FAI cycle time"
-      description: "by assembling dimensional results, process parameters, and operator sign-offs continuously during production — submission-ready without manual reconstruction."
+      description: "by assembling dimensional results, process parameters, and operator sign-offs continuously during production, submission-ready without manual reconstruction."
     - svgPath: "components/icons/clipboard-document-check.svg"
       title: "Eliminate traveler revision escapes"
-      description: "with digital travelers always issued from a single controlled source — the current approved revision, every time."
+      description: "with digital travelers always issued from a single controlled source, the current approved revision, every time."
     - svgPath: "components/icons/shield-check.svg"
       title: "Enforce NADCAP and customer approval compliance"
-      description: "at point of production — expired approvals block job progression automatically, with proactive renewal workflow triggered before expiry."
+      description: "at point of production, expired approvals block job progression automatically, with proactive renewal workflow triggered before expiry."
     - svgPath: "components/icons/clock.svg"
       title: "Improve SCAR response time"
-      description: "with full production context captured automatically at the point of non-conformance — no manual evidence assembly required."
+      description: "with full production context captured automatically at the point of non-conformance, no manual evidence assembly required."
 useCases:
   title: "Use Cases"
   items:
     - image: "/images/industries/aerospace-components-use-case-1.jpg"
       imageAlt: "Operator scanning a machined aerospace component while inspection data is captured during production"
-      description: "<strong>Continuous FAI data assembly</strong> — CMM results, material certs, and operator sign-offs captured at each operation and compiled into the AS9102 Form 1, 2, and 3 package automatically, available on demand for any part number or revision."
+      description: "<strong>Continuous FAI data assembly</strong><br>CMM results, material certs, and operator sign-offs captured at each operation and compiled into the AS9102 Form 1, 2, and 3 package automatically, available on demand for any part number or revision."
     - image: "/images/industries/aerospace-components-use-case-2.jpg"
       imageAlt: "CNC machine operator following digital work instructions on an industrial tablet"
-      description: "<strong>Digital job traveler with automatic engineering change propagation</strong> — every active job runs from the current approved revision; changes trigger update workflow with mandatory operator acknowledgment before production continues."
+      description: "<strong>Digital job traveler with automatic engineering change propagation</strong><br>every active job runs from the current approved revision; changes trigger update workflow with mandatory operator acknowledgment before production continues."
     - image: "/images/industries/aerospace-components-use-case-3.jpg"
       imageAlt: "Quality inspector verifying material certificates and production approvals before releasing a machined aerospace component"
-      description: "<strong>Special process compliance enforcement</strong> — NADCAP and customer approval status checked before job release; expiry triggers proactive renewal workflow; certs linked to the part serial and job record at point of receipt."
+      description: "<strong>Special process compliance enforcement</strong><br>NADCAP and customer approval status checked before job release; expiry triggers proactive renewal workflow; certs linked to the part serial and job record at point of receipt."
 socialProofText: "Used by aerospace component shops to automate compliance and standardize operations on top of Node-RED."
 cta:
   title: "Ready to see your shop floor compliance in one view?"

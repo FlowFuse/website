@@ -13,10 +13,10 @@ tags:
 cta:
   type: demo
   title: Turn Raw Factory Data Into Actionable Insights
-  description: FlowFuse helps you connect, collect, transform, and visualize industrial data — with the data modeling tools you need to make your Unified Namespace actually work.
+  description: FlowFuse helps you connect, collect, transform, and visualize industrial data, with the data modeling tools you need to make your Unified Namespace actually work.
 ---
 
-In manufacturing, data flows from various sources—machines, sensors, enterprise systems, and more. A [Unified Namespace (UNS)](/solutions/uns/) brings all this data into a central hub. However, centralizing data isn't enough to truly call it a UNS. It's not just about aggregating information. A true UNS goes beyond being a data repository; it organizes, structures, and contextualizes that data, transforming it into something valuable and actionable for your business.
+In manufacturing, data flows from various sources, machines, sensors, enterprise systems, and more. A [Unified Namespace (UNS)](/solutions/uns/) brings all this data into a central hub. However, centralizing data isn't enough to truly call it a UNS. It's not just about aggregating information. A true UNS goes beyond being a data repository; it organizes, structures, and contextualizes that data, transforming it into something valuable and actionable for your business.
 
 <!--more-->
 
@@ -83,9 +83,9 @@ Data modeling addresses this issue by establishing clear standards for how data 
 
 ### 2. Gives Data Meaning
 
-Raw data on its own is just numbers—isolated and incomplete. For example, a temperature reading of 72.4°C or a vibration level of 1.5 mm/s doesn’t tell much without the proper context. This is where data modeling truly adds value. A data model turns simple measurements into meaningful insights by organizing data that includes critical details like timestamps, data sources, and relationships between data points.
+Raw data on its own is just numbers, isolated and incomplete. For example, a temperature reading of 72.4°C or a vibration level of 1.5 mm/s doesn’t tell much without the proper context. This is where data modeling truly adds value. A data model turns simple measurements into meaningful insights by organizing data that includes critical details like timestamps, data sources, and relationships between data points.
 
-Contextualizing data means understanding when it was captured, where it came from, and what it’s related to. A timestamp helps track trends over time, such as detecting a gradual temperature rise that could signal an issue before it becomes critical. Knowing the data source—whether it’s a specific machine or sensor—enables targeted troubleshooting and ensures that the right teams are working with the right data. Data modeling also links data points, like correlating vibration and temperature readings, to identify potential equipment failures. This structure makes data far more accessible and actionable, allowing teams to make informed, real-time decisions, prevent unplanned downtime, and drive process improvements.
+Contextualizing data means understanding when it was captured, where it came from, and what it’s related to. A timestamp helps track trends over time, such as detecting a gradual temperature rise that could signal an issue before it becomes critical. Knowing the data source, whether it’s a specific machine or sensor, enables targeted troubleshooting and ensures that the right teams are working with the right data. Data modeling also links data points, like correlating vibration and temperature readings, to identify potential equipment failures. This structure makes data far more accessible and actionable, allowing teams to make informed, real-time decisions, prevent unplanned downtime, and drive process improvements.
 
 In summary, data modeling transforms raw data into actionable insights, helping you understand what is happening in your operation, when it started, where it is occurring, and how to address it effectively.
 

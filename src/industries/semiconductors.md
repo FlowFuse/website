@@ -2,12 +2,12 @@
 layout: layouts/industry.njk
 meta:
   title: "Semiconductors & Electronics Manufacturing Platform | FlowFuse"
-  description: "FlowFuse unifies cleanroom monitoring, SMT orchestration, and yield optimization—whether you're running fabs or high-mix electronics lines. No proprietary lock-in."
+  description: "FlowFuse unifies cleanroom monitoring, SMT orchestration, and yield optimization, whether you're running fabs or high-mix electronics lines. No proprietary lock-in."
 hero:
   eyebrow: "Semiconductors"
   eyebrowIcon: "components/icons/chip.svg"
   heading: "<span class=\"text-red-600\">Zero-Downtime</span> Precision Manufacturing"
-  description: "FlowFuse unifies cleanroom monitoring, SMT orchestration, and yield optimization—whether you're running fabs or high-mix electronics lines. No proprietary lock-in."
+  description: "FlowFuse unifies cleanroom monitoring, SMT orchestration, and yield optimization, whether you're running fabs or high-mix electronics lines. No proprietary lock-in."
   primaryCta: "SCHEDULE PRECISION DEMO"
   primaryCtaLink: "/book-demo/"
   secondaryCta: "CONTACT US"

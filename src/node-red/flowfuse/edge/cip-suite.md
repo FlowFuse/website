@@ -1,10 +1,10 @@
 ---
 eleventyNavigation:
-  key: CIP Suite — EtherNet/IP Nodes
+  key: CIP Suite, EtherNet/IP Nodes
   parent: Edge
   order: 2
 meta:
-  title: CIP Suite — EtherNet/IP Nodes
+  title: CIP Suite, EtherNet/IP Nodes
   description: A suite of nodes for reading, writing, and monitoring data on Rockwell Automation and Allen-Bradley PLCs, and other CIP-capable devices, using the EtherNet/IP protocol.
 ---
 
@@ -79,7 +79,7 @@ Only the source and sink nodes are protocol-specific. The transform stages of a 
 Because this suite is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering, make sure your account has access before installing. Contact our [sales team](/contact-us/) if you don't.
 
 {% note %}
-Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
+Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 ### Install via the Palette Manager (recommended)

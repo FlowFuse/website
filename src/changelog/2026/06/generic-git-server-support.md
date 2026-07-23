@@ -1,6 +1,6 @@
 ---
 title: Connect Pipelines to Any Git Server
-description: DevOps Pipeline Git stages now push and pull snapshots to any HTTPS Git server — GitLab, Bitbucket, Gitea, or self-hosted — including servers behind a private certificate authority.
+description: DevOps Pipeline Git stages now push and pull snapshots to any HTTPS Git server, GitLab, Bitbucket, Gitea, or self-hosted, including servers behind a private certificate authority.
 date: 2026-06-29 12:00:00
 authors: ['noley-holland']
 tags:
@@ -9,11 +9,11 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/5294
 ---
 
-DevOps Pipeline Git Repository stages now connect to **any Git server that speaks HTTPS** — GitLab, Bitbucket, Gitea, or a self-hosted instance — not just GitHub and Azure DevOps.
+DevOps Pipeline Git Repository stages now connect to **any Git server that speaks HTTPS**, GitLab, Bitbucket, Gitea, or a self-hosted instance, not just GitHub and Azure DevOps.
 
 Previously, Git integration only worked with those two providers. If your team backs up flows to a self-hosted GitLab or an on-prem Bitbucket, you were stuck. Now you can point a pipeline at any HTTPS Git repository to back up and deploy your flows.
 
-For servers that use a private certificate authority, you can paste in a CA certificate so FlowFuse trusts the connection — no infrastructure changes required.
+For servers that use a private certificate authority, you can paste in a CA certificate so FlowFuse trusts the connection, no infrastructure changes required.
 
 To get started:
 

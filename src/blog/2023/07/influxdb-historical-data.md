@@ -229,7 +229,7 @@ And, there you have it.  You can query the same range of data found on the live 
 
 !["Screenshot of the dashboard showing the historical and live data chart"](images/influxdb-historical-data/final-dashboard-34.png "Screenshot of the dashboard showing the historical and live data chart")
 
-Your current version is clear and concise—great for a blog or call-to-action section. Here's a slightly refined version with improved flow, punctuation, and tone for polish, while keeping the structure intact:
+Your current version is clear and concise, great for a blog or call-to-action section. Here's a slightly refined version with improved flow, punctuation, and tone for polish, while keeping the structure intact:
 
 ## Final Thoughts
 
@@ -243,8 +243,8 @@ This is where **FlowFuse** comes in. It takes your existing Node-RED flows and a
 * Easy deployment to multiple locations
 * Version control for safe and trackable updates
 * Team collaboration without conflicts
-* Remote instance management—and much more
+* Remote instance management, and much more
 
-Your flows continue to work just as they are—FlowFuse simply makes them production-ready.
+Your flows continue to work just as they are, FlowFuse simply makes them production-ready.
 
 [Try FlowFuse free for 30 days]({% include "sign-up-url.njk" %}) and see how it transforms Node-RED into a scalable, enterprise-ready platform.

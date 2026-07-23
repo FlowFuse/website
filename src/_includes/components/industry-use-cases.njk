@@ -17,7 +17,7 @@
                 <p class="m-0 text-gray-600 text-sm flex-grow">{{ uc.data.problem }}</p>
                 <span class="ff-animated-link mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
                     View use case
-                    <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                    <span class="w-4 h-4 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-right.svg" %}</span>
                 </span>
             </a>
             {% endif %}

@@ -47,10 +47,10 @@ This node is ideal for computer vision tasks such as **image labeling**, **conte
 
 The node supports multiple input formats depending on the model’s requirements:
 
-- **Buffer** — Binary image data, typically from a file or camera input.
-- **Base64 string** — Base64-encoded image data.
-- **Jimp Image Object** — An image object (e.g, output from `node-red-contrib-image-tools`).
-- **Tensor** — A pre-processed tensor object in the following format:
+- **Buffer**, Binary image data, typically from a file or camera input.
+- **Base64 string**, Base64-encoded image data.
+- **Jimp Image Object**, An image object (e.g, output from `node-red-contrib-image-tools`).
+- **Tensor**, A pre-processed tensor object in the following format:
 
   ```json
   {
@@ -73,15 +73,15 @@ When a model name is used, the node automatically downloads and caches it locall
 
 #### Model Type Options
 
-- `auto` — Automatically selects the most suitable type.
-- `fp32` — Standard 32-bit floating-point model.
-- `fp16` — Half-precision 16-bit floating-point model.
-- `int8` — 8-bit integer quantized model.
-- `uint8` — 8-bit unsigned integer model.
-- `q8` — Quantized Int8 model (default).
-- `q4` — Quantized Int4 model.
-- `q4f16` — Quantized Int4 with Float16 model.
-- `bnb4` — BNB4 quantized model.
+- `auto`, Automatically selects the most suitable type.
+- `fp32`, Standard 32-bit floating-point model.
+- `fp16`, Half-precision 16-bit floating-point model.
+- `int8`, 8-bit integer quantized model.
+- `uint8`, 8-bit unsigned integer model.
+- `q8`, Quantized Int8 model (default).
+- `q4`, Quantized Int4 model.
+- `q4f16`, Quantized Int4 with Float16 model.
+- `bnb4`, BNB4 quantized model.
 
 ### Configuration Options
 

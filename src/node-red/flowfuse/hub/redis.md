@@ -48,7 +48,7 @@ Connections are pooled per config node, so pointing many nodes at the same serve
 4. Locate `@flowfuse-certified-nodes/redis` and click **Install**.
 
 {% note %}
-Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
+Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 ## Nodes in this package
@@ -71,9 +71,9 @@ You create **one `redis-config` node per Redis server** you connect to, then poi
 1. Drag any Redis node onto the canvas and open it
 2. Click the pencil icon next to **Server** to add a new connection
 3. Fill in:
-   - **Name** — a friendly label for this connection, e.g. `Production Redis`
-   - **Connection Options** — either a connection string, or a JSON object of [ioredis options](https://github.com/luin/ioredis#connect-to-redis)
-   - **Cluster** — enable if connecting to a Redis Cluster
+   - **Name**, a friendly label for this connection, e.g. `Production Redis`
+   - **Connection Options**, either a connection string, or a JSON object of [ioredis options](https://github.com/luin/ioredis#connect-to-redis)
+   - **Cluster**, enable if connecting to a Redis Cluster
 4. Click **Add**, then **Done**
 
 Connection Options accepts either format, use whichever is more convenient:
@@ -101,16 +101,16 @@ Every node pointed at the same `redis-config` node shares one underlying connect
 
 | Field | Node config | Incoming `msg` | Meaning |
 |---|---|---|---|
-| **Command** | `command` | — | The Redis command to run (`set`, `get`, `hmset`, `sadd`, ...). Always fixed on the node. |
+| **Command** | `command` |, | The Redis command to run (`set`, `get`, `hmset`, `sadd`, ...). Always fixed on the node. |
 | **Key** | `topic` | `msg.topic` | The key the command operates on. Leave the node's **Topic** blank to take it from `msg.topic` instead. |
 | **Params** | `params` (+ `paramsType`) | `msg.payload` | The remaining arguments, as a JSON array. Leave the node's **Params** empty to take them from `msg.payload` instead. |
-| **Server** | `server` | — | Which `redis-config` connection to use. |
+| **Server** | `server` |, | Which `redis-config` connection to use. |
 
 The reply is written to `msg.payload`; `msg.topic` is passed through unchanged.
 
-**Example — `SET mykey "Hello there"`:** either fix `topic: mykey` and `params: ["Hello there"]` on the node and inject any message, or leave both blank and inject `{"topic": "mykey", "payload": ["Hello there"]}`. The reply is `OK`.
+**Example, `SET mykey "Hello there"`:** either fix `topic: mykey` and `params: ["Hello there"]` on the node and inject any message, or leave both blank and inject `{"topic": "mykey", "payload": ["Hello there"]}`. The reply is `OK`.
 
-**Example — `GET mykey`:** fix `topic: mykey` on the node (`get` takes no extra params, so `payload` can be `[]` or omitted). The reply is `Hello there`.
+**Example, `GET mykey`:** fix `topic: mykey` on the node (`get` takes no extra params, so `payload` can be `[]` or omitted). The reply is `Hello there`.
 
 For the full list of commands and their arguments, see the [official Redis command reference](https://redis.io/docs/latest/commands/).
 

@@ -14,11 +14,11 @@ In Industrial IoT, tracking data over time is crucial. Whether you’re monitori
 
 <!--more-->
 
-This tutorial guides you through building such a dashboard using FlowFuse Tables. FlowFuse Tables currently provides a managed PostgreSQL database—a reliable and widely used system—which we will use throughout this tutorial to store time-series data.
+This tutorial guides you through building such a dashboard using FlowFuse Tables. FlowFuse Tables currently provides a managed PostgreSQL database, a reliable and widely used system, which we will use throughout this tutorial to store time-series data.
 
 ## Why PostgreSQL for Time-Series Data?
 
-You might wonder if PostgreSQL can efficiently handle large volumes of time-series data. The answer is yes—when configured properly. Without optimization, query performance can slow as data grows. However, by using techniques like batch inserts and smart indexing, PostgreSQL delivers fast and reliable access even at an industrial scale.
+You might wonder if PostgreSQL can efficiently handle large volumes of time-series data. The answer is yes, when configured properly. Without optimization, query performance can slow as data grows. However, by using techniques like batch inserts and smart indexing, PostgreSQL delivers fast and reliable access even at an industrial scale.
 
 PostgreSQL is selected as the first database offering in FlowFuse Tables because it is flexible, reliable, and open source. It serves as a solid foundation for FlowFuse Tables. Whether your data comes from IIoT sensors or other sources, PostgreSQL is well equipped to handle it.
 
@@ -101,7 +101,7 @@ Let's build a flow to simulate sensor data and batch-insert it.
       - Set `msg.payload.timestamp`
       - To the value type **timestamp**.
 
-4. Add a **Function node** and name it **"Batch Accumulator"**. Paste the following JavaScript code into the node — it already includes inline comments explaining each step. This function will accumulate incoming readings in batches until the specified batch size is reached, and then creates the SQL query to perform batch inserts into the database.
+4. Add a **Function node** and name it **"Batch Accumulator"**. Paste the following JavaScript code into the node, it already includes inline comments explaining each step. This function will accumulate incoming readings in batches until the specified batch size is reached, and then creates the SQL query to perform batch inserts into the database.
 
 ```javascript
 // Set the number of records to collect before triggering a batch insert
@@ -244,7 +244,7 @@ The final step is to visualize the query result.
       - Y: Set to `temperature` as a key.
       - Series: Set to "Temperature" as string.
 
-3.  Deploy the flow. Your complete historical data dashboard is now live — you can explore it and experiment with different time ranges to see the results.
+3.  Deploy the flow. Your complete historical data dashboard is now live, you can explore it and experiment with different time ranges to see the results.
 
 ![historical data dashboard retrieving historical data nd displying it](./images/historical-data-dashboard.gif){data-zoomable}
 _Historical data dashboard retrieving and displaying historical data_
@@ -259,7 +259,7 @@ Below is the complete flow we built in this tutorial.
 
 You have successfully built a historical data dashboard using FlowFuse Tables and Node-RED. By implementing efficient batch inserts and optimized query patterns, you have created a solution that is both powerful and scalable for demanding Industrial IoT environments.
 
-With FlowFuse Tables now part of the platform, you can build complete industrial applications without juggling external databases or leaving the FlowFuse environment. FlowFuse is now a comprehensive data platform with the ability to collect, connect, transform, store, and visualize data. Combined with FlowFuse's enterprise features—team collaboration, version control, device management, and secure deployments—you have everything needed to take your IIoT projects from prototype to production within one integrated platform.
+With FlowFuse Tables now part of the platform, you can build complete industrial applications without juggling external databases or leaving the FlowFuse environment. FlowFuse is now a comprehensive data platform with the ability to collect, connect, transform, store, and visualize data. Combined with FlowFuse's enterprise features, team collaboration, version control, device management, and secure deployments, you have everything needed to take your IIoT projects from prototype to production within one integrated platform.
 
 This means less complexity and faster time to value for your industrial data initiatives. Your historical dashboards, real-time monitoring, and OEE dashboards can all live in the same ecosystem, managed by the same team, with consistent security and governance controls.
 

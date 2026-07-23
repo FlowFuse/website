@@ -161,7 +161,7 @@ Now that we understand what Sparkplug B is and how it structures industrial data
 
 [Node-RED](/node-red/) is a popular low-code tool for building IoT and industrial data flows. It’s widely used at the edge to connect devices, process data, and integrate with MQTT brokers. With dedicated Sparkplug nodes, Node-RED makes it easy to publish and consume Sparkplug B messages without manually handling topics, protobufs, or state management.
 
-To run Node-RED reliably in production—especially for industrial and edge deployments, [FlowFuse](/) provides a managed platform for deploying, scaling, and managing Node-RED instances. FlowFuse also includes a built-in MQTT broker, making it simple to get started with Sparkplug B without additional infrastructure.
+To run Node-RED reliably in production, especially for industrial and edge deployments, [FlowFuse](/) provides a managed platform for deploying, scaling, and managing Node-RED instances. FlowFuse also includes a built-in MQTT broker, making it simple to get started with Sparkplug B without additional infrastructure.
 
 [Create a free FlowFuse account]({% include "sign-up-url.njk" %}) to deploy Node-RED, connect devices, and start working with MQTT Sparkplug B in minutes.
 
@@ -172,7 +172,7 @@ In the following example, we’ll configure a Node-RED flow where a factory mach
 Before you begin, ensure you have the following:
 
 - node-red-contrib-mqtt-sparkplug-plus: Install this [Node-RED package for Sparkplug B](https://flows.nodered.org/node/node-red-contrib-mqtt-sparkplug-plus) support via palette manager.
-- MQTT Broker: An MQTT broker is required to send and receive data between clients. If you do not already have one, FlowFuse offers a built-in MQTT broker service that simplifies the process of using MQTT with Node-RED—no external setup required. To learn how to use the FlowFuse MQTT Broker and create and manage clients, refer to the [FlowFuse MQTT documentation](/docs/user/teambroker/).
+- MQTT Broker: An MQTT broker is required to send and receive data between clients. If you do not already have one, FlowFuse offers a built-in MQTT broker service that simplifies the process of using MQTT with Node-RED, no external setup required. To learn how to use the FlowFuse MQTT Broker and create and manage clients, refer to the [FlowFuse MQTT documentation](/docs/user/teambroker/).
 
 ### Configuring Node-RED for MQTT Sparkplug B
 
@@ -290,7 +290,7 @@ _Images of some Sparkplug messages printed on debug panel_
 
 ## Best Practices for Production Deployments
 
-Getting Sparkplug B working is only the first step. Running it reliably in production means thinking about naming, state, performance, and failure handling from day one. The best practices below focus on the things that matter most once your system is live—keeping data trustworthy, networks efficient, and recovery predictable.
+Getting Sparkplug B working is only the first step. Running it reliably in production means thinking about naming, state, performance, and failure handling from day one. The best practices below focus on the things that matter most once your system is live, keeping data trustworthy, networks efficient, and recovery predictable.
 
 - **Name things like you mean it**
   Use clear group, edge, and device names that match your factory or system layout. Future you will thank you.
@@ -305,7 +305,7 @@ Getting Sparkplug B working is only the first step. Running it reliably in produ
   `NDEATH` and `DDEATH` are early warning signals. Use them to detect failures instantly.
 
 - **Buffer with intent**
-  Store-and-forward is great for flaky networks—just don’t let backlogs pile up unchecked.
+  Store-and-forward is great for flaky networks, just don’t let backlogs pile up unchecked.
 
 - **Lock down MQTT early**
   Use TLS, authentication, and topic permissions from day one. Security is easier before go-live.
@@ -317,6 +317,6 @@ Getting Sparkplug B working is only the first step. Running it reliably in produ
 
 MQTT Sparkplug B transforms MQTT from a simple messaging protocol into a robust, standardized framework for industrial IoT. By enforcing structured topics, typed metrics, state awareness, and efficient payloads, it makes integrating heterogeneous devices predictable, scalable, and reliable.
 
-Following best practices—clear naming, birth/death messages, metric aliasing, buffering, security, and deliberate testing—ensures your system runs smoothly in production and avoids costly downtime.
+Following best practices, clear naming, birth/death messages, metric aliasing, buffering, security, and deliberate testing, ensures your system runs smoothly in production and avoids costly downtime.
 
 For teams looking to get Sparkplug B up and running quickly, [FlowFuse]({% include "sign-up-url.njk" %}) provides a production-ready, easy-to-use platform. With minimal setup and no advanced skills required, you can deploy, scale, and monitor industrial flows in minutes. Start building your reliable, standardized IIoT solution today.

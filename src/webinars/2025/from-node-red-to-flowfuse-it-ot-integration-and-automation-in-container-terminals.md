@@ -15,13 +15,13 @@ hubspot:
 ---
 Heavy-duty industries depend on real-time visibility and connected systems to stay efficient, safe, and resilient.  
 
-In this webinar, **Raymond Macaisa, Design Engineering Manager at Red Sea Gateway Terminal**, highlights how they transformed their operations by unifying IT and OT systems—bridging legacy infrastructure with modern, low-code automation.  
+In this webinar, **Raymond Macaisa, Design Engineering Manager at Red Sea Gateway Terminal**, highlights how they transformed their operations by unifying IT and OT systems, bridging legacy infrastructure with modern, low-code automation.  
 
 <!--more-->
 
-Using Node-RED, [Red Sea Gateway Terminal](https://rsgt.com/) implemented low-code integrations for gate automation, weighbridge operations, and RFID-based truck and tractor tracking—connecting MSSQL databases, TOS data, truck telemetry APIs, and SNMP monitoring for access points into a single unified workflow. FlowFuse enabled deployment with CI/CD pipelines, redundancy, and high availability for these mission-critical processes.
+Using Node-RED, [Red Sea Gateway Terminal](https://rsgt.com/) implemented low-code integrations for gate automation, weighbridge operations, and RFID-based truck and tractor tracking, connecting MSSQL databases, TOS data, truck telemetry APIs, and SNMP monitoring for access points into a single unified workflow. FlowFuse enabled deployment with CI/CD pipelines, redundancy, and high availability for these mission-critical processes.
 
-The terminal further enhanced operational visibility by integrating Node-RED flows into a 3D Three.js-based digital twin, providing real-time monitoring and supporting better decision-making. Previous use cases—such as RFID-based gate automation, weighbridge integration, dashboard visualization, and automated thermal receipt/PDF printing—demonstrate how flexible, scalable, and cost-effective these solutions can be in heavy-duty industrial environments.
+The terminal further enhanced operational visibility by integrating Node-RED flows into a 3D Three.js-based digital twin, providing real-time monitoring and supporting better decision-making. Previous use cases, such as RFID-based gate automation, weighbridge integration, dashboard visualization, and automated thermal receipt/PDF printing, demonstrate how flexible, scalable, and cost-effective these solutions can be in heavy-duty industrial environments.
 
 ## Key Topics
 
@@ -29,7 +29,7 @@ The terminal further enhanced operational visibility by integrating Node-RED flo
 - **Tracking of Terminal Tractors** with RFID readers and tags, with live TOS integration.
 - **FlowFuse for On-Premise Instance Management** including setup, redundancy, and high availability.
 - **Node-RED Capabilities** for serial port communication, automation, and dashboarding.
-- **Data Integration**, ingesting and managing multiple sources—SNMP, APIs, MSSQL—into unified workflows.
+- **Data Integration**, ingesting and managing multiple sources, SNMP, APIs, MSSQL, into unified workflows.
 - **CI/CD Deployment Strategies** for reliable and scalable OT automation.
 
 ## Demo
