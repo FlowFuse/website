@@ -96,7 +96,7 @@ This is the dimension of the factory problem that most IIoT conversations miss, 
 
 A Unified Namespace changes the geometry permanently.
 
-When every system in a factory maps to a shared data model published through a common broker, the value does not accumulate linearly. It compounds. A quality defect on line 3 is no longer four disconnected records across four systems. It is one event, described from four angles, readable from a single location, correlatable in minutes rather than days. A maintenance anomaly flagged two days before a failure is not a ticket in one system and an alarm in another. It is a pattern visible across the entire operational picture, searchable historically, usable for prediction.
+When every system in a factory maps to a shared data model published through a common broker, the value does not accumulate linearly. It compounds. A quality defect on line 3 is no longer four disconnected records across four systems. It is one event, described from four angles, readable from a single location, correlatable in minutes rather than days. A maintenance anomaly flagged two days before a failure is not a ticket in one system and an alarm in another. It is a pattern visible across the entire operational picture, searchable historically, usable for prediction. In [automotive manufacturing](/industries/automotive/), where the same downtime code needs to mean the same thing on every line in every plant, that shared reference point is what turns twelve local definitions into one benchmark everyone can actually compare against.
 
 !["Linear vs compounding data value graph"](./images/power-of-single-reference-point.png)
 _Linear vs compounding data value graph_

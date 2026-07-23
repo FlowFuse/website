@@ -45,6 +45,17 @@ An invoice should only be written off as bad debt if the client has already rece
 2. **Email Zeni Accounting Team** at team@zeni.ai with the invoice number to notify them that the invoice is being written off as bad debt. You can also flag it in Slack as an additional notice, but the main notice should go out via email. 
 4. **In QBO**, the Zeni accounting team will verify that the credit memo has been applied to the invoice — either automatically through the HubSpot sync or manually if it did not sync correctly.
 
+## Tax Compliance Calendar
+
+
+| Filing         | Deadline                                         | Owner |   Notes |
+| ----------------| -------------------------------------------------------------------| -----------------------------| -------------|
+|  Delaware Franchise Tax                                            | Jun 1 (40%) / Sep 1 (20%) / Dec 1 (20%) / Mar 1 (final + Annual Report) | Tax Consultant | Quarterly installments 
+| Federal corporate income tax (Form 1120)                           | April 15 (annual)  | Tax Consultant | Extension via Form 7004 pushes filing to Oct 15; tax owed is still due Apr 15.
+| R&D tax credit (Form 6765), filed with the 1120                    |  April 15 (annual, or Oct 15 if extended)| Tax Consultant | Can make election to apply the credit against payroll tax (vs. income tax) must be made on this return.
+| California franchise tax (Form 100)                                | April 15 (Annual) | FlowFuse | $800 minimum tax; applies because FlowFuse does business in CA even though it's incorporated in DE. Pay through [link](https://www.ftb.ca.gov/pay/bank-account/index.asp). Enter California Entity ID that can be found in 1password.
+| San Francisco business registration renewal + gross receipts tax   |  March 2 (annual) | Flowfuse/ Our accountants | Flowfuse alerts our accountants to prepare the documents for us to file 
+
 ## Monthly UK VAT Filing SOP: Taxually Submission
 
 ### Phase 1: Set Up This Month's Workbook
@@ -175,3 +186,8 @@ Once you open the software for the first time, it'll ask you some questions:
 
 ## Internal Documentation & Storage
 All finalized tax filings, monthly financial packages, and signed vendor contracts are stored in [this folder in Google Drive](https://drive.google.com/drive/folders/1xtrbFJaAmwgF9VdWnvzztevXi1MUJDMR). Access is limited to the Accounting Team and Executive Leadership.
+
+## Quarterly Investor Reporting
+FlowFuse shares a quarterly reporting update with investors after each quarter closes.
+- Update the [reporting spreadsheet](https://docs.google.com/spreadsheets/d/10K12_RdNOu81-Ooxh1Vca6dF_EN3VWl2/edit?gid=1113941930#gid=1113941930) shared with investors using the figures from the [ops plan](https://docs.google.com/spreadsheets/d/1bj9_zIerk9wut9Mivzz2Z00kbMa4wp0omVuCb2accDs/edit?gid=829312596#gid=829312596). 
+- Complete the update within 30 days after the end of each quarter (e.g., Q1 reporting is due by April 30).

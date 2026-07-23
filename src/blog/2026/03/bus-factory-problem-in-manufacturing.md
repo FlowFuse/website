@@ -54,7 +54,7 @@ Teams start treating their own integration flows as black boxes. They're afraid 
 
 Over time, organizations start building new flows around existing ones instead of modifying them, because modifying them feels risky. The system gets more complex. More people build more flows that only they understand. The bus factor gets worse, not better.
 
-In manufacturing environments, this isn't just a productivity problem. Integration flows connect real machines, real production lines, and real safety systems. A flow that nobody understands is a flow that nobody can safely change, debug, or improve. That's a real operational risk, and it compounds with scale.
+In manufacturing environments, this isn't just a productivity problem. Integration flows connect real machines, real production lines, and real safety systems, whether that's a changeover routine on an [automotive assembly line](/industries/automotive/) or a batch recipe in a chemical plant. A flow that nobody understands is a flow that nobody can safely change, debug, or improve. That's a real operational risk, and it compounds with scale.
 
 ## The Documentation Problem
 

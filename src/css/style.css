@@ -1,5 +1,6 @@
-@layer vendor, theme, base, components, utilities, overrides;
+@layer vendor, theme, base, components, overrides, utilities;
 
+@config "../../tailwind.config.js";
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -88,13 +89,6 @@
         --tw-prose-links: var(--color-blue-600);
         --tw-prose-code: var(--color-red-700);
         --tw-prose-bold: var(--color-gray-500);
-    }
-    /* Article/markdown prose fills its own column. Exclude prose that carries an
-       explicit max-w-* utility (e.g. the security page's `prose ... max-w-4xl`
-       div): @layer overrides outranks @layer utilities, so an unscoped
-       max-width:none defeats those utilities and forces full-bleed width. */
-    .prose:not([class*="max-w-"]) {
-        max-width: none;
     }
     .prose img { max-width: 100%; }
 }
@@ -2563,7 +2557,7 @@ lite-youtube::before {
     }
 }
 
-@layer overrides {
+@layer utilities {
     .prose h1 { font-weight: 500; }
     .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-weight: 400; }
     .prose picture { margin-top: 0; margin-bottom: 0; margin-left: auto; margin-right: auto; }
@@ -2585,7 +2579,7 @@ lite-youtube::before {
     .prose .ff-blue-card > h5:first-of-type,
     .prose .ff-blue-card > h6:first-of-type { margin-top: 0; }
     .prose .ff-blue-card > p:last-of-type { margin-bottom: 0; }
-}
+} /* end @layer utilities */
 
 /* Mega-panel triggers: the li must not be a positioning context, so the
    full-width panel positions against the header nav. Lives outside the
