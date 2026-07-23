@@ -296,15 +296,16 @@ eleventyComputed:
                             </ul>
                         {% endnavoption %}
                         {% navoption "Company", null, 0 %}
-                            <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center">
+                            <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center">
                                 {% set hl = navHighlights.company %}{% include "components/nav-highlight.njk" %}
                                 {% navoption "Company", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
+                                    <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
                                         {% navoption "Why FlowFuse", "/platform/why-flowfuse/", 1, "flowfuse" %}{% endnavoption %}
                                         {% navoption "About us", "/about/", 1, "building-office-2" %}{% endnavoption %}
                                         {% navoption "Jobs", site.jobBoard, 1, "case" %}{% endnavoption %}
                                         {% navoption "Handbook", "/handbook/", 1, "book-open" %}{% endnavoption %}
+                                        {% navoption "Certifications", "/platform/security/#certifications", 1, "certificate" %}{% endnavoption %}
                                     </ul>
                                 </li>
                                 {% navoption "Partners & Services", null, 1, null, true, "pl-3 title border-l-2 md:col-start-2 md:row-start-1 xl:col-start-3" %}{% endnavoption %}
@@ -496,6 +497,7 @@ eleventyComputed:
                                 <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
                                 <li><a href="/about/">About us</a></li>
                                 <li><a href="{{ site.jobBoard }}">Jobs</a></li>
+                                <li><a href="/platform/security/#certifications">Certifications</a></li>
                             </ul>
                         </div>
                         <div>
