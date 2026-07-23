@@ -249,11 +249,11 @@ eleventyComputed:
                                     {% navoption "See all industries", "/industries/", 1, "arrow-right" %}{% endnavoption %}
                                 </ul>
                             </li>
-                            {% navoption "Protocols", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
+                            {% navoption "By Integration", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
                             <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-8 ml-7 auto-rows-auto border-l-2 md:col-start-3 md:row-start-2 xl:col-start-4">
+                                <ul class="sub-menu grid grid-rows-subgrid row-span-[8] ml-7 auto-rows-auto border-l-2 md:col-start-3 md:row-start-2 xl:col-start-4">
                                     {% navoption "Redis", "/node-red/flowfuse/hub/redis/", 1, "circle-stack" %}{% endnavoption %}
-                                    {% navoption "OPC UA", "/node-red/flowfuse/edge/opcua/", 1, "point-to-point" %}{% endnavoption %}
+                                    {% navoption "OPC UA", "/node-red/flowfuse/edge/opcua/", 1, "server-stack" %}{% endnavoption %}
                                     {% navoption "RTSP", "/node-red/flowfuse/edge/rtsp/", 1, "camera" %}{% endnavoption %}
                                     {% navoption "EtherNet/IP", "/node-red/flowfuse/edge/cip-suite/", 1, "share" %}{% endnavoption %}
                                     {% navoption "MQTT", "/node-red/flowfuse/mqtt/", 1, "wifi" %}{% endnavoption %}
@@ -430,7 +430,7 @@ eleventyComputed:
                             </ul>
                         </div>
                         <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Protocols</p>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Integration</p>
                             <ul class="flex flex-col gap-2.5">
                                 <li><a href="/node-red/flowfuse/hub/redis/">Redis</a></li>
                                 <li><a href="/node-red/flowfuse/edge/opcua/">OPC UA</a></li>
