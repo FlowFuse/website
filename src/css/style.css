@@ -1981,6 +1981,35 @@ div.content section.footnotes ol li p {
 }
 
 /*
+    HubSpot form submit button: match the ff-btn--primary solid CTA so
+    embedded newsletter/signup forms get the same interaction states
+    (hover settle + press dim) as the rest of the site.
+*/
+.ff-website .hs-form .hs-button,
+.ff-website .hs-form input[type="submit"],
+.ff-website form.hs-form input[type="submit"] {
+    background-color: var(--color-indigo-600);
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.ff-website .hs-form .hs-button:hover,
+.ff-website .hs-form input[type="submit"]:hover {
+    background-color: var(--color-indigo-700);
+    color: #fff;
+}
+.ff-website .hs-form .hs-button:active,
+.ff-website .hs-form input[type="submit"]:active {
+    filter: brightness(0.97);
+}
+
+/*
     Overwrite Cookie Banner buttons style
 */
 
