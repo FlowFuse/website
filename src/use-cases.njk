@@ -24,7 +24,7 @@ meta:
     <div class="w-full py-16 sm:py-24 px-6 bg-white">
         <div class="max-w-screen-lg mx-auto">
             <h2 class="max-md:text-center">Operational <span class="text-indigo-600">use cases</span></h2>
-            <p class="mt-4 max-w-3xl text-gray-600">Problems operations teams own, and how they are solved with FlowFuse. Each use case is also reachable by <a href="/industries/">industry</a> and by <a href="/outcomes/">outcome</a>.</p>
+            <p class="mt-4 max-w-3xl text-gray-600">Problems operations teams own, and how they are solved with FlowFuse. Each use case is also reachable by <a href="/industries/">industry</a>.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
                 {% for uc in collections["use-case"] | sort(false, true, "data.title") %}
                 {% if uc.data.values %}

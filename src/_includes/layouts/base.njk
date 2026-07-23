@@ -229,17 +229,9 @@ eleventyComputed:
                             {% set hl = navHighlights.solutions %}{% include "components/nav-highlight.njk" %}
                             {% navoption "By Use Case", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
                             <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-[11] ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
+                                <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
                                     {% navoption "Production Monitoring", "/use-cases/production-monitoring/", 1, "pulse" %}{% endnavoption %}
-                                    {% navoption "Operational Data Pipelines", "/use-cases/operational-data-pipelines/", 1, "arrows-right-left" %}{% endnavoption %}
-                                    {% navoption "Equipment Monitoring", "/use-cases/equipment-monitoring/", 1, "bell-alert" %}{% endnavoption %}
-                                    {% navoption "Quality Validation", "/use-cases/quality-validation/", 1, "check-circle" %}{% endnavoption %}
-                                    {% navoption "Track & Trace", "/use-cases/track-and-trace/", 1, "queue-list" %}{% endnavoption %}
-                                    {% navoption "System Diagnostics", "/use-cases/system-diagnostics/", 1, "eye" %}{% endnavoption %}
                                     {% navoption "Shop Floor Communication", "/use-cases/shop-floor-communication/", 1, "chat" %}{% endnavoption %}
-                                    {% navoption "Workforce Assignment", "/use-cases/workforce-assignment/", 1, "users" %}{% endnavoption %}
-                                    {% navoption "Continuous Improvement", "/use-cases/continuous-improvement/", 1, "arrow-path" %}{% endnavoption %}
-                                    {% navoption "Governed AI & Agent Access", "/use-cases/governed-ai-access/", 1, "sparkles" %}{% endnavoption %}
                                     {% navoption "See all use cases", "/use-cases/", 1, "arrow-right" %}{% endnavoption %}
                                 </ul>
                             </li>
@@ -255,17 +247,6 @@ eleventyComputed:
                                     {% navoption "Aerospace Components", "/industries/aerospace-components/", 1, "cog-6-tooth" %}{% endnavoption %}
                                     {% navoption "Aviation Aerospace", "/industries/aviation-aerospace/", 1, "airplane" %}{% endnavoption %}
                                     {% navoption "See all industries", "/industries/", 1, "arrow-right" %}{% endnavoption %}
-                                </ul>
-                            </li>
-                            {% navoption "By Outcome", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
-                            <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-6 ml-7 auto-rows-auto border-l-2 md:col-start-3 md:row-start-2 xl:col-start-4">
-                                    {% navoption "Production Performance", "/outcomes/production-performance/", 1, "arrow-trending-up" %}{% endnavoption %}
-                                    {% navoption "Quality & Compliance", "/outcomes/quality-compliance/", 1, "shield-check" %}{% endnavoption %}
-                                    {% navoption "Labor & Operational Efficiency", "/outcomes/labor-operational-efficiency/", 1, "users" %}{% endnavoption %}
-                                    {% navoption "Asset Reliability", "/outcomes/asset-reliability/", 1, "wrench-screwdriver" %}{% endnavoption %}
-                                    {% navoption "AI Readiness & Data Foundation", "/outcomes/ai-readiness-data-foundation/", 1, "sparkles" %}{% endnavoption %}
-                                    {% navoption "See all outcomes", "/outcomes/", 1, "arrow-right" %}{% endnavoption %}
                                 </ul>
                             </li>
                         </ul>
@@ -417,15 +398,7 @@ eleventyComputed:
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Use Case</p>
                             <ul class="flex flex-col gap-2.5">
                                 <li><a href="/use-cases/production-monitoring/">Production Monitoring</a></li>
-                                <li><a href="/use-cases/operational-data-pipelines/">Operational Data Pipelines</a></li>
-                                <li><a href="/use-cases/equipment-monitoring/">Equipment Monitoring</a></li>
-                                <li><a href="/use-cases/quality-validation/">Quality Validation</a></li>
-                                <li><a href="/use-cases/track-and-trace/">Track &amp; Trace</a></li>
-                                <li><a href="/use-cases/system-diagnostics/">System Diagnostics</a></li>
                                 <li><a href="/use-cases/shop-floor-communication/">Shop Floor Communication</a></li>
-                                <li><a href="/use-cases/workforce-assignment/">Workforce Assignment</a></li>
-                                <li><a href="/use-cases/continuous-improvement/">Continuous Improvement</a></li>
-                                <li><a href="/use-cases/governed-ai-access/">Governed AI &amp; Agent Access</a></li>
                                 <li><a href="/use-cases/">See all use cases</a></li>
                             </ul>
                         </div>
@@ -441,17 +414,6 @@ eleventyComputed:
                                 <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
                                 <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
                                 <li><a href="/industries/">See all industries</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Outcome</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/outcomes/production-performance/">Production Performance</a></li>
-                                <li><a href="/outcomes/quality-compliance/">Quality &amp; Compliance</a></li>
-                                <li><a href="/outcomes/labor-operational-efficiency/">Labor &amp; Operational Efficiency</a></li>
-                                <li><a href="/outcomes/asset-reliability/">Asset Reliability</a></li>
-                                <li><a href="/outcomes/ai-readiness-data-foundation/">AI Readiness &amp; Data Foundation</a></li>
-                                <li><a href="/outcomes/">See all outcomes</a></li>
                             </ul>
                         </div>
                     </div>
