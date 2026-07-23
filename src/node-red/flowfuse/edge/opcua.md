@@ -431,7 +431,7 @@ msg.payload = {
 
 | Category | Examples | Retryable? |
 |---|---|---|
-| Success | Good |, |
+| Success | Good |  |
 | Parameter | BadInvalidArgument, BadArgumentsMissing, BadTypeMismatch, BadOutOfRange | No, fix inputs |
 | Method availability | BadMethodInvalid, BadMethodNotCallable, BadNotExecutable | No |
 | Security | BadUserAccessDenied, BadNoValidCertificate | No, fix access/certs |
@@ -517,7 +517,7 @@ The Monitor Event node subscribes to events and alarms rather than value changes
 ### Filtering
 
 - **Where Clause**, a server-side filter selecting which events to receive. Far more efficient than post-filtering in a Function node.
-- **Select Clause**, comma-separated fields to retrieve (e.g. `EventId, Time, Message, Severity`). The `...` button opens a graphical selector that browses the event type hierarchy. Request only the fields you use, smaller messages, less processing. Common sets: basic `EventId,Time,Message,Severity`; alarms add `SourceName,ActiveState,AckedState`; audits add `ActionTimeStamp,ClientUserId`.
+- **Select Clause**: comma-separated fields to retrieve (e.g. `EventId, Time, Message, Severity`). The `...` button opens a graphical selector that browses the event type hierarchy. Request only the fields you use: smaller messages, less processing. Common sets: basic `EventId,Time,Message,Severity`; alarms add `SourceName,ActiveState,AckedState`; audits add `ActionTimeStamp,ClientUserId`.
 
 Match the subscription to the event rate: a slower publishing interval suits alarms and audits, a faster one suits high-frequency process events. For mixed workloads, use separate Monitor Event nodes on different subscriptions (see [Configure a connection](#5.-configure-a-connection)) so critical alarms don't queue behind noisy low-priority events.
 

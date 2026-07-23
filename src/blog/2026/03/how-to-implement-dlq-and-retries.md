@@ -49,7 +49,7 @@ delay = min(base * 2^attempt, max_delay) + random_jitter
 | 2       | 2s        | 2.5s                 |
 | 3       | 4s        | 4.1s                 |
 | 4       | 8s        | 8.9s                 |
-| 5       |, | → DLQ               |
+| 5       |  | → DLQ               |
 
 The jitter prevents the **thundering herd problem**, where every failed client retries at exactly the same moment and overloads the service all over again.
 

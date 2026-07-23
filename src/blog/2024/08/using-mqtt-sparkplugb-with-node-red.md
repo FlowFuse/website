@@ -317,6 +317,6 @@ Getting Sparkplug B working is only the first step. Running it reliably in produ
 
 MQTT Sparkplug B transforms MQTT from a simple messaging protocol into a robust, standardized framework for industrial IoT. By enforcing structured topics, typed metrics, state awareness, and efficient payloads, it makes integrating heterogeneous devices predictable, scalable, and reliable.
 
-Following best practices, clear naming, birth/death messages, metric aliasing, buffering, security, and deliberate testing, ensures your system runs smoothly in production and avoids costly downtime.
+Following best practices (clear naming, birth/death messages, metric aliasing, buffering, security, and deliberate testing) ensures your system runs smoothly in production and avoids costly downtime.
 
 For teams looking to get Sparkplug B up and running quickly, [FlowFuse]({% include "sign-up-url.njk" %}) provides a production-ready, easy-to-use platform. With minimal setup and no advanced skills required, you can deploy, scale, and monitor industrial flows in minutes. Start building your reliable, standardized IIoT solution today.

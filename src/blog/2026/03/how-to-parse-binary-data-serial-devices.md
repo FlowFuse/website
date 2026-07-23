@@ -85,7 +85,7 @@ The manual specifies a fixed-length frame of exactly 10 bytes:
 | 1–4 | 32-bit float | Weight value, little-endian |
 | 5 | `0x01` or `0x02` | Unit indicator, 1 = kg, 2 = lb |
 | 6 | Bitfield | Status flags |
-| 7 |, | Reserved |
+| 7 |  | Reserved |
 | 8 | Byte | Checksum, sum of bytes 1–7 truncated to one byte |
 | 9 | `0x03` | ETX, end of frame |
 

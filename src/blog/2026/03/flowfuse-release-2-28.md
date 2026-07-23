@@ -77,7 +77,7 @@ As part of this work, you can now also set a separate ingress class name for Hos
 ### Additional self-hosted improvements
 
 - **Team NPM Registry**, Docker Compose deployments can now have all the Team Library, Custom Nodes pre-requisits configured.
-- **File-server PVC configuration**, Set the size, access modes, and storage class for file-server persistent volumes
+- **File-server PVC configuration**: Set the size, access modes, and storage class for file-server persistent volumes
 - **Private CA certificate mounting**, Docker Compose deployments can now mount a private CA certificate file into the forge service
 
 ## What else is new?

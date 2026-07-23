@@ -101,10 +101,10 @@ Every node pointed at the same `redis-config` node shares one underlying connect
 
 | Field | Node config | Incoming `msg` | Meaning |
 |---|---|---|---|
-| **Command** | `command` |, | The Redis command to run (`set`, `get`, `hmset`, `sadd`, ...). Always fixed on the node. |
+| **Command** | `command` |  | The Redis command to run (`set`, `get`, `hmset`, `sadd`, ...). Always fixed on the node. |
 | **Key** | `topic` | `msg.topic` | The key the command operates on. Leave the node's **Topic** blank to take it from `msg.topic` instead. |
 | **Params** | `params` (+ `paramsType`) | `msg.payload` | The remaining arguments, as a JSON array. Leave the node's **Params** empty to take them from `msg.payload` instead. |
-| **Server** | `server` |, | Which `redis-config` connection to use. |
+| **Server** | `server` |  | Which `redis-config` connection to use. |
 
 The reply is written to `msg.payload`; `msg.topic` is passed through unchanged.
 

@@ -62,7 +62,7 @@ meta:
       answer: "A theme is a structured set of colors and sizing values applied through the ui-theme configuration, the supported way to control the overall look. Custom CSS via the ui-template node goes further, letting you style individual widgets, groups, or pages by class for fine-grained or branded designs the theme settings don't cover."
     - question: "Is Node-RED Dashboard 2.0 the same as the original Node-RED Dashboard?"
       answer: "No. Dashboard 2.0 (the FlowFuse-maintained @flowfuse/node-red-dashboard) is a rebuilt successor to the original dashboard, with a different layout system, theming, and node set. Layouts, sizing rules, and the ui-template styling approach described here are specific to Dashboard 2.0."
-tldr: "Node-RED Dashboard 2.0 gives you three page layouts, Grid (12 equal columns), Notebook (centered 1024px, stacked groups), and Fixed (90px per width unit), and five navigation sidebar styles (Collapsing, Fixed, Collapse to icon, Appear over content, Always hide). Widgets are sized as a fraction of their group's internal grid, with rows a consistent 48px tall. You control colors and spacing through themes (ui-theme) and can go further with custom CSS by adding classes and writing styles in a ui-template node, scoped to a single page or all pages."
+tldr: "Node-RED Dashboard 2.0 gives you three page layouts: Grid (12 equal columns), Notebook (centered 1024px, stacked groups), and Fixed (90px per width unit); plus five navigation sidebar styles (Collapsing, Fixed, Collapse to icon, Appear over content, Always hide). Widgets are sized as a fraction of their group's internal grid, with rows a consistent 48px tall. You control colors and spacing through themes (ui-theme) and can go further with custom CSS by adding classes and writing styles in a ui-template node, scoped to a single page or all pages."
 ---
 
 In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.
@@ -117,7 +117,7 @@ It's important to note that the size of a single horizontal unit varies dependin
 
 ## Sizing Widgets within a Group
 
-In any layout, Grid, Notebook, or Fixed, widgets within a group are sized using a unified approach. The size property assigned to widgets determines their width within the group. Each unit in the size property represents a fraction of the group's total width. This width is determined by an internal grid established by the group.
+In any layout (Grid, Notebook, or Fixed), widgets within a group are sized using a unified approach. The size property assigned to widgets determines their width within the group. Each unit in the size property represents a fraction of the group's total width. This width is determined by an internal grid established by the group.
 
 ### Widget Sizing
 Widgets are sized relative to the number of columns in the internal grid. For example, if a group has 4 columns and two widgets, and the first widget is set to 1 width while the second to 3 width, the first widget will occupy 25% of the group's width, and the second widget will occupy 75%.

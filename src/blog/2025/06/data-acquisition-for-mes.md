@@ -82,7 +82,7 @@ In addition to protocol connectors, there are also powerful database nodes avail
 So, With FlowFuse, you can:
 
 * **Deploy intelligent agents** directly to the edge, all managed from a central platform remotely.
-* **Connect to any industrial asset**, PLCs, sensors, SCADA, using ready-made nodes.
+* **Connect to any industrial asset** (PLCs, sensors, SCADA) using ready-made nodes.
 * **Transform raw data** with visual logic, so it’s perfectly structured for your MES.
 * **Build custom operator dashboards** with pre-built UI widgets to visualize and act on data.
 * **Automate data flows** based on schedules, machine events, or production states.

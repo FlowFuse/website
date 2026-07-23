@@ -27,7 +27,7 @@ Now, let’s look at how FlowFuse makes collaboration effortless. With features 
 
 Effective collaboration starts with everyone having access to the same interface and information. When team members work with different versions of flows or data, things can easily get out of sync, making collaboration difficult.
 
-This is exactly why centralized management is so crucial. With FlowFuse, everything, your Node-RED Instances, edge devices, settings, and data, is in one place. Everyone on your team sees the same interface, accesses the same up-to-date information, and works from the same set of resources. There’s no more hunting for the correct version or trying to sync up tools.
+This is exactly why centralized management is so crucial. With FlowFuse, everything (your Node-RED Instances, edge devices, settings, and data) is in one place. Everyone on your team sees the same interface, accesses the same up-to-date information, and works from the same set of resources. There’s no more hunting for the correct version or trying to sync up tools.
 
 Everything in one place means fewer mistakes, fewer mix-ups, and much easier collaboration. Whether you're working in a single instance or managing a whole network of edge devices, FlowFuse makes it easy to stay aligned. You can move quickly and confidently without worrying about missing something important.
 

@@ -144,8 +144,8 @@ Now that you have installed the EtherNet/IP node, it is time to configure the co
 
 6. Select the communication mode:
 
-   * **Standard (Unconnected)**, This is the default option supported by most PLCs.
-   * **Connected (With Routing)**, Use this option if you want to enable connected messaging with routing.
+   * **Standard (Unconnected)**: This is the default option supported by most PLCs.
+   * **Connected (With Routing)**: Use this option if you want to enable connected messaging with routing.
 
 ![EtherNet/IP Node Configuration](./images/eth-ip-config.png){data-zoomable}
 _EtherNet/IP Node Configuration_

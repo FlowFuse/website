@@ -18,9 +18,9 @@ layout: layouts/base.njk
     {% endif %}
     <div class="blog nohero w-full pt-6 pb-24 bg-gray-50">
         <div class="container flex flex-col m-auto text-left max-lg:px-6 md:max-w-screen-lg items-stretch">
-            <a class="inline-flex align-center gap-1 mb-5 md:mb-4" href="/customer-stories">
-                {% include "components/icons/chevron-left.svg" %}
-                Back to Customer Stories
+            <a class="group hover:no-underline inline-flex items-center gap-1 mb-5 md:mb-4" href="/customer-stories">
+                <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/chevron-left.svg" %}</span>
+                <span class="ff-animated-link">Back to Customer Stories</span>
             </a>
             <div class="ff-prose flex flex-col-reverse md:flex-row md:gap-8 mb-6 border-b">
                 <div class="flex-grow">
