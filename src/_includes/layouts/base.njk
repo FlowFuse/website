@@ -165,9 +165,6 @@ eleventyComputed:
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <div class="flex-grow base">
         <div class="w-full">
-            <!-- Sticky header stack: utility bar + nav header pin together so the
-                 mobile drawer offset stays constant regardless of scroll position -->
-            <div class="ff-header-stack">
             <!-- Top Utility Bar (announcement + quick links) -->
             {% include "../components/top-utility-bar.njk" %}
             <!-- Navigation Header -->
@@ -333,7 +330,6 @@ eleventyComputed:
                             </ul>
                         {% endnavoption %}
                         {% navoption "Industrial AI", "/ai/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
-                        {% navoption "Docs", "/docs/", 0, false, false, "md:hidden" %}{% endnavoption %}
                         <!-- More dropdown for overflow items -->
                         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
                             <span class="flex items-center gap-1">More<span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
@@ -359,7 +355,6 @@ eleventyComputed:
                     <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
                 </div>
             </header>
-            </div><!-- /.ff-header-stack -->
             <!-- Main Content -->
             <main id="main-content" class="flex flex-col mx-auto items-center justify-center gradient-bg">
                 {{ content | safe }}
@@ -462,7 +457,7 @@ eleventyComputed:
                 <!-- Resources -->
                 <section class="border-t border-gray-300 pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
-                    <div class="flex flex-col gap-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8">
                         <div>
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Learn</p>
                             <ul class="flex flex-col gap-2.5">
@@ -553,12 +548,34 @@ eleventyComputed:
 </body>
 <script>
     document.getElementById('nav-toggle').onclick = function(){
-        // self
-        document.getElementById("nav-toggle").classList.toggle("mobile-open");
-
-        let classes = document.getElementById("ff-header").classList;
-        classes.toggle("mobile-open");
+        var toggle = document.getElementById("nav-toggle");
+        var header = document.getElementById("ff-header");
+        var nav = document.getElementById("nav-content");
+        var willOpen = !header.classList.contains("mobile-open");
+        toggle.classList.toggle("mobile-open");
+        header.classList.toggle("mobile-open");
+        // Lock background scroll while the mobile drawer is open. Lock the
+        // scroll container (html) only: locking html AND body together makes
+        // the sticky header revert to its static position.
+        document.documentElement.classList.toggle("nav-scroll-lock", willOpen);
+        if (willOpen) {
+            // Anchor the drawer to the header's live bottom edge: just below the
+            // (scroll-away) utility bar at the top of the page, or just below the
+            // sticky header once scrolled. Scroll is locked, so this stays valid.
+            nav.style.top = header.getBoundingClientRect().bottom + "px";
+        } else {
+            nav.style.top = "";
+        }
     };
+    // Growing past the mobile breakpoint must clear any open-drawer state + scroll lock
+    window.addEventListener('resize', function(){
+        if (window.innerWidth >= 768) {
+            document.getElementById("nav-toggle").classList.remove("mobile-open");
+            document.getElementById("ff-header").classList.remove("mobile-open");
+            document.documentElement.classList.remove("nav-scroll-lock");
+            document.getElementById("nav-content").style.top = "";
+        }
+    });
 
     // Nav overflow: move non-dropdown items into "More" when they don't fit
     (function() {

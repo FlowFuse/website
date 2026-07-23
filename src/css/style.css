@@ -791,14 +791,8 @@ h4:hover .header-anchor::before {
     Header
 */
 @layer components {
-    /* The whole header stack (utility bar + nav header) sticks as one unit so
-       the mobile drawer's top offset is a constant, not scroll-dependent. */
-    .ff-website .ff-header-stack {
-        @apply top-0 z-50 sticky;
-    }
-
     .ff-website .ff-header {
-        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0;
+        @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
     .ff-website header .ff-wordmark path,
@@ -814,20 +808,19 @@ h4:hover .header-anchor::before {
         @apply block md:hidden transition-transform p-0 min-h-0 leading-none;
     }
 
-    .ff-website header .ff-nav-dropdown:hover .ff-nav-chevron,
-    .ff-website header .ff-nav-dropdown:focus-within .ff-nav-chevron {
-        @apply transform rotate-180;
-    }
+    /* Chevron rotation is tap-driven on mobile (.mobile-expanded, see below); it
+       must NOT react to hover/focus, or a mouse at mobile width flips it without
+       opening the section. The chevron is md:hidden, so there is no desktop case. */
 
     .ff-website header #nav-content {
-        /* Height of the sticky header stack (utility bar + nav row). The mobile
-           drawer opens directly below it. Tune this one value if the stack
-           height changes. Reset to 0 at md+ (desktop mega-nav is inline). */
-        --ff-stack-h: 7.25rem;
-        top: var(--ff-stack-h);
-        height: calc(100vh - var(--ff-stack-h) - 4rem);
-        height: calc(100dvh - var(--ff-stack-h) - 4rem);
-        @apply md:top-0 transition-height fixed left-0 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
+        /* Mobile drawer. `top` is set on open (base.njk) to the header's live
+           bottom edge, so it sits just below the scroll-away utility bar at the
+           top of the page, or just below the sticky header once scrolled.
+           `bottom:0` fills the rest of the viewport height. Reset to inline flow
+           at md+ (desktop mega-nav). */
+        top: 0;
+        bottom: 0;
+        @apply md:top-0 md:bottom-auto transition-height fixed left-0 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
         @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row md:flex-nowrap;
     }
 
@@ -867,6 +860,15 @@ h4:hover .header-anchor::before {
 
     .ff-website header #nav-content li {
         @apply border-none;
+    }
+
+    /* Label span wraps the nav item text (added in the navoption macro) so the
+       underline can hug the text. It must not inherit the generic `header ul
+       span` padding/border, or it inflates row height on every breakpoint. */
+    .ff-website header .ff-nav-label {
+        position: relative;
+        padding: 0;
+        border: 0;
     }
 
     .ff-website header .ff-icon--gh:hover path {
@@ -909,11 +911,11 @@ h4:hover .header-anchor::before {
         @apply text-current;
     }
 
-    .ff-website header a > span {
+    .ff-website header a > span:not(.ff-nav-label) {
         transform: scale(0.75);
     }
 
-    .ff-website header a:hover > span {
+    .ff-website header a:hover > span:not(.ff-nav-label) {
         transform: scale(0.75)rotate(180deg);
     }
 
@@ -1044,6 +1046,13 @@ h4:hover .header-anchor::before {
     .ff-website header.mobile-open #nav-content {
         overflow-y: auto;
         @apply max-h-full fixed;
+    }
+
+    /* Freeze the page behind the open mobile drawer (toggled in base.njk).
+       Lock ONLY the scroll container (html): locking html AND body together
+       makes the sticky header revert to its static position and jump off-screen. */
+    html.nav-scroll-lock {
+        overflow: hidden;
     }
 
     .ff-website header.mobile-open #mobile-ctas {
@@ -2557,14 +2566,32 @@ lite-youtube::before {
     .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
+        padding-left: 1.5rem !important; /* align link icons with the section eyebrow */
     }
-    .ff-website header .ff-nav-dropdown > ul.mega a:hover,
-    .ff-website header .ff-nav-dropdown > ul.mega a:active,
-    .ff-website header #nav-content > li > a:hover,
-    .ff-website header #nav-content > li > a:active {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-thickness: 1.5px;
+    /* Animated underline matching desktop: grows left-to-right, hugging the
+       label text via the .ff-nav-label span added in the navoption macro. */
+    .ff-website header .ff-nav-label::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website header a:hover > .ff-nav-label::after,
+    .ff-website header a:active > .ff-nav-label::after,
+    .ff-website header .ff-nav-dropdown > span:hover > .ff-nav-label::after {
+        transform: scaleX(1);
+    }
+    /* text + underline turn indigo on hover, matching desktop (the label span
+       carries its own gray color, so it needs its own hover color) */
+    .ff-website header a:hover > .ff-nav-label,
+    .ff-website header a:active > .ff-nav-label,
+    .ff-website header .ff-nav-dropdown > span:hover > .ff-nav-label {
         color: var(--color-indigo-700);
     }
 }
