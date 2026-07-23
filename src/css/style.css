@@ -2628,7 +2628,7 @@ lite-youtube::before {
         display: block;
         padding: 0;
         width: 100%;
-        aspect-ratio: 16 / 10;
+        aspect-ratio: 16 / 9;
         transform: none;
         border-radius: 0.75rem;
         overflow: hidden;
