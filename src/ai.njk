@@ -28,6 +28,7 @@ capabilityIntro:
     subtitle: "From accelerating how you build, to acting inside live flows, to connecting the AI your company already trusts. Each one runs on the same governed platform."
 capabilityGroups:
     - title: "Accelerate engineering"
+      eyebrow: "Build"
       subtitle: "FlowFuse Expert turns intent into working industrial applications, right in the editor."
       items:
         - name: "AI-assisted engineering"
@@ -51,6 +52,7 @@ capabilityGroups:
           statusKind: "live"
           description: "A chat assistant with answers grounded in FlowFuse and Node-RED documentation, so guidance comes from the product, not stale wikis."
     - title: "Operate with AI, safely"
+      eyebrow: "Operate"
       subtitle: "AI that acts inside your flows and answers questions about live operations, always behind your controls."
       items:
         - name: "Governed autonomous operations"
@@ -69,6 +71,7 @@ capabilityGroups:
           statusKind: "live"
           description: "Run ONNX vision models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network."
     - title: "Connect and govern your AI"
+      eyebrow: "Connect"
       subtitle: "Give the AI your company already trusts a governed door into operations, on a boundary you control."
       items:
         - name: "Connect your company's AI"
@@ -198,34 +201,36 @@ ctaSection:
             <p class="mt-3 text-gray-600">{{ capabilityIntro.subtitle }}</p>
         </div>
         {% for group in capabilityGroups %}
-        <div class="mt-14 {% if not loop.first %}pt-14 border-t border-indigo-200/70{% endif %}">
-            <div class="flex flex-col gap-1 border-l-2 border-indigo-300 pl-4">
-                <h3 class="text-2xl font-medium text-gray-900 m-0">{{ group.title }}</h3>
-                <p class="text-gray-600 m-0 max-w-3xl">{{ group.subtitle }}</p>
+        <section class="ff-cap-group md:grid md:grid-cols-5 md:gap-x-12 lg:gap-x-16 mt-16 {% if not loop.first %}pt-16 border-t border-indigo-200/70{% endif %}">
+            <!-- LEFT: group header, pins on desktop while the right column scrolls -->
+            <div class="ff-cap-sticky md:col-span-2 max-md:mb-10">
+                <p class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">
+                    <span class="font-mono text-indigo-400">0{{ loop.index }}</span>
+                    <span>{{ group.eyebrow }}</span>
+                </p>
+                <h3 class="text-3xl md:text-4xl font-medium text-gray-900 leading-tight mt-4 mb-0">{{ group.title }}</h3>
+                <p class="text-gray-600 font-light max-w-md mt-4 mb-0">{{ group.subtitle }}</p>
             </div>
-            <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 mt-8">
+            <!-- RIGHT: the group's capabilities as numbered, scrolling blocks -->
+            <div class="md:col-span-3">
                 {% for item in group.items %}
-                <div class="relative w-full max-md:max-w-md mx-auto bg-gradient-to-br from-white to-transparent border-2 border-white p-4 rounded-lg">
-                    <div class="flex flex-col items-center sm:items-start">
-                        <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                            <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
-                                {% include item.svgPath %}
-                            </div>
-                            <div class="w-full flex flex-row flex-wrap gap-2 items-center justify-center sm:justify-start mx-auto md:m-0">
-                                <span class="text-xl font-medium text-indigo-600 text-center sm:text-left">{{ item.name }}</span>
+                <div class="ff-cap-item px-2 py-3 {% if not loop.first %}mt-8 pt-8 border-t border-indigo-100{% endif %}" tabindex="0">
+                    <div class="flex items-start gap-4 sm:gap-5">
+                        <span class="ff-cap-num" aria-hidden="true">0{{ loop.index }}</span>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+                                <span class="text-xl font-medium text-indigo-600">{{ item.name }}</span>
                                 {% if item.statusKind == 'soon' %}
-                                <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full border bg-amber-50 text-amber-700 border-amber-200">{{ item.status }}</span>
+                                <span class="ff-cap-soon">Coming soon</span>
                                 {% endif %}
                             </div>
-                        </div>
-                        <div>
-                            <p class="text-center sm:text-left font-light mt-1">{{ item.description | safe }}</p>
+                            <p class="text-gray-600 font-light mt-2 mb-0">{{ item.description | safe }}</p>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-        </div>
+        </section>
         {% endfor %}
     </div>
 </div>

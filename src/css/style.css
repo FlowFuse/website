@@ -3060,3 +3060,85 @@ a.group:hover .ff-animated-link::after,
     width: 1.25rem;
     height: 1.25rem;
 }
+
+/* AI page ("/ai/") capabilities: sticky-header, scrolling-items layout.
+   The left group header pins while that group's numbered blocks scroll on
+   the right, then the next group's header takes over. These rules live in
+   the UNLAYERED block on purpose: the Tailwind `utilities` layer is
+   outranked by unlayered top-level rules, so the load-bearing sticky
+   positioning is placed here to avoid being silently overridden. */
+@media (min-width: 768px) {
+    .ff-cap-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        /* clear the sticky site header (roughly 75px) with breathing room */
+        top: 100px;
+        /* take natural height inside the taller grid row so there is travel
+           room for the pin; without this the column stretches full height */
+        align-self: start;
+    }
+}
+
+/* Monospaced number chip: intentional enumeration of capabilities within a
+   group, indigo-tinted to match the brand accent. */
+.ff-cap-num {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 0.5rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--color-indigo-600);
+    background-color: var(--color-indigo-100);
+    border: 1px solid var(--color-indigo-200);
+    border-radius: 0.5rem;
+}
+
+/* "Coming soon" pill: soft FlowFuse-red accent (warm, on-brand). */
+.ff-cap-soon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    color: var(--color-red-700);
+    background-color: var(--color-red-50);
+    border: 1px solid var(--color-red-200);
+}
+
+/* Each capability block is keyboard-focusable for readability; give it a
+   visible focus ring and a subtle number-chip hover accent. */
+.ff-cap-item {
+    border-radius: 0.5rem;
+    outline: none;
+    transition: background-color 0.15s ease;
+}
+.ff-cap-item:hover {
+    background-color: var(--color-indigo-50);
+}
+.ff-cap-item:hover .ff-cap-num,
+.ff-cap-item:focus-visible .ff-cap-num {
+    color: #ffffff;
+    background-color: var(--color-indigo-600);
+    border-color: var(--color-indigo-600);
+}
+.ff-cap-item:focus-visible {
+    outline: 2px solid var(--color-indigo-500);
+    outline-offset: 4px;
+    background-color: var(--color-indigo-50);
+}
+@media (prefers-reduced-motion: reduce) {
+    .ff-cap-item,
+    .ff-cap-num {
+        transition: none;
+    }
+}
