@@ -17,16 +17,22 @@ capabilities:
       description: "Create the operational applications that MES, ERP, and SCADA platforms struggle to support natively — from quality validation and workforce assignment to shift handovers and production visibility. Describe what you need in plain language and FlowFuse Expert generates the starting logic directly in your workspace."
       imagePath: "images/home/home-node-red.png"
       imageAlt: "FlowFuse UI"
+      linkText: "Learn more about FlowFuse Expert"
+      linkHref: "/ai/"
     - capability: "Standardize proven workflows across every site"
       feature: "Device Agent and DevOps Pipelines"
       description: "Turn a successful workflow on one machine or line into a repeatable operational standard across plants. Roll out updates with version control, staged deployments, and centrally managed industrial devices. No more rebuilding from scratch for every site, or leaving improvements siloed in one location."
       imagePath: "images/home/home-pipeline.png"
       imageAlt: "FlowFuse flow editor"
+      linkText: "See how device management works"
+      linkHref: "/platform/device-agent/"
     - capability: "Connect shop floor events to enterprise systems"
       feature: "Flow-based IT/OT connectivity"
       description: "Move production events, work orders, alarms, and operational data securely between PLCs, edge devices, MES, ERP, cloud platforms, and operator interfaces — without brittle point-to-point integrations or exposing inbound firewall ports."
       imagePath: "images/home/home-dashboard.png"
       imageAlt: "FlowFuse Dashboard"
+      linkText: "Explore production monitoring"
+      linkHref: "/use-cases/production-monitoring/"
 solutions:
     - href: "/use-cases/it-ot-middleware/"
       image: "./images/home/home-itot-middleware.png"
@@ -283,6 +289,10 @@ hubspot:
                 <p>
                     {{ item.description }}
                 </p>
+                <a href="{{ item.linkHref }}" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center mt-3">
+                    {{ item.linkText }}
+                    {% include "components/icons/arrow-long-right.svg" %}
+                </a>
             </div>
         </div>
         {% endfor %}
