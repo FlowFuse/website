@@ -6,23 +6,14 @@ meta:
     title: "Industrial AI: FlowFuse Expert, Governed and Built In"
     description: "Industrial AI with FlowFuse: build flows with FlowFuse Expert, act on live operations behind approvals, and give your company-sanctioned AI governed access. Every AI capability on one platform, with the permissions, RBAC, and audit your plants require."
 hero:
-    title: "<span class='text-indigo-300'>Industrial AI,</span> Governed and Built In"
+    title: "<span class='text-indigo-600'>Industrial AI,</span> Governed and Built In"
     description:
-        - "FlowFuse is the control plane for industrial operations. FlowFuse Expert, our AI, is the accelerator: it turns natural language into working flows, acts on live systems behind approvals, and lets your company's AI reach operations through a boundary you govern."
         - "AI capability is table stakes in 2026. Governed access to your operations is the difference."
     buttonText: "Request a Demo"
     buttonLink: "/book-demo/"
     buttonReference: "ai"
     img: ./images/ai/ai-hero.png
     imgAlt: "FlowFuse Expert AI icon with connecting lines flowing out"
-platform:
-    title: "The platform is the <span class='text-indigo-600'>control plane.</span> Expert is the <span class='text-indigo-600'>accelerator.</span>"
-    subtitle: "Ask what you need. Let it build, then govern every action."
-    description:
-        - "FlowFuse Expert grounds its work in the live plant data you expose, and every action it takes runs inside the platform's permissions, approvals and audit, so IT and OT can move fast without giving up control."
-        - "FlowFuse combines Node-RED's 5,000+ community nodes with FlowFuse Expert and enterprise governance, so teams can build and deploy across plants without waiting on scarce developers."
-    image: images/ai/ai-ui.png
-    imgAlt: "FlowFuse Expert showing AI-generated flow suggestions"
 capabilityIntro:
     title: "Every way AI shows up in <span class='text-indigo-600'>your operations</span>"
     subtitle: "From accelerating how you build, to acting inside live flows, to connecting the AI your company already trusts. Each one runs on the same governed platform."
@@ -105,18 +96,9 @@ governance:
         - svgPath: "components/icons/clipboard-document-check.svg"
           title: "Audit on everything"
           description: "Every action AI touches is logged, so you can show exactly what happened and when."
-ctaSection:
-    title: "With <span class='text-indigo-600'>FlowFuse Expert,</span> teams can:"
-    list:
-        - "<span class='font-medium'>Generate Node-RED flows from natural language descriptions</span> of a workflow or integration, so you can connect any machine and protocol faster."
-        - "<span class='font-medium'>Draft and edit Function node code</span> (JavaScript), UI templates (HTML/CSS/JS), SQL queries, and JSON configurations using the FlowFuse Expert in the editor, so you can transform and model data in any platform without starting from scratch."
-        - "<span class='font-medium'>Empower Operations and Process Engineers</span> to quickly build new dashboards, widgets, and queries using plain-language descriptions of the desired views or KPIs, reducing reliance on IT support."
-        - "<span class='font-medium'>Query systems in natural language</span> with Insights-mode agents, so operators and engineers get answers grounded in live machine state, alarms, and logs, not stale documentation. Exposing that operational data to your company's own AI over Model Context Protocol (MCP) is our most-requested capability and is in active development."
-    img: ./images/ai/ai-cta.png
-    imgAlt: "Plant worker interacting with AI on a tablet, connected to the entire factory"
 ---
 <!--Hero Content (background-image treatment, pattern from the homepage hero) -->
-<section class="w-full relative bg-indigo-800">
+<section class="w-full relative bg-white">
     <!-- Animated video background (container-port aerial), sized by the script
          below to reach the middle of the AI input box then masked out, mirroring
          the industry-page hero video treatment. -->
@@ -130,13 +112,16 @@ ctaSection:
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
             <div class="container m-auto text-left max-w-screen-lg">
                 <div class="mx-auto">
-                    <h1 class="font-medium home m-auto text-center text-white mb-16 max-w-2xl">
-                        {{ hero.title | safe }}
-                    </h1>
-                    {% for p in hero.description %}
-                        <p class="text-center max-w-4xl mx-auto text-indigo-100">{{ p | safe }}</p>
-                    {% endfor %}
-                    <div class="mt-20">
+                    <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl px-6 py-8 md:px-10 md:py-10 max-w-3xl mx-auto">
+                        <h1 class="font-medium home m-auto text-center text-gray-900 mb-6 max-w-2xl">
+                            {{ hero.title | safe }}
+                        </h1>
+                        <p class="text-center text-xl md:text-2xl font-medium text-gray-800 max-w-2xl mx-auto mb-6">The platform is the <span class="text-indigo-600">control plane.</span> AI is the <span class="text-indigo-600">accelerator.</span></p>
+                        {% for p in hero.description %}
+                            <p class="text-center max-w-4xl mx-auto text-gray-600">{{ p | safe }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="mt-10">
                         <!-- AI Chat Interface -->
                         {% include "components/ai-chat-interface.njk" %}
 
@@ -166,30 +151,6 @@ ctaSection:
     })();
     </script>
 </section>
-    <!--Platform: the unifying statement (control plane + accelerator)-->
-    <div class="w-full py-16 sm:py-24 px-6">
-        <div class="md:flex md:my-12 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
-            <div class="m-auto md:w-[36%]">
-                <h2 class="w-full mt-0">
-                    {{ platform.title | safe }}
-                </h2>
-                <h4 class="font-grey-500 mt-3 max-md:mb-8">{{ platform.subtitle }}</h4>
-                {% for p in platform.description %}
-                <p>
-                    {{ p | safe }}
-                </p>
-                {% endfor %}
-            </div>
-            <div class="md:w-[64%] flex-grow md:self-center relative max-md:mt-10">
-                <div class="w-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
-                    <div class="w-full bg-white ff-image-cover ff-image-rounded left">
-                    {% set imageSrc = ["./", platform.image ] | join %}
-                    {% image imageSrc, imageDescription, [1200] %}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- CAPABILITIES: every AI use case, formalized, grouped by how it shows up in operations.
      NOTE: Predictive analytics and Edge ML are intentionally omitted from public claims
      (not shipped / not on the roadmap). Do not add them here without product sign-off. -->
@@ -249,35 +210,6 @@ ctaSection:
                 <p class="text-sm text-gray-600 font-light m-0">{{ g.description }}</p>
             </div>
             {% endfor %}
-        </div>
-    </div>
-</div>
-<!--CTA-->
-<div class="w-full bg-indigo-50/60 py-16 sm:py-24 px-6 border-t border-gray-100">
-    <div class="md:flex items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
-        <div class="md:w-1/3 flex-grow relative max-md:mb-16 max-md:max-w-md max-md:mx-auto">
-            <div class="ff-image-cover left ff-image-rounded w-full h-full">
-                {% image ctaSection.img, ctaSection.imgAlt, [496] %}
-            </div>
-        </div>
-        <div class="md:2/3">
-            <h2>{{ ctaSection.title | safe }}</h2>
-            <div class="ff-prose prose mt-8">
-                <ul class="list-disc text-left">
-                    {% for item in ctaSection.list %}
-                    <li>
-                        {{ item | safe }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                <div class="flex max-sm:flex-col max-sm:w-full gap-3 mt-10">
-                    <a class="ff-btn ff-btn--primary no-underline text-base flex inline uppercase md:min-h-[40px] max-sm:mt-6 max-sm:w-full max-md:mx-auto"
-                    href="{% include "sign-up-url.njk" %}"
-                    onclick="capture('cta-trial', {'reference': '{{ hero.buttonReference }}'})">
-                    Try it on FlowFuse Cloud
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </div>
