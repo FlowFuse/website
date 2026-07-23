@@ -36,7 +36,7 @@ capabilityGroups:
           svgPath: "components/icons/squares-plus.svg"
           status: "Available"
           statusKind: "live"
-          description: "Start from an agent blueprint to stand up a task-specific AI agent grounded in your own data, tools and context. The blueprint gives you a proven structure to adapt rather than wiring an agent up from scratch. Because it runs on the platform, the agent operates within the access you grant it."
+          description: "Start from an agent blueprint, like the <a href='/blueprints/ai/llm-chat-agent/' class='text-indigo-600 hover:text-indigo-800 underline'>LLM chat agent</a> or <a href='/blueprints/ai/rag-chat-agent/' class='text-indigo-600 hover:text-indigo-800 underline'>RAG chat agent</a>, to stand up a task-specific AI agent grounded in your own data, tools and context. It gives you a proven structure to adapt rather than wiring an agent up from scratch. With MCP servers you can give the agent access to anything, including your RAG applications. Because it runs on the platform, the agent operates within the access you grant it."
         - name: "Built-in product expert"
           svgPath: "components/icons/book-open.svg"
           status: "Available"
@@ -61,6 +61,11 @@ capabilityGroups:
           status: "Available"
           statusKind: "live"
           description: "Run ONNX vision models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant."
+        - name: "Use any model within flows"
+          svgPath: "components/icons/cog-6-tooth.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control."
     - title: "Connect and govern your AI"
       eyebrow: "Connect"
       subtitle: "Give the AI your company already trusts a governed door into operations, on a boundary you control."
@@ -75,11 +80,6 @@ capabilityGroups:
           status: "Available"
           statusKind: "live"
           description: "Build your own MCP servers and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register."
-        - name: "Use your own model"
-          svgPath: "components/icons/cog-6-tooth.svg"
-          status: "Available"
-          statusKind: "live"
-          description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control."
 governance:
     title: "Governance you can <span class='text-indigo-600'>prove</span>"
     subtitle: "The control plane every AI action runs through, the same one that governs your teams."
@@ -220,7 +220,7 @@ governance:
 <div class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-t border-gray-100">
     <div class="max-w-screen-lg mx-auto">
         <h2 class="max-md:text-center">Where AI meets <span class="text-indigo-600">your operations</span></h2>
-        <p class="mt-4 max-w-3xl text-gray-600">The use cases teams pair with FlowFuse AI, from governed agent access to AI-assisted monitoring.</p>
+        <p class="mt-4 max-w-3xl text-gray-600">The use cases pair with FlowFuse AI, from governed agent access to AI-assisted monitoring.</p>
         {% set featuredUseCases = ["production-monitoring", "shop-floor-communication"] %}
         {% include "components/use-case-links.njk" %}
         <p class="mt-8"><a href="/use-cases/" class="text-indigo-600 font-semibold">See all use cases</a></p>
