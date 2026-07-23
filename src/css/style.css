@@ -2214,8 +2214,6 @@ lite-youtube::before {
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
-    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
 .ai-hero-bg video {
     position: absolute;
