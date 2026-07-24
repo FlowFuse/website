@@ -9,6 +9,25 @@ export default defineContentConfig({
             type: 'page',
             source: '*.md'
         }),
+        docs: defineCollection({
+            type: 'page',
+            source: 'docs/**/*.md',
+            schema: z.object({
+                navTitle: z.string().optional(),
+                navGroup: z.string().optional(),
+                navOrder: z.number().optional(),
+                originalPath: z.string().optional(),
+                updated: z.string().optional(),
+                version: z.string().optional(),
+                layout: z.string().optional(),
+                redirect: z.object({
+                    to: z.string(),
+                }).optional(),
+                meta: z.object({
+                    description: z.string().optional(),
+                }).optional(),
+            })
+        }),
         handbook: defineCollection({
             type: 'page',
             source: 'handbook/**',

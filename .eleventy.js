@@ -55,7 +55,7 @@ console.info(`[11ty] Image build profile: ${IMAGE_BUILD_PROFILE}`)
 module.exports = function(eleventyConfig) {
 
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
-    eleventyConfig.setUseGitIgnore(false); // Otherwise docs are ignored
+    eleventyConfig.setUseGitIgnore(false); // Blueprints are generated into gitignored src/blueprints/, so they must not be ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
@@ -832,10 +832,10 @@ module.exports = function(eleventyConfig) {
         return results;
     }
 
-    // Inject tier badges into docs pages: parent feature after H1, subfeatures after their headings
+    // Inject tier badges into node-red pages: parent feature after H1, subfeatures after their headings
     eleventyConfig.addTransform("docsFeatureBadges", function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
-        if (!this.page.url || !/^(\/docs\/|\/node-red\/)/.test(this.page.url)) return content;
+        if (!this.page.url || !/^\/node-red\//.test(this.page.url)) return content;
 
         const parentFeature = findFeatureByDocsLink(this.page.url);
         const subfeatures = findSubfeaturesForDocsPage(this.page.url);
@@ -1018,135 +1018,9 @@ module.exports = function(eleventyConfig) {
         return await imageHandler(imageSrc, imageDescription, title, [imageSize], null, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES, priority);
     });
     
-    // Create a collection for sidebar navigation
-    eleventyConfig.addCollection('nav', function(collection) {
-        let nav = {}
-
-        createNav('docs')
-
-        function createNav(tag) {
-            const groupOrder = {
-                docs: [
-                    'FlowFuse User Manuals',
-                    'Device Agent',
-                    'FlowFuse Cloud',
-                    'FlowFuse Self-Hosted',
-                    'Support',
-                    'Contributing'
-                ]
-            }
-
-            collection.getFilteredByTag(tag).filter((page) => {
-                return !page.url.includes('README')
-            }).sort((a, b) => {
-                // sort by depth, so we catch all the correct index.md routes
-                const hierarchyA = a.url.split('/').filter(n => n)
-                const hierarchyB = b.url.split('/').filter(n => n)
-                return hierarchyA.length - hierarchyB.length
-            }).forEach((page) => {
-                let url = page.url
-
-                // work out ToC Hierarchy
-                // split the folder URI/URL, as this defines our TOC Hierarchy
-                const hierarchy = url.split('/').filter(n => n)
-                // recursively parse the folder hierarchy and created our collection object
-                // pass nav = {} as the first accumulator - build up hierarchy map of TOC
-                hierarchy.reduce((accumulator, currentValue, i) => {
-                    // create a nested object detailing the full docs hierarchy
-                    if (!accumulator[currentValue]) {
-                        accumulator[currentValue] = {
-                            'name': currentValue,
-                            'url': page.data.redirect?.to || page.data.redirect || page.url,
-                            'order': page.data.navOrder || Number.MAX_SAFE_INTEGER,
-                            'children': {}
-                        }
-                        if (page.data.navTitle) {
-                            accumulator[currentValue].name = page.data.navTitle
-                        }
-                        // TODO: navGroup will be used in the rendering of the ToC at a later stage
-                        if (page.data.navGroup) {
-                            accumulator[currentValue].group = page.data.navGroup
-                        }
-                    }
-                    return accumulator[currentValue].children
-                }, nav)
-            })
-
-            // recursive functions to format our nav map to arrays
-            function childrenToArray (children) {
-                return Object.values(children)
-            }
-            function nestedChildrenToArray (value) {
-                for (const [key, entry] of Object.entries(value)) {
-                    if (entry.children && Object.keys(entry.children).length > 0) {
-                        // ensure our grandchildren are all converted to arrays before
-                        // we convert the higher level object to an array
-                        nestedChildrenToArray(entry.children)
-                        // now we have converted all grandchildren,
-                        // we can convert our children to an array
-                        entry.children = childrenToArray(entry.children)
-                    } else {
-                        delete entry.children
-                    }
-                }
-
-            }
-            // convert our objects to arrays so we can render in nunjucks
-            nestedChildrenToArray(nav)
-
-            // add functionality to group to-level items for better navigation.
-            let groups = {
-                'Other': {
-                    name: 'Other',
-                    order: Number.MAX_SAFE_INTEGER,    // always render last
-                    children: []
-                }
-            }
-
-            if (nav[tag]) {
-                for (child of nav[tag].children) {
-                    if (child.group) {
-                        const group = child.group
-                        if (!groups[group]) {
-                            groups[group] = {
-                                name: group,
-                                order: groupOrder[tag] && groupOrder[tag].includes(group) ? groupOrder[tag].indexOf(group) : Number.MAX_SAFE_INTEGER,
-                                children: []
-                            }
-                        }
-                        groups[group].children.push(child)
-                    } else {
-                        // capture & flag top-level docs that haven't had a group assigned
-                        groups['Other'].children.push(child)
-                    }
-                }
-
-                function sortChildren (a, b) {
-                    // sort children by 'order', then alphabetical
-                    return (a.order - b.order) || a.name.localeCompare(b.name)
-                }
-
-                function sortTree (node) {
-                    if (!node || !node.children || !Array.isArray(node.children)) {
-                        return
-                    }
-
-                    node.children.sort(sortChildren)
-                    node.children.forEach(sortTree)
-                }
-
-                nav[tag].groups = Object.values(groups).sort(sortChildren)
-
-                nav[tag].groups.forEach((group) => {
-                    if (group.children) {
-                        sortTree(group)
-                    }
-                })
-            }
-        }
-
-        return nav;
-    });
+    // Placeholder: docs nav collection removed (docs served by Nuxt)
+    // Docs nav moved to Nuxt; this empty collection keeps left-nav.njk from erroring
+    eleventyConfig.addCollection('nav', function() { return {} });
 
     eleventyConfig.addCollection("aiBlog", function(collectionApi) {
         return collectionApi.getFilteredByTag("ai").filter(item => {
