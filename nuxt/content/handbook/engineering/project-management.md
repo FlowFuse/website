@@ -108,6 +108,38 @@ We review:
 
 The project board is updated to reflect reality. This is about accuracy and learning, not blame.
 
+## Milestones
+
+We use milestones to group work into larger releases. Milestone number corresponds to the FlowFuse release number.
+
+### Creating Milestones
+
+To maintain consistency between repositories, milestones are created with the `generate-milestone` script from the `flowfuse/admin` repository.
+
+To create a new milestone:
+
+* Modify the `MILESTONES` array in the `generate-milestone` script to include the new milestone number
+* The array contains a milestone number and the release date in the format `("<milestone number> <release date>")`
+* Remove milestones from the array that are already closed or shipped
+* Run the `generate-milestone` script
+
+```bash
+./generate-milestone
+```
+
+### Closing Milestones
+
+When a milestone is shipped, it should be closed in all repositories. This is done with the `Close Milestones` GitHub Action in the `flowfuse/admin` repository.
+
+A milestone will be closed only if all of its issues, across all repositories, are closed. If there are open issues in any repository linked to the milestone, it will remain open.
+
+The `Close Milestones` GitHub Action is triggered manually. To close a milestones:
+
+* Open the [`Close Milestones`](https://github.com/FlowFuse/admin/actions/workflows/close-milestones.yml) workflow in the `flowfuse/admin` repository
+* Click the `Run workflow` button
+* Deselect the `Run in dry-run mode` checkbox
+* Press the `Run workflow` button
+
 ## Development Board
 
 We use a GitHub Project board to make work visible and to reflect sprint reality.
