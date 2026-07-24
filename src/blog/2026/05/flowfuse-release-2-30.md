@@ -23,7 +23,7 @@ features:
 cta:
   type: contact
   title: Get FlowFuse Expert Application Building enabled for your team
-  description: Application Building is in soft launch on FlowFuse Cloud Starter, Team, and Enterprise. Request access to enable it for your team.
+  description: Application Building is in soft launch on FlowFuse Cloud Team and Enterprise. Request access to enable it for your team.
 tldr: "FlowFuse 2.30 introduces agentic application building: describe the industrial flow you need and FlowFuse Expert assembles it on your Node-RED workspace. The release also delivers a more immersive editor layout, more usable snapshot comparisons, SSO enforcement for enterprises, and device editor auto-recovery."
 ---
 
@@ -49,7 +49,7 @@ Start your agentic development with for example:
 
 ### Availability
 
-Agentic Node-RED development is being soft launched to create a window of opportunity to fine tune the experience in order to scale right after. Right now it is available on **FlowFuse Cloud Starter, Team, and Enterprise on request**. Self-hosted enablement follows shortly.
+Agentic Node-RED development is being soft launched to create a window of opportunity to fine tune the experience in order to scale right after. Right now it is available on **FlowFuse Cloud Team and Enterprise on request**. Self-hosted enablement follows shortly.
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to let us enable Agentic Node-RED development for your FlowFuse Cloud team. Please make sure to provide the email address associated with your FlowFuse Cloud team.
 

@@ -40,7 +40,7 @@ The result is output you can trust to match what you expect, so you reach your i
 
 ## Get started in two minutes
 
-FlowFuse Expert is in open beta on FlowFuse Cloud (Starter, Team, and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
+FlowFuse Expert is in open beta on FlowFuse Cloud (Team and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 
