@@ -12,7 +12,7 @@ FlowFuse is available as an unlicensed open-source edition (always self-managed)
 
 The [Buyer-Based Open Core (BBOC)](https://opencoreventures.com/blog/2023-01-open-core-standard-pricing-model/) principle is a fundamental guideline in our product
 development and monetization strategy. It's a framework we employ to discern which features should be open source and which should be proprietary. 
-BBOC aligns features into tiers based on their target users or 'buyers' — individual contributors, management, or executives.
+BBOC aligns features into tiers based on their target users or 'buyers': individual contributors, management, or executives.
 
 Features that are most beneficial to individual contributors, such as PLC engineers and line workers, sit lower in our packaging. Features that have broader organizational relevance, like Edge Connectivity or high availability, are offered in higher, licensed editions targeted towards IIoT managers and plant managers who need to manage multiple Node-RED instances.
 
