@@ -149,8 +149,17 @@
     margin-right: auto;
 }
 
+.pricing-tiles--single {
+    grid-template-columns: minmax(0, 24rem);
+    justify-content: center;
+}
+
 .contentSelfHosted .pricing-tiles {
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contentSelfHosted .pricing-tiles--single {
+    grid-template-columns: minmax(0, 24rem);
 }
 
 .pricing-tile {
