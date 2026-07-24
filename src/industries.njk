@@ -13,7 +13,7 @@ meta:
         <div class="max-w-screen-lg mx-auto py-16 sm:py-24 text-center">
             <p class="uppercase text-sm font-semibold text-indigo-500 mb-4">Industries</p>
             <h1 class="m-auto max-w-3xl font-medium">Built for the way <span class="text-indigo-600">your industry</span> operates</h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">FlowFuse meets manufacturers where they are — connecting OT and IT systems, automating workflows, and standardizing operations across every site.</p>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">FlowFuse meets manufacturers where they are, connecting OT and IT systems, automating workflows, and standardizing operations across every site.</p>
             <div class="mt-10 flex flex-wrap gap-4 justify-center">
                 <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'page': 'industries-hub'})">Talk to an expert</a>
             </div>
@@ -25,13 +25,21 @@ meta:
         <div class="max-w-screen-lg mx-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {% for industry in collections["industry"] | sort(false, true, "data.meta.title") %}
-                <a href="{{ industry.url }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
-                    <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ industry.data.meta.title | replace(" | FlowFuse", "") | replace("| FlowFuse", "") }}</h3>
-                    <p class="m-0 text-gray-600 text-sm flex-grow">{{ industry.data.meta.description }}</p>
-                    <span class="mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
-                        View industry
-                        <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
-                    </span>
+                {% set cardImage = industry.data.hero.video.poster or industry.data.hero.image %}
+                <a href="{{ industry.url }}" class="group hover:no-underline flex flex-col rounded-xl border border-gray-200 bg-white overflow-hidden hover:border-indigo-300 hover:shadow-sm transition-all">
+                    {% if cardImage %}
+                    <div class="aspect-[16/9] w-full ff-image-cover bg-gray-100">
+                        {% image ["./", cardImage] | join, industry.data.hero.imageAlt or industry.data.meta.title, [560] %}
+                    </div>
+                    {% endif %}
+                    <div class="flex flex-col gap-3 p-6">
+                        <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ industry.data.meta.title | replace(" | FlowFuse", "") | replace("| FlowFuse", "") }}</h3>
+                        <p class="m-0 text-gray-600 text-sm flex-grow">{{ industry.data.meta.description }}</p>
+                        <span class="mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
+                            View industry
+                            <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                        </span>
+                    </div>
                 </a>
                 {% endfor %}
             </div>
