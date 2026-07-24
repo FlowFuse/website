@@ -15,13 +15,13 @@
       <table class="border-collapse text-sm" style="width: max-content; min-width: 100%;">
         <colgroup>
           <col style="width: 220px;" />
-          <col v-for="n in 12" :key="n" :style="n <= 6 ? 'width: 110px;' : 'width: 100px;'" />
+          <col v-for="n in 10" :key="n" :style="n <= 4 ? 'width: 110px;' : 'width: 100px;'" />
         </colgroup>
         <thead>
           <tr>
             <th class="py-3 px-4 text-left align-bottom border-b-2 border-gray-200" rowspan="2">Feature</th>
-            <th colspan="3" class="py-3 px-4 text-center border border-gray-200 rounded-lg border-l-2 border-l-gray-300">FlowFuse Cloud</th>
-            <th colspan="3" class="py-3 px-4 text-center border border-gray-200 rounded-lg border-l-2 border-l-gray-300">Self Hosted</th>
+            <th colspan="2" class="py-3 px-4 text-center border border-gray-200 rounded-lg border-l-2 border-l-gray-300">FlowFuse Cloud</th>
+            <th colspan="2" class="py-3 px-4 text-center border border-gray-200 rounded-lg border-l-2 border-l-gray-300">Self Hosted</th>
             <th colspan="6" class="py-3 px-4 text-center border border-gray-200 rounded-lg border-l-2 border-l-gray-300">Solutions</th>
           </tr>
           <tr>
@@ -36,7 +36,7 @@
         <tbody>
           <template v-for="section in sections" :key="section.label">
             <tr>
-              <td colspan="13" class="py-2 px-4 bg-gray-100 font-semibold text-gray-600 text-xs uppercase tracking-wide">{{ section.label }}</td>
+              <td colspan="11" class="py-2 px-4 bg-gray-100 font-semibold text-gray-600 text-xs uppercase tracking-wide">{{ section.label }}</td>
             </tr>
             <tr v-for="feature in section.features" :key="feature.id" class="border-t border-gray-100 hover:bg-gray-50">
               <td class="py-3 px-4 align-top border-r border-gray-100" :class="{ 'pl-8': feature.subfeature }">
@@ -66,7 +66,7 @@
                     <template v-if="cellOf(feature, group, tier) && cellOf(feature, group, tier).note"><br v-if="cellOf(feature, group, tier).value" /><span class="text-gray-500 text-xs">{{ cellOf(feature, group, tier).note }}</span></template>
                   </td>
                 </template>
-                <td v-else colspan="3" class="py-3 px-4 text-center text-gray-300 border-r border-gray-100 border-l-2 border-l-gray-300">N/A</td>
+                <td v-else colspan="2" class="py-3 px-4 text-center text-gray-300 border-r border-gray-100 border-l-2 border-l-gray-300">N/A</td>
               </template>
 
               <td
@@ -92,16 +92,14 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const featureCatalog = parseYaml(featureCatalogRaw) || {}
 const sections = featureCatalog.sections || []
 
-const tiers = ['starter', 'pro', 'enterprise']
+const tiers = ['pro', 'enterprise']
 const groups = ['cloud', 'selfHosted']
 const solutions = ['mes', 'scada', 'uns', 'edge-connectivity', 'it-ot-middleware', 'data-integration']
 
 const tierHeaders = [
-  { key: 'c-starter', label: 'Starter', first: true },
-  { key: 'c-pro', label: 'Pro', first: false },
+  { key: 'c-pro', label: 'Pro', first: true },
   { key: 'c-enterprise', label: 'Enterprise', first: false },
-  { key: 'sh-starter', label: 'Starter', first: true },
-  { key: 'sh-pro', label: 'Pro', first: false },
+  { key: 'sh-pro', label: 'Pro', first: true },
   { key: 'sh-enterprise', label: 'Enterprise', first: false },
   { key: 'mes', label: 'MES', first: true },
   { key: 'scada', label: 'SCADA', first: false },
