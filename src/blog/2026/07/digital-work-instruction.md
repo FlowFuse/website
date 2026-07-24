@@ -1,23 +1,75 @@
 ---
 title: "Building Digital Work Instructions for the Shop Floor"
-subtitle: ""
-description: ""
-date: 2026-07-08
+subtitle: "Give every operator their own work instructions, progress, and production history."
+description: "Learn how to build digital work instructions with FlowFuse. Create personalized operator apps with work orders, guided steps, defect reporting, and traceability."
+date: 2026-07-24
 authors: ["sumit-shinde"]
-image: https://placehold.co/1200x630/eef2f7/475569?text=Digital+Work+Instructions
+image: /blog/2026/07/images/digital-work-instructions.png
 tags:
   - flowfuse
+tldr: "Build a FlowFuse digital work instructions application that authenticates each operator, loads only their assigned work orders, guides them step by step with per-operator progress tracking, and lets them report defects, all tied to their logged-in identity."
+meta:
+  howto:
+    name: "How to Build Digital Work Instructions for the Shop Floor"
+    description: "Set up FlowFuse User Authentication and the Dashboard user addon, seed the logged-in operator into context, build a Home page with personalized work orders, an Instructions page that remembers each operator's step, and a Report Issue flow linked to the current work order."
+    tool:
+      - "FlowFuse"
+      - "FlowFuse Dashboard 2.0"
+      - "FlowFuse User Authentication"
+      - "FlowFuse Dashboard User Addon"
+    steps:
+      - name: "Import the simulated work order flow"
+        text: "Import a flow that exposes sample REST endpoints for fetching work orders, marking defects, completing orders, and computing stats, so the app can be built and tested without a live ERP or MES."
+        url: "importing-the-simulated-flow"
+      - name: "Set up the dashboard layout"
+        text: "Create the Home, Instructions, and Report Issue pages and their groups, so each widget added later has a defined place to live."
+        url: "setting-up-the-dashboard-layout"
+      - name: "Enable authentication and seed the operator into context"
+        text: "Turn on FlowFuse User Authentication, install the Dashboard user addon, greet the logged-in operator in the app bar, and copy their user object into persistent global context on connect so any node can look up who's active."
+        url: "enabling-flowfuse-user-authentication"
+      - name: "Build the Home page"
+        text: "Fetch and display the station name, live work order stats, and the operator's own work orders, split into a current order card and an Up Next queue sorted by priority."
+        url: "showing-the-station-and-stats-on-the-home-page"
+      - name: "Build the Instructions page with per-operator progress"
+        text: "Load the cached instruction set, save and resume each operator's step under their username so shared stations never overwrite one another, and post the completed operation back to the API."
+        url: "remembering-each-operators-step"
+      - name: "Build the Report Issue flow and reset state"
+        text: "Let operators log a defect against their current work order from a form, then clear their saved step once a work order is completed or a defect is reported so the next job starts fresh."
+        url: "reporting-a-defect-as-the-logged-in-operator"
+  faq:
+    - question: "What are digital work instructions?"
+      answer: "Digital work instructions are step-by-step guides delivered on a screen instead of paper, walking an operator through a task with images, checklists, target times, and a way to flag defects, while also tracking who did what and when."
+    - question: "How do digital work instructions improve traceability over paper?"
+      answer: "Because the app knows who's logged in, every completed step, defect report, and finished work order can be tied to a specific operator and timestamp automatically, something a shared paper binder can't provide."
+    - question: "Can multiple operators share the same station or device?"
+      answer: "Yes. As long as each operator logs in with their own account, the app keeps their work orders, current step, and progress separate, so a shared screen never mixes up two people's work."
+    - question: "Do digital work instructions require a connection to an ERP or MES?"
+      answer: "Not necessarily. They typically pull data such as work orders and instructions from a backend system like an ERP or MES, but the same interface can run against a simulated or standalone data source while it's being built or tested."
+    - question: "What happens if an operator is interrupted partway through a task?"
+      answer: "A well-built system saves progress as the operator moves through each step, so they can resume from where they left off rather than starting the task over."
+cta:
+  type: contact
+  title: "Want to connect this to your real ERP or MES?"
+  description: "Talk to our team about integrating digital work instructions with your production systems, adding full traceability, and rolling this out across your shop floor."
 ---
 
-An operator walks up to a station and needs to know what to build, how to build it, and what to do when something breaks. Digital work instructions put all of that on a screen, guided steps, a checklist, and buttons to finish or flag a defect, and retire the paper binder for good.
+Operators need to know what to build, how to build it, and what to do when something breaks. Digital work instructions put that on a screen, guided steps, a checklist, buttons to finish or flag a defect, and retire the paper binder.
 
-But a screen that guides work raises a question paper never had to: who's using it? Stations get shared across shifts, and if the app can't tell operators apart, the work order, the current step, and the record of what happened all blur together.
+<!--more-->
 
-Authentication draws the line. Log the operator in, and their identity becomes the thread the app hangs on, the work orders they see, the step they resume at, and the name on every operation they finish and every defect they raise.
+But shared stations raise a question paper never had: who's using it? Without a way to tell operators apart, the work order, the current step, and the record of what happened all blur together. Authentication draws the line, the operator's identity becomes the thread the app hangs on.
 
-In this article, we'll build a digital work instructions application using FlowFuse. We'll create a simple operator interface that displays work orders, guides assembly with step-by-step instructions, allows defects to be reported, and shows how authentication enables traceability across shared production stations.
+![Digital work instructions dashboard showing operator work orders, production status](./images/digital-work-instruction-dashboard.png)
+*Digital work instructions dashboard showing operator work orders, production status*
 
-You can interact with the live demo here: **[Try the Digital Work Instructions Demo](https://expensive-pied-flycatcher-5052.flowfuse.cloud/dashboard/home)**.
+![Operator interface displaying guided work instructions with step completion and defect reporting options](./images/digital-work-instruction-2.png)
+*Operator interface displaying guided work instructions with step completion and defect reporting options*
+
+In this article, we'll build a digital work instructions app in FlowFuse: an operator interface with work orders, step-by-step assembly guidance, defect reporting, and traceability via authentication.
+
+> **Note:** Before trying the demo, [sign up](https://app.flowfuse.com/account/create) for a FlowFuse account and start a free trial. The demo uses FlowFuse User Authentication, so you'll need to sign in to access the dashboard and see your personalized work orders and saved progress.once logged in wait for few seconds so simulation flow get your user and generate simulated workorders assigned to you 
+
+You can interact with the live demo here: <a href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Digital Work Instruction Dashboard Demo</a>.
 
 ## What You'll Need
 
@@ -38,8 +90,6 @@ Before we build anything, let's walk through what the app does and how the piece
 2. **Instructions.** Operators follow step-by-step instructions with images, checklists, and target cycle times. They can progress through each step, complete the operation, or report an issue at any time.
 3. **Report Issue.** Operators can quickly log defects by selecting the issue type, severity, affected part, and description, with the issue automatically linked to the current work order.
 
-![Placeholder: overview diagram of the Home, Instructions, and Report Issue pages and how they connect](https://placehold.co/1200x600/eef2f7/475569?text=App+Overview%3A+Home+%E2%86%92+Instructions+%E2%86%92+Report+Issue) *A quick overview of the three pages and how an operator moves between them.*
-
 The logged-in username acts as the application's lookup key. It retrieves the operator's assigned work orders and stores their active work order and current step, allowing them to resume exactly where they left off, even on shared production stations.
 
 ## Importing the Simulated Flow
@@ -49,65 +99,83 @@ Instead of connecting to a real ERP or MES, we'll use a simple simulated backend
 1. Import the following flow into FlowFuse and click **Deploy**.
 
 {% renderFlow 300 %}
-[{"id":"83cd1b1c4cc8e310","type":"group","z":"3012f9c2796b5b41","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["40f06650e63decd4","e2029fe905afc20a","5a2c1cb7932accb9","f2334a5d527a684a","f65db363fdde0eba","cdda81f6a2701b7c","8554ad9dfdb36f54","6dd109a105da5dd5","439862e5c86675cd","9d853fad37785bec","3506d88cd094d44c","wo_stats_http_in","wo_stats_func","wo_stats_response"],"x":44,"y":59,"w":652,"h":482},{"id":"40f06650e63decd4","type":"inject","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":170,"y":100,"wires":[["e2029fe905afc20a"]]},{"id":"e2029fe905afc20a","type":"change","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","rules":[{"t":"set","p":"#:(persistent)::workOrders","pt":"global","to":"[{\"workOrderId\":\"WO-10245\",\"stationId\":\"ST12\",\"status\":\"Ready\",\"priority\":\"High\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567890\",\"model\":\"Sedan X\",\"variant\":\"Premium\",\"color\":\"White\"},\"operation\":{\"operationId\":\"OP_WHEEL_FL\",\"name\":\"Install Front Left Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS001\"}},{\"workOrderId\":\"WO-10246\",\"stationId\":\"ST12\",\"status\":\"Waiting\",\"priority\":\"Normal\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567891\",\"model\":\"SUV Y\",\"variant\":\"Standard\",\"color\":\"Black\"},\"operation\":{\"operationId\":\"OP_WHEEL_FR\",\"name\":\"Install Front Right Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS002\"}},{\"workOrderId\":\"WO-10247\",\"stationId\":\"ST12\",\"status\":\"Queued\",\"priority\":\"Low\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567892\",\"model\":\"Sedan X\",\"variant\":\"Sport\",\"color\":\"Red\"},\"operation\":{\"operationId\":\"OP_WHEEL_FL\",\"name\":\"Install Front Left Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS001\"}},{\"workOrderId\":\"WO-10248\",\"stationId\":\"ST12\",\"status\":\"Ready\",\"priority\":\"Critical\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567893\",\"model\":\"Truck Z\",\"variant\":\"Heavy Duty\",\"color\":\"Blue\"},\"operation\":{\"operationId\":\"OP_WHEEL_FR\",\"name\":\"Install Front Right Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS002\"}},{\"workOrderId\":\"WO-10249\",\"stationId\":\"ST12\",\"status\":\"Waiting\",\"priority\":\"Normal\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567894\",\"model\":\"Hatchback W\",\"variant\":\"Base\",\"color\":\"Silver\"},\"operation\":{\"operationId\":\"OP_WHEEL_FL\",\"name\":\"Install Front Left Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS001\"}},{\"workOrderId\":\"WO-10250\",\"stationId\":\"ST12\",\"status\":\"Ready\",\"priority\":\"High\",\"assignedTo\":\"operator4\",\"vehicle\":{\"vin\":\"MH01AB1234567895\",\"model\":\"SUV Y\",\"variant\":\"Premium\",\"color\":\"Grey\"},\"operation\":{\"operationId\":\"OP_WHEEL_FR\",\"name\":\"Install Front Right Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS002\"}},{\"workOrderId\":\"WO-10251\",\"stationId\":\"ST12\",\"status\":\"Waiting\",\"priority\":\"Normal\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567896\",\"model\":\"Sedan X\",\"variant\":\"Standard\",\"color\":\"Blue\"},\"operation\":{\"operationId\":\"OP_WHEEL_FL\",\"name\":\"Install Front Left Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS001\"}},{\"workOrderId\":\"WO-10252\",\"stationId\":\"ST12\",\"status\":\"Queued\",\"priority\":\"Low\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567897\",\"model\":\"Truck Z\",\"variant\":\"Standard\",\"color\":\"White\"},\"operation\":{\"operationId\":\"OP_WHEEL_FR\",\"name\":\"Install Front Right Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS002\"}},{\"workOrderId\":\"WO-10253\",\"stationId\":\"ST12\",\"status\":\"Ready\",\"priority\":\"Critical\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567898\",\"model\":\"Hatchback W\",\"variant\":\"Sport\",\"color\":\"Yellow\"},\"operation\":{\"operationId\":\"OP_WHEEL_FL\",\"name\":\"Install Front Left Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS001\"}},{\"workOrderId\":\"WO-10254\",\"stationId\":\"ST12\",\"status\":\"Waiting\",\"priority\":\"Normal\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567899\",\"model\":\"SUV Y\",\"variant\":\"Base\",\"color\":\"Black\"},\"operation\":{\"operationId\":\"OP_WHEEL_FR\",\"name\":\"Install Front Right Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS002\"}},{\"workOrderId\":\"WO-10255\",\"stationId\":\"ST12\",\"status\":\"Ready\",\"priority\":\"High\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567900\",\"model\":\"Sedan X\",\"variant\":\"Premium\",\"color\":\"Red\"},\"operation\":{\"operationId\":\"OP_WHEEL_FL\",\"name\":\"Install Front Left Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS001\"}},{\"workOrderId\":\"WO-10256\",\"stationId\":\"ST12\",\"status\":\"Waiting\",\"priority\":\"Normal\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567901\",\"model\":\"Truck Z\",\"variant\":\"Heavy Duty\",\"color\":\"Green\"},\"operation\":{\"operationId\":\"OP_WHEEL_FR\",\"name\":\"Install Front Right Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS002\"}},{\"workOrderId\":\"WO-10257\",\"stationId\":\"ST12\",\"status\":\"Ready\",\"priority\":\"High\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567902\",\"model\":\"SUV Y\",\"variant\":\"Sport\",\"color\":\"White\"},\"operation\":{\"operationId\":\"OP_WHEEL_FL\",\"name\":\"Install Front Left Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS001\"}},{\"workOrderId\":\"WO-10258\",\"stationId\":\"ST12\",\"status\":\"Waiting\",\"priority\":\"Normal\",\"assignedTo\":\"sumitshindeflowfuse\",\"vehicle\":{\"vin\":\"MH01AB1234567903\",\"model\":\"Sedan X\",\"variant\":\"Standard\",\"color\":\"Black\"},\"operation\":{\"operationId\":\"OP_WHEEL_FR\",\"name\":\"Install Front Right Wheel\",\"estimatedCycleTime\":45,\"instructionSetId\":\"INS002\"}}]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":440,"y":100,"wires":[[]]},{"id":"5a2c1cb7932accb9","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"GET Work Orders","url":"/workorders","method":"get","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":160,"y":300,"wires":[["f2334a5d527a684a"]]},{"id":"f2334a5d527a684a","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Generate Work Orders","func":"const stationId = msg.req.query.stationId;\n\nconst workOrders = global.get('workOrders', 'persistent') || [];\n\nconst result = workOrders.filter(w =>\n    w.stationId === stationId &&\n    w.status !== 'defect' &&\n    w.status !== 'completed'\n);\n\nmsg.payload = result;\n\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":400,"y":300,"wires":[["f65db363fdde0eba"]]},{"id":"f65db363fdde0eba","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":610,"y":300,"wires":[]},{"id":"cdda81f6a2701b7c","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"POST Mark Defect","url":"/workorders/defect","method":"post","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":160,"y":400,"wires":[["8554ad9dfdb36f54"]]},{"id":"8554ad9dfdb36f54","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Mark Defect","func":"const { workOrderId, issueType, severity, affectedPart, description } = msg.payload || {};\n\nif (!workOrderId || !issueType || !severity || !affectedPart) {\n    msg.statusCode = 400;\n    msg.payload = { error: 'workOrderId, issueType, severity, and affectedPart are required' };\n    return msg;\n}\n\nconst workOrders = global.get('workOrders', 'persistent') || [];\nconst idx = workOrders.findIndex(w => w.workOrderId === workOrderId);\n\nif (idx === -1) {\n    msg.statusCode = 404;\n    msg.payload = { error: 'Work order not found' };\n    return msg;\n}\n\nworkOrders[idx].status = 'defect';\nworkOrders[idx].defect = {\n    issueType,\n    severity,\n    affectedPart,\n    description: description || null,\n    reportedAt: new Date().toISOString()\n};\n\nglobal.set('workOrders', workOrders, 'persistent');\n\nmsg.statusCode = 200;\nmsg.payload = { success: true, workOrder: workOrders[idx] };\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":400,"y":400,"wires":[["6dd109a105da5dd5"]]},{"id":"6dd109a105da5dd5","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":610,"y":400,"wires":[]},{"id":"439862e5c86675cd","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"POST Complete Order","url":"/workorders/complete","method":"post","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":170,"y":500,"wires":[["9d853fad37785bec"]]},{"id":"9d853fad37785bec","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Complete Work Order","func":"const { workOrderId } = msg.payload || {};\n\nif (!workOrderId) {\n    msg.statusCode = 400;\n    msg.payload = { error: 'workOrderId is required' };\n    return msg;\n}\n\nconst workOrders = global.get('workOrders', 'persistent') || [];\nconst idx = workOrders.findIndex(w => w.workOrderId === workOrderId);\n\nif (idx === -1) {\n    msg.statusCode = 404;\n    msg.payload = { error: 'Work order not found' };\n    return msg;\n}\n\nworkOrders[idx].status = 'completed';\nworkOrders[idx].completedAt = new Date().toISOString();\n\nglobal.set('workOrders', workOrders, 'persistent');\n\nmsg.statusCode = 200;\nmsg.payload = { success: true, workOrder: workOrders[idx] };\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":410,"y":500,"wires":[["3506d88cd094d44c"]]},{"id":"3506d88cd094d44c","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":620,"y":500,"wires":[]},{"id":"wo_stats_http_in","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"GET Work Order Stats","url":"/workorders/stats","method":"get","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":180,"y":220,"wires":[["wo_stats_func"]]},{"id":"wo_stats_func","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Compute Stats","func":"const workOrders = global.get('workOrders', 'persistent') || [];\nnode.warn(msg.req.query);\nconst stationId = msg.req.query.stationId;\nconst username = msg.req.query.username;\n\n// Filter only by station\nconst stationWorkOrders = stationId\n    ? workOrders.filter(w => w.stationId === stationId)\n    : workOrders;\n\nconst total = stationWorkOrders.length;\nconst completed = stationWorkOrders.filter(w => w.status === \"completed\").length;\nconst defected = stationWorkOrders.filter(w => w.status === \"defect\").length;\n\n// Filter by user within the station\nconst assignedToMe = username\n    ? stationWorkOrders.filter(w => w.assignedTo === username).length\n    : 0;\n\nmsg.statusCode = 200;\nmsg.payload = {\n    total,\n    completed,\n    defected,\n    assignedToMe\n};\n\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":400,"y":220,"wires":[["wo_stats_response"]]},{"id":"wo_stats_response","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":610,"y":220,"wires":[]}]
+[{"id":"83cd1b1c4cc8e310","type":"group","z":"3012f9c2796b5b41","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["40f06650e63decd4","5a2c1cb7932accb9","f2334a5d527a684a","f65db363fdde0eba","cdda81f6a2701b7c","8554ad9dfdb36f54","6dd109a105da5dd5","439862e5c86675cd","9d853fad37785bec","3506d88cd094d44c","wo_stats_http_in","wo_stats_func","wo_stats_response","6d1644eabb9a5bf5"],"x":44,"y":59,"w":652,"h":482},{"id":"40f06650e63decd4","type":"inject","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"30","crontab":"","once":true,"onceDelay":"3","topic":"","payload":"","payloadType":"date","x":170,"y":100,"wires":[["6d1644eabb9a5bf5"]]},{"id":"5a2c1cb7932accb9","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"GET Work Orders","url":"/workorders","method":"get","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":160,"y":300,"wires":[["f2334a5d527a684a"]]},{"id":"f2334a5d527a684a","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Generate Work Orders","func":"const stationId = msg.req.query.stationId;\nconst username = msg.req.query.username;\n\nconst workOrders = global.get(\"workOrders\", \"persistent\") || [];\n\nconst result = workOrders.filter(w =>\n    w.stationId === stationId &&\n    w.assignedTo === username &&\n    w.status !== \"defect\" &&\n    w.status !== \"completed\"\n);\n\nmsg.payload = result;\n\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":420,"y":300,"wires":[["f65db363fdde0eba"]]},{"id":"f65db363fdde0eba","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":610,"y":300,"wires":[]},{"id":"cdda81f6a2701b7c","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"POST Mark Defect","url":"/workorders/defect","method":"post","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":160,"y":400,"wires":[["8554ad9dfdb36f54"]]},{"id":"8554ad9dfdb36f54","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Mark Defect","func":"const { workOrderId, issueType, severity, affectedPart, description } = msg.payload || {};\n\nif (!workOrderId || !issueType || !severity || !affectedPart) {\n    msg.statusCode = 400;\n    msg.payload = { error: 'workOrderId, issueType, severity, and affectedPart are required' };\n    return msg;\n}\n\nconst workOrders = global.get('workOrders', 'persistent') || [];\nconst idx = workOrders.findIndex(w => w.workOrderId === workOrderId);\n\nif (idx === -1) {\n    msg.statusCode = 404;\n    msg.payload = { error: 'Work order not found' };\n    return msg;\n}\n\nworkOrders[idx].status = 'defect';\nworkOrders[idx].defect = {\n    issueType,\n    severity,\n    affectedPart,\n    description: description || null,\n    reportedAt: new Date().toISOString()\n};\n\nglobal.set('workOrders', workOrders, 'persistent');\n\nmsg.statusCode = 200;\nmsg.payload = { success: true, workOrder: workOrders[idx] };\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":390,"y":400,"wires":[["6dd109a105da5dd5"]]},{"id":"6dd109a105da5dd5","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":610,"y":400,"wires":[]},{"id":"439862e5c86675cd","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"POST Complete Order","url":"/workorders/complete","method":"post","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":170,"y":500,"wires":[["9d853fad37785bec"]]},{"id":"9d853fad37785bec","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Complete Work Order","func":"const { workOrderId } = msg.payload || {};\n\nif (!workOrderId) {\n    msg.statusCode = 400;\n    msg.payload = { error: 'workOrderId is required' };\n    return msg;\n}\n\nconst workOrders = global.get('workOrders', 'persistent') || [];\nconst idx = workOrders.findIndex(w => w.workOrderId === workOrderId);\n\nif (idx === -1) {\n    msg.statusCode = 404;\n    msg.payload = { error: 'Work order not found' };\n    return msg;\n}\n\nworkOrders[idx].status = 'completed';\nworkOrders[idx].completedAt = new Date().toISOString();\n\nglobal.set('workOrders', workOrders, 'persistent');\n\nmsg.statusCode = 200;\nmsg.payload = { success: true, workOrder: workOrders[idx] };\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":410,"y":500,"wires":[["3506d88cd094d44c"]]},{"id":"3506d88cd094d44c","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":620,"y":500,"wires":[]},{"id":"wo_stats_http_in","type":"http in","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"GET Work Order Stats","url":"/workorders/stats","method":"get","upload":false,"skipBodyParsing":false,"swaggerDoc":"","x":180,"y":220,"wires":[["wo_stats_func"]]},{"id":"wo_stats_func","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Compute Stats","func":"const workOrders = global.get('workOrders', 'persistent') || [];\nnode.warn(msg.req.query);\nconst stationId = msg.req.query.stationId;\nconst username = msg.req.query.username;\n\n// Filter only by station\nconst stationWorkOrders = stationId\n    ? workOrders.filter(w => w.stationId === stationId)\n    : workOrders;\n\nconst total = stationWorkOrders.length;\nconst completed = stationWorkOrders.filter(w => w.status === \"completed\").length;\nconst defected = stationWorkOrders.filter(w => w.status === \"defect\").length;\n\n// Filter by user within the station\nconst assignedToMe = username\n    ? stationWorkOrders.filter(w => w.assignedTo === username).length\n    : 0;\n\nmsg.statusCode = 200;\nmsg.payload = {\n    total,\n    completed,\n    defected,\n    assignedToMe\n};\n\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":400,"y":220,"wires":[["wo_stats_response"]]},{"id":"wo_stats_response","type":"http response","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"","statusCode":"","headers":{"Content-Type":"application/json"},"x":610,"y":220,"wires":[]},{"id":"6d1644eabb9a5bf5","type":"function","z":"3012f9c2796b5b41","g":"83cd1b1c4cc8e310","name":"Generate Mock Work Orders","func":"const user = global.get(\"user\", \"persistent\");\nconst currentUser = user?.username || \"operator1\";\n\n// Pool of 5 operators (logged-in user + 4 others)\nconst operators = [\n    currentUser,\n    \"operator2\",\n    \"operator3\",\n    \"operator4\",\n    \"operator5\"\n];\n\nconst vehicles = [\n    {\n        model: \"Sedan X\",\n        variants: [\"Standard\", \"Premium\", \"Sport\"],\n        colors: [\"White\", \"Black\", \"Red\"]\n    },\n    {\n        model: \"SUV Y\",\n        variants: [\"Base\", \"Premium\", \"Sport\"],\n        colors: [\"Grey\", \"White\", \"Black\"]\n    },\n    {\n        model: \"Truck Z\",\n        variants: [\"Standard\", \"Heavy Duty\"],\n        colors: [\"Blue\", \"Green\", \"White\"]\n    },\n    {\n        model: \"Hatchback W\",\n        variants: [\"Base\", \"Sport\"],\n        colors: [\"Silver\", \"Yellow\", \"Red\"]\n    }\n];\n\nconst operations = [\n    {\n        operationId: \"OP_WHEEL_FL\",\n        name: \"Install Front Left Wheel\",\n        instructionSetId: \"INS001\",\n        estimatedCycleTime: 45\n    },\n    {\n        operationId: \"OP_WHEEL_FR\",\n        name: \"Install Front Right Wheel\",\n        instructionSetId: \"INS002\",\n        estimatedCycleTime: 45\n    }\n];\n\nconst priorities = [\"Critical\", \"High\", \"Normal\", \"Low\"];\nconst statuses = [\"Ready\", \"Waiting\", \"Queued\"];\n\nfunction random(arr) {\n    return arr[Math.floor(Math.random() * arr.length)];\n}\n\n// Read existing work orders\nconst existingWorkOrders = global.get(\"workOrders\", \"persistent\") || [];\n\n// Start IDs after the existing ones\nlet nextId = 10245 + existingWorkOrders.length;\n\n// Generate 20 new work orders\nfor (let i = 0; i < 20; i++) {\n    const vehicle = random(vehicles);\n    const operation = random(operations);\n\n    existingWorkOrders.push({\n        workOrderId: `WO-${nextId++}`,\n        stationId: \"ST12\",\n        status: random(statuses),\n        priority: random(priorities),\n        assignedTo: random(operators),\n        vehicle: {\n            vin: `MH01AB${1234567890 + existingWorkOrders.length}`,\n            model: vehicle.model,\n            variant: random(vehicle.variants),\n            color: random(vehicle.colors)\n        },\n        operation: {\n            operationId: operation.operationId,\n            name: operation.name,\n            estimatedCycleTime: operation.estimatedCycleTime,\n            instructionSetId: operation.instructionSetId\n        }\n    });\n}\n\n// Save updated list\nglobal.set(\"workOrders\", existingWorkOrders, \"persistent\");\n\nmsg.payload = existingWorkOrders;\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":440,"y":100,"wires":[[]]}]
 {% endrenderFlow 300 %}
 
 The flow initializes a set of sample work orders and exposes REST APIs that the Digital Work Instructions application uses throughout this tutorial. The `GET /workorders` endpoint returns the active work orders, while the other endpoints simulate completing a work order, reporting defects, and retrieving production statistics. This lets you build and test the application without a live ERP or MES. Later, you can replace these endpoints with calls to your production system while keeping the rest of the application unchanged.
 
 ## Setting Up the Dashboard Layout
 
-The app spans three pages. Most widgets sit in a named group on a page, but a couple render without one, the app-bar greeting is UI-scoped, and the work instruction widget is page-scoped so it fills the Instructions page on its own. Create the base, the pages, and the groups the grid widgets need first, so everything has somewhere to land as you build.
+The application consists of three pages. Most widgets are placed inside named groups, while a few are scoped differently. See the [Dashboard layout docs](https://dashboard.flowfuse.com/getting-started) if you're new to how pages, groups, and bases relate. The app bar greeting is **UI-scoped**, and the work instruction widget is **page-scoped**, allowing it to fill the entire **Instructions** page without requiring a group. Before adding any widgets, create the dashboard structure by setting up the pages and groups.
 
-1. Add a **ui-base** node and name it "My Dashboard". Every page and widget attaches to it.
-2. Create three **ui-page** nodes on that base:
-   - **Home** (path `/home`), where the operator lands after login.
-   - **Instructions** (path `/instructions`), the step-by-step guide.
-   - **Report Issue** (path `/report-issue`), the defect form.
-3. On the **Home** page, add four **ui-group** nodes: "Current Station", "Stats", "Current Work Order", and "Up Next".
-4. On the **Report Issue** page, add one **ui-group** named "Report Issue" for the form and its buttons.
+1. Create three **ui-page** nodes. The Dashboard automatically creates a base dashboard the first time you add a Dashboard node to the canvas.
 
-The **Instructions** page needs no group, its widget is page-scoped and renders across the whole page. With the layout in place, every step below drops its widget into the group it names, or onto the page directly where noted.
+   * **Home** (path: `/home`) – The operator's landing page after login. Set the layout to **Notebook** to match the demo application.
+   * **Instructions** (path: `/instructions`) – Displays the step-by-step work instructions. Set the layout to **Grid**.
+   * **Report Issue** (path: `/report-issue`) – Contains the defect reporting form. Set the layout to **Grid**.
 
-![Placeholder: dashboard layout showing the Home page groups (Current Station, Stats, Current Work Order, Up Next)](https://placehold.co/1200x700/eef2f7/475569?text=Home+Page+Layout%3A+Groups) *The four groups on the Home page, before any widgets are added.*
+2. Configure the theme for each page as desired.
+
+3. On the **Home** page, create four **ui-group** nodes:
+
+   * **Current Station**
+   * **Stats**
+   * **Current Work Order**
+   * **Up Next**
+
+4. On the **Report Issue** page, create a single **ui-group** named **Report Issue**. This group will contain the issue reporting form and its action buttons.
+
+The **Instructions** page does not require a **ui-group** because the work instruction widget is page-scoped and automatically occupies the full page.
+
+With this layout in place, each widget added in the following sections can be assigned to the appropriate group, or directly to the page when required.
 
 ## Enabling FlowFuse User Authentication
 
-Everything starts with a login. Without it, there's no user to key anything on, and the screen is shared by anyone who opens it.
+Everything starts with a login. Without authentication, the dashboard cannot identify who is using it, so every visitor sees the same experience.
 
-1. Open your instance **Settings**.
+1. Open your FlowFuse instance **Settings**.
 2. Select the **Security** tab.
 3. Enable **FlowFuse User Authentication**.
 
-Now the first time anyone opens the dashboard, they sign in with their FlowFuse username and password. That login is what unlocks the personalization for the rest of this tutorial.
+![Screenshot: the Security tab in instance settings with FlowFuse User Authentication enabled](https://flowfuse.com/img/displaying-logged-in-user-flowfuse-instance-setting.png)
+*Enable FlowFuse User Authentication in the instance Security settings. You'll also create a Personal Access Token here for authenticating API requests later in the tutorial.*
 
-![Screenshot: the Security tab in instance settings with FlowFuse User Authentication enabled](https://flowfuse.com/img/displaying-logged-in-user-flowfuse-instance-setting.png) *Enable FlowFuse User Authentication in the instance Security settings. This is the switch that turns the shared screen into a per-operator one.*
+The first time someone opens the dashboard, they will be prompted to sign in using their FlowFuse username and password. Once authenticated, the dashboard can personalize the experience for each operator throughout the rest of this tutorial.
+
+Because this tutorial also interacts with the FlowFuse API, you'll need to create a Personal Access Token:
+
+4. In the same **Security** tab, click **Add Token**.
+5. Enter a name for the token and choose an expiration date.
+6. Click **Create**, then copy the generated token and save it somewhere secure. You will need it later in the tutorial.
 
 ## Installing the User Addon
 
-Login secures the screen, but the flow still can't see who signed in. The user addon closes that gap: it attaches the current user to every message a Dashboard widget emits.
+Authentication identifies the user, but your flows also need access to that information. The FlowFuse User Addon attaches the authenticated user's details to every Dashboard message.
 
-1. Open **Manage Palette** from the editor settings menu.
-2. Switch to the **Install** tab.
+1. Open **Manage Palette**.
+2. Go to the **Install** tab.
 3. Search for `@flowfuse/node-red-dashboard-2-user-addon`.
 4. Click **Install**.
 
-![Placeholder: Manage Palette install screen showing the user addon search result](https://placehold.co/1200x650/eef2f7/475569?text=Manage+Palette%3A+Install+User+Addon) *Installing `@flowfuse/node-red-dashboard-2-user-addon` from the Palette Manager.*
-
-With the addon in place, every widget message carries a `msg._client.user` object:
+After installation, every Dashboard message includes a `msg._client.user` object:
 
 ```json
 {
-  "userId": "",   // unique identifier for the user
-  "username": "", // FlowFuse username — our lookup key
-  "email": "",    // email on their FlowFuse account
-  "name": "",     // full name
-  "image": ""     // avatar from FlowFuse
+  "userId": "",
+  "username": "",
+  "email": "",
+  "name": "",
+  "image": ""
 }
 ```
 
-The same data is available inside any `ui-template` widget through the setup store: `setup.socketio.auth.user` in the `<template>`, or `this.setup.socketio.auth.user` in the script.
+The same information is available in a **ui-template** using `setup.socketio.auth.user` (or `this.setup.socketio.auth.user` in the script).
 
-One setting to confirm: open the **FF Auth** tab in the Dashboard sidebar and make sure **Include Client Data** is enabled. It's on by default, and it's what puts `_client.user` on the message.
+1. In the **FF Auth** sidebar tab, ensure **Include Client Data** is enabled.
+2. Also enable **Accept Client Data** for **ui-template**, **ui-control**, **ui-event**, **ui-form**, and **ui-table** so each browser session is handled independently and operators don't affect each other's dashboard.
+
+![Screenshot: FF Auth settings showing Include Client Data and Accept Client Data enabled for Dashboard nodes](./images/client-data-tab-dashboard.png)
+*Enable **Include Client Data** and **Accept Client Data** to make Dashboard interactions user-specific.*
 
 ## Greeting the Logged-In Operator
 
@@ -148,7 +216,7 @@ export default {
 
 Deploy and open the dashboard. The signed-in operator's name and avatar appear in the top-right corner. You don't redeploy when a different operator logs in, the addon fetches each user's data at runtime, so everyone sees their own.
 
-![Screenshot: the dashboard app bar showing the logged-in operator's avatar and greeting](https://placehold.co/1200x300/eef2f7/475569?text=App+Bar%3A+Hi%2C+%7BOperator+Name%7D) *The signed-in operator greeted by name and avatar in the app bar, rendered from a single UI-scoped widget.*
+![Screenshot: the dashboard app bar showing the logged-in operator's avatar and greeting](./images/logged-in-user-app-bar.png) *The signed-in operator greeted by name and avatar in the app bar, rendered from a single UI-scoped widget.*
 
 ## Seeding the Operator into Context on Login
 
@@ -164,75 +232,52 @@ Greeting the operator is the visible half. The other half is making their identi
 
 That one `set user` rule is the hinge of the whole app. From here on, "the current operator" is always a single `global.get` away.
 
-![Placeholder: flow diagram of Client connected → Seed globals wiring](https://placehold.co/1000x400/eef2f7/475569?text=Client+Connected+%E2%86%92+Seed+Globals) *The "Client connected" event wired into "Seed globals", writing user, station, and instruction context.*
+## Showing the Station and Stats on the Home Page
 
-## Showing the Station and the Stat Cards on Home
+The Home page shows the current station and a quick summary of work order statistics. Both update whenever the page opens.
 
-Before the work orders, the Home page gives the operator two pieces of context: which station they're at, and a quick count of what's happening there. Both react to page load, so they're current every time Home opens.
+### Display the Station Name
 
-**The station name:**
+1. From the **Client connected** event, add a **change** node named **Read station name** and set `msg.payload` to `global.StationContext.stationName`.
+2. Connect it to a **ui-text** node named **Current Station** in the **Current Station** group. Set the value to `msg.payload`.
 
-1. From the "Client connected" event, add a second `change` node named "Read station name". Set `payload` (msg) to `StationContext.stationName` (global).
-2. Add a `ui-text` node named "Current Station" and assign it to the **Current Station** group on the Home page. Set its value to `msg.payload`.
+### Display the Stats
 
-**The stat cards:**
-
-1. Add a `ui-control` node, name it "Page changed", and select the "My Dashboard" ui-base with its event set to **change**. It fires whenever the operator navigates to a page, so the stats refresh each time Home opens.
-2. Add a `function` node named "build /stats request URL". It reads the station and the logged-in operator from context and builds the request:
+1. Add a **ui-control** node named **Page changed**, set its event to **change**, and select your dashboard.
+2. Add a **function** node named **Build /stats request URL** and paste in the following code. **Replace `https://your-instance.flowfuse.cloud` with your own FlowFuse instance URL.**
 
 ```javascript
 const StationContext = global.get('StationContext', 'persistent');
 const user = global.get('user', 'persistent');
 
-const stationId = StationContext?.stationId;
-const username = user?.username;
-
 const params = new URLSearchParams();
-params.set('stationId', stationId);
-if (username) params.set('username', username);
+params.set('stationId', StationContext.stationId);
+if (user?.username) params.set('username', user.username);
 
-// Swap this host for your own Instance url when you go live.
-msg.url = `https://your-instance.flowfuse.cloud/workorders/stats?${params.toString()}`;
-msg.method = 'GET';
+msg.url = `https://your-instance.flowfuse.cloud/workorders/stats?${params}`;
+msg.method = "GET";
 return msg;
 ```
 
-3. Add an `http request` node. Set the method to **use `msg.method`** and leave the URL blank so it takes `msg.url` from the function above. Set the return type to a parsed JSON object, and authentication to **bearer**.
-4. In the `http request` node, paste your access token into the bearer token field so the request is authenticated. Keep the token out of the flow itself, store it as an environment variable and reference it here, so it isn't exposed if you export or share the flow.
-5. Add a `ui-template` node named "Stats Cards" and assign it to the **Stats** group. It renders four numbers from the response, total, assigned to me, completed, and defected:
+3. Add an **http request** node that uses `msg.method` and `msg.url`, returns a parsed JSON object, and uses **Bearer** authentication.
+4. Configure the bearer token using the access token you created earlier. For production, store it as an environment variable instead of hardcoding it in the flow.
+5. Add a **ui-template** named **Stats Cards** in the **Stats** group and paste in the template below.
+6. Wire the nodes: **Page changed → Build /stats request URL → HTTP Request → Stats Cards**.
 
-```html
-<template>
-  <div class="ws-grid">
-    <div class="ws-card"><span class="ws-num">{{ msg?.payload?.total ?? 0 }}</span><span class="ws-lbl">Total</span></div>
-    <div class="ws-card"><span class="ws-num">{{ msg?.payload?.assignedToMe ?? 0 }}</span><span class="ws-lbl">Assigned to me</span></div>
-    <div class="ws-card"><span class="ws-num">{{ msg?.payload?.completed ?? 0 }}</span><span class="ws-lbl">Completed</span></div>
-    <div class="ws-card"><span class="ws-num">{{ msg?.payload?.defected ?? 0 }}</span><span class="ws-lbl">Defected</span></div>
-  </div>
-</template>
+The request includes the logged-in username, so the **Assigned to me** count is personalized for each operator.
 
-<style>
-.ws-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.ws-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px; }
-.ws-num { font-size: 28px; font-weight: 700; color: #0f172a; }
-.ws-lbl { font-size: 12px; font-weight: 600; color: #64748b; }
-</style>
-```
-
-6. Wire "Page changed" into "build /stats request URL", that into the `http request`, and the `http request` into the "Stats Cards" template.
-
-The username rides along in the request, so "assigned to me" reflects this operator's workload, not the whole station's.
-
-![Placeholder: Stats Cards widget rendered on the Home page](https://placehold.co/1200x260/eef2f7/475569?text=Stats+Cards%3A+Total+%7C+Assigned+to+Me+%7C+Completed+%7C+Defected) *The four stat cards rendered on Home: total, assigned to me, completed, and defected.*
+![Placeholder: Stats Cards widget rendered on the Home page](./images/stats-and-station.png)
+*The Home page displays station statistics, including total, assigned to me, completed, and defected work orders.*
 
 ## Loading the Operator's Work Orders
 
-Now the main event on Home: fetch the work orders and show them. Because the request carries the logged-in username, the operator only ever sees the jobs assigned to them at this station.
+Now for the main part of the Home page: fetching and displaying the operator's work orders. Because the request includes the logged-in username, each operator only sees the work orders assigned to them at the current station.
 
-1. Add a `ui-control` node, name it "Page changed", and select the "My Dashboard" ui-base with its event set to **change**. It fires when the operator navigates to Home, triggering the fetch.
-2. Add a `function` node named "build /workorders request URL". It reads the station and operator from context and builds the request, the same pattern as the stats URL:
+1. Add a **ui-control** node named **Page changed**, select your dashboard, and set the event to **change**. It fires whenever the operator navigates to the Home page, triggering the work order request.
 
-```javascript
+2. Add a **function** node named **Build /workorders request URL**, paste in the code below, and replace `https://your-instance.flowfuse.cloud` with your own FlowFuse instance URL.
+
+```javascript id="8m19sv"
 const StationContext = global.get('StationContext', 'persistent');
 const user = global.get('user', 'persistent');
 
@@ -243,16 +288,16 @@ const params = new URLSearchParams();
 params.set('stationId', stationId);
 if (username) params.set('username', username);
 
-// Swap this host for your own Instance url when you go live.
 msg.url = `https://your-instance.flowfuse.cloud/workorders?${params.toString()}`;
 msg.method = 'GET';
 return msg;
 ```
 
-3. Add an `http request` node. Set the method to **use `msg.method`**, leave the URL blank so it takes `msg.url`, return type a parsed JSON object, and authentication to **bearer** with your access token.
-4. Add a `link out` node named "work orders out" after the request. The widgets that display the orders connect to it with their own `link in`, so one response reaches them all without wires stretched across the canvas.
+3. Add an **http request** node, set the **Method** to **Use `msg.method`**, leave the **URL** field blank so it uses `msg.url`, set the **Return** type to a **parsed JSON object**, and configure **Bearer** authentication. Use the access token you created earlier as the bearer token. For production deployments, store the token as an environment variable and reference it here instead of hardcoding it in the flow.
 
-The username in that query string is the whole point. The same page, opened by two operators, returns two different lists, the app didn't change, the identity did.
+4. Connect the **http request** node to a **link out** node named **Work Orders Out**. The widgets that display the work orders will connect to this node using their own **link in** nodes, allowing the same API response to be reused without stretching wires across the canvas.
+
+The username in the request is what makes the dashboard personal. Two operators can open the same page at the same station, yet each receives only the work orders assigned to them.
 
 ## Splitting the Current Order From the Queue
 
@@ -277,21 +322,23 @@ return [
 ];
 ```
 
-3. Import the "Current Work Order Card" widget. It's a large Vue template, so rather than build it by hand, import the node below and assign it to the Current Work Order group.
+3. Import the Current Work Order Card ui-template below and assign it to the Current Work Order group. The complete component is provided below, so there's no need to recreate it.
 
-> Tip: You don't have to write this Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/#css-and-html-generation-for-flowfuse-dashboard) and describe the card in plain English, a work order header, station and vehicle panels, a priority chip, and a Start button, and it will generate the ui-template for you.
+> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/?utm_source=chatgpt.com#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
 
 {% renderFlow 300 %}
+{% raw %}
 [{"id":"eb41d1ba8e4bfb01","type":"ui-template","z":"c50b1b501a74c081","g":"3e9b1176168ca254","group":"","page":"","ui":"","name":"Current Work Order Card","order":1,"width":0,"height":0,"head":"","format":"<template>\n  <div class=\"wi-root\">\n    <!-- Top status bar -->\n    <div class=\"wi-topbar\">\n      <div class=\"wi-topbar-left\">\n        <span class=\"wi-wo-label\">WORK ORDER</span>\n        <span class=\"wi-wo-id\">{{ msg?.payload?.workOrderId ?? '—' }}</span>\n      </div>\n      <div class=\"wi-topbar-right\">\n        <v-chip size=\"large\" variant=\"flat\" label :color=\"priorityColor\" class=\"wi-chip\">\n          <v-icon start icon=\"mdi-flag\"></v-icon>\n          {{ (msg?.payload?.priority ?? 'Normal').toUpperCase() }} PRIORITY\n        </v-chip>\n      </div>\n    </div>\n\n    <v-row no-gutters class=\"wi-body\">\n      <!-- Left: Station + Operation -->\n      <v-col cols=\"12\" md=\"5\" class=\"wi-col\">\n        <v-card flat class=\"wi-card wi-card-station\">\n          <div class=\"wi-card-head\">\n            <v-icon icon=\"mdi-map-marker-radius\" size=\"22\"></v-icon>\n            <span>STATION</span>\n          </div>\n          <div class=\"wi-station-id\">{{ msg?.payload?.stationId ?? '—' }}</div>\n\n          <v-divider class=\"wi-divider\"></v-divider>\n\n          <div class=\"wi-card-head\">\n            <v-icon icon=\"mdi-clipboard-text-outline\" size=\"22\"></v-icon>\n            <span>OPERATION</span>\n          </div>\n          <div class=\"wi-operation-name\">\n            {{ msg?.payload?.operation?.name ?? 'Awaiting operation' }}\n          </div>\n\n          <div class=\"wi-cycle\">\n            <v-icon icon=\"mdi-timer-outline\" size=\"26\"></v-icon>\n            <div class=\"wi-cycle-text\">\n              <span class=\"wi-cycle-label\">ESTIMATED CYCLE TIME</span>\n              <span class=\"wi-cycle-value\">\n                {{ msg?.payload?.operation?.estimatedCycleTime ?? '—' }}\n              </span>\n            </div>\n          </div>\n        </v-card>\n      </v-col>\n\n      <!-- Right: Vehicle -->\n      <v-col cols=\"12\" md=\"7\" class=\"wi-col\">\n        <v-card flat class=\"wi-card wi-card-vehicle\">\n          <div class=\"wi-card-head\">\n            <v-icon icon=\"mdi-car-side\" size=\"22\"></v-icon>\n            <span>VEHICLE</span>\n          </div>\n\n          <div class=\"wi-vehicle-model\">\n            {{ msg?.payload?.vehicle?.model ?? 'Unknown model' }}\n          </div>\n          <div class=\"wi-vehicle-variant\">\n            {{ msg?.payload?.vehicle?.variant ?? '' }}\n          </div>\n\n          <v-row no-gutters class=\"wi-spec-grid\">\n            <v-col cols=\"12\" sm=\"7\">\n              <div class=\"wi-spec\">\n                <span class=\"wi-spec-label\">VIN</span>\n                <span class=\"wi-spec-value wi-vin\">\n                  {{ msg?.payload?.vehicle?.vin ?? '—' }}\n                </span>\n              </div>\n            </v-col>\n            <v-col cols=\"12\" sm=\"5\">\n              <div class=\"wi-spec\">\n                <span class=\"wi-spec-label\">COLOR</span>\n                <span class=\"wi-spec-value\">\n                  <v-icon\n                    icon=\"mdi-circle\"\n                    size=\"18\"\n                    class=\"wi-color-dot\"\n                  ></v-icon>\n                  {{ msg?.payload?.vehicle?.color ?? '—' }}\n                </span>\n              </div>\n            </v-col>\n          </v-row>\n        </v-card>\n      </v-col>\n    </v-row>\n\n    <!-- Start button -->\n    <v-btn block size=\"x-large\" color=\"green-darken-1\" class=\"wi-start-btn\" :disabled=\"!msg?.payload?.workOrderId\"\n      @click=\"send({ payload: { action: 'start', workOrderId: msg?.payload?.workOrderId, stationId: msg?.payload?.stationId } })\">\n      <v-icon start icon=\"mdi-play-circle\" size=\"34\"></v-icon>\n      START WORK ORDER\n    </v-btn>\n  </div>\n</template>\n\n<script>\n  export default {\n  computed: {\n    priorityColor () {\n      const p = (this.msg?.payload?.priority ?? '').toLowerCase()\n      if (p === 'high' || p === 'urgent' || p === 'critical') return 'red-darken-1'\n      if (p === 'medium') return 'amber-darken-2'\n      return 'blue-grey-darken-1'\n    }\n  }\n}\n</script>\n\n<style>\n  .wi-root {\n    font-family: 'Roboto', system-ui, sans-serif;\n    color: #1f2933;\n    padding: 4px;\n  }\n\n  .wi-topbar {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 12px;\n    background: #ffffff;\n    border: 1px solid #e2e8f0;\n    border-left: 6px solid #1565c0;\n    border-radius: 10px;\n    padding: 14px 20px;\n    margin-bottom: 14px;\n  }\n\n  .wi-topbar-left {\n    display: flex;\n    flex-direction: column;\n    line-height: 1.1;\n  }\n\n  .wi-wo-label {\n    font-size: 12px;\n    letter-spacing: 2px;\n    color: #64748b;\n    font-weight: 600;\n  }\n\n  .wi-wo-id {\n    font-size: 30px;\n    font-weight: 700;\n    color: #0f172a;\n    font-variant-numeric: tabular-nums;\n  }\n\n  .wi-topbar-right {\n    display: flex;\n    gap: 10px;\n    flex-wrap: wrap;\n  }\n\n  .wi-chip {\n    font-weight: 700 !important;\n    letter-spacing: 0.5px;\n  }\n\n  .wi-body {\n    gap: 0;\n  }\n\n  .wi-col {\n    padding: 6px;\n  }\n\n  .wi-card {\n    background: #ffffff !important;\n    border: 1px solid #e2e8f0 !important;\n    border-radius: 10px !important;\n    padding: 20px 22px;\n    height: 100%;\n  }\n\n  .wi-card-vehicle {\n    border-left: 6px solid #00897b !important;\n  }\n\n  .wi-card-station {\n    border-left: 6px solid #5e35b1 !important;\n  }\n\n  .wi-card-head {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    font-size: 13px;\n    letter-spacing: 2px;\n    font-weight: 700;\n    color: #64748b;\n    margin-bottom: 6px;\n  }\n\n  .wi-station-id {\n    font-size: 44px;\n    font-weight: 700;\n    color: #4527a0;\n    line-height: 1;\n    margin-bottom: 6px;\n  }\n\n  .wi-divider {\n    margin: 16px 0;\n    border-color: #edf2f7 !important;\n  }\n\n  .wi-operation-name {\n    font-size: 24px;\n    font-weight: 600;\n    color: #0f172a;\n    margin-bottom: 18px;\n  }\n\n  .wi-cycle {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    background: #f1f5f9;\n    border-radius: 8px;\n    padding: 12px 16px;\n  }\n\n  .wi-cycle-text {\n    display: flex;\n    flex-direction: column;\n    line-height: 1.2;\n  }\n\n  .wi-cycle-label {\n    font-size: 11px;\n    letter-spacing: 1.5px;\n    font-weight: 600;\n    color: #64748b;\n  }\n\n  .wi-cycle-value {\n    font-size: 22px;\n    font-weight: 700;\n    color: #0f172a;\n    font-variant-numeric: tabular-nums;\n  }\n\n  .wi-vehicle-model {\n    font-size: 34px;\n    font-weight: 700;\n    color: #0f172a;\n    line-height: 1.05;\n  }\n\n  .wi-vehicle-variant {\n    font-size: 18px;\n    font-weight: 500;\n    color: #00695c;\n    margin-bottom: 20px;\n  }\n\n  .wi-spec-grid {\n    gap: 0;\n  }\n\n  .wi-spec {\n    display: flex;\n    flex-direction: column;\n    padding: 10px 0;\n  }\n\n  .wi-spec-label {\n    font-size: 11px;\n    letter-spacing: 1.5px;\n    font-weight: 600;\n    color: #64748b;\n    margin-bottom: 2px;\n  }\n\n  .wi-spec-value {\n    font-size: 20px;\n    font-weight: 600;\n    color: #0f172a;\n    display: flex;\n    align-items: center;\n    gap: 6px;\n  }\n\n  .wi-vin {\n    font-family: 'Roboto Mono', monospace;\n    font-size: 18px;\n    letter-spacing: 1px;\n  }\n\n  .wi-color-dot {\n    color: #cbd5e1;\n  }\n\n  .wi-start-btn {\n    margin-top: 16px;\n    height: 84px !important;\n    font-size: 24px !important;\n    font-weight: 700 !important;\n    letter-spacing: 1px;\n    border-radius: 12px !important;\n  }\n</style>","storeOutMessages":true,"passthru":false,"resendOnRefresh":true,"templateScope":"local","className":"","x":570,"y":620,"wires":[["455c7536a9adcfe6"]]},{"id":"77ecf88a48f8c4f0","type":"global-config","env":[],"modules":{"@flowfuse/node-red-dashboard":"1.30.2"}}]
+{% endraw %}
 {% endrenderFlow 300 %}
 
 4. Wire **output 1** to the "Current Work Order Card" `ui-template` in the **Current Work Order** group. It shows the work order ID, station, operation and estimated cycle time, the vehicle (model, variant, VIN, colour), a priority chip, and a **Start Work Order** button. On click, the button sends `{ action: 'start', workOrderId, stationId }`.
 
-![Placeholder: Current Work Order Card rendered on the Home page](https://placehold.co/1200x600/eef2f7/475569?text=Current+Work+Order+Card) *The Current Work Order card: work order ID, priority chip, station, operation, vehicle details, and the Start button.*
+![Placeholder: Current Work Order Card rendered on the Home page](./images/current-work-order.png) *The Current Work Order card: work order ID, priority chip, station, operation, vehicle details, and the Start button.*
 
 5. Add a `ui-table` node and assign it to the **Up Next** group. Turn off auto-columns and add two text columns as shown below: Work Order (workOrderId) and Priority (priority). Wire output 2 of the split function into it.
 
-![Placeholder: Up Next table listing queued work orders](https://placehold.co/1200x400/eef2f7/475569?text=Up+Next%3A+Work+Order+%7C+Priority) *The Up Next table showing the remaining queued work orders with their priority.*
+![Placeholder: Up Next table listing queued work orders](./images/up-next.png) *The Up Next table showing the remaining queued work orders with their priority.*
 
 6. From the card, wire a `change` node named "go to Instructions" that sets `payload` (msg) to `Instructions`, then into a `ui-control` node with its event set to **change** to switch the page.
 
@@ -307,40 +354,48 @@ The Instructions page needs the steps to show. Because the instruction set was c
 
 ## Remembering Each Operator's Step
 
-This is the feature paper can't do and a shared screen gets wrong. An operator works through the five-step wheel install, reaches step 3, and walks away. When they, or the next person, come back, the app should reopen at step 3, not step 1. We do that by saving the step against the operator's username.
+This is something paper can't do and shared screens get wrong. If an operator completes the first two steps of a five-step wheel installation and returns later, they should resume at **step 3**, not start again at **step 1**. We achieve this by saving their progress against their username.
 
 The instruction widget emits two housekeeping actions: `save_step` whenever the operator moves between steps, and `load_step` when the page opens and needs to know where to resume. One function node handles both.
 
-1. Import the "Work Instruction Widget" `ui-template` from the flow below, and set its page to Instructions with the type set to Widget (Page-Scoped). It shows one step at a time with its image, target time, and checklist, disables Next Step until every checklist item is ticked, and turns the last step's button into Complete Operation.
+1. Import the **Work Instruction Widget** `ui-template` below, assign it to the **Instructions** page, and set its scope to **Page**. The widget displays one instruction at a time with its image, target cycle time, and checklist. Operators can't move to the next step until every checklist item is completed, and the final step changes the button to **Complete Operation**.
+
+> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/?utm_source=chatgpt.com#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
 
 {% renderFlow 300 %}
+{% raw %}
 [{"id":"d3492b9665d71f27","type":"ui-template","z":"c50b1b501a74c081","g":"96f12d35d68b430e","group":"","page":"","ui":"","name":"Work Instruction Widget","order":1,"width":0,"height":0,"head":"","format":"<template>\n  <div class=\"wi-root\">\n    <!-- Context header with live timer -->\n    <div class=\"wi-topbar\">\n      <div class=\"wi-topbar-left\">\n        <span class=\"wi-op-label\">OPERATION</span>\n        <span class=\"wi-op-name\">{{ payload?.operation ?? 'Work Instruction' }}</span>\n        <span class=\"wi-op-sub\">\n          {{ payload?.instructionSetId ?? '—' }} &nbsp;·&nbsp; v{{ payload?.version ?? '—' }}\n        </span>\n      </div>\n      <div class=\"wi-topbar-right\">\n        <div class=\"wi-timer\">\n          <v-icon icon=\"mdi-timer-outline\" size=\"26\"></v-icon>\n          <div class=\"wi-timer-text\">\n            <span class=\"wi-timer-label\">TARGET TIME</span>\n            <span class=\"wi-timer-value\">{{ currentStep?.estimatedTime ?? '—' }}s</span>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!-- Step progress -->\n    <v-card flat class=\"wi-card wi-stepper-card\">\n      <div class=\"wi-stepper-head\">\n        <span class=\"wi-step-count\">\n          STEP {{ (currentIndex + 1) }} OF {{ steps.length }}\n        </span>\n        <span class=\"wi-step-percent\">{{ progressPercent }}% COMPLETE</span>\n      </div>\n      <v-progress-linear :model-value=\"progressPercent\" color=\"green-darken-1\" height=\"8\" rounded></v-progress-linear>\n    </v-card>\n\n    <!-- Main instruction pane: image left, instruction + checklist right -->\n    <v-card flat class=\"wi-card wi-card-instruction\">\n      <div class=\"wi-instruction-flex\">\n        <!-- Reference image (left) -->\n        <div class=\"wi-img-col\">\n          <div class=\"wi-image-wrap\">\n            <img\n              :src=\"stepImage\"\n              :alt=\"currentStep?.title\"\n              class=\"wi-image\"\n              @error=\"onImageError\"\n            />\n          </div>\n        </div>\n\n        <!-- Instruction + checklist (right) -->\n        <div class=\"wi-text-col\">\n          <div class=\"wi-card-head\">\n            <v-icon icon=\"mdi-clipboard-text-outline\" size=\"20\"></v-icon>\n            <span>INSTRUCTION</span>\n          </div>\n          <div class=\"wi-step-title\">{{ currentStep?.title ?? '—' }}</div>\n          <p class=\"wi-step-instruction\">{{ currentStep?.instruction ?? '' }}</p>\n\n          <div class=\"wi-card-head wi-checklist-head\">\n            <v-icon icon=\"mdi-format-list-checks\" size=\"20\"></v-icon>\n            <span>CHECKLIST</span>\n          </div>\n          <div class=\"wi-checklist\">\n            <label\n              v-for=\"(item, i) in (currentStep?.checklist ?? [])\"\n              :key=\"i\"\n              class=\"wi-check-row\"\n              :class=\"{ 'wi-check-row-done': checkedState[i] }\"\n            >\n              <v-checkbox-btn\n                :model-value=\"checkedState[i]\"\n                color=\"green-darken-1\"\n                density=\"comfortable\"\n                @update:model-value=\"toggleCheck(i)\"\n              ></v-checkbox-btn>\n              <span>{{ item }}</span>\n            </label>\n          </div>\n        </div>\n      </div>\n    </v-card>\n\n    <!-- Controls -->\n    <v-row no-gutters class=\"wi-controls\">\n      <v-col cols=\"12\" sm=\"3\" class=\"wi-ctrl-col\">\n        <v-btn block size=\"x-large\" variant=\"outlined\" color=\"blue-grey-darken-1\" class=\"wi-nav-btn\"\n          :disabled=\"currentIndex === 0\" @click=\"prevStep\">\n          <v-icon start icon=\"mdi-chevron-left\" size=\"30\"></v-icon>\n          PREVIOUS\n        </v-btn>\n      </v-col>\n\n      <v-col cols=\"12\" sm=\"3\" class=\"wi-ctrl-col\">\n        <v-btn block size=\"x-large\" variant=\"flat\" color=\"red-darken-1\" class=\"wi-nav-btn\" @click=\"reportDefect\">\n          <v-icon start icon=\"mdi-alert-octagon-outline\" size=\"28\"></v-icon>\n          REPORT ISSUE\n        </v-btn>\n      </v-col>\n\n      <v-col cols=\"12\" sm=\"6\" class=\"wi-ctrl-col\">\n        <v-btn block size=\"x-large\" variant=\"flat\" :color=\"isLastStep ? 'green-darken-2' : 'green-darken-1'\"\n          class=\"wi-nav-btn wi-next-btn\" :disabled=\"!allChecked\" @click=\"nextStep\">\n          <v-icon start :icon=\"isLastStep ? 'mdi-check-circle' : 'mdi-chevron-right'\" size=\"30\"></v-icon>\n          {{ isLastStep ? 'COMPLETE OPERATION' : 'NEXT STEP' }}\n        </v-btn>\n      </v-col>\n    </v-row>\n\n    <div v-if=\"!allChecked\" class=\"wi-hint\">\n      <v-icon icon=\"mdi-information-outline\" size=\"18\"></v-icon>\n      Complete all checklist items to continue.\n    </div>\n  </div>\n</template>\n\n<script>\n  export default {\n  data () {\n    return {\n      currentIndex: 0,\n      checked: {},\n      assetBase: '/assets/',\n      placeholder: 'https://placehold.co/800x600/eef2f7/475569?text=Step+Reference',\n      instruction: null\n    }\n  },\n  computed: {\n    payload () {\n      return this.instruction ?? {}\n    },\n    steps () {\n      return this.instruction?.steps ?? []\n    },\n    currentStep () {\n      return this.steps[this.currentIndex] ?? null\n    },\n    isLastStep () {\n      return this.currentIndex === this.steps.length - 1\n    },\n    progressPercent () {\n      if (!this.steps.length) return 0\n      return Math.round((this.currentIndex / this.steps.length) * 100)\n    },\n    checkedState () {\n      return this.checked[this.currentIndex] ?? []\n    },\n    allChecked () {\n      const list = this.currentStep?.checklist ?? []\n      if (!list.length) return true\n      const state = this.checkedState\n      return list.every((_, i) => state[i])\n    },\n    stepImage () {\n      return this.resolveImage(this.currentStep?.image)\n    }\n  },\n  methods: {\n    resolveImage (img) {\n      if (!img) return this.placeholder\n      if (/^https?:\\/\\//.test(img) || img.startsWith('/')) return img\n      return this.assetBase + img\n    },\n    preloadImages () {\n      for (const step of this.steps) {\n        const url = this.resolveImage(step?.image)\n        if (url && url !== this.placeholder) {\n          const im = new Image()\n          im.src = url\n        }\n      }\n    },\n    saveStep () {\n      this.send({\n        payload: {\n          action: 'save_step',\n          stepIndex: this.currentIndex,\n          stepName: this.currentStep?.title ?? null,\n          stepId: this.currentStep?.stepId ?? null\n        }\n      })\n    },\n    toggleCheck (i) {\n      const arr = (this.checked[this.currentIndex] ?? []).slice()\n      arr[i] = !arr[i]\n      this.checked = { ...this.checked, [this.currentIndex]: arr }\n    },\n    onImageError (e) {\n      if (e?.target && e.target.src !== this.placeholder) {\n        e.target.src = this.placeholder\n      }\n    },\n    goToStep (i) {\n      const max = this.steps.length - 1\n      this.currentIndex = Math.min(Math.max(i, 0), Math.max(max, 0))\n      this.saveStep()\n    },\n    nextStep () {\n      if (this.isLastStep) {\n        this.send({ payload: { action: 'complete_operation', stepIndex: this.currentIndex } })\n        return\n      }\n      this.goToStep(this.currentIndex + 1)\n    },\n    prevStep () {\n      if (this.currentIndex === 0) return\n      this.goToStep(this.currentIndex - 1)\n    },\n    reportDefect () {\n      this.send({\n        payload: {\n          action: 'Report Issue',\n        }\n      })\n    }\n  },\n  watch: {\n    msg: {\n      immediate: true,\n      handler (m) {\n        const pl = m?.payload\n        if (!pl) return\n        if (Array.isArray(pl.steps)) {\n          // Instruction-set data: cache it so later messages can't wipe it.\n          this.instruction = pl\n          // Preload every step image so navigation is instant.\n          this.$nextTick(() => this.preloadImages())\n        } else if (typeof pl.stepIndex === 'number') {\n          // Resume reply from the tracker: jump to the saved step.\n          this.currentIndex = Math.min(\n            Math.max(pl.stepIndex, 0),\n            Math.max(this.steps.length - 1, 0)\n          )\n        }\n      }\n    }\n  },\n  mounted () {\n    // Ask the tracker which step this work order was left on.\n    this.send({ payload: { action: 'load_step' } })\n  }\n}\n</script>\n\n<style>\n  .wi-root {\n    font-family: 'Roboto', system-ui, sans-serif;\n    color: #1f2933;\n    padding: 2px;\n  }\n\n  /* Header */\n  .wi-topbar {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    gap: 12px;\n    background: #ffffff;\n    border: 1px solid #e2e8f0;\n    border-left: 6px solid #1565c0;\n    border-radius: 10px;\n    padding: 10px 16px;\n    margin-bottom: 10px;\n  }\n\n  .wi-topbar-left {\n    display: flex;\n    flex-direction: column;\n    line-height: 1.15;\n  }\n\n  .wi-op-label {\n    font-size: 11px;\n    letter-spacing: 2px;\n    color: #64748b;\n    font-weight: 600;\n  }\n\n  .wi-op-name {\n    font-size: 21px;\n    font-weight: 700;\n    color: #0f172a;\n  }\n\n  .wi-op-sub {\n    font-size: 12px;\n    color: #94a3b8;\n    font-weight: 500;\n    margin-top: 2px;\n  }\n\n  .wi-timer {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    padding: 8px 14px;\n    border-radius: 10px;\n    background: #f1f5f9;\n    color: #0f172a;\n  }\n\n  .wi-timer-text {\n    display: flex;\n    flex-direction: column;\n    line-height: 1.1;\n  }\n\n  .wi-timer-label {\n    font-size: 10px;\n    letter-spacing: 1.5px;\n    font-weight: 600;\n    opacity: 0.75;\n  }\n\n  .wi-timer-value {\n    font-size: 20px;\n    font-weight: 700;\n    font-variant-numeric: tabular-nums;\n  }\n\n  /* Cards */\n  .wi-card {\n    background: #ffffff !important;\n    border: 1px solid #e2e8f0 !important;\n    border-radius: 10px !important;\n    padding: 14px 18px !important;\n    height: 100%;\n    box-sizing: border-box;\n  }\n\n  .wi-card-head {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    font-size: 13px;\n    letter-spacing: 2px;\n    font-weight: 700;\n    color: #64748b;\n    margin-bottom: 8px;\n  }\n\n  /* Stepper (compact) */\n  .wi-stepper-card {\n    margin-bottom: 10px;\n    padding: 10px 16px;\n  }\n\n  .wi-stepper-head {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    margin-bottom: 8px;\n  }\n\n  .wi-step-count {\n    font-size: 14px;\n    font-weight: 700;\n    letter-spacing: 1px;\n    color: #0f172a;\n  }\n\n  .wi-step-percent {\n    font-size: 12px;\n    font-weight: 600;\n    letter-spacing: 1px;\n    color: #64748b;\n  }\n\n  /* Instruction card */\n  .wi-card-instruction {\n    border-left: 5px solid #5e35b1 !important;\n    padding: 16px 20px !important;\n    box-sizing: border-box;\n  }\n\n  /* Desktop: keep the instruction card a consistent size across every step,\n     so navigating between steps does not make the layout jump. The card\n     still grows taller when the reference image needs more room. */\n  @media (min-width: 701px) {\n    .wi-card-instruction {\n      min-height: 360px;\n    }\n  }\n\n  .wi-step-title {\n    font-size: 19px;\n    font-weight: 700;\n    color: #0f172a;\n    margin-bottom: 6px;\n    line-height: 1.15;\n  }\n\n  .wi-step-instruction {\n    font-size: 15px;\n    line-height: 1.55;\n    color: #334155;\n    margin: 0 0 16px;\n  }\n\n  .wi-checklist-head {\n    margin-top: 6px;\n    padding-top: 12px;\n    border-top: 1px solid #edf2f7;\n  }\n\n  .wi-checklist {\n    display: flex;\n    flex-direction: column;\n    gap: 4px;\n  }\n\n  .wi-check-row {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    gap: 10px;\n    padding: 6px 4px;\n    border-radius: 8px;\n    font-size: 15px;\n    font-weight: 500;\n    color: #1f2933;\n    cursor: pointer;\n  }\n\n  .wi-check-row>span {\n    flex: 1;\n    line-height: 1.35;\n  }\n\n  .wi-check-row .v-selection-control {\n    flex: none;\n    min-width: 0;\n  }\n\n  .wi-check-row-done>span {\n    color: #94a3b8;\n  }\n\n  /* Instruction two-column layout (plain flexbox, no Vuetify grid) */\n  .wi-instruction-flex {\n    display: flex;\n    gap: 20px;\n    align-items: stretch;\n    width: 100%;\n    height: 100%;\n  }\n\n  .wi-img-col {\n    flex: 0 0 40%;\n    display: flex;\n    min-width: 0;\n  }\n\n  .wi-text-col {\n    flex: 1 1 60%;\n    padding-top: 4px;\n    min-width: 0;\n  }\n\n  /* Reference image (left) */\n  .wi-image-wrap {\n    border-radius: 10px;\n    overflow: hidden;\n    background: #f1f5f9;\n    border: 1px solid #e2e8f0;\n    width: 100%;\n    height: 100%;\n    min-height: 210px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  /* Desktop: image box tracks a fixed aspect ratio based on its column\n     width, so the card height scales with the image. The text column\n     stretches to match via align-items: stretch on the flex container. */\n  @media (min-width: 701px) {\n    .wi-image-wrap {\n      aspect-ratio: 4 / 3;\n      height: auto;\n      align-self: flex-start;\n    }\n  }\n\n  .wi-image {\n    width: 100%;\n    height: 100%;\n    object-fit: contain;\n  }\n\n  @media (max-width: 700px) {\n    .wi-instruction-flex {\n      flex-direction: column;\n    }\n\n    .wi-img-col {\n      flex: none;\n    }\n\n    .wi-image-wrap {\n      min-height: 150px;\n    }\n  }\n\n  /* Controls */\n  .wi-controls {\n    margin-top: 12px;\n    gap: 0;\n  }\n\n  .wi-ctrl-col {\n    padding: 6px 8px;\n  }\n\n  .wi-nav-btn {\n    height: 52px !important;\n    font-size: 15px !important;\n    font-weight: 700 !important;\n    letter-spacing: 0.5px;\n    border-radius: 12px !important;\n  }\n\n  .wi-nav-btn .v-btn__content {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .wi-next-btn {\n    font-size: 17px !important;\n  }\n\n  .wi-hint {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 6px;\n    margin-top: 8px;\n    font-size: 14px;\n    font-weight: 500;\n    color: #94a3b8;\n  }\n</style>","storeOutMessages":true,"passthru":true,"resendOnRefresh":true,"templateScope":"widget:page","className":"","x":670,"y":780,"wires":[["c67ea1f6c0580816","effed3f3a008aef7"]]},{"id":"e51561215326fafd","type":"global-config","env":[],"modules":{"@flowfuse/node-red-dashboard":"1.30.2"}}]
+{% endraw %}
 {% endrenderFlow 300 %}
 
-> Tip: You don't have to write this Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English, a step image and instruction, a checklist that must be fully ticked before advancing, Previous/Next controls, and a Complete Operation button on the last step, and it will generate the ui-template for you.
+![Placeholder: Work Instruction Widget showing a step with image, checklist, and navigation controls](./images/instructions.png) *The Instructions page: step image, checklist, target time, and Previous / Report Issue / Next controls.*
 
-![Placeholder: Work Instruction Widget showing a step with image, checklist, and navigation controls](https://placehold.co/1200x700/eef2f7/475569?text=Work+Instruction+Widget%3A+Step+View) *The Instructions page: step image, checklist, target time, and Previous / Report Issue / Next controls.*
-
-1. Add a `function` node named "Track step (save/load per user)":
+2. Add a `function` node named "Track step (save/load per user)":
 
 ```javascript
-// Remembers the current step per user for the active work order.
 const p = msg.payload || {};
-const username = global.get('user', 'persistent')?.username;
+
+const username = global.get("user", "persistent")?.username;
 if (!username) return null;
 
-const woId = global.get('currentWork', 'persistent')?.workOrderId || 'unknown-wo';
-const s = global.get(username, 'persistent') || { stepIndex: 0 };
-s.workOrderId = woId;
-
-const save = () => global.set(username, s, 'persistent');
+// Read the user's saved state
+const userState = global.get(username, "persistent") || {
+    workOrderId: null,
+    stepIndex: 0
+};
 
 switch (p.action) {
-    case 'save_step':
-        s.stepIndex = p.stepIndex ?? 0; save(); return null;
+    case "save_step":
+        userState.stepIndex = p.stepIndex ?? 0;
+        global.set(username, userState, "persistent");
+        return null;
 
-    case 'load_step':
-        msg.payload = { workOrderId: woId, stepIndex: s.stepIndex ?? 0 }; return msg;
+    case "load_step":
+        msg.payload = {
+            workOrderId: userState.workOrderId,
+            stepIndex: userState.stepIndex ?? 0
+        };
+        return msg;
 
     default:
         return null;
@@ -349,23 +404,22 @@ switch (p.action) {
 
 3. Wire the "Work Instruction Widget" output into this node, and wire the node's output back into the widget so the `load_step` reply can jump it to the saved step.
 
-> Tip: You don't have to write this JavaScript yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/#function-code-generation) and describe the logic in plain English, save the step index against the logged-in username on `save_step`, and reply with the saved index on `load_step`, and it will generate the function code for you.
-
 Look at the store key: `global.get(username, ...)` and `global.set(username, ...)`. The operator's own username is the storage key, so two operators at the same station never overwrite each other, their progress lives under different keys.
 
 Deploy, walk halfway through an operation, then reload the page. It reopens where you left off, because the step is filed under your name.
 
 ## Completing the Operation as the Logged-In User
 
-When the operator finishes the last step, the widget sends `{ action: 'complete_operation' }`. The completion has to tell the ERP which work order closed, and it reads that from the operator's own stored state, not a shared value another user might have changed.
+When the operator completes the final instruction, the widget sends `{ action: "complete_operation" }`. The flow looks up the operator's stored work order and builds the payload that will be sent to the API.
 
-1. Add a `link in` node and point it at the widget's actions link.
-2. Add a `switch` node named "route by action" that checks `payload.action` and routes `complete_operation`.
-3. Add a `function` node named "build complete request":
+1. Add a **link in** node and connect it to the **Work Instruction Widget** actions link.
+2. Add a **switch** node named **Route by Action** and route messages where `msg.payload.action` equals `complete_operation`.
+3. Add a **function** node named **Build Complete Payload** and paste in the following code.
 
 ```javascript
 const user = global.get('user', 'persistent');
 const username = user?.username;
+
 if (!username) {
     node.warn('No logged-in user found — cannot complete operation');
     return null;
@@ -373,38 +427,52 @@ if (!username) {
 
 const stored = global.get(username, 'persistent') || {};
 const workOrderId = stored.workOrderId || null;
+
 msg.payload = { workOrderId };
 return msg;
 ```
 
-4. Add an `http request` node, **POST** to `/workorders/complete` (your instance host, swap it later), method **POST**, authentication **bearer**.
-5. Add a `change` node that sets `payload` to `Home`, then a `link out` so the result flows on to the reset step below, which returns the operator to Home.
+4. Add an **http request** node, set the **Method** to **POST**, configure **Bearer** authentication using your access token, and set the URL to `https://your-instance.flowfuse.cloud/workorders/complete`. Replace `https://your-instance.flowfuse.cloud` with your own FlowFuse instance URL.
 
-The completion is keyed to the operator's own stored work order, so the record the ERP receives is unambiguous about what finished and who finished it.
+5. Add a **change** node that sets `msg.payload` to `Home`, then connect it to a **link out** node. This will be used in the next step to reset the operator's state and navigate the operator back to the Home page.
 
-## Capturing a Defect Against the Operator
+Because the payload is built from the logged-in operator's stored state, the API always completes the correct work order, even when multiple operators are using the dashboard at the same time.
 
-The **Report Issue** button opens the Report Issue page. The operator fills in a form, and on submit the defect is stamped with the work order the logged-in operator is on.
+## Reporting a Defect as the Logged-In Operator
 
-Getting there is itself an action. The widget's **Report Issue** button sends `{ action: 'Report Issue' }`, so:
+If an operator encounters a defect, they can report it from the **Work Instruction Widget**. The report is automatically linked to the work order they're currently performing, so there's no need to enter a work order ID manually.
 
-1. Add a `link in` node named "widget action in" pointed at the widget's actions link.
-2. Add a `switch` node named "action == Report Issue?" that routes when `payload.action` equals `Report Issue`.
-3. Add a `change` node that sets `payload` to `Report Issue`, then a `ui-control` node to navigate to the Report Issue page.
+The **Report Issue** button sends `{ action: "Report Issue" }`. Use that action to open the report form.
 
-Now the form:
+1. Add a **link in** node named **Widget Action In** and connect it to the **Work Instruction Widget** actions link.
 
-4. Add a `ui-form` node named "Report Issue Form" to the **Report Issue** group, with four required fields: Issue Type (dropdown), Severity (dropdown), Affected Part (text), and Description (multiline). Fill the dropdowns with your issue types and severities.
+2. Add a **switch** node named **Route by Action** and route messages where `msg.payload.action` equals `Report Issue`.
 
-![Placeholder: Report Issue form with Issue Type, Severity, Affected Part, and Description fields](https://placehold.co/1200x700/eef2f7/475569?text=Report+Issue+Form) *The Report Issue form: Issue Type, Severity, Affected Part, and Description, submitted against the operator's current work order.*
+3. Add a **change** node that sets `msg.payload` to `Report Issue`, then connect it to a **ui-control** node to navigate to the **Report Issue** page.
 
-5. Add a `function` node named "Prepare Defect Report":
+4. Add a **ui-form** node named **Report Issue Form** to the **Report Issue** group with four required fields:
 
-```javascript
+   * **Issue Type** (dropdown)
+   * **Severity** (dropdown)
+   * **Affected Part** (text)
+   * **Description** (multiline)
+
+   Populate the dropdown fields with the issue types and severity levels used in your application.
+
+![Screenshot: Report Issue form fields showing the Issue Type, Severity, Affected Part, and Description inputs](./images/form-elements.png)
+*The Report Issue form collects the defect details before submitting them against the current work order.*
+
+![Screenshot: Configuring the dropdown options for the Issue Type and Severity fields in the ui-form node](./images/form-dropdown.png)
+*Configure the Issue Type and Severity dropdowns with the options used in your application.*
+
+5. Add a **function** node named **Prepare Defect Payload** and paste in the following code.
+
+```javascript id="vbv4m6"
 const p = msg.payload || {};
 
 const user = global.get('user', 'persistent');
 const username = user?.username;
+
 if (!username) {
     node.warn('No logged-in user found — cannot report defect');
     return null;
@@ -423,44 +491,52 @@ if (!workOrderId || !issueType || !severity || !affectedPart) {
     return null;
 }
 
-msg.payload = { workOrderId, issueType, severity, affectedPart, description };
+msg.payload = {
+    workOrderId,
+    issueType,
+    severity,
+    affectedPart,
+    description
+};
+
 return msg;
 ```
 
-6. Add an `http request` node, **POST** to `/workorders/defect`, authentication **bearer**, then a `link out` so the result flows to the reset step.
-7. Add a `ui-button` named "Back to Work Instruction" to the same group, wired to a `ui-control` that returns to the Instructions page, so an operator who opened it by mistake can go back without losing their place, their step is safe in context.
+6. Add an **http request** node, set the **Method** to **POST**, configure **Bearer** authentication using your access token, and set the URL to `https://your-instance.flowfuse.cloud/workorders/defect`. Replace `https://your-instance.flowfuse.cloud` with your own FlowFuse instance URL, then connect the request to a **link out** node so the flow continues to the reset step.
 
-The work order never gets typed. It's read straight from `global.get(username)`, so the operator can't attach a defect to the wrong job.
+7. Add a **ui-button** named **Back to Work Instructions** to the same group and connect it to a **ui-control** node that navigates back to the **Instructions** page. Since the operator's progress is stored against their username, they return to the same instruction they left.
+
+![Screenshot: Completed Report Issue page showing the defect reporting form and Back to Work Instructions button](./images/report-issue.png)
+*The completed Report Issue page where operators can submit a defect or return to the work instructions.*
+
+The work order ID is retrieved from the logged-in operator's stored state, ensuring every defect report is associated with the correct work order.
 
 ## Clearing State When Work Ends
 
-One last piece keeps the app honest. When an operation completes or a defect closes out the job, the operator's saved step should be wiped, so their next work order starts clean at step 1 instead of resuming a finished one.
+When an operation is completed or a defect is reported, clear the operator's saved progress so the next work order starts from **step 1** instead of resuming a finished one.
 
-1. Add a `link in` node named "complete / defect result in", pointed at the link outs from the complete and defect steps.
-2. Add a `function` node named "Clear user step state, target Home":
+1. Add a **link in** node named **Complete / Defect Result In** and connect it to the **link out** nodes from the **Complete Operation** and **Report Defect** flows.
+2. Add a **switch** node that checks `msg.statusCode` equals `200`, so the state is only cleared after a successful API response.
+3. Add a **function** node named **Clear User Step State** and paste in the following code.
 
-```javascript
-// Work order finished (completed or flagged defect):
-// wipe the user's saved step progress and send them Home.
+```javascript id="6ej1v5"
 const user = global.get('user', 'persistent');
 const username = user?.username;
+
 global.set(username, {}, 'persistent');
 
 msg.payload = "Home";
 return msg;
 ```
 
-3. Add a `switch` node that checks `statusCode` equals 200, so state only resets on a successful response.
-4. Wire it into a `ui-control` node that navigates the operator to Home.
+4. Connect the function node to a **ui-control** node to navigate the operator back to the **Home** page.
 
-Because the reset is keyed by username too, clearing one operator's progress never touches another's.
+Because the state is stored and cleared by username, resetting one operator's progress never affects anyone else.
 
-Deploy and open the dashboard. Log in, and Home shows your station, your counts, and the work orders assigned to you. Start one, work through the steps, and reload, it resumes where you were. Complete it or report a defect, and you land back on Home with a clean slate, while a colleague logged in elsewhere sees their own work untouched.
+Deploy the flow and open the dashboard. After signing in, operators see only the work orders assigned to them. If they leave and return, they resume from the same instruction. Once they complete the operation or report a defect, their progress is cleared and they're returned to the Home page, ready for the next work order.
 
-## Extending This Further
+## Where to Go Next
 
-You've built a digital work instructions app where identity threads through everything, the work orders an operator sees, the step they resume at, and the name on every operation and defect. That last part is the foundation for traceability: because every action is tied to a logged-in user, you can build the record of who did what, and when, that quality and compliance processes depend on.
+You've built a personalized digital work instructions application that knows who the operator is, what work they're assigned, and where they left off. Replacing the simulator with a real ERP or MES is simply a matter of pointing the HTTP Request nodes to your production `/workorders`, `/workorders/complete`, and `/workorders/defect` endpoints.
 
-Right now it runs against a simulator, but that was only ever a stand-in for your ERP or MES. To go live, point the request nodes at your real `/workorders`, `/workorders/complete`, and `/workorders/defect` endpoints and keep the bearer token flowing. Everything downstream keeps working, because the flow only ever reads identity from one place: the logged-in user in context.
-
-From here, the same pattern extends naturally. Log every completion and defect to a database and you have a full production and quality history per operator. Add role checks and a supervisor sees a different view than a line operator. Feed the completions into an OEE or [defect tracking dashboard](/blog/2026/07/defect-and-quality-monitoring/) and the shop floor's work becomes the shop floor's data.
+From there, you can extend the application with production history, quality tracking, role-based experiences, and OEE dashboards—all powered by the same operator identity. If you're looking to build a complete connected shop floor, To see how FlowFuse fits into modern automotive manufacturing, explore the [Automotive solutions page](/industries/automotive/).
