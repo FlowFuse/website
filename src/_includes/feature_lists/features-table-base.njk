@@ -5,9 +5,6 @@
             <ul class="{{ hosting }} ff-feature-table-section">
                 <li class="ff-feature--column-header">
                     <span class="sticky left-0 h-full bg-white"></span>
-                    <label>
-                        <div>Starter</div>
-                    </label>
                     <label>Pro</label>
                     <label>Enterprise</label>
                 </li>
@@ -20,13 +17,12 @@
 <div class="overflow-x-auto sm:overflow-x-visible" data-table-body>
     <div class="ff-feature-table ff-feature-table--body m-auto">
         {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
-        {% set tiers = ['starter', 'pro', 'enterprise'] %}
+        {% set tiers = ['pro', 'enterprise'] %}
 
         {% asyncAll section in featureCatalog.sections %}
         <ul class="{{ hosting }} ff-feature-table-section">
             <li class="ff-feature--header sm:sticky sm:top-[208px] md:top-[160px]">
                 <span class="sticky left-0 h-full">{{ section.label }}</span>
-                <span></span>
                 <span></span>
                 <span></span>
             </li>
@@ -93,7 +89,7 @@
 
 <div id="feature-dialogs">
     {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
-    {% set tiers = ['starter', 'pro', 'enterprise'] %}
+    {% set tiers = ['pro', 'enterprise'] %}
     {% asyncAll section in featureCatalog.sections %}
     {% asyncAll row in section.features %}
     {% if row.showOnPricing and row.description %}

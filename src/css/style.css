@@ -1377,14 +1377,14 @@ h4:hover .header-anchor::before {
 
     .ff-feature-table-section li {
         display: grid;
-        grid-template-columns: 270px 1fr 1fr 1fr;
+        grid-template-columns: 270px 1fr 1fr;
         align-items: center;
         column-gap: 0.5rem;
         @apply bg-indigo-50/30;
     }
 
     .self-hosted.ff-feature-table-section li {
-        grid-template-columns: 320px repeat(3, 1fr);
+        grid-template-columns: 320px repeat(2, 1fr);
     }
 
     .ff-feature-table-section li:first-child {
@@ -1393,19 +1393,19 @@ h4:hover .header-anchor::before {
 
     @media (max-width: 720px) {
         .ff-feature-table-section li {
-            grid-template-columns: 220px 1fr 1fr 1fr;
+            grid-template-columns: 220px 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 220px repeat(3, 1fr);
+            grid-template-columns: 220px repeat(2, 1fr);
         }
     }
 
     @media (max-width: 680px) {
         .ff-feature-table-section li {
-            grid-template-columns: 170px 1fr 1fr 1fr;
+            grid-template-columns: 170px 1fr 1fr;
         }
         .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 170px repeat(3, 1fr);
+            grid-template-columns: 170px repeat(2, 1fr);
         }
     }
 
@@ -1555,27 +1555,27 @@ h4:hover .header-anchor::before {
     }
 
     /* Enterprise column highlight border */
-    .ff-feature-table-section li > :nth-child(4) {
+    .ff-feature-table-section li > :nth-child(3) {
         border-left: 2px solid var(--color-indigo-200);
         border-right: 2px solid var(--color-indigo-200);
     }
 
     /* Column header Enterprise label: top border + rounded top */
-    .ff-feature-table-section li.ff-feature--column-header > :nth-child(4) {
+    .ff-feature-table-section li.ff-feature--column-header > :nth-child(3) {
         border-top: 2px solid var(--color-indigo-200);
         border-radius: 12px 12px 0 0;
         margin: 0;
     }
 
     /* Bottom border + rounded corners on last data section */
-    .ff-feature-table > ul:nth-last-child(2) li:last-child > :nth-child(4) {
+    .ff-feature-table > ul:nth-last-child(2) li:last-child > :nth-child(3) {
         border-bottom: 2px solid var(--color-indigo-200);
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
     }
 
     /* No highlight on buttons row */
-    .ff-feature-table-section li.ff-feature--column-buttons > :nth-child(4) {
+    .ff-feature-table-section li.ff-feature--column-buttons > :nth-child(3) {
         border-left: none;
         border-right: none;
     }
