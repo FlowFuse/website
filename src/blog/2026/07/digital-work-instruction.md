@@ -359,7 +359,7 @@ return [
 
 3. Import the Current Work Order Card ui-template below and assign it to the Current Work Order group. The complete component is provided below, so there's no need to recreate it.
 
-> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/?utm_source=chatgpt.com#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
+> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
 
 {% renderFlow 300 %}
 {% raw %}
