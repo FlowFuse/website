@@ -1,0 +1,14 @@
+Hero video background sources
+
+All clips are from Pexels and are free for commercial use, no attribution
+required (https://www.pexels.com/license/).
+
+industries/hero-video/automotive.mp4            https://www.pexels.com/video/32386532/
+industries/hero-video/aerospace-components.mp4  https://www.pexels.com/video/19791092/
+industries/hero-video/aviation-aerospace.mp4    https://www.pexels.com/video/36971603/
+industries/hero-video/electronics-appliances.mp4 https://www.pexels.com/video/6755170/
+industries/hero-video/food-beverage.mp4         https://www.pexels.com/video/8633311/
+industries/hero-video/life-sciences.mp4         https://www.pexels.com/video/8863359/
+industries/hero-video/renewables.mp4            https://www.pexels.com/video/32939545/
+industries/hero-video/semiconductors.mp4        https://www.pexels.com/video/32386615/
+ai/ai-hero-bg.mp4                               https://www.pexels.com/video/32750415/
