@@ -3,60 +3,125 @@ layout: page
 nohero: true
 imageDescription: "Plant worker interacting with an HMI"
 meta:
-    title: "FlowFuse Expert: LLMs for Industrial Teams"
-    description: "Turn natural language into reliable industrial applications with FlowFuse Expert, or LLM-powered copilot, deeply integrated into FlowFuse and Node-RED, designed for the constraints, protocols, and governance your plants require."
+    title: "Industrial AI: FlowFuse Expert, Governed and Built In"
+    description: "Industrial AI with FlowFuse: build flows with FlowFuse Expert, act on live operations behind approvals, and give your company-sanctioned AI governed access. Every AI capability on one platform, with the permissions, RBAC, and audit your plants require."
 hero:
-    title: "<span class='text-indigo-800'>FlowFuse Expert:</span> LLMs for Industrial Teams"
+    title: "<span class='text-indigo-600'>Industrial AI,</span> Governed and Built In"
     description:
-        - "Turn natural language into reliable industrial applications with with FlowFuse Expert, our LLM-powered copilot, deeply integrated into FlowFuse and Node-RED. Built on Model Context Protocol (MCP), it connects AI directly to your machines, databases, and brokers—so it understands your constraints, protocols, and governance, not generic templates."
-        - "Scale Your Industrial Applications with AI."
+        - "AI capability is table stakes in 2026. Governed access to your operations is the difference."
     buttonText: "Request a Demo"
     buttonLink: "/book-demo/"
     buttonReference: "ai"
     img: ./images/ai/ai-hero.png
     imgAlt: "FlowFuse Expert AI icon with connecting lines flowing out"
-platform:
-    title: "Meet your <span class='text-indigo-600'>AI-powered</span> FlowFuse Expert"
-    subtitle: "Ask what you need. Let it build the application."
-    description:
-        - "FlowFuse Expert is the fastest, most secure way to build industrial applications and operate at scale—now with AI powered by Model Context Protocol (MCP) that grounds every suggestion in live plant data, so it  understands your processes, systems, and governance needs in real time."
-        - "FlowFuse combines Node-RED's 5,000+ community nodes with with FlowFuse Expert, our LLM-powered copilot,  built on MCP and enterprise governance, so IT and OT teams can collaborate and deploy across plants without waiting on scarce developers. MCP connects AI to your live industrial data, making FlowFuse the fastest, most secure way to build industrial applications and operate at scale."
-    image: images/ai/ai-ui.png
-    imgAlt: "FlowFuse Expert showing AI-generated flow suggestions"
-solution:
-    title: "AI for Real <span class='text-indigo-600'>Industrial Workflows</span>"
-    benefits:
-        - svgPath: "components/icons/sparkles.svg"
-          title: "AI-Generated Industrial Flows"
-          description: "Generate Node-RED flows, JavaScript, and SQL from natural language using an industrial-tuned LLM, so you can connect machines, transform data, and build dashboards in minutes instead of months."
-        - svgPath: "components/icons/squares-plus.svg"
-          title: "Reusable Industrial Blueprints"
-          description: "Turn OT know-how into reusable blueprints for UNS, SCADA, MES, and middleware that your teams can deploy across plants with full version control and governance."
+capabilityIntro:
+    title: "Every way AI shows up in <span class='text-indigo-600'>your operations</span>"
+    subtitle: "From accelerating how you build, to acting inside live flows, to connecting the AI your company already trusts. Each one runs on the same governed platform."
+capabilityGroups:
+    - title: "Accelerate engineering"
+      eyebrow: "Build"
+      subtitle: "FlowFuse Expert turns intent into working industrial applications, right in the editor."
+      items:
+        - name: "AI-assisted engineering"
+          svgPath: "components/icons/code-bracket.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Generate and edit Node-RED flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up. It works inline in the editor your team already uses, so there is no separate tool to context-switch into. That turns unfamiliar or inherited flows into something the whole team can read and maintain."
+        - name: "Prompt-to-app"
+          svgPath: "components/icons/sparkles.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Describe the application you need and FlowFuse Expert agentically builds the starting flows and logic directly in your workspace. You begin from a working draft instead of a blank canvas, then refine it like any other flow. Everything it creates stays inside the platform, so the same permissions and review apply from the first node."
+        - name: "Build your own AI agents"
+          svgPath: "components/icons/squares-plus.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Start from an agent blueprint, like the <a href='/blueprints/ai/llm-chat-agent/' class='text-indigo-600 hover:text-indigo-800 underline'>LLM chat agent</a> or <a href='/blueprints/ai/rag-chat-agent/' class='text-indigo-600 hover:text-indigo-800 underline'>RAG chat agent</a>, to stand up a task-specific AI agent grounded in your own data, tools and context. It gives you a proven structure to adapt rather than wiring an agent up from scratch. With MCP servers you can give the agent access to anything, including your RAG applications. Because it runs on the platform, the agent operates within the access you grant it."
+        - name: "Built-in product expert"
+          svgPath: "components/icons/book-open.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "A chat assistant with answers grounded in FlowFuse and Node-RED documentation, so guidance comes from the product, not stale wikis. Ask how a node works or how to approach a build and get an answer without leaving your workspace. It shortens the path from question to working flow for new and experienced users alike."
+    - title: "Operate with AI, safely"
+      eyebrow: "Operate"
+      subtitle: "AI that acts inside your flows and answers questions about live operations, always behind your controls."
+      items:
+        - name: "Governed autonomous operations"
+          svgPath: "components/icons/bolt.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Platform Automations let AI act on live systems, with every write behind an approval card, session-scoped and fully audited. A person approves, edits or rejects each proposed change before it reaches a machine. Nothing runs outside the permissions and RBAC that already govern your teams."
+        - name: "Ask your plant anything"
+          svgPath: "components/icons/chat-bubble-left-right.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "In Insights mode, ask questions in natural language and get answers grounded in live machine state, alarms and logs. Operators and engineers can check what is happening on the floor without building a report or querying a database by hand. Table and MQTT-broker reading are coming soon."
+        - name: "Automated visual inspection"
+          svgPath: "components/icons/camera.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Run ONNX vision models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant."
+        - name: "Use any model within flows"
+          svgPath: "components/icons/cog-6-tooth.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control."
+    - title: "Connect and govern your AI"
+      eyebrow: "Connect"
+      subtitle: "Give the AI your company already trusts a governed door into operations, on a boundary you control."
+      items:
+        - name: "Connect your company's AI"
+          svgPath: "components/icons/arrows-right-left.svg"
+          status: "Coming soon"
+          statusKind: "soon"
+          description: "Expose flows as MCP tools so the AI your company already sanctioned, like Claude or Copilot, can reach operational data through a permissioned boundary. The AI reaches only what you expose, on the terms you set, rather than getting direct access to plant systems. This is our most-requested capability and is in active development."
+        - name: "AI that uses your tools"
+          svgPath: "components/icons/puzzle-piece.svg"
+          status: "Available"
+          statusKind: "live"
+          description: "Build your own MCP servers and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register."
+governance:
+    title: "Governance you can <span class='text-indigo-600'>prove</span>"
+    subtitle: "The control plane every AI action runs through, the same one that governs your teams."
+    items:
+        - svgPath: "components/icons/check-circle.svg"
+          title: "Approval cards on writes"
+          description: "Every write action AI proposes waits for a human to approve, reject or edit."
+        - svgPath: "components/icons/lock-closed.svg"
+          title: "Per-tool permissions"
+          description: "Grant read, write or delete per tool and per team, so AI only reaches what you allow."
         - svgPath: "components/icons/shield-check.svg"
-          title: "Governance You Trust"
-          description: "Keep humans in control with approval workflows, role-based access, audit trails, and the same enterprise-grade governance you use for all FlowFuse applications."
-ctaSection:
-    title: "With <span class='text-indigo-600'>FlowFuse Expert,</span> teams can:"
-    list:
-        - "<span class='font-medium'>Generate Node-RED flows from natural language descriptions</span> of a workflow or integration, so you can connect any machine and protocol faster."
-        - "<span class='font-medium'>Draft and edit Function node code</span> (JavaScript), UI templates (HTML/CSS/JS), SQL queries, and JSON configurations using the FlowFuse Expert in the editor, so you can transform and model data in any platform without starting from scratch."
-        - "<span class='font-medium'>Empower Operations and Process Engineers</span> to quickly build new dashboards, widgets, and queries using plain-language descriptions of the desired views or KPIs, reducing reliance on IT support."
-        - "<span class='font-medium'>Spin up LLM blueprints</span> that expose industrial data to a chat agent via Model Context Protocol (MCP), so operators and engineers can query systems in natural language and get answers grounded in live machine state, alarms, and logs—not stale documentation."
-    img: ./images/ai/ai-cta.png
-    imgAlt: "Plant worker interacting with AI on a tablet, connected to the entire factory"
+          title: "Role-based access"
+          description: "The same RBAC that governs your teams governs what AI can see and do."
+        - svgPath: "components/icons/clipboard-document-check.svg"
+          title: "Audit on everything"
+          description: "Every action AI touches is logged, so you can show exactly what happened and when."
 ---
-<!--Hero Content-->
-<div class="w-full px-6">
+<!--Hero Content (background-image treatment, pattern from the homepage hero) -->
+<section class="w-full relative bg-white">
+    <!-- Animated video background (container-port aerial), sized by the script
+         below to reach the middle of the AI input box then masked out, mirroring
+         the industry-page hero video treatment. -->
+    <div class="ai-hero-bg" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata" data-speed="0.6" poster="/images/ai/ai-hero-bg.jpg">
+            <source src="/images/ai/ai-hero-bg.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>(function(){var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.ai-hero-bg video').forEach(function(v){if(r){v.removeAttribute('autoplay');v.pause();return;}var sp=parseFloat(v.getAttribute('data-speed'))||0.6;var s=function(){v.playbackRate=sp;};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s);});})();</script>
+    <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-20">
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
             <div class="container m-auto text-left max-w-screen-lg">
                 <div class="mx-auto">
-                    <h1 class="font-medium home m-auto text-center text-indigo-600 mt-24 mb-16 max-w-2xl">
-                        {{ hero.title | safe }}
-                    </h1>
-                    {% for p in hero.description %}
-                        <p class="text-center max-w-4xl mx-auto">{{ p | safe }}</p>
-                    {% endfor %}
-                    <div class="mt-20">
+                    <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl px-6 py-8 md:px-10 md:py-10 max-w-3xl mx-auto">
+                        <h1 class="font-medium home m-auto text-center text-gray-900 mb-6 max-w-2xl">
+                            {{ hero.title | safe }}
+                        </h1>
+                        <p class="text-center text-xl md:text-2xl font-medium text-gray-800 max-w-2xl mx-auto mb-6">The platform is the <span class="text-indigo-600">control plane.</span> AI is the <span class="text-indigo-600">accelerator.</span></p>
+                        {% for p in hero.description %}
+                            <p class="text-center max-w-4xl mx-auto text-gray-600">{{ p | safe }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="mt-10">
                         <!-- AI Chat Interface -->
                         {% include "components/ai-chat-interface.njk" %}
 
@@ -67,85 +132,97 @@ ctaSection:
             </div>
         </div>
     </div>
-    <!--Platform-->
-    <div class="w-full py-12 max-md:pb-20 mt-6 px-6">
-        <div class="md:flex md:my-12 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
-            <div class="m-auto md:w-[40%]">
-                <h2 class="w-full mt-0">
-                    {{ platform.title | safe }}
-                </h2>
-                <h4 class="font-grey-500 mt-3 max-md:mb-8">{{ platform.subtitle }}</h4>
-                {% for p in platform.description %}
-                <p>
-                    {{ p | safe }}
+    <script>
+    (function(){
+        var section = document.currentScript.closest('section');
+        function fit(){
+            if(!section){ return; }
+            var box = section.querySelector('.ai-chat-box');
+            if(!box){ return; }
+            var sr = section.getBoundingClientRect();
+            var br = box.getBoundingClientRect();
+            var h = ((br.top - sr.top) + br.height / 2) + 'px';
+            var el = section.querySelector('.ai-hero-bg');
+            if(el){ el.style.height = h; }
+        }
+        if(document.readyState !== 'loading'){ fit(); } else { document.addEventListener('DOMContentLoaded', fit); }
+        window.addEventListener('load', fit);
+        window.addEventListener('resize', fit);
+    })();
+    </script>
+</section>
+<!-- CAPABILITIES: every AI use case, formalized, grouped by how it shows up in operations.
+     NOTE: Predictive analytics and Edge ML are intentionally omitted from public claims
+     (not shipped / not on the roadmap). Do not add them here without product sign-off. -->
+<div class="w-full bg-indigo-50/60 py-16 sm:py-24 px-6 border-t border-gray-100">
+    <div class="md:max-w-screen-lg m-auto">
+        <div class="max-w-4xl">
+            <h2 class="w-full">{{ capabilityIntro.title | safe }}</h2>
+            <p class="mt-3 text-gray-600">{{ capabilityIntro.subtitle }}</p>
+        </div>
+        {% for group in capabilityGroups %}
+        <section class="ff-cap-group md:grid md:grid-cols-5 md:gap-x-12 lg:gap-x-16 mt-24 {% if not loop.first %}pt-20 border-t border-indigo-200/70{% endif %}">
+            <!-- LEFT: group header, pins on desktop while the right column scrolls -->
+            <div class="ff-cap-sticky md:col-span-2 max-md:mb-10">
+                <p class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">
+                    <span class="font-mono text-indigo-600">0{{ loop.index }}</span>
+                    <span>{{ group.eyebrow }}</span>
                 </p>
+                <h3 class="text-3xl md:text-4xl font-medium text-gray-900 leading-tight mt-4 mb-0">{{ group.title }}</h3>
+                <p class="text-gray-600 font-light max-w-md mt-4 mb-0">{{ group.subtitle }}</p>
+            </div>
+            <!-- RIGHT: the group's capabilities as icon-marked, scrolling blocks.
+                 These are informational, not links: no click affordance, no tabindex. -->
+            <div class="md:col-span-3">
+                {% for item in group.items %}
+                <div class="ff-cap-item px-2 py-7 {% if not loop.first %}mt-6 pt-14 border-t border-indigo-100{% endif %}">
+                    <div class="flex items-start gap-4 sm:gap-5">
+                        <span class="ff-cap-icon" aria-hidden="true">{% include item.svgPath %}</span>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+                                <span class="text-xl font-medium text-gray-900">{{ item.name }}</span>
+                                {% if item.statusKind == 'soon' %}
+                                <span class="ff-cap-soon bg-amber-50 text-amber-700 border border-amber-200">Coming soon</span>
+                                {% endif %}
+                            </div>
+                            <p class="text-gray-600 font-light mt-2 mb-0">{{ item.description | safe }}</p>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
             </div>
-            <div class="md:w-[60%] flex-grow relative max-md:mt-10">
-                <div class="w-full h-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
-                    <div class="w-full h-full bg-white ff-image-cover ff-image-rounded left">
-                    {% set imageSrc = ["./", platform.image ] | join %}
-                    {% image imageSrc, imageDescription, [1200] %}
-                </div>
-            </div>
-        </div>
+        </section>
+        {% endfor %}
     </div>
 </div>
-<!-- Solution -->
-<div class="w-full bg-indigo-50/60 pb-20 pt-16 mb-16 px-6">
-    <div class="md:max-w-screen-lg m-auto">
-        <h2 class="text-center w-full md:text-left max-w-4xl">{{ solution.title | safe }}</h2>
-        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
-            {% for benefit in solution.benefits %}
-            <div class="relative w-full max-md:max-w-md mx-auto bg-gradient-to-br from-white to-transparent border-2 border-white p-4 rounded-lg">
-                <div class="flex flex-col items-center sm:items-start">
-                    <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                        <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
-                            {% include benefit.svgPath %}
-                        </div>
-                        <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                            <h5 class="w-full md:m-0">
-                                <div class="text-xl font-medium text-indigo-600 text-center sm:text-left">{{ benefit.title }}
-                                </div>
-                            </h5>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-center sm:text-left font-light">{{ benefit.description | safe }}</p>
-                    </div>
-                </div>
+<!-- GOVERNANCE: the control plane every AI action runs through -->
+<div class="w-full py-16 sm:py-24 px-6 border-t border-gray-100">
+    <div class="md:max-w-screen-lg m-auto ff-blue-card pt-12 pb-12 px-6 md:px-10">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="w-full">{{ governance.title | safe }}</h2>
+            <p class="mt-3 text-gray-600">{{ governance.subtitle }}</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {% for g in governance.items %}
+            <div class="flex flex-col items-center text-center gap-3">
+                <div class="w-8 h-8 text-indigo-600">{% include g.svgPath %}</div>
+                <p class="font-medium text-indigo-700 m-0">{{ g.title }}</p>
+                <p class="text-sm text-gray-600 font-light m-0">{{ g.description }}</p>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
-<!--CTA-->
-<div class="w-full px-6 pt-6 md:pt-8 pb-20">
-    <div class="md:flex items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
-        <div class="md:w-1/3 flex-grow relative max-md:mb-16 max-md:max-w-md max-md:mx-auto">
-            <div class="ff-image-cover left ff-image-rounded w-full h-full">
-                {% image ctaSection.img, ctaSection.imgAlt, [496] %}
-            </div>
-        </div>
-        <div class="md:2/3">
-            <h2>{{ ctaSection.title | safe }}</h2>
-            <div class="ff-prose prose mt-8">
-                <ul class="list-disc text-left">
-                    {% for item in ctaSection.list %}
-                    <li>
-                        {{ item | safe }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                <div class="flex max-sm:flex-col max-sm:w-full gap-3 mt-10">
-                    <a class="ff-btn ff-btn--primary no-underline text-base flex inline uppercase md:min-h-[40px] max-sm:mt-6 max-sm:w-full max-md:mx-auto"
-                    href="{% include "sign-up-url.njk" %}"
-                    onclick="capture('cta-trial', {'reference': '{{ hero.buttonReference }}'})">
-                    Try it on FlowFuse Cloud
-                    </a>
-                </div>
-            </div>
-        </div>
+
+
+
+<!-- USE CASES: where AI meets operations (cross-links per web task) -->
+<div class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="max-md:text-center">Where AI meets <span class="text-indigo-600">your operations</span></h2>
+        <p class="mt-4 max-w-3xl text-gray-600">The use cases pair with FlowFuse AI, from governed agent access to AI-assisted monitoring.</p>
+        {% set featuredUseCases = ["production-monitoring", "shop-floor-communication"] %}
+        {% include "components/use-case-links.njk" %}
+        <p class="mt-8"><a href="/use-cases/" class="text-indigo-600 font-semibold">See all use cases</a></p>
     </div>
 </div>
-
