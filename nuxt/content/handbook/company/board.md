@@ -34,7 +34,25 @@ specifically the Name Familiarity & Relationship table, which includes all BoD m
 
 When creating the calendar invite, attach the board deck (as a Google Slides link)
 so attendees have it ahead of time. The deck will be empty a few months out,
-but allows the company to iterate on the deck as the meeting comes closer.
+but allows the company to iterate on the deck as the meeting comes closer. Ensure
+that all participants of the meeting have access to the presentation slides.
+
+Confirm attendance of all participants of the invite, or their respective
+representatives prior to the scheduled meeting.
+
+## Board Meeting Attendees
+
+Each quarterly board meeting should include the following representatives. Before sending invites,
+verify that all firms below have a confirmed attendee on the calendar.
+
+Senovo — 1 representative
+OCVO — 1 representative
+Cota Capital — 1 representative
+We Start the Company / Open Core Ventures — 1 representative
+Bright Pixel — 1 representative (board observer)
+Cooley - 1 representative (board observer)
+West Wave Capital — optional
+Uncorrelated — optional
 
 ## The Strategic Timeline
 
