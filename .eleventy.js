@@ -107,7 +107,7 @@ module.exports = function(eleventyConfig) {
     });
 
     // Add a global data variable for the current date
-    eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());  
+    eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());
 
     // Make filters globally accessible
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
