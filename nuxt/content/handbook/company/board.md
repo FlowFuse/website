@@ -40,6 +40,21 @@ that all participants of the meeting have access to the presentation slides.
 Confirm attendance of all participants of the invite, or their respective
 representatives prior to the scheduled meeting.
 
+## Board Meeting Attendees
+
+Each quarterly board meeting should include the following representatives. Before sending invites,
+verify that all firms below have a confirmed attendee on the calendar.
+
+Senovo — 1 representative
+OCVO — 1 representative
+Cota Capital — 1 representative
+We Start the Company — 1 representative
+Bright Pixel — 1 representative (board observer)
+Cooley - 1 representative (board observer)
+West Wave Capital — optional
+Uncorrelated — optional
+Open Core Ventures — optional
+
 ## The Strategic Timeline
 
 Working from the meeting date, follow these milestones:
