@@ -16,7 +16,7 @@ This area focuses on creating pipeline by attracting new prospects and capturing
 qualified leads.
 
 - **Paid Advertising Campaigns**: We run targeted digital ad campaigns (e.g.,
-  ABM on LinkedIn, Google Ads) to reach specific audiences, drive traffic to our
+  [ABM](/handbook/marketing/account-based-marketing/) on LinkedIn, Google Ads) to reach specific audiences, drive traffic to our
   key content, and generate MQLs (Marketing Qualified Leads). See [Lead
   Activation](/handbook/marketing/lead-activation/) for definitions of inbound
   vs. outbound lead sources.

@@ -80,7 +80,7 @@
         "simple-update-notifier": {
             "semver": ">=7.5.2"
         },
-        "shell-quote": ">=1.8.4",
+        "shell-quote": ">=1.10.0",
         "@parcel/watcher": "2.5.6",
         "@resvg/resvg-js": "2.6.2",
         "@takumi-rs/core": "1.8.4",
@@ -93,12 +93,12 @@
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
         "@flowfuse/flow-renderer": "^0.5.0",
-        "@netlify/blobs": "^10.3.0",
+        "@netlify/blobs": "^10.7.9",
         "@xmldom/xmldom": "^0.8.13",
         "algoliasearch": "^4.25.3",
         "codeowners": "^5.1.1",
         "eleventy-plugin-toc": "^1.1.5",
-        "js-yaml": "^4.2.0",
+        "js-yaml": "^4.3.0",
         "markdown-it-attrs": "^4.1.6",
         "xpath": "^0.0.34"
     }

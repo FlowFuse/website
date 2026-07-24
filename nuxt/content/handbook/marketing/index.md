@@ -12,7 +12,7 @@ of FlowFuse.
 
 There's 3 pillars we're heavily invested in:
 1. Our [Content Strategy](./content-strategy/)
-2. Account Based Marketing
+2. [Account Based Marketing](./account-based-marketing/)
 3. [Events](./events.md)
 
 Combined, these pillars are engaging with our audience at different stages of

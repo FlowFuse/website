@@ -43,11 +43,11 @@ useHead({
         <li
           v-for="item in publications"
           :key="item.url"
-          class="customer-story-tile w-full my-2 border px-0 rounded-lg hover:drop-shadow-lg hover:border-blue-600 transition ease-in-out duration-300 bg-white"
+          class="customer-story-tile w-full my-2 border border-gray-200 px-0 rounded-lg hover:drop-shadow-lg hover:border-blue-600 transition ease-in-out duration-300 bg-white"
         >
           <NuxtLink :to="item.url" class="w-full flex flex-col group hover:no-underline h-full m-0">
             <div>
-              <div class="relative border-b">
+              <div class="relative border-b border-gray-200">
                 <div class="w-full h-52 ff-image-cover ff-image-top-rounded">
                   <img :src="item.thumbnail" :alt="`Image representing ${item.title}`" class="w-full h-full object-cover">
                 </div>

@@ -1,7 +1,10 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
 
 export default defineContentConfig({
     collections: {
+        // Rendered via pages/[...slug].vue, which sets `robots: noindex` on every page —
+        // deliberately has no `sitemap` field, so @nuxtjs/sitemap skips this collection.
         pages: defineCollection({
             type: 'page',
             source: '*.md'
@@ -37,6 +40,7 @@ export default defineContentConfig({
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
                 }).optional(),
+                sitemap: defineSitemapSchema(),
             })
         }),
         ebooks: defineCollection({
@@ -60,6 +64,7 @@ export default defineContentConfig({
                     reference: z.string().optional(),
                 }),
                 contentTable: z.array(z.string()),
+                sitemap: defineSitemapSchema(),
             })
         }),
         whitepapers: defineCollection({
@@ -83,6 +88,14 @@ export default defineContentConfig({
                 whitepaperSubtitle: z.string().optional(),
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
+                // Content lives under /whitepapers/* but the page route is singular:
+                // /whitepaper/[slug].vue — rewrite the sitemap loc to match.
+                sitemap: defineSitemapSchema({
+                    name: 'whitepapers',
+                    onUrl: (url) => {
+                        url.loc = url.loc.replace(/^\/whitepapers\//, '/whitepaper/')
+                    },
+                }),
             })
         })
     }
