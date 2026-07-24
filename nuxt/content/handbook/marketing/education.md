@@ -4,7 +4,7 @@ title: "FlowFuse for Education"
 
 # FlowFuse for Education
 
-The purpose of FlowFuse for Education is to support non-profit education by allowing educators to use FlowFuse Starter for free.
+The purpose of FlowFuse for Education is to support non-profit education by allowing educators to use FlowFuse for free.
 
 ## Approval Process
 
