@@ -4,6 +4,8 @@ meta:
   title: "Renewable Energy Operations Platform | FlowFuse"
   description: "Connect solar, wind, and storage assets in one place. FlowFuse helps your team monitor, automate, and optimize every site in real time, without rewriting your entire stack."
 hero:
+  eyebrow: "Renewable Energy"
+  eyebrowIcon: "components/icons/wind-turbine.svg"
   heading: "<span class=\"text-red-600\">Scale renewable operations</span> without vendor lock-in"
   description: "Connect solar, wind, and storage assets in one place. FlowFuse helps your team monitor, automate, and optimize every site in real time, without rewriting your entire stack."
   primaryCta: "BOOK A 30-MINUTE DEMO"
@@ -13,6 +15,9 @@ hero:
   image: "/images/industries/renewable-energies.png"
   imageAlt: "Aerial view of a wind and solar farm with data overlay showing real-time monitoring metrics."
   subCta: "See a sample renewable dashboard"
+  video:
+    mp4: /images/industries/hero-video/renewables.mp4
+    poster: /images/industries/hero-video/renewables.jpg
 problemImage: "images/industries/renewable-problem.svg"
 problems:
     - "Fragmented assets and legacy systems make it hard to see what is happening across all your sites."

@@ -6,15 +6,33 @@ layout: default
     <!-- ============================================================
          HERO
     ============================================================ -->
-    <div class="w-full px-6">
-        <div class="w-full py-10 sm:py-12 md:pt-6">
-            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-center md:max-w-screen-lg gap-8 items-stretch">
+    <div class="w-full relative overflow-hidden">
+        {% if hero.video %}
+        <div class="hero-video-bg absolute inset-0" aria-hidden="true">
+            <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" data-speed="{{ hero.video.speed | default(0.5) }}"{% if hero.video.poster %} poster="{{ hero.video.poster }}"{% endif %}>
+                <source src="{{ hero.video.mp4 }}" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-black/10"></div>
+        </div>
+        <script>(function(){var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.hero-video-bg video').forEach(function(v){if(r){v.removeAttribute('autoplay');v.pause();return;}var sp=parseFloat(v.getAttribute('data-speed'));if(!sp||sp<=0){sp=0.5;}var s=function(){v.playbackRate=sp;};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s);});})();</script>
+        {% endif %}
+        <div class="w-full px-6 py-10 sm:py-12 md:pt-6{% if hero.video %} relative z-10{% endif %}">
+            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-left md:max-w-screen-lg gap-8 items-stretch{% if hero.video %} bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-xl{% endif %}">
                 <div class="m-auto md:w-1/2">
-                    <h1 class="w-full mt-0 m-auto font-medium sm:text-5xl">
+                    {% if hero.eyebrow %}
+                    <div class="mb-4 max-md:flex max-md:justify-start">
+                        <span class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 industry-eyebrow-icon text-gray-800">
+                            {% if hero.eyebrowIcon %}<span class="w-5 h-5 inline-flex items-center shrink-0">{% include hero.eyebrowIcon %}</span>{% endif %}
+                            <span class="font-medium">{{ hero.eyebrow }}</span>
+                        </span>
+                    </div>
+                    {% endif %}
+                    <h1 class="w-full mt-0 m-auto font-medium text-3xl sm:text-4xl">
                         {{ hero.heading | safe }}
                     </h1>
                     <p class="mb-10 text-gray-600">{{ hero.description }}</p>
                     <div class="md:mt-3 gap-2 hidden md:flex md:flex-col md:items-start md:justify-start">
+                        {% if hero.subCta %}<p class="text-sm text-gray-600 m-0 mb-1">{{ hero.subCta }}</p>{% endif %}
                         <div class="flex gap-4 items-center flex-row">
                             <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
                                 href="{{ hero.primaryCtaLink }}"
@@ -23,16 +41,13 @@ layout: default
                                     {{ hero.primaryCta }}
                                 </span>
                             </a>
-                            <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                            <a class="ff-btn group hover:no-underline flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
                                 href="{{ hero.secondaryCtaLink }}"
                                 onclick="capture('cta-contact', {'position': 'hero', 'page': '{{ slug }}'})">
-                                <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                                {{ hero.secondaryCta }}
-                                {% include "components/icons/arrow-right.svg" %}
-                                </span>
+                                <span class="ff-animated-link">{{ hero.secondaryCta }}</span>
+                                <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-right.svg" %}</span>
                             </a>
                         </div>
-                        <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex-grow relative">
@@ -40,8 +55,9 @@ layout: default
                         {% image ["./", hero.image] | join, hero.imageAlt, [496] %}
                     </div>
                 </div>
-                <div class="flex flex-col md:hidden gap-3 mt-8 items-center">
-                    <div class="flex flex-row gap-4 items-center justify-center flex-wrap">
+                <div class="flex flex-col md:hidden gap-3 mt-8 items-start">
+                    {% if hero.subCta %}<p class="text-sm text-gray-600 m-0 mb-1">{{ hero.subCta }}</p>{% endif %}
+                    <div class="flex flex-row gap-4 items-center justify-start flex-wrap">
                         <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
                             href="{{ hero.primaryCtaLink }}"
                             onclick="capture('cta-book-demo', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
@@ -49,16 +65,13 @@ layout: default
                                 {{ hero.primaryCta }}
                             </span>
                         </a>
-                        <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                        <a class="ff-btn group hover:no-underline flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
                             href="{{ hero.secondaryCtaLink }}"
                             onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
-                            <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                                {{ hero.secondaryCta }}
-                                {% include "components/icons/arrow-right.svg" %}
-                            </span>
+                            <span class="ff-animated-link">{{ hero.secondaryCta }}</span>
+                            <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-right.svg" %}</span>
                         </a>
                     </div>
-                    <p class="text-sm text-gray-400 m-0">{{ hero.subCta }}</p>
                 </div>
             </div>
         </div>
@@ -75,8 +88,8 @@ layout: default
                     <ul class="mt-6 flex flex-col gap-6 list-none p-0 m-0">
                         {% for problem in problems %}
                         <li class="flex items-start gap-3 items-center">
-                            <span class="flex-shrink-0 w-12 h-12 bg-red-300 rounded-full flex items-center justify-center text-white">
-                                <span class="w-6 h-6">{% include "components/icons/x-mark.svg" %}</span>
+                            <span class="flex-shrink-0 w-8 h-8 bg-red-300 rounded-full flex items-center justify-center text-white">
+                                <span class="w-4 h-4">{% include "components/icons/x-mark.svg" %}</span>
                             </span>
                             <p class="text-gray-700 m-0 pt-2">{{ problem }}</p>
                         </li>
@@ -140,6 +153,21 @@ layout: default
     </div>
 
     <!-- ============================================================
+         TRUSTED BY (animated logos) - styled to match the homepage social-proof
+         section (radial-indigo heading band, no divider rule)
+    ============================================================ -->
+    <div class="w-full px-6">
+        <div class="sm:max-w-screen-lg m-auto max-w-5xl mb-10">
+            <div class="w-full text-center min-h-14 flex justify-center items-center bg-radial-indigo">
+                <h2 class="text-gray-600 text-lg font-semibold">Trusted by our customers</h2>
+            </div>
+            <div class="mx-auto text-center -mt-0.5">
+                {% include "social-proof.njk" %}
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
          USE CASES
     ============================================================ -->
     <div class="w-full py-16 px-6 comparison-section-bg">
@@ -177,21 +205,14 @@ layout: default
     </div>
 
     <!-- ============================================================
-         SOCIAL PROOF
+         USE CASES FOR THIS INDUSTRY (derived from use-case tags)
     ============================================================ -->
-    <div class="w-full py-12 px-6">
-        <div class="max-w-screen-lg mx-auto">
-            <p class="text-center text-indigo-800 font-semibold mb-6">{{ socialProofText }}</p>
-            <div class="max-md:max-w-xl max-md:mx-auto">
-                {% include "social-proof.njk" %}
-            </div>
-        </div>
-    </div>
+    {% include "components/industry-use-cases.njk" %}
 
     <!-- ============================================================
          CTA
     ============================================================ -->
-    <div class="w-full px-6 pb-24">
+    <div class="w-full px-6 pt-12 sm:pt-16 pb-24">
         <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10">
             <h3 class="mb-4 w-full text-center">{{ cta.title }}</h3>
             <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">{{ cta.description }}</p>
@@ -205,3 +226,4 @@ layout: default
         </div>
     </div>
 </div>
+
