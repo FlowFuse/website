@@ -1,0 +1,23 @@
+{
+    "_comment": "Nav highlight cards, one per top-nav dropdown. Marketing owns this file: each entry is the promo card shown at the left of the corresponding mega dropdown on xl+ screens. Swap an entry to feature a campaign, webinar, customer story or launch. Each card renders as the image plus the title (which also serves as the link's accessible name); keep titles short (2 lines max). Set image to a site-absolute path to override, otherwise the card uses the linked page's front-matter image, falling back to /images/og-blog.jpg. Consumed by Eleventy (base.njk) and by Nuxt (nuxt/components/AppHeader.vue).",
+    "platform": {
+        "title": "Industrial AI, governed and built in",
+        "link": "/ai/",
+        "image": "/images/ai/ai-hero.png"
+    },
+    "solutions": {
+        "title": "Scale automotive operations",
+        "link": "/industries/automotive/",
+        "image": "/images/industries/automotive.jpg"
+    },
+    "resources": {
+        "title": "Free Node-RED training",
+        "link": "https://node-red-academy.learnworlds.com/",
+        "image": "/images/education/education_hero.jpg"
+    },
+    "company": {
+        "title": "See how teams ship with FlowFuse",
+        "link": "/customer-stories/",
+        "image": "/images/stories/arch_systems.jpeg"
+    }
+}
