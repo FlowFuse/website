@@ -110,7 +110,7 @@ The project board is updated to reflect reality. This is about accuracy and lear
 
 ## Milestones
 
-We use milestones to group work into larger releases. Milestone number corresponds to the FlowFuse release number.
+We use milestones to group work into larger releases. Milestone numbers correspond to the FlowFuse release number.
 
 ### Creating Milestones
 
