@@ -795,6 +795,39 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
+    /* Subtle purple wave sweeping left-to-right THROUGH the logo's own fill on
+       hover: the logo paths use a horizontal gradient (defined in the SVGs) and
+       its stops turn purple in staggered sequence, so the colour flows across
+       the letterforms rather than a block passing over them. */
+    @keyframes ff-logo-wave {
+        0%, 100% { stop-color: #DA3D0B; }
+        50% { stop-color: #6366f1; }
+    }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(1) { animation: ff-logo-wave 0.5s ease 0s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(2) { animation: ff-logo-wave 0.5s ease 0.09s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(3) { animation: ff-logo-wave 0.5s ease 0.18s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(4) { animation: ff-logo-wave 0.5s ease 0.27s; }
+    .ff-website header a.ff-logo-link:hover svg stop:nth-child(5) { animation: ff-logo-wave 0.5s ease 0.36s; }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website header a.ff-logo-link:hover svg stop { animation: none; }
+    }
+
+    /* Footer logo: greyscale at rest (its gradient stops are gray-800), with the
+       same staggered wave as the header flashing brand red/orange across the
+       letterforms on hover, then settling back to grey. Scoped to the footer. */
+    @keyframes ff-logo-wave-footer {
+        0%, 100% { stop-color: #1F2937; }
+        50% { stop-color: #DA3D0B; }
+    }
+    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(1) { animation: ff-logo-wave-footer 0.5s ease 0s; }
+    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(2) { animation: ff-logo-wave-footer 0.5s ease 0.09s; }
+    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(3) { animation: ff-logo-wave-footer 0.5s ease 0.18s; }
+    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(4) { animation: ff-logo-wave-footer 0.5s ease 0.27s; }
+    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(5) { animation: ff-logo-wave-footer 0.5s ease 0.36s; }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website footer a.ff-footer-logo:hover svg stop { animation: none; }
+    }
+
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: var(--color-indigo-600);
@@ -808,14 +841,19 @@ h4:hover .header-anchor::before {
         @apply block md:hidden transition-transform p-0 min-h-0 leading-none;
     }
 
-    .ff-website header .ff-nav-dropdown:hover .ff-nav-chevron,
-    .ff-website header .ff-nav-dropdown:focus-within .ff-nav-chevron {
-        @apply transform rotate-180;
-    }
+    /* Chevron rotation is tap-driven on mobile (.mobile-expanded, see below); it
+       must NOT react to hover/focus, or a mouse at mobile width flips it without
+       opening the section. The chevron is md:hidden, so there is no desktop case. */
 
     .ff-website header #nav-content {
-        height: calc(100% - 64px - 64px);
-        @apply top-8 md:top-0 transition-height fixed mt-8 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
+        /* Mobile drawer. `top` is set on open (base.njk) to the header's live
+           bottom edge, so it sits just below the scroll-away utility bar at the
+           top of the page, or just below the sticky header once scrolled.
+           `bottom:0` fills the rest of the viewport height. Reset to inline flow
+           at md+ (desktop mega-nav). */
+        top: 0;
+        bottom: 0;
+        @apply md:top-0 md:bottom-auto transition-height fixed left-0 w-full overflow-hidden border-none max-h-0 right-0 border-t shadow-sm z-10 bg-gray-50 flex-col items-center justify-between no-underline; /* font-light */
         @apply md:mt-0 md:h-auto md:overflow-visible md:max-h-20 md:relative md:shadow-none md:border-0 md:bg-transparent md:w-auto lg:static md:float-none md:flex md:flex-row md:flex-nowrap;
     }
 
@@ -855,6 +893,16 @@ h4:hover .header-anchor::before {
 
     .ff-website header #nav-content li {
         @apply border-none;
+    }
+
+    /* Label span wraps the nav item text (added in the navoption macro) so the
+       underline can hug the text. It must not inherit the generic `header ul
+       span` / `ul.narrow span` padding, or it inflates row height (those
+       selectors out-specify a plain reset, so !important is required). */
+    .ff-website header .ff-nav-label {
+        position: relative;
+        padding: 0 !important;
+        border: 0;
     }
 
     .ff-website header .ff-icon--gh:hover path {
@@ -897,11 +945,11 @@ h4:hover .header-anchor::before {
         @apply text-current;
     }
 
-    .ff-website header a > span {
+    .ff-website header a > span:not(.ff-nav-label) {
         transform: scale(0.75);
     }
 
-    .ff-website header a:hover > span {
+    .ff-website header a:hover > span:not(.ff-nav-label) {
         transform: scale(0.75)rotate(180deg);
     }
 
@@ -934,6 +982,37 @@ h4:hover .header-anchor::before {
     .ff-website header .ff-nav-dropdown > ul.align-left:before {
         right: auto;
         left: 3rem;
+    }
+
+    /* Mega panel (ul.mega): full viewport width, flush under the header, content centered.
+       The trigger li is made static so the panel positions against the header nav,
+       whose center equals the viewport center. */
+    @media (min-width: 768px) {
+        .ff-website header .ff-nav-dropdown > ul.mega {
+            position: absolute;
+            top: 100%;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            max-width: 100vw;
+            margin-top: 0;
+            border-radius: 0;
+            background-color: #fff;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 18px 28px -18px rgb(15 23 42 / 0.22);
+            justify-content: center;
+            column-gap: 3rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        .ff-website header .ff-nav-dropdown > ul.mega:before {
+            content: none;
+        }
+        .ff-website header .ff-nav-dropdown > ul.mega li {
+            background-color: #fff;
+        }
     }
 
     .ff-website header .ff-nav-dropdown a {
@@ -1001,6 +1080,13 @@ h4:hover .header-anchor::before {
     .ff-website header.mobile-open #nav-content {
         overflow-y: auto;
         @apply max-h-full fixed;
+    }
+
+    /* Freeze the page behind the open mobile drawer (toggled in base.njk).
+       Lock ONLY the scroll container (html): locking html AND body together
+       makes the sticky header revert to its static position and jump off-screen. */
+    html.nav-scroll-lock {
+        overflow: hidden;
     }
 
     .ff-website header.mobile-open #mobile-ctas {
@@ -1166,12 +1252,52 @@ h4:hover .header-anchor::before {
 
     .ff-footer li:hover {
         color: var(--color-indigo-700);
-        text-decoration: underline;
     }
 
     .ff-footer svg {
         color: var(--color-gray-800);
         opacity: 1;
+    }
+
+    /* Footer links: brand-purple hover plus the animated left-to-right underline
+       used in the top nav. Excludes the logo link and the social icon buttons
+       (class "block"), which get a colour-only hover instead of an underline. */
+    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block) {
+        position: relative;
+        text-decoration: none;
+    }
+    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block):hover {
+        color: var(--color-indigo-700);
+    }
+    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block):hover::after {
+        transform: scaleX(1);
+    }
+    /* Social icons: brand-purple on hover, overriding each icon's baked-in
+       red-hero hover colour. */
+    .ff-website footer.ff-footer a.block:not(.ff-footer-logo):hover svg {
+        color: var(--color-indigo-700);
+    }
+    /* Reddit and YouTube instead get brand orange/red on hover. */
+    .ff-website footer.ff-footer a.block[href*="reddit.com"]:hover svg,
+    .ff-website footer.ff-footer a.block[href*="youtube.com"]:hover svg {
+        color: #DA3D0B;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block)::after {
+            transition: none;
+        }
     }
     /*
         Components
@@ -1855,6 +1981,35 @@ div.content section.footnotes ol li p {
 }
 
 /*
+    HubSpot form submit button: match the ff-btn--primary solid CTA so
+    embedded newsletter/signup forms get the same interaction states
+    (hover settle + press dim) as the rest of the site.
+*/
+.ff-website .hs-form .hs-button,
+.ff-website .hs-form input[type="submit"],
+.ff-website form.hs-form input[type="submit"] {
+    background-color: var(--color-indigo-600);
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.ff-website .hs-form .hs-button:hover,
+.ff-website .hs-form input[type="submit"]:hover {
+    background-color: var(--color-indigo-700);
+    color: #fff;
+}
+.ff-website .hs-form .hs-button:active,
+.ff-website .hs-form input[type="submit"]:active {
+    filter: brightness(0.97);
+}
+
+/*
     Overwrite Cookie Banner buttons style
 */
 
@@ -2075,6 +2230,28 @@ lite-youtube::before {
     outline-offset: 3px;
 }
 
+/* Industrial AI hero: animated video background (container-port aerial),
+   matching the industry-page hero treatment. Height is set by script so it
+   reaches the vertical middle of the AI input box, then masks out below into
+   the solid indigo section. Sits behind the z-10 hero content. */
+.ai-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 72%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+.ai-hero-bg video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */
 
 /* View Transition styles for smooth morphing */
@@ -2255,13 +2432,20 @@ lite-youtube::before {
         padding: 8px 16px;
         border: 0;
         border-radius: 4px;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    /* Solid brand CTAs settle a shade darker on hover (smooth via the base
+       .ff-btn background-color transition) and dim slightly while pressed. */
+    .ff-website .ff-btn.ff-btn--primary:active,
+    .ff-website .ff-btn.ff-btn--highlight:active {
+        filter: brightness(0.97);
     }
 
+    /* Purple button: base indigo, settles indigo-700 on hover. */
     .ff-website .ff-btn.ff-btn--primary {
         background-color: var(--color-indigo-600);
         color: white;
     }
-
     .ff-website .ff-btn.ff-btn--primary:hover {
         background-color: var(--color-indigo-700);
         color: white;
@@ -2280,11 +2464,11 @@ lite-youtube::before {
         border: 1px solid var(--color-indigo-700);
     }
 
+    /* Orange/red button: base red, settles red-700 on hover. */
     .ff-website .ff-btn.ff-btn--highlight {
         background-color: var(--color-red-600);
         color: white;
     }
-
     .ff-website .ff-btn.ff-btn--highlight:hover {
         background-color: var(--color-red-700);
         color: white;
@@ -2326,3 +2510,556 @@ lite-youtube::before {
     .prose .ff-blue-card > h6:first-of-type { margin-top: 0; }
     .prose .ff-blue-card > p:last-of-type { margin-bottom: 0; }
 } /* end @layer utilities */
+
+/* Mega-panel triggers: the li must not be a positioning context, so the
+   full-width panel positions against the header nav. Lives outside the
+   Tailwind layers: the leading combinator inside :has() is dropped by the
+   layer processing, and this must beat the .relative utility. */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown:has(ul.mega) {
+        position: static !important;
+    }
+}
+
+/* nav-content is md:relative (a reset of the mobile fixed menu); it must not
+   become the containing block of the mega panels between md and lg */
+@media (min-width: 768px) {
+    .ff-website header #nav-content {
+        position: static !important;
+    }
+}
+
+/* md-to-lg: tighten top-level nav item padding so the full item set
+   (incl. Industries) plus CTAs fits a 768px viewport without overflow */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .ff-website header #nav-content > li > span,
+    .ff-website header #nav-content > li > a {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}
+
+/* Mega panel behavior: centered auto columns (grid-cols-1 utilities would
+   stretch a 1fr track to the screen edges), hover-intent delay so brushing
+   across triggers does not switch panels, and clipped overflow so panel
+   content never widens the page */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        grid-template-columns: none !important;
+        max-height: none !important;
+        overflow: hidden !important;
+        opacity: 0;
+        visibility: hidden;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        transition: opacity 0.12s ease, visibility 0s linear 0.18s;
+    }
+    .ff-website header .ff-nav-dropdown:hover > ul.mega,
+    .ff-website header .ff-nav-dropdown:focus-within > ul.mega {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.15s ease 0.18s, visibility 0s linear 0.18s;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        column-gap: 0.75rem;
+        font-size: 0.875rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+/* lg-to-xl: the highlight card is not shown yet, so the category columns would
+   otherwise cluster in the centre with wide empty margins. Constrain them to a
+   centred band and spread them edge-to-edge within it, so the width is used and
+   the inter-column spacing grows with the viewport. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        justify-content: space-between;
+        column-gap: 2.5rem;
+        padding-left: max(2rem, calc((100vw - 1120px) / 2));
+        padding-right: max(2rem, calc((100vw - 1120px) / 2));
+    }
+}
+
+/* Mega highlight card: an image-only promo slot at the left of every mega
+   dropdown (configured in src/_data/navHighlights.js). xl+ only: the panel
+   switches to a fixed four-track template left-aligned to the screen-xl
+   container, so the card and each column sit at identical positions in every
+   dropdown. The card is the linked page's marketing image. */
+.ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
+    display: none;
+}
+@media (min-width: 1280px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        grid-template-columns: 18.5rem 16.5rem 16.5rem 16.5rem !important;
+        justify-content: flex-start;
+        column-gap: 3rem;
+        padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
+        /* fit the highlight card in dropdowns with few rows without letting
+           it stretch the link rows (the card itself is height-0 below).
+           Budget: 1.5rem panel padding-top + title row + 7px card offset +
+           10rem image (16rem wide at 16:10) + 0.625rem title margin + two
+           title lines + 1.75rem panel padding-bottom */
+        align-content: start;
+        min-height: 19.5rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
+        display: block;
+        grid-column: 1;
+        grid-row: 1 / -1;
+        align-self: start;
+        /* zero height: the card must not contribute to grid row sizing,
+           otherwise short panels get stretched link rows */
+        height: 0;
+        overflow: visible;
+        padding: 0;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
+        display: block;
+        width: 16rem;
+        padding: 0;
+        text-align: left;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-media {
+        display: block;
+        padding: 0;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        transform: none;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover img {
+        transform: scale(1.04);
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title {
+        display: inline-block;
+        width: auto;
+        max-width: 100%;
+        position: relative;
+        /* the title sits level with the column eyebrows; the bottom margin
+           fills the rest of the header row so the image top still meets the
+           first link row */
+        margin: 0 0 12px;
+        top: -2px;
+        padding: 0;
+        transform: none;
+        text-align: left;
+        white-space: normal;
+        overflow-wrap: break-word;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #4f46e5;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover span.mega-highlight-title::after {
+        transform: scaleX(1);
+    }
+}
+
+/* Mega panel polish: eyebrow column titles (matching the footer), no border
+   stripes and flush columns. Width-independent so the mobile accordion and
+   the desktop panels share the same design language. */
+.ff-website header .ff-nav-dropdown > ul.mega li.title {
+    padding-left: 0 !important;
+    border-left: 0 !important;
+}
+.ff-website header .ff-nav-dropdown > ul.mega li.title span {
+    padding: 0.5rem 0 0.625rem 0 !important;
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+}
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu {
+    margin-left: 0 !important;
+    border-left: 0 !important;
+}
+/* Mobile accordion: eyebrows indent to the link icon column, moderate row
+   height, and tap feedback via a text-hugging underline (the desktop
+   animated line needs a text span the link markup does not have) */
+@media (max-width: 767px) {
+    .ff-website header .ff-nav-dropdown > ul.mega li.title {
+        padding-left: 1.5rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.title span {
+        padding: 0.875rem 0 0.375rem 0 !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        padding-left: 2.5rem !important; /* indent links under the section eyebrow (1.5rem) */
+    }
+    /* Roomier mobile drawer: inset the whole menu and enlarge the top-level item
+       labels for easier tapping. Scoped to mobile only; desktop nav unaffected.
+       NOTE: horizontal padding is always safe, but vertical padding must apply
+       only when the drawer is open, otherwise it inflates the collapsed
+       (max-height:0) drawer and a strip peeks above the header. */
+    .ff-website header #nav-content {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+    }
+    .ff-website header.mobile-open #nav-content {
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+    }
+    .ff-website header #nav-content > li > a,
+    .ff-website header #nav-content > li > span {
+        font-size: 1.25rem;
+        line-height: 1.2;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+    }
+    /* Accordion-style divider lines between top-level items, matching the FAQ
+       sections. Mobile only. (Overrides the base `#nav-content li` border reset,
+       which appears earlier in the stylesheet.) */
+    .ff-website header #nav-content > li {
+        border-bottom: 1px solid var(--color-gray-200);
+    }
+    /* Animated underline matching desktop: grows left-to-right, hugging the
+       label text via the .ff-nav-label span added in the navoption macro. */
+    .ff-website header .ff-nav-label::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website header a:hover > .ff-nav-label::after,
+    .ff-website header a:active > .ff-nav-label::after,
+    .ff-website header .ff-nav-dropdown > span:hover > .ff-nav-label::after {
+        transform: scaleX(1);
+    }
+    /* text + underline turn indigo on hover, matching desktop (the label span
+       carries its own gray color, so it needs its own hover color) */
+    .ff-website header a:hover > .ff-nav-label,
+    .ff-website header a:active > .ff-nav-label,
+    .ff-website header .ff-nav-dropdown > span:hover > .ff-nav-label {
+        color: var(--color-indigo-700);
+    }
+}
+
+/* Desktop-only: panel breathing room and tight rows (mobile keeps larger
+   touch targets from the base link padding) */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        padding-top: 1.5rem;
+        padding-bottom: 1.75rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.title span {
+        padding-top: 0 !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
+        padding: 0.4375rem 0 !important;
+        font-size: 0.875rem;
+    }
+}
+
+/* De-emphasize "See all ..." index links in the mega panels and footer.
+   Keyed on the index-page hrefs so the shared stylesheet covers both the
+   11ty and Vue headers without markup changes. */
+/* Rest colour is carried by the inner .ff-nav-label span (the arrow icon uses
+   the anchor's currentColor), so both must be de-emphasized. */
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"],
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"],
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"] .ff-nav-label,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"] .ff-nav-label,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"] .ff-nav-label {
+    color: #6b7280;
+}
+/* Free Trial keeps its brand-purple colour at rest (it carries a .ff-nav-label
+   for the animated underline, which would otherwise render it grey). */
+.ff-website header .ff-nav-freetrial .ff-nav-label {
+    color: var(--color-indigo-600);
+}
+/* The Free Trial CTA sits in the right-hand actions <ul>, outside #nav-content,
+   so the top-level desktop underline rule (#nav-content > li > a::after) never
+   reaches it and hover showed no line. Give its label the same left-to-right
+   animated underline on desktop; mobile is already covered by the shared
+   .ff-nav-label::after rule inside the max-width:767px block above. */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-freetrial .ff-nav-label {
+        position: relative;
+    }
+    .ff-website header .ff-nav-freetrial .ff-nav-label::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website header .ff-nav-freetrial:hover .ff-nav-label::after,
+    .ff-website header .ff-nav-freetrial:focus-visible .ff-nav-label::after {
+        transform: scaleX(1);
+    }
+}
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+    .ff-website header .ff-nav-freetrial .ff-nav-label::after {
+        transition: none;
+    }
+}
+/* on hover they behave like every other panel link (text-indigo-700),
+   which also colors the currentColor underline */
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover .ff-nav-label,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label,
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover .ff-nav-label {
+    color: var(--color-indigo-700);
+}
+.ff-website footer.ff-footer a[href="/use-cases/"],
+.ff-website footer.ff-footer a[href="/industries/"],
+.ff-website footer.ff-footer a[href="/integrations/"] {
+    color: #6b7280;
+}
+/* ...but on hover they take the brand purple, so text + the currentColor
+   underline both go indigo (this base rule is unlayered and otherwise beats
+   the footer :hover colour). */
+.ff-website footer.ff-footer a[href="/use-cases/"]:hover,
+.ff-website footer.ff-footer a[href="/industries/"]:hover,
+.ff-website footer.ff-footer a[href="/integrations/"]:hover {
+    color: var(--color-indigo-700);
+}
+/* Mobile nav: sections expand on tap only (hover neutralized below md) */
+@media (max-width: 767px) {
+    .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),
+    .ff-website header .ff-nav-dropdown:focus-within > ul:not(.ff-nav-nested-cols) {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+    .ff-website header .ff-nav-dropdown.mobile-expanded > ul:not(.ff-nav-nested-cols) {
+        max-height: none !important;
+        padding-top: 0.25rem;
+        padding-bottom: 0.75rem;
+        overflow: visible;
+    }
+    .ff-website header .ff-nav-dropdown.mobile-expanded .ff-nav-chevron svg {
+        transform: rotate(180deg);
+    }
+}
+
+/* Animated hover underline on top-level nav items (grows left to right) */
+@media (min-width: 768px) {
+    .ff-website header #nav-content > li > a,
+    .ff-website header #nav-content > li > span {
+        position: relative;
+    }
+    .ff-website header #nav-content > li > a::after,
+    .ff-website header #nav-content > li > span::after {
+        content: "";
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 6px;
+        height: 2px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website header #nav-content > li:hover > a::after,
+    .ff-website header #nav-content > li:hover > span::after,
+    .ff-website header #nav-content > li:focus-within > span::after {
+        transform: scaleX(1);
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .ff-website header #nav-content > li > a::after,
+    .ff-website header #nav-content > li > span::after {
+        left: 8px;
+        right: 8px;
+    }
+}
+
+/* Animated hover underline on mega panel links */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown ul.mega a {
+        position: relative;
+    }
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 6px;
+        height: 1.5px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.22s ease;
+    }
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):hover::after,
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):focus-visible::after {
+        transform: scaleX(1);
+    }
+}
+
+/* Reduced-motion: silence the animated nav and mega-panel underlines and the
+   mega-highlight image zoom for users who ask for less motion. The hover
+   states still apply, just without the left-to-right sweep or the scale. */
+@media (prefers-reduced-motion: reduce) {
+    .ff-website header #nav-content > li > a::after,
+    .ff-website header #nav-content > li > span::after,
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card)::after,
+    .ff-website header .ff-nav-label::after,
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title::after,
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
+        transition: none;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover img {
+        transform: none;
+    }
+}
+
+/* Animated hover underline on card links (View use case / architecture / outcome) */
+.ff-animated-link {
+    position: relative;
+    align-self: flex-start;
+}
+.ff-animated-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.22s ease;
+}
+a.group:hover .ff-animated-link::after,
+.ff-animated-link:hover::after {
+    transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+    .ff-animated-link::after {
+        transition: none;
+    }
+}
+
+/* FAQ / accordion header interaction: animated underline + colour shift on
+   hover and keyboard focus, in the same visual language as .ff-animated-link.
+   The open/close chevron rotation is driven by JS inline styles and is left
+   untouched; the chevron stroke uses currentColor so it follows the shift. */
+.ff-website .question {
+    transition: color 0.2s ease;
+}
+.ff-website .question:hover,
+.ff-website .question:focus-visible {
+    color: var(--color-indigo-600);
+}
+.ff-website .question:hover .ff-animated-link::after,
+.ff-website .question:focus-visible .ff-animated-link::after {
+    transform: scaleX(1);
+}
+.ff-website .question:focus {
+    outline: none;
+}
+.ff-website .question:focus-visible {
+    outline: 2px solid var(--color-indigo-400);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .ff-website .question {
+        transition: none;
+    }
+}
+
+.industry-eyebrow-icon > svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* AI page ("/ai/") capabilities: sticky-header, scrolling-items layout.
+   The left group header pins while that group's icon-marked blocks scroll on
+   the right, then the next group's header takes over. These rules live in
+   the UNLAYERED block on purpose: the Tailwind `utilities` layer is
+   outranked by unlayered top-level rules, so the load-bearing sticky
+   positioning is placed here to avoid being silently overridden. */
+@media (min-width: 768px) {
+    .ff-cap-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        /* clear the sticky site header (roughly 75px) with breathing room */
+        top: 100px;
+        /* take natural height inside the taller grid row so there is travel
+           room for the pin; without this the column stretches full height */
+        align-self: start;
+    }
+}
+
+/* Capability marker icon: the item's own icon stands in for the old number
+   chip, so the blocks read as a parallel list rather than an ordered sequence.
+   Sized slot, indigo to match the brand accent, aligned to the block top. */
+.ff-cap-icon {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--color-indigo-600);
+}
+.ff-cap-icon svg {
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+/* "Coming soon" pill: shape and type only. The amber colour comes from utility
+   classes on the element (bg-amber-50 / text-amber-700 / border-amber-200), so
+   the palette stays in sync with the design tokens. Amber reads as
+   in-development, not the error-red it used before. */
+.ff-cap-soon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+}
+
+/* Capability blocks are informational, not interactive: no hover fill, no
+   focus ring, no click affordance. The rounded corners are cosmetic only. */
+.ff-cap-item {
+    border-radius: 0.5rem;
+}

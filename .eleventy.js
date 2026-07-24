@@ -107,7 +107,7 @@ module.exports = function(eleventyConfig) {
     });
 
     // Add a global data variable for the current date
-    eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());  
+    eleventyConfig.addGlobalData("currentDateISO", new Date().toISOString());
 
     // Make filters globally accessible
     global.isFuturePost = eleventyConfig.getFilter('isFuturePost');
@@ -225,6 +225,13 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit ));
+
+    // Marketing image for a nav highlight card: the linked page's image front matter
+    eleventyConfig.addFilter("pageImageForUrl", (collection, url) => {
+        const normalized = url && !url.endsWith("/") ? `${url}/` : url;
+        const match = (collection || []).find((p) => p.url === normalized);
+        return (match && match.data && match.data.image) || null;
+    });
 
     eleventyConfig.addFilter('console', function (value) {
         const str = util.inspect(value, { showHidden: false, depth: null });
@@ -973,11 +980,11 @@ module.exports = function(eleventyConfig) {
 
         if (content) {
             const chevronDown = loadSVG('chevron-down')
-            return `<li class="${classes}"><span class="flex items-center gap-1">${iconSvg}${label}<span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
+            return `<li class="${classes}"><span class="flex items-center gap-1">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
         } else if (link) {
-            return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}${label}</a></li>`
+            return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span></a></li>`
         } else {
-            return `<li class="${classes}"><span class="flex items-center gap-2">${iconSvg}${label}</span></li>`
+            return `<li class="${classes}"><span class="flex items-center gap-2">${iconSvg}<span class="ff-nav-label">${label}</span></span></li>`
         }
     });
     
