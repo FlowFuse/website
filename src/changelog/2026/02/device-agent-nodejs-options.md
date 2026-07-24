@@ -39,4 +39,4 @@ nodeOptions:
 - '--use-openssl-ca'
 ```
 
-For more details, see [Configuring Node.js Options](/docs/device-agent/running/#configuring-node.js-options).
+For more details, see [Configuring Node.js Options](/docs/device-agent/running/#configuring-nodejs-options).

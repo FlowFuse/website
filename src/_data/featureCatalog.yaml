@@ -334,7 +334,7 @@ sections:
       - id: installation-support
         label: Installation Support
         description: null
-        docsLink: /docs/install/introduction/#do-you-need-help%3F-installation-service
+        docsLink: /docs/install/introduction/#do-you-need-help-installation-service
         changelog: null
         solutions: []
         showOnPricing: true
