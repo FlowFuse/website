@@ -8,6 +8,7 @@ usecase:
 keywords: 
 authors: ["sumit-shinde"]
 image: /blog/2026/05/images/oee-is-misleading.png
+video: YyGke80U520
 tags:
 - flowfuse
 tldr: "Most factories measure OEE incorrectly because they rely on manual logs, inconsistent definitions, and metrics that operators can game. Fix it by connecting directly to machine signals, standardizing how Availability, Performance, and Quality are calculated, and treating OEE as a diagnostic tool rather than a KPI to optimize for its own sake."

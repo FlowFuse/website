@@ -6,6 +6,7 @@ date: 2026-02-27
 keywords: Edge AI, Industrial IoT, IIoT, manufacturing AI, Edge AI deployment, AI pilot to production, Node-RED, FlowFuse, ONNX, predictive maintenance, anomaly detection, edge device management, industrial automation, OT IT convergence
 authors: ["sumit-shinde"]
 image: /blog/2026/02/images/edge-ai-is-80-20.png
+video: 1CJUTPFBPSc
 tags:
   - flowfuse
   - ai

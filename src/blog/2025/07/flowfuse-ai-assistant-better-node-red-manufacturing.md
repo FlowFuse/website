@@ -6,6 +6,7 @@ date: 2025-07-29
 authors: ["sumit-shinde"]
 keywords: AI in manufacturing, manufacturing automation, Node-RED automation, FlowFuse Expert, smart manufacturing, industrial IoT, custom dashboard manufacturing, function nodes
 image: /blog/2025/07/images/flowfuse-ai.png
+video: g-NWmyz5Ppo
 tags:
   - flowfuse
 ---

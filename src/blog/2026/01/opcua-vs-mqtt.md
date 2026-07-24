@@ -6,6 +6,7 @@ lastUpdated: 2026-06-17
 date: 2026-01-21
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/opcua-vs-mqtt.png
+video: DJ7qc1KPU1A
 keywords: MQTT vs OPC UA, MQTT protocol, OPC UA protocol, industrial communication, IIoT architecture, OPC UA PubSub, MQTT Sparkplug
 tags:
  - flowfuse

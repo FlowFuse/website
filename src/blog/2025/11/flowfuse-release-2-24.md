@@ -5,6 +5,7 @@ description: "FlowFuse 2.24: FlowFuse Expert in the Node-RED Editor, Scheduled U
 date: 2025-11-20
 authors: ["greg-stoutenburg"]
 image: /blog/2025/11/images/2.24-release.png
+video: cYwa08W-2eI
 tags:
    - flowfuse
    - news
