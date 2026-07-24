@@ -4,7 +4,7 @@ subtitle: "Give every operator their own work instructions, progress, and produc
 description: "Learn how to build digital work instructions with FlowFuse. Create personalized operator apps with work orders, guided steps, defect reporting, and traceability."
 date: 2026-07-24
 authors: ["sumit-shinde"]
-image: /blog/2026/07/images/digital-work-instructions.png
+image: /blog/2026/07/images/digital-instructions-dashboard-flowfuse.png
 tags:
   - flowfuse
 tldr: "Build a FlowFuse digital work instructions application that authenticates each operator, loads only their assigned work orders, guides them step by step with per-operator progress tracking, and lets them report defects, all tied to their logged-in identity."
