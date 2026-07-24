@@ -71,8 +71,6 @@ Any bugs found for FlowFuse Dashboard should be logged as an issue in the [FlowF
 ### Pricing
 #### 2025 Pricing & Tier Changes
 
-<!-- Needs review by Engineering: the Starter tier is being discontinued. -->
-
 In summer of 2025, FlowFuse deprecated the Free tier and changed the pricing structure of the Starter tier. 
 
 The Free tier was built to enable remote device management and provided for two remote instances, [free of charge.](https://flowfuse.com/blog/2024/12/flowfuse-release-2-12/). As we found that users were looking for cloud-hosted Node-RED instances, the Free tier did not meet this expectation, and was deprecated.

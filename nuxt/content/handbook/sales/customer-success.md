@@ -53,6 +53,7 @@ as follows:
 | Cohort     | Key Traits                                                     |
 | ---------- | -------------------------------------------------------------- |
 | Trial      | Not paying for services                                        |
+| Starter    | Low number of Node-RED instances                               |
 | Pro        | Smaller applications, collaboration on applications            |
 | Enterprise | Large scale applications, extensive use of FlowFuse's features |
 

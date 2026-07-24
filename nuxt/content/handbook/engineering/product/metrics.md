@@ -22,8 +22,6 @@ The **Weighted Customer Index (WCI)** is our top-line measure of business health
 
 ```Weighted Customer Index = Number of Starter Tier customers + (Number of Teams Tier customers * 4) + (Number of Enterprise Tier customers * 8)```
 
-<!-- Needs review by Product: the Starter tier has been discontinued, so this formula needs to be updated to reflect the current tiers and weights. -->
-
 Higher tiers are weighted more heavily because of their greater impact on revenue and strategic value.
 
 WCI is a **lagging business metric, not a product outcome.** Per our [methodology](./methodology.md), the outcomes we steer by are changes in customer behaviour; WCI is the business result those behaviours are meant to produce. We track it to confirm that our product work is translating into business value, but an Objective is never "increase WCI" directly: it is the customer-behaviour change that moves it.
