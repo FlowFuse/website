@@ -75,7 +75,7 @@ the edge.
 What's more, FlowFuse already supports creating [AI and RAG](/blog/2025/07/flowfuse-release-2-20/#new-blueprint%3A-agentic-ai-with-retrieval-augmented-generation) integrations and will soon be releasing dedicated MCP nodes that greatly simplifies low-code building of AI Agents.
 enabling AI to work directly at the edge. This means you can create AI
 agents that not only process data from physical devices but also make decisions
-right where the data is generated — with a lot less latency due to less Cloud
+right where the data is generated, with a lot less latency due to less Cloud
 round-trips. This is especially important for industrial applications where
 milliseconds matter.
 

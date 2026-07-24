@@ -14,7 +14,7 @@ tags:
 cta:
   type: demo
   title: Get More Out of MQTT in Your Industrial Environment
-  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, SSL/TLS security, and centralized device management — everything you need to run reliable, scalable industrial IoT communication.
+  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, SSL/TLS security, and centralized device management, everything you need to run reliable, scalable industrial IoT communication.
 ---
 
 MQTT is a go-to protocol for industrial IoT, known for its efficiency, scalability, and ease of use. While it offers great flexibility in handling real-time data, there are key factors to consider in order to get the most out of it. From ensuring data consistency to addressing security and performance concerns, these factors can significantly enhance MQTT’s effectiveness in industrial settings.
@@ -93,7 +93,7 @@ By configuring your MQTT setup with encryption, authentication, topic-level acce
 
 ## Minimizing Risks of Single Point of Failure and Vendor Lock-In
 
-When using MQTT for industrial operations, it’s important to address the potential risks associated with a single point of failure—specifically the central broker. While the broker is crucial for managing message delivery, its failure could disrupt the entire data flow, impacting operations. However, this challenge can be effectively managed with strategies like high availability, load balancing, and robust backup solutions. By implementing these best practices, you ensure that your system remains reliable and resilient, even in the event of a failure.
+When using MQTT for industrial operations, it’s important to address the potential risks associated with a single point of failure, specifically the central broker. While the broker is crucial for managing message delivery, its failure could disrupt the entire data flow, impacting operations. However, this challenge can be effectively managed with strategies like high availability, load balancing, and robust backup solutions. By implementing these best practices, you ensure that your system remains reliable and resilient, even in the event of a failure.
 
 Another consideration is vendor lock-in, which can occur when businesses become reliant on a specific MQTT broker or service. While this may seem convenient at first, it can make future changes or migrations difficult due to proprietary features or configurations that aren't easily compatible with other systems. This is a scenario that can be easily avoided with careful planning.
 

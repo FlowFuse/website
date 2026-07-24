@@ -26,7 +26,7 @@ features:
        selfHosted: all
 ---
 
-FlowFuse 2.28 focuses on making your day-to-day work faster and giving you more control — whether you are debugging a flow, managing edge devices, or running FlowFuse on your own infrastructure.
+FlowFuse 2.28 focuses on making your day-to-day work faster and giving you more control, whether you are debugging a flow, managing edge devices, or running FlowFuse on your own infrastructure.
 
 <!--more-->
 
@@ -36,7 +36,7 @@ Tracking down issues in your flows usually means adding debug nodes, reading thr
 
 ### Point Expert at Your Debug Logs
 
-You can now select individual debug log entries and include them as context when asking FlowFuse Expert for help. Combined with your selected flows, Expert sees exactly what you see — the error, the flow that produced it, and the surrounding context.
+You can now select individual debug log entries and include them as context when asking FlowFuse Expert for help. Combined with your selected flows, Expert sees exactly what you see, the error, the flow that produced it, and the surrounding context.
 
 <lite-youtube videoid="e0XV6lMKazo" params="rel=0" style="width: 704; height: 100%; background-image: url('https://img.youtube.com/vi/e0XV6lMKazo/maxresdefault.jpg');" title="YouTube video player"></lite-youtube>
 <figcaption>Select specific log entries to give FlowFuse Expert focused troubleshooting context</figcaption>
@@ -47,7 +47,7 @@ You can now select individual debug log entries and include them as context when
 
 ### Always Have the Latest Expert Capabilities
 
-FlowFuse Expert is getting new capabilities regularly — like the debug log context above. But when you are deep in your flows, it is easy to miss that an update is available. Expert now shows a banner when a newer version is ready. One click and you are up to date, so you always have access to the latest troubleshooting and development features.
+FlowFuse Expert is getting new capabilities regularly, like the debug log context above. But when you are deep in your flows, it is easy to miss that an update is available. Expert now shows a banner when a newer version is ready. One click and you are up to date, so you always have access to the latest troubleshooting and development features.
 
 ![FlowFuse Expert update banner](./images/expert-update-banner.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Expert lets you know when an update is available</figcaption>
@@ -58,7 +58,7 @@ FlowFuse 2.28 combined with Device Agent v3.8.1 expands what you can configure o
 
 ### Configure Node.js Runtime Options
 
-The latest Device Agent lets you set Node.js command line arguments for Remote Instances — via your `device.yml` or the agent command line. Previously these options were not configurable at all. The full set of NodeJS (command line arguments)[https://nodejs.org/docs/latest-v22.x/api/cli.html] can be set. For example
+The latest Device Agent lets you set Node.js command line arguments for Remote Instances, via your `device.yml` or the agent command line. Previously these options were not configurable at all. The full set of NodeJS (command line arguments)[https://nodejs.org/docs/latest-v22.x/api/cli.html] can be set. For example
 
 - **Increase memory** for flows that process large datasets (`--max-old-space-size`)
 
@@ -76,9 +76,9 @@ As part of this work, you can now also set a separate ingress class name for Hos
 
 ### Additional self-hosted improvements
 
-- **Team NPM Registry** — Docker Compose deployments can now have all the Team Library, Custom Nodes pre-requisits configured.
-- **File-server PVC configuration** — Set the size, access modes, and storage class for file-server persistent volumes
-- **Private CA certificate mounting** — Docker Compose deployments can now mount a private CA certificate file into the forge service
+- **Team NPM Registry**, Docker Compose deployments can now have all the Team Library, Custom Nodes pre-requisits configured.
+- **File-server PVC configuration**: Set the size, access modes, and storage class for file-server persistent volumes
+- **Private CA certificate mounting**, Docker Compose deployments can now mount a private CA certificate file into the forge service
 
 ## What else is new?
 

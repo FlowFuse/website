@@ -11,7 +11,7 @@ tags:
 cta:
   type: demo
   title: Your factory data is already there. Let's make it readable.
-  description: FlowFuse allows you to bridge legacy equipment and modern systems through a Unified Namespace — so every machine, every platform, and every team speaks the same language.
+  description: FlowFuse allows you to bridge legacy equipment and modern systems through a Unified Namespace, so every machine, every platform, and every team speaks the same language.
 tldr: "Factories aren't data-poor they're data-illiterate: the same event gets recorded in incompatible formats across PLCs, SCADA, maintenance platforms, and edge gateways with no shared reference point. The solution is a Unified Namespace built on OPC-UA (shared meaning), MQTT/Sparkplug B (reliable transport), and a central broker as a fixed reference point so every new system added inherits the full value of everything already publishing there."
 ---
 

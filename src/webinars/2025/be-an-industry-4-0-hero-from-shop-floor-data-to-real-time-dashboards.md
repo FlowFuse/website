@@ -33,7 +33,7 @@ Watch Trent Christopher as he demonstrates how to:
 
 ## Live demonstration: From Machine to Screen in Minutes!
 
-See the complete process: connecting to multiple manufacturing devices, pulling live data, and building a functional real-time dashboard—all within the webinar timeframe.
+See the complete process: connecting to multiple manufacturing devices, pulling live data, and building a functional real-time dashboard, all within the webinar timeframe.
 
 ## This webinar is ideal for:
 

@@ -63,7 +63,7 @@ meta:
     - question: "Is security used in this OPC UA client example?"
       answer: "No. This example uses no security and assumes the OPC UA server and Node-RED client are on the same network. For production applications, SSL/TLS security should be configured on both the server and client."
     - question: "Where can I find the full source code for the OPC UA Client Dashboard?"
-      answer: "The complete flow source code for all four objectives — browsing, reading, writing, and events — is included inline within the article, ready to import directly into Node-RED."
+      answer: "The complete flow source code for all four objectives, browsing, reading, writing, and events, is included inline within the article, ready to import directly into Node-RED."
 tldr: "This part of the OPC UA series shows how to build an interactive Node-RED dashboard that connects to a third-party OPC UA server to browse the address space, read and write values, and display alarms and events. Complete flow source code is provided, making it a practical starting point for production OPC UA client applications."
 ---
 This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/node-red/protocol/opc-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
@@ -274,7 +274,7 @@ Adding alarms and events to our dashboard creates the following result -
 
 ## Using FlowFuse to Enhance Your Node-RED Application: Security, Scalability, and Robustness
 
-So, you've successfully built your Node-RED application—congratulations! But now, how do you ensure its security, scalability, and ease of collaboration? What if you want to invite your team to work on the application simultaneously or access it remotely?
+So, you've successfully built your Node-RED application, congratulations! But now, how do you ensure its security, scalability, and ease of collaboration? What if you want to invite your team to work on the application simultaneously or access it remotely?
 
 Enter [FlowFuse](/), a cloud-based platform designed to add production-grade features to your Node-RED applications. With FlowFuse, you can seamlessly integrate advanced security measures, scale your application as needed, and collaborate effortlessly with your team. It simplifies management and deployment, turning your Node-RED project into a robust, scalable solution.
 

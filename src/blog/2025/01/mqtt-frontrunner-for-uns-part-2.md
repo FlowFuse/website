@@ -14,7 +14,7 @@ tags:
 cta:
   type: demo
   title: Build Your Unified Namespace With FlowFuse
-  description: FlowFuse gives you a built-in MQTT broker, topic hierarchy monitoring, and Node-RED integration — everything you need to implement a scalable, well-organized UNS in one platform.
+  description: FlowFuse gives you a built-in MQTT broker, topic hierarchy monitoring, and Node-RED integration, everything you need to implement a scalable, well-organized UNS in one platform.
 ---
 
 In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the  reasons behind MQTT's popularity as a choice for Unified Namespace (UNS) implementations; focusing on its lightweight design, low latency, and reliable message delivery. In this second part, we’ll explore additional factors that further establish MQTT as the leading protocol for UNS brokers, diving into its connectivity, scalability, structured topic management. 
@@ -23,7 +23,7 @@ In [Part 1](/blog/2025/01/mqtt-frontrunner-for-uns/), we discussed the  reasons 
 
 ## Wide Connectivity
 
-For your UNS to be truly effective, it must be able to connect seamlessly with every part of your IIoT environment—whether it’s a device or the cloud. MQTT is an excellent protocol for this because it’s widely adopted in both cloud-based systems and industrial environments.
+For your UNS to be truly effective, it must be able to connect seamlessly with every part of your IIoT environment, whether it’s a device or the cloud. MQTT is an excellent protocol for this because it’s widely adopted in both cloud-based systems and industrial environments.
 
 In a typical industrial data architecture, you typically have a mix of physical devices (like sensors and machines) and cloud systems. To make real-time decisions, data needs to flow seamlessly from the shop floor to the cloud. MQTT excels at connecting modern devices with the cloud. However, one challenge is that it doesn’t natively support older systems that typically use protocols like OPC UA or MODBUS.
 
@@ -44,7 +44,7 @@ MQTT brokers handle large volumes of data and can distribute messages to many cl
 
 ## Semantic Hierarchy with Topics
 
-When setting up a UNS, it’s not just about collecting all your data in one place—it’s about organizing it so that it’s easy to navigate. A semantic hierarchy helps do this by arranging data from broad categories down to more specific details. For example, in a factory, you might have levels like factory, area, line, and machine, with data points like temperature or humidity at the bottom. This is similar to how files are organized in folders, making it simple to find what you need.
+When setting up a UNS, it’s not just about collecting all your data in one place, it’s about organizing it so that it’s easy to navigate. A semantic hierarchy helps do this by arranging data from broad categories down to more specific details. For example, in a factory, you might have levels like factory, area, line, and machine, with data points like temperature or humidity at the bottom. This is similar to how files are organized in folders, making it simple to find what you need.
 
 MQTT works well for this kind of organization because its topics are already structured in a hierarchical way. Topics in MQTT are like paths that break down data into different levels, such as `factory/area-2/line-1/machine-5/temperature`. You can easily follow these paths to find the exact data you need. Furthermore, MQTT supports wildcard characters, which offer flexibility for subscriptions. The # wildcard matches all levels beneath a given level, so a subscription to `factory/#` will match any topic under the "factory" level, regardless of how deep the path goes. Similarly, the `+` wildcard matches only a single level, so `factory/+/line-1/machine-5/temperature` will match any topic that follows the same structure but with different areas. 
 
@@ -56,14 +56,14 @@ In conclusion, MQTT is an excellent choice for your UNS broker because it offers
 
 Now that you understand why MQTT is the best choice for your UNS, it’s time to build it. FlowFuse is the ideal platform for implementing your UNS with MQTT.
 
-Please read our article: [Building Your UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/) where I show you how to build it quickly—just in 15 minutes!
+Please read our article: [Building Your UNS with FlowFuse](/blog/2024/11/building-uns-with-flowfuse/) where I show you how to build it quickly, just in 15 minutes!
 
 **Why choose FlowFuse?**
 
-FlowFuse is an industrial data platform that leverages the power of Node-RED, a popular open-source low-code platform for industrial automation. With over 5000 community-contributed nodes, it simplifies the process of collecting, transforming, and integrating data from a wide variety of industrial hardware and services, supporting nearly all industrial protocols. This means you have nearly everything you need to implement a UNS—all you need is the MQTT broker service.
+FlowFuse is an industrial data platform that leverages the power of Node-RED, a popular open-source low-code platform for industrial automation. With over 5000 community-contributed nodes, it simplifies the process of collecting, transforming, and integrating data from a wide variety of industrial hardware and services, supporting nearly all industrial protocols. This means you have nearly everything you need to implement a UNS, all you need is the MQTT broker service.
 
 Good news! Recently, FlowFuse has added a built-in MQTT broker service within the platform, making it even easier to manage your MQTT connections. This includes an interface for securely managing MQTT clients and, most importantly, a comprehensive topic hierarchy monitoring tool that’s ideal for managing your UNS.
 
 FlowFuse not only allows you to build and manage your UNS, but also provides a collaborative environment where teams can work in real time. It offers scalability, security, and ease of use, making it simple to grow your system as your needs evolve.
 
-With FlowFuse, you get everything you need to handle data pipelines, implement a UNS, and scale efficiently—all within a single platform.
+With FlowFuse, you get everything you need to handle data pipelines, implement a UNS, and scale efficiently, all within a single platform.

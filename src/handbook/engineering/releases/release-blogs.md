@@ -40,13 +40,13 @@ Every post requires the following fields:
 | `release` | The release number as a string, e.g. `"2.29"`. |
 | `features` | List of feature anchors for the in-page navigation. Each entry needs a `heading` and, where a changelog entry exists, an `id` matching the feature catalog slug. |
 
-Before populating `features`: Confirm that `featureCatalog.yml` has been updated for every feature in this release. The `id` values here must match slugs in the catalog — if a feature is missing from the catalog, the in-page navigation will silently break and tier badges will not render. The changelog posts for each feature should have already triggered this update; if any are missing, flag them before the blog goes live. See [Writing Changelog Posts](/handbook/engineering/releases/writing-changelog/#feature-catalog-and-availability) for how catalog entries work.
+Before populating `features`: Confirm that `featureCatalog.yml` has been updated for every feature in this release. The `id` values here must match slugs in the catalog, if a feature is missing from the catalog, the in-page navigation will silently break and tier badges will not render. The changelog posts for each feature should have already triggered this update; if any are missing, flag them before the blog goes live. See [Writing Changelog Posts](/handbook/engineering/releases/writing-changelog/#feature-catalog-and-availability) for how catalog entries work.
 
 ## Structure
 
 ### Title and subtitle
 
-The title names the release and leads with the one or two most significant things in it. The subtitle adds the next tier of detail. Do not use the title to list every feature — if there are more than two things worth naming, find the theme that connects them.
+The title names the release and leads with the one or two most significant things in it. The subtitle adds the next tier of detail. Do not use the title to list every feature, if there are more than two things worth naming, find the theme that connects them.
 
 **Example:**
 > **FlowFuse 2.27: Integrated Editor in Remote Instances & Context-Aware FlowFuse Expert**
@@ -54,7 +54,7 @@ The title names the release and leads with the one or two most significant thing
 
 ### Intro paragraph
 
-2–3 sentences. State what the release does for users — not what it contains. Lead with the theme or outcome, not a feature list.
+2–3 sentences. State what the release does for users, not what it contains. Lead with the theme or outcome, not a feature list.
 
 **Wrong:**
 > FlowFuse 2.29 brings three capabilities that our enterprise users have been asking for: Azure DevOps as a supported Git provider, clearer snapshot comparisons that show exactly what changed, and FlowFuse Expert for self-hosted enterprise FlowFuse instances.
@@ -76,7 +76,7 @@ Each H2 section contains:
 **1. Problem framing (1–2 sentences)**
 What was the friction or gap before this? Write it as a user experience.
 
-> Managing flows across environments means tracking what changed, when, and by whom. When tooling gaps introduce friction here — or leave your version control workflow fragmented — they slow teams down at exactly the wrong moment.
+> Managing flows across environments means tracking what changed, when, and by whom. When tooling gaps introduce friction here, or leave your version control workflow fragmented, they slow teams down at exactly the wrong moment.
 
 **2. Feature content**
 Use H3 headings when multiple features are grouped under one H2, with the feature name as the heading text. Each feature gets 1–2 factual paragraphs. No preamble. No "we're excited to announce."
@@ -101,7 +101,7 @@ The CTA is already handled via front matter. For guidance on how to add or custo
 
 ## Writing style
 
-Write for the user, not the engineer. Every release blog can tell two stories — what changed in the product, and what improved for the person using it. Always tell the second one.
+Write for the user, not the engineer. Every release blog can tell two stories, what changed in the product, and what improved for the person using it. Always tell the second one.
 
 Write in _active voice_. The user is doing something, or something is now possible for them. Write with "you" as the subject where it fits.
 
@@ -119,7 +119,7 @@ Be specific. Vague sections are useless.
 
 Keep paragraphs short. One idea per sentence. If a sentence contains more than one clause joined by "and," it probably needs to be two sentences.
 
-Sentence case everywhere — headings, bullets, captions.
+Sentence case everywhere, headings, bullets, captions.
 
 Do not bold feature names mid-sentence. Use plain prose or `code style` for technical terms.
 
@@ -129,7 +129,7 @@ Avoid marketing language. Do not use: exciting, powerful, seamless, robust, game
 
 ## Drafting with AI
 
-Use the FlowFuse Voice skill to draft your first pass — give it your feature list, not a written draft. If you hand it a draft, it will polish rather than restructure. A bullet list of what shipped forces the grouping and framing work to happen from scratch.
+Use the FlowFuse Voice skill to draft your first pass, give it your feature list, not a written draft. If you hand it a draft, it will polish rather than restructure. A bullet list of what shipped forces the grouping and framing work to happen from scratch.
 
 Always review and edit the output before publishing.
 

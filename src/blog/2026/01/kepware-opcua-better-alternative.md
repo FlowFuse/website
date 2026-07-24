@@ -13,7 +13,7 @@ tags:
 cta:
   type: contact
   title: Evaluate Your Options Before New Ownership Does It For You
-  description: FlowFuse connects your PLCs, historians, and cloud systems without per-tag penalties or vendor lock-in. See how teams are cutting Kepware costs while gaining more capability — before your next renewal.
+  description: FlowFuse connects your PLCs, historians, and cloud systems without per-tag penalties or vendor lock-in. See how teams are cutting Kepware costs while gaining more capability, before your next renewal.
 ---
 
 Kepware isn't chosen, it's assumed. It appears in budgets like line items for electricity or insurance. No one questions it. No one compares it. It just... goes in.
@@ -114,4 +114,4 @@ Evaluate alternatives now from strength. Or negotiate renewals later from weakne
 
 Kepware won through early dominance and ecosystem lock-in. That's separate from being the right architecture for current operations.
 
-See [how FlowFuse connects any PLC to MQTT, OPC UA, cloud, and enterprise systems](/landing/plc/) — without per-tag licensing or proprietary lock-in.
+See [how FlowFuse connects any PLC to MQTT, OPC UA, cloud, and enterprise systems](/landing/plc/), without per-tag licensing or proprietary lock-in.

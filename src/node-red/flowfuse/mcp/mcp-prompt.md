@@ -13,24 +13,24 @@ The MCP Prompt node allows you to create pre-configured prompt templates that us
 
 ## Flow Requirements
 
-**None** — MCP Prompt nodes do not require flows or MCP Response nodes.
+**None**, MCP Prompt nodes do not require flows or MCP Response nodes.
 They only register the prompt template with the MCP server, making it available for users to select and customize in their MCP client.
 
 ## Configuration
 
 ### Name
 
-`string` — *Optional*
+`string`, *Optional*
 Optional display name for this node in the flow. This helps identify the node in your Node-RED editor but is not visible to MCP clients.
 
 ### Server
 
-`mcp-server` — *Required*
+`mcp-server`, *Required*
 The MCP server configuration this prompt will be registered with. Select from your configured MCP server instances.
 
 ### Prompt ID
 
-`string` — *Required*
+`string`, *Required*
 Unique identifier for the prompt used by MCP clients to access this prompt template. Use **snake_case** for naming.
 
 **Examples:**
@@ -42,17 +42,17 @@ Unique identifier for the prompt used by MCP clients to access this prompt templ
 
 ### Title
 
-`string` — *Required*
+`string`, *Required*
 Human-readable name shown to users in MCP clients. This is what users see when browsing available prompts.
 
 ### Description
 
-`string` — *Required*
+`string`, *Required*
 Detailed description of what this prompt does and when to use it.
 
 ### Prompt Template
 
-`string` — *Required*
+`string`, *Required*
 
 {% raw %}
 Define your prompt text using **double curly braces `{{ }}`** for variables.
@@ -60,7 +60,7 @@ Define your prompt text using **double curly braces `{{ }}`** for variables.
 
 ### Arguments
 
-`JSON` — *Required*
+`JSON`, *Required*
 JSON schema defining the template variables that users can customize. This follows the same **JSON Schema** format used in MCP Tool input schemas.
 
 ## Prompt Template Examples

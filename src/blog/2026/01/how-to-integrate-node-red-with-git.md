@@ -40,7 +40,7 @@ That's why we built Git integration for FlowFuse. FlowFuse pipeline stages now c
 
 Git integration brings several key advantages. Your flows are backed up in Git repositories alongside your other code, so if an instance is accidentally deleted, your flows remain safe and recoverable. For some companies, having all code assets version-controlled in Git repositories is a compliance requirement they must meet.
 
-Git integration works alongside FlowFuse's DevOps features—snapshots, pipelines, rollbacks—giving you the full power of both systems.
+Git integration works alongside FlowFuse's DevOps features, snapshots, pipelines, rollbacks, giving you the full power of both systems.
 
 ## Setting Up Git Integration
 
@@ -65,7 +65,7 @@ First, set up a repository where your Node-RED flows will live:
 5. You can initialize with a README if you'd like documentation
 6. Click **Create repository**
 
-Keep this repository URL handy—you'll need it later.
+Keep this repository URL handy, you'll need it later.
 
 ### Step 2: Generate a GitHub Personal Access Token
 
@@ -106,7 +106,7 @@ Your token is now available to all Node-RED instances in your FlowFuse team.
 
 This is where it comes together. You'll configure a pipeline stage to push snapshots to your Git repository.
 
-**Important**: A Git repository stage needs something to push. Make sure your pipeline has at least one stage before the Git stage—typically a Node-RED instance stage. The pipeline will take snapshots from that source stage and push them to Git.
+**Important**: A Git repository stage needs something to push. Make sure your pipeline has at least one stage before the Git stage, typically a Node-RED instance stage. The pipeline will take snapshots from that source stage and push them to Git.
 
 1. In FlowFuse, navigate to your application
 2. Go to the **DevOps Pipelines** section
@@ -152,10 +152,10 @@ At this point, your Node-RED workflows are version-controlled in Git and fully i
 
 FlowFuse's Git integration works both ways. You can push flows to Git and pull changes back from Git into your Node-RED instances.
 
-The pipeline process is identical whether you're pushing or pulling—only the stage order changes. When pushing, your Git repository stage sits at the end of the pipeline. Snapshots flow from your Node-RED instance through intermediate stages and finally commit to Git. When pulling, the Git repository stage moves to the beginning. The pipeline fetches the latest commit from your configured branch, creates a snapshot, and promotes it through subsequent stages to your target instances.
+The pipeline process is identical whether you're pushing or pulling, only the stage order changes. When pushing, your Git repository stage sits at the end of the pipeline. Snapshots flow from your Node-RED instance through intermediate stages and finally commit to Git. When pulling, the Git repository stage moves to the beginning. The pipeline fetches the latest commit from your configured branch, creates a snapshot, and promotes it through subsequent stages to your target instances.
 
 This bidirectional workflow solves several common challenges. Teams can commit flow changes directly to the repository and pull them into FlowFuse. You can migrate flows from other systems by committing them to Git first. Your Git repository serves as both a backup destination and a source of truth.
 
 ## Conclusion
 
-FlowFuse simplifies everything about running Node-RED at scale—deployment, security, scaling, and team management. Git integration bridges the gap between FlowFuse's DevOps features and your existing development infrastructure. Your flows stay version-controlled, your team stays synchronized, and your operations stay simple.
+FlowFuse simplifies everything about running Node-RED at scale, deployment, security, scaling, and team management. Git integration bridges the gap between FlowFuse's DevOps features and your existing development infrastructure. Your flows stay version-controlled, your team stays synchronized, and your operations stay simple.

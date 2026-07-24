@@ -121,4 +121,4 @@ This section lists the **MCP nodes** available in FlowFuse:
 
 {% include "navigation-items-list.njk" %}
 
-Each listed node provides a unique capability within the MCP ecosystem — from registering tools and resources to managing prompts and responses. Use these nodes to create MCP Servers, provide tools, resources, and prompts to MCP clients, and standardize AI workflows in your Node-RED projects.
+Each listed node provides a unique capability within the MCP ecosystem, from registering tools and resources to managing prompts and responses. Use these nodes to create MCP Servers, provide tools, resources, and prompts to MCP clients, and standardize AI workflows in your Node-RED projects.

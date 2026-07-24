@@ -31,7 +31,7 @@ Here are some straightforward ways we get data structred:
 
 ## How FlowFuse Brings Your Data Strategy to Life
 
-FlowFuse simplifies data structuring with its intuitive, drag-and-drop environment. Raw machine data—often just numeric signals—can be enriched, formatted, and organized in real time, **without writing any code**.
+FlowFuse simplifies data structuring with its intuitive, drag-and-drop environment. Raw machine data, often just numeric signals, can be enriched, formatted, and organized in real time, **without writing any code**.
 
 You can easily:
 

@@ -27,7 +27,7 @@ _Screenshot showing a tab layout in Dashboard_
 
 ## New Widget: Number Input
 
-Introducing the Number Input widget — a versatile addition that allows users to input numerical values directly into the dashboard. Whether you're setting thresholds, configuring parameters, or simply inputting data, this widget makes it easy to adjust values with precision. It’s ideal for use cases where user interaction with numerical data is required, such as controlling devices or updating settings in real time.
+Introducing the Number Input widget, a versatile addition that allows users to input numerical values directly into the dashboard. Whether you're setting thresholds, configuring parameters, or simply inputting data, this widget makes it easy to adjust values with precision. It’s ideal for use cases where user interaction with numerical data is required, such as controlling devices or updating settings in real time.
 
 ![Screenshot showing a number input widget with Dashboard](./images/ui-number-input-widget.png){data-zoomable}
 _Screenshot showing a number input widget with Dashboard_

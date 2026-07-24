@@ -1,14 +1,10 @@
-{# Column header — outside overflow container so sticky works on mobile #}
+{# Column header, outside overflow container so sticky works on mobile #}
 <div class="sticky top-[140px] sm:top-[164px] md:top-[116px] z-10 transition-colors duration-200" data-sticky-header>
     <div class="overflow-hidden sm:overflow-visible" data-table-header>
         <div class="ff-feature-table m-auto">
             <ul class="{{ hosting }} ff-feature-table-section">
                 <li class="ff-feature--column-header">
                     <span class="sticky left-0 h-full bg-white"></span>
-                    {% if hosting == "self-hosted" %}
-                    <label>Open Source</label>
-                    {% endif %}
-                    <label>Pro</label>
                     <label>Enterprise</label>
                 </li>
             </ul>
@@ -16,19 +12,17 @@
     </div>
 </div>
 
-{# Table body — horizontally scrollable on mobile #}
+{# Table body, horizontally scrollable on mobile #}
 <div class="overflow-x-auto sm:overflow-x-visible" data-table-body>
     <div class="ff-feature-table ff-feature-table--body m-auto">
         {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
-        {% set tiers = ['openSource', 'pro', 'enterprise'] if hosting == 'self-hosted' else ['pro', 'enterprise'] %}
+        {% set tiers = ['enterprise'] %}
 
         {% asyncAll section in featureCatalog.sections %}
         <ul class="{{ hosting }} ff-feature-table-section">
             <li class="ff-feature--header sm:sticky sm:top-[208px] md:top-[160px]">
                 <span class="sticky left-0 h-full">{{ section.label }}</span>
-                {% for tier in tiers %}
                 <span></span>
-                {% endfor %}
             </li>
             {% asyncAll row in section.features %}
             {% if row.showOnPricing and hosting in row.tags %}
@@ -93,8 +87,7 @@
 
 <div id="feature-dialogs">
     {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
-    {% set tiers = ['openSource', 'pro', 'enterprise'] if hosting == 'self-hosted' else ['pro', 'enterprise'] %}
-    {% set tierLabels = {"openSource": "Open Source", "pro": "Pro", "enterprise": "Enterprise"} %}
+    {% set tiers = ['enterprise'] %}
     {% asyncAll section in featureCatalog.sections %}
     {% asyncAll row in section.features %}
     {% if row.showOnPricing and row.description %}
@@ -108,7 +101,7 @@
                 {% asyncAll tier in tiers %}
                 {% set cell = hostingData[tier] if hostingData else null %}
                 {% if cell and cell.note %}
-                <p><strong>{{ tierLabels[tier] }}:</strong> {{ cell.note }}</p>
+                <p><strong>{{ tier | capitalize }}:</strong> {{ cell.note }}</p>
                 {% endif %}
                 {% endall %}
                 {% if row.docsLink %}
