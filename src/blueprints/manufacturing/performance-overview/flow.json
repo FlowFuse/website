@@ -1,0 +1,921 @@
+[
+    {
+        "id": "e09c0c19df41c454",
+        "type": "tab",
+        "label": "Performance-Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2e29317de8d9711d",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Downtime in %",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d372ee342d517270",
+            "12567f3b779cce32",
+            "bfeb33e69d8fe859",
+            "c4e48a1233016b52"
+        ],
+        "x": 1074,
+        "y": 407,
+        "w": 332,
+        "h": 214
+    },
+    {
+        "id": "1e6e32148059c28a",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Uptime in %",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "280c9b950fee657e",
+            "50fb2ec1097488f7",
+            "44b96faea989c0a4",
+            "788915f478d454c7"
+        ],
+        "x": 714,
+        "y": 407,
+        "w": 332,
+        "h": 214
+    },
+    {
+        "id": "b935ff5b6a27d8ea",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "First past yield %",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6d4f5ab54765eb2f",
+            "629cea6ab194e9b8",
+            "dbc35d53a3a3ba6c",
+            "e0be1df86d3e0783"
+        ],
+        "x": 714,
+        "y": 127,
+        "w": 692,
+        "h": 214
+    },
+    {
+        "id": "e91a89f0dee2aa7a",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Running and down events",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "aac1528e505a8dcd",
+            "30c563938dcc995f",
+            "36f1d42fbc19749a",
+            "bbe25fbeb3bc1c5f",
+            "9064ab4dc3862f64"
+        ],
+        "x": 34,
+        "y": 127,
+        "w": 612,
+        "h": 229
+    },
+    {
+        "id": "eb07b28110b9fbc0",
+        "type": "group",
+        "z": "e09c0c19df41c454",
+        "name": "Downtime reasons",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d61f75c0e0bf7cfe",
+            "8d37b9f527e37ced",
+            "fdf704a87e251ca7",
+            "6e5f529356181747",
+            "2a8c5aa224a69453",
+            "a52d73f5727aa6cc",
+            "68986b7dbdd63e68",
+            "dc7eb4b90957abd2",
+            "d0ba932a21acd85b"
+        ],
+        "x": 34,
+        "y": 407,
+        "w": 612,
+        "h": 354
+    },
+    {
+        "id": "bbe25fbeb3bc1c5f",
+        "type": "ui-chart",
+        "z": "e09c0c19df41c454",
+        "g": "e91a89f0dee2aa7a",
+        "group": "889eef381f6ccc45",
+        "name": "Running And Downtime Events",
+        "label": "",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "x",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "y",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "cross",
+        "pointRadius": "",
+        "showLegend": true,
+        "removeOlder": "4",
+        "removeOlderUnit": "604800",
+        "removeOlderPoints": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "6",
+        "height": 5,
+        "className": "",
+        "interpolation": "linear",
+        "x": 490,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d372ee342d517270",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "2e29317de8d9711d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "12.5",
+        "payloadType": "num",
+        "x": 1170,
+        "y": 580,
+        "wires": [
+            [
+                "12567f3b779cce32"
+            ]
+        ]
+    },
+    {
+        "id": "12567f3b779cce32",
+        "type": "ui-text",
+        "z": "e09c0c19df41c454",
+        "g": "2e29317de8d9711d",
+        "group": "3b7a31a1f4eb8b54",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Downtime %",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "Arial Narrow,Nimbus Sans L,sans-serif",
+        "fontSize": "140",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "center-text large-text",
+        "x": 1310,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "aac1528e505a8dcd",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "e91a89f0dee2aa7a",
+        "group": "889eef381f6ccc45",
+        "name": "Headline Events",
+        "order": 1,
+        "width": null,
+        "height": null,
+        "content": "# Running and Down Events\n<span style=\"color:#1D6CA2\">RUNNING</span> - <span style=\"color:#2CA02C\">OFF</span> - <span style=\"color:#FF7F0D\">IDLE</span> - <span style=\"color:#AEC7E8\">DOWN</span>",
+        "className": "",
+        "x": 500,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfeb33e69d8fe859",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "2e29317de8d9711d",
+        "group": "3b7a31a1f4eb8b54",
+        "name": "Headline Downtime",
+        "order": 1,
+        "width": "",
+        "height": "",
+        "content": "# Downtime %",
+        "className": "",
+        "x": 1230,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "280c9b950fee657e",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "1e6e32148059c28a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "87.5",
+        "payloadType": "num",
+        "x": 830,
+        "y": 580,
+        "wires": [
+            [
+                "50fb2ec1097488f7"
+            ]
+        ]
+    },
+    {
+        "id": "50fb2ec1097488f7",
+        "type": "ui-text",
+        "z": "e09c0c19df41c454",
+        "g": "1e6e32148059c28a",
+        "group": "b254da7bc1b38afd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Uptime %",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "Arial Narrow,Nimbus Sans L,sans-serif",
+        "fontSize": "140",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "center-text large-text",
+        "x": 960,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "44b96faea989c0a4",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "1e6e32148059c28a",
+        "group": "b254da7bc1b38afd",
+        "name": "Headline Uptime",
+        "order": 1,
+        "width": "",
+        "height": "",
+        "content": "# Uptime %",
+        "className": "",
+        "x": 890,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d61f75c0e0bf7cfe",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "group": "deb351354eb5f2a2",
+        "name": "Headline Events",
+        "order": 1,
+        "width": null,
+        "height": null,
+        "content": "# Downtime reasons",
+        "className": "",
+        "x": 520,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d4f5ab54765eb2f",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "b935ff5b6a27d8ea",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "95.7",
+        "payloadType": "num",
+        "x": 830,
+        "y": 300,
+        "wires": [
+            [
+                "629cea6ab194e9b8"
+            ]
+        ]
+    },
+    {
+        "id": "629cea6ab194e9b8",
+        "type": "ui-text",
+        "z": "e09c0c19df41c454",
+        "g": "b935ff5b6a27d8ea",
+        "group": "bc5302d46141262a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "First past yield",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "220",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "center-text xlarge-text",
+        "x": 1300,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "dbc35d53a3a3ba6c",
+        "type": "ui-markdown",
+        "z": "e09c0c19df41c454",
+        "g": "b935ff5b6a27d8ea",
+        "group": "bc5302d46141262a",
+        "name": "Headline - First past yield",
+        "order": 1,
+        "width": null,
+        "height": null,
+        "content": "# First past yield %",
+        "className": "",
+        "x": 1050,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30c563938dcc995f",
+        "type": "function",
+        "z": "e09c0c19df41c454",
+        "g": "e91a89f0dee2aa7a",
+        "name": "Generate random data",
+        "func": "// Helper to format date as YYYY-MM-DD\nfunction formatDate(date) {\n    let d = new Date(date),\n        month = '' + (d.getMonth() + 1),\n        day = '' + d.getDate(),\n        year = d.getFullYear();\n    if (month.length < 2) month = '0' + month;\n    if (day.length < 2) day = '0' + day;\n    return [year, month, day].join('-');\n}\n\n// Random duration generators\nfunction getRandomDurationRunning() {\n    return Math.random() * (9 - 8) + 8;\n}\nfunction getRandomDurationDown() {\n    return Math.random();\n}\nfunction getRandomDurationIdle() {\n    return Math.random() * 0.1;\n}\nfunction getRandomDurationOff() {\n    return Math.random() * (1.2 - 0.8) + 0.8;\n}\n\n// Generate data for a specific event\nfunction generateData(event) {\n    let data = [];\n    let currentDate = new Date();\n    currentDate.setMonth(currentDate.getMonth() - 3); // 3 months ago\n\n    let getRandomDuration;\n    switch (event) {\n        case \"RUNNING\":\n            getRandomDuration = getRandomDurationRunning;\n            break;\n        case \"DOWN\":\n            getRandomDuration = getRandomDurationDown;\n            break;\n        case \"IDLE\":\n            getRandomDuration = getRandomDurationIdle;\n            break;\n        case \"OFF\":\n            getRandomDuration = getRandomDurationOff;\n            break;\n        default:\n            throw new Error(\"Invalid event\");\n    }\n\n    while (currentDate <= new Date()) {\n        data.push({ x: formatDate(currentDate), y: getRandomDuration() });\n        currentDate.setDate(currentDate.getDate() + 1);\n    }\n\n    return {\n        topic: event,\n        payload: data\n    };\n}\n\n// Create messages to send\nlet messages = [\n    { payload: [] }, // First empty array\n    generateData(\"RUNNING\"),\n    generateData(\"DOWN\"),\n    generateData(\"IDLE\"),\n    generateData(\"OFF\")\n];\n\n// Return as multiple messages\nreturn [null, messages];  // For Node-RED: use `node.send(messages)` in function node context\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 300,
+        "wires": [
+            [
+                "bbe25fbeb3bc1c5f"
+            ],
+            [
+                "bbe25fbeb3bc1c5f"
+            ],
+            [
+                "bbe25fbeb3bc1c5f"
+            ],
+            [
+                "bbe25fbeb3bc1c5f"
+            ]
+        ]
+    },
+    {
+        "id": "36f1d42fbc19749a",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "e91a89f0dee2aa7a",
+        "name": "Trigger dataset",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "30c563938dcc995f"
+            ]
+        ]
+    },
+    {
+        "id": "8d37b9f527e37ced",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "Setup",
+        "payload": "3",
+        "payloadType": "num",
+        "x": 180,
+        "y": 560,
+        "wires": [
+            [
+                "dc7eb4b90957abd2"
+            ]
+        ]
+    },
+    {
+        "id": "fdf704a87e251ca7",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "Change Over",
+        "payload": "4",
+        "payloadType": "num",
+        "x": 200,
+        "y": 600,
+        "wires": [
+            [
+                "dc7eb4b90957abd2"
+            ]
+        ]
+    },
+    {
+        "id": "6e5f529356181747",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "Maintenance",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 200,
+        "y": 640,
+        "wires": [
+            [
+                "dc7eb4b90957abd2"
+            ]
+        ]
+    },
+    {
+        "id": "2a8c5aa224a69453",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "Break",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 180,
+        "y": 680,
+        "wires": [
+            [
+                "dc7eb4b90957abd2"
+            ]
+        ]
+    },
+    {
+        "id": "a52d73f5727aa6cc",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.2",
+        "topic": "No Material",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 200,
+        "y": 720,
+        "wires": [
+            [
+                "dc7eb4b90957abd2"
+            ]
+        ]
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "name": "README",
+        "info": "# Performance Overview Dashboard\n\nThe Manufacturing Performance Dashboard serves as an overview \nfor monitoring and analyzing key performance metrics in real-time, \nproviding a comprehensive overview of the manufacturing operations \nfor a station or line.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a group on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n### Adjust Styling\n\nYou may need to modify text sizes based on your screen.\nTo do so, click on the corresponding Text nodes and change the font size.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 220,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7c5e59811d8c51f8",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 90,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "68986b7dbdd63e68",
+        "type": "inject",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "name": "Crear Chart",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 190,
+        "y": 520,
+        "wires": [
+            [
+                "dc7eb4b90957abd2"
+            ]
+        ]
+    },
+    {
+        "id": "dc7eb4b90957abd2",
+        "type": "ui-chart",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "group": "deb351354eb5f2a2",
+        "name": "Downtime Reasons",
+        "label": "",
+        "order": 2,
+        "chartType": "bar",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "topic",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "category",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 4,
+        "className": "",
+        "interpolation": "linear",
+        "x": 530,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "788915f478d454c7",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "1e6e32148059c28a",
+        "name": "You will need to replace the example \\n inject data with your real data values.",
+        "info": "Learn more about data integration in our\n\"How-To\" blog articles: https://flowfuse.com/blog/how-to/",
+        "x": 880,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c4e48a1233016b52",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "2e29317de8d9711d",
+        "name": "You will need to replace the example \\n inject data with your real data values.",
+        "info": "Learn more about data integration in our\n\"How-To\" blog articles: https://flowfuse.com/blog/how-to/",
+        "x": 1240,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d0ba932a21acd85b",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "eb07b28110b9fbc0",
+        "name": "You will need to replace the example \\n inject data with your real data values.",
+        "info": "Learn more about data integration in our\n\"How-To\" blog articles: https://flowfuse.com/blog/how-to/",
+        "x": 200,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e0be1df86d3e0783",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "b935ff5b6a27d8ea",
+        "name": "You will need to replace the example \\n inject data with your real data values.",
+        "info": "Learn more about data integration in our\n\"How-To\" blog articles: https://flowfuse.com/blog/how-to/",
+        "x": 880,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9064ab4dc3862f64",
+        "type": "comment",
+        "z": "e09c0c19df41c454",
+        "g": "e91a89f0dee2aa7a",
+        "name": "You will need to replace the example \\n inject data with your real data values.",
+        "info": "Learn more about data integration in our\n\"How-To\" blog articles: https://flowfuse.com/blog/how-to/",
+        "x": 200,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "889eef381f6ccc45",
+        "type": "ui-group",
+        "name": "Running and Down Events",
+        "page": "39e6ca305b7718de",
+        "width": "6",
+        "height": "8",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "3b7a31a1f4eb8b54",
+        "type": "ui-group",
+        "name": "Downtime",
+        "page": "39e6ca305b7718de",
+        "width": 3,
+        "height": "6",
+        "order": 5,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b254da7bc1b38afd",
+        "type": "ui-group",
+        "name": "Uptime",
+        "page": "39e6ca305b7718de",
+        "width": 3,
+        "height": "6",
+        "order": 4,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "deb351354eb5f2a2",
+        "type": "ui-group",
+        "name": "Downtime reasons",
+        "page": "39e6ca305b7718de",
+        "width": "6",
+        "height": "5",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "bc5302d46141262a",
+        "type": "ui-group",
+        "name": "First past yield",
+        "page": "39e6ca305b7718de",
+        "width": 6,
+        "height": "5",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "39e6ca305b7718de",
+        "type": "ui-page",
+        "name": "Performance Dashboard",
+        "ui": "afea04ce8735c0a6",
+        "path": "/",
+        "icon": "",
+        "layout": "grid",
+        "theme": "6d8bff5f3fded5c2",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "afea04ce8735c0a6",
+        "type": "ui-base",
+        "name": "UI Name",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ]
+    },
+    {
+        "id": "6d8bff5f3fded5c2",
+        "type": "ui-theme",
+        "name": "FF Theme",
+        "colors": {
+            "surface": "#1f2937",
+            "primary": "#8ce2e7",
+            "bgPage": "#4b5563",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    }
+]
