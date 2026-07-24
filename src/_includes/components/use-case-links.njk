@@ -1,0 +1,23 @@
+{# ============================================================
+   USE CASE LINKS - systematic cross-link cards.
+   The host page declares which use cases to feature:
+       {% set featuredUseCases = ["slug-a", "slug-b"] %}
+       {% include "components/use-case-links.njk" %}
+   Card content (title, problem line, url) derives from each
+   use-case page's own front matter, so copy lives in one place.
+   ============================================================ #}
+{% if featuredUseCases %}
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+    {% for slug in featuredUseCases %}
+    {% for uc in collections["use-case"] %}
+    {% if uc.fileSlug == slug %}
+    <a href="{{ uc.url }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+        <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ uc.data.title }}</h3>
+        <p class="m-0 text-gray-600 text-sm flex-grow">{{ uc.data.problem }}</p>
+        <span class="ff-animated-link mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">View use case <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span></span>
+    </a>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</div>
+{% endif %}
