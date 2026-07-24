@@ -119,7 +119,7 @@ To maintain consistency between repositories, milestones are created with the `g
 To create a new milestone:
 
 * Modify the `MILESTONES` array in the `generate-milestone` script to include the new milestone number
-** The array contains milestone number and the release date in the format `("<milestone number> <release date>")`
+** The array contains a milestone number and the release date in the format `("<milestone number> <release date>")`
 * Remove milestones from the array that are already closed or shipped
 * Run the `generate-milestone` script
 
