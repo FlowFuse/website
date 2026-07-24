@@ -11,19 +11,7 @@ tags:
   - releases
 ---
 
-FlowFuse 2.33 is about trust. The FlowFuse Expert can now take real action on your instances, and this release adds the controls that make that safe: you approve what the AI does, every action leaves an audit trail, and access tokens carry only the permissions you grant them.
-
-<!--more-->
-
-## You Decide What the Expert Can Do
-
-The FlowFuse Expert now asks before it acts. When the Expert wants to use a tool on your behalf, you choose: allow it once, deny it, or always allow it. Permissions follow your team role, so an operator and a team owner see different options.
-
-Letting an AI assistant modify flows on a production system is a different proposition from letting it answer questions. Until now, the choice was binary: enable the Expert or don't. Human-in-the-loop permissions give you the middle ground. The Expert stays fast for the actions you trust it with and pauses for the ones you want eyes on.
-
-[SCREENSHOT: allow / deny / always allow prompt]
-
-*Availability: [CONFIRM tier] users of FlowFuse Cloud and [CONFIRM licence] Self Hosted users from v2.33.*
+FlowFuse 2.33 is about trust. The FlowFuse Expert can now take real action on your instances, and this release adds the controls that make that safe: every action leaves an audit trail, and access tokens carry only the permissions you grant them.
 
 ## Every MCP Action, on the Record
 
