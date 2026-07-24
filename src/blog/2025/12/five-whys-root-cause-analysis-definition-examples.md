@@ -12,11 +12,11 @@ tags:
 meta:
   faq:
   - question: "How many times should I actually ask 'why' in a Five Whys analysis?"
-    answer: "The 'five' is a guideline, not a rule. Stop when you've identified a systemic issue you can fix—this might take three questions or eight. The number doesn't matter; reaching an actionable root cause does."
+    answer: "The 'five' is a guideline, not a rule. Stop when you've identified a systemic issue you can fix, this might take three questions or eight. The number doesn't matter; reaching an actionable root cause does."
   - question: "What is the difference between a symptom and a root cause?"
     answer: "A symptom is what you observe (machine stopped, part failed). A root cause is the underlying systemic issue that allowed it to occur (inadequate procedures, missing training). If your answer is just 'replace the part,' you've only addressed the symptom."
   - question: "What if my team doesn't know the answer to a why question?"
-    answer: "Stop and gather evidence. Check logs, examine physical evidence, or go to where the problem occurred. Never guess—speculation leads to wrong corrective actions. The Five Whys only works with factual answers."
+    answer: "Stop and gather evidence. Check logs, examine physical evidence, or go to where the problem occurred. Never guess, speculation leads to wrong corrective actions. The Five Whys only works with factual answers."
   - question: "How do I avoid blaming people during a Five Whys analysis?"
     answer: "Focus on processes, not individuals. Instead of 'Why did the operator forget?' ask 'Why wasn't this checked?' If you find human error, keep asking why that error was possible and why safeguards didn't prevent it."
   - question: "How long should a Five Whys analysis take?"
@@ -30,19 +30,19 @@ meta:
 tldr: "The Five Whys is a root cause analysis technique developed at Toyota that involves repeatedly asking 'why' a problem occurred typically five times until you uncover a systemic, fixable cause rather than just a symptom. It works because it's fast, accessible to front-line workers without statistical training, and forces a single causal chain to its end. Applying it correctly prevents problems from recurring by targeting the process gaps, training deficiencies, or procedural weaknesses that allowed the failure in the first place."
 ---
 
-The Five Whys is a root cause analysis technique where you ask "why" repeatedly—typically five times—until you identify the underlying systemic cause instead of just symptoms.
+The Five Whys is a root cause analysis technique where you ask "why" repeatedly, typically five times, until you identify the underlying systemic cause instead of just symptoms.
 
 <!--more-->
 
-Your equipment fails on Tuesday. The maintenance team fixes it. It fails again on Friday. They fix it again. Three weeks later, same failure. This cycle continues because everyone treats the symptom—the broken part—instead of asking why it broke.
+Your equipment fails on Tuesday. The maintenance team fixes it. It fails again on Friday. They fix it again. Three weeks later, same failure. This cycle continues because everyone treats the symptom, the broken part, instead of asking why it broke.
 
-The Five Whys breaks this pattern. Developed by Sakichi Toyoda at Toyota in the 1930s, it's become the standard root cause analysis method across manufacturing, healthcare, software development, and anywhere recurring problems drain productivity. The technique works through systematic questioning that strips away symptoms to expose fixable failures in your systems—the process gaps, training deficiencies, and procedural weaknesses that allow problems to persist. When applied correctly, it takes under an hour and prevents problems from returning.
+The Five Whys breaks this pattern. Developed by Sakichi Toyoda at Toyota in the 1930s, it's become the standard root cause analysis method across manufacturing, healthcare, software development, and anywhere recurring problems drain productivity. The technique works through systematic questioning that strips away symptoms to expose fixable failures in your systems, the process gaps, training deficiencies, and procedural weaknesses that allow problems to persist. When applied correctly, it takes under an hour and prevents problems from returning.
 
 ## What Is the Five Whys Root Cause Analysis Method?
 
 The Five Whys root cause analysis is a questioning technique where you ask "why" a problem occurred, then ask "why" that condition existed, then keep asking until you hit something you can actually fix at a systemic level. It was developed by Sakichi Toyoda in the 1930s and became a core tool in the Toyota Production System. Today it's used across manufacturing, healthcare, software development, and anywhere else people need to solve recurring problems.
 
-The technique is deceptively simple. You start with a specific problem. You ask why it happened. You take that answer and ask why again. You keep going until asking "why" one more time would just be splitting hairs or rehashing what you already know. Usually that takes about five iterations—the number comes from the observation that five whys is typically sufficient to reveal the root cause—but I've seen effective analyses that stopped at three and others that went to eight.
+The technique is deceptively simple. You start with a specific problem. You ask why it happened. You take that answer and ask why again. You keep going until asking "why" one more time would just be splitting hairs or rehashing what you already know. Usually that takes about five iterations, the number comes from the observation that five whys is typically sufficient to reveal the root cause, but I've seen effective analyses that stopped at three and others that went to eight.
 
 Watch this video if you prefer video format:
 

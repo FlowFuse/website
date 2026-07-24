@@ -14,7 +14,7 @@ tags:
 cta:
   type: pricing
   title: Enterprise Security for Node-RED at Scale
-  description: SSO with LDAP and SAML, RBAC, audit logging, and SOC 2 compliance — all included in FlowFuse Enterprise for teams that need production-grade governance across their Node-RED deployments.
+  description: SSO with LDAP and SAML, RBAC, audit logging, and SOC 2 compliance, all included in FlowFuse Enterprise for teams that need production-grade governance across their Node-RED deployments.
 ---
 
 A few days ago, we published a [blog](/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/) explaining SSO and how to set up SAML for your self-hosted FlowFuse. Now, in this guide, we will walk you through the process of setting up SSO with LDAP for your self-hosted FlowFuse. We will use OpenLDAP as the provider and cover everything from introducing LDAP, how it works, installing and configuring OpenLDAP, managing users (create, delete, update), and finally setting up FlowFuse for SSO with LDAP.

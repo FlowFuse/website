@@ -70,13 +70,13 @@ FlowFuse makes Node-RED production-ready through centralized management across i
 
 ### Enterprise Reliability from Node-RED Experts
 
-When hardware fails, FlowFuse keeps operations running through High Availability mode that distributes processing across multiple instances. Device Agents monitor system health and provide secure remote access for engineering teams—features designed by the same team that built and maintains Node-RED's core architecture.
+When hardware fails, FlowFuse keeps operations running through High Availability mode that distributes processing across multiple instances. Device Agents monitor system health and provide secure remote access for engineering teams, features designed by the same team that built and maintains Node-RED's core architecture.
 
 Engineering teams get proper DevOps workflows that move flows through development, testing, and production with automated deployments. Device grouping makes updates reach thousands of devices possible while version control and rapid rollbacks keep projects on track.
 
 Enterprise security comes built-in with single sign-on, role-based access control, comprehensive audit logging, and encrypted communications. Automated snapshots protect engineering work with rapid recovery when needed.
 
-These core capabilities are just the foundation—FlowFuse includes dozens of additional features designed specifically for industrial environments, refined through direct experience deploying Node-RED across Fortune 500 manufacturers and critical infrastructure.
+These core capabilities are just the foundation, FlowFuse includes dozens of additional features designed specifically for industrial environments, refined through direct experience deploying Node-RED across Fortune 500 manufacturers and critical infrastructure.
 
 ### Trusted by Industry Leaders
 
@@ -150,6 +150,6 @@ Your automation flows now run with production reliability. Remote access works s
 
 ## Up Next
 
-FlowFuse bridges the gap between Node-RED's simplicity and production reliability requirements—built by the people who created Node-RED and understand its production needs better than anyone.
+FlowFuse bridges the gap between Node-RED's simplicity and production reliability requirements, built by the people who created Node-RED and understand its production needs better than anyone.
 
 Ready to see FlowFuse in action? [Book a demo](https://flowfuse.com/book-demo/) and we'll show you how it works with your setup.

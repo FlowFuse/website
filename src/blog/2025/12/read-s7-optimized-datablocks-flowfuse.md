@@ -76,7 +76,7 @@ This worked fine with classic S7-300/400 controllers where memory layout was pre
 
 Optimized data blocks rearrange variables for better performance and memory efficiency. The compiler groups variables by type, adds alignment padding, and reorders declarations. Your variable positions become unpredictable and can change with each recompile.
 
-Example: You create variables Temperature (Real), Status (Bool), Pressure (Real), Alarm (Bool). Instead of sequential storage, the optimizer might group the two Real values together and pack Bools elsewhere. The Status boolean isn't at byte 4 anymore—it could be anywhere.
+Example: You create variables Temperature (Real), Status (Bool), Pressure (Real), Alarm (Bool). Instead of sequential storage, the optimizer might group the two Real values together and pack Bools elsewhere. The Status boolean isn't at byte 4 anymore, it could be anywhere.
 
 **Why S7 Nodes Fail**
 
@@ -268,7 +268,7 @@ To explore more OPC UA capabilities like subscribing to value changes, writing d
 
 You've successfully read data from your Siemens PLC, but FlowFuse does much more than connect to a single device. The platform helps you build complete industrial applications that connect to any equipment, collect and transform data from across your factory floor, visualize it in real-time dashboards, and take automated actions based on what's happening in your operation.
 
-FlowFuse makes deployment and management simple, even at scale. Develop your application once, then deploy it to thousands of edge devices across multiple facilities. Manage all your instances from one central platform—push updates, monitor performance, and troubleshoot remotely without visiting each site. Built-in security features protect your industrial data, while horizontal and vertical scaling ensures your applications grow with your business needs.
+FlowFuse makes deployment and management simple, even at scale. Develop your application once, then deploy it to thousands of edge devices across multiple facilities. Manage all your instances from one central platform, push updates, monitor performance, and troubleshoot remotely without visiting each site. Built-in security features protect your industrial data, while horizontal and vertical scaling ensures your applications grow with your business needs.
 
 Whether you're building a predictive maintenance system, a production monitoring dashboard, or a complete MES solution, FlowFuse provides the unified platform to connect, collect, transform, visualize, and act on your industrial data.
 

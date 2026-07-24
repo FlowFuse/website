@@ -9,7 +9,7 @@ image: /blog/2025/08/images/the-evolution-of-business-automation-why-pricing-mod
 tags:
    - flowfuse
 ---
-The automation landscape is evolving rapidly, and recent industry developments have sparked important conversations about how businesses should evaluate their automation platforms. N8N’s recent shift from workflow-based to execution-based pricing — positioned as removing limits — has received mixed reactions from the community, with many growing businesses finding the reality more complex. As pricing models change across the industry, now is the perfect time to reflect on what truly matters when choosing the right automation solution for your needs.
+The automation landscape is evolving rapidly, and recent industry developments have sparked important conversations about how businesses should evaluate their automation platforms. N8N’s recent shift from workflow-based to execution-based pricing, positioned as removing limits, has received mixed reactions from the community, with many growing businesses finding the reality more complex. As pricing models change across the industry, now is the perfect time to reflect on what truly matters when choosing the right automation solution for your needs.
 
 
 <!--more-->
@@ -35,7 +35,7 @@ FlowFuse takes a different approach to business automation, focusing on what ent
 
 ### Industrial-Grade Foundation
 
-FlowFuse is designed as an Industrial Application Platform that empowers teams to build, deploy and manage applications that optimize industrial operations. This isn't an add-on feature—it's fundamental to how we approach automation.
+FlowFuse is designed as an Industrial Application Platform that empowers teams to build, deploy and manage applications that optimize industrial operations. This isn't an add-on feature, it's fundamental to how we approach automation.
 
 ### The Power of Node-RED
 

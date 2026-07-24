@@ -13,7 +13,7 @@ tags:
 cta:
   type: sign-up
   title: Automate Data Collection With Node-RED
-  description: FlowFuse gives you a production-ready platform to build, deploy, and manage Node-RED flows — with team collaboration, version control, and centralized management across all your instances.
+  description: FlowFuse gives you a production-ready platform to build, deploy, and manage Node-RED flows, with team collaboration, version control, and centralized management across all your instances.
 tldr: "Node-RED can be used to scrape data from websites that don't expose an API, by sending HTTP GET requests and parsing the returned HTML. This guide walks through building a complete web scraper in Node-RED from sending requests and extracting data with CSS selectors to storing the results using a public scraping-practice site as the example."
 ---
 

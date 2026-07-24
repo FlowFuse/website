@@ -12,7 +12,7 @@ tags:
 cta:
   type: sign-up
   title: Edge to cloud, without the complexity
-  description: FlowFuse connects your industrial machines to AWS IoT Core — securely, at scale, without managing infrastructure.
+  description: FlowFuse connects your industrial machines to AWS IoT Core, securely, at scale, without managing infrastructure.
 meta:
   howto:
     name: "How to Connect Industrial Edge Devices to AWS IoT Core"
@@ -47,7 +47,7 @@ meta:
     - question: "What port and protocol does AWS IoT Core use for MQTT?"
       answer: "AWS IoT Core uses MQTT over mutual TLS on port 8883. Connecting on the plain MQTT port 1883 without TLS is rejected, because both the device and AWS must authenticate each other."
     - question: "Why does AWS IoT Core reject my connection even with a valid certificate?"
-      answer: "A valid certificate is not enough — you must also attach a policy to it. The policy defines which actions (connect, publish, subscribe, receive) the device is allowed to perform. Without an attached policy, every connection is rejected."
+      answer: "A valid certificate is not enough, you must also attach a policy to it. The policy defines which actions (connect, publish, subscribe, receive) the device is allowed to perform. Without an attached policy, every connection is rejected."
     - question: "Can I retrieve the private key again if I lose it?"
       answer: "No. AWS only lets you download the private key once, on the certificate confirmation screen. If you lose it, you must create a new certificate and attach the policy again."
     - question: "How do I authenticate FlowFuse to AWS IoT Core?"
@@ -168,7 +168,7 @@ Every AWS account has a unique IoT Core endpoint. This is the host address you w
 xxxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com
 ```
 
-Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](https://flowfuse.com/docs/user/envvar/) — for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
+Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](https://flowfuse.com/docs/user/envvar/), for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
 
 ## Step 4: Configure the MQTT Connection in FlowFuse
 
@@ -182,12 +182,12 @@ First, upload your certificates so Node-RED can use them for the TLS handshake.
 
 | Field | Value |
 | --- | --- |
-| Server | `${SERVER}` — set via FlowFuse environment variable |
+| Server | `${SERVER}`, set via FlowFuse environment variable |
 | Port | `8883` |
-| Client ID | `${CLIENT_ID}` — set via FlowFuse environment variable |
+| Client ID | `${CLIENT_ID}`, set via FlowFuse environment variable |
 | Keep alive | `60` |
 
-Define `SERVER` and `CLIENT_ID` under your instance's environment settings in FlowFuse. See [FlowFuse Environment Variables](https://flowfuse.com/docs/user/envvar/) for how to configure them. Keeping these values out of the flow JSON means you can deploy the same flow to multiple edge instances — each with its own Thing name and endpoint — without touching the flow itself. The Client ID must still match your Thing name exactly, so each instance gets its own variable value.
+Define `SERVER` and `CLIENT_ID` under your instance's environment settings in FlowFuse. See [FlowFuse Environment Variables](https://flowfuse.com/docs/user/envvar/) for how to configure them. Keeping these values out of the flow JSON means you can deploy the same flow to multiple edge instances, each with its own Thing name and endpoint, without touching the flow itself. The Client ID must still match your Thing name exactly, so each instance gets its own variable value.
 
 4. Check **Enable TLS**. A TLS configuration field appears.
 5. Click the **+** icon next to it to add a new TLS config.
@@ -251,7 +251,7 @@ You've successfully connected FlowFuse to AWS IoT Core. Data published from your
 
 You've got a working edge-to-cloud pipeline. FlowFuse is publishing data. AWS IoT Core is receiving it.
 
-From here, the real work begins: routing that data somewhere useful. In AWS IoT Core, go to **Message Routing > Rules** to forward your `flowfuse/telemetry` messages to DynamoDB for storage, Lambda for processing, or S3 for archiving — no extra infrastructure needed.
+From here, the real work begins: routing that data somewhere useful. In AWS IoT Core, go to **Message Routing > Rules** to forward your `flowfuse/telemetry` messages to DynamoDB for storage, Lambda for processing, or S3 for archiving, no extra infrastructure needed.
 
 On the edge side, swap the inject node for a live data source. An OPC-UA reader, a Modbus poll, a database query. The broker configuration stays the same. Only the source changes.
 
@@ -261,8 +261,8 @@ A few things worth doing before you go to production:
 
 **Rotate certificates on a schedule.** AWS IoT Core supports certificate rotation without downtime. Build that into your operations plan now.
 
-**Monitor connection state.** Add a status node in Node-RED connected to your mqtt out node. If the connection drops, you'll want to know immediately — not when someone notices missing data an hour later.
+**Monitor connection state.** Add a status node in Node-RED connected to your mqtt out node. If the connection drops, you'll want to know immediately, not when someone notices missing data an hour later.
 
 Industrial data pipelines aren't complex. They just have a lot of small steps that have to be right. You've done the hard part.
 
-For more on how FlowFuse connects PLCs and edge devices — via OPC UA, EtherNet/IP, Siemens S7, and Modbus — to cloud and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
+For more on how FlowFuse connects PLCs and edge devices, via OPC UA, EtherNet/IP, Siemens S7, and Modbus, to cloud and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

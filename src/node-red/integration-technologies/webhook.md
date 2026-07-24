@@ -15,7 +15,7 @@ Webhooks let different systems talk to each other automatically when something h
 
 ## What are Webhooks?
 
-A webhook is basically an automated HTTP request that fires when a specific event occurs. Think of it like setting up a notification system between two apps—when something happens in App A, it immediately sends a message to App B with all the relevant details.
+A webhook is basically an automated HTTP request that fires when a specific event occurs. Think of it like setting up a notification system between two apps, when something happens in App A, it immediately sends a message to App B with all the relevant details.
 
 The technical term is "user-defined HTTP callbacks," but here's what that means in practice: you tell a system "when X happens, send this data to this URL." From then on, it handles everything automatically.
 

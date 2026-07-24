@@ -13,7 +13,7 @@ tags:
 cta:
   type: demo
   title: See FlowFuse's Topic Hierarchy View in Action
-  description: FlowFuse gives you a built-in MQTT broker, visual topic hierarchy monitoring, and access control — everything you need to design, manage, and scale your UNS topic structure without the complexity.
+  description: FlowFuse gives you a built-in MQTT broker, visual topic hierarchy monitoring, and access control, everything you need to design, manage, and scale your UNS topic structure without the complexity.
 ---
 
 Topic structuring is not just a technical concern when building a high-performance Unified Namespace (UNS) for manufacturing environments; it's a strategic design choice that can determine the system's scalability, efficiency, and overall effectiveness. 
@@ -168,11 +168,11 @@ As your UNS scales, following some essential best practices will ensure your top
 
 1. Maintain Clear Documentation:
 
-First and foremost, maintaining clear documentation is key. A well-documented topic hierarchy is a reference point for everyone involved in the system—from developers and engineers to system administrators. This documentation should outline the naming conventions, the purpose of each topic, and how new issues should be added. Without it, there's a risk of inconsistency creeping into your system, especially as new data streams and devices are introduced. An apparent, organized reference ensures your team can efficiently navigate and expand the system without confusion.
+First and foremost, maintaining clear documentation is key. A well-documented topic hierarchy is a reference point for everyone involved in the system, from developers and engineers to system administrators. This documentation should outline the naming conventions, the purpose of each topic, and how new issues should be added. Without it, there's a risk of inconsistency creeping into your system, especially as new data streams and devices are introduced. An apparent, organized reference ensures your team can efficiently navigate and expand the system without confusion.
 
 2. Ensuring Consistency in Naming and Structure:
 
-Using clear, descriptive names for each topic and sticking to a consistent naming pattern across your system is essential for long-term success. A well-defined naming convention ensures that everyone involved—whether developers, engineers, or system administrators—can easily understand the purpose of each topic. Navigating your UNS becomes intuitive when topics are consistently named, and troubleshooting issues is much easier.
+Using clear, descriptive names for each topic and sticking to a consistent naming pattern across your system is essential for long-term success. A well-defined naming convention ensures that everyone involved, whether developers, engineers, or system administrators, can easily understand the purpose of each topic. Navigating your UNS becomes intuitive when topics are consistently named, and troubleshooting issues is much easier.
 
 For instance, avoid vague or overly generic names like `/sensor1/data`, which don’t offer much context. Instead, adopt more descriptive, hierarchical names that reflect the actual source and nature of the data, such as `/plantA/productionLine1/machineB/temperature`. A consistent structure not only enhances system readability but also ensures scalability.
 
@@ -203,4 +203,4 @@ _Image showing FlowFuse topic hierarchy interface for UNS_
 
 What truly stands out is FlowFuse's ability to handle both legacy and modern industrial protocols, effortlessly bridging the gap between old and new systems. Whether adding new devices, integrating data streams, or scaling to thousands of devices, FlowFuse gives you the flexibility, scalability, and security you need to optimize your UNS at every step.
 
-FlowFuse doesn’t just help you manage topics—it streamlines collaboration, enhances system performance, and accelerates your journey toward a fully integrated, future-proof UNS.
+FlowFuse doesn’t just help you manage topics, it streamlines collaboration, enhances system performance, and accelerates your journey toward a fully integrated, future-proof UNS.

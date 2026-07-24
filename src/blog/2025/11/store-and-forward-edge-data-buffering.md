@@ -67,7 +67,7 @@ meta:
 tldr: "Network outages leave PLCs running while their data has nowhere to go, creating gaps in production records, audit trails, and compliance documentation. Store-and-forward solves this by writing every data point to a local SQLite buffer first, then forwarding it when connectivity is available. This guide builds the pattern in FlowFuse and Node-RED across six steps, covering data collection, SQLite buffering, connectivity monitoring with a ping node, batched forwarding of unsent records, and error handling, so no data is lost regardless of how long the outage lasts."
 ---
 
-Network outages happen. A fiber cut, a switch failure, or infrastructure maintenance can take your connectivity offline without warning. When it does, your PLCs continue operating normally—they don't wait for the network to recover.
+Network outages happen. A fiber cut, a switch failure, or infrastructure maintenance can take your connectivity offline without warning. When it does, your PLCs continue operating normally, they don't wait for the network to recover.
 
 <!--more-->
 
@@ -81,9 +81,9 @@ Below is the demo video where I show how production data can be lost without buf
 
 ## What is Store-and-Forward?
 
-Store-and-forward is a pattern where data is saved locally before transmission, then forwarded when network connectivity is available. Your edge device writes every data point to local SQLite storage first. If the network is up, the data transmits to your destination—MQTT broker, historian, cloud platform, or database. If the network is down, the data stays in storage until connectivity returns.
+Store-and-forward is a pattern where data is saved locally before transmission, then forwarded when network connectivity is available. Your edge device writes every data point to local SQLite storage first. If the network is up, the data transmits to your destination, MQTT broker, historian, cloud platform, or database. If the network is down, the data stays in storage until connectivity returns.
 
-The edge device operates in three states. During normal operation, data writes to the buffer and forwards successfully—the buffer stays near-empty. During a network outage, data continues writing to the buffer but cannot forward—the buffer grows. When connectivity returns, the device forwards the buffered backlog in chronological order while continuing to collect new data—the buffer drains back to empty.
+The edge device operates in three states. During normal operation, data writes to the buffer and forwards successfully, the buffer stays near-empty. During a network outage, data continues writing to the buffer but cannot forward, the buffer grows. When connectivity returns, the device forwards the buffered backlog in chronological order while continuing to collect new data, the buffer drains back to empty.
 
 ```mermaid
 flowchart TD
@@ -134,7 +134,7 @@ You'll need the following before implementing store-and-forward:
 
 Data collection is the foundation of store-and-forward. Your edge device needs reliable connectivity to your data sources before you can buffer and forward their data.
 
-FlowFuse handles this through Node-RED's 5,000+ community nodes, which support virtually every industrial protocol and interface—Modbus, OPC UA, MQTT, Ethernet/IP, GPIO pins, serial connections, and more. You collect data from your sources, transform it into the format you need, and prepare it for buffering.
+FlowFuse handles this through Node-RED's 5,000+ community nodes, which support virtually every industrial protocol and interface, Modbus, OPC UA, MQTT, Ethernet/IP, GPIO pins, serial connections, and more. You collect data from your sources, transform it into the format you need, and prepare it for buffering.
 
 For this guide, we'll assume you already have data flowing into FlowFuse. The store-and-forward pattern works the same regardless of which data sources or protocols you're using.
 
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS data_buffer (
 );
 ```
 
-The payload stores the serialized data as JSON. The `sent` flag indicates whether the record is still pending (0) or has been successfully delivered (1) — this acts as a safety marker to prevent cleanup of unsent data.
+The payload stores the serialized data as JSON. The `sent` flag indicates whether the record is still pending (0) or has been successfully delivered (1), this acts as a safety marker to prevent cleanup of unsent data.
 
 1. Connect an **Inject** node to **Sqlite** node
 2. Deploy your flow and click the inject node button to create the table.
@@ -400,8 +400,8 @@ When the network is up, data flows through the buffer and transmits immediately.
 
 This pattern solves a common problem in industrial environments: maintaining complete time-series data when network infrastructure fails. Your production systems can now operate independently of network reliability.
 
-The system you've built is production-ready as-is, but you can extend it based on your requirements—add monitoring for buffer capacity, implement data validation rules, or configure forwarding to multiple destinations. The core mechanism remains the same.
+The system you've built is production-ready as-is, but you can extend it based on your requirements, add monitoring for buffer capacity, implement data validation rules, or configure forwarding to multiple destinations. The core mechanism remains the same.
 
 If you want to get the flow template that you can use directly and modify according to your needs, check out our [latest blueprint](/blueprints/getting-started/store-and-forward/).
 
-Store-and-forward is just one part of a complete PLC integration. For the full picture — connecting Siemens, Allen-Bradley, Omron, and other PLCs to MQTT, cloud, and enterprise systems — see the [FlowFuse PLC integration overview](/landing/plc/).
+Store-and-forward is just one part of a complete PLC integration. For the full picture, connecting Siemens, Allen-Bradley, Omron, and other PLCs to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

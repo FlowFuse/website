@@ -1,7 +1,7 @@
 ---
 title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling"
 subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to style Dashboard 2.0 elements effortlessly.
-description: Discover Node-RED Dashboard 2.0's three layouts (Grid, Notebook, Fixed), five navigation sidebar styles, themes, and custom CSS styling—a complete guide to controlling how your dashboards look and behave.
+description: Discover Node-RED Dashboard 2.0's three layouts (Grid, Notebook, Fixed), five navigation sidebar styles, themes, and custom CSS styling, a complete guide to controlling how your dashboards look and behave.
 lastUpdated: 2026-06-03
 date: 2024-05-10
 authors: ["sumit-shinde"]
@@ -17,7 +17,7 @@ tags:
 cta:
   type: sign-up
   title: "Build Beautiful Node-RED Dashboards Faster"
-  description: "FlowFuse gives you everything you need to build, style, and deploy Node-RED Dashboard 2.0 applications—with multi-user support, authentication, and production-ready infrastructure built in. Go from prototype to a secure, shareable dashboard without managing servers. Start free today."
+  description: "FlowFuse gives you everything you need to build, style, and deploy Node-RED Dashboard 2.0 applications, with multi-user support, authentication, and production-ready infrastructure built in. Go from prototype to a secure, shareable dashboard without managing servers. Start free today."
 meta:
   howto:
     name: "How to Configure Node-RED Dashboard 2.0 Layout, Sidebar, and Styling"
@@ -32,7 +32,7 @@ meta:
         text: "In the Dashboard 2.0 sidebar, click the edit button next to your page and select a layout: Grid (12 equal columns), Notebook (centered 1024px, groups stack vertically), or Fixed (each width unit equals 90px). Grid and Notebook are recommended for most use cases."
         url: "setting-page-layout"
       - name: "Size groups and widgets"
-        text: "Open a group or widget's configuration and adjust its size property. Within a group, widget width is a fraction of the group's internal column count—for example in a 4-column group, a widget set to width 3 takes 75%. Vertical row height is consistently 48px regardless of layout."
+        text: "Open a group or widget's configuration and adjust its size property. Within a group, widget width is a fraction of the group's internal column count, for example in a 4-column group, a widget set to width 3 takes 75%. Vertical row height is consistently 48px regardless of layout."
         url: "setting-element-size"
       - name: "Apply a theme to control colors and spacing"
         text: "In the Dashboard 2.0 sidebar, switch to the Theme tab, click '+theme', set the colors (navigation, primary, backgrounds, outlines) and sizing values (padding, gaps, border radius), then save. Edit the target page and select the new theme in its Theme field."
@@ -49,7 +49,7 @@ meta:
     - question: "How does the Grid layout work in Dashboard 2.0?"
       answer: "The Grid layout splits the page into 12 equally-sized columns. You set how many columns a group occupies with its size property, and when groups in a row fill all 12 columns a new row starts automatically. Each row's height is set by the tallest widget in that row."
     - question: "How do I size widgets and groups in Dashboard 2.0?"
-      answer: "Open the element's configuration from the Dashboard 2.0 sidebar and adjust its size property. A widget's width is a fraction of its group's internal grid—for example, in a 4-column group a widget set to width 1 takes 25% and one set to width 3 takes 75%. Horizontal unit size depends on the layout, but each row is consistently 48px tall."
+      answer: "Open the element's configuration from the Dashboard 2.0 sidebar and adjust its size property. A widget's width is a fraction of its group's internal grid, for example, in a 4-column group a widget set to width 1 takes 25% and one set to width 3 takes 75%. Horizontal unit size depends on the layout, but each row is consistently 48px tall."
     - question: "What are the navigation sidebar options in Dashboard 2.0?"
       answer: "There are five sidebar styles: Collapsing (the default, page content adjusts when opened), Fixed (always visible on the left), Collapse to icon (collapses to navigable page icons), Appear over content (opens over a transparent overlay without resizing content), and Always hide (hidden, with navigation handled by the ui-control widget)."
     - question: "How do I change the sidebar style in Node-RED Dashboard 2.0?"
@@ -59,10 +59,10 @@ meta:
     - question: "How do I add custom CSS to a Node-RED Dashboard 2.0?"
       answer: "Add a class to a widget, group, or page in its Class field, then use a ui-template node to write the CSS. The ui-template supports two scopes: CSS (Single Page), which targets one ui-page, and CSS (All Pages), which applies across the whole dashboard via the ui-base. Select the scope, choose the page or base, and write your styles."
     - question: "What is the difference between a theme and custom CSS in Dashboard 2.0?"
-      answer: "A theme is a structured set of colors and sizing values applied through the ui-theme configuration—the supported way to control the overall look. Custom CSS via the ui-template node goes further, letting you style individual widgets, groups, or pages by class for fine-grained or branded designs the theme settings don't cover."
+      answer: "A theme is a structured set of colors and sizing values applied through the ui-theme configuration, the supported way to control the overall look. Custom CSS via the ui-template node goes further, letting you style individual widgets, groups, or pages by class for fine-grained or branded designs the theme settings don't cover."
     - question: "Is Node-RED Dashboard 2.0 the same as the original Node-RED Dashboard?"
       answer: "No. Dashboard 2.0 (the FlowFuse-maintained @flowfuse/node-red-dashboard) is a rebuilt successor to the original dashboard, with a different layout system, theming, and node set. Layouts, sizing rules, and the ui-template styling approach described here are specific to Dashboard 2.0."
-tldr: "Node-RED Dashboard 2.0 gives you three page layouts—Grid (12 equal columns), Notebook (centered 1024px, stacked groups), and Fixed (90px per width unit)—and five navigation sidebar styles (Collapsing, Fixed, Collapse to icon, Appear over content, Always hide). Widgets are sized as a fraction of their group's internal grid, with rows a consistent 48px tall. You control colors and spacing through themes (ui-theme) and can go further with custom CSS by adding classes and writing styles in a ui-template node, scoped to a single page or all pages."
+tldr: "Node-RED Dashboard 2.0 gives you three page layouts: Grid (12 equal columns), Notebook (centered 1024px, stacked groups), and Fixed (90px per width unit); plus five navigation sidebar styles (Collapsing, Fixed, Collapse to icon, Appear over content, Always hide). Widgets are sized as a fraction of their group's internal grid, with rows a consistent 48px tall. You control colors and spacing through themes (ui-theme) and can go further with custom CSS by adding classes and writing styles in a ui-template node, scoped to a single page or all pages."
 ---
 
 In this comprehensive guide, we will explore different layouts and sidebar styles in Dashboard 2.0. Additionally, we will cover how you can style Dashboard 2.0 elements effortlessly.
@@ -117,7 +117,7 @@ It's important to note that the size of a single horizontal unit varies dependin
 
 ## Sizing Widgets within a Group
 
-In any layout—Grid, Notebook, or Fixed—widgets within a group are sized using a unified approach. The size property assigned to widgets determines their width within the group. Each unit in the size property represents a fraction of the group's total width. This width is determined by an internal grid established by the group.
+In any layout (Grid, Notebook, or Fixed), widgets within a group are sized using a unified approach. The size property assigned to widgets determines their width within the group. Each unit in the size property represents a fraction of the group's total width. This width is determined by an internal grid established by the group.
 
 ### Widget Sizing
 Widgets are sized relative to the number of columns in the internal grid. For example, if a group has 4 columns and two widgets, and the first widget is set to 1 width while the second to 3 width, the first widget will occupy 25% of the group's width, and the second widget will occupy 75%.

@@ -27,7 +27,7 @@ This on-demand session teaches you how to design resilient, scalable Node-RED sy
 - **Deployment patterns** that work in real-world industrial environments.
 - **Use cases from teams** already succeeding with distributed Node-RED at scale.
 
-Choosing the right architecture isn’t just a matter of preference — it has a direct impact on scalability, reliability, and operational efficiency. A single centralized Node-RED instance may seem simple to manage at first, but it can become a bottleneck as workloads grow, introducing risks like a single point of failure or degraded performance.
+Choosing the right architecture isn’t just a matter of preference, it has a direct impact on scalability, reliability, and operational efficiency. A single centralized Node-RED instance may seem simple to manage at first, but it can become a bottleneck as workloads grow, introducing risks like a single point of failure or degraded performance.
 
 ## What You Will Learn
 
@@ -52,4 +52,4 @@ At FlowFuse, we work with engineering teams every day to help:
 - Scale Node-RED solutions across teams, sites, and devices
 - Gain visibility and control over mission-critical workflows
 
-If your team is wrestling with these challenges, <a href="/contact-us/">let's talk</a>. We can share how teams like yours are implementing architectures that fit—not fight—their operational realities.
+If your team is wrestling with these challenges, <a href="/contact-us/">let's talk</a>. We can share how teams like yours are implementing architectures that fit, not fight, their operational realities.

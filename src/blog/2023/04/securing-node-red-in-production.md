@@ -15,7 +15,7 @@ tags:
 cta:
   type: sign-up
   title: Secure Node-RED Without the Complexity
-  description: FlowFuse manages HTTPS, authentication, and remote access security for you out of the box — so you can focus on building flows instead of configuring infrastructure.
+  description: FlowFuse manages HTTPS, authentication, and remote access security for you out of the box, so you can focus on building flows instead of configuring infrastructure.
 meta:
   howto:
     name: "How to Secure Node-RED in Production"
@@ -44,17 +44,17 @@ meta:
     - question: "How do I enable HTTPS for Node-RED?"
       answer: "You can configure TLS certificates in settings.js, or use a reverse proxy like nginx. Alternatively, FlowFuse Cloud provides HTTPS automatically without any manual certificate management."
     - question: "What is the easiest way to encrypt Node-RED traffic?"
-      answer: "Using a VPN such as Tailscale is the easiest approach — install it on the Node-RED host and your client devices, and all traffic between them is encrypted without needing a domain name or open ports."
+      answer: "Using a VPN such as Tailscale is the easiest approach, install it on the Node-RED host and your client devices, and all traffic between them is encrypted without needing a domain name or open ports."
     - question: "Can I disable the Node-RED editor after deployment?"
       answer: "Yes, set 'httpAdminRoot: false' or enable the disableEditor option in settings.js to prevent browser access to the flow editor while still letting your flows and HTTP endpoints run."
     - question: "Where is the Node-RED settings.js file located?"
       answer: "On a default Debian or Raspberry Pi installation, settings.js is found in ~/.node-red/. The exact location can vary depending on platform and installation method."
     - question: "Is Node-RED secure by default?"
-      answer: "No — by default Node-RED has no username or password and is accessible to anyone on the same network. Adding authentication and encrypting traffic are important steps even for hobby projects."
+      answer: "No, by default Node-RED has no username or password and is accessible to anyone on the same network. Adding authentication and encrypting traffic are important steps even for hobby projects."
     - question: "What does FlowFuse provide for Node-RED security?"
       answer: "FlowFuse Cloud secures the Node-RED editor with your account credentials, enforces HTTPS on all traffic, supports SSO, provides role-based access control, and secures remote device access through encrypted tunnels."
     - question: "Should I secure a local hobby Node-RED installation?"
-      answer: "Yes — even for hobby use it is a good habit. Unsecured Node-RED instances on a LAN can be accessed and edited by anyone on the network, so adding a password takes only a few minutes and significantly reduces risk."
+      answer: "Yes, even for hobby use it is a good habit. Unsecured Node-RED instances on a LAN can be accessed and edited by anyone on the network, so adding a password takes only a few minutes and significantly reduces risk."
 tldr: "This step-by-step guide covers the essential security measures for Node-RED deployments: adding username/password authentication via settings.js, restricting LAN access, enabling HTTPS with TLS certificates, and using FlowFuse Cloud as a managed alternative that handles these concerns automatically. Even hobby deployments benefit from these protections to prevent unauthorized access to the Node-RED editor."
 ---
 

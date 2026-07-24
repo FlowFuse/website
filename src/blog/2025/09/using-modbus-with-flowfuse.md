@@ -150,7 +150,7 @@ return msg;
 
 This takes the raw register, divides it by 10, and gives you a clean, human-readable temperature.
 
-**Tip:** You do not need to know JavaScript — simply use the **FlowFuse Expert**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse Expert for Manufacturing](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
+**Tip:** You do not need to know JavaScript, simply use the **FlowFuse Expert**, which can generate a Function node for you from plain English instructions. For the most accurate results, provide sample data along with the scaling you want to achieve. You can learn more in this article: [FlowFuse Expert for Manufacturing](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
 
 **Best Practice:** Always keep a copy of the device’s **Register Map documentation** handy. It tells you which addresses map to which variables, and how to interpret them.
 
@@ -173,6 +173,6 @@ Modbus RTU has stood the test of time in industrial automation because it’s si
 * Combine Modbus with MQTT, REST APIs, or databases to share data across your entire organization.
 * Scale from a single sensor to a **factory-wide monitoring and control system**.
 
-The real value comes when you stop treating Modbus as just a communication protocol and start using FlowFuse as the **bridge between industrial devices and enterprise systems**. From dashboards to alerts, from analytics to cloud integration — the possibilities are endless once the data is in your hands.
+The real value comes when you stop treating Modbus as just a communication protocol and start using FlowFuse as the **bridge between industrial devices and enterprise systems**. From dashboards to alerts, from analytics to cloud integration, the possibilities are endless once the data is in your hands.
 
-Modbus is one of several protocols FlowFuse uses to connect PLCs — see [how FlowFuse connects any PLC to MQTT, cloud, and enterprise systems](/landing/plc/) for the full picture.
+Modbus is one of several protocols FlowFuse uses to connect PLCs, see [how FlowFuse connects any PLC to MQTT, cloud, and enterprise systems](/landing/plc/) for the full picture.

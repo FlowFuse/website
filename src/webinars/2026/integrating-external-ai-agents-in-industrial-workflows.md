@@ -17,7 +17,7 @@ This webinar explores how external AI agents can be safely and effectively integ
 
 <!--more-->
 
-Industrial teams are collecting more data than ever, but turning that data into intelligent, automated action remains a challenge. External AI agents — from LLM-based assistants to domain-specific inference services — promise powerful decision support, but integrating them into operational workflows without compromising reliability, security, or governance requires the right architecture.
+Industrial teams are collecting more data than ever, but turning that data into intelligent, automated action remains a challenge. External AI agents, from LLM-based assistants to domain-specific inference services, promise powerful decision support, but integrating them into operational workflows without compromising reliability, security, or governance requires the right architecture.
 
 In this webinar we demonstrate how FlowFuse enables structured integration of external AI agents into industrial systems. You'll learn how to orchestrate data from PLCs, MQTT brokers, and time-series databases into AI workflows, route agent outputs back into control systems, and maintain observability and control at the edge and across distributed environments.
 
@@ -34,6 +34,6 @@ The live demo showcases an external AI agent integrated into a FlowFuse-managed 
 This webinar is ideal for industrial developers, solution architects, automation engineers, and technical leaders exploring AI integration at the edge. Move from AI experimentation to production-ready intelligent workflows with FlowFuse.
 
 ### Want to see how this could work in your environment?
-Book a demo to explore how FlowFuse can help you integrate external AI agents into your industrial workflows — from connecting edge data to orchestrating production-ready pipelines.
+Book a demo to explore how FlowFuse can help you integrate external AI agents into your industrial workflows, from connecting edge data to orchestrating production-ready pipelines.
 
 [Book a conversation](/book-demo/)

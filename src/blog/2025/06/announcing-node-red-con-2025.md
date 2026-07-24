@@ -31,4 +31,4 @@ The event will offer sessions in three different categories:
 
 ## Registration is Now Open
 
-Head to [the Node-RED Con 2025 official page](https://nrcon.nodered.org/) to secure your spot. Join the live event on November 4, ask your questions, be part of the conversation — this only happens once a year, and you won't want to miss what the community has built!
+Head to [the Node-RED Con 2025 official page](https://nrcon.nodered.org/) to secure your spot. Join the live event on November 4, ask your questions, be part of the conversation, this only happens once a year, and you won't want to miss what the community has built!
