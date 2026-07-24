@@ -14,17 +14,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: "Contact Support to enable"
 
@@ -40,17 +32,9 @@ sections:
         showOnPricing: false
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: 'contact'
             note: "On request; requires assistant tokens and the Expert MQTT bridge"
@@ -67,17 +51,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
             dimmed: true
@@ -93,23 +69,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-            tag: "Beta"
-            tagPrefix: "While in"
-            note: "Available during beta"
-          pro:
-            value: null
-            tag: "Beta"
-            tagPrefix: "While in"
-            note: "Available during beta"
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
             dimmed: true
@@ -124,29 +86,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-            tag: "Beta"
-            tagPrefix: "During Insights Mode"
-            note: "Available during beta of Insights Mode"
-          pro:
-            value: null
-            tag: "Beta"
-            tagPrefix: "During Insights Mode"
-            note: "Available during beta of Insights Mode"
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-            tag: "Beta"
-            tagPrefix: "During Insights Mode"
-            note: "Available during beta of Insights Mode"
-          pro:
-            value: null
-            tag: "Beta"
-            tagPrefix: "During Insights Mode"
-            note: "Available during beta of Insights Mode"
           enterprise:
             value: true
 
@@ -162,17 +104,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -185,22 +119,10 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-            note: "Starts with 2 hosted instances, 2 remote instances. Upgrades available up to 3 hosted / 3 remote instances."
-          pro:
-            value: true
-            note: "Starts with 5, shared with edge device count"
           enterprise:
             value: true
             note: "Starts with 20, shared with edge device count"
         selfHosted:
-          starter:
-            value: "5"
-            note: "Includes 5 hosted instances, shared with edge device count"
-          pro:
-            value: true
-            note: "Includes 5 hosted instances, shared with edge device count"
           enterprise:
             value: true
             note: "Starts with 20, shared with edge device count"
@@ -214,17 +136,9 @@ sections:
         subfeature: false
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -239,22 +153,10 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-            note: "Includes 5 edge devices"
-          pro:
-            value: true
-            note: "Starts with 5, shared with hosted instance count"
           enterprise:
             value: true
             note: "Starts with 20, shared with hosted instance count"
         selfHosted:
-          starter:
-            value: "5"
-            note: "Includes 5 edge devices, shared with hosted instance count"
-          pro:
-            value: true
-            note: "Shared with hosted instance count"
           enterprise:
             value: true
             note: "Starts with 20, shared with hosted instance count"
@@ -269,17 +171,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -293,17 +187,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -317,17 +203,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -340,17 +218,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -363,17 +233,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -386,17 +248,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -409,17 +263,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -432,17 +278,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -455,10 +293,6 @@ sections:
         showOnPricing: true
         tags: [cloud]
         cloud:
-          starter:
-            value: "1 GB"
-          pro:
-            value: "10 GB"
           enterprise:
             value: "100 GB"
 
@@ -471,10 +305,6 @@ sections:
         showOnPricing: true
         tags: [cloud]
         cloud:
-          starter:
-            value: "10 MB"
-          pro:
-            value: "100 MB"
           enterprise:
             value: "1 GB"
 
@@ -487,17 +317,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: "Unlimited"
-          pro:
-            value: "Unlimited"
           enterprise:
             value: "Unlimited"
         selfHosted:
-          starter:
-            value: "Unlimited"
-          pro:
-            value: "Unlimited"
           enterprise:
             value: "Unlimited"
 
@@ -513,19 +335,10 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
-            note: "Includes 5 clients. Additional clients can be purchased."
           enterprise:
             value: true
             note: "Includes 20 clients. Additional clients can be purchased."
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
             note: "Includes 20 clients. Additional clients can be purchased."
@@ -539,17 +352,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -562,17 +367,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -585,17 +382,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -610,17 +399,9 @@ sections:
         showOnPricing: false
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -635,17 +416,9 @@ sections:
         showOnPricing: false
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -658,17 +431,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -683,17 +448,9 @@ sections:
         showOnPricing: false
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -706,17 +463,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -729,17 +478,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -752,17 +493,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -775,17 +508,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -799,17 +524,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -825,17 +542,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -848,17 +557,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -871,17 +572,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -894,17 +587,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -920,17 +605,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -944,17 +621,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -968,17 +637,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -991,22 +652,10 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: list
-            options: ["None", "HTTP Basic Auth"]
-          pro:
-            value: list
-            options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
           enterprise:
             value: list
             options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
         selfHosted:
-          starter:
-            value: list
-            options: ["None", "HTTP Basic Auth"]
-          pro:
-            value: list
-            options: ["None", "HTTP Basic Auth"]
           enterprise:
             value: list
             options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
@@ -1020,17 +669,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -1043,17 +684,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: 'time'
             note: "Available from 2.32"
@@ -1067,17 +700,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -1090,17 +715,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -1113,17 +730,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -1139,10 +748,6 @@ sections:
         showOnPricing: false
         tags: [self-hosted]
         selfHosted:
-          starter:
-            value: "5"
-          pro:
-            value: "Unlimited"
           enterprise:
             value: "Unlimited"
 
@@ -1155,17 +760,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: "2"
-          pro:
-            value: "20"
           enterprise:
             value: "Unlimited"
         selfHosted:
-          starter:
-            value: "5"
-          pro:
-            value: "20"
           enterprise:
             value: "Unlimited"
 
@@ -1178,17 +775,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -1201,17 +790,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: true
-          pro:
-            value: true
           enterprise:
             value: true
 
@@ -1224,17 +805,9 @@ sections:
         showOnPricing: true
         tags: [cloud, self-hosted]
         cloud:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: null
           enterprise:
             value: true
 
@@ -1247,10 +820,6 @@ sections:
         showOnPricing: true
         tags: [self-hosted]
         selfHosted:
-          starter:
-            value: null
-          pro:
-            value: true
           enterprise:
             value: true
 
