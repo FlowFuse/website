@@ -1,10 +1,10 @@
 ---
-title: FlowFuse Open Source Starter Tier Resource Limits
-subtitle: The first 5 Node-RED runtimes are part of the starter package going forward
-description: The first 5 Node-RED runtimes are part of the starter package going forward
+title: FlowFuse Open Source Tier Resource Limits
+subtitle: The first 5 Node-RED runtimes are part of the open-source tier going forward
+description: The first 5 Node-RED runtimes are part of the open-source tier going forward
 date: 2024-03-14
 authors: ["zeger-jan-van-de-weg"]
-image: /blog/2024/03/images/starter-tier-resource-limits.png
+image: /blog/2024/03/images/open-source-tier-resource-limits.png
 tags:
     - posts
     - flowfuse
@@ -16,9 +16,9 @@ tier. This change does not affect FlowFuse Cloud users in any way.
 
 <!--more-->
 
-## New Starter Tier Resource Limits
+## New Open Source Tier Resource Limits
 
-The new limit for the number of Node-RED runtimes on the Starter tier is 5.
+The new limit for the number of Node-RED runtimes on the Open Source tier is 5.
 These 5 instances can be distributed across a maximum of 5 teams. This revised
 structure allows for the development of your initial FlowFuse and Node-RED
 solutions, providing a clear understanding of how FlowFuse can enhance your
@@ -28,16 +28,16 @@ the full potential of FlowFuse and grants access to our dedicated support team.
 ## Why the Change?
 
 Here at FlowFuse, we're committed to providing a great experience for all our
-users, including those utilizing our free, open-source Starter tier.  We
+users, including those utilizing our free, open-source tier.  We
 initially designed this tier to offer a platform for small organizations and
 larger teams to explore FlowFuse's capabilities without needing our direct
-involvement. However, we've observed instances where the Starter tier's free
+involvement. However, we've observed instances where the Open Source tier's free
 limits were being used to run very large deployments and even entire sites.
 
 While support is a key benefit we offer to paying customers, we believe everyone
 deserves a positive FlowFuse experience. As such, we're adjusting the resource
-limits to better align with the Starter tier's intended purpose and allow the
-company to continue to invest in the Starter tier.
+limits to better align with the Open Source tier's intended purpose and allow the
+company to continue to invest in the Open Source tier.
 
 ## Transitioning Users
 
