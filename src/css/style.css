@@ -1,5 +1,6 @@
-@layer vendor, theme, base, components, utilities, overrides;
+@layer vendor, theme, base, components, overrides, utilities;
 
+@config "../../tailwind.config.js";
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -83,7 +84,6 @@
 
 @layer overrides {
     .prose {
-        max-width: none;
         --tw-prose-body: var(--color-gray-700);
         --tw-prose-headings: var(--color-gray-600);
         --tw-prose-links: var(--color-blue-600);
@@ -746,6 +746,13 @@ h4:hover .header-anchor::before {
     background: url('/images/home/home-solution-background.svg');
     background-position: bottom;
     background-size: cover;
+}
+
+.solution-section-bg-flipped {
+    background: url('/images/home/home-solution-background.svg');
+    background-position: bottom;
+    background-size: cover;
+    transform: rotate(180deg);
 }
 
 .ff-image-top-rounded img,
@@ -2019,6 +2026,10 @@ lite-youtube::before {
     background: radial-gradient(ellipse 50% 5% at center bottom, rgb(from var(--color-blue-200) r g b / 0.3) 0%, rgb(from var(--color-blue-200) r g b / 0) 100%);
 }
 
+.bg-radial-red {
+    background: radial-gradient(ellipse 30% 70% at center bottom, rgb(from var(--color-red-50) r g b / 0.3) 0%, rgb(from var(--color-red-50) r g b / 0) 100%);
+}
+
 /* AI Chat Interface Styles */
 .bg-gradient-purple {
     background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
@@ -2292,7 +2303,7 @@ lite-youtube::before {
     }
 }
 
-@layer overrides {
+@layer utilities {
     .prose h1 { font-weight: 500; }
     .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-weight: 400; }
     .prose picture { margin-top: 0; margin-bottom: 0; margin-left: auto; margin-right: auto; }
@@ -2314,4 +2325,4 @@ lite-youtube::before {
     .prose .ff-blue-card > h5:first-of-type,
     .prose .ff-blue-card > h6:first-of-type { margin-top: 0; }
     .prose .ff-blue-card > p:last-of-type { margin-bottom: 0; }
-}
+} /* end @layer utilities */

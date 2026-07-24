@@ -46,7 +46,7 @@
 
 } /* end @layer components */
 
-@layer overrides {
+@layer utilities {
 
 .prose code::after {
     content: '' !important;
@@ -109,4 +109,4 @@
     margin-bottom: 2em;
 }
 
-} /* end @layer overrides */
+} /* end @layer utilities */

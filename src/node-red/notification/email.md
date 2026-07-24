@@ -115,7 +115,7 @@ Storing your email credentials directly in Node-RED flows exposes sensitive info
 ## Sending Emails
 
 1. Drag an **inject** node onto the canvas
-2. Set `msg.payload` to your email body content. For more control, use `msg.plaintext` for plain text emails, `msg.html` for HTML-formatted emails, or `msg.attachment` (as an array) for attachments in [Nodemailer](https://nodemailer.com/message/attachments/) format.
+2. Set `msg.payload` to your email body content. For more control, use `msg.plaintext` for plain text emails, `msg.html` for HTML-formatted emails, or `msg.attachment` (as an array) for attachments in [Nodemailer](https://nodemailer.com/message/attachments) format.
 3. Set `msg.topic` to your email subject line
 4. Connect the inject node's output to the e-mail node's input
 

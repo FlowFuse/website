@@ -42,6 +42,18 @@ accompanied by an [exhibit](https://docs.google.com/document/d/1kYxnzVR0lh0GIZ1F
 When the terms of the next years compensation plan are signed they should be put
 into this [private Google Drive directory](https://drive.google.com/drive/folders/1yVryN4Kir7n8TLbM_cEttXb_rDC2ORn2) by managment.
 
+### Submitting Compensation & Role Change Requests
+
+Whether an adjustment is part of the regular annual cycle or a separate off-cycle event, all changes must be formally logged for People Ops review.
+
+Managers must submit a request via this asana [form](https://form.asana.com/?k=1T6oZY_UfQOImFXcimRoIQ&d=1213818720452348), for any of the following actions:
+
+- Annual & Off-Cycle Raises: Any adjustments to base salary or commissions.
+- Promotions: Moving a team member to a higher level or new title.
+- Transfers: Moving a team member laterally to a different team or department.
+
+Important Note: To maintain equity and budget alignment across FlowFuse, no compensation or role adjustments should be communicated to the team member until People Ops has reviewed the submission and final leadership approval is secured. 
+
 ## Sales Commissions
 
 FlowFuse pays out commissions to sales reps, the terms of which are to be found
@@ -188,6 +200,8 @@ The baseline is only used to determine the growth and is not included in the att
 
 * Being close to the target in absolute terms does not imply high attainment
 * All growth-based MBOs follow this approach unless explicitly defined otherwise
+* Any changes to a bonus structure mid-cycle must be confirmed in writing to the employee, manager, and CEO. Verbal discussions are not sufficient.
+  Without written confirmation, the original bonus structure remains in effect
 
 
 ## Bonus Review (End of Period)

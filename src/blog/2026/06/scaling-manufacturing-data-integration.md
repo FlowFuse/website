@@ -97,6 +97,6 @@ Taken together, these results separate Arch's growth from its operational load. 
 
 Arch keeps expanding the platform: more data sources, more third-party integrations, more manufacturing customers. Because the foundation is templated and centrally managed, each addition starts from proven ground instead of an empty canvas.
 
-The first 100 databases were never the result that mattered. The architecture is. The next 100 cost a fraction of what the first ones did.
+The first 100 databases were never the result that mattered. The architecture is. The next 100 cost a fraction of what the first ones did, and the same standardize-once, deploy-everywhere pattern holds for any manufacturer coordinating dozens of plants and lines, [automotive included](/industries/automotive/).
 
 *Read the full story on the [FlowFuse customer page](https://flowfuse.com/customer-stories/scaling-manufacturing-automation-with-flowfuse/).*

@@ -18,8 +18,8 @@ As a solution architect working within this environment, I found myself uniquely
 
 ## A Tale of Shadow IT
 
-In the best-case scenarios, IT departments considered themselves as vendors, and OT, the customers. However, the IT-driven, off-the-shelf solutions seldom proved to be the right fit for the problems at hand. This mismatch often led to the birth of shadow IT systems—solutions that were not sanctioned by IT, yet were deemed necessary to maintain operational efficiency.
-In this realm of shadow IT, I've observed countless solutions running on desktop PCs, hidden from the eyes of IT departments, solving problems in manufacturing quickly—a situation born of necessity, with which no one could be satisfied. I cannot deny that Node-RED, an open-source low-code programming tool, has very often been one of these shadow IT systems, enabling data modification, lightweight HMI creation, and empowering the OT workforce. 
+In the best-case scenarios, IT departments considered themselves as vendors, and OT, the customers. However, the IT-driven, off-the-shelf solutions seldom proved to be the right fit for the problems at hand. This mismatch often led to the birth of shadow IT systems, solutions that were not sanctioned by IT, yet were deemed necessary to maintain operational efficiency.
+In this realm of shadow IT, I've observed countless solutions running on desktop PCs, hidden from the eyes of IT departments, solving problems in manufacturing quickly, a situation born of necessity, with which no one could be satisfied. I cannot deny that Node-RED, an open-source low-code programming tool, has very often been one of these shadow IT systems, enabling data modification, lightweight HMI creation, and empowering the OT workforce. 
 
 However, this under-the-radar approach is fraught with dangers. With unprotected systems and without official oversight, the potential for security breaches is a real and present danger. I would wager that even today, a simple scan on port 1880 would reveal a multitude of open Node-RED environments. This double-edged sword of innovation and insecurity highlights the urgent need for a paradigm shift.
 

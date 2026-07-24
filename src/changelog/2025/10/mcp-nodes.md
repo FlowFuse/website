@@ -7,7 +7,7 @@ tags:
   - changelog
 ---
 
-We’re excited to introduce **FlowFuse MCP Server Nodes** — a new contrib package that brings MCP Tools, Resources, and Prompts straight into Node-RED. With just a few nodes, you can design custom MCP-powered automations, connect dynamic resources, and return responses seamlessly in your flows. Whether you’re prototyping or extending integrations, these nodes make it faster than ever to put MCP to work in your applications.
+We’re excited to introduce **FlowFuse MCP Server Nodes**, a new contrib package that brings MCP Tools, Resources, and Prompts straight into Node-RED. With just a few nodes, you can design custom MCP-powered automations, connect dynamic resources, and return responses seamlessly in your flows. Whether you’re prototyping or extending integrations, these nodes make it faster than ever to put MCP to work in your applications.
 
 Over the coming weeks, we’ll share use cases and demos to inspire you, but in the meantime, we’ve included some sample flows you can access directly in Node-RED via the import menu (`CTRL`+`I`) and some additional links below.
 

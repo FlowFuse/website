@@ -65,7 +65,7 @@ Every binary parsing problem follows the same four steps.
 
 **Read the manual.** Find the communication protocol section, not the installation guide. You are looking for the frame structure, the byte order, and the data types for each field. If the manual calls it a "data format" or "output format" section, that is the one. Everything else depends on this.
 
-**Identify the frame type.** Frames from serial devices arrive in one of three structures. Fixed length frames are the simplest — every message is always the same number of bytes. Delimiter terminated frames end with a specific byte or sequence. Length prefixed frames include a byte early in the message that tells you how many bytes follow. Knowing which type your device uses determines how you validate and reassemble frames before parsing.
+**Identify the frame type.** Frames from serial devices arrive in one of three structures. Fixed length frames are the simplest, every message is always the same number of bytes. Delimiter terminated frames end with a specific byte or sequence. Length prefixed frames include a byte early in the message that tells you how many bytes follow. Knowing which type your device uses determines how you validate and reassemble frames before parsing.
 
 **Validate before you parse.** Every frame should pass a basic sanity check before your parsing logic runs. At minimum, verify the frame length and any start or end markers your device includes. If your device provides a checksum, verify that too. A frame that fails validation gets dropped. A corrupted value that passes through and ends up on a dashboard or in a database is far more damaging.
 
@@ -85,11 +85,11 @@ The manual specifies a fixed-length frame of exactly 10 bytes:
 | 1–4 | 32-bit float | Weight value, little-endian |
 | 5 | `0x01` or `0x02` | Unit indicator, 1 = kg, 2 = lb |
 | 6 | Bitfield | Status flags |
-| 7 | — | Reserved |
+| 7 |  | Reserved |
 | 8 | Byte | Checksum, sum of bytes 1–7 truncated to one byte |
 | 9 | `0x03` | ETX, end of frame |
 
-Byte 0 is always `0x02`. Byte 9 is always `0x03`. These are your frame markers. Bytes 1 through 4 carry the weight as a 32-bit IEEE 754 float in little-endian order, meaning the least significant byte comes first. Byte 5 tells you whether the scale is set to kilograms or pounds. Byte 6 is a status bitfield where individual bits carry meaning — bit 0 is stable, bit 1 is overload, bit 2 is zero.
+Byte 0 is always `0x02`. Byte 9 is always `0x03`. These are your frame markers. Bytes 1 through 4 carry the weight as a 32-bit IEEE 754 float in little-endian order, meaning the least significant byte comes first. Byte 5 tells you whether the scale is set to kilograms or pounds. Byte 6 is a status bitfield where individual bits carry meaning, bit 0 is stable, bit 1 is overload, bit 2 is zero.
 
 This is the raw buffer the scale sends for a 23.5 kg stable reading:
 
@@ -111,7 +111,7 @@ By the end of this article, that buffer becomes:
 
 ## Building the Flow in FlowFuse
 
-We'll simulate the device output using an Inject node so you can follow along without hardware. In a real deployment, the Inject node is replaced by a Serial In node receiving bytes directly from the device. The parsing logic, the validation, the Buffer Parser configuration — all of it stays identical. The only difference is where the bytes come from. If you want to set up the actual serial connection, [this article covers that](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/).
+We'll simulate the device output using an Inject node so you can follow along without hardware. In a real deployment, the Inject node is replaced by a Serial In node receiving bytes directly from the device. The parsing logic, the validation, the Buffer Parser configuration, all of it stays identical. The only difference is where the bytes come from. If you want to set up the actual serial connection, [this article covers that](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/).
 
 The flow is: **Inject node** connected to a **Function node** connected to a **Buffer Parser node** connected to a **Switch node**, each output of the Switch connected to its own **Change node**, both Change nodes connected to a **Debug node.**
 
@@ -125,7 +125,7 @@ The Buffer Parser node is not included in Node-RED by default. To install it:
 4. Search for node-red-contrib-buffer-parser
 5. Click **Install**
 
-Once installed, the node will appear in your palette and you can proceed with building the flow. If you're on FlowFuse, your administrator may have already added it to your shared palette — check before installing.
+Once installed, the node will appear in your palette and you can proceed with building the flow. If you're on FlowFuse, your administrator may have already added it to your shared palette, check before installing.
 
 ### Step 2: Simulate the Device
 
@@ -183,19 +183,19 @@ Add a **Buffer Parser node** and double-click it. Set **Output** to **key/value*
 - Offset: `5`
 - Length: `1`
 
-**Status flag — stable**
+**Status flag, stable**
 - Name: `stable`
 - Type: `bool`
 - Offset: `6`
 - Bit Offset: `0`
 
-**Status flag — overload**
+**Status flag, overload**
 - Name: `overload`
 - Type: `bool`
 - Offset: `6`
 - Bit Offset: `1`
 
-**Status flag — zero**
+**Status flag, zero**
 - Name: `zero`
 - Type: `bool`
 - Offset: `6`
@@ -204,7 +204,7 @@ Add a **Buffer Parser node** and double-click it. Set **Output** to **key/value*
 ![Buffer Parser node configuration showing weight, unit, and status flag fields mapped to their respective byte offsets](./images/buffer-parser.png)
 _Configuring the Buffer Parser node to extract weight, unit, and status flags from the 10-byte frame_
 
-The float conversion, the byte reading, the individual bit extraction — all handled visually without code. The `bool` type with Bit Offset is what makes bitfield parsing possible here. Each status flag is packed into a single byte, and the Buffer Parser pulls them out one bit at a time. If you want a deeper walkthrough of every Buffer Parser field and configuration option, [this article covers it in full](/blog/2025/12/node-red-buffer-parser-industrial-data/).
+The float conversion, the byte reading, the individual bit extraction, all handled visually without code. The `bool` type with Bit Offset is what makes bitfield parsing possible here. Each status flag is packed into a single byte, and the Buffer Parser pulls them out one bit at a time. If you want a deeper walkthrough of every Buffer Parser field and configuration option, [this article covers it in full](/blog/2025/12/node-red-buffer-parser-industrial-data/).
 
 ### Step 5: Map the Unit Value
 
@@ -264,7 +264,7 @@ For delimiter-terminated frames, replace the length check with a search for your
 
 Buffer Parser handles fixed-structure protocols well. Two situations require a Function node instead.
 
-The first is conditional structure — where the layout of later bytes depends on the value of an earlier byte. Buffer Parser parses a fixed specification every time. If your frame changes shape based on its own content, you need code.
+The first is conditional structure, where the layout of later bytes depends on the value of an earlier byte. Buffer Parser parses a fixed specification every time. If your frame changes shape based on its own content, you need code.
 
 The second is complex computed fields. If your device sends a raw ADC value that requires a multi-step calibration formula, Buffer Parser's scale field won't cover it. Add a Function node after Buffer Parser to handle only that calculation.
 
@@ -294,7 +294,7 @@ In both cases: let Buffer Parser do what it can, and add a Function node only fo
 
 ## Applying This to Your Own Device
 
-The weighing scale is one device. To show the method transfers, here is how it applies to a completely different device — an industrial barcode scanner.
+The weighing scale is one device. To show the method transfers, here is how it applies to a completely different device, an industrial barcode scanner.
 
 The scanner sends a variable-length frame every time it reads a label. The manual specifies a delimiter-terminated structure ending with `0x0D` (carriage return). Here is the frame layout:
 

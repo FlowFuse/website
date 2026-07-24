@@ -49,15 +49,15 @@ You can specify the model in two ways:
 
 When specifying a model by name, you can define the data type to use when loading it. Supported types include:
 
-- `auto` — Automatically selects the most suitable type.
-- `fp32` — Standard 32-bit floating-point model.
-- `fp16` — Half-precision 16-bit floating-point model.
-- `int8` — 8-bit integer quantized model.
-- `uint8` — 8-bit unsigned integer model.
-- `q8` — Quantized Int8 model (default).
-- `q4` — Quantized Int4 model.
-- `q4f16` — Quantized Int4 with Float16 model.
-- `bnb4` — BNB4 quantized model.
+- `auto`, Automatically selects the most suitable type.
+- `fp32`, Standard 32-bit floating-point model.
+- `fp16`, Half-precision 16-bit floating-point model.
+- `int8`, 8-bit integer quantized model.
+- `uint8`, 8-bit unsigned integer model.
+- `q8`, Quantized Int8 model (default).
+- `q4`, Quantized Int4 model.
+- `q4f16`, Quantized Int4 with Float16 model.
+- `bnb4`, BNB4 quantized model.
 
 ## Configuration
 

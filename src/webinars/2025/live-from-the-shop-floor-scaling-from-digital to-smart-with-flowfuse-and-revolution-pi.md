@@ -1,6 +1,6 @@
 ---
 title: "Live from the Shop Floor: Scaling from Digital to Smart with FlowFuse & Revolution Pi"
-subtitle: Transforming industrial operations with FlowFuse and Revolution Pi — live demo from a real production site
+subtitle: Transforming industrial operations with FlowFuse and Revolution Pi, live demo from a real production site
 meta:
     description: Watch how FlowFuse and Revolution Pi transform industrial operations by connecting shop-floor machines to ERP systems for smarter, faster production.
 image: /images/webinars/live-from-the-shop-floor-scaling-from-digital to-smart-with-flowfuse-and-revolution-pi.jpg
@@ -13,7 +13,7 @@ hubspot:
     formId: e1c58c10-fb00-46f4-81b3-4f253bb24640
     downloadFormId: 
 ---
-Watch how a traditional production process becomes truly smart — with connected machines, live data, and automation powered by FlowFuse and [Revolution Pi](https://revolutionpi.com/en/).
+Watch how a traditional production process becomes truly smart, with connected machines, live data, and automation powered by FlowFuse and [Revolution Pi](https://revolutionpi.com/en/).
 
 <!--more-->
 
@@ -21,7 +21,7 @@ Manufacturing companies often struggle with isolated equipment that operates eff
 
 In this webinar, Boris Crismancich from Revolution Pi was live at scale expert [Essmann Waagen](https://essmann.com/en/), demonstrating how FlowFuse and Revolution Pi connect a traditional counting scale workflow to a modern, governed automation environment.
 
-You’ll see how FlowFuse’s scalable, low-code platform built on Node-RED brings structure and reliability to industrial automation — connecting legacy equipment, standardizing data flows, and enabling secure, governed operations across the shop floor. Together with Revolution Pi’s industrial hardware, he showed how open, interoperable technologies can bridge the IT/OT gap and unlock hidden operational potential with maximum efficiency and flexibility.
+You’ll see how FlowFuse’s scalable, low-code platform built on Node-RED brings structure and reliability to industrial automation, connecting legacy equipment, standardizing data flows, and enabling secure, governed operations across the shop floor. Together with Revolution Pi’s industrial hardware, he showed how open, interoperable technologies can bridge the IT/OT gap and unlock hidden operational potential with maximum efficiency and flexibility.
 
 ## Key Topics
 
@@ -34,7 +34,7 @@ You’ll see how FlowFuse’s scalable, low-code platform built on Node-RED brin
 
 ## Live Demo
 
-Watch how Boris connected an isolated counting scale into a live workflow — including ERP-exported order data, order selection, barcode input, and real-time scale integration using Node-RED, FlowFuse, and Revolution Pi.
+Watch how Boris connected an isolated counting scale into a live workflow, including ERP-exported order data, order selection, barcode input, and real-time scale integration using Node-RED, FlowFuse, and Revolution Pi.
 
 ## What comes next?
 

@@ -14,7 +14,7 @@ tags:
 cta:
   type: pricing
   title: Enterprise-Grade Security for Your Node-RED Platform
-  description: SSO with SAML and LDAP, RBAC, audit logging, and SOC 2 compliance — all included in FlowFuse Enterprise for teams that need centralized authentication and production-grade governance.
+  description: SSO with SAML and LDAP, RBAC, audit logging, and SOC 2 compliance, all included in FlowFuse Enterprise for teams that need centralized authentication and production-grade governance.
 ---
 
 SSO plays a crucial role in modern enterprise environments by simplifying user authentication across multiple applications. At FlowFuse, we recognize the significance of SSO and offer robust support for integrating it with your self-hosted platform. In this comprehensive guide, we will focus on configuring SSO SAML, specifically using Google as the Identity Provider (IdP). We also support SSO with LDAP. For more information, refer to [Setting up LDAP SSO for your Self-Hosted FlowFuse](/docs/admin/sso/ldap/).

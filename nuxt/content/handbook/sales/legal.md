@@ -100,9 +100,20 @@ To find employer liability insurance in Deel, follow these steps:
 4. Click on Registration & Files
 5. Click on PEO Workers' Compensation Packet
 
+### Certificate of Insurance (COI)
+
+Clients from time to time might request a certificate of insurance. To get one, you need to:
+1. Sign into our insurance provider's [website](https://navigator.wtwco.com/)
+2. Click on "Certificates"
+3. Click on "Request a Certificate"
+4. Choose all available coverage options
+5. Where it asks for Certificate Holder, fill in the Client's name
+6. And for the address, fill in the client's headquarters address. (If you are not sure of their account name or address, reach out to the customer before requesting the ceritficate)
+
+Example: [Certificate of Insurance](https://drive.google.com/file/d/1ZYSMFZxCksvyPLDb9vDBcH41T6_SurPE/view?usp=sharing)
+
 ## Miscellaneous
 
 - [W9 with signature](https://drive.google.com/file/d/1A2_mnPRfc5gWAb4yEYNiViuCHiARkLcD/view){rel="nofollow"}
-- [Certificate of Insurance](https://drive.google.com/file/d/1ZYSMFZxCksvyPLDb9vDBcH41T6_SurPE/view?usp=sharing)
 - [Certificate of Status (California)](https://drive.google.com/file/d/11-gdRk-FNxQidcfZlmL7sDc3nDrLgnmW/view?usp=drive_link)
 - [Charter Admendment, Name Change](https://drive.google.com/file/d/1ol5lviVP7anxVqESebGiW3Ezku6fPAKx/view?usp=drive_link)

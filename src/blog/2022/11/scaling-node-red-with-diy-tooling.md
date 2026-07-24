@@ -56,7 +56,7 @@ needs dashboards and overviews, lots of work to be done. Not quite business
 related, but Node-RED is important for the company, the bosses sure would
 approve spending 2 months building these tools!
 
-But then something happened—there was a higher priority project to be picked up.
+But then something happened, there was a higher priority project to be picked up.
 Some tooling could be written for a couple of hours a month, but not two
 dedicated months to get it in tip top shape. Better than nothing! Built a
 dashboard in Node-RED to keep track of all devices, there's some scripts and a

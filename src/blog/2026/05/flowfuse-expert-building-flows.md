@@ -14,7 +14,7 @@ tags:
 cta:
     type: sign-up
     title: Try FlowFuse Expert on your team
-    description: FlowFuse Expert Application Building is in open beta on FlowFuse Cloud — no request needed. Sign up and start building.
+    description: FlowFuse Expert Application Building is in open beta on FlowFuse Cloud, no request needed. Sign up and start building.
 tldr: "FlowFuse Expert can now build complete Node-RED applications from a natural language description, wiring nodes on the canvas in real time. Before building, Expert reads your installed palette, existing canvas state, node configurations, and runtime debug data to produce output that matches your actual environment. The feature is in open beta on FlowFuse Cloud (all tiers) and Self-Hosted Enterprise, and works on both Hosted and Remote Instances."
 ---
 
@@ -33,14 +33,14 @@ Before the first node lands on the canvas, Expert reads your environment. We're 
 
 - **Your canvas state**: the nodes you've placed, how they connect, what they do.
 - **Your installed palette**: which nodes are installed and at what version.
-- **Your existing node configurations**: the settings already defined in the nodes on your canvas. You can also share context directly to let the Expert create the node configurations for external infrastructure — this is being improved into a more dedicated experience soon, and FlowFuse-native infrastructure will increasingly be recognised and considered automatically based on intent.
+- **Your existing node configurations**: the settings already defined in the nodes on your canvas. You can also share context directly to let the Expert create the node configurations for external infrastructure, this is being improved into a more dedicated experience soon, and FlowFuse-native infrastructure will increasingly be recognised and considered automatically based on intent.
 - **Your runtime data**: when you attach it from the debug sidebar, Expert sees the `msg` data, errors, and values flowing through each node. It reasons about runtime behavior, not just wiring. We're working on optimising and automating this soon.
 
 The result is output you can trust to match what you expect, so you reach your intended outcome sooner.
 
 ## Get started in two minutes
 
-FlowFuse Expert is in open beta on FlowFuse Cloud (Starter, Team, and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
+FlowFuse Expert is in open beta on FlowFuse Cloud (Starter, Team, and Enterprise), no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 

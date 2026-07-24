@@ -13,7 +13,7 @@ tags:
 cta:
   type: sign-up
   title: Manage Node-RED Environment Variables with FlowFuse
-  description: FlowFuse makes it easy to set, update, and secure environment variables across all your Node-RED instances and devices — with role-based access control and centralized management from a single dashboard.
+  description: FlowFuse makes it easy to set, update, and secure environment variables across all your Node-RED instances and devices, with role-based access control and centralized management from a single dashboard.
 meta:
   howto:
     name: "How to Use Environment Variables in Node-RED"

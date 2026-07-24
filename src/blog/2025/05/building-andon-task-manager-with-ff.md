@@ -24,20 +24,20 @@ This blog series introduces a practical approach to building a real-time Andon T
 
 The Andon Task Manager is a digital system designed to streamline real-time issue reporting, escalation, and resolution tracking. Inspired by the traditional Andon systems used in lean manufacturing, it brings these concepts into a modern, cloud-enabled environment.
 
-At its core, it’s a communication and response tool designed to improve transparency and speed on the factory floor or within service teams. Frontline workers can quickly raise issues—like equipment breakdowns, material shortages, or support needs—which are immediately sent to the right person or team. Once the issue is resolved, the responder updates the status so everyone stays informed and the task is properly closed.
+At its core, it’s a communication and response tool designed to improve transparency and speed on the factory floor or within service teams. Frontline workers can quickly raise issues, like equipment breakdowns, material shortages, or support needs, which are immediately sent to the right person or team. Once the issue is resolved, the responder updates the status so everyone stays informed and the task is properly closed.
 
 ## What Problem It Solves?
 
-In a typical manufacturing environment, multiple processes run simultaneously across large factory floors. Each area—or line—has specific machinery, workflows, and potential points of failure. When something goes wrong, quick and clear communication is essential. However, factories are often spread out, and support teams are divided across different departments (e.g., maintenance, quality control, safety, etc.).
+In a typical manufacturing environment, multiple processes run simultaneously across large factory floors. Each area, or line, has specific machinery, workflows, and potential points of failure. When something goes wrong, quick and clear communication is essential. However, factories are often spread out, and support teams are divided across different departments (e.g., maintenance, quality control, safety, etc.).
 
-In many cases, workers rely on informal or manual systems—such as radio calls, phone messages, or shouting across the floor—to report issues. These methods are inefficient, error-prone, and often delay response times. The lack of a structured, real-time communication system leads to:
+In many cases, workers rely on informal or manual systems, such as radio calls, phone messages, or shouting across the floor, to report issues. These methods are inefficient, error-prone, and often delay response times. The lack of a structured, real-time communication system leads to:
 
 - Delayed responses because support staff are unaware of new issues
 - Lack of visibility into the status of reported issues
 = No accountability for weather the issue is acknowledged/resolved or not
 - Unstructured logging that makes follow-up or audits difficult
 
-The Andon Task Manager solves this by acting as a centralized system where any frontline worker can quickly raise an issue. Once submitted, the request is instantly visible to the relevant department—without needing someone to manually assign it. This enables self-routing and real-time visibility, ensuring the right people take action quickly and efficiently, even when the requester and responder are in completely different parts of the factory.
+The Andon Task Manager solves this by acting as a centralized system where any frontline worker can quickly raise an issue. Once submitted, the request is instantly visible to the relevant department, without needing someone to manually assign it. This enables self-routing and real-time visibility, ensuring the right people take action quickly and efficiently, even when the requester and responder are in completely different parts of the factory.
 
 ## Planning the Andon Task Manager
 
@@ -65,7 +65,7 @@ The essential features include:
 - Resolve requests: After resolving the issue, the responder marks it as resolved.
 - View filtering: Requests can be filtered by line or department.
 - Admin tools: Admins can add and manage the list of departments and lines.
-- Status display: Requests display their current state — pending, acknowledged, or resolved.
+- Status display: Requests display their current state, pending, acknowledged, or resolved.
 - Alerts: Visual or sound alerts for unacknowledged requests after a time threshold.
 
 Each of these actions will be timestamped to provide a clear history of who did what and when.
@@ -80,7 +80,7 @@ The regular user's view will be a single-page interface with dynamic content upd
 
 The admin view will have a dedicated view, including a form for creating new lines or departments and a table displaying all requests. This view will also feature a menu for quickly switching between specific department or line section, improving system management efficiency.
 
-This design keeps the interface focused and responsive. It avoids unnecessary complexity while providing all necessary tools for users to perform their tasks efficiently — whether they are reporting an issue or managing overall operations.
+This design keeps the interface focused and responsive. It avoids unnecessary complexity while providing all necessary tools for users to perform their tasks efficiently, whether they are reporting an issue or managing overall operations.
 
 ![The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager.](./images/dashboard-admin-veiw.png){data-zoomable}
 _The following dashboard image illustrates the intended design and key objectives of our Andon Task Manager._
@@ -101,7 +101,7 @@ _The following dashboard image illustrates the intended design and key objective
 
 To ensure a simple and efficient data management system for the Andon Task Manager, we will use SQLite to store user requests. SQLite is a lightweight, easy-to-manage database that is well-supported in Node-RED through the `node-red-contrib-sqlite node`. This makes it an ideal choice for local deployments or scenarios where a lightweight database is needed.
 
-For dynamic runtime data—such as the user's selected line or department, as well as the full list of available lines and departments—FlowFuse’s built-in [context storage](/docs/user/persistent-context/) will be utilized. This solution allows for fast access to real-time data while maintaining persistent state across sessions, without introducing unnecessary database complexity or overhead.
+For dynamic runtime data, such as the user's selected line or department, as well as the full list of available lines and departments, FlowFuse’s built-in [context storage](/docs/user/persistent-context/) will be utilized. This solution allows for fast access to real-time data while maintaining persistent state across sessions, without introducing unnecessary database complexity or overhead.
 
 By using both SQLite for structured request data and context storage for dynamic, session-based information, the system remains efficient and easy to maintain.
 

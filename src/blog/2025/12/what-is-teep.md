@@ -47,7 +47,7 @@ Total Effective Equipment Performance (TEEP) is a manufacturing KPI used to unde
 
 <!--more-->
 
-This gap matters. In many factories, equipment represents the largest capital investment on the balance sheet, yet significant capacity remains unused outside scheduled production hours. TEEP addresses this gap by extending measurement beyond scheduled production and into total calendar time—providing visibility into both operational performance and unused capacity.
+This gap matters. In many factories, equipment represents the largest capital investment on the balance sheet, yet significant capacity remains unused outside scheduled production hours. TEEP addresses this gap by extending measurement beyond scheduled production and into total calendar time, providing visibility into both operational performance and unused capacity.
 
 To understand how TEEP does this, it’s important to be precise about what the metric actually measures.
 
@@ -55,7 +55,7 @@ To understand how TEEP does this, it’s important to be precise about what the 
 
 TEEP measures the percentage of **total calendar time** that equipment spends producing good parts at the correct speed. Unlike OEE, which evaluates performance only during planned production, TEEP includes **every hour of the day**, whether production was scheduled or not. That means all 168 hours in a week and all 8,760 hours in a year are part of the calculation.
 
-This distinction is fundamental. If a factory operates a single shift per day, OEE evaluates only those eight scheduled hours and ignores the remaining sixteen. TEEP counts them all. As a result, TEEP reveals how much of the equipment’s full potential is actually being used—not just how well it performs during active shifts.
+This distinction is fundamental. If a factory operates a single shift per day, OEE evaluates only those eight scheduled hours and ignores the remaining sixteen. TEEP counts them all. As a result, TEEP reveals how much of the equipment’s full potential is actually being used, not just how well it performs during active shifts.
 
 ## TEEP Formula and Calculation
 
@@ -78,7 +78,7 @@ TEEP is especially valuable when:
 - Capital expenditure decisions need justification
 - Different plants or lines need to be compared at a high level
 
-In many cases, TEEP reveals that the fastest and cheapest way to increase output is not buying new machines—but better utilizing the ones already installed. A modest TEEP improvement can unlock significant production capacity without additional capital investment.
+In many cases, TEEP reveals that the fastest and cheapest way to increase output is not buying new machines, but better utilizing the ones already installed. A modest TEEP improvement can unlock significant production capacity without additional capital investment.
 
 Importantly, TEEP is not about pushing equipment to run 24/7 at all costs. Instead, it provides the data needed to make **intentional, informed decisions** about scheduling, staffing, maintenance, and growth.
 
@@ -161,7 +161,7 @@ Finally, many companies make the mistake of treating TEEP as a fixed target. TEE
 
 TEEP helps most when planning capacity. When customer demand gets close to what you can produce, companies face a big decision: spend money to expand capacity or accept slower growth. TEEP analysis clarifies this choice by showing how much extra capacity exists in current equipment.
 
-A factory with 65% TEEP across major equipment could theoretically increase production by 54% without buying new equipment, assuming customer demand exists and operational problems can be solved. Whether this capacity can actually be used depends on shift schedules, worker availability, maintenance needs, and product mix—but TEEP shows the theoretical maximum.
+A factory with 65% TEEP across major equipment could theoretically increase production by 54% without buying new equipment, assuming customer demand exists and operational problems can be solved. Whether this capacity can actually be used depends on shift schedules, worker availability, maintenance needs, and product mix, but TEEP shows the theoretical maximum.
 
 ## Setting Up TEEP Measurement
 
@@ -169,7 +169,7 @@ Companies that want accurate TEEP need good data collection systems. Writing dow
 
 The money spent on measurement systems should match decision-making needs. Companies making frequent capacity investment decisions benefit from real-time TEEP monitoring. Organizations with stable capacity and clear bottlenecks might find quarterly manual calculations work fine.
 
-Building TEEP dashboards has become much simpler with modern tools. FlowFuse offers a practical solution for companies that want real-time equipment monitoring without complex programming. The platform bridges the gap between OT (Operational Technology) on the factory floor and IT systems in the office. It connects directly to your equipment—whether through [PLCs, SCADA systems](/solutions/scada/), or [machine controllers and MES platforms](/solutions/mes/)—and creates visual dashboards that track performance metrics. You can see how straightforward the process is by looking at their [OEE dashboard blueprint](https://flowfuse.com/blueprints/manufacturing/oee-dashboard/). The same approach works for TEEP—connect your data sources, set up the calculations, and view your equipment utilization in real-time. This makes professional-grade monitoring accessible even for smaller manufacturers or companies without dedicated programming staff.
+Building TEEP dashboards has become much simpler with modern tools. FlowFuse offers a practical solution for companies that want real-time equipment monitoring without complex programming. The platform bridges the gap between OT (Operational Technology) on the factory floor and IT systems in the office. It connects directly to your equipment, whether through [PLCs, SCADA systems](/solutions/scada/), or [machine controllers and MES platforms](/solutions/mes/), and creates visual dashboards that track performance metrics. You can see how straightforward the process is by looking at their [OEE dashboard blueprint](https://flowfuse.com/blueprints/manufacturing/oee-dashboard/). The same approach works for TEEP, connect your data sources, set up the calculations, and view your equipment utilization in real-time. This makes professional-grade monitoring accessible even for smaller manufacturers or companies without dedicated programming staff.
 
 ***Want to see how TEEP monitoring would work for your specific equipment and production environment? [Book a demo](/book-demo/) with FlowFuse to explore how you can track equipment utilization, identify capacity opportunities, and make data-driven decisions about your manufacturing assets.***
 

@@ -122,9 +122,10 @@ as evidenced by a PO or signed quote, is the sole determinant.
    - [Signed quotes and P.O.'s](https://drive.google.com/drive/folders/1Nb3UqFiE56ymgQnyfkDKHMAe6L3akNzQ)
    - If negotiated custom, the
      [Subscription agreement](https://drive.google.com/drive/folders/1h6jBvkJ2oDrBL7jw751RfAzBKkkprKDc)
-1. Send an email to the customer and the assigned CSM to make the introduction.
-   - Also verify if a P.O. number is known for them internally, to put on the
-     invoice
+1. Set up and complete the handover call with the customer, assigned technical contact and the CSM to ensure the start of the onboarding process. 
+   - Set up meeting agenda
+   - Introduce CSM and Technical contact
+   - Finalize outstanding action points
 1. Move the deal to `Closing` in HubSpots Deal overview, update the close date
    to when the customer committed to purchasing.
 1. Send the CSM a direct message on slack with the following information:
@@ -157,6 +158,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
        [HubSpot Template](https://app-eu1.hubspot.com/templates/26586079/edit/135404737?q=welco&page=1).
 1. If Professional Services are included, inform the PS team of deal.
 1. Add customer to onboarding stage in the CSM tracking document.
+1. Set up the meeting structure via the handover call, document customer goals, use case and administration tasks.
 1. Move the deal to `Closed Won` stage.
 1. Check if a new renewal deal is automatically generated under the correct terms and closing date.
 1. Add the following to the deal: 

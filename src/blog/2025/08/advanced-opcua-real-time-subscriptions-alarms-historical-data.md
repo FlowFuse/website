@@ -12,7 +12,7 @@ tags:
 tldr: "Polling OPC UA tags every few seconds misses critical events and wastes bandwidth; OPC UA subscriptions solve this by monitoring values server-side and pushing notifications only when they change. This advanced tutorial covers four production-ready OPC UA features in Node-RED: subscriptions for instant value updates, event and alarm handling, historical data queries, and method calls for triggering complex equipment operations."
 ---
 
-In our [previous tutorial](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), we covered OPC UA basics—connecting to servers, reading tags, and writing values. Now it's time for the features that make OPC UA truly powerful in production.
+In our [previous tutorial](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), we covered OPC UA basics, connecting to servers, reading tags, and writing values. Now it's time for the features that make OPC UA truly powerful in production.
 
 <!--more-->
 
@@ -40,7 +40,7 @@ To follow this guide, you'll need:
 
 > Managing and scaling Node-RED instances is easy with FlowFuse, offering DevOps pipelines, audit logs, snapshots, high availability, and much more. [Start your free trial today!]({% include "sign-up-url.njk" %})
 
-Before proceeding, check which features your OPC UA server supports—most handle subscriptions and events, but historical data and methods vary by vendor.
+Before proceeding, check which features your OPC UA server supports, most handle subscriptions and events, but historical data and methods vary by vendor.
 
 Let's get started.
 
@@ -182,7 +182,7 @@ Deploy the flow. When you click the Inject button, it sends the acknowledgment t
 
 ## Method Calls
 
-OPC UA methods let you execute functions directly on your equipment. Instead of writing multiple values to trigger an action, you call a method with parameters—like calling a function in code.
+OPC UA methods let you execute functions directly on your equipment. Instead of writing multiple values to trigger an action, you call a method with parameters, like calling a function in code.
 
 Methods are ideal for complex operations like starting batch processes, resetting counters, or triggering calibration routines. They encapsulate the logic on the server side, making your Node-RED flows simpler and more reliable.
 
@@ -210,7 +210,7 @@ Deploy and click the Inject button. The method executes on the server and the no
 
 OPC UA Historical Access lets you query past values from your equipment. Instead of just seeing current temperature, you can ask "what was the temperature yesterday at 3 PM?" or "show me all pressure values from the last shift."
 
-This is essential for troubleshooting, compliance reporting, and trend analysis. However, not all OPC UA servers support historical data—check your server documentation first. Also, not all tags are configured for history—verify that the "Historizing" attribute is set to true for your tag.
+This is essential for troubleshooting, compliance reporting, and trend analysis. However, not all OPC UA servers support historical data, check your server documentation first. Also, not all tags are configured for history, verify that the "Historizing" attribute is set to true for your tag.
 
 ### Reading Historical Values
 
@@ -286,6 +286,6 @@ Managing OPC UA flows across multiple sites? FlowFuse helps teams deploy Node-RE
 
 Following our managed MQTT broker, we've now added database services built right into the platform, plus new AI features that make building flows faster than ever.
 
-Connecting PLCs beyond OPC UA? FlowFuse also supports Siemens S7, EtherNet/IP, Modbus TCP/RTU, and MQTT — see the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
+Connecting PLCs beyond OPC UA? FlowFuse also supports Siemens S7, EtherNet/IP, Modbus TCP/RTU, and MQTT, see the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
 
 [Get started free]({% include "sign-up-url.njk" %}) and scale and manage your Node-RED deployments today.

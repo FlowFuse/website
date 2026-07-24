@@ -75,8 +75,13 @@ Social posts are planned as part of the broader [content strategy](/handbook/mar
     - Each assignee will get reminders to post in the `#social-post-reminders` Slack channel starting two days before the scheduled date and continuing until one day after if it hasn’t been scheduled.
     - Make sure to mark the Asana task as done once the post is scheduled. Otherwise, you’ll keep getting reminders, or it will show up as a missed deadline.
 - **Posting hours:** Aligned with USA Eastern Time before work hours and during lunch, aiming to coincide with Germany's lunch and after work hours.
-    - USA before work (6:00 am EDT - 12 pm CEST).
-    - USA lunch hours (11:30 am EDT -  5:30 pm CEST).
+
+| Release Window | Pacific — Los Angeles | Central — Chicago | Eastern — New York | Central European — Berlin/Amsterdam | India — New Delhi | Japan — Tokyo |
+|---|---|---|---|---|---|---|
+| **Window 1** — USA before work | 3:00 AM | 5:00 AM | 6:00 AM | 12:00 PM (noon) | 3:30 PM | 7:00 PM |
+| **Window 2** — USA lunch | 8:30 AM | 10:30 AM | 11:30 AM | 5:30 PM | 9:00 PM | 12:30 AM (+1 day) |
+
+    > **Note:** Always set the scheduled time manually to match one of the two time slots above. HubSpot's default suggested posting time is not reliable and often does not align with our defined posting hours — don't rely on it.
 - While we have a planned schedule, it's crucial to remain flexible. If more impactful or relevant content emerges, we'll adapt our plan accordingly to ensure the best possible engagement.
 - If the post is part of a campaign, add it as a campaign asset in HubSpot. If the campaign doesn't exist yet, create it with a descriptive name for easy identification.
 

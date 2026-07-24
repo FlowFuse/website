@@ -421,6 +421,14 @@ module.exports = function(eleventyConfig) {
         return decodeHTML(String(text).replace(/<[^>]+>/g, ""));
     });
 
+    eleventyConfig.addFilter("readingTime", function(content) {
+        if (!content) {
+            return 1;
+        }
+        const words = String(content).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+        return Math.max(1, Math.ceil(words / 200));
+    });
+
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);
         return "<p>"+content.split(/\.\n/).join(".</p><p>")+"</p>"

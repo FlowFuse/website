@@ -10,9 +10,11 @@ if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
+// robots: false is applied via routeRules in nuxt.config.ts, not here — @nuxtjs/robots
+// computes its own X-Robots-Tag/meta before this component ever runs, so a manual
+// `useHead` robots meta tag here would only race against it, not control it.
 useHead({
-    title: `${page.value.title} • FlowFuse`,
-    meta: [{ name: 'robots', content: 'noindex' }]
+    title: `${page.value.title} • FlowFuse`
 })
 </script>
 

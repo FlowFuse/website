@@ -1,6 +1,6 @@
 ---
 title: Customisable Immersive Editor Drawer
-description: The immersive editor drawer is now pinnable, switchable, and resizable — with your preferences saved between sessions.
+description: The immersive editor drawer is now pinnable, switchable, and resizable, with your preferences saved between sessions.
 date: 2026-04-29 12:00:00
 authors: ['noley-holland']
 tags:
@@ -12,7 +12,7 @@ issues:
 The drawer in the immersive editor used to float over your canvas, blocking parts of your flow whenever it was open. Now it sits inside the editor layout, so FlowFuse tools stay visible alongside your work in Node-RED. You can also set it up the way you like, and it stays that way every time you come back:
 
 ![Pinning, moving, and full-screening the immersive editor drawer](./images/immersive-ui-drawer.gif){data-zoomable}
-*Pin, switch sides, or go full-screen from the drawer header — your settings persist between sessions.*
+*Pin, switch sides, or go full-screen from the drawer header, your settings persist between sessions.*
 
 - **Pin the drawer** to dock it alongside the canvas, and the Node-RED editor resizes to fit.
 - **Switch sides** to move the drawer to the left or right of the screen.

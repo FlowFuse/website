@@ -139,13 +139,13 @@ And make sure the receiving end is built for the rate too. Reliability isn't onl
 
 ## The runtime isn't your variable
 
-By the time poll rates, timeouts, protocol selection, and data handling are properly tuned, the runtime becomes just one fixed cost in the path—and a predictable one.
+By the time poll rates, timeouts, protocol selection, and data handling are properly tuned, the runtime becomes just one fixed cost in the path, and a predictable one.
 
 In the case of FlowFuse, which is built on Node-RED, the runtime runs on Node.js rather than on compiled embedded code. That introduces a small amount of overhead on each pass through a flow: typically a few milliseconds, and consistently so. It doesn't drift over time, and it doesn't increase when a device on the line becomes busy. A well-designed flow can maintain low-millisecond response times all day.
 
 That fixed overhead is also a useful diagnostic tool. A constant delay of a few milliseconds cannot cause timing variations of tens of milliseconds. So if you're seeing swings that large, the root cause is somewhere else. In most cases, it comes down to one of the four issues covered in this article: an overloaded poll rate, a timeout chosen by guesswork, an ignored connection limit, or a protocol being asked to deliver timing guarantees it was never designed to provide.
 
-There is one exception worth calling out. Node-RED runs as a single process with a shared event loop, so a CPU-intensive transformation or a slow database write anywhere within that instance can temporarily block everything else—including the fast path—whenever it executes. Moving that work to a different tab in the editor doesn't help, because all tabs within the same instance share the same event loop.
+There is one exception worth calling out. Node-RED runs as a single process with a shared event loop, so a CPU-intensive transformation or a slow database write anywhere within that instance can temporarily block everything else, including the fast path, whenever it executes. Moving that work to a different tab in the editor doesn't help, because all tabs within the same instance share the same event loop.
 
 This isn't a case of the runtime being slow; it's a case of unrelated workloads competing for the same process. The solution is the same principle used throughout this article: give the fast path its own lane by moving heavy workloads into a separate instance.
 

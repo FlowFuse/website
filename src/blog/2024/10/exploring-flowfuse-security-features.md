@@ -14,10 +14,10 @@ tags:
 cta:
   type: demo
   title: See Every FlowFuse Security Feature in Action
-  description: From SSO and RBAC to audit logs, instance protection, and SBoM — FlowFuse gives you enterprise-grade security for every Node-RED deployment across your team.
+  description: From SSO and RBAC to audit logs, instance protection, and SBoM, FlowFuse gives you enterprise-grade security for every Node-RED deployment across your team.
 ---
 
-When it comes to securing Node-RED applications and its editor, ensuring that your flows and data are protected from unauthorized access can feel like a daunting task. Even after investing considerable time, achieving the right level of security often remains a complex challenge. For enterprises, this goes far beyond access control— security is a cornerstone of protecting sensitive data, maintaining operational continuity, and meeting strict regulatory requirements. A robust security framework not only prevents breaches but also safeguards intellectual property, preserves trust, and shields the organization from costly cyber threats.
+When it comes to securing Node-RED applications and its editor, ensuring that your flows and data are protected from unauthorized access can feel like a daunting task. Even after investing considerable time, achieving the right level of security often remains a complex challenge. For enterprises, this goes far beyond access control, security is a cornerstone of protecting sensitive data, maintaining operational continuity, and meeting strict regulatory requirements. A robust security framework not only prevents breaches but also safeguards intellectual property, preserves trust, and shields the organization from costly cyber threats.
 
 <!--more-->
 
@@ -48,7 +48,7 @@ If you are using FlowFuse Cloud, please get in touch with us for configuration a
 
 We've all been there, managing countless passwords, hoping they're strong enough to protect against security threats. But in today’s digital world, passwords alone aren’t sufficient. That’s why Two-Factor Authentication (2FA) has become essential.
 
-FlowFuse understands this need. By enabling 2FA, even if someone gets hold of your password, they'll still require a second form of verification—like a code sent to your phone—to access your account. This simple yet powerful layer of security ensures your data is much safer from unauthorized access. However, when Single Sign-On (SSO) is enabled, 2FA will be replaced by SSO's authentication process.
+FlowFuse understands this need. By enabling 2FA, even if someone gets hold of your password, they'll still require a second form of verification, like a code sent to your phone, to access your account. This simple yet powerful layer of security ensures your data is much safer from unauthorized access. However, when Single Sign-On (SSO) is enabled, 2FA will be replaced by SSO's authentication process.
 
 To set up 2FA in FlowFuse, you’ll need to head over to **User Settings > Security > Two-Factor Authentication**. It’s as simple as clicking the "Enable Two-Factor Authentication" button, scanning the QR code displayed on the platform with your authenticator app, and then entering the code from your app back into FlowFuse. Once you've done that, 2FA will be up and running, adding that extra layer of security to your account!
 

@@ -59,7 +59,7 @@ A modern factory doesn't just rely on PLCs anymore. Industrial gateways connect 
 
 The challenge isn't that software changes. It's managing those changes consistently across the factory.
 
-A maintenance engineer updates an application on one gateway to resolve an issue. A new production line needs an additional machine connection, so another device gets a slightly different configuration. An operator requests a dashboard improvement, and the change is made directly on the running system because production can't wait.
+A maintenance engineer updates an application on one gateway to resolve an issue. A new production line needs an additional machine connection, so another device gets a slightly different configuration. An operator requests a dashboard improvement, and the change is made directly on the running system because production can't wait. On an [automotive](/industries/automotive/) line, it might be an updated torque spec pushed to fix one part number, with no clear record afterward of which stations actually received it.
 
 Each change solves an immediate problem. Over time, though, those small updates create a bigger one: one production line starts behaving differently from another, even though they're supposed to be identical. A gateway runs a different application version than the rest of the fleet. During troubleshooting, nobody is completely certain which version is running where, or whether every site received the latest update.
 

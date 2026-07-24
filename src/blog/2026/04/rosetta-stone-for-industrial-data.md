@@ -11,7 +11,7 @@ tags:
 cta:
   type: demo
   title: Your factory data is already there. Let's make it readable.
-  description: FlowFuse allows you to bridge legacy equipment and modern systems through a Unified Namespace — so every machine, every platform, and every team speaks the same language.
+  description: FlowFuse allows you to bridge legacy equipment and modern systems through a Unified Namespace, so every machine, every platform, and every team speaks the same language.
 tldr: "Factories aren't data-poor they're data-illiterate: the same event gets recorded in incompatible formats across PLCs, SCADA, maintenance platforms, and edge gateways with no shared reference point. The solution is a Unified Namespace built on OPC-UA (shared meaning), MQTT/Sparkplug B (reliable transport), and a central broker as a fixed reference point so every new system added inherits the full value of everything already publishing there."
 ---
 
@@ -96,7 +96,7 @@ This is the dimension of the factory problem that most IIoT conversations miss, 
 
 A Unified Namespace changes the geometry permanently.
 
-When every system in a factory maps to a shared data model published through a common broker, the value does not accumulate linearly. It compounds. A quality defect on line 3 is no longer four disconnected records across four systems. It is one event, described from four angles, readable from a single location, correlatable in minutes rather than days. A maintenance anomaly flagged two days before a failure is not a ticket in one system and an alarm in another. It is a pattern visible across the entire operational picture, searchable historically, usable for prediction.
+When every system in a factory maps to a shared data model published through a common broker, the value does not accumulate linearly. It compounds. A quality defect on line 3 is no longer four disconnected records across four systems. It is one event, described from four angles, readable from a single location, correlatable in minutes rather than days. A maintenance anomaly flagged two days before a failure is not a ticket in one system and an alarm in another. It is a pattern visible across the entire operational picture, searchable historically, usable for prediction. In [automotive manufacturing](/industries/automotive/), where the same downtime code needs to mean the same thing on every line in every plant, that shared reference point is what turns twelve local definitions into one benchmark everyone can actually compare against.
 
 !["Linear vs compounding data value graph"](./images/power-of-single-reference-point.png)
 _Linear vs compounding data value graph_

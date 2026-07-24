@@ -16,7 +16,7 @@ tags:
 cta:
   type: sign-up
   title: Connect OPC UA and MQTT with Node-RED on FlowFuse
-  description: FlowFuse makes it easy to deploy Node-RED in the cloud or at the edge and bridge industrial protocols like OPC UA and MQTT — with built-in MQTT broker support, team collaboration, and production-ready infrastructure.
+  description: FlowFuse makes it easy to deploy Node-RED in the cloud or at the edge and bridge industrial protocols like OPC UA and MQTT, with built-in MQTT broker support, team collaboration, and production-ready infrastructure.
 meta:
   howto:
     name: "How to Bridge OPC UA Data to MQTT with Node-RED"
