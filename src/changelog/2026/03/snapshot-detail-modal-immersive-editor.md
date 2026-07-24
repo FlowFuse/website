@@ -9,7 +9,7 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/7032
 ---
 
-You can now open snapshot details from inside the immersive editor. Previously, clicking a snapshot from the Version History timeline or Snapshots list had no effect in the editor — the detail view was only available from the instance page in FlowFuse.
+You can now open snapshot details from inside the immersive editor. Previously, clicking a snapshot from the Version History timeline or Snapshots list had no effect in the editor, the detail view was only available from the instance page in FlowFuse.
 
 ![Snapshot toggle inside the immersive editor](./images/snapshot-toggle.png)
 *Access snapshots from the Version History timeline or Snapshots list inside the editor.*

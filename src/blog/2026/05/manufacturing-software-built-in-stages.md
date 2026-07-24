@@ -56,7 +56,7 @@ Most industrial platforms ask you to pick a vendor and adapt your operations aro
 Here’s why it works well for incremental manufacturing transformation:
 
 **Fast to deploy and iterate.**
-With FlowFuse’s low-code environment, engineers can quickly build industrial applications using Node-RED flows, dashboards, and integrations — without relying on long software development cycles. Teams can start with a simple machine monitoring dashboard, then expand into OEE tracking, downtime analysis, quality workflows, or maintenance applications over time.
+With FlowFuse’s low-code environment, engineers can quickly build industrial applications using Node-RED flows, dashboards, and integrations, without relying on long software development cycles. Teams can start with a simple machine monitoring dashboard, then expand into OEE tracking, downtime analysis, quality workflows, or maintenance applications over time.
 
 **Open and extensible by design.**
 FlowFuse is built on open-source technology, which means your flows, integrations, and data models remain under your control. You’re not locked into proprietary tooling or forced to wait for vendor feature releases when requirements evolve.
@@ -75,7 +75,7 @@ A manufacturing stack built on FlowFuse works across three layers.
 
 ### Layer 1: Shop Floor Infrastructure
 
-At the bottom is your shop floor infrastructure, including machines, PLCs, sensors, and SCADA systems continuously generating operational data. This is where your operation lives—every temperature reading, production count, alarm signal, and quality check originates here.
+At the bottom is your shop floor infrastructure, including machines, PLCs, sensors, and SCADA systems continuously generating operational data. This is where your operation lives, every temperature reading, production count, alarm signal, and quality check originates here.
 
 ### Layer 2: The FlowFuse Integration & Data Backbone
 

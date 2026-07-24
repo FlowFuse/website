@@ -31,7 +31,7 @@ investment (ROI).
 
 To break this impasse a strategic shift and pivot will be needed, industrial IT
 and OT need a decisive pivot to open-source software (OSS). With its core
-principles of collaboration, transparency, and interoperability—manufacturers
+principles of collaboration, transparency, and interoperability, manufacturers
 can systematically remove barriers that have slowed their DX. Open source
 provides the tools and the philosophy necessary to acquire and transport data
 more effectively, build powerful analytics and interaction applications that
@@ -159,7 +159,7 @@ of the vendor. If the vendor is acquired, goes out of business, or simply
 decides to discontinue a product line, the manufacturer can be left with an
 unsupported and obsolete system. With OSS, the code is publicly distributed and
 cannot be withdrawn. Even if the original maintainers abandon a project, the
-community—or the company itself—can "fork" the code and continue its
+community, or the company itself, can "fork" the code and continue its
 development. This provides a level of long-term stability and strategic control
 over critical technology assets that is impossible to achieve in a
 vendor-dependent relationship.

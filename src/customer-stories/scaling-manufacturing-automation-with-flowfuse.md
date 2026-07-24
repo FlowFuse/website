@@ -13,7 +13,7 @@ story:
     url: https://archsys.io/
     logo: /images/stories/logos/arch-systems-logo.png
     quote: FlowFuse’s enterprise features complement our broader platform strategy, helping us scale automation and streamline deployments across complex manufacturing environments. The ability to edit once and deploy everywhere has added real efficiency to how we manage integrations.
-    challenge: Connect and automate live production data from multiple databases across global manufacturing environments—without adding operational complexity.
+    challenge: Connect and automate live production data from multiple databases across global manufacturing environments, without adding operational complexity.
     solution: Arch built standardized Node-RED subflows within FlowFuse to automate job creation in Arch React, streamlining real-time data processing and deployments.
     products:
         - Node-RED
@@ -29,7 +29,7 @@ Arch Systems transforms factory intelligence with AI-driven solutions that help 
 ![Scaling Manufacturing Automation with FlowFuse](./images/stories/arch_systems_engineer.png "Scaling Manufacturing Automation with FlowFuse"){data-zoomable}
 
 ## The Challenge
-Arch Systems delivers a manufacturing data and analytics platform that connects complex factory systems, transforms raw production data into actionable insights, and drives measurable performance improvements for manufacturers worldwide. To power this platform, Arch required a reliable and scalable way to integrate with Manufacturing Execution Systems, connect to diverse APIs and databases, and manage the flow of live production data to selected third-party and partner solutions. The scope was significant—spanning 100+ databases and multiple production environments—demanding automation that was both efficient and consistently deployed at scale.
+Arch Systems delivers a manufacturing data and analytics platform that connects complex factory systems, transforms raw production data into actionable insights, and drives measurable performance improvements for manufacturers worldwide. To power this platform, Arch required a reliable and scalable way to integrate with Manufacturing Execution Systems, connect to diverse APIs and databases, and manage the flow of live production data to selected third-party and partner solutions. The scope was significant, spanning 100+ databases and multiple production environments, demanding automation that was both efficient and consistently deployed at scale.
 
 Integrating diverse manufacturing systems while ensuring reliable, real-time data processing is inherently complex. Without the right approach, solutions can become fragmented, difficult to maintain, and challenging to scale across a growing customer base. Arch addresses these challenges by combining its own advanced platform capabilities with trusted partner technologies to deliver unified, high-performance solutions for global manufacturers.
 

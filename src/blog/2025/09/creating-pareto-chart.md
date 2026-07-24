@@ -49,7 +49,7 @@ When you make a Pareto Chart, this can be done in three steps:
 
 2. **Aggregate in a Function node** – Map each data point to a type (e.g., machine type, process step, defect category) and keep a running count of occurrences.
 
-   > **Tip:** You do not need to know JavaScript. Simply describe the desired outcome and provide a sample dataset—the **FlowFuse Expert** will generate the Function node for you. [Learn more](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
+   > **Tip:** You do not need to know JavaScript. Simply describe the desired outcome and provide a sample dataset, the **FlowFuse Expert** will generate the Function node for you. [Learn more](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/).
 
 3. **Sort the results** – Use a Sort node to arrange categories so the most frequent appear first.
 
@@ -75,7 +75,7 @@ Before you can create a Pareto Chart visualization, ensure that you have install
 3. Navigate to the **Install** tab.
 4. Search for **`@flowfuse/node-red-dashboard`** and click **Install**.
 
-After installation, new UI nodes—such as **UI Chart**, **UI Gauge**, **UI Template**, and others—will appear in your palette. These nodes provide the building blocks to make a Pareto Chart and other interactive dashboard components for industrial applications.
+After installation, new UI nodes, such as **UI Chart**, **UI Gauge**, **UI Template**, and others, will appear in your palette. These nodes provide the building blocks to make a Pareto Chart and other interactive dashboard components for industrial applications.
 
 While the standard **UI Chart** node supports most common chart types, it does not include a native **Pareto chart**. To create a Pareto Chart with advanced features, the **UI Template** node can be used, allowing you to embed custom components for fully tailored visualizations.
 
@@ -96,7 +96,7 @@ To view the dashboard, click the **Open Dashboard** button in the top-right corn
 ![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
 
-The chart visualizes defect types using bars. The cumulative line and the 80% threshold indicate the cutoff point: bars to the left of this intersection represent the vital few defects that contribute most to the total—and these are the areas where you should focus your improvement efforts.
+The chart visualizes defect types using bars. The cumulative line and the 80% threshold indicate the cutoff point: bars to the left of this intersection represent the vital few defects that contribute most to the total, and these are the areas where you should focus your improvement efforts.
 
 ![Pareto Chart showing defect categories in manufacturing. The bars on the left, highlighted with a red box, represent the vital few defects](./images/pareto-chart-decoded.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing. The bars on the left, highlighted with a red box, represent the vital few defects_
@@ -107,7 +107,7 @@ By following the steps outlined above, you have successfully learned how to crea
 
 ### Why This Matters for Your Business
 
-The real power when you create a Pareto Chart isn't just in identifying problems—it's in changing how your team makes decisions. Instead of trying to fix everything at once or relying on gut feelings, you now have **data-driven clarity** on where to focus. This translates into:
+The real power when you create a Pareto Chart isn't just in identifying problems, it's in changing how your team makes decisions. Instead of trying to fix everything at once or relying on gut feelings, you now have **data-driven clarity** on where to focus. This translates into:
 
 * **Less firefighting, more strategic improvement:** Teams can stop chasing every small issue and concentrate on the critical few that truly impact production.
 * **Faster problem resolution:** When everyone can see which issues dominate, alignment happens quickly and solutions get implemented faster.
@@ -123,6 +123,6 @@ With your ability to create a Pareto Chart established, you've built a foundatio
 * Monitor supplier performance to strengthen the supply chain.
 * Identify training gaps by analyzing operator errors.
 
-FowFuse makes it simple to replicate this success across your organization. The same flow can be deployed to multiple lines, shared with other teams, and adapted for different use cases—while maintaining security and control through enterprise-grade features.
+FowFuse makes it simple to replicate this success across your organization. The same flow can be deployed to multiple lines, shared with other teams, and adapted for different use cases, while maintaining security and control through enterprise-grade features.
 
 Ready to see how FlowFuse can help your team make better decisions with production data? [Book a demo](/book-demo/) to discover how manufacturers are using visual analytics to drive continuous improvement and operational excellence.

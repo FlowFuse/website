@@ -12,7 +12,7 @@ story:
     brand: Energinet
     url: https://www.energinet.dk/
     logo: /images/home-logos/energinet-logo.png
-    challenge: Managing real-time grid intelligence across 7,000 km of infrastructure demanded governed, fail-proof data pipelines—ad-hoc solutions couldn't meet TSO regulatory standards.
+    challenge: Managing real-time grid intelligence across 7,000 km of infrastructure demanded governed, fail-proof data pipelines, ad-hoc solutions couldn't meet TSO regulatory standards.
     solution: FlowFuse became Energinet's governed orchestration layer, connecting SCADA systems and IoT sensors to InfluxDB, MySQL, and Grafana with enterprise-grade lifecycle management.
     products:
         - Node-RED

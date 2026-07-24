@@ -41,7 +41,7 @@ _KPIs Tables_
 
 ## Turning Your Data into KPIs
 
-Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything—from raw data collection to the clear, actionable KPIs displayed on your dashboards.
+Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything, from raw data collection to the clear, actionable KPIs displayed on your dashboards.
 
 Once the data is collected and stored from the factory floor, this pipeline involves four essential stages:
 
@@ -50,13 +50,13 @@ Once the data is collected and stored from the factory floor, this pipeline invo
 - **Calculate KPIs**: Execute real-time or scheduled computations to derive metric values from the retrieved data.  
 - **Visualize**: Display the results using dashboards to provide clear insights for operators, supervisors, and decision-makers.
 
-Once the workflow is set up, it should run automatically in the background—pulling in fresh data, applying the logic, and updating dashboards in real time. This ensures that performance metrics are always current and actionable.
+Once the workflow is set up, it should run automatically in the background, pulling in fresh data, applying the logic, and updating dashboards in real time. This ensures that performance metrics are always current and actionable.
 
 ### Building KPI Workflow with FlowFuse
 
 To turn stored factory data into live KPIs, you need a solution with a powerful logic engine capable of processing at scale. Ideally, this solution should also support the rapid development of industrial applications. This is where **FlowFuse**, built on **Node-RED**, offers a clear advantage.
 
-FlowFuse provides a low-code environment that unifies data connectivity, processing logic, and visualization. As covered in our previous articles—[MES Data Acquisition: How to Unlock Your Factory’s Hidden Data](/blog/2025/06/data-acquisition-for-mes/) and [Structuring and Storing Data for Effective MES Integration](/blog/2025/06/structuring-storing-data-mes-integration/)—FlowFuse connects seamlessly to nearly all shop floor assets, prepares the data, and stores it in an accessible format.
+FlowFuse provides a low-code environment that unifies data connectivity, processing logic, and visualization. As covered in our previous articles, [MES Data Acquisition: How to Unlock Your Factory’s Hidden Data](/blog/2025/06/data-acquisition-for-mes/) and [Structuring and Storing Data for Effective MES Integration](/blog/2025/06/structuring-storing-data-mes-integration/), FlowFuse connects seamlessly to nearly all shop floor assets, prepares the data, and stores it in an accessible format.
 
 From there, KPI logic flows can be built visually, defining how and when data is retrieved, how calculations are applied, and how results are displayed. This enables continuous KPI updates without manual effort.
 
@@ -131,11 +131,11 @@ After deploying the flow, observe the debug sidebar on the right. You'll see the
 ![Downtime printed on debug panel](./images/downtime.png){data-zoomable}
 _Downtime printed on debug panel_
 
-You’ve just seen how easy it is to calculate a foundational KPI like machine downtime. But with FlowFuse’s low-code environment, this is just the beginning. You not only connect, collect, transform, and visualize data—but also scale effortlessly.
+You’ve just seen how easy it is to calculate a foundational KPI like machine downtime. But with FlowFuse’s low-code environment, this is just the beginning. You not only connect, collect, transform, and visualize data, but also scale effortlessly.
 
 FlowFuse enables you to manage thousands of device instances remotely, with built-in security, access control, and version management. This level of control ensures consistency across your factory operations and allows you to deploy updates and changes quickly with confidence. 
 
-There is much more to explore—FlowFuse gives you the flexibility and power to build a fully integrated, intelligent MES solution that grows with your manufacturing needs.
+There is much more to explore, FlowFuse gives you the flexibility and power to build a fully integrated, intelligent MES solution that grows with your manufacturing needs.
 
 **What does this mean for your factory?**
 

@@ -10,7 +10,7 @@ tags:
    - mqtt
 ---
 
-FlowFuse makes it easy to deploy Node-RED flows at scale using DevOps pipelines and device groups. However, different stages in a pipeline may need different MQTT brokers—for example, one for development and another for production. Manually configuring each stage can be time-consuming, especially when a stage has multiple remote instances (devices).
+FlowFuse makes it easy to deploy Node-RED flows at scale using DevOps pipelines and device groups. However, different stages in a pipeline may need different MQTT brokers, for example, one for development and another for production. Manually configuring each stage can be time-consuming, especially when a stage has multiple remote instances (devices).
 
 <!--more-->
 
@@ -80,7 +80,7 @@ Unlike the first approach, which restricts direct combinations (e.g., string + e
 
 #### Ensuring Unique MQTT Credentials and Topics
 
-As we mentioned in the multi-device deployment scenario, each device needs to establish its own connection to the MQTT broker while maintaining unique credentials and topics. If multiple devices in the same stage use identical configurations, connection conflicts—such as client ID duplication—may occur. To avoid these issues, each device must be assigned a unique client ID, username, password for security, and topic.
+As we mentioned in the multi-device deployment scenario, each device needs to establish its own connection to the MQTT broker while maintaining unique credentials and topics. If multiple devices in the same stage use identical configurations, connection conflicts, such as client ID duplication, may occur. To avoid these issues, each device must be assigned a unique client ID, username, password for security, and topic.
 
 To ensure uniqueness, we can use the default environment variables available for each remote instance, such as:
 

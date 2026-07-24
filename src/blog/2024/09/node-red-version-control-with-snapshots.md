@@ -12,10 +12,10 @@ tags:
 cta:
   type: demo
   title: See How FlowFuse Protects Your Node-RED Flows
-  description: FlowFuse gives your team snapshots, auto-backups, version comparison, and one-click rollback — so a bad deploy never becomes a production crisis.
+  description: FlowFuse gives your team snapshots, auto-backups, version comparison, and one-click rollback, so a bad deploy never becomes a production crisis.
 ---
 
-Version control is essential, especially when multiple people are working on the same Node-RED project. Without it, changes can easily overlap, or worse — accidental updates could break critical flows. FlowFuse solves this challenge with snapshots, allowing you to create backups of your flows, restore previous versions, and safeguard your project from unexpected issues. 
+Version control is essential, especially when multiple people are working on the same Node-RED project. Without it, changes can easily overlap, or worse, accidental updates could break critical flows. FlowFuse solves this challenge with snapshots, allowing you to create backups of your flows, restore previous versions, and safeguard your project from unexpected issues. 
 
 <!--more-->
 
@@ -74,7 +74,7 @@ With that in mind, taking snapshots for an Application Device is a bit different
 ![Image showing the button to create a snapshot in FlowFuse.](./images/button-to-create-snapshot.png){data-zoomable}
 *Image showing the button to create a snapshot in FlowFuse.*
 
-4. Click on the button to **create snapshot**. You will be prompted to enter a **name and description** for the snapshot, helping you identify it later. There’s also an option to set this snapshot as Device Target Snapshot — enable this checkbox if needed.
+4. Click on the button to **create snapshot**. You will be prompted to enter a **name and description** for the snapshot, helping you identify it later. There’s also an option to set this snapshot as Device Target Snapshot, enable this checkbox if needed.
 
 ![Image showing the form to provide a name and description for the snapshot.](./images/form-to-give-snapshot-name-desc.png){data-zoomable}
 *Image showing the form to provide a name and description for the snapshot.*
@@ -234,11 +234,11 @@ Once done you will be able to see the green mark in that snapshot showing on how
 
 ## Common Mistakes to Avoid
 
-1. **Neglecting Regular Backups**: Don’t skip those snapshots! Regularly create backups, especially before making significant changes, moving devices through instances or applications, or disabling developer mode. Think of it as your safety net—ensuring you can always bounce back to a stable state if unexpected issues pop up.
+1. **Neglecting Regular Backups**: Don’t skip those snapshots! Regularly create backups, especially before making significant changes, moving devices through instances or applications, or disabling developer mode. Think of it as your safety net, ensuring you can always bounce back to a stable state if unexpected issues pop up.
 
 2. **Overlooking Auto-Snapshot Limits**: Did you know that your **auto snapshots** have limits? Be mindful of how many you can retain, as older **auto snapshots** will be automatically deleted. If you have important **auto snapshots**, either rename them to avoid automatic deletion or download and save them locally to keep them safe. Remember, manually created snapshots have no limits, so take advantage of that!
 
-3. **Secret Key**: The secret key used to encrypt your snapshot is crucial for when you later need to upload that snapshot. When downloading snapshots locally, securely store that key. Losing it could mean losing access to your snapshot and your ability to recover your work. Treat it like a password—keep it safe!
+3. **Secret Key**: The secret key used to encrypt your snapshot is crucial for when you later need to upload that snapshot. When downloading snapshots locally, securely store that key. Losing it could mean losing access to your snapshot and your ability to recover your work. Treat it like a password, keep it safe!
 
 4. **Taking a Snapshots of the wrong thing**: When a device is owned by an instance it typically runs the same flows however, if a device flows may have been modified directly in **developer mode** it will have different flows to the instance that owns it. In this case, before you move the device or switch it out of developer mode, it is recommended that you take a snapshot directly from the device itself. Direct device snapshots are performed on the **Developer Mode** tab of the device.
 

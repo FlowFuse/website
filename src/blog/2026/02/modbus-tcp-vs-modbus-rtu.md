@@ -85,7 +85,7 @@ Modbus has no authentication. On a serial bus, that is usually acceptable, becau
 
 Modbus TCP devices reachable from a corporate network, or worse from the internet, will respond to commands from anyone who sends them. No credentials. No audit trail. No way to distinguish a legitimate master from an attacker with a laptop and a Modbus client.
 
-This is not theoretical. Shodan regularly turns up Modbus TCP devices with publicly routable IP addresses. ICS security assessments routinely find Modbus exposed on flat networks shared with corporate IT. The clearest demonstration of what that exposure enables is [FrostyGoop](https://www.dragos.com/blog/protect-against-frostygoop-ics-malware-targeting-operational-technology/), malware discovered by Dragos in 2024 and the first ever to use Modbus TCP to cause direct physical impact. Attackers targeted a district energy company in Lviv, Ukraine supplying heat to over 600 apartment buildings — port 502 was open to the internet, no network compromise required, and remediation took nearly two days while residents endured sub-zero temperatures. No credentials were needed. Modbus provided none to ask for.
+This is not theoretical. Shodan regularly turns up Modbus TCP devices with publicly routable IP addresses. ICS security assessments routinely find Modbus exposed on flat networks shared with corporate IT. The clearest demonstration of what that exposure enables is [FrostyGoop](https://www.dragos.com/blog/protect-against-frostygoop-ics-malware-targeting-operational-technology/), malware discovered by Dragos in 2024 and the first ever to use Modbus TCP to cause direct physical impact. Attackers targeted a district energy company in Lviv, Ukraine supplying heat to over 600 apartment buildings, port 502 was open to the internet, no network compromise required, and remediation took nearly two days while residents endured sub-zero temperatures. No credentials were needed. Modbus provided none to ask for.
 
 RTU is not inherently secure either, but attacking it requires being physically present on the wire. TCP removes that requirement entirely.
 
@@ -109,4 +109,4 @@ If you are maintaining a hybrid gateway architecture, resist the urge to rationa
 
 The two protocols make different guarantees, fail differently, and require different diagnostic skills when something goes wrong. Understanding that distinction before the system is designed costs nothing. Understanding it for the first time during an incident costs considerably more.
 
-For a practical guide to connecting Modbus PLCs — alongside OPC UA, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
+For a practical guide to connecting Modbus PLCs, alongside OPC UA, EtherNet/IP, and Siemens S7, to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

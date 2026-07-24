@@ -15,7 +15,7 @@ tags:
 cta:
   type: sign-up
   title: Build and Deploy Node-RED Applications Faster
-  description: FlowFuse gives you everything you need to build, secure, and scale Node-RED applications — multi-user support, authentication, and production-ready deployment included. Start your free trial today.
+  description: FlowFuse gives you everything you need to build, secure, and scale Node-RED applications, multi-user support, authentication, and production-ready deployment included. Start your free trial today.
 meta:
   howto:
     name: "How to Build an Application with Node-RED Dashboard 2.0"

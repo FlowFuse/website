@@ -62,7 +62,7 @@ If a prebuilt binary is not available for your platform, the node falls back to 
 *Locating and installing the RTSP Video Feed node from the FlowFuse Edge Certified Nodes catalogue.*
 
 {% note %}
-Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
+Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}
 
 ## Configuration

@@ -80,7 +80,7 @@ _FlowFuse Query Node_
 
 3. Drag the Query node into your flow.
 
->The Query node uses standard SQL syntax and is pre-configured to connect to your FlowFuse-managed database automatically — you do not need to manually enter any database credentials when working inside a FlowFuse Node-RED instance. 
+>The Query node uses standard SQL syntax and is pre-configured to connect to your FlowFuse-managed database automatically, you do not need to manually enter any database credentials when working inside a FlowFuse Node-RED instance. 
 
 4. Double-click the Query node and write your SQL command in the Query field.
 
@@ -106,7 +106,7 @@ CREATE TABLE "maintenance_tasks" (
 
 ### Step 3: Performing Operations with Your Table
 
-Once your table is ready, you can start interacting with it using the **Query** node. This node allows you to run SQL queries directly—whether it is inserting new data, retrieving records, updating rows, or deleting entries. You can perform all standard operations just as you would with the other database nodes. For this demonstration, you will see how to insert data into your table.
+Once your table is ready, you can start interacting with it using the **Query** node. This node allows you to run SQL queries directly, whether it is inserting new data, retrieving records, updating rows, or deleting entries. You can perform all standard operations just as you would with the other database nodes. For this demonstration, you will see how to insert data into your table.
 
 > For a complete walkthrough of CRUD operations, you can try out the flow provided at the end of this guide.
 
@@ -241,4 +241,4 @@ The combination of FlowFuse Tables and the built-in [MQTT broker](/blog/2024/10/
 
 Ready to see how FlowFuse Tables can accelerate your next industrial project? [Book a demo with our team](/book-demo/) to explore the full platform capabilities.
 
-*Next up: We'll dive into Query node advanced features including backpressure handling and streaming large datasets—essential techniques for high-volume industrial applications.*
+*Next up: We'll dive into Query node advanced features including backpressure handling and streaming large datasets, essential techniques for high-volume industrial applications.*

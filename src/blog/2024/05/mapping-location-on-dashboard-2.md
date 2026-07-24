@@ -16,7 +16,7 @@ tags:
 cta:
   type: sign-up
   title: Build Real-Time Fleet Tracking Dashboards
-  description: FlowFuse gives you everything you need to connect GPS devices, visualize live location data, and deploy production-ready dashboards — all on one platform.
+  description: FlowFuse gives you everything you need to connect GPS devices, visualize live location data, and deploy production-ready dashboards, all on one platform.
 meta:
   howto:
     name: "How to Map Location Data in Node-RED Dashboard 2.0"
@@ -54,15 +54,15 @@ meta:
     - question: "What data format does the Worldmap node expect?"
       answer: "Each message payload should be an object with at minimum a 'name' (unique identifier), 'lat' (latitude), and 'lon' (longitude) property. Additional properties like 'icon', 'iconColor', and 'speed' are also supported."
     - question: "Can I use this approach for my own GPS-tracked vehicles instead of public transport data?"
-      answer: "Yes — replace the Edinburgh API with your own data source. If you are tracking your own devices, you can connect them to Node-RED using the FlowFuse Device Agent to stream GPS and sensor data directly."
+      answer: "Yes, replace the Edinburgh API with your own data source. If you are tracking your own devices, you can connect them to Node-RED using the FlowFuse Device Agent to stream GPS and sensor data directly."
     - question: "What is the iframe widget used for in this guide?"
       answer: "The @flowfuse/node-red-dashboard-2-ui-iframe widget embeds an external webpage inside a Dashboard 2.0 panel using an HTML iframe. It is used here to display the worldmap page inside your dashboard layout."
     - question: "How often should I poll the location API?"
       answer: "The guide uses a 20-second interval for the Edinburgh public transport API. The appropriate interval depends on how frequently your data source updates and how much API load is acceptable."
     - question: "Do I need a FlowFuse account to follow this guide?"
-      answer: "No — this guide works with any Node-RED installation. However, if you want to deploy a production fleet tracking dashboard and access it securely from anywhere, FlowFuse Cloud provides managed hosting, HTTPS, and remote device connectivity."
+      answer: "No, this guide works with any Node-RED installation. However, if you want to deploy a production fleet tracking dashboard and access it securely from anywhere, FlowFuse Cloud provides managed hosting, HTTPS, and remote device connectivity."
     - question: "Can I customize the map icons for different vehicle types?"
-      answer: "Yes — the guide shows how to use a Switch node to detect the vehicle type and a Change node to set different 'icon' and 'iconColor' properties per type, such as a train icon for trams and a bus icon for buses."
+      answer: "Yes, the guide shows how to use a Switch node to detect the vehicle type and a Change node to set different 'icon' and 'iconColor' properties per type, such as a train icon for trams and a bus icon for buses."
 tldr: "This guide shows how to build a real-time fleet tracking dashboard in Node-RED Dashboard 2.0 using the node-red-contrib-web-worldmap node. It covers retrieving live vehicle location data from a public API, formatting it for the Worldmap node, and embedding the interactive map inside a Dashboard 2.0 iframe widget."
 ---
 

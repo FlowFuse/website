@@ -27,7 +27,7 @@ This article walks through the implementation. You'll connect FlowFuse to an MTC
 
 The standard specifies what data machines should report and how to structure it. A spindle speed reading from a Haas looks identical to one from a Mazak when both machines run MTConnect agents. This standardization makes it possible to build dashboards and monitoring systems that work across mixed machine fleets without custom code for each manufacturer.
 
-MTConnect agents typically run as software on the machine controller or on a separate computer connected to the machine. The agent reads data from the controller's internal systems and exposes it through HTTP endpoints that return XML. You don't interact with the machine directly—you interact with the agent.
+MTConnect agents typically run as software on the machine controller or on a separate computer connected to the machine. The agent reads data from the controller's internal systems and exposes it through HTTP endpoints that return XML. You don't interact with the machine directly, you interact with the agent.
 
 ## Data Types in MTConnect
 
@@ -41,11 +41,11 @@ Agents expose this through HTTP endpoints. /current returns latest values for al
 
 ## XML Response Structure
 
-When you query an MTConnect agent, the response is an XML document rooted in the `Streams` element, which contains one or more `DeviceStream` elements—each representing a device or machine.
+When you query an MTConnect agent, the response is an XML document rooted in the `Streams` element, which contains one or more `DeviceStream` elements, each representing a device or machine.
 
 Within each `DeviceStream`, `ComponentStream` elements describe individual machine components such as spindles, axes, or controllers. Each component reports its data using three categories: `Samples`, `Events`, and `Conditions`.
 
-Samples represent continuously measured values, while Events represent discrete or state-based changes. Conditions are reported inside a `Conditions` container and use state-specific elements—such as `Normal`, `Warning`, or `Fault`—rather than a generic condition element. Multiple condition states may be active at the same time, as long as they represent different condition data items.
+Samples represent continuously measured values, while Events represent discrete or state-based changes. Conditions are reported inside a `Conditions` container and use state-specific elements, such as `Normal`, `Warning`, or `Fault`, rather than a generic condition element. Multiple condition states may be active at the same time, as long as they represent different condition data items.
 
 Each reported data item includes a `dataItemId` for identification, a `timestamp` indicating when the value was recorded, and the value itself provided as text content, for example:
 
@@ -59,7 +59,7 @@ While this hierarchical structure provides a complete and standardized view of t
 
 Now that we understand the structure of MTConnect and the challenges involved, let's look at how to collect and visualize MTConnect data using FlowFuse.
 
-FlowFuse is an industrial application platform built on Node-RED that brings data collection, transformation, and visualization together in one place. Instead of writing custom integration code, you build flows visually by dragging, configuring, and connecting nodes, then deploying them—no separate tools required.
+FlowFuse is an industrial application platform built on Node-RED that brings data collection, transformation, and visualization together in one place. Instead of writing custom integration code, you build flows visually by dragging, configuring, and connecting nodes, then deploying them, no separate tools required.
 
 ### Prerequisites
 
@@ -171,4 +171,4 @@ Below is the complete flow configuration. If you've successfully built the dashb
 
 Your MTConnect dashboard is now live, pulling real-time machine data and displaying it through visual widgets. The setup you've built here works the same way across any MTConnect-compliant machine in your facility.
 
-This is what FlowFuse does—it makes connecting to equipment, collecting data, transforming it into useful formats, and visualizing it on dashboards straightforward. Beyond basic monitoring, you can log production metrics to databases for trend analysis, set up automated alerts when machines enter fault states, integrate shop floor data with MES or ERP systems, and build event-driven workflows that respond to machine conditions. For production environments, FlowFuse Enterprise provides role-based access control, audit logging, high availability infrastructure, and dedicated support—giving you the operational controls needed to run manufacturing applications reliably across multiple facilities.
+This is what FlowFuse does, it makes connecting to equipment, collecting data, transforming it into useful formats, and visualizing it on dashboards straightforward. Beyond basic monitoring, you can log production metrics to databases for trend analysis, set up automated alerts when machines enter fault states, integrate shop floor data with MES or ERP systems, and build event-driven workflows that respond to machine conditions. For production environments, FlowFuse Enterprise provides role-based access control, audit logging, high availability infrastructure, and dedicated support, giving you the operational controls needed to run manufacturing applications reliably across multiple facilities.
