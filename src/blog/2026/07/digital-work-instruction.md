@@ -67,7 +67,7 @@ But shared stations raise a question paper never had: who's using it? Without a 
 
 In this article, we'll build a digital work instructions app in FlowFuse: an operator interface with work orders, step-by-step assembly guidance, defect reporting, and traceability via authentication.
 
-> **Note:** Before trying the demo, [sign up](https://app.flowfuse.com/account/create) for a FlowFuse account and start a free trial. The demo uses FlowFuse User Authentication, so you'll need to sign in to access the dashboard and see your personalized work orders and saved progress. Once logged in, wait a few seconds for the simulation flow to pick up your user and generate simulated work orders assigned to you.
+> **Note:** This demo is deliberately configured with a preset demo user so anyone can try it, even without being on the team where it's deployed. The version you build following this article uses FlowFuse User Authentication, which limits dashboard access to members of the same team.
 
 You can interact with the live demo here: <a href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Digital Work Instruction Dashboard Demo</a>.
 
@@ -137,6 +137,8 @@ With this layout in place, each widget added in the following sections can be as
 ## Enabling FlowFuse User Authentication
 
 Everything starts with a login. Without authentication, the dashboard cannot identify who is using it, so every visitor sees the same experience.
+
+> **Note:** FlowFuse User Authentication grants dashboard access to members of the same team as the instance. Operators you want to sign in must belong to that team, otherwise they won't be able to reach the dashboard. If you need people outside the team to use the application, you'll need to add them to the team.
 
 1. Open your FlowFuse instance **Settings**.
 2. Select the **Security** tab.
@@ -229,25 +231,23 @@ Deploy and open the dashboard. The signed-in operator's name and avatar appear i
 
 ## Seeding the Operator into Context on Login
 
-Greeting the operator is the visible half. The other half is making their identity available to every function node in the flow, not just the widgets.
+Greeting the operator is the visible half. The other half is making their identity available to every function node, not just the widgets.
 
-It's tempting to reach for a single shared variable here, something like `global.set('user', msg._client.user, 'persistent')` on connect, then `global.get('user', 'persistent')` everywhere else. **Don't build it that way.** Global context is one shared store for the whole running flow, not one per browser session. If two operators are logged in at the same station, or at different stations on the same instance, at the same time, whichever one connects last overwrites that key for everyone. Every function node reading it afterwards would attribute the wrong operator's actions to the wrong person, exactly the bug authentication was supposed to prevent.
+You might reach for a single shared global here, `global.set('user', msg._client.user, 'persistent')` on connect, then read it everywhere. **Don't.** Global context is one store for the whole flow, not one per session, so if two operators are connected at once, whichever connects last overwrites the identity for everyone, and function nodes start attributing the wrong operator's actions to the wrong person.
 
-The move that actually works: keep using each operator's username as a durable storage key (`global.get(username, 'persistent')`, `global.set(username, ..., 'persistent')`) for their saved state, that's a fine and necessary use of global context. But for "who is acting right now," read `msg._client.user` off the message itself, since it's tagged per-session. The one place a shared global is still useful is as a bootstrap fallback: a value to fall back on for the very first tick of a page, before any client-tagged message has round-tripped through the flow.
+Instead, read `msg._client.user` off each message for "who is acting right now," and use the username only as a durable storage key for saved state. A shared global is still handy as a bootstrap fallback for the very first tick of a page, before any client-tagged message has round-tripped.
 
-1. Add a `ui-event` node, name it "Client connected", and select the "My Dashboard" ui-base. It fires the moment a browser session connects to the dashboard.
-2. Add a `change` node and name it "Seed globals". Add these `set` rules, in order:
-   - Set `user` (global, persistent) to `msg._client.user`. This is a **bootstrap fallback only**, used before a client-tagged message exists to read from. It is not the source of truth for "current operator" anywhere else in this app.
-   - Set `StationContext.stationName` (global) to your station's name, e.g. `Wheel Assembly Station 12`. The Home page reads this to show the operator where they are.
-   - Set `StationContext.stationId` (global, persistent) to this station's ID, e.g. `ST12`. The work-order and stats requests read this to fetch only what belongs to this station.
-   - Set `Instructions` (global, persistent) to the instruction set for this station's operation, the step list, images, target times, and checklists. Caching it in context means the Instructions page loads instantly instead of re-fetching on every visit.
+1. Add a `ui-event` node named "Client connected" and select the "My Dashboard" ui-base. It fires when a browser session connects.
+2. Add a `change` node named "Seed globals" with these `set` rules, in order:
+   - `user` (global, persistent) → `msg._client.user`. **Bootstrap fallback only**, not the source of truth elsewhere.
+   - `StationContext.stationName` (global) → your station's name, e.g. `Wheel Assembly Station 12`.
+   - `StationContext.stationId` (global, persistent) → this station's ID, e.g. `ST12`.
+   - `Instructions` (global, persistent) → the instruction set (steps, images, target times, checklists), cached so the Instructions page loads instantly.
 3. Wire "Client connected" into "Seed globals".
 
-From here on, every function node that needs to know who's acting will use this helper pattern: prefer `msg._client?.user?.username`, and only fall back to the bootstrap global if `_client` isn't present on that particular message.
+From here on, every function node that needs the current operator uses this pattern, per-session identity first, bootstrap global only as a fallback:
 
 ```javascript
-// Shared pattern used throughout the rest of this tutorial:
-// per-session identity first, shared global only as a bootstrap fallback.
 const username = msg._client?.user?.username
     || global.get('user', 'persistent')?.username;
 ```
