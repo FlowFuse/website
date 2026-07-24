@@ -626,7 +626,7 @@ sections:
 
       - id: immersive-editor-drawer
         label: Customisable Immersive Editor Drawer
-        description: "Pin, move, resize, or full-screen the immersive editor drawer — your preferences are remembered between sessions."
+        description: "Pin, move, resize, or full-screen the immersive editor drawer. Your preferences are remembered between sessions."
         docsLink: null
         changelog:
           - url: /changelog/2026/04/immersive-editor-drawer/
@@ -674,7 +674,7 @@ sections:
 
       - id: snapshot-compare
         label: Snapshot Comparison
-        description: "Compare two snapshots side-by-side with a navigable diff view — step through every changed, added, or deleted node and see property and code diffs."
+        description: "Compare two snapshots side-by-side with a navigable diff view. Step through every changed, added, or deleted node and see property and code diffs."
         docsLink: /docs/user/snapshots/
         changelog:
           - url: '/changelog/2026/04/snapshot-diff-viewer/'

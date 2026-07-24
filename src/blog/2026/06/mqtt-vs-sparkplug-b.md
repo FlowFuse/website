@@ -99,7 +99,7 @@ The first strain is payload bloat. JSON is easy to read, which is why people rea
 
 The second is structure, or the lack of it. MQTT doesn't define any topic layout, so every integration team invents its own conventions. One group publishes temperature to `line2/temp`, another to `plant/line5/sensors/temperature/value`, and a contractor wires up something nobody can explain later. [Walker Reynolds](https://www.eclipse.org/community/eclipse_newsletter/2021/february/1.php), the systems integrator who popularized the Unified Namespace idea, summed up the trade-off:
 
-> Yes, MQTT is flexible — you can basically publish any payload to any topic, but this can create a mess in the topic namespace.
+> Yes, MQTT is flexible, you can basically publish any payload to any topic, but this can create a mess in the topic namespace.
 
 Keeping it all consistent across multiple plants and vendors turns into a constant chore. This is the `plant1/line4/temp` problem from the intro, just multiplied by every team that ever touched the system. Nothing is wrong, exactly, and it all keeps running, but at some point nobody can open the broker and understand the whole thing anymore. (If you're working through how to impose order on a sprawling MQTT setup, [getting the most out of MQTT for industrial IoT](https://flowfuse.com/blog/2024/11/getting-the-most-out-of-mqtt-for-industrial-iot/) goes deeper on this.)
 

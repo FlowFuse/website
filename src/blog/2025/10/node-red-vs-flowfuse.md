@@ -12,13 +12,13 @@ tags:
 meta:
   faq:
     - question: "What is the difference between Node-RED and FlowFuse?"
-      answer: "Node-RED is an open-source visual programming tool for building flows, while FlowFuse is a production platform built on top of Node-RED. FlowFuse adds the operational layer—security, team collaboration, remote device management, deployment pipelines, observability, and managed infrastructure—needed to deploy and scale Node-RED across an organization."
+      answer: "Node-RED is an open-source visual programming tool for building flows, while FlowFuse is a production platform built on top of Node-RED. FlowFuse adds the operational layer, security, team collaboration, remote device management, deployment pipelines, observability, and managed infrastructure, needed to deploy and scale Node-RED across an organization."
     - question: "Is FlowFuse a replacement for Node-RED?"
-      answer: "No. FlowFuse does not replace Node-RED—you use the same visual editor, nodes, and flows. FlowFuse adds an operational layer that turns Node-RED from a development tool into a production-ready platform."
+      answer: "No. FlowFuse does not replace Node-RED, you use the same visual editor, nodes, and flows. FlowFuse adds an operational layer that turns Node-RED from a development tool into a production-ready platform."
     - question: "Are Node-RED and FlowFuse competitors?"
       answer: "No, they are complementary. FlowFuse is built directly on top of Node-RED and FlowFuse employees, including Node-RED co-creator Nick O'Leary, are among the most active contributors to Node-RED. When Node-RED improves, FlowFuse improves too."
     - question: "Do FlowFuse flows lock you into the platform?"
-      answer: "No. Your flows remain portable—anything you build in FlowFuse works in plain Node-RED, so there is no vendor lock-in. FlowFuse exists to extend Node-RED, not replace it."
+      answer: "No. Your flows remain portable, anything you build in FlowFuse works in plain Node-RED, so there is no vendor lock-in. FlowFuse exists to extend Node-RED, not replace it."
     - question: "What enterprise features does FlowFuse add to Node-RED?"
       answer: "FlowFuse adds role-based access control, SSO (SAML, LDAP, OIDC), audit logs, encrypted secrets, snapshots and version control, remote device management via the Device Agent, deployment pipelines, centralized observability, certified nodes, and commercial support with SLAs."
 ---
@@ -59,7 +59,7 @@ FlowFuse doesn't replace Node-RED. You use the same visual editor, nodes, and fl
 
 ### Security and Compliance
 
-Standard Node-RED leaves authentication to you—typically basic auth or custom middleware. For personal projects, this suffices. Production environments controlling industrial systems need more.
+Standard Node-RED leaves authentication to you, typically basic auth or custom middleware. For personal projects, this suffices. Production environments controlling industrial systems need more.
 
 FlowFuse provides role-based access control (RBAC) to define who edits flows versus who views them. Single Sign-On via SAML, LDAP, and OIDC integrates with your existing identity systems. Audit logs capture every deployment with details on who made changes and when. Database credentials and API tokens are managed through encrypted secrets storage, keeping them out of flow exports and version control.
 
@@ -69,13 +69,13 @@ For supply chain security, FlowFuse generates a Software Bill of Materials (SBOM
 
 Node-RED was built for individual developers. When two people edit the same instance, the last save wins. No version history exists. No way to review changes before deployment. No rollback option.
 
-FlowFuse enables multi-user teams working on shared projects with proper permissions. Every deployment creates a snapshot—a complete record of your flows at that point in time. Compare snapshots to track changes or restore previous versions when deployments break production.
+FlowFuse enables multi-user teams working on shared projects with proper permissions. Every deployment creates a snapshot, a complete record of your flows at that point in time. Compare snapshots to track changes or restore previous versions when deployments break production.
 
 ### Remote Device Management
 
 Node-RED instances running on edge devices in remote factories, warehouses, or hard-to-reach locations create operational challenges. Troubleshooting means traveling on-site or configuring complex VPN access.
 
-FlowFuse provides centralized management through its Device Agent—a lightweight service installed on remote devices that establishes secure connections back to your FlowFuse instance. From one dashboard, you see and control your entire fleet. Open any device's editor or view its logs through secure tunnels without exposing ports or setting up VPNs. Push updates over-the-air to individual devices or groups.
+FlowFuse provides centralized management through its Device Agent, a lightweight service installed on remote devices that establishes secure connections back to your FlowFuse instance. From one dashboard, you see and control your entire fleet. Open any device's editor or view its logs through secure tunnels without exposing ports or setting up VPNs. Push updates over-the-air to individual devices or groups.
 
 ### Deployment Pipelines and Scalability
 
@@ -85,15 +85,15 @@ FlowFuse builds structured deployment into the platform. Create Development, Sta
 
 ### Observability and Monitoring
 
-Standalone Node-RED displays logs from a single instance. When you're running multiple instances across different locations, you need centralized visibility. Building this yourself means integrating Prometheus, configuring exporters, creating Grafana dashboards, and setting up alerting—weeks of specialized work.
+Standalone Node-RED displays logs from a single instance. When you're running multiple instances across different locations, you need centralized visibility. Building this yourself means integrating Prometheus, configuring exporters, creating Grafana dashboards, and setting up alerting, weeks of specialized work.
 
-FlowFuse provides centralized observability. View logs from any instance, check audit logs for specific deployments, monitor real-time status showing when each instance was last seen, and track CPU and memory usage across your entire fleet—all from one interface.
+FlowFuse provides centralized observability. View logs from any instance, check audit logs for specific deployments, monitor real-time status showing when each instance was last seen, and track CPU and memory usage across your entire fleet, all from one interface.
 
 ### Managed Infrastructure
 
 Running Node-RED means managing servers or edge devices, handling installations, planning updates, configuring backups, and preparing disaster recovery. At scale, this becomes a full-time responsibility.
 
-FlowFuse Cloud is fully managed—they handle infrastructure, you build applications. FlowFuse Self-Hosted runs on your infrastructure but manages orchestration, updates, and monitoring. Both options deliver over-the-air updates for Node-RED versions, security patches, and configuration changes without downtime.
+FlowFuse Cloud is fully managed, they handle infrastructure, you build applications. FlowFuse Self-Hosted runs on your infrastructure but manages orchestration, updates, and monitoring. Both options deliver over-the-air updates for Node-RED versions, security patches, and configuration changes without downtime.
 
 ### Certified Nodes
 
@@ -105,9 +105,9 @@ FlowFuse's Certified Nodes program vets community contributions for quality, sec
 
 Node-RED's visual programming is fast, but real-world development has friction points. Complex function nodes and UI templates require time and coding skill. Understanding teammates' flows isn't always straightforward. Building the same patterns across projects becomes repetitive.
 
-FlowFuse Expert tackles these challenges directly in the editor. Describe your need in plain language—it generates function nodes or UI templates, explains existing flows, writes SQL queries, suggests relevant nodes, and creates documentation. This speeds up experienced developers while making Node-RED accessible to those still learning.
+FlowFuse Expert tackles these challenges directly in the editor. Describe your need in plain language, it generates function nodes or UI templates, explains existing flows, writes SQL queries, suggests relevant nodes, and creates documentation. This speeds up experienced developers while making Node-RED accessible to those still learning.
 
-The Blueprint Library provides tested and proven templates for common industrial scenarios—OEE dashboards, Andon systems, operator terminals. Instead of building from scratch, start with working solutions and customize them for your needs.
+The Blueprint Library provides tested and proven templates for common industrial scenarios, OEE dashboards, Andon systems, operator terminals. Instead of building from scratch, start with working solutions and customize them for your needs.
 
 Team Library enables reusability within your organization. Export a flow to your Team Library once, and it's available across all team instances. Your team maintains consistent patterns without recreating the same work.
 
@@ -119,7 +119,7 @@ FlowFuse offers commercial support with Service Level Agreements. Work directly 
 
 ## Are Node-RED and FlowFuse Competitors?
 
-No. Node-RED and FlowFuse are not competitors—they’re complementary. FlowFuse is built directly on top of Node-RED, and the two projects share deep roots. In fact, FlowFuse employees, including Node-RED’s co-creator Nick O’Leary, are among the most active contributors to Node-RED itself. They review pull requests, write code, run Node-RED Con, and maintain long-term support for the community.
+No. Node-RED and FlowFuse are not competitors, they’re complementary. FlowFuse is built directly on top of Node-RED, and the two projects share deep roots. In fact, FlowFuse employees, including Node-RED’s co-creator Nick O’Leary, are among the most active contributors to Node-RED itself. They review pull requests, write code, run Node-RED Con, and maintain long-term support for the community.
 
 When Node-RED improves, FlowFuse improves too. This is the same dynamic seen in other open-source ecosystems: Linux thrives alongside Red Hat, Kubernetes powers enterprise platforms, and PostgreSQL continues to evolve while vendors provide enterprise features. The open-source project remains free and independent, while the commercial platform adds operational value on top.
 

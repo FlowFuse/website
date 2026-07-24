@@ -1,7 +1,7 @@
 ---
-title: "How to Read and Write Siemens S7 PLC Data — A Node-RED Guide (2026)"
+title: "How to Read and Write Siemens S7 PLC Data, A Node-RED Guide (2026)"
 subtitle: "A step-by-step beginner's guide to reading, writing, and monitoring data from Siemens S7-1200 and S7-1500 PLCs."
-description: "Learn how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) for industrial monitoring and control. This guide covers PLC setup, the S7 protocol over ISO-on-TCP, addressing, and building dashboards—no deep PLC expertise required."
+description: "Learn how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) for industrial monitoring and control. This guide covers PLC setup, the S7 protocol over ISO-on-TCP, addressing, and building dashboards, no deep PLC expertise required."
 lastUpdated: 2026-06-03
 date: 2025-01-17
 authors: ["sumit-shinde","stephen-mclaughlin"]
@@ -15,7 +15,7 @@ tags:
 cta:
   type: contact
   title: "Turn PLC Data Into Operational Visibility with FlowFuse"
-  description: "Reading and writing S7 data is just the start. FlowFuse extends your existing PLCs, SCADA, and MES—no rip-and-replace—into a single platform for remote device management, dashboards, and DevOps pipelines. Connect Siemens, Allen-Bradley, Modbus, and OPC UA devices, and get your first operational application running this week. SOC 2 certified, with RBAC, SSO, and self-hosted options. Talk to our team about your architecture."
+  description: "Reading and writing S7 data is just the start. FlowFuse extends your existing PLCs, SCADA, and MES, no rip-and-replace, into a single platform for remote device management, dashboards, and DevOps pipelines. Connect Siemens, Allen-Bradley, Modbus, and OPC UA devices, and get your first operational application running this week. SOC 2 certified, with RBAC, SSO, and self-hosted options. Talk to our team about your architecture."
 meta:
   howto:
     name: "How to Read and Write Siemens S7 PLC Data with Node-RED"
@@ -55,11 +55,11 @@ meta:
     - question: "What do I need to configure on the PLC before reading or writing data?"
       answer: "In TIA Portal you must allow PUT/GET communication from remote partners, provide full access to the PLC, and disable 'Optimized Block Access' on any data block you intend to read or write over the S7 protocol. Without these settings the connection establishes but data exchange fails."
     - question: "Do I have to disable optimized block access on S7-1200 and S7-1500 PLCs?"
-      answer: "For the classic S7 protocol, yes—it relies on fixed memory offsets, so optimized data blocks must be disabled. If you can't disable optimization (it improves performance and is often mandated by coding standards), use OPC UA instead, which reads variables by symbolic name and works with optimized blocks without modification."
+      answer: "For the classic S7 protocol, yes, it relies on fixed memory offsets, so optimized data blocks must be disabled. If you can't disable optimization (it improves performance and is often mandated by coding standards), use OPC UA instead, which reads variables by symbolic name and works with optimized blocks without modification."
     - question: "Why does the S7 address format differ from TIA Portal?"
       answer: "The S7 node uses a slightly different addressing scheme. For example, TIA Portal's DB5.DBX0.1 becomes DB5,X0.1, and DB13.DBW4 becomes DB13,WORD4. You map the TIA Portal address to the node's equivalent format when adding variables to the S7 endpoint."
     - question: "Why does my S7 connection fail even though the PLC is reachable?"
-      answer: "If the connection establishes but data won't exchange—often shown as a 'service not implemented' or frame error—the usual causes are missing PUT/GET permission, optimized block access still enabled, or the PLC and the device running Node-RED being on different subnets. Confirm both devices share a subnet (for example 192.168.1.x) and that port 102 is not blocked by a firewall."
+      answer: "If the connection establishes but data won't exchange, often shown as a 'service not implemented' or frame error, the usual causes are missing PUT/GET permission, optimized block access still enabled, or the PLC and the device running Node-RED being on different subnets. Confirm both devices share a subnet (for example 192.168.1.x) and that port 102 is not blocked by a firewall."
     - question: "Which Siemens PLCs work with this method, and does it work for the S7-1200 and S7-1500?"
       answer: "It works with S7-300, S7-400, S7-1200, and S7-1500 controllers. The S7-1200 and S7-1500 require PUT/GET enabled and optimized block access disabled. Siemens LOGO uses a different addressing scheme, so check the node's README for those details."
     - question: "How do I efficiently read many data points from an S7 PLC?"
@@ -68,14 +68,14 @@ meta:
       answer: "Yes. The same approach extends beyond Siemens S7. Allen-Bradley PLCs can be read over EtherNet/IP, and OPC UA or Modbus provide vendor-neutral options across Siemens, Rockwell, Schneider, Beckhoff, Omron, and others. Most factory floors mix vendors, so a protocol-flexible platform avoids being locked to one brand."
     - question: "Can I build a dashboard to monitor and control S7 PLC data remotely?"
       answer: "Yes. Once data is flowing in and out of the PLC, you can visualize it with LEDs, gauges, and charts and add buttons for control using FlowFuse Dashboard. To access a dashboard securely over the internet from a remote device, run the dashboard in a hosted instance and pass values to and from the edge device using FlowFuse Project nodes."
-tldr: "This guide explains how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) using Node-RED and the S7 protocol over ISO-on-TCP (port 102). Prerequisites: enable PUT/GET communication, disable optimized block access on your data blocks, and run Node-RED on a networked device (the FlowFuse Device Agent makes this remotely manageable). After installing an S7 node, you configure an endpoint with the PLC's IP, rack, and slot, map TIA Portal addresses to the node's address format, then use s7-in to read values and s7-out to write them—enabling remote monitoring, control, and dashboards without deep PLC expertise. The same patterns extend to Allen-Bradley, Modbus, and OPC UA devices for multi-vendor environments."
+tldr: "This guide explains how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) using Node-RED and the S7 protocol over ISO-on-TCP (port 102). Prerequisites: enable PUT/GET communication, disable optimized block access on your data blocks, and run Node-RED on a networked device (the FlowFuse Device Agent makes this remotely manageable). After installing an S7 node, you configure an endpoint with the PLC's IP, rack, and slot, map TIA Portal addresses to the node's address format, then use s7-in to read values and s7-out to write them, enabling remote monitoring, control, and dashboards without deep PLC expertise. The same patterns extend to Allen-Bradley, Modbus, and OPC UA devices for multi-vendor environments."
 ---
 
 Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
 
 <!--more-->
 
-This is where Node-RED comes in, offering a user-friendly solution to seamlessly connect Siemens S7 PLCs with a variety of platforms. With its intuitive flow-based interface, Node-RED enables you to create custom workflows and dashboards—no deep technical expertise required.
+This is where Node-RED comes in, offering a user-friendly solution to seamlessly connect Siemens S7 PLCs with a variety of platforms. With its intuitive flow-based interface, Node-RED enables you to create custom workflows and dashboards, no deep technical expertise required.
 
 Siemens S7 PLCs are typically programmed using TIA Portal, Siemens' integrated development environment, and communication with external systems usually relies on the S7 protocol (ISO over TCP/IP). In this article, we’ll walk you through how to use Node-RED to read from and write to Siemens S7 PLCs via the S7 protocol, unlocking new possibilities for remote control and system integration in your industrial automation setup.
 
@@ -239,7 +239,7 @@ To address this issue, you can optimize data retrieval by storing output status 
 ![Ladder diagram showing a custom function that stores the status of outputs in a single word within the PLC.](./images/custom-function-storing-bits-in-word.png){data-zoomable}
 _Custom ladder diagram function storing output statuses in a single word for optimized data retrieval._
 
-There are several ways to implement this, and depending on your system’s needs, some methods may be more efficient than others. In this case, the output values are stored in a single word within the PLC, as shown in the ladder diagram above. This is not the only correct method—it's simply one approach that works for this particular scenario. Feel free to adapt or explore other methods that might better suit your setup. 
+There are several ways to implement this, and depending on your system’s needs, some methods may be more efficient than others. In this case, the output values are stored in a single word within the PLC, as shown in the ladder diagram above. This is not the only correct method, it's simply one approach that works for this particular scenario. Feel free to adapt or explore other methods that might better suit your setup. 
 
 Additionally, if the data you’re reading is mission-critical and you can't afford to lose any, consider using a FIFO stack or buffer in your PLC program. This method ensures that even if there is a network outage or computer problem, no data is lost as it will remain siting in the stack until your Node-RED is back on line and retrieves it.  This ensures no gaps or interruptions in your data and guarantees data integrity.
 
@@ -257,7 +257,7 @@ _Configuring S7-in Node to Read data from plc_
 
 You can add a "Debug" node to the `s7-in` node's output to verify that the data is being read correctly.
 
-Once you see the printed data, you might be surprised, or perhaps you already expected this: since the word data type we're reading is not directly available in Node.js or Node-RED, we'll receive it as an integer. But don't worry—you can convert it into the format that suits your needs using node-red-contrib-buffer-parser. In this integer scenario, you'll need to shift the bits or extract individual values to match your desired output, such as isolating specific bits to represent different statuses or control points. The flow provided at the end demonstrates the implementation of this conversion.
+Once you see the printed data, you might be surprised, or perhaps you already expected this: since the word data type we're reading is not directly available in Node.js or Node-RED, we'll receive it as an integer. But don't worry, you can convert it into the format that suits your needs using node-red-contrib-buffer-parser. In this integer scenario, you'll need to shift the bits or extract individual values to match your desired output, such as isolating specific bits to represent different statuses or control points. The flow provided at the end demonstrates the implementation of this conversion.
 
 Now that you have the desired format for your output data, you may want to build a dashboard interface with LEDs, gauges, or charts to monitor and visualize the data you've retrieved. You can use the FlowFuse Dashboard, as suggested earlier.
 

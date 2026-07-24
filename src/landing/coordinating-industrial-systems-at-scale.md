@@ -2,16 +2,16 @@
 layout: layouts/landing-comparison.njk
 skipIndex: true
 meta:
-    title: "Coordinating Industrial Systems at Scale — Beyond Point Tools | FlowFuse"
+    title: "Coordinating Industrial Systems at Scale, Beyond Point Tools | FlowFuse"
     description: "Point tools solve isolated problems. See how FlowFuse enables a scalable, event-driven industrial application layer across your entire operation."
 hubspot:
     formId: 9626d5d4-386c-466a-95d9-6fc78820e7e7
     cta: "download-brief"
     reference: "coordinating-industrial-systems"
 hero:
-    headline: "Coordinating industrial systems at scale —"
+    headline: "Coordinating industrial systems at scale"
     headlineHighlight: "beyond point tools"
-    intro1: "Many tools solve individual integration or automation problems. But industrial organizations rarely have just one use case. The challenge isn't the tools themselves — it's coordinating how they work together."
+    intro1: "Many tools solve individual integration or automation problems. But industrial organizations rarely have just one use case. The challenge isn't the tools themselves, it's coordinating how they work together."
     intro2: "They need <span class='font-medium'>a system that connects, scales, and adapts</span> across the entire operation."
     image: "images/unified-real-time-data-platform.png"
     imageAlt: "Industrial facility with coordinated automation systems"

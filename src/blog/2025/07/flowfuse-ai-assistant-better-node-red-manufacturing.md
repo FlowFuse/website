@@ -10,17 +10,17 @@ tags:
   - flowfuse
 ---
 
-Every manufacturing engineer knows this scenario: Node-RED's visual programming handles most of your automation needs brilliantly. Connect to PLCs, route data, trigger actions—all with drag-and-drop simplicity, but then you hit the wall. Your machine outputs data in a proprietary format. You need a custom dashboard widget that doesn't exist. You're manually creating test data for hours, or you're trying to understand a complex flow built by someone who left last year.
+Every manufacturing engineer knows this scenario: Node-RED's visual programming handles most of your automation needs brilliantly. Connect to PLCs, route data, trigger actions, all with drag-and-drop simplicity, but then you hit the wall. Your machine outputs data in a proprietary format. You need a custom dashboard widget that doesn't exist. You're manually creating test data for hours, or you're trying to understand a complex flow built by someone who left last year.
 
 <!--more-->
 
-These bespoke tasks can often demand coding skills—JavaScript for parsing data, Vue.js for custom widgets, CSS for styling. Skills your automation engineers might not have. Skills that pull them away from what the engineers do best: optimizing production.
+These bespoke tasks can often demand coding skills, JavaScript for parsing data, Vue.js for custom widgets, CSS for styling. Skills your automation engineers might not have. Skills that pull them away from what the engineers do best: optimizing production.
 
 FlowFuse Expert changes this dynamic completely. Describe what you need in plain English, then, get working code instantly. No more hours lost to syntax errors or Stack Overflow searches. Your engineers can focus on their own expertise, and FlowFuse Expert fills in the gaps. Let's look at how manufacturing teams can use it to solve real problems.
 
 ## Parsing Machine Data Without the JavaScript Struggle
 
-While Node-RED's low-code nodes cover most scenarios, every production line has unique quirks. Complex data parsing, multi-step calculations, proprietary protocols—these can all be accomplished in Node-RED by writing your own JavaScript. Engineers, who should be focussed on optimizing processes, end up out of their comfort zone, searching regex patterns and debugging syntax errors.
+While Node-RED's low-code nodes cover most scenarios, every production line has unique quirks. Complex data parsing, multi-step calculations, proprietary protocols, these can all be accomplished in Node-RED by writing your own JavaScript. Engineers, who should be focussed on optimizing processes, end up out of their comfort zone, searching regex patterns and debugging syntax errors.
 
 Consider this output from a CNC machine that's been reliable for 15 years:
 
@@ -62,15 +62,15 @@ With FlowFuse Expert, just ask:
 It's as simple as that.
 
 ![FlowFuse Expert generating test JSON data with multiple machine records including production counts and efficiency metrics](./images/json-ai.gif){data-zoomable}
-_FlowFuse Expert creating realistic test data for manufacturing dashboards—complete with machine IDs, production metrics, and maintenance dates._
+_FlowFuse Expert creating realistic test data for manufacturing dashboards, complete with machine IDs, production metrics, and maintenance dates._
 
 ## Building Custom Dashboards Without Web Development
 
 [FlowFuse Dashboard](https://dashboard.flowfuse.com) widgets cover most UI needs, but manufacturing can often demand more. Custom visualizations for specific KPIs can be build in Dashboard with the ["Template"](https://dashboard.flowfuse.com/nodes/widgets/ui-template) node, where developers can write their own Vue.js templates. 
 
-Developing custom components to match your HMI design standards takes CSS expertise. Whether you're building new widgets or styling existing ones, you're suddenly in web development territory—far from where most automation engineers want to be.
+Developing custom components to match your HMI design standards takes CSS expertise. Whether you're building new widgets or styling existing ones, you're suddenly in web development territory, far from where most automation engineers want to be.
 
-Take a [Pareto Chart](https://en.wikipedia.org/wiki/Pareto_chart) for defect analysis as an example—essential for quality teams but not available as a standard Dashboard widget. Building it requires Vue.js knowledge, Chart.js integration, and responsive design skills.
+Take a [Pareto Chart](https://en.wikipedia.org/wiki/Pareto_chart) for defect analysis as an example, essential for quality teams but not available as a standard Dashboard widget. Building it requires Vue.js knowledge, Chart.js integration, and responsive design skills.
 
 With FlowFuse Expert, just describe what you need:
 
@@ -86,7 +86,7 @@ Or consider input boxes for operator data entry that look too modern. Your team 
 ![FlowFuse Expert generating CSS to style input fields with green LCD calculator display appearance](./images/css-ai.gif){data-zoomable}
 _FlowFuse Expert creating CSS that transforms standard input boxes into retro LCD displays with glowing green text._
 
-Whether creating new widgets or styling existing ones, FlowFuse Expert handles the Vue.js and CSS complexity. You describe the outcome—it generates the code.
+Whether creating new widgets or styling existing ones, FlowFuse Expert handles the Vue.js and CSS complexity. You describe the outcome, it generates the code.
 
 ## Documenting Complex Flows Before Knowledge Walks Out
 

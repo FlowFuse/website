@@ -30,7 +30,7 @@ meta:
     answer: "No, Kafka does not natively support MQTT protocol. However, several solutions enable MQTT-Kafka integration including Kafka Connect with MQTT source connectors, custom bridge services, and Kafka-native MQTT brokers. FlowFuse provides built-in integration between MQTT and Kafka using Node-RED flows without requiring separate bridge infrastructure."
   
   - question: "Which is better for IoT: MQTT or Kafka?"
-    answer: "Neither is universally better—they serve different purposes. Use MQTT for device-to-broker communication when dealing with resource-constrained devices, unreliable networks, and thousands of concurrent connections. Use Kafka when processing hundreds of thousands of messages per second, requiring message replay, or integrating multiple backend systems. Most IoT architectures use both."
+    answer: "Neither is universally better, they serve different purposes. Use MQTT for device-to-broker communication when dealing with resource-constrained devices, unreliable networks, and thousands of concurrent connections. Use Kafka when processing hundreds of thousands of messages per second, requiring message replay, or integrating multiple backend systems. Most IoT architectures use both."
   
   - question: "How do message delivery guarantees compare between MQTT and Kafka?"
     answer: "MQTT offers three QoS levels: QoS 0 (at-most-once), QoS 1 (at-least-once), and QoS 2 (exactly-once via four-way handshake). Kafka provides at-least-once delivery by default and exactly-once semantics through idempotent producers and transactions. Kafka persists all messages to disk based on retention policies, while MQTT brokers typically don't retain messages long-term."
@@ -79,7 +79,7 @@ Kafka organizes everything into topics, and topics split into partitions. Each p
 
 The architecture spreads partitions across multiple broker servers. Each partition gets replicated to other brokers based on your replication factor. If a broker crashes, another one takes over for its partitions immediately. No data loss, no downtime.
 
-Unlike MQTT, messages don't disappear after delivery. Everything writes to disk. You configure retention policies—keep messages for 7 days, 30 days, or forever. This means you can replay messages, let new consumers read historical data, or reprocess everything if your analytics code had a bug.
+Unlike MQTT, messages don't disappear after delivery. Everything writes to disk. You configure retention policies, keep messages for 7 days, 30 days, or forever. This means you can replay messages, let new consumers read historical data, or reprocess everything if your analytics code had a bug.
 
 Early Kafka needed Apache Zookeeper for cluster coordination, which added complexity. Recent versions support KRaft mode that removes this dependency, though many production systems still run Zookeeper.
 
@@ -95,7 +95,7 @@ Kafka is distributed by design. Topics partition across brokers. Consumers track
 
 MQTT delivers messages in milliseconds. It runs on microcontrollers with kilobytes of RAM. A sensor reading might be 10-20 bytes including protocol overhead. A decent broker handles thousands to tens of thousands of messages per second, which works fine when you have hundreds of thousands of devices sending data every few seconds.
 
-Kafka sacrifices latency for volume. Messages take tens to hundreds of milliseconds because of disk writes, replication, and consumer polling. But a single broker can handle hundreds of thousands of messages per second. Clusters process billions daily. You need real hardware—multiple cores, 32GB+ memory, fast SSDs—but you get data movement at enterprise scale.
+Kafka sacrifices latency for volume. Messages take tens to hundreds of milliseconds because of disk writes, replication, and consumer polling. But a single broker can handle hundreds of thousands of messages per second. Clusters process billions daily. You need real hardware, multiple cores, 32GB+ memory, fast SSDs, but you get data movement at enterprise scale.
 
 ### How Messages Get Delivered
 
@@ -105,9 +105,9 @@ Kafka writes everything to disk based on your retention policy. Producers pick a
 
 ### Running This Stuff in Production
 
-Setting up an MQTT broker is straightforward. You can start with something like Mosquitto for development, or choose from production-ready brokers that support clustering and high availability. Configure authentication, add redundancy as needed, and monitor connection counts, message rates, and queue depths—most brokers expose metrics via REST APIs or monitoring endpoints.
+Setting up an MQTT broker is straightforward. You can start with something like Mosquitto for development, or choose from production-ready brokers that support clustering and high availability. Configure authentication, add redundancy as needed, and monitor connection counts, message rates, and queue depths, most brokers expose metrics via REST APIs or monitoring endpoints.
 
-> FlowFuse includes a managed MQTT broker built right into the platform—no separate infrastructure to set up or maintain. It connects directly with your Node-RED flows, so you can publish and subscribe to topics without leaving the environment. Check out the [details](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-3%3A-set-up-mqtt-with-flowfuse) to see how it works.
+> FlowFuse includes a managed MQTT broker built right into the platform, no separate infrastructure to set up or maintain. It connects directly with your Node-RED flows, so you can publish and subscribe to topics without leaving the environment. Check out the [details](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-3%3A-set-up-mqtt-with-flowfuse) to see how it works.
 
 Kafka demands more. You need at least three brokers plus coordination services. Monitor partition distribution, replication lag, consumer group status, disk usage. Plan capacity for both storage and network bandwidth. Rolling upgrades require care. Partition reassignment needs coordination. The learning curve is real, but the system handles failures gracefully once you understand it.
 
@@ -117,7 +117,7 @@ MQTT dominates in manufacturing plants with sensor networks, building automation
 
 Kafka powers financial transaction processing, e-commerce backends, infrastructure monitoring at scale, and data engineering pipelines. Use it when message volumes hit hundreds of thousands per second, multiple systems need independent access to the same data stream, you need replay capabilities, or you're feeding data into analytics platforms.
 
-***Most real systems use both. MQTT handles the edge, Kafka moves data between central systems. You see this pattern everywhere—MQTT at factory sites, Kafka in the data center.***
+***Most real systems use both. MQTT handles the edge, Kafka moves data between central systems. You see this pattern everywhere, MQTT at factory sites, Kafka in the data center.***
 
 ## Making the Choice
 
@@ -145,7 +145,7 @@ Neither is "better." They solve different problems. Your requirements drive the 
 
 ## Integrating MQTT and Kafka
 
-As mentioned, real production systems don’t choose between these—they use both. Devices and sensors typically publish data over MQTT, while analytics platforms, data lakes, and stream processors consume events from Kafka. The real challenge lies in bridging the two reliably and cleanly.
+As mentioned, real production systems don’t choose between these, they use both. Devices and sensors typically publish data over MQTT, while analytics platforms, data lakes, and stream processors consume events from Kafka. The real challenge lies in bridging the two reliably and cleanly.
 
 Most teams write custom bridge services or deploy Kafka Connect with MQTT source connectors. Custom bridges give you complete control but require development and maintenance. Kafka Connect reduces code but adds configuration complexity, especially when you need transformation logic beyond simple field mapping.
 
@@ -159,4 +159,4 @@ FlowFuse offers a free trial for testing MQTT-Kafka workflows. [Start building](
 
 MQTT and Kafka solve different problems. MQTT gives you efficient device connectivity with minimal overhead. Kafka delivers high-throughput event streaming with persistence and replay.
 
-Understanding these differences helps you pick the right tool for the job. Most production systems use both, leveraging each where it provides the most value. Base your decision on message volumes, device capabilities, operational requirements, and team expertise—not on whatever's trending on Hacker News.
+Understanding these differences helps you pick the right tool for the job. Most production systems use both, leveraging each where it provides the most value. Base your decision on message volumes, device capabilities, operational requirements, and team expertise, not on whatever's trending on Hacker News.

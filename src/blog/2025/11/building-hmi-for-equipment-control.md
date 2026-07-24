@@ -50,7 +50,7 @@ Most factory HMIs are still stuck in one place. Dedicated panels mounted next to
 
 <!--more-->
 
-Web-based HMIs change that. Build your interface once in FlowFuse, and it runs anywhere—desktop, tablet, phone. Your operators can monitor and control equipment from wherever they need to be.
+Web-based HMIs change that. Build your interface once in FlowFuse, and it runs anywhere, desktop, tablet, phone. Your operators can monitor and control equipment from wherever they need to be.
 
 This tutorial walks you through building a simple motor control interface: two buttons and a status display. You will learn how to connect to PLCs, build HMI dashboards, and enable remote access. From there, you can scale up to production lines with multiple sensors and actuators, live charts, gauges, sliders, and interactive controls.
 
@@ -82,9 +82,9 @@ Before diving into the build, it's helpful to understand what makes industrial H
 
 Good HMIs let operators quickly assess what's happening at a glance. Status should be immediately obvious: what is running, what is stopped, what needs attention. Color coding helps with this: green for running, red for stopped, yellow for warnings. Following standards like [ISA-101](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards) ensures your color choices are consistent with what operators expect across different systems. We'll use this approach in our motor control example.
 
-Your PLC handles real-time control—your HMI just reflects what's happening. Polling intervals between 500-1000ms work well for most applications. Faster polling doesn't improve control, it just increases network traffic. Status indicators should be large and clear, with critical information immediately visible and text readable from a reasonable distance.
+Your PLC handles real-time control, your HMI just reflects what's happening. Polling intervals between 500-1000ms work well for most applications. Faster polling doesn't improve control, it just increases network traffic. Status indicators should be large and clear, with critical information immediately visible and text readable from a reasonable distance.
 
-If operators will use tablets, design for touch targets (minimum 44x44 pixels) and avoid interactions that depend on hovering. Test on actual devices your team will use. Most importantly, always show operators when the HMI is disconnected from the PLC. This is critical for safety—operators need to know immediately if their commands aren't reaching the equipment. Display connection status prominently, and consider disabling controls when disconnected.
+If operators will use tablets, design for touch targets (minimum 44x44 pixels) and avoid interactions that depend on hovering. Test on actual devices your team will use. Most importantly, always show operators when the HMI is disconnected from the PLC. This is critical for safety, operators need to know immediately if their commands aren't reaching the equipment. Display connection status prominently, and consider disabling controls when disconnected.
 
 ## Step 1: Set Up FlowFuse
 
@@ -94,7 +94,7 @@ Start by creating a [FlowFuse account]({% include "sign-up-url.njk" %}). Once lo
 
 ## Step 2: Connect to Your PLC
 
-Your HMI needs to talk to your PLC to read equipment status and send control commands. FlowFuse handles this through Node-RED's protocol nodes, which support every major industrial controller. No proprietary gateways, no per-tag licensing, no vendor lock-in—just direct communication with your PLC.
+Your HMI needs to talk to your PLC to read equipment status and send control commands. FlowFuse handles this through Node-RED's protocol nodes, which support every major industrial controller. No proprietary gateways, no per-tag licensing, no vendor lock-in, just direct communication with your PLC.
 
 Choose the node that matches your PLC:
 
@@ -117,7 +117,7 @@ Choose the node that matches your PLC:
 
 After installation, drag the protocol node onto your canvas. You’ll need two types of nodes: one for reading equipment status and one for sending commands.
 
-Start with an input node for reading status (motor running, faults, sensor values). Use **S7 In** for Siemens, **Modbus Read** for Modbus devices, or **OPC UA Client** for OPC UA servers, etc. Open the node configuration and click the pencil icon next to the **Server/Connection** dropdown to create a new connection configuration. Here, enter the connection details for your PLC or server — such as IP address, port, credentials, and polling interval. The exact parameters vary by protocol; if you need help understanding what to configure, refer to the documentation links in the protocol node list above. Each link includes detailed setup guidance.
+Start with an input node for reading status (motor running, faults, sensor values). Use **S7 In** for Siemens, **Modbus Read** for Modbus devices, or **OPC UA Client** for OPC UA servers, etc. Open the node configuration and click the pencil icon next to the **Server/Connection** dropdown to create a new connection configuration. Here, enter the connection details for your PLC or server, such as IP address, port, credentials, and polling interval. The exact parameters vary by protocol; if you need help understanding what to configure, refer to the documentation links in the protocol node list above. Each link includes detailed setup guidance.
 
 After saving the connection configuration, specify the **variable addresses that provide the status information** you want to read (tags/registers such as motor state, faults, and sensor values). If available, enable efficiency features like **“emit only on change”** or **“subscribe mode”** to minimize unnecessary updates.
 
@@ -228,7 +228,7 @@ _CSS template for status display styling_
 
 3. Click **Done** and deploy the flow
 
-You've just built a basic motor control interface. FlowFuse Dashboard includes gauges, charts, sliders, and other widgets that work the same way—drag, configure, connect. See the [widget reference](https://dashboard.flowfuse.com/nodes/widgets.html) for the full list.
+You've just built a basic motor control interface. FlowFuse Dashboard includes gauges, charts, sliders, and other widgets that work the same way, drag, configure, connect. See the [widget reference](https://dashboard.flowfuse.com/nodes/widgets.html) for the full list.
 
 ### Accessing Your Dashboard
 
@@ -266,7 +266,7 @@ On your remote instance (the one connected to your PLC), you'll publish status d
 
 1. Drag an **ff-mqtt-out** node onto the canvas.
 2. Double-click to open configuration and click **"Configure access control"**.
-3. FlowFuse automatically creates an MQTT client for your instance—enable both **Publish** and **Subscribe** permissions.
+3. FlowFuse automatically creates an MQTT client for your instance, enable both **Publish** and **Subscribe** permissions.
 4. Set the topic to something descriptive like: `factory/line1/motor/status`
 5. Connect this node to your PLC read node (the one that gets motor status).
 6. Add an **ff-mqtt-in** node and set its topic to: `factory/line1/motor/command`
@@ -280,7 +280,7 @@ Your edge device now shares motor status via MQTT and listens for control comman
 Create a new [hosted instance](/docs/user/introduction/#creating-a-node-red-instance) in FlowFuse. This instance runs in the cloud and will host your operator dashboard:
 
 1. Install `@flowfuse/node-red-dashboard` using Manage Palette.
-2. Build your control interface following the same steps as before—add ui-button widgets for start/stop and ui-text widgets for status display.
+2. Build your control interface following the same steps as before, add ui-button widgets for start/stop and ui-text widgets for status display.
 3. Add an **ff-mqtt-in** node with topic `factory/line1/motor/status` and connect it to your status display widgets.
 4. Add an **ff-mqtt-out** node with topic `factory/line1/motor/command` and connect it to your control buttons.
 5. Configure access control for this hosted instance's MQTT client (enable Publish and Subscribe).
@@ -290,12 +290,12 @@ Your dashboard is now accessible at `https://[your-instance].flowfuse.cloud/dash
 
 ## Next Steps
 
-You now have a working HMI that controls real equipment from any browser. The same approach scales to more equipment—motors, conveyors, pumps, valves—just repeat the connection and dashboard steps.
+You now have a working HMI that controls real equipment from any browser. The same approach scales to more equipment, motors, conveyors, pumps, valves, just repeat the connection and dashboard steps.
 
 As your system grows, organize controls across multiple dashboard pages for different production lines or work cells. Add chart widgets to visualize production rates, cycle times, and sensor trends. Configure notification nodes to alert your team via email or Telegram when faults occur.
 
 And if you need to deploy the solution across many production lines, FlowFuse's DevOps features help you manage the scale. Build your HMI once, then deploy it across multiple edge devices and push updates centrally without visiting each location.
 
-For a full view of the PLC brands and protocols FlowFuse supports — Siemens, Allen-Bradley, Omron, OPC UA, Modbus, and more — see [how FlowFuse connects any PLC to the modern industrial stack](/landing/plc/).
+For a full view of the PLC brands and protocols FlowFuse supports, Siemens, Allen-Bradley, Omron, OPC UA, Modbus, and more, see [how FlowFuse connects any PLC to the modern industrial stack](/landing/plc/).
 
-[Book a demo](/book-demo/) to see how FlowFuse can help your organization connect, collect, transform, and visualize industrial data with our low-code and AI-powered editor—without the hassle of infrastructure management, deployment complexities, or security concerns at scale.
+[Book a demo](/book-demo/) to see how FlowFuse can help your organization connect, collect, transform, and visualize industrial data with our low-code and AI-powered editor, without the hassle of infrastructure management, deployment complexities, or security concerns at scale.

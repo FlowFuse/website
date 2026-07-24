@@ -53,7 +53,7 @@ Timers are everywhere in industrial automation. You need them to track how long 
 
 <!--more-->
 
-Through my work as a technical writer covering IIoT, building industrial applications, and being part of a company where our customers deploy real-world automation systems, I've observed that **timers** are ubiquitous in production environments. Whether it's a production floor display showing machine runtime, a maintenance terminal counting down to the next service window, or an operator interface tracking downtime by reason code—timers are foundational to industrial visibility. Here's an example of a performance operator terminal with timer functionality:
+Through my work as a technical writer covering IIoT, building industrial applications, and being part of a company where our customers deploy real-world automation systems, I've observed that **timers** are ubiquitous in production environments. Whether it's a production floor display showing machine runtime, a maintenance terminal counting down to the next service window, or an operator interface tracking downtime by reason code, timers are foundational to industrial visibility. Here's an example of a performance operator terminal with timer functionality:
 
 ![Performance Operator Terminal](./images/performance-operator-terminal.png){data-zoomable}
 _Performance operator terminal displaying real-time production metrics with timer functionality_
@@ -118,7 +118,7 @@ Build a basic **stopwatch flow**:
 6. Add a debug node and connect it to the hourglass node output
 7. Deploy the flow
 
-When you trigger the first inject node, the **stopwatch starts**. The second inject node checks current elapsed time without stopping the timer—you can configure this inject node to repeat at intervals for continuous time monitoring. The third inject node stops the **stopwatch** and outputs the total elapsed time. The fourth inject node resets the stopwatch back to zero.
+When you trigger the first inject node, the **stopwatch starts**. The second inject node checks current elapsed time without stopping the timer, you can configure this inject node to repeat at intervals for continuous time monitoring. The third inject node stops the **stopwatch** and outputs the total elapsed time. The fourth inject node resets the stopwatch back to zero.
 
 The node outputs a message containing timing information:
 
@@ -127,7 +127,7 @@ _Hourglass node output message showing elapsed time in multiple formats_
 
 The `elapsed` object provides multiple formats: a human-readable string, total milliseconds, and broken-down time components. This flexibility supports different display requirements and calculation needs.
 
-This basic example demonstrates the pattern. In production applications, replace the inject nodes with actual process triggers—**machine status signals** from PLCs or MQTT messages from sensors. The **hourglass node output** then connects to databases for logging, dashboards for visualization, or notification systems for alerts when thresholds are exceeded.
+This basic example demonstrates the pattern. In production applications, replace the inject nodes with actual process triggers, **machine status signals** from PLCs or MQTT messages from sensors. The **hourglass node output** then connects to databases for logging, dashboards for visualization, or notification systems for alerts when thresholds are exceeded.
 
 Below is the complete flow.
 
@@ -190,7 +190,7 @@ Below is the flow implementation that you can use as a starting point.
 [{"id":"13e3937b0555d34d","type":"group","z":"b446dfa04d79d359","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["0a7fdceb7b844c76","b1d36b608bafb531","e7e0894b2832e93e","52d0abe15e3533c8","c48dcaec998440aa"],"x":134,"y":3419,"w":692,"h":122},{"id":"0a7fdceb7b844c76","type":"countdown","z":"b446dfa04d79d359","g":"13e3937b0555d34d","name":"","topic":"","payloadTimerStart":"true","payloadTimerStartType":"bool","payloadTimerStop":"false","payloadTimerStopType":"bool","timer":"30","resetWhileRunning":false,"outputOnReset":false,"setTimeToNewWhileRunning":false,"startCountdownOnControlMessage":true,"x":550,"y":3480,"wires":[["e7e0894b2832e93e"],["52d0abe15e3533c8"]]},{"id":"b1d36b608bafb531","type":"inject","z":"b446dfa04d79d359","g":"13e3937b0555d34d","name":"Start","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":230,"y":3480,"wires":[["c48dcaec998440aa"]]},{"id":"e7e0894b2832e93e","type":"debug","z":"b446dfa04d79d359","g":"13e3937b0555d34d","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":3460,"wires":[]},{"id":"52d0abe15e3533c8","type":"debug","z":"b446dfa04d79d359","g":"13e3937b0555d34d","name":"Countdown","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":710,"y":3500,"wires":[]},{"id":"c48dcaec998440aa","type":"change","z":"b446dfa04d79d359","g":"13e3937b0555d34d","name":"Set Countdown","rules":[{"t":"set","p":"payload","pt":"msg","to":"50","tot":"num"},{"t":"set","p":"topic","pt":"msg","to":"control","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":380,"y":3480,"wires":[["0a7fdceb7b844c76"]]},{"id":"66be08ead79304bf","type":"global-config","env":[],"modules":{"node-red-contrib-countdown":"1.3.2"}}]
 {% endrenderFlow %}
 
-For this demonstration, we used an inject node to manually trigger the countdown. In production environments, you would replace this with actual process triggers—**equipment status signals** from [PLCs](/blog/2025/10/plc-to-mqtt-using-flowfuse/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) messages from sensors, or completion signals from upstream operations. For example, you might start a **maintenance window countdown** when equipment reaches a scheduled service interval, or initiate a cleanup cycle timer when a batch process completes.
+For this demonstration, we used an inject node to manually trigger the countdown. In production environments, you would replace this with actual process triggers, **equipment status signals** from [PLCs](/blog/2025/10/plc-to-mqtt-using-flowfuse/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) messages from sensors, or completion signals from upstream operations. For example, you might start a **maintenance window countdown** when equipment reaches a scheduled service interval, or initiate a cleanup cycle timer when a batch process completes.
 
 While these examples cover the essential timer operations, both nodes offer additional configuration options. For comprehensive documentation, visit the [node-red-contrib-hourglass](https://flows.nodered.org/node/node-red-contrib-hourglass) and [node-red-contrib-countdown](https://flows.nodered.org/node/node-red-contrib-countdown) pages on the **Node-RED flows library**.
 

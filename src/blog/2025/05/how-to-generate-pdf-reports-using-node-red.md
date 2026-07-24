@@ -13,7 +13,7 @@ tags:
 cta:
   type: sign-up
   title: Automate PDF Reports with Node-RED on FlowFuse
-  description: FlowFuse gives you a managed Node-RED environment with one-click deployment, secure HTTP endpoints, and Dashboard 2.0 integration — everything you need to automate and serve PDF reports in production.
+  description: FlowFuse gives you a managed Node-RED environment with one-click deployment, secure HTTP endpoints, and Dashboard 2.0 integration, everything you need to automate and serve PDF reports in production.
 meta:
   howto:
     name: "How to Generate PDF Reports Using Node-RED"
@@ -58,7 +58,7 @@ meta:
 tldr: "This guide shows how to automate PDF report generation in Node-RED using the @platmac/node-red-pdfbuilder node and FlowFuse. It covers installing the node, building a flow that pulls production data from SQLite and renders it as a styled PDF, serving the file via an HTTP endpoint, and embedding it with a download button in a Dashboard 2.0 iframe widget."
 ---
 
-Generating PDF reports is a common need in many workflows—whether you're logging data, sharing results, or creating summaries. With Node-RED and FlowFuse, you can easily automate turning your data into well-structured PDF files. This guide will show you how to set up step-by-step PDF report generation using simple tools and flows.
+Generating PDF reports is a common need in many workflows, whether you're logging data, sharing results, or creating summaries. With Node-RED and FlowFuse, you can easily automate turning your data into well-structured PDF files. This guide will show you how to set up step-by-step PDF report generation using simple tools and flows.
 <!--more-->
 Generating reports allows you to capture snapshots of critical data, summarize system activities, and distribute insights in an easy-to-read and stored format. PDF is one of the most universally accepted formats for sharing documents, making it ideal for delivering structured information from your Node-RED flows.
 
@@ -193,7 +193,7 @@ _Example pdf result_
 
 ### Step 3: Creating a Flow to Generate a PDF
 
-Let's learn how to generate a PDF using dynamic inputs. For this, we’ll use the same example PDF report shown earlier—but this time, we’ll replace the hardcoded values with dynamic input data.
+Let's learn how to generate a PDF using dynamic inputs. For this, we’ll use the same example PDF report shown earlier, but this time, we’ll replace the hardcoded values with dynamic input data.
 
 1. For this guide's practical example, we will use the following SQLite flow that generates simulated production data. If you don't have the data source, you can import the flow below to follow along. After importing, deploy the flow and click the Inject node button to generate and insert the data.
 

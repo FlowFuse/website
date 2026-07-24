@@ -33,7 +33,7 @@ When discussing popular and widely used databases, MySQL inevitably stands out. 
 
 Deciding between [PostgreSQL](/node-red/database/postgresql/) and MySQL depends on your project's needs and what each database system does best. PostgreSQL is ideal for big projects requiring complex data handling, reliability, and often updated data. It works well in environments where keeping data consistent is crucial. PostgreSQL's advanced features, like materialized views and support for writing procedures in different languages beyond SQL make it great for managing sophisticated data needs.
 
-On the other hand, MySQL is excellent for projects that prioritize fast data reading and are easy to set up and use. It's commonly used for smaller projects, quick prototypes, or applications where quick deployment is critical. MySQL offers flexibility with different storage options—like InnoDB for transactions and MyISAM for handling lots of reads simultaneously—making it versatile depending on your workload.
+On the other hand, MySQL is excellent for projects that prioritize fast data reading and are easy to set up and use. It's commonly used for smaller projects, quick prototypes, or applications where quick deployment is critical. MySQL offers flexibility with different storage options, like InnoDB for transactions and MyISAM for handling lots of reads simultaneously, making it versatile depending on your workload.
 
 Knowing what performance your project needs, how familiar your team is with each database, and how much your project might grow will help you pick the database that's best for you.
 
@@ -193,6 +193,6 @@ Below is the complete flow covering all the operations discussed throughout this
 
 1. To test the imported flows, you need to deploy them. To do that, click the deploy button at the top right corner.
 
-After deploying the flow, you can test each operation—such as creating, deleting, updating, and executing other queries—by clicking the inject button. For debugging purposes, add debug nodes to the flow. 
+After deploying the flow, you can test each operation, such as creating, deleting, updating, and executing other queries, by clicking the inject button. For debugging purposes, add debug nodes to the flow. 
 
 Additionally, if you want to explore the integration of other databases with Node-RED, you can refer to our [database section](/node-red/database/) in the Node-RED learning resources, where we cover databases such as PostgreSQL, MongoDB, InfluxDB, DynamoDB, and more.

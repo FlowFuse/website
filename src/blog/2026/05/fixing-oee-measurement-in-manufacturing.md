@@ -1,5 +1,5 @@
 ---
-title: "OEE Is Misleading Your Factory — Here's How to Fix It"
+title: "OEE Is Misleading Your Factory: Here's How to Fix It"
 subtitle: "Why the OEE score on your dashboard does not match what is happening on the floor."
 description: "Most factories measure OEE wrong. Manual logs miss small stops, definitions drift, and operators game the score. A practical look at what to do about it."
 date: 2026-05-07
@@ -91,7 +91,7 @@ From a distance, the system looks active. On the floor, it feels like a report n
 
 The issue is ownership. Production logs downtime, but maintenance, engineering, or procurement must fix it. The insight sits in one team, the action in another, and nothing closes the loop.
 
-This is also where OEE's structural limits show up. [A high OEE on a non-bottleneck machine is not a good thing—if a machine that is not the bottleneck runs at high OEE, it leads to a jam of parts before the bottleneck](https://www.allaboutlean.com/use-oee/). The machine looks efficient. The system does not improve. Focus OEE tracking on the bottleneck and the lines feeding it.
+This is also where OEE's structural limits show up. [A high OEE on a non-bottleneck machine is not a good thing, if a machine that is not the bottleneck runs at high OEE, it leads to a jam of parts before the bottleneck](https://www.allaboutlean.com/use-oee/). The machine looks efficient. The system does not improve. Focus OEE tracking on the bottleneck and the lines feeding it.
 
 The fix is to connect data to action. A recurring failure should trigger a maintenance work order. A material delay should alert procurement and the line lead. A changeover overrun should create a kaizen task.
 

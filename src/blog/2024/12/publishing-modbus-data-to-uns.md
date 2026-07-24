@@ -14,15 +14,15 @@ tags:
 meta:
     faq:
     - question: "Do I need FlowFuse to bridge Modbus to MQTT, or can I use standard Node-RED?"
-      answer: "You can use standard Node-RED installed locally. However, FlowFuse provides production-ready infrastructure that makes managing, deploying, scaling, and securing your solution much easier and quicker. It includes Node-RED runtime on edge devices with remote management, the integrated MQTT broker for your Unified Namespace, team collaboration, version control, and enterprise-grade security features—eliminating the need to set up and maintain separate infrastructure."
+      answer: "You can use standard Node-RED installed locally. However, FlowFuse provides production-ready infrastructure that makes managing, deploying, scaling, and securing your solution much easier and quicker. It includes Node-RED runtime on edge devices with remote management, the integrated MQTT broker for your Unified Namespace, team collaboration, version control, and enterprise-grade security features, eliminating the need to set up and maintain separate infrastructure."
     - question: "Why send each metric (temperature, pressure, vibration) to separate MQTT topics instead of one combined topic?"
-      answer: "Separate topics follow UNS best practices. It allows subscribers to receive only the data they need—a temperature monitoring dashboard doesn't need vibration data. It also makes the topic hierarchy clearer and enables granular access control per metric."
+      answer: "Separate topics follow UNS best practices. It allows subscribers to receive only the data they need, a temperature monitoring dashboard doesn't need vibration data. It also makes the topic hierarchy clearer and enables granular access control per metric."
     - question: "What's the difference between the standard MQTT nodes and FlowFuse MQTT nodes?"
       answer: "Standard MQTT nodes require manual configuration of broker address, port, Client ID, username, and password. FlowFuse MQTT nodes automatically detect and configure these settings when connected to the FlowFuse MQTT broker, reducing setup time and configuration errors."
     - question: "The article mentions ISA-95 hierarchy. Is this required, or can I use my own topic structure?"
-      answer: "ISA-95 (enterprise/site/area/line/equipment) is recommended because it's an industry standard that scales well and makes data organization intuitive. However, you can use any hierarchical structure that makes sense for your facility. The key is consistency—pick a structure and apply it uniformly across all topics."
+      answer: "ISA-95 (enterprise/site/area/line/equipment) is recommended because it's an industry standard that scales well and makes data organization intuitive. However, you can use any hierarchical structure that makes sense for your facility. The key is consistency, pick a structure and apply it uniformly across all topics."
     - question: "How do I determine the correct transformation formula for my Modbus data?"
-      answer: "Refer to your sensor or device manual—it will specify how register values map to real-world units. Common patterns include dividing by 10, 100, or 1000 for decimal values, or combining multiple registers for larger numbers. The article shows examples with temperature (divide by 10) and pressure (concatenate two registers)."
+      answer: "Refer to your sensor or device manual, it will specify how register values map to real-world units. Common patterns include dividing by 10, 100, or 1000 for decimal values, or combining multiple registers for larger numbers. The article shows examples with temperature (divide by 10) and pressure (concatenate two registers)."
     - question: "What polling rate should I use for the Modbus Read node?"
       answer: "It depends on your application requirements and network capacity. Most industrial monitoring works well with 1-5 second intervals. Faster polling (under 1 second) can strain Modbus devices and networks. Start with 5 seconds and adjust based on how quickly you need to detect changes."
     - question: "Can I monitor multiple Modbus devices in the same Node-RED flow?"
@@ -38,21 +38,21 @@ Converting Modbus to MQTT unlocks the value trapped in legacy industrial equipme
 
 <!--more-->
 
-We've built Modbus to MQTT bridges for manufacturing plants ranging from small production lines to enterprise-scale facilities, and the root problem is always the same protocol mismatch. Modbus requires a master-slave architecture with polling—one device requests data, another responds. MQTT enables publish-subscribe messaging—devices push data to a central broker where any authorized application can subscribe. These are fundamentally incompatible communication patterns.
+We've built Modbus to MQTT bridges for manufacturing plants ranging from small production lines to enterprise-scale facilities, and the root problem is always the same protocol mismatch. Modbus requires a master-slave architecture with polling, one device requests data, another responds. MQTT enables publish-subscribe messaging, devices push data to a central broker where any authorized application can subscribe. These are fundamentally incompatible communication patterns.
 
 The proven solution is protocol bridging with Node-RED. This guide shows you how to build a reliable Modbus to MQTT gateway that reads holding registers from your devices, transforms raw sensor readings into human-readable formats, and publishes structured data to a Unified Namespace using FlowFuse's integrated MQTT broker. You'll bridge the OT/IT gap and enable cloud integration, real-time monitoring, and data-driven decision-making across your operations.
 
 ## Why Bridge Modbus to MQTT?
 
-Modbus handles local device communication effectively. A PLC polls sensors, reads holding registers, writes control signals—standard automation workflows that have proven reliable for decades. The limitation appears when you need that same data elsewhere: in a cloud database, on a remote dashboard, or feeding a predictive maintenance algorithm.
+Modbus handles local device communication effectively. A PLC polls sensors, reads holding registers, writes control signals, standard automation workflows that have proven reliable for decades. The limitation appears when you need that same data elsewhere: in a cloud database, on a remote dashboard, or feeding a predictive maintenance algorithm.
 
-The constraint is architectural. Modbus requires a master-slave relationship. One device initiates requests, others respond. You can't have multiple systems independently accessing the same Modbus device without coordination, and you can't push data—only pull it through polling. This creates the operational technology (OT) and information technology (IT) integration gap.
+The constraint is architectural. Modbus requires a master-slave relationship. One device initiates requests, others respond. You can't have multiple systems independently accessing the same Modbus device without coordination, and you can't push data, only pull it through polling. This creates the operational technology (OT) and information technology (IT) integration gap.
 
-MQTT removes these constraints through its broker-based architecture. Devices publish data once to the broker. Any authorized system—whether on-premises or cloud-based—subscribes to relevant topics and receives updates. No polling loops, no master-slave coordination, no point-to-point connections to manage.
+MQTT removes these constraints through its broker-based architecture. Devices publish data once to the broker. Any authorized system, whether on-premises or cloud-based, subscribes to relevant topics and receives updates. No polling loops, no master-slave coordination, no point-to-point connections to manage.
 
 This is where the [Unified Namespace](/blog/2024/11/building-uns-with-flowfuse/) concept becomes practical. Instead of data scattered across disconnected Modbus networks, PLCs, and SCADA systems, you establish a single MQTT broker as the central data hub. All operational data flows through standardized topics organized by facility hierarchy: `enterprise/site/area/line/equipment`. Applications consume what they need through subscriptions.
 
-Consider a production line running legacy Modbus equipment—VFDs controlling motor speeds, pressure transmitters monitoring hydraulic systems, temperature sensors on critical bearings. Historically, this data stays within the local control network. Bridge it to MQTT, and suddenly the maintenance team accesses real-time vibration data on their tablets, the operations dashboard displays line efficiency metrics, and the cloud analytics platform builds predictive models from historical trends—all from the same data stream.
+Consider a production line running legacy Modbus equipment, VFDs controlling motor speeds, pressure transmitters monitoring hydraulic systems, temperature sensors on critical bearings. Historically, this data stays within the local control network. Bridge it to MQTT, and suddenly the maintenance team accesses real-time vibration data on their tablets, the operations dashboard displays line efficiency metrics, and the cloud analytics platform builds predictive models from historical trends, all from the same data stream.
 
 FlowFuse provides both the Node-RED runtime for building these bridges and the MQTT broker infrastructure for the Unified Namespace. The integration is straightforward: Node-RED flows poll Modbus devices and publish to FlowFuse's MQTT broker, where any authorized application can subscribe.
 
@@ -68,8 +68,8 @@ _Bridging Modbus Data to MQTT using Node-RED_
 Before you start, make sure you have:
 
 - **Modbus data source**: An actual Modbus device or a simulator like ModSim.
-- **Node-RED Instance**: The easiest and production-ready option is FlowFuse—run Node-RED on edge devices, manage and build flows remotely with your team. Deploy, scale, and secure hundreds or thousands of instances with built-in team collaboration, version control, and production-grade features. [Sign up here](https://app.flowfuse.com/) and follow [this guide to run Node-RED with FlowFuse on your edge device](/blog/2025/09/installing-node-red/). Alternatively, install Node-RED locally on hardware with access to your Modbus network.
-- **MQTT Broker**: You need broker connection details (host, port, credentials). If you're using FlowFuse Pro or Enterprise, there's an integrated broker at `broker.flowfuse.cloud`—just create a client in the platform and you're done.
+- **Node-RED Instance**: The easiest and production-ready option is FlowFuse, run Node-RED on edge devices, manage and build flows remotely with your team. Deploy, scale, and secure hundreds or thousands of instances with built-in team collaboration, version control, and production-grade features. [Sign up here](https://app.flowfuse.com/) and follow [this guide to run Node-RED with FlowFuse on your edge device](/blog/2025/09/installing-node-red/). Alternatively, install Node-RED locally on hardware with access to your Modbus network.
+- **MQTT Broker**: You need broker connection details (host, port, credentials). If you're using FlowFuse Pro or Enterprise, there's an integrated broker at `broker.flowfuse.cloud`, just create a client in the platform and you're done.
 
 ### Step 1: Collect Data from Modbus Devices
 
@@ -155,7 +155,7 @@ We must convert these raw register values into human-readable formats for cloud 
 
 To determine how to process raw Modbus data, such as dividing by a specific value, concatenating, or applying other transformation formulas, refer to the manual of the sensor you use for specific instructions.
 
-In Node-RED, you can use various nodes for transformation. You can choose the [Function node](/node-red/core-nodes/function/) for advanced processing, the [Change node](/node-red/core-nodes/change/) for simpler operations, or the [Template node](/node-red/core-nodes/template/) for defining schemas. For more complex data parsing scenarios—such as handling multiple data types (floats, 32-bit integers, strings), dealing with big-endian/little-endian conversions, or performing byte swapping—consider using the `node-red-contrib-buffer-parser` node. This specialized node simplifies parsing Modbus buffers into various data formats without writing custom code. Learn more in our guide on [using Buffer Parser for industrial data](/blog/2025/12/node-red-buffer-parser-industrial-data/). In this article, I will demonstrate a low-code approach using the Change node to process the data cleanly.
+In Node-RED, you can use various nodes for transformation. You can choose the [Function node](/node-red/core-nodes/function/) for advanced processing, the [Change node](/node-red/core-nodes/change/) for simpler operations, or the [Template node](/node-red/core-nodes/template/) for defining schemas. For more complex data parsing scenarios, such as handling multiple data types (floats, 32-bit integers, strings), dealing with big-endian/little-endian conversions, or performing byte swapping, consider using the `node-red-contrib-buffer-parser` node. This specialized node simplifies parsing Modbus buffers into various data formats without writing custom code. Learn more in our guide on [using Buffer Parser for industrial data](/blog/2025/12/node-red-buffer-parser-industrial-data/). In this article, I will demonstrate a low-code approach using the Change node to process the data cleanly.
 
 Additionally, for better organization and accessibility, I will send each metric separately and include additional metadata such as the `timestamp` and `unit`.
 
@@ -231,11 +231,11 @@ Once you have configured and connected all the Change nodes, add a **Debug** nod
 
 ### Step 3: Publishing Modbus Data to MQTT
 
-After transforming the Modbus data into a human-readable format, the next step is to publish it via MQTT to build your Unified Namespace (UNS). The UNS is created by organizing your MQTT topics into a standardized hierarchy—when you publish data to these structured topics, you're establishing the namespace that other systems can subscribe to.
+After transforming the Modbus data into a human-readable format, the next step is to publish it via MQTT to build your Unified Namespace (UNS). The UNS is created by organizing your MQTT topics into a standardized hierarchy, when you publish data to these structured topics, you're establishing the namespace that other systems can subscribe to.
 
 **Step 3.1: Preparing Your MQTT Broker**
 
-As mentioned in the prerequisites, FlowFuse provides an integrated MQTT broker service for Team and Enterprise users. The broker uses username and password authentication—you create clients on the platform with credentials that control topic access.
+As mentioned in the prerequisites, FlowFuse provides an integrated MQTT broker service for Team and Enterprise users. The broker uses username and password authentication, you create clients on the platform with credentials that control topic access.
 
 **To create MQTT clients:**
 
@@ -282,7 +282,7 @@ _MQTT Out node configuration for temperature data_
 
 **Using FlowFuse MQTT Nodes**
 
-If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas—no manual setup of server address, Client ID, username, or password required. You also won't need to manually create clients in the broker; they're automatically created when you use these nodes. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](https://flowfuse.com/node-red/flowfuse/mqtt/).
+If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas, no manual setup of server address, Client ID, username, or password required. You also won't need to manually create clients in the broker; they're automatically created when you use these nodes. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](https://flowfuse.com/node-red/flowfuse/mqtt/).
 
 **Step 3.3: Configure MQTT Nodes for Remaining Metrics**
 
@@ -302,7 +302,7 @@ Each mqtt out node should:
 1. Click **Deploy** in the top-right corner of Node-RED to activate your flow.
 2. Check the status indicator beneath each **mqtt out** node:
    - **Green dot with "connected"**: Successfully connected and publishing data
-   - **Red dot with "disconnected"**: Connection failed—check your broker credentials and network connectivity
+   - **Red dot with "disconnected"**: Connection failed, check your broker credentials and network connectivity
    - **Yellow dot**: Connecting or waiting for data
 
 3. To verify data is flowing to your UNS:

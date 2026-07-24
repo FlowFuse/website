@@ -232,7 +232,7 @@ At this stage, the tool becomes discoverable by connected AI clients. However, i
 
 8. Drag the MCP Response node and connect its input to the output of the final node in your action flow. 
 
-   > The MCP Response node is necessary because the AI needs to receive the outcome of the action—whether it was successful or not. Errors are also fed back to the MCP Response node, enabling the AI to handle them appropriately.
+   > The MCP Response node is necessary because the AI needs to receive the outcome of the action, whether it was successful or not. Errors are also fed back to the MCP Response node, enabling the AI to handle them appropriately.
 
 9. Deploy the flow once again.
 
@@ -259,7 +259,7 @@ With your MCP server, Resources, and Tools in place, the AI agent can now intera
 
 ## Conclusion
 
-This guide demonstrated how to build a fully functional MCP server with FlowFuse and Node-RED, providing AI agents with structured access to industrial systems through Resources and Tools, which enable workflows such as monitoring production lines, scheduling maintenance, and automating operational decisions — all without complex coding.
+This guide demonstrated how to build a fully functional MCP server with FlowFuse and Node-RED, providing AI agents with structured access to industrial systems through Resources and Tools, which enable workflows such as monitoring production lines, scheduling maintenance, and automating operational decisions, all without complex coding.
 
 FlowFuse [recently added ONNX AI nodes](/blog/2025/10/ai-on-flowfuse/). With these nodes, you can train custom models, deploy them in Node-RED, and execute tasks tailored to your processes. Combined with FlowFuse’s capabilities to collect, transform, and visualize industrial data, the platform makes development, monitoring, and optimization faster, smarter, and more scalable.
 

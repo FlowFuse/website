@@ -12,7 +12,7 @@ tags:
 cta:
   type: sign-up
   title: Unlock your Modbus data with FlowFuse
-  description: Get Modbus data flowing reliably — then connect every other protocol on your plant floor. OPC-UA, MQTT, legacy and modern, all in one place
+  description: Get Modbus data flowing reliably, then connect every other protocol on your plant floor. OPC-UA, MQTT, legacy and modern, all in one place
 tldr: "Modbus degradation rarely announces itself it shows up as stale values, slower-than-expected poll cycles, and vague operator complaints. RS-485 serial and Modbus TCP fail through different mechanisms (CRC errors vs. connection table exhaustion), and the four metrics to monitor are transaction success rate, response time, CRC error count, and poll cycle completion time."
 ---
 
@@ -93,15 +93,15 @@ The codes you'll encounter most often:
 ![Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps](./images/exception-table-modbus.png)
 *Modbus exception codes quick reference table showing error codes, meanings, common causes, and first troubleshooting steps*
 
-**Exception 0x01 — Illegal Function**: The device doesn't support the function code you sent. Usually a configuration issue: the polling stack is sending a [function code](https://en.wikipedia.org/wiki/Modbus#Supported_function_codes) the device firmware doesn't implement.
+**Exception 0x01, Illegal Function**: The device doesn't support the function code you sent. Usually a configuration issue: the polling stack is sending a [function code](https://en.wikipedia.org/wiki/Modbus#Supported_function_codes) the device firmware doesn't implement.
 
-**Exception 0x02 — Illegal Data Address**: The requested register address doesn't exist on this device. This is the most diagnostic exception for register batch problems. If a batch that spans a gap in the device's register map produces this exception, split the batch into two separate reads covering the contiguous ranges.
+**Exception 0x02, Illegal Data Address**: The requested register address doesn't exist on this device. This is the most diagnostic exception for register batch problems. If a batch that spans a gap in the device's register map produces this exception, split the batch into two separate reads covering the contiguous ranges.
 
-**Exception 0x03 — Illegal Data Value**: The value in a write request is outside the range the device accepts. Relevant for write operations; not typically seen on reads.
+**Exception 0x03, Illegal Data Value**: The value in a write request is outside the range the device accepts. Relevant for write operations; not typically seen on reads.
 
-**Exception 0x04 — Device Failure**: The device received and understood the request but encountered an internal error. This is a device-side problem, not a communication problem. Persistent 0x04 responses on a specific register range warrant checking the device's own diagnostics.
+**Exception 0x04, Device Failure**: The device received and understood the request but encountered an internal error. This is a device-side problem, not a communication problem. Persistent 0x04 responses on a specific register range warrant checking the device's own diagnostics.
 
-**Exception 0x06 — Device Busy**: The device received the request but is temporarily unable to process it. Consistent 0x06 responses mean you're polling faster than the device can handle. Reduce the poll rate for that device or increase the inter-request delay.
+**Exception 0x06, Device Busy**: The device received the request but is temporarily unable to process it. Consistent 0x06 responses mean you're polling faster than the device can handle. Reduce the poll rate for that device or increase the inter-request delay.
 
 Log exception codes as a separate field alongside transaction success/failure. A poll list generating steady 0x02 responses on one device and steady 0x06 on another has two different problems requiring two different fixes.
 
@@ -180,4 +180,4 @@ What keeps a Modbus installation stable for years is mostly mundane: a poll list
 
 If you've worked through both parts and the installation is still misbehaving, you're likely past what configuration review can resolve. Power quality on the RS-485 segment, a device firmware bug producing malformed responses on specific register ranges, or a network infrastructure change that introduced unexpected latency: these are real causes that look like everything else until you rule everything else out. A [protocol capture](https://en.wikipedia.org/wiki/Packet_analyzer) on the wire during an active failure event will tell you more in twenty minutes than another hour of configuration review. At that point, that's where to start.
 
-For a guide to connecting Modbus PLCs — alongside OPC UA, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
+For a guide to connecting Modbus PLCs, alongside OPC UA, EtherNet/IP, and Siemens S7, to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

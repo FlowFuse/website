@@ -12,7 +12,7 @@ tags:
 cta:
   type: contact
   title: Connect TwinCAT to the Rest of Your Stack
-  description: FlowFuse makes it simple to take live PLC data further — dashboards, databases, ERP, cloud platforms, and alerts, all without custom integration code.
+  description: FlowFuse makes it simple to take live PLC data further, dashboards, databases, ERP, cloud platforms, and alerts, all without custom integration code.
 meta:
   howto:
     name: "How to Connect to Beckhoff TwinCAT Using ADS"
@@ -73,7 +73,7 @@ Before you begin, make sure you have the following in place:
 - Port 48898 open between the two devices
 - [Symbol creation](#enable-symbol-creation) enabled on PlcTask so variables are accessible by name over ADS
 - PLC logged in and deployed on port 851
-- PLC in Run mode — the TwinCAT system tray icon must be green
+- PLC in Run mode, the TwinCAT system tray icon must be green
 - Symbol paths of the variables you want to read or write, available from whoever wrote the PLC program
 
 > If you don't have a real PLC available and want to follow along with a test setup, see
@@ -102,7 +102,7 @@ Before adding the route you need two pieces of information:
 
 For example if your FlowFuse device IP is `10.68.82.101`, its AMS Net ID is `10.68.82.101.1.1`.
 
-> **Important:** Your FlowFuse edge device must be on the same network as the interface TwinCAT's AMS Net ID is bound to. TwinCAT binds its AMS Net ID to a specific network interface on startup. If your machine has multiple network interfaces, confirm which IP the AMS Net ID uses — you can find it by right clicking the TwinCAT tray icon and selecting **About TwinCAT System**. Your FlowFuse device must be reachable on that same network, otherwise the ADS handshake will fail even if port 48898 is open.
+> **Important:** Your FlowFuse edge device must be on the same network as the interface TwinCAT's AMS Net ID is bound to. TwinCAT binds its AMS Net ID to a specific network interface on startup. If your machine has multiple network interfaces, confirm which IP the AMS Net ID uses, you can find it by right clicking the TwinCAT tray icon and selecting **About TwinCAT System**. Your FlowFuse device must be reachable on that same network, otherwise the ADS handshake will fail even if port 48898 is open.
 
 **Edit StaticRoutes.xml:**
 
@@ -225,7 +225,7 @@ Polling on a fixed timer works but is inefficient. For live data the better appr
 1. Drag an **ADS - Subscribe Value** node onto the canvas
 2. Double click it to configure
 3. Select your TwinCAT connection from the **Connection** dropdown
-4. Set the **Variable name** to the full symbol path of the variable you want to monitor. If you are following along with the test PLC, use `MAIN.motorRunning` — it toggles roughly once per second so you will see true and false values arriving in the debug panel without being overwhelmed.
+4. Set the **Variable name** to the full symbol path of the variable you want to monitor. If you are following along with the test PLC, use `MAIN.motorRunning`, it toggles roughly once per second so you will see true and false values arriving in the debug panel without being overwhelmed.
 5. Set the **Subscription mode** to **On Change**. This tells the TwinCAT runtime to notify FlowFuse only when the variable value has actually changed, rather than pushing the value on every cycle regardless of whether it changed. If you need a value delivered at a fixed interval even when unchanged, use **Cyclic** instead.
 6. Set the **Cycle time** to `100` milliseconds. This is how frequently TwinCAT checks for changes on its side.
 
@@ -251,14 +251,14 @@ Writing back to the PLC closes the loop. This is useful for sending setpoints, c
 2. Double click it to configure
 3. Select your TwinCAT connection
 4. Set the **Variable name** to the full symbol path of the variable you want to write to. If you are following along with the test PLC, use `MAIN.setpoint`.
-5. Leave **Automatically fill missing properties (autoFill)** unchecked. This setting only applies when writing complex types such as structs or function blocks — it reads the current value from the PLC first and merges your changes on top so unspecified fields are not zeroed out. For a simple variable like `MAIN.setpoint` it has no effect.
+5. Leave **Automatically fill missing properties (autoFill)** unchecked. This setting only applies when writing complex types such as structs or function blocks, it reads the current value from the PLC first and merges your changes on top so unspecified fields are not zeroed out. For a simple variable like `MAIN.setpoint` it has no effect.
 
 ![ADS Write Value node configuration showing variable name set to MAIN.setpoint with autoFill unchecked](./images/ads-write.png)
 
 6. Click **Done**
 
 7. Drag an **inject** node onto the canvas
-8. Double click it and set the payload type to match the type of your PLC variable. The payload type must match what the PLC expects — a **Number** for INT or REAL, a **boolean** for BOOL, a **string** for STRING, and so on. If you are following along with the test PLC, `setpoint` is declared as INT so set the payload type to **Number**.
+8. Double click it and set the payload type to match the type of your PLC variable. The payload type must match what the PLC expects, a **Number** for INT or REAL, a **boolean** for BOOL, a **string** for STRING, and so on. If you are following along with the test PLC, `setpoint` is declared as INT so set the payload type to **Number**.
 9. Click **Done**
 
 10. Connect the inject node output to the write node input
@@ -294,7 +294,7 @@ The FlowFuse device IP is missing from `StaticRoutes.xml` or the TwinCAT router 
 Port 48898 is blocked on the TwinCAT machine firewall or the two devices are not on the same network. Confirm the firewall rule is in place and test reachability with `nc -zv <twincat-ip> 48898` from your FlowFuse device.
 
 - **PLC variables not updating**
-The PLC is not in Run mode. The TwinCAT system tray icon must be green. A blue icon means the runtime is stopped — right click the tray icon and select **Restart TwinCAT (Run Mode)**.
+The PLC is not in Run mode. The TwinCAT system tray icon must be green. A blue icon means the runtime is stopped, right click the tray icon and select **Restart TwinCAT (Run Mode)**.
 
 ## Setting Up a Test PLC
 

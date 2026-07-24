@@ -12,7 +12,7 @@ tags:
 cta:
   type: demo
   title: See How FlowFuse Catches Faults Before They Fail
-  description: Book a demo and see how FlowFuse brings sensor ingestion, AI inference, and real-time alerting together on the factory floor — no separate ML infrastructure required
+  description: Book a demo and see how FlowFuse brings sensor ingestion, AI inference, and real-time alerting together on the factory floor, no separate ML infrastructure required
 meta:
   howto:
     name: "How to Build an AI Vibration Anomaly Detector for Industrial Motors"
@@ -514,7 +514,7 @@ if (!context.get('initialized')) {
     context.set('initialized', true);
 }
 
-// Generic output key lookup — works regardless of tensor name
+// Generic output key lookup, works regardless of tensor name
 const outputKey = Object.keys(msg.payload)[0];
 const reconstructed = msg.payload[outputKey].cpuData;
 

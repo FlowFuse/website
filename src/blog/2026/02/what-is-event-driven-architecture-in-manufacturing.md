@@ -106,21 +106,21 @@ The factories that fail treat this as infrastructure. The ones that succeed pick
 
 ## Sources & References
 
-- APIPark — *Moving Beyond API Polling to Asynchronous Architectures*
+- APIPark, *Moving Beyond API Polling to Asynchronous Architectures*
   [https://apipark.com/technews/TbhGSEzF.html](https://apipark.com/technews/TbhGSEzF.html)
-- DZone — *Webhooks vs. Polling: You’re Better Than This*
+- DZone, *Webhooks vs. Polling: You’re Better Than This*
   [https://dzone.com/articles/webhooks-vs-polling-youre-better-than-this-1](https://dzone.com/articles/webhooks-vs-polling-youre-better-than-this-1)
-- Insane Cyber — *The Real Cost of Industrial Downtime*
+- Insane Cyber, *The Real Cost of Industrial Downtime*
   [https://insanecyber.com/real-cost-industrial-downtime/](https://insanecyber.com/real-cost-industrial-downtime/)
-- StackSync — *Why Integration Complexity Grows Exponentially*
+- StackSync, *Why Integration Complexity Grows Exponentially*
   [https://www.stacksync.com/blog/integration-complexity-growth](https://www.stacksync.com/blog/integration-complexity-growth)
-- Siemens — *The Cost of Downtime in Manufacturing*
+- Siemens, *The Cost of Downtime in Manufacturing*
   [https://www.siemens.com/global/en/products/services/industry-operations-services/digital-enterprise-services/manufacturing-operations-management/manufacturing-intelligence/downtime-cost.html](https://www.siemens.com/global/en/products/services/industry-operations-services/digital-enterprise-services/manufacturing-operations-management/manufacturing-intelligence/downtime-cost.html)
-- Rockwell Automation — *The True Cost of Downtime*
+- Rockwell Automation, *The True Cost of Downtime*
   [https://www.rockwellautomation.com/en-us/company/news/blogs/the-cost-of-downtime.html](https://www.rockwellautomation.com/en-us/company/news/blogs/the-cost-of-downtime.html)
-- American Society for Quality (ASQ) — *Cost of Quality and the 1-10-100 Rule*
+- American Society for Quality (ASQ), *Cost of Quality and the 1-10-100 Rule*
   [https://asq.org/quality-resources/cost-of-quality](https://asq.org/quality-resources/cost-of-quality)
-- Gartner — *Manufacturing ERP Implementation Timelines*
+- Gartner, *Manufacturing ERP Implementation Timelines*
   [https://www.gartner.com/en/documents/manufacturing-erp-implementation](https://www.gartner.com/en/documents/manufacturing-erp-implementation)
-- International Journal of Science and Advanced Technology (IJSAT) — *Event-Driven Manufacturing Automation Systems*
+- International Journal of Science and Advanced Technology (IJSAT), *Event-Driven Manufacturing Automation Systems*
   [https://www.ijsat.org/papers/2025/1/2907.pdf](https://www.ijsat.org/papers/2025/1/2907.pdf)

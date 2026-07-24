@@ -78,7 +78,7 @@ Common Odoo models relevant to manufacturing include:
 
 When you use an `odoo-xmlrpc` node in FlowFuse, you'll always need to specify which `model` you want to work with. If you're unsure of a specific model's name, you can often find it by enabling "Developer Mode" in your Odoo instance and hovering over fields in the Odoo interface.
 
-Let’s get started. When explaining each operation, I will demonstrate it using different models such as `product.product` or `mrp.production`. This is just for demonstration and your understanding. You can perform these operations in the same way with other models—just make sure to pass the correct parameters according to the model and its data.
+Let’s get started. When explaining each operation, I will demonstrate it using different models such as `product.product` or `mrp.production`. This is just for demonstration and your understanding. You can perform these operations in the same way with other models, just make sure to pass the correct parameters according to the model and its data.
 
 ### Reading Data from Odoo
 
@@ -263,7 +263,7 @@ Here’s an example FlowFuse flow to find products with list price (more than 10
 
 ## Final thought
 
-So, we've talked about how those manual data methods—paper, spreadsheets—can really slow things down, cause mistakes, and cost money in your factory. And let's be honest, many digital fixes out there just add more complexity or demand specialized coding skills that your team might not have.
+So, we've talked about how those manual data methods, paper, spreadsheets, can really slow things down, cause mistakes, and cost money in your factory. And let's be honest, many digital fixes out there just add more complexity or demand specialized coding skills that your team might not have.
 
 This is where FlowFuse comes in. FlowFuse is a platform made for factory floors that runs on your devices right there. It connects to all your machines, old or new, and even your ERP systems like Odoo. FlowFuse collects, cleans, and moves your data. It helps your engineers, who know your operations best, build industrial applications and solutions using simple drag-and-drop actions. This means they can link your factory data directly to your ERP, getting rid of all those manual steps and saving your IT team time and money.
 
