@@ -25,7 +25,7 @@ meta:
         text: "Create the Home, Instructions, and Report Issue pages and their groups, so each widget added later has a defined place to live."
         url: "setting-up-the-dashboard-layout"
       - name: "Enable authentication and seed the operator into context"
-        text: "Turn on FlowFuse User Authentication, install the Dashboard user addon, greet the logged-in operator in the app bar, and copy their user object into persistent global context on connect so any node can look up who's active."
+        text: "Turn on FlowFuse User Authentication, install the Dashboard user addon, greet the logged-in operator in the app bar, and identify the current operator from per-session client data on every message."
         url: "enabling-flowfuse-user-authentication"
       - name: "Build the Home page"
         text: "Fetch and display the station name, live work order stats, and the operator's own work orders, split into a current order card and an Up Next queue sorted by priority."
@@ -67,7 +67,7 @@ But shared stations raise a question paper never had: who's using it? Without a 
 
 In this article, we'll build a digital work instructions app in FlowFuse: an operator interface with work orders, step-by-step assembly guidance, defect reporting, and traceability via authentication.
 
-> **Note:** Before trying the demo, [sign up](https://app.flowfuse.com/account/create) for a FlowFuse account and start a free trial. The demo uses FlowFuse User Authentication, so you'll need to sign in to access the dashboard and see your personalized work orders and saved progress.once logged in wait for few seconds so simulation flow get your user and generate simulated workorders assigned to you 
+> **Note:** Before trying the demo, [sign up](https://app.flowfuse.com/account/create) for a FlowFuse account and start a free trial. The demo uses FlowFuse User Authentication, so you'll need to sign in to access the dashboard and see your personalized work orders and saved progress. Once logged in, wait a few seconds for the simulation flow to pick up your user and generate simulated work orders assigned to you.
 
 You can interact with the live demo here: <a href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Digital Work Instruction Dashboard Demo</a>.
 
@@ -91,6 +91,11 @@ Before we build anything, let's walk through what the app does and how the piece
 3. **Report Issue.** Operators can quickly log defects by selecting the issue type, severity, affected part, and description, with the issue automatically linked to the current work order.
 
 The logged-in username acts as the application's lookup key. It retrieves the operator's assigned work orders and stores their active work order and current step, allowing them to resume exactly where they left off, even on shared production stations.
+
+There are two different questions the app has to answer, and it's worth keeping them separate from the start:
+
+- **"Where is this operator's data stored?"** — under a persistent global key named after their username, e.g. `global.get('operator1', 'persistent')`. This is a durable, shared store, and it's meant to be: it's what lets progress survive reloads and reconnects.
+- **"Who is acting right now, in this message?"** — this must be read fresh from the message that triggered the flow (`msg._client.user`), not from a single shared "current user" variable. A shared variable has only one value at a time; the moment a second operator's browser connects, it overwrites the first operator's identity for the whole running flow. We'll come back to this the moment it becomes relevant, but it's the one rule that makes every "per operator" claim in this tutorial actually true when two people are logged in at once.
 
 ## Importing the Simulated Flow
 
@@ -148,6 +153,8 @@ Because this tutorial also interacts with the FlowFuse API, you'll need to creat
 5. Enter a name for the token and choose an expiration date.
 6. Click **Create**, then copy the generated token and save it somewhere secure. You will need it later in the tutorial.
 
+> **Security note:** Every `http request` node in this tutorial authenticates with this token, and for the sake of a self-contained tutorial we reference it as a plain Bearer token on each node. Don't leave it hardcoded that way in a real deployment. Store it as an environment variable on your FlowFuse instance and reference that variable from each `http request` node's auth config instead, so the raw token never sits in exported flow JSON or version control.
+
 ## Installing the User Addon
 
 Authentication identifies the user, but your flows also need access to that information. The FlowFuse User Addon attaches the authenticated user's details to every Dashboard message.
@@ -176,6 +183,8 @@ The same information is available in a **ui-template** using `setup.socketio.aut
 
 ![Screenshot: FF Auth settings showing Include Client Data and Accept Client Data enabled for Dashboard nodes](./images/client-data-tab-dashboard.png)
 *Enable **Include Client Data** and **Accept Client Data** to make Dashboard interactions user-specific.*
+
+This is the setting that matters most in this tutorial, and it's worth being explicit about why. With **Accept Client Data** enabled, every message a widget sends carries `msg._client.user` for the session that sent it. That's a per-session identity attached directly to the message, as opposed to a single shared variable that every session would otherwise read and overwrite. We'll use `msg._client.user` as the source of truth for "who is acting right now" in every function node from here on, rather than a global variable.
 
 ## Greeting the Logged-In Operator
 
@@ -214,23 +223,34 @@ export default {
 </style>
 ```
 
-Deploy and open the dashboard. The signed-in operator's name and avatar appear in the top-right corner. You don't redeploy when a different operator logs in, the addon fetches each user's data at runtime, so everyone sees their own.
+Deploy and open the dashboard. The signed-in operator's name and avatar appear in the top-right corner. You don't redeploy when a different operator logs in, the addon fetches each user's data at runtime, so everyone sees their own. This widget reads identity straight off the browser's own socket session (`setup.socketio.auth.user`), so it's already per-operator by construction, no shared state involved.
 
 ![Screenshot: the dashboard app bar showing the logged-in operator's avatar and greeting](./images/logged-in-user-app-bar.png) *The signed-in operator greeted by name and avatar in the app bar, rendered from a single UI-scoped widget.*
 
 ## Seeding the Operator into Context on Login
 
-Greeting the operator is the visible half. The other half is making their identity available to every function node in the flow, not just the widgets. The move: the moment a client connects, copy the user object into persistent global context under the key `user`. From then on, any node reads `global.get('user', 'persistent')` to find who's active, without waiting for a specific widget to fire.
+Greeting the operator is the visible half. The other half is making their identity available to every function node in the flow, not just the widgets.
+
+It's tempting to reach for a single shared variable here, something like `global.set('user', msg._client.user, 'persistent')` on connect, then `global.get('user', 'persistent')` everywhere else. **Don't build it that way.** Global context is one shared store for the whole running flow, not one per browser session. If two operators are logged in at the same station, or at different stations on the same instance, at the same time, whichever one connects last overwrites that key for everyone. Every function node reading it afterwards would attribute the wrong operator's actions to the wrong person, exactly the bug authentication was supposed to prevent.
+
+The move that actually works: keep using each operator's username as a durable storage key (`global.get(username, 'persistent')`, `global.set(username, ..., 'persistent')`) for their saved state, that's a fine and necessary use of global context. But for "who is acting right now," read `msg._client.user` off the message itself, since it's tagged per-session. The one place a shared global is still useful is as a bootstrap fallback: a value to fall back on for the very first tick of a page, before any client-tagged message has round-tripped through the flow.
 
 1. Add a `ui-event` node, name it "Client connected", and select the "My Dashboard" ui-base. It fires the moment a browser session connects to the dashboard.
 2. Add a `change` node and name it "Seed globals". Add these `set` rules, in order:
-   - Set `user` (global, persistent) to `msg._client.user`. This is the line that makes the logged-in operator available everywhere.
+   - Set `user` (global, persistent) to `msg._client.user`. This is a **bootstrap fallback only**, used before a client-tagged message exists to read from. It is not the source of truth for "current operator" anywhere else in this app.
    - Set `StationContext.stationName` (global) to your station's name, e.g. `Wheel Assembly Station 12`. The Home page reads this to show the operator where they are.
    - Set `StationContext.stationId` (global, persistent) to this station's ID, e.g. `ST12`. The work-order and stats requests read this to fetch only what belongs to this station.
    - Set `Instructions` (global, persistent) to the instruction set for this station's operation, the step list, images, target times, and checklists. Caching it in context means the Instructions page loads instantly instead of re-fetching on every visit.
 3. Wire "Client connected" into "Seed globals".
 
-That one `set user` rule is the hinge of the whole app. From here on, "the current operator" is always a single `global.get` away.
+From here on, every function node that needs to know who's acting will use this helper pattern: prefer `msg._client?.user?.username`, and only fall back to the bootstrap global if `_client` isn't present on that particular message.
+
+```javascript
+// Shared pattern used throughout the rest of this tutorial:
+// per-session identity first, shared global only as a bootstrap fallback.
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
+```
 
 ## Showing the Station and Stats on the Home Page
 
@@ -248,11 +268,12 @@ The Home page shows the current station and a quick summary of work order statis
 
 ```javascript
 const StationContext = global.get('StationContext', 'persistent');
-const user = global.get('user', 'persistent');
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
 
 const params = new URLSearchParams();
 params.set('stationId', StationContext.stationId);
-if (user?.username) params.set('username', user.username);
+if (username) params.set('username', username);
 
 msg.url = `https://your-instance.flowfuse.cloud/workorders/stats?${params}`;
 msg.method = "GET";
@@ -264,7 +285,7 @@ return msg;
 5. Add a **ui-template** named **Stats Cards** in the **Stats** group and paste in the template below.
 6. Wire the nodes: **Page changed → Build /stats request URL → HTTP Request → Stats Cards**.
 
-The request includes the logged-in username, so the **Assigned to me** count is personalized for each operator.
+The request includes the logged-in username, so the **Assigned to me** count is personalized for each operator, and because `ui-control` is client-data-aware, `msg._client.user` reflects whichever operator's browser triggered the page change.
 
 ![Placeholder: Stats Cards widget rendered on the Home page](./images/stats-and-station.png)
 *The Home page displays station statistics, including total, assigned to me, completed, and defected work orders.*
@@ -279,10 +300,10 @@ Now for the main part of the Home page: fetching and displaying the operator's w
 
 ```javascript id="8m19sv"
 const StationContext = global.get('StationContext', 'persistent');
-const user = global.get('user', 'persistent');
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
 
 const stationId = StationContext?.stationId;
-const username = user?.username;
 
 const params = new URLSearchParams();
 params.set('stationId', stationId);
@@ -297,11 +318,11 @@ return msg;
 
 4. Connect the **http request** node to a **link out** node named **Work Orders Out**. The widgets that display the work orders will connect to this node using their own **link in** nodes, allowing the same API response to be reused without stretching wires across the canvas.
 
-The username in the request is what makes the dashboard personal. Two operators can open the same page at the same station, yet each receives only the work orders assigned to them.
+The username in the request is what makes the dashboard personal. Two operators can open the same page at the same station, yet each receives only the work orders assigned to them, because each one's `ui-control` event carries their own `_client.user`, not a shared one.
 
 ## Splitting the Current Order From the Queue
 
-The Home page shows one work order front and centre and the rest as a queue. A function splits the list, sorting by priority so the most urgent job is the one the operator sees first.
+The Home page shows one work order front and centre and the rest as a queue. A function splits the list, sorting by priority so the most urgent job is the one the operator sees first. This function also records which work order the operator is about to start, that's the record the Instructions page, the Complete Operation flow, and the Report Issue flow will all read back later, so it has to be attributed to the right operator from the start.
 
 1. Add a `link in` node named "link in 6" and point it at the "work orders out" link.
 2. Add a `function` node named "split current vs queue (by priority)" with **2 outputs**:
@@ -309,16 +330,30 @@ The Home page shows one work order front and centre and the rest as a queue. A f
 ```javascript
 const orders = Array.isArray(msg.payload) ? msg.payload : [];
 
-// Sort by priority (High -> Normal -> Low). API order breaks ties.
-const prio = { critical: 0, urgent: 0, high: 1, medium: 2, normal: 3, low: 4 };
+// Sort by priority (Critical/Urgent -> High -> Medium -> Normal -> Low)
+const priorityOrder = { critical: 0, urgent: 0, high: 1, medium: 2, normal: 3, low: 4 };
 const sorted = [...orders].sort(
-    (a, b) => (prio[(a.priority || '').toLowerCase()] ?? 5)
-            - (prio[(b.priority || '').toLowerCase()] ?? 5)
+    (a, b) => (priorityOrder[(a.priority || '').toLowerCase()] ?? 5)
+            - (priorityOrder[(b.priority || '').toLowerCase()] ?? 5)
 );
 
+const currentWorkOrder = sorted[0] || null;
+
+// Record which work order the current operator is about to see/start.
+// Identity comes from the triggering message's client data, not a shared global,
+// so this is always attributed to the operator whose browser fetched this list.
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
+
+if (username && currentWorkOrder) {
+    const userState = global.get(username, 'persistent') || {};
+    userState.workOrderId = currentWorkOrder.workOrderId;
+    global.set(username, userState, 'persistent');
+}
+
 return [
-    { payload: sorted[0] || null },  // output 1: current order (for card)
-    { payload: sorted.slice(1) }     // output 2: remaining orders (queue)
+    { payload: currentWorkOrder },  // output 1: current order (for card)
+    { payload: sorted.slice(1) }    // output 2: remaining orders (queue)
 ];
 ```
 
@@ -342,7 +377,7 @@ return [
 
 6. From the card, wire a `change` node named "go to Instructions" that sets `payload` (msg) to `Instructions`, then into a `ui-control` node with its event set to **change** to switch the page.
 
-When the operator taps **Start Work Order**, the card sends them to the Instructions page.
+When the operator taps **Start Work Order**, the card sends them to the Instructions page. Because the split function already saved this operator's `workOrderId` under their own username, the Instructions page, Complete Operation, and Report Issue flows can all look it back up correctly, even if another operator is doing the exact same thing on another screen at the same moment.
 
 ## Loading the Cached Instruction Set
 
@@ -354,7 +389,7 @@ The Instructions page needs the steps to show. Because the instruction set was c
 
 ## Remembering Each Operator's Step
 
-This is something paper can't do and shared screens get wrong. If an operator completes the first two steps of a five-step wheel installation and returns later, they should resume at **step 3**, not start again at **step 1**. We achieve this by saving their progress against their username.
+This is something paper can't do and shared screens get wrong. If an operator completes the first two steps of a five-step wheel installation and returns later, they should resume at **step 3**, not start again at **step 1**. We achieve this by saving their progress against their username, the one they were identified as when the step was saved, not whichever username happens to be sitting in a shared global at read time.
 
 The instruction widget emits two housekeeping actions: `save_step` whenever the operator moves between steps, and `load_step` when the page opens and needs to know where to resume. One function node handles both.
 
@@ -373,9 +408,17 @@ The instruction widget emits two housekeeping actions: `save_step` whenever the 
 2. Add a `function` node named "Track step (save/load per user)":
 
 ```javascript
+// Remembers the current step per user for the active work order.
+// Handles two actions from the widget:
+//   save_step - persist the step the operator is on
+//   load_step - reply with the saved step so the widget can resume
 const p = msg.payload || {};
 
-const username = global.get("user", "persistent")?.username;
+// Identity comes from this message's own client data first. This is what
+// keeps two operators using the widget at the same time from reading or
+// writing each other's progress.
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
 if (!username) return null;
 
 // Read the user's saved state
@@ -404,7 +447,7 @@ switch (p.action) {
 
 3. Wire the "Work Instruction Widget" output into this node, and wire the node's output back into the widget so the `load_step` reply can jump it to the saved step.
 
-Look at the store key: `global.get(username, ...)` and `global.set(username, ...)`. The operator's own username is the storage key, so two operators at the same station never overwrite each other, their progress lives under different keys.
+Look at the store key: `global.get(username, ...)` and `global.set(username, ...)`. The operator's own username is the storage key, so two operators at the same station never overwrite each other, their progress lives under different keys, and because that key is now sourced from `msg._client.user` rather than a shared global, it's always the username of whoever's browser actually sent this particular `save_step` or `load_step` message.
 
 Deploy, walk halfway through an operation, then reload the page. It reopens where you left off, because the step is filed under your name.
 
@@ -417,8 +460,8 @@ When the operator completes the final instruction, the widget sends `{ action: "
 3. Add a **function** node named **Build Complete Payload** and paste in the following code.
 
 ```javascript
-const user = global.get('user', 'persistent');
-const username = user?.username;
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
 
 if (!username) {
     node.warn('No logged-in user found — cannot complete operation');
@@ -436,7 +479,7 @@ return msg;
 
 5. Add a **change** node that sets `msg.payload` to `Home`, then connect it to a **link out** node. This will be used in the next step to reset the operator's state and navigate the operator back to the Home page.
 
-Because the payload is built from the logged-in operator's stored state, the API always completes the correct work order, even when multiple operators are using the dashboard at the same time.
+Because the payload is built from the logged-in operator's stored state, keyed off that same operator's per-message identity, the API always completes the correct work order, even when multiple operators are using the dashboard at the same time.
 
 ## Reporting a Defect as the Logged-In Operator
 
@@ -470,8 +513,8 @@ The **Report Issue** button sends `{ action: "Report Issue" }`. Use that action 
 ```javascript id="vbv4m6"
 const p = msg.payload || {};
 
-const user = global.get('user', 'persistent');
-const username = user?.username;
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
 
 if (!username) {
     node.warn('No logged-in user found — cannot report defect');
@@ -509,7 +552,7 @@ return msg;
 ![Screenshot: Completed Report Issue page showing the defect reporting form and Back to Work Instructions button](./images/report-issue.png)
 *The completed Report Issue page where operators can submit a defect or return to the work instructions.*
 
-The work order ID is retrieved from the logged-in operator's stored state, ensuring every defect report is associated with the correct work order.
+The work order ID is retrieved from the logged-in operator's stored state, ensuring every defect report is associated with the correct work order, and the lookup key for that state again comes from this message's own client data, not a value that could have been overwritten by someone else's login in the meantime.
 
 ## Clearing State When Work Ends
 
@@ -520,8 +563,10 @@ When an operation is completed or a defect is reported, clear the operator's sav
 3. Add a **function** node named **Clear User Step State** and paste in the following code.
 
 ```javascript id="6ej1v5"
-const user = global.get('user', 'persistent');
-const username = user?.username;
+const username = msg._client?.user?.username
+    || global.get('user', 'persistent')?.username;
+
+if (!username) return null;
 
 global.set(username, {}, 'persistent');
 
@@ -531,12 +576,12 @@ return msg;
 
 4. Connect the function node to a **ui-control** node to navigate the operator back to the **Home** page.
 
-Because the state is stored and cleared by username, resetting one operator's progress never affects anyone else.
+Because the state is stored and cleared by username, and that username is read from the message that carried the successful API response rather than a shared global, resetting one operator's progress never affects anyone else, even if a second operator has logged in on another screen in between.
 
 Deploy the flow and open the dashboard. After signing in, operators see only the work orders assigned to them. If they leave and return, they resume from the same instruction. Once they complete the operation or report a defect, their progress is cleared and they're returned to the Home page, ready for the next work order.
 
 ## Where to Go Next
 
-You've built a personalized digital work instructions application that knows who the operator is, what work they're assigned, and where they left off. Replacing the simulator with a real ERP or MES is simply a matter of pointing the HTTP Request nodes to your production `/workorders`, `/workorders/complete`, and `/workorders/defect` endpoints.
+You've built a personalized digital work instructions application that knows who the operator is, what work they're assigned, and where they left off, correctly, even when several operators are on the dashboard at once. Replacing the simulator with a real ERP or MES is simply a matter of pointing the HTTP Request nodes to your production `/workorders`, `/workorders/complete`, and `/workorders/defect` endpoints.
 
 From there, you can extend the application with production history, quality tracking, role-based experiences, and OEE dashboards—all powered by the same operator identity. If you're looking to build a complete connected shop floor, To see how FlowFuse fits into modern automotive manufacturing, explore the [Automotive solutions page](/industries/automotive/).
