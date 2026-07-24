@@ -19,6 +19,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -41,6 +43,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -64,6 +68,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -89,6 +95,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -113,6 +121,11 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
+            tag: "Beta"
+            tagPrefix: "During Insights Mode"
+            note: "Available during beta of Insights Mode"
           pro:
             value: null
             tag: "Beta"
@@ -138,6 +151,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -159,6 +174,9 @@ sections:
             value: true
             note: "Starts with 20, shared with edge device count"
         selfHosted:
+          openSource:
+            value: "5"
+            note: "Includes 5 hosted instances, shared with edge device count"
           pro:
             value: true
             note: "Includes 5 hosted instances, shared with edge device count"
@@ -180,6 +198,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -203,6 +223,9 @@ sections:
             value: true
             note: "Starts with 20, shared with hosted instance count"
         selfHosted:
+          openSource:
+            value: "5"
+            note: "Includes 5 edge devices, shared with hosted instance count"
           pro:
             value: true
             note: "Shared with hosted instance count"
@@ -225,6 +248,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -245,6 +270,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -265,6 +292,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -284,6 +313,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -303,6 +334,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -322,6 +355,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -341,6 +376,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -360,6 +397,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -407,6 +446,8 @@ sections:
           enterprise:
             value: "Unlimited"
         selfHosted:
+          openSource:
+            value: "Unlimited"
           pro:
             value: "Unlimited"
           enterprise:
@@ -431,6 +472,8 @@ sections:
             value: true
             note: "Includes 20 clients. Additional clients can be purchased."
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -451,6 +494,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -470,6 +515,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -489,6 +536,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -510,6 +559,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -531,6 +582,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -550,6 +603,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -571,6 +626,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -590,6 +647,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -609,6 +668,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -628,6 +689,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -647,6 +710,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -667,6 +732,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -689,6 +756,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -708,6 +777,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -727,6 +798,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -746,6 +819,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -768,6 +843,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -788,6 +865,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -808,6 +887,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -829,6 +910,9 @@ sections:
             value: list
             options: ["None", "HTTP Basic Auth", "FlowFuse Authentication"]
         selfHosted:
+          openSource:
+            value: list
+            options: ["None", "HTTP Basic Auth"]
           pro:
             value: list
             options: ["None", "HTTP Basic Auth"]
@@ -850,6 +934,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -869,6 +955,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -889,6 +977,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -908,6 +998,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -927,6 +1019,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -944,6 +1038,8 @@ sections:
         showOnPricing: false
         tags: [self-hosted]
         selfHosted:
+          openSource:
+            value: "5"
           pro:
             value: "Unlimited"
           enterprise:
@@ -963,6 +1059,8 @@ sections:
           enterprise:
             value: "Unlimited"
         selfHosted:
+          openSource:
+            value: "5"
           pro:
             value: "20"
           enterprise:
@@ -982,6 +1080,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -1001,6 +1101,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: true
           pro:
             value: true
           enterprise:
@@ -1020,6 +1122,8 @@ sections:
           enterprise:
             value: true
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: null
           enterprise:
@@ -1034,6 +1138,8 @@ sections:
         showOnPricing: true
         tags: [self-hosted]
         selfHosted:
+          openSource:
+            value: null
           pro:
             value: true
           enterprise:
@@ -1048,6 +1154,9 @@ buttons:
       url: /pricing/request-quote/
       onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
   selfHosted:
+    - cta: INSTALL NOW
+      url: https://flowfuse.com/docs/install/introduction/
+      onclick: "capture('cta-install', {'position': 'secondary'}, {'plan': 'sh-open-source'})"
     - cta: CONTACT US
       url: /contact-us
       onclick: "capture('cta-contact-us', {'position': 'secondary'}, {'plan': 'sh-team'})"
