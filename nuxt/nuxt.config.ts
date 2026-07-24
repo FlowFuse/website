@@ -17,6 +17,25 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
     return routes
 }
 
+// Collect blog listing routes for SSG prerendering (/blog/, /blog/2/, …)
+function collectBlogRoutes(): string[] {
+    const blogDir = join(__dirname, '../src/blog')
+    let count = 0
+    function countMd(dir: string) {
+        for (const file of readdirSync(dir)) {
+            const full = join(dir, file)
+            if (statSync(full).isDirectory()) countMd(full)
+            else if (file.endsWith('.md')) count++
+        }
+    }
+    countMd(blogDir)
+    const pageCount = Math.ceil(count / 19)
+    return [
+        '/blog/',
+        ...Array.from({ length: pageCount - 1 }, (_, i) => `/blog/${i + 2}/`),
+    ]
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -126,6 +145,7 @@ export default defineNuxtConfig({
                 '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                 '/resources/publications/',
                 ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                ...collectBlogRoutes(),
             ],
             crawlLinks: false
         }
@@ -176,6 +196,7 @@ export default defineNuxtConfig({
     vite: {
         optimizeDeps: {
             include: [
+                '@unhead/schema-org/vue',
                 '@vue/devtools-core',
                 '@vue/devtools-kit',
             ],

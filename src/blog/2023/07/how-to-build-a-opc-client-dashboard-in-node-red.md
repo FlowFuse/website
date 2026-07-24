@@ -84,7 +84,7 @@ Several custom nodes are required in order to properly deploy this flow.  For mo
 
 As this is not a production application, no security will be utilized, and it is assumed that the OPC UA Server is running on the same network as the Node-RED OPC Client.
 
-Is it also assumed that the end user of this article has familiarization with dashboards.  There are many dashboard basic guides available on our FlowFuse website, For more infomation go to [Node-RED Dashboard 2.0 guides](/blog/dashboard/). 
+Is it also assumed that the end user of this article has familiarization with dashboards.  There are many dashboard basic guides available on our FlowFuse website, For more infomation go to [Node-RED Dashboard 2.0 guides](/blog/?tag=dashboard). 
 
 ## Install and Deploy the Prosys OPC UA Simulation Server
 
