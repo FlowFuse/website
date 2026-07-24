@@ -22,9 +22,9 @@
             </a>
             {%- endfor -%}
         </div>
-        <a href="/blog/{{ collectionName or '' }}" class="w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1">
-            See all
-            {% include "components/icons/arrow-long-right.svg" %}
+        <a href="/blog/{{ collectionName or '' }}" class="group hover:no-underline w-full text-right flex flex-row items-center justify-end self-end justify-self-end gap-1">
+            <span class="ff-animated-link">See all</span>
+            <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-long-right.svg" %}</span>
         </a>
     </div>
     <div class="w-full my-2 grid grid-cols-1 pb-4">
