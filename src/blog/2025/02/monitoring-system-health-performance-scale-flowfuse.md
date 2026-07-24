@@ -11,7 +11,7 @@ tags:
  - flowfuse
 ---
 
-Edge devices are everywhere, and their numbers are skyrocketing—from 2.7 billion in 2020 to a projected 7.8 billion by 2030, according to [various reports](https://transformainsights.com/news/edge-computing-rapid-growth-iot#:~:text=New%20Transforma%20Insights%20reports%20covering,edge%20capabilities%20in%20IoT%20devices.). As these devices become critical for automation and data processing, monitoring their health is essential to ensure reliability and efficiency.  
+Edge devices are everywhere, and their numbers are skyrocketing, from 2.7 billion in 2020 to a projected 7.8 billion by 2030, according to [various reports](https://transformainsights.com/news/edge-computing-rapid-growth-iot#:~:text=New%20Transforma%20Insights%20reports%20covering,edge%20capabilities%20in%20IoT%20devices.). As these devices become critical for automation and data processing, monitoring their health is essential to ensure reliability and efficiency.  
 
 <!--more-->
 
@@ -152,7 +152,7 @@ _Combined object containing system data such as CPU usage, memory usage, uptime,
 
 To share this data with other Node-RED instances, we use the **Project Out** node, which is available exclusively on FlowFuse. It works similarly to the Node-RED Link nodes, but allows for communication between multiple Instances, and uses MQTT in the background, so also beenfits with topic hierarchies for any communications.
 
-In this Project node, we broadcast the message across all instances in the team using `${FF_DEVICE_NAME}` as the topic—an environment variable automatically created in all FlowFuse instances. 
+In this Project node, we broadcast the message across all instances in the team using `${FF_DEVICE_NAME}` as the topic, an environment variable automatically created in all FlowFuse instances. 
 
 ![Image showing the environment variables of Raspberry Pi devices with their values.](./images/env.png){data-zoomable}
 _Image showing the environment variables of Raspberry Pi devices with their values._

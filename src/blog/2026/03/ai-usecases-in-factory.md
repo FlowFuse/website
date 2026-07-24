@@ -11,7 +11,7 @@ tags:
 - ai
 cta:
   title: "Start With One Use Case. Build From There."
-  description: "Whether it's predictive maintenance, quality inspection, or energy optimization — FlowFuse connects your OT data to AI models without a multi-year transformation."
+  description: "Whether it's predictive maintenance, quality inspection, or energy optimization, FlowFuse connects your OT data to AI models without a multi-year transformation."
 ---
 
 The factory floor wasn't exactly an early adopter of artificial intelligence.
@@ -66,7 +66,7 @@ Most smart factory conversations never get to the building itself. That's a mist
 
 HVAC is one of the largest energy costs in a manufacturing facility and one of the least optimized. A factory's thermal load shifts constantly: which lines are running, what materials are being processed, outdoor temperature, occupancy. Rule-based systems deal with that complexity by setting conservative margins everywhere and leaving them there. It works, but you pay for it on every energy bill.
 
-AI learns the actual behavior of the facility and stops defending against conditions that aren't happening. Yokogawa deployed reinforcement learning for HVAC in its semiconductor plant in Japan. In that facility, cleanroom HVAC accounted for roughly [30 percent of total energy consumption](https://www.isa.org/intech-home/2022/october-2022/features/case-study-ai-based-autonomous-control) — a figure consistent with, though on the lower end of, what's reported across the semiconductor industry. The result was a [3.6 percent reduction](https://my.avnet.com/silica/resources/article/ai-takes-on-growing-role-in-hvac-system-efficiencies/) in total consumption. Modest on paper, significant at scale, and it improves as the model keeps learning.
+AI learns the actual behavior of the facility and stops defending against conditions that aren't happening. Yokogawa deployed reinforcement learning for HVAC in its semiconductor plant in Japan. In that facility, cleanroom HVAC accounted for roughly [30 percent of total energy consumption](https://www.isa.org/intech-home/2022/october-2022/features/case-study-ai-based-autonomous-control), a figure consistent with, though on the lower end of, what's reported across the semiconductor industry. The result was a [3.6 percent reduction](https://my.avnet.com/silica/resources/article/ai-takes-on-growing-role-in-hvac-system-efficiencies/) in total consumption. Modest on paper, significant at scale, and it improves as the model keeps learning.
 
 [DeepMind's data center work](https://deepmind.google/discover/blog/deepmind-ai-reduces-google-data-centre-cooling-bill-by-40/) gets more attention, but that's a controlled, single-purpose environment. A factory is harder. Yokogawa is the more relevant proof of concept.
 

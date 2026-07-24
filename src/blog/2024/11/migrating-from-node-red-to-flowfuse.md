@@ -12,7 +12,7 @@ tags:
 cta:
   type: demo
   title: See How Easy Node-RED Migration Can Be
-  description: FlowFuse handles the infrastructure, security, and scalability so you can focus on building — whether you're running on edge devices or in the cloud.
+  description: FlowFuse handles the infrastructure, security, and scalability so you can focus on building, whether you're running on edge devices or in the cloud.
 ---
 
 Migrating your Node-RED instance to [FlowFuse](/) centralizes management and simplifies deployment. Once migrated, FlowFuse takes care of the infrastructure, security, and scalability, making the process much easier. This allows you to focus on building solutions without worrying about the complexities of self-hosting. Whether you're working with edge devices or want to work on cloud instances, this migration streamlines the management of your IIoT workflows, improving efficiency and scalability.
@@ -43,7 +43,7 @@ Before you start, make sure you have a FlowFuse Account created. Next, consider 
 
 Running Node-RED on an edge device is ideal when your application flow needs direct access to hardware components, such as reading sensors or controlling actuators. This setup allows immediate data processing and control, crucial for applications requiring low latency responses.
 
-On the other hand, if your use case involves monitoring or collecting metrics—such as through MQTT—without needing direct hardware interaction, and you primarily need to transform, contextualize, visualize, or automate repetitive tasks that don't require hardware interaction, a **Cloud Instance** may be more suitable. This option allows you to centralize data collection and processing, making it easier to manage and analyze data from multiple devices.
+On the other hand, if your use case involves monitoring or collecting metrics, such as through MQTT, without needing direct hardware interaction, and you primarily need to transform, contextualize, visualize, or automate repetitive tasks that don't require hardware interaction, a **Cloud Instance** may be more suitable. This option allows you to centralize data collection and processing, making it easier to manage and analyze data from multiple devices.
 
 *Note: The instructions provided in this article also work for [self-hosted](/docs/install/introduction/) FlowFuse environments. Just ensure that when following the steps, you're performing the actions within your self-hosted FlowFuse setup rather than the FlowFuse cloud platform.*
 
@@ -93,7 +93,7 @@ Follow these steps to create a cloud instance:
 
 #### Backing Up System-level Environment Variables
 
-While the snapshot captures flows, credentials, and environment variables at the flow and global level, it does not capture **process environment variables**—those set in the Node-RED `settings.json` file.
+While the snapshot captures flows, credentials, and environment variables at the flow and global level, it does not capture **process environment variables**, those set in the Node-RED `settings.json` file.
 
 To get these variables, you can use the following flow to dump a list of all process environment variables into the debug window:
 
@@ -143,4 +143,4 @@ Setting a device target will ensure that the snapshot will be deployed on all of
 
 ## Conclusion
 
-Migrating from a self-managed Node-RED setup to FlowFuse is simple and offers significant benefits. By transitioning, you’ll reduce operational complexity, enhance security, and improve scalability. FlowFuse handles the infrastructure, so you can focus on building and optimizing your IIoT solutions—whether on edge devices or in the cloud.
+Migrating from a self-managed Node-RED setup to FlowFuse is simple and offers significant benefits. By transitioning, you’ll reduce operational complexity, enhance security, and improve scalability. FlowFuse handles the infrastructure, so you can focus on building and optimizing your IIoT solutions, whether on edge devices or in the cloud.

@@ -191,7 +191,7 @@ With events flowing into the database, the next step is showing them to the oper
 SELECT *,
        EXTRACT(EPOCH FROM start_time) AS start_epoch,
        TO_CHAR(start_time, 'DD Mon YYYY, HH12:MI AM') AS start_time_display,
-       COALESCE(TO_CHAR(end_time, 'DD Mon YYYY, HH12:MI AM'), '—') AS end_time_display,
+       COALESCE(TO_CHAR(end_time, 'DD Mon YYYY, HH12:MI AM'), '-') AS end_time_display,
        COALESCE(reason, 'Not logged') AS reason_display,
        CASE WHEN reason IS NULL THEN true ELSE false END AS needs_review
 FROM downtime_events
@@ -236,10 +236,10 @@ Under five minutes shows green, under thirty shows orange, anything longer shows
 
 10. Add a ui-table node, assign it to the Stoppages group you created earlier, and wire it to the join node. Set up the following columns:
 
-- **Machine** — key `machine_id`, type Text
-- **Start Time** — key `start_time_display`, type Text
-- **End Time** — key `end_time_display`, type Text
-- **Open For** — key `duration_html`, type HTML
+- **Machine**, key `machine_id`, type Text
+- **Start Time**, key `start_time_display`, type Text
+- **End Time**, key `end_time_display`, type Text
+- **Open For**, key `duration_html`, type HTML
 - a button column labeled something like "Close & Log Reason"
 
 The HTML type on Open For is what renders the colored badge instead of showing raw tags. The query also computes `reason_display` and `needs_review`, these aren't shown as columns here, but stay available in the row data if you want to add them to the table later.
@@ -255,7 +255,7 @@ _Column setup for the Stoppages table, including the HTML type on Open For._
 <template>
   <v-dialog v-model="show" max-width="420">
     <v-card prepend-icon="mdi-alert-circle-outline" title="Record Downtime Reason">
-      <v-card-subtitle>{{ machine_id }} — Stoppage #{{ id_value }}</v-card-subtitle>
+      <v-card-subtitle>{{ machine_id }}, Stoppage #{{ id_value }}</v-card-subtitle>
       <v-card-text>
         <v-select v-model="reason" :items="reasonOptions" label="Reason*" required></v-select>
         <v-textarea v-model="comments" label="Comments (optional)" rows="2"></v-textarea>

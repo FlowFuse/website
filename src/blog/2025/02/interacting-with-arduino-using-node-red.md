@@ -31,7 +31,7 @@ To follow this tutorial, you'll need the following:
 
 ## Getting Started with Arduino and Node-RED
 
-In this section, we’ll set up Node-RED on FlowFuse and download the Firmata protocol setup on the Arduino using Arduino IDE. We will also create a flow that will control an LED on the Arduino and read input data. We will later control the LED based on object detection using an object sensor to make it more interesting. If you don’t have the sensor, don't worry— you can still follow the article. The goal of this example is to demonstrate both reading and writing operations, as well as build an automation flow that reacts to input.
+In this section, we’ll set up Node-RED on FlowFuse and download the Firmata protocol setup on the Arduino using Arduino IDE. We will also create a flow that will control an LED on the Arduino and read input data. We will later control the LED based on object detection using an object sensor to make it more interesting. If you don’t have the sensor, don't worry, you can still follow the article. The goal of this example is to demonstrate both reading and writing operations, as well as build an automation flow that reacts to input.
 
 ### Step 1: Running Node-RED on the Device connected to Arduino
 
@@ -152,7 +152,7 @@ Below, I have provided the flow that reads the IR object detection sensor data c
 
 ### Step 6: Creating an Automation Flow
 
-Now that you've learned how to send commands and read inputs from the Arduino, let’s move on to creating an automation flow. This section aims to show you how to program the Arduino without writing a single line of code—using only Node-RED.
+Now that you've learned how to send commands and read inputs from the Arduino, let’s move on to creating an automation flow. This section aims to show you how to program the Arduino without writing a single line of code, using only Node-RED.
 
 The idea is to trigger an action, such as turning on an LED, when the sensor detects an object.
 

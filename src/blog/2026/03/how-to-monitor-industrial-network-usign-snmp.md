@@ -64,14 +64,14 @@ This guide walks through building a production-grade SNMP monitoring pipeline wi
 Before getting started, make sure you have the following in place:
 
 - **FlowFuse:** A running FlowFuse instance on your edge device. If you do not have an account yet, [sign up]({% include "sign-up-url.njk" %}) to get started and follow this [guide to get Node-RED running](/blog/2025/09/installing-node-red/).
-- **An SNMP-enabled device:** Any managed switch, router, PLC, or RTU with SNMP enabled and UDP port 161 accessible from your FlowFuse instance. If you do not have a real device available, you can run a local SNMP agent for testing — see [net-snmp.org](http://www.net-snmp.org/download.html) for installation instructions for your platform.
+- **An SNMP-enabled device:** Any managed switch, router, PLC, or RTU with SNMP enabled and UDP port 161 accessible from your FlowFuse instance. If you do not have a real device available, you can run a local SNMP agent for testing, see [net-snmp.org](http://www.net-snmp.org/download.html) for installation instructions for your platform.
 - **UDP port 161 access:** Confirm your community string and ensure firewall rules permit SNMP polling from your FlowFuse host to the target device.
 
 ## Understanding SNMP
 
 [SNMP](https://en.wikipedia.org/wiki/Simple_Network_Management_Protocol) operates on a simple manager-agent model. The **manager** (your FlowFuse instance) sends requests to the **agent** (a network device or server running an SNMP daemon) and the agent responds with the requested data. All communication happens over UDP port 161.
 
-Data on the agent is organized in a **Management Information Base (MIB)** — a hierarchical tree of objects, each identified by an **Object Identifier (OID)**. Every piece of information you can query from a device, its uptime, interface status, traffic counters, CPU load, has a unique OID.
+Data on the agent is organized in a **Management Information Base (MIB)**, a hierarchical tree of objects, each identified by an **Object Identifier (OID)**. Every piece of information you can query from a device, its uptime, interface status, traffic counters, CPU load, has a unique OID.
 
 There are three operations you will use in this guide:
 
@@ -93,11 +93,11 @@ The `node-red-node-snmp` package provides a set of nodes for communicating with 
 
 Once installed, you will see the following nodes available in your palette under the network category:
 
-- **snmp** — fetch one or more specific OIDs
-- **snmp walker** — walk from a given OID to the end of the MIB tree
-- **snmp subtree** — fetch a specific OID subtree and everything beneath it
-- **snmp table** — fetch structured SNMP table data
-- **snmp set** — write values back to a device
+- **snmp**, fetch one or more specific OIDs
+- **snmp walker**, walk from a given OID to the end of the MIB tree
+- **snmp subtree**, fetch a specific OID subtree and everything beneath it
+- **snmp table**, fetch structured SNMP table data
+- **snmp set**, write values back to a device
 
 ![SNMP nodes available in the Node-RED palette after installing node-red-node-snmp](./images/snmp-nodes.png)
 _SNMP nodes available in the Node-RED palette after installing node-red-node-snmp_
@@ -106,9 +106,9 @@ For this guide we will be working with **snmp**, **snmp walker**, and **snmp sub
 
 ## Polling Device Metrics with SNMP GET
 
-The snmp node sends a GET request to the agent and returns the values of the OIDs you specify. You can pass a single OID or a comma-separated list — the node fetches all of them in one request and returns the results as an array. This is the right operation when you know exactly what you want to fetch — system uptime, device name, description.
+The snmp node sends a GET request to the agent and returns the values of the OIDs you specify. You can pass a single OID or a comma-separated list, the node fetches all of them in one request and returns the results as an array. This is the right operation when you know exactly what you want to fetch, system uptime, device name, description.
 
-We will poll three key system OIDs in a single GET request every five seconds. All three sit under the `system` group (`1.3.6.1.2.1.1`), which is part of [MIB-II](https://www.rfc-editor.org/rfc/rfc1213.html) — the standard MIB supported by virtually every SNMP-enabled device. Standard OIDs are consistent across vendors, so the same OID returns `sysUpTime` whether you are querying a Cisco switch, a Siemens PLC, or a Linux server. Vendor-specific metrics live under `1.3.6.1.4.1` and vary by device — you will need the vendor's MIB file for those. For browsing standard OIDs, see the [OID reference for the system group](https://www.alvestrand.no/objectid/1.3.6.1.2.1.1.html).
+We will poll three key system OIDs in a single GET request every five seconds. All three sit under the `system` group (`1.3.6.1.2.1.1`), which is part of [MIB-II](https://www.rfc-editor.org/rfc/rfc1213.html), the standard MIB supported by virtually every SNMP-enabled device. Standard OIDs are consistent across vendors, so the same OID returns `sysUpTime` whether you are querying a Cisco switch, a Siemens PLC, or a Linux server. Vendor-specific metrics live under `1.3.6.1.4.1` and vary by device, you will need the vendor's MIB file for those. For browsing standard OIDs, see the [OID reference for the system group](https://www.alvestrand.no/objectid/1.3.6.1.2.1.1.html).
 
 | OID | Name | What it returns |
 |---|---|---|
@@ -185,15 +185,15 @@ With system metrics polling cleanly, the next section covers using the snmp walk
 
 ## Discovering Interfaces with SNMP Walker
 
-The snmp walker node traverses the MIB tree starting from a given OID and returns every object beneath it. Unlike GET where you specify exact OIDs, walker is useful when you do not know the full OID path in advance — for example, discovering all network interfaces on a device without knowing how many exist or what their index numbers are.
+The snmp walker node traverses the MIB tree starting from a given OID and returns every object beneath it. Unlike GET where you specify exact OIDs, walker is useful when you do not know the full OID path in advance, for example, discovering all network interfaces on a device without knowing how many exist or what their index numbers are.
 
-Network interfaces on any SNMP device live under the `ifTable` (`1.3.6.1.2.1.2.2`). Walking this subtree returns every interface along with its name, operational status, speed, and traffic counters — one entry per interface regardless of how many the device has.
+Network interfaces on any SNMP device live under the `ifTable` (`1.3.6.1.2.1.2.2`). Walking this subtree returns every interface along with its name, operational status, speed, and traffic counters, one entry per interface regardless of how many the device has.
 
 | OID | Name | What it returns |
 |---|---|---|
 | `1.3.6.1.2.1.2.2.1.1` | ifIndex | Unique index number for each interface |
 | `1.3.6.1.2.1.2.2.1.2` | ifDescr | Interface name, e.g. `eth0`, `GigabitEthernet0/1` |
-| `1.3.6.1.2.1.2.2.1.8` | ifOperStatus | Operational status — `1` = up, `2` = down |
+| `1.3.6.1.2.1.2.2.1.8` | ifOperStatus | Operational status, `1` = up, `2` = down |
 | `1.3.6.1.2.1.2.2.1.10` | ifInOctets | Total inbound bytes on the interface |
 | `1.3.6.1.2.1.2.2.1.16` | ifOutOctets | Total outbound bytes on the interface |
 

@@ -15,7 +15,7 @@ tags:
 cta:
   type: sign-up
   title: Build Branded Node-RED Dashboards Your Way
-  description: FlowFuse gives you everything you need to build, customize, and deploy Node-RED Dashboard applications — with full theming control, multi-user support, and production-ready infrastructure built in.
+  description: FlowFuse gives you everything you need to build, customize, and deploy Node-RED Dashboard applications, with full theming control, multi-user support, and production-ready infrastructure built in.
 meta:
   howto:
     name: "How to Customise Theming in Your FlowFuse Dashboard"

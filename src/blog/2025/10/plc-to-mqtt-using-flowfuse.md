@@ -1,7 +1,7 @@
 ---
 title: "How to Connect Any PLC to MQTT in Under an Hour"
 subtitle: "Connect any PLC to MQTT without the typical complexity, costs, and expertise requirements"
-description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, OPC UA, and Modbus, transform it, and publish to MQTT using FlowFuse—without expensive gateways or consultants."
+description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, OPC UA, and Modbus, transform it, and publish to MQTT using FlowFuse, without expensive gateways or consultants."
 lastUpdated: 2026-06-17
 date: 2025-10-27
 keywords: MQTT, PLC, Siemens, S7, Allen-Bradley, EtherNet/IP, Omron, FINS, Mitsubishi, MC Protocol, Modbus, Modbus-RTU, Modbus-TCP, OPC-UA, FlowFuse, Node-RED, Industrial IoT, IIoT
@@ -15,7 +15,7 @@ tags:
 meta:
   howto:
     name: "Connect a PLC to MQTT using FlowFuse"
-    description: "Extract data from any PLC protocol, transform and structure it, and publish it reliably to MQTT using FlowFuse and Node-RED—without expensive gateways or consultants."
+    description: "Extract data from any PLC protocol, transform and structure it, and publish it reliably to MQTT using FlowFuse and Node-RED, without expensive gateways or consultants."
     totalTime: "PT30M"
     tool:
       - "FlowFuse"
@@ -65,13 +65,13 @@ meta:
 tldr: "This tutorial shows how to publish PLC data to MQTT using FlowFuse and Node-RED without expensive gateways or consultants. You extract data from any PLC protocol (Modbus, OPC UA, EtherNet/IP, Siemens S7, and more) using pre-built connectors, transform and contextualize it into consistent JSON with Change, Function, or community nodes, then publish it to the built-in FlowFuse MQTT broker using an ISA-95 topic hierarchy with proper access controls. FlowFuse's edge-first architecture keeps firewalls closed to inbound traffic, letting plant engineers ship production flows in under an hour."
 ---
 
-Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand—flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
+Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand, flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
 
 <!--more-->
 
 The protocol itself is simple. But implementation in a real factory, with actual PLCs and production networks, is where things fall apart. Costs pile up, timelines drag on, and you end up needing expertise that's hard to find.
 
-This guide cuts through that complexity. You'll learn how to connect PLCs using MQTT without the typical headaches. We'll walk through extracting data from any PLC protocol, transforming it properly, and publishing it reliably—with working examples you can adapt to your own setup.
+This guide cuts through that complexity. You'll learn how to connect PLCs using MQTT without the typical headaches. We'll walk through extracting data from any PLC protocol, transforming it properly, and publishing it reliably, with working examples you can adapt to your own setup.
 
 ## Why PLC-to-Cloud Gets So Complicated
 
@@ -100,13 +100,13 @@ Now, let's get started. First, watch this demo, where I have built a FlowFuse fl
 
 <lite-youtube videoid="vptAoDR78Cc" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-This flow standardizes data from each protocol into a consistent JSON format, enriches it with contextual metadata, and publishes everything to the FlowFuse MQTT Broker — all within a single instance. The following guide explains how to replicate this setup for any PLC on your factory floor.
+This flow standardizes data from each protocol into a consistent JSON format, enriches it with contextual metadata, and publishes everything to the FlowFuse MQTT Broker, all within a single instance. The following guide explains how to replicate this setup for any PLC on your factory floor.
 
 ## Step 1: Extract Data from Your PLC
 
-As mentioned earlier, extracting data is the first and most complex step. Get this wrong, and the complexity and costs can spiral out of control. FlowFuse simplifies this process. Its pre-built connectors handle Modbus, OPC UA, EtherNet/IP, and other protocols right out of the box—no custom coding, expensive proprietary gateways, or per-tag licensing fees required. You can configure your connections visually and have data flowing within minutes.
+As mentioned earlier, extracting data is the first and most complex step. Get this wrong, and the complexity and costs can spiral out of control. FlowFuse simplifies this process. Its pre-built connectors handle Modbus, OPC UA, EtherNet/IP, and other protocols right out of the box, no custom coding, expensive proprietary gateways, or per-tag licensing fees required. You can configure your connections visually and have data flowing within minutes.
 
-This is not just theory—Fortune 500 manufacturers are already running production systems on FlowFuse. Their consistent feedback? Massive cost savings compared to legacy systems, especially when deployed across multiple facilities. The enterprise features of FlowFuse handle the scale and security requirements large operations demand.
+This is not just theory, Fortune 500 manufacturers are already running production systems on FlowFuse. Their consistent feedback? Massive cost savings compared to legacy systems, especially when deployed across multiple facilities. The enterprise features of FlowFuse handle the scale and security requirements large operations demand.
 
 The Node-RED ecosystem that powers FlowFuse offers comprehensive protocol support. You'll find nodes available for every major PLC manufacturer, including:
 
@@ -122,16 +122,16 @@ Adding a protocol node to your FlowFuse instance takes just a few clicks. Open t
 
 ## Convincing the IT Team
 
-When talking to people in the IIoT community, one recurring challenge always comes up—**convincing the IT team**.
+When talking to people in the IIoT community, one recurring challenge always comes up, **convincing the IT team**.
 
 Traditional industrial gateways require inbound connections from the cloud. This means opening specific ports in your firewall, creating security exceptions, and giving external systems a pathway into your production network. IT security teams push back on this, and rightly so. Inbound connections expand your attack surface and violate the principle of defense in depth.
 
-FlowFuse solves this with an **edge-first architecture**. The Device Agent installs directly on hardware inside your factory network—a Raspberry Pi, an industrial PC, or even directly on supported PLCs. Once running, the agent initiates **outbound** connections to the FlowFuse platform using standard web protocols (HTTPS and WebSocket over port 443). All communication flows through this outbound connection. The platform never initiates connections back to your network.
+FlowFuse solves this with an **edge-first architecture**. The Device Agent installs directly on hardware inside your factory network, a Raspberry Pi, an industrial PC, or even directly on supported PLCs. Once running, the agent initiates **outbound** connections to the FlowFuse platform using standard web protocols (HTTPS and WebSocket over port 443). All communication flows through this outbound connection. The platform never initiates connections back to your network.
 
 From a security standpoint, this changes everything. Your firewall configuration does not change.  
 No new inbound rules. No DMZ setup. No VPN tunnels to maintain.  
 
-The device agent behaves like any other business application making secure outbound HTTPS requests—something your network already allows.  
+The device agent behaves like any other business application making secure outbound HTTPS requests, something your network already allows.  
 
 For networks with proxy servers, the agent supports standard proxy configurations through environment variables. For air-gapped networks, you can pre-cache Node-RED modules and deploy without internet connectivity after the initial setup.
 
@@ -143,7 +143,7 @@ Now let's move to the next step. Raw PLC data needs reshaping before cloud trans
 
 Change nodes handle simple transformations without coding. They allow you to map fields, modify values, convert units, and add metadata using dropdowns and form fields. JSONata allows more advanced data manipulation directly within the Change node.
 
-Plant engineers can work directly with these visual tools—no programming required.
+Plant engineers can work directly with these visual tools, no programming required.
 
 For example, suppose you are receiving a pressure sensor value as `msg.payload` but it lacks context.
 
@@ -172,7 +172,7 @@ Most MQTT implementations require setting up a separate broker either paying for
 
 Traditional PLC-to-cloud setups typically involve several moving parts: edge gateways running protocol drivers, a separate MQTT broker (cloud-hosted or self-managed), and your destination cloud services. Each layer adds configuration work, licensing costs, and potential failure points. When data stops flowing, you end up troubleshooting across multiple systems to locate the issue.
 
-FlowFuse consolidates those layers into a single integrated platform. It provides enterprise-grade features for management, scaling, deployment, and security—all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
+FlowFuse consolidates those layers into a single integrated platform. It provides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
 
 To use the FlowFuse MQTT broker, you'll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
 
@@ -197,7 +197,7 @@ acme/plant-a/assembly/line1/press-1/pressure01/bar
 
 **Why ISA-95 for MQTT Topics**
 
-The ISA-95 Equipment Hierarchy Model is an international standard that defines how to organize manufacturing operations into logical layers. When you structure MQTT topics using this model, you're building toward a Unified Namespace (UNS)—a single, consistent way to organize all operational data across your entire organization.
+The ISA-95 Equipment Hierarchy Model is an international standard that defines how to organize manufacturing operations into logical layers. When you structure MQTT topics using this model, you're building toward a Unified Namespace (UNS), a single, consistent way to organize all operational data across your entire organization.
 
 The goal of UNS is to eliminate data silos. Instead of each system maintaining its own proprietary structure, everything publishes to one shared namespace using a common hierarchy. Applications subscribe to exactly the data they need without knowing where it physically comes from or how it was collected.
 
@@ -239,9 +239,9 @@ _Topic schema auto-generated by FlowFuse_
 
 Now let's talk about the remaining problems: the expertise gap and cost. FlowFuse solves both by changing how the work gets done.
 
-Plant engineers configure PLC connections, transform data, contextualize it, and send it to MQTT through drag-and-drop interfaces without writing code—that's what you saw in the steps above. IT teams manage security and access controls through standard web tools. Neither needs expertise in the other's domain.
+Plant engineers configure PLC connections, transform data, contextualize it, and send it to MQTT through drag-and-drop interfaces without writing code, that's what you saw in the steps above. IT teams manage security and access controls through standard web tools. Neither needs expertise in the other's domain.
 
-The FlowFuse Expert fills remaining gaps—describe what you need in plain English, and it generates function nodes, database queries, or dashboard components. Click "Explain" on any flow to get instant documentation.
+The FlowFuse Expert fills remaining gaps, describe what you need in plain English, and it generates function nodes, database queries, or dashboard components. Click "Explain" on any flow to get instant documentation.
 
 This eliminates the consultant dependency that inflates project costs. Your team handles implementation and maintenance without external help at $150-$250 per hour, saving $12,000 to $30,000 on setup alone. The managed MQTT broker includes unlimited messaging with no per-message fees. Protocol drivers are free and open-source with no per-tag licensing. Deploy on existing industrial hardware instead of buying $10,000 proprietary gateways.
 
@@ -249,6 +249,6 @@ Manufacturers typically see substantial cost reduction in the first year, with i
 
 ## Get Started
 
-Connect your first PLC today. [Sign up for FlowFuse](https://app.flowfuse.com/), install the Device Agent on your edge hardware, and have data flowing to MQTT in under an hour. The platform handles the complexity—you focus on turning factory data into insights.
+Connect your first PLC today. [Sign up for FlowFuse](https://app.flowfuse.com/), install the Device Agent on your edge hardware, and have data flowing to MQTT in under an hour. The platform handles the complexity, you focus on turning factory data into insights.
 
-MQTT is one of several ways FlowFuse connects PLCs to the modern industrial stack. For a full view of supported protocols — OPC UA, EtherNet/IP, Siemens S7, Modbus, and more — see the [FlowFuse PLC integration overview](/landing/plc/).
+MQTT is one of several ways FlowFuse connects PLCs to the modern industrial stack. For a full view of supported protocols, OPC UA, EtherNet/IP, Siemens S7, Modbus, and more, see the [FlowFuse PLC integration overview](/landing/plc/).

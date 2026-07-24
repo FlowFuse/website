@@ -51,7 +51,7 @@ meta:
       answer: "Yes. Set the ethernet-ip in node's Mode to All tags to read every configured tag together in one message, or All tags (one per msg) to send each value separately. This is more efficient than reading single tags, which adds unnecessary network overhead in production."
 ---
 
-EtherNet/IP is one of the most widely used industrial communication protocols for connecting PLCs, sensors, and controllers across manufacturing environments. If you're working with Allen-Bradley PLCs—whether it's ControlLogix, CompactLogix, or MicroLogix—you're using some of the most trusted automation hardware in the industry.
+EtherNet/IP is one of the most widely used industrial communication protocols for connecting PLCs, sensors, and controllers across manufacturing environments. If you're working with Allen-Bradley PLCs, whether it's ControlLogix, CompactLogix, or MicroLogix, you're using some of the most trusted automation hardware in the industry.
 
 <!--more-->
 
@@ -71,7 +71,7 @@ Before integrating your Allen-Bradley PLC with FlowFuse, ensure you have the fol
 - Install Node-RED on the device that will communicate with the Allen-Bradley PLC. You cannot install Node-RED directly on the PLC, as PLCs are controllers, not computers. You can use devices like the Raspberry Pi, Revolution Pi, or industrial PCs to connect and transfer data across systems.
 - Use the [FlowFuse Device Agent](https://flowfuse.com/platform/device-agent/) to install Node-RED on your edge device.
 
-> **Why FlowFuse Device Agent?** FlowFuse provides Node-RED with enterprise capabilities like remote management, team collaboration, device management, and DevOps pipelines—essential features for scaling industrial automation across your organization. These capabilities help streamline operations and ensure reliability in complex manufacturing environments. [Sign up for free](https://app.flowfuse.com/) to get started.
+> **Why FlowFuse Device Agent?** FlowFuse provides Node-RED with enterprise capabilities like remote management, team collaboration, device management, and DevOps pipelines, essential features for scaling industrial automation across your organization. These capabilities help streamline operations and ensure reliability in complex manufacturing environments. [Sign up for free](https://app.flowfuse.com/) to get started.
 
 **Network Setup:**
 - Verify that the device running Node-RED is on the same network as the PLC and can successfully ping the PLC's IP address.
@@ -82,27 +82,27 @@ Before integrating your Allen-Bradley PLC with FlowFuse, ensure you have the fol
 
 EtherNet/IP is an industrial network protocol widely used to communicate with Allen-Bradley and other PLCs over Ethernet. It allows devices to exchange data efficiently and reliably, making it a common choice for industrial automation systems.
 
-EtherNet/IP supports two primary communication modes: **connected** and **unconnected** messaging. Your choice depends on how frequently you need to communicate with the PLC, the number of available connection resources, and—most importantly—what your PLC actually supports. Not all PLCs support both modes. For example, Allen-Bradley Micro800 series PLCs only support connected messaging, while ControlLogix and CompactLogix typically support both.
+EtherNet/IP supports two primary communication modes: **connected** and **unconnected** messaging. Your choice depends on how frequently you need to communicate with the PLC, the number of available connection resources, and, most importantly, what your PLC actually supports. Not all PLCs support both modes. For example, Allen-Bradley Micro800 series PLCs only support connected messaging, while ControlLogix and CompactLogix typically support both.
 
 ### Connected Messaging
 
-Connected messaging establishes a persistent session between Node-RED and the PLC using the Forward Open protocol. Once connected, data flows continuously with minimal overhead, making it ideal for real-time monitoring and high-frequency updates. The advantage is speed—after the initial handshake, communication is fast and efficient. The tradeoff is that each session consumes one of the PLC's limited connection slots, typically ranging from 8 to 32 depending on the model.
+Connected messaging establishes a persistent session between Node-RED and the PLC using the Forward Open protocol. Once connected, data flows continuously with minimal overhead, making it ideal for real-time monitoring and high-frequency updates. The advantage is speed, after the initial handshake, communication is fast and efficient. The tradeoff is that each session consumes one of the PLC's limited connection slots, typically ranging from 8 to 32 depending on the model.
 
 Connected messaging itself can operate in two ways:
 
 **Without Routing (Direct Connection):**
-Used for PLCs that connect directly via Ethernet without backplane routing, such as the Allen-Bradley Micro800/850/870 series. Only the IP address is needed—no slot number or routing path is required.
+Used for PLCs that connect directly via Ethernet without backplane routing, such as the Allen-Bradley Micro800/850/870 series. Only the IP address is needed, no slot number or routing path is required.
 
 **With Routing:**
 Used for chassis-based PLCs like ControlLogix and CompactLogix, where the processor sits in a backplane slot. In this case, the slot number must be specified, as it automatically creates a routing path through the backplane to reach the processor.
 
 ### Unconnected Messaging
 
-Unconnected messaging sends individual requests without maintaining a persistent connection. Each transaction is standalone—request, response, done.
+Unconnected messaging sends individual requests without maintaining a persistent connection. Each transaction is standalone, request, response, done.
 
 This approach doesn't consume connection slots, making it ideal when resources are limited or when multiple systems need occasional PLC access. The downside is higher overhead per message, resulting in slower performance compared to connected mode.
 
-In practice, use connected mode for frequent polling and unconnected mode for occasional reads or writes—but always check your PLC's documentation to confirm which modes are supported.
+In practice, use connected mode for frequent polling and unconnected mode for occasional reads or writes, but always check your PLC's documentation to confirm which modes are supported.
 
 ## Installing the EtherNet/IP Node
 
@@ -144,13 +144,13 @@ Now that you have installed the EtherNet/IP node, it is time to configure the co
 
 6. Select the communication mode:
 
-   * **Standard (Unconnected)** — This is the default option supported by most PLCs.
-   * **Connected (With Routing)** — Use this option if you want to enable connected messaging with routing.
+   * **Standard (Unconnected)**: This is the default option supported by most PLCs.
+   * **Connected (With Routing)**: Use this option if you want to enable connected messaging with routing.
 
 ![EtherNet/IP Node Configuration](./images/eth-ip-config.png){data-zoomable}
 _EtherNet/IP Node Configuration_
 
-This node does not currently support connected messaging (without routing). I have developed node — `@sumit_shinde_84/node-red-contrib-cip-ethernet-ip-enhanced` — which supports connected messaging (without routing) but is still under development.
+This node does not currently support connected messaging (without routing). I have developed node, `@sumit_shinde_84/node-red-contrib-cip-ethernet-ip-enhanced`, which supports connected messaging (without routing) but is still under development.
 
 If you need connected messaging without routing, you can use that node. To enable connected messaging without routing, select Connected (no routing) from the communication mode dropdown in the configuration dialog.
 
@@ -177,11 +177,11 @@ If your tag belongs to a different scope, click the “+ Add” button at the to
 
 6. Finally, deploy the flow by clicking the "Deploy" button in the top-right corner.
 
-**Important:** Tag names must match exactly as they appear in your PLC program—they are case-sensitive. Make sure to select the correct data type for each tag to ensure proper communication.
+**Important:** Tag names must match exactly as they appear in your PLC program, they are case-sensitive. Make sure to select the correct data type for each tag to ensure proper communication.
 
 ## Getting Started
 
-Before we start, I'd like to show you what I've prepared—a flow where I'm sending commands to the PLC to control the stack light. To interact with it, I've built a nice dashboard using [FlowFuse Dashboard](https://dashboard.flowfuse.com/). Here's a quick demonstration:
+Before we start, I'd like to show you what I've prepared, a flow where I'm sending commands to the PLC to control the stack light. To interact with it, I've built a nice dashboard using [FlowFuse Dashboard](https://dashboard.flowfuse.com/). Here's a quick demonstration:
 
 <lite-youtube videoid="6X9HXJLKPyo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
@@ -194,7 +194,7 @@ Now let’s learn how to build a flow that can both read and write data to your 
 
 ### Writing Data to Your PLC
 
-Writing to a PLC is where things get exciting—this is where you move from monitoring to actually controlling your equipment. Maybe you want to start a motor, adjust a setpoint, or trigger a sequence. Whatever your goal, the process is straightforward.
+Writing to a PLC is where things get exciting, this is where you move from monitoring to actually controlling your equipment. Maybe you want to start a motor, adjust a setpoint, or trigger a sequence. Whatever your goal, the process is straightforward.
 
 1. Drag an **`ethernet-ip out`** node onto the canvas.
 
@@ -244,7 +244,7 @@ The node will automatically read data based on your configured cycle time and ou
 
 ### Reading Multiple Tags from Your PLC
 
-Sometimes you need the full picture—not just one data point, but everything that matters for your process. Reading multiple tags at once gives you a complete snapshot of your system in a single message.
+Sometimes you need the full picture, not just one data point, but everything that matters for your process. Reading multiple tags at once gives you a complete snapshot of your system in a single message.
 
 Let me show you how:
 
@@ -272,12 +272,12 @@ The node will automatically read all configured tags based on your cycle time, g
 
 ## Next Steps
 
-Now that you've learned how to read and write data with your Allen-Bradley PLC, you can build interactive dashboards to monitor and control your industrial processes. FlowFuse Dashboard makes it easy to create professional interfaces with buttons, gauges, charts, and controls—all without writing complex code.
+Now that you've learned how to read and write data with your Allen-Bradley PLC, you can build interactive dashboards to monitor and control your industrial processes. FlowFuse Dashboard makes it easy to create professional interfaces with buttons, gauges, charts, and controls, all without writing complex code.
 
 Check out our [Getting Started with Dashboard guide](/blog/2024/03/dashboard-getting-started/) to learn how to build your first dashboard.
 
 ### Beyond Allen-Bradley
 
-FlowFuse isn't limited to EtherNet/IP. Connect Siemens PLCs via S7, use OPC UA for vendor-neutral communication, integrate Modbus devices, or connect IoT sensors with MQTT. Mix protocols as needed—your factory floor probably isn't single-vendor anyway. For a full view of every supported PLC brand and protocol, see the [FlowFuse PLC integration overview](/landing/plc/).
+FlowFuse isn't limited to EtherNet/IP. Connect Siemens PLCs via S7, use OPC UA for vendor-neutral communication, integrate Modbus devices, or connect IoT sensors with MQTT. Mix protocols as needed, your factory floor probably isn't single-vendor anyway. For a full view of every supported PLC brand and protocol, see the [FlowFuse PLC integration overview](/landing/plc/).
 
 [Book a demo](/book-demo/) to see how FlowFuse connects your entire operation.

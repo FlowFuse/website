@@ -38,7 +38,7 @@ meta:
         url: "setting-up-error-alerts"
   faq:
     - question: "What problem does an industrial data validation gateway solve?"
-      answer: "It stops bad data—corrupted sensor readings, malformed MQTT payloads, drifting PLC data, and missing fields—before it reaches dashboards, databases, and automation logic, preventing silent corruption of analytics, false alarms, and faulty control decisions."
+      answer: "It stops bad data, corrupted sensor readings, malformed MQTT payloads, drifting PLC data, and missing fields, before it reaches dashboards, databases, and automation logic, preventing silent corruption of analytics, false alarms, and faulty control decisions."
     - question: "Why is bad industrial data so dangerous?"
       answer: "Unlike system crashes, bad data issues often go unnoticed and propagate through operations, corrupting production analytics, triggering false equipment alarms, and causing automation systems to make faulty control decisions that lead to unexpected shutdowns or anomalies."
     - question: "What dimensions of data quality should validation check?"
@@ -46,7 +46,7 @@ meta:
     - question: "What node is used to validate data in FlowFuse?"
       answer: "The guide uses the node-red-contrib-full-msg-json-schema-validation node, which appears as the 'json full schema validator' node in the function category after installation via Manage palette."
     - question: "What is JSON Schema and why use it for validation?"
-      answer: "JSON Schema is an industry-standard way to define what valid data should look like—acting as a contract specifying required fields, types, ranges, and formats. Instead of writing dozens of if-statements, you define the rules once and the validator enforces them."
+      answer: "JSON Schema is an industry-standard way to define what valid data should look like, acting as a contract specifying required fields, types, ranges, and formats. Instead of writing dozens of if-statements, you define the rules once and the validator enforces them."
     - question: "What does the additionalProperties: false setting do?"
       answer: "It rejects any data containing unexpected fields not defined in the schema, which prevents schema drift over time and ensures incoming messages match the expected structure exactly."
     - question: "How many outputs does the JSON Schema Validator node have and what are they?"
@@ -64,7 +64,7 @@ meta:
 tldr: "Bad industrial data silently corrupts analytics, triggers false alarms, and drives faulty automation decisions. This guide shows how to build a data validation gateway in FlowFuse using the JSON Schema Validator node to enforce type, completeness, range, and format rules on incoming data. Valid data flows to your pipeline while failures route to an error handler that sends instant Telegram alerts, so only reliable data reaches your production systems."
 ---
 
-Bad data quietly corrupts production analytics, triggers false equipment alarms, and causes automation systems to make faulty control decisions. Unlike system crashes, these issues go unnoticed until they've already propagated through your operations—affecting multiple processes and causing unexpected shutdowns or production anomalies.
+Bad data quietly corrupts production analytics, triggers false equipment alarms, and causes automation systems to make faulty control decisions. Unlike system crashes, these issues go unnoticed until they've already propagated through your operations, affecting multiple processes and causing unexpected shutdowns or production anomalies.
 
 <!--more-->
 
@@ -76,15 +76,15 @@ Below is a short video demonstration of the data validation gateway we'll be bui
 
 ## The Problem with Trusting Your Data
 
-Most industrial applications assume incoming data is valid—temperature sensors send numbers between 0-100°C, MQTT messages contain properly formatted JSON, PLC status codes follow documented formats. There's usually no validation checking if these assumptions hold true.
+Most industrial applications assume incoming data is valid, temperature sensors send numbers between 0-100°C, MQTT messages contain properly formatted JSON, PLC status codes follow documented formats. There's usually no validation checking if these assumptions hold true.
 
 This works until it doesn't. Sensors drift out of calibration. Network issues corrupt packets. Firmware updates change data formats without warning. When these things happen, bad data flows straight through unchecked.
 
-Consider a temperature sensor sending `{"temperature": 72.5, "unit": "Celsius"}`. Then electromagnetic interference corrupts transmission, and your system receives `{"temperature": "ERR", "unit": "Celsius"}`. Your code tries to do math with "ERR"—it fails silently, throws an exception, or worse, coerces "ERR" to NaN or 0. Now you're making decisions based on garbage data without realizing it.
+Consider a temperature sensor sending `{"temperature": 72.5, "unit": "Celsius"}`. Then electromagnetic interference corrupts transmission, and your system receives `{"temperature": "ERR", "unit": "Celsius"}`. Your code tries to do math with "ERR", it fails silently, throws an exception, or worse, coerces "ERR" to NaN or 0. Now you're making decisions based on garbage data without realizing it.
 
-Scale makes this worse. With hundreds of sensors, multiple PLCs, edge gateways, and third-party integrations sending data continuously, quality issues aren't occasional—they're constant. You spend more time troubleshooting data problems than actual equipment problems. Reports contain incorrect numbers. Predictive models make bad predictions from corrupted training data.
+Scale makes this worse. With hundreds of sensors, multiple PLCs, edge gateways, and third-party integrations sending data continuously, quality issues aren't occasional, they're constant. You spend more time troubleshooting data problems than actual equipment problems. Reports contain incorrect numbers. Predictive models make bad predictions from corrupted training data.
 
-The solution isn't hoping for perfect data—it's validating it explicitly. That's what we're building in this guide.
+The solution isn't hoping for perfect data, it's validating it explicitly. That's what we're building in this guide.
 
 ## Understanding Data Quality
 
@@ -96,7 +96,7 @@ This isn't about what data you collect or which machine it comes from. It's abou
 
 Good data enables confident automation and informed decision-making.
 
-Bad data misleads—and when your automation acts on misleading information, your team and operations pay the price.
+Bad data misleads, and when your automation acts on misleading information, your team and operations pay the price.
 
 To build effective validation, you need to check multiple dimensions of data quality. Some key aspects include:
 
@@ -105,13 +105,13 @@ To build effective validation, you need to check multiple dimensions of data qua
 - **Range Validation**: Is the temperature between 0-100°C or an impossible 500°C?
 - **Format Consistency**: Is the timestamp in ISO 8601 format or some custom format?
 
-These aren't rigid categories—they're lenses through which you examine your data. Real validation often combines several of these checks together.
+These aren't rigid categories, they're lenses through which you examine your data. Real validation often combines several of these checks together.
 
 ## Building Your Data Quality Checker
 
 Now that we understand what "good data" looks like, let's build guardrails to enforce it.
 
-> Before we start, make sure you have a running FlowFuse instance that is collecting data. If you don't have a real data source, don't worry—we'll provide a simulated setup as well. Just make sure you have a FlowFuse account and instance running. If you don't have an account, create one now with our [free trial]({% include "sign-up-url.njk" %}).
+> Before we start, make sure you have a running FlowFuse instance that is collecting data. If you don't have a real data source, don't worry, we'll provide a simulated setup as well. Just make sure you have a FlowFuse account and instance running. If you don't have an account, create one now with our [free trial]({% include "sign-up-url.njk" %}).
 
 ### Installing the JSON Schema Validator Node
 
@@ -132,7 +132,7 @@ Once installed, you'll find the "json full schema validator" node in your palett
 
 ### Creating Your First Validation Schema
 
-Let's start with a practical example—validating temperature sensor data. Here's what we expect our sensor to send:
+Let's start with a practical example, validating temperature sensor data. Here's what we expect our sensor to send:
 
 ```json
 {
@@ -184,7 +184,7 @@ Let's break down what this schema validates:
 - **Value Constraints:** unit must match the enum "Celsius" (enforces consistent units)
 - **Format Rules:** ISO 8601 timestamps and `TEMP_LINE_*` naming (catches config/naming errors)
 
-The `additionalProperties: false` line is particularly important—it rejects any data with unexpected fields, preventing schema drift over time.
+The `additionalProperties: false` line is particularly important, it rejects any data with unexpected fields, preventing schema drift over time.
 
 #### Building the Validation Flow
 
@@ -211,7 +211,7 @@ When validation fails, the node adds a `msg.error` property as an array, where e
 
 ### Testing Your Validator
 
-Time to test your validator. We'll use the **temperature sensor schema from the example above**, but you can follow these same steps with any schema you create. Just make sure your test payload matches what your schema expects—same field names, correct data types, and proper structure. Then you can tweak the values to trigger validation failures and see how your error handling responds. 
+Time to test your validator. We'll use the **temperature sensor schema from the example above**, but you can follow these same steps with any schema you create. Just make sure your test payload matches what your schema expects, same field names, correct data types, and proper structure. Then you can tweak the values to trigger validation failures and see how your error handling responds. 
 
 Add an **Inject** node with this valid payload, and connect it to your JSON Schema Validator node:
 
@@ -368,7 +368,7 @@ return msg;
 
 Now test your setup by triggering a validation failure. You should receive an instant Telegram message showing exactly what went wrong.
 
-Below is the complete flow that demonstrates the entire validation pipeline—from receiving sensor data to catching errors and sending Telegram alerts.
+Below is the complete flow that demonstrates the entire validation pipeline, from receiving sensor data to catching errors and sending Telegram alerts.
 
 {% renderFlow 300 %}
 [{"id":"9b9f55548911ac66","type":"inject","z":"d7101f3a4d45deed","name":"Invalid Data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":\"ERR\",\"unit\":\"Celsius\",\"sensor_id\":\"TEMP_LINE_01\",\"timestamp\":\"2025-11-21T10:30:00Z\"}","payloadType":"json","x":260,"y":480,"wires":[["93c2895e93507e19"]]},{"id":"ae110e07ad7685d7","type":"debug","z":"d7101f3a4d45deed","name":"Data","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":760,"y":360,"wires":[]},{"id":"df3cea6a5e793d66","type":"function","z":"d7101f3a4d45deed","name":"Format Alert","func":"// Get error information\nconst errors = msg.error || [];\nconst badData = msg.payload || {};\n\n// Build error list\nlet errorText = \"\";\nerrors.forEach((err, index) => {\n    errorText += `${index + 1}. Field: ${err.dataPath || 'unknown'}\\n`;\n    errorText += `   Problem: ${err.message}\\n\\n`;\n});\n\n// Get current time\nconst time = new Date().toLocaleString();\n\n// Build the alert message\nmsg.payload = {\n    chatId: \"PUT_YOUR_CHAT_ID_HERE\",\n    type: \"message\",\n    content: `🚨 DATA VALIDATION FAILED\n\nTime: ${time}\nSensor: ${badData.sensor_id || 'Unknown'}\n\nERRORS FOUND:\n${errorText}\n\nBAD DATA:\n${JSON.stringify(badData, null, 2)}`\n};\n\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":750,"y":500,"wires":[["73c2d99fc1d7025a"]]},{"id":"c97a4811cf6d94ec","type":"inject","z":"d7101f3a4d45deed","name":"Valid Data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"{\"temperature\":72.5,\"unit\":\"Celsius\",\"sensor_id\":\"TEMP_LINE_01\",\"timestamp\":\"2025-11-21T10:30:00Z\"}","payloadType":"json","x":250,"y":400,"wires":[["93c2895e93507e19"]]},{"id":"b82034c189d13fd5","type":"comment","z":"d7101f3a4d45deed","name":"Data Simulation","info":"","x":260,"y":340,"wires":[]},{"id":"93c2895e93507e19","type":"json-full-schema-validator","z":"d7101f3a4d45deed","name":"","property":"payload","propertyType":"msg","func":"{\n    \"type\": \"object\",\n        \"required\": [\"temperature\", \"unit\", \"sensor_id\", \"timestamp\"],\n            \"properties\": {\n        \"temperature\": {\n            \"type\": \"number\",\n                \"minimum\": 0,\n                    \"maximum\": 100,\n                        \"description\": \"Temperature reading in Celsius\"\n        },\n        \"unit\": {\n            \"type\": \"string\",\n                \"enum\": [\"Celsius\"],\n                    \"description\": \"Temperature unit (Celsius only)\"\n        },\n        \"sensor_id\": {\n            \"type\": \"string\",\n                \"pattern\": \"^TEMP_LINE_[0-9]+$\",\n                    \"description\": \"Sensor identifier following the required naming convention\"\n        },\n        \"timestamp\": {\n            \"type\": \"string\",\n                \"format\": \"date-time\",\n                    \"description\": \"ISO 8601 formatted timestamp\"\n        }\n    },\n    \"additionalProperties\": false\n}","x":520,"y":420,"wires":[["ae110e07ad7685d7"],["df3cea6a5e793d66","30dce9e4816b95a9"]]},{"id":"73c2d99fc1d7025a","type":"telegram sender","z":"d7101f3a4d45deed","name":"","bot":"c588ce99d237a64a","haserroroutput":false,"outputs":1,"x":770,"y":560,"wires":[[]]},{"id":"30dce9e4816b95a9","type":"debug","z":"d7101f3a4d45deed","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":760,"y":440,"wires":[]},{"id":"c588ce99d237a64a","type":"telegram bot","botname":"Quality Check Bot","usernames":"","chatids":"","baseapiurl":"","testenvironment":false,"updatemode":"polling","pollinterval":300,"usesocks":false,"sockshost":"","socksprotocol":"socks5","socksport":6667,"socksusername":"anonymous","sockspassword":"","bothost":"","botpath":"","localbothost":"0.0.0.0","localbotport":8443,"publicbotport":8443,"privatekey":"","certificate":"","useselfsignedcertificate":false,"sslterminated":false,"verboselogging":false},{"id":"e1abd01699c129df","type":"global-config","env":[],"modules":{"node-red-contrib-full-msg-json-schema-validation":"1.1.0","node-red-contrib-telegrambot":"17.0.3"}}]
@@ -376,9 +376,9 @@ Below is the complete flow that demonstrates the entire validation pipeline—fr
 
 ## Wrapping Up
 
-You now have a working validator that stops corrupted data before it reaches your dashboards and automation logic. Bad sensor readings, malformed payloads, missing fields—your system catches them all and sends you detailed Telegram alerts the moment validation fails.
+You now have a working validator that stops corrupted data before it reaches your dashboards and automation logic. Bad sensor readings, malformed payloads, missing fields, your system catches them all and sends you detailed Telegram alerts the moment validation fails.
 
-Pick one critical data source and deploy your validator there first. Watch how it performs, adjust your schema based on real patterns, then roll it out to additional sources. Apply this approach everywhere data enters your system—MQTT streams, API endpoints, PLC connections. You'll shift from constantly troubleshooting mysterious failures to preventing them entirely.
+Pick one critical data source and deploy your validator there first. Watch how it performs, adjust your schema based on real patterns, then roll it out to additional sources. Apply this approach everywhere data enters your system, MQTT streams, API endpoints, PLC connections. You'll shift from constantly troubleshooting mysterious failures to preventing them entirely.
 
 Pay attention to your validation metrics. High failure rates from specific sensors signal equipment problems. Recurring error patterns reveal network issues or configuration drift. Your validator becomes an early warning system for operational problems.
 

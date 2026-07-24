@@ -13,7 +13,7 @@ tags:
 cta:
   type: sign-up
   title: "Parse Industrial Data at Scale with FlowFuse"
-  description: "FlowFuse gives you a managed Node-RED platform with remote deployment, snapshots, and the FlowFuse AI Expert built into the editor — so you can decode industrial buffers and manage edge devices without the operational overhead."
+  description: "FlowFuse gives you a managed Node-RED platform with remote deployment, snapshots, and the FlowFuse AI Expert built into the editor, so you can decode industrial buffers and manage edge devices without the operational overhead."
 meta:
   howto:
     name: "How to Parse Modbus Buffer Data in Node-RED Using the Buffer Parser Node"
@@ -54,7 +54,7 @@ meta:
       answer: "'uint16' means a 16-bit unsigned integer (no negative values), and 'be' means big-endian, where the first byte is the high byte. So uint16be at offset 3 reads bytes 3 and 4 in order as (byte3 × 256) + byte4."
     - question: "How do I divide a raw value by 10 using the Scale field?"
       answer: "The Buffer Parser multiplies the raw value by the Scale number, so to divide by 10 you must enter 0.1. Entering 10 would multiply by 10, which is the opposite of what you want."
-    - question: "My parsed value is completely wrong — how do I troubleshoot it?"
+    - question: "My parsed value is completely wrong, how do I troubleshoot it?"
       answer: "Check endianness first (swap uint16be to uint16le or vice versa if values are swapped). If values are negative when they should be positive, change int16 to uint16. If values are 256x too large, you may be using an 8-bit type for a 16-bit field. Verify your byte offsets against the device manual, remembering that offset counts from zero."
     - question: "Can the Buffer Parser handle multiple sensor readings at once?"
       answer: "Yes. You can add as many rows as needed, each with its own name, type, offset, length, and scale. Setting Length greater than 1 returns an array of values, which is useful when a device sends a block of identical readings starting at the same offset."
@@ -62,7 +62,7 @@ meta:
       answer: "Use a Function node when you need conditional parsing where the buffer structure changes based on values within the buffer itself (variable-length responses), or when you need to extract many individual bits and bitwise operations in code are cleaner than many separate bool rows."
     - question: "What is byte swapping and when do I need it?"
       answer: "Byte swapping reorders the bytes within a multi-byte value. Most devices that use big-endian or little-endian formats are covered by the type names (e.g. uint16be vs uint16le). You only need the swap16/swap32/swap64 Byte Swap option when a device uses a non-standard byte order that does not match either of those conventions."
-tldr: "Legacy industrial devices like Modbus sensors and PLCs communicate in raw binary buffers — compact byte sequences where each position encodes a specific value rather than human-readable JSON, because binary is far more efficient on low-bandwidth serial links. Node-RED's Buffer Parser node lets you decode these buffers visually through configuration rather than writing custom JavaScript, handling byte offsets, endianness, data types, and scaling factors automatically."
+tldr: "Legacy industrial devices like Modbus sensors and PLCs communicate in raw binary buffers, compact byte sequences where each position encodes a specific value rather than human-readable JSON, because binary is far more efficient on low-bandwidth serial links. Node-RED's Buffer Parser node lets you decode these buffers visually through configuration rather than writing custom JavaScript, handling byte offsets, endianness, data types, and scaling factors automatically."
 ---
 
 Legacy industrial devices communicate in bytes. Your temperature sensor doesn't send you `{"temp": 23.5}` - it sends you `[1, 3, 4, 1, 44, 0, 200, 190, 125]`. Those numbers are meaningless unless you know how to decode them.
@@ -134,7 +134,7 @@ This works, but it's also fragile. When you need to add a pressure reading next 
 
 Buffer Parser turns this into configuration you can see and modify without touching code. Let's walk through a practical example.
 
-> But before you start, make sure you have a Node-RED instance running on your edge device. The fastest, easiest, and most production-ready way is using FlowFuse. If you don't have an account yet, create one with our [free trial](https://app.flowfuse.com/). FlowFuse simplifies managing remote instances and provides the ability to create hosted instances—no matter how many you need to manage, it makes it easy. There are no deployment headaches either; everything is managed by FlowFuse with built-in security. You'll also get access to tools such as DevOps pipelines, snapshots for recovery, audit logs, real-time collaboration with granular role-based access control (RBAC), and much more.
+> But before you start, make sure you have a Node-RED instance running on your edge device. The fastest, easiest, and most production-ready way is using FlowFuse. If you don't have an account yet, create one with our [free trial](https://app.flowfuse.com/). FlowFuse simplifies managing remote instances and provides the ability to create hosted instances, no matter how many you need to manage, it makes it easy. There are no deployment headaches either; everything is managed by FlowFuse with built-in security. You'll also get access to tools such as DevOps pipelines, snapshots for recovery, audit logs, real-time collaboration with granular role-based access control (RBAC), and much more.
 
 ## Setting Up the Buffer Parser
 
@@ -256,7 +256,7 @@ Your Buffer Parser output should look like:
 
 This example should work as shown, but with your actual device data, the output may differ. If the values in your JSON don't match what you expect, you're likely running into one of a few common issues. Here's how to recognize and fix them.
 
-If your values are way off—for example, you expect 300 but see 11265, or expect 100 but see 25600—you've got the endianness backwards. Change `int16le` to `int16be` (or vice versa) in the Type field. Alternatively, try setting Byte Swap to `swap16` (or `swap32`/`swap64` for larger data types).
+If your values are way off, for example, you expect 300 but see 11265, or expect 100 but see 25600, you've got the endianness backwards. Change `int16le` to `int16be` (or vice versa) in the Type field. Alternatively, try setting Byte Swap to `swap16` (or `swap32`/`swap64` for larger data types).
 
 If you're seeing negative numbers when you know the value should be positive, you're using signed integers when you need unsigned. Change `int16` to `uint16` (or `int32` to `uint32`) in the Type field.
 
@@ -276,7 +276,7 @@ The configuration screen has more fields we didn't touch:
 
 **Mask** is for when multiple values are packed into the same byte. Industrial protocols do this to save space - why waste 8 bits on a simple on/off flag when you can pack eight flags into one byte? If bits 0-3 hold one sensor reading and bits 4-7 hold another, you use masks like `0x0F` (binary: 00001111, lower 4 bits) and `0xF0` (binary: 11110000, upper 4 bits) to extract each value separately. You'll know when you need this because the manual will say something like "status bits 0-3 contain pump speed, bits 4-7 contain valve position."
 
-For more details on the Buffer Parser node, you can also explore the official [Buffer Parser node documentation](https://flows.nodered.org/node/node-red-contrib-buffer-parser) — it's comprehensive, well-maintained, and a great reference when working with more advanced parsing options.
+For more details on the Buffer Parser node, you can also explore the official [Buffer Parser node documentation](https://flows.nodered.org/node/node-red-contrib-buffer-parser), it's comprehensive, well-maintained, and a great reference when working with more advanced parsing options.
 
 ## When You Need More Complex Parsing
 
@@ -294,6 +294,6 @@ For standard Modbus registers, serial sensor protocols, and fixed-structure PLC 
 
 Binary data from industrial devices isn’t going anywhere. Modbus isn’t disappearing. Neither are PLCs from the 90s or sensors that still speak in raw bytes. This is the reality of factory floors, and it will be for a long time.
 
-The Buffer Parser makes that reality manageable. You don't need to be a buffer expert or master bitwise operations. You just need your device manual, a few minutes to configure the node, and—occasionally—the patience to flip the endianness when a value looks strange. The buffers are still just arrays of bytes, but now you have a tool that turns them into meaningful data without rewriting JavaScript every time you add a new sensor. That's worth something.
+The Buffer Parser makes that reality manageable. You don't need to be a buffer expert or master bitwise operations. You just need your device manual, a few minutes to configure the node, and, occasionally, the patience to flip the endianness when a value looks strange. The buffers are still just arrays of bytes, but now you have a tool that turns them into meaningful data without rewriting JavaScript every time you add a new sensor. That's worth something.
 
-And if you’re managing industrial devices at scale—handling remote Node-RED instances, deploying updates across fleets of edge hardware, or keeping everything secure and consistent—FlowFuse can remove much of the daily friction. With features like remote deployment, snapshots, secure device connectivity, and the FlowFuse AI Expert built right into the editor, you can **[book a free demo](/book-demo/)**. Our team will understand your requirements, show you exactly how FlowFuse fits into your workflow, and guide you on getting the most out of your industrial data pipelines.
+And if you’re managing industrial devices at scale, handling remote Node-RED instances, deploying updates across fleets of edge hardware, or keeping everything secure and consistent, FlowFuse can remove much of the daily friction. With features like remote deployment, snapshots, secure device connectivity, and the FlowFuse AI Expert built right into the editor, you can **[book a free demo](/book-demo/)**. Our team will understand your requirements, show you exactly how FlowFuse fits into your workflow, and guide you on getting the most out of your industrial data pipelines.

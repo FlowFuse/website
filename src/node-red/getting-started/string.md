@@ -85,7 +85,7 @@ Each {% raw %}`{{variableName}}`{% endraw %} is replaced with actual data. For e
 
 ## Parsing JSON Strings
 
-API responses and stored data often arrive as JSON strings—text that looks like JSON but isn't yet usable as an object.
+API responses and stored data often arrive as JSON strings, text that looks like JSON but isn't yet usable as an object.
 
 1. Place a **JSON** node after your data source (like an HTTP request or file read)
 2. Double-click to open its configuration
@@ -130,7 +130,7 @@ Removing unwanted spaces, tabs, or line breaks from strings prevents comparison 
 4. Enter: `$trim(payload)`
 5. Connect to where you need the processed data
 
-Whitespace from both ends is removed. `"  Hello World  "` becomes `"Hello World"`. The space between words stays—only edge spaces are removed.
+Whitespace from both ends is removed. `"  Hello World  "` becomes `"Hello World"`. The space between words stays, only edge spaces are removed.
 
 {% renderFlow %}
 [{"id":"f43fff4b7a32185d","type":"inject","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"  Hello World  ","payloadType":"str","x":510,"y":560,"wires":[["9ed2f66a591cefab"]]},{"id":"603d7024f06979bc","type":"debug","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":950,"y":560,"wires":[]},{"id":"9ed2f66a591cefab","type":"change","z":"c16e1fb8932e7e73","g":"09a33e651efa47a8","name":"Trimming Whitespace","rules":[{"t":"set","p":"payload","pt":"msg","to":"$trim(payload)","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":720,"y":560,"wires":[["603d7024f06979bc"]]}]

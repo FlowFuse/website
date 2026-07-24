@@ -1,4 +1,4 @@
-{# Column header — outside overflow container so sticky works on mobile #}
+{# Column header, outside overflow container so sticky works on mobile #}
 <div class="sticky top-[140px] sm:top-[164px] md:top-[116px] z-10 transition-colors duration-200" data-sticky-header>
     <div class="overflow-hidden sm:overflow-visible" data-table-header>
         <div class="ff-feature-table m-auto">
@@ -16,7 +16,7 @@
     </div>
 </div>
 
-{# Table body — horizontally scrollable on mobile #}
+{# Table body, horizontally scrollable on mobile #}
 <div class="overflow-x-auto sm:overflow-x-visible" data-table-body>
     <div class="ff-feature-table ff-feature-table--body m-auto">
         {% set hostingKey = 'selfHosted' if hosting == 'self-hosted' else 'cloud' %}
