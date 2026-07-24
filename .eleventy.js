@@ -55,6 +55,7 @@ console.info(`[11ty] Image build profile: ${IMAGE_BUILD_PROFILE}`)
 module.exports = function(eleventyConfig) {
 
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
+    eleventyConfig.setUseGitIgnore(false); // Blueprints are generated into gitignored src/blueprints/, so they must not be ignored
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
