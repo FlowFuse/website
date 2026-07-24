@@ -141,7 +141,7 @@
 */
 .pricing-tiles {
     position: relative;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr auto auto auto;
     gap: 20px;
     z-index: 2;
