@@ -20,19 +20,45 @@ meta:
         </div>
     </div>
 
-    <!-- USE CASE CARD GRID -->
+    <!-- OPERATIONAL USE CASES (tagged with value pillars) -->
     <div class="w-full py-16 sm:py-24 px-6 bg-white">
         <div class="max-w-screen-lg mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 class="max-md:text-center">Operational <span class="text-indigo-600">use cases</span></h2>
+            <p class="mt-4 max-w-3xl text-gray-600">Problems operations teams own, and how they are solved with FlowFuse. Each use case is also reachable by <a href="/industries/">industry</a>.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
                 {% for uc in collections["use-case"] | sort(false, true, "data.title") %}
+                {% if uc.data.values %}
                 <a href="{{ uc.url }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
                     <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ uc.data.title }}</h3>
                     <p class="m-0 text-gray-600 text-sm flex-grow">{{ uc.data.problem }}</p>
-                    <span class="mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
+                    <span class="ff-animated-link mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
                         View use case
                         <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
                     </span>
                 </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- PLATFORM ARCHITECTURES (untagged legacy solution pages) -->
+    <div class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-screen-lg mx-auto">
+            <h2 class="max-md:text-center">By <span class="text-indigo-600">architecture</span></h2>
+            <p class="mt-4 max-w-3xl text-gray-600">How FlowFuse is deployed and where it sits in your stack. Architectures are the technical evaluator's entry point; the use cases above are what gets built on them.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                {% for uc in collections["use-case"] | sort(false, true, "data.title") %}
+                {% if not uc.data.values %}
+                <a href="{{ uc.url }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                    <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ uc.data.title }}</h3>
+                    <p class="m-0 text-gray-600 text-sm flex-grow">{{ uc.data.problem }}</p>
+                    <span class="ff-animated-link mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
+                        View architecture
+                        <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                    </span>
+                </a>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

@@ -39,7 +39,7 @@
                 <ul class="flex flex-col gap-3 list-none p-0 m-0">
                     {% for item in column.items %}
                     <li>
-                        <a href="{{ item.url }}" class="text-indigo-600 hover:text-indigo-800">{{ item.data.title or item.data.meta.title or item.data.contentTitle | safe }}</a>
+                        <a href="{{ item.url }}" class="ff-animated-link inline-block hover:no-underline text-indigo-600 hover:text-indigo-800">{{ item.data.title or item.data.meta.title or item.data.contentTitle | safe }}</a>
                     </li>
                     {% endfor %}
                 </ul>
