@@ -16,8 +16,8 @@
                                 type="button"
                                 aria-expanded="false"
                                 aria-controls="answer-{{ loop.index }}">
-                            <span>{{ faq.question }}</span>
-                            <div class="chevron transition-transform ease-in-out duration-300"
+                            <span class="ff-animated-link">{{ faq.question }}</span>
+                            <div class="chevron transition-transform ease-in-out duration-300 shrink-0"
                                 id="chevron-{{ loop.index }}">
                                 {% include "components/icons/chevron-down.svg" %}
                             </div>
