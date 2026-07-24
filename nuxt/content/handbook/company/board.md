@@ -46,11 +46,10 @@ Each quarterly board meeting should include the following representatives. Befor
 verify that all firms below have a confirmed attendee on the calendar.
 
 Senovo — 1 representative
-OCVO — 1 representative
-Cota Capital — 1 representative
 We Start the Company / Open Core Ventures — 1 representative
+Cota Capital — 1 representative
 Bright Pixel — 1 representative (board observer)
-Cooley - 1 representative (board observer)
+Cooley - 1 legal representative
 West Wave Capital — optional
 Uncorrelated — optional
 
