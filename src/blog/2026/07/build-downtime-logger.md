@@ -53,7 +53,7 @@ Production lines in manufacturing and automotive facilities experience planned a
 
 Many factories still record downtime on paper or in spreadsheets. Others rely on PLC alarms without keeping a centralized history that teams can review and analyze later.
 
-In this tutorial, you'll build a machine downtime tracking application using FlowFuse. The application records machine stop and start events, calculates downtime duration, lets operators assign downtime reasons, and displays a live dashboard with unresolved events and key metrics.
+In this tutorial, you'll build a machine downtime tracking application using FlowFuse. The application records machine stop and start events, calculates downtime duration, lets operators assign downtime reasons, and displays a live dashboard with unresolved events and key metrics. Following the steps below, you can have this application built and deployed in about 10-15 minutes.
 
 ![Screenshot: completed dashboard with KPI cards and stoppages table](./images/downtime-logger.png)
 _The finished dashboard: KPI cards on top, unresolved stoppages below._
