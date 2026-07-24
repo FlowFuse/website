@@ -1,7 +1,7 @@
 ---
 layout: solution
 title: FlowFuse for Edge Connectivity
-problem: "Deploy and manage Node-RED instances on edge hardware at scale — from a single pane of glass, without touching each device."
+problem: "Deploy and manage Node-RED instances on edge hardware at scale, from a single pane of glass, without touching each device."
 image: /images/solutions/og-solutions-edge-connectivity.jpg
 subtitle:
 heroImg: ./images/pictograms/edge_blue.png
@@ -72,6 +72,16 @@ description:
         <div class="flex justify-center items-center md:w-full">
             <lite-youtube videoid="dvTgCBXCa5A" class="aspect-video bg-cover bg-top bg-no-repeat border-2 border-black rounded-md drop-shadow-xl" style="background-image: url('../../images/solutions/webinar-july-2023_video_tile.jpg'); width: 1080px; background-repeat: no-repeat;"></lite-youtube>
         </div>
+    </div>
+</div>
+
+<!-- USE CASES built at the edge (cross-links per web task) -->
+<div class="w-full py-16 sm:py-20 px-6 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="max-md:text-center">What teams build <span class="text-indigo-600">at the edge</span></h2>
+        {% set featuredUseCases = ["shop-floor-communication", "production-monitoring"] %}
+        {% include "components/use-case-links.njk" %}
+        <p class="mt-8 text-center"><a class="ff-btn ff-btn--primary-outlined uppercase" href="/docs/device-agent/install/">Get the Device Agent</a></p>
     </div>
 </div>
 
