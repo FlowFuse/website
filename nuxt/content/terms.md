@@ -4,7 +4,7 @@ title: Terms and Conditions
 
 # FLOWFUSE INC.– SAAS SERVICES TERMS AND CONDITIONS
 
-THESE TERMS AND CONDITIONS ("TERMS") GOVERN YOUR ACCESS TO AND USE OF OUR SAAS SERVICES INCLUDING ANY CONTENT THEREIN (THE "SAAS SERVICES"). BY ACCEPTING THESE TERMS, EITHER BY CLICKING A BOX INDICATING YOUR ACCEPTANCE OR BY EXECUTING AN ORDER FORM THAT REFERENCES THESE TERMS, YOU AGREE TO THESE TERMS. THE TERM "AGREEMENT" AS USED HEREIN SHALL MEAN THESE TERMS, TOGETHER WITH THE ORDER FORM AND ANY DPA ENTERED INTO BY THE PARTIES. IN THE EVENT OF A CONFLICT BETWEEN THESE TERMS AND ANY ENTERPRISE SERVICES AGREEMENT, IF ANY, EXECUTED BETWEEN FLOWFORGE INC. AND THE ORGANIZATION WHICH YOU REPRESENT, THAT ENTERPRISE SERVICES AGREEMENT WILL CONTROL. IF YOU ARE ACCEPTING THESE TERMS ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY AND ITS AFFILIATES TO THESE TERMS, IN WHICH CASE "YOU" OR "YOUR" OR "CUSTOMER" SHALL REFER TO SUCH ENTITY AND ITS AFFILIATES. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SAAS SERVICES.
+THESE TERMS AND CONDITIONS ("TERMS") GOVERN YOUR ACCESS TO AND USE OF OUR SAAS SERVICES INCLUDING ANY CONTENT THEREIN (THE "SAAS SERVICES"). BY ACCEPTING THESE TERMS, EITHER BY CLICKING A BOX INDICATING YOUR ACCEPTANCE OR BY EXECUTING AN ORDER FORM THAT REFERENCES THESE TERMS, YOU AGREE TO THESE TERMS. THE TERM "AGREEMENT" AS USED HEREIN SHALL MEAN THESE TERMS, TOGETHER WITH THE ORDER FORM AND ANY DPA ENTERED INTO BY THE PARTIES. IN THE EVENT OF A CONFLICT BETWEEN THESE TERMS AND ANY ENTERPRISE SERVICES AGREEMENT, IF ANY, EXECUTED BETWEEN FLOWFUSE INC. AND THE ORGANIZATION WHICH YOU REPRESENT, THAT ENTERPRISE SERVICES AGREEMENT WILL CONTROL. IF YOU ARE ACCEPTING THESE TERMS ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY AND ITS AFFILIATES TO THESE TERMS, IN WHICH CASE "YOU" OR "YOUR" OR "CUSTOMER" SHALL REFER TO SUCH ENTITY AND ITS AFFILIATES. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SAAS SERVICES.
 
 This Agreement is effective as of the date of your acceptance of this Agreement. Reference to "we", "our" and "us" in its related variations and "Company" shall mean FlowFuse Inc. or its affiliates, as applicable, from whom you receive the SaaS Services.
 
@@ -12,7 +12,7 @@ This Agreement is effective as of the date of your acceptance of this Agreement.
 
 By accepting these Terms, you agree to these Terms on behalf of yourself, your organization and any entity that you represent or on behalf of which you use the SaaS Services. You further agree that you have the authority to bind that organization to these Terms and that you are authorized to be an Administrative User (as defined below) on behalf such organization. The SaaS Services may only be used for your internal business purposes (the "Authorized Use"). You are responsible for Authorized Users' (as defined below) compliance with this Agreement, and any act or omission of any Authorized User shall be treated as if undertaken by You.
 
-# 2 DEFINITIONS.
+# 2. DEFINITIONS.
 
 Capitalized terms will have the meanings set forth in this Section 2, or in the section where they are first used.
 
@@ -58,7 +58,7 @@ means with respect to any party, in each case to the extent applicable to such p
 
 ## 2.11 "Personal Data"
 
-means any information relating to an identified or identifiable natural person, and all information that is "personal data," "personal information", "personally identifiable information" Personal Data specifically excludes all data or information that constitutes PHI.
+means any information relating to an identified or identifiable natural person, and all information that is "personal data," "personal information", "personally identifiable information", or a similar term as defined under applicable Data Protection Laws. Personal Data specifically excludes all data or information that constitutes PHI.
 
 ## 2.12 "PHI"
 
@@ -84,7 +84,7 @@ means any services provided by Company to Customer under this Agreement as set f
 
 means the minimum hardware, software, and connectivity configuration specified from time to time by Company as required for use of the SaaS Services. The current requirements are described in the Documentation.
 
-# 3 PROVISION OF SERVICES
+# 3. PROVISION OF SERVICES
 
 ## 3.1 Access.
 
@@ -98,13 +98,13 @@ Subject to the terms and conditions of this Agreement, Company will exercise com
 
 Company will, at its own expense, provide for the hosting of the SaaS Services, provided that nothing herein will be construed to require Company to provide, or bear any responsibility with respect to, any telecommunications or computer network hardware required by Customer or any Authorized User to access the SaaS Services from the Internet.
 
-# 4 INTELLECTUAL PROPERTY
+# 4. INTELLECTUAL PROPERTY
 
 ## 4.1 License Grant.
 
 Subject to the terms and conditions of this Agreement, Company grants to Customer a non-exclusive, non-transferable (except as permitted under Section 13.5) license during the Term (as defined below), solely within the Supported Environment, for the Authorized Use, (a) to access and use the SaaS Services and in accordance with the Documentation; and (b) to use and reproduce a reasonable number of copies of the Documentation solely to support Customer's use of the SaaS Services. Customer may permit any Authorized Users to access and use the features and functions of the SaaS Services as contemplated by this Agreement.
 
-# 4.2 Restrictions.
+## 4.2 Restrictions.
 
 Customer will not, and will not permit any Authorized User or other party to: (a) allow any third party to access the SaaS Services, Licensed Material or Documentation, except as expressly allowed herein; (b) modify, adapt, alter or translate the SaaS Services, Licensed Material or Documentation; (c) sublicense, lease, sell, resell, rent, loan, distribute, transfer or otherwise allow the use of the SaaS Services or Documentation for the benefit of any unauthorized third party; (d) reverse engineer, decompile, disassemble, or otherwise derive or determine or attempt to derive or determine the source code (or the underlying ideas, algorithms, structure or organization) of the SaaS Services, except as permitted by law; (e) interfere in any manner with the operation of the SaaS Services or the hardware and network used to operate the SaaS Services; (f) modify, copy or make derivative works based on any part of the SaaS Services or Documentation; (g) access or use the SaaS Services to build a similar or competitive product or service; (h) attempt to access the SaaS Services through any unapproved interface; or (i) otherwise use the SaaS Services or Documentation in any manner that exceeds the scope of use permitted under Section 4.1 or in a manner inconsistent with applicable law, the Documentation, or this Agreement. Customer will not remove, alter, or obscure any proprietary notices (including copyright and trademark notices) of Company or its licensors on the Documentation or any copies thereof.
 
@@ -120,7 +120,7 @@ Certain items of software may be provided to Customer with the SaaS Services and
 
 Customer hereby grants to Company a royalty-free, worldwide, transferable, sublicensable, irrevocable, perpetual license to use or incorporate into the Services any suggestions, enhancement requests, recommendations or other feedback provided by Customer, including Authorized Users, relating to the Services. Company will not identify Customer as the source of any such feedback.
 
-# 5 FEES AND EXPENSES; PAYMENTS
+# 5. FEES AND EXPENSES; PAYMENTS
 
 ## 5.1 Fees.
 
@@ -138,7 +138,7 @@ The Fees are exclusive of all applicable sales, use, value-added and other taxes
 
 Any amounts not paid when due will bear interest at the rate of one and one half percent (1.5%) per month, or the maximum legal rate if less, from the due date until paid.
 
-# 6 CUSTOMER CONTENT AND RESPONSIBILITIES
+# 6. CUSTOMER CONTENT AND RESPONSIBILITIES
 
 ## 6.1 License; Ownership.
 
@@ -156,11 +156,11 @@ Customer and its Authorized Users will have access to the Customer Content and w
 
 Before providing to Company or enabling Company to Process any Personal Data that is subject to the California Consumer Privacy Act ("CCPA"), Customer will enter into a Data Processing Agreement (DPA) with Company in the form provided by Company. If Customer has not entered into such DPA, Customer represents, warrants and covenants that no Personal Data Processed by Company under this Agreement is subject to the CCPA. Any Personal Data that is subject to the CCPA shall be governed by the DPA and shall not be Confidential Information. In the event of a conflict between any provision of the DPA and this Agreement, the provision providing the higher level of privacy or data protection shall govern.
 
-# 7 PROFESSIONAL SERVICES.
+# 7. PROFESSIONAL SERVICES.
 
 Where the parties have agreed to Company's provision of Professional Services, the details of such Professional Services will be set out in an Order Form or a mutually executed statement of work ("SOW"). The Order Form or SOW, as applicable, will include: (a) a description of the Professional Services; (b) the schedule for the performance of the Professional Services; and (c) the Fees applicable for the performance of the Professional Services. Each Order Form or SOW, as applicable, will incorporate the terms and conditions of this Agreement. To the extent that a conflict arises between the terms and conditions of an Order Form or SOW and the terms of this Agreement, the terms and conditions of this Agreement will govern, except to the extent that the Order Form or SOW, as applicable, expressly states that it supersedes specific language in the Agreement.
 
-# 8 WARRANTIES AND DISCLAIMERS
+# 8. WARRANTIES AND DISCLAIMERS
 
 ## 8.1 Limited Warranty.
 
@@ -170,7 +170,7 @@ Company represents and warrants that it will provide the Services and perform it
 
 THE LIMITED WARRANTY SET FORTH IN SECTION 8.1 IS MADE FOR THE BENEFIT OF CUSTOMER ONLY. EXCEPT AS EXPRESSLY PROVIDED IN THIS SECTION 8.1, AND TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICES AND DOCUMENTATION ARE PROVIDED "AS IS," AND COMPANY MAKES NO (AND HEREBY DISCLAIMS ALL) OTHER WARRANTIES, REPRESENTATIONS, OR CONDITIONS, WHETHER WRITTEN, ORAL, EXPRESS, IMPLIED OR STATUTORY, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF SATISFACTORY QUALITY, COURSE OF DEALING, TRADE USAGE OR PRACTICE, SYSTEM INTEGRATION, DATA ACCURACY, MERCHANTABILITY, TITLE, NONINFRINGEMENT, OR FITNESS FOR A PARTICULAR PURPOSE. COMPANY DOES NOT WARRANT THAT ALL ERRORS CAN BE CORRECTED, OR THAT OPERATION OF THE SAAS SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE.
 
-# 9 LIMITATION OF LIABILITY
+# 9. LIMITATION OF LIABILITY
 
 ## 9.1 Types of Damages.
 
@@ -184,7 +184,7 @@ THE MAXIMUM LIABILITY OF EITHER PARTY ARISING OUT OF OR IN ANY WAY CONNECTED TO 
 
 The parties agree that the limitations of liability set forth in this Section 9 will survive and continue in full force and effect despite any failure of consideration or of an exclusive remedy. The parties acknowledge that the prices have been set and the Agreement entered into in reliance upon these limitations of liability and that all such limitations form an essential basis of the bargain between the parties.
 
-# 10 CONFIDENTIALITY
+# 10. CONFIDENTIALITY
 
 ## 10.1 Confidential Information.
 
@@ -198,7 +198,7 @@ The Receiving Party agrees that it will not use or disclose to any third party a
 
 The confidentiality obligations set forth in Section 10.2 will not apply to any information that (a) is at the time of disclosure or becomes generally available to the public through no fault of the Receiving Party; (b) is lawfully provided to the Receiving Party by a third party free of any confidentiality duties or obligations; (c) was already known to the Receiving Party at the time of disclosure free of any confidentiality duties or obligations; or (d) the Receiving Party can demonstrate, by clear and convincing evidence, was independently developed by employees and contractors of the Receiving Party who had no access to the Confidential Information. In addition, the Receiving Party may disclose Confidential Information to the extent that such disclosure is necessary for the Receiving Party to enforce its rights under this Agreement or is required by law or by the order of a court or similar judicial or administrative body, provided that (to the extent legally permissible) the Receiving Party promptly notifies the Disclosing Party in writing of such required disclosure and cooperates with the Disclosing Party if the Disclosing Party seeks an appropriate protective order.
 
-# 11 INDEMNIFICATION
+# 11. INDEMNIFICATION
 
 ## 11.1 By Company.
 
@@ -212,7 +212,7 @@ Customer will defend at its expense any suit brought against Company, and will p
 
 The indemnifying party's obligations as set forth above are expressly conditioned upon each of the foregoing: (a) the indemnified party will promptly notify the indemnifying party in writing of any threatened or actual claim or suit; (b) the indemnifying party will have sole control of the defense or settlement of any claim or suit; and (c) the indemnified party will cooperate with the indemnifying party to facilitate the settlement or defense of any claim or suit.
 
-# 12 TERM AND TERMINATION
+# 12. TERM AND TERMINATION
 
 ## 12.1 Term.
 
@@ -230,7 +230,7 @@ Either party may terminate this Agreement immediately upon notice to the other p
 
 Upon termination or expiration of this Agreement for any reason: (a) all licenses granted hereunder will immediately terminate; (b) promptly after the effective date of termination or expiration, each party will comply with the obligations to return all Confidential Information of the other party, as set forth in the Section 10; and (c) any amounts owed to Company under this Agreement will become immediately due and payable. Sections 2, 4.2, 4.3, 4.5, 5, 8.2, 8, 10, 11, 12.3, 12.4, and 13 will survive expiration or termination of this Agreement for any reason.
 
-# 13 MISCELLANEOUS
+# 13. MISCELLANEOUS
 
 ## 13.1 Governing Law and Venue.
 

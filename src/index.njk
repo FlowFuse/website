@@ -17,16 +17,22 @@ capabilities:
       description: "Create the operational applications that MES, ERP, and SCADA platforms struggle to support natively — from quality validation and workforce assignment to shift handovers and production visibility. Describe what you need in plain language and FlowFuse Expert generates the starting logic directly in your workspace."
       imagePath: "images/home/home-node-red.png"
       imageAlt: "FlowFuse UI"
+      linkText: "Learn more about FlowFuse Expert"
+      linkHref: "/ai/"
     - capability: "Standardize proven workflows across every site"
       feature: "Device Agent and DevOps Pipelines"
       description: "Turn a successful workflow on one machine or line into a repeatable operational standard across plants. Roll out updates with version control, staged deployments, and centrally managed industrial devices. No more rebuilding from scratch for every site, or leaving improvements siloed in one location."
       imagePath: "images/home/home-pipeline.png"
       imageAlt: "FlowFuse flow editor"
+      linkText: "See how device management works"
+      linkHref: "/platform/device-agent/"
     - capability: "Connect shop floor events to enterprise systems"
       feature: "Flow-based IT/OT connectivity"
       description: "Move production events, work orders, alarms, and operational data securely between PLCs, edge devices, MES, ERP, cloud platforms, and operator interfaces — without brittle point-to-point integrations or exposing inbound firewall ports."
       imagePath: "images/home/home-dashboard.png"
       imageAlt: "FlowFuse Dashboard"
+      linkText: "Explore production monitoring"
+      linkHref: "/use-cases/production-monitoring/"
 solutions:
     - href: "/use-cases/it-ot-middleware/"
       image: "./images/home/home-itot-middleware.png"
@@ -283,6 +289,10 @@ hubspot:
                 <p>
                     {{ item.description }}
                 </p>
+                <a href="{{ item.linkHref }}" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center mt-3">
+                    {{ item.linkText }}
+                    {% include "components/icons/arrow-long-right.svg" %}
+                </a>
             </div>
         </div>
         {% endfor %}
@@ -337,6 +347,11 @@ hubspot:
     <!-- Testimonials -->
     <div class="w-full mt-16 md:px-0">
         <div class="max-w-screen-lg mx-auto">
+            <h2 class="md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
+            <p class="mb-8">See how manufacturers and industrial operators are using FlowFuse to standardize, scale, and govern their operations.</p>
+            {% set hideReadMore = true %}
+            {% set browseAllUrl = "/customer-stories/" %}
+            {% set browseAllText = "Browse all customer stories" %}
             {% include "testimonials.njk" %}
         </div>
     </div>
@@ -358,7 +373,7 @@ hubspot:
                     </div>
                     <p class="text-gray-700 font-light m-0">FlowFuse Expert, our industrial-tuned AI assistant, lets your team describe what they need in plain language — and generates flows, data transformations, and dashboard logic. No waiting on scarce developers.</p>
                 </div>
-                <a href="/ai/" class="flex items-center justify-end gap-1.5 text-indigo-600 hover:underline mt-6">
+                <a href="/ai/" class="flex items-center justify-end gap-1.5 text-blue-600 hover:underline mt-6">
                     Learn more about FlowFuse AI
                     {% include "components/icons/arrow-long-right.svg" %}
                 </a>
@@ -373,7 +388,7 @@ hubspot:
                     </div>
                     <p class="text-gray-700 font-light m-0">Speed without governance creates new debt. FlowFuse provides the production layer where AI-assisted work becomes visible, versioned, secure, and reusable — across the enterprise.</p>
                 </div>
-                <a href="/book-demo/" class="flex items-center justify-end gap-1.5 text-indigo-600 hover:underline mt-6" onclick="capture('cta-book-demo', {'position': 'ai'})">
+                <a href="/book-demo/" class="flex items-center justify-end gap-1.5 text-blue-600 hover:underline mt-6" onclick="capture('cta-book-demo', {'position': 'ai'})">
                     Book a demo
                     {% include "components/icons/arrow-long-right.svg" %}
                 </a>
