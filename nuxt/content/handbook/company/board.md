@@ -48,12 +48,11 @@ verify that all firms below have a confirmed attendee on the calendar.
 Senovo — 1 representative
 OCVO — 1 representative
 Cota Capital — 1 representative
-We Start the Company — 1 representative
+We Start the Company / Open Core Ventures — 1 representative
 Bright Pixel — 1 representative (board observer)
 Cooley - 1 representative (board observer)
 West Wave Capital — optional
 Uncorrelated — optional
-Open Core Ventures — optional
 
 ## The Strategic Timeline
 
