@@ -1272,30 +1272,16 @@ h4:hover .header-anchor::before {
         opacity: 1;
     }
 
-    /* Footer links: brand-purple hover plus the animated left-to-right underline
-       used in the top nav. Excludes the logo link and the social icon buttons
-       (class "block"), which get a colour-only hover instead of an underline. */
+    /* Footer links: brand-purple hover plus a plain underline. The animated
+       left-to-right sweep is reserved for the main navigation, so the footer
+       underlines statically rather than animating. Excludes the logo link and
+       the social icon buttons (class "block"), which get a colour-only hover. */
     .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block) {
-        position: relative;
         text-decoration: none;
-    }
-    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block)::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -2px;
-        height: 1.5px;
-        background: currentColor;
-        transform: scaleX(0);
-        transform-origin: left center;
-        transition: transform 0.22s ease;
     }
     .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block):hover {
         color: var(--color-indigo-700);
-    }
-    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block):hover::after {
-        transform: scaleX(1);
+        text-decoration: underline;
     }
     /* Social icons: brand-purple on hover, overriding each icon's baked-in
        red-hero hover colour. */
@@ -1306,11 +1292,6 @@ h4:hover .header-anchor::before {
     .ff-website footer.ff-footer a.block[href*="reddit.com"]:hover svg,
     .ff-website footer.ff-footer a.block[href*="youtube.com"]:hover svg {
         color: #DA3D0B;
-    }
-    @media (prefers-reduced-motion: reduce) {
-        .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block)::after {
-            transition: none;
-        }
     }
     /*
         Components
@@ -2935,18 +2916,18 @@ lite-youtube::before {
     }
 }
 
-/* FAQ / accordion header interaction: colour shift on hover and keyboard focus.
-   The animated underline was deliberately left out here: this interaction does
-   not benefit from the extra motion, and the sweeping underline is reserved for
-   the main navigation. The open/close chevron rotation is driven by JS inline
-   styles and is left untouched; the chevron stroke uses currentColor so it
-   follows the colour shift. */
+/* FAQ / accordion header interaction: colour shift plus a plain underline on
+   hover and keyboard focus. Only the sweeping animation is reserved for the main
+   navigation, so the underline itself stays here. The open/close chevron
+   rotation is driven by JS inline styles and is left untouched; the chevron
+   stroke uses currentColor so it follows the colour shift. */
 .ff-website .question {
     transition: color 0.2s ease;
 }
 .ff-website .question:hover,
 .ff-website .question:focus-visible {
     color: var(--color-indigo-600);
+    text-decoration: underline;
 }
 .ff-website .question:focus {
     outline: none;
