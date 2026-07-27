@@ -55,10 +55,6 @@ export default defineNuxtConfig({
         sitemap: ['https://flowfuse.com/sitemap.xml', 'https://flowfuse.com/sitemap-legacy.xml'],
     },
 
-    ogImage: {
-        defaults: { component: 'Default' },
-    },
-
     linkChecker: {
         failOnError: true,
         // trailing-slash: 11ty pages use trailing slashes intentionally
@@ -118,6 +114,7 @@ export default defineNuxtConfig({
                 '/terms',
                 '/privacy-policy',
                 '/integrations',
+                '/pricing',
                 '/ebooks/beginner-guide-to-a-professional-nodered/',
                 '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                 '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -181,7 +178,12 @@ export default defineNuxtConfig({
             ],
         },
     },
-
+    
+    ui: {
+    theme: {
+      colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'highlight']
+    }
+  },
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts
     // to allow per-route exclusions as pages are migrated.
 })
