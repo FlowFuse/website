@@ -32,7 +32,7 @@ onMounted(() => {
             <span class="transition-transform group-hover:translate-x-0.5">&rarr;</span>
           </span>
         </a>
-        <a href="/docs/device-agent/install/overview/" class="ff-utility-item group inline-flex items-center gap-2 min-w-0 no-underline hover:no-underline text-indigo-100 hover:text-white" style="display: none">
+        <a href="/docs/device-agent/install/overview/" class="ff-utility-item group inline-flex items-center gap-2 min-w-0 no-underline hover:no-underline text-indigo-100 hover:text-white">
           <span class="shrink-0 font-semibold">Get started</span>
           <span class="hidden sm:block">-</span>
           <span class="truncate">Begin with installing the FlowFuse device agent on your hardware.</span>
