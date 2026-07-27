@@ -4,7 +4,7 @@ subtitle: "How a 60-year-old drawing still finds the root cause faster than most
 description: "Learn what an Ishikawa (fishbone) diagram is, the 6Ms, and how to use it for root cause analysis in manufacturing, with a worked example, how it compares to the 5 Whys and Pareto analysis, a template, and common mistakes."
 date: 2026-07-27
 authors: ["sumit-shinde"]
-image: /blog/2026/07/images/what-is-ishikawa-fishbone-diagram.md.png
+image: /blog/2026/07/images/what-is-ishikawa-fishbone-diagram.png
 tags:
   - flowfuse
 tldr: "An Ishikawa diagram, better known as a fishbone or cause-and-effect diagram, finds the real cause of a problem instead of chasing symptoms by sorting possible causes into categories branching off a central spine. The 6Ms are a starting point for manufacturing, but you swap them for whatever fits your problem. It works because it forces a team to externalize and argue their theories on paper before spending money on a fix, and it fails when people stop at labeling empty branches and call that analysis. The diagram surfaces suspects; verifying which one is real, with data, is what actually fixes the problem."
