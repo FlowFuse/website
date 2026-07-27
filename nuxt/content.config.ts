@@ -1,6 +1,21 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
 
+const tierValue = z.object({
+    value: z.union([z.boolean(), z.null(), z.string()]),
+    dimmed: z.boolean().optional(),
+    tag: z.string().optional(),
+    tagPrefix: z.string().optional(),
+    note: z.string().optional(),
+    options: z.array(z.string()).optional(),
+})
+
+const ctaButton = z.object({
+    cta: z.string(),
+    url: z.string(),
+    onclick: z.string().optional(),
+})
+
 export default defineContentConfig({
     collections: {
         // Rendered via pages/[...slug].vue, which sets `robots: noindex` on every page —
@@ -83,6 +98,7 @@ export default defineContentConfig({
             type: 'data',
             source: 'plans/*.yml',
             schema: z.object({
+                tierId: z.string(),
                 title: z.string(),
                 description: z.string().optional(),
                 price: z.string(),
@@ -98,6 +114,25 @@ export default defineContentConfig({
                     color: z.enum(['primary', 'secondary', 'highlight']).optional(),
                     variant: z.enum(['solid', 'outline', 'soft', 'subtle', 'ghost', 'link']).optional(),
                 }),
+            })
+        }),
+        featureCatalog: defineCollection({
+            type: 'data',
+            source: 'feature-catalog.yml',
+            schema: z.object({
+                sections: z.array(z.object({
+                    id: z.string(),
+                    title: z.string(),
+                    features: z.array(z.object({
+                        id: z.string(),
+                        title: z.string(),
+                        note: z.string().optional(),
+                        tiers: z.object({
+                            edge: z.boolean(),
+                            hub: z.boolean(),
+                        }),
+                    })),
+                })),
             })
         })
     }

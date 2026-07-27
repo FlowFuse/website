@@ -7,7 +7,7 @@ export default defineAppConfig({
         },
         button: {
             slots: {
-                base: 'uppercase',
+                base: 'uppercase font-semibold no-underline',
             },
         },
     },

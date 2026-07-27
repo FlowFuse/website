@@ -1,15 +1,18 @@
 title: Edge
-description: Build bespoke applications collaboratively, manage your Node-RED applications with improved security and control.
-price: "$425"
-billingCycle: /month
-note: Includes 5 hosted instances or remote instances. Additional instances start at $35/month.
-badge: "Cloud + Self-Hosted"
+tierId: edge
+order: 1
+description: The governed industrial application platform for OT production — licensed per manufacturing site, not per instance.
+badge: "Cloud or Self-Hosted"
 features:
-  - 20 Team members
-  - Team collaboration
-  - MQTT Broker (8 clients to start)
-  - "Standard Support + SLA: 99.5%"
+  - FlowFuse Expert (AI) & Node-RED MCP Servers
+  - Certified Nodes – OT (OPC-UA, EtherNet/IP, Siemens S7, Modbus TCP & RTU, BACnet, DeltaV, Allen-Bradley/Rockwell, RTSP)
+  - MQTT Broker
+  - DevOps Pipelines
+  - Device Group Management
+  - Application-Level RBAC & Endpoint Security
+  - Blueprints (OT Apps)
+  - Team Library
 button:
-  label: Try for free
-  to: https://app.flowfuse.com/account/create
-  variant: outline
+  label: Contact us
+  to: https://flowfuse.com/contact-us/
+  variant: solid

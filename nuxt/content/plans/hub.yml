@@ -1,18 +1,18 @@
 title: Hub
-description: Operate organization-wide industrial applications with the highest security and integrity.
-price: "Let's Talk"
-note: Includes 20 hosted instances or remote instances.
-badge: "Cloud + Self-Hosted"
-highlight: true
+tierId: hub
+order: 2
+description: The FlowFuse package for IT business systems — moving data between the software platforms a business runs on.
+badge: "Cloud or Self-Hosted"
 features:
-  - Everything in Edge
-  - Includes Insights Mode
-  - Unlimited team members
-  - Single Sign-On
-  - MQTT Broker (20 clients to start)
-  - "Enterprise support + SLA: 99.9%"
-  - Device group management
+  - FlowFuse Expert (AI) & Node-RED MCP Servers
+  - "Certified Nodes – IT (MQTT, Kafka, Redis, MSSQL, PostgreSQL, InfluxDB, TimescaleDB, HTTP Request, SQL/SQLite, AI nodes)"
+  - Git Integration & High Availability
+  - DevOps Pipelines & Private NPM Registry
+  - Application-Level RBAC & Endpoint Security
+  - BAA for HIPAA
+  - Blueprints (IT Apps)
+  - Team Library & Protected Instances
 button:
-  label: Contact Us
-  to: "#contact-us"
+  label: Contact us
+  to: https://flowfuse.com/contact-us/
   variant: solid
