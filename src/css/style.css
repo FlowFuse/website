@@ -795,6 +795,52 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
+    /* Subtle wave sweeping left-to-right THROUGH the logo's own fill on hover:
+       each logo path takes a horizontal gradient (declared inside the SVG) whose
+       stops shift colour in staggered sequence, so the colour flows across the
+       letterforms rather than a block passing over them.
+
+       Both front ends are driven from here. The 11ty includes
+       (components/flowfuse-wordmark*.njk, components/flowfuse-square.svg) and the
+       Nuxt components (AppHeader.vue, AppFooter.vue) each carry the gradient, and
+       Nuxt links this same stylesheet via nuxt.config.ts, so one rule set covers
+       both. Keep the gradients at five stops or the stagger below goes uneven.
+
+       The colours are custom properties because the three marks rest on different
+       fills: brand orange for the wordmark, a lighter red for the tablet square
+       in Nuxt, footer grey in the footer. Custom properties inherit down to the
+       <stop> elements, so setting them on the link is enough. */
+    @keyframes ff-logo-wave {
+        0%, 100% { stop-color: var(--ff-wave-base); }
+        50%      { stop-color: var(--ff-wave-peak); }
+    }
+    .ff-website header .ff-logo-link {
+        --ff-wave-base: #DA3D0B;
+        --ff-wave-peak: #6366f1;
+    }
+    /* Nuxt's tablet-width square mark rests on a lighter red than the wordmark. */
+    .ff-website header .ff-logo-link .ff-wave-square {
+        --ff-wave-base: #ED4E4E;
+    }
+    .ff-website footer .ff-footer-logo {
+        --ff-wave-base: #1F2937;
+        --ff-wave-peak: #DA3D0B;
+    }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(1),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(1) { animation: ff-logo-wave 0.5s ease 0s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(2),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(2) { animation: ff-logo-wave 0.5s ease 0.09s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(3),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(3) { animation: ff-logo-wave 0.5s ease 0.18s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(4),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(4) { animation: ff-logo-wave 0.5s ease 0.27s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(5),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(5) { animation: ff-logo-wave 0.5s ease 0.36s; }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website header .ff-logo-link:hover svg stop,
+        .ff-website footer .ff-footer-logo:hover svg stop { animation: none; }
+    }
+
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: var(--color-indigo-600);
@@ -1226,30 +1272,16 @@ h4:hover .header-anchor::before {
         opacity: 1;
     }
 
-    /* Footer links: brand-purple hover plus the animated left-to-right underline
-       used in the top nav. Excludes the logo link and the social icon buttons
-       (class "block"), which get a colour-only hover instead of an underline. */
+    /* Footer links: brand-purple hover plus a plain underline. The animated
+       left-to-right sweep is reserved for the main navigation, so the footer
+       underlines statically rather than animating. Excludes the logo link and
+       the social icon buttons (class "block"), which get a colour-only hover. */
     .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block) {
-        position: relative;
         text-decoration: none;
-    }
-    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block)::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -2px;
-        height: 1.5px;
-        background: currentColor;
-        transform: scaleX(0);
-        transform-origin: left center;
-        transition: transform 0.22s ease;
     }
     .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block):hover {
         color: var(--color-indigo-700);
-    }
-    .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block):hover::after {
-        transform: scaleX(1);
+        text-decoration: underline;
     }
     /* Social icons: brand-purple on hover, overriding each icon's baked-in
        red-hero hover colour. */
@@ -1260,11 +1292,6 @@ h4:hover .header-anchor::before {
     .ff-website footer.ff-footer a.block[href*="reddit.com"]:hover svg,
     .ff-website footer.ff-footer a.block[href*="youtube.com"]:hover svg {
         color: #DA3D0B;
-    }
-    @media (prefers-reduced-motion: reduce) {
-        .ff-website footer.ff-footer a:not(.ff-footer-logo):not(.block)::after {
-            transition: none;
-        }
     }
     /*
         Components
@@ -2889,18 +2916,18 @@ lite-youtube::before {
     }
 }
 
-/* FAQ / accordion header interaction: colour shift on hover and keyboard focus.
-   The animated underline was deliberately left out here: this interaction does
-   not benefit from the extra motion, and the sweeping underline is reserved for
-   the main navigation. The open/close chevron rotation is driven by JS inline
-   styles and is left untouched; the chevron stroke uses currentColor so it
-   follows the colour shift. */
+/* FAQ / accordion header interaction: colour shift plus a plain underline on
+   hover and keyboard focus. Only the sweeping animation is reserved for the main
+   navigation, so the underline itself stays here. The open/close chevron
+   rotation is driven by JS inline styles and is left untouched; the chevron
+   stroke uses currentColor so it follows the colour shift. */
 .ff-website .question {
     transition: color 0.2s ease;
 }
 .ff-website .question:hover,
 .ff-website .question:focus-visible {
     color: var(--color-indigo-600);
+    text-decoration: underline;
 }
 .ff-website .question:focus {
     outline: none;
