@@ -13,7 +13,7 @@ tags:
 ---
 
 In [Part 1](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/), we explored the fundamentals of OEE, outlined a basic design of the dashboard, and identified the key elements to include in the OEE dashboard. 
-In this Part 2, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](https://dashboard.flowfuse.com/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data.
+In this Part 2, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](https://dashboard.flowfuse.com/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data, the same kind of data you'd track for torque, weld cycle time, or paint throughput on an [automotive](/industries/automotive/) line.
 
 <!--more-->
 
@@ -526,8 +526,8 @@ _OEE Dashboard results without proper theming and styling_
 
 However, the dashboard may not yet look exactly as it did in the previous design or intended layout. Some components may not align correctly with adjacent components in terms of width and height. Additionally, on different screens, you may notice layout inconsistencies, and the top header elements, such as the OEE Dashboard title and logo is missing.  
 
-Do not worry—in the next part of this series, we will style the dashboard to match the original design. Later, we will demonstrate how to connect it to a real data source, scale it across your production lines, and explain how you can use this dashboard to improve production efficiency.
+Do not worry, in the next part of this series, we will style the dashboard to match the original design. Later, we will demonstrate how to connect it to a real data source, scale it across your production lines, and explain how you can use this dashboard to improve production efficiency.
 
 ## What Next?
 
-Part 3 of this series will follow soon. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account]({% include "sign-up-url.njk" %}) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
+In [Part 3](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/) of this series, we style the dashboard, connect it to a real data source, and scale it across production lines. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account]({% include "sign-up-url.njk" %}) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).

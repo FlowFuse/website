@@ -142,6 +142,21 @@ The bonus payment will be included in the next payroll after the goal completion
 
 Following the end of each quarter, the Operations team processes CSM commissions based on the performance metrics outlined in the [CS Handbook](https://flowfuse.com/handbook/sales/customer-success/).
 
+### Verifying Deals Before Handoff
+ 
+Before passing the commission workbook to the sales rep for confirmation, verify
+each deal in the workbook against HubSpot. Complete the following checks:
+ 
+1. **Account name** - Confirm the account name matches between the workbook and HubSpot.
+2. **Close date** — Confirm the deal's qualifying date falls within the quarter being evaluated.
+Deals are counted by signing date only; a deal signed outside the evaluation quarter must not be included,
+even if other activity falls within it.
+3. **Amount** — Confirm the deal amount matches between the workbook and HubSpot.
+4. **Deal type** — Keep renewals separate from expansion deals. These are classified and paid
+differently and must not be combined in a single line.
+Flag any figure that isn't shown in HubSpot (e.g., highlight the cell) and confirm
+it with the relevant sales team member before finalizing sheet.
+
 ### Payout Timeline & Submission
 
 1. Submission: CSMs must complete and submit the Commission Calculation [Template](https://docs.google.com/spreadsheets/d/1QruPv_EmC3o0OPTipSxqKIWy0mMxMB8asWupdA8N_X8/edit?gid=1622984334#gid=1622984334) by the 5th business day of the new quarter. Duplicate the workbook and complete the necessary fields following the legend. 

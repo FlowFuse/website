@@ -12,19 +12,19 @@ tags:
 tldr: "Node-RED's built-in Inject node handles simple intervals and basic time triggers, but complex scheduling requirements such as running only on weekdays, skipping holidays, or firing at a specific time on the last Friday of each month require the node-red-contrib-cron-plus node. This guide walks through using cron-plus in FlowFuse to build static cron expressions, solar event triggers (sunrise/sunset), date-specific schedules, and dynamically managed schedules that can be modified at runtime."
 ---
 
-Automation isn’t just about reacting to events—sometimes it’s about doing things at the right time. In Node-RED, the Inject node is great for triggering flows at set intervals, but it’s limited when you need more control. Cron jobs offer precise scheduling, letting you set up custom times for your tasks. In this guide, we'll show you how to create flexible cron schedules in FlowFuse with Node-RED, so your flows run exactly when needed.
+Automation isn’t just about reacting to events, sometimes it’s about doing things at the right time. In Node-RED, the Inject node is great for triggering flows at set intervals, but it’s limited when you need more control. Cron jobs offer precise scheduling, letting you set up custom times for your tasks. In this guide, we'll show you how to create flexible cron schedules in FlowFuse with Node-RED, so your flows run exactly when needed.
 
 <!--more-->
 
 ## What is a Cron Job?
 
-Let’s kick things off by demystifying what a cron job actually is. You’ve probably heard the term before, and while it might sound complex, it’s really just a way of setting up tasks to run at specific times — automatically.
+Let’s kick things off by demystifying what a cron job actually is. You’ve probably heard the term before, and while it might sound complex, it’s really just a way of setting up tasks to run at specific times, automatically.
 
 Think of it this way: with Node-RED’s Inject node, you can trigger tasks at intervals like every 5 seconds, every minute, or even on specific weekdays at set times (for example, every Monday, Tuesday, or Sunday). But when you use cron jobs, you gain much more control over the timing.
 
-For example, you can trigger a task every two hours, only on weekdays, but skip holidays or run a job every 5 minutes during business hours, but only in the first week of each quarter. You can even schedule flows to run at 6:45 AM on the last Friday of every month, or at 11:59 PM on the last day of the year — these kinds of patterns are either extremely complex or completely unachievable using just the Inject node.
+For example, you can trigger a task every two hours, only on weekdays, but skip holidays or run a job every 5 minutes during business hours, but only in the first week of each quarter. You can even schedule flows to run at 6:45 AM on the last Friday of every month, or at 11:59 PM on the last day of the year, these kinds of patterns are either extremely complex or completely unachievable using just the Inject node.
 
-The magic of cron lies in its ability to express complex time logic in a simple, compact format — perfect for orchestrating automation schedules that go well beyond what the basic Inject node can offer.
+The magic of cron lies in its ability to express complex time logic in a simple, compact format, perfect for orchestrating automation schedules that go well beyond what the basic Inject node can offer.
 
 ## Prerequisites
 
@@ -35,17 +35,17 @@ Before we start building flexible cron schedules in FlowFuse, make sure you have
 
 ## Building Scheduled Automations with cron-plus
 
-Now that you understand what cron jobs are and why they’re useful, let’s dive into building them inside Node-RED using the cron-plus node. When working with cron-plus, you’ll encounter different types of schedules—each suited for different needs—and varying levels of complexity depending on what you're trying to automate.
+Now that you understand what cron jobs are and why they’re useful, let’s dive into building them inside Node-RED using the cron-plus node. When working with cron-plus, you’ll encounter different types of schedules, each suited for different needs, and varying levels of complexity depending on what you're trying to automate.
 
-At the most basic level, you can define static schedules using familiar cron expressions (like "every 5 minutes" or "at 8:00 AM daily"). As you progress, you’ll learn to use solar event triggers (like sunrise or sunset), create date-specific schedules, and even manage schedules dynamically at runtime—adding, removing, or modifying them based on incoming data or user interactions.
+At the most basic level, you can define static schedules using familiar cron expressions (like "every 5 minutes" or "at 8:00 AM daily"). As you progress, you’ll learn to use solar event triggers (like sunrise or sunset), create date-specific schedules, and even manage schedules dynamically at runtime, adding, removing, or modifying them based on incoming data or user interactions.
 
-In this section, we’ll walk through each of these layers step by step, starting with the simplest use cases and gradually moving into more powerful and flexible scheduling techniques—giving you full control over when and how your flows run.
+In this section, we’ll walk through each of these layers step by step, starting with the simplest use cases and gradually moving into more powerful and flexible scheduling techniques, giving you full control over when and how your flows run.
 
 > Tip: This article draws information from the node’s [README](https://flows.nodered.org/node/node-red-contrib-cron-plus), which is highly informative. I recommend going through it as well for more details.
 
 ### Static Schedules
 
-The most straightforward way to use cron-plus is to define static schedules using cron expressions. These are pre-configured inside the node and run on a fixed pattern—perfect for predictable, repetitive tasks. For example we need to Trigger a flow every day at 8:00 AM.
+The most straightforward way to use cron-plus is to define static schedules using cron expressions. These are pre-configured inside the node and run on a fixed pattern, perfect for predictable, repetitive tasks. For example we need to Trigger a flow every day at 8:00 AM.
 
 1. Drag and drop the cron-plus node onto your Node-RED workspace.
 
@@ -159,17 +159,17 @@ Let’s start by setting up a flow that triggers 30 minutes after sunset. Here�
 
 1. Drag a new `cron-plus` node onto your Node-RED canvas.
 
-2. Set the location — solar events depend on your geographic location. You can configure this at the node level or per schedule. In the Location field, either:
+2. Set the location, solar events depend on your geographic location. You can configure this at the node level or per schedule. In the Location field, either:
    - Enter your latitude and longitude manually, or  
    - Click the three-dot icon to open a map and select your location.
 
 3. Add a new schedule. Enter the following Schedule Name, Topic, Payload
 
-4. Choose the solar event — set the Schedule Type to `solar`.  
+4. Choose the solar event, set the Schedule Type to `solar`.  
    You can choose "All Solar Events" or "Selected Solar Events" to pick specific ones.  
    For this example, choose "sunset".
 
-5. Set the offset — this defines how much earlier or later the trigger should happen compared to the solar event.  
+5. Set the offset, this defines how much earlier or later the trigger should happen compared to the solar event.  
    For 30 minutes after sunset, enter:
    ```
    30
@@ -182,13 +182,13 @@ Let’s start by setting up a flow that triggers 30 minutes after sunset. Here�
 [{"id":"cba15bd32c5434a5","type":"group","z":"b37428694e90b2c5","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["2af2e9274fe1321a","458c9533a1437ee1"],"x":94,"y":179,"w":392,"h":82},{"id":"2af2e9274fe1321a","type":"debug","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":380,"y":220,"wires":[]},{"id":"458c9533a1437ee1","type":"cronplus","z":"b37428694e90b2c5","g":"cba15bd32c5434a5","name":"Cron Plus","outputField":"payload","timeZone":"","storeName":"","commandResponseMsgOutput":"output1","defaultLocation":"","defaultLocationType":"default","outputs":1,"options":[{"name":"et","topic":"30min After Sunset","payloadType":"default","payload":"","expressionType":"solar","expression":" 0 8 * * *","location":"20.70816594524601 75.673828125","offset":"30","solarType":"selected","solarEvents":"sunset"}],"x":200,"y":220,"wires":[["2af2e9274fe1321a"]]}]
 {% endrenderFlow %}
 
-Your flow will now trigger 30 minutes after sunset every day — automatically adjusting for seasonal changes based on your location.
+Your flow will now trigger 30 minutes after sunset every day, automatically adjusting for seasonal changes based on your location.
 
 ### Date Sequence Schedules
 
-While cron expressions and solar events are great for recurring patterns, sometimes you need to schedule flows to run at very specific, one-time moments—like a product launch, system maintenance window, or a holiday-specific action. This is where the Date Sequence schedule type in cron-plus comes in.
+While cron expressions and solar events are great for recurring patterns, sometimes you need to schedule flows to run at very specific, one-time moments, like a product launch, system maintenance window, or a holiday-specific action. This is where the Date Sequence schedule type in cron-plus comes in.
 
-With this method, you can define exact dates and times (including timezone support), and the node will trigger your flow at those precise moments—once or multiple times, depending on the list you define.
+With this method, you can define exact dates and times (including timezone support), and the node will trigger your flow at those precise moments, once or multiple times, depending on the list you define.
 
 The sequence field supports:
 
@@ -218,7 +218,7 @@ Let’s learn how to set this up:
 1. Drag a new cron-plus node onto the canvas.
 2. Double-click the node to open its settings.
 3. Click +add to create a new schedule.
-4. Give the schedule a name and configure the topic — this is the value that will be sent with the message when the schedule triggers.
+4. Give the schedule a name and configure the topic, this is the value that will be sent with the message when the schedule triggers.
 5. Set the payload to whatever message or data you want to send when triggered.
 6. Choose Date Sequence from the Schedule Type dropdown.
 7. In the Expression field, enter one or more dates using any of the 8. supported formats we discussed above (UNIX timestamp, plain date/time, or date/time with timezone). You can separate multiple values with commas.
@@ -258,7 +258,7 @@ _A node showing the next event scheduled for May 26, 2025, at 12:00 AM GMT +5:30
 
 ### Dynamic Schedule Control via Input Messages
 
-In some cases, you might not know your schedule ahead of time—or you may want it to change based on user actions or incoming data. The cron-plus node supports this with dynamic control using input messages. This means you can add, update, or remove schedules while your flow is running, without opening the editor. It’s a powerful way to make your automations more responsive and adaptable.
+In some cases, you might not know your schedule ahead of time, or you may want it to change based on user actions or incoming data. The cron-plus node supports this with dynamic control using input messages. This means you can add, update, or remove schedules while your flow is running, without opening the editor. It’s a powerful way to make your automations more responsive and adaptable.
 
 Each control message is sent to the `cron-plus` node using a specially formatted `msg.payload` with a command and associated configuration.
 

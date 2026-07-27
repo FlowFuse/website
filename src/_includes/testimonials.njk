@@ -9,7 +9,9 @@
           {% image imageSrc, imageDescription, [360] %}
         </div>
         <div class="items-end justify-between sm:pl-12 flex-1 flex flex-col h-full w-full justify-items-end">
+          {% if not hideReadMore %}
           <span class="text-right pb-5 flex gap-1 hover:underline">Read the full story {% include "components/icons/arrow-long-right.svg" %}</span>
+          {% endif %}
           <p class="font-normal italic text-2xl">
             "{{ t.quote }}"
           </p>
@@ -27,12 +29,20 @@
   </a>
   {%- endfor -%}
 </div>
-<div class="flex flex-wrap flex-row gap-3 justify-center my-6">
-  {%- for t in testimonials -%}
-  <button class="testimonial-button align-baseline max-md:p-2" aria-label="Show testimonial from {{ t.author }}, {{ t.company }}">
-    <span></span>
-  </button>
-  {%- endfor -%}
+<div class="flex {% if browseAllUrl %}flex-col sm:flex-row{% else %}flex-row flex-wrap{% endif %} items-center justify-center {% if browseAllUrl %}sm:justify-between{% endif %} gap-3 my-6">
+  <div class="flex flex-wrap flex-row justify-center gap-3">
+    {%- for t in testimonials -%}
+    <button class="testimonial-button align-baseline max-md:p-2" aria-label="Show testimonial from {{ t.author }}, {{ t.company }}">
+      <span></span>
+    </button>
+    {%- endfor -%}
+  </div>
+  {% if browseAllUrl %}
+  <a href="{{ browseAllUrl }}" class="flex items-center gap-1.5 text-blue-600 hover:underline">
+    {{ browseAllText | default("Browse all customer stories") }}
+    {% include "components/icons/arrow-long-right.svg" %}
+  </a>
+  {% endif %}
 </div>
 
 <script>

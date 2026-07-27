@@ -24,14 +24,14 @@ In the planning section of [Part 1](/blog/2025/04/building-oee-dashboard-with-fl
 
 The primary colors in the theme include:
 
-- **Black (#000000)** — used for the page background to create contrast and reduce eye strain.
-- **Charcoal Blue (#1A1C24)** — a deep, muted tone that adds depth while maintaining a clean and modern look, used for the groups.
-- **White (#FFFFFF)** — used for text elements to ensure maximum readability against the dark background.
-- **Accent Colors** — vibrant colors such as teal, orange, green, yellow, and blue are used across widget elements, including chart bars, line graphs, and indicators. These accents help differentiate data types and bring attention to key metrics.
+- **Black (#000000)**, used for the page background to create contrast and reduce eye strain.
+- **Charcoal Blue (#1A1C24)**, a deep, muted tone that adds depth while maintaining a clean and modern look, used for the groups.
+- **White (#FFFFFF)**, used for text elements to ensure maximum readability against the dark background.
+- **Accent Colors**, vibrant colors such as teal, orange, green, yellow, and blue are used across widget elements, including chart bars, line graphs, and indicators. These accents help differentiate data types and bring attention to key metrics.
 
 But how do you come up with a dashboard design like this on your own? It starts with understanding why the theme matters. The design should reflect the context it is used in, the people interacting with it, and the mood it should convey. A dashboard on a factory floor may need to feel bold and focused, while one used by executives might aim for minimal and polished. A hospital system would need a tone that is calm, clean, and highly legible.
 
-If you have a brand palette, that’s a great starting point. If not, choose colors that support the usability and tone of your dashboard. Our OEE dashboard, for instance, was designed for manufacturing teams who need to quickly read live data. The layout needed to be sharp, high-contrast, and low on visual noise—ideal for control rooms with limited lighting. The dark theme helps key data stand out while reducing eye strain over long periods of use.
+If you have a brand palette, that’s a great starting point. If not, choose colors that support the usability and tone of your dashboard. Our OEE dashboard, for instance, was designed for manufacturing teams who need to quickly read live data. The layout needed to be sharp, high-contrast, and low on visual noise, ideal for control rooms with limited lighting. The dark theme helps key data stand out while reducing eye strain over long periods of use.
 
 ### Modifying Theme
 
@@ -66,7 +66,7 @@ These tweaks will ensure the charts match the dark theme and maintain good reada
 
 ## Improving Layout Consistency Across Screen Sizes
 
-When you open the same dashboard on different screen sizes—such as a mobile phone, tablet, or smaller desktop monitor—you might find the layout inconsistent or cramped. For example, widgets may overlap or appear too small.
+When you open the same dashboard on different screen sizes, such as a mobile phone, tablet, or smaller desktop monitor, you might find the layout inconsistent or cramped. For example, widgets may overlap or appear too small.
 
 ![OEE Dashboard broken layout on smaller screen](./images/oee-dashboard-breaked-layout.png){data-zoomable}
 _OEE Dashboard broken layout on smaller screen_
@@ -81,7 +81,7 @@ _OEE Dashboard broken layout on smaller screen_
 Our OEE dashboard has:
 
 - Four KPI widgets (OEE, Performance, Availability, Quality), each set to 3 columns wide.
-- A total of 3 × 4 = 12 columns, which does not fit in the 9-column grid—so the layout breaks, and one widget drops to the next row.
+- A total of 3 × 4 = 12 columns, which does not fit in the 9-column grid, so the layout breaks, and one widget drops to the next row.
 - Other widgets like Production Summary and Downtime Events are each 6 columns wide, which leaves 3 columns of unused space in a 9-column layout.
 
 5. To correct this, set the Tablet column count to `6` in the breakpoint table.
@@ -93,7 +93,7 @@ This change ensures:
 
 6. Click Deploy the changes.
 
-Even after adjusting the breakpoint settings, one more issue may appear: inconsistent heights between the *Top Underperforming Machines* and *Recent Downtime Events* sections—especially when one of the tables has fewer rows than the other.
+Even after adjusting the breakpoint settings, one more issue may appear: inconsistent heights between the *Top Underperforming Machines* and *Recent Downtime Events* sections, especially when one of the tables has fewer rows than the other.
 
 ![Inconsistent height of the widgets on OEE Dashboard](./images/table-incosistency.png){data-zoomable}
 _Inconsistent height of the widgets on the OEE Dashboard_
@@ -221,7 +221,7 @@ When connecting to your real data source, you may notice that the field names us
 ### To match your schema:
 
 1. Open each database node and update the query to reflect your field names.
-   - Do **not** change the alias names — they are used throughout the dashboard.
+   - Do **not** change the alias names, they are used throughout the dashboard.
 2. Replace table names with those used in your actual database.
 3. Do **not** change the dynamic parameters like `$startTime`, `$endTime`, and `$line`.
 
@@ -263,13 +263,13 @@ WHERE
 
 Your OEE dashboard is live. It updates in real-time and shows key metrics. But what should you do with the information?
 
-The dashboard is not just for display—it is there to help you take action. When OEE drops, do not stop at the number. Dig into the cause by checking the three main metrics: availability, performance, and quality.
+The dashboard is not just for display, it is there to help you take action. When OEE drops, do not stop at the number. Dig into the cause by checking the three main metrics: availability, performance, and quality.
 
 - If availability is low, check for unplanned stops, long changeovers, or idle machines.
 - If performance is down, the line may run slower than expected.
 - If quality has dropped, you may produce more rejects or rework.
 
-Say your OEE drops from 82% to 65%, and performance is the problem. Start by checking how many good parts were produced. Look at reject counts—more bad parts affect both quality and output. Then, check downtime logs and machine performance. One or two machines are often behind the drop—maybe they had repeated issues or ran slowly after a setup.
+Say your OEE drops from 82% to 65%, and performance is the problem. Start by checking how many good parts were produced. Look at reject counts, more bad parts affect both quality and output. Then, check downtime logs and machine performance. One or two machines are often behind the drop, maybe they had repeated issues or ran slowly after a setup.
 
 Use the 30-day trend graph to spot patterns over time. A sudden drop might show a specific issue, while a slow decline could signal a more significant process problem. Trends can also help you confirm if recent changes are making a real difference.
 Finally, share what you find. Use the dashboard during team reviews or shift handovers to keep everyone focused on what needs fixing. An OEE dashboard's real value is how you respond to it.
@@ -281,4 +281,4 @@ This final part completes our series on building a real-time OEE dashboard with 
 By the end of this journey, you have built a dashboard and created a foundation for continuous improvement in your manufacturing environment using open-source, low-code tools.
 We hope this series helped you understand how FlowFuse and Node-RED can quickly prototype and deploy powerful industrial applications. Thank you for following along!
 
-Suppose you have not built your OEE dashboard yet or are facing issues. In that case, you can get started instantly—[sign up]({% include "sign-up-url.njk" %}) now and use our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to accelerate your deployment.
+Suppose you have not built your OEE dashboard yet or are facing issues. In that case, you can get started instantly, [sign up]({% include "sign-up-url.njk" %}) now and use our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to accelerate your deployment.

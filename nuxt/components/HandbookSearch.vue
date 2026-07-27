@@ -116,5 +116,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div ref="searchContainer" id="algolia-search" class="border rounded"></div>
+  <div ref="searchContainer" id="algolia-search" class="border border-gray-200 rounded"></div>
 </template>

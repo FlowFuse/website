@@ -421,6 +421,14 @@ module.exports = function(eleventyConfig) {
         return decodeHTML(String(text).replace(/<[^>]+>/g, ""));
     });
 
+    eleventyConfig.addFilter("readingTime", function(content) {
+        if (!content) {
+            return 1;
+        }
+        const words = String(content).replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+        return Math.max(1, Math.ceil(words / 200));
+    });
+
     eleventyConfig.addFilter("restoreParagraphs", function(str) {
         const content = new String(str);
         return "<p>"+content.split(/\.\n/).join(".</p><p>")+"</p>"
@@ -621,12 +629,8 @@ module.exports = function(eleventyConfig) {
 
     function deriveTierLabel(tierData) {
         if (!tierData) return null;
-        const starter = tierData.starter && tierData.starter.value;
-        const pro = tierData.pro && tierData.pro.value;
         const enterprise = tierData.enterprise && tierData.enterprise.value;
         const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
-        if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
-        if (pro && enterprise && !enterpriseDimmed) return "Pro+";
         if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (contact us)";
         if (enterpriseDimmed) return "Enterprise (on request)";
         if (enterprise === 'time') return "Coming soon";
@@ -715,19 +719,13 @@ module.exports = function(eleventyConfig) {
                 // Inline tier specification (no feature ID)
                 const inlineFeature = {};
                 if (entry.tiers.cloud) {
-                    // Convert shorthand ("all", "pro+", "enterprise") to tier structure
-                    const t = entry.tiers.cloud;
+                    // Convert shorthand to tier structure
                     inlineFeature.cloud = {
-                        starter: { value: t === 'all' ? true : null },
-                        pro: { value: (t === 'all' || t === 'pro+') ? true : null },
                         enterprise: { value: true }
                     };
                 }
                 if (entry.tiers.selfHosted) {
-                    const t = entry.tiers.selfHosted;
                     inlineFeature.selfHosted = {
-                        starter: { value: t === 'all' ? true : null },
-                        pro: { value: (t === 'all' || t === 'pro+') ? true : null },
                         enterprise: { value: true }
                     };
                 }

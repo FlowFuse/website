@@ -36,7 +36,7 @@ As shown above, the raw signal on the left is erratic and full of jitter. The fi
 
 The logic is straightforward. The filter keeps track of the last value it accepted and compares every new incoming reading against it. If the difference is greater than the deadband threshold, the new value is accepted and passed downstream. If not, it is ignored and the last accepted value is held in place.
 
-!["Flowchart showing deadband filter decision logic — new reading arrives, if change exceeds threshold the value is accepted and forwarded, otherwise it is discarded and the last value is held"](./images/deadband-filter-how-it-works.png)
+!["Flowchart showing deadband filter decision logic, new reading arrives, if change exceeds threshold the value is accepted and forwarded, otherwise it is discarded and the last value is held"](./images/deadband-filter-how-it-works.png)
 *Each incoming sensor reading is compared against the last accepted value. Only readings that exceed the deadband threshold are forwarded. Everything else is silently discarded.*
 
 That single comparison is the entire filter. No buffers, no history, no moving averages. Just one stored value and one threshold check per incoming sample.
@@ -117,4 +117,4 @@ But filtering noise is just one piece of a reliable industrial data pipeline. Fl
 
 The filter handles the noise. FlowFuse handles everything else.
 
-For more on how FlowFuse connects PLCs and sensors — via OPC UA, Modbus, EtherNet/IP, and Siemens S7 — to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
+For more on how FlowFuse connects PLCs and sensors, via OPC UA, Modbus, EtherNet/IP, and Siemens S7, to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).

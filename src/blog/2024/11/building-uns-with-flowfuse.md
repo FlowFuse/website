@@ -14,7 +14,7 @@ tags:
 cta:
   type: demo
   title: See How FlowFuse Powers a Unified Namespace
-  description: FlowFuse brings together Node-RED, a built-in MQTT broker, and centralized device management — everything you need to connect your shop floor data into a single, real-time namespace.
+  description: FlowFuse brings together Node-RED, a built-in MQTT broker, and centralized device management, everything you need to connect your shop floor data into a single, real-time namespace.
 ---
 
 As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/solutions/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
@@ -141,7 +141,7 @@ While we are building a UNS to address the problems and limitations we observed 
 ![ISA-95 : Equipment Hierarchical Model](./images/isa-95-equipement-model.png){data-zoomable}
 _ISA-95 : Equipment Hierarchical Model_
 
-For example, following an ISA-95-based equipment hierarchy to define your topic naming convention allows you to access data from devices, sensors, or any other source without knowing their specific addresses or tags—such as for a PLC. With clarity and ease, this logical structure enables you to retrieve relevant information from different system layers (e.g., from control systems to MES or ERP).
+For example, following an ISA-95-based equipment hierarchy to define your topic naming convention allows you to access data from devices, sensors, or any other source without knowing their specific addresses or tags, such as for a PLC. With clarity and ease, this logical structure enables you to retrieve relevant information from different system layers (e.g., from control systems to MES or ERP).
 
 Example topic structure based on ISA-95 equipment model hierarchy:
 

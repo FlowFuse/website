@@ -168,10 +168,10 @@ Example standup messages:
 
 1. Purpose & Attendance
 Our Monday meeting serves a dual purpose: maintaining organizational alignment as we scale and fostering a connected team culture.
-   * First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals.
-   * Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities.
+   * First 10 Minutes (Mandatory): All team members are expected to join for the Department Spotlight to stay informed on collective progress and high-level goals. This portion of the call will be recorded.
+   * Remainder of Meeting (Optional): Following the spotlight, the meeting transitions into an open team catch-up. You are welcome to stay to share personal or professional updates, or depart if you need to focus on other priorities. Remember to turn off the AI notetaker when this part of the meeting starts. 
 
-2. Format: Department Spotlights
+2. Format: Department Spotlights (Recorded):
 Each Monday, one department will lead a 5–10 minute presentation. These briefings are intended to be concise, high-level, and focused on information that impacts the broader organization.
 The rotation will follow a four-week cycle:
    * Week 1: Company Update – Focusing on organizational health and "big picture" goals by the CEO
@@ -187,7 +187,7 @@ To maintain a high-energy pace and respect the team's time:
    * Deadline: Share your slides in the #General channel by EOD Friday prior to your presentation.
    * Absences: If a DRI cannot present on their assigned day, they must still share their slides in the #general Slack channel; the presentation will not be rescheduled for a following week to prevent meeting backlog and maintain our strict schedule.
 
-4. Open Agenda (Optional Segment)
+4. Open Agenda (Optional Segment - Not Recorded):
 For the latter portion of the meeting, team members are encouraged to add items to the agenda. This is an informal space to share weekend highlights, personal news, or professional updates that keep you busy.
 Effective Date: This new format begins Monday, February 2nd, 2026.
 

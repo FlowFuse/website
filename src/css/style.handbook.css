@@ -238,6 +238,6 @@
 
 } /* end @layer components */
 
-@layer overrides {
+@layer utilities {
     .handbook .prose { max-width: 100%; }
 }

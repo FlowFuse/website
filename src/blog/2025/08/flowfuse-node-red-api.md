@@ -131,7 +131,7 @@ Once triggered, the debug panel will show your user information as shown below w
 
 ## Automating DevOps Pipelines with the FlowFuse API
 
-One of the most powerful features of the FlowFuse API is its ability to integrate directly with CI/CD pipelines. This makes it possible to trigger builds, deployments, or pipeline stages automatically—either from scripts or directly within Node-RED flows—reducing manual effort and accelerating development cycles.
+One of the most powerful features of the FlowFuse API is its ability to integrate directly with CI/CD pipelines. This makes it possible to trigger builds, deployments, or pipeline stages automatically, either from scripts or directly within Node-RED flows, reducing manual effort and accelerating development cycles.
 
 To trigger a pipeline stage, you will use the following endpoint:
 
@@ -225,8 +225,8 @@ In the following flow, the development stage is deployed every day at 10 PM. Aft
 
 The FlowFuse API puts you in control of your Node-RED infrastructure through code. Instead of managing instances manually, you can automate repetitive tasks, integrate with existing tools, and build custom workflows that fit your exact needs.
 
-Whether you're managing a handful of instances or thousands of edge devices, the API scales with you. It's straightforward to get started—generate a token, make your first API call, and gradually automate more of your workflow as you go.
+Whether you're managing a handful of instances or thousands of edge devices, the API scales with you. It's straightforward to get started, generate a token, make your first API call, and gradually automate more of your workflow as you go.
 
 The real value comes from the time you save and the consistency you gain. Let the API handle the routine work while you focus on building great Node-RED applications.
 
-Start today by generating your first API token and making a call — you’ll see how quickly FlowFuse can automate your Node-RED operations. [Sign up for free](https://app.flowfuse.com) and put your industrial workflows on autopilot.
+Start today by generating your first API token and making a call, you’ll see how quickly FlowFuse can automate your Node-RED operations. [Sign up for free](https://app.flowfuse.com) and put your industrial workflows on autopilot.

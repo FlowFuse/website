@@ -34,7 +34,24 @@ specifically the Name Familiarity & Relationship table, which includes all BoD m
 
 When creating the calendar invite, attach the board deck (as a Google Slides link)
 so attendees have it ahead of time. The deck will be empty a few months out,
-but allows the company to iterate on the deck as the meeting comes closer.
+but allows the company to iterate on the deck as the meeting comes closer. Ensure
+that all participants of the meeting have access to the presentation slides.
+
+Confirm attendance of all participants of the invite, or their respective
+representatives prior to the scheduled meeting.
+
+## Board Meeting Attendees
+
+Each quarterly board meeting should include the following representatives. Before sending invites,
+verify that all firms below have a confirmed attendee on the calendar.
+
+Senovo — 1 representative
+We Start the Company / Open Core Ventures — 1 representative
+Cota Capital — 1 representative
+Bright Pixel — 1 representative (board observer)
+Cooley - 1 legal representative
+West Wave Capital — optional
+Uncorrelated — optional
 
 ## The Strategic Timeline
 
@@ -94,7 +111,12 @@ It would be highly appreciated if topics to be discussed are shared in advance w
 It is the CEO's responsibility to manage time in the meeting.
 
 #### Stock Options Approval
-Board approval is required for every new employee's options grant. For each applicable employee, the slide must include:
+Board approval is required for every new employee's options grant. Grants can only be approved when:
+
+- The employee is active.
+- The company has a valid 409A valuation. If the current valuation has expired, a new one must be obtained, and Legal circulates a board consent to approve the new 409A before any grants can proceed.
+
+For each applicable employee, the slide must include:
 
 - Employee name
 - Title
@@ -104,7 +126,7 @@ Board approval is required for every new employee's options grant. For each appl
 - Vesting schedule
 All information must be based on the final, executed offer letter. Employees included on this slide must have completed onboarding prior to the board meeting.
 
-To note: Stock Options cannot be approved when the company's 409A Valuation is expired. 
+Approval of proposed option grants happens either at the board meeting or via written consent circulated to the Board of Directors. Legal manages the Board UWC (unanimous written consent) process to approve the grants. Once approved, Legal updates Carta.
 
 ## Metrics
 
@@ -257,3 +279,11 @@ The company must deliver the following deliverables to all Major Investors:
 
 One investor in particular wants [this worksheet](https://docs.google.com/spreadsheets/d/10K12_RdNOu81-Ooxh1Vca6dF_EN3VWl2/edit?gid=1113941930#gid=1113941930) to be updated
 every quarter. It's set up to be mostly automatically imported from the Ops Plan.
+
+## Board Member Replacement 
+
+When a board member is replaced:
+
+1. Legal drafts a stockholder consent and circulates it to preferred stockholders for signature.
+2. Legal drafts a form of Indemnification Agreement between FlowFuse and the new board member, and shares it with the CEO and the new board member for signing.
+3. Once both documents are signed, Legal shares copies with us to keep for our records.

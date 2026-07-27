@@ -1,5 +1,6 @@
-@layer vendor, theme, base, components, utilities, overrides;
+@layer vendor, theme, base, components, overrides, utilities;
 
+@config "../../tailwind.config.js";
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -83,7 +84,6 @@
 
 @layer overrides {
     .prose {
-        max-width: none;
         --tw-prose-body: var(--color-gray-700);
         --tw-prose-headings: var(--color-gray-600);
         --tw-prose-links: var(--color-blue-600);
@@ -748,6 +748,13 @@ h4:hover .header-anchor::before {
     background-size: cover;
 }
 
+.solution-section-bg-flipped {
+    background: url('/images/home/home-solution-background.svg');
+    background-position: bottom;
+    background-size: cover;
+    transform: rotate(180deg);
+}
+
 .ff-image-top-rounded img,
 .ff-image-top-rounded picture {
     @apply rounded-t-lg;
@@ -1370,14 +1377,10 @@ h4:hover .header-anchor::before {
 
     .ff-feature-table-section li {
         display: grid;
-        grid-template-columns: 270px 1fr 1fr 1fr;
+        grid-template-columns: 270px 1fr;
         align-items: center;
         column-gap: 0.5rem;
         @apply bg-indigo-50/30;
-    }
-
-    .self-hosted.ff-feature-table-section li {
-        grid-template-columns: 320px repeat(3, 1fr);
     }
 
     .ff-feature-table-section li:first-child {
@@ -1386,19 +1389,13 @@ h4:hover .header-anchor::before {
 
     @media (max-width: 720px) {
         .ff-feature-table-section li {
-            grid-template-columns: 220px 1fr 1fr 1fr;
-        }
-        .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 220px repeat(3, 1fr);
+            grid-template-columns: 220px 1fr;
         }
     }
 
     @media (max-width: 680px) {
         .ff-feature-table-section li {
-            grid-template-columns: 170px 1fr 1fr 1fr;
-        }
-        .self-hosted.ff-feature-table-section li {
-            grid-template-columns: 170px repeat(3, 1fr);
+            grid-template-columns: 170px 1fr;
         }
     }
 
@@ -1548,27 +1545,27 @@ h4:hover .header-anchor::before {
     }
 
     /* Enterprise column highlight border */
-    .ff-feature-table-section li > :nth-child(4) {
+    .ff-feature-table-section li > :nth-child(2) {
         border-left: 2px solid var(--color-indigo-200);
         border-right: 2px solid var(--color-indigo-200);
     }
 
     /* Column header Enterprise label: top border + rounded top */
-    .ff-feature-table-section li.ff-feature--column-header > :nth-child(4) {
+    .ff-feature-table-section li.ff-feature--column-header > :nth-child(2) {
         border-top: 2px solid var(--color-indigo-200);
         border-radius: 12px 12px 0 0;
         margin: 0;
     }
 
     /* Bottom border + rounded corners on last data section */
-    .ff-feature-table > ul:nth-last-child(2) li:last-child > :nth-child(4) {
+    .ff-feature-table > ul:nth-last-child(2) li:last-child > :nth-child(2) {
         border-bottom: 2px solid var(--color-indigo-200);
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
     }
 
     /* No highlight on buttons row */
-    .ff-feature-table-section li.ff-feature--column-buttons > :nth-child(4) {
+    .ff-feature-table-section li.ff-feature--column-buttons > :nth-child(2) {
         border-left: none;
         border-right: none;
     }
@@ -2019,6 +2016,10 @@ lite-youtube::before {
     background: radial-gradient(ellipse 50% 5% at center bottom, rgb(from var(--color-blue-200) r g b / 0.3) 0%, rgb(from var(--color-blue-200) r g b / 0) 100%);
 }
 
+.bg-radial-red {
+    background: radial-gradient(ellipse 30% 70% at center bottom, rgb(from var(--color-red-50) r g b / 0.3) 0%, rgb(from var(--color-red-50) r g b / 0) 100%);
+}
+
 /* AI Chat Interface Styles */
 .bg-gradient-purple {
     background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
@@ -2292,7 +2293,7 @@ lite-youtube::before {
     }
 }
 
-@layer overrides {
+@layer utilities {
     .prose h1 { font-weight: 500; }
     .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { font-weight: 400; }
     .prose picture { margin-top: 0; margin-bottom: 0; margin-left: auto; margin-right: auto; }
@@ -2314,4 +2315,4 @@ lite-youtube::before {
     .prose .ff-blue-card > h5:first-of-type,
     .prose .ff-blue-card > h6:first-of-type { margin-top: 0; }
     .prose .ff-blue-card > p:last-of-type { margin-bottom: 0; }
-}
+} /* end @layer utilities */

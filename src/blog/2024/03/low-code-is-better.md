@@ -22,7 +22,7 @@ Every decade seems to introduce something that simplifies coding. For me, in col
 
 During this time in our education, our coursework was filled with languages like C++, which felt distant from the future of programming we imagined. We joked about "outdated" languages, not yet realizing the breadth of what programming could encompass.
 
-After finishing college in 2010, I started working during the tail end of the housing crisis in the U.S. My first role was as a Controls System Integrator at Logical System Inc., where I was introduced to programming PLCs with Ladder Logic. Despite my initial reservations—viewing it as barely a programming language—this experience was my first step towards appreciating the diversity and utility of programming languages beyond the conventional.
+After finishing college in 2010, I started working during the tail end of the housing crisis in the U.S. My first role was as a Controls System Integrator at Logical System Inc., where I was introduced to programming PLCs with Ladder Logic. Despite my initial reservations, viewing it as barely a programming language, this experience was my first step towards appreciating the diversity and utility of programming languages beyond the conventional.
 
 Later on in my career, I worked as a Corporate Automation and Controls Engineer where I worked on and enforced standards for partner System Integrators and OEMs.  One of these important standards was making sure applications written in the control process were written in Ladder Logic within the PLCs.  There were exceptions, of course, but the rule was to apply a visually appealing coding language, Ladder Logic, over a text-like language often called Structured Text.
 

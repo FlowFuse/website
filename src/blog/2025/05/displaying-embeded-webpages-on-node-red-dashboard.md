@@ -10,7 +10,7 @@ tags:
    - flowfuse
 ---
 
-When you build a dashboard, sometimes you need more than just internal data. Maybe it’s a live map, a report hosted elsewhere, or another dashboard — whatever it is, having to switch tabs breaks the flow. FlowFuse lets you embed external content like web pages, dashboards, PDFs, and widgets right into your dashboard. This guide shows you how to do exactly that — step by step — so your team has everything they need, all in one place.
+When you build a dashboard, sometimes you need more than just internal data. Maybe it’s a live map, a report hosted elsewhere, or another dashboard, whatever it is, having to switch tabs breaks the flow. FlowFuse lets you embed external content like web pages, dashboards, PDFs, and widgets right into your dashboard. This guide shows you how to do exactly that, step by step, so your team has everything they need, all in one place.
 
 <!--more-->
 
@@ -109,7 +109,7 @@ Some services provide an **iframe** tag. In this case, you need only copy the UR
 ![Animated weather widget on the Flowfuse dashboard, embedded with code.](./images/weather-widget.gif){data-zoomable}
 _Animated weather widget on the Flowfuse dashboard, embedded with code._
 
-Now that you’ve learned how to embed external content into your FlowFuse dashboard, one day you may need to embed your FlowFuse dashboard elsewhere—either on another FlowFuse dashboard or an external site. If you’ve tried and found that it’s not working as expected.
+Now that you’ve learned how to embed external content into your FlowFuse dashboard, one day you may need to embed your FlowFuse dashboard elsewhere, either on another FlowFuse dashboard or an external site. If you’ve tried and found that it’s not working as expected.
 
 This is a security feature designed to protect your data. FlowFuse dashboards, like many other web applications, implement security policies such as Cross-Origin Resource Sharing (CORS) and the X-Frame-Options header. These policies ensure that your dashboard is only viewed in trusted environments, preventing malicious sites from tampering with your data or exposing it to unauthorized users.
 
