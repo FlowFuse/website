@@ -50,7 +50,7 @@ Watch this video if you prefer video format:
 
 ## Why the Five Whys Works When Other Methods Don't
 
-Organizations often spend weeks on elaborate root cause analyses using [fault trees](https://en.wikipedia.org/wiki/Fault_tree_analysis), [fishbone diagrams](https://en.wikipedia.org/wiki/Ishikawa_diagram), and [statistical process control charts](/blog/2025/07/quality-control-automation-spc-charts), only to implement solutions that don't stick. The Five Whys succeeds where these methods often fail for three reasons.
+Organizations often spend weeks on elaborate root cause analyses using [fault trees](https://en.wikipedia.org/wiki/Fault_tree_analysis), [fishbone diagrams](/blog/2026/07/ishikawa-fishbone-diagram/), and [statistical process control charts](/blog/2025/07/quality-control-automation-spc-charts), only to implement solutions that don't stick. The Five Whys succeeds where these methods often fail for three reasons.
 
 First, it's fast. You can complete a thorough analysis in under an hour. That speed matters because problems are freshest when they just happened. Witnesses remember details. Physical evidence hasn't been cleaned up or moved. The sense of urgency is still there. Wait two weeks to schedule your analysis meeting, and you're working from memory and assumptions.
 

@@ -9,7 +9,7 @@
     "country": "IN",
     "headshot": "sumit.png",
     "reports_to": "Pablo Filomeno",
-    "bio": "Sumit is a Technical Writer at FlowFuse who helps engineers adopt Node-RED for industrial automation projects. He has authored over 100 articles covering industrial protocols (OPC UA, MQTT, Modbus), Unified Namespace architectures, and practical manufacturing solutions. Through his writing, he makes complex industrial concepts accessible, helping teams connect legacy equipment, build real-time dashboards, and implement Industry 4.0 strategies.",
+    "bio": "Sumit Shinde is a Technical Writer at FlowFuse specializing in industrial automation and manufacturing. In the past three years, he has built industrial applications and authored more than 100 technical articles covering industrial connectivity, unified data architecture, production metrics, and quality management for modern manufacturing.",
     "expertise": [
         "OPC UA",
         "MQTT",
