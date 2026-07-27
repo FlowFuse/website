@@ -5,7 +5,6 @@ description: "Learn how to use the FlowFuse RTSP Video Feed node to pull frames 
 date: 2026-06-23
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/rtsp-feeds-at-edge.png
-video: KKGfdI1SZa0
 tags:
     - flowfuse
     - post
