@@ -1,0 +1,15 @@
+title: Edge
+description: Build bespoke applications collaboratively, manage your Node-RED applications with improved security and control.
+price: "$425"
+billingCycle: /month
+note: Includes 5 hosted instances or remote instances. Additional instances start at $35/month.
+badge: "Cloud + Self-Hosted"
+features:
+  - 20 Team members
+  - Team collaboration
+  - MQTT Broker (8 clients to start)
+  - "Standard Support + SLA: 99.5%"
+button:
+  label: Try for free
+  to: https://app.flowfuse.com/account/create
+  variant: outline

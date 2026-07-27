@@ -1,0 +1,18 @@
+title: Hub
+description: Operate organization-wide industrial applications with the highest security and integrity.
+price: "Let's Talk"
+note: Includes 20 hosted instances or remote instances.
+badge: "Cloud + Self-Hosted"
+highlight: true
+features:
+  - Everything in Edge
+  - Includes Insights Mode
+  - Unlimited team members
+  - Single Sign-On
+  - MQTT Broker (20 clients to start)
+  - "Enterprise support + SLA: 99.9%"
+  - Device group management
+button:
+  label: Contact Us
+  to: "#contact-us"
+  variant: solid

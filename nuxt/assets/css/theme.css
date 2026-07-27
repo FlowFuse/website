@@ -16,6 +16,9 @@
     --color-red-700: #B32E09;
     --color-red-800: #8D1F06;
     --color-red-900: #671506;
+    --ui-primary: var(--color-indigo-600);
+    --ui-highlight: var(--color-red-600);
+    --ui-text-highlighted: var(--color-gray-700);
 }
 
 .handbook-content :is(h1, h2, h3, h4, h5, h6) {

@@ -77,6 +77,27 @@ export default defineContentConfig({
                         url.loc = url.loc.replace(/^\/whitepapers\//, '/whitepaper/')
                     },
                 }),
+            }),
+        }),
+        plans: defineCollection({
+            type: 'data',
+            source: 'plans/*.yml',
+            schema: z.object({
+                title: z.string(),
+                description: z.string().optional(),
+                price: z.string(),
+                billingCycle: z.string().optional(),
+                note: z.string().optional(),
+                badge: z.string().optional(),
+                highlight: z.boolean().optional(),
+                order: z.number(),
+                features: z.array(z.string()),
+                button: z.object({
+                    label: z.string(),
+                    to: z.string(),
+                    color: z.enum(['primary', 'secondary', 'highlight']).optional(),
+                    variant: z.enum(['solid', 'outline', 'soft', 'subtle', 'ghost', 'link']).optional(),
+                }),
             })
         })
     }
