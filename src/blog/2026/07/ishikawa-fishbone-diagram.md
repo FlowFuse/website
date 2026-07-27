@@ -59,7 +59,7 @@ cta:
   description: "Talk to our team about connecting your PLCs, sensors, and quality systems to FlowFuse, so you can verify which root cause is real with live production data and confirm your fixes actually hold."
 ---
 
-A machine goes down. Someone says "it's the operator," everyone nods, a fix gets applied, and the same fault is back within a month, because "the operator" was a symptom wearing the costume of a cause.
+The most dangerous words in a root cause investigation are often the ones spoken with the most confidence: "We already know what caused it." That assumption sends teams straight to a fix before they've explored the system behind the failure. When the same issue returns a few weeks later, it becomes clear they fixed the symptom, not the cause.
 
 <!--more-->
 
