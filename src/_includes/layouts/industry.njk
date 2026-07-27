@@ -6,18 +6,9 @@ layout: default
     <!-- ============================================================
          HERO
     ============================================================ -->
-    <div class="w-full relative overflow-hidden">
-        {% if hero.video %}
-        <div class="hero-video-bg absolute inset-0" aria-hidden="true">
-            <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" data-speed="{{ hero.video.speed | default(0.5) }}"{% if hero.video.poster %} poster="{{ hero.video.poster }}"{% endif %}>
-                <source src="{{ hero.video.mp4 }}" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-black/10"></div>
-        </div>
-        <script>(function(){var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.hero-video-bg video').forEach(function(v){if(r){v.removeAttribute('autoplay');v.pause();return;}var sp=parseFloat(v.getAttribute('data-speed'));if(!sp||sp<=0){sp=0.5;}var s=function(){v.playbackRate=sp;};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s);});})();</script>
-        {% endif %}
-        <div class="w-full px-6 py-10 sm:py-12 md:pt-6{% if hero.video %} relative z-10{% endif %}">
-            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-left md:max-w-screen-lg gap-8 items-stretch{% if hero.video %} bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-xl{% endif %}">
+    <div class="w-full">
+        <div class="w-full px-6 py-10 sm:py-12 md:pt-6">
+            <div class="md:flex md:my-16 items-center md:flex-row md:justify-between container mx-auto max-md:text-left md:max-w-screen-lg gap-8 items-stretch">
                 <div class="m-auto md:w-1/2">
                     {% if hero.eyebrow %}
                     <div class="mb-4 max-md:flex max-md:justify-start">
@@ -41,10 +32,10 @@ layout: default
                                     {{ hero.primaryCta }}
                                 </span>
                             </a>
-                            <a class="ff-btn group hover:no-underline flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                            <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
                                 href="{{ hero.secondaryCtaLink }}"
                                 onclick="capture('cta-contact', {'position': 'hero', 'page': '{{ slug }}'})">
-                                <span class="ff-animated-link">{{ hero.secondaryCta }}</span>
+                                <span>{{ hero.secondaryCta }}</span>
                                 <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-right.svg" %}</span>
                             </a>
                         </div>
@@ -65,10 +56,10 @@ layout: default
                                 {{ hero.primaryCta }}
                             </span>
                         </a>
-                        <a class="ff-btn group hover:no-underline flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
+                        <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
                             href="{{ hero.secondaryCtaLink }}"
                             onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
-                            <span class="ff-animated-link">{{ hero.secondaryCta }}</span>
+                            <span>{{ hero.secondaryCta }}</span>
                             <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-right.svg" %}</span>
                         </a>
                     </div>
@@ -153,21 +144,6 @@ layout: default
     </div>
 
     <!-- ============================================================
-         TRUSTED BY (animated logos) - styled to match the homepage social-proof
-         section (radial-indigo heading band, no divider rule)
-    ============================================================ -->
-    <div class="w-full px-6">
-        <div class="sm:max-w-screen-lg m-auto max-w-5xl mb-10">
-            <div class="w-full text-center min-h-14 flex justify-center items-center bg-radial-indigo">
-                <h2 class="text-gray-600 text-lg font-semibold">Trusted by our customers</h2>
-            </div>
-            <div class="mx-auto text-center -mt-0.5">
-                {% include "social-proof.njk" %}
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================================
          USE CASES
     ============================================================ -->
     <div class="w-full py-16 px-6 comparison-section-bg">
@@ -208,6 +184,18 @@ layout: default
          USE CASES FOR THIS INDUSTRY (derived from use-case tags)
     ============================================================ -->
     {% include "components/industry-use-cases.njk" %}
+
+    <!-- ============================================================
+         SOCIAL PROOF
+    ============================================================ -->
+    <div class="w-full py-12 px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="text-center text-indigo-800 font-semibold mb-6">{{ socialProofText }}</p>
+            <div class="max-md:max-w-xl max-md:mx-auto">
+                {% include "social-proof.njk" %}
+            </div>
+        </div>
+    </div>
 
     <!-- ============================================================
          CTA

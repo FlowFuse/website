@@ -131,7 +131,7 @@ hubspot:
             <div class="container m-auto text-left max-w-screen-lg">
                 <div class="mx-auto">
                     <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-white max-w-4xl">
-                        {{ site.messaging.tagLine | safe }}<br>IT, OT, and IIOT
+                        {{ site.messaging.tagLine | safe }}
                     </h1>
                     <p class="mt-12 text-center text-gray-200 md:text-xl m-auto max-w-4xl">
                         {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
@@ -146,7 +146,7 @@ hubspot:
                             <a class="ff-btn group flex flex-col mb-6" href="{% include 'sign-up-url.njk' %}"
                             onclick="capture('cta-try-it-now', {'position': 'hero'})">
                                 <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
-                                    <span class="ff-animated-link">TRY IT OUT</span>
+                                    <span>TRY IT OUT</span>
                                     {% include "components/icons/arrow-right.svg" %}
                                 </span>
                             </a>
@@ -262,7 +262,7 @@ hubspot:
         <div class="flex gap-4 items-center max-md:justify-center flex-wrap mt-6">
             <a class="ff-btn ff-btn--primary" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'secondary'})">BOOK A DEMO</a>
             <a class="ff-btn" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">
-                <span class="text-base uppercase flex gap-2 items-center text-indigo-600 hover:text-indigo-800"><span class="ff-animated-link">TRY IT OUT</span> {% include "components/icons/arrow-right.svg" %}</span>
+                <span class="text-base uppercase flex gap-2 items-center text-indigo-600 hover:text-indigo-800"><span>TRY IT OUT</span> {% include "components/icons/arrow-right.svg" %}</span>
             </a>
         </div>
     </div>
@@ -321,7 +321,7 @@ hubspot:
                         {% for item in category.items %}
                         {% if item.url %}
                         <a href="{{ item.url }}" class="group bg-white border border-white rounded-lg p-4 flex flex-col gap-3 hover:no-underline hover:border-indigo-300 transition-colors">
-                            <p class="text-indigo-500 font-medium m-0"><span class="ff-animated-link">{{ item.name }}</span></p>
+                            <p class="text-indigo-500 font-medium m-0"><span>{{ item.name }}</span></p>
                             <p class="text-gray-700 font-light m-0 text-sm leading-5">{{ item.description }}</p>
                         </a>
                         {% else %}
@@ -383,7 +383,7 @@ hubspot:
                     <p class="text-gray-700 font-light m-0">FlowFuse Expert, our industrial-tuned AI assistant, lets your team describe what they need in plain language, and generates flows, data transformations, and dashboard logic. No waiting on scarce developers.</p>
                 </div>
                 <a href="/ai/" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6">
-                    <span class="ff-animated-link">Learn more about FlowFuse AI</span>
+                    <span>Learn more about FlowFuse AI</span>
                     <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-long-right.svg" %}</span>
                 </a>
             </div>
@@ -398,7 +398,7 @@ hubspot:
                     <p class="text-gray-700 font-light m-0">Speed without governance creates new debt. FlowFuse provides the production layer where AI-assisted work becomes visible, versioned, secure, and reusable, across the enterprise.</p>
                 </div>
                 <a href="/book-demo/" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6" onclick="capture('cta-book-demo', {'position': 'ai'})">
-                    <span class="ff-animated-link">Book a demo</span>
+                    <span>Book a demo</span>
                     <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-long-right.svg" %}</span>
                 </a>
             </div>

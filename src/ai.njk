@@ -99,20 +99,11 @@ governance:
 ---
 <!--Hero Content (background-image treatment, pattern from the homepage hero) -->
 <section class="w-full relative bg-white">
-    <!-- Animated video background (container-port aerial), sized by the script
-         below to reach the middle of the AI input box then masked out, mirroring
-         the industry-page hero video treatment. -->
-    <div class="ai-hero-bg" aria-hidden="true">
-        <video autoplay muted loop playsinline preload="metadata" data-speed="0.6" poster="/images/ai/ai-hero-bg.jpg">
-            <source src="/images/ai/ai-hero-bg.mp4" type="video/mp4">
-        </video>
-    </div>
-    <script>(function(){var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.ai-hero-bg video').forEach(function(v){if(r){v.removeAttribute('autoplay');v.pause();return;}var sp=parseFloat(v.getAttribute('data-speed'))||0.6;var s=function(){v.playbackRate=sp;};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s);});})();</script>
-    <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-20">
+    <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-10">
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
             <div class="container m-auto text-left max-w-screen-lg">
                 <div class="mx-auto">
-                    <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl px-6 py-8 md:px-10 md:py-10 max-w-3xl mx-auto">
+                    <div class="max-w-3xl mx-auto">
                         <h1 class="font-medium home m-auto text-center text-gray-900 mb-6 max-w-2xl">
                             {{ hero.title | safe }}
                         </h1>
@@ -132,25 +123,20 @@ governance:
             </div>
         </div>
     </div>
-    <script>
-    (function(){
-        var section = document.currentScript.closest('section');
-        function fit(){
-            if(!section){ return; }
-            var box = section.querySelector('.ai-chat-box');
-            if(!box){ return; }
-            var sr = section.getBoundingClientRect();
-            var br = box.getBoundingClientRect();
-            var h = ((br.top - sr.top) + br.height / 2) + 'px';
-            var el = section.querySelector('.ai-hero-bg');
-            if(el){ el.style.height = h; }
-        }
-        if(document.readyState !== 'loading'){ fit(); } else { document.addEventListener('DOMContentLoaded', fit); }
-        window.addEventListener('load', fit);
-        window.addEventListener('resize', fit);
-    })();
-    </script>
 </section>
+
+<!-- PRODUCT: FlowFuse Expert in action. Sits between the hero and the capability
+     sections so the page shows the product before it explains it, and so the hero
+     is not separated from the rest of the page by a band of empty white. -->
+<div class="w-full bg-white px-6 pb-16 sm:pb-20">
+    <div class="md:max-w-screen-lg mx-auto">
+        <div class="w-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
+            <div class="w-full bg-white ff-image-cover ff-image-rounded left">
+                {% image "./images/ai/ai-ui.png", "FlowFuse Expert showing AI-generated flow suggestions", [1200] %}
+            </div>
+        </div>
+    </div>
+</div>
 <!-- CAPABILITIES: every AI use case, formalized, grouped by how it shows up in operations.
      NOTE: Predictive analytics and Edge ML are intentionally omitted from public claims
      (not shipped / not on the roadmap). Do not add them here without product sign-off. -->

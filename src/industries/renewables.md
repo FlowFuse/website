@@ -15,9 +15,6 @@ hero:
   image: "/images/industries/renewable-energies.png"
   imageAlt: "Aerial view of a wind and solar farm with data overlay showing real-time monitoring metrics."
   subCta: "See a sample renewable dashboard"
-  video:
-    mp4: /images/industries/hero-video/renewables.mp4
-    poster: /images/industries/hero-video/renewables.jpg
 problemImage: "images/industries/renewable-problem.svg"
 problems:
     - "Fragmented assets and legacy systems make it hard to see what is happening across all your sites."

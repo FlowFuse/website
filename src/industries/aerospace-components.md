@@ -14,9 +14,6 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/aerospace-components.jpg"
   imageAlt: "Quality engineer inspecting a precision-machined aerospace component using a coordinate measuring machine (CMM)"
-  video:
-    mp4: /images/industries/hero-video/aerospace-components.mp4
-    poster: /images/industries/hero-video/aerospace-components.jpg
 problemImage: "images/industries/aerospace-components-problem.svg"
 problems:
     - "FAI packages are assembled manually by quality engineers from multiple disconnected sources, machining centres, CMMs, material certs, and paper records, delaying new programme entry and customer approval."

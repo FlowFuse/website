@@ -14,10 +14,6 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/aviation-aerospace.jpg"
   imageAlt: "Technicians assembling aircraft structures across multiple aerospace production stations in a large manufacturing facility"
-  video:
-    mp4: /images/industries/hero-video/aviation-aerospace.mp4
-    poster: /images/industries/hero-video/aviation-aerospace.jpg
-    speed: 0.5
   subCta: ""
 problemImage: "images/industries/aviation-aerospace-problem.svg"
 problems:

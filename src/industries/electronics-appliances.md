@@ -14,10 +14,6 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/electronics-appliances.jpg"
   imageAlt: "Automated SMT production line with pick-and-place machines and PCB conveyors inside a modern electronics manufacturing facility"
-  video:
-    mp4: /images/industries/hero-video/electronics-appliances.mp4
-    poster: /images/industries/hero-video/electronics-appliances.jpg
-    speed: 2
   subCta: ""
 problemImage: "images/industries/electronics-appliances-problem.svg"
 problems:

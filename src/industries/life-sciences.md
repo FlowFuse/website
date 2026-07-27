@@ -14,9 +14,6 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/life-sciences.jpg"
   imageAlt: "Wide view of a GMP biopharmaceutical manufacturing facility with stainless steel bioreactors, automated process equipment, and cleanroom production infrastructure."
-  video:
-    mp4: /images/industries/hero-video/life-sciences.mp4
-    poster: /images/industries/hero-video/life-sciences.jpg
   subCta: ""
 problemImage: "images/industries/life-sciences-problem.svg"
 problems:

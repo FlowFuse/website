@@ -30,10 +30,6 @@ hero:
   secondaryCtaLink: "/pricing/"
   image: "/images/industries/automotive.jpg"
   imageAlt: "Aerial view of an automotive manufacturing plant floor"
-  video:
-    mp4: /images/industries/hero-video/automotive.mp4
-    poster: /images/industries/hero-video/automotive.jpg
-    speed: 0.24
   testimonial:
    quote: "At PennEngineering, I built out the FlowFuse deployment from scratch: machine monitoring, machine dashboards, ERP integration. What FlowFuse gave us was revision control and a platform the whole team could own. That made the deployment self-sustaining."
    name: "Lidiya Shutaya"
@@ -125,19 +121,9 @@ cta:
 <!-- ============================================================
      HERO
 ============================================================ -->
-<section class="w-full">
-    <div class="w-full relative overflow-hidden">
-    {% if hero.video %}
-    <div class="hero-video-bg absolute inset-0" aria-hidden="true">
-        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="metadata" data-speed="{{ hero.video.speed | default(0.5) }}"{% if hero.video.poster %} poster="{{ hero.video.poster }}"{% endif %}>
-            <source src="{{ hero.video.mp4 }}" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 bg-black/10"></div>
-    </div>
-    <script>(function(){var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelectorAll('.hero-video-bg video').forEach(function(v){if(r){v.removeAttribute('autoplay');v.pause();return;}var sp=parseFloat(v.getAttribute('data-speed'));if(!sp||sp<=0){sp=0.5;}var s=function(){v.playbackRate=sp;};s();v.addEventListener('loadedmetadata',s);v.addEventListener('play',s);});})();</script>
-    {% endif %}
-    <div class="px-6 pt-24 md:pt-28 pb-16 md:pb-20{% if hero.video %} relative z-10{% endif %}">
-        <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-stretch{% if hero.video %} bg-white/70 backdrop-blur-md rounded-2xl p-6 md:p-10 shadow-xl{% endif %}">
+<section class="w-full relative">
+    <div class="px-6 pt-16 md:pt-20">
+        <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-stretch">
             <div class="max-md:text-center md:flex md:flex-col md:justify-center">
                 {% if hero.eyebrow %}
                 <div class="mb-4 max-md:flex max-md:justify-center">
@@ -157,11 +143,11 @@ cta:
                         onclick="capture('cta-book-demo', {'position': 'hero'})">
                         {{ hero.primaryCta }}
                     </a>
-                    <a class="group hover:no-underline flex items-center gap-2 text-base uppercase font-bold text-indigo-600 hover:text-indigo-800"
+                    <a class="flex items-center gap-2 text-base uppercase font-bold text-indigo-600 hover:text-indigo-800"
                         href="{{ hero.secondaryCtaLink }}"
                         onclick="capture('cta-pricing', {'position': 'hero'})">
-                        <span class="ff-animated-link">{{ hero.secondaryCta }}</span>
-                        <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full">{% include "components/icons/arrow-right.svg" %}</span>
+                        {{ hero.secondaryCta }}
+                        {% include "components/icons/arrow-right.svg" %}
                     </a>
                 </div>
             </div>
@@ -185,9 +171,12 @@ cta:
                 {% endif %}
             </div>
         </div>
+        <div class="max-w-screen-lg mx-auto mt-16 text-center">
+            <p class="text-gray-500 text-lg font-semibold">{{ hero.trustedByText }}</p>
+            <div class="mx-auto text-center -mt-0.5 -mb-10">
+                {% include "social-proof.njk" %}
+            </div>
         </div>
-    </div>
-    <div class="px-6">
         <div class="max-w-md sm:max-w-screen-lg mx-auto mt-16 pb-10 bg-radial-red">
             <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
                 {% for metric in metrics %}
@@ -299,21 +288,6 @@ cta:
         </div>
     </div>
 </section>
-
-<!-- ============================================================
-     TRUSTED BY (animated logos) - styled to match the homepage social-proof
-     section (radial-indigo heading band, no divider rule)
-============================================================ -->
-<div class="w-full px-6 pt-10 sm:pt-14">
-    <div class="sm:max-w-screen-lg m-auto max-w-5xl mb-10">
-        <div class="w-full text-center min-h-14 flex justify-center items-center bg-radial-indigo">
-            <h2 class="text-gray-600 text-lg font-semibold">Trusted by our customers</h2>
-        </div>
-        <div class="mx-auto text-center -mt-0.5">
-            {% include "social-proof.njk" %}
-        </div>
-    </div>
-</div>
 
 <!-- ============================================================
      USE CASES FOR THIS INDUSTRY (derived from use-case tags)

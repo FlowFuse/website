@@ -14,9 +14,6 @@ hero:
   secondaryCtaLink: "/contact-us/"
   image: "/images/industries/food-beverage.jpg"
   imageAlt: "Wide-angle view of a modern beverage manufacturing plant with automated bottling lines, stainless steel processing equipment, and high-speed conveyors transporting bottles through production."
-  video:
-    mp4: /images/industries/hero-video/food-beverage.mp4
-    poster: /images/industries/hero-video/food-beverage.jpg
   subCta: ""
 problemImage: "images/industries/food-beverage-problem.svg"
 problems:

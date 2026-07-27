@@ -25,7 +25,7 @@ meta:
         <div class="max-w-screen-lg mx-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {% for industry in collections["industry"] | sort(false, true, "data.meta.title") %}
-                {% set cardImage = industry.data.hero.video.poster or industry.data.hero.image %}
+                {% set cardImage = industry.data.hero.image %}
                 <a href="{{ industry.url }}" class="group hover:no-underline flex flex-col rounded-xl border border-gray-200 bg-white overflow-hidden hover:border-indigo-300 hover:shadow-sm transition-all">
                     {% if cardImage %}
                     <div class="aspect-[16/9] w-full ff-image-cover bg-gray-100">
