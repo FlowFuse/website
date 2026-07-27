@@ -14,13 +14,11 @@ Connect a FlowFuse instance to Modbus TCP and Serial devices — PLCs, sensors, 
 
 This is a **FlowFuse Certified Node**. Unlike community nodes, which vary in quality and can go unmaintained without warning, FlowFuse vets Certified Nodes for quality, security, and support, and maintains them on an ongoing basis. [Read more about Certified Nodes](/blog/2025/07/certified-nodes-v2/).
 
+## Get the Certified Node in FlowFuse
+
 {% note %}
 The Modbus package is not available by default. It is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
 {% endnote %}
-
-## Get the Certified Node in FlowFuse
-
-FlowFuse delivers Certified Nodes to your instances as a managed catalogue. The Modbus package is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. [Contact us](/contact-us/) to enable it for your team.
 
 ### Installation steps
 
@@ -103,17 +101,20 @@ Each node performs one Modbus operation and reuses the shared connection you con
 All nodes that share the same Modbus-Client connection share one underlying socket/serial port and are queued through it in order, so a device is never sent two requests at once. A busy queue (see Modbus-Queue-Info) usually means the poll rate is faster than the device can respond to.
 {% endnote %}
 
-## Configure a Connection (Modbus-Client)
+## Configure a Modbus Client Connection
 
-Every node in the package depends on a connection defined by the **Modbus-Client** configuration node. Create it once and reference it from every Read, Getter, Write, and Server node that talks to the same device or bus.
+Every node in this package uses a **Modbus-Client** configuration node to communicate with a Modbus device. Create the connection once, then reuse it across every Read, Getter, Write, and Server node that connects to the same device or bus.
 
-1. Drag any Modbus node (for example Modbus-Read) onto the canvas and double-click it.
-2. Open the connection dropdown and add a new **Modbus-Client** configuration.
-3. Choose the connection **type**:
-   - **TCP** — enter the device's IP address and port (default `502`). A **TCP type** sub-option then selects the framing: default, RTU-buffered, or the UDP, TELNET, and C701 (TCP-to-serial gateway) modes for devices that need them.
-   - **Serial** / **Serial Expert** — choose the serial port, baud rate, parity, data bits, and stop bits, and the framing (RTU or ASCII).
-4. Set the **Unit ID** for the target device (default `1`; range 0–255 for TCP, 0–247 for serial), the request **timeout** (default `1000` ms), and the reconnect timeout (default `2000` ms).
-5. Click **Done**, then **Deploy**.
+1. Drag any Modbus node (for example, **Modbus-Read**) onto the canvas and double-click it.
+2. Next to the **Server** field, click the **+** icon to create a new **Modbus-Client** configuration.
+3. Select the connection **Type**:
+   - **TCP** — Enter the device's IP address and port (default: `502`). Then choose the **TCP Type**: **Default**, **RTU Buffered**, **UDP**, **TELNET**, or **C701** (for TCP-to-serial gateways).
+   - **Serial** / **Serial Expert** — Select the serial port, baud rate, parity, data bits, stop bits, and the Modbus framing (**RTU** or **ASCII**).
+4. Configure the remaining connection settings:
+   - **Unit ID** — Default: `1` (range `0–255` for TCP, `0–247` for Serial)
+   - **Timeout** — Default: `1000` ms
+   - **Reconnect Timeout** — Default: `2000` ms
+5. Click **Done**, then **Deploy** the flow.
 
 {% note %}
 The connection is shared. Changing its parameters affects every node that uses it, and you must redeploy the flow for connection changes to take effect. To change the endpoint at runtime without redeploying, see [Modbus-Flex-Connector](#modbus-flex-connector).
@@ -142,7 +143,7 @@ Each poll emits a message carrying the raw values on `msg.payload` (an array of 
 ```
 
 {% note %}
-Set the poll rate no faster than the device can reliably answer. A rate that outpaces the device causes requests to back up in the queue — check [Modbus-Queue-Info](#modbus-queue-info) if reads start arriving late or with gaps.
+Set the poll rate no faster than the device can reliably answer. A rate that outpaces the device causes requests to back up in the queue, check [Modbus-Queue-Info](#modbus-queue-info) if reads start arriving late or with gaps.
 {% endnote %}
 
 ## Modbus-Getter and Modbus-Flex-Getter
@@ -183,7 +184,7 @@ There are a few common approaches:
 
 - **A function node** — read the raw values (or the response buffer) and reconstruct the value in JavaScript, for example using Node.js `Buffer` methods (`readInt16BE`, `readUInt32LE`, `readFloatBE`, and so on) to apply the correct data type and byte/word order. This is the most flexible route for arbitrary decoding.
 - **A buffer-parser node** — a dedicated parsing node (such as `node-red-contrib-buffer-parser`) lets you declare each field's type and endianness in configuration rather than in code, and is convenient when a single response contains many differently-typed fields.
-- **The package's built-in IO mapping** — a **Modbus-IO-Config** node holds a JSON file that maps IEC-style addresses (`%QW0`, `%IX8.0`, and so on) to names, where the first character of each name selects the data type (`i` integer, `w` word, `u` unsigned, `b` boolean, `f`/`r` float, and so on). A read node can attach that mapping to its output, and **Modbus-Response-Filter** narrows the result down to the named fields a downstream node needs. This is convenient when your address list originates from a PLC export (for example a CODESYS CSV converted to the JSON IO-file format).
+- **The package's built-in IO mapping** — a **Modbus-IO-Config** node holds a JSON file that maps IEC-style addresses (`%QW0`, `%IX8.0`, and so on) to names, where the first character of each name selects the data type (`i` integer, `w` word, `u` unsigned, `b` boolean, `f`/`r` float, and so on). A read node can attach that mapping to its output, and **Modbus-Response-Filter** narrows the result down to the named fields a downstream node needs. This is convenient when your address list originates from a PLC export.
 
 {% note %}
 Choose the data type and word order that matches how the device packs its data, which is usually documented in the device's Modbus register map. If a decoded value looks wildly wrong (for example a temperature reading in the millions), the most common cause is a word-order mismatch on a multi-register value. Try the other byte/word order before assuming the device or wiring is at fault.
