@@ -129,13 +129,13 @@ Notice what happened. The obvious fix, "clean the print head," would have bought
 
 The fishbone rarely works alone, and it's easy to reach for the wrong tool. Here's how the three most common root-cause techniques divide the labor.
 
-**The fishbone diagram goes wide.** Its job is breadth: surface every plausible cause across several categories so nothing obvious gets missed. Use it first, when you don't yet know where the problem lives and you want a team's collective knowledge on one page. Its weakness is that it treats every branch as equally worth investigating and says nothing about which cause actually matters most.
+| Tool | What it does | Use it when | Where it falls short |
+|---|---|---|---|
+| **Fishbone diagram** | Goes wide. Surfaces every plausible cause across several categories so nothing obvious gets missed. | You don't yet know where the problem lives and want the team's collective knowledge on one page. | Treats every branch as equally worth investigating. Says nothing about which cause matters most. |
+| **[5 Whys](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/)** | Goes deep. Drills a single cause chain, asking "why" until you hit something fixable rather than another symptom. | After the fishbone, on the two or three branches you think are strongest. | It's a single thread. Drill the wrong cause and you'll reach a confident, well-reasoned, wrong answer. |
+| **[Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/)** | Ranks. Sorts candidate causes by frequency or impact so you fix the vital few, not the trivial many. | You can count occurrences and need to decide where to act first. | Needs data you may not have early on, and only ranks what you already thought to measure. |
 
-**The 5 Whys goes deep.** [The 5 Whys](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/) takes a single cause and drills straight down, asking "why" until you hit something you can fix rather than another symptom. Use it after the fishbone, on the two or three branches you think are strongest. Its weakness is the mirror image of the fishbone's: it's a single thread, so if you start drilling the wrong cause, you'll reach a confident, well-reasoned, wrong answer.
-
-**The Pareto chart ranks.** Once you have candidate causes and some data, a [Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/) sorts them by frequency or impact so you spend effort on the vital few rather than the trivial many. Use it when you can count occurrences and need to decide where to act first. Its weakness is that it needs data you may not have early on, and it ranks what you already measured, so it can't reveal a cause nobody thought to track.
-
-In practice the sequence is: fishbone to find suspects, 5 Whys to reach the root of the best ones, Pareto to decide which roots are worth fixing first. They're not competitors. They're a pipeline.
+The sequence is: fishbone to find suspects, 5 Whys to reach the root of the best ones, Pareto to decide which roots are worth fixing first. They're not competitors. They're a pipeline.
 
 ## Fishbone Diagram Template
 
