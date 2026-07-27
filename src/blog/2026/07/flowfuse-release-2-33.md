@@ -11,6 +11,17 @@ tags:
   - flowfuse
   - news
   - releases
+release: "2.33"
+# Only the three sections with a published changelog entry are wired up. The
+# headings below must match the body text exactly or the transform silently
+# injects nothing.
+features:
+  - id: dashboards-home
+    heading: "Your Dashboards, All in One Place"
+  - id: scoped-pats
+    heading: "Scoped Personal Access Tokens"
+  - id: sso
+    heading: "Manage Granular RBAC Through Your Identity Provider"
 ---
 
 FlowFuse 2.33 covers the whole path from setting up hardware on your plant floor to visualizing the data it produces. Onboarding now starts on the hardware itself, a FlowFuse-certified Modbus node connects you to your equipment, and every dashboard gets a home of its own. Alongside that, firmer controls govern who and what can reach your platform.
