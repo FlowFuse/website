@@ -21,6 +21,8 @@ FlowFuse now keeps an audit trail of MCP activity. When an AI client reads data 
 
 If you answer to an OT security team or an auditor, "the AI did it" is not an acceptable line in an incident report. The audit trail turns AI activity into the same kind of accountable, reviewable record you already expect from human operators.
 
+![An audit log listing MCP tool invocations with actor and timestamp](https://placehold.co/1600x900?text=MCP+Audit+Trail){data-zoomable style="border: 2px solid #E5E7EB;"}
+
 *Availability: [CONFIRM tier] from v2.33.*
 
 ## Scoped Personal Access Tokens
@@ -31,11 +33,15 @@ Previously a PAT carried the full permissions of the user who created it. If you
 
 **Getting started:** [CONFIRM: Team Settings path and scope options]
 
+![The token creation dialog with individual permission scopes selected](https://placehold.co/1600x900?text=Scoped+Access+Tokens){data-zoomable style="border: 2px solid #E5E7EB;"}
+
 *Availability: [CONFIRM tier] from v2.33.*
 
 ## Manage Granular RBAC Through Your Identity Provider
 
 SSO admins can now map SAML groups to FlowFuse's granular roles. When someone joins the "Plant Floor Operators" group in your identity provider, they get the matching FlowFuse permissions automatically. No manual role assignment, no drift between your IdP and your platform.
+
+![SAML group names mapped to FlowFuse roles in the SSO configuration](https://placehold.co/1600x900?text=SAML+Group+Mapping){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 *Availability: Enterprise [CONFIRM] from v2.33.*
 
@@ -55,11 +61,15 @@ FlowFuse Hub customers can now install a FlowFuse-certified Modbus node straight
 
 Modbus is one of the most common protocols on the factory floor, but the community package most teams rely on depends on volunteer maintainers. We forked node-red-contrib-modbus and now maintain our own version, backed by FlowFuse testing, SLA-backed security patching, and a long-term maintenance commitment. A node sitting at the center of your production flows no longer carries supply-chain risk.
 
+![The FlowFuse certified Modbus node listed in the editor's palette manager](https://placehold.co/1600x900?text=Certified+Modbus+Node){data-zoomable style="border: 2px solid #E5E7EB;"}
+
 *This feature is available exclusively to FlowFuse Hub customers, on both FlowFuse Cloud and Self Hosted, from v2.33.*
 
 ## Smoother Edge Onboarding Starts Here
 
 Getting a device from unboxed to running its first flow is getting an overhaul, and 2.33 ships the first pieces. When the Device Agent can't reach the FlowFuse platform, it now tells you exactly why instead of failing silently. Connection problems that used to mean digging through logs are now diagnosed at the source.
+
+![The Device Agent reporting why it cannot reach the FlowFuse platform](https://placehold.co/1600x900?text=Device+Agent+Diagnostics){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 More of the from-scratch onboarding experience lands in upcoming releases.
 
@@ -70,9 +80,9 @@ More of the from-scratch onboarding experience lands in upcoming releases.
 - Fixed dropdown inputs rejecting values that matched the start of a suggestion.
 - Plus dependency updates and smaller fixes.
 
-For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.32, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
+For detailed breakdowns of each feature with additional visuals, visit our [changelog](/changelog/). For the complete list of everything included in FlowFuse 2.33, check out the [release notes](https://github.com/FlowFuse/flowfuse/releases).
 
-If something in this release improves your workflow, or if there is still friction we can remove, please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.32) to us.
+If something in this release improves your workflow, or if there is still friction we can remove, please [share feedback or report issues regarding this release](mailto:contact@flowfuse.com?subject=Feedback%20on%202.33) to us.
 
 ## Try FlowFuse
 
