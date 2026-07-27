@@ -1,0 +1,20 @@
+title: Hub
+tierId: hub
+order: 2
+description: Move data between the ERPs, databases, and APIs your business runs on, with the governance IT teams need to integrate and orchestrate systems at scale.
+badge: "Cloud or Self-Hosted"
+badge: "Cloud or Self-Hosted"
+features:
+  - FlowFuse Expert (AI) & Node-RED MCP Servers
+  - "Certified Nodes – IT (MQTT, Kafka, Redis, MSSQL, PostgreSQL, InfluxDB, TimescaleDB, HTTP Request, SQL/SQLite, AI nodes)"
+  - Git Integration & High Availability
+  - DevOps Pipelines & Private NPM Registry
+  - Application-Level RBAC & Endpoint Security
+  - BAA for HIPAA
+  - Blueprints (IT Apps)
+  - Team Library & Protected Instances
+button:
+  label: Contact us
+  to: /contact-us/
+  external: true
+  variant: solid
