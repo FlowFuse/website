@@ -55,10 +55,6 @@ export default defineNuxtConfig({
         sitemap: ['https://flowfuse.com/sitemap.xml', 'https://flowfuse.com/sitemap-legacy.xml'],
     },
 
-    ogImage: {
-        defaults: { component: 'Default' },
-    },
-
     linkChecker: {
         failOnError: true,
         // trailing-slash: 11ty pages use trailing slashes intentionally
