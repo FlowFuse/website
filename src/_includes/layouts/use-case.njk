@@ -225,6 +225,9 @@ sitemapPriority: 0.7
                 </div>
                 {% endfor %}
             </div>
+            <div class="mt-10 flex">
+                <a class="ff-btn ff-btn--primary-outlined uppercase" href="/ai/" onclick="capture('cta-ai', {'position': 'use-case-ai-build-layer', 'page': '{{ page.fileSlug }}'})">Get started with the Expert</a>
+            </div>
             {% if aiBuildLayer.note %}
             <p class="mt-8 text-sm text-gray-400">{{ aiBuildLayer.note }}</p>
             {% endif %}
