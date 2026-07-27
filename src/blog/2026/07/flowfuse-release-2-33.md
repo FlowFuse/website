@@ -4,7 +4,9 @@ subtitle: "Human-in-the-loop permissions, a full MCP audit trail, and scoped acc
 description: "FlowFuse 2.33 adds human-in-the-loop tool permissions for the Expert, an MCP audit trail, scoped Personal Access Tokens, and SAML group management for granular RBAC."
 date: 2026-07-30
 authors: ["jamie-strusz"]
-image: /blog/2026/07/images/[TBD].png
+# TODO: uncomment once the hero art lands (art request pending).
+# The build stats this path locally, so a placeholder value fails CI.
+# image: /blog/2026/07/images/flowfuse-release-2-33.jpg
 tags:
   - flowfuse
   - news
