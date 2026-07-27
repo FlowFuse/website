@@ -328,7 +328,7 @@ eleventyComputed:
                         {% navoption "Industrial AI", "/ai/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
                         <!-- More dropdown for overflow items -->
                         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
-                            <span class="flex items-center gap-1">More<span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
+                            <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
                             <ul id="nav-more-list" class="align-left"></ul>
                         </li>
                     </ul>
@@ -364,7 +364,7 @@ eleventyComputed:
     <!-- Hannover Messe 2026 Promo Banner -->
     {% include "components/hm-promo-banner.njk" %}
     <!-- Footer -->
-    <footer class="ff-footer bg-gray-100 w-full border-t border-white">
+    <footer class="ff-footer bg-gray-100 w-full">
         <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">

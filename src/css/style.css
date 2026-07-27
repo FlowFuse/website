@@ -795,39 +795,6 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
-    /* Subtle purple wave sweeping left-to-right THROUGH the logo's own fill on
-       hover: the logo paths use a horizontal gradient (defined in the SVGs) and
-       its stops turn purple in staggered sequence, so the colour flows across
-       the letterforms rather than a block passing over them. */
-    @keyframes ff-logo-wave {
-        0%, 100% { stop-color: #DA3D0B; }
-        50% { stop-color: #6366f1; }
-    }
-    .ff-website header a.ff-logo-link:hover svg stop:nth-child(1) { animation: ff-logo-wave 0.5s ease 0s; }
-    .ff-website header a.ff-logo-link:hover svg stop:nth-child(2) { animation: ff-logo-wave 0.5s ease 0.09s; }
-    .ff-website header a.ff-logo-link:hover svg stop:nth-child(3) { animation: ff-logo-wave 0.5s ease 0.18s; }
-    .ff-website header a.ff-logo-link:hover svg stop:nth-child(4) { animation: ff-logo-wave 0.5s ease 0.27s; }
-    .ff-website header a.ff-logo-link:hover svg stop:nth-child(5) { animation: ff-logo-wave 0.5s ease 0.36s; }
-    @media (prefers-reduced-motion: reduce) {
-        .ff-website header a.ff-logo-link:hover svg stop { animation: none; }
-    }
-
-    /* Footer logo: greyscale at rest (its gradient stops are gray-800), with the
-       same staggered wave as the header flashing brand red/orange across the
-       letterforms on hover, then settling back to grey. Scoped to the footer. */
-    @keyframes ff-logo-wave-footer {
-        0%, 100% { stop-color: #1F2937; }
-        50% { stop-color: #DA3D0B; }
-    }
-    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(1) { animation: ff-logo-wave-footer 0.5s ease 0s; }
-    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(2) { animation: ff-logo-wave-footer 0.5s ease 0.09s; }
-    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(3) { animation: ff-logo-wave-footer 0.5s ease 0.18s; }
-    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(4) { animation: ff-logo-wave-footer 0.5s ease 0.27s; }
-    .ff-website footer a.ff-footer-logo:hover svg stop:nth-child(5) { animation: ff-logo-wave-footer 0.5s ease 0.36s; }
-    @media (prefers-reduced-motion: reduce) {
-        .ff-website footer a.ff-footer-logo:hover svg stop { animation: none; }
-    }
-
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: var(--color-indigo-600);
@@ -2220,28 +2187,6 @@ lite-youtube::before {
     outline-offset: 3px;
 }
 
-/* Industrial AI hero: animated video background (container-port aerial),
-   matching the industry-page hero treatment. Height is set by script so it
-   reaches the vertical middle of the AI input box, then masks out below into
-   the solid indigo section. Sits behind the z-10 hero content. */
-.ai-hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 72%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-}
-.ai-hero-bg video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */
 
 /* View Transition styles for smooth morphing */
@@ -2551,12 +2496,17 @@ lite-youtube::before {
         transition: opacity 0.15s ease 0.18s, visibility 0s linear 0.18s;
     }
 }
+/* md-to-lg: same spreading rule as the lg-to-xl band below. Previously the
+   columns only spread from 1024px up, so narrowing the viewport past 1024
+   suddenly clustered them back into the centre, which read as inconsistent:
+   the panel used less of the available width the narrower it got. */
 @media (min-width: 768px) and (max-width: 1023px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
-        column-gap: 0.75rem;
+        justify-content: space-between;
+        column-gap: 1.5rem;
         font-size: 0.875rem;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding-left: max(0.75rem, calc((100vw - 960px) / 2));
+        padding-right: max(0.75rem, calc((100vw - 960px) / 2));
     }
 }
 /* lg-to-xl: the highlight card is not shown yet, so the category columns would
@@ -2620,12 +2570,16 @@ lite-youtube::before {
         border-radius: 0.75rem;
         overflow: hidden;
         border: 1px solid #e5e7eb;
+        background: #fff;
     }
+    /* `contain`, not `cover`: highlight images come from each linked page's own
+       front matter and are not all 16/9, so cover was cropping the taller ones
+       (the Platform panel's AI image most visibly). */
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         transition: transform 0.3s ease;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover img {
@@ -2864,36 +2818,36 @@ lite-youtube::before {
     }
 }
 
-/* Animated hover underline on top-level nav items (grows left to right) */
+/* Animated hover underline on top-level nav items (grows left to right). The
+   line is anchored to the .ff-nav-label span rather than the <a>/<span> box, so
+   it matches the width of the label text instead of spanning the whole menu
+   item. That also removes the need for a per-breakpoint inset. */
 @media (min-width: 768px) {
     .ff-website header #nav-content > li > a,
     .ff-website header #nav-content > li > span {
         position: relative;
     }
-    .ff-website header #nav-content > li > a::after,
-    .ff-website header #nav-content > li > span::after {
+    .ff-website header #nav-content > li > a > .ff-nav-label,
+    .ff-website header #nav-content > li > span > .ff-nav-label {
+        position: relative;
+    }
+    .ff-website header #nav-content > li > a > .ff-nav-label::after,
+    .ff-website header #nav-content > li > span > .ff-nav-label::after {
         content: "";
         position: absolute;
-        left: 16px;
-        right: 16px;
-        bottom: 6px;
+        left: 0;
+        right: 0;
+        bottom: -2px;
         height: 2px;
         background: currentColor;
         transform: scaleX(0);
         transform-origin: left center;
         transition: transform 0.22s ease;
     }
-    .ff-website header #nav-content > li:hover > a::after,
-    .ff-website header #nav-content > li:hover > span::after,
-    .ff-website header #nav-content > li:focus-within > span::after {
+    .ff-website header #nav-content > li:hover > a > .ff-nav-label::after,
+    .ff-website header #nav-content > li:hover > span > .ff-nav-label::after,
+    .ff-website header #nav-content > li:focus-within > span > .ff-nav-label::after {
         transform: scaleX(1);
-    }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-    .ff-website header #nav-content > li > a::after,
-    .ff-website header #nav-content > li > span::after {
-        left: 8px;
-        right: 8px;
     }
 }
 
@@ -2924,8 +2878,6 @@ lite-youtube::before {
    mega-highlight image zoom for users who ask for less motion. The hover
    states still apply, just without the left-to-right sweep or the scale. */
 @media (prefers-reduced-motion: reduce) {
-    .ff-website header #nav-content > li > a::after,
-    .ff-website header #nav-content > li > span::after,
     .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card)::after,
     .ff-website header .ff-nav-label::after,
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title::after,
@@ -2937,47 +2889,18 @@ lite-youtube::before {
     }
 }
 
-/* Animated hover underline on card links (View use case / architecture / outcome) */
-.ff-animated-link {
-    position: relative;
-    align-self: flex-start;
-}
-.ff-animated-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 100%;
-    height: 1.5px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 0.22s ease;
-}
-a.group:hover .ff-animated-link::after,
-.ff-animated-link:hover::after {
-    transform: scaleX(1);
-}
-@media (prefers-reduced-motion: reduce) {
-    .ff-animated-link::after {
-        transition: none;
-    }
-}
-
-/* FAQ / accordion header interaction: animated underline + colour shift on
-   hover and keyboard focus, in the same visual language as .ff-animated-link.
-   The open/close chevron rotation is driven by JS inline styles and is left
-   untouched; the chevron stroke uses currentColor so it follows the shift. */
+/* FAQ / accordion header interaction: colour shift on hover and keyboard focus.
+   The animated underline was deliberately left out here: this interaction does
+   not benefit from the extra motion, and the sweeping underline is reserved for
+   the main navigation. The open/close chevron rotation is driven by JS inline
+   styles and is left untouched; the chevron stroke uses currentColor so it
+   follows the colour shift. */
 .ff-website .question {
     transition: color 0.2s ease;
 }
 .ff-website .question:hover,
 .ff-website .question:focus-visible {
     color: var(--color-indigo-600);
-}
-.ff-website .question:hover .ff-animated-link::after,
-.ff-website .question:focus-visible .ff-animated-link::after {
-    transform: scaleX(1);
 }
 .ff-website .question:focus {
     outline: none;
