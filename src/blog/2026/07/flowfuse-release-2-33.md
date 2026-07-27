@@ -1,7 +1,7 @@
 ---
-title: "FlowFuse 2.33: AI That Acts on Your Systems, With You in Control"
-subtitle: "Human-in-the-loop permissions, a full MCP audit trail, and scoped access tokens make AI on industrial systems governable"
-description: "FlowFuse 2.33 adds human-in-the-loop tool permissions for the Expert, an MCP audit trail, scoped Personal Access Tokens, and SAML group management for granular RBAC."
+title: "FlowFuse 2.33: From Setting Up Plant Floor Hardware to Visualizing Your Data"
+subtitle: "Set up your own hardware directly, reach your equipment through a FlowFuse-certified Modbus connection, see every dashboard in one place, and keep firmer control over who and what can reach your platform."
+description: "FlowFuse 2.33 takes you from setting up plant floor hardware directly to visualizing its data, with a FlowFuse-certified Modbus connection, a home for every dashboard, and firmer control over platform access through scoped Personal Access Tokens, SSO-driven application roles, and an MCP audit trail."
 date: 2026-07-30
 authors: ["jamie-strusz"]
 # TODO: uncomment once the hero art lands (art request pending).
@@ -13,13 +13,15 @@ tags:
   - releases
 ---
 
-FlowFuse 2.33 shortens the path from edge hardware on your factory floor to a dashboard someone can actually use. Edge onboarding gets the first pieces of an overhaul, Modbus joins the certified node lineup, and dashboards finally have a home of their own. Underneath all of it, new audit and access controls keep that wider reach accountable.
+FlowFuse 2.33 covers the whole path from setting up hardware on your plant floor to visualizing the data it produces. Onboarding now starts on the hardware itself, a FlowFuse-certified Modbus node connects you to your equipment, and every dashboard gets a home of its own. Alongside that, firmer controls govern who and what can reach your platform.
 
-## Smoother Edge Onboarding Starts Here
+## Set Up Your Plant Floor Hardware Straight From the Terminal
 
-Getting edge hardware from unboxed to running its first flow is getting an overhaul, and 2.33 ships the first pieces. When the Device Agent can't reach the FlowFuse platform, it now tells you exactly why instead of failing silently. Connection problems that used to mean digging through logs are now diagnosed at the source.
+Getting your own hardware into FlowFuse meant working backwards. You signed up, found the remote instance section, learned what the Device Agent was, created the instance in the platform, copied its connection details, and only then ran the installer with that code in hand.
 
-![The Device Agent reporting why it cannot reach the FlowFuse platform](https://placehold.co/1600x900?text=Device+Agent+Diagnostics){data-zoomable style="border: 2px solid #E5E7EB;"}
+Now you can start where the hardware already is. Run the installer from your terminal and it takes you through signing up and connecting, ending with your machine registered as a remote instance and ready to build on. When something does block the connection, the Device Agent tells you exactly what, instead of failing quietly.
+
+![The installer running in a terminal, walking through sign-up and connection to FlowFuse](https://placehold.co/1600x900?text=Terminal+Onboarding){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 More of the from-scratch onboarding experience lands in upcoming releases.
 
