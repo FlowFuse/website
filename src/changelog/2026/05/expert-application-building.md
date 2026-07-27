@@ -15,6 +15,6 @@ Previously, the Expert could answer questions, suggest changes, and act on links
 ![FlowFuse Expert assembling flows on the Node-RED workspace from a chat prompt](./images/expert-application-building.gif){data-zoomable}
 *FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt.*
 
-Agentic Node-RED development is rolling out as a soft launch so we can fine-tune the experience before opening it up more widely. It is available on request to FlowFuse Cloud Starter, Team, and Enterprise teams from v2.30. Self Hosted enablement follows shortly.
+Agentic Node-RED development is rolling out as a soft launch so we can fine-tune the experience before opening it up more widely. It is available on request to FlowFuse Cloud Team and Enterprise teams from v2.30. Self Hosted enablement follows shortly.
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to enable agentic Node-RED development for your FlowFuse Cloud team.

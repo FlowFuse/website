@@ -39,9 +39,7 @@ We’re always happy to [support you](/contact-us/) in any of these or other ind
 
 ### Pricing changes
 
-A driving force behind the horizontal nature of adoption of the FlowFuse development platform has been the introduction of the 3 product tiers earlier this year. We’ve introduced a Starter package, Team and Enterprise tiers.
-
-The [starter package](/blog/2023/08/new-starter-tier) allows everyone to adopt the core features of FlowFuse and Node-RED. It provides hosting of 2 Node-RED instances in the Cloud and management of 2 Node-REDs on the edge.
+A driving force behind the horizontal nature of adoption of the FlowFuse development platform has been the introduction of product tiers earlier this year. We’ve introduced Team and Enterprise tiers.
 
 A user can be promoted to the [Team or Enterprise tier](/changelog/2023/09/introduction-enterprise-tier/) when they’re ready to further professionalize their adoption and have access to enhanced compliance, faster time to value for their developers, among other features.
 
