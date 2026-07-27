@@ -138,7 +138,7 @@ This simple focus typically cuts total defects by 60-70% in just a few months. T
 ## What is a Pareto chart (diagram) used for ?
 
 1. **Quality Control**
-   Smart manufacturers prioritize defects, not just track them. When teams break down defects into specific categories, particle contamination, dimensional variations, assembly errors, material flaws, each reveals different root causes requiring targeted solutions.
+   Smart manufacturers prioritize defects, not just track them. When teams break down defects into specific categories, particle contamination, dimensional variations, assembly errors, material flaws, each reveals different root causes requiring targeted solutions. An [Ishikawa (fishbone) diagram](/blog/2026/07/ishikawa-fishbone-diagram/) is a quick way to surface those candidate causes before you rank them here.
 
 The key is specificity. Generic "defect" tracking will not reveal actionable insights. Break them down into meaningful categories that point to specific improvement opportunities.
 
