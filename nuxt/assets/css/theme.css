@@ -21,6 +21,35 @@
     --ui-text-highlighted: var(--color-gray-700);
 }
 
+/* Same base heading sizes as src/css/style.css (11ty). Declared here, not just
+   there, because Tailwind v4's Preflight (imported above) loads after that
+   legacy stylesheet in <head> and wins equal-specificity ties on h1-h5. */
+h1 {
+    font-size: 2.75rem;
+    line-height: 3.1rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    line-height: 2.65rem;
+}
+
+h3 {
+    font-size: 1.85rem;
+    line-height: 2.3rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+    line-height: 1.85rem;
+    font-weight: 600;
+}
+
 .handbook-content :is(h1, h2, h3, h4, h5, h6) {
     @apply text-gray-700;
 }

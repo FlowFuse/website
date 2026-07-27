@@ -111,6 +111,7 @@ export default defineContentConfig({
                 button: z.object({
                     label: z.string(),
                     to: z.string(),
+                    external: z.boolean().optional(),
                     color: z.enum(['primary', 'secondary', 'highlight']).optional(),
                     variant: z.enum(['solid', 'outline', 'soft', 'subtle', 'ghost', 'link']).optional(),
                 }),
@@ -132,6 +133,18 @@ export default defineContentConfig({
                             hub: z.boolean(),
                         }),
                     })),
+                })),
+            })
+        }),
+        faq: defineCollection({
+            type: 'data',
+            source: 'faq/*.yml',
+            schema: z.object({
+                page: z.string(),
+                title: z.string(),
+                items: z.array(z.object({
+                    question: z.string(),
+                    answer: z.string(),
                 })),
             })
         })

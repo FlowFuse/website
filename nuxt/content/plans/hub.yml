@@ -1,7 +1,8 @@
 title: Hub
 tierId: hub
 order: 2
-description: The FlowFuse package for IT business systems — moving data between the software platforms a business runs on.
+description: Move data between the ERPs, databases, and APIs your business runs on, with the governance IT teams need to integrate and orchestrate systems at scale.
+badge: "Cloud or Self-Hosted"
 badge: "Cloud or Self-Hosted"
 features:
   - FlowFuse Expert (AI) & Node-RED MCP Servers
@@ -14,5 +15,6 @@ features:
   - Team Library & Protected Instances
 button:
   label: Contact us
-  to: https://flowfuse.com/contact-us/
+  to: /contact-us/
+  external: true
   variant: solid

@@ -1,7 +1,7 @@
 title: Edge
 tierId: edge
 order: 1
-description: The governed industrial application platform for OT production — licensed per manufacturing site, not per instance.
+description: Connect PLCs and machines across every plant, standardize automation on the shop floor, and give OT teams the governance to scale beyond a single site.
 badge: "Cloud or Self-Hosted"
 features:
   - FlowFuse Expert (AI) & Node-RED MCP Servers
@@ -14,5 +14,6 @@ features:
   - Team Library
 button:
   label: Contact us
-  to: https://flowfuse.com/contact-us/
+  to: /contact-us/
+  external: true
   variant: solid
