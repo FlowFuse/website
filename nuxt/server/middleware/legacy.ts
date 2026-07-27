@@ -10,7 +10,7 @@ const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/integrations', '/res
 const NUXT_ROUTE_PREFIXES = ['/integrations/']
 
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing']
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     if (path.startsWith('/_nuxt/') || path.startsWith('/api/') || path.startsWith('/__') || path.startsWith('/_studio') || path.startsWith('/_og/')) return
 
     // Let Nuxt handle migrated pages (strip trailing slash and query string before matching)
-    const pathWithoutQuery = path.split('?')[0]
+    const pathWithoutQuery = path.split('?')[0] ?? '/'
     const normalised = pathWithoutQuery.replace(/\/$/, '') || '/'
     if (NUXT_ROUTES.has(normalised)) return
     if (NUXT_ROUTE_PREFIXES.some(prefix => pathWithoutQuery.startsWith(prefix))) return
