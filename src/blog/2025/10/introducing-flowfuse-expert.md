@@ -6,6 +6,7 @@ date: 2025-10-16
 keywords: node-red expert, node-red developer, flowfuse expert, iiot, industrial automation, mcp nodes, onnx nodes, ai-assisted development, rag, gpt-4.1
 authors: ["sumit-shinde"]
 image: /blog/2025/10/images/introducing-our-flowFuse-expert.png
+video: WzeDW4ynkL4
 tags:
  - flowfuse
  - AI

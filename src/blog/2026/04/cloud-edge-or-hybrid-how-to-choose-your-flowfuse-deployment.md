@@ -6,6 +6,7 @@ date: 2026-04-24
 keywords: flowfuse, cloud, edge, hybrid, industrial iot, node-red, deployment, opc-ua, modbus, latency
 authors: ["sumit-shinde"]
 image: /blog/2026/04/images/edge-cloud-or-both.png
+video: Jh3HEE64-R0
 tags:
 - flowfuse
 cta:

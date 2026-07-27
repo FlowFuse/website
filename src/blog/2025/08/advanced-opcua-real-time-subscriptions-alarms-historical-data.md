@@ -6,6 +6,7 @@ date: 2025-08-14
 keywords: OPC UA subscriptions Node-RED, OPC UA events alarms, OPC UA historical data, OPC UA method calls, real-time monitoring OPC UA, industrial automation advanced, OPC UA HA redundancy, OPC UA performance optimization
 authors: ["sumit-shinde"]
 image: /blog/2025/08/images/advanced-opcua-real-time-subscriptions-alarms-historical-data.png
+video: NtA5KIaE3R4
 tags:
   - flowfuse
   - opcua

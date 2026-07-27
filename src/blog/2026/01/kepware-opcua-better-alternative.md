@@ -7,6 +7,7 @@ date: 2026-01-16
 keywords: kepware alternatives, opc ua server, industrial connectivity, per-tag pricing, plc data integration, industrial middleware, ot-it convergence
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/kepware-alternative.png
+video: rWcfYX_0_8U
 tags:
   - flowfuse
   - opcua
