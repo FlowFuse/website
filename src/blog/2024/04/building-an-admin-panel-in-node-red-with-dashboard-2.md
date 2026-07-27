@@ -16,7 +16,7 @@ tags:
 cta:
   type: sign-up
   title: Build Secure Admin Dashboards with Node-RED and FlowFuse
-  description: FlowFuse makes it simple to secure Node-RED dashboards with user authentication, role-based access control, and multi-user support — so you can control exactly who sees what in your production dashboards.
+  description: FlowFuse makes it simple to secure Node-RED dashboards with user authentication, role-based access control, and multi-user support, so you can control exactly who sees what in your production dashboards.
 meta:
   howto:
     name: "How to Build an Admin Panel in Node-RED with Dashboard 2.0"

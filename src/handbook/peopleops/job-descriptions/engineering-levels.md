@@ -40,18 +40,18 @@ Examples:
 
 ### 2. Ownership and Impact
 
-Reliable delivery of engineering outcomes that produce real, traceable value — whether or not that value is visible to end users.
+Reliable delivery of engineering outcomes that produce real, traceable value, whether or not that value is visible to end users.
 
 Examples:
 - Delivering committed work predictably, so downstream teams and customers can rely on the timeline
 - Converting ambiguity into plans that ship and hold up in production
-- Impact that's traceable to an outcome — adoption, reliability, or support load for user-facing work; incidents prevented, risk retired, or capacity unlocked for work that isn't
+- Impact that's traceable to an outcome, adoption, reliability, or support load for user-facing work; incidents prevented, risk retired, or capacity unlocked for work that isn't
 - Following through on commitments without needing to be chased
 
 
 ### 3. System Thinking
 
-Understanding and improving the broader engineering system — in line with FlowFuse's "think big picture" value: it's not just "your" issue once it ships, the whole system carries the consequences of how it was built.
+Understanding and improving the broader engineering system, in line with FlowFuse's "think big picture" value: it's not just "your" issue once it ships, the whole system carries the consequences of how it was built.
 
 Examples:
 - Cross-service dependency risks caught before they cause an incident, not identified during the retro
@@ -141,7 +141,7 @@ Demonstrates:
 - Improves architectural or operational patterns
 - Identifies recurring ecosystem or reliability friction and drives reduction
 
-Level 3 performance requires sustained domain-level impact, not isolated strong projects. For most engineers, Level 3 is the ceiling — sustained performance here is a strong, complete career at FlowFuse, and most engineers will not promote beyond this point.
+Level 3 performance requires sustained domain-level impact, not isolated strong projects. For most engineers, Level 3 is the ceiling, sustained performance here is a strong, complete career at FlowFuse, and most engineers will not promote beyond this point.
 
 Promotion to Level 4 requires:
 - Sustained cross-team technical influence
@@ -188,7 +188,7 @@ This level is rare and not time-based.
 
 ### Mid-Quarter Check-Ins
 
-Each quarter includes an informal mid-point check-in between the engineer and manager. The goal is to identify early whether anything is off-track and course-correct before the quarter closes — not to evaluate, but to make sure no one is surprised.
+Each quarter includes an informal mid-point check-in between the engineer and manager. The goal is to identify early whether anything is off-track and course-correct before the quarter closes, not to evaluate, but to make sure no one is surprised.
 
 ### Quarterly Reviews
 

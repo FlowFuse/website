@@ -22,7 +22,7 @@ cta:
 
 Not in keynotes. Not in roadmaps. On the factory floor, in new device datasheets, in RFQs sent out this quarter, Modbus keeps showing up where OPC UA was supposed to have taken over by now.
 
-In January, we wrote about [why Modbus refuses to die](/blog/2026/01/why-modbus-still-exist/) — the installed base, the zero-cost implementation, the vendor neutrality, the brutal simplicity that makes it work at 3 AM when nothing else will. That piece hit a nerve. The responses fell into two camps: engineers who nodded along because they live this every day, and architects who pushed back insisting OPC UA adoption is accelerating.
+In January, we wrote about [why Modbus refuses to die](/blog/2026/01/why-modbus-still-exist/), the installed base, the zero-cost implementation, the vendor neutrality, the brutal simplicity that makes it work at 3 AM when nothing else will. That piece hit a nerve. The responses fell into two camps: engineers who nodded along because they live this every day, and architects who pushed back insisting OPC UA adoption is accelerating.
 
 Both camps are right. And that's exactly the problem.
 
@@ -34,7 +34,7 @@ This isn't a eulogy for OPC UA. It's a sober look at the structural reasons why 
 
 OPC UA was ratified in 2008. That's eighteen years ago. The pitch was compelling: a unified, secure, semantically rich protocol that would finally bring industrial automation into the modern era. The OPC Foundation had vendor backing. The specification was thorough. The vision was clear.
 
-Optimistic predictions followed. The expectation in many quarters was that by the mid-2010s OPC UA would be the dominant machine-level protocol, that Modbus would be a legacy concern by 2020, and that the transition would be essentially complete by the middle of this decade. Those expectations reflected genuine enthusiasm for the protocol's capabilities, not sourced forecasts — but they shaped investment decisions and roadmaps across the industry nonetheless.
+Optimistic predictions followed. The expectation in many quarters was that by the mid-2010s OPC UA would be the dominant machine-level protocol, that Modbus would be a legacy concern by 2020, and that the transition would be essentially complete by the middle of this decade. Those expectations reflected genuine enthusiasm for the protocol's capabilities, not sourced forecasts, but they shaped investment decisions and roadmaps across the industry nonetheless.
 
 None of that happened.
 
@@ -72,11 +72,11 @@ The skills gap will close eventually. Engineering curricula are adding industria
 
 ## The Hardware Reality
 
-Modbus RTU was designed in 1979 for the hardware constraints of 1979 — worth noting that Modbus TCP, the networked variant that dominates modern installations, didn't arrive until 1999. But the original serial protocol's frugality is what set the expectation, and the ecosystem never abandoned it.
+Modbus RTU was designed in 1979 for the hardware constraints of 1979, worth noting that Modbus TCP, the networked variant that dominates modern installations, didn't arrive until 1999. But the original serial protocol's frugality is what set the expectation, and the ecosystem never abandoned it.
 
-A bare-minimum Modbus RTU slave implementation can run on an 8-bit microcontroller with around 10KB of flash and 1.5KB of RAM. A robust, production-grade implementation with full error handling and edge-case coverage needs more — typically several times that — but the floor is still extremely low compared to almost any alternative. Device manufacturers building sensors, meters, drives, and actuators work within tight BOM constraints where every dollar multiplies across thousands of units. Modbus fits inside the microcontroller they were already using. It adds no hardware cost and minimal firmware complexity.
+A bare-minimum Modbus RTU slave implementation can run on an 8-bit microcontroller with around 10KB of flash and 1.5KB of RAM. A robust, production-grade implementation with full error handling and edge-case coverage needs more, typically several times that, but the floor is still extremely low compared to almost any alternative. Device manufacturers building sensors, meters, drives, and actuators work within tight BOM constraints where every dollar multiplies across thousands of units. Modbus fits inside the microcontroller they were already using. It adds no hardware cost and minimal firmware complexity.
 
-OPC UA has a different story. A properly implemented OPC UA server needs a real processor capable of running a TCP/IP stack, handling cryptographic operations, and managing runtime memory requirements. Lightweight stacks like open62541 have brought the floor down meaningfully — a constrained OPC UA server can run in under 100KB of flash with careful implementation — but that still represents a significant step up from a Modbus RTU slave, and a full-featured server with a rich information model typically requires several hundred kilobytes of RAM or more.
+OPC UA has a different story. A properly implemented OPC UA server needs a real processor capable of running a TCP/IP stack, handling cryptographic operations, and managing runtime memory requirements. Lightweight stacks like open62541 have brought the floor down meaningfully, a constrained OPC UA server can run in under 100KB of flash with careful implementation, but that still represents a significant step up from a Modbus RTU slave, and a full-featured server with a rich information model typically requires several hundred kilobytes of RAM or more.
 
 The OPC Foundation's work on OPC UA FX targets exactly this problem, aiming to bring the protocol down to devices with 256KB of flash and 64KB of RAM. That's genuine progress. It's also still an order of magnitude more resource-intensive than a minimal Modbus implementation on equivalent hardware, and FX-capable devices are only beginning to reach the market.
 
@@ -120,7 +120,7 @@ The most immediate lever is simplification at the implementation level. Device m
 
 Certificate management needs to be solved, not documented. The current approach requires automation engineers to operate like IT security professionals in environments where that expertise simply does not exist. Automated certificate lifecycle management, built into OPC UA servers and clients by default, would remove one of the most common reasons deployments stall or fail after going live. Several vendors are working on this. It needs to become a baseline expectation, not a premium feature.
 
-Open source needs to catch up. Modbus has dozens of mature, well-documented stacks across every embedded platform imaginable. OPC UA open source options have improved — open62541 in particular has become a credible foundation — but the ecosystem remains thinner and less consistent in quality and maintenance overall. A developer evaluating both protocols reaches for the option with better community support and lower risk of hitting an undocumented edge case six months before launch. Closing that gap requires sustained investment from the OPC Foundation, major vendors, and the broader industrial open source community.
+Open source needs to catch up. Modbus has dozens of mature, well-documented stacks across every embedded platform imaginable. OPC UA open source options have improved, open62541 in particular has become a credible foundation, but the ecosystem remains thinner and less consistent in quality and maintenance overall. A developer evaluating both protocols reaches for the option with better community support and lower risk of hitting an undocumented edge case six months before launch. Closing that gap requires sustained investment from the OPC Foundation, major vendors, and the broader industrial open source community.
 
 Interoperability between vendor implementations remains more aspirational than actual. Passing certification does not guarantee seamless interoperability across every feature combination two products might use together. Tightening conformance requirements and expanding interoperability testing infrastructure would give integrators the confidence that OPC UA devices from different manufacturers actually work together reliably, the way Modbus devices have for forty years.
 
@@ -128,7 +128,7 @@ Finally, the total cost of ownership narrative needs to be addressed honestly. O
 
 None of these changes are impossible. Some are already in progress. But progress in industrial standards moves at the pace of the least motivated stakeholder, and the least motivated stakeholders are the ones who have something that works today.
 
-## Conclusion: The "Yet" Has a Deadline — But Nobody Knows It
+## Conclusion: The "Yet" Has a Deadline, But Nobody Knows It
 
 OPC UA will win. That part isn't in dispute.
 

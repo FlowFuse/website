@@ -79,7 +79,7 @@ meta:
 tldr: "This tutorial shows how to turn static CSV logs from PLCs and SCADA systems into live data using FlowFuse and Node-RED. It covers a real-time pipeline that watches CSV files and publishes the latest readings to MQTT, and a batch pipeline that reads files on a schedule and writes new rows to a database in efficient batches. Finally, it visualizes the data on a real-time FlowFuse Dashboard line chart."
 ---
 
-If you work in manufacturing, you likely have gigabytes of data in CSV files—temperature logs, production counts, machine status records. The data exists and is organized, but it's not accessible to the systems that need it.
+If you work in manufacturing, you likely have gigabytes of data in CSV files, temperature logs, production counts, machine status records. The data exists and is organized, but it's not accessible to the systems that need it.
 
 <!--more-->
 
@@ -87,7 +87,7 @@ PLCs log directly to CSV through proprietary software. Legacy SCADA systems writ
 
 If you're using FlowFuse to log data, you can send to MQTT and databases as data flows through FlowFuse. But if your CSV files come from PLCs, SCADA systems, or other external tools, you need to read and ingest them after they're written.
 
-This guide shows you how to read CSV files—whether real-time or historical—and route them to MQTT brokers, databases, and dashboards.
+This guide shows you how to read CSV files, whether real-time or historical, and route them to MQTT brokers, databases, and dashboards.
 
 ### Prerequisites
 
@@ -180,7 +180,7 @@ Now we'll publish the parsed CSV data to an MQTT broker for real-time distributi
 
 1. Drag a **Change node** onto the canvas and connect it to the output of the **Function node**. This step adds useful context for better data traceability.
 
-2. Configure the node to set `msg.payload` to a structured object—customize it based on your data and application needs:
+2. Configure the node to set `msg.payload` to a structured object, customize it based on your data and application needs:
 
 ```javascript
 {
@@ -196,7 +196,7 @@ Now we'll publish the parsed CSV data to an MQTT broker for real-time distributi
 
 #### Configuring the MQTT Publisher
 
-1. Drag the **ff-mqtt-out node** onto the canvas and connect it to the **Change node**. When you drag the node, it will be automatically configured with the FlowFuse MQTT broker—you do not need to manually add configuration.
+1. Drag the **ff-mqtt-out node** onto the canvas and connect it to the **Change node**. When you drag the node, it will be automatically configured with the FlowFuse MQTT broker, you do not need to manually add configuration.
 
 2. By default, the client automatically created for your instance only has **subscribe** permissions. Click **Configure Access Control** next to the server in the node configuration window. This will redirect you to the platform’s broker client management page, filtered to show the client associated with this instance. Click the **Edit** button, enable both **Publish** and **Subscribe** actions, and then restart your instance.
 
@@ -212,7 +212,7 @@ For example:
 acme/tokyo/assembly/line-a/press-01/temperature
 ```
 
-4. Configure the **QoS level** in the MQTT node. Set it to QoS 1 for reliable delivery—this ensures your data reaches subscribers even if there are brief network issues, or choose according to your reliability requirements (QoS 0 for high-frequency non-critical data, QoS 2 for critical data).
+4. Configure the **QoS level** in the MQTT node. Set it to QoS 1 for reliable delivery, this ensures your data reaches subscribers even if there are brief network issues, or choose according to your reliability requirements (QoS 0 for high-frequency non-critical data, QoS 2 for critical data).
 
 ![Configuring the MQTT Out node](./images/csv-to-mqtt.png){data-zoomable}
 *Configuring the MQTT Out node*
@@ -395,7 +395,7 @@ Now we'll add a chart to visualize the temperature data in real-time.
 
 4. Click **Deploy**.
 
-Once deployed, open the dashboard — you should see a real-time line chart displaying temperature values over time, with each device shown as a separate series. Data points will automatically update as new MQTT messages arrive.
+Once deployed, open the dashboard, you should see a real-time line chart displaying temperature values over time, with each device shown as a separate series. Data points will automatically update as new MQTT messages arrive.
 
 ![Dashboard showing real-time line chart with temperature data updating as new MQTT messages arrive](./images/flowfuse-dashboard.gif){data-zoomable}
 *Live dashboard displaying real-time temperature readings from CSV data stream*

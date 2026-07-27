@@ -30,5 +30,5 @@ This section lists the **Edge Certified Nodes** documented in FlowFuse:
 {% include "navigation-items-list.njk" %}
 
 {% note %}
-Newly installed nodes are picked up automatically — no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
+Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
 {% endnote %}

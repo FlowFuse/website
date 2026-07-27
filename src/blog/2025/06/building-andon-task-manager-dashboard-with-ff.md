@@ -10,7 +10,7 @@ tags:
    - flowfuse
 ---
 
-In [Part 1](/blog/2025/05/building-andon-task-manager-with-ff/), we introduced the concept of an Andon Task Manager—designed to streamline issue reporting and resolution on the factory floor—and outlined the system’s key features, user roles, and dashboard layout.
+In [Part 1](/blog/2025/05/building-andon-task-manager-with-ff/), we introduced the concept of an Andon Task Manager, designed to streamline issue reporting and resolution on the factory floor, and outlined the system’s key features, user roles, and dashboard layout.
 
 <!--more-->
 
@@ -32,7 +32,7 @@ To simplify the development process, the implementation is divided into the foll
 
 Before proceeding, a basic understanding of Node-RED is recommended. If you are new to Node-RED, consider going through this [free Node-RED Fundamentals Course](https://node-red-academy.learnworlds.com/course/node-red-getting-started) to get started.
 
-> **Tip:** Organize your flows into clearly defined groups. For reference, images of each flow are provided. Please use the exact names given to each flow—this will help ensure consistency and make it easier to navigate back to specific flows when referenced later.
+> **Tip:** Organize your flows into clearly defined groups. For reference, images of each flow are provided. Please use the exact names given to each flow, this will help ensure consistency and make it easier to navigate back to specific flows when referenced later.
 
 ### Prerequisites
 
@@ -655,4 +655,4 @@ _Dashboard UI where users select a department, enter notes, and submit a support
 
 Up until now, the focus has been on building the core functionality of the Andon Task Manager dashboard, including the Lines page. Design and layout have not been the priority. In the next part, you will learn how to enhance the visual design, improve usability, and create a dedicated page and menu for departments.
 
-Later, we will guide you through building the Admin page for the Andon Task Manager dashboard—enabling request management, department configuration, and overall system control.
+Later, we will guide you through building the Admin page for the Andon Task Manager dashboard, enabling request management, department configuration, and overall system control.

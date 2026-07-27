@@ -43,7 +43,7 @@ meta:
         url: "deploying-the-flow"
   faq:
     - question: "What is the FlowFuse Multi-user Dashboard addon?"
-      answer: "It is a plugin for Dashboard 2.0 that uses the FlowFuse API to attach authenticated user information—including user ID, username, email, full name, and avatar—to every msg object emitted by dashboard widgets."
+      answer: "It is a plugin for Dashboard 2.0 that uses the FlowFuse API to attach authenticated user information, including user ID, username, email, full name, and avatar, to every msg object emitted by dashboard widgets."
     - question: "Which FlowFuse plans support the Multi-user addon?"
       answer: "The Multi-user addon is available to Teams and Enterprise Self-Hosted customers. Contact FlowFuse to get the required configurations to get started."
     - question: "How is user data accessed inside a ui-template widget?"
@@ -53,7 +53,7 @@ meta:
     - question: "Can I display the user avatar alongside the name?"
       answer: "Yes. Use an <img> tag bound to setup.socketio.auth.user.image inside the Teleport block targeting #app-bar-actions. The image URL is the user's FlowFuse account avatar."
     - question: "What does Vue Teleport do in this context?"
-      answer: "Teleport renders a component's HTML into a different DOM element—in this case, the #app-bar-actions slot in the Dashboard 2.0 header—without requiring complex CSS positioning or modifying core dashboard files."
+      answer: "Teleport renders a component's HTML into a different DOM element, in this case, the #app-bar-actions slot in the Dashboard 2.0 header, without requiring complex CSS positioning or modifying core dashboard files."
     - question: "Why must I set the ui-template scope to 'Widget (Ui-Scoped)'?"
       answer: "UI-scoped widgets render on every page of the dashboard automatically, so you only need one ui-template to show the logged-in user across all pages instead of adding one per page."
     - question: "Do I need to redeploy every time a different user logs in?"

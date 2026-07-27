@@ -54,8 +54,8 @@ Let's start by sending data to an MQTT broker.
 6. Set the **QoS** level if needed for message reliability, and enable **Retain** if you want the broker to store the last published message for new subscribers.
 7. Click **Done**.
 
-![MQTT Out node — publishing data to a topic](./images/mqtt-out.png)
-_MQTT Out node — publishing data to a topic_
+![MQTT Out node, publishing data to a topic](./images/mqtt-out.png)
+_MQTT Out node, publishing data to a topic_
 
 9.  Click Deploy
 
@@ -80,8 +80,8 @@ Now let's receive messages from the MQTT broker.
 
 Once deployed, you should see the messages appear in the **Debug** sidebar.
 
-![MQTT In node — subscribing to a topic](./images/mqtt-in-config.png)
-*MQTT In node — subscribing to a topic*
+![MQTT In node, subscribing to a topic](./images/mqtt-in-config.png)
+*MQTT In node, subscribing to a topic*
 
 ## Using Wildcards in Topics
 

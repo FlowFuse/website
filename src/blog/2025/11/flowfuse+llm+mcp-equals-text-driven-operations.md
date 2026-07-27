@@ -36,7 +36,7 @@ transporting, combining, and visualizing the information. While low-code tools
 like Node-RED have decreased the implementation time to mere hours, the full
 problem isn't solved: what happens *after* the data is collected?
 
-Often, raw sensor data—like pressure, voltage, and temperature readings—lacks
+Often, raw sensor data, like pressure, voltage, and temperature readings, lacks
 context to immediately understand there's a problem worth solving. Even when a dashboard
 has been built, spotting an issue (such as a high energy consumption on `machine 1`)
 doesn't inherently guide the operator on how to resolve it.
@@ -72,7 +72,7 @@ the LLM transforms into a powerful operational partner.
 For example, an operator can ask: "Can you show me the last five temp sensor readings recorded?".
 Once the model identifies an anomaly, the operator can incorporate specifications and ask: "Are any of these values outside of spec for upper temp or lower temp?".
 If a problem is confirmed, the system can use staff and location data to answer a pointed question like: **"Who are all the staff located nearest to the problem, and what is the quickest way to get there?"**.
-This capability quickly transforms complex data into actionable steps—finding the problem, comparing it to specs, finding the right person, and routing them to the site—all within a matter of minutes.
+This capability quickly transforms complex data into actionable steps, finding the problem, comparing it to specs, finding the right person, and routing them to the site, all within a matter of minutes.
 
 ## Orchestrating Effects Across the Machine Fleet
 

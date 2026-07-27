@@ -10,7 +10,7 @@ meta:
 
 # {{meta.title}}
 
-GraphQL is transforming the way APIs are designed. Unlike traditional REST APIs, which often require multiple requests to different endpoints, GraphQL provides a single, flexible endpoint that allows you to fetch exactly the data you need—nothing more, nothing less. In this article, you will learn how to integrate GraphQL with Node-RED and build APIs that efficiently serve your application's data requirements.
+GraphQL is transforming the way APIs are designed. Unlike traditional REST APIs, which often require multiple requests to different endpoints, GraphQL provides a single, flexible endpoint that allows you to fetch exactly the data you need, nothing more, nothing less. In this article, you will learn how to integrate GraphQL with Node-RED and build APIs that efficiently serve your application's data requirements.
 
 ## Getting Started
 
@@ -52,7 +52,7 @@ query {
 }
 ```
 
-This query says: "Get me a list of countries, but only return the code, name, and capital for each one." The server won't send population, area, or any other fields—just what you requested.
+This query says: "Get me a list of countries, but only return the code, name, and capital for each one." The server won't send population, area, or any other fields, just what you requested.
 
 **Response Structure:**
 ```json
@@ -69,7 +69,7 @@ This query says: "Get me a list of countries, but only return the code, name, an
 }
 ```
 
-Notice how the response mirrors your query structure—this consistency makes GraphQL predictable and easy to work with.
+Notice how the response mirrors your query structure, this consistency makes GraphQL predictable and easy to work with.
 
 ## Building Your First Query Flow
 
@@ -206,7 +206,7 @@ When querying a single country with variables, you'll see:
 
 ## Modifying Data with Mutations
 
-While queries retrieve data, mutations allow you to **create, update, or delete data**—similar to POST, PUT, and DELETE operations in REST APIs.
+While queries retrieve data, mutations allow you to **create, update, or delete data**, similar to POST, PUT, and DELETE operations in REST APIs.
 
 *Note: The Countries demo API is read-only and does not include mutations. The examples below use a fictional device schema to illustrate how mutations work in Node-RED.*
 

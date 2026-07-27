@@ -15,7 +15,7 @@ tags:
 cta:
   type: sign-up
   title: Manage and Monitor Node-RED at Scale
-  description: FlowFuse gives you centralized deployment, team collaboration, role-based access control, and snapshot recovery — everything you need to keep your Node-RED flows running reliably in production.
+  description: FlowFuse gives you centralized deployment, team collaboration, role-based access control, and snapshot recovery, everything you need to keep your Node-RED flows running reliably in production.
 meta:
   howto:
     name: "How to Monitor Node-RED Flows with OpenTelemetry"
@@ -54,7 +54,7 @@ meta:
       answer: "In the OTEL node configuration, add node names to the Propagate field. Those nodes will forward trace headers to external HTTP services or other downstream components, maintaining trace continuity across system boundaries."
     - question: "Can I monitor Node-RED flows running in production remotely?"
       answer: "Yes. By deploying the OpenTelemetry exporter on a remote server and pointing the OTEL node's exporter URL to it, you can collect and view traces from production Node-RED instances running anywhere."
-tldr: "This guide explains how to integrate OpenTelemetry with Node-RED using the node-red-contrib-opentelemetry module to perform distributed tracing. By connecting to a Jaeger exporter, you can inspect per-node latency across your flows, pinpoint bottlenecks, and verify that fixes have the intended effect — reducing a 2-second delay to just 8 milliseconds in the worked example."
+tldr: "This guide explains how to integrate OpenTelemetry with Node-RED using the node-red-contrib-opentelemetry module to perform distributed tracing. By connecting to a Jaeger exporter, you can inspect per-node latency across your flows, pinpoint bottlenecks, and verify that fixes have the intended effect, reducing a 2-second delay to just 8 milliseconds in the worked example."
 ---
 
 Have you ever found yourself frustrated by unexpected delays in your Node-RED flows, wondering where the bottlenecks are hiding? Even small latency issues can have a big impact on your system's performance. That's where Open Telemetry comes in. With its powerful distributed tracing capabilities, you can finally take control and get a clear view of how your flows are performing in real time.

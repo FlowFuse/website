@@ -80,7 +80,7 @@ FlowFuse also allows you to quickly add [high availability](/docs/user/high-avai
 ![Snapshots](./images/snapshots.png)  
 *Image showing snapshots feature*
 
-We have highlighted just a few features of FlowFuse; there are many more—potentially three to four times what has been presented—and the team is continuously working to develop and introduce new functionalities to improve collaboration, scalability, security, and overall performance.
+We have highlighted just a few features of FlowFuse; there are many more, potentially three to four times what has been presented, and the team is continuously working to develop and introduce new functionalities to improve collaboration, scalability, security, and overall performance.
 
 ### How FlowFuse Transforms Production Operations
 

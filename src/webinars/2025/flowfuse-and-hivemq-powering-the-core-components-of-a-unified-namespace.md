@@ -17,7 +17,7 @@ hubspot:
 
 <!--more-->
 
-Manufacturers undergoing digital transformation often struggle to scale their data initiatives due to rigid point-to-point architectures, inconsistent data formats, and the absence of a unified data ecosystem—leading to complexity in data access and utilization.
+Manufacturers undergoing digital transformation often struggle to scale their data initiatives due to rigid point-to-point architectures, inconsistent data formats, and the absence of a unified data ecosystem, leading to complexity in data access and utilization.
 
 The Unified Namespace (UNS) solves this by using a decoupled architecture to break down data silos and enable flexible OT/IT integration, providing a standardized interface for seamless data access across the entire manufacturing operation.
 

@@ -11,7 +11,7 @@ tags:
 cta:
   type: contact
   title: Build Infrastructure That Ages Well
-  description: See how FlowFuse helps facilities connect legacy devices to modern systems — simply, visibly, and without creating the next layer nobody understands.
+  description: See how FlowFuse helps facilities connect legacy devices to modern systems, simply, visibly, and without creating the next layer nobody understands.
 tldr: "Over-engineered industrial systems don't fail because of bad intentions they fail because complexity accumulates through reasonable decisions made by people who won't be there to maintain them. The systems with the best operational track records prioritize legibility over capability built to be understood by the next engineer, not just the one who designed them."
 ---
 
@@ -63,9 +63,9 @@ Workforce turnover alone makes the case. The average tenure of an industrial aut
 
 Consider Modbus. It has been declared obsolete for thirty years. Richer protocols have been developed, standardized, and backed by industry consortia with considerably more resources than the original Modbus specification ever had. Modbus keeps running. Not because the industry failed to move on, but because for a significant class of problems, Modbus is exactly as capable as the problem requires and no more. That match between problem and solution is not a limitation. It's the definition of good engineering.
 
-The instinct is to treat simplicity as the absence of something — less capability, less sophistication, the option you choose when budget runs out or when the team isn't skilled enough to operate something better. That instinct is wrong.
+The instinct is to treat simplicity as the absence of something, less capability, less sophistication, the option you choose when budget runs out or when the team isn't skilled enough to operate something better. That instinct is wrong.
 
-Simplicity in engineering is not what you start with. It's what you arrive at. It's the outcome of understanding a problem well enough to know what it doesn't require. That's a harder position to reach than adding another integration layer, and it's a harder position to defend in a project meeting where the vendor is presenting a roadmap. But facilities that get there build systems that outlast the people who designed them — systems that new engineers can inherit without a month of archaeology, and that fail in ways the overnight technician can diagnose without calling anyone.
+Simplicity in engineering is not what you start with. It's what you arrive at. It's the outcome of understanding a problem well enough to know what it doesn't require. That's a harder position to reach than adding another integration layer, and it's a harder position to defend in a project meeting where the vendor is presenting a roadmap. But facilities that get there build systems that outlast the people who designed them, systems that new engineers can inherit without a month of archaeology, and that fail in ways the overnight technician can diagnose without calling anyone.
 
 If you're a plant manager or engineering lead looking at your current architecture, the useful question isn't "what could this system do." It's "what does this system need to do, and what is the simplest architecture that does it reliably." That question doesn't produce primitive infrastructure. It produces infrastructure your whole team can own, where new requirements can be added without excavating the past, and where five years from now the design looks like a deliberate decision rather than something that just accumulated.
 
@@ -77,7 +77,7 @@ A well-matched architecture is not a polite term for cheap. It is not a consolat
 
 In practice it looks like this.
 
-A facility has forty legacy devices on the floor. PLCs, drives, meters, sensors — most of them speaking Modbus, some speaking older serial protocols, none of them going anywhere soon because they're running processes that haven't changed and won't change. The facility needs that data upstream: a cloud historian, a SCADA system, an analytics platform the operations team has been waiting two years to get real data into.
+A facility has forty legacy devices on the floor. PLCs, drives, meters, sensors, most of them speaking Modbus, some speaking older serial protocols, none of them going anywhere soon because they're running processes that haven't changed and won't change. The facility needs that data upstream: a cloud historian, a SCADA system, an analytics platform the operations team has been waiting two years to get real data into.
 
 The over-engineered answer replaces the devices, or layers a complex middleware platform across all of them, or implements a protocol migration that requires specialist involvement at every stage and produces an architecture the in-house team can monitor but not truly operate.
 
@@ -89,7 +89,7 @@ That is not a compromise. It is the correct answer for that problem. It connects
 
 The gateway architecture described above is not a new idea. Facilities have been running edge gateways for years. The problem has never been the concept. It has been the execution: gateways that are simple to deploy and complex to manage, that work correctly in isolation and become coordination problems at scale, that solve the connectivity challenge and create a new one around visibility, consistency, and control.
 
-[FlowFuse](/) is an Industrial Application Platform built around [Node-RED](/node-red/) at the edge. The FlowFuse Device Agent connects to the devices that have always been on the floor — Modbus, MQTT, OPC UA, serial protocols — and publishes structured data upstream to whatever system needs it. The flow is visible. The logic is readable. An engineer who has never touched the system before can open it and understand what it does without documentation that may or may not exist.
+[FlowFuse](/) is an Industrial Application Platform built around [Node-RED](/node-red/) at the edge. The FlowFuse Device Agent connects to the devices that have always been on the floor, Modbus, MQTT, OPC UA, serial protocols, and publishes structured data upstream to whatever system needs it. The flow is visible. The logic is readable. An engineer who has never touched the system before can open it and understand what it does without documentation that may or may not exist.
 
 That last part matters more than any feature list. The single most expensive property of an industrial system is whether the team that inherits it can operate it confidently. FlowFuse is designed around that property. Flows are managed centrally, deployed consistently across every edge device in the facility using DevOps Pipelines, and monitored from a single place. When something changes, DevOps Pipelines push it across every device it needs to reach, with Snapshots providing version control and rollback, not through a manual process that depends on someone remembering which devices were updated and which weren't.
 

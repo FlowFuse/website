@@ -101,7 +101,7 @@ Access-Control-Allow-Methods: GET, POST, PUT, DELETE
 Access-Control-Allow-Headers: Content-Type, Authorization
 ```
 
-Never use `*` for `Allow-Origin` in production—specify exact domains.
+Never use `*` for `Allow-Origin` in production, specify exact domains.
 
 ## Example: Reading Data
 
