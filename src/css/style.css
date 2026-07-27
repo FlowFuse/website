@@ -2976,3 +2976,13 @@ lite-youtube::before {
 .ff-cap-item {
     border-radius: 0.5rem;
 }
+
+/* Top utility bar. Shared by the Eleventy include (top-utility-bar.njk) and the
+   Nuxt component (AppUtilityBar.vue) so the two cannot drift: these rules used
+   to live in an inline <style> in the Eleventy include only, which left the
+   Nuxt bar without the hover underline. Deliberately unlayered, so the hover
+   rule outranks the hover:no-underline utility on the links. The announce rules
+   set the initial rotation state before the rotation script runs. */
+.ff-utility-announce > .ff-utility-item { display: none; }
+.ff-utility-announce > .ff-utility-item:first-child { display: inline-flex; }
+.ff-utility-bar a:hover { text-decoration: underline; text-underline-offset: 2px; }

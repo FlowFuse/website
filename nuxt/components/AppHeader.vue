@@ -131,7 +131,7 @@ onMounted(() => {
 
       <!-- Mobile hamburger -->
       <div class="flex items-center gap-2 md:hidden relative z-20">
-        <a class="ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us">Contact Us</a>
+        <a class="ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header-mobile'})">Contact Us</a>
         <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
           <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -302,9 +302,9 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-        <li class="hidden md:flex"><a class="ff-nav-freetrial" href="https://app.flowfuse.com/account/create"><span class="ff-nav-label">Free Trial</span></a></li>
+        <li class="hidden md:flex"><a class="ff-nav-freetrial" href="https://app.flowfuse.com/account/create" onclick="capture('cta-join', {'position': 'header'})"><span class="ff-nav-label">Free Trial</span></a></li>
         <li class="flex">
-          <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us">Contact Us</a>
+          <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">Contact Us</a>
         </li>
       </ul>
     </nav>
@@ -313,9 +313,9 @@ onMounted(() => {
     <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
       <div class="grid grid-cols-2 gap-2">
         <a href="https://app.flowfuse.com" class="ff-btn ff-btn--primary-outlined">Sign In</a>
-        <a href="https://app.flowfuse.com/account/create" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
+        <a href="https://app.flowfuse.com/account/create" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
       </div>
-      <a class="ff-btn ff-btn--primary" href="/contact-us">Contact Us</a>
+      <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
     </div>
   </header>
 </template>

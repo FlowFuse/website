@@ -6,9 +6,10 @@ import { onMounted } from 'vue'
 // promos rotate; keep both files in sync when editing.
 onMounted(() => {
     const items = document.querySelectorAll('.ff-utility-announce > .ff-utility-item')
-    if (items.length < 2) return
+    if (items.length === 0) return
     let i = 0
     items.forEach((el, k) => { el.style.display = (k === 0 ? 'inline-flex' : 'none') })
+    if (items.length < 2) return
     setInterval(() => {
         items[i].style.display = 'none'
         i = (i + 1) % items.length
