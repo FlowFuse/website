@@ -6,6 +6,7 @@ date: 2026-06-04
 keywords: manufacturing data integration, MES integration, factory database integration, industrial DevOps, FlowFuse, low-code manufacturing, real-time production data, scalable data integration
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/arch-systems.png
+video: SjoUoozEXkY
 tags:
 - flowfuse
 meta:
