@@ -15,14 +15,20 @@ sections:
       - id: node-red-hosting
         title: Node-RED Hosting
         tiers: { edge: true, hub: true }
-      - id: hosted-instances
-        title: Hosted Instances
+      - id: edge-devices
+        title: Edge Devices
         tiers: { edge: true, hub: true }
       - id: snapshots
         title: Snapshots
         tiers: { edge: true, hub: true }
+      - id: auto-snapshot-remote
+        title: Auto Snapshot (Remote)
+        tiers: { edge: true, hub: true }
       - id: persistent-files
         title: Persistent Files
+        tiers: { edge: true, hub: true }
+      - id: persistent-context
+        title: Persistent Context
         tiers: { edge: true, hub: true }
 
   - id: scale
@@ -37,25 +43,19 @@ sections:
       - id: devops-pipelines
         title: DevOps Pipelines
         tiers: { edge: true, hub: true }
-      - id: private-npm-registry
-        title: Private NPM Registry
-        tiers: { edge: true, hub: true }
       - id: performance-monitoring
         title: Performance Monitoring
         tiers: { edge: true, hub: true }
       - id: flowfuse-tables
         title: FlowFuse Tables
         tiers: { edge: true, hub: true }
-      - id: git-integration
-        title: Git Integration
-        tiers: { edge: false, hub: true }
-      - id: high-availability
-        title: High Availability
-        tiers: { edge: false, hub: true }
-      - id: data-modeling
-        title: Data-Modeling
+      - id: device-group-management
+        title: Device Group Management
+        tiers: { edge: true, hub: false }
+      - id: time-series-db
+        title: Time-Series DB
         note: TBD
-        tiers: { edge: false, hub: true }
+        tiers: { edge: true, hub: false }
 
   - id: secure
     title: Secure
@@ -66,12 +66,9 @@ sections:
       - id: endpoint-security
         title: Endpoint Security
         tiers: { edge: true, hub: true }
-      - id: certified-nodes-it
-        title: Certified Nodes - IT
-        tiers: { edge: false, hub: true }
-      - id: baa-for-hipaa
-        title: BAA for HIPAA
-        tiers: { edge: false, hub: true }
+      - id: certified-nodes-ot
+        title: Certified Nodes - OT
+        tiers: { edge: true, hub: false }
 
   - id: collaborate
     title: Collaborate
@@ -86,9 +83,6 @@ sections:
       - id: team-library
         title: Team Library
         tiers: { edge: true, hub: true }
-      - id: blueprints-it-apps
-        title: Blueprints - IT APPS
-        tiers: { edge: false, hub: true }
-      - id: protected-instances
-        title: Protected Instances
-        tiers: { edge: false, hub: true }
+      - id: blueprints-ot-apps
+        title: Blueprints - OT APPS
+        tiers: { edge: true, hub: false }
