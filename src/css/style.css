@@ -541,7 +541,7 @@ h4:hover .header-anchor::before {
     display: inline;
 }
 
-/* @nuxt/content wraps heading text in <a> — undo prose link styles and replicate #-on-hover */
+/* @nuxt/content wraps heading text in <a> : undo prose link styles and replicate #-on-hover */
 .prose :is(h1, h2, h3, h4, h5, h6) > a {
     color: inherit;
     text-decoration: none;
@@ -2490,10 +2490,12 @@ lite-youtube::before {
         padding-right: max(0.75rem, calc((100vw - 960px) / 2));
     }
 }
-/* lg-to-xl: the highlight card is not shown yet, so the category columns would
-   otherwise cluster in the centre with wide empty margins. Constrain them to a
-   centred band and spread them edge-to-edge within it, so the width is used and
-   the inter-column spacing grows with the viewport. */
+/* lg-to-xl: constrain the category columns to a centred band and spread them
+   edge-to-edge within it, so the width is used and the inter-column spacing
+   grows with the viewport instead of the columns clustering in the centre with
+   wide empty margins. The highlight card also shows in this band: its own
+   track, the smaller gap floor it needs and the panel min-height live in the
+   highlight section below. */
 @media (min-width: 1024px) and (max-width: 1279px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
         justify-content: space-between;
@@ -2504,26 +2506,40 @@ lite-youtube::before {
 }
 
 /* Mega highlight card: an image-only promo slot at the left of every mega
-   dropdown (configured in src/_data/navHighlights.js). xl+ only: the panel
-   switches to a fixed four-track template left-aligned to the screen-xl
-   container, so the card and each column sit at identical positions in every
-   dropdown. The card is the linked page's marketing image. */
+   dropdown (configured in src/_data/navHighlights.json). From 860px up the panel
+   gains a leading track for the card and the three category columns shift one
+   track to the right, so the card always owns a column of its own and can never
+   squash or collide with the links. Three bands, each with the widest card its
+   width can carry: 8rem from 860px, 11.5rem from lg, 16rem from xl. Below 860px
+   the card stays hidden, because the columns no longer leave room for even the
+   8rem one: the widest panel (Solutions) renders its three columns at 583px, so
+   at 800px the panel has a 776px content box against the 783px that card plus
+   its gaps plus those columns need, and the panel's overflow: hidden would clip
+   the columns. The card is the linked page's marketing image. */
 .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
     display: none;
 }
-@media (min-width: 1280px) {
+
+/* 860px and up: everything about the card that is identical in all three bands,
+   plus the one-track shift of the category columns. Only the sizing (card width,
+   track template, panel min-height) is per band, below. The shift is a no-op at
+   xl, where the markup's xl:col-start-2 / xl:col-start-3 / xl:col-start-4
+   utilities already put the columns in tracks 2, 3 and 4. It does the work in the
+   two narrower bands, where the utilities in play are md:col-start-2 and
+   md:col-start-3 (tracks 2 and 3, with group 1 auto-flowing into track 1) and
+   track 1 now belongs to the card, which would otherwise push group 1 into the
+   first free cell of an already occupied column. Keyed on DOM order (the card,
+   then a title plus a link list per group) rather than on those utility classes,
+   because the 11ty header and the Vue header share the DOM shape and this one
+   stylesheet drives both: no markup change on either side. Only grid-row-START is
+   set on the link lists, never the grid-row shorthand, because their row-span-*
+   and grid-rows-subgrid come from the markup and must survive. */
+@media (min-width: 860px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
-        grid-template-columns: 18.5rem 16.5rem 16.5rem 16.5rem !important;
-        justify-content: flex-start;
-        column-gap: 3rem;
-        padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
-        /* fit the highlight card in dropdowns with few rows without letting
-           it stretch the link rows (the card itself is height-0 below).
-           Budget: 1.5rem panel padding-top + title row + 7px card offset +
-           10rem image (16rem wide at 16:10) + 0.625rem title margin + two
-           title lines + 1.75rem panel padding-bottom */
+        /* rows stay packed at the top: the per-band min-height below is there
+           only to make room for the card, and auto rows would otherwise stretch
+           to fill it and pull the link rows apart */
         align-content: start;
-        min-height: 19.5rem;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
         display: block;
@@ -2536,9 +2552,35 @@ lite-youtube::before {
         overflow: visible;
         padding: 0;
     }
+    /* category group 1 (the only one with no md: col-start utility) */
+    .ff-website header .ff-nav-dropdown > ul.mega > li.mega-highlight + li.title {
+        grid-column: 2 !important;
+        grid-row-start: 1 !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega > li.mega-highlight + li.title + li > ul.sub-menu {
+        grid-column: 2 !important;
+        grid-row-start: 2 !important;
+    }
+    /* category group 2 (md:col-start-2) */
+    .ff-website header .ff-nav-dropdown > ul.mega > li.mega-highlight + li.title + li + li.title {
+        grid-column: 3 !important;
+        grid-row-start: 1 !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega > li.mega-highlight + li.title + li + li.title + li > ul.sub-menu {
+        grid-column: 3 !important;
+        grid-row-start: 2 !important;
+    }
+    /* category group 3 (md:col-start-3) */
+    .ff-website header .ff-nav-dropdown > ul.mega > li.mega-highlight + li.title + li + li.title + li + li.title {
+        grid-column: 4 !important;
+        grid-row-start: 1 !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega > li.mega-highlight + li.title + li + li.title + li + li.title + li > ul.sub-menu {
+        grid-column: 4 !important;
+        grid-row-start: 2 !important;
+    }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         display: block;
-        width: 16rem;
         padding: 0;
         text-align: left;
     }
@@ -2600,6 +2642,88 @@ lite-youtube::before {
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover span.mega-highlight-title::after {
         transform: scaleX(1);
+    }
+}
+
+/* 860-to-lg: the narrowest band the card can honestly appear in, at 8rem wide.
+   The three category columns of the widest panel (Solutions) render 221 + 201 +
+   161 = 583px here, and they do not change across the band: the md-to-lg band
+   rule above pins the panel font size at 0.875rem throughout. Needed: 8rem card
+   (128) + 3 x 1.5rem column gap (72, also from that band rule) + 583 columns =
+   783px.
+   At the 860px floor: 860 - 2 x 0.75rem padding = 836px of content box, so 53px
+   spare. At 1023px: that band's padding is max(0.75rem, (100vw - 960px) / 2), so
+   it has grown to 31.5px a side and the content box is capped at 960px, so 177px
+   spare. The floor is 860 rather than 840 (which leaves only 33px) so that font
+   metric differences across platforms cannot push a column under the panel's
+   overflow: hidden. Below 860 the card is hidden: at 800px the same 783px would
+   have to fit a 776px content box.
+   Column tracks stay auto, never fixed: the labels are white-space: nowrap, so a
+   track narrower than its widest label would be clipped rather than wrapped.
+   min-height, computed as in the lg band below: 1.5rem panel padding-top + four
+   0.875rem title lines at line-height 1.4 + 0.75rem title margin + a 4.5rem
+   image (8rem wide at 16:9) + 1.75rem panel padding-bottom + the 2px panel
+   borders = 216.4px, rounded up to 13.75rem. The navHighlights titles wrap to
+   three lines at this width, so that is a line of slack. */
+@media (min-width: 860px) and (max-width: 1023px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        grid-template-columns: 8rem auto auto auto !important;
+        min-height: 13.75rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
+        width: 8rem;
+    }
+}
+
+/* lg-to-xl: the same card, scaled down to what the band can honestly afford.
+   Worst case at the 1024px floor: 2rem + 2rem side padding (the lg-to-xl band
+   rule above) + an 11.5rem card track + 3 x 1.5rem of column gap + the three
+   category columns, which measure 583px in the widest panel (Solutions) and
+   cannot exceed 43.5rem, the room the narrower bands leave them at 768px. Taking
+   that upper bound: 64 + 184 + 72 + 696 = 1016px, inside 1024px, so nothing can
+   be pushed under the panel's overflow: hidden. The 2.5rem column gap the band
+   rule sets is dropped to 1.5rem here purely as that worst-case floor:
+   justify-content is space-between in this band, so the gaps that actually
+   render come from the free space (roughly 74px each at 1024px, growing to the
+   centred 1120px band above 1184px), never from this value.
+   The link columns keep auto tracks, not the fixed widths xl can afford: the
+   labels are white-space: nowrap, so a track narrower than its widest label
+   would be clipped rather than wrapped.
+   min-height makes room for the card in the dropdowns with few rows (Resources,
+   Company) without letting it stretch the link rows (the card is height-0
+   above). Budget: 1.5rem panel padding-top + four 0.875rem title lines at
+   line-height 1.4 + 0.75rem title margin + a 6.47rem image (11.5rem wide at
+   16:9) + 1.75rem panel padding-bottom + the 2px panel borders = 15.5rem. The
+   navHighlights titles ask for two lines, so that is two lines of slack. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        grid-template-columns: 11.5rem auto auto auto !important;
+        column-gap: 1.5rem;
+        min-height: 15.5rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
+        width: 11.5rem;
+    }
+}
+
+/* xl+: the panel switches to a fixed four-track template left-aligned to the
+   screen-xl container, so the card and each column sit at identical positions in
+   every dropdown. Unchanged by the narrower bands above. */
+@media (min-width: 1280px) {
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        grid-template-columns: 18.5rem 16.5rem 16.5rem 16.5rem !important;
+        justify-content: flex-start;
+        column-gap: 3rem;
+        padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
+        /* fit the highlight card in dropdowns with few rows without letting
+           it stretch the link rows (the card itself is height-0 above).
+           Budget: 1.5rem panel padding-top + title row + 7px card offset +
+           10rem image (16rem wide at 16:10) + 0.625rem title margin + two
+           title lines + 1.75rem panel padding-bottom */
+        min-height: 19.5rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
+        width: 16rem;
     }
 }
 
