@@ -14,6 +14,16 @@ const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
   content: item.answer,
 })))
 
+// UPricingTable's feature-title slot types `feature` without `description`,
+// even though the featureCatalog content schema does define it.
+interface CatalogFeature {
+  title: string
+  description?: string
+}
+function featureDescription (feature: CatalogFeature) {
+  return feature.description
+}
+
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
   ...(faq.value?.items ?? []).map(item => defineQuestion({
@@ -44,8 +54,21 @@ useSchemaOrg([
             tierDescription: 'hidden',
             tierPriceWrapper: 'hidden',
         }"
-        />
-        
+        >
+        <template #feature-title="{ feature }">
+            <UPopover v-if="featureDescription(feature)" :content="{ side: 'top' }">
+                <button type="button" class="inline-flex items-center gap-1 text-left hover:text-indigo-600">
+                    <span>{{ feature.title }}</span>
+                    <UIcon name="i-lucide-info" class="size-3.5 shrink-0 text-gray-500" />
+                </button>
+                <template #content>
+                    <p class="max-w-xs p-3 text-sm text-gray-600">{{ featureDescription(feature) }}</p>
+                </template>
+            </UPopover>
+            <span v-else>{{ feature.title }}</span>
+        </template>
+        </UPricingTable>
+
         <div v-if="faq" class="mt-28 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
         <UAccordion :items="faqAccordionItems">
