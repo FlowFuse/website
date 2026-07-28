@@ -912,11 +912,16 @@ h4:hover .header-anchor::before {
         @apply text-current;
     }
 
-    .ff-website header a > span:not(.ff-nav-label) {
+    /* Excluding .ff-icon: this pair predates the header's Heroicons becoming
+       Nuxt UI <UIcon>. Those render as a masked <span>, not an inline <svg>, so
+       on the Nuxt side every nav icon started matching a span selector that no
+       icon could match before, picking up the shrink and rotating a half turn
+       on hover. Eleventy was unaffected because its icons are still <svg>. */
+    .ff-website header a > span:not(.ff-nav-label):not(.ff-icon) {
         transform: scale(0.75);
     }
 
-    .ff-website header a:hover > span:not(.ff-nav-label) {
+    .ff-website header a:hover > span:not(.ff-nav-label):not(.ff-icon) {
         transform: scale(0.75)rotate(180deg);
     }
 
@@ -3101,3 +3106,17 @@ lite-youtube::before {
 .ff-utility-announce > .ff-utility-item { display: none; }
 .ff-utility-announce > .ff-utility-item:first-child { display: inline-flex; }
 .ff-utility-bar a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Header icon spans. Nuxt UI renders the header's Heroicons as a masked <span>
+   where Eleventy still emits an inline <svg>, so span-targeting nav rules that
+   could never hit an icon before now hit 45 of them. The padding one is the
+   damaging half: with border-box, 8px/16px padding floors the box at 32x24,
+   while the inline SVGs beside it sit at 20x20, so the two render at visibly
+   different sizes in the same row.
+
+   Deliberately unlayered, matching the utility bar rules above: the rules that
+   supply that padding are themselves unlayered, so a reset inside
+   @layer components would lose to them regardless of specificity. */
+.ff-website header a > span.ff-icon {
+    padding: 0;
+}
