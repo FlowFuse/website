@@ -317,6 +317,7 @@ onMounted(() => {
 
         <!-- Direct links -->
         <li class="nav-collapsible"><a class="flex items-center gap-2" href="/ai/"><span class="ff-nav-label">Industrial AI</span></a></li>
+        <li class="nav-collapsible"><a class="flex items-center gap-2" href="/pricing/"><span class="ff-nav-label">Pricing</span></a></li>
 
         <!-- More overflow (populated by JS) -->
         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
