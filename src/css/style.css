@@ -3004,18 +3004,17 @@ lite-youtube::before {
     }
 }
 
-/* FAQ / accordion header interaction: colour shift plus a plain underline on
-   hover and keyboard focus. Only the sweeping animation is reserved for the main
-   navigation, so the underline itself stays here. The open/close chevron
-   rotation is driven by JS inline styles and is left untouched; the chevron
-   stroke uses currentColor so it follows the colour shift. */
+/* FAQ / accordion header interaction: colour shift only. No underline, because
+   the header is a button that expands an answer in place, and an underline reads
+   as a link promising navigation. The open/close chevron rotation is driven by JS
+   inline styles and is left untouched; the chevron stroke uses currentColor so it
+   follows the colour shift. */
 .ff-website .question {
     transition: color 0.2s ease;
 }
 .ff-website .question:hover,
 .ff-website .question:focus-visible {
     color: var(--color-indigo-600);
-    text-decoration: underline;
 }
 .ff-website .question:focus {
     outline: none;
