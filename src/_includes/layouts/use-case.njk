@@ -253,11 +253,22 @@ sitemapPriority: 0.7
         {% endif %}
     {% endif %}
 
-    <!-- ============================================================
-         RELATED RESOURCES (empty "More coming soon" state)
-    ============================================================ -->
+    {# ============================================================
+       RELATED RESOURCES: disabled for now.
+
+       Held back until there is enough tagged content to fill it. With the
+       current set of resources the section renders more empty space and
+       "More coming soon" placeholders than actual links, which reads as
+       unfinished rather than as a useful set of next steps.
+
+       To bring it back, uncomment the two lines below. The component itself
+       is unchanged and still works; it needs no edits, only more resources
+       carrying the matching use-case tag.
+    ============================================================ #}
+    {#
     {% set useCaseSlug = page.fileSlug %}
     {% include "components/related-resources.njk" %}
+    #}
 
     <!-- ============================================================
          CLOSING CTA
