@@ -6,6 +6,14 @@ meta:
    title: Using Different Protocols for Building Applications with Node-RED
    description: Learn how to leverage various communication protocols with Node-RED for building robust and interconnected applications.
    keywords: node-red, iot, mqtt, http, coap, websockets, diffrent protocols with node-red
+certified:
+  - "@flowfuse-certified-nodes/cip-suite"
+  - "@flowfuse-certified-nodes/opcua"
+certifiedTitle: "Certified nodes for these protocols"
+certifiedIntro: >
+  Two protocols are also covered by a FlowFuse certified node, maintained for
+  production use. EtherNet/IP, for Rockwell and Allen-Bradley controllers, has no
+  page of its own in this section, and is documented with its certified node:
 ---
 
 # {{meta.title}}
@@ -19,3 +27,5 @@ Node-RED, with its intuitive visual programming interface, simplifies the integr
 Here are some resources to help you get started with integrating Node-RED with various communication protocols:
 
 {% include "navigation-items-list.njk" %}
+
+{% include "components/certified-node-callout.liquid" %}

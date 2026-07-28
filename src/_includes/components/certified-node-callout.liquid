@@ -19,6 +19,7 @@
         certified:
           - "@flowfuse-certified-nodes/opcua"
         certifiedIntro: "Optional sentence replacing the default lede."
+        certifiedTitle: "Optional heading replacing the default."
         ---
         {% include "components/certified-node-callout.liquid" %}
 
@@ -41,7 +42,7 @@
 {%- endcomment -%}
 <aside class="certified-callout not-prose" aria-label="FlowFuse Certified Nodes">
 <span class="certified-eyebrow">{%- include "components/icons/certified-node.svg" -%}<span>FlowFuse Certified</span></span>
-<p class="certified-callout--title">{% if certifiedMatches > 1 %}Certified nodes for this in production{% else %}A certified node for this in production{% endif %}</p>
+<p class="certified-callout--title">{% if certifiedTitle %}{{ certifiedTitle }}{% elsif certifiedMatches > 1 %}Certified nodes for this in production{% else %}A certified node for this in production{% endif %}</p>
 <p class="certified-callout--lede">{% if certifiedIntro %}{{ certifiedIntro }}{% else %}The community packages on this page are a good place to learn. For production, FlowFuse certifies and maintains the following:{% endif %}</p>
 <ul class="certified-callout--list">
 {%- for certifiedId in certified -%}
