@@ -629,12 +629,8 @@ module.exports = function(eleventyConfig) {
 
     function deriveTierLabel(tierData) {
         if (!tierData) return null;
-        const starter = tierData.starter && tierData.starter.value;
-        const pro = tierData.pro && tierData.pro.value;
         const enterprise = tierData.enterprise && tierData.enterprise.value;
         const enterpriseDimmed = tierData.enterprise && tierData.enterprise.dimmed;
-        if (starter && pro && enterprise && !enterpriseDimmed) return "All tiers";
-        if (pro && enterprise && !enterpriseDimmed) return "Pro+";
         if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return "Enterprise (contact us)";
         if (enterpriseDimmed) return "Enterprise (on request)";
         if (enterprise === 'time') return "Coming soon";
@@ -723,19 +719,13 @@ module.exports = function(eleventyConfig) {
                 // Inline tier specification (no feature ID)
                 const inlineFeature = {};
                 if (entry.tiers.cloud) {
-                    // Convert shorthand ("all", "pro+", "enterprise") to tier structure
-                    const t = entry.tiers.cloud;
+                    // Convert shorthand to tier structure
                     inlineFeature.cloud = {
-                        starter: { value: t === 'all' ? true : null },
-                        pro: { value: (t === 'all' || t === 'pro+') ? true : null },
                         enterprise: { value: true }
                     };
                 }
                 if (entry.tiers.selfHosted) {
-                    const t = entry.tiers.selfHosted;
                     inlineFeature.selfHosted = {
-                        starter: { value: t === 'all' ? true : null },
-                        pro: { value: (t === 'all' || t === 'pro+') ? true : null },
                         enterprise: { value: true }
                     };
                 }

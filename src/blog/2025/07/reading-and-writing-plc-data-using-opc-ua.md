@@ -21,11 +21,11 @@ meta:
   - question: "How do I find an OPC UA Node ID?"
     answer: "Use the OPC UA Browser node in Node-RED to explore the server’s address space. Start with ns=0;i=85 (root Objects folder) and navigate through the hierarchy. Each tag will show its Node ID in the format ns=[namespace];i=[identifier] or ns=[namespace];s=[string identifier]."
   - question: "What is the difference between OPC UA and MQTT?"
-    answer: "OPC UA is designed for industrial automation with built-in information modeling, security, and complex data types. MQTT is a lightweight publish-subscribe protocol ideal for IoT. OPC UA provides richer context and methods, while MQTT excels at simple, efficient message transport. Many systems use both—OPC UA for equipment integration and MQTT for cloud connectivity."
+    answer: "OPC UA is designed for industrial automation with built-in information modeling, security, and complex data types. MQTT is a lightweight publish-subscribe protocol ideal for IoT. OPC UA provides richer context and methods, while MQTT excels at simple, efficient message transport. Many systems use both, OPC UA for equipment integration and MQTT for cloud connectivity."
   - question: "Is OPC UA free to use?"
     answer: "The OPC UA specification is open and free to implement. Many open-source clients and servers are available at no cost. However, commercial OPC UA servers (like Kepware or MatrikonOPC) and some certified stacks require licenses. OPC Foundation membership is optional unless you need certification."
   - question: "Can OPC UA work without internet?"
-    answer: "Yes, OPC UA works perfectly on local networks without internet access. It is commonly deployed on isolated industrial networks for security. OPC UA only requires network connectivity between the client and server—this can be a local LAN, industrial network, or even a direct connection."
+    answer: "Yes, OPC UA works perfectly on local networks without internet access. It is commonly deployed on isolated industrial networks for security. OPC UA only requires network connectivity between the client and server, this can be a local LAN, industrial network, or even a direct connection."
   - question: "How do I test an OPC UA connection?"
     answer: "Use free tools like UaExpert or Prosys OPC UA Browser to test connections before implementing them in Node-RED. These tools let you browse the address space, read values, and verify security settings. In Node-RED, use the Browser node with a Debug node to test connectivity."
   - question: "What causes the OPC UA BadNodeIdUnknown error?"
@@ -45,14 +45,14 @@ OPC UA (Open Platform Communications Unified Architecture) is the industry-stand
 
 This hands-on guide walks you through building your first **OPC UA integration** using **Node-RED** and **FlowFuse**:
 
-* **Connect** to any OPC UA server—Kepware, MatrikonOPC, or built-in PLC servers
+* **Connect** to any OPC UA server, Kepware, MatrikonOPC, or built-in PLC servers
 * **Browse** available tags and discover Node IDs from your equipment
 * **Read** real-time values from PLCs, sensors, and industrial devices
 * **Write** control signals and setpoints back to your systems
 
 ## Why OPC UA?
 
-If you have worked with industrial equipment, you know the pain. Every PLC vendor uses a different protocol. Your Siemens S7-1500 requires TIA Portal and PROFINET drivers. The Allen-Bradley ControlLogix needs RSLinx and EtherNet/IP. A Modbus temperature sensor needs yet another tool. Before long, you are juggling a dozen different software packages—each with its own licensing, training, and maintenance overhead.
+If you have worked with industrial equipment, you know the pain. Every PLC vendor uses a different protocol. Your Siemens S7-1500 requires TIA Portal and PROFINET drivers. The Allen-Bradley ControlLogix needs RSLinx and EtherNet/IP. A Modbus temperature sensor needs yet another tool. Before long, you are juggling a dozen different software packages, each with its own licensing, training, and maintenance overhead.
 
 ### Breaking the Cycle
 
@@ -64,7 +64,7 @@ Connect to any modern PLC using a single protocol. Leading manufacturers like Si
 
 ### Information, Not Just Data
 
-Reading a temperature value from OPC UA does not just give you "42.5"—it gives the full context: 42.5 °C, measured at 14:32:15.625 with "Good" quality, from "Tank\_01/Temperature", and includes alarm limits (10 °C / 80 °C). This context reduces guesswork and helps prevent costly mistakes.
+Reading a temperature value from OPC UA does not just give you "42.5", it gives the full context: 42.5 °C, measured at 14:32:15.625 with "Good" quality, from "Tank\_01/Temperature", and includes alarm limits (10 °C / 80 °C). This context reduces guesswork and helps prevent costly mistakes.
 
 ### Security Built for Industry
 
@@ -72,7 +72,7 @@ While protocols like Modbus transmit everything in plain text, OPC UA uses enter
 
 ### Future-Proof Investment
 
-OPC UA is the foundation of Industry 4.0 initiatives around the world. It is not just another protocol—it is the one major vendors are standardizing on. Choosing OPC UA today ensures long-term compatibility and ROI.
+OPC UA is the foundation of Industry 4.0 initiatives around the world. It is not just another protocol, it is the one major vendors are standardizing on. Choosing OPC UA today ensures long-term compatibility and ROI.
 
 ## Getting Started
 
@@ -87,7 +87,7 @@ Before diving into the flow-building process, make sure you have the following:
 - An OPC UA server (like Kepware, MatrikonOPC, or built into your PLC)
 - A FlowFuse Node-RED instance running on your edge device.
 
-For production OPC UA deployments, we recommend using FlowFuse. When connecting to industrial systems, you need more than just Node-RED—you need team collaboration so multiple engineers can work on flows safely, audit logs for compliance tracking, high availability to prevent downtime, and remote device management for edge deployments. 
+For production OPC UA deployments, we recommend using FlowFuse. When connecting to industrial systems, you need more than just Node-RED, you need team collaboration so multiple engineers can work on flows safely, audit logs for compliance tracking, high availability to prevent downtime, and remote device management for edge deployments. 
 
 FlowFuse provides these enterprise features plus automatic backups, one-click rollbacks, environment variables for different sites, and DevOps pipelines for testing changes before they reach production.
 
@@ -117,7 +117,7 @@ To begin accessing industrial data, create a client connection using the OPC UA 
 5. Set the security mode to **None** (you can add security later).
 
 > **Security Note:** This tutorial uses **"None"** for the security setting to keep things simple.
-> In production environments, always use appropriate security—typically **"Sign & Encrypt"** with certificates.
+> In production environments, always use appropriate security, typically **"Sign & Encrypt"** with certificates.
 
 6. Click **Add**, then **Done**.
 
@@ -265,9 +265,9 @@ This setup allows you to prepare multiple tag values and write them all at once,
 
 ## What’s Next
 
-You’ve now mastered the fundamentals of OPC UA integration—connecting to servers, browsing tags, and reading or writing data. These core building blocks lay the foundation for powerful industrial automation.
+You’ve now mastered the fundamentals of OPC UA integration, connecting to servers, browsing tags, and reading or writing data. These core building blocks lay the foundation for powerful industrial automation.
 
-In real deployments, you will want more than Inject nodes and debug panels. With **FlowFuse Dashboard 2.0**, you can build full operator interfaces—live gauges, control buttons, trend charts—fully connected to your OPC UA data.
+In real deployments, you will want more than Inject nodes and debug panels. With **FlowFuse Dashboard 2.0**, you can build full operator interfaces, live gauges, control buttons, trend charts, fully connected to your OPC UA data.
 
 This guide covered the basics, but OPC UA offers far more. In the next article, we will explore:
 
@@ -276,7 +276,7 @@ This guide covered the basics, but OPC UA offers far more. In the next article, 
 * Historical data queries for trend analysis
 * Method calls to execute functions on your devices
 
-When it is time to move beyond prototypes, **FlowFuse** delivers what industrial systems truly need—remote device management, instant rollbacks with full version control, built-in team collaboration, and high availability you can trust.
+When it is time to move beyond prototypes, **FlowFuse** delivers what industrial systems truly need, remote device management, instant rollbacks with full version control, built-in team collaboration, and high availability you can trust.
 
 If you’re ready to simplify your OPC UA integration and scale industrial workflows with Node-RED, [start your free trial]({% include "sign-up-url.njk" %}) of FlowFuse today.
 

@@ -526,7 +526,7 @@ _OEE Dashboard results without proper theming and styling_
 
 However, the dashboard may not yet look exactly as it did in the previous design or intended layout. Some components may not align correctly with adjacent components in terms of width and height. Additionally, on different screens, you may notice layout inconsistencies, and the top header elements, such as the OEE Dashboard title and logo is missing.  
 
-Do not worry—in the next part of this series, we will style the dashboard to match the original design. Later, we will demonstrate how to connect it to a real data source, scale it across your production lines, and explain how you can use this dashboard to improve production efficiency.
+Do not worry, in the next part of this series, we will style the dashboard to match the original design. Later, we will demonstrate how to connect it to a real data source, scale it across your production lines, and explain how you can use this dashboard to improve production efficiency.
 
 ## What Next?
 

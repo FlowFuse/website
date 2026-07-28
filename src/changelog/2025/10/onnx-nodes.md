@@ -7,7 +7,7 @@ tags:
   - changelog
 ---
 
-We’re excited to introduce **FlowFuse AI Nodes** — a new contrib package that brings the ONNX Runtime to Node-RED.
+We’re excited to introduce **FlowFuse AI Nodes**, a new contrib package that brings the ONNX Runtime to Node-RED.
 
 
 ### What is ONNX?

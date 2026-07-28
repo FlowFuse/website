@@ -12,7 +12,7 @@ tags:
 cta:
   type: demo
   title: Deploy Node-RED Flows With Confidence
-  description: FlowFuse gives you visual DevOps pipelines, staged rollouts, and one-click deployment to thousands of devices — so every change is tested before it touches production.
+  description: FlowFuse gives you visual DevOps pipelines, staged rollouts, and one-click deployment to thousands of devices, so every change is tested before it touches production.
 ---
 
 When deploying any update in your manufacturing or automotive process, it is important to perform testing and validation. The smallest errors can lead to a production outage. In such cases, having a quick and reliable deployment process is essential for maximising uptime and minimising downtime.

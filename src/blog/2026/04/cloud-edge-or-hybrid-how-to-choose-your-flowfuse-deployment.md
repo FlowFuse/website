@@ -6,6 +6,7 @@ date: 2026-04-24
 keywords: flowfuse, cloud, edge, hybrid, industrial iot, node-red, deployment, opc-ua, modbus, latency
 authors: ["sumit-shinde"]
 image: /blog/2026/04/images/edge-cloud-or-both.png
+video: Jh3HEE64-R0
 tags:
 - flowfuse
 cta:
@@ -81,7 +82,7 @@ interface. The WAN link between them is treated as unreliable by design - not a 
 
 FlowFuse manages both environments from a single interface. The same snapshot system, DevOps pipelines, and version history work across hosted and Remote Instances.
 
-The technically important piece is how cloud and Remote Instances communicate when connectivity is intermittent. FlowFuse Project Nodes (available on Team and Enterprise tiers) provide native instance-to-instance messaging within the platform. Note that Project Nodes are not a durable message queue - if a device is offline when a message is sent, that message is dropped. The [store-and-forward](/blueprints/getting-started/store-and-forward/) pattern handles this correctly: the edge device writes incoming data to a local SQLite buffer continuously, then flushes to the cloud on reconnect. This is a well-established FlowFuse architecture, but it needs to be designed in explicitly at the device level. It won't emerge on its own. Teams on the Starter tier can implement the same pattern using MQTT or HTTP in place of Project Nodes.
+The technically important piece is how cloud and Remote Instances communicate when connectivity is intermittent. FlowFuse Project Nodes (available on Team and Enterprise tiers) provide native instance-to-instance messaging within the platform. Note that Project Nodes are not a durable message queue - if a device is offline when a message is sent, that message is dropped. The [store-and-forward](/blueprints/getting-started/store-and-forward/) pattern handles this correctly: the edge device writes incoming data to a local SQLite buffer continuously, then flushes to the cloud on reconnect. This is a well-established FlowFuse architecture, but it needs to be designed in explicitly at the device level. It won't emerge on its own.
 
 **Where hybrid breaks:**
 

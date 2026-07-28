@@ -13,7 +13,7 @@ tags:
 cta:
   type: sign-up
   title: Build and Reuse Node-RED Flows Across Your Team
-  description: FlowFuse gives you version control, team collaboration, and centralized deployment — so your subflows and reusable logic stay consistent across every instance and every engineer.
+  description: FlowFuse gives you version control, team collaboration, and centralized deployment, so your subflows and reusable logic stay consistent across every instance and every engineer.
 meta:
   howto:
     name: "How to Create and Use a Subflow in Node-RED"
@@ -45,7 +45,7 @@ meta:
         url: "customizing-the-appearance-of-a-subflow-node"
   faq:
     - question: "What is a Subflow in Node-RED?"
-      answer: "A Subflow is a reusable group of nodes packaged as a single custom node. It works like a module or function — encapsulating logic so you can reuse it in multiple places without duplicating the underlying flow."
+      answer: "A Subflow is a reusable group of nodes packaged as a single custom node. It works like a module or function, encapsulating logic so you can reuse it in multiple places without duplicating the underlying flow."
     - question: "How do I create a Subflow in Node-RED?"
       answer: "Select the nodes you want to encapsulate on the canvas, open the main menu (top-right), and choose Subflows > Selection to Subflow. The selected nodes are replaced by a single Subflow node added to the palette."
     - question: "How do I add configurable properties to a Subflow?"
@@ -53,9 +53,9 @@ meta:
     - question: "How do I use environment variables inside a Subflow?"
       answer: "Reference them with the syntax ${ENV_VAR_NAME} inside node configuration fields. For example, set an HTTP request node's URL field to ${API_URL} to make it configurable per Subflow instance."
     - question: "Can a Subflow have multiple output ports?"
-      answer: "Yes — unlike regular Node-RED nodes which can have one input, Subflows support multiple output ports. You can add as many outputs as needed in the Subflow tab and connect each to the appropriate node inside the Subflow."
+      answer: "Yes, unlike regular Node-RED nodes which can have one input, Subflows support multiple output ports. You can add as many outputs as needed in the Subflow tab and connect each to the appropriate node inside the Subflow."
     - question: "Can I add documentation to a Subflow node?"
-      answer: "Yes — in the Subflow template, click 'Edit Properties' and switch to the Description tab. Documentation written there in markdown will appear in Node-RED's help sidebar when users click on the Subflow node."
+      answer: "Yes, in the Subflow template, click 'Edit Properties' and switch to the Description tab. Documentation written there in markdown will appear in Node-RED's help sidebar when users click on the Subflow node."
     - question: "What are the benefits of using Subflows?"
       answer: "Subflows promote modularity, eliminate duplicated flow logic, simplify your main canvas by hiding complexity inside a single node, and make it easier to update shared logic in one place."
     - question: "How do I share a Subflow across multiple Node-RED instances?"
@@ -63,7 +63,7 @@ meta:
 tldr: "Subflows in Node-RED let you group reusable logic into a single custom node, similar to libraries or modules in traditional programming. This guide covers how to create a subflow from an existing flow, add configurable environment variable properties to it, and use it across multiple places in your Node-RED projects to eliminate duplication."
 ---
 
-In traditional programming, managing complex and repetitive tasks can quickly lead to a tangled mess of code that’s hard to maintain and update. To tackle this issue, developers use libraries or modules—reusable chunks of code that help organize functionality, minimize duplication, and keep codebases clean and manageable.
+In traditional programming, managing complex and repetitive tasks can quickly lead to a tangled mess of code that’s hard to maintain and update. To tackle this issue, developers use libraries or modules, reusable chunks of code that help organize functionality, minimize duplication, and keep codebases clean and manageable.
 
 <!--more-->
 

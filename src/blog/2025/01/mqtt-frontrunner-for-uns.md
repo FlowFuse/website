@@ -41,7 +41,7 @@ One of the standout features of MQTT is its publish-subscribe (Pub/Sub) model, w
 
 This approach decouples producers and consumers, removing the need for direct, point-to-point connections between them. In traditional systems, every device would need to know about every other device it communicates with, leading to a messy, tightly coupled network. As your IIoT ecosystem grows, managing these connections becomes increasingly difficult and prone to error. But with MQTT’s Pub/Sub model, adding new devices or services is seamless and doesn’t disrupt existing data flows.
 
-Beyond this, MQTT’s event-driven architecture takes the system to a whole new level of efficiency and responsiveness. Imagine a scenario where a machine detects an issue—rather than waiting for a periodic check-in, the event is immediately sent to the right consumer, triggering an alert in real time. This push mechanism is far more efficient than traditional polling, where systems continuously ask, “Is there new data yet?” and waste precious resources in the process.
+Beyond this, MQTT’s event-driven architecture takes the system to a whole new level of efficiency and responsiveness. Imagine a scenario where a machine detects an issue, rather than waiting for a periodic check-in, the event is immediately sent to the right consumer, triggering an alert in real time. This push mechanism is far more efficient than traditional polling, where systems continuously ask, “Is there new data yet?” and waste precious resources in the process.
 
 With MQTT, data is pushed as soon as it’s available, enabling faster decision-making and real-time responses. This means events like machine faults or environmental changes are addressed immediately, making the Our UNS more agile, responsive, and capable of scaling as needed which is one of priamary need of IIoT environemnt.
 
@@ -49,17 +49,17 @@ If you’d like to understand the importance of Publish-Subscribe (Pub/Sub) arch
 
 ### Low Latency and Lightweight Messaging
 
-Downtime in industrial operations can be very costly—ranging from $15,000 to $20,000 per minute or more. For engineers and operators watching over machines, waiting for data can mean the difference between smooth operations and expensive disruptions,  If you're interested in learning more about downtime, read this research by Siemens from 2022: [True Cost of Downtime 2022](https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf). Low-latency messaging is key in these situations, which is why data architectures like UNS are being explored to make sure systems and devices in your IIoT setup communicate without delays. MQTT is the protocol that makes this possible.
+Downtime in industrial operations can be very costly, ranging from $15,000 to $20,000 per minute or more. For engineers and operators watching over machines, waiting for data can mean the difference between smooth operations and expensive disruptions,  If you're interested in learning more about downtime, read this research by Siemens from 2022: [True Cost of Downtime 2022](https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf). Low-latency messaging is key in these situations, which is why data architectures like UNS are being explored to make sure systems and devices in your IIoT setup communicate without delays. MQTT is the protocol that makes this possible.
 
 As we explored, MQTT uses a publish-subscribe model, which is built for real-time communication with minimal delay. Unlike traditional request-response systems that can cause delays due to constant querying, MQTT keeps a persistent connection open. Once a device connects, it can immediately send data or receive updates on important topics, cutting out the need for repeated requests and making sure data flows instantly. This helps engineers make decisions and take action faster.
 
-In addition to being fast, MQTT is very efficient. Its messages are small and use little bandwidth—important when working with low-bandwidth networks or many connected devices. Even with limited resources, MQTT allows devices to send data without overwhelming the system. The result? As soon as a sensor detects a change—like a temperature spike or a production issue—it can send the information right away to the right system, triggering immediate actions to avoid costly downtime.
+In addition to being fast, MQTT is very efficient. Its messages are small and use little bandwidth, important when working with low-bandwidth networks or many connected devices. Even with limited resources, MQTT allows devices to send data without overwhelming the system. The result? As soon as a sensor detects a change, like a temperature spike or a production issue, it can send the information right away to the right system, triggering immediate actions to avoid costly downtime.
 
 ![MQTT Packet Structer](./images/mqtt-packate-size.png)  _MQTT Packet Structer_
 
 ### Reliability
 
-When it comes to building a UNS, reliability is absolutely crucial. Missing or duplicate data can lead to poor decision-making, system malfunctions, or even costly downtime—things no one wants in their IIoT environment.
+When it comes to building a UNS, reliability is absolutely crucial. Missing or duplicate data can lead to poor decision-making, system malfunctions, or even costly downtime, things no one wants in their IIoT environment.
 
 This is where MQTT truly shines. It’s built with a Quality of Service (QoS) mechanism that allows you to control how reliably your messages are delivered. Depending on the level you choose, you can ensure that data is delivered exactly as you need it, without compromising on system performance.
 
@@ -67,7 +67,7 @@ MQTT offers three levels of QoS to suit different use cases:
 
 - QoS 0 - "At most once": The message is delivered once and isn’t acknowledged. This is fine for non-critical data where the occasional loss of a message is acceptable.
 - QoS 1 - "At least once": The message is delivered at least once, with an acknowledgment to ensure it was received. This is ideal for most IIoT applications, where you need reliable delivery, but duplicate messages are not a major concern.
-- QoS 2 - "Exactly once": This guarantees the message is delivered exactly once—no duplicates, no omissions. It's the best choice for mission-critical applications where data integrity is paramount.
+- QoS 2 - "Exactly once": This guarantees the message is delivered exactly once, no duplicates, no omissions. It's the best choice for mission-critical applications where data integrity is paramount.
 
 Now, some other protocols like AMQP or Kafka also provide reliability guarantees, but they tend to be more complex and come with heavier infrastructure requirements. MQTT, on the other hand, offers a simple and lightweight design while still giving you just the right level of reliability for most IIoT scenarios. You can scale your network with ease, all while maintaining a high standard of reliability in your data flows.
 

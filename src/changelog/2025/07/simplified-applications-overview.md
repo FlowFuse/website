@@ -28,7 +28,7 @@ We’ve rolled out a redesigned **Applications Page** interface to give you shar
 ### Why This Matters
 
 * Page load times have been significantly improved by reducing the number of rendered elements and simplifying data fetching.
-* Cuts out clutter—no more scrolling through long lists.
+* Cuts out clutter, no more scrolling through long lists.
 * Quick status view helps you spot issues fast.
 * Cleaner separation between hosted vs remote gives context instantly.
 

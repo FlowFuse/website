@@ -6,6 +6,7 @@ lastUpdated: 2026-06-17
 date: 2026-01-21
 authors: ["sumit-shinde"]
 image: /blog/2026/01/images/opcua-vs-mqtt.png
+video: DJ7qc1KPU1A
 keywords: MQTT vs OPC UA, MQTT protocol, OPC UA protocol, industrial communication, IIoT architecture, OPC UA PubSub, MQTT Sparkplug
 tags:
  - flowfuse
@@ -286,4 +287,4 @@ It's "MQTT where? OPC UA where? Both where?"
 
 Answer that based on your requirements, not vendor marketing.
 
-For a practical guide to connecting PLCs via both OPC UA and MQTT in FlowFuse — alongside EtherNet/IP, Siemens S7, and Modbus — see the [FlowFuse PLC integration overview](/landing/plc/).
+For a practical guide to connecting PLCs via both OPC UA and MQTT in FlowFuse, alongside EtherNet/IP, Siemens S7, and Modbus, see the [FlowFuse PLC integration overview](/landing/plc/).

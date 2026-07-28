@@ -14,7 +14,7 @@ tags:
 cta:
   type: demo
   title: See How FlowFuse Powers a Unified Namespace
-  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, and centralized device management — everything you need to move from a spaghetti network of point-to-point connections to a clean, scalable UNS.
+  description: FlowFuse gives you a built-in MQTT broker, Node-RED integration, and centralized device management, everything you need to move from a spaghetti network of point-to-point connections to a clean, scalable UNS.
 ---
 
 Manufacturing has changed significantly over the years, driven by new technology and the need for better communication between systems. In the past, point-to-point (P2P) connections, where devices communicate directly with each other, were the standard. However, as factories become more complex, P2P connections are no longer practical. This article explains why P2P connections are outdated and how a Unified Namespace (UNS) offers a better, more flexible solution.
@@ -40,7 +40,7 @@ As manufacturing moves toward more modern, interconnected approaches like Indust
 
 Point-to-point connections often lead to data silos, where devices or machines communicate only with their immediate hierarchy level. This isolation severely limits system-wide visibility, making it challenging to share critical data in real-time. Consequently, problems such as defective products, unexpected downtime, and the need for rework may go unnoticed until the damage is done.
 
-In modern manufacturing, real-time data is indispensable for maintaining operational efficiency. However, point-to-point connections introduce significant delays, as data must traverse multiple layers—control systems (Level 1), supervisory control (Level 2), manufacturing execution systems (Level 3), and finally, higher-level management systems (Level 4) as outlined in the ISA-95 model. Each additional layer compounds latency, slowing response times and postponing the detection of issues, see also our post on [Why the Automation Pyramid slows you down](https://flowfuse.com/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/).
+In modern manufacturing, real-time data is indispensable for maintaining operational efficiency. However, point-to-point connections introduce significant delays, as data must traverse multiple layers, control systems (Level 1), supervisory control (Level 2), manufacturing execution systems (Level 3), and finally, higher-level management systems (Level 4) as outlined in the ISA-95 model. Each additional layer compounds latency, slowing response times and postponing the detection of issues, see also our post on [Why the Automation Pyramid slows you down](https://flowfuse.com/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/).
 
 Without integrated, real-time data across teams, such as quality control, problems like defective parts may not be addressed promptly, leading to increased waste and customer dissatisfaction. The lack of seamless data sharing results in visibility gaps that impede decision-making, reducing the ability to act swiftly. In fast-paced environments, these delays not only hinder operational efficiency but also have a direct negative impact on profitability.
 
@@ -83,7 +83,7 @@ _Hub and Spoke Model_
 
 A Unified Namespace (UNS) is a more straightforward way to connect devices and systems in a factory. Instead of having separate connections between each device, everything is connected through one central hub, which we call the **hub-and-spoke** model. This means devices don’t need to be directly linked to each other, making the system easier to manage and maintain; for more information on Unified Namespace, read our article: [Introduction to unified namespace](/blog/2023/12/introduction-to-unified-namespace/).
 
-With a UNS, adding new devices or systems becomes straightforward. Rather than setting up multiple direct connections—like in a point-to-point system—new devices (spokes) connect to the central hub. This reduces the complexity of growing your system and eliminates downtime. If equipment is replaced or updated, only that device needs to be reconnected to the hub rather than reconfiguring the entire network.
+With a UNS, adding new devices or systems becomes straightforward. Rather than setting up multiple direct connections, like in a point-to-point system, new devices (spokes) connect to the central hub. This reduces the complexity of growing your system and eliminates downtime. If equipment is replaced or updated, only that device needs to be reconnected to the hub rather than reconfiguring the entire network.
 
 A UNS also improves data sharing. All data is collected in one place, so any system that needs it can access it in real time. This leads to quicker decisions and faster responses to problems. With fewer connections to manage, the costs of maintaining the system are lower. Plus, the central hub makes the whole system more secure, as fewer direct connections need to be protected.
 

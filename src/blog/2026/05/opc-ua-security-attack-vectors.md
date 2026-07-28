@@ -1,6 +1,6 @@
 ---
 title: "OPC UA Security: How Threat Actors Exploit Industrial Protocol Vulnerabilities"
-subtitle: "The attacks that work in the field aren't broken cryptography — they're security that was never switched on"
+subtitle: "The attacks that work in the field aren't broken cryptography, they're security that was never switched on"
 description: "Most OPC UA breaches don't crack the protocol's encryption. They walk through disabled trust lists, anonymous logins, stale ciphers, and servers left on the open internet. This post breaks down how attackers actually exploit OPC UA, vector by vector, drawing on research from Claroty, Bitsight, CISPA, Secura, and Kaspersky."
 date: 2026-05-29
 authors: ["sumit-shinde"]
@@ -13,7 +13,7 @@ cta:
   type: contact
   title: "Connect your plant without opening it up"
   description: "FlowFuse helps you move industrial data off exposed, internet-facing servers and into a managed, secure architecture. Talk to our team about your OT connectivity."
-tldr: "OPC UA ships with real authentication, signing, and encryption — but attackers rarely touch it. They exploit the gap between 'built in' and 'turned on': anonymous access, trust lists that don't enforce certificates, deprecated ciphers nobody removed, and internet-exposed servers Shodan finds for free. The protocol gives you the tools to close every vector. The question is whether they're switched on."
+tldr: "OPC UA ships with real authentication, signing, and encryption, but attackers rarely touch it. They exploit the gap between 'built in' and 'turned on': anonymous access, trust lists that don't enforce certificates, deprecated ciphers nobody removed, and internet-exposed servers Shodan finds for free. The protocol gives you the tools to close every vector. The question is whether they're switched on."
 ---
 
 Threat actors don't break OPC UA's cryptography. They walk through the security it left switched off. The attacks that work in the field are disabled trust lists, anonymous logins left on, dead ciphers nobody removed, and servers sitting on the open internet. This post breaks down how attackers actually exploit OPC UA, vector by vector.
@@ -40,7 +40,7 @@ Anonymous access, as Bitsight senior security research scientist Vasco Pinto fra
 
 > This configuration represents a significant security risk, as it allows anyone to access server information and potentially read operational data without authentication.
 
-— [Bitsight TRACE](https://www.bitsight.com/blog/opc-ua-server-internet-device-exposures-in-2025)
+[Bitsight TRACE](https://www.bitsight.com/blog/opc-ua-server-internet-device-exposures-in-2025)
 
 Major OT vendors, including Siemens, Schneider Electric, and Rockwell Automation, all explicitly advise against putting these servers on the open internet. Thousands remain there anyway.
 
@@ -66,7 +66,7 @@ OPC UA didn't build on TLS. It implemented its own cryptographic transport layer
 
 > That makes it an interesting research target for me, especially because they're not relying on an existing standard protocol like TLS. They implemented their own cryptographic protocol.
 
-— Tom Tervoort, Secura
+Tom Tervoort, Secura
 
 His work produced three CVEs, all credited to him in the vendor advisories, and by his own account at the talk the underlying issues affected at least seven products. [CVE-2024-42513](https://files.opcfoundation.org/SecurityBulletins/OPC%20Foundation%20Security%20Bulletin%20CVE-2024-42513.pdf) lets an unauthorized attacker bypass application authentication in the OPC UA .NET Standard Stack when HTTPS endpoints are enabled with a security policy other than None, which the OPC Foundation classifies as CWE-305 and rates medium severity. [CVE-2024-42512](https://files.opcfoundation.org/SecurityBulletins/OPC%20Foundation%20Security%20Bulletin%20CVE-2024-42512.pdf) targets the deprecated Basic128Rsa15 policy, which uses RSA with PKCS#1 v1.5 padding. The OPC Foundation classifies it as an observable timing discrepancy (CWE-208) with confidentiality impact and rates it medium severity, noting that Basic128Rsa15 is disabled by default, so most users are unaffected. CODESYS, assessing the same weakness in its own server as [CVE-2025-1468](https://certvde.com/en/advisories/VDE-2025-022/), describes the consequence more bluntly: an unauthenticated attacker exploiting the Bleichenbacher padding oracle (a decades-old attack that recovers RSA-encrypted secrets by watching how a server responds to malformed padding) could compromise the server certificate's private key, then bypass application authentication or decrypt traffic. The common thread is old, known-weak crypto that should have been retired but lingers in non-default configurations.
 

@@ -6,6 +6,7 @@ date: 2026-04-17
 keywords: IT vs OT, IT OT convergence, edge computing, industrial edge, edge ownership, IT OT integration, edge governance, edge device management, industrial IoT, Node-RED, FlowFuse
 authors: ["sumit-shinde"]
 image: /blog/2026/04/images/it-vs-ot-who-owns-the-edge.png
+video: gA-zR1XbBDI
 tags:
 - flowfuse
 cta:

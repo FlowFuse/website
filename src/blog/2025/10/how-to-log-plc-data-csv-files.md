@@ -35,7 +35,7 @@ Before getting started, make sure you have:
 
 ## Step 1: Setting Up PLC Communication in FlowFuse
 
-Before logging data, you need a stable connection to your PLC. FlowFuse uses Node-RED under the hood, which supports every major industrial protocol through community-maintained packages. This means you can connect to any equipment—regardless of age or manufacturer.
+Before logging data, you need a stable connection to your PLC. FlowFuse uses Node-RED under the hood, which supports every major industrial protocol through community-maintained packages. This means you can connect to any equipment, regardless of age or manufacturer.
 
 ### Choosing Your Protocol
 
@@ -43,7 +43,7 @@ The right protocol depends on what your PLC supports.
 
 Modern PLCs typically offer open standards like OPC UA, Modbus TCP, or EtherNet/IP. These protocols work across different manufacturers and give you the most flexibility.
 
-If your PLC supports OPC UA, that is likely your best option. It is becoming the common language across industrial equipment—Siemens, Rockwell, Schneider, and most other manufacturers support it. This is also the option I used in the demo I prepared for this article. For more information on how to use OPC UA with your PLC, you can refer to [this article](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
+If your PLC supports OPC UA, that is likely your best option. It is becoming the common language across industrial equipment, Siemens, Rockwell, Schneider, and most other manufacturers support it. This is also the option I used in the demo I prepared for this article. For more information on how to use OPC UA with your PLC, you can refer to [this article](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 
 Legacy systems use vendor-specific protocols: [S7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) for Siemens, MC Protocol for Mitsubishi, FINS for Omron, and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) for Allen-Bradley. If your PLC only speaks its native language, Node-RED has dedicated nodes for each one.
 
@@ -70,7 +70,7 @@ Before building your logging flow, verify you're getting clean, consistent data.
 
 You should see values updating at your configured interval with consistent structure and sensible numbers. No connection errors, timeouts, or garbage data.
 
-If something's wrong—intermittent connections, bad values, protocol errors—fix it now. Connection problems multiply when you add logging logic on top.
+If something's wrong, intermittent connections, bad values, protocol errors, fix it now. Connection problems multiply when you add logging logic on top.
 
 A stable PLC connection is the foundation. Get this right, and the rest is straightforward.
 
@@ -122,7 +122,7 @@ This creates a new file each day automatically. When the date changes, the filen
 
 ### Formatting Data with the CSV Node
 
-The CSV node handles all the formatting work—proper escaping, column ordering, and headers.
+The CSV node handles all the formatting work, proper escaping, column ordering, and headers.
 
 1. Drag a CSV node onto your canvas
 2. Connect it to your function node
@@ -130,7 +130,7 @@ The CSV node handles all the formatting work—proper escaping, column ordering,
    - Set the columns: `timestamp,temperature`
    - Enable "first row contains column names"
    - Choose comma as the separator
-   - Choose RFC 4180 as parser (this handles commas in your data—like alarm messages or status text—by wrapping them in quotes so they don't break the CSV structure)
+   - Choose RFC 4180 as parser (this handles commas in your data, like alarm messages or status text, by wrapping them in quotes so they don't break the CSV structure)
 4. Click Done
 
 ![Image showing CSV node configuration](./images/csv-config.png){data-zoomable}
@@ -156,7 +156,7 @@ _Image showing Write node configuration_
 
 Let it run. Each day at midnight, the system automatically starts a new file. Old files stay untouched, new data goes to today's file.
 
-This daily rotation keeps file sizes manageable and makes it easy to find data from specific dates. But there are still edge cases to handle—what happens when disk space runs low or file writes fail? The next step addresses these reliability issues.
+This daily rotation keeps file sizes manageable and makes it easy to find data from specific dates. But there are still edge cases to handle, what happens when disk space runs low or file writes fail? The next step addresses these reliability issues.
 
 ## Step 3: Monitoring Disk Usage
 
@@ -223,15 +223,15 @@ Below is the complete flow we have built throughout this article.
 
 ## Conclusion
 
-You now have a production-ready PLC data logging system built on FlowFuse. It addresses the key reliability issues that typically cause downtime — connection drops, write failures, disk space limits, and daily file rotation — turning a simple flow into one that can run unattended for months.
+You now have a production-ready PLC data logging system built on FlowFuse. It addresses the key reliability issues that typically cause downtime, connection drops, write failures, disk space limits, and daily file rotation, turning a simple flow into one that can run unattended for months.
 
-The use of CSV ensures long-term data accessibility. Every analytics platform, database, and spreadsheet can read it, and it will remain usable decades from now — regardless of what tools or systems you adopt in the future.
+The use of CSV ensures long-term data accessibility. Every analytics platform, database, and spreadsheet can read it, and it will remain usable decades from now, regardless of what tools or systems you adopt in the future.
 
 Start small: connect one PLC, verify data quality, and deploy your first logging flow. Then gradually add error handling, storage monitoring, and redundancy as needed. Over time, this setup becomes a foundation for scalable, dependable industrial data collection.
 
-FlowFuse makes this process straightforward by combining Node-RED’s flexibility with enterprise-grade management and monitoring. You can deploy updates remotely, manage devices across multiple sites, and standardize data collection — all from a single platform.
+FlowFuse makes this process straightforward by combining Node-RED’s flexibility with enterprise-grade management and monitoring. You can deploy updates remotely, manage devices across multiple sites, and standardize data collection, all from a single platform.
 
-And while CSV is a reliable starting point, FlowFuse also integrates seamlessly with modern databases and historians like InfluxDB, TimescaleDB, and MySQL. Even better, FlowFuse Cloud includes a built-in PostgreSQL service and an AI Query Node that lets you explore your data conversationally — turning raw logs into actionable insights.
+And while CSV is a reliable starting point, FlowFuse also integrates seamlessly with modern databases and historians like InfluxDB, TimescaleDB, and MySQL. Even better, FlowFuse Cloud includes a built-in PostgreSQL service and an AI Query Node that lets you explore your data conversationally, turning raw logs into actionable insights.
 
 For more on how FlowFuse connects PLCs across OPC UA, Siemens S7, EtherNet/IP, and Modbus to collect and route industrial data, see the [FlowFuse PLC integration overview](/landing/plc/).
 
