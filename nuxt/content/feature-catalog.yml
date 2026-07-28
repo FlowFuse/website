@@ -120,9 +120,11 @@ sections:
         tiers: { edge: true, hub: true }
       - id: certified-nodes-it
         title: Certified Nodes - IT
+        description: "IT certified node bundle includes: MQTT, Kafka, Redis, MSSQL, PostgreSQL, InfluxDB, TimescaleDB, HTTP Request, SQL/SQLite, AI nodes (Gemini, Claude, ChatGPT, Ollama)"
         tiers: { edge: false, hub: true }
       - id: certified-nodes-ot
         title: Certified Nodes - OT
+        description: "OT certified node bundle includes: OPC-UA, EtherNet/IP, Siemens S7, Modbus TCP & RTU, BACnet, DeltaV, Allen-Bradley / Rockwell, RTSP"
         tiers: { edge: true, hub: false }
       - id: baa-for-hipaa
         title: BAA for HIPAA

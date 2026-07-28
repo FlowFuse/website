@@ -147,6 +147,7 @@ export default defineContentConfig({
                         id: z.string(),
                         title: z.string(),
                         note: z.string().optional(),
+                        description: z.string().optional(),
                         tiers: z.object({
                             edge: z.boolean(),
                             hub: z.boolean(),
