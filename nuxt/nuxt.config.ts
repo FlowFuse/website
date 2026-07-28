@@ -24,6 +24,13 @@ export default defineNuxtConfig({
 
     css: ['~/assets/css/theme.css'],
 
+    // Dark mode isn't implemented across the site yet — force light mode so
+    // Nuxt UI components don't switch to dark when the visitor's OS prefers it.
+    colorMode: {
+        preference: 'light',
+        fallback: 'light',
+    },
+
     // Heebo is already loaded via the Google Fonts <link> in app.head.
     // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
     // so it never fetches font files at build time (which exhausts Netlify's memory).
