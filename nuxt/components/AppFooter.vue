@@ -1,70 +1,222 @@
 <template>
-  <footer class="ff-footer bg-gray-100 w-full border-t border-white">
-    <div class="py-8 px-10 md:px-6 md:pt-8 md:pb-10 max-w-md sm:max-w-screen-xl xl:mx-auto">
-      <div class="w-full grid gap-y-8 md:gap-y-0 md:grid-rows-2 md:grid-flow-col md:ff-footer-columns md:gap-x-8 md:justify-between">
-
-        <!-- Logo -->
-        <div class="w-36">
-          <svg class="max-h-full w-full" viewBox="0 0 402 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="ft-mask0" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
-              <path d="M402 0H0V70H402V0Z" fill="white"/>
-            </mask>
-            <g mask="url(#ft-mask0)">
-              <mask id="ft-mask1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
-                <path d="M402 0.0299988H0V69.97H402V0.0299988Z" fill="white"/>
-              </mask>
-              <g mask="url(#ft-mask1)">
-                <mask id="ft-mask2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
-                  <path d="M402 0.0299988H0V69.97H402V0.0299988Z" fill="white"/>
-                </mask>
-                <g mask="url(#ft-mask2)">
-                  <path d="M118.949 9.94H95.2691C93.6191 9.94 92.2391 10.49 91.4191 11.32C90.3191 12.42 90.0391 13.52 90.0391 15.17V55.65C90.0391 57.3 90.5891 58.4 91.4191 59.23C92.2491 60.06 93.6191 60.33 95.5491 60.33C96.3791 60.33 97.4791 60.33 98.2991 60.05C99.1291 60.05 99.6791 59.77 100.229 59.77V40.22H113.719C114.819 40.22 115.649 39.94 116.469 39.12C117.019 38.29 117.569 37.47 117.569 36.09C117.569 35.26 117.569 34.44 117.289 33.89C117.009 33.34 116.739 32.79 116.459 32.24H100.489V18.2H116.739C117.839 18.2 118.669 17.92 119.489 17.1C120.039 16.27 120.589 15.17 120.589 13.8C120.589 12.97 120.589 12.15 120.309 11.6C119.479 10.77 119.209 10.5 118.929 9.95" fill="#1F2937"/>
-                  <path d="M131.06 9.94C130.23 9.94 129.41 9.94 128.58 10.22C127.75 10.5 127.2 10.5 126.65 10.5V55.38C126.65 57.03 127.2 58.13 128.03 58.96C128.86 59.51 130.23 60.06 132.16 60.06C133.26 60.06 134.09 60.06 134.91 59.78C135.74 59.78 136.29 59.5 136.84 59.23V14.62C136.84 12.97 136.29 11.87 135.46 11.04C134.08 10.21 132.71 9.94 131.05 9.94" fill="#1F2937"/>
-                  <path d="M175.39 22.61C172.36 20.96 168.78 20.13 164.93 20.13C161.08 20.13 157.5 20.96 154.47 22.61C151.44 24.26 149.24 26.74 147.31 29.77C145.66 32.8 144.83 36.38 144.83 40.51C144.83 44.64 145.66 48.22 147.31 51.25C148.96 54.28 151.16 56.48 154.19 58.13C157.22 59.78 160.8 60.61 164.65 60.61C168.78 60.61 172.36 59.78 175.11 58.13C178.14 56.48 180.34 54 181.99 50.97C183.64 47.94 184.47 44.36 184.47 40.23C184.47 36.1 183.64 32.52 181.99 29.49C180.89 26.74 178.41 24.26 175.38 22.61M172.36 49.59C170.71 51.79 168.23 52.89 165.2 52.89C162.17 52.89 159.69 51.79 158.04 49.59C156.39 47.39 155.29 44.36 155.29 40.23C155.29 36.38 156.12 33.35 158.04 30.87C159.69 28.67 162.17 27.57 165.2 27.57C168.23 27.57 170.71 28.67 172.36 30.87C174.01 33.07 175.11 36.1 175.11 40.23C174.83 44.36 174.01 47.39 172.36 49.59Z" fill="#1F2937"/>
-                  <path d="M281.949 9.94H258.269C256.619 9.94 255.239 10.49 254.419 11.32C253.319 12.42 253.039 13.52 253.039 15.17V55.65C253.039 57.3 253.589 58.4 254.419 59.23C255.249 60.06 256.619 60.33 258.549 60.33C259.379 60.33 260.479 60.33 261.299 60.05C262.129 60.05 262.679 59.77 263.229 59.77V40.22H276.719C277.819 40.22 278.649 39.94 279.469 39.12C280.019 38.29 280.569 37.47 280.569 36.09C280.569 35.26 280.569 34.44 280.289 33.89C280.009 33.34 279.739 32.79 279.459 32.24H263.489V18.2H279.739C280.839 18.2 281.669 17.92 282.489 17.1C283.039 16.27 283.589 15.17 283.589 13.8C283.589 12.97 283.589 12.15 283.309 11.6C282.479 10.77 282.209 10.5 281.929 9.95" fill="#1F2937"/>
-                  <path d="M243.95 21.51C243.12 20.96 242.02 20.68 240.65 20.68C239 20.68 237.62 20.96 236.24 21.78C235.41 26.74 234.59 31.69 233.49 36.92C232.39 41.88 231.56 46.83 230.46 51.24H230.18C229.9 50.14 229.35 48.21 228.8 45.46C227.97 42.98 227.15 39.95 226.32 36.65C225.22 33.35 224.39 30.04 223.29 26.46C223.01 25.36 222.46 24.81 221.36 24.26C220.53 23.71 219.16 23.71 217.78 23.71C216.68 23.71 215.85 23.71 215.03 23.99C214.21 24.27 213.38 24.54 212.83 25.09C211.73 28.67 210.63 32.25 209.53 35.83C208.43 39.41 207.6 42.44 206.78 45.19C205.96 47.94 205.4 49.87 205.13 51.25H204.85C204.57 50.42 204.3 49.05 204.02 47.4C203.74 45.75 203.19 43.82 202.64 41.62C202.09 39.42 201.54 36.94 201.26 33.91C200.71 31.16 200.16 28.13 199.88 25.1C199.6 23.45 199.05 22.35 198.23 21.8C197.4 21.25 196.3 20.7 194.93 20.7C193.83 20.7 192.73 20.98 191.9 21.25C190.52 21.53 189.97 22.08 189.42 22.63C189.7 24.56 190.25 27.04 190.8 29.79C191.35 32.54 191.9 35.3 192.73 38.05C193.28 40.8 194.11 43.56 194.66 46.31C195.21 49.06 196.04 51.27 196.59 53.19C197.14 55.12 197.69 56.77 198.24 57.87C198.79 58.7 199.34 59.52 200.72 59.8C201.82 60.35 203.2 60.35 204.57 60.35C205.94 60.35 207.05 60.35 207.87 60.07C208.7 59.79 209.52 59.52 210.07 58.97C210.62 57.32 211.45 54.84 212.27 52.36C213.1 49.61 214.2 46.85 215.02 43.82C215.85 40.79 216.95 37.76 217.5 34.73C218.33 37.76 219.15 40.51 219.98 43.54C220.81 46.57 221.63 49.32 222.46 51.8C223.29 54.28 224.11 56.48 224.66 58.13C225.21 59.78 227.14 60.61 230.44 60.61C231.82 60.61 232.92 60.33 233.74 60.06C234.84 59.78 235.67 59.51 235.94 58.96C236.49 57.86 236.77 56.48 237.59 54.55C238.14 52.62 238.69 50.7 239.52 48.22C240.07 46.02 240.9 43.54 241.45 41.06C242 38.58 242.55 36.1 243.1 33.9C243.65 31.7 243.93 29.77 244.48 28.12C244.76 26.47 245.03 25.09 245.03 24.54C245.31 22.89 244.75 22.06 243.93 21.51" fill="#1F2937"/>
-                  <path d="M316.92 20.68C316.09 20.68 315.27 20.68 314.44 20.96C313.61 21.24 313.06 21.24 312.51 21.24V50.98C311.96 51.26 310.86 51.81 309.76 52.08C308.66 52.36 307.01 52.63 305.35 52.63C302.6 52.63 300.67 52.08 299.02 50.7C297.64 49.32 296.82 47.4 296.82 44.64V25.37C296.82 23.72 296.27 22.34 295.44 21.79C294.61 21.24 293.24 20.69 291.31 20.69C290.21 20.69 289.38 20.69 288.56 20.97C287.73 21.25 287.18 21.25 286.91 21.25V44.65C286.91 48.23 287.74 51.26 289.11 53.74C290.49 55.94 292.69 57.87 295.44 58.97C298.19 60.07 301.5 60.62 305.08 60.62C308.11 60.62 310.86 60.34 313.34 59.79C315.82 59.24 317.75 58.41 319.12 57.59C320.22 56.76 321.05 56.21 321.6 55.39C322.15 54.56 322.15 53.46 322.15 52.36V25.38C322.15 23.73 321.6 22.35 320.77 21.8C319.94 20.97 318.84 20.7 316.92 20.7" fill="#1F2937"/>
-                  <path d="M347.76 36.65L343.63 35.55C341.98 35.27 340.88 34.72 340.05 33.9C339.22 33.35 338.95 32.52 338.95 31.42C338.95 30.04 339.5 29.22 340.88 28.39C341.98 27.84 343.91 27.29 345.84 27.29C347.22 27.29 348.59 27.57 349.97 27.84C351.35 28.12 352.72 28.39 353.82 28.94C354.92 29.49 355.75 29.77 356.57 30.32C357.12 29.77 357.67 29.22 357.95 28.67C358.23 27.84 358.5 27.29 358.5 26.19C358.5 24.81 357.95 23.71 356.85 22.89C355.75 22.06 354.1 21.24 352.17 20.69C350.24 20.14 347.76 19.86 345.29 19.86C340.33 19.86 336.48 20.96 333.73 23.16C330.98 25.36 329.6 28.12 329.6 31.42C329.6 34.45 330.43 36.93 332.35 38.58C334.28 40.51 337.03 41.88 340.89 42.71L345.57 43.81C347.22 44.09 348.6 44.64 349.42 45.46C350.25 46.29 350.52 47.11 350.52 48.49C350.52 51.24 348.32 52.9 343.64 52.9C341.16 52.9 338.96 52.62 336.76 51.8C334.83 50.97 332.91 50.15 331.53 49.05C330.7 49.6 330.15 50.15 329.88 50.98C329.33 51.81 329.33 52.63 329.33 53.46C329.33 55.66 330.71 57.31 333.46 58.69C336.21 60.07 339.79 60.62 344.2 60.62C349.43 60.62 353.56 59.52 356.32 57.32C359.08 55.12 360.45 52.36 360.45 48.51C360.45 45.48 359.35 42.73 357.42 40.8C355.22 39.15 352.19 37.5 347.78 36.67L347.76 36.65Z" fill="#1F2937"/>
-                  <path d="M400.899 40.23C401.729 39.4 401.999 38.3 401.999 36.93C401.999 33.63 401.169 30.87 399.799 28.39C398.429 25.91 396.219 23.98 393.469 22.33C390.719 20.95 387.689 20.13 384.109 20.13C381.629 20.13 379.149 20.68 376.679 21.51C374.479 22.34 372.269 23.71 370.619 25.36C368.969 27.01 367.589 29.21 366.489 31.69C365.389 34.17 365.109 37.2 365.109 40.23C365.109 44.64 365.939 48.49 367.859 51.52C369.509 54.55 372.269 57.03 375.289 58.4C378.589 60.05 382.169 60.6 386.299 60.6C389.049 60.6 391.259 60.32 393.459 59.77C395.659 59.22 397.309 58.39 398.419 57.57C399.799 56.47 400.349 55.37 400.349 53.99C400.349 53.16 400.069 52.34 399.799 51.51C399.249 50.68 398.699 50.13 398.149 49.86C397.049 50.69 395.399 51.51 393.469 52.06C391.539 52.61 389.339 53.16 387.139 53.16C383.839 53.16 380.809 52.33 378.599 50.68C376.949 49.3 375.569 47.38 375.019 44.9L397.599 41.6C398.979 41.32 400.079 41.05 400.899 40.22V40.23ZM374.469 38.03C374.749 34.73 375.569 32.25 377.219 30.32C379.149 28.39 381.349 27.29 384.099 27.29C386.849 27.29 388.779 28.12 390.429 29.49C391.809 31.14 392.629 32.79 392.909 35L374.459 38.03H374.469Z" fill="#1F2937"/>
-                  <path d="M38.5508 42.16C45.7108 45.19 52.5908 48.77 60.0308 50.42C63.3308 50.97 66.6408 51.25 69.9408 51.25V33.08H67.1908C57.0008 33.08 47.6408 38.31 38.5508 42.17" fill="#1F2937"/>
-                  <path d="M17.35 47.94C14.05 47.66 10.74 47.66 7.44 47.66H0V64.46C0 67.49 2.48 69.97 5.51 69.97H64.71C67.74 69.97 70.22 67.49 70.22 64.46V62.26C63.06 62.26 55.63 61.43 49.02 58.68C38.28 55.1 28.64 48.22 17.36 47.94" fill="#1F2937"/>
-                  <path d="M64.43 0.0299988H5.51C2.48 0.0299988 0 2.51 0 5.54V36.65C6.61 36.65 13.49 36.93 20.1 36.37C29.19 35.54 37.17 30.59 45.71 27.28C53.42 23.98 61.68 22.05 69.94 22.32V5.54C69.94 2.51 67.46 0.0299988 64.43 0.0299988Z" fill="#1F2937"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        <!-- Copyright -->
-        <div class="w-full self-end order-last md:order-none">
-          <div class="copyright-statement inline">
-            <div>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.
-              <br>This site uses cookies. Click <a class="underline cursor-pointer" type="button" data-cc="show-preferencesModal">here</a> to manage your preferences.
+    <footer class="ff-footer bg-gray-100 w-full">
+        <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
+            <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
+            <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
+                <!-- Platform -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8">
+                        <div class="lg:col-start-1 lg:row-start-1">
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/platform/features/">Features</a></li>
+                                <li><a href="/platform/security/">Security Statement</a></li>
+                                <li><a href="/pricing/">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-start-1 lg:row-start-2">
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Components</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
+                                <li><a href="/platform/device-agent/">Device Agent</a></li>
+                                <li><a href="/node-red/">Node-RED</a></li>
+                                <li><a href="/docs/user/expert/">FlowFuse Expert</a></li>
+                                <li><a href="/integrations/">Integrations</a></li>
+                                <li><a href="/blueprints/">Blueprint Library</a></li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Capabilities</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/ai/">Industrial AI</a></li>
+                                <li><a href="/use-cases/it-ot-middleware/">IT/OT middleware</a></li>
+                                <li><a href="/use-cases/uns/">Unified Namespace</a></li>
+                                <li><a href="/use-cases/mes/">MES</a></li>
+                                <li><a href="/use-cases/scada/">SCADA</a></li>
+                                <li><a href="/use-cases/edge-connectivity/">Edge Connectivity</a></li>
+                                <li><a href="/use-cases/data-integration/">Data Integration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Solutions -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Solutions</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Use Case</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/use-cases/production-monitoring/">Production Monitoring</a></li>
+                                <li><a href="/use-cases/shop-floor-communication/">Shop Floor Communication</a></li>
+                                <li><a href="/use-cases/">See all use cases</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Industry</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/industries/automotive/">Automotive</a></li>
+                                <li><a href="/industries/food-beverage/">Food &amp; Beverage</a></li>
+                                <li><a href="/industries/life-sciences/">Life Sciences</a></li>
+                                <li><a href="/industries/electronics-appliances/">Electronics &amp; Appliances</a></li>
+                                <li><a href="/industries/renewables/">Renewables</a></li>
+                                <li><a href="/industries/semiconductors/">Semiconductors</a></li>
+                                <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
+                                <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
+                                <li><a href="/industries/">See all industries</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Integration</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/node-red/flowfuse/hub/redis/">Redis</a></li>
+                                <li><a href="/node-red/flowfuse/edge/opcua/">OPC UA</a></li>
+                                <li><a href="/node-red/flowfuse/edge/rtsp/">RTSP</a></li>
+                                <li><a href="/node-red/flowfuse/edge/cip-suite/">EtherNet/IP</a></li>
+                                <li><a href="/node-red/flowfuse/mqtt/">MQTT</a></li>
+                                <li><a href="/node-red/flowfuse/ai/onxx/">ONNX</a></li>
+                                <li><a href="/node-red/flowfuse/ai/llm-nodes/">LLM Nodes</a></li>
+                                <li><a href="/node-red/flowfuse/mcp/">MCP</a></li>
+                                <li><a href="/integrations/">See all integrations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- Resources -->
+                <section class="border-t border-gray-300 pt-5">
+                    <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8">
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Learn</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/blog/">Blog</a></li>
+                                <li><a href="/webinars/">Webinars</a></li>
+                                <li><a href="/resources/publications/">Publications</a></li>
+                                <li><a href="https://node-red-academy.learnworlds.com/">Node-RED Academy</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Reference</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/docs/">Docs</a></li>
+                                <li><a href="/changelog/">Changelog</a></li>
+                                <li><a href="https://github.com/FlowFuse/flowfuse">Github</a></li>
+                                <li><a href="https://discourse.nodered.org/c/vendors/flowfuse/24/">Support forums</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Customers</p>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/customer-stories/">Customer Stories</a></li>
+                                <li><a href="/education/">Educational License</a></li>
+                                <li><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </div>
-          </div>
-        </div>
-
-        <!-- Footer links -->
-        <div class="w-full md:row-span-2">
-          <ul class="w-full md:max-w-[343px] grid grid-flow-col grid-rows-5 gap-y-4 sm:grid-rows-4 md:grid-rows-5 sm:justify-between md:m-auto text-base sm:gap-x-6">
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/about/" class="py-3">About</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="https://boards.greenhouse.io/flowfuse" class="py-3">Jobs</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/handbook/" class="py-3">Handbook</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/privacy-policy/" class="py-3">Privacy</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/partners/" class="py-3">Partnerships</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/professional-services/" class="py-3">Professional Services</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="https://status.flowfuse.com/" class="py-3">Service Status</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/support/" class="py-3">Request Support</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/contact-us/" class="py-3">Contact Us</a></li>
-            <li class="inline mr-2 mb-2 md:m-0"><a href="/blog/#sign-up" class="py-3">Sign Up to Mailing List</a></li>
-          </ul>
-        </div>
-
-        <!-- Social icons -->
-        <div class="w-full md:row-span-2">
-          <ul class="flex flex-col gap-y-4 md:gap-y-6 w-full -mx-3 md:mx-0 text-base md:items-end">
-            <li class="flex flex-wrap gap-x-4 gap-y-2 lg:gap-x-6 px-3 md:px-0 justify-between sm:justify-start md:justify-end">
-              <a href="https://www.facebook.com/FlowFuse/" class="block">
+            <!-- Company -->
+            <section class="mt-12 border-t border-gray-300 pt-9">
+                <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
+                     under Platform, the three groups under Solutions' sub-columns, and the
+                     last group under Resources. -->
+                <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
+                    <div>
+                        <a href="/" class="ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
+                            <svg class="h-full w-full" viewBox="0 0 402 70" xmlns="http://www.w3.org/2000/svg">
+                              <mask id="ffFooterMask0" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402" height="70">
+                                <path d="M402 0H0V70H402V0Z" fill="white" />
+                              </mask>
+                              <g mask="url(#ffFooterMask0)">
+                                <mask id="ffFooterMask1" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="402"
+                                  height="70">
+                                  <path d="M402 0H0V70H402V0Z" fill="white" />
+                                </mask>
+                                <g mask="url(#ffFooterMask1)">
+                                  <path
+                                    d="M118.95 9.98H95.3695C93.7495 9.98 92.4595 10.47 91.4795 11.44C90.4995 12.41 90.0195 13.71 90.0195 15.32V55.38C90.0195 57.05 90.4495 58.24 91.3095 58.94C92.1695 59.64 93.5495 59.99 95.4395 59.99C96.3595 59.99 97.2495 59.92 98.1095 59.79C98.9695 59.66 99.6195 59.53 100.05 59.43V39.87H113.6C114.73 39.87 115.62 39.51 116.27 38.78C116.92 38.05 117.24 37.01 117.24 35.66C117.24 34.85 117.12 34.11 116.88 33.43C116.64 32.76 116.38 32.2 116.11 31.77H100.05V18.15H116.35C117.48 18.15 118.37 17.79 119.02 17.06C119.67 16.33 119.99 15.27 119.99 13.86C119.99 13.05 119.88 12.3 119.67 11.59C119.45 10.89 119.21 10.35 118.94 9.97"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M130.979 9.98001C130.059 9.98001 129.199 10.06 128.389 10.22C127.579 10.38 126.959 10.52 126.529 10.62V55.53C126.529 57.2 126.969 58.36 127.859 59.01C128.749 59.66 130.079 59.98 131.869 59.98C132.839 59.98 133.719 59.91 134.499 59.78C135.279 59.65 135.889 59.5 136.319 59.34V14.52C136.319 12.85 135.889 11.68 135.029 11C134.169 10.33 132.819 9.99001 130.979 9.99001"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M175.521 22.61C172.531 20.94 169.041 20.1 165.041 20.1C161.041 20.1 157.611 20.94 154.601 22.61C151.591 24.28 149.241 26.63 147.571 29.65C145.901 32.67 145.061 36.26 145.061 40.41C145.061 44.56 145.881 48.15 147.531 51.17C149.171 54.19 151.501 56.53 154.521 58.17C157.531 59.81 161.041 60.64 165.041 60.64C169.041 60.64 172.611 59.82 175.601 58.17C178.591 56.52 180.901 54.18 182.551 51.13C184.191 48.08 185.011 44.51 185.011 40.41C185.011 36.31 184.171 32.67 182.501 29.65C180.831 26.63 178.501 24.28 175.511 22.61M172.271 49.6C170.521 51.78 168.111 52.88 165.041 52.88C161.971 52.88 159.561 51.8 157.811 49.65C156.061 47.49 155.181 44.42 155.181 40.42C155.181 36.42 156.071 33.41 157.851 31.19C159.631 28.98 162.031 27.87 165.041 27.87C168.051 27.87 170.521 28.98 172.271 31.19C174.021 33.4 174.901 36.48 174.901 40.42C174.901 44.36 174.021 47.42 172.271 49.6Z"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M281.95 9.98H258.37C256.75 9.98 255.46 10.47 254.48 11.44C253.51 12.41 253.02 13.71 253.02 15.32V55.38C253.02 57.05 253.45 58.24 254.31 58.94C255.17 59.64 256.55 59.99 258.44 59.99C259.36 59.99 260.25 59.92 261.11 59.79C261.97 59.66 262.62 59.53 263.05 59.43V39.87H276.6C277.73 39.87 278.62 39.51 279.27 38.78C279.92 38.05 280.24 37.01 280.24 35.66C280.24 34.85 280.12 34.11 279.88 33.43C279.64 32.76 279.38 32.2 279.11 31.77H263.05V18.15H279.35C280.48 18.15 281.37 17.79 282.02 17.06C282.67 16.33 282.99 15.27 282.99 13.86C282.99 13.05 282.88 12.3 282.67 11.59C282.45 10.89 282.21 10.35 281.94 9.97"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M243.98 21.39C243.12 20.8 242.01 20.5 240.66 20.5C239.04 20.5 237.59 20.88 236.29 21.63C235.59 26.59 234.71 31.61 233.66 36.68C232.61 41.75 231.59 46.53 230.62 51H230.22C229.95 49.76 229.45 47.87 228.72 45.34C227.99 42.81 227.14 39.91 226.17 36.64C225.2 33.38 224.17 30.02 223.09 26.56C222.77 25.59 222.13 24.87 221.19 24.42C220.25 23.96 219.08 23.73 217.67 23.73C216.59 23.73 215.64 23.84 214.83 24.05C214.02 24.27 213.26 24.59 212.56 25.02C211.48 28.63 210.42 32.2 209.36 35.7C208.31 39.21 207.39 42.32 206.61 45.05C205.83 47.77 205.27 49.76 204.95 51H204.63C204.41 50.14 204.11 48.88 203.74 47.24C203.36 45.6 202.93 43.64 202.45 41.37C201.96 39.1 201.46 36.57 200.95 33.76C200.44 30.95 199.94 28.01 199.46 24.94C199.19 23.32 198.65 22.18 197.84 21.5C197.03 20.83 195.92 20.49 194.52 20.49C193.39 20.49 192.37 20.71 191.48 21.14C190.59 21.57 189.88 22.06 189.34 22.6C189.72 24.65 190.19 27 190.76 29.64C191.33 32.28 191.95 35.01 192.62 37.81C193.29 40.62 193.97 43.33 194.64 45.94C195.31 48.56 195.97 50.86 196.62 52.86C197.27 54.86 197.84 56.4 198.32 57.47C198.75 58.33 199.53 59 200.67 59.45C201.8 59.91 203.1 60.14 204.56 60.14C205.85 60.14 206.95 60 207.84 59.73C208.73 59.46 209.44 59.11 209.99 58.68C210.64 56.9 211.4 54.67 212.29 52C213.18 49.33 214.1 46.44 215.04 43.34C215.98 40.24 216.83 37.2 217.59 34.24C218.4 37.15 219.23 40.11 220.09 43.1C220.95 46.09 221.8 48.87 222.64 51.44C223.48 54 224.22 56.09 224.87 57.71C225.41 59.33 227.33 60.14 230.61 60.14C231.85 60.14 233 59.99 234.05 59.69C235.1 59.4 235.88 59.06 236.36 58.68C236.79 57.6 237.3 56.15 237.9 54.31C238.49 52.48 239.13 50.4 239.8 48.08C240.47 45.76 241.14 43.36 241.78 40.88C242.43 38.4 243 36.05 243.52 33.84C244.03 31.63 244.45 29.67 244.78 27.97C245.1 26.27 245.26 25.07 245.26 24.37C245.26 22.97 244.83 21.97 243.97 21.38"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M316.89 20.67C315.97 20.67 315.11 20.75 314.3 20.91C313.49 21.07 312.87 21.21 312.44 21.31V51.17C311.79 51.55 310.87 51.91 309.69 52.26C308.5 52.61 307.05 52.78 305.32 52.78C302.62 52.78 300.52 52.15 299.01 50.88C297.5 49.61 296.74 47.55 296.74 44.69V25.27C296.74 23.49 296.32 22.28 295.48 21.63C294.64 20.98 293.31 20.66 291.47 20.66C290.5 20.66 289.61 20.74 288.8 20.9C287.99 21.06 287.4 21.2 287.02 21.3V44.85C287.02 48.52 287.75 51.51 289.2 53.83C290.66 56.15 292.76 57.85 295.51 58.93C298.26 60.01 301.5 60.55 305.22 60.55C308.3 60.55 311.02 60.24 313.4 59.62C315.77 59 317.71 58.23 319.22 57.32C320.35 56.62 321.14 55.86 321.57 55.06C322 54.25 322.22 53.23 322.22 51.98V25.27C322.22 23.49 321.79 22.28 320.93 21.63C320.07 20.98 318.72 20.66 316.88 20.66"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M347.659 36.62L343.449 35.57C341.779 35.19 340.589 34.67 339.889 33.99C339.189 33.32 338.839 32.52 338.839 31.6C338.839 30.3 339.459 29.32 340.699 28.64C341.939 27.97 343.609 27.63 345.719 27.63C347.119 27.63 348.509 27.78 349.889 28.07C351.269 28.37 352.519 28.74 353.649 29.2C354.779 29.66 355.669 30.1 356.319 30.53C356.909 30.1 357.409 29.53 357.819 28.83C358.219 28.13 358.429 27.32 358.429 26.4C358.429 25.05 357.849 23.91 356.689 22.96C355.529 22.02 353.939 21.29 351.909 20.78C349.889 20.27 347.579 20.01 344.989 20.01C340.019 20.01 336.169 21.1 333.419 23.29C330.669 25.48 329.289 28.24 329.289 31.59C329.289 34.61 330.219 37.04 332.079 38.87C333.939 40.71 336.809 42.05 340.699 42.92L345.469 44.13C347.199 44.51 348.459 45.06 349.269 45.79C350.079 46.52 350.479 47.5 350.479 48.74C350.479 51.6 348.159 53.03 343.519 53.03C340.979 53.03 338.719 52.64 336.719 51.86C334.719 51.08 332.969 50.2 331.459 49.23C330.759 49.72 330.189 50.33 329.759 51.09C329.329 51.85 329.109 52.68 329.109 53.6C329.109 55.71 330.489 57.4 333.239 58.7C335.989 60 339.519 60.64 343.839 60.64C349.119 60.64 353.159 59.57 355.939 57.44C358.719 55.31 360.109 52.38 360.109 48.66C360.109 45.53 359.119 42.99 357.149 41.02C355.179 39.05 352.009 37.58 347.639 36.61"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M400.87 40.23C401.63 39.5 402 38.38 402 36.87C402 33.63 401.24 30.75 399.73 28.21C398.22 25.67 396.13 23.68 393.46 22.22C390.79 20.76 387.7 20.04 384.19 20.04C381.6 20.04 379.16 20.46 376.87 21.29C374.58 22.12 372.55 23.38 370.8 25.05C369.05 26.72 367.67 28.8 366.67 31.28C365.67 33.76 365.17 36.65 365.17 39.94C365.17 44.47 366.06 48.27 367.84 51.35C369.62 54.43 372.12 56.73 375.32 58.27C378.53 59.81 382.21 60.58 386.37 60.58C389.07 60.58 391.45 60.31 393.53 59.77C395.61 59.23 397.26 58.46 398.51 57.46C399.75 56.46 400.37 55.29 400.37 53.94C400.37 53.08 400.14 52.28 399.68 51.55C399.22 50.82 398.64 50.24 397.94 49.81C396.75 50.62 395.2 51.36 393.29 52.04C391.37 52.71 389.29 53.05 387.02 53.05C383.62 53.05 380.82 52.21 378.6 50.54C376.85 49.22 375.65 47.31 374.98 44.84L397.69 41.55C399.04 41.39 400.09 40.95 400.85 40.22M374.36 37.99C374.53 34.74 375.47 32.2 377.2 30.39C379.06 28.45 381.39 27.48 384.2 27.48C387.01 27.48 388.98 28.25 390.43 29.79C391.89 31.33 392.69 33.15 392.86 35.25L374.36 37.99Z"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M38.6096 42.28C45.7596 45.31 52.6296 48.9 60.0596 50.56C63.3596 51.11 66.7096 51.38 69.9996 51.38V33.16H67.2496C57.0696 33.16 47.6796 38.41 38.5996 42.27"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M17.43 48.08C14.13 47.81 10.82 47.81 7.53 47.81H0V64.54C0 67.56 2.45 70.01 5.47 70.01H64.53C67.55 70.01 70 67.56 70 64.54V62.43C62.86 62.43 55.39 61.51 48.78 58.75C38.34 55.17 28.71 48.36 17.43 48.08Z"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M64.53 0H5.47C2.45 0 0 2.45 0 5.47V36.49C6.61 36.49 13.58 36.76 20.18 36.21C29.26 35.39 37.23 30.42 45.76 27.11C53.46 23.8 61.75 21.86 70 22.14V5.47C70 2.45 67.55 0 64.53 0Z"
+                                    fill="#1F2937" />
+                                  <path
+                                    d="M70 33.17V22.13C61.75 21.86 53.46 23.8 45.76 27.1C37.23 30.41 29.26 35.38 20.18 36.2C13.58 36.76 6.61 36.48 0 36.48V47.79H7.54C10.83 47.79 14.14 47.79 17.44 48.06C28.72 48.33 38.34 55.15 48.79 58.73C55.4 61.49 62.87 62.41 70.01 62.41V51.37C66.72 51.37 63.37 51.1 60.07 50.55C52.64 48.88 45.77 45.3 38.62 42.27C47.7 38.4 57.08 33.16 67.27 33.16H70.02L70 33.17Z"
+                                    fill="white" />
+                                </g>
+                              </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
+                        <div>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
+                                <li><a href="/about/">About us</a></li>
+                                <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
+                                <li><a href="/platform/security/#certifications">Certifications</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/handbook/">Handbook</a></li>
+                                <li><a href="/partners/">Partnerships</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-2.5">
+                                <li><a href="/professional-services/">Professional Services</a></li>
+                                <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class="flex flex-col gap-2.5">
+                            <li><a href="/support/">Request Support</a></li>
+                            <li><a href="/contact-us/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+<!-- Legal + social bottom row -->
+            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
+                <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+                    <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="/privacy-policy/">Privacy</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a href="/terms/">Terms</a>
+                    <span aria-hidden="true">&middot;</span>
+                    <a class="cursor-pointer" type="button" data-cc="show-preferencesModal">Cookie preferences</a>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <a href="https://www.facebook.com/FlowFuse/" class="block">
                 <span class="sr-only">Visit our Facebook page</span>
                 <svg class="fill-current h-5 hover:text-red-hero" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.4286 0H2.57143C1.88944 0 1.23539 0.270918 0.753154 0.753154C0.270918 1.23539 0 1.88944 0 2.57143L0 21.4286C0 22.1106 0.270918 22.7646 0.753154 23.2468C1.23539 23.7291 1.88944 24 2.57143 24H9.92411V15.8405H6.54911V12H9.92411V9.07286C9.92411 5.74339 11.9063 3.90429 14.9421 3.90429C16.3961 3.90429 17.9164 4.16357 17.9164 4.16357V7.43143H16.2413C14.5907 7.43143 14.0759 8.45571 14.0759 9.50625V12H17.7605L17.1713 15.8405H14.0759V24H21.4286C22.1106 24 22.7646 23.7291 23.2468 23.2468C23.7291 22.7646 24 22.1106 24 21.4286V2.57143C24 1.88944 23.7291 1.23539 23.2468 0.753154C22.7646 0.270918 22.1106 0 21.4286 0Z"/></svg>
               </a>
@@ -92,11 +244,8 @@
                 <span class="sr-only">Visit our YouTube channel</span>
                 <svg class="fill-current h-5 hover:text-red-hero" width="28" height="20" viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg"><path d="M27.3016 2.97749C26.9889 1.80488 26.0709 0.88338 24.9028 0.569489C22.7854 0 14.3001 0 14.3001 0C14.3001 0 5.81476 0 3.69957 0.569489C2.53142 0.88338 1.61342 1.80488 1.30072 2.97749C0.733398 5.10074 0.733398 9.53333 0.733398 9.53333C0.733398 9.53333 0.733398 13.9659 1.30072 16.0892C1.61342 17.2618 2.53142 18.1833 3.69957 18.4972C5.81476 19.0667 14.3001 19.0667 14.3001 19.0667C14.3001 19.0667 22.7854 19.0667 24.9006 18.4972C26.0687 18.1833 26.9867 17.2618 27.2994 16.0892C27.8667 13.9659 27.8667 9.53333 27.8667 9.53333C27.8667 9.53333 27.8667 5.10074 27.2994 2.97749H27.3016ZM11.5863 13.6184V5.44826L18.6354 9.53333L11.5863 13.6184Z"/></svg>
               </a>
-            </li>
-          </ul>
+                </div>
+            </div>
         </div>
-
-      </div>
-    </div>
-  </footer>
+    </footer>
 </template>

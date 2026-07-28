@@ -1,0 +1,13 @@
+{# Mega-dropdown highlight card: the linked page's marketing image with a
+   short title underneath. Expects `hl` set by the caller:
+   {% set hl = navHighlights.platform %}{% include "components/nav-highlight.njk" %}
+   Content is configured in src/_data/navHighlights.js (marketing-owned).
+   Card image: hl.image override, else the linked page's `image:` front
+   matter (its marketing image), else the generic og-blog fallback. #}
+{% set hlImage = hl.image or (collections.all | pageImageForUrl(hl.link)) or "/images/og-blog.jpg" %}
+<li class="mega-highlight">
+    <a href="{{ hl.link }}" class="mega-highlight-card">
+        <span class="mega-highlight-title">{{ hl.title }}</span>
+        <span class="mega-highlight-media"><img src="{{ hlImage }}" alt="" loading="lazy"></span>
+    </a>
+</li>
