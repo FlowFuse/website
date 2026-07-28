@@ -4,8 +4,10 @@ import { mkdirSync, cpSync, writeFileSync, readFileSync, rmSync, existsSync, rea
 import { join, basename, relative, dirname } from 'node:path'
 import { tmpdir } from 'node:os'
 
-// @ts-ignore untyped sibling module, kept as plain JS so `node --test` can run it directly
-import { processMarkdown } from './docs-markdown.mjs'
+// Lives in nuxt/lib/, not alongside this file: Nuxt auto-registers everything in
+// nuxt/modules/ as a Nuxt module, so a plain helper there fails the build.
+// @ts-ignore untyped module, kept as plain JS so `node --test` can run it directly
+import { processMarkdown } from '../lib/docs-markdown.mjs'
 
 const logger = useLogger('docs-source')
 
