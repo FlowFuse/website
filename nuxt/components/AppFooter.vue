@@ -4,7 +4,7 @@
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
                 <!-- Platform -->
-                <section class="border-t border-gray-300 pt-5">
+                <section class="pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8">
                         <div class="lg:col-start-1 lg:row-start-1">
@@ -41,7 +41,7 @@
                     </div>
                 </section>
                 <!-- Solutions -->
-                <section class="border-t border-gray-300 pt-5">
+                <section class="pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Solutions</p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
                         <div>
@@ -83,7 +83,7 @@
                     </div>
                 </section>
                 <!-- Resources -->
-                <section class="border-t border-gray-300 pt-5">
+                <section class="pt-5">
                     <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8">
                         <div>
