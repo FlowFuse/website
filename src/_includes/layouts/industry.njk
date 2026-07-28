@@ -82,11 +82,11 @@ layout: default
                     <h2 class="max-md:text-center">{% if problemTitle %}{{ problemTitle | safe }}{% else %}<span class="text-red-600">The Problem</span> Today{% endif %}</h2>
                     <ul class="mt-6 flex flex-col gap-6 list-none p-0 m-0">
                         {% for problem in problems %}
-                        <li class="flex items-start gap-3 items-center">
+                        <li class="flex items-center gap-3">
                             <span class="flex-shrink-0 w-12 h-12 bg-red-300 rounded-full flex items-center justify-center text-white">
                                 <span class="w-6 h-6">{% include "components/icons/x-mark.svg" %}</span>
                             </span>
-                            <p class="text-gray-700 m-0 pt-2">{{ problem }}</p>
+                            <p class="text-gray-700 m-0">{{ problem }}</p>
                         </li>
                         {% endfor %}
                     </ul>
@@ -108,7 +108,7 @@ layout: default
                     <h2 class="text-white max-md:text-center">{{ solution.title }}</h2>
                     <ul class="mt-8 flex flex-col gap-6 list-none p-0 m-0">
                         {% for benefit in solution.benefits %}
-                        <li class="flex items-start gap-6 items-center">
+                        <li class="flex items-center gap-6">
                             <span class="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-600">
                                 <span class="w-6 h-6">{% include benefit.svgPath %}</span>
                             </span>
