@@ -47,7 +47,7 @@ function ulStyle(node: DocsNavNode) {
 </script>
 
 <template>
-  <div class="border-r lg:pt-2 text-sm" data-docs>
+  <div class="lg:pt-2 text-sm" data-docs>
     <ul class="handbook-nav" data-el="navigation">
       <li :class="{ active: isActive('/docs') }">
         <NuxtLink href="/docs">Documentation</NuxtLink>

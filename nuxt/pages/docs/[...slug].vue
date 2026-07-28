@@ -55,7 +55,7 @@ const breadcrumbs = computed(() => {
       <div class="px-10 pt-8">
         <div class="w-full">
           <!-- Breadcrumbs + Search bar -->
-          <div class="font-medium border-b pb-1 flex flex-col gap-1">
+          <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
               <nav aria-label="Breadcrumb" class="text-sm text-gray-500">
                 <span v-for="(crumb, i) in breadcrumbs" :key="crumb.path">
@@ -84,7 +84,7 @@ const breadcrumbs = computed(() => {
       </div>
 
       <!-- Right sidebar: TOC -->
-      <div class="lg:border-l right-nav">
+      <div class="lg right-nav">
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
           <HandbookToc :links="page?.body?.toc?.links" />
           <div v-if="page?.updated" class="text-xs pb-1 text-right mt-4 text-gray-500 max-lg:hidden">
