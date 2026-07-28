@@ -25,6 +25,12 @@ export default defineNuxtConfig({
 
     css: ['~/assets/css/theme.css'],
 
+    // The site has no dark theme. color-mode ships with @nuxt/ui and defaults to `system`,
+    // so visitors whose OS prefers dark got `.dark` on <html>, which flipped Nuxt UI's
+    // tokens. Hand-styled page chrome stayed light while inline <code> turned into
+    // near-black pills with white text. Lock the tokens to light until a dark theme exists.
+    colorMode: { preference: 'light', fallback: 'light' },
+
     // Heebo is already loaded via the Google Fonts <link> in app.head.
     // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
     // so it never fetches font files at build time (which exhausts Netlify's memory).
