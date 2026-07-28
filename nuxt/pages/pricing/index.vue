@@ -38,7 +38,7 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto py-16 px-4">
         <h1 class="text-center mb-16"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <UPricingPlans>
-        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip' }" />
+        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip', titleWrapper: 'mb-4' }" />
         </UPricingPlans>
         <SocialProof class="mt-16" />
 
