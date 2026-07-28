@@ -1,0 +1,60 @@
+{%- comment -%}
+    Cross-links a /node-red topic page to the FlowFuse Certified Nodes that cover
+    the same technology.
+
+    This file is Liquid, not Nunjucks: pages under src/node-red are markdown, and
+    Eleventy renders markdown with Liquid, so `{% set %}` and friends are not
+    available here. The equivalent block on the /node-red hub page is inline
+    Nunjucks in index.njk because that page is .njk.
+
+    Every tag below uses whitespace control. markdown-it ends an HTML block at the
+    first blank line, and a bare `{% if %}` on its own line leaves a line of
+    spaces behind, which counts as blank. Without the dashes the tail of this
+    callout gets parsed as markdown and comes out wrapped in stray <p> tags.
+
+    Usage: add a `certified` list of catalogue ids to the page front matter, then
+    include this file where the callout should appear:
+
+        ---
+        certified:
+          - "@flowfuse-certified-nodes/opcua"
+        certifiedIntro: "Optional sentence replacing the default lede."
+        ---
+        {% include "components/certified-node-callout.liquid" %}
+
+    Names, descriptions and documentation links come from the live catalogues via
+    src/_data/certifiedNodes.js, so a node is only ever named once, by id. Ids
+    that are not in the catalogue are skipped, so a page can list a node before it
+    ships without rendering an empty or broken block.
+{%- endcomment -%}
+{%- assign certifiedMatches = 0 -%}
+{%- for certifiedId in certified -%}
+    {%- assign certifiedCandidate = certifiedNodes.byId[certifiedId] -%}
+    {%- if certifiedCandidate -%}{%- assign certifiedMatches = certifiedMatches | plus: 1 -%}{%- endif -%}
+{%- endfor -%}
+{%- if certifiedMatches > 0 -%}
+{%- comment -%}
+    The title is a <p>, not a heading. eleventy-plugin-toc collects every h2/h3/h4
+    in the rendered content, so a heading here would insert this component into
+    the host page's Table of Contents and document outline as though it were one
+    of the tutorial's own sections.
+{%- endcomment -%}
+<aside class="certified-callout not-prose" aria-label="FlowFuse Certified Nodes">
+<span class="certified-eyebrow">{%- include "components/icons/certified-node.svg" -%}<span>FlowFuse Certified</span></span>
+<p class="certified-callout--title">{% if certifiedMatches > 1 %}Certified nodes for this in production{% else %}A certified node for this in production{% endif %}</p>
+<p class="certified-callout--lede">{% if certifiedIntro %}{{ certifiedIntro }}{% else %}The community packages on this page are a good place to learn. For production, FlowFuse certifies and maintains the following:{% endif %}</p>
+<ul class="certified-callout--list">
+{%- for certifiedId in certified -%}
+{%- assign node = certifiedNodes.byId[certifiedId] -%}
+{%- if node -%}
+<li class="certified-callout--item">
+<a class="certified-callout--name" href="{{ node.docsPath }}" onclick="capture('certified-node-click', {node: '{{ node.id }}', collection: '{{ node.collection }}', page: location.pathname})">{{ node.name }}</a>
+<span class="certified-pill">{%- include "components/icons/certified-node.svg" -%}<span>{{ node.collectionLabel }}</span></span>
+{%- if node.description -%}<p class="certified-callout--description">{{ node.description }}</p>{%- endif -%}
+</li>
+{%- endif -%}
+{%- endfor -%}
+</ul>
+<p class="certified-callout--foot">Certified nodes are vetted for reliability, security and current documentation, have a named owner accountable for them, and are patched by FlowFuse after release. <a href="/blog/2025/07/certified-nodes-v2/">What certification means</a>, or <a href="/contact-us/">talk to us about access</a>.</p>
+</aside>
+{%- endif -%}

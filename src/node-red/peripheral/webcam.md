@@ -7,6 +7,12 @@ meta:
    description: Learn how to seamlessly connect webcam with Node-RED
    keywords: node-red, flowfuse,  webcam, capturing image
 image: /node-red/peripheral/images/using_webcam_with_node-red.png
+certified:
+  - "@flowfuse-certified-nodes/rtsp"
+certifiedIntro: >
+  This page covers browser webcams through the Dashboard widget. For network
+  cameras that stream over RTSP, FlowFuse certifies and maintains a separate
+  node:
 ---
 
 # {{meta.title}}
@@ -16,6 +22,8 @@ Dashboard 2.0 has introduced its first third-party webcam widget, simplifying th
 Additionally, if you are willing to develop your own third-party widget, we have our [example widget](https://github.com/FlowFuse/node-red-dashboard-2-ui-example) which helps you develop your widget. Additionally for a detailed step-by-step guide refer to [Building Third Party Widgets](https://dashboard.flowfuse.com/contributing/widgets/third-party.html).
 
 Install Node-RED Dashboard 2.0. Follow these [instructions](/blog/2024/03/dashboard-getting-started/) to get started.
+
+{% include "components/certified-node-callout.liquid" %}
 
 ## Using a webcam custom widget
 

@@ -180,7 +180,7 @@
                                 <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
                                 <li><a href="/about/">About us</a></li>
                                 <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
-                                <li><a href="/platform/security/#certifications">Certifications</a></li>
+                                <li><a href="/platform/security/#certifications">Security certifications</a></li>
                             </ul>
                         </div>
                         <div>
