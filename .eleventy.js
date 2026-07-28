@@ -459,12 +459,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("rewriteHandbookLinks", (str, page) => {
         const isIndexPage = /(README.md|index.md)$/i.test(page.inputPath)
 
-        const matcher = /((href|src)="([^"]*))"/g
-        let match
-        while ((match = matcher.exec(str)) !== null) {
-            let url = match[3]
+        return str.replace(/(href|src)="([^"]*)"/g, (full, attr, url) => {
             if (/^(http|#|mailto:)/.test(url)) {
-                continue
+                return full
             }
             url = url.replace(/.md(#.*)?$/, '$1')
             url = url.replace(/README(#.*)?$/, '$1')
@@ -472,9 +469,8 @@ module.exports = function(eleventyConfig) {
                 url = '../'+url
             }
 
-            str = str.substring(0, match.index) + `${match[2]}="${url}"` + str.substring(match.index+match[1].length)
-        }
-        return str;
+            return `${attr}="${url}"`
+        })
     })
 
     eleventyConfig.addFilter("handbookEditLink", (page) => {
