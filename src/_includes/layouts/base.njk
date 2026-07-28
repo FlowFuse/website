@@ -170,10 +170,10 @@ eleventyComputed:
          containing block ended at the main content, so the footer scrolled it away. -->
     <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
-                    <a class="hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
+                    <a class="ff-logo-link hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-wordmark.njk" %}
                     </a>
-                    <a class="w-8 h-8 block min-[420px]:hidden md:block lg:hidden shrink-0" href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
+                    <a class="ff-logo-link w-8 h-8 block min-[420px]:hidden md:block lg:hidden shrink-0" href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-square.svg" %}
                     </a>
                     <div class="flex items-center gap-2 md:hidden relative z-20">
@@ -487,7 +487,7 @@ eleventyComputed:
                      last group under Resources. -->
                 <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
                     <div>
-                        <a href="/" class="ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
+                        <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
                             {% include "components/flowfuse-wordmark-footer.njk" %}
                         </a>
                     </div>
