@@ -3002,25 +3002,34 @@ lite-youtube::before {
     }
 }
 
-/* Animated hover underline on mega panel links */
+/* Animated hover underline on mega panel links. Anchored to the .ff-nav-label
+   span rather than the <a> box, for the same reason as the top-level items
+   above: the mega link is a full-width flex row holding an icon and the label,
+   so a line on the anchor spans the whole column instead of hugging the text.
+   Every mega link carries the label span (the 11ty navoption shortcode and the
+   Nuxt header both emit it), the highlight card being the one exception, and it
+   is already excluded here. */
 @media (min-width: 768px) {
     .ff-website header .ff-nav-dropdown ul.mega a {
         position: relative;
     }
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card)::after {
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card) .ff-nav-label {
+        position: relative;
+    }
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card) .ff-nav-label::after {
         content: "";
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 6px;
+        bottom: -2px;
         height: 1.5px;
         background: currentColor;
         transform: scaleX(0);
         transform-origin: left center;
         transition: transform 0.22s ease;
     }
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):hover::after,
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):focus-visible::after {
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):hover .ff-nav-label::after,
+    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):focus-visible .ff-nav-label::after {
         transform: scaleX(1);
     }
 }
@@ -3029,7 +3038,8 @@ lite-youtube::before {
    mega-highlight image zoom for users who ask for less motion. The hover
    states still apply, just without the left-to-right sweep or the scale. */
 @media (prefers-reduced-motion: reduce) {
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card)::after,
+    /* .ff-nav-label::after covers both the top-level items and the mega panel
+       links, since both anchor their underline to that span. */
     .ff-website header .ff-nav-label::after,
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card span.mega-highlight-title::after,
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
