@@ -109,3 +109,11 @@ export const INTEGRATION_CATEGORIES: Record<string, string> = {
 export const INTEGRATIONS_API = 'https://ff-integrations.flowfuse.cloud/api/nodes'
 export const CERTIFIED_HUB_API = 'https://ff-certified-nodes.flowfuse.cloud/ff-it.json'
 export const CERTIFIED_EDGE_API = 'https://ff-certified-nodes.flowfuse.cloud/ff-ot.json'
+
+/*
+    The FlowFuse-published node packages, which are a different set from the Hub
+    and Edge certified catalogues above. Packages published only to the private
+    registry (the AI and MCP server nodes) appear here and nowhere else, so
+    without this feed the page cannot list them at all.
+*/
+export const FLOWFUSE_NODES_API = 'https://ff-certified-nodes.flowfuse.cloud/ff-catalogue.json'
