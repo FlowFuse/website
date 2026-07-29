@@ -9,14 +9,23 @@ const props = defineProps<{
 }>()
 
 const hasGeneratedPage = computed(() => props.generatedIds.has(props.node._id))
+// A certified node only gets a docsUrl when its catalogue `url` is a flowfuse.com
+// link or it has a DOCS_URL_OVERRIDES entry (see nuxt/utils/integrations.ts).
+// Publishers can and do point `url` at their own repository, so fall back to the
+// collection index, which always exists, rather than rendering a dead card.
+const certifiedFallback = computed<string | null>(() =>
+    props.node.collection ? `/node-red/flowfuse/${props.node.collection}/` : null
+)
 const href = computed<string | null>(() => {
     if (props.node.docsUrl) return props.node.docsUrl
-    if (props.node.tier === 'certified') return null
+    if (props.node.tier === 'certified') return certifiedFallback.value
     return hasGeneratedPage.value
         ? `/integrations/${props.node._id}/`
         : `https://flows.nodered.org/node/${props.node._id}`
 })
-const isInternal = computed(() => props.node.docsUrl || hasGeneratedPage.value)
+const isInternal = computed(() =>
+    props.node.docsUrl || hasGeneratedPage.value || props.node.tier === 'certified'
+)
 const isExternalLink = computed(() => href.value && !isInternal.value)
 const externalAttrs = computed(() =>
     isExternalLink.value ? { target: '_blank', rel: 'noopener noreferrer' } : {}

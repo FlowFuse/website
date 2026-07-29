@@ -795,6 +795,52 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
+    /* Subtle wave sweeping left-to-right THROUGH the logo's own fill on hover:
+       each logo path takes a horizontal gradient (declared inside the SVG) whose
+       stops shift colour in staggered sequence, so the colour flows across the
+       letterforms rather than a block passing over them.
+
+       Both front ends are driven from here. The 11ty includes
+       (components/flowfuse-wordmark*.njk, components/flowfuse-square.svg) and the
+       Nuxt components (AppHeader.vue, AppFooter.vue) each carry the gradient, and
+       Nuxt links this same stylesheet via nuxt.config.ts, so one rule set covers
+       both. Keep the gradients at five stops or the stagger below goes uneven.
+
+       The colours are custom properties because the three marks rest on different
+       fills: brand orange for the wordmark, a lighter red for the tablet square
+       in Nuxt, footer grey in the footer. Custom properties inherit down to the
+       <stop> elements, so setting them on the link is enough. */
+    @keyframes ff-logo-wave {
+        0%, 100% { stop-color: var(--ff-wave-base); }
+        50%      { stop-color: var(--ff-wave-peak); }
+    }
+    .ff-website header .ff-logo-link {
+        --ff-wave-base: #DA3D0B;
+        --ff-wave-peak: #6366f1;
+    }
+    /* Nuxt's tablet-width square mark rests on a lighter red than the wordmark. */
+    .ff-website header .ff-logo-link .ff-wave-square {
+        --ff-wave-base: #ED4E4E;
+    }
+    .ff-website footer .ff-footer-logo {
+        --ff-wave-base: #1F2937;
+        --ff-wave-peak: #DA3D0B;
+    }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(1),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(1) { animation: ff-logo-wave 0.5s ease 0s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(2),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(2) { animation: ff-logo-wave 0.5s ease 0.09s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(3),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(3) { animation: ff-logo-wave 0.5s ease 0.18s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(4),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(4) { animation: ff-logo-wave 0.5s ease 0.27s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(5),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(5) { animation: ff-logo-wave 0.5s ease 0.36s; }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website header .ff-logo-link:hover svg stop,
+        .ff-website footer .ff-footer-logo:hover svg stop { animation: none; }
+    }
+
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: var(--color-indigo-600);
@@ -912,11 +958,16 @@ h4:hover .header-anchor::before {
         @apply text-current;
     }
 
-    .ff-website header a > span:not(.ff-nav-label) {
+    /* Excluding .ff-icon: this pair predates the header's Heroicons becoming
+       Nuxt UI <UIcon>. Those render as a masked <span>, not an inline <svg>, so
+       on the Nuxt side every nav icon started matching a span selector that no
+       icon could match before, picking up the shrink and rotating a half turn
+       on hover. Eleventy was unaffected because its icons are still <svg>. */
+    .ff-website header a > span:not(.ff-nav-label):not(.ff-icon) {
         transform: scale(0.75);
     }
 
-    .ff-website header a:hover > span:not(.ff-nav-label) {
+    .ff-website header a:hover > span:not(.ff-nav-label):not(.ff-icon) {
         transform: scale(0.75)rotate(180deg);
     }
 
@@ -2595,14 +2646,15 @@ lite-youtube::before {
         border: 1px solid #e5e7eb;
         background: #fff;
     }
-    /* `contain`, not `cover`: highlight images come from each linked page's own
-       front matter and are not all 16/9, so cover was cropping the taller ones
-       (the Platform panel's AI image most visibly). */
+    /* `cover`, so the card fills its 16/9 frame. Highlight images come from each
+       linked page's own front matter and are not all 16/9, so any that are the
+       wrong ratio get cropped rather than letterboxed. The fix for those is to
+       crop the source image to 16/9, not to letterbox every card. */
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         transition: transform 0.3s ease;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover img {
@@ -3004,18 +3056,17 @@ lite-youtube::before {
     }
 }
 
-/* FAQ / accordion header interaction: colour shift plus a plain underline on
-   hover and keyboard focus. Only the sweeping animation is reserved for the main
-   navigation, so the underline itself stays here. The open/close chevron
-   rotation is driven by JS inline styles and is left untouched; the chevron
-   stroke uses currentColor so it follows the colour shift. */
+/* FAQ / accordion header interaction: colour shift only. No underline, because
+   the header is a button that expands an answer in place, and an underline reads
+   as a link promising navigation. The open/close chevron rotation is driven by JS
+   inline styles and is left untouched; the chevron stroke uses currentColor so it
+   follows the colour shift. */
 .ff-website .question {
     transition: color 0.2s ease;
 }
 .ff-website .question:hover,
 .ff-website .question:focus-visible {
     color: var(--color-indigo-600);
-    text-decoration: underline;
 }
 .ff-website .question:focus {
     outline: none;
@@ -3101,3 +3152,17 @@ lite-youtube::before {
 .ff-utility-announce > .ff-utility-item { display: none; }
 .ff-utility-announce > .ff-utility-item:first-child { display: inline-flex; }
 .ff-utility-bar a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Header icon spans. Nuxt UI renders the header's Heroicons as a masked <span>
+   where Eleventy still emits an inline <svg>, so span-targeting nav rules that
+   could never hit an icon before now hit 45 of them. The padding one is the
+   damaging half: with border-box, 8px/16px padding floors the box at 32x24,
+   while the inline SVGs beside it sit at 20x20, so the two render at visibly
+   different sizes in the same row.
+
+   Deliberately unlayered, matching the utility bar rules above: the rules that
+   supply that padding are themselves unlayered, so a reset inside
+   @layer components would lose to them regardless of specificity. */
+.ff-website header a > span.ff-icon {
+    padding: 0;
+}

@@ -131,7 +131,10 @@ hubspot:
             <div class="container m-auto text-left max-w-screen-lg">
                 <div class="mx-auto">
                     <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-white max-w-4xl">
-                        {{ site.messaging.tagLine | safe }}
+                        {# heroTagLine, not tagLine: tagLine also renders into every page's
+                           <title> via base.njk and into llms.txt, where the persona clause
+                           would push the title past the search-result truncation length. #}
+                        {{ site.messaging.heroTagLine | safe }}
                     </h1>
                     <p class="mt-12 text-center text-gray-200 md:text-xl m-auto max-w-4xl">
                         {{ site.messaging.subtitle | replace("-", "&#8209;") | safe }}
