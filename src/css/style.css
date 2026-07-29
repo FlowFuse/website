@@ -108,6 +108,19 @@
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css" layer(vendor);
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css" layer(components);
 
+/* forge-ui-components resets bare h1-h3 for its own standalone docs site.
+   Neutralize within the vendor layer itself (source order wins ties inside
+   a layer) so our own heading styles always apply, regardless of how
+   vendor ranks against base/theme at the document level. */
+@layer vendor {
+    h1, h2, h3 {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin-bottom: inherit;
+    }
+}
+
 
 /* Skip to main content link */
 .skip-to-main {

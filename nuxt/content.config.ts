@@ -1,3 +1,4 @@
+import { join } from 'node:path'
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
 
@@ -55,6 +56,23 @@ export default defineContentConfig({
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
                 }).optional(),
+                sitemap: defineSitemapSchema(),
+            })
+        }),
+        // Source files stay at src/changelog/ (11ty's historical location) rather than
+        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
+        changelog: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'changelog/**/*.md',
+            },
+            schema: z.object({
+                description: z.string().optional(),
+                subtitle: z.string().optional(),
+                date: z.coerce.date(),
+                authors: z.array(z.string()).optional(),
+                issues: z.array(z.string()).optional(),
                 sitemap: defineSitemapSchema(),
             })
         }),

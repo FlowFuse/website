@@ -18,6 +18,24 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
     return routes
 }
 
+// Same idea for changelog entries, plus the paginated listing (19 entries/page, newest first)
+function collectChangelogRoutes(dir: string, basePath: string): { routes: string[], entryCount: number } {
+    const routes: string[] = []
+    let entryCount = 0
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            const nested = collectChangelogRoutes(fullPath, `${basePath}/${file}`)
+            routes.push(...nested.routes)
+            entryCount += nested.entryCount
+        } else if (file.endsWith('.md')) {
+            entryCount += 1
+            routes.push(`${basePath}/${basename(file, '.md')}/`)
+        }
+    }
+    return { routes, entryCount }
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -116,23 +134,39 @@ export default defineNuxtConfig({
             {
                 baseName: 'analytics',
                 dir: '../src/_includes/analytics'
+            },
+            {
+                baseName: 'team',
+                dir: '../src/_data/team'
+            },
+            {
+                baseName: 'guests',
+                dir: '../src/_data/guests'
             }
         ],
         prerender: {
-            routes: [
-                '/terms',
-                '/privacy-policy',
-                '/integrations',
-                '/pricing',
-                '/ebooks/beginner-guide-to-a-professional-nodered/',
-                '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
-                '/whitepaper/uns-decoupling-data-producers-and-consumers/',
-                '/whitepaper/open-source-software-for-manufacturing/',
-                '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
-                '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
-                '/resources/publications/',
-                ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
-            ],
+            routes: (() => {
+                const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
+                const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
+                const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
+                return [
+                    '/terms',
+                    '/privacy-policy',
+                    '/integrations',
+                    '/pricing',
+                    '/ebooks/beginner-guide-to-a-professional-nodered/',
+                    '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
+                    '/whitepaper/uns-decoupling-data-producers-and-consumers/',
+                    '/whitepaper/open-source-software-for-manufacturing/',
+                    '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
+                    '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
+                    '/resources/publications/',
+                    '/changelog/index.xml',
+                    ...changelogListingRoutes,
+                    ...changelog.routes,
+                    ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                ]
+            })(),
             crawlLinks: false
         }
     },

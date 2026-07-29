@@ -622,19 +622,6 @@ module.exports = function(eleventyConfig) {
             .map(entry => entry.url);
     }
 
-    function findFeatureByChangelog(changelogUrl) {
-        const normalized = changelogUrl.replace(/\/$/, '') + '/';
-        for (const section of featureCatalog.sections) {
-            for (const feature of section.features) {
-                const urls = getChangelogUrls(feature);
-                for (const url of urls) {
-                    if ((url.replace(/\/$/, '') + '/') === normalized) return feature;
-                }
-            }
-        }
-        return null;
-    }
-
     function deriveTierLabel(tierData) {
         if (!tierData) return null;
         const enterprise = tierData.enterprise && tierData.enterprise.value;
@@ -916,11 +903,6 @@ module.exports = function(eleventyConfig) {
             content = content.slice(0, op.index) + op.html + content.slice(op.index);
         }
         return content;
-    });
-
-    // Make helpers available to changelog layout via filters
-    eleventyConfig.addFilter("featureForChangelog", function(url) {
-        return findFeatureByChangelog(url);
     });
 
     eleventyConfig.addFilter("featureForDocsPage", function(url) {
