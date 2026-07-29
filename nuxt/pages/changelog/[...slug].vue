@@ -72,7 +72,7 @@ useSeoMeta({
     <div class="blog nohero w-full pb-24">
       <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
         <div class="ff-prose flex-grow">
-          <NuxtLink to="/changelog" class="inline-flex align-center gap-1 mb-4">
+          <NuxtLink to="/changelog" class="inline-flex items-center gap-1 mb-4">
             <UIcon name="i-heroicons-chevron-left" />
             Back to the Changelog
           </NuxtLink>
