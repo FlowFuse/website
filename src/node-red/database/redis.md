@@ -6,6 +6,8 @@ meta:
   title: Using Redis with Node-RED (2026 Updated)
   description: Learn how to integrate Redis with Node-RED for fast data storage, pub/sub messaging, JSON handling, Lua scripting, and advanced Redis operations in Node-RED flows.
   keywords: nodered redis, node red redis, node-red-node-redis, redis nodered, redis node red
+certified:
+  - "@flowfuse-certified-nodes/redis"
 ---
 
 # {{ meta.title }}
@@ -13,6 +15,8 @@ meta:
 Redis is a powerful in-memory data structure store that can be used as a database, cache, message broker, and streaming engine. When combined with Node-RED, Redis provides a fast and efficient way to store and retrieve data, manage session states, implement pub/sub messaging patterns, and share data across multiple Node-RED instances.
 
 This documentation will walk you through integrating Redis with Node-RED, from basic setup to advanced use cases.
+
+{% include "components/certified-node-callout.liquid" %}
 
 ## Getting Started
 

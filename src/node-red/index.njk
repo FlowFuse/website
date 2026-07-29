@@ -156,9 +156,56 @@ sitemapPriority: 0.8
             <a class="ff-btn ff-btn--primary min-h-[40px] md:inline mb-2 md:mb-0 md:mr-2" href="/node-red/learn/">SEE MORE</a>
             <a class="ff-btn ff-btn--primary-outlined min-h-[40px] md:inline" href="/professional-services/">GET IMPLEMENTATION SUPPORT</a>
         </div>
-    </div>   
+    </div>
 </div>
 </div>
+
+<!--Certified Nodes-->
+{# Driven by the live catalogues via src/_data/certifiedNodes.js, so newly
+   certified nodes appear here without editing this page. The section is
+   skipped entirely if neither catalogue could be fetched at build time. #}
+{% if certifiedNodes.all.length %}
+<div class="w-full pb-20 pt-16">
+    <div class="max-w-screen-lg m-auto px-6">
+        <span class="certified-eyebrow">
+            {% include "components/icons/certified-node.svg" %}
+            <span>FlowFuse Certified</span>
+        </span>
+        <h2 class="max-md:text-center">
+            Nodes <span class="text-indigo-600">certified for production</span>
+        </h2>
+        <p class="mt-4 max-w-3xl">
+            The Node-RED library is enormous, and a README cannot tell you whether a package is still
+            maintained, whether it is secure, or whether anyone will answer when it breaks. FlowFuse
+            certifies a set of nodes against those questions: each one has a named owner accountable
+            for it, is vetted for reliability, security and current documentation, and is patched by
+            FlowFuse after release.
+        </p>
+        <ul class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {%- for node in certifiedNodes.all -%}
+            <li class="w-full">
+                <a href="{{ node.docsPath }}"
+                   class="flex flex-col h-full p-6 bg-white border-2 border-indigo-100 rounded-lg hover:border-indigo-300 hover:no-underline transition-colors"
+                   onclick="capture('certified-node-click', {node: '{{ node.id }}', collection: '{{ node.collection }}', page: location.pathname})">
+                    <span class="flex items-center gap-3 mb-2">
+                        <span class="font-semibold text-lg text-gray-900">{{ node.name }}</span>
+                        <span class="certified-pill">
+                            {% include "components/icons/certified-node.svg" %}
+                            <span>{{ node.collectionLabel }}</span>
+                        </span>
+                    </span>
+                    <span class="text-sm text-gray-700">{{ node.description }}</span>
+                </a>
+            </li>
+            {%- endfor -%}
+        </ul>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+            <a class="ff-btn ff-btn--primary min-h-[40px]" href="/integrations/?certified=1"
+               onclick="capture('cta-browse-certified-nodes', {'position': 'nodered'})">BROWSE CERTIFIED NODES</a>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 <div class="max-w-screen-lg mx-auto text-center pt-20 pb-6 px-6 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
     <!--Customer Stories Banner-->
