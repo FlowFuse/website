@@ -101,8 +101,14 @@ enrichment, intelligence, and meeting capture.
 | **Account research & planning** | **Claude** | Synthesizing account data, deep-dive strategic research, and planning personalized outreach. |
 | **Account-based outreach** | **LinkedIn Sales Navigator** | Research and outreach to prospects on LinkedIn. |
 
-Primary GTM tools: Warmly (data from RB2B, Vector.co), Claude, Clay, HubSpot,
-Swan (getswan.com), ZenABM.
+#### Primary GTM Tools
+
+- Warmly (data from RB2B, Vector.co)
+- Claude
+- Clay
+- Hubspot
+- Swan (getswan.com)
+- ZenABM
 
 ## Contact us
 
