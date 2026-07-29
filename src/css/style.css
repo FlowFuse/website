@@ -795,6 +795,52 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
+    /* Subtle wave sweeping left-to-right THROUGH the logo's own fill on hover:
+       each logo path takes a horizontal gradient (declared inside the SVG) whose
+       stops shift colour in staggered sequence, so the colour flows across the
+       letterforms rather than a block passing over them.
+
+       Both front ends are driven from here. The 11ty includes
+       (components/flowfuse-wordmark*.njk, components/flowfuse-square.svg) and the
+       Nuxt components (AppHeader.vue, AppFooter.vue) each carry the gradient, and
+       Nuxt links this same stylesheet via nuxt.config.ts, so one rule set covers
+       both. Keep the gradients at five stops or the stagger below goes uneven.
+
+       The colours are custom properties because the three marks rest on different
+       fills: brand orange for the wordmark, a lighter red for the tablet square
+       in Nuxt, footer grey in the footer. Custom properties inherit down to the
+       <stop> elements, so setting them on the link is enough. */
+    @keyframes ff-logo-wave {
+        0%, 100% { stop-color: var(--ff-wave-base); }
+        50%      { stop-color: var(--ff-wave-peak); }
+    }
+    .ff-website header .ff-logo-link {
+        --ff-wave-base: #DA3D0B;
+        --ff-wave-peak: #6366f1;
+    }
+    /* Nuxt's tablet-width square mark rests on a lighter red than the wordmark. */
+    .ff-website header .ff-logo-link .ff-wave-square {
+        --ff-wave-base: #ED4E4E;
+    }
+    .ff-website footer .ff-footer-logo {
+        --ff-wave-base: #1F2937;
+        --ff-wave-peak: #DA3D0B;
+    }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(1),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(1) { animation: ff-logo-wave 0.5s ease 0s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(2),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(2) { animation: ff-logo-wave 0.5s ease 0.09s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(3),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(3) { animation: ff-logo-wave 0.5s ease 0.18s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(4),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(4) { animation: ff-logo-wave 0.5s ease 0.27s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(5),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(5) { animation: ff-logo-wave 0.5s ease 0.36s; }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website header .ff-logo-link:hover svg stop,
+        .ff-website footer .ff-footer-logo:hover svg stop { animation: none; }
+    }
+
     .ff-website header .ff-wordmark path,
     .ff-website header .ff-icon--gh path {
         fill: var(--color-indigo-600);

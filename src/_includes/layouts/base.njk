@@ -170,10 +170,10 @@ eleventyComputed:
          containing block ended at the main content, so the footer scrolled it away. -->
     <header id="ff-header" class="ff-header">
                 <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
-                    <a class="hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
+                    <a class="ff-logo-link hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row"  href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-wordmark.njk" %}
                     </a>
-                    <a class="w-8 h-8 block min-[420px]:hidden md:block lg:hidden shrink-0" href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
+                    <a class="ff-logo-link w-8 h-8 block min-[420px]:hidden md:block lg:hidden shrink-0" href="/" aria-label="FlowFuse home" style="font-family:'Baloo 2', sans-serif">
                         {% include "components/flowfuse-square.svg" %}
                     </a>
                     <div class="flex items-center gap-2 md:hidden relative z-20">
@@ -239,7 +239,7 @@ eleventyComputed:
                             <li class="contents">
                                 <ul class="sub-menu grid grid-rows-subgrid row-span-[9] ml-7 auto-rows-auto border-l-2 md:col-start-2 md:row-start-2 xl:col-start-3">
                                     {% navoption "Automotive", "/industries/automotive/", 1, "car" %}{% endnavoption %}
-                                    {% navoption "Food & Beverage", "/industries/food-beverage/", 1, "snowflake" %}{% endnavoption %}
+                                    {% navoption "Food & Beverage", "/industries/food-beverage/", 1, "food-beverage" %}{% endnavoption %}
                                     {% navoption "Life Sciences", "/industries/life-sciences/", 1, "shield-check" %}{% endnavoption %}
                                     {% navoption "Electronics & Appliances", "/industries/electronics-appliances/", 1, "power" %}{% endnavoption %}
                                     {% navoption "Renewables", "/industries/renewables/", 1, "wind-turbine" %}{% endnavoption %}
@@ -305,7 +305,7 @@ eleventyComputed:
                                         {% navoption "About us", "/about/", 1, "building-office-2" %}{% endnavoption %}
                                         {% navoption "Jobs", site.jobBoard, 1, "case" %}{% endnavoption %}
                                         {% navoption "Handbook", "/handbook/", 1, "book-open" %}{% endnavoption %}
-                                        {% navoption "Certifications", "/platform/security/#certifications", 1, "certificate" %}{% endnavoption %}
+                                        {% navoption "Security certifications", "/platform/security/#certifications", 1, "certificate" %}{% endnavoption %}
                                     </ul>
                                 </li>
                                 {% navoption "Partners & Services", null, 1, null, true, "pl-3 title border-l-2 md:col-start-2 md:row-start-1 xl:col-start-3" %}{% endnavoption %}
@@ -488,7 +488,7 @@ eleventyComputed:
                      last group under Resources. -->
                 <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
                     <div>
-                        <a href="/" class="ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
+                        <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
                             {% include "components/flowfuse-wordmark-footer.njk" %}
                         </a>
                     </div>
@@ -498,7 +498,7 @@ eleventyComputed:
                                 <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
                                 <li><a href="/about/">About us</a></li>
                                 <li><a href="{{ site.jobBoard }}">Jobs</a></li>
-                                <li><a href="/platform/security/#certifications">Certifications</a></li>
+                                <li><a href="/platform/security/#certifications">Security certifications</a></li>
                             </ul>
                         </div>
                         <div>
