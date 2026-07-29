@@ -65,6 +65,15 @@ Below is the mapping of our core sales capabilities to the specific tools we use
 | Account Research & Planning | Claude | Synthesizing account data, conducting deep-dive strategic research, and planning personalized outreach. |
 | Account-based Outreach | LinkedIn Sales Navigator | Research and outreach to prospects on LinkedIn. |
 
+#### Primary GTM Tools
+
+- Warmly (data from RB2B, Vector.co)
+- Claude
+- Clay
+- Hubspot
+- Swan (getswan.com)
+- ZenABM
+
 ### Sales Processes
 
  - [Edge Connect Process](./edge-connect-process.md)
