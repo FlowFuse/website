@@ -94,8 +94,13 @@ const categoryCounts = computed(() => {
     baseForCounts.value.forEach(n => n.categories?.forEach((k) => { counts[k] = (counts[k] ?? 0) + 1 }))
     return counts
 })
+const catalogueCategories = computed(() => {
+    const set = new Set<string>()
+    ;(catalogue.value ?? []).forEach(n => n.categories?.forEach(k => set.add(k)))
+    return set
+})
 const visibleCategories = computed(() =>
-    Object.entries(INTEGRATION_CATEGORIES).filter(([key]) => categoryCounts.value[key])
+    Object.entries(INTEGRATION_CATEGORIES).filter(([key]) => catalogueCategories.value.has(key))
 )
 
 const filtered = computed(() => {
@@ -113,11 +118,10 @@ function changePage (diff: number) {
 watch(filtered, () => { if (currentPage.value >= maxPage.value) currentPage.value = 0 })
 
 const PRODUCT_OPTIONS: ProductFilter[] = ['all', 'hub', 'edge']
-function chipClass (active: boolean) {
-    return [
-        'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition',
-        active ? 'bg-indigo-50 text-indigo-700' : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
-    ]
+function chipClass (active: boolean, disabled = false) {
+    const base = 'inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-sm font-medium'
+    if (disabled) return [base, 'text-gray-400 cursor-default']
+    return [base, 'transition', active ? 'bg-indigo-50 text-indigo-700' : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700']
 }
 </script>
 
@@ -148,11 +152,18 @@ function chipClass (active: boolean) {
                     <IntegrationsProductToggle :active="productFilter" :options="PRODUCT_OPTIONS" variant="soft" @select="toggleProductSegment" />
                     <USwitch v-model="filterCertified" color="neutral" label="Certified only" />
                 </div>
-                <div v-if="visibleCategories.length" class="flex items-center gap-1.5 flex-wrap mt-3">
+                <div v-if="visibleCategories.length" class="flex items-center gap-1 flex-wrap mt-3">
                     <span class="text-xs font-semibold uppercase tracking-wider text-gray-500 mr-1">Category</span>
                     <button type="button" :class="chipClass(selectedCategories.size === 0)" @click="clearCategories">All</button>
-                    <button v-for="[key, label] in visibleCategories" :key="key" type="button" :class="chipClass(selectedCategories.has(key))" @click="toggleCategory(key)">
-                        {{ label }}<span class="text-xs opacity-60 tabular-nums">{{ categoryCounts[key] }}</span>
+                    <button
+                        v-for="[key, label] in visibleCategories"
+                        :key="key"
+                        type="button"
+                        :disabled="!categoryCounts[key] && !selectedCategories.has(key)"
+                        :class="chipClass(selectedCategories.has(key), !categoryCounts[key] && !selectedCategories.has(key))"
+                        @click="toggleCategory(key)"
+                    >
+                        {{ label }}
                     </button>
                 </div>
             </div>
