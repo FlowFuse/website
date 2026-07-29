@@ -62,3 +62,9 @@
 .handbook-content a {
     @apply text-blue-700 no-underline border-none hover:underline;
 }
+
+@layer base {
+    *, ::before, ::after {
+        border-color: var(--color-gray-200);
+    }
+}
