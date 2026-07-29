@@ -1,17 +1,15 @@
 title: Edge
 tierId: edge
 order: 1
-description: Connect PLCs and machines across every plant, standardize automation on the shop floor, and give OT teams the governance to scale beyond a single site.
-badge: "Cloud or Self-Hosted"
+description: Deploy, manage and scale industrial applications across production sites with centralized governance and certified industrial connectivity.
+badge: For OT teams
 features:
-  - FlowFuse Expert (AI) & Node-RED MCP Servers
-  - Certified Nodes – OT (OPC-UA, EtherNet/IP, Siemens S7, Modbus TCP & RTU, BACnet, DeltaV, Allen-Bradley/Rockwell, RTSP)
+  - Industrial applications
+  - PLC & machine connectivity
+  - OT-certified nodes
   - MQTT Broker
   - DevOps Pipelines
   - Device Group Management
-  - Application-Level RBAC & Endpoint Security
-  - Blueprints (OT Apps)
-  - Team Library
 button:
   label: Contact us
   to: /contact-us/

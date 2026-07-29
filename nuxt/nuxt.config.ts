@@ -1,6 +1,7 @@
 import { readdirSync, statSync } from 'node:fs'
 import { join, basename } from 'node:path'
 import remarkHandbookLinks from './utils/remark-handbook-links'
+import remarkDocsLinks from './utils/remark-docs-links'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -20,9 +21,16 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source'],
 
     css: ['~/assets/css/theme.css'],
+
+    // Dark mode isn't implemented across the site yet — force light mode so
+    // Nuxt UI components don't switch to dark when the visitor's OS prefers it.
+    colorMode: {
+        preference: 'light',
+        fallback: 'light',
+    },
 
     // Heebo is already loaded via the Google Fonts <link> in app.head.
     // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
@@ -62,10 +70,11 @@ export default defineNuxtConfig({
         skipInspections: ['trailing-slash', 'no-error-response'],
     },
 
-    // @nuxt/content generates `import X from 'handbook-links'` for the remark plugin key.
-    // This alias makes that import resolvable in the Vite bundle context.
+    // @nuxt/content generates import statements for remark plugin keys.
+    // These aliases make them resolvable in the Vite bundle context.
     alias: {
         'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
+        'docs-links': join(__dirname, 'utils/remark-docs-links'),
     },
 
     app: {
@@ -165,6 +174,7 @@ export default defineNuxtConfig({
                 },
                 remarkPlugins: {
                     'handbook-links': { instance: remarkHandbookLinks },
+                    'docs-links': { instance: remarkDocsLinks },
                 },
             },
         },
