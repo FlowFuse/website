@@ -154,6 +154,7 @@ export default defineContentConfig({
                             name: z.string(),
                             abbr: z.string(),
                             description: z.string(),
+                            both: z.boolean().optional(),
                         })),
                     })),
                 })),

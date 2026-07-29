@@ -27,6 +27,11 @@ bundles:
           - name: AI nodes
             abbr: AI
             description: LLM-powered flows with Gemini, Claude, ChatGPT, and Ollama.
+            both: true
+          - name: MCP Server
+            abbr: MCP
+            description: Turn your flows into a Model Context Protocol server so AI agents can call your logic as tools.
+            both: true
 
   - id: ot
     label: Certified Nodes — OT
@@ -53,3 +58,8 @@ bundles:
           - name: AI nodes
             abbr: AI
             description: LLM-powered flows with Gemini, Claude, ChatGPT, and Ollama.
+            both: true
+          - name: MCP Server
+            abbr: MCP
+            description: Turn your flows into a Model Context Protocol server so AI agents can call your logic as tools.
+            both: true
