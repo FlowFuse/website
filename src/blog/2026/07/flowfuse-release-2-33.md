@@ -30,7 +30,7 @@ FlowFuse 2.33 covers the whole path from setting up hardware on your plant floor
 
 Getting your own hardware into FlowFuse meant working backwards. You signed up, found the remote instance section, learned what the Device Agent was, created the instance in the platform, copied its connection details, and only then ran the installer with that code in hand.
 
-Now you can start where the hardware already is. Run the installer from your terminal and it takes you through signing up and connecting, ending with your machine registered as a remote instance and ready to build on. When something does block the connection, the Device Agent tells you exactly what, instead of failing quietly.
+Now you can start where the hardware already is. Run the installer from your terminal and it walks you through registering — including setting up an account if you need one — ending with your machine registered as a remote instance and ready to build on. If something's in the way — like port 1880 already being in use — the installer tells you up front instead of failing partway through.
 
 ![The installer running in a terminal, walking through sign-up and connection to FlowFuse](https://placehold.co/1600x900?text=Terminal+Onboarding){data-zoomable style="border: 2px solid #E5E7EB;"}
 
