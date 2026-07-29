@@ -314,6 +314,28 @@ The `<!--more-->` tag is used to define the text shown in the blog index from ea
 
 ![Example of how the headers are shown on blogs](/handbook/marketing/images/blog-article.png){.border.border-gray-200.max-w-[600px]}
 
+### AEO/GEO Optimisation
+
+More searches are being handled by agents and AI systems, and as such, content should support this paradigm. Each blog post should have the following.
+#### Question-Based Headers
+H2 and below should be framed as questions - instead of "The Operational Reality of AI", it should read "What is the Operational Reality of AI in Industry?". AEO/GEO trades heavily on question:answer pairs, so where possible, this pair should be built into the content itself.
+#### FAQ Section
+Each blog page should have a "faq" section which structures questions and answers for AEO/GEO parsing. This should follow this format:
+
+```
+  faq:
+    - question: "Core question about the content?"
+      answer: "Detailed answer of no more than two sentences."
+    - question: "Core question about the content?"
+      answer: "Detailed answer of no more than two sentences."
+```
+#### tl;dr Section
+This section will render as a summary about the page, giving readers and AEO/GEO systems the ability to rapidly summarise and understand the content. It should take this structure:
+
+```
+tldr: "This page shows you how to build a blog post and release it for general consumption. It details the steps to take, the rationale for each step, and the practical outcome of each step."
+```
+
 ### Rendering Node-RED Flows
 
 The blog uses a flow renderer to make it easier for users to understand what the
@@ -342,3 +364,5 @@ Feel free to request reviews and merge your blog post when it's ready, even if t
 The post, to be published in the future, will be rendered when developing locally and on deployment previews.
 
 By utilizing the scheduling feature, we can maintain a consistent and organized publishing schedule without the need for last-minute adjustments.
+
+
