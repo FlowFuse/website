@@ -17,6 +17,11 @@ export const COLLECTION_LABELS: Record<CertifiedCollection, string> = {
     edge: 'Edge'
 }
 
+export const PRODUCT_LABELS: Record<CertifiedCollection, string> = {
+    hub: 'Hub',
+    edge: 'Edge'
+}
+
 export interface IntegrationCatalogEntry {
     _id: string
     name: string
@@ -30,7 +35,7 @@ export interface IntegrationCatalogEntry {
     version: string
     updatedAt: string
     tier?: IntegrationTier
-    collection?: CertifiedCollection
+    collections?: CertifiedCollection[]
     docsUrl?: string
 }
 
