@@ -72,10 +72,16 @@ Follow these steps to create a quote.
 5. Set Signature and Payment settings as needed. Ensure a countersignature is
    required from either the CEO or Head of GTM.
 6. In the Template and Details section, choose the appropriate Quote Template
-   from the dropdown menu. Choosing the correct Quote Template is important
-   because it will pre-fill the correct plan features onto the quote. You can
-   include additional Comments to Buyer or Purchase Terms here. They will not
-   overwrite the Terms and Comments included with the Quote Template.
+   from the dropdown menu. Always use one of the three product templates that
+   correspond to our pricing packages:
+   - **Edge**
+   - **Hub**
+   - **Fleet**
+
+   Choosing the correct Quote Template is important because it will pre-fill the
+   correct plan features onto the quote. You can include additional Comments to
+   Buyer or Purchase Terms here. They will not overwrite the Terms and Comments
+   included with the Quote Template.
 7. Review your Quote, and when everything is correct, click Create to create the
    quote attached to the relevant Deal.
 
