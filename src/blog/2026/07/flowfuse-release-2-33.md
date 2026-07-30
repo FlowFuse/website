@@ -50,7 +50,7 @@ Modbus is one of the most common protocols on the factory floor, but the communi
 
 ## Ask the Expert About Your Tables
 
-Once your equipment data lands in a FlowFuse Tables database, you no longer have to leave the chat panel to check what's in it. Ask the Expert what tables a database has and it lists them by name and schema, ask what one looks like and it walks you through its columns, ask to see the data and it shows you a quick sample. Anything past that quick look — filtering, sorting, or making changes — still means building a flow with the `tables-query` node.
+Once your equipment data lands in a FlowFuse Tables database, you no longer have to leave the chat panel to check what's in it. Ask the Expert what tables a database has and it lists them by name and schema, ask what one looks like and it walks you through its columns, ask to see the data and it shows you a quick sample. Anything past that quick look, like filtering, sorting, or making changes, still means building a flow with the `tables-query` node.
 
 This release also closes a rough edge in Tables itself: databases with tables outside the default schema now behave correctly throughout, and the UI shows you which schema each table belongs to.
 
