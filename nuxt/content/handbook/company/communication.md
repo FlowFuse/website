@@ -20,7 +20,7 @@ Remember that communication is always between humans. We are responsible for the
 
 ### Use UTC for times
 
-Unless stated otherwise, communicate times in UTC. This helps everyone avoid timezone mistakes and makes coordination easier. Each person only needs to [remember their own offset from UTC](https://en.wikipedia.org/wiki/List_of_UTC_offsets).
+Unless stated otherwise, communicate times in UTC. This helps everyone avoid timezone mistakes and makes coordination easier. Each person only needs to [remember their own offset from UTC](https://en.wikipedia.org/wiki/List_of_UTC_offsets). Alternatively, you can use a time converter as needed, like [Dateful](https://dateful.com/convert/utc).
 
 **Exception:** When planning to meet in a physical location, use that location’s timezone.
 
