@@ -68,7 +68,7 @@ If you answer to an OT security team or an auditor, "the AI did it" is not an ac
 
 ![An audit log listing MCP tool invocations with actor and timestamp](https://placehold.co/1600x900?text=MCP+Audit+Trail){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-*Availability: [CONFIRM tier] from v2.33.*
+*Availability: Hub and Edge from v2.33.*
 
 ### Scoped Personal Access Tokens
 
