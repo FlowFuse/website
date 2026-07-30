@@ -14,6 +14,9 @@ For all FlowFuse deals, use the
 [Pricing Calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
 (internal only) for current list prices and quote generation.
 
+For discounts, custom agreements, or any other non-standard terms, follow the
+[Deal Approval Process (Deal Desk)](#deal-approval-process-deal-desk).
+
 ## Creating a Deal
 
 A deal is opened when an opportunity has achieved the Sales and Buyer Verifiers for a given [Sales Stage](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU/).
