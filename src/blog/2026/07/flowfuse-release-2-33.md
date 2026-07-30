@@ -88,7 +88,7 @@ SSO admins can now map SAML groups to FlowFuse's granular roles. When someone jo
 
 ![SAML group names mapped to FlowFuse roles in the SSO configuration](https://placehold.co/1600x900?text=SAML+Group+Mapping){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-*Availability: Enterprise [CONFIRM] from v2.33.*
+*Availability: Hub and Edge from v2.33.*
 
 ## Also in This Release
 
