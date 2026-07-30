@@ -1,6 +1,7 @@
 import { readdirSync, statSync } from 'node:fs'
 import { join, basename } from 'node:path'
 import remarkHandbookLinks from './utils/remark-handbook-links'
+import remarkDocsLinks from './utils/remark-docs-links'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -17,12 +18,37 @@ function collectHandbookRoutes(dir: string, basePath: string): string[] {
     return routes
 }
 
+// Same idea for changelog entries, plus the paginated listing (19 entries/page, newest first)
+function collectChangelogRoutes(dir: string, basePath: string): { routes: string[], entryCount: number } {
+    const routes: string[] = []
+    let entryCount = 0
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            const nested = collectChangelogRoutes(fullPath, `${basePath}/${file}`)
+            routes.push(...nested.routes)
+            entryCount += nested.entryCount
+        } else if (file.endsWith('.md')) {
+            entryCount += 1
+            routes.push(`${basePath}/${basename(file, '.md')}/`)
+        }
+    }
+    return { routes, entryCount }
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source'],
 
     css: ['~/assets/css/theme.css'],
+
+    // Dark mode isn't implemented across the site yet — force light mode so
+    // Nuxt UI components don't switch to dark when the visitor's OS prefers it.
+    colorMode: {
+        preference: 'light',
+        fallback: 'light',
+    },
 
     // Heebo is already loaded via the Google Fonts <link> in app.head.
     // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
@@ -55,10 +81,6 @@ export default defineNuxtConfig({
         sitemap: ['https://flowfuse.com/sitemap.xml', 'https://flowfuse.com/sitemap-legacy.xml'],
     },
 
-    ogImage: {
-        defaults: { component: 'Default' },
-    },
-
     linkChecker: {
         failOnError: true,
         // trailing-slash: 11ty pages use trailing slashes intentionally
@@ -66,10 +88,11 @@ export default defineNuxtConfig({
         skipInspections: ['trailing-slash', 'no-error-response'],
     },
 
-    // @nuxt/content generates `import X from 'handbook-links'` for the remark plugin key.
-    // This alias makes that import resolvable in the Vite bundle context.
+    // @nuxt/content generates import statements for remark plugin keys.
+    // These aliases make them resolvable in the Vite bundle context.
     alias: {
         'handbook-links': join(__dirname, 'utils/remark-handbook-links'),
+        'docs-links': join(__dirname, 'utils/remark-docs-links'),
     },
 
     app: {
@@ -111,22 +134,39 @@ export default defineNuxtConfig({
             {
                 baseName: 'analytics',
                 dir: '../src/_includes/analytics'
+            },
+            {
+                baseName: 'team',
+                dir: '../src/_data/team'
+            },
+            {
+                baseName: 'guests',
+                dir: '../src/_data/guests'
             }
         ],
         prerender: {
-            routes: [
-                '/terms',
-                '/privacy-policy',
-                '/integrations',
-                '/ebooks/beginner-guide-to-a-professional-nodered/',
-                '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
-                '/whitepaper/uns-decoupling-data-producers-and-consumers/',
-                '/whitepaper/open-source-software-for-manufacturing/',
-                '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
-                '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
-                '/resources/publications/',
-                ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
-            ],
+            routes: (() => {
+                const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
+                const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
+                const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
+                return [
+                    '/terms',
+                    '/privacy-policy',
+                    '/integrations',
+                    '/pricing',
+                    '/ebooks/beginner-guide-to-a-professional-nodered/',
+                    '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
+                    '/whitepaper/uns-decoupling-data-producers-and-consumers/',
+                    '/whitepaper/open-source-software-for-manufacturing/',
+                    '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
+                    '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
+                    '/resources/publications/',
+                    '/changelog/index.xml',
+                    ...changelogListingRoutes,
+                    ...changelog.routes,
+                    ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                ]
+            })(),
             crawlLinks: false
         }
     },
@@ -168,6 +208,7 @@ export default defineNuxtConfig({
                 },
                 remarkPlugins: {
                     'handbook-links': { instance: remarkHandbookLinks },
+                    'docs-links': { instance: remarkDocsLinks },
                 },
             },
         },
@@ -181,7 +222,12 @@ export default defineNuxtConfig({
             ],
         },
     },
-
+    
+    ui: {
+    theme: {
+      colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'highlight']
+    }
+  },
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts
     // to allow per-route exclusions as pages are migrated.
 })

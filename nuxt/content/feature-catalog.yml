@@ -1,0 +1,170 @@
+sections:
+  - id: empower
+    title: Empower
+    features:
+      - id: flowfuse-expert-ai
+        title: FlowFuse Expert (AI)
+        tiers: { edge: true, hub: true }
+      - id: node-red-mcp-servers
+        title: Node-RED MCP Servers
+        tiers: { edge: true, hub: true }
+
+  - id: manage
+    title: Manage
+    features:
+      - id: node-red-hosting
+        title: Node-RED Hosting
+        tiers: { edge: true, hub: true }
+      - id: hosted-instances
+        title: Hosted Instances
+        tiers: { edge: true, hub: true }
+      - id: edge-devices
+        title: Edge Devices
+        tiers: { edge: true, hub: true }
+      - id: snapshots
+        title: Snapshots
+        tiers: { edge: true, hub: true }
+      - id: auto-snapshot-remote
+        title: Auto Snapshot (Remote)
+        tiers: { edge: true, hub: true }
+      - id: auto-snapshot-hosted
+        title: Auto Snapshot (Hosted)
+        tiers: { edge: true, hub: true }
+      - id: installation-support
+        title: Installation Support
+        tiers: { edge: true, hub: true }
+      - id: live-chat-support
+        title: Live Chat Support
+        tiers: { edge: true, hub: true }
+      - id: enterprise-support
+        title: Enterprise Support
+        tiers: { edge: true, hub: true }
+      - id: custom-hostnames
+        title: Custom Hostnames
+        tiers: { edge: true, hub: true }
+      - id: persistent-files
+        title: Persistent Files
+        tiers: { edge: true, hub: true }
+      - id: persistent-context
+        title: Persistent Context
+        tiers: { edge: true, hub: true }
+      - id: unlimited-workflow-executions
+        title: Unlimited Workflow Executions
+        tiers: { edge: true, hub: true }
+
+  - id: scale
+    title: Scale
+    features:
+      - id: mqtt-broker
+        title: MQTT Broker
+        tiers: { edge: true, hub: true }
+      - id: edge-development
+        title: Edge Development (remote editor proxy)
+        tiers: { edge: true, hub: true }
+      - id: devops-pipelines
+        title: DevOps Pipelines
+        tiers: { edge: true, hub: true }
+      - id: private-npm-registry
+        title: Private NPM Registry
+        tiers: { edge: true, hub: true }
+      - id: performance-monitoring
+        title: Performance Monitoring
+        tiers: { edge: true, hub: true }
+      - id: flowfuse-tables
+        title: FlowFuse Tables
+        tiers: { edge: true, hub: true }
+      - id: device-fleet-updates
+        title: Device Fleet Updates
+        tiers: { edge: true, hub: false }
+      - id: device-group-management
+        title: Device Group Management
+        tiers: { edge: true, hub: false }
+      - id: git-integration
+        title: Git Integration
+        tiers: { edge: false, hub: true }
+      - id: high-availability
+        title: High Availability
+        tiers: { edge: false, hub: true }
+
+  - id: secure
+    title: Secure
+    features:
+      - id: audit-log
+        title: Audit Log
+        tiers: { edge: true, hub: true }
+      - id: role-based-access-control
+        title: Role-Based Access Control
+        tiers: { edge: true, hub: true }
+      - id: application-level-rbac
+        title: Application-Level RBAC
+        tiers: { edge: true, hub: true }
+      - id: endpoint-security
+        title: Endpoint Security
+        tiers: { edge: true, hub: true }
+      - id: two-factor-authentication
+        title: Two-Factor Authentication
+        tiers: { edge: true, hub: true }
+      - id: instance-monitoring
+        title: Instance Monitoring
+        tiers: { edge: true, hub: true }
+      - id: single-sign-on
+        title: Single Sign-On (SSO)
+        tiers: { edge: true, hub: true }
+      - id: certified-nodes-it
+        title: Certified Nodes - IT
+        description: "IT certified node bundle includes: MQTT, Kafka, Redis, MSSQL, PostgreSQL, InfluxDB, TimescaleDB, HTTP Request, SQL/SQLite, AI nodes (Gemini, Claude, ChatGPT, Ollama)"
+        tiers: { edge: false, hub: true }
+      - id: certified-nodes-ot
+        title: Certified Nodes - OT
+        description: "OT certified node bundle includes: OPC-UA, EtherNet/IP, Siemens S7, Modbus TCP & RTU, BACnet, DeltaV, Allen-Bradley / Rockwell, RTSP"
+        tiers: { edge: true, hub: false }
+      - id: baa-for-hipaa
+        title: BAA for HIPAA
+        tiers: { edge: false, hub: true }
+
+  - id: collaborate
+    title: Collaborate
+    features:
+      - id: team-members
+        title: Team Members
+        tiers: { edge: true, hub: true }
+      - id: blueprints-converge
+        title: Blueprints - Converge
+        tiers: { edge: true, hub: true }
+      - id: personalised-multi-user-dashboards
+        title: Personalised Multi-User Dashboards
+        tiers: { edge: true, hub: true }
+      - id: team-library
+        title: Team Library
+        tiers: { edge: true, hub: true }
+      - id: blueprints-ot-apps
+        title: Blueprints - OT APPS
+        tiers: { edge: true, hub: false }
+      - id: blueprints-it-apps
+        title: Blueprints - IT APPS
+        tiers: { edge: false, hub: true }
+
+  - id: other
+    title: Other (feature-flagged)
+    features:
+      - id: project-nodes
+        title: Project Nodes aka seamless project comms
+        tiers: { edge: true, hub: true }
+      - id: email-alerts
+        title: Email Alerts
+        tiers: { edge: true, hub: true }
+      - id: api-debug-length-limit
+        title: API/Debug Length Limit
+        tiers: { edge: true, hub: true }
+      - id: static-assets
+        title: Static Assets
+        tiers: { edge: true, hub: true }
+      - id: bill-of-materials
+        title: Bill of Materials
+        tiers: { edge: true, hub: true }
+      - id: version-history-timeline
+        title: Version History Timeline
+        tiers: { edge: true, hub: true }
+      - id: protected-instances
+        title: Protected Instances
+        tiers: { edge: false, hub: true }

@@ -7,6 +7,13 @@ meta:
    description: Learn how to build Build and Deploy a custom OPC UA Server in Node-RED
    keywords: node-red,flowfuse, opc-ua,
 image: /node-red/protocol/images/opc-ua-2-title-image.png
+certified:
+  - "@flowfuse-certified-nodes/opcua"
+  - "@flowfuse-certified-nodes/cip-suite"
+certifiedIntro: >
+  This guide builds the server from community packages. Both halves of it, OPC UA
+  and the Allen Bradley Ethernet/IP link, also have a FlowFuse certified node
+  maintained for production use:
 ---
 
 # {{meta.title}}
@@ -54,6 +61,8 @@ The OPC client will be a windows-based [Prosys OPC UA Browser](https://www.prosy
 Now that we have laid out a concept for our application, let’s build it.
 
 ## Install Custom Nodes
+
+{% include "components/certified-node-callout.liquid" %}
 
 First, we need to add three custom nodes that will allow Node-RED to read Ethernet/IP data and add OPC UA Server functionality.
 

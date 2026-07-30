@@ -80,7 +80,7 @@ If you answer to an OT security team or an auditor, "the AI did it" is not an ac
 
 ![An audit log listing MCP tool invocations with actor and timestamp](https://placehold.co/1600x900?text=MCP+Audit+Trail){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-*Availability: [CONFIRM tier] from v2.33.*
+*Availability: Hub and Edge from v2.33.*
 
 ### Scoped Personal Access Tokens
 
@@ -92,7 +92,7 @@ Previously a PAT carried the full permissions of the user who created it. If you
 
 ![The token creation dialog with individual permission scopes selected](https://placehold.co/1600x900?text=Scoped+Access+Tokens){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-*Availability: [CONFIRM tier] from v2.33.*
+*Availability: Hub and Edge from v2.33.*
 
 ### Manage Granular RBAC Through Your Identity Provider
 
@@ -100,7 +100,7 @@ SSO admins can now map SAML groups to FlowFuse's granular roles. When someone jo
 
 ![SAML group names mapped to FlowFuse roles in the SSO configuration](https://placehold.co/1600x900?text=SAML+Group+Mapping){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-*Availability: Enterprise [CONFIRM] from v2.33.*
+*Availability: Hub and Edge from v2.33.*
 
 ## Also in This Release
 
