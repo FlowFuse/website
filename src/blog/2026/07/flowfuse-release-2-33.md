@@ -39,7 +39,7 @@ More of the from-scratch onboarding experience lands in upcoming releases.
 
 ## Modbus Certified Node
 
-FlowFuse Hub customers can now install a FlowFuse-certified Modbus node straight from the palette manager in their editor. It covers Modbus TCP and Serial — including RTU and ASCII — in a single package.
+FlowFuse Edge customers can now install a FlowFuse-certified Modbus node straight from the palette manager in their editor. It covers Modbus TCP and Serial — including RTU and ASCII — in a single package.
 
 Modbus is one of the most common protocols on the factory floor, but the community package most teams rely on depends on volunteer maintainers. The FlowFuse-certified node is backed by our own testing, SLA-backed security patching, and a long-term maintenance commitment.
 
