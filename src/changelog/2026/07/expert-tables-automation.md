@@ -20,6 +20,6 @@ This is a fixed, read-only preview, not a query engine: there's no filtering, so
 Alongside this, FlowFuse Tables now correctly supports tables that live in a schema other than `public`. Previously, viewing data for a table outside the default schema could fail. Tables and their schema now show up correctly throughout the Tables UI: next to each table name in the list, and as `schema_name.table_name` (with a copy button) in the table detail view.
 
 ![The Tables explorer showing each table's schema next to its name, and the qualified schema.table name with a copy button in the header](./images/tables-view.png){data-zoomable}
-*Tables and their schema now show up throughout the Tables UI*
+*The schema label beside each table name, and the qualified `schema.table` name with a copy button in the header*
 
 This feature is available to Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.33.
