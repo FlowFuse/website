@@ -81,7 +81,7 @@ If you answer to an OT security team or an auditor, "the AI did it" is not an ac
 
 ### Scoped Personal Access Tokens
 
-Personal Access Tokens now carry scopes. Create a token that can do exactly what its integration needs and nothing more.
+Personal Access Tokens can now be scoped to specific teams and include read or write permissions. Create a token that can do exactly what its integration needs and nothing more. This is especially important for AI use cases.
 
 Previously a PAT carried the full permissions of the user who created it. If you generated a token for a read-only dashboard integration, that token could still modify your instances. Scoped tokens close that gap and follow the least-privilege pattern your security team already applies everywhere else.
 
