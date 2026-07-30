@@ -25,7 +25,7 @@ features:
     heading: "Ask the Expert About Your Tables"
 ---
 
-FlowFuse 2.33 covers the whole path from setting up hardware on your plant floor to visualizing the data it produces. Onboarding now starts on the hardware itself, a FlowFuse-certified Modbus node connects you to your equipment, and every dashboard gets a home of its own. Alongside that, firmer controls govern who and what can reach your platform.
+Most releases sharpen one corner of the platform. 2.33 follows the whole journey your data takes — from the moment hardware powers on to the moment someone reads a dashboard built on it. Bringing a machine online no longer means starting in the platform and working backwards, a certified Modbus package speaks the factory floor's most common protocol, and dashboards finally have somewhere of their own to live. And as more of that journey gets automated, the release tightens the guardrails around the clients and AI agents touching your systems.
 
 ## Set Up Your Plant Floor Hardware Straight From the Terminal
 
