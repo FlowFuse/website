@@ -44,7 +44,6 @@ FlowFuse Hub customers can now install a FlowFuse-certified Modbus node straight
 
 Modbus is one of the most common protocols on the factory floor, but the community package most teams rely on depends on volunteer maintainers. We forked node-red-contrib-modbus and now maintain our own version, backed by FlowFuse testing, SLA-backed security patching, and a long-term maintenance commitment. A node sitting at the center of your production flows no longer carries supply-chain risk.
 
-![The FlowFuse certified Modbus node listed in the editor's palette manager](https://placehold.co/1600x900?text=Certified+Modbus+Node){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 *This feature is available exclusively to FlowFuse Edge customers, on both FlowFuse Cloud and Self Hosted, from v2.33.*
 
