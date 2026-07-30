@@ -10,8 +10,8 @@ pricing with enterprise customers, make a copy of
 to discuss. For per-product commercial conversations, use the relevant
 [Pricing Decks](./pricing-decks.md) (Edge, Hub, and Fleet).
 
-For FlowFuse Edge deals, use the
-[Edge pricing calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
+For all FlowFuse deals, use the
+[Pricing Calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
 (internal only) for current list prices and quote generation.
 
 ## Creating a Deal
