@@ -22,6 +22,8 @@ features:
     heading: "Scoped Personal Access Tokens"
   - id: sso
     heading: "Manage Granular RBAC Through Your Identity Provider"
+  - id: tables
+    heading: "Ask the Expert About Your Tables"
 ---
 
 FlowFuse 2.33 covers the whole path from setting up hardware on your plant floor to visualizing the data it produces. Onboarding now starts on the hardware itself, a FlowFuse-certified Modbus node connects you to your equipment, and every dashboard gets a home of its own. Alongside that, firmer controls govern who and what can reach your platform.
@@ -45,6 +47,16 @@ Modbus is one of the most common protocols on the factory floor, but the communi
 ![The FlowFuse certified Modbus node listed in the editor's palette manager](https://placehold.co/1600x900?text=Certified+Modbus+Node){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 *This feature is available exclusively to FlowFuse Hub customers, on both FlowFuse Cloud and Self Hosted, from v2.33.*
+
+## Ask the Expert About Your Tables
+
+Once your equipment data lands in a FlowFuse Tables database, you no longer have to leave the chat panel to see what's in it. Point the Expert at your team's databases and it can browse what's there, walk through a table's structure, and pull back rows on request, so a question like "what happened on the line this morning?" gets answered right where you're already working.
+
+This release also closes a rough edge in Tables itself: databases with tables outside the default schema now behave correctly throughout, and the UI shows you which schema each table belongs to.
+
+![The Expert answering a question about a FlowFuse Tables database](./images/chat.png){data-zoomable style="border: 2px solid #E5E7EB;"}
+
+*Availability: Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.33.*
 
 ## Your Dashboards, All in One Place
 
