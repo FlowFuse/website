@@ -4,9 +4,7 @@ subtitle: "Set up your own hardware directly, reach your equipment through a Flo
 description: "FlowFuse 2.33 takes you from setting up plant floor hardware directly to visualizing its data, with a FlowFuse-certified Modbus connection, a home for every dashboard, and firmer control over platform access through scoped Personal Access Tokens, SSO-driven application roles, and an MCP audit trail."
 date: 2026-07-30
 authors: ["jamie-strusz"]
-# TODO: uncomment once the hero art lands (art request pending).
-# The build stats this path locally, so a placeholder value fails CI.
-# image: /blog/2026/07/images/flowfuse-release-2-33.jpg
+image: /blog/2026/07/images/flowfuse-release-2-33.jpg
 tags:
   - flowfuse
   - news
