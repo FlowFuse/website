@@ -363,11 +363,10 @@ When a customer requests access to the FlowFuse Assistant, do the following:
 The Customer Success team is compensated under a quarterly commission plan that rewards retention, growth, and product engagement.
 
 ### Commission Components
-Payouts are based on two equally weighted goals (50% each). Note that weightings and specific targets are subject to review at the start of each fiscal year or quarter.
+Payouts are based on one goal. Note that specific targets are subject to review at the start of each fiscal year or quarter.
 
-1. Net Retention Revenue (NRR) (50%): Measured against a 115% NRR goal. (100% NRR = 0% payout; 115% NRR = 100% payout).
-2. Quarterly KPI (50%): Focused on product engagement (e.g., 10 Customer PRs).
-**_Note: overachievement bonus applies to NRR only, and the KPI goal has no overachievement upside._**
+- Net Retention Revenue (NRR): Measured against a 115% NRR goal. (100% NRR = 0% payout; 115% NRR = 100% payout).
+**_Note: overachieving the NRR goal comes with a proportional upside bonus._**
 
 For payout timelines, submission requirements, and currency, see [Processing CSM Commission](/handbook/operations/commission-payment/#processing-csm-commission).
 
