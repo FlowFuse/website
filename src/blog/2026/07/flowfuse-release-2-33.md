@@ -85,7 +85,7 @@ Personal Access Tokens can now be scoped to specific teams and include read or w
 
 Previously a PAT carried the full permissions of the user who created it. If you generated a token for a read-only dashboard integration, that token could still modify your instances. Scoped tokens close that gap and follow the least-privilege pattern your security team already applies everywhere else.
 
-**Getting started:** [CONFIRM: Team Settings path and scope options]
+You can easily navigate towards your [personal settings](https://app.flowfuse.com/account/security/tokens) to setup a new personal access token and configure it with the right scope and permissions.
 
 ![The token creation dialog with individual permission scopes selected](./images/scoped-pats.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 
