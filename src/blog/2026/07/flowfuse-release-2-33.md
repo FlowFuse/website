@@ -92,7 +92,7 @@ SSO admins can now map SAML groups to FlowFuse's granular roles. When someone jo
 
 ## Also in This Release
 
-- The Expert is better at telling when you want it to act versus when you want guidance. [CONFIRM #411 landed]
+- The Expert is better at telling when you want it to act versus when you want guidance.
 - MCP server enumeration is much faster for teams with many instances.
 - Fixed dropdown inputs rejecting values that matched the start of a suggestion.
 - Plus dependency updates and smaller fixes.
