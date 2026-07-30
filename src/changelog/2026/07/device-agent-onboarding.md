@@ -1,6 +1,6 @@
 ---
 title: Getting started with FlowFuse straight from the terminal
-description: Onboarding a remote instance has never been easier with its new terminal-based interactive setup
+description: Onboard a remote instance directly from your terminal with a new interactive setup
 date: 2026-07-30 12:00:00
 authors: ["nick-oleary"]
 tags:
