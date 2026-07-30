@@ -49,7 +49,7 @@ Expert replies now render markdown more fully in the chat panel. Tables, ordered
 Tables come with a copy button that copies the contents as tab-separated values, ready to paste straight into a spreadsheet.
 
 ![An Expert reply showing a formatted table, ordered list, and checklist](./images/markdown-rendering.png){data-zoomable}
-*Expert replies now render tables, ordered lists, blockquotes, and checklists*
+*A formatted reply with the tab-separated copy button in the table's top-right corner*
 
 ## Support Agent
 
