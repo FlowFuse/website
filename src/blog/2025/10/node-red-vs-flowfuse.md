@@ -7,6 +7,7 @@ date: 2025-10-08
 keywords: node-red vs flowfuse, difference between node-red and flowfuse, enterprise node-red
 authors: ["sumit-shinde"]
 image: /blog/2025/10/images/diffrence-between-node-red-flowfuse.png
+video: QaZmkRxfaW4
 tags:
   - flowfuse
 meta:

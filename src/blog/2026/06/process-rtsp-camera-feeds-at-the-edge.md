@@ -61,7 +61,7 @@ In this tutorial, you'll connect to an RTSP camera and display the live feed on 
 
 ## Prerequisites
 
-Before you begin, ensure the FlowFuse Device Agent is installed and running on an edge device that can access the camera. This device will be managed through FlowFuse and serves as the environment where you'll install the required nodes and build the flow. If you haven't configured a device yet, complete the [Device Agent Quickstart](/docs/device-agent/quickstart/#setup-%26-installation) before continuing.
+Before you begin, ensure the FlowFuse Device Agent is installed and running on an edge device that can access the camera. This device will be managed through FlowFuse and serves as the environment where you'll install the required nodes and build the flow. If you haven't configured a device yet, complete the [Device Agent Quickstart](/docs/device-agent/quickstart/#setup-installation) before continuing.
 
 The RTSP Video Feed node is part of the **FlowFuse Edge Certified Nodes**, which are part of the **FlowFuse Edge** offering and aren't enabled by default. This applies to FlowFuse Cloud customers too, so the catalogue won't appear in your Palette Manager until it's switched on for your team. [Talk to our sales team](/contact-us/) to get access before you start.
 

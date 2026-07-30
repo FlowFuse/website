@@ -69,7 +69,7 @@ In this article, we'll build a digital work instructions app in FlowFuse: an ope
 
 > **Note:** This demo is deliberately configured with a preset demo user so anyone can try it, even without being on the team where it's deployed. The version you build following this article uses FlowFuse User Authentication, which limits dashboard access to members of the same team.
 
-You can interact with the live demo here: <a href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Digital Work Instruction Dashboard Demo</a>.
+You can interact with the live demo here: <a href="https://expensive-pied-flycatcher-5052.flowfuse.cloud/dashboard/home" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Digital Work Instruction Dashboard Demo</a>.
 
 ## What You'll Need
 

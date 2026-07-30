@@ -20,6 +20,8 @@ meta:
       answer: >
         Yes. FlowFuse combines low-code development with FlowFuse AI, enabling engineering and manufacturing teams to build industrial applications faster. AI-powered expert assistance and agentic development help accelerate application creation, while developers retain full control to customize logic and integrations as needed.
 hero:
+  eyebrow: "Automotive Manufacturing"
+  eyebrowIcon: "components/icons/car.svg"
   heading: '<span class="text-red-600">Scale automotive operations</span> without rewiring your stack'
   description: "Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time."
   primaryCta: "BOOK A DEMO"
@@ -29,7 +31,7 @@ hero:
   image: "/images/industries/automotive.jpg"
   imageAlt: "Aerial view of an automotive manufacturing plant floor"
   testimonial:
-   quote: "At PennEngineering, I built out the FlowFuse deployment from scratch — machine monitoring, machine dashboards, ERP integration. What FlowFuse gave us was revision control and a platform the whole team could own. That made the deployment self-sustaining."
+   quote: "At PennEngineering, I built out the FlowFuse deployment from scratch: machine monitoring, machine dashboards, ERP integration. What FlowFuse gave us was revision control and a platform the whole team could own. That made the deployment self-sustaining."
    name: "Lidiya Shutaya"
    title: "Sr. Operational Technology System Architect,"
    company: "PennEngineering (formerly)"
@@ -95,7 +97,7 @@ applications:
       variant: "mixed"
 enterprise:
   heading: 'Built for <span class="text-indigo-600">Enterprise Manufacturing</span>'
-  description: "FlowFuse is SOC 2 Type I and Type II certified, with role-based access control, single sign-on, audit logging, and air-gapped, self-hosted deployment options — built for the security and compliance requirements of large-scale manufacturing organizations."
+  description: "FlowFuse is SOC 2 Type I and Type II certified, with role-based access control, single sign-on, audit logging, and air-gapped, self-hosted deployment options, built for the security and compliance requirements of large-scale manufacturing organizations."
   badge: "components/icons/soc-2-badge.svg"
   badgeLabel: "SOC 2 Type II"
   items:
@@ -123,6 +125,14 @@ cta:
     <div class="px-6 pt-16 md:pt-20">
         <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-stretch">
             <div class="max-md:text-center md:flex md:flex-col md:justify-center">
+                {% if hero.eyebrow %}
+                <div class="mb-4 max-md:flex max-md:justify-center">
+                    <span class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 industry-eyebrow-icon text-gray-800">
+                        {% if hero.eyebrowIcon %}<span class="w-5 h-5 inline-flex items-center shrink-0">{% include hero.eyebrowIcon %}</span>{% endif %}
+                        <span class="font-medium">{{ hero.eyebrow }}</span>
+                    </span>
+                </div>
+                {% endif %}
                 <h1 class="text-4xl md:text-5xl font-medium m-0">
                     {{ hero.heading | safe }}
                 </h1>
@@ -176,8 +186,6 @@ cta:
                     </div>
                 {% endfor %}
             </div>
-        </div>
-    </div>
         </div>
     </div>
 </section>
@@ -280,6 +288,12 @@ cta:
         </div>
     </div>
 </section>
+
+<!-- ============================================================
+     USE CASES FOR THIS INDUSTRY (derived from use-case tags)
+============================================================ -->
+{% set industryDisplayName = "Automotive" %}
+{% include "components/industry-use-cases.njk" %}
 
 <!-- ============================================================
      FAQ

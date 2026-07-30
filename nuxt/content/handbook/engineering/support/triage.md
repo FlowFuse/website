@@ -68,7 +68,7 @@ All tickets appear in the [HubSpot Helpdesk](https://app-eu1.hubspot.com/help-de
 
 ### HubSpot
 
-Keep the [**Unassigned Triage**](https://app-eu1.hubspot.com/help-desk/26586079/view/236761036/list-view) view open during the day. If you don't have access to HubSpot, only focus on the Slack Channel noted below. 
+Keep the [**Unassigned Triage**](https://app-eu1.hubspot.com/help-desk/26586079/view/236761036/list-view) view open during the day. If you don't have access to HubSpot, only focus on the Slack Channel noted below. If you see any tickets which have 'No owner', even if they were created before your triage duty, check those tickets have not been missed.
 > To note: Chatbot tickets don’t go into triage and don't appear in Slack. Only in HubSpot. 
 
 ### Slack

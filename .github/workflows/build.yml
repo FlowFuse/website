@@ -16,12 +16,6 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: 'website'
-      - name: Check out FlowFuse/flowfuse repository (to access the docs)
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: 'FlowFuse/flowfuse'
-          ref: main
-          path: 'flowfuse'
       - name: Generate a token
         id: generate_token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
@@ -43,17 +37,8 @@ jobs:
           node-version: 24
           cache: 'npm'
           cache-dependency-path: './website/package-lock.json'
-      - run: npm run docs
-        working-directory: 'website'
       - run: npm run blueprints
         working-directory: 'website'
-      - name: Commit Latest Docs
-        run: |
-          cd ./website
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add src/docs/* -A -f
-          git commit -a -m "Bot: update docs"
       - name: Commit Latest Blueprints
         run: |
           cd ./website

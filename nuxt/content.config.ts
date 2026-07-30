@@ -1,5 +1,21 @@
+import { join } from 'node:path'
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
+
+const tierValue = z.object({
+    value: z.union([z.boolean(), z.null(), z.string()]),
+    dimmed: z.boolean().optional(),
+    tag: z.string().optional(),
+    tagPrefix: z.string().optional(),
+    note: z.string().optional(),
+    options: z.array(z.string()).optional(),
+})
+
+const ctaButton = z.object({
+    cta: z.string(),
+    url: z.string(),
+    onclick: z.string().optional(),
+})
 
 export default defineContentConfig({
     collections: {
@@ -8,6 +24,25 @@ export default defineContentConfig({
         pages: defineCollection({
             type: 'page',
             source: '*.md'
+        }),
+        docs: defineCollection({
+            type: 'page',
+            source: 'docs/**/*.md',
+            schema: z.object({
+                navTitle: z.string().optional(),
+                navGroup: z.string().optional(),
+                navOrder: z.number().optional(),
+                originalPath: z.string().optional(),
+                updated: z.string().optional(),
+                version: z.string().optional(),
+                layout: z.string().optional(),
+                redirect: z.object({
+                    to: z.string(),
+                }).optional(),
+                meta: z.object({
+                    description: z.string().optional(),
+                }).optional(),
+            })
         }),
         handbook: defineCollection({
             type: 'page',
@@ -21,6 +56,23 @@ export default defineContentConfig({
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
                 }).optional(),
+                sitemap: defineSitemapSchema(),
+            })
+        }),
+        // Source files stay at src/changelog/ (11ty's historical location) rather than
+        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
+        changelog: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'changelog/**/*.md',
+            },
+            schema: z.object({
+                description: z.string().optional(),
+                subtitle: z.string().optional(),
+                date: z.coerce.date(),
+                authors: z.array(z.string()).optional(),
+                issues: z.array(z.string()).optional(),
                 sitemap: defineSitemapSchema(),
             })
         }),
@@ -77,6 +129,61 @@ export default defineContentConfig({
                         url.loc = url.loc.replace(/^\/whitepapers\//, '/whitepaper/')
                     },
                 }),
+            }),
+        }),
+        plans: defineCollection({
+            type: 'data',
+            source: 'plans/*.yml',
+            schema: z.object({
+                tierId: z.string(),
+                title: z.string(),
+                description: z.string().optional(),
+                price: z.string(),
+                billingCycle: z.string().optional(),
+                note: z.string().optional(),
+                badge: z.string().optional(),
+                highlight: z.boolean().optional(),
+                order: z.number(),
+                features: z.array(z.string()),
+                button: z.object({
+                    label: z.string(),
+                    to: z.string(),
+                    external: z.boolean().optional(),
+                    color: z.enum(['primary', 'secondary', 'highlight']).optional(),
+                    variant: z.enum(['solid', 'outline', 'soft', 'subtle', 'ghost', 'link']).optional(),
+                }),
+            })
+        }),
+        featureCatalog: defineCollection({
+            type: 'data',
+            source: 'feature-catalog.yml',
+            schema: z.object({
+                sections: z.array(z.object({
+                    id: z.string(),
+                    title: z.string(),
+                    features: z.array(z.object({
+                        id: z.string(),
+                        title: z.string(),
+                        note: z.string().optional(),
+                        description: z.string().optional(),
+                        tiers: z.object({
+                            edge: z.boolean(),
+                            hub: z.boolean(),
+                        }),
+                    })),
+                })),
+            })
+        }),
+        faq: defineCollection({
+            type: 'data',
+            source: 'faq/*.yml',
+            schema: z.object({
+                page: z.string(),
+                title: z.string(),
+                items: z.array(z.object({
+                    question: z.string(),
+                    answer: z.string(),
+                })),
             })
         })
     }

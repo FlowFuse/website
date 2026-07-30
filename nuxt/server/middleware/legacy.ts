@@ -10,7 +10,7 @@ const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/integrations', '/res
 const NUXT_ROUTE_PREFIXES = ['/integrations/']
 
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog']
 
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
@@ -21,10 +21,16 @@ export default defineEventHandler(async (event) => {
     if (path.startsWith('/_nuxt/') || path.startsWith('/api/') || path.startsWith('/__') || path.startsWith('/_studio') || path.startsWith('/_og/')) return
 
     // Let Nuxt handle migrated pages (strip trailing slash and query string before matching)
-    const pathWithoutQuery = path.split('?')[0]
+    const queryIndex = path.indexOf('?')
+    const pathWithoutQuery = queryIndex === -1 ? path : path.slice(0, queryIndex)
     const normalised = pathWithoutQuery.replace(/\/$/, '') || '/'
     if (NUXT_ROUTES.has(normalised)) return
     if (NUXT_ROUTE_PREFIXES.some(prefix => pathWithoutQuery.startsWith(prefix))) return
+
+    // Changelog post images still live alongside their markdown in src/changelog/**/images
+    // and are only synced into nuxt/public by the 11ty passthrough during a production build -
+    // proxy them to 11ty in dev even though /changelog itself is a Nuxt-handled prefix.
+    if (/^\/changelog\/\d{4}\/\d{2}\/images\//.test(normalised)) return proxyRequest(event, `http://localhost:8080${path}`)
 
     // Let Nuxt handle migrated path prefixes
     if (NUXT_PREFIXES.some(prefix => normalised === prefix || normalised.startsWith(prefix + '/'))) return

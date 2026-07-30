@@ -17,17 +17,22 @@ function posixResolve(base: string, rel: string): string {
     return '/' + out.filter(Boolean).join('/')
 }
 
-// Converts relative image/link URLs in handbook markdown to absolute paths.
+// Anchors whose markdown lives outside nuxt/content/ but whose pages are still
+// served at a matching, trailing-slash Nuxt route (e.g. /changelog/YYYY/MM/slug/).
+const ANCHORS = ['/handbook/', '/changelog/']
+
+// Converts relative image/link URLs in handbook/changelog markdown to absolute paths.
 // This is needed because @nuxt/content serves pages with trailing-slash URLs,
 // which would mis-resolve relative paths without this fix.
 export default function remarkHandbookLinks() {
     return (tree: Root, file: VFile) => {
         const filePath: string = (file.path || file.history?.[0] || '') as string
-        if (!filePath.includes('/handbook/')) return
+        const anchor = ANCHORS.find(a => filePath.includes(a))
+        if (!anchor) return
 
-        // Extract the handbook-relative portion: e.g. /handbook/engineering/frontend/layouts.md
-        const handbookIdx = filePath.lastIndexOf('/handbook/')
-        const relPath = filePath.slice(handbookIdx)
+        // Extract the anchor-relative portion: e.g. /handbook/engineering/frontend/layouts.md
+        const anchorIdx = filePath.lastIndexOf(anchor)
+        const relPath = filePath.slice(anchorIdx)
         const baseDir = posixDirname(relPath) + '/'
 
         function resolveUrl(url: string): string {

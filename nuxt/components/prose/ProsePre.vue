@@ -35,4 +35,11 @@ onMounted(async () => {
 
 <style>
 pre code .line { display: block }
+
+/* Long lines (curl commands, container image refs) were clipped at the content edge
+   instead of scrolling, because the shiki classes on <pre> set no overflow behaviour. */
+pre {
+    overflow-x: auto;
+    max-width: 100%;
+}
 </style>

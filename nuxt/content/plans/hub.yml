@@ -1,0 +1,17 @@
+title: Hub
+tierId: hub
+order: 2
+description: Integrate and orchestrate data across enterprise systems, APIs and databases with centralized governance.
+badge: For IT teams
+features:
+  - Business system integration
+  - Data orchestration
+  - IT-certified nodes
+  - Git Integration
+  - High Availability
+  - DevOps Pipelines
+button:
+  label: Contact us
+  to: /contact-us/
+  external: true
+  variant: solid

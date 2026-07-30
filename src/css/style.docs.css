@@ -70,7 +70,7 @@
     
     /* position tooltip correctly */
     left: 100%;
-    margin-left: calc(12 + var(-tooltip-padding));
+    margin-left: calc(var(--tooltip-padding) + 12px);
    
     /* vertically center */
     top: 50%;
@@ -118,7 +118,11 @@
     color: var(--color-yellow-600);
 }
 
-.ff-callout--caution {
+/* docs-source.ts emits --critical for the {% critical %} shortcode, but the stylesheet only
+   ever defined --caution, so a critical callout renders unstyled. No upstream page uses one
+   today, so this is insurance rather than a visible fix. */
+.ff-callout--caution,
+.ff-callout--critical {
     background-color: color-mix(in srgb, var(--color-red-500) 10%, transparent);
     border-color: color-mix(in srgb, var(--color-red-500) 25%, transparent);
     color: var(--color-red-600);
