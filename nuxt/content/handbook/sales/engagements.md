@@ -7,7 +7,8 @@ title: "Engagements & Pricing"
 Pricing is publicly available at [our pricing page](/pricing/). When discussing
 pricing with enterprise customers, make a copy of
 [our internal pricing template deck](https://docs.google.com/presentation/d/1kaW6aZxpnCaVuQVdVsi0RTulhRMbeqglhZHkzSP-2kM/)
-to discuss.
+to discuss. For per-product commercial conversations, use the relevant
+[Pricing Decks](./pricing-decks.md) (Edge, Hub, and Fleet).
 
 For FlowFuse Edge deals, use the
 [Edge pricing calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
