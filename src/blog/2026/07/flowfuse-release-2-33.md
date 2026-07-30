@@ -34,7 +34,7 @@ Getting your own hardware into FlowFuse meant working backwards. You signed up, 
 
 Now you can start where the hardware already is. Run the installer from your terminal and it walks you through registering — including setting up an account if you need one — ending with your machine registered as a remote instance and ready to build on. If something's in the way — like port 1880 already being in use — the installer tells you up front instead of failing partway through.
 
-![The installer running in a terminal, walking through sign-up and connection to FlowFuse](https://placehold.co/1600x900?text=Terminal+Onboarding){data-zoomable style="border: 2px solid #E5E7EB;"}
+![The installer running in a terminal, walking through sign-up and connection to FlowFuse](./images/device-agent-install.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 More of the from-scratch onboarding experience lands in upcoming releases.
 
