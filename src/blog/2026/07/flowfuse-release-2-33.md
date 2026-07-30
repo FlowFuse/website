@@ -93,7 +93,6 @@ You can easily navigate towards your [personal settings](https://app.flowfuse.co
 
 SSO admins can now map SAML groups to FlowFuse's granular roles. When someone joins the "Plant Floor Operators" group in your identity provider, they get the matching FlowFuse permissions automatically. No manual role assignment, no drift between your IdP and your platform.
 
-![SAML group names mapped to FlowFuse roles in the SSO configuration](https://placehold.co/1600x900?text=SAML+Group+Mapping){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 *Availability: Hub and Edge from v2.33.*
 
