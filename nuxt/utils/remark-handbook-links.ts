@@ -19,9 +19,9 @@ function posixResolve(base: string, rel: string): string {
 
 // Anchors whose markdown lives outside nuxt/content/ but whose pages are still
 // served at a matching, trailing-slash Nuxt route (e.g. /changelog/YYYY/MM/slug/).
-const ANCHORS = ['/handbook/', '/changelog/']
+const ANCHORS = ['/handbook/', '/changelog/', '/blog/']
 
-// Converts relative image/link URLs in handbook/changelog markdown to absolute paths.
+// Converts relative image/link URLs in handbook/changelog/blog markdown to absolute paths.
 // This is needed because @nuxt/content serves pages with trailing-slash URLs,
 // which would mis-resolve relative paths without this fix.
 export default function remarkHandbookLinks() {

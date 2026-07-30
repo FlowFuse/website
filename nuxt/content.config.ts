@@ -76,6 +76,51 @@ export default defineContentConfig({
                 sitemap: defineSitemapSchema(),
             })
         }),
+        // Source files stay at src/blog/ (11ty's historical location) rather than
+        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
+        blog: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'blog/**/*.md',
+            },
+            schema: z.object({
+                subtitle: z.string().optional(),
+                description: z.string().optional(),
+                date: z.coerce.date(),
+                lastUpdated: z.coerce.date().optional(),
+                authors: z.array(z.string()).optional(),
+                image: z.string().optional(),
+                video: z.string().optional(),
+                tags: z.array(z.string()).optional(),
+                tldr: z.union([z.string(), z.array(z.string())]).optional(),
+                cta: z.object({
+                    type: z.string().optional(),
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
+                meta: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                    howto: z.object({
+                        name: z.string().optional(),
+                        description: z.string().optional(),
+                        totalTime: z.string().optional(),
+                        tool: z.array(z.string()).optional(),
+                        steps: z.array(z.object({
+                            name: z.string(),
+                            text: z.string(),
+                            url: z.string().optional(),
+                        })).optional(),
+                    }).optional(),
+                }).optional(),
+                sitemap: defineSitemapSchema(),
+            })
+        }),
         ebooks: defineCollection({
             type: 'page',
             source: 'ebooks/*.md',

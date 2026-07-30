@@ -2,6 +2,10 @@ interface TeamMember {
     name: string
     title?: string
     headshot?: string
+    bio?: string
+    email?: string
+    linkedin?: string
+    github?: string
 }
 
 const teamModules = import.meta.glob('../../src/_data/team/*.json', { eager: true, import: 'default' })

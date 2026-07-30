@@ -69,10 +69,8 @@ eleventyExcludeFromCollections: true
 
 ## Blog Posts
 
-{% for post in collections.posts | reverse %}
-  {%- if not (post.data.date | isFuturePost) -%}
-- [{{ post.data.title | safe }}]({{ site.baseURL }}{{ post.url }}){% if post.data.description %}: {{ post.data.description | truncate(200) | safe }}{% endif %}
-  {% endif -%}
+{% for post in blogPosts %}
+- [{{ post.title | safe }}]({{ site.baseURL }}{{ post.url }}){% if post.description %}: {{ post.description | truncate(200) | safe }}{% endif %}
 {% endfor %}
 
 ## Webinars
