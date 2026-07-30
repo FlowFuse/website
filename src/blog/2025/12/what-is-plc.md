@@ -2,8 +2,8 @@
 title: "What Is a PLC (Programmable Logic Controller)? What It Does, How It Works, and Where It's Used"
 subtitle: "How Dick Morley's New Year's Day Hangover Changed Manufacturing Forever"
 description: "What a PLC is, the seven parts inside it, how the scan cycle works, which protocols PLCs speak, and how to get PLC data into the systems that need it."
-date: 2025-12-26
 lastUpdate: 2026-07-30
+date: 2025-12-26
 keywords: what is plc, programmable logic controller, plc parts, plc scan cycle, history of plc, father of plc, plc inventor, plc communication protocols, plc vs pc, types of plc
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/what-is-plc.png
