@@ -42,6 +42,15 @@ The Expert can now take action on your FlowFuse platform directly. Instead of te
 Behind the scenes, FlowFuse exposes over 30 automation tools covering instances, devices, applications, snapshots, teams, and configuration. When you ask the Expert to do something, it picks the right tools, calls them with your permissions, and reports back.
 
 
+## Better Formatted Replies
+
+Expert replies now render markdown more fully in the chat panel. Tables, ordered lists, blockquotes, and checklists all display with proper formatting instead of falling back to plain text, making longer, more structured answers much easier to scan.
+
+Tables come with a copy button that copies the contents as tab-separated values, ready to paste straight into a spreadsheet.
+
+![An Expert reply showing a formatted table, ordered list, and checklist](./images/markdown-rendering.png){data-zoomable}
+*A formatted reply with the tab-separated copy button in the table's top-right corner*
+
 ## Support Agent
 
 We have added three ways to stay in control of what the Expert does while it works alongside you in the editor.
