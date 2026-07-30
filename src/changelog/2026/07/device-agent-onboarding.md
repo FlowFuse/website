@@ -18,7 +18,7 @@ Now you can start where the hardware already is. Run the installer from your ter
 Check the [Device Agent Quick Start guide](https://flowfuse.com/docs/device-agent/quickstart/) to get connected.
 
 ![The installer running in a terminal, walking through sign-up and connection to FlowFuse](./images/device-agent-install.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
-*The installer running in a terminal, walking through sign-up and connection to FlowFuse*
+*Sign-up and registration happen in one uninterrupted flow — no jumping back to the platform.*
 
 ![The interactive registration takes you straight through to the Node-RED editor once connected](./images/device-agent-registration.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 *The interactive registration takes you straight through to the Node-RED editor once connected*
