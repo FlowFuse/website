@@ -50,13 +50,6 @@ export default defineNuxtConfig({
 
     css: ['~/assets/css/theme.css'],
 
-    // Dark mode isn't implemented across the site yet — force light mode so
-    // Nuxt UI components don't switch to dark when the visitor's OS prefers it.
-    colorMode: {
-        preference: 'light',
-        fallback: 'light',
-    },
-
     // Heebo is already loaded via the Google Fonts <link> in app.head.
     // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
     // so it never fetches font files at build time (which exhausts Netlify's memory).
@@ -233,10 +226,15 @@ export default defineNuxtConfig({
     },
     
     ui: {
-    theme: {
-      colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'highlight']
-    }
-  },
+        // Dark mode isn't implemented across the site yet. Disabling the color-mode
+        // module here (rather than just setting a light `colorMode` preference) is
+        // what actually stops Nuxt UI from switching to dark for visitors whose OS
+        // prefers it — see https://ui.nuxt.com/docs/getting-started/integrations/color-mode/nuxt#configuration
+        colorMode: false,
+        theme: {
+            colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'highlight']
+        }
+    },
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts
     // to allow per-route exclusions as pages are migrated.
 })
