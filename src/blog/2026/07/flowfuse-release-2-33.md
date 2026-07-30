@@ -77,7 +77,6 @@ FlowFuse now keeps an audit trail of MCP activity. When an AI client reads data 
 
 If you answer to an OT security team or an auditor, "the AI did it" is not an acceptable line in an incident report. The audit trail turns AI activity into the same kind of accountable, reviewable record you already expect from human operators.
 
-![An audit log listing MCP tool invocations with actor and timestamp](https://placehold.co/1600x900?text=MCP+Audit+Trail){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 *Availability: Hub and Edge from v2.33.*
 
