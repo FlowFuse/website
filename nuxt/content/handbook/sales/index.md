@@ -38,6 +38,7 @@ Questions can be asked in the [#dept-sales](https://flowfuse.slack.com/archives/
  - [Forecast Review](./forecast-review.md)
  - [Demo](./meetings/demo.md)
  - [Sales Deck](./sales-deck.md)
+ - [Pricing Decks](./pricing-decks.md)
  - [Engagements & Pricing](./engagements.md)
  - [Deal Board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/board)
  - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
