@@ -79,19 +79,11 @@ sections:
       - id: device-group-management
         title: Device Group Management
         tiers: { edge: true, hub: false }
-      - id: time-series-db
-        title: Time-Series DB
-        note: TBD
-        tiers: { edge: true, hub: false }
       - id: git-integration
         title: Git Integration
         tiers: { edge: false, hub: true }
       - id: high-availability
         title: High Availability
-        tiers: { edge: false, hub: true }
-      - id: data-modeling
-        title: Data-Modeling
-        note: TBD
         tiers: { edge: false, hub: true }
 
   - id: secure
@@ -138,10 +130,6 @@ sections:
         tiers: { edge: true, hub: true }
       - id: blueprints-converge
         title: Blueprints - Converge
-        tiers: { edge: true, hub: true }
-      - id: node-red-dashboard-proxy
-        title: Node-RED Dashboard - Proxy
-        note: TBD
         tiers: { edge: true, hub: true }
       - id: personalised-multi-user-dashboards
         title: Personalised Multi-User Dashboards
