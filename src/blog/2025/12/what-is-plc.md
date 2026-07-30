@@ -1,10 +1,10 @@
 ---
-title: "What Is a PLC (Programmable Logic Controller)? What It Does, How It Works, and Where It’s Used"
+title: "What Is a PLC (Programmable Logic Controller)? What It Does, How It Works, and Where It's Used"
 subtitle: "How Dick Morley's New Year's Day Hangover Changed Manufacturing Forever"
-description: "Discover what PLCs are, how they work, and why 80% of global manufacturing still runs on Dick Morley's 1968 hungover invention. Plus: solving vendor lock-in"
+description: "What a PLC is, the seven parts inside it, how the scan cycle works, which protocols PLCs speak, and how to get PLC data into the systems that need it."
 date: 2025-12-26
-lastUpdate: 2025-12-29
-keywords: what is plc, programmable logic controller, history of plc, father of plc, plc inventor, plc communication, 
+lastUpdate: 2026-07-30
+keywords: what is plc, programmable logic controller, plc parts, plc scan cycle, history of plc, father of plc, plc inventor, plc communication protocols, plc vs pc, types of plc
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/what-is-plc.png
 tags:
@@ -15,212 +15,286 @@ meta:
     - question: "What is a PLC in simple terms?"
       answer: "A PLC (Programmable Logic Controller) is a rugged industrial computer used to control machines and processes. It reads signals from sensors, makes decisions based on a program, and turns equipment like motors, valves, or lights on and off automatically."
 
-    - question: "Who invented PLC?"
-      answer: "The PLC was invented in 1969 by a team led by Dick Morley at Bedford Associates. They developed the first PLC, known as the Modicon 084, in response to General Motors’ need for a programmable replacement for relay-based control systems."
-
-    - question: "What are the types of PLC?"
-      answer: "The main types of PLCs include micro PLCs for small tasks, compact PLCs with fixed I/O for simple machines, modular PLCs for large and complex systems, and safety PLCs designed specifically for safety-critical applications like emergency stops and machine guarding."
-
-    - question: "Why use a PLC instead of a PC?"
-      answer: "PLCs are used instead of PCs because they are built for real-time control and extreme industrial environments. They are more reliable, deterministic, resistant to heat, vibration, and electrical noise, and can run continuously for decades without crashes or unexpected updates."
-
-    - question: "Where are PLCs used?"
-      answer: "PLCs are used across a wide range of industries including automotive assembly, pharmaceuticals, food and beverage processing, water treatment, power generation, chemical plants, mining, distribution centers, and airport baggage systems. Essentially, any place where machines and processes need reliable, real-time automation relies on PLCs."
+    - question: "Who invented the PLC?"
+      answer: "Dick Morley wrote the original specification for the Programmable Logic Controller on New Year's Day 1968, and his team at Bedford Associates built it as the Model 084. Commercialized through their new company Modicon, the first units shipped in 1969 to General Motors. Morley called himself the 'father' of the PLC rather than its inventor, because several groups were solving the same problem at the same time."
 
     - question: "What are the 7 main parts of a PLC?"
-      answer: "The 7 main parts of a PLC are: 1) Power Supply – provides stable power; 2) Central Processing Unit (CPU) – executes the control program; 3) Input Modules – read signals from sensors and switches; 4) Output Modules – control actuators like motors and valves; 5) Programming Device – used to write and upload programs; 6) Communication Interface – allows the PLC to connect with other PLCs, HMIs, or SCADA systems; 7) Memory – stores the program and runtime data."
-tldr: "A Programmable Logic Controller (PLC) is a rugged industrial computer that continuously reads sensor inputs, executes control logic, and operates motors, valves, and equipment in real-time with deterministic reliability forming the backbone of 80% of global industrial automation since Dick Morley's 1968 invention. Unlike general-purpose computers, PLCs are designed for decades of uninterrupted operation in extreme environments, and the biggest modern challenge is getting PLCs from different vendors to communicate with each other and with enterprise IT systems."
+      answer: "The 7 main parts of a PLC are: 1) Power supply, which converts plant power into stable DC; 2) CPU, which executes the control program; 3) Memory, which stores the program and runtime data; 4) Input modules, which read sensors and switches; 5) Output modules, which drive motors, valves, and contactors; 6) Communication interface, which connects the PLC to HMIs, SCADA, and other controllers; 7) Programming device, which you use to write and download the program."
+
+    - question: "What are the types of PLC?"
+      answer: "The main types are micro PLCs for very small tasks of roughly 8 to 20 I/O points, compact PLCs with fixed I/O for single machines, modular PLCs with expandable racks for large and complex systems, and safety PLCs certified for safety-critical functions like emergency stops and machine guarding."
+
+    - question: "Why use a PLC instead of a PC?"
+      answer: "PLCs are built for real-time control in extreme industrial environments. They execute logic deterministically, so the same program takes the same amount of time on every scan, and they tolerate heat, vibration, and electrical noise. A PC has far more processing power but runs a general-purpose operating system that can pause your logic for an update or a background process, which is unacceptable when the output drives a press or a burner."
+
+    - question: "What is the difference between a PLC and a DCS?"
+      answer: "A PLC is optimized for fast, discrete machine control, such as sequencing a packaging line. A DCS (Distributed Control System) is optimized for continuous process control across a whole plant, such as a refinery or a paper mill, with tightly integrated operator graphics, loop tuning, and plant-wide engineering. The line has blurred: modern PLCs run advanced process control, and modern DCS platforms handle discrete logic."
+
+    - question: "What protocols do PLCs use to communicate?"
+      answer: "PLCs use a mix of fieldbus protocols (Modbus RTU, Profibus, DeviceNet, IO-Link), industrial Ethernet protocols (Profinet, EtherNet/IP, EtherCAT, Modbus TCP), vendor-native protocols (S7comm for Siemens, CIP for Rockwell, ADS for Beckhoff, MC Protocol for Mitsubishi, FINS for Omron), and standards-based interfaces like OPC UA. Getting data to IT systems usually means bridging one or more of these to MQTT, REST, or a database."
+
+    - question: "Where are PLCs used?"
+      answer: "PLCs are used across automotive assembly, pharmaceuticals, food and beverage processing, water treatment, power generation, chemical plants, mining, distribution centers, and airport baggage systems. Any place where machines and processes need reliable, real-time automation relies on PLCs."
+
+    - question: "How long does a PLC last?"
+      answer: "Installed PLCs routinely run for 20 to 30 years. That reliability is the point, but it also means most plants operate a mix of controller generations and vendors at the same time, which is why integration work rather than control logic is the dominant challenge in modern automation projects."
+tldr: "A Programmable Logic Controller (PLC) is a rugged industrial computer that reads sensor inputs, executes control logic, and drives motors and valves in real time with deterministic reliability. Dick Morley specified the first one on New Year's Day 1968, and the architecture he defined still runs most of the world's industrial automation. Modern PLCs are not the hard part. Getting PLCs from different vendors to share data with each other and with enterprise IT is."
 ---
 
-***A PLC (Programmable Logic Controller) is an industrial computer that continuously monitors sensors, executes control logic, and operates motors, valves, and equipment in real-time, serving as the reliable backbone of modern manufacturing and industrial automation.***
+***A PLC (Programmable Logic Controller) is an industrial computer that continuously monitors sensors, executes control logic, and operates motors, valves, and equipment in real time, serving as the reliable backbone of modern manufacturing and industrial automation.***
 
 <!--more-->
 
-On New Year's Day 1968, [Dick Morley](https://en.wikipedia.org/wiki/Dick_Morley), also known as the “Father of the PLC,” woke up with a brutal hangover and did what any reasonable engineer might do: he invented the future of manufacturing. That morning, nursing what he later described as "a wicked headache," Morley wrote the complete specifications for the Programmable Logic Controller, a device that would replace entire relay-based control systems and become the invisible brain running modern industry.
+On New Year's Day 1968, [Dick Morley](https://en.wikipedia.org/wiki/Dick_Morley) woke up with a brutal hangover and wrote the specification that would replace relay logic in factories worldwide. Nursing what he later described as a wicked headache, he defined a device that could run a production line, survive a factory floor, and be reprogrammed without anyone touching a wire.
 
-Before that hungover epiphany, changing how a factory operated meant physically rewiring thousands of electromagnetic relays. General Motors was bleeding money, weeks of downtime and millions in labor costs every time they needed to retool a production line. Morley's Modicon 084 replaced 20,000 mechanical components with a single box that could be reprogrammed in hours.
+Before that morning, changing how a factory operated meant physically rewiring thousands of electromagnetic relays. General Motors was losing weeks of production and millions in labor costs every time it retooled a line. Morley's design turned that into a software change.
 
-Today, PLCs control everything from the jet engines on your flight to the insulin in your pharmacy. They manage power grids, traffic lights, water treatment plants, and semiconductor fabs. Eighty percent of industrial automation worldwide runs on PLCs. It's a [$13 billion market](https://www.mordorintelligence.com/industry-reports/programmable-logic-controller-plc-market). And yet, most of us have never heard of them.
+Today PLCs control the assembly of the car you drive, the batch that produced your medication, and the pumps that treat your drinking water. They run power substations, traffic systems, and semiconductor fabs. It is a [$13 billion market](https://www.mordorintelligence.com/industry-reports/programmable-logic-controller-plc-market), and most people have never heard of the technology.
 
-This article breaks down what PLCs actually are, traces their evolution from Morley's specs to modern systems, explains how they work under the hood, explores their real-world applications, and tackles the biggest challenge facing industrial automation today: getting PLCs from different manufacturers to actually talk to each other.
+This article covers what a PLC actually is, what sits inside one, how the scan cycle works, how PLCs are programmed, the types available, where they run, and the problem that dominates industrial automation projects today: getting controllers from different vendors to share their data.
 
-## What is a PLC (Programmable Logic Controller) ?
+## What is a PLC (Programmable Logic Controller)?
 
-A Programmable Logic Controller is an industrial computer built for one job: controlling machines and processes in real-time with rock-solid reliability. Unlike your laptop or the servers running cloud applications, PLCs thrive in environments that would kill standard computers, extreme temperatures, constant vibration, electrical noise, dust, and humidity.
+A Programmable Logic Controller is an industrial computer built for one job: controlling machines and processes in real time with high reliability. Unlike a laptop or a cloud server, a PLC operates in conditions that destroy standard computers, including temperature extremes, constant vibration, electrical noise, dust, and humidity.
 
-The concept is elegant in its simplicity. A PLC continuously monitors inputs from sensors and switches, executes control logic from its stored program, and updates outputs that control motors, valves, lights, and equipment. This happens in a repeating "scan cycle," typically thousands of times per second. Read inputs. Run logic. Update outputs. Repeat. Forever.
+The concept is simple. A PLC reads inputs from sensors and switches, executes logic from its stored program, and updates outputs that drive motors, valves, lights, and equipment. It repeats that loop continuously, hundreds or thousands of times per second. Read inputs. Run logic. Update outputs. Repeat.
 
-What sets PLCs apart isn't computing power, your phone vastly outperforms them. It's their deterministic behavior. When a PLC runs a program, it executes exactly the same way every single time. No operating system randomly running updates. No background processes stealing resources. No crashes. No reboots. In industries where failure means explosions, contaminated products, or fatalities, this predictability isn't a nice-to-have. It's survival.
+What sets a PLC apart is not computing power. Your phone outperforms every PLC ever built. It is deterministic execution. The program runs the same way, in the same order, in a predictable amount of time, on every single scan. No operating system decides to install an update. No background process steals a time slice. In a plant where a missed decision means a ruined batch, a damaged machine, or an injured operator, that predictability is the entire product.
 
-The hardware reflects this zero-compromise approach. Industrial-grade components handle extreme temperatures and electrical interference. Power supplies absorb voltage swings that would fry consumer electronics. Input and output modules interface directly with industrial sensors and actuators at various voltages. The programming uses ladder logic and function blocks, visual languages mirroring the relay systems they replaced, designed for electricians and plant engineers rather than software developers.
+The hardware reflects the same priority. Industrial-grade components tolerate heat and electrical interference. Power supplies absorb the voltage sags and spikes that come with starting large motors. I/O modules interface directly with field devices at industrial voltages and currents, with isolation so a fault in the field does not reach the processor. The programming languages are visual and built around relay diagrams, because the people who commission and maintain these systems are controls engineers and electricians, not software developers.
 
-This design has barely changed since Morley's 1968 specifications, and there's a reason: it works. When Siemens installs a PLC in a chemical plant, that system runs continuously for decades. When Rockwell Automation deploys controllers in automotive assembly, they execute millions of flawless cycles. Industrial automation doesn't embrace Silicon Valley's "move fast and break things." The motto here is simpler: never break.
+That design has barely changed since 1968, and the reason is straightforward: it works. A PLC installed in a chemical plant runs for decades. A controller in an automotive body shop executes millions of cycles without a fault. Industrial automation never adopted "move fast and break things." The operating principle here is narrower: do not break.
 
-## History of PLCs: From Relay Rooms to Smart Controllers
+## History of PLCs: from relay rooms to smart controllers
 
-Before PLCs, factories were wired nightmares. Control logic lived in walls of electromagnetic relays, thousands of mechanical switches wired together to define how a machine behaved. Changing a production process meant physically rewiring control panels. Every model change brought weeks of downtime, armies of electricians, and staggering costs. One wrong wire could halt an entire plant.
+Before PLCs, control logic lived in walls of electromagnetic relays. Thousands of mechanical switches, wired together, defined how a machine behaved. Changing a process meant rewiring a cabinet by hand. Every model change brought weeks of downtime, crews of electricians, and a real chance that one wrong wire would stop the plant.
 
-![Pre-PLC industrial relay control cabinet used in factories before programmable logic controllers replaced hard-wired relay logic
-](./images/pre-plc-relay-cabinet.jpg){data-zoomable}
-_Pre-PLC industrial relay control cabinet used in factories before programmable logic controllers replaced hard-wired relay logic_
+![Pre-PLC industrial relay control cabinet used in factories before programmable logic controllers replaced hard-wired relay logic](./images/pre-plc-relay-cabinet.jpg){data-zoomable}
+_A relay control cabinet of the kind PLCs replaced. Every logic change here meant physically rewiring the panel._
 
-By the late 1960s, this inflexibility was becoming fatal, especially for automotive manufacturers. General Motors was bleeding money on production line retooling. Meanwhile, a young engineer named Dick Morley was running a small consulting company called Bedford Associates, helping machine tool firms upgrade to solid-state controls. The work paid well, but it was monotonous, each project essentially the same as the last.
+By the late 1960s that inflexibility was becoming untenable, especially in automotive. Meanwhile Dick Morley was running Bedford Associates, a small consultancy helping machine tool firms move to solid-state controls. The work paid, but every project was a variation on the last.
 
-On New Year's Day 1968, nursing a hangover and running two weeks late on yet another proposal, Morley decided there had to be a better way. That morning, he wrote a complete specification for what he called a "Programmable Controller", a device that could replace relay logic, survive factory conditions, and be reprogrammed without rewiring. His specs were specific: no processing interrupts, direct memory mapping, rugged sealed design with heat sinks instead of fans, and a proprietary programming language (which would become ladder logic). One specification he'd later regret: he wanted it to operate slowly.
+On New Year's Day 1968, hungover and two weeks late on yet another proposal, Morley wrote a specification for something he called a Programmable Controller: a device that could replace relay logic, survive factory conditions, and be reprogrammed without rewiring. His requirements were specific. No processing interrupts. Direct memory mapping. A sealed, rugged enclosure cooled by heat sinks rather than fans. A programming language modeled on relay diagrams, which became ladder logic. He also specified that it should run slowly, a decision he later regretted.
 
-Morley took his memo to his team at Bedford Associates, Mike Greenberg, Jonas Landau, and Tom Boissevain. They got to work immediately, with one iron rule: never call it a computer. If Morley saw that word on any document, he'd throw it away. They built a rugged unit with metal fin heat sinks, completely sealed against factory environments. They named it the Model 084, Bedford's 84th project.
+Morley took the memo to his colleagues at Bedford Associates and gave them one rule: never call it a computer. If he found that word on a document, he threw the document away. They built a sealed unit with metal fin heat sinks and named it the Model 084, Bedford's eighty-fourth project.
 
-To commercialize the design, they needed investors. The team formed a new company in October 1968, calling it **Modicon**, short for Modular Digital Controller. Morley was never technically an employee, but he ran engineering. The Model 084 shipped in 1969, followed quickly by the Model 184, which fixed issues found in the original.
+To commercialize it, the team formed a new company in October 1968 and called it **Modicon**, short for Modular Digital Controller. Morley was never formally an employee, but he ran engineering. The Model 084 shipped in 1969, followed by the Model 184, which fixed the problems the first units exposed.
 
-General Motors heard about Modicon's work and placed a million-dollar order. In November 1969, GM's Hydramatic Division took delivery of the first batch. General Electric followed with their own million-dollar order, planning to rebrand and sell the controllers as OEM units. Within a year of Modicon's founding, the PLC had gone from hungover memo to production deployment at the world's largest automaker.
+General Motors placed a million-dollar order, and in November 1969 its Hydramatic Division took delivery of the first batch. General Electric followed with an order of its own, planning to rebrand the controllers as OEM units. Within a year of Modicon's founding, the PLC had gone from a hungover memo to production deployment at the world's largest automaker.
 
-![PLC Pioneers Richard Morley, Tom Bossevain, George Schwenk and Jonas Landau
-](./images/First-modicon-084.png){data-zoomable}
-_PLC Pioneers Richard Morley, Tom Bossevain, George Schwenk and Jonas Landau_
+![PLC Pioneers Richard Morley, Tom Bossevain, George Schwenk and Jonas Landau](./images/First-modicon-084.png){data-zoomable}
+_The team behind the first Modicon 084: Richard Morley, Tom Boissevain, George Schwenk, and Jonas Landau._
 
-Morley always called himself the "Father" of the PLC rather than its "Inventor", he knew others were working on similar solutions and believed the technology "invented itself out of necessity." Bedford Associates eventually dissolved to avoid tax complications after Modicon's success. Modicon was later acquired and is now owned by Schneider Electric, which still occasionally uses the number 84 on products as a tribute.
+Morley always called himself the father of the PLC rather than its inventor. He knew other groups were chasing the same problem and believed the technology invented itself out of necessity. Modicon was later acquired and now sits inside Schneider Electric, which still uses the number 84 on products as a nod to where it started.
 
-## How a PLC Works: Scan Cycle, Inputs, and Outputs
+## What's inside a PLC: the 7 main parts
 
-Open a PLC cabinet on a factory floor and you'll find a metal box covered in wire terminals, mounted on a DIN rail, silently controlling millions of dollars of equipment. No monitor. No keyboard. No fan. Just a microprocessor executing the same loop it's been running since installation, sometimes for decades.
+Open a PLC cabinet and you will find a metal assembly on a DIN rail, covered in wire terminals, with no monitor, no keyboard, and no fan. Seven functional parts do all the work.
 
-The entire operating model fits in one sentence: read sensors, run program, control outputs, repeat. That loop executes thousands of times per second with mechanical precision. It's not elegant. It's not exciting. But it's exactly what keeps production lines moving and chemical reactors stable.
+**1. Power supply.** Converts plant power into the clean, stable DC the processor and modules need. It is rated for abuse, because industrial power is chaotic: sags when large motors start, spikes from switching, and harmonics from variable frequency drives.
 
-### What's Actually Inside a PLC
+**2. Central processing unit (CPU).** Executes the control program. Modern PLCs use industrial microprocessors chosen for temperature tolerance and long-term availability rather than raw speed. The CPU also runs self-diagnostics and manages the scan cycle.
 
-**The CPU** runs your control program. Modern units use industrial microprocessors, nothing exotic, just chips designed for temperature extremes and long-term reliability. They're slower than your phone but infinitely more predictable. The CPU executes code the same way every single time. No background processes. No operating system deciding to update drivers mid-cycle. Just pure determinism.
+**3. Memory.** Holds the program and the data it works on. Non-volatile memory retains the compiled program and retentive values through a power cycle. Volatile working memory holds the I/O image table, timers, counters, and intermediate results for the current scan.
 
-**Input modules** interface with sensors. A temperature probe sends a 4-20mA signal. A limit switch closes a 24V circuit. A pressure transducer outputs 1-5V DC. The input module converts these industrial signals into numbers the CPU can process, while providing electrical isolation to prevent ground loops and noise from corrupting data.
+**4. Input modules.** Convert field signals into values the CPU can read. A limit switch closes a 24 V DC circuit. A temperature transmitter sends 4-20 mA. A pressure sensor outputs 0-10 V. Digital input modules report on or off. Analog input modules digitize a continuous range. Both provide electrical isolation so field noise and ground loops never reach the processor.
 
-**Output modules** control physical equipment. The CPU decides a motor should run, and the output module closes a relay or sends a signal to a motor starter. It translates digital logic into the industrial voltages needed to activate contactors, solenoids, and valves. Like inputs, isolation protects the CPU from the electrical violence of switching inductive loads.
+**5. Output modules.** Drive the physical world. When the program decides a motor should run, the output module closes a relay, switches a transistor, or sends an analog signal to a drive. Digital outputs handle contactors, solenoids, and indicators. Analog outputs set valve positions and drive speed references.
 
-**The power supply** handles whatever garbage voltage the plant feeds it, sags during motor starts, spikes from switching, harmonics from variable frequency drives, and outputs clean DC. It's rated for abuse because industrial power is chaos.
+**6. Communication interface.** Connects the PLC to everything else: HMIs, SCADA systems, other PLCs, drives, remote I/O, and IT systems. This is usually an Ethernet port plus one or more fieldbus ports, and it is where most of the difficulty in modern automation projects lives.
 
-### The Scan Cycle
+**7. Programming device.** The laptop and vendor software you use to write, download, and debug the program. It also provides online monitoring, so you can watch logic execute live while the machine runs.
 
-Every PLC runs the same four-step loop:
+Small PLCs integrate all seven into one sealed housing. Large systems distribute them across a rack, so you can add I/O, swap a failed module, or scale the system without replacing the controller.
 
-1. **Input scan**: Copy all sensor states into memory. This creates a snapshot, every input frozen at one moment in time.
+## How a PLC works: the scan cycle
 
-2. **Program execution**: Run the control logic from start to finish using that snapshot. If temperature > 250°F, open cooling valve. If part detected AND quality check passed, advance conveyor.
+Every PLC runs the same four-step loop, over and over, for as long as it is powered.
 
-3. **Output update**: Write all calculated outputs to physical modules. Motors start or stop. Valves open or close. But only after the entire program runs, no partial updates.
+1. **Input scan.** The PLC copies the state of every input into memory at once. That snapshot is what the program reads, so a sensor changing mid-program cannot produce inconsistent behavior.
 
-4. **Housekeeping**: Handle communications, diagnostics, error checking. Then start over immediately.
+2. **Program execution.** The controller runs the control logic from first instruction to last, using the snapshot. *If temperature exceeds 250 °F, open the cooling valve. If a part is present and the quality check passed, advance the conveyor.*
 
-The full cycle typically takes 1-50 milliseconds depending on program complexity. A 10ms scan cycle means the PLC makes 100 complete decisions per second. It's been doing this in some facilities since the 1980s.
+3. **Output update.** The PLC writes all calculated results to the physical output modules at once. Motors start. Valves move. Nothing updates partway through the logic.
 
-This approach eliminates entire classes of software bugs. Inputs can't change mid-program. Outputs can't update while logic is executing. Race conditions don't exist. The program runs in strict sequential order, identically, every scan.
+4. **Housekeeping.** The controller handles communications, diagnostics, and error checking, then starts the next scan immediately.
 
-### Programming Languages
+A full cycle typically takes 1 to 50 milliseconds depending on program size and CPU. A 10 ms scan means the controller makes a hundred complete decisions per second, every second, for years.
 
-PLCs don't use Python or C++. They use [IEC 61131-3](https://en.wikipedia.org/wiki/IEC_61131-3) languages designed for industrial electricians and control engineers.
+This structure eliminates whole categories of software bug by design. Inputs cannot change mid-program. Outputs cannot update while logic is still evaluating. Race conditions do not occur. Two engineers reading the same program reach the same conclusion about what it will do, which matters enormously when the person troubleshooting at 3 a.m. is not the person who wrote it.
 
-**Ladder Logic** looks like relay wiring diagrams because it replaced relay logic. Horizontal lines represent power. Contacts (inputs) and coils (outputs) sit between them. An electrician who understood relay panels could program a PLC immediately. It's clunky for complex math but perfect for discrete control, if sensor A triggers and valve B is closed, start pump C.
+Scan time also sets a hard limit you have to design around. If the fastest event you need to catch is shorter than your scan time, the PLC will miss it. That is why high-speed counting, motion control, and safety functions typically move to dedicated modules that operate outside the normal scan.
 
-**Function Block Diagrams** connect boxes representing timers, counters, math operations, and PID controllers. Data flows between blocks. It works well for process control where analog signals need continuous manipulation.
+## PLC programming languages
 
-**Structured Text** handles complex calculations and algorithms. It looks like Pascal. Modern applications increasingly need it, ladder logic becomes unmanageable for sophisticated control strategies.
+PLCs do not run Python or C++. They run the [IEC 61131-3](https://en.wikipedia.org/wiki/IEC_61131-3) languages, designed for controls engineers.
 
-Each vendor implements these standards differently. Siemens uses TIA Portal. Rockwell has Studio 5000. Schneider offers Unity Pro. The languages are theoretically portable. The reality is vendor lock-in.
+**Ladder logic** looks like a relay wiring diagram, because it replaced relay wiring diagrams. Two vertical rails represent power. Contacts (conditions) and coils (outputs) sit on horizontal rungs between them. Here is a motor start/stop circuit, the first thing most engineers learn:
 
-### Why PLCs Haven't Changed
+```
+    Start_PB      Stop_PB     Overload      Motor_Run
+ ─────┤ ├──────────┤/├─────────┤/├────────────( )─────
+      │
+    Motor_Run
+ ─────┤ ├──┘
+```
 
-Your phone has more processing power than any PLC in existence. Yet every new factory, water treatment plant, and production line still installs PLCs. Why?
+Pressing the start button energizes `Motor_Run`. The parallel `Motor_Run` contact then holds the rung true after the operator releases the button, which is called a seal-in. Pressing stop or tripping the overload breaks the rung and the motor drops out. Ladder logic is clumsy for mathematics and excellent for exactly this kind of discrete, interlocked control.
 
-Because reliability beats performance in industrial automation. A PLC controlling a gas turbine or pharmaceutical batch doesn't need gigahertz processors or gigabytes of RAM. It needs to execute the same logic flawlessly for 20 years while operating at 140°F in an environment with electrical noise, vibration, and dust.
+**Function block diagram** wires together boxes representing timers, counters, math operations, and PID loops. Data flows left to right between blocks. It suits continuous process control, where analog values need scaling, filtering, and regulation.
 
-Consumer computing optimizes for speed and features. Industrial computing optimizes for never failing. Ever. The scan cycle, the isolated I/O, the deterministic execution, these aren't limitations. They're the exact solution the problem requires.
+**Structured text** is a Pascal-like textual language for calculations, loops, and algorithms that would be unreadable in ladder. Recipe handling, data manipulation, and communication logic usually end up here.
 
-That's why Morley's 1968 architecture still dominates. Not because the industry is conservative or backwards. Because he solved the problem correctly the first time.
+**Sequential function chart** models a process as steps and transitions, which fits batch operations and machine sequences with clearly defined states.
+
+The standard is common, but the implementations are not. Siemens uses TIA Portal. Rockwell uses Studio 5000. Schneider uses EcoStruxure Control Expert. Mitsubishi uses GX Works. Programs are theoretically portable between platforms and practically are not, which is the first form of vendor lock-in an automation team encounters.
+
+## PLC vs PC, PAC, microcontroller, and DCS
+
+"Why not just use a PC?" is a reasonable question with a specific answer, and the same applies to the other options.
+
+| | Best at | Determinism | Environment | Typical lifespan |
+|---|---|---|---|---|
+| **PLC** | Discrete machine and line control | Guaranteed scan time | Panel-mounted, -20 to 60 °C, vibration tolerant | 20-30 years |
+| **PAC** | Control plus data handling, motion, and vision in one controller | Guaranteed for control tasks | Same as PLC | 15-25 years |
+| **Industrial PC** | Data processing, analytics, visualization, edge workloads | Not guaranteed under a general-purpose OS | Rugged variants available | 5-10 years |
+| **Microcontroller** | Embedded control inside a product | Deterministic, but no industrial I/O or diagnostics | Depends entirely on the board | Product-dependent |
+| **DCS** | Continuous process control across a whole plant | Guaranteed, with plant-wide engineering | Control room and field cabinets | 20-30 years |
+
+The practical read: a PC will out-compute a PLC by orders of magnitude and still be the wrong choice for driving a press, because an operating system that can pause your logic for 200 milliseconds is not a control system. Conversely, a PLC is the wrong place to run a machine learning model or a historian. Well-designed plants use both and connect them, which is where the rest of this article ends up.
 
 ## Types of PLCs
 
-Not all PLCs are created equal. Walk through a factory and you’ll see shoebox-sized controllers running a single machine right next to rack-mounted systems managing entire production lines. While they all execute the same basic scan cycle, the hardware differs dramatically based on what they control.
+All PLCs run the same scan cycle. The hardware scales enormously depending on what they control.
+
+### Micro PLCs
+
+Micro PLCs handle very small tasks, typically 8 to 20 I/O points: a single conveyor, pump, sorter, or door. They generally cost $100 to $500 and appear in car washes, vending machines, irrigation systems, and OEM equipment. Programming environments are simplified and focused on basic logic.
+
+**Examples:** Unitronics Jazz, AutomationDirect CLICK, IDEC SmartRelay
 
 ### Compact PLCs
 
-Compact PLCs integrate the CPU, I/O, and power supply into a single fixed unit. They typically handle 10–100 I/O points, making them ideal for packaging machines, pump stations, and HVAC systems. They are simple, cost-effective, and quick to deploy. Some models allow limited expansion through add-on I/O modules, but scalability is constrained. Once that limit is reached, upgrading to a modular PLC is usually required.  
+Compact PLCs integrate the CPU, I/O, and power supply into one fixed unit, usually covering 10 to 100 I/O points. They suit packaging machines, pump stations, and HVAC plant. Many accept a limited number of add-on I/O modules, but once you exhaust that expansion you are looking at a modular platform instead.
 
 **Examples:** Siemens S7-1200, Rockwell Micro800, Schneider Modicon M221
 
 ### Modular PLCs
 
-Modular PLCs separate the CPU from the I/O modules, which are installed on expandable racks. Need hundreds of I/O points? Add modules. Need motion control, high-speed counting, or specialized communications? There is a dedicated module. This flexibility makes modular PLCs the standard for complex automation such as automotive assembly, chemical processing, and large material-handling systems. Costs typically range from $10,000 to well into six figures depending on scale and redundancy.  
+Modular PLCs separate the CPU from I/O modules mounted on expandable racks. Need several hundred I/O points? Add modules. Need motion control, high-speed counting, redundancy, or a specific fieldbus? There is a module for it. This is the standard for automotive assembly, chemical processing, and large material handling. Costs run from roughly $10,000 to well into six figures depending on scale and redundancy.
 
 **Examples:** Siemens S7-1500, Rockwell ControlLogix, Schneider Modicon M580
 
 ### Safety PLCs
 
-Safety PLCs are designed to protect people and equipment. They control emergency stops, light curtains, safety interlocks, and other safety-critical functions using redundant processors and continuous self-diagnostics. Certified safety architectures achieve reliability levels as high as 10⁻⁸ failures per hour (SIL 3 / PLe). In most systems, safety PLCs operate alongside standard PLCs: production logic runs on the normal controller, while the safety PLC can override everything instantly when a hazard is detected. 
+Safety PLCs protect people and equipment. They handle emergency stops, light curtains, safety interlocks, and guard door monitoring using redundant processors and continuous self-diagnostics. Certified architectures reach SIL 3 and Performance Level e, with failure rates in the range of 10⁻⁸ to 10⁻⁷ per hour for continuous operation. In most plants the safety PLC runs alongside the standard controller: production logic on one, safety functions on the other, with the safety system able to override everything the instant it detects a hazard.
 
 **Examples:** Pilz PNOZmulti, Siemens F-series, Rockwell GuardLogix
 
-### Micro PLCs
+### Choosing the right PLC
 
-Micro PLCs handle very small automation tasks, typically 8–20 I/O points, such as a single conveyor, pump, or sorter. They usually cost between $100 and $500 and are common in car washes, vending machines, irrigation systems, and compact OEM equipment. Programming is often simplified and focused on basic control logic rather than advanced automation features.
+Selection comes down to I/O count, logic complexity, safety requirements, and how much you expect the system to grow. Fewer than 20 I/O points with simple logic points to micro or compact. Production lines with hundreds of points, motion control, or serious networking need modular. Anything protecting a person requires a safety-rated controller, without exception.
 
-**Examples:** Unitronics, AutomationDirect CLICK, IDEC SmartRelay
+One factor outweighs the technical comparison: most organizations standardize on a single vendor and stay there for decades, because retraining engineers and rewriting a program library is more expensive than the hardware. That decision is usually made once and lived with for a very long time.
 
-### Choosing the Right PLC
+Worth separating, though, is the control layer from the data layer. Committing to Siemens or Rockwell for the next twenty years of machine control is a defensible engineering decision. Letting that choice also dictate how production data reaches your historian, your ERP, or your quality team is not, and it is the part teams tend to concede without noticing. Keeping [the integration layer vendor-neutral](/use-cases/it-ot-middleware/) means the controller standard you pick today does not decide what you can build on top of it in five years.
 
-Selecting a PLC comes down to I/O count, system complexity, safety requirements, and future expansion. Simple machines with fewer than 20 I/O points are well served by micro or compact PLCs. Production lines with hundreds of I/O points, motion control, or advanced networking typically require modular PLCs. Any application involving human safety must use a safety-rated controller, without exception. Most companies standardize on a single vendor, commonly Siemens or Rockwell, and stay with that ecosystem for decades, as switching platforms later is costly and disruptive.
+## PLC, HMI, and SCADA: how they work together
 
-## PLC, HMI, and SCADA: How They Work Together
+A PLC executes logic in milliseconds and has no screen. It cannot show an operator what is happening, log history, or send an alert. That is where HMIs and SCADA systems come in, and the three form distinct layers.
 
-A PLC executes control logic in milliseconds, but it doesn't have a screen. It can't show operators what's happening. It can't log historical data or send alerts. That's where HMIs and SCADA systems come in.
+**PLCs** control equipment in real time: read sensors, run logic, drive actuators.
 
-These three technologies form distinct layers in industrial automation. PLCs control equipment in real-time, reading sensors, running logic, operating actuators. HMIs (Human-Machine Interfaces) are the touchscreens mounted next to machines that display what the PLC is doing and let operators start equipment, adjust setpoints, and acknowledge alarms. The HMI sends commands to the PLC, which evaluates safety conditions and executes them. One HMI typically monitors one machine or production line section.
+**HMIs** (Human-Machine Interfaces) are the touchscreens mounted at the machine. They display what the PLC is doing and let operators start equipment, adjust setpoints, and acknowledge alarms. The HMI sends a request; the PLC evaluates interlocks and decides whether to act. One HMI typically covers one machine or one section of a line.
 
-SCADA (Supervisory Control and Data Acquisition) operates at the facility level. While an HMI monitors one machine, SCADA monitors entire plants or distributed systems. It collects data from dozens or hundreds of PLCs, stores trends in databases, generates reports, and coordinates system-wide operations. A water utility might have 50 pump stations, each with a PLC. SCADA at the central control room polls all 50 continuously, displays system-wide status, and lets operators manage the entire network from one location.
+**SCADA** (Supervisory Control and Data Acquisition) operates at facility level. It polls dozens or hundreds of PLCs, stores trends, generates reports, and coordinates system-wide operations. A water utility with 50 pump stations runs a PLC at each one and a SCADA system in the control room that shows all 50 at once.
 
-In practice: PLCs sit in control cabinets executing control programs. HMIs sit next to machines for local operation. SCADA runs on servers in control rooms for facility-wide oversight. All three communicate constantly, when a PLC detects high temperature, the local HMI displays an alarm, SCADA logs it with a timestamp and sends alerts to maintenance.
+In practice: PLCs sit in cabinets, HMIs sit at machines, SCADA runs on servers. When a PLC detects a high temperature, the local HMI raises an alarm and SCADA logs it with a timestamp and notifies maintenance.
 
-This hierarchy only works if these systems can actually talk to each other. That's where industrial automation hits its biggest challenge: vendor lock-in and protocol fragmentation. Getting PLCs from different manufacturers to communicate with HMIs and SCADA systems requires protocol converters, middleware, and significant integration effort, a problem we'll tackle next.
+This hierarchy works well for operations. It starts to strain the moment someone outside operations wants the data, and that request always comes. Quality wants defect rates by shift. Maintenance wants runtime hours per asset. Finance wants energy cost per unit. None of those systems speak to a PLC, and SCADA was never designed to feed them.
 
-## Where PLCs Actually Run: Real-World Applications
+> Most teams solve this one request at a time, and a year later they have thirty point-to-point connections nobody can map. The decision that saves the most rework is how you structure PLC data before you wire up the first system, not after. That is what a [unified namespace](/use-cases/uns/) is for: every application reads from one place, so adding the next one costs a topic subscription instead of another integration project.
 
-PLCs control processes where reliability isn't negotiable. They're not exciting. They're not visible. But they're running constantly in factories, utilities, and infrastructure, often for decades without replacement.
+## Where PLCs actually run: real-world applications
 
-Automotive assembly lines use PLCs to coordinate welding robots, conveyors, and quality systems. A body shop might run 50+ PLCs managing hundreds of welds per vehicle. When manufacturers retool for new models, they reprogram the controllers instead of rewiring entire panels, exactly what GM needed in 1968.
+PLCs control processes where reliability is not negotiable. They are invisible by design and often outlast the engineers who commissioned them.
 
-Pharmaceutical production relies on PLCs for batch reactors where temperature and timing must stay within tight tolerances. Every parameter gets logged for regulatory compliance. If conditions drift outside specifications, the PLC flags the batch automatically. Food and beverage plants use them for mixing, cooking, and packaging lines. A bottling line coordinates filling, capping, labeling, and case packing, all controlled by PLCs running the same programs they've executed millions of times.
+**[Automotive assembly](/industries/automotive/)** lines coordinate welding robots, conveyors, and quality gates. A body shop may run 50 or more PLCs managing hundreds of welds per vehicle. Retooling for a new model means reprogramming controllers instead of rewiring panels, which is precisely what GM needed in 1968.
 
-Water treatment plants use PLCs to manage pumps, chemical dosing, and filtration based on flow rates and quality sensors. These systems often run for 20-30 years, handling daily demand variations and responding to system changes automatically. Power substations rely on PLCs for load monitoring, breaker control, and grid coordination. When generation or demand shifts, controllers adjust in milliseconds to maintain stability.
+**[Pharmaceutical production](/industries/life-sciences/)** relies on PLCs for batch reactors where temperature, pressure, and timing must stay inside validated ranges. Every parameter is logged for regulatory compliance, and the controller flags any batch that drifts out of specification.
 
-Refineries and chemical plants use them in environments where control failures create safety hazards, managing temperatures, pressures, and emergency shutdown sequences. Distribution centers use PLCs to run conveyor networks, sorting systems, and automated storage. A package gets scanned, routed through the optimal path, and diverted to the correct lane, all coordinated by controllers managing thousands of decision points per hour.
+**[Food and beverage](/industries/food-beverage/)** plants run mixing, cooking, filling, capping, labeling, and case packing. A single bottling line coordinates all of it, executing the same programs millions of times.
 
-Airport baggage systems are entirely PLC-controlled. Bags move from check-in through security screening to the correct carousel, sorted by destination and flight timing. Mining operations use PLCs for conveyors, crushers, and material separation running continuously with minimal supervision. The controllers monitor equipment health, adjust speeds based on material flow, and shut down automatically when sensors detect problems.
+**Water treatment** plants manage pumps, chemical dosing, and filtration against flow and quality sensors. These systems commonly run 20 to 30 years, absorbing daily demand swings automatically.
 
-The common thread is long-term reliability in demanding environments. PLCs installed in the 1990s are still operating in many facilities. They execute the same control logic, respond to the same sensors, and drive the same equipment, scan after scan, year after year, exactly as designed.
+**Power substations** use PLCs for load monitoring, breaker control, and grid coordination, adjusting within milliseconds as generation and demand shift. The same controllers run inverter and turbine skids across [renewable generation sites](/industries/renewables/), where output varies by the minute.
 
-## The Interoperability Problem: When PLCs Won't Talk
+**Refineries and chemical plants** manage temperatures, pressures, and emergency shutdown sequences in environments where a control failure is a safety event.
 
-Dick Morley solved factory automation in 1968. But as PLC manufacturers raced to capture the market he created, they built incompatible proprietary ecosystems, and vendor lock-in became the industry's unintended legacy.
+**Distribution centers** run conveyor networks, sorters, and automated storage. A package is scanned, routed, and diverted to the correct lane through thousands of decisions per hour.
 
-Every major PLC manufacturer built their own proprietary ecosystem. Siemens controllers speak different protocols than Rockwell. Schneider systems don't natively understand Mitsubishi. Walk into any facility and you'll find a mix of PLCs, legacy systems, new equipment, different vendors. They all need to exchange data. Temperature from the Siemens PLC needs to trigger an action on the Rockwell controller. Production counts need to feed from one system into another.
+**Airport baggage systems** are entirely PLC-controlled, moving bags from check-in through screening to the right carousel by destination and departure time.
 
-The traditional solution? Custom integration work. Hire specialized engineers. Write gateway applications. Deploy protocol converters. Maintain separate codebases for each connection. When something breaks, troubleshoot across multiple proprietary systems while production sits idle.
+**Mining operations** run conveyors, crushers, and separation equipment continuously with minimal supervision, monitoring equipment health and shutting down automatically on fault.
 
-The cost isn't just technical debt. It's strategic paralysis. Companies stick with a single vendor not because they offer the best solution, but because switching is too painful.
+The common thread is long-term reliability in demanding conditions. Controllers installed in the 1990s are still running in many of these facilities, executing the same logic, scan after scan, exactly as designed.
 
-## FlowFuse: Breaking the Integration Barrier
+## How PLCs communicate
 
-[FlowFuse](/), built on [Node-RED](/node-red/), solves the protocol chaos that vendor lock-in created. Node-RED emerged from IBM in 2013, created by [Nick O'Leary](https://www.linkedin.com/in/nickoleary/) (now CTO of FlowFuse) and [Dave Conway-Jones](https://github.com/dceejay) as a visual programming tool for connecting devices and APIs, drag nodes onto a canvas, wire them together, deploy. The industrial community built protocol nodes for Modbus, Profinet, EtherNet/IP, S7comm, OPC UA, and more. It became the universal translator for industrial systems.
+A PLC on its own is a closed loop. The moment you want data out of it, or want two controllers to coordinate, you enter the protocol layer, and this is where most automation projects actually spend their budget.
 
-![FlowFuse platform for industrial data integration connecting PLCs, Node-RED, and enterprise systems
-](./images/flowfuse-platform.png){data-zoomable}
-_FlowFuse platform for industrial data integration connecting PLCs, Node-RED, and enterprise systems_
+PLC communication happens at four rough levels.
 
-A single Node-RED instance can simultaneously communicate with Siemens S7 PLCs, Rockwell ControlLogix systems, Modbus devices, MQTT brokers, and IT systems like databases, APIs, and cloud platforms. The data flows visually. Changes deploy instantly. No compilation. No downtime. It bridges the operational technology (OT) on the factory floor with information technology (IT) systems, connecting PLCs not just to each other, but to ERP systems, historians, dashboards, and analytics platforms.
+**Fieldbus, device level.** Modbus RTU, Profibus DP, DeviceNet, and IO-Link connect sensors, drives, and remote I/O over serial or dedicated cabling. Still everywhere in brownfield plants, and often the only interface on older equipment.
 
-FlowFuse adds the enterprise infrastructure: centralized management across hundreds of edge devices, version control and rollback, role-based access, audit logging, and security at every layer. Build one flow that reads from Siemens PLCs and deploy it to every facility. When something changes, update once and push the change everywhere. Edge instances run locally even if network connections drop.
+**Industrial Ethernet.** Profinet (Siemens), [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) (Rockwell and Omron), EtherCAT (Beckhoff), and Modbus TCP carry real-time control traffic over standard Ethernet hardware with deterministic timing. This is what new installations use.
 
-[FlowFuse doesn't replace your PLCs. It connects them.](/landing/plc/) That Rockwell controller keeps running its proven logic. The Siemens system continues its scan cycle. What changes is the integration layer that lets isolated systems finally communicate.
+**Vendor-native protocols.** Each manufacturer has a protocol for reading and writing its controller's memory directly: S7comm for Siemens, CIP for Rockwell, ADS for Beckhoff, MC Protocol for Mitsubishi, FINS for Omron. Fast, well-documented, and completely incompatible with each other.
 
-A [large US manufacturing company](/customer-stories/manufacturing-digital-transformation/) with over 10,000 employees uses FlowFuse to manage thousands of Node-RED instances deployed across global facilities. These instances collect data from sensors, PLCs, and cameras on production lines, enabling them to transition from paper-based operations to real-time data visibility. A team of five developers, former manufacturing engineers, not software specialists, built hundreds of applications using Node-RED's visual programming. FlowFuse now manages deployment to thousands of remote devices and maintains multiple versions across all instances, solving what had become an unmanageable tracking challenge as they scaled.
+**Standards-based and IT-facing.** [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) provides a vendor-neutral, secure, structured interface that most modern PLCs expose directly. MQTT, often with Sparkplug B, carries data to brokers, cloud platforms, and unified namespaces. REST APIs and SQL connections handle the rest.
 
-Start small. Node-RED is open source. Connect two different PLC brands as a proof of concept. FlowFuse scales from there, one production line, then more sites, running on-premises or in the cloud as needs dictate.
-Want to see how FlowFuse handles PLC integration in your environment? [Book a demo](/book-demo/) with our team, we'll connect to your mixed-vendor systems and show you what's possible in under an hour.
+Here is what that looks like in a plant with mixed equipment:
 
-Dick Morley's hungover epiphany gave us PLCs that could be reprogrammed without rewiring. FlowFuse extends that flexibility to integration, connecting different systems without vendor permission, finally breaking the proprietary barriers Morley never intended.
+| Vendor | Common controller | Native protocol | Standards option |
+|---|---|---|---|
+| Siemens | S7-1200 / S7-1500 | S7comm, Profinet | OPC UA server built in |
+| Rockwell | CompactLogix / ControlLogix | EtherNet/IP (CIP) | OPC UA via gateway or newer firmware |
+| Beckhoff | CX series | ADS, EtherCAT | OPC UA server available |
+| Mitsubishi | MELSEC iQ-R / FX | MC Protocol, CC-Link | OPC UA via module |
+| Omron | NX / NJ | FINS, EtherNet/IP | OPC UA on select models |
+| Legacy equipment | Various | Modbus RTU/TCP | None |
+
+Most facilities run at least three of these rows simultaneously. A line installed in 1998, a cell added in 2012, and a machine commissioned last quarter all need to appear in the same production report.
+
+> Reading about protocols only gets you so far. If you have a controller on the bench, or a spare hour on a live line, this walkthrough goes tag by tag: [connect any PLC to MQTT in under an hour](/blog/2025/10/plc-to-mqtt-using-flowfuse/). It handles Siemens S7, Allen-Bradley, OPC UA, and Modbus in a single flow, runs on a free account, and needs no gateway hardware sitting in the middle.
+
+## The interoperability problem: when PLCs won't talk
+
+Dick Morley solved machine control in 1968. As manufacturers raced to capture the market he created, each built a closed ecosystem around it, and vendor lock-in became the PLC's unintended legacy.
+
+The consequences show up on every project.
+
+**Every connection is a custom build.** Reading a production count from a Siemens controller and acting on it in a Rockwell one means writing a gateway, configuring a protocol converter, or buying a middleware licence. Do that for every pair of systems and the integration layer becomes larger than the applications it serves.
+
+**Licensing scales with tags, not value.** Traditional data access is often priced per tag or per connection. A pilot on one line is affordable. Rolling out to forty lines rewrites the business case.
+
+**Brownfield is the normal case, not the exception.** Because PLCs last 20 to 30 years, no plant gets to standardize. There is always a controller nobody wants to touch, running critical logic, with an interface that predates the current engineering team.
+
+**Nobody owns the middle.** OT owns the controllers and will not accept anything that risks uptime. IT owns the databases and cloud and cannot get a route to the data. Integration work stalls in the gap between them.
+
+**Each project starts from zero.** Solve production monitoring at one plant and the next plant rebuilds it, because the solution was wired to that site's specific mix of vendors. Twelve plants produce twelve incompatible "snowflake" implementations and no shared standard.
+
+The cost is not only technical debt. It is strategic paralysis. Teams stay on one vendor not because it is the best fit, but because the switching cost has quietly become unpayable.
+
+## Solving the PLC integration problem
+
+Modern PLCs are not the hard part. Getting forty controllers from five vendors, installed across three decades, to feed one production report is.
+
+[FlowFuse](/) is the open-source Industrial Application Platform built for exactly that layer. It connects any controller, whether that is Siemens, Allen-Bradley, Omron, Mitsubishi, or a legacy Modbus device, without proprietary gateways or per-tag licensing, then routes the data to MQTT, historians, databases, dashboards, and ERP systems. Your PLCs keep running their proven logic. What changes is that their data stops being trapped.
+
+![FlowFuse platform for industrial data integration connecting PLCs, edge devices, and enterprise systems](./images/flowfuse-platform.png){data-zoomable}
+_FlowFuse connects controllers, edge devices, and enterprise systems from a single governed platform._
+
+Build the integration once, deploy it to every site, and manage it centrally instead of rebuilding a snowflake at each plant. See the [PLC integration overview](/landing/plc/) for supported protocols and reference architectures, or [connect your first controller free](https://app.flowfuse.com/account/create).
+
+Dick Morley's specification gave engineers a controller they could reprogram without touching a wire. The same freedom is now available for the integration layer above it.
