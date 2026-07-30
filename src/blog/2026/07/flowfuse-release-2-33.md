@@ -77,7 +77,6 @@ FlowFuse now keeps an audit trail of MCP activity. When an AI client reads data 
 
 If you answer to an OT security team or an auditor, "the AI did it" is not an acceptable line in an incident report. The audit trail turns AI activity into the same kind of accountable, reviewable record you already expect from human operators.
 
-
 *Availability: Hub and Edge from v2.33.*
 
 ### Scoped Personal Access Tokens
