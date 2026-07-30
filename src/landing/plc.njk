@@ -26,10 +26,10 @@ meta:
             FlowFuse can augment or replace traditional SCADA systems. It provides real-time monitoring, custom dashboards via FlowFuse Dashboard, alarm management, and control logic — without the cost and inflexibility of monolithic SCADA software. Many organizations start by running FlowFuse alongside their existing SCADA to add cloud connectivity or modern dashboards, then expand from there.
         - question: "How do I send data from a PLC to the cloud?"
           answer: >
-            Install the free FlowFuse Device Agent on an industrial PC, Raspberry Pi, or supported edge device already inside your plant network. Connect it to your PLC over OPC UA, S7, EtherNet/IP, or Modbus, then add a flow that publishes the tag data to MQTT, a REST API, or a cloud data platform. The Device Agent only opens outbound connections, so PLC data reaches the cloud without opening inbound firewall ports or standing up a VPN.
+            Install the FlowFuse Device Agent on an industrial PC, Raspberry Pi, or supported edge device already inside your plant network. Connect it to your PLC over OPC UA, S7, EtherNet/IP, or Modbus, then add a flow that publishes the tag data to MQTT, a REST API, or a cloud data platform. The Device Agent only opens outbound connections, so PLC data reaches the cloud without opening inbound firewall ports or standing up a VPN.
         - question: "Do I need a dedicated PLC-to-cloud gateway?"
           answer: >
-            No. A dedicated hardware gateway is one way to bridge a PLC to the cloud, but it adds cost, another vendor relationship, and another device to patch and maintain. FlowFuse replaces that hardware with software — install the free Device Agent on an industrial PC or edge device you already own, and it handles protocol translation, local buffering, and the outbound cloud connection without a separate gateway appliance.
+            No. A dedicated hardware gateway is one way to bridge a PLC to the cloud, but it adds cost, another vendor relationship, and another device to patch and maintain. FlowFuse replaces that hardware with software — install the Device Agent on an industrial PC or edge device you already own, and it handles protocol translation, local buffering, and the outbound cloud connection without a separate gateway appliance.
         - question: "Can one platform connect both PLC and SCADA data to the cloud?"
           answer: >
             Yes. FlowFuse reads tag and alarm data directly from PLCs over OPC UA, S7, EtherNet/IP, or Modbus, and can also poll or subscribe to existing SCADA historians and OPC servers. Both sources are normalized in the same flow and published to the same MQTT broker or cloud destination, so you don't need separate integrations for the controller layer and the supervisory layer.
@@ -159,7 +159,7 @@ resources:
                     </p>
                     <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                         <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'plc'})">TALK TO AN EXPERT</a>
-                        <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED FREE</a>
+                        <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED NOW</a>
                     </div>
                 </div>
                 <div class="md:w-2/5 flex-grow relative">
@@ -239,7 +239,7 @@ resources:
         <div class="max-w-screen-lg mx-auto">
             <h2 class="mb-6">Send <span class="text-indigo-600">PLC Data to the Cloud</span>, Without a Gateway or Vendor Lock-In</h2>
             <p class="mb-10 max-w-3xl">
-                The fastest way to get PLC data to the cloud is to skip the dedicated gateway appliance entirely. Install the free FlowFuse Device Agent on an industrial PC, Raspberry Pi, or supported edge device already inside your plant network. It connects to your PLC over OPC UA, S7, EtherNet/IP, or Modbus, and opens only outbound connections to publish that data to MQTT, a REST API, or a cloud data platform — no inbound firewall rules, no VPN, no separate gateway hardware to buy and maintain.
+                The fastest way to get PLC data to the cloud is to skip the dedicated gateway appliance entirely. Install the FlowFuse Device Agent on an industrial PC, Raspberry Pi, or supported edge device already inside your plant network. It connects to your PLC over OPC UA, S7, EtherNet/IP, or Modbus, and opens only outbound connections to publish that data to MQTT, a REST API, or a cloud data platform — no inbound firewall rules, no VPN, no separate gateway hardware to buy and maintain.
             </p>
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
