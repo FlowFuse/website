@@ -587,7 +587,7 @@ sections:
             release: "2.33"
         solutions: [mes, scada, data-integration]
         showOnPricing: true
-        tags: [cloud, self-hosted]
+        tags: []
         cloud:
           enterprise:
             value: true
@@ -717,7 +717,7 @@ sections:
             release: "2.33"
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
-        tags: [cloud, self-hosted]
+        tags: []
         cloud:
           enterprise:
             value: true
@@ -737,7 +737,7 @@ sections:
             release: "2.33"
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: false
-        tags: [cloud, self-hosted]
+        tags: []
 
       - id: hipaa
         label: BAA for HIPAA
@@ -814,7 +814,7 @@ sections:
             release: "2.33"
         solutions: [mes, scada, uns, it-ot-middleware, data-integration]
         showOnPricing: false
-        tags: [cloud, self-hosted]
+        tags: []
 
       - id: dashboard
         label: Node-RED Dashboard
