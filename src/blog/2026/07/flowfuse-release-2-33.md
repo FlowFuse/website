@@ -56,7 +56,7 @@ This release also closes a rough edge in Tables itself: databases with tables ou
 
 ![The Expert answering a question about a FlowFuse Tables database](./images/chat.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-*Availability: Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.33.*
+*Availability: This feature is available to FlowFuse Hub and Edge customers on FlowFuse Cloud and Self Hosted from v2.33.*
 
 ## Your Dashboards, All in One Place
 
