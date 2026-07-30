@@ -44,7 +44,7 @@ Modbus is one of the most common protocols on the factory floor, but the communi
 
 ![The FlowFuse certified Modbus node listed in the editor's palette manager](https://placehold.co/1600x900?text=Certified+Modbus+Node){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-*This feature is available exclusively to FlowFuse Hub customers, on both FlowFuse Cloud and Self Hosted, from v2.33.*
+*This feature is available exclusively to FlowFuse Edge customers, on both FlowFuse Cloud and Self Hosted, from v2.33.*
 
 ## Your Dashboards, All in One Place
 
