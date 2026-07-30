@@ -1,0 +1,65 @@
+title: Certified Nodes
+intro: >-
+  A curated set of connector nodes — maintained, security-patched, and supported
+  by FlowFuse, so a production connection never rests on an unmaintained community
+  package. Hub covers the systems your business runs on; Edge covers the plant floor.
+
+bundles:
+  - id: it
+    label: Certified Nodes — IT
+    tier: Hub
+    accent: indigo
+    tagline: Move data between the databases, brokers, and APIs your business runs on.
+    groups:
+      - label: Connectivity & data
+        nodes:
+          - name: Redis
+            abbr: RE
+            description: In-memory cache and fast key/value store.
+          - name: MQTT
+            abbr: MQ
+            description: Lightweight pub/sub messaging for IoT and event-driven flows.
+          - name: HTTP Request
+            abbr: HT
+            description: Call REST APIs and web services.
+      - label: AI
+        nodes:
+          - name: AI nodes
+            abbr: AI
+            description: LLM-powered flows with Gemini, Claude, ChatGPT, and Ollama.
+            both: true
+          - name: MCP Server
+            abbr: MCP
+            description: Turn your flows into a Model Context Protocol server so AI agents can call your logic as tools.
+            both: true
+
+  - id: ot
+    label: Certified Nodes — OT
+    tier: Edge
+    accent: red
+    tagline: Connect the PLCs, machines, and controllers across your plant floor.
+    groups:
+      - label: Industrial connectivity
+        nodes:
+          - name: OPC-UA
+            abbr: OP
+            description: The standard for industrial machine interoperability.
+          - name: Modbus TCP & RTU
+            abbr: MO
+            description: Ubiquitous protocol for PLCs and field devices.
+          - name: RTSP
+            abbr: RT
+            description: Stream video from IP cameras.
+          - name: EtherNet/IP
+            abbr: EI
+            description: Rockwell / Allen-Bradley industrial Ethernet protocol.
+      - label: AI
+        nodes:
+          - name: AI nodes
+            abbr: AI
+            description: LLM-powered flows with Gemini, Claude, ChatGPT, and Ollama.
+            both: true
+          - name: MCP Server
+            abbr: MCP
+            description: Turn your flows into a Model Context Protocol server so AI agents can call your logic as tools.
+            both: true

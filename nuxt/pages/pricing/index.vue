@@ -44,6 +44,8 @@ useSchemaOrg([
         </UPricingPlans>
         <SocialProof class="mt-16" />
 
+        <CertifiedNodes />
+
         <h2 class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
         <UPricingTable
         v-if="featureCatalog"
