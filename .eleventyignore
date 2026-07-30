@@ -1,0 +1,3 @@
+# Changelog is served by Nuxt (nuxt/content.config.ts sources these files directly);
+# 11ty must not also render them.
+src/changelog/**/*.md

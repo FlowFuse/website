@@ -1,0 +1,17 @@
+title: Edge
+tierId: edge
+order: 1
+description: Deploy, manage and scale industrial applications across production sites with centralized governance and certified industrial connectivity.
+badge: For OT teams
+features:
+  - Industrial applications
+  - PLC & machine connectivity
+  - OT-certified nodes
+  - MQTT Broker
+  - DevOps Pipelines
+  - Device Group Management
+button:
+  label: Contact us
+  to: /contact-us/
+  external: true
+  variant: solid

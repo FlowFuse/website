@@ -1,0 +1,30 @@
+{# ============================================================
+   USE CASE CONTEXT BAND - labeled links to the industry lens
+   pages. Reads `industries[]` (slugs) from page front-matter.
+   The slug->label maps mirror
+   the Use Cases Asana project fields (source of truth).
+   Rendered near the end of the use-case page, not under the hero.
+   ============================================================ #}
+{% set industryLabels = {
+    "automotive": "Automotive",
+    "food-beverage": "Food & Beverage",
+    "life-sciences": "Life Sciences",
+    "aviation-aerospace": "Aviation & Aerospace",
+    "aerospace-components": "Aerospace Components",
+    "renewables": "Renewables",
+    "semiconductors": "Semiconductors",
+    "electronics-appliances": "Electronics & Appliances"
+} %}
+{% if industries %}
+<div class="w-full px-6 py-10 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-[12rem_1fr] gap-x-8 gap-y-4 items-baseline">
+        {% if industries %}
+        <span class="uppercase text-xs font-semibold text-gray-400 tracking-widest">Common in these industries</span>
+        <p class="m-0 text-gray-700">
+            {% for slug in industries %}<a href="/industries/{{ slug }}/" class="text-indigo-600 hover:text-indigo-800 font-medium">{{ industryLabels[slug] or slug }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+            <span class="text-gray-400">&middot;</span> <a href="/industries/" class="text-gray-500 hover:text-indigo-600 text-sm">all industries</a>
+        </p>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

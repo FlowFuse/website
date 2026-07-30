@@ -1,8 +1,0 @@
-{
-    "layout": "layouts/documentation.njk",
-    "nav": "docs",
-    "searchTitle": "Docs",
-    "tags": [
-        "docs"
-    ]
-}

@@ -6,6 +6,7 @@ date: 2025-10-09
 keywords: 
 authors: ["nick-oleary"]
 image: /blog/2025/10/images/node-red-revolution.png
+video: n9HhZCh0Ndg
 tags:
   - flowfuse
   - node-red
