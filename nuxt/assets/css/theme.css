@@ -21,6 +21,39 @@
     --ui-text-highlighted: var(--color-gray-700);
 }
 
+/* Single-theme safety net. colorMode is pinned to light in nuxt.config.ts, but
+   the class that drives Nuxt UI's dark palette is applied by an inline script
+   from client state, so a stale or hand-set value can still put `.dark` on
+   <html>. The page background comes from the 11ty stylesheet and has no dark
+   variant, so when that happened, headings resolved to near-white on white and
+   became invisible. Re-point Nuxt UI's dark tokens at its own light values so
+   the class cannot change what anything looks like. Keep this in sync with
+   Nuxt UI's `:root` block if a version bump adds tokens. */
+.dark {
+    --ui-text-dimmed: var(--ui-color-neutral-400);
+    --ui-text-muted: var(--ui-color-neutral-500);
+    --ui-text-toned: var(--ui-color-neutral-600);
+    --ui-text: var(--ui-color-neutral-700);
+    --ui-text-highlighted: var(--ui-color-neutral-900);
+    --ui-text-inverted: #fff;
+    --ui-bg: #fff;
+    --ui-bg-muted: var(--ui-color-neutral-50);
+    --ui-bg-elevated: var(--ui-color-neutral-100);
+    --ui-bg-accented: var(--ui-color-neutral-200);
+    --ui-bg-inverted: var(--ui-color-neutral-900);
+    --ui-border: var(--ui-color-neutral-200);
+    --ui-border-muted: var(--ui-color-neutral-200);
+    --ui-border-accented: var(--ui-color-neutral-300);
+    --ui-border-inverted: var(--ui-color-neutral-900);
+}
+
+/* Nuxt UI sets `color-scheme: dark` alongside those tokens, which would darken
+   native scrollbars and form controls on our light pages. */
+.dark,
+.dark * {
+    color-scheme: light;
+}
+
 /* Same base heading sizes as src/css/style.css (11ty). Declared here, not just
    there, because Tailwind v4's Preflight (imported above) loads after that
    legacy stylesheet in <head> and wins equal-specificity ties on h1-h5.

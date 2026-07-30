@@ -50,11 +50,20 @@ export default defineNuxtConfig({
 
     css: ['~/assets/css/theme.css'],
 
-    // Dark mode isn't implemented across the site yet — force light mode so
-    // Nuxt UI components don't switch to dark when the visitor's OS prefers it.
+    // The site ships a single (light) theme, so pin @nuxtjs/color-mode (installed
+    // by @nuxt/ui) to light.
+    //
+    // `preference` alone only covers first-time visitors. The module's inline head
+    // script trusts a stored preference over this config, and its `app:mounted`
+    // hook then copies that stored value back into the reactive state, so anyone
+    // who visited while the default was still "system" keeps getting `.dark` on
+    // <html> on every load. `storageKey` is part of that script's lookup, so
+    // renaming it retires every stale value in one go; from then on the only value
+    // ever written is "light", because the site has no theme switcher.
     colorMode: {
         preference: 'light',
         fallback: 'light',
+        storageKey: 'flowfuse-color-mode',
     },
 
     // Heebo is already loaded via the Google Fonts <link> in app.head.
