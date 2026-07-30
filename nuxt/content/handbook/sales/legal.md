@@ -19,6 +19,8 @@ Any redline or non-standard MSA review must also have a task in the [Deal Desk A
 
 All legal document reviews, including NDAs, MSAs, DPAs, security agreements, and customer paper, must be submitted through the [Deal Desk](https://flowfuse.com/handbook/sales/engagements/#deal-approval-process-(deal-desk)) process in Asana before review or approval.
 
+Signed subscription agreements and quotes/P.O.'s must be stored in the Google Drive folders listed in the [Closing a deal](/handbook/sales/engagements/#closing-a-deal) section.
+
 ## Accepted Payment Methods
 
 For self-service customers, Stripe handles the payments with a variaty of
