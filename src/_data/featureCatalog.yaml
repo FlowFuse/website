@@ -582,7 +582,9 @@ sections:
         label: FlowFuse Tables
         description: "Integrated database feature for storing, reading, writing, and querying data within FlowFuse."
         docsLink: /docs/user/ff-tables/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/07/expert-tables-automation/
+            release: "2.33"
         solutions: [mes, scada, data-integration]
         showOnPricing: true
         tags: [cloud, self-hosted]
