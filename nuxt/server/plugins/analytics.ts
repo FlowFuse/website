@@ -2,7 +2,7 @@ let headHtml: string | null = null
 let bodyHtml: string | null = null
 
 export default defineNitroPlugin((nitroApp) => {
-    if (import.meta.dev) return
+    if (import.meta.dev || process.env.CONTEXT !== 'production') return
 
     nitroApp.hooks.hook('render:html', async (html) => {
         if (html.bodyAppend.some(s => s.includes('cc.min.js'))) return
