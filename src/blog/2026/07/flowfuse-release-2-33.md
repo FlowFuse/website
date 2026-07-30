@@ -9,6 +9,7 @@ tags:
   - flowfuse
   - news
   - releases
+tldr: "2.33 runs the Device Agent installer from your command line, enrolling edge machines in a few guided steps, and adds a supported Modbus driver spanning TCP and Serial. Dashboards get their own spot in the team menu, and the Expert can describe or preview what lives in your Tables on request. Rounding it out: team-scoped access tokens, SAML group-to-role mapping, and a log of each MCP call."
 release: "2.33"
 # Only the three sections with a published changelog entry are wired up. The
 # headings below must match the body text exactly or the transform silently
