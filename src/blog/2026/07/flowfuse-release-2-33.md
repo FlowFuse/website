@@ -90,7 +90,7 @@ Previously a PAT carried the full permissions of the user who created it. If you
 
 **Getting started:** [CONFIRM: Team Settings path and scope options]
 
-![The token creation dialog with individual permission scopes selected](https://placehold.co/1600x900?text=Scoped+Access+Tokens){data-zoomable style="border: 2px solid #E5E7EB;"}
+![The token creation dialog with individual permission scopes selected](./images/scoped-pats.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 
 *Availability: Hub and Edge from v2.33.*
 
