@@ -15,7 +15,7 @@ FlowFuse Expert can now look up your FlowFuse Tables databases directly. Ask it 
 This is a fixed, read-only preview, not a query engine: there's no filtering, sorting, or paging through it, and no writes. For anything beyond that quick look, the Expert can help you build it as a flow with the `tables-query` node instead.
 
 ![The Expert listing the tables in a FlowFuse Tables database, grouped by schema](./images/chat.png){data-zoomable}
-*Ask the Expert about your Tables databases and it calls the right tools and reports back*
+*The Expert listing a database's tables, grouped by schema*
 
 Alongside this, FlowFuse Tables now correctly supports tables that live in a schema other than `public`. Previously, viewing data for a table outside the default schema could fail. Tables and their schema now show up correctly throughout the Tables UI: next to each table name in the list, and as `schema_name.table_name` (with a copy button) in the table detail view.
 
