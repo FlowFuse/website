@@ -12,7 +12,7 @@ issues:
 
 FlowFuse Expert can now look up your FlowFuse Tables databases directly. Ask it to list the databases on your team, show you the tables in a database, or describe a table's schema, and it calls the right tools and reports back, without you needing to open the Tables view yourself. It can also preview a table's data: up to 10 rows, exactly as stored.
 
-This is a fixed, read-only preview, not a query engine — there's no filtering, sorting, or paging through it, and no writes. For anything beyond that quick look, build a flow with the `tables-query` node instead.
+This is a fixed, read-only preview, not a query engine: there's no filtering, sorting, or paging through it, and no writes. For anything beyond that quick look, build a flow with the `tables-query` node instead.
 
 ![The Expert listing the tables in a FlowFuse Tables database, grouped by schema](./images/chat.png){data-zoomable}
 *Ask the Expert about your Tables databases and it calls the right tools and reports back*
