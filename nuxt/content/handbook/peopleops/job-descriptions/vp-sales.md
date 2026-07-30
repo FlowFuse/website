@@ -32,6 +32,12 @@ Collaboration & Scope
 * Partners with Marketing on demand generation, campaigns, and messaging and pipeline growth.
 * Aligns with Engineering and Solutions Engineering on technical validation.
 
+Team & Scope
+* Owns the commercial team as its direct manager: setting standards, coaching individually, and holding each function accountable to them.
+* Stays close enough to the work to assess performance first-hand rather than relying on reported summaries.
+* Guides a capable team through a scaling phase, building structure and capability as it grows.
+* A build role, not a maintenance one: the motion works and needs to be scaled, not inherited and preserved.
+
 Values & Culture
 * Transparency and trust in all customer and team interactions.
 * Ownership and accountability in delivering outcomes.
