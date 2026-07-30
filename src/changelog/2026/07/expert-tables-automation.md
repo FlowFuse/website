@@ -22,4 +22,4 @@ Alongside this, FlowFuse Tables now correctly supports tables that live in a sch
 ![The Tables explorer showing each table's schema next to its name, and the qualified schema.table name with a copy button in the header](./images/tables-view.png){data-zoomable}
 *The schema label beside each table name, and the qualified `schema.table` name with a copy button in the header*
 
-This feature is available to Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.33.
+This feature is available to FlowFuse Hub and FlowFuse Edge customers on Cloud and Self Hosted from v2.33
