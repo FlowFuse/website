@@ -41,14 +41,14 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source'],
 
-    css: ['~/assets/css/theme.css'],
-
-    // Dark mode isn't implemented across the site yet — force light mode so
-    // Nuxt UI components don't switch to dark when the visitor's OS prefers it.
-    colorMode: {
-        preference: 'light',
-        fallback: 'light',
+    // Captured at build time (Netlify sets CONTEXT during the build, not necessarily
+    // in the deployed Function's runtime), then baked into the server bundle via
+    // runtimeConfig so analytics.ts doesn't depend on a process.env read at request time.
+    runtimeConfig: {
+        isProductionContext: process.env.CONTEXT === 'production'
     },
+
+    css: ['~/assets/css/theme.css'],
 
     // Heebo is already loaded via the Google Fonts <link> in app.head.
     // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
@@ -133,7 +133,9 @@ export default defineNuxtConfig({
         serverAssets: [
             {
                 baseName: 'analytics',
-                dir: '../src/_includes/analytics'
+                // Nitro resolves this dir against nitro.srcDir (Nuxt's serverDir, i.e. nuxt/server),
+                // not against the nuxt/ root — so this needs one more level up than it looks like.
+                dir: '../../src/_includes/analytics'
             },
             {
                 baseName: 'team',
@@ -224,10 +226,15 @@ export default defineNuxtConfig({
     },
     
     ui: {
-    theme: {
-      colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'highlight']
-    }
-  },
+        // Dark mode isn't implemented across the site yet. Disabling the color-mode
+        // module here (rather than just setting a light `colorMode` preference) is
+        // what actually stops Nuxt UI from switching to dark for visitors whose OS
+        // prefers it — see https://ui.nuxt.com/docs/getting-started/integrations/color-mode/nuxt#configuration
+        colorMode: false,
+        theme: {
+            colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'highlight']
+        }
+    },
     // Dev proxying to 11ty is handled by server/middleware/legacy.ts
     // to allow per-route exclusions as pages are migrated.
 })
