@@ -42,7 +42,7 @@ A Keyence smart camera inspects a weld and sends the result straight into Node-R
 
 A separate, fully asynchronous process logs high-frequency raw sensor data (100ms polling) the entire time. The result: every part gets a full, queryable history, and the dashboard shows pass/fail data live as parts move down the line.
 
-### Demo 2: Cutting cloud printing SaaS out of the picture
+### Manufacturing Label Printing with Edge-Based Automation
 
 Label printing sounds simple until you're running it at manufacturing volume. Commercial cloud-printing SaaS platforms brought three problems Aperia couldn't live with:
 
