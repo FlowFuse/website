@@ -79,6 +79,17 @@ from = "/landing/accelerating-industrial-innovation-with-low-code-platforms/"
 to = "/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/"
 status = 301
 
+# Commercial Organization handbook restructure — flattened org/ pages
+[[redirects]]
+from = "/handbook/sales/org/account-executives/"
+to = "/handbook/sales/sales-team/"
+status = 301
+
+[[redirects]]
+from = "/handbook/sales/org/"
+to = "/handbook/sales/"
+status = 301
+
 [[redirects]]
 from = "/*"
 to = "/.netlify/functions/server"
