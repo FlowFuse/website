@@ -16,6 +16,18 @@ const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
   content: item.answer,
 })))
 
+// The comparison table should only show features that differ between tiers.
+// Features shared by every tier don't belong in a comparison — they're listed
+// separately below as a plain "core features" dump, grouped by their original
+// category so ~37 shared features don't read as one undifferentiated list.
+const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
+  .map(section => ({ ...section, features: section.features.filter(f => f.tiers.edge !== f.tiers.hub) }))
+  .filter(section => section.features.length > 0))
+
+const coreFeatureSections = computed(() => (featureCatalog.value?.sections ?? [])
+  .map(section => ({ ...section, features: section.features.filter(f => f.tiers.edge === f.tiers.hub) }))
+  .filter(section => section.features.length > 0))
+
 // UPricingTable's feature-title slot types `feature` without `description`,
 // even though the featureCatalog content schema does define it.
 interface CatalogFeature {
@@ -54,7 +66,7 @@ useSchemaOrg([
         v-if="featureCatalog"
         class="mt-16"
         :tiers="tableTiers"
-        :sections="featureCatalog.sections"
+        :sections="comparisonSections"
         :ui="{
             tier: 'border-x border-t border-b border-default rounded-t-lg bg-radial-[at_bottom_right] from-indigo-50 to-white',
             td: 'border-x border-default',
@@ -95,6 +107,22 @@ useSchemaOrg([
             <span v-else>{{ feature.title }}</span>
         </template>
         </UPricingTable>
+
+        <div v-if="coreFeatureSections.length" class="mt-28">
+        <h2 class="text-center mb-2"><span class="text-indigo-600">FlowFuse</span> Core Features</h2>
+        <p class="text-center text-gray-500 mb-10">Included in every FlowFuse plan</p>
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div v-for="section in coreFeatureSections" :key="section.id">
+                <h3 class="font-semibold text-sm text-gray-900 mb-3">{{ section.title }}</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+                    <li v-for="feature in section.features" :key="feature.id" class="flex items-center gap-2">
+                        <UIcon name="i-lucide-check" class="size-4 shrink-0 text-indigo-600" />
+                        <span class="text-sm text-gray-700">{{ feature.title }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
 
         <div v-if="faq" class="mt-28 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
