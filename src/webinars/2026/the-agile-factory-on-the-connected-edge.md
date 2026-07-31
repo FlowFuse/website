@@ -2,33 +2,64 @@
 title: "The Agile Factory on the Connected Edge: Streamlining Operational Complexity into High-Value Insights"
 subtitle: Unifying Uncoordinated Edge Assets into a Centralized Smart Farm Alongside Custom Endpoints, and Beyond
 meta:
-    description: FlowFuse eliminates shop floor hardware friction. Turn uncoordinated edge assets into a synchronized, high-performing industrial data pipeline.
+    description: See how Aperia Technologies replaced traditional PLCs with Node-RED and FlowFuse, connecting 100+ edge devices into a real-time MongoDB data pipeline.
 image: /images/webinars/the-agile-factory-on-the-connected-edge.jpg
 date: 2026-07-30
 time: 17:00 CET (11:00am ET)
 duration: 75
-video:
+video: # TODO: paste the recording URL here (YouTube/Wistia link)
 hosts: ["rhythm-agarwal", "kristopher-sandoval"]
 hubspot:
     formId: bb64da93-29ff-46be-9422-7d8694491f2f
     downloadFormId: 
 ---
-Instead of struggling to orchestrate a fragmented factory using legacy PLCs, discover how Aperia Technologies transitioned from traditional LabVIEW-based fixtures and equipment to a fully cloud-native edge architecture. This session provides a practical roadmap for transforming unpredictable shop floor elements, from a simple handheld screwdriver, printer, or barcode scanner to an entire farm of 24/7 custom automated machinery running its own local control logic, and molding them into a secure, enterprise-wide data masterpiece powered by FlowFuse and Node-RED.
+A testing machinery farm so good that R&D took over half of it. That's the problem [Aperia Technologies](https://aperiatech.com/) — maker of the Halo automatic tire inflation and fleet monitoring system — had to solve.
 
 <!--more-->
 
-Imagine building a custom testing machinery farm so effective that your product design team takes over half of it to push R&D to the next horizon. While a testament to great engineering, it quickly triggers a shop floor nightmare. Suddenly, you are forced to handle the chaos of juggling multiple software environments, addressing non-stop feature requests, and preventing physical part mix-ups, all while trying to maintain 24/7 production, feed real-time machine status updates to cross-functional teams, and deliver a groundbreaking product to your customers. Driven by a critical need for faster team enablement, lower costs, and streamlined software management, relying on traditional PLCs or fragmented document control simply cannot scale. Without a centralized digital anchor, this level of operational friction paralyzes a factory floor.
+Production still had to run 24/7. R&D still needed to experiment. And the usual fix, more [PLCs](/blog/2025/12/what-is-plc/), couldn't scale across a shop floor running over 100 edge devices — from handheld scanners to custom test machinery.
 
-In this webinar, Rhythm Agarwal and Kristopher Sandoval will reveal how Aperia Technologies tackled that exact problem with the connected nature of Node-RED via FlowFuse, turning an engineering nightmare into operational bliss. We will share the exact strategies used to harmonize competing R&D and production demands across a fleet of 100+ edge devices.
+In this session, Rhythm Agarwal (Senior Manufacturing Test Engineer at Aperia) and Kristopher Sandoval (FlowFuse) walk through how Aperia rebuilt its shop floor as an edge-native system — no PLC layer, no rip-and-replace, and no one-off fix per machine.
 
-Rhythm and Kristopher will talk about:
+## What Aperia built
 
-- **Ditching the PLC:** The rationale, architectural blueprint, and cost-saving benefits of building a ground-up, cloud-native factory without traditional PLCs.
-- **The Integrated Data Backbone:** How edge devices funnel high-frequency operational data smoothly into an internally developed, robust MongoDB backend for real-time logging and total asset traceability.
-- **Direct Hardware Interfacing:** Practical examples of Node-RED communicating directly with diverse industrial equipment (such as laser etchers and scanners, vibration welders) using MODBUS-TCP, RS-232, and raw TCP. Bonus: Multi stack vision system.
-- **Enforcing strict asset traceability** at the edge, binding physical smart fixtures and label printers into a synchronized loop.
-- **FlowFuse Fleet Management:** How FlowFuse provides robust version control and allows engineering teams to securely deploy logic updates to 40 edge machines within a tight 30-minute switchover window.
-- **Showcase live machine status** and performance data.
-- **Interactive Q&A Session:** Troubleshooting your specific shop floor integration and scalability challenges with our engineering team.
+- **System Agility, not vendor lock-in.** Smart fixtures run Node-RED directly, managed by FlowFuse — extending the shop floor instead of replacing it.
+- **Every protocol, one platform.** Node-RED talks straight to sensors, scanners, and actuators using [MODBUS-TCP](/node-red/protocol/modbus/), [RS-232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), and [raw TCP](/node-red/core-nodes/tcp-in/) — converting incompatible protocols into one cohesive data flow.
+- **An event-driven bridge to the data layer.** Every station logs into an internally built [MongoDB](/node-red/database/mongodb/) backend the moment a real event happens on the floor, not on a batch schedule.
+- **Operational scaling, not one-off snowflakes.** Engineering pushes code changes to entire device groups from a single pipeline, with full version control — the same fix applied consistently everywhere, instead of once per machine.
 
-This webinar is ideal for Controls Engineers, IIoT Solutions Architects, and Manufacturing Operations Managers who want to master the art of balancing rapid R&D experimentation with stable, 24/7 production data pipelines without drowning in custom code. Don't miss out on joining us live to uncover how to leverage FlowFuse as your ultimate collaborative canvas, turning daily hardware friction into a beautifully choreographed automation dance.
+## Inside the demos
+
+Two real production examples anchored the session.
+
+### Demo 1: End-of-line weld testing, with a "birth certificate" for every part
+
+A Keyence smart camera inspects a weld and sends the result straight into Node-RED. From there, a custom sequence (Aperia calls it *tap create → tap push → tap close*) does the rest:
+
+1. **Tap create** verifies the part's serial number and fixture, then generates a MongoDB record for that specific unit — its "birth certificate" — in milliseconds.
+2. **Tap push** sends the sensor reading to the cloud, which looks up the live spec for that station, evaluates pass/fail, and appends the result to the same record.
+3. **Tap close** stamps the final pass/fail verdict and resets the station for the next part.
+
+A separate, fully asynchronous process logs high-frequency raw sensor data (100ms polling) the entire time. The result: every part gets a full, queryable history, and the dashboard shows pass/fail data live as parts move down the line.
+
+### Demo 2: Cutting cloud printing SaaS out of the picture
+
+Label printing sounds simple until you're running it at manufacturing volume. Commercial cloud-printing SaaS platforms brought three problems Aperia couldn't live with:
+
+- Per-label transaction pricing that penalizes high-volume production
+- Opaque third-party desktop listeners that silently crash on the shop floor
+- Zero diagnostics when a print job fails
+
+Aperia's fix: a centralized, decoupled printing architecture built on Node-RED. A station that needs a label (a failed part, a passed part, a rework tag) emits a lightweight MQTT request the moment that event happens — machine ID, part number, file location. A hosted Node-RED "printing station" listens for these requests and prints, reusing Aperia's existing Bartender label templates. No per-label fees, no black-box listener, no data moving until something on the floor actually happens.
+
+### Demo 3: Changing a torque spec fleet-wide, with full version control
+
+To show deployment in practice, Rhythm changed the torque limit on a screwdriver spec, captured it as a snapshot (FlowFuse's equivalent of a commit), and deployed it with one pipeline run to every device in the Halo Inflator Line 1 group. No custom PLC logic, no per-machine reprogramming.
+
+## Who this is for
+
+Controls Engineers, IIoT Solutions Architects, and Manufacturing Operations Managers balancing rapid R&D experimentation with stable, 24/7 production data pipelines — without drowning in custom code. It's also relevant if you're on an IT team trying to give OT teams the tools to build their own solutions, without taking on that build yourselves.
+
+## Want to see how this applies to your shop floor?
+
+[Talk to our team](/book-demo) about your specific edge connectivity and PLC-replacement challenges, or explore the [Edge Connectivity](/use-cases/edge-connectivity/) use case to see how FlowFuse builds, deploys, and governs operational applications across every plant and production line — distributed to the edge.

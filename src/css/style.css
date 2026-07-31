@@ -1,4 +1,4 @@
-@layer vendor, theme, base, components, overrides, utilities;
+@layer vendor, theme, base, components, utilities, overrides;
 
 @config "../../tailwind.config.js";
 @import "tailwindcss";
