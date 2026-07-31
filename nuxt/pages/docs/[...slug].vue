@@ -45,7 +45,7 @@ const breadcrumbs = computed(() => {
 </script>
 
 <template>
-  <div class="w-full pl-6 bg-white/50">
+  <div class="w-full pl-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->

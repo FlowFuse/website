@@ -63,7 +63,7 @@ defineOgImage('Default', {
 </script>
 
 <template>
-  <div class="light w-full pl-6 bg-white">
+  <div class="light w-full pl-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->
