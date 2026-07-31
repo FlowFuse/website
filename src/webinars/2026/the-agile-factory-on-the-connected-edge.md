@@ -52,7 +52,7 @@ Label printing sounds simple until you're running it at manufacturing volume. Co
 
 Aperia's fix: a centralized, decoupled printing architecture built on Node-RED. A station that needs a label (a failed part, a passed part, a rework tag) emits a lightweight MQTT request the moment that event happens — machine ID, part number, file location. A hosted Node-RED "printing station" listens for these requests and prints, reusing Aperia's existing Bartender label templates. No per-label fees, no black-box listener, no data moving until something on the floor actually happens.
 
-### Demo 3: Changing a torque spec fleet-wide, with full version control
+### Deploying Production Changes Across Multiple Devices
 
 To show deployment in practice, Rhythm changed the torque limit on a screwdriver spec, captured it as a snapshot (FlowFuse's equivalent of a commit), and deployed it with one pipeline run to every device in the Halo Inflator Line 1 group. No custom PLC logic, no per-machine reprogramming.
 
