@@ -124,6 +124,8 @@ Tone should be:
 
 For broader principles on interacting with the community as a FlowFuse team member, see our [Community Guidelines](/handbook/marketing/community/community-guidelines/).
 
+If you haven't already, set up your personal LinkedIn profile to reflect that you work at FlowFuse — see [Branding: LinkedIn Profile](/handbook/design/branding/#linkedin-profile).
+
 ### Commenting on third-party content (e.g. posts by others)
 
 Whether responding from our company profile or a personal one, the focus here should be adding value to the conversation. Less “selling”, more listening, supporting, and acknowledging.
