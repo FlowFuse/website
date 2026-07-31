@@ -54,14 +54,28 @@ useSchemaOrg([
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the package that fits your team</h2>
         <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse scales with you. Pick the package that works for you and the work you do.</p>
         <UPricingPlans>
-        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white', button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip', titleWrapper: 'mb-4' }" />
+        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white', button: 'text-base font-bold', titleWrapper: 'mb-4', features: 'mt-2' }">
+            <template #description>
+                <p>{{ plan.description }}</p>
+                <p class="mt-6 text-sm font-semibold text-gray-900">Everything in the <a href="#core-features" class="text-indigo-600 hover:underline">core FlowFuse platform</a> plus:</p>
+            </template>
+            <template #features>
+                <li v-for="feature in plan.features" :key="feature" class="flex items-center gap-2 min-w-0">
+                    <UIcon name="i-lucide-check" class="size-5 shrink-0 text-primary" />
+                    <span class="text-muted text-sm whitespace-normal overflow-visible text-clip">{{ feature }}</span>
+                </li>
+                <li class="flex items-center gap-2 min-w-0">
+                    <a href="#comparison" class="text-sm font-semibold text-indigo-600 hover:underline">See all</a>
+                </li>
+            </template>
+        </UPricingPlan>
         </UPricingPlans>
         <USeparator class="mt-16" />
         <SocialProof class="mt-16" />
 
         <CertifiedNodes />
 
-        <h2 class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
+        <h2 id="comparison" class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
         <UPricingTable
         v-if="featureCatalog"
         class="mt-16"
@@ -108,9 +122,9 @@ useSchemaOrg([
         </template>
         </UPricingTable>
 
-        <div v-if="coreFeatureSections.length" class="mt-28">
+        <div v-if="coreFeatureSections.length" id="core-features" class="mt-28">
         <h2 class="text-center mb-2"><span class="text-indigo-600">FlowFuse</span> Core Features</h2>
-        <p class="text-center text-gray-500 mb-10">Included in every FlowFuse plan</p>
+        <h3 class="text-center text-gray-500 text-2xl mb-10">Included in every FlowFuse plan</h3>
         <div class="max-w-4xl mx-auto space-y-8">
             <div v-for="section in coreFeatureSections" :key="section.id">
                 <h3 class="font-semibold text-sm text-gray-900 mb-3">{{ section.title }}</h3>
