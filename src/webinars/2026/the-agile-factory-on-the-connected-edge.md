@@ -28,7 +28,7 @@ In this session, Rhythm Agarwal (Senior Manufacturing Test Engineer at Aperia) a
 - **An event-driven bridge to the data layer.** Every station logs into an internally built [MongoDB](/node-red/database/mongodb/) backend the moment a real event happens on the floor, not on a batch schedule.
 - **Operational scaling, not one-off snowflakes.** Engineering pushes code changes to entire device groups from a single pipeline, with full version control — the same fix applied consistently everywhere, instead of once per machine.
 
-## Inside the demos
+## Three Manufacturing Applications Built on the Edge
 
 Two real production examples anchored the session.
 
