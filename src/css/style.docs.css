@@ -70,7 +70,7 @@
     
     /* position tooltip correctly */
     left: 100%;
-    margin-left: calc(var(--tooltip-padding) + 12px);
+    margin-left: calc(12px + var(--tooltip-padding));
    
     /* vertically center */
     top: 50%;
