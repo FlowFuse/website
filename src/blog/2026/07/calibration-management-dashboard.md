@@ -7,7 +7,8 @@ authors: ["sumit-shinde"]
 image: /blog/2026/07/images/tracking-equipement-calibration.png
 tags:
   - flowfuse
-  - quality
+  - manufacturing
+  - how-to
 meta:
   howto:
     name: "Build a Calibration Status Dashboard with FlowFuse"
