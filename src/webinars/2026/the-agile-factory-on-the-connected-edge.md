@@ -7,7 +7,7 @@ image: /images/webinars/the-agile-factory-on-the-connected-edge.jpg
 date: 2026-07-30
 time: 17:00 CET (11:00am ET)
 duration: 75
-video: # TODO: paste the recording URL here (YouTube/Wistia link)
+video: DL06LolYqU8
 hosts: ["rhythm-agarwal", "kristopher-sandoval"]
 hubspot:
     formId: bb64da93-29ff-46be-9422-7d8694491f2f
