@@ -13,8 +13,8 @@ bestFitFor:
   - Businesses standardising and deploying automation across multiple sites
   - Standard deployments across multiple sites.
 button:
-  label: START FREE TRIAL
-  to: https://app.flowfuse.com/account/create
+  label: Contact us
+  to: /contact-us/
   external: true
   variant: solid
-  event: cta-join
+  event: cta-contact-us

@@ -15,8 +15,8 @@ bestFitFor:
   - Complex data sets that need governed integration and orchestration.
   - Custom deployments at the data and orchestration level.
 button:
-  label: Contact us
-  to: /contact-us/
+  label: START FREE TRIAL
+  to: https://app.flowfuse.com/account/create
   external: true
   variant: solid
-  event: cta-contact-us
+  event: cta-join
