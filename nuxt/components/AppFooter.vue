@@ -108,7 +108,6 @@
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Customers</p>
                             <ul class="flex flex-col gap-2.5">
                                 <li><a href="/customer-stories/">Customer Stories</a></li>
-                                <li><a href="/education/">Educational License</a></li>
                                 <li><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
                             </ul>
                         </div>
