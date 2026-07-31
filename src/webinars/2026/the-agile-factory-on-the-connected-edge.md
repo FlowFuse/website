@@ -21,7 +21,7 @@ Production still had to run 24/7. R&D still needed to experiment. And the usual 
 
 In this session, Rhythm Agarwal (Senior Manufacturing Test Engineer at Aperia) and Kristopher Sandoval (FlowFuse) walk through how Aperia rebuilt its shop floor as an edge-native system — no PLC layer, no rip-and-replace, and no one-off fix per machine.
 
-## What Aperia built
+## How Aperia Replaced Traditional PLCs with Edge Applications
 
 - **System Agility, not vendor lock-in.** Smart fixtures run Node-RED directly, managed by FlowFuse — extending the shop floor instead of replacing it.
 - **Every protocol, one platform.** Node-RED talks straight to sensors, scanners, and actuators using [MODBUS-TCP](/node-red/protocol/modbus/), [RS-232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), and [raw TCP](/node-red/core-nodes/tcp-in/) — converting incompatible protocols into one cohesive data flow.
