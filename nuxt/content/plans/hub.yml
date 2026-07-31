@@ -19,3 +19,4 @@ button:
   to: /contact-us/
   external: true
   variant: solid
+  event: cta-contact-us

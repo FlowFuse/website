@@ -28,6 +28,16 @@ const coreFeatureSections = computed(() => (featureCatalog.value?.sections ?? []
   .map(section => ({ ...section, features: section.features.filter(f => f.tiers.edge === f.tiers.hub) }))
   .filter(section => section.features.length > 0))
 
+// window.capture is injected by the site's analytics script (see
+// src/_includes/analytics/body.html) and is a no-op wrapper around
+// posthog.capture — it's absent outside production, hence the guard.
+function capture (eventName?: string, props?: Record<string, unknown>) {
+  if (!eventName) return
+  if (typeof (window as any).capture === 'function') {
+    (window as any).capture(eventName, props)
+  }
+}
+
 // UPricingTable's feature-title slot types `feature` without `description`,
 // even though the featureCatalog content schema does define it.
 interface CatalogFeature {
@@ -68,6 +78,12 @@ useSchemaOrg([
                     <a href="#comparison" class="text-sm font-semibold text-indigo-600 hover:underline">See all</a>
                 </li>
             </template>
+            <template #button>
+                <UButton
+                    block size="lg" v-bind="plan.button" class="text-base font-bold"
+                    @click="capture(plan.button.event, { position: 'pricing-card', tier: plan.tierId, page: 'pricing' })"
+                />
+            </template>
         </UPricingPlan>
         </UPricingPlans>
         <USeparator class="mt-16" />
@@ -95,7 +111,10 @@ useSchemaOrg([
         }"
         >
         <template #tier-button="{ tier }">
-            <UButton v-if="tier.button" block size="lg" v-bind="tier.button" class="text-base font-bold" />
+            <UButton
+                v-if="tier.button" block size="lg" v-bind="tier.button" class="text-base font-bold"
+                @click="capture(tier.button.event, { position: 'pricing-comparison', tier: tier.id, page: 'pricing' })"
+            />
         </template>
         <template #tier-description="{ tier }">
             <div v-if="tier.bestFitFor?.length" class="w-full mt-4 text-left">

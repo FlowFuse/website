@@ -152,6 +152,7 @@ export default defineContentConfig({
                     external: z.boolean().optional(),
                     color: z.enum(['primary', 'secondary', 'highlight']).optional(),
                     variant: z.enum(['solid', 'outline', 'soft', 'subtle', 'ghost', 'link']).optional(),
+                    event: z.string().optional(),
                 }),
             })
         }),
