@@ -86,7 +86,6 @@ useSchemaOrg([
             </template>
         </UPricingPlan>
         </UPricingPlans>
-        <USeparator class="mt-16" />
         <SocialProof class="mt-16" />
 
         <CertifiedNodes />
