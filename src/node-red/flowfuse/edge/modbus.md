@@ -60,7 +60,7 @@ Every Modbus device exposes its data as one of four addressable table types, and
 | Input Registers | 4 | — | Read-only, 16-bit | `3xxxx` / `30001+` | Read-only measurements — sensor readings |
 
 {% note %}
-**Addresses in this package are raw, zero-based protocol addresses.** Device manuals often number the same register differently. A manual that lists a holding register as `40001` (or `4x0001`, or `400001` on devices with more than 9,999 registers) is describing the register at address `0`. Other manuals number within the table starting at `1`, so their "register 1" is also address `0`. Check which convention your device's register map uses before entering an address — an off-by-one here is the most common cause of reading the wrong value, and an address one past the end of the table returns Illegal Data Address.
+**Register addressing** Addresses in this package are raw, zero-based protocol addresses. Device manuals often number the same register differently. A manual that lists a holding register as `40001` (or `4x0001`, or `400001` on devices with more than 9,999 registers) is describing the register at address `0`. Other manuals number within the table starting at `1`, so their "register 1" is also address `0`. Check which convention your device's register map uses before entering an address — an off-by-one here is the most common cause of reading the wrong value, and an address one past the end of the table returns Illegal Data Address.
 {% endnote %}
 
 A device is also identified by a **Unit ID** (also called station address, or slave ID in older documentation), which matters when several logical devices share one connection — for example several RTU devices on the same RS-485 bus, or several logical devices behind one TCP gateway.
@@ -144,7 +144,7 @@ The Modbus-Read node polls a fixed location on a repeating interval — the node
 ### Configuration
 
 - **FC (Function Code)** — which table to read: Coils, Discrete Inputs, Holding Registers, or Input Registers (FC 1–4).
-- **Address** — the starting zero-based address in that table — see [Register addressing](#what-is-modbus) if your device manual uses 4xxxx-style numbering.
+- **Address** — the starting zero-based address in that table — see [Register addressing](#what-is-modbus) if your device manual or documentation uses 4xxxx-style numbering.
 - **Quantity** — how many consecutive coils/registers to read in one request.
 - **Poll rate** — how often to repeat the read (milliseconds).
 - **Unit ID** — overrides the connection's default unit ID for this node, when needed.
