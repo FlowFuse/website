@@ -140,6 +140,8 @@ You can be granted temporary admin access once a month to send your invites.
 
 LinkedIn's algorithm currently rewards **comments** over reposts or likes. Team members are encouraged to leave **insightful comments** on FlowFuse posts — this significantly increases visibility and helps us reach new audiences through personal networks.
 
+Make sure your personal LinkedIn profile reflects that you work at FlowFuse — see [Branding: LinkedIn Profile](/handbook/design/branding/#linkedin-profile) for how to set your position and banner image.
+
 **Company account actions**
 
 We'll share a [new hire post](/handbook/marketing/social-media/#new-hire) when new members join the team and encourage them to share, comment, and engage with responses. This aims to welcome them, expand reach through their networks, and showcase company culture.

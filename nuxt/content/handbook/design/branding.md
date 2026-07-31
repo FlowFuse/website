@@ -233,3 +233,12 @@ Clicking the template will create an editable copy in your Drive — just like w
 ### Video Call Backgrounds
 
 As part of our design assets, we have [branded images](https://drive.google.com/open?id=1B0-m5L_X2dvLqbQXvW9RqpMvSDC_FM_0&usp=drive_fs) in our company drive that can be used as backgrounds for video calls. Both regular and mirrored versions are available to suit the platform and view mode you have set up.
+
+### LinkedIn Profile
+
+Setting up your personal LinkedIn profile to reflect that you work at FlowFuse helps reinforce our brand and makes it easy for your network to recognize the connection.
+
+1. Set your current position to FlowFuse, using the official [FlowFuse LinkedIn Page](https://www.linkedin.com/company/flowfuse-inc/) as the associated company. This ensures your role shows up under FlowFuse's "People" tab and links back to the company page.
+2. Update your profile banner image to the [official FlowFuse LinkedIn banner](https://drive.google.com/file/d/16xKY0Gewt7CUxIm_kXJy6dp1Ie_xN1lr/view?usp=drive_link). Download the image, then upload it under **Edit profile > Edit background image**.
+
+> **Note:** Please use the banner image as provided, without modification, to maintain a consistent, recognizable look across the team's profiles.
