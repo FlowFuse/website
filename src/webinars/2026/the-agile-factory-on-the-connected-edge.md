@@ -23,10 +23,10 @@ In this session, Rhythm Agarwal (Senior Manufacturing Test Engineer at Aperia) a
 
 ## How Aperia Replaced Traditional PLCs with Edge Applications
 
-- **System Agility, not vendor lock-in.** Smart fixtures run Node-RED directly, managed by FlowFuse — extending the shop floor instead of replacing it.
-- **Every protocol, one platform.** Node-RED talks straight to sensors, scanners, and actuators using [MODBUS-TCP](/node-red/protocol/modbus/), [RS-232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), and [raw TCP](/node-red/core-nodes/tcp-in/) — converting incompatible protocols into one cohesive data flow.
-- **An event-driven bridge to the data layer.** Every station logs into an internally built [MongoDB](/node-red/database/mongodb/) backend the moment a real event happens on the floor, not on a batch schedule.
-- **Operational scaling, not one-off snowflakes.** Engineering pushes code changes to entire device groups from a single pipeline, with full version control — the same fix applied consistently everywhere, instead of once per machine.
+- **Extends the shop floor, doesn't replace it.** Smart fixtures run on FlowFuse instead of a PLC — existing equipment keeps working, just connected.
+- **Speaks every protocol.** Sensors, scanners, and actuators connect over [MODBUS-TCP](/node-red/protocol/modbus/), [RS-232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), and [raw TCP](/node-red/core-nodes/tcp-in/) — all feeding into one data flow.
+- **Logs data the moment it happens.** Every station writes to a shared [MongoDB](/node-red/database/mongodb/) backend in real time, not on a delay.
+- **One fix, applied everywhere.** Code changes roll out to entire device groups from a single pipeline, with full version control — not machine by machine.
 
 ## Three Manufacturing Applications Built on the Edge
 
