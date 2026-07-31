@@ -1,17 +1,19 @@
 title: Edge
 tierId: edge
 order: 1
-description: Deploy, manage and scale industrial applications across production sites with centralized governance and certified industrial connectivity.
+description: Deploy, manage, and scale industrial applications across your sites with centralized governance and certified industrial connectivity.
 badge: For OT teams
 features:
-  - Industrial applications
-  - PLC & machine connectivity
-  - OT-certified nodes
-  - MQTT Broker
-  - DevOps Pipelines
+  - Device Fleet Updates
   - Device Group Management
+  - "Certified Nodes: OT"
+  - Blueprints - OT APPS
+bestFitFor:
+  - OT teams connecting PLCs, machines, and systems
+  - Businesses standardising and deploying automation across multiple sites
+  - Standard deployments across multiple sites.
 button:
-  label: Contact us
-  to: /contact-us/
+  label: START FREE TRIAL
+  to: https://app.flowfuse.com/account/create
   external: true
   variant: solid

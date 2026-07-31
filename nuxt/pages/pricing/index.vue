@@ -7,6 +7,8 @@ const tableTiers = computed(() => (plans.value ?? []).map(p => ({
   id: p.tierId,
   title: p.title,
   highlight: p.highlight,
+  button: p.button,
+  bestFitFor: p.bestFitFor,
 })))
 
 const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
@@ -38,10 +40,11 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto py-16 px-4">
         <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the package that fits your team</h2>
-        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Machines on the shop floor, scaling to more plants? Or business systems and data sources to bring under governance? There’s a FlowFuse package for both.</p>
+        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse scales with you. Pick the package that works for you and the work you do.</p>
         <UPricingPlans>
-        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip', titleWrapper: 'mb-4' }" />
+        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white', button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip', titleWrapper: 'mb-4' }" />
         </UPricingPlans>
+        <USeparator class="mt-16" />
         <SocialProof class="mt-16" />
 
         <CertifiedNodes />
@@ -53,12 +56,32 @@ useSchemaOrg([
         :tiers="tableTiers"
         :sections="featureCatalog.sections"
         :ui="{
+            tier: 'border-x border-t border-b border-default rounded-t-lg bg-radial-[at_bottom_right] from-indigo-50 to-white',
+            td: 'border-x border-default',
+            th: 'px-6 border-l border-default',
+            tr: '*:py-4',
+            tbody: '[&>tr[data-slot]]:bg-indigo-50/50 [&>tr:first-child>th]:border-t [&>tr:first-child>th]:border-default [&>tr:first-child>th]:rounded-t-lg [&>tr:last-child>th]:rounded-b-lg [&>tr:last-child>td]:rounded-b-lg',
             tierWrapper: 'items-center text-center',
             tierTitleWrapper: 'justify-center',
-            tierDescription: 'hidden',
+            tierDescription: 'w-full',
             tierPriceWrapper: 'hidden',
+            tierButton: 'w-full',
         }"
         >
+        <template #tier-button="{ tier }">
+            <UButton v-if="tier.button" block size="lg" v-bind="tier.button" class="text-base font-bold" />
+        </template>
+        <template #tier-description="{ tier }">
+            <div v-if="tier.bestFitFor?.length" class="w-full mt-4 text-left">
+                <p class="text-sm font-semibold text-gray-900">Best Fit For:</p>
+                <ul class="mt-1.5 flex flex-col gap-1.5 text-sm text-gray-600">
+                    <li v-for="fit in tier.bestFitFor" :key="fit" class="flex items-start gap-1.5">
+                        <UIcon name="i-lucide-check" class="size-4 shrink-0 mt-0.5 text-indigo-600" />
+                        <span>{{ fit }}</span>
+                    </li>
+                </ul>
+            </div>
+        </template>
         <template #feature-title="{ feature }">
             <UPopover v-if="featureDescription(feature)" :content="{ side: 'top' }">
                 <button type="button" class="inline-flex items-center gap-1 text-left hover:text-indigo-600">

@@ -1,15 +1,19 @@
 title: Hub
 tierId: hub
 order: 2
-description: Integrate and orchestrate data across enterprise systems, APIs and databases with centralized governance.
+description: Integrate and orchestrate data across enterprise systems, APIs and databases with centralised governance.
 badge: For IT teams
 features:
-  - Business system integration
-  - Data orchestration
-  - IT-certified nodes
   - Git Integration
   - High Availability
-  - DevOps Pipelines
+  - BAA for HIPAA
+  - Protected Instances
+  - Certified Nodes - IT
+  - Blueprints - IT APPS
+bestFitFor:
+  - IT teams moving data between ERPs, databases, and cloud APIs.
+  - Complex data sets that need governed integration and orchestration.
+  - Custom deployments at the data and orchestration level.
 button:
   label: Contact us
   to: /contact-us/

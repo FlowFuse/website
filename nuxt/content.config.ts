@@ -145,6 +145,7 @@ export default defineContentConfig({
                 highlight: z.boolean().optional(),
                 order: z.number(),
                 features: z.array(z.string()),
+                bestFitFor: z.array(z.string()).optional(),
                 button: z.object({
                     label: z.string(),
                     to: z.string(),
