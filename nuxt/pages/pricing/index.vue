@@ -38,7 +38,7 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto py-16 px-4">
         <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the package that fits your team</h2>
-        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Machines on the shop floor, scaling to more plants? Or business systems and data sources to bring under governance? There’s a FlowFuse package for both.</p>
+        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardising across hundreds of business systems, FlowFuse scales with you. Pick the package that works for you and the work you do.</p>
         <UPricingPlans>
         <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip', titleWrapper: 'mb-4' }" />
         </UPricingPlans>
