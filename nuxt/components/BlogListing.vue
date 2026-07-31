@@ -5,13 +5,12 @@ const props = defineProps<{
 }>()
 
 const { entries, totalPages } = useBlogList(props.tag ?? null, props.page)
-const team = useTeam()
 
 const featured = computed(() => props.page === 1 ? entries.value[0] : null)
 const rest = computed(() => props.page === 1 ? entries.value.slice(1) : entries.value)
 const basePath = computed(() => props.tag ? `/blog/${props.tag}` : '/blog')
 
-const featuredAuthorNames = computed(() => (featured.value?.authors || []).map(username => team[username]?.name).filter(Boolean).join(', '))
+const featuredAuthorNames = computed(() => useAuthorNames(featured.value?.authors))
 const featuredSummary = computed(() => featured.value?.description || featured.value?.meta?.description || '')
 const featuredImage = computed(() => featured.value?.image || '/images/og-blog.jpg')
 const featuredDate = computed(() => featured.value ? new Date(featured.value.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
@@ -64,6 +63,6 @@ useSeoMeta({
       </li>
       <BlogListItem v-for="entry in rest" :key="entry.path" :entry="entry" />
     </ul>
-    <BlogPagination :base-path="basePath" :page="page" :total-pages="totalPages" />
+    <Pagination :base-path="basePath" :page="page" :total-pages="totalPages" />
   </div>
 </template>

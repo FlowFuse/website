@@ -3,8 +3,7 @@ const props = defineProps<{
     entry: { path: string, title: string, description?: string, meta?: { description?: string }, date: string | Date, authors?: string[], image?: string }
 }>()
 
-const team = useTeam()
-const authorNames = computed(() => (props.entry.authors || []).map(username => team[username]?.name).filter(Boolean).join(', '))
+const authorNames = computed(() => useAuthorNames(props.entry.authors))
 const summary = computed(() => props.entry.description || props.entry.meta?.description || '')
 const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
 const imageSrc = computed(() => props.entry.image || '/images/og-blog.jpg')

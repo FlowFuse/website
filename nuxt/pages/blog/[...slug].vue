@@ -36,8 +36,7 @@ const { data: allPosts } = await useAsyncData(
     () => routeInfo.value.kind === 'post' ? queryCollection('blog').order('date', 'DESC').all() : Promise.resolve([])
 )
 
-const team = useTeam()
-const authorMembers = computed(() => (page.value?.authors || []).map(username => team[username]))
+const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
 function extractText(node: any): string {
     if (!node) return ''
