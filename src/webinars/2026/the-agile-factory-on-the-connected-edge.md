@@ -32,7 +32,7 @@ In this session, Rhythm Agarwal (Senior Manufacturing Test Engineer at Aperia) a
 
 Two real production examples anchored the session.
 
-### Demo 1: End-of-line weld testing, with a "birth certificate" for every part
+### Real-Time Weld Inspection and Part Traceability
 
 A Keyence smart camera inspects a weld and sends the result straight into Node-RED. From there, a custom sequence (Aperia calls it *tap create → tap push → tap close*) does the rest:
 
