@@ -1,6 +1,6 @@
 ---
-title: FlowFuse Expert Enhancements
-description: FlowFuse Expert now supports Insights on your devices, Platform automations, Plan Mode, Human in the Loop and more...
+title: Team Scoped Personal Access Tokens
+description: Restrict a Personal Access Token to specific teams, limit it to read-only operations, or control whether it carries admin privileges.
 date: 2026-07-02 15:30:00
 authors: ["serban-costin"]
 tags:
