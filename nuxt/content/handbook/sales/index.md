@@ -71,13 +71,13 @@ rules.
 ## How we work
 
 - [Sales Team Operating Principles](./operating-principles.md)
-- [Processes](./processes/index.md) — the process and methodology index
-- [Sales Meetings](./meetings/index.md) — [Discovery](./meetings/discovery.md), [Demo](./meetings/demo.md), [PoC](./meetings/poc.md)
+- [Processes](./processes/) — the process and methodology index
+- [Sales Meetings](./meetings/) — [Discovery](./meetings/discovery.md), [Demo](./meetings/demo.md), [PoC](./meetings/poc.md)
 - [Engagements & Pricing](./engagements.md)
 - [Forecast Review](./forecast-review.md)
 - [Sales Deck](./sales-deck.md) and [Pricing Decks](./pricing-decks.md)
 - [HubSpot](./hubspot.md) — CRM lifecycle stages and conventions
-- [Legal](./legal.md) and [Sales Compensation Plan](./commission-plan/index.md)
+- [Legal](./legal.md) and [Sales Compensation Plan](./commission-plan/)
 - [Deal Board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/board)
 - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
 - [SPICED Sales Framework](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU)
