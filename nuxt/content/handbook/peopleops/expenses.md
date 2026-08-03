@@ -210,6 +210,11 @@ particular material you would like to study, or an event you would like to
 attend. FlowFuse will help cover reasonable costs associated with the activity -
 such as travel and ticket fees.
 
+Get pre-approval from your manager before you book or pay for anything. Share
+the activity, the dates and the expected total cost (ticket, travel and
+accommodation) so the full amount can be approved up front. Without
+pre-approval there is no guarantee the expense will be reimbursed.
+
 ## Software Licenses
 
 Licenses and software assets can be purchased for third-party software will be
