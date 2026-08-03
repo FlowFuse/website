@@ -141,9 +141,11 @@ Tag information will be printed to the debug sidebar. You can now identify the e
 ![OPC UA Browser node](./images/opcua-browser.png){data-zoomable} 
 _OPC UA Browser node_
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"c3a8303048e6588f","type":"OpcUa-Browser","z":"f66e9c91c269e7fb","endpoint":"c0f8c79fc00845c8","item":"","datatype":"","topic":"ns=0;i=85","items":[],"name":"","x":510,"y":300,"wires":[["3428199852f9fcdc"]]},{"id":"1549f797c58ba667","type":"inject","z":"f66e9c91c269e7fb","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":280,"y":300,"wires":[["c3a8303048e6588f"]]},{"id":"3428199852f9fcdc","type":"debug","z":"f66e9c91c269e7fb","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":740,"y":300,"wires":[]},{"id":"c0f8c79fc00845c8","type":"OpcUa-Endpoint","endpoint":"","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
-{% endrenderFlow %}
+```
+::
 
 ### Reading Tag Values
 
@@ -176,9 +178,11 @@ You should see the tag value appear in the debug panel. This confirms that commu
 
 You can also pass the Node ID dynamically using `msg.topic` from the Inject node if you prefer not to use an Item node.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"d128582dda7adbed","type":"OpcUa-Client","z":"ead97ed756a13a15","endpoint":"a4df18253e5a79a0","action":"read","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":580,"y":240,"wires":[["3fc16bf912f16169"],["17724a6889ec7378"],["c6b0f16ef7371699"]]},{"id":"3fc16bf912f16169","type":"debug","z":"ead97ed756a13a15","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":740,"y":200,"wires":[]},{"id":"2691196551812a21","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=3;i=1001","datatype":"Boolean","value":"","name":"OPC UA Item Node","x":370,"y":240,"wires":[["d128582dda7adbed"]]},{"id":"96d17841a7f13ac4","type":"inject","z":"ead97ed756a13a15","name":"Read tag","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":200,"y":200,"wires":[["2691196551812a21"]]},{"id":"17724a6889ec7378","type":"debug","z":"ead97ed756a13a15","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":240,"wires":[]},{"id":"c6b0f16ef7371699","type":"debug","z":"ead97ed756a13a15","name":"Raw Respons","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":760,"y":280,"wires":[]},{"id":"a4df18253e5a79a0","type":"OpcUa-Endpoint","endpoint":"opc.tcp://192.168.0.10:4840","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
-{% endrenderFlow %}
+```
+::
 
 #### Reading Multiple Tags
 
@@ -202,9 +206,11 @@ _Screenshot showing OPC UA Client node with "READ MULTIPLE" action selected_
 
 You now have a flexible setup for reading multiple values from your PLC on demand.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"6f5e2b1cbce15025","type":"OpcUa-Client","z":"ead97ed756a13a15","endpoint":"","action":"readmultiple","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":580,"y":500,"wires":[["28b575f06bbbe7a7"],["139d346aab204f2f"],["3497d5566fb78f5f"]]},{"id":"4daa958d34c648c5","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=5;s=Counter1","datatype":"Int32","value":"","name":"","x":380,"y":480,"wires":[["6f5e2b1cbce15025"]]},{"id":"baa2733ca1fcb69d","type":"inject","z":"ead97ed756a13a15","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":200,"y":480,"wires":[["4daa958d34c648c5"]]},{"id":"dfd96a4dfe6330af","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=5;s=Random1","datatype":"Double","value":"","name":"","x":380,"y":520,"wires":[["6f5e2b1cbce15025"]]},{"id":"b8d5e40a98b1fb9f","type":"inject","z":"ead97ed756a13a15","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":200,"y":520,"wires":[["dfd96a4dfe6330af"]]},{"id":"3f63c46f499c3bca","type":"inject","z":"ead97ed756a13a15","name":"Read multiple items","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"readmultiple","payload":"","payloadType":"str","x":370,"y":440,"wires":[["6f5e2b1cbce15025"]]},{"id":"75c7927996cf44c2","type":"inject","z":"ead97ed756a13a15","name":"Clear nodeId array","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"clearitems","payload":"","payloadType":"str","x":370,"y":560,"wires":[["6f5e2b1cbce15025"]]},{"id":"28b575f06bbbe7a7","type":"debug","z":"ead97ed756a13a15","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":760,"y":460,"wires":[]},{"id":"139d346aab204f2f","type":"debug","z":"ead97ed756a13a15","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":500,"wires":[]},{"id":"3497d5566fb78f5f","type":"debug","z":"ead97ed756a13a15","name":"Raw Response","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":780,"y":540,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 ### Writing Values
 
@@ -235,9 +241,11 @@ To write a single value:
 
 The OPC UA Client node will confirm the operation with a status like **"values written"**.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"c922a70d48ecba6f","type":"OpcUa-Client","z":"ead97ed756a13a15","endpoint":"","action":"write","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":520,"y":480,"wires":[["7eb010a4671ac181"],["392bb1fd60c29baf"],["e9d279677dbc87e8"]]},{"id":"5ff1e3c2d5977a34","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=5;s=Counter1","datatype":"Int32","value":"20","name":"","x":340,"y":480,"wires":[["c922a70d48ecba6f"]]},{"id":"8cdd141dbdb350c7","type":"inject","z":"ead97ed756a13a15","name":"Write","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":190,"y":480,"wires":[["5ff1e3c2d5977a34"]]},{"id":"7eb010a4671ac181","type":"debug","z":"ead97ed756a13a15","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":680,"y":440,"wires":[]},{"id":"392bb1fd60c29baf","type":"debug","z":"ead97ed756a13a15","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":670,"y":480,"wires":[]},{"id":"e9d279677dbc87e8","type":"debug","z":"ead97ed756a13a15","name":"Raw Response","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":700,"y":520,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 #### Writing Multiple Tags
 
@@ -259,9 +267,11 @@ To write multiple values at once, follow this pattern:
 
 This setup allows you to prepare multiple tag values and write them all at once, giving you precise control through a single command.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"ed421a9.d6319e8","type":"OpcUa-Client","z":"ead97ed756a13a15","endpoint":"","action":"writemultiple","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":560,"y":420,"wires":[["b0788fb9285c48ea"],["bde690208cbf2c4c"],["0883826b4a0ca030"]]},{"id":"96bd763.14a9308","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=3;i=1007","datatype":"Double","value":"1.0","name":"","x":360,"y":400,"wires":[["ed421a9.d6319e8"]]},{"id":"d8a68c7a.a73008","type":"inject","z":"ead97ed756a13a15","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":180,"y":400,"wires":[["96bd763.14a9308"]]},{"id":"8ae51c8c.20bd3","type":"OpcUa-Item","z":"ead97ed756a13a15","item":"ns=3;i=1008","datatype":"Int32","value":"50","name":"","x":360,"y":440,"wires":[["ed421a9.d6319e8"]]},{"id":"1335adce.7f46ba","type":"inject","z":"ead97ed756a13a15","name":"Add item","repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"str","x":180,"y":440,"wires":[["8ae51c8c.20bd3"]]},{"id":"2c050a3d.91f496","type":"inject","z":"ead97ed756a13a15","name":"Write multiple items","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"writemultiple","payload":"","payloadType":"str","x":350,"y":360,"wires":[["ed421a9.d6319e8"]]},{"id":"690e4f9f.faeca","type":"inject","z":"ead97ed756a13a15","name":"Clear nodeId array","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"clearitems","payload":"","payloadType":"str","x":350,"y":480,"wires":[["ed421a9.d6319e8"]]},{"id":"b0788fb9285c48ea","type":"debug","z":"ead97ed756a13a15","name":"Tag Value","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":740,"y":380,"wires":[]},{"id":"bde690208cbf2c4c","type":"debug","z":"ead97ed756a13a15","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":420,"wires":[]},{"id":"0883826b4a0ca030","type":"debug","z":"ead97ed756a13a15","name":"Raw Response","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":760,"y":460,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 ## What’s Next
 

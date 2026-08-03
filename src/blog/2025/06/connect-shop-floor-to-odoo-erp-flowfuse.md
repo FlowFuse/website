@@ -28,9 +28,11 @@ This is just a simple example of what FlowFuse can do. But it has much more powe
 
 Below is the complete flow for this demo, in case you would like to explore it further or try it out yourself after reading the article
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"cab977c8e0d1c054","type":"group","z":"FFF0000000000001","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["6ba9343481e3b041","8a3adb31adbb7475","bfe37a946a6ed20a","304719d8be3f5694"],"x":664,"y":399,"w":732,"h":122},{"id":"6ba9343481e3b041","type":"odoo-xmlrpc-update","z":"FFF0000000000001","g":"cab977c8e0d1c054","name":"","host":"18818bdefd1f27ce","model":"product.template","filter":"","offset":0,"limit":100,"x":1270,"y":480,"wires":[[]]},{"id":"8a3adb31adbb7475","type":"change","z":"FFF0000000000001","g":"cab977c8e0d1c054","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[[38],{\"qty_available\":payload}]","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":1020,"y":480,"wires":[["6ba9343481e3b041"]]},{"id":"bfe37a946a6ed20a","type":"debug","z":"FFF0000000000001","g":"cab977c8e0d1c054","name":"Good Product Produced","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1050,"y":440,"wires":[]},{"id":"304719d8be3f5694","type":"s7 in","z":"FFF0000000000001","g":"cab977c8e0d1c054","endpoint":"142c103a7735ea99","mode":"single","variable":"Counter","diff":true,"name":"S7 ","x":740,"y":480,"wires":[["8a3adb31adbb7475","bfe37a946a6ed20a"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"","db":"","username":"","password":""},{"id":"142c103a7735ea99","type":"s7 endpoint","transport":"iso-on-tcp","address":"192.168.1.6","port":"102","rack":"0","slot":"1","localtsaphi":"01","localtsaplo":"00","remotetsaphi":"01","remotetsaplo":"00","connmode":"rack-slot","adapter":"","busaddr":2,"cycletime":1000,"timeout":2000,"name":"","vartable":[{"addr":"DB1,X4.0","name":"Trigger"},{"addr":"DB1,DW0","name":"Counter"}]}]
-{% endrenderFlow %}
+```
+::
 
 ## Getting Data Into and Out of Odoo with FlowFuse
 
@@ -106,9 +108,11 @@ Replace ID with the actual product ID you want to read. You can include multiple
 
 <lite-youtube videoid="9CdVOp_bDMk" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"4f2bd9814f07c6a6","type":"odoo-xmlrpc-read","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"product.template","x":1190,"y":280,"wires":[["5601affdba752326"]]},{"id":"5601affdba752326","type":"debug","z":"295d40790bd21f48","name":"debug 6","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":280,"wires":[]},{"id":"4e8b22877e33b496","type":"inject","z":"295d40790bd21f48","name":"Read products with id 23 and 39","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":570,"y":280,"wires":[["b21cdd78ad81d65a"]]},{"id":"b21cdd78ad81d65a","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[39,23]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":280,"wires":[["4f2bd9814f07c6a6"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
-{% endrenderFlow %}
+```
+::
 
 ### Creating New Record in Odoo
 
@@ -132,9 +136,11 @@ Here is how you can create manufacturing order:
 
 <lite-youtube videoid="bq_yaF8etmw" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"d89d98a5ec9a8733","type":"odoo-xmlrpc-create","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"mrp.production","filter":"","offset":0,"limit":100,"x":1200,"y":380,"wires":[["ea101f5cab65a241"]]},{"id":"99ba2ffda10cf2d9","type":"inject","z":"295d40790bd21f48","name":"Create New MO","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":620,"y":380,"wires":[["33e0301b6e8f7838"]]},{"id":"ea101f5cab65a241","type":"debug","z":"295d40790bd21f48","name":"debug 5","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":380,"wires":[]},{"id":"33e0301b6e8f7838","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[{\"product_id\":30,\"product_qty\":200,\"product_uom_id\":1}]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":380,"wires":[["d89d98a5ec9a8733"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
-{% endrenderFlow %}
+```
+::
 
 ### Updating Existing Data in Odoo
 
@@ -159,9 +165,11 @@ Here is how you can update the status of manufacturing order:
 
 <lite-youtube videoid="SsPfHxCwMI8" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"e43dc05eb7df7ecf","type":"inject","z":"295d40790bd21f48","name":"Update MO Status","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":610,"y":540,"wires":[["11bbd21f1314b839"]]},{"id":"47b01f56b4800c5c","type":"debug","z":"295d40790bd21f48","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":540,"wires":[]},{"id":"bd9de404f2ac1a2e","type":"odoo-xmlrpc-update","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"mrp.production","filter":"","offset":0,"limit":100,"x":1200,"y":540,"wires":[["47b01f56b4800c5c"]]},{"id":"11bbd21f1314b839","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[     [18],     {\"state\": \"progress\"} ]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":540,"wires":[["bd9de404f2ac1a2e"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
-{% endrenderFlow %}
+```
+::
 
 ### Deleting Records from Odoo (Unlink)
 
@@ -183,9 +191,11 @@ Here is how you can delete product from inventory:
 
 <lite-youtube videoid="1O1JYRtX-Sg" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"f14241bb24af8dc8","type":"odoo-xmlrpc-unlink","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"product.template","x":1190,"y":700,"wires":[["231e32e70753ab22"]]},{"id":"9452d125fd059f79","type":"inject","z":"295d40790bd21f48","name":"Delete the product with ID 60","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":580,"y":700,"wires":[["cfcabeae8b291a9c"]]},{"id":"231e32e70753ab22","type":"debug","z":"295d40790bd21f48","name":"debug 7","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":700,"wires":[]},{"id":"cfcabeae8b291a9c","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"[60]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":700,"wires":[["f14241bb24af8dc8"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
-{% endrenderFlow %}
+```
+::
 
 ### Advanced Search with Filters and Fields
 
@@ -257,9 +267,11 @@ Here’s an example FlowFuse flow to find products with list price (more than 10
 
 <lite-youtube videoid="8Asa3z2VctQ" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"0cfe26fd5b4169e7","type":"debug","z":"295d40790bd21f48","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":1500,"y":840,"wires":[]},{"id":"656023449ba5dee9","type":"inject","z":"295d40790bd21f48","name":"Read Top 5 Saleable Products >1000","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":550,"y":840,"wires":[["7f791bfc8caa0721"]]},{"id":"8ada5a972d94dd9d","type":"odoo-xmlrpc-search-read","z":"295d40790bd21f48","name":"","host":"18818bdefd1f27ce","model":"product.product","filter":"","offset":0,"limit":100,"x":1210,"y":840,"wires":[["0cfe26fd5b4169e7"]]},{"id":"7f791bfc8caa0721","type":"change","z":"295d40790bd21f48","name":"","rules":[{"t":"set","p":"filters","pt":"msg","to":"[[[\"list_price\",\">\",1000],[\"sale_ok\",\"=\",true]]]","tot":"json"},{"t":"set","p":"limit","pt":"msg","to":"5","tot":"num"},{"t":"set","p":"offset","pt":"msg","to":"0","tot":"num"},{"t":"set","p":"fields","pt":"msg","to":"[\"name\",\"qty_available\",\"default_code\",\"lst_price\"]","tot":"json"}],"action":"","property":"","from":"","to":"","reg":false,"x":900,"y":840,"wires":[["8ada5a972d94dd9d"]]},{"id":"18818bdefd1f27ce","type":"odoo-xmlrpc-config","url":"${HOST}","db":"${DB_NAME}","username":"${USERNAME} ","password":"${PASSWORD}"}]
-{% endrenderFlow %}
+```
+::
 
 ## Final thought
 
