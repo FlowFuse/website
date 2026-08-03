@@ -89,4 +89,4 @@ The effectiveness of our monthly tracking process is measured by:
 - Adherence to budget targets and efficient resource allocation
 - Achievement of quarterly and annual marketing plan objectives
 
-This approach ensures our marketing efforts remain aligned with our business objectives set up in our [Growth Strategy](/handbook/company/strategy/#growth-strategy) while maintaining the agility to adapt to changing market conditions and performance insights.
+This approach ensures our marketing efforts remain aligned with our business objectives set up in our [Growth Strategy](/handbook/company/strategy/) while maintaining the agility to adapt to changing market conditions and performance insights.

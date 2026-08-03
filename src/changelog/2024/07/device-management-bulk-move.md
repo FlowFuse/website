@@ -20,4 +20,4 @@ We are are sure this will make managing your devices a good deal easier.
 
 ![Moving multiple devices](./images/bulk-move.png)
 
-You can read up on the new feature in our [documentation](/docs/device-agent/register/#assign-the-device).
+You can read up on the new feature in our [documentation](/docs/device-agent/register/#assign-the-remote-instance).
