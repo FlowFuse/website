@@ -62,7 +62,7 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto py-16 px-4">
         <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the package that fits your team</h2>
-        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse scales with you. Pick the package that works for you and the work you do.</p>
+        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse has a product for you.</p>
         <UPricingPlans>
         <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white', button: 'text-base font-bold', titleWrapper: 'mb-4', features: 'mt-2' }">
             <template #description>
