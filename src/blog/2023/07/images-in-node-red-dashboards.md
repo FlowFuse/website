@@ -5,7 +5,7 @@ description: Learn to enhance Node-RED dashboards with images using FlowFuse. Pu
 lastUpdated: 2026-06-03
 date: 2023-07-21
 authors: ["rob-marcer"]
-image: blog/2023/07/images/add-images-in-node-red-header.png
+image: /blog/2023/07/images/add-images-in-node-red-header.png
 keywords: node-red dashboard images, node-red static assets, flowfuse static asset service, base64 image node-red, node-red image display, dashboard image upload, node-red docker images
 tags:
     - posts

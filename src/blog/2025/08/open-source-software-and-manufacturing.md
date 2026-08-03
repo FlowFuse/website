@@ -5,7 +5,7 @@ description: "Explore how open-source software can help manufacturers overcome v
 date: 2025-08-20
 keywords: Open Source Software, Digital Transformation, DX
 authors: ["zeger-jan-van-de-weg"]
-image: blog/2025/08/images/open-source-software-and-manufacturing.png
+image: /blog/2025/08/images/open-source-software-and-manufacturing.png
 tags:
    - flowfuse
    - node-red

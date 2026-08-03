@@ -4,7 +4,7 @@ subtitle: Beginner tutorial for using Node-RED as free industrial protocol conve
 description: step-by-step guide for using Node-RED as an industrial protocol converter
 date: 2023-06-20
 authors: ["richard-meyer"]
-image: blog/2023/06/images/ethip-to-S7/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter.png
+image: /blog/2023/06/images/ethip-to-S7/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter.png
 video: dteXgcBXUnk
 tags:
   - posts

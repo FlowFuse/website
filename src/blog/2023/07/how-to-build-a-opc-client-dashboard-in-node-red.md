@@ -5,7 +5,7 @@ description: Building a Dashboard-Driven OPC UA Client to Browse, Read, Write, a
 lastUpdated: 2026-06-03
 date: 2023-07-27
 authors: ["richard-meyer"]
-image: blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png
+image: /blog/2023/07/images/opc-ua-3/opc-ua-3-title-image.png
 keywords: opc ua client node-red, opc ua dashboard, node-red opcua client, opc ua browser node-red, read write opc ua node-red, opc ua alarms events, prosys simulation server
 tags:
     - posts

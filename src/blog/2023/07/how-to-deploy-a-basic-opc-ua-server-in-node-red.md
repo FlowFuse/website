@@ -5,7 +5,7 @@ description: Introduction to OPC-UA and how to deploy a Node-RED server flow.
 lastUpdated: 2026-06-03
 date: 2023-07-13
 authors: ["richard-meyer"]
-image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
+image: /blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
 keywords: opc ua server, opc ua server free, opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, node red opcua, node-red opcua, opcua node red, opcua nodered
 tags:
    - posts

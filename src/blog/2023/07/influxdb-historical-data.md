@@ -5,7 +5,7 @@ description: Discover how to build a Historical Data Dashboard with InfluxDB and
 date: 2023-07-18
 lastUpdated: 2025-07-14
 authors: ["andrew-lynch"]
-image: blog/2023/07/images/historical-data-dashboard.png
+image: /blog/2023/07/images/historical-data-dashboard.png
 keywords: Node-RED InfluxDB, Time-series data, Industrial dashboard, Historical data visualization, IoT dashboard, Serial port sensor data,  Live and historical charts
 tags:
     - posts
