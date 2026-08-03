@@ -108,11 +108,11 @@ useSchemaOrg([
         :tiers="tableTiers"
         :sections="comparisonSections"
         :ui="{
-            tier: 'border-x border-t border-b border-default rounded-t-lg bg-radial-[at_bottom_right] from-indigo-50 to-white',
+            tier: 'border-x border-t border-b border-default bg-radial-[at_bottom_right] from-indigo-50 to-white [&:nth-child(2)]:rounded-tl-lg last:rounded-tr-lg',
             td: 'border-x border-default',
             th: 'px-6 border-l border-default',
             tr: '*:py-4',
-            tbody: '[&>tr[data-slot]]:bg-indigo-50/50 [&>tr:first-child>th]:border-t [&>tr:first-child>th]:border-default [&>tr:first-child>th]:rounded-t-lg [&>tr:last-child>th]:rounded-b-lg [&>tr:last-child>td]:rounded-b-lg',
+            tbody: '[&>tr[data-slot]]:bg-indigo-50/50 [&>tr:first-child>th]:border-t [&>tr:first-child>th]:border-default [&>tr:first-child>th]:rounded-tl-lg [&>tr:last-child>th]:rounded-bl-lg [&>tr:last-child>td:last-child]:rounded-br-lg',
             tierWrapper: 'items-center text-center',
             tierTitleWrapper: 'justify-center',
             tierDescription: 'w-full',
