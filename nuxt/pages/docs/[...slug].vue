@@ -88,7 +88,7 @@ const breadcrumbs = computed(() => {
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
           <HandbookToc :links="page?.body?.toc?.links" />
           <div v-if="page?.updated" class="text-xs pb-1 text-right mt-4 text-gray-500 max-lg:hidden">
-            Updated: {{ page.updated }}
+            Updated: <RelativeTime :value="page.updated" />
           </div>
           <ClientOnly>
             <div v-if="page?.originalPath" class="text-xs pb-1 text-right italic max-lg:hidden">
