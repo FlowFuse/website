@@ -4,8 +4,8 @@ subtitle: "How SPC charts work, how they apply on the shop floor, and what to lo
 description: "Statistical process control explained: how SPC charts work, how they apply in the manufacturing space, and what to look for in SPC software."
 date: 2026-08-03
 authors: [""]
-image:
-keywords: statistical process control
+image: what-is-statistical-process-control.png
+keywords: /blog/2026/08/images/statistical process control
 tags:
   - flowfuse
 tldr:
