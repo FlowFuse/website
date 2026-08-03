@@ -1,2 +1,11 @@
 # Trivy ignore file
 # Add patterns to ignore specific vulnerabilities
+
+secrets:
+  # HubSpotForm form-id embeds are public identifiers, not API secrets.
+  # Scoped so hubspot-api-token stays active elsewhere.
+  - id: hubspot-api-token
+    paths:
+      - "nuxt/pages/**"
+      - "nuxt/components/**"
+    statement: HubSpot form IDs are public form identifiers, not API secrets
