@@ -1,6 +1,7 @@
 import { visit } from 'unist-util-visit'
 import type { Root } from 'mdast'
 import type { VFile } from 'vfile'
+import { slugifyAnchor } from './slugify-anchor'
 
 function posixDirname(path: string): string {
     const i = path.lastIndexOf('/')
@@ -37,14 +38,22 @@ export default function remarkHandbookLinks() {
 
         function resolveUrl(url: string): string {
             if (!url) return url
-            // Leave absolute, protocol, hash and mailto URLs unchanged
-            if (/^(https?:|#|mailto:|\/|data:)/.test(url)) return url
+            // Leave external protocol and mailto/data URLs unchanged
+            if (/^(https?:|mailto:|data:)/.test(url)) return url
+            // In-page anchors: normalise to the generated heading id.
+            if (url.startsWith('#')) return slugifyAnchor(url)
+            // Absolute site paths: normalise the anchor fragment, leave the path as-is.
+            if (url.startsWith('/')) {
+                const anchor = slugifyAnchor(url.match(/#.*/)?.[0] ?? '')
+                const pathPart = url.replace(/#.*$/, '')
+                return pathPart + anchor
+            }
             // Strip .md extension (+ optional anchor): ./foo.md#bar → ./foo#bar
             url = url.replace(/\.md(#.*)?$/, (_, anchor) => anchor ?? '')
             // Strip README: README#bar → #bar (or empty → current page)
             url = url.replace(/README(#.*)?$/, (_, anchor) => anchor ?? '.')
             // Resolve relative URL against the base directory
-            const anchor = url.match(/#.*/)?.[0] ?? ''
+            const anchor = slugifyAnchor(url.match(/#.*/)?.[0] ?? '')
             const pathPart = url.replace(/#.*$/, '')
             const resolved = posixResolve(baseDir, pathPart)
             return resolved + anchor
