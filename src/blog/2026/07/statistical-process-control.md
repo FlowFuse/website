@@ -44,6 +44,9 @@ FlowFuse is an industrial application platform that works with manufacturers who
 
 This article covers what statistical process control is, how SPC charts and control charts work, how SPC applies across manufacturing sites, and where Six Sigma SPC and SPC software fit in.
 
+![Close-up of a hand pointing at an SPC chart on a computer screen during manufacturing data analysis.](./images/spc-chart-data-analysis-close-up.png)
+_Close-up of a hand pointing at an SPC chart on a computer screen during manufacturing data analysis._
+
 ## How Statistical Process Control Works: SPC Charts And Control Charts Explained
 
 Statistical process control is a method for monitoring a manufacturing process using data collected while it runs, rather than waiting to inspect the finished product. It works by plotting measurements from the process, such as part dimensions, temperature, or pressure, onto a control chart over time. That chart includes a center line at the process average and upper and lower control limits placed three sigma either side of it, derived from the short-term variation within the process itself rather than from a fixed specification. Control limits and specification limits are not the same thing: a process can run entirely inside its control limits and still make parts outside spec, which is why an SPC signal means the process changed, not that a given part is bad.
@@ -53,6 +56,9 @@ The right control chart depends on how the data is collected. X-bar R and X-bar 
 SPC charts make it possible to see the difference between common cause variation, which is expected and should not be adjusted for point by point, and special cause variation, which signals something has changed and needs investigation. A single point falling outside the control limits is one signal to intervene, but a non-random pattern building up over several points, such as a run drifting steadily in one direction or a cluster of points hugging one side of the center line, is also a signal. Quality teams formalize these checks using the Western Electric Rules or Nelson Rules, which pair the out-of-limit test with additional tests for runs, trends, and points clustering in the outer bands of the chart. Most of those tests fire on a sequence of points that are each individually inside the limits, which is why charts running these rules divide the space into one and two sigma bands rather than just plotting the outer limits. This is the core discipline behind statistical process control: catching drift while it is still correctable, not after a batch has already failed inspection.
 
 Building and reading control charts by hand across dozens of machines and lines is slow and does not scale well across multiple sites. For a deeper look at how these charts are typically built and interpreted in practice, see [Statistical Process Control (SPC): Benefits and Implementation Guide](/blog/2025/07/quality-control-automation-spc-charts/).
+
+![Manufacturing quality dashboard on a computer screen showing an SPC chart for bearing diameter and process capability metrics.](./images/manufacturing-quality-dashboard-spc-chart.png)
+_Manufacturing quality dashboard on a computer screen showing an SPC chart for bearing diameter and process capability metrics._
 
 ## SPC In Manufacturing: Turning Shop Floor Data Into Process Control
 
