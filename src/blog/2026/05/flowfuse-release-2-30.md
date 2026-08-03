@@ -29,7 +29,7 @@ tldr: "FlowFuse 2.30 introduces agentic application building: describe the indus
 
 FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your workspace.
 
-## FlowFuse Expert Builds Your Industrial Application {#expert-application-building}
+## FlowFuse Expert Builds Your Industrial Application
 
 *FlowFuse Expert is our integrated AI assistant across FlowFuse's website, platform, and in the immersive Node-RED editor.*
 
