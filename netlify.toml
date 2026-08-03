@@ -1,8 +1,3 @@
-[build.environment]
-  # Deploy the docs snapshot the build workflow committed to 'live' rather than cloning
-  # flowfuse at deploy time. Branches without a snapshot fall back to cloning.
-  FLOWFUSE_DOCS_SNAPSHOT = "1"
-
 [[headers]]
   for = "/*"
   [headers.values]
@@ -75,6 +70,9 @@ publish = "nuxt/dist"
 
 [build.environment]
 NODE_OPTIONS = "--max-old-space-size=4096"
+# Deploy the docs snapshot the build workflow commits to 'live' instead of cloning
+# flowfuse at deploy time. Branches carrying no snapshot fall back to cloning.
+FLOWFUSE_DOCS_SNAPSHOT = "1"
 
 [functions]
 directory = "nuxt/.netlify/functions-internal"
