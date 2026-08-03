@@ -72,7 +72,7 @@ The more of your platform that automated clients and AI agents can reach, the mo
 
 ### Every MCP Action, on the Record
 
-FlowFuse now logs actions performed by FlowFuse Expert through supported platform tools and actions performed through supported FlowFuse platform APIs using a Personal Access Token. Each log entry records the action, when it occurred, and the user that performed it. These logs cover FlowFuse Expert actions through supported MCP tools and supported FlowFuse platform API actions only; they do not capture all MCP activity.
+FlowFuse now logs actions performed through the supported platform MCP tools for AI agents such as our own first class AI agent the FlowFuse Expert. Each log entry records the action, when it occurred, and the user that performed it through it's dependency on the user's Personal Access Token. These logs do not capture activity related to MCP server nodes with which you can build your own MCP tooling and is part of our FlowFuse Expert Insights offering.
 
 If you answer to an OT security team or an auditor, "the AI did it" is not an acceptable line in an incident report. The audit trail turns AI activity into the same kind of accountable, reviewable record you already expect from human operators.
 
