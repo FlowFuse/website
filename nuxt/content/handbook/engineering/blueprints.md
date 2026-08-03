@@ -10,7 +10,7 @@ As part of the FlowFuse platform, it is possible to define "Blueprints".
 
 Blueprints are packaged flows that help users get up and running with a particular project or idea. They should be informative, easy to understand, and provide a clear path to value.
 
-FlowFuse host a public version of our [Blueprint Library here](https://flowfuse.com/blueprints/).
+FlowFuse host a public version of our [Blueprint Library here](/blueprints/).
 
 ## Tracking Blueprint Ideas
 
@@ -23,7 +23,7 @@ _Screenshot of the Blueprint Project Board_
 
 ### Public Submission
 
-We encourage Blueprint submissions from our customers, partners, and the wider community. Anyone can submit their own Blueprint idea via our online portal [here](https://flowfuse.com/blueprints/submit/). Please check with the [Minimum Requirements](#minimum-requirements) to ensure any submissions have provided the relevant details.
+We encourage Blueprint submissions from our customers, partners, and the wider community. Anyone can submit their own Blueprint idea via our online portal [here](/blueprints/submit/). Please check with the [Minimum Requirements](#minimum-requirements) to ensure any submissions have provided the relevant details.
 
 ### Internal Development
 

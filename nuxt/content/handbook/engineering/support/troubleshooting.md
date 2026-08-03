@@ -31,11 +31,11 @@ An issue we have seen is where a Hosted Instance is running out of memory. This 
 1. When the Instance is first being spun up due to the memory required to install dependencies.
 2. A memory leak within the Node-RED instance, whereby memory usage gradually increases over a longer period of time.
 
-The best way to diagnose which of these is the cause, you can check the "Performance" tab of the affected Hosted Instance. More information available [here](https://flowfuse.com/changelog/2025/06/instance-performance-memory/).
+The best way to diagnose which of these is the cause, you can check the "Performance" tab of the affected Hosted Instance. More information available [here](/changelog/2025/06/instance-performance-memory/).
 
 #### Restarting in Safe Mode
 
-Any problems caused by the Node-RED flows themselves are best diagnosed by putting the Hosted Instance into safe mode. Please consult the [Node-RED Safe Mode](https://flowfuse.com/docs/debugging/) documentation for more information.
+Any problems caused by the Node-RED flows themselves are best diagnosed by putting the Hosted Instance into safe mode. Please consult the [Node-RED Safe Mode](/docs/debugging/) documentation for more information.
 
 ### Remote Instances
 
@@ -58,7 +58,7 @@ If we are seeing intermittent connectivity issues, then the most likely cause is
 
 #### Deleting an Account
 
-If a user wishes to delete their account, you can point them to the relevant section of the documentation [here](https://flowfuse.com/docs/cloud/billing/#cancelling-your-subscription).
+If a user wishes to delete their account, you can point them to the relevant section of the documentation [here](/docs/cloud/billing/#cancelling-your-subscription).
 
 You should also, always ask, the reasons for wanting to delete the account. Understanding user churn is very important information to help us improve our product and service.
 
@@ -73,7 +73,7 @@ Any bugs found for FlowFuse Dashboard should be logged as an issue in the [FlowF
 
 In summer of 2025, FlowFuse deprecated the Free tier and changed the pricing structure of the Starter tier. 
 
-The Free tier was built to enable remote device management and provided for two remote instances, [free of charge.](https://flowfuse.com/blog/2024/12/flowfuse-release-2-12/). As we found that users were looking for cloud-hosted Node-RED instances, the Free tier did not meet this expectation, and was deprecated.
+The Free tier was built to enable remote device management and provided for two remote instances, [free of charge.](/blog/2024/12/flowfuse-release-2-12/). As we found that users were looking for cloud-hosted Node-RED instances, the Free tier did not meet this expectation, and was deprecated.
 
 To support users seeking cloud-hosted Node-RED, the Starter tier was revised to provide a more powerful hosted instance, with greater CPU and memory than before. In addition, the tier went from offering two hosted instances and two remote instances, to only a single, more powerful hosted instance.
 

@@ -14,4 +14,4 @@ The initial deployment is available to Enterprise Teams and allows up to 20 clie
 
 From today, this feature is available to FlowFuse Cloud Enterprise Teams. We'll be bringing it to Self-Hosted customers in the near future, as well as adding the ability to purchase additional packs of clients.
 
-See the [broker documentation](https://flowfuse.com/docs/cloud/introduction/#enterprise-team-broker) for more details.
+See the [broker documentation](/docs/cloud/introduction/#enterprise-team-broker) for more details.

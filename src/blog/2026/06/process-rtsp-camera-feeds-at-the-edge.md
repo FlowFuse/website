@@ -155,7 +155,7 @@ That's a live line view anyone can pull up in a browser, with no NVR login and n
 
 A live view is a real win, but notice what you have now: the camera's output is a PNG buffer moving through your flow, one message per frame. Once a frame is just another message, you can do more than display it. You can ask what's in it.
 
-That's what the [**FlowFuse AI** nodes](https://flowfuse.com/node-red/flowfuse/ai/) are for. They run vision models locally, inside your flow, with nothing sent to an outside service. The **Object Detection** node takes a PNG buffer as its input, which is exactly what the camera node outputs, so you wire the camera straight into it, no conversion step in between. From there the flow stops watching and starts acting: counting material on the conveyor, flagging a person near the flotation cells, or catching a stopped belt before the line backs up. Each detection comes back as structured data, a label, a confidence score, and a position, which you handle like any other signal in FlowFuse.
+That's what the [**FlowFuse AI** nodes](/node-red/flowfuse/ai/) are for. They run vision models locally, inside your flow, with nothing sent to an outside service. The **Object Detection** node takes a PNG buffer as its input, which is exactly what the camera node outputs, so you wire the camera straight into it, no conversion step in between. From there the flow stops watching and starts acting: counting material on the conveyor, flagging a person near the flotation cells, or catching a stopped belt before the line backs up. Each detection comes back as structured data, a label, a confidence score, and a position, which you handle like any other signal in FlowFuse.
 
 ## Recording frames to disk
 

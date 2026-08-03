@@ -8,7 +8,7 @@ This article applies exclusively to US-based W2 employees employed through FlowF
 > **Note:** The sections below are summary overviews. For the complete section and policies and full legal disclosures, please refer to the [US Compliance Policies Handbook](https://docs.google.com/document/d/1SL66CaialYOW9M-GhxRqtsclLhr4M1cD/edit).
 
 # Compliance & Training (Mineral)
-FlowFuse uses the Mineral Portal (accessed via Deel) to manage state-specific mandatory training. Every new PEO employee must complete a compliance track tailored to their state. See [here](https://flowfuse.com/handbook/peopleops/compliance/#compliance-training-mineral) for full breakdown
+FlowFuse uses the Mineral Portal (accessed via Deel) to manage state-specific mandatory training. Every new PEO employee must complete a compliance track tailored to their state. See [here](/handbook/peopleops/compliance/#compliance-training-mineral) for full breakdown
 
 ## 1-2 Equal Employment Opportunity
 

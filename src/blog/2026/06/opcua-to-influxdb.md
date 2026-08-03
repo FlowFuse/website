@@ -59,7 +59,7 @@ tldr: "Real-time OPC UA values tell you what's happening now; the history is whe
 
 Industrial equipment produces data constantly: temperatures, pressures, motor speeds, tank levels, all changing by the second. Real-time values tell you what's happening now, but the history is where the value lives, spotting a degrading pump, proving a batch stayed within spec, tracing the conditions behind a fault. OPC UA gets that data out of your equipment in a vendor-neutral way, and InfluxDB stores it as timestamped history built to query at scale. In this article, you'll connect the two in FlowFuse to turn live readings into a durable record you can query, chart, and analyze.
 
-> **Note:** If you'd rather not leave FlowFuse and want a good time-series database built in, [FlowFuse Tables](https://flowfuse.com/docs/user/ff-tables/) is the answer.
+> **Note:** If you'd rather not leave FlowFuse and want a good time-series database built in, [FlowFuse Tables](/docs/user/ff-tables/) is the answer.
 
 <!--more-->
 

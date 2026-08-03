@@ -35,5 +35,5 @@ On FlowFuse Cloud, Starter teams already have this feature enabled for their ins
 
 Pro and Enterprise teams can opt-in on the Instance Settings - Maintenance page.
 
-More information is available in the [scheduled maintenance changelog entry](https://flowfuse.com/changelog/2025/12/scheduled-maintenance/).
+More information is available in the [scheduled maintenance changelog entry](/changelog/2025/12/scheduled-maintenance/).
 
