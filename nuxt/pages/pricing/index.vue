@@ -48,6 +48,13 @@ function featureDescription (feature: CatalogFeature) {
   return feature.description
 }
 
+useSeoMeta({
+  title: 'FlowFuse Pricing',
+  description: 'Packages built around the job, deploying and scaling automation across plants, or integrating the business systems and data sources you run on. All governed on one platform.',
+  ogUrl: 'https://flowfuse.com/pricing/',
+  twitterSite: '@FlowFuseinc',
+})
+
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
   ...(faq.value?.items ?? []).map(item => defineQuestion({
