@@ -67,7 +67,7 @@ If you're looking to migrate your existing Node-RED Dashboard flows to FlowFuse 
 
 It's worth noting that FlowFuse Dashboard _will_ run side-by-side with the original Node-RED Dashboard, so you can take your time to migrate your flows over, and do so, piece-by-piece.
 
-This week, we also made available the first iteration of the [Dashboard Migration Service](https://flowfuse.com/platform/dashboard/#migration-service):
+This week, we also made available the first iteration of the [Dashboard Migration Service](/platform/dashboard/#migration-service):
 
 ![Screenshot showing the Dashboard Migration Service available on FlowFuse's website](./images/dashboard-migration-service.png){data-zoomable}
 _Screenshot showing the Dashboard Migration Service available on FlowFuse's website_

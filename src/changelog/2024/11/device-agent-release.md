@@ -16,4 +16,4 @@ We recognize that software update lifecycles can be a challenge in some environm
 
 If your devices cannot be updated to the latest Node.js versions, then please ensure you stay on the 2.x release of the Device Agent until a time that you are able to update Node.js.
 
-Details for upgrading to this release are available [in the documentation](https://flowfuse.com/docs/device-agent/install/#upgrading-the-agent).
+Details for upgrading to this release are available [in the documentation](/docs/device-agent/install/#upgrading-the-agent).

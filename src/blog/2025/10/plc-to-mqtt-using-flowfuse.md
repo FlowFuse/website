@@ -92,7 +92,7 @@ The solution lies in low-code integration platforms that consolidate protocol ha
 Before you start, make sure you have the following:
 
 - A properly configured and fully operational PLCs, located on the same network as the edge device that will be reading its data.
-- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](https://flowfuse.com/blog/2025/09/installing-node-red/) and set up your instance following the instructions in this article.
+- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](/blog/2025/09/installing-node-red/) and set up your instance following the instructions in this article.
 
 # Getting Started
 

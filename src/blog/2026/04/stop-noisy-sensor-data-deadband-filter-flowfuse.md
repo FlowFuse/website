@@ -51,7 +51,7 @@ A practical starting point is to measure your sensor output when the process is 
 
 Before getting started, you will need the following:
 
-- A running FlowFuse instance. If you do not have one yet, start with a [free trial](https://app.flowfuse.com/account/create) and follow [this guide](https://flowfuse.com/blog/2025/09/installing-node-red/) to get up and running on your edge device.
+- A running FlowFuse instance. If you do not have one yet, start with a [free trial](https://app.flowfuse.com/account/create) and follow [this guide](/blog/2025/09/installing-node-red/) to get up and running on your edge device.
 - A sensor or data source publishing values to FlowFuse via MQTT, Modbus, OPC-UA, or a simulated inject node for testing.
 
 ## Collecting sensor data with FlowFuse

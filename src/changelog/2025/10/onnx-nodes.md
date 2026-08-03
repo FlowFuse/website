@@ -35,7 +35,7 @@ FlowFuse customers can install the new AI nodes today via the Node-RED Palette M
 We have included example flows directly inside the package to help you get started quickly.
 Just hit `CTRL-I` in the Node-RED editor to import the example flows from the FlowFuse AI Nodes package.
 
-Additionally, we have created a blog post detailing how you can train a simple image classification model to accompany the advanced example flow included in the package. You can read all about it here: [Deploy Custom-Trained AI Models: Using ONNX with Node-RED and FlowFuse](https://flowfuse.com/blog/2025/10/custom-onnx-model/)
+Additionally, we have created a blog post detailing how you can train a simple image classification model to accompany the advanced example flow included in the package. You can read all about it here: [Deploy Custom-Trained AI Models: Using ONNX with Node-RED and FlowFuse](/blog/2025/10/custom-onnx-model/)
 
 ### Screenshots
 
