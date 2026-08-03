@@ -7,12 +7,36 @@ const tableTiers = computed(() => (plans.value ?? []).map(p => ({
   id: p.tierId,
   title: p.title,
   highlight: p.highlight,
+  button: p.button,
+  bestFitFor: p.bestFitFor,
 })))
 
 const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
   label: item.question,
   content: item.answer,
 })))
+
+// The comparison table should only show features that differ between tiers.
+// Features shared by every tier don't belong in a comparison — they're listed
+// separately below as a plain "core features" dump, grouped by their original
+// category so ~37 shared features don't read as one undifferentiated list.
+const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
+  .map(section => ({ ...section, features: section.features.filter(f => f.tiers.edge !== f.tiers.hub) }))
+  .filter(section => section.features.length > 0))
+
+const coreFeatureSections = computed(() => (featureCatalog.value?.sections ?? [])
+  .map(section => ({ ...section, features: section.features.filter(f => f.tiers.edge === f.tiers.hub) }))
+  .filter(section => section.features.length > 0))
+
+// window.capture is injected by the site's analytics script (see
+// src/_includes/analytics/body.html) and is a no-op wrapper around
+// posthog.capture — it's absent outside production, hence the guard.
+function capture (eventName?: string, props?: Record<string, unknown>) {
+  if (!eventName) return
+  if (typeof (window as any).capture === 'function') {
+    (window as any).capture(eventName, props)
+  }
+}
 
 // UPricingTable's feature-title slot types `feature` without `description`,
 // even though the featureCatalog content schema does define it.
@@ -23,6 +47,13 @@ interface CatalogFeature {
 function featureDescription (feature: CatalogFeature) {
   return feature.description
 }
+
+useSeoMeta({
+  title: 'FlowFuse Pricing',
+  description: 'Packages built around the job, deploying and scaling automation across plants, or integrating the business systems and data sources you run on. All governed on one platform.',
+  ogUrl: 'https://flowfuse.com/pricing/',
+  twitterSite: '@FlowFuseinc',
+})
 
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
@@ -38,27 +69,70 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto py-16 px-4">
         <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the package that fits your team</h2>
-        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Machines on the shop floor, scaling to more plants? Or business systems and data sources to bring under governance? There’s a FlowFuse package for both.</p>
+        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse has a product for you.</p>
         <UPricingPlans>
-        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip', titleWrapper: 'mb-4' }" />
+        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white', button: 'text-base font-bold', titleWrapper: 'mb-4', features: 'mt-2' }">
+            <template #description>
+                <p>{{ plan.description }}</p>
+                <p class="mt-6 text-sm font-semibold text-gray-900">Everything in the <a href="#core-features" class="text-indigo-600 hover:underline">core FlowFuse platform</a> plus:</p>
+            </template>
+            <template #features>
+                <li v-for="feature in plan.features" :key="feature" class="flex items-center gap-2 min-w-0">
+                    <UIcon name="i-lucide-check" class="size-5 shrink-0 text-primary" />
+                    <span class="text-muted text-sm whitespace-normal overflow-visible text-clip">{{ feature }}</span>
+                </li>
+                <li class="flex items-center gap-2 min-w-0">
+                    <a href="#comparison" class="text-sm font-semibold text-indigo-600 hover:underline">See all</a>
+                </li>
+            </template>
+            <template #button>
+                <UButton
+                    block size="lg" v-bind="plan.button" class="text-base font-bold"
+                    @click="capture(plan.button.event, { position: 'pricing-card', tier: plan.tierId, page: 'pricing' })"
+                />
+            </template>
+        </UPricingPlan>
         </UPricingPlans>
         <SocialProof class="mt-16" />
 
         <CertifiedNodes />
 
-        <h2 class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
+        <h2 id="comparison" class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
         <UPricingTable
         v-if="featureCatalog"
         class="mt-16"
         :tiers="tableTiers"
-        :sections="featureCatalog.sections"
+        :sections="comparisonSections"
         :ui="{
+            tier: 'border-x border-t border-b border-default rounded-t-lg bg-radial-[at_bottom_right] from-indigo-50 to-white',
+            td: 'border-x border-default',
+            th: 'px-6 border-l border-default',
+            tr: '*:py-4',
+            tbody: '[&>tr[data-slot]]:bg-indigo-50/50 [&>tr:first-child>th]:border-t [&>tr:first-child>th]:border-default [&>tr:first-child>th]:rounded-t-lg [&>tr:last-child>th]:rounded-b-lg [&>tr:last-child>td]:rounded-b-lg',
             tierWrapper: 'items-center text-center',
             tierTitleWrapper: 'justify-center',
-            tierDescription: 'hidden',
+            tierDescription: 'w-full',
             tierPriceWrapper: 'hidden',
+            tierButton: 'w-full',
         }"
         >
+        <template #tier-button="{ tier }">
+            <UButton
+                v-if="tier.button" block size="lg" v-bind="tier.button" class="text-base font-bold"
+                @click="capture(tier.button.event, { position: 'pricing-comparison', tier: tier.id, page: 'pricing' })"
+            />
+        </template>
+        <template #tier-description="{ tier }">
+            <div v-if="tier.bestFitFor?.length" class="w-full mt-4 text-left">
+                <p class="text-sm font-semibold text-gray-900">Best Fit For:</p>
+                <ul class="mt-1.5 flex flex-col gap-1.5 text-sm text-gray-600">
+                    <li v-for="fit in tier.bestFitFor" :key="fit" class="flex items-start gap-1.5">
+                        <UIcon name="i-lucide-check" class="size-4 shrink-0 mt-0.5 text-indigo-600" />
+                        <span>{{ fit }}</span>
+                    </li>
+                </ul>
+            </div>
+        </template>
         <template #feature-title="{ feature }">
             <UPopover v-if="featureDescription(feature)" :content="{ side: 'top' }">
                 <button type="button" class="inline-flex items-center gap-1 text-left hover:text-indigo-600">
@@ -72,6 +146,22 @@ useSchemaOrg([
             <span v-else>{{ feature.title }}</span>
         </template>
         </UPricingTable>
+
+        <div v-if="coreFeatureSections.length" id="core-features" class="mt-28">
+        <h2 class="text-center mb-2"><span class="text-indigo-600">FlowFuse</span> Core Features</h2>
+        <h3 class="text-center text-gray-500 text-2xl mb-10">Included in every FlowFuse plan</h3>
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div v-for="section in coreFeatureSections" :key="section.id">
+                <h3 class="font-semibold text-sm text-gray-900 mb-3">{{ section.title }}</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+                    <li v-for="feature in section.features" :key="feature.id" class="flex items-center gap-2">
+                        <UIcon name="i-lucide-check" class="size-4 shrink-0 text-indigo-600" />
+                        <span class="text-sm text-gray-700">{{ feature.title }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
 
         <div v-if="faq" class="mt-28 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
