@@ -20,12 +20,16 @@ const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
 // Features shared by every tier don't belong in a comparison — they're listed
 // separately below as a plain "core features" dump, grouped by their original
 // category so ~37 shared features don't read as one undifferentiated list.
+function tiersDiffer (tiers: { edge: boolean, hub: boolean, fleet: boolean }) {
+  return !(tiers.edge === tiers.hub && tiers.hub === tiers.fleet)
+}
+
 const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
-  .map(section => ({ ...section, features: section.features.filter(f => f.tiers.edge !== f.tiers.hub) }))
+  .map(section => ({ ...section, features: section.features.filter(f => tiersDiffer(f.tiers)) }))
   .filter(section => section.features.length > 0))
 
 const coreFeatureSections = computed(() => (featureCatalog.value?.sections ?? [])
-  .map(section => ({ ...section, features: section.features.filter(f => f.tiers.edge === f.tiers.hub) }))
+  .map(section => ({ ...section, features: section.features.filter(f => !tiersDiffer(f.tiers)) }))
   .filter(section => section.features.length > 0))
 
 // window.capture is injected by the site's analytics script (see
@@ -70,8 +74,8 @@ useSchemaOrg([
         <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the package that fits your team</h2>
         <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse has a product for you.</p>
-        <UPricingPlans>
-        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white', button: 'text-base font-bold', titleWrapper: 'mb-4', features: 'mt-2' }">
+        <UPricingPlans :ui="{ base: 'gap-x-4' }">
+        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white ring-indigo-100 lg:p-6 xl:p-6', button: 'text-base font-bold', titleWrapper: 'mb-4', features: 'mt-2' }">
             <template #description>
                 <p>{{ plan.description }}</p>
                 <p class="mt-6 text-sm font-semibold text-gray-900">Everything in the <a href="#core-features" class="text-indigo-600 hover:underline">core FlowFuse platform</a> plus:</p>
