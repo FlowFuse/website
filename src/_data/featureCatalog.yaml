@@ -857,13 +857,3 @@ sections:
         selfHosted:
           enterprise:
             value: true
-
-buttons:
-  cloud:
-    - cta: Request a Quote
-      url: /pricing/request-quote/
-      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
-  selfHosted:
-    - cta: Request a Quote
-      url: /pricing/request-quote/
-      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"
