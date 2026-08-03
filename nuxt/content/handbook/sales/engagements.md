@@ -37,22 +37,9 @@ following guide.
 
 ### What to Quote
 
-When preparing a quote, include both the plan and any extras that go beyond what
-comes with the plan at the designated tier. Include a note in the Terms section
-that indicates what comes with the plan. (This will be pre-filled when using one
-of the HubSpot quote templates). The product plan will be listed as its own
-line, with a quantity of 1, and the minimum purchase price for that plan. The
-add-on options should also be added to the product section, as referenced by the
-purchase term template.
+When preparing a quote, include the product, quantities, and any required add-ons, if applicable. Always choose the matching product quote template — Edge, Hub, or Fleet — which pre-fills the correct features and terms onto the quote.
 
-| Item & Description                   | Quantity | Unit Price  | Total  |
-| ------------------------------------ | -------- | ----------- | ------ |
-| FlowFuse Enterprise Platform - Cloud | 1        | $X,000/year | $X,000 |
-| Enterprise - Instance Add-On         | 10       | $X,000/year | $X,000 |
-| Enterprise - Remote Device Add-On    | 10       | $X,000      | $X,000 |
-
-Annual Subtotal	 $XX,000\
-**Total** $XX,000
+Use the internal pricing calculator linked above to configure each product sale, including the correct quantities and add-ons.
 
 ### Creating a Quote
 

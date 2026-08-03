@@ -1,5 +1,5 @@
 ---
-navTitle: Release Blogs
+title: "Release Blogs"
 ---
 
 # Writing Release Blogs
