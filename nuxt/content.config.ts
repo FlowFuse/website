@@ -171,6 +171,7 @@ export default defineContentConfig({
                         tiers: z.object({
                             edge: z.boolean(),
                             hub: z.boolean(),
+                            fleet: z.boolean(),
                         }),
                     })),
                 })),
