@@ -136,12 +136,12 @@ _Screenshot of Dashboard showing the added buttons in the header_
 
 #### Example: Adding Logo
 
-If you want to add your brand's logo, you can replace the element inside <teleport> with an <img> tag. You can do this in the same ui-template widget or in a different ui-template widget:
+If you want to add your brand's logo, you can replace the element inside `<Teleport>` with an `<img>` tag. You can do this in the same ui-template widget or in a different ui-template widget:
 
 1. Drag the `ui-template` node onto the canvas.
 2. Select the correct scope for that widget to render.
 3. Select the correct page or UI in which you want to render the element.
-3. Paste the same Vue snippet given in the above section into the `ui-template` widget and replace the code inside <teleport> with the following element:
+3. Paste the same Vue snippet given in the above section into the `ui-template` widget and replace the code inside `<Teleport>` with the following element:
 
 ```html
 <img height="32px" src="https://app.flowfuse.com/ff-logo--wordmark-caps--dark.png"></img>
