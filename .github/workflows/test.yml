@@ -38,6 +38,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: 'website'
+      # Only the nuxt/lib suite: `npm test` also covers nuxt/server/lib, whose
+      # handbook tests read real git history, which this shallow checkout lacks.
+      - name: Shared chrome data guards
+        run: node --test nuxt/lib/*.test.mjs
+        working-directory: 'website'
       - name: Build the forge
         run: npm run build:nuxt:skip-images
         working-directory: 'website'

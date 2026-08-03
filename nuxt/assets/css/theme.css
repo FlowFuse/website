@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* Utility classes for the nav and footer live in this data file rather than in
+   a template, so name it explicitly: automatic source detection skips JSON. */
+@source "../../../src/_data/chrome.json";
+
 /* FlowFuse brand red scale — overrides Tailwind's default so Nuxt UI's
    primary color tokens match the palette from the branding handbook. */
 @theme {
