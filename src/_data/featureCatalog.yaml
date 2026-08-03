@@ -582,10 +582,12 @@ sections:
         label: FlowFuse Tables
         description: "Integrated database feature for storing, reading, writing, and querying data within FlowFuse."
         docsLink: /docs/user/ff-tables/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/07/expert-tables-automation/
+            release: "2.33"
         solutions: [mes, scada, data-integration]
         showOnPricing: true
-        tags: [cloud, self-hosted]
+        tags: []
         cloud:
           enterprise:
             value: true
@@ -710,16 +712,32 @@ sections:
         label: Single Sign-On (SSO)
         description: "Configure FlowFuse to work with your own SSO provider, allowing users to access FlowFuse with a single set of login credentials."
         docsLink: /docs/admin/sso/
-        changelog: null
+        changelog:
+          - url: /changelog/2026/07/application-sso-groups/
+            release: "2.33"
         solutions: [mes, scada, uns, it-ot-middleware]
         showOnPricing: true
-        tags: [cloud, self-hosted]
+        tags: []
         cloud:
           enterprise:
             value: true
         selfHosted:
           enterprise:
             value: true
+
+      # Tiers are intentionally omitted until availability is settled. With no
+      # cloud/selfHosted keys, renderTierBadges emits nothing while the
+      # changelog link still injects, so no incorrect badge is published.
+      - id: scoped-pats
+        label: Scoped Personal Access Tokens
+        description: "Restrict a Personal Access Token to specific teams, limit it to read-only operations, or control whether it carries admin privileges."
+        docsLink: null
+        changelog:
+          - url: /changelog/2026/07/scoped-pats/
+            release: "2.33"
+        solutions: [mes, scada, uns, it-ot-middleware]
+        showOnPricing: false
+        tags: []
 
       - id: hipaa
         label: BAA for HIPAA
@@ -781,6 +799,23 @@ sections:
           enterprise:
             value: true
 
+      # Distinct from the `dashboard` entry below, which is the Node-RED
+      # Dashboard itself. This is the platform view that lists and embeds them.
+      # Tiers omitted deliberately: this is available to all users, and the
+      # catalog only models an `enterprise` tier, so any tier value here would
+      # render a misleading Enterprise badge. Omitting them suppresses the badge
+      # and keeps the changelog link.
+      - id: dashboards-home
+        label: Dashboards View
+        description: "Browse and open every dashboard across your team from a dedicated Dashboards view, at both team and application level, without leaving FlowFuse."
+        docsLink: null
+        changelog:
+          - url: /changelog/2026/07/team-and-application-dashboards/
+            release: "2.33"
+        solutions: [mes, scada, uns, it-ot-middleware, data-integration]
+        showOnPricing: false
+        tags: []
+
       - id: dashboard
         label: Node-RED Dashboard
         description: "Visualise your data with the powerful and intuitive Node-RED Dashboard."
@@ -822,13 +857,3 @@ sections:
         selfHosted:
           enterprise:
             value: true
-
-buttons:
-  cloud:
-    - cta: Request a Quote
-      url: /pricing/request-quote/
-      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'cloud-enterprise'})"
-  selfHosted:
-    - cta: Request a Quote
-      url: /pricing/request-quote/
-      onclick: "capture('cta-request-quote', {'position': 'secondary'}, {'plan': 'sh-enterprise'})"

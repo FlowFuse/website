@@ -7,11 +7,15 @@ title: "Engagements & Pricing"
 Pricing is publicly available at [our pricing page](/pricing/). When discussing
 pricing with enterprise customers, make a copy of
 [our internal pricing template deck](https://docs.google.com/presentation/d/1kaW6aZxpnCaVuQVdVsi0RTulhRMbeqglhZHkzSP-2kM/)
-to discuss.
+to discuss. For per-product commercial conversations, use the relevant
+[Pricing Decks](./pricing-decks.md) (Edge, Hub, and Fleet).
 
-For FlowFuse Edge deals, use the
-[Edge pricing calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
+For all FlowFuse deals, use the
+[Pricing Calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
 (internal only) for current list prices and quote generation.
+
+For discounts, custom agreements, or any other non-standard terms, follow the
+[Deal Approval Process (Deal Desk)](#deal-approval-process-deal-desk).
 
 ## Creating a Deal
 
@@ -33,22 +37,9 @@ following guide.
 
 ### What to Quote
 
-When preparing a quote, include both the plan and any extras that go beyond what
-comes with the plan at the designated tier. Include a note in the Terms section
-that indicates what comes with the plan. (This will be pre-filled when using one
-of the HubSpot quote templates). The product plan will be listed as its own
-line, with a quantity of 1, and the minimum purchase price for that plan. The
-add-on options should also be added to the product section, as referenced by the
-purchase term template.
+When preparing a quote, include the product, quantities, and any required add-ons, if applicable. Always choose the matching product quote template — Edge, Hub, or Fleet — which pre-fills the correct features and terms onto the quote.
 
-| Item & Description                   | Quantity | Unit Price  | Total  |
-| ------------------------------------ | -------- | ----------- | ------ |
-| FlowFuse Enterprise Platform - Cloud | 1        | $X,000/year | $X,000 |
-| Enterprise - Instance Add-On         | 10       | $X,000/year | $X,000 |
-| Enterprise - Remote Device Add-On    | 10       | $X,000      | $X,000 |
-
-Annual Subtotal	 $XX,000\
-**Total** $XX,000
+Use the internal pricing calculator linked above to configure each product sale, including the correct quantities and add-ons.
 
 ### Creating a Quote
 
@@ -71,10 +62,16 @@ Follow these steps to create a quote.
 5. Set Signature and Payment settings as needed. Ensure a countersignature is
    required from either the CEO or Head of GTM.
 6. In the Template and Details section, choose the appropriate Quote Template
-   from the dropdown menu. Choosing the correct Quote Template is important
-   because it will pre-fill the correct plan features onto the quote. You can
-   include additional Comments to Buyer or Purchase Terms here. They will not
-   overwrite the Terms and Comments included with the Quote Template.
+   from the dropdown menu. Always use one of the three product templates that
+   correspond to our pricing packages:
+   - **Edge**
+   - **Hub**
+   - **Fleet**
+
+   Choosing the correct Quote Template is important because it will pre-fill the
+   correct plan features onto the quote. You can include additional Comments to
+   Buyer or Purchase Terms here. They will not overwrite the Terms and Comments
+   included with the Quote Template.
 7. Review your Quote, and when everything is correct, click Create to create the
    quote attached to the relevant Deal.
 

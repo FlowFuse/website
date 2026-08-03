@@ -41,6 +41,16 @@ checking account. Wiring instructions to be shared by the rep are found in
 [our internal drive](https://drive.google.com/file/d/1B68cgaut2zdpEx6EfuBTJYMU36f8pYqH/view?usp=drive_link).
 - If a vendor is sending money back to our account in any other currency than USD, we should find the necessary currency information from this [link](https://www.svb.com/incoming-wire-payment/) and share it with them.
 
+#### Account Verification Letter
+
+Some larger clients might also require an account verification letter from the bank. To get it, you need to alert the BizOps team through Slack to get it for you. 
+
+**Steps to get an updated Account Verification Letter: **
+1. Log in to our Bank Account
+2. Start a chat with customer support and request a new account verification letter. You will receive an email when they process your request.
+3. To retrieve the letter, log back into our bank account.  
+4. Click on the Service Requests page from the left-hand navigation and click on the Messages tab where you can view and download the letter.
+
 ### Dun & Bradstreet
 
 FlowFuse's Dun (DUNS number) and Bradstreet ID is: `11-899-4742`

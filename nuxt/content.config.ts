@@ -219,6 +219,30 @@ export default defineContentConfig({
                 })),
             })
         }),
+        certifiedNodes: defineCollection({
+            type: 'data',
+            source: 'certified-nodes.yml',
+            schema: z.object({
+                title: z.string(),
+                intro: z.string().optional(),
+                bundles: z.array(z.object({
+                    id: z.enum(['it', 'ot']),
+                    label: z.string(),
+                    tier: z.string(),
+                    accent: z.enum(['indigo', 'red']),
+                    tagline: z.string(),
+                    groups: z.array(z.object({
+                        label: z.string(),
+                        nodes: z.array(z.object({
+                            name: z.string(),
+                            abbr: z.string(),
+                            description: z.string(),
+                            both: z.boolean().optional(),
+                        })),
+                    })),
+                })),
+            })
+        }),
         faq: defineCollection({
             type: 'data',
             source: 'faq/*.yml',

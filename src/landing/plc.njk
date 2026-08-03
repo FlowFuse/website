@@ -3,8 +3,8 @@ layout: page
 nohero: true
 meta:
     title: "PLC Integration Platform | Connect PLCs to MQTT, Cloud & SCADA | FlowFuse"
-    description: "Connect any PLC, Siemens S7, Allen-Bradley, Omron, Mitsubishi, to MQTT, OPC UA, cloud, and enterprise systems. FlowFuse makes PLC data integration fast with low-code flows."
-    keywords: "plc, programmable logic controller, plc integration, plc mqtt, node-red plc, opc ua plc, plc to cloud, siemens plc, allen bradley plc, plc data collection, plc logging, what is a plc, plc control system"
+    description: "Send PLC data to the cloud, SCADA, and MES without a gateway or vendor lock-in. Connect Siemens, Allen-Bradley, Omron & more via MQTT, OPC UA & Modbus with FlowFuse."
+    keywords: "plc, programmable logic controller, plc integration, plc system integration, plc mqtt, node-red plc, opc ua plc, plc to cloud, plc to cloud gateway, plc scada mes integration, plc vendor lock-in, plc communication, plc communication protocols, siemens plc, allen bradley plc, plc data collection, plc logging, what is a plc, plc control system"
     faq:
         - question: "What is a PLC (Programmable Logic Controller)?"
           answer: >
@@ -23,7 +23,22 @@ meta:
             In FlowFuse, you build a flow that polls your PLC at a set interval (or subscribes to events), transforms the tag data, and writes it to your destination, a CSV file, InfluxDB, TimescaleDB, PostgreSQL, or a cloud data lake. You can also trigger logging on events (alarms, production counts, shift changes) rather than polling. FlowFuse manages deployment, versioning, and monitoring of these flows across multiple edge devices.
         - question: "Can FlowFuse replace my existing SCADA system?"
           answer: >
-            FlowFuse can augment or replace traditional SCADA systems. It provides real-time monitoring, custom dashboards via FlowFuse Dashboard, alarm management, and control logic, without the cost and inflexibility of monolithic SCADA software. Many organizations start by running FlowFuse alongside their existing SCADA to add cloud connectivity or modern dashboards, then expand from there.
+            FlowFuse can augment or replace traditional SCADA systems. It provides real-time monitoring, custom dashboards via FlowFuse Dashboard, alarm management, and control logic — without the cost and inflexibility of monolithic SCADA software. Many organizations start by running FlowFuse alongside their existing SCADA to add cloud connectivity or modern dashboards, then expand from there.
+        - question: "How do I send data from a PLC to the cloud?"
+          answer: >
+            Install the FlowFuse Device Agent on an industrial PC, Raspberry Pi, or supported edge device already inside your plant network. Connect it to your PLC over OPC UA, S7, EtherNet/IP, or Modbus, then add a flow that publishes the tag data to MQTT, a REST API, or a cloud data platform. The Device Agent only opens outbound connections, so PLC data reaches the cloud without opening inbound firewall ports or standing up a VPN.
+        - question: "Do I need a dedicated PLC-to-cloud gateway?"
+          answer: >
+            No. A dedicated hardware gateway is one way to bridge a PLC to the cloud, but it adds cost, another vendor relationship, and another device to patch and maintain. FlowFuse replaces that hardware with software — install the Device Agent on an industrial PC or edge device you already own, and it handles protocol translation, local buffering, and the outbound cloud connection without a separate gateway appliance.
+        - question: "Can one platform connect both PLC and SCADA data to the cloud?"
+          answer: >
+            Yes. FlowFuse reads tag and alarm data directly from PLCs over OPC UA, S7, EtherNet/IP, or Modbus, and can also poll or subscribe to existing SCADA historians and OPC servers. Both sources are normalized in the same flow and published to the same MQTT broker or cloud destination, so you don't need separate integrations for the controller layer and the supervisory layer.
+        - question: "How do I integrate PLC, SCADA, and MES data without vendor lock-in?"
+          answer: >
+            Standardize on an integration layer that speaks open protocols instead of committing to one vendor's ecosystem. FlowFuse connects to PLCs and SCADA using OPC UA, MQTT, and Modbus, and pushes structured data to any MES, ERP, or database over REST or SQL. Because the logic lives in portable, open-source Node-RED flows rather than a proprietary gateway configuration, you can swap PLC brands, MES vendors, or cloud providers later without rebuilding the integration.
+        - question: "Why does PLC communication have latency, and how do I fix it?"
+          answer: >
+            Latency almost never comes from the protocol itself — it comes from polling every tag at the same rate, timeouts set from guesswork instead of measurement, too many requests competing for the controller's scan budget, and single-write telemetry instead of buffered batches. Tiering poll rates, measuring timeouts, and sampling at the source fixes most PLC communication latency without touching the network. See our full guide on <a href='/blog/2026/06/plc-communication-latency-causes-and-fixes/'>fixing PLC communication latency</a> for a step-by-step walkthrough.
         - question: "Does FlowFuse work on-premises or in the cloud?"
           answer: >
             Both. FlowFuse runs on FlowFuse Cloud (fully managed, no infrastructure to maintain), self-managed on your own servers or private cloud, or directly on edge devices running the FlowFuse Device Agent. For PLC connectivity, many teams deploy the Device Agent on an industrial PC close to the machines, so data never has to leave the plant unless you choose to send it.
@@ -121,6 +136,10 @@ resources:
     image: "./blog/2025/11/images/store-and-forward.png"
     alt: "Store and forward edge buffering"
     url: "/blog/2025/11/store-and-forward-edge-data-buffering/"
+  - title: "Fixing PLC Communication Latency: Where the Milliseconds Really Go"
+    image: "./blog/2026/06/images/fixing-plc-communication.png"
+    alt: "Diagnosing and fixing PLC communication latency"
+    url: "/blog/2026/06/plc-communication-latency-causes-and-fixes/"
 ---
 
 <div class="nohero w-full">
@@ -140,7 +159,7 @@ resources:
                     </p>
                     <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                         <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'plc'})">TALK TO AN EXPERT</a>
-                        <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED FREE</a>
+                        <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED NOW</a>
                     </div>
                 </div>
                 <div class="md:w-2/5 flex-grow relative">
@@ -209,6 +228,35 @@ resources:
                 <p class="md:w-2/3 my-4">
                     PLCs generate rich, real-time data, production counts, machine states, alarms, energy readings, but that data is often trapped. Getting it into dashboards, databases, cloud analytics, or ERP systems traditionally requires expensive SCADA licenses, proprietary gateways, or months of custom integration work. FlowFuse changes that.
                 </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         PLC TO CLOUD / SCADA / MES — NO GATEWAY, NO VENDOR LOCK-IN
+    ============================================================ -->
+    <div class="w-full py-16 px-6">
+        <div class="max-w-screen-lg mx-auto">
+            <h2 class="mb-6">Send <span class="text-indigo-600">PLC Data to the Cloud</span>, Without a Gateway or Vendor Lock-In</h2>
+            <p class="mb-10 max-w-3xl">
+                The fastest way to get PLC data to the cloud is to skip the dedicated gateway appliance entirely. Install the FlowFuse Device Agent on an industrial PC, Raspberry Pi, or supported edge device already inside your plant network. It connects to your PLC over OPC UA, S7, EtherNet/IP, or Modbus, and opens only outbound connections to publish that data to MQTT, a REST API, or a cloud data platform — no inbound firewall rules, no VPN, no separate gateway hardware to buy and maintain.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="mt-0 mb-2 text-gray-800">PLC + SCADA, one integration</h4>
+                    <p class="font-light text-gray-600">Pull tag data straight from the controller and poll your existing SCADA historian or OPC server in the same flow — one platform covers both layers instead of two separate integrations.</p>
+                </div>
+                <div>
+                    <h4 class="mt-0 mb-2 text-gray-800">MES and ERP, without rebuilding per site</h4>
+                    <p class="font-light text-gray-600">Route production counts, downtime, and quality data from the PLC into SAP, Oracle, or any MES over REST or SQL. Build the flow once and deploy it to every plant.</p>
+                </div>
+                <div>
+                    <h4 class="mt-0 mb-2 text-gray-800">No vendor lock-in</h4>
+                    <p class="font-light text-gray-600">Integration logic lives in open-source Node-RED flows, not a proprietary gateway config. Swap PLC brands, MES vendors, or cloud providers later without starting over.</p>
+                </div>
+            </div>
+            <div class="mt-10">
+                <a class="ff-btn ff-btn--primary-outlined" href="/book-demo/" onclick="capture('cta-plc-to-cloud', {'position': 'mid-page'}, {'page': 'plc'})">See a Live PLC-to-Cloud Demo →</a>
             </div>
         </div>
     </div>
