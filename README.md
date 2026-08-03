@@ -5,8 +5,8 @@
 This repository contains the source of the FlowFuse website.
 
 It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
-This works by a GitHub action automatically updating the `live` branch to includes documentation pulled from the `main` branch of the [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
-repository, when changes are pushed to `main`.
+This works by the [Build Site](.github/workflows/build.yml) action updating the `live` branch, committing onto it the
+product documentation pulled from the `main` branch of [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse).
 
 Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
 
@@ -95,6 +95,23 @@ The documentation for FlowFuse is maintained in the core [FlowFuse repo](https:/
 
 The `npm run dev` (and `npm start`) commands will retrieve the documentation from that folder and inject them into the site automatically. The docs will be available at http://localhost:3000/docs.
 
+Nothing needs configuring for that to happen. Every build resolves the docs in this order, and logs which one it used:
+
+| Order | Source | Used when |
+|-------|--------|-----------|
+| 1 | `FLOWFUSE_DOCS_LOCAL=/path/to/flowfuse` | The env var is set. A path that does not exist is an error, not a fallback. |
+| 2 | A sibling checkout: `../flowfuse`, `../flowforge` or `../dev-env/packages/flowfuse` | One of those has a `docs/` directory. This is what CI relies on. |
+| 3 | The snapshot committed to `live` | `FLOWFUSE_DOCS_SNAPSHOT` is set, which Netlify does. Production deploys never clone. |
+| 4 | A clone of `FLOWFUSE_DOCS_REF` (default `main`) | Nothing above applied. |
+
+`npm run docs` runs that resolution on its own, without a full build, writing `nuxt/content/docs` and `nuxt/public/docs`. Both are generated, and neither is committed on `main`.
+
+If the docs and handbook pages fail to render locally while the rest of the site is fine, you are hitting [nuxt#35253](https://github.com/nuxt/nuxt/issues/35253). Give the build its own temp directory:
+
+```bash
+export TMPDIR=/tmp/nuxt
+```
+
 ## How to add blog posts
 
 See the [Blog section of the Marketing Handbook](https://flowfuse.com/handbook/marketing/content-strategy/blog/) for instructions on writing and publishing blog posts.
@@ -109,7 +126,10 @@ To make a documentation update *and* make it live on the website:
 
 1. PR the documentation update to the `main` branch of [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse)
 2. Get the PR reviewed and merged in the normal manner.
-3. Manually kick-off a website rebuild by clicking 'Run workflow' on [this page](https://github.com/FlowFuse/website/actions/workflows/build.yml).
+
+That repository's `Publish Documentation` workflow builds this site against the PR's docs before it can merge, then
+triggers a website rebuild once it lands. A rebuild can also be started by hand with 'Run workflow' on
+[this page](https://github.com/FlowFuse/website/actions/workflows/build.yml).
 
 ## Acknowledgements
 

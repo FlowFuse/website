@@ -1,3 +1,8 @@
+[build.environment]
+  # Deploy the docs snapshot the build workflow committed to 'live' rather than cloning
+  # flowfuse at deploy time. Branches without a snapshot fall back to cloning.
+  FLOWFUSE_DOCS_SNAPSHOT = "1"
+
 [[headers]]
   for = "/*"
   [headers.values]
