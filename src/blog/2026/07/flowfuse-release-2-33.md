@@ -70,7 +70,7 @@ Until now, dashboards were reachable only through an "Open Dashboard" button on 
 
 The more of your platform that automated clients and AI agents can reach, the more the question shifts: not just what they are allowed to do, but what you can prove they did afterwards, and how narrowly you can scope their access up front. 2.33 adds three controls that answer it.
 
-### Every MCP Action, on the Record
+### Platform MCP Tools & API Actions Audit Trail
 
 FlowFuse now logs actions performed through the supported platform MCP tools for AI agents such as our own first class AI agent the FlowFuse Expert. Each log entry records the action, when it occurred, and the user that performed it through it's dependency on the user's Personal Access Token. These logs do not capture activity related to MCP server nodes with which you can build your own MCP tooling and is part of our FlowFuse Expert Insights offering.
 
