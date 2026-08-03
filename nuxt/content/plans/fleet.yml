@@ -13,8 +13,8 @@ bestFitFor:
   - Teams who want to scale their remote device collection.
   - Hardware and OEM partners who need governed Node-RED solutions for their products.
 button:
-  label: BOOK A DEMO
-  to: /book-demo/
+  label: Contact us
+  to: /contact-us/
   external: true
   variant: solid
-  event: cta-book-demo
+  event: cta-contact-us
