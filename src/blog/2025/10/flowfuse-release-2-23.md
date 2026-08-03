@@ -20,13 +20,13 @@ In this exciting release, we've shipped several features that accelerate develop
 ![Image of MCP nodes](./images/mcp-nodes.png)
 _[MCP nodes in the Node-RED palette, ready for use]_
 
-With this release, you can now create a Model Context Protocol server using Node-RED. The new MCP nodes enable the creation of a MCP server so that you can create AI agents that will rely on the exact data that you want to surface to an LLM. As AI services rely upon data presented to them, whether it's anything available on the world wide web (as with LLMs generically) or more focused information, our MCP nodes provide the ability to expose specific resources so that an AI service will rely upon the right data without making all of your information public. It's a really exciting development. Check out [the Changelog entry](https://flowfuse.com/changelog/2025/10/mcp-nodes/) for more.
+With this release, you can now create a Model Context Protocol server using Node-RED. The new MCP nodes enable the creation of a MCP server so that you can create AI agents that will rely on the exact data that you want to surface to an LLM. As AI services rely upon data presented to them, whether it's anything available on the world wide web (as with LLMs generically) or more focused information, our MCP nodes provide the ability to expose specific resources so that an AI service will rely upon the right data without making all of your information public. It's a really exciting development. Check out [the Changelog entry](/changelog/2025/10/mcp-nodes/) for more.
 
 ## FlowFuse AI Nodes
 
 While MCP makes it possible to create AI agents to rely on the data you have chosen, the new FlowFuse AI nodes allow you to connect AI models of your choosing--including ones that you have trained yourself--to Node-RED to create any workflow you like. The ONNX (Open Neural Network Exchange) format lets you connect a model for whatever purpose you have in mind. This package ships with nodes for running your own custom-trained model, for classifying images, for object detection, and for image depth estimation. This is a huge step in the direction of fully-controlled AI automation inside of Node-RED on FlowFuse.
 
-For self-hosted customers, once you've upgraded, contact [FlowFuse Support](https://flowfuse.com/support) to get access to these exciting new nodes.
+For self-hosted customers, once you've upgraded, contact [FlowFuse Support](/support) to get access to these exciting new nodes.
 
 ## Application-Level Role-Based Access Control
 ![Image of application-level permissions](./images/rbac2.png)
@@ -40,13 +40,13 @@ We've solved it. You can now manage permissions at the Application level. Now on
 ![Image of FlowFuse Expert](./images/expert.png)
 _[The FlowFuse Expert gives step-by-step instructions for building flows]_
 
-You can now get complete instructions for building a Node-RED flow on [flowfuse.com](https://flowfuse.com) using the FlowFuse Expert! This newest feature in the FlowFuse AI toolkit provides detailed guidance on creating Node-RED flows for any purpose you have in mind.
+You can now get complete instructions for building a Node-RED flow on [flowfuse.com]() using the FlowFuse Expert! This newest feature in the FlowFuse AI toolkit provides detailed guidance on creating Node-RED flows for any purpose you have in mind.
 
-Head over to [flowfuse.com](https://flowfuse.com) to check it out! We have big plans in mind for this feature, but can't say much yet. For now, it's enough to say that low code development is headed toward a whole new level with FlowFuse.
+Head over to [flowfuse.com]() to check it out! We have big plans in mind for this feature, but can't say much yet. For now, it's enough to say that low code development is headed toward a whole new level with FlowFuse.
 
 ## FlowFuse Expert for Self Hosted Deployments
 
-Speaking of AI assistance, self-hosted FlowFuse deployments have until now not had access to the FlowFuse Expert inside of Node-RED, helping to complete flows using natural language for explanation of flows, creation of Dashboard, Function, and Tables nodes, and Snapshot descriptions. These had been available only to FlowFuse Cloud customers. I'm happy to say that our many self-hosted customers now (finally) can get access to this tool, which helps speed flow creation exponentially. Contact [FlowFuse Support](https://flowfuse.com/support) to help get you setup.
+Speaking of AI assistance, self-hosted FlowFuse deployments have until now not had access to the FlowFuse Expert inside of Node-RED, helping to complete flows using natural language for explanation of flows, creation of Dashboard, Function, and Tables nodes, and Snapshot descriptions. These had been available only to FlowFuse Cloud customers. I'm happy to say that our many self-hosted customers now (finally) can get access to this tool, which helps speed flow creation exponentially. Contact [FlowFuse Support](/support) to help get you setup.
 
 ## Import JSON at Instance Creation
 

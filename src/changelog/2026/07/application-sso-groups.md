@@ -13,7 +13,7 @@ Application level Role overrides can now be managed by SSO Group membership.
 
 As well as Team wide Role membership additional groups can be used to apply Role overrides to specific Applications.
 
-This works for both SAML and LDAP based SSO, the documentation outlining the required group naming can be found [here](https://flowfuse.com/docs/admin/sso).
+This works for both SAML and LDAP based SSO, the documentation outlining the required group naming can be found [here](/docs/admin/sso).
 
 For example for a Team with the slug `development` and an application called `test` a user in the following groups would have `member` level access to the Team and `owner` level access to the `test` Application.
 

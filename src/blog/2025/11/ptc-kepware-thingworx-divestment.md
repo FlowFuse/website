@@ -116,7 +116,7 @@ At FlowFuse, we believe that foundation is open source. It's why we've built our
 
 If you're evaluating your options, whether you're currently on Kepware, ThingWorx, or another platform, [we'd love to talk](/book-demo/).
 
-See [how we stack up against Kepware](https://flowfuse.com/vs/kepware/) to learn more about how FlowFuse compares to traditional industrial connectivity platforms, or [contact our team](/contact-us/) to speak with one of our Migration Experts. We can help you understand your options, plan a migration strategy, and show you how open-source industrial data integration can transform your operations.
+See [how we stack up against Kepware](/vs/kepware/) to learn more about how FlowFuse compares to traditional industrial connectivity platforms, or [contact our team](/contact-us/) to speak with one of our Migration Experts. We can help you understand your options, plan a migration strategy, and show you how open-source industrial data integration can transform your operations.
 
 The industrial IoT market is shifting. Make sure your data strategy is built to adapt.
 

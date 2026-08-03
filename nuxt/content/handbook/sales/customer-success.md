@@ -229,12 +229,12 @@ Support availability and response times are defined by the customer’s subscrip
 - Standard Support
   - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
   - First Response SLA: Next business day (within 24 hours)  
-  - Support tickets can be submitted at [our Support Form](https://flowfuse.com/support/)
+  - Support tickets can be submitted at [our Support Form](/support/)
 
 - Enterprise (Enterprise Support)
   - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
   - First Response SLA: 4 hours  
-  - Support tickets can be submitted at [https://flowfuse.com/support/](https://flowfuse.com/support/)
+  - Support tickets can be submitted at [https://flowfuse.com/support/](/support/)
 
 #### Escalation
 
@@ -347,7 +347,7 @@ should happen without customers even noticing.
    providing personalized help to ensure a smooth process.
 
 ## Handling Requests from Self-Hosted Customers to Enable FlowFuse Assistant
-The [FlowFuse Assistant](https://flowfuse.com/docs/user/expert/#flowfuse-assistant-plugin) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
+The [FlowFuse Assistant](/docs/user/expert/) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
 
 When a customer requests access to the FlowFuse Assistant, do the following:
 1. Route the request to Engineering

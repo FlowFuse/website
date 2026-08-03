@@ -100,4 +100,4 @@ Arch keeps expanding the platform: more data sources, more third-party integrati
 
 The first 100 databases were never the result that mattered. The architecture is. The next 100 cost a fraction of what the first ones did, and the same standardize-once, deploy-everywhere pattern holds for any manufacturer coordinating dozens of plants and lines, [automotive included](/industries/automotive/).
 
-*Read the full story on the [FlowFuse customer page](https://flowfuse.com/customer-stories/scaling-manufacturing-automation-with-flowfuse/).*
+*Read the full story on the [FlowFuse customer page](/customer-stories/scaling-manufacturing-automation-with-flowfuse/).*

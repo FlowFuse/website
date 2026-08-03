@@ -35,7 +35,7 @@ Once installed, you'll configure your first GraphQL endpoint. This is where you 
    - **Endpoint**: Your GraphQL server URL (e.g., `https://api.example.com/graphql`)
    - **Token**: Add authentication if required (Bearer tokens are the most common)
 
-*Important: For sensitive credentials such as tokens, use environment variables to prevent them from being exposed when sharing flows. Learn more about using environment variables in Node-RED [here](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).*
+*Important: For sensitive credentials such as tokens, use environment variables to prevent them from being exposed when sharing flows. Learn more about using environment variables in Node-RED [here](/blog/2023/01/environment-variables-in-node-red/).*
 
 ## Understanding GraphQL Query Structure
 

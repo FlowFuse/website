@@ -121,7 +121,7 @@ Calculate your current failure costs honestly. Include not just repair expenses 
 
 The manufacturers moving decisively are gaining first-mover advantages in operational excellence that their competitors will struggle to match. Those delaying risk permanent disadvantage in an increasingly data-driven industry.
 
-**Ready to transform equipment failures from crisis events into predictable costs?** [Discover how FlowFuse enables comprehensive equipment monitoring](https://flowfuse.com/book-demo/) that delivers measurable competitive advantages from day one.
+**Ready to transform equipment failures from crisis events into predictable costs?** [Discover how FlowFuse enables comprehensive equipment monitoring](/book-demo/) that delivers measurable competitive advantages from day one.
 
 ## References
 

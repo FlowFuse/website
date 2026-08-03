@@ -48,7 +48,7 @@ _Screnshot of where to enter Certfied Nodes Token_
 
 ## Updating the Catalog
 
-Once a node is published, it must be registered in the `ff-certified-nodes` Node-RED instance before it appears in customer instances or on the [Integrations page](https://flowfuse.com/integrations). This instance lives in the `Internal Tools` Application on FlowFuse Cloud (`ff-certified-nodes.flowfuse.cloud`) and its editor has three flow tabs: **Authentication**, **catalog generator**, and **Usage**.
+Once a node is published, it must be registered in the `ff-certified-nodes` Node-RED instance before it appears in customer instances or on the [Integrations page](/integrations). This instance lives in the `Internal Tools` Application on FlowFuse Cloud (`ff-certified-nodes.flowfuse.cloud`) and its editor has three flow tabs: **Authentication**, **catalog generator**, and **Usage**.
 
 Two things are generated from this instance and both must be updated when adding a node:
 
@@ -95,4 +95,4 @@ The **Authentication** tab is also where customer instances/users (tokens) are m
 
 ### Result
 
-Once both tabs are updated and deployed, the node is included in the generated catalogs served to Node-RED instances and mapped in the registry. The website's [Integrations page](https://flowfuse.com/integrations) then picks it up automatically — it fetches `ff-it.json` and `ff-ot.json` from `ff-certified-nodes.flowfuse.cloud` directly.
+Once both tabs are updated and deployed, the node is included in the generated catalogs served to Node-RED instances and mapped in the registry. The website's [Integrations page](/integrations) then picks it up automatically — it fetches `ff-it.json` and `ff-ot.json` from `ff-certified-nodes.flowfuse.cloud` directly.

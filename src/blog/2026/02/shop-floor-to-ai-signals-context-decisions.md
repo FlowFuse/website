@@ -133,7 +133,7 @@ Through [FlowFuse MCP nodes](/node-red/flowfuse/mcp/), AI systems connect direct
 
 [FlowFuse AI Expert](/ai/) operates on the same MCP-backed context layer. Operators and engineers can ask questions in natural language (*"Is Line 3 behaving normally?"*, *"Have we seen this vibration pattern before?"*, *"What changed before the last failure?"*) and receive answers grounded in the live Unified Namespace.
 
-To learn how to build your own Unified Namespace with FlowFuse, [see our comprehensive guide](https://flowfuse.com/blog/2024/11/building-uns-with-flowfuse/).
+To learn how to build your own Unified Namespace with FlowFuse, [see our comprehensive guide](/blog/2024/11/building-uns-with-flowfuse/).
 
 The result is immediate insight without additional tooling, custom integrations, or fragile data pipelines. The architecture already exists. The context is already there. The questions can finally be asked at the speed decisions are made.
 

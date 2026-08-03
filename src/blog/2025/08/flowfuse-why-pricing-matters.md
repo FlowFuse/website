@@ -90,4 +90,4 @@ Experience automation without the complexity of execution counting or artificial
 
 ---
 
-*Ready to get started? [Explore FlowFuse today](https://flowfuse.com/) and see why businesses choose purpose-built automation platforms.*
+*Ready to get started? [Explore FlowFuse today](/) and see why businesses choose purpose-built automation platforms.*
