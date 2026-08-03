@@ -41,7 +41,7 @@ npm run build          # production build
 
 > When working on the handbook, docs, or other migrated sections, `npm run dev:nuxt` is sufficient. `npm start` is only needed when also touching 11ty-served pages.
 >
-> **Local docs development:** a checkout of `flowfuse/flowfuse` sitting next to this repo (`../flowfuse`) is picked up automatically, with no configuration. Full resolution order, which every build logs: `FLOWFUSE_DOCS_LOCAL` (explicit path, and a path that does not exist is an error), then a sibling checkout, then the snapshot committed to `live` when `FLOWFUSE_DOCS_SNAPSHOT` is set (Netlify only), then a clone of `FLOWFUSE_DOCS_REF` (default `main`). CI relies on the sibling rule: `FlowFuse/flowfuse`'s `Publish Documentation` workflow checks itself out next to the website so a docs PR is validated against its own changes.
+> **Local docs development:** a checkout of `flowfuse/flowfuse` sitting next to this repo (`../flowfuse`) is picked up automatically, with no configuration. Full resolution order, which every build logs: `FLOWFUSE_DOCS_LOCAL` (explicit path, and a path that does not exist is an error), then a sibling checkout, then a clone of `FLOWFUSE_DOCS_REF` (default `main`) — this is what Netlify production deploys use. CI relies on the sibling rule: `FlowFuse/flowfuse`'s `Publish Documentation` workflow checks itself out next to the website so a docs PR is validated against its own changes.
 
 ## Directory layout
 

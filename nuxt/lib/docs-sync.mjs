@@ -27,10 +27,9 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
  *
  * 1. `FLOWFUSE_DOCS_LOCAL` - an explicit checkout path
  * 2. a sibling checkout of flowfuse
- * 3. the snapshot committed to the `live` branch (`FLOWFUSE_DOCS_SNAPSHOT` builds only)
- * 4. a clone of `FLOWFUSE_DOCS_REF`
+ * 3. a clone of `FLOWFUSE_DOCS_REF`
  */
-export function resolveSource ({ repoRoot, contentDocsDir, env = process.env, exists = existsSync }) {
+export function resolveSource ({ repoRoot, env = process.env, exists = existsSync }) {
     const local = env.FLOWFUSE_DOCS_LOCAL
     if (local) {
         const docsDir = local.endsWith('/docs') ? local : join(local, 'docs')
@@ -46,10 +45,6 @@ export function resolveSource ({ repoRoot, contentDocsDir, env = process.env, ex
         if (exists(docsDir)) {
             return { kind: 'sibling', docsDir }
         }
-    }
-
-    if (env.FLOWFUSE_DOCS_SNAPSHOT && exists(join(contentDocsDir, MANIFEST_FILE))) {
-        return { kind: 'snapshot' }
     }
 
     return { kind: 'clone', ref: env.FLOWFUSE_DOCS_REF || DEFAULT_REF }
@@ -157,13 +152,7 @@ function writeDocs ({ docsDir, sourceRoot, contentDocsDir, publicDocsDir, kind, 
 export async function syncDocs ({ repoRoot, nuxtRoot, env = process.env, logger = console } = {}) {
     const contentDocsDir = join(nuxtRoot, 'content', 'docs')
     const publicDocsDir = join(nuxtRoot, 'public', 'docs')
-    const source = resolveSource({ repoRoot, contentDocsDir, env })
-
-    if (source.kind === 'snapshot') {
-        const manifest = JSON.parse(readFileSync(join(contentDocsDir, MANIFEST_FILE), 'utf8'))
-        logger.info(`Using committed docs snapshot: ${manifest.ref} ${manifest.sha.slice(0, 8)} synced ${manifest.syncedAt}`)
-        return manifest
-    }
+    const source = resolveSource({ repoRoot, env })
 
     let manifest
     if (source.kind === 'clone') {

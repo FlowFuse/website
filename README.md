@@ -6,9 +6,9 @@ This repository contains the source of the FlowFuse website.
 
 It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
 This works by the [Build Site](.github/workflows/build.yml) action updating the `live` branch, committing onto it the
-product documentation pulled from the `main` branch of [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse).
+blueprints pulled from [FlowFuse/blueprint-library](https://github.com/FlowFuse/blueprint-library).
 
-Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch (docs included) and deploy to our production site.
+Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch and deploy to our production site. Product documentation is not part of that snapshot — Netlify clones it directly from `main` of [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse) during its own build.
 
 ## Repository structure
 
@@ -101,8 +101,7 @@ Nothing needs configuring for that to happen. Every build resolves the docs in t
 |-------|--------|-----------|
 | 1 | `FLOWFUSE_DOCS_LOCAL=/path/to/flowfuse` | The env var is set. A path that does not exist is an error, not a fallback. |
 | 2 | A sibling checkout: `../flowfuse`, `../flowforge` or `../dev-env/packages/flowfuse` | One of those has a `docs/` directory. This is what CI relies on. |
-| 3 | The snapshot committed to `live` | `FLOWFUSE_DOCS_SNAPSHOT` is set, which Netlify does. Production deploys never clone. |
-| 4 | A clone of `FLOWFUSE_DOCS_REF` (default `main`) | Nothing above applied. |
+| 3 | A clone of `FLOWFUSE_DOCS_REF` (default `main`) | Nothing above applied. This is what Netlify production deploys use. |
 
 `npm run docs` runs that resolution on its own, without a full build, writing `nuxt/content/docs` and `nuxt/public/docs`. Both are generated, and neither is committed on `main`.
 
