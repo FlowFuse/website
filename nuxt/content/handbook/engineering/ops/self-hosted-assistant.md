@@ -49,6 +49,32 @@ docker compose stop forge
 docker compose up -d forge
 ```
 
+#### Broker configuration
+
+Expert chat is delivered over the platform's Team Broker, which bridges chat requests to the central Expert broker on FlowFuse Cloud. The latest Docker Compose template configures this for you. If you maintain a customized `flowforge.yml`, ensure both the `broker` and `expert` sections are present:
+
+```yaml
+broker:
+  teamBroker:
+    enabled: true
+    api:
+      url: http://broker:18083/api/v5   # your EMQX admin API endpoint
+      key: <emqx-api-key>
+      secret: <emqx-api-secret>
+expert:
+  enabled: true
+  service:
+    token: ${EXPERT_TOKEN}
+    # url is optional and defaults to https://expert.flowfuse.com/v4/expert
+  centralBroker:
+    server: expert-broker.flowfuse.com:8883   # host and port in a single string
+    ssl: true
+```
+
+- Use `expert.centralBroker.server` (a single `host:port` string). Do not use `expert.broker.address` / `expert.broker.port` here: those key names apply only to the Helm chart, which translates them internally. In a raw `flowforge.yml` they are ignored and the chat bridge is never provisioned.
+- The port must be part of the `server` value. With `ssl: true` and no port, EMQX falls back to plain `1883` and the TLS handshake is dropped.
+- The bridge is provisioned through the EMQX admin API, so the Team Broker must be enabled with valid `api` credentials. Without them the bridge cannot be created and chat receives no response.
+
 ### Kubernetes
 
 The feature is enabled by adding the tokens to the values passed to the Helm chart.
