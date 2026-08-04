@@ -469,6 +469,8 @@ Each notification carries `msg.sequenceNumber`. Watch it for gaps to detect drop
 - **Named JSON structure**, inject a JSON object whose leaf values are NodeIds (the shape Explore produces); notifications arrive in the same shape with current readings.
 - **Entire subtree**, use Explore once (output type `NodeId`) to discover all variables under a branch, then feed that structure into Monitor to watch them all live.
 
+In every injected mode the set you inject replaces the previous one. See [Changing or stopping what is monitored](#changing-or-stopping-what-is-monitored) to add, remove, or stop monitored items at runtime.
+
 ### Message properties (override node config per message)
 
 - `msg.outputType`, `Value` or `DataValue`.
@@ -495,6 +497,26 @@ msg.payload = [
 ```
 
 All items in the array share one subscription, sampling interval, and queue, more efficient than one Monitor node per variable. As a rough guide: under 10 items is trivial, 10–100 is the efficient sweet spot, 100–1000 may need tuned subscription parameters, and beyond 1000 split the work across multiple Monitor nodes.
+
+### Changing or stopping what is monitored
+
+The injected NodeId set is declarative: whatever you inject becomes the complete set of monitored items, replacing whatever was monitored before. The node has no separate stop or unsubscribe command because you do not need one, you change the set instead.
+
+- **Reduce the set**, inject a shorter array. The dropped NodeIds are released as monitored items on the server, not merely filtered out of the node's output.
+- **Stop monitoring**, inject an empty array (`[]`). Every monitored item is released and the node stops emitting.
+- **Restart monitoring**, inject the NodeId array again. The subscription itself persists while empty, which costs almost nothing and makes restarting immediate.
+
+This is how you start and stop monitoring programmatically, from an Inject node or a dashboard control, without editing and redeploying the flow.
+
+Example, stop monitoring:
+
+```js
+msg.payload = [];
+```
+
+{% note %}
+Injecting an empty array releases the monitored items but leaves the now-empty subscription in place on the connection, so it is the right way to pause and resume a stream. To tear the session down completely, disconnect the connection instead.
+{% endnote %}
 
 ### Deadband filtering
 
