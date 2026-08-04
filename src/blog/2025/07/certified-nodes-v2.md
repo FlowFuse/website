@@ -5,7 +5,7 @@ description: "FlowFuse announces Certified Nodes v2.0 - connecting enterprises w
 templateEngineOverride: njk,md
 date: 2025-07-01
 authors: ["zeger-jan-van-de-weg"]
-image: blog/2025/07/images/certified-nodes-v2.png
+image: /blog/2025/07/images/certified-nodes-v2.png
 certificationHubspot:
   formId: "6e02fe34-13c3-442b-8c27-9a12e72bba37"
   targetId: "hs-form-certified-nodes-contact"

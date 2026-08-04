@@ -520,7 +520,7 @@ Injecting an empty array releases the monitored items but leaves the now-empty s
 
 ### Deadband filtering
 
-[Deadband filtering](/blog/2026/04/stop-noisy-sensor-data-deadband-filter-flowfuse/#what-is-a-deadband-filter%3F) suppresses insignificant changes, essential for analog values that jitter. The server applies it, so it also reduces network traffic.
+[Deadband filtering](/blog/2026/04/stop-noisy-sensor-data-deadband-filter-flowfuse/#what-is-a-deadband-filter) suppresses insignificant changes, essential for analog values that jitter. The server applies it, so it also reduces network traffic.
 
 | Type | Behaviour |
 |---|---|

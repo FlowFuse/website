@@ -22,7 +22,7 @@ FlowFuse Expert now builds applications for you. Describe what you need, and the
 
 <!--more-->
 
-We shared the initial announcement in the [2.30 release post](/blog/2026/05/flowfuse-release-2-30/#expert-application-building). This post walks through building your first flow with FlowFuse Expert and how Expert works alongside your environment.
+We shared the initial announcement in the [2.30 release post](/blog/2026/05/flowfuse-release-2-30/#flowfuse-expert-builds-your-industrial-application). This post walks through building your first flow with FlowFuse Expert and how Expert works alongside your environment.
 
 ![FlowFuse Expert building a simulated packaging conveyor monitoring application](./images/expert-application-building.gif)
 _Expert building a packaging conveyor monitoring application: MQTT alerts, dashboard indicators, and real-time event simulation, from a single prompt._

@@ -94,9 +94,11 @@ The specific command to use depends on how Python was installed and configured o
 
 Let's now see how to call a Python script from Node-RED. First, we'll create a basic script file that contains a function to print text in the console based on input. Currently, the function uses hardcoded input. To create this file using Node-RED, import the following flow, deploy it, and press the inject button:
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"b9d7d6aff0016631","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":240,"y":100,"wires":[["2e1daccf2a7b3d0f"]]},{"id":"d2d1450deaa588f4","type":"file","z":"FFF0000000000001","name":"","filename":".\\example.py","filenameType":"str","appendNewline":true,"createDir":false,"overwriteFile":"true","encoding":"none","x":570,"y":100,"wires":[["e140a8508fb10d96"]]},{"id":"e140a8508fb10d96","type":"debug","z":"FFF0000000000001","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":100,"wires":[]},{"id":"2e1daccf2a7b3d0f","type":"template","z":"FFF0000000000001","name":"","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"def main():\n    # Hardcoded value\n    user_input = 20  \n    \n    # Check if the input is numeric\n    if isinstance(user_input, int) or (isinstance(user_input, str) and user_input.isdigit()):\n        number = int(user_input) if isinstance(user_input, str) else user_input\n        \n        # Conditionally render based on the input value\n        if number < 0:\n            print(\"Negative number entered\")\n        elif number == 0:\n            print(\"Zero entered\")\n        else:\n            print(\"Positive number entered\")\n    else:\n        print(\"Invalid input. Please enter a valid number.\")\n\nif __name__ == \"__main__\":\n    main()\n","output":"str","x":400,"y":100,"wires":[["d2d1450deaa588f4"]]}]
-{% endrenderFlow %}
+```
+::
 
 Now, let's execute this Python script from Node-RED. To do that, we will use Node-RED's [Exec](/node-red/core-nodes/exec/) node, which allows running commands on your system.
 
@@ -108,9 +110,11 @@ Now, let's execute this Python script from Node-RED. To do that, we will use Nod
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the Exec node, and the output of the Exec node to the input of Debug node.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"2e26b84c0ce17312","type":"exec","z":"FFF0000000000001","command":"python ./example.py -u","addpay":"","append":"","useSpawn":"false","timer":"","winHide":false,"oldrc":false,"name":"","x":460,"y":300,"wires":[["89589c56117004e0"],["7fdb901b144749c2"],["3f49b49308941782"]]},{"id":"739e08c1ec77c2a1","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":240,"y":300,"wires":[["2e26b84c0ce17312"]]},{"id":"89589c56117004e0","type":"debug","z":"FFF0000000000001","name":"Output","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":260,"wires":[]},{"id":"7fdb901b144749c2","type":"debug","z":"FFF0000000000001","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":690,"y":300,"wires":[]},{"id":"3f49b49308941782","type":"debug","z":"FFF0000000000001","name":"Return code","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":710,"y":340,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 Now, when you deploy this flow and click on the inject node to execute the file, you should see the text 'Positive number entered' and `{ code: 0 }`, which indicates your script has been successfully executed.
 
@@ -132,17 +136,21 @@ Below is the complete flow which creates the Python file to read the DHT11 senso
 
 Note: The Python script uses the [adafruit-circuitpython](https://docs.circuitpython.org/projects/dht/en/latest/index.html) to read the sensor data so make sure to install it. Additionally, the code contained in the template node in the following flow considers that your sensor's signal pin is connected to GPIO 4.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"94bc6fa766c4b397","type":"file","z":"FFF0000000000001","name":"","filename":"~/sensor.py","filenameType":"str","appendNewline":false,"createDir":false,"overwriteFile":"true","encoding":"none","x":610,"y":520,"wires":[["9b08eee57f666de5"]]},{"id":"37453becdf842bd7","type":"template","z":"FFF0000000000001","name":"","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"import time\nimport board\nimport adafruit_dht\nimport json\n\ndef publish():\n    dhtDevice = adafruit_dht.DHT11(board.D4)\n    try:\n        temperature_c = dhtDevice.temperature\n        humidity = dhtDevice.humidity\n\n        # Create JSON object\n        data = {\n            \"temperature_c\": temperature_c,\n            \"humidity\": humidity\n        }\n\n        # Convert JSON object to string and print\n        print(json.dumps(data))\n\n    except RuntimeError as error:\n        print(error.args[0])\n    except Exception as error:\n        dhtDevice.exit()\n        raise error\n    finally:\n        dhtDevice.exit()\n\ndef run():\n    publish()\n\nif __name__ == '__main__':\n    run()\n","output":"str","x":380,"y":520,"wires":[["94bc6fa766c4b397"]]},{"id":"5b3642d39c122576","type":"debug","z":"FFF0000000000001","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":880,"y":660,"wires":[]},{"id":"88144cbc887aada9","type":"inject","z":"FFF0000000000001","name":"","props":[],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":660,"wires":[["c896267214914641"]]},{"id":"1b1d792011ffac2c","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"kill","v":"g","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":150,"y":520,"wires":[["37453becdf842bd7"]]},{"id":"c896267214914641","type":"exec","z":"FFF0000000000001","command":"python ~/sensor.py -u","addpay":"payload","append":"","useSpawn":"false","timer":"5","winHide":false,"oldrc":false,"name":"","x":400,"y":660,"wires":[["1d02a33a018f0f8d"],[],[]]},{"id":"1d02a33a018f0f8d","type":"json","z":"FFF0000000000001","name":"","property":"payload","action":"","pretty":false,"x":650,"y":660,"wires":[["5b3642d39c122576"]]},{"id":"9b08eee57f666de5","type":"debug","z":"FFF0000000000001","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":880,"y":520,"wires":[]},{"id":"343a9f704951f3ed","type":"comment","z":"FFF0000000000001","name":"Create python file that reads the sensor data","info":"","x":510,"y":440,"wires":[]},{"id":"216eb1333b2c264c","type":"comment","z":"FFF0000000000001","name":"Execute the python file that read the data","info":"","x":500,"y":580,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 ## Executing Python Script with Arguments from Node-RED
 
 Now, let's revisit our first example. In that example, we executed a simple Python file with a hardcoded value. Now, we'll learn how to pass arguments or inputs to the Python script when executing from Node-RED. For this, we'll need to update the file. Import the following flow, deploy it, and click on the inject button to create the file.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"b9d7d6aff0016631","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":300,"y":440,"wires":[["2e1daccf2a7b3d0f"]]},{"id":"d2d1450deaa588f4","type":"file","z":"FFF0000000000001","name":"","filename":"./example.py","filenameType":"str","appendNewline":true,"createDir":false,"overwriteFile":"true","encoding":"none","x":630,"y":440,"wires":[["e140a8508fb10d96"]]},{"id":"e140a8508fb10d96","type":"debug","z":"FFF0000000000001","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":820,"y":440,"wires":[]},{"id":"2e1daccf2a7b3d0f","type":"template","z":"FFF0000000000001","name":"","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"import sys\n\ndef main():\n    if len(sys.argv) != 2:\n        print(\"Usage: python your_script.py <number>\")\n        return\n    \n    user_input = sys.argv[1]\n    \n    # Check if the input is numeric\n    if user_input.isdigit() or (user_input[0] == '-' and user_input[1:].isdigit()):\n        number = int(user_input)\n        \n        # Conditionally render based on the input value\n        if number < 0:\n            print(\"Negative number entered\")\n        elif number == 0:\n            print(\"Zero entered\")\n        else:\n            print(\"Positive number entered\")\n    else:\n        print(\"Invalid input. Please enter a valid number.\")\n\nif __name__ == \"__main__\":\n    main()\n","output":"str","x":460,"y":440,"wires":[["d2d1450deaa588f4"]]}]
-{% endrenderFlow %}
+```
+::
 
 1. Drag the Inject node onto the canvas.
 2. Drag the Exec node onto the canvas, set the command to `python -u ./example.py <arg>`, and replace the `<arg>` with your argument.
@@ -151,9 +159,11 @@ Now, let's revisit our first example. In that example, we executed a simple Pyth
 
 If you examine the Python file we've created, you'll notice the use of the 'sys' module, which allows us to read command-line arguments. In our context, we execute the command `python ./example.py -30`. By accessing `sys.argv[1]`, we retrieve the argument -30. The index 1 is used because `sys.argv[0]` provides the filename of the script being executed. Additionally, Python supports passing multiple arguments, so that you can pass as many arguments as you want.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"2e26b84c0ce17312","type":"exec","z":"FFF0000000000001","command":"python -u ./example.py  -30","addpay":"","append":"","useSpawn":"false","timer":"","winHide":false,"oldrc":false,"name":"","x":520,"y":580,"wires":[["89589c56117004e0"],["7fdb901b144749c2"],["3f49b49308941782"]]},{"id":"739e08c1ec77c2a1","type":"inject","z":"FFF0000000000001","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":280,"y":580,"wires":[["2e26b84c0ce17312"]]},{"id":"89589c56117004e0","type":"debug","z":"FFF0000000000001","name":"Output","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":540,"wires":[]},{"id":"7fdb901b144749c2","type":"debug","z":"FFF0000000000001","name":"Error","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":730,"y":580,"wires":[]},{"id":"3f49b49308941782","type":"debug","z":"FFF0000000000001","name":"Return code","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":620,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 ## Conclusion
 

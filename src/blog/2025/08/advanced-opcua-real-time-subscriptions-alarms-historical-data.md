@@ -71,9 +71,11 @@ To create your first subscription:
 
 5. Deploy your flow and click the Inject button. 
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"c62e8dab346d62bb","type":"inject","z":"7008401a.b94db","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":490,"y":740,"wires":[["cce9159a656858b9"]]},{"id":"cce9159a656858b9","type":"OpcUa-Item","z":"7008401a.b94db","item":"ns=3;i=1003","datatype":"Int32","value":"","name":"","x":700,"y":740,"wires":[["042a5d016ce879c6"]]},{"id":"1c1d56834b8d3373","type":"debug","z":"7008401a.b94db","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":720,"wires":[]},{"id":"bccca1356626f117","type":"debug","z":"7008401a.b94db","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":760,"wires":[]},{"id":"042a5d016ce879c6","type":"OpcUa-Client","z":"7008401a.b94db","endpoint":"","action":"subscribe","deadbandtype":"a","deadbandvalue":1,"time":"2","timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":940,"y":740,"wires":[["1c1d56834b8d3373"],["bccca1356626f117"],[]]}]
-{% endrenderFlow %}
+```
+::
 
 
 When clicked, the OpcUa-Item node sends the tag to the OpcUa-Client and creates the subscription. The node’s status will update to “subscribed” once the subscription is active. When values change, they appear in the debug panel. If no value changes occur within the interval time, the status will show “keep alive” to confirm that the connection is still active.
@@ -97,9 +99,11 @@ return msg;
 
 Below is the complete flow monitoring multiple tags:
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"93d8a766.c57aa8","type":"function","z":"58b3ba58c45b22dd","name":"NodeId Array","func":"msg.payload = [];\nmsg.payload.push({ nodeId: \"ns=3;i=1001\"});\nmsg.payload.push({ nodeId: \"ns=3;i=1002\"});\nmsg.payload.push({ nodeId: \"ns=3;i=1003\"});\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":400,"wires":[["ba45b808.7ff578"]]},{"id":"2d805dd3.473632","type":"inject","z":"58b3ba58c45b22dd","name":"Subscribe multiple","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"multiple","x":230,"y":400,"wires":[["93d8a766.c57aa8"]]},{"id":"ba45b808.7ff578","type":"OpcUa-Client","z":"58b3ba58c45b22dd","endpoint":"","action":"subscribe","deadbandtype":"a","deadbandvalue":1,"time":"2","timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":620,"y":400,"wires":[["8d7ef05fbd80d2f9"],["591cb7f46dd507af"],[]]},{"id":"8d7ef05fbd80d2f9","type":"debug","z":"58b3ba58c45b22dd","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":790,"y":380,"wires":[]},{"id":"591cb7f46dd507af","type":"debug","z":"58b3ba58c45b22dd","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":790,"y":420,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 This subscribes to all tags in the array with a single request.
 
@@ -150,9 +154,11 @@ Events capture the full context of what happened, when it happened, and what nee
 
 Deploy and trigger the flow. The debug panel will show events as they occur on your server.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"d72f52a6.35fa3","type":"OpcUa-Event","z":"5d665294.f65f14","root":"ns=0;i=2253","activatecustomevent":false,"eventtype":"i=2041","customeventtype":"","name":"All events","x":400,"y":120,"wires":[["ae628046.ca67c"]]},{"id":"96c3ea4c.7897e8","type":"inject","z":"5d665294.f65f14","name":"Subscribe events","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":"","topic":"","payload":"","payloadType":"str","x":220,"y":120,"wires":[["d72f52a6.35fa3"]]},{"id":"ae628046.ca67c","type":"OpcUa-Client","z":"5d665294.f65f14","endpoint":"","action":"events","deadbandvalue":"","time":"2","timeUnit":"s","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"Prosys events","x":580,"y":120,"wires":[["67203130.a7a05"],["1a7bf6600cc8bec0"],[]]},{"id":"67203130.a7a05","type":"debug","z":"5d665294.f65f14","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":100,"wires":[]},{"id":"1a7bf6600cc8bec0","type":"debug","z":"5d665294.f65f14","name":"Errrors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":140,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 ### Acknowledging Events
 
@@ -175,9 +181,11 @@ return msg;
 
 5. Connect the Inject output to the Function input. Connect the Function output to the OpcUa-Client input.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"99a5c133.d9bdb","type":"inject","z":"58b3ba58c45b22dd","name":"Acknowledge event","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":"","topic":"","payload":"","payloadType":"str","x":210,"y":300,"wires":[["cf182b3.04017d8"]]},{"id":"cf182b3.04017d8","type":"function","z":"58b3ba58c45b22dd","name":"AlarmID and EventID","func":"msg.topic = \"ns=6;s=MyLevel.Alarm\";\nmsg.conditionId = \"ns=6;s=MyLevel.Alarm/0:EventId\";\nmsg.comment = \"Node-RED OPCUA Ack\";\nreturn msg;","outputs":1,"timeout":"","noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":300,"wires":[["af39662a.1fd078"]]},{"id":"39a1c77b1fb33695","type":"debug","z":"58b3ba58c45b22dd","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":810,"y":280,"wires":[]},{"id":"e50779c74918b1b9","type":"debug","z":"58b3ba58c45b22dd","name":"Errrors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":810,"y":320,"wires":[]},{"id":"af39662a.1fd078","type":"OpcUa-Client","z":"58b3ba58c45b22dd","endpoint":"","action":"acknowledge","deadbandtype":"a","deadbandvalue":"5","time":"1","timeUnit":"s","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"OPC UA Client","x":640,"y":300,"wires":[["39a1c77b1fb33695"],["e50779c74918b1b9"],[]]}]
-{% endrenderFlow %}
+```
+::
 
 Deploy the flow. When you click the Inject button, it sends the acknowledgment to the server. The alarm state changes to "Event: <alarm's NodeId> Acknowledged" and operators know someone has seen the issue.
 
@@ -201,9 +209,11 @@ To call a method on your OPC UA server:
 
 4. Connect the Inject output to the OpcUa-Method input. Add a Debug node to see the result.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"9b199c7f.82f47","type":"OpcUa-Method","z":"4d24eae5.3b9b24","endpoint":"","objectId":"ns=6;s=MyDevice","methodId":"ns=6;s=MyMethod","name":"Prosys MyMethod(sin, 3.3)","inputArguments":[],"arg0name":"Operator","arg0type":"String","arg0typeid":"","arg0value":"sin","arg1name":"Value","arg1type":"Double","arg1typeid":"","arg1value":"3.3","arg2name":"","arg2type":"","arg2typeid":"","arg2value":"","out0name":"","out0type":"","out0typeid":"","out0value":"","x":760,"y":120,"wires":[["aad9fc2a.a94b4"]]},{"id":"aad9fc2a.a94b4","type":"debug","z":"4d24eae5.3b9b24","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","x":970,"y":120,"wires":[]},{"id":"6188d1de770fbb95","type":"inject","z":"4d24eae5.3b9b24","name":"Call Method","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":530,"y":120,"wires":[["9b199c7f.82f47"]]}]
-{% endrenderFlow %}
+```
+::
 
 Deploy and click the Inject button. The method executes on the server and the node status changes to "Method Executed". The result appears in the debug panel.
 
@@ -235,9 +245,11 @@ return msg;
 
 5. Connect the Inject output to the Function input. Connect the Function output to the OpcUa-Client input. Add a Debug node to see the historical values.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"0c43bd35230132af","type":"OpcUa-Client","z":"58b3ba58c45b22dd","endpoint":"","action":"history","deadbandtype":"a","deadbandvalue":1,"time":10,"timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":"","maxMessageSize":"","receiveBufferSize":"","sendBufferSize":"","setstatusandtime":false,"keepsessionalive":false,"name":"","x":620,"y":140,"wires":[["532ae640b386e34e"],["24678e079b08c81d"],[]]},{"id":"5d8f9b5854a12919","type":"inject","z":"58b3ba58c45b22dd","name":"Get Historical Data","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":270,"y":140,"wires":[["9c071e5a8e543eba"]]},{"id":"9c071e5a8e543eba","type":"function","z":"58b3ba58c45b22dd","name":"","func":"msg.topic = \"ns=3;i=1001\";\nmsg.aggregate = \"ave\";  // Try: \"min\", \"max\", \"ave\", \"interpolative\"\nmsg.start = new Date(Date.now() - 60 * 60 * 1000); // 1 hour ago\nmsg.end = new Date(); // Now\nmsg.interval = 300000;  // Required for aggregates: 5-minute intervals\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":440,"y":140,"wires":[["0c43bd35230132af"]]},{"id":"532ae640b386e34e","type":"debug","z":"58b3ba58c45b22dd","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":790,"y":120,"wires":[]},{"id":"24678e079b08c81d","type":"debug","z":"58b3ba58c45b22dd","name":"Errrors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":790,"y":160,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 Deploy and click the Inject button. The debug panel shows all stored values for that tag within your time range.
 

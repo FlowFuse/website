@@ -6,7 +6,7 @@ date: 2025-08-28
 lastUpdated: 2025-12-29
 keywords: Pareto chart, Pareto diagram, Pareto analysis, manufacturing quality, defect reduction, quality control tools, root cause analysis, equipment maintenance, supply chain management, manufacturing efficiency
 authors: ["sumit-shinde"]
-image: blog/2025/08/images/pareto-chart-manufacturing-guide.png
+image: /blog/2025/08/images/pareto-chart-manufacturing-guide.png
 tags:
   - flowfuse
 meta:

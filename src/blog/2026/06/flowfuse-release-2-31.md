@@ -33,7 +33,7 @@ FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, no
 
 <!--more-->
 
-## Let FlowFuse Expert build your industrial application {#expert-agentic-ga}
+## Let FlowFuse Expert build your industrial application
 
 *FlowFuse Expert is our integrated AI assistant, in the website, the platform, and the immersive Node-RED editor.*
 
@@ -41,7 +41,7 @@ Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS
 
 It now works on Remote Instances as well as Hosted Instances, so you get the same build-it-for-me experience across both. Agentic flow building requires the nr-assistant plugin at v0.16.0 or newer, and FlowFuse Expert will let you know when an update is available in your instance's immersive editor.
 
-## Certified Nodes for industrial connectivity and AI {#certified-nodes}
+## Certified Nodes for industrial connectivity and AI
 
 FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can add to your instances. At launch you can get:
 
