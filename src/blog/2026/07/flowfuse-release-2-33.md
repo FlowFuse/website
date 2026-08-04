@@ -35,7 +35,7 @@ Now you can start where the hardware already is. Run the installer from your ter
 
 ![The installer running in a terminal, walking through sign-up and connection to FlowFuse](./images/device-agent-install.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
 
-More of the from-scratch onboarding experience lands in upcoming releases.
+You can grab the install command for your platform on the [Device Agent page](/platform/device-agent/#install-from-your-terminal) and have a machine online in a few minutes. More of the from-scratch onboarding experience lands in upcoming releases.
 
 ## Modbus Certified Node
 

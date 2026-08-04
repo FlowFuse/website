@@ -41,14 +41,103 @@ meta:
                 <p class="mb-10">
                     Unlock the power of your Industrial IoT devices and bring them into your automation workflows with the FlowFuse Device Agent. Our lightweight, secure agent allows you to effortlessly manage and deploy automation flows to your hardware remotely from anywhere. 
                 </p>
-                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="/docs/device-agent/quickstart/">GET STARTED</a>
+                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="#install-from-your-terminal">GET STARTED</a>
             </div>
             <div class="flex justify-center m-auto">
                 <lite-youtube videoid="-07lngewgfE" params="rel=0" style="width: 500px; overflow: hidden;" class="border-4 border-indigo-200 rounded-xl sm:max-w-md sm:max-h-full md:max-w-screen-md lg:max-w-lg lg:max-h-72"></lite-youtube>
             </div>
-            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md m-auto mt-12" href="/docs/device-agent/quickstart/">GET STARTED</a>
-        </div>   
+            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md m-auto mt-12" href="#install-from-your-terminal">GET STARTED</a>
+        </div>
     </div>
+
+    <!--Install from your terminal-->
+    <div id="install-from-your-terminal" class="w-full scroll-mt-24 pb-20 md:pb-24">
+        <div class="max-w-screen-lg mx-auto px-6">
+            <div class="ff-blue-card max-md:max-w-md max-md:mx-auto">
+                <h2 class="font-bold w-full text-center md:text-left mb-6">Install on edge, straight from your terminal</h2>
+                <div class="md:grid md:grid-cols-2 md:gap-10 items-start">
+                    <div class="max-md:mb-10">
+                        <p class="font-light mb-6">
+                            Start where your hardware already is. Run the installer on the machine you want to bring
+                            online and it walks you through the rest, including creating a FlowFuse account if you
+                            don't have one yet. No connection codes to copy out of the platform first.
+                        </p>
+                        <p class="font-light">
+                            Already have a remote instance in FlowFuse, or installing with a one-time code?
+                            The <a href="/docs/device-agent/quickstart/">Quick Start guide</a> covers that route, and the
+                            <a href="/docs/device-agent/install/overview/">installation docs</a> cover npm and Docker.
+                        </p>
+                    </div>
+                    <div class="flex justify-center md:justify-end">
+                        <!--Terminal frame around the installer recording-->
+                        <div class="ff-terminal-frame w-full max-w-[500px] overflow-hidden rounded-xl border border-gray-700 shadow-lg">
+                            <div class="ff-terminal-frame__bar flex items-center gap-2 px-4 py-3">
+                                <span class="h-3 w-3 rounded-full bg-red-500"></span>
+                                <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+                                <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                            </div>
+                            <div class="ff-terminal-frame__screen p-4">
+                                {% image "./images/device-agent/terminal-install.gif", "The FlowFuse Device Agent installer running in a terminal, opening a browser to register the machine", [500] %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Install commands, full width so nothing is clipped-->
+                <div class="mt-10 text-left">
+                    <p class="font-medium mb-2">Linux and macOS</p>
+                    <div class="ff-command mb-6">
+                        <code class="ff-command__text">/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)"</code>
+                        <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
+                    </div>
+                    <p class="font-medium mb-2">Windows (run elevated)</p>
+                    <div class="ff-command">
+                        <code class="ff-command__text">powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1|iex"</code>
+                        <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Copy buttons for the install commands. The command text is read from the
+        // sibling <code> element so the markup stays the single source of truth.
+        (function () {
+            document.querySelectorAll('[data-copy-command]').forEach(function (button) {
+                button.addEventListener('click', async function () {
+                    var code = button.parentElement.querySelector('.ff-command__text')
+                    if (!code) return
+                    var text = code.textContent.trim()
+                    try {
+                        if (navigator.clipboard) {
+                            await navigator.clipboard.writeText(text)
+                        } else {
+                            // navigator.clipboard is unavailable outside secure contexts
+                            var field = document.createElement('textarea')
+                            field.value = text
+                            field.setAttribute('readonly', '')
+                            field.style.position = 'absolute'
+                            field.style.left = '-9999px'
+                            document.body.appendChild(field)
+                            field.select()
+                            document.execCommand('copy')
+                            document.body.removeChild(field)
+                        }
+                    } catch (err) {
+                        return
+                    }
+                    var original = button.textContent
+                    button.textContent = 'Copied'
+                    button.classList.add('ff-command__copy--done')
+                    setTimeout(function () {
+                        button.textContent = original
+                        button.classList.remove('ff-command__copy--done')
+                    }, 2000)
+                })
+            })
+        })()
+    </script>
 
     <!-- Seamlessly manage your devices all in one place -->  
     <div class="w-full">

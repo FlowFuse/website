@@ -397,6 +397,48 @@ dl.message-properties > dd {
 }
 
 /*
+    Terminal frame: wraps a recording of a CLI session in window chrome. The
+    background matches the recording's own background (#0E1114) so the padding
+    reads as terminal padding rather than a border.
+*/
+.ff-terminal-frame {
+    background-color: #0e1114;
+}
+
+.ff-terminal-frame__bar {
+    background-color: #191d22;
+}
+
+.ff-terminal-frame__screen img {
+    @apply block w-full h-auto rounded;
+}
+
+/*
+    Copy-pastable shell command. Wraps rather than scrolls so the whole command
+    stays readable, with the copy button pinned to the top right.
+*/
+.ff-command {
+    background-color: #0e1114;
+    @apply flex items-start justify-between gap-4 rounded-lg p-4;
+}
+
+.ff-command__text {
+    @apply text-sm text-gray-100 whitespace-pre-wrap break-all;
+}
+
+.ff-command__copy {
+    @apply shrink-0 rounded border border-gray-600 px-3 py-1 text-xs font-medium uppercase tracking-wide text-gray-200;
+}
+
+.ff-command__copy:hover {
+    @apply border-gray-400 text-white;
+}
+
+.ff-command__copy--done {
+    @apply border-green-500 text-green-400;
+}
+
+/*
     Event banner
 */
 .event-banner-container {
