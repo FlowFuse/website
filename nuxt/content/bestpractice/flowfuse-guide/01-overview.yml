@@ -1,0 +1,118 @@
+guide: flowfuse-guide
+slug: overview
+navOrder: 1
+title: Overview
+blurb: Turn an app idea into FlowFuse pieces you can name and say in one sentence.
+blocks:
+  - type: linkCards
+    columns: 1
+    items:
+      - title: New to FlowFuse? Start with the Foundations
+        body: What FlowFuse is and its core pieces — the grounding for everything in this guide.
+        link:
+          label: Foundations →
+          to: /bestpractice/flowfuse-guide/foundations/
+  - type: linkCards
+    heading: Apps — app delivery methods
+    columns: 2
+    items:
+      - title: Whole app
+        body: A complete, versioned project promoted through dev, staging and prod — via snapshots & pipelines.
+        link:
+          label: App delivery methods →
+          to: /bestpractice/flowfuse-guide/app-delivery-methods/#whole-app
+      - title: Pieces
+        body: A reusable piece packaged to the Team Library, installed like a shared library — via subflow export.
+        link:
+          label: App delivery methods →
+          to: /bestpractice/flowfuse-guide/app-delivery-methods/#pieces
+  - type: linkCards
+    heading: Hardware apps
+    columns: 3
+    items:
+      - title: Packaged App
+        body: Sealed product on a Remote Instance, identical on every device.
+        link:
+          label: Hardware apps →
+          to: /bestpractice/flowfuse-guide/hardware-apps/#packaged-app
+      - title: Configurable App
+        body: Same build on a Remote Instance, tuned by a per-site config file that lives on the device.
+        link:
+          label: Hardware apps →
+          to: /bestpractice/flowfuse-guide/hardware-apps/#configurable-app
+      - title: Edge Building Block
+        body: A reusable edge block you wire into your own upstream flows.
+        link:
+          label: Hardware apps →
+          to: /bestpractice/flowfuse-guide/hardware-apps/#edge-building-block
+  - type: linkCards
+    heading: Software apps
+    columns: 3
+    items:
+      - title: Packaged App
+        body: Headless job on a Hosted or Remote Instance, no screen.
+        link:
+          label: Software apps →
+          to: /bestpractice/flowfuse-guide/software-apps/#packaged-app
+      - title: Data-Driven App
+        body: User-facing app on a Hosted Instance, backed by data.
+        link:
+          label: Software apps →
+          to: /bestpractice/flowfuse-guide/software-apps/#data-driven-app
+      - title: Shared Building Block
+        body: Reusable UI or logic many Hosted Instances embed.
+        link:
+          label: Software apps →
+          to: /bestpractice/flowfuse-guide/software-apps/#shared-building-block
+  - type: linkCards
+    heading: Architectures — data plane, how data is handled
+    columns: 4
+    items:
+      - title: Built in — Tables
+        body: Relational records — built into every FlowFuse install, exposed to every instance.
+        link:
+          label: Data plane →
+          to: /bestpractice/flowfuse-guide/data-plane/#relational
+      - title: Built in — Broker / UNS
+        body: Team Broker — built into every FlowFuse install; publish once, many subscribe.
+        link:
+          label: Data plane →
+          to: /bestpractice/flowfuse-guide/data-plane/#broker-uns
+      - title: Time-series
+        body: External today — no built-in TSDB; run Timescale/Quest and expose it to the fleet.
+        link:
+          label: Data plane →
+          to: /bestpractice/flowfuse-guide/data-plane/#time-series
+      - title: Bring your own
+        body: Expose any other store or service (SQL, ML, gateway) over Project Link.
+        link:
+          label: Data plane →
+          to: /bestpractice/flowfuse-guide/data-plane/#bring-your-own
+  - type: linkCards
+    heading: Architectures — execution plane, where it runs
+    columns: 3
+    items:
+      - title: OT architectures
+        body: Near the equipment — edge with the server in IT or an OT/DMZ, hardware-saving consolidation, and air-gapped sites.
+        link:
+          label: View OT →
+          to: /bestpractice/flowfuse-guide/ot-architectures/
+      - title: IT architectures
+        body: Hosting & governing — on-prem, your cloud per-site, hosting choice at scale, and enterprise governance.
+        link:
+          label: View IT →
+          to: /bestpractice/flowfuse-guide/it-architectures/
+      - title: IIoT architectures
+        body: The live data backbone — a Unified Namespace where edge publishes once and many subscribe, across every site.
+        link:
+          label: View IIoT →
+          to: /bestpractice/flowfuse-guide/iiot-architectures/
+  - type: linkCards
+    heading: Examples
+    columns: 1
+    items:
+      - title: Worked example
+        body: OEE, end to end — the full chain from edge to broker to cloud to history.
+        link:
+          label: Worked example →
+          to: /bestpractice/flowfuse-guide/worked-example/

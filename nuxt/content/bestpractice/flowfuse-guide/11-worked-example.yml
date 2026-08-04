@@ -1,0 +1,84 @@
+guide: flowfuse-guide
+slug: worked-example
+navOrder: 11
+title: Worked example
+blurb: OEE, end to end — two packages, two connections.
+blocks:
+  - type: prose
+    kicker: Worked example — start here
+    body: >-
+      OEE, end to end — how an Edge Building Block, the Team Broker, a Data-Driven App and an external
+      time-series DB snap together into one architecture you can say in a sentence.
+  - type: diagram
+    lanes:
+      - label: Cloud · platform — the app + history
+        tone: cloud
+        nodes:
+          - title: Hosted Instance
+            sub: Data-Driven App · OEE
+            tone: cloud
+          - title: Time-series DB
+            sub: external · history
+            tone: muted
+      - link: subscribe · writes history over the Postgres wire
+      - label: Team Broker
+        tone: broker
+        nodes:
+          - title: Team Broker
+            sub: MQTT · UNS
+            tone: broker
+      - link: publish state
+      - label: OT · edge — one Remote Instance per line, all the same Edge Block
+        tone: ot
+        nodes:
+          - title: Remote Instance
+            sub: Line A · Edge Block
+            tone: ot
+          - title: Remote Instance
+            sub: Line B · Edge Block
+            tone: ot
+          - title: Remote Instance
+            sub: Line C · Edge Block
+            tone: ot
+    legend:
+      - label: OT edge
+        tone: ot
+      - label: Cloud
+        tone: cloud
+      - label: MQTT / UNS
+        tone: broker
+      - label: Postgres wire
+        tone: muted
+  - type: prose
+    heading: Worked example - OEE, two packages, two connections
+    body: >-
+      OEE (Overall Equipment Effectiveness) tells you how much good product a line makes versus its
+      full potential — one live number per line, plus history for trends. Most real apps are more than
+      one piece. OEE joins an Edge Building Block and a Data-Driven App through the Team Broker, with
+      an external time-series DB added for history.
+  - type: cards
+    columns: 2
+    items:
+      - title: Remote Instance (Edge Block)
+        body: >-
+          Reads the machine signals at the edge and publishes its state. Built once, rolled out to
+          every device across the fleet.
+      - title: Team Broker (MQTT)
+        body: >-
+          Carries machine state from edge to cloud. The edge publishes to a topic; the cloud app
+          subscribes. Neither references the other.
+      - title: Hosted Instance (Data-Driven App)
+        body: >-
+          Subscribes to the machine state, computes availability, performance and quality, and
+          presents the OEE dashboard.
+      - title: External time-series DB (Timescale / QuestDB)
+        body: >-
+          Each reading is written so trends can be charted over time. FlowFuse has no built-in
+          time-series store, so history goes to an external Timescale/QuestDB reached over the
+          Postgres wire protocol (a second egress, because the data is a timestamped stream).
+  - type: sentence
+    heading: The architecture, in one sentence
+    body: >-
+      OEE is a Hardware: Edge Building Block (on a Remote Instance) publishing machine state over the
+      Team Broker to a Software: Data-Driven App (on a Hosted Instance), which computes and displays
+      OEE and writes history to an external time-series DB (Timescale / QuestDB).

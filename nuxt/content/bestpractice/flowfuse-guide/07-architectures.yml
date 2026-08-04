@@ -1,0 +1,83 @@
+guide: flowfuse-guide
+slug: architectures
+navOrder: 7
+title: Architectures
+blurb: The same building blocks, arranged for where they run.
+blocks:
+  - type: prose
+    body: >-
+      Every FlowFuse deployment is the same building blocks — instances, broker, data, edge —
+      arranged for where it runs. Read any diagram as a vertical stack, then pick the world you're
+      designing for.
+  - type: linkCards
+    columns: 3
+    items:
+      - title: OT architectures
+        body: >-
+          Near the equipment — edge deployments with the server in IT or in an OT/DMZ,
+          hardware-saving consolidation, and air-gapped sites.
+        link:
+          label: View OT →
+          to: /bestpractice/flowfuse-guide/ot-architectures/
+      - title: IT architectures
+        body: >-
+          Hosting and governing — on-prem, your cloud per-site, hosting choice at scale, enterprise
+          governance, and secure data exposure.
+        link:
+          label: View IT →
+          to: /bestpractice/flowfuse-guide/it-architectures/
+      - title: IIoT architectures
+        body: >-
+          The live data backbone — a Unified Namespace where edge publishes once and many subscribe,
+          across every site.
+        link:
+          label: View IIoT →
+          to: /bestpractice/flowfuse-guide/iiot-architectures/
+  - type: prose
+    heading: Separating dev from prod
+    body: >-
+      A modifier for any of the three worlds above. When your development server is a different
+      server from production — dev in IT or the cloud, prod down in OT or air-gapped — a GitHub
+      bridge carries the same versioned code across the boundary.
+  - type: prose
+    kicker: Modifier · works across OT, IT & IIoT — GitHub bridge
+    body: >-
+      A pipeline pushes your dev work up to a repo; each site's instance pulls it back down. One
+      versioned source of truth — with review, history and rollback in Git — and dev kept safely off
+      the production deployment servers.
+  - type: diagram
+    lanes:
+      - label: Dev · one build
+        tone: it
+        nodes:
+          - title: Dev instance
+            sub: develop once
+            tone: it
+      - link: pipeline push
+      - label: Versioned source of truth
+        tone: neutral
+        nodes:
+          - title: GitHub
+            sub: versioned source of truth
+            tone: muted
+      - link: pull
+      - label: Sites · prod instances (OT & IT)
+        tone: ot
+        nodes:
+          - title: Instance
+            sub: Site A · OT
+            tone: ot
+          - title: Instance
+            sub: Site B · IT
+            tone: it
+          - title: Instance
+            sub: Site C · OT
+            tone: ot
+    legend:
+      - label: push / pull
+        tone: neutral
+  - type: note
+    body: Once code is on a server, it ships via snapshots or subflows.
+    link:
+      label: App delivery methods →
+      to: /bestpractice/flowfuse-guide/app-delivery-methods/

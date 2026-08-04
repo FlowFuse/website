@@ -1,0 +1,116 @@
+guide: flowfuse-guide
+slug: app-delivery-methods
+navOrder: 3
+title: App delivery methods
+blurb: "Two different units of code, delivered two ways: ship the whole app, or publish one reusable piece."
+blocks:
+  - type: prose
+    kicker: App delivery methods — start here
+    body: >-
+      Two different units of code, delivered two ways. Ship the whole app — a complete, versioned
+      project promoted through environments — or publish one reusable piece — a package the whole
+      team installs and upgrades in one place. Pick by what you're shipping: the app, or a part of it.
+  - type: tabs
+    panels:
+      - label: Whole app
+        kicker: Snapshots & pipelines
+        kickerNote: Promote a complete, versioned project through dev → staging → prod to every place that runs it.
+        diagram:
+          lanes:
+            - label: Dev · one build
+              tone: it
+              nodes:
+                - title: Dev instance
+                  sub: build & test once
+                  tone: it
+            - link: snapshot · pipeline
+            - label: Fleet · one instance per place, each pointed at its own data
+              tone: ot
+              nodes:
+                - title: Remote Instance
+                  sub: Site A · env A
+                  tone: ot
+                - title: Remote Instance
+                  sub: Site B · env B
+                  tone: ot
+                - title: Remote Instance
+                  sub: Site C · env C
+                  tone: ot
+          legend:
+            - label: Managed
+              tone: it
+            - label: Snapshot / pipeline
+              tone: neutral
+        summary: Take the whole app — every flow, setting and dependency — as a versioned snapshot, then promote that one controlled build through pipeline stages to every place that should run it.
+        useWhen: You're shipping a complete application and every site should run the same, controlled version.
+        how: A pipeline promotes a snapshot dev → staging → production; each target is parameterised by its own env vars, so one controlled build serves every site.
+        lists:
+          - heading: Major components
+            items:
+              - Snapshot — the whole app, frozen as one versioned build
+              - Pipeline — promotes that snapshot through dev → staging → prod
+              - Dev instance — where you build and test the project
+              - Remote / Hosted Instances — the fleet each snapshot rolls out to
+          - heading: Where config & data live
+            items:
+              - Config — each target is parameterised by its own env vars.
+              - "Rollout — Device Groups + pipeline promotion: one controlled build, many places."
+        footnote:
+          text: Dev and prod on separate servers — dev in IT or the cloud, prod in OT or air-gapped? A GitHub bridge carries the same versioned code across the boundary. That's an architecture decision.
+          link:
+            label: See Architectures →
+            to: /bestpractice/flowfuse-guide/architectures/
+      - label: Pieces
+        kicker: Subflow export
+        kickerNote: Publish one piece as a package the team installs, like a shared library.
+        diagram:
+          lanes:
+            - label: Team · one versioned library, version-tracked
+              tone: it
+              nodes:
+                - title: Subflow
+                  sub: reusable block
+                  tone: it
+            - link: export / publish
+            - label: Team Library
+              tone: it
+              nodes:
+                - title: Team Library
+                  sub: installable node
+                  tone: it
+            - link: install
+            - label: Apps that install the piece
+              tone: neutral
+              nodes:
+                - title: Instance
+                  sub: App A · v1.2
+                - title: Instance
+                  sub: App B · v1.2
+                - title: Instance
+                  sub: App C · v1.1
+            - link: tracked in
+            - label: Bill of Materials
+              tone: neutral
+              nodes:
+                - title: Bill of Materials
+                  sub: which version each app runs
+                  tone: muted
+          legend:
+            - label: install
+              tone: it
+            - label: version-tracked
+              tone: neutral
+        summary: Package a single piece of a flow — a block of logic or UI — as a reusable subflow, and publish it to the Team Library as an installable node other apps pull in, instead of copying code between projects.
+        useWhen: A part of an app should be reused across many apps and upgraded in one place — a shared library, not a whole application.
+        how: Export the subflow as importable JSON, or publish it to the Team Library as an installable package with an example flow. Apps install it like a library dependency, and the Bill of Materials tracks every version in use.
+        lists:
+          - heading: Major components
+            items:
+              - Subflow — the one reusable piece you package
+              - Team Library — the catalogue you publish the package to
+              - Instances — the apps that install and run the piece
+              - Bill of Materials — tracks which version each app runs
+          - heading: Where config & data live
+            items:
+              - Config — the subflow's instance properties / env where it's installed.
+              - Distribution — publish once to the Team Library; apps install and upgrade from it, like a library.

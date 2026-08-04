@@ -1,0 +1,158 @@
+guide: flowfuse-guide
+slug: it-architectures
+navOrder: 8
+title: IT architectures
+blurb: Hosting the platform and serving the wider organisation.
+blocks:
+  - type: prose
+    kicker: IT architectures
+    body: >-
+      How FlowFuse deploys for IT — hosting the platform and serving the wider organisation. Read
+      each diagram bottom-up: the platform above, the instances and services it serves below.
+  - type: tabs
+    panels:
+      - label: On-prem IT
+        kicker: On-prem IT data center · self-managed
+        diagram:
+          lanes:
+            - label: On-prem IT data center · self-managed
+              tone: it
+              nodes:
+                - title: FlowFuse platform
+                  sub: on your own servers
+                  tone: it
+            - link: hosts
+            - label: Apps
+              tone: neutral
+              nodes:
+                - title: Hosted Instance
+                  sub: app
+                - title: Hosted Instance
+                  sub: app
+                - title: Hosted Instance
+                  sub: app
+            - link: served to
+            - label: IT users
+              tone: neutral
+              nodes:
+                - title: IT users
+                  sub: dashboards & tools
+                  tone: muted
+          legend:
+            - label: IT zone
+              tone: it
+            - label: Authenticated
+              tone: neutral
+            - label: Serves
+              tone: muted
+        summary: >-
+          The whole FlowFuse platform runs on the company's own servers in their IT data center. It
+          hosts the apps as Hosted Instances and serves them to IT users. Nothing leaves the building
+          unless you choose to connect it.
+        useWhen: IT wants to own and run the platform entirely in-house, on their own infrastructure.
+      - label: Cloud + per-site
+        kicker: Cloud · your own AWS account
+        diagram:
+          lanes:
+            - label: Cloud · your own AWS account
+              tone: cloud
+              nodes:
+                - title: FlowFuse platform
+                  sub: your cloud account
+                  tone: cloud
+            - link: Device Agent · per site
+            - label: Sites · IT layer — one Remote Instance each
+              tone: it
+              nodes:
+                - title: Remote Instance
+                  sub: Site A · IT layer
+                  tone: it
+                - title: Remote Instance
+                  sub: Site B · IT layer
+                  tone: it
+                - title: Remote Instance
+                  sub: Site C · IT layer
+                  tone: it
+          legend:
+            - label: Cloud
+              tone: cloud
+            - label: IT zone
+              tone: it
+            - label: Device Agent · deploy/manage
+              tone: neutral
+        summary: >-
+          The FlowFuse platform runs in the company's own cloud account (e.g. AWS) and deploys and
+          manages a Remote Instance in each site's IT layer via the Device Agent. The cloud platform
+          governs and deploys; each site's instance runs locally and keeps working on its own even if
+          the link drops.
+        useWhen: The platform lives in your cloud, but each site needs its own instance in its IT layer.
+      - label: Scaled-out · hosting choice
+        kicker: Platform · host it where you want
+        diagram:
+          lanes:
+            - label: Platform · host it where you want
+              tone: it
+              nodes:
+                - title: FlowFuse platform
+                  sub: own infra · your AWS · FlowFuse SaaS
+                  tone: it
+            - link: supports
+            - label: IT services across the org
+              tone: neutral
+              nodes:
+                - title: IT service
+                  sub: team A
+                - title: IT service
+                  sub: team B
+                - title: IT service
+                  sub: team C
+          legend:
+            - label: IT zone
+              tone: it
+            - label: Authenticated
+              tone: neutral
+        summary: >-
+          One FlowFuse platform supports IT services across the whole organisation, and you choose
+          where it runs: your own infrastructure, your own AWS, or FlowFuse's SaaS. Same platform,
+          same apps, wherever it is hosted.
+        useWhen: Supporting IT broadly and you want freedom to host the platform on-prem, in your cloud, or as SaaS.
+      - label: Enterprise governance
+        kicker: Enterprise · one platform · central governance · one standard
+        diagram:
+          lanes:
+            - label: Enterprise · one platform · central governance · one standard
+              tone: it
+              nodes:
+                - title: FlowFuse platform
+                  sub: role-based access · one standard
+                  tone: it
+            - link: governs · isolates
+            - label: Teams — each a site or business unit, isolated by role-based access
+              tone: neutral
+              nodes:
+                - title: Team A
+                  sub: site / business unit · instances & applications
+                - title: Team B
+                  sub: site / business unit · instances & applications
+                - title: Team C
+                  sub: site / business unit · instances & applications
+          legend:
+            - label: IT zone
+              tone: it
+            - label: Governed · RBAC
+              tone: neutral
+        summary: >-
+          One FlowFuse platform serves the whole company. Each site or business unit is its own team
+          — its own instances and applications — isolated by role-based access and unified under
+          central governance and one standard.
+        useWhen: Central governance and one standard across many sites, with each team's work kept separate.
+  - type: linkCards
+    columns: 1
+    items:
+      - title: Where does the data live?
+        body: >-
+          Every architecture here sits on the same data plane — built-in Tables & Broker, or bring
+          your own over Project Link.
+        link:
+          label: Data plane →
+          to: /bestpractice/flowfuse-guide/data-plane/

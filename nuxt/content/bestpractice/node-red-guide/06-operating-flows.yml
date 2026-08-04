@@ -1,0 +1,185 @@
+guide: node-red-guide
+slug: operating-flows
+navOrder: 6
+title: Operating flows
+blurb: Four operational habits that keep a flow running when the real world pushes back.
+blocks:
+  - type: prose
+    kicker: Operating flows — start here
+    body: >-
+      A clean flow shape isn't enough to survive production. Four operational habits keep a flow
+      running when the real world pushes back: catch errors on a path you control, pace fast inputs so
+      memory doesn't blow, deploy with the smallest restart, and keep the flow observable.
+  - type: tabs
+    panels:
+      - label: Error handling
+        kicker: Design the error path
+        kickerNote: A Catch node per tab turns a thrown error into a route you control, not a silent stall.
+        diagramTitle: Node-RED runtime · one error path per tab
+        diagram:
+          lanes:
+            - label: Happy path
+              tone: neutral
+              nodes:
+                - title: in
+                  sub: msg enters
+                - title: work
+                  sub: may throw
+                - title: sink
+                  sub: on success
+            - link: throws
+            - label: The error path
+              tone: ot
+              nodes:
+                - title: Catch
+                  sub: scoped to this tab
+                  tone: ot
+                - title: log · notify · retry
+                  sub: the error path
+                  tone: ot
+          legend:
+            - label: success
+              tone: neutral
+            - label: error (Catch)
+              tone: ot
+        summary: >-
+          Every flow that talks to the outside world will fail sometimes — a DB is down, a payload is
+          malformed, a request times out. Node-RED routes those failures to a Catch node instead of
+          crashing; you decide what happens next.
+        useWhen: "Any flow with I/O: HTTP calls, DB writes, broker publishes, file access — i.e. almost all of them."
+        howHeading: How to do it
+        how: >-
+          Drop a Catch node on the tab (scope it to specific nodes or the whole tab). Throw with
+          node.error(msg, msg) so the message reaches Catch. From Catch, branch to log, notify, or retry
+          — and on an API flow, respond with an error status instead of hanging. Pair with a Status node
+          to surface node health on the canvas.
+        callout:
+          tone: watch
+          text: >-
+            An unscoped tab-wide Catch that re-runs your success/response nodes will double-respond; keep
+            the error path separate from the happy path.
+      - label: Backpressure & memory
+        kicker: Pace the fast side to the slow side
+        kickerNote: When input outruns a sink, the queue grows and the heap blows. This is the #1 event-driven failure.
+        diagramTitle: Node-RED runtime
+        diagram:
+          lanes:
+            - label: Fast in · many msg/s
+              tone: neutral
+              nodes:
+                - title: MQTT in
+                  sub: fast · bursty
+            - link: many msg/s
+            - label: The brake
+              tone: it
+              nodes:
+                - title: rate limit / batch
+                  sub: delay · queue · drop
+                  tone: it
+            - link: steady rate
+            - label: Slow side
+              tone: neutral
+              nodes:
+                - title: DB write
+                  sub: slow · the bottleneck
+                  tone: muted
+          note: No pacing here → the queue grows and the heap blows.
+        summary: >-
+          A fast source (an MQTT topic, a tight poll) feeding a slow sink (a DB write, an API) has no
+          natural brake. Messages pile up in memory faster than they drain, and the runtime eventually
+          runs out of heap and dies.
+        useWhen: Any high-rate or bursty input into a slower downstream — telemetry to a database, fan-out to a remote API.
+        howHeading: How to do it
+        how: >-
+          Pace the slow side explicitly: a delay node in rate-limit mode, batching (join into chunks), or
+          dropping stale readings when only the latest matters. Batched inserts also cut per-write
+          overhead. Watch heap and the node's queue; if it only grows, you have backpressure, not a spike.
+        callout:
+          tone: watch
+          text: >-
+            A backend that holds a live connection (an MQTT subscription) can't be pooled away; pace at
+            the source or offload the heavy work.
+      - label: Deploy modes
+        kicker: Pick the smallest restart that ships the change
+        kickerNote: Full vs Modified Flows vs Modified Nodes decide what stops and what keeps running.
+        diagram:
+          lanes:
+            - label: Full — restarts the whole runtime (all tabs, all connections drop)
+              tone: ot
+              nodes:
+                - title: tab A
+                  tone: ot
+                - title: tab B
+                  tone: ot
+                - title: connections
+                  tone: ot
+            - label: Modified Flows — restarts only tabs you changed
+              tone: dmz
+              nodes:
+                - title: changed tab
+                - title: unchanged tabs keep running
+                  tone: muted
+            - label: Modified Nodes — restarts only the nodes you changed (default; least disruptive)
+              tone: it
+              nodes:
+                - title: changed node
+                  tone: it
+                - title: open connections survive
+                  tone: muted
+        summary: >-
+          Deploy doesn't just save — it restarts nodes, and that drops their connections and in-flight
+          state. Node-RED offers three scopes so you don't restart the world for a one-node change.
+        useWhen: >-
+          Every deploy to a running system, especially one holding live connections (brokers, serial,
+          websockets) you don't want to bounce.
+        howHeading: How to do it
+        how: >-
+          Modified Nodes (the default) restarts only nodes you edited — least disruptive. Modified Flows
+          restarts changed tabs. Full restarts everything and drops all connections. Prefer the smallest
+          scope; use Full when config nodes or global state changed. Deploying via the Admin API (POST
+          /flows) takes a Node-RED-Deployment-Type header that sets the same modes.
+        callout:
+          tone: watch
+          text: >-
+            Nodes holding a connection re-initialise on restart; a Full deploy on a busy broker flow drops
+            and re-subscribes everything.
+      - label: Debugging
+        kicker: Make the flow observable
+        kickerNote: Tap the wire, surface node state, and keep enough on the message to trace it.
+        diagramTitle: Node-RED runtime
+        diagram:
+          lanes:
+            - label: The flow
+              tone: neutral
+              nodes:
+                - title: in
+                - title: function
+                  sub: node.status()
+                - title: sink
+            - link: inspect msg
+            - label: Debug tap
+              tone: it
+              nodes:
+                - title: debug
+                  sub: tap the wire
+                  tone: it
+          legend:
+            - label: flow
+              tone: neutral
+            - label: debug tap
+              tone: it
+        summary: >-
+          You can't fix what you can't see. Node-RED gives you live message inspection and per-node
+          status without stopping the flow — use them instead of guessing.
+        useWhen: Building, and any time a flow misbehaves in a way the shape doesn't explain.
+        howHeading: How to do it
+        how: >-
+          Drop a debug node to tap any wire (view msg.payload or the full msg, and route to the sidebar).
+          Call node.status() / node.warn() to surface state and hints on the canvas. Keep enough context
+          on the message to trace a request end-to-end — but don't ship fat debug payloads to production
+          dashboards.
+        callout:
+          tone: good
+          text: >-
+            Confirming which branch a message took and what it carried, before assuming the logic is
+            wrong.

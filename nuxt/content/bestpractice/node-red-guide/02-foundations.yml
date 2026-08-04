@@ -1,0 +1,77 @@
+guide: node-red-guide
+slug: foundations
+navOrder: 2
+title: Foundations
+blurb: The handful of concepts you need to build with Node-RED, and how they fit together.
+blocks:
+  - type: prose
+    kicker: Foundations — start here
+    body: >-
+      The handful of concepts you need to build with Node-RED, and how they fit together. You wire
+      pre-built nodes into flows and spend your effort on the logic — what the system should do —
+      while the platform handles the syntax and the connectivity. Learn these and you can build real
+      integrations in Node-RED with only a little JavaScript — the structure carries most of the
+      weight.
+  - type: diagram
+    heading: How it fits together
+    lanes:
+      - label: Node-RED runtime
+        tone: neutral
+        nodes:
+          - title: Message in
+            sub: http in / inject
+          - title: Node
+            sub: transform
+          - title: Node
+            sub: route
+          - title: Sink
+            sub: no routing
+      - link: read / write state
+      - label: Shared state
+        tone: neutral
+        nodes:
+          - title: Context
+            sub: shared state
+            tone: muted
+    legend:
+      - label: msg travels the wires
+        tone: neutral
+  - type: prose
+    body: >-
+      A message enters a flow and passes from node to node, transformed along the way, until it
+      reaches a sink that sends and routes nothing. Reuse comes from subflows and link nodes; shared
+      state lives in context; new capabilities come from installing nodes off the palette.
+  - type: cards
+    heading: The core pieces
+    columns: 2
+    items:
+      - title: Node
+        body: >-
+          A single processing block: it receives a message, does one thing — read, transform, call,
+          route — and passes it on.
+      - title: Flow
+        body: >-
+          Nodes wired left-to-right on a tab; a message enters, is transformed, and exits. One working
+          unit of automation.
+      - title: Message (msg)
+        body: The object that travels the wires, carrying msg.payload plus metadata between nodes.
+      - title: Subflow
+        body: A block you define once and drop in many places, with its own inputs, outputs and per-instance config.
+      - title: Link nodes
+        body: >-
+          link in / link out / link call wire flows together across tabs with no visible wires — your
+          in-process service calls.
+      - title: Context
+        body: Storage that keeps state between messages — flow and global scope, in memory or persisted.
+      - title: Palette
+        body: The library of installable nodes (npm) you add new capabilities from.
+      - title: Editor & runtime
+        body: The browser editor where you wire flows, and the runtime that executes them continuously.
+  - type: note
+    heading: In the Node-RED docs
+    body: >-
+      That's the working model. For the full glossary — every core term and node type, straight from
+      the Node-RED project — see the official Node-RED documentation instead of a glossary here.
+    link:
+      label: nodered.org/docs →
+      to: https://nodered.org/docs/

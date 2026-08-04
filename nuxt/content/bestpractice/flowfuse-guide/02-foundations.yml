@@ -1,0 +1,107 @@
+guide: flowfuse-guide
+slug: foundations
+navOrder: 2
+title: Foundations
+blurb: "The foundation to build on: what FlowFuse is, its core pieces, and how code is shared across teams."
+blocks:
+  - type: diagram
+    heading: The big picture
+    lanes:
+      - label: FlowFuse platform — runs and connects your Node-RED instances
+        tone: it
+        nodes:
+          - title: Hosted Instance
+            sub: one or many, in the cloud
+            tone: it
+          - title: Dashboard
+            sub: live operator UI
+            tone: it
+          - title: Team Broker
+            sub: MQTT message bus
+            tone: broker
+          - title: FlowFuse Tables
+            sub: shared SQL database
+            tone: it
+      - link: Device Agent — bridges platform to the edge
+      - label: Remote Instances — one per device, across sites
+        tone: ot
+        nodes:
+          - title: Remote Instance
+            sub: one per device, across sites
+            tone: ot
+      - link: reads
+      - label: Edge hardware
+        tone: neutral
+        nodes:
+          - title: PLC
+            sub: controller
+            tone: muted
+          - title: IO module
+            sub: sensors & actuators
+            tone: muted
+          - title: Gateway
+            sub: protocol bridge
+            tone: muted
+          - title: Embedded
+            sub: microcontroller
+            tone: muted
+          - title: LoRaWAN GW
+            sub: wireless sensors
+            tone: muted
+    legend:
+      - label: Platform
+        tone: it
+      - label: Edge
+        tone: ot
+      - label: Hardware
+        tone: muted
+  - type: cards
+    heading: The core pieces
+    columns: 2
+    items:
+      - title: Single platform
+        body: Manage, secure, and govern everything from one place.
+      - title: Instances
+        body: Node-RED runtimes. A Hosted Instance runs on FlowFuse-managed infrastructure (cloud or your own server); a Remote Instance runs on your own edge hardware via the Device Agent. Same Node-RED, managed the same way — they differ only in where the runtime lives.
+      - title: Team Broker
+        body: A shared message bus that ties data together across sites.
+      - title: Database
+        body: One shared operational data store.
+      - title: Dashboards
+        body: Operator-facing UIs for the people who run it.
+      - title: Edge & device management
+        body: Deploy and manage across many devices, lines, and plants.
+      - title: Remote Instance
+        body: A Remote Instance lives in both worlds — edge execution down in OT, or an on-prem worker under an IT/cloud platform.
+  - type: note
+    heading: In the FlowFuse docs
+    body: That's the mental model in plain language. For the full glossary — every FlowFuse piece and term (Applications, Instances, Snapshots, Pipelines, Team Broker, Tables, Devices and more) — see the FlowFuse Concepts documentation.
+    link:
+      label: FlowFuse Concepts documentation →
+      to: /docs/user/concepts/
+  - type: steps
+    heading: The method, in four moves
+    items:
+      - title: Say what it does
+        body: One plain sentence. No nouns you would have to explain.
+      - title: Pick the package
+        body: Match it to a package — often several (most real apps are more than one piece).
+      - title: Decide where data goes
+        body: "Choose the target(s): FlowFuse Tables (relational), an external time-series DB, the Team Broker, or a single service."
+      - title: Read off the sentence
+        body: Package plus target is the architecture, stated in one line.
+  - type: prose
+    heading: How code gets shared
+    body: >-
+      Two ways code moves in FlowFuse: promote a whole app through environments, or compose an
+      app from shared parts. Both live on the App delivery methods page — and when dev and prod
+      sit on separate servers, a GitHub bridge (an architecture decision) carries the versioned
+      code between them.
+  - type: linkCards
+    columns: 1
+    items:
+      - title: See the delivery methods
+        body: Whole app or reusable pieces — how a build reaches every place that should run it.
+        link:
+          label: App delivery methods →
+          to: /bestpractice/flowfuse-guide/app-delivery-methods/

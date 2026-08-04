@@ -1,0 +1,215 @@
+guide: flowfuse-guide
+slug: ot-architectures
+navOrder: 9
+title: OT architectures
+blurb: How FlowFuse deploys in operational-technology environments, near the equipment.
+blocks:
+  - type: prose
+    kicker: OT architectures
+    body: >-
+      How FlowFuse deploys in operational-technology environments, near the equipment. Read each
+      diagram bottom-up: equipment on the floor, the platform above. The Remote Instance is the
+      execution layer that lives down in OT.
+  - type: tabs
+    panels:
+      - label: Edge · server in IT
+        kicker: Server in IT, execution in OT
+        diagram:
+          lanes:
+            - label: IT infrastructure
+              tone: it
+              nodes:
+                - title: FlowFuse server
+                  sub: in IT infrastructure
+                  tone: it
+            - link: manages across the boundary
+            - label: OT environment
+              tone: ot
+              nodes:
+                - title: Remote Instance
+                  sub: on OT equipment
+                  tone: ot
+                - title: Remote Instance
+                  sub: on OT equipment
+                  tone: ot
+                - title: Remote Instance
+                  sub: on OT equipment
+                  tone: ot
+            - link: reads
+            - label: Equipment
+              tone: neutral
+              nodes:
+                - title: PLCs
+                  sub: Line A
+                  tone: muted
+                - title: PLCs
+                  sub: Line B
+                  tone: muted
+                - title: PLCs
+                  sub: Line C
+                  tone: muted
+          legend:
+            - label: IT zone
+              tone: it
+            - label: OT zone
+              tone: ot
+            - label: Authenticated
+              tone: neutral
+            - label: Local wire
+              tone: muted
+        summary: >-
+          The FlowFuse server lives up in the IT infrastructure; the Remote Instances live down in the
+          OT environment on the equipment. The server deploys to and manages them across the IT/OT
+          boundary, while each Remote Instance keeps running locally if the link drops.
+        useWhen: IT owns and hosts the platform, but execution must sit next to the machines in OT.
+      - label: Edge · server in OT / DMZ
+        kicker: Platform inside the plant, exposed through a DMZ
+        diagram:
+          lanes:
+            - label: IT · corporate network
+              tone: it
+              nodes:
+                - title: Corporate systems
+                  sub: MES / ERP / dashboards
+                  tone: it
+            - link: controlled uplink · firewall
+            - label: DMZ · firewall-segregated
+              tone: dmz
+              nodes:
+                - title: FlowFuse server
+                  sub: in the DMZ
+                  tone: it
+            - link: firewall
+            - label: OT network
+              tone: ot
+              nodes:
+                - title: Remote Instance
+                  sub: IPC · Area 1
+                  tone: ot
+                - title: Remote Instance
+                  sub: IPC · Area 2
+                  tone: ot
+                - title: Remote Instance
+                  sub: embedded · Area 3
+                  tone: ot
+            - link: reads
+            - label: Equipment
+              tone: neutral
+              nodes:
+                - title: PLCs
+                  tone: muted
+                - title: PLCs
+                  tone: muted
+                - title: PLCs
+                  tone: muted
+          legend:
+            - label: IT zone
+              tone: it
+            - label: DMZ
+              tone: dmz
+            - label: OT zone
+              tone: ot
+            - label: Local wire
+              tone: muted
+        summary: >-
+          The FlowFuse server sits inside the plant, firewall-segregated in a DMZ, with a controlled
+          uplink to corporate systems and Remote Instances on IPCs and embedded hardware in the OT
+          network below. Nothing reaches OT except through the firewalls.
+        useWhen: Security policy keeps the platform inside the plant boundary, exposed only through a DMZ.
+      - label: Air-gapped
+        kicker: No internet, in or out
+        diagram:
+          lanes:
+            - label: Internet
+              tone: neutral
+              nodes:
+                - title: Internet
+                  sub: blocked
+                  tone: muted
+            - link: blocked
+            - label: OT network · no internet
+              tone: ot
+              nodes:
+                - title: FlowFuse
+                  sub: self-managed · on-site
+                  tone: ot
+            - link: deploys
+            - label: Site apps
+              tone: ot
+              nodes:
+                - title: Instances
+                  sub: site apps
+                  tone: ot
+            - link: reads
+            - label: Equipment
+              tone: neutral
+              nodes:
+                - title: PLCs
+                  sub: equipment
+                  tone: muted
+          legend:
+            - label: OT zone
+              tone: ot
+            - label: Authenticated
+              tone: neutral
+            - label: Local wire
+              tone: muted
+        summary: >-
+          The DMZ pattern taken to its extreme: a self-managed FlowFuse runs on a server inside an
+          isolated OT network with no internet at all. It manages that site's instances and devices
+          entirely within the OT boundary — nothing goes in or out.
+        useWhen: Site security policy forbids any internet traffic in or out of the OT network.
+      - label: Edge · hardware-saving
+        kicker: One server near the line, several Hosted Instances on it
+        diagram:
+          lanes:
+            - label: OT · on-site, close to the equipment
+              tone: ot
+              nodes:
+                - title: FlowFuse server
+                  sub: on-site · near the line
+                  tone: ot
+            - link: runs
+            - label: Hosted Instances doing the edge work
+              tone: neutral
+              nodes:
+                - title: Hosted Instance
+                  sub: does Line A's work
+                - title: Hosted Instance
+                  sub: does Line B's work
+                - title: Hosted Instance
+                  sub: does Line C's work
+            - link: talks to equipment
+            - label: Equipment
+              tone: neutral
+              nodes:
+                - title: PLCs
+                  sub: Line A
+                  tone: muted
+                - title: PLCs
+                  sub: Line B
+                  tone: muted
+                - title: PLCs
+                  sub: Line C
+                  tone: muted
+          legend:
+            - label: OT zone
+              tone: ot
+            - label: Local wire
+              tone: muted
+        summary: >-
+          Instead of a Remote Instance on every device, deploy one FlowFuse server close to the line
+          and run several Hosted Instances on it — each doing the work an edge device would have done,
+          talking to its equipment directly. Fewer physical boxes to buy and maintain, same separation
+          of concerns.
+        useWhen: You want the edge workloads consolidated onto nearby server hardware to cut device count.
+  - type: linkCards
+    columns: 1
+    items:
+      - title: Where does the data live?
+        body: >-
+          Every architecture here sits on the same data plane — built-in Tables & Broker, or bring
+          your own over Project Link.
+        link:
+          label: Data plane →
+          to: /bestpractice/flowfuse-guide/data-plane/

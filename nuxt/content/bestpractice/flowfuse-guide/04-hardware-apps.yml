@@ -1,0 +1,152 @@
+guide: flowfuse-guide
+slug: hardware-apps
+navOrder: 4
+title: Hardware apps
+blurb: The three shapes a FlowFuse app takes when it runs on a device.
+blocks:
+  - type: prose
+    kicker: Hardware apps — start here
+    body: >-
+      The three shapes a FlowFuse app takes when it runs on a device. Pick by how much varies per
+      site: nothing (Packaged App), a few settings (Configurable App), or you assemble it yourself
+      (Edge Building Block).
+  - type: tabs
+    panels:
+      - label: Packaged App
+        kicker: Deploy · sealed
+        kickerNote: Sealed product on a Remote Instance, identical on every device.
+        diagram:
+          lanes:
+            - label: Built once
+              tone: it
+              nodes:
+                - title: Pipeline snapshot
+                  sub: sealed · built once
+                  tone: it
+            - link: deploy · sealed
+            - label: Devices · nothing to configure
+              tone: ot
+              nodes:
+                - title: Remote Instance
+                  sub: identical
+                  tone: ot
+                - title: Remote Instance
+                  sub: identical
+                  tone: ot
+                - title: Remote Instance
+                  sub: identical
+                  tone: ot
+          note: Sealed · nothing to configure
+        summary: >-
+          A sealed product that ships on a piece of hardware and is identical everywhere — buy it,
+          it runs on its device, nothing to configure.
+        useWhen: The app ships with a known partner device and the data it reads is fixed by that hardware.
+        how: >-
+          Built and promoted through a pipeline (dev → staging → prod), then deployed to a Remote
+          Instance as a snapshot. Everything is baked in; only fixed env vars vary at deploy.
+        lists:
+          - heading: Major components
+            items:
+              - Pipeline snapshot — the app built once, promoted to the device
+              - Remote Instance (edge device) — FlowFuse-managed Node-RED running the sealed app
+              - Team Broker (MQTT) — carries the app's events to subscribers
+              - FlowFuse Tables — stores the rows the app writes
+          - heading: Where config & data live
+            items:
+              - Config — baked into the snapshot; only fixed env vars at deploy, nothing per-site.
+              - Data — events to the Team Broker, records to FlowFuse Tables.
+      - label: Configurable App
+        kicker: Same build, per-site config
+        kickerNote: Same build on a Remote Instance, tuned by a per-site config file that lives on the device.
+        diagram:
+          lanes:
+            - label: Built once
+              tone: it
+              nodes:
+                - title: Pipeline snapshot
+                  sub: same build
+                  tone: it
+            - link: same build
+            - label: Per-site config
+              tone: neutral
+              nodes:
+                - title: Per-site config
+                  sub: tags · broker · site
+                  tone: muted
+            - link: loads its own config
+            - label: Devices · each tuned to its site
+              tone: ot
+              nodes:
+                - title: Remote Instance
+                  sub: Site A
+                  tone: ot
+                - title: Remote Instance
+                  sub: Site B
+                  tone: ot
+                - title: Remote Instance
+                  sub: Site C
+                  tone: ot
+        summary: >-
+          The same shelf product, plus a few knobs — tag names, broker address, site name — that
+          differ per site and live on the Remote Instance.
+        useWhen: The flows are the same everywhere but the values they use differ per install and may change over time.
+        how: >-
+          Same pipeline delivery to a Remote Instance; the runtime loads a per-site config from a
+          file on the device. Back that file up to the database, so a device swap restores the
+          config — the device is the source of truth, the DB is the safety net.
+        lists:
+          - heading: Major components
+            items:
+              - Pipeline snapshot — the same build promoted to every device
+              - Remote Instance (edge device) — runs the app and loads its own per-site config
+              - Per-site config (tags · broker · site) — a file on the device, backed up to the DB
+              - Team Broker / FlowFuse Tables — event egress + records
+          - heading: Where config & data live
+            items:
+              - Config — a per-site file on the device (tags, broker address, site name), backed up to FlowFuse Tables so a swap restores it.
+              - Data — Team Broker + FlowFuse Tables.
+      - label: Edge Building Block
+        kicker: A reusable edge block
+        kickerNote: A reusable edge block you wire into your own upstream flows.
+        diagram:
+          lanes:
+            - label: Equipment
+              tone: neutral
+              nodes:
+                - title: Equipment
+                  sub: signals / PLC
+                  tone: muted
+            - link: reads
+            - label: Edge Building Block on a Remote Instance
+              tone: ot
+              nodes:
+                - title: Remote Instance
+                  sub: edge device
+                  tone: ot
+            - link: publishes
+            - label: Upstream
+              tone: broker
+              nodes:
+                - title: Team Broker
+                  sub: MQTT
+                  tone: broker
+        summary: >-
+          Not a finished app — one hardware-facing block plus example flows, running on a Remote
+          Instance. You assemble everything upstream of it yourself.
+        useWhen: >-
+          The hardware-facing piece is reusable, but everything before it differs so much per site
+          that no finished app would fit.
+        how: >-
+          Blocks are published as subflows to the Team Library with an example flow. Consumers drop
+          them onto a Remote Instance and wire them up.
+        lists:
+          - heading: Major components
+            items:
+              - Equipment (signals / PLC) — the source hardware the block reads
+              - Remote Instance (edge device) — runs the edge building block at the line
+              - Team Broker (MQTT) — publishes the normalized data upstream
+              - Team Library — where the block is published as an installable subflow
+          - heading: Where config & data live
+            items:
+              - Config — lives in the consuming flow you build around the block (env / context).
+              - Data — Team Broker (normalized, upstream).

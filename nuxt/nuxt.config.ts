@@ -36,6 +36,22 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
+// The Best Practice guides are a `data` collection (see content.config.ts), so their routes
+// are not discoverable from @nuxt/content page paths. Derive them from the file names, which
+// are NN-<slug>.yml and match each file's `slug` field.
+function collectBestPracticeRoutes(dir: string): string[] {
+    const routes = ['/bestpractice/']
+    for (const guide of readdirSync(dir)) {
+        const guideDir = join(dir, guide)
+        if (!statSync(guideDir).isDirectory()) continue
+        for (const file of readdirSync(guideDir)) {
+            if (!file.endsWith('.yml')) continue
+            routes.push(`/bestpractice/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
+        }
+    }
+    return routes
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -164,6 +180,7 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
+                    ...collectBestPracticeRoutes(join(__dirname, 'content/bestpractice')),
                     '/changelog/index.xml',
                     ...changelogListingRoutes,
                     ...changelog.routes,
