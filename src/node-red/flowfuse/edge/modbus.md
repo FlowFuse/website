@@ -144,7 +144,7 @@ The Modbus-Read node polls a fixed location on a repeating interval — the node
 ### Configuration
 
 - **FC (Function Code)** — which table to read: Coils, Discrete Inputs, Holding Registers, or Input Registers (FC 1–4).
-- **Address** — the starting zero-based address in that table — see [Register addressing](#what-is-modbus) if your device manual or documentation uses 4xxxx-style numbering.
+- **Address** — the starting zero-based address in that table — see [Register addressing](#what-is-modbus%3F) if your device manual or documentation uses 4xxxx-style numbering.
 - **Quantity** — how many consecutive coils/registers to read in one request.
 - **Poll rate** — how often to repeat the read (milliseconds).
 - **Unit ID** — overrides the connection's default unit ID for this node, when needed.
