@@ -69,17 +69,7 @@ meta:
                         </p>
                     </div>
                     <div class="flex justify-center md:justify-end">
-                        <!--Terminal frame around the installer recording-->
-                        <div class="ff-terminal-frame w-full max-w-[500px] overflow-hidden rounded-xl border border-gray-700 shadow-lg">
-                            <div class="ff-terminal-frame__bar flex items-center gap-2 px-4 py-3">
-                                <span class="h-3 w-3 rounded-full bg-red-500"></span>
-                                <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
-                                <span class="h-3 w-3 rounded-full bg-green-500"></span>
-                            </div>
-                            <div class="ff-terminal-frame__screen p-4">
-                                {% image "./images/device-agent/terminal-install.gif", "The FlowFuse Device Agent installer running in a terminal, opening a browser to register the machine", [500] %}
-                            </div>
-                        </div>
+                        {% terminalFrame "./images/device-agent/terminal-install.gif", "The FlowFuse Device Agent installer running in a terminal, opening a browser to register the machine", 500 %}
                     </div>
                 </div>
 
