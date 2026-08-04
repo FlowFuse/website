@@ -73,6 +73,7 @@ expert:
 
 - Use `expert.centralBroker.server` (a single `host:port` string). Do not use `expert.broker.address` / `expert.broker.port` here: those key names apply only to the Helm chart, which translates them internally.
 
+None of these changes should be made without updating to the latest release of the `docker-compose.yml` file first
 ### Kubernetes
 
 The feature is enabled by adding the tokens to the values passed to the Helm chart.
