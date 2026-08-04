@@ -2,7 +2,7 @@
 title: "What Is Statistical Process Control in Manufacturing"
 subtitle: "How SPC charts work, how they apply on the shop floor, and what to look for in SPC software."
 description: "Statistical process control explained: how SPC charts work, how they apply in the manufacturing space, and what to look for in SPC software."
-date: 2026-08-03
+date: 2026-08-04
 authors: ["sumit-shinde"]
 image: /blog/2026/08/images/what-is-statistical-process-control.png
 keywords: statistical process control
@@ -44,8 +44,8 @@ FlowFuse is an industrial application platform that works with manufacturers who
 
 This article covers what statistical process control is, how SPC charts and control charts work, how SPC applies across manufacturing sites, and where Six Sigma SPC and SPC software fit in.
 
-![Close-up of a hand pointing at an SPC chart on a computer screen during manufacturing data analysis.](./images/spc-chart-data-analysis-close-up.png)
-_Close-up of a hand pointing at an SPC chart on a computer screen during manufacturing data analysis._
+![SPC control chart with a table of measurements](./images/spc-chart-data-analysis-close-up.png)
+_SPC control chart with a table of measurements_
 
 ## How Statistical Process Control Works: SPC Charts And Control Charts Explained
 
@@ -57,8 +57,8 @@ SPC charts make it possible to see the difference between common cause variation
 
 Building and reading control charts by hand across dozens of machines and lines is slow and does not scale well across multiple sites. For a deeper look at how these charts are typically built and interpreted in practice, see [Statistical Process Control (SPC): Benefits and Implementation Guide](/blog/2025/07/quality-control-automation-spc-charts/).
 
-![Manufacturing quality dashboard on a computer screen showing an SPC chart for bearing diameter and process capability metrics.](./images/manufacturing-quality-dashboard-spc-chart.png)
-_Manufacturing quality dashboard on a computer screen showing an SPC chart for bearing diameter and process capability metrics._
+![Manufacturing quality dashboard showing an SPC chart for bearing diameter and process capability metrics.](./images/manufacturing-quality-dashboard-spc-chart.png)
+_Manufacturing quality dashboard showing an SPC chart for bearing diameter and process capability metrics._
 
 ## SPC In Manufacturing: Turning Shop Floor Data Into Process Control
 
