@@ -184,7 +184,7 @@ if (routeInfo.value.kind === 'post') {
 
         <div class="w-72 max-w-full flex-shrink-0">
           <div class="mt-6 flex flex-col">
-            <HandbookToc :links="page?.body?.toc?.links" />
+            <HandbookToc :links="page?.body?.toc?.links" :ui="{ root: 'static' }" />
             <div class="mb-6 pt-6 border-t-2">
               <h3 class="mb-3">Like what you're reading?</h3>
               <a
