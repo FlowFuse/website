@@ -20,9 +20,9 @@ lifecycle:
 
 - **[Sales](./sales-team.md)** — Identify, qualify, and convert opportunities
   into customers; own the commercial process through close and expansion.
-- **Solution Engineering** — Serve as technical advisors across the lifecycle:
-  discovery, tailored demos, proof-of-value evaluations, onboarding, and
-  architecture guidance. _(Dedicated page coming soon.)_
+- **[Solution Engineering](./solution-engineering.md)** — Serve as technical
+  advisors across the lifecycle: discovery, tailored demos, proof-of-value
+  evaluations, onboarding, and architecture guidance.
 - **[Customer Success](./customer-success.md)** — Own onboarding, adoption,
   renewals, and expansion; measured by customer outcomes, not just retention.
 - **[Professional Services](./professional-services.md)** — Deliver scoped,
@@ -56,7 +56,7 @@ Each function is accountable for a specific phase of the customer journey:
 | Function | Primary focus |
 |----------|---------------|
 | **[Sales](./sales-team.md)** | New business, opportunity qualification, demos, proposals, closing new and expansion ARR |
-| **Solution Engineering** | Technical discovery, demos, proofs of value, onboarding, architecture and expansion advisory |
+| **[Solution Engineering](./solution-engineering.md)** | Technical discovery, demos, proofs of value, onboarding, architecture and expansion advisory |
 | **[Customer Success](./customer-success.md)** | Onboarding, adoption, renewals, advocacy, and driving account health and growth |
 | **[Sales Partnerships](./partnerships.md)** | Reseller, referrer, and system-integrator motions; partner enablement |
 | **[Professional Services](./professional-services.md)** | Scoped implementation, integration, and enablement services |

@@ -6,6 +6,11 @@ navigation:
 
 # Partnerships
 
+The Sales Partnerships function extends FlowFuse's reach through resellers,
+referrers, and system integrators. Partner-led and co-sell motions grow pipeline
+and revenue beyond the direct team, and the function owns partner enablement and
+the commercial terms that govern those relationships.
+
 FlowFuse engages with both hardware parters and referral partners. Here are [our standard terms](https://docs.google.com/document/d/1BVls7LEC1CBQ6wlrb8GeWSYr2vj9fMqgdsWiWLoQZOY/edit#heading=h.gjdgxs).
 
 ## Reseller Agreement
