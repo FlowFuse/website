@@ -1,5 +1,7 @@
 ---
 title: "Customer Success"
+navigation:
+  order: 3
 ---
 
 # Customer Success

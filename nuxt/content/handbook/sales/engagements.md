@@ -1,5 +1,7 @@
 ---
 title: "Engagements & Pricing"
+navigation:
+  order: 10
 ---
 
 # Engagements

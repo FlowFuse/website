@@ -1,3 +1,4 @@
 title: "Sales Meetings"
 navigation:
+  order: 9
   icon: i-lucide-calendar

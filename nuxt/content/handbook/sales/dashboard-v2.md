@@ -1,5 +1,7 @@
 ---
 title: "Self Hosted Dashboard v2 Multi User"
+navigation:
+  order: 16
 ---
 
 # Self Hosted Dashboard v2 Multi User Plugin
