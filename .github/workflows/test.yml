@@ -2,6 +2,10 @@ name: Tests
 
 on: push
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 jobs:
   test_website:
     runs-on: ubuntu-latest

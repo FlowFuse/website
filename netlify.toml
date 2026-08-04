@@ -88,7 +88,9 @@ status = 200
 command = "npm run build:nuxt"
 
 [context.branch-deploy]
-command = "npm run build:nuxt"
+# Deploy previews already build every PR commit; skip the redundant branch-deploy
+# build for the same commit to avoid double-building on every push.
+ignore = "exit 0"
 
 [[plugins]]
 package = "netlify-plugin-cache"
