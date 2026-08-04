@@ -22,8 +22,6 @@ import '~/assets/css/bestpractice.css'
       </a>
       <span class="bp-bar-divider" />
       <NuxtLink to="/bestpractice/" class="bp-bar-title">Best Practice</NuxtLink>
-      <span class="bp-bar-spacer" />
-      <a href="/docs/" class="bp-bar-link">Docs</a>
     </header>
 
     <div class="bp-shell">
