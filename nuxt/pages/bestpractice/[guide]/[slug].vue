@@ -54,12 +54,7 @@ defineOgImage('Default', {
 </script>
 
 <template>
-  <!-- The section has no entry in the site nav, so the guide nav here and the FlowFuse logo
-       in the bar above are the only ways to move around. -->
-  <aside class="bp-nav">
-    <GuideLeftNav />
-  </aside>
-
+  <!-- The guide nav is in the layout, so it is present on every page in the section. -->
   <div id="bp-content" class="bp-main">
     <div class="bp-hero">
       <p class="bp-hero-guide">{{ guide?.title }}</p>

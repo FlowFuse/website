@@ -114,28 +114,6 @@
     text-decoration: none;
 }
 
-.bp-foot {
-    background: var(--bp-bar);
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.8rem;
-    padding: 1.25rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 1.25rem;
-    align-items: center;
-    margin-top: auto;
-}
-
-.bp-foot a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-}
-
-.bp-foot a:hover {
-    color: #FFFFFF;
-    text-decoration: underline;
-}
-
 /* ---------- shell ---------- */
 
 .bp-shell {
@@ -147,9 +125,13 @@
     border-right: 1px solid var(--bp-border);
     display: flex;
     align-items: stretch;
+    /* Grows to fill the viewport so the reading column reaches the bottom of short pages. */
+    flex: 1 1 auto;
     min-height: 60vh;
 }
 
+/* The nav stays a sidebar wherever there is room for one, narrowing before it gives up.
+   It only stacks above the content on genuinely small screens. */
 .bp-nav {
     flex: 0 0 15rem;
     border-right: 1px solid var(--bp-border);
@@ -162,7 +144,15 @@
     min-width: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+    .bp-nav {
+        flex: 0 0 12.5rem;
+        padding: 1.25rem 0.5rem 2rem;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 720px) {
     .bp-shell {
         flex-direction: column;
     }
@@ -171,7 +161,7 @@
         flex: 0 0 auto;
         border-right: 0;
         border-bottom: 1px solid var(--bp-border);
-        padding-bottom: 1.5rem;
+        padding-bottom: 1.25rem;
     }
 }
 

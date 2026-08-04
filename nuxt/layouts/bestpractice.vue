@@ -6,9 +6,10 @@
 //
 // The logo is the deliberate way back out to the rest of the site: nothing links into this
 // section from the site nav yet, and there is no site header here to navigate with.
+//
+// The guide nav lives here rather than on the page so every page in the section has it,
+// including the landing page.
 import '~/assets/css/bestpractice.css'
-
-const year = 2026
 </script>
 
 <template>
@@ -26,15 +27,10 @@ const year = 2026
     </header>
 
     <div class="bp-shell">
+      <aside class="bp-nav">
+        <GuideLeftNav />
+      </aside>
       <slot />
     </div>
-
-    <footer class="bp-foot">
-      <span>&copy; {{ year }} FlowFuse, Inc.</span>
-      <a href="/">flowfuse.com</a>
-      <a href="/docs/">Docs</a>
-      <a href="/privacy-policy">Privacy</a>
-      <a href="/terms">Terms</a>
-    </footer>
   </div>
 </template>
