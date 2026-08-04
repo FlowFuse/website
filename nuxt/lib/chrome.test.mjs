@@ -4,7 +4,7 @@
 // are checked here rather than left to a reviewer noticing.
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { dirname, join, resolve } from 'node:path'
 import { test } from 'node:test'
 import { fileURLToPath } from 'node:url'
 
@@ -61,16 +61,26 @@ test('no nav or footer link points at a redirected path', () => {
     }
 })
 
-test('both Tailwind builds are told to scan the data file', () => {
+test('both Tailwind builds resolve an @source onto the data file', () => {
     // There are two independent Tailwind builds: src/css/style.css for Eleventy and
     // nuxt/assets/css/theme.css for the Nuxt bundle, which only scans nuxt/ and is
     // loaded second. A utility that exists in one build but not the other loses to
     // any lower-breakpoint rule the later sheet does have. Dropping either @source
-    // silently breaks layout on half the site, so assert both are present.
+    // silently breaks layout on half the site.
+    //
+    // Tailwind resolves @source relative to the stylesheet that declares it, and
+    // says nothing when the path misses, so check where each one actually lands
+    // rather than that the line reads plausibly. A wrong number of ../ steps is
+    // the failure this is here to catch.
+    const target = join(repo, 'src/_data/chrome.json')
     for (const css of ['src/css/style.css', 'nuxt/assets/css/theme.css']) {
         const text = readFileSync(join(repo, css), 'utf8')
-        assert.match(text, /@source\s+"[^"]*_data\/chrome\.json"/,
-            `${css} must declare @source for src/_data/chrome.json`)
+        const declared = text.match(/@source\s+"([^"]*_data\/chrome\.json)"/)
+        assert.ok(declared, `${css} must declare @source for src/_data/chrome.json`)
+        const landed = resolve(dirname(join(repo, css)), declared[1])
+        assert.equal(landed, target,
+            `${css} declares @source "${declared[1]}", which resolves to ${landed} `
+            + 'instead of src/_data/chrome.json, so that build scans nothing')
     }
 })
 
@@ -85,6 +95,31 @@ test('every utility class in the data file is a plain literal', () => {
     assert.ok(classFields.length > 0)
     for (const field of classFields) {
         assert.ok(!/[{}$]/.test(field), `class string looks interpolated: ${field}`)
+    }
+})
+
+test('every dropdown column reserves enough grid rows for its links', () => {
+    // The row counts are the one part of this file that has to agree with the
+    // number of links beside it. A sub-menu is grid-rows-subgrid with row-span-N,
+    // so once it holds more than N links the rest spill into implicit rows and
+    // shove the following column out of its alignment. Slack is harmless, a
+    // shortfall is not, so this asserts the floor rather than an exact match.
+    for (const dd of chrome.header.dropdowns) {
+        const megaRows = dd.megaClasses.match(/grid-rows-\[repeat\((\d+),auto\)\]/)
+        assert.ok(megaRows, `${dd.label} has no explicit mega row count`)
+        let tallest = 0
+        for (const col of dd.columns) {
+            const span = col.listClasses.match(/row-span-\[?(\d+)\]?/)
+            assert.ok(span, `${dd.label} > ${col.title} has no row-span`)
+            assert.ok(Number(span[1]) >= col.links.length,
+                `${dd.label} > ${col.title} spans ${span[1]} rows but has `
+                + `${col.links.length} links - raise its row-span in src/_data/chrome.json`)
+            // A column occupies its title row plus one row per link.
+            tallest = Math.max(tallest, 1 + col.links.length)
+        }
+        assert.ok(Number(megaRows[1]) >= tallest,
+            `${dd.label} declares ${megaRows[1]} mega rows but its tallest column needs `
+            + `${tallest} - raise the repeat() count in src/_data/chrome.json`)
     }
 })
 
