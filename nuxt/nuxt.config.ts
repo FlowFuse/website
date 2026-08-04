@@ -84,7 +84,10 @@ export default defineNuxtConfig({
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
         ],
-        exclude: ['/_studio/**', '/api/**'],
+        // /bestpractice is deliberately unlinked in its first iteration, so it should not be
+        // advertised to search engines either. Static-route discovery finds the section landing
+        // page on its own; this keeps it out until the section is linked and ready to index.
+        exclude: ['/_studio/**', '/api/**', '/bestpractice', '/bestpractice/**'],
     },
 
     robots: {
