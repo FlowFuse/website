@@ -557,6 +557,10 @@
                                 "href": "/use-cases/shop-floor-communication/"
                             },
                             {
+                                "label": "Equipment Monitoring",
+                                "href": "/use-cases/equipment-monitoring/"
+                            },
+                            {
                                 "label": "See all use cases",
                                 "href": "/use-cases/"
                             }
