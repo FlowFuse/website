@@ -20,7 +20,7 @@ const imageSrc = computed(() => props.entry.image || '/images/og-blog.jpg')
       </div>
       <h2 class="mt-1 mb-0 text-xl font-medium group-hover:underline">{{ entry.title }}</h2>
       <div class="text-sm prose prose-blue md:prose-md py-1">
-        <p v-if="summary">{{ summary }}</p>
+        <div v-if="summary" class="line-clamp-3 font-light">{{ summary }}</div>
       </div>
       <div class="italic text-xs mb-3">
         <div class="author">{{ authorNames }}</div>
