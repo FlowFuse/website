@@ -181,7 +181,7 @@ Non-negotiables regardless of scale:
 
 One field tip even with a GDS: keep a local rejected-certificate store on each application, so you can still see and reason about what tried to connect.
 
-If you're building this on FlowFuse, the OPC UA connectivity is available as one of the Certified Nodes introduced in [FlowFuse 2.31](https://flowfuse.com/blog/2026/06/flowfuse-release-2-31/), vetted and FlowFuse-supported rather than pulled unmaintained from the community registry, which is the supply-chain point above made concrete. As with any OPC UA client, confirm it's set to reject untrusted server certificates before you go to production rather than auto-accepting them.
+If you're building this on FlowFuse, the OPC UA connectivity is available as one of the Certified Nodes introduced in [FlowFuse 2.31](/blog/2026/06/flowfuse-release-2-31/), vetted and FlowFuse-supported rather than pulled unmaintained from the community registry, which is the supply-chain point above made concrete. As with any OPC UA client, confirm it's set to reject untrusted server certificates before you go to production rather than auto-accepting them.
 
 ## Keep the audit trail on, and watched
 

@@ -12,7 +12,7 @@ tags:
 ---
 
 
-Another release from the FlowFuse team to keep [realising our mission](https://flowfuse.com/handbook/company/strategy/) to empower you to fuse the digital realm and physical reality.
+Another release from the FlowFuse team to keep [realising our mission](/handbook/company/strategy/) to empower you to fuse the digital realm and physical reality.
 
 <!--more-->
 
@@ -60,7 +60,7 @@ We've updated the provisioning token support to allow you to automatically assig
 
 The option to assign to a hosted instance is still there, but being able to assign to the appilcation is more generally useful for most workflows on the platform.
 
-Details available in the [changelog](https://flowfuse.com/changelog/2025/04/device-provisioning/).
+Details available in the [changelog](/changelog/2025/04/device-provisioning/).
 
 ## Local Login for Remote Instances
 
@@ -76,14 +76,14 @@ We expanded the notficiations we send to help you track the health of your Node-
 
 You can further opt-in or out of these notifications via the instance settings.
 
-Details available in the [changelog](https://flowfuse.com/changelog/2025/03/resource-notifications/)
+Details available in the [changelog](/changelog/2025/03/resource-notifications/)
 
 ## Changes to tags for `flowfuse/node-red` containers
 
 For kubernetes and docker environments, we've updated the base container our `latest` tag points at to ensure
 it defaults to the latest Node.js and Node-RED versions.
 
-Check the [changelog](https://flowfuse.com/changelog/2025/03/container-tags/) entry for full details
+Check the [changelog](/changelog/2025/03/container-tags/) entry for full details
 
 ## What Else Is New?
 

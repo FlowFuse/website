@@ -47,7 +47,7 @@ Once the Firestore nodes are installed, you need to configure them with your Fir
    * Enter your **Firebase Project ID**.
 6. Click **Done** to save the configuration.
 
-> **Security Note**: Keep your credentials secure. Avoid exposing your API key, email, or password publicly. When sharing flows, use [environment variables](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/) to keep sensitive information safe.
+> **Security Note**: Keep your credentials secure. Avoid exposing your API key, email, or password publicly. When sharing flows, use [environment variables](/blog/2023/01/environment-variables-in-node-red/) to keep sensitive information safe.
 
 ## Step 3: Create a Document
 

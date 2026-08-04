@@ -282,7 +282,7 @@ Now we'll configure the database insertion to write batched data efficiently.
 
 #### Enabling FlowFuse Database
 
-If you have a Enterprise account, you can use the built-in PostgreSQL database service instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](https://flowfuse.com/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
+If you have a Enterprise account, you can use the built-in PostgreSQL database service instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
 
 Once enabled, you'll have access to a fully managed PostgreSQL database that's automatically configured and ready to use with your FlowFuse flows.
 

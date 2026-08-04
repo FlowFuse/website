@@ -42,7 +42,7 @@ REST APIs are how applications talk to each other over the web. They use standar
 [{"id":"8893fc84b3391b34","type":"http in","z":"977143edb097b685","name":"","url":"/todo/update","method":"put","upload":true,"swaggerDoc":"","x":400,"y":280,"wires":[["088808484586fdc1"]]},{"id":"04a60e7af4d6d522","type":"http response","z":"977143edb097b685","name":"","statusCode":"200","headers":{},"x":900,"y":280,"wires":[]},{"id":"088808484586fdc1","type":"function","z":"977143edb097b685","name":"update the todo item","func":"let todoList = global.get('todos') || [];\nlet id = msg.payload.id;\nlet newTodo = msg.payload.newtodo;\n\n// Find the index of the item to update\nlet index = todoList.findIndex(item => item.id === id);\n\nif (index !== -1) {\n    // Update the todo item\n    todoList[index].task = newTodo;\n    global.set('todos', todoList);\n    msg.payload = \"Item updated successfully.\";\n    msg.statusCode = 200; // OK\n} else {\n    msg.payload = \"Item not found.\";\n    msg.statusCode = 404; // Not Found\n}\n\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":660,"y":280,"wires":[["04a60e7af4d6d522"]]},{"id":"ea3e7e96bbccf530","type":"comment","z":"977143edb097b685","name":"Http in node created api for updating the todo item","info":"","x":650,"y":200,"wires":[]}]
 {% endrenderFlow %}
 
-For more details, refer to the [CRUD API Blueprint](https://flowfuse.com/blueprints/getting-started/crud/), where we have created CRUD APIs to store, retrieve, delete, and update the data from MongoDB database.
+For more details, refer to the [CRUD API Blueprint](/blueprints/getting-started/crud/), where we have created CRUD APIs to store, retrieve, delete, and update the data from MongoDB database.
 
 ## Securing Your APIs
 

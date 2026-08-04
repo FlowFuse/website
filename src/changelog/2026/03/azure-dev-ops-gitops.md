@@ -9,7 +9,7 @@ issues:
  - https://github.com/FlowFuse/flowfuse/issues/5491
 ---
 
-[DevOps Pipeline](https://flowfuse.com/docs/user/devops-pipelines) Git Stages now support Azure DevOps repositories alongside GitHub.
+[DevOps Pipeline](/docs/user/devops-pipelines) Git Stages now support Azure DevOps repositories alongside GitHub.
 
 If your team already uses Azure DevOps for CI and code review, you can now push and pull Snapshots directly as part of that workflow, no need to manage your Node-RED flows outside your existing tooling.
 

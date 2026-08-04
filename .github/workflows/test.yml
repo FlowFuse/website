@@ -38,6 +38,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: 'website'
+      - name: Run unit tests
+        run: npm test
+        working-directory: 'website'
       - name: Build the forge
         run: npm run build:nuxt:skip-images
         working-directory: 'website'
