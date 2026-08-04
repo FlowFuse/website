@@ -1,5 +1,4 @@
 ---
-templateEngineOverride: njk, md
 title: "Building on FlowFuse: Remote Device Monitoring"
 subtitle: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 description: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
@@ -11,20 +10,7 @@ tags:
    - news
    - node-red
    - flowfuse
-stories:
-    - title: "Leveraging Node-RED and FlowFuse to Revolutionize Irrigation"
-      logo: ""
-      image: "/images/stories/pidd-view.png"
-      brand: "Paloma Irrigation and Drainage District"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation"
-    - title: "Revolutionizing Precision Manufacturing with Node-RED"
-      logo: ""
-      image: "/images/stories/abrasive_tech.jpg"
-      brand: "Abrasive Technology"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing"
 ---
-
-{% from "stories/customer-story.njk" import storyTile %}
 
 FlowFuse has established a rich ecosystem of products to help you build bespoke, powerful, low-code applications.
 
@@ -99,7 +85,38 @@ If you're interested in discussing how your company could benefit from this desi
 If you want to deep dive further into how this design pattern has been used by our customers, we have some customer stories that you might find interesting:
 
 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-0 list-none">
-    {%- for story in stories | sort(attribute='item.date') | reverse -%}
-    {{ storyTile(title=story.title, url=story.url, brand=story.brand, logo=story.logo, image=story.image) }}
-    {%- endfor -%}
+    <li class="customer-story-tile w-full my-2 border px-0 rounded-lg hover:drop-shadow-lg hover:border-blue-600 transition ease-in-out duration-300 bg-white">
+        <a href="/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing" class="w-full flex flex-col group hover:no-underline h-full m-0">
+            <div>
+                <div class="relative border-b">
+                    <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
+                        <picture>
+                            <img src="/images/stories/abrasive_tech.jpg" alt="Image representing Revolutionizing Precision Manufacturing with Node-RED" />
+                        </picture>
+                    </div>
+                </div>
+                <div class="flex flex-col mt-1 mb-0 p-5 pt-3 gap-2">
+                    <label class="font-bold"><span class="text-gray-600">Abrasive Technology</span></label>
+                    <h3 class="group-hover:text-blue-600 font-medium m-0 mt-0 mb-2" style="line-height: 1.6rem"><span class="text-lg">Revolutionizing Precision Manufacturing with Node-RED</span></h3>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li class="customer-story-tile w-full my-2 border px-0 rounded-lg hover:drop-shadow-lg hover:border-blue-600 transition ease-in-out duration-300 bg-white">
+        <a href="/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation" class="w-full flex flex-col group hover:no-underline h-full m-0">
+            <div>
+                <div class="relative border-b">
+                    <div class="w-full h-52 sm:h-48 ff-image-cover ff-image-top-rounded">
+                        <picture>
+                            <img src="/images/stories/pidd-view.png" alt="Image representing Leveraging Node-RED and FlowFuse to Revolutionize Irrigation" />
+                        </picture>
+                    </div>
+                </div>
+                <div class="flex flex-col mt-1 mb-0 p-5 pt-3 gap-2">
+                    <label class="font-bold"><span class="text-gray-600">Paloma Irrigation and Drainage District</span></label>
+                    <h3 class="group-hover:text-blue-600 font-medium m-0 mt-0 mb-2" style="line-height: 1.6rem"><span class="text-lg">Leveraging Node-RED and FlowFuse to Revolutionize Irrigation</span></h3>
+                </div>
+            </div>
+        </a>
+    </li>
 </ul>
