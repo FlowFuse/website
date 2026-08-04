@@ -469,7 +469,7 @@ Each notification carries `msg.sequenceNumber`. Watch it for gaps to detect drop
 - **Named JSON structure**, inject a JSON object whose leaf values are NodeIds (the shape Explore produces); notifications arrive in the same shape with current readings.
 - **Entire subtree**, use Explore once (output type `NodeId`) to discover all variables under a branch, then feed that structure into Monitor to watch them all live.
 
-In every injected mode the set you inject replaces the previous one. See [Changing or stopping what is monitored](#changing-or-stopping-what-is-monitored) to add, remove, or stop monitored items at runtime.
+In the array and named-structure modes, the set you inject replaces the previous one. See [Changing or stopping what is monitored](#changing-or-stopping-what-is-monitored) to add, remove, or stop monitored items at runtime.
 
 ### Message properties (override node config per message)
 
@@ -503,7 +503,7 @@ All items in the array share one subscription, sampling interval, and queue, mor
 The injected NodeId set is declarative: whatever you inject becomes the complete set of monitored items, replacing whatever was monitored before. The node has no separate stop or unsubscribe command because you do not need one, you change the set instead.
 
 - **Reduce the set**, inject a shorter array. The dropped NodeIds are released as monitored items on the server, not merely filtered out of the node's output.
-- **Stop monitoring**, inject an empty array (`[]`). Every monitored item is released and the node stops emitting.
+- **Stop monitoring**, inject an empty array (`[]`), or an empty object (`{}`) if you are injecting the named JSON structure. Every monitored item is released and the node stops emitting.
 - **Restart monitoring**, inject the NodeId array again. The subscription itself persists while empty, which costs almost nothing and makes restarting immediate.
 
 This is how you start and stop monitoring programmatically, from an Inject node or a dashboard control, without editing and redeploying the flow.
