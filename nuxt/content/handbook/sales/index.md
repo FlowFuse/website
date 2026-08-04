@@ -70,7 +70,11 @@ rules.
 
 ## How we work
 
-- [Sales Team Operating Principles](./operating-principles.md)
+- [Commercial Team Operating Principles](./operating-principles.md) — individual conduct standards
+- [Working Norms](./working-norms.md) — meeting cadence and escalation routing
+- [Customer Journey Alignment](./customer-journey.md) — lifecycle stages and ownership
+- [Systems & Tools](./tools.md) — the commercial tech stack
+- [Onboarding & Development](./onboarding.md) — ramping and growing the team
 - [Processes](./processes/) — the process and methodology index
 - [Sales Meetings](./meetings/) — [Discovery](./meetings/discovery.md), [Demo](./meetings/demo.md), [PoC](./meetings/poc.md)
 - [Engagements & Pricing](./engagements.md)
@@ -84,31 +88,8 @@ rules.
 - [Ideal Customer Profile](https://docs.google.com/document/d/1krMIUJvosw8xUQog_iq_FEvI9R5WEo9ZyWUCdTb9XnQ/edit#heading=h.3rr2wuny55dl)
 - [Customer Licenses (internal)](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0/edit#gid=0)
 
-### Sales tech stack
-
-FlowFuse uses a streamlined, integrated tech stack to manage the entire sales
-process, from initial research to closed-won tracking. Our foundation is
-[HubSpot](./hubspot.md) as the primary CRM, supplemented by specialized tools for
-enrichment, intelligence, and meeting capture.
-
-| Capability | Tool | Primary use case |
-| --- | --- | --- |
-| **CRM (source of truth)** | **HubSpot** | Managing all customer relationships, pipeline data, and contact records. |
-| **Emails, calls & sequences** | **HubSpot** | Executing outreach, standardizing email templates, and running automated cadences. |
-| **Subscription tracking** | **HubSpot** | Monitoring customer lifecycles, upgrades, renewals, and ongoing subscriptions. |
-| **Call recording** | **Fathom** | Recording, transcribing, and summarizing customer calls and meetings. |
-| **Data enrichment** | **Clay** | Automatically pulling in missing contact or company data to build targeted lead lists. |
-| **Account research & planning** | **Claude** | Synthesizing account data, deep-dive strategic research, and planning personalized outreach. |
-| **Account-based outreach** | **LinkedIn Sales Navigator** | Research and outreach to prospects on LinkedIn. |
-
-#### Primary GTM Tools
-
-- Warmly (data from RB2B, Vector.co)
-- Claude
-- Clay
-- Hubspot
-- Swan (getswan.com)
-- ZenABM
+The full commercial tech stack — CRM, enrichment, communication, and demo
+environments — is documented on the [Systems & Tools](./tools.md) page.
 
 ## Contact us
 
