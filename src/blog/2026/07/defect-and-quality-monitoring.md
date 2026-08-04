@@ -285,7 +285,7 @@ The filters go in the dashboard header rather than a widget group, since they co
 
 3. Add a ui-template node named "Header Filters". Set its type to "Widget" (UI scoped) and select your UI. Ask [FlowFuse Expert](/docs/user/expert/node-red-embedded-ai/#css-and-html-generation-for-flowfuse-dashboard) to build it:
 
-> Create a ui-template with three header dropdowns, Line, Shift, and Date Range, wrapped in <Teleport defer to="#app-bar-actions"> so they render in the header bar and survive a reload. msg.payload has the selections (line, shift, dateRange) and options (lineOptions, shiftOptions, dateRangeOptions). Line/Shift options are strings; dateRangeOptions items are {label, value} objects, so bind label as text and value as the value, not the whole object. On any change, and on load, send {line, shift, dateRange} downstream.
+> Create a ui-template with three header dropdowns, Line, Shift, and Date Range, wrapped in `<Teleport defer to="#app-bar-actions">` so they render in the header bar and survive a reload. msg.payload has the selections (line, shift, dateRange) and options (lineOptions, shiftOptions, dateRangeOptions). Line/Shift options are strings; dateRangeOptions items are {label, value} objects, so bind label as text and value as the value, not the whole object. On any change, and on load, send {line, shift, dateRange} downstream.
 
 Below is the template it produced for us, import it directly if you prefer:
 
