@@ -6,14 +6,12 @@ defineProps<{ panel: GuidePanelContent }>()
 
 <template>
   <div>
-    <div v-if="panel.kicker" class="mb-4">
-      <p class="m-0 text-xs font-semibold uppercase tracking-wider text-indigo-600">{{ panel.kicker }}</p>
-      <p v-if="panel.kickerNote" class="m-0 mt-1 text-sm text-gray-500">{{ panel.kickerNote }}</p>
+    <div v-if="panel.kicker" class="bp-blip">
+      <p class="bp-kicker">{{ panel.kicker }}</p>
+      <p v-if="panel.kickerNote" class="bp-panel-note">{{ panel.kickerNote }}</p>
     </div>
 
-    <p v-if="panel.diagramTitle" class="m-0 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-      {{ panel.diagramTitle }}
-    </p>
+    <p v-if="panel.diagramTitle" class="bp-diagram-title">{{ panel.diagramTitle }}</p>
 
     <GuideDiagram
       v-if="panel.diagram"
@@ -22,57 +20,41 @@ defineProps<{ panel: GuidePanelContent }>()
       :note="panel.diagram.note"
     />
 
-    <p v-if="panel.summary" class="text-gray-600">{{ panel.summary }}</p>
+    <p v-if="panel.summary" class="bp-prose">{{ panel.summary }}</p>
 
-    <div v-if="panel.useWhen" class="my-5 border-l-4 border-indigo-500 bg-indigo-50 px-4 py-3">
-      <p class="m-0 text-xs font-semibold uppercase tracking-wider text-indigo-700">
-        {{ panel.useWhenHeading ?? 'Use it when' }}
-      </p>
-      <p class="m-0 mt-1 text-gray-700">{{ panel.useWhen }}</p>
+    <div v-if="panel.useWhen" class="bp-usewhen">
+      <p class="bp-usewhen-label">{{ panel.useWhenHeading ?? 'Use it when' }}</p>
+      <p class="bp-usewhen-text">{{ panel.useWhen }}</p>
     </div>
 
-    <div v-if="panel.how" class="my-5">
-      <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-gray-400">
-        {{ panel.howHeading ?? 'How it works' }}
-      </h3>
-      <p class="mt-2 text-gray-600">{{ panel.how }}</p>
+    <div v-if="panel.how" class="bp-sub">
+      <h3 class="bp-sub-head">{{ panel.howHeading ?? 'How it works' }}</h3>
+      <p class="bp-prose">{{ panel.how }}</p>
     </div>
 
-    <div v-if="panel.lists?.length" class="my-5 grid gap-6 sm:grid-cols-2">
+    <div v-if="panel.lists?.length" class="bp-lists">
       <div v-for="list in panel.lists" :key="list.heading">
-        <h3 class="m-0 text-xs font-semibold uppercase tracking-wider text-gray-400">{{ list.heading }}</h3>
-        <ul class="mt-2 list-none p-0">
-          <li
-            v-for="item in list.items"
-            :key="item"
-            class="m-0 mb-2 flex gap-2 text-sm text-gray-600"
-          >
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400" />
-            <span>{{ item }}</span>
-          </li>
+        <h3 class="bp-sub-head">{{ list.heading }}</h3>
+        <ul class="bp-list">
+          <li v-for="item in list.items" :key="item">{{ item }}</li>
         </ul>
       </div>
     </div>
 
     <div
       v-if="panel.callout"
-      class="my-5 rounded-md border px-4 py-3"
-      :class="panel.callout.tone === 'watch' ? 'border-red-200 bg-red-50' : 'border-teal-200 bg-teal-50'"
+      class="bp-callout"
+      :class="panel.callout.tone === 'watch' ? 'bp-callout--watch' : 'bp-callout--good'"
     >
-      <p
-        class="m-0 text-xs font-semibold uppercase tracking-wider"
-        :class="panel.callout.tone === 'watch' ? 'text-red-700' : 'text-teal-700'"
-      >{{ panel.callout.tone === 'watch' ? 'Watch out' : 'Good for' }}</p>
-      <p class="m-0 mt-1 text-gray-700">{{ panel.callout.text }}</p>
+      <p class="bp-callout-label">{{ panel.callout.tone === 'watch' ? 'Watch out' : 'Good for' }}</p>
+      <p class="bp-callout-text">{{ panel.callout.text }}</p>
     </div>
 
-    <div v-if="panel.footnote" class="my-5 rounded-md border border-gray-200 bg-gray-50 px-4 py-3">
-      <p class="m-0 text-sm text-gray-600">{{ panel.footnote.text }}</p>
-      <NuxtLink
-        v-if="panel.footnote.link"
-        :to="panel.footnote.link.to"
-        class="mt-2 inline-block text-sm font-medium"
-      >{{ panel.footnote.link.label }}</NuxtLink>
+    <div v-if="panel.footnote" class="bp-footnote">
+      <p>{{ panel.footnote.text }}</p>
+      <NuxtLink v-if="panel.footnote.link" :to="panel.footnote.link.to">
+        {{ panel.footnote.link.label }}
+      </NuxtLink>
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { GuidePanelContent } from './GuidePanel.vue'
+import type { GuidePanelContent } from '~/types/bestpractice'
 
 // The tab is reflected in the URL hash so a specific pattern can be linked to
 // directly - these pages get shared a panel at a time in customer conversations.
@@ -35,19 +35,17 @@ const select = (index: number) => {
 
 <template>
   <div>
-    <div class="mb-6 flex flex-wrap gap-2 border-b border-gray-200 pb-1" role="tablist">
+    <div class="bp-tabs" role="tablist">
       <button
         v-for="(panel, index) in panels"
         :id="`tab-${slugify(panel.label)}`"
         :key="panel.label"
         type="button"
         role="tab"
+        class="bp-tab"
+        :class="{ 'bp-tab--active': active === index }"
         :aria-selected="active === index"
         :aria-controls="slugify(panel.label)"
-        class="rounded-t-md border-b-2 px-3 py-2 text-sm font-medium transition-colors"
-        :class="active === index
-          ? 'border-indigo-600 text-indigo-700'
-          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'"
         @click="select(index)"
       >{{ panel.label }}</button>
     </div>
@@ -60,6 +58,7 @@ const select = (index: number) => {
       v-show="active === index"
       :id="slugify(panel.label)"
       :key="panel.label"
+      class="bp-panel"
       role="tabpanel"
       :aria-labelledby="`tab-${slugify(panel.label)}`"
     >

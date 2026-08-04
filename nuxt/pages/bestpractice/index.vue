@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'default' })
+definePageMeta({ layout: 'bestpractice' })
 
 const { data: pages } = await useBestPracticePages()
 
@@ -29,37 +29,28 @@ defineOgImage('Default', {
 </script>
 
 <template>
-  <div class="light w-full bg-white">
-    <div class="mx-auto w-full max-w-screen-xl px-6 pb-24 pt-12 text-left">
-      <h1 class="m-0 text-4xl font-bold text-gray-800">Best Practice</h1>
-      <p class="mt-4 max-w-3xl text-lg text-gray-600">
-        Two guides for the decisions you make before you start building: which FlowFuse pieces
-        an app is made of, where they run, and what a flow should look like once it is. This is
-        the material we walk through during a proof of concept, written down so you can work
-        through it yourself.
-      </p>
+  <div id="bp-content" class="bp-main bp-landing">
+    <h1 class="bp-landing-title">Best Practice</h1>
+    <p class="bp-landing-lead">
+      Two guides for the decisions you make before you start building: which FlowFuse pieces
+      an app is made of, where they run, and what a flow should look like once it is. This is
+      the material we walk through during a proof of concept, written down so you can work
+      through it yourself.
+    </p>
 
-      <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
-        <section
-          v-for="guide in guides"
-          :key="guide.id"
-          class="rounded-lg border border-gray-200 bg-white p-6"
-        >
-          <h2 class="m-0 text-2xl font-bold text-gray-800">{{ guide.title }}</h2>
-          <p class="mt-2 text-gray-600">{{ guide.tagline }}</p>
-          <ul class="mt-6 list-none p-0">
-            <li v-for="page in guide.pages" :key="page.path" class="m-0 border-t border-gray-100 first:border-t-0">
-              <NuxtLink
-                :to="page.path"
-                class="group flex flex-col py-3 no-underline hover:no-underline"
-              >
-                <span class="font-medium text-gray-800 group-hover:text-indigo-700">{{ page.title }}</span>
-                <span v-if="page.blurb" class="mt-0.5 text-sm text-gray-500">{{ page.blurb }}</span>
-              </NuxtLink>
-            </li>
-          </ul>
-        </section>
-      </div>
+    <div class="bp-guides">
+      <section v-for="guide in guides" :key="guide.id" class="bp-guide">
+        <h2>{{ guide.title }}</h2>
+        <p class="bp-guide-tagline">{{ guide.tagline }}</p>
+        <ul class="bp-guide-list">
+          <li v-for="page in guide.pages" :key="page.path">
+            <NuxtLink :to="page.path" class="bp-guide-link">
+              <strong>{{ page.title }}</strong>
+              <span v-if="page.blurb">{{ page.blurb }}</span>
+            </NuxtLink>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
 </template>

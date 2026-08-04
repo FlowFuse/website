@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'default' })
+definePageMeta({ layout: 'bestpractice' })
 
 const route = useRoute()
 const guideId = computed(() => String(route.params.guide))
@@ -54,35 +54,27 @@ defineOgImage('Default', {
 </script>
 
 <template>
-  <div class="light w-full bg-white">
-    <div class="mx-auto flex w-full max-w-screen-xl flex-col gap-8 px-6 pb-24 pt-8 lg:flex-row">
+  <!-- The section has no entry in the site nav, so the guide nav here and the FlowFuse logo
+       in the bar above are the only ways to move around. -->
+  <aside class="bp-nav">
+    <GuideLeftNav />
+  </aside>
 
-      <!-- Left navigation. The section is deliberately not linked from the site nav yet,
-           so the FlowFuse logo in the header is the way back out to the rest of the site. -->
-      <aside class="w-full shrink-0 lg:sticky lg:top-24 lg:h-fit lg:w-64">
-        <GuideLeftNav />
-      </aside>
+  <div id="bp-content" class="bp-main">
+    <div class="bp-hero">
+      <p class="bp-hero-guide">{{ guide?.title }}</p>
+      <h1 class="bp-title">{{ page?.title }}</h1>
+      <p v-if="page?.blurb" class="bp-subtitle">{{ page.blurb }}</p>
+    </div>
 
-      <div class="min-w-0 flex-1 text-left">
-        <p class="m-0 text-sm font-medium text-indigo-600">{{ guide?.title }}</p>
-        <h1 class="mt-1 mb-2 text-3xl font-bold text-gray-800">{{ page?.title }}</h1>
-        <p v-if="page?.blurb" class="max-w-3xl text-lg text-gray-600">{{ page.blurb }}</p>
+    <div class="bp-body">
+      <GuideBlocks :blocks="(page?.blocks ?? []) as any" />
 
-        <hr class="my-8 border-gray-200">
-
-        <GuideBlocks :blocks="(page?.blocks ?? []) as any" />
-
-        <!-- Within-guide paging: the only navigation this PR adds -->
-        <nav class="mt-12 flex flex-col gap-4 border-t border-gray-200 pt-6 sm:flex-row sm:justify-between">
-          <NuxtLink v-if="previous" :to="previous.path" class="text-sm font-medium">
-            ← {{ previous.title }}
-          </NuxtLink>
-          <span v-else />
-          <NuxtLink v-if="next" :to="next.path" class="text-sm font-medium sm:text-right">
-            {{ next.title }} →
-          </NuxtLink>
-        </nav>
-      </div>
+      <nav class="bp-paging">
+        <NuxtLink v-if="previous" :to="previous.path">← {{ previous.title }}</NuxtLink>
+        <span v-else />
+        <NuxtLink v-if="next" :to="next.path">{{ next.title }} →</NuxtLink>
+      </nav>
     </div>
   </div>
 </template>
