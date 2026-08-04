@@ -71,8 +71,7 @@ expert:
     ssl: true
 ```
 
-- Use `expert.centralBroker.server` (a single `host:port` string). Do not use `expert.broker.address` / `expert.broker.port` here: those key names apply only to the Helm chart, which translates them internally. 
-- The bridge is provisioned through the EMQX admin API, so the Team Broker must be enabled with valid `api` credentials. Without them the bridge cannot be created and chat receives no response.
+- Use `expert.centralBroker.server` (a single `host:port` string). Do not use `expert.broker.address` / `expert.broker.port` here: those key names apply only to the Helm chart, which translates them internally.
 
 ### Kubernetes
 
