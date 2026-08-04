@@ -6,7 +6,44 @@ meta:
 problem: "The line stopped four minutes ago. The person who can fix it will find out when someone walks over."
 industries: ["automotive", "food-beverage", "aviation-aerospace", "electronics-appliances"]
 values: ["labor-operational-efficiency"]
-architecture: "edge-connectivity"
+howItWorks:
+  heading: "How FlowFuse builds connected andon."
+  intro: "Getting an event to the right person is a small number of pieces, not a product. The routing logic is identical at every site; only the people, channels and shift patterns differ, and that is what decides the pattern."
+  designPattern:
+    kind: "Hardware pattern"
+    name: "Pipeline plus external configuration"
+    detail: "The routing and escalation flows are built once and distributed by pipeline. Who responds, on which channel, during which shift is read at runtime from a central configuration source, so a rota change or a new contact never requires a redeploy."
+    docsUrl: "/docs/user/devops-pipelines/"
+  diagram:
+    placeholder: true
+    src: "https://placehold.co/1200x630/eef2ff/4338ca?text=Shop+Floor+Communication+Architecture"
+    alt: "End-to-end architecture for connected andon: machine signals and operator call buttons into edge instances, routed against a central directory of roles and shifts, delivered to displays, team channels and phones, with acknowledgment timing recorded."
+    caption: "Machine signals and call buttons into edge instances, routed against a central directory of roles and shifts, out to displays, team channels and phones, with every acknowledgment timed."
+  pieces:
+    - icon: "bell-alert"
+      title: "Capture the event"
+      detail: "Machine signals, alarm bits and operator call buttons all become the same kind of event, collected by an edge instance next to the equipment."
+      docsUrl: "/docs/device-agent/introduction/"
+    - icon: "queue-list"
+      title: "Model the event"
+      detail: "Each event carries type, area, severity and the role that should respond. Routing decisions are made against that shape, not against a machine address."
+    - icon: "users"
+      title: "Keep the directory outside the flow"
+      detail: "Roles, contacts, channels and the shift calendar live in configuration rather than inside the flows, so the floor can change who responds without touching the application."
+      docsUrl: "/docs/user/envvar/"
+    - icon: "share"
+      title: "Deliver where people look"
+      detail: "The same event fans out to andon displays, team channels and phones, each with the context the recipient needs to act on it."
+    - icon: "clock"
+      title: "Acknowledge and escalate"
+      detail: "An unacknowledged event climbs the chain on a timer. Nothing waits on someone happening to be free."
+    - icon: "circle-stack"
+      title: "Record the timing"
+      detail: "Event, notification and acknowledgment timestamps land in your database, which is what turns response time into a metric you can manage."
+  architecture: "edge-connectivity"
+  docsCta:
+    label: "Read the pipeline docs"
+    url: "/docs/user/devops-pipelines/"
 
 customerPain:
   heading: "Events travel at walking speed."
