@@ -62,7 +62,7 @@ _Manufacturing quality dashboard on a computer screen showing an SPC chart for b
 
 ## SPC In Manufacturing: Turning Shop Floor Data Into Process Control
 
-Statistical process control only works if it has a steady stream of accurate data from the process it is monitoring. In most plants, that data lives across PLCs, sensors, MES systems, and manual entry points that were never designed to talk to each other. Getting SPC to work at scale depends on solving that connectivity problem.
+Statistical process control only works if it has a steady stream of accurate data from the process it is monitoring. In most plants, that data lives across [PLCs](/blog/2025/12/what-is-plc/), sensors, [MES systems](/blog/2025/06/what-is-mes/), and manual entry points that were never designed to talk to each other. Getting SPC to work at scale depends on solving that connectivity problem.
 
 ### Where SPC Data Actually Comes From
 
@@ -86,7 +86,7 @@ Six Sigma SPC refers to using control charts within the Six Sigma framework, par
 
 ### What To Look For In SPC Software
 
-SPC software should connect directly to the data sources already on your shop floor rather than requiring manual data entry. Look for real-time monitoring, support for brownfield environments with existing PLCs and MES systems, and a way to deploy the same setup across multiple sites without reconfiguring it at each one. FlowFuse covers all three: connect the measurement over OPC UA, MQTT, or Modbus, chart it with calculated limits and alerts on a dashboard at the line, then roll that same setup out everywhere else.
+SPC software should connect directly to the data sources already on your shop floor rather than requiring manual data entry. Look for real-time monitoring, support for brownfield environments with existing PLCs and MES systems, and a way to deploy the same setup across multiple sites without reconfiguring it at each one. FlowFuse covers all three: connect the measurement over [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), or [Modbus](/blog/2025/09/using-modbus-with-flowfuse/), chart it with calculated limits and alerts on a dashboard at the line, then roll that same setup out everywhere else.
 
 ### SPC Alongside Other Root Cause Tools
 
