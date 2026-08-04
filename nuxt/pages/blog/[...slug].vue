@@ -33,7 +33,9 @@ if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.d
 
 const { data: allPosts } = await useAsyncData(
     'blog-all-for-related',
-    () => routeInfo.value.kind === 'post' ? queryCollection('blog').order('date', 'DESC').all() : Promise.resolve([])
+    () => routeInfo.value.kind === 'post'
+        ? queryCollection('blog').select('path', 'title', 'date', 'tags').order('date', 'DESC').all()
+        : Promise.resolve([])
 )
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))

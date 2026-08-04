@@ -14,7 +14,10 @@ export function useBlogList(tag: string | null, pageNumber: number) {
     const { data: allEntries } = useAsyncData(
         tag ? `blog-all-${tag}` : 'blog-all',
         async () => {
-            const all = await queryCollection('blog').order('date', 'DESC').all()
+            const all = await queryCollection('blog')
+                .select('path', 'title', 'date', 'tags', 'authors', 'description', 'meta', 'image')
+                .order('date', 'DESC')
+                .all()
             return all.filter(entry => !isFuturePost(entry.date) && (!tag || (entry.tags || []).includes(tag)))
         }
     )
