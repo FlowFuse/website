@@ -15,7 +15,8 @@ const CLONE_BACKOFF_MS = 2000
 
 // Whatever checkout sits next to the website repo wins. CI puts the flowfuse repo there,
 // so a build validates the docs of the caller's checkout rather than whatever main
-// happens to be. The release pipeline depends on this.
+// happens to be. The `Test Documentation with website` job in FlowFuse/flowfuse checks
+// both repos out side by side and relies on this.
 const SIBLING_PATHS = ['../dev-env/packages/flowfuse', '../flowfuse', '../flowforge']
 
 export const MANIFEST_FILE = '.source.json'
