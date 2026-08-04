@@ -140,6 +140,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/webinars/2025/simplifying-opc-ua/opc-ua-webinar-flows.zip");
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
     eleventyConfig.addPassthroughCopy("src/js/hm-promo-banner.js");
+    eleventyConfig.addPassthroughCopy("src/js/nav-tracking.js");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
@@ -953,7 +954,9 @@ module.exports = function(eleventyConfig) {
 
         if (content) {
             const chevronDown = loadSVG('chevron-down')
-            return `<li class="${classes}"><span class="flex items-center gap-1">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
+            // data-nav-section labels every link inside this panel for nav-click
+            // tracking (src/js/nav-tracking.js), independent of styling classes.
+            return `<li class="${classes}" data-nav-section="${label}"><span class="flex items-center gap-1">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
         } else if (link) {
             return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span></a></li>`
         } else {

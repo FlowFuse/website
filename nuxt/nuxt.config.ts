@@ -138,6 +138,11 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
                 { name: 'theme-color', content: '#ffffff' },
+            ],
+            script: [
+                // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
+                // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
+                { src: '/js/nav-tracking.js', defer: true },
             ]
         }
     },

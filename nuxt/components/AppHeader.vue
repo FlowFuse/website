@@ -115,7 +115,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header id="ff-header" class="ff-header">
+  <header id="ff-header" class="ff-header" data-nav-zone="header">
     <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
 
       <!-- Wordmark: visible from 420px up on mobile and on desktop, hidden on tablet -->
@@ -187,7 +187,7 @@ onMounted(() => {
       <ul id="nav-content" class="">
 
         <!-- Platform -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
+        <li class="ff-nav-dropdown relative hover:cursor-pointer" data-nav-section="Platform">
           <span class="flex items-center gap-1"><span class="ff-nav-label">Platform</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center">
             <li class="mega-highlight"><a :href="hl('platform').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('platform').title }}</span><span class="mega-highlight-media"><img :src="hl('platform').image" alt="" loading="lazy"></span></a></li>
@@ -226,7 +226,7 @@ onMounted(() => {
         </li>
 
         <!-- Solutions -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
+        <li class="ff-nav-dropdown relative hover:cursor-pointer" data-nav-section="Solutions">
           <span class="flex items-center gap-1"><span class="ff-nav-label">Solutions</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(12,auto)] md:pr-1 md:auto-rows-auto items-center">
             <li class="mega-highlight"><a :href="hl('solutions').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('solutions').title }}</span><span class="mega-highlight-media"><img :src="hl('solutions').image" alt="" loading="lazy"></span></a></li>
@@ -270,7 +270,7 @@ onMounted(() => {
         </li>
 
         <!-- Resources -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
+        <li class="ff-nav-dropdown relative hover:cursor-pointer" data-nav-section="Resources">
           <span class="flex items-center gap-1"><span class="ff-nav-label">Resources</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center">
             <li class="mega-highlight"><a :href="hl('resources').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('resources').title }}</span><span class="mega-highlight-media"><img :src="hl('resources').image" alt="" loading="lazy"></span></a></li>
@@ -302,7 +302,7 @@ onMounted(() => {
         </li>
 
         <!-- Company -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
+        <li class="ff-nav-dropdown relative hover:cursor-pointer" data-nav-section="Company">
           <span class="flex items-center gap-1"><span class="ff-nav-label">Company</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center">
             <li class="mega-highlight"><a :href="hl('company').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('company').title }}</span><span class="mega-highlight-media"><img :src="hl('company').image" alt="" loading="lazy"></span></a></li>
@@ -339,7 +339,7 @@ onMounted(() => {
         <li class="nav-collapsible"><a class="flex items-center gap-2" href="/pricing/"><span class="ff-nav-label">Pricing</span></a></li>
 
         <!-- More overflow (populated by JS) -->
-        <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
+        <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
           <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul id="nav-more-list" class="align-left"></ul>
         </li>

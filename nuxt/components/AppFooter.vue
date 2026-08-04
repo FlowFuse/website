@@ -1,10 +1,10 @@
 <template>
-    <footer class="ff-footer bg-gray-100 w-full">
+    <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
         <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
                 <!-- Platform -->
-                <section class="pt-5">
+                <section class="pt-5" data-nav-section="Platform">
                     <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8">
                         <div class="lg:col-start-1 lg:row-start-1">
@@ -41,7 +41,7 @@
                     </div>
                 </section>
                 <!-- Solutions -->
-                <section class="pt-5">
+                <section class="pt-5" data-nav-section="Solutions">
                     <p class="text-lg font-medium text-gray-900 mb-6">Solutions</p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
                         <div>
@@ -83,7 +83,7 @@
                     </div>
                 </section>
                 <!-- Resources -->
-                <section class="pt-5">
+                <section class="pt-5" data-nav-section="Resources">
                     <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8">
                         <div>
@@ -115,7 +115,7 @@
                 </section>
             </div>
             <!-- Company -->
-            <section class="mt-12 border-t border-gray-300 pt-9">
+            <section class="mt-12 border-t border-gray-300 pt-9" data-nav-section="Company">
                 <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
                      under Platform, the three groups under Solutions' sub-columns, and the
                      last group under Resources. -->
@@ -213,7 +213,7 @@
                 </div>
             </section>
 <!-- Legal + social bottom row -->
-            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
+            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500" data-nav-section="Legal and social">
                 <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
                     <span aria-hidden="true">&middot;</span>
