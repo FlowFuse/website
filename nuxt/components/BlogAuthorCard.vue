@@ -19,9 +19,15 @@ defineProps<{
         <p class="text-sm text-indigo-600 mb-3 -mt-1">{{ author.title }}</p>
         <p class="text-sm text-gray-700 mb-4">{{ author.bio }}</p>
         <div class="flex gap-3 text-sm">
-          <a v-if="author.email" :href="`mailto:${author.email}`" class="text-gray-600 hover:text-indigo-600 transition-colors">Email</a>
-          <a v-if="author.linkedin" :href="`https://www.linkedin.com/in/${author.linkedin}`" target="_blank" rel="noopener" class="text-gray-600 hover:text-indigo-600 transition-colors">LinkedIn</a>
-          <a v-if="author.github" :href="`https://github.com/${author.github}`" target="_blank" rel="noopener" class="text-gray-600 hover:text-indigo-600 transition-colors">GitHub</a>
+          <a v-if="author.email" :href="`mailto:${author.email}`" title="Email" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <UIcon name="i-lucide-mail" class="w-5 h-5" />
+          </a>
+          <a v-if="author.linkedin" :href="`https://www.linkedin.com/in/${author.linkedin}`" target="_blank" rel="noopener" title="LinkedIn" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <IconsLinkedinIcon class="w-5 h-5" />
+          </a>
+          <a v-if="author.github" :href="`https://github.com/${author.github}`" target="_blank" rel="noopener" title="GitHub" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <IconsGithubIcon class="w-5 h-5" />
+          </a>
         </div>
       </div>
     </div>
