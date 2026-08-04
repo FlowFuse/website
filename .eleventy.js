@@ -993,17 +993,14 @@ module.exports = function(eleventyConfig) {
         Window chrome around a recording of a terminal session. Shared by the Device
         Agent page and release posts so every frame looks the same; the frame's own
         padding scales with the viewport, see .ff-terminal-frame in style.css.
-        Pass zoomable for prose contexts, where medium-zoom is loaded.
+        The recording is deliberately not zoomable: the frame is the point, and a
+        zoom overlay on an animated GIF restarts it out of context.
     */
-    eleventyConfig.addAsyncShortcode("terminalFrame", async function terminalFrameShortcode(src, alt, width, zoomable = false) {
+    eleventyConfig.addAsyncShortcode("terminalFrame", async function terminalFrameShortcode(src, alt, width) {
         const maxWidth = Number(width) || 1000
         const currentWorkingFilePath = this.page.inputPath
 
-        let image = await imageHandler(src, alt, null, [maxWidth], null, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES)
-
-        if (zoomable) {
-            image = image.replace('<img', '<img data-zoomable')
-        }
+        const image = await imageHandler(src, alt, null, [maxWidth], null, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES)
 
         return `<div class="ff-terminal-frame" style="max-width: ${maxWidth}px">
     <div class="ff-terminal-frame__bar">
