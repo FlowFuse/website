@@ -1,5 +1,7 @@
 ---
 title: "Professional Services"
+navigation:
+  order: 4
 ---
 
 FlowFuse offers Professional Services (PS) to help customers deliver work that

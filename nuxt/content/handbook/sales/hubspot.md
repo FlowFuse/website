@@ -1,5 +1,7 @@
 ---
 title: "HubSpot"
+navigation:
+  order: 12
 ---
 
 We use [HubSpot](https://www.hubspot.com/) to track and manage all of our customer interactions.

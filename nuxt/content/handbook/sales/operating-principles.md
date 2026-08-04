@@ -1,5 +1,7 @@
 ---
 title: "Sales Team Operating Principles"
+navigation:
+  order: 6
 description: "Professional standards and expectations for the FlowFuse Sales organization."
 ---
 

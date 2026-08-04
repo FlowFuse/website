@@ -1,5 +1,7 @@
 ---
 title: "Partnerships"
+navigation:
+  order: 5
 ---
 
 # Partnerships
