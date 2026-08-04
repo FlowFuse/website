@@ -11,6 +11,38 @@ sections:
     - svgPath: "components/icons/building-office-2.svg"
       title: "What works on one line won't scale to fifty"
       description: "A working solution on one machine requires rebuilding from scratch for the next site. There is no system to standardize, deploy, and govern what works"
+appPlatform:
+    eyebrow: "What an app platform means"
+    heading: "We call FlowFuse an app platform because of how it distributes and manages code"
+    intro: "Most industrial platforms give you one way to ship what you build. FlowFuse gives you two, and they cover opposite ends of how teams actually work."
+    models:
+        - icon: "queue-list"
+          label: "Fully controlled"
+          title: "Ship the whole application"
+          detail: "Build once, snapshot it, and promote that exact snapshot through a pipeline to every instance and device. Each target supplies its own configuration, so one artifact runs everywhere."
+        - icon: "puzzle-piece"
+          label: "Partially controlled"
+          title: "Ship the building blocks"
+          detail: "Publish the parts worth standardizing as packages into a library your teams pull from. Local teams assemble their own application out of blocks the platform team maintains."
+    componentsHeading: "The major components"
+    componentGroups:
+        - icon: "cloud"
+          title: "Where applications run"
+          items: "Instances · Devices · Groups"
+        - icon: "code-bracket"
+          title: "How they get built"
+          items: "Node-RED · FlowFuse Expert · FlowFuse Dashboard · Blueprints"
+        - icon: "arrow-long-right"
+          title: "How code is distributed"
+          items: "Snapshots · DevOps Pipelines · Environment Variables · Shared Library · Custom Packages"
+        - icon: "squares-plus"
+          title: "What they connect to"
+          items: "Integrations · Team Broker · FlowFuse Tables · Project Nodes"
+        - icon: "shield-check"
+          title: "How it is governed"
+          items: "Role-based access · Single sign-on · Audit logs · SOC 2"
+    ctaText: "See how the pieces fit together"
+    ctaHref: "/platform/"
 capabilities:
     - capability: "Build operational workflows your core systems can't"
       feature: "Low-code development with FlowFuse Expert"
@@ -267,6 +299,55 @@ hubspot:
             <a class="ff-btn" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-try-it-out', {'position': 'secondary'})">
                 <span class="text-base uppercase flex gap-2 items-center text-indigo-600 hover:text-indigo-800"><span>TRY IT OUT</span> {% include "components/icons/arrow-right.svg" %}</span>
             </a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     WHAT AN APP PLATFORM MEANS
+
+     States the claim, then backs it with the two distribution models and
+     the components, and hands off to /platform/ for the detail. Without
+     this the homepage asserts "platform" and never says what that buys.
+============================================================ -->
+<div class="w-full px-6 py-24 bg-white">
+    <div class="max-w-screen-lg mx-auto">
+        <p class="text-indigo-500 text-sm font-semibold uppercase m-0 max-md:text-center">{{ appPlatform.eyebrow }}</p>
+        <h2 class="mt-4 max-md:text-center">{{ appPlatform.heading }}</h2>
+        <p class="mt-4 max-w-3xl max-md:text-center max-md:mx-auto">{{ appPlatform.intro }}</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
+            {% for model in appPlatform.models %}
+            <div class="rounded-xl border border-indigo-100 bg-indigo-50/60 p-6 flex flex-col gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="flex-shrink-0 w-10 h-10 bg-white rounded-lg border border-indigo-100 flex items-center justify-center text-indigo-500">
+                        <span class="w-5 h-5">{% include "components/icons/" + model.icon + ".svg" %}</span>
+                    </div>
+                    <span class="text-indigo-500 text-xs font-semibold uppercase tracking-widest">{{ model.label }}</span>
+                </div>
+                <h3 class="m-0 text-gray-800">{{ model.title }}</h3>
+                <p class="m-0 text-gray-600 text-sm">{{ model.detail }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h3 class="mt-16 text-gray-800 max-md:text-center">{{ appPlatform.componentsHeading }}</h3>
+        <div class="mt-6 flex flex-col divide-y divide-gray-200 border-y border-gray-200">
+            {% for group in appPlatform.componentGroups %}
+            <div class="py-5 flex max-md:flex-col md:items-center gap-3 md:gap-6">
+                <div class="flex items-center gap-3 md:w-[16rem] md:flex-shrink-0">
+                    <div class="flex-shrink-0 w-9 h-9 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center text-indigo-500">
+                        <span class="w-5 h-5">{% include "components/icons/" + group.icon + ".svg" %}</span>
+                    </div>
+                    <span class="font-medium text-gray-800">{{ group.title }}</span>
+                </div>
+                <p class="m-0 text-gray-600 text-sm">{{ group.items }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-10 flex max-md:justify-center">
+            <a class="ff-btn ff-btn--primary-outlined uppercase" href="{{ appPlatform.ctaHref }}" onclick="capture('cta-platform', {'position': 'homepage-app-platform'})">{{ appPlatform.ctaText }}</a>
         </div>
     </div>
 </div>
