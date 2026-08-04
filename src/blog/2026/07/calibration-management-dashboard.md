@@ -79,7 +79,7 @@ You can interact with the live demo here: <a href="https://clever-garden-warbler
 
 Before you start building, get these ready:
 
-- **A FlowFuse account.** [Sign up]({% include "sign-up-url.njk" %}) for FlowFuse Cloud, or use a self-hosted instance.
+- **A FlowFuse account.** [Sign up](https://app.flowfuse.com/account/create) for FlowFuse Cloud, or use a self-hosted instance.
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
 - **FlowFuse Dashboard installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-template`, `ui-event`, `ui-button`, `ui-markdown`, `ui-notification`, `ui-page`, `ui-group`, `ui-theme`) to build both pages. Install it from the Palette Manager if it isn't already in your instance.
 - **A webcam node and an OCR node.** The Tool Check page uses `@sumit_shinde_84/node-red-dashboard-2-ui-webcam` to capture the label and `@sumit_shinde_84/node-red-contrib-simple-ocr` to read it. Install both from the Palette Manager.
