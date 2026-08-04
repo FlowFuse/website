@@ -51,29 +51,19 @@ docker compose up -d forge
 
 #### Broker configuration
 
-Expert chat is delivered over the platform's Team Broker, which bridges chat requests to the central Expert broker on FlowFuse Cloud. The latest Docker Compose template configures this for you. If you maintain a customized `flowforge.yml` inside the `docker-compose.yml` file, ensure both the `broker` and `expert` sections are present:
+Expert chat is delivered over the platform's Team Broker, which bridges chat requests to the central Expert broker on FlowFuse Cloud. The latest Docker Compose template already enables the Team Broker and pre-configures this bridge, so no changes to the compose file are needed. A valid `EXPERT_TOKEN` in `.env` is all that is required.
 
-```yaml
-broker:
-  teamBroker:
-    enabled: true
-    api:
-      url: http://broker:18083/api/v5   # your EMQX admin API endpoint
-      key: <emqx-api-key>
-      secret: <emqx-api-secret>
-expert:
-  enabled: true
-  service:
-    token: ${EXPERT_TOKEN}
-    # url is optional and defaults to https://expert.flowfuse.com/v4/expert
-  centralBroker:
-    server: expert-broker.flowfuse.com:8883   # host and port in a single string
-    ssl: true
-```
+Do not edit the broker or expert configuration inside the compose file directly. Those values are managed by the template and any manual changes are overwritten on the next upgrade.
 
-- Use `expert.centralBroker.server` (a single `host:port` string). Do not use `expert.broker.address` / `expert.broker.port` here: those key names apply only to the Helm chart, which translates them internally.
+If you need to override a default, use these `.env` variables. Leave them unset to keep the template defaults:
 
-None of these changes should be made without updating to the latest release of the `docker-compose.yml` file first
+| Variable | Purpose |
+| --- | --- |
+| `EXPERT_BROKER_SERVER` | Central Expert broker host (defaults to `expert-broker.flowfuse.com`) |
+| `BROKER_API_KEY` / `BROKER_API_SECRET` | Local EMQX admin API credentials used to provision the bridge |
+
+None of these changes should be made without updating to the latest release of the `docker-compose.yml` file first.
+
 ### Kubernetes
 
 The feature is enabled by adding the tokens to the values passed to the Helm chart.
