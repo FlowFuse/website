@@ -9,9 +9,32 @@ sitemapPriority: 0.7
      problem        hero sub-headline (the pain in one line)
      customerPain   { heading, intro[], cards[ {icon,title,detail} ] }
      outcomeFirst   { heading, intro, dimensions[ {label,title,detail} ] }
+     howItWorks     { heading, intro, designPattern{}, diagram{}, pieces[], architecture, docsCta{} }
      whyItMatters   { heading, intro, points[ {title,detail} ] }
      competition    { heading, intro, traps[ {label,title,detail} ] }
      comparison     { without[ {title,detail} ], with[ {title,detail} ] }
+
+   howItWorks answers "how does FlowFuse build this", which the pain, outcome
+   and comparison blocks deliberately do not. It is the bridge from the
+   marketing narrative into the product docs, so keep it high level here and
+   push every detail into a docs link.
+
+     designPattern  { kind, name, detail, docsUrl }
+                    kind is the pattern family, e.g. "Hardware pattern" or
+                    "Software pattern". name is the specific pattern chosen
+                    for this use case.
+     diagram        { src, alt, caption, width, height, placeholder }
+                    End-to-end architecture drawing. src may be a placeholder
+                    while the real diagram is commissioned; set
+                    diagram.placeholder to true to render the placeholder
+                    treatment and keep it visibly unfinished. width/height
+                    default to 1200x630 and only exist to reserve the box, so
+                    override them when the real asset is a different shape.
+     pieces         [ {icon, title, detail, docsUrl} ]
+                    The problem broken into the individual components that get
+                    built. Order them the way you would build them.
+     architecture   slug of a /use-cases/ architecture page this sits on
+     docsCta        { label, url }
 
    Legacy fall-back front-matter (simple skeleton, still supported):
      gap[], workflow[], outcomes[]
@@ -23,10 +46,16 @@ sitemapPriority: 0.7
 {% set nav = [] %}
 {% if customerPain %}{% set nav = nav.concat([{ id: "customer-pain", label: "Customer Pain" }]) %}{% endif %}
 {% if outcomeFirst %}{% set nav = nav.concat([{ id: "outcome-first", label: "Outcome First" }]) %}{% endif %}
+{% if howItWorks %}{% set nav = nav.concat([{ id: "how-it-works", label: "How It Works" }]) %}{% endif %}
 {% if whyItMatters %}{% set nav = nav.concat([{ id: "why-it-matters", label: "Why It Matters" }]) %}{% endif %}
 {% if competition %}{% set nav = nav.concat([{ id: "competition", label: "Why Off-the-Shelf Fails" }]) %}{% endif %}
 {% if comparison %}{% set nav = nav.concat([{ id: "with-without", label: "With / Without FlowFuse" }]) %}{% endif %}
 {% if aiBuildLayer %}{% set nav = nav.concat([{ id: "ai-build-layer", label: "Build It With AI" }]) %}{% endif %}
+
+{# --- section eyebrow numbers, derived from nav so they cannot drift ---
+   Pages omit blocks freely, so a hardcoded "03" desyncs from the nav as soon
+   as an earlier block is missing. Look the number up instead. #}
+{% macro secNum(id) %}{%- for item in nav -%}{%- if item.id == id -%}{%- if loop.index < 10 -%}0{%- endif -%}{{ loop.index }}{%- endif -%}{%- endfor -%}{% endmacro %}
 
 <div class="w-full">
 
@@ -66,11 +95,11 @@ sitemapPriority: 0.7
 
     {% if customerPain %}
     <!-- ============================================================
-         01. CUSTOMER PAIN
+         CUSTOMER PAIN
     ============================================================ -->
     <div id="customer-pain" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">01 · Customer pain</p>
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ secNum("customer-pain") }} · Customer pain</p>
             <h2 class="max-md:text-center"><span class="text-red-600">{{ customerPain.heading }}</span></h2>
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
                 {% for paragraph in customerPain.intro %}
@@ -94,11 +123,11 @@ sitemapPriority: 0.7
 
     {% if outcomeFirst %}
     <!-- ============================================================
-         02. OUTCOME FIRST
+         OUTCOME FIRST
     ============================================================ -->
     <div id="outcome-first" class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100 scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">02 · Outcome first</p>
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ secNum("outcome-first") }} · Outcome first</p>
             <h2 class="max-md:text-center">{{ outcomeFirst.heading }}</h2>
             <p class="mt-4 max-w-3xl text-gray-600">{{ outcomeFirst.intro }}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -114,13 +143,103 @@ sitemapPriority: 0.7
     </div>
     {% endif %}
 
+    {% if howItWorks %}
+    <!-- ============================================================
+         HOW IT WORKS
+
+         The "how" half of the page: which pieces get built, how they fit
+         together, and which design pattern carries them. Everything here
+         stays high level and hands off to the docs for the detail.
+    ============================================================ -->
+    <div id="how-it-works" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ secNum("how-it-works") }} · How it works</p>
+            <h2 class="max-md:text-center">{{ howItWorks.heading or "How FlowFuse builds this" }}</h2>
+            {% if howItWorks.intro %}
+            <p class="mt-4 max-w-3xl text-gray-600">{{ howItWorks.intro }}</p>
+            {% endif %}
+
+            {% if howItWorks.designPattern %}
+            <div class="mt-10 rounded-xl border border-indigo-100 bg-indigo-50/60 p-6 flex flex-col sm:flex-row gap-5 sm:items-start">
+                <div class="flex-shrink-0 w-10 h-10 bg-white rounded-lg border border-indigo-100 flex items-center justify-center text-indigo-500">
+                    <span class="w-5 h-5">{% include "components/icons/squares-2x2.svg" %}</span>
+                </div>
+                <div>
+                    <span class="text-indigo-500 text-xs font-semibold uppercase tracking-widest">{{ howItWorks.designPattern.kind }}</span>
+                    <h4 class="m-0 mt-1 text-gray-800">{{ howItWorks.designPattern.name }}</h4>
+                    <p class="m-0 mt-2 text-gray-600 text-sm">{{ howItWorks.designPattern.detail }}</p>
+                    {% if howItWorks.designPattern.docsUrl %}
+                    <a class="mt-3 inline-flex items-center gap-2 text-indigo-600 text-sm font-semibold" href="{{ howItWorks.designPattern.docsUrl }}" onclick="capture('cta-docs', {'position': 'use-case-how-pattern', 'usecase': '{{ page.fileSlug }}'})">
+                        Read the pattern in the docs
+                        <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if howItWorks.diagram %}
+            <figure class="mt-10 m-0">
+                <div class="rounded-xl overflow-hidden bg-gray-50 {% if howItWorks.diagram.placeholder %}border-2 border-dashed border-gray-300{% else %}border border-gray-200{% endif %}">
+                    {# width/height are here to reserve the box before the image
+                       arrives; without them "h-auto" collapses the figure to
+                       zero and the whole section below it jumps on load. #}
+                    <img class="block w-full h-auto" src="{{ howItWorks.diagram.src }}" alt="{{ howItWorks.diagram.alt }}" width="{{ howItWorks.diagram.width or 1200 }}" height="{{ howItWorks.diagram.height or 630 }}" loading="lazy">
+                </div>
+                {% if howItWorks.diagram.caption or howItWorks.diagram.placeholder %}
+                <figcaption class="mt-3 text-sm text-gray-400{% if howItWorks.diagram.placeholder %} italic{% endif %}">{% if howItWorks.diagram.placeholder %}Placeholder diagram, pending art request. {% endif %}{{ howItWorks.diagram.caption }}</figcaption>
+                {% endif %}
+            </figure>
+            {% endif %}
+
+            {% if howItWorks.pieces %}
+            <h3 class="mt-16 text-gray-800 max-md:text-center">{{ howItWorks.piecesHeading or "The individual pieces" }}</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                {% for piece in howItWorks.pieces %}
+                <div class="rounded-xl bg-gray-50 border border-gray-200 p-6 flex flex-col gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-white rounded-lg border border-gray-200 flex items-center justify-center text-indigo-500">
+                            <span class="w-5 h-5">{% include "components/icons/" + piece.icon + ".svg" %}</span>
+                        </div>
+                        <span class="text-indigo-400 text-sm font-semibold">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                    </div>
+                    <h4 class="m-0 text-gray-800">{{ piece.title }}</h4>
+                    <p class="m-0 text-gray-600 text-sm flex-grow">{{ piece.detail }}</p>
+                    {% if piece.docsUrl %}
+                    <a class="inline-flex items-center gap-2 text-indigo-600 text-sm font-semibold" href="{{ piece.docsUrl }}" onclick="capture('cta-docs', {'position': 'use-case-how-piece', 'usecase': '{{ page.fileSlug }}'})">
+                        Docs
+                        <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                    </a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if howItWorks.docsCta or howItWorks.architecture %}
+            <div class="mt-12 flex flex-wrap gap-6 items-center">
+                {% if howItWorks.docsCta %}
+                <a class="ff-btn ff-btn--primary-outlined uppercase" href="{{ howItWorks.docsCta.url }}" onclick="capture('cta-docs', {'position': 'use-case-how-footer', 'usecase': '{{ page.fileSlug }}'})">{{ howItWorks.docsCta.label or "Read the docs" }}</a>
+                {% endif %}
+                {% if howItWorks.architecture %}
+                <a class="inline-flex items-center gap-2 text-indigo-600 font-semibold" href="/use-cases/{{ howItWorks.architecture }}/" onclick="capture('cta-architecture', {'position': 'use-case-how-footer', 'usecase': '{{ page.fileSlug }}'})">
+                    See the architecture this sits on
+                    <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
     {% if whyItMatters %}
     <!-- ============================================================
-         03. WHY IT MATTERS
+         WHY IT MATTERS
     ============================================================ -->
     <div id="why-it-matters" class="w-full bg-[radial-gradient(ellipse_120%_120%_at_50%_120%,theme(colors.indigo.600)_0%,theme(colors.indigo.900)_100%)] py-16 sm:py-24 px-6 scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <p class="uppercase text-xs font-semibold text-indigo-300 mb-2">03 · Why this is important</p>
+            <p class="uppercase text-xs font-semibold text-indigo-300 mb-2">{{ secNum("why-it-matters") }} · Why this is important</p>
             <h2 class="text-white max-md:text-center">{{ whyItMatters.heading }}</h2>
             <p class="mt-4 max-w-3xl text-indigo-100 font-light">{{ whyItMatters.intro }}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -140,11 +259,11 @@ sitemapPriority: 0.7
 
     {% if competition %}
     <!-- ============================================================
-         04. WHY OFF-THE-SHELF / COMPETITION FAILS
+         WHY OFF-THE-SHELF / COMPETITION FAILS
     ============================================================ -->
     <div id="competition" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">04 · Why off-the-shelf doesn't work</p>
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ secNum("competition") }} · Why off-the-shelf doesn't work</p>
             <h2 class="max-md:text-center">{{ competition.heading }}</h2>
             <p class="mt-4 max-w-3xl text-gray-600">{{ competition.intro }}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -165,11 +284,11 @@ sitemapPriority: 0.7
 
     {% if comparison %}
     <!-- ============================================================
-         05. WITH / WITHOUT FLOWFUSE
+         WITH / WITHOUT FLOWFUSE
     ============================================================ -->
     <div id="with-without" class="w-full py-16 sm:py-24 px-6 comparison-section-bg scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">05 · With / without FlowFuse</p>
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ secNum("with-without") }} · With / without FlowFuse</p>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
                 <div>
                     <h3 class="text-gray-500 m-0">Without FlowFuse</h3>
@@ -206,11 +325,11 @@ sitemapPriority: 0.7
 
     {% if aiBuildLayer %}
     <!-- ============================================================
-         06. BUILD IT WITH AI (Expert build layer)
+         BUILD IT WITH AI (Expert build layer)
     ============================================================ -->
     <div id="ai-build-layer" class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100 scroll-mt-16">
         <div class="max-w-screen-lg mx-auto">
-            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">06 · Build it with AI</p>
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ secNum("ai-build-layer") }} · Build it with AI</p>
             <h2 class="max-md:text-center">{{ aiBuildLayer.heading or "From described to deployed, with the FlowFuse Expert" }}</h2>
             <p class="mt-4 max-w-3xl text-gray-600">{{ aiBuildLayer.intro }}</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
