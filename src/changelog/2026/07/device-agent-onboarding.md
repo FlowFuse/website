@@ -15,7 +15,7 @@ Getting your own hardware into FlowFuse meant working backwards. You signed up, 
 
 Now you can start where the hardware already is. Run the installer from your terminal and it walks you through registering — including setting up an account if you need one — ending with your machine registered as a remote instance and ready to build on. If something's in the way — like port 1880 already being in use — the installer tells you up front instead of failing partway through.
 
-Check the [Device Agent Quick Start guide](https://flowfuse.com/docs/device-agent/quickstart/) to get connected.
+Check the [Device Agent Quick Start guide](/docs/device-agent/quickstart/) to get connected.
 
 ![The installer running in a terminal, walking through sign-up and connection to FlowFuse](./images/device-agent-install.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
 *Sign-up and registration happen in one uninterrupted flow — no jumping back to the platform.*

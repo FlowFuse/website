@@ -31,4 +31,4 @@ you want to share a snapshot with others, but don't want to include sensitive in
 when you receive a snapshot that needs importing into a different FlowFuse platform or team, you can can now be selective
 about what to keep and what to exclude.
 
-See the [Snapshots](https://flowfuse.com/docs/user/snapshots) documentation for more information.
+See the [Snapshots](/docs/user/snapshots) documentation for more information.

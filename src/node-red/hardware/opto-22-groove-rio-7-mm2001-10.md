@@ -44,7 +44,7 @@ This guide will walk you through setting up Node-RED on the Groov Rio R7 using t
 
 Once you have installed the FlowFuse Device Agent, you need to register the hardware to connect it to your FlowFuse team.
 
-For instructions on how to register the hardware with your FlowFuse team, follow the documentation: [Register your Remote Instance](https://flowfuse.com/docs/device-agent/register/).
+For instructions on how to register the hardware with your FlowFuse team, follow the documentation: [Register your Remote Instance](/docs/device-agent/register/).
 
 When registering your hardware, you will be presented with a dialog containing a one-time passcode command that the Device Agent uses to retrieve its configuration. **Make sure to copy it.**
 

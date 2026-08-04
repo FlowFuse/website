@@ -7,13 +7,13 @@ tags:
     - changelog
 ---
 
-Starting today, we have introduced a simplification of the pricing structure for devices on FlowFuse Cloud, effective immediately. All information is available on our [pricing page](https://flowfuse.com/pricing/). 
+Starting today, we have introduced a simplification of the pricing structure for devices on FlowFuse Cloud, effective immediately. All information is available on our [pricing page](/pricing/). 
 The new pricing scheme is as follows:
 - Starter Tier: No change
 - Teams Tier: Devices are now priced at $25 each.
 - Enterprise Tier: Devices are priced at $50 each.
 
-We are also pleased to offer volume discounts. For more details, please [contact us](https://flowfuse.com/contact-us/).
+We are also pleased to offer volume discounts. For more details, please [contact us](/contact-us/).
 
 ## Important Note for Existing Teams
 

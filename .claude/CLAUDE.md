@@ -17,7 +17,7 @@ The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framew
 | Section | Status |
 |---------|--------|
 | `/handbook/**` | **Migrated** — served by Nuxt (`nuxt/content/handbook/`) |
-| `/docs/**` | **Migrated** — served by Nuxt; source cloned from `flowfuse/flowfuse` at build time |
+| `/docs/**` | **Migrated** — served by Nuxt; source resolved from `flowfuse/flowfuse` at build time |
 | All other routes | Still on 11ty, proxied through Nuxt in dev |
 
 ### Production build order
@@ -26,7 +26,7 @@ The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framew
 clean:nuxt → build:js:nuxt → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
 ```
 
-The `docs-source` Nuxt module runs automatically during `prod:nuxt` and sparse-clones `docs/` from `flowfuse/flowfuse` (public repo, no token needed). 11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
+The `docs-source` Nuxt module runs automatically during `prod:nuxt` and calls `nuxt/lib/docs-sync.mjs` to resolve `docs/` from `flowfuse/flowfuse` (see **Local docs development** below). 11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
 
 ## Dev commands
 
@@ -35,12 +35,13 @@ npm start              # all watchers in parallel (11ty + nuxt + postcss + bluep
 npm run dev            # eleventy + postcss + nuxt only
 npm run dev:eleventy   # 11ty only, port 8080 (legacy; most work doesn't need this)
 npm run dev:nuxt       # Nuxt only, port 3000 — use this for handbook, docs, and migrated pages
+npm run docs           # resolve product docs into nuxt/content/docs, no build
 npm run build          # production build
 ```
 
 > When working on the handbook, docs, or other migrated sections, `npm run dev:nuxt` is sufficient. `npm start` is only needed when also touching 11ty-served pages.
 >
-> **Local docs development:** set `FLOWFUSE_DOCS_LOCAL=/path/to/flowfuse` to point the docs module at a local checkout instead of cloning from GitHub. If the env var is not set and `nuxt/content/docs/` already exists, that cached copy is used. If neither is true, the module clones fresh from GitHub (public, no token needed).
+> **Local docs development:** a checkout of `flowfuse/flowfuse` sitting next to this repo (`../flowfuse`) is picked up automatically, with no configuration. Full resolution order, which every build logs: `FLOWFUSE_DOCS_LOCAL` (explicit path, and a path that does not exist is an error), then a sibling checkout, then a clone of `FLOWFUSE_DOCS_REF` (default `main`) — this is what Netlify production deploys use. CI relies on the sibling rule: `FlowFuse/flowfuse`'s `Publish Documentation` workflow checks itself out next to the website so a docs PR is validated against its own changes.
 
 ## Directory layout
 
@@ -61,7 +62,7 @@ nuxt/
 │   ├── handbook/      # Handbook pages (edit here)
 │   └── docs/          # Product docs (build-generated, gitignored — do not edit)
 ├── modules/
-│   └── docs-source.ts # Clones docs from flowfuse/flowfuse at build time
+│   └── docs-source.ts # Wires docs into Nuxt; resolution lives in nuxt/lib/docs-sync.mjs
 ├── composables/
 │   ├── useHandbookNav.ts
 │   └── useDocsNav.ts

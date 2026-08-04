@@ -140,7 +140,7 @@ The bonus payment will be included in the next payroll after the goal completion
 
 ## Processing CSM Commission
 
-Following the end of each quarter, the Operations team processes CSM commissions based on the performance metrics outlined in the [CS Handbook](https://flowfuse.com/handbook/sales/customer-success/).
+Following the end of each quarter, the Operations team processes CSM commissions based on the performance metrics outlined in the [CS Handbook](/handbook/sales/customer-success/).
 
 ### Verifying Deals Before Handoff
  

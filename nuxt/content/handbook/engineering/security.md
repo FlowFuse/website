@@ -20,7 +20,7 @@ Please refrain from:
  - Social engineering (including phishing) of FlowFuse staff or contractors
 
 Out of scope assets:
- - The marketing website (https://flowfuse.com - forms, chat, etc)
+ - The marketing website ([https://flowfuse.com](/) - forms, chat, etc)
  - The dashboard documentation (https://dashboard.flowfuse.com)
  - The community forum (https://community.flowfuse.com/)
 

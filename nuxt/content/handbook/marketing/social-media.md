@@ -153,7 +153,7 @@ We'll share a [new hire post](/handbook/marketing/social-media/#new-hire) when n
 - This is to ensure we never block or delay a post that could be urgent or highly relevant in the moment. While our handbook provides structure, it should not prevent us from responding quickly to breaking news or important events.
 - When an author posts to social media, posts do not need to be reviewed by another person before posting.
 - The [Social Media Manager](https://github.com/Yndira-E) remains ultimately responsible for both the distribution and the content published across FlowFuse channels.
-- Any publication made by someone outside the marketing team must always be communicated to the Social Media Manager. This allows them to keep the post in the established (https://app-eu1.hubspot.com/social/26586079/manage/calendar) and review it if any stylistic adjustments are needed to align with [our tone and brand voice](https://flowfuse.com/handbook/marketing/brand-voice/#brand-personality) — something they may do whenever considered necessary.
+- Any publication made by someone outside the marketing team must always be communicated to the Social Media Manager. This allows them to keep the post in the established (https://app-eu1.hubspot.com/social/26586079/manage/calendar) and review it if any stylistic adjustments are needed to align with [our tone and brand voice](/handbook/marketing/brand-voice/#brand-personality) — something they may do whenever considered necessary.
 
 
 ## Requesting a social post

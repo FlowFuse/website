@@ -44,7 +44,7 @@ community building.
 ## The market
 
 We focus on
-[Ideal Customer Profile (ICP)](https://flowfuse.com/handbook/marketing/messaging/)
+[Ideal Customer Profile (ICP)](/handbook/marketing/messaging/)
 companies, which are those in manufacturing, logistics, and other data-intensive
 industrial sectors where operational efficiency is critical to providing value.
 

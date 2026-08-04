@@ -63,7 +63,7 @@ From there, KPI logic flows can be built visually, defining how and when data is
 ![OEE Dashboard built with FlowFuse](./images/oee.png){data-zoomable}  
 _OEE Dashboard built with FlowFuse_
 
-The example above shows an [OEE Dashboard](https://flowfuse.com/blueprints/manufacturing/oee-dashboard/), updated every 10 seconds using FlowFuse. Operational data is automatically retrieved, processed, and visualized, delivering accurate, real-time metrics through gauges, charts, and tables.
+The example above shows an [OEE Dashboard](/blueprints/manufacturing/oee-dashboard/), updated every 10 seconds using FlowFuse. Operational data is automatically retrieved, processed, and visualized, delivering accurate, real-time metrics through gauges, charts, and tables.
 
 The following flow powers this dashboard:
 
