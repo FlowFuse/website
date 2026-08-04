@@ -74,8 +74,7 @@ The feature is enabled by adding the tokens to the values passed to the Helm cha
 - `forge.expert.enabled` should be set to `true`
 - `forge.expert.service.url` should be set to `https://expert.flowfuse.com/v4/expert`
 - `forge.expert.service.token` should be set to the provided Expert Token
-- `forge.expert.broker.address` should be set to `expert-broker.flowfuse.com`
-- `forge.expert.broker.port` should be set to `8883`
+- `forge.broker.teamBroker.enabled` should be set to `true` (required for Expert chat; the Team Broker requires the EMQX operator to be installed)
 
 Example:
 
@@ -91,9 +90,11 @@ forge:
      service:
        url: https://expert.flowfuse.com/v4/expert
        token: Provided-Expert-Token
-     broker:
-       address: expert-broker.flowfuse.com
-       port: 8883
+   broker:
+     teamBroker:
+       enabled: true
 ```
+
+NOTE: The Expert central broker address is configured by default, so `forge.expert.broker.address` and `forge.expert.broker.port` no longer need to be set.
 
 NOTE: For FlowFuse v2.29.0 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults
