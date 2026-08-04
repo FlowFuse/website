@@ -70,8 +70,8 @@ rules.
 
 ## How we work
 
-- [Sales Team Operating Principles](./operating-principles.md)
-- [Working Norms](./working-norms.md) — how we communicate and collaborate
+- [Commercial Team Operating Principles](./operating-principles.md) — individual conduct standards
+- [Working Norms](./working-norms.md) — meeting cadence and escalation routing
 - [Customer Journey Alignment](./customer-journey.md) — lifecycle stages and ownership
 - [Systems & Tools](./tools.md) — the commercial tech stack
 - [Onboarding & Development](./onboarding.md) — ramping and growing the team
