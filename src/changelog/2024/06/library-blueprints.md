@@ -19,4 +19,4 @@ For example, if you have built a [dashboard](https://dashboard.flowfuse.com) you
 
 We only support subdomains at this time, but adding support for top-level domains is [on the roadmap](https://github.com/FlowFuse/flowfuse/issues/3982).
 
-Read more on [how to setup custom hostnames](https://flowfuse.com/docs/user/custom-hostnames).
+Read more on [how to setup custom hostnames](/docs/user/custom-hostnames).

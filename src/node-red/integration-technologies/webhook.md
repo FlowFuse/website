@@ -73,7 +73,7 @@ Having a separate server for webhooks is crucial as it will receive data from mu
 
 ## Setting Up a Temperature sensors
 
-For this practicle, the DHT11 sensor is connected to a Raspberry Pi 4, which is running the FlowFuse device agent. Node-RED on the Raspberry Pi allows direct reading and monitoring of sensor data, while the FlowFuse device agent enables remote editing and management of Node-RED applications from anywhere in the world. For more details, refer to the [Running the FlowFuse Device Agent as a service on a Raspberry Pi](https://flowfuse.com/blog/2023/05/device-agent-as-a-service/).
+For this practicle, the DHT11 sensor is connected to a Raspberry Pi 4, which is running the FlowFuse device agent. Node-RED on the Raspberry Pi allows direct reading and monitoring of sensor data, while the FlowFuse device agent enables remote editing and management of Node-RED applications from anywhere in the world. For more details, refer to the [Running the FlowFuse Device Agent as a service on a Raspberry Pi](/blog/2023/05/device-agent-as-a-service/).
 
 ### Installing custom node for reading sensor data
 
@@ -116,7 +116,7 @@ Before proceeding with this step, it is necessary to run Node-RED on your Raspbe
 
 ## Setting Up a Server 3
 
-Before moving further install Dashboard 2.0 as we will display the scheduled maintenance on the table, For more information for more information refer to [Getting started with Dashboard 2.0](https://flowfuse.com/blog/2024/03/dashboard-getting-started/).
+Before moving further install Dashboard 2.0 as we will display the scheduled maintenance on the table, For more information for more information refer to [Getting started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/).
 
 1. Drag the **http in** node onto canvas, select the method as POST, and set the method as **/schedule-maintenance**.
 

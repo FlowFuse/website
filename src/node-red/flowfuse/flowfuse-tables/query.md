@@ -123,4 +123,4 @@ In the Query node, click **"Assistant"**, enter plain English like *"Show me all
 
 ![Query Node FlowFuse Expert](./src/blog/2025/09/images/flowfuse-ai-assistance-table-demo.gif)
 
-For more detailed information on natural language queries with the Query node, read this article: [FlowFuse Expert for FlowFuse Tables](https://flowfuse.com/blog/2025/09/ai-assistant-flowfuse-tables/).
+For more detailed information on natural language queries with the Query node, read this article: [FlowFuse Expert for FlowFuse Tables](/blog/2025/09/ai-assistant-flowfuse-tables/).

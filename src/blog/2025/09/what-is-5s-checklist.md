@@ -109,11 +109,11 @@ If you want to start immediately without creating a checklist from scratch, Flow
 <div class="cta-card" style="display: flex; align-items: center; gap: 20px; background-color: #EEF2FF; padding: 20px; border-radius: 8px; font-family: sans-serif; border: 1px solid #6366F1;">  
     <!-- Left side image -->  
     <div style="flex: 1;">  
-        <img src="https://flowfuse.com/img/5s-checklist-eYy2xo4REM-650.avif" alt="FlowFuse 5S Checklist Blueprint" style="width: 100%; height: auto; border-radius: 6px;">  
+        <img src="/blog/2025/09/images/what-is-5s-checklist.png" alt="FlowFuse 5S Checklist Blueprint" style="width: 100%; height: auto; border-radius: 6px;">  
     </div>  
     <div style="flex: 1;">  
         <h3 style="font-size: 1.5em; margin: 0 0 10px;">Ready to Transform Your Work Area?</h3>  
         <p style="font-size: 1em; margin: 0 0 20px;">Get started with FlowFuse's customizable 5S Checklist Blueprint and build your digital evaluation system in minutes.</p>  
-        <a href="https://flowfuse.com/blueprints/manufacturing/5s-checklist/" class="cta-button" style="display: inline-block; background-color:#4f46e5; color: #ffffff; padding: 8px 18px; text-decoration: none; border-radius: 9999px; font-weight: bold; font-size: 0.95em; transition: background-color 0.3s ease;">Explore 5S Checklist Blueprint →</a>  
+        <a href="/blueprints/manufacturing/5s-checklist/" class="cta-button" style="display: inline-block; background-color:#4f46e5; color: #ffffff; padding: 8px 18px; text-decoration: none; border-radius: 9999px; font-weight: bold; font-size: 0.95em; transition: background-color 0.3s ease;">Explore 5S Checklist Blueprint →</a>  
     </div>  
 </div> 

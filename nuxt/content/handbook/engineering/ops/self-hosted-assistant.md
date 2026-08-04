@@ -29,7 +29,7 @@ The FlowFuse Expert consists of two internal components that each need to be ena
 ### Docker
 
 ::note
-Please ensure you are using the latest version of the Docker Compose file for your FlowFuse Platform installation. Check the [upgrade procedure](https://flowfuse.com/docs/install/docker/#upgrade) if needed.
+Please ensure you are using the latest version of the Docker Compose file for your FlowFuse Platform installation. Check the [upgrade procedure](/docs/install/docker/#upgrade) if needed.
 ::
 
 

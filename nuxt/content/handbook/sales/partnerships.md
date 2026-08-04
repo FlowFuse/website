@@ -17,7 +17,7 @@ FlowFuse also continues to build its partner channel by working with strategic S
 When there's interest in becoming a partner FlowFuse requires a project to collaborate on jointly.
 Implementation projects structure the partnership and learning on both sides.
 
-Please [contact us](https://flowfuse.com/partners/) to discuss and complete an agreement.
+Please [contact us](/partners/) to discuss and complete an agreement.
 
 ## Referral Partner Fees Process
 

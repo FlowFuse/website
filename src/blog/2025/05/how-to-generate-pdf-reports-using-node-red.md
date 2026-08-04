@@ -383,4 +383,4 @@ _[Dashboard displaying embedded PDF with a download button]_
 
 ## Final thought
 
-Automating PDF report generation in Node-RED is a great way to save time and effort. Using tools like the node-red-contrib-pdfmake node, you can quickly turn your data into well-designed PDFs without manual work. If you want to save time and avoid the setup process, you can directly use our ready-made [PDF generation blueprint](https://flowfuse.com/blueprints/manufacturing/pdf-report-generator/). It’s an easy way to get started and generate professional reports quickly.
+Automating PDF report generation in Node-RED is a great way to save time and effort. Using tools like the node-red-contrib-pdfmake node, you can quickly turn your data into well-designed PDFs without manual work. If you want to save time and avoid the setup process, you can directly use our ready-made [PDF generation blueprint](/blueprints/manufacturing/pdf-report-generator/). It’s an easy way to get started and generate professional reports quickly.

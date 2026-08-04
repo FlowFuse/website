@@ -20,7 +20,7 @@ Oh, and it was created by and is running on FlowFuse technology! Take a look:
 
 Instead of hunting through documentation or piecing together forum posts, you simply describe what you want to build and get a clear recipe for creating it.
 
-Head over to [flowfuse.com](https://flowfuse.com) and you'll see it right on the home page. Type what you're trying to build. FlowFuse Expert might ask a few questions to clarify your setup, and once you answer, it will provide a simple, easy-to-follow recipe: which nodes you need with exact copyable names, how to configure them, and how to wire them together.
+Head over to [flowfuse.com]() and you'll see it right on the home page. Type what you're trying to build. FlowFuse Expert might ask a few questions to clarify your setup, and once you answer, it will provide a simple, easy-to-follow recipe: which nodes you need with exact copyable names, how to configure them, and how to wire them together.
 
 ![FlowFuse Expert: Providing Recipe for Connecting Serial Devices](./images/flowfuse-expert.gif){data-zoomable}
 _FlowFuse Expert: Providing a Recipe for Connecting Serial Devices_
