@@ -43,7 +43,7 @@ const select = (index: number) => {
         type="button"
         role="tab"
         :aria-selected="active === index"
-        :aria-controls="`panel-${slugify(panel.label)}`"
+        :aria-controls="slugify(panel.label)"
         class="rounded-t-md border-b-2 px-3 py-2 text-sm font-medium transition-colors"
         :class="active === index
           ? 'border-indigo-600 text-indigo-700'
@@ -52,10 +52,13 @@ const select = (index: number) => {
       >{{ panel.label }}</button>
     </div>
 
+    <!-- The panel carries the bare slug as its id so #<slug> is a real anchor, not just a
+         selector this component interprets - the link checker in CI resolves anchors against
+         the built HTML, and the overview pages deep-link straight to individual patterns. -->
     <div
       v-for="(panel, index) in panels"
       v-show="active === index"
-      :id="`panel-${slugify(panel.label)}`"
+      :id="slugify(panel.label)"
       :key="panel.label"
       role="tabpanel"
       :aria-labelledby="`tab-${slugify(panel.label)}`"
