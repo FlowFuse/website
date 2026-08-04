@@ -105,12 +105,6 @@ Nothing needs configuring for that to happen. Every build resolves the docs in t
 
 `npm run docs` runs that resolution on its own, without a full build, writing `nuxt/content/docs` and `nuxt/public/docs`. Both are generated, and neither is committed on `main`.
 
-If the docs and handbook pages fail to render locally while the rest of the site is fine, you are hitting [nuxt#35253](https://github.com/nuxt/nuxt/issues/35253). Give the build its own temp directory:
-
-```bash
-export TMPDIR=/tmp/nuxt
-```
-
 ## How to add blog posts
 
 See the [Blog section of the Marketing Handbook](https://flowfuse.com/handbook/marketing/content-strategy/blog/) for instructions on writing and publishing blog posts.
