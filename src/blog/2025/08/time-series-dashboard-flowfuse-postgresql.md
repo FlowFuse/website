@@ -261,6 +261,6 @@ You have successfully built a historical data dashboard using FlowFuse Tables an
 
 With FlowFuse Tables now part of the platform, you can build complete industrial applications without juggling external databases or leaving the FlowFuse environment. FlowFuse is now a comprehensive data platform with the ability to collect, connect, transform, store, and visualize data. Combined with FlowFuse's enterprise features, team collaboration, version control, device management, and secure deployments, you have everything needed to take your IIoT projects from prototype to production within one integrated platform.
 
-This means less complexity and faster time to value for your industrial data initiatives. Your historical dashboards, real-time monitoring, and OEE dashboards can all live in the same ecosystem, managed by the same team, with consistent security and governance controls.
+This means less complexity and faster time to value for your industrial data initiatives. Your historical dashboards, real-time monitoring, and OEE dashboards can all live in the same ecosystem, managed by the same team, with consistent security and governance controls. See where a historical view fits alongside the other [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/) running on the shop floor.
 
 Ready to build your own time-series dashboard? [Get started with FlowFuse Tables]({% include "sign-up-url.njk" %}) or [explore our industrial blueprints](/blueprints/)

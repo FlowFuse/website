@@ -41,7 +41,7 @@ _KPIs Tables_
 
 ## Turning Your Data into KPIs
 
-Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything, from raw data collection to the clear, actionable KPIs displayed on your dashboards.
+Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything, from raw data collection to the clear, actionable KPIs displayed on your [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/).
 
 Once the data is collected and stored from the factory floor, this pipeline involves four essential stages:
 
