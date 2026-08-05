@@ -65,7 +65,7 @@ By the end, you'll have a foundation you can extend into broader production moni
 
 Before you start building, make sure you have the following ready:
 
-- **A FlowFuse account.** [Sign up]({% include "sign-up-url.njk" %}) for FlowFuse Cloud, or use a self-hosted instance.
+- **A FlowFuse account.** [Sign up](https://app.flowfuse.com/account/create) for FlowFuse Cloud, or use a self-hosted instance.
 
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
 
