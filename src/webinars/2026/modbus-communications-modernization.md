@@ -35,7 +35,7 @@ In this webinar Mandeep and Kristopher will dig into where Modbus wins outright,
 ## What This Modbus Communications Webinar Will Cover
 
 - The origin story: how Modicon invented Modbus, gave it away royalty-free, and accidentally guaranteed its immortality.
-- How it works: a walk through the detailed and complicated mechanics of ModBus itself, and how you can bridge it to modern solutions like FlowFuse or AVEVA PI.
+- How it works: a walk through the detailed and complicated mechanics of ModBus itself, and how you can bridge it to modern solutions.
 - The honest scorecard: where Modbus beats OPC UA and MQTT on simplicity and ubiquity — and where it loses on security, context, and discovery.
 - Modbus in the wild: what it actually looks like across manufacturing, water, gas, and utility infrastructure where downtime isn't an option - and how consumers still in Industry 3.0 leverage DataOps to transform legacy into potential.
 - Building the bridge: funneling legacy Modbus data into a unified namespace, cloud databases, and AI queries through FlowFuse — no rip-and-replace required.
