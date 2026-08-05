@@ -9,11 +9,15 @@ const props = withDefaults(defineProps<{
     event: string
     href: string
     label: string
-    variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'text'
+    variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'text' | 'ghost'
     position: string
     plan?: string
     icon?: string
     size?: 'sm' | 'md' | 'lg'
+    // Only meaningful for variant="ghost" - which text color to use, since a
+    // ghost button has no background of its own to imply one. "white" exists
+    // because the homepage hero's "Try it out" sits on a dark photo.
+    color?: 'primary' | 'highlight' | 'white'
     // Only meaningful for variant="text" - a real button (solid/outline) stays
     // uppercase per the site's ff-btn convention, but a text-only link (e.g.
     // "Free Trial" in the nav, "Sign In" in the utility bar) was never
@@ -39,6 +43,13 @@ const VARIANT_MAP: Record<string, { color: string, variant: string }> = {
     highlight: { color: 'highlight', variant: 'solid' },
     'highlight-outlined': { color: 'highlight', variant: 'outline' },
     text: { color: 'primary', variant: 'link' },
+    ghost: { color: 'primary', variant: 'ghost' },
+}
+
+const GHOST_COLOR_CLASSES: Record<string, string> = {
+    primary: 'text-primary hover:text-primary/75',
+    highlight: 'text-highlight hover:text-highlight/75',
+    white: 'text-white hover:text-gray-200',
 }
 
 const uiVariant = computed(() => VARIANT_MAP[props.variant])
@@ -63,6 +74,13 @@ const uiOverrides = computed(() => {
     if (isTextVariant.value) {
         const padding = props.padded ? 'px-3 py-4' : 'p-0'
         return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-medium no-underline ${padding}` }
+    }
+    // Same metrics as a real button (bold, uppercase, text-base, 8px/16px
+    // padding) since a ghost button IS one visually - it just has no
+    // background/border, e.g. the homepage hero's "Try it out" over a photo.
+    if (props.variant === 'ghost') {
+        const colorClass = GHOST_COLOR_CLASSES[props.color || 'primary']
+        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline px-4 py-2 text-base ${colorClass}` }
     }
     return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline px-4 py-2 text-base` }
 })
