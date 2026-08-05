@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
-const { data: pages } = await useBestPracticePages()
+const { data: pages } = await useApplicationGuidePages()
 
 const groups = computed(() => GUIDES.map(guide => ({
     ...guide,
@@ -9,16 +9,16 @@ const groups = computed(() => GUIDES.map(guide => ({
 </script>
 
 <template>
-  <nav aria-label="Best Practice">
-    <NuxtLink to="/bestpractice/" class="bp-nav-back">Both guides</NuxtLink>
-    <div v-for="group in groups" :key="group.id" class="bp-nav-group">
-      <p class="bp-nav-group-title">{{ group.title }}</p>
-      <ul class="bp-nav-list">
+  <nav aria-label="FlowFuse Application Guide">
+    <NuxtLink to="/application-guide/" class="ag-nav-back">Both guides</NuxtLink>
+    <div v-for="group in groups" :key="group.id" class="ag-nav-group">
+      <p class="ag-nav-group-title">{{ group.title }}</p>
+      <ul class="ag-nav-list">
         <li v-for="page in group.pages" :key="page.path">
           <NuxtLink
             :to="page.path"
-            class="bp-nav-link"
-            :class="{ 'bp-nav-link--active': route.path === page.path }"
+            class="ag-nav-link"
+            :class="{ 'ag-nav-link--active': route.path === page.path }"
           >{{ page.title }}</NuxtLink>
         </li>
       </ul>

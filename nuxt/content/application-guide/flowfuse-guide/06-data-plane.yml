@@ -221,7 +221,7 @@ blocks:
       Node-RED decision, not a platform data target.
     link:
       label: Node-RED guide →
-      to: /bestpractice/node-red-guide/overview/
+      to: /application-guide/node-red-guide/overview/
   - type: linkCards
     columns: 1
     items:
@@ -229,4 +229,4 @@ blocks:
         body: The architectures all sit on this data plane — choose OT, IT or IIoT for where your instances live.
         link:
           label: Architectures →
-          to: /bestpractice/flowfuse-guide/architectures/
+          to: /application-guide/flowfuse-guide/architectures/

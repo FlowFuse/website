@@ -36,17 +36,17 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Best Practice guides are a `data` collection (see content.config.ts), so their routes
+// The Application Guide pages are a `data` collection (see content.config.ts), so their routes
 // are not discoverable from @nuxt/content page paths. Derive them from the file names, which
 // are NN-<slug>.yml and match each file's `slug` field.
-function collectBestPracticeRoutes(dir: string): string[] {
-    const routes = ['/bestpractice/']
+function collectApplicationGuideRoutes(dir: string): string[] {
+    const routes = ['/application-guide/']
     for (const guide of readdirSync(dir)) {
         const guideDir = join(dir, guide)
         if (!statSync(guideDir).isDirectory()) continue
         for (const file of readdirSync(guideDir)) {
             if (!file.endsWith('.yml')) continue
-            routes.push(`/bestpractice/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
+            routes.push(`/application-guide/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
         }
     }
     return routes
@@ -84,10 +84,10 @@ export default defineNuxtConfig({
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
         ],
-        // /bestpractice is deliberately unlinked in its first iteration, so it should not be
+        // /application-guide is deliberately unlinked in its first iteration, so it should not be
         // advertised to search engines either. Static-route discovery finds the section landing
         // page on its own; this keeps it out until the section is linked and ready to index.
-        exclude: ['/_studio/**', '/api/**', '/bestpractice', '/bestpractice/**'],
+        exclude: ['/_studio/**', '/api/**', '/application-guide', '/application-guide/**'],
     },
 
     robots: {
@@ -183,7 +183,7 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
-                    ...collectBestPracticeRoutes(join(__dirname, 'content/bestpractice')),
+                    ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
                     ...changelogListingRoutes,
                     ...changelog.routes,

@@ -59,15 +59,15 @@ export default defineContentConfig({
                 sitemap: defineSitemapSchema(),
             })
         }),
-        // The Best Practice guides are strongly structured rather than free prose: each page
+        // The Application Guide pages are strongly structured rather than free prose: each page
         // is a list of blocks, and most blocks are a tabbed set of patterns with a diagram and
         // fixed sections. Authoring that as data keeps every page consistent and makes a copy
-        // edit a YAML edit. Rendered by pages/bestpractice/[guide]/[slug].vue.
+        // edit a YAML edit. Rendered by pages/application-guide/[guide]/[slug].vue.
         // File names must be NN-<slug>.yml and match the `slug` field - nuxt.config's
         // prerender list derives the routes from the file names.
-        bestpractice: defineCollection({
+        applicationGuide: defineCollection({
             type: 'data',
-            source: 'bestpractice/**/*.yml',
+            source: 'application-guide/**/*.yml',
             schema: z.object({
                 guide: z.enum(['flowfuse-guide', 'node-red-guide']),
                 slug: z.string(),

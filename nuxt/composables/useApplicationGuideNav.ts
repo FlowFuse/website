@@ -1,6 +1,6 @@
 // Shared by the section landing page, the guide pages and the left nav so all three
-// agree on order and on the /bestpractice/{guide}/{slug}/ route shape.
-export interface BestPracticePageSummary {
+// agree on order and on the /application-guide/{guide}/{slug}/ route shape.
+export interface ApplicationGuidePageSummary {
     guide: string
     slug: string
     title: string
@@ -24,22 +24,22 @@ export const GUIDES = [
 
 export const guideById = (id: string) => GUIDES.find(guide => guide.id === id)
 
-export const useBestPracticePages = () => useAsyncData('bestpractice-nav', async () => {
-    const pages = await queryCollection('bestpractice').all()
+export const useApplicationGuidePages = () => useAsyncData('application-guide-nav', async () => {
+    const pages = await queryCollection('applicationGuide').all()
 
     return pages
-        .map((page: Record<string, unknown>): BestPracticePageSummary => ({
+        .map((page: Record<string, unknown>): ApplicationGuidePageSummary => ({
             guide: page.guide as string,
             slug: page.slug as string,
             title: page.title as string,
             navOrder: (page.navOrder as number) ?? Infinity,
             blurb: page.blurb as string | undefined,
-            path: `/bestpractice/${page.guide}/${page.slug}/`,
+            path: `/application-guide/${page.guide}/${page.slug}/`,
         }))
         .sort((a, b) => a.navOrder - b.navOrder)
 }, {
     getCachedData: (key, nuxtApp) => nuxtApp.payload.data[key] ?? nuxtApp.static.data[key],
 })
 
-export const pagesForGuide = (pages: BestPracticePageSummary[] | null, guide: string) =>
+export const pagesForGuide = (pages: ApplicationGuidePageSummary[] | null, guide: string) =>
     (pages ?? []).filter(page => page.guide === guide)

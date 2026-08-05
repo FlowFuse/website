@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { GuidePanelContent } from '~/types/bestpractice'
+import type { GuidePanelContent } from '~/types/application-guide'
 
 // The tab is reflected in the URL hash so a specific pattern can be linked to
 // directly - these pages get shared a panel at a time in customer conversations.
@@ -35,15 +35,15 @@ const select = (index: number) => {
 
 <template>
   <div>
-    <div class="bp-tabs" role="tablist">
+    <div class="ag-tabs" role="tablist">
       <button
         v-for="(panel, index) in panels"
         :id="`tab-${slugify(panel.label)}`"
         :key="panel.label"
         type="button"
         role="tab"
-        class="bp-tab"
-        :class="{ 'bp-tab--active': active === index }"
+        class="ag-tab"
+        :class="{ 'ag-tab--active': active === index }"
         :aria-selected="active === index"
         :aria-controls="slugify(panel.label)"
         @click="select(index)"
@@ -58,7 +58,7 @@ const select = (index: number) => {
       v-show="active === index"
       :id="slugify(panel.label)"
       :key="panel.label"
-      class="bp-panel"
+      class="ag-panel"
       role="tabpanel"
       :aria-labelledby="`tab-${slugify(panel.label)}`"
     >

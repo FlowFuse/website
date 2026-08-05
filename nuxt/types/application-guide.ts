@@ -1,4 +1,4 @@
-// Shapes for the /bestpractice guides. The content lives in nuxt/content/bestpractice/**.yml
+// Shapes for the /application-guide guides. The content lives in nuxt/content/application-guide/**.yml
 // as a `data` collection, so these types are the contract between the YAML and the Guide*
 // components that render it.
 
@@ -100,7 +100,7 @@ export interface GuideBlock {
     link?: GuideLink
 }
 
-export interface BestPracticePage {
+export interface ApplicationGuidePage {
     guide: string
     slug: string
     title: string
@@ -110,7 +110,7 @@ export interface BestPracticePage {
 }
 
 /** The subset the left nav and the section landing page need. */
-export interface BestPracticePageSummary {
+export interface ApplicationGuidePageSummary {
     guide: string
     slug: string
     title: string

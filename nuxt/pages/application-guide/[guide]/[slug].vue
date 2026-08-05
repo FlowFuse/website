@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'bestpractice' })
+definePageMeta({ layout: 'application-guide' })
 
 const route = useRoute()
 const guideId = computed(() => String(route.params.guide))
@@ -7,12 +7,12 @@ const slug = computed(() => String(route.params.slug))
 
 const guide = computed(() => guideById(guideId.value))
 
-const { data: pages } = await useBestPracticePages()
+const { data: pages } = await useApplicationGuidePages()
 
 const { data: page } = await useAsyncData(
-    () => `bestpractice-${guideId.value}-${slug.value}`,
+    () => `application-guide-${guideId.value}-${slug.value}`,
     async () => {
-        const all = await queryCollection('bestpractice').all()
+        const all = await queryCollection('applicationGuide').all()
         return all.find((entry: Record<string, unknown>) =>
             entry.guide === guideId.value && entry.slug === slug.value
         ) ?? null
@@ -33,7 +33,7 @@ const next = computed(() =>
         : null
 )
 
-const fullTitle = computed(() => `${page.value?.title} • ${guide.value?.title} • FlowFuse`)
+const fullTitle = computed(() => `${page.value?.title} • ${guide.value?.title} • FlowFuse Application Guide`)
 const description = computed(() => page.value?.blurb || guide.value?.tagline || '')
 
 useSeoMeta({
@@ -48,24 +48,24 @@ useSeoMeta({
 })
 
 defineOgImage('Default', {
-    title: page.value?.title ?? 'Best Practice',
-    section: guide.value?.title ?? 'Best Practice',
+    title: page.value?.title ?? 'FlowFuse Application Guide',
+    section: guide.value?.title ?? 'FlowFuse Application Guide',
 })
 </script>
 
 <template>
   <!-- The guide nav is in the layout, so it is present on every page in the section. -->
-  <div id="bp-content" class="bp-main">
-    <div class="bp-hero">
-      <p class="bp-hero-guide">{{ guide?.title }}</p>
-      <h1 class="bp-title">{{ page?.title }}</h1>
-      <p v-if="page?.blurb" class="bp-subtitle">{{ page.blurb }}</p>
+  <div id="ag-content" class="ag-main">
+    <div class="ag-hero">
+      <p class="ag-hero-guide">{{ guide?.title }}</p>
+      <h1 class="ag-title">{{ page?.title }}</h1>
+      <p v-if="page?.blurb" class="ag-subtitle">{{ page.blurb }}</p>
     </div>
 
-    <div class="bp-body">
+    <div class="ag-body">
       <GuideBlocks :blocks="(page?.blocks ?? []) as any" />
 
-      <nav class="bp-paging">
+      <nav class="ag-paging">
         <NuxtLink v-if="previous" :to="previous.path">← {{ previous.title }}</NuxtLink>
         <span v-else />
         <NuxtLink v-if="next" :to="next.path">{{ next.title }} →</NuxtLink>
