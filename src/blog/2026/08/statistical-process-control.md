@@ -2,7 +2,7 @@
 title: "What Is Statistical Process Control in Manufacturing"
 subtitle: "How SPC charts work, how they apply on the shop floor, and what to look for in SPC software."
 description: "Statistical process control explained: how SPC charts work, how they apply in the manufacturing space, and what to look for in SPC software."
-date: 2026-08-04
+date: 2026-08-05
 authors: ["sumit-shinde"]
 image: /blog/2026/08/images/what-is-statistical-process-control.png
 keywords: statistical process control
