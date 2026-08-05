@@ -4,7 +4,7 @@ subtitle: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetectio
 description: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 date: 2025-09-25
 authors: ["greg-stoutenburg"]
-image: blog/2025/09/images/2.22-release.png
+image: /blog/2025/09/images/2.22-release.png
 tags:
    - flowfuse
    - news
@@ -112,7 +112,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

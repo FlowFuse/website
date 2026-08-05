@@ -321,12 +321,20 @@ flow looks like and how to use them. Furthermore it automatically provides a
 download and copy button too for users to use what they've learned.
 
 To render a flow you'll need to export it to JSON in Node-RED and paste it in a
-`renderFlow` shortcode:
+`render-flow` MDC component, as a fenced `json` code block:
+
+````text
+::render-flow
+```json
+<flowJSONHere>
+```
+::
+````
+
+To override the default height (in pixels), pass it as a bound prop:
 
 ```text
-{% renderFlow %}
-<flowJSONHere>
-{% endrenderFlow %}
+::render-flow{:height="300"}
 ```
 
 ### Writing content

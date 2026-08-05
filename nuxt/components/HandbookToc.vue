@@ -8,9 +8,10 @@ interface TocLink {
 
 defineProps<{
     links?: TocLink[]
+    ui?: Record<string, string>
 }>()
 </script>
 
 <template>
-  <UContentToc v-if="links?.length" highlight highlight-color="primary" :links="links" />
+  <UContentToc v-if="links?.length" highlight highlight-color="primary" :links="links" :ui="ui" />
 </template>

@@ -3,7 +3,7 @@ title: Tulip Operation Calling Event Report
 subtitle: Thoughts and insighs from Tulip's recent customer event
 description: Tulip's recent Operation Calling customer event was held in Boston. Here are some comments based on attending the event.
 authors: ["ian-skerrett"]
-image: blog/2023/09/images/operation-calling.png
+image: /blog/2023/09/images/operation-calling.png
 date: 2023-09-14
 tags:
     - posts

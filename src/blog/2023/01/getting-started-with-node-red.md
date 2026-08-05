@@ -24,7 +24,7 @@ First, you'll need to get an installation of Node-RED up and running. There are 
 
 #### FlowFuse
 
-To get Node-RED running on FlowFuse [sign up as a new user]({% include "sign-up-url.njk" %}). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
+To get Node-RED running on FlowFuse [sign up as a new user](https://app.flowfuse.com/account/create). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
 
 Once that instance has booted up you can access Node-RED by pressing "Open Editor".
 
@@ -80,7 +80,8 @@ In addition to the built-in nodes, Node-RED also has a palette manager feature w
 
 If you want to view this flow you can import it using the code below. Copy the code then select Import from the top right menu in Node-RED. Paste the code into the field then press Import.
 
-{% renderFlow %}
+::render-flow
+```json
 [
     {
         "id": "a742e7a95697bb40",
@@ -138,7 +139,8 @@ If you want to view this flow you can import it using the code below. Copy the c
         ]
     }
 ]
-{% endrenderFlow %}
+```
+::
 
 ### What's Next?
 

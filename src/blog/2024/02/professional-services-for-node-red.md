@@ -4,7 +4,7 @@ subtitle: Professional Services for Node-RED, When and Why?
 description: Discover the benefits of investing in professional services for Node-RED development.
 date: 2024-02-05
 authors: ["grey-dziuba"]
-image: blog/2024/01/images/professional-services-for-your-node-red.png
+image: /blog/2024/01/images/professional-services-for-your-node-red.png
 tags:
     - posts
     - flowfuse

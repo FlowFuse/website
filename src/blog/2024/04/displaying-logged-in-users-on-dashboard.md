@@ -140,8 +140,8 @@ To display user information on the dashboard we will use Vue’s [Teleport](http
         <div class="user-info">
             <!-- Displaying user image -->
             <img :src="setup.socketio.auth.user.image" />
-            <!-- Greeting the user -->{% raw %}
-            <span>Hi, {{ setup.socketio.auth.user.name }}</span>{% endraw %}
+            <!-- Greeting the user -->
+            <span>Hi, {{ setup.socketio.auth.user.name }}</span>
         </div>
     </Teleport>
 </template>

@@ -4,7 +4,7 @@ subtitle: Data isn't created equal, some data doesn't fit the UNS
 description: Explore when to utilize the Unified Namespace (UNS) architecture and when to seek alternatives. Consider latency, handling large files, data security, and access.
 date: 2024-01-31
 authors: ["zeger-jan-van-de-weg"]
-image: blog/2024/01/images/when-not-to-use-the-uns.png
+image: /blog/2024/01/images/when-not-to-use-the-uns.png
 tags:
     - posts
     - flowfuse

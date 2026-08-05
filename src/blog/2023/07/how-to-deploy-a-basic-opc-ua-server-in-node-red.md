@@ -5,7 +5,7 @@ description: Introduction to OPC-UA and how to deploy a Node-RED server flow.
 lastUpdated: 2026-06-03
 date: 2023-07-13
 authors: ["richard-meyer"]
-image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
+image: /blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
 keywords: opc ua server, opc ua server free, opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, node red opcua, node-red opcua, opcua node red, opcua nodered
 tags:
    - posts
@@ -91,7 +91,7 @@ Traditionally, fieldbus protocols transmit only raw data from field devices (ie,
 !["Fieldbus Model"](./images/opc-ua-1/fieldbus-model.png "Fieldbus Model")
 
 
-In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the [OPC Information model](lhttps://reference.opcfoundation.org/Core/Part5/v104/docs/), and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
+In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the [OPC Information model](https://reference.opcfoundation.org/Core/Part5/v104/docs/), and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
 
 !["OPC Information Model"](./images/opc-ua-1/opc-information-model.png "OPC Information Model")
 Devices can be described as objects that give a holistic view of the device, beyond simply the raw value.  To construct a device object, we can take different individual attributes associated with a device, such as the transmitter raw value, transmitter fault flag, alarm setpoint, and combine them, similar to how user-defined datatypes (UDTs) are objects used to represent devices in PLCs.  The information model also defines a folder structure, to allow devices information to reside in a structured hierarchy.  Using the example temperature transmitter above, an example folder structure can be constructed as follows:

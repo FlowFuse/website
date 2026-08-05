@@ -29,7 +29,7 @@ tldr: "FlowFuse 2.30 introduces agentic application building: describe the indus
 
 FlowFuse 2.30 lets FlowFuse Expert build industrial applications for you from a description. Tell Expert what you need, and it assembles it on your workspace.
 
-## FlowFuse Expert Builds Your Industrial Application {#expert-application-building}
+## FlowFuse Expert Builds Your Industrial Application
 
 *FlowFuse Expert is our integrated AI assistant across FlowFuse's website, platform, and in the immersive Node-RED editor.*
 
@@ -44,7 +44,7 @@ Start your agentic development with for example:
 - "A shift handover screen showing outstanding alarms and recent operator notes"
 - "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
-![FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt](src/blog/2026/05/images/expert-application-building.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+![FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt](/blog/2026/05/images/expert-application-building.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt.</figcaption>
 
 ### Availability

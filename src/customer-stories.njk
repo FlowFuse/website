@@ -13,7 +13,7 @@ meta:
     <div class="px-6">
         <h1>Customer Stories</h1>
     </div>
-    {% if collections.posts.length > 0 %}
+    {% if collections.stories.length > 0 %}
     <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-6">
         {%- for item in collections.stories | sort(attribute='item.date') | reverse -%}
         {{ storyTile(title=item.data.title, url=item.url, brand=item.data.story.brand, logo=item.data.logo, image=item.data.image) }}

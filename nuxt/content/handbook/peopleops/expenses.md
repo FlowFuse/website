@@ -222,7 +222,7 @@ useful for particular tasks, efforts and processes at FlowFuse.
 
 If you are seeking a license for software we do not currently use, file an issue in the [flowfuse/admin](https://github.com/FlowFuse/admin/issues/new?template=vendor-process.md) project summarizing the costs associated with the license and the value the software would provide. Assign this issue to the CEO or CTO, and follow the steps in the issue to get the necessary approvals before proceeding with the acquisition. If the new software would modify the way in which the company operates, also raise this as a PR to the Handbook.
 
-When seeking an additional license for existing software we pay for, file an
+When seeking an additional license for existing software we pay for, or renewing existing software, file an
 issue in the [flowfuse/admin](https://github.com/FlowFuse/admin/issues/new?template=vendor-process.md) project to request it
 to be provisioned with a justification on the expenditure. Assign this issue to
 the CEO or CTO.

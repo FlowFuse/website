@@ -31,11 +31,11 @@ FlowFuse 2.29 gives teams more control over how flows move through their stack, 
 
 <!--more-->
 
-## FlowFuse Expert, Available to More Teams and More Capable {#expert}
+## FlowFuse Expert, Available to More Teams and More Capable
 
 *FlowFuse Expert is our integrated AI assistant, one consistent surface across the FlowFuse website, platform, and immersive Node-RED editor for troubleshooting, building, and getting targeted help.*
 
-### Self-Hosted Enterprise {#expert-self-hosted}
+### Self-Hosted Enterprise
 
 FlowFuse Expert was previously only available to cloud customers. Self-hosted enterprise teams had no equivalent surface for in-context troubleshooting and guidance.
 
@@ -43,13 +43,13 @@ Expert is now available for self-hosted enterprise FlowFuse instances. Your team
 
 [Contact us](/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted) to enable Expert on your self-hosted environment.
 
-### Take Action Directly from Expert Responses {#expert-actions}
+### Take Action Directly from Expert Responses
 
 Expert responses previously surfaced information and suggestions. Acting on them, importing a flow, selecting relevant nodes, opening a new tab, required switching out of the conversation and doing it manually.
 
 Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation.
 
-![Expert action links demo](src/blog/2026/04/images/expert-action-links.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+![Expert action links demo](/blog/2026/04/images/expert-action-links.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>Expert responses can now act on your behalf, click a link and Expert opens a tab, selects nodes, or imports a flow directly in your editor.</figcaption>
 
 **Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.
@@ -61,11 +61,11 @@ Expert responses can now include clickable action links. Click one and Expert pe
 - You act on Expert suggestions in one click instead of manually applying them
 - You stay in the conversation while Expert works in your editor
 
-## More Visibility and Control Across Your Deployment Workflow {#deployment-workflow}
+## More Visibility and Control Across Your Deployment Workflow
 
 Managing flows across environments means tracking what changed, when, and by whom. When tooling gaps introduce friction here, or leave your version control workflow fragmented, they slow teams down at exactly the wrong moment.
 
-### Azure DevOps Git Integration {#azure-devops}
+### Azure DevOps Git Integration
 
 FlowFuse's GitOps support previously required GitHub. Teams standardised on Azure DevOps had no native way to include Node-RED flows in their existing version control workflow.
 
@@ -77,11 +77,11 @@ FlowFuse 2.29 adds Azure DevOps as a supported Git provider. You can now push an
 - Your Node-RED flows participate in the same version control workflow as the rest of your stack
 - You authenticate with Azure Personal Access Tokens, with no secondary tooling required
 
-### See Exactly What Changed in a Snapshot {#snapshot-diff}
+### See Exactly What Changed in a Snapshot
 
 FlowFuse's snapshot comparison view showed flows side by side, but the visual alone doesn't always tell the whole story. You could see that a node was different, but not which specific property changed. When a function node's code changed, you couldn't identify which lines were different without manually diffing two code blocks outside of FlowFuse.
 
-![Snapshot diff demo](src/blog/2026/04/images/snapshot-comparision-view-2.29.png){data-zoomable style="border: 2px solid #E5E7EB;"}
+![Snapshot diff demo](/blog/2026/04/images/snapshot-comparision-view-2.29.png){data-zoomable style="border: 2px solid #E5E7EB;"}
 <figcaption>The compare dialog now shows exactly which properties changed and highlights line-level differences in function code, templates, and JSON, no manual diffing required.</figcaption>
 
 The compare dialog now includes a property-level diff sidebar: structural property changes old to new at a glance, and git-style line diffs for function code, template HTML, and JSON. A navigation bar steps through every changed, added, or deleted node with arrow key shortcuts. The canvas highlights and scrolls to the current node as you navigate.
