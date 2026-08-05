@@ -251,6 +251,33 @@ Collection config: `src/customer-stories/customer-stories.json`
 | `layouts/story.njk` | Customer stories |
 | `layouts/nohero.njk` | General pages without hero |
 
+## Call-to-Action components
+
+**Nuxt only** — 11ty pages still use hand-written `<a class="ff-btn ...">` links; these components have no 11ty equivalent yet.
+
+There are exactly four CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same four URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
+
+| Component | href | Fixed label |
+|---|---|---|
+| `nuxt/components/CtaSignUp.vue` | `{site.appURL}/account/create` | "Free Trial" on `position="main-nav"`/`"mobile-cta-bar"`, else "Try it out" |
+| `nuxt/components/CtaSignIn.vue` | `site.appURL` | "Sign In" |
+| `nuxt/components/CtaContactUs.vue` | `/contact-us/` | "Contact Us" |
+| `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Book a Demo" |
+
+All four are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a fifth destination-specific component is needed — not a prop that lets callers override copy on these four.
+
+**Props** (all optional except `variant`/`position`): `variant` (`primary` | `primary-outlined` | `highlight` | `highlight-outlined` | `text` | `ghost`), `position` (free string, sent to PostHog — describes where on the page, e.g. `hero`, `pricing-card`), `plan` (e.g. `edge`/`hub`/`fleet`, sent to PostHog), `color` (`primary`|`highlight`|`white`, only for `variant="ghost"`, which has no background of its own), `icon` (Nuxt Icon name for a trailing icon), `size`, `uppercase`, `padded` (only for `variant="text"` — whether it has the header-`<ul>` link padding or is true zero-padding inline text).
+
+Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`.
+
+### Gotchas already solved here (don't re-discover them)
+
+- **Vue auto-defaults unspecified `boolean` props to `false`, not `undefined`.** Any prop typed as `boolean` in a type-only `defineProps<{...}>()` needs `withDefaults(defineProps<...>(), { theProp: undefined })` if the code distinguishes "not passed" from "explicitly false" (e.g. via `??`) — otherwise the `??` fallback never triggers, since `false ?? x` is `false`.
+- **Nuxt UI's `ui` prop REPLACES a slot's class string, it doesn't merge with it.** `:ui="{ base: 'normal-case' }"` on a `UButton` wipes out app.config's `'uppercase font-semibold no-underline'` entirely rather than just adding `normal-case`. `CtaButton.vue`'s `uiOverrides` computed always builds the *complete* class string for whichever branch applies, never a partial diff.
+- **`.light` scoping silently overrides the brand color override.** Nuxt UI's colors runtime plugin (`@nuxt/ui/dist/runtime/plugins/colors.js`) injects its own `<style>` tag on every page load with `@layer theme { :root, :host, .light { --ui-primary: var(--ui-color-primary-500); ... } }` — shade 500/400 is hardcoded there, not configurable via `app.config.ts`. The handbook layout wraps content in a `.light` div, which matches that rule *directly* (a direct match always beats an inherited value), silently downgrading every button inside handbook prose from the brand's indigo-600/red-600 to indigo-500/red-500. Fixed in `nuxt/assets/css/theme.css` with an unlayered `.handbook-content, .handbook-content.light { --ui-primary: ...; --ui-highlight: ...; }` (unlayered so it can't lose to `@layer theme` regardless of specificity).
+- **`.handbook-content a` must exclude Nuxt UI components, or use `:where()`.** A plain `.handbook-content a { color: ... }` rule (even layered) beats a `UButton`'s own utility classes if it has higher specificity, flattening any Cta* button rendered inside handbook markdown to a plain link color. Fixed by moving the rule into `@layer base` and using `:where(a)` to zero out its added specificity, so any component's own classes win normally (same file as above).
+- **`not-prose` on a wrapper also strips Tailwind Typography's code-block styling** (the dark background on `<pre>`) for anything nested inside it, not just its own prose text styling. `nuxt/components/content/CtaExample.vue` (the handbook's live example gallery) doesn't use `not-prose` for this reason, even though it also renders non-prose button/grid markup.
+
 ## Naming conventions
 
 - All slugs: **kebab-case**
