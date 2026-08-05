@@ -131,7 +131,7 @@ The site has exactly four call-to-action destinations, each with **fixed copy** 
 
 If a page needs different wording than what's listed above, that's a sign the destination needs a fifth CTA, not a new prop on these four or custom inline code.
 
-**These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`) — most of the site is still served by Eleventy (see the [Nuxt migration](https://github.com/FlowFuse/website#nuxt-migration) status in the codebase README) and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
+**These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
 
 ### Choosing a style
 
@@ -223,13 +223,6 @@ The other three components work exactly the same way — same `variant` options,
   ::
   ```
   :::
-
-  :::cta-example{component="CtaSignIn" variant="text"}
-  ```mdc
-  ::CtaSignIn{variant="text" position="body"}
-  ::
-  ```
-  :::
 ::
 
 ### Props reference
@@ -241,7 +234,6 @@ The other three components work exactly the same way — same `variant` options,
 | `plan`     | No       | Which pricing plan the button belongs to, if relevant (e.g. `edge`, `hub`, `fleet`) — also shows up in analytics                              |
 | `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |
 | `icon`     | No       | An icon name to show after the button text, e.g. `i-lucide-arrow-right`                                                                       |
-| `size`     | No       | `sm`, `md`, or `lg`                                                                                                                           |
 
 ## Requesting New Website Pages
 

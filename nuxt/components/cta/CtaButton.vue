@@ -34,16 +34,36 @@ const props = withDefaults(defineProps<{
     padded?: boolean
 }>(), { uppercase: undefined })
 
-// Maps our ff-btn-style variant names to UButton's color/variant pair.
-// UButton's own "variant" means solid/outline/link, so it's a different axis
-// than ours - keep the naming distinct to avoid confusing the two.
-const VARIANT_MAP: Record<string, { color: string, variant: string }> = {
-    primary: { color: 'primary', variant: 'solid' },
-    'primary-outlined': { color: 'primary', variant: 'outline' },
-    highlight: { color: 'highlight', variant: 'solid' },
-    'highlight-outlined': { color: 'highlight', variant: 'outline' },
-    text: { color: 'primary', variant: 'link' },
-    ghost: { color: 'primary', variant: 'ghost' },
+// Maps our ff-btn-style variant names to UButton's color/variant pair, plus
+// the hover/active classes that reproduce .ff-btn's original 11ty behavior:
+// a real shade-700 fill with white text, not UButton's default of lightening
+// via opacity (hover:bg-primary/75 - the *same* color at 75% opacity reads as
+// lighter against a white page, the opposite of 11ty's darker hover). Written
+// out as complete literal strings (not built from a `${hue}` template) since
+// Tailwind's build-time class scanner can't see interpolated class names.
+const VARIANT_MAP: Record<string, { color: string, variant: string, hover: string }> = {
+    primary: {
+        color: 'primary',
+        variant: 'solid',
+        hover: 'hover:bg-indigo-700 hover:text-white active:bg-indigo-700 active:text-white',
+    },
+    'primary-outlined': {
+        color: 'primary',
+        variant: 'outline',
+        hover: 'hover:bg-indigo-700 hover:text-white hover:border-indigo-700 active:bg-indigo-700 active:text-white active:border-indigo-700',
+    },
+    highlight: {
+        color: 'highlight',
+        variant: 'solid',
+        hover: 'hover:bg-red-700 hover:text-white active:bg-red-700 active:text-white',
+    },
+    'highlight-outlined': {
+        color: 'highlight',
+        variant: 'outline',
+        hover: 'hover:bg-red-700 hover:text-white hover:border-red-700 active:bg-red-700 active:text-white active:border-red-700',
+    },
+    text: { color: 'primary', variant: 'link', hover: '' },
+    ghost: { color: 'primary', variant: 'ghost', hover: '' },
 }
 
 const GHOST_COLOR_CLASSES: Record<string, string> = {
@@ -82,7 +102,7 @@ const uiOverrides = computed(() => {
         const colorClass = GHOST_COLOR_CLASSES[props.color || 'primary']
         return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline px-4 py-2 text-base ${colorClass}` }
     }
-    return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline px-4 py-2 text-base` }
+    return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline px-4 py-2 text-base ${uiVariant.value.hover}` }
 })
 
 function onClick () {
