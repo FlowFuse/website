@@ -99,4 +99,4 @@ forge:
 
 NOTE: For FlowFuse Helm chart v2.84.0 and onward the Expert central broker address is configured by default, so `forge.expert.broker.address` and `forge.expert.broker.port` no longer need to be set.
 
-NOTE: For FlowFuse v2.29.0 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults
+NOTE: For FlowFuse v2.33.2 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults
