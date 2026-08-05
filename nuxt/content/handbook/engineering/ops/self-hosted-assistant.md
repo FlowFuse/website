@@ -49,6 +49,21 @@ docker compose stop forge
 docker compose up -d forge
 ```
 
+#### Broker configuration
+
+Expert chat is delivered over the platform's Team Broker, which bridges chat requests to the central Expert broker on FlowFuse Cloud. The latest Docker Compose template already enables the Team Broker and pre-configures this bridge, so no changes to the compose file are needed. A valid `EXPERT_TOKEN` in `.env` is all that is required.
+
+Do not edit the broker or expert configuration inside the compose file directly. Those values are managed by the template and any manual changes are overwritten on the next upgrade.
+
+If you need to override a default, use these `.env` variables. Leave them unset to keep the template defaults:
+
+| Variable | Purpose |
+| --- | --- |
+| `EXPERT_BROKER_SERVER` | Central Expert broker host (defaults to `expert-broker.flowfuse.com`) |
+| `BROKER_API_KEY` / `BROKER_API_SECRET` | Local EMQX admin API credentials used to provision the bridge |
+
+None of these changes should be made without updating to the latest release of the `docker-compose.yml` file first.
+
 ### Kubernetes
 
 The feature is enabled by adding the tokens to the values passed to the Helm chart.
@@ -59,8 +74,8 @@ The feature is enabled by adding the tokens to the values passed to the Helm cha
 - `forge.expert.enabled` should be set to `true`
 - `forge.expert.service.url` should be set to `https://expert.flowfuse.com/v4/expert`
 - `forge.expert.service.token` should be set to the provided Expert Token
-- `forge.expert.broker.address` should be set to `expert-broker.flowfuse.com`
-- `forge.expert.broker.port` should be set to `8883`
+- `forge.broker.enabled` should be set to `true` (the Team Broker requires the EMQX operator to be installed)
+- `forge.broker.teamBroker.enabled` should be set to `true` (required for Expert chat)
 
 Example:
 
@@ -76,9 +91,12 @@ forge:
      service:
        url: https://expert.flowfuse.com/v4/expert
        token: Provided-Expert-Token
-     broker:
-       address: expert-broker.flowfuse.com
-       port: 8883
+   broker:
+     enabled: true
+     teamBroker:
+       enabled: true
 ```
 
-NOTE: For FlowFuse v2.29.0 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults
+NOTE: For FlowFuse Helm chart v2.84.0 and onward the Expert central broker address is configured by default, so `forge.expert.broker.address` and `forge.expert.broker.port` no longer need to be set.
+
+NOTE: For FlowFuse v2.33.2 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults

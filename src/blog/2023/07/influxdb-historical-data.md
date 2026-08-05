@@ -5,7 +5,7 @@ description: Discover how to build a Historical Data Dashboard with InfluxDB and
 date: 2023-07-18
 lastUpdated: 2025-07-14
 authors: ["andrew-lynch"]
-image: blog/2023/07/images/historical-data-dashboard.png
+image: /blog/2023/07/images/historical-data-dashboard.png
 keywords: Node-RED InfluxDB, Time-series data, Industrial dashboard, Historical data visualization, IoT dashboard, Serial port sensor data,  Live and historical charts
 tags:
     - posts
@@ -247,4 +247,4 @@ This is where **FlowFuse** comes in. It takes your existing Node-RED flows and a
 
 Your flows continue to work just as they are, FlowFuse simply makes them production-ready.
 
-[Try FlowFuse free for 30 days]({% include "sign-up-url.njk" %}) and see how it transforms Node-RED into a scalable, enterprise-ready platform.
+[Try FlowFuse free for 30 days](https://app.flowfuse.com/account/create) and see how it transforms Node-RED into a scalable, enterprise-ready platform.

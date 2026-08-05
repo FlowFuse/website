@@ -1,5 +1,7 @@
 ---
 title: "Sales"
+navigation:
+  order: 1
 ---
 
 # Sales

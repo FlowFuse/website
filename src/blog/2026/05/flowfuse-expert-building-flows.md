@@ -22,7 +22,7 @@ FlowFuse Expert now builds applications for you. Describe what you need, and the
 
 <!--more-->
 
-We shared the initial announcement in the [2.30 release post](/blog/2026/05/flowfuse-release-2-30/#expert-application-building). This post walks through building your first flow with FlowFuse Expert and how Expert works alongside your environment.
+We shared the initial announcement in the [2.30 release post](/blog/2026/05/flowfuse-release-2-30/#flowfuse-expert-builds-your-industrial-application). This post walks through building your first flow with FlowFuse Expert and how Expert works alongside your environment.
 
 ![FlowFuse Expert building a simulated packaging conveyor monitoring application](./images/expert-application-building.gif)
 _Expert building a packaging conveyor monitoring application: MQTT alerts, dashboard indicators, and real-time event simulation, from a single prompt._
@@ -40,7 +40,7 @@ The result is output you can trust to match what you expect, so you reach your i
 
 ## Get started in two minutes
 
-FlowFuse Expert is in open beta on FlowFuse Cloud (Team and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
+FlowFuse Expert is in open beta on FlowFuse Cloud (Team and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up](https://app.flowfuse.com/account/create) first.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 

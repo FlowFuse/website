@@ -1,14 +1,15 @@
 <script setup lang="ts">
 const props = defineProps<{
+    basePath: string
     page: number
     totalPages: number
 }>()
 
 const previousHref = computed(() => {
     if (props.page <= 1) return null
-    return props.page === 2 ? '/changelog/' : `/changelog/${props.page - 1}/`
+    return props.page === 2 ? `${props.basePath}/` : `${props.basePath}/${props.page - 1}/`
 })
-const nextHref = computed(() => props.page < props.totalPages ? `/changelog/${props.page + 1}/` : null)
+const nextHref = computed(() => props.page < props.totalPages ? `${props.basePath}/${props.page + 1}/` : null)
 </script>
 
 <template>

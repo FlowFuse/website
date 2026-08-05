@@ -25,8 +25,7 @@ const otherRecentEntries = computed(() =>
     (recentEntries.value || []).filter(entry => entry.path !== page.value?.path).slice(0, 5)
 )
 
-const team = useTeam()
-const authorMembers = computed(() => (page.value?.authors || []).map(username => team[username]))
+const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
 const catalogFeature = computed(() => findFeatureByChangelog(page.value?.path || ''))
 const tierCloud = computed(() => deriveTierLabel(catalogFeature.value?.cloud))
