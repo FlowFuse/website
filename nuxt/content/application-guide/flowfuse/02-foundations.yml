@@ -1,4 +1,4 @@
-guide: flowfuse-guide
+guide: flowfuse
 slug: foundations
 navOrder: 2
 title: Foundations
@@ -104,4 +104,4 @@ blocks:
         body: Whole app or reusable pieces — how a build reaches every place that should run it.
         link:
           label: App delivery methods →
-          to: /application-guide/flowfuse-guide/app-delivery-methods/
+          to: /application-guide/flowfuse/app-delivery-methods/

@@ -11,12 +11,12 @@ export interface ApplicationGuidePageSummary {
 
 export const GUIDES = [
     {
-        id: 'flowfuse-guide',
+        id: 'flowfuse',
         title: 'FlowFuse Guide',
         tagline: 'Turn an app idea into FlowFuse pieces you can name and say in one sentence.',
     },
     {
-        id: 'node-red-guide',
+        id: 'node-red',
         title: 'Node-RED Guide',
         tagline: 'Turn an architecture sentence into a clean flow shape you can read at a glance.',
     },

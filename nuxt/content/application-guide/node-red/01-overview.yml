@@ -1,4 +1,4 @@
-guide: node-red-guide
+guide: node-red
 slug: overview
 navOrder: 1
 title: Overview
@@ -36,22 +36,22 @@ blocks:
         body: Every way work enters a piece, each as its own path.
         link:
           label: Flow shape →
-          to: /application-guide/node-red-guide/flow-shape/#beginnings
+          to: /application-guide/node-red/flow-shape/#beginnings
       - title: Shared services (link call)
         body: Shared pools and calls, invoked once, results return.
         link:
           label: Flow shape →
-          to: /application-guide/node-red-guide/flow-shape/#shared-services-link-call
+          to: /application-guide/node-red/flow-shape/#shared-services-link-call
       - title: Subflow vs link call
         body: When a link call is enough, and when a subflow earns its keep.
         link:
           label: Flow shape →
-          to: /application-guide/node-red-guide/flow-shape/#subflow-vs-link-call
+          to: /application-guide/node-red/flow-shape/#subflow-vs-link-call
       - title: Single sink
         body: The one sink each family of paths converges on — it only sends, never routes.
         link:
           label: Flow shape →
-          to: /application-guide/node-red-guide/flow-shape/#single-sink
+          to: /application-guide/node-red/flow-shape/#single-sink
   - type: linkCards
     heading: Design patterns
     columns: 3
@@ -60,32 +60,32 @@ blocks:
         body: Find the three or four components hiding in a blob.
         link:
           label: Design patterns →
-          to: /application-guide/node-red-guide/design-patterns/#find-the-seams
+          to: /application-guide/node-red/design-patterns/#find-the-seams
       - title: Levels of reuse
         body: Pick the lowest rung of extraction that solves it.
         link:
           label: Design patterns →
-          to: /application-guide/node-red-guide/design-patterns/#levels-of-reuse
+          to: /application-guide/node-red/design-patterns/#levels-of-reuse
       - title: Decouple frontend & backend
         body: Treat the dashboard-to-logic boundary like a client and a server.
         link:
           label: Design patterns →
-          to: /application-guide/node-red-guide/design-patterns/#decouple-frontend-backend
+          to: /application-guide/node-red/design-patterns/#decouple-frontend-backend
       - title: Use the context store
         body: Hold the object in context instead of threading it through wires.
         link:
           label: Design patterns →
-          to: /application-guide/node-red-guide/design-patterns/#use-the-context-store
+          to: /application-guide/node-red/design-patterns/#use-the-context-store
       - title: "Config: env vars vs persisted context"
         body: Env vars for deploy-time, persisted context for user edits.
         link:
           label: Design patterns →
-          to: /application-guide/node-red-guide/design-patterns/#config-env-vars-vs-persisted-context
+          to: /application-guide/node-red/design-patterns/#config-env-vars-vs-persisted-context
       - title: Generating flows (Admin API)
         body: Emit flow JSON and deploy it through the Admin API.
         link:
           label: Design patterns →
-          to: /application-guide/node-red-guide/design-patterns/#generating-flows-admin-api
+          to: /application-guide/node-red/design-patterns/#generating-flows-admin-api
   - type: linkCards
     heading: Handling data (PLC)
     columns: 3
@@ -94,17 +94,17 @@ blocks:
         body: Sort data by what it is for before tuning anything.
         link:
           label: Handling data →
-          to: /application-guide/node-red-guide/handling-data/#classify-the-data
+          to: /application-guide/node-red/handling-data/#classify-the-data
       - title: How PLCs respond
         body: Every poll spends a slice of the controller scan budget.
         link:
           label: Handling data →
-          to: /application-guide/node-red-guide/handling-data/#how-plcs-respond
+          to: /application-guide/node-red/handling-data/#how-plcs-respond
       - title: Treat data reliably
         body: Split telemetry from control, each on its own path.
         link:
           label: Handling data →
-          to: /application-guide/node-red-guide/handling-data/#treat-data-reliably
+          to: /application-guide/node-red/handling-data/#treat-data-reliably
   - type: linkCards
     heading: Operating flows
     columns: 4
@@ -113,22 +113,22 @@ blocks:
         body: A Catch node per tab turns a thrown error into a route you control.
         link:
           label: Operating flows →
-          to: /application-guide/node-red-guide/operating-flows/#error-handling
+          to: /application-guide/node-red/operating-flows/#error-handling
       - title: Backpressure & memory
         body: Pace the fast side to the slow side before the heap blows.
         link:
           label: Operating flows →
-          to: /application-guide/node-red-guide/operating-flows/#backpressure-memory
+          to: /application-guide/node-red/operating-flows/#backpressure-memory
       - title: Deploy modes
         body: Pick the smallest restart that ships the change.
         link:
           label: Operating flows →
-          to: /application-guide/node-red-guide/operating-flows/#deploy-modes
+          to: /application-guide/node-red/operating-flows/#deploy-modes
       - title: Debugging
         body: Tap the wire, surface node state, keep the flow observable.
         link:
           label: Operating flows →
-          to: /application-guide/node-red-guide/operating-flows/#debugging
+          to: /application-guide/node-red/operating-flows/#debugging
   - type: linkCards
     heading: Worked example
     columns: 2
@@ -137,9 +137,9 @@ blocks:
         body: One app reached three ways over shared services.
         link:
           label: Worked example →
-          to: /application-guide/node-red-guide/worked-example/#napkin-multi-surface-app
+          to: /application-guide/node-red/worked-example/#napkin-multi-surface-app
       - title: Good vs bad
         body: The same requirement built with and without seams.
         link:
           label: Worked example →
-          to: /application-guide/node-red-guide/worked-example/#good-vs-bad
+          to: /application-guide/node-red/worked-example/#good-vs-bad

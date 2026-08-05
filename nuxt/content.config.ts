@@ -69,7 +69,7 @@ export default defineContentConfig({
             type: 'data',
             source: 'application-guide/**/*.yml',
             schema: z.object({
-                guide: z.enum(['flowfuse-guide', 'node-red-guide']),
+                guide: z.enum(['flowfuse', 'node-red']),
                 slug: z.string(),
                 title: z.string(),
                 navOrder: z.number(),

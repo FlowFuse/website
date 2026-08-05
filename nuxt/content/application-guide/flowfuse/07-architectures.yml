@@ -1,4 +1,4 @@
-guide: flowfuse-guide
+guide: flowfuse
 slug: architectures
 navOrder: 7
 title: Architectures
@@ -18,21 +18,21 @@ blocks:
           hardware-saving consolidation, and air-gapped sites.
         link:
           label: View OT →
-          to: /application-guide/flowfuse-guide/ot-architectures/
+          to: /application-guide/flowfuse/ot-architectures/
       - title: IT architectures
         body: >-
           Hosting and governing — on-prem, your cloud per-site, hosting choice at scale, enterprise
           governance, and secure data exposure.
         link:
           label: View IT →
-          to: /application-guide/flowfuse-guide/it-architectures/
+          to: /application-guide/flowfuse/it-architectures/
       - title: IIoT architectures
         body: >-
           The live data backbone — a Unified Namespace where edge publishes once and many subscribe,
           across every site.
         link:
           label: View IIoT →
-          to: /application-guide/flowfuse-guide/iiot-architectures/
+          to: /application-guide/flowfuse/iiot-architectures/
   - type: prose
     heading: Separating dev from prod
     body: >-
@@ -80,4 +80,4 @@ blocks:
     body: Once code is on a server, it ships via snapshots or subflows.
     link:
       label: App delivery methods →
-      to: /application-guide/flowfuse-guide/app-delivery-methods/
+      to: /application-guide/flowfuse/app-delivery-methods/

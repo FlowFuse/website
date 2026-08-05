@@ -1,4 +1,4 @@
-guide: flowfuse-guide
+guide: flowfuse
 slug: app-delivery-methods
 navOrder: 3
 title: App delivery methods
@@ -59,7 +59,7 @@ blocks:
           text: Dev and prod on separate servers — dev in IT or the cloud, prod in OT or air-gapped? A GitHub bridge carries the same versioned code across the boundary. That's an architecture decision.
           link:
             label: See Architectures →
-            to: /application-guide/flowfuse-guide/architectures/
+            to: /application-guide/flowfuse/architectures/
       - label: Pieces
         kicker: Subflow export
         kickerNote: Publish one piece as a package the team installs, like a shared library.

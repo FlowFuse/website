@@ -1,4 +1,4 @@
-guide: flowfuse-guide
+guide: flowfuse
 slug: it-architectures
 navOrder: 8
 title: IT architectures
@@ -155,4 +155,4 @@ blocks:
           your own over Project Link.
         link:
           label: Data plane →
-          to: /application-guide/flowfuse-guide/data-plane/
+          to: /application-guide/flowfuse/data-plane/

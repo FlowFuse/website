@@ -1,4 +1,4 @@
-guide: flowfuse-guide
+guide: flowfuse
 slug: iiot-architectures
 navOrder: 10
 title: IIoT architectures
@@ -129,4 +129,4 @@ blocks:
           your own over Project Link.
         link:
           label: Data plane →
-          to: /application-guide/flowfuse-guide/data-plane/
+          to: /application-guide/flowfuse/data-plane/
