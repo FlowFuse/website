@@ -4,11 +4,17 @@ import navHighlights from '../../src/_data/navHighlights.json'
 // Shared with the Eleventy layout, which reads the same file as an 11ty _data
 // global. Edit the nav or footer there and both renderers follow.
 import chrome from '../../src/_data/chrome.json'
+import site from '../../src/_data/site.json'
 
 const hl = (key) => {
     const entry = navHighlights[key]
     return { ...entry, image: entry.image || '/images/og-blog.jpg' }
 }
+
+// Mirrors the "resolveHref" Eleventy filter: an href of "site:<key>" is a
+// pointer into site.json rather than a literal URL, so values like the job
+// board link stay single-sourced there instead of duplicated in chrome.json.
+const resolveHref = (href) => href?.startsWith('site:') ? site[href.slice('site:'.length)] : href
 
 onMounted(() => {
     const navToggle = document.getElementById('nav-toggle')
@@ -196,7 +202,7 @@ onMounted(() => {
               <li class="pl-3 title border-l-2 border-gray-200" :class="col.titleGrid"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
               <li class="contents">
                 <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="col.listClasses">
-                  <li v-for="item in col.links" :key="item.label"><a class="flex items-center gap-2" :href="item.href"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
+                  <li v-for="item in col.links" :key="item.label"><a class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
                 </ul>
               </li>
             </template>

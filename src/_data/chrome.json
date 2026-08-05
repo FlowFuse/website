@@ -1,5 +1,5 @@
 {
-    "_comment": "Canonical marketing chrome: the top mega nav and the footer link lists. Rendered by BOTH renderers, so a page added or removed here propagates to the whole site: Eleventy reads it as an 11ty _data file (as `chrome`) in src/_includes/layouts/base.njk, and Nuxt imports it directly in components/AppHeader.vue and components/AppFooter.vue. Icon keys are filenames in src/_includes/components/icons/; Nuxt resolves them through utils/navIcons.ts, which a unit test keeps in sync. Class strings are literal so Tailwind can see them (src/css/style.css has an @source for this file).",
+    "_comment": "Canonical marketing chrome: the top mega nav and the footer link lists. Rendered by BOTH renderers, so a page added or removed here propagates to the whole site: Eleventy reads it as an 11ty _data file (as `chrome`) in src/_includes/layouts/base.njk, and Nuxt imports it directly in components/AppHeader.vue and components/AppFooter.vue. Icon keys are filenames in src/_includes/components/icons/; Nuxt resolves them through utils/navIcons.ts, which a unit test keeps in sync. Class strings are literal so Tailwind can see them (src/css/style.css has an @source for this file). An href of 'site:<key>' is resolved against src/_data/site.json at render time instead of being a literal URL, so values like the job board link stay single-sourced there.",
     "header": {
         "dropdowns": [
             {
@@ -337,7 +337,7 @@
                             },
                             {
                                 "label": "Jobs",
-                                "href": "https://boards.greenhouse.io/flowfuse",
+                                "href": "site:jobBoard",
                                 "icon": "case"
                             },
                             {
@@ -661,7 +661,10 @@
                             {
                                 "label": "Sign Up to Mailing List",
                                 "href": "/blog/#sign-up",
-                                "onclick": "capture('cta-blog-subscribe', {'position': 'footer'})"
+                                "capture": {
+                                    "event": "cta-blog-subscribe",
+                                    "props": { "position": "footer" }
+                                }
                             }
                         ]
                     }
@@ -682,7 +685,7 @@
                         },
                         {
                             "label": "Jobs",
-                            "href": "https://boards.greenhouse.io/flowfuse"
+                            "href": "site:jobBoard"
                         },
                         {
                             "label": "Security certifications",

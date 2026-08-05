@@ -2,6 +2,17 @@
 // Shared with the Eleventy layout, which reads the same file as an 11ty _data
 // global. Edit the nav or footer there and both renderers follow.
 import chrome from '../../src/_data/chrome.json'
+import site from '../../src/_data/site.json'
+
+// Mirrors the "resolveHref" Eleventy filter: an href of "site:<key>" is a
+// pointer into site.json rather than a literal URL, so values like the job
+// board link stay single-sourced there instead of duplicated in chrome.json.
+const resolveHref = (href) => href?.startsWith('site:') ? site[href.slice('site:'.length)] : href
+
+const onCaptureClick = (item) => {
+    if (!item.capture || typeof window === 'undefined' || !window.capture) return
+    window.capture(item.capture.event, item.capture.props)
+}
 </script>
 
 <template>
@@ -15,7 +26,7 @@ import chrome from '../../src/_data/chrome.json'
                         <div v-for="grp in sec.groups" :key="grp.title" :class="grp.classes">
                             <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ grp.title }}</p>
                             <ul class="flex flex-col gap-2.5">
-                                <li v-for="item in grp.links" :key="item.label"><a :href="item.href" v-bind="item.onclick ? { onclick: item.onclick } : {}">{{ item.label }}</a></li>
+                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)" @click="onCaptureClick(item)">{{ item.label }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -92,13 +103,13 @@ import chrome from '../../src/_data/chrome.json'
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
                         <div v-for="(grp, i) in chrome.footer.company.grid" :key="i">
                             <ul class="flex flex-col gap-2.5">
-                                <li v-for="item in grp.links" :key="item.label"><a :href="item.href">{{ item.label }}</a></li>
+                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <ul class="flex flex-col gap-2.5">
-                            <li v-for="item in chrome.footer.company.trailing.links" :key="item.label"><a :href="item.href">{{ item.label }}</a></li>
+                            <li v-for="item in chrome.footer.company.trailing.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
                         </ul>
                     </div>
                 </div>
