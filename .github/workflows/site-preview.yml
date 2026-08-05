@@ -139,6 +139,10 @@ jobs:
           NETLIFY_TELEMETRY_DISABLED: '1'
           PREVIEW_ALIAS: ${{ inputs.preview_alias }}
         run: |
+          if [ -z "${NETLIFY_AUTH_TOKEN}" ] || [ -z "${NETLIFY_SITE_ID}" ]; then
+            echo "deploy_preview is set but netlify_auth_token or netlify_site_id was not passed." >&2
+            exit 1
+          fi
           # Deliberately no --prod and no --build. netlify.toml supplies the publish and
           # functions directories, and skipping the build means its build command, which
           # reindexes Algolia, never runs against a preview.
