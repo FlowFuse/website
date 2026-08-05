@@ -290,7 +290,7 @@ The cost is not only technical debt. It is strategic paralysis. Teams stay on on
 
 Modern PLCs are not the hard part. Getting forty controllers from five vendors, installed across three decades, to feed one production report is.
 
-[FlowFuse](/) is the open-source Industrial Application Platform built for exactly that layer. It connects any controller, whether that is Siemens, Allen-Bradley, Omron, Mitsubishi, or a legacy Modbus device, without proprietary gateways or per-tag licensing, then routes the data to MQTT, historians, databases, dashboards, and ERP systems. Your PLCs keep running their proven logic. What changes is that their data stops being trapped.
+[FlowFuse](/) is the open-source Industrial Application Platform built for exactly that layer. It connects any controller, whether that is Siemens, Allen-Bradley, Omron, Mitsubishi, or a legacy Modbus device, without proprietary gateways or per-tag licensing, then routes the data to MQTT, historians, databases, [dashboards](/blog/2026/08/manufacturing-dashboard-examples/), and ERP systems. Your PLCs keep running their proven logic. What changes is that their data stops being trapped.
 
 ![FlowFuse platform for industrial data integration connecting PLCs, edge devices, and enterprise systems](./images/flowfuse-platform.png){data-zoomable}
 _FlowFuse connects controllers, edge devices, and enterprise systems from a single governed platform._
