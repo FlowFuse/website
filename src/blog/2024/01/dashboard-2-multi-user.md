@@ -91,7 +91,6 @@ In the previous example, you may have noticed that we're also displaying a welco
 
 Under the covers, we're appending our `user` object to the `msg` object, via the SocketIO `auth` option. We make the `socketio` object available via a computed `setup` variable, this means that we can access this data in any `ui-template` node, and render like so:
 
-{% raw %}
 ```html
 <template>
     <div>
@@ -99,7 +98,6 @@ Under the covers, we're appending our `user` object to the `msg` object, via the
     </div>
 </template>
 ```
-{% endraw %}
 
 To enable custom user-by-user content in a `ui-template` though, we must allow it to "Accept Client Constraints". This means that if a `.msg._client.user` value is included in any messages sent to a `ui-template` node, then the underlying SocketIO message will be filtered to only send to the relevant user's connection, and no others.
 

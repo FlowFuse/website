@@ -1,8 +1,16 @@
 ---
 title: "Customer Success"
+navigation:
+  order: 3
 ---
 
 # Customer Success
+
+The Customer Success function owns the customer relationship after the commercial
+close: onboarding, adoption, renewals, and expansion. The **Customer Success
+Manager (CSM)** is the role within Customer Success, accountable for account
+health and for the value customers realize from FlowFuse — measured by customer
+outcomes, not just retention.
 
 FlowFuse CSMs are to drive adoption and expansion within accounts. Customers
 should be provided help and support to connect their assets, build applications

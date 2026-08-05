@@ -68,7 +68,7 @@ By the end you will have live TwinCAT variables flowing into [FlowFuse](/).
 Before you begin, make sure you have the following in place:
 
 - TwinCAT 3.1 runtime running on a Beckhoff IPC
-- FlowFuse running on an edge device with network access to the TwinCAT machine. If you don't have an account yet, [sign up]({% include "sign-up-url.njk" %}) to get started, then [follow this guide to quickly run a FlowFuse instance on your edge device](/blog/2025/09/installing-node-red/).
+- FlowFuse running on an edge device with network access to the TwinCAT machine. If you don't have an account yet, [sign up](https://app.flowfuse.com/account/create) to get started, then [follow this guide to quickly run a FlowFuse instance on your edge device](/blog/2025/09/installing-node-red/).
 - Both devices on the same network
 - Port 48898 open between the two devices
 - [Symbol creation](#enable-symbol-creation) enabled on PlcTask so variables are accessible by name over ADS

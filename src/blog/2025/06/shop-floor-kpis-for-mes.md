@@ -41,7 +41,7 @@ _KPIs Tables_
 
 ## Turning Your Data into KPIs
 
-Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything, from raw data collection to the clear, actionable KPIs displayed on your dashboards.
+Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything, from raw data collection to the clear, actionable KPIs displayed on your [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/).
 
 Once the data is collected and stored from the factory floor, this pipeline involves four essential stages:
 
@@ -78,7 +78,7 @@ Let’s see how easy it is to calculate a KPI with a practical example where we 
 
 ##### To Begin
 
-1.  Login to the FlowFuse platform. If you don't have an account, you can register for a [free trial]({% include "sign-up-url.njk" %}) to get started. Once registered, create a FlowFuse instance and open its editor.
+1.  Login to the FlowFuse platform. If you don't have an account, you can register for a [free trial](https://app.flowfuse.com/account/create) to get started. Once registered, create a FlowFuse instance and open its editor.
 2.  Install the `node-red-node-sqlite` from the Palette Manager.
 3.  For the demo database, import the following database flow. Upon deployment, it will create an SQLite table and insert the demo data:
 

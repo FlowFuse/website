@@ -65,7 +65,7 @@ By the end, you'll have a foundation you can extend into broader production moni
 
 Before you start building, make sure you have the following ready:
 
-- **A FlowFuse account.** [Sign up]({% include "sign-up-url.njk" %}) for FlowFuse Cloud, or use a self-hosted instance.
+- **A FlowFuse account.** [Sign up](https://app.flowfuse.com/account/create) for FlowFuse Cloud, or use a self-hosted instance.
 
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
 
@@ -411,4 +411,4 @@ You've built a working quality dashboard: a `defects` table, a single query that
 
 Right now it runs on the simulator, but that was only ever a stand-in for your real data. To go live, remove the simulator flow and point the query at your own `defects` table. Everything downstream keeps working, because the dashboard only ever reads from that one query. Your defects don't live in PostgreSQL? That's fine too. FlowFuse connects to MySQL, MongoDB, InfluxDB, and more, as our [database integration guides](/node-red/database/) show.
 
-That's the real point. FlowFuse lets you build the exact application your floor needs quickly, without deep engineering knowledge or writing code, wired to the systems you already run instead of forcing your process to fit a fixed tool. This tutorial happened to build defect tracking, but the same approach covers production monitoring, OEE, and the wider quality picture. See how manufacturers are already putting it to work on our [automotive solutions page](/industries/automotive/).
+That's the real point. FlowFuse lets you build the exact application your floor needs quickly, without deep engineering knowledge or writing code, wired to the systems you already run instead of forcing your process to fit a fixed tool. This tutorial happened to build defect tracking, but the same approach covers the full range of [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/), production monitoring, OEE, and the wider quality picture. See how manufacturers are already putting it to work on our [automotive solutions page](/industries/automotive/).

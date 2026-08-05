@@ -59,7 +59,6 @@ If you need to override a default, use these `.env` variables. Leave them unset 
 
 | Variable | Purpose |
 | --- | --- |
-| `EXPERT_BROKER_SERVER` | Central Expert broker host (defaults to `expert-broker.flowfuse.com`) |
 | `BROKER_API_KEY` / `BROKER_API_SECRET` | Local EMQX admin API credentials used to provision the bridge |
 
 None of these changes should be made without updating to the latest release of the `docker-compose.yml` file first.
@@ -99,4 +98,4 @@ forge:
 
 NOTE: For FlowFuse Helm chart v2.84.0 and onward the Expert central broker address is configured by default, so `forge.expert.broker.address` and `forge.expert.broker.port` no longer need to be set.
 
-NOTE: For FlowFuse v2.29.0 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults
+NOTE: For FlowFuse v2.33.2 and onward the urls (`forge.assistant.service.url` & `forge.expert.service.url`) can be omitted from the configuration as they have preset defaults

@@ -1,6 +1,15 @@
 ---
 title: "Professional Services"
+navigation:
+  order: 4
 ---
+
+# Professional Services
+
+The Professional Services function delivers scoped, high-impact engagements that
+accelerate implementation and time-to-value beyond standard product support. Work
+is captured in a Statement of Work (SoW), separate from the subscription, and
+owned end-to-end by the person who delivers it.
 
 FlowFuse offers Professional Services (PS) to help customers deliver work that
 goes beyond standard product support, such as migrations, integrations, and

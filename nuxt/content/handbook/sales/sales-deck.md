@@ -1,5 +1,7 @@
 ---
 title: "Sales Deck"
+navigation:
+  order: 17
 ---
 
 # Sales Deck

@@ -206,14 +206,14 @@ In this section, we will build an interactive table using **ui-template** and [v
     <!-- User avatar -->
     <img :src="item.user.image" width="24" />
     <!-- Username -->
-    {% raw %}<span>{{ item.user.username }}</span>{% endraw %}
+    <span>{{ item.user.username }}</span>
    </div>
   </template>
 
   <!-- Template for the "due" column -->
   <template v-slot:item.due="{ item }">
    <!-- Calculate and display the number of days between due date and current date -->
-   {% raw %}{{ daysBetween(item.due, new Date()) }} Days{% endraw %}
+   {{ daysBetween(item.due, new Date()) }} Days
   </template>
  </v-data-table>
 </template>

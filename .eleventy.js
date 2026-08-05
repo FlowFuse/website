@@ -214,6 +214,16 @@ module.exports = function(eleventyConfig) {
         return JSON.stringify(content)
     });
 
+    // Resolves a chrome.json href of the form "site:<key>" against site.json,
+    // so single-sourced values (e.g. the job board URL) aren't duplicated as
+    // literal strings in the shared nav/footer data. Anything else passes through.
+    eleventyConfig.addFilter("resolveHref", (href, site) => {
+        if (typeof href === "string" && href.startsWith("site:")) {
+            return site[href.slice("site:".length)]
+        }
+        return href
+    });
+
     eleventyConfig.addFilter("fromJson", (content) => {
         try {
             return JSON.parse(content);

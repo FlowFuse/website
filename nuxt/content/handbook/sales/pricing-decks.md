@@ -1,5 +1,7 @@
 ---
 title: "Pricing Decks"
+navigation:
+  order: 18
 ---
 
 # Pricing Decks

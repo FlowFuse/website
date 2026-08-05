@@ -190,144 +190,26 @@ eleventyComputed:
 
                     <!-- Nav -->
                     <ul id="nav-content" class="">
-                        {% navoption "Platform", null, 0 %}
-                            <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center">
-                                {% set hl = navHighlights.platform %}{% include "components/nav-highlight.njk" %}
-                                {% navoption "Product", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
+                        {%- for dd in chrome.header.dropdowns %}
+                        {% navoption dd.label, null, 0 %}
+                            <ul class="{{ dd.megaClasses }}">
+                                {% set hl = navHighlights[dd.highlight] %}{% include "components/nav-highlight.njk" %}
+                                {%- for col in dd.columns %}
+                                {% navoption col.title, null, 1, null, true, "pl-3 title border-l-2 " + col.titleGrid %}{% endnavoption %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
-                                        {% navoption "Features", "/platform/features/", 2, "star" %}{% endnavoption %}
-                                        {% navoption "Security Statement", "/platform/security/", 1, "lock-closed" %}{% endnavoption %}
-                                        {% navoption "Pricing", "/pricing/", 1, "dollar" %}{% endnavoption %}
+                                    <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ col.listClasses }}">
+                                        {%- for item in col.links %}
+                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid %}{% endnavoption %}
+                                        {%- endfor %}
                                     </ul>
                                 </li>
-                                {% navoption "Components", null, 1, null, true, "pl-3 title border-l-2 md:col-start-2 md:row-start-1 xl:col-start-3" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-6 ml-7 auto-rows-auto border-l-2 md:col-start-2 md:row-start-2 xl:col-start-3">
-                                        {% navoption "FlowFuse Dashboard", "/platform/dashboard/", 2, "dashboard" %}{% endnavoption %}
-                                        {% navoption "Device Agent", "/platform/device-agent/", 2, "device-agent" %}{% endnavoption %}
-                                        {% navoption "Node-RED", "/node-red/", 2, "code-bracket" %}{% endnavoption %}
-                                        {% navoption "FlowFuse Expert", "/docs/user/expert/", 1, "sparkles" %}{% endnavoption %}
-                                        {% navoption "Integrations", "/integrations/", 1, "squares-plus" %}{% endnavoption %}
-                                        {% navoption "Blueprint Library", "/blueprints/", 1, "building-library" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                                {% navoption "Capabilities", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-[7] ml-7 auto-rows-auto border-l-2 md:col-start-3 md:row-start-2 xl:col-start-4">
-                                        {% navoption "Industrial AI", "/ai/", 1, "sparkles" %}{% endnavoption %}
-                                        {% navoption "IT/OT middleware", "/use-cases/it-ot-middleware/", 1, "cog" %}{% endnavoption %}
-                                        {% navoption "Unified Namespace", "/use-cases/uns/", 1, "uns" %}{% endnavoption %}
-                                        {% navoption "MES", "/use-cases/mes/", 1, "chart" %}{% endnavoption %}
-                                        {% navoption "SCADA", "/use-cases/scada/", 1, "screen" %}{% endnavoption %}
-                                        {% navoption "Edge Connectivity", "/use-cases/edge-connectivity/", 1, "chip" %}{% endnavoption %}
-                                        {% navoption "Data Integration", "/use-cases/data-integration/", 1, "arrows-right-left" %}{% endnavoption %}
-                                    </ul>
-                                </li>
+                                {%- endfor %}
                             </ul>
                         {% endnavoption %}
-                        {% navoption "Solutions", null, 0 %}
-                        <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(12,auto)] md:pr-1 md:auto-rows-auto items-center">
-                            {% set hl = navHighlights.solutions %}{% include "components/nav-highlight.njk" %}
-                            {% navoption "By Use Case", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
-                            <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
-                                    {% navoption "Production Monitoring", "/use-cases/production-monitoring/", 1, "pulse" %}{% endnavoption %}
-                                    {% navoption "Shop Floor Communication", "/use-cases/shop-floor-communication/", 1, "chat" %}{% endnavoption %}
-                                    {% navoption "See all use cases", "/use-cases/", 1, "arrow-right" %}{% endnavoption %}
-                                </ul>
-                            </li>
-                            {% navoption "By Industry", null, 1, null, true, "pl-3 title border-l-2 md:col-start-2 md:row-start-1 xl:col-start-3" %}{% endnavoption %}
-                            <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-[9] ml-7 auto-rows-auto border-l-2 md:col-start-2 md:row-start-2 xl:col-start-3">
-                                    {% navoption "Automotive", "/industries/automotive/", 1, "car" %}{% endnavoption %}
-                                    {% navoption "Food & Beverage", "/industries/food-beverage/", 1, "food-beverage" %}{% endnavoption %}
-                                    {% navoption "Life Sciences", "/industries/life-sciences/", 1, "shield-check" %}{% endnavoption %}
-                                    {% navoption "Electronics & Appliances", "/industries/electronics-appliances/", 1, "power" %}{% endnavoption %}
-                                    {% navoption "Renewables", "/industries/renewables/", 1, "wind-turbine" %}{% endnavoption %}
-                                    {% navoption "Semiconductors", "/industries/semiconductors/", 1, "chip" %}{% endnavoption %}
-                                    {% navoption "Aerospace Components", "/industries/aerospace-components/", 1, "cog-6-tooth" %}{% endnavoption %}
-                                    {% navoption "Aviation & Aerospace", "/industries/aviation-aerospace/", 1, "airplane" %}{% endnavoption %}
-                                    {% navoption "See all industries", "/industries/", 1, "arrow-right" %}{% endnavoption %}
-                                </ul>
-                            </li>
-                            {% navoption "By Integration", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
-                            <li class="contents">
-                                <ul class="sub-menu grid grid-rows-subgrid row-span-[9] ml-7 auto-rows-auto border-l-2 md:col-start-3 md:row-start-2 xl:col-start-4">
-                                    {% navoption "Redis", "/node-red/flowfuse/hub/redis/", 1, "circle-stack" %}{% endnavoption %}
-                                    {% navoption "OPC UA", "/node-red/flowfuse/edge/opcua/", 1, "server-stack" %}{% endnavoption %}
-                                    {% navoption "RTSP", "/node-red/flowfuse/edge/rtsp/", 1, "camera" %}{% endnavoption %}
-                                    {% navoption "EtherNet/IP", "/node-red/flowfuse/edge/cip-suite/", 1, "share" %}{% endnavoption %}
-                                    {% navoption "MQTT", "/node-red/flowfuse/mqtt/", 1, "wifi" %}{% endnavoption %}
-                                    {% navoption "ONNX", "/node-red/flowfuse/ai/onxx/", 1, "chip" %}{% endnavoption %}
-                                    {% navoption "LLM Nodes", "/node-red/flowfuse/ai/llm-nodes/", 1, "sparkles" %}{% endnavoption %}
-                                    {% navoption "MCP", "/node-red/flowfuse/mcp/", 1, "puzzle-piece" %}{% endnavoption %}
-                                    {% navoption "See all integrations", "/integrations/", 1, "arrow-right" %}{% endnavoption %}
-                                </ul>
-                            </li>
-                        </ul>
-                        {% endnavoption %}
-                        {% navoption "Resources", null, 0 %}
-                            <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center">
-                                {% set hl = navHighlights.resources %}{% include "components/nav-highlight.njk" %}
-                                {% navoption "Learn", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
-                                        {% navoption "Blog", "/blog/", 1, "newspaper" %}{% endnavoption %}
-                                        {% navoption "Webinars", "/webinars/", 1, "screen" %}{% endnavoption %}
-                                        {% navoption "Publications", "/resources/publications/", 1, "book-open" %}{% endnavoption %}
-                                        {% navoption "Node-RED Academy", "https://node-red-academy.learnworlds.com/", 1, "academic-cap" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                                {% navoption "Reference", null, 1, null, true, "pl-3 title border-l-2 md:col-start-2 md:row-start-1 xl:col-start-3" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 md:col-start-2 md:row-start-2 xl:col-start-3">
-                                        {% navoption "Docs", "/docs/", 1, "document-text" %}{% endnavoption %}
-                                        {% navoption "Changelog", "/changelog/", 1, "rocket-launch" %}{% endnavoption %}
-                                        {% navoption "Github", "https://github.com/FlowFuse/flowfuse", 1, "github", true %}{% endnavoption %}
-                                        {% navoption "Support forums", "https://discourse.nodered.org/c/vendors/flowfuse/24/", 1, "chat-bubble-left-right-sm" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                                {% navoption "Customers", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 md:col-start-3 md:row-start-2 xl:col-start-4">
-                                        {% navoption "Customer Stories", "/customer-stories/", 1, "presentation" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                            </ul>
-                        {% endnavoption %}
-                        {% navoption "Company", null, 0 %}
-                            <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center">
-                                {% set hl = navHighlights.company %}{% include "components/nav-highlight.njk" %}
-                                {% navoption "Company", null, 1, null, true, "pl-3 title border-l-2 xl:col-start-2 xl:row-start-1" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2 xl:col-start-2 xl:row-start-2">
-                                        {% navoption "Why FlowFuse", "/platform/why-flowfuse/", 1, "flowfuse" %}{% endnavoption %}
-                                        {% navoption "About us", "/about/", 1, "building-office-2" %}{% endnavoption %}
-                                        {% navoption "Jobs", site.jobBoard, 1, "case" %}{% endnavoption %}
-                                        {% navoption "Handbook", "/handbook/", 1, "book-open" %}{% endnavoption %}
-                                        {% navoption "Security certifications", "/platform/security/#certifications", 1, "certificate" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                                {% navoption "Partners & Services", null, 1, null, true, "pl-3 title border-l-2 md:col-start-2 md:row-start-1 xl:col-start-3" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 md:col-start-2 md:row-start-2 xl:col-start-3">
-                                        {% navoption "Partnerships", "/partners/", 1, "user-group" %}{% endnavoption %}
-                                        {% navoption "Professional Services", "/professional-services/", 1, "wrench-screwdriver" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                                {% navoption "Support", null, 1, null, true, "pl-3 title border-l-2 md:col-start-3 md:row-start-1 xl:col-start-4" %}{% endnavoption %}
-                                <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 md:col-start-3 md:row-start-2 xl:col-start-4">
-                                        {% navoption "Service Status", "https://status.flowfuse.com/", 1, "check-badge", true %}{% endnavoption %}
-                                        {% navoption "Request Support", "/support/", 1, "lifebuoy" %}{% endnavoption %}
-                                        {% navoption "Contact Us", "/contact-us/", 1, "mail" %}{% endnavoption %}
-                                    </ul>
-                                </li>
-                            </ul>
-                        {% endnavoption %}
-                        {% navoption "Industrial AI", "/ai/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
-                        {% navoption "Pricing", "/pricing/", 0, false, false, "nav-collapsible" %}{% endnavoption %}
+                        {%- endfor %}
+                        {%- for item in chrome.header.direct %}
+                        {% navoption item.label, item.href, 0, false, false, item.classes %}{% endnavoption %}
+                        {%- endfor %}
                         <!-- More dropdown for overflow items -->
                         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
                             <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
@@ -370,116 +252,23 @@ eleventyComputed:
         <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
-                <!-- Platform -->
-                <section class="pt-5" data-nav-section="Platform">
-                    <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8">
-                        <div class="lg:col-start-1 lg:row-start-1">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
+                {%- for sec in chrome.footer.sections %}
+                <section class="pt-5" data-nav-section="{{ sec.title }}">
+                    <p class="text-lg font-medium text-gray-900 mb-6">{{ sec.title }}</p>
+                    <div class="{{ sec.gridClasses }}">
+                        {%- for grp in sec.groups %}
+                        <div{% if grp.classes %} class="{{ grp.classes }}"{% endif %}>
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ grp.title }}</p>
                             <ul class="flex flex-col gap-2.5">
-                                <li><a href="/platform/features/">Features</a></li>
-                                <li><a href="/platform/security/">Security Statement</a></li>
-                                <li><a href="/pricing/">Pricing</a></li>
+                                {%- for item in grp.links %}
+                                <li><a href="{{ item.href | resolveHref(site) }}"{% if item.capture %} onclick='capture("{{ item.capture.event }}", {{ item.capture.props | json | safe }})'{% endif %}>{{ item.label }}</a></li>
+                                {%- endfor %}
                             </ul>
                         </div>
-                        <div class="lg:col-start-1 lg:row-start-2">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Components</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
-                                <li><a href="/platform/device-agent/">Device Agent</a></li>
-                                <li><a href="/node-red/">Node-RED</a></li>
-                                <li><a href="/docs/user/expert/">FlowFuse Expert</a></li>
-                                <li><a href="/integrations/">Integrations</a></li>
-                                <li><a href="/blueprints/">Blueprint Library</a></li>
-                            </ul>
-                        </div>
-                        <div class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Capabilities</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/ai/">Industrial AI</a></li>
-                                <li><a href="/use-cases/it-ot-middleware/">IT/OT middleware</a></li>
-                                <li><a href="/use-cases/uns/">Unified Namespace</a></li>
-                                <li><a href="/use-cases/mes/">MES</a></li>
-                                <li><a href="/use-cases/scada/">SCADA</a></li>
-                                <li><a href="/use-cases/edge-connectivity/">Edge Connectivity</a></li>
-                                <li><a href="/use-cases/data-integration/">Data Integration</a></li>
-                            </ul>
-                        </div>
+                        {%- endfor %}
                     </div>
                 </section>
-                <!-- Solutions -->
-                <section class="pt-5" data-nav-section="Solutions">
-                    <p class="text-lg font-medium text-gray-900 mb-6">Solutions</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Use Case</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/use-cases/production-monitoring/">Production Monitoring</a></li>
-                                <li><a href="/use-cases/shop-floor-communication/">Shop Floor Communication</a></li>
-                                <li><a href="/use-cases/">See all use cases</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Industry</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/industries/automotive/">Automotive</a></li>
-                                <li><a href="/industries/food-beverage/">Food &amp; Beverage</a></li>
-                                <li><a href="/industries/life-sciences/">Life Sciences</a></li>
-                                <li><a href="/industries/electronics-appliances/">Electronics &amp; Appliances</a></li>
-                                <li><a href="/industries/renewables/">Renewables</a></li>
-                                <li><a href="/industries/semiconductors/">Semiconductors</a></li>
-                                <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
-                                <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
-                                <li><a href="/industries/">See all industries</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Integration</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/node-red/flowfuse/hub/redis/">Redis</a></li>
-                                <li><a href="/node-red/flowfuse/edge/opcua/">OPC UA</a></li>
-                                <li><a href="/node-red/flowfuse/edge/rtsp/">RTSP</a></li>
-                                <li><a href="/node-red/flowfuse/edge/cip-suite/">EtherNet/IP</a></li>
-                                <li><a href="/node-red/flowfuse/mqtt/">MQTT</a></li>
-                                <li><a href="/node-red/flowfuse/ai/onxx/">ONNX</a></li>
-                                <li><a href="/node-red/flowfuse/ai/llm-nodes/">LLM Nodes</a></li>
-                                <li><a href="/node-red/flowfuse/mcp/">MCP</a></li>
-                                <li><a href="/integrations/">See all integrations</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <!-- Resources -->
-                <section class="pt-5" data-nav-section="Resources">
-                    <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8">
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Learn</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/blog/">Blog</a></li>
-                                <li><a href="/webinars/">Webinars</a></li>
-                                <li><a href="/resources/publications/">Publications</a></li>
-                                <li><a href="https://node-red-academy.learnworlds.com/">Node-RED Academy</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Reference</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/docs/">Docs</a></li>
-                                <li><a href="/changelog/">Changelog</a></li>
-                                <li><a href="https://github.com/FlowFuse/flowfuse">Github</a></li>
-                                <li><a href="https://discourse.nodered.org/c/vendors/flowfuse/24/">Support forums</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Customers</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/customer-stories/">Customer Stories</a></li>
-                                <li><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                {%- endfor %}
             </div>
             <!-- Company -->
             <section class="mt-12 border-t border-gray-300 pt-9" data-nav-section="Company">
@@ -493,31 +282,21 @@ eleventyComputed:
                         </a>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
+                        {%- for grp in chrome.footer.company.grid %}
                         <div>
                             <ul class="flex flex-col gap-2.5">
-                                <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
-                                <li><a href="/about/">About us</a></li>
-                                <li><a href="{{ site.jobBoard }}">Jobs</a></li>
-                                <li><a href="/platform/security/#certifications">Security certifications</a></li>
+                                {%- for item in grp.links %}
+                                <li><a href="{{ item.href | resolveHref(site) }}">{{ item.label }}</a></li>
+                                {%- endfor %}
                             </ul>
                         </div>
-                        <div>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/handbook/">Handbook</a></li>
-                                <li><a href="/partners/">Partnerships</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/professional-services/">Professional Services</a></li>
-                                <li><a href="https://status.flowfuse.com/">Service Status</a></li>
-                            </ul>
-                        </div>
+                        {%- endfor %}
                     </div>
                     <div>
                         <ul class="flex flex-col gap-2.5">
-                            <li><a href="/support/">Request Support</a></li>
-                            <li><a href="/contact-us/">Contact Us</a></li>
+                            {%- for item in chrome.footer.company.trailing.links %}
+                            <li><a href="{{ item.href | resolveHref(site) }}">{{ item.label }}</a></li>
+                            {%- endfor %}
                         </ul>
                     </div>
                 </div>

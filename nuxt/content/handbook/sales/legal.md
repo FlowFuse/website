@@ -1,5 +1,7 @@
 ---
 title: "Legal"
+navigation:
+  order: 21
 ---
 
 # Legal

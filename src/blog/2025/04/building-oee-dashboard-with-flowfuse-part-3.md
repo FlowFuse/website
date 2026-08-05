@@ -282,3 +282,5 @@ By the end of this journey, you have built a dashboard and created a foundation 
 We hope this series helped you understand how FlowFuse and Node-RED can quickly prototype and deploy powerful industrial applications. Thank you for following along!
 
 Suppose you have not built your OEE dashboard yet or are facing issues. In that case, you can get started instantly, [sign up]({% include "sign-up-url.njk" %}) now and use our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/) to accelerate your deployment.
+
+And if you are working out what else belongs on the floor alongside OEE, our [manufacturing dashboard examples](/blog/2026/08/manufacturing-dashboard-examples/) cover production, downtime, quality, and calibration views built the same way.

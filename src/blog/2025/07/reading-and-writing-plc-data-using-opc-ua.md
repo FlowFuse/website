@@ -91,7 +91,7 @@ For production OPC UA deployments, we recommend using FlowFuse. When connecting 
 
 FlowFuse provides these enterprise features plus automatic backups, one-click rollbacks, environment variables for different sites, and DevOps pipelines for testing changes before they reach production.
 
-[Get started →]({% include "sign-up-url.njk" %})
+[Get started →](https://app.flowfuse.com/account/create)
 
 ### Installing OPC UA Support in FlowFuse
 
@@ -288,6 +288,6 @@ This guide covered the basics, but OPC UA offers far more. In the next article, 
 
 When it is time to move beyond prototypes, **FlowFuse** delivers what industrial systems truly need, remote device management, instant rollbacks with full version control, built-in team collaboration, and high availability you can trust.
 
-If you’re ready to simplify your OPC UA integration and scale industrial workflows with Node-RED, [start your free trial]({% include "sign-up-url.njk" %}) of FlowFuse today.
+If you’re ready to simplify your OPC UA integration and scale industrial workflows with Node-RED, [start your free trial](https://app.flowfuse.com/account/create) of FlowFuse today.
 
 OPC UA is one of several protocols FlowFuse uses to connect PLCs to MQTT, cloud platforms, and enterprise systems. See the [FlowFuse PLC integration overview](/landing/plc/) for EtherNet/IP, Siemens S7, Modbus, and more.
