@@ -5,8 +5,7 @@ const props = defineProps<{
     entry: { path: string, title: string, description?: string, date: string | Date, authors?: string[] }
 }>()
 
-const team = useTeam()
-const authorNames = computed(() => (props.entry.authors || []).map(username => team[username]?.name).filter(Boolean).join(', '))
+const authorNames = computed(() => useAuthorNames(props.entry.authors))
 
 const catalogFeature = computed(() => findFeatureByChangelog(props.entry.path))
 const tierCloud = computed(() => deriveTierLabel(catalogFeature.value?.cloud))

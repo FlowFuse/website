@@ -6,7 +6,7 @@ date: 2025-08-28
 lastUpdated: 2025-12-29
 keywords: Pareto chart, Pareto diagram, Pareto analysis, manufacturing quality, defect reduction, quality control tools, root cause analysis, equipment maintenance, supply chain management, manufacturing efficiency
 authors: ["sumit-shinde"]
-image: blog/2025/08/images/pareto-chart-manufacturing-guide.png
+image: /blog/2025/08/images/pareto-chart-manufacturing-guide.png
 tags:
   - flowfuse
 meta:
@@ -186,4 +186,4 @@ The first step is always the hardest, and the most important. Choose one persist
 
 **Ready to transform your manufacturing data into actionable insights?** 
 
-Stop guessing which problems to tackle first. [Try FlowFuse free for 30 days]({% include "sign-up-url.njk" %}) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.
+Stop guessing which problems to tackle first. [Try FlowFuse free for 30 days](https://app.flowfuse.com/account/create) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.

@@ -1,6 +1,7 @@
 import { visit } from 'unist-util-visit'
 import type { Root } from 'mdast'
 import type { VFile } from 'vfile'
+import { slugifyAnchor } from './slugify-anchor'
 
 function posixDirname(path: string): string {
     const i = path.lastIndexOf('/')
@@ -15,23 +16,6 @@ function posixResolve(base: string, rel: string): string {
         else if (p !== '.') out.push(p)
     }
     return '/' + out.filter(Boolean).join('/')
-}
-
-// Normalises a link fragment to the heading id @nuxt/content generates
-// (github-slugger style: lowercase, drop chars outside [a-z0-9-], collapse and
-// trim dashes). The upstream docs authored anchors with a different slugifier
-// (keeping ? & . ( ) and repeated dashes), so raw fragments miss their target.
-function slugifyAnchor(anchor: string): string {
-    if (!anchor) return ''
-    let raw = anchor.replace(/^#/, '')
-    // Fragments may arrive percent-encoded (e.g. %3F for ?, %26 for &); decode
-    // first so those characters are dropped rather than leaving hex residue.
-    try { raw = decodeURIComponent(raw) } catch { /* keep raw on malformed input */ }
-    const slug = raw.toLowerCase()
-        .replace(/[^a-z0-9-]+/g, '')
-        .replace(/-+/g, '-')
-        .replace(/^-+|-+$/g, '')
-    return slug ? '#' + slug : ''
 }
 
 // Normalises image/link URLs in docs markdown so they resolve in the static

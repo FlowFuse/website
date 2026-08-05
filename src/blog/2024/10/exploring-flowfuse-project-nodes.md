@@ -84,9 +84,11 @@ In this section, we will learn how to create a flow that monitors CPU performanc
 5. Next, Enter the topic as "cpu-performance".
 6. Connect the output of the **Inject** node to the input of the **CPU** node, the output of the **CPU** node to the input of the **Change** node, and finally, connect the **Change** node to the **Project Out** node.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"dd182fedce6c532a","type":"inject","z":"fe61f54c8563279d","name":"","props":[{"p":"payload"}],"repeat":"1","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":190,"y":200,"wires":[["c47bc42f8a6f6884"]]},{"id":"e0dd915a7b37af2b","type":"project link out","z":"fe61f54c8563279d","name":"project out 1","mode":"link","broadcast":false,"project":"054bb5cf-20df-431f-a00b-29b28e160b27","topic":"cpu-performance","x":770,"y":200,"wires":[]},{"id":"05a9ec7b2ae57cc0","type":"change","z":"fe61f54c8563279d","name":"","rules":[{"t":"set","p":"data.name","pt":"msg","to":"FF_INSTANCE_NAME","tot":"env"},{"t":"set","p":"data.cpu","pt":"msg","to":"payload","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":560,"y":200,"wires":[["e0dd915a7b37af2b"]]},{"id":"c47bc42f8a6f6884","type":"cpu","z":"fe61f54c8563279d","name":"","msgCore":false,"msgOverall":true,"msgArray":false,"msgTemp":false,"x":370,"y":200,"wires":[["05a9ec7b2ae57cc0"]]}]
-{% endrenderFlow %}
+```
+::
 
 By utilizing environment variables, this flow becomes reusable, allowing you to copy and paste flow to monitor multple instances.
 
@@ -105,9 +107,11 @@ To receive the CPU data from monitored instances, follow these steps in your cen
 6. Connect the output of the **Project In** node to the input of the **ui-chart** node.
 7. Click the "deploy" button.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"2d681b19eb5799b7","type":"change","z":"d382bd2b5733a3a9","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"data.cpu","tot":"msg"},{"t":"set","p":"topic","pt":"msg","to":"data.name","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":400,"y":220,"wires":[["307d9c5913509557"]]},{"id":"307d9c5913509557","type":"ui-chart","z":"d382bd2b5733a3a9","group":"d0dbd4016c7aac21","name":"","label":"chart","order":1,"chartType":"line","category":"topic","categoryType":"msg","xAxisLabel":"","xAxisProperty":"","xAxisPropertyType":"property","xAxisType":"time","xAxisFormat":"","xAxisFormatType":"auto","yAxisLabel":"","yAxisProperty":"","ymin":"","ymax":"","action":"append","stackSeries":false,"pointShape":"cross","pointRadius":4,"showLegend":true,"removeOlder":1,"removeOlderUnit":"3600","removeOlderPoints":"","colors":["#0095ff","#ff0000","#ff7f0e","#2ca02c","#a347e1","#d62728","#ff9896","#9467bd","#c5b0d5"],"textColor":["#666666"],"textColorDefault":true,"gridColor":["#e5e5e5"],"gridColorDefault":true,"width":"12","height":8,"className":"","x":630,"y":220,"wires":[[]]},{"id":"465ee550bf9d101d","type":"project link in","z":"d382bd2b5733a3a9","name":"project in 1","project":"all","broadcast":false,"topic":"cpu-performance","x":180,"y":220,"wires":[["2d681b19eb5799b7"]]},{"id":"d0dbd4016c7aac21","type":"ui-group","name":"Device Monitoring Chart","page":"39fae809f6f7fc7b","width":"12","height":"1","order":1,"showTitle":true,"className":"","visible":"true","disabled":"false"},{"id":"39fae809f6f7fc7b","type":"ui-page","name":"Device Monitoring","ui":"ded86f3820342985","path":"/charts-example","icon":"chart-box-outline","layout":"grid","theme":"5075a7d8e4947586","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"ded86f3820342985","type":"ui-base","name":"My Dashboard","path":"/dashboard","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"showPageTitle":true,"navigationStyle":"default","titleBarStyle":"default"},{"id":"5075a7d8e4947586","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}}]
-{% endrenderFlow %}
+```
+::
 
 Once deployed, open the dashboard to view an interactive live line chart displaying the CPU performance of all monitored devices.
 
@@ -122,9 +126,11 @@ In the instance sending the CPU data for monitoring, set the **Project Out** nod
 
 If you prefer not to use broadcasting, configure the **Project Out** node with specific topics. This will ensure that receiving nodes capture only specific instance data based on the topic. You can then connect these nodes to gauge nodes to distinctly display the CPU performance for each instance.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"c0021ca894dd3e17","type":"change","z":"d382bd2b5733a3a9","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"data.cpu","tot":"msg"},{"t":"set","p":"ui_update.label","pt":"msg","to":"data.name","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":360,"y":140,"wires":[["932a6733d53ab87d"]]},{"id":"426925e74d8e30f5","type":"project link in","z":"d382bd2b5733a3a9","name":"project in 1","project":"04175120-ebeb-4813-8910-03f92f8ed429","broadcast":true,"topic":"cpu-performance","x":140,"y":140,"wires":[["c0021ca894dd3e17"]]},{"id":"932a6733d53ab87d","type":"ui-gauge","z":"d382bd2b5733a3a9","name":"","group":"087559f9b99f047a","order":1,"width":"4","height":"4","gtype":"gauge-half","gstyle":"needle","title":"gauge","units":"units","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#5cd65c"},{"from":"4","color":"#ffc800"},{"from":"7","color":"#ea5353"}],"min":0,"max":10,"sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":590,"y":140,"wires":[]},{"id":"38539dc4bfdbf6be","type":"change","z":"d382bd2b5733a3a9","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"data.cpu","tot":"msg"},{"t":"set","p":"ui_update.label","pt":"msg","to":"data.name","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":360,"y":240,"wires":[["bdbcd5f9f8ac610c"]]},{"id":"e36b12aa51d365fe","type":"project link in","z":"d382bd2b5733a3a9","name":"project in 2","project":"04175120-ebeb-4813-8910-03f92f8ed429","broadcast":true,"topic":"cpu-performance","x":140,"y":240,"wires":[["38539dc4bfdbf6be"]]},{"id":"bdbcd5f9f8ac610c","type":"ui-gauge","z":"d382bd2b5733a3a9","name":"","group":"6cf5326fe928c9cf","order":1,"width":"4","height":"4","gtype":"gauge-half","gstyle":"needle","title":"gauge","units":"units","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#5cd65c"},{"from":"4","color":"#ffc800"},{"from":"7","color":"#ea5353"}],"min":0,"max":10,"sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":590,"y":240,"wires":[]},{"id":"a2e1fba0e9cd985a","type":"change","z":"d382bd2b5733a3a9","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"data.cpu","tot":"msg"},{"t":"set","p":"ui_update.label","pt":"msg","to":"data.name","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":360,"y":340,"wires":[["c298b64b260df708"]]},{"id":"dcfe73c16e17648a","type":"project link in","z":"d382bd2b5733a3a9","name":"project in 3","project":"8a611136-6e3f-447e-9436-34b2d00eac8e","broadcast":true,"topic":"cpu-performance","x":140,"y":340,"wires":[["a2e1fba0e9cd985a"]]},{"id":"c298b64b260df708","type":"ui-gauge","z":"d382bd2b5733a3a9","name":"","group":"ee5fc3eb29a7ee4b","order":1,"width":"4","height":"4","gtype":"gauge-half","gstyle":"needle","title":"gauge","units":"units","icon":"","prefix":"","suffix":"","segments":[{"from":"0","color":"#5cd65c"},{"from":"4","color":"#ffc800"},{"from":"7","color":"#ea5353"}],"min":0,"max":10,"sizeThickness":16,"sizeGap":4,"sizeKeyThickness":8,"styleRounded":true,"styleGlow":false,"className":"","x":590,"y":340,"wires":[]},{"id":"087559f9b99f047a","type":"ui-group","name":"Device Group 1","page":"39fae809f6f7fc7b","width":"4","height":"2","order":3,"showTitle":false,"className":"","visible":"true","disabled":"false"},{"id":"6cf5326fe928c9cf","type":"ui-group","name":"Device Group 2","page":"39fae809f6f7fc7b","width":"4","height":"2","order":2,"showTitle":false,"className":"","visible":"true","disabled":"false"},{"id":"ee5fc3eb29a7ee4b","type":"ui-group","name":"Device Group 3","page":"39fae809f6f7fc7b","width":"4","height":"2","order":1,"showTitle":false,"className":"","visible":"true","disabled":"false"},{"id":"39fae809f6f7fc7b","type":"ui-page","name":"Device Monitoring","ui":"ded86f3820342985","path":"/charts-example","icon":"chart-box-outline","layout":"grid","theme":"5075a7d8e4947586","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"ded86f3820342985","type":"ui-base","name":"My Dashboard","path":"/dashboard","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"showPageTitle":true,"navigationStyle":"default","titleBarStyle":"default"},{"id":"5075a7d8e4947586","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}}]
-{% endrenderFlow %}
+```
+::
 
 This example showcases one of many powerful use cases for FlowFuse project nodes. By utilizing these capabilities, you can transform how your Node-RED instances communicate, enabling efficient workflows and innovative solutions.
 
@@ -162,9 +168,11 @@ Throughout this section, we will explore how to utilize the **Project Call** nod
 
 ***Note**: Before proceeding, make sure your device is assigned to an instance. If the device is assigned to an application, you cannot use Project nodes, as they are designed to work with instances.*
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"bdb27b9ab0d94897","type":"inject","z":"b152a914653d9fce","name":"Trigger","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"5","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":260,"y":380,"wires":[["8a4fe9cf342b6156"]]},{"id":"4ece54ca3c91f7ff","type":"debug","z":"b152a914653d9fce","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":680,"y":380,"wires":[]},{"id":"8a4fe9cf342b6156","type":"rpi-dht22","z":"b152a914653d9fce","name":"","topic":"rpi-dht22","dht":"11","pintype":"0","pin":4,"x":460,"y":380,"wires":[["4ece54ca3c91f7ff"]]}]
-{% endrenderFlow %}
+```
+::
 
 1. Copy/download the flow above and import/upload it into your Raspberry Pi Node-RED instance. Ensure you have correctly interfaced the DHT11 sensor with your Raspberry Pi. For more information, refer to our guide on [Setting Up Node-RED on Raspberry Pi 4](/node-red/hardware/raspberry-pi-4/), which explains how to install the device agent on the Raspberry Pi and read temperature data from the DHT11 sensor.
 2. Deploy the flow.
@@ -178,9 +186,11 @@ Once you deploy the flow, you will see the temperature data displayed on the Deb
 
 Once the flow is ready, deploy it. The final flow should look like the one below:
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"020ede0bf68cf063","type":"change","z":"fe61f54c8563279d","name":"","rules":[{"t":"set","p":"data.temperature","pt":"msg","to":"payload","tot":"msg"},{"t":"set","p":"data.humidity","pt":"msg","to":"humidity","tot":"msg"},{"t":"delete","p":"payload","pt":"msg"},{"t":"delete","p":"humidity","pt":"msg"},{"t":"set","p":"topic","pt":"msg","to":"rpi-dht11","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":560,"y":220,"wires":[["1a592414ab69f1d8"]]},{"id":"a39fcfcd133ecaae","type":"project link in","z":"fe61f54c8563279d","name":"project in 1","project":"all","broadcast":false,"topic":"temperature","x":160,"y":220,"wires":[["16e8a24545d3258f"]]},{"id":"1a592414ab69f1d8","type":"project link out","z":"fe61f54c8563279d","name":"project out 1","mode":"return","broadcast":false,"project":"b1dd1d7d-556e-4dd4-9b8f-d78ffe3f510d","topic":"","x":790,"y":220,"wires":[]},{"id":"16e8a24545d3258f","type":"rpi-dht22","z":"fe61f54c8563279d","name":"","topic":"rpi-dht11","dht":"11","pintype":"0","pin":4,"x":340,"y":220,"wires":[["020ede0bf68cf063"]]}]
-{% endrenderFlow %}
+```
+::
 
 Now that we have added the **Project In** and **Project Out** nodes, the flow can be triggered to read the temperature from any Node-RED instance within your team using the **Project Call** node and receive the response.
 
@@ -194,9 +204,11 @@ In this section, we will explore how to trigger the flow we created in the previ
 4. Finally, drag a **Debug** node onto the canvas and connect it to the output of the **Project Call** node. This will help you view the response received from the triggered flow in the Debug panel.
 5. Deploy the flow.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"8276fba516f3697b","type":"project link call","z":"d382bd2b5733a3a9","name":"","project":"d1b6cf3a-70fc-4ec4-b30c-e207338b2cc4","topic":"temperature","timeout":"30","x":530,"y":200,"wires":[["9ef6638382d7e9d5"]]},{"id":"0abdbf43350eb362","type":"inject","z":"d382bd2b5733a3a9","name":"","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":320,"y":200,"wires":[["8276fba516f3697b"]]},{"id":"9ef6638382d7e9d5","type":"debug","z":"d382bd2b5733a3a9","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"true","targetType":"full","statusVal":"","statusType":"auto","x":740,"y":200,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 Now, once you click the **Inject** button, you will see the response that includes the temperature in the debug panel, which is read by the flow deployed on the Raspberry Pi.
 

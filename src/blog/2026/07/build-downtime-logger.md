@@ -165,9 +165,11 @@ WHERE machine_id = $machine_id AND status = 'Open';
 
 To test without hardware, import the following flow:
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"bfc643d98eb10bb6","type":"group","z":"454731c79b51b360","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["4b50bf631b33bc25","c5c148db3ebd75ec","6e840436690af375","94a7e426af3a534c"],"x":214,"y":959,"w":752,"h":122},{"id":"4b50bf631b33bc25","type":"ff-mqtt-out","z":"454731c79b51b360","g":"bfc643d98eb10bb6","name":"","topic":"","qos":"0","retain":"false","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","lwt":"58936bbe1460d6be","x":870,"y":1020,"wires":[]},{"id":"c5c148db3ebd75ec","type":"inject","z":"454731c79b51b360","g":"bfc643d98eb10bb6","name":"Simulate: Downtime Started","props":[{"p":"payload.machine_id","v":"Robot-01","vt":"str"},{"p":"payload.event","v":"downtime_started","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":380,"y":1000,"wires":[["94a7e426af3a534c"]]},{"id":"6e840436690af375","type":"inject","z":"454731c79b51b360","g":"bfc643d98eb10bb6","name":"Simulate: Downtime Ended","props":[{"p":"payload.machine_id","v":"Robot-01","vt":"str"},{"p":"payload.event","v":"downtime_ended","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":370,"y":1040,"wires":[["94a7e426af3a534c"]]},{"id":"94a7e426af3a534c","type":"function","z":"454731c79b51b360","g":"bfc643d98eb10bb6","name":"Build Event Payload","func":"const p = msg.payload || {};\n\nconst machine_id = p.machine_id || \"unknown\";\nconst event = p.event || \"unknown_event\";\n\nmsg.topic = `factory/plant2/line1/${machine_id}/events`;\n\nmsg.payload = {\n    machine_id,\n    event,\n    timestamp: new Date().toISOString()\n};\n\nreturn msg;","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":660,"y":1020,"wires":[["4b50bf631b33bc25"]]},{"id":"58936bbe1460d6be","type":"ff-mqtt-conf","birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closeRetain":"false","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","willMsg":{}},{"id":"8c6c2d9875462a7f","type":"global-config","env":[],"modules":{"@flowfuse/nr-mqtt-nodes":"0.3.0"}}]
-{% endrenderFlow 300 %}
+```
+::
 
 This gives you two buttons, one that simulates a machine stopping, one that simulates it starting again, wired through a function node that builds the topic and payload, then out over MQTT just like a real device would.
 

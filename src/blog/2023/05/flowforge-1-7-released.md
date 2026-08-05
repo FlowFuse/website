@@ -19,7 +19,7 @@ FlowFuse 1.7 adds new support for accessing the Node-RED Editor on Devices via F
 
 We are excited to introduce a new feature that will simplify the process of debugging and developing flows for devices. Our latest feature, "Editing Flows on Devices" allows users to access the editor directly on their device without the need for complex network configurations or firewalls. This feature will significantly improve the user experience, making it easier and more efficient to work with devices.
 
-This update is a part of our ongoing commitment to making FlowFuse the best possible solution for developing your Node-RED flows, no matter where they're running. In fact, as part of our last release 1.6, we already introduced the feature: ["Access Node-RED logs from remote devices"](../../04/flowforge-1-6-released/#access-node-red-logs-from-remote-devices). This feature made it easy for users to troubleshoot and debug. Building on that, we've taken the next step, and it's now possible to access the Device Editor.
+This update is a part of our ongoing commitment to making FlowFuse the best possible solution for developing your Node-RED flows, no matter where they're running. In fact, as part of our last release 1.6, we already introduced the feature: ["Access Node-RED logs from remote devices"](/blog/2023/04/flowforge-1-6-released/#access-node-red-logs-from-remote-devices). This feature made it easy for users to troubleshoot and debug. Building on that, we've taken the next step, and it's now possible to access the Device Editor.
 
 <lite-youtube videoid="zS6P3RR86vE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
 
@@ -90,7 +90,7 @@ Cannot select "Member" option when inviting a team member [#2084](https://github
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

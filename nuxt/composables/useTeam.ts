@@ -2,6 +2,10 @@ interface TeamMember {
     name: string
     title?: string
     headshot?: string
+    bio?: string
+    email?: string
+    linkedin?: string
+    github?: string
 }
 
 const teamModules = import.meta.glob('../../src/_data/team/*.json', { eager: true, import: 'default' })
@@ -18,4 +22,13 @@ for (const [path, mod] of Object.entries({ ...teamModules, ...guestModules })) {
 
 export function useTeam() {
     return people
+}
+
+export function useAuthorMembers(authors?: string[]): TeamMember[] {
+    const team = useTeam()
+    return (authors || []).map(username => team[username]).filter(Boolean)
+}
+
+export function useAuthorNames(authors?: string[]): string {
+    return useAuthorMembers(authors).map(member => member.name).join(', ')
 }
