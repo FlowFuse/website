@@ -152,4 +152,4 @@ Your automation flows now run with production reliability. Remote access works s
 
 FlowFuse bridges the gap between Node-RED's simplicity and production reliability requirements, built by the people who created Node-RED and understand its production needs better than anyone.
 
-Ready to see FlowFuse in action? [Book a demo](https://flowfuse.com/book-demo/) and we'll show you how it works with your setup.
+Ready to see FlowFuse in action? [Book a demo](/book-demo/) and we'll show you how it works with your setup.

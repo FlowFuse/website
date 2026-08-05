@@ -190,12 +190,14 @@ export default defineContentConfig({
                 highlight: z.boolean().optional(),
                 order: z.number(),
                 features: z.array(z.string()),
+                bestFitFor: z.array(z.string()).optional(),
                 button: z.object({
                     label: z.string(),
                     to: z.string(),
                     external: z.boolean().optional(),
                     color: z.enum(['primary', 'secondary', 'highlight']).optional(),
                     variant: z.enum(['solid', 'outline', 'soft', 'subtle', 'ghost', 'link']).optional(),
+                    event: z.string().optional(),
                 }),
             })
         }),
@@ -214,6 +216,7 @@ export default defineContentConfig({
                         tiers: z.object({
                             edge: z.boolean(),
                             hub: z.boolean(),
+                            fleet: z.boolean(),
                         }),
                     })),
                 })),

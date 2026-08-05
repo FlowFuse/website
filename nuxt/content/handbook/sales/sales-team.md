@@ -1,8 +1,15 @@
 ---
-title: "Account Executives"
+title: "Sales"
+navigation:
+  order: 1
 ---
 
-# Account Executives
+# Sales
+
+The Sales function owns the end-to-end commercial process: identifying,
+qualifying, and converting opportunities into FlowFuse customers, and driving
+expansion within existing accounts. The **Account Executive (AE)** is the role
+within Sales, accountable for opportunity progression and commercial outcomes.
 
 ## Purpose
 

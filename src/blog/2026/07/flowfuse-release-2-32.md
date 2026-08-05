@@ -30,7 +30,7 @@ Community nodes are code you have to vet, secure, and maintain yourself. Certifi
 
 2.32 adds **Redis** as a certified node, so you can integrate with Redis using a node FlowFuse tests, secures, and supports, backed by the same trust contract as every certified node: vetted quality, a CVE response commitment, and a real path to support.
 
-Certified Nodes belong to specific FlowFuse packages. Browse the full catalog on the [integrations page](https://flowfuse.com/integrations/?certified=1), and contact us to get them enabled for your team or instance.
+Certified Nodes belong to specific FlowFuse packages. Browse the full catalog on the [integrations page](/integrations/?certified=1), and contact us to get them enabled for your team or instance.
 
 ## Pipelines Connect to Any Git Server
 

@@ -14,7 +14,7 @@ tags:
 
 FlowFuse has established a rich ecosystem of products to help you build bespoke, powerful, low-code applications.
 
-We've seen customers utilizing these to [revolutionise precision manufacturing](https://flowfuse.com/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/), [automate building management](https://flowfuse.com/customer-stories/node-red-building-management/) and [modernize the distribution of global weather data](https://flowfuse.com/customer-stories/un-wmo-nr-data-sharing/), just to name a few examples. 
+We've seen customers utilizing these to [revolutionise precision manufacturing](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/), [automate building management](/customer-stories/node-red-building-management/) and [modernize the distribution of global weather data](/customer-stories/un-wmo-nr-data-sharing/), just to name a few examples. 
 
 In this series of articles, we'll be taking a look at the common architectures and design patterns we are seeing used across our customer base, and how you can use these to build your own applications. To kick things off, this article will focus on **"Remote Device Monitoring"**.
 

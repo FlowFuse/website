@@ -146,7 +146,7 @@ Everything starts with a login. Without authentication, the dashboard cannot ide
 2. Select the **Security** tab.
 3. Enable **FlowFuse User Authentication**.
 
-![Screenshot: the Security tab in instance settings with FlowFuse User Authentication enabled](https://flowfuse.com/img/displaying-logged-in-user-flowfuse-instance-setting.png)
+![Screenshot: the Security tab in instance settings with FlowFuse User Authentication enabled](../../2024/04/images/displaying-logged-in-user-flowfuse-instance-setting.png)
 *Enable FlowFuse User Authentication in the instance Security settings. You'll also create a Personal Access Token here for authenticating API requests later in the tutorial.*
 
 The first time someone opens the dashboard, they will be prompted to sign in using their FlowFuse username and password. Once authenticated, the dashboard can personalize the experience for each operator throughout the rest of this tutorial.
@@ -361,7 +361,7 @@ return [
 
 3. Import the Current Work Order Card ui-template below and assign it to the Current Work Order group. The complete component is provided below, so there's no need to recreate it.
 
-> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
+> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](/docs/user/expert/node-red-embedded-ai/#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
 
 ::render-flow{:height="300"}
 ```json
@@ -397,7 +397,7 @@ The instruction widget emits two housekeeping actions: `save_step` whenever the 
 
 1. Import the **Work Instruction Widget** `ui-template` below, assign it to the **Instructions** page, and set its scope to **Page**. The widget displays one instruction at a time with its image, target cycle time, and checklist. Operators can't move to the next step until every checklist item is completed, and the final step changes the button to **Complete Operation**.
 
-> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](https://flowfuse.com/docs/user/expert/node-red-embedded-ai/?utm_source=chatgpt.com#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
+> **Tip:** Whenever you need a custom Dashboard widget, you don't have to write the Vue code yourself. Use [FlowFuse Expert](/docs/user/expert/node-red-embedded-ai/?utm_source=chatgpt.com#css-and-html-generation-for-flowfuse-dashboard) and describe the widget in plain English and it will generate the `ui-template` for you.
 
 ::render-flow{:height="300"}
 ```json

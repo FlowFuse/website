@@ -35,7 +35,7 @@ This Blueprint makes it simple to surface insights relevant to your Node-RED flo
 
 Check out the video demo to see it in action, featuring the agent connected to a worldmap node!
 
-To put this Blueprint to use, check out the Blueprint page for [OpenAI LLM Chat Agent.](https://flowfuse.com/blueprints/ai/llm-chat-agent/)
+To put this Blueprint to use, check out the Blueprint page for [OpenAI LLM Chat Agent.](/blueprints/ai/llm-chat-agent/)
 
 
 
@@ -51,7 +51,7 @@ More details are available in the [Git Integration changelog](/changelog/2025/06
 
 Organizations running self-hosted FlowFuse installations can now take advantage of the Blueprints we publish, bringing the same rapid development capabilities to on-premises and private cloud deployments. 
 
-Self-hosted installations will automatically pull down the [blueprint library](https://flowfuse.com/blueprints/), and will stay up to date when we publish new blueprints.
+Self-hosted installations will automatically pull down the [blueprint library](/blueprints/), and will stay up to date when we publish new blueprints.
 
 This update ensures that all FlowFuse users, regardless of their deployment model, can benefit from our growing library of pre-built solutions.
 

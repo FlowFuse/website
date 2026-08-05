@@ -36,7 +36,7 @@ Our new Getting Started with Dashboard Blueprint deploys to a new Node-RED insta
 
 New Dashboard nodes are added on a regular basis, and we will keep in mind which ones users would like help using as we iterate on this Blueprint.
 
-To put this Blueprint to use, check out the Blueprint page for [Getting Started with Dashboard.](https://flowfuse.com/blueprints/getting-started/dashboard/)
+To put this Blueprint to use, check out the Blueprint page for [Getting Started with Dashboard.](/blueprints/getting-started/dashboard/)
 
 
 ## Blueprint: PDF Report Generator
@@ -50,7 +50,7 @@ This new Blueprint makes it very easy to create PDF reports from your data. Usin
 
 To get you started using this Blueprint, we've included sample data that is generated automatically. 
 
-Instructions for using this Blueprint, including how to map fields from your database to our preconfigured fields, [check out the Blueprint page.](https://flowfuse.com/blueprints/manufacturing/pdf-report-generator/)
+Instructions for using this Blueprint, including how to map fields from your database to our preconfigured fields, [check out the Blueprint page.](/blueprints/manufacturing/pdf-report-generator/)
 
 
 ## Where are we headed?

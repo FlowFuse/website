@@ -129,6 +129,7 @@ export default defineNuxtConfig({
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
                 { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap' },
+                { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css', integrity: 'sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+', crossorigin: 'anonymous' },
                 { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
                 { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
                 { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
@@ -249,6 +250,10 @@ export default defineNuxtConfig({
                 remarkPlugins: {
                     'handbook-links': { instance: remarkHandbookLinks },
                     'docs-links': { instance: remarkDocsLinks },
+                    'remark-math': {},
+                },
+                rehypePlugins: {
+                    'rehype-katex': {},
                 },
             },
         },

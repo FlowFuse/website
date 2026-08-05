@@ -168,7 +168,7 @@ Every AWS account has a unique IoT Core endpoint. This is the host address you w
 xxxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com
 ```
 
-Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](https://flowfuse.com/docs/user/envvar/), for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
+Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](/docs/user/envvar/), for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
 
 ## Step 4: Configure the MQTT Connection in FlowFuse
 
@@ -187,7 +187,7 @@ First, upload your certificates so Node-RED can use them for the TLS handshake.
 | Client ID | `${CLIENT_ID}`, set via FlowFuse environment variable |
 | Keep alive | `60` |
 
-Define `SERVER` and `CLIENT_ID` under your instance's environment settings in FlowFuse. See [FlowFuse Environment Variables](https://flowfuse.com/docs/user/envvar/) for how to configure them. Keeping these values out of the flow JSON means you can deploy the same flow to multiple edge instances, each with its own Thing name and endpoint, without touching the flow itself. The Client ID must still match your Thing name exactly, so each instance gets its own variable value.
+Define `SERVER` and `CLIENT_ID` under your instance's environment settings in FlowFuse. See [FlowFuse Environment Variables](/docs/user/envvar/) for how to configure them. Keeping these values out of the flow JSON means you can deploy the same flow to multiple edge instances, each with its own Thing name and endpoint, without touching the flow itself. The Client ID must still match your Thing name exactly, so each instance gets its own variable value.
 
 4. Check **Enable TLS**. A TLS configuration field appears.
 5. Click the **+** icon next to it to add a new TLS config.

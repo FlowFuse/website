@@ -6,6 +6,7 @@
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
+import { execFileSync } from 'node:child_process'
 import { getHandbookChanges, toHandbookRel, relToUrl, mondayOf, prsFromCommits } from './handbookChanges.mjs'
 
 // --- pure helpers -----------------------------------------------------------
@@ -145,16 +146,38 @@ test('getHandbookChanges produces well-formed, newest-first weekly data', () => 
     }
 })
 
-test('known recent handbook changes appear in the most recent week', () => {
+test('the actual latest handbook commit appears in the most recent week', () => {
+    // Ask git directly (independent of handbookChanges.mjs) for the single most
+    // recent commit that touched a tracked handbook file, and confirm it shows
+    // up in weeks[0]. Asserting against a hardcoded PR number here would rot the
+    // moment anyone else edits the handbook, since "most recent" keeps moving.
+    const latest = execFileSync('git', [
+        'log', '--no-merges', '-M', '-1', '--name-status', '--date=short',
+        '--pretty=format:%H%x1f%ad%x1f%s',
+        '--', 'nuxt/content/handbook', 'src/handbook'
+    ], { cwd: process.cwd() }).toString()
+
+    const [header, ...fileLines] = latest.split('\n').filter(Boolean)
+    const [sha, date, subject] = header.split('\x1f')
+    const prMatch = subject.match(/\(#(\d+)\)\s*$/)
+    const files = fileLines.map(line => line.split('\t')).map(parts =>
+        parts[0].startsWith('R') || parts[0].startsWith('C') ? parts[2] : parts[1]
+    )
+    const urls = files.map(toHandbookRel).filter(Boolean).map(relToUrl)
+    assert.ok(urls.length > 0, 'the latest handbook commit touches at least one tracked page')
+
     const weeks = getHandbookChanges(process.cwd())
     const recent = weeks[0]
-    // #5158 (Release Process) landed in the most recent week of activity.
-    const releaseProcess = recent.pages.find(p => p.url === '/handbook/engineering/releases/process/')
-    assert.ok(releaseProcess, 'Release Process page present in most recent week')
-    assert.equal(releaseProcess.prUrl, 'https://github.com/FlowFuse/website/pull/5158')
+    assert.equal(recent.weekStart, mondayOf(date).toISOString().slice(0, 10), 'weeks[0] is the latest commit\'s week')
 
-    // The same week's PR list surfaces #5158 as a deduped entry.
-    const pr5158 = recent.prs.find(p => p.prNumber === 5158)
-    assert.ok(pr5158, 'PR #5158 present in most recent week prs')
-    assert.equal(pr5158.url, 'https://github.com/FlowFuse/website/pull/5158')
+    for (const url of urls) {
+        const page = recent.pages.find(p => p.url === url)
+        assert.ok(page, `${url} present in most recent week`)
+        assert.equal(page.commits.some(c => c.sha === sha), true, `commit ${sha} recorded against ${url}`)
+    }
+
+    if (prMatch) {
+        const pr = recent.prs.find(p => p.prNumber === Number(prMatch[1]))
+        assert.ok(pr, `PR #${prMatch[1]} present in most recent week prs`)
+    }
 })

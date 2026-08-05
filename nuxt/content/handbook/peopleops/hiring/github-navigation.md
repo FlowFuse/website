@@ -38,3 +38,22 @@ You do not need to watch every repository. Watch the ones tied to your work and 
 - **Project board** - a board view across issues, used for planning.
 - **Review** - feedback on a PR: approve, comment, or request changes.
 - **Mention** - writing `@username` to pull someone into a thread. Mention people deliberately; it is our main signal that something needs attention.
+
+
+## Notifications
+ 
+GitHub sends a lot of email by default. Tune it so it stays manageable.
+ 
+Under [`Settings → Notifications`](https://github.com/settings/notifications):
+ 
+- Route participating and mention notifications to your FlowFuse email.
+- Turn off email for everything you are only watching, and read those in the GitHub inbox instead.
+Then work from these three views rather than your inbox:
+ 
+- [Pull requests that mention you](https://github.com/pulls/mentioned)
+- [Issues that mention you](https://github.com/issues/mentioned)
+- [Pull requests that need your review](https://github.com/pulls/review-requested)
+
+Bookmark all three. The [GitHub notification inbox](https://github.com/notifications) also works well if you prefer a single list.
+
+**Respond to mentions and review requests within two business days.** If you cannot give a full answer in that time, reply with when you will or that work is in progress.

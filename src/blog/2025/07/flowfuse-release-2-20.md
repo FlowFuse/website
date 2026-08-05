@@ -52,7 +52,7 @@ The new RAG (Retrieval Augmented Generation) Blueprint enables you to train your
 
 This Blueprint provides two flows: one that adds text into Node-RED's flow context store and uses it to train an OpenAI agent, so you can query the content of the flow directly; and one flow that scrapes websites to train an OpenAI agent so that content can be queried and used as well.
 
-The RAG Blueprint makes it easy to create intelligent agents that leverage your organizational knowledge without requiring deep AI expertise. [Try it out for yourself here.](https://flowfuse.com/blueprints/ai/rag-chat-agent/)
+The RAG Blueprint makes it easy to create intelligent agents that leverage your organizational knowledge without requiring deep AI expertise. [Try it out for yourself here.](/blueprints/ai/rag-chat-agent/)
 
 ## Refined Applications Page
 

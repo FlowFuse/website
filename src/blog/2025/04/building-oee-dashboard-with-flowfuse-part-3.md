@@ -131,7 +131,7 @@ To give your OEE Dashboard a professional look, add branding elements such as a 
        <div style="display: flex; align-items: center;">
            <img
                height="30px"
-               src="https://flowfuse.com/handbook/images/logos/ff-logo--wordmark--white.png"
+               src="/handbook/images/logos/ff-logo--wordmark--white.png"
                style="margin-right: 25px;"
            />
        </div>

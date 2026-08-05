@@ -21,7 +21,7 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
         <p class="text-sm text-gray-600 mb-3">
             Install in Node-RED via the
             <a
-                href="https://flowfuse.com/node-red/getting-started/library/#using-the-palette-manager"
+                href="/node-red/getting-started/library/#using-the-palette-manager"
                 class="text-indigo-600 hover:text-indigo-800 font-semibold"
                 target="_blank"
                 rel="noopener noreferrer"

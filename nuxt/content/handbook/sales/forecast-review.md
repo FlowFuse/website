@@ -1,5 +1,7 @@
 ---
 title: "Forecast Review"
+navigation:
+  order: 15
 ---
 
 # Forecast Review
@@ -32,3 +34,21 @@ The goal is to understand the delta: what moved, why, and what it means for the 
 ### Full-year pipeline review
 
 After the three-month walkthrough, the meeting closes with a full-year view to confirm that pipeline generation is healthy and on track to support annual targets. This surfaces any gaps early so the team can adjust sourcing or coverage.
+
+## Pipeline discipline: the 60-day rule
+
+Deals must clear the Diagnose stage within 60 days of creation. This keeps the
+pipeline honest: what you see in the forecast is real, active demand, not
+aging placeholders.
+
+- **At 30 days** — deals still in Diagnose are flagged for additional
+  attention. The deal owner reviews next steps with sales leadership at the
+  next Forecast Review and agrees on the specific actions needed to advance
+  or disqualify.
+- **At 60 days** — deals that have not cleared Diagnose are closed lost.
+  Disqualifying fast is a healthy outcome; it frees time for deals we can win
+  and keeps forecast quality high. A closed deal can always be reopened if
+  the prospect re-engages.
+
+Flagged and overdue deals are reviewed as part of the month-by-month
+walkthrough in the weekly Forecast Review.
