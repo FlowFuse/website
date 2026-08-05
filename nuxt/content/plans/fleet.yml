@@ -12,9 +12,3 @@ bestFitFor:
   - Blended teams running distributed units - sensor, telemetry, remote sites, etc.
   - Teams who want to scale their remote device collection.
   - Hardware and OEM partners who need governed Node-RED solutions for their products.
-button:
-  label: Contact us
-  to: /contact-us/
-  external: true
-  variant: solid
-  event: cta-contact-us

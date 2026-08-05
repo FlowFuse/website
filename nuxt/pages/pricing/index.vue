@@ -7,7 +7,6 @@ const tableTiers = computed(() => (plans.value ?? []).map(p => ({
   id: p.tierId,
   title: p.title,
   highlight: p.highlight,
-  button: p.button,
   bestFitFor: p.bestFitFor,
 })))
 
@@ -31,16 +30,6 @@ const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
 const coreFeatureSections = computed(() => (featureCatalog.value?.sections ?? [])
   .map(section => ({ ...section, features: section.features.filter(f => !tiersDiffer(f.tiers)) }))
   .filter(section => section.features.length > 0))
-
-// window.capture is injected by the site's analytics script (see
-// src/_includes/analytics/body.html) and is a no-op wrapper around
-// posthog.capture — it's absent outside production, hence the guard.
-function capture (eventName?: string, props?: Record<string, unknown>) {
-  if (!eventName) return
-  if (typeof (window as any).capture === 'function') {
-    (window as any).capture(eventName, props)
-  }
-}
 
 // UPricingTable's feature-title slot types `feature` without `description`,
 // even though the featureCatalog content schema does define it.
@@ -90,10 +79,7 @@ useSchemaOrg([
                 </li>
             </template>
             <template #button>
-                <UButton
-                    block size="lg" v-bind="plan.button" class="text-base font-bold"
-                    @click="capture(plan.button.event, { position: 'pricing-card', tier: plan.tierId, page: 'pricing' })"
-                />
+                <CtaContactUs variant="primary" position="pricing-card" :plan="plan.tierId" size="lg" block class="text-base font-bold" />
             </template>
         </UPricingPlan>
         </UPricingPlans>
@@ -121,10 +107,7 @@ useSchemaOrg([
         }"
         >
         <template #tier-button="{ tier }">
-            <UButton
-                v-if="tier.button" block size="lg" v-bind="tier.button" class="text-base font-bold"
-                @click="capture(tier.button.event, { position: 'pricing-comparison', tier: tier.id, page: 'pricing' })"
-            />
+            <CtaContactUs variant="primary" position="pricing-comparison" :plan="tier.id" size="lg" block class="text-base font-bold" />
         </template>
         <template #tier-description="{ tier }">
             <div v-if="tier.bestFitFor?.length" class="w-full mt-4 text-left">
