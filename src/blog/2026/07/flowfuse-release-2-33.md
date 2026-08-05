@@ -113,7 +113,7 @@ If something in this release improves your workflow, or if there is still fricti
 ### FlowFuse Cloud
 
 The fastest way to get started is with FlowFuse Cloud.
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in minutes.
 
 ### Self-Hosted
 

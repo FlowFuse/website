@@ -2,13 +2,9 @@
 title: "Curated Node-RED Integrations: FlowFuse Certified Nodes 2.0"
 subtitle: "FlowFuse Unveils Certified Nodes Program to Reward Quality and Ensure Long-Term Support"
 description: "FlowFuse announces Certified Nodes v2.0 - connecting enterprises with the highest quality Node-RED nodes, built and maintained by recognized experts in their fields."
-templateEngineOverride: njk,md
 date: 2025-07-01
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2025/07/images/certified-nodes-v2.png
-certificationHubspot:
-  formId: "6e02fe34-13c3-442b-8c27-9a12e72bba37"
-  targetId: "hs-form-certified-nodes-contact"
 tags:
    - flowfuse
    - node-red
@@ -85,8 +81,4 @@ industry's leading experts.
 
 ### Contact us to discuss your node certification
 
-{% set formId = certificationHubspot.formId %}
-{% set targetId = certificationHubspot.targetId %}
-{% set cta = "cta-certified-nodes-contact" %}
-{% set reference = "certified-nodes-v2" %}
-{% include "hubspot/hs-form.njk" %}
+::hub-spot-form{form-id="6e02fe34-13c3-442b-8c27-9a12e72bba37" cta="cta-certified-nodes-contact" reference="certified-nodes-v2"}
