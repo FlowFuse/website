@@ -124,7 +124,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header id="ff-header" class="ff-header">
+  <header id="ff-header" class="ff-header" data-nav-zone="header">
     <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
 
       <!-- Wordmark: visible from 420px up on mobile and on desktop, hidden on tablet -->
@@ -194,7 +194,7 @@ onMounted(() => {
 
       <!-- Nav -->
       <ul id="nav-content" class="">
-        <li v-for="dd in chrome.header.dropdowns" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer">
+        <li v-for="dd in chrome.header.dropdowns" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :data-nav-section="dd.label">
           <span class="flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul :class="dd.megaClasses">
             <li class="mega-highlight"><a :href="hl(dd.highlight).link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl(dd.highlight).title }}</span><span class="mega-highlight-media"><img :src="hl(dd.highlight).image" alt="" loading="lazy"></span></a></li>
@@ -213,7 +213,7 @@ onMounted(() => {
         <li v-for="item in chrome.header.direct" :key="item.label" :class="item.classes"><a class="flex items-center gap-2" :href="item.href"><span class="ff-nav-label">{{ item.label }}</span></a></li>
 
         <!-- More overflow (populated by JS) -->
-        <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
+        <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
           <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul id="nav-more-list" class="align-left"></ul>
         </li>
