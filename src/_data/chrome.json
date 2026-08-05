@@ -114,31 +114,9 @@
                 "label": "Solutions",
                 "columns": [
                     {
-                        "title": "By Use Case",
-                        "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-3 xl:col-start-2 xl:row-start-2",
-                        "links": [
-                            {
-                                "label": "Production Monitoring",
-                                "href": "/use-cases/production-monitoring/",
-                                "icon": "pulse"
-                            },
-                            {
-                                "label": "Shop Floor Communication",
-                                "href": "/use-cases/shop-floor-communication/",
-                                "icon": "chat"
-                            },
-                            {
-                                "label": "See all use cases",
-                                "href": "/use-cases/",
-                                "icon": "arrow-right"
-                            }
-                        ]
-                    },
-                    {
                         "title": "By Industry",
-                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-[9] md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "titleGrid": "xl:col-start-2 xl:row-start-1",
+                        "listClasses": "row-span-[9] xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -183,6 +161,28 @@
                             {
                                 "label": "See all industries",
                                 "href": "/industries/",
+                                "icon": "arrow-right"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "By Use Case",
+                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
+                        "listClasses": "row-span-3 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "links": [
+                            {
+                                "label": "Production Monitoring",
+                                "href": "/use-cases/production-monitoring/",
+                                "icon": "pulse"
+                            },
+                            {
+                                "label": "Shop Floor Communication",
+                                "href": "/use-cases/shop-floor-communication/",
+                                "icon": "chat"
+                            },
+                            {
+                                "label": "See all use cases",
+                                "href": "/use-cases/",
                                 "icon": "arrow-right"
                             }
                         ]
@@ -505,23 +505,6 @@
                 "gridClasses": "grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8",
                 "groups": [
                     {
-                        "title": "By Use Case",
-                        "links": [
-                            {
-                                "label": "Production Monitoring",
-                                "href": "/use-cases/production-monitoring/"
-                            },
-                            {
-                                "label": "Shop Floor Communication",
-                                "href": "/use-cases/shop-floor-communication/"
-                            },
-                            {
-                                "label": "See all use cases",
-                                "href": "/use-cases/"
-                            }
-                        ]
-                    },
-                    {
                         "title": "By Industry",
                         "links": [
                             {
@@ -559,6 +542,23 @@
                             {
                                 "label": "See all industries",
                                 "href": "/industries/"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "By Use Case",
+                        "links": [
+                            {
+                                "label": "Production Monitoring",
+                                "href": "/use-cases/production-monitoring/"
+                            },
+                            {
+                                "label": "Shop Floor Communication",
+                                "href": "/use-cases/shop-floor-communication/"
+                            },
+                            {
+                                "label": "See all use cases",
+                                "href": "/use-cases/"
                             }
                         ]
                     },
