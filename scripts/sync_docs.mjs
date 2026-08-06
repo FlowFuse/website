@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Populates nuxt/content/docs outside of a Nuxt build, so CI can commit the result as a
-// snapshot. Uses only node builtins: this runs before `npm install`.
+// Populates nuxt/content/docs outside of a Nuxt build, so CI can resolve the docs before
+// installing dependencies. Uses only node builtins: this runs before `npm install`.
 
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'

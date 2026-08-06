@@ -61,7 +61,7 @@ An invoice should only be written off as bad debt if the client has already rece
 ### Phase 1: Set Up This Month's Workbook
 
 1. **Duplicate last month's file** in [this Drive folder](https://drive.google.com/drive/folders/1oZmVkpkv7E2uawCjhzqIoWaaNoi3_M3W). Move the copy into a new folder named for the current month, and rename the file Taxually Monthly Data - [Month] 2026.
-2. **Export Stripe invoices**: open the [Stripe invoices tab](https://dashboard.stripe.com/acct_1KJbS4J6VWAujNoL/invoices), set a *wide* date range (e.g. for April, use late March through early May) so you don't cut off invoices paid near a month boundary. Select **All Columns**, export in **UTC**.
+2. **Export Stripe invoices**: open the [Stripe invoices tab](https://dashboard.stripe.com/acct_1KJbS4J6VWAujNoL/invoices), click Export on the top right, set a *wide* date range (e.g. for April, use late March through early May) so you don't cut off invoices paid near a month boundary. Select **All Columns**, export in **UTC**.
 3. **Import the export** into the new workbook you created in step 1 as a new sheet. Rename that sheet to the month (e.g. April 2026).
 4. **Extend the helper columns**: scroll to the last used column, add 5 new columns. Go to last month's sheet, copy the 5 header names (highlighted green) from row 1, and paste into row 1 at the same position in this month's sheet. Copy the formulas from row 2 of those same 5 columns in last month's sheet, paste into row 2 here, then drag down to fill every row.
 
@@ -126,9 +126,13 @@ In the **GBP exchange rate** sheet, update the Start/End dates to cover this mon
 
 ### Phase 6: Create the Submission Copy & Submit
 
-Duplicate the workbook within the same month's folder (File → Make a copy). Name it Taxually Monthly Data - [Month] 2026 (Submission). In this copy, **delete every sheet except "Your data"** -> this is the file that actually gets uploaded.
+Duplicate the workbook within the same month's folder (File → Make a copy). Name it Taxually Monthly Data - [Month] 2026 (Submission). In this copy, **delete every sheet except "Your data"** -> this is the file that actually gets uploaded. Download this file as a excel file (.xlsx).
 
-Open Taxually, find the correct month, and upload the Submission file. Review for any errors. Submit. **Deadline: the 8th of each month**, even though the actual UK VAT filing itself is quarterly.
+- Open [Taxually](https://www.taxually.com/), click on "Log In", click on "Cross Tax", fill out your sign-in details
+- Click on "My Transaction" on the left-hand side, find the most recent month, and click on "Upload Data" and upload the Submission file you downloaded.
+- Review for any errors. Click on "Generate Returns". 
+
+**Deadline: the 8th of each month**, even though the actual UK VAT filing itself is quarterly.
 
 ### Known pitfalls (from real filing history)
 

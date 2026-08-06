@@ -31,6 +31,9 @@ export default defineContentConfig({
             schema: z.object({
                 navTitle: z.string().optional(),
                 navGroup: z.string().optional(),
+                // Read by useDocsNav to rank the sidebar group headings; without it
+                // declared here @nuxt/content strips the key from frontmatter.
+                navGroupOrder: z.number().optional(),
                 navOrder: z.number().optional(),
                 originalPath: z.string().optional(),
                 updated: z.string().optional(),
