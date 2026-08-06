@@ -10,6 +10,7 @@ withDefaults(defineProps<{
     color?: 'primary' | 'highlight' | 'white'
     uppercase?: boolean
     padded?: boolean
+    preview?: boolean
     icon?: string
     size?: 'sm' | 'md' | 'lg'
 }>(), { uppercase: undefined })
@@ -20,5 +21,5 @@ const LABEL = 'Contact Us'
 </script>
 
 <template>
-  <CtaButton :event="EVENT" :href="HREF" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :size="size" :uppercase="uppercase" :padded="padded" :color="color" />
+  <CtaButton :event="EVENT" :href="HREF" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :size="size" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
 </template>

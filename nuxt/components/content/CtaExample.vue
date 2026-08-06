@@ -31,7 +31,7 @@ const showCode = ref(false)
     :class="dark ? 'border-gray-700 bg-gray-800' : 'border-gray-200'"
   >
     <div class="flex min-h-11 items-center justify-center">
-      <component :is="resolved" :variant="variant" position="handbook-example" :color="color" :icon="icon" />
+      <component :is="resolved" :variant="variant" position="handbook-example" :color="color" :icon="icon" preview />
     </div>
     <button
       type="button"

@@ -120,7 +120,7 @@ meta:
 
 ## Call-to-Action Buttons
 
-The site has exactly four call-to-action destinations, each with **fixed copy** — you cannot write new button text for these, only choose how the button looks and where it sits on the page:
+The site has four main call-to-action destinations, each with **fixed copy** — you cannot write new button text for these, only choose how the button looks and where it sits on the page:
 
 | Component        | Goes to                           | Button text                                          |
 | ---------------- | --------------------------------- | ---------------------------------------------------- |
@@ -145,9 +145,9 @@ Every component takes the same `variant` prop, which controls the look. Click "S
   ```
   :::
 
-  :::cta-example{component="CtaBookDemo" variant="primary-outlined"}
+  :::cta-example{component="CtaContactUs" variant="primary-outlined"}
   ```mdc
-  ::CtaBookDemo{variant="primary-outlined" position="hero"}
+  ::CtaContactUs{variant="primary-outlined" position="hero"}
   ::
   ```
   :::
@@ -159,22 +159,21 @@ Every component takes the same `variant` prop, which controls the look. Click "S
   ```
   :::
 
-  :::cta-example{component="CtaBookDemo" variant="highlight-outlined"}
+  :::cta-example{component="CtaContactUs" variant="highlight-outlined"}
   ```mdc
-  ::CtaBookDemo{variant="highlight-outlined" position="hero"}
-  ::
-  ```
-  :::
-
-  :::cta-example{component="CtaBookDemo" variant="text"}
-  ```mdc
-  ::CtaBookDemo{variant="text" position="hero"}
+  ::CtaContactUs{variant="highlight-outlined" position="hero"}
   ::
   ```
   :::
 ::
 
-There's a sixth variant, `ghost`, for a button that reads exactly like a solid one (bold, uppercase, same padding) but has no background or border — e.g. the homepage hero's "Try it out" next to "Book a Demo". Because it has no background of its own, it needs a `color` to know what text color to use, and an `icon` to add a trailing icon:
+There's also a `text` variant, but it doesn't belong in a gallery of buttons — it's not a button at all, it's meant to read like ordinary paragraph text (same size and weight as the sentence around it) so it can sit inline, the way "Sign In" or "Free Trial" do in the nav. For example: click :CtaSignUp{variant="text" position="body" preview} to start a free trial — no card, no button styling, just a link in the middle of a sentence.
+
+```mdc
+click :CtaSignUp{variant="text" position="body"} to start a free trial
+```
+
+There's a sixth variant, `ghost`, for a button that reads like a solid one (bold, uppercase, same padding) but has no background or border. Because it has no background of its own, it needs a `color` to know what text color to use, and an `icon` to add a trailing icon:
 
 ::div{.grid.grid-cols-2.gap-4.my-10}
   :::cta-example
@@ -205,25 +204,7 @@ There's a sixth variant, `ghost`, for a button that reads exactly like a solid o
   :::
 ::
 
-The dark card above is just to make the white text visible in this doc — use `color="white"` on an actual dark background (like the homepage hero photo), and `color="primary"` or `color="highlight"` on a light one.
-
-The other three components work exactly the same way — same `variant` options, just a different destination and button text:
-
-::div{.grid.grid-cols-2.gap-4.my-10}
-  :::cta-example{component="CtaSignUp" variant="highlight"}
-  ```mdc
-  ::CtaSignUp{variant="highlight" position="body"}
-  ::
-  ```
-  :::
-
-  :::cta-example{component="CtaContactUs" variant="primary-outlined"}
-  ```mdc
-  ::CtaContactUs{variant="primary-outlined" position="body"}
-  ::
-  ```
-  :::
-::
+The dark card above is just to make the white text visible in this doc, use `color="white"` on an actual dark background (like the homepage hero photo), and `color="primary"` or `color="highlight"` on a light one.
 
 ### Props reference
 

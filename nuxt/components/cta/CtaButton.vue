@@ -32,6 +32,12 @@ const props = withDefaults(defineProps<{
     // that context's link padding (12px/16px, confirmed via the Computed tab -
     // it's not plain text, it just has no visible background/border).
     padded?: boolean
+    // For documentation/gallery usage (e.g. the handbook's live CTA examples)
+    // - looks and behaves identically, but doesn't navigate anywhere and never
+    // calls capture(), so clicking an example button can't send a real
+    // PostHog event or send a reader off to /book-demo/ etc. Defaults to
+    // false, so omitting it is the normal, unchanged production behavior.
+    preview?: boolean
 }>(), { uppercase: undefined })
 
 // Maps our ff-btn-style variant names to UButton's color/variant pair, plus
@@ -106,13 +112,14 @@ const uiOverrides = computed(() => {
 })
 
 function onClick () {
+    if (props.preview) return
     capture(props.event, { position: props.position, variant: props.variant, ...(props.plan ? { plan: props.plan } : {}) })
 }
 </script>
 
 <template>
   <UButton
-    :to="href"
+    :to="preview ? undefined : href"
     :color="uiVariant.color"
     :variant="uiVariant.variant"
     :trailing-icon="icon"
