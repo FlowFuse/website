@@ -79,7 +79,7 @@ useSchemaOrg([
                 </li>
             </template>
             <template #button>
-                <CtaContactUs variant="primary" position="pricing-card" :plan="plan.tierId" block />
+                <CtaContactUs variant="primary" position="pricing-card" :plan="plan.tierId" class="w-full" />
             </template>
         </UPricingPlan>
         </UPricingPlans>
@@ -107,7 +107,7 @@ useSchemaOrg([
         }"
         >
         <template #tier-button="{ tier }">
-            <CtaContactUs variant="primary" position="pricing-comparison" :plan="tier.id" block />
+            <CtaContactUs variant="primary" position="pricing-comparison" :plan="tier.id" class="w-full" />
         </template>
         <template #tier-description="{ tier }">
             <div v-if="tier.bestFitFor?.length" class="w-full mt-4 text-left">
