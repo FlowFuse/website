@@ -12,6 +12,17 @@ const ACCENT: Record<string, string> = { indigo: 'bg-indigo-600', red: 'bg-red-6
 const accentClass = (b: Bundle) => ACCENT[b.accent] ?? 'bg-gray-500'
 const tileClass = (b: Bundle, node: { both?: boolean }) =>
     node.both ? 'bg-gradient-to-br from-indigo-600 to-red-600' : accentClass(b)
+
+// Same event the /node-red/ certified grid emits (src/node-red/index.njk), so
+// clicks on a connector aggregate across every place it is featured.
+// window.capture is injected by src/_includes/analytics/body.html and is absent
+// outside production, hence the guard.
+function captureNodeClick (name: string, bundle: Bundle) {
+    const capture = (window as any).capture
+    if (typeof capture === 'function') {
+        capture('certified-node-click', { node: name, collection: bundle.tier, page: location.pathname })
+    }
+}
 </script>
 
 <template>
@@ -57,13 +68,19 @@ const tileClass = (b: Bundle, node: { both?: boolean }) =>
                             <span class="flex-1 h-px bg-gray-200" />
                         </div>
                         <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                            <div v-for="node in group.nodes" :key="node.name" class="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-3 transition hover:border-gray-300 hover:shadow-sm">
+                            <NuxtLink
+                                v-for="node in group.nodes"
+                                :key="node.name"
+                                :to="node.url"
+                                class="group flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-3 transition hover:border-gray-300 hover:shadow-sm hover:no-underline"
+                                @click="captureNodeClick(node.name, b)"
+                            >
                                 <span class="flex-none grid place-items-center w-8 h-8 rounded-lg text-white font-semibold text-[11px]" :class="tileClass(b, node)">{{ node.abbr }}</span>
                                 <div class="min-w-0">
-                                    <div class="text-sm font-medium text-gray-900 leading-tight">{{ node.name }}</div>
+                                    <div class="text-sm font-medium text-gray-900 leading-tight group-hover:text-indigo-600">{{ node.name }}</div>
                                     <div class="text-xs text-gray-500 leading-snug mt-0.5">{{ node.description }}</div>
                                 </div>
-                            </div>
+                            </NuxtLink>
                         </div>
                     </div>
                 </div>

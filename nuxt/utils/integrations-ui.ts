@@ -4,6 +4,19 @@ export function nodeProducts (node: Pick<IntegrationCatalogEntry, 'collections'>
     return node.collections ?? []
 }
 
+/*
+    Documentation target for a certified node. An entry only carries a docsUrl
+    when the publisher pointed the catalogue `url` at flowfuse.com or it has a
+    DOCS_URL_OVERRIDES entry (see nuxt/utils/integrations.ts) — opcua, for one,
+    points at Sterfive's repository. Fall back to the collection index, which
+    always exists, rather than rendering a card that goes nowhere.
+*/
+export function certifiedHref (node: Pick<IntegrationCatalogEntry, 'docsUrl' | 'collections'>): string | null {
+    if (node.docsUrl) return node.docsUrl
+    const collection = nodeProducts(node)[0]
+    return collection ? `/node-red/flowfuse/${collection}/` : null
+}
+
 export function tileClass (node: Pick<IntegrationCatalogEntry, 'collections' | 'tier'>): string {
     const products = nodeProducts(node)
     if (products.includes('hub') && products.includes('edge')) return 'bg-gradient-to-br from-indigo-600 to-red-600'
