@@ -263,6 +263,20 @@ The CTA button automatically fires an event when clicked. No additional setup is
 
 This allows you to track which blog posts are driving CTA clicks in your analytics, filtered by the `reference` property.
 
+### Inline Image CTAs
+
+Besides the end-of-article CTA above, you can drop a clickable, tracked image anywhere in the article body using the `CtaImage` component:
+
+```mdc
+::cta-image{src="/blog/2025/12/images/my-image.png" alt="Book a demo with FlowFuse" cta="demo"}
+::
+```
+
+- `src` and `alt` are required, same as any other blog image.
+- `cta` is required on every instance — one of `sign-up`, `demo`, `contact`, or `pricing`. There is no default, and it is independent of the front matter `cta.type` above: a single article can have several `CtaImage` blocks, each pointing at a different destination.
+
+Tracking is automatic and fires the same `blog-cta` event as the end-of-article CTA, with the same `reference` (the article title), plus a `cta_type` property set to the destination — so inline image clicks and the end-of-article CTA can be analyzed together, filtered by `cta_type`.
+
 ### Tags
 
 Tag your content appropriately from the collection of tags that help us manage our blog content. They include:
