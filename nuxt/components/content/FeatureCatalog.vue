@@ -60,9 +60,9 @@
                   feature.tiers?.[plan.id] ? 'bg-green-50' : '',
                 ]"
               >
-                <template v-if="!feature.tiers"><span class="text-gray-400 text-xs">TBD</span></template>
-                <template v-else-if="feature.tiers[plan.id]"><span class="text-green-700">&#x2713;</span></template>
-                <template v-else><span class="text-gray-300">&#x2013;</span></template>
+                <template v-if="!feature.tiers"><span class="text-xs">TBD</span></template>
+                <template v-else-if="feature.tiers[plan.id]">&#x2713;</template>
+                <template v-else>&#x2013;</template>
               </td>
             </tr>
           </template>
