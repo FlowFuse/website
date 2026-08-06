@@ -273,9 +273,15 @@ Besides the end-of-article CTA above, you can drop a clickable, tracked image an
 ```
 
 - `src` and `alt` are required, same as any other blog image.
-- `cta` is required on every instance — one of `sign-up`, `demo`, `contact`, or `pricing`. There is no default, and it is independent of the front matter `cta.type` above: a single article can have several `CtaImage` blocks, each pointing at a different destination.
+- `cta` is required on every instance and also sets where the image links to — there's no separate URL to configure. Same four fixed destinations as `cta.type` above:
+  - `demo` - links to `/book-demo`
+  - `contact` - links to `/contact-us`
+  - `pricing` - links to `/pricing`
+  - `sign-up` - links to the hosted sign-up URL
 
-Tracking is automatic and fires the same `blog-cta` event as the end-of-article CTA, with the same `reference` (the article title), plus a `cta_type` property set to the destination — so inline image clicks and the end-of-article CTA can be analyzed together, filtered by `cta_type`.
+  There is no default. `cta` here is independent of the front matter `cta.type` above — a single article can have several `CtaImage` blocks, each pointing at a different destination.
+
+Tracking is automatic and fires the same `blog-cta` event as the end-of-article CTA, with the same `reference` (the article title) and a `cta_type` property set to the destination. What tells the two apart is `position`: every `CtaImage` click sends `position: "inline-image"`, while the end-of-article CTA doesn't send `position` at all — so in PostHog you can filter `blog-cta` events by `position = inline-image` to isolate inline image clicks specifically, or leave it unfiltered to see both together.
 
 ### Tags
 

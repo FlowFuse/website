@@ -10,7 +10,7 @@ const props = defineProps<{
     cta: 'sign-up' | 'demo' | 'contact' | 'pricing'
 }>()
 
-const POSITION = 'blog-inline'
+const POSITION = 'inline-image'
 // Same event as BlogPostCta - cta_type distinguishes the destination, same as there.
 const EVENT = 'blog-cta'
 
