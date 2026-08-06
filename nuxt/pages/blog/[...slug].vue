@@ -31,6 +31,10 @@ if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.d
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
+// Release blogs get plan badges and changelog links injected under their `features:` headings.
+// Every other post passes straight through.
+const renderedPage = useReleaseFeaturePage(page)
+
 const { data: allPosts } = await useAsyncData(
     'blog-all-for-related',
     () => routeInfo.value.kind === 'post'
@@ -168,7 +172,7 @@ if (routeInfo.value.kind === 'post') {
               </ul>
             </section>
 
-            <ContentRenderer :value="page" />
+            <ContentRenderer :value="renderedPage" />
           </div>
 
           <div class="mt-10">

@@ -38,11 +38,25 @@ Every post requires the following fields:
 | `image` | Path to the hero image. Coordinate with design. |
 | `tags` | Always include `flowfuse`, `news`, and `releases`. |
 | `release` | The release number as a string, e.g. `"2.29"`. |
-| `features` | List of feature anchors for the in-page navigation. Each entry needs a `heading` and, where a changelog entry exists, an `id` matching the feature catalog slug. |
+| `features` | Ties a section of the post to the feature catalog. Each entry needs a `heading` that matches one of the post's headings exactly, and an `id` matching a feature in the catalog. |
 
-Note on `features`: the badge and changelog-link injection this list used to drive stopped running when the blog moved to Nuxt, and has not been rebuilt yet. Keep filling the list in so the data is there when it is, but do not expect anything to render from it today. Availability on a release blog has to be written as prose for now.
+Each `features` entry renders three things into the post: plan availability badges directly under its heading, and a changelog link and docs link at the end of that section. Only changelog posts belonging to this `release` are linked, so a feature that also shipped something in an earlier release does not drag old links in.
 
-Before populating `features`: Confirm that [`feature-catalog.yml`](https://github.com/FlowFuse/website/blob/main/nuxt/content/feature-catalog.yml) has an entry for every feature in this release, with the `id` values here matching the catalog's. The changelog posts for each feature should have already triggered this update; if any are missing, flag them before the blog goes live. See [Writing Changelog Posts](/handbook/engineering/releases/writing-changelog/#feature-catalog-and-availability) for how catalog entries work.
+```yaml
+release: "2.34"
+features:
+   # One catalog feature.
+   - id: flowfuse-tables
+     heading: "Ask the Expert About Your Tables"
+   # Several, when the heading covers a group. The badge shows the union of their plans.
+   - id: [certified-nodes-it, certified-nodes-ot]
+     heading: "Certified Nodes for industrial connectivity and AI"
+   # A section that is not a catalog feature, e.g. the round-up at the end.
+   - heading: "What else is new?"
+     tiers: { edge: true, hub: true, fleet: true }
+```
+
+Before populating `features`: confirm that [`feature-catalog.yml`](https://github.com/FlowFuse/website/blob/main/nuxt/content/feature-catalog.yml) has an entry for every feature in this release, with the `id` values here matching the catalog's. An `id` the catalog does not have renders nothing, silently, so a stale id costs you the badge; a unit test fails the build if one appears. The changelog posts for each feature should have already triggered the catalog update; if any are missing, flag them before the blog goes live. See [Writing Changelog Posts](/handbook/engineering/releases/writing-changelog/#feature-catalog-and-availability) for how catalog entries work.
 
 ## Structure
 

@@ -96,6 +96,21 @@ export default defineContentConfig({
                 image: z.string().optional(),
                 video: z.string().optional(),
                 tags: z.array(z.string()).optional(),
+                // Release blogs only. Read by nuxt/lib/release-features.mjs to hang plan
+                // badges and changelog links off the matching section heading. Undeclared
+                // keys are stripped by @nuxt/content, so both have to be listed here.
+                release: z.string().optional(),
+                features: z.array(z.object({
+                    heading: z.string(),
+                    // A string, or several ids when one heading covers several catalog features.
+                    id: z.union([z.string(), z.array(z.string())]).optional(),
+                    // For a section that is not a catalog feature at all, e.g. "What else is new?".
+                    tiers: z.object({
+                        edge: z.boolean(),
+                        hub: z.boolean(),
+                        fleet: z.boolean(),
+                    }).optional(),
+                })).optional(),
                 tldr: z.union([z.string(), z.array(z.string())]).optional(),
                 cta: z.object({
                     type: z.string().optional(),
