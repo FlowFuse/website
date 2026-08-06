@@ -110,9 +110,9 @@ const uiOverrides = computed(() => {
     // background/border, e.g. the homepage hero's "Try it out" over a photo.
     if (props.variant === 'ghost') {
         const colorClass = GHOST_COLOR_CLASSES[props.color || 'primary']
-        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline px-4 py-2 text-base ${colorClass}` }
+        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline justify-center px-4 py-2 text-base ${colorClass}` }
     }
-    return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline px-4 py-2 text-base ${uiVariant.value.hover}` }
+    return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline justify-center px-4 py-2 text-base ${uiVariant.value.hover}` }
 })
 
 function onClick () {
