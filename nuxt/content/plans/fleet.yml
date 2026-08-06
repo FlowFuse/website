@@ -2,6 +2,7 @@ title: Fleet
 tierId: fleet
 order: 3
 description: Managed Node-RED across a large fleet of distributed devices in the field. Push flows, ship updates, and roll back remotely with fleet-wide visibility.
+badge: For IIoT & OEMs
 features:
   - Remote Device and Instance Management
   - Device Fleet Updates
