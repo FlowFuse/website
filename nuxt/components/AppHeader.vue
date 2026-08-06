@@ -221,7 +221,7 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-        <li class="hidden md:flex"><CtaSignUp variant="text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
+        <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
         <li class="flex">
           <CtaContactUs variant="primary" position="main-nav" class="ml-2" />
         </li>

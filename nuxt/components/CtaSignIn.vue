@@ -6,7 +6,7 @@ import CtaButton from './cta/CtaButton.vue'
 import site from '../../src/_data/site.json'
 
 withDefaults(defineProps<{
-    variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'text' | 'ghost'
+    variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
     position: string
     plan?: string
     color?: 'primary' | 'highlight' | 'white'
@@ -14,7 +14,6 @@ withDefaults(defineProps<{
     padded?: boolean
     preview?: boolean
     icon?: string
-    size?: 'sm' | 'md' | 'lg'
 }>(), { uppercase: undefined })
 
 const EVENT = 'cta-sign-in'
@@ -23,5 +22,5 @@ const LABEL = 'Sign In'
 </script>
 
 <template>
-  <CtaButton :event="EVENT" :href="HREF" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :size="size" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
+  <CtaButton :event="EVENT" :href="HREF" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
 </template>

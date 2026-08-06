@@ -167,11 +167,7 @@ Every component takes the same `variant` prop, which controls the look. Click "S
   :::
 ::
 
-There's also a `text` variant, but it doesn't belong in a gallery of buttons — it's not a button at all, it's meant to read like ordinary paragraph text (same size and weight as the sentence around it) so it can sit inline, the way "Sign In" or "Free Trial" do in the nav. For example: click :CtaSignUp{variant="text" position="body" preview} to start a free trial — no card, no button styling, just a link in the middle of a sentence.
-
-```mdc
-click :CtaSignUp{variant="text" position="body"} to start a free trial
-```
+There's also a `nav-text` variant — the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar). It's not meant for general use in page content, so it's not in this gallery; stick to the five variants above for anything outside the nav.
 
 There's a sixth variant, `ghost`, for a button that reads like a solid one (bold, uppercase, same padding) but has no background or border. Because it has no background of its own, it needs a `color` to know what text color to use, and an `icon` to add a trailing icon:
 
@@ -210,7 +206,7 @@ The dark card above is just to make the white text visible in this doc, use `col
 
 | Prop       | Required | What it does                                                                                                                                  |
 | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `variant`  | Yes      | Visual style: `primary`, `primary-outlined`, `highlight`, `highlight-outlined`, `text`, or `ghost`                                            |
+| `variant`  | Yes      | Visual style: `primary`, `primary-outlined`, `highlight`, `highlight-outlined`, or `ghost` — plus `nav-text`, reserved for the main nav/utility bar |
 | `position` | Yes      | Where the button sits on the page (e.g. `hero`, `pricing-card`, `footer`) — shows up in analytics, so use a short, descriptive label          |
 | `plan`     | No       | Which pricing plan the button belongs to, if relevant (e.g. `edge`, `hub`, `fleet`) — also shows up in analytics                              |
 | `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |

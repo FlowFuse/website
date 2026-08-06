@@ -9,28 +9,28 @@ const props = withDefaults(defineProps<{
     event: string
     href: string
     label: string
-    variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'text' | 'ghost'
+    variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
     position: string
     plan?: string
     icon?: string
-    size?: 'sm' | 'md' | 'lg'
     // Only meaningful for variant="ghost" - which text color to use, since a
     // ghost button has no background of its own to imply one. "white" exists
     // because the homepage hero's "Try it out" sits on a dark photo.
     color?: 'primary' | 'highlight' | 'white'
-    // Only meaningful for variant="text" - a real button (solid/outline) stays
-    // uppercase per the site's ff-btn convention, but a text-only link (e.g.
-    // "Free Trial" in the nav, "Sign In" in the utility bar) was never
+    // Only meaningful for variant="nav-text" - a real button (solid/outline)
+    // stays uppercase per the site's ff-btn convention, but a nav text link
+    // (e.g. "Free Trial" in the nav, "Sign In" in the utility bar) was never
     // uppercase before, so let each insertion choose.
     // Explicit `undefined` default: Vue auto-defaults unspecified boolean
     // props to `false`, which would make our `??` fallback below always take
     // the `false` branch instead of falling through to the variant-based default.
     uppercase?: boolean
-    // Only meaningful for variant="text". Two different text links exist on
-    // the site: the utility bar's "Sign In" is truly padding-less inline text,
-    // but the main nav's "Free Trial" sits inside a header `<ul>` and inherits
-    // that context's link padding (12px/16px, confirmed via the Computed tab -
-    // it's not plain text, it just has no visible background/border).
+    // Only meaningful for variant="nav-text". Two different nav text links
+    // exist on the site: the utility bar's "Sign In" is truly padding-less
+    // inline text, but the main nav's "Free Trial" sits inside a header
+    // `<ul>` and inherits that context's link padding (12px/16px, confirmed
+    // via the Computed tab - it's not plain text, it just has no visible
+    // background/border).
     padded?: boolean
     // For documentation/gallery usage (e.g. the handbook's live CTA examples)
     // - looks and behaves identically, but doesn't navigate anywhere and never
@@ -68,36 +68,40 @@ const VARIANT_MAP: Record<string, { color: string, variant: string, hover: strin
         variant: 'outline',
         hover: 'hover:bg-red-700 hover:text-white hover:border-red-700 active:bg-red-700 active:text-white active:border-red-700',
     },
-    text: { color: 'primary', variant: 'link', hover: '' },
+    'nav-text': { color: 'primary', variant: 'link', hover: '' },
     ghost: { color: 'primary', variant: 'ghost', hover: '' },
 }
 
+// UButton's own "ghost" variant compoundVariants add a faint hover background
+// (hover:bg-{color}/10) - that's Nuxt UI's default ghost affordance, but a
+// ghost CTA here should have no background at any point, hover included, so
+// every entry explicitly cancels it with hover:bg-transparent.
 const GHOST_COLOR_CLASSES: Record<string, string> = {
-    primary: 'text-primary hover:text-primary/75',
-    highlight: 'text-highlight hover:text-highlight/75',
-    white: 'text-white hover:text-gray-200',
+    primary: 'text-primary hover:text-primary/75 hover:bg-transparent',
+    highlight: 'text-highlight hover:text-highlight/75 hover:bg-transparent',
+    white: 'text-white hover:text-gray-200 hover:bg-transparent',
 }
 
 const uiVariant = computed(() => VARIANT_MAP[props.variant])
 const capture = useCapture()
 
 // app.config.ts's base slot ("uppercase font-semibold no-underline") suits a
-// real button, but not a text-only link - those read as plain inline text
-// elsewhere on the site (nav "Free Trial", utility bar "Sign In"): no button
-// padding, font-medium instead of bold, and lowercase by default.
+// real button, but not a nav text link - those read as plain inline text
+// (nav "Free Trial", utility bar "Sign In"): no button padding, font-medium
+// instead of bold, and lowercase by default.
 // Passing `ui.base` to UButton REPLACES the app.config slot rather than
 // merging with it (tailwind-merge only runs within a single source string),
 // so this always spells out the full base string rather than trying to
 // layer a partial override on top of the default.
-const isTextVariant = computed(() => props.variant === 'text')
-const showUppercase = computed(() => props.uppercase ?? !isTextVariant.value)
+const isNavTextVariant = computed(() => props.variant === 'nav-text')
+const showUppercase = computed(() => props.uppercase ?? !isNavTextVariant.value)
 // .ff-btn's padding (8px/16px = px-4 py-2) and font-size (16px = text-base)
 // are fixed everywhere on the site, nav included - confirmed via the
 // Computed tab, not just the Styles cascade (a `header ul a.ff-btn { text-sm }`
 // rule exists but loses to `.ff-btn`'s own font-size:16px at matching
 // specificity, so the nav button renders text-base same as everywhere else).
 const uiOverrides = computed(() => {
-    if (isTextVariant.value) {
+    if (isNavTextVariant.value) {
         const padding = props.padded ? 'px-3 py-4' : 'p-0'
         return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-medium no-underline ${padding}` }
     }
@@ -123,7 +127,7 @@ function onClick () {
     :color="uiVariant.color"
     :variant="uiVariant.variant"
     :trailing-icon="icon"
-    :size="size || 'lg'"
+    size="lg"
     :ui="uiOverrides"
     @click="onClick"
   >
