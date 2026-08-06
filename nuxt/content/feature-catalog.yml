@@ -145,7 +145,7 @@ sections:
         tiers: { edge: false, hub: true, fleet: false }
 
   - id: other
-    title: Other (feature-flagged)
+    title: Other
     features:
       - id: project-nodes
         title: Project Nodes aka seamless project comms
