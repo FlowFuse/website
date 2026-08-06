@@ -17,7 +17,6 @@ export interface CatalogFeature {
     description?: string
     docsLink?: string
     changelog?: Array<{ url: string, release?: string }>
-    solutions?: string[]
     subfeature?: boolean
     beta?: boolean
     showOnPricing?: boolean

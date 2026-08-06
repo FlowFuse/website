@@ -228,7 +228,6 @@ export default defineContentConfig({
                             url: z.string(),
                             release: z.string().optional(),
                         })).optional(),
-                        solutions: z.array(z.string()).optional(),
                         subfeature: z.boolean().optional(),
                         beta: z.boolean().optional(),
                         // Defaults to true. False keeps the feature off /pricing while it

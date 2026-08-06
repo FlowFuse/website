@@ -15,13 +15,12 @@
       <table class="border-collapse text-sm" style="width: max-content; min-width: 100%;">
         <colgroup>
           <col style="width: 260px;" />
-          <col v-for="n in PLANS.length + SOLUTIONS.length" :key="n" style="width: 100px;" />
+          <col v-for="n in PLANS.length" :key="n" style="width: 100px;" />
         </colgroup>
         <thead>
           <tr>
             <th class="py-3 px-4 text-left align-bottom border-b-2 border-gray-200" rowspan="2">Feature</th>
             <th :colspan="PLANS.length" class="py-3 px-4 text-center border border-gray-200 rounded-lg border-l-2 border-l-gray-300">Plans</th>
-            <th :colspan="SOLUTIONS.length" class="py-3 px-4 text-center border border-gray-200 rounded-lg border-l-2 border-l-gray-300">Solutions</th>
           </tr>
           <tr>
             <th
@@ -30,18 +29,12 @@
               class="text-center py-3 px-4 border-b-2 border-gray-200"
               :class="i === 0 ? 'border-l-2 border-l-gray-300' : 'border-r border-r-gray-100'"
             >{{ plan.label }}</th>
-            <th
-              v-for="(solution, i) in SOLUTIONS"
-              :key="solution.id"
-              class="text-center py-3 px-4 border-b-2 border-gray-200"
-              :class="i === 0 ? 'border-l-2 border-l-gray-300' : 'border-r border-r-gray-100'"
-            >{{ solution.label }}</th>
           </tr>
         </thead>
         <tbody>
           <template v-for="section in sections" :key="section.id">
             <tr>
-              <td :colspan="1 + PLANS.length + SOLUTIONS.length" class="py-2 px-4 bg-gray-100 font-semibold text-gray-600 text-xs uppercase tracking-wide">{{ section.title }}</td>
+              <td :colspan="1 + PLANS.length" class="py-2 px-4 bg-gray-100 font-semibold text-gray-600 text-xs uppercase tracking-wide">{{ section.title }}</td>
             </tr>
             <tr v-for="feature in section.features" :key="feature.id" class="border-t border-gray-100 hover:bg-gray-50">
               <td class="py-3 px-4 align-top border-r border-gray-100" :class="{ 'pl-8': feature.subfeature }">
@@ -66,13 +59,6 @@
                 <template v-else-if="feature.tiers[plan.id]">&#x2713;</template>
                 <template v-else>&#x2013;</template>
               </td>
-
-              <td
-                v-for="(solution, i) in SOLUTIONS"
-                :key="'sol-' + solution.id"
-                class="py-3 px-4 text-center align-top border-r border-gray-100"
-                :class="i === 0 ? 'border-l-2 border-l-gray-300' : ''"
-              >{{ (feature.solutions || []).includes(solution.id) ? '✓' : '–' }}</td>
             </tr>
           </template>
         </tbody>
@@ -88,15 +74,6 @@ import { PLANS } from '../../lib/feature-catalog.mjs'
 
 const catalog = useFeatureCatalog()
 const sections = computed(() => catalog.value?.sections || [])
-
-const SOLUTIONS = [
-    { id: 'mes', label: 'MES' },
-    { id: 'scada', label: 'SCADA' },
-    { id: 'uns', label: 'UNS' },
-    { id: 'edge-connectivity', label: 'Edge Conn.' },
-    { id: 'it-ot-middleware', label: 'IT/OT' },
-    { id: 'data-integration', label: 'Data Int.' },
-]
 
 const isFullscreen = ref(false)
 function toggleFullscreen () {
