@@ -5,6 +5,8 @@ const props = defineProps<{
 
 const authorNames = computed(() => useAuthorNames(props.entry.authors))
 
+const plans = useChangelogPlans(() => props.entry.path)
+
 const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
 </script>
 
@@ -18,6 +20,7 @@ const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateStri
           <div class="author">{{ authorNames }}</div>
         </div>
       </NuxtLink>
+      <FeatureTierBadges :plans="plans" />
     </div>
     <div class="flex-grow pt-4">
       <div class="prose">

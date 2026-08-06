@@ -208,12 +208,29 @@ export default defineContentConfig({
                         title: z.string(),
                         note: z.string().optional(),
                         description: z.string().optional(),
+                        docsLink: z.string().optional(),
+                        changelog: z.array(z.object({
+                            url: z.string(),
+                            release: z.string().optional(),
+                        })).optional(),
+                        solutions: z.array(z.string()).optional(),
+                        subfeature: z.boolean().optional(),
+                        beta: z.boolean().optional(),
+                        // Defaults to true. False keeps the feature off /pricing while it
+                        // still carries a changelog or docs link for the badge lookups.
+                        showOnPricing: z.boolean().optional(),
+                        // Optional so a feature whose availability is not settled yet can
+                        // omit it and publish no badge at all. Everything /pricing renders
+                        // must have it, which the refine below enforces.
                         tiers: z.object({
                             edge: z.boolean(),
                             hub: z.boolean(),
                             fleet: z.boolean(),
-                        }),
-                    })),
+                        }).optional(),
+                    }).refine(
+                        feature => feature.showOnPricing === false || !!feature.tiers,
+                        { message: 'tiers is required unless showOnPricing is false', path: ['tiers'] },
+                    )),
                 })),
             })
         }),

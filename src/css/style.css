@@ -1886,34 +1886,29 @@ h4:hover .header-anchor::before {
     }
 }
 
-/* Tier badges for changelog & blog */
+/* Plan availability badges, rendered by FeatureTierBadges.vue on changelog and docs pages */
 .ff-tier-badges {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 8px;
     margin: 8px 0 16px 0;
 }
 
-.ff-tier-badges--h2 {
-    margin-top: -15.2px;
-}
-
-.ff-tier-badge {
-    @apply inline-flex whitespace-nowrap text-current;
+.ff-tier-badges__label {
+    @apply text-gray-500 font-medium;
     font-size: 0.75rem;
     line-height: 1rem;
 }
 
-.ff-tier-badge__label {
-    @apply px-2.5 py-0.5 text-gray-600 font-medium bg-gray-100 border border-r-0 border-gray-200 rounded-l;
+.ff-tier-badge {
+    @apply inline-flex whitespace-nowrap px-2.5 py-0.5 text-gray-600 font-medium bg-gray-100 border border-gray-200 rounded no-underline;
+    font-size: 0.75rem;
+    line-height: 1rem;
 }
 
-.ff-tier-badge__value {
-    @apply px-2.5 py-0.5 text-gray-500 font-light bg-white border border-l-0 border-gray-200 rounded-r;
-}
-
-.ff-feature-info {
-    margin: 4px 0 16px 0;
+.ff-tier-badge:hover {
+    @apply text-indigo-600 border-indigo-200 bg-indigo-50 no-underline;
 }
 
 .ff-related-changelogs {
@@ -1923,16 +1918,6 @@ h4:hover .header-anchor::before {
 }
 
 .ff-related-changelogs a {
-    color: #4338ca;
-}
-
-.ff-related-docs {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin: 0 0 8px 0;
-}
-
-.ff-related-docs a {
     color: #4338ca;
 }
 

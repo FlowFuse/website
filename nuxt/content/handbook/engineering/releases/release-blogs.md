@@ -40,7 +40,9 @@ Every post requires the following fields:
 | `release` | The release number as a string, e.g. `"2.29"`. |
 | `features` | List of feature anchors for the in-page navigation. Each entry needs a `heading` and, where a changelog entry exists, an `id` matching the feature catalog slug. |
 
-Before populating `features`: Confirm that `featureCatalog.yml` has been updated for every feature in this release. The `id` values here must match slugs in the catalog, if a feature is missing from the catalog, the in-page navigation will silently break and tier badges will not render. The changelog posts for each feature should have already triggered this update; if any are missing, flag them before the blog goes live. See [Writing Changelog Posts](/handbook/engineering/releases/writing-changelog/#feature-catalog-and-availability) for how catalog entries work.
+Note on `features`: the badge and changelog-link injection this list used to drive stopped running when the blog moved to Nuxt, and has not been rebuilt yet. Keep filling the list in so the data is there when it is, but do not expect anything to render from it today. Availability on a release blog has to be written as prose for now.
+
+Before populating `features`: Confirm that [`feature-catalog.yml`](https://github.com/FlowFuse/website/blob/main/nuxt/content/feature-catalog.yml) has an entry for every feature in this release, with the `id` values here matching the catalog's. The changelog posts for each feature should have already triggered this update; if any are missing, flag them before the blog goes live. See [Writing Changelog Posts](/handbook/engineering/releases/writing-changelog/#feature-catalog-and-availability) for how catalog entries work.
 
 ## Structure
 

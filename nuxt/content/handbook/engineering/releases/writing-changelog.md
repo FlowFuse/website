@@ -158,9 +158,9 @@ Replace the following:
 
 ### Feature catalog and availability
 
-Ideally, tie each changelog post to a feature defined in [`featureCatalog.yaml`](https://github.com/FlowFuse/website/blob/main/src/_data/featureCatalog.yaml). The catalog is the single source of truth for tier availability across FlowFuse.
+Ideally, tie each changelog post to a feature defined in [`feature-catalog.yml`](https://github.com/FlowFuse/website/blob/main/nuxt/content/feature-catalog.yml). The catalog is the single source of truth for plan availability across FlowFuse, and it drives the pricing page, the docs badges and the changelog badges from one file.
 
-When you ship a changelog post for a catalogued feature, update the feature's entry in `featureCatalog.yaml` to include the changelog `url` and `release` number:
+When you ship a changelog post for a catalogued feature, add the changelog `url` and `release` number to that feature's entry:
 
 ```yaml
 changelog:
@@ -168,13 +168,13 @@ changelog:
     release: "2.29"
 ```
 
-Once that entry is in place, the build injects tier availability badges into the changelog post automatically. You need no additional markup in the post itself.
+Once that entry is in place, the post renders "Available in Edge / Hub / Fleet" badges from the feature's `tiers`. You need no additional markup in the post itself. A post that is not tied to a catalog feature renders no badges, which is the safe default.
 
-If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. If the feature's tier availability has changed alongside this release, update the relevant fields in the catalog too. Product must review any additions or availability changes in `featureCatalog.yaml` before merging.
+If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. A feature that only exists to carry a changelog link, rather than to be sold, gets `showOnPricing: false` so it stays off the pricing page. If availability is genuinely undecided, leave `tiers` off the entry entirely: no badge is better than a wrong one. Product must review any additions or availability changes before merging.
 
-Always write an availability note in the post as well. Tier badges communicate the tier, but prose tells the user what it means for them. Write it like this:
+Always write an availability note in the post as well. Badges name the plans, but prose tells the user what it means for them. Write it like this:
 
-> This feature is available to Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from vX.Y.
+> This feature is available on the Edge and Fleet plans from vX.Y.
 
 Put it at the end of the post, or immediately after the main announcement if it affects whether the user can access the feature at all.
 
