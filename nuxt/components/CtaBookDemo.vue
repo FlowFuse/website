@@ -17,8 +17,10 @@ withDefaults(defineProps<{
 const EVENT = 'cta-book-demo'
 const HREF = '/book-demo/'
 const LABEL = 'Book a Demo'
+// /book-demo/ is still served by 11ty, not a Nuxt route - see CtaButton.vue's
+// `external` prop.
 </script>
 
 <template>
-  <CtaButton :event="EVENT" :href="HREF" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
+  <CtaButton :event="EVENT" :href="HREF" :external="true" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
 </template>

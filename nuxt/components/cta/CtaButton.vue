@@ -8,6 +8,13 @@ import { useCapture } from '~/composables/useCapture'
 const props = withDefaults(defineProps<{
     event: string
     href: string
+    // Whether `href` points at a route Nuxt actually serves. NuxtLink/UButton's
+    // `to` otherwise treats any same-origin-looking path as an internal Vue
+    // Router route, so a destination still on 11ty (e.g. /contact-us/,
+    // /book-demo/) 404s on click instead of navigating - it never reaches the
+    // server-side proxy that would have served it. Fixed per destination by
+    // each Cta* wrapper, not caller-configurable.
+    external: boolean
     label: string
     variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
     position: string
@@ -124,6 +131,7 @@ function onClick () {
 <template>
   <UButton
     :to="preview ? undefined : href"
+    :external="external"
     :color="uiVariant.color"
     :variant="uiVariant.variant"
     :trailing-icon="icon"
