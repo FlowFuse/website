@@ -1,77 +1,82 @@
 sections:
-  - id: empower
-    title: Empower
+  - id: ai-automation
+    title: AI & Automation
     features:
       - id: flowfuse-expert-ai
-        title: FlowFuse Expert (AI)
+        title: FlowFuse Expert AI
+        description: "Build industrial apps with agents, and query the state of the factory with an agent. Adapt your current hardware and machines so agentic work can be done against them, without ripping and replacing what's already on the plant floor."
         tiers: { edge: true, hub: true, fleet: true }
-      - id: node-red-mcp-servers
-        title: Node-RED MCP Servers
+      - id: mcp-servers
+        title: Agentic Operations
+        description: "Expose your Node-RED flows as tools an AI agent can call directly, so agents can query the state of the factory or trigger actions without custom integration work."
         tiers: { edge: true, hub: true, fleet: true }
-
-  - id: manage
-    title: Manage
-    features:
-      - id: node-red-hosting
-        title: Node-RED Hosting
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: hosted-instances
-        title: Hosted Instances
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: edge-devices
-        title: Edge Devices
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: snapshots
-        title: Snapshots
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: auto-snapshot-remote
-        title: Auto Snapshot (Remote)
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: auto-snapshot-hosted
-        title: Auto Snapshot (Hosted)
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: installation-support
-        title: Installation Support
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: live-chat-support
-        title: Live Chat Support
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: enterprise-support
-        title: Enterprise Support
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: custom-hostnames
-        title: Custom Hostnames
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: persistent-files
-        title: Persistent Files
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: persistent-context
-        title: Persistent Context
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: unlimited-workflow-executions
-        title: Unlimited Workflow Executions
+      - id: onnx-integration
+        title: ONNX Integration
+        description: "Run trained machine learning models directly in your flows, including on edge hardware, without sending data out to an external inference service."
         tiers: { edge: true, hub: true, fleet: true }
 
-  - id: scale
-    title: Scale
+  - id: build
+    title: Build
     features:
-      - id: mqtt-broker
-        title: MQTT Broker
-        tiers: { edge: true, hub: true, fleet: true }
       - id: edge-development
-        title: Edge Development (remote editor proxy)
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: devops-pipelines
-        title: DevOps Pipelines
-        tiers: { edge: true, hub: true, fleet: true }
+        title: Edge Development
+        description: "Develop and test Node-RED flows directly on edge devices with a remote editor proxy."
+        tiers: { edge: true, hub: false, fleet: true }
       - id: private-npm-registry
-        title: Private NPM Registry
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: performance-monitoring
-        title: Performance Monitoring
+        title: Custom Node-RED Nodes
+        description: "Create and manage your own private npm registry for Node-RED nodes, so you can share custom nodes across your team and devices without publishing them publicly."
         tiers: { edge: true, hub: true, fleet: true }
       - id: flowfuse-tables
         title: FlowFuse Tables
+        description: "A managed PostgreSQL database for every application, so you can store and query structured data without standing up and maintaining your own database."
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: persistent-files
+        title: File Storage
+        description: "Store and retrieve files from your Node-RED flows, with automatic replication and backup across your devices and hosted instances."
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: team-library
+        title: Team Library
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: personalised-multi-user-dashboards
+        title: Personalised Multi-User Dashboards
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: blueprints-converge
+        title: Blueprints
+        description: "Ready-made starting points for your apps, from cross-team Converge templates to OT and IT specific blueprints."
+        tiers: { edge: true, hub: true, fleet: true }
+
+  - id: deploy
+    title: Deploy
+    features:
+      - id: hosted-instances
+        title: Cloud Instances
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: edge-devices
+        title: Edge Instances
+        description: "Deploy and mange your Node-RED instances on edge PLCs and gateways, with full visibility and control from the cloud."
+        tiers: { edge: true, hub: false, fleet: true }
+      - id: custom-hostnames
+        title: Custom Hostnames
+        tiers: { edge: false, hub: true, fleet: false }
+      - id: mqtt-broker
+        title: MQTT Broker
+        tiers: { edge: true, hub: false, fleet: true }
+      - id: devops-pipelines
+        title: DevOps Pipelines
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: git-integration
+        title: Git Integration
+        tiers: { edge: false, hub: true, fleet: false }
+
+  - id: operate-maintain
+    title: Operate & Maintain
+    features:
+      - id: snapshots
+        title: Snapshots & Version History
+        description: "Automatic snapshots on remote devices and hosted instances, plus a full version history timeline so you can roll back to any prior state."
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: unlimited-workflow-executions
+        title: Unlimited Workflow Executions
         tiers: { edge: true, hub: true, fleet: true }
       - id: device-fleet-updates
         title: Device Fleet Updates
@@ -79,22 +84,32 @@ sections:
       - id: device-group-management
         title: Device Group Management
         tiers: { edge: true, hub: false, fleet: true }
-      - id: git-integration
-        title: Git Integration
-        tiers: { edge: false, hub: true, fleet: false }
       - id: high-availability
         title: High Availability
         tiers: { edge: false, hub: true, fleet: false }
+      - id: performance-monitoring
+        title: Performance Monitoring & Alerts
+        description: "Track CPU, memory, and event loop performance across your instances and devices, with email alerts when something needs your attention."
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: protected-instances
+        title: Protected Instances
+        tiers: { edge: false, hub: true, fleet: false }
 
-  - id: secure
-    title: Secure
+  - id: govern-secure
+    title: Govern and Secure
     features:
+      - id: single-sign-on
+        title: Single Sign-On (SSO)
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: two-factor-authentication
+        title: Two-Factor Authentication
+        tiers: { edge: true, hub: true, fleet: true }
       - id: certified-nodes-it
         title: Certified Nodes - IT
         description: "IT certified node bundle includes: Redis, MQTT, HTTP Request, AI nodes (Gemini, Claude, ChatGPT, Ollama), MCP Server"
         tiers: { edge: false, hub: true, fleet: true }
       - id: certified-nodes-ot
-        title: Certified Nodes - OT
+        title: Certified OT Connections - OPC-UA, Modbus, etc.
         description: "OT certified node bundle includes: OPC-UA, Modbus TCP & RTU, RTSP, EtherNet/IP, AI nodes (Gemini, Claude, ChatGPT, Ollama), MCP Server"
         tiers: { edge: true, hub: false, fleet: false }
       - id: audit-log
@@ -102,69 +117,22 @@ sections:
         tiers: { edge: true, hub: true, fleet: true }
       - id: role-based-access-control
         title: Role-Based Access Control
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: application-level-rbac
-        title: Application-Level RBAC
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: endpoint-security
-        title: Endpoint Security
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: two-factor-authentication
-        title: Two-Factor Authentication
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: instance-monitoring
-        title: Instance Monitoring
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: single-sign-on
-        title: Single Sign-On (SSO)
+        description: "Control who can do what at both the team and application level, from viewers to admins."
         tiers: { edge: true, hub: true, fleet: true }
       - id: baa-for-hipaa
         title: BAA for HIPAA
         tiers: { edge: false, hub: true, fleet: false }
-
-  - id: collaborate
-    title: Collaborate
-    features:
-      - id: team-members
-        title: Team Members
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: blueprints-converge
-        title: Blueprints - Converge
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: personalised-multi-user-dashboards
-        title: Personalised Multi-User Dashboards
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: team-library
-        title: Team Library
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: blueprints-ot-apps
-        title: Blueprints - OT APPS
-        tiers: { edge: true, hub: false, fleet: true }
-      - id: blueprints-it-apps
-        title: Blueprints - IT APPS
+      - id: sbom
+        title: Software Bill of Materials
+        description: "A complete list of all software components used in your Node-RED instances and hosted applications, including version numbers and license information."
         tiers: { edge: false, hub: true, fleet: false }
 
-  - id: other
-    title: Other
+  - id: support
+    title: Support
     features:
-      - id: project-nodes
-        title: Project Nodes aka seamless project comms
+      - id: installation-support
+        title: Installation Support
         tiers: { edge: true, hub: true, fleet: true }
-      - id: email-alerts
-        title: Email Alerts
+      - id: enterprise-support
+        title: Enterprise Support
         tiers: { edge: true, hub: true, fleet: true }
-      - id: api-debug-length-limit
-        title: API/Debug Length Limit
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: static-assets
-        title: Static Assets
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: bill-of-materials
-        title: Bill of Materials
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: version-history-timeline
-        title: Version History Timeline
-        tiers: { edge: true, hub: true, fleet: true }
-      - id: protected-instances
-        title: Protected Instances
-        tiers: { edge: false, hub: true, fleet: false }
