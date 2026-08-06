@@ -63,7 +63,9 @@ const VARIANT_MAP: Record<string, { color: string, variant: string, hover: strin
     'primary-outlined': {
         color: 'primary',
         variant: 'outline',
-        hover: 'hover:bg-indigo-700 hover:text-white hover:border-indigo-700 active:bg-indigo-700 active:text-white active:border-indigo-700',
+        // ring-indigo-600 (no opacity) overrides the default's ring-primary/50,
+        // matching .ff-btn's solid 1px border instead of a half-opacity ring.
+        hover: 'ring-indigo-600 hover:bg-indigo-700 hover:text-white hover:ring-indigo-700 active:bg-indigo-700 active:text-white active:ring-indigo-700',
     },
     highlight: {
         color: 'highlight',
@@ -73,7 +75,7 @@ const VARIANT_MAP: Record<string, { color: string, variant: string, hover: strin
     'highlight-outlined': {
         color: 'highlight',
         variant: 'outline',
-        hover: 'hover:bg-red-700 hover:text-white hover:border-red-700 active:bg-red-700 active:text-white active:border-red-700',
+        hover: 'ring-red-600 hover:bg-red-700 hover:text-white hover:ring-red-700 active:bg-red-700 active:text-white active:ring-red-700',
     },
     'nav-text': { color: 'primary', variant: 'link', hover: '' },
     ghost: { color: 'primary', variant: 'ghost', hover: '' },
@@ -110,16 +112,18 @@ const showUppercase = computed(() => props.uppercase ?? !isNavTextVariant.value)
 const uiOverrides = computed(() => {
     if (isNavTextVariant.value) {
         const padding = props.padded ? 'px-3 py-4' : 'p-0'
-        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-medium no-underline ${padding}` }
+        // font-normal (400): matches the Eleventy nav link's inherited weight.
+        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-normal no-underline ${padding}` }
     }
     // Same metrics as a real button (bold, uppercase, text-base, 8px/16px
     // padding) since a ghost button IS one visually - it just has no
     // background/border, e.g. the homepage hero's "Try it out" over a photo.
     if (props.variant === 'ghost') {
         const colorClass = GHOST_COLOR_CLASSES[props.color || 'primary']
-        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline justify-center px-4 py-2 text-base ${colorClass}` }
+        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline justify-center rounded-sm px-4 py-2 text-base ${colorClass}` }
     }
-    return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline justify-center px-4 py-2 text-base ${uiVariant.value.hover}` }
+    // rounded-sm = 4px, matching .ff-btn (UButton's default rounded-md is 6px).
+    return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-bold no-underline justify-center rounded-sm px-4 py-2 text-base ${uiVariant.value.hover}` }
 })
 
 function onClick () {
@@ -139,6 +143,13 @@ function onClick () {
     :ui="uiOverrides"
     @click="onClick"
   >
-    {{ label }}
+    <!-- The main nav's "Free Trial" (.ff-nav-freetrial) keys its rest color
+         and animated hover underline off a `.ff-nav-label` child span - see
+         src/css/style.css's `.ff-website header .ff-nav-freetrial .ff-nav-label`
+         rules. UButton's default slot would otherwise render the label as a
+         bare text node, so those rules silently never match. Scoped to
+         nav-text since it's the only variant `.ff-nav-label` styling reaches. -->
+    <span v-if="isNavTextVariant" class="ff-nav-label">{{ label }}</span>
+    <template v-else>{{ label }}</template>
   </UButton>
 </template>

@@ -27,8 +27,23 @@ const CTA_VARIANTS: Record<string, { title: string, description: string }> = {
     },
 }
 
-const ctaType = computed(() => props.cta?.type || 'contact')
-const currentCta = computed(() => CTA_VARIANTS[ctaType.value] || CTA_VARIANTS['sign-up'])
+// Missing type defaults to 'contact'; an unrecognised one (e.g. typo'd
+// `type: signup`) falls back to 'sign-up' - same two fallbacks as before.
+const KNOWN_TYPES = new Set(['sign-up', 'demo', 'contact', 'pricing'])
+const ctaType = computed(() => {
+    const type = props.cta?.type
+    if (!type) return 'contact'
+    return KNOWN_TYPES.has(type) ? type : 'sign-up'
+})
+const currentCta = computed(() => CTA_VARIANTS[ctaType.value])
+
+// Kept as-is from Eleventy for data continuity - fires alongside, not
+// instead of, each Cta* component's own cta-* event.
+function onCtaClick () {
+    if (typeof (window as any).capture === 'function') {
+        (window as any).capture('blog-cta', { reference: `Blog: ${props.title}`, cta_type: ctaType.value })
+    }
+}
 </script>
 
 <template>
@@ -36,7 +51,7 @@ const currentCta = computed(() => CTA_VARIANTS[ctaType.value] || CTA_VARIANTS['s
     <div class="flex flex-col gap-6 sm:gap-8 text-center sm:text-left">
       <h3 class="mt-0 mb-0 !text-3xl text-indigo-800">{{ cta?.title || currentCta.title }}</h3>
       <p class="mt-0 mb-0 max-w-4xl mx-auto sm:mx-0 leading-relaxed">{{ cta?.description || currentCta.description }}</p>
-      <div class="flex justify-center sm:justify-start">
+      <div class="flex justify-center sm:justify-start" @click="onCtaClick">
         <CtaSignUp v-if="ctaType === 'sign-up'" variant="highlight" position="blog-post-cta" />
         <CtaBookDemo v-else-if="ctaType === 'demo'" variant="highlight" position="blog-post-cta" />
         <CtaContactUs v-else-if="ctaType === 'contact'" variant="highlight" position="blog-post-cta" />
