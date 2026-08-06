@@ -49,15 +49,20 @@
                 </template>
               </td>
 
+              <!-- Included cells get a green wash so the shape of a plan reads down the column
+                   at a glance, without having to pick out individual check marks. -->
               <td
                 v-for="(plan, i) in PLANS"
                 :key="'plan-' + plan.id"
                 class="py-3 px-4 align-top text-center border-r border-gray-100"
-                :class="i === 0 ? 'border-l-2 border-l-gray-300' : ''"
+                :class="[
+                  i === 0 ? 'border-l-2 border-l-gray-300' : '',
+                  feature.tiers?.[plan.id] ? 'bg-green-50' : '',
+                ]"
               >
                 <template v-if="!feature.tiers"><span class="text-gray-400 text-xs">TBD</span></template>
-                <template v-else-if="feature.tiers[plan.id]">&#x2713;</template>
-                <template v-else>&#x2013;</template>
+                <template v-else-if="feature.tiers[plan.id]"><span class="text-green-700">&#x2713;</span></template>
+                <template v-else><span class="text-gray-300">&#x2013;</span></template>
               </td>
             </tr>
           </template>
