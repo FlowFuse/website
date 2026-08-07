@@ -49,6 +49,11 @@ When the deal board is updated with on the won deals of last month,
 click "Export View" and export as CSV. Download this file
 to your machine.
 
+For each exported deal, check the executed Agreement for the contract term and the payment terms. HubSpot reports ARR annually,
+so a multi-year deal that the customer prepays in full will not show its full commissionable value in the export. Record the term
+and payment structure for each deal — you will need both to apply the correct treatment in the Commissions tab. See
+[Multi-year Bookings](#multi-year-bookings).
+
 Make a copy of
 [this Google Sheet template](https://docs.google.com/spreadsheets/d/1fBq4g4W26M3k-uUOg5p4D2mYUyBPP8EbdtPLwuQ5RPI/)
 and import the CSV just downloaded from HubSpot into the "All Deals" sheet.
@@ -68,6 +73,7 @@ Finally, go to the "Commissions" tab and select the employee to calculate the
 payment for.
 
 Do not manually override any formulas in the commission tab, make sure that all calculations should be driven by the sheet's logic.
+- Multi-year bookings are an exemption, which the template does not yet calculate correctly. Enter that figure manually, highlight the cell, and add a comment to the deal's Hubspot link on.
 
 Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
