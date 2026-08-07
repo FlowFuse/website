@@ -3,6 +3,7 @@ tierId: fleet
 order: 3
 description: Managed Node-RED across a large fleet of distributed devices in the field. Push flows, ship updates, and roll back remotely with fleet-wide visibility.
 features:
+  - Edge Devices
   - Remote Device and Instance Management
   - Device Fleet Updates
   - Snapshot & Rollback
@@ -12,9 +13,3 @@ bestFitFor:
   - Blended teams running distributed units - sensor, telemetry, remote sites, etc.
   - Teams who want to scale their remote device collection.
   - Hardware and OEM partners who need governed Node-RED solutions for their products.
-button:
-  label: Contact us
-  to: /contact-us/
-  external: true
-  variant: solid
-  event: cta-contact-us

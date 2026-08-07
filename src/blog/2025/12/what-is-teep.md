@@ -43,7 +43,7 @@ meta:
     answer: "No. A low TEEP can simply reflect a deliberate single-shift schedule or low current demand rather than poor performance. The score becomes actionable only once you separate utilization losses (scheduling and demand) from operational losses (downtime, slow cycles, defects)."
 ---
 
-Total Effective Equipment Performance (TEEP) is a manufacturing KPI used to understand how much of an equipment investment is actually being utilized. While most manufacturers rely on [Overall Equipment Effectiveness (OEE)](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/#what-is-oee%3F) to assess shop-floor performance, years of real-world use have revealed a critical blind spot: OEE only measures how well equipment runs *when it is scheduled to run*. It says nothing about the many hours assets sit idle due to planning decisions, demand patterns, labor availability, or maintenance strategy.
+Total Effective Equipment Performance (TEEP) is a manufacturing KPI used to understand how much of an equipment investment is actually being utilized. While most manufacturers rely on [Overall Equipment Effectiveness (OEE)](/blog/2025/04/what-is-an-oee-dashboard/#what-is-oee) to assess shop-floor performance, years of real-world use have revealed a critical blind spot: OEE only measures how well equipment runs *when it is scheduled to run*. It says nothing about the many hours assets sit idle due to planning decisions, demand patterns, labor availability, or maintenance strategy.
 
 <!--more-->
 
