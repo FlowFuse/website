@@ -19,7 +19,7 @@ If you've got something that you think we should share on our newsletters please
 
 ## News
 
-### [Node-RED Ask Me Anything](/ask-me-anything/ama-nodered/)
+### Node-RED Ask Me Anything
 
 ![AMA Session with Nick O'Leary and Rob Marcer](../../../images/webinars/ama-feb.jpg "AMA Session with Nick O'Leary and Rob Marcer")
 

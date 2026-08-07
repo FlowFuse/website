@@ -1,8 +1,0 @@
-{
-    "tags": [
-        "ama", "event"
-    ],
-    "layout": "layouts/webinar.njk",
-    "nav": "ama",
-    "searchTitle": "Ask Me Anything"
-}
