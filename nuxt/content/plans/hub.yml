@@ -9,7 +9,7 @@ features:
   - BAA for HIPAA
   - Protected Instances
   - Certified Nodes - IT
-  - Blueprints - IT APPS
+  - Blueprints - IT Apps
 bestFitFor:
   - IT teams moving data between ERPs, databases, and cloud APIs.
   - Complex data sets that need governed integration and orchestration.

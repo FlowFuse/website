@@ -113,6 +113,15 @@ cta:                         # optional call-to-action block
 
 Tag options are defined in `src/_data/blogTags.json`. Future-dated posts are excluded from collections until their date arrives.
 
+#### Inline Image CTAs (`CtaImage`)
+
+`nuxt/components/content/CtaImage.vue` — a clickable, tracked image usable inside a post's markdown body via `::cta-image{src="..." alt="..." cta="..."}`. Renders through `<ContentRenderer>` on `nuxt/pages/blog/[...slug].vue`, same as any other MDC content component (unlike `nuxt/components/BlogPostCta.vue`, which is a normal template component the page passes `page.title` to directly).
+
+- `cta` is required on every instance, one of `sign-up` | `demo` | `contact` | `pricing` — no fallback to the post's frontmatter `cta.type` (that one only drives `BlogPostCta` at the end of the article). An invalid value throws a descriptive error at render time instead of a bare `Cannot read properties of undefined`.
+- `position` isn't a prop — it's hardcoded to `'inline-image'`, since every instance shares the same placement semantics.
+- Fires the same `blog-cta` event as `BlogPostCta` (not a dedicated `cta-sign-up`/`cta-book-demo`/etc. event) — `cta_type` alone distinguishes the destination, so both the end-of-article CTA and inline image CTAs land in one PostHog series, filterable by `cta_type`/`position`.
+- The article title can't be passed as a prop from markdown (MDC only forwards literal `{...}` attributes), so `nuxt/pages/blog/[...slug].vue` does `provide('blogPostTitle', pageTitle)` and the component `inject()`s it — the only reason this indirection exists here and not on `BlogPostCta`.
+
 ---
 
 ### Changelog entries

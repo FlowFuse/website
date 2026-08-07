@@ -108,7 +108,7 @@ When evaluating co-marketing opportunities, we consider:
 - Relevance: Alignment with FlowFuse’s editorial calendar, strategic themes, and target audience.
 - Value exchange: Clear deliverables such as published articles, videos, webinars, or social media posts, with measurable outcomes (reach, engagement, leads).
 - Ownership: The Product Marketing Manager leads assessment and planning of co-marketing initiatives, in collaboration with the Marketing team and Sales as needed.
-- Execution: DevRel validates externally created content to ensure quality, accuracy and consistency of deliverables.
+- Execution: The Product Marketing Manager validates externally created content to ensure quality, accuracy and consistency of deliverables.
 - Measurement: Success is measured through defined KPIs such as reach, engagement, and lead generation.
 
 All inbound proposals for co-marketing or sponsored content must be shared with the Product Marketing Manager for assessment before any commitments are made.
