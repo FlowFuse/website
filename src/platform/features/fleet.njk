@@ -1,0 +1,166 @@
+---
+layout: page
+nohero: true
+meta:
+    title: "FlowFuse Fleet"
+    description: "Manage a Node-RED fleet and ship updates everywhere. FlowFuse Fleet runs Node-RED across thousands of distributed devices with remote updates, rollback, and fleet-wide visibility — built for hardware OEMs, partners, and asset operators."
+sitemapPriority: 0.7
+---
+<style>
+    .prod-page { position: relative; }
+    .prod-content { position: relative; z-index: 1; }
+    .prod-hero-bg {
+        position: absolute; top: 0; left: 0; right: 0; height: 620px;
+        z-index: 0; overflow: hidden; pointer-events: none;
+        background:
+            radial-gradient(48% 62% at 6% -6%, rgba(99,102,241,0.34), transparent 62%),
+            radial-gradient(44% 56% at 106% -4%, rgba(255,110,74,0.16), transparent 60%),
+            linear-gradient(180deg, #E7EAFF 0%, #EEF0FF 26%, #ffffff 74%);
+    }
+    .prod-hero-bg::after {
+        content: ""; position: absolute; inset: 0;
+        background-image:
+            linear-gradient(to right, rgba(79,70,229,0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(79,70,229,0.08) 1px, transparent 1px);
+        background-size: 42px 42px;
+        -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
+        mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
+    }
+    .prod-eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #4f46e5; }
+    .prod-hero-img { border-radius: .75rem; overflow: hidden; box-shadow: 0 12px 32px rgba(2,6,13,0.12); border: 1px solid #e5e7eb; }
+    .prod-hero-img img { display: block; width: 100%; height: auto; }
+    .prod-fit-card { border-radius: .75rem; padding: 1.5rem; }
+    .prod-fit-card ul { margin: 0; padding: 0; list-style: none; }
+    .prod-fit-card li { display: flex; gap: .6rem; align-items: flex-start; padding: .55rem 0; border-top: 1px solid rgba(0,0,0,0.06); }
+    .prod-fit-card li:first-child { border-top: 0; }
+    .prod-fit--yes { background: #f5f7ff; border: 1px solid #e0e4ff; }
+    .prod-fit--no { background: #fafafa; border: 1px solid #eee; }
+    .prod-fit__mark { flex: none; width: 1.25rem; height: 1.25rem; margin-top: .1rem; font-weight: 700; }
+    .prod-fit--yes .prod-fit__mark { color: #4f46e5; }
+    .prod-fit--no .prod-fit__mark { color: #9ca3af; }
+    .prod-quad-card { border-radius: .75rem; border: 1px solid #e5e7eb; background: #fff; padding: 1.5rem; }
+    .prod-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .prod-chip { font-size: .82rem; font-weight: 500; color: #374151; background: #f3f4f6; border-radius: 9999px; padding: .35rem .8rem; }
+    .prod-other { border-radius: .75rem; border: 1px solid #e5e7eb; background: #fff; padding: 1.5rem; transition: border-color .15s ease, box-shadow .15s ease; }
+    .prod-other:hover { border-color: #c7d2fe; box-shadow: 0 8px 24px rgba(2,6,13,0.08); text-decoration: none; }
+</style>
+<div class="nohero w-full prod-page">
+    <div class="prod-hero-bg" aria-hidden="true"></div>
+    <div class="w-full px-6 prod-content">
+        <!-- ============================ HERO ============================ -->
+        <div class="max-w-screen-lg mx-auto pt-12 pb-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="prod-eyebrow">For Hardware OEMs &amp; Asset Operators</div>
+                    <h1 class="mt-3 leading-tight text-4xl sm:text-5xl font-bold">Manage a Node-RED fleet. <span class="text-indigo-600">Ship updates everywhere.</span></h1>
+                    <p class="mt-6 text-lg text-gray-500">FlowFuse Fleet runs Node-RED across thousands of distributed devices in the field, with remote updates, rollback, and fleet-wide visibility. Built for hardware OEMs, partners, and asset operators. If you're connecting a single plant floor, see <a href="/platform/features/edge/" class="text-indigo-600 hover:underline">FlowFuse Edge</a>.</p>
+                    <div class="mt-8 flex gap-4 items-start sm:items-center flex-col sm:flex-row">
+                        <a class="ff-btn ff-btn--primary" style="display:inline-flex;" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'fleet-hero'})"><span class="text-base uppercase">Book a Demo</span></a>
+                        <a class="ff-btn ff-btn--primary-outlined" style="display:inline-flex;" href="/pricing/" onclick="capture('cta-pricing', {'position': 'fleet-hero'})"><span class="text-base uppercase">View Pricing</span></a>
+                    </div>
+                </div>
+                <div class="prod-hero-img">
+                    {% image "./images/screen-pseudo-devices.png", "FlowFuse Fleet: device fleet management console", [640] %}
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ CUSTOMER QUOTE ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <figure class="border-l-4 border-indigo-200 pl-6">
+                <blockquote class="text-xl md:text-2xl font-light text-gray-700 m-0">"We knew we needed a solution to help us manage our edge devices as well as our central control system. FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future."</blockquote>
+                <figcaption class="mt-4 text-sm text-gray-500"><span class="font-semibold text-gray-700">Robert VanHofwegen</span> · Paloma Irrigation District</figcaption>
+            </figure>
+        </div>
+
+        <!-- ============================ WHEN IT FITS ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="prod-fit-card prod-fit--yes">
+                    <h3 class="text-lg font-semibold m-0 mb-2">FlowFuse Fleet is ideal for you if:</h3>
+                    <ul>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>You operate large numbers of distributed devices across remote sites.</span></li>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>You ship Node-RED inside your own product — OEMs and solution builders.</span></li>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>You need remote updates, rollback, and fleet-wide visibility without firmware releases.</span></li>
+                    </ul>
+                </div>
+                <div class="prod-fit-card prod-fit--no">
+                    <h3 class="text-lg font-semibold m-0 mb-2">Don't pick FlowFuse Fleet if:</h3>
+                    <ul>
+                        <li><span class="prod-fit__mark">&times;</span><span>Your work is integrating software systems centrally — ERPs, databases, APIs — that's <a href="/platform/features/hub/" class="text-indigo-600 hover:underline">FlowFuse Hub</a>.</span></li>
+                        <li><span class="prod-fit__mark">&times;</span><span>You're connecting machines on a single plant floor — that's <a href="/platform/features/edge/" class="text-indigo-600 hover:underline">FlowFuse Edge</a>.</span></li>
+                        <li><span class="prod-fit__mark">&times;</span><span>You manage a handful of instances, not a fleet — the core platform likely already covers you.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ WHAT'S INCLUDED ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <h2 class="mb-3">What's Included in <span class="text-indigo-600">FlowFuse Fleet</span></h2>
+            <p class="text-gray-500 max-w-3xl mb-8">Every FlowFuse Fleet deployment includes the core FlowFuse platform capabilities — governance, hosting, DevOps, security — plus these fleet-specific capabilities on top.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Manage devices at scale</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Remote Device &amp; Instance Management</span>
+                        <span class="prod-chip">Device Fleet Updates</span>
+                        <span class="prod-chip">Device Group Management</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Ship &amp; roll back safely</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Snapshot &amp; Rollback</span>
+                        <span class="prod-chip">DevOps Pipelines</span>
+                        <span class="prod-chip">Edge Development</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Monitor the fleet</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Live Monitoring</span>
+                        <span class="prod-chip">Performance Monitoring &amp; Alerts</span>
+                        <span class="prod-chip">Audit Log</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Built to collaborate</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Team Library</span>
+                        <span class="prod-chip">Blueprints</span>
+                        <span class="prod-chip">Everything in the core FlowFuse platform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ OTHER PRODUCTS ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <h2 class="mb-6">Not sure FlowFuse Fleet is the right fit?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="/platform/features/edge/" class="prod-other block">
+                    <div class="prod-eyebrow">For OT Teams</div>
+                    <h3 class="text-2xl font-bold mt-2 mb-1">FlowFuse Edge</h3>
+                    <p class="text-gray-500 m-0">Connect PLCs, machines, and controllers and standardize automation across every site. <span class="text-indigo-600">Learn more &rarr;</span></p>
+                </a>
+                <a href="/platform/features/hub/" class="prod-other block">
+                    <div class="prod-eyebrow">For IT Teams</div>
+                    <h3 class="text-2xl font-bold mt-2 mb-1">FlowFuse Hub</h3>
+                    <p class="text-gray-500 m-0">Integrate and orchestrate data across ERPs, databases, and cloud APIs — governed centrally. <span class="text-indigo-600">Learn more &rarr;</span></p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================ FINAL CTA ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-20">
+            <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center" style="background: radial-gradient(ellipse 50% 150% at 50% 100%, #6366f1, #211c64)">
+                <p class="text-white text-3xl sm:text-4xl font-medium m-0 max-w-2xl">Join hundreds of global organisations building, governing, and deploying operational applications.</p>
+                <div class="flex flex-col sm:flex-row gap-4 items-center">
+                    <a class="ff-btn ff-btn--highlight" href="/book-demo/" onclick="capture('cta-request-demo', {'position': 'fleet-final'})">Request a Demo</a>
+                    <a class="ff-btn" style="background:#ffffff;color:#211c64;" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-sign-up', {'position': 'fleet-final'})">Sign Up for Free</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

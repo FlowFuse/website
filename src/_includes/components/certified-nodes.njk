@@ -1,0 +1,112 @@
+{#
+    FlowFuse Certified Nodes showcase with a Hub / Edge toggle.
+    Mirrors the Nuxt pricing-page component (nuxt/components/CertifiedNodes.vue),
+    driven by the same data (src/_data/certifiedBundles.js -> certified-nodes.yml).
+
+    Usage — set `certifiedDefault` to the bundle id to pre-select ('it' = Hub, 'ot' = Edge):
+        {% set certifiedDefault = "ot" %}
+        {% include "components/certified-nodes.njk" %}
+#}
+{% set certifiedDefault = certifiedDefault or "it" %}
+<style>
+    .cn-card { border:1px solid #e5e7eb; border-radius:1rem; overflow:hidden; box-shadow:0 1px 2px rgba(2,6,13,.05);
+        background:
+            radial-gradient(55% 55% at 100% 0%, rgba(220,38,38,0.10), transparent 72%),
+            radial-gradient(58% 60% at 0% 100%, rgba(79,70,229,0.10), transparent 72%),
+            #fff; }
+    .cn-eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#111827; }
+    .cn-eyebrow svg { width:1rem; height:1rem; }
+    .cn-checks { display:flex; flex-wrap:wrap; gap:.4rem 1.5rem; margin:1rem 0 0; padding:0; list-style:none; font-size:.85rem; color:#4b5563; }
+    .cn-checks li { display:flex; align-items:center; gap:.4rem; }
+    .cn-toggle { display:inline-flex; border-radius:9999px; background:#f3f4f6; border:1px solid #e5e7eb; padding:.25rem; gap:.25rem; }
+    .cn-toggle-btn { display:inline-flex; align-items:center; gap:.5rem; padding:.5rem 1.25rem; border-radius:9999px; font-size:.85rem; font-weight:600; color:#4b5563; background:transparent; border:0; cursor:pointer; transition:color .15s ease, background .15s ease; }
+    .cn-dot { width:.5rem; height:.5rem; border-radius:9999px; }
+    .cn-toggle-btn[data-accent="indigo"] .cn-dot { background:#4f46e5; }
+    .cn-toggle-btn[data-accent="red"] .cn-dot { background:#dc2626; }
+    .cn-toggle-btn.is-active { color:#fff; }
+    .cn-toggle-btn.is-active[data-accent="indigo"] { background:#4f46e5; }
+    .cn-toggle-btn.is-active[data-accent="red"] { background:#dc2626; }
+    .cn-toggle-btn.is-active .cn-dot { background:#fff; }
+    .cn-panel { display:none; flex-direction:column; gap:1.5rem; }
+    .cn-panel.is-active { display:flex; }
+    .cn-group-label { display:flex; align-items:center; gap:.75rem; margin-bottom:.75rem; }
+    .cn-group-label > span:first-child { font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#6b7280; white-space:nowrap; }
+    .cn-rule { flex:1; height:1px; background:#e5e7eb; }
+    .cn-nodes { display:grid; gap:.65rem; grid-template-columns:1fr; }
+    @media (min-width:640px){ .cn-nodes { grid-template-columns:1fr 1fr; } }
+    @media (min-width:1024px){ .cn-nodes { grid-template-columns:1fr 1fr 1fr; } }
+    .cn-node { display:flex; gap:.75rem; align-items:flex-start; border:1px solid #e5e7eb; border-radius:.75rem; background:#fff; padding:.75rem; }
+    .cn-abbr { flex:none; display:grid; place-items:center; width:2rem; height:2rem; border-radius:.5rem; color:#fff; font-weight:600; font-size:.68rem; }
+    .cn-abbr[data-accent="indigo"] { background:#4f46e5; }
+    .cn-abbr[data-accent="red"] { background:#dc2626; }
+    .cn-abbr.cn-both { background:linear-gradient(135deg,#4f46e5,#dc2626); }
+    .cn-node-name { font-size:.85rem; font-weight:500; color:#111827; line-height:1.2; }
+    .cn-node-desc { font-size:.75rem; color:#6b7280; margin-top:.15rem; line-height:1.3; }
+</style>
+<section class="max-w-screen-lg mx-auto pb-16" data-cn-root>
+    <div class="cn-card">
+        <div class="px-6 md:px-9 pt-7 md:pt-9 pb-7">
+            <span class="cn-eyebrow">{% include "components/icons/certified-node.svg" %}<span>FlowFuse Certified</span></span>
+            <h2 class="mt-3">Certified Nodes you can trust in production</h2>
+            <p class="mt-2 max-w-3xl text-gray-600">{{ certifiedBundles.intro }}</p>
+            <ul class="cn-checks">
+                <li><span class="font-semibold text-gray-900">&#10003;</span>Vetted, accountable authors</li>
+                <li><span class="font-semibold text-gray-900">&#10003;</span>CVEs patched on FlowFuse's timeline</li>
+                <li><span class="font-semibold text-gray-900">&#10003;</span>Ships with Hub &amp; Edge</li>
+            </ul>
+        </div>
+        <div class="px-6 md:px-9 pt-7 pb-7 md:pb-9 border-t border-gray-100">
+            <div class="cn-toggle" role="group" aria-label="Choose product">
+                {% for b in certifiedBundles.bundles %}
+                <button type="button" class="cn-toggle-btn {{ 'is-active' if b.id == certifiedDefault }}" data-accent="{{ b.accent }}" data-cn-btn="{{ b.id }}" aria-pressed="{{ 'true' if b.id == certifiedDefault else 'false' }}">
+                    <span class="cn-dot"></span>{{ b.tier }}
+                </button>
+                {% endfor %}
+            </div>
+            {% for b in certifiedBundles.bundles %}
+            <div class="cn-panel {{ 'is-active' if b.id == certifiedDefault }} mt-6" data-cn-panel="{{ b.id }}">
+                <p class="text-gray-600 m-0">{{ b.tagline }}</p>
+                {% for group in b.groups %}
+                <div>
+                    <div class="cn-group-label"><span>{{ group.label }}</span><span class="cn-rule"></span></div>
+                    <div class="cn-nodes">
+                        {% for node in group.nodes %}
+                        <div class="cn-node">
+                            <span class="cn-abbr {{ 'cn-both' if node.both }}" data-accent="{{ b.accent }}">{{ node.abbr }}</span>
+                            <div>
+                                <div class="cn-node-name">{{ node.name }}</div>
+                                <div class="cn-node-desc">{{ node.description }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <div class="mt-8 pt-6 border-t border-gray-100 text-center">
+                <a href="/integrations" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 hover:text-indigo-700">Browse all integrations &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var root = document.querySelector('[data-cn-root]:not([data-cn-ready])');
+            if (!root) return;
+            root.setAttribute('data-cn-ready', '1');
+            var btns = root.querySelectorAll('[data-cn-btn]');
+            var panels = root.querySelectorAll('[data-cn-panel]');
+            btns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var id = btn.getAttribute('data-cn-btn');
+                    btns.forEach(function (b) {
+                        var on = b === btn;
+                        b.classList.toggle('is-active', on);
+                        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    });
+                    panels.forEach(function (p) { p.classList.toggle('is-active', p.getAttribute('data-cn-panel') === id); });
+                });
+            });
+        })();
+    </script>
+</section>

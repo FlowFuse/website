@@ -1,0 +1,176 @@
+---
+layout: page
+nohero: true
+meta:
+    title: "FlowFuse Hub"
+    description: "Move data across the business and govern it centrally. FlowFuse Hub connects your ERPs, databases, and cloud APIs into one governed system — built for central IT and enterprise architecture teams."
+sitemapPriority: 0.7
+---
+<style>
+    .prod-page { position: relative; }
+    .prod-content { position: relative; z-index: 1; }
+    /* On-brand hero backdrop (matches the features page) */
+    .prod-hero-bg {
+        position: absolute; top: 0; left: 0; right: 0; height: 620px;
+        z-index: 0; overflow: hidden; pointer-events: none;
+        background:
+            radial-gradient(48% 62% at 6% -6%, rgba(99,102,241,0.34), transparent 62%),
+            radial-gradient(44% 56% at 106% -4%, rgba(255,110,74,0.16), transparent 60%),
+            linear-gradient(180deg, #E7EAFF 0%, #EEF0FF 26%, #ffffff 74%);
+    }
+    .prod-hero-bg::after {
+        content: ""; position: absolute; inset: 0;
+        background-image:
+            linear-gradient(to right, rgba(79,70,229,0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(79,70,229,0.08) 1px, transparent 1px);
+        background-size: 42px 42px;
+        -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
+        mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
+    }
+    .prod-eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #4f46e5; }
+    .prod-hero-img { border-radius: .75rem; overflow: hidden; box-shadow: 0 12px 32px rgba(2,6,13,0.12); border: 1px solid #e5e7eb; }
+    .prod-hero-img img { display: block; width: 100%; height: auto; }
+    .prod-fit-card { border-radius: .75rem; padding: 1.5rem; }
+    .prod-fit-card ul { margin: 0; padding: 0; list-style: none; }
+    .prod-fit-card li { display: flex; gap: .6rem; align-items: flex-start; padding: .55rem 0; border-top: 1px solid rgba(0,0,0,0.06); }
+    .prod-fit-card li:first-child { border-top: 0; }
+    .prod-fit--yes { background: #f5f7ff; border: 1px solid #e0e4ff; }
+    .prod-fit--no { background: #fafafa; border: 1px solid #eee; }
+    .prod-fit__mark { flex: none; width: 1.25rem; height: 1.25rem; margin-top: .1rem; font-weight: 700; }
+    .prod-fit--yes .prod-fit__mark { color: #4f46e5; }
+    .prod-fit--no .prod-fit__mark { color: #9ca3af; }
+    .prod-quad-card { border-radius: .75rem; border: 1px solid #e5e7eb; background: #fff; padding: 1.5rem; }
+    .prod-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .prod-chip { font-size: .82rem; font-weight: 500; color: #374151; background: #f3f4f6; border-radius: 9999px; padding: .35rem .8rem; }
+    .prod-other { border-radius: .75rem; border: 1px solid #e5e7eb; background: #fff; padding: 1.5rem; transition: border-color .15s ease, box-shadow .15s ease; }
+    .prod-other:hover { border-color: #c7d2fe; box-shadow: 0 8px 24px rgba(2,6,13,0.08); text-decoration: none; }
+</style>
+<div class="nohero w-full prod-page">
+    <div class="prod-hero-bg" aria-hidden="true"></div>
+    <div class="w-full px-6 prod-content">
+        <!-- ============================ HERO ============================ -->
+        <div class="max-w-screen-lg mx-auto pt-12 pb-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="prod-eyebrow">For IT &amp; Integration Teams</div>
+                    <h1 class="mt-3 leading-tight text-4xl sm:text-5xl font-bold">Move data across the business. <span class="text-indigo-600">Govern it centrally.</span></h1>
+                    <p class="mt-6 text-lg text-gray-500">FlowFuse Hub connects your ERPs, databases, and cloud APIs into one governed system. Built for central IT and enterprise architecture teams. If you're looking for plant floor connectivity, see <a href="/platform/features/edge/" class="text-indigo-600 hover:underline">FlowFuse Edge</a>.</p>
+                    <div class="mt-8 flex gap-4 items-start sm:items-center flex-col sm:flex-row">
+                        <a class="ff-btn ff-btn--primary" style="display:inline-flex;" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hub-hero'})"><span class="text-base uppercase">Book a Demo</span></a>
+                        <a class="ff-btn ff-btn--primary-outlined" style="display:inline-flex;" href="/pricing/" onclick="capture('cta-pricing', {'position': 'hub-hero'})"><span class="text-base uppercase">View Pricing</span></a>
+                    </div>
+                </div>
+                <div class="prod-hero-img">
+                    {% image "./images/home/home-data-integration.png", "FlowFuse Hub: enterprise data integration", [640] %}
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ CUSTOMER QUOTE ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <figure class="border-l-4 border-indigo-200 pl-6">
+                <blockquote class="text-xl md:text-2xl font-light text-gray-700 m-0">"FlowFuse allows us to rapidly roll out updates to clients without burdening our development team. We can deliver custom dashboards to customers without involving any of our core developers — in fact, our Customer Success team handles this work completely."</blockquote>
+                <figcaption class="mt-4 text-sm text-gray-500"><span class="font-semibold text-gray-700">James Olson</span> · Wenco</figcaption>
+            </figure>
+        </div>
+
+        <!-- ============================ WHEN IT FITS ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="prod-fit-card prod-fit--yes">
+                    <h3 class="text-lg font-semibold m-0 mb-2">FlowFuse Hub is ideal for you if:</h3>
+                    <ul>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>Data moves between software systems — ERPs, databases, cloud APIs, message queues.</span></li>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>You're building governed integration, not point-to-point scripts.</span></li>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>Central IT or an integration team is sponsoring the project.</span></li>
+                    </ul>
+                </div>
+                <div class="prod-fit-card prod-fit--no">
+                    <h3 class="text-lg font-semibold m-0 mb-2">Don't pick FlowFuse Hub if:</h3>
+                    <ul>
+                        <li><span class="prod-fit__mark">&times;</span><span>Data originates at machines on a plant floor — that's <a href="/platform/features/edge/" class="text-indigo-600 hover:underline">FlowFuse Edge</a>, even if an ERP sits at the far end of the pipeline.</span></li>
+                        <li><span class="prod-fit__mark">&times;</span><span>Devices are your primary unit of scale (fleets of sensors, remote sites) — that's <a href="/platform/features/fleet/" class="text-indigo-600 hover:underline">FlowFuse Fleet</a>.</span></li>
+                        <li><span class="prod-fit__mark">&times;</span><span>You need PLC, SCADA, or industrial protocol connectivity — Hub doesn't include OT-certified nodes.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ WHAT'S INCLUDED ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <h2 class="mb-3">What's Included in <span class="text-indigo-600">FlowFuse Hub</span></h2>
+            <p class="text-gray-500 max-w-3xl mb-8">Every FlowFuse Hub deployment includes the core FlowFuse platform capabilities — governance, hosting, DevOps, security — plus these IT-specific capabilities on top.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Move data, reliably</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Git Integration</span>
+                        <span class="prod-chip">High Availability</span>
+                        <span class="prod-chip">DevOps Pipelines</span>
+                        <span class="prod-chip">Private NPM Registry</span>
+                        <span class="prod-chip">FlowFuse Tables</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Certified for IT systems</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">MQTT</span>
+                        <span class="prod-chip">HTTP Request</span>
+                        <span class="prod-chip">Kafka</span>
+                        <span class="prod-chip">Redis</span>
+                        <span class="prod-chip">AI nodes (Gemini, Claude, ChatGPT, Ollama)</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Governed by default</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Application-Level RBAC</span>
+                        <span class="prod-chip">Endpoint Security</span>
+                        <span class="prod-chip">BAA for HIPAA</span>
+                        <span class="prod-chip">Protected Instances</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Built to collaborate</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Team Library</span>
+                        <span class="prod-chip">IT App Blueprints</span>
+                        <span class="prod-chip">Everything in the core FlowFuse platform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ CERTIFIED NODES (default: Hub) ============================ -->
+        {% set certifiedDefault = "it" %}
+        {% include "components/certified-nodes.njk" %}
+
+        <!-- ============================ OTHER PRODUCTS ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <h2 class="mb-6">Not sure FlowFuse Hub is the right fit?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="/platform/features/edge/" class="prod-other block">
+                    <div class="prod-eyebrow">For OT Teams</div>
+                    <h3 class="text-2xl font-bold mt-2 mb-1">FlowFuse Edge</h3>
+                    <p class="text-gray-500 m-0">Connect PLCs, machines, and controllers and standardize automation across every site. <span class="text-indigo-600">Learn more &rarr;</span></p>
+                </a>
+                <a href="/platform/features/fleet/" class="prod-other block">
+                    <div class="prod-eyebrow">For Device Fleets</div>
+                    <h3 class="text-2xl font-bold mt-2 mb-1">FlowFuse Fleet</h3>
+                    <p class="text-gray-500 m-0">Push flows, ship updates, and roll back remotely across thousands of distributed devices. <span class="text-indigo-600">Learn more &rarr;</span></p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================ FINAL CTA ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-20">
+            <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center" style="background: radial-gradient(ellipse 50% 150% at 50% 100%, #6366f1, #211c64)">
+                <p class="text-white text-3xl sm:text-4xl font-medium m-0 max-w-2xl">Join hundreds of global organisations building, governing, and deploying operational applications.</p>
+                <div class="flex flex-col sm:flex-row gap-4 items-center">
+                    <a class="ff-btn ff-btn--highlight" href="/book-demo/" onclick="capture('cta-request-demo', {'position': 'hub-final'})">Request a Demo</a>
+                    <a class="ff-btn" style="background:#ffffff;color:#211c64;" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-sign-up', {'position': 'hub-final'})">Sign Up for Free</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
