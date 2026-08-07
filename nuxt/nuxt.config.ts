@@ -359,6 +359,8 @@ export default defineNuxtConfig({
                     // content-urls.get.ts) silently resolves to undefined. Explicitly listing
                     // it here bakes it at build time instead, inside the git checkout.
                     '/sitemap.xml',
+                    '/contact-us',
+                    '/book-demo',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
