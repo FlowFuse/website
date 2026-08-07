@@ -43,6 +43,7 @@ Collaboration & Scope
 Team & Scope
 * Owns the commercial team as its direct manager — setting standards, coaching individually, and holding each function accountable to them.
 * Ensures every team member has clearly defined goals, communicates how their performance is measured, and understands how their work connects to company targets.
+* Address underperformance directly and early, with documented expectations and a fair process.
 * Stays close enough to the work to assess performance first-hand rather than relying on reported summaries.
 * Guides a capable team through a scaling phase, building structure and capability as it grows.
 * A build role, not a maintenance one: the motion works and needs to be scaled, not inherited and preserved.

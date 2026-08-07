@@ -63,7 +63,7 @@ This guide walks through building a production-grade SNMP monitoring pipeline wi
 
 Before getting started, make sure you have the following in place:
 
-- **FlowFuse:** A running FlowFuse instance on your edge device. If you do not have an account yet, [sign up]({% include "sign-up-url.njk" %}) to get started and follow this [guide to get Node-RED running](/blog/2025/09/installing-node-red/).
+- **FlowFuse:** A running FlowFuse instance on your edge device. If you do not have an account yet, [sign up](https://app.flowfuse.com/account/create) to get started and follow this [guide to get Node-RED running](/blog/2025/09/installing-node-red/).
 - **An SNMP-enabled device:** Any managed switch, router, PLC, or RTU with SNMP enabled and UDP port 161 accessible from your FlowFuse instance. If you do not have a real device available, you can run a local SNMP agent for testing, see [net-snmp.org](http://www.net-snmp.org/download.html) for installation instructions for your platform.
 - **UDP port 161 access:** Confirm your community string and ensure firewall rules permit SNMP polling from your FlowFuse host to the target device.
 

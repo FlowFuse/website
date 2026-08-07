@@ -1,7 +1,9 @@
-import { readdirSync, statSync } from 'node:fs'
+import { readdirSync, statSync, readFileSync } from 'node:fs'
 import { join, basename } from 'node:path'
+import { parse as parseYaml } from 'yaml'
 import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
+import { BLOG_TAGS } from './composables/useBlogList'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -50,6 +52,31 @@ function collectApplicationGuideRoutes(dir: string): string[] {
         }
     }
     return routes
+}
+
+// Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
+// pages (and their own pagination, 19 entries/page) can be sized correctly.
+function collectBlogFiles(dir: string, basePath: string): Array<{ route: string, tags: string[] }> {
+    const results: Array<{ route: string, tags: string[] }> = []
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            results.push(...collectBlogFiles(fullPath, `${basePath}/${file}`))
+        } else if (file.endsWith('.md')) {
+            const raw = readFileSync(fullPath, 'utf-8')
+            const match = raw.match(/^---[ \t]*\r?\n([\s\S]*?)\r?\n---/)
+            const frontmatter = match ? (parseYaml(match[1]) || {}) : {}
+            const date = frontmatter.date ? new Date(frontmatter.date) : new Date(0)
+            if (date.getTime() > Date.now() && process.env.CONTEXT === 'production') continue
+            results.push({ route: `${basePath}/${basename(file, '.md')}/`, tags: frontmatter.tags || [] })
+        }
+    }
+    return results
+}
+
+function paginatedListingRoutes(basePath: string, entryCount: number): string[] {
+    const pageCount = Math.max(1, Math.ceil(entryCount / 19))
+    return [`${basePath}/`, ...Array.from({ length: pageCount - 1 }, (_, i) => `${basePath}/${i + 2}/`)]
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -130,6 +157,11 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
                 { name: 'theme-color', content: '#ffffff' },
+            ],
+            script: [
+                // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
+                // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
+                { src: '/js/nav-tracking.js', defer: true },
             ]
         }
     },
@@ -171,6 +203,13 @@ export default defineNuxtConfig({
                 const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
                 const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
                 const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
+
+                const blogFiles = collectBlogFiles(join(__dirname, '../src/blog'), '/blog')
+                const blogListingRoutes = paginatedListingRoutes('/blog', blogFiles.length)
+                const blogTagRoutes = BLOG_TAGS.flatMap(tag =>
+                    paginatedListingRoutes(`/blog/${tag}`, blogFiles.filter(f => f.tags.includes(tag)).length)
+                )
+
                 return [
                     '/terms',
                     '/privacy-policy',
@@ -187,6 +226,10 @@ export default defineNuxtConfig({
                     '/changelog/index.xml',
                     ...changelogListingRoutes,
                     ...changelog.routes,
+                    '/blog/index.xml',
+                    ...blogListingRoutes,
+                    ...blogTagRoutes,
+                    ...blogFiles.map(f => f.route),
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
                 ]
             })(),
@@ -238,6 +281,14 @@ export default defineNuxtConfig({
                     'rehype-katex': {},
                 },
             },
+        },
+    },
+
+    vue: {
+        compilerOptions: {
+            // lite-youtube-embed is a web component loaded client-side by LiteYoutube.vue,
+            // not a Vue component - stop Vue from warning about an unresolved <lite-youtube>.
+            isCustomElement: (tag) => tag === 'lite-youtube',
         },
     },
 

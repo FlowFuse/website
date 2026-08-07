@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="ff-utility-bar w-full bg-indigo-700 text-indigo-100 text-sm px-6">
+  <div class="ff-utility-bar w-full bg-indigo-700 text-indigo-100 text-sm px-6" data-nav-zone="utility">
     <div class="mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px] flex items-center justify-between gap-4 py-3">
       <!-- Announcements (rotating): entries with no `expire` stay visible indefinitely -->
       <div class="ff-utility-announce min-w-0 flex-1 flex items-center">

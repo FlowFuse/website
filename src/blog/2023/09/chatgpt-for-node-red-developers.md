@@ -3,7 +3,7 @@ title: How ChatGPT improves Node-RED Developer Experience
 subtitle: Language models have made an impact in the Node-RED community
 description: Discover how ChatGPT enhances Node-RED development, from generating code to interpreting flows, and explore its impact on the community.
 authors: ["zeger-jan-van-de-weg"]
-image: blog/2023/09/images/chatgpt-node-red-dx-tile.png
+image: /blog/2023/09/images/chatgpt-node-red-dx-tile.png
 date: 2023-09-23
 tags:
     - posts

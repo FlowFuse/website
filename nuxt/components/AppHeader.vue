@@ -1,11 +1,20 @@
 <script setup>
 import { onMounted } from 'vue'
 import navHighlights from '../../src/_data/navHighlights.json'
+// Shared with the Eleventy layout, which reads the same file as an 11ty _data
+// global. Edit the nav or footer there and both renderers follow.
+import chrome from '../../src/_data/chrome.json'
+import site from '../../src/_data/site.json'
 
 const hl = (key) => {
     const entry = navHighlights[key]
     return { ...entry, image: entry.image || '/images/og-blog.jpg' }
 }
+
+// Mirrors the "resolveHref" Eleventy filter: an href of "site:<key>" is a
+// pointer into site.json rather than a literal URL, so values like the job
+// board link stay single-sourced there instead of duplicated in chrome.json.
+const resolveHref = (href) => href?.startsWith('site:') ? site[href.slice('site:'.length)] : href
 
 onMounted(() => {
     const navToggle = document.getElementById('nav-toggle')
@@ -115,7 +124,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header id="ff-header" class="ff-header">
+  <header id="ff-header" class="ff-header" data-nav-zone="header">
     <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
 
       <!-- Wordmark: visible from 420px up on mobile and on desktop, hidden on tablet -->
@@ -185,161 +194,26 @@ onMounted(() => {
 
       <!-- Nav -->
       <ul id="nav-content" class="">
-
-        <!-- Platform -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
-          <span class="flex items-center gap-1"><span class="ff-nav-label">Platform</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
-          <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('platform').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('platform').title }}</span><span class="mega-highlight-media"><img :src="hl('platform').image" alt="" loading="lazy"></span></a></li>
-            <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2"><span class="ff-nav-label">Product</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
-              <li><a class="flex items-center gap-2" href="/platform/features/"><UIcon name="i-heroicons-star" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Features</span></a></li>
-              <li><a class="flex items-center gap-2" href="/platform/security/"><UIcon name="i-heroicons-lock-closed" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Security Statement</span></a></li>
-              <li><a class="flex items-center gap-2" href="/pricing/"><UIcon name="i-heroicons-currency-dollar" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Pricing</span></a></li>
-            </ul>
-            </li>
-            <li class="pl-3 title border-l-2 border-gray-200 md:col-start-2 md:row-start-1 xl:col-start-3"><span class="flex items-center gap-2"><span class="ff-nav-label">Components</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-6 ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-2 md:row-start-2 xl:col-start-3">
-              <li><a class="flex items-center gap-2" href="/platform/dashboard/"><svg class="ff-icon ff-icon-sm" fill="none" viewBox="0 0 350 402"><path d="M346.559 97.9807L178.437 0.921873C177.372 0.30994 176.188 0 174.996 0C173.804 0 172.62 0.30994 171.555 0.921873L3.44127 97.9807C1.31134 99.2126 0 101.485 0 103.941V298.059C0 300.515 1.31134 302.787 3.44127 304.019L171.555 401.078C172.62 401.69 173.804 402 174.996 402C176.188 402 177.372 401.69 178.437 401.078L346.551 304.019C348.681 302.787 349.992 300.515 349.992 298.059V103.941C349.992 101.485 348.681 99.2126 346.551 97.9807H346.559ZM223.619 65.5801C223.619 62.1946 226.472 59.3336 229.866 59.3336H240.261L296.338 91.7104H229.866C226.48 91.7104 223.619 88.8494 223.619 85.4639V65.5801ZM174.996 21.6561L220.75 48.0725C214.432 51.3785 210.092 57.9905 210.092 65.5801V68.9656C177.166 70.9445 162.185 87.2997 150.009 100.603C141.235 110.18 134.011 118.055 121.716 120.32V116.069C121.716 105.205 112.823 96.3118 101.951 96.3118H45.6902L174.996 21.6561ZM19.678 111.332L22.2848 109.822H101.943C105.328 109.822 108.189 112.683 108.189 116.069V135.952C108.189 139.338 105.336 142.199 101.943 142.199H20.9973C20.5443 142.199 20.1072 142.135 19.678 142.04V111.332ZM102.109 338.256L69.485 319.421V269.449C69.485 268.964 69.938 268.503 70.4228 268.503H101.172C101.656 268.503 102.109 268.964 102.109 269.449V338.256ZM190.891 371.165L174.996 380.344L158.259 370.68V196.414C158.259 195.93 158.712 195.477 159.196 195.477H189.937C190.422 195.477 190.883 195.93 190.883 196.414V371.173L190.891 371.165ZM280.793 319.262L248.169 338.097V246.696C248.169 246.219 248.622 245.759 249.106 245.759H279.855C280.332 245.759 280.793 246.219 280.793 246.696V319.262ZM330.314 290.668L294.312 311.458V246.696C294.312 238.749 287.803 232.248 279.847 232.248H249.098C241.143 232.248 234.634 238.749 234.634 246.696V345.901L204.41 363.353V196.407C204.41 188.459 197.893 181.959 189.937 181.959H159.196C151.241 181.959 144.732 188.459 144.732 196.407V362.868L115.62 346.06V269.449C115.62 261.502 109.111 254.993 101.156 254.993H70.4069C62.4515 254.993 55.9425 261.502 55.9425 269.449V311.609L19.6701 290.668V155.661C20.1072 155.693 20.5443 155.709 20.9893 155.709H101.943C112.815 155.709 121.708 146.816 121.708 135.952V134.196C161.008 134.474 174.042 143.081 187.807 152.181C201.882 161.503 216.442 171.135 255.735 171.135V174.321C255.735 185.185 264.636 194.078 275.508 194.078H330.306V290.668H330.314ZM330.314 180.568H275.516C272.13 180.568 269.261 177.707 269.261 174.321V154.437C269.261 151.052 272.122 148.191 275.516 148.191H330.314V180.568ZM330.314 134.681H275.516C264.644 134.681 255.743 143.574 255.743 154.437V157.624C220.519 157.624 208.264 149.51 195.278 140.919C183.85 133.354 172.103 125.597 147.402 122.307C151.98 118.453 156.009 114.058 159.983 109.719C163.21 106.19 166.476 102.638 170.092 99.3079C179.399 90.6932 189.786 85.909 200.881 83.652C203.734 83.1195 206.81 82.7381 210.092 82.5155V85.4639C210.092 96.3277 218.985 105.221 229.858 105.221H310.811C313.203 105.221 315.5 104.784 317.622 103.997L330.322 111.332V134.681H330.314Z" fill="currentColor"/></svg><span class="ff-nav-label">FlowFuse Dashboard</span></a></li>
-              <li><a class="flex items-center gap-2" href="/platform/device-agent/"><svg class="ff-icon ff-icon-sm" viewBox="0 0 389 388" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M202.763 209.857C218.321 216.441 233.282 224.255 249.385 227.89C256.584 229.049 263.854 229.681 270.983 229.681V190.049H265.013C242.94 190.049 222.501 201.498 202.763 209.857Z"/><path d="M156.757 222.482C149.557 221.867 142.358 221.867 135.228 221.867H118.845V258.269C118.845 264.854 124.201 270.122 130.698 270.122H259.112C265.697 270.122 270.965 264.766 270.965 258.269V253.668C255.407 253.668 239.217 251.684 224.818 245.643C202.184 237.9 181.288 223.079 156.739 222.465L156.757 222.482Z"/><path d="M259.183 117.914H130.698C124.183 117.914 118.845 123.269 118.845 129.837V197.301C133.244 197.301 148.398 197.916 162.727 196.687C182.482 194.895 199.813 184.079 218.339 176.879C235.073 169.68 253.107 165.5 271.071 166.045V129.837C271.071 123.252 265.715 117.914 259.218 117.914H259.183Z"/><path d="M379.73 240.217H333.531V147.818H379.73C384.823 147.818 388.967 143.691 388.967 138.581C388.967 133.472 384.823 129.345 379.73 129.345H333.531V114.138C333.531 81.7757 307.736 55.4361 276.058 55.4361H259.622V9.23642C259.622 4.12654 255.478 0 250.385 0C245.293 0 241.149 4.12654 241.149 9.23642V55.4185H148.767V9.23642C148.767 4.12654 144.623 0 139.531 0C134.438 0 130.294 4.12654 130.294 9.23642V55.4185H113.858C82.1631 55.4185 56.3854 81.7581 56.3854 114.121V129.327H10.1506C5.05831 129.327 0.914215 133.454 0.914215 138.564C0.914215 143.674 5.05831 147.8 10.1506 147.8H56.3503V240.2H10.1506C5.05831 240.2 0.914215 244.326 0.914215 249.436C0.914215 254.546 5.05831 258.673 10.1506 258.673H56.3503V273.879C56.3503 306.242 82.1456 332.581 113.823 332.581H130.259V378.764C130.259 383.873 134.403 388 139.496 388C144.588 388 148.732 383.873 148.732 378.764V332.581H241.114V378.764C241.114 383.873 245.258 388 250.35 388C255.443 388 259.587 383.873 259.587 378.764V332.581H276.023C307.718 332.581 333.496 306.242 333.496 273.879V258.673H379.695C384.788 258.673 388.932 254.546 388.932 249.436C388.932 244.326 384.788 240.2 379.695 240.2L379.73 240.217ZM315.04 273.914C315.04 296.092 297.551 314.144 276.04 314.144H113.806C92.2951 314.144 74.8056 296.092 74.8056 273.914V114.138C74.8056 91.9604 92.2951 73.9089 113.806 73.9089H276.04C297.551 73.9089 315.04 91.9604 315.04 114.138V273.914Z"/></svg><span class="ff-nav-label">Device Agent</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/"><UIcon name="i-heroicons-code-bracket" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Node-RED</span></a></li>
-              <li><a class="flex items-center gap-2" href="/docs/user/expert/"><UIcon name="i-heroicons-sparkles" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">FlowFuse Expert</span></a></li>
-              <li><a class="flex items-center gap-2" href="/integrations/"><UIcon name="i-heroicons-squares-plus" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Integrations</span></a></li>
-              <li><a class="flex items-center gap-2" href="/blueprints/"><UIcon name="i-heroicons-building-library" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Blueprint Library</span></a></li>
-            </ul>
-            </li>
-                        <li class="pl-3 title border-l-2 border-gray-200 md:col-start-3 md:row-start-1 xl:col-start-4"><span class="flex items-center gap-2"><span class="ff-nav-label">Capabilities</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-[7] ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-3 md:row-start-2 xl:col-start-4">
-              <li><a class="flex items-center gap-2" href="/ai/"><UIcon name="i-heroicons-sparkles" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Industrial AI</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/it-ot-middleware/"><UIcon name="i-heroicons-cog-8-tooth" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">IT/OT middleware</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/uns/"><svg class="ff-icon ff-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><g clip-path="url(#uns-clip)"><path d="M6.73302 6.74087L10.0791 10.0869M13.5048 13.5127L16.8509 16.8587M13.3056 13.3055C12.4691 14.142 11.1148 14.142 10.2783 13.3055C9.44174 12.469 9.44174 11.1147 10.2783 10.2781C11.1148 9.44162 12.4691 9.44162 13.3056 10.2781C14.1422 11.1147 14.1422 12.469 13.3056 13.3055ZM6.73302 6.7329C5.8965 7.56942 4.54214 7.56942 3.70563 6.7329C2.86911 5.89639 2.86911 4.54203 3.70563 3.70551C4.54214 2.869 5.8965 2.869 6.73302 3.70551C7.56953 4.54203 7.56953 5.89639 6.73302 6.7329ZM19.8942 19.8941C19.0577 20.7306 17.7033 20.7306 16.8668 19.8941C16.0303 19.0576 16.0303 17.7032 16.8668 16.8667C17.7033 16.0302 19.0577 16.0302 19.8942 16.8667C20.7307 17.7032 20.7307 19.0576 19.8942 19.8941Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.8731 6.74087L13.5255 10.0869M10.0903 13.5127L6.74266 16.8587M16.8651 6.7329C17.702 7.56942 19.057 7.56942 19.8939 6.7329C20.7308 5.89639 20.7308 4.54203 19.8939 3.70551C19.057 2.869 17.702 2.869 16.8651 3.70551C16.0282 4.54203 16.0282 5.89639 16.8651 6.7329ZM3.70591 19.8941C4.54281 20.7306 5.89779 20.7306 6.73469 19.8941C7.57159 19.0576 7.57159 17.7032 6.73469 16.8667C5.89779 16.0302 4.54281 16.0302 3.70591 16.8667C2.86901 17.7032 2.86901 19.0576 3.70591 19.8941Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="uns-clip"><rect width="24" height="24" fill="white"/></clipPath></defs></svg><span class="ff-nav-label">Unified Namespace</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/mes/"><UIcon name="i-heroicons-chart-bar-square" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">MES</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/scada/"><UIcon name="i-heroicons-computer-desktop" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">SCADA</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/edge-connectivity/"><UIcon name="i-heroicons-cpu-chip" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Edge Connectivity</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/data-integration/"><UIcon name="i-heroicons-arrows-right-left" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Data Integration</span></a></li>
-            </ul>
-            </li>
-          </ul>
-        </li>
-
-        <!-- Solutions -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
-          <span class="flex items-center gap-1"><span class="ff-nav-label">Solutions</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
-          <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(12,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('solutions').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('solutions').title }}</span><span class="mega-highlight-media"><img :src="hl('solutions').image" alt="" loading="lazy"></span></a></li>
-            <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2"><span class="ff-nav-label">By Use Case</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
-              <li><a class="flex items-center gap-2" href="/use-cases/production-monitoring/"><svg class="ff-icon ff-icon-sm" fill="none" viewBox="0 0 25 22" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M23.5763 10.6008H16.6467L13.0787 20.4976L11.2007 0.704102L7.63269 10.6008H7.65143H0.703125"/></svg><span class="ff-nav-label">Production Monitoring</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/shop-floor-communication/"><UIcon name="i-heroicons-chat-bubble-left-right" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Shop Floor Communication</span></a></li>
-              <li><a class="flex items-center gap-2" href="/use-cases/"><UIcon name="i-heroicons-arrow-small-right" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">See all use cases</span></a></li>
-            </ul>
-            </li>
-            <li class="pl-3 title border-l-2 border-gray-200 md:col-start-2 md:row-start-1 xl:col-start-3"><span class="flex items-center gap-2"><span class="ff-nav-label">By Industry</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-[9] ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-2 md:row-start-2 xl:col-start-3">
-              <li><a class="flex items-center gap-2" href="/industries/automotive/"><svg class="ff-icon ff-icon-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.50931 20H5.61204C6.44413 20 7.12127 19.299 7.12127 18.4375V17.3333H15.8788V18.4375C15.8788 19.299 16.5559 20 17.388 20H18.4908C19.3229 20 20 19.299 20 18.4375V11.5708C20 10.5948 19.3943 9.76563 18.5521 9.46144L17.6225 6.25104C17.2331 4.90416 16.0589 4 14.7016 4H8.12826C6.72669 4 5.50821 4.98437 5.16924 6.39168L4.4247 9.46875C3.59562 9.78125 3 10.6052 3 11.5698V18.4365C3 19.2979 3.67714 19.999 4.50923 19.999L4.50931 20ZM18.4547 18.4H17.4244V17.3333H17.8389C18.0522 17.3333 18.2585 17.299 18.4547 17.2396V18.4ZM6.66753 6.7792C6.83455 6.08544 7.43523 5.60003 8.12846 5.60003H14.7018C15.3719 5.60003 15.9514 6.04587 16.1446 6.70941L16.9042 9.33336H6.04979L6.66554 6.7792H6.66753ZM4.54555 13.8667V11.5708C4.54555 11.2187 4.82123 10.9333 5.16131 10.9333H17.8368C18.1769 10.9333 18.4526 11.2187 18.4526 11.5708V15.0959C18.4526 15.448 18.1769 15.7334 17.8368 15.7334H5.16131C4.82123 15.7334 4.54555 15.448 4.54555 15.0959V13.8667ZM4.54555 17.2395C4.74175 17.3009 4.94701 17.3332 5.16131 17.3332H5.57585V18.3999H4.54555V17.2395Z" fill="currentColor"/><path d="M8 13.5C8 15.5 5 15.5 5 13.5C5 11.5 8 11.5 8 13.5Z" fill="currentColor"/><path d="M18 13.5C18 15.5 15 15.5 15 13.5C15 11.5 18 11.5 18 13.5Z" fill="currentColor"/></svg><span class="ff-nav-label">Automotive</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/food-beverage/"><svg class="ff-icon ff-icon-sm" viewBox="0 0 512 512" fill="none"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M322 416c0 35.35-20.65 64-56 64H134c-35.35 0-56-28.65-56-64m258-80c17.67 0 32 17.91 32 40h0c0 22.09-14.33 40-32 40H64c-17.67 0-32-17.91-32-40h0c0-22.09 14.33-40 32-40"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M344 336H179.31a8 8 0 0 0-5.65 2.34l-26.83 26.83a4 4 0 0 1-5.66 0l-26.83-26.83a8 8 0 0 0-5.65-2.34H56a24 24 0 0 1-24-24h0a24 24 0 0 1 24-24h288a24 24 0 0 1 24 24h0a24 24 0 0 1-24 24ZM64 276v-.22c0-55 45-83.78 100-83.78h72c55 0 100 29 100 84v-.22M241 112l7.44 63.97"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M256 480h139.31a32 32 0 0 0 31.91-29.61L463 112"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="m368 112l16-64l47-16"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M224 112h256"/></svg><span class="ff-nav-label">Food &amp; Beverage</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/life-sciences/"><UIcon name="i-heroicons-shield-check" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Life Sciences</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/electronics-appliances/"><UIcon name="i-heroicons-power" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Electronics &amp; Appliances</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/renewables/"><svg class="ff-icon ff-icon-sm" viewBox="0 0 24 24" fill="none" stroke-width="1.75" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#wt-clip)"><path d="M13.291 13.1598V13.1798H13.281L14.251 11.5598C14.531 11.1098 14.621 10.6198 14.531 10.1098L13.721 6.21977L13.291 4.16977C13.211 3.81977 12.971 3.57977 12.641 3.50977C12.591 3.50977 12.551 3.50977 12.501 3.50977C12.401 3.50977 12.311 3.50977 12.221 3.52977C11.891 3.59977 11.671 3.79977 11.601 4.09977L10.781 8.13977L10.401 10.0598C10.331 10.5398 10.451 11.0298 10.771 11.5198L11.781 13.0498M13.311 16.2698L14.221 17.9198C14.471 18.3798 14.851 18.7098 15.331 18.8898L19.111 20.1398L21.101 20.7898C21.441 20.8998 21.771 20.8098 22.001 20.5598C22.031 20.5198 22.051 20.4798 22.081 20.4398C22.131 20.3598 22.171 20.2698 22.201 20.1898C22.311 19.8698 22.241 19.5798 22.011 19.3698L18.921 16.6298L17.451 15.3398C17.071 15.0398 16.591 14.8998 16.011 14.9298L14.181 15.0398M10.571 15.0298L8.741 14.9198C8.161 14.8898 7.671 15.0298 7.301 15.3298L5.831 16.6198L2.741 19.3598C2.511 19.5698 2.441 19.8598 2.551 20.1798C2.591 20.2598 2.631 20.3498 2.671 20.4298C2.701 20.4698 2.721 20.5098 2.751 20.5498C2.971 20.7998 3.301 20.8798 3.651 20.7798L5.641 20.1298L9.421 18.8798C9.901 18.7098 10.281 18.3798 10.531 17.9098L11.441 16.2598" stroke="currentColor"/><path d="M12.4708 16.5099C13.3931 16.5099 14.1408 15.7622 14.1408 14.8399C14.1408 13.9176 13.3931 13.1699 12.4708 13.1699C11.5485 13.1699 10.8008 13.9176 10.8008 14.8399C10.8008 15.7622 11.5485 16.5099 12.4708 16.5099Z" stroke="currentColor"/></g><defs><clipPath id="wt-clip"><rect width="20.74" height="18.33" fill="white" transform="translate(2 3)"/></clipPath></defs></svg><span class="ff-nav-label">Renewables</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/semiconductors/"><UIcon name="i-heroicons-cpu-chip" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Semiconductors</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/aerospace-components/"><UIcon name="i-heroicons-cog-6-tooth" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Aerospace Components</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/aviation-aerospace/"><svg class="ff-icon ff-icon-sm" fill="currentColor" viewBox="0 0 256 256"><path d="M235.58,128.84,160,91.06V48a32,32,0,0,0-64,0V91.06L20.42,128.84A8,8,0,0,0,16,136v32a8,8,0,0,0,9.57,7.84L96,161.76v18.93L82.34,194.34A8,8,0,0,0,80,200v32a8,8,0,0,0,11,7.43l37-14.81,37,14.81A8,8,0,0,0,176,232V200a8,8,0,0,0-2.34-5.66L160,180.69V161.76l70.43,14.08A8,8,0,0,0,240,168V136A8,8,0,0,0,235.58,128.84ZM224,158.24l-70.43-14.08A8,8,0,0,0,144,152v32a8,8,0,0,0,2.34,5.66L160,203.31v16.87l-29-11.61a8,8,0,0,0-5.94,0L96,220.18V203.31l13.66-13.65A8,8,0,0,0,112,184V152a8,8,0,0,0-9.57-7.84L32,158.24v-17.3l75.58-37.78A8,8,0,0,0,112,96V48a16,16,0,0,1,32,0V96a8,8,0,0,0,4.42,7.16L224,140.94Z"/></svg><span class="ff-nav-label">Aviation &amp; Aerospace</span></a></li>
-              <li><a class="flex items-center gap-2" href="/industries/"><UIcon name="i-heroicons-arrow-small-right" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">See all industries</span></a></li>
-            </ul>
-            </li>
-            <li class="pl-3 title border-l-2 border-gray-200 md:col-start-3 md:row-start-1 xl:col-start-4"><span class="flex items-center gap-2"><span class="ff-nav-label">By Integration</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-[9] ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-3 md:row-start-2 xl:col-start-4">
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/hub/redis/"><UIcon name="i-heroicons-circle-stack" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Redis</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/edge/opcua/"><UIcon name="i-heroicons-server-stack" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">OPC UA</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/edge/rtsp/"><UIcon name="i-heroicons-camera" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">RTSP</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/edge/cip-suite/"><UIcon name="i-heroicons-share" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">EtherNet/IP</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/mqtt/"><UIcon name="i-heroicons-wifi" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">MQTT</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/ai/onxx/"><UIcon name="i-heroicons-cpu-chip" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">ONNX</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/ai/llm-nodes/"><UIcon name="i-heroicons-sparkles" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">LLM Nodes</span></a></li>
-              <li><a class="flex items-center gap-2" href="/node-red/flowfuse/mcp/"><UIcon name="i-heroicons-puzzle-piece" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">MCP</span></a></li>
-              <li><a class="flex items-center gap-2" href="/integrations/"><UIcon name="i-heroicons-arrow-small-right" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">See all integrations</span></a></li>
-            </ul>
-            </li>
-          </ul>
-        </li>
-
-        <!-- Resources -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
-          <span class="flex items-center gap-1"><span class="ff-nav-label">Resources</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
-          <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('resources').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('resources').title }}</span><span class="mega-highlight-media"><img :src="hl('resources').image" alt="" loading="lazy"></span></a></li>
-            <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2"><span class="ff-nav-label">Learn</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
-              <li><a class="flex items-center gap-2" href="/blog/"><UIcon name="i-heroicons-newspaper" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Blog</span></a></li>
-              <li><a class="flex items-center gap-2" href="/webinars/"><UIcon name="i-heroicons-computer-desktop" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Webinars</span></a></li>
-              <li><a class="flex items-center gap-2" href="/resources/publications/"><UIcon name="i-heroicons-book-open" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Publications</span></a></li>
-              <li><a class="flex items-center gap-2" href="https://node-red-academy.learnworlds.com/"><UIcon name="i-heroicons-academic-cap" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Node-RED Academy</span></a></li>
-            </ul>
-            </li>
-            <li class="pl-3 title border-l-2 border-gray-200 md:col-start-2 md:row-start-1 xl:col-start-3"><span class="flex items-center gap-2"><span class="ff-nav-label">Reference</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-4 ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-2 md:row-start-2 xl:col-start-3">
-              <li><a class="flex items-center gap-2" href="/docs/"><UIcon name="i-heroicons-document-text" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Docs</span></a></li>
-              <li><a class="flex items-center gap-2" href="/changelog/"><UIcon name="i-heroicons-rocket-launch" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Changelog</span></a></li>
-              <li><a class="flex items-center gap-2" href="https://github.com/FlowFuse/flowfuse"><svg class="ff-icon ff-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="m12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span class="ff-nav-label">Github</span></a></li>
-              <li><a class="flex items-center gap-2" href="https://discourse.nodered.org/c/vendors/flowfuse/24/"><UIcon name="i-heroicons-chat-bubble-left-right" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Support forums</span></a></li>
-            </ul>
-            </li>
-            <li class="pl-3 title border-l-2 border-gray-200 md:col-start-3 md:row-start-1 xl:col-start-4"><span class="flex items-center gap-2"><span class="ff-nav-label">Customers</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-3 md:row-start-2 xl:col-start-4">
-              <li><a class="flex items-center gap-2" href="/customer-stories/"><UIcon name="i-heroicons-presentation-chart-bar" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Customer Stories</span></a></li>
-            </ul>
-            </li>
-          </ul>
-        </li>
-
-        <!-- Company -->
-        <li class="ff-nav-dropdown relative hover:cursor-pointer">
-          <span class="flex items-center gap-1"><span class="ff-nav-label">Company</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
-          <ul class="narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center">
-            <li class="mega-highlight"><a :href="hl('company').link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl('company').title }}</span><span class="mega-highlight-media"><img :src="hl('company').image" alt="" loading="lazy"></span></a></li>
-            <li class="pl-3 title border-l-2 border-gray-200 xl:col-start-2 xl:row-start-1"><span class="flex items-center gap-2"><span class="ff-nav-label">Company</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-5 ml-7 auto-rows-auto border-l-2 border-gray-200 xl:col-start-2 xl:row-start-2">
-              <li><a class="flex items-center gap-2" href="/platform/why-flowfuse/"><svg class="ff-icon ff-icon-sm" viewBox="0 0 20 20" fill="currentColor"><path d="M1.59385 0.00234319C0.712771 0.00234319 0.00377529 0.711833 0.00377529 1.5929C0.00246514 4.50292 0.000461073 7.41546 0 10.3255C1.88965 10.3367 3.78181 10.3802 5.66642 10.2453C8.29428 10.0057 10.6072 8.59451 13.0285 7.66784C15.231 6.73638 17.5964 6.17101 19.9975 6.2214L19.9972 1.59056C19.9982 0.709238 19.288 0 18.4072 0L1.59385 0.00234319ZM19.999 9.37235C19.7332 9.37661 19.4671 9.38387 19.2013 9.39475C16.2686 9.38346 13.6684 10.8999 11.0229 11.9621C13.0675 12.7893 15.0416 13.8402 17.2084 14.3277C18.1343 14.4682 19.0658 14.5366 20 14.5566L19.999 9.37235ZM2.0776 13.5472C1.38548 13.5487 0.693371 13.5559 0.00176078 13.5594C0.00236546 15.1759 0.00357496 16.7919 0.00618771 18.4094C0.00711994 19.2908 0.715434 20 1.59626 20H18.4091C19.2901 20 19.9991 19.2905 19.9991 18.4094V17.7095C17.9324 17.696 15.8671 17.381 13.9422 16.6075C10.9641 15.5685 8.18508 13.7227 4.95252 13.5992C3.99561 13.554 3.03718 13.5451 2.07774 13.5473L2.0776 13.5472Z"/></svg><span class="ff-nav-label">Why FlowFuse</span></a></li>
-              <li><a class="flex items-center gap-2" href="/about/"><UIcon name="i-heroicons-building-office-2" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">About us</span></a></li>
-              <li><a class="flex items-center gap-2" href="https://boards.greenhouse.io/flowfuse"><UIcon name="i-heroicons-briefcase" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Jobs</span></a></li>
-              <li><a class="flex items-center gap-2" href="/handbook/"><UIcon name="i-heroicons-book-open" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Handbook</span></a></li>
-              <li><a class="flex items-center gap-2" href="/platform/security/#certifications"><svg class="ff-icon ff-icon-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M9.25 4.75H11.87C12.77 4.75 13.62 5.11 14.26 5.74C14.89 6.37 15.25 7.23 15.25 8.13V9.63C15.25 9.93 15.37 10.21 15.58 10.43C15.79 10.64 16.08 10.76 16.38 10.76H17.88C18.78 10.76 19.63 11.12 20.27 11.75C20.9 12.38 21.26 13.24 21.26 14.14V16.02" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 11.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 8H11.64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 14.8599H11.64" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.2517 13.7498V18.6298C21.2517 19.2498 20.7517 19.7498 20.1317 19.7498H2.88172C2.26172 19.7498 1.76172 19.2498 1.76172 18.6298V5.87977C1.76172 5.25977 2.26172 4.75977 2.88172 4.75977H12.2617C14.6517 4.75977 16.9417 5.70977 18.6217 7.39977C20.3117 9.08977 21.2617 11.3798 21.2617 13.7598L21.2517 13.7498Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.3994 15.1602C18.2994 15.0402 18.2294 14.8902 18.2194 14.7202C18.1994 14.5402 18.1194 14.3702 17.9994 14.2402C17.8794 14.1102 17.7094 14.0302 17.5194 14.0202C17.3594 14.0002 17.2094 13.9402 17.0794 13.8402C16.9494 13.7202 16.7694 13.6602 16.5894 13.6602C16.4094 13.6602 16.2294 13.7202 16.0994 13.8402C15.9794 13.9402 15.8294 14.0102 15.6694 14.0202C15.4894 14.0402 15.3194 14.1202 15.1894 14.2402C15.0594 14.3602 14.9794 14.5302 14.9694 14.7202C14.9494 14.8802 14.8894 15.0302 14.7894 15.1602C14.6694 15.2902 14.6094 15.4702 14.6094 15.6502C14.6094 15.8302 14.6694 16.0102 14.7894 16.1402C14.8894 16.2602 14.9594 16.4102 14.9694 16.5702C14.9894 16.7502 15.0694 16.9202 15.1894 17.0502C15.3094 17.1802 15.4794 17.2602 15.6694 17.2702C15.8294 17.2902 15.9794 17.3502 16.0994 17.4502C16.2294 17.5702 16.4094 17.6302 16.5894 17.6302C16.7694 17.6302 16.9494 17.5702 17.0794 17.4502C17.1994 17.3502 17.3494 17.2802 17.5194 17.2702C17.6994 17.2502 17.8694 17.1702 17.9994 17.0502C18.1294 16.9302 18.2094 16.7602 18.2194 16.5702C18.2394 16.4102 18.2994 16.2602 18.3994 16.1402C18.5194 16.0102 18.5794 15.8302 18.5794 15.6502C18.5794 15.4702 18.5194 15.2902 18.3994 15.1602Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ff-nav-label">Security certifications</span></a></li>
-            </ul>
-            </li>
-            <li class="pl-3 title border-l-2 border-gray-200 md:col-start-2 md:row-start-1 xl:col-start-3"><span class="flex items-center gap-2"><span class="ff-nav-label">Partners &amp; Services</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-2 ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-2 md:row-start-2 xl:col-start-3">
-              <li><a class="flex items-center gap-2" href="/partners/"><UIcon name="i-heroicons-user-group" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Partnerships</span></a></li>
-              <li><a class="flex items-center gap-2" href="/professional-services/"><UIcon name="i-heroicons-wrench-screwdriver" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Professional Services</span></a></li>
-            </ul>
-            </li>
-            <li class="pl-3 title border-l-2 border-gray-200 md:col-start-3 md:row-start-1 xl:col-start-4"><span class="flex items-center gap-2"><span class="ff-nav-label">Support</span></span></li>
-            <li class="contents">
-            <ul class="sub-menu grid grid-rows-subgrid row-span-3 ml-7 auto-rows-auto border-l-2 border-gray-200 md:col-start-3 md:row-start-2 xl:col-start-4">
-              <li><a class="flex items-center gap-2" href="https://status.flowfuse.com/"><UIcon name="i-heroicons-check-badge" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Service Status</span></a></li>
-              <li><a class="flex items-center gap-2" href="/support/"><UIcon name="i-heroicons-lifebuoy" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Request Support</span></a></li>
-              <li><a class="flex items-center gap-2" href="/contact-us/"><UIcon name="i-heroicons-envelope" class="ff-icon ff-icon-sm" /><span class="ff-nav-label">Contact Us</span></a></li>
-            </ul>
-            </li>
+        <li v-for="dd in chrome.header.dropdowns" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :data-nav-section="dd.label">
+          <span class="flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+          <ul :class="dd.megaClasses">
+            <li class="mega-highlight"><a :href="hl(dd.highlight).link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl(dd.highlight).title }}</span><span class="mega-highlight-media"><img :src="hl(dd.highlight).image" alt="" loading="lazy"></span></a></li>
+            <template v-for="col in dd.columns" :key="col.title">
+              <li class="pl-3 title border-l-2 border-gray-200" :class="col.titleGrid"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
+              <li class="contents">
+                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="col.listClasses">
+                  <li v-for="item in col.links" :key="item.label"><a class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
+                </ul>
+              </li>
+            </template>
           </ul>
         </li>
 
         <!-- Direct links -->
-        <li class="nav-collapsible"><a class="flex items-center gap-2" href="/ai/"><span class="ff-nav-label">Industrial AI</span></a></li>
-        <li class="nav-collapsible"><a class="flex items-center gap-2" href="/pricing/"><span class="ff-nav-label">Pricing</span></a></li>
+        <li v-for="item in chrome.header.direct" :key="item.label" :class="item.classes"><a class="flex items-center gap-2" :href="item.href"><span class="ff-nav-label">{{ item.label }}</span></a></li>
 
         <!-- More overflow (populated by JS) -->
-        <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none">
+        <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
           <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul id="nav-more-list" class="align-left"></ul>
         </li>

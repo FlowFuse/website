@@ -25,6 +25,6 @@ useSeoMeta({
     <ul class="flex flex-wrap border-t">
       <ChangelogListItem v-for="entry in entries" :key="entry.path" :entry="entry" />
     </ul>
-    <ChangelogPagination :page="page" :total-pages="totalPages" />
+    <Pagination base-path="/changelog" :page="page" :total-pages="totalPages" />
   </div>
 </template>

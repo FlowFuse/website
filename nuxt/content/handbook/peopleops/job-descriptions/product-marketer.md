@@ -37,6 +37,7 @@ As we scale, this role will evolve to include demand generation responsibilities
 * Excellent written and verbal communication skills, with the ability to translate technical features into clear benefits
 * Experience in B2B demand generation, marketing operations, or funnel management
 * Proficiency with HubSpot, including workflows, lead scoring, email automation, and reporting
+* Familiarity with LinkedIn ABM tooling and other account-based marketing platforms
 * Strong analytical skills to measure effectiveness, analyze funnel metrics, identify bottlenecks, and optimize campaigns
 * Experience designing and executing email nurture campaigns with proven lead-to-opportunity conversion results
 * Collaborative and able to work effectively across different teams

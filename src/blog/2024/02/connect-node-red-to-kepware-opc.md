@@ -4,7 +4,7 @@ subtitle: Step by step guide to connect to PTC's Kepware OPC server.
 description: Follow a step-by-step guide to seamlessly integrate Node-RED with PTC's Kepware OPC server, enabling efficient data extraction from PLCs.
 date: 2024-02-12
 authors: ["grey-dziuba"]
-image: blog/2024/02/images/node-red-to-kepware.png
+image: /blog/2024/02/images/node-red-to-kepware.png
 tags:
     - posts
     - flowfuse

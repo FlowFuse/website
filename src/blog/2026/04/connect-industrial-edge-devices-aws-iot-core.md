@@ -73,7 +73,7 @@ If you're new to MQTT and want to understand how it works before diving in, [thi
 
 Before you begin, make sure you have the following in place:
 
-- A FlowFuse account with a running instance. If you don't have one yet, [sign up]({% include "sign-up-url.njk" %}).
+- A FlowFuse account with a running instance. If you don't have one yet, [sign up](https://app.flowfuse.com/account/create).
 - An AWS account with access to the IoT Core service.
 - Basic familiarity with the AWS console.
 

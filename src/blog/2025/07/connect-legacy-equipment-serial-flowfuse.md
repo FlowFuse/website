@@ -6,7 +6,7 @@ lastUpdated: 2026-06-03
 date: 2025-07-09
 authors: ["sumit-shinde"]
 keywords: node-red, serial communication, rs232, rs485, rs422, modbus, industrial automation, flowfuse, legacy equipment, machine data collection, manufacturing connectivity, serial port integration, factory floor monitoring, serial devices, equipment integration
-image: blog/2025/07/images/connect-serial-port-node-red-ff.png
+image: /blog/2025/07/images/connect-serial-port-node-red-ff.png
 tags:
    - flowfuse
    - opcua

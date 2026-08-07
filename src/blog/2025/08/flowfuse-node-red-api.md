@@ -106,9 +106,11 @@ A good first step is to fetch your user details to verify that your token works.
 
 > **Note:** When using API tokens in Node-RED flows, always store them in **environment variables** instead of directly in the node to prevent accidental exposure when sharing flows. See [FlowFuse Environment Variables](/blog/2023/01/environment-variables-in-node-red/) for more details.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"6fa44538b934438b","type":"inject","z":"5027784675bcf4ee","name":"Get User Details","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":180,"y":740,"wires":[["8c7f13373e29c907"]]},{"id":"8c7f13373e29c907","type":"http request","z":"5027784675bcf4ee","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/user/","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":390,"y":740,"wires":[["3a54169dc737b475"]]},{"id":"3a54169dc737b475","type":"debug","z":"5027784675bcf4ee","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":570,"y":740,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 Once triggered, the debug panel will show your user information as shown below with status code 200, confirming that your token works and your API connection is successful.
 
@@ -180,9 +182,11 @@ Before triggering a stage, we first need to retrieve the pipeline details for th
 
 *The response will return a list of pipelines, each containing a unique **pipelineId**.*
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"7ad2c2d998c60b39","type":"inject","z":"5027784675bcf4ee","name":"Get Pipelines","props":[],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","x":240,"y":480,"wires":[["dda168427fc847df"]]},{"id":"dda168427fc847df","type":"http request","z":"5027784675bcf4ee","name":"","method":"GET","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/applications/{applicationID}/pipelines","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":430,"y":480,"wires":[["4a8c8520e2d33e37"]]},{"id":"4a8c8520e2d33e37","type":"debug","z":"5027784675bcf4ee","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":590,"y":480,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 **Step 3: Identify the Stage**
 
@@ -217,9 +221,11 @@ If successful, you will receive a JSON response confirming that the deployment s
 The FlowFuse API allows you to deploy a specific stage of a pipeline. It does not automatically move to the next stage, but you can create a workflow that monitors the status of each stage and triggers the next one once the current stage is complete.
 In the following flow, the development stage is deployed every day at 10 PM. After that, the workflow checks the status of the next stage, the staging instance, before proceeding.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"1ab940eb2ef10760","type":"http request","z":"37326e20f2cf9fc5","name":"Deploy Development Stage","method":"PUT","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/pipelines/{pipelineId}/stages/{stageId}/deploy","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":380,"y":260,"wires":[["1c13b0d508913f6d"]]},{"id":"293221e2fafef9ff","type":"http request","z":"37326e20f2cf9fc5","name":"Check Staging Instance Status","method":"GET","ret":"obj","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/projects/${instanceId}/status","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":370,"y":380,"wires":[["24192bf21e52edd2"]]},{"id":"6f94bfb0d3198597","type":"http request","z":"37326e20f2cf9fc5","name":"Deploy Staging Stage","method":"PUT","ret":"txt","paytoqs":"ignore","url":"https://app.flowfuse.com/api/v1/pipelines/{pipelineId}/stages/{stageId}/deploy","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"bearer","senderr":false,"headers":[],"x":800,"y":380,"wires":[["b267c3b0ecbbf0bd"]]},{"id":"24192bf21e52edd2","type":"switch","z":"37326e20f2cf9fc5","name":"Is Running?","property":"payload.meta.state","propertyType":"msg","rules":[{"t":"eq","v":"running","vt":"str"}],"checkall":"true","repair":false,"outputs":1,"x":610,"y":380,"wires":[["6f94bfb0d3198597","9cf7ccb7e740b39e"]]},{"id":"7ace2bed48a14cda","type":"inject","z":"37326e20f2cf9fc5","name":"Trigger Pipeline","props":[],"repeat":"","crontab":"00 22 * * *","once":false,"onceDelay":"30","topic":"","x":240,"y":200,"wires":[["1ab940eb2ef10760"]]},{"id":"b267c3b0ecbbf0bd","type":"debug","z":"37326e20f2cf9fc5","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":750,"y":440,"wires":[]},{"id":"1c13b0d508913f6d","type":"function","z":"37326e20f2cf9fc5","name":"Wait for Stage Complete","func":"// Clear any existing interval or timeout from context\nlet existingInterval = context.get(\"intervalId\");\nlet existingTimeout = context.get(\"timeoutId\");\n\nif (existingInterval) {\n    clearInterval(existingInterval);\n    context.set(\"intervalId\", null);\n}\nif (existingTimeout) {\n    clearTimeout(existingTimeout);\n    context.set(\"timeoutId\", null);\n}\n\n// If state = \"running\", stop polling completely\nif (msg.payload?.meta?.state === \"running\") {\n    node.status({ fill: \"green\", shape: \"dot\", text: \"Stage running\" });\n    return null; // stop completely\n}\n\n//  send the first message immediately\nnode.send(RED.util.cloneMessage(msg));\n\n// Start polling interval (send msg every 2 seconds)\nlet id = setInterval(() => {\n    node.send(RED.util.cloneMessage(msg)); // clone msg to avoid side effects\n}, 2000);\n\n// Auto-clear interval after 60 seconds to avoid leaks\nlet timeoutId = setTimeout(() => {\n    clearInterval(id);\n    context.set(\"intervalId\", null);\n    context.set(\"timeoutId\", null);\n    node.status({ fill: \"red\", shape: \"dot\", text: \"Polling stopped (timeout)\" });\n}, 60000);\n\n// Save interval and timeout IDs in context\ncontext.set(\"intervalId\", id);\ncontext.set(\"timeoutId\", timeoutId);\n\n// Update node status to indicate polling is active\nnode.status({ fill: \"yellow\", shape: \"ring\", text: \"Polling...\" });\n\n// Do not return any message immediately (already sent above)\nreturn null;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":410,"y":320,"wires":[["293221e2fafef9ff"]]},{"id":"9cf7ccb7e740b39e","type":"link out","z":"37326e20f2cf9fc5","name":"link out 1","mode":"link","links":["a58e64a12df0c55e"],"x":725,"y":340,"wires":[]},{"id":"a58e64a12df0c55e","type":"link in","z":"37326e20f2cf9fc5","name":"link in 1","links":["9cf7ccb7e740b39e"],"x":255,"y":320,"wires":[["1c13b0d508913f6d"]]}]
-{% endrenderFlow %}
+```
+::
 
 ## Conclusion
 

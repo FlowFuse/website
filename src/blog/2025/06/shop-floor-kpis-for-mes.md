@@ -41,7 +41,7 @@ _KPIs Tables_
 
 ## Turning Your Data into KPIs
 
-Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything, from raw data collection to the clear, actionable KPIs displayed on your dashboards.
+Now that you understand the critical factory KPIs, the next logical question is: How does your MES deliver these insights? It’s not about manual calculations or picking up a calculator. The MES should have an integrated pipeline that handles everything, from raw data collection to the clear, actionable KPIs displayed on your [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/).
 
 Once the data is collected and stored from the factory floor, this pipeline involves four essential stages:
 
@@ -78,13 +78,15 @@ Let’s see how easy it is to calculate a KPI with a practical example where we 
 
 ##### To Begin
 
-1.  Login to the FlowFuse platform. If you don't have an account, you can register for a [free trial]({% include "sign-up-url.njk" %}) to get started. Once registered, create a FlowFuse instance and open its editor.
+1.  Login to the FlowFuse platform. If you don't have an account, you can register for a [free trial](https://app.flowfuse.com/account/create) to get started. Once registered, create a FlowFuse instance and open its editor.
 2.  Install the `node-red-node-sqlite` from the Palette Manager.
 3.  For the demo database, import the following database flow. Upon deployment, it will create an SQLite table and insert the demo data:
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"2b80c9ff5297fcf0","type":"inject","z":"fa7147e04d4d5ec3","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":620,"y":1540,"wires":[["0e3ad13c7f083c30"]]},{"id":"a0a5bf61836aaaba","type":"debug","z":"fa7147e04d4d5ec3","name":"debug 6","active":false,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1160,"y":1540,"wires":[]},{"id":"0e3ad13c7f083c30","type":"sqlite","z":"fa7147e04d4d5ec3","mydb":"0710931c9543fc07","sqlquery":"fixed","sql":"CREATE TABLE machine_runtime_logs (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    machine_id TEXT NOT NULL,\n    date DATE NOT NULL,\n    total_operational_time INTEGER NOT NULL,  -- in minutes, e.g., shift duration or planned availability\n    run_time INTEGER NOT NULL                 -- in minutes, actual machine active time\n);\n","name":"Create 'machine_runtime_logs' table","x":910,"y":1540,"wires":[["a0a5bf61836aaaba"]]},{"id":"d9b8478110727f43","type":"inject","z":"fa7147e04d4d5ec3","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":620,"y":1620,"wires":[["65e503477a2e5349"]]},{"id":"65e503477a2e5349","type":"sqlite","z":"fa7147e04d4d5ec3","mydb":"0710931c9543fc07","sqlquery":"fixed","sql":"INSERT INTO machine_runtime_logs (machine_id, date, total_operational_time, run_time) VALUES\n('BX02', '2025-06-10', 480, 410),\n('AX01', '2025-06-10', 480, 465),\n('BX02', '2025-06-11', 480, 400),\n('AX01', '2025-06-12', 480, 455),\n('BX02', '2025-06-12', 480, 390),\n('AX01', '2025-06-11', 480, 470),\n('AX01', '2025-06-13', 480, 460),\n('BX02', '2025-06-13', 480, 420),\n('AX01', '2025-06-14', 480, 405),\n('AX01', '2025-06-14', 480, 450);\n","name":"Insert Demo Data","x":850,"y":1620,"wires":[["45f1950b01ebb3f3"]]},{"id":"45f1950b01ebb3f3","type":"debug","z":"fa7147e04d4d5ec3","name":"debug 7","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":1160,"y":1620,"wires":[]},{"id":"0710931c9543fc07","type":"sqlitedb","db":"/tmp/sqlite","mode":"RWC"}]
-{% endrenderFlow %}
+```
+::
 
 ##### Flow Setup
 

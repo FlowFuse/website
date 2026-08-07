@@ -1,121 +1,39 @@
+<script setup>
+// Shared with the Eleventy layout, which reads the same file as an 11ty _data
+// global. Edit the nav or footer there and both renderers follow.
+import chrome from '../../src/_data/chrome.json'
+import site from '../../src/_data/site.json'
+
+// Mirrors the "resolveHref" Eleventy filter: an href of "site:<key>" is a
+// pointer into site.json rather than a literal URL, so values like the job
+// board link stay single-sourced there instead of duplicated in chrome.json.
+const resolveHref = (href) => href?.startsWith('site:') ? site[href.slice('site:'.length)] : href
+
+const onCaptureClick = (item) => {
+    if (!item.capture || typeof window === 'undefined' || !window.capture) return
+    window.capture(item.capture.event, item.capture.props)
+}
+</script>
+
 <template>
-    <footer class="ff-footer bg-gray-100 w-full">
+    <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
         <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
             <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
-                <!-- Platform -->
-                <section class="pt-5">
-                    <p class="text-lg font-medium text-gray-900 mb-6">Platform</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8">
-                        <div class="lg:col-start-1 lg:row-start-1">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Product</p>
+                <section v-for="sec in chrome.footer.sections" :key="sec.title" class="pt-5" :data-nav-section="sec.title">
+                    <p class="text-lg font-medium text-gray-900 mb-6">{{ sec.title }}</p>
+                    <div :class="sec.gridClasses">
+                        <div v-for="grp in sec.groups" :key="grp.title" :class="grp.classes">
+                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ grp.title }}</p>
                             <ul class="flex flex-col gap-2.5">
-                                <li><a href="/platform/features/">Features</a></li>
-                                <li><a href="/platform/security/">Security Statement</a></li>
-                                <li><a href="/pricing/">Pricing</a></li>
-                            </ul>
-                        </div>
-                        <div class="lg:col-start-1 lg:row-start-2">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Components</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/platform/dashboard/">FlowFuse Dashboard</a></li>
-                                <li><a href="/platform/device-agent/">Device Agent</a></li>
-                                <li><a href="/node-red/">Node-RED</a></li>
-                                <li><a href="/docs/user/expert/">FlowFuse Expert</a></li>
-                                <li><a href="/integrations/">Integrations</a></li>
-                                <li><a href="/blueprints/">Blueprint Library</a></li>
-                            </ul>
-                        </div>
-                        <div class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Capabilities</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/ai/">Industrial AI</a></li>
-                                <li><a href="/use-cases/it-ot-middleware/">IT/OT middleware</a></li>
-                                <li><a href="/use-cases/uns/">Unified Namespace</a></li>
-                                <li><a href="/use-cases/mes/">MES</a></li>
-                                <li><a href="/use-cases/scada/">SCADA</a></li>
-                                <li><a href="/use-cases/edge-connectivity/">Edge Connectivity</a></li>
-                                <li><a href="/use-cases/data-integration/">Data Integration</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <!-- Solutions -->
-                <section class="pt-5">
-                    <p class="text-lg font-medium text-gray-900 mb-6">Solutions</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Use Case</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/use-cases/production-monitoring/">Production Monitoring</a></li>
-                                <li><a href="/use-cases/shop-floor-communication/">Shop Floor Communication</a></li>
-                                <li><a href="/use-cases/">See all use cases</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Industry</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/industries/automotive/">Automotive</a></li>
-                                <li><a href="/industries/food-beverage/">Food &amp; Beverage</a></li>
-                                <li><a href="/industries/life-sciences/">Life Sciences</a></li>
-                                <li><a href="/industries/electronics-appliances/">Electronics &amp; Appliances</a></li>
-                                <li><a href="/industries/renewables/">Renewables</a></li>
-                                <li><a href="/industries/semiconductors/">Semiconductors</a></li>
-                                <li><a href="/industries/aerospace-components/">Aerospace Components</a></li>
-                                <li><a href="/industries/aviation-aerospace/">Aviation &amp; Aerospace</a></li>
-                                <li><a href="/industries/">See all industries</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">By Integration</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/node-red/flowfuse/hub/redis/">Redis</a></li>
-                                <li><a href="/node-red/flowfuse/edge/opcua/">OPC UA</a></li>
-                                <li><a href="/node-red/flowfuse/edge/rtsp/">RTSP</a></li>
-                                <li><a href="/node-red/flowfuse/edge/cip-suite/">EtherNet/IP</a></li>
-                                <li><a href="/node-red/flowfuse/mqtt/">MQTT</a></li>
-                                <li><a href="/node-red/flowfuse/ai/onxx/">ONNX</a></li>
-                                <li><a href="/node-red/flowfuse/ai/llm-nodes/">LLM Nodes</a></li>
-                                <li><a href="/node-red/flowfuse/mcp/">MCP</a></li>
-                                <li><a href="/integrations/">See all integrations</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <!-- Resources -->
-                <section class="pt-5">
-                    <p class="text-lg font-medium text-gray-900 mb-6">Resources</p>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8">
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Learn</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/blog/">Blog</a></li>
-                                <li><a href="/webinars/">Webinars</a></li>
-                                <li><a href="/resources/publications/">Publications</a></li>
-                                <li><a href="https://node-red-academy.learnworlds.com/">Node-RED Academy</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Reference</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/docs/">Docs</a></li>
-                                <li><a href="/changelog/">Changelog</a></li>
-                                <li><a href="https://github.com/FlowFuse/flowfuse">Github</a></li>
-                                <li><a href="https://discourse.nodered.org/c/vendors/flowfuse/24/">Support forums</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">Customers</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/customer-stories/">Customer Stories</a></li>
-                                <li><a href="/blog/#sign-up" onclick="capture('cta-blog-subscribe', {'position': 'footer'})">Sign Up to Mailing List</a></li>
+                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)" @click="onCaptureClick(item)">{{ item.label }}</a></li>
                             </ul>
                         </div>
                     </div>
                 </section>
             </div>
             <!-- Company -->
-            <section class="mt-12 border-t border-gray-300 pt-9">
+            <section class="mt-12 border-t border-gray-300 pt-9" data-nav-section="Company">
                 <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
                      under Platform, the three groups under Solutions' sub-columns, and the
                      last group under Resources. -->
@@ -183,37 +101,21 @@
                         </a>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
-                        <div>
+                        <div v-for="(grp, i) in chrome.footer.company.grid" :key="i">
                             <ul class="flex flex-col gap-2.5">
-                                <li><a href="/platform/why-flowfuse/">Why FlowFuse</a></li>
-                                <li><a href="/about/">About us</a></li>
-                                <li><a href="https://boards.greenhouse.io/flowfuse">Jobs</a></li>
-                                <li><a href="/platform/security/#certifications">Security certifications</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/handbook/">Handbook</a></li>
-                                <li><a href="/partners/">Partnerships</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="flex flex-col gap-2.5">
-                                <li><a href="/professional-services/">Professional Services</a></li>
-                                <li><a href="https://status.flowfuse.com/">Service Status</a></li>
+                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <ul class="flex flex-col gap-2.5">
-                            <li><a href="/support/">Request Support</a></li>
-                            <li><a href="/contact-us/">Contact Us</a></li>
+                            <li v-for="item in chrome.footer.company.trailing.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
                         </ul>
                     </div>
                 </div>
             </section>
 <!-- Legal + social bottom row -->
-            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
+            <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500" data-nav-section="Legal and social">
                 <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
                     <span aria-hidden="true">&middot;</span>

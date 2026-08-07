@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { findFeatureByChangelog, deriveTierLabel } from '../../composables/useFeatureCatalog'
-
 definePageMeta({ layout: 'default' })
 
 const route = useRoute()
@@ -25,12 +23,7 @@ const otherRecentEntries = computed(() =>
     (recentEntries.value || []).filter(entry => entry.path !== page.value?.path).slice(0, 5)
 )
 
-const team = useTeam()
-const authorMembers = computed(() => (page.value?.authors || []).map(username => team[username]))
-
-const catalogFeature = computed(() => findFeatureByChangelog(page.value?.path || ''))
-const tierCloud = computed(() => deriveTierLabel(catalogFeature.value?.cloud))
-const tierSelfHosted = computed(() => deriveTierLabel(catalogFeature.value?.selfHosted))
+const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
 function issueHref(issue: string): string {
     if (issue.startsWith('#')) return `https://github.com/FlowFuse/flowfuse/issues/${issue.substring(1)}`
@@ -65,7 +58,6 @@ useSeoMeta({
         <label>Changelog</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
-        <ChangelogTierBadges :cloud="tierCloud" :self-hosted="tierSelfHosted" />
       </div>
     </div>
 
