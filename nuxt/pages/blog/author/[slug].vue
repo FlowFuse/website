@@ -23,9 +23,7 @@ const { data: posts } = await useAsyncData(
     }
 )
 
-// Only sumit-shinde carries `expertise` today; `knowsAbout` is the older key and
-// stands in for it on anyone who has one but not the other.
-const topics = computed(() => author.value?.expertise || author.value?.knowsAbout || [])
+const topics = computed(() => author.value?.knowsAbout || [])
 
 const pageTitle = computed(() => `${author.value?.name} - FlowFuse Blog`)
 const pageDescription = computed(() => {
@@ -84,6 +82,9 @@ useSchemaOrg([
             </a>
             <a v-if="author.github" :href="`https://github.com/${author.github}`" target="_blank" rel="noopener" title="GitHub" class="text-gray-600 hover:text-indigo-600 transition-colors">
               <IconsGithubIcon class="w-5 h-5" />
+            </a>
+            <a v-if="author.twitter" :href="`https://twitter.com/${author.twitter}`" target="_blank" rel="noopener" title="X" class="text-gray-600 hover:text-indigo-600 transition-colors">
+              <IconsTwitterIcon class="w-5 h-5" />
             </a>
           </div>
         </div>

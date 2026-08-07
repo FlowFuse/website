@@ -59,12 +59,22 @@ function collectBlogFiles(dir: string, basePath: string): Array<{ route: string,
     return results
 }
 
+// `authors` values that mean "no individual author" - they have no data file by design.
+const ORG_AUTHOR_SLUGS = new Set(['-', 'FlowFuse', 'flowfuse', 'flowfuseteam'])
+
 // Author pages are rendered by pages/blog/author/[slug].vue from src/_data/{team,guests}
 // rather than from an @nuxt/content collection, so neither prerendering nor the sitemap
 // can discover them - enumerate the authors who both have a data file and a published post.
 function collectAuthorRoutes(blogFiles: Array<{ authors: string[] }>, dataDirs: string[]): string[] {
     const known = new Set(dataDirs.flatMap(dir => readdirSync(dir).filter(f => f.endsWith('.json')).map(f => basename(f, '.json'))))
     const withPosts = new Set(blogFiles.flatMap(f => f.authors))
+
+    // Anything left is either a former team member or a typo - surface it in the build log.
+    const missing = [...withPosts].filter(slug => !known.has(slug) && !ORG_AUTHOR_SLUGS.has(slug)).sort()
+    if (missing.length) {
+        console.warn(`[blog] ${missing.length} author slug(s) in blog frontmatter have no data file in src/_data/{team,guests}; these posts fall back to the "FlowFuse" byline and get no author page: ${missing.join(', ')}`)
+    }
+
     return [...withPosts].filter(slug => known.has(slug)).sort().map(slug => `/blog/author/${slug}/`)
 }
 

@@ -9,7 +9,6 @@ interface TeamMember {
     linkedin?: string
     github?: string
     twitter?: string | null
-    expertise?: string[]
     knowsAbout?: string[]
 }
 

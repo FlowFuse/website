@@ -131,10 +131,13 @@ if (routeInfo.value.kind === 'post') {
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
         <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
           <span>By</span>
-          <span v-for="(author, i) in authorMembers" :key="author.slug">
-            <span v-if="i > 0">, </span>
-            <NuxtLink :to="authorPath(author.slug)" class="font-medium hover:underline">{{ author.name }}</NuxtLink>
-          </span>
+          <template v-if="authorMembers.length">
+            <span v-for="(author, i) in authorMembers" :key="author.slug">
+              <span v-if="i > 0">, </span>
+              <NuxtLink :to="authorPath(author.slug)" class="font-medium hover:underline">{{ author.name }}</NuxtLink>
+            </span>
+          </template>
+          <span v-else class="font-medium">FlowFuse</span>
           <span class="text-gray-300">|</span>
           <time :datetime="new Date(page.lastUpdated || page.date).toISOString()">
             {{ page.lastUpdated ? 'Updated ' : '' }}{{ formattedDate }}
