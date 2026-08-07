@@ -1,21 +1,63 @@
 ---
-title: "Part 2: Building an OEE Dashboard with FlowFuse"
-subtitle: Step-by-step guide to building your own OEE Dashboard.
-description: Learn how to build an OEE Dashboard using FlowFuse Dashboard (Node-RED Dashboard 2.0). This step-by-step guide covers data collection, OEE calculations, and dashboard creation with simulated production and downtime data.
+title: "How to Build a Manufacturing OEE Dashboard with FlowFuse"
+subtitle: A step-by-step build - collecting production data, calculating availability, performance, and quality, and assembling the dashboard.
+description: Build a manufacturing OEE dashboard step by step with FlowFuse. Covers collecting production and downtime data, calculating availability, performance, and quality, breaking OEE down by machine, and laying out the dashboard widgets.
+lastUpdated: 2026-08-07
 date: 2025-04-09
 usecase:
   - production-monitoring
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/oee-dashboard-buildig-ff-2.png
-keywords: free oee dashboard, oee dashboard free, building oee dashboard, node-red oee dashboard, flowfuse oee dashboard
+keywords: manufacturing oee dashboard, build oee dashboard, oee dashboard, machine oee dashboard, oee dashboard software, flowfuse oee dashboard
 tags:
    - flowfuse
+meta:
+  howto:
+    name: "How to Build a Manufacturing OEE Dashboard"
+    description: "Build an OEE dashboard in FlowFuse that collects production and downtime data, calculates availability, performance, and quality, breaks the score down by machine, and presents everything on a live dashboard."
+    totalTime: "PT90M"
+    tool:
+      - "FlowFuse"
+      - "FlowFuse Dashboard 2.0"
+      - "node-red-contrib-sqlite"
+    steps:
+      - name: "Generate simulated production and downtime data"
+        text: "Create SQLite tables for production and downtime records, then use a function node to generate 30 days of simulated shift data across machines and lines so you have something to build against before connecting a real source."
+        url: "preparing-simulated-data"
+      - name: "Collect and configure the data"
+        text: "Add a configuration flow holding reusable settings such as line name and shift duration, then query the ProductionData and DowntimeData tables for the selected line and time range."
+        url: "collecting-and-configuring-data"
+      - name: "Prepare the data for OEE calculations"
+        text: "Aggregate the retrieved records to sum good units, defective units, total produced units, target output, and downtime duration across the production line."
+        url: "preparing-data-for-oee-calculations"
+      - name: "Calculate OEE and the key metrics"
+        text: "Compute availability from operating time against planned production time, performance from actual against maximum possible output, and quality from good against total products, then multiply them for the overall OEE score."
+        url: "calculating-oee-and-key-metrics"
+      - name: "Break the OEE data down for detail"
+        text: "Add a downtime summary, a recent downtime events table, a top underperforming machines table, and a 30-day OEE trend so the headline score can be traced back to a cause."
+        url: "detailed-breakdown-of-oee-data"
+      - name: "Build the dashboard"
+        text: "Wire the calculated metrics to FlowFuse Dashboard widgets: gauges for OEE, availability, performance, and quality, bar and line charts for trends, and tables for downtime events and underperforming machines."
+        url: "building-the-oee-dashboard"
+  faq:
+  - question: "Do I need SQLite, or can I use a different database?"
+    answer: "SQLite is used here because it needs no setup, but nothing in the flow depends on it. Swap the sqlite nodes for the contrib nodes matching your database and the queries stay largely the same for any SQL database. FlowFuse Tables gives you managed PostgreSQL if you want something production-grade from the start."
+  - question: "Do I need real machine data to follow this tutorial?"
+    answer: "No. The tutorial generates 30 days of simulated production and downtime data across multiple machines, shifts, and lines, so you can build and test the entire dashboard without connecting to a PLC or SCADA system. Part 3 covers swapping the simulated source for your real database."
+  - question: "How long does it take to build this OEE dashboard?"
+    answer: "Expect around 60 to 90 minutes working through the flow step by step. If you would rather not build it from scratch, the ready-made OEE Dashboard Blueprint deploys the same application in a few clicks and can then be customized."
+  - question: "Can this dashboard track more than one production line?"
+    answer: "The build in this part covers a single line, driven by a configuration flow so the line name and shift durations are not hardcoded. Part 3 covers turning the dashboard into a subflow with environment variables so you can reuse it across as many production lines as you need."
+  - question: "Why does my dashboard look different from the screenshots?"
+    answer: "This part focuses on the logic and widget placement rather than appearance, so the result uses the default theme and the layout may not align exactly. Theming, responsive breakpoints, and header branding are all covered in Part 3."
+tldr: "Build a manufacturing OEE dashboard in FlowFuse: generate simulated production and downtime data in SQLite, aggregate it, calculate availability, performance, and quality to produce the OEE score, break it down by machine with downtime summaries and a 30-day trend, and wire it all to FlowFuse Dashboard widgets."
 ---
 
-In [Part 1](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/), we explored the fundamentals of OEE, outlined a basic design of the dashboard, and identified the key elements to include in the OEE dashboard. 
-In this Part 2, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](https://dashboard.flowfuse.com/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data, the same kind of data you'd track for torque, weld cycle time, or paint throughput on an [automotive](/industries/automotive/) line.
+In [Part 1](/blog/2025/04/what-is-an-oee-dashboard/), we explored the fundamentals of OEE, outlined a basic design of the dashboard, and identified the key elements to include in the OEE dashboard. 
+In this second part, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](https://dashboard.flowfuse.com/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data, the same kind of data you'd track for torque, weld cycle time, or paint throughput on an [automotive](/industries/automotive/) line.
 
 <!--more-->
+
 
 ## Getting Started
 
@@ -37,11 +79,11 @@ Before you begin building the OEE Dashboard with FlowFuse, make sure you have th
 
 - **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create) and learn how to create an instance in FlowFuse.
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
-- **SQLite Contrib Node:** Ensure you have [node-red-contrib-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) installed.
+- **SQLite Contrib Node:** Ensure you have [node-red-contrib-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) installed. We use SQLite here because it needs no setup, but the flow works against any database - [FlowFuse Tables](/docs/user/ff-tables/) gives you managed PostgreSQL if you want something production-grade from the start, and our [Database](/node-red/database/) guides cover MongoDB, InfluxDB, TimescaleDB, and DynamoDB.
 
 ### Preparing Simulated Data
 
-Before building the dashboard, we need a data source for production and downtime metrics. This data will serve as input for OEE calculations. We will focus on connecting a real source in the next part, but for now, let's generate simulated data.
+Before building the dashboard, we need a data source for production and downtime metrics. This data will serve as input for OEE calculations. [Part 3 covers connecting a real source](/blog/2025/04/design-and-scale-oee-dashboard/), including how to remap the queries when your database field names differ. For now, let's generate simulated data.
 
 ::render-flow{:height="300"}
 ```json
@@ -472,7 +514,7 @@ _Flows that calculate the OEE for each day over the last 30 days._
 
 Now that the key OEE metrics have been calculated and detailed insights into production performance have been gathered, it is time to bring everything together in a visually intuitive and interactive dashboard. The OEE dashboard will provide real-time visibility into availability, performance, and quality while also displaying recent downtime events, downtime summaries, underperforming machines, and historical OEE trends.  
 
-Using FlowFuse Dashboard (Node-RED Dashboard 2.0), a clean and efficient interface will be designed, allowing operators and decision-makers to monitor production efficiency at a glance.  
+Using FlowFuse Dashboard (Node-RED Dashboard 2.0), a clean and efficient interface will be designed, allowing operators and decision-makers to monitor production efficiency at a glance. If you have not built a dashboard with it before, [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) covers the basics, and the [comprehensive guide to layout, sidebar, and styling](/blog/2024/05/node-red-dashboard-2-layout-navigation-styling/) explains the grouping and page concepts used throughout this section.  
 
 1. Drag a Switch node onto the canvas, set the property to `msg.oee`, and add the condition:  
    - "Is not null".  
@@ -532,4 +574,6 @@ Do not worry, in the next part of this series, we will style the dashboard to ma
 
 ## What Next?
 
-In [Part 3](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/) of this series, we style the dashboard, connect it to a real data source, and scale it across production lines. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
+In [Part 3, we design and scale the dashboard for factory screens](/blog/2025/04/design-and-scale-oee-dashboard/): theming it for the shop floor, making the layout responsive, connecting it to a real data source, and scaling it across production lines. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
+
+Missed the start? [Part 1 explains what an OEE dashboard is and how to plan one](/blog/2025/04/what-is-an-oee-dashboard/). And for the other views that belong on the shop floor alongside OEE, see our [manufacturing dashboard examples](/blog/2026/08/manufacturing-dashboard-examples/).
