@@ -1,0 +1,132 @@
+guide: flowfuse
+slug: iiot-architectures
+navOrder: 10
+title: IIoT architectures
+blurb: Distributed edge nodes, each doing one small job, feeding one central system.
+blocks:
+  - type: prose
+    kicker: IIoT architectures
+    body: >-
+      Distributed edge nodes, each reading a few sensors and doing one small job, feeding one central
+      system. The value is the large-scale live picture that many small nodes add up to.
+  - type: tabs
+    panels:
+      - label: Distributed edge
+        kicker: Central system · one live view of every node
+        diagram:
+          lanes:
+            - label: Central system · one live view of every node
+              tone: cloud
+              nodes:
+                - title: Central app
+                  sub: one live view of every node
+                  tone: cloud
+            - link: subscribe
+            - label: Team Broker
+              tone: broker
+              nodes:
+                - title: Team Broker
+                  sub: MQTT · UNS
+                  tone: broker
+            - link: publish
+            - label: Distributed sites · a Remote Instance + a few sensors, each a small job
+              tone: ot
+              nodes:
+                - title: Remote Instance
+                  sub: Site A
+                  tone: ot
+                - title: Remote Instance
+                  sub: Site B
+                  tone: ot
+                - title: Remote Instance
+                  sub: Site C
+                  tone: ot
+            - link: reads
+            - label: Sensors
+              tone: neutral
+              nodes:
+                - title: Sensors
+                  sub: pH · flow · level
+                  tone: muted
+                - title: Sensors
+                  sub: pH · flow · level
+                  tone: muted
+                - title: Sensors
+                  sub: pH · flow · level
+                  tone: muted
+          legend:
+            - label: Central
+              tone: cloud
+            - label: Edge sites
+              tone: ot
+            - label: MQTT / UNS
+              tone: broker
+            - label: sensor wire
+              tone: muted
+        summary: >-
+          The IIoT shape: many distributed Remote Instances, each reading just a few sensors and doing
+          one small job, publish to a central Team Broker. One central app subscribes and sees every
+          node at once. Each node is small — the value is the large-scale live picture they add up to.
+          Think water-quality monitoring across dozens of pump stations.
+        useWhen: Lots of small, spread-out measurement points that only pay off when aggregated into one live view.
+      - label: Across many sites
+        kicker: Enterprise · one namespace, every site rolls up
+        diagram:
+          lanes:
+            - label: Enterprise consumers
+              tone: cloud
+              nodes:
+                - title: Dashboards
+                  sub: enterprise
+                  tone: cloud
+                - title: Historian
+                  sub: enterprise
+                  tone: cloud
+                - title: Analytics
+                  sub: enterprise
+                  tone: cloud
+            - link: subscribe
+            - label: Enterprise · one namespace, every site rolls up
+              tone: broker
+              nodes:
+                - title: Team Broker
+                  sub: enterprise UNS
+                  tone: broker
+            - link: publish · Project Link
+            - label: Sites · each already a cluster of edge nodes
+              tone: ot
+              nodes:
+                - title: Site A
+                  sub: a cluster of nodes
+                  tone: ot
+                - title: Site B
+                  sub: a cluster of nodes
+                  tone: ot
+                - title: Site C
+                  sub: a cluster of nodes
+                  tone: ot
+          legend:
+            - label: Enterprise
+              tone: cloud
+            - label: Sites
+              tone: ot
+            - label: Project Link
+              tone: it
+            - label: MQTT / UNS
+              tone: broker
+        summary: >-
+          Scale the same pattern across sites. Each site — itself a cluster of edge nodes — publishes
+          into one enterprise namespace over Project Link, with no inbound ports. A single Team Broker
+          carries every site's live data, and enterprise dashboards, historians and analytics subscribe
+          across all of them.
+        useWhen: The distributed-edge pattern spans multiple plants or geographies that must roll up to one enterprise view.
+  - type: linkCards
+    columns: 1
+    items:
+      - title: Where does the data live?
+        body: >-
+          Every architecture here sits on the same data plane — built-in Tables & Broker, or bring
+          your own over Project Link.
+        link:
+          label: Data plane →
+          to: /application-guide/flowfuse/data-plane/

@@ -1,0 +1,249 @@
+guide: node-red
+slug: design-patterns
+navOrder: 4
+title: Design patterns
+blurb: The moves that turn a flow into something you can reuse, test and hand off.
+blocks:
+  - type: prose
+    kicker: Design patterns — start here
+    body: >-
+      The moves that turn a flow into something you can reuse, test and hand off. Find the seams, pick
+      the lightest level of reuse, keep the UI and logic apart, and hold state in context — then scale
+      only when one instance proves it must.
+  - type: tabs
+    panels:
+      - label: Find the seams
+        kicker: Name the structure
+        kickerNote: Most spaghetti is three or four components never named; draw a box around each.
+        diagramTitle: Name the stages hiding inside one instance
+        diagram:
+          lanes:
+            - label: Before
+              tone: neutral
+              nodes:
+                - title: one flow, no seams
+                  sub: nothing to reuse or hand off
+                  tone: muted
+            - link: draw the boxes
+            - label: After
+              tone: it
+              nodes:
+                - title: Ingest
+                  tone: it
+                - title: Normalize
+                  tone: it
+                - title: Enrich
+                  tone: it
+                - title: Publish
+                  tone: it
+        summary: >-
+          A giant flow is bad because it has no seams. Most spaghetti is three or four well-defined
+          components that were never named.
+        useWhen: >-
+          You cannot reuse, test, or hand off a piece of a blob, and any edit means reading the whole
+          tab. Naming the structure is the fix, not tidier wires.
+        howHeading: How to apply it
+        how: >-
+          Look for a repeated cluster, a logical stage (ingest, normalize, enrich, publish), a bounded
+          responsibility, or a reuse magnet. Draw a box around each and extract it.
+        callout:
+          tone: good
+          text: Splitting one tab into ingestion, processing, storage, and presentation.
+      - label: Levels of reuse
+        kicker: Pick the lowest rung
+        kickerNote: link in/out → link call → subflow → packaged node; each rung costs more than the one below.
+        diagramTitle: Pick the lowest rung that solves it
+        diagram:
+          lanes:
+            - label: Cost rises with each rung
+              tone: neutral
+              nodes:
+                - title: 1 · link in / out
+                  sub: tidiness only
+                  tone: muted
+                - title: 2 · link call
+                  sub: shared, returning service
+                - title: 3 · subflow
+                  sub: per-instance or reuse
+                  tone: it
+                - title: 4 · palette node
+                  sub: real code, distribution
+                  tone: strong
+        summary: >-
+          When you find structure there are levels of extraction: link in and out, then link call, then
+          subflow, then a packaged node. Pick the lowest one that solves the problem.
+        useWhen: >-
+          Each rung costs more than the one below it. Reaching straight for a subflow or a custom node
+          when a link call would do adds weight you do not need.
+        howHeading: How to apply it
+        how: >-
+          Link in and out for tidiness and tab-to-tab routing. Link call for a shared returning
+          service. Subflow when it needs per-instance config or cross-instance reuse. Palette node for
+          real code or distribution.
+        callout:
+          tone: watch
+          text: Link nodes are organization, not modularity. Do not mistake tidiness for a reusable unit.
+      - label: Decouple frontend & backend
+        kicker: UI ↔ logic like client ↔ server
+        kickerNote: The backend sends a display-ready view-model; the frontend emits intent (action + payload).
+        diagramTitle: Frontend and backend, two instances, one contract
+        diagram:
+          lanes:
+            - label: Frontend · renders + emits
+              tone: neutral
+              nodes:
+                - title: Node-RED
+                  sub: renders + emits
+            - link: intent (what the user wants) ↕ view-model (display-ready state)
+            - label: Backend · holds the truth
+              tone: it
+              nodes:
+                - title: Node-RED
+                  sub: holds the truth
+                  tone: it
+            - link: reads · writes
+            - label: Store
+              tone: neutral
+              nodes:
+                - title: SQL database
+                  sub: records
+                  tone: muted
+        summary: >-
+          Treat the boundary between the Dashboard and your flow logic like a client and server API.
+          The frontend renders state and emits intent; the backend holds the truth.
+        useWhen: >-
+          The UI and the logic change at different rates. When you build payloads inside templates or
+          cram logic next to a widget, every change touches both.
+        howHeading: How to apply it
+        how: >-
+          The backend sends a finished, display-ready view-model. The frontend emits a consistent
+          intent message, an action plus a payload. Templates bind and emit; they never fetch,
+          transform, or decide.
+        callout:
+          tone: good
+          text: Redesigning the whole dashboard without touching a single business-logic node.
+      - label: Use the context store
+        kicker: Context is shared memory
+        kickerNote: Hold the object in one place at the narrowest scope; messages are verbs, context is state.
+        diagramTitle: Messages are verbs, context is nouns
+        diagram:
+          lanes:
+            - label: Event
+              tone: neutral
+              nodes:
+                - title: event
+                  sub: a reading arrived
+                - title: node
+                  sub: recompute
+            - link: write
+            - label: Context store
+              tone: it
+              nodes:
+                - title: context store
+                  sub: assets.<id>, oee.line1
+                  tone: it
+            - link: read the one key it needs
+            - label: Consumer
+              tone: neutral
+              nodes:
+                - title: another node
+                  sub: reads one key
+        summary: >-
+          Context is shared memory with a defined scope. It holds a logical object in one place instead
+          of threading it through wires. Messages are verbs; context is nouns.
+        useWhen: >-
+          If you pass the same fat object through fifteen nodes just to move it, that is the job context
+          exists to do. Wire gymnastics to avoid storing a value is the real anti-pattern.
+        howHeading: How to apply it
+        how: >-
+          Store the object once under a namespaced key at the narrowest scope that works (node, then
+          flow, then global). Each node reads the one key it needs, and a persistent store holds
+          anything that must survive a restart.
+        callout:
+          tone: watch
+          text: One writer per key, serialize concurrent updates, and keep enough on the wire to stay debuggable.
+      - label: "Config: env vars vs persisted context"
+        kicker: Static config vs runtime config
+        kickerNote: Env vars set at deploy (read-only to the flow); persisted context for anything a user edits.
+        diagram:
+          lanes:
+            - label: Env var, set at deploy
+              tone: neutral
+              nodes:
+                - title: BROKER_HOST
+                  sub: baked, read-only
+                  tone: muted
+                - title: to change it
+                  sub: edit env, then redeploy
+                  tone: muted
+            - label: Persisted context, changed by a user
+              tone: it
+              nodes:
+                - title: UI edits
+                  sub: a form or button
+                  tone: it
+                - title: context store
+                  sub: live config
+                  tone: it
+                - title: flow at run
+                  sub: reads current
+                  tone: it
+        summary: >-
+          Two different kinds of configuration. Static config changes per environment and is set at
+          deploy: broker host, DB connection. Runtime config changes while running, by a user, with no
+          redeploy.
+        useWhen: >-
+          Env vars are resolved at deploy time and are read-only to the running flow. The moment a user
+          needs to change what the flow operates on, an env var forces a developer and a redeploy.
+        howHeading: How to apply it
+        how: >-
+          Keep static config in env vars or a config node. Put user-editable config in persisted
+          context (or a config file), edited through the UI via an intent message, and read by the flow
+          at execution time.
+        callout:
+          tone: watch
+          text: If a value would ever be changed through a button or form, it is not an env var.
+      - label: Generating flows (Admin API)
+        kicker: Deploy flows as JSON
+        kickerNote: Populate link arrays with node ids and l:true; the editor's quiet fixes won't happen over the API.
+        diagramTitle: Emit JSON, deploy via the Admin API
+        diagram:
+          lanes:
+            - label: You emit it
+              tone: neutral
+              nodes:
+                - title: flow JSON
+                  sub: you emit it
+                  tone: muted
+            - link: POST /flows
+            - label: Admin API
+              tone: it
+              nodes:
+                - title: Admin API
+                  sub: POST /flows
+                  tone: it
+            - link: deploys to
+            - label: Runtimes
+              tone: ot
+              nodes:
+                - title: Node-RED
+                  sub: runtime
+                  tone: ot
+                - title: Node-RED
+                  sub: edge device
+                  tone: ot
+          note: "links populated by node id (not name), l:true, x = LEFT + width/2, respond once on msg.error"
+        summary: >-
+          Emitting flows as JSON and deploying via the Admin API. The editor quietly fixes mistakes
+          that a programmatic deploy does not, so the failure classes are different.
+        useWhen: >-
+          API-deployed flows look right but hang, double-respond, loop, or read as spaghetti when the
+          things the editor papers over are left undone.
+        howHeading: How to apply it
+        how: >-
+          Populate link arrays with target node ids (name matching is editor-only) and set l:true. Skip
+          success formatters when msg.error is set so you respond once. Never let a tab-wide catch
+          re-dispatch a response-layer error. Compute x as LEFT + width/2.
+        callout:
+          tone: watch
+          text: Empty link arrays are the top reason an API-deployed flow does nothing.

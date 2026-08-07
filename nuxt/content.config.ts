@@ -62,6 +62,26 @@ export default defineContentConfig({
                 sitemap: defineSitemapSchema(),
             })
         }),
+        // The Application Guide pages are strongly structured rather than free prose: each page
+        // is a list of blocks, and most blocks are a tabbed set of patterns with a diagram and
+        // fixed sections. Authoring that as data keeps every page consistent and makes a copy
+        // edit a YAML edit. Rendered by pages/application-guide/[guide]/[slug].vue.
+        // File names must be NN-<slug>.yml and match the `slug` field - nuxt.config's
+        // prerender list derives the routes from the file names.
+        applicationGuide: defineCollection({
+            type: 'data',
+            source: 'application-guide/**/*.yml',
+            schema: z.object({
+                guide: z.enum(['flowfuse', 'node-red']),
+                slug: z.string(),
+                title: z.string(),
+                navOrder: z.number(),
+                blurb: z.string().optional(),
+                // Block shapes vary by `type` and are validated by the components that render
+                // them; a discriminated union here would need updating for every new block type.
+                blocks: z.array(z.any()),
+            })
+        }),
         // Source files stay at src/changelog/ (11ty's historical location) rather than
         // being copied into nuxt/content/ - keeps this migration a content-config-only change.
         changelog: defineCollection({
@@ -194,14 +214,6 @@ export default defineContentConfig({
                 order: z.number(),
                 features: z.array(z.string()),
                 bestFitFor: z.array(z.string()).optional(),
-                button: z.object({
-                    label: z.string(),
-                    to: z.string(),
-                    external: z.boolean().optional(),
-                    color: z.enum(['primary', 'secondary', 'highlight']).optional(),
-                    variant: z.enum(['solid', 'outline', 'soft', 'subtle', 'ghost', 'link']).optional(),
-                    event: z.string().optional(),
-                }),
             })
         }),
         featureCatalog: defineCollection({

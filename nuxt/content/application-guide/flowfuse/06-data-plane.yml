@@ -1,0 +1,232 @@
+guide: flowfuse
+slug: data-plane
+navOrder: 6
+title: Data plane
+blurb: Before you pick where things run, decide how data is handled.
+blocks:
+  - type: prose
+    kicker: Data plane — start here
+    body: >-
+      Before you pick where things run, decide how data is handled. Two stores come built into every
+      FlowFuse server install — the Team Broker and relational Tables — exposed to every instance
+      with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB,
+      an existing database, a model) and expose it to the community over Project Link, no inbound
+      ports. This is the data plane the architectures on the next pages all sit on.
+  - type: tabs
+    panels:
+      - label: Relational
+        kicker: Built in
+        kickerNote: Ships with every FlowFuse server install; exposed to every instance.
+        diagram:
+          lanes:
+            - label: Instances on the team
+              tone: neutral
+              nodes:
+                - title: Instance
+                  sub: App A
+                - title: Instance
+                  sub: App B
+                - title: Instance
+                  sub: App C
+            - link: query & update
+            - label: Built into every FlowFuse server install
+              tone: it
+              nodes:
+                - title: FlowFuse Tables
+                  sub: relational
+                  tone: it
+          legend:
+            - label: Authenticated · every instance reaches it
+              tone: it
+        summary: >-
+          A place for records that relate to each other — assets, config, users, orders — that you
+          look up, join and update in place. It's FlowFuse Tables, built into every FlowFuse server
+          install and exposed to every instance on the team.
+        useWhen: The data has structure and relationships, and apps across the team should read and write the same store.
+        how: >-
+          FlowFuse Tables (managed PostgreSQL) via the Query node; because it ships with the server,
+          any instance on the team reaches it natively over an authenticated connection. External
+          systems can read it too.
+        lists:
+          - heading: In FlowFuse
+            items:
+              - FlowFuse Tables — managed PostgreSQL, built into every FlowFuse install
+              - Query node — read, join and update from any instance
+              - Exposed to the whole team automatically — nothing to stand up
+              - Also any external Postgres — same node
+        callout:
+          tone: watch
+          text: Not for high-rate timestamped streams; use the time-series target for those.
+      - label: Broker / UNS
+        kicker: Built in
+        kickerNote: Ships with every FlowFuse server install; publish once, many subscribe.
+        diagram:
+          lanes:
+            - label: Publisher
+              tone: neutral
+              nodes:
+                - title: Instance
+                  sub: publishes
+            - link: publish
+            - label: Built into every FlowFuse install
+              tone: broker
+              nodes:
+                - title: Team Broker
+                  sub: built in · UNS
+                  tone: broker
+            - link: subscribe
+            - label: Subscribers
+              tone: neutral
+              nodes:
+                - title: Dashboard
+                  sub: subscribes
+                - title: Historian
+                  sub: subscribes
+                - title: Other app
+                  sub: subscribes
+          legend:
+            - label: MQTT · publish once, many subscribe
+              tone: broker
+        summary: >-
+          A real-time bus, not storage: one instance publishes to a topic, any number subscribe.
+          It's the Team Broker, built into every FlowFuse server install — the backbone of a Unified
+          Namespace.
+        useWhen: Live data needs to reach many consumers at once, decoupled, as it happens.
+        how: >-
+          The built-in Team Broker with publish / subscribe nodes; because it ships with the server,
+          every instance on the team can publish and subscribe over MQTT. Pair with Tables when you
+          also need to keep history.
+        lists:
+          - heading: In FlowFuse
+            items:
+              - Team Broker — built into every FlowFuse install, no separate product to stand up
+              - publish / subscribe nodes
+              - Topic structure — your Unified Namespace
+              - Exposed to the whole team; pair with Tables for history
+        callout:
+          tone: watch
+          text: It carries data, it doesn't store it; write to Tables too if you need history.
+      - label: Time-series
+        kicker: Bring your own
+        kickerNote: External today; FlowFuse has no built-in time-series DB.
+        diagram:
+          lanes:
+            - label: External · where the readings live
+              tone: neutral
+              nodes:
+                - title: Time-series DB
+                  sub: Timescale / QuestDB
+                  tone: muted
+            - link: Postgres wire
+            - label: Fronted by the platform
+              tone: it
+              nodes:
+                - title: Hosted Instance
+                  sub: connects & fronts it
+                  tone: it
+            - link: Project Link
+            - label: Instances that query it
+              tone: neutral
+              nodes:
+                - title: Instance
+                  sub: query by time
+                - title: Instance
+                  sub: query by time
+                - title: Instance
+                  sub: query by time
+          legend:
+            - label: Postgres wire
+              tone: muted
+            - label: Project Link · target is a Hosted Instance
+              tone: it
+        summary: >-
+          A store built for a steady stream of timestamped readings — sensor data, telemetry, trends
+          — written fast and queried by time. FlowFuse has no built-in time-series database, so you
+          run one and expose it to the fleet.
+        useWhen: The data is a continuous stream of timestamped values, written at high rate and queried by time window.
+        how: >-
+          Run TimescaleDB, QuestDB or InfluxDB where you want. A Hosted Instance connects to it —
+          Timescale and Quest speak the Postgres wire, so the Query node connects exactly like
+          Tables — and fronts it; other instances reach it over Project Link, which always calls a
+          Hosted Instance, with no inbound ports.
+        lists:
+          - heading: In FlowFuse
+            items:
+              - External — FlowFuse has no built-in time-series DB today
+              - TimescaleDB / QuestDB — speak the Postgres wire; Query node connects like Tables
+              - Hosted Instance — connects to it and fronts it for the fleet
+              - Project Link — reaches it with no inbound ports (targets a Hosted Instance)
+        callout:
+          tone: watch
+          text: Not part of FlowFuse; you run and expose it. Pair with the Team Broker for live + history.
+      - label: Bring your own
+        kicker: Bring your own
+        kickerNote: Expose any other store or service to the fleet over Project Link.
+        diagram:
+          lanes:
+            - label: Wherever it lives · you run it
+              tone: neutral
+              nodes:
+                - title: Your store / service
+                  sub: SQL · ML · gateway
+                  tone: muted
+            - link: connects
+            - label: Fronted by the platform
+              tone: it
+              nodes:
+                - title: Hosted Instance
+                  sub: connects & fronts it
+                  tone: it
+            - link: Project Link
+            - label: Instances that query it
+              tone: neutral
+              nodes:
+                - title: Instance
+                  sub: queries it
+                - title: Instance
+                  sub: queries it
+                - title: Instance
+                  sub: queries it
+          legend:
+            - label: connects
+              tone: muted
+            - label: Project Link · target is a Hosted Instance
+              tone: it
+        summary: >-
+          Any other store or service FlowFuse doesn't provide — an existing SQL database, an ML
+          model, a site gateway. You run it where it already lives and expose it to the community of
+          managed instances over Project Link, with no inbound ports.
+        useWhen: >-
+          You need to reach a store or service that isn't built in and isn't a time-series DB — an
+          existing database, a model, a gateway.
+        how: >-
+          A Hosted Instance connects to the store or service and fronts it; other instances reach it
+          over Project Link — which always targets a Hosted Instance — as a secure API / MCP
+          endpoint, with no inbound ports and no copy into a warehouse.
+        lists:
+          - heading: In FlowFuse
+            items:
+              - Hosted Instance — connects to the store / service and fronts it
+              - Project Link — calls a Hosted Instance (only Hosted Instances are callable targets)
+              - Any SQL database, ML model or gateway
+              - Exposed as a secure API / MCP endpoint, no inbound ports
+        callout:
+          tone: good
+          text: >-
+            Keeping data and services where they already live and exposing them securely to the
+            fleet. FlowFuse doesn't care what the target is.
+  - type: note
+    body: >-
+      Calling one external endpoint from a flow — an HTTP request or webhook to one system — is a
+      Node-RED decision, not a platform data target.
+    link:
+      label: Node-RED guide →
+      to: /application-guide/node-red/overview/
+  - type: linkCards
+    columns: 1
+    items:
+      - title: Now pick where it runs
+        body: The architectures all sit on this data plane — choose OT, IT or IIoT for where your instances live.
+        link:
+          label: Architectures →
+          to: /application-guide/flowfuse/architectures/
