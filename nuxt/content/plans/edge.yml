@@ -13,9 +13,3 @@ bestFitFor:
   - OT teams connecting PLCs, machines, and systems
   - Businesses standardising and deploying automation across multiple sites
   - Standard deployments across multiple sites.
-button:
-  label: Contact us
-  to: /contact-us/
-  external: true
-  variant: solid
-  event: cta-contact-us
