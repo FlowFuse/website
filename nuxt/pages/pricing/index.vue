@@ -118,6 +118,8 @@ useSchemaOrg([
 
         <CertifiedNodes class="mt-28" />
 
+        <EnterpriseSecurity class="mt-28" />
+
         <div v-if="faq" class="mt-28 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
         <UAccordion
