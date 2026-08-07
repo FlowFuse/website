@@ -28,7 +28,7 @@
         "@nuxtjs/seo": "^5.1.4",
         "@types/sanitize-html": "^2.16.1",
         "better-sqlite3": "^12.10.0",
-        "nuxt": "^4.4.7",
+        "nuxt": "^4.5.1",
         "nuxt-link-checker": "^5.0.10",
         "nuxt-og-image": "^6.5.3",
         "nuxt-studio": "file:.local-packages/nuxt-studio-1.7.0.tgz"
