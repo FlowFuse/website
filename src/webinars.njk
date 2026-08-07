@@ -7,20 +7,12 @@ meta:
 ---
 <div class="webinar nohero container m-auto text-left max-w-4xl pt-8 pb-24 w-full px-2">
     <h1>Webinars</h1>
-    {% if (collections.webinar and collections.webinar.length > 0 and collections.ama and collections.ama.length > 0) and ((collections.ama[0].date | countDays).value < (collections.webinar[0].date | countDays).value) %}
-    <div class="flex flex-col-reverse gap-6">
-    {% else %}
     <div class="flex flex-col gap-6">
-    {% endif %}
         {% if collections.webinar and collections.webinar.length > 0 %}
             {%- for item in collections.event | inFuture | limit(2) -%}
             <div>
                 <h3 class="w-full w-full text-indigo-400">
-                    {%- if item.data.tags.includes('ama') -%}
-                    Upcoming "Ask Me Anything" Session
-                    {% else %}
                     Upcoming Webinar:
-                    {% endif %}
                     <span class="text-indigo-600 italic text-lg ml-2">{{ item.date.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
                 </h3>
                 <ul>
@@ -49,11 +41,7 @@ meta:
                                     {% include "summary.njk" %}
                                 </div>
                                 <div>
-                                    {%- if item.data.tags.includes('ama') -%}
-                                    <a class="inline-flex ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-ama-info')">
-                                    {% else %}
                                     <a class="inline-flex ff-btn ff-btn--primary text-sm" href="{{ item.url }}" onclick="capture('cta-webinar-info')">
-                                    {% endif %}
                                         More Info
                                         <span class="ml-2">
                                             {% include "components/icons/chevron-right.svg" %}
@@ -68,8 +56,6 @@ meta:
             {% endfor %}
         {% endif %}
     </div>
-    {% if (collections.webinar and (collections.webinar | inFuture | length) > 0) or (collections.ama and (collections.ama | inFuture | length) > 0) %}
-    {% endif %}
     {% if collections.webinar and (collections.webinar | inPast | length) > 0 %}
         <h3 class="w-full text-indigo-400">Past Webinars</h3>
         <ul class="grid md:grid-cols-3 gap-4">

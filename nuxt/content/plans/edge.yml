@@ -4,17 +4,12 @@ order: 1
 description: Deploy, manage, and scale industrial applications across your sites with centralized governance and certified industrial connectivity.
 badge: For OT teams
 features:
+  - Edge Instances
   - Device Fleet Updates
   - Device Group Management
   - "Certified Nodes: OT"
-  - Blueprints - OT APPS
+  - Blueprints - OT Apps
 bestFitFor:
   - OT teams connecting PLCs, machines, and systems
   - Businesses standardising and deploying automation across multiple sites
   - Standard deployments across multiple sites.
-button:
-  label: Contact us
-  to: /contact-us/
-  external: true
-  variant: solid
-  event: cta-contact-us
