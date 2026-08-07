@@ -11,14 +11,16 @@
     "reports_to": "Pablo Filomeno",
     "bio": "Sumit Shinde is a Technical Writer at FlowFuse specializing in industrial automation and manufacturing. In the past three years, he has built industrial applications and authored more than 100 technical articles covering industrial connectivity, unified data architecture, production metrics, and quality management for modern manufacturing.",
     "expertise": [
-        "OPC UA",
-        "MQTT",
-        "Modbus",
-        "Unified Namespace",
-        "Node-RED",
-        "Industrial IoT",
-        "Manufacturing automation",
-        "PLC integration"
+        "Industrial Automation",
+        "Manufacturing Systems",
+        "Industrial IoT (IIoT)",
+        "Industrial Connectivity",
+        "Edge Computing",
+        "Industrial Data Architecture",
+        "Unified Namespace (UNS)",
+        "Production and Quality Analytics",
+        "Industrial AI Applications",
+        "Technical Writing"
     ],
     "knowsAbout": [
         "Industrial protocols",
@@ -32,7 +34,7 @@
     "facts": [
         "Enjoys contributing to open-source projects.",
         "Experienced love at first sight with Node-RED and enjoys writing and reading about it.",
-        "Loves helping and spending time with stray animals, Owns a cat",
+        "Loves helping and spending time with stray animals and owns a cat.",
         "Passionate about reading, running, and exploring historical places."
     ]
 }
