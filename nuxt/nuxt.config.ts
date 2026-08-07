@@ -199,6 +199,7 @@ export default defineNuxtConfig({
     routeRules: {
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
+        '/thank-you/**': { robots: false },
     },
 
     nitro: {
@@ -235,6 +236,8 @@ export default defineNuxtConfig({
                     '/privacy-policy',
                     '/integrations',
                     '/pricing',
+                    '/contact-us',
+                    '/book-demo',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',

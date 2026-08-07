@@ -144,6 +144,38 @@ export default defineContentConfig({
                 sitemap: defineSitemapSchema(),
             })
         }),
+        // Source files stay at src/customer-stories/ (still served by 11ty, see
+        // LEGACY_PREFIXES in nuxt/server/middleware/legacy.ts) - this collection only
+        // feeds the ThankYouStoriesBlock tiles, it isn't rendered as Nuxt pages, so it
+        // deliberately has no `sitemap` field.
+        stories: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'customer-stories/*.md',
+            },
+            schema: z.object({
+                image: z.string().optional(),
+                logo: z.string().optional(),
+                story: z.object({
+                    brand: z.string(),
+                }),
+            })
+        }),
+        // Source files stay at src/webinars/ (still served by 11ty, see LEGACY_PREFIXES
+        // in nuxt/server/middleware/legacy.ts) - only queried for the "Latest/Upcoming
+        // Webinar" tile on the thank-you pages, so no `sitemap` field either.
+        webinars: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'webinars/**/*.md',
+            },
+            schema: z.object({
+                date: z.coerce.date(),
+                time: z.string().optional(),
+            })
+        }),
         ebooks: defineCollection({
             type: 'page',
             source: 'ebooks/*.md',

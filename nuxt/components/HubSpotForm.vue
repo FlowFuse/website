@@ -10,6 +10,7 @@ const props = defineProps<{
 const containerId = `hs-form-${props.formId.replace(/-/g, '')}`
 const region = props.region ?? 'eu1'
 const portalId = props.portalId ?? '26586079'
+const showFallback = ref(false)
 
 function loadScript(): Promise<void> {
     return new Promise((resolve, reject) => {
@@ -48,11 +49,21 @@ onMounted(async () => {
             } : {}),
         })
     } catch {
-        // silently fail if HubSpot cannot load
+        showFallback.value = true
     }
 })
 </script>
 
 <template>
-  <div :id="containerId" />
+  <div>
+    <div :id="containerId" />
+    <div v-if="showFallback" class="ff-hubspot-consent-fallback text-center border bg-red-50/25 border-red-300 rounded-lg px-6 pt-8 pb-4">
+      <p class="text-red-400">
+        <strong>Hmm… there was supposed to be a form here</strong>
+      </p>
+      <p class="text-gray-600">
+        If this form does not load, try adjusting your privacy settings or switching browsers.
+      </p>
+    </div>
+  </div>
 </template>
