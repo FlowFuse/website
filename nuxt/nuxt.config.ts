@@ -199,6 +199,7 @@ export default defineNuxtConfig({
     routeRules: {
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
+        '/thank-you/**': { robots: false },
     },
 
     nitro: {
