@@ -31,8 +31,8 @@ things to be achieved. Two good examples are
 
 1. FlowFuse Dashboard - Allowing to build Dashboards and interactive
    applications
-1. Project-Link - Linking Edge devices to the Cloud, enabling broadcasts and
-   point-to-point connections
+1. Device Agent - Connecting Edge devices to the rest of the organisation,
+   enabling broadcasts and point-to-point connections
 
 A key differentiator for FlowFuse is our approach to licensing of our software.
 The core is open, free as in beer and as in speech. Our product is open for
@@ -113,6 +113,32 @@ with the tools they need to:
 FlowFuse uses Open-Source technologies like Node-RED and MQTT to help our
 customers being successful in remedying their problems.
 
+## Category: Apps for Manufacturing
+
+### Why it's needed
+
+Selling "a platform for building automations" asks a prospect to imagine a
+result before they've seen one. Selling a specific app removes that leap: the
+prospect sees a concrete, working solution to a problem they already
+recognize, and can judge its value immediately. Apps are the wedge that gets
+us into the conversation; the platform is what lets that conversation grow.
+
+### The motion
+
+1. Sell a specific app (e.g. an OEE dashboard, a downtime tracker) that solves
+   one recognizable manufacturing problem.
+1. The app is built on FlowFuse -- the platform is the delivery mechanism, not
+   the pitch.
+1. Once the app is live, the customer extends it or builds new apps on the
+   same platform, expanding the relationship beyond the initial sale.
+
+### Sales narrative
+
+Sales conversations open with a demo of the app itself -- "here's what's
+possible" -- rather than a pitch about low-code tooling in the abstract. The
+platform's value is proven by what customers do with it once they're in, not
+argued for upfront.
+
 ## Measuring Success
 
 There's multiple ways to align a company around business goals, and at FlowFuse
@@ -125,7 +151,7 @@ A KPI, or Key Performance Indicator, is a heuristic metric for company-wide
 success. At FlowFuse we're engaged in many initiatives to grow our offering and
 assess product-market fit.
 
-We review KPIs every Tuesday as part of our recurring strategy meeting.
+We review KPIs as part of our recurring [strategy meeting](#strategy-meeting).
 At this time, we review the following KPIs:
 * Product & Engineering
    * Engineering Time to Value (Median)
