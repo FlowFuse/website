@@ -89,6 +89,9 @@ Reading data from Modbus slaves in FlowFuse is straightforward. The process is t
 
 4. Connect the Modbus Read node to a **Debug** node and deploy your flow. If everything is set up correctly, you will start seeing live data from your Modbus device in the debug sidebar.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Writing Data
 
 Modbus RTU allows you to **write data back to devices**, enabling control of motors, relays, setpoints, and other outputs directly from FlowFuse.

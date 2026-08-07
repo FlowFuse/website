@@ -182,6 +182,9 @@ For example, consider that you have a ladder logic program in the TIA Portal wit
 
 If you wanted integrate Siemens LOGO, please refer to the node's [README](https://flows.nodered.org/node/node-red-contrib-s7), as the addressing differs.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Configuring the S7 Node to Connect to the PLC
 
 Now that you have all the necessary knowledge and setup, let's start by establishing a connection between Node-RED and your Siemens S7 PLC. The S7 node in Node-RED simplifies the process, making it easy to configure communication. Follow the steps below to connect and start interacting with your PLC

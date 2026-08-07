@@ -155,6 +155,9 @@ msg.action = "unsubscribe";
 
 This is useful when users select which equipment to monitor from a dashboard, when topics depend on database queries or API responses, or when you need to add and remove subscriptions without redeploying your flow.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Deploying the Flow
 
 Deploy your flow to activate the MQTT connection and start sending or receiving messages.

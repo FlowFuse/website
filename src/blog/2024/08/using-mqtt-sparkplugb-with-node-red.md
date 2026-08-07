@@ -155,6 +155,9 @@ The table below highlights the practical differences that matter when designing 
 | **Learning curve**         | Low                                       | Medium to high                                 |
 | **Best fit use cases**     | Small systems, prototypes, simple sensors | SCADA, HMI, multi-vendor industrial systems    |
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Using MQTT Sparkplug B with Node-RED
 
 Now that we understand what Sparkplug B is and how it structures industrial data, let’s see how to use it in practice with Node-RED.

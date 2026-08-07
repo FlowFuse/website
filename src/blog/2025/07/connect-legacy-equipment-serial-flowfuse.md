@@ -169,6 +169,9 @@ In this guide, we are using a real machine connected via a serial interface. The
 
 The next section demonstrates how to read and process this simulated production data using the **serial in** node.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Reading and Processing Serial Data
 
 Follow these steps to read and handle the serial data:

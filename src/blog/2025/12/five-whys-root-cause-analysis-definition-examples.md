@@ -133,6 +133,9 @@ Teams sometimes rush through the analysis because they're uncomfortable with the
 
 Some teams branch off into multiple causal chains without finishing any of them. They ask the first why, get an answer, then immediately see three more potential causes and start investigating all of them. Before long, they've filled a whiteboard with possibilities but haven't followed any single path to a concrete root cause. Discipline yourself to investigate one chain completely before exploring alternatives.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Tools and Software for Five Whys Analysis
 
 You don't need specialized software to conduct a Five Whys analysis. A whiteboard, a notepad, or a simple word processing document works fine. The tool matters far less than the discipline with which you apply the method.

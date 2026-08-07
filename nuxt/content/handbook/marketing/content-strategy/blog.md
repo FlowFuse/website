@@ -283,6 +283,20 @@ Besides the end-of-article CTA above, you can drop a clickable, tracked image an
 
 Tracking is automatic and fires the same `blog-cta` event as the end-of-article CTA, with the same `reference` (the article title) and a `cta_type` property set to the destination. What tells the two apart is `position`: every `CtaImage` click sends `position: "inline-image"`, while the end-of-article CTA doesn't send `position` at all — so in PostHog you can filter `blog-cta` events by `position = inline-image` to isolate inline image clicks specifically, or leave it unfiltered to see both together.
 
+#### Shared CTA image library
+
+CTA images are shared across articles, so they go in `src/images/cta/` — not in an article's own images folder. Reference them as `/images/cta/<name>.png`. Put any new CTA image there too, and add it to this table:
+
+| Image | Use it on |
+|-------|-----------|
+| `book-a-demo.png` | General-purpose "walk through your setup" CTA — the default when no customer story fits |
+| `wenco-book-demo.png` | Dashboard and visualization articles (Wenco ships new dashboard pages in days) |
+| `aperia-book-demo.png` | PLC, protocol and device-connectivity articles (Aperia stopped reprogramming controllers station by station) |
+| `arch-systems-book-demo.png` | Manufacturing methodology, metrics and quality articles (Arch Systems scales automation across plants) |
+| `power-workplace-book-demo.png` | Production hosting, reliability and security articles (Power Workplace on scalability and security audits) |
+
+Pick the one whose customer quote matches the article's topic, and place it at a section break near the middle of the article.
+
 ### Tags
 
 Tag your content appropriately from the collection of tags that help us manage our blog content. They include:

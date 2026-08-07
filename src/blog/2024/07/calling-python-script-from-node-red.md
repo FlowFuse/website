@@ -118,6 +118,9 @@ Now, let's execute this Python script from Node-RED. To do that, we will use Nod
 
 Now, when you deploy this flow and click on the inject node to execute the file, you should see the text 'Positive number entered' and `{ code: 0 }`, which indicates your script has been successfully executed.
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ## Reading Temperature Sensor using Python script
 
 Having explored how to run a Python script within Node-RED with the basic practical example, let's move to a real-world scenario. We'll demonstrate how to read sensor data using Python, despite Node-RED providing numerous community-built nodes for this purpose. This approach provides deeper insights into integrating external scripts, showcasing the flexibility of Node-RED for custom solutions.

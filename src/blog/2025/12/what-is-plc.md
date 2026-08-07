@@ -63,9 +63,6 @@ What sets a PLC apart is not computing power. Your phone outperforms every PLC e
 
 The hardware reflects the same priority. Industrial-grade components tolerate heat and electrical interference. Power supplies absorb the voltage sags and spikes that come with starting large motors. I/O modules interface directly with field devices at industrial voltages and currents, with isolation so a fault in the field does not reach the processor. The programming languages are visual and built around relay diagrams, because the people who commission and maintain these systems are controls engineers and electricians, not software developers.
 
-::cta-image{src="/blog/2025/12/images/aperia-inline-cta-book-demo.png" alt="Book a demo with FlowFuse" cta="demo"}
-::
-
 That design has barely changed since 1968, and the reason is straightforward: it works. A PLC installed in a chemical plant runs for decades. A controller in an automotive body shop executes millions of cycles without a fault. Industrial automation never adopted "move fast and break things." The operating principle here is narrower: do not break.
 
 ## History of PLCs: from relay rooms to smart controllers
@@ -201,6 +198,9 @@ Selection comes down to I/O count, logic complexity, safety requirements, and ho
 One factor outweighs the technical comparison: most organizations standardize on a single vendor and stay there for decades, because retraining engineers and rewriting a program library is more expensive than the hardware. That decision is usually made once and lived with for a very long time.
 
 Worth separating, though, is the control layer from the data layer. Committing to Siemens or Rockwell for the next twenty years of machine control is a defensible engineering decision. Letting that choice also dictate how production data reaches your historian, your ERP, or your quality team is not, and it is the part teams tend to concede without noticing. Keeping [the integration layer vendor-neutral](/use-cases/it-ot-middleware/) means the controller standard you pick today does not decide what you can build on top of it in five years.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## PLC, HMI, and SCADA: how they work together
 

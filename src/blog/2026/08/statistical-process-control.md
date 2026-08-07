@@ -76,6 +76,9 @@ What works on one line will not scale to fifty unless the underlying logic can b
 
 Most plants run a mix of legacy PLCs, older MES installations, and newer edge hardware. Rather than requiring a full system replacement, SPC monitoring can extend a brownfield environment as-is. This staged approach avoids the all-or-nothing rollout risk described in [All-or-Nothing Manufacturing Software Is Killing Your Agility](/blog/2026/05/manufacturing-software-built-in-stages/).
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Six Sigma SPC And Modern SPC Software: Choosing The Right Tools
 
 Statistical process control does not exist in isolation. It works alongside broader quality methodologies and depends on the right software to make the data usable at scale. Choosing how SPC fits into your quality program and which tools support it are two separate decisions that shape how much value you get from the practice.
