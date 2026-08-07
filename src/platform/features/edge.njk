@@ -1,0 +1,170 @@
+---
+layout: page
+nohero: true
+meta:
+    title: "FlowFuse Edge"
+    description: "Run the plant floor and standardize it everywhere. FlowFuse Edge connects your PLCs, machines, and controllers and governs the data between them — built for how OT teams work."
+sitemapPriority: 0.7
+---
+<style>
+    .prod-page { position: relative; }
+    .prod-content { position: relative; z-index: 1; }
+    .prod-hero-bg {
+        position: absolute; top: 0; left: 0; right: 0; height: 620px;
+        z-index: 0; overflow: hidden; pointer-events: none;
+        background:
+            radial-gradient(48% 62% at 6% -6%, rgba(99,102,241,0.34), transparent 62%),
+            radial-gradient(44% 56% at 106% -4%, rgba(255,110,74,0.16), transparent 60%),
+            linear-gradient(180deg, #E7EAFF 0%, #EEF0FF 26%, #ffffff 74%);
+    }
+    .prod-hero-bg::after {
+        content: ""; position: absolute; inset: 0;
+        background-image:
+            linear-gradient(to right, rgba(79,70,229,0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(79,70,229,0.08) 1px, transparent 1px);
+        background-size: 42px 42px;
+        -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
+        mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
+    }
+    .prod-eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #4f46e5; }
+    .prod-hero-img { border-radius: .75rem; overflow: hidden; box-shadow: 0 12px 32px rgba(2,6,13,0.12); border: 1px solid #e5e7eb; }
+    .prod-hero-img img { display: block; width: 100%; height: auto; }
+    .prod-fit-card { border-radius: .75rem; padding: 1.5rem; }
+    .prod-fit-card ul { margin: 0; padding: 0; list-style: none; }
+    .prod-fit-card li { display: flex; gap: .6rem; align-items: flex-start; padding: .55rem 0; border-top: 1px solid rgba(0,0,0,0.06); }
+    .prod-fit-card li:first-child { border-top: 0; }
+    .prod-fit--yes { background: #f5f7ff; border: 1px solid #e0e4ff; }
+    .prod-fit--no { background: #fafafa; border: 1px solid #eee; }
+    .prod-fit__mark { flex: none; width: 1.25rem; height: 1.25rem; margin-top: .1rem; font-weight: 700; }
+    .prod-fit--yes .prod-fit__mark { color: #4f46e5; }
+    .prod-fit--no .prod-fit__mark { color: #9ca3af; }
+    .prod-quad-card { border-radius: .75rem; border: 1px solid #e5e7eb; background: #fff; padding: 1.5rem; }
+    .prod-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .prod-chip { font-size: .82rem; font-weight: 500; color: #374151; background: #f3f4f6; border-radius: 9999px; padding: .35rem .8rem; }
+    .prod-other { border-radius: .75rem; border: 1px solid #e5e7eb; background: #fff; padding: 1.5rem; transition: border-color .15s ease, box-shadow .15s ease; }
+    .prod-other:hover { border-color: #c7d2fe; box-shadow: 0 8px 24px rgba(2,6,13,0.08); text-decoration: none; }
+</style>
+<div class="nohero w-full prod-page">
+    <div class="prod-hero-bg" aria-hidden="true"></div>
+    <div class="w-full px-6 prod-content">
+        <!-- ============================ HERO ============================ -->
+        <div class="max-w-screen-lg mx-auto pt-12 pb-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="prod-eyebrow">For OT &amp; Digitalization Leadership</div>
+                    <h1 class="mt-3 leading-tight text-4xl sm:text-5xl font-bold">Run the plant floor. <span class="text-indigo-600">Standardize it everywhere.</span></h1>
+                    <p class="mt-6 text-lg text-gray-500">FlowFuse Edge connects your PLCs, machines, and controllers and governs the data between them. Designed for how OT teams work. If you're looking for an IT solution instead, check out <a href="/platform/features/hub/" class="text-indigo-600 hover:underline">FlowFuse Hub</a>.</p>
+                    <div class="mt-8 flex gap-4 items-start sm:items-center flex-col sm:flex-row">
+                        <a class="ff-btn ff-btn--primary" style="display:inline-flex;" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'edge-hero'})"><span class="text-base uppercase">Book a Demo</span></a>
+                        <a class="ff-btn ff-btn--primary-outlined" style="display:inline-flex;" href="/pricing/" onclick="capture('cta-pricing', {'position': 'edge-hero'})"><span class="text-base uppercase">View Pricing</span></a>
+                    </div>
+                </div>
+                <div class="prod-hero-img">
+                    {% image "./images/home/home-edge-connectivity.png", "FlowFuse Edge: industrial edge connectivity", [640] %}
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ CUSTOMER QUOTE ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <figure class="border-l-4 border-indigo-200 pl-6">
+                <blockquote class="text-xl md:text-2xl font-light text-gray-700 m-0">"The ability to edit once and deploy everywhere has added real efficiency to how we manage integrations. This is how enterprises scale automation."</blockquote>
+                <figcaption class="mt-4 text-sm text-gray-500"><span class="font-semibold text-gray-700">Sevan Petrosian</span> · Sr. Application Engineer, Arch Systems</figcaption>
+            </figure>
+        </div>
+
+        <!-- ============================ WHEN IT FITS ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="prod-fit-card prod-fit--yes">
+                    <h3 class="text-lg font-semibold m-0 mb-2">FlowFuse Edge is ideal for you if:</h3>
+                    <ul>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>Data originates at machines on the plant floor — PLCs, SCADA, sensors, and controllers.</span></li>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>You need OT-certified industrial protocol connectivity — OPC-UA, Modbus, EtherNet/IP, and more.</span></li>
+                        <li><span class="prod-fit__mark">&#10003;</span><span>OT or digitalization teams are standardizing production across multiple sites.</span></li>
+                    </ul>
+                </div>
+                <div class="prod-fit-card prod-fit--no">
+                    <h3 class="text-lg font-semibold m-0 mb-2">Don't pick FlowFuse Edge if:</h3>
+                    <ul>
+                        <li><span class="prod-fit__mark">&times;</span><span>Your data moves purely between software systems — ERPs, databases, cloud APIs — that's <a href="/platform/features/hub/" class="text-indigo-600 hover:underline">FlowFuse Hub</a>.</span></li>
+                        <li><span class="prod-fit__mark">&times;</span><span>Managing large fleets of distributed devices is your primary unit of scale — that's <a href="/platform/features/fleet/" class="text-indigo-600 hover:underline">FlowFuse Fleet</a>.</span></li>
+                        <li><span class="prod-fit__mark">&times;</span><span>You have no industrial hardware to connect — a pure IT integration project belongs on FlowFuse Hub.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ WHAT'S INCLUDED ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <h2 class="mb-3">What's Included in <span class="text-indigo-600">FlowFuse Edge</span></h2>
+            <p class="text-gray-500 max-w-3xl mb-8">Every FlowFuse Edge deployment includes the core FlowFuse platform capabilities — governance, hosting, DevOps, security — plus these OT-specific capabilities on top.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Connect the plant floor</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Certified OT Connections (OPC-UA, Modbus, EtherNet/IP, RTSP)</span>
+                        <span class="prod-chip">MQTT Broker</span>
+                        <span class="prod-chip">HTTP Request</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Develop &amp; deploy at the edge</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Edge Development (remote editor proxy)</span>
+                        <span class="prod-chip">Edge Instances</span>
+                        <span class="prod-chip">Snapshots &amp; Rollback</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Manage devices across sites</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">Device Fleet Updates</span>
+                        <span class="prod-chip">Device Group Management</span>
+                        <span class="prod-chip">Performance Monitoring &amp; Alerts</span>
+                    </div>
+                </div>
+                <div class="prod-quad-card">
+                    <h3 class="text-lg font-semibold m-0 text-indigo-600">Built to collaborate</h3>
+                    <div class="prod-chips">
+                        <span class="prod-chip">OT App Blueprints</span>
+                        <span class="prod-chip">Team Library</span>
+                        <span class="prod-chip">Everything in the core FlowFuse platform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================ CERTIFIED NODES (default: Edge) ============================ -->
+        {% set certifiedDefault = "ot" %}
+        {% include "components/certified-nodes.njk" %}
+
+        <!-- ============================ OTHER PRODUCTS ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-16">
+            <h2 class="mb-6">Not sure FlowFuse Edge is the right fit?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="/platform/features/hub/" class="prod-other block">
+                    <div class="prod-eyebrow">For IT Teams</div>
+                    <h3 class="text-2xl font-bold mt-2 mb-1">FlowFuse Hub</h3>
+                    <p class="text-gray-500 m-0">Integrate and orchestrate data across ERPs, databases, and cloud APIs — governed centrally. <span class="text-indigo-600">Learn more &rarr;</span></p>
+                </a>
+                <a href="/platform/features/fleet/" class="prod-other block">
+                    <div class="prod-eyebrow">For Device Fleets</div>
+                    <h3 class="text-2xl font-bold mt-2 mb-1">FlowFuse Fleet</h3>
+                    <p class="text-gray-500 m-0">Push flows, ship updates, and roll back remotely across thousands of distributed devices. <span class="text-indigo-600">Learn more &rarr;</span></p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================ FINAL CTA ============================ -->
+        <div class="max-w-screen-lg mx-auto pb-20">
+            <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center" style="background: radial-gradient(ellipse 50% 150% at 50% 100%, #6366f1, #211c64)">
+                <p class="text-white text-3xl sm:text-4xl font-medium m-0 max-w-2xl">Join hundreds of global organisations building, governing, and deploying operational applications.</p>
+                <div class="flex flex-col sm:flex-row gap-4 items-center">
+                    <a class="ff-btn ff-btn--highlight" href="/book-demo/" onclick="capture('cta-request-demo', {'position': 'edge-final'})">Request a Demo</a>
+                    <a class="ff-btn" style="background:#ffffff;color:#211c64;" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-sign-up', {'position': 'edge-final'})">Sign Up for Free</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
