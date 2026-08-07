@@ -3,48 +3,26 @@ name: Tests
 on: push
 
 jobs:
+  build_site:
+    name: Build and check the site
+    uses: ./.github/workflows/site-preview.yml
+    with:
+      website_repository: ${{ github.repository }}
+      website_ref: ${{ github.sha }}
+      run_unit_tests: true
+    secrets:
+      ci_app_id: ${{ secrets.GH_CI_READONLY_APP_ID }}
+      ci_app_key: ${{ secrets.GH_CI_READONLY_APP_KEY }}
+
+  # A reusable workflow reports its checks as "caller job / called job", which would rename
+  # the test_website context that the "protect main" ruleset requires. This gate keeps that
+  # name and fails whenever the build above did not succeed.
   test_website:
+    needs: build_site
+    if: always()
     runs-on: ubuntu-latest
     steps:
-      - name: Generate a token
-        id: generate_token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        with:
-          client-id: ${{ secrets.GH_CI_READONLY_APP_ID }}
-          private-key: ${{ secrets.GH_CI_READONLY_APP_KEY }}
-          owner: ${{ github.repository_owner }}
-          repositories: |
-            website
-            blueprint-library
-      - name: Check out website repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          path: 'website'
-          token: ${{ steps.generate_token.outputs.token }}
-      - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: 'FlowFuse/blueprint-library'
-          ref: main
-          path: 'blueprint-library'
-          token: ${{ steps.generate_token.outputs.token }}       
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 24
-          cache: 'npm'
-          cache-dependency-path: './website/package-lock.json'
-      - run: npm run blueprints
-        working-directory: 'website'
-      - name: Install Dependencies
-        run: npm install
-        working-directory: 'website'
-      - name: Run unit tests
-        run: npm test
-        working-directory: 'website'
-      - name: Build the forge
-        run: npm run build:nuxt:skip-images
-        working-directory: 'website'
-      - name: Check links
-        uses: untitaker/hyperlink@9375bc4063712ad490d5eb3d54df0b6aade15e54 # 0.3.2
-        with:
-          args: website/nuxt/dist/ --check-anchors --sources website/src
+      - name: Require the site build to have succeeded
+        run: |
+          echo "build_site result: ${{ needs.build_site.result }}"
+          [ "${{ needs.build_site.result }}" = "success" ]
