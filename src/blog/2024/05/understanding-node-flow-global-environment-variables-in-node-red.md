@@ -161,6 +161,9 @@ context.set('counter', counter);
 
 **Deleting node variables** must be done through the Context Data sidebar panel.
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ## Persistent Storage with FlowFuse
 
 By default, all context variables (node, flow, and global) are stored in memory. This means they're lost whenever you restart Node-RED or redeploy your flows. For production applications, this is often unacceptable.

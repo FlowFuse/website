@@ -149,6 +149,9 @@ Defects aren't always caused by the process itself; sometimes the measurement eq
 
 **Build it:** [Tracking Instrument Calibration with a Digital Dashboard](/blog/2026/07/calibration-management-dashboard/)
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Manufacturing Dashboard Design Best Practices
 
 Having the right dashboard type for the job is only half the equation. How it's designed determines whether anyone actually uses it. A manufacturing dashboard should make decisions easier, not add more information to review, and the best dashboards are designed around the people using them and the actions they need to take.

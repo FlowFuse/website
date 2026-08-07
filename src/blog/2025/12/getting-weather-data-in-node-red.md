@@ -161,6 +161,9 @@ _Function node configured with 5 outputs to split weather data_
 
 This **function** node splits the API response into separate outputs - one for temperature, one for humidity, and so on. Each output gets its own topic label so you can track what's what.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Building the Dashboard
 
 Now you'll see your weather data displayed on screen. This demonstrates how Node-RED connects data sources to visual components. We'll organize the dashboard into separate groups for better visual organization.

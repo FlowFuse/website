@@ -115,6 +115,9 @@ A Pareto diagram combines the best of both worlds, the immediate clarity of a ba
 
 This visualization does something remarkable: it makes the invisible visible. Problems that seemed equally important suddenly reveal their true impact. The path forward becomes clear.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Pareto Real World Example
 
 ![Pareto diagram showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart-image.png){data-zoomable}

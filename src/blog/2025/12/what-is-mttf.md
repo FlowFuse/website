@@ -117,6 +117,9 @@ Total failures = 15 belts
 
 The plant now knows these belts typically last about 23,360 hours (roughly 2.7 years in continuous operation). They can schedule preventive replacements at around 20,000 hours to avoid unexpected breakdowns during production runs.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Common Calculation Mistakes to Avoid
 
 One of the most common mistakes when calculating MTTF is confusing calendar time with actual operating hours. A component that runs only part of the day will accumulate operating hours much more slowly than calendar time passes, so it’s critical to measure true runtime rather than elapsed days or months. Another frequent error is including repaired equipment in MTTF calculations. If a component is fixed and returned to service, it belongs in MTBF calculations, not MTTF, which only applies to items that are permanently replaced after failure.

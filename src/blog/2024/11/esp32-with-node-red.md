@@ -154,6 +154,9 @@ Now, when you click either the "ON" or "OFF" button on the dashboard, it will se
 ![FlowFuse Dashboard Build to control the ESP32 LED](./images/dashboard2.png){data-zoomable}
 _FlowFuse Dashboard Build to control the ESP32 LED_
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ### Step 4: Programming ESP32 to receive commands from MQTT and Control LED
 
 Now, let's move on to the final step. Before proceeding, make sure your ESP32 is **connected to your laptop or computer via USB***. The USB connection is essential for uploading the code (sketch) to the ESP32, which will enable it to connect to the internet and communicate with the MQTT broker.

@@ -218,6 +218,9 @@ Click the inject button. You should see the variable value appear in the debug p
   title="Reading TwinCAT PLC Variables with FlowFuse">
 </lite-youtube>
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Subscribing to Variable Changes
 
 Polling on a fixed timer works but is inefficient. For live data the better approach is to subscribe to variable changes. TwinCAT sends a new value to FlowFuse only when the value actually changes, which reduces unnecessary network traffic and gives you lower latency updates.

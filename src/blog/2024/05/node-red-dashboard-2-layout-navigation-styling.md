@@ -158,6 +158,9 @@ For additional information on the `ui-theme` settings, please refer to the [ui-t
 
 !["Image showing process of adding new theme"](./images/node-red-dashboard-2-layout-navigation-styling-adding-new-theme.gif "Image showing process of adding new theme"){data-zoomable}
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Dashboard 2.0 Navigation
 
 ### Setting sidebar 

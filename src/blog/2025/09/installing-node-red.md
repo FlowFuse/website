@@ -84,6 +84,9 @@ FlowFuse is deployed in production environments across manufacturing, energy, an
 
 As the official enterprise solution developed by Node-RED's creator, FlowFuse represents the authoritative approach to production Node-RED deployments, backed by the team with the deepest expertise in the technology.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Setting Up FlowFuse
 
 Sign up for the [30-day trial](https://app.flowfuse.com/account/create) at FlowFuse, and you can get started immediately.

@@ -130,6 +130,9 @@ Now restart Node-RED as covered above, then try accessing your Node-RED instance
 
 Using these two features, we now have much better control over who can access the design interface for Node-RED.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Traffic to your Node-RED instance is unencrypted
 
 Hopefully, we all know the importance of encrypting your connections between devices to stop people intercepting your traffic. This isn't a huge concern when working on your home LAN but what if you want to access your Node-RED instance from a remote location? 
