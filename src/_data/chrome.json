@@ -12,7 +12,7 @@
                         "links": [
                             {
                                 "label": "Features",
-                                "href": "/platform/features/",
+                                "href": "/product/",
                                 "icon": "star"
                             },
                             {
@@ -421,7 +421,7 @@
                         "links": [
                             {
                                 "label": "Features",
-                                "href": "/platform/features/"
+                                "href": "/product/"
                             },
                             {
                                 "label": "Security Statement",
