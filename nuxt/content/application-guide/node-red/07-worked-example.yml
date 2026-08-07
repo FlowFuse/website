@@ -1,0 +1,90 @@
+guide: node-red
+slug: worked-example
+navOrder: 7
+title: Worked example
+blurb: The shape rules and patterns applied end to end.
+blocks:
+  - type: prose
+    kicker: Worked example — start here
+    body: >-
+      The shape rules and patterns applied end to end. One app reached three ways over shared services,
+      and the same requirement built with and without seams — so you can see what the seams buy you.
+  - type: tabs
+    panels:
+      - label: "Napkin: multi-surface app"
+        kicker: One app, three surfaces
+        kickerNote: An HTTP API, a dashboard and MQTT over one shared Tables pool; each surface ends at its own sink.
+        diagramTitle: Node-RED · Data-Driven App — three surfaces, one shared pool
+        diagram:
+          lanes:
+            - label: Surfaces · each beginning its own path
+              tone: neutral
+              nodes:
+                - title: MQTT in
+                  sub: devices
+                - title: http in
+                  sub: services
+                - title: dashboard
+                  sub: people · reuses HTTP
+            - link: link call
+            - label: Shared services
+              tone: it
+              nodes:
+                - title: Tables pool
+                  sub: one pool · link call
+                  tone: it
+            - link: results return
+            - label: Sinks · one per surface
+              tone: neutral
+              nodes:
+                - title: MQTT out
+                  sub: publish
+                - title: http res
+                  sub: respond
+          legend:
+            - label: call / return
+              tone: it
+          note: One app reached three ways over shared services.
+        lists:
+          - heading: The pieces
+            items:
+              - Surfaces — a dashboard for people, an HTTP API for services, an MQTT feed for devices and events. Each beginning is its own path, so a device path never runs through a browser path.
+              - Shared services — one Tables pool and one external service call, both invoked with link call. One pool serves all three surfaces without mixing them.
+              - Single sink — each surface converges on one sink through a labeled link, an http response or an MQTT publish. It only sends; the HTTP path responds exactly once, the MQTT path just publishes.
+              - People reuse HTTP — the dashboard is a ui-template that fetches the HTTP API, so it adds no new backend paths of its own.
+      - label: Good vs bad
+        kicker: Same requirement, with vs without seams
+        kickerNote: Draw the boundary on purpose and define the contract; spaghetti has nowhere to accumulate.
+        diagramTitle: One tab, everything — versus four named tabs
+        diagram:
+          lanes:
+            - label: One tab, everything
+              tone: ot
+              nodes:
+                - title: Node-RED
+                  sub: one flow, everything tangled
+                  tone: ot
+            - label: Four named tabs
+              tone: it
+              nodes:
+                - title: Config
+                  tone: it
+                - title: Ingestion
+                  tone: it
+                - title: Processing
+                  tone: it
+                - title: Presentation
+                  tone: it
+          note: The same requirement built with and without seams.
+        lists:
+          - heading: The pieces
+            items:
+              - The bad version — one tab, everything on it. Tags and thresholds frozen in Function nodes, a template that holds logic and pulls its own data, the full object threaded node to node. A second line means copy, paste, edit.
+              - The good version — four tabs with clear boundaries: Config, Ingestion, Processing, Presentation. Config lives in a persistent store the operator edits, the template only renders a view-model, and state lives in a namespaced context key.
+              - Why it wins — named seams you can read one at a time, runtime config with no redeploy, a clean UI boundary, and a Threshold Evaluator subflow, so a second line is configuration rather than copy-paste.
+  - type: sentence
+    heading: The architecture, in one sentence
+    body: >-
+      A Software: Data-Driven App backed by a Relational DB, reached three ways over one shared Tables
+      pool and one external service call, each surface ending at its own sink. Draw the boundary on
+      purpose and define the contract across it, and there is nowhere for spaghetti to accumulate.

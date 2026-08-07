@@ -38,6 +38,22 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
+// The Application Guide pages are a `data` collection (see content.config.ts), so their routes
+// are not discoverable from @nuxt/content page paths. Derive them from the file names, which
+// are NN-<slug>.yml and match each file's `slug` field.
+function collectApplicationGuideRoutes(dir: string): string[] {
+    const routes = ['/application-guide/']
+    for (const guide of readdirSync(dir)) {
+        const guideDir = join(dir, guide)
+        if (!statSync(guideDir).isDirectory()) continue
+        for (const file of readdirSync(guideDir)) {
+            if (!file.endsWith('.yml')) continue
+            routes.push(`/application-guide/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
+        }
+    }
+    return routes
+}
+
 // Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
 // pages (and their own pagination, 19 entries/page) can be sized correctly.
 function collectBlogFiles(dir: string, basePath: string): Array<{ route: string, tags: string[] }> {
@@ -95,7 +111,10 @@ export default defineNuxtConfig({
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
         ],
-        exclude: ['/_studio/**', '/api/**'],
+        // /application-guide is deliberately unlinked in its first iteration, so it should not be
+        // advertised to search engines either. Static-route discovery finds the section landing
+        // page on its own; this keeps it out until the section is linked and ready to index.
+        exclude: ['/_studio/**', '/api/**', '/application-guide', '/application-guide/**'],
     },
 
     robots: {
@@ -203,6 +222,7 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
+                    ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
                     ...changelogListingRoutes,
                     ...changelog.routes,
