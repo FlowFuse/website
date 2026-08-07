@@ -256,6 +256,7 @@ export default defineContentConfig({
                             abbr: z.string(),
                             description: z.string(),
                             both: z.boolean().optional(),
+                            url: z.string(),
                         })),
                     })),
                 })),

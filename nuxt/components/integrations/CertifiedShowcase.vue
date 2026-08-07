@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CertifiedCollection, IntegrationCatalogEntry } from '../../types/integrations'
 import { INTEGRATION_CATEGORIES } from '../../types/integrations'
-import { monogram, nodeProducts, tileClass } from '../../utils/integrations-ui'
+import { certifiedHref, monogram, nodeProducts, tileClass } from '../../utils/integrations-ui'
 
 const props = defineProps<{
     nodes: IntegrationCatalogEntry[]
@@ -28,6 +28,17 @@ const groups = computed(() => {
     }
     return [...map.values()]
 })
+
+// Same event the /node-red/ certified grid emits (src/node-red/index.njk), so
+// clicks on a connector aggregate across every place it is featured.
+// window.capture is injected by src/_includes/analytics/body.html and is absent
+// outside production, hence the guard.
+function captureNodeClick (node: IntegrationCatalogEntry) {
+    const capture = (window as any).capture
+    if (typeof capture === 'function') {
+        capture('certified-node-click', { node: node._id, collection: props.product, page: location.pathname })
+    }
+}
 
 const productOptions: CertifiedCollection[] = ['hub', 'edge']
 function onSelect (p: 'all' | CertifiedCollection) {
@@ -68,13 +79,20 @@ function onSelect (p: 'all' | CertifiedCollection) {
                             <span class="flex-1 h-px bg-gray-200" />
                         </div>
                         <div class="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                            <div v-for="node in group.nodes" :key="node._id" class="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-3 transition hover:border-gray-300 hover:shadow-sm">
+                            <component
+                                :is="certifiedHref(node) ? 'a' : 'div'"
+                                v-for="node in group.nodes"
+                                :key="node._id"
+                                :href="certifiedHref(node) || undefined"
+                                class="group flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-3 transition hover:border-gray-300 hover:shadow-sm hover:no-underline"
+                                @click="captureNodeClick(node)"
+                            >
                                 <span class="flex-none grid place-items-center w-8 h-8 rounded-lg text-white font-semibold text-[11px]" :class="tileClass(node)">{{ monogram(node.name || node._id) }}</span>
                                 <div class="min-w-0">
-                                    <div class="text-sm font-medium text-gray-900 leading-tight">{{ node.name }}</div>
+                                    <div class="text-sm font-medium text-gray-900 leading-tight group-hover:text-indigo-600">{{ node.name }}</div>
                                     <div class="text-xs text-gray-500 leading-snug mt-0.5">{{ node.description }}</div>
                                 </div>
-                            </div>
+                            </component>
                         </div>
                     </div>
                 </div>

@@ -24,7 +24,11 @@ function docPathFromCatalogueUrl (url: string | undefined): string | undefined {
     try {
         const parsed = new URL(url)
         if (parsed.hostname !== 'flowfuse.com' && parsed.hostname !== 'www.flowfuse.com') return undefined
-        return parsed.pathname + parsed.search + parsed.hash
+        // Publishers are inconsistent about the trailing slash (the redis entry
+        // omits it). The site serves directory-style paths, so normalise rather
+        // than send every click through a redirect.
+        const path = parsed.pathname.endsWith('/') ? parsed.pathname : `${parsed.pathname}/`
+        return path + parsed.search + parsed.hash
     } catch {
         return undefined
     }
