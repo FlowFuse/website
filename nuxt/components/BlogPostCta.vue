@@ -39,7 +39,13 @@ const currentCta = computed(() => CTA_VARIANTS[ctaType.value])
 
 // Kept as-is from Eleventy for data continuity - fires alongside, not
 // instead of, each Cta* component's own cta-* event.
-function onCtaClick () {
+// Delegated from the wrapping row, since the three Cta* components own their
+// own root element. That row is the full width of the card while the button
+// is ~130px, so without the closest('a') guard a click on the empty space
+// beside the button reports a CTA click that never happened.
+function onCtaClick (event: MouseEvent) {
+    const target = event.target as Element | null
+    if (!target?.closest('a')) return
     if (typeof (window as any).capture === 'function') {
         (window as any).capture('blog-cta', { reference: `Blog: ${props.title}`, cta_type: ctaType.value })
     }
