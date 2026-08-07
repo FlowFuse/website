@@ -55,9 +55,10 @@ function collectApplicationGuideRoutes(dir: string): string[] {
 }
 
 // Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
-// pages (and their own pagination, 19 entries/page) can be sized correctly.
-function collectBlogFiles(dir: string, basePath: string): Array<{ route: string, tags: string[] }> {
-    const results: Array<{ route: string, tags: string[] }> = []
+// pages (and their own pagination, 19 entries/page) can be sized correctly, and its
+// `authors` so the /blog/author/{slug}/ pages can be enumerated.
+function collectBlogFiles(dir: string, basePath: string): Array<{ route: string, tags: string[], authors: string[] }> {
+    const results: Array<{ route: string, tags: string[], authors: string[] }> = []
     for (const file of readdirSync(dir)) {
         const fullPath = join(dir, file)
         if (statSync(fullPath).isDirectory()) {
@@ -68,16 +69,38 @@ function collectBlogFiles(dir: string, basePath: string): Array<{ route: string,
             const frontmatter = match ? (parseYaml(match[1]) || {}) : {}
             const date = frontmatter.date ? new Date(frontmatter.date) : new Date(0)
             if (date.getTime() > Date.now() && process.env.CONTEXT === 'production') continue
-            results.push({ route: `${basePath}/${basename(file, '.md')}/`, tags: frontmatter.tags || [] })
+            results.push({ route: `${basePath}/${basename(file, '.md')}/`, tags: frontmatter.tags || [], authors: frontmatter.authors || [] })
         }
     }
     return results
+}
+
+// `authors` values that mean "no individual author" - they have no data file by design.
+const ORG_AUTHOR_SLUGS = new Set(['-', 'FlowFuse', 'flowfuse', 'flowfuseteam'])
+
+// Author pages are rendered by pages/blog/author/[slug].vue from src/_data/{team,guests}
+// rather than from an @nuxt/content collection, so neither prerendering nor the sitemap
+// can discover them - enumerate the authors who both have a data file and a published post.
+function collectAuthorRoutes(blogFiles: Array<{ authors: string[] }>, dataDirs: string[]): string[] {
+    const known = new Set(dataDirs.flatMap(dir => readdirSync(dir).filter(f => f.endsWith('.json')).map(f => basename(f, '.json'))))
+    const withPosts = new Set(blogFiles.flatMap(f => f.authors))
+
+    // Anything left is either a former team member or a typo - surface it in the build log.
+    const missing = [...withPosts].filter(slug => !known.has(slug) && !ORG_AUTHOR_SLUGS.has(slug)).sort()
+    if (missing.length) {
+        console.warn(`[blog] ${missing.length} author slug(s) in blog frontmatter have no data file in src/_data/{team,guests}; these posts fall back to the "FlowFuse" byline and get no author page: ${missing.join(', ')}`)
+    }
+
+    return [...withPosts].filter(slug => known.has(slug)).sort().map(slug => `/blog/author/${slug}/`)
 }
 
 function paginatedListingRoutes(basePath: string, entryCount: number): string[] {
     const pageCount = Math.max(1, Math.ceil(entryCount / 19))
     return [`${basePath}/`, ...Array.from({ length: pageCount - 1 }, (_, i) => `${basePath}/${i + 2}/`)]
 }
+
+const blogFiles = collectBlogFiles(join(__dirname, '../src/blog'), '/blog')
+const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, '../src/_data/team'), join(__dirname, '../src/_data/guests')])
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -111,10 +134,8 @@ export default defineNuxtConfig({
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
         ],
-        // /application-guide is deliberately unlinked in its first iteration, so it should not be
-        // advertised to search engines either. Static-route discovery finds the section landing
-        // page on its own; this keeps it out until the section is linked and ready to index.
-        exclude: ['/_studio/**', '/api/**', '/application-guide', '/application-guide/**'],
+        urls: blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+        exclude: ['/_studio/**', '/api/**'],
     },
 
     robots: {
@@ -204,7 +225,6 @@ export default defineNuxtConfig({
                 const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
                 const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
 
-                const blogFiles = collectBlogFiles(join(__dirname, '../src/blog'), '/blog')
                 const blogListingRoutes = paginatedListingRoutes('/blog', blogFiles.length)
                 const blogTagRoutes = BLOG_TAGS.flatMap(tag =>
                     paginatedListingRoutes(`/blog/${tag}`, blogFiles.filter(f => f.tags.includes(tag)).length)
@@ -230,6 +250,7 @@ export default defineNuxtConfig({
                     ...blogListingRoutes,
                     ...blogTagRoutes,
                     ...blogFiles.map(f => f.route),
+                    ...blogAuthorRoutes,
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
                 ]
             })(),
