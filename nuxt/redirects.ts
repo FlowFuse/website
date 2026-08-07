@@ -2,9 +2,13 @@
 // (which rendered a Netlify `_redirects` file). Nuxt is now the front door for every
 // route, so these are handled as native Nitro route rules instead of relying on
 // Netlify's `_redirects` convention.
+//
+// TODO: longer term, consider moving these to netlify.toml so they run as edge-level
+// redirects instead of inside the Nuxt/Nitro server — see the flowforge.com/flowfuze.com
+// domain redirects already there for the pattern.
 import type { NitroRouteRules } from 'nitropack'
 
-export const legacyRedirects: Record<string, NitroRouteRules> = {
+export const redirects: Record<string, NitroRouteRules> = {
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
@@ -53,7 +57,7 @@ export const legacyRedirects: Record<string, NitroRouteRules> = {
     '/product/dashboard/': { redirect: { to: '/platform/dashboard/', statusCode: 301 } },
     '/team/': { redirect: { to: '/about/', statusCode: 301 } },
     '/team': { redirect: { to: '/about/', statusCode: 301 } },
-    '/docs/user/expert/': { redirect: { to: '/docs/user/expert/', statusCode: 301 } },
+    '/docs/user/assistant/': { redirect: { to: '/docs/user/expert/', statusCode: 301 } },
     '/handbook/development/': { redirect: { to: '/handbook/engineering/', statusCode: 301 } },
     '/handbook/development/tools/': { redirect: { to: '/handbook/engineering/tools/', statusCode: 301 } },
     '/handbook/development/support/': { redirect: { to: '/handbook/engineering/support/', statusCode: 301 } },

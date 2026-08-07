@@ -4,7 +4,7 @@ import { parse as parseYaml } from 'yaml'
 import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
 import { BLOG_TAGS } from './composables/useBlogList'
-import { legacyRedirects } from './legacy-redirects'
+import { redirects } from './redirects'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -200,7 +200,7 @@ export default defineNuxtConfig({
     routeRules: {
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
-        ...legacyRedirects,
+        ...redirects,
     },
 
     nitro: {
