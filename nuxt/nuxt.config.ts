@@ -212,6 +212,10 @@ export default defineNuxtConfig({
             // Nuxt-native dynamic routes (integrations) that
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
+            // docs/handbook/changelog/blog/ebooks/whitepapers with lastmod/images -
+            // see content-urls.get.ts for why this isn't done via a `sitemap` schema
+            // field on the collections instead.
+            '/api/__sitemap__/content-urls',
         ],
         urls: blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
         exclude: ['/_studio/**', '/api/**'],
