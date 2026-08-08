@@ -1,0 +1,6804 @@
+[
+    {
+        "id": "4905164f6a425bac",
+        "type": "tab",
+        "label": "User Interface",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c3af105aa906e737",
+        "type": "tab",
+        "label": "Configuration",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8cba7b55203e6a12",
+        "type": "tab",
+        "label": "SQL",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "78bbed87dae57137",
+        "type": "tab",
+        "label": "APIs",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "534b53b1f7cf7463",
+        "type": "tab",
+        "label": "CSS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d5dd9bfc599374d4",
+        "type": "tab",
+        "label": "Populate with demo support areas and lines",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8d71e67854502916",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Production Lines View ",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6af400ee2fa53066",
+            "08b1402a264e4587",
+            "eca4797e2a60d7b0",
+            "aa05232f163a9a99",
+            "50838593e751005e",
+            "23f98fde5be1a446",
+            "867e96d227fa62a8",
+            "bc211196337349c5",
+            "9234594ea6342f5e",
+            "02acdc0de78af5bc",
+            "ecbeee830f4f4bec"
+        ],
+        "x": 28,
+        "y": 293,
+        "w": 1464,
+        "h": 1854
+    },
+    {
+        "id": "71f819b4bd1ad099",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Main Admin Page",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f6a8f30146a99a20",
+            "9fa130396aaf0d6d",
+            "9ffad85c724392ec",
+            "3b77ef92cb332f1c",
+            "300d5ac0c043d4bb",
+            "c52fb6a01d9ae843",
+            "4d4d0643380b1f7f",
+            "f560d89917a0971d",
+            "efc5cd87ab60631c",
+            "f75ad477d2b26604"
+        ],
+        "x": 28,
+        "y": 3473,
+        "w": 1024,
+        "h": 1454
+    },
+    {
+        "id": "a678e038ce8b3438",
+        "type": "group",
+        "z": "c3af105aa906e737",
+        "name": "Configurations ",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "fd5f315f792d3cf7",
+            "4e9278bef01b88b2",
+            "4d83fc206bc232e2"
+        ],
+        "x": 28,
+        "y": 53,
+        "w": 664,
+        "h": 434
+    },
+    {
+        "id": "8ec0eba66b662003",
+        "type": "group",
+        "z": "8cba7b55203e6a12",
+        "name": "SQL",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1102ce4f58a12d64",
+            "df60d434a52bd6a2"
+        ],
+        "x": 28,
+        "y": 53,
+        "w": 664,
+        "h": 234
+    },
+    {
+        "id": "9d9e16af1ba77ad4",
+        "type": "group",
+        "z": "78bbed87dae57137",
+        "name": "Import historical data from the API",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2b077ccbdc938107",
+            "5284517bdac2815b",
+            "39ae15e14a4f9262",
+            "274d94b4ab0535c3"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 732,
+        "h": 122
+    },
+    {
+        "id": "6c56d46f69e36edf",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Show who is logged in",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "81d751a698d397b4"
+        ],
+        "x": 794,
+        "y": 159,
+        "w": 372,
+        "h": 82
+    },
+    {
+        "id": "08f3a2e4591326eb",
+        "type": "group",
+        "z": "534b53b1f7cf7463",
+        "name": "Styling of the dashboard",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1a78c20dc03bfe38"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 161,
+        "h": 82
+    },
+    {
+        "id": "6471824e24f18939",
+        "type": "group",
+        "z": "d5dd9bfc599374d4",
+        "name": "Add demo production line and department",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "34c733b480e41a13",
+            "4e46ae25d198fd1b",
+            "882e29d2dcc9326c",
+            "399bd159f46c7427",
+            "5001c1cdf6661f88"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 992,
+        "h": 122
+    },
+    {
+        "id": "541dd3a074de735c",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Documentation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "53716ffe8c008a9a",
+            "7c5e59811d8c51f8"
+        ],
+        "x": 34,
+        "y": 59,
+        "w": 306,
+        "h": 82
+    },
+    {
+        "id": "1b1a4ab435abbe6b",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Departments View",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "06ab885919efc469",
+            "ab34846f89bfb2f5",
+            "150c55c243683e2c",
+            "17fbdbd036945304",
+            "53cb93474c72d6cc",
+            "2d511284718aaf1f",
+            "2b8165d1c554fff8",
+            "d166c6ec7a8a28f3",
+            "2b61390f35d4cb44"
+        ],
+        "x": 28,
+        "y": 2173,
+        "w": 1464,
+        "h": 1274
+    },
+    {
+        "id": "ea41ca28c3ac383c",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "name": "Menu For Non-Admin Users",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3f42b2e1f767e2d3",
+            "d89b181c79b08b97",
+            "8d1b9ecbd0a81856",
+            "5bd7236ae444802c",
+            "956bbc41ce9270f2"
+        ],
+        "x": 34,
+        "y": 159,
+        "w": 752,
+        "h": 122
+    },
+    {
+        "id": "0b82ccfa102a2952",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "7723bf4284de76d9"
+        ],
+        "x": 1174,
+        "y": 159,
+        "w": 312,
+        "h": 82
+    },
+    {
+        "id": "f6a8f30146a99a20",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Control Admin Access",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "851be5844570bb3f",
+            "4415ed2e92b78e33",
+            "6e9e1f9c2e4c69f1",
+            "faf6959a52ca7ee4",
+            "7bbf9d08c4f739ac",
+            "cd07d94e95e563c5",
+            "960fe70d0a3e609e",
+            "eac865417ca6742b",
+            "0384c28bcc16c822",
+            "593b05b11080f543",
+            "39494284fe0033a1"
+        ],
+        "x": 54,
+        "y": 4659,
+        "w": 972,
+        "h": 242
+    },
+    {
+        "id": "9fa130396aaf0d6d",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Form to add new lines and departments",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "164c96c714465739",
+            "1d4c8ea12fe2bd84",
+            "1ebd65f9760d07de"
+        ],
+        "x": 54,
+        "y": 3639,
+        "w": 762,
+        "h": 82
+    },
+    {
+        "id": "9ffad85c724392ec",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Menu",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f655b9fae60a84ac",
+            "f07358df462f5da0",
+            "95be88fc3f99deab",
+            "83a489f7096c95c8"
+        ],
+        "x": 54,
+        "y": 3499,
+        "w": 772,
+        "h": 122
+    },
+    {
+        "id": "6af400ee2fa53066",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "update request status and then update ui",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0cb80de80bc87a4e",
+            "663625b4f78d1e07",
+            "c287cb7b0a4edaf8",
+            "e0ee3dee811104ae",
+            "626ab35c897c3795",
+            "42c9fd5fa5b07657"
+        ],
+        "x": 54,
+        "y": 1759,
+        "w": 1052,
+        "h": 122
+    },
+    {
+        "id": "08b1402a264e4587",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Create a new support request",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c4ee5a28c33fb826",
+            "e7b614800ccc9e7c",
+            "c72f85794babeed7",
+            "1e5cdfe8859428fb",
+            "ff7e45f9f58e41ae",
+            "d4f7a69e90172c7d",
+            "56d7bbef8267a019",
+            "f0d06117d095bcd2",
+            "a1d7ee1b8fcea94d",
+            "0da9e11834187f55",
+            "374f377806c7cc60",
+            "b8e5f9689a71c512",
+            "1e4126b2aad32680",
+            "cf9cae522b66e403",
+            "facd190a588c977c",
+            "c33bef73fdaddabc",
+            "9fb78e774c3fe5c3",
+            "7a978fe8a1969d29",
+            "aa5020dabb03798e",
+            "b45eacb7a8ef8a6d",
+            "077b09e59d5e89b3",
+            "65547a8808f9a70e",
+            "fb86e59e84a16c73"
+        ],
+        "x": 54,
+        "y": 1399,
+        "w": 1412,
+        "h": 342
+    },
+    {
+        "id": "3b77ef92cb332f1c",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "If no rows were returned clear the table and show a message",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3fe1a79e7dbc36b1",
+            "d4d759e2952bc006",
+            "c192a5dcb06e8aea",
+            "a2153611282480a4",
+            "c6a7b9c74fc91edf",
+            "432570d5412cc5ce",
+            "35ef2993e39644f6",
+            "e70b196b0dae468f"
+        ],
+        "x": 54,
+        "y": 3839,
+        "w": 972,
+        "h": 202
+    },
+    {
+        "id": "300d5ac0c043d4bb",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Group all rows back into a single array of objects",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "48c79ea0b20a2e1e",
+            "9f039ccfaceba6f9",
+            "0a52d10871851d65"
+        ],
+        "x": 54,
+        "y": 4459,
+        "w": 402,
+        "h": 82
+    },
+    {
+        "id": "c52fb6a01d9ae843",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Populate the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4bcd04b2b89da547",
+            "230b01e63c940cc7"
+        ],
+        "x": 54,
+        "y": 4559,
+        "w": 402,
+        "h": 82
+    },
+    {
+        "id": "4d4d0643380b1f7f",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Split each row into its own payload",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4d95e9a2b5aee657",
+            "4e72558f8b7183e3",
+            "e6da8adc3b3f9d3c"
+        ],
+        "x": 54,
+        "y": 4059,
+        "w": 402,
+        "h": 82
+    },
+    {
+        "id": "f560d89917a0971d",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Add buttons",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "519ead238c33cc41",
+            "aedab797cb57c44d",
+            "53e5366451aa30fd",
+            "b868e584cd0ce560",
+            "c582ed42ed298ba3",
+            "2bc93fc7f2b504ec"
+        ],
+        "x": 54,
+        "y": 4339,
+        "w": 972,
+        "h": 102
+    },
+    {
+        "id": "efc5cd87ab60631c",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Format the dates",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "537f8b41d33eee27",
+            "4e71e51255243ae8",
+            "cf85af98cadb6f5b",
+            "df416de276de5508",
+            "ee609f1dc8163aa0",
+            "abc01444a378070c",
+            "d323b2b252f21430",
+            "06ef9466afbd4ceb"
+        ],
+        "x": 54,
+        "y": 4159,
+        "w": 972,
+        "h": 162
+    },
+    {
+        "id": "f75ad477d2b26604",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "71f819b4bd1ad099",
+        "name": "Select the data",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a4c4ddd524389717",
+            "4d853d3f2e918ad0",
+            "76d3c61ef4cef2ac"
+        ],
+        "x": 54,
+        "y": 3739,
+        "w": 762,
+        "h": 82
+    },
+    {
+        "id": "eca4797e2a60d7b0",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Select the data according to selected line or department",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "aac4ffda6235d691",
+            "d88140a2aeb23a80",
+            "9687f8ea312f876c",
+            "dae0bfe666b0acb3",
+            "f9f68e36958f5339"
+        ],
+        "x": 54,
+        "y": 319,
+        "w": 912,
+        "h": 122
+    },
+    {
+        "id": "aa05232f163a9a99",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "If no rows were returned clear the table and show a message",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f970904cba0b0e09",
+            "d5940ce909ab72ec",
+            "28b2afbcac2473d4",
+            "8dba094013194f6b",
+            "25056389edc0db64",
+            "861d2d0ace349482",
+            "0952cfae720cad6b",
+            "8f85f64a34fd4306"
+        ],
+        "x": 54,
+        "y": 459,
+        "w": 912,
+        "h": 202
+    },
+    {
+        "id": "50838593e751005e",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Add 'Acknowledged' and 'Resolved' buttons to each row in the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "1bb1ff2eb954ea6f",
+            "b8568ea9f6e7b4a7",
+            "a373b78e72f79b0a",
+            "474932dd77c9f4a6",
+            "14936e36d80db429",
+            "e0aedafe60dd193d"
+        ],
+        "x": 54,
+        "y": 939,
+        "w": 992,
+        "h": 102
+    },
+    {
+        "id": "23f98fde5be1a446",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Format the acknowledged and resolved timestamps.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7cf6a140e36b1711",
+            "685498ecbec6733a",
+            "b02925fd8ec6b297",
+            "6f2e810aa0c22fed",
+            "1fa6241c9d58d4db",
+            "89827ff66b4029e8",
+            "0bee3fadc51fe3dd",
+            "c0c2b4b27e9ffb47",
+            "2e0c529a0db718cc"
+        ],
+        "x": 54,
+        "y": 779,
+        "w": 1412,
+        "h": 142
+    },
+    {
+        "id": "867e96d227fa62a8",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Group all rows back into a single array of objects",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c57857d045f882ca",
+            "6afdfebf85230db5",
+            "98aeecfea0b8913c"
+        ],
+        "x": 54,
+        "y": 1059,
+        "w": 382,
+        "h": 82
+    },
+    {
+        "id": "bc211196337349c5",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Populate the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7f5142e8666d47e4",
+            "58c1f4ba82c5635b"
+        ],
+        "x": 54,
+        "y": 1159,
+        "w": 382,
+        "h": 82
+    },
+    {
+        "id": "9234594ea6342f5e",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Split each database row into its own payload.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6f1a6916eac3585e",
+            "a044a859d5cb1467",
+            "64df57ef4d812581"
+        ],
+        "x": 54,
+        "y": 679,
+        "w": 382,
+        "h": 82
+    },
+    {
+        "id": "02acdc0de78af5bc",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Trigger alert if the request is older than defined duration",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2e1c370293cd5e63",
+            "b7bae63290c3d5de",
+            "6b96bc8c00eee2be",
+            "300aad5c09231b33",
+            "b08649b01048223f",
+            "88b10d5c64fa8b99",
+            "fce29f752b21694b"
+        ],
+        "x": 54,
+        "y": 1259,
+        "w": 1412,
+        "h": 122
+    },
+    {
+        "id": "fd5f315f792d3cf7",
+        "type": "group",
+        "z": "c3af105aa906e737",
+        "g": "a678e038ce8b3438",
+        "name": "Admin Registration",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f0cf1cdd9ec95acf",
+            "c49901682b8bc5d4",
+            "d0ac4081bb469fac"
+        ],
+        "x": 54,
+        "y": 319,
+        "w": 612,
+        "h": 142
+    },
+    {
+        "id": "4e9278bef01b88b2",
+        "type": "group",
+        "z": "c3af105aa906e737",
+        "g": "a678e038ce8b3438",
+        "name": " Define the threshold duration for considering a request as old (in minutes)",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a545ed28c44bc51b",
+            "46602a48a2bf48c8"
+        ],
+        "x": 54,
+        "y": 79,
+        "w": 612,
+        "h": 82
+    },
+    {
+        "id": "4d83fc206bc232e2",
+        "type": "group",
+        "z": "c3af105aa906e737",
+        "g": "a678e038ce8b3438",
+        "name": "Define the duration threshold (in minutes) to trigger the alert",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "567f452c9cb1357e",
+            "be0d588d8ea0b262",
+            "28ce5eb06d3ff417",
+            "4d5378aecbd49411"
+        ],
+        "x": 54,
+        "y": 179,
+        "w": 612,
+        "h": 122
+    },
+    {
+        "id": "1102ce4f58a12d64",
+        "type": "group",
+        "z": "8cba7b55203e6a12",
+        "g": "8ec0eba66b662003",
+        "name": "Create the table on deployment if it doesn't already exist.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "08eb234f1e8eac5e",
+            "e4ca3e9886a283cf",
+            "a95b2c2838afd7e0",
+            "8d50e57636b774a9"
+        ],
+        "x": 54,
+        "y": 79,
+        "w": 612,
+        "h": 82
+    },
+    {
+        "id": "df60d434a52bd6a2",
+        "type": "group",
+        "z": "8cba7b55203e6a12",
+        "g": "8ec0eba66b662003",
+        "name": "Delete records older than 30 days",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "23fb0462f15023af",
+            "7903e648e5a67c40",
+            "5775dcb91c0feacb",
+            "74f10f7f705d46bf"
+        ],
+        "x": 54,
+        "y": 179,
+        "w": 612,
+        "h": 82
+    },
+    {
+        "id": "06ab885919efc469",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "If no rows were returned clear the table and show a message",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0ccbc0ee500c0d19",
+            "6bd86f63f48119d4",
+            "e9b966dcb53f913a",
+            "6e16e3a09330f83d",
+            "50c01e4610873dc0",
+            "b1ab1a87f74cc163",
+            "450c8f3f22860964",
+            "d12cf8d376bcb3d0"
+        ],
+        "x": 54,
+        "y": 2339,
+        "w": 1052,
+        "h": 202
+    },
+    {
+        "id": "ab34846f89bfb2f5",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Add 'Acknowledged' and 'Resolved' buttons to each row in the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "9e20c3542b8c70b7",
+            "a5dc0c8a0df8e2be",
+            "defce3e65c034177",
+            "dca52d704a69b790",
+            "c1b1267ebf4c3b98",
+            "250383733f0af898"
+        ],
+        "x": 54,
+        "y": 2799,
+        "w": 1052,
+        "h": 102
+    },
+    {
+        "id": "150c55c243683e2c",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Format the acknowledged and resolved timestamps.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "9e59d80a85f61984",
+            "f2b348e117ffa356",
+            "3c42b906fe7c161d",
+            "f4584935efc8a5b3",
+            "23399ebd38603b5d",
+            "241ef876d4e8978f",
+            "92875f4ffac5f57f",
+            "5d2685f54cd8776a",
+            "2b55ac4c139437e0"
+        ],
+        "x": 54,
+        "y": 2659,
+        "w": 1412,
+        "h": 122
+    },
+    {
+        "id": "17fbdbd036945304",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Group all rows back into a single array of objects",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6a951b927cb42151",
+            "fad75fc8887881a9",
+            "8935459dcec705fb"
+        ],
+        "x": 54,
+        "y": 2919,
+        "w": 382,
+        "h": 82
+    },
+    {
+        "id": "53cb93474c72d6cc",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Populate the table",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ff5db8ff0a752cbf",
+            "b86118e38da3d072"
+        ],
+        "x": 54,
+        "y": 3019,
+        "w": 382,
+        "h": 82
+    },
+    {
+        "id": "2d511284718aaf1f",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Split each database row into its own payload.",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "4e73c8f9b2abf910",
+            "ee0c3f4418a1ced0",
+            "92c4b2f827bf06af"
+        ],
+        "x": 54,
+        "y": 2559,
+        "w": 382,
+        "h": 82
+    },
+    {
+        "id": "2b8165d1c554fff8",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Trigger alert if the request is older than defined duration",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "044618c9ba9d1168",
+            "490457bd55e4c821",
+            "2b5b36b01343d1a0",
+            "a068f64912d20157",
+            "696e1163435040d0",
+            "547cb541d4f4f800",
+            "6d3f57462d971831"
+        ],
+        "x": 54,
+        "y": 3119,
+        "w": 1412,
+        "h": 122
+    },
+    {
+        "id": "d166c6ec7a8a28f3",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Access Dashboard via URL (Department and Production Line Wise)",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "86745e22793fb755",
+            "d76732a09652cd0e",
+            "7d601620c0314a4a",
+            "77a5773e56ac5253",
+            "d182b28937aa069d",
+            "29f55095b28aaa6c",
+            "b11abf1d68ec28bb",
+            "79ccd6d7df94848c",
+            "f2b234b31a1d9a02",
+            "69f553e41a467aa4",
+            "f8b5c405cf677059",
+            "54fb3ea87ed58f3b"
+        ],
+        "x": 54,
+        "y": 3259,
+        "w": 1412,
+        "h": 162
+    },
+    {
+        "id": "ecbeee830f4f4bec",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "8d71e67854502916",
+        "name": "Access Dashboard via URL (Department and Production Line Wise)",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e4aa5567de9ea9ea",
+            "409a4039ef709203",
+            "89d381e533ca9195",
+            "40ea3cd42362d775",
+            "3beb4a5ea9566a89",
+            "82fc57f5813f165d",
+            "886879b4c3f012ce",
+            "9ca01fbba462d682",
+            "6bdce75e7b94e709",
+            "a451352075d6084f",
+            "4d0cf36ff627c1f2",
+            "a7f6f544817d2d2d",
+            "7fa521b962030645"
+        ],
+        "x": 54,
+        "y": 1899,
+        "w": 1412,
+        "h": 222
+    },
+    {
+        "id": "2b61390f35d4cb44",
+        "type": "group",
+        "z": "4905164f6a425bac",
+        "g": "1b1a4ab435abbe6b",
+        "name": "Select the data according to selected line or department",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "183c88e7256e7b94",
+            "166484adad398255",
+            "496a35f060d24bd6",
+            "1eb68347872983ae",
+            "99cf65bd25d65e06"
+        ],
+        "x": 54,
+        "y": 2199,
+        "w": 1052,
+        "h": 122
+    },
+    {
+        "id": "31abef4ecbfd6327",
+        "type": "sqlitedb",
+        "db": "sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "c385dfc590b1308d",
+        "type": "ui-base",
+        "name": "Support Request Blueprint",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-button",
+            "ui-button-group",
+            "ui-control",
+            "ui-text-input",
+            "ui-dropdown",
+            "ui-template",
+            "ui-markdown",
+            "ui-audio",
+            "ui-form",
+            "ui-number-input",
+            "ui-file-input",
+            "ui-radio-group",
+            "ui-slider",
+            "ui-switch",
+            "ui-text",
+            "ui-table",
+            "ui-chart"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "none",
+        "navigationStyle": "temporary",
+        "titleBarStyle": "default",
+        "showReconnectNotification": false,
+        "notificationDisplayTime": 5,
+        "showDisconnectNotification": false
+    },
+    {
+        "id": "6be033291dd76b17",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#202c34",
+            "primary": "#202c34",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#ffffff"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px",
+            "density": "default"
+        }
+    },
+    {
+        "id": "0ad90fb72a32919c",
+        "type": "ui-page",
+        "name": "All Departments",
+        "ui": "c385dfc590b1308d",
+        "path": "/departments-menu",
+        "icon": "home",
+        "layout": "notebook",
+        "theme": "6be033291dd76b17",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 6,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "6684b464e58be55b",
+        "type": "ui-page",
+        "name": "All Lines",
+        "ui": "c385dfc590b1308d",
+        "path": "/lines-menu",
+        "icon": "home",
+        "layout": "notebook",
+        "theme": "6be033291dd76b17",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 5,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "ca4c9af8c09dfd19",
+        "type": "ui-page",
+        "name": "Departments",
+        "ui": "c385dfc590b1308d",
+        "path": "/departments",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6be033291dd76b17",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": false,
+        "disabled": false
+    },
+    {
+        "id": "d0def7a91d3b7aa1",
+        "type": "ui-page",
+        "name": "Incorrect Link",
+        "ui": "c385dfc590b1308d",
+        "path": "/404",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "6be033291dd76b17",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": false,
+        "disabled": false
+    },
+    {
+        "id": "8722daf1272747fc",
+        "type": "ui-page",
+        "name": "Admin",
+        "ui": "c385dfc590b1308d",
+        "path": "/admin",
+        "icon": "security",
+        "layout": "grid",
+        "theme": "6be033291dd76b17",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "a3eff10a8bb2d0b3",
+        "type": "ui-page",
+        "name": "Lines",
+        "ui": "c385dfc590b1308d",
+        "path": "/lines",
+        "icon": "",
+        "layout": "grid",
+        "theme": "6be033291dd76b17",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": false,
+        "disabled": false
+    },
+    {
+        "id": "31a61a6d5c397cf4",
+        "type": "ui-group",
+        "name": " lines",
+        "page": "a3eff10a8bb2d0b3",
+        "width": "13",
+        "height": "4",
+        "order": 1,
+        "showTitle": false,
+        "className": "job",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "4e4fb4a8fa51768f",
+        "type": "ui-group",
+        "name": "header",
+        "page": "8722daf1272747fc",
+        "width": "8",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b4924dbd6cb1a91b",
+        "type": "ui-group",
+        "name": "Table",
+        "page": "8722daf1272747fc",
+        "width": "12",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ebdaf2a0563f2ae3",
+        "type": "ui-group",
+        "name": "Create New Line and Department",
+        "page": "8722daf1272747fc",
+        "width": "4",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "165815e4f97d2ad3",
+        "type": "ui-group",
+        "name": "Incorrect Link",
+        "page": "d0def7a91d3b7aa1",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7bce80f8909be255",
+        "type": "ui-group",
+        "name": "department",
+        "page": "ca4c9af8c09dfd19",
+        "width": "13",
+        "height": "4",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "46a90ed3babdf7cb",
+        "type": "ui-group",
+        "name": "Menu",
+        "page": "6684b464e58be55b",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "4b9086d2cc85dfba",
+        "type": "ui-group",
+        "name": "Menu",
+        "page": "0ad90fb72a32919c",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "d88140a2aeb23a80",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "f970904cba0b0e09"
+        ],
+        "x": 925,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "6f1a6916eac3585e",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "9234594ea6342f5e",
+        "name": "link in 1",
+        "links": [
+            "d5940ce909ab72ec"
+        ],
+        "x": 95,
+        "y": 720,
+        "wires": [
+            [
+                "a044a859d5cb1467"
+            ]
+        ]
+    },
+    {
+        "id": "a044a859d5cb1467",
+        "type": "split",
+        "z": "4905164f6a425bac",
+        "g": "9234594ea6342f5e",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 190,
+        "y": 720,
+        "wires": [
+            [
+                "64df57ef4d812581"
+            ]
+        ]
+    },
+    {
+        "id": "64df57ef4d812581",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "9234594ea6342f5e",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "7cf6a140e36b1711"
+        ],
+        "x": 395,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "7f5142e8666d47e4",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "bc211196337349c5",
+        "name": "link in 2",
+        "links": [
+            "6afdfebf85230db5",
+            "8f85f64a34fd4306"
+        ],
+        "x": 95,
+        "y": 1200,
+        "wires": [
+            [
+                "58c1f4ba82c5635b"
+            ]
+        ]
+    },
+    {
+        "id": "c57857d045f882ca",
+        "type": "join",
+        "z": "4905164f6a425bac",
+        "g": "867e96d227fa62a8",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 190,
+        "y": 1100,
+        "wires": [
+            [
+                "6afdfebf85230db5"
+            ]
+        ]
+    },
+    {
+        "id": "6afdfebf85230db5",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "867e96d227fa62a8",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "7f5142e8666d47e4"
+        ],
+        "x": 395,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "98aeecfea0b8913c",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "867e96d227fa62a8",
+        "name": "link in 5",
+        "links": [
+            "b8568ea9f6e7b4a7"
+        ],
+        "x": 95,
+        "y": 1100,
+        "wires": [
+            [
+                "c57857d045f882ca"
+            ]
+        ]
+    },
+    {
+        "id": "7cf6a140e36b1711",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "link in 6",
+        "links": [
+            "64df57ef4d812581"
+        ],
+        "x": 95,
+        "y": 840,
+        "wires": [
+            [
+                "c0c2b4b27e9ffb47"
+            ]
+        ]
+    },
+    {
+        "id": "6f2e810aa0c22fed",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "1bb1ff2eb954ea6f"
+        ],
+        "x": 1425,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "1bb1ff2eb954ea6f",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "link in 7",
+        "links": [
+            "6f2e810aa0c22fed"
+        ],
+        "x": 95,
+        "y": 1000,
+        "wires": [
+            [
+                "474932dd77c9f4a6"
+            ]
+        ]
+    },
+    {
+        "id": "b8568ea9f6e7b4a7",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "98aeecfea0b8913c"
+        ],
+        "x": 1005,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "89827ff66b4029e8",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 700,
+        "y": 820,
+        "wires": [
+            [
+                "1fa6241c9d58d4db"
+            ],
+            [
+                "685498ecbec6733a"
+            ]
+        ]
+    },
+    {
+        "id": "1fa6241c9d58d4db",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1020,
+        "y": 820,
+        "wires": [
+            [
+                "6f2e810aa0c22fed"
+            ],
+            [
+                "b02925fd8ec6b297"
+            ]
+        ]
+    },
+    {
+        "id": "474932dd77c9f4a6",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 240,
+        "y": 1000,
+        "wires": [
+            [
+                "14936e36d80db429"
+            ],
+            [
+                "a373b78e72f79b0a"
+            ]
+        ]
+    },
+    {
+        "id": "a373b78e72f79b0a",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 640,
+        "y": 1000,
+        "wires": [
+            [
+                "e0aedafe60dd193d"
+            ],
+            [
+                "b8568ea9f6e7b4a7"
+            ]
+        ]
+    },
+    {
+        "id": "14936e36d80db429",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "Build ack link",
+        "field": "payload.acknowledged",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/lines?line={{payload.line}}&action=ack&request={{payload.rowid}}\" style=\"color: #000000\" class=\"{{payload.class}}\">ACKNOWLEDGE</a>",
+        "output": "str",
+        "x": 430,
+        "y": 980,
+        "wires": [
+            [
+                "a373b78e72f79b0a"
+            ]
+        ]
+    },
+    {
+        "id": "e0aedafe60dd193d",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "50838593e751005e",
+        "name": "Build res link",
+        "field": "payload.resolved",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/lines?line={{payload.line}}&action=res&request={{payload.rowid}}\" style=\"color: #000000\">RESOLVE</a>",
+        "output": "str",
+        "x": 850,
+        "y": 980,
+        "wires": [
+            [
+                "b8568ea9f6e7b4a7"
+            ]
+        ]
+    },
+    {
+        "id": "f970904cba0b0e09",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "link in 8",
+        "links": [
+            "d88140a2aeb23a80"
+        ],
+        "x": 95,
+        "y": 560,
+        "wires": [
+            [
+                "28b2afbcac2473d4"
+            ]
+        ]
+    },
+    {
+        "id": "d5940ce909ab72ec",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "link out 11",
+        "mode": "link",
+        "links": [
+            "6f1a6916eac3585e"
+        ],
+        "x": 395,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "28b2afbcac2473d4",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "Payload empty?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "8dba094013194f6b",
+                "0952cfae720cad6b"
+            ],
+            [
+                "d5940ce909ab72ec",
+                "25056389edc0db64"
+            ]
+        ]
+    },
+    {
+        "id": "8dba094013194f6b",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "show 'no outstanding request' message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "There are no outstanding requests",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 540,
+        "wires": [
+            [
+                "861d2d0ace349482"
+            ]
+        ]
+    },
+    {
+        "id": "25056389edc0db64",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "Remove 'no outstanding request' message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "861d2d0ace349482"
+            ]
+        ]
+    },
+    {
+        "id": "1e5cdfe8859428fb",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Store support (department) to context store",
+        "rules": [
+            {
+                "t": "set",
+                "p": "store[msg._client.socketId].support",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1250,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff7e45f9f58e41ae",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Store notes to context store",
+        "rules": [
+            {
+                "t": "set",
+                "p": "store[msg._client.socketId].notes",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4f7a69e90172c7d",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Show Dropdown Options",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ui_update.options",
+                "pt": "msg",
+                "to": "#:(persistent)::departments",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 1440,
+        "wires": [
+            [
+                "c4ee5a28c33fb826"
+            ]
+        ]
+    },
+    {
+        "id": "56d7bbef8267a019",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Retrieve entered support request data",
+        "rules": [
+            {
+                "t": "set",
+                "p": "request",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "request.support",
+                "pt": "msg",
+                "to": "store[msg._client.socketId].support",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "request.notes",
+                "pt": "msg",
+                "to": "store[msg._client.socketId].notes",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "request.line",
+                "pt": "msg",
+                "to": "store[msg._client.socketId].line",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "request.reference",
+                "pt": "msg",
+                "to": "store[msg._client.socketId].reference",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 1580,
+        "wires": [
+            [
+                "fb86e59e84a16c73"
+            ]
+        ]
+    },
+    {
+        "id": "f0d06117d095bcd2",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Clear Notes field",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 1540,
+        "wires": [
+            [
+                "e7b614800ccc9e7c"
+            ]
+        ]
+    },
+    {
+        "id": "e7b614800ccc9e7c",
+        "type": "ui-text-input",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "group": "31a61a6d5c397cf4",
+        "name": "Notes",
+        "label": "Notes",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "textarea",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": false,
+        "className": "",
+        "clearable": true,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "right",
+        "iconInnerPosition": "inside",
+        "x": 930,
+        "y": 1540,
+        "wires": [
+            [
+                "ff7e45f9f58e41ae"
+            ]
+        ]
+    },
+    {
+        "id": "c72f85794babeed7",
+        "type": "ui-button",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "group": "31a61a6d5c397cf4",
+        "name": "",
+        "label": "Request Support",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 230,
+        "y": 1520,
+        "wires": [
+            [
+                "d4f7a69e90172c7d",
+                "56d7bbef8267a019"
+            ]
+        ]
+    },
+    {
+        "id": "c4ee5a28c33fb826",
+        "type": "ui-dropdown",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "group": "31a61a6d5c397cf4",
+        "name": "",
+        "label": "Select Option:",
+        "tooltip": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": false,
+        "msgTrigger": "onChange",
+        "x": 960,
+        "y": 1480,
+        "wires": [
+            [
+                "1e5cdfe8859428fb"
+            ]
+        ]
+    },
+    {
+        "id": "861d2d0ace349482",
+        "type": "ui-text",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "group": "31a61a6d5c397cf4",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "Alert for no jobs",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 860,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "58c1f4ba82c5635b",
+        "type": "ui-table",
+        "z": "4905164f6a425bac",
+        "g": "bc211196337349c5",
+        "group": "31a61a6d5c397cf4",
+        "name": "Jobs",
+        "label": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Request",
+                "key": "rowid",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Line",
+                "key": "line",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Support",
+                "key": "support",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Requested",
+                "key": "requested",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Acknowledged",
+                "key": "acknowledged",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Resolved",
+                "key": "resolved",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Notes",
+                "key": "notes",
+                "keyType": "key",
+                "type": "text",
+                "width": "40%",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 360,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "685498ecbec6733a",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "Acknowledged format",
+        "topic": "",
+        "input": "payload.acknowledged",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "fromNow",
+        "locale": "en-US",
+        "output": "payload.acknowledged",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 740,
+        "y": 880,
+        "wires": [
+            [
+                "1fa6241c9d58d4db"
+            ]
+        ]
+    },
+    {
+        "id": "b02925fd8ec6b297",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "Resolved format",
+        "topic": "",
+        "input": "payload.resolved",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.resolved",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 1100,
+        "y": 880,
+        "wires": [
+            [
+                "6f2e810aa0c22fed"
+            ]
+        ]
+    },
+    {
+        "id": "0da9e11834187f55",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "request.time",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 660,
+        "y": 1600,
+        "wires": [
+            [
+                "b45eacb7a8ef8a6d"
+            ]
+        ]
+    },
+    {
+        "id": "aac4ffda6235d691",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "prepared",
+        "sql": "SELECT * from requests WHERE line = $line AND resolved IS NULL;",
+        "name": "Retrive Requests by user's line selection ",
+        "x": 720,
+        "y": 400,
+        "wires": [
+            [
+                "d88140a2aeb23a80"
+            ]
+        ]
+    },
+    {
+        "id": "a1d7ee1b8fcea94d",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO requests (rowid,line,support,requested,notes)\nVALUES(NULL,$line,$support,$time,$notes);",
+        "name": "",
+        "x": 1310,
+        "y": 1660,
+        "wires": [
+            [
+                "cf9cae522b66e403"
+            ]
+        ]
+    },
+    {
+        "id": "374f377806c7cc60",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "link in 69",
+        "links": [],
+        "x": 95,
+        "y": 1520,
+        "wires": [
+            [
+                "c72f85794babeed7"
+            ]
+        ]
+    },
+    {
+        "id": "a4c4ddd524389717",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "fixed",
+        "sql": "SELECT * from requests WHERE resolved IS NULL",
+        "name": "",
+        "x": 450,
+        "y": 3780,
+        "wires": [
+            [
+                "4d853d3f2e918ad0"
+            ]
+        ]
+    },
+    {
+        "id": "4d853d3f2e918ad0",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "name": "link out 82",
+        "mode": "link",
+        "links": [
+            "3fe1a79e7dbc36b1"
+        ],
+        "x": 775,
+        "y": 3780,
+        "wires": []
+    },
+    {
+        "id": "537f8b41d33eee27",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "Time ago",
+        "topic": "",
+        "input": "payload.resolved",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.resolved",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 800,
+        "y": 4280,
+        "wires": [
+            [
+                "4e71e51255243ae8"
+            ]
+        ]
+    },
+    {
+        "id": "4e71e51255243ae8",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "link out 85",
+        "mode": "link",
+        "links": [
+            "53e5366451aa30fd"
+        ],
+        "x": 985,
+        "y": 4260,
+        "wires": []
+    },
+    {
+        "id": "cf85af98cadb6f5b",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 4260,
+        "wires": [
+            [
+                "4e71e51255243ae8"
+            ],
+            [
+                "537f8b41d33eee27"
+            ]
+        ]
+    },
+    {
+        "id": "519ead238c33cc41",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "link out 86",
+        "mode": "link",
+        "links": [
+            "0a52d10871851d65"
+        ],
+        "x": 985,
+        "y": 4380,
+        "wires": []
+    },
+    {
+        "id": "df416de276de5508",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "Time ago",
+        "topic": "",
+        "input": "payload.acknowledged",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "fromNow",
+        "locale": "en-US",
+        "output": "payload.acknowledged",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 440,
+        "y": 4280,
+        "wires": [
+            [
+                "cf85af98cadb6f5b"
+            ]
+        ]
+    },
+    {
+        "id": "aedab797cb57c44d",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "Build res link",
+        "field": "payload.resolved",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/admin?action=res&request={{payload.rowid}}\" style=\"color: #000000;\">RESOLVE</a>",
+        "output": "str",
+        "x": 870,
+        "y": 4380,
+        "wires": [
+            [
+                "519ead238c33cc41"
+            ]
+        ]
+    },
+    {
+        "id": "4d95e9a2b5aee657",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "4d4d0643380b1f7f",
+        "name": "link in 63",
+        "links": [
+            "d4d759e2952bc006"
+        ],
+        "x": 95,
+        "y": 4100,
+        "wires": [
+            [
+                "4e72558f8b7183e3"
+            ]
+        ]
+    },
+    {
+        "id": "4e72558f8b7183e3",
+        "type": "split",
+        "z": "4905164f6a425bac",
+        "g": "4d4d0643380b1f7f",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 190,
+        "y": 4100,
+        "wires": [
+            [
+                "e6da8adc3b3f9d3c"
+            ]
+        ]
+    },
+    {
+        "id": "e6da8adc3b3f9d3c",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "4d4d0643380b1f7f",
+        "name": "link out 83",
+        "mode": "link",
+        "links": [
+            "ee609f1dc8163aa0"
+        ],
+        "x": 415,
+        "y": 4100,
+        "wires": []
+    },
+    {
+        "id": "4bcd04b2b89da547",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "c52fb6a01d9ae843",
+        "name": "link in 64",
+        "links": [
+            "9f039ccfaceba6f9",
+            "a2153611282480a4"
+        ],
+        "x": 95,
+        "y": 4600,
+        "wires": [
+            [
+                "230b01e63c940cc7"
+            ]
+        ]
+    },
+    {
+        "id": "230b01e63c940cc7",
+        "type": "ui-table",
+        "z": "4905164f6a425bac",
+        "g": "c52fb6a01d9ae843",
+        "group": "b4924dbd6cb1a91b",
+        "name": "Jobs",
+        "label": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "maxrows": "5",
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Request",
+                "key": "rowid",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Line",
+                "key": "line",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Support",
+                "key": "support",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Requested",
+                "key": "requested",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Acknowledged",
+                "key": "acknowledged",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Resolved",
+                "key": "resolved",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Notes",
+                "key": "notes",
+                "keyType": "key",
+                "type": "text",
+                "width": "40%",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 380,
+        "y": 4600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48c79ea0b20a2e1e",
+        "type": "join",
+        "z": "4905164f6a425bac",
+        "g": "300d5ac0c043d4bb",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 190,
+        "y": 4500,
+        "wires": [
+            [
+                "9f039ccfaceba6f9"
+            ]
+        ]
+    },
+    {
+        "id": "9f039ccfaceba6f9",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "300d5ac0c043d4bb",
+        "name": "link out 84",
+        "mode": "link",
+        "links": [
+            "4bcd04b2b89da547"
+        ],
+        "x": 415,
+        "y": 4500,
+        "wires": []
+    },
+    {
+        "id": "0a52d10871851d65",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "300d5ac0c043d4bb",
+        "name": "link in 65",
+        "links": [
+            "519ead238c33cc41"
+        ],
+        "x": 95,
+        "y": 4500,
+        "wires": [
+            [
+                "48c79ea0b20a2e1e"
+            ]
+        ]
+    },
+    {
+        "id": "ee609f1dc8163aa0",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "link in 66",
+        "links": [
+            "e6da8adc3b3f9d3c"
+        ],
+        "x": 95,
+        "y": 4200,
+        "wires": [
+            [
+                "06ef9466afbd4ceb"
+            ]
+        ]
+    },
+    {
+        "id": "abc01444a378070c",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "Time ago",
+        "topic": "",
+        "input": "payload.requested",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "fromNow",
+        "locale": "en-US",
+        "output": "payload.requested",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 460,
+        "y": 4200,
+        "wires": [
+            [
+                "d323b2b252f21430"
+            ]
+        ]
+    },
+    {
+        "id": "d323b2b252f21430",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 240,
+        "y": 4260,
+        "wires": [
+            [
+                "cf85af98cadb6f5b"
+            ],
+            [
+                "df416de276de5508"
+            ]
+        ]
+    },
+    {
+        "id": "53e5366451aa30fd",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "link in 67",
+        "links": [
+            "4e71e51255243ae8"
+        ],
+        "x": 95,
+        "y": 4400,
+        "wires": [
+            [
+                "c582ed42ed298ba3"
+            ]
+        ]
+    },
+    {
+        "id": "b868e584cd0ce560",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 660,
+        "y": 4400,
+        "wires": [
+            [
+                "aedab797cb57c44d"
+            ],
+            [
+                "519ead238c33cc41"
+            ]
+        ]
+    },
+    {
+        "id": "c582ed42ed298ba3",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 240,
+        "y": 4400,
+        "wires": [
+            [
+                "2bc93fc7f2b504ec"
+            ],
+            [
+                "b868e584cd0ce560"
+            ]
+        ]
+    },
+    {
+        "id": "2bc93fc7f2b504ec",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "f560d89917a0971d",
+        "name": "Build ack link",
+        "field": "payload.acknowledged",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/admin?action=ack&request={{payload.rowid}}\" style=\"color: #000000\" class=\"{{payload.class}}\">ACKNOWLEDGE</a>",
+        "output": "str",
+        "x": 450,
+        "y": 4380,
+        "wires": [
+            [
+                "b868e584cd0ce560"
+            ]
+        ]
+    },
+    {
+        "id": "3fe1a79e7dbc36b1",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "link in 68",
+        "links": [
+            "4d853d3f2e918ad0"
+        ],
+        "x": 95,
+        "y": 3900,
+        "wires": [
+            [
+                "c192a5dcb06e8aea"
+            ]
+        ]
+    },
+    {
+        "id": "d4d759e2952bc006",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "link out 87",
+        "mode": "link",
+        "links": [
+            "4d95e9a2b5aee657"
+        ],
+        "x": 415,
+        "y": 4000,
+        "wires": []
+    },
+    {
+        "id": "c192a5dcb06e8aea",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "Payload empty?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 3900,
+        "wires": [
+            [
+                "c6a7b9c74fc91edf",
+                "432570d5412cc5ce"
+            ],
+            [
+                "d4d759e2952bc006",
+                "35ef2993e39644f6"
+            ]
+        ]
+    },
+    {
+        "id": "a2153611282480a4",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "link out 88",
+        "mode": "link",
+        "links": [
+            "4bcd04b2b89da547"
+        ],
+        "x": 775,
+        "y": 3880,
+        "wires": []
+    },
+    {
+        "id": "c6a7b9c74fc91edf",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "Set empty array",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 3880,
+        "wires": [
+            [
+                "a2153611282480a4"
+            ]
+        ]
+    },
+    {
+        "id": "432570d5412cc5ce",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "show 'no outstanding request' message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "There are no outstanding requests",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 3920,
+        "wires": [
+            [
+                "e70b196b0dae468f"
+            ]
+        ]
+    },
+    {
+        "id": "35ef2993e39644f6",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "name": "Remove 'no outstanding request' message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 3960,
+        "wires": [
+            [
+                "e70b196b0dae468f"
+            ]
+        ]
+    },
+    {
+        "id": "e70b196b0dae468f",
+        "type": "ui-text",
+        "z": "4905164f6a425bac",
+        "g": "3b77ef92cb332f1c",
+        "group": "b4924dbd6cb1a91b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Alert for no jobs",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 920,
+        "y": 3920,
+        "wires": []
+    },
+    {
+        "id": "164c96c714465739",
+        "type": "ui-form",
+        "z": "4905164f6a425bac",
+        "g": "9fa130396aaf0d6d",
+        "name": "",
+        "group": "ebdaf2a0563f2ae3",
+        "label": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "New Line",
+                "key": "line",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "New Department",
+                "key": "department",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "line": "",
+            "department": ""
+        },
+        "payload": "",
+        "submit": "Add",
+        "cancel": "Cancel",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "form",
+        "dropdownOptions": [],
+        "x": 130,
+        "y": 3680,
+        "wires": [
+            [
+                "1d4c8ea12fe2bd84"
+            ]
+        ]
+    },
+    {
+        "id": "1d4c8ea12fe2bd84",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "9fa130396aaf0d6d",
+        "name": "Add new lines and departments",
+        "func": "let lines = global.get('lines', 'persistent') || [];\nlet departments = global.get('departments', 'persistent') || [];\n\nlet line = msg.payload.line || \"\";\nlet department = msg.payload.department || \"\";\n\n// Add line if it doesn't already exist\nif (line !== \"\" && !lines.some(existingLine => existingLine.value === line)) {\n    lines.push({ value: line, label: line });\n}\n\n// Add department if it doesn't already exist\nif (department !== \"\" && !departments.some(existingDepartment => existingDepartment.value === department)) {\n    departments.push({ value: department, label: department });\n}\n\nglobal.set('lines', lines, 'persistent');\nglobal.set('departments', departments, 'persistent');\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 3680,
+        "wires": [
+            [
+                "1ebd65f9760d07de"
+            ]
+        ]
+    },
+    {
+        "id": "f655b9fae60a84ac",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.lines",
+                "pt": "msg",
+                "to": "#:(persistent)::lines",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.departments",
+                "pt": "msg",
+                "to": "#:(persistent)::departments",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.departmentReferenceMandateStatus",
+                "pt": "msg",
+                "to": "departmentReferenceMandateStatus",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 3540,
+        "wires": [
+            [
+                "83a489f7096c95c8"
+            ]
+        ]
+    },
+    {
+        "id": "0cb80de80bc87a4e",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$request",
+                "pt": "msg",
+                "to": "payload.query.request",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 1820,
+        "wires": [
+            [
+                "e0ee3dee811104ae"
+            ]
+        ]
+    },
+    {
+        "id": "663625b4f78d1e07",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "Update Ack or Res?",
+        "property": "payload.query.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ack",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "res",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 760,
+        "y": 1820,
+        "wires": [
+            [
+                "42c9fd5fa5b07657"
+            ],
+            [
+                "626ab35c897c3795"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c287cb7b0a4edaf8",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 130,
+        "y": 1820,
+        "wires": [
+            [
+                "0cb80de80bc87a4e"
+            ]
+        ]
+    },
+    {
+        "id": "e0ee3dee811104ae",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "params.$now",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 520,
+        "y": 1820,
+        "wires": [
+            [
+                "663625b4f78d1e07"
+            ]
+        ]
+    },
+    {
+        "id": "626ab35c897c3795",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "prepared",
+        "sql": "UPDATE requests \nSET resolved = $now\nWHERE rowid = $request \nAND resolved IS NULL",
+        "name": "",
+        "x": 1030,
+        "y": 1840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ebd65f9760d07de",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "9fa130396aaf0d6d",
+        "name": "link out 94",
+        "mode": "link",
+        "links": [
+            "f07358df462f5da0"
+        ],
+        "x": 775,
+        "y": 3680,
+        "wires": []
+    },
+    {
+        "id": "f07358df462f5da0",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "name": "link in 73",
+        "links": [
+            "1ebd65f9760d07de"
+        ],
+        "x": 95,
+        "y": 3580,
+        "wires": [
+            [
+                "f655b9fae60a84ac"
+            ]
+        ]
+    },
+    {
+        "id": "851be5844570bb3f",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 130,
+        "y": 4760,
+        "wires": [
+            [
+                "39494284fe0033a1"
+            ]
+        ]
+    },
+    {
+        "id": "4415ed2e92b78e33",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 940,
+        "y": 4740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e9e1f9c2e4c69f1",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Show Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"show\":[\"Admin\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 4720,
+        "wires": [
+            [
+                "4415ed2e92b78e33"
+            ]
+        ]
+    },
+    {
+        "id": "faf6959a52ca7ee4",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Is Admin User?",
+        "property": "#:(persistent)::admins",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "_client.user.username",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 440,
+        "y": 4740,
+        "wires": [
+            [
+                "6e9e1f9c2e4c69f1"
+            ],
+            [
+                "7bbf9d08c4f739ac",
+                "593b05b11080f543"
+            ]
+        ]
+    },
+    {
+        "id": "7bbf9d08c4f739ac",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Hide Admin Page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"hide\":[\"Admin\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 4760,
+        "wires": [
+            [
+                "4415ed2e92b78e33"
+            ]
+        ]
+    },
+    {
+        "id": "cd07d94e95e563c5",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Show/Hide Admin in Side Navigation",
+        "info": "",
+        "x": 350,
+        "y": 4700,
+        "wires": []
+    },
+    {
+        "id": "960fe70d0a3e609e",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "change",
+        "x": 940,
+        "y": 4860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eac865417ca6742b",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Redirect the User",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Incorrect Link",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 4860,
+        "wires": [
+            [
+                "960fe70d0a3e609e"
+            ]
+        ]
+    },
+    {
+        "id": "0384c28bcc16c822",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "Redirect is non-admin trying direct access",
+        "info": "",
+        "x": 740,
+        "y": 4820,
+        "wires": []
+    },
+    {
+        "id": "593b05b11080f543",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Admin",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 4860,
+        "wires": [
+            [
+                "eac865417ca6742b"
+            ]
+        ]
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "g": "541dd3a074de735c",
+        "name": "README",
+        "info": "# Manufacturing Support Request Blueprint \n\nHave you ever encountered bottlenecks in your manufacturing operations due to delayed support requests or unresolved issues across various departments of different production lines? The Manufacturing Support Request Blueprint is here to solve that problem. Designed to streamline the process of managing and resolving support requests, this blueprint ensures that every issue is addressed promptly and effectively, minimizing downtime and improving overall efficiency.\n\n## What is the Manufacturing Support Request Blueprint?\n\nThe Manufacturing Support Request Blueprint is a structured framework designed to manage and streamline the handling of support requests within manufacturing environments. It provides a standardized process for submitting, tracking, and resolving issues that arise across various departments and production lines, such as Maintenance, Quality, Stores, and Logistics.\n\nThis blueprint includes forms to add new production lines and departments, providing the flexibility to tailor the system to your specific manufacturing setup. For each production line, there are dedicated forms to submit support requests for specific departments, which makes it easy to request and manage support requests by production line.\n\nThe blueprint also provides an intuitive interface to view all support requests, organized by production line and department. Each request is detailed with essential information, such as the production line involved, the time the request was made, detailed notes, and action buttons to:\n\n- **Acknowledge:** Mark the request as acknowledged.\n- **Resolve:** Mark the request as resolved.\n\n## What Problem Does It Solve?\n\nIn manufacturing environments, inefficiencies often arise from the disorganization and delays in handling support requests. The Manufacturing Support Request Blueprint addresses several key problems:\n\n- **Delayed Response Times:** Delays in addressing support requests can lead to prolonged downtime and production delays. This blueprint streamlines the process, ensuring that requests are handled promptly and efficiently.\n- **Lack of Visibility:** Without a centralized system, tracking the status of support requests across different departments and production lines can be challenging. The blueprint provides a clear and intuitive interface to view and manage all requests, organized by production line and department.\n- **Inconsistent Handling:** Different departments might have varying procedures for managing support requests, leading to inconsistency and confusion. This blueprint standardizes the process, ensuring that all requests are managed in a uniform manner.\n- **Communication Gaps:** Poor communication between departments can result in unresolved issues and misunderstandings. The blueprint facilitates better communication by providing detailed request forms and action buttons to acknowledge and resolve issues.\n- **Inefficient Tracking:** Tracking and documenting support requests manually can be cumbersome and error-prone. The blueprint automates this process, storing detailed notes and tracking the progress of each request, which helps in maintaining accurate records.\n\nBy solving these problems, the Manufacturing Support Request Blueprint enhances operational efficiency, reduces downtime, and improves coordination across various departments and production lines.\n\n## Getting Started with Manufacturing Support Request Blueprint\n\n### Prerequisite\n\nBefore moving forward, ensure you have the following prepared:\n\n- Ensure you have a FlowFuse account with the Starter, Team, or Enterprise tier.\n\nStarting with this Manufacturing Support Request Blueprint, note that the blueprint does not require configuring any nodes, as they are already pre-configured.\n\n### Setting Up the Blueprint\n\n1. To get started with the blueprint, click the bottom-most \"Start\" button. This will redirect you to the FlowFuse platform instance creation interface with the blueprint pre-selected.\n2. Select the appropriate settings according to your preferences, such as instance type, application, and Node-RED version.\n3. Click the “Create Instance” button.\n\nOnce the instance is successfully created, you can:\n\n- Click the “Dashboard” button in the top-right corner to test the 5S checklist.\n- Click the “Open Editor” button in the top-right corner to navigate to the Node-RED Editor.\n\n### Testing Blueprint with Simulated Data\n\nThis blueprint does not require simulated data to operate. You can begin submitting support requests immediately. The blueprint utilizes the SQLite node, which runs an SQL database within your Node-RED container once you deploy the flow. This means you do not need to set up a separate database or configure additional nodes for it to function.\n\n### Setting Up the Blueprint in the Real World\n\nTo implement the blueprint in a production environment, you may need to store relevant data in a dedicated database hosted separately. By default, the blueprint uses an SQLite database set up by the SQLite node within the FlowFuse Node-RED instance. While this can handle a reasonable amount of data, you might need a more robust database for larger datasets. Node-RED supports various databases, including MySQL, PostgreSQL, InfluxDB, MongoDB, and more.\n\nTo switch to a different SQL-based database, you simply need to install the appropriate Node-RED node for your chosen database and configure it accordingly. Replace the SQLite nodes in your flows with nodes for the new database. Since the operations are SQL-based, the transition to a different SQL database is straightforward.\n\nFor detailed instructions refer to how to set up and use different databases with Node-RED.\n\n### How to Use This Blueprint\n\n#### Creating a New Production Line and Department:\n\n1. Navigate to the admin page of the support request dashboard.\n2. On the left side of the dashboard, you will find a form. Enter the name of the new production line and department into their respective input fields.\n3. Click the \"Add\" button.\n4. After clicking the \"Add\" button, the production line and department will be added. You can confirm this by checking the top menu, where you will see all available production lines and departments.\n\n#### Requesting Support:\n\n1. Select the production line for which you want to request support from the top header menu.\n2. You will be redirected to the support request page, where you will see all requests submitted for that specific line in the table.\n3. Below the table, you will find the support request form. Select the department for which you want to request support, enter a detailed note related to the request, and click the “Request Support” button.\n4. Once you click the button, the new request will appear in the table above. This table only shows requests related to the selected production line. To view all requests, visit the admin page.\n\n#### Marking a Request as Acknowledged:\n\nTo mark a request as acknowledged, indicating that someone has picked it up and is working on it, follow these steps:\n\n1. In the table where all requests are listed, click the “Acknowledge” button next to the request.\n2. Once you click the \"Acknowledge\" button, it will be replaced with the time when the request was marked as acknowledged.\n\n#### Marking a Request as Resolved:\n\nTo mark a request as resolved, indicating that it has been satisfied or completed, locate the request in the table where all requests are listed.\n\n1. Click the “Resolved” button next to the request.\n2. Once you click the \"Resolved\" button, the request will be removed from the table and will no longer be visible.\n\n#### Viewing Requests by Department:\n\n1. To view requests for a specific department, click on the department name from the top header menu.\n2. Once you click, you will see the requests associated with that department displayed on the page.\n\n#### Accessing the Support Request Dashboard with URL:\n\nThe support request dashboard has two pages: one for the admin and another for users handling specific production lines and departments. To access it, you need to add a query parameter to the URL.\n\n- For example, if you want to access the support request dashboard for production line T1, navigate to:\n  `https://<instance-name>.flowfuse.cloud/dashboard/support-request?line=T1`\n\n- To view requests by department, replace the line query with department.\n\nEnsure that the production line or department you specify in the query exists; otherwise, you will be redirected to a \"Not Found\" page.\n\n#### Adding Users to the Admin List:\n\n1. To add users to the admin list, locate the \"Admin Registration\" flow.\n2. Click on the Change node, and within the node, you will see it setting `global.admin` to an array.\n3. Add your FlowFuse username as a string to this array.\n4. Deploy the flow.\n5. You will now be able to access the admin dashboard as a registered user.\n\n#### Deleting Requests\n\n1. To delete requests stored in the database, find the flow named \"Delete records older than 30 days.\"\n2. Click on the inject button. Once clicked, it will delete the records. If you need to edit the query, click on the template node in the flow and make the necessary changes.\n\n#### Deleting Added Departments and Production Lines\n\n1. When a department or production line is added, it is stored in [FlowFuse’s persistent storage](https://flowfuse.com/docs/install/file-storage/).\n2. To delete it, go to the Node-RED sidebar, switch to the \"Context Data\" tab, and click the delete buttons next to each context variable to remove the entries.\n\n## Conclusion\n\nThe Manufacturing Support Request Blueprint helps you manage support requests more efficiently, ensuring timely resolution and minimizing production delays. By implementing this blueprint, you can streamline communication between departments, maintain better visibility over support requests, and improve overall operational efficiency.",
+        "x": 254,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7c5e59811d8c51f8",
+        "type": "comment",
+        "z": "4905164f6a425bac",
+        "g": "541dd3a074de735c",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 110,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "95be88fc3f99deab",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 130,
+        "y": 3540,
+        "wires": [
+            [
+                "f655b9fae60a84ac"
+            ]
+        ]
+    },
+    {
+        "id": "0bee3fadc51fe3dd",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "Requested format",
+        "topic": "",
+        "input": "payload.requested",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "fromNow",
+        "locale": "en-US",
+        "output": "payload.requested",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 470,
+        "y": 820,
+        "wires": [
+            [
+                "89827ff66b4029e8"
+            ]
+        ]
+    },
+    {
+        "id": "b8e5f9689a71c512",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 130,
+        "y": 1440,
+        "wires": [
+            [
+                "d4f7a69e90172c7d"
+            ]
+        ]
+    },
+    {
+        "id": "39494284fe0033a1",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "f6a8f30146a99a20",
+        "name": "",
+        "property": "_client",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "user",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 4760,
+        "wires": [
+            [
+                "faf6959a52ca7ee4"
+            ],
+            [
+                "7bbf9d08c4f739ac",
+                "593b05b11080f543"
+            ]
+        ]
+    },
+    {
+        "id": "06ef9466afbd4ceb",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "efc5cd87ab60631c",
+        "name": "highlightOldRequests",
+        "func": "\nconst requested = msg.payload.requested; \nconst now = Date.now();\n\nconst requestedTime = new Date(requested).getTime();\nconst difference = now - requestedTime;\nconst difinedDurationForOldRequest = global.get('oldRequestThreshold')\nconst difinedDurationForOlderRequest = global.get('veryOldRequestThreshold')\n\nif (difference > (difinedDurationForOlderRequest * 60 * 1000)) {\n    msg.payload.class = 'older';\n    return msg \n} else if (difference > (difinedDurationForOldRequest * 60 * 1000)) {\n    msg.payload.class = 'old';\n    return msg\n} else {\n    msg.payload.class = 'normal';\n    return  msg\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 4200,
+        "wires": [
+            [
+                "abc01444a378070c"
+            ]
+        ]
+    },
+    {
+        "id": "c0c2b4b27e9ffb47",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "highlightOldRequests",
+        "func": "const requested = msg.payload.requested;\nconst now = Date.now();\n\nconst requestedTime = new Date(requested).getTime();\nconst difference = now - requestedTime;\n\nconst oldRequestThreshold = global.get('oldRequestThreshold');\nconst veryOldRequestThreshold = global.get('veryOldRequestThreshold');\nconst alertActivationThreshold = global.get('alertActivationThreshold');\n\nif (difference > (veryOldRequestThreshold * 60 * 1000)) {\n    msg.payload.class = 'older';\n    if (difference > (alertActivationThreshold * 60 * 1000)) {\n        msg.payload.alert = true;\n    }\n    return msg;\n}\nelse if (difference > (oldRequestThreshold * 60 * 1000)) {\n    msg.payload.class = 'old';\n    if (difference > (alertActivationThreshold * 60 * 1000)) {\n        msg.payload.alert = true;\n    }\n    return msg;\n}\nelse {\n\n    if (difference > (alertActivationThreshold * 60 * 1000)) {\n        msg.payload.alert = true;\n    }\n    msg.payload.class = 'normal';\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 840,
+        "wires": [
+            [
+                "0bee3fadc51fe3dd",
+                "2e0c529a0db718cc"
+            ]
+        ]
+    },
+    {
+        "id": "1e4126b2aad32680",
+        "type": "ui-notification",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "ui": "c385dfc590b1308d",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Cancel",
+        "allowConfirm": true,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 750,
+        "y": 1660,
+        "wires": [
+            [
+                "077b09e59d5e89b3"
+            ]
+        ]
+    },
+    {
+        "id": "2e1c370293cd5e63",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "02acdc0de78af5bc",
+        "name": "Is it older than the defined duration?",
+        "property": "payload.alert",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 280,
+        "y": 1320,
+        "wires": [
+            [
+                "b7bae63290c3d5de"
+            ]
+        ]
+    },
+    {
+        "id": "b7bae63290c3d5de",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "02acdc0de78af5bc",
+        "name": " Is the request null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 1320,
+        "wires": [
+            [
+                "300aad5c09231b33"
+            ]
+        ]
+    },
+    {
+        "id": "6b96bc8c00eee2be",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "02acdc0de78af5bc",
+        "name": "Store the ID of the request for triggered alert",
+        "func": "let AlertTriggeredRequest = msg.payload\nlet arrayofTriggredAlerts = global.get('alertsForRequest') || []\n\narrayofTriggredAlerts.push(AlertTriggeredRequest.rowid);\nglobal.set('alertsForRequest',arrayofTriggredAlerts)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "300aad5c09231b33",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "02acdc0de78af5bc",
+        "name": "Is the alert already triggered for this request?",
+        "property": "alertsForRequest",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "payload.rowid",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 850,
+        "y": 1320,
+        "wires": [
+            [],
+            [
+                "6b96bc8c00eee2be",
+                "fce29f752b21694b"
+            ]
+        ]
+    },
+    {
+        "id": "b08649b01048223f",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "02acdc0de78af5bc",
+        "group": "",
+        "page": "a3eff10a8bb2d0b3",
+        "ui": "",
+        "name": "Alert",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div>\n    <audio ref=\"audio\" :src=\"msg?.payload\" preload=\"auto\"></audio>\n  </div>\n</template>\n\n<script>\n  export default {\n  name: 'AlertSoundPlayer',\n  mounted() {\n    // Assuming you have a socket connection initialized and `this.id` is available\n    this.$socket.on('msg-input:' + this.id, (msg) => {\n      // Play the sound when the event is triggered\n      this.$refs.audio.play();\n    });\n  }\n};\n</script>\n\n<style scoped>\n  button {\n    margin: 5px;\n    padding: 10px;\n    font-size: 16px;\n    cursor: pointer;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:page",
+        "className": "",
+        "x": 1390,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e0c529a0db718cc",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "23f98fde5be1a446",
+        "name": "link out 98",
+        "mode": "link",
+        "links": [
+            "88b10d5c64fa8b99"
+        ],
+        "x": 395,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "88b10d5c64fa8b99",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "02acdc0de78af5bc",
+        "name": "link in 76",
+        "links": [
+            "2e0c529a0db718cc"
+        ],
+        "x": 95,
+        "y": 1320,
+        "wires": [
+            [
+                "2e1c370293cd5e63"
+            ]
+        ]
+    },
+    {
+        "id": "fce29f752b21694b",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "02acdc0de78af5bc",
+        "name": "Get Audio Sound URL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "alertSoundURL",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 1300,
+        "wires": [
+            [
+                "b08649b01048223f"
+            ]
+        ]
+    },
+    {
+        "id": "81d751a698d397b4",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "6c56d46f69e36edf",
+        "group": "",
+        "page": "",
+        "ui": "c385dfc590b1308d",
+        "name": "Side profile icon showing logged-in user",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Teleport the button to the #app-bar-actions area when mounted -->\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n    <img height=\"32px\" src=\"https://flowfuse.com/handbook/images/logos/ff-logo--wordmark--light.png\"></img>\n    </Teleport>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            // Set mounted to true when the component is mounted\n            this.mounted = true\n        }\n    }\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 980,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0ccbc0ee500c0d19",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "name": "link in 5",
+        "links": [
+            "166484adad398255"
+        ],
+        "x": 95,
+        "y": 2420,
+        "wires": [
+            [
+                "e9b966dcb53f913a"
+            ]
+        ]
+    },
+    {
+        "id": "6bd86f63f48119d4",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "4e73c8f9b2abf910"
+        ],
+        "x": 395,
+        "y": 2500,
+        "wires": []
+    },
+    {
+        "id": "e9b966dcb53f913a",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "name": "Payload empty?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "empty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 2420,
+        "wires": [
+            [
+                "6e16e3a09330f83d",
+                "50c01e4610873dc0"
+            ],
+            [
+                "6bd86f63f48119d4",
+                "b1ab1a87f74cc163"
+            ]
+        ]
+    },
+    {
+        "id": "6e16e3a09330f83d",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "name": "Set empty array",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 2380,
+        "wires": [
+            [
+                "d12cf8d376bcb3d0"
+            ]
+        ]
+    },
+    {
+        "id": "50c01e4610873dc0",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "name": "show 'no outstanding request' message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "There are no outstanding requests",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 2420,
+        "wires": [
+            [
+                "450c8f3f22860964"
+            ]
+        ]
+    },
+    {
+        "id": "b1ab1a87f74cc163",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "name": "Remove 'no outstanding request' message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 2460,
+        "wires": [
+            [
+                "450c8f3f22860964"
+            ]
+        ]
+    },
+    {
+        "id": "450c8f3f22860964",
+        "type": "ui-text",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "group": "7bce80f8909be255",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Alert for no jobs",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 1000,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "d12cf8d376bcb3d0",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "06ab885919efc469",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "ff5db8ff0a752cbf"
+        ],
+        "x": 1065,
+        "y": 2380,
+        "wires": []
+    },
+    {
+        "id": "9e20c3542b8c70b7",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "ab34846f89bfb2f5",
+        "name": "link in 6",
+        "links": [
+            "f4584935efc8a5b3"
+        ],
+        "x": 95,
+        "y": 2860,
+        "wires": [
+            [
+                "dca52d704a69b790"
+            ]
+        ]
+    },
+    {
+        "id": "a5dc0c8a0df8e2be",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "ab34846f89bfb2f5",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "8935459dcec705fb"
+        ],
+        "x": 1065,
+        "y": 2860,
+        "wires": []
+    },
+    {
+        "id": "defce3e65c034177",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "ab34846f89bfb2f5",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 680,
+        "y": 2860,
+        "wires": [
+            [
+                "250383733f0af898"
+            ],
+            [
+                "a5dc0c8a0df8e2be"
+            ]
+        ]
+    },
+    {
+        "id": "dca52d704a69b790",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "ab34846f89bfb2f5",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 2860,
+        "wires": [
+            [
+                "c1b1267ebf4c3b98"
+            ],
+            [
+                "defce3e65c034177"
+            ]
+        ]
+    },
+    {
+        "id": "c1b1267ebf4c3b98",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "ab34846f89bfb2f5",
+        "name": "Build ack link",
+        "field": "payload.acknowledged",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/departments?department={{payload.support}}&action=ack&request={{payload.rowid}}\" style=\"color: #000000\" class=\"{{payload.class}}\">ACKNOWLEDGE</a>",
+        "output": "str",
+        "x": 450,
+        "y": 2840,
+        "wires": [
+            [
+                "defce3e65c034177"
+            ]
+        ]
+    },
+    {
+        "id": "250383733f0af898",
+        "type": "template",
+        "z": "4905164f6a425bac",
+        "g": "ab34846f89bfb2f5",
+        "name": "Build res link",
+        "field": "payload.resolved",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<a href=\"/dashboard/departments?department={{payload.support}}&action=res&request={{payload.rowid}}\" style=\"color: #000000\">RESOLVE</a>",
+        "output": "str",
+        "x": 890,
+        "y": 2840,
+        "wires": [
+            [
+                "a5dc0c8a0df8e2be"
+            ]
+        ]
+    },
+    {
+        "id": "9e59d80a85f61984",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "link in 7",
+        "links": [
+            "92c4b2f827bf06af"
+        ],
+        "x": 95,
+        "y": 2720,
+        "wires": [
+            [
+                "5d2685f54cd8776a"
+            ]
+        ]
+    },
+    {
+        "id": "f2b348e117ffa356",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "Acknowledged format",
+        "topic": "",
+        "input": "payload.acknowledged",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "fromNow",
+        "locale": "en-US",
+        "output": "payload.acknowledged",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 920,
+        "y": 2740,
+        "wires": [
+            [
+                "23399ebd38603b5d"
+            ]
+        ]
+    },
+    {
+        "id": "3c42b906fe7c161d",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "Resolved format",
+        "topic": "",
+        "input": "payload.resolved",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm:ss",
+        "locale": "en-US",
+        "output": "payload.resolved",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 1300,
+        "y": 2740,
+        "wires": [
+            [
+                "f4584935efc8a5b3"
+            ]
+        ]
+    },
+    {
+        "id": "f4584935efc8a5b3",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "9e20c3542b8c70b7"
+        ],
+        "x": 1425,
+        "y": 2720,
+        "wires": []
+    },
+    {
+        "id": "23399ebd38603b5d",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "resolved is null?",
+        "property": "payload.resolved",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1120,
+        "y": 2720,
+        "wires": [
+            [
+                "f4584935efc8a5b3"
+            ],
+            [
+                "3c42b906fe7c161d"
+            ]
+        ]
+    },
+    {
+        "id": "241ef876d4e8978f",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "acknowledged is null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 700,
+        "y": 2720,
+        "wires": [
+            [
+                "23399ebd38603b5d"
+            ],
+            [
+                "f2b348e117ffa356"
+            ]
+        ]
+    },
+    {
+        "id": "92875f4ffac5f57f",
+        "type": "moment",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "Requested format",
+        "topic": "",
+        "input": "payload.requested",
+        "inputType": "msg",
+        "inTz": "Africa/Abidjan",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "fromNow",
+        "locale": "en-US",
+        "output": "payload.requested",
+        "outputType": "msg",
+        "outTz": "Africa/Abidjan",
+        "x": 470,
+        "y": 2740,
+        "wires": [
+            [
+                "241ef876d4e8978f"
+            ]
+        ]
+    },
+    {
+        "id": "5d2685f54cd8776a",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "highlightOldRequests",
+        "func": "const requested = msg.payload.requested;\nconst now = Date.now();\n\nconst requestedTime = new Date(requested).getTime();\nconst difference = now - requestedTime;\n\nconst oldRequestThreshold = global.get('oldRequestThreshold');\nconst veryOldRequestThreshold = global.get('veryOldRequestThreshold');\nconst alertActivationThreshold = global.get('alertActivationThreshold');\n\nif (difference > (veryOldRequestThreshold * 60 * 1000)) {\n    msg.payload.class = 'older';\n    if (difference > (alertActivationThreshold * 60 * 1000)) {\n        msg.payload.alert = true;\n    }\n    return msg;\n}\nelse if (difference > (oldRequestThreshold * 60 * 1000)) {\n    msg.payload.class = 'old';\n    if (difference > (alertActivationThreshold * 60 * 1000)) {\n        msg.payload.alert = true;\n    }\n    return msg;\n}\nelse {\n\n    if (difference > (alertActivationThreshold * 60 * 1000)) {\n        msg.payload.alert = true;\n    }\n    msg.payload.class = 'normal';\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 2720,
+        "wires": [
+            [
+                "92875f4ffac5f57f",
+                "2b55ac4c139437e0"
+            ]
+        ]
+    },
+    {
+        "id": "2b55ac4c139437e0",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "150c55c243683e2c",
+        "name": "link out 10",
+        "mode": "link",
+        "links": [
+            "547cb541d4f4f800"
+        ],
+        "x": 395,
+        "y": 2700,
+        "wires": []
+    },
+    {
+        "id": "6a951b927cb42151",
+        "type": "join",
+        "z": "4905164f6a425bac",
+        "g": "17fbdbd036945304",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 210,
+        "y": 2960,
+        "wires": [
+            [
+                "fad75fc8887881a9"
+            ]
+        ]
+    },
+    {
+        "id": "fad75fc8887881a9",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "17fbdbd036945304",
+        "name": "link out 11",
+        "mode": "link",
+        "links": [
+            "ff5db8ff0a752cbf"
+        ],
+        "x": 395,
+        "y": 2960,
+        "wires": []
+    },
+    {
+        "id": "8935459dcec705fb",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "17fbdbd036945304",
+        "name": "link in 8",
+        "links": [
+            "a5dc0c8a0df8e2be"
+        ],
+        "x": 95,
+        "y": 2960,
+        "wires": [
+            [
+                "6a951b927cb42151"
+            ]
+        ]
+    },
+    {
+        "id": "ff5db8ff0a752cbf",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "53cb93474c72d6cc",
+        "name": "link in 9",
+        "links": [
+            "d12cf8d376bcb3d0",
+            "fad75fc8887881a9"
+        ],
+        "x": 95,
+        "y": 3060,
+        "wires": [
+            [
+                "b86118e38da3d072"
+            ]
+        ]
+    },
+    {
+        "id": "b86118e38da3d072",
+        "type": "ui-table",
+        "z": "4905164f6a425bac",
+        "g": "53cb93474c72d6cc",
+        "group": "7bce80f8909be255",
+        "name": "Jobs",
+        "label": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Request",
+                "key": "rowid",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Line",
+                "key": "line",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Support",
+                "key": "support",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Requested",
+                "key": "requested",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Acknowledged",
+                "key": "acknowledged",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Resolved",
+                "key": "resolved",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Notes",
+                "key": "notes",
+                "keyType": "key",
+                "type": "text",
+                "width": "40%",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 360,
+        "y": 3060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e73c8f9b2abf910",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "2d511284718aaf1f",
+        "name": "link in 10",
+        "links": [
+            "6bd86f63f48119d4"
+        ],
+        "x": 95,
+        "y": 2600,
+        "wires": [
+            [
+                "ee0c3f4418a1ced0"
+            ]
+        ]
+    },
+    {
+        "id": "ee0c3f4418a1ced0",
+        "type": "split",
+        "z": "4905164f6a425bac",
+        "g": "2d511284718aaf1f",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 190,
+        "y": 2600,
+        "wires": [
+            [
+                "92c4b2f827bf06af"
+            ]
+        ]
+    },
+    {
+        "id": "92c4b2f827bf06af",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "2d511284718aaf1f",
+        "name": "link out 12",
+        "mode": "link",
+        "links": [
+            "9e59d80a85f61984"
+        ],
+        "x": 395,
+        "y": 2600,
+        "wires": []
+    },
+    {
+        "id": "044618c9ba9d1168",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "2b8165d1c554fff8",
+        "name": "Is it older than the defined duration?",
+        "property": "payload.alert",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 3180,
+        "wires": [
+            [
+                "490457bd55e4c821"
+            ]
+        ]
+    },
+    {
+        "id": "490457bd55e4c821",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "2b8165d1c554fff8",
+        "name": " Is the request null?",
+        "property": "payload.acknowledged",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 3180,
+        "wires": [
+            [
+                "a068f64912d20157"
+            ]
+        ]
+    },
+    {
+        "id": "2b5b36b01343d1a0",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "2b8165d1c554fff8",
+        "name": "Store the ID of the request for the triggered alert",
+        "func": "let AlertTriggeredRequest = msg.payload\nlet arrayofTriggredAlerts = global.get('alertsForRequest') || []\n\narrayofTriggredAlerts.push(AlertTriggeredRequest.rowid);\nglobal.set('alertsForRequest',arrayofTriggredAlerts)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 3200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a068f64912d20157",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "2b8165d1c554fff8",
+        "name": "Is the alert already triggered for this request?",
+        "property": "alertsForRequest",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "payload.rowid",
+                "vt": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 870,
+        "y": 3180,
+        "wires": [
+            [],
+            [
+                "2b5b36b01343d1a0",
+                "6d3f57462d971831"
+            ]
+        ]
+    },
+    {
+        "id": "696e1163435040d0",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "2b8165d1c554fff8",
+        "group": "",
+        "page": "a3eff10a8bb2d0b3",
+        "ui": "",
+        "name": "Alert",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <div>\n    <audio ref=\"audio\" :src=\"msg?.payload\" preload=\"auto\"></audio>\n  </div>\n</template>\n\n<script>\n  export default {\n  name: 'AlertSoundPlayer',\n  mounted() {\n    // Assuming you have a socket connection initialized and `this.id` is available\n    this.$socket.on('msg-input:' + this.id, (msg) => {\n      // Play the sound when the event is triggered\n      this.$refs.audio.play();\n    });\n  }\n};\n</script>\n\n<style scoped>\n  button {\n    margin: 5px;\n    padding: 10px;\n    font-size: 16px;\n    cursor: pointer;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:page",
+        "className": "",
+        "x": 1390,
+        "y": 3160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "547cb541d4f4f800",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "2b8165d1c554fff8",
+        "name": "link in 11",
+        "links": [
+            "2b55ac4c139437e0"
+        ],
+        "x": 95,
+        "y": 3180,
+        "wires": [
+            [
+                "044618c9ba9d1168"
+            ]
+        ]
+    },
+    {
+        "id": "6d3f57462d971831",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "2b8165d1c554fff8",
+        "name": "Retrieve Audio Sound URL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "alertSoundURL",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 3160,
+        "wires": [
+            [
+                "696e1163435040d0"
+            ]
+        ]
+    },
+    {
+        "id": "83a489f7096c95c8",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "9ffad85c724392ec",
+        "group": "4e4fb4a8fa51768f",
+        "page": "",
+        "ui": "",
+        "name": "Production Lines and Department Menu",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-container>\n    <v-row>\n      <v-col>\n        <h3>Production Lines</h3>\n      </v-col>\n    </v-row>\n\n    <v-row class=\"scrollable-row\" no-gutters>\n      <v-col v-for=\"(btn, index) in lines\" :key=\"index\" cols=\"auto\">\n        <v-btn :href=\"`/dashboard/lines?line=${btn.value}`\" class=\"custom-btn\" rounded>\n          {{ btn.label }}\n        </v-btn>\n      </v-col>\n    </v-row>\n\n    <v-row>\n      <v-col>\n        <h3>Departments</h3>\n      </v-col>\n    </v-row>\n\n    <v-row class=\"scrollable-row\" no-gutters>\n      <v-col v-for=\"(btn, index) in departments\" :key=\"index\" cols=\"auto\" class=\"department-item\">\n        <v-btn :href=\"`/dashboard/departments?department=${btn.value}`\" class=\"custom-btn\" rounded>\n          {{ btn.label }}\n        </v-btn>\n      </v-col>\n    </v-row>\n\n    <v-alert v-if=\"selectedDepartment\" type=\"success\" class=\"mt-3\">\n      Selected Department: {{ selectedDepartment }}\n    </v-alert>\n\n    <v-alert v-if=\"selectedLine\" type=\"success\" class=\"mt-3\">\n      Selected Line: {{ selectedLine }}\n    </v-alert>\n  </v-container>\n</template>\n\n<script>\n  export default {\n  data() {\n    return {\n      selectedDepartment: '',\n      selectedLine: '',\n      departments: [],\n      lines: []\n    };\n  },\n  methods: {\n    updateButtonContent(data) {\n      // Sort departments and lines alphabetically by label\n      this.departments = (data.departments || []).sort((a, b) => a.label.localeCompare(b.label));\n      this.lines = (data.lines || []).sort((a, b) => a.label.localeCompare(b.label));\n    }\n  },\n  mounted() {\n    this.departments = [];\n    this.lines = [];\n    this.$socket.on('msg-input:' + this.id, (msg) => {\n      this.updateButtonContent(msg.payload);\n    });\n  }\n};\n</script>\n\n<style scoped>\n  .scrollable-row {\n    display: flex;\n    overflow-x: auto;\n    padding: 10px 0;\n    flex-wrap: nowrap;\n  }\n\n  .scrollable-row .v-col {\n    flex-shrink: 0;\n  }\n\n  .custom-btn {\n    background-color: rgb(32, 44, 52) !important;\n    color: white !important;\n    margin-right: 12px;\n    padding: 8px 16px;\n    font-size: 14px;\n  }\n\n  .custom-btn:hover {\n    background-color: rgb(54, 70, 86) !important;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 640,
+        "y": 3540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86745e22793fb755",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "store[msg._client.socketId].line",
+                "pt": "global",
+                "to": "payload.query.department",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 3340,
+        "wires": [
+            [
+                "d182b28937aa069d"
+            ]
+        ]
+    },
+    {
+        "id": "d76732a09652cd0e",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 1380,
+        "y": 3360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d601620c0314a4a",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "Redirect to Not found page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Incorrect Link",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1160,
+        "y": 3340,
+        "wires": [
+            [
+                "d76732a09652cd0e"
+            ]
+        ]
+    },
+    {
+        "id": "77a5773e56ac5253",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "Has line key?",
+        "property": "payload.query",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "department",
+                "vt": "str"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 420,
+        "y": 3360,
+        "wires": [
+            [
+                "29f55095b28aaa6c",
+                "86745e22793fb755"
+            ],
+            [
+                "69f553e41a467aa4"
+            ]
+        ]
+    },
+    {
+        "id": "d182b28937aa069d",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [],
+        "x": 915,
+        "y": 3340,
+        "wires": []
+    },
+    {
+        "id": "29f55095b28aaa6c",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "Merge department array",
+        "func": "let lines = global.get('departments', 'persistent') || [];\n\n// Extract label values from both arrays, convert to lowercase, and merge them into a single array\nlet labels = [\n    ...lines.map(obj => obj.label),\n];\n\n// Set the merged labels array in the message\nmsg.payload.labels = labels;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 3300,
+        "wires": [
+            [
+                "b11abf1d68ec28bb"
+            ]
+        ]
+    },
+    {
+        "id": "b11abf1d68ec28bb",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "Is department exist?",
+        "property": "payload.labels",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "store[msg._client.socketId].line",
+                "vt": "global"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 900,
+        "y": 3300,
+        "wires": [
+            [],
+            [
+                "79ccd6d7df94848c"
+            ]
+        ]
+    },
+    {
+        "id": "79ccd6d7df94848c",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "Is the currently accessed page name \"Departments\"?",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Departments",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1240,
+        "y": 3300,
+        "wires": [
+            [
+                "7d601620c0314a4a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f2b234b31a1d9a02",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "All Departments",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1120,
+        "y": 3380,
+        "wires": [
+            [
+                "d76732a09652cd0e"
+            ]
+        ]
+    },
+    {
+        "id": "69f553e41a467aa4",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "Is the current page name \"Departments\"?",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Departments",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 3380,
+        "wires": [
+            [
+                "f2b234b31a1d9a02"
+            ]
+        ]
+    },
+    {
+        "id": "f8b5c405cf677059",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 130,
+        "y": 3360,
+        "wires": [
+            [
+                "54fb3ea87ed58f3b"
+            ]
+        ]
+    },
+    {
+        "id": "54fb3ea87ed58f3b",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "d166c6ec7a8a28f3",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "$pageview",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 3360,
+        "wires": [
+            [
+                "77a5773e56ac5253"
+            ]
+        ]
+    },
+    {
+        "id": "e4aa5567de9ea9ea",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "store[msg._client.socketId].line",
+                "pt": "global",
+                "to": "payload.query.line",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 2040,
+        "wires": [
+            [
+                "3beb4a5ea9566a89"
+            ]
+        ]
+    },
+    {
+        "id": "409a4039ef709203",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 1380,
+        "y": 2000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89d381e533ca9195",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "Redirect to Not found page",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Incorrect Link",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1160,
+        "y": 2000,
+        "wires": [
+            [
+                "409a4039ef709203"
+            ]
+        ]
+    },
+    {
+        "id": "40ea3cd42362d775",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "Has line key?",
+        "property": "payload.query",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "line",
+                "vt": "str"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 500,
+        "y": 2000,
+        "wires": [
+            [
+                "e4aa5567de9ea9ea",
+                "7fa521b962030645"
+            ],
+            [
+                "a451352075d6084f"
+            ]
+        ]
+    },
+    {
+        "id": "3beb4a5ea9566a89",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [],
+        "x": 1285,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "82fc57f5813f165d",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "Is lines exist?",
+        "property": "payload.labels",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "store[msg._client.socketId].line",
+                "vt": "global"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 960,
+        "y": 1940,
+        "wires": [
+            [],
+            [
+                "886879b4c3f012ce"
+            ]
+        ]
+    },
+    {
+        "id": "886879b4c3f012ce",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "Is the currently accessed page name \"Lines\"?",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Lines",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 840,
+        "y": 2000,
+        "wires": [
+            [
+                "89d381e533ca9195"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9ca01fbba462d682",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "All Lines",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 2080,
+        "wires": [
+            [
+                "6bdce75e7b94e709"
+            ]
+        ]
+    },
+    {
+        "id": "6bdce75e7b94e709",
+        "type": "ui-control",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "",
+        "ui": "c385dfc590b1308d",
+        "events": "all",
+        "x": 1120,
+        "y": 2080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a451352075d6084f",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "",
+        "property": "payload.page.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Lines",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 710,
+        "y": 2080,
+        "wires": [
+            [
+                "9ca01fbba462d682"
+            ]
+        ]
+    },
+    {
+        "id": "4d0cf36ff627c1f2",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 130,
+        "y": 2000,
+        "wires": [
+            [
+                "a7f6f544817d2d2d"
+            ]
+        ]
+    },
+    {
+        "id": "a7f6f544817d2d2d",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "$pageview",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 2000,
+        "wires": [
+            [
+                "40ea3cd42362d775"
+            ]
+        ]
+    },
+    {
+        "id": "7fa521b962030645",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "ecbeee830f4f4bec",
+        "name": "Merge lines array",
+        "func": "let lines = global.get('lines', 'persistent') || [];\n\n// Extract label values from both arrays, convert to lowercase, and merge them into a single array\nlet labels = [\n    ...lines.map(obj => obj.label),\n];\n\n// Set the merged labels array in the message\nmsg.payload.labels = labels;\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 1940,
+        "wires": [
+            [
+                "82fc57f5813f165d"
+            ]
+        ]
+    },
+    {
+        "id": "3f42b2e1f767e2d3",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "ea41ca28c3ac383c",
+        "group": "46a90ed3babdf7cb",
+        "page": "",
+        "ui": "",
+        "name": "Production Lines Menu",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-container>\n    <!-- Label for Production Lines -->\n    <v-row>\n      <v-col>\n        <h3>Production Lines</h3>\n      </v-col>\n    </v-row>\n\n    <!-- Scrollable Lines Row with Links -->\n    <v-row class=\"scrollable-row\" no-gutters>\n      <v-col v-for=\"(btn, index) in lines\" :key=\"index\" cols=\"auto\">\n        <v-btn :href=\"`/dashboard/lines?line=${btn.value}`\" class=\"custom-btn\" rounded>\n          {{ btn.label }}\n        </v-btn>\n      </v-col>\n    </v-row>\n\n    <!-- Display Alerts if any line is selected -->\n    <v-alert v-if=\"selectedLine\" type=\"success\" class=\"mt-3\">\n      Selected Line: {{ selectedLine }}\n    </v-alert>\n  </v-container>\n</template>\n\n<script>\n  export default {\n    data() {\n      return {\n        selectedLine: '', // Holds the value of the selected line\n        lines: [] // List of lines, initially empty\n      };\n    },\n    methods: {\n      // Method to update the buttons data (lines)\n      updateButtonContent(data) {\n        // Update lines from the payload and sort alphabetically by label\n        this.lines = (data.lines || []).sort((a, b) => a.label.localeCompare(b.label));\n      }\n    },\n    mounted() {\n      // Initialize the data as an empty array on mount\n      this.lines = [];\n\n      // WebSocket event listener for receiving updates\n      this.$socket.on('msg-input:' + this.id, (msg) => {\n        // Assuming 'msg' contains lines data\n        this.updateButtonContent(msg.payload);\n      });\n    }\n  };\n</script>\n\n<style scoped>\n  /* Styling for scrollable rows */\n  .scrollable-row {\n    display: flex;\n    /* Ensures the buttons are laid out in a single row */\n    overflow-x: auto;\n    /* Enables horizontal scrolling */\n    padding: 10px 0;\n    /* Adds padding to the top and bottom */\n    flex-wrap: wrap;\n    /* Allows items to wrap to the next row when needed */\n  }\n\n  /* Ensures no wrapping and keeps buttons in a horizontal row */\n  .scrollable-row .v-col {\n    flex-shrink: 0;\n    /* Prevents columns from shrinking */\n    margin-bottom: 10px;\n    /* Adds spacing between rows when wrapping */\n  }\n\n  /* Optional: Adds a minimum height to the rows if you need a consistent row height */\n  .scrollable-row {\n    min-height: 60px;\n    /* Adjust this value as needed */\n  }\n\n  /* Custom Button Styling */\n  .custom-btn {\n    background-color: rgb(32, 44, 52) !important;\n    /* Sets background color */\n    color: white !important;\n    /* Ensures text is readable */\n    margin-right: 12px;\n    /* Adds space between buttons */\n    padding: 8px 16px;\n    /* Adjust padding for the buttons */\n  }\n\n  .custom-btn:hover {\n    background-color: rgb(54, 70, 86) !important;\n    /* Darker shade on hover */\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 660,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d89b181c79b08b97",
+        "type": "ui-event",
+        "z": "4905164f6a425bac",
+        "g": "ea41ca28c3ac383c",
+        "ui": "c385dfc590b1308d",
+        "name": "",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "8d1b9ecbd0a81856",
+                "956bbc41ce9270f2"
+            ]
+        ]
+    },
+    {
+        "id": "8d1b9ecbd0a81856",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "ea41ca28c3ac383c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.lines",
+                "pt": "msg",
+                "to": "#:(persistent)::lines",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 314,
+        "y": 200,
+        "wires": [
+            [
+                "3f42b2e1f767e2d3"
+            ]
+        ]
+    },
+    {
+        "id": "5bd7236ae444802c",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "ea41ca28c3ac383c",
+        "group": "4b9086d2cc85dfba",
+        "page": "",
+        "ui": "",
+        "name": "Departments Menu",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-container>\n    <!-- Label for Departments -->\n    <v-row>\n      <v-col>\n        <h3>Departments</h3>\n      </v-col>\n    </v-row>\n\n    <!-- Scrollable Departments Row with Links -->\n    <v-row class=\"scrollable-row\" no-gutters>\n      <v-col v-for=\"(btn, index) in departments\" :key=\"index\" cols=\"auto\">\n        <v-btn :href=\"`/dashboard/departments?department=${btn.value}`\" class=\"custom-btn\" rounded>\n          {{ btn.label }}\n        </v-btn>\n      </v-col>\n    </v-row>\n\n    <!-- Display Alert if any department is selected -->\n    <v-alert v-if=\"selectedDepartment\" type=\"success\" class=\"mt-3\">\n      Selected Department: {{ selectedDepartment }}\n    </v-alert>\n  </v-container>\n</template>\n\n<script>\n  export default {\n    data() {\n      return {\n        selectedDepartment: '', // Holds the value of the selected department\n        departments: [] // List of departments, initially empty\n      };\n    },\n    methods: {\n      // Method to update the buttons data (departments)\n      updateButtonContent(data) {\n        // Update departments from the payload and sort them alphabetically by label\n        this.departments = (data.departments || []).sort((a, b) => a.label.localeCompare(b.label));\n      }\n    },\n    mounted() {\n      // Initialize the data as an empty array on mount\n      this.departments = [];\n\n      // WebSocket event listener for receiving updates\n      this.$socket.on('msg-input:' + this.id, (msg) => {\n        // Assuming 'msg' contains departments data\n        this.updateButtonContent(msg.payload);\n      });\n    }\n  };\n</script>\n\n<style scoped>\n  /* Styling for scrollable rows */\n  .scrollable-row {\n    display: flex;\n    /* Ensures the buttons are laid out in a single row */\n    overflow-x: auto;\n    /* Enables horizontal scrolling */\n    padding: 10px 0;\n    /* Adds padding to the top and bottom */\n    flex-wrap: wrap;\n    /* Allows items to wrap to the next row when needed */\n  }\n\n  /* Ensures no wrapping and keeps buttons in a horizontal row */\n  .scrollable-row .v-col {\n    flex-shrink: 0;\n    /* Prevents columns from shrinking */\n    margin-bottom: 10px;\n    /* Adds spacing between rows when wrapping */\n  }\n\n  /* Optional: Adds a minimum height to the rows if you need a consistent row height */\n  .scrollable-row {\n    min-height: 60px;\n    /* Adjust this value as needed */\n  }\n\n  /* Custom Button Styling */\n  .custom-btn {\n    background-color: rgb(32, 44, 52) !important;\n    /* Sets background color */\n    color: white !important;\n    /* Ensures text is readable */\n    margin-right: 12px;\n    /* Adds space between buttons */\n    padding: 8px 16px;\n    /* Adjust padding for the buttons */\n  }\n\n  .custom-btn:hover {\n    background-color: rgb(54, 70, 86) !important;\n    /* Darker shade on hover */\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 650,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "956bbc41ce9270f2",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "ea41ca28c3ac383c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.departments",
+                "pt": "msg",
+                "to": "#:(persistent)::departments",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 344,
+        "y": 240,
+        "wires": [
+            [
+                "5bd7236ae444802c"
+            ]
+        ]
+    },
+    {
+        "id": "cf9cae522b66e403",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Clear entered request data",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "store[msg._client.socketId].support",
+                "pt": "global"
+            },
+            {
+                "t": "delete",
+                "p": "store[msg._client.socketId].notes",
+                "pt": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 1700,
+        "wires": [
+            [
+                "7a978fe8a1969d29"
+            ]
+        ]
+    },
+    {
+        "id": "facd190a588c977c",
+        "type": "ui-notification",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "ui": "c385dfc590b1308d",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "3",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "",
+        "x": 750,
+        "y": 1700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c33bef73fdaddabc",
+        "type": "function",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Does department and notes are not empty?",
+        "func": "let request = msg.request;\n\nif (typeof request !== \"object\" || request === null) {\n    msg.payload = \"Request must be an object.\";\n    return [null, msg]; // Send msg to third output if request is not an object\n} else if (!request.hasOwnProperty(\"support\")) {\n    msg.payload = \"Please select the appropriate department for the request.\";\n    return [null, msg]; // Send msg to second output, nothing to first or third\n} else if (!request.hasOwnProperty(\"notes\") || typeof request.notes !== \"string\" || request.notes.trim() === \"\") {\n    msg.payload = \"Please add notes to provide more context on the request.\";\n    return [null, msg]; // Send msg to third output, nothing to first or second\n} else {\n    return [msg, null]; // Send msg to first output, nothing to second or third\n}\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1700,
+        "wires": [
+            [
+                "0da9e11834187f55"
+            ],
+            [
+                "facd190a588c977c"
+            ]
+        ]
+    },
+    {
+        "id": "9fb78e774c3fe5c3",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Clear Selection",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 1500,
+        "wires": [
+            [
+                "c4ee5a28c33fb826"
+            ]
+        ]
+    },
+    {
+        "id": "7a978fe8a1969d29",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "link out 13",
+        "mode": "link",
+        "links": [
+            "aa5020dabb03798e"
+        ],
+        "x": 1425,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "aa5020dabb03798e",
+        "type": "link in",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "link in 3",
+        "links": [
+            "7a978fe8a1969d29"
+        ],
+        "x": 455,
+        "y": 1520,
+        "wires": [
+            [
+                "f0d06117d095bcd2",
+                "9fb78e774c3fe5c3"
+            ]
+        ]
+    },
+    {
+        "id": "9687f8ea312f876c",
+        "type": "ui-markdown",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "group": "31a61a6d5c397cf4",
+        "name": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "content": "<h1 style=\"text-align: center;\">Line: {{ msg?.params.$line }}</h1>\n",
+        "className": "",
+        "x": 630,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76d3c61ef4cef2ac",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "f75ad477d2b26604",
+        "group": "",
+        "page": "",
+        "ui": "c385dfc590b1308d",
+        "name": "Update the table every 1 second",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<script>\n    export default {\n\n  mounted() {\n    // Set an interval to update the message every second\n    this.intervalId = setInterval(() => {\n    this.send('Component has loaded')\n    }, 1000);\n  },\n  beforeUnmount() {\n    // Clear the interval when the component is about to be destroyed\n    clearInterval(this.intervalId);\n  },\n};\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 210,
+        "y": 3780,
+        "wires": [
+            [
+                "a4c4ddd524389717"
+            ]
+        ]
+    },
+    {
+        "id": "b45eacb7a8ef8a6d",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Confirmation message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Are you sure you want to submit request?",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 1600,
+        "wires": [
+            [
+                "1e4126b2aad32680"
+            ]
+        ]
+    },
+    {
+        "id": "077b09e59d5e89b3",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "confirm_clicked",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 930,
+        "y": 1660,
+        "wires": [
+            [
+                "65547a8808f9a70e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "dae0bfe666b0acb3",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$line",
+                "pt": "msg",
+                "to": "store[msg._client.socketId].line",
+                "tot": "global"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "9687f8ea312f876c",
+                "aac4ffda6235d691"
+            ]
+        ]
+    },
+    {
+        "id": "f9f68e36958f5339",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "eca4797e2a60d7b0",
+        "group": "",
+        "page": "",
+        "ui": "c385dfc590b1308d",
+        "name": "Update the table every 1 second",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<script>\n    export default {\n\n  mounted() {\n    // Set an interval to update the message every second\n    this.intervalId = setInterval(() => {\n    this.send('Component has loaded')\n    }, 1000);\n  },\n  beforeUnmount() {\n    // Clear the interval when the component is about to be destroyed\n    clearInterval(this.intervalId);\n  },\n};\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "dae0bfe666b0acb3"
+            ]
+        ]
+    },
+    {
+        "id": "183c88e7256e7b94",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "2b61390f35d4cb44",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "prepared",
+        "sql": "SELECT * from requests WHERE support = $department AND resolved IS NULL;",
+        "name": "Retrive Requests by user's department selection ",
+        "x": 840,
+        "y": 2280,
+        "wires": [
+            [
+                "166484adad398255"
+            ]
+        ]
+    },
+    {
+        "id": "166484adad398255",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "2b61390f35d4cb44",
+        "name": "link out 14",
+        "mode": "link",
+        "links": [
+            "0ccbc0ee500c0d19"
+        ],
+        "x": 1065,
+        "y": 2280,
+        "wires": []
+    },
+    {
+        "id": "496a35f060d24bd6",
+        "type": "ui-markdown",
+        "z": "4905164f6a425bac",
+        "g": "2b61390f35d4cb44",
+        "group": "7bce80f8909be255",
+        "name": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "content": "<h1 style=\"text-align: center;\">Department: {{ msg?.params.$department }}</h1>\n",
+        "className": "",
+        "x": 730,
+        "y": 2240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1eb68347872983ae",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "2b61390f35d4cb44",
+        "name": "Set params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$department",
+                "pt": "msg",
+                "to": "store[msg._client.socketId].line",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 2260,
+        "wires": [
+            [
+                "496a35f060d24bd6",
+                "183c88e7256e7b94"
+            ]
+        ]
+    },
+    {
+        "id": "99cf65bd25d65e06",
+        "type": "ui-template",
+        "z": "4905164f6a425bac",
+        "g": "2b61390f35d4cb44",
+        "group": "",
+        "page": "",
+        "ui": "c385dfc590b1308d",
+        "name": "Update the table every 1 second",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<script>\n    export default {\n\n  mounted() {\n    // Set an interval to update the message every second\n    this.intervalId = setInterval(() => {\n    this.send('Component has loaded')\n    }, 1000);\n  },\n  beforeUnmount() {\n    // Clear the interval when the component is about to be destroyed\n    clearInterval(this.intervalId);\n  },\n};\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 210,
+        "y": 2260,
+        "wires": [
+            [
+                "1eb68347872983ae"
+            ]
+        ]
+    },
+    {
+        "id": "65547a8808f9a70e",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$line",
+                "pt": "msg",
+                "to": "request.line",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "params.$support",
+                "pt": "msg",
+                "to": "request.support",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "params.$time",
+                "pt": "msg",
+                "to": "request.time",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "params.$notes",
+                "pt": "msg",
+                "to": "request.notes",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1100,
+        "y": 1660,
+        "wires": [
+            [
+                "a1d7ee1b8fcea94d"
+            ]
+        ]
+    },
+    {
+        "id": "7723bf4284de76d9",
+        "type": "ui-markdown",
+        "z": "4905164f6a425bac",
+        "g": "0b82ccfa102a2952",
+        "group": "165815e4f97d2ad3",
+        "name": "Not Found Page (Incorrect Link)",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "<p align=\"center\" style=\"font-size: 24px;\">Kindly contact your administrator for the correct link.</p>\n",
+        "className": "",
+        "x": 1330,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0952cfae720cad6b",
+        "type": "change",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "Set empty array",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 500,
+        "wires": [
+            [
+                "8f85f64a34fd4306"
+            ]
+        ]
+    },
+    {
+        "id": "8f85f64a34fd4306",
+        "type": "link out",
+        "z": "4905164f6a425bac",
+        "g": "aa05232f163a9a99",
+        "name": "link out 15",
+        "mode": "link",
+        "links": [
+            "7f5142e8666d47e4"
+        ],
+        "x": 925,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "42c9fd5fa5b07657",
+        "type": "sqlite",
+        "z": "4905164f6a425bac",
+        "g": "6af400ee2fa53066",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "prepared",
+        "sql": "UPDATE requests \nSET acknowledged = $now\nWHERE rowid = $request \nAND acknowledged IS NULL",
+        "name": "",
+        "x": 1030,
+        "y": 1800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb86e59e84a16c73",
+        "type": "switch",
+        "z": "4905164f6a425bac",
+        "g": "08b1402a264e4587",
+        "name": "Check if msg has request object",
+        "property": "request",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 1640,
+        "wires": [
+            [
+                "c33bef73fdaddabc"
+            ]
+        ]
+    },
+    {
+        "id": "f0cf1cdd9ec95acf",
+        "type": "change",
+        "z": "c3af105aa906e737",
+        "g": "fd5f315f792d3cf7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::admins",
+                "pt": "global",
+                "to": "[\"sumitshindeflowfuse\"]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c49901682b8bc5d4",
+        "type": "comment",
+        "z": "c3af105aa906e737",
+        "g": "fd5f315f792d3cf7",
+        "name": "Define Admins Here",
+        "info": "",
+        "x": 170,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d0ac4081bb469fac",
+        "type": "inject",
+        "z": "c3af105aa906e737",
+        "g": "fd5f315f792d3cf7",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 420,
+        "wires": [
+            [
+                "f0cf1cdd9ec95acf"
+            ]
+        ]
+    },
+    {
+        "id": "a545ed28c44bc51b",
+        "type": "change",
+        "z": "c3af105aa906e737",
+        "g": "4e9278bef01b88b2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "oldRequestThreshold",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "veryOldRequestThreshold",
+                "pt": "global",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46602a48a2bf48c8",
+        "type": "inject",
+        "z": "c3af105aa906e737",
+        "g": "4e9278bef01b88b2",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "a545ed28c44bc51b"
+            ]
+        ]
+    },
+    {
+        "id": "567f452c9cb1357e",
+        "type": "change",
+        "z": "c3af105aa906e737",
+        "g": "4d83fc206bc232e2",
+        "name": "set the duration threshold (in minutes) to trigger the alert",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alertActivationThreshold",
+                "pt": "global",
+                "to": "0.1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be0d588d8ea0b262",
+        "type": "inject",
+        "z": "c3af105aa906e737",
+        "g": "4d83fc206bc232e2",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "567f452c9cb1357e"
+            ]
+        ]
+    },
+    {
+        "id": "28ce5eb06d3ff417",
+        "type": "inject",
+        "z": "c3af105aa906e737",
+        "g": "4d83fc206bc232e2",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "4d5378aecbd49411"
+            ]
+        ]
+    },
+    {
+        "id": "4d5378aecbd49411",
+        "type": "change",
+        "z": "c3af105aa906e737",
+        "g": "4d83fc206bc232e2",
+        "name": "Set the URL for the alert sound",
+        "rules": [
+            {
+                "t": "set",
+                "p": "alertSoundURL",
+                "pt": "global",
+                "to": "https://www.soundjay.com/buttons/beep-26.wav",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08eb234f1e8eac5e",
+        "type": "inject",
+        "z": "8cba7b55203e6a12",
+        "g": "1102ce4f58a12d64",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "a95b2c2838afd7e0"
+            ]
+        ]
+    },
+    {
+        "id": "e4ca3e9886a283cf",
+        "type": "debug",
+        "z": "8cba7b55203e6a12",
+        "g": "1102ce4f58a12d64",
+        "name": "debug 60",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a95b2c2838afd7e0",
+        "type": "template",
+        "z": "8cba7b55203e6a12",
+        "g": "1102ce4f58a12d64",
+        "name": "Create",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "CREATE TABLE IF NOT EXISTS requests (\n    rowid INTEGER PRIMARY KEY,\n    line TEXT NOT NULL,\n    support TEXT NOT NULL,\n    requested TEXT NOT NULL,\n    acknowledged TEXT,\n    resolved TEXT,\n    notes TEXT\n);\n",
+        "output": "str",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "8d50e57636b774a9"
+            ]
+        ]
+    },
+    {
+        "id": "8d50e57636b774a9",
+        "type": "sqlite",
+        "z": "8cba7b55203e6a12",
+        "g": "1102ce4f58a12d64",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "e4ca3e9886a283cf"
+            ]
+        ]
+    },
+    {
+        "id": "23fb0462f15023af",
+        "type": "inject",
+        "z": "8cba7b55203e6a12",
+        "g": "df60d434a52bd6a2",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "7903e648e5a67c40"
+            ]
+        ]
+    },
+    {
+        "id": "7903e648e5a67c40",
+        "type": "template",
+        "z": "8cba7b55203e6a12",
+        "g": "df60d434a52bd6a2",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "sql",
+        "syntax": "mustache",
+        "template": "DELETE from requests  WHERE requested <  DATE('now', '-30 days');",
+        "output": "str",
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "74f10f7f705d46bf"
+            ]
+        ]
+    },
+    {
+        "id": "5775dcb91c0feacb",
+        "type": "debug",
+        "z": "8cba7b55203e6a12",
+        "g": "df60d434a52bd6a2",
+        "name": "debug 59",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "74f10f7f705d46bf",
+        "type": "sqlite",
+        "z": "8cba7b55203e6a12",
+        "g": "df60d434a52bd6a2",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "5775dcb91c0feacb"
+            ]
+        ]
+    },
+    {
+        "id": "2b077ccbdc938107",
+        "type": "http in",
+        "z": "78bbed87dae57137",
+        "g": "9d9e16af1ba77ad4",
+        "name": "Historical Data API",
+        "url": "/history",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "5284517bdac2815b"
+            ]
+        ]
+    },
+    {
+        "id": "5284517bdac2815b",
+        "type": "sqlite",
+        "z": "78bbed87dae57137",
+        "g": "9d9e16af1ba77ad4",
+        "mydb": "31abef4ecbfd6327",
+        "sqlquery": "fixed",
+        "sql": "SELECT * from requests WHERE resolved IS NOT NULL;",
+        "name": "Retrive all reqeust that are resolved",
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "39ae15e14a4f9262"
+            ]
+        ]
+    },
+    {
+        "id": "39ae15e14a4f9262",
+        "type": "http response",
+        "z": "78bbed87dae57137",
+        "g": "9d9e16af1ba77ad4",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 680,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "274d94b4ab0535c3",
+        "type": "comment",
+        "z": "78bbed87dae57137",
+        "g": "9d9e16af1ba77ad4",
+        "name": "To use the API, the URL would be https://<your-instance-name>.flowfuse.cloud/history\"",
+        "info": "",
+        "x": 360,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1a78c20dc03bfe38",
+        "type": "ui-template",
+        "z": "534b53b1f7cf7463",
+        "g": "08f3a2e4591326eb",
+        "group": "",
+        "page": "",
+        "ui": "c385dfc590b1308d",
+        "name": "CSS: ",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".hide{\n    display: none !important;\n}\n\n.show{\n    display: grid !important;\n}\n\n.form{\n    gap:20px !important;\n}\n\n.form .nrdb-ui-form-rows{\n    display:grid !important;\n    gap:2.5rem !important;\n}\n\n.nrdb-ui-form-actions{\n margin-top:  1.8rem !important;\n}\n\n.v-btn-group{\n    overflow-x:auto;\n}\n\ntr:has(.old) {\n    background-color: #FFECA1;\n}\n\ntr:has(.older) {\nbackground-color: #EFAF9B;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "34c733b480e41a13",
+        "type": "inject",
+        "z": "d5dd9bfc599374d4",
+        "g": "6471824e24f18939",
+        "name": "Add production lines and department for testing",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 260,
+        "y": 120,
+        "wires": [
+            [
+                "4e46ae25d198fd1b",
+                "399bd159f46c7427"
+            ]
+        ]
+    },
+    {
+        "id": "4e46ae25d198fd1b",
+        "type": "switch",
+        "z": "d5dd9bfc599374d4",
+        "g": "6471824e24f18939",
+        "name": "Is lines undefined?",
+        "property": "#:(persistent)::lines",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 550,
+        "y": 100,
+        "wires": [
+            [
+                "882e29d2dcc9326c"
+            ]
+        ]
+    },
+    {
+        "id": "882e29d2dcc9326c",
+        "type": "change",
+        "z": "d5dd9bfc599374d4",
+        "g": "6471824e24f18939",
+        "name": "Store lines to context store",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::lines",
+                "pt": "global",
+                "to": "[{\"value\":\"T1\",\"label\":\"T1\"},{\"value\":\"T2\",\"label\":\"T2\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "399bd159f46c7427",
+        "type": "switch",
+        "z": "d5dd9bfc599374d4",
+        "g": "6471824e24f18939",
+        "name": "Is departments undefined?",
+        "property": "#:(persistent)::departments",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "undefined",
+                "vt": "undefined"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "5001c1cdf6661f88"
+            ]
+        ]
+    },
+    {
+        "id": "5001c1cdf6661f88",
+        "type": "change",
+        "z": "d5dd9bfc599374d4",
+        "g": "6471824e24f18939",
+        "name": "Store departments to context store",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::departments",
+                "pt": "global",
+                "to": "[{\"value\":\"Maintenance\",\"label\":\"Maintenance\"},{\"value\":\"Stores\",\"label\":\"Stores\"},{\"value\":\"Quality\",\"label\":\"Quality\"}]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    }
+]
