@@ -1,50 +1,82 @@
-import { parse as parseYaml } from 'yaml'
-import featureCatalogRaw from '../../src/_data/featureCatalog.yaml?raw'
+// The lookups live in nuxt/lib/ as plain JS so `node --test` can run them directly
+// (same reason as docs-nav.mjs); this file is the typed surface components import.
+// @ts-ignore untyped module
+import { findFeatureByChangelog, findFeatureByDocsPage, planLabels } from '../lib/feature-catalog.mjs'
+// @ts-ignore untyped module
+import { injectReleaseFeatures, resolveReleaseFeatures } from '../lib/release-features.mjs'
 
-interface TierValue {
-    value?: boolean | string | null
-    dimmed?: boolean
-}
-
-interface FeatureTier {
-    enterprise?: TierValue
+export interface FeatureTiers {
+    edge: boolean
+    hub: boolean
+    fleet: boolean
 }
 
 export interface CatalogFeature {
     id: string
-    cloud?: FeatureTier
-    selfHosted?: FeatureTier
-    changelog?: string | { url: string, release?: string } | Array<string | { url: string, release?: string }>
+    title: string
+    description?: string
+    docsLink?: string
+    changelog?: Array<{ url: string, release?: string }>
+    subfeature?: boolean
+    beta?: boolean
+    showOnPricing?: boolean
+    tiers?: FeatureTiers
 }
 
-// `yaml`'s parse() is a pure parser (no arbitrary type construction); featureCatalog.yaml is trusted in-repo data.
-const featureCatalog = parseYaml(featureCatalogRaw) || { sections: [] }
-
-function allFeatures(): CatalogFeature[] {
-    return (featureCatalog.sections || []).flatMap((section: any) => section.features || [])
+/**
+ * The whole catalog. Every caller shares the `featureCatalog` key, so the pricing page and
+ * a page full of changelog rows all read one fetch.
+ */
+export function useFeatureCatalog () {
+    const { data } = useAsyncData('featureCatalog', () => queryCollection('featureCatalog').first())
+    return data
 }
 
-function changelogUrls(feature: CatalogFeature): string[] {
-    if (!feature.changelog) return []
-    const entries = Array.isArray(feature.changelog) ? feature.changelog : [feature.changelog]
-    return entries.map(entry => typeof entry === 'string' ? entry : entry.url)
+/**
+ * The plans that include the feature a changelog post shipped.
+ *
+ * Empty whenever the post is not tied to a catalog feature, or the feature's availability
+ * has not been settled. Both mean "publish no badge" rather than "publish an empty one".
+ */
+export function useChangelogPlans (path: MaybeRefOrGetter<string | undefined>) {
+    const catalog = useFeatureCatalog()
+    return computed<string[]>(() => planLabels(findFeatureByChangelog(catalog.value, toValue(path))?.tiers))
 }
 
-export function findFeatureByChangelog(changelogUrl: string): CatalogFeature | null {
-    const normalized = changelogUrl.replace(/\/$/, '') + '/'
-    for (const feature of allFeatures()) {
-        if (changelogUrls(feature).some(url => (url.replace(/\/$/, '') + '/') === normalized)) return feature
-    }
-    return null
+/**
+ * The plans that include the feature a docs page documents. Empty on the many docs pages
+ * that are not tied to a catalog feature.
+ */
+export function useDocsPlans (path: MaybeRefOrGetter<string | undefined>) {
+    const catalog = useFeatureCatalog()
+    return computed<string[]>(() => planLabels(findFeatureByDocsPage(catalog.value, toValue(path))?.tiers))
 }
 
-export function deriveTierLabel(tierData?: FeatureTier): string | null {
-    if (!tierData) return null
-    const enterprise = tierData.enterprise?.value
-    const enterpriseDimmed = tierData.enterprise?.dimmed
-    if (enterprise === 'contact' || (typeof enterprise === 'string' && enterprise.toLowerCase().includes('contact'))) return 'Enterprise (contact us)'
-    if (enterpriseDimmed) return 'Enterprise (on request)'
-    if (enterprise === 'time') return 'Coming soon'
-    if (enterprise) return 'Enterprise'
-    return 'Not available'
+/**
+ * A release blog with its `features:` frontmatter rendered: plan badges under each named
+ * heading, changelog and docs links at the end of that section.
+ *
+ * Returns the page unchanged for every post without a `release` and `features:` block, which
+ * is all of them except the release blogs.
+ */
+export function useReleaseFeaturePage (page: MaybeRefOrGetter<any>) {
+    const catalog = useFeatureCatalog()
+
+    // Titles for the changelog links. Metadata only, and shared with the changelog pages by key.
+    const { data: changelogPosts } = useAsyncData(
+        'changelog-titles',
+        () => queryCollection('changelog').select('path', 'title').all(),
+    )
+    const changelogTitles = computed<Record<string, string>>(() =>
+        Object.fromEntries((changelogPosts.value ?? []).map(post => [`${post.path.replace(/\/+$/, '')}/`, post.title])),
+    )
+
+    return computed(() => {
+        const value = toValue(page)
+        if (!value?.release || !value?.features?.length || !value?.body?.value) return value
+
+        const resolved = resolveReleaseFeatures(value.features, catalog.value, value.release, changelogTitles.value)
+        const body = injectReleaseFeatures(value.body.value, resolved)
+        return body === value.body.value ? value : { ...value, body: { ...value.body, value: body } }
+    })
 }

@@ -15,13 +15,13 @@ release: "2.33"
 # headings below must match the body text exactly or the transform silently
 # injects nothing.
 features:
-  - id: dashboards-home
+  - id: dashboards-view
     heading: "Your Dashboards, All in One Place"
-  - id: scoped-pats
+  - id: scoped-personal-access-tokens
     heading: "Scoped Personal Access Tokens"
-  - id: sso
+  - id: single-sign-on
     heading: "Manage Granular RBAC Through Your Identity Provider"
-  - id: tables
+  - id: flowfuse-tables
     heading: "Ask the Expert About Your Tables"
 ---
 

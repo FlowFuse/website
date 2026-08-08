@@ -1,3 +1,22 @@
+# The single feature catalog. Consumed by:
+#   /pricing                               - plan cards, comparison table
+#   /handbook/engineering/product/features - the full internal table
+#   /changelog/*                           - plan availability badges
+#   /docs/*                                - plan availability badges (matched on docsLink)
+#
+# Sections and the titles, descriptions and tiers of everything that reaches /pricing are
+# owned by the pricing page. Features that no longer appear there keep their entry with
+# showOnPricing: false so the handbook table, docs badges and changelog links still resolve.
+#
+# Fields:
+#   tiers          which plans include the feature. Required unless showOnPricing is false.
+#                  Omit entirely when availability is not settled yet: no tiers means no badge
+#                  is published, which is safer than publishing a wrong one.
+#   showOnPricing  false keeps the feature out of /pricing while still letting it carry a
+#                  changelog or docs link. Defaults to true.
+#   subfeature     renders indented under the preceding feature in the handbook table.
+#   changelog      every changelog post that shipped this feature, oldest first.
+#   docsLink       the canonical docs page. A fragment scopes it to a heading on that page.
 sections:
   - id: ai-automation
     title: AI & Automation
@@ -5,10 +24,43 @@ sections:
       - id: flowfuse-expert-ai
         title: FlowFuse Expert AI
         description: "Build industrial apps with agents, and query the state of the factory with an agent. Adapt your current hardware and machines so agentic work can be done against them, without ripping and replacing what's already on the plant floor."
+        docsLink: /docs/user/expert/
+        changelog:
+          - url: /changelog/2026/02/ff-expert-update-banner/
+            release: "2.28"
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: flowfuse-expert-support-mode
+        title: Support Mode
+        description: "Chat-based assistance for FlowFuse and Node-RED, including Node-RED instance management through natural language."
+        docsLink: /docs/user/expert/chat/#support-mode
+        changelog:
+          - url: /changelog/2026/02/ff-expert-debug-log-context/
+            release: "2.28"
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: flowfuse-expert-application-building
+        title: Application Building
+        description: "Describe what you want to build and FlowFuse Expert assembles it on your workspace, adding tabs, wiring nodes, and configuring properties."
+        docsLink: /docs/user/expert/chat/
+        changelog:
+          - url: /changelog/2026/05/expert-application-building/
+            release: "2.30"
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: flowfuse-expert-insights-mode
+        title: Insights Mode
+        description: "Connects FlowFuse Expert to MCP servers in your Node-RED instances, enabling real-time data queries and actions through a single chat interface."
+        docsLink: /docs/user/expert/chat/#insights-mode
+        subfeature: true
+        beta: true
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
       - id: mcp-servers
         title: Agentic Operations
         description: "Expose your Node-RED flows as tools an AI agent can call directly, so agents can query the state of the factory or trigger actions without custom integration work."
+        docsLink: /node-red/flowfuse/mcp/
         tiers: { edge: true, hub: true, fleet: true }
       - id: onnx-integration
         title: ONNX Integration
@@ -21,28 +73,93 @@ sections:
       - id: edge-development
         title: Edge Development
         description: "Develop and test Node-RED flows directly on edge devices with a remote editor proxy."
+        docsLink: /docs/device-agent/quickstart/
         tiers: { edge: true, hub: false, fleet: true }
       - id: private-npm-registry
         title: Custom Node-RED Nodes
         description: "Create and manage your own private npm registry for Node-RED nodes, so you can share custom nodes across your team and devices without publishing them publicly."
+        docsLink: /docs/user/custom-npm-packages/
         tiers: { edge: true, hub: true, fleet: true }
       - id: flowfuse-tables
         title: FlowFuse Tables
         description: "A managed PostgreSQL database for every application, so you can store and query structured data without standing up and maintaining your own database."
+        docsLink: /docs/user/ff-tables/
+        changelog:
+          - url: /changelog/2026/07/expert-tables-automation/
+            release: "2.33"
         tiers: { edge: true, hub: true, fleet: true }
       - id: persistent-files
         title: File Storage
         description: "Store and retrieve files from your Node-RED flows, with automatic replication and backup across your devices and hosted instances."
+        docsLink: /docs/install/file-storage/
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: persistent-context
+        title: Persistent Context
+        description: "In-memory values defined in a Node-RED flow persist across project restarts and upgrades."
+        docsLink: /docs/user/persistent-context/
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: static-assets
+        title: Static Assets
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
       - id: team-library
         title: Team Library
+        description: "Set up standard nodes and flows that can be shared with all team members across your organisation."
+        docsLink: /docs/user/shared-library/
         tiers: { edge: true, hub: true, fleet: true }
       - id: personalised-multi-user-dashboards
         title: Personalised Multi-User Dashboards
+        description: "Build applications that provide unique data to each logged-in user using personalised multi-user dashboards."
+        docsLink: https://dashboard.flowfuse.com/user/multi-tenancy.html
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: dashboards-view
+        title: Dashboards View
+        description: "Browse and open every dashboard across your team from a dedicated Dashboards view, at both team and application level, without leaving FlowFuse."
+        changelog:
+          - url: /changelog/2026/07/team-and-application-dashboards/
+            release: "2.33"
+        subfeature: true
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
       - id: blueprints-converge
         title: Blueprints
         description: "Ready-made starting points for your apps, from cross-team Converge templates to OT and IT specific blueprints."
+        docsLink: /docs/user/concepts/#blueprint
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: blueprints-ot-apps
+        title: Blueprints - OT APPS
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: false, fleet: true }
+      - id: blueprints-it-apps
+        title: Blueprints - IT APPS
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: false, hub: true, fleet: false }
+      - id: immersive-editor-snapshots
+        title: Snapshot Details in Immersive Editor
+        description: "View and manage snapshot details directly inside the immersive editor without leaving your editing session."
+        changelog:
+          - url: /changelog/2026/03/snapshot-detail-modal-immersive-editor/
+            release: "2.29"
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: immersive-editor-drawer
+        title: Customisable Immersive Editor Drawer
+        description: "Pin, move, resize, or full-screen the immersive editor drawer. Your preferences are remembered between sessions."
+        changelog:
+          - url: /changelog/2026/04/immersive-editor-drawer/
+            release: "2.30"
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: embedded-editor-tab-title
+        title: Embedded Editor Browser Tab Title
+        description: "The browser tab title updates to reflect the active Node-RED canvas tab when working in the embedded editor."
+        changelog:
+          - url: /changelog/2026/03/embedded-editor-tab-title/
+            release: "2.29"
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
 
   - id: deploy
@@ -50,22 +167,59 @@ sections:
     features:
       - id: hosted-instances
         title: Cloud Instances
+        description: "Run Node-RED instances managed and hosted by FlowFuse."
+        docsLink: /docs/user/introduction/#creating-a-node-red-instance
         tiers: { edge: true, hub: true, fleet: true }
       - id: edge-devices
         title: Edge Instances
         description: "Deploy and mange your Node-RED instances on edge PLCs and gateways, with full visibility and control from the cloud."
+        docsLink: /docs/device-agent/introduction/
+        changelog:
+          - url: /changelog/2026/02/device-agent-nodejs-options/
+            release: "2.28"
         tiers: { edge: true, hub: false, fleet: true }
       - id: custom-hostnames
         title: Custom Hostnames
+        description: "Access your Node-RED application via your own domain name."
+        docsLink: /docs/user/custom-hostnames/
         tiers: { edge: false, hub: true, fleet: false }
       - id: mqtt-broker
         title: MQTT Broker
+        description: "Manage and create MQTT clients to transport data for efficient messaging and communication within your applications."
+        docsLink: /docs/user/teambroker/
         tiers: { edge: true, hub: false, fleet: true }
+      - id: project-nodes
+        title: Project Nodes aka seamless project comms
+        description: "FlowFuse Project Nodes enable the passing of data and messages between your Node-RED projects."
+        docsLink: /docs/user/projectnodes/
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
       - id: devops-pipelines
         title: DevOps Pipelines
+        description: "Set up different environments for development, testing, and production Node-RED instances to support a full software delivery lifecycle."
+        docsLink: /docs/user/devops-pipelines/
         tiers: { edge: true, hub: true, fleet: true }
       - id: git-integration
         title: Git Integration
+        description: "Back up your flows to a remote Git repository through a DevOps Pipeline. Supports GitHub and Azure DevOps repositories."
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
+        tiers: { edge: false, hub: true, fleet: false }
+      - id: git-integration-github
+        title: GitHub
+        description: "Push and pull snapshots to GitHub repositories through DevOps Pipeline Git Stages."
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: false, hub: true, fleet: false }
+      - id: git-integration-azure
+        title: Azure DevOps
+        description: "Push and pull snapshots to Azure DevOps repositories through DevOps Pipeline Git Stages."
+        docsLink: /docs/user/devops-pipelines/#git-repository-stage
+        changelog:
+          - url: /changelog/2026/03/azure-dev-ops-gitops/
+            release: "2.29"
+        subfeature: true
+        showOnPricing: false
         tiers: { edge: false, hub: true, fleet: false }
 
   - id: operate-maintain
@@ -74,22 +228,72 @@ sections:
       - id: snapshots
         title: Snapshots & Version History
         description: "Automatic snapshots on remote devices and hosted instances, plus a full version history timeline so you can roll back to any prior state."
+        docsLink: /docs/user/snapshots/
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: auto-snapshot-remote
+        title: Auto Snapshot (Remote)
+        description: "Automatically capture a snapshot every time a remote instance is deployed, so you always have a recoverable history of what was running on each device."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: auto-snapshot-hosted
+        title: Auto Snapshot (Hosted)
+        description: "Automatically capture a snapshot every time a hosted instance is deployed, so you always have a recoverable history of what was running."
+        docsLink: /docs/user/snapshots/#auto-snapshots
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: snapshot-comparison
+        title: Snapshot Comparison
+        description: "Compare two snapshots side-by-side with a navigable diff view. Step through every changed, added, or deleted node and see property and code diffs."
+        changelog:
+          - url: /changelog/2026/04/snapshot-diff-viewer/
+            release: "2.29"
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: version-history-timeline
+        title: Version History Timeline
+        subfeature: true
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
       - id: unlimited-workflow-executions
         title: Unlimited Workflow Executions
         tiers: { edge: true, hub: true, fleet: true }
       - id: device-fleet-updates
         title: Device Fleet Updates
+        description: "Connect to edge devices to quickly assess and update logic. Debug one device and roll out improvements to your fleet in minutes, securely without requiring full device access for your whole organisation."
         tiers: { edge: true, hub: false, fleet: true }
       - id: device-group-management
         title: Device Group Management
+        description: "Logically group devices assigned to an application and integrate device groups into your DevOps Pipeline for coordinated fleet updates."
+        docsLink: /docs/user/device-groups/
         tiers: { edge: true, hub: false, fleet: true }
       - id: high-availability
         title: High Availability
+        description: "Leverage horizontal scaling for reliable and scalable processing of your data through Node-RED."
+        docsLink: /docs/user/high-availability/
         tiers: { edge: false, hub: true, fleet: false }
       - id: performance-monitoring
         title: Performance Monitoring & Alerts
         description: "Track CPU, memory, and event loop performance across your instances and devices, with email alerts when something needs your attention."
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: instance-monitoring
+        title: Instance Monitoring
+        description: "Enable alerts to be sent via email when your Node-RED instances encounter issues."
+        docsLink: /docs/user/instance-settings/#alerts
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: email-alerts
+        title: Email Alerts
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: api-debug-length-limit
+        title: API/Debug Length Limit
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
       - id: protected-instances
         title: Protected Instances
@@ -100,13 +304,21 @@ sections:
     features:
       - id: single-sign-on
         title: Single Sign-On (SSO)
+        description: "Configure FlowFuse to work with your own SSO provider, allowing users to access FlowFuse with a single set of login credentials."
+        docsLink: /docs/admin/sso/
+        changelog:
+          - url: /changelog/2026/07/application-sso-groups/
+            release: "2.33"
         tiers: { edge: true, hub: true, fleet: true }
       - id: two-factor-authentication
         title: Two-Factor Authentication
+        description: "Two-factor authentication adds an extra layer of security to your FlowFuse account."
+        docsLink: /docs/user/user-settings/#two-factor-authentication
         tiers: { edge: true, hub: true, fleet: true }
       - id: certified-nodes-it
         title: Certified Nodes - IT
         description: "IT certified node bundle includes: Redis, MQTT, HTTP Request, AI nodes (Gemini, Claude, ChatGPT, Ollama), MCP Server"
+        docsLink: /blog/2025/07/certified-nodes-v2/
         tiers: { edge: false, hub: true, fleet: true }
       - id: certified-nodes-ot
         title: Certified OT Connections - OPC-UA, Modbus, etc.
@@ -114,13 +326,46 @@ sections:
         tiers: { edge: true, hub: false, fleet: false }
       - id: audit-log
         title: Audit Log
+        description: "Keep track of everything going on in your Node-RED instances and FlowFuse. Audit Logs provide details on what actions have taken place, when they happened, and who did them."
+        docsLink: /docs/user/logs/#audit-log
         tiers: { edge: true, hub: true, fleet: true }
       - id: role-based-access-control
         title: Role-Based Access Control
         description: "Control who can do what at both the team and application level, from viewers to admins."
+        docsLink: /docs/user/role-based-access-control/
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: application-level-rbac
+        title: Application-Level RBAC
+        description: "Fine-grained access control per application, allowing team members to have different permission levels across different applications without requiring separate teams."
+        docsLink: /docs/user/role-based-access-control/#application-level-rbac
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: scoped-personal-access-tokens
+        title: Scoped Personal Access Tokens
+        description: "Restrict a Personal Access Token to specific teams, limit it to read-only operations, or control whether it carries admin privileges."
+        changelog:
+          - url: /changelog/2026/07/scoped-pats/
+            release: "2.33"
+        subfeature: true
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: team-members
+        title: Team Members
+        description: "Invite multiple team members to collaborate on the same Node-RED flows."
+        docsLink: /docs/user/team/#teams
+        showOnPricing: false
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: endpoint-security
+        title: Endpoint Security
+        description: "Secure HTTP endpoints for hosted Node-RED instances using FlowFuse credentials."
+        docsLink: /docs/user/instance-settings/#security
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
       - id: baa-for-hipaa
         title: BAA for HIPAA
+        description: "FlowFuse can sign a Business Associate Agreement to ensure proper safeguarding of protected health information handled on your behalf."
+        docsLink: /handbook/sales/subscription-agreement-1.5/
         tiers: { edge: false, hub: true, fleet: false }
       - id: sbom
         title: Software Bill of Materials
@@ -132,7 +377,13 @@ sections:
     features:
       - id: installation-support
         title: Installation Support
+        docsLink: /docs/install/introduction/#do-you-need-help-installation-service
+        tiers: { edge: true, hub: true, fleet: true }
+      - id: live-chat-support
+        title: Live Chat Support
+        showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
       - id: enterprise-support
         title: Enterprise Support
+        docsLink: /docs/premium-support/
         tiers: { edge: true, hub: true, fleet: true }

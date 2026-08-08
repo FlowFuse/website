@@ -15,7 +15,15 @@ const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
   content: item.answer,
 })))
 
-const comparisonSections = computed(() => featureCatalog.value?.sections ?? [])
+// The catalog also carries features that exist only to hang a changelog or docs link off
+// (subfeatures, shipped improvements), marked showOnPricing: false. Pricing shows the rest.
+function onPricing (feature: { showOnPricing?: boolean }) {
+  return feature.showOnPricing !== false
+}
+
+const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
+  .map(section => ({ ...section, features: section.features.filter(onPricing) }))
+  .filter(section => section.features.length > 0))
 
 // UPricingTable's feature-title slot types `feature` without `description`,
 // even though the featureCatalog content schema does define it.
