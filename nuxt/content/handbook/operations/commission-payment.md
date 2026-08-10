@@ -44,15 +44,12 @@ You need to have the following columns enabled:
    * Deal Type
    * Annual recurring revenue
    * Annual contract value
+   * Contract Term (months)
+   * Payment Terms
 
 When the deal board is updated with on the won deals of last month, 
 click "Export View" and export as CSV. Download this file
 to your machine.
-
-For each exported deal, check the executed Agreement for the contract term and the payment terms. HubSpot reports ARR annually,
-so a multi-year deal that the customer prepays in full will not show its full commissionable value in the export. Record the term
-and payment structure for each deal — you will need both to apply the correct treatment in the Commissions tab. See
-[Multi-year Bookings](#multi-year-bookings).
 
 Make a copy of
 [this Google Sheet template](https://docs.google.com/spreadsheets/d/1fBq4g4W26M3k-uUOg5p4D2mYUyBPP8EbdtPLwuQ5RPI/)
