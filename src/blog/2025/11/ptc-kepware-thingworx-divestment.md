@@ -59,7 +59,7 @@ For organizations evaluating their options, the differences between FlowFuse and
 
 - Future-proof architecture: FlowFuse is cloud-ready, portable, and designed to evolve with your infrastructure. After multiple ownership transitions, Kepware's future direction under TPG remains uncertain.
 
-You can explore these differences in detail at https://flowfuse.com/vs/kepware.
+You can explore these differences in detail at [flowfuse.com/vs/kepware](/vs/kepware/).
 
 
 ## Connect to Anything, Collect Everything

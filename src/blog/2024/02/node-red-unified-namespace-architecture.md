@@ -47,4 +47,4 @@ Contrastingly, direct actors can interact with the UNS out of the box. Modern in
 Node-RED's prowess extends beyond middleware capabilities; it can also derive actionable insights. Our example architecture includes Dashboards for both the Human Machine Interface on the Shopfloor and an OEE Dashboard in the Service Layer. These dashboards engage with the UNS, calculating KPIs directly within Node-RED. For manufacturing applications, our [Blueprint Library](/blueprints/) serves as a robust starting point, offering one-click deployment to your Node-RED managed instance.
 Node-RED emerges not just as a translator between machines and UNS but as an interpreter and analyst, generating real-time insights that drive decision-making and operational efficiency. The role of Node-RED in UNS architecture, therefore, is not ancillary; it is central to realizing the vision of a connected, intelligent industrial ecosystem.
 
-![Andon Live Dashboard](https://flowfuse.com/img/ANDON-Screenshot-D4DBvWieJZ-650.avif)
+![Andon Live Dashboard](/img/ANDON-Screenshot-D4DBvWieJZ-650.avif)
