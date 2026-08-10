@@ -14,9 +14,40 @@ useSeoMeta({
 const capture = useCapture()
 
 const TIERS = [
-    { id: 'edge', label: 'FlowFuse Edge' },
-    { id: 'hub', label: 'FlowFuse Hub' },
-    { id: 'fleet', label: 'FlowFuse Fleet' },
+    {
+        id: 'edge',
+        label: 'FlowFuse Edge',
+        heading: 'You run the plant floor',
+        description: 'Connect PLCs, machines, and controllers. Standardize automation across sites instead of reinventing it plant by plant. Built for OT and digitalization leadership running production at scale.',
+        idealFit: "Ideal fit if you're dealing with: multi-plant rollouts, PLC/SCADA integration, machine connectivity, or Node-RED sprawl across sites.",
+        image: { src: '/images/home/home-edge-connectivity.png', alt: 'FlowFuse Edge: industrial edge connectivity' },
+    },
+    {
+        id: 'hub',
+        label: 'FlowFuse Hub',
+        heading: 'You move data across the business',
+        description: 'Integrate and orchestrate data across ERPs, databases, and cloud APIs — governed centrally, not stitched together app by app. Built for central IT and enterprise architecture teams.',
+        idealFit: "Ideal fit if you're dealing with: system integration, API orchestration, data pipelines, or governance across business systems.",
+        image: { src: '/images/home/home-data-integration.png', alt: 'FlowFuse Hub: enterprise data integration' },
+    },
+    {
+        id: 'fleet',
+        label: 'FlowFuse Fleet',
+        heading: 'You manage a Node-RED fleet',
+        description: 'Push flows, ship updates, and roll back remotely across thousands of distributed devices, without waiting on a firmware release. Built for hardware OEMs, partners, and asset operators.',
+        idealFit: "Ideal fit if you're dealing with: distributed devices, remote sites, sensors and telemetry at scale, or shipping Node-RED inside your own product.",
+        image: { src: '/images/screen-pseudo-devices.png', alt: 'FlowFuse Fleet: device fleet management console' },
+    },
+]
+
+const CAPABILITIES = [
+    { label: 'Industrial AI', to: '/ai/' },
+    { label: 'IT/OT Middleware', to: '/use-cases/it-ot-middleware/' },
+    { label: 'Unified Namespace', to: '/use-cases/uns/' },
+    { label: 'MES', to: '/use-cases/mes/' },
+    { label: 'SCADA', to: '/use-cases/scada/' },
+    { label: 'Edge Connectivity', to: '/use-cases/edge-connectivity/' },
+    { label: 'Data Integration', to: '/use-cases/data-integration/' },
 ]
 const activeTier = ref('edge')
 const stepRefs = ref<Record<string, HTMLElement | null>>({})
@@ -122,40 +153,24 @@ onUnmounted(() => {
                 </ul>
               </nav>
               <div class="flex-1 min-w-0 flex flex-col gap-20">
-                <div id="tier-edge" :ref="(el) => { stepRefs.edge = el }" data-tier="edge" class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
+                <div
+                  v-for="(tier, index) in TIERS"
+                  :id="`tier-${tier.id}`"
+                  :key="tier.id"
+                  :ref="(el) => { stepRefs[tier.id] = el as HTMLElement | null }"
+                  :data-tier="tier.id"
+                  class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center"
+                  :class="index > 0 ? 'pt-20 border-t border-gray-100' : ''"
+                >
                   <div>
-                    <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Edge</div>
-                    <h3 class="text-3xl mt-2">You run the plant floor</h3>
-                    <p class="mt-4 text-gray-500">Connect PLCs, machines, and controllers. Standardize automation across sites instead of reinventing it plant by plant. Built for OT and digitalization leadership running production at scale.</p>
-                    <p class="mt-4 text-sm text-gray-500 italic">Ideal fit if you're dealing with: multi-plant rollouts, PLC/SCADA integration, machine connectivity, or Node-RED sprawl across sites.</p>
-                    <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: 'features-edge' })">Learn more about FlowFuse Edge &rarr;</a>
+                    <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">{{ tier.label }}</div>
+                    <h3 class="text-3xl mt-2">{{ tier.heading }}</h3>
+                    <p class="mt-4 text-gray-500">{{ tier.description }}</p>
+                    <p class="mt-4 text-sm text-gray-500 italic">{{ tier.idealFit }}</p>
+                    <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</a>
                   </div>
-                  <div class="product-tier-img">
-                    <img :src="'/images/home/home-edge-connectivity.png'" alt="FlowFuse Edge: industrial edge connectivity" loading="lazy">
-                  </div>
-                </div>
-                <div id="tier-hub" :ref="(el) => { stepRefs.hub = el }" data-tier="hub" class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center pt-20 border-t border-[#f1f1f4]">
-                  <div>
-                    <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Hub</div>
-                    <h3 class="text-3xl mt-2">You move data across the business</h3>
-                    <p class="mt-4 text-gray-500">Integrate and orchestrate data across ERPs, databases, and cloud APIs — governed centrally, not stitched together app by app. Built for central IT and enterprise architecture teams.</p>
-                    <p class="mt-4 text-sm text-gray-500 italic">Ideal fit if you're dealing with: system integration, API orchestration, data pipelines, or governance across business systems.</p>
-                    <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: 'features-hub' })">Learn more about FlowFuse Hub &rarr;</a>
-                  </div>
-                  <div class="product-tier-img">
-                    <img :src="'/images/home/home-data-integration.png'" alt="FlowFuse Hub: enterprise data integration" loading="lazy">
-                  </div>
-                </div>
-                <div id="tier-fleet" :ref="(el) => { stepRefs.fleet = el }" data-tier="fleet" class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center pt-20 border-t border-[#f1f1f4]">
-                  <div>
-                    <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Fleet</div>
-                    <h3 class="text-3xl mt-2">You manage a Node-RED fleet</h3>
-                    <p class="mt-4 text-gray-500">Push flows, ship updates, and roll back remotely across thousands of distributed devices, without waiting on a firmware release. Built for hardware OEMs, partners, and asset operators.</p>
-                    <p class="mt-4 text-sm text-gray-500 italic">Ideal fit if you're dealing with: distributed devices, remote sites, sensors and telemetry at scale, or shipping Node-RED inside your own product.</p>
-                    <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: 'features-fleet' })">Learn more about FlowFuse Fleet &rarr;</a>
-                  </div>
-                  <div class="product-tier-img">
-                    <img :src="'/images/screen-pseudo-devices.png'" alt="FlowFuse Fleet: device fleet management console" loading="lazy">
+                  <div class="self-start rounded-lg overflow-hidden shadow-[0_12px_32px_rgba(2,6,13,0.12)] border border-gray-200">
+                    <img :src="tier.image.src" :alt="tier.image.alt" class="block w-full h-auto" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -169,13 +184,12 @@ onUnmounted(() => {
             <div class="mt-10">
               <div class="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-4">Integrations</div>
               <div class="product-cap-links flex flex-nowrap sm:flex-wrap gap-2">
-                <NuxtLink class="product-cap-link" to="/ai/">Industrial AI</NuxtLink>
-                <NuxtLink class="product-cap-link" to="/use-cases/it-ot-middleware/">IT/OT Middleware</NuxtLink>
-                <NuxtLink class="product-cap-link" to="/use-cases/uns/">Unified Namespace</NuxtLink>
-                <NuxtLink class="product-cap-link" to="/use-cases/mes/">MES</NuxtLink>
-                <NuxtLink class="product-cap-link" to="/use-cases/scada/">SCADA</NuxtLink>
-                <NuxtLink class="product-cap-link" to="/use-cases/edge-connectivity/">Edge Connectivity</NuxtLink>
-                <NuxtLink class="product-cap-link" to="/use-cases/data-integration/">Data Integration</NuxtLink>
+                <NuxtLink
+                  v-for="cap in CAPABILITIES"
+                  :key="cap.to"
+                  :to="cap.to"
+                  class="whitespace-nowrap inline-flex items-center gap-1 py-1.5 px-3 border border-gray-200 rounded-full text-xs font-medium text-gray-700 bg-white transition-colors duration-150 after:content-['→'] after:text-indigo-300 hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 hover:after:text-indigo-600"
+                >{{ cap.label }}</NuxtLink>
               </div>
             </div>
           </div>
@@ -185,7 +199,7 @@ onUnmounted(() => {
       <EnterpriseSecurity />
     <div class="w-full px-6">
       <div class="max-w-screen-lg mx-auto py-20">
-        <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center product-get-started-bg">
+        <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
           <p class="text-white text-4xl sm:text-5xl font-medium m-0">Get Started with FlowFuse</p>
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
@@ -202,21 +216,3 @@ onUnmounted(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.product-tier-img { align-self: start; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 12px 32px rgba(2,6,13,0.12); border: 1px solid #e5e7eb; }
-.product-tier-img img { display: block; width: 100%; height: auto; }
-
-.product-cap-link {
-    white-space: nowrap; display: inline-flex; align-items: center; gap: .3rem;
-    padding: .4rem .8rem; border: 1px solid #e5e7eb; border-radius: 9999px;
-    font-size: .8rem; font-weight: 500; color: #374151; background: #fff;
-    transition: border-color .15s ease, color .15s ease, background .15s ease;
-}
-.product-cap-link::after { content: "\2192"; color: #a5b4fc; }
-.product-cap-link:hover { border-color: #4f46e5; color: #4f46e5; background: #eef2ff; }
-.product-cap-link:hover::after { color: #4f46e5; }
-
-.product-get-started-bg { background: radial-gradient(ellipse 50% 150% at 50% 100%, #6366f1, #211c64); }
-.product-get-started-pricing { background: #ffffff; color: #211c64; }
-</style>
