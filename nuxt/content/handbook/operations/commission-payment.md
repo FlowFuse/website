@@ -70,7 +70,6 @@ Finally, go to the "Commissions" tab and select the employee to calculate the
 payment for.
 
 Do not manually override any formulas in the commission tab, make sure that all calculations should be driven by the sheet's logic.
-- Multi-year bookings are an exemption, which the template does not yet calculate correctly. Enter that figure manually, highlight the cell, and add a comment to the deal's Hubspot link on.
 
 Copy the relevant details for the employee into an email and tell them what
 their performance was like and what commission they'll receive. It's important
