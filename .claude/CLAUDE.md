@@ -113,6 +113,15 @@ cta:                         # optional call-to-action block
 
 Tag options are defined in `src/_data/blogTags.json`. Future-dated posts are excluded from collections until their date arrives.
 
+#### Inline Image CTAs (`CtaImage`)
+
+`nuxt/components/content/CtaImage.vue` — a clickable, tracked image usable inside a post's markdown body via `::cta-image{src="..." alt="..." cta="..."}`. Renders through `<ContentRenderer>` on `nuxt/pages/blog/[...slug].vue`, same as any other MDC content component (unlike `nuxt/components/BlogPostCta.vue`, which is a normal template component the page passes `page.title` to directly).
+
+- `cta` is required on every instance, one of `sign-up` | `demo` | `contact` | `pricing` — no fallback to the post's frontmatter `cta.type` (that one only drives `BlogPostCta` at the end of the article). An invalid value throws a descriptive error at render time instead of a bare `Cannot read properties of undefined`.
+- `position` isn't a prop — it's hardcoded to `'inline-image'`, since every instance shares the same placement semantics.
+- Fires the same `blog-cta` event as `BlogPostCta` (not a dedicated `cta-sign-up`/`cta-book-demo`/etc. event) — `cta_type` alone distinguishes the destination, so both the end-of-article CTA and inline image CTAs land in one PostHog series, filterable by `cta_type`/`position`.
+- The article title can't be passed as a prop from markdown (MDC only forwards literal `{...}` attributes), so `nuxt/pages/blog/[...slug].vue` does `provide('blogPostTitle', pageTitle)` and the component `inject()`s it — the only reason this indirection exists here and not on `BlogPostCta`.
+
 ---
 
 ### Changelog entries
@@ -250,6 +259,39 @@ Collection config: `src/customer-stories/customer-stories.json`
 | `layouts/documentation.njk` | Node-RED learning resources (with sidebar nav) |
 | `layouts/story.njk` | Customer stories |
 | `layouts/nohero.njk` | General pages without hero |
+
+## Call-to-Action components
+
+**Nuxt only** — 11ty pages still use hand-written `<a class="ff-btn ...">` links; these components have no 11ty equivalent yet.
+
+There are exactly four CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same four URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
+
+| Component | href | Fixed label |
+|---|---|---|
+| `nuxt/components/CtaSignUp.vue` | `{site.appURL}/account/create` | "Free Trial" on `position="main-nav"`/`"mobile-cta-bar"`, else "Try it out" |
+| `nuxt/components/CtaSignIn.vue` | `site.appURL` | "Sign In" |
+| `nuxt/components/CtaContactUs.vue` | `/contact-us/` | "Contact Us" |
+| `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Book a Demo" |
+
+All four are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a fifth destination-specific component is needed — not a prop that lets callers override copy on these four.
+
+**Props** (all optional except `variant`/`position`): `variant` (`primary` | `primary-outlined` | `highlight` | `highlight-outlined` | `ghost` | `nav-text`), `position` (free string, sent to PostHog — describes where on the page, e.g. `hero`, `pricing-card`), `plan` (e.g. `edge`/`hub`/`fleet`, sent to PostHog), `color` (`primary`|`highlight`|`white`, only for `variant="ghost"`, which has no background of its own), `icon` (Nuxt Icon name for a trailing icon), `uppercase`, `padded` (only for `variant="nav-text"` — whether it has the header-`<ul>` link padding or is true zero-padding inline text), `preview` (renders identically but doesn't navigate or call `capture()` — used by the handbook's live example gallery so clicking a doc example can't send a real event or leave the page).
+
+`nav-text` is deliberately not called `text` — it's the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar) specifically, not a general-purpose inline link. A future `text` variant (styled like a normal paragraph link — the site's blue-700, underline-on-hover convention) is reserved for that.
+
+There's no `size` prop — every real-button variant's padding/font-size is hardcoded to match `.ff-btn` exactly (see the Computed-tab note in the gotchas below), so a size knob would only ever have affected icon dimensions. It was removed once confirmed nothing used a non-default value.
+
+Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`.
+
+### Gotchas already solved here (don't re-discover them)
+
+- **Vue auto-defaults unspecified `boolean` props to `false`, not `undefined`.** Any prop typed as `boolean` in a type-only `defineProps<{...}>()` needs `withDefaults(defineProps<...>(), { theProp: undefined })` if the code distinguishes "not passed" from "explicitly false" (e.g. via `??`) — otherwise the `??` fallback never triggers, since `false ?? x` is `false`.
+- **Nuxt UI's `ui` prop REPLACES a slot's class string, it doesn't merge with it.** `:ui="{ base: 'normal-case' }"` on a `UButton` wipes out app.config's `'uppercase font-semibold no-underline'` entirely rather than just adding `normal-case`. `CtaButton.vue`'s `uiOverrides` computed always builds the *complete* class string for whichever branch applies, never a partial diff.
+- **`.light` scoping silently overrides the brand color override.** Nuxt UI's colors runtime plugin (`@nuxt/ui/dist/runtime/plugins/colors.js`) injects its own `<style>` tag on every page load with `@layer theme { :root, :host, .light { --ui-primary: var(--ui-color-primary-500); ... } }` — shade 500/400 is hardcoded there, not configurable via `app.config.ts`. The handbook layout wraps content in a `.light` div, which matches that rule *directly* (a direct match always beats an inherited value), silently downgrading every button inside handbook prose from the brand's indigo-600/red-600 to indigo-500/red-500. Fixed in `nuxt/assets/css/theme.css` with an unlayered `.handbook-content, .handbook-content.light { --ui-primary: ...; --ui-highlight: ...; }` (unlayered so it can't lose to `@layer theme` regardless of specificity).
+- **`.handbook-content a` must exclude Nuxt UI components, or use `:where()`.** A plain `.handbook-content a { color: ... }` rule (even layered) beats a `UButton`'s own utility classes if it has higher specificity, flattening any Cta* button rendered inside handbook markdown to a plain link color. Fixed by moving the rule into `@layer base` and using `:where(a)` to zero out its added specificity, so any component's own classes win normally (same file as above).
+- **`not-prose` on a wrapper also strips Tailwind Typography's code-block styling** (the dark background on `<pre>`) for anything nested inside it, not just its own prose text styling. `nuxt/components/content/CtaExample.vue` (the handbook's live example gallery) doesn't use `not-prose` for this reason, even though it also renders non-prose button/grid markup.
+- **The `ui` prop override doesn't reach compoundVariants-driven classes.** The gotcha above (full-string replacement) only applies to the app.config-level base extension; UButton's own `variant`/`color`-driven classes (e.g. `ghost`'s `hover:bg-{color}/10`) are computed separately and still get merged in via `tv()` regardless of what `ui.base` says. `CtaButton.vue`'s ghost color classes explicitly add `hover:bg-transparent` to cancel that default hover background, since a ghost CTA should have none at all.
+- **UButton's `to` prop treats any same-origin-looking path as a Nuxt route, even if Nuxt doesn't serve it.** `CtaContactUs`/`CtaBookDemo` point at `/contact-us/` and `/book-demo/`, which are still 11ty — without `external`, clicking does a client-side Vue Router navigation instead of a real page load, and 404s instead of reaching the server-side 11ty proxy. `CtaButton.vue` takes a fixed (non-caller-configurable) `external` prop per destination; `CtaContactUs`/`CtaBookDemo` set it `true`, `CtaSignUp`/`CtaSignIn` set it `false` (moot — those hrefs are already cross-origin). **When `/contact-us/` or `/book-demo/` actually migrates to Nuxt, flip that destination's `external` to `false`** — leaving it `true` would keep forcing a full page reload where a client-side nav would work fine.
 
 ## Naming conventions
 

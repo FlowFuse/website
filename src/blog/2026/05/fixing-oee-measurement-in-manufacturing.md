@@ -38,7 +38,7 @@ Speed losses are worse. A line running at 85% of rated speed all shift logs zero
 
 Put it together and [manual OEE is often overestimated by 10-25%](https://www.jitbase.com/blog/en/blog/how-to-effectively-track-the-oee-of-your-machine-tools). The dashboard says 78%. The real number is closer to 60%. Decisions get made on the 78%.
 
-The fix is structural. PLCs already know when a line stopped, how long it ran below rated speed, and how many parts came off. Connecting [FlowFuse](/) to the PLC over OPC-UA, Modbus, S7, or EtherNet/IP pulls that data straight off the machine. The operator's job changes from logging the stop to classifying the cause. [FlowFuse's OEE Dashboard blueprint](/blueprints/manufacturing/oee-dashboard/) gives you the calculation and visualisation layer on top of that.
+The fix is structural. PLCs already know when a line stopped, how long it ran below rated speed, and how many parts came off. Connecting [FlowFuse](/) to the PLC over OPC-UA, Modbus, S7, or EtherNet/IP pulls that data straight off the machine. The operator's job changes from logging the stop to classifying the cause. [FlowFuse's OEE Dashboard blueprint](/blueprints/manufacturing/oee-dashboard/) gives you the calculation and visualisation layer on top of that, one of [several manufacturing dashboard patterns](/blog/2026/08/manufacturing-dashboard-examples/) built on the same connected data.
 
 ## Everyone calculates OEE differently
 

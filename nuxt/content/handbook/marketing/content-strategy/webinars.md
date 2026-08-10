@@ -14,6 +14,7 @@ The following are the steps to produce a montly webinar.
 
 ## Webinar Preparation
 
+   1. Before identifying a topic or speaker, bring the proposed topic to the marketing team for discussion and confirm it's backed by keyword research. This needs to happen before the abstract is even written.
    1. Identify the webinar topic and speaker two weeks before the previous webinar.
    1. Confirm the date with the speaker and send calendar invites to block time for the event and for a dry run (recommended one week before the event).
    1. Send an email to the speaker requesting:
@@ -106,6 +107,9 @@ And here are a couple of samples of our past promo videos:
 
 ## Post Webinar
 
+### Wrapping up the event
+
+Complete these tasks as soon as possible after the webinar:
 * Upload webinar recording to FlowFuse Youtube channel
     * Trim out the dead air waiting to start the webinar
 * Publish webinar recording
@@ -114,7 +118,14 @@ And here are a couple of samples of our past promo videos:
 * Download the attendee list from Zoom and upload it to HubSpot. The filter that captures attendees in HubSpot isn't reliable and might cause non-attendee emails to be sent to actual attendees.
 * For those who wanted to be contacted, change Life Cycle Stage property to MQL 
 
-This [webinar prep issue](https://github.com/FlowFuse/marketing/issues/271) can be cloned and updated to keep track of activities.
+### Repurposing the Webinar Content
+
+Every webinar should be treated as a **content flywheel**, not a one-off event — one recording should generate a set of downstream assets, not just a YouTube upload.
+- **YouTube Shorts:** 2–3 clips pulled from the recording's strongest moments.
+- **Written recap:** if the webinar featured a customer, produce a customer story; if not, produce an SEO-optimized recap blog post tagged to the Target Keyword and content cluster from the abstract doc.
+- **Social posts:** a set of posts (LinkedIn at minimum) pulled from key quotes/moments, distributed across the weeks following the webinar rather than all at once.
+- **Cross-linking:** update the YouTube description on both the on-demand webinar video and any Shorts with a Bitly link pointing to the resulting blog post or customer story, so traffic flows between assets instead of dead-ending on YouTube.
+
 
 ## Creating a Webinar Page
 

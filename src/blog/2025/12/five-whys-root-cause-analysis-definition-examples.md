@@ -27,7 +27,7 @@ meta:
     answer: "Follow one causal chain completely before exploring alternatives. Pick the most likely path, implement corrective actions, and verify results. If the problem persists, investigate other paths."
   - question: "How do I know if my corrective action actually worked?"
     answer: "Track relevant metrics for 3-6 months after implementation. Monitor failure rates, observe revised procedures in practice, or test training effectiveness. Don't declare success without data confirming the problem stopped recurring."
-tldr: "The Five Whys is a root cause analysis technique developed at Toyota that involves repeatedly asking 'why' a problem occurred typically five times until you uncover a systemic, fixable cause rather than just a symptom. It works because it's fast, accessible to front-line workers without statistical training, and forces a single causal chain to its end. Applying it correctly prevents problems from recurring by targeting the process gaps, training deficiencies, or procedural weaknesses that allowed the failure in the first place."
+tldr: "The Five Whys is a root cause analysis technique from Toyota: keep asking why a problem happened, typically five times, until you reach a systemic cause rather than a symptom. It is fast, needs no statistical training, and forces one causal chain to its end so the failure doesn't recur."
 ---
 
 The Five Whys is a root cause analysis technique where you ask "why" repeatedly, typically five times, until you identify the underlying systemic cause instead of just symptoms.
@@ -57,6 +57,9 @@ First, it's fast. You can complete a thorough analysis in under an hour. That sp
 Second, it's accessible. The machine operator who saw the problem doesn't need training in statistical methods or failure mode analysis. They just need to answer questions honestly about what they observed. This democratization of problem-solving means you're not waiting for specialists to free up their calendars. The people closest to the work can solve problems themselves.
 
 Third, it forces you to follow a single causal chain all the way down. Other methods encourage you to map out every possible contributing factor simultaneously. That comprehensiveness sounds good in theory, but in practice it often leads to analysis paralysis. You've identified seventeen potential causes, and now you're trying to fix all of them at once. The Five Whys makes you pick the most likely path and follow it to the end. You can always come back and explore alternative explanations if your first solution doesn't work.
+
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
 
 ## The Five Whys Checklist: What You Need Before You Start
 

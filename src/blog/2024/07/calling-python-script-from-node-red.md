@@ -57,7 +57,7 @@ meta:
       answer: "Yes. Run Node-RED on a device wired to the sensor (such as a Raspberry Pi with a DHT11), have a Python script read the sensor and print the reading as JSON, then trigger that script from the Exec node on an interval using an Inject node. Make sure the script reads once and exits rather than looping internally, so Node-RED controls the polling."
     - question: "Do I need to install Python separately to use it with Node-RED?"
       answer: "Yes. Node-RED does not bundle a Python runtime, so Python must be installed on the same machine that runs Node-RED. Any third-party libraries your script imports (for example adafruit-circuitpython for sensors) also need to be installed in that environment."
-tldr: "To run a Python script from Node-RED, use the Exec node with a command like 'python -u ./your_script.py'. Trigger it with an Inject node and read the result from a Debug node, the Exec node returns the script's stdout as msg.payload, plus separate outputs for errors and the return code. Add the -u flag to avoid output buffering, pass arguments by appending them to the command (read in Python via sys.argv), and parse printed JSON with a JSON node. Python must be installed on the same machine as Node-RED. This pairs Node-RED's visual flow logic with Python's libraries for tasks like sensor reading, data processing, and machine learning."
+tldr: "Run a Python script from Node-RED using the Exec node with a command like python -u ./your_script.py, trigger it with an Inject node, and read the script's stdout from msg.payload. Append any arguments to the command, and make sure Python is installed on the same machine as Node-RED."
 ---
 
 Python's robust data processing capabilities and extensive libraries are well-known in programming. When combined with Node-RED, these technologies can synergize to elevate data analytics and automation. This guide walks you through integrating Python scripts with Node-RED. You'll gain practical insights, troubleshooting tips, and effective techniques for executing scripts, enabling you to leverage this powerful combination for your IoT projects.
@@ -89,6 +89,9 @@ python3 --version
 ```
 
 The specific command to use depends on how Python was installed and configured on your system. However, make sure to use `python <filename>.py` if the first command works, or `python3 <filename>.py` if the second command works, while executing Python scripts.
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ## Executing Python Script from Node-RED
 

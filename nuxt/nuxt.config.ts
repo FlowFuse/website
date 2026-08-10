@@ -4,6 +4,7 @@ import { parse as parseYaml } from 'yaml'
 import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
 import { BLOG_TAGS } from './composables/useBlogList'
+import { redirects } from './redirects'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -38,10 +39,27 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
+// The Application Guide pages are a `data` collection (see content.config.ts), so their routes
+// are not discoverable from @nuxt/content page paths. Derive them from the file names, which
+// are NN-<slug>.yml and match each file's `slug` field.
+function collectApplicationGuideRoutes(dir: string): string[] {
+    const routes = ['/application-guide/']
+    for (const guide of readdirSync(dir)) {
+        const guideDir = join(dir, guide)
+        if (!statSync(guideDir).isDirectory()) continue
+        for (const file of readdirSync(guideDir)) {
+            if (!file.endsWith('.yml')) continue
+            routes.push(`/application-guide/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
+        }
+    }
+    return routes
+}
+
 // Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
-// pages (and their own pagination, 19 entries/page) can be sized correctly.
-function collectBlogFiles(dir: string, basePath: string): Array<{ route: string, tags: string[] }> {
-    const results: Array<{ route: string, tags: string[] }> = []
+// pages (and their own pagination, 19 entries/page) can be sized correctly, and its
+// `authors` so the /blog/author/{slug}/ pages can be enumerated.
+function collectBlogFiles(dir: string, basePath: string): Array<{ route: string, tags: string[], authors: string[] }> {
+    const results: Array<{ route: string, tags: string[], authors: string[] }> = []
     for (const file of readdirSync(dir)) {
         const fullPath = join(dir, file)
         if (statSync(fullPath).isDirectory()) {
@@ -52,16 +70,38 @@ function collectBlogFiles(dir: string, basePath: string): Array<{ route: string,
             const frontmatter = match ? (parseYaml(match[1]) || {}) : {}
             const date = frontmatter.date ? new Date(frontmatter.date) : new Date(0)
             if (date.getTime() > Date.now() && process.env.CONTEXT === 'production') continue
-            results.push({ route: `${basePath}/${basename(file, '.md')}/`, tags: frontmatter.tags || [] })
+            results.push({ route: `${basePath}/${basename(file, '.md')}/`, tags: frontmatter.tags || [], authors: frontmatter.authors || [] })
         }
     }
     return results
+}
+
+// `authors` values that mean "no individual author" - they have no data file by design.
+const ORG_AUTHOR_SLUGS = new Set(['-', 'FlowFuse', 'flowfuse', 'flowfuseteam'])
+
+// Author pages are rendered by pages/blog/author/[slug].vue from src/_data/{team,guests}
+// rather than from an @nuxt/content collection, so neither prerendering nor the sitemap
+// can discover them - enumerate the authors who both have a data file and a published post.
+function collectAuthorRoutes(blogFiles: Array<{ authors: string[] }>, dataDirs: string[]): string[] {
+    const known = new Set(dataDirs.flatMap(dir => readdirSync(dir).filter(f => f.endsWith('.json')).map(f => basename(f, '.json'))))
+    const withPosts = new Set(blogFiles.flatMap(f => f.authors))
+
+    // Anything left is either a former team member or a typo - surface it in the build log.
+    const missing = [...withPosts].filter(slug => !known.has(slug) && !ORG_AUTHOR_SLUGS.has(slug)).sort()
+    if (missing.length) {
+        console.warn(`[blog] ${missing.length} author slug(s) in blog frontmatter have no data file in src/_data/{team,guests}; these posts fall back to the "FlowFuse" byline and get no author page: ${missing.join(', ')}`)
+    }
+
+    return [...withPosts].filter(slug => known.has(slug)).sort().map(slug => `/blog/author/${slug}/`)
 }
 
 function paginatedListingRoutes(basePath: string, entryCount: number): string[] {
     const pageCount = Math.max(1, Math.ceil(entryCount / 19))
     return [`${basePath}/`, ...Array.from({ length: pageCount - 1 }, (_, i) => `${basePath}/${i + 2}/`)]
 }
+
+const blogFiles = collectBlogFiles(join(__dirname, '../src/blog'), '/blog')
+const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, '../src/_data/team'), join(__dirname, '../src/_data/guests')])
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -89,12 +129,15 @@ export default defineNuxtConfig({
         defaultLocale: 'en',
     },
 
+    ogImage: { zeroRuntime: true },
+
     sitemap: {
         sources: [
             // Nuxt-native dynamic routes (integrations) that
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
         ],
+        urls: blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
         exclude: ['/_studio/**', '/api/**'],
     },
 
@@ -138,6 +181,11 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
                 { name: 'theme-color', content: '#ffffff' },
+            ],
+            script: [
+                // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
+                // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
+                { src: '/js/nav-tracking.js', defer: true },
             ]
         }
     },
@@ -154,6 +202,7 @@ export default defineNuxtConfig({
     routeRules: {
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
+        ...redirects,
     },
 
     nitro: {
@@ -180,7 +229,6 @@ export default defineNuxtConfig({
                 const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
                 const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
 
-                const blogFiles = collectBlogFiles(join(__dirname, '../src/blog'), '/blog')
                 const blogListingRoutes = paginatedListingRoutes('/blog', blogFiles.length)
                 const blogTagRoutes = BLOG_TAGS.flatMap(tag =>
                     paginatedListingRoutes(`/blog/${tag}`, blogFiles.filter(f => f.tags.includes(tag)).length)
@@ -198,6 +246,7 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
+                    ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
                     ...changelogListingRoutes,
                     ...changelog.routes,
@@ -205,6 +254,7 @@ export default defineNuxtConfig({
                     ...blogListingRoutes,
                     ...blogTagRoutes,
                     ...blogFiles.map(f => f.route),
+                    ...blogAuthorRoutes,
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
                 ]
             })(),

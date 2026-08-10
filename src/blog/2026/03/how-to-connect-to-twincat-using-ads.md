@@ -89,6 +89,9 @@ Within a device, different TwinCAT components are reachable on different ADS por
 
 Three things cause silent failures: wrong AMS Net ID, missing route, blocked port 48898. ADS gives you nothing when any of these are wrong. No error, no timeout message, just silence. That is why we cover routing before touching a single FlowFuse node.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Configuring ADS Routes
 
 TwinCAT will not accept an ADS connection from an unknown host. Every external device that needs to connect must be explicitly trusted in TwinCAT's route table. This is stored in a file called `StaticRoutes.xml` on the TwinCAT machine.

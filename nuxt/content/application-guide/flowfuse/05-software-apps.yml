@@ -1,0 +1,145 @@
+guide: flowfuse
+slug: software-apps
+navOrder: 5
+title: Software apps
+blurb: The three shapes a FlowFuse app takes when it runs on the platform.
+blocks:
+  - type: prose
+    kicker: Software apps — start here
+    body: >-
+      The three shapes a FlowFuse app takes when it runs on the platform. Pick by what it needs: a
+      headless job (Packaged App), a user-facing app driven by data (Data-Driven App), or a reusable
+      piece other apps embed (Shared Building Block).
+  - type: tabs
+    panels:
+      - label: Packaged App
+        kicker: Headless · no UI
+        kickerNote: Headless job on a Hosted or Remote Instance, no screen.
+        diagram:
+          lanes:
+            - label: Event stream
+              tone: broker
+              nodes:
+                - title: Team Broker
+                  sub: MQTT
+                  tone: broker
+            - link: subscribes
+            - label: Platform
+              tone: it
+              nodes:
+                - title: Hosted Instance
+                  sub: headless · no UI
+                  tone: it
+            - link: writes
+            - label: Records
+              tone: it
+              nodes:
+                - title: FlowFuse Tables
+                  sub: writes rows
+                  tone: it
+          note: No dashboard
+        summary: >-
+          A headless, self-contained job that runs the same everywhere — an MQTT-to-DB connector, a
+          pipeline, a scheduled task. No UI.
+        useWhen: "A self-contained job with no screen and no per-site settings: connectors, pipelines, scheduled work."
+        how: >-
+          Built and promoted through a pipeline; runs headless on a Hosted (or Remote) Instance.
+          Everything is baked into the snapshot; only fixed env vars vary at deploy.
+        lists:
+          - heading: Major components
+            items:
+              - Team Broker (MQTT) — the event stream the app subscribes to
+              - Hosted Instance — FlowFuse-managed Node-RED running the headless app
+              - Packaged App (no UI) — the logic itself, no dashboard
+              - FlowFuse Tables — where the app writes its rows
+          - heading: Where config & data live
+            items:
+              - Config — baked into the snapshot; only fixed env vars at deploy.
+              - Data — reads the Team Broker, writes FlowFuse Tables.
+      - label: Data-Driven App
+        kicker: User-facing · backed by data
+        kickerNote: User-facing app on a Hosted Instance, backed by data.
+        diagram:
+          lanes:
+            - label: People
+              tone: neutral
+              nodes:
+                - title: Users
+                  sub: browser
+                  tone: muted
+            - link: opens
+            - label: Platform
+              tone: it
+              nodes:
+                - title: Hosted Instance
+                  sub: data-driven app
+                  tone: it
+            - link: reads · writes
+            - label: Records
+              tone: it
+              nodes:
+                - title: FlowFuse Tables
+                  sub: records
+                  tone: it
+        summary: >-
+          A user-facing app on a Hosted Instance — a time clock, an asset manager — whose content is
+          driven by data. It needs a backend and a data source to be complete.
+        useWhen: "Apps whose displayed settings or records change between deployments and grow over time: time clocks, registries, asset managers."
+        how: >-
+          Same pipeline delivery to a Hosted Instance; the runtime loads its data from FlowFuse
+          Tables or the Team Broker, served by a backend behind the screen.
+        lists:
+          - heading: Major components
+            items:
+              - Users (browser) — the people using the app's dashboard
+              - Hosted Instance — runs the data-driven app and serves its UI
+              - FlowFuse Tables — the records the app reads and writes
+          - heading: Where config & data live
+            items:
+              - Config — app settings and records live in FlowFuse Tables (or context), editable without redeploying.
+              - Data — FlowFuse Tables for records, the Team Broker for live values.
+      - label: Shared Building Block
+        kicker: Embedded by other apps
+        kickerNote: Reusable UI or logic many Hosted Instances embed.
+        diagram:
+          lanes:
+            - label: Authored once
+              tone: it
+              nodes:
+                - title: Shared Building Block
+                  sub: reusable subflows
+                  tone: it
+            - link: publish
+            - label: Catalogue
+              tone: it
+              nodes:
+                - title: Team Library
+                  sub: catalogue
+                  tone: it
+            - link: embedded in
+            - label: Apps that embed it
+              tone: neutral
+              nodes:
+                - title: Hosted Instance
+                  sub: App A · block
+                - title: Hosted Instance
+                  sub: App B · block
+                - title: Hosted Instance
+                  sub: App C · block
+        summary: >-
+          A reusable piece of UI or logic that other apps embed — not an app itself. Think a common
+          dashboard surface many Hosted Instances present through.
+        useWhen: Many apps should share one piece of UI or logic and upgrade it in lockstep.
+        how: >-
+          Published as subflows to the Team Library with an example flow; updating the subflow
+          updates every Hosted Instance that adopts the new version.
+        lists:
+          - heading: Major components
+            items:
+              - Shared Building Block (reusable subflows) — the block authored once
+              - Team Library — the catalogue it's published to
+              - Hosted Instances — the apps that embed it and upgrade together
+          - heading: Where config & data live
+            items:
+              - Config — via the subflow's instance properties / env where it's embedded.
+              - Data — none of its own; it embeds into the host app's data.
