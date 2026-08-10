@@ -128,8 +128,8 @@ onUnmounted(() => {
               </div>
             </div>
             <div class="w-full">
-              <div class="rounded-lg shadow-2xl border-2 border-indigo-200">
-                <img :src="'/images/industries/automotive/1-connect-systems.png'" alt="FlowFuse Features" class="w-full h-full object-cover rounded-lg" loading="eager">
+              <div class="rounded-lg shadow-2xl border-2 border-red-100">
+                <img :src="'/images/product/flowfuse-ui.png'" alt="FlowFuse Features" class="w-full h-full object-cover rounded-lg" loading="eager">
               </div>
             </div>
           </div>
