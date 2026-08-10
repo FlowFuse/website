@@ -31,7 +31,7 @@ FlowFuse is a fully remote team, we currently have a strong skew towards western
 
 !["The FlowFuse team pictured during our visit to Clue Capers"](./images/clue-capers.jpg "The FlowFuse team pictured during our visit to Clue Capers")
 
-[**FlowFuse Team News**](/team/)    
+[**FlowFuse Team News**](/about/)    
 We are currently recruiting a [Product Manager](https://boards.greenhouse.io/flowfuse/jobs/4717778004), and a [Senior Community Manager](https://boards.greenhouse.io/flowfuse/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse).
     
 [**Try FlowFuse for Free**](https://app.flowfuse.com/account/create?code=RELEASE11)  

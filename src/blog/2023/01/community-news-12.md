@@ -29,7 +29,7 @@ According to this detailed article from iot-analytics.com, on average, four new 
 [**Custom Node Spotlight - node-red-contrib-string**](https://flows.nodered.org/node/node-red-contrib-string)
 String manipulation is the bread and butter of so many programming tasks. Node-RED has a lot of tools to help you edit your strings including support for [JSONata](https://jsonata.org/) and using the trusty function node. For those of us who prefer to keep things 'no-code' [node-red-contrib-string](https://flows.nodered.org/node/node-red-contrib-string) allows you to stack string manipulations together quickly and easily. It has a huge library of ready to use functions.
 
-[**FlowFuse Team News**](/team/)    
+[**FlowFuse Team News**](/about/)    
 We’d like to welcome two new members to the FlowFuse team. [Ian Skerrett](https://twitter.com/ianskerrett) has joined as our Head of Marketing and [Tracy Anthony](https://www.linkedin.com/in/tracyanthonyfernandez/) has joined as our HR Manager. FlowFuse continues to grow and we are becoming a truly global team.
 
 Would you like to work for FlowFuse? We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004) to join our team. You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse). 

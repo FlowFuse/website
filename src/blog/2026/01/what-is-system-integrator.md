@@ -100,7 +100,7 @@ System integration used to mean custom work every time. Integrators hard-coded p
 
 That approach no longer works. Industry 4.0 has changed manufacturing priorities. Data isn't just a byproduct of production: it's the foundation for optimization, predictive maintenance, and competitive advantage. Modern factories generate massive amounts of data, evolve quickly, and can't afford brittle, one-off integrations.
 
-The industry is moving toward architectures like the [Unified Namespace (UNS)](/solutions/uns/). Instead of systems talking directly to each other, data flows to a central hub. A PLC publishes data once. MES, ERP, analytics platforms all subscribe to it. Add a new system, and it just subscribes. No rewiring. No breaking existing connections.
+The industry is moving toward architectures like the [Unified Namespace (UNS)](/use-cases/uns/). Instead of systems talking directly to each other, data flows to a central hub. A PLC publishes data once. MES, ERP, analytics platforms all subscribe to it. Add a new system, and it just subscribes. No rewiring. No breaking existing connections.
 
 This shift demands different tools. Tools that support many protocols without custom drivers. Tools that are quick to understand and easy to maintain. Tools where you can see how data flows at a glance instead of digging through legacy code.
 
