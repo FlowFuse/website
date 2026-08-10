@@ -197,6 +197,12 @@ export default defineNuxtConfig({
         // the module default) before resvg ever sees the SVG, so resvg needs zero font
         // resolution of its own at rasterization time.
         resvgOptions: { font: { loadSystemFonts: false } },
+        // Content-addressed (hash of component + props + module version), so a build cache
+        // hit skips font-load/render-satori/render-resvg entirely and just returns the
+        // cached bytes — only pages whose title/section actually changed pay to re-render.
+        // Pointed at the same directory as the font cache above so one cache path in
+        // netlify.toml/test.yml covers both.
+        buildCache: { base: 'node_modules/.cache/nuxt/.nuxt/cache/og-image' },
     },
 
     sitemap: {
