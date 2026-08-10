@@ -32,7 +32,7 @@ meta:
     answer: "This error means the Node ID you are trying to access does not exist on the server. Common causes include an incorrect namespace index (ns=), invalid identifier format, or a tag that was removed or renamed. Use the Browser node to verify the exact Node ID format from the server."
   - question: "Can multiple clients connect to one OPC UA server?"
     answer: "Yes, OPC UA servers support multiple simultaneous client connections. The exact number depends on the server implementation and licensing. Most industrial OPC UA servers handle 10–100+ concurrent clients. Each client maintains its own session and can have different security levels and access rights."
-tldr: "OPC UA is the industry-standard protocol that provides a universal language for connecting PLCs, SCADA systems, HMIs, and enterprise applications from any vendor. This hands-on tutorial shows how to use Node-RED and FlowFuse to connect to any OPC UA server, browse available tags, and read and write real-time values from industrial equipment using the OPC UA Browser node for discovering Node IDs."
+tldr: "OPC UA is the vendor-neutral standard for connecting PLCs, SCADA systems, HMIs, and enterprise applications. This tutorial shows how to use Node-RED and FlowFuse to connect to any OPC UA server, discover Node IDs with the OPC UA Browser node, and read and write live values from industrial equipment."
 ---
 
 If you’ve ever tried to connect industrial equipment from different vendors, you know how frustrating it can be, a mess of incompatible protocols, proprietary software, and confusing drivers. Your Siemens PLC speaks one language, your Allen-Bradley controller another, and that Modbus sensor? Yet another protocol entirely.
@@ -73,6 +73,9 @@ While protocols like Modbus transmit everything in plain text, OPC UA uses enter
 ### Future-Proof Investment
 
 OPC UA is the foundation of Industry 4.0 initiatives around the world. It is not just another protocol, it is the one major vendors are standardizing on. Choosing OPC UA today ensures long-term compatibility and ROI.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Getting Started
 

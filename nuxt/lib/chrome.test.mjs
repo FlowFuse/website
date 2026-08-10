@@ -42,21 +42,18 @@ test('no nav or footer link points at a redirected path', () => {
     // accept it. So a page that was removed and redirected can sit in the nav
     // indefinitely, still labelled, pointing somewhere it was never meant to.
     // Advertise the destination, not the redirect.
-    const redirects = readFileSync(join(repo, 'src/redirects.njk'), 'utf8')
+    const redirectsSrc = readFileSync(join(repo, 'nuxt/redirects.ts'), 'utf8')
     const sources = new Set(
-        redirects.split('\n')
-            .map(l => l.trim())
-            .filter(l => l.startsWith('/'))
-            .map(l => l.split(/\s+/))
+        [...redirectsSrc.matchAll(/^\s*'([^']+)':\s*{\s*redirect:\s*{\s*to:\s*'([^']+)'/gm)]
             // A rule whose destination is its own source sends the link nowhere
             // else, so it is not the drift this test is looking for. There is one
             // in the file today (/docs/user/expert/), which is its own bug.
-            .filter(([from, to]) => from !== to)
-            .map(([from]) => from)
+            .filter(([, from, to]) => from !== to)
+            .map(([, from]) => from)
     )
     for (const { href, label } of allLinks) {
         assert.ok(!sources.has(href),
-            `"${label}" links to ${href}, which redirects elsewhere in src/redirects.njk. `
+            `"${label}" links to ${href}, which redirects elsewhere in nuxt/redirects.ts. `
             + 'Point it at the destination or drop the entry.')
     }
 })

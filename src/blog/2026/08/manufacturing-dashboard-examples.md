@@ -92,6 +92,9 @@ These metrics exist to answer a small set of operational questions: Are we produ
 
 What that looks like in practice varies by where the metrics are applied. Here's how these same building blocks show up across five common manufacturing dashboards.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Manufacturing Dashboard Examples
 
 Dashboards work best when they're designed around a specific decision, not a general audience. A production team needs visibility into output and downtime; quality and maintenance teams need a different lens entirely. The five examples below show common patterns, all built with FlowFuse using data from machines, production systems, databases, and industrial protocols, but for using it purpose it uses demo data

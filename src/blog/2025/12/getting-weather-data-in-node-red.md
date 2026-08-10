@@ -88,6 +88,9 @@ Log in to your OpenWeather account. Once you're signed in:
 3. Copy the default key (or generate a new one)
 4. Save it in a text file or a note app.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Setting Up the API Connection
 
 First, we need to connect to the weather API and make sure it's working.

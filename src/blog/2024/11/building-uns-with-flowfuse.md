@@ -17,7 +17,7 @@ cta:
   description: FlowFuse brings together Node-RED, a built-in MQTT broker, and centralized device management, everything you need to connect your shop floor data into a single, real-time namespace.
 ---
 
-As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/solutions/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
+As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/use-cases/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
 
 <!--more-->
 

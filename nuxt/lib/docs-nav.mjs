@@ -9,12 +9,18 @@
 // restructuring the docs is a change in the docs repo alone.
 
 /**
- * @param {Array<{path: string, title?: string|null, navTitle?: string|null, navOrder?: number|null, navGroup?: string|null, navGroupOrder?: number|null}>} pages
+ * @param {Array<{path: string, title?: string|null, navTitle?: string|null, navOrder?: number|null, navGroup?: string|null, navGroupOrder?: number|null, redirect?: {to: string}|null}>} pages
  */
 export function buildDocsNav (pages) {
     const tree = {}
 
-    const sorted = [...pages].sort((a, b) => {
+    // A page whose only purpose is `redirect: { to }` (e.g. FlowFuse/flowfuse's
+    // docs/admin/licensing.md and docs/community-support.md) has no content of its own to
+    // link to from the sidebar. Rendering it as a nav entry means every single docs page
+    // gets flagged by nuxt-link-checker's `redirects` inspection, so it's left out.
+    const linkable = pages.filter(page => !page.redirect)
+
+    const sorted = [...linkable].sort((a, b) => {
         const depthA = a.path.split('/').filter(Boolean).length
         const depthB = b.path.split('/').filter(Boolean).length
         return depthA - depthB

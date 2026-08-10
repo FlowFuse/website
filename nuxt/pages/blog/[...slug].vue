@@ -73,6 +73,7 @@ const tldrList = computed(() => Array.isArray(page.value?.tldr) ? page.value?.tl
 const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.value?.tldr : null)
 
 const pageTitle = computed(() => page.value?.title || 'Blog')
+provide('blogPostTitle', pageTitle)
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
 const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Blog`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
@@ -91,7 +92,6 @@ useSeoMeta({
 })
 
 if (routeInfo.value.kind === 'post') {
-    const firstAuthor = computed(() => authorMembers.value[0])
     useSchemaOrg([
         defineArticle({
             headline: pageTitle,
@@ -99,7 +99,11 @@ if (routeInfo.value.kind === 'post') {
             image: absoluteImage,
             datePublished: computed(() => page.value ? new Date(page.value.date).toISOString() : undefined),
             dateModified: computed(() => page.value ? new Date(page.value.lastUpdated || page.value.date).toISOString() : undefined),
-            author: computed(() => firstAuthor.value ? [{ name: firstAuthor.value.name, url: 'https://flowfuse.com' }] : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
+            // Each Person's @id is their /blog/author/{slug}/ page, so the article and the
+            // author page resolve to the same entity in the graph.
+            author: computed(() => authorMembers.value.length
+                ? authorMembers.value.map(authorSchema)
+                : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
         }),
         computed(() => page.value?.meta?.faq?.length ? {
             '@type': 'FAQPage',
@@ -127,16 +131,25 @@ if (routeInfo.value.kind === 'post') {
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
         <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
           <span>By</span>
-          <span v-for="(author, i) in authorMembers" :key="i">
-            <span v-if="i > 0">, </span>
-            <span class="font-medium">{{ author ? author.name : 'FlowFuse' }}</span>
-          </span>
+          <template v-if="authorMembers.length">
+            <span v-for="(author, i) in authorMembers" :key="author.slug">
+              <span v-if="i > 0">, </span>
+              <NuxtLink :to="authorPath(author.slug)" class="font-medium hover:underline">{{ author.name }}</NuxtLink>
+            </span>
+          </template>
+          <span v-else class="font-medium">FlowFuse</span>
           <span class="text-gray-300">|</span>
           <time :datetime="new Date(page.lastUpdated || page.date).toISOString()">
             {{ page.lastUpdated ? 'Updated ' : '' }}{{ formattedDate }}
           </time>
           <span class="text-gray-300">|</span>
           <span>{{ readingTime }} min read</span>
+          <span class="text-gray-300">|</span>
+          <NuxtLink
+              to="/handbook/marketing/content-strategy/blog/#blogging-process"
+              class="hover:underline"
+              title="Every FlowFuse article is reviewed by a subject-matter expert before publishing."
+          >Expert Reviewed</NuxtLink>
         </div>
       </div>
     </div>

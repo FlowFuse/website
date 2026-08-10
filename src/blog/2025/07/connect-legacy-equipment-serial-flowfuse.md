@@ -104,6 +104,9 @@ Different machines use different physical standards. The most common are:
   * **RS-485**: Typically half-duplex and multi-device. Ideal for networks and even longer cable runs.
   * **USB (via adapter)**: Most modern PCs and gateways use USB-to-Serial adapters to talk to RS-232/422/485 devices.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Setting Up Serial Communication with FlowFuse
 
 Now that you understand how serial communication works and what kind of interfaces your machine might use, the next step is to put that knowledge into practice.

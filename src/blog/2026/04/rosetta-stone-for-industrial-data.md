@@ -79,7 +79,7 @@ What actually works is three things aligned together.
 
 **A reliable transport layer.** OPC-UA defines the vocabulary. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) moves it. Lightweight, publish-subscribe, designed for the unreliable networks and constrained hardware that characterise real factory floors rather than data centre diagrams. Sparkplug B closes the gap that vanilla MQTT leaves open: without it, two systems both speaking MQTT can still be writing in different dialects. With it, every message has a predictable structure before you read a single byte of content.
 
-**An architecture that removes the N² problem entirely.** The [Unified Namespace](/solutions/uns/) is what changes the geometry. Instead of bilateral connections between systems, every device and every application publishes to and subscribes from a single broker. The broker is the fixed reference point, the Rosetta Stone. Every system maps to it. Every system becomes readable to every other system, not because they were directly connected, but because they share the same anchor.
+**An architecture that removes the N² problem entirely.** The [Unified Namespace](/use-cases/uns/) is what changes the geometry. Instead of bilateral connections between systems, every device and every application publishes to and subscribes from a single broker. The broker is the fixed reference point, the Rosetta Stone. Every system maps to it. Every system becomes readable to every other system, not because they were directly connected, but because they share the same anchor.
 
 !["Industrial data flow from PLC to analytics via MQTT broker"](./images/flowfuse-uns.png)
 _Industrial data flow from PLC to analytics via MQTT broker_

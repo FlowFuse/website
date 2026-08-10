@@ -45,7 +45,7 @@ Connected devices can generate a lot of data, but without a standardized format,
 
 ## What is MQTT Sparkplug?
 
-MQTT Sparkplug B is an open-source specification governed by the [Eclipse Foundation Specification Process (EFSP)](https://www.eclipse.org/projects/efsp/). It defines a standardized MQTT topic namespace and payload format specifically designed for Industrial IoT (IIoT), with particular focus on real-time [SCADA](/solutions/scada/), control systems, and [HMI](/blog/2025/11/building-hmi-for-equipment-control/) solutions.
+MQTT Sparkplug B is an open-source specification governed by the [Eclipse Foundation Specification Process (EFSP)](https://www.eclipse.org/projects/efsp/). It defines a standardized MQTT topic namespace and payload format specifically designed for Industrial IoT (IIoT), with particular focus on real-time [SCADA](/use-cases/scada/), control systems, and [HMI](/blog/2025/11/building-hmi-for-equipment-control/) solutions.
 
 At its core, Sparkplug B extends MQTT 3.1.1 by adding structured topic namespace conventions, Google Protocol Buffer encoded payloads, state-aware birth and death certificates, metric aliasing for bandwidth optimization, and store-and-forward capabilities for intermittent connectivity. These additions transform MQTT from a simple messaging protocol into a complete industrial communication framework.
 
@@ -86,6 +86,9 @@ For example, an edge node might publish data every second when the primary SCADA
 Sparkplug B enables bidirectional communication through `NCMD` and `DCMD` messages. Applications publish commands to specific topics, and edge nodes or devices execute the commands and respond with updated metric values in `NDATA` or `DDATA` messages.
 
 Command messages use the same Protocol Buffer format as data messages but flow in the opposite direction. Applications might send a write command to change a setpoint, a rebirth command to request fresh birth certificates, or a custom command to trigger device-specific actions. The standardized command structure enables generic control applications that work with any Sparkplug-compliant device.
+
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
 
 ## The MQTT Sparkplug Specification for IIoT
 

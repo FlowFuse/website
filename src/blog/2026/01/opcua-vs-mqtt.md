@@ -258,7 +258,7 @@ Work with your equipment, not against it. Siemens PLCs, Rockwell controllers, an
 
 Five hundred vibration sensors streaming to cloud storage align with MQTT's horizontal scaling through broker clusters. Fifty machines requiring discovered operations and validated method calls align with OPC UA's self-describing address spaces. Different problems, different optimal solutions.
 
-For example, you're connecting 50 CNC machines, 500 environmental sensors, [MES](/solutions/mes/), predictive maintenance, and cloud analytics.
+For example, you're connecting 50 CNC machines, 500 environmental sensors, [MES](/use-cases/mes/), predictive maintenance, and cloud analytics.
 
 ```
 - Machines → Edge: OPC UA (semantic interoperability for production coordination)

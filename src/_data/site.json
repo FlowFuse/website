@@ -2,9 +2,6 @@
     "baseURL": "https://flowfuse.com",
     "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
-    "openings": {
-        "em": "https://job-boards.greenhouse.io/flowfuse/jobs/5566913004"
-    },
     "messaging": {
         "tagLine": "The Edge-Native Platform for Industrial Applications",
         "heroTagLine": "The Edge-Native Platform for Industrial IT, OT, and IIOT Applications",

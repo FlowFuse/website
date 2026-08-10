@@ -73,7 +73,7 @@ In this article, we'll build a calibration application in FlowFuse. It will show
 
 > **Note:** This tutorial reads from a `calibration_assets` table in FlowFuse Tables, filled with sample instruments. Everything here works the same against a real calibration register, a CMMS, or an ERP endpoint. Only the query nodes change.
 
-You can interact with the live demo here: <a href="https://clever-garden-warbler-2554.flowfuse.cloud/dashboard/home" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Calibration Status Dashboard Demo</a>.
+You can interact with the live demo here: :live-demo-link{href="https://clever-garden-warbler-2554.flowfuse.cloud/dashboard/home" label="Try the Calibration Status Dashboard Demo"}.
 
 ## What You'll Need
 
