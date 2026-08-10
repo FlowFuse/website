@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
+import { getAllBlogPosts } from '../../utils/sharedContent'
 
 definePageMeta({ layout: 'default' })
 
@@ -33,9 +34,13 @@ if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.d
 
 const { data: allPosts } = await useAsyncData(
     'blog-all-for-related',
-    () => routeInfo.value.kind === 'post'
-        ? queryCollection('blog').select('path', 'title', 'date', 'tags').order('date', 'DESC').all()
-        : Promise.resolve([])
+    async () => {
+        if (routeInfo.value.kind !== 'post') return []
+        const all = await getAllBlogPosts()
+        // Only the fields this page needs travel into its payload; the shared cache
+        // itself holds the wider field set other pages (listing, author) need.
+        return all.map(post => ({ path: post.path, title: post.title, date: post.date, tags: post.tags }))
+    }
 )
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
