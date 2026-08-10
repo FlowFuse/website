@@ -224,6 +224,12 @@ export default defineNuxtConfig({
             }
         ],
         prerender: {
+            // Nitro's default concurrency is 1 - CI logs showed ~560 routes rendered
+            // strictly serially, with the sum of per-route times matching total wall
+            // time almost exactly. Most of the per-route cost is async (content
+            // queries, template rendering) rather than CPU-bound, so this can safely
+            // exceed the runner's core count.
+            concurrency: 10,
             routes: (() => {
                 const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
                 const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
