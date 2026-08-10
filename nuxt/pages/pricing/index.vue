@@ -116,11 +116,15 @@ useSchemaOrg([
         </template>
         </UPricingTable>
 
-        <CertifiedNodes class="mt-28" />
+        <CertifiedNodes class="mt-20" />
+    </div>
+  </div>
 
-        <EnterpriseSecurity class="mt-28" />
+  <EnterpriseSecurity class="mt-24" />
 
-        <div v-if="faq" class="mt-28 mx-auto">
+  <div class="w-full px-6">
+    <div class="max-w-5xl mx-auto pb-16 px-4">
+        <div v-if="faq" class="mt-20 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
         <UAccordion
             :items="faqAccordionItems"

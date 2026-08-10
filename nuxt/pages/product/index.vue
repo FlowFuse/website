@@ -75,12 +75,12 @@ onUnmounted(() => {
   <div class="nohero w-full product-page">
     <div class="product-hero-bg" aria-hidden="true" />
     <div class="w-full px-6 product-content">
-      <div class="pt-12 pb-20 max-w-screen-lg mx-auto">
+      <div class="pt-12 max-w-screen-lg mx-auto">
         <!-- Hero -->
         <div class="container max-w-screen-lg mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div class="text-left">
-              <h1 class="leading-tight text-4xl sm:text-5xl font-bold">
+              <h1 class="leading-tight text-4xl sm:text-5xl">
                 Build, deploy, and govern industrial applications - in record time.
               </h1>
               <p class="mt-6 text-lg text-gray-500 max-w-xl">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
@@ -138,7 +138,7 @@ onUnmounted(() => {
                 <div id="tier-edge" :ref="(el) => { stepRefs.edge = el }" data-tier="edge" class="product-tier-step scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
                   <div>
                     <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Edge</div>
-                    <h3 class="text-3xl font-bold mt-2">You run the plant floor</h3>
+                    <h3 class="text-3xl mt-2">You run the plant floor</h3>
                     <p class="mt-4 text-gray-500">Connect PLCs, machines, and controllers. Standardize automation across sites instead of reinventing it plant by plant. Built for OT and digitalization leadership running production at scale.</p>
                     <p class="mt-4 text-sm text-gray-500 italic">Ideal fit if you're dealing with: multi-plant rollouts, PLC/SCADA integration, machine connectivity, or Node-RED sprawl across sites.</p>
                     <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: 'features-edge' })">Learn more about FlowFuse Edge &rarr;</a>
@@ -150,7 +150,7 @@ onUnmounted(() => {
                 <div id="tier-hub" :ref="(el) => { stepRefs.hub = el }" data-tier="hub" class="product-tier-step scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
                   <div>
                     <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Hub</div>
-                    <h3 class="text-3xl font-bold mt-2">You move data across the business</h3>
+                    <h3 class="text-3xl mt-2">You move data across the business</h3>
                     <p class="mt-4 text-gray-500">Integrate and orchestrate data across ERPs, databases, and cloud APIs — governed centrally, not stitched together app by app. Built for central IT and enterprise architecture teams.</p>
                     <p class="mt-4 text-sm text-gray-500 italic">Ideal fit if you're dealing with: system integration, API orchestration, data pipelines, or governance across business systems.</p>
                     <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: 'features-hub' })">Learn more about FlowFuse Hub &rarr;</a>
@@ -162,7 +162,7 @@ onUnmounted(() => {
                 <div id="tier-fleet" :ref="(el) => { stepRefs.fleet = el }" data-tier="fleet" class="product-tier-step scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
                   <div>
                     <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Fleet</div>
-                    <h3 class="text-3xl font-bold mt-2">You manage a Node-RED fleet</h3>
+                    <h3 class="text-3xl mt-2">You manage a Node-RED fleet</h3>
                     <p class="mt-4 text-gray-500">Push flows, ship updates, and roll back remotely across thousands of distributed devices, without waiting on a firmware release. Built for hardware OEMs, partners, and asset operators.</p>
                     <p class="mt-4 text-sm text-gray-500 italic">Ideal fit if you're dealing with: distributed devices, remote sites, sensors and telemetry at scale, or shipping Node-RED inside your own product.</p>
                     <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: 'features-fleet' })">Learn more about FlowFuse Fleet &rarr;</a>
@@ -192,11 +192,12 @@ onUnmounted(() => {
               </div>
             </div>
           </div>
-
-          <EnterpriseSecurity />
         </div>
       </div>
-      <div class="max-w-screen-lg mx-auto pt-4 pb-20">
+    </div>  
+      <EnterpriseSecurity />
+    <div class="w-full px-6">
+      <div class="max-w-screen-lg mx-auto py-20">
         <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center product-get-started-bg">
           <p class="text-white text-4xl sm:text-5xl font-medium m-0">Get Started with FlowFuse</p>
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
