@@ -20,7 +20,7 @@ const TIERS = [
         heading: 'You run the plant floor',
         description: 'Connect <a class="text-indigo-600 hover:underline" href="/blog/2025/12/what-is-plc/">PLCs</a>, machines, and controllers. Standardize automation across sites instead of reinventing it plant by plant. Built for OT and digitalization leadership running production at scale.',
         idealFit: 'Ideal fit if you\'re dealing with: multi-plant rollouts, <a class="text-indigo-600 hover:underline" href="/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/">PLC/SCADA integration</a>, <a class="text-indigo-600 hover:underline" href="/blog/2025/10/plc-to-mqtt-using-flowfuse/">machine connectivity</a>, or Node-RED sprawl across sites.',
-        image: { src: '/images/home/home-edge-connectivity.png', alt: 'FlowFuse Edge: industrial edge connectivity' },
+        image: { src: '/images/home/home-scada.png', alt: 'FlowFuse Edge: industrial edge connectivity' },
     },
     {
         id: 'hub',
@@ -28,7 +28,7 @@ const TIERS = [
         heading: 'You move data across the business',
         description: 'Integrate and orchestrate data across <a class="text-indigo-600 hover:underline" href="/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/">ERPs</a>, <a class="text-indigo-600 hover:underline" href="/blog/2025/08/getting-started-with-flowfuse-tables/">databases</a>, and cloud APIs — governed centrally, not stitched together app by app. Built for central IT and enterprise architecture teams.',
         idealFit: 'Ideal fit if you\'re dealing with: system integration, API orchestration, <a class="text-indigo-600 hover:underline" href="/blog/2026/02/mqtt-influxdb-tutorial/">data pipelines</a>, or governance across business systems.',
-        image: { src: '/images/home/home-data-integration.png', alt: 'FlowFuse Hub: enterprise data integration' },
+        image: { src: '/images/product/hub.jpg', alt: 'FlowFuse Hub: enterprise data integration' },
     },
     {
         id: 'fleet',
@@ -36,7 +36,7 @@ const TIERS = [
         heading: 'You manage a Node-RED fleet',
         description: 'Push flows, ship updates, and roll back remotely across thousands of distributed devices, without waiting on a firmware release. Built for hardware OEMs, partners, and asset operators.',
         idealFit: "Ideal fit if you're dealing with: distributed devices, remote sites, sensors and telemetry at scale, or shipping Node-RED inside your own product.",
-        image: { src: '/images/screen-pseudo-devices.png', alt: 'FlowFuse Fleet: device fleet management console' },
+        image: { src: '/images/product/fleet.jpg', alt: 'FlowFuse Fleet: device fleet management console' },
     },
 ]
 
