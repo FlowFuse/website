@@ -2470,6 +2470,12 @@ lite-youtube::before {
         color: var(--color-white);
         border: 1px solid var(--color-red-700);
     }
+
+    /* Shared "Get Started" CTA backdrop - homepage (cta-get-started.njk and
+       its includers) and the /product page both use this exact gradient. */
+    .ff-get-started-bg {
+        background: radial-gradient(ellipse 50% 150% at 50% 100%, var(--color-indigo-500), #211c64);
+    }
 }
 
 @layer utilities {
