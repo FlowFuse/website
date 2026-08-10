@@ -3,9 +3,11 @@ name: Tests
 on: push
 
 jobs:
-  build_site:
-    name: Build and check the site
-    uses: ./.github/workflows/site-preview.yml
+  # The build itself lives in FlowFuse/github-actions-workflows so this repository and
+  # FlowFuse/flowfuse documentation pull requests share one definition. The check this
+  # reports is "test_website / Build and check", which the "protect main" ruleset requires.
+  test_website:
+    uses: FlowFuse/github-actions-workflows/.github/workflows/build_website.yml@add-website-build-workflow
     with:
       website_repository: ${{ github.repository }}
       website_ref: ${{ github.sha }}
@@ -13,16 +15,3 @@ jobs:
     secrets:
       ci_app_id: ${{ secrets.GH_CI_READONLY_APP_ID }}
       ci_app_key: ${{ secrets.GH_CI_READONLY_APP_KEY }}
-
-  # A reusable workflow reports its checks as "caller job / called job", which would rename
-  # the test_website context that the "protect main" ruleset requires. This gate keeps that
-  # name and fails whenever the build above did not succeed.
-  test_website:
-    needs: build_site
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Require the site build to have succeeded
-        run: |
-          echo "build_site result: ${{ needs.build_site.result }}"
-          [ "${{ needs.build_site.result }}" = "success" ]
