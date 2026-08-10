@@ -1,0 +1,140 @@
+guide: node-red
+slug: handling-data
+navOrder: 5
+title: Handling data
+blurb: Sort data by what it is for before you tune anything.
+blocks:
+  - type: prose
+    kicker: Handling data — start here
+    body: >-
+      Sort data by what it is for before you tune anything. Telemetry and control have different timing
+      needs — classify them, respect the controller's scan budget, and give each its own path so the
+      fast path never inherits the slow one's load.
+  - type: tabs
+    panels:
+      - label: Classify the data
+        kicker: Sort by purpose first
+        kickerNote: Telemetry is continuous and latency-tolerant; control is small and time-critical. Don't poll it all at the fast rate.
+        diagramTitle: Sort data by what it is for
+        diagram:
+          lanes:
+            - label: Source
+              tone: neutral
+              nodes:
+                - title: PLC
+                  sub: signals
+                  tone: muted
+            - link: reads
+            - label: Node-RED (edge device)
+              tone: ot
+              nodes:
+                - title: Node-RED
+                  sub: edge device
+                  tone: ot
+            - link: classify
+            - label: Three populations
+              tone: neutral
+              nodes:
+                - title: Telemetry
+                  sub: continuous, latency-tolerant
+                - title: Control
+                  sub: small, time-critical
+                - title: Config
+                  sub: written rarely
+        summary: >-
+          Before tuning anything, sort the data by what it is for. Telemetry is continuous and
+          latency-tolerant. Control data is small and time-critical. Config is written rarely.
+        useWhen: >-
+          The common mistake is treating every point as one population and polling all of it at the
+          fastest rate. That is what creates load a controller cannot sustain.
+        howHeading: How to handle it
+        how: >-
+          Ask whether a delay changes a control decision or only a timestamp, whether it is read or
+          write, and what cadence the data actually needs versus how fast it is polled today.
+        callout:
+          tone: good
+          text: Deciding which few points genuinely need the fast path, usually far fewer than ride it.
+      - label: How PLCs respond
+        kicker: Mind the scan budget
+        kickerNote: Comms is only one slice of a PLC's per-scan budget; fast-polling everything starves the data that needs the rate.
+        diagramTitle: Every poll spends the controller scan budget
+        diagram:
+          lanes:
+            - label: PLC · one scan budget
+              tone: neutral
+              nodes:
+                - title: control logic
+                  tone: muted
+                - title: I/O
+                  tone: muted
+                - title: comms
+                  tone: muted
+            - link: polls
+            - label: Node-RED (edge device)
+              tone: ot
+              nodes:
+                - title: Node-RED
+                  sub: poll only what needs the rate
+                  tone: ot
+        summary: >-
+          A PLC has a finite budget per scan, and communications is only one slice of it. Every poll,
+          read, and connection costs the controller.
+        useWhen: >-
+          Polling a large set of points fast spends the budget on data that did not need the rate,
+          leaving less headroom for the data that does.
+        howHeading: How to handle it
+        how: >-
+          Know which direction a connection is established and that each protocol is its own driver.
+          Common protocols (MQTT, OPC UA, WebSocket, Modbus TCP) are not deterministic; data handling,
+          not the runtime, decides the timing you hit.
+        callout:
+          tone: watch
+          text: >-
+            Test one signal end to end, isolated from the rest, so you measure the transport itself and
+            not your application logic.
+      - label: Treat data reliably
+        kicker: Split read from event-driven
+        kickerNote: Buffer telemetry and batch it to a time-series DB; keep the control path lean and on its own.
+        diagramTitle: Telemetry to history, control stays fast
+        diagram:
+          lanes:
+            - label: Source
+              tone: neutral
+              nodes:
+                - title: PLC
+                  sub: buffered
+                  tone: muted
+            - link: pull at its real cadence
+            - label: Node-RED (edge device)
+              tone: ot
+              nodes:
+                - title: buffer + batch
+                  sub: telemetry
+                  tone: ot
+                - title: live, minimal set
+                  sub: control
+                  tone: ot
+            - link: two paths
+            - label: Targets
+              tone: neutral
+              nodes:
+                - title: Broker (MQTT)
+                  sub: live, minimal set
+                  tone: broker
+                - title: SQL database
+                  sub: history, batched (time-series)
+                  tone: muted
+        summary: >-
+          Separate read traffic from event-driven traffic, then handle each on its own path. This split
+          is the foundational step; everything else follows from it.
+        useWhen: >-
+          Telemetry and control have different timing needs. Sharing one path and one protocol makes the
+          fast path inherit the load of the slow one.
+        howHeading: How to handle it
+        how: >-
+          Buffer telemetry in the PLC and pull it at its real cadence, timestamped at acquisition. Batch
+          it into a time-series database. Keep the control path to the minimum tag set on a dedicated,
+          faster route.
+        callout:
+          tone: good
+          text: Batched inserts into a time-series DB land at a fraction of the overhead of individual writes.
