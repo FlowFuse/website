@@ -44,14 +44,17 @@ const DIFFERENTIATORS = [
     {
         heading: 'Vendor-Free Open Source',
         description: 'Every factory is different, so why deploy the same solution as everyone else? Build your way with <a class="text-indigo-600 hover:underline" href="/blueprints/">ready-made blueprints</a>, your own app store, or anything in between — we never dictate your tools.',
+        icon: 'i-lucide-puzzle',
     },
     {
         heading: 'Flexible and Secure',
         description: 'From whole-factory rollouts to last-mile fixes across any industry. Build your solution, then secure it with <a class="text-indigo-600 hover:underline" href="/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/">granular RBAC</a>, auditing, <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">version control</a>, and traceability.',
+        icon: 'i-lucide-shield-check',
     },
     {
         heading: 'Seamless Collaboration',
         description: 'OT teams prototype and deploy fast while IT keeps the governance, security, and auditability they need — no trade-offs.',
+        icon: 'i-lucide-handshake',
     },
 ]
 
@@ -126,7 +129,7 @@ onUnmounted(() => {
             </div>
             <div class="w-full">
               <div class="rounded-lg shadow-2xl border-2 border-indigo-200">
-                <img :src="'/images/features/flowfuse-features-hero.png'" alt="FlowFuse Features" class="w-full h-full object-cover rounded-lg" loading="eager">
+                <img :src="'/images/industries/automotive/1-connect-systems.png'" alt="FlowFuse Features" class="w-full h-full object-cover rounded-lg" loading="eager">
               </div>
             </div>
           </div>
@@ -141,9 +144,10 @@ onUnmounted(() => {
             <div
               v-for="diff in DIFFERENTIATORS"
               :key="diff.heading"
-              class="rounded-lg bg-indigo-50/50 p-6 pt-8 flex flex-col gap-4 text-center md:text-left"
+              class="rounded-lg bg-gradient-to-br from-indigo-50/50 to-red-50/50 p-6 pt-8 flex flex-col gap-4 text-center md:text-left"
             >
-              <h3 class="text-2xl font-light text-indigo-600">{{ diff.heading }}</h3>
+              <Icon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
+              <h3 class="text-xl font-semibold text-indigo-600">{{ diff.heading }}</h3>
               <p class="mb-0" v-html="diff.description" />
             </div>
           </div>
@@ -199,7 +203,7 @@ onUnmounted(() => {
                   v-for="cap in CAPABILITIES"
                   :key="cap.to"
                   :to="cap.to"
-                  class="whitespace-nowrap inline-flex items-center gap-1 py-1.5 px-3 border border-gray-200 rounded-full text-xs font-medium text-gray-700 bg-white no-underline hover:no-underline transition-colors duration-150 after:text-indigo-300 hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 hover:after:text-indigo-600"
+                  class="whitespace-nowrap inline-flex items-center gap-1 py-1.5 px-3 border border-gray-200 rounded-full text-sm font-medium text-gray-700 bg-white no-underline hover:no-underline transition-colors duration-150 after:text-indigo-300 hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 hover:after:text-indigo-600"
                 >{{ cap.label }}</NuxtLink>
               </div>
             </div>
