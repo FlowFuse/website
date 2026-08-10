@@ -136,7 +136,7 @@ Now that we have created the SAML app in the workspace, we need to update the Fl
 
 ### Signing in Using SSO
 
-To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user_management/#creating-new-users). Additionally, the user must already be logged in with that email in the browser.
+To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user-management/#creating-new-users). Additionally, the user must already be logged in with that email in the browser.
 
 1. Open your platform in the browser, Enter the email address in the username/email field.
 2. Click on "Login".
