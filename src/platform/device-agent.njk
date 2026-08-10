@@ -31,61 +31,46 @@ meta:
 ---
 <!--First two sections-->
 <div class="nohero w-full">
-    <!--Hero Content-->
-    <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
-        <div class="md:flex px-6 md:my-16 items-center md:flex-row md:justify-between container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
-            <div class="m-auto md:w-1/2 lg:w-5/12 max-w-md">
-                <h1 class="px-12 md:px-0 m-auto mb-6 max-md:flex max-md:flex-row max-md:justify-center md:ml-0 md:max-w-[250px]">
-                    {% image "./images/ff-logo-device-agent-light.svg", "FlowFuse Device Agent", [225] %}
-                </h1>
-                <p class="mb-10">
-                    Unlock the power of your Industrial IoT devices and bring them into your automation workflows with the FlowFuse Device Agent. Our lightweight, secure agent allows you to effortlessly manage and deploy automation flows to your hardware remotely from anywhere. 
-                </p>
-                <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="#install-from-your-terminal">GET STARTED</a>
+    <!--Hero Content: the terminal install is the hero, so the page opens on the one
+        way to get a machine online. The platform-first route lives in the docs.-->
+    <div id="install-from-your-terminal" class="w-full scroll-mt-24 pt-12 pb-20 md:pt-6 md:pb-24">
+        <div class="container mx-auto px-6 md:mt-16 md:max-w-screen-lg">
+            <div class="md:flex items-center md:flex-row md:justify-between text-center md:text-left gap-8">
+                <div class="m-auto md:w-1/2 lg:w-5/12 max-w-md">
+                    <h1 class="px-12 md:px-0 m-auto mb-6 max-md:flex max-md:flex-row max-md:justify-center md:ml-0 md:max-w-[250px]">
+                        {% image "./images/ff-logo-device-agent-light.svg", "FlowFuse Device Agent", [225] %}
+                    </h1>
+                    <p class="mb-6">
+                        Unlock the power of your Industrial IoT devices and bring them into your automation workflows with the FlowFuse Device Agent. Our lightweight, secure agent allows you to effortlessly manage and deploy automation flows to your hardware remotely from anywhere.
+                    </p>
+                    <p class="font-light">
+                        Start where your hardware already is. Run the installer on the machine you want to bring
+                        online and it walks you through the rest, including creating a FlowFuse account if you
+                        don't have one yet.
+                    </p>
+                </div>
+                <div class="flex justify-center m-auto max-md:mt-10 md:w-1/2 lg:w-6/12">
+                    {% terminalFrame "./images/device-agent/terminal-install.gif", "The FlowFuse Device Agent installer running in a terminal, opening a browser to register the machine", 500 %}
+                </div>
             </div>
-            <div class="flex justify-center m-auto">
-                <lite-youtube videoid="-07lngewgfE" params="rel=0" style="width: 500px; overflow: hidden;" class="border-4 border-indigo-200 rounded-xl sm:max-w-md sm:max-h-full md:max-w-screen-md lg:max-w-lg lg:max-h-72"></lite-youtube>
-            </div>
-            <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md m-auto mt-12" href="#install-from-your-terminal">GET STARTED</a>
-        </div>
-    </div>
 
-    <!--Install from your terminal-->
-    <div id="install-from-your-terminal" class="w-full scroll-mt-24 pb-20 md:pb-24">
-        <div class="max-w-screen-lg mx-auto px-6">
-            <div class="ff-blue-card max-md:max-w-md max-md:mx-auto">
+            <!--Install commands, full width so nothing is clipped-->
+            <div class="ff-blue-card max-md:max-w-md max-md:mx-auto mt-12 md:mt-16">
                 <h2 class="font-medium w-full text-center md:text-left mb-6">Install on edge, straight from your terminal</h2>
-                <div class="md:grid md:grid-cols-2 md:gap-10 items-start">
-                    <div class="max-md:mb-10">
-                        <p class="font-light mb-6">
-                            Start where your hardware already is. Run the installer on the machine you want to bring
-                            online and it walks you through the rest, including creating a FlowFuse account if you
-                            don't have one yet. No connection codes to copy out of the platform first.
-                        </p>
-                        <p class="font-light">
-                            Already have a remote instance in FlowFuse, or installing with a one-time code?
-                            The <a href="/docs/device-agent/quickstart/">Quick Start guide</a> covers that route, and the
-                            <a href="/docs/device-agent/install/overview/">installation docs</a> cover npm and Docker.
-                        </p>
-                    </div>
-                    <div class="flex justify-center md:justify-end">
-                        {% terminalFrame "./images/device-agent/terminal-install.gif", "The FlowFuse Device Agent installer running in a terminal, opening a browser to register the machine", 500 %}
-                    </div>
+                <p class="font-medium mb-2">Linux and macOS</p>
+                <div class="ff-command mb-6">
+                    <code class="ff-command__text">/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)"</code>
+                    <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
                 </div>
-
-                <!--Install commands, full width so nothing is clipped-->
-                <div class="mt-10 text-left">
-                    <p class="font-medium mb-2">Linux and macOS</p>
-                    <div class="ff-command mb-6">
-                        <code class="ff-command__text">/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)"</code>
-                        <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
-                    </div>
-                    <p class="font-medium mb-2">Windows (run elevated)</p>
-                    <div class="ff-command">
-                        <code class="ff-command__text">powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1|iex"</code>
-                        <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
-                    </div>
+                <p class="font-medium mb-2">Windows (run elevated)</p>
+                <div class="ff-command">
+                    <code class="ff-command__text">powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1|iex"</code>
+                    <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
                 </div>
+                <p class="font-light mt-6">
+                    Installing with npm or Docker instead? The
+                    <a href="/docs/device-agent/install/overview/">installation docs</a> cover every route.
+                </p>
             </div>
         </div>
     </div>
