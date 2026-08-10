@@ -18,16 +18,16 @@ const TIERS = [
         id: 'edge',
         label: 'FlowFuse Edge',
         heading: 'You run the plant floor',
-        description: 'Connect PLCs, machines, and controllers. Standardize automation across sites instead of reinventing it plant by plant. Built for OT and digitalization leadership running production at scale.',
-        idealFit: "Ideal fit if you're dealing with: multi-plant rollouts, PLC/SCADA integration, machine connectivity, or Node-RED sprawl across sites.",
+        description: 'Connect <a class="text-indigo-600 hover:underline" href="/blog/2025/12/what-is-plc/">PLCs</a>, machines, and controllers. Standardize automation across sites instead of reinventing it plant by plant. Built for OT and digitalization leadership running production at scale.',
+        idealFit: 'Ideal fit if you\'re dealing with: multi-plant rollouts, <a class="text-indigo-600 hover:underline" href="/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/">PLC/SCADA integration</a>, <a class="text-indigo-600 hover:underline" href="/blog/2025/10/plc-to-mqtt-using-flowfuse/">machine connectivity</a>, or Node-RED sprawl across sites.',
         image: { src: '/images/home/home-edge-connectivity.png', alt: 'FlowFuse Edge: industrial edge connectivity' },
     },
     {
         id: 'hub',
         label: 'FlowFuse Hub',
         heading: 'You move data across the business',
-        description: 'Integrate and orchestrate data across ERPs, databases, and cloud APIs — governed centrally, not stitched together app by app. Built for central IT and enterprise architecture teams.',
-        idealFit: "Ideal fit if you're dealing with: system integration, API orchestration, data pipelines, or governance across business systems.",
+        description: 'Integrate and orchestrate data across <a class="text-indigo-600 hover:underline" href="/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/">ERPs</a>, <a class="text-indigo-600 hover:underline" href="/blog/2025/08/getting-started-with-flowfuse-tables/">databases</a>, and cloud APIs — governed centrally, not stitched together app by app. Built for central IT and enterprise architecture teams.',
+        idealFit: 'Ideal fit if you\'re dealing with: system integration, API orchestration, <a class="text-indigo-600 hover:underline" href="/blog/2026/02/mqtt-influxdb-tutorial/">data pipelines</a>, or governance across business systems.',
         image: { src: '/images/home/home-data-integration.png', alt: 'FlowFuse Hub: enterprise data integration' },
     },
     {
@@ -125,11 +125,11 @@ onUnmounted(() => {
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div class="rounded-lg bg-indigo-50/50 p-6 pt-8 flex flex-col gap-4">
               <h3 class="text-2xl font-light text-indigo-600">Vendor-Free Open Source</h3>
-              <p class="mb-0">Every factory is different, so why deploy the same solution as everyone else? Build your way with ready-made blueprints, your own app store, or anything in between — we never dictate your tools.</p>
+              <p class="mb-0">Every factory is different, so why deploy the same solution as everyone else? Build your way with <a class="text-indigo-600 hover:underline" href="/blueprints/">ready-made blueprints</a>, your own app store, or anything in between — we never dictate your tools.</p>
             </div>
             <div class="rounded-lg bg-indigo-50/50 p-6 pt-8 flex flex-col gap-4">
               <h3 class="text-2xl font-light text-indigo-600">Flexible and Secure</h3>
-              <p class="mb-0">From whole-factory rollouts to last-mile fixes across any industry. Build your solution, then secure it with granular RBAC, auditing, version control, and traceability.</p>
+              <p class="mb-0">From whole-factory rollouts to last-mile fixes across any industry. Build your solution, then secure it with <a class="text-indigo-600 hover:underline" href="/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/">granular RBAC</a>, auditing, <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">version control</a>, and traceability.</p>
             </div>
             <div class="rounded-lg bg-indigo-50/50 p-6 pt-8 flex flex-col gap-4">
               <h3 class="text-2xl font-light text-indigo-600">Seamless Collaboration</h3>
@@ -165,8 +165,8 @@ onUnmounted(() => {
                   <div>
                     <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">{{ tier.label }}</div>
                     <h3 class="text-3xl mt-2">{{ tier.heading }}</h3>
-                    <p class="mt-4 text-gray-500">{{ tier.description }}</p>
-                    <p class="mt-4 text-sm text-gray-500 italic">{{ tier.idealFit }}</p>
+                    <p class="mt-4 text-gray-500" v-html="tier.description" />
+                    <p class="mt-4 text-sm text-gray-500 italic" v-html="tier.idealFit" />
                     <a class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</a>
                   </div>
                   <div class="self-start rounded-lg overflow-hidden shadow-[0_12px_32px_rgba(2,6,13,0.12)] border border-gray-200">
