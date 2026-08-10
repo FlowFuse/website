@@ -102,5 +102,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/': { redirect: { to: '/blog/2025/04/what-is-an-oee-dashboard/', statusCode: 301 } },
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-2/': { redirect: { to: '/blog/2025/04/build-manufacturing-oee-dashboard/', statusCode: 301 } },
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/': { redirect: { to: '/blog/2025/04/design-and-scale-oee-dashboard/', statusCode: 301 } },
+    '/sign-up/': { redirect: { to: 'https://app.flowfuse.com/account/create', statusCode: 301 } },
 
 }

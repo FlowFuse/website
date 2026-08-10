@@ -84,15 +84,9 @@ Team members are invited to share the job posting within their personal networks
 When advertising for a role on Social Media, engagement is improved (and therefore,
 we reach a higher audience) with custom social tiles.
 
-We can add URLs to our site that provide a nice tile, whilst then redirecting to
-the job advert on Greenhouse. This was introduced [here](https://github.com/FlowFuse/website/pull/728).
+Share the direct Greenhouse/[job board](https://boards.greenhouse.io/flowfuse) link for the role.
 
-### Adding a new role to the website
-
-1. Add the job as a redirect in `src/_data/site.json` under "openings"
-1. Add a new `<job-short-title>.njk` file to the `/src/jobs` directory (use an existing job as a template)
-1. Update the redirect URL in the `njk` file to match that added in Step 1.
-1. Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant page
+Open an [Art Request](/handbook/design/art-requests/) to have a new Social Tile designed & attach it to the relevant job posting.
 
 #### Welcome to the Jungle Integration
 
@@ -108,8 +102,7 @@ referral amount donated to that organization.
 
 ### Sharing an Existing Role
 
-The URLs for the existing roles we have on the website are any files found in [here](https://github.com/FlowFuse/website/tree/main/src/jobs).
-The URL will be structured accordingly: `/jobs/<job-short-title>`
+Share the role's direct Greenhouse posting link, or the general [job board](https://boards.greenhouse.io/flowfuse) if you don't have the specific posting link to hand.
 
 ## Interviews
 
