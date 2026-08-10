@@ -129,6 +129,8 @@ export default defineNuxtConfig({
         defaultLocale: 'en',
     },
 
+    ogImage: { zeroRuntime: true },
+
     sitemap: {
         sources: [
             // Nuxt-native dynamic routes (integrations) that
