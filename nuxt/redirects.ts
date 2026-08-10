@@ -89,7 +89,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/solutions/uns/': { redirect: { to: '/use-cases/uns/', statusCode: 301 } },
     '/certified-nodes/': { redirect: { to: '/integrations/?certified=1', statusCode: 301 } },
     '/certified-nodes/**': { redirect: { to: '/integrations/?certified=1', statusCode: 301 } },
-    '/llms-full.txt': { redirect: { to: '/llms.txt', statusCode: 301 } },
     '/docs/install/local/': { redirect: { to: '/docs/install/introduction/', statusCode: 301 } },
     '/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/legal/terms/': { redirect: { to: '/terms/', statusCode: 301 } },

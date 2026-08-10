@@ -4,7 +4,7 @@ const yaml = require('js-yaml');
 
 // Blog posts are rendered by Nuxt (src/blog/**/*.md is .eleventyignore'd), so they no
 // longer appear in 11ty's `collections.posts`. This reads their frontmatter directly,
-// for consumers that still need blog post data at 11ty build time (e.g. llms.njk).
+// for consumers that still need blog post data at 11ty build time (e.g. related-resources.njk).
 function walk(dir) {
     let results = [];
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {

@@ -54,7 +54,7 @@ We've fixed the following bugs in this release.
 - [it.only is not prohibited](https://github.com/FlowFuse/flowfuse/issues/968)
 - [No feedback when an API error occurs editing user](https://github.com/FlowFuse/flowfuse/issues/966)
 - [Start action is available on a running project](https://github.com/FlowFuse/flowfuse/issues/1040)
-- 
+
 ## Contributors
 We'd like the thank the following for their contributions to this release:
 
