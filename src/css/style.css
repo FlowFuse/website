@@ -398,14 +398,20 @@ dl.message-properties > dd {
 
 /*
     Terminal frame: wraps a recording of a CLI session in window chrome, emitted by
-    the terminalFrame shortcode. The background matches the recording's own
-    background (#0E1114) so the padding reads as terminal padding rather than a
+    the terminalFrame 11ty shortcode and by the TerminalFrame MDC component that
+    stands in for it on Nuxt-rendered pages. The background matches the recording's
+    own background (#0E1114) so the padding reads as terminal padding rather than a
     border, and both the chrome and the padding scale down with the viewport so a
     small recording is not swallowed by its frame.
 */
 .ff-terminal-frame {
     background-color: #0e1114;
     @apply w-full overflow-hidden rounded-lg border border-gray-700 shadow-lg sm:rounded-xl;
+}
+
+/* In prose the frame is a block of its own, rather than a cell in a page layout. */
+.ff-terminal-frame--prose {
+    @apply my-8;
 }
 
 .ff-terminal-frame__bar {
