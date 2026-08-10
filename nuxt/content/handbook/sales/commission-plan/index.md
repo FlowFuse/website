@@ -92,7 +92,7 @@ When Commission is earned: A Commission is deemed earned only if all of the foll
 
 Multi-year Agreement:  Except as otherwise provided in Exhibit A, if the sale is a multi-year Agreement providing for installment payments, the Salesperson will earn a pro-rata commission as revenue installments are collected by the Company.  Upon each installment of the sale being booked, a Booking Advance will be made with respect to such installment as provided under Section 15 in accordance with the timing of payment rules for Booking Advances; provided, however, that if any single installment constitutes a “Commission on Large Sales” as provided in the following paragraph, Commissions and Booking Advances, if any, on such installment will be treated in accordance with such paragraph.
 
-Commissions on Large Sales:  If a sale is greater than $500,000, Commissions on the first $500,000 of the sale will be advanced as Booking Advances in accordance with Section 15.  Commissions on the amount of the sale exceeding $500,000 will not be advanced and instead will be paid in the payroll period following the date such Commissions are Earned (i.e., the date the Company collects the revenue, if all other earning requirements have been met), as provided under Section 15.
+Commissions on Large Sales:  If a sale is greater than \$500,000, Commissions on the first \$500,000 of the sale will be advanced as Booking Advances in accordance with Section 15.  Commissions on the amount of the sale exceeding \$500,000 will not be advanced and instead will be paid in the payroll period following the date such Commissions are Earned (i.e., the date the Company collects the revenue, if all other earning requirements have been met), as provided under Section 15.
 
 Split: Two or more Salespersons who participated in a sale may split the commission with prior written approval of the appropriate Authorized Officials. The Company management in its sole discretion will determine any split. 
 
@@ -150,7 +150,7 @@ In order for a sale to not be considered a windfall, it must meet the following 
 
 3. It must be specified as a channel or channel originated sale if a partner is involved.
 
-4. A sale of $400,000 or less will not be considered a windfall.
+4. A sale of \$400,000 or less will not be considered a windfall.
 
    If a sale is considered a windfall, sales management will communicate with the Salesperson about making, and may thereafter make, an equitable adjustment to the commission.  Such an equitable adjustment will be made no later than 30 days after the end of the Plan Term. If in sales management’s discretion a change to the sales employee’s individual compensation plan is warranted to avoid this or additional windfall events, a new compensation plan will be issued. In no event will such an adjustment be made after the commission is Earned, as defined above.  
 
@@ -194,7 +194,7 @@ The Salesperson holds the job title/role of: Sales Representative
 
 ### 3. Authorized Sales/Territory
 
-The Salesperson will be authorized to sell to any customer with an Annual Recurring Revenue in excess of $5,000 per year. The Salesperson recognizes that the Territory will be redistributed when additional Salespersons join the Company.
+The Salesperson will be authorized to sell to any customer with an Annual Recurring Revenue in excess of \$5,000 per year. The Salesperson recognizes that the Territory will be redistributed when additional Salespersons join the Company.
 
 ### 4. Authorized Accounts
 
@@ -217,7 +217,7 @@ Quota credit for upsells and renewals will continue to be based on Incremental A
 
 ### 7. Credit For Partner Bookings
 
-Bookings completed through partners will receive a 20% uplift in the value of the deal for commission purposes. For example, a $100,000 booking sold through a partner where the partner receives a 30% margin, the net value to FlowFuse would be $70,000. The deal would get a 20% uplift for commission credit purposes, the net deal amount for commission purposes would be 84,000.
+Bookings completed through partners will receive a 20% uplift in the value of the deal for commission purposes. For example, a \$100,000 booking sold through a partner where the partner receives a 30% margin, the net value to FlowFuse would be \$70,000. The deal would get a 20% uplift for commission credit purposes, the net deal amount for commission purposes would be 84,000.
 
 ### 8. Commission and Quota Credit
 
@@ -237,12 +237,12 @@ Notes: Commissions will be paid on multi-year deals at the base rate according t
 
 ### 9. Quota
 
-New net Annual Recurring Revenue (ARR) plus services sold on New Business deals Quota of $ for Q1 2026 through Q4 2026 assigned quarterly as follows: 
+New net Annual Recurring Revenue (ARR) plus services sold on New Business deals Quota of \$ for Q1 2026 through Q4 2026 assigned quarterly as follows: 
 
-Q1	$  [Quota Q1]
-Q2	$  [Quota Q2]
-Q3	$  [Quota Q3]
-Q4	$  [Quota Q4]
+Q1	\$  [Quota Q1]
+Q2	\$  [Quota Q2]
+Q3	\$  [Quota Q3]
+Q4	\$  [Quota Q4]
 
 ### 10. Multi-year Bookings
 
@@ -261,15 +261,15 @@ When a multi-year order is booked which includes non-cancellable annual payment 
 | Year 3 value, with committed payment | 25% | 0% |
 
 **Multi-Year Payment Example:**  
-A $300,000 booking with annual payments due equally at signing at year 1, 2 and 3 from signing would be paid commissions and receive quota credit as if it is $175,000 deal: 
+A \$300,000 booking with annual payments due equally at signing at year 1, 2 and 3 from signing would be paid commissions and receive quota credit as if it is \$175,000 deal: 
 
-| 3 Year Booking for $300,000 Paid Annually in 3 Equal Payments | Calculation | Commission and Quota Amount |
+| 3 Year Booking for \$300,000 Paid Annually in 3 Equal Payments | Calculation | Commission and Quota Amount |
 | :---- | :---- | :---- |
-| At Signing, Year 1: | $100,000 X 100% \= | $100,000 |
-| Year 2: | $100,000 X 50%   \= | $50,000 |
-| Year 3: | $100,000 X 25%   \= | $25,000 |
-| Total Commissionable Value  |  | $175,000 |
-| Total Quota Credit |  | $175,000 |
+| At Signing, Year 1: | \$100,000 X 100% \= | \$100,000 |
+| Year 2: | \$100,000 X 50%   \= | \$50,000 |
+| Year 3: | \$100,000 X 25%   \= | \$25,000 |
+| Total Commissionable Value  |  | \$175,000 |
+| Total Quota Credit |  | \$175,000 |
 
 ### 12. Accelerated Commissions
 
@@ -277,7 +277,7 @@ Once Salesperson has achieved 100% of annual quota assignment, the Salesperson w
 
 ### 13. Annual Quota Bonus
 
-Once Salesperson has sold in excess of the assigned annual quota per section 9, Salesperson will be eligible for a bonus of $10,000.
+Once Salesperson has sold in excess of the assigned annual quota per section 9, Salesperson will be eligible for a bonus of \$10,000.
 
 ### 14. 200% Attainment Bonus
 

@@ -58,7 +58,7 @@ Unfortunately, these values are not in a friendly form to work with.  Ideally, w
 
  <br>
 
-We need to extract the numeric part of the string using a regular expression with a “change” node and the JSONata expression $number($match(msg.payload,  /-?(\d+(\.\d+)?)/ , 10).match).  “$match” and “/-?(\d+(\.\d+)?)/” help the function pull out the numeric components of the string and “$number” parses these components to be an actual number data type.
+We need to extract the numeric part of the string using a regular expression with a “change” node and the JSONata expression `$number($match(msg.payload, /-?(\d+(\.\d+)?)/, 10).match)`.  `$match` and `/-?(\d+(\.\d+)?)/` help the function pull out the numeric components of the string and `$number` parses these components to be an actual number data type.
 
 Here are the properties of the “change” node.
 
