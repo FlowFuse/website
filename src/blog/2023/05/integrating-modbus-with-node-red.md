@@ -132,11 +132,11 @@ Although you can off-load some of the higher-level logic from the PLC into Node-
 
 
 ### Security
-Connecting Node-RED to your PLC also creates a larger attack surface for cyber threats.  Make sure that you follow the guidelines found on the Node-RED.org site at [Securing Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red).  Node-RED’s strength is its ability to make connections where they weren’t possible before, but this can be taken advantage of by a hacker.  For instance, maybe it’s tempting to make Node-RED a transparent gateway and make a RESTful API fully exposing a modbus-flex-write node.  This is amazingly easy and powerful with Node-RED, but anyone who can access your IP could send http://<yourIP>:1880/careful?value=true&fc=15&unitid=1&address=0&quantity=10 and remotely turn on and off whatever they wanted.
+Connecting Node-RED to your PLC also creates a larger attack surface for cyber threats.  Make sure that you follow the guidelines found on the Node-RED.org site at [Securing Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red).  Node-RED’s strength is its ability to make connections where they weren’t possible before, but this can be taken advantage of by a hacker.  For instance, maybe it’s tempting to make Node-RED a transparent gateway and make a RESTful API fully exposing a modbus-flex-write node.  This is amazingly easy and powerful with Node-RED, but anyone who can access your IP could send `http://<yourIP>:1880/careful?value=true&fc=15&unitid=1&address=0&quantity=10` and remotely turn on and off whatever they wanted.
 
 ![Example endpoint flow](./images/integrating-modbus-6.png "Example endpoint flow")
 
-Instead, a better practice would be to more narrowly define what you want to accomplish and only allow Node-RED to do exactly that. In this case you might send http://<yourIP>:1880/honkTheLunchHorn?honk=true
+Instead, a better practice would be to more narrowly define what you want to accomplish and only allow Node-RED to do exactly that. In this case you might send `http://<yourIP>:1880/honkTheLunchHorn?honk=true`
 
 ![Locking down the endpoint](./images/integrating-modbus-2.png "Locking down the endpoint")
 
