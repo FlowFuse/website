@@ -47,7 +47,7 @@ curl -X POST https://example.flowforge.cloud/http-trigger
 => Unauthorized
 ```
 
-Let’s get it working again: (replace <username> and <password> with the details from the sticky note)
+Let’s get it working again: (replace `<username>` and `<password>` with the details from the sticky note)
 
 ```
 curl -X POST https://<username>:<password>@example.flowforge.cloud/http-trigger

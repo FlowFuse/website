@@ -111,12 +111,22 @@ as evidenced by a PO or signed quote, is the sole determinant.
      - Company address
      - Renewal Date
      - Use Case
+     - Contract Term (months): the total length of the agreement.
+     - Payment Terms: Upfront or Annual Installments. Required whenever
+       Contract Term exceeds 12 months.
      - Spiced
      - Amount in USD based on Deal Type:
        - New Business: ACV (Annual Contract Value)
        - Expansions/Renewals: Incremental ARR
    - Under contract management; check the box for MSA if a custom subscription
      agreement is agreed upon.
+   - Contract Term and Payment Terms drive multi-year commission tiering
+     (see [Sales Compensation Plan](/handbook/sales/commission-plan/), Exhibit
+     A, Sections 10-11): multi-year deals paid upfront get 100% commission
+     credit, while deals paid in annual installments are credited 100%/50%/25%
+     by contract year. If these fields aren't set at close, payouts default to
+     treating the deal as a standard 1-year term, which has caused at least
+     one overpayment.
 1. Upload the documents to the Google Drive in the correct directory
    - [Signed quotes and P.O.'s](https://drive.google.com/drive/folders/1Nb3UqFiE56ymgQnyfkDKHMAe6L3akNzQ)
    - If negotiated custom, the

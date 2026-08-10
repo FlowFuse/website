@@ -105,7 +105,7 @@ After installing this package you will see three new nodes in your flow editor.
 
 ![Screenshot showing the installed influxdb nodes in the palette](images/influxdb-historical-data/influxdb-nodes-15.png "Screenshot showing the installed influxdb nodes in the palette")
 
-Drag and drop the “influxdb out” node into your flow, double click on it, and start filling out the needed fields.  The naming convention of “test&lt;<THING>>” works well for initial setups to make it clear what names should go where.
+Drag and drop the “influxdb out” node into your flow, double click on it, and start filling out the needed fields.  The naming convention of `test&lt;<THING>>` works well for initial setups to make it clear what names should go where.
 
 !["Screenshot showing the influxdb-out node config"](images/influxdb-historical-data/influxdb-out-node-16.png "Screenshot showing the influxdb-out node config")
 
