@@ -199,7 +199,7 @@ onUnmounted(() => {
                   v-for="cap in CAPABILITIES"
                   :key="cap.to"
                   :to="cap.to"
-                  class="whitespace-nowrap inline-flex items-center gap-1 py-1.5 px-3 border border-gray-200 rounded-full text-xs font-medium text-gray-700 bg-white transition-colors duration-150 after:content-['→'] after:text-indigo-300 hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 hover:after:text-indigo-600"
+                  class="whitespace-nowrap inline-flex items-center gap-1 py-1.5 px-3 border border-gray-200 rounded-full text-xs font-medium text-gray-700 bg-white no-underline hover:no-underline transition-colors duration-150 after:text-indigo-300 hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 hover:after:text-indigo-600"
                 >{{ cap.label }}</NuxtLink>
               </div>
             </div>
