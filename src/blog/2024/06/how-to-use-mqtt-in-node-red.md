@@ -104,6 +104,9 @@ Set these in your Node-RED settings or FlowFuse environment config
 
 Click **Add**, then **Done**. Deploy your flow. If the node shows "connected" under it, you're in.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Publishing Data to a Topic on MQTT Broker
 
 The mqtt-out node sends data from Node-RED to your MQTT broker. Configure the topic, quality of service level, and retention settings to control how your messages are delivered.
@@ -154,9 +157,6 @@ msg.action = "unsubscribe";
 ```
 
 This is useful when users select which equipment to monitor from a dashboard, when topics depend on database queries or API responses, or when you need to add and remove subscriptions without redeploying your flow.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Deploying the Flow
 

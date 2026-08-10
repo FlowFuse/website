@@ -70,6 +70,9 @@ Node-RED provides a way to extend the capabilities of the simpler, proven techno
 Modbus is a widely adopted protocol for accessing data from existing legacy manufacturing equipment. Node-RED makes it very easy to connect to Modbus enabled equipment. However, there are some best practices we have developed to maintain system integrity when integrating Modbus devices with Node-RED:
 
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Add Watchdogs to Node-RED Flows
 To keep your automation system running with peace of mind and little human intervention, use a watchdog timer.  A watchdog timer is typically used to detect and recover from system malfunctions. In Node-RED a watchdog timer can be tied to a broadcast messaging system to get push alerts directly to cell phones, as well as to an auto-reset to try to get your Flows back online automatically.  A simple implementation of this is to just put two Trigger nodes in a loop, the first one to send an alert when it hasn’t seen any recent events, and the second to to reset the first one.
 
@@ -87,9 +90,6 @@ Sending a payload of {"connectorType":"TCP"} to the Modbus Flex Connector is eno
 Be careful when adding new traffic to an industrial network, which might not be able to handle the extra load.  Some networks have low-bandwidth, especially at large plants that might be using antiquated IP devices and long-distance, Wi-Fi bridges in electrically noisy environments.  Furthermore, some PLCs and other Modbus devices have limits as to how many other devices can connect to them, and a new connection might not work, or worse, bump off an old connection.  A PLC’s general operation is to poll its inputs every cycle and react accordingly, running logic and triggering outputs as quickly as possible. The general use-case for Node-RED with a PLC is to create an HMI or broader, SCADA system.  A poll rate of every second suffices for a simple HMI.  For dashboards published to a greater audience, rather than just the operator, poll rates of several minutes to hours might be adequate.  If this is a new integration, it’s better to start slow and make sure the current infrastructure can handle the extra load.  
 
 ![Modbus node configuration](./images/integrating-modbus-7.png "Modbus node configuration")
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ### Coil/Register Grouping
 Modbus works more efficiently when it is reading and writing addresses as groups.  Creating banks of consecutively numbered coils or registers can help with this.  If Modbus is already in use, perhaps for an existing HMI, but for your Node-RED dashboard you just want a selection of these addresses and they are too scattered to be read all at once, pick a starting address numbered far higher than what you will use for any HMI work and create a new bank of coils or registers just for the Node-RED dashboard.  The PLC can handle this easily and it greatly simplifies the polling for your Node-RED dashboard.  On the Node-RED side of the connection, it’s a good idea to parse and to filter this data as soon as it enters the flow.  Below, the first node creates an appropriate message for each coil, with a topic name and a true/false payload.  This message is then filtered by the “block unless value changes” mode in the filter node and finally a switch (by topic) node separates out each message.  In this example, every Tag coming in from the PLC only triggers downstream nodes when there is a change and each Tag has its own output to connect a wire, and subsequent nodes to.

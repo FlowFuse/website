@@ -30,7 +30,7 @@ meta:
 
   - question: "What's the relationship between MTTF and failure rate?"
     answer: "Failure rate is the inverse of MTTF: Failure Rate = 1 / MTTF. If MTTF is 10,000 hours, the failure rate is 0.0001 failures per hour or 1 failure per 10,000 hours. Both metrics describe the same reliability characteristic from different perspectives."
-tldr: "Mean Time to Failure (MTTF) measures the average operating lifetime of non-repairable components such as light bulbs, batteries, and electronic modules before permanent failure requiring replacement, not repair. The formula is simply total operating time divided by number of failures, providing a statistical average useful for planning preventive replacements, spare parts inventory, and procurement decisions. MTTF differs from MTBF (which applies to repairable systems) and MTTR (which measures repair time)."
+tldr: "Mean Time to Failure (MTTF) is the average operating lifetime of non-repairable components, such as bulbs, batteries, and electronic modules, that get replaced rather than repaired. Divide total operating time by the number of failures. MTTF differs from MTBF, which covers repairable systems, and MTTR, which measures repair time."
 ---
 
 When a critical motor bearing assembly fails after just 6 months, half its rated lifespan, maintenance teams face a fundamental question: "How long should this component actually last?"
@@ -52,6 +52,9 @@ MTTF is commonly used for items such as light bulbs, batteries, sealed bearings,
 MTTF is a core concept in reliability engineering and is widely used in maintenance planning, lifecycle cost analysis, and dependability studies. It is formally supported by industry standards such as **[MIL-HDBK-217](https://www.sre.org/mil-hdbk-217-the-perceived-standard/)**, **[IEEE Standard 1413](https://standards.ieee.org/ieee/1413/3764/)**, and **[IEC 60300-3-1](https://webstore.iec.ch/en/publication/1294)**, which provide guidance on reliability and dependability analysis across the equipment life cycle.
 
 **Important**: MTTF represents a statistical average, some components will fail earlier while others last longer. Use it for planning and forecasting, not for predicting exact failure times of individual components.
+
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Mean Time to Failure (MTTF) Formula
 
@@ -116,9 +119,6 @@ Total failures = 15 belts
 **MTTF = 350,400 / 15 = 23,360 hours**
 
 The plant now knows these belts typically last about 23,360 hours (roughly 2.7 years in continuous operation). They can schedule preventive replacements at around 20,000 hours to avoid unexpected breakdowns during production runs.
-
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Common Calculation Mistakes to Avoid
 

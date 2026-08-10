@@ -47,6 +47,9 @@ Addressing can be confusing because manufacturers document it differently:
 
 By understanding the **master-slave control, data types, and addressing**, you can reliably communicate with your devices and make the most of Modbus RTU in FlowFuse.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Getting Started
 
 Let’s start by setting up the basics before connecting Modbus RTU devices to FlowFuse.
@@ -88,9 +91,6 @@ Reading data from Modbus slaves in FlowFuse is straightforward. The process is t
   _Serial port and communication settings for the Modbus device._
 
 4. Connect the Modbus Read node to a **Debug** node and deploy your flow. If everything is set up correctly, you will start seeing live data from your Modbus device in the debug sidebar.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Writing Data
 

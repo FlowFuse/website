@@ -32,7 +32,7 @@ meta:
     answer: "This error means the Node ID you are trying to access does not exist on the server. Common causes include an incorrect namespace index (ns=), invalid identifier format, or a tag that was removed or renamed. Use the Browser node to verify the exact Node ID format from the server."
   - question: "Can multiple clients connect to one OPC UA server?"
     answer: "Yes, OPC UA servers support multiple simultaneous client connections. The exact number depends on the server implementation and licensing. Most industrial OPC UA servers handle 10–100+ concurrent clients. Each client maintains its own session and can have different security levels and access rights."
-tldr: "OPC UA is the industry-standard protocol that provides a universal language for connecting PLCs, SCADA systems, HMIs, and enterprise applications from any vendor. This hands-on tutorial shows how to use Node-RED and FlowFuse to connect to any OPC UA server, browse available tags, and read and write real-time values from industrial equipment using the OPC UA Browser node for discovering Node IDs."
+tldr: "OPC UA is the vendor-neutral standard for connecting PLCs, SCADA systems, HMIs, and enterprise applications. This tutorial shows how to use Node-RED and FlowFuse to connect to any OPC UA server, discover Node IDs with the OPC UA Browser node, and read and write live values from industrial equipment."
 ---
 
 If you’ve ever tried to connect industrial equipment from different vendors, you know how frustrating it can be, a mess of incompatible protocols, proprietary software, and confusing drivers. Your Siemens PLC speaks one language, your Allen-Bradley controller another, and that Modbus sensor? Yet another protocol entirely.
@@ -73,6 +73,9 @@ While protocols like Modbus transmit everything in plain text, OPC UA uses enter
 ### Future-Proof Investment
 
 OPC UA is the foundation of Industry 4.0 initiatives around the world. It is not just another protocol, it is the one major vendors are standardizing on. Choosing OPC UA today ensures long-term compatibility and ROI.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Getting Started
 
@@ -145,9 +148,6 @@ _OPC UA Browser node_
 ```json
 [{"id":"c3a8303048e6588f","type":"OpcUa-Browser","z":"f66e9c91c269e7fb","endpoint":"c0f8c79fc00845c8","item":"","datatype":"","topic":"ns=0;i=85","items":[],"name":"","x":510,"y":300,"wires":[["3428199852f9fcdc"]]},{"id":"1549f797c58ba667","type":"inject","z":"f66e9c91c269e7fb","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":280,"y":300,"wires":[["c3a8303048e6588f"]]},{"id":"3428199852f9fcdc","type":"debug","z":"f66e9c91c269e7fb","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":740,"y":300,"wires":[]},{"id":"c0f8c79fc00845c8","type":"OpcUa-Endpoint","endpoint":"","secpol":"None","secmode":"None","none":true,"login":false,"usercert":false,"usercertificate":"","userprivatekey":""}]
 ```
-::
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
 
 ### Reading Tag Values

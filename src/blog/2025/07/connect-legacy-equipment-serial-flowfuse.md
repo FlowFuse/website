@@ -104,6 +104,9 @@ Different machines use different physical standards. The most common are:
   * **RS-485**: Typically half-duplex and multi-device. Ideal for networks and even longer cable runs.
   * **USB (via adapter)**: Most modern PCs and gateways use USB-to-Serial adapters to talk to RS-232/422/485 devices.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Setting Up Serial Communication with FlowFuse
 
 Now that you understand how serial communication works and what kind of interfaces your machine might use, the next step is to put that knowledge into practice.
@@ -168,9 +171,6 @@ Once deployed, clicking the inject button will send the specified data to the ma
 In this guide, we are using a real machine connected via a serial interface. The machine is programmed to simulate a production process when it receives the `"START"` command (sent as a string). Once triggered, it begins incrementing the count of good and defect products and sends this data back over the same serial connection.
 
 The next section demonstrates how to read and process this simulated production data using the **serial in** node.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ### Reading and Processing Serial Data
 

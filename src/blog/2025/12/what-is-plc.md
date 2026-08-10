@@ -38,7 +38,7 @@ meta:
 
     - question: "How long does a PLC last?"
       answer: "Installed PLCs routinely run for 20 to 30 years. That reliability is the point, but it also means most plants operate a mix of controller generations and vendors at the same time, which is why integration work rather than control logic is the dominant challenge in modern automation projects."
-tldr: "A Programmable Logic Controller (PLC) is a rugged industrial computer that reads sensor inputs, executes control logic, and drives motors and valves in real time with deterministic reliability. Dick Morley specified the first one on New Year's Day 1968, and the architecture he defined still runs most of the world's industrial automation. Modern PLCs are not the hard part. Getting PLCs from different vendors to share data with each other and with enterprise IT is."
+tldr: "A PLC is a rugged industrial computer that reads sensor inputs, runs control logic, and drives motors and valves in real time. Dick Morley specified the first one in 1968, and that architecture still runs most industrial automation. The hard part today is getting PLCs from different vendors to share data with each other and with enterprise IT."
 ---
 
 ***A PLC (Programmable Logic Controller) is an industrial computer that continuously monitors sensors, executes control logic, and operates motors, valves, and equipment in real time, serving as the reliable backbone of modern manufacturing and industrial automation.***
@@ -64,6 +64,9 @@ What sets a PLC apart is not computing power. Your phone outperforms every PLC e
 The hardware reflects the same priority. Industrial-grade components tolerate heat and electrical interference. Power supplies absorb the voltage sags and spikes that come with starting large motors. I/O modules interface directly with field devices at industrial voltages and currents, with isolation so a fault in the field does not reach the processor. The programming languages are visual and built around relay diagrams, because the people who commission and maintain these systems are controls engineers and electricians, not software developers.
 
 That design has barely changed since 1968, and the reason is straightforward: it works. A PLC installed in a chemical plant runs for decades. A controller in an automotive body shop executes millions of cycles without a fault. Industrial automation never adopted "move fast and break things." The operating principle here is narrower: do not break.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## History of PLCs: from relay rooms to smart controllers
 
@@ -198,9 +201,6 @@ Selection comes down to I/O count, logic complexity, safety requirements, and ho
 One factor outweighs the technical comparison: most organizations standardize on a single vendor and stay there for decades, because retraining engineers and rewriting a program library is more expensive than the hardware. That decision is usually made once and lived with for a very long time.
 
 Worth separating, though, is the control layer from the data layer. Committing to Siemens or Rockwell for the next twenty years of machine control is a defensible engineering decision. Letting that choice also dictate how production data reaches your historian, your ERP, or your quality team is not, and it is the part teams tend to concede without noticing. Keeping [the integration layer vendor-neutral](/use-cases/it-ot-middleware/) means the controller standard you pick today does not decide what you can build on top of it in five years.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ## PLC, HMI, and SCADA: how they work together
 

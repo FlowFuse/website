@@ -92,6 +92,9 @@ These metrics exist to answer a small set of operational questions: Are we produ
 
 What that looks like in practice varies by where the metrics are applied. Here's how these same building blocks show up across five common manufacturing dashboards.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Manufacturing Dashboard Examples
 
 Dashboards work best when they're designed around a specific decision, not a general audience. A production team needs visibility into output and downtime; quality and maintenance teams need a different lens entirely. The five examples below show common patterns, all built with FlowFuse using data from machines, production systems, databases, and industrial protocols, but for using it purpose it uses demo data
@@ -148,9 +151,6 @@ Defects aren't always caused by the process itself; sometimes the measurement eq
 *FlowFuse calibration management dashboard showing 120 instruments split into valid, due soon and overdue, a 73.3% compliance rate, and a table of overdue tools by department*
 
 **Build it:** [Tracking Instrument Calibration with a Digital Dashboard](/blog/2026/07/calibration-management-dashboard/)
-
-::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Manufacturing Dashboard Design Best Practices
 

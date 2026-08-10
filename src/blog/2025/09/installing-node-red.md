@@ -68,6 +68,9 @@ After more than a decade of working directly with enterprise users deploying Nod
 
 FlowFuse makes Node-RED production-ready through centralized management across industrial infrastructure, incorporating years of real-world deployment experience from the creator of Node-RED himself.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ### Enterprise Reliability from Node-RED Experts
 
 When hardware fails, FlowFuse keeps operations running through High Availability mode that distributes processing across multiple instances. Device Agents monitor system health and provide secure remote access for engineering teams, features designed by the same team that built and maintains Node-RED's core architecture.
@@ -83,9 +86,6 @@ These core capabilities are just the foundation, FlowFuse includes dozens of add
 FlowFuse is deployed in production environments across manufacturing, energy, and infrastructure sectors where Node-RED reliability is mission-critical. The platform's architecture reflects over 12 years of Node-RED development expertise and direct feedback from thousands of industrial deployments.
 
 As the official enterprise solution developed by Node-RED's creator, FlowFuse represents the authoritative approach to production Node-RED deployments, backed by the team with the deepest expertise in the technology.
-
-::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
-::
 
 ## Setting Up FlowFuse
 

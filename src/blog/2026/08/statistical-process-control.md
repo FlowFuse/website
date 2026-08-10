@@ -51,6 +51,9 @@ _SPC control chart with a table of measurements_
 
 Statistical process control is a method for monitoring a manufacturing process using data collected while it runs, rather than waiting to inspect the finished product. It works by plotting measurements from the process, such as part dimensions, temperature, or pressure, onto a control chart over time. That chart includes a center line at the process average and upper and lower control limits placed three sigma either side of it, derived from the short-term variation within the process itself rather than from a fixed specification. Control limits and specification limits are not the same thing: a process can run entirely inside its control limits and still make parts outside spec, which is why an SPC signal means the process changed, not that a given part is bad.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 The right control chart depends on how the data is collected. X-bar R and X-bar S charts are built from sample subgroups, small batches of readings pulled close together in time, and plot the subgroup average alongside its range (R) or standard deviation (S). When it isn't practical to pull parts into subgroups, an I-MR chart plots individual readings and the moving range between consecutive points instead. Picking the chart that matches how the data is actually collected is one of the more common places SPC implementations go wrong.
 
 SPC charts make it possible to see the difference between common cause variation, which is expected and should not be adjusted for point by point, and special cause variation, which signals something has changed and needs investigation. A single point falling outside the control limits is one signal to intervene, but a non-random pattern building up over several points, such as a run drifting steadily in one direction or a cluster of points hugging one side of the center line, is also a signal. Quality teams formalize these checks using the Western Electric Rules or Nelson Rules, which pair the out-of-limit test with additional tests for runs, trends, and points clustering in the outer bands of the chart. Most of those tests fire on a sequence of points that are each individually inside the limits, which is why charts running these rules divide the space into one and two sigma bands rather than just plotting the outer limits. This is the core discipline behind statistical process control: catching drift while it is still correctable, not after a batch has already failed inspection.
@@ -75,9 +78,6 @@ What works on one line will not scale to fifty unless the underlying logic can b
 ### Working With Brownfield Systems Instead Of Replacing Them
 
 Most plants run a mix of legacy PLCs, older MES installations, and newer edge hardware. Rather than requiring a full system replacement, SPC monitoring can extend a brownfield environment as-is. This staged approach avoids the all-or-nothing rollout risk described in [All-or-Nothing Manufacturing Software Is Killing Your Agility](/blog/2026/05/manufacturing-software-built-in-stages/).
-
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Six Sigma SPC And Modern SPC Software: Choosing The Right Tools
 

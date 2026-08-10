@@ -88,6 +88,9 @@ Log in to your OpenWeather account. Once you're signed in:
 3. Copy the default key (or generate a new one)
 4. Save it in a text file or a note app.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Setting Up the API Connection
 
 First, we need to connect to the weather API and make sure it's working.
@@ -160,9 +163,6 @@ _Function node configured with 5 outputs to split weather data_
 3. Click Done
 
 This **function** node splits the API response into separate outputs - one for temperature, one for humidity, and so on. Each output gets its own topic label so you can track what's what.
-
-::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Building the Dashboard
 

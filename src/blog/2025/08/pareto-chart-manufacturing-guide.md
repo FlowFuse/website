@@ -46,7 +46,7 @@ meta:
 
     - question: "What if my Pareto chart shows an even distribution of problems?"
       answer: "If problems are evenly distributed with no clear 80/20 pattern, you may need to recategorize your data more specifically, look at cost impact instead of frequency, or consider that your process has multiple equally important issues requiring a different improvement approach."
-tldr: "A Pareto Chart is a quality control tool that combines a descending bar chart with a cumulative percentage line to visualize which problems defects, downtime causes, supplier issues account for the greatest impact, based on the 80/20 principle. Manufacturing teams use it to prioritize where to focus limited improvement resources for maximum return, and modern platforms like FlowFuse can generate Pareto charts automatically from real-time production data."
+tldr: "A Pareto chart pairs a descending bar chart with a cumulative percentage line to show which problems account for the greatest impact, based on the 80/20 principle. Manufacturing teams use it to decide where limited improvement resources will pay off most, and FlowFuse can generate one automatically from live production data."
 ---
 
 A Pareto Chart helps manufacturing teams cut through the chaos when problems arrive in clusters, defects, delays, downtime, and customer complaints all competing for attention. With limited resources and time, how do you decide which fire to put out first?
@@ -103,6 +103,9 @@ Starting from the largest category, add percentages progressively:
 Cumulative Percentage = Sum of all previous percentages + Current percentage
 ```
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## What Does a Pareto Chart Show?
 
 A Pareto diagram combines the best of both worlds, the immediate clarity of a bar graph with the cumulative insight of a line graph. Here's what makes it powerful:
@@ -114,9 +117,6 @@ A Pareto diagram combines the best of both worlds, the immediate clarity of a ba
 - **The Axes Frame the Decision**: The left axis measures actual occurrences, the right shows cumulative percentage, and the horizontal axis lists your problem categories. Together, they create a complete picture that anyone can understand and act upon.
 
 This visualization does something remarkable: it makes the invisible visible. Problems that seemed equally important suddenly reveal their true impact. The path forward becomes clear.
-
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Pareto Real World Example
 
