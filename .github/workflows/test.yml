@@ -38,6 +38,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: 'website'
+      - name: Cache nuxt-og-image font resolution
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: website/nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image
+          key: og-image-fonts-${{ runner.os }}-${{ hashFiles('website/package-lock.json') }}
+          restore-keys: |
+            og-image-fonts-${{ runner.os }}-
       - name: Run unit tests
         run: npm test
         working-directory: 'website'

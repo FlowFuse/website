@@ -189,7 +189,15 @@ export default defineNuxtConfig({
         ],
     },
 
-    ogImage: { zeroRuntime: true },
+    ogImage: {
+        zeroRuntime: true,
+        // resvg's default (loadSystemFonts: true) scans and parses every installed system
+        // font on every single render — measured at ~1.1-1.3s per image, over 2/3 of total
+        // render time. Satori already embeds all glyphs as vector paths (embedFont: true,
+        // the module default) before resvg ever sees the SVG, so resvg needs zero font
+        // resolution of its own at rasterization time.
+        resvgOptions: { font: { loadSystemFonts: false } },
+    },
 
     sitemap: {
         sources: [
