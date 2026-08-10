@@ -200,9 +200,11 @@ export default defineNuxtConfig({
         // Content-addressed (hash of component + props + module version), so a build cache
         // hit skips font-load/render-satori/render-resvg entirely and just returns the
         // cached bytes — only pages whose title/section actually changed pay to re-render.
-        // Pointed at the same directory as the font cache above so one cache path in
-        // netlify.toml/test.yml covers both.
-        buildCache: { base: 'node_modules/.cache/nuxt/.nuxt/cache/og-image' },
+        // A sibling of the font cache dir, not nested inside it: nuxt-og-image's own
+        // build-cache pruning does a flat readdirSync+readFileSync over this directory,
+        // which throws EISDIR if it also contains the font cache's fonts-ttf/ subdirectory.
+        // netlify.toml/test.yml cache both directories under one cache step.
+        buildCache: { base: 'node_modules/.cache/nuxt/.nuxt/cache/og-image-render' },
     },
 
     sitemap: {
