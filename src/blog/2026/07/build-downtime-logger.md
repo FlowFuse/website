@@ -58,7 +58,7 @@ In this tutorial, you'll build a machine downtime tracking application using Flo
 ![Screenshot: completed dashboard with KPI cards and stoppages table](./images/downtime-logger.png)
 _The finished dashboard: KPI cards on top, unresolved stoppages below._
 
-You can interact with the live demo here: <a href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Machine Downtime Tracking Demo</a>.
+You can interact with the live demo here: :live-demo-link{href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" label="Try the Machine Downtime Tracking Demo"}.
 
 By the end, you'll have a foundation you can extend into OEE, production reporting, maintenance dashboards, or MES integrations.
 
