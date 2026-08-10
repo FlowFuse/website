@@ -68,7 +68,7 @@ meta:
       answer: "Yes. The same approach extends beyond Siemens S7. Allen-Bradley PLCs can be read over EtherNet/IP, and OPC UA or Modbus provide vendor-neutral options across Siemens, Rockwell, Schneider, Beckhoff, Omron, and others. Most factory floors mix vendors, so a protocol-flexible platform avoids being locked to one brand."
     - question: "Can I build a dashboard to monitor and control S7 PLC data remotely?"
       answer: "Yes. Once data is flowing in and out of the PLC, you can visualize it with LEDs, gauges, and charts and add buttons for control using FlowFuse Dashboard. To access a dashboard securely over the internet from a remote device, run the dashboard in a hosted instance and pass values to and from the edge device using FlowFuse Project nodes."
-tldr: "This guide explains how to read data from and write data to Siemens S7 PLCs (S7-1200/1500) using Node-RED and the S7 protocol over ISO-on-TCP (port 102). Prerequisites: enable PUT/GET communication, disable optimized block access on your data blocks, and run Node-RED on a networked device (the FlowFuse Device Agent makes this remotely manageable). After installing an S7 node, you configure an endpoint with the PLC's IP, rack, and slot, map TIA Portal addresses to the node's address format, then use s7-in to read values and s7-out to write them, enabling remote monitoring, control, and dashboards without deep PLC expertise. The same patterns extend to Allen-Bradley, Modbus, and OPC UA devices for multi-vendor environments."
+tldr: "Read and write Siemens S7-1200/1500 data from Node-RED over ISO-on-TCP (port 102). Enable PUT/GET communication and disable optimized block access on your data blocks first, then configure an S7 endpoint with the PLC's IP, rack, and slot, map TIA Portal addresses to the node's format, and use s7-in to read and s7-out to write."
 ---
 
 Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
@@ -129,6 +129,9 @@ To communicate from Node-RED to the PLC, we need to install the S7 node, which a
 5. Click "Install" next to the node name.
 
 Once the installation is complete, the S7 nodes will be available in your Node-RED palette, and you can start using it to communicate with your Siemens S7 PLC.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ### Addressing Scheme for Variables in Node-RED with the S7 Node
 
@@ -222,7 +225,7 @@ _Configuring S7-out Node to write data to plc_
 
 6. Once your flow is set up and the s7-out node for each variable is configured, click Deploy in the top-right corner to activate the flow.
 
-<lite-youtube videoid="AilWMNPzP1Q" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="AilWMNPzP1Q" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 In the video above, the dashboard interface is built to control the stack light. At the end of this article, I will provide the complete flow for you to download.
 
@@ -263,7 +266,7 @@ Now that you have the desired format for your output data, you may want to build
 
 The video below shows the updated dashboard interface used to monitor the stack light LED status:
 
-<lite-youtube videoid="Nlyk_BATKGE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="Nlyk_BATKGE" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 Here is the flow you can import into your FlowFuse remote instance and deploy. Ensure that you have installed `node-red-contrib-s7` and `node-red-contrib-buffer-parser`. This flow includes S7 nodes for interacting with the S7 PLC and Project nodes for communicating with the FlowFuse hosted instance, where you will build the dashboard.
 

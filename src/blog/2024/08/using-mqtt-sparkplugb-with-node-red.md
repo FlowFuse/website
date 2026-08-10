@@ -87,6 +87,9 @@ Sparkplug B enables bidirectional communication through `NCMD` and `DCMD` messag
 
 Command messages use the same Protocol Buffer format as data messages but flow in the opposite direction. Applications might send a write command to change a setpoint, a rebirth command to request fresh birth certificates, or a custom command to trigger device-specific actions. The standardized command structure enables generic control applications that work with any Sparkplug-compliant device.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## The MQTT Sparkplug Specification for IIoT
 
 Now that we have an overview of Sparkplug B and its role in standardizing data formats, it’s time to dive deeper into how this protocol structures its payloads and topics. Understanding these details will give you insight into how Sparkplug B efficiently manages data in complex industrial environments and will assist you in implementing it effectively in your own projects.
