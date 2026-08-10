@@ -20,79 +20,66 @@ const TIERS = [
 ]
 const activeTier = ref('edge')
 const stepRefs = ref<Record<string, HTMLElement | null>>({})
-let observer: IntersectionObserver | null = null
 
-onMounted(() => {
-    const steps = Object.values(stepRefs.value).filter((el): el is HTMLElement => !!el)
+// Whichever step's top has crossed the viewport's vertical midpoint is active -
+// walking the steps in DOM order and overwriting on each match means the
+// deepest (furthest scrolled-to) step wins. An IntersectionObserver watching a
+// thin band around the midpoint was tried first, but the gap between steps
+// (mt-20/pt-20/border-t below) is wider than that band, so scrolling through
+// a gap left neither step intersecting and the indicator stuck on whichever
+// step was active before the gap.
+function updateActiveTier () {
+    const steps = Object.entries(stepRefs.value).filter((entry): entry is [string, HTMLElement] => !!entry[1])
     if (!steps.length) return
-    observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) activeTier.value = (entry.target as HTMLElement).dataset.tier ?? activeTier.value
-        })
-    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 })
-    steps.forEach(el => observer!.observe(el))
-})
-
-onUnmounted(() => observer?.disconnect())
-
-// Scroll-driven 3D rotation for the hero image (n8n-style): a flat PNG on a
-// CSS perspective plane that eases from a tilt to flat as you scroll down.
-const heroInner = ref<HTMLElement | null>(null)
-const START_Y = -8 // starting rotateY in degrees; negative = left edge recedes
-const SCROLL_DIST = 500 // px of scroll over which it flattens
-let ticking = false
-
-function updateHeroTilt () {
-    ticking = false
-    if (!heroInner.value) return
-    const y = window.scrollY || window.pageYOffset || 0
-    const p = Math.max(0, Math.min(1, y / SCROLL_DIST))
-    heroInner.value.style.transform = `rotateY(${(START_Y * (1 - p)).toFixed(2)}deg)`
+    const mid = window.innerHeight / 2
+    let current = steps[0][0]
+    for (const [tier, el] of steps) {
+        if (el.getBoundingClientRect().top <= mid) current = tier
+    }
+    activeTier.value = current
 }
 
-function onHeroScroll () {
-    if (!ticking) { ticking = true; requestAnimationFrame(updateHeroTilt) }
+let tierTicking = false
+function onTierScroll () {
+    if (!tierTicking) { tierTicking = true; requestAnimationFrame(() => { tierTicking = false; updateActiveTier() }) }
 }
 
 onMounted(() => {
-    if (!heroInner.value) return
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-        heroInner.value.style.transform = 'none'
-        return
-    }
-    window.addEventListener('scroll', onHeroScroll, { passive: true })
-    window.addEventListener('resize', onHeroScroll, { passive: true })
-    updateHeroTilt()
+    window.addEventListener('scroll', onTierScroll, { passive: true })
+    window.addEventListener('resize', onTierScroll, { passive: true })
+    updateActiveTier()
 })
 
 onUnmounted(() => {
-    window.removeEventListener('scroll', onHeroScroll)
-    window.removeEventListener('resize', onHeroScroll)
+    window.removeEventListener('scroll', onTierScroll)
+    window.removeEventListener('resize', onTierScroll)
 })
 </script>
 
 <template>
-  <div class="nohero w-full product-page">
-    <div class="product-hero-bg" aria-hidden="true" />
+  <div class="w-full product-page">
     <div class="w-full px-6 product-content">
       <div class="pt-12 max-w-screen-lg mx-auto">
         <!-- Hero -->
         <div class="container max-w-screen-lg mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div class="text-left">
-              <h1 class="leading-tight text-4xl sm:text-5xl">
-                Build, deploy, and govern industrial applications - in record time.
+              <h1 class="text-4xl md:text-5xl font-medium">
+                Build, deploy, and govern industrial applications - <span class="text-red-600">in record time</span>
               </h1>
               <p class="mt-6 text-lg text-gray-500 max-w-xl">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
               <div class="mt-8 flex gap-4 items-start sm:items-center justify-start flex-col sm:flex-row">
-                <CtaBookDemo variant="primary" position="hero" />
-                <a class="ff-btn ff-btn--primary-outlined flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'hero' })">
-                  <span class="text-base uppercase items-center">View Pricing</span>
+                <CtaBookDemo variant="highlight" position="hero" />
+                <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'hero' })">
+                  <span class="flex items-center justify-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800">
+                    <span>VIEW PRICING</span>
+                    <IconsArrowRightIcon class="w-5 h-5" />
+                  </span>
                 </a>
               </div>
             </div>
-            <div class="product-hero-3d w-full">
-              <div ref="heroInner" class="product-hero-3d__inner rounded-lg shadow-2xl border border-gray-200">
+            <div class="w-full">
+              <div class="rounded-lg shadow-2xl border-2 border-indigo-200">
                 <img :src="'/images/features/flowfuse-features-hero.png'" alt="FlowFuse Features" class="w-full h-full object-cover rounded-lg" loading="eager">
               </div>
             </div>
@@ -121,21 +108,21 @@ onUnmounted(() => {
 
           <!-- Tier scrollytelling -->
           <div class="max-w-screen-lg mx-auto pt-8 pb-20">
-            <h2 class="mb-12 max-sm:text-center">Find the Product for <span class="text-indigo-600">How You Work</span></h2>
+            <h2 class="mb-12 max-sm:text-center">Find the product for <span class="text-indigo-600">how you work</span></h2>
             <div class="flex flex-col lg:flex-row gap-10">
-              <nav class="hidden lg:block lg:w-60 shrink-0">
-                <ul class="product-tier-nav flex flex-col border-l border-gray-200">
+              <nav class="hidden lg:block lg:w-44 shrink-0">
+                <ul class="sticky top-24 flex flex-col border-l border-gray-200">
                   <li v-for="tier in TIERS" :key="tier.id">
                     <a
                       :href="`#tier-${tier.id}`"
-                      class="product-tier-tab"
-                      :class="{ 'is-active': activeTier === tier.id }"
+                      class="block py-[0.6rem] pl-5 -ml-px border-l-2 font-medium transition-colors duration-200"
+                      :class="activeTier === tier.id ? 'text-indigo-600 border-indigo-600' : 'border-transparent text-gray-500 hover:text-indigo-600'"
                     >{{ tier.label }}</a>
                   </li>
                 </ul>
               </nav>
               <div class="flex-1 min-w-0 flex flex-col gap-20">
-                <div id="tier-edge" :ref="(el) => { stepRefs.edge = el }" data-tier="edge" class="product-tier-step scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
+                <div id="tier-edge" :ref="(el) => { stepRefs.edge = el }" data-tier="edge" class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
                   <div>
                     <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Edge</div>
                     <h3 class="text-3xl mt-2">You run the plant floor</h3>
@@ -147,7 +134,7 @@ onUnmounted(() => {
                     <img :src="'/images/home/home-edge-connectivity.png'" alt="FlowFuse Edge: industrial edge connectivity" loading="lazy">
                   </div>
                 </div>
-                <div id="tier-hub" :ref="(el) => { stepRefs.hub = el }" data-tier="hub" class="product-tier-step scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
+                <div id="tier-hub" :ref="(el) => { stepRefs.hub = el }" data-tier="hub" class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center pt-20 border-t border-[#f1f1f4]">
                   <div>
                     <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Hub</div>
                     <h3 class="text-3xl mt-2">You move data across the business</h3>
@@ -159,7 +146,7 @@ onUnmounted(() => {
                     <img :src="'/images/home/home-data-integration.png'" alt="FlowFuse Hub: enterprise data integration" loading="lazy">
                   </div>
                 </div>
-                <div id="tier-fleet" :ref="(el) => { stepRefs.fleet = el }" data-tier="fleet" class="product-tier-step scroll-mt-24 grid md:grid-cols-2 gap-12 items-center">
+                <div id="tier-fleet" :ref="(el) => { stepRefs.fleet = el }" data-tier="fleet" class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center pt-20 border-t border-[#f1f1f4]">
                   <div>
                     <div class="text-sm font-semibold uppercase tracking-wide text-gray-500">FlowFuse Fleet</div>
                     <h3 class="text-3xl mt-2">You manage a Node-RED fleet</h3>
@@ -203,7 +190,12 @@ onUnmounted(() => {
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="get-started" />
-            <a class="ff-btn product-get-started-pricing" href="/pricing/" @click="capture('cta-pricing', { position: 'get-started' })">View Pricing</a>
+            <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'get-started' })">
+              <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
+              <span>VIEW PRICING</span>
+                <IconsArrowRightIcon class="w-5 h-5" />
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -212,50 +204,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-/* Modern, on-brand backdrop behind the hero: indigo + soft coral blobs, faint grid, fading to white. */
-.product-page { position: relative; }
-.product-content { position: relative; z-index: 1; }
-
-.product-hero-bg {
-    position: absolute; top: 0; left: 0; right: 0; height: 560px;
-    z-index: 0; overflow: hidden; pointer-events: none;
-    background:
-        radial-gradient(48% 62% at 6% -6%, rgba(99,102,241,0.34), transparent 62%),
-        radial-gradient(44% 56% at 106% -4%, rgba(255,110,74,0.16), transparent 60%),
-        radial-gradient(35% 45% at 80% 38%, rgba(129,140,248,0.13), transparent 65%),
-        linear-gradient(180deg, #E7EAFF 0%, #EEF0FF 26%, #ffffff 74%);
-}
-.product-hero-bg::after {
-    content: ""; position: absolute; inset: 0;
-    background-image:
-        linear-gradient(to right, rgba(79,70,229,0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(79,70,229,0.08) 1px, transparent 1px);
-    background-size: 42px 42px;
-    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
-    mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 68%);
-}
-
-.product-hero-3d { perspective: 1200px; }
-.product-hero-3d__inner {
-    transform-style: preserve-3d;
-    transform-origin: center center;
-    will-change: transform;
-    transform: rotateY(-8deg);
-    aspect-ratio: 1504 / 862;
-}
-
-.product-tier-tab {
-    display: block; padding: 0.6rem 0 0.6rem 1.25rem; margin-left: -1px;
-    border-left: 2px solid transparent; color: #6b7280; font-weight: 500;
-    transition: color .2s ease, border-color .2s ease;
-}
-.product-tier-tab:hover { color: #4f46e5; }
-.product-tier-tab.is-active { color: #4f46e5; border-left-color: #4f46e5; }
-.product-tier-nav { position: sticky; top: 6rem; }
-
-/* Tailwind gap-20/scroll-mt-24 don't compile in the legacy CSS build; kept
-   here for parity now that this section lives in a scoped SFC style. */
-.product-tier-step + .product-tier-step { margin-top: 5rem; padding-top: 5rem; border-top: 1px solid #f1f1f4; }
 .product-tier-img { align-self: start; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 12px 32px rgba(2,6,13,0.12); border: 1px solid #e5e7eb; }
 .product-tier-img img { display: block; width: 100%; height: auto; }
 
