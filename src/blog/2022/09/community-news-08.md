@@ -23,7 +23,7 @@ If you’d like to learn more about what else was included in 0.9 you can do so 
 [**Node-RED Con 2022**](https://nrcon.nodered.org/)  
 We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers. You can find out more on the [Node-RED Con website](https://nrcon.nodered.org/).  
 
-[**FlowFuse Team News**](/team/)    
+[**FlowFuse Team News**](/about/)    
 We’d like to welcome Rob Marcer to the FlowFuse team. Rob has joined as our Developer Educator, he's going to work to help you get the best value from FlowFuse by developing our documentation and community support.  
   
 We are also recruiting for [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004), if you’re interested in joining our team please [apply here](https://boards.greenhouse.io/flowfuse/jobs/4463977004#app).
