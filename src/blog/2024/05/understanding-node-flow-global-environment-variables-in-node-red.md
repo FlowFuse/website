@@ -1,7 +1,7 @@
 ---
 title: "How to Use Variables in Node-RED: Flow, Global, Context & Environment (2026)"
 subtitle: A complete guide to setting, retrieving, and persisting Node-RED variables for efficient, production-ready flows.
-description: Learn how to use Node-RED global, flow, context, and environment variables in 2026. Step-by-step examples for setting, retrieving, and persisting state, plus best practices and an FAQ.
+description: "Learn how to use Node-RED global, flow, context, and environment variables in 2026, with step-by-step examples and an FAQ."
 lastUpdated: 2026-06-01
 date: 2024-05-06
 authors: ["sumit-shinde"]
