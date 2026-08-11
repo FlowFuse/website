@@ -72,9 +72,77 @@ through other marketing activities too, but wasn't nurtured to the point of a me
 
 ## Deal Management
 
-A HubSpot deal represents a specific revenue opportunity with a customer or prospect. Each deal is mirrored daily into a representative GitHub issue in the FlowFuse/product repository, with the deal owner assigned as the issue assignee. The deal issue is the discussion hub and collection point for everything tied to that deal: feature requests blocking or supporting it, customer-specific implementation discussions, and cross-references to the public Sales Request or Customer Request issues filed elsewhere in FlowFuse repositories. Because FlowFuse/product is private, this view is internal-only and lets the team see which feature requests pertain to which deal. Sales and Product share responsibility for maintaining this link.
+A HubSpot deal represents a specific revenue opportunity with a customer or prospect: an active buying process with an engaged buyer, a realistic close date, and next steps the deal owner can work. We open a deal for each type of revenue opportunity: new business, expansion (in-term or at renewal), pilot-contingent expansion, and renewal. The rules for each type are below.
 
-### Deal Properties
+### Deal Amount Fields
+
+Every deal has three amount fields. Complete all three with your best estimate when you create the deal. This applies to every deal type, including expansion deals opened at pilot kickoff:
+
+- **Amount** = total contract value, including multi-year terms and non-recurring revenue (e.g. professional services)
+- **ACV** = annual contract value, including non-recurring revenue
+- **ARR** = annual recurring revenue
+
+Update all three whenever the scope of the deal changes or estimates firm up.
+
+### New Business Deals
+
+A New Business deal represents first revenue with a new customer.
+
+- Create the deal in the Sales pipeline as soon as the first meeting is booked. It enters at *1-Discovery*.
+- The deal owner is the AE for the region.
+- Complete all three amount fields (Amount, ACV, ARR) for the contract being proposed.
+- One deal per buying process. If the prospect goes quiet, close the deal as lost and reopen a new one when they re-engage. Do not let deals idle with stale close dates.
+
+### Expansion Deals
+
+An Expansion deal represents incremental ARR from an existing customer. The AE owns all expansion deals, and they are always opened in the Sales pipeline.
+
+- All three amount fields (Amount, ACV, ARR) carry the incremental value of the expansion only, never the customer's total contract or total ARR.
+- **In-term expansion** (mid-contract): create the deal when the customer confirms an active interest in additional capacity, users, or products: an engaged buyer and a realistic close date, not a hope.
+- **Expansion at renewal**: create a separate expansion deal in the Sales pipeline carrying only the ARR delta, with its close date aligned to the renewal date. The renewal deal itself stays at current ARR in the Renewal pipeline. This keeps renewal rate and expansion performance separately measurable.
+- **Expansion contingent on a pilot**: create the deal at pilot kickoff, following [Pilot and Expansion Deals](#pilot-and-expansion-deals).
+
+### Pilot and Expansion Deals
+
+Future revenue that has no active buying process behind it, such as an expansion that depends on the outcome of a pilot, is recorded as data on the account until the pilot begins. This keeps pipeline coverage, forecasts, and stage-conversion metrics honest.
+
+A common example: a prospect purchases FlowFuse to run a production pilot at a single plant, with a decision on a wider rollout expected after roughly six months. The initial purchase is the land deal; the rollout is the expansion.
+
+**While the land deal is open**
+
+- Keep the land deal as the only open deal on the account. Do not create the expansion deal yet.
+- Record the expected expansion ARR and its trigger (for example, "pilot completion, expected H1 next year") on the deal or company record so the potential is visible without inflating the forecast.
+- Negotiate the pilot success criteria and the rollout decision process into the land deal before it closes. By pilot kickoff, the pilot must have a confirmed end date and the customer must have agreed how the rollout decision will be made: success review scheduled, executive sponsor engaged, budget conversation started.
+
+**At land close / pilot kickoff**
+
+- Create the expansion deal at *3-Solution*, close date = expected pilot end plus decision buffer.
+- Update the close date as soon as the customer confirms the actual pilot end date.
+
+**During the pilot**
+
+- Review progress against the success criteria at regular check-ins and document proof points for the rollout business case.
+- Multithread beyond the pilot team; the expansion decision needs an executive sponsor.
+
+**90 days from pilot end date**
+
+- Confirm the pilot end date and the success review, then move the expansion deal into *4-Validate* and work it as active pipeline.
+- Attach a mutual action plan covering the success review, business case, budget, and procurement steps.
+
+### Renewal Deals
+
+A Renewal deal represents the continuation of a customer's existing ARR.
+
+- Create the renewal deal in the Renewal pipeline immediately when the preceding deal closes won. Set the close date to the renewal date and complete the amount fields for the renewing contract (ARR = the ARR being renewed).
+- Customer Success owns renewal deals.
+- The renewal deal's amount fields never include expansion revenue; any uplift is a separate expansion deal owned by the AE (see above). A contraction or downgrade is reflected by reducing the renewal deal's amount fields.
+- Begin actively working the renewal no later than 90 days before the renewal date: confirm the champion, surface risks, and start procurement early.
+
+### Tracking Deals in GitHub
+
+Each deal is mirrored daily into a representative GitHub issue in the FlowFuse/product repository, with the deal owner assigned as the issue assignee. The deal issue is the discussion hub and collection point for everything tied to that deal: feature requests blocking or supporting it, customer-specific implementation discussions, and cross-references to the public Sales Request or Customer Request issues filed elsewhere in FlowFuse repositories. Because FlowFuse/product is private, this view is internal-only and lets the team see which feature requests pertain to which deal. Sales and Product share responsibility for maintaining this link.
+
+#### Deal Properties
 
 | Property | Description |
 | :------- | :---------- |
