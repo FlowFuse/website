@@ -76,7 +76,10 @@ rules.
 - [Systems & Tools](./tools.md) — the commercial tech stack
 - [Onboarding & Development](./onboarding.md) — ramping and growing the team
 - [Processes](./processes/) — the process and methodology index
-- [Sales Meetings](./meetings/) — [Discovery](./meetings/discovery.md), [Demo](./meetings/demo.md), [PoC](./meetings/poc.md)
+- [Sales Meetings](./meetings/) — [Discovery](./meetings/discovery.md), [Demo](./meetings/demo.md), [Solution](./meetings/solution.md), [PoV](./meetings/pov.md)
+- [PoV Workbook](./pov-workbook.md) — the deal document that spans the SE stages, and its shared definitions
+- [FlowFuse Trial Environment](./flowfuse-trial-environment.md) — the running FlowFuse the customer tests in, and the trial-license policy
+- [Demo Apps](./demo-apps.md) — the public FlowFuse team where our demo apps live, and the criteria for publishing to it
 - [Engagements & Pricing](./engagements.md)
 - [Forecast Review](./forecast-review.md)
 - [Sales Deck](./sales-deck.md) and [Pricing Decks](./pricing-decks.md)

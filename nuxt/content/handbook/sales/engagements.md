@@ -161,7 +161,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
      - Invite customer as owner to the team
      - Remove own email adress after sign up customer
    - _Self-Managed_
-     - Generate a [license key](../sales/meetings/poc.md#generating-a-license)
+     - Generate a [license key](../sales/meetings/pov.md#generating-a-license)
      - Send the license key with the onboarding email to the customer, following
        this
        [HubSpot Template](https://app-eu1.hubspot.com/templates/26586079/edit/135404737?q=welco&page=1).
