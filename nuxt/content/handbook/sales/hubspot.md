@@ -76,7 +76,7 @@ A HubSpot deal represents a specific revenue opportunity with a customer or pros
 
 ### Deal Amount Fields
 
-Every deal has three amount fields. Complete all three with your best estimate when you create the deal. This applies to every deal type, including expansion deals parked in *Opportunity*:
+Every deal has three amount fields. Complete all three with your best estimate when you create the deal. This applies to every deal type, including expansion deals opened at pilot kickoff:
 
 - **Amount** = total contract value, including multi-year terms and non-recurring revenue (e.g. professional services)
 - **ACV** = annual contract value, including non-recurring revenue
@@ -88,7 +88,7 @@ Update all three whenever the scope of the deal changes or estimates firm up.
 
 A New Business deal represents first revenue with a new customer.
 
-- Create the deal in the Sales pipeline as soon as the first meeting is booked. It enters at the *Opportunity* stage.
+- Create the deal in the Sales pipeline as soon as the first meeting is booked. It enters at *1-Discovery*.
 - The deal owner is the AE for the region.
 - Complete all three amount fields (Amount, ACV, ARR) for the contract being proposed.
 - One deal per buying process. If the prospect goes quiet, close the deal as lost and reopen a new one when they re-engage. Do not let deals idle with stale close dates.
@@ -100,34 +100,23 @@ An Expansion deal represents incremental ARR from an existing customer. The AE o
 - All three amount fields (Amount, ACV, ARR) carry the incremental value of the expansion only, never the customer's total contract or total ARR.
 - **In-term expansion** (mid-contract): create the deal when the customer confirms an active interest in additional capacity, users, or products: an engaged buyer and a realistic close date, not a hope.
 - **Expansion at renewal**: create a separate expansion deal in the Sales pipeline carrying only the ARR delta, with its close date aligned to the renewal date. The renewal deal itself stays at current ARR in the Renewal pipeline. This keeps renewal rate and expansion performance separately measurable.
-- **Expansion contingent on a pilot**: do not open the deal until the conditions in [Pilot and Expansion Deals](#pilot-and-expansion-deals) are met.
+- **Expansion contingent on a pilot**: create the deal at pilot kickoff, following [Pilot and Expansion Deals](#pilot-and-expansion-deals).
 
 ### Pilot and Expansion Deals
 
-Future revenue that has no active buying process behind it, such as an expansion that depends on the outcome of a pilot, is recorded as data on the account, not as an open deal. This keeps pipeline coverage, forecasts, and stage-conversion metrics honest.
+Future revenue that has no active buying process behind it, such as an expansion that depends on the outcome of a pilot, is recorded as data on the account until the pilot begins. This keeps pipeline coverage, forecasts, and stage-conversion metrics honest.
 
 A common example: a prospect purchases FlowFuse to run a production pilot at a single plant, with a decision on a wider rollout expected after roughly six months. The initial purchase is the land deal; the rollout is the expansion.
 
-#### Rules
-
-1. **One open deal per active buying process.** While the land deal is open, it is the only open deal on the account. Do not create the expansion deal alongside it.
-2. **Record expansion potential on the record, not in the pipeline.** Capture the expected expansion ARR and its trigger (for example, "pilot completion, expected H1 next year") on the deal or company record so the potential is visible in reporting without inflating the forecast.
-3. **Create the expansion deal at the earliest of these two points:**
-   - **Pilot kickoff (optional, for pipeline visibility).** Create the deal in the *Opportunity* stage with the close date set to the expected pilot end plus a decision buffer. Deals created this way carry standard Opportunity probability (10%) and are not committed in forecast reviews.
-   - **Confirmed decision process (required).** When the pilot has a confirmed end date and the customer has agreed how the rollout decision will be made (success review scheduled, executive sponsor engaged, budget conversation started), create the deal (or move it out of *Opportunity*) and work it as active pipeline. This is typically around 90 days before the expected decision.
-4. **Never leave an expansion deal in a working stage with a guessed close date.** If the close date is unknown, the deal belongs in *Opportunity* or does not exist yet.
-
-#### Steps for the deal owner
-
 **While the land deal is open**
 
-- Keep the land deal as the only open deal on the account.
-- Record the expansion ARR and trigger on the deal or company record.
-- Negotiate the pilot success criteria and the rollout decision process into the land deal before it closes. These define when the expansion becomes real.
+- Keep the land deal as the only open deal on the account. Do not create the expansion deal yet.
+- Record the expected expansion ARR and its trigger (for example, "pilot completion, expected H1 next year") on the deal or company record so the potential is visible without inflating the forecast.
+- Negotiate the pilot success criteria and the rollout decision process into the land deal before it closes. By pilot kickoff, the pilot must have a confirmed end date and the customer must have agreed how the rollout decision will be made: success review scheduled, executive sponsor engaged, budget conversation started.
 
 **At land close / pilot kickoff**
 
-- Optionally create the expansion deal in *Opportunity*, close date = expected pilot end plus decision buffer.
+- Create the expansion deal at *3-Solution*, close date = expected pilot end plus decision buffer.
 - Update the close date as soon as the customer confirms the actual pilot end date.
 
 **During the pilot**
@@ -135,9 +124,9 @@ A common example: a prospect purchases FlowFuse to run a production pilot at a s
 - Review progress against the success criteria at regular check-ins and document proof points for the rollout business case.
 - Multithread beyond the pilot team; the expansion decision needs an executive sponsor.
 
-**When the pilot end date and decision process are confirmed**
+**90 days from pilot end date**
 
-- Move the expansion deal into an active stage (or create it now if it does not exist).
+- Confirm the pilot end date and the success review, then move the expansion deal into *4-Validate* and work it as active pipeline.
 - Attach a mutual action plan covering the success review, business case, budget, and procurement steps.
 
 ### Renewal Deals
