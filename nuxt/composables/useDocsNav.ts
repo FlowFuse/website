@@ -1,10 +1,11 @@
 // The builder lives in nuxt/lib/ as plain JS so `node --test` can run it directly
 // (same reason as docs-sync.mjs); this file is the typed surface components import.
 // @ts-ignore untyped module
-import { buildDocsNav as build } from '../lib/docs-nav.mjs'
+import { buildDocsNav as build, findDocsBreadcrumb as findBreadcrumb } from '../lib/docs-nav.mjs'
 
 export interface DocsNavNode {
-    name: string
+    // Matches @nuxt/content's ContentNavigationItem shape (title/path/children)
+    title: string
     path: string
     group?: string
     groupOrder?: number
@@ -38,3 +39,10 @@ export interface DocsNavPage {
 export function buildDocsNav (pages: DocsNavPage[]): DocsNavGroup[] {
     return build(pages)
 }
+
+export function findDocsBreadcrumb (groups: DocsNavGroup[], path: string): DocsNavNode[] {
+    return findBreadcrumb(groups, path)
+}
+
+export const useDocsNavTree = () =>
+    useAsyncData('docs-nav', async () => buildDocsNav(await queryCollection('docs').all() as DocsNavPage[]))
