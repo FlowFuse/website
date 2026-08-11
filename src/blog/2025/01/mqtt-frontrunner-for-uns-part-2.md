@@ -1,7 +1,7 @@
 --- 
 title: "MQTT: The Frontrunner for Your UNS Broker - Part 2" 
 subtitle: "Why MQTT is the Best Choice for Your UNS Broker"
-description: "Learn why MQTT is the top choice for Unified Namespace (UNS) brokers and explore the ideal platform that simplifies the connection of devices and services while providing a reliable MQTT broker service."
+description: "Learn why MQTT is the top choice for Unified Namespace (UNS) brokers and the ideal platform for connecting devices reliably."
 date: 2025-01-13
 lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]

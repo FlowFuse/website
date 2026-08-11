@@ -1,7 +1,7 @@
 ---
 title: "Transform Chaos into Control: Centralize Node-RED Management with FlowFuse"
 subtitle: With FlowFuse, you can simplify managing all your Node-RED Instances and remote IoT device management
-description: Discover how FlowFuse streamlines the management of your Node-RED instances from a single platform, transforming chaos into control for efficient operations and enhanced collaboration.
+description: "Discover how FlowFuse streamlines Node-RED instance management from a single platform, turning chaos into full, easy control."
 date: 2024-10-18
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/centralize-node-red-instance.png
