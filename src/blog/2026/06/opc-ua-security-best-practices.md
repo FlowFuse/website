@@ -1,7 +1,7 @@
 ---
 title: "OPC UA Security: How to Establish a Defensible OPC UA Security Architecture"
 subtitle: "Part 1 showed how attackers walk in. This is the blueprint that locks every door behind them."
-description: "Turn every OPC UA attack vector into a configuration decision you control: Reverse Connect to keep the firewall closed, enforced trust lists, SignAndEncrypt, GDS certificate management, RBAC, and the field anti-patterns that quietly undo all of it."
+description: "Turn every OPC UA attack vector into a configuration decision you control: Reverse Connect, trust lists, and SignAndEncrypt."
 date: 2026-06-05
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/opc-ua-security.png

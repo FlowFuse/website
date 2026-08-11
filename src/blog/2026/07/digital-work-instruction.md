@@ -1,7 +1,7 @@
 ---
 title: "Building Digital Work Instructions Dashboard for the Shop Floor"
 subtitle: "Give every operator their own work instructions, progress, and production history."
-description: "Learn how to build digital work instructions with FlowFuse. Create personalized operator apps with work orders, guided steps, defect reporting, and traceability."
+description: "Learn how to build digital work instructions with FlowFuse: personalized operator apps with guided steps and traceability."
 date: 2026-07-24
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/digital-instructions-dashboard-flowfuse.png
