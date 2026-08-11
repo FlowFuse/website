@@ -2,6 +2,7 @@
 title: "VDA 5050 Tutorial: Connect AGVs to Factory Systems over MQTT"
 subtitle: "How the six VDA 5050 MQTT topics work, and how to build a master control flow for a mixed AGV fleet."
 description: "VDA 5050 explained: how the standard structures AGV communication over MQTT, and how to build a working master control flow in FlowFuse."
+date: 2025-08-11
 keywords: vda 5050
 tags:
   - posts
@@ -55,11 +56,70 @@ cta:
   description: "See how FlowFuse connects AGVs from any vendor over VDA 5050, takes orders from your WMS, and rolls the same master control setup out to every site you run."
 ---
 
+---
+title: "VDA 5050 Tutorial: Connect AGVs to Factory Systems over MQTT"
+subtitle: "How the six VDA 5050 MQTT topics work, and how to build a master control flow for a mixed AGV fleet."
+description: "VDA 5050 explained: how the standard structures AGV communication over MQTT, and how to build a working master control flow in FlowFuse."
+keywords: vda 5050
+tags:
+  - posts
+  - flowfuse
+meta:
+  howto:
+    name: "How to Connect AGVs to Factory Systems with VDA 5050"
+    description: "Learn how to build a VDA 5050 master control flow by connecting to an MQTT broker, subscribing to fleet state, identifying each vehicle, detecting vehicles that go offline, and dispatching transport orders."
+    tool:
+      - "FlowFuse"
+      - "Node-RED"
+      - "MQTT"
+      - "VDA 5050"
+      - "AGV"
+    steps:
+      - name: "Connect to your broker"
+        text: "Add an mqtt in node and configure a broker with your host and port. Use port 8883 with TLS enabled, set the keep alive to 15 seconds, and add credentials on the Security tab if the broker requires a login."
+        url: "step-1-connect-to-your-broker"
+      - name: "Subscribe to fleet state"
+        text: "Set the topic to uagv/v2/+/+/state so one subscription covers every manufacturer and serial number. Set QoS to 0 and output to a parsed JSON object, then deploy and confirm messages arrive."
+        url: "step-2-subscribe-to-fleet-state"
+      - name: "Tell the vehicles apart"
+        text: "Add a function node that splits the topic to read manufacturer and serial number, and compare them against the same fields in the payload to catch a misconfigured vehicle."
+        url: "step-3-tell-the-vehicles-apart"
+      - name: "Catch vehicles going offline"
+        text: "Subscribe to uagv/v2/+/+/connection at QoS 1 to read each vehicle's connection state. Treat it as a network check only, and watch errors, operating mode, and state freshness for vehicle health."
+        url: "step-4-catch-vehicles-going-offline"
+      - name: "Send an order"
+        text: "Build an order payload with a nodes array and an edges array, where the first node is where the vehicle already stands. Publish it to the vehicle's order topic with retain switched off."
+        url: "step-5-send-an-order"
+  faq:
+    - question: "What is the difference between VDA 5050 and a vendor's own fleet manager API?"
+      answer: "A vendor API is designed for that vendor's vehicles and changes when they choose. VDA 5050 fixes one message contract that every compliant vehicle honours, so master control talks to vehicles from different makers the same way. Vendors still offer their own APIs for deeper features, and most sites use both: VDA 5050 for fleet-level dispatch and status, the vendor API for anything specific to that vehicle."
+    - question: "Does VDA 5050 handle collision avoidance and traffic control?"
+      answer: "No. The standard defines how orders and status messages move, not how a vehicle drives. Obstacle avoidance and path planning stay with the manufacturer, and safety functions such as emergency stops and person detection live on the vehicle under standards like ISO 3691-4. VDA 5050 reports safety state; it does not implement it. Traffic rules across a shared aisle are the master control system's job to enforce."
+    - question: "Should I build against version 2.x or 3.0?"
+      answer: "Build against whatever your vehicles actually run, which today is usually 2.x. Version 3.0 was released on 19 March 2026 and adds support for freely navigating robots through planned path sharing and a zone concept. It also renames parameters across the whole document as a breaking change, so a 2.x integration will not talk to a 3.0 vehicle without changes. Each vehicle reports its version in its factsheet and in every state message."
+    - question: "What is the difference between the state and visualization topics?"
+      answer: "Both carry position, on purpose. A state message is the full picture, covering order progress, battery, errors, and operating mode, sent on any relevant change and at least every 30 seconds. In 2.x a visualization message carries only position and velocity, so it can be sent far more often for a smooth live map. Act on state, draw with visualization. Visualization is optional in the standard, so some vehicles never send it, and version 3.0 widens its role to include the planned path."
+    - question: "Why did the vehicle reject my order?"
+      answer: "Three reasons cover most cases. The first node of the order must be one the vehicle is already standing on or within the deviation range of. The orderId and orderUpdateId pair must not repeat a previous order. And every action you send must appear in the vehicle's factsheet as supported. A rejected order shows up as a validationError warning in the vehicle's state, and the warning stays until it accepts a valid order."
+    - question: "What MQTT broker do I need for VDA 5050?"
+      answer: "Any broker supporting MQTT 3.1.1 or 5.0, retained messages, last will, and per-client topic permissions. The standard asks for QoS 0 on order, instantActions, state, factsheet, and visualization, and QoS 1 on connection. The important work is configuration rather than product choice: TLS on, each vehicle restricted to its own topic path by allowlist, the wildcard subscription reserved for master control, a keep alive of around 15 seconds, and a message size cap."
+    - question: "Can I run VDA 5050 alongside vehicles that do not support it?"
+      answer: "Yes, and most sites do during a transition. Vehicles that speak the standard sit behind one master control system, and older or proprietary vehicles reach the same system through whatever interface they do offer. Standardize the new fleet on VDA 5050, keep existing vehicles running through their own integration, and retire those integrations as the vehicles are replaced."
+    - question: "Is a vehicle advertised as VDA 5050 compliant guaranteed to work with any master control?"
+      answer: "Not automatically. The standard leaves the interface name in the topic path, the supported action types, and several optional fields up to the implementation, and vendors vary in how much of the standard they cover. Request the factsheet before you dispatch anything and check supported actions, load types, and dimensions against what you plan to send."
+cta:
+  type: contact
+  title: "Run Every AGV From One System"
+  description: "See how FlowFuse connects AGVs from any vendor over VDA 5050, takes orders from your WMS, and rolls the same master control setup out to every site you run."
+---
+
 If you run AGVs from more than one vendor, you already know the problem. Each vendor ships its own fleet manager. Those fleet managers don't talk to each other.
 
 <!--more-->
 
 Two fleets under separate control can't share an intersection. So you either accept deadlocks, or you split the floor into separate lanes and waste space. Each fleet manager also needs its own link to your ERP, MES, or WMS. Adding a vehicle from a new vendor means another integration project. And because no single system sees all the work, one vendor's AGVs sit idle while the other's are backed up.
+
+<!--more-->
 
 VDA 5050 solves that. FlowFuse gives you somewhere to build the master control system that uses it.
 
@@ -109,7 +169,7 @@ Both `state` and `visualization` carry position. That is on purpose.
 
 `state` is the full picture. A vehicle sends it when something changes, and at least once every 30 seconds. `visualization` is a small message with just position and velocity, so it can go out far more often, typically once a second or faster.
 
-Use `state` for anything master control acts on. Use `visualization` only to draw a smooth live map. Note that `visualization` is optional in the standard, so some vehicles never send it.
+Use `state` for anything master control acts on. Use `visualization` only to draw a smooth live map. Note that `visualization` is optional in the standard, so some vehicles never send it. Version 3.0 widens its job: it now carries the planned path too, so traffic control can read it rather than just a map display.
 
 ### How topics are named
 
@@ -119,7 +179,9 @@ Use `state` for anything master control acts on. Use `visualization` only to dra
 
 For example: `uagv/v2/AcmeRobotics/AGV-042/state`
 
-`uagv` is short for "universal AGV". The standard does not force this word on you, and each site sets its own interface name. But nearly every 2.x deployment uses it, including the vehicles you are likely to buy. Treat it as fixed unless the vehicle's manual says otherwise.
+`uagv` is the interface name the standard uses in its own examples, and most people read it as short for "universal AGV". The standard itself only calls it the name of the interface, and each site can set its own. But nearly every 2.x deployment uses `uagv`, including the vehicles you are likely to buy. Treat it as fixed unless the vehicle's manual says otherwise.
+
+The same caveat applies to the levels around it. The standard mandates the topic names in the final segment, `order`, `state`, and so on. It calls the five-level structure a suggestion for a local broker, because cloud brokers impose their own topic rules. On-premise fleets follow it anyway, so build against it and adapt only if your broker forces you to.
 
 The version segment is the major version only. So `v2`, not `v2.0.0`. The full version number goes in the `version` field inside the payload.
 
@@ -127,12 +189,18 @@ Because the maker and serial number sit in the topic, master control can subscri
 
 ### A note on version 3.0
 
-This tutorial uses version 2.x names, because that is what most vehicles speak today. Version 3.0 renames several things:
+This tutorial uses version 2.x names, because that is what most vehicles speak today. Version 3.0 renames a lot:
 
 - The example topic prefix moves to `vda5050/v3/...`
 - `agvPosition` becomes `mobileRobotPosition`
 - `batteryState` becomes `powerSupply`, and `batteryCharge` becomes `stateOfCharge`
 - `positionInitialized` becomes `localized`
+- `safetyState.eStop` becomes `activeEmergencyStop`, and the `AUTOACK` value is gone
+- `actionStates` splits into `actionStates`, `instantActionStates`, and `zoneActionStates`, each cleared by its own instant action
+- Edges drop `startNodeId` and `endNodeId`. Position in the sequence alone now says which nodes an edge connects
+- Errors gain two levels, `CRITICAL` and `URGENT`
+- Every robot must support `startPause`, `stopPause`, and `cancelOrder`
+- `timestamp` moves from hundredths of a second to milliseconds
 - Version 3.0 adds two optional topics, `zoneSet` and `responses`, and a fourth blocking type, `SINGLE`
 - `CONNECTIONBROKEN` becomes `CONNECTION_BROKEN`, and `HIBERNATING` is added
 - It also adds the operating modes `STARTUP` and `INTERVENED`
@@ -155,8 +223,12 @@ If your vehicle ships with 3.0 support, swap the names. The topic structure and 
   "orderUpdateId": 0,
   "lastNodeId": "node7",
   "lastNodeSequenceId": 6,
-  "nodeStates": [],
-  "edgeStates": [],
+  "nodeStates": [
+    { "nodeId": "node8", "sequenceId": 8, "released": true }
+  ],
+  "edgeStates": [
+    { "edgeId": "node7-8", "sequenceId": 7, "released": true }
+  ],
   "agvPosition": {
     "x": 12.4,
     "y": 3.1,
@@ -167,18 +239,24 @@ If your vehicle ships with 3.0 support, swap the names. The topic structure and 
   "velocity": { "vx": 0.5, "vy": 0.0, "omega": 0.0 },
   "batteryState": { "batteryCharge": 76.5, "charging": false },
   "driving": true,
-  "actionStates": [],
+  "actionStates": [
+    { "actionId": "drop-42", "actionStatus": "WAITING" }
+  ],
   "operatingMode": "AUTOMATIC",
   "errors": [],
   "safetyState": { "eStop": "NONE", "fieldViolation": false }
 }
 ```
 
-Two things to know before you write code against this.
+That vehicle is driving from `node7` to `node8`, with a drop waiting at the end of it. Three things to know before you write code against this.
 
-**Some fields are always there.** `orderId`, `orderUpdateId`, `lastNodeId`, `lastNodeSequenceId`, `nodeStates`, `edgeStates`, `driving`, `actionStates`, `batteryState`, `operatingMode`, `errors`, and `safetyState` are required. An idle vehicle still sends an empty `nodeStates` array. It does not drop the field.
+**Some fields are always there.** `orderId`, `orderUpdateId`, `lastNodeId`, `lastNodeSequenceId`, `nodeStates`, `edgeStates`, `driving`, `actionStates`, `batteryState`, `operatingMode`, `errors`, and `safetyState` are required. An idle vehicle sends empty `nodeStates` and `edgeStates` arrays. It does not drop the fields.
 
-**Position is not.** `agvPosition` and `velocity` are optional. A vehicle that cannot locate itself yet leaves `agvPosition` out. So always check before you read it. Code like `msg.payload.agvPosition.x` crashes the first time a vehicle starts up before it has localized.
+**Position is not, but read the exception carefully.** `agvPosition` and `velocity` are optional. The standard only lets a vehicle omit `agvPosition` if it cannot localize itself at all, such as a line-guided AGV. A vehicle that can localize but hasn't finished yet still sends the field, with `positionInitialized` set to `false`.
+
+So master control needs two checks, not one. Confirm `agvPosition` is there, then confirm `positionInitialized` is `true` before you trust the numbers. Code like `msg.payload.agvPosition.x` crashes on a line-guided vehicle. Code that skips the second check will route a truck using coordinates the truck itself doesn't stand behind.
+
+**Watch the timestamp precision.** 2.x writes `timestamp` with hundredths of a second, while JavaScript's `toISOString()` gives you milliseconds. Vehicles accept it in practice, and 3.0 moves to milliseconds officially, but a strict schema validator flags it.
 
 The standard ships [JSON schemas](https://github.com/VDA5050/VDA5050/tree/main/json_schemas) for all six topics. Point a validator at them and you can check a payload before you send it, rather than finding out from the vehicle.
 
@@ -195,10 +273,11 @@ The standard ships [JSON schemas](https://github.com/VDA5050/VDA5050/tree/main/j
 1. Drag an **mqtt in** node onto the canvas. Double-click it.
 2. Click the pencil icon next to **Server** to add a broker.
 3. Enter your broker's host and port. Use 8883 and tick **Use TLS** on the **Connection** tab. Only use plain port 1883 on an isolated test network.
-4. If your broker needs a login, open the **Security** tab and enter the username and password.
-5. Leave the topic empty for now. You'll fill it in next.
+4. On the same tab, set **Keep alive** to 15 seconds. The standard suggests around that, because the keep alive decides how fast the broker notices a vehicle has vanished. Node-RED defaults to 60, which leaves a dead AGV looking alive for up to a minute and a half.
+5. If your broker needs a login, open the **Security** tab and enter the username and password.
+6. Leave the topic empty for now. You'll fill it in next.
 
-The [FlowFuse MQTT nodes](/docs/user/mqtt-nodes/) replace steps 2 to 4 if you're pointing at the [FlowFuse broker](/docs/user/teambroker/). They create the client and fill in the credentials themselves. Their QoS defaults to 2, so change it in the next step.
+The [FlowFuse MQTT nodes](/docs/user/mqtt-nodes/) replace steps 2 to 5 if you're pointing at the [FlowFuse broker](/docs/user/teambroker/). They create the client and fill in the credentials themselves.
 
 ### Step 2: Subscribe to fleet state
 
@@ -209,7 +288,7 @@ The [FlowFuse MQTT nodes](/docs/user/mqtt-nodes/) replace steps 2 to 4 if you're
 5. Deploy. Check that the **mqtt in** node says "connected", then watch messages arrive in the debug sidebar.
 
 ```json
-[{"id":"vda-mqtt-in","type":"mqtt in","z":"vda-flow","name":"Fleet state","topic":"uagv/v2/+/+/state","qos":"0","datatype":"json","broker":"vda-broker","nl":false,"rap":true,"rh":0,"inputs":0,"x":210,"y":160,"wires":[["vda-parse"]]},{"id":"vda-parse","type":"function","z":"vda-flow","name":"Identify vehicle","func":"const parts = msg.topic.split('/');\nif (parts.length !== 5) {\n    node.warn('Unexpected VDA 5050 topic: ' + msg.topic);\n    return null;\n}\n\nmsg.manufacturer = parts[2];\nmsg.serialNumber = parts[3];\n\nconst p = msg.payload;\nif (p.manufacturer !== msg.manufacturer || p.serialNumber !== msg.serialNumber) {\n    node.warn('Topic and payload disagree on ' + msg.topic);\n}\n\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":160,"wires":[["vda-debug"]]},{"id":"vda-debug","type":"debug","z":"vda-flow","name":"State debug","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":160,"wires":[]},{"id":"vda-broker","type":"mqtt-broker","name":"VDA 5050 broker","broker":"your-broker.example.com","port":"8883","clientid":"","autoConnect":true,"usetls":true,"verifyservercert":true,"protocolVersion":"4","keepalive":"60","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""}]
+[{"id":"vda-mqtt-in","type":"mqtt in","z":"vda-flow","name":"Fleet state","topic":"uagv/v2/+/+/state","qos":"0","datatype":"json","broker":"vda-broker","nl":false,"rap":true,"rh":0,"inputs":0,"x":210,"y":160,"wires":[["vda-parse"]]},{"id":"vda-parse","type":"function","z":"vda-flow","name":"Identify vehicle","func":"const parts = msg.topic.split('/');\nif (parts.length !== 5) {\n    node.warn('Unexpected VDA 5050 topic: ' + msg.topic);\n    return null;\n}\n\nmsg.manufacturer = parts[2];\nmsg.serialNumber = parts[3];\n\nconst p = msg.payload;\nif (p.manufacturer !== msg.manufacturer || p.serialNumber !== msg.serialNumber) {\n    node.warn('Topic and payload disagree on ' + msg.topic);\n}\n\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":430,"y":160,"wires":[["vda-debug"]]},{"id":"vda-debug","type":"debug","z":"vda-flow","name":"State debug","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":650,"y":160,"wires":[]},{"id":"vda-broker","type":"mqtt-broker","name":"VDA 5050 broker","broker":"your-broker.example.com","port":"8883","clientid":"","autoConnect":true,"usetls":true,"verifyservercert":true,"protocolVersion":"4","keepalive":"15","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""}]
 ```
 
 Flow exports never include passwords. After importing, open the broker node and enter your own host and login.
@@ -258,7 +337,9 @@ Subscribe to **`uagv/v2/+/+/connection`** at QoS 1. This tells you when a vehicl
 
 The vehicle registers that last value as its MQTT last will when it connects. So if it vanishes without saying goodbye, the broker publishes it for the vehicle. Vehicles publish every `connection` message with the retained flag set, so a new subscriber picks up each vehicle's last known status straight away.
 
-One warning. The standard is clear that `connection` is a network check, not a health check. It tells you the link dropped. It tells you nothing about a vehicle that is still connected but faulted, stuck, or lost. For that, watch `errors`, `operatingMode`, and `safetyState` in `state`. Also treat any `state` message older than 30 seconds as stale, since that is the longest gap the standard allows.
+This is where the keep alive from step 1 earns its place. The broker only fires the last will once the heartbeat lapses, so a 60-second keep alive can hide a dead vehicle for well over a minute.
+
+One warning. `connection` is a network check, not a health check. Version 3.0 states that outright in its topic table, and 2.1 works the same way without saying it as plainly. It tells you the link dropped. It tells you nothing about a vehicle that is still connected but faulted, stuck, or lost. For that, watch `errors`, `operatingMode`, and `safetyState` in `state`. Also treat any `state` message older than 30 seconds as stale, since that is the longest gap the standard allows.
 
 ### Putting it on a screen
 
@@ -273,7 +354,7 @@ Three rules decide whether the vehicle accepts your order at all. Get these wron
 
 **The first node must be where the vehicle already is.** The standard says the AGV has to be standing on the first node, or inside its deviation range. Send an order that starts anywhere else and the vehicle rejects it. A rejected order shows up as a `validationError` warning in the vehicle's `state`, and the warning stays there until it accepts a valid order. Read `lastNodeId` and `agvPosition` from the vehicle's current state, and build the order from there.
 
-**`orderId` and `orderUpdateId` together must be new.** Send the same pair twice and it counts as a duplicate. Use a fresh `orderId` for each job. Start `orderUpdateId` at 0, and only raise it when you extend that same order.
+**`orderId` and `orderUpdateId` together must be new.** Use a fresh `orderId` for each job. Start `orderUpdateId` at 0, and only raise it when you extend that same order. A 2.x vehicle checks the incoming `orderUpdateId` against the one it already holds, treating a lower one as deprecated and an equal one as already received. Version 3.0 draws the line more precisely: resending an identical message is fine, but reusing an `orderUpdateId` with different content is an error.
 
 **The vehicle must support the actions you send.** `pick` and `drop` are standard action types, but supporting them is optional. Ask for the vehicle's `factsheet` first, using the `factsheetRequest` instant action, and check its list of supported actions.
 
@@ -289,11 +370,14 @@ Here is a real pick-and-drop order:
 const manufacturer = 'AcmeRobotics';
 const serialNumber = 'AGV-042';
 
-// Count headerId per topic, and raise it by one for every message you send
-const headerId = (flow.get('orderHeaderId') || 0) + 1;
-flow.set('orderHeaderId', headerId);
-
 msg.topic = `uagv/v2/${manufacturer}/${serialNumber}/order`;
+
+// headerId counts per topic, so key the counter by topic and raise it
+// by one for every message you send to that topic
+const headerKey = `headerId:${msg.topic}`;
+const headerId = (flow.get(headerKey) || 0) + 1;
+flow.set(headerKey, headerId);
+
 msg.payload = {
   headerId,
   timestamp: new Date().toISOString(),
@@ -349,12 +433,14 @@ return msg;
 
 Set `version` to the version your vehicle actually runs. Its `factsheet` and its own `state` messages both tell you.
 
-Four details in there matter. `sequenceId` counts across nodes and edges together, which is why the edge is `1`, sitting between nodes `0` and `2`. `released: true` marks the base, the part of the plan the vehicle should run now, as opposed to the horizon, which is work it knows about but hasn't been told to start. And `actionId` has to be unique, because that is how the vehicle reports progress back to you in `actionStates`.
+Note the counter keyed by topic. `headerId` is defined per topic and rises by one per message, so a single shared counter across two vehicles leaves gaps in both their sequences.
+
+Four more details matter. `sequenceId` counts across nodes and edges together, which is why the edge is `1`, sitting between nodes `0` and `2`. `released: true` marks the base, the part of the plan the vehicle should run now, as opposed to the horizon, which is work it knows about but hasn't been told to start. And `actionId` has to be unique, because that is how the vehicle reports progress back to you in `actionStates`.
 
 `blockingType` is the one worth reading twice. It decides whether the vehicle can drive, and whether other actions can run at the same time. `HARD` means the action runs alone, with no driving and no other actions. `SOFT` allows other actions but still stops the vehicle. `NONE` allows both. For a pick or drop you want `HARD`, and note that `SOFT` does not let the AGV keep driving, which is the one people get backwards. Version 3.0 adds a fourth, `SINGLE`, which allows driving but no other actions.
 
 ```json
-[{"id":"vda-order-trigger","type":"inject","z":"vda-flow","name":"Dispatch order","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":210,"y":320,"wires":[["vda-order-build"]]},{"id":"vda-order-build","type":"function","z":"vda-flow","name":"Build order payload","func":"const manufacturer = 'AcmeRobotics';\nconst serialNumber = 'AGV-042';\n\nconst headerId = (flow.get('orderHeaderId') || 0) + 1;\nflow.set('orderHeaderId', headerId);\n\nmsg.topic = `uagv/v2/${manufacturer}/${serialNumber}/order`;\nmsg.payload = {\n  headerId,\n  timestamp: new Date().toISOString(),\n  version: \"2.1.0\",\n  manufacturer,\n  serialNumber,\n  orderId: `order-${Date.now()}`,\n  orderUpdateId: 0,\n  nodes: [\n    { nodeId: \"station-1\", sequenceId: 0, released: true, nodePosition: { x: 0, y: 0, mapId: \"floor1\" }, actions: [{ actionId: `pick-${headerId}`, actionType: \"pick\", blockingType: \"HARD\", actionParameters: [{ key: \"stationType\", value: \"floor\" }, { key: \"loadType\", value: \"EPAL\" }] }] },\n    { nodeId: \"station-2\", sequenceId: 2, released: true, nodePosition: { x: 12, y: 4, mapId: \"floor1\" }, actions: [{ actionId: `drop-${headerId}`, actionType: \"drop\", blockingType: \"HARD\", actionParameters: [{ key: \"stationType\", value: \"floor\" }, { key: \"loadType\", value: \"EPAL\" }] }] }\n  ],\n  edges: [\n    { edgeId: \"station-1-2\", sequenceId: 1, startNodeId: \"station-1\", endNodeId: \"station-2\", released: true, actions: [] }\n  ]\n};\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":440,"y":320,"wires":[["vda-order-out"]]},{"id":"vda-order-out","type":"mqtt out","z":"vda-flow","name":"Send order","topic":"","qos":"0","retain":"false","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"vda-broker","x":680,"y":320,"wires":[]},{"id":"vda-broker","type":"mqtt-broker","name":"VDA 5050 broker","broker":"your-broker.example.com","port":"8883","clientid":"","autoConnect":true,"usetls":true,"verifyservercert":true,"protocolVersion":"4","keepalive":"60","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""}]
+[{"id":"vda-order-trigger","type":"inject","z":"vda-flow","name":"Dispatch order","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":210,"y":320,"wires":[["vda-order-build"]]},{"id":"vda-order-build","type":"function","z":"vda-flow","name":"Build order payload","func":"const manufacturer = 'AcmeRobotics';\nconst serialNumber = 'AGV-042';\n\nmsg.topic = `uagv/v2/${manufacturer}/${serialNumber}/order`;\n\n// headerId counts per topic, so key the counter by topic\nconst headerKey = `headerId:${msg.topic}`;\nconst headerId = (flow.get(headerKey) || 0) + 1;\nflow.set(headerKey, headerId);\n\nmsg.payload = {\n  headerId,\n  timestamp: new Date().toISOString(),\n  version: \"2.1.0\",\n  manufacturer,\n  serialNumber,\n  orderId: `order-${Date.now()}`,\n  orderUpdateId: 0,\n  nodes: [\n    { nodeId: \"station-1\", sequenceId: 0, released: true, nodePosition: { x: 0, y: 0, mapId: \"floor1\" }, actions: [{ actionId: `pick-${headerId}`, actionType: \"pick\", blockingType: \"HARD\", actionParameters: [{ key: \"stationType\", value: \"floor\" }, { key: \"loadType\", value: \"EPAL\" }] }] },\n    { nodeId: \"station-2\", sequenceId: 2, released: true, nodePosition: { x: 12, y: 4, mapId: \"floor1\" }, actions: [{ actionId: `drop-${headerId}`, actionType: \"drop\", blockingType: \"HARD\", actionParameters: [{ key: \"stationType\", value: \"floor\" }, { key: \"loadType\", value: \"EPAL\" }] }] }\n  ],\n  edges: [\n    { edgeId: \"station-1-2\", sequenceId: 1, startNodeId: \"station-1\", endNodeId: \"station-2\", released: true, actions: [] }\n  ]\n};\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[],"x":440,"y":320,"wires":[["vda-order-out"]]},{"id":"vda-order-out","type":"mqtt out","z":"vda-flow","name":"Send order","topic":"","qos":"0","retain":"false","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"vda-broker","x":680,"y":320,"wires":[]},{"id":"vda-broker","type":"mqtt-broker","name":"VDA 5050 broker","broker":"your-broker.example.com","port":"8883","clientid":"","autoConnect":true,"usetls":true,"verifyservercert":true,"protocolVersion":"4","keepalive":"15","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willPayload":"","willMsg":{},"sessionExpiry":""}]
 ```
 
 This snippet brings its own broker node so it imports on its own. If you paste it into the same tab as the flow from step 2, you'll end up with two. Point this flow at the one you already set up and delete the spare, or the two clients will fight over the same login.
@@ -369,6 +455,7 @@ A flow that works on a test rig is not a production system. Check these first.
 - **Use TLS.** Factory networks are shared. Fleet commands should not travel in clear text, and leave certificate checking on.
 - **Never retain `order` or `instantActions`.** The broker replays retained commands to every vehicle that reconnects. `connection` and `factsheet` are the two topics that *should* be retained.
 - **Match the standard's QoS levels.** QoS 0 for `order`, `instantActions`, `state`, `factsheet`, and `visualization`. QoS 1 for `connection`. If your site does something different, change it on both ends, since MQTT delivers at the lower of the two.
+- **Set the keep alive to around 15 seconds.** It sets the floor on how fast you can detect a vehicle dropping off, so a long keep alive quietly undoes your offline alerting.
 - **Watch state freshness, not just `connection`.** A vehicle can hold its connection open while stuck or faulted. Alert on `errors`, on `operatingMode` leaving `AUTOMATIC`, and on `state` messages older than 30 seconds.
 - **Validate orders before you send them.** Check the first node against the vehicle's current position, keep `orderId` and `orderUpdateId` unique, and check every action type against the factsheet.
 - **Cap message size on the broker** to what VDA 5050 payloads actually need. It limits the damage a misbehaving client can do.
