@@ -39,7 +39,7 @@ MQLs will be engaged by a Sales Representative, according with the appropriate g
 
 #### Lifecycle changes
 
-##### From MQL to SQL - Qualifying questions
+##### From MQL to SQL: Qualifying Questions
 
 - Does the prospect and company fit the target industry / company size / role?
 - Are they working on an initiative related to connecting systems, industrial data, or operational workflows?
@@ -72,15 +72,22 @@ through other marketing activities too, but wasn't nurtured to the point of a me
 
 ## Deal Management
 
-A HubSpot deal represents a specific revenue opportunity with a customer or prospect: an active buying process with an engaged buyer, a realistic close date, and next steps the deal owner can work. We open a deal for each type of revenue opportunity: new business, expansion (in-term or at renewal), pilot-contingent expansion, and renewal. The rules for each type are below.
+A HubSpot deal represents a specific revenue opportunity with a customer or prospect: an active buying process with an engaged buyer, a realistic close date, and next steps the deal owner can work. We open a deal for each type of revenue opportunity: new business, expansion (in-term or at renewal), pilot-contingent expansion, and renewal. The rules for each type are below. Once a deal is open, quoting and closing it follows [Engagements & Pricing](/handbook/sales/engagements/#creating-a-deal).
 
 ### Deal Amount Fields
 
-Every deal has three amount fields. Complete all three with your best estimate when you create the deal. This applies to every deal type, including expansion deals opened at pilot kickoff:
+Every deal has three amount fields, computed the same way for every deal type — new business, expansion, and renewal alike — including expansion deals opened at pilot kickoff:
 
-- **Amount** = total contract value, including multi-year terms and non-recurring revenue (e.g. professional services)
-- **ACV** = annual contract value, including non-recurring revenue
-- **ARR** = annual recurring revenue
+- **ARR** = [Incremental ARR](/handbook/sales/commission-plan/#_2-definitions): for a New Business deal, the full ARR of the new contract; for an Expansion or Renewal deal, only the increase in ARR relative to the prior contract. A flat renewal with no growth has $0 here — that's expected, not an error.
+- **ACV** = ARR (above) plus [Non-Recurring Revenue](/handbook/sales/commission-plan/#_2-definitions) (e.g. professional services, onboarding fees) — the deal's one-year value.
+- **Amount** = the same value as ACV. Amount is always this single-year figure; it is never multiplied out over a multi-year term — multi-year terms are captured separately via Contract Term and Payment Terms, which drive [multi-year commission tiering](/handbook/sales/engagements/#steps-for-the-ae-to-complete), not the Amount field.
+
+Estimate pessimistically: enter the value you're confident you can close, not
+the best case. Through the sales process these fields are only meant to move
+up, as scope firms up or grows; they should never need to be revised downward
+to stay accurate. If a number needs to come down, that's a sign the deal
+itself has changed and its stage or close date likely need review too, not
+just the amount.
 
 Update all three whenever the scope of the deal changes or estimates firm up.
 
@@ -88,18 +95,20 @@ Update all three whenever the scope of the deal changes or estimates firm up.
 
 A New Business deal represents first revenue with a new customer.
 
-- Create the deal in the Sales pipeline as soon as the first meeting is booked. It enters at *1-Discovery*.
+- Create the deal in the Sales pipeline once the [MQL-to-SQL qualifying questions](#from-mql-to-sql-qualifying-questions) have been answered. A call isn't required to open the deal, but the answers are — do not open a deal on the strength of a booked meeting alone. Once created, it enters at *1-Discovery*.
 - The deal owner is the AE for the region.
 - Complete all three amount fields (Amount, ACV, ARR) for the contract being proposed.
 - One deal per buying process. If the prospect goes quiet, close the deal as lost and reopen a new one when they re-engage. Do not let deals idle with stale close dates.
 
 ### Expansion Deals
 
-An Expansion deal represents incremental ARR from an existing customer. The AE owns all expansion deals, and they are always opened in the Sales pipeline.
+An Expansion deal represents incremental ARR from an existing customer. The AE owns expansion deals, and they are opened in the Sales pipeline — except an expansion bundled into a renewal for under $10k ARR, which the [CSM](/handbook/sales/customer-success/) owns directly (see below).
 
 - All three amount fields (Amount, ACV, ARR) carry the incremental value of the expansion only, never the customer's total contract or total ARR.
 - **In-term expansion** (mid-contract): create the deal when the customer confirms an active interest in additional capacity, users, or products: an engaged buyer and a realistic close date, not a hope.
-- **Expansion at renewal**: create a separate expansion deal in the Sales pipeline carrying only the ARR delta, with its close date aligned to the renewal date. The renewal deal itself stays at current ARR in the Renewal pipeline. This keeps renewal rate and expansion performance separately measurable.
+- **Expansion at renewal**: create a separate expansion deal carrying only the ARR delta, with its close date aligned to the renewal date. This keeps renewal and expansion performance separately measurable.
+  - **Under $10k ARR**: fold the increase directly into the renewal deal's own Incremental ARR instead — the CSM owns it, and no separate AE-owned deal is opened in the Sales pipeline. This matches how [Customer Success commission](/handbook/sales/customer-success/#when-transactions-are-credited) already credits "Expansion (Renewal)" to the CSM.
+  - **$10k ARR or more**: open a separate expansion deal in the Sales pipeline, owned by the AE, as above. The renewal deal's own Incremental ARR then reflects only the renewal itself (often $0).
 - **Expansion contingent on a pilot**: create the deal at pilot kickoff, following [Pilot and Expansion Deals](#pilot-and-expansion-deals).
 
 ### Pilot and Expansion Deals
@@ -133,9 +142,10 @@ A common example: a prospect purchases FlowFuse to run a production pilot at a s
 
 A Renewal deal represents the continuation of a customer's existing ARR.
 
-- Create the renewal deal in the Renewal pipeline immediately when the preceding deal closes won. Set the close date to the renewal date and complete the amount fields for the renewing contract (ARR = the ARR being renewed).
+- Create the renewal deal in the Renewal pipeline immediately when the preceding deal closes won. Set the close date to the renewal date.
+- Complete the amount fields per [Deal Amount Fields](#deal-amount-fields): ARR here is the Incremental ARR only — the increase relative to the prior contract, not the full continuing base. A flat renewal has $0 ARR/Amount; that's expected, not an error. The customer's continuing base ARR lives on the account/subscription record, not on this deal.
 - Customer Success owns renewal deals.
-- The renewal deal's amount fields never include expansion revenue; any uplift is a separate expansion deal owned by the AE (see above). A contraction or downgrade is reflected by reducing the renewal deal's amount fields.
+- Growth bundled into the renewal follows [Expansion Deals](#expansion-deals): under $10k ARR, the CSM folds it directly into this deal's Incremental ARR; $10k ARR or more, it's a separate AE-owned expansion deal, and this deal's Incremental ARR reflects only the renewal itself. A contraction or downgrade is reflected as a negative Incremental ARR on this deal.
 - Begin actively working the renewal no later than 90 days before the renewal date: confirm the champion, surface risks, and start procurement early.
 
 ### Tracking Deals in GitHub
