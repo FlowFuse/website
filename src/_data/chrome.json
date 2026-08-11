@@ -6,29 +6,32 @@
                 "label": "Platform",
                 "columns": [
                     {
-                        "title": "Product",
+                        "title": "Overview",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
                         "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
-                                "label": "Features",
+                                "label": "Product",
                                 "href": "/product/",
                                 "icon": "star"
                             },
                             {
                                 "label": "FlowFuse Edge",
                                 "href": "/product/edge/",
-                                "icon": "chip"
+                                "icon": "chip",
+                                "indent": true
                             },
                             {
                                 "label": "FlowFuse Hub",
                                 "href": "/product/hub/",
-                                "icon": "circle-stack"
+                                "icon": "circle-stack",
+                                "indent": true
                             },
                             {
                                 "label": "FlowFuse Fleet",
                                 "href": "/product/fleet/",
-                                "icon": "server-stack"
+                                "icon": "server-stack",
+                                "indent": true
                             },
                             {
                                 "label": "Security Statement",

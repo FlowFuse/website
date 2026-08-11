@@ -2896,6 +2896,17 @@ lite-youtube::before {
     margin-left: 0 !important;
     border-left: 0 !important;
 }
+/* Nested sub-items (e.g. product tiers under "Product"). Needs a dedicated
+   rule since #nav-content li's `border-none` reset above beats a bare
+   Tailwind border utility on layer order. */
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent {
+    margin-left: 0.6rem !important;
+    padding-left: 0 !important;
+    border-left: 2px solid var(--color-gray-200) !important;
+}
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent > a {
+    padding-left: 1rem !important;
+}
 /* Mobile accordion: eyebrows indent to the link icon column, moderate row
    height, and tap feedback via a text-hugging underline (the desktop
    animated line needs a text span the link markup does not have) */
@@ -2910,6 +2921,14 @@ lite-youtube::before {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
         padding-left: 2.5rem !important; /* indent links under the section eyebrow (1.5rem) */
+    }
+    /* Same centering math as the desktop rule above, but against this
+       breakpoint's pl-2.5rem (40px) icon column: 40px + 10px = 50px = 3.125rem. */
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent {
+        margin-left: 3.125rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent > a {
+        padding-left: 0.75rem !important;
     }
     /* Roomier mobile drawer: inset the whole menu and enlarge the top-level item
        labels for easier tapping. Scoped to mobile only; desktop nav unaffected.
