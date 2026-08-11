@@ -1,7 +1,7 @@
 ---
 title: Introducing Medium Projects on FlowFuse Cloud
 subtitle: A bigger project with more resources
-description: A bigger project with more resources
+description: "Introducing Medium Projects on FlowFuse Cloud, a bigger project tier offering more resources for growing engineering teams."
 date: 2022-07-22 12:00:00.0
 authors: ["sam-machin"]
 tags:

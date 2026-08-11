@@ -1,7 +1,7 @@
 ---
 title: "How to Ingest CSV Logs into MQTT, Databases, and Dashboards"
 subtitle: "Turn old CSV logs into live data streams using FlowFuse."
-description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards. Build real-time and batch processing pipelines with Node-RED and FlowFuse."
+description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards using FlowFuse today."
 lastUpdated: 2026-06-17
 date: 2025-11-10
 authors: ["sumit-shinde"]

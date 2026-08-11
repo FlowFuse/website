@@ -1,7 +1,7 @@
 ---
 title: Installing and operating Node-RED behind a firewall
 subtitle: FlowFuse was built to empower Node-RED to run everywhere, even behind a firewall
-description: FlowFuse was built to empower Node-RED to run everywhere, even behind a firewall
+description: "FlowFuse was built to empower Node-RED to run everywhere, including behind a firewall, without compromising on security."
 date: 2024-03-06
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2024/03/images/node-red-vpn.png

@@ -1,7 +1,7 @@
 ---
 title: Node-RED Multiplayer mode
 subtitle: An update on our work to bring concurrent editing to Node-RED
-description: An update on our work to bring concurrent editing to Node-RED
+description: "An update on FlowFuse's ongoing work to bring concurrent, multiplayer-style editing to the Node-RED flow editor for teams."
 date: 2024-04-10
 authors: ["nick-oleary"]
 image: /blog/2024/04/images/node-red-multiplayer.png

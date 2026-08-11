@@ -1,7 +1,7 @@
 ---
 title: "Interacting with Google Sheets from Node-RED (2026)"
 subtitle: Guide to learn how to write, read, update and delete data in Google sheet using Node-RED.
-description: Learn how to interact with Google Sheet from Node-RED to write, read, update and delete data.
+description: "Learn how to interact with Google Sheets from Node-RED in 2026: write, read, update, and delete spreadsheet data with ease."
 lastUpdated: 2026-06-03
 date: 2024-06-21
 authors: ["sumit-shinde"]

@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.0 released
 subtitle: FlowFuse at 1.0, a huge milestone for us.
-description: FlowFuse is now 1.0!
+description: "FlowFuse is now 1.0! A major milestone release marking the platform's readiness for production Node-RED deployments at scale."
 date: 2022-10-27 18:00:00.0
 authors: ["rob-marcer"]
 video: 5TLT7CQR7iI

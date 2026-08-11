@@ -1,7 +1,7 @@
 ---
 title: "What is TEEP? Calculation, Benchmarks & TEEP vs OEE (2026)"
 subtitle: "If you're tracking OEE, you're only seeing half the picture."
-description: "Your equipment sits idle 16+ hours daily. TEEP in 2026 measures this, OEE ignores it. Get the formula, learn when 35% TEEP beats 60%, and turn hidden capacity into profit without capital investment."
+description: "Your equipment sits idle 16+ hours daily. Learn the TEEP formula, benchmarks, and how to turn hidden capacity into profit."
 lastUpdated: 2026-06-17
 date: 2025-12-19
 keywords: TEEP, total effective equipment performance, TEEP calculation, TEEP vs OEE, OEE vs TEEP, equipment utilization, capacity planning, TEEP formula, TEEP benchmark, TEEP monitoring, overall equipment effectiveness, TEEP dashboard

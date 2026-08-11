@@ -1,7 +1,7 @@
 ---
 title: "How to Monitor Industrial Network Health Using SNMP"
 subtitle: "Build production-grade SNMP monitoring pipelines with FlowFuse"
-description: "Learn how to monitor industrial network health using SNMP and FlowFuse. Poll OIDs, visualize device telemetry, and detect failures before they impact operations."
+description: "Learn how to monitor industrial network health using SNMP and FlowFuse: poll OIDs, visualize telemetry, detect failures."
 lastUpdated: 2026-06-19
 date: 2026-03-20
 keywords: SNMP monitoring, industrial network health, FlowFuse, Node-RED SNMP, network telemetry, OID polling, industrial IoT
