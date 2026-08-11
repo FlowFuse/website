@@ -25,6 +25,7 @@ export interface DocsNavPage {
     navOrder?: number | null
     navGroup?: string | null
     navGroupOrder?: number | null
+    redirect?: { to: string } | null
 }
 
 /**

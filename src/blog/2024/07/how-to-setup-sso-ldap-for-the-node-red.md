@@ -278,7 +278,7 @@ Slappasswd -g
 
 ### Signing in Using SSO
 
-To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user_management/#creating-new-users).
+To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user-management/#creating-new-users).
 
 1. Open your platform in the browser. Enter the username in the username/email field.
 2. Click on "Login".

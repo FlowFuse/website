@@ -86,7 +86,7 @@ The factories pulling ahead right now aren't the most automated. They're the one
 
 ## What It Takes to Move to Event-Driven Architecture
 
-The hardware is already there. Sensors, [PLCs](/blog/2025/12/what-is-plc/), [SCADA systems](/solutions/scada/). All running. EDA doesn't replace them. It changes how they communicate.
+The hardware is already there. Sensors, [PLCs](/blog/2025/12/what-is-plc/), [SCADA systems](/use-cases/scada/). All running. EDA doesn't replace them. It changes how they communicate.
 
 You need an event broker and something that connects to legacy systems. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) for shop floor devices. Kafka for enterprise loads. [Node-RED](/node-red/) to bridge the gap. That's the stack.
 
@@ -96,7 +96,7 @@ Your team already knows which deviations matter. Which delays cascade. Which var
 
 Start where waiting costs the most. Downtime reported late doesn’t need better sensors. The stop event needs to fire when it happens and route to maintenance, scheduling, and analytics simultaneously. One workflow. Measured impact. Studies show event-driven systems responding in milliseconds rather than minutes, reducing manual intervention dramatically and improving process completion rates at scale. Prove it on one line, then expand to the next bottleneck.
 
-The broker is straightforward. The translation layer isn't. Your [MES](/solutions/mes/) doesn't listen for events. Your [ERP](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/) expects scheduled queries. Your quality system runs batch jobs. Bridging that gap is where real effort lives.
+The broker is straightforward. The translation layer isn't. Your [MES](/use-cases/mes/) doesn't listen for events. Your [ERP](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/) expects scheduled queries. Your quality system runs batch jobs. Bridging that gap is where real effort lives.
 
 Brownfield doesn’t require cutover. Legacy runs. New workflows build on events. Each migration reduces polling overhead and creates durable audit trails. Value compounds.
 

@@ -128,4 +128,4 @@ language queries drive intelligent, scalable actions across the entire enterpris
 
 Ready to experience text-driven operations in your own facility?
 [Try FlowFuse for free](https://app.flowfuse.com/account/create) or request a personalized demo to see how LLM-powered automation can transform your industrial processes.
-[Contact us today](https://flowfuse.com/contact-us/) or sign up for our upcoming webinar to stay ahead in the Industry 4.0 revolution.
+[Contact us today](/contact-us/) or sign up for our upcoming webinar to stay ahead in the Industry 4.0 revolution.

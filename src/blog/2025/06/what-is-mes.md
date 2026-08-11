@@ -16,7 +16,7 @@ Running a factory means constantly pushing for better production. You want to ma
 
 <!--more-->
 
-A [Manufacturing Execution System (MES)](/solutions/mes/) solves this. It's the central system that connects your factory's production to its plans. It gives you clear, instant visibility and control over every step on your shop floor.
+A [Manufacturing Execution System (MES)](/use-cases/mes/) solves this. It's the central system that connects your factory's production to its plans. It gives you clear, instant visibility and control over every step on your shop floor.
 
 Whether you've managed factory operations for years or are just starting to understand how they work, the need for this kind of clarity is universal.
 
@@ -44,7 +44,7 @@ It's easy to get confused about all the different computer systems in a factory.
 
 Many people think an MES is the same as their ERP system. But that's not quite right. Your ERP (Enterprise Resource Planning) handles the big company plans like money, sales orders, and buying materials for the long run. An MES doesn't do this planning. Its job is focused purely on the factory floor, managing what's happening right now to build products. It makes sure the production plans actually get done.
 
-Another common confusion is that an MES is like a [SCADA](/solutions/scada/) or PLC system. Again, this isn't accurate. SCADA (Supervisory Control and Data Acquisition) and [PLC](/blog/2025/12/what-is-plc/) (Programmable Logic Controller) systems are connected directly to individual machines. They tell machines what to do, like turning them on or off, and collect basic data from them. An MES doesn't control machines directly. Instead, the MES acts like the main manager for the whole factory's production. It gathers information from those machine controllers (SCADA/PLCs) and uses it to oversee the entire process, including guiding workers, checking quality, and making sure all the machines work together to finish an order.
+Another common confusion is that an MES is like a [SCADA](/use-cases/scada/) or PLC system. Again, this isn't accurate. SCADA (Supervisory Control and Data Acquisition) and [PLC](/blog/2025/12/what-is-plc/) (Programmable Logic Controller) systems are connected directly to individual machines. They tell machines what to do, like turning them on or off, and collect basic data from them. An MES doesn't control machines directly. Instead, the MES acts like the main manager for the whole factory's production. It gathers information from those machine controllers (SCADA/PLCs) and uses it to oversee the entire process, including guiding workers, checking quality, and making sure all the machines work together to finish an order.
 
 So, while ERP plans the business, and SCADA/PLC run the machines, the MES is the crucial system that manages the actual production process that happens in between.
 
