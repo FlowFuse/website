@@ -1,7 +1,7 @@
 ---
 title: Why UNS needs Pub/Sub
 subtitle: Discover How Pub/Sub Transforms Unified Namespace into a Scalable, Real-Time Data Powerhouse for Modern Manufacturing.
-description: Explore why integrating Publish/Subscribe (Pub/Sub) with Unified Namespace (UNS) is key to optimizing manufacturing data flow. Learn how this combination reduces latency, improves scalability, and enables real-time decision-making in IIoT systems.
+description: "Explore why integrating Publish/Subscribe with Unified Namespace is key to optimizing manufacturing data flow and latency."
 date: 2024-11-19
 lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
