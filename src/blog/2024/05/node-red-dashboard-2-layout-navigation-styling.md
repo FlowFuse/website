@@ -1,7 +1,7 @@
 ---
 title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling"
 subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to style Dashboard 2.0 elements effortlessly.
-description: Discover Node-RED Dashboard 2.0's three layouts (Grid, Notebook, Fixed), five navigation sidebar styles, themes, and custom CSS styling, a complete guide to controlling how your dashboards look and behave.
+description: "Discover Node-RED Dashboard 2.0's three layouts, five sidebar styles, themes, and custom CSS in this complete styling guide."
 lastUpdated: 2026-06-03
 date: 2024-05-10
 authors: ["sumit-shinde"]
