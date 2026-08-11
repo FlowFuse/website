@@ -33,9 +33,10 @@ Getting your own hardware into FlowFuse meant working backwards. You signed up, 
 
 Now you can start where the hardware already is. Run the installer from your terminal and it walks you through registering — including setting up an account if you need one — ending with your machine registered as a remote instance and ready to build on. If something's in the way — like port 1880 already being in use — the installer tells you up front instead of failing partway through.
 
-![The installer running in a terminal, walking through sign-up and connection to FlowFuse](./images/device-agent-install.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+::terminal-frame{src="/images/device-agent/terminal-install.gif" alt="The installer running in a terminal, walking through sign-up and connection to FlowFuse" :width="1000"}
+::
 
-More of the from-scratch onboarding experience lands in upcoming releases.
+You can grab the install command for your platform on the [Device Agent page](/platform/device-agent/) and have a machine online in a few minutes. More of the from-scratch onboarding experience lands in upcoming releases.
 
 ## Modbus Certified Node
 
