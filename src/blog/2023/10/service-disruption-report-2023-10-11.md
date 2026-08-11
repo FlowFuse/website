@@ -1,7 +1,7 @@
 ---
 title: Service Disruption Report for October 11th, 2023
 date: 2023-10-18
-description: ____________
+description: "A report on the FlowFuse Cloud service disruption that occurred on October 11th, 2023, including its cause and resolution."
 authors: ["nick-oleary"]
 tags:
     - posts 
