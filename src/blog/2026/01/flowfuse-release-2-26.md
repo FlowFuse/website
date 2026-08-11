@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
 subtitle: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
-description: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
+description: "FlowFuse 2.26 brings access controls to your MCP nodes, giving teams finer-grained permissions over AI tool access and use."
 date: 2026-01-15
 authors: ["nick-oleary"]
 image: /blog/2026/01/images/release-2-26.png
