@@ -116,7 +116,7 @@ onUnmounted(() => {
               <h1 class="text-4xl md:text-5xl font-medium">
                 Build, deploy, and govern industrial applications - <span class="text-red-600">in record time</span>
               </h1>
-              <p class="mt-6 text-lg text-gray-500 max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
+              <p class="mt-6 text-lg max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
               <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
                 <CtaBookDemo variant="highlight" position="hero" />
                 <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'hero' })">
