@@ -62,6 +62,11 @@ const CONTENT_SOURCES: ContentSource[] = [
     {
         collection: 'blog',
         fileRoot: 'src',
+        // Prefer the author-set `lastUpdated` frontmatter field - the same one the blog
+        // page itself uses for its "Updated" date and JSON-LD dateModified - over the git
+        // history date, so an editorial update date isn't silently overridden by whatever
+        // last touched the file (a repo-wide lint fix, a typo pass elsewhere, etc).
+        lastmod: entry => stringField(entry, 'lastUpdated') ?? getGitLastmod(REPO_ROOT, `src/${entry.stem}.md`),
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
     {

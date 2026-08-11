@@ -320,6 +320,15 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/pricing',
                     '/product',
+                    // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
+                    // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
+                    // the netlify preset here is hybrid (prerendered pages + a fallback
+                    // function), so it doesn't qualify and /sitemap.xml gets served live by
+                    // that function instead. There, /var/task has no `git` binary, so every
+                    // git-derived lastmod (handbook/changelog/blog/ebooks/whitepapers, see
+                    // content-urls.get.ts) silently resolves to undefined. Explicitly listing
+                    // it here bakes it at build time instead, inside the git checkout.
+                    '/sitemap.xml',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
