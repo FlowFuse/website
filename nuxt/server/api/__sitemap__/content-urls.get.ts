@@ -9,8 +9,8 @@ import { getGitLastmod } from '../../../lib/git-lastmod.mjs'
 // over this module's imports or helpers, which git-based lastmod needs. This route does
 // the same job (loc/lastmod/images) as a normal Nitro handler instead.
 
-const SITE_URL = 'https://flowfuse.com'
-const toAbsoluteUrl = (path: string) => (path.startsWith('http') ? path : `${SITE_URL}${path}`)
+const toAbsoluteUrl = (event: Parameters<typeof getSiteConfig>[0], path: string) =>
+    (path.startsWith('http') ? path : `${getSiteConfig(event).url}${path}`)
 
 // Runs at prerender time (during `nuxt generate`), inside the git checkout, so walking up
 // from cwd to find `.git` is robust whether the build is invoked from the repo root or the
@@ -102,7 +102,7 @@ export default defineSitemapEventHandler(async (event) => {
                 if (lastmod) url.lastmod = new Date(lastmod)
 
                 const images = source.images?.(entry) ?? []
-                if (images.length) url.images = images.map(loc => ({ loc: toAbsoluteUrl(loc) }))
+                if (images.length) url.images = images.map(loc => ({ loc: toAbsoluteUrl(event, loc) }))
 
                 urls.push(url)
             }
