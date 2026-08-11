@@ -1,6 +1,6 @@
 tierId: fleet
 label: FlowFuse Fleet
-metaDescription: "Manage a Node-RED fleet and ship updates everywhere. FlowFuse Fleet runs Node-RED across thousands of distributed devices with remote updates, rollback, and fleet-wide visibility — built for hardware OEMs, partners, and asset operators."
+metaDescription: "Manage a Node-RED fleet and ship updates everywhere. FlowFuse Fleet runs Node-RED across thousands of distributed devices with remote updates, rollback, and fleet-wide visibility, built for hardware OEMs, partners, and asset operators."
 eyebrow: "For Hardware OEMs & Asset Operators"
 headingLead: "Manage a Node-RED fleet."
 headingHighlight: "Ship updates everywhere."
@@ -14,12 +14,12 @@ quote:
   role: "Paloma Irrigation District"
 fitYes:
   - "You operate large numbers of distributed devices across remote sites."
-  - "You ship Node-RED inside your own product — OEMs and solution builders."
+  - "You ship Node-RED inside your own product, as an OEM or solution builder."
   - "You need remote updates, rollback, and fleet-wide visibility without firmware releases."
 fitNo:
-  - "Your work is integrating software systems centrally — ERPs, databases, APIs — that's <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
-  - "You're connecting machines on a single plant floor — that's <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>."
-  - "You manage a handful of instances, not a fleet — the core platform likely already covers you."
+  - "Your work is integrating software systems centrally, like ERPs, databases, and APIs. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
+  - "You're connecting machines on a single plant floor. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>."
+  - "You manage a handful of instances, not a fleet. The core platform likely already covers you."
 included:
   - title: "Manage devices at scale"
     chips: ["Remote Device & Instance Management", "Device Fleet Updates", "Device Group Management"]

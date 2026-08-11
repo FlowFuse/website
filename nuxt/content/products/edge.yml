@@ -1,6 +1,6 @@
 tierId: edge
 label: FlowFuse Edge
-metaDescription: "Run the plant floor and standardize it everywhere. FlowFuse Edge connects your PLCs, machines, and controllers and governs the data between them — built for how OT teams work."
+metaDescription: "Run the plant floor and standardize it everywhere. FlowFuse Edge connects your PLCs, machines, and controllers and governs the data between them, built for how OT teams work."
 eyebrow: "For OT & Digitalization Leadership"
 headingLead: "Run the plant floor."
 headingHighlight: "Standardize it everywhere."
@@ -13,13 +13,13 @@ quote:
   author: "Sevan Petrosian"
   role: "Sr. Application Engineer, Arch Systems"
 fitYes:
-  - "Data originates at machines on the plant floor — PLCs, SCADA, sensors, and controllers."
-  - "You need OT-certified industrial protocol connectivity — OPC-UA, Modbus, EtherNet/IP, and more."
+  - "Data originates at machines on the plant floor: PLCs, SCADA, sensors, and controllers."
+  - "You need OT-certified industrial protocol connectivity: OPC-UA, Modbus, EtherNet/IP, and more."
   - "OT or digitalization teams are standardizing production across multiple sites."
 fitNo:
-  - "Your data moves purely between software systems — ERPs, databases, cloud APIs — that's <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
-  - "Managing large fleets of distributed devices is your primary unit of scale — that's <a class=\"text-indigo-600 hover:underline\" href=\"/product/fleet/\">FlowFuse Fleet</a>."
-  - "You have no industrial hardware to connect — a pure IT integration project belongs on FlowFuse Hub."
+  - "Your data moves purely between software systems, like ERPs, databases, and cloud APIs. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
+  - "Managing large fleets of distributed devices is your primary unit of scale. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/fleet/\">FlowFuse Fleet</a>."
+  - "You have no industrial hardware to connect. A pure IT integration project belongs on <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
 included:
   - title: "Connect the plant floor"
     chips: ["Certified OT Connections (OPC-UA, Modbus, EtherNet/IP, RTSP)", "MQTT Broker", "HTTP Request"]

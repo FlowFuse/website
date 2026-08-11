@@ -1,6 +1,6 @@
 tierId: hub
 label: FlowFuse Hub
-metaDescription: "Move data across the business and govern it centrally. FlowFuse Hub connects your ERPs, databases, and cloud APIs into one governed system — built for central IT and enterprise architecture teams."
+metaDescription: "Move data across the business and govern it centrally. FlowFuse Hub connects your ERPs, databases, and cloud APIs into one governed system, built for central IT and enterprise architecture teams."
 eyebrow: "For IT & Integration Teams"
 headingLead: "Move data across the business."
 headingHighlight: "Govern it centrally."
@@ -13,13 +13,13 @@ quote:
   author: "James Olson"
   role: "Wenco"
 fitYes:
-  - "Data moves between software systems — ERPs, databases, cloud APIs, message queues."
+  - "Data moves between software systems: ERPs, databases, cloud APIs, message queues."
   - "You're building governed integration, not point-to-point scripts."
   - "Central IT or an integration team is sponsoring the project."
 fitNo:
-  - "Data originates at machines on a plant floor — that's <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>, even if an ERP sits at the far end of the pipeline."
-  - "Devices are your primary unit of scale (fleets of sensors, remote sites) — that's <a class=\"text-indigo-600 hover:underline\" href=\"/product/fleet/\">FlowFuse Fleet</a>."
-  - "You need PLC, SCADA, or industrial protocol connectivity — Hub doesn't include OT-certified nodes."
+  - "Data originates at machines on a plant floor. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>, even if an ERP sits at the far end of the pipeline."
+  - "Devices are your primary unit of scale (fleets of sensors, remote sites). That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/fleet/\">FlowFuse Fleet</a>."
+  - "You need PLC, SCADA, or industrial protocol connectivity. Hub doesn't include OT-certified nodes."
 included:
   - title: "Move data, reliably"
     chips: ["Git Integration", "High Availability", "DevOps Pipelines", "Private NPM Registry", "FlowFuse Tables"]
@@ -31,4 +31,4 @@ included:
     chips: ["Team Library", "IT App Blueprints", "Everything in the core FlowFuse platform"]
 certifiedDefault: it
 crossLinkEyebrow: "For IT Teams"
-crossLinkDescription: "Integrate and orchestrate data across ERPs, databases, and cloud APIs — governed centrally."
+crossLinkDescription: "Integrate and orchestrate data across ERPs, databases, and cloud APIs, governed centrally."

@@ -98,7 +98,7 @@ const capture = useCapture()
       <div class="mt-24">
         <div class="text-center md:text-left">
           <h2 class="mb-3">What's Included in <span class="text-indigo-600">{{ tier.label }}</span></h2>
-          <p class="max-w-3xl mx-auto md:mx-0 mb-8">Every {{ tier.label }} deployment includes the core FlowFuse platform capabilities — governance, hosting, DevOps, security — plus these capabilities on top.</p>
+          <p class="max-w-3xl mx-auto md:mx-0 mb-8">Every {{ tier.label }} deployment includes the core FlowFuse platform capabilities (governance, hosting, DevOps, security) plus these capabilities on top.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div v-for="group in tier.included" :key="group.title" class="rounded-lg border border-indigo-200 p-6">
