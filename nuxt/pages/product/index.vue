@@ -182,7 +182,7 @@ onUnmounted(() => {
                     <h3 class="text-3xl mt-2">{{ tier.heading }}</h3>
                     <p class="mt-4 text-gray-500" v-html="tier.description" />
                     <ProseNote class="mt-4"><span v-html="tier.idealFit" /></ProseNote>
-                    <a class="mt-6 inline-flex items-center gap-1 font-medium blue-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</a>
+                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${tier.id}/`" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</NuxtLink>
                   </div>
                   <div class="min-h-64 rounded-lg overflow-hidden border border-gray-200">
                     <img :src="tier.image.src" :alt="tier.image.alt" class="block w-full h-full object-cover" loading="lazy">

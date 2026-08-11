@@ -1,10 +1,12 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<{ defaultTier?: 'it' | 'ot' }>(), { defaultTier: 'it' })
+
 const { data } = await useAsyncData('certified-nodes', () => queryCollection('certifiedNodes').first())
 
 const bundles = computed(() => data.value?.bundles ?? [])
 type Bundle = typeof bundles.value[number]
 
-const active = ref<'it' | 'ot'>('it')
+const active = ref<'it' | 'ot'>(props.defaultTier)
 const activeBundle = computed(() => bundles.value.find(b => b.id === active.value) ?? bundles.value[0])
 const nodeCount = (b?: Bundle) => b ? b.groups.reduce((n, g) => n + g.nodes.length, 0) : 0
 
