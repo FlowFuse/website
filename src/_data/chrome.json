@@ -8,12 +8,27 @@
                     {
                         "title": "Product",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-3 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Features",
                                 "href": "/product/",
                                 "icon": "star"
+                            },
+                            {
+                                "label": "FlowFuse Edge",
+                                "href": "/product/edge/",
+                                "icon": "chip"
+                            },
+                            {
+                                "label": "FlowFuse Hub",
+                                "href": "/product/hub/",
+                                "icon": "circle-stack"
+                            },
+                            {
+                                "label": "FlowFuse Fleet",
+                                "href": "/product/fleet/",
+                                "icon": "server-stack"
                             },
                             {
                                 "label": "Security Statement",
@@ -422,6 +437,18 @@
                             {
                                 "label": "Features",
                                 "href": "/product/"
+                            },
+                            {
+                                "label": "FlowFuse Edge",
+                                "href": "/product/edge/"
+                            },
+                            {
+                                "label": "FlowFuse Hub",
+                                "href": "/product/hub/"
+                            },
+                            {
+                                "label": "FlowFuse Fleet",
+                                "href": "/product/fleet/"
                             },
                             {
                                 "label": "Security Statement",
