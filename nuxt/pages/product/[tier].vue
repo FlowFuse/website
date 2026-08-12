@@ -110,11 +110,11 @@ const capture = useCapture()
             <h3 class="text-lg font-semibold m-0 text-indigo-600 text-center md:text-left">{{ group.title }}</h3>
             <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
               <template v-for="chip in group.chips" :key="typeof chip === 'string' ? chip : chip.label">
-                <a
+                <NuxtLink
                   v-if="typeof chip !== 'string'"
-                  :href="chip.href"
-                  class="inline-flex items-center py-1.5 px-3 rounded-full border border-gray-200 text-sm font-regular bg-gray-50 text-[inherit] no-underline hover:no-underline"
-                >{{ chip.label }}</a>
+                  :to="chip.href"
+                  class="inline-flex items-center gap-1 py-1.5 px-3 border border-gray-200 rounded-full text-sm font-medium text-gray-700 bg-white no-underline hover:no-underline transition-colors duration-150 after:text-indigo-300 hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 hover:after:text-indigo-600"
+                >{{ chip.label }}</NuxtLink>
                 <span
                   v-else
                   class="inline-flex items-center py-1.5 px-3 rounded-full border border-gray-200 text-sm font-regular bg-gray-50"
