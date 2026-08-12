@@ -22,12 +22,35 @@ fitNo:
   - "You manage a handful of instances, not a fleet. The core platform likely already covers you."
 included:
   - title: "Manage devices at scale"
-    chips: ["Remote Device & Instance Management", "Device Fleet Updates", "Device Group Management"]
+    chips:
+      - label: "Remote Device & Instance Management"
+        href: "/docs/device-agent/deploy/"
+      - label: "Device Fleet Updates"
+        href: "/docs/device-agent/deploy/"
+      - label: "Device Group Management"
+        href: "/docs/user/device-groups/"
   - title: "Ship & roll back safely"
-    chips: ["Snapshot & Rollback", "DevOps Pipelines", "Edge Development"]
+    chips:
+      - label: "Snapshot & Rollback"
+        href: "/docs/user/snapshots/"
+      - label: "DevOps Pipelines"
+        href: "/docs/user/devops-pipelines/"
+      - label: "Edge Development"
+        href: "/docs/device-agent/running/"
   - title: "Monitor the fleet"
-    chips: ["Live Monitoring", "Performance Monitoring & Alerts", "Audit Log"]
+    chips:
+      - label: "Live Monitoring"
+        href: "/docs/user/instance-states/"
+      - "Performance Monitoring & Alerts"
+      - label: "Audit Log"
+        href: "/docs/user/logs/#team-audit-log"
   - title: "Built to collaborate"
-    chips: ["Team Library", "Blueprints", "Everything in the core FlowFuse platform"]
+    chips:
+      - label: "Team Library"
+        href: "/docs/user/shared-library/"
+      - label: "Blueprints"
+        href: "/blueprints/"
+      - label: "Everything in the core FlowFuse platform"
+        href: "/product/"
 crossLinkEyebrow: "For Device Fleets"
 crossLinkDescription: "Push flows, ship updates, and roll back remotely across thousands of distributed devices."
