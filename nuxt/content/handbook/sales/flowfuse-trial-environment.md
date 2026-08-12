@@ -7,7 +7,7 @@ navigation:
 
 ## FlowFuse Trial Environment
 
-The **FlowFuse Trial Environment** is the running FlowFuse the customer tests in
+The **FlowFuse Trial Environment** is the environment a customer uses to evaluate FlowFuse
 during a Proof of Value — a first-class asset of the engagement, alongside the
 [PoV Workbook](/handbook/sales/pov-workbook/). It is set up in the
 [Solution](/handbook/sales/meetings/solution/) stage (it is item 5 of the
