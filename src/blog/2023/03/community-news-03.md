@@ -1,7 +1,7 @@
 ---
 title: Community News March 2023
 subtitle: Your monthly update for the FlowFuse and Node-RED communities
-description: News from the FlowFuse and Node-RED communities
+description: "A roundup of March 2023 news from the FlowFuse and Node-RED communities, covering platform updates and community highlights."
 date: 2023-03-02
 authors: ["ian-skerrett"]
 image: "/images/blog/community-news.jpeg"

@@ -5,6 +5,7 @@ import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
 import { BLOG_TAGS } from './composables/useBlogList'
 import { redirects } from './redirects'
+import site from '../src/_data/site.json'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -106,7 +107,7 @@ const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, '../src
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
 
     // Captured at build time (Netlify sets CONTEXT during the build, not necessarily
     // in the deployed Function's runtime), then baked into the server bundle via
@@ -123,19 +124,98 @@ export default defineNuxtConfig({
     fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
 
     site: {
-        url: 'https://flowfuse.com',
+        url: site.baseURL,
         name: 'FlowFuse',
         description: 'Low-code application development platform for Node-RED and industrial IoT.',
         defaultLocale: 'en',
     },
 
-    ogImage: { zeroRuntime: true },
+    // Only covers content already served by Nuxt. The handbook is deliberately excluded
+    // (internal company content, not product documentation) - see README.md. Everything
+    // still on the legacy Eleventy site (customer-stories, use-cases, platform, etc.) isn't
+    // visible to @nuxt/content, so it's absent here too until those pages are migrated.
+    llms: {
+        domain: site.baseURL,
+        title: 'FlowFuse',
+        description: `${site.messaging.tagLine} - ${site.messaging.subtitle}`,
+        full: {
+            title: 'FlowFuse - Full Documentation',
+            description: 'Complete FlowFuse documentation, blog, changelog, and resources in a single markdown document.',
+        },
+        notes: [
+            'This file only covers pages served by the Nuxt frontend. Some sections of flowfuse.com are still served by a legacy Eleventy site not represented here.',
+        ],
+        sections: [
+            {
+                title: 'Documentation',
+                description: 'FlowFuse and Node-RED product documentation.',
+                contentCollection: 'docs',
+                contentFilters: [
+                    { field: 'redirect', operator: 'IS NULL' },
+                ],
+            },
+            {
+                title: 'Blog',
+                description: 'Tutorials, product updates, and industrial application guides.',
+                contentCollection: 'blog',
+            },
+            {
+                title: 'Changelog',
+                description: 'Release notes for the FlowFuse platform.',
+                contentCollection: 'changelog',
+            },
+            {
+                title: 'Ebooks',
+                description: 'Long-form guides on Node-RED and industrial applications.',
+                contentCollection: 'ebooks',
+            },
+            {
+                title: 'Whitepapers',
+                description: 'Long-form guides on Node-RED and industrial applications.',
+                contentCollection: 'whitepapers',
+            },
+            {
+                title: 'Product & Company',
+                links: [
+                    { title: 'Home', href: `${site.baseURL}/`, description: 'FlowFuse platform overview' },
+                    { title: 'Pricing', href: `${site.baseURL}/pricing/`, description: 'Plans and pricing information' },
+                    { title: 'Integrations', href: `${site.baseURL}/integrations/`, description: 'Supported integrations and connectors' },
+                    { title: 'Application Guide', href: `${site.baseURL}/application-guide/`, description: 'Patterns for building FlowFuse applications' },
+                    { title: 'Create an account', href: `${site.appURL}/account/create`, description: 'Start a free trial' },
+                    { title: 'Terms of Service', href: `${site.baseURL}/terms/` },
+                    { title: 'Privacy Policy', href: `${site.baseURL}/privacy-policy/` },
+                ],
+            },
+        ],
+    },
+
+    ogImage: {
+        zeroRuntime: true,
+        // resvg's default (loadSystemFonts: true) scans and parses every installed system
+        // font on every single render — measured at ~1.1-1.3s per image, over 2/3 of total
+        // render time. Satori already embeds all glyphs as vector paths (embedFont: true,
+        // the module default) before resvg ever sees the SVG, so resvg needs zero font
+        // resolution of its own at rasterization time.
+        resvgOptions: { font: { loadSystemFonts: false } },
+        // Content-addressed (hash of component + props + module version), so a build cache
+        // hit skips font-load/render-satori/render-resvg entirely and just returns the
+        // cached bytes — only pages whose title/section actually changed pay to re-render.
+        // A sibling of the font cache dir, not nested inside it: nuxt-og-image's own
+        // build-cache pruning does a flat readdirSync+readFileSync over this directory,
+        // which throws EISDIR if it also contains the font cache's fonts-ttf/ subdirectory.
+        // netlify.toml/test.yml cache both directories under one cache step.
+        buildCache: { base: 'node_modules/.cache/nuxt/.nuxt/cache/og-image-render' },
+    },
 
     sitemap: {
         sources: [
             // Nuxt-native dynamic routes (integrations) that
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
+            // docs/handbook/changelog/blog/ebooks/whitepapers with lastmod/images -
+            // see content-urls.get.ts for why this isn't done via a `sitemap` schema
+            // field on the collections instead.
+            '/api/__sitemap__/content-urls',
         ],
         urls: blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
         exclude: ['/_studio/**', '/api/**'],
@@ -148,7 +228,7 @@ export default defineNuxtConfig({
         ],
         // sitemap.xml covers Nuxt-native pages; sitemap-legacy.xml (generated by 11ty,
         // served as a static file from nuxt/public/) covers everything still on 11ty.
-        sitemap: ['https://flowfuse.com/sitemap.xml', 'https://flowfuse.com/sitemap-legacy.xml'],
+        sitemap: [`${site.baseURL}/sitemap.xml`, `${site.baseURL}/sitemap-legacy.xml`],
     },
 
     linkChecker: {
@@ -239,6 +319,16 @@ export default defineNuxtConfig({
                     '/privacy-policy',
                     '/integrations',
                     '/pricing',
+                    '/product',
+                    // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
+                    // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
+                    // the netlify preset here is hybrid (prerendered pages + a fallback
+                    // function), so it doesn't qualify and /sitemap.xml gets served live by
+                    // that function instead. There, /var/task has no `git` binary, so every
+                    // git-derived lastmod (handbook/changelog/blog/ebooks/whitepapers, see
+                    // content-urls.get.ts) silently resolves to undefined. Explicitly listing
+                    // it here bakes it at build time instead, inside the git checkout.
+                    '/sitemap.xml',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',

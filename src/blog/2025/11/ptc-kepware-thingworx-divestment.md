@@ -1,7 +1,7 @@
 ---
 title: "The Industrial IoT Market Shift: What the PTC Divestment Means for Your Data Strategy"
 subtitle: "Understanding the bigger picture behind the $600M Kepware and ThingWorx sale"
-description: "PTC's $600M divestment of Kepware and ThingWorx to TPG raises critical questions for industrial organizations. Learn what this means for your data strategy and why open-source alternatives like FlowFuse offer a path forward."
+description: "PTC's $600M divestment of Kepware and ThingWorx to TPG raises critical questions for industrial data strategy going forward."
 date: 2025-11-06
 authors: ["pablo-filomeno"]
 image: /blog/2025/11/images/the-industrial-iot-market-shift.png
@@ -59,7 +59,7 @@ For organizations evaluating their options, the differences between FlowFuse and
 
 - Future-proof architecture: FlowFuse is cloud-ready, portable, and designed to evolve with your infrastructure. After multiple ownership transitions, Kepware's future direction under TPG remains uncertain.
 
-You can explore these differences in detail at https://flowfuse.com/vs/kepware.
+You can explore these differences in detail at [flowfuse.com/vs/kepware](/vs/kepware/).
 
 
 ## Connect to Anything, Collect Everything

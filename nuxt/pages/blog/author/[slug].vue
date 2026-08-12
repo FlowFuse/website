@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { isFuturePost } from '../../../composables/useBlogList'
+import { getAllBlogPosts } from '../../../utils/sharedContent'
 
 definePageMeta({ layout: 'default' })
 
@@ -15,10 +16,7 @@ if (!author.value) {
 const { data: posts } = await useAsyncData(
     () => `blog-author-${slug.value}`,
     async () => {
-        const all = await queryCollection('blog')
-            .select('path', 'title', 'date', 'authors', 'description', 'meta', 'image')
-            .order('date', 'DESC')
-            .all()
+        const all = await getAllBlogPosts()
         return all.filter(entry => !isFuturePost(entry.date) && (entry.authors || []).includes(slug.value))
     }
 )

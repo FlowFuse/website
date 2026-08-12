@@ -1,7 +1,7 @@
 ---
 title: Migrating from Self-Managed Node-RED to FlowFuse-Managed Node-RED
 subtitle: A Step-by-Step Guide to Transitioning Your Node-RED Flows to a Streamlined FlowFuse Environment
-description: Discover how to migrate from a self-managed Node-RED setup to a FlowFuse-managed environment, including step-by-step instructions for instance creation, data backup, and snapshot deployment.
+description: "Discover how to migrate from a self-managed Node-RED setup to a fully FlowFuse-managed environment, step by step, with ease."
 date: 2024-11-13
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/migrating-from-self-managed-nr-to-flowfuse-managed-nr.png

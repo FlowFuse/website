@@ -1,7 +1,7 @@
 ---
 title: Using Node-RED to keep Solar PV afloat
 subtitle: How spb sonne used Node-RED with a renewable energy solution
-description: How spb sonne used Node-RED with a renewable energy solution
+description: "Learn how spb sonne used Node-RED with FlowFuse to keep a solar PV renewable energy solution running smoothly and reliably."
 date: 2022-02-09 09:26:00.0
 authors: ["zeger-jan-van-de-weg"]
 tags:

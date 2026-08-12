@@ -7,7 +7,7 @@ jobs:
   # FlowFuse/flowfuse documentation pull requests share one definition. The check this
   # reports is "test_website / Build and check", which the "protect main" ruleset requires.
   test_website:
-    uses: FlowFuse/github-actions-workflows/.github/workflows/build_website.yml@add-website-build-workflow
+    uses: FlowFuse/github-actions-workflows/.github/workflows/build_website.yml@build_website/v1
     with:
       website_repository: ${{ github.repository }}
       website_ref: ${{ github.sha }}

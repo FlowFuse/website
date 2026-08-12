@@ -1,7 +1,7 @@
 ---
 title: Custom Vuetify components for Dashboard 2.0
 subtitle: Expand your dashboard with the full collection of Vuetify components
-description: Expand your dashboard with the full collection of Vuetify components
+description: "Expand your Node-RED Dashboard 2.0 with the full collection of custom Vuetify components now available in UI Template nodes."
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2023/10/images/tile-blog-custom-vuetify-components-for-Dashboard.png
 date: 2023-10-02

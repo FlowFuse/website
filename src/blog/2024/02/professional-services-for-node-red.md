@@ -1,7 +1,7 @@
 ---
 title: Should You Invest in Professional Services for Your Node-RED Development?
 subtitle: Professional Services for Node-RED, When and Why?
-description: Discover the benefits of investing in professional services for Node-RED development.
+description: "Discover the benefits of investing in professional services for your Node-RED development, from initial setup to full scaling."
 date: 2024-02-05
 authors: ["grey-dziuba"]
 image: /blog/2024/01/images/professional-services-for-your-node-red.png

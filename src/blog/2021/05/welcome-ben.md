@@ -1,6 +1,6 @@
 ---
 title: Welcome Ben
-description: Welcoming Ben Hardill to FlowFuse Inc.
+description: "Welcoming Ben Hardill to FlowFuse Inc., the latest addition to the team building the future of industrial low-code automation."
 date: 2021-05-10
 authors: ["nick-oleary"]
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Calling a Python script from Node-RED (2026)"
 subtitle: "A step-by-step guide to executing Python scripts from Node-RED, passing arguments, and capturing output."
-description: "Learn how to run a Python script from Node-RED using the Exec node. Step-by-step guide covering script execution, passing arguments, reading sensor data, and troubleshooting, combine Node-RED's visual flows with Python's libraries."
+description: "Learn how to run a Python script from Node-RED using the Exec node, combining visual flows with Python's rich libraries."
 lastUpdated: 2026-06-03
 date: 2024-07-10
 authors: ["sumit-shinde"]

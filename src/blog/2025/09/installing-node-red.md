@@ -1,7 +1,7 @@
 ---
 title: "Download Node-RED for Production: Windows, Mac, Linux, Raspberry Pi (2026)"
 subtitle: Scale Node-RED from prototype to production with centralized management and 24/7 reliability
-description: "Learn how to install and run Node-RED on various platforms, such as local computer, Raspberry Pi, Mac, Linux, or Cloud. Production-ready solutions from the creators of Node-RED."
+description: "Learn how to install and run Node-RED on Windows, Mac, Linux, or Raspberry Pi, production-ready from the creators of Node-RED."
 lastUpdated: 2026-06-19
 date: 2025-09-19
 authors: ["sumit-shinde"]
