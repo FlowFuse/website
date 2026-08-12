@@ -3,6 +3,8 @@ title: "VDA 5050 Tutorial: Connect AGVs to Factory Systems over MQTT"
 subtitle: "How the six VDA 5050 MQTT topics work, and how to build a master control flow for a mixed AGV fleet."
 description: "VDA 5050 explained: how the standard structures AGV communication over MQTT, and how to build a working master control flow in FlowFuse."
 date: 2025-08-12
+authors: ["sumit-shinde"]
+image: /blog/2026/08/images/vda5050-tutorial.png
 keywords: vda 5050
 tags:
   - posts
