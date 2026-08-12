@@ -1,7 +1,7 @@
 ---
 title: "Deploying the FlowFuse Device Agent via Balena"
 subtitle: "Using Balena.io to Deploy fleets of devices"
-description: Learn how to deploy the FlowFuse Device Agent via Balena.io for efficient fleet management. Utilize Docker files and environment variables to configure devices seamlessly. 
+description: "Learn how to deploy the FlowFuse Device Agent via Balena.io for efficient fleet management using simple Docker files today."
 date: 2023-11-24
 authors: ["ben-hardill"]
 image: "/blog/2023/11/images/balena.png"

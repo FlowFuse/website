@@ -1,7 +1,7 @@
 ---
 title: Introducing the FlowFuse Community Forum
 subtitle: A Community Forum for support, inspiration, and knowledge sharing
-description: A Community Forum for support, inspiration, and knowledge sharing
+description: "Introducing the FlowFuse Community Forum, a home for support, inspiration, and knowledge sharing among Node-RED users everywhere."
 date: 2023-06-12 12:00:00
 authors: ["zeger-jan-van-de-weg"]
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Welcome Joe
-description: Welcoming Joe Pavitt to FlowFuse Inc.
+description: "Welcoming Joe Pavitt to FlowFuse Inc., the latest addition to the team building the future of industrial low-code automation."
 date: 2022-02-08
 authors: ["nick-oleary"]
 tags:

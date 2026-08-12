@@ -1,7 +1,7 @@
 ---
 title: "Re-spin of Docker-Compose install package"
 subtitle: Adding ability to locally build file-server container
-description: Details FlowFuse v1.1.1
+description: "Details on FlowFuse v1.1.1, a re-spin of the Docker-Compose install package with fixes for the platform installation process."
 date: 2022-11-25
 authors: ["ben-hardill"]
 tags:

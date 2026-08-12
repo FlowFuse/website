@@ -1,7 +1,7 @@
 ---
 title: "Edge vs Cloud AI in Manufacturing: Where Each Actually Belongs"
 subtitle: "Should we run our AI at the edge or in the cloud?"
-description: "Industrial AI works best when edge and cloud are treated as complementary layers. This article explores how manufacturers use hierarchical architectures to combine real-time inference on the plant floor with large-scale model training in the cloud."
+description: "Industrial AI works best when edge and cloud are complementary layers combining real-time inference with cloud model training."
 lastUpdated: 2026-06-19
 date: 2026-03-16
 authors: ["sumit-shinde"]

@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Open Source Tier Resource Limits
 subtitle: The first 5 Node-RED runtimes are part of the open-source tier going forward
-description: The first 5 Node-RED runtimes are part of the open-source tier going forward
+description: "FlowFuse's Open Source tier resource limits: the first 5 Node-RED runtimes are now part of the open-source tier going forward."
 date: 2024-03-14
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2024/03/images/open-source-tier-resource-limits.png

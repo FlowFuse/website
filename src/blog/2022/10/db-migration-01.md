@@ -1,7 +1,7 @@
 ---
 title: "Scheduled maintenance: Database encryption October 2022"
 subtitle: Moving to encrypted PostgreSQL storage
-description: Details on upcoming maintenance period
+description: "Details on upcoming scheduled maintenance for database encryption in October 2022, including expected impact and timing."
 date: 2022-10-18
 authors: ["ben-hardill"]
 tags:
