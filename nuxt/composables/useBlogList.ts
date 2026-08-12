@@ -1,3 +1,5 @@
+import { getAllBlogPosts } from '../utils/sharedContent'
+
 export const BLOG_PAGE_SIZE = 19
 
 // Matches the historical src/blog/*.njk tag-listing pages (blogTags.json controls
@@ -14,10 +16,7 @@ export function useBlogList(tag: string | null, pageNumber: number) {
     const { data: allEntries } = useAsyncData(
         tag ? `blog-all-${tag}` : 'blog-all',
         async () => {
-            const all = await queryCollection('blog')
-                .select('path', 'title', 'date', 'tags', 'authors', 'description', 'meta', 'image')
-                .order('date', 'DESC')
-                .all()
+            const all = await getAllBlogPosts()
             return all.filter(entry => !isFuturePost(entry.date) && (!tag || (entry.tags || []).includes(tag)))
         }
     )

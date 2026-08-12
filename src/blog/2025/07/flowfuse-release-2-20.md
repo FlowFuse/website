@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.20: AI-Assisted Node-RED & New Database Service"
 subtitle: "Introducing FlowFuse Tables for data storage, Tables nodes for database querying, Smart Suggestions in the Node-RED editor, More Powerful Instances, Retrieval Augmented Generation Blueprint for building intelligent applications, and a redesigned Applications page for better workspace management."
-description: "Introducing FlowFuse Tables for data storage, Tables nodes for dashboard visualization, Smart Suggestions in the Node-RED editor, More Powerful Starter tier, Retrieval Augmented Generation Blueprint for intelligent applications, and a redesigned Applications page for better workspace management."
+description: "FlowFuse 2.20 introduces AI-assisted Node-RED and a brand new database service, plus Smart Suggestions in the flow editor."
 date: 2025-07-31
 authors: ["greg-stoutenburg"]
 image: /blog/2025/07/images/release-2-20.png

@@ -1,7 +1,7 @@
 ---
 title: "Best Practices Integrating a Modbus Device With Node-RED (2026)"
 subtitle: Integrate Modbus with Node-RED
-description: Modbus is a widely adopted protocol for accessing data from existing legacy manufacturing equipment. Node-RED makes it very easy to connect to Modbus enabled equipment. However, there are some best practices we have developed to maintain system integrity when integrating Modbus devices with Node-RED
+description: "Modbus is a widely adopted protocol for legacy manufacturing equipment. Learn best practices for integrating it with Node-RED."
 lastUpdated: 2026-06-03
 date: 2023-05-16
 authors: ["andrew-lynch"]

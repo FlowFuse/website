@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.2 released
 subtitle: Keeping the releases flowing of our open platform for Node-RED
-description: Keeping the releases flowing of our open platform for Node-RED
+description: "FlowFuse 0.2 keeps the releases flowing for its open platform for Node-RED, adding early improvements to the product overall."
 date: 2022-02-17 1:00:00.0
 authors: ["nick-oleary"]
 tags:

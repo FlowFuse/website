@@ -1,7 +1,7 @@
 ---
 title: Node-RED Tips - Dashboard Edition
 subtitle: Save yourself time when working with Node-RED Dashboards with these three tips.
-description: Learn three practical tips for improving your Node-RED Dashboard workflow, such as creating responsive layouts, adding multiple data series to charts, and persisting slider values.
+description: "Learn three practical tips for improving your Node-RED Dashboard workflow: responsive layouts, chart series, and slider values."
 date: 2023-06-01 12:00:00
 authors: ["rob-marcer"]
 image: /images/blog/nr-quicktips.jpg

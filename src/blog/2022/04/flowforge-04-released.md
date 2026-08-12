@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.4 released
 subtitle: Getting ready for Node-RED 3.0
-description: Getting ready for Node-RED 3.0
+description: "FlowFuse 0.4 is released, getting the platform fully ready for Node-RED 3.0 with early compatibility improvements for users."
 date: 2022-04-14 12:00:00.0
 authors: ["sam-machin"]
 tags:

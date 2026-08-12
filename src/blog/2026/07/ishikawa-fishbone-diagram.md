@@ -1,7 +1,7 @@
 ---
 title: "Ishikawa Fishbone Diagram: 6M, Manufacturing Example & Template"
 subtitle: "How a 60-year-old drawing still finds the root cause faster than most modern tools."
-description: "Learn what an Ishikawa (fishbone) diagram is, the 6Ms, and how to use it for root cause analysis in manufacturing, with a worked example, how it compares to the 5 Whys and Pareto analysis, a template, and common mistakes."
+description: "Learn what an Ishikawa (fishbone) diagram is, the 6Ms, and how to use it for root cause analysis in manufacturing settings."
 lastUpdated: 2026-07-29
 date: 2026-07-27
 authors: ["sumit-shinde"]

@@ -1,7 +1,7 @@
 ---
 title: "How to Stop Silent Pipeline Failures From Swallowing Your IIoT Data"
 subtitle: "When your pipeline fails, every dropped message is data you'll never get back, until now"
-description: "Most IIoT pipelines fail quietly. No record, no alert, no way to know what was lost. This guide shows you how to build a fault-tolerant data pipeline that catches every failure, retries intelligently, and gives you full visibility into what went wrong, when it happened, and how to fix it."
+description: "Most IIoT pipelines fail quietly. Learn how to build a fault-tolerant data pipeline that catches every failure and retries."
 date: 2026-03-05
 keywords: dead letter queue, IIoT, exponential backoff, retry pattern, message queue, error handling, edge computing, industrial IoT, FlowFuse, message broker, data pipeline, fault tolerance
 authors: ["sumit-shinde"]

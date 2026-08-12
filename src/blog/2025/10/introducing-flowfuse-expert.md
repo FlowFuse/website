@@ -1,7 +1,7 @@
 ---
 title: "Introducing FlowFuse Expert"
 subtitle: "Your AI expert for FlowFuse and Node-RED"
-description: "Meet FlowFuse Expert that gives you a clear recipe to build Node-RED flows, step by step."
+description: "Meet FlowFuse Expert, the AI copilot that gives you a clear, step-by-step recipe to build Node-RED flows even faster today."
 date: 2025-10-16
 keywords: node-red expert, node-red developer, flowfuse expert, iiot, industrial automation, mcp nodes, onnx nodes, ai-assisted development, rag, gpt-4.1
 authors: ["sumit-shinde"]

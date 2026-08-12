@@ -1,7 +1,7 @@
 --- 
 title: "Monitoring Device Health and Performance at Scale with FlowFuse" 
 subtitle: "Track and Optimize Edge Device Performance with Node-RED and FlowFuse."
-description: "Learn how to monitor system health and performance with Node-RED. Track CPU usage, memory, and other key metrics, and efficiently scale device monitoring with FlowFuse to thousands of devices."
+description: "Learn how to monitor system health and performance with Node-RED, tracking CPU, memory, and other key device metrics at scale."
 date: 2025-02-21
 authors: ["sumit-shinde"]
 image:  /blog/2025/02/images/monitoring-device-health-and-performance-at-scale.png

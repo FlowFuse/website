@@ -95,5 +95,7 @@ package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
     "nuxt/public/img", # Eleventy Image Disk Cache
-    ".cache/images" # Eleventy image processing cache
+    ".cache/images", # Eleventy image processing cache
+    "nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image", # nuxt-og-image's resolved font URLs + converted TTFs
+    "nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image-render" # nuxt-og-image's rendered-image build cache
   ]

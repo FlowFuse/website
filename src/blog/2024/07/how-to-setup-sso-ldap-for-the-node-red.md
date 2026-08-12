@@ -1,7 +1,7 @@
 ---
 title: How to Set Up SSO LDAP for Node-RED
 subtitle: Step-by-step guide on setting up SSO LDAP for your self-hosted FlowFuse platform
-description: Learn how to configure SSO LDAP for your self-hosted FlowFuse platform using OpenLdap as the Identity Provider. Simplify user authentication across applications with this step-by-step guide.
+description: "Learn how to configure SSO LDAP for your self-hosted FlowFuse platform using OpenLdap as the Identity Provider, step by step."
 date: 2024-07-29
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/how-to-set-up-sso-ldap-for-node-red.png
@@ -278,7 +278,7 @@ Slappasswd -g
 
 ### Signing in Using SSO
 
-To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user_management/#creating-new-users).
+To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user-management/#creating-new-users).
 
 1. Open your platform in the browser. Enter the username in the username/email field.
 2. Click on "Login".

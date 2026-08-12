@@ -1,7 +1,7 @@
 ---
 title: "How Arch Systems Connected 100+ Factory Databases with FlowFuse"
 subtitle: "Arch cut new-customer rollout time to a fraction of what it was, without adding operational complexity"
-description: "Arch Systems connects 100+ factory databases to a single analytics platform using FlowFuse. See how standardized subflows and DevOps pipelines made each new integration cheap to build and cheap to maintain."
+description: "Arch Systems connects 100+ factory databases to a single analytics platform using FlowFuse, standardized subflows and pipelines."
 date: 2026-06-04
 keywords: manufacturing data integration, MES integration, factory database integration, industrial DevOps, FlowFuse, low-code manufacturing, real-time production data, scalable data integration
 authors: ["sumit-shinde"]

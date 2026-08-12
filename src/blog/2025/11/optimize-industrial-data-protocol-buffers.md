@@ -1,7 +1,7 @@
 ---
 title: "How to Optimize Industrial Data Communication with Protocol Buffers"
 subtitle: "Cut network traffic by 60% with binary serialization, three nodes, one file, no complexity"
-description: "Stop transmitting waste. Learn how Protocol Buffers reduces industrial IoT data size by 60% using FlowFuse. Implementation takes one afternoon with three nodes and a schema file, no coding required."
+description: "Stop transmitting waste. Learn how Protocol Buffers reduce industrial IoT data size by 60% using FlowFuse, no coding required."
 lastUpdated: 2026-06-17
 date: 2025-11-28
 authors: ["sumit-shinde"]
