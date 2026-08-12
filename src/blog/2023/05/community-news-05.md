@@ -1,7 +1,7 @@
 ---
 title: Community News May 2023
 subtitle: Your monthly update for the FlowFuse and Node-RED communities
-description: News from the FlowFuse and Node-RED communities
+description: "A roundup of May 2023 news from the FlowFuse and Node-RED communities, covering platform updates and community highlights."
 date: 2023-05-04
 authors: ["rob-marcer"]
 image: "/images/blog/community-news.jpeg"
@@ -18,7 +18,7 @@ Welcome to the FlowFuse newsletter for May 2023, a monthly roundup of what’s b
 ## Upcoming events
 
 ### Ask Me Anything about Debugging Node-RED
-Our monthly Node-RED AMA session will have a special focus on debugging. Nick and Rob will lead us through some useful debug workflows to show how they approach debugging Node-RED applications. During the live coding sessions there will be opportunities for attendees to ask questions in real-time. Join us to learn from the experts on the tips and tricks for debugging Node-RED flows. [Sign-up today to participate](/ask-me-anything/ama-nodered-may/). 
+Our monthly Node-RED AMA session will have a special focus on debugging. Nick and Rob will lead us through some useful debug workflows to show how they approach debugging Node-RED applications. During the live coding sessions there will be opportunities for attendees to ask questions in real-time. Join us to learn from the experts on the tips and tricks for debugging Node-RED flows.
 
 ### Getting Started with Node-RED Dashboard
 How can you use Node-RED to create dashboards and interactive graphs of your data? The answer is the Node-RED Dashboard node, the most popular node in the Node-RED community. In this webinar, Rob Marcer will take you through the steps of how to get started with the Node-RED Dashboard. [Register today](/webinars/2023/getting-started-nodered-dashboard/).

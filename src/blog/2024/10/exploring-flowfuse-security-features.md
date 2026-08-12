@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Security Features You Didn’t Know You Needed 
 subtitle: Powerful Security Features That Enhance Your Node-RED applications
-description: Discover essential FlowFuse security features that enhance protection and ensure secure Node-RED deployments. Explore tools you didn't know you needed for robust security.
+description: "Discover essential FlowFuse security features that enhance protection and ensure secure Node-RED deployments at any scale."
 date: 2024-10-24
 authors: ["sumit-shinde"]
 image: /blog/2024/10/images/flowfuse-security-features.png

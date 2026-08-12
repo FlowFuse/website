@@ -1,7 +1,7 @@
 ---
 title: Announcing FlowFuse Cloud
 subtitle: Hosting your Node-RED, so you don't have to.
-description: Join the waitlist for our cloud offering.
+description: "FlowFuse Cloud is officially announced. Join the waitlist for early access to FlowFuse's new hosted Node-RED cloud offering."
 date: 2022-02-23 19:44:00.0
 authors: ["zeger-jan-van-de-weg"]
 tags:

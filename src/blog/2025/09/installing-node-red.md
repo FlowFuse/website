@@ -1,7 +1,7 @@
 ---
 title: "Download Node-RED for Production: Windows, Mac, Linux, Raspberry Pi (2026)"
 subtitle: Scale Node-RED from prototype to production with centralized management and 24/7 reliability
-description: "Learn how to install and run Node-RED on various platforms, such as local computer, Raspberry Pi, Mac, Linux, or Cloud. Production-ready solutions from the creators of Node-RED."
+description: "Learn how to install and run Node-RED on Windows, Mac, Linux, or Raspberry Pi, production-ready from the creators of Node-RED."
 lastUpdated: 2026-06-19
 date: 2025-09-19
 authors: ["sumit-shinde"]
@@ -67,6 +67,9 @@ FlowFuse was co-founded by [Nick O'Leary](https://knolleary.net/about/), the cre
 After more than a decade of working directly with enterprise users deploying Node-RED in production environments, Nick and the FlowFuse team built FlowFuse to address the operational challenges that standalone Node-RED cannot solve at scale.
 
 FlowFuse makes Node-RED production-ready through centralized management across industrial infrastructure, incorporating years of real-world deployment experience from the creator of Node-RED himself.
+
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
 
 ### Enterprise Reliability from Node-RED Experts
 

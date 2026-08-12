@@ -1,7 +1,7 @@
 ---
 title: "Build a Machine Downtime Tracking Application"
 subtitle: "Build a FlowFuse dashboard that logs machine stoppages, calculates downtime, and lets operators assign reasons"
-description: "Learn how to build a machine downtime tracking application in FlowFuse that captures stop and start events over MQTT, calculates downtime duration automatically, lets operators log a reason from a dashboard, and displays live KPI cards."
+description: "Learn how to build a machine downtime tracking application in FlowFuse that captures events over MQTT and shows live KPIs."
 date: 2026-07-08
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/build-machine-downtime-tracking-application.png
@@ -58,7 +58,7 @@ In this tutorial, you'll build a machine downtime tracking application using Flo
 ![Screenshot: completed dashboard with KPI cards and stoppages table](./images/downtime-logger.png)
 _The finished dashboard: KPI cards on top, unresolved stoppages below._
 
-You can interact with the live demo here: <a href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Machine Downtime Tracking Demo</a>.
+You can interact with the live demo here: :live-demo-link{href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" label="Try the Machine Downtime Tracking Demo"}.
 
 By the end, you'll have a foundation you can extend into OEE, production reporting, maintenance dashboards, or MES integrations.
 

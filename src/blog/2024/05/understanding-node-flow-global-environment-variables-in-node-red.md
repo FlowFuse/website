@@ -1,7 +1,7 @@
 ---
 title: "How to Use Variables in Node-RED: Flow, Global, Context & Environment (2026)"
 subtitle: A complete guide to setting, retrieving, and persisting Node-RED variables for efficient, production-ready flows.
-description: Learn how to use Node-RED global, flow, context, and environment variables in 2026. Step-by-step examples for setting, retrieving, and persisting state, plus best practices and an FAQ.
+description: "Learn how to use Node-RED global, flow, context, and environment variables in 2026, with step-by-step examples and an FAQ."
 lastUpdated: 2026-06-01
 date: 2024-05-06
 authors: ["sumit-shinde"]
@@ -33,7 +33,7 @@ faq:
   answer: "Use node context for private, node-specific data such as counters or temporary calculations that no other node should access. Node variables exist only within a single function node, providing the most restrictive and isolated scope."
 - question: "How can I view all the variables currently set in Node-RED?"
   answer: "Open the Context Data panel from the sidebar dropdown. It shows all node, flow, and global variables in organized sections, lets you see when each was last updated, copy names or values, refresh individual variables, and delete them directly from the interface."
-tldr: "Node-RED offers four kinds of variables for managing data and state: message variables that travel with msg through nodes, and context variables in three scopes node (private to one function node), flow (shared within a tab), and global (shared across the whole instance) plus environment variables for configuration and secrets. You set and retrieve them with global.set/get, flow.set/get, and context.set/get in function nodes, or visually through the change node. Context variables live in memory by default and are lost on restart, so use persistent storage (FlowFuse provides this) for any state that must survive reboots and redeployments."
+tldr: "Node-RED has message variables that travel with msg, context variables in three scopes (node, flow, and global), and environment variables for configuration and secrets. You set and read them in function nodes or visually with a change node. Context lives in memory by default, so use persistent storage for any state that must survive a restart."
 ---
 
 Node-RED has four types of variables: **message variables** that travel with `msg` through your nodes, and **context variables** in three scopes, **node** (private to a single function node), **flow** (shared within one tab), and **global** (shared across the entire instance), plus **environment variables** for configuration and secrets. You set and retrieve context variables with `global.set()`/`global.get()`, `flow.set()`/`flow.get()`, and `context.set()`/`context.get()` in function nodes, or visually through the change node. Context variables are stored in memory by default and are lost on restart, so any state that must survive a reboot needs persistent storage.
@@ -59,6 +59,9 @@ Node-RED offers three primary variable categories:
 Global variables provide a centralized storage mechanism accessible throughout your entire Node-RED instance. Any function, change, inject, or switch node can read or write global variables, making them perfect for sharing data across multiple flows.
 
 **When to use global variables:** Consider using them for system-wide settings, shared configuration, or data that multiple flows need to access. For example, in a home automation system with separate flows for lighting, security, and climate control, global variables can store user preferences that all flows reference.
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ### Working with Global Variables
 

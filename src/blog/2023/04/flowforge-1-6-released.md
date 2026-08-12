@@ -1,7 +1,7 @@
 ---
 title: FlowFuse v1.6 Now Available
 subtitle: FlowFuse Now Supports Multi-Instance Node-RED for Complex Application Development
-description: FlowFuse Now Supports Multi-Instance Node-RED for Complex Application Development
+description: "FlowFuse v1.6 now supports Multi-Instance Node-RED, enabling complex application development across multiple instances at once."
 date: 2023-04-13 
 authors: ["ian-skerrett"]
 image: /blog/2023/04/images/release-1.6.0.png

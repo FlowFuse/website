@@ -21,7 +21,7 @@ Unified Namespace (UNS) is changing the way data is managed in industrial enviro
 
 <!--more-->
 
-At its core, a Unified Namespace ([UNS](/solutions/uns/)) is a data architecture that centralizes all your data from devices, sensors, and systems into a single hub. It helps you make sense of everything by organizing, structuring, and standardizing your data for easy access and analysis. Instead of dealing with fragmented data silos, you get a unified, real-time view of your entire operation. 
+At its core, a Unified Namespace ([UNS](/use-cases/uns/)) is a data architecture that centralizes all your data from devices, sensors, and systems into a single hub. It helps you make sense of everything by organizing, structuring, and standardizing your data for easy access and analysis. Instead of dealing with fragmented data silos, you get a unified, real-time view of your entire operation. 
 
 Think of it as the brain of your entire operation, connecting all your business events in one place. Whether you're tracking performance, optimizing workflows, or making real-time decisions, a well-designed UNS makes it all possible. For more details, check out our article: [Introduction to the Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/).
 

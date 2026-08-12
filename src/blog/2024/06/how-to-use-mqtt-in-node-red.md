@@ -53,7 +53,7 @@ meta:
     - question: "What is a dynamic MQTT subscription in Node-RED?"
       answer: "A dynamic subscription lets you subscribe and unsubscribe at runtime without redeploying. Set the mqtt-in node's Action to 'dynamic', then send messages with msg.action set to 'subscribe' or 'unsubscribe' and msg.topic set to the target topic. It's useful when users pick equipment to monitor from a dashboard or when topics come from a database or API."
     - question: "How do I optimize MQTT messages in Node-RED?"
-      answer: "For high-frequency or bandwidth-constrained systems, consider using Protocol Buffers instead of JSON. Protocol Buffers reduce message size by 60-80% and improve parsing performance. Define your data schema in a `.proto` file, then use protocol buffer nodes to encode before publishing and decode after receiving. This is especially valuable for industrial IoT with thousands of sensors. See our guide on optimizing industrial data with Protocol Buffers: https://flowfuse.com/blog/2025/11/optimize-industrial-data-protocol-buffers/"
+      answer: "For high-frequency or bandwidth-constrained systems, consider using Protocol Buffers instead of JSON. Protocol Buffers reduce message size by 60-80% and improve parsing performance. Define your data schema in a `.proto` file, then use protocol buffer nodes to encode before publishing and decode after receiving. This is especially valuable for industrial IoT with thousands of sensors. See our guide on optimizing industrial data with Protocol Buffers: /blog/2025/11/optimize-industrial-data-protocol-buffers/"
 tldr: "Node-RED's built-in mqtt-in and mqtt-out nodes make it straightforward to connect to any MQTT broker, subscribe to topics with wildcard support, and publish data. Dynamic subscriptions, TLS security, environment-variable credentials, and a well-structured topic hierarchy are the key practices for reliable, production-grade MQTT flows."
 ---
 
@@ -103,6 +103,9 @@ Set these in your Node-RED settings or FlowFuse environment config
 > See [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for setup details.
 
 Click **Add**, then **Done**. Deploy your flow. If the node shows "connected" under it, you're in.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Publishing Data to a Topic on MQTT Broker
 

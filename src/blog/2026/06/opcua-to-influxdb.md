@@ -1,7 +1,7 @@
 ---
 title: "Historical Data Logging with OPC UA and InfluxDB"
 subtitle: "Turn live equipment readings into a durable history you can query, chart, and analyze"
-description: "Learn how to connect OPC UA and InfluxDB in FlowFuse to log industrial equipment data as timestamped history, so you can spot trends, prove compliance, and catch failures before they happen."
+description: "Learn how to connect OPC UA and InfluxDB in FlowFuse to log equipment data as timestamped history and spot trends early."
 date: 2026-06-24
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/opcua-to-influxdb.png

@@ -1,7 +1,7 @@
 ---
 title: "Why Manufacturing Needs GitOps"
 subtitle: "Bringing the same change management discipline manufacturers apply to machines to the software running alongside them"
-description: "Manufacturing has always managed change on the factory floor with discipline. Learn how GitOps and FlowFuse DevOps Pipelines bring that same rigor to industrial software deployments."
+description: "Manufacturing has always managed change with discipline. Learn how GitOps and FlowFuse Pipelines bring that rigor to software."
 date: 2026-07-03
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/why-manufacturing-need-gitops-tile.png

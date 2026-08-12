@@ -31,7 +31,7 @@ rather than a single dedicated program page:
   for the EMEA, US, and other regional variants.
 - **Digital marketing skills**: familiarity with LinkedIn ABM tooling is
   listed as a core skill for the
-  [Developer Relations Advocate role](/handbook/peopleops/job-descriptions/developer-relations-advocate/),
+  [Product Marketer role](/handbook/peopleops/job-descriptions/product-marketer/),
   reflecting how ABM campaigns are supported cross-functionally.
 
 ## How it fits together

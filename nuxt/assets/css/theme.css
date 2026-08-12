@@ -59,16 +59,43 @@
     }
 }
 
-.handbook-content :is(h1, h2, h3, h4, h5, h6) {
-    @apply text-gray-700;
-}
+/* Wrapped in @layer base, same reasoning as the h1-h5 sizing above: unlayered
+   CSS beats every @layer regardless of specificity, which flattened any
+   component embedded in handbook prose (e.g. the Cta* examples, which render
+   as <a> tags) down to plain blue text. :where(a) additionally zeroes out the
+   extra specificity the element selector would otherwise add over a bare
+   utility class like `.text-inverted`, so any component's own classes win
+   without having to special-case which components to exclude. */
+@layer base {
+    .handbook-content :is(h1, h2, h3, h4, h5, h6) {
+        @apply text-gray-700;
+    }
 
-.handbook-content a {
-    @apply text-blue-700 no-underline border-none hover:underline;
+    .handbook-content :where(a) {
+        @apply text-blue-700 no-underline border-none hover:underline;
+    }
 }
 
 @layer base {
     *, ::before, ::after {
         border-color: var(--color-gray-200);
     }
+}
+
+/* Nuxt UI's own colors runtime plugin (@nuxt/ui/dist/runtime/plugins/colors.js)
+   injects a SEPARATE <style id="nuxt-ui-colors"> tag, regenerated on every
+   page load, with `@layer theme { :root, :host, .light { --ui-primary:
+   var(--ui-color-primary-500); ... } }` - shade 500 is hardcoded in that
+   plugin for light mode (400 for dark), not something app.config can change.
+   The handbook page wraps its content in a `.light` div (see
+   pages/handbook/[...slug].vue), which that rule matches DIRECTLY - a direct
+   match always wins over an inherited value, so it silently downgrades every
+   Cta* button rendered inside handbook prose from indigo-600/red-600 (the
+   brand colors set on :root above, in this file's own @theme block) to
+   indigo-500/red-500. Unlayered here so this can't lose regardless of which
+   layer Nuxt UI's rule ends up in; .handbook-content.light (two classes)
+   also beats a bare .light on specificity alone either way. */
+.handbook-content, .handbook-content.light {
+    --ui-primary: var(--color-indigo-600);
+    --ui-highlight: var(--color-red-600);
 }
