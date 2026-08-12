@@ -23,13 +23,45 @@ fitNo:
   - "You need PLC, SCADA, or industrial protocol connectivity. Hub doesn't include OT-certified nodes."
 included:
   - title: "Move data, reliably"
-    chips: ["Git Integration", "High Availability", "DevOps Pipelines", "Private NPM Registry", "FlowFuse Tables"]
+    chips:
+      - label: "Git Integration"
+        href: "/docs/user/devops-pipelines/#git-repository-stage"
+      - label: "High Availability"
+        href: "/docs/user/high-availability/"
+      - label: "DevOps Pipelines"
+        href: "/docs/user/devops-pipelines/"
+      - label: "Private NPM Registry"
+        href: "/docs/user/custom-npm-packages/"
+      - label: "FlowFuse Tables"
+        href: "/docs/user/ff-tables/"
   - title: "Certified for IT systems"
-    chips: ["MQTT", "HTTP Request", "Kafka", "Redis", "AI nodes (Gemini, Claude, ChatGPT, Ollama)"]
+    chips:
+      - label: "MQTT"
+        href: "/node-red/flowfuse/mqtt/"
+      - label: "HTTP Request"
+        href: "/node-red/core-nodes/http-request/"
+      - "Kafka"
+      - label: "Redis"
+        href: "/node-red/flowfuse/hub/redis/"
+      - label: "AI nodes (Gemini, Claude, ChatGPT, Ollama)"
+        href: "/node-red/flowfuse/ai/llm-nodes/"
   - title: "Governed by default"
-    chips: ["Application-Level RBAC", "Endpoint Security", "BAA for HIPAA", "Protected Instances"]
+    chips:
+      - label: "Application-Level RBAC"
+        href: "/docs/user/role-based-access-control/"
+      - label: "Endpoint Security"
+        href: "/docs/user/instance-settings/#flowfuse-user-authentication"
+      - "BAA for HIPAA"
+      - label: "Protected Instances"
+        href: "/docs/user/devops-pipelines/#protected-instances"
   - title: "Built to collaborate"
-    chips: ["Team Library", "IT App Blueprints", "Everything in the core FlowFuse platform"]
+    chips:
+      - label: "Team Library"
+        href: "/docs/user/shared-library/"
+      - label: "IT App Blueprints"
+        href: "/blueprints/"
+      - label: "Everything in the core FlowFuse platform"
+        href: "/product/"
 certifiedDefault: it
 crossLinkEyebrow: "For IT Teams"
 crossLinkDescription: "Integrate and orchestrate data across ERPs, databases, and cloud APIs, governed centrally."

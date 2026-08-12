@@ -23,13 +23,36 @@ fitNo:
   - "You have no industrial hardware to connect. A pure IT integration project belongs on <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
 included:
   - title: "Connect the plant floor"
-    chips: ["Certified OT Connections (OPC-UA, Modbus, EtherNet/IP, RTSP)", "MQTT Broker", "HTTP Request"]
+    chips:
+      - label: "Certified OT Connections (OPC-UA, Modbus, EtherNet/IP, RTSP)"
+        href: "/integrations/?product=edge&certified=1"
+      - label: "MQTT Broker"
+        href: "/docs/user/teambroker/"
+      - label: "HTTP Request"
+        href: "/node-red/core-nodes/http-request/"
   - title: "Develop & deploy at the edge"
-    chips: ["Edge Development (remote editor proxy)", "Edge Instances", "Snapshots & Rollback"]
+    chips:
+      - label: "Edge Development (remote editor proxy)"
+        href: "/docs/device-agent/running/"
+      - label: "Edge Instances"
+        href: "/docs/device-agent/deploy/"
+      - label: "Snapshots & Rollback"
+        href: "/docs/user/snapshots/"
   - title: "Manage devices across sites"
-    chips: ["Device Fleet Updates", "Device Group Management", "Performance Monitoring & Alerts"]
+    chips:
+      - label: "Device Fleet Updates"
+        href: "/docs/device-agent/deploy/"
+      - label: "Device Group Management"
+        href: "/docs/user/device-groups/"
+      - "Performance Monitoring & Alerts"
   - title: "Built to collaborate"
-    chips: ["OT App Blueprints", "Team Library", "Everything in the core FlowFuse platform"]
+    chips:
+      - label: "OT App Blueprints"
+        href: "/blueprints/"
+      - label: "Team Library"
+        href: "/docs/user/shared-library/"
+      - label: "Everything in the core FlowFuse platform"
+        href: "/product/"
 certifiedDefault: ot
 crossLinkEyebrow: "For OT Teams"
 crossLinkDescription: "Connect PLCs, machines, and controllers and standardize automation across every site."

@@ -109,7 +109,17 @@ const capture = useCapture()
           <div v-for="group in tier.included" :key="group.title" class="rounded-lg border border-indigo-200 p-6">
             <h3 class="text-lg font-semibold m-0 text-indigo-600 text-center md:text-left">{{ group.title }}</h3>
             <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-              <span v-for="chip in group.chips" :key="chip" class="inline-flex items-center py-1.5 px-3 rounded-full border border-gray-200 text-sm font-regular bg-gray-50">{{ chip }}</span>
+              <template v-for="chip in group.chips" :key="typeof chip === 'string' ? chip : chip.label">
+                <a
+                  v-if="typeof chip !== 'string'"
+                  :href="chip.href"
+                  class="inline-flex items-center py-1.5 px-3 rounded-full border border-gray-200 text-sm font-regular bg-gray-50 text-[inherit] no-underline hover:no-underline"
+                >{{ chip.label }}</a>
+                <span
+                  v-else
+                  class="inline-flex items-center py-1.5 px-3 rounded-full border border-gray-200 text-sm font-regular bg-gray-50"
+                >{{ chip }}</span>
+              </template>
             </div>
           </div>
         </div>

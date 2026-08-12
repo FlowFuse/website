@@ -241,7 +241,10 @@ export default defineContentConfig({
                 fitNo: z.array(z.string()),
                 included: z.array(z.object({
                     title: z.string(),
-                    chips: z.array(z.string()),
+                    chips: z.array(z.union([
+                        z.string(),
+                        z.object({ label: z.string(), href: z.string() }),
+                    ])),
                 })),
                 certifiedDefault: z.enum(['it', 'ot']).optional(),
                 crossLinkEyebrow: z.string(),
