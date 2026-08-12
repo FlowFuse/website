@@ -1,7 +1,7 @@
 ---
 title: "How to Parse Binary Data from Serial Devices"
 subtitle: "When your device doesn't speak Modbus, here's how you read it"
-description: "Learn how to decode binary data from any legacy serial device in Node-RED. This guide walks through frame validation, byte mapping, and bitfield parsing using a real industrial weighing scale example"
+description: "Learn how to decode binary data from legacy serial devices in Node-RED, covering frame validation and byte mapping in detail."
 lastUpdated: 2026-06-19
 date: 2026-03-27
 keywords: binary data parsing, serial communication, Node-RED, FlowFuse, buffer parser, frame validation, checksum validation, bitfield parsing, RS-232, legacy devices, industrial IoT

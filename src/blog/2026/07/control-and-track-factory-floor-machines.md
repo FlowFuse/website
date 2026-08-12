@@ -1,7 +1,7 @@
 ---
 title: "Control and Track Machines on the Factory Floor"
 subtitle: "Build a FlowFuse dashboard to control a PLC-connected motor and stack light, then track runtime automatically"
-description: "Learn how to connect FlowFuse to a Siemens S7 PLC, build an operator dashboard to control a motor and stack light, and automatically track device runtime using the Hourglass node."
+description: "Learn how to connect FlowFuse to a Siemens S7 PLC, build an operator dashboard, and automatically track device runtime data."
 date: 2026-07-02
 usecase:
   - shop-floor-communication

@@ -1,7 +1,7 @@
 ---
 title: FlowFuse is accepting customers now
 subtitle: We're starting to onboard users from the waitlist
-description: We're starting to onboard users from the waitlist
+description: "FlowFuse is now officially accepting customers, starting to onboard users from the waitlist for its new Node-RED cloud platform."
 date: 2022-04-04
 authors: ["zeger-jan-van-de-weg"]
 tags:

@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.3 is now available, share your flows through our new team libraries and much more
 subtitle: Our first release of 2023 with some great new features to try out, happy new year from everyone at FlowFuse!
-description: FlowFuse 1.3 is now available, share your flows through our new team libraries and much more
+description: "FlowFuse 1.3 is now available. Share your flows through the brand new team libraries, plus much more in this latest release."
 date: 2023-01-19 18:00:00.0
 authors: ["rob-marcer"]
 video: ey3xv5j5x7k

@@ -76,6 +76,9 @@ With a URL similar to the one above, depending on your specific network and Node
 
 One of the easiest ways to protect your flows is to add a username and password to your Node-RED instance.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 The first step is to find your Node-RED settings.js file. It's not always in the same place but on a default Debian Linux installation it can be found in this directory.
 
 ```cd ~/.node-red```

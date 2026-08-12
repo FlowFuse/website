@@ -1,7 +1,7 @@
 ---
 title: "Scaling Node-RED with FlowFuse: Differences between a FlowFuse Instance and a Device Instance"
 subtitle: Managing your Node-RED instances is easier with FlowFuse.
-description: With FlowFuse, Node-RED instances can be scaled and managed easily.
+description: "With FlowFuse, Node-RED instances can be scaled and managed easily. Learn the difference between an Instance and a Device."
 date: 2024-03-25
 authors: ["grey-dziuba"]
 image: /blog/2024/03/images/scaling-node-red-with-flowfuse.png

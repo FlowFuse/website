@@ -1,7 +1,7 @@
 ---
 title: FlowFuse Inc. becomes a member of the OpenJS Foundation
 subtitle: Supporting the foundation that has given Node-RED a great home
-description:  Supporting the foundation that has given Node-RED a great home
+description: "FlowFuse Inc. becomes a member of the OpenJS Foundation, supporting the foundation that has given Node-RED a great home."
 date: 2022-12-13 12:00:00.0
 authors: ["nick-oleary"]
 tags:

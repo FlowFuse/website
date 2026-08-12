@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
+import { getAllBlogPosts } from '../../utils/sharedContent'
 // Handed to ContentRenderer explicitly below. Nuxt Content resolves a markdown component tag
 // against a registry it builds while parsing, and reaches it through an async loader. These
 // two nodes are spliced in after parsing, so that path renders nothing in a production build
@@ -47,9 +48,13 @@ const releaseFeatureComponents = {
 
 const { data: allPosts } = await useAsyncData(
     'blog-all-for-related',
-    () => routeInfo.value.kind === 'post'
-        ? queryCollection('blog').select('path', 'title', 'date', 'tags').order('date', 'DESC').all()
-        : Promise.resolve([])
+    async () => {
+        if (routeInfo.value.kind !== 'post') return []
+        const all = await getAllBlogPosts()
+        // Only the fields this page needs travel into its payload; the shared cache
+        // itself holds the wider field set other pages (listing, author) need.
+        return all.map(post => ({ path: post.path, title: post.title, date: post.date, tags: post.tags }))
+    }
 )
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
@@ -106,7 +111,6 @@ useSeoMeta({
 })
 
 if (routeInfo.value.kind === 'post') {
-    const firstAuthor = computed(() => authorMembers.value[0])
     useSchemaOrg([
         defineArticle({
             headline: pageTitle,
@@ -114,7 +118,11 @@ if (routeInfo.value.kind === 'post') {
             image: absoluteImage,
             datePublished: computed(() => page.value ? new Date(page.value.date).toISOString() : undefined),
             dateModified: computed(() => page.value ? new Date(page.value.lastUpdated || page.value.date).toISOString() : undefined),
-            author: computed(() => firstAuthor.value ? [{ name: firstAuthor.value.name, url: 'https://flowfuse.com' }] : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
+            // Each Person's @id is their /blog/author/{slug}/ page, so the article and the
+            // author page resolve to the same entity in the graph.
+            author: computed(() => authorMembers.value.length
+                ? authorMembers.value.map(authorSchema)
+                : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
         }),
         computed(() => page.value?.meta?.faq?.length ? {
             '@type': 'FAQPage',
@@ -142,16 +150,25 @@ if (routeInfo.value.kind === 'post') {
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
         <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
           <span>By</span>
-          <span v-for="(author, i) in authorMembers" :key="i">
-            <span v-if="i > 0">, </span>
-            <span class="font-medium">{{ author ? author.name : 'FlowFuse' }}</span>
-          </span>
+          <template v-if="authorMembers.length">
+            <span v-for="(author, i) in authorMembers" :key="author.slug">
+              <span v-if="i > 0">, </span>
+              <NuxtLink :to="authorPath(author.slug)" class="font-medium hover:underline">{{ author.name }}</NuxtLink>
+            </span>
+          </template>
+          <span v-else class="font-medium">FlowFuse</span>
           <span class="text-gray-300">|</span>
           <time :datetime="new Date(page.lastUpdated || page.date).toISOString()">
             {{ page.lastUpdated ? 'Updated ' : '' }}{{ formattedDate }}
           </time>
           <span class="text-gray-300">|</span>
           <span>{{ readingTime }} min read</span>
+          <span class="text-gray-300">|</span>
+          <NuxtLink
+              to="/handbook/marketing/content-strategy/blog/#blogging-process"
+              class="hover:underline"
+              title="Every FlowFuse article is reviewed by a subject-matter expert before publishing."
+          >Expert Reviewed</NuxtLink>
         </div>
       </div>
     </div>

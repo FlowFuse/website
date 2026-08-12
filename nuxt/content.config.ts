@@ -1,6 +1,5 @@
 import { join } from 'node:path'
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
-import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
 
 const tierValue = z.object({
     value: z.union([z.boolean(), z.null(), z.string()]),
@@ -45,6 +44,12 @@ export default defineContentConfig({
                 meta: z.object({
                     description: z.string().optional(),
                 }).optional(),
+                // No `sitemap` schema field here on purpose - @nuxtjs/sitemap's own
+                // @nuxt/content integration only accepts *plain* onUrl/filter functions
+                // (it re-splices their source text into a generated file with no closure
+                // over this module's imports/helpers), which git-based lastmod needs.
+                // docs/handbook/changelog/blog/ebooks/whitepapers are all enriched instead
+                // by server/api/__sitemap__/content-urls.get.ts, a normal Nitro route.
             })
         }),
         handbook: defineCollection({
@@ -59,7 +64,26 @@ export default defineContentConfig({
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
                 }).optional(),
-                sitemap: defineSitemapSchema(),
+            })
+        }),
+        // The Application Guide pages are strongly structured rather than free prose: each page
+        // is a list of blocks, and most blocks are a tabbed set of patterns with a diagram and
+        // fixed sections. Authoring that as data keeps every page consistent and makes a copy
+        // edit a YAML edit. Rendered by pages/application-guide/[guide]/[slug].vue.
+        // File names must be NN-<slug>.yml and match the `slug` field - nuxt.config's
+        // prerender list derives the routes from the file names.
+        applicationGuide: defineCollection({
+            type: 'data',
+            source: 'application-guide/**/*.yml',
+            schema: z.object({
+                guide: z.enum(['flowfuse', 'node-red']),
+                slug: z.string(),
+                title: z.string(),
+                navOrder: z.number(),
+                blurb: z.string().optional(),
+                // Block shapes vary by `type` and are validated by the components that render
+                // them; a discriminated union here would need updating for every new block type.
+                blocks: z.array(z.any()),
             })
         }),
         // Source files stay at src/changelog/ (11ty's historical location) rather than
@@ -76,7 +100,6 @@ export default defineContentConfig({
                 date: z.coerce.date(),
                 authors: z.array(z.string()).optional(),
                 issues: z.array(z.string()).optional(),
-                sitemap: defineSitemapSchema(),
             })
         }),
         // Source files stay at src/blog/ (11ty's historical location) rather than
@@ -136,7 +159,6 @@ export default defineContentConfig({
                         })).optional(),
                     }).optional(),
                 }).optional(),
-                sitemap: defineSitemapSchema(),
             })
         }),
         ebooks: defineCollection({
@@ -160,7 +182,6 @@ export default defineContentConfig({
                     reference: z.string().optional(),
                 }),
                 contentTable: z.array(z.string()),
-                sitemap: defineSitemapSchema(),
             })
         }),
         whitepapers: defineCollection({
@@ -184,14 +205,8 @@ export default defineContentConfig({
                 whitepaperSubtitle: z.string().optional(),
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
-                // Content lives under /whitepapers/* but the page route is singular:
-                // /whitepaper/[slug].vue — rewrite the sitemap loc to match.
-                sitemap: defineSitemapSchema({
-                    name: 'whitepapers',
-                    onUrl: (url) => {
-                        url.loc = url.loc.replace(/^\/whitepapers\//, '/whitepaper/')
-                    },
-                }),
+                // Content lives under /whitepapers/* but the page route is singular
+                // (/whitepaper/[slug].vue) - content-urls.get.ts rewrites the sitemap loc.
             }),
         }),
         plans: defineCollection({

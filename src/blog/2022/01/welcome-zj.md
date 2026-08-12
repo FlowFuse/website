@@ -1,6 +1,6 @@
 ---
 title: Welcome ZJ
-description: Welcoming Zeger-Jan van de Weg to FlowFuse Inc.
+description: "Welcoming Zeger-Jan van de Weg to FlowFuse Inc., the latest addition to the team building the future of industrial low-code."
 date: 2022-01-03
 authors: ["nick-oleary"]
 tags:

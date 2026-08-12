@@ -1,7 +1,7 @@
 ---
 title: FlowFuse now offers High Availability Node-RED
 subtitle: FlowFuse 1.8 makes Node-RED applications more reliable and scalable, plus more streamline deployment pipelines.
-description: FlowFuse now supports High Availibility, DevOps Pipelines and more
+description: "FlowFuse now offers High Availability Node-RED, supporting DevOps Pipelines and other enterprise-grade capabilities for teams."
 date: 2023-06-08 
 authors: ["marian-demme"]
 image: /blog/2023/06/images/release-1.8.0.png

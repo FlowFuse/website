@@ -58,7 +58,7 @@ Unfortunately, these values are not in a friendly form to work with.  Ideally, w
 
  <br>
 
-We need to extract the numeric part of the string using a regular expression with a “change” node and the JSONata expression $number($match(msg.payload,  /-?(\d+(\.\d+)?)/ , 10).match).  “$match” and “/-?(\d+(\.\d+)?)/” help the function pull out the numeric components of the string and “$number” parses these components to be an actual number data type.
+We need to extract the numeric part of the string using a regular expression with a “change” node and the JSONata expression `$number($match(msg.payload, /-?(\d+(\.\d+)?)/, 10).match)`.  `$match` and `/-?(\d+(\.\d+)?)/` help the function pull out the numeric components of the string and `$number` parses these components to be an actual number data type.
 
 Here are the properties of the “change” node.
 
@@ -105,7 +105,7 @@ After installing this package you will see three new nodes in your flow editor.
 
 ![Screenshot showing the installed influxdb nodes in the palette](images/influxdb-historical-data/influxdb-nodes-15.png "Screenshot showing the installed influxdb nodes in the palette")
 
-Drag and drop the “influxdb out” node into your flow, double click on it, and start filling out the needed fields.  The naming convention of “test&lt;<THING>>” works well for initial setups to make it clear what names should go where.
+Drag and drop the “influxdb out” node into your flow, double click on it, and start filling out the needed fields.  The naming convention of `test&lt;<THING>>` works well for initial setups to make it clear what names should go where.
 
 !["Screenshot showing the influxdb-out node config"](images/influxdb-historical-data/influxdb-out-node-16.png "Screenshot showing the influxdb-out node config")
 

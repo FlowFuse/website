@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.3 released
 subtitle: Moving towards the launch of FlowFuse Cloud
-description: Moving towards the launch of FlowFuse Cloud
+description: "FlowFuse 0.3 is released, moving the platform closer toward the launch of FlowFuse Cloud with continued improvements ahead."
 date: 2022-03-17 1:00:00.0
 authors: ["nick-oleary"]
 tags:

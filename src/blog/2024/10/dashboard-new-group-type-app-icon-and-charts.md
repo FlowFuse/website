@@ -1,7 +1,7 @@
 ---
 title: Dialogs, Customizable Icons and Histograms Now Available in FlowFuse Dashboard
 subtitle: Our latest update for FlowFuse Dashboard introduces a new group type, Dialog, a new chart variation, Histogram and customization support for the application icon.
-description: Our latest update for FlowFuse Dashboard introduces a new group type, Dialog, a new chart variation, Histogram and customization support for the application icon.
+description: "FlowFuse Dashboard adds a new Dialog group type, a Histogram chart variation, and customization support for the app icon."
 lastUpdated: 2026-06-03
 date: 2024-10-11
 authors: ["gayan-sandamal"]

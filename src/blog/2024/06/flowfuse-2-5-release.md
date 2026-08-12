@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.5: New features to visualize snapshots, LDAP integration, and more"
 subtitle: Enhancing security, visualization, and deployment flexibility.
-description: Discover the new features in FlowFuse 2.5, including LDAP integration, visual snapshot comparisons, blueprint previews, snapshot import/export support, and custom domain deployment for dashboards and APIs.
+description: "Discover the new features in FlowFuse 2.5, including LDAP integration, visual snapshot comparisons, and blueprint previews."
 date: 2024-06-06
 authors: ["grey-dziuba"]
 image: /blog/2024/06/images/release-2-5-graphic.png
