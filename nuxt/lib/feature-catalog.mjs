@@ -78,3 +78,26 @@ export function planLabels (tiers) {
     if (!tiers) return []
     return PLANS.filter(plan => tiers[plan.id]).map(plan => plan.label)
 }
+
+/**
+ * Whether a feature has a row in the pricing comparison table.
+ *
+ * The catalog also carries features that exist only to hang a changelog or docs link off
+ * (subfeatures, shipped improvements), marked `showOnPricing: false`. Pricing shows the rest.
+ */
+export function onPricing (feature) {
+    return feature?.showOnPricing !== false
+}
+
+/**
+ * A feature's plan labels, but only when a reader can find that feature on the pricing page.
+ *
+ * Every badge links to /pricing/#comparison. A badge on a feature with no row there sends the
+ * reader to a table the feature is missing from, which reads as deprecated or as a mistake
+ * rather than as availability. So a feature off the pricing page publishes no badge, the same
+ * outcome as one whose availability has not been settled.
+ */
+export function featurePlanLabels (feature) {
+    if (!onPricing(feature)) return []
+    return planLabels(feature?.tiers)
+}

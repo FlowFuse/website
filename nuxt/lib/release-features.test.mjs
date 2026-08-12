@@ -35,6 +35,14 @@ const fixture = {
             { id: 'nodes-it', title: 'Certified Nodes - IT', tiers: { edge: false, hub: true, fleet: true } },
             { id: 'nodes-ot', title: 'Certified Nodes - OT', tiers: { edge: true, hub: false, fleet: false } },
             { id: 'unsettled', title: 'Undecided', changelog: [{ url: '/changelog/2026/07/u/', release: '2.33' }] },
+            {
+                id: 'retired',
+                title: 'Off the pricing table',
+                docsLink: '/docs/user/retired/',
+                changelog: [{ url: '/changelog/2026/07/r/', release: '2.33' }],
+                showOnPricing: false,
+                tiers: { edge: true, hub: true, fleet: true },
+            },
         ],
     }],
 }
@@ -67,6 +75,20 @@ test('resolveFeatureEntry publishes no badge for a feature with unsettled availa
     const resolved = resolveFeatureEntry({ id: 'unsettled', heading: 'H' }, fixture, '2.33')
     assert.deepEqual(resolved.plans, [])
     assert.equal(resolved.changelog.length, 1)
+})
+
+// The badge links to the pricing comparison table, so a feature with no row there gets none.
+// Its changelog and docs links still render: those resolve to real pages either way.
+test('resolveFeatureEntry publishes no badge for a feature that is off the pricing page', () => {
+    const resolved = resolveFeatureEntry({ id: 'retired', heading: 'H' }, fixture, '2.33')
+    assert.deepEqual(resolved.plans, [])
+    assert.deepEqual(resolved.changelog.map(entry => entry.url), ['/changelog/2026/07/r/'])
+    assert.equal(resolved.docs.href, '/docs/user/retired/')
+})
+
+test('resolveFeatureEntry unions only the priced features under a grouped heading', () => {
+    const resolved = resolveFeatureEntry({ id: ['nodes-ot', 'retired'], heading: 'H' }, fixture, '2.33')
+    assert.deepEqual(resolved.plans, ['Edge'])
 })
 
 test('resolveFeatureEntry accepts inline tiers for a section that is not a catalog feature', () => {

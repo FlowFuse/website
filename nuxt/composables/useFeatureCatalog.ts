@@ -1,7 +1,7 @@
 // The lookups live in nuxt/lib/ as plain JS so `node --test` can run them directly
 // (same reason as docs-nav.mjs); this file is the typed surface components import.
 // @ts-ignore untyped module
-import { findFeatureByChangelog, findFeatureByDocsPage, planLabels } from '../lib/feature-catalog.mjs'
+import { featurePlanLabels, findFeatureByChangelog, findFeatureByDocsPage } from '../lib/feature-catalog.mjs'
 // @ts-ignore untyped module
 import { injectReleaseFeatures, resolveReleaseFeatures } from '../lib/release-features.mjs'
 
@@ -35,21 +35,22 @@ export function useFeatureCatalog () {
 /**
  * The plans that include the feature a changelog post shipped.
  *
- * Empty whenever the post is not tied to a catalog feature, or the feature's availability
- * has not been settled. Both mean "publish no badge" rather than "publish an empty one".
+ * Empty whenever the post is not tied to a catalog feature, the feature has no row on the
+ * pricing page, or its availability has not been settled. All three mean "publish no badge"
+ * rather than "publish an empty one".
  */
 export function useChangelogPlans (path: MaybeRefOrGetter<string | undefined>) {
     const catalog = useFeatureCatalog()
-    return computed<string[]>(() => planLabels(findFeatureByChangelog(catalog.value, toValue(path))?.tiers))
+    return computed<string[]>(() => featurePlanLabels(findFeatureByChangelog(catalog.value, toValue(path))))
 }
 
 /**
  * The plans that include the feature a docs page documents. Empty on the many docs pages
- * that are not tied to a catalog feature.
+ * that are not tied to a catalog feature, and on those whose feature is off the pricing page.
  */
 export function useDocsPlans (path: MaybeRefOrGetter<string | undefined>) {
     const catalog = useFeatureCatalog()
-    return computed<string[]>(() => planLabels(findFeatureByDocsPage(catalog.value, toValue(path))?.tiers))
+    return computed<string[]>(() => featurePlanLabels(findFeatureByDocsPage(catalog.value, toValue(path))))
 }
 
 /**

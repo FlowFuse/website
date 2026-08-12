@@ -11,9 +11,11 @@ import jsYaml from 'js-yaml'
 import {
     PLANS,
     allFeatures,
+    featurePlanLabels,
     findFeatureByChangelog,
     findFeatureByDocsPage,
     normalizePath,
+    onPricing,
     planLabels,
 } from './feature-catalog.mjs'
 
@@ -44,6 +46,14 @@ const fixture = {
                 title: 'Not decided yet',
                 changelog: [{ url: '/changelog/2026/07/unsettled/' }],
                 showOnPricing: false,
+            },
+            {
+                id: 'retired',
+                title: 'Shipped, but off the pricing table',
+                docsLink: '/docs/user/retired/',
+                changelog: [{ url: '/changelog/2026/07/retired/' }],
+                showOnPricing: false,
+                tiers: { edge: true, hub: true, fleet: true },
             },
         ],
     }],
@@ -87,6 +97,38 @@ test('planLabels lists the plans a feature is in, in plan order', () => {
 test('planLabels returns nothing when availability is unset or empty', () => {
     assert.deepEqual(planLabels(undefined), [])
     assert.deepEqual(planLabels({ edge: false, hub: false, fleet: false }), [])
+})
+
+test('onPricing defaults to true, so omitting the key keeps a feature on the table', () => {
+    assert.equal(onPricing({ title: 'No key' }), true)
+    assert.equal(onPricing({ showOnPricing: true }), true)
+    assert.equal(onPricing({ showOnPricing: false }), false)
+})
+
+test('featurePlanLabels badges a feature that has a row on the pricing page', () => {
+    const expert = findFeatureByDocsPage(fixture, '/docs/user/expert/')
+    assert.deepEqual(featurePlanLabels(expert), ['Edge', 'Hub', 'Fleet'])
+})
+
+// The badge links to /pricing/#comparison. A feature with no row there would send the reader
+// to a table it is missing from, which reads as deprecated rather than as availability.
+test('featurePlanLabels publishes no badge for a feature that is off the pricing page', () => {
+    const retired = findFeatureByChangelog(fixture, '/changelog/2026/07/retired/')
+    assert.deepEqual(retired.tiers, { edge: true, hub: true, fleet: true })
+    assert.deepEqual(featurePlanLabels(retired), [])
+})
+
+test('featurePlanLabels treats a missing feature as nothing to say', () => {
+    assert.deepEqual(featurePlanLabels(null), [])
+    assert.deepEqual(featurePlanLabels(undefined), [])
+})
+
+// Guards the review this rule came from: every badge the real catalog can produce must land
+// on a feature the reader can actually find in the comparison table.
+test('no feature in the shipped catalog badges without a pricing row', () => {
+    const badged = allFeatures(catalog).filter(feature => featurePlanLabels(feature).length)
+    assert.ok(badged.length > 0, 'expected the catalog to badge something')
+    assert.deepEqual(badged.filter(feature => !onPricing(feature)).map(feature => feature.id), [])
 })
 
 test('PLANS matches the plan files that drive the pricing table', () => {

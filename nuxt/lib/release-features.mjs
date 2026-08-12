@@ -6,7 +6,7 @@
 // heading containing a link or inline code still matches, and nothing can be injected into
 // an attribute by accident.
 
-import { allFeatures, normalizePath, planLabels } from './feature-catalog.mjs'
+import { allFeatures, normalizePath, onPricing, planLabels } from './feature-catalog.mjs'
 
 const HEADING = /^h([2-6])$/
 
@@ -51,8 +51,15 @@ export function resolveFeatureEntry (entry, catalog, release, changelogTitles = 
 
     if (ids.length && !features.length) return null
 
+    // Only features with a row on the pricing page contribute a badge, because the badge links
+    // to the comparison table and one that sends a reader to a table its feature is missing
+    // from reads as deprecated rather than as availability. A grouped heading unions just the
+    // priced ones, so it still badges when only some of the features it covers are on pricing.
+    // The changelog and docs links below are unaffected: they resolve to real pages either way.
+    const priced = features.filter(onPricing)
+
     const tiers = features.length
-        ? features.reduce((merged, feature) => ({
+        ? priced.reduce((merged, feature) => ({
             edge: merged.edge || !!feature.tiers?.edge,
             hub: merged.hub || !!feature.tiers?.hub,
             fleet: merged.fleet || !!feature.tiers?.fleet,
@@ -61,7 +68,7 @@ export function resolveFeatureEntry (entry, catalog, release, changelogTitles = 
 
     // A feature with no `tiers` at all resolves to all-false above. That is the "availability
     // not settled" case, and it must publish no badge, same as everywhere else.
-    const anyTiers = features.length ? features.some(feature => feature.tiers) : !!entry.tiers
+    const anyTiers = features.length ? priced.some(feature => feature.tiers) : !!entry.tiers
 
     const changelog = features.flatMap(feature =>
         (feature.changelog ?? [])
