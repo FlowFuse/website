@@ -2,64 +2,7 @@
 title: "VDA 5050 Tutorial: Connect AGVs to Factory Systems over MQTT"
 subtitle: "How the six VDA 5050 MQTT topics work, and how to build a master control flow for a mixed AGV fleet."
 description: "VDA 5050 explained: how the standard structures AGV communication over MQTT, and how to build a working master control flow in FlowFuse."
-date: 2025-08-11
-keywords: vda 5050
-tags:
-  - posts
-  - flowfuse
-meta:
-  howto:
-    name: "How to Connect AGVs to Factory Systems with VDA 5050"
-    description: "Learn how to build a VDA 5050 master control flow by connecting to an MQTT broker, subscribing to fleet state, identifying each vehicle, detecting vehicles that go offline, and dispatching transport orders."
-    tool:
-      - "FlowFuse"
-      - "Node-RED"
-      - "MQTT"
-      - "VDA 5050"
-      - "AGV"
-    steps:
-      - name: "Connect to your broker"
-        text: "Add an mqtt in node and configure a broker with your host and port. Use port 8883 with TLS enabled, and add credentials on the Security tab if the broker requires a login."
-        url: "step-1-connect-to-your-broker"
-      - name: "Subscribe to fleet state"
-        text: "Set the topic to uagv/v2/+/+/state so one subscription covers every manufacturer and serial number. Set QoS to 0 and output to a parsed JSON object, then deploy and confirm messages arrive."
-        url: "step-2-subscribe-to-fleet-state"
-      - name: "Tell the vehicles apart"
-        text: "Add a function node that splits the topic to read manufacturer and serial number, and compare them against the same fields in the payload to catch a misconfigured vehicle."
-        url: "step-3-tell-the-vehicles-apart"
-      - name: "Catch vehicles going offline"
-        text: "Subscribe to uagv/v2/+/+/connection at QoS 1 to read each vehicle's connection state. Treat it as a network check only, and watch errors, operating mode, and state freshness for vehicle health."
-        url: "step-4-catch-vehicles-going-offline"
-      - name: "Send an order"
-        text: "Build an order payload with a nodes array and an edges array, where the first node is where the vehicle already stands. Publish it to the vehicle's order topic with retain switched off."
-        url: "step-5-send-an-order"
-  faq:
-    - question: "What is the difference between VDA 5050 and a vendor's own fleet manager API?"
-      answer: "A vendor API is designed for that vendor's vehicles and changes when they choose. VDA 5050 fixes one message contract that every compliant vehicle honours, so master control talks to vehicles from different makers the same way. Vendors still offer their own APIs for deeper features, and most sites use both: VDA 5050 for fleet-level dispatch and status, the vendor API for anything specific to that vehicle."
-    - question: "Does VDA 5050 handle collision avoidance and traffic control?"
-      answer: "No. The standard defines how orders and status messages move, not how a vehicle drives. Obstacle avoidance and path planning stay with the manufacturer, and safety functions such as emergency stops and person detection live on the vehicle under standards like ISO 3691-4. VDA 5050 reports safety state; it does not implement it. Traffic rules across a shared aisle are the master control system's job to enforce."
-    - question: "Should I build against version 2.x or 3.0?"
-      answer: "Build against whatever your vehicles actually run, which today is usually 2.x. Version 3.0 was released on 19 March 2026 and adds support for freely navigating robots through planned path sharing and a zone concept. It also renames parameters across the whole document as a breaking change, so a 2.x integration will not talk to a 3.0 vehicle without changes. Each vehicle reports its version in its factsheet and in every state message."
-    - question: "What is the difference between the state and visualization topics?"
-      answer: "Both carry position, on purpose. A state message is the full picture, covering order progress, battery, errors, and operating mode, sent on any relevant change and at least every 30 seconds. A visualization message carries only position and velocity, so it can be sent far more often for a smooth live map. Act on state, draw with visualization. Visualization is optional in the standard, so some vehicles never send it."
-    - question: "Why did the vehicle reject my order?"
-      answer: "Three reasons cover most cases. The first node of the order must be one the vehicle is already standing on or within the deviation range of. The orderId and orderUpdateId pair must not repeat a previous order. And every action you send must appear in the vehicle's factsheet as supported. A rejected order shows up as a validationError warning in the vehicle's state, and the warning stays until it accepts a valid order."
-    - question: "What MQTT broker do I need for VDA 5050?"
-      answer: "Any broker supporting MQTT 3.1.1 or 5.0, retained messages, last will, and per-client topic permissions. The standard asks for QoS 0 on order, instantActions, state, factsheet, and visualization, and QoS 1 on connection. The important work is configuration rather than product choice: TLS on, each vehicle restricted to its own topic path by allowlist, the wildcard subscription reserved for master control, and a message size cap."
-    - question: "Can I run VDA 5050 alongside vehicles that do not support it?"
-      answer: "Yes, and most sites do during a transition. Vehicles that speak the standard sit behind one master control system, and older or proprietary vehicles reach the same system through whatever interface they do offer. Standardize the new fleet on VDA 5050, keep existing vehicles running through their own integration, and retire those integrations as the vehicles are replaced."
-    - question: "Is a vehicle advertised as VDA 5050 compliant guaranteed to work with any master control?"
-      answer: "Not automatically. The standard leaves the interface name in the topic path, the supported action types, and several optional fields up to the implementation, and vendors vary in how much of the standard they cover. Request the factsheet before you dispatch anything and check supported actions, load types, and dimensions against what you plan to send."
-cta:
-  type: contact
-  title: "Run Every AGV From One System"
-  description: "See how FlowFuse connects AGVs from any vendor over VDA 5050, takes orders from your WMS, and rolls the same master control setup out to every site you run."
----
-
----
-title: "VDA 5050 Tutorial: Connect AGVs to Factory Systems over MQTT"
-subtitle: "How the six VDA 5050 MQTT topics work, and how to build a master control flow for a mixed AGV fleet."
-description: "VDA 5050 explained: how the standard structures AGV communication over MQTT, and how to build a working master control flow in FlowFuse."
+date: 2025-08-12
 keywords: vda 5050
 tags:
   - posts
@@ -117,9 +60,7 @@ If you run AGVs from more than one vendor, you already know the problem. Each ve
 
 <!--more-->
 
-Two fleets under separate control can't share an intersection. So you either accept deadlocks, or you split the floor into separate lanes and waste space. Each fleet manager also needs its own link to your ERP, MES, or WMS. Adding a vehicle from a new vendor means another integration project. And because no single system sees all the work, one vendor's AGVs sit idle while the other's are backed up.
-
-<!--more-->
+Two fleets under separate control can't share an intersection. So you either accept deadlocks, or you split the floor into separate lanes and waste space. Each fleet manager also needs its own link to your ERP, MES, or WMS. Adding a vehicle from a new vendor means [another integration project](/blog/2024/11/why-point-to-point-connection-is-dead/). And because no single system sees all the work, one vendor's AGVs sit idle while the other's are backed up.
 
 VDA 5050 solves that. FlowFuse gives you somewhere to build the master control system that uses it.
 
@@ -140,6 +81,8 @@ A master control system that speaks VDA 5050 can drive vehicles from different m
 
 The standard fixes the message contract, not the vehicle. How an AGV avoids obstacles or plans its path is still up to the manufacturer. What you get is a shared order format and a shared status format.
 
+If you already run [Sparkplug B](/blog/2026/06/mqtt-vs-sparkplug-b/) on the same broker, the two solve different problems. Sparkplug standardizes telemetry from any device. VDA 5050 standardizes a command-and-report contract for one class of device, so it says what an order looks like as well as what a status message looks like.
+
 Safety stays out of scope. Emergency stops and person detection live on the vehicle and follow standards like ISO 3691-4. VDA 5050 reports safety state. It does not implement it.
 
 ### Real detail, not just a heartbeat
@@ -150,7 +93,7 @@ That detail is what lets master control make dispatch decisions, instead of just
 
 ### Built on MQTT
 
-MQTT suits a fleet well. It is lightweight, it uses publish and subscribe, and it copes with devices that drop off the network.
+MQTT suits a fleet well. It is lightweight, it uses [publish and subscribe](/blog/2024/06/how-to-use-mqtt-in-node-red/), and it copes with devices that drop off the network. Vehicles report when something changes rather than waiting to be polled, which is [event-driven architecture](/blog/2026/02/what-is-event-driven-architecture-in-manufacturing/) applied to a floor full of moving hardware.
 
 Every VDA 5050 topic follows the same pattern. So one wildcard subscription hears from every vehicle on the floor, whoever built it.
 
@@ -181,7 +124,7 @@ For example: `uagv/v2/AcmeRobotics/AGV-042/state`
 
 `uagv` is the interface name the standard uses in its own examples, and most people read it as short for "universal AGV". The standard itself only calls it the name of the interface, and each site can set its own. But nearly every 2.x deployment uses `uagv`, including the vehicles you are likely to buy. Treat it as fixed unless the vehicle's manual says otherwise.
 
-The same caveat applies to the levels around it. The standard mandates the topic names in the final segment, `order`, `state`, and so on. It calls the five-level structure a suggestion for a local broker, because cloud brokers impose their own topic rules. On-premise fleets follow it anyway, so build against it and adapt only if your broker forces you to.
+The same caveat applies to the levels around it. The standard mandates the topic names in the final segment, `order`, `state`, and so on. It calls the [five-level structure](/blog/2025/01/designing-topic-hierarchy-for-your-uns/) a suggestion for a local broker, because cloud brokers impose their own topic rules. On-premise fleets follow it anyway, so build against it and adapt only if your broker forces you to.
 
 The version segment is the major version only. So `v2`, not `v2.0.0`. The full version number goes in the `version` field inside the payload.
 
@@ -256,7 +199,7 @@ That vehicle is driving from `node7` to `node8`, with a drop waiting at the end 
 
 So master control needs two checks, not one. Confirm `agvPosition` is there, then confirm `positionInitialized` is `true` before you trust the numbers. Code like `msg.payload.agvPosition.x` crashes on a line-guided vehicle. Code that skips the second check will route a truck using coordinates the truck itself doesn't stand behind.
 
-**Watch the timestamp precision.** 2.x writes `timestamp` with hundredths of a second, while JavaScript's `toISOString()` gives you milliseconds. Vehicles accept it in practice, and 3.0 moves to milliseconds officially, but a strict schema validator flags it.
+**Watch the [timestamp](/blog/2026/07/time-synchronization-edge-devices/) precision.** 2.x writes `timestamp` with hundredths of a second, while JavaScript's `toISOString()` gives you milliseconds. Vehicles accept it in practice, and 3.0 moves to milliseconds officially, but a strict schema validator flags it.
 
 The standard ships [JSON schemas](https://github.com/VDA5050/VDA5050/tree/main/json_schemas) for all six topics. Point a validator at them and you can check a payload before you send it, rather than finding out from the vehicle.
 
@@ -265,14 +208,14 @@ The standard ships [JSON schemas](https://github.com/VDA5050/VDA5050/tree/main/j
 ### What you need
 
 - A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial]({% include "sign-up-url.njk" %}) and set up your instance following the instructions in this [guide](/docs/device-agent/quickstart/).
-- An MQTT broker your AGVs (or an AGV simulator) already publish to, or FlowFuse's [built-in team broker](/docs/user/teambroker/) if you're prototyping.
+- An MQTT broker your AGVs (or an AGV simulator) already publish to, or FlowFuse's [built-in team broker](/docs/user/teambroker/) if you're prototyping. If you're still [choosing a broker](/blog/2024/01/unified-namespace-what-broker/), any one with retained messages, last will, and per-client topic permissions will do.
 - At least one vehicle or simulator publishing VDA 5050 topics, so you have real messages to work with.
 
 ### Step 1: Connect to your broker
 
 1. Drag an **mqtt in** node onto the canvas. Double-click it.
 2. Click the pencil icon next to **Server** to add a broker.
-3. Enter your broker's host and port. Use 8883 and tick **Use TLS** on the **Connection** tab. Only use plain port 1883 on an isolated test network.
+3. Enter your broker's host and port. [Use 8883 and tick **Use TLS**](/blog/2024/11/getting-the-most-out-of-mqtt-for-industrial-iot/) on the **Connection** tab. Only use plain port 1883 on an isolated test network.
 4. On the same tab, set **Keep alive** to 15 seconds. The standard suggests around that, because the keep alive decides how fast the broker notices a vehicle has vanished. Node-RED defaults to 60, which leaves a dead AGV looking alive for up to a minute and a half.
 5. If your broker needs a login, open the **Security** tab and enter the username and password.
 6. Leave the topic empty for now. You'll fill it in next.
@@ -343,7 +286,7 @@ One warning. `connection` is a network check, not a health check. Version 3.0 st
 
 ### Putting it on a screen
 
-None of this is visible to anyone on the floor yet. You can build a screen from these same flows with [FlowFuse Dashboard](/docs/user/dashboards/), without writing any HTML: a table of vehicles with battery level and current order, an alert when a vehicle drops off the network, and a live map of where everything is.
+None of this is visible to anyone on the floor yet. You can build a screen from these same flows with [FlowFuse Dashboard](/docs/user/dashboards/), [without writing any HTML](/blog/2024/03/dashboard-getting-started/): a table of vehicles with battery level and current order, an alert when a vehicle drops off the network, and a live map of where everything is.
 
 ::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
 ::
@@ -362,7 +305,7 @@ Then wire it up:
 
 1. Add an **mqtt out** node pointing at your broker. Leave **Topic** empty so the flow can set `msg.topic` per vehicle. Leave **Retain** off. The broker re-delivers a retained order every time the vehicle reconnects, which is how you move a truck at 3am by accident.
 2. Feed it a payload matching the order schema: a `nodes` array and an `edges` array.
-3. Trigger it with a dashboard button for manual dispatch, or from an **http in** endpoint if orders come from your WMS.
+3. Trigger it with a dashboard button for manual dispatch, or from an [**http in** endpoint](/blog/2022/12/create-http-trigger-with-authentication/) if orders come from your WMS.
 
 Here is a real pick-and-drop order:
 
@@ -452,20 +395,20 @@ The **inject** node keeps the import simple. Swap it for a **ui-button** once yo
 A flow that works on a test rig is not a production system. Check these first.
 
 - **Lock down the broker.** Restrict each AGV to its own topic path. Give the wildcard subscription to master control only. Use an allowlist, not a blocklist.
-- **Use TLS.** Factory networks are shared. Fleet commands should not travel in clear text, and leave certificate checking on.
+- **[Use TLS.](/blog/2023/04/securing-node-red-in-production/)** Factory networks are shared. Fleet commands should not travel in clear text, and leave certificate checking on.
 - **Never retain `order` or `instantActions`.** The broker replays retained commands to every vehicle that reconnects. `connection` and `factsheet` are the two topics that *should* be retained.
 - **Match the standard's QoS levels.** QoS 0 for `order`, `instantActions`, `state`, `factsheet`, and `visualization`. QoS 1 for `connection`. If your site does something different, change it on both ends, since MQTT delivers at the lower of the two.
 - **Set the keep alive to around 15 seconds.** It sets the floor on how fast you can detect a vehicle dropping off, so a long keep alive quietly undoes your offline alerting.
 - **Watch state freshness, not just `connection`.** A vehicle can hold its connection open while stuck or faulted. Alert on `errors`, on `operatingMode` leaving `AUTOMATIC`, and on `state` messages older than 30 seconds.
-- **Validate orders before you send them.** Check the first node against the vehicle's current position, keep `orderId` and `orderUpdateId` unique, and check every action type against the factsheet.
+- **[Validate orders before you send them.](/blog/2025/11/industrial-data-validation-guide/)** Check the first node against the vehicle's current position, keep `orderId` and `orderUpdateId` unique, and check every action type against the factsheet.
 - **Cap message size on the broker** to what VDA 5050 payloads actually need. It limits the damage a misbehaving client can do.
 
 ## What's next
 
 You now have the basics: subscribe to fleet state, tell vehicles apart, spot vehicles going offline, and send orders. That's enough for a pilot with two or three AGVs.
 
-The next thing most teams do is replace the button with the WMS or ERP, so orders arrive from whatever already decides what needs moving. After that comes order updates and cancellation, because a job that can't be extended or pulled back mid-route is not much use on a real floor. Both of those need the vehicle's `factsheet`, so it's worth requesting and storing it early. Master control can then check load capacity, size, and supported actions before it dispatches anything.
+The next thing most teams do is replace the button with [the WMS or ERP](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/), so orders arrive from whatever already decides what needs moving. After that comes order updates and cancellation, because a job that can't be extended or pulled back mid-route is not much use on a real floor. Both of those need the vehicle's `factsheet`, so it's worth requesting and storing it early. Master control can then check load capacity, size, and supported actions before it dispatches anything.
 
-Two bigger pieces usually wait until the pilot has proved itself. Logging state history gives you throughput and utilization numbers, which is normally what makes the case for expanding. Traffic rules come last, and only once vehicles from different vendors start sharing aisles, because that is the point where a single master control system stops being a convenience and starts being the reason the floor works at all.
+Two bigger pieces usually wait until the pilot has proved itself. [Logging state history](/blog/2026/02/mqtt-influxdb-tutorial/) gives you throughput and utilization numbers, which is normally what makes the case for expanding. Publishing that state into a [Unified Namespace](/blog/2024/11/building-uns-with-flowfuse/) puts it alongside the rest of your production data, so the systems that plan the work can see where the vehicles are. Traffic rules come last, and only once vehicles from different vendors start sharing aisles, because that is the point where a single master control system stops being a convenience and starts being the reason the floor works at all.
 
-When the pilot becomes a deployment, FlowFuse adds the parts a real fleet system needs: remote device management for edge gateways, snapshots and instant rollback, audit logs, DevOps Pipelines, team access control, and high availability.
+When the pilot becomes a deployment, FlowFuse adds the parts a real fleet system needs: remote device management for edge gateways, [snapshots and instant rollback](/blog/2024/09/node-red-version-control-with-snapshots/), audit logs, [DevOps Pipelines](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/), [team access control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/), and high availability.
