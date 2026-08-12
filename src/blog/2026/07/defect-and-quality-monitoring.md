@@ -1,7 +1,7 @@
 ---
 title: "Build a Defect Tracking and Quality Monitoring Dashboard"
 subtitle: "See which defects happen most, why, and what they cost you"
-description: "Build a FlowFuse dashboard that tracks production defects, ranks them with a Pareto chart, surfaces root causes, and totals your cost of poor quality, filtered live by line, shift, and date"
+description: "Build a FlowFuse dashboard that tracks production defects, ranks them with a Pareto chart, and totals cost of poor quality."
 date: 2026-07-16
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/defect-monitoring-dashboard.png
@@ -57,7 +57,7 @@ Every production line produces defects. On their own they're easy to wave off, a
 
 In this tutorial, you'll build a defect tracking and quality monitoring dashboard using FlowFuse in about 30 minutes. It reads defects from a database, calculates the KPIs a quality engineer actually looks at, and renders them live, filtered by line, shift, and date range.
 
-You can interact with the live demo here: <a href="https://defect-monitoring-dashboard.flowfuse.cloud/dashboard/defects" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Quality Monitoring Dashboard</a>.
+You can interact with the live demo here: :live-demo-link{href="https://defect-monitoring-dashboard.flowfuse.cloud/dashboard/defects" label="Try the Quality Monitoring Dashboard"}.
 
 By the end, you'll have a foundation you can extend into broader production monitoring or OEE tracking, or a plant-wide quality report.
 

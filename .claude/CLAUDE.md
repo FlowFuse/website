@@ -260,6 +260,12 @@ Collection config: `src/customer-stories/customer-stories.json`
 | `layouts/story.njk` | Customer stories |
 | `layouts/nohero.njk` | General pages without hero |
 
+## Redirects
+
+**Add new redirects to `nuxt/redirects.ts`, not `netlify.toml`.** Nuxt is the front door for every route now, so retired-route redirects are handled as native Nitro route rules (`{ redirect: { to, statusCode: 301 } }`) keyed by the old path. `netlify.toml`'s `[[redirects]]` blocks are legacy and reserved for edge-level concerns that predate Nuxt (domain aliasing: `flowforge.com`/`flowfuze.com`/`flowfuse.io` → `flowfuse.com`) — don't add page-to-page redirects there.
+
+This also covers old `/docs/**` paths left behind by a rename in `flowfuse/flowfuse`'s `docs/` tree (e.g. a doc file renamed to fix a `nuxt-link-checker` `no-underscores` warning) — add the old path here so bookmarks/indexed links 301 instead of 404ing once the rename ships.
+
 ## Call-to-Action components
 
 **Nuxt only** — 11ty pages still use hand-written `<a class="ff-btn ...">` links; these components have no 11ty equivalent yet.

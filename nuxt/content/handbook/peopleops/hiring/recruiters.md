@@ -23,9 +23,10 @@ When we open a role:
 ## Recruiter Compensation
 
 Recruiters are compensated with a fixed rate based on the average candidate's
-first-year base compensation package. The target compensation range for each
-role is established before recruiters begin submitting candidates. This
-structure:
+first-year base compensation package. The compensation range for a role is
+agreed with the recruiter before the hiring process kicks off, so the fee
+basis is set before candidates are sourced rather than being subject to
+negotiation later. This structure:
 
 * Provides predictable costs for FlowFuse
 * Eliminates potential conflicts of interest during salary negotiations

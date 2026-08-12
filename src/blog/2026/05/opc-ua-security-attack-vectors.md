@@ -1,7 +1,7 @@
 ---
 title: "OPC UA Security: How Threat Actors Exploit Industrial Protocol Vulnerabilities"
 subtitle: "The attacks that work in the field aren't broken cryptography, they're security that was never switched on"
-description: "Most OPC UA breaches don't crack the protocol's encryption. They walk through disabled trust lists, anonymous logins, stale ciphers, and servers left on the open internet. This post breaks down how attackers actually exploit OPC UA, vector by vector, drawing on research from Claroty, Bitsight, CISPA, Secura, and Kaspersky."
+description: "Most OPC UA breaches don't crack encryption. Learn how attackers actually exploit disabled trust lists and stale ciphers."
 date: 2026-05-29
 authors: ["sumit-shinde"]
 image: /blog/2026/05/images/opcua-security-blog.png

@@ -1,7 +1,7 @@
 ---
 title: "Announcing Node-RED Con 2026: Call for Papers Now Open"
 subtitle: "The community conference returns on November 3, themed around Node-RED at the Edge of Intelligence."
-description: "Node-RED Con 2026 takes place on November 3, 2026. FlowFuse is proud to sponsor this free online conference. The Call for Papers is open until July 31, submit your talk."
+description: "Node-RED Con 2026 takes place November 3, 2026, proudly sponsored by FlowFuse. The Call for Papers is open until July 31."
 date: 2026-06-29
 authors: ["flowfuse"]
 image: /blog/2026/06/images/node-red-con-2026.png

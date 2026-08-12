@@ -1,7 +1,7 @@
 ---
 title: "Node-RED as a No-Code EtherNet/IP to S7 Protocol Converter"
 subtitle: Beginner tutorial for using Node-RED as free industrial protocol converter
-description: step-by-step guide for using Node-RED as an industrial protocol converter
+description: "A step-by-step guide for using Node-RED as a no-code industrial protocol converter between EtherNet/IP and Siemens S7 PLCs."
 date: 2023-06-20
 authors: ["richard-meyer"]
 image: /blog/2023/06/images/ethip-to-S7/Node-RED-as-a-No-Code-Ethernet_IP-to-S7-Protocol-Converter.png

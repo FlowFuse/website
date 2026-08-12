@@ -1,7 +1,7 @@
 ---
 title: "Building a Web HMI for Factory Equipment Control"
 subtitle: "Create web-based operator interfaces for industrial equipment"
-description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser"
+description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser, no dedicated hardware needed."
 lastUpdated: 2026-06-19
 date: 2025-11-19
 usecase:

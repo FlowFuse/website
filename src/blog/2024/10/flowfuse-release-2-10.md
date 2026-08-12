@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.10: MQTT Broker, Improved Version Control & More!"
 subtitle: Let's take a look at the new features and improvements in FlowFuse 2.9
-description: Let's take a look at the new features and improvements in FlowFuse 2.9
+description: "FlowFuse 2.10 adds an MQTT Broker and improved version control, plus other new features and improvements over FlowFuse 2.9."
 date: 2024-10-24
 authors: ["joe-pavitt"]
 image: /blog/2024/10/images/tile-release-2-10.png

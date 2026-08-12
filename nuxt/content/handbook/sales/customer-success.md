@@ -38,7 +38,9 @@ onboarding progress and completing this process, managing and tracking what's
 being built on our platform and the strategic significance, and ensuring
 inspiration to build new things right after. Throughout having customers achieve
 value and Return on Investment (ROI), cultivating internal champions, and
-driving strategic expansion (horizontal and vertical). CSMs are also the primary
+driving strategic expansion (horizontal and vertical) — see
+[Expansion Deals](/handbook/sales/hubspot/#expansion-deals) for when a CSM
+owns an expansion deal directly versus when the AE does. CSMs are also the primary
 FlowFuse contact that can establish and accelerate the pace of replacing or
 augmenting legacy MES/SCADA systems with our product. In turn resulting in
 higher net revenue retention (NRR) rates, and the development of strong customer

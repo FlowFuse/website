@@ -1,6 +1,6 @@
 ---
 title: Welcome Steve
-description: Welcoming Steve McLaughlin to FlowFuse Inc.
+description: "Welcoming Steve McLaughlin to FlowFuse Inc., the latest team member helping build the future of industrial low-code automation."
 date: 2022-01-20
 authors: ["nick-oleary"]
 tags:

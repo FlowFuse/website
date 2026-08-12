@@ -44,7 +44,7 @@ FlowFuse is an industrial data platform that enables engineers to build, manage,
 
 
 <div class="blog-update-notes">
-    <p>After careful consideration, we've decided to withdraw the free plan. You can still sign up for a 2 week trial to experience all that FlowFuse has to offer, or try out our Starter plan for $20/month.</p>
+    <p>After careful consideration, we've decided to withdraw the free plan. You can still sign up for a 30-day trial to experience all that FlowFuse has to offer.</p>
 </div>
 
 ## What's Included?

@@ -1,7 +1,7 @@
 ---
 title: Node-RED Tips - Deploying, Debugging, and Delaying
 subtitle: Save yourself time when working on Node-RED with these three tips.
-description: Save yourself time when working on Node-RED with these three tips.
+description: "Save yourself time when working on Node-RED with these three practical tips covering Deploying, Debugging, and Delaying."
 date: 2023-02-23 18:00:00
 lastUpdated: 2025-07-23
 authors: ["rob-marcer"]

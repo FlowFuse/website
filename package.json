@@ -91,7 +91,9 @@
         "oxc-minify": "0.131.0",
         "oxc-parser": "0.134.0",
         "oxc-transform": "0.131.0",
-        "rollup": "4.60.3"
+        "rollup": "4.60.3",
+        "@unhead/vue": "^3.2.3",
+        "unhead": "^3.2.3"
     },
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",

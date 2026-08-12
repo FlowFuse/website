@@ -1,7 +1,7 @@
 ---
 title: "Node-RED Builder a GPT (Alpha) by FlowFuse"
 subtitle: "Speed Up Flow Creation with Your Personal Assistant"
-description: Accelerate Node-RED flow creation with Node-RED Builder by FlowFuse. Streamline development effortlessly with preconfigured prompts and latest Node-RED insights.
+description: "Accelerate Node-RED flow creation with Node-RED Builder by FlowFuse, using preconfigured prompts for faster development."
 date: 2023-11-15
 authors: ["grey-dziuba"]
 image: "/blog/2023/11/images/chatgpt-GPT.png"
