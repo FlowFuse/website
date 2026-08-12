@@ -1,7 +1,7 @@
 ---
 title: Role-Based Access for your Node-RED applications
 subtitle: Collaboration and Security in Node-RED with Role-Based Access Control with FlowFuse.
-description: Learn how FlowFuse integrates Role-Based Access Control (RBAC) into Node-RED, enhancing security and collaboration. Explore granular access, Instance Protection Mode, and improved user experience.
+description: "Learn how FlowFuse integrates Role-Based Access Control (RBAC) into Node-RED, with granular access and Instance Protection Mode."
 date: 2024-04-03
 authors: ["grey-dziuba"]
 image: /blog/2024/04/images/role-based-access.png

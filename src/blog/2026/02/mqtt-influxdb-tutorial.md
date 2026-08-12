@@ -1,7 +1,7 @@
 ---
 title: "How to Build an MQTT-to-InfluxDB Data Pipeline (2026)"
 subtitle: "From MQTT broker to InfluxDB bucket, the right way."
-description: "Learn how to build a reliable MQTT-to-InfluxDB data pipeline using FlowFuse and Node-RED. No custom scripts, no glue code, just a visual flow that is easy to maintain and hand off."
+description: "Learn how to build a reliable MQTT-to-InfluxDB data pipeline using FlowFuse and Node-RED, with no custom scripts required."
 lastUpdated: 2026-06-19
 date: 2026-02-26
 keywords: MQTT, InfluxDB, IIoT, FlowFuse, Node-RED, Sensor telemetry, Time-series database

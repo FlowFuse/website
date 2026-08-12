@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.11: MQTT Topic Hierarchy, UI Revamp & Improved Logging"
 subtitle: Let's take a look at the new features and improvements in FlowFuse 2.11
-description: Let's take a look at the new features and improvements in FlowFuse 2.11
+description: "FlowFuse 2.11 introduces MQTT Topic Hierarchy, a UI revamp, and improved logging among other platform improvements this release."
 date: 2024-11-21
 authors: ["joe-pavitt"]
 image: /blog/2024/11/images/tile-release-2-11.png

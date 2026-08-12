@@ -1,7 +1,7 @@
 ---
 title: "What to Measure on the Shop Floor: Factory KPIs Your MES Should Deliver"
 subtitle: "From shop floor data to strategic advantage"
-description: Learn the essential factory KPIs your Manufacturing Execution System (MES) should monitor to drive profitability, eliminate waste, and make data-driven decisions.
+description: "Learn the essential factory KPIs your Manufacturing Execution System should monitor to drive profitability and cut waste."
 date: 2025-06-20
 authors: ["sumit-shinde"]
 image: /blog/2025/06/images/mes-kpi.png

@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.19: More Powerful AI in Node-RED, Drop-In Blueprints, Memory Monitoring, and Faster Onboarding"
 subtitle: "AI enhancements to Node-RED, streamlined onboarding with social authentication and device flow selection, improved Blueprint experience, more comprehensive performance monitoring, and a refreshed user interface."
-description: "AI enhancements to Node-RED, streamlined onboarding with social authentication, improved Blueprint experience, more comprehensive performance monitoring, and a refreshed user interface."
+description: "FlowFuse 2.19 brings more powerful AI to Node-RED, drop-in Blueprints, memory monitoring, and faster onboarding for teams."
 date: 2025-07-03
 authors: ["greg-stoutenburg"]
 image: /blog/2025/07/images/release-2-19.png

@@ -1,7 +1,7 @@
 ---
 title: "IT vs OT: Key Differences, Security Risks, and IT/OT Convergence"
 subtitle: "Two systems. Two priorities. One secure path to convergence."
-description: "IT vs OT explained for manufacturing (2026). Learn the key differences, security risks, and how to securely converge IT and OT systems without downtime or safety issues."
+description: "IT vs OT explained for manufacturing in 2026: the key differences, security risks, and how to securely converge the two."
 date: 2025-09-08
 lastUpdated: 2025-12-19
 authors: ["sumit-shinde"]

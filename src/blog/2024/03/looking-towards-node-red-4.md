@@ -1,7 +1,7 @@
 ---
 title: Looking towards Node-RED 4.0 and beyond
 subtitle: A look at what is coming in Node-RED 4.0
-description: A look at what is coming in Node-RED 4.0
+description: "A look at what is coming in Node-RED 4.0 and beyond, previewing the next major release of the visual programming tool for teams."
 date: 2024-03-07
 authors: ["nick-oleary"]
 image: /blog/2024/03/images/looking-towards-node-red-4.png

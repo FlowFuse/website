@@ -42,13 +42,17 @@ const githubEditUrl = computed(() => {
     return `https://github.com/FlowFuse/website/edit/main/nuxt/content/${stem}.md`
 })
 
+const breadcrumbItems = computed(() => {
+    // findPageBreadcrumb excludes the current page unless told otherwise - `current: true`
+    // includes it so it can be the last, unlinked crumb below.
+    const crumbs = findPageBreadcrumb(navTree.value ?? [], route.path, { current: true })
+    return crumbs.map((crumb, i) => ({
+        label: crumb.title ?? '',
+        ...(i === crumbs.length - 1 ? {} : { to: crumb.path }),
+    }))
+})
+
 useSchemaOrg([
-    // Exclude the last crumb (current page) — nuxt-schema-org appends it automatically
-    defineBreadcrumb({
-        itemListElement: findPageBreadcrumb(navTree.value ?? [], route.path)
-            .slice(0, -1)
-            .map(crumb => ({ name: crumb.title, item: crumb.path })),
-    }),
     defineArticle({
         headline: pageTitle,
         description: computed(() => page.value?.description || ''),
@@ -75,7 +79,7 @@ defineOgImage('Default', {
           <!-- Breadcrumbs + Search bar -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
-              <HandbookBreadcrumbs />
+              <Breadcrumbs :items="breadcrumbItems" />
             </div>
             <div class="w-full mb-1">
               <HandbookSearch />

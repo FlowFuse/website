@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.7 Now Available with Remote Node-RED Editor Access
 subtitle: Further improving fleet management and maintenance of remote Node-RED instances
-description: FlowFuse now supports access to the Node-RED Editor on devices
+description: "FlowFuse 1.7 is now available with remote Node-RED Editor access, letting teams edit flows directly on their own devices."
 date: 2023-05-11 
 authors: ["marian-demme"]
 image: /blog/2023/05/images/release-1.7.0.png

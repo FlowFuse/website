@@ -26,7 +26,7 @@ For each of the three months, the team walks through what has changed since the 
 
 - **Closed lost** — deals that were lost and why
 - **New deals** — newly created opportunities and their expected value
-- **Deal growth** — existing deals that have increased in value
+- **Deal growth** — existing deals that have increased in value; see [Deal Amount Fields](/handbook/sales/hubspot/#deal-amount-fields) for why deal values should only move up as a deal progresses
 - **Stage movements** — deals that have advanced or regressed in the pipeline
 
 The goal is to understand the delta: what moved, why, and what it means for the monthly forecast.
