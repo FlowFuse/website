@@ -12,6 +12,7 @@ quote:
   text: "FlowFuse allows us to rapidly roll out updates to clients without burdening our development team. We can deliver custom dashboards to customers without involving any of our core developers."
   author: "Dave Olsen"
   role: "Product Manager, Wenco"
+  avatar: /images/customer-headshots/dave-olsen-wenco.png
 fitYes:
   - "Data moves between software systems: ERPs, databases, cloud APIs, message queues."
   - "You're building governed integration, not point-to-point scripts."

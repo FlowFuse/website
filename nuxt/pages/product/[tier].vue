@@ -67,8 +67,13 @@ const capture = useCapture()
         <blockquote class="font-normal italic text-2xl m-0">
           "{{ tier.quote.text }}"
         </blockquote>
-        <figcaption class="mt-4 text-sm text-gray-500">
-          <span class="font-semibold text-gray-700">{{ tier.quote.author }}</span> · {{ tier.quote.role }}
+        <figcaption class="mt-4 flex items-center gap-3 text-sm text-gray-500">
+          <span v-if="tier.quote.avatar" class="w-14 h-14 rounded-full bg-red-200 border-2 border-white shadow-md overflow-hidden shrink-0">
+            <img :src="tier.quote.avatar" :alt="tier.quote.author" class="w-full h-full object-cover">
+          </span>
+          <span>
+            <span class="font-semibold text-gray-700">{{ tier.quote.author }}</span> · {{ tier.quote.role }}
+          </span>
         </figcaption>
       </figure>
 

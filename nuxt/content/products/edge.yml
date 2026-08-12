@@ -12,6 +12,7 @@ quote:
   text: "The ability to edit once and deploy everywhere has added real efficiency to how we manage integrations. This is how enterprises scale automation."
   author: "Sevan Petrosian"
   role: "Sr. Application Engineer, Arch Systems"
+  avatar: /images/customer-headshots/servan-petrosian-arch-systems.png
 fitYes:
   - "Data originates at machines on the plant floor: PLCs, SCADA, sensors, and controllers."
   - "You need OT-certified industrial protocol connectivity: OPC-UA, Modbus, EtherNet/IP, and more."

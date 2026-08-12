@@ -235,6 +235,7 @@ export default defineContentConfig({
                     text: z.string(),
                     author: z.string(),
                     role: z.string(),
+                    avatar: z.string().optional(),
                 }),
                 fitYes: z.array(z.string()),
                 fitNo: z.array(z.string()),
