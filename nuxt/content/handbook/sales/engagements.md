@@ -30,6 +30,9 @@ To open a deal, be sure to set the correct properties.
    - Expansions - Upsells that are to be booked in-term
    - Renewal - Changes to the subscription effective on renewal date
 
+For the full rules on when to create each deal type, who owns it, and how to
+set its amount fields, see [Deal Management](/handbook/sales/hubspot/#deal-management).
+
 ## Generating a Quote
 
 Clearly written, easy to understand quotes are crucial for customers to
@@ -102,9 +105,8 @@ as evidenced by a PO or signed quote, is the sole determinant.
 
 1. Verify, again, if the quote has all the right properties set according to
    [Generating a Quote](#generating-a-quote) instructions.
-   - Verify the Deal amount is set correctly based on Deal Type:
-     - New Business: ACV (Annual Contract Value)
-     - Expansions/Renewals: Incremental ARR
+   - Verify the Deal amount fields are set correctly per
+     [Deal Amount Fields](/handbook/sales/hubspot/#deal-amount-fields).
    - On the HubSpot Deal view, check and update:
      - Hosting Environment
      - Contract Start Date
@@ -115,9 +117,6 @@ as evidenced by a PO or signed quote, is the sole determinant.
      - Payment Terms: Upfront or Annual Installments. Required whenever
        Contract Term exceeds 12 months.
      - Spiced
-     - Amount in USD based on Deal Type:
-       - New Business: ACV (Annual Contract Value)
-       - Expansions/Renewals: Incremental ARR
    - Under contract management; check the box for MSA if a custom subscription
      agreement is agreed upon.
    - Contract Term and Payment Terms drive multi-year commission tiering

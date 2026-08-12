@@ -1,7 +1,7 @@
 ---
 title: Meet FlowFuse at SPS Nuremberg
 subtitle: Talk about Node-RED and how FlowFuse can help you operationalize your flows!
-description: Talk about Node-RED and how FlowFuse can help you operationalize your flows!
+description: "Meet FlowFuse at SPS Nuremberg to talk about Node-RED and learn how FlowFuse can help you operationalize your flows at scale."
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-11-08
 image: "/blog/2023/11/images/SPS-FlowFuse.png"

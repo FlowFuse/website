@@ -199,7 +199,7 @@ eleventyComputed:
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ col.listClasses }}">
                                         {%- for item in col.links %}
-                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid %}{% endnavoption %}
+                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent" %}{% endnavoption %}
                                         {%- endfor %}
                                     </ul>
                                 </li>

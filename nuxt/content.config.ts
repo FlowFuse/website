@@ -1,6 +1,5 @@
 import { join } from 'node:path'
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
-import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
 
 const tierValue = z.object({
     value: z.union([z.boolean(), z.null(), z.string()]),
@@ -45,6 +44,12 @@ export default defineContentConfig({
                 meta: z.object({
                     description: z.string().optional(),
                 }).optional(),
+                // No `sitemap` schema field here on purpose - @nuxtjs/sitemap's own
+                // @nuxt/content integration only accepts *plain* onUrl/filter functions
+                // (it re-splices their source text into a generated file with no closure
+                // over this module's imports/helpers), which git-based lastmod needs.
+                // docs/handbook/changelog/blog/ebooks/whitepapers are all enriched instead
+                // by server/api/__sitemap__/content-urls.get.ts, a normal Nitro route.
             })
         }),
         handbook: defineCollection({
@@ -59,7 +64,6 @@ export default defineContentConfig({
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
                 }).optional(),
-                sitemap: defineSitemapSchema(),
             })
         }),
         // The Application Guide pages are strongly structured rather than free prose: each page
@@ -96,7 +100,6 @@ export default defineContentConfig({
                 date: z.coerce.date(),
                 authors: z.array(z.string()).optional(),
                 issues: z.array(z.string()).optional(),
-                sitemap: defineSitemapSchema(),
             })
         }),
         // Source files stay at src/blog/ (11ty's historical location) rather than
@@ -141,7 +144,6 @@ export default defineContentConfig({
                         })).optional(),
                     }).optional(),
                 }).optional(),
-                sitemap: defineSitemapSchema(),
             })
         }),
         ebooks: defineCollection({
@@ -165,7 +167,6 @@ export default defineContentConfig({
                     reference: z.string().optional(),
                 }),
                 contentTable: z.array(z.string()),
-                sitemap: defineSitemapSchema(),
             })
         }),
         whitepapers: defineCollection({
@@ -189,14 +190,8 @@ export default defineContentConfig({
                 whitepaperSubtitle: z.string().optional(),
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
-                // Content lives under /whitepapers/* but the page route is singular:
-                // /whitepaper/[slug].vue — rewrite the sitemap loc to match.
-                sitemap: defineSitemapSchema({
-                    name: 'whitepapers',
-                    onUrl: (url) => {
-                        url.loc = url.loc.replace(/^\/whitepapers\//, '/whitepaper/')
-                    },
-                }),
+                // Content lives under /whitepapers/* but the page route is singular
+                // (/whitepaper/[slug].vue) - content-urls.get.ts rewrites the sitemap loc.
             }),
         }),
         plans: defineCollection({
@@ -214,6 +209,41 @@ export default defineContentConfig({
                 order: z.number(),
                 features: z.array(z.string()),
                 bestFitFor: z.array(z.string()).optional(),
+            })
+        }),
+        products: defineCollection({
+            type: 'data',
+            source: 'products/*.yml',
+            schema: z.object({
+                tierId: z.string(),
+                label: z.string(),
+                metaDescription: z.string(),
+                eyebrow: z.string(),
+                headingLead: z.string(),
+                headingHighlight: z.string(),
+                description: z.string(),
+                heroImage: z.object({
+                    src: z.string(),
+                    alt: z.string(),
+                }),
+                quote: z.object({
+                    text: z.string(),
+                    author: z.string(),
+                    role: z.string(),
+                    avatar: z.string().optional(),
+                }),
+                fitYes: z.array(z.string()),
+                fitNo: z.array(z.string()),
+                included: z.array(z.object({
+                    title: z.string(),
+                    chips: z.array(z.union([
+                        z.string(),
+                        z.object({ label: z.string(), href: z.string() }),
+                    ])),
+                })),
+                certifiedDefault: z.enum(['it', 'ot']).optional(),
+                crossLinkEyebrow: z.string(),
+                crossLinkDescription: z.string(),
             })
         }),
         featureCatalog: defineCollection({

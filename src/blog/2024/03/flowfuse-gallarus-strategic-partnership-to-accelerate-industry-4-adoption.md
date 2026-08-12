@@ -1,7 +1,7 @@
 ---
 title: FlowFuse and Gallarus Announce Strategic Partnership to Accelerate Industry 4.0 Adoption
 subtitle: Strategic partnership to empower businesses with low-code development for Industry 4.0 Transformation
-description: Press release on FlowFuse and Gallarus Strategic Partnership 
+description: "FlowFuse and Gallarus announce a strategic partnership to accelerate Industry 4.0 adoption across manufacturing operations."
 date: 2024-03-28
 authors: ["-"]
 image: /blog/2024/03/images/Flowfuse-Gallarus-Partnership.png

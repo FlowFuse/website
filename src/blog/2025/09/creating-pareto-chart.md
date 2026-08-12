@@ -1,7 +1,7 @@
 ---
 title: "How to Create a Pareto Chart for Manufacturing Data"
 subtitle: "Transform Raw Production Data into Actionable Insights with a Visual Pareto Analysis"
-description: "Learn how to create a Pareto Chart to identify the vital few defects in your production data. Step-by-step guide with live data integration, visualization, and actionable insights."
+description: "Learn how to create a Pareto Chart to identify the vital few defects in your production data, with live data integration."
 date: 2025-09-02
 keywords: create pareto chart, make pareto chart, pareto chart manufacturing, production data analysis, manufacturing analytics, industrial data visualization, defect tracking, real-time monitoring
 authors: ["sumit-shinde"]

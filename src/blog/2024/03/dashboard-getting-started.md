@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Node-RED Dashboard 2.0
 subtitle: New to Node-RED? New to Dashboard 2.0? This guide will help you get started.
-description: New to Node-RED? New to Dashboard 2.0? This guide will help you get started.
+description: "New to Node-RED or Dashboard 2.0? This getting-started guide walks you through building your very first FlowFuse dashboard."
 date: 2024-03-27
 lastUpdated: 2025-07-23
 authors: ["joe-pavitt"]

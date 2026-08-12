@@ -1,7 +1,7 @@
 ---
 title: "Thank you for an incredible 2023!"
 subtitle: "Reviewing an amazing 2023 for FlowFuse"
-description: "Reviewing an amazing 2023 for FlowFuse"
+description: "Reviewing an incredible 2023 for FlowFuse, looking back at the milestones, releases, and community growth of the past year."
 authors: ["zeger-jan-van-de-weg"]
 date: 2023-12-22
 image: "/blog/2023/12/images/2023-review.png"

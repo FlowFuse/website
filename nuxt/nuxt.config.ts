@@ -56,6 +56,20 @@ function collectApplicationGuideRoutes(dir: string): string[] {
     return routes
 }
 
+// The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
+// so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
+// each file's `tierId` field rather than the filename, since that's the field the page route
+// actually queries on.
+function collectProductRoutes (dir: string): string[] {
+    const routes: string[] = []
+    for (const file of readdirSync(dir)) {
+        if (!file.endsWith('.yml')) continue
+        const { tierId } = parseYaml(readFileSync(join(dir, file), 'utf8'))
+        routes.push(`/product/${tierId}/`)
+    }
+    return routes
+}
+
 // Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
 // pages (and their own pagination, 19 entries/page) can be sized correctly, and its
 // `authors` so the /blog/author/{slug}/ pages can be enumerated.
@@ -212,6 +226,10 @@ export default defineNuxtConfig({
             // Nuxt-native dynamic routes (integrations) that
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
+            // docs/handbook/changelog/blog/ebooks/whitepapers with lastmod/images -
+            // see content-urls.get.ts for why this isn't done via a `sitemap` schema
+            // field on the collections instead.
+            '/api/__sitemap__/content-urls',
         ],
         urls: blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
         exclude: ['/_studio/**', '/api/**'],
@@ -316,6 +334,16 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/pricing',
                     '/product',
+                    ...collectProductRoutes(join(__dirname, 'content/products')),
+                    // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
+                    // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
+                    // the netlify preset here is hybrid (prerendered pages + a fallback
+                    // function), so it doesn't qualify and /sitemap.xml gets served live by
+                    // that function instead. There, /var/task has no `git` binary, so every
+                    // git-derived lastmod (handbook/changelog/blog/ebooks/whitepapers, see
+                    // content-urls.get.ts) silently resolves to undefined. Explicitly listing
+                    // it here bakes it at build time instead, inside the git checkout.
+                    '/sitemap.xml',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',

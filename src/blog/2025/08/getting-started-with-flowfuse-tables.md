@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse's New Database: The Easiest Way to Store Industrial IoT Data"
 subtitle: "A step-by-step guide to storing, querying, and managing industrial data without leaving your FlowFuse project."
-description: "FlowFuse now includes a built-in PostgreSQL database, making it easier to manage Industrial IoT data directly within your Node-RED projects. Learn how to enable the feature, create tables, run SQL queries, and use dynamic parameters with the Query node."
+description: "FlowFuse now includes a built-in PostgreSQL database, making it easier to manage Industrial IoT data in your Node-RED projects."
 date: 2025-08-08
 authors: ["sumit-shinde"]
 image:  /blog/2025/08/images/flowfuse-database.png

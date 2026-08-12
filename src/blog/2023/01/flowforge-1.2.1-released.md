@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.2.1 released
 subtitle: Release includes fix for emailing new user
-description: Release includes fix for emailing new user
+description: "FlowFuse 1.2.1 is released with a fix for emailing new users, resolving an issue that was affecting account onboarding flow."
 date: 2023-01-12 12:00:00.0
 authors: ["ben-hardill"]
 tags:

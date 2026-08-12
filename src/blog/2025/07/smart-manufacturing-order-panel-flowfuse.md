@@ -1,7 +1,7 @@
 ---
 title: "How we Built a Smart Manufacturing Order Execution Panel with FlowFuse"
 subtitle: "Control and track manufacturing orders with FlowFuse"
-description: "This blog shows how I built a panel using FlowFuse to connect with Odoo ERP. It starts production, checks for raw materials, updates order status, and stops when the target is reached."
+description: "See how a Smart Manufacturing Order Execution Panel was built with FlowFuse to connect with Odoo ERP and track production."
 date: 2025-07-03
 authors: ["sumit-shinde"]
 image: /blog/2025/07/images/how-we-built-smart-order-manufacturing-system.png

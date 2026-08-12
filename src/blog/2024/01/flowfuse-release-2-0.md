@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 2.0 Release
 subtitle: Elevating Node-RED Device Management to new heights
-description: Announcing the launch of FlowFuse 2.0, a significant upgrade in managing Node-RED remote instances.
+description: "Announcing the launch of FlowFuse 2.0, a significant upgrade in how teams manage and scale their Node-RED remote instances. Learn about release with FlowFuse."
 date: 2024-01-18
 authors: ["marian-demme"]
 image: /blog/2024/01/images/flowfuse-2-release.png

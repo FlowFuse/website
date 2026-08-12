@@ -1,7 +1,7 @@
 ---
 title: "Node-RED 5 Is Here: What It Means for Industrial Teams"
 subtitle: "The biggest change to the editor since the project began, and it's already live on FlowFuse Cloud."
-description: "Node-RED 5 reshapes the editor with redesigned sidebars, an Explorer panel, and a built-in dark theme. Here's what changes for teams running it in production on FlowFuse, and how to upgrade your instances."
+description: "Node-RED 5 reshapes the editor with redesigned sidebars, an Explorer panel, and a built-in dark theme. Here's how to upgrade."
 date: 2026-06-09
 authors: ["sumit-shinde"]
 video: fI7r7Cj-slI

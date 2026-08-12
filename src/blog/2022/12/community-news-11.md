@@ -1,7 +1,7 @@
 ---
 title: Community News November 2022 #10
 subtitle: News from the FlowFuse and Node-RED communities
-description: News from the FlowFuse and Node-RED communities
+description: "A roundup of November 2022 news from the FlowFuse and Node-RED communities, covering platform updates and community highlights."
 date: 2022-12-02
 image: "/images/blog/community-news.jpeg"
 authors: ["rob-marcer"]

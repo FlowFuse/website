@@ -1,7 +1,7 @@
 ---
 title: "Pareto Chart & Diagram: What It Is, Formula, Examples & Manufacturing Applications"
 subtitle: "How the Pareto principle helps manufacturing teams focus where it matters most."
-description: "Learn how Pareto Charts and diagrams help manufacturing teams reduce defects by 80%. Includes formula, real examples, and applications in quality control & maintenance."
+description: "Learn how Pareto Charts and diagrams help manufacturing teams reduce defects by up to 80%, with formulas and real examples."
 date: 2025-08-28
 lastUpdated: 2025-12-29
 keywords: Pareto chart, Pareto diagram, Pareto analysis, manufacturing quality, defect reduction, quality control tools, root cause analysis, equipment maintenance, supply chain management, manufacturing efficiency

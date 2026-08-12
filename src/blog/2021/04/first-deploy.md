@@ -1,7 +1,7 @@
 ---
 title: Introducing FlowFuse Inc.
 subtitle: Building a new low-code development platform around the Node-RED project
-description: Building a new low-code development platform around the Node-RED project
+description: "FlowFuse Inc. is introduced as a new company building a low-code development platform around the open-source Node-RED project."
 date: 2021-04-06
 authors: ["nick-oleary"]
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "The Rosetta Stone for Factories: Why IIoT Needs a Common Language First"
 subtitle: "Your factory isn't data-poor. It's data-illiterate. Here's the difference."
-description: "Discover why IIoT data integration fails at scale and how the Unified Namespace, OPC-UA, and MQTT create a common industrial data language that compounds value with every system you add."
+description: "Discover why IIoT data integration fails at scale and how Unified Namespace, OPC-UA, and MQTT create a common data language."
 date: 2026-04-30
 keywords: IIoT, Unified Namespace, OPC-UA, MQTT, Sparkplug B, industrial data integration, factory data, data interoperability, smart manufacturing, Industry 4.0, edge computing, PLC data, SCADA integration, industrial IoT architecture, FlowFuse
 authors: ["sumit-shinde"]

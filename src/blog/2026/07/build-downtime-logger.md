@@ -1,7 +1,7 @@
 ---
 title: "Build a Machine Downtime Tracking Application"
 subtitle: "Build a FlowFuse dashboard that logs machine stoppages, calculates downtime, and lets operators assign reasons"
-description: "Learn how to build a machine downtime tracking application in FlowFuse that captures stop and start events over MQTT, calculates downtime duration automatically, lets operators log a reason from a dashboard, and displays live KPI cards."
+description: "Learn how to build a machine downtime tracking application in FlowFuse that captures events over MQTT and shows live KPIs."
 date: 2026-07-08
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/build-machine-downtime-tracking-application.png

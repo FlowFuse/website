@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.5 released
 subtitle: Bringing a new look to the platform
-description: Bringing a new look to the platform
+description: "FlowFuse 0.5 is released, bringing a fresh new look to the platform along with early improvements to the user experience."
 date: 2022-05-12 12:00:00.0
 authors: ["nick-oleary"]
 tags:

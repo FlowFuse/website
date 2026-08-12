@@ -1,7 +1,7 @@
 ---
 title: "Build a Defect Tracking and Quality Monitoring Dashboard"
 subtitle: "See which defects happen most, why, and what they cost you"
-description: "Build a FlowFuse dashboard that tracks production defects, ranks them with a Pareto chart, surfaces root causes, and totals your cost of poor quality, filtered live by line, shift, and date"
+description: "Build a FlowFuse dashboard that tracks production defects, ranks them with a Pareto chart, and totals cost of poor quality."
 date: 2026-07-16
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/defect-monitoring-dashboard.png

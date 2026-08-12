@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse Expert: Let Your Engineers Build Automation, Not Write Code"
 subtitle: "Make Node-RED do more without writing code."
-description: "FlowFuse Expert helps manufacturing teams write Node-RED function nodes, parse machine data, and create custom dashboards. Learn how it works with real examples."
+description: "FlowFuse Expert helps manufacturing teams write Node-RED function nodes, parse machine data, and build custom dashboards."
 date: 2025-07-29
 authors: ["sumit-shinde"]
 keywords: AI in manufacturing, manufacturing automation, Node-RED automation, FlowFuse Expert, smart manufacturing, industrial IoT, custom dashboard manufacturing, function nodes
