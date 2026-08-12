@@ -5,10 +5,9 @@ description: "VDA 5050 explained: how the standard structures AGV communication 
 date: 2025-08-12
 authors: ["sumit-shinde"]
 image: /blog/2026/08/images/vda5050-tutorial.png
-keywords: vda 5050
 tags:
-  - posts
-  - flowfuse
+   - posts
+   - flowfuse
 meta:
   howto:
     name: "How to Connect AGVs to Factory Systems with VDA 5050"
