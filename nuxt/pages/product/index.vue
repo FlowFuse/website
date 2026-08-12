@@ -116,7 +116,7 @@ onUnmounted(() => {
               <h1 class="text-4xl md:text-5xl font-medium">
                 Build, deploy, and govern industrial applications - <span class="text-red-600">in record time</span>
               </h1>
-              <p class="mt-6 text-lg text-gray-500 max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
+              <p class="mt-6 text-lg max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
               <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
                 <CtaBookDemo variant="highlight" position="hero" />
                 <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'hero' })">
@@ -182,7 +182,7 @@ onUnmounted(() => {
                     <h3 class="text-3xl mt-2">{{ tier.heading }}</h3>
                     <p class="mt-4 text-gray-500" v-html="tier.description" />
                     <ProseNote class="mt-4"><span v-html="tier.idealFit" /></ProseNote>
-                    <a class="mt-6 inline-flex items-center gap-1 font-medium blue-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</a>
+                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${tier.id}/`" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</NuxtLink>
                   </div>
                   <div class="min-h-64 rounded-lg overflow-hidden border border-gray-200">
                     <img :src="tier.image.src" :alt="tier.image.alt" class="block w-full h-full object-cover" loading="lazy">

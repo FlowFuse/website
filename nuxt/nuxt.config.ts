@@ -56,6 +56,20 @@ function collectApplicationGuideRoutes(dir: string): string[] {
     return routes
 }
 
+// The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
+// so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
+// each file's `tierId` field rather than the filename, since that's the field the page route
+// actually queries on.
+function collectProductRoutes (dir: string): string[] {
+    const routes: string[] = []
+    for (const file of readdirSync(dir)) {
+        if (!file.endsWith('.yml')) continue
+        const { tierId } = parseYaml(readFileSync(join(dir, file), 'utf8'))
+        routes.push(`/product/${tierId}/`)
+    }
+    return routes
+}
+
 // Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
 // pages (and their own pagination, 19 entries/page) can be sized correctly, and its
 // `authors` so the /blog/author/{slug}/ pages can be enumerated.
@@ -320,6 +334,7 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/pricing',
                     '/product',
+                    ...collectProductRoutes(join(__dirname, 'content/products')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback

@@ -6,14 +6,32 @@
                 "label": "Platform",
                 "columns": [
                     {
-                        "title": "Product",
+                        "title": "Overview",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-3 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
-                                "label": "Features",
+                                "label": "Product",
                                 "href": "/product/",
                                 "icon": "star"
+                            },
+                            {
+                                "label": "FlowFuse Edge",
+                                "href": "/product/edge/",
+                                "icon": "chip",
+                                "indent": true
+                            },
+                            {
+                                "label": "FlowFuse Hub",
+                                "href": "/product/hub/",
+                                "icon": "circle-stack",
+                                "indent": true
+                            },
+                            {
+                                "label": "FlowFuse Fleet",
+                                "href": "/product/fleet/",
+                                "icon": "server-stack",
+                                "indent": true
                             },
                             {
                                 "label": "Security Statement",
@@ -417,11 +435,23 @@
                 "gridClasses": "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8",
                 "groups": [
                     {
-                        "title": "Product",
+                        "title": "Overview",
                         "links": [
                             {
-                                "label": "Features",
+                                "label": "Product",
                                 "href": "/product/"
+                            },
+                            {
+                                "label": "FlowFuse Edge",
+                                "href": "/product/edge/"
+                            },
+                            {
+                                "label": "FlowFuse Hub",
+                                "href": "/product/hub/"
+                            },
+                            {
+                                "label": "FlowFuse Fleet",
+                                "href": "/product/fleet/"
                             },
                             {
                                 "label": "Security Statement",
