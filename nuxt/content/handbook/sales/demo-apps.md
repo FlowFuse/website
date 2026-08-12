@@ -12,12 +12,20 @@ the [PoV Workbook](/handbook/sales/pov-workbook/) and the
 [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/). Each use
 case is its **own FlowFuse team**, named **`Demo App - {Use-case name}`**.
 
-The **use case registry lives on the FlowFuse website** (not inside FlowFuse): the
-website catalogs every use case so a prospect can find one relevant to them and
+The **use case registry will live on the FlowFuse website** (not inside FlowFuse):
+the website catalogs every use case so a prospect can find one relevant to them and
 explore it from the front end. The [Demo](/handbook/sales/meetings/demo/) then
 becomes a walk through the *backend* of a use case they have already seen. Because
 each use case is its own team and its own app, the collection shows FlowFuse is
 truly a platform for solving many use cases — not a single tool.
+
+::callout{icon="i-lucide-hammer"}
+**Planned — not yet built.** The use case registry is a page to be built on
+flowfuse.com (intended location: `/demo-apps/`). The intent: a registry menu that
+flips through the use cases; for each one, a breakdown of the **problem** (the
+overarching use case detail), the **app or apps** that solve it, and the
+**outcome** — with a link to open that demo app's Dashboard 2.0 front end.
+::
 
 ## Publishing criteria
 
