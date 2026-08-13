@@ -111,7 +111,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/changelog/2025/06/instance-performance-view/': { redirect: { to: '/changelog/2025/06/team-performance-view/', statusCode: 301 } },
     '/integrations/node-red-contrib-abb-gofa': { redirect: { to: '/integrations/', statusCode: 301 } },
     '/integrations/node-red-contrib-opcua/PLC_1.xml': { redirect: { to: '/integrations/node-red-contrib-opcua/', statusCode: 301 } },
-    '/handbook/engineering/product/product swimlanes/': { redirect: { to: '/handbook/engineering/product/product-swimlanes/', statusCode: 301 } },
+    '/handbook/engineering/product/product%20swimlanes/': { redirect: { to: '/handbook/engineering/product/product-swimlanes/', statusCode: 301 } },
     '/ingest': { redirect: { to: '/', statusCode: 301 } },
     '/handbook/marketing/customer-stories': { redirect: { to: '/handbook/marketing/content-strategy/customer-stories/', statusCode: 301 } },
     '/handbook/marketing/customer-stories/': { redirect: { to: '/handbook/marketing/content-strategy/customer-stories/', statusCode: 301 } },
