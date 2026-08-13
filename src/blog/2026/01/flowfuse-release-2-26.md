@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
 subtitle: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
-description: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
+description: "FlowFuse 2.26 brings access controls to your MCP nodes, giving teams finer-grained permissions over AI tool access and use."
 date: 2026-01-15
 authors: ["nick-oleary"]
 image: /blog/2026/01/images/release-2-26.png
@@ -59,7 +59,7 @@ Which of these new features are you most excited to try? Reach out on GitHub or 
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

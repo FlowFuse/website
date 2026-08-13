@@ -1,7 +1,7 @@
 ---
 title: Personalised Multi-user Dashboards with Node-RED Dashboard 2.0!
 subtitle: Explore how to build multi-user Dashboards, secured with FlowFuse Cloud!
-description: Discover how to create personalized multi-user dashboards secured with FlowFuse Cloud! Enable FlowFuse User Authentication and install the FlowFuse Node-RED Dashboard 2.0 User Addon for a customized dashboard experience.
+description: "Discover how to create personalized, secured multi-user dashboards with FlowFuse Cloud and the Dashboard 2.0 User Addon."
 date: 2024-01-24
 authors: ["joe-pavitt"]
 image: "/blog/2024/01/images/tile-dashboard-2-multi-user.png"
@@ -40,7 +40,7 @@ All instances on FlowFuse can be configured with _"FlowFuse User Authentication"
 
 _Note: Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted._
 
-The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](/certified-nodes/) catalogue, accessible to our Teams and Enterprise customers.
+The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](/integrations/?certified=1) catalogue, accessible to our Teams and Enterprise customers.
 
 Once the "FlowFuse User Authentication" option has been enabled on your instance, you can then install our plugin, `@flowfuse/node-red-dashboard-2-user-addon`, through the "Manage Palette" option in the Node-RED Editor.
 
@@ -91,7 +91,6 @@ In the previous example, you may have noticed that we're also displaying a welco
 
 Under the covers, we're appending our `user` object to the `msg` object, via the SocketIO `auth` option. We make the `socketio` object available via a computed `setup` variable, this means that we can access this data in any `ui-template` node, and render like so:
 
-{% raw %}
 ```html
 <template>
     <div>
@@ -99,7 +98,6 @@ Under the covers, we're appending our `user` object to the `msg` object, via the
     </div>
 </template>
 ```
-{% endraw %}
 
 To enable custom user-by-user content in a `ui-template` though, we must allow it to "Accept Client Constraints". This means that if a `.msg._client.user` value is included in any messages sent to a `ui-template` node, then the underlying SocketIO message will be filtered to only send to the relevant user's connection, and no others.
 

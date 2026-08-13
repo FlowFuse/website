@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.21: AI-Assisted SQL, Low-Code Custom Nodes, and Remote Instance Performance Insights"
 subtitle: "Introducing FlowFuse Expert functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes."
-description: "Introducing FlowFuse Expert functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes"
+description: "FlowFuse 2.21 introduces AI-assisted SQL, low-code custom nodes, and remote instance performance insights for engineering teams."
 date: 2025-08-28
 authors: ["greg-stoutenburg"]
 image: /blog/2025/08/images/release-2.21.png
@@ -94,7 +94,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

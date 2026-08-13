@@ -1,7 +1,7 @@
 ---
 title: FlowFuse v1.6 Now Available
 subtitle: FlowFuse Now Supports Multi-Instance Node-RED for Complex Application Development
-description: FlowFuse Now Supports Multi-Instance Node-RED for Complex Application Development
+description: "FlowFuse v1.6 now supports Multi-Instance Node-RED, enabling complex application development across multiple instances at once."
 date: 2023-04-13 
 authors: ["ian-skerrett"]
 image: /blog/2023/04/images/release-1.6.0.png
@@ -61,7 +61,7 @@ Application Overview: “Open Editor” shouldn’t show (or should be disabled)
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

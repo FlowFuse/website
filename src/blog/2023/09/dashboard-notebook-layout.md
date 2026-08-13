@@ -48,10 +48,8 @@ Let's add the following Markdown to our first widget:
 Here we can render dynamic Markdown content that is
 easily _styled_.
 
-{% raw %}
 We can inject `msg.payload`. For example, here is a
 timestamp updating every second: {{ msg.payload }}
-{% endraw %}
 ```
 
 The joy of `ui-markdown` in Dashboard 2.0 is _dynamic_ content, i.e. content that can be updated by passing messages to the `ui-markdown` node. We can wire an `inject` node, set it up to repeat every second, and connect it to `ui-markdown`. Now, our Markdown content will automatically update show this value.

@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.5: New features to visualize snapshots, LDAP integration, and more"
 subtitle: Enhancing security, visualization, and deployment flexibility.
-description: Discover the new features in FlowFuse 2.5, including LDAP integration, visual snapshot comparisons, blueprint previews, snapshot import/export support, and custom domain deployment for dashboards and APIs.
+description: "Discover the new features in FlowFuse 2.5, including LDAP integration, visual snapshot comparisons, and blueprint previews."
 date: 2024-06-06
 authors: ["grey-dziuba"]
 image: /blog/2024/06/images/release-2-5-graphic.png
@@ -62,7 +62,7 @@ Together, we can make FlowFuse better with each release!
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

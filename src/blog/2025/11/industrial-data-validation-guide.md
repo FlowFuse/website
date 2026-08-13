@@ -1,7 +1,7 @@
 ---
 title: "How to Protect Your Factory From Bad Data: A Must-Have Read for IIoT"
 subtitle: "How to validate industrial data before it enters your systems."
-description: Build a bulletproof data validation gateway that catches corrupted sensor readings, malformed MQTT payloads, and drifting PLC data before they wreak havoc on your factory floor. 
+description: "Build a bulletproof data validation gateway that catches corrupted sensor readings and malformed MQTT payloads before they spread."
 lastUpdated: 2026-06-17
 date: 2025-11-27
 authors: ["sumit-shinde"]
@@ -111,7 +111,7 @@ These aren't rigid categories, they're lenses through which you examine your dat
 
 Now that we understand what "good data" looks like, let's build guardrails to enforce it.
 
-> Before we start, make sure you have a running FlowFuse instance that is collecting data. If you don't have a real data source, don't worry, we'll provide a simulated setup as well. Just make sure you have a FlowFuse account and instance running. If you don't have an account, create one now with our [free trial]({% include "sign-up-url.njk" %}).
+> Before we start, make sure you have a running FlowFuse instance that is collecting data. If you don't have a real data source, don't worry, we'll provide a simulated setup as well. Just make sure you have a FlowFuse account and instance running. If you don't have an account, create one now with our [free trial](https://app.flowfuse.com/account/create).
 
 ### Installing the JSON Schema Validator Node
 

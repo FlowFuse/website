@@ -87,7 +87,7 @@ Solution Engineering performance is measured by:
 This page defines **what Solution Engineers own**. Detailed guidance on *how* SEs
 execute lives in the process and meeting pages:
 
-- [Sales Meetings](/handbook/sales/meetings/) — [Discovery](/handbook/sales/meetings/discovery/), [Demo](/handbook/sales/meetings/demo/), [PoC](/handbook/sales/meetings/poc/)
+- [Sales Meetings](/handbook/sales/meetings/) — [Discovery](/handbook/sales/meetings/discovery/), [Demo](/handbook/sales/meetings/demo/), [Solution](/handbook/sales/meetings/solution/), [PoV](/handbook/sales/meetings/pov/)
 - [Processes](/handbook/sales/processes/) — the process and methodology index
 
 This separation keeps ownership clear and execution flexible.

@@ -1,7 +1,7 @@
 ---
 title: Format your Node-RED flows for better team collaboration
 subtitle: From formatting your flows for readability to providing clear comments on nodes and groups, a little bit of effort upfront can save your team a lot of headaches down the road
-description: Learn best practices for formatting Node-RED flows to enhance team collaboration. From descriptive group names to clear switch explanations, optimize your flows for readability and efficiency.
+description: "Learn best practices for formatting Node-RED flows to enhance team collaboration, from group names to switch explanations."
 date: 2022-12-05
 authors: ["rob-marcer"]
 tags:
@@ -90,7 +90,7 @@ Excessive link nodes within groups can make a flow much harder to understand, wh
 
 With FlowFuse, you can quickly [set up and manage teams](/docs/user/team/), giving each member the right level of access. It keeps all your [Node-RED instances organized in one place](https://www.youtube.com/watch?v=KOnQnR7yfT0&list=PLpcyqc7kNgp3nRacWBJ9JUVUJqtTjXdvh&index=2), so your team can collaborate seamlessly. Plus, it features [snapshots](https://www.youtube.com/watch?v=m2Onip4Lf4w), which let you restore previous versions of your flows if something goes wrong. FlowFuse simplifies team collaboration, making it easier to manage and work on Node-RED projects.
 
-**[Sign up]({% include "sign-up-url.njk" %}) now for a free trial and experience FlowFuse's powerful collaboration tools!**
+**[Sign up](https://app.flowfuse.com/account/create) now for a free trial and experience FlowFuse's powerful collaboration tools!**
 
 ### Conclusion
 

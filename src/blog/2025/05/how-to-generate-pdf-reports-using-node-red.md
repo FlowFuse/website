@@ -1,7 +1,7 @@
 ---
 title: "How to Generate PDF Reports Using Node-RED in FlowFuse (2026)"
 subtitle: Learn how to automate the generation of dynamic PDF reports within Node-RED and FlowFuse.
-description: Discover how to create automated PDF reports in Node-RED with FlowFuse. This guide covers everything from setting up the required nodes to generating and serving PDF reports with dynamic data, making sharing and archiving important business insights easy.
+description: "Discover how to create automated PDF reports in Node-RED with FlowFuse, from setup to generating reports with dynamic data."
 lastUpdated: 2026-06-03
 date: 2025-05-07
 authors: ["sumit-shinde"]

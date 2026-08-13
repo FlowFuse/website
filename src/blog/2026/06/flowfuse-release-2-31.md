@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.31: Agentic Development Now in Open Beta, FlowFuse Expert Builds Your Industrial App on Edge Devices"
 subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and platform-level AI controls and real-time platform updates."
-description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and platform-level AI controls and real-time platform updates."
+description: "FlowFuse 2.31 puts FlowFuse Expert in open beta, building your industrial app for you on Cloud, Self-Hosted, and edge devices."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/06/images/flowfuse-release-2-31.jpg

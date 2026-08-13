@@ -1,7 +1,7 @@
 ---
 title: "How to Embed Webpages on the FlowFuse Dashboard"
 subtitle: Learn how to embed external content like maps, reports, and widgets onto your FlowFuse dashboard.
-description:  Learn how to embed external web pages such as maps, reports, and widgets onto your FlowFuse dashboard. Follow this guide for easy, step-by-step instructions on improving your dashboard's functionality and collaboration.
+description: "Learn how to embed external web pages like maps, reports, and widgets onto your FlowFuse dashboard, step by step, with ease."
 date: 2025-05-13
 authors: ["sumit-shinde"]
 image: /blog/2025/05/images/emeding-webpage-on-flowfuse-dashboard.png
@@ -34,7 +34,7 @@ Embedding external content into your FlowFuse dashboard is straightforward and f
 
 Before you begin embedding webpages on FlowFuse Dashboard, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial]({% include "sign-up-url.njk" %}).
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create).
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
 - **@flowfuse/node-red-dashboard-2-ui-iframe:** Ensure you have [node-red-dashboard-2-ui-iframe](https://flows.nodered.org/node/@flowfuse/node-red-dashboard-2-ui-iframe) installed.
 

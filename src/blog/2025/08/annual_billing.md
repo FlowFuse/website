@@ -1,7 +1,7 @@
 ---
 title: "Save with FlowFuse Annual Billing – Now Available!"
 subtitle: "Get one month free when you pay annually"
-description: "FlowFuse now offers annual billing for Starter and Pro plans with one month free. Lock in current pricing, simplify administration, and support long-term planning."
+description: "FlowFuse now offers annual billing for Starter and Pro plans with one month free, locking in pricing for long-term planning."
 date: 2025-08-22
 authors: ["greg-stoutenburg"]
 image: /blog/2025/08/images/annual-billing.png
@@ -54,6 +54,6 @@ Ready to start saving with annual billing? Log into your FlowFuse account to mak
 
 Questions about annual billing or need help choosing the right plan? Our support team is ready to help.
 
-[Try FlowFuse free →]({% include "sign-up-url.njk" %})
+[Try FlowFuse free →](https://app.flowfuse.com/account/create)
 
 

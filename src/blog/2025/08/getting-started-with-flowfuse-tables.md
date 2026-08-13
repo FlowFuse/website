@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse's New Database: The Easiest Way to Store Industrial IoT Data"
 subtitle: "A step-by-step guide to storing, querying, and managing industrial data without leaving your FlowFuse project."
-description: "FlowFuse now includes a built-in PostgreSQL database, making it easier to manage Industrial IoT data directly within your Node-RED projects. Learn how to enable the feature, create tables, run SQL queries, and use dynamic parameters with the Query node."
+description: "FlowFuse now includes a built-in PostgreSQL database, making it easier to manage Industrial IoT data in your Node-RED projects."
 date: 2025-08-08
 authors: ["sumit-shinde"]
 image:  /blog/2025/08/images/flowfuse-database.png
@@ -127,7 +127,6 @@ Once your table is ready, you can start interacting with it using the **Query** 
 
 4. Double-click the Query node and write the SQL command in the **Query** field, For example:
 
-{% raw %}
 ```mustache
 INSERT INTO "maintenance_tasks" (
   "title",
@@ -145,9 +144,8 @@ INSERT INTO "maintenance_tasks" (
   {{{msg.priority}}}
 );
 ```
-{% endraw %}
 
-> This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the {% raw %}`{{{ msg.property }}}`{% endraw %} syntax.
+> This node uses the [Mustache template system](https://github.com/janl/mustache.js) to dynamically generate queries based on message properties, using the `{{{ msg.property }}}` syntax.
 >
 > While convenient for quick testing and prototyping, this method is **not recommended for production use**. For better reliability and maintainability, consider using parameterized queries, for that follow [Using Parameters in Your Queries](#using-parameters-in-your-queries).
 

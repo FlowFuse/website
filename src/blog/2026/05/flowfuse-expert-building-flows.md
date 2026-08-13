@@ -1,7 +1,7 @@
 ---
 title: "How to Build Industrial Apps With FlowFuse AI Expert"
 subtitle: "From a description to a running flow"
-description: "FlowFuse Expert now builds applications from a description. Here's what that looks like, what Expert understands about your environment, and how to keep iterating."
+description: "FlowFuse Expert now builds applications for you from a simple description. See what that looks like and how to keep iterating."
 lastUpdated: 2026-06-04
 date: 2026-05-13
 keywords: flowfuse ai expert, flowfuse expert, industrial automation, node-red, industrial dashboards, mqtt, opc ua, industrial iot, ai-assisted development, real-time monitoring, flowfuse cloud, machine monitoring
@@ -40,7 +40,7 @@ The result is output you can trust to match what you expect, so you reach your i
 
 ## Get started in two minutes
 
-FlowFuse Expert is in open beta on FlowFuse Cloud (Team and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up]({% include "sign-up-url.njk" %}) first.
+FlowFuse Expert is in open beta on FlowFuse Cloud (Team and Enterprise) — no request needed. It is also available on Self-Hosted Enterprise; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up](https://app.flowfuse.com/account/create) first.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 

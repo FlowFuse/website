@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.8: Static File Service, LDAP Updates & More"
 subtitle: Let's take a look at the new features and improvements in FlowFuse 2.8
-description: Let's take a look at the new features and improvements in FlowFuse 2.8
+description: "FlowFuse 2.8 introduces a Static File Service, LDAP updates, and more new features and improvements for the platform overall."
 date: 2024-08-29
 authors: ["joe-pavitt"]
 image: /blog/2024/08/images/release-2-8-august-2024.png
@@ -76,7 +76,7 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 ### FlowFuse Cloud
 
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
 
 ## Upgrading FlowFuse
 

@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.28: Troubleshoot Faster, Manage Edge Devices Centrally, and More Self-Hosted Flexibility"
 subtitle: "Point FlowFuse Expert at your debug logs, configure Node.js runtime options for edge devices, and gain more control over self-hosted deployments."
-description: "FlowFuse 2.28 lets you troubleshoot flows faster with debug log context in FlowFuse Expert, manage Remote Instances centrally with Node.js options and payload configuration, and gives self-hosted users more deployment flexibility."
+description: "FlowFuse 2.28 lets you troubleshoot flows faster with debug log context and manage Remote Instances centrally with more options."
 date: 2026-03-12
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/03/images/flowfuse-release-2-28.png
@@ -94,7 +94,7 @@ If something in this release improves your workflow, or if there is still fricti
 ### FlowFuse Cloud
 
 The fastest way to get started is with FlowFuse Cloud.
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in minutes.
 
 ### Self-Hosted
 

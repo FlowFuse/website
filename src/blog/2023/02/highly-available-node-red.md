@@ -1,7 +1,7 @@
 ---
 title: Toward Highly Available Node-RED
 subtitle: How mission critical use-cases can be supported through FlowFuse soon
-description: Often requested features for Node-RED include HA or Highly Available
+description: "Often-requested Node-RED features include High Availability. Learn what HA means for Node-RED and how FlowFuse supports it."
 date: 2023-02-15
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2023/02/images/roadmap-unsplash.jpg

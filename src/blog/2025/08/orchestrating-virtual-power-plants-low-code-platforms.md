@@ -1,7 +1,7 @@
 ---
 title: "Orchestrating Virtual Power Plants: How Low-Code Platforms Bridge the Gap"
 subtitle: "Why low-code tools are the missing link in scaling distributed energy systems"
-description: "learn how low-code platforms like FlowFuse and Node-RED simplify the integration and management of distributed energy resources, making Virtual Power Plants a scalable reality."
+description: "Learn how low-code platforms like FlowFuse and Node-RED simplify integrating and managing distributed energy resources at scale."
 date: 2025-08-22
 keywords: virtual power plant, distributed energy resources, low-code energy solutions, Node-RED, FlowFuse, energy grid orchestration, DER integration, smart grid software, energy automation, scalable VPP platform
 authors: ["sumit-shinde"]
@@ -62,4 +62,4 @@ And importantly, FlowFuse supports **collaborative development**. No more siloed
 
 Virtual Power Plants are the future of the energy grid, but building them without the right tools is slow, brittle, and expensive. Low-code platforms like **FlowFuse** change that. They offer a practical, scalable, and secure way to integrate DERs, manage fleet operations, and coordinate distributed energy like never before.
 
-Ready to revolutionize your energy infrastructure? Start building your VPP with [FlowFuse's free trial]({% include "sign-up-url.njk" %}) or [Book a Demo](https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa%5B%E2%80%A6%5D113138546=&utm_content=113138546&utm_source=hs_automation&uuid=67e4a958-c21e-4463-8eb4-647cc2386930) to see how leading energy companies are orchestrating thousands of DERs with low-code automation.
+Ready to revolutionize your energy infrastructure? Start building your VPP with [FlowFuse's free trial](https://app.flowfuse.com/account/create) or [Book a Demo](https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa%5B%E2%80%A6%5D113138546=&utm_content=113138546&utm_source=hs_automation&uuid=67e4a958-c21e-4463-8eb4-647cc2386930) to see how leading energy companies are orchestrating thousands of DERs with low-code automation.

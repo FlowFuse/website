@@ -1,7 +1,7 @@
 ---
 title: "Optimizing operations: Improve Industrial Operations with FlowFuse"
 subtitle: "FlowFuse raises $7.2M to empower you to connect the physical and digital worlds of industry."
-description: "With $7.25M in new funding, FlowFuse is enhancing its low-code platform for industry. See how upcoming AI features will help you bridge the OT/IT gap and drive innovation."
+description: "With $7.25M in new funding, FlowFuse is enhancing its low-code platform for industry, bridging the OT/IT gap with new AI features."
 date: 2025-06-10
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2025/06/images/flowfuse-fundraising.png

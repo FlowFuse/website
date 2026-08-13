@@ -1,7 +1,7 @@
 ---
 title: "Displaying logged in user on Node-RED Dashboard 2.0 (2026)"
 subtitle: Step-by-Step Beginner's Guide to Displaying logged in User on Node-RED Dashboard 2.0
-description: Learn how to secure your Dashboard, install, and configure the FlowFuse Multi-user addon, and display logged-in users on Node-RED Dashboard 2.0. Additionally, delve deeper into understanding how the FlowFuse Multi-user addon functions.
+description: "Learn how to secure your Dashboard, configure the FlowFuse Multi-user addon, and display logged-in users on Dashboard 2.0."
 lastUpdated: 2026-06-03
 date: 2024-04-03
 authors: ["sumit-shinde"]
@@ -140,8 +140,8 @@ To display user information on the dashboard we will use Vue’s [Teleport](http
         <div class="user-info">
             <!-- Displaying user image -->
             <img :src="setup.socketio.auth.user.image" />
-            <!-- Greeting the user -->{% raw %}
-            <span>Hi, {{ setup.socketio.auth.user.name }}</span>{% endraw %}
+            <!-- Greeting the user -->
+            <span>Hi, {{ setup.socketio.auth.user.name }}</span>
         </div>
     </Teleport>
 </template>

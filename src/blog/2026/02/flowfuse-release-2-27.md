@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.27: Integrated Editor in Remote Instances & Context-Aware FlowFuse Expert"
 subtitle: "A more consistent Node-RED experience across environments and deeper live context for FlowFuse Expert."
-description: "FlowFuse 2.27 improves Remote workflows, simplifies rollback in developer mode, enhances FlowFuse Expert with live context, and introduces rolling restarts for HA Hosted instances."
+description: "FlowFuse 2.27 improves Remote workflows, simplifies rollback in developer mode, and adds a context-aware FlowFuse Expert."
 date: 2026-02-12
 authors: ["jamie-strusz"]
 image: /blog/2026/02/images/flowfuse-release-2-27.png
@@ -91,7 +91,7 @@ If something in this release improves your workflow, or if there is still fricti
 ### FlowFuse Cloud
 
 The fastest way to get started is with FlowFuse Cloud.  
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in minutes.
 
 ### Self-Hosted
 

@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.10 released
 subtitle: Secure HTTP end points, Read-only users and Static outbound IPs
-description: Secure Node-RED HTTP end points, Read-only users and Static outbound IPs
+description: "FlowFuse 0.10 introduces secure Node-RED HTTP endpoints, read-only users, and static outbound IPs for the platform overall. Learn about released with FlowFuse."
 date: 2022-09-30 12:00:00.0
 authors: ["rob-marcer"]
 video: mjR1iiEFiBg
@@ -62,7 +62,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Try it out
 
-[Sign up for FlowFuse Cloud]({% include "sign-up-url.njk" %}?code=RELEASE010) with this link or at the checkout enter the code **RELEASE010** to get your first project free for a month.
+[Sign up for FlowFuse Cloud](https://app.flowfuse.com/account/create?code=RELEASE010) with this link or at the checkout enter the code **RELEASE010** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 

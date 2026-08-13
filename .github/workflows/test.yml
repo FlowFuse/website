@@ -38,6 +38,19 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: 'website'
+      - name: Cache nuxt-og-image font + rendered-image cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            website/nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image
+            website/nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image-render
+          # The rendered-image cache needs to accumulate newly-rendered images across runs
+          # (content-addressed by title/section hash, so it only grows, never goes stale) -
+          # actions/cache skips saving on an exact key hit, so the primary key includes
+          # run_id to force a save every run; restore-keys still finds the latest prior cache.
+          key: og-image-cache-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            og-image-cache-${{ runner.os }}-
       - name: Run unit tests
         run: npm test
         working-directory: 'website'

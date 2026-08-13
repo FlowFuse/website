@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.18: Smarter Monitoring, AI Integration, Improved DevOps, and a preview of exciting things to come"
 subtitle: "Monitor and improve instance performance, run AI chat in your Dashboard, Git pull, and more."
-description: "Monitor and improve instance performance, run AI chat in your Dashboard, Git pull, and more."
+description: "FlowFuse 2.18 brings smarter monitoring, AI integration, and improved DevOps: run AI chat in your Dashboard, Git pull, and more."
 date: 2025-06-05
 authors: ["greg-stoutenburg"]
 image: /blog/2025/06/images/release-2-18.png
@@ -85,4 +85,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

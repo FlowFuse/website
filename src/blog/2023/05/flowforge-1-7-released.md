@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.7 Now Available with Remote Node-RED Editor Access
 subtitle: Further improving fleet management and maintenance of remote Node-RED instances
-description: FlowFuse now supports access to the Node-RED Editor on devices
+description: "FlowFuse 1.7 is now available with remote Node-RED Editor access, letting teams edit flows directly on their own devices."
 date: 2023-05-11 
 authors: ["marian-demme"]
 image: /blog/2023/05/images/release-1.7.0.png
@@ -90,7 +90,7 @@ Cannot select "Member" option when inviting a team member [#2084](https://github
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

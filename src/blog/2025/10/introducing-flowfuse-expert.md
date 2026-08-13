@@ -1,7 +1,7 @@
 ---
 title: "Introducing FlowFuse Expert"
 subtitle: "Your AI expert for FlowFuse and Node-RED"
-description: "Meet FlowFuse Expert that gives you a clear recipe to build Node-RED flows, step by step."
+description: "Meet FlowFuse Expert, the AI copilot that gives you a clear, step-by-step recipe to build Node-RED flows even faster today."
 date: 2025-10-16
 keywords: node-red expert, node-red developer, flowfuse expert, iiot, industrial automation, mcp nodes, onnx nodes, ai-assisted development, rag, gpt-4.1
 authors: ["sumit-shinde"]
@@ -41,4 +41,4 @@ FlowFuse Expert is built on and runs entirely using FlowFuse technology itself. 
 
 FlowFuse Expert is just one of the many powerful tools we’ve made available to everyone. With FlowFuse, you can deploy, scale, and manage Node-RED effortlessly, accelerate development with FlowFuse AI-assistance, and build your own MCP server. Let AI agents monitor and control industrial applications using MCP nodes, or run your custom AI models in Node-RED with ONNX nodes.
 
-[Start your free FlowFuse trial today]({% include "sign-up-url.njk" %}) and see how you can deploy, manage, and scale secure Node-RED to build powerful industrial applications while exploring the new AI tools we’ve made available for FlowFuse users within Platform.
+[Start your free FlowFuse trial today](https://app.flowfuse.com/account/create) and see how you can deploy, manage, and scale secure Node-RED to build powerful industrial applications while exploring the new AI tools we’ve made available for FlowFuse users within Platform.

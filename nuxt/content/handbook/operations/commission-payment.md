@@ -44,6 +44,14 @@ You need to have the following columns enabled:
    * Deal Type
    * Annual recurring revenue
    * Annual contract value
+   * Contract Term (months)
+   * Payment Terms
+
+Contract Term and Payment Terms are required to apply the multi-year commission
+tiering from the [Sales Compensation Plan](/handbook/sales/commission-plan/)
+(Exhibit A, Sections 10-11). Without them in the export, the sheet cannot tell
+a multi-year deal from a standard 1-year term, which has caused at least one
+overpayment.
 
 When the deal board is updated with on the won deals of last month, 
 click "Export View" and export as CSV. Download this file

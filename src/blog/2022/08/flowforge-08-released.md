@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.8 released
 subtitle: Inter-Project Communication, Default Teams, and realtime device management.
-description: Inter-Project Communication, Default Teams, and realtime device management.
+description: "FlowFuse 0.8 introduces Inter-Project Communication, Default Teams, and real-time device management for managing Node-RED at scale."
 date: 2022-08-04 12:00:00.0
 authors: ["sam-machin"]
 video: nCe_qs0G6ZQ

@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.0 released
 subtitle: FlowFuse at 1.0, a huge milestone for us.
-description: FlowFuse is now 1.0!
+description: "FlowFuse is now 1.0! A major milestone release marking the platform's readiness for production Node-RED deployments at scale."
 date: 2022-10-27 18:00:00.0
 authors: ["rob-marcer"]
 video: 5TLT7CQR7iI
@@ -54,7 +54,7 @@ We've fixed the following bugs in this release.
 - [it.only is not prohibited](https://github.com/FlowFuse/flowfuse/issues/968)
 - [No feedback when an API error occurs editing user](https://github.com/FlowFuse/flowfuse/issues/966)
 - [Start action is available on a running project](https://github.com/FlowFuse/flowfuse/issues/1040)
-- 
+
 ## Contributors
 We'd like the thank the following for their contributions to this release:
 
@@ -64,7 +64,7 @@ As an open-source project, we welcome community involvement in what we're buildi
 
 ### Try it out
 
-[Sign up for FlowFuse-Managed Premium]({% include "sign-up-url.njk" %}?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
+[Sign up for FlowFuse-Managed Premium](https://app.flowfuse.com/account/create?code=RELEASE1) with this link or at the checkout enter the code **RELEASE1** to get your first project free for a month. As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
 
 
 ### Upgrading FlowFuse

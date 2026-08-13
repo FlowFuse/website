@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.13: Remote Instances, UNS Schemas & Improved Management at Scale"
 subtitle: FlowFuse 2.13 brings clarity to "Instances" in FlowFuse, automated documentation for your MQTT Broker, better management and deployment to multiple Remote Instances, and more.
-description: FlowFuse 2.13 brings clarity to "Instances" in FlowFuse, automated documentation for your MQTT Broker, better management and deployment to multiple Remote Instances, and more.
+description: "FlowFuse 2.13 brings clarity to Instances, automated MQTT Broker documentation, and better Remote Instance management overall."
 date: 2025-01-16
 authors: ["joe-pavitt"]
 image: /blog/2025/01/images/release-2-13.png
@@ -93,4 +93,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

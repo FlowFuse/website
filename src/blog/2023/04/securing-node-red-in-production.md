@@ -76,6 +76,9 @@ With a URL similar to the one above, depending on your specific network and Node
 
 One of the easiest ways to protect your flows is to add a username and password to your Node-RED instance.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 The first step is to find your Node-RED settings.js file. It's not always in the same place but on a default Debian Linux installation it can be found in this directory.
 
 ```cd ~/.node-red```
@@ -192,7 +195,7 @@ By default, the Node-RED editor is secured using your FlowFuse user credentials.
 
 All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates, so you can spend time on your flows rather than configuring security. Additionally, remote device access is secured through encrypted tunnels, providing comprehensive protection for your deployments.
 
-FlowFuse has a [free trial]({% include "sign-up-url.njk" %}) if you'd like to see how we've made secure hosting of Node-RED easy.
+FlowFuse has a [free trial](https://app.flowfuse.com/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
 
 ## Conclusion
 
