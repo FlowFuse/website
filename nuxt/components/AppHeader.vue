@@ -166,7 +166,7 @@ onMounted(() => {
               <li class="pl-3 title border-l-2 border-gray-200" :class="col.titleGrid"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
               <li class="contents">
                 <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="col.listClasses">
-                  <li v-for="item in col.links" :key="item.label"><a class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
+                  <li v-for="item in col.links" :key="item.label" :class="{ 'nav-indent': item.indent }"><a class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
                 </ul>
               </li>
             </template>
