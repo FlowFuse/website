@@ -80,14 +80,21 @@ const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.valu
 const pageTitle = computed(() => page.value?.title || 'Blog')
 provide('blogPostTitle', pageTitle)
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Blog`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 const absoluteImage = computed(() => heroImage.value.startsWith('http') ? heroImage.value : `https://flowfuse.com${heroImage.value}`)
 
+// Posts get the "Blog" qualifier on the brand name; the listing doesn't (its own
+// title already says "Blog"). og:title infers from the resolved title. Needs an
+// explicit high tagPriority in its own useHead call — nuxt-seo-utils pushes its own
+// global siteName with tagPriority: 'low', and that otherwise wins over a
+// page-level override regardless of registration order.
+useHead({
+    templateParams: { siteName: () => routeInfo.value.kind === 'post' ? 'FlowFuse Blog' : 'FlowFuse' },
+}, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: computed(() => routeInfo.value.kind === 'post' ? fullTitle.value : 'Blog'),
+    title: pageTitle,
     description: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
-    ogTitle: computed(() => routeInfo.value.kind === 'post' ? fullTitle.value : 'Blog'),
     ogDescription: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
     ogImage: computed(() => routeInfo.value.kind === 'post' ? absoluteImage.value : undefined),
     ogUrl: canonicalUrl,

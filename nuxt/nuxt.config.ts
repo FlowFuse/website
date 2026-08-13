@@ -261,6 +261,10 @@ export default defineNuxtConfig({
 
     app: {
         head: {
+            // nuxt-seo-utils' default title template is `%s %separator %siteName`; the
+            // separator defaults to '|' if unset. This makes every page's <title>/og:title
+            // "{page title} • FlowFuse" without each page having to append the brand itself.
+            templateParams: { separator: '•' },
             link: [
                 { rel: 'stylesheet', href: '/css/style.css' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

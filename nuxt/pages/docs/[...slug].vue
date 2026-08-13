@@ -30,11 +30,14 @@ if (page.value.layout === 'redirect' && page.value.redirect?.to) {
 const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Documentation')
 
 useHead({
-    title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Docs` : 'FlowFuse Documentation'),
+    title: pageTitle,
     meta: [
         { name: 'description', content: computed(() => (page.value as any)?.meta?.description || '') },
     ],
 })
+useHead({
+    templateParams: { siteName: () => slugParts.value.length ? 'FlowFuse Docs' : 'FlowFuse' },
+}, { tagPriority: 1000 })
 
 // Same key+handler DocsLeftNav uses, so useAsyncData dedupes into one fetch per request.
 const { data: navGroups } = await useDocsNavTree()

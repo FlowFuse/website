@@ -28,7 +28,7 @@ function featureDescription (feature: CatalogFeature) {
 }
 
 useSeoMeta({
-  title: 'FlowFuse Pricing',
+  title: 'Pricing',
   description: 'Products built around the job, deploying and scaling automation across plants, or integrating the business systems and data sources you run on. All governed on one platform.',
   ogUrl: 'https://flowfuse.com/pricing/',
   twitterSite: '@FlowFuseinc',

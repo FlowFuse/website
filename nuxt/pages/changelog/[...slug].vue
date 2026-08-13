@@ -36,13 +36,18 @@ function issueLabel(issue: string): string {
 }
 
 const pageTitle = computed(() => page.value?.title || 'Changelog')
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Changelog`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
+// Changelog entries always get the "Changelog" qualifier on the brand name.
+// og:title infers from the resolved title. Needs an explicit high tagPriority in
+// its own useHead call — nuxt-seo-utils pushes its own global siteName with
+// tagPriority: 'low', and that otherwise wins over a page-level override
+// regardless of registration order.
+useHead({ templateParams: { siteName: 'FlowFuse Changelog' } }, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: fullTitle,
+    title: pageTitle,
     description: computed(() => page.value?.description || ''),
-    ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),
     ogUrl: canonicalUrl,
     ogType: 'article',

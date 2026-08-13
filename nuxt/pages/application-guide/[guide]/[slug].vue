@@ -33,13 +33,19 @@ const next = computed(() =>
         : null
 )
 
-const fullTitle = computed(() => `${page.value?.title} • ${guide.value?.title} • FlowFuse Application Guide`)
+const baseTitle = computed(() => `${page.value?.title} • ${guide.value?.title}`)
 const description = computed(() => page.value?.blurb || guide.value?.tagline || '')
 
+// Guide pages always get the "Application Guide" qualifier on the brand name.
+// og:title infers from the resolved title. Needs an explicit high tagPriority in
+// its own useHead call — nuxt-seo-utils pushes its own global siteName with
+// tagPriority: 'low', and that otherwise wins over a page-level override
+// regardless of registration order.
+useHead({ templateParams: { siteName: 'FlowFuse Application Guide' } }, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: fullTitle,
+    title: baseTitle,
     description,
-    ogTitle: fullTitle,
     ogDescription: description,
     ogUrl: computed(() => `https://flowfuse.com${route.path}`),
     ogType: 'article',
