@@ -2,10 +2,15 @@
 title: "Team Plan Renamed to Pro Plan"
 description: "The Team tier has been renamed to Pro tier to better reflect the plan's capabilities and target audience"
 date: 2025-08-04 12:00:00.0
+lastUpdated: 2026-08-13
 authors: ["greg-stoutenburg"]
 tags:
   - changelog
 ---
+
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
 
 We've renamed our Team tier to Pro tier to better reflect what it's truly designed for: using Node-RED professionally to build applications, replace and augment software in your organization, and scale professional Node-RED deployments.
 
