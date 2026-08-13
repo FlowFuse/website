@@ -3,6 +3,7 @@ title: "FlowFuse 2.14: Announcing Third-Party Broker Integration, UNS Schemas, E
 subtitle: A huge wave of new features in FlowFuse elevates your MQTT experience as well as providing improved Remote Instances security and version control too
 description: A huge wave of new features in FlowFuse elevates your MQTT experience as well as providing improved Remote Instances security and version control too
 date: 2025-02-11
+lastUpdated: 2026-08-13
 authors: ["joe-pavitt"]
 image: /blog/2025/02/images/release-2-14.png
 tags:
@@ -14,6 +15,10 @@ tags:
 This release is full of highlights, which we’ll break down into two key areas - the **FlowFuse MQTT Experience** and **Remote Instances** - so you can better digest all of the great new functionality introduced in FlowFuse 2.14.
 
 <!--more-->
+
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
 
 ## MQTT Experience in FlowFuse
 
