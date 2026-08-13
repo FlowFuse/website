@@ -11,9 +11,11 @@
 # Fields:
 #   tiers          which plans include the feature. Required unless showOnPricing is false.
 #                  Omit entirely when availability is not settled yet: no tiers means no badge
-#                  is published, which is safer than publishing a wrong one.
+#                  is published, which is safer than publishing a wrong one. Set them on an
+#                  off-pricing feature too, so its docs and changelog badges still state where
+#                  it is available.
 #   showOnPricing  false keeps the feature out of /pricing while still letting it carry a
-#                  changelog or docs link. Defaults to true.
+#                  changelog or docs link, and badge them. Defaults to true.
 #   subfeature     renders indented under the preceding feature in the handbook table.
 #   changelog      every changelog post that shipped this feature, oldest first.
 #   docsLink       the canonical docs page. A fragment scopes it to a heading on that page.

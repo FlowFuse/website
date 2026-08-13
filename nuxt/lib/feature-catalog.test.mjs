@@ -133,12 +133,17 @@ test('featurePlanLabels badges a feature that has a row on the pricing page', ()
     assert.deepEqual(featurePlanLabels(expert), ['Edge', 'Hub', 'Fleet'])
 })
 
-// A feature kept off the pricing page is in no plan's public line-up, so stating its
-// availability reads as deprecated or as a mistake rather than as availability.
-test('featurePlanLabels publishes no badge for a feature that is off the pricing page', () => {
+// The badge links to a plan's product page, not to the pricing comparison table, so it never
+// sends the reader looking for a row that is not there. Availability is stated wherever known.
+test('featurePlanLabels badges a feature that is off the pricing page', () => {
     const retired = findFeatureByChangelog(fixture, '/changelog/2026/07/retired/')
-    assert.deepEqual(retired.tiers, { edge: true, hub: true, fleet: true })
-    assert.deepEqual(featurePlanLabels(retired), [])
+    assert.deepEqual(featurePlanLabels(retired), ['Edge', 'Hub', 'Fleet'])
+})
+
+test('featurePlanLabels publishes no badge when availability is unsettled', () => {
+    const unsettled = findFeatureByChangelog(fixture, '/changelog/2026/07/unsettled/')
+    assert.equal(unsettled.tiers, undefined)
+    assert.deepEqual(featurePlanLabels(unsettled), [])
 })
 
 test('featurePlanLabels treats a missing feature as nothing to say', () => {
@@ -146,12 +151,13 @@ test('featurePlanLabels treats a missing feature as nothing to say', () => {
     assert.deepEqual(featurePlanLabels(undefined), [])
 })
 
-// Guards the review this rule came from: every badge the real catalog can produce must land
-// on a feature the reader can actually find on the pricing page.
-test('no feature in the shipped catalog badges without a pricing row', () => {
-    const badged = allFeatures(catalog).filter(feature => featurePlanLabels(feature).length)
-    assert.ok(badged.length > 0, 'expected the catalog to badge something')
-    assert.deepEqual(badged.filter(feature => !onPricing(feature)).map(feature => feature.id), [])
+// The one remaining reason a catalog entry publishes no badge.
+test('every feature in the shipped catalog that declares tiers badges', () => {
+    const silent = allFeatures(catalog)
+        .filter(feature => !featurePlanLabels(feature).length && feature.tiers)
+        .map(feature => feature.id)
+
+    assert.deepEqual(silent, [])
 })
 
 test('PLANS matches the plan files that drive the pricing table', () => {

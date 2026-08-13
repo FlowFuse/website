@@ -6,7 +6,7 @@
 // heading containing a link or inline code still matches, and nothing can be injected into
 // an attribute by accident.
 
-import { allFeatures, normalizePath, onPricing, planLabels } from './feature-catalog.mjs'
+import { allFeatures, normalizePath, planLabels } from './feature-catalog.mjs'
 
 const HEADING = /^h([2-6])$/
 
@@ -51,15 +51,11 @@ export function resolveFeatureEntry (entry, catalog, release, changelogTitles = 
 
     if (ids.length && !features.length) return null
 
-    // Only features with a row on the pricing page contribute a badge, for the reason in
-    // featurePlanLabels: a feature kept off pricing is in no plan's public line-up, so stating
-    // its availability reads as a mistake. A grouped heading unions just the priced ones, so it
-    // still badges when only some of the features it covers are on pricing. The changelog and
-    // docs links below are unaffected: they resolve to real pages either way.
-    const priced = features.filter(onPricing)
-
+    // Every feature under the heading contributes, whether or not it has a row on the pricing
+    // page, for the reason in featurePlanLabels: the badge links to a plan's product page, so
+    // it no longer sends the reader looking for the feature in a comparison table.
     const tiers = features.length
-        ? priced.reduce((merged, feature) => ({
+        ? features.reduce((merged, feature) => ({
             edge: merged.edge || !!feature.tiers?.edge,
             hub: merged.hub || !!feature.tiers?.hub,
             fleet: merged.fleet || !!feature.tiers?.fleet,
@@ -68,7 +64,7 @@ export function resolveFeatureEntry (entry, catalog, release, changelogTitles = 
 
     // A feature with no `tiers` at all resolves to all-false above. That is the "availability
     // not settled" case, and it must publish no badge, same as everywhere else.
-    const anyTiers = features.length ? priced.some(feature => feature.tiers) : !!entry.tiers
+    const anyTiers = features.length ? features.some(feature => feature.tiers) : !!entry.tiers
 
     const changelog = features.flatMap(feature =>
         (feature.changelog ?? [])

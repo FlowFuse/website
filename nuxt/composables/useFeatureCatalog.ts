@@ -35,9 +35,8 @@ export function useFeatureCatalog () {
 /**
  * The plans that include the feature a changelog post shipped.
  *
- * Empty whenever the post is not tied to a catalog feature, the feature has no row on the
- * pricing page, or its availability has not been settled. All three mean "publish no badge"
- * rather than "publish an empty one".
+ * Empty whenever the post is not tied to a catalog feature, or that feature's availability
+ * has not been settled. Both mean "publish no badge" rather than "publish an empty one".
  */
 export function useChangelogPlans (path: MaybeRefOrGetter<string | undefined>) {
     const catalog = useFeatureCatalog()
@@ -46,7 +45,7 @@ export function useChangelogPlans (path: MaybeRefOrGetter<string | undefined>) {
 
 /**
  * The plans that include the feature a docs page documents. Empty on the many docs pages
- * that are not tied to a catalog feature, and on those whose feature is off the pricing page.
+ * that are not tied to a catalog feature, and on those whose availability is unsettled.
  */
 export function useDocsPlans (path: MaybeRefOrGetter<string | undefined>) {
     const catalog = useFeatureCatalog()

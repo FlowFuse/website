@@ -170,7 +170,7 @@ changelog:
 
 Once that entry is in place, the post renders "Available in Edge / Hub / Fleet" badges from the feature's `tiers`. You need no additional markup in the post itself. A post that is not tied to a catalog feature renders no badges, which is the safe default.
 
-If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. A feature that only exists to carry a changelog link, rather than to be sold, gets `showOnPricing: false` so it stays off the pricing page. If availability is genuinely undecided, leave `tiers` off the entry entirely: no badge is better than a wrong one. Product must review any additions or availability changes before merging.
+If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. A feature that only exists to carry a changelog link, rather than to be sold, gets `showOnPricing: false` so it stays off the pricing page. Give it `tiers` all the same, so its badges still state where it is available. If availability is genuinely undecided, leave `tiers` off the entry entirely: no badge is better than a wrong one. Product must review any additions or availability changes before merging.
 
 Always write an availability note in the post as well. Badges name the plans, but prose tells the user what it means for them. Write it like this:
 

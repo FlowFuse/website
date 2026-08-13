@@ -108,14 +108,17 @@ export function onPricing (feature) {
 }
 
 /**
- * A feature's plan labels, but only when a reader can find that feature on the pricing page.
+ * A feature's plan labels, whether or not it has a row on the pricing page.
  *
- * The catalog also carries features deliberately kept off the pricing page. Badging one of
- * those states availability for a feature the reader can then find in no plan's line-up,
- * which reads as deprecated or as a mistake rather than as availability. So a feature off the
- * pricing page publishes no badge, the same outcome as one whose availability is unsettled.
+ * Being off the pricing page used to suppress the badge, back when a badge linked to the
+ * comparison table: clicking through and finding no row for the feature read as deprecated
+ * or as a mistake. A badge now links to that plan's product page, which makes no promise of
+ * a feature list, so the reader is never sent looking for a row that is not there. Stating
+ * availability wherever we know it beats stating it nowhere.
+ *
+ * Still empty for a missing feature and for one whose `tiers` are unset, which is the only
+ * remaining "publish no badge" case.
  */
 export function featurePlanLabels (feature) {
-    if (!onPricing(feature)) return []
     return planLabels(feature?.tiers)
 }
