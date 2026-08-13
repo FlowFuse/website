@@ -16,6 +16,10 @@ Arduino is a popular open-source platform that lets you build cool electronics p
 
 <!--more-->
 
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
+
 In this guide, I’ll show you how to control and automate your Arduino remotely using Node-RED and FlowFuse, all without writing any code. We’ll use the Firmata protocol to make it easy to send commands and get data from your Arduino. By the end of this tutorial, you’ll have a simple automation setup that you can control from anywhere. Just keep in mind, the Arduino will need to be connected to the device running Node-RED!
 
 <lite-youtube videoid="FTuxOy16nwo" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
