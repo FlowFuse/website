@@ -2,6 +2,7 @@
 title: Import blueprints directly into your existing instances
 description: Making it easier to try out the FlowFuse Blueprints within your existing Node-RED instances
 date: 2025-07-03 12:00:00.0
+release: "2.19"
 authors: ['nick-oleary']
 tags:
   - changelog

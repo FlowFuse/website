@@ -2,6 +2,7 @@
 title: Search & Filter for Topic Hierarchy List  
 description: Users can now search and filter the topic hierarchy list for easier navigation.  
 date: 2025-02-18 12:00:00.0  
+release: "2.15"
 authors: ['serban-costin']  
 tags:  
   - changelog  

@@ -2,6 +2,7 @@
 title: FlowFuse MQTT
 description: "MQTT Simplified"
 date: 2025-08-18 12:00:00.0
+release: "2.21"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

@@ -2,6 +2,7 @@
 title: "Updated: Upcoming Scheduled Server Maintenance on March 28th, 2026"
 description: Keeping the FlowFuse Cloud up to date with critical server maintenance.
 date: 2026-03-12 12:00:00.0
+release: "2.28"
 authors: ['nick-oleary']
 tags:
   - changelog

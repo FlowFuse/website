@@ -2,6 +2,7 @@
 title: Set Node.js Options for Remote Instances
 description: FlowFuse Device Agent v3.8.1 adds support for passing Node.js command line arguments to Remote Instances, enabling custom heap sizes and private CA certificate support.
 date: 2026-02-13 12:00:00.0
+release: "2.28"
 authors: ['ben-hardill']
 tags:
 - changelog
