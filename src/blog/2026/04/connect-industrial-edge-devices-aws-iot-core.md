@@ -242,7 +242,7 @@ Confirm the message arrived in AWS using the built-in MQTT test client.
 3. Go back to FlowFuse and click the inject button again.
 4. The message appears in the AWS test client within seconds.
 
-!["AWS IoT Core MQTT test client showing the successfully received JSON payload on the flowfuse/telemetry topic"](./images/flowfuse-to-aws.gif)
+<video autoplay loop muted playsinline aria-label="AWS IoT Core MQTT test client showing the successfully received JSON payload on the flowfuse/telemetry topic"><source src="./images/flowfuse-to-aws.webm" type="video/webm"></source></video>
 _AWS MQTT test client showing the received JSON message on the flowfuse/telemetry topic_
 
 You've successfully connected FlowFuse to AWS IoT Core. Data published from your FlowFuse instance now flows securely into AWS over mutual TLS, ready to be routed to Lambda, DynamoDB, S3, or any other service in your stack via IoT Core rules.

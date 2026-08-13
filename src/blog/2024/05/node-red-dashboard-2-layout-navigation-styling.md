@@ -107,7 +107,7 @@ In this layout, the width value is converted to "units", with each unit being `9
 1. Navigate to the page configuration by clicking on the **edit** button of your page in the Dashboard 2.0 sidebar.
 2. In the page configuration, you can select the preferred layout for that page within the layout field.
 
-!["Image showing process of setting page layout"](./images/node-red-dashboard-2-layout-navigation-styling-setting-new-page-layout.gif "Image showing process of setting page layout"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of setting page layout"><source src="./images/node-red-dashboard-2-layout-navigation-styling-setting-new-page-layout.webm" type="video/webm"></source></video>
 
 ## Setting Dashboard 2.0 elements size
 
@@ -134,7 +134,7 @@ To set the size of groups and widgets in Dashboard 2.0, follow these steps:
 1. Go to the Dashboard 2.0 sidebar and click on the edit button next to the element you want to resize.
 2. Adjust the size using the size property.
 
-!["Image showing process of setting element size"](./images/node-red-dashboard-2-layout-navigation-styling-setting-size.gif "Image showing process of setting element size"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of setting element size"><source src="./images/node-red-dashboard-2-layout-navigation-styling-setting-size.webm" type="video/webm"></source></video>
 
 ## Understanding Dashboard 2.0 Theme 
 
@@ -159,7 +159,7 @@ For additional information on the `ui-theme` settings, please refer to the [ui-t
 4. Now switch to the layout tab and click on the edit button next to the page for which you want to set a new theme.
 5. In the page config, select the newly added theme in the Theme field.
 
-!["Image showing process of adding new theme"](./images/node-red-dashboard-2-layout-navigation-styling-adding-new-theme.gif "Image showing process of adding new theme"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of adding new theme"><source src="./images/node-red-dashboard-2-layout-navigation-styling-adding-new-theme.webm" type="video/webm"></source></video>
 
 ## Dashboard 2.0 Navigation
 

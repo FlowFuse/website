@@ -173,7 +173,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the read operation"](./images/interacting-with-google-sheet-from-node-red-read.gif "Image showing the read operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the read operation"><source src="./images/interacting-with-google-sheet-from-node-red-read.webm" type="video/webm"></source></video>
 
 ### Updating Data of Cells
 
@@ -182,7 +182,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the update operation"](./images/interacting-with-google-sheet-from-node-red-update.gif "Image showing the update operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the update operation"><source src="./images/interacting-with-google-sheet-from-node-red-update.webm" type="video/webm"></source></video>
 
 ### Deleting Data from Cells
 
@@ -191,7 +191,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the delete operation"](./images/interacting-with-google-sheet-from-node-red-delete.gif "Image showing the delete operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the delete operation"><source src="./images/interacting-with-google-sheet-from-node-red-delete.webm" type="video/webm"></source></video>
 
 Below I have provided the complete flow that we have built through the guide, make sure to replace the environment variable with your environment variable added for the private key.
 

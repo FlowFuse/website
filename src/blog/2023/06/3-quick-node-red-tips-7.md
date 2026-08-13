@@ -28,7 +28,7 @@ Place your content into Dashboard 'groups', those groups can make use of wider s
 
 The image below shows what happens when you change the screen size for this dashboard.
 
-![Changing the aspect ratio of the screen](./images/responsive.gif "Changing the aspect ratio of the screen")
+<video autoplay loop muted playsinline aria-label="Changing the aspect ratio of the screen"><source src="./images/responsive.webm" type="video/webm"></source></video>
 
 If you'd like to try this out on your own Node-RED, you can import the flow below.
 

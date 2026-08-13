@@ -64,7 +64,7 @@ Before creating the server, it's important to understand that we will need to li
 
 ### Testing the WebSocket Server
 
-![Testing Server with Client](./images/server-testing.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Testing Server with Client"><source src="./images/server-testing.webm" type="video/webm"></source></video>
 _Testing the WebSocket server with a Websocket client_
 
 Now that you have deployed the Node-RED flow, it is acting as a server that can both send and receive data. To test the server, you can use the [Simple WebSocket Client](https://chromewebstore.google.com/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo?hl=en) extension in your browser. Make sure to install this extension if you want to test the server.
@@ -104,7 +104,7 @@ Now, as the section states, we are going to see how you can connect to the WebSo
 
 ### Testing the WebSocket Client
 
-![Testing Client with Server](./images/client-testing.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Testing Client with Server"><source src="./images/client-testing.webm" type="video/webm"></source></video>
 _Testing Websocket Client with Websocket Server_
 
 Now, to test the client, you can send messages from the server and see the debug window for that message in the client instance. Similarly, you can send messages from the client Instance to the server and observe the responses in the debug window of server instance.

@@ -20,7 +20,7 @@ The workspace is the main area in the editor where you build application flows b
 
 The workspace provides view tools at the footer in the right corner. This includes zoom in (`Ctrl` + `+`) and zoom out (`Ctrl` + `-`) buttons to control the view of the workspace and reset the zoom level to its default.
 
-![Image showing navigator tool](./images/workspace-navigator-tool.gif "Image showing navigator tool"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing navigator tool"><source src="./images/workspace-navigator-tool.webm" type="video/webm"></source></video>
 
 Additionally, it provides a view navigator that allows you to see a scaled-down view of the entire workspace. In this view, you can also see the currently visible area of the workspace in the editor. To jump to a specific workspace area, click on that area in the view navigator.
 
@@ -98,7 +98,7 @@ It will create the subflow window like a flow tab for you.
 
 ### Editing a Subflow
 
-![Image showing 'How to edit the subflow properties'](./images/subflow-editing-properties.gif "Image showing 'How to edit the subflow properties'"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing 'How to edit the subflow properties'"><source src="./images/subflow-editing-properties.webm" type="video/webm"></source></video>
 
 To open the subflow edit dialog, double-click on the subflow node, then click on the "edit template properties". You can give the name for that subflow, add the description by clicking on the top-right
 
@@ -130,7 +130,7 @@ To delete the subflow, click on the "delete subflow" button at the top of the su
 
 ### Converting Nodes into a Subflow
 
-![Image showing how to convert nodes into the subflow](./images/subflow-converting-nodes-to-subflow.gif "Image showing how to convert nodes into the subflow"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to convert nodes into the subflow"><source src="./images/subflow-converting-nodes-to-subflow.webm" type="video/webm"></source></video>
 
 If you have nodes on the workspace and you want to create a subflow of them, you can select them by pressing the left mouse key and drawing a rectangle around them. Then click on subflow -> selection to subflow in the main menu.
 
@@ -303,7 +303,7 @@ In Node-RED, groups can be created for better organization, containing a single 
 
 ### Creating a Flow Group
 
-![Image showing how to create the group](./images/creating-group.gif "Image showing how to create the group"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to create the group"><source src="./images/creating-group.webm" type="video/webm"></source></video>
 
 To create a flow group, select nodes (by holding the Ctrl key or drawing a rectangle around them). Navigate to `Groups -> Group selection` in the main menu or press `Ctrl + Shift + G`.
 
@@ -341,13 +341,13 @@ To remove nodes from a group, select the nodes and navigate to `Groups -> Remove
 
 ### Merging Groups
 
-![Image showing how to merge multple groups into single group](./images/group-merging-groups.gif "Image showing how to merge multple groups into single group"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to merge multple groups into single group"><source src="./images/group-merging-groups.webm" type="video/webm"></source></video>
 
 To merge multiple groups into a single group, select the groups. Go to `Main Menu -> Groups -> Merge selection`.
 
 ### Ungrouping Selected Nodes
 
-![Image showing how to ungroup selected nodes](./images/removing-nodes-from-group.gif "Image showing how to ungroup selected nodes"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to ungroup selected nodes"><source src="./images/removing-nodes-from-group.webm" type="video/webm"></source></video>
 
 To ungroup nodes from a group, select the nodes. Go to `Main Menu -> Groups -> Ungroup selection`.
 

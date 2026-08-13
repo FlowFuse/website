@@ -134,7 +134,7 @@ Now you will see the object with the parsed sensor data in the debug panel. The 
 
 As you can see in the image below, TTN console shows live data with uplink message on the left side, and FlowFuse successfully reads and processes it on the right side.
 
-![Image showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right](./images/live-data-ttn-ff1.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right"><source src="./images/live-data-ttn-ff1.webm" type="video/webm"></source></video>
 *Image showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right*
 
 ## Sending Commands to Devices (Downlink)
@@ -172,7 +172,7 @@ return msg;
 
 In the image below, you can see FlowFuse sending and processing the downlink message, while TTN console displays the live data on the left.
 
-![Image showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right](./images/live-data-ttn-downlink.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right"><source src="./images/live-data-ttn-downlink.webm" type="video/webm"></source></video>
 *Image showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right*
 
 ## Next Steps

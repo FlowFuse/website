@@ -21,7 +21,7 @@ In this article, we will explore some of the better solutions for storing and re
 
 In this example, we have data in msg.payload as well as in msg.later.
 
-![Storing data outside of msg.payload](./images/data-outside-msg-payload.gif "Storing data outside of msg.payload")
+<video autoplay loop muted playsinline aria-label="Storing data outside of msg.payload"><source src="./images/data-outside-msg-payload.webm" type="video/webm"></source></video>
 
 If you want your debug to display the full content of the message, change the output to 'complete message object' as shown above.
 
@@ -41,7 +41,7 @@ You may also want to remove data you don't need from your messages to optimize t
 
 It's easy enough to remove data you don't need, wherever it sits within your messages using the Change Node. In this example, we are going to delete the content of msg.other while leaving the rest of the message to be passed to the next Node.
 
-![Deleting data from msg.other](./images/delete-other.gif "Deleting data from msg.other")
+<video autoplay loop muted playsinline aria-label="Deleting data from msg.other"><source src="./images/delete-other.webm" type="video/webm"></source></video>
 
 The Change Node is configured as follows.
 
@@ -63,7 +63,7 @@ As the HTTP Node, which we are using to interact with the weather API, overwrite
 
 You can see the flow working below.
 
-![Example flow which gets the sunset time for a given location](./images/sunset-example.gif "Example flow which gets the sunset time for a given location")
+<video autoplay loop muted playsinline aria-label="Example flow which gets the sunset time for a given location"><source src="./images/sunset-example.webm" type="video/webm"></source></video>
 
 You can import the flow using this code.
 
@@ -81,7 +81,7 @@ Where possible, it's more robust to store all the information related to a parti
 
 In this example, we simulate how a race condition can make context a bad choice for transactional data storage. The flow passes in the name and age of two people then moves the age to context. The flow then adds a random delay for each message so that, in some cases, the messages do not reach the debug in the order they were created. After the delay, the age is pulled back from context and added to each msg.payload.
 
-![Example of how a race condition can make context a bad place to cache data](./images/race-condition.gif "Example of how a race condition can make context a bad place to cache data")
+<video autoplay loop muted playsinline aria-label="Example of how a race condition can make context a bad place to cache data"><source src="./images/race-condition.webm" type="video/webm"></source></video>
 
 If there is a race condition in play, we should intermittently see Rob and John's stored ages being assigned to the wrong person. We can see in the image above that Rob is showing the incorrect age.
 

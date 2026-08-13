@@ -245,7 +245,7 @@ The process is the same for `MySwitch` and `MyLevel`, the only difference being 
 
 When deployed, you can confirm values are being written to from the client to the server from the dashboard.
 
-![opc-write.gif](./images/opc-ua-3/opc-write.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="opc-write.gif"><source src="./images/opc-ua-3/opc-write.webm" type="video/webm"></source></video>
 
 ## Read Alarms & Events from OPC UA Server Using OpcUa-Event and Opc-Ua-Client Nodes
 
@@ -278,7 +278,7 @@ To make things simple, we’ll only track the last event.  But in a production s
 
 Adding alarms and events to our dashboard creates the following result - 
 
-![opc-event.gif](./images/opc-ua-3/opc-event.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="opc-event.gif"><source src="./images/opc-ua-3/opc-event.webm" type="video/webm"></source></video>
 
 ## Using FlowFuse to Enhance Your Node-RED Application: Security, Scalability, and Robustness
 

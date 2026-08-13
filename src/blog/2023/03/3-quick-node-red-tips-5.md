@@ -33,7 +33,7 @@ To export a flow, follow these steps:
 3. If you chose "File" you will be prompted to save a compressed JSON file to your computer; if you chose "Clipboard" the flow JSON will be copied to your clipboard.
 4. Use the exported file or clipboard content to import into a different instance of Node-RED.
 
-![Importing and exporting your flows](./images/import-export.gif "Importing and exporting your flows")
+<video autoplay loop muted playsinline aria-label="Importing and exporting your flows"><source src="./images/import-export.webm" type="video/webm"></source></video>
 
 Keep in mind that some nodes or flows may require additional setup or node installation on the Node-RED instance you import your flow to.
 
@@ -51,7 +51,7 @@ To use example flows in custom nodes, follow these steps:
 
 Once the example flow has been added to your workspace, you can modify it to fit your specific needs.
 
-![Using the example flow included in the moment node](./images/example.gif "Using the example flow included in the moment node")
+<video autoplay loop muted playsinline aria-label="Using the example flow included in the moment node"><source src="./images/example.webm" type="video/webm"></source></video>
 
 It's important to note that while custom node examples can be a useful starting point, they may not always work seamlessly with your other flows or nodes. Be sure to thoroughly test any custom node examples before incorporating them into a production environment.
 
@@ -67,7 +67,7 @@ The group feature in Node-RED allows users to visually group nodes together with
 
 4. Reduced clutter: Grouping nodes can help reduce the visual clutter in your workspace, making it easier to focus on key aspects of your flow.
 
-![Grouping your nodes to make them easier to read](./images/groups.gif "Grouping your nodes to make them easier to read")
+<video autoplay loop muted playsinline aria-label="Grouping your nodes to make them easier to read"><source src="./images/groups.webm" type="video/webm"></source></video>
 
 Overall, the group feature in Node-RED is a valuable tool that can help users better organise, edit, and share their flows.
 

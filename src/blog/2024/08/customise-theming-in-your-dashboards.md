@@ -79,7 +79,7 @@ To add elements to the header, we can use [Teleports](https://dashboard.flowfuse
 To render content on the left side of the header, we can teleport content into the `#app-bar-title` element, where our page name is displayed.
 
 !["Screenshot of Dashboard showing the #app-bar-title container"](./images/left-side-area.png "Image of Dashboard showing the #app-bar-title container"){data-zoomable}
-_Image of Dashboard showing the #app-bar-title container_
+_Video of Dashboard showing the #app-bar-title container_
 
 #### Hiding the Page Name in the Header
 
@@ -267,22 +267,22 @@ The following options are available for header styling:
 
 This option as it name suggest it is the default option set for header. In which the header will get hidden if we scrolled down.
 
-!["Image showing the dashboard with default header"](./images/default-header.gif "Image showing the dashboard with default header"){data-zoomable}
-_Image showing the dashboard with default header_
+<video autoplay loop muted playsinline aria-label="Video showing the dashboard with default header"><source src="./images/default-header.webm" type="video/webm"></source></video>
+_Video showing the dashboard with default header_
 
 ### Hidden
 
 Selecting this option completely hides the header, allowing you to use that space for other purposes.
 
 !["Image showing the dashboard with hidden header"](./images/hidden-header.png "Image showing the dashboard with hidden header"){data-zoomable}
-_Image showing the dashboard with hidden header_
+_Video showing the dashboard with hidden header_
 
 ### Fixed
 
 Selecting this option keeps the header fixed at the top. This means that when you scroll the page down, the header will remain visible.
 
-!["Image showing the dashboard with fixed header"](./images/fixed-header.gif "Image showing the dashboard with fixed header"){data-zoomable}
-_Image showing the dashboard with fixed header_
+<video autoplay loop muted playsinline aria-label="Video showing the dashboard with fixed header"><source src="./images/fixed-header.webm" type="video/webm"></source></video>
+_Video showing the dashboard with fixed header_
 
 ## Changing Dashboard Theme
 

@@ -239,7 +239,7 @@ Node-RED supports environment variables at two levels:
 3. Add your variables as name-value pairs
 4. Click Done and deploy
 
-!["Screenshot showing how to set flow level environment variables"](./images/variables-in-node-red-setting-flow-scope-enviroment-variable.gif "Screenshot showing how to set flow level environment variables"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Screenshot showing how to set flow level environment variables"><source src="./images/variables-in-node-red-setting-flow-scope-enviroment-variable.webm" type="video/webm"></source></video>
 
 For global-level environment variables, see [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for detailed instructions.
 

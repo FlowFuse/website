@@ -62,7 +62,7 @@ FlowFuse provides **Swagger/OpenAPI documentation** that gives you a complete ov
 
 > **Note:** The Swagger UI is **read-only**. You cannot execute API calls directly from it. Its purpose is to **display all endpoints** after visiting the page, so you can plan and structure your API calls in Node-RED flows, scripts, or other applications.
 
-![FlowFuse Swagger/OpenAPI documentation interface displaying endpoints for users, Node-RED instances, devices, deployments, and much more.](./images/flowfuse-swagger-api-docs.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Swagger/OpenAPI documentation interface displaying endpoints for users, Node-RED instances, devices, deployments, and much more."><source src="./images/flowfuse-swagger-api-docs.webm" type="video/webm"></source></video>
 *FlowFuse Swagger/OpenAPI documentation interface displaying endpoints for users, Node-RED instances, devices, deployments, and much more.*
 
 #### How to Use the Swagger Docs

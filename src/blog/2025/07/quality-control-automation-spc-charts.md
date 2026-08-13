@@ -298,7 +298,7 @@ return msg;
 
 The following image demonstrates the advanced alerting system in action, detecting specific patterns beyond simple control limit violations:
 
-![SPC system detecting process drift in real-time, showing chart responding to simulated measurement changes and triggering alerts](./images/simulated-drift-alert.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="SPC system detecting process drift in real-time, showing chart responding to simulated measurement changes and triggering alerts"><source src="./images/simulated-drift-alert.webm" type="video/webm"></source></video>
 _Real-time SPC monitoring detecting process drift and triggering appropriate alerts based on trend analysis_
 
 ## Connecting to Real Equipment

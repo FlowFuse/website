@@ -41,7 +41,7 @@ This release also brings some new abilities for the FlowFuse Expert to help you 
 
 Make sure you've updated the `@flowfuse/nr-assistant` module inside your instance to unlock these new capabilities.
 
-![FlowFuse Expert Install Node](./images/ff-expert-install-node.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert Install Node"><source src="./images/ff-expert-install-node.webm" type="video/webm"></source></video>
 *FlowFuse Expert integration with the Palette Manager*
 
 

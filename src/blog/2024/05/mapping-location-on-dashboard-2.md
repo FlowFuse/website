@@ -154,7 +154,7 @@ To render worlmap webpage on dashboard 2.0 we will use **iframe** custom widget 
 
 ## Deploying the flow
 
-!["Image displaying live locations of UK public transport on the dashboard"](./images/mapping-location-on-dashboard-2-uk-live-transport.gif "Image displaying live locations of UK public transport on the dashboard"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video displaying live locations of UK public transport on the dashboard"><source src="./images/mapping-location-on-dashboard-2-uk-live-transport.webm" type="video/webm"></source></video>
 
 ::render-flow
 ```json

@@ -53,7 +53,7 @@ Now, let us test the natural language querying powered by the FlowFuse Expert:
 6. Connect a Debug node to see the results  
 7. Deploy the flow and click the Inject button to test it.
 
-![FlowFuse Expert in Query Node](./images/flowfuse-ai-assistance-table-demo.gif){data-zoomable}  
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert in Query Node"><source src="./images/flowfuse-ai-assistance-table-demo.webm" type="video/webm"></source></video>  
 _FlowFuse Expert in Query Node_
 
 ## Practical Query Examples

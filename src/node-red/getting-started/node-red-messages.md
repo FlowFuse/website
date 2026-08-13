@@ -19,7 +19,7 @@ This guide explores Node-RED message mechanics, common pitfalls, and best practi
 
 Messages in Node-RED are data packets that flow between nodes in your workflow. Node-RED follows an event-driven architecture where nodes act as both event emitters and listeners, with messages serving as the communication medium between them.
 
-![Node-RED message passing animation](./images/node-red-message-passing.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Node-RED message passing animation"><source src="./images/node-red-message-passing.webm" type="video/webm"></source></video>
 _Node-RED message passing visualization_
 
 Messages carry the data that powers your workflows, sensor readings, user inputs, API responses, and more. Fundamentally, Node-RED messages are JavaScript objects, providing a flexible structure for managing and transferring data throughout your flows.
@@ -271,7 +271,7 @@ return msg;
 
 This commonly occurs when an Inject node sends `msg.payload` as a string or number, then a Change node attempts to add properties to it.
 
-![Showing the common mistake: adding property to non-object](./images/mistake1.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Showing the common mistake: adding property to non-object"><source src="./images/mistake1.webm" type="video/webm"></source></video>
 _Incorrect: Adding properties to a non-object type_
 
 ![Correct approach to prevent the error](./images/mistake-1-solution.gif){data-zoomable}
