@@ -16,6 +16,10 @@ Every new dashboard is met with the fast-following request, “can we save this 
 
 <!--more-->
 
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
+
 Edge devices are often polling sensors at regular intervals and are a perfect candidate to be paired with a database purpose-built for time-series data, like InfluxDB.  Let’s capture some data, create a live chart, store the data, and then create a GUI for retrieving the data.
 
 Here’s a screenshot of the dashboard we will create, which is divided into two sections. The first section displays live data, while the second section consists of fields that enable users to query the database and retrieve historical data.  Looking at the live data, the chart depicts a sinusoidal graph that represents the scale measurements used for quality assurance in the aggregate production process at an automated mining operation. The graph showcases fluctuations in weight over time, indicating variations in the samples being weighed. This monitoring process ensures the quality and consistency of the aggregates being produced.  The historical data shows a snippet of this information that was retrieved from InfluxDB.
