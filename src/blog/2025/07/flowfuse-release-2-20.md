@@ -3,6 +3,7 @@ title: "FlowFuse 2.20: AI-Assisted Node-RED & New Database Service"
 subtitle: "Introducing FlowFuse Tables for data storage, Tables nodes for database querying, Smart Suggestions in the Node-RED editor, More Powerful Instances, Retrieval Augmented Generation Blueprint for building intelligent applications, and a redesigned Applications page for better workspace management."
 description: "FlowFuse 2.20 introduces AI-assisted Node-RED and a brand new database service, plus Smart Suggestions in the flow editor."
 date: 2025-07-31
+lastUpdated: 2026-08-13
 authors: ["greg-stoutenburg"]
 image: /blog/2025/07/images/release-2-20.png
 tags:
@@ -15,6 +16,10 @@ tags:
 This release represents a major leap forward in FlowFuse's data management and AI capabilities, introducing our new FlowFuse Tables database feature, along with enhanced AI assistance features and a streamlined user interface. These improvements make FlowFuse a complete solution for building industrial applications, even while reducing development time.
 
 <!--more-->
+
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
 
 ## Introducing: FlowFuse Tables
 
