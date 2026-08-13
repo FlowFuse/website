@@ -2,7 +2,7 @@
 title: "Working with MQTT in Node-RED: Complete Guide (2026)"
 subtitle: "Connect, subscribe, and publish MQTT messages in Node-RED"
 description: "Complete MQTT Node-RED tutorial: configure brokers, implement pub/sub messaging, use mqtt-in and mqtt-out nodes, and create dynamic subscriptions for IoT"
-lastUpdated: 2026-06-03
+lastUpdated: 2026-08-13
 date: 2024-06-05
 authors: ["sumit-shinde"]
 image: /blog/2024/06/images/working-with-mqtt.jpg
