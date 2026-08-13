@@ -2,7 +2,7 @@
 title: "How to Connect Any PLC to MQTT in Under an Hour"
 subtitle: "Connect any PLC to MQTT without the typical complexity, costs, and expertise requirements"
 description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, and Modbus, then publish it to MQTT using FlowFuse."
-lastUpdated: 2026-06-17
+lastUpdated: 2026-08-13
 date: 2025-10-27
 keywords: MQTT, PLC, Siemens, S7, Allen-Bradley, EtherNet/IP, Omron, FINS, Mitsubishi, MC Protocol, Modbus, Modbus-RTU, Modbus-TCP, OPC-UA, FlowFuse, Node-RED, Industrial IoT, IIoT
 authors: ["sumit-shinde"]
