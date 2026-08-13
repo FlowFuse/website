@@ -226,6 +226,41 @@ export default defineContentConfig({
                 bestFitFor: z.array(z.string()).optional(),
             })
         }),
+        products: defineCollection({
+            type: 'data',
+            source: 'products/*.yml',
+            schema: z.object({
+                tierId: z.string(),
+                label: z.string(),
+                metaDescription: z.string(),
+                eyebrow: z.string(),
+                headingLead: z.string(),
+                headingHighlight: z.string(),
+                description: z.string(),
+                heroImage: z.object({
+                    src: z.string(),
+                    alt: z.string(),
+                }),
+                quote: z.object({
+                    text: z.string(),
+                    author: z.string(),
+                    role: z.string(),
+                    avatar: z.string().optional(),
+                }),
+                fitYes: z.array(z.string()),
+                fitNo: z.array(z.string()),
+                included: z.array(z.object({
+                    title: z.string(),
+                    chips: z.array(z.union([
+                        z.string(),
+                        z.object({ label: z.string(), href: z.string() }),
+                    ])),
+                })),
+                certifiedDefault: z.enum(['it', 'ot']).optional(),
+                crossLinkEyebrow: z.string(),
+                crossLinkDescription: z.string(),
+            })
+        }),
         featureCatalog: defineCollection({
             type: 'data',
             source: 'feature-catalog.yml',

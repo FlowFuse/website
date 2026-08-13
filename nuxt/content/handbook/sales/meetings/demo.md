@@ -1,16 +1,33 @@
 ---
 title: "Demo"
+navigation:
+  order: 2
 ---
 # Demo
 
 This document explains the process of delivering a sales demo of the features of FlowFuse. It is not intended to cover all features but to give potential customers a good understanding of FlowFuse's value.
 The demo outlined below is tailored for customers who are already familiar with Node-RED. A separate demo flow for Node-RED-unaware audiences is currently in development.
 
+## What the Demo establishes
+
+The Demo is where the customer first meets the **[FlowFuse Application Guide](/application-guide/flowfuse/overview/)**. Its job is to establish two things:
+
+- **Fundamentals** — what FlowFuse is and its core pieces. → [Foundations](/application-guide/flowfuse/foundations/)
+- **App delivery methods** — shipping the whole app by pipeline, or publishing reusable components to the Team Library. → [App delivery methods](/application-guide/flowfuse/app-delivery-methods/)
+
+The use case shown in the demo is a **hook**, not the point — ideally something close or relatable to the customer's own problem from [Discovery](/handbook/sales/meetings/discovery/) — used to make the delivery methods concrete. Coming out of the Demo, the customer should understand the **fundamentals** and the **delivery methods**: enough to move into the [Solution](/handbook/sales/meetings/solution/) stage, where the rest of the guide is tailored to their environment.
+
 ## Setup - Before the Demo
 
 We have a team prepared on FlowFuse Cloud called [Acme Manufacturing Corp](https://app.flowfuse.com/team/acme-man-corp/overview) which includes everything you will need to complete this demo.
 
 ## Script for FlowFuse Demo
+
+> **Note:** This script is the current process and will be replaced soon, once the
+> new demo infrastructure — the [Demo Apps](/handbook/sales/demo-apps/) team — is
+> fully established. The emerging model is that a prospect first explores a use case
+> on the front end of a demo app, and the demo becomes a walk through its backend.
+
 
 1.  **Introduction to FlowFuse**
     *   Explain that FlowFuse is a platform that allows users to host and manage instances of Node-RED, a popular open-source flow-based programming tool.

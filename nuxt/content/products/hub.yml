@@ -1,0 +1,67 @@
+tierId: hub
+label: FlowFuse Hub
+metaDescription: "Move data across the business and govern it centrally. FlowFuse Hub connects your ERPs, databases, and cloud APIs into one governed system, built for central IT and enterprise architecture teams."
+eyebrow: "For IT & Integration Teams"
+headingLead: "Move data across the business."
+headingHighlight: "Govern it centrally."
+description: "FlowFuse Hub connects your ERPs, databases, and cloud APIs into one governed system. Built for central IT and enterprise architecture teams. If you're looking for plant floor connectivity, see <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>."
+heroImage:
+  src: /images/product/hub.jpg
+  alt: "FlowFuse Hub: enterprise data integration"
+quote:
+  text: "FlowFuse allows us to rapidly roll out updates to clients without burdening our development team. We can deliver custom dashboards to customers without involving any of our core developers."
+  author: "Dave Olsen"
+  role: "Product Manager, Wenco"
+  avatar: /images/customer-headshots/dave-olsen-wenco.png
+fitYes:
+  - "Data moves between software systems: ERPs, databases, cloud APIs, message queues."
+  - "You're building governed integration, not point-to-point scripts."
+  - "Central IT or an integration team is sponsoring the project."
+fitNo:
+  - "Data originates at machines on a plant floor. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>, even if an ERP sits at the far end of the pipeline."
+  - "Devices are your primary unit of scale (fleets of sensors, remote sites). That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/fleet/\">FlowFuse Fleet</a>."
+  - "You need PLC, SCADA, or industrial protocol connectivity. Hub doesn't include OT-certified nodes."
+included:
+  - title: "Move data, reliably"
+    chips:
+      - label: "Git Integration"
+        href: "/docs/user/devops-pipelines/#git-repository-stage"
+      - label: "High Availability"
+        href: "/docs/user/high-availability/"
+      - label: "DevOps Pipelines"
+        href: "/docs/user/devops-pipelines/"
+      - label: "Private NPM Registry"
+        href: "/docs/user/custom-npm-packages/"
+      - label: "FlowFuse Tables"
+        href: "/docs/user/ff-tables/"
+  - title: "Certified for IT systems"
+    chips:
+      - label: "MQTT"
+        href: "/node-red/flowfuse/mqtt/"
+      - label: "HTTP Request"
+        href: "/node-red/core-nodes/http-request/"
+      - "Kafka"
+      - label: "Redis"
+        href: "/node-red/flowfuse/hub/redis/"
+      - label: "AI nodes (Gemini, Claude, ChatGPT, Ollama)"
+        href: "/node-red/flowfuse/ai/llm-nodes/"
+  - title: "Governed by default"
+    chips:
+      - label: "Application-Level RBAC"
+        href: "/docs/user/role-based-access-control/"
+      - label: "Endpoint Security"
+        href: "/docs/user/instance-settings/#flowfuse-user-authentication"
+      - "BAA for HIPAA"
+      - label: "Protected Instances"
+        href: "/docs/user/devops-pipelines/#protected-instances"
+  - title: "Built to collaborate"
+    chips:
+      - label: "Team Library"
+        href: "/docs/user/shared-library/"
+      - label: "IT App Blueprints"
+        href: "/blueprints/"
+      - label: "Everything in the core FlowFuse platform"
+        href: "/product/"
+certifiedDefault: it
+crossLinkEyebrow: "For IT Teams"
+crossLinkDescription: "Integrate and orchestrate data across ERPs, databases, and cloud APIs, governed centrally."

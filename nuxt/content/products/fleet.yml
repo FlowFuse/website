@@ -1,0 +1,56 @@
+tierId: fleet
+label: FlowFuse Fleet
+metaDescription: "Manage a Node-RED fleet and ship updates everywhere. FlowFuse Fleet runs Node-RED across thousands of distributed devices with remote updates, rollback, and fleet-wide visibility, built for hardware OEMs, partners, and asset operators."
+eyebrow: "For Hardware OEMs & Asset Operators"
+headingLead: "Manage a Node-RED fleet."
+headingHighlight: "Ship updates everywhere."
+description: "FlowFuse Fleet runs Node-RED across thousands of distributed devices in the field, with remote updates, rollback, and fleet-wide visibility. Built for hardware OEMs, partners, and asset operators. If you're connecting a single plant floor, see <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>."
+heroImage:
+  src: /images/product/fleet.jpg
+  alt: "FlowFuse Fleet: device fleet management console"
+quote:
+  text: "We knew we needed a solution to help us manage our edge devices as well as our central control system. FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future."
+  author: "Robert VanHofwegen"
+  role: "Paloma Irrigation District"
+fitYes:
+  - "You operate large numbers of distributed devices across remote sites."
+  - "You ship Node-RED inside your own product, as an OEM or solution builder."
+  - "You need remote updates, rollback, and fleet-wide visibility without firmware releases."
+fitNo:
+  - "Your work is integrating software systems centrally, like ERPs, databases, and APIs. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
+  - "You're connecting machines on a single plant floor. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/edge/\">FlowFuse Edge</a>."
+  - "You manage a handful of instances, not a fleet. The core platform likely already covers you."
+included:
+  - title: "Manage devices at scale"
+    chips:
+      - label: "Remote Device & Instance Management"
+        href: "/docs/device-agent/deploy/"
+      - label: "Device Fleet Updates"
+        href: "/docs/device-agent/deploy/"
+      - label: "Device Group Management"
+        href: "/docs/user/device-groups/"
+  - title: "Ship & roll back safely"
+    chips:
+      - label: "Snapshot & Rollback"
+        href: "/docs/user/snapshots/"
+      - label: "DevOps Pipelines"
+        href: "/docs/user/devops-pipelines/"
+      - label: "Edge Development"
+        href: "/docs/device-agent/running/"
+  - title: "Monitor the fleet"
+    chips:
+      - label: "Live Monitoring"
+        href: "/docs/user/instance-states/"
+      - "Performance Monitoring & Alerts"
+      - label: "Audit Log"
+        href: "/docs/user/logs/#team-audit-log"
+  - title: "Built to collaborate"
+    chips:
+      - label: "Team Library"
+        href: "/docs/user/shared-library/"
+      - label: "Blueprints"
+        href: "/blueprints/"
+      - label: "Everything in the core FlowFuse platform"
+        href: "/product/"
+crossLinkEyebrow: "For Device Fleets"
+crossLinkDescription: "Push flows, ship updates, and roll back remotely across thousands of distributed devices."
