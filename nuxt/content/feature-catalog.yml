@@ -21,7 +21,7 @@ sections:
       - id: edge-development
         title: Edge Development
         description: "Develop and test Node-RED flows directly on edge devices with a remote editor proxy."
-        tiers: { edge: true, hub: false, fleet: true }
+        tiers: { edge: true, hub: true, fleet: true }
       - id: private-npm-registry
         title: Custom Node-RED Nodes
         description: "Create and manage your own private npm registry for Node-RED nodes, so you can share custom nodes across your team and devices without publishing them publicly."
@@ -54,7 +54,7 @@ sections:
       - id: edge-devices
         title: Edge Instances
         description: "Deploy and mange your Node-RED instances on edge PLCs and gateways, with full visibility and control from the cloud."
-        tiers: { edge: true, hub: false, fleet: true }
+        tiers: { edge: true, hub: true, fleet: true }
       - id: custom-hostnames
         title: Custom Hostnames
         tiers: { edge: false, hub: true, fleet: false }
