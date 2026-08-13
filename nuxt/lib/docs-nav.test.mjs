@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 
-import { buildDocsNav } from './docs-nav.mjs'
+import { buildDocsNav, findDocsBreadcrumb } from './docs-nav.mjs'
 
 // A section is a direct child of /docs; its index page carries the group frontmatter.
 function section (path, { group, groupOrder, order, navTitle } = {}) {
@@ -85,22 +85,44 @@ test('deeper pages nest under their section and keep navOrder', () => {
     ])
 
     const user = nav[0].children[0]
-    assert.equal(user.name, 'Using FlowFuse')
-    assert.deepEqual(user.children.map(c => c.name), ['Introduction', 'Concepts', 'teams'])
-    assert.deepEqual(user.children[2].children.map(c => c.name), ['Billing'])
+    assert.equal(user.title, 'Using FlowFuse')
+    assert.deepEqual(user.children.map(c => c.title), ['Introduction', 'Concepts', 'teams'])
+    assert.deepEqual(user.children[2].children.map(c => c.title), ['Billing'])
 })
 
-test('name falls back to title then to the path segment', () => {
+test('title falls back to the page title then to the path segment', () => {
     const nav = buildDocsNav([
         { path: '/docs/a', navGroup: 'G', navGroupOrder: 1, navOrder: 1, navTitle: 'Nav wins', title: 'Title loses' },
         { path: '/docs/b', navGroup: 'G', navGroupOrder: 1, navOrder: 2, title: 'Title used' },
         { path: '/docs/c', navGroup: 'G', navGroupOrder: 1, navOrder: 3 },
     ])
 
-    assert.deepEqual(nav[0].children.map(c => c.name), ['Nav wins', 'Title used', 'c'])
+    assert.deepEqual(nav[0].children.map(c => c.title), ['Nav wins', 'Title used', 'c'])
 })
 
 test('pages outside /docs are ignored', () => {
     assert.deepEqual(buildDocsNav([section('/handbook/company', { group: 'Company', groupOrder: 1 })]), [])
     assert.deepEqual(buildDocsNav([]), [])
+})
+
+test('findDocsBreadcrumb returns the real-title ancestor chain, spanning groups', () => {
+    const nav = buildDocsNav([
+        section('/docs/user', { group: 'User Manuals', groupOrder: 1, navTitle: 'Using FlowFuse' }),
+        section('/docs/user/teams/billing', { order: 1, navTitle: 'Billing' }),
+        section('/docs/cloud', { group: 'Cloud', groupOrder: 2, navTitle: 'FlowFuse Cloud' }),
+    ])
+
+    assert.deepEqual(
+        findDocsBreadcrumb(nav, '/docs/user/teams/billing').map(c => [c.title, c.path]),
+        [
+            ['Using FlowFuse', '/docs/user'],
+            ['teams', '/docs/user/teams'],
+            ['Billing', '/docs/user/teams/billing'],
+        ],
+    )
+})
+
+test('findDocsBreadcrumb returns nothing for an unknown path', () => {
+    const nav = buildDocsNav([section('/docs/user', { group: 'User Manuals', groupOrder: 1 })])
+    assert.deepEqual(findDocsBreadcrumb(nav, '/docs/nonexistent'), [])
 })
