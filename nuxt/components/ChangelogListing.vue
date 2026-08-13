@@ -39,7 +39,9 @@ onUnmounted(() => observer?.disconnect())
   <div class="ff-blog container m-auto text-left max-w-6xl pt-8 pb-24 w-full px-6">
     <div class="w-full sm:flex sm:items-end sm:justify-between gap-4">
       <div>
-        <h1 class="mb-0">What's new</h1>
+        <!-- Sized explicitly: .ff-blog leaves h1 at 16px/400, identical to the subtitle
+             below it, so the heading does not read as one. -->
+        <h1 class="mb-0 text-2xl font-medium">What's new</h1>
         <p class="my-0 text-gray-500">Every feature, improvement and fix we ship, newest first.</p>
       </div>
       <div class="flex flex-row items-center gap-3 max-sm:mt-4">
