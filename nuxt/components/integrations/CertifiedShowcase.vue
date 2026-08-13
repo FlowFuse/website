@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CertifiedCollection, IntegrationCatalogEntry } from '../../types/integrations'
 import { INTEGRATION_CATEGORIES } from '../../types/integrations'
-import { monogram, nodeProducts, tileClass } from '../../utils/integrations-ui'
+import { certifiedHref, monogram, nodeProducts, tileClass } from '../../utils/integrations-ui'
 
 const props = defineProps<{
     nodes: IntegrationCatalogEntry[]
@@ -28,6 +28,12 @@ const groups = computed(() => {
     }
     return [...map.values()]
 })
+
+// Same event the /node-red/ certified grid emits (src/node-red/index.njk), so
+// clicks on a connector aggregate across every place it is featured.
+const capture = useCapture()
+const captureNodeClick = (node: IntegrationCatalogEntry) =>
+    capture('certified-node-click', { node: node._id, collection: props.product, page: location.pathname })
 
 const productOptions: CertifiedCollection[] = ['hub', 'edge']
 function onSelect (p: 'all' | CertifiedCollection) {
@@ -63,6 +69,8 @@ function onSelect (p: 'all' | CertifiedCollection) {
                             :name="node.name"
                             :description="node.description"
                             :tile-class="tileClass(node)"
+                            :href="certifiedHref(node)"
+                            @click="captureNodeClick(node)"
                         />
                     </div>
                 </div>
