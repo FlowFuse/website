@@ -38,6 +38,10 @@ Converting Modbus to MQTT unlocks the value trapped in legacy industrial equipme
 
 <!--more-->
 
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
+
 We've built Modbus to MQTT bridges for manufacturing plants ranging from small production lines to enterprise-scale facilities, and the root problem is always the same protocol mismatch. Modbus requires a master-slave architecture with polling, one device requests data, another responds. MQTT enables publish-subscribe messaging, devices push data to a central broker where any authorized application can subscribe. These are fundamentally incompatible communication patterns.
 
 The proven solution is protocol bridging with Node-RED. This guide shows you how to build a reliable Modbus to MQTT gateway that reads holding registers from your devices, transforms raw sensor readings into human-readable formats, and publishes structured data to a Unified Namespace using FlowFuse's integrated MQTT broker. You'll bridge the OT/IT gap and enable cloud integration, real-time monitoring, and data-driven decision-making across your operations.
