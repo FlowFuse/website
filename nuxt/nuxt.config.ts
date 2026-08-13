@@ -319,9 +319,9 @@ export default defineNuxtConfig({
         ],
         prerender: {
             routes: (() => {
+                // The changelog listing is a single page now (grouped by release, revealed
+                // as you scroll), so there are no /changelog/<n>/ pages to enumerate.
                 const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
-                const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
-                const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
 
                 const blogListingRoutes = paginatedListingRoutes('/blog', blogFiles.length)
                 const blogTagRoutes = BLOG_TAGS.flatMap(tag =>
@@ -353,7 +353,7 @@ export default defineNuxtConfig({
                     '/resources/publications/',
                     ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
-                    ...changelogListingRoutes,
+                    '/changelog/',
                     ...changelog.routes,
                     '/blog/index.xml',
                     ...blogListingRoutes,
