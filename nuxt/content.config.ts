@@ -146,6 +146,46 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
+        // Source files stay at src/customer-stories/ (11ty's historical location) rather than
+        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
+        // The directory data file (src/customer-stories/customer-stories.json) sets
+        // `permalink: false` so 11ty keeps these in `collections.stories` (still read by a
+        // few live 11ty pages - src/landing/tulip.njk, src/node-red/index.njk,
+        // src/_includes/stories-block.njk) without also writing output files for them.
+        stories: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'customer-stories/**/*.md',
+            },
+            schema: z.object({
+                description: z.string().optional(),
+                image: z.string().optional(),
+                date: z.coerce.date(),
+                // Card-badge logo shown on the listing/related-stories tiles - distinct from
+                // story.logo below (the sidebar logo on the detail page). Most stories leave
+                // this unset even when story.logo is set; that's existing 11ty behaviour, not
+                // a migration bug. Nullable because most story files write the key with no
+                // value ("logo:"), which YAML parses as null rather than omitting the key.
+                logo: z.string().nullable().optional(),
+                usecase: z.array(z.string()).optional(),
+                subtitle: z.string().optional(),
+                hubspot: z.object({
+                    formId: z.string(),
+                }),
+                story: z.object({
+                    brand: z.string(),
+                    // Nullable for the same blank-key-in-YAML reason as top-level `logo` above.
+                    url: z.string().nullable().optional(),
+                    logo: z.string().optional(),
+                    quote: z.string().optional(),
+                    challenge: z.string(),
+                    solution: z.string(),
+                    products: z.array(z.string()),
+                    results: z.array(z.string()),
+                }),
+            })
+        }),
         ebooks: defineCollection({
             type: 'page',
             source: 'ebooks/*.md',
