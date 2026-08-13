@@ -3,6 +3,7 @@ title: "FlowFuse 2.24: FlowFuse Expert in the Node-RED Editor, Scheduled Updates
 subtitle: "FlowFuse 2.24: FlowFuse Expert in the Node-RED Editor, Scheduled Updates, Simpler Edge Device Addition, Store and Forward Blueprint, and what's next!"
 description: "FlowFuse 2.24: FlowFuse Expert in the Node-RED Editor, Scheduled Updates, Simpler Edge Device Addition, Store and Forward Blueprint, and what's next!"
 date: 2025-11-20
+lastUpdated: 2026-08-13
 authors: ["greg-stoutenburg"]
 image: /blog/2025/11/images/2.24-release.png
 video: cYwa08W-2eI
@@ -16,6 +17,10 @@ tags:
 This release unlocks several new abilities for our users, speeding your development time, easing management of Node-RED instances, providing a smoother path to adding large numbers of devices, and more. Let's dig in.
 
 <!--more-->
+
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
 
 ## FlowFuse Expert
 ![Image of FlowFuse Expert UI](./images/ff-expert-ui.png)
