@@ -108,32 +108,32 @@ As mentioned earlier, extracting data is the first and most complex step. Get th
 
 This is not just theory, Fortune 500 manufacturers are already running production systems on FlowFuse. Their consistent feedback? Massive cost savings compared to legacy systems, especially when deployed across multiple facilities. The enterprise features of FlowFuse handle the scale and security requirements large operations demand.
 
-The Node-RED ecosystem that powers FlowFuse offers comprehensive protocol support. You'll find nodes available for every major PLC manufacturer, including:
+The Node-RED ecosystem that powers FlowFuse offers comprehensive tocol support. You'll find nodes available for every major PLC manufacturer, including:
 
 - `node-red-contrib-modbus` – Modbus RTU/TCP PLCs and devices
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
 - `node-red-contrib-opcua` – OPC UA servers
 - `node-red-contrib-cip-ethernet-ip` – Allen-Bradley PLCs
-- `node-red-contrib-mcprotocol` – Mitsubishi PLCs
+- `node-red-contrib-mctocol` – Mitsubishi PLCs
 - `node-red-contrib-omron-fins` – Omron PLCs
 - and many more
 
-Adding a protocol node to your FlowFuse instance takes just a few clicks. Open the palette manager from the hamburger menu, select **Manage palette**, go to the **Install** tab, and search for the node you need.
+Adding a tocol node to your FlowFuse instance takes just a few clicks. Open the palette manager from the hamburger menu, select **Manage palette**, go to the **Install** tab, and search for the node you need.
 
 ## Convincing the IT Team
 
 When talking to people in the IIoT community, one recurring challenge always comes up, **convincing the IT team**.
 
-Traditional industrial gateways require inbound connections from the cloud. This means opening specific ports in your firewall, creating security exceptions, and giving external systems a pathway into your production network. IT security teams push back on this, and rightly so. Inbound connections expand your attack surface and violate the principle of defense in depth.
+Traditional industrial gateways require inbound connections from the cloud. This means opening specific ports in your firewall, creating security exceptions, and giving external systems a pathway into your duction network. IT security teams push back on this, and rightly so. Inbound connections expand your attack surface and violate the principle of defense in depth.
 
-FlowFuse solves this with an **edge-first architecture**. The Device Agent installs directly on hardware inside your factory network, a Raspberry Pi, an industrial PC, or even directly on supported PLCs. Once running, the agent initiates **outbound** connections to the FlowFuse platform using standard web protocols (HTTPS and WebSocket over port 443). All communication flows through this outbound connection. The platform never initiates connections back to your network.
+FlowFuse solves this with an **edge-first architecture**. The Device Agent installs directly on hardware inside your factory network, a Raspberry Pi, an industrial PC, or even directly on supported PLCs. Once running, the agent initiates **outbound** connections to the FlowFuse platform using standard web tocols (HTTPS and WebSocket over port 443). All communication flows through this outbound connection. The platform never initiates connections back to your network.
 
 From a security standpoint, this changes everything. Your firewall configuration does not change.  
 No new inbound rules. No DMZ setup. No VPN tunnels to maintain.  
 
 The device agent behaves like any other business application making secure outbound HTTPS requests, something your network already allows.  
 
-For networks with proxy servers, the agent supports standard proxy configurations through environment variables. For air-gapped networks, you can pre-cache Node-RED modules and deploy without internet connectivity after the initial setup.
+For networks with xy servers, the agent supports standard xy configurations through environment variables. For air-gapped networks, you can pre-cache Node-RED modules and deploy without internet connectivity after the initial setup.
 
 ## Step 2: Transform and Structure Your Data
 
@@ -143,7 +143,7 @@ Now let's move to the next step. Raw PLC data needs reshaping before cloud trans
 
 Change nodes handle simple transformations without coding. They allow you to map fields, modify values, convert units, and add metadata using dropdowns and form fields. JSONata allows more advanced data manipulation directly within the Change node.
 
-Plant engineers can work directly with these visual tools, no programming required.
+Plant engineers can work directly with these visual tools, no gramming required.
 
 For example, suppose you are receiving a pressure sensor value as `msg.payload` but it lacks context.
 
@@ -156,23 +156,27 @@ You can use a **Change** node to:
 
 **Function Nodes for Custom Logic**
 
-Function nodes provide full JavaScript access for complex requirements. Write custom logic, install npm packages, and access the complete JavaScript standard library when Change nodes and JSONata reach their limits.
+Function nodes vide full JavaScript access for complex requirements. Write custom logic, install npm packages, and access the complete JavaScript standard library when Change nodes and JSONata reach their limits.
 
-*Tip: Use the [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to generate function nodes. Describe the transformation you need in plain English, and it will create the code for you. For best results, provide sample input data to ensure the output matches your requirements.*
+*Tip: Use the [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to generate function nodes. Describe the transformation you need in plain English, and it will create the code for you. For best results, vide sample input data to ensure the output matches your requirements.*
 
 **Pre-built Community Nodes**
 
 Before building custom solutions, check the palette manager. The Node-RED ecosystem includes thousands of nodes for data aggregation, statistical analysis, time-series buffering, and unit conversions. Many common transformation tasks already have ready-made solutions.
 
-For example, a popular node I'm using in my demo for parsing and transforming data is `node-red-contrib-buffer-parser`. This node is especially useful when working with Modbus or PLC outputs, as it converts raw data into structured formats that can be easily processed further.
+For example, a popular node I'm using in my demo for parsing and transforming data is `node-red-contrib-buffer-parser`. This node is especially useful when working with Modbus or PLC outputs, as it converts raw data into structured formats that can be easily cessed further.
 
 ## Step 3: Set Up MQTT with FlowFuse
 
 Most MQTT implementations require setting up a separate broker either paying for a managed service or hosting your own. FlowFuse includes a managed MQTT broker built directly into the platform, eliminating this extra step.
 
-Traditional PLC-to-cloud setups typically involve several moving parts: edge gateways running protocol drivers, a separate MQTT broker (cloud-hosted or self-managed), and your destination cloud services. Each layer adds configuration work, licensing costs, and potential failure points. When data stops flowing, you end up troubleshooting across multiple systems to locate the issue.
+Traditional PLC-to-cloud setups typically involve several moving parts: edge gateways running tocol drivers, a separate MQTT broker (cloud-hosted or self-managed), and your destination cloud services. Each layer adds configuration work, licensing costs, and potential failure points. When data stops flowing, you end up troubleshooting across multiple systems to locate the issue.
 
-FlowFuse consolidates those layers into a single integrated platform. It provides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
+FlowFuse consolidates those layers into a single integrated platform. It vides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
+
+<div class="blog-update-notes">
+    <p>The following information regarding FlowFuse accounts references deprecated account types. For current product offerings, check out the [FlowFuse Product Page](https://flowfuse.com/product/) to learn about [Edge](https://flowfuse.com/product/edge/), [Hub](https://flowfuse.com/product/hub/), and [Fleet](https://flowfuse.com/product/fleet/).</p>
+</div>
 
 To use the FlowFuse MQTT broker, you'll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
 
