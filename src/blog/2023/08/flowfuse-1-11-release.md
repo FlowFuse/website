@@ -3,6 +3,7 @@ title: FlowFuse 1.11 makes it easier to get started with FlowFuse and Node-RED
 subtitle: Our latest release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
 description: The new FlowFuse 1.11 release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
 date: 2023-08-31 
+lastUpdated: 2026-08-13
 authors: ["ian-skerrett"]
 image: /blog/2023/08/images/release-1-11-graphic.png
 tags:
@@ -14,6 +15,11 @@ tags:
 FlowFuse 1.11 introduces a new starter tier for FlowFuse Cloud that makes it easier to get started with FlowFuse and Node-RED.
 
 <!--more-->
+
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
+
 ## New FlowFuse Cloud Starter Tier  [#2328](https://github.com/FlowFuse/flowfuse/issues/2328)
 
 It is now easier for Node-RED developers to get started with FlowFuse and Node-RED. The new starter tier allows developers to use two Node-RED instances and two remote device deployments. Ideal for creating proof of concepts or running a home automation system with Node-RED. 
