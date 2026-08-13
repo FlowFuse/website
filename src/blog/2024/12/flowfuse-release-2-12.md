@@ -40,6 +40,10 @@ The new Free plan on FlowFuse Cloud will allow you to manage two remote instance
 
 <!--more-->
 
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
+
 FlowFuse is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. More fundamentally though, it's a great platform to manage multiple instances of Node-RED.
 
 
