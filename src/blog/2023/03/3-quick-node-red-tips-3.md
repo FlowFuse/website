@@ -19,7 +19,7 @@ There is usually more than one way to complete a given task in software, and Nod
 
 Exec allows you to run Shell commands and receive the value back into your flow. This opens up almost any command which can be run on the host devices CLI to your Node-RED flows.
 
-<video autoplay loop muted playsinline aria-label="Example flow using the Exec node"><source src="./images/exec-example.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Example flow using the Exec node"><source src="/blog/2023/03/images/exec-example.webm" type="video/webm"></source></video>
 
 ### 2. The Filter node helps you discard duplicate messages
 
@@ -29,7 +29,7 @@ It can be useful to only allow messages to proceed through a flow where their va
 
 Once your filter is configured as shown above, try sending different payloads through to see the outcome.
 
-<video autoplay loop muted playsinline aria-label="Demonstration showing the Filter node"><source src="./images/filter-example.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Demonstration showing the Filter node"><source src="/blog/2023/03/images/filter-example.webm" type="video/webm"></source></video>
 
 ### 3. Counting the amount of messages sent to a Debug node
 
@@ -39,7 +39,7 @@ The Debug node has a lot of great features that we don't see used that often. On
 
 Once you've setup the node as shown above, you will see a counter under the debug.
 
-<video autoplay loop muted playsinline aria-label="Each message sent to the debug node is counted"><source src="./images/counting-debug.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Each message sent to the debug node is counted"><source src="/blog/2023/03/images/counting-debug.webm" type="video/webm"></source></video>
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
 

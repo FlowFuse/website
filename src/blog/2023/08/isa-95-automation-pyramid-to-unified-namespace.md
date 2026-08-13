@@ -26,7 +26,7 @@ Source: Katti, Badarinath. (2020). Ontology-Based Approach to Decentralized Prod
 
 A notable critique of ISA-95 is the absence of some operational functions and hierarchical levels commonly seen in manufacturing, leading to a rigidity that limits its applicability. This inflexibility has been acknowledged in a more recent framework, called the ["Reference Architectural Model Industry 4.0"](https://www.isa.org/intech-home/2019/march-april/features/rami-4-0-reference-architectural-model-for-industr) RAMI 4.0 ([IEC PAS 63088](https://www.beuth.de/en/norm/pd-iec-pas-63088/272832590)). As a result, the authors' introduced a ["Smart Grid Architecture Model"](https://syc-se.iec.ch/wp-content/uploads/2019/10/Reference_Architecture_final.pdf) (SGAM) with three primary dimensions: Life Cycle & Value Stream ([IEC 62890](https://www.vde-verlag.de/iec-normen/248992/iec-62890-2020.html)), Hierarchy Levels ([IEC 62264](https://www.iso.org/standard/57308.html) and [IEC 61512](https://www.vde-verlag.de/iec-normen/216764/iec-61512-4-2009.html)), and six main layers displaying the functional architecture of the asset and the separation into physical and digital world.
 
-<video autoplay loop muted playsinline aria-label="RAMI4.0"><source src="./images/UNS/RAMI40.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="RAMI4.0"><source src="/blog/2023/08/images/UNS/RAMI40.webm" type="video/webm"></source></video>
 
 However, my primary critique revolves around another issue – the structure and proposed communication methodology. Models based on layers, where each tier represents a functional area and could be covered by one or more applications, almost always lead to three fundamental problems:
 

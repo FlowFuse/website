@@ -50,19 +50,19 @@ The node can be enabled or disabled without modifying the flow. A disabled Debug
 
 The Copy Path feature lets you quickly copy the property path of any value in the debug output. This is a real time saver when building Change or Function nodes, helping you avoid typos and errors. Simply click the small icon next to any property in the debug output to copy its full path.
 
-<video autoplay loop muted playsinline aria-label="Copy Path helper"><source src="./images/debug-copy-path.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Copy Path helper"><source src="/node-red/core-nodes/images/debug-copy-path.webm" type="video/webm"></source></video>
 
 ### Copy Value
 
 Copy Value gives you an exact copy of any property value to use in Inject, Change, or Function nodes. This is extremely useful when you need to simulate real data or when sharing example flows with others for troubleshooting. Click the value in the debug output and select Copy Value from the menu.
 
-<video autoplay loop muted playsinline aria-label="Copy Value helper"><source src="./images/debug-copy-value.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Copy Value helper"><source src="/node-red/core-nodes/images/debug-copy-value.webm" type="video/webm"></source></video>
 
 ### Pin Open
 
 When debug output contains many nested properties, Pin Open helps you keep specific items expanded while collapsing others. This makes it easy to focus on the data you care about without losing your place as new messages arrive.
 
-<video autoplay loop muted playsinline aria-label="Pin Open helper"><source src="./images/debug-pin-open.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Pin Open helper"><source src="/node-red/core-nodes/images/debug-pin-open.webm" type="video/webm"></source></video>
 
 ## Examples
 

@@ -135,7 +135,7 @@ Before proceeding, ensure that Node-RED is running on a device connected to a te
 
 Below is the complete flow which creates the Python file to read the DHT11 sensor and executes that file after 1 second of interval. After deploying the flow you should able to see the sensor data on the debug sidebar as shown in the below image.
 
-<video autoplay loop muted playsinline aria-label="Video showing the Node-RED flow executing the python script that reads the sensor data"><source src="./images/calling-python-scrpt-from-node-red-output.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the Node-RED flow executing the python script that reads the sensor data"><source src="/blog/2024/07/images/calling-python-scrpt-from-node-red-output.webm" type="video/webm"></source></video>
 
 Note: The Python script uses the [adafruit-circuitpython](https://docs.circuitpython.org/projects/dht/en/latest/index.html) to read the sensor data so make sure to install it. Additionally, the code contained in the template node in the following flow considers that your sensor's signal pin is connected to GPIO 4.
 

@@ -246,7 +246,7 @@ The final step is to visualize the query result.
 
 3.  Deploy the flow. Your complete historical data dashboard is now live, you can explore it and experiment with different time ranges to see the results.
 
-<video autoplay loop muted playsinline aria-label="historical data dashboard retrieving historical data nd displying it"><source src="./images/historical-data-dashboard.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="historical data dashboard retrieving historical data nd displying it"><source src="/blog/2025/08/images/historical-data-dashboard.webm" type="video/webm"></source></video>
 _Historical data dashboard retrieving and displaying historical data_
 
 Below is the complete flow we built in this tutorial.

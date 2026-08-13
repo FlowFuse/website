@@ -54,7 +54,7 @@ Once installed, you’ll see the **simple-ocr** node under the **Function** cate
 
 Now, let’s build a scanner dashboard that you can open on a mobile device, allowing the phone to act as a scanner for capturing product labels and serial numbers.
 
-<video autoplay loop muted playsinline aria-label="Label Scanner Built with FlowFuse"><source src="./images/flowfuse-scanner.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Label Scanner Built with FlowFuse"><source src="/blog/2025/11/images/flowfuse-scanner.webm" type="video/webm"></source></video>
 _[Label Scanner Built with FlowFuse]_
 
 To capture images directly from your browser, you can use the **FlowFuse Dashboard** along with the **Webcam widget**, let's install them first.

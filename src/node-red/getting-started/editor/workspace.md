@@ -20,7 +20,7 @@ The workspace is the main area in the editor where you build application flows b
 
 The workspace provides view tools at the footer in the right corner. This includes zoom in (`Ctrl` + `+`) and zoom out (`Ctrl` + `-`) buttons to control the view of the workspace and reset the zoom level to its default.
 
-<video autoplay loop muted playsinline aria-label="Video showing navigator tool"><source src="./images/workspace-navigator-tool.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing navigator tool"><source src="/node-red/getting-started/editor/images/workspace-navigator-tool.webm" type="video/webm"></source></video>
 
 Additionally, it provides a view navigator that allows you to see a scaled-down view of the entire workspace. In this view, you can also see the currently visible area of the workspace in the editor. To jump to a specific workspace area, click on that area in the view navigator.
 
@@ -74,7 +74,7 @@ Alternatively, right-click on the flow tab and select "Disable/Enable" from the 
 
 ### Reordering Flows
 
-<video autoplay loop muted playsinline aria-label="Video showing how to reorder flows in the editor"><source src="./images/workspace-reordering-flow.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to reorder flows in the editor"><source src="/node-red/getting-started/editor/images/workspace-reordering-flow.webm" type="video/webm"></source></video>
 
 Flows can be reordered by clicking and dragging the flow tab to the desired position. More options for the flow tab menu can be accessed by clicking on the top-right dropdown arrow icon.
 
@@ -98,7 +98,7 @@ It will create the subflow window like a flow tab for you.
 
 ### Editing a Subflow
 
-<video autoplay loop muted playsinline aria-label="Video showing 'How to edit the subflow properties'"><source src="./images/subflow-editing-properties.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing 'How to edit the subflow properties'"><source src="/node-red/getting-started/editor/images/subflow-editing-properties.webm" type="video/webm"></source></video>
 
 To open the subflow edit dialog, double-click on the subflow node, then click on the "edit template properties". You can give the name for that subflow, add the description by clicking on the top-right
 
@@ -130,7 +130,7 @@ To delete the subflow, click on the "delete subflow" button at the top of the su
 
 ### Converting Nodes into a Subflow
 
-<video autoplay loop muted playsinline aria-label="Video showing how to convert nodes into the subflow"><source src="./images/subflow-converting-nodes-to-subflow.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to convert nodes into the subflow"><source src="/node-red/getting-started/editor/images/subflow-converting-nodes-to-subflow.webm" type="video/webm"></source></video>
 
 If you have nodes on the workspace and you want to create a subflow of them, you can select them by pressing the left mouse key and drawing a rectangle around them. Then click on subflow -> selection to subflow in the main menu.
 
@@ -184,7 +184,7 @@ Nodes can be added from the [Node-RED palette](./palette.md) by dragging them on
 
 Node-RED Editor provides a quick and easy way to add nodes via the palette:
 
-<video autoplay loop muted playsinline aria-label="Video showing how to add nodes quickly using quick-add dialog"><source src="./images/node-quick-add-dialog.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to add nodes quickly using quick-add dialog"><source src="/node-red/getting-started/editor/images/node-quick-add-dialog.webm" type="video/webm"></source></video>
 
 - Press `Ctrl` or `Command` and click on the workspace.
 - Select the desired node from the dialog, which contains all available nodes from the main node palette.
@@ -253,7 +253,7 @@ The "wires" refer to the connections that link nodes together to define the flow
 
 ### Wiring Nodes Together
 
-<video autoplay loop muted playsinline aria-label="Video showing how to wire node's together"><source src="./images/wiring-nodes-together.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to wire node's together"><source src="/node-red/getting-started/editor/images/wiring-nodes-together.webm" type="video/webm"></source></video>
 
 To connect the nodes using the wires, left-click on the node's output port and drag the wire to the destination input port. Additionally, if you press the `Ctrl`/`Command` and mouse left key on the input or output port you will not need to hold the left mouse key or any other button to drag the wire. To connect it to the destination port, press the left mouse key on destination port. If the `Ctrl`/`Command` key remains pressed after connecting to the destination port, and if that port's node has an output port, a new wire will be dragged.
 
@@ -261,23 +261,23 @@ The wires can be connected from the input port to the output port, not from the 
 
 ### Deleting Wires
 
-<video autoplay loop muted playsinline aria-label="Video showing how to delete the wires"><source src="./images/deleting-wires.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to delete the wires"><source src="/node-red/getting-started/editor/images/deleting-wires.webm" type="video/webm"></source></video>
 
 To delete wires, click the left mouse button to select the first wire. To select multiple wires, press and hold the `Ctrl\Command` key while clicking each wire with the left mouse button. If you use only the left mouse button, you can select only one wire at a time. After selecting the wires, press the 'delete' or 'backspace' key to delete them.
 
 ### Moving Wires
 
-<video autoplay loop muted playsinline aria-label="Video showing how to move a single wire"><source src="./images/moving-wire.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to move a single wire"><source src="/node-red/getting-started/editor/images/moving-wire.webm" type="video/webm"></source></video>
 
 To disconnect the wire from the port, select the wire by clicking on it. Then press and hold the `Shift` key while the left mouse key is pressed on the port. When the mouse is dragged you'll see the wire disconnects from the port and can be connected to another port.
 
-<video autoplay loop muted playsinline aria-label="Video showing how to move multiple wires"><source src="./images/moving-multiple-wires.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to move multiple wires"><source src="/node-red/getting-started/editor/images/moving-multiple-wires.webm" type="video/webm"></source></video>
 
 If a port has multiple wires connected to it, if none of them are selected when the button is pressed with the Shift key held, all of the wires will move.
 
 ### Slicing Wires
 
-<video autoplay loop muted playsinline aria-label="Video showing how to slice wires quickly"><source src="./images/slicing-wires.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to slice wires quickly"><source src="/node-red/getting-started/editor/images/slicing-wires.webm" type="video/webm"></source></video>
 
 Wires can also be removed by slicing through them. You can do this by holding the `Alt`/`Option` key and then drawing the line for slicing by holding the left mouse key.
 
@@ -285,13 +285,13 @@ Wires can also be removed by slicing through them. You can do this by holding th
 
 #### Keeping Wire While Deleting Node
 
-<video autoplay loop muted playsinline aria-label="Video showing how to delete nodes while keeping wires"><source src="./images/removing-nodes-while-keeping-wires.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to delete nodes while keeping wires"><source src="/node-red/getting-started/editor/images/removing-nodes-while-keeping-wires.webm" type="video/webm"></source></video>
 
 To do that, press and hold the `Ctrl`/`Command` key, select the node by clicking the left mouse key, and then press the "delete" or "backspace" button.
 
 #### Detaching Node from Wires
 
-<video autoplay loop muted playsinline aria-label="Video showing how to detach nodes while keeping wires"><source src="./images/detaching-nodes-while-keeping-wires.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to detach nodes while keeping wires"><source src="/node-red/getting-started/editor/images/detaching-nodes-while-keeping-wires.webm" type="video/webm"></source></video>
 
 To use this option, you have to set the [keyboard shortcut](./header.md#keyboard-shortcuts) for the "detach-selected-nodes" action.
 
@@ -303,7 +303,7 @@ In Node-RED, groups can be created for better organization, containing a single 
 
 ### Creating a Flow Group
 
-<video autoplay loop muted playsinline aria-label="Video showing how to create the group"><source src="./images/creating-group.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to create the group"><source src="/node-red/getting-started/editor/images/creating-group.webm" type="video/webm"></source></video>
 
 To create a flow group, select nodes (by holding the Ctrl key or drawing a rectangle around them). Navigate to `Groups -> Group selection` in the main menu or press `Ctrl + Shift + G`.
 
@@ -329,25 +329,25 @@ To add a description to the group, double-click on it. Select the third option f
 
 ### Adding Nodes to a Group
 
-<video autoplay loop muted playsinline aria-label="Video showing how to add nodes to existing group"><source src="./images/adding-nodes-to-group.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to add nodes to existing group"><source src="/node-red/getting-started/editor/images/adding-nodes-to-group.webm" type="video/webm"></source></video>
 
 To add nodes to an existing group, drag and drop them into the group. This can be done one node at a time. Groups can also be nested within each other in the same manner.
 
 ### Removing Nodes from a Group
 
-<video autoplay loop muted playsinline aria-label="Video showing how to remove nodes from existing group"><source src="./images/removing-node-from-group.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to remove nodes from existing group"><source src="/node-red/getting-started/editor/images/removing-node-from-group.webm" type="video/webm"></source></video>
 
 To remove nodes from a group, select the nodes and navigate to `Groups -> Remove selection` in the main menu. Similarly, remove a group from another group. Alternatively, click on a node, hold the 'Alt' key, and drag it outside of the group.
 
 ### Merging Groups
 
-<video autoplay loop muted playsinline aria-label="Video showing how to merge multple groups into single group"><source src="./images/group-merging-groups.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to merge multple groups into single group"><source src="/node-red/getting-started/editor/images/group-merging-groups.webm" type="video/webm"></source></video>
 
 To merge multiple groups into a single group, select the groups. Go to `Main Menu -> Groups -> Merge selection`.
 
 ### Ungrouping Selected Nodes
 
-<video autoplay loop muted playsinline aria-label="Video showing how to ungroup selected nodes"><source src="./images/removing-nodes-from-group.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to ungroup selected nodes"><source src="/node-red/getting-started/editor/images/removing-nodes-from-group.webm" type="video/webm"></source></video>
 
 To ungroup nodes from a group, select the nodes. Go to `Main Menu -> Groups -> Ungroup selection`.
 
@@ -359,30 +359,30 @@ A node can be selected or deselected by clicking on it. To select multiple nodes
 
 ### Lasso Tool
 
-<video autoplay loop muted playsinline aria-label="Video showing the lasso tool selection"><source src="./images/lasso-tool.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the lasso tool selection"><source src="/node-red/getting-started/editor/images/lasso-tool.webm" type="video/webm"></source></video>
 
 Node-RED provides a lasso tool to make selection faster. To use the lasso tool, press the left mouse key and drag the cursor, then you can select multiple nodes by drawing a rectangle around them.
 
 ### Selecting Connected Nodes
 
-<video autoplay loop muted playsinline aria-label="Video showing how to select connected nodes"><source src="./images/selecting-connected-nodes.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to select connected nodes"><source src="/node-red/getting-started/editor/images/selecting-connected-nodes.webm" type="video/webm"></source></video>
 
 To select all connected nodes to a specific node, press the `Shift` button and click on the middle of that node.
 
 ### Selecting All Upstream Nodes
 
-<video autoplay loop muted playsinline aria-label="Video showing how to select upstream connected nodes"><source src="./images/selecting-upward-connected-nodes.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to select upstream connected nodes"><source src="/node-red/getting-started/editor/images/selecting-upward-connected-nodes.webm" type="video/webm"></source></video>
 
 To select all of the connected nodes that are before that specific node, press the `Shift` button and while holding it click on the left part of that node.
 
 ### Selecting All Downstream Nodes
 
-<video autoplay loop muted playsinline aria-label="Video showing how to select downstream connected nodes"><source src="./images/selecting-downward-connected-nodes.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to select downstream connected nodes"><source src="/node-red/getting-started/editor/images/selecting-downward-connected-nodes.webm" type="video/webm"></source></video>
 
 To select all of the connected nodes that are after that specific node, press the `Shift` button and while holding it click on the right part of that node.
 
 ### Selecting Flows
 
-<video autoplay loop muted playsinline aria-label="Video showing how to select multiple flows at a time"><source src="./images/selecting-flows.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to select multiple flows at a time"><source src="/node-red/getting-started/editor/images/selecting-flows.webm" type="video/webm"></source></video>
 
 To select the flow tabs, press the `Ctrl/Command` key and while holding it click on the flow tab you want to select. Now you can then delete, export, or copy them collectively.

@@ -121,6 +121,6 @@ FlowFuse Tables requires **Enterprise tier** and must be enabled for your team.
 
 In the Query node, click **"Assistant"**, enter plain English like *"Show me all readings from today"*, and the AI automatically generates the SQL query.
 
-<video autoplay loop muted playsinline aria-label="Query Node FlowFuse Expert"><source src="./src/blog/2025/09/images/flowfuse-ai-assistance-table-demo.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Query Node FlowFuse Expert"><source src="/blog/2025/09/images/flowfuse-ai-assistance-table-demo.webm" type="video/webm"></source></video>
 
 For more detailed information on natural language queries with the Query node, read this article: [FlowFuse Expert for FlowFuse Tables](/blog/2025/09/ai-assistant-flowfuse-tables/).

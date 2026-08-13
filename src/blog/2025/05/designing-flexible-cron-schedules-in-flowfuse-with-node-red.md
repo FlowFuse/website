@@ -131,7 +131,7 @@ Here are some advance patterns:
 
 To make it even easier to create and customize cron patterns, the cron-plus node includes a feature called Easy Builder. This feature provides a user-friendly interface that lets you quickly generate and adjust cron expressions without needing to write them manually. You can select options like time intervals, days of the week, and more, and the Easy Builder will generate the correct cron syntax for you.
 
-<video autoplay loop muted playsinline aria-label="Video showing the easy builder feature"><source src="./images/easy-builder.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the easy builder feature"><source src="/blog/2025/05/images/easy-builder.webm" type="video/webm"></source></video>
 _Video showing the easy builder feature_
 
 ### Solar Event Schedules
@@ -371,7 +371,7 @@ Additionally, I'd like to share another demo that Steve has prepared for the com
 
 If you need to see the dynamic schedules of a specific node, double-click on it and click on the 'Dynamic Schedules' button from the configuration panel. This will show all of the dynamic schedules associated with that node.
 
-<video autoplay loop muted playsinline aria-label="Video showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events."><source src="./images/dynamic-schedules-list.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events."><source src="/blog/2025/05/images/dynamic-schedules-list.webm" type="video/webm"></source></video>
 _Video showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events._
 
 As you can see, creating flexible and dynamic cron schedules Node-RED can give you complete control over your automation tasks. Whether it's simple, recurring events, or complex, time-sensitive triggers, the combination of cron expressions and dynamic controls allows for smarter, more efficient workflows.

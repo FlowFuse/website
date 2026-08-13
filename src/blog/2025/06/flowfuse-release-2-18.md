@@ -63,7 +63,7 @@ By combining AI assistance with Node-RED's visual programming approach, we're cr
 
 Here is a sneak peek of something we're working on: an AI chat in the Node-RED editor that allows you to ask questions about the instance you are working in. 
 
-<video autoplay loop muted playsinline aria-label="Preview of AI in Node-RED Editor"><source src="./images/AI_preview.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Preview of AI in Node-RED Editor"><source src="/blog/2025/06/images/AI_preview.webm" type="video/webm"></source></video>
 
 ## What else is new?
 

@@ -36,7 +36,7 @@ Alongside the new Tables offering, we have shipped a new node that you can find 
 
 ## AI-Assisted Node-RED with Smart Suggestions
 
-<video autoplay loop muted playsinline aria-label="Video of Smart Suggestions"><source src="./images/smart-suggestion.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video of Smart Suggestions"><source src="/blog/2025/07/images/smart-suggestion.webm" type="video/webm"></source></video>
 _GIF of Smart Suggestions in Action_
 
 Development in Node-RED is now even faster with Smart Suggestions, an agent that runs in-browser and offers intelligent flow completion for next-node recommendations. With Smart Suggestions, as you place a node, the agent will automatically calculate the most likely next node to place, and will offer suggestions for the node's configuration. It present up to 5 options, so even if the first suggestion isn't correct, it's very likely that the correct choice is only a quick keyboard shortcut away.

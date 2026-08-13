@@ -22,7 +22,7 @@ The overlap option lets you repeat messages between batches. When enabled, messa
 
 Groups all messages that arrive within a specified time period. Set it to 2 seconds and every message received in that window gets batched together. When the interval expires, the batch releases and a new window starts. You can optionally configure the node to send an empty message if nothing arrives within the interval.
 
-<video autoplay loop muted playsinline aria-label="Batching messages into 2 second groups"><source src="./images/batch-example3.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Batching messages into 2 second groups"><source src="/node-red/core-nodes/images/batch-example3.webm" type="video/webm"></source></video>
 
 ### Concatenate Sequences
 

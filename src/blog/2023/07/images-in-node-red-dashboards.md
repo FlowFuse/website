@@ -229,7 +229,7 @@ You can import this flow into Node-RED using the code below:
 
 I have also included some simple dashboard elements you can view alongside the images. Let's take a look at the dashboard:
 
-<video autoplay loop muted playsinline aria-label="The dashboard showing our images alongside other standard elements"><source src="./images/the-dashboard.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="The dashboard showing our images alongside other standard elements"><source src="/blog/2023/07/images/the-dashboard.webm" type="video/webm"></source></video>
 
 If you import these flows into Node-RED, you should see the images automatically loaded into the dashboard when you view it. You can also replace the URLs and file paths to try using some different images if you'd like to.
 

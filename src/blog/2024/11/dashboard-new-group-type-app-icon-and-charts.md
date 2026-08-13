@@ -28,7 +28,7 @@ _Screenshot to show the buttons available to "Edit Layout" for a given page_
 
 This will open the relevant page in "Edit Mode":
 
-<video autoplay loop muted playsinline aria-label="Short recording to show resizing and reordering in the visual layout editor"><source src="./images/wysiwyg-demo.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Short recording to show resizing and reordering in the visual layout editor"><source src="/blog/2024/11/images/wysiwyg-demo.webm" type="video/webm"></source></video>
 _Short recording to show resizing and reordering in the visual layout editor_
 
 The three controls at the top of the page are:

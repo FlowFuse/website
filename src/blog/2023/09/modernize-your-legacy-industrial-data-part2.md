@@ -57,7 +57,7 @@ That is a lot of nodes and a lot of duplication!
 What is worse, is that the developer continues down this path and begins converting the data ready for publishing to MQTT. Here is how this might evolve:
 
 _Image 2: individual reads with data processing_
-<video autoplay loop muted playsinline aria-label="Video showing 10 individual reads with data processing"><source src="images/industrial-legacy-data-pt2-10polls.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing 10 individual reads with data processing"><source src="/blog/2023/09/images/industrial-legacy-data-pt2-10polls.webm" type="video/webm"></source></video>
 
 Yippie! We have the data, it works, we publish it to MQTT, job done. Right?
 
@@ -117,14 +117,14 @@ Now that we have good data, we need to process it in readiness for IIoT. In this
 The first, instinctive approach is to fan out the data and process it individually:
 
 _Image 5: block reads, individual processing_
-<video autoplay loop muted playsinline aria-label="Video showing 1 modbus poll with individual processing"><source src="images/industrial-legacy-data-pt2-1poll-fixed.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing 1 modbus poll with individual processing"><source src="/blog/2023/09/images/industrial-legacy-data-pt2-1poll-fixed.webm" type="video/webm"></source></video>
 
 This may be fine for a handful of registers but it soon becomes unwieldy and unmaintainable.
 
 But lets be smarter about this. We know that the data is consistent and we know that we can read it in one go. So, lets process it in one go too:
 
 _Image 6: block reads, smart processing, no-code solution_
-<video autoplay loop muted playsinline aria-label="Video showing 1 modbus poll with smart processing"><source src="images/industrial-legacy-data-pt2-1poll-extensible.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing 1 modbus poll with smart processing"><source src="/blog/2023/09/images/industrial-legacy-data-pt2-1poll-extensible.webm" type="video/webm"></source></video>
 
 ## Node-RED in Production
 

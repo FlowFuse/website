@@ -28,7 +28,7 @@ Place your content into Dashboard 'groups', those groups can make use of wider s
 
 The image below shows what happens when you change the screen size for this dashboard.
 
-<video autoplay loop muted playsinline aria-label="Changing the aspect ratio of the screen"><source src="./images/responsive.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Changing the aspect ratio of the screen"><source src="/blog/2023/06/images/responsive.webm" type="video/webm"></source></video>
 
 If you'd like to try this out on your own Node-RED, you can import the flow below.
 
@@ -60,7 +60,7 @@ Sliders are a really useful user-interface element. Where you need to control th
 
 When using sliders in your dashboards, it's important to consider how you will persist the state of the slider. If you don't persist the state, you will find that a redeploy of your dashboard will set the slider back to the default value. That would also change the speed of your machine.
 
-<video autoplay loop muted playsinline aria-label="An example of a slider in a HMI"><source src="./images/slider-ui.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="An example of a slider in a HMI"><source src="/blog/2023/06/images/slider-ui.webm" type="video/webm"></source></video>
 
 To retain the current value of the slider we can use Node-RED's context. Each time the slider value is updated, we store the value in context. Each time we deploy the flow, we can now load the value back from context.
 

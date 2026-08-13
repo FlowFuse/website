@@ -108,7 +108,7 @@ Configure the node by dragging an AMQP node onto the canvas. Double-click the no
 1. Add two `amqp-in` nodes on to the canvas. Configure one to listen for messages with the `routingKey` of `"zone1"` and the other with `"zone2"`. Both nodes should be set to the `"irrigation_control"` exchange.
 2. Connect each `amqp-in` node to a `debug` node to see the received commands for each zone.
 
-<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Direct exchange type to send messages and receive messages"><source src="./images/direct.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Direct exchange type to send messages and receive messages"><source src="/node-red/protocol/images/direct.webm" type="video/webm"></source></video>
 _Video showing the flow that uses the Direct exchange type to send messages and receive messages_
 
 {% renderFlow %}
@@ -133,7 +133,7 @@ We configured a Direct type exchange in Node-RED to route messages to specific q
 1. Add two `amqp-in` nodes on to the canvas. Configure one to listen for messages with the `routingKey` of `"temperature.*"` and the other with `"humidity.*"`. Both nodes should be set to the `"weather_data"` exchange.
 2. Connect each `amqp-in` node to a `debug` node to view the sensor data received.
 
-<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Topic exchange type to send messages and receive messages."><source src="./images/topic.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Topic exchange type to send messages and receive messages."><source src="/node-red/protocol/images/topic.webm" type="video/webm"></source></video>
 _Video showing the flow that uses the Topic exchange type to send messages and receive messages_
 
 {% renderFlow %}
@@ -157,7 +157,7 @@ Scenario: You have a smart home system with various components, such as lights, 
 1. Drag `amqp-in` nodes onto the canvas. Configure one to listen for messages from the `"weather_data"` exchange.
 2. Connect the `amqp-in` node to a `debug` node to see the update received from all your components' data.
 
-<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Fanout exchange type to send messages and receive messages."><source src="./images/fanout.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Fanout exchange type to send messages and receive messages."><source src="/node-red/protocol/images/fanout.webm" type="video/webm"></source></video>
 _Video showing the flow that uses the Fanout exchange type to send and receive messages._
 
 {% renderFlow %}
@@ -181,7 +181,7 @@ We used a Fanout type exchange to broadcast messages to all queues connected to 
 1. Drag two `amqp-in` nodes on to the canvas. Configure one to listen for messages with the `headers` of `{ "x-match": "all," "machine-type": "CNC," "status": "error," "priority": "high"}` and the other with `{ "x-match": "any," machine-type": "A," "status": "idle," "priority": "high"}.` Both nodes should be set to the `system_update` exchange.
 2. Connect each `amqp-in` node to a `debug` node to see the updates received for each component. 
 
-<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Headers exchange type to send messages and receive messages."><source src="./images/header.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the flow that uses the Headers exchange type to send messages and receive messages."><source src="/node-red/protocol/images/header.webm" type="video/webm"></source></video>
 _Video showing the flow that uses the Headers exchange type to send messages and receive messages_
 
 {% renderFlow %}

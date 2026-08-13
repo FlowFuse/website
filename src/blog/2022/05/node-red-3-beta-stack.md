@@ -19,7 +19,7 @@ Until now we've only offered one stack which has been the latest Node-RED releas
 
 Yesterday the first beta of Node-RED 3.0 was [released](https://discourse.nodered.org/t/node-red-3-0-0-beta-1-released/62124), so as of today we have added a choice of stacks to FlowFuse Cloud. You can stick with the _Default_ and use Node-RED 2.2.2 or if you want to try out the beta you can select _Node-RED-3.0.0-beta-1_.
 
-<video autoplay loop muted playsinline aria-label="Selecting the beta Stack"><source src="./images/beta_stack.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Selecting the beta Stack"><source src="/blog/2022/05/images/beta_stack.webm" type="video/webm"></source></video>
 
 
 FlowFuse is the best way to run multiple Node-RED instances at different versions. Beta releases are exciting to try out, but you don't want to risk your production applications with an early upgrade. FlowFuse makes it easy to create a new project to try things out.

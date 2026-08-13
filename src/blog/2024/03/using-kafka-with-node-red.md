@@ -133,7 +133,7 @@ Our temperature monitoring system is now complete and ready for deployment. To i
 
 !["Screenshot showing Node-RED flow of Real-time temperature monitoring system"](./images/using-kafka-with-node-red-temperature-monitoring-system-flow.png "Screenshot showing Node-RED flow of Real-time temperature monitoring system")
 
-<video autoplay loop muted playsinline aria-label="Video showing Dashboard 2.0 view of Real-time temperature monitoring system"><source src="./images/using-kafka-with-node-red-temperature-monitoring-system.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing Dashboard 2.0 view of Real-time temperature monitoring system"><source src="/blog/2024/03/images/using-kafka-with-node-red-temperature-monitoring-system.webm" type="video/webm"></source></video>
 
 ## Conclusion 
 In this guide, we’ve gone over everything you need to know about how to get started with Kafka and Node-RED. additionally, in this article, we’re going to focus on solving a problem where the sensor data across the city need to be centrally stored for efficient monitoring and visualization. By solving this problem step-by-step, you’ll understand how to integrate Kafka into your Node-RED applications.

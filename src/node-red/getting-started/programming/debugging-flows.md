@@ -87,7 +87,7 @@ At the top of the Debugger tab, you will find controls to stop the runtime manua
 
 Now, let's diagnose the flow. We’ll manually pause the runtime, then step through each part of the flow using the debugger controls, observing the changes at each step.
 
-<video autoplay loop muted playsinline aria-label="Video shows the execution of flow while debugger enabled and how to proceed to subsequent execution"><source src="../images/proceeding-further-execution.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video shows the execution of flow while debugger enabled and how to proceed to subsequent execution"><source src="/node-red/getting-started/images/proceeding-further-execution.webm" type="video/webm"></source></video>
 _Image show the execution of flow while debugger enabled and how to proceed to subsequent execution_
 
 Follow these steps:
@@ -109,7 +109,7 @@ First, let’s discuss where exactly we should add breakpoints. Our previous deb
 
 To do this, we should add breakpoints at the output of the Switch node to monitor how many messages pass through, as well as at the input and output of the Join node. This will help us determine how many messages are reaching the input of the Join node and whether they contain the part object necessary for the Join node to automatically convert them into an array of those objects.
 
-<video autoplay loop muted playsinline aria-label="Video showing how to add breakpoints"><source src="../images/adding-breakpoints.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to add breakpoints"><source src="/node-red/getting-started/images/adding-breakpoints.webm" type="video/webm"></source></video>
 _Image showing how to add breakpoints_
 
 To add a breakpoint:
@@ -121,7 +121,7 @@ To add a breakpoint:
 
 ### Debugging: Pinpointing the Exact Problem and Solving the Issue in the Flow
 
-<video autoplay loop muted playsinline aria-label="Video showing the execution of the flow with added breakpoints, indicating the number of each input/output being sent and received for debugging."><source src="../images/breakpoint-debugging.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the execution of the flow with added breakpoints, indicating the number of each input/output being sent and received for debugging."><source src="/node-red/getting-started/images/breakpoint-debugging.webm" type="video/webm"></source></video>
 _Image showing the execution of the flow with added breakpoints, indicating the number of each input/output being sent and received for debugging._
 
 Start by clicking the inject node to trigger execution, which will pause at the output of the switch node. Check the blue rectangle to see how many messages have passed through; it shows only a few, not 11, indicating that only those messages met the condition. As you proceed, you will see those messages also reaching the input of the join node correctly. 
@@ -136,7 +136,7 @@ Now that you’ve learned how to add breakpoints and pinpoint problems, lets loo
 
 ### Disabling Breakpoints
 
-<video autoplay loop muted playsinline aria-label="Video showing two ways of disabling breakpoints"><source src="../images/disabling-breakpoints.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing two ways of disabling breakpoints"><source src="/node-red/getting-started/images/disabling-breakpoints.webm" type="video/webm"></source></video>
 _Image showing two ways of disabling breakpoints_
 
 To disable a breakpoint without removing it:
@@ -149,7 +149,7 @@ To disable a breakpoint without removing it:
 
 ### Removing Breakpoints
 
-<video autoplay loop muted playsinline aria-label="Video showing two ways of removing breakpoints"><source src="../images/removing-breakpoints.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing two ways of removing breakpoints"><source src="/node-red/getting-started/images/removing-breakpoints.webm" type="video/webm"></source></video>
 _Image showing two ways of removing breakpoints_
 
 To remove a breakpoint:

@@ -24,7 +24,7 @@ Teams run production and edge workloads in Remote instances. When tooling behave
 
 FlowFuse now brings the integrated editor experience to Remote instances. Clicking **Open Editor** provides the same FlowFuse capabilities regardless of where your instance runs.
 
-<video autoplay loop muted playsinline aria-label="Immersive Mode on a Remote Instance"><source src="./images/remote-instance-immersive.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Immersive Mode on a Remote Instance"><source src="/blog/2026/02/images/remote-instance-immersive.webm" type="video/webm"></source></video>
 _Immersive Mode accessed from a remote instance_
 
 Device Agent v3.8.0 also allows you to restore snapshots while remaining in developer mode. You no longer need to exit developer mode to roll back changes. Pipeline protections remain in place, but manual recovery is faster.
@@ -54,7 +54,7 @@ FlowFuse Expert now:
 
 FlowFuse Expert surfaces context and performs actions only when initiated by the user.
 
-<video autoplay loop muted playsinline aria-label="FlowFuse Expert using live palette context"><source src="./images/ff-expert-palette-context.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert using live palette context"><source src="/blog/2026/02/images/ff-expert-palette-context.webm" type="video/webm"></source></video>
 _FlowFuse Expert answering palette queries with live context_
 
 ### In practice

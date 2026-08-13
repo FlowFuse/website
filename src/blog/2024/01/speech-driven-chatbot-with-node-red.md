@@ -220,7 +220,7 @@ Your final flow should look like this:
 
 We have successfully built our Speech-Driven Chatbot System. Now it's time to deploy the flow, to do that click on the red deploy button which you can find in the top right corner. After that go to `https://<your-instance-name>.flowfuse.cloud/dashboard`
 
-<video autoplay loop muted playsinline aria-label="Speech Driven Chatbot using Node-RED Dashboard 2.0"><source src="./images/speech-driven-chatbot-system.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Speech Driven Chatbot using Node-RED Dashboard 2.0"><source src="/blog/2024/01/images/speech-driven-chatbot-system.webm" type="video/webm"></source></video>
 
 ## Conclusion
 

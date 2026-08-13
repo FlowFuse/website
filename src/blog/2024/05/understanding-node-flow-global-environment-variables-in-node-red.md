@@ -176,7 +176,7 @@ FlowFuse provides persistent storage that survives restarts, redeployments, and 
 
 In the change node, select "persistent" from the store dropdown instead of "memory".
 
-<video autoplay loop muted playsinline aria-label="Video showing how to set global variable using the change node"><source src="./images/variables-in-node-red-change-node-persistent-store-option-for-while-setting-variable.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to set global variable using the change node"><source src="/blog/2024/05/images/variables-in-node-red-change-node-persistent-store-option-for-while-setting-variable.webm" type="video/webm"></source></video>
 
 In function nodes, add "persistent" as a third parameter:
 
@@ -190,7 +190,7 @@ context.set('processedCount', count, 'persistent');
 
 In a change, inject, or switch node, ensure you're selecting from the "persistent" store.
 
-<video autoplay loop muted playsinline aria-label="Video showing how to retrieve global variable using the change node"><source src="./images/variables-in-node-red-change-node-persistent-store-option.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to retrieve global variable using the change node"><source src="/blog/2024/05/images/variables-in-node-red-change-node-persistent-store-option.webm" type="video/webm"></source></video>
 
 In function nodes:
 
@@ -239,7 +239,7 @@ Node-RED supports environment variables at two levels:
 3. Add your variables as name-value pairs
 4. Click Done and deploy
 
-<video autoplay loop muted playsinline aria-label="Video showing how to set flow level environment variables"><source src="./images/variables-in-node-red-setting-flow-scope-enviroment-variable.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing how to set flow level environment variables"><source src="/blog/2024/05/images/variables-in-node-red-setting-flow-scope-enviroment-variable.webm" type="video/webm"></source></video>
 
 For global-level environment variables, see [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for detailed instructions.
 

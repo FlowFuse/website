@@ -146,7 +146,7 @@ FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we t
 
 That's a live line view anyone can pull up in a browser, with no NVR login and no separate video client.
 
-<video autoplay loop muted playsinline aria-label="FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible"><source src="./images/dashboard-view.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible"><source src="/blog/2026/06/images/dashboard-view.webm" type="video/webm"></source></video>
 *FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible*
 
 > **Watch the message size.** FlowFuse Dashboard sends data over a socket connection capped at about 1 MB per message by default, and a full-resolution frame can exceed that. When it does, the message is silently dropped and the image just doesn't appear. If that happens, lower the camera resolution, keep the FPS low, or raise [`maxHttpBufferSize`](https://dashboard.flowfuse.com/user/settings.html#maxhttpbuffersize) in your instance settings.

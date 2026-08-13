@@ -135,7 +135,7 @@ After installing the `node-red-node-serialport` package, follow these steps to c
 
 4.  Enter the serial port path (e.g., `/dev/ttyUSB0` on Linux or `COM3` on Windows). You can also click the **search** option to list available ports.
 
-   <video autoplay loop muted playsinline aria-label="Screenshot of Node-RED serial port node configuration showing available serial ports after clicking the search option."><source src="./images/searching-path.webm" type="video/webm"></source></video>
+   <video autoplay loop muted playsinline aria-label="Screenshot of Node-RED serial port node configuration showing available serial ports after clicking the search option."><source src="/blog/2025/07/images/searching-path.webm" type="video/webm"></source></video>
    _Screenshot of Node-RED serial port node configuration showing available serial ports after clicking the search option._
 
 6.  Set the **baud rate**, **data bits**, **stop bits**, and **parity** according to your machine's specifications. These values must match the device exactly, or communication will fail or result in corrupted data.
