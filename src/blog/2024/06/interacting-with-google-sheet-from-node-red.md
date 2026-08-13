@@ -162,7 +162,7 @@ For demonstration purposes, I will write simulated sensor data which includes a 
 3. Drag the Debug node onto the canvas, which will help in debugging in case of any error.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the write operation"](./images/interacting-with-google-sheet-from-node-red-write.gif "Image showing the write operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the write operation"><source src="./images/interacting-with-google-sheet-from-node-red-write.webm" type="video/webm"></source></video>
 
 This flow generates a timestamp and a random number. The data is formatted as an array because I want the timestamp (the first item of the array) to be placed in column A and the random number (the second item of the array) to be placed in column B. If you want to insert data into additional columns, you can add more items to the array. For example, if you add a third item to the array, it will be placed in column C, a fourth item will be placed in column D, and so on.
 

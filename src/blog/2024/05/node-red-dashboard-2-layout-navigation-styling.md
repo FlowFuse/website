@@ -169,7 +169,7 @@ For additional information on the `ui-theme` settings, please refer to the [ui-t
 2. Click on the "Edit Settings" button located at the top left side of the Dashboard 2.0 sidebar.
 3. Select your preferred sidebar style from the "Style" field in the sidebar options section.
 
-!["Image showing process of changing sidebar style"](./images/node-red-dashboard-2-layout-navigation-styling-setting-sidebar.gif "Image showing process of changing sidebar style"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of changing sidebar style"><source src="./images/node-red-dashboard-2-layout-navigation-styling-setting-sidebar.webm" type="video/webm"></source></video>
 
 ### Sidebar Navigation Options
 
@@ -179,7 +179,7 @@ In Dashboard 2.0, we have 5 different navigation options for your application.
 
 This is the default sidebar, when it's opened, the page content adjusts to the width of the sidebar.
 
-!["Image showing 'Collapsing' sidebar"](./images/node-red-dashboard-2-layout-navigation-styling-collapsing-sidebar.gif "Image showing Collapsing sidebar"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing 'Collapsing' sidebar"><source src="./images/node-red-dashboard-2-layout-navigation-styling-collapsing-sidebar.webm" type="video/webm"></source></video>
 
 You can see in the image above how the page content automatically adjusts when the sidebar is opened.
 
@@ -193,13 +193,13 @@ In this type, the sidebar is always visible and fixed on the left side, and the 
 
 This type of sidebar is similar to the collapsible one, but when the sidebar is collapsed, you can still navigate through different pages as the page icons become visible.
 
-!["Image showing 'Collapse to icon' sidebar"](./images/node-red-dashboard-2-layout-navigation-styling-collaps-to-icon-sidebar.gif "Image showing Collapse to icon sidebar"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing 'Collapse to icon' sidebar"><source src="./images/node-red-dashboard-2-layout-navigation-styling-collaps-to-icon-sidebar.webm" type="video/webm"></source></video>
 
 #### Apear over content 
 
 When the sidebar is opened, the page is partially covered by a transparent layer, and the sidebar appears on top of this layer
 
-!["Image showing 'Apear over content' sidebar"](./images/node-red-dashboard-2-layout-navigation-styling-appear-over-content.gif "screenshot displaying searching for botFather bot for creating custom bot"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing 'Appear over content' sidebar"><source src="./images/node-red-dashboard-2-layout-navigation-styling-appear-over-content.webm" type="video/webm"></source></video>
 
 In this type of sidebar, you can notice how the sidebar opens without affecting the width of the page content
 

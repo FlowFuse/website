@@ -17,7 +17,7 @@ It's been a very busy release and we have many great new features available on F
 <!--more-->
 
 ## Assistant Functionality in Tables Nodes
-<video autoplay loop muted playsinline aria-label="Gif showing FlowFuse Expert in Tables"><source src="./images/tables.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing FlowFuse Expert in Tables"><source src="./images/tables.webm" type="video/webm"></source></video>
 _FlowFuse Expert in Tables recognizes table schema and turns natural language prompts into SQL queries_
 
 Building on our successful [Tables launch in 2.20](/blog/2025/07/flowfuse-release-2-20/), we've now integrated AI assistance directly into our Tables nodes. This lowers the barrier for working with databases, reducing the dependency on SQL knowledge. With this, you can type a natural language prompt that will be interpreted in light of the structure of tables in your FlowFuse Tables, which enables an AI-supported autocomplete and assists with writing SQL specifically for connected FlowFuse tables. 

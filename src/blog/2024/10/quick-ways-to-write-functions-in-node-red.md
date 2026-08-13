@@ -23,7 +23,7 @@ In this guide, I will share strategies for making writing in Function Nodes stra
 ## What are function nodes and the challenges related to them?
 
 ![Image showing the function node](./images/node_function.png){data-zoomable}
-_Video showing the function node_
+_Image showing the function node_
 
 ## What Are Function Nodes and Common Challenges?
 
@@ -63,7 +63,7 @@ For the demonstration, let's consider we have an array of temperatures, and we w
 The final blockly canvas should look like the below image:
 
 ![Image showing collection of blockly blocks that are calculating UCL and LCL](./images/blockly.png){data-zoomable}
-_Video showing collection of blockly blocks that are calculating UCL and LCL_
+_Image showing collection of blockly blocks that are calculating UCL and LCL_
 
 Using Blockly-based Function Nodes simplifies the creation of complex logic in Node-RED. However, a basic understanding of JavaScript is still beneficial, especially as your logic becomes more complicated. While beginners may appreciate the visual interface initially, it can become confusing when trying to implement more advanced features. Additionally, the Blockly Function Node is a modified version of the original Function Node, which may lead to differences in behavior and functionality. Nevertheless, it remains a valuable node for users looking to simplify writing function logics in Node-RED.
 

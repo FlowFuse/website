@@ -117,7 +117,7 @@ Once deployed, open the dashboard to view an interactive live line chart display
 
 #### Visualizing Data for Specific Devices
 
-![Image: Gauges visualizing the CPU performance of different devices.](./images/device-monitoring-gauges.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video: Gauges visualizing the CPU performance of different devices."><source src="./images/device-monitoring-gauges.webm" type="video/webm"></source></video>
 _Video: Gauges visualizing the CPU performance of different devices._
 
 To visualize CPU data for specific devices separately, configure the **Project In** node to "Listen for broadcast messages from" and select the desired instance name that you want to monitor.

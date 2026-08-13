@@ -47,7 +47,7 @@ Formatting your flows into distinct sections using link nodes can make it easier
 
 To use the link node, drag a link in and out node into your flow's workspace. Now draw a wire as you usually would to link to two nodes together. You should see a link between the nodes but it only shows when you have the link nodes selected.
 
-![Linking two link nodes together](./images/wiring-link-nodes.gif "Linking two link nodes together")
+<video autoplay loop muted playsinline aria-label="Linking two link nodes together"><source src="./images/wiring-link-nodes.webm" type="video/webm"></source></video>
 
 In this example below, the first and second flows have the same nodes and functionality. In the second image of the workspace I've split the flow into specific groups of nodes.
 
@@ -69,7 +69,7 @@ To configure the node, set it up as follows:
 
 You should now see that the input values are translated to the appropriate value out of 100.
 
-![The range note in use](./images/range-demo.gif "The range note in use")
+<video autoplay loop muted playsinline aria-label="The range note in use"><source src="./images/range-demo.webm" type="video/webm"></source></video>
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com). You can also read some of our previous Node-RED tips using the links below.
 

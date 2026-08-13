@@ -74,7 +74,7 @@ Alternatively, right-click on the flow tab and select "Disable/Enable" from the 
 
 ### Reordering Flows
 
-![Image showing how to reorder flows in the editor](./images/workspace-reordering-flow.gif "Image showing how to reorder flows in the editor"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to reorder flows in the editor"><source src="./images/workspace-reordering-flow.webm" type="video/webm"></source></video>
 
 Flows can be reordered by clicking and dragging the flow tab to the desired position. More options for the flow tab menu can be accessed by clicking on the top-right dropdown arrow icon.
 
@@ -184,7 +184,7 @@ Nodes can be added from the [Node-RED palette](./palette.md) by dragging them on
 
 Node-RED Editor provides a quick and easy way to add nodes via the palette:
 
-![Image showing how to add nodes quickly using quick-add dialog](./images/node-quick-add-dialog.gif "Image showing how to add nodes quickly using quick-add dialog"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to add nodes quickly using quick-add dialog"><source src="./images/node-quick-add-dialog.webm" type="video/webm"></source></video>
 
 - Press `Ctrl` or `Command` and click on the workspace.
 - Select the desired node from the dialog, which contains all available nodes from the main node palette.
@@ -253,7 +253,7 @@ The "wires" refer to the connections that link nodes together to define the flow
 
 ### Wiring Nodes Together
 
-![Image showing how to wire node's together](./images/wiring-nodes-together.gif "Image showing how to wire node's together"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to wire node's together"><source src="./images/wiring-nodes-together.webm" type="video/webm"></source></video>
 
 To connect the nodes using the wires, left-click on the node's output port and drag the wire to the destination input port. Additionally, if you press the `Ctrl`/`Command` and mouse left key on the input or output port you will not need to hold the left mouse key or any other button to drag the wire. To connect it to the destination port, press the left mouse key on destination port. If the `Ctrl`/`Command` key remains pressed after connecting to the destination port, and if that port's node has an output port, a new wire will be dragged.
 
@@ -261,23 +261,23 @@ The wires can be connected from the input port to the output port, not from the 
 
 ### Deleting Wires
 
-![Image showing how to delete the wires](./images/deleting-wires.gif "Image showing how to delete the wires"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to delete the wires"><source src="./images/deleting-wires.webm" type="video/webm"></source></video>
 
 To delete wires, click the left mouse button to select the first wire. To select multiple wires, press and hold the `Ctrl\Command` key while clicking each wire with the left mouse button. If you use only the left mouse button, you can select only one wire at a time. After selecting the wires, press the 'delete' or 'backspace' key to delete them.
 
 ### Moving Wires
 
-![Image showing how to move single wire](./images/moving-wire.gif "Image showing how to move single wire"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to move a single wire"><source src="./images/moving-wire.webm" type="video/webm"></source></video>
 
 To disconnect the wire from the port, select the wire by clicking on it. Then press and hold the `Shift` key while the left mouse key is pressed on the port. When the mouse is dragged you'll see the wire disconnects from the port and can be connected to another port.
 
-![Image showing how to move multiple wires](./images/moving-wire.gif "Image showing how to move multiple wires"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to move multiple wires"><source src="./images/moving-multiple-wires.webm" type="video/webm"></source></video>
 
 If a port has multiple wires connected to it, if none of them are selected when the button is pressed with the Shift key held, all of the wires will move.
 
 ### Slicing Wires
 
-![Image showing how to slice wires quickly](./images/slicing-wires.gif "Image showing how to slice wires quickly"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to slice wires quickly"><source src="./images/slicing-wires.webm" type="video/webm"></source></video>
 
 Wires can also be removed by slicing through them. You can do this by holding the `Alt`/`Option` key and then drawing the line for slicing by holding the left mouse key.
 
@@ -285,13 +285,13 @@ Wires can also be removed by slicing through them. You can do this by holding th
 
 #### Keeping Wire While Deleting Node
 
-![Image showing how to delete nodes while keeping wires](./images/removing-nodes-while-keeping-wires.gif "Image showing how to delete nodes while keeping wires"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to delete nodes while keeping wires"><source src="./images/removing-nodes-while-keeping-wires.webm" type="video/webm"></source></video>
 
 To do that, press and hold the `Ctrl`/`Command` key, select the node by clicking the left mouse key, and then press the "delete" or "backspace" button.
 
 #### Detaching Node from Wires
 
-![Image showing how to detach nodes while keeping wires](./images/detaching-nodes-while-keeping-wires.gif "Image showing how to detach nodes while keeping wires"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to detach nodes while keeping wires"><source src="./images/detaching-nodes-while-keeping-wires.webm" type="video/webm"></source></video>
 
 To use this option, you have to set the [keyboard shortcut](./header.md#keyboard-shortcuts) for the "detach-selected-nodes" action.
 
@@ -329,13 +329,13 @@ To add a description to the group, double-click on it. Select the third option f
 
 ### Adding Nodes to a Group
 
-![Image showing how to add nodes to existing group](./images/adding-nodes-to-group.gif "Image showing how to add nodes to existing group"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to add nodes to existing group"><source src="./images/adding-nodes-to-group.webm" type="video/webm"></source></video>
 
 To add nodes to an existing group, drag and drop them into the group. This can be done one node at a time. Groups can also be nested within each other in the same manner.
 
 ### Removing Nodes from a Group
 
-![Image showing how to remove nodes from existing group](./images/removing-node-from-group.gif "Image showing how to remove nodes from existing group"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to remove nodes from existing group"><source src="./images/removing-node-from-group.webm" type="video/webm"></source></video>
 
 To remove nodes from a group, select the nodes and navigate to `Groups -> Remove selection` in the main menu. Similarly, remove a group from another group. Alternatively, click on a node, hold the 'Alt' key, and drag it outside of the group.
 
@@ -359,30 +359,30 @@ A node can be selected or deselected by clicking on it. To select multiple nodes
 
 ### Lasso Tool
 
-![Image showing the lasso tool selection](./images/lasso-tool.gif "Image showing the lasso tool selection"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the lasso tool selection"><source src="./images/lasso-tool.webm" type="video/webm"></source></video>
 
 Node-RED provides a lasso tool to make selection faster. To use the lasso tool, press the left mouse key and drag the cursor, then you can select multiple nodes by drawing a rectangle around them.
 
 ### Selecting Connected Nodes
 
-![Image showing how to select connected nodes](./images/selecting-connected-nodes.gif "Image showing how to select connected nodes"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to select connected nodes"><source src="./images/selecting-connected-nodes.webm" type="video/webm"></source></video>
 
 To select all connected nodes to a specific node, press the `Shift` button and click on the middle of that node.
 
 ### Selecting All Upstream Nodes
 
-![Image showing how to select upstream connected nodes](./images/selecting-upward-connected-nodes.gif "Image showing how to select upstream connected nodes"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to select upstream connected nodes"><source src="./images/selecting-upward-connected-nodes.webm" type="video/webm"></source></video>
 
 To select all of the connected nodes that are before that specific node, press the `Shift` button and while holding it click on the left part of that node.
 
 ### Selecting All Downstream Nodes
 
-![Image showing how to select downstream connected nodes](./images/selecting-downward-connected-nodes.gif "Image showing how to select downstream connected nodes"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to select downstream connected nodes"><source src="./images/selecting-downward-connected-nodes.webm" type="video/webm"></source></video>
 
 To select all of the connected nodes that are after that specific node, press the `Shift` button and while holding it click on the right part of that node.
 
 ### Selecting Flows
 
-![Image showing how to select multple flows at a time](./images/selecting-flows.gif "Image showing how to select multple flows at a time"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to select multiple flows at a time"><source src="./images/selecting-flows.webm" type="video/webm"></source></video>
 
 To select the flow tabs, press the `Ctrl/Command` key and while holding it click on the flow tab you want to select. Now you can then delete, export, or copy them collectively.

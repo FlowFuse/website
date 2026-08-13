@@ -70,7 +70,7 @@ Here are 3 quick demonstrations that barely scratch the surface of possibilities
 
 #### Example 1: Modbus to MQTT
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer and passing them to an MQTT broker in 4 nodes!
-![Legacy data to MQTT](images/industrial-legacy-data-to-mqtt.gif)
+<video autoplay loop muted playsinline aria-label="Legacy data to MQTT"><source src="images/industrial-legacy-data-to-mqtt.webm" type="video/webm"></source></video>
 
 #### Example 2: Modbus to InfluxDB
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer for publishing to influxDB!

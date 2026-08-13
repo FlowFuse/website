@@ -96,7 +96,7 @@ You can now read information such as device battery level, available memory, dev
 5. Click on "Write" to update the value for that resource.
 
 <video autoplay loop muted playsinline aria-label="Video showing how to perform write operation in the LwM2M server"><source src="./images/writing-in-server.webm" type="video/webm"></source></video>
-*Image showing how to perform write operation in the LwM2M server*
+*Video showing how to perform write operation in the LwM2M server*
 
 6. Drag the **lwm2m client** node onto the canvas, select the correct configuration, and enable the "Subscribe LwM2M object events" option. This setting will trigger and send an event object when commands are executed on the server.
 7. Drag an exec node onto the canvas and add the command you want to execute. For example, you can add the "reboot" command.
@@ -104,7 +104,7 @@ You can now read information such as device battery level, available memory, dev
 9. To execute the commands, click on the 'exec' option next to resources such as Reboot.
 
 <video autoplay loop muted playsinline aria-label="Video showing the LwM2M server executing reboot command for device"><source src="./images/executing-command-from-server.webm" type="video/webm"></source></video>
-*Image showing the LwM2M server executing reboot command for device*
+*Video showing the LwM2M server executing reboot command for device*
 
 ### Reading Data and Configuration from the LwM2M Server in Node-RED
 

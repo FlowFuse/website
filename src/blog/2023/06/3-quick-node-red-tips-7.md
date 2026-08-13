@@ -60,7 +60,7 @@ Sliders are a really useful user-interface element. Where you need to control th
 
 When using sliders in your dashboards, it's important to consider how you will persist the state of the slider. If you don't persist the state, you will find that a redeploy of your dashboard will set the slider back to the default value. That would also change the speed of your machine.
 
-![An example of a slider in a HMI](./images/slider-ui.gif "An example of a slider in a HMI")
+<video autoplay loop muted playsinline aria-label="An example of a slider in a HMI"><source src="./images/slider-ui.webm" type="video/webm"></source></video>
 
 To retain the current value of the slider we can use Node-RED's context. Each time the slider value is updated, we store the value in context. Each time we deploy the flow, we can now load the value back from context.
 

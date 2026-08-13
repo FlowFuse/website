@@ -371,7 +371,7 @@ Additionally, I'd like to share another demo that Steve has prepared for the com
 
 If you need to see the dynamic schedules of a specific node, double-click on it and click on the 'Dynamic Schedules' button from the configuration panel. This will show all of the dynamic schedules associated with that node.
 
-![Image showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events.](./images/dynamic-schedules-list.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events."><source src="./images/dynamic-schedules-list.webm" type="video/webm"></source></video>
 _Video showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events._
 
 As you can see, creating flexible and dynamic cron schedules Node-RED can give you complete control over your automation tasks. Whether it's simple, recurring events, or complex, time-sensitive triggers, the combination of cron expressions and dynamic controls allows for smarter, more efficient workflows.

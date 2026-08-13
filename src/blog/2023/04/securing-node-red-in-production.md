@@ -117,7 +117,7 @@ The last step is to restart Node-RED, I'm using Debian so the command is:
 
 Now, when we try to access Node-RED I will need to provide a username and password.
 
-![Using the username and password to login to Node-RED](./images/login.gif "Using the username and password to login to Node-RED")
+<video autoplay loop muted playsinline aria-label="Using the username and password to login to Node-RED"><source src="./images/login.webm" type="video/webm"></source></video>
 
 You might also want to consider turning off the editor interface once you are happy with your flows. This can make it a little harder to make changes to your project but it also gives you peace of mind that nobody has accidentally or deliberately changed your flows. You can turn off the editor interface as follows.
 

@@ -69,7 +69,7 @@ Message property values can be any JavaScript-supported data type:
 - [Buffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
 - Other complex data types
 
-![Inject node sending different data types](./images/node-red-data-types.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Inject node sending different data types"><source src="./images/node-red-data-types.webm" type="video/webm"></source></video>
 _Various data types supported by Node-RED_
 
 ## How to Clone Messages and Properties
@@ -274,7 +274,7 @@ This commonly occurs when an Inject node sends `msg.payload` as a string or numb
 <video autoplay loop muted playsinline aria-label="Showing the common mistake: adding property to non-object"><source src="./images/mistake1.webm" type="video/webm"></source></video>
 _Incorrect: Adding properties to a non-object type_
 
-![Correct approach to prevent the error](./images/mistake-1-solution.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Correct approach to prevent the error"><source src="./images/mistake-1-solution.webm" type="video/webm"></source></video>
 _Correct: Initialize as object before adding properties_
 
 ### 2. Overwriting the Entire Message Object

@@ -79,7 +79,7 @@ To add elements to the header, we can use [Teleports](https://dashboard.flowfuse
 To render content on the left side of the header, we can teleport content into the `#app-bar-title` element, where our page name is displayed.
 
 !["Screenshot of Dashboard showing the #app-bar-title container"](./images/left-side-area.png "Image of Dashboard showing the #app-bar-title container"){data-zoomable}
-_Video of Dashboard showing the #app-bar-title container_
+_Image of Dashboard showing the #app-bar-title container_
 
 #### Hiding the Page Name in the Header
 
@@ -275,7 +275,7 @@ _Video showing the dashboard with default header_
 Selecting this option completely hides the header, allowing you to use that space for other purposes.
 
 !["Image showing the dashboard with hidden header"](./images/hidden-header.png "Image showing the dashboard with hidden header"){data-zoomable}
-_Video showing the dashboard with hidden header_
+_Image showing the dashboard with hidden header_
 
 ### Fixed
 

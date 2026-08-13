@@ -134,7 +134,7 @@ The CSV node handles all the formatting work, proper escaping, column ordering, 
 4. Click Done
 
 ![Image showing CSV node configuration](./images/csv-config.png){data-zoomable}
-_Video showing CSV node configuration_
+_Image showing CSV node configuration_
 
 The CSV node converts your data object into a properly formatted CSV line with headers included automatically when a new file is created.
 
@@ -152,7 +152,7 @@ The file node writes your formatted CSV data to disk.
 5. Deploy your flow
 
 ![Image showing Write node configuration](./images/write-file-config.png){data-zoomable}
-_Video showing Write node configuration_
+_Image showing Write node configuration_
 
 Let it run. Each day at midnight, the system automatically starts a new file. Old files stay untouched, new data goes to today's file.
 

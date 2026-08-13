@@ -168,7 +168,7 @@ After configuring the endpoint, you need to specify which tags you want to read 
 
 4. Repeat this process for each tag you want to monitor or control. You can add multiple tags that will all use the same PLC connection you configured earlier.
 
-![Adding tags to read and write](./images/adding-tags.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Adding tags to read and write"><source src="./images/adding-tags.webm" type="video/webm"></source></video>
 _Adding tags to read and write_
 
 If your tag belongs to a different scope, click the “+ Add” button at the top to create a new scope. Then, within that scope, add the tags in the same manner.

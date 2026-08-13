@@ -39,7 +39,7 @@ The Debug node has a lot of great features that we don't see used that often. On
 
 Once you've setup the node as shown above, you will see a counter under the debug.
 
-![Each message sent to the debug node is counted](./images/counting-debug.gif "Each message sent to the debug node is counted")
+<video autoplay loop muted playsinline aria-label="Each message sent to the debug node is counted"><source src="./images/counting-debug.webm" type="video/webm"></source></video>
 
 We hope you found these tips useful, if you'd like to suggest some of your own tips which you think we should share in our future blog posts please [get in touch](mailto:contact@flowfuse.com).
 
