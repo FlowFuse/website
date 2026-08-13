@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.11: MQTT Topic Hierarchy, UI Revamp & Improved Logging"
 subtitle: Let's take a look at the new features and improvements in FlowFuse 2.11
-description: Let's take a look at the new features and improvements in FlowFuse 2.11
+description: "FlowFuse 2.11 introduces MQTT Topic Hierarchy, a UI revamp, and improved logging among other platform improvements this release."
 date: 2024-11-21
 authors: ["joe-pavitt"]
 image: /blog/2024/11/images/tile-release-2-11.png
@@ -73,7 +73,7 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
 
 ## Upgrading FlowFuse
 

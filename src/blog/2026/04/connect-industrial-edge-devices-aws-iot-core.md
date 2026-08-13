@@ -1,7 +1,7 @@
 ---
 title: "How to Connect Industrial Edge Devices to AWS IoT Core"
 subtitle: "Send industrial data from the edge to AWS securely over MQTT"
-description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates. This step-by-step guide covers creating an IoT Thing, generating certificates, configuring policies, and publishing your first message from FlowFuse."
+description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates, from creating a Thing to publishing messages."
 lastUpdated: 2026-06-19
 date: 2026-04-16
 keywords: FlowFuse, AWS IoT Core, MQTT, X.509, IoT, industrial IoT, edge to cloud
@@ -73,7 +73,7 @@ If you're new to MQTT and want to understand how it works before diving in, [thi
 
 Before you begin, make sure you have the following in place:
 
-- A FlowFuse account with a running instance. If you don't have one yet, [sign up]({% include "sign-up-url.njk" %}).
+- A FlowFuse account with a running instance. If you don't have one yet, [sign up](https://app.flowfuse.com/account/create).
 - An AWS account with access to the IoT Core service.
 - Basic familiarity with the AWS console.
 

@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.2 is now available with single sign on and persistent context storage
 subtitle: Our final release for 2022 with some great new features to try out
-description: Our final release for 2022 with some great new features to try out
+description: "FlowFuse 1.2 is now available with single sign-on and persistent context storage, marking the final release for 2022 overall."
 date: 2022-12-22 18:00:00.0
 authors: ["rob-marcer"]
 video: u7TjqUAub1g
@@ -71,7 +71,7 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 In 1.2 we've continued to improve the experience of running your own self managed FlowFuse installation. We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install our [local build](/docs/contribute/local/), through [Docker](/docs/install/docker/), or [Kubernetes](/docs/install/kubernetes/).
 
-If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud]({% include "sign-up-url.njk" %}?code=FF12)
+If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud](https://app.flowfuse.com/account/create?code=FF12)
 with the coupon **FF12** to get your first project free for a month.
 
 ### Upgrading FlowFuse

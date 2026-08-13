@@ -1,5 +1,7 @@
 ---
-title: "Website"
+title: Website
+sitemap:
+  loc: /handbook/marketing/website
 ---
 
 # Marketing Website
@@ -16,13 +18,14 @@ The event banner at the top of the website can display more than one event or an
 
 To add or update an event, you'll need to modify the [following file](https://github.com/FlowFuse/website/blob/main/src/_data/events.yaml). The information should be formatted as follows for each banner:
 
-```
+```text
 - type: "Webinar"
   title: "Deploy FlowFuse on Industrial IoT with NCD.io"
   buttonText: "Learn more"
   link: "/webinars/2024/deploy-flowfuse-on-industrial-iot-with-ncd-io/"
   expire: "2024-05-29T16:00:00Z"
 ```
+
 The `expire` field is used to set the date and time when the event should stop being displayed on the banner. The date and time are set in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`, and the time is in Coordinated Universal Time (UTC).
 
 For example, `expire: "2024-05-29T15:00:00Z"` means that the event will stop being displayed on the banner at 16:00 UTC on May 29, 2024.
@@ -31,7 +34,7 @@ Please note that the website is built once a day at 9:30 AM UTC, and also on Wed
 
 If there were more than one event, then duplicating that and updating the info will create the second banner for rotation. It would look like this:
 
-```
+```text
 - type: "Webinar"
   title: "Deploy FlowFuse on Industrial IoT with NCD.io"
   buttonText: "Learn more"
@@ -59,7 +62,8 @@ Guidelines for including images:
 - Downsize the image to at maximum two times the width it will be displayed (1300px for blog prose)
 - Ideally use JPEG for lossy ok images, and PNG for others (they will be converted to AVIF and WebP regardless)
 - Wherever possible use:
-  - The markdown image include tag in blog prose: `![Name of Image](../relative-path-to-image.jpeg)` 
+
+  - The markdown image include tag in blog prose: `![Name of Image](../relative-path-to-image.jpeg)`
     - You can use the `@skip` tag to disable the image pipeline entirely for an image `![Name of Image](../relative-path-to-image.jpeg "@skip")`
   - The MDC image component in page body: `<NuxtImg src="./relative-path-to-image.png" alt="Image alt tag for screen readers" width="150" />`
     - Where `width` is the maximum width the image will be displayed on the page (source image should be two times this width)
@@ -81,7 +85,7 @@ YouTube videos can be embedded directly in pages using the `<lite-youtube>` web 
 <lite-youtube videoid="VIDEO_ID" params="rel=0" style="width: 704px; height: 100%;" title="Video title"></lite-youtube>
 ```
 
-> **Do not use raw `<iframe>` tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
+> **Do not use raw** **`<iframe>`** **tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
 
 ## Meta Keywords
 
@@ -91,7 +95,7 @@ They are still output in the HTML on 11ty-served pages and may be used by site-s
 
 ### Default Keywords
 
-By default, each 11ty-served webpage on the FlowFuse website includes a set of predefined keywords: **:site-value{path="messaging.keywords"}**. These default keywords are relevant to the overall theme of the website.
+By default, each 11ty-served webpage on the FlowFuse website includes a set of predefined keywords: :site-value{path="messaging.keywords"}. These default keywords are relevant to the overall theme of the website.
 
 ### Priority of Keywords
 
@@ -113,6 +117,101 @@ meta:
   keywords: flowfuse, flows, manufacturing
 ---
 ```
+
+## Call-to-Action Buttons
+
+The site has four main call-to-action destinations, each with **fixed copy** — you cannot write new button text for these, only choose how the button looks and where it sits on the page:
+
+| Component        | Goes to                           | Button text                                          |
+| ---------------- | --------------------------------- | ---------------------------------------------------- |
+| `<CtaSignUp>`    | `app.flowfuse.com/account/create` | "Free Trial" (nav) or "Try it out" (everywhere else) |
+| `<CtaSignIn>`    | `app.flowfuse.com`                | "Sign In"                                            |
+| `<CtaContactUs>` | `/contact-us/`                    | "Contact Us"                                         |
+| `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
+
+If a page needs different wording than what's listed above, that's a sign the destination needs a fifth CTA, not a new prop on these four or custom inline code.
+
+**These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
+
+### Choosing a style
+
+Every component takes the same `variant` prop, which controls the look. Click "Show code" under any example to see (and copy) the exact syntax:
+
+::div{.grid.grid-cols-2.gap-4.my-10}
+  :::cta-example{component="CtaBookDemo" variant="primary"}
+  ```mdc
+  ::CtaBookDemo{variant="primary" position="hero"}
+  ::
+  ```
+  :::
+
+  :::cta-example{component="CtaContactUs" variant="primary-outlined"}
+  ```mdc
+  ::CtaContactUs{variant="primary-outlined" position="hero"}
+  ::
+  ```
+  :::
+
+  :::cta-example{component="CtaBookDemo" variant="highlight"}
+  ```mdc
+  ::CtaBookDemo{variant="highlight" position="hero"}
+  ::
+  ```
+  :::
+
+  :::cta-example{component="CtaContactUs" variant="highlight-outlined"}
+  ```mdc
+  ::CtaContactUs{variant="highlight-outlined" position="hero"}
+  ::
+  ```
+  :::
+::
+
+There's also a `nav-text` variant — the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar). It's not meant for general use in page content, so it's not in this gallery; stick to the five variants above for anything outside the nav.
+
+There's a sixth variant, `ghost`, for a button that reads like a solid one (bold, uppercase, same padding) but has no background or border. Because it has no background of its own, it needs a `color` to know what text color to use, and an `icon` to add a trailing icon:
+
+::div{.grid.grid-cols-2.gap-4.my-10}
+  :::cta-example
+  ---
+  component: CtaSignUp
+  variant: ghost
+  color: white
+  icon: i-lucide-arrow-right
+  dark: true
+  ---
+  ```mdc
+  ::CtaSignUp{variant="ghost" color="white" position="hero" icon="i-lucide-arrow-right"}
+  ::
+  ```
+  :::
+
+  :::cta-example
+  ---
+  component: CtaSignUp
+  variant: ghost
+  color: primary
+  icon: i-lucide-arrow-right
+  ---
+  ```mdc
+  ::CtaSignUp{variant="ghost" color="primary" position="hero" icon="i-lucide-arrow-right"}
+  ::
+  ```
+  :::
+::
+
+The dark card above is just to make the white text visible in this doc, use `color="white"` on an actual dark background (like the homepage hero photo), and `color="primary"` or `color="highlight"` on a light one.
+
+### Props reference
+
+| Prop       | Required | What it does                                                                                                                                  |
+| ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `variant`  | Yes      | Visual style: `primary`, `primary-outlined`, `highlight`, `highlight-outlined`, or `ghost` — plus `nav-text`, reserved for the main nav/utility bar |
+| `position` | Yes      | Where the button sits on the page (e.g. `hero`, `pricing-card`, `footer`) — shows up in analytics, so use a short, descriptive label          |
+| `plan`     | No       | Which pricing plan the button belongs to, if relevant (e.g. `edge`, `hub`, `fleet`) — also shows up in analytics                              |
+| `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |
+| `icon`     | No       | An icon name to show after the button text, e.g. `i-lucide-arrow-right`                                                                       |
+
 ## Requesting New Website Pages
 
 If you would like the marketing team to create a new page, landing page, or apply website
@@ -127,14 +226,13 @@ In many cases, this helps keep changes focused and iterations small when the pag
 
 For design-related considerations, see the [Design Review process](/handbook/design/process/#design-review).
 
-
 ## Pull Request Scope
 
 To support fast iteration:
 
-- prefer small, focused PRs  
-- avoid mixing content updates with layout or functional changes  
-- split larger changes into separate PRs where possible  
+- prefer small, focused PRs
+- avoid mixing content updates with layout or functional changes
+- split larger changes into separate PRs where possible
 
 This makes changes easier to review, test, and iterate on, and helps keep iterations small.
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logoUrl from '~/assets/images/ff-minimal-red.svg'
+
 defineProps<{
     title: string
     section?: string
@@ -10,7 +12,7 @@ defineProps<{
     <!-- Header: logo + site name -->
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:auto;">
       <img
-        src="https://flowfuse.com/images/ff-minimal-red.svg"
+        :src="logoUrl"
         style="width:52px;height:52px;"
       />
       <span style="font-size:26px;font-weight:700;color:#ffffff;">FlowFuse</span>

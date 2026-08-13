@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.6 released
 subtitle: Adding Devices to the platform
-description: Adding Devices to the platform
+description: "FlowFuse 0.6 is released, adding Devices to the platform and expanding support for managing remote industrial hardware fleets."
 date: 2022-06-19 12:00:00.0
 authors: ["nick-oleary"]
 tags:

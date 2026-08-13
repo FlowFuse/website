@@ -1,7 +1,7 @@
 ---
 title: Node-RED 3.0 Beta Stack
 subtitle: Try out the next major Node-RED release
-description: Try out the next major Node-RED release
+description: "Try out the next major Node-RED release with the Node-RED 3.0 Beta Stack, now available for early testing on the FlowFuse platform."
 date: 2022-05-04
 authors: ["sam-machin"]
 tags:

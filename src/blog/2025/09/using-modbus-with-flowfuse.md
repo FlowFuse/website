@@ -1,7 +1,7 @@
 ---
 title: "Modbus RTU (RS485/RS422/RS232) Communications with FlowFuse"
 subtitle: "Step-by-step guide to using Modbus RTU with FlowFuse for industrial automation."
-description: "Learn how to connect Modbus RTU devices to Node-RED with FlowFuse. This guide covers Modbus basics, serial setup, register mapping, and reading/writing data for industrial automation and IIoT."
+description: "Learn how to connect Modbus RTU devices to Node-RED with FlowFuse, covering serial setup and register mapping in detail."
 date: 2025-09-26
 authors: ["sumit-shinde"]
 image: /blog/2025/09/images/modbus-rtu.png
@@ -47,6 +47,9 @@ Addressing can be confusing because manufacturers document it differently:
 
 By understanding the **master-slave control, data types, and addressing**, you can reliably communicate with your devices and make the most of Modbus RTU in FlowFuse.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Getting Started
 
 Let’s start by setting up the basics before connecting Modbus RTU devices to FlowFuse.
@@ -55,7 +58,7 @@ Let’s start by setting up the basics before connecting Modbus RTU devices to F
 
 Before diving in, make sure you have the following ready:
 
-- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up]({% include "sign-up-url.njk" %}) and [create and set up a remote instance](/blog/2025/09/installing-node-red/), and you’ll have a managed Node-RED environment running in minutes. 
+- **Node-RED instance** – A running Node-RED instance. The quickest way to get one ready for production is with FlowFuse. Simply [sign up](https://app.flowfuse.com/account/create) and [create and set up a remote instance](/blog/2025/09/installing-node-red/), and you’ll have a managed Node-RED environment running in minutes. 
 - **Node-RED Modbus nodes** – Installable via the Palette Manager (`node-red-contrib-modbus`).  
 - **Modbus-enabled device** – Such as a sensor, PLC, or meter, along with its register map documentation.  
 - **Serial interface** – For example, a USB-to-RS485 converter to physically connect your Modbus devices. Connect the **A (+)** and **B (–)** terminals of the RS485 adapter to the device, add termination resistors if the line is long or has multiple devices, and note the serial port path (e.g., `/dev/ttyUSB0` on Linux or `COM1` on Windows).  

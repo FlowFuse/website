@@ -1,2 +1,4 @@
+import { getHandbookNav } from '../utils/sharedContent'
+
 export const useHandbookNav = () =>
-    useAsyncData('handbook-nav', () => queryCollectionNavigation('handbook'))
+    useAsyncData('handbook-nav', () => getHandbookNav())

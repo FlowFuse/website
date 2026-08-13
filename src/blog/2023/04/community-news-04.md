@@ -1,7 +1,7 @@
 ---
 title: Community News April 2023
 subtitle: Your monthly update for the FlowFuse and Node-RED communities
-description: News from the FlowFuse and Node-RED communities
+description: "A roundup of April 2023 news from the FlowFuse and Node-RED communities, covering platform updates and community highlights."
 date: 2023-04-05
 authors: ["ian-skerrett"]
 image: "/images/blog/community-news.jpeg"
@@ -18,7 +18,7 @@ Welcome to the FlowFuse newsletter for April 2023, a monthly roundup of what’s
 ## Upcoming events
 
 ### Node-RED Ask Me Anything
-Back by popular demand, FlowFuse is hosting a monthly Node-RED Ask Me Anything session on April 13th. This is a great opportunity to ask Nick O’Leary, co-creator of Node-RED & FlowFuse CTO, and Rob Marcer, Node-RED FlowFuse Developer Educator your questions about Node-RED. [Sign-up today to participate](/ask-me-anything/ama-nodered-april/). 
+Back by popular demand, FlowFuse is hosting a monthly Node-RED Ask Me Anything session on April 13th. This is a great opportunity to ask Nick O’Leary, co-creator of Node-RED & FlowFuse CTO, and Rob Marcer, Node-RED FlowFuse Developer Educator your questions about Node-RED.
 
 ### Connect, Integrate, Visual Industrial Production Metrics with Node-RED
 

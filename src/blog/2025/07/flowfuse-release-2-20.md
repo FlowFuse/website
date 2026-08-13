@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.20: AI-Assisted Node-RED & New Database Service"
 subtitle: "Introducing FlowFuse Tables for data storage, Tables nodes for database querying, Smart Suggestions in the Node-RED editor, More Powerful Instances, Retrieval Augmented Generation Blueprint for building intelligent applications, and a redesigned Applications page for better workspace management."
-description: "Introducing FlowFuse Tables for data storage, Tables nodes for dashboard visualization, Smart Suggestions in the Node-RED editor, More Powerful Starter tier, Retrieval Augmented Generation Blueprint for intelligent applications, and a redesigned Applications page for better workspace management."
+description: "FlowFuse 2.20 introduces AI-assisted Node-RED and a brand new database service, plus Smart Suggestions in the flow editor."
 date: 2025-07-31
 authors: ["greg-stoutenburg"]
 image: /blog/2025/07/images/release-2-20.png
@@ -93,7 +93,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

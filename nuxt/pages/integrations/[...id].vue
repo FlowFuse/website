@@ -248,12 +248,7 @@ onMounted(() => {
                         <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-200 rounded-lg p-6 overflow-hidden">
                             <h2 class="text-lg font-bold mb-3 text-indigo-900">Need Help?</h2>
                             <p class="text-sm text-gray-700 mb-4">Get professional support for your Node-RED projects with FlowFuse.</p>
-                            <a href="/contact-us/" class="inline-flex items-center justify-center w-full gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 text-sm hover:no-underline">
-                                CONTACT US
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                                </svg>
-                            </a>
+                            <CtaContactUs variant="primary" position="integration-sidebar" icon="i-lucide-arrow-right" class="w-full" />
                         </div>
                     </div>
                 </div>

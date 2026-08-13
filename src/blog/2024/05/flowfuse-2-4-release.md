@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.4: making it easier to work with Snapshots, Blueprints & Devices"
 subtitle: Our latest release introduces better ways to work with Snapshots, Blueprints, view the content of you flows in FlowFuse, and manage the version of Node-RED running on Devices
-description: FlowFuse 2.4 introduces better ways to work with Snapshots, Blueprints, view the content of you flows in FlowFuse, and manage the version of Node-RED running on Devices 
+description: "FlowFuse 2.4 introduces better ways to work with Snapshots and Blueprints, and manage the Node-RED version running on Devices."
 date: 2024-05-09 
 authors: ["rob-marcer"]
 image: /blog/2024/05/images/release-2-4-graphic.png
@@ -59,7 +59,7 @@ Together, we can make FlowFuse better with each release!
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

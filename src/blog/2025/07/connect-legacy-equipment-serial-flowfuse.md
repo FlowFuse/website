@@ -1,7 +1,7 @@
 ---
 title: "Node-RED Serial Port Tutorial: Connect RS232/RS485 Manufacturing Equipment (2026)"
 subtitle: "Learn how to bring serial-connected equipment online using Node-RED and FlowFuse"
-description: "Learn how to connect manufacturing equipment using serial interfaces like RS-232/422/485 in Node-RED with FlowFuse. Enable monitoring, data collection, and automation, no hardware changes required"
+description: "Learn how to connect manufacturing equipment using RS-232/422/485 serial interfaces in Node-RED with FlowFuse and its nodes."
 lastUpdated: 2026-06-03
 date: 2025-07-09
 authors: ["sumit-shinde"]
@@ -103,6 +103,9 @@ Different machines use different physical standards. The most common are:
   * **RS-422**: Full-duplex, multi-drop (one sender, multiple receivers). Used for longer distances than RS-232.
   * **RS-485**: Typically half-duplex and multi-device. Ideal for networks and even longer cable runs.
   * **USB (via adapter)**: Most modern PCs and gateways use USB-to-Serial adapters to talk to RS-232/422/485 devices.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Setting Up Serial Communication with FlowFuse
 

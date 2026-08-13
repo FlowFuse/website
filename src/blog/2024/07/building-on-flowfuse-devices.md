@@ -1,30 +1,20 @@
 ---
-templateEngineOverride: njk, md
 title: "Building on FlowFuse: Remote Device Monitoring"
 subtitle: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 description: In this article we take a look at how elements of the FlowFuse ecosystem can be used to build powerful IoT applications for monitoring remote devices.
 date: 2024-07-17
 authors: ["joe-pavitt"]
 image: /blog/2024/07/images/tile-building-on-flowfuse-devices.png
+cta:
+    type: contact
+    title: Deploy to FlowFuse
+    description: Let's discuss how your company could benefit from this design pattern.
 tags:
    - posts
    - news
    - node-red
    - flowfuse
-stories:
-    - title: "Leveraging Node-RED and FlowFuse to Revolutionize Irrigation"
-      logo: ""
-      image: "/images/stories/pidd-view.png"
-      brand: "Paloma Irrigation and Drainage District"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation"
-    - title: "Revolutionizing Precision Manufacturing with Node-RED"
-      logo: ""
-      image: "/images/stories/abrasive_tech.jpg"
-      brand: "Abrasive Technology"
-      url: "/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing"
 ---
-
-{% from "stories/customer-story.njk" import storyTile %}
 
 FlowFuse has established a rich ecosystem of products to help you build bespoke, powerful, low-code applications.
 
@@ -87,19 +77,3 @@ Given the above architecture, let's take a look at the relevant FlowFuse offerin
 - **FlowFuse:** Centralized platform that provides a single entry point to manage all of your Node-RED applications and deployments, from your device inetrgators, through to your dashboards. FlowFuse provides role-based access control out of the box, so we can easily control who has access to flows, Dashboards and other configurations.
 - **FlowFuse Device Agent:** Installed onto the relevant servers and hardware, this links you directly, and securely to FlowFuse. Here, we're deploying it to multiple pieces of machinery, as well as local servers, such that we can easily manage (deploy, upgrade, debug) all of those Node-RED deployments remotely from FlowFuse.
 - **FlowFuse Project Nodes:** A small collection of nodes for Node-RED, running on FlowFuse, that provide communication over a secure (MQTT-based) connection between devices (our Node-RED deployments on our hardware in this case) and our hosted instances of Node-RED on FlowFuse. Extremely useful for reporting live sensor data back to FlowFuse for analysis, and for reporting information back to our devices.
-
-## What Next?
-
-### Deploy to FlowFuse
-
-If you're interested in discussing how your company could benefit from this design pattern, please do [get in touch](/contact-us/?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta%20contact%20us&utm_term=high_intent&utm_content=Building%20on%20FlowFuse%3A%20Remote%20Device%20Monitoring).
-
-### Customer Stories
-
-If you want to deep dive further into how this design pattern has been used by our customers, we have some customer stories that you might find interesting:
-
-<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-0 list-none">
-    {%- for story in stories | sort(attribute='item.date') | reverse -%}
-    {{ storyTile(title=story.title, url=story.url, brand=story.brand, logo=story.logo, image=story.image) }}
-    {%- endfor -%}
-</ul>

@@ -1,7 +1,7 @@
 ---
 title: How Kafka is applied in manufacturing
 subtitle: An overview of Kafka -- How it's applied for industrial applications, and how it works
-description: An overview of Kafka -- How it's applied for industrial applications, and how it works
+description: "An overview of Apache Kafka: how it's applied for industrial applications, how it works, and what it means for manufacturing."
 date: 2024-03-15
 authors: ["sumit-shinde"]
 image: /blog/2024/03/images/using-kafka-in-manufacturing.png

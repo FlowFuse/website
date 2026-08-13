@@ -1,7 +1,7 @@
 ---
 title: "How to Optimize Industrial Data Communication with Protocol Buffers"
 subtitle: "Cut network traffic by 60% with binary serialization, three nodes, one file, no complexity"
-description: "Stop transmitting waste. Learn how Protocol Buffers reduces industrial IoT data size by 60% using FlowFuse. Implementation takes one afternoon with three nodes and a schema file, no coding required."
+description: "Stop transmitting waste. Learn how Protocol Buffers reduce industrial IoT data size by 60% using FlowFuse, no coding required."
 lastUpdated: 2026-06-17
 date: 2025-11-28
 authors: ["sumit-shinde"]
@@ -151,7 +151,7 @@ Now let's implement this in FlowFuse.
 
 We'll build a complete protobuf pipeline: define your data schema, encode sensor readings, transmit them, and decode on the receiving end.
 
-> Before you start, Make sure you have a FlowFuse instance running on your edge device. If you don't have an account yet, [create one with our free trial]({% include "sign-up-url.njk" %}). FlowFuse simplifies connecting devices and systems, transform, validate, contextualize, and visualize data while building industrial applications, all in a low-code environment. It includes enterprise features that accelerate management, development, deployment, and scaling with built-in security.
+> Before you start, Make sure you have a FlowFuse instance running on your edge device. If you don't have an account yet, [create one with our free trial](https://app.flowfuse.com/account/create). FlowFuse simplifies connecting devices and systems, transform, validate, contextualize, and visualize data while building industrial applications, all in a low-code environment. It includes enterprise features that accelerate management, development, deployment, and scaling with built-in security.
 
 ### Preparing Your Protocol Buffers Schema
 
@@ -256,4 +256,4 @@ The same platform you use to connect devices, systems and build dashboards now o
 
 Pick one data flow. Implement it this afternoon. Scale it tomorrow.
 
-[Start your free FlowFuse trial]({% include "sign-up-url.njk" %}) and stop paying to transmit field names.
+[Start your free FlowFuse trial](https://app.flowfuse.com/account/create) and stop paying to transmit field names.

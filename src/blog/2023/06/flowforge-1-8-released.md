@@ -1,7 +1,7 @@
 ---
 title: FlowFuse now offers High Availability Node-RED
 subtitle: FlowFuse 1.8 makes Node-RED applications more reliable and scalable, plus more streamline deployment pipelines.
-description: FlowFuse now supports High Availibility, DevOps Pipelines and more
+description: "FlowFuse now offers High Availability Node-RED, supporting DevOps Pipelines and other enterprise-grade capabilities for teams."
 date: 2023-06-08 
 authors: ["marian-demme"]
 image: /blog/2023/06/images/release-1.8.0.png
@@ -83,7 +83,7 @@ HOME env var not set within Node-RED process [#117](https://github.com/FlowFuse/
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

@@ -26,10 +26,13 @@ The number of times FlowFuse will meet with a customer depends mostly on the
 customer. However, in all cases FlowFuse would like to have an initial
 [Discovery Call](/handbook/sales/meetings/discovery/).
 
-A discovery call is generally followed by a [Demo](/handbook/sales/meetings/demo/). 
+A discovery call is generally followed by a [Demo](/handbook/sales/meetings/demo/).
+
+The Solutions Engineer then shapes the [Solution](/handbook/sales/meetings/solution/):
+the specific apps, success criteria and plan that will be proven.
 
 To validate the solution to the problem the customer is experiencing, FlowFuse will
-aid in a [POC](/handbook/sales/meetings/poc/).
+aid in a [PoV](/handbook/sales/meetings/pov/).
 
 ## Using Fathom Notetaker
 

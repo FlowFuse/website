@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 2.0 Release
 subtitle: Elevating Node-RED Device Management to new heights
-description: Announcing the launch of FlowFuse 2.0, a significant upgrade in managing Node-RED remote instances.
+description: "Announcing the launch of FlowFuse 2.0, a significant upgrade in how teams manage and scale their Node-RED remote instances. Learn about release with FlowFuse."
 date: 2024-01-18
 authors: ["marian-demme"]
 image: /blog/2024/01/images/flowfuse-2-release.png
@@ -41,7 +41,7 @@ At FlowFuse, our mission is to empower bottom-up innovation and enable organizat
 
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

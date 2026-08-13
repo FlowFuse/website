@@ -1,7 +1,7 @@
 ---
 title: "Announcing Node-RED Con 2025: A Community Conference on Industrial Applications"  
 subtitle: "We're excited to support this year's community conference focused on Node-RED in industry. The Call for Papers is now open!"  
-description: "FlowFuse is proud to sponsor Node-RED Con 2025, a free online conference on November 4, 2025, dedicated to industrial applications. Learn more and submit your talk."  
+description: "FlowFuse sponsors Node-RED Con 2025, a free online conference dedicated to industrial applications. Submit your talk today."
 date: 2025-06-12
 lastUpdated: 2025-08-21
 authors: ["flowfuse"]  

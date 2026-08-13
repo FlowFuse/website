@@ -64,7 +64,7 @@ We'll use FlowFuse Dashboard for the UI since it's modern and easier to work wit
 
 Before you start, make sure you have:
 
-- **Node-RED Instance:** You need Node-RED running somewhere. Easiest option is FlowFuse, [grab a free trial]({% include "sign-up-url.njk" %}) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
+- **Node-RED Instance:** You need Node-RED running somewhere. Easiest option is FlowFuse, [grab a free trial](https://app.flowfuse.com/account/create) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
 - **OpenWeatherMap Account:** Sign up at `openweathermap.org`. The free tier gives you enough API calls for this project.
 
 ## Installing FlowFuse Dashboard
@@ -87,6 +87,9 @@ Log in to your OpenWeather account. Once you're signed in:
 2. Find API keys
 3. Copy the default key (or generate a new one)
 4. Save it in a text file or a note app.
+
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Setting Up the API Connection
 
@@ -278,4 +281,4 @@ Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashbo
 
 Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same, you're just swapping data sources and visualizations.
 
-[Start your free FlowFuse trial]({% include "sign-up-url.njk" %}) and keep building.
+[Start your free FlowFuse trial](https://app.flowfuse.com/account/create) and keep building.

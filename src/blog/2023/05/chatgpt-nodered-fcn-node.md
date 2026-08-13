@@ -1,7 +1,7 @@
 ---
 title: Chat GPT in Node-RED Function Nodes
 subtitle: New Node-RED function with embedded ChatGPT is now open-sourced and available to use!
-description: Discover how ChatGPT integrates with Node-RED function nodes, enabling automated code generation. Explore the prompt engineering process and additional features.
+description: "Discover how ChatGPT integrates with Node-RED function nodes, enabling automated code generation and the prompt process."
 date: 2023-05-02 12:00:00
 lastUpdated: 2025-07-23
 authors: ["joe-pavitt", "stephen-mclaughlin"]
@@ -85,4 +85,4 @@ Available on FlowFuse Cloud, the Assistant offers:
 - **In-line Code Generation**: Generate JavaScript code for function nodes, JSON for JSON editors, and Vue.js for FlowFuse Dashboard ui-template widgets
 - **Flow Explainer**: Select nodes and click "Explain Flows" to understand what they do
 
-FlowFuse Assistant helps developers work faster and smarter with Node-RED. [Start your free trial]({% include "sign-up-url.njk" %}) to experience AI-powered Node-RED development on FlowFuse Cloud.
+FlowFuse Assistant helps developers work faster and smarter with Node-RED. [Start your free trial](https://app.flowfuse.com/account/create) to experience AI-powered Node-RED development on FlowFuse Cloud.

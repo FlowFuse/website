@@ -1,7 +1,7 @@
 ---
 title: "Part 1: Building an Andon Task Manager with FlowFuse"
 subtitle: Build a real-time Andon Task Manager with FlowFuse and Node-RED, covering key features, dashboard design, and data storage.
-description: Learn how to build a real-time Andon Task Manager using FlowFuse and Node-RED. This step-by-step guide covers request tracking, dashboard design, and data storage with SQLite and context storage.
+description: "Learn how to build a real-time Andon Task Manager using FlowFuse and Node-RED, covering request tracking and dashboard design."
 date: 2025-05-08
 usecase:
   - production-monitoring
@@ -109,4 +109,4 @@ By using both SQLite for structured request data and context storage for dynamic
 
 In the next part of this series, we will focus on developing the Lines view for regular users, along with the navigation menu for switching between different line sections. Later, we will cover the development of the lines view and Admin interface.
 
-But if you can't wait to get started right away, don’t worry! You can [register]({% include "sign-up-url.njk" %}) for FlowFuse and get started with our ready-made [Andon Task Manager blueprint](/blueprints/manufacturing/andon-system/), which is pre-configured for easy deployment. Stay tuned for the next installment to continue your journey toward building a comprehensive, real-time Andon Task Manager solution.
+But if you can't wait to get started right away, don’t worry! You can [register](https://app.flowfuse.com/account/create) for FlowFuse and get started with our ready-made [Andon Task Manager blueprint](/blueprints/manufacturing/andon-system/), which is pre-configured for easy deployment. Stay tuned for the next installment to continue your journey toward building a comprehensive, real-time Andon Task Manager solution.

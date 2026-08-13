@@ -1,0 +1,145 @@
+guide: node-red
+slug: flow-shape
+navOrder: 3
+title: Flow shape
+blurb: Turn an architecture sentence into a flow you can read at a glance.
+blocks:
+  - type: prose
+    kicker: Flow shape — start here
+    body: >-
+      Turn an architecture sentence into a flow you can read at a glance. Four shape rules — where
+      paths begin, how they share services, when to reuse as a subflow vs a link call, and where they
+      end — draw the flow for you.
+  - type: tabs
+    panels:
+      - label: Beginnings
+        kicker: Entry paths
+        kickerNote: List every entry first; keep each path separate, don't funnel through one front door.
+        diagramTitle: Three beginnings, three paths
+        diagram:
+          lanes:
+            - label: Node-RED runtime
+              tone: neutral
+              nodes:
+                - title: http in
+                  sub: a request arrives → prep + format → sink
+                - title: MQTT in
+                  sub: an event arrives → prep + format → sink
+                - title: inject / timer
+                  sub: a schedule fires → prep + format → sink
+          note: Each beginning is its own path, all the way across.
+        summary: >-
+          Every way work enters a piece: an http in, an MQTT in, an inject or timer. Each beginning is
+          its own path.
+        useWhen: >-
+          You are laying out a piece and want to see its paths before wiring. List the entries first,
+          and do not funnel them through one shared front door.
+        howHeading: How to lay it out
+        how: >-
+          Draw one row per beginning. Each row runs straight: beginning, prep, a call to services,
+          then a sink. The paths stay separate the whole way across.
+        callout:
+          tone: good
+          text: Keeping a device path and a browser path from running through each other.
+      - label: Shared services (link call)
+        kicker: Shared services
+        kickerNote: Expose a resource once behind link-in/out; every path calls it, results return, no central router.
+        diagramTitle: One pool serves every path, result returns
+        diagram:
+          lanes:
+            - label: Paths
+              tone: neutral
+              nodes:
+                - title: GET /assets
+                - title: GET /knowledge
+                - title: POST /knowledge
+            - link: link call
+            - label: Shared service
+              tone: it
+              nodes:
+                - title: tables pool
+                  sub: SQL database · one pool
+                  tone: it
+          note: Result returns to whoever asked.
+        summary: >-
+          Anything that holds a connection or is a common dependency many paths use: a database pool,
+          a model call, a broker. You call it and the result returns to the caller.
+        useWhen: >-
+          More than one path needs the same resource and you do not want a copy per path. One pool, one
+          call, a result back to whoever asked.
+        howHeading: How to lay it out
+        how: >-
+          Expose the resource once behind a link in that ends in a returning link out. Each path uses
+          link call, and results come back with no central router to build.
+        callout:
+          tone: good
+          text: One DB pool serving every read and write path without mixing them.
+      - label: Subflow vs link call
+        kicker: "Reuse: subflow or link call"
+        kickerNote: Link call for one fixed config; subflow only when it needs per-instance config or cross-instance reuse.
+        diagramTitle: One config, use link call. Per-instance config, use a subflow
+        diagram:
+          lanes:
+            - label: Link call · one shared config
+              tone: neutral
+              nodes:
+                - title: caller A
+                - title: caller B
+                - title: pool
+                  tone: muted
+            - label: Subflow · config per instance
+              tone: it
+              nodes:
+                - title: instance 1
+                  sub: config A
+                  tone: it
+                - title: instance 2
+                  sub: config B
+                  tone: it
+        summary: >-
+          Both reuse logic, but they are not interchangeable. A link call shares one fixed
+          configuration; a subflow is a reusable assembly with its own per-instance config.
+        useWhen: >-
+          Use a subflow only if it needs per-instance config, or it is reused in other Node-RED
+          instances. Otherwise a link call is lighter and enough.
+        howHeading: How to lay it out
+        how: >-
+          Single config and single project means link call. Different settings per drop, or reuse
+          across other Node-RED instances, means subflow. Start as a link call and promote it if it
+          earns the distribution.
+        callout:
+          tone: watch
+          text: Defaulting to subflows for everything duplicates connections and adds indirection.
+      - label: Single sink
+        kicker: Single sink
+        kickerNote: Each family converges on one sink that routes nothing; keep the decisions upstream.
+        diagramTitle: Many paths, one sink, no decisions here
+        diagram:
+          lanes:
+            - label: Paths
+              tone: neutral
+              nodes:
+                - title: path, read
+                - title: path, read
+                - title: path, write
+            - link: link out
+            - label: One sink
+              tone: it
+              nodes:
+                - title: http res
+                  sub: http response · one node
+                  tone: it
+        summary: >-
+          The one sink each family of paths converges on — an http response, an MQTT publish, or a
+          dashboard update — reached by a labeled link. It only sends; no decisions live here.
+        useWhen: >-
+          Every path in a surface needs to end somewhere, and that ending should route nothing. Keep
+          the logic upstream so the sink makes no routing decisions.
+        howHeading: How to lay it out
+        how: >-
+          Point each path at one labeled sink that only sends and never branches — an http response,
+          an MQTT publish, or a dashboard update. Reads and writes converge there; an HTTP path
+          responds exactly once, a streaming path simply emits.
+        callout:
+          tone: watch
+          text: If a node everything passes through decides where things go, that is a router. Split it back out.

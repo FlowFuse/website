@@ -1,7 +1,7 @@
 ---
 title: "How to Build An Application With Node-RED Dashboard 2.0 (2026)"
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
-description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building a personalized, secure, and fully functional application.
+description: "Learn to build custom applications effortlessly with Node-RED Dashboard 2.0 in this step-by-step, secure application guide."
 lastUpdated: 2026-06-03
 date: 2024-04-25
 authors: ["sumit-shinde"]
@@ -206,14 +206,14 @@ In this section, we will build an interactive table using **ui-template** and [v
     <!-- User avatar -->
     <img :src="item.user.image" width="24" />
     <!-- Username -->
-    {% raw %}<span>{{ item.user.username }}</span>{% endraw %}
+    <span>{{ item.user.username }}</span>
    </div>
   </template>
 
   <!-- Template for the "due" column -->
   <template v-slot:item.due="{ item }">
    <!-- Calculate and display the number of days between due date and current date -->
-   {% raw %}{{ daysBetween(item.due, new Date()) }} Days{% endraw %}
+   {{ daysBetween(item.due, new Date()) }} Days
   </template>
  </v-data-table>
 </template>

@@ -33,9 +33,10 @@ Getting your own hardware into FlowFuse meant working backwards. You signed up, 
 
 Now you can start where the hardware already is. Run the installer from your terminal and it walks you through registering — including setting up an account if you need one — ending with your machine registered as a remote instance and ready to build on. If something's in the way — like port 1880 already being in use — the installer tells you up front instead of failing partway through.
 
-![The installer running in a terminal, walking through sign-up and connection to FlowFuse](./images/device-agent-install.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+::terminal-frame{src="/images/device-agent/terminal-install.gif" alt="The installer running in a terminal, walking through sign-up and connection to FlowFuse" :width="1000"}
+::
 
-More of the from-scratch onboarding experience lands in upcoming releases.
+You can grab the install command for your platform on the [Device Agent page](/platform/device-agent/) and have a machine online in a few minutes. More of the from-scratch onboarding experience lands in upcoming releases.
 
 ## Modbus Certified Node
 
@@ -113,7 +114,7 @@ If something in this release improves your workflow, or if there is still fricti
 ### FlowFuse Cloud
 
 The fastest way to get started is with FlowFuse Cloud.
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in minutes.
 
 ### Self-Hosted
 

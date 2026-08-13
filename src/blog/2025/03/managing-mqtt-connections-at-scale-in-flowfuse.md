@@ -1,7 +1,7 @@
 ---
 title: "Managing MQTT Connections at Scale in FlowFuse"
 subtitle: Automating MQTT Configuration in FlowFuse Using Environment Variables
-description: Learn how to configure MQTT brokers dynamically in FlowFuse using environment variables at both instance and device group levels. Streamline deployments across pipeline stages and monitor MQTT topics efficiently.
+description: "Learn how to configure MQTT brokers dynamically in FlowFuse using environment variables at instance and device group levels."
 date: 2025-03-28
 authors: ["sumit-shinde"]
 image: /blog/2025/03/images/scaling-mqtt-connections.png
@@ -160,4 +160,4 @@ Watch this short video to learn how to bring your own brokers for topic monitori
 
 FlowFuse makes it easy to deploy Node-RED flows while ensuring each stage connects to the right MQTT broker. By using environment variables at both the instance and device group levels, you can automate MQTT configurations, reducing manual setup and ensuring consistency.
 
-[Get Started Now]({% include "sign-up-url.njk" %})
+[Get Started Now](https://app.flowfuse.com/account/create)

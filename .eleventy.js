@@ -140,6 +140,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/webinars/2025/simplifying-opc-ua/opc-ua-webinar-flows.zip");
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
     eleventyConfig.addPassthroughCopy("src/js/hm-promo-banner.js");
+    eleventyConfig.addPassthroughCopy("src/js/nav-tracking.js");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
@@ -211,6 +212,16 @@ module.exports = function(eleventyConfig) {
     // Custom filters
     eleventyConfig.addFilter("json", (content) => {
         return JSON.stringify(content)
+    });
+
+    // Resolves a chrome.json href of the form "site:<key>" against site.json,
+    // so single-sourced values (e.g. the job board URL) aren't duplicated as
+    // literal strings in the shared nav/footer data. Anything else passes through.
+    eleventyConfig.addFilter("resolveHref", (href, site) => {
+        if (typeof href === "string" && href.startsWith("site:")) {
+            return site[href.slice("site:".length)]
+        }
+        return href
     });
 
     eleventyConfig.addFilter("fromJson", (content) => {
@@ -953,7 +964,9 @@ module.exports = function(eleventyConfig) {
 
         if (content) {
             const chevronDown = loadSVG('chevron-down')
-            return `<li class="${classes}"><span class="flex items-center gap-1">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
+            // data-nav-section labels every link inside this panel for nav-click
+            // tracking (src/js/nav-tracking.js), independent of styling classes.
+            return `<li class="${classes}" data-nav-section="${label}"><span class="flex items-center gap-1">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
         } else if (link) {
             return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span></a></li>`
         } else {
@@ -974,6 +987,29 @@ module.exports = function(eleventyConfig) {
         const currentWorkingFilePath = this.page.inputPath
 
         return await imageHandler(src, alt, title, widths, sizes, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES)
+    });
+
+    /*
+        Window chrome around a recording of a terminal session. Shared by the Device
+        Agent page and release posts so every frame looks the same; the frame's own
+        padding scales with the viewport, see .ff-terminal-frame in style.css.
+        The recording is deliberately not zoomable: the frame is the point, and a
+        zoom overlay on an animated GIF restarts it out of context.
+    */
+    eleventyConfig.addAsyncShortcode("terminalFrame", async function terminalFrameShortcode(src, alt, width) {
+        const maxWidth = Number(width) || 1000
+        const currentWorkingFilePath = this.page.inputPath
+
+        const image = await imageHandler(src, alt, null, [maxWidth], null, currentWorkingFilePath, eleventyConfig, async=true, SKIP_IMAGES)
+
+        return `<div class="ff-terminal-frame" style="max-width: ${maxWidth}px">
+    <div class="ff-terminal-frame__bar">
+        <span class="ff-terminal-frame__dot ff-terminal-frame__dot--close"></span>
+        <span class="ff-terminal-frame__dot ff-terminal-frame__dot--minimise"></span>
+        <span class="ff-terminal-frame__dot ff-terminal-frame__dot--expand"></span>
+    </div>
+    <div class="ff-terminal-frame__screen">${image}</div>
+</div>`
     });
 
     eleventyConfig.addAsyncShortcode("tileImage", async function(item, image, defaultImage, defaultDescription, imageSize, title = null, priority = false) {

@@ -44,7 +44,7 @@ FlowFuse is an industrial data platform that enables engineers to build, manage,
 
 
 <div class="blog-update-notes">
-    <p>After careful consideration, we've decided to withdraw the free plan. You can still sign up for a 2 week trial to experience all that FlowFuse has to offer, or try out our Starter plan for $20/month.</p>
+    <p>After careful consideration, we've decided to withdraw the free plan. You can still sign up for a 30-day trial to experience all that FlowFuse has to offer.</p>
 </div>
 
 ## What's Included?
@@ -151,4 +151,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
