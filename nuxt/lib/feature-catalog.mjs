@@ -11,6 +11,24 @@ export const PLANS = [
 ]
 
 /**
+ * The page a plan badge links to: that plan's product page, e.g. /product/edge/.
+ *
+ * The product page explains what the plan is and carries its own "View pricing" CTA, so a
+ * reader who wants the comparison table is one click further on. Linking the table directly
+ * sets up the wrong expectation, that the badge leads to the feature it was clicked from.
+ *
+ * `id` is the plan file's `tierId`, which is also the product page's route parameter, so the
+ * test that keeps PLANS in step with nuxt/content/plans/ covers these paths too.
+ *
+ * Returns null for a label that names no plan, so a caller renders it as plain text rather
+ * than as a link to a page that does not exist.
+ */
+export function planHref (label) {
+    const plan = PLANS.find(candidate => candidate.label === label)
+    return plan ? `/product/${plan.id}/` : null
+}
+
+/**
  * Reduce a site path to a comparable form: no origin, no fragment, exactly one trailing slash.
  *
  * Catalog entries are hand written, so `/docs/user/expert`, `/docs/user/expert/` and
@@ -92,10 +110,10 @@ export function onPricing (feature) {
 /**
  * A feature's plan labels, but only when a reader can find that feature on the pricing page.
  *
- * Every badge links to /pricing/#comparison. A badge on a feature with no row there sends the
- * reader to a table the feature is missing from, which reads as deprecated or as a mistake
- * rather than as availability. So a feature off the pricing page publishes no badge, the same
- * outcome as one whose availability has not been settled.
+ * The catalog also carries features deliberately kept off the pricing page. Badging one of
+ * those states availability for a feature the reader can then find in no plan's line-up,
+ * which reads as deprecated or as a mistake rather than as availability. So a feature off the
+ * pricing page publishes no badge, the same outcome as one whose availability is unsettled.
  */
 export function featurePlanLabels (feature) {
     if (!onPricing(feature)) return []

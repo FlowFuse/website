@@ -51,11 +51,11 @@ export function resolveFeatureEntry (entry, catalog, release, changelogTitles = 
 
     if (ids.length && !features.length) return null
 
-    // Only features with a row on the pricing page contribute a badge, because the badge links
-    // to the comparison table and one that sends a reader to a table its feature is missing
-    // from reads as deprecated rather than as availability. A grouped heading unions just the
-    // priced ones, so it still badges when only some of the features it covers are on pricing.
-    // The changelog and docs links below are unaffected: they resolve to real pages either way.
+    // Only features with a row on the pricing page contribute a badge, for the reason in
+    // featurePlanLabels: a feature kept off pricing is in no plan's public line-up, so stating
+    // its availability reads as a mistake. A grouped heading unions just the priced ones, so it
+    // still badges when only some of the features it covers are on pricing. The changelog and
+    // docs links below are unaffected: they resolve to real pages either way.
     const priced = features.filter(onPricing)
 
     const tiers = features.length
