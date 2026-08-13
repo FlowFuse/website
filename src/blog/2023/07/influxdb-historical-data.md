@@ -3,7 +3,7 @@ title: Creating a Historical Data Dashboard with InfluxDB and Node-RED
 subtitle: Detailed instructions on how to create a Node-RED dashboard that shows historical data.
 description: Discover how to build a Historical Data Dashboard with InfluxDB and Node-RED. Capture, store, and visualize data for insightful analysis.
 date: 2023-07-18
-lastUpdated: 2025-07-14
+lastUpdated: 2026-08-13
 authors: ["andrew-lynch"]
 image: /blog/2023/07/images/historical-data-dashboard.png
 keywords: Node-RED InfluxDB, Time-series data, Industrial dashboard, Historical data visualization, IoT dashboard, Serial port sensor data,  Live and historical charts
