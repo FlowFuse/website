@@ -174,9 +174,9 @@ Traditional PLC-to-cloud setups typically involve several moving parts: edge gat
 
 FlowFuse consolidates those layers into a single integrated platform. It vides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
 
-<div class="blog-update-notes">
-    <p>The following information regarding FlowFuse accounts references deprecated account types. For current product offerings, check out the [FlowFuse Product Page](https://flowfuse.com/product/) to learn about [Edge](https://flowfuse.com/product/edge/), [Hub](https://flowfuse.com/product/hub/), and [Fleet](https://flowfuse.com/product/fleet/).</p>
-</div>
+::warning
+The following information regarding FlowFuse accounts references deprecated account types. For current product offerings, check out the [FlowFuse Product Page](https://flowfuse.com/product/) to learn about [Edge](https://flowfuse.com/product/edge/), [Hub](https://flowfuse.com/product/hub/), and [Fleet](https://flowfuse.com/product/fleet/).
+::
 
 To use the FlowFuse MQTT broker, you'll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
 
