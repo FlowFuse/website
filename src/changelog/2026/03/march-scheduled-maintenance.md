@@ -2,10 +2,15 @@
 title: "Updated: Upcoming Scheduled Server Maintenance on March 28th, 2026"
 description: Keeping the FlowFuse Cloud up to date with critical server maintenance.
 date: 2026-03-12 12:00:00.0
+lastUpdated: 2026-08-13
 authors: ['nick-oleary']
 tags:
   - changelog
 ---
+
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
 
 As part of our ongoing efforts to maintain our infrastructure, we need to update some of our servers that host Node-RED instances.
 
