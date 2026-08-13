@@ -3,6 +3,7 @@ title: "FlowFuse 2.21: AI-Assisted SQL, Low-Code Custom Nodes, and Remote Instan
 subtitle: "Introducing FlowFuse Expert functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes."
 description: "FlowFuse 2.21 introduces AI-assisted SQL, low-code custom nodes, and remote instance performance insights for engineering teams."
 date: 2025-08-28
+lastUpdated: 2026-08-13
 authors: ["greg-stoutenburg"]
 image: /blog/2025/08/images/release-2.21.png
 tags:
@@ -15,6 +16,10 @@ tags:
 It's been a very busy release and we have many great new features available on FlowFuse that will provide a better Node-RED development experience, makes it easier to develop and interface with your Unified Namespace, provide more insight into Remote Instance performance and new low-code tooling for building your own custom Node-RED nodes.
 
 <!--more-->
+
+::note
+Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::
 
 ## Assistant Functionality in Tables Nodes
 ![Gif showing FlowFuse Expert in Tables](./images/tables.gif)
