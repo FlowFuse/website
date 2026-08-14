@@ -16,8 +16,8 @@ This release focuses on speeding time to value with more powerful AI functionali
 <!--more-->
 
 ## AI Enhancements to Node-RED
-![GIF of AI Flow Explainer](./images/assistant-0-3-0-flow-explainer-3tbNoRlb4T-1089.gif)
-_GIF of AI Flow Explainer_
+<video autoplay loop muted playsinline aria-label="Video of AI Flow Explainer" width="1089" height="790" preload="none"><source src="/blog/2025/07/images/assistant-0-3-0-flow-explainer-3tbNoRlb4T-1089.webm" type="video/webm" /></video>
+_Video of AI Flow Explainer_
 
 The FlowFuse Expert can now do more than create a Function node based on your text instructions. With this release, you can highlight a flow in the Node-RED editor and ask the FlowFuse Expert to explain the purpose of the flow. This new functionality is perfect for learning and collaboration.
 
