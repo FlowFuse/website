@@ -52,7 +52,7 @@ All courses completed through Node-RED Academy provide a formal certification up
 
 The credential will be evidence of your Node-RED knowledge and abilities, and will be a great way to demonstrate your expertise to potential employers or clients.
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ## What Courses are Included?

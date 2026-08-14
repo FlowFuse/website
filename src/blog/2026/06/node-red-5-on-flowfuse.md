@@ -64,7 +64,7 @@ The **redesigned sidebars** now behave the same on both sides of the editor. Con
 
 Underneath the visual changes are functional and security improvements across debugging, authentication, and TLS, the parts that matter most once Node-RED is running in production. If previous releases expanded what it could do, this one sharpens how it feels to use. For the full list, read the [release blog](https://nodered.org/blog/2026/06/09/version-5-0-released).
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ## What it means for industrial teams

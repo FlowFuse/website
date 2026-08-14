@@ -66,7 +66,7 @@ FlowFuse provides role-based access control (RBAC) to define who edits flows ver
 
 For supply chain security, FlowFuse generates a Software Bill of Materials (SBOM) listing every node and dependency across your instances. Security teams can scan for vulnerabilities and track what needs updating.
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Team Collaboration and Version Control

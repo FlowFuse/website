@@ -97,7 +97,7 @@ Before plotting locations, we need to obtain the data first. For this purpose, w
 
 To ensure compatibility with the Worldmap custom node, we need to format the location data appropriately. 
 
-:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
 ::
 
 1. Drag the **Change** node onto the canvas, and set the `msg.payload` to `msg.payload.vehicles`, and give it name **Set payload**.

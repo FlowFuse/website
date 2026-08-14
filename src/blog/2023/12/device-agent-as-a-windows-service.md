@@ -88,7 +88,7 @@ icacls c:\opt\flowfuse-device /grant "user":F /T
 ```
 _where `"user"` is the service account (not the admin account)_
 
-:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
 ::
 
 ## Install nssm

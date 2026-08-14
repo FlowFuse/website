@@ -51,7 +51,7 @@ The catch is that Ethernet latency is not flat. It varies with network load, swi
 
 RTU offers better worst-case latency. TCP offers better average latency. In industrial control, worst-case is usually what you design for.
 
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
 
 ## Failure Modes: What Breaks, How It Breaks, and Whether You Will Know

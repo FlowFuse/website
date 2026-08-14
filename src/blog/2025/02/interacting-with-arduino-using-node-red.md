@@ -59,7 +59,7 @@ _Importing Standard Firmata setup sketch from examples in Arduino IDE_
 
 Once the upload is complete, the Arduino is ready to communicate via the Firmata protocol.
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Step 3: Connecting Node-RED to Arduino via Serial Communication

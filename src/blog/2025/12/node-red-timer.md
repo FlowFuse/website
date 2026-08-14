@@ -102,7 +102,7 @@ The hourglass node responds to control commands sent via `msg.command`. The avai
 
 These commands control timer behavior.
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Implementing a Stopwatch Timer

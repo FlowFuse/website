@@ -152,7 +152,7 @@ We can confirm the values are being stored in memory by checking the flow contex
 ![Screenshot showing the flow variables in the context data tab](./images/opc-ua-1/context-data-2.png "Screenshot showing the flow variables in the context data tab")
 Each time we hit refresh, the values change, confirming that the values are randomly changing every second.
 
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
 
 The last, and most important part of the flow, is the `Compact-Server` node, which actually stands alone without any incoming or outgoing connections.

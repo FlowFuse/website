@@ -191,7 +191,7 @@ This example creates a simple PDF featuring a centered logo, a title, a subtitle
 ![Example pdf result](./images/example-pdf.png){data-zoomable}
 _Example pdf result_
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Step 3: Creating a Flow to Generate a PDF

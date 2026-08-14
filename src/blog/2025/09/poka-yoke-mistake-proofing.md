@@ -80,7 +80,7 @@ The impact of mistake-proofing extends far beyond just catching errors. By desig
 
 Errors in manual assembly lead to increased scrap rates, rework, and delays, all contributing to higher production costs. By eliminating errors at the source, the cost of mistakes within a company is reduced significantly. Companies implementing poka yoke techniques saw a 25% increase in productivity, with time previously spent correcting errors now available for value-added activities.
 
-:::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
 ::
 
 Mistake-proofing creates safer processes by eliminating conditions that lead to accidents. When errors can literally mean life or death (as in pharmaceutical manufacturing), poka yoke becomes mission-critical. Workers experience less frustration from rework and greater confidence in their processes, leading to improved morale. Successful implementation leads to a 20% improvement in customer satisfaction through consistent product quality and reliability.

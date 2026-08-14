@@ -64,7 +64,7 @@ Those connection slots release when the idle-connection timeout or the TCP FIN/R
 
 That regularity is the diagnostic signal. A device with intermittent hardware faults fails unpredictably. A device whose connection table is being exhausted fails on a clock. If you're seeing periodic offline events with suspiciously consistent timing, check your connection handling before you assume the device is faulty.
 
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
 
 **Transaction ID handling** is worth checking in high-concurrency polling configurations. The [Modbus application protocol specification](https://www.modbus.org/file/secure/modbusprotocolspecification.pdf) defines Transaction IDs to match requests with responses. A polling stack that reuses Transaction IDs before receiving a response to the previous one can match incoming responses to the wrong pending request. When this occurs, the symptom is correct values appearing in the wrong registers. It doesn't show up as an error at all, which makes it unusually difficult to diagnose. If you're seeing values that are off by a plausible amount but never produce error codes, check whether your stack's Transaction ID handling is correct under concurrent load.

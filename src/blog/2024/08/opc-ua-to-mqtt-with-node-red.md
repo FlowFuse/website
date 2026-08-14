@@ -95,7 +95,7 @@ In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-R
 
 - MQTT Broker: We’ll need an MQTT broker for data communication. FlowFuse offers an integrated MQTT Broker Service within Platform for easy setup. For more details, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
 
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
 
 ### Retrieving Data from the OPC UA Server

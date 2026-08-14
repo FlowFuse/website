@@ -81,7 +81,7 @@ http://192.168.1.100:1880/mcp
 
 This URL allows AI agents to discover resources, execute tools, and interact with your flows.
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Securing Your MCP Server

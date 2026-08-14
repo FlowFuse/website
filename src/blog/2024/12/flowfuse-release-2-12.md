@@ -70,7 +70,7 @@ _Screenshot showing the UI for selecting your Team's type, when onboarding throu
 
 <!-- <img width="438" alt="image" src="https://github.com/user-attachments/assets/da6fde55-27bc-42d7-afcc-19235661b558" /> -->
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Remote Instances

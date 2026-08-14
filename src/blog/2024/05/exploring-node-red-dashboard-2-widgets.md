@@ -76,7 +76,7 @@ return msg;
 
 Similarly, you can do this for storing expense data submitted using the expense submission form.
 
-:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
 ::
 
 ### Displaying Notifications

@@ -120,7 +120,7 @@ The Node-RED ecosystem that powers FlowFuse offers comprehensive protocol suppor
 
 Adding a protocol node to your FlowFuse instance takes just a few clicks. Open the palette manager from the hamburger menu, select **Manage palette**, go to the **Install** tab, and search for the node you need.
 
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
 
 ## Convincing the IT Team

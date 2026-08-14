@@ -134,7 +134,7 @@ To make it even easier to create and customize cron patterns, the cron-plus node
 ![Image showing the easy builder feature](./images/easy-builder.gif){data-zoomable}
 _Image showing the easy builder feature_
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Solar Event Schedules

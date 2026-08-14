@@ -83,7 +83,7 @@ Unlike MQTT, messages don't disappear after delivery. Everything writes to disk.
 
 Early Kafka needed Apache Zookeeper for cluster coordination, which added complexity. Recent versions support KRaft mode that removes this dependency, though many production systems still run Zookeeper.
 
-:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
 ::
 
 ## The Real Differences

@@ -152,7 +152,7 @@ You can replace the URL with your logo's URL or set it using the `msg.payload` a
 !["Screenshot of the Dashboard displaying the added logo in the header"](./images/logo-added-dashboard.png "Screenshot of the Dashboard displaying the added logo in the header"){data-zoomable}
 _Screenshot of the Dashboard displaying the added logo in the header_
 
-:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
 ::
 
 ### Right Side of the Header

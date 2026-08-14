@@ -93,7 +93,7 @@ I selected “Generate All Access API Token,” but eventually you will want a c
 
 Copy your token and do not share it!  (mine will be deleted later)
 
-:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
 ::
 
 ## Connecting Node-RED to InfluxDB

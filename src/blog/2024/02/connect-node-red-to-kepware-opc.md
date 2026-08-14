@@ -57,7 +57,7 @@ Next, let's configure the **OPC UA Client**.  Click the **pencil** to add a new 
 
 For the endpoint, **copy** the endpoint definition from the KepserverEX OPC UA Configuration Manager.  In our example, it is ```opc.tcp://127.0.0.1:49320```, and paste it into the Endpoint.  For SecurityPolicy select **Basic256Sha256**. For SecurityMode, select **Sign&Encrypt**.  Lastly, we will be selecting **Anonymous**.  Click **Update**, then **Deploy**.  
 
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
 
 Trigger the flow by **clicking** on the inject node.  The server may not connect at this time, and it is expected.

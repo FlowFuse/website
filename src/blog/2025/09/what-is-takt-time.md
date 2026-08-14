@@ -130,7 +130,7 @@ Understanding the meaning of takt time in this result shows the production line 
 
 This example illustrates why defining takt time correctly matters for matching cycle time to customer demand. Cycle times significantly exceeding takt time reveal capacity shortfalls requiring immediate attention. Cycle times falling well below takt time suggest excess capacity that might be redeployed elsewhere or indicate risk of overproduction if production control systems fail to prevent excess output.
 
-:::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
 ::
 
 ### Example 2: Electronics Assembly (Multiple Shifts)
