@@ -84,7 +84,7 @@ All three may audit the same station, but at different frequencies.
 
 A useful way to think about an LPA is as a routine health check for production. Final inspection tells you a part is bad; an LPA is intended to find the missing setup check, incorrect material, bypassed [error-proofing device](/blog/2025/09/poka-yoke-mistake-proofing/), or [out-of-calibration tool](/blog/2026/07/what-is-instrument-calibration/) before bad parts are made.
 
-LPAs are common in automotive manufacturing and other industries with strict quality requirements. They do not replace product audits, process audits, or the plant's quality management system; they add a frequent, practical layer of process verification where the work happens.
+LPAs are common in [automotive manufacturing](/industries/automotive/) and other industries with strict quality requirements. They do not replace product audits, process audits, or the plant's quality management system; they add a frequent, practical layer of process verification where the work happens.
 
 ::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
 ::
