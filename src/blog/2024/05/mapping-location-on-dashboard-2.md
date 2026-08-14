@@ -86,6 +86,9 @@ To render an interactive world map webpage for plotting location data, we will u
 
 Before plotting locations, we need to obtain the data first. For this purpose, we will utilize the [Edenburg Open Public Transportation API](https://tfe-opendata.readme.io/docs/getting-started). This API provides the live locations of all of Edenburg's public buses and trams, enabling us to access the necessary data for plotting on Worldmap within Dashboard 2.0.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 1. Drag an **Inject** node onto the canvas and set the repeat property to a 20-second interval.
 2. Drag an HTTP request node onto the canvas, Dobule-click on it and choose **GET** method, and enter `https://tfe-opendata.com/api/v1/vehicle_locations` in the URL field and select return  as **a parsed json object**. This API is public, so no need for environment variables. For private APIs, consider using [environment variables](/blog/2023/01/environment-variables-in-node-red) for security.
 
@@ -96,9 +99,6 @@ Before plotting locations, we need to obtain the data first. For this purpose, w
 ## Formatting Location Data
 
 To ensure compatibility with the Worldmap custom node, we need to format the location data appropriately. 
-
-::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
-::
 
 1. Drag the **Change** node onto the canvas, and set the `msg.payload` to `msg.payload.vehicles`, and give it name **Set payload**.
 

@@ -63,6 +63,9 @@ Before defining resources or tools, the MCP Server must be configured. This serv
 
 Once the server is configured, clients can connect using a URL. The URL to connect with is your instance URL plus the MCP path you configured, for example:
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ```
 https://your-instance.flowfuse.cloud/mcp
 ```
@@ -80,9 +83,6 @@ http://192.168.1.100:1880/mcp
 ```
 
 This URL allows AI agents to discover resources, execute tools, and interact with your flows.
-
-::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
-::
 
 ### Securing Your MCP Server
 

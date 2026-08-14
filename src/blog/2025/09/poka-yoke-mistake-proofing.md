@@ -66,6 +66,9 @@ Shingo made a key distinction between human mistakes and production defects. Mis
 
 Poka yoke is a systematic approach that uses automatic devices or methods to either make errors impossible or make them immediately obvious once they occur. It's any mechanism that helps equipment operators avoid mistakes by preventing, correcting, or drawing attention to human errors as they happen.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 The poka yoke meaning extends beyond simple error prevention. Rather than treating errors as moral failures or training deficiencies, it treats them as design problems. This lean manufacturing approach recognizes that even the most skilled workers experience moments of distraction, fatigue, or cognitive overload.
 
 Traditional quality control detects defects after they occur, requiring inspection, rework, and often scrapping of materials. The poka yoke approach prevents defects during production by making errors physically impossible or immediately visible. This prevention-first approach creates a cascading effect: quality control teams focus on complex issues rather than basic errors, workers gain confidence in their processes, customer satisfaction improves through consistent product quality, and excellence becomes the natural outcome rather than a heroic achievement.
@@ -79,9 +82,6 @@ If you prefer a video format, watch this short and clear video explaining what p
 The impact of mistake-proofing extends far beyond just catching errors. By designing assembly processes that are mistake-proof, poka yoke prevents defects from occurring in the first place rather than inspecting quality issues later. Companies achieve defect rates measured in parts per million rather than percentages.
 
 Errors in manual assembly lead to increased scrap rates, rework, and delays, all contributing to higher production costs. By eliminating errors at the source, the cost of mistakes within a company is reduced significantly. Companies implementing poka yoke techniques saw a 25% increase in productivity, with time previously spent correcting errors now available for value-added activities.
-
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
-::
 
 Mistake-proofing creates safer processes by eliminating conditions that lead to accidents. When errors can literally mean life or death (as in pharmaceutical manufacturing), poka yoke becomes mission-critical. Workers experience less frustration from rework and greater confidence in their processes, leading to improved morale. Successful implementation leads to a 20% improvement in customer satisfaction through consistent product quality and reliability.
 

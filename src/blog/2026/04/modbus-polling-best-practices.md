@@ -42,6 +42,9 @@ Consider what's actually living in a typical Modbus device: a temperature readin
 
 **Polling too slow loses events.** A motor fault flag that goes high for 800ms and then clears on its own will be completely invisible to a 1-second polling interval. Not occasionally invisible, reliably invisible. The bit flipped, the motor logged an internal fault, the fault self-cleared, and your polling cycle saw nothing but normal values on both sides of the event. You'll hear about that fault months later when the motor fails completely and maintenance pulls the device logs.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 The fix isn't complicated, but it requires making a deliberate decision you've probably been deferring: **categorize your data by how fast it actually changes, then assign poll rates to match.**
 
 A practical starting framework for most industrial installations:
@@ -54,9 +57,6 @@ A practical starting framework for most industrial installations:
 This tiered approach does something important beyond just reducing bus load: it aligns your polling architecture with the operational reality of the process you're monitoring. An engineer reading your configuration can look at the scan rates and immediately understand which signals the system treats as critical and which it treats as background. That's information that doesn't exist in a flat 1-second-everything setup.
 
 The pushback you'll hear is that tiered polling is harder to configure and harder to document. That's true. A single scan rate is simple to explain and simple to hand off. But simple to configure and correct are different things, and a polling architecture that silently misses events or saturates a serial bus isn't simple. It's a problem that hasn't surfaced yet.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 One more thing worth stating plainly: your scan rate has to account for the device's actual response capability, not just the rate you want data. Some field devices, including older PLCs, low-cost sensors, and anything running on an 8-bit microcontroller with slow UART handling, need 50 to 150ms just to process a request and formulate a response. If your fast-tier scan rate is 100ms and your device needs 120ms to respond, you're not getting 100ms data. You're getting collisions, timeouts, and a maintenance headache. Measure actual device response times before setting your fast-tier interval. The device datasheet will give you a starting point; a protocol analyzer will give you the truth.
 

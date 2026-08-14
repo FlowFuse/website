@@ -42,6 +42,9 @@ docker run -p 9092:9092 `
 confluentinc/cp-kafka
 ```
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Running Kafka on the cloud
 To run Kafka on the cloud, you can consider utilizing any cloud service according to your preferences. For a guide on running Kafka on a cloud platform, the procedures may differ. You can refer to the documentation provided by your preferred cloud service for detailed instructions.
 
@@ -49,9 +52,6 @@ During the writing of this tutorial, I utilized [Aiven’s cloud data platform](
 
 ## Installing Dashboard 2.0
 We will be installing Dashboard 2.0 to display real-time temperature data of various regions on a chart. If you are new to Dashboard 2.0, we recommend referring to [Getting started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/)\, which covers everything from basic concepts to installation and creating your first dashboard seamlessly.
-
-::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
-::
 
 ## Installing and configuring Kafka custom node
 

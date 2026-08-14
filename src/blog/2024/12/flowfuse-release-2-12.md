@@ -42,7 +42,6 @@ The new Free plan on FlowFuse Cloud will allow you to manage two remote instance
 
 FlowFuse is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. More fundamentally though, it's a great platform to manage multiple instances of Node-RED.
 
-
 <div class="blog-update-notes">
     <p>After careful consideration, we've decided to withdraw the free plan. You can still sign up for a 30-day trial to experience all that FlowFuse has to offer.</p>
 </div>
@@ -59,6 +58,9 @@ In our new free tier on FlowFuse Cloud you get:
 
 ## Getting Started
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ### Create Your Free Team
 
 To create a free team, simply [sign up to FlowFuse Cloud](https://app.flowfuse.com/create).
@@ -69,9 +71,6 @@ Once you've filled in your details, you'll be presented with the option to choos
 _Screenshot showing the UI for selecting your Team's type, when onboarding through on FlowFuse Cloud._
 
 <!-- <img width="438" alt="image" src="https://github.com/user-attachments/assets/da6fde55-27bc-42d7-afcc-19235661b558" /> -->
-
-::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
-::
 
 ### Remote Instances
 

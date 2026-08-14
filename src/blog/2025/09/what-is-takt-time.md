@@ -92,6 +92,9 @@ This **formula of takt time** contains two critical components that require care
 
 ### Available Production Time
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 This is the net time available for production during your planning period (typically one shift or one day). When applying the takt formula, available production time includes only planned production time. It excludes planned breaks, meetings, shift changes, and scheduled maintenance, but does not include unplanned downtime such as breakdowns or minor stoppages. It excludes scheduled breaks and lunch periods, shift changeovers, planned maintenance windows, and scheduled meetings or training.
 
 Consider an example calculation of takt time. An eight-hour shift equals 480 minutes. Subtract a 10-minute break to yield 470 minutes. Subtract a 20-minute lunch to yield 450 minutes. Subtract a 30-minute planned changeover to yield 420 minutes. The available production time equals 420 minutes.
@@ -129,9 +132,6 @@ Now apply the takt time formula. Divide 420 minutes by 120 units to yield 3.5 mi
 Understanding the meaning of takt time in this result shows the production line must complete one brake assembly every 3.5 minutes to meet customer demand. If actual cycle time equals 5 minutes per unit, production will fall short by approximately 30 percent, completing only 84 units instead of the required 120 units. If actual cycle time equals 3 minutes per unit, the line produces 140 units, creating 20 units of excess inventory and risking overproduction waste.
 
 This example illustrates why defining takt time correctly matters for matching cycle time to customer demand. Cycle times significantly exceeding takt time reveal capacity shortfalls requiring immediate attention. Cycle times falling well below takt time suggest excess capacity that might be redeployed elsewhere or indicate risk of overproduction if production control systems fail to prevent excess output.
-
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
-::
 
 ### Example 2: Electronics Assembly (Multiple Shifts)
 

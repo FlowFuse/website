@@ -92,6 +92,9 @@ While Node-RED doesn't include Modbus nodes by default, adding them to your pale
 
 Next, you'll need to configure the Modbus connection based on your device type. Modbus devices can communicate using two primary protocols: **Modbus RTU** (over serial) or **Modbus TCP** (over Ethernet/Wi-Fi). The specific choice depends on the type of Device you are working with.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 1. Drag a **Modbus Read** node onto your Node-RED Canvas.
 2. Double-click on the **Modbus Read** node to open its configuration.
 3. In the configuration window:
@@ -133,9 +136,6 @@ If you prefer a video explanation, [Kurt Braun](https://www.linkedin.com/in/wago
 ### Step 2: Transforming Modbus Data for UNS
 
 After collecting data from your Modbus device, the next step is transforming it into a usable format for cloud-based IoT applications. Modbus data typically comes in raw register values, and you may need to convert these values into human-readable formats like temperature, pressure, or other measurements.
-
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
-::
 
 Let's walk through the transformation process step by step.
 

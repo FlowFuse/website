@@ -85,6 +85,9 @@ The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the 
 
 ### Installing Flowfuse user addon
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 1. Click the Node-RED Settings (top-right)
 2. Click "Manage Palette"
 3. Switch to the "Install" tab
@@ -108,9 +111,6 @@ In this addon, user information is attached to the `msg` emitted by Dashboard 2.
 Behind the scenes, the user addon is appending the user object to the `msg`, via the SocketIO auth option. We make the socketio object available via a computed [setup](https://dashboard.flowfuse.com/contributing/guides/state-management.html#setup-store) object, this means that we can also access user data in any ui-template widget with `{{ setup.socketio.auth.user }}`, in the `<template>`, or `this.setup.socketio.auth.user`, in the JS.
 
 When running Node-RED Dashboard 2.0 on FlowFuse, you'll have a new tab available in the "Dashboard 2.0" sidebar in the Node-RED Editor, you just have to navigate to the "FF Auth" tab and you’ll see two options.
-
-::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
-::
 
 **Option 1: Include Client Data**
 

@@ -49,6 +49,9 @@ One failure mode that gets far less attention than it deserves: bus contention f
 
 RS-485 is half-duplex. After sending a request, the master must de-assert its transmit driver before the device can respond. If the driver stays asserted even a few hundred microseconds too long (firmware timing bug, misconfigured enable pin, USB adapter with incorrect turnaround handling) the device's response overlaps with the master's still-active driver. The result is frame corruption on every transaction, every time, and it's indistinguishable from a severely damaged cable.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 A [protocol analyzer](https://en.wikipedia.org/wiki/Protocol_analyzer) confirms it immediately by showing both signals active simultaneously. Before you pull cable on a segment where every transaction is corrupted, swap the serial adapter or test with a different master. It takes ten minutes and it's right more often than people expect.
 
 ### Modbus TCP: connection management and latency
@@ -63,9 +66,6 @@ Those connection slots release when the idle-connection timeout or the TCP FIN/R
 *Cyclical failure pattern caused by connection table exhaustion. Diagnostic signal: failures repeat at a consistent interval.*
 
 That regularity is the diagnostic signal. A device with intermittent hardware faults fails unpredictably. A device whose connection table is being exhausted fails on a clock. If you're seeing periodic offline events with suspiciously consistent timing, check your connection handling before you assume the device is faulty.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 **Transaction ID handling** is worth checking in high-concurrency polling configurations. The [Modbus application protocol specification](https://www.modbus.org/file/secure/modbusprotocolspecification.pdf) defines Transaction IDs to match requests with responses. A polling stack that reuses Transaction IDs before receiving a response to the previous one can match incoming responses to the wrong pending request. When this occurs, the symptom is correct values appearing in the wrong registers. It doesn't show up as an error at all, which makes it unusually difficult to diagnose. If you're seeing values that are off by a plausible amount but never produce error codes, check whether your stack's Transaction ID handling is correct under concurrent load.
 

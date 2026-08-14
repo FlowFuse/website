@@ -46,14 +46,14 @@ The [Node-RED Academy](https://node-red-academy.learnworlds.com/) provides Node-
 
 Node-RED Academy is a brand new learning portal for Node-RED. Whether you're a complete beginner to Node-RED or have been building applications for years, Node-RED Academy courses will take your expertise to the next level, and provide you with formal certification that are evidence of your Node-RED knowledge and skills.
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ## Can I Earn a Credential?
 
 All courses completed through Node-RED Academy provide a formal certification upon successful course completion. You can share this certificate on LinkedIn, add it to your CV or show it off anywhere else you like.
 
 The credential will be evidence of your Node-RED knowledge and abilities, and will be a great way to demonstrate your expertise to potential employers or clients.
-
-::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
-::
 
 ## What Courses are Included?
 

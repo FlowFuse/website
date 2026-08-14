@@ -75,6 +75,9 @@ In Node-RED The Open Telemetry module helps track messages by creating "spans" t
 
 ## Tracing in Node-RED Flows using Opentelemetry
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 In a manufacturing plant, Node-RED manages different machines and sensors. Suppose there's a problem with the production line, such as a delay in processing or a GPIO node experiencing issues reading data. With Open Telemetry integrated, you can trace the data flow through the system to see exactly where the issue is happening. This helps you quickly identify whether the problem is with a specific node that is reading the machine data or a delay in data processing, allowing you to fix the issue faster and keep the production line running smoothly.
 
 For demonstration purposes, we will use a flow that simulates sensor reading and data processing. We will monitor this flow using Open Telemetry to track data across the system, identify bottlenecks, and optimize performance.
@@ -86,9 +89,6 @@ For demonstration purposes, we will use a flow that simulates sensor reading and
 ::
 
 Deploy the flow above, and you might see a delay in the data shown on the debug panel. For this example, we added a Delay node before the Change node that converts temperature data from Kelvin to Celsius. While this delay is visible here, finding such delays in larger flows with many nodes can be difficult and time-consuming. Open Telemetry makes this easier by giving you detailed traces that show where delays or issues are happening
-
-::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
-::
 
 ### Prerequisite
 

@@ -38,13 +38,11 @@ To follow this guide, you'll need:
 - A working OPC UA server connection
 - The basics from our [previous tutorial](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)
 
-
 > Managing and scaling Node-RED instances is easy with FlowFuse, offering DevOps pipelines, audit logs, snapshots, high availability, and much more. [Start your free trial today!](https://app.flowfuse.com/account/create)
 
 Before proceeding, check which features your OPC UA server supports, most handle subscriptions and events, but historical data and methods vary by vendor.
 
 Let's get started.
-
 
 ## Real-Time Monitoring with Subscriptions
 
@@ -62,7 +60,6 @@ To create your first subscription:
 
 > Note: This article uses Inject nodes for manual triggering to illustrate key concepts. In production, it is advisable to create interactive dashboards with FlowFuse Dashboard to enable effective monitoring and control. For more information on designing operator interfaces, please refer to [this article](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/).
 
-
 2. Add an OpcUa-Item node. Double-click it and enter the NodeId of the tag you want to monitor, like `ns=2;i=2007`. Select the correct data type for your tag.
 
 3. Place an OpcUa-Client node on the canvas. Open its Configuration, select your OPC UA server endpoint configuration, and change the Action dropdown to "SUBSCRIBE". Set the interval to how often you want updates.
@@ -71,15 +68,16 @@ To create your first subscription:
 
 5. Deploy your flow and click the Inject button. 
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ::render-flow{:height="300"}
 ```json
 [{"id":"c62e8dab346d62bb","type":"inject","z":"7008401a.b94db","name":"","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":490,"y":740,"wires":[["cce9159a656858b9"]]},{"id":"cce9159a656858b9","type":"OpcUa-Item","z":"7008401a.b94db","item":"ns=3;i=1003","datatype":"Int32","value":"","name":"","x":700,"y":740,"wires":[["042a5d016ce879c6"]]},{"id":"1c1d56834b8d3373","type":"debug","z":"7008401a.b94db","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":720,"wires":[]},{"id":"bccca1356626f117","type":"debug","z":"7008401a.b94db","name":"Errors","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1130,"y":760,"wires":[]},{"id":"042a5d016ce879c6","type":"OpcUa-Client","z":"7008401a.b94db","endpoint":"","action":"subscribe","deadbandtype":"a","deadbandvalue":1,"time":"2","timeUnit":"s","certificate":"n","localfile":"","localkeyfile":"","securitymode":"None","securitypolicy":"None","useTransport":false,"maxChunkCount":1,"maxMessageSize":8192,"receiveBufferSize":8192,"sendBufferSize":8192,"setstatusandtime":false,"keepsessionalive":false,"name":"","x":940,"y":740,"wires":[["1c1d56834b8d3373"],["bccca1356626f117"],[]]}]
 ```
 ::
 
-
 When clicked, the OpcUa-Item node sends the tag to the OpcUa-Client and creates the subscription. The node’s status will update to “subscribed” once the subscription is active. When values change, they appear in the debug panel. If no value changes occur within the interval time, the status will show “keep alive” to confirm that the connection is still active.
-
 
 ### Subscribing to Multiple Tags
 
@@ -125,9 +123,6 @@ When using the "multiple" topic, each value update arrives in OPC UA's DataValue
 ```
 
 Subscribing to multiple tags with OpcUa-Item nodes returns just the value.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ### Stopping Subscriptions
 
@@ -294,7 +289,6 @@ return msg;
 The historical data returns with timestamps and quality codes. Use this for shift reports, compliance documentation, or troubleshooting equipment issues that happened hours or days ago.
 
 You've now mastered the advanced features that make OPC UA essential for industrial systems. With subscriptions, you're monitoring values in real-time without wasting bandwidth. With events and alarms, you're capturing critical alerts the moment they happen. With method calls, you're executing complex operations with a single command. And with historical access, you have the data trail needed for analysis and compliance.
-
 
 ## Scale Your OPC UA Implementation
 

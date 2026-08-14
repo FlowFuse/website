@@ -97,6 +97,9 @@ Siemens S7-1200 and S7-1500 PLCs have built-in OPC UA server. Activate it in TIA
 
 When you modify your data block or recompile, your flows keep working because they reference variable names, not memory locations that might shift.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Prerequisites
 
 Before you begin, make sure you have:
@@ -131,9 +134,6 @@ Before exposing variables, you need to create an OPC UA server interface in your
 **For S7-1500 PLCs (firmware V2.5 or higher):**
 
 If you're using an S7-1500 PLC with firmware version 2.5 or higher, you have the option to enable the standard SIMATIC server interface. Simply check **Enable standard SIMATIC server interface** in the OPC UA settings. This automatically makes all PLC tags that are marked as accessible available through OPC UA.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 **For S7-1200 PLCs (or manual configuration for S7-1500):**
 

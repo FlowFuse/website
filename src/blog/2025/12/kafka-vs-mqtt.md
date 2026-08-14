@@ -67,6 +67,9 @@ MQTT has three Quality of Service levels:
 
 **QoS 2** - Exactly once through a four-way handshake. Slowest but guaranteed.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 Pick based on what you're sending. Temperature readings every 10 seconds? QoS 0 is fine. Critical alarm messages? QoS 2.
 
 ## How Kafka Works
@@ -82,9 +85,6 @@ The architecture spreads partitions across multiple broker servers. Each partiti
 Unlike MQTT, messages don't disappear after delivery. Everything writes to disk. You configure retention policies, keep messages for 7 days, 30 days, or forever. This means you can replay messages, let new consumers read historical data, or reprocess everything if your analytics code had a bug.
 
 Early Kafka needed Apache Zookeeper for cluster coordination, which added complexity. Recent versions support KRaft mode that removes this dependency, though many production systems still run Zookeeper.
-
-::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
-::
 
 ## The Real Differences
 

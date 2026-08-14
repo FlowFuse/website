@@ -50,6 +50,9 @@ I am assuming the user is a low-code developer. They may have limited experience
 
 So, that's the methodology, let's get on with looking at the strengths of each project.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## How easy is it to install?
 
 ### uibuilder - 1st place
@@ -73,9 +76,6 @@ When setting up FlexDash, one thing that wasn't immediately obvious was that I n
 There is also an [ongoing discussion](https://github.com/node-red/node-red/issues/569) about a way to resolve issue by changing how Node-RED deals with dependencies which sounds promising.
 
 I believe a few improvements to the install process could make FlexDash a much more popular custom node.
-
-::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
-::
 
 ## How easy is it to get your first demo dashboard running?
 

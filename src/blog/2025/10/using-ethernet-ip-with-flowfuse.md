@@ -96,6 +96,9 @@ Used for PLCs that connect directly via Ethernet without backplane routing, such
 **With Routing:**
 Used for chassis-based PLCs like ControlLogix and CompactLogix, where the processor sits in a backplane slot. In this case, the slot number must be specified, as it automatically creates a routing path through the backplane to reach the processor.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Unconnected Messaging
 
 Unconnected messaging sends individual requests without maintaining a persistent connection. Each transaction is standalone, request, response, done.
@@ -121,9 +124,6 @@ To communicate with Allen-Bradley PLCs from FlowFuse, use the popular node-red-c
 6. Wait for the installation to complete.
 
 Once installed, you'll find the EtherNet/IP nodes in your palette under the "plc" category. The main nodes are `ethernet-ip in` for reading data and `ethernet-ip out` for writing data to the PLC.
-
-::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Configuring the EtherNet/IP Node
 
