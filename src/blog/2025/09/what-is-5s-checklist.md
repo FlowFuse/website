@@ -107,15 +107,3 @@ Mobile access transforms team interaction with the evaluation process. Workers c
 ## Up next
 
 If you want to start immediately without creating a checklist from scratch, FlowFuse’s pre-built 5S Checklist Blueprint is ready to use. It includes 25 evaluation questions to assess work area organization, scoring to measure compliance, and follow-up tracking to ensure issues are resolved. The dashboard provides a clear view of improvements over time, and the entire system is fully customizable to match the unique needs of your operations.
-
-<div class="cta-card" style="display: flex; align-items: center; gap: 20px; background-color: #EEF2FF; padding: 20px; border-radius: 8px; font-family: sans-serif; border: 1px solid #6366F1;">  
-    <!-- Left side image -->  
-    <div style="flex: 1;">  
-        <img src="/blog/2025/09/images/what-is-5s-checklist.png" alt="FlowFuse 5S Checklist Blueprint" style="width: 100%; height: auto; border-radius: 6px;">  
-    </div>  
-    <div style="flex: 1;">  
-        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Ready to Transform Your Work Area?</h3>  
-        <p style="font-size: 1em; margin: 0 0 20px;">Get started with FlowFuse's customizable 5S Checklist Blueprint and build your digital evaluation system in minutes.</p>  
-        <a href="/blueprints/manufacturing/5s-checklist/" class="cta-button" style="display: inline-block; background-color:#4f46e5; color: #ffffff; padding: 8px 18px; text-decoration: none; border-radius: 9999px; font-weight: bold; font-size: 0.95em; transition: background-color 0.3s ease;">Explore 5S Checklist Blueprint →</a>  
-    </div>  
-</div> 
