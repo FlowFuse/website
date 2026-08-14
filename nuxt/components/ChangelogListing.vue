@@ -28,24 +28,34 @@ let observer: IntersectionObserver | null = null
 // A release anchor shared from this page can name a release that is not rendered yet,
 // since the list starts at the newest entries only. Reveal it before the browser is
 // asked to scroll, otherwise the link lands at the top of the page.
-let hashResolved = false
+const route = useRoute()
+
+// The hash this already acted on, so repeat triggers are ignored but a later hash (back
+// and forward, or a second link) still resolves. A boolean latch would swallow those.
+let resolvedHash: string | null = null
 
 async function revealFromHash () {
-    if (!import.meta.client || hashResolved) return
+    if (!import.meta.client) return
+    // Read the address bar, not route.hash: a plain in-page anchor click is handled by the
+    // browser without going through the router, so route.hash can lag behind the real URL.
     const id = window.location.hash.replace(/^#/, '')
-    if (!id) { hashResolved = true; return }
+    if (!id || id === resolvedHash) return
     // Matched against the releases that exist rather than by reversing anchorId, so a
     // hash belonging to anything else on the page is left for the browser to handle.
     const release = entries.value.find(e => anchorId(e.release) === id)?.release
     if (!release || !revealRelease(release)) return
-    hashResolved = true
+    resolvedHash = id
     await nextTick()
-    document.getElementById(id)?.scrollIntoView()
+    // `instant` overrides the site-wide `scroll-behavior: smooth`. Arriving at an old
+    // release is a jump of tens of thousands of pixels, which is not worth animating.
+    document.getElementById(id)?.scrollIntoView({ behavior: 'instant' })
 }
 
-// On the prerendered page the archive is in the payload by the time this mounts. In dev,
-// and on a client-side navigation, the query is still in flight then, so retry on arrival.
-watch(entries, () => { revealFromHash() })
+// The hash and the archive can land in either order: the archive is in the payload on the
+// prerendered page but still in flight in dev and on a client-side navigation, and the hash
+// changes on its own for back and forward. Retry on whichever moves rather than assuming
+// both are ready at mount, since the reveal only works once the entries exist.
+watch([entries, () => route.hash], () => { revealFromHash() })
 
 onMounted(() => {
     observer = new IntersectionObserver((records) => {
@@ -53,9 +63,13 @@ onMounted(() => {
     }, { rootMargin: '600px 0px' })
     if (sentinel.value) observer.observe(sentinel.value)
     revealFromHash()
+    window.addEventListener('hashchange', revealFromHash)
 })
 
-onUnmounted(() => observer?.disconnect())
+onUnmounted(() => {
+    observer?.disconnect()
+    if (import.meta.client) window.removeEventListener('hashchange', revealFromHash)
+})
 </script>
 
 <template>
