@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// Shared with the badge lookups, so "has a row here" and "may badge elsewhere" cannot drift.
+// @ts-ignore untyped module
+import { onPricing } from '../../lib/feature-catalog.mjs'
+
 const { data: plans } = await useAsyncData('plans', () => queryCollection('plans').order('order', 'ASC').all())
 const { data: featureCatalog } = await useAsyncData('featureCatalog', () => queryCollection('featureCatalog').first())
 const { data: faq } = await useAsyncData('faq-pricing', () => queryCollection('faq').where('page', '=', 'pricing').first())
@@ -15,7 +19,9 @@ const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
   content: item.answer,
 })))
 
-const comparisonSections = computed(() => featureCatalog.value?.sections ?? [])
+const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
+  .map(section => ({ ...section, features: section.features.filter(onPricing) }))
+  .filter(section => section.features.length > 0))
 
 // UPricingTable's feature-title slot types `feature` without `description`,
 // even though the featureCatalog content schema does define it.

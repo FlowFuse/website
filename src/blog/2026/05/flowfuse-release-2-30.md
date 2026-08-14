@@ -13,12 +13,12 @@ tags:
    - releases
 release: "2.30"
 features:
-   - id: ff-expert-application-building
+   - id: flowfuse-expert-application-building
      heading: "FlowFuse Expert Builds Your Industrial Application"
    - heading: "What else is new?"
    - id: immersive-editor-drawer
      heading: "A smoother iteration experience with Expert"
-   - id: snapshot-compare
+   - id: snapshot-comparison
      heading: "More usable snapshot comparisons"
 cta:
   type: contact

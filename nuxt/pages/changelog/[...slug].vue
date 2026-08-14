@@ -25,6 +25,8 @@ const otherRecentEntries = computed(() =>
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
+const plans = useChangelogPlans(() => page.value?.path)
+
 function issueHref(issue: string): string {
     if (issue.startsWith('#')) return `https://github.com/FlowFuse/flowfuse/issues/${issue.substring(1)}`
     if (issue.startsWith('http')) return issue
@@ -58,6 +60,7 @@ useSeoMeta({
         <label>Changelog</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
+        <FeatureTierBadges :plans="plans" />
       </div>
     </div>
 

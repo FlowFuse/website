@@ -15,9 +15,9 @@ release: "2.29"
 features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
-   - id: snapshot-compare
+   - id: snapshot-comparison
      heading: "See Exactly What Changed in a Snapshot"
-   - id: ff-expert
+   - id: flowfuse-expert-ai
      heading: "FlowFuse Expert, Available to More Teams and More Capable"
    - heading: "What else is new?"
 cta:
