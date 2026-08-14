@@ -119,6 +119,21 @@ export default defineContentConfig({
                 image: z.string().optional(),
                 video: z.string().optional(),
                 tags: z.array(z.string()).optional(),
+                // Release blogs only. Read by nuxt/lib/release-features.mjs to hang plan
+                // badges and changelog links off the matching section heading. Undeclared
+                // keys are stripped by @nuxt/content, so both have to be listed here.
+                release: z.string().optional(),
+                features: z.array(z.object({
+                    heading: z.string(),
+                    // A string, or several ids when one heading covers several catalog features.
+                    id: z.union([z.string(), z.array(z.string())]).optional(),
+                    // For a section that is not a catalog feature at all, e.g. "What else is new?".
+                    tiers: z.object({
+                        edge: z.boolean(),
+                        hub: z.boolean(),
+                        fleet: z.boolean(),
+                    }).optional(),
+                })).optional(),
                 tldr: z.union([z.string(), z.array(z.string())]).optional(),
                 cta: z.object({
                     type: z.string().optional(),
@@ -298,12 +313,28 @@ export default defineContentConfig({
                         title: z.string(),
                         note: z.string().optional(),
                         description: z.string().optional(),
+                        docsLink: z.string().optional(),
+                        changelog: z.array(z.object({
+                            url: z.string(),
+                            release: z.string().optional(),
+                        })).optional(),
+                        subfeature: z.boolean().optional(),
+                        beta: z.boolean().optional(),
+                        // Defaults to true. False keeps the feature off /pricing while it
+                        // still carries a changelog or docs link for the badge lookups.
+                        showOnPricing: z.boolean().optional(),
+                        // Optional so a feature whose availability is not settled yet can
+                        // omit it and publish no badge at all. Everything /pricing renders
+                        // must have it, which the refine below enforces.
                         tiers: z.object({
                             edge: z.boolean(),
                             hub: z.boolean(),
                             fleet: z.boolean(),
-                        }),
-                    })),
+                        }).optional(),
+                    }).refine(
+                        feature => feature.showOnPricing === false || !!feature.tiers,
+                        { message: 'tiers is required unless showOnPricing is false', path: ['tiers'] },
+                    )),
                 })),
             })
         }),
