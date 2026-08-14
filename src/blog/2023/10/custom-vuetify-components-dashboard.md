@@ -73,7 +73,7 @@ Dashboard 2.0. It uses VueJS to provide, among other features, easy updating of
 components. If components are dynamic, _always use `v-model`_. This allows VueJS
 to pick up changes made dynamically.
 
-<video autoplay loop muted playsinline aria-label="Progress spinner, random values"><source src="/blog/2023/10/images/random-progress-element.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Progress spinner, random values" width="462" height="664" preload="none"><source src="/blog/2023/10/images/random-progress-element.webm" type="video/webm" /></video>
 
 
 ### Finishing the count down timer

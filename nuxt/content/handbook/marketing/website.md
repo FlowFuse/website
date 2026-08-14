@@ -92,10 +92,10 @@ YouTube videos can be embedded directly in pages using the `<lite-youtube>` web 
 For short, silent, looping animations that would otherwise be a GIF, check a `.webm` file into the post's own `images/` folder (same as any other image asset — no S3 upload needed) and embed it directly:
 
 ```html
-<video autoplay loop muted playsinline aria-label="Description of what the video shows"><source src="./images/example.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Description of what the video shows" width="1280" height="720" preload="none"><source src="./images/example.webm" type="video/webm" /></video>
 ```
 
-See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
+`width`/`height` should match the WebM's actual pixel dimensions so the browser can reserve layout space before the video loads, and `preload="none"` stops it from buffering until it scrolls into view. See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
 
 ## Meta Keywords
 

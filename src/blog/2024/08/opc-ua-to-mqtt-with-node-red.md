@@ -151,7 +151,7 @@ _Configuring the mqtt out node with broker information_
 4. Connect the output of the **join** node to the input of the **mqtt out** node.
 5. Deploy the flow. After deploying, you will see the status "connected" with a green dot at the bottom of each node, indicating that you have successfully connected to your MQTT broker.
 
-<video autoplay loop muted playsinline aria-label="Video showing the successful bridging of OPC UA data to MQTT"><source src="/blog/2024/08/images/opcua-to-mqtt.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the successful bridging of OPC UA data to MQTT" width="1904" height="956" preload="none"><source src="/blog/2024/08/images/opcua-to-mqtt.webm" type="video/webm" /></video>
 _Video showing the successful bridging of OPC UA data to MQTT_
 
 ::render-flow
@@ -171,7 +171,7 @@ For example, an MES can send commands or configuration changes via MQTT, which t
 3. Add an **OpcUa-Client** node to the canvas and configure it with your OPC UA server. Set the action type to "WRITE" to send the received data.
 4. Connect the output of the **mqtt in** node to the input of the **change** node, and the output of the **change** node to the input of the **OpcUa-Client** node.
 
-<video autoplay loop muted playsinline aria-label="Video showing the successful bridging of MQTT data to OPC UA"><source src="/blog/2024/08/images/mqtt-to-opcua.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the successful bridging of MQTT data to OPC UA" width="1910" height="820" preload="none"><source src="/blog/2024/08/images/mqtt-to-opcua.webm" type="video/webm" /></video>
 _Video showing the successful bridging of OPC UA data to MQTT_
 
 ::render-flow

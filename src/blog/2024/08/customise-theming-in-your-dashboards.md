@@ -267,7 +267,7 @@ The following options are available for header styling:
 
 This option as it name suggest it is the default option set for header. In which the header will get hidden if we scrolled down.
 
-<video autoplay loop muted playsinline aria-label="Video showing the dashboard with default header"><source src="/blog/2024/08/images/default-header.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the dashboard with default header" width="800" height="450" preload="none"><source src="/blog/2024/08/images/default-header.webm" type="video/webm" /></video>
 _Video showing the dashboard with default header_
 
 ### Hidden
@@ -281,7 +281,7 @@ _Image showing the dashboard with hidden header_
 
 Selecting this option keeps the header fixed at the top. This means that when you scroll the page down, the header will remain visible.
 
-<video autoplay loop muted playsinline aria-label="Video showing the dashboard with fixed header"><source src="/blog/2024/08/images/fixed-header.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Video showing the dashboard with fixed header" width="800" height="450" preload="none"><source src="/blog/2024/08/images/fixed-header.webm" type="video/webm" /></video>
 _Video showing the dashboard with fixed header_
 
 ## Changing Dashboard Theme

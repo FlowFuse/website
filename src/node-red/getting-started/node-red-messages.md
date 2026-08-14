@@ -19,7 +19,7 @@ This guide explores Node-RED message mechanics, common pitfalls, and best practi
 
 Messages in Node-RED are data packets that flow between nodes in your workflow. Node-RED follows an event-driven architecture where nodes act as both event emitters and listeners, with messages serving as the communication medium between them.
 
-<video autoplay loop muted playsinline aria-label="Node-RED message passing animation"><source src="/node-red/getting-started/images/node-red-message-passing.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Node-RED message passing animation" width="800" height="133" preload="none"><source src="/node-red/getting-started/images/node-red-message-passing.webm" type="video/webm" /></video>
 _Node-RED message passing visualization_
 
 Messages carry the data that powers your workflows, sensor readings, user inputs, API responses, and more. Fundamentally, Node-RED messages are JavaScript objects, providing a flexible structure for managing and transferring data throughout your flows.
@@ -69,7 +69,7 @@ Message property values can be any JavaScript-supported data type:
 - [Buffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
 - Other complex data types
 
-<video autoplay loop muted playsinline aria-label="Inject node sending different data types"><source src="/node-red/getting-started/images/node-red-data-types.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Inject node sending different data types" width="800" height="301" preload="none"><source src="/node-red/getting-started/images/node-red-data-types.webm" type="video/webm" /></video>
 _Various data types supported by Node-RED_
 
 ## How to Clone Messages and Properties
@@ -271,10 +271,10 @@ return msg;
 
 This commonly occurs when an Inject node sends `msg.payload` as a string or number, then a Change node attempts to add properties to it.
 
-<video autoplay loop muted playsinline aria-label="Showing the common mistake: adding property to non-object"><source src="/node-red/getting-started/images/mistake1.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Showing the common mistake: adding property to non-object" width="800" height="351" preload="none"><source src="/node-red/getting-started/images/mistake1.webm" type="video/webm" /></video>
 _Incorrect: Adding properties to a non-object type_
 
-<video autoplay loop muted playsinline aria-label="Correct approach to prevent the error"><source src="/node-red/getting-started/images/mistake-1-solution.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Correct approach to prevent the error" width="800" height="348" preload="none"><source src="/node-red/getting-started/images/mistake-1-solution.webm" type="video/webm" /></video>
 _Correct: Initialize as object before adding properties_
 
 ### 2. Overwriting the Entire Message Object

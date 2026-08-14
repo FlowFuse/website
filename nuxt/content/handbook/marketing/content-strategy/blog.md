@@ -185,11 +185,14 @@ The `<lite-youtube>` component is included globally on all pages — no addition
 For short, silent, looping screen-recordings, you can use a WebM video, GIFs can grow incredibly large, and WebM gives the same auto-playing loop at a fraction of the file size, with no YouTube upload needed:
 
 ```html
-<video autoplay loop muted playsinline aria-label="Description of what the video shows"><source src="./images/example.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Description of what the video shows" width="1280" height="720" preload="none"><source src="./images/example.webm" type="video/webm" /></video>
 ```
 
 - `aria-label` replaces the alt text a static image would have had — describe what's happening, and make sure it says "video"/"animation" rather than "screenshot" or "image".
 - `autoplay loop muted playsinline` is what makes it behave like a GIF (no controls, no sound, loops forever).
+- `width`/`height` should match the WebM's actual pixel dimensions (`ffprobe -v error -select_streams v:0 -show_entries stream=width,height file.webm`) — without them the browser doesn't know the video's aspect ratio until it starts downloading, so the page layout shifts once it loads.
+- `preload="none"` stops the video from buffering until it scrolls into view — without it, every autoplaying video on the page starts downloading on page load regardless of viewport position.
+- `<source>` is a void element — self-close it (`<source ... />`), don't write a matching `</source>`.
 - Reserve `<lite-youtube>` for longer or narrated videos where a play button and audio make sense.
 
 ### TL;DR

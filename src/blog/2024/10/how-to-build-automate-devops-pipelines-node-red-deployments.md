@@ -75,7 +75,7 @@ Once you’ve created your initial stage, you can add more stages by following t
 
 For example, in development, you might have a Node-RED instance in the cloud to build your application. During staging, you could test the setup with a single device. Finally, in production, you can deploy the tested application to thousands of devices in a device group, saving time and ensuring smooth deployment at scale.
 
-<video autoplay loop muted playsinline aria-label="DevOps pipelines animation"><source src="/blog/2024/10/images/devops-pipeline.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="DevOps pipelines animation" width="800" height="449" preload="none"><source src="/blog/2024/10/images/devops-pipeline.webm" type="video/webm" /></video>
 *Video: DevOps animation demonstrating pipeline deployments.*
 
 ## Running a Pipeline Stage

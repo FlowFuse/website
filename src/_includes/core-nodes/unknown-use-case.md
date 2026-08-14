@@ -24,7 +24,7 @@ Access the Palette Manager through the Node-RED menu to see all installed packag
 
 The System Info dialog provides a comprehensive list of installed node packages that you can view and copy for documentation.
 
-<video autoplay loop muted playsinline aria-label="List of nodes installed through the System Info dialog"><source src="/node-red/core-nodes/images/system-info-installed-nodes.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="List of nodes installed through the System Info dialog" width="1484" height="868" preload="none"><source src="/node-red/core-nodes/images/system-info-installed-nodes.webm" type="video/webm" /></video>
 
 ## Migrating flows to FlowFuse
 

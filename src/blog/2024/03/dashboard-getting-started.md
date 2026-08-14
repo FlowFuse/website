@@ -48,7 +48,7 @@ So, with that in mind, we wanted to offer a new "Getting Started" guide that wil
 
 With the nodes installed, getting started is as easy as choosing a node from the Palette (the left-hand side list of nodes) in Node-RED, and dropping it onto your canvas.
 
-<video autoplay loop muted playsinline aria-label="Screen recording to show how easy it is to deploy your first Dashboard 2.0 application."><source src="/blog/2024/03/images/dashboard-getting-started-add-widget.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Screen recording to show how easy it is to deploy your first Dashboard 2.0 application." width="800" height="460" preload="none"><source src="/blog/2024/03/images/dashboard-getting-started-add-widget.webm" type="video/webm" /></video>
 <figcaption>Screen recording to show how easy it is to deploy your first Dashboard 2.0 application.</figcaption>
 
 In this case, we drop in a `ui-button`, click "Deploy" and then can see the button running live in our user interface.
@@ -146,7 +146,7 @@ The final step we're going to make is to modify our `ui-button`. We're going to 
 
 With all of this together, we have the following functional Dashboard:
 
-<video autoplay loop muted playsinline aria-label="Short animation showing the final functional dashboard"><source src="/blog/2024/03/images/dashboard-getting-started-final.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Short animation showing the final functional dashboard" width="800" height="450" preload="none"><source src="/blog/2024/03/images/dashboard-getting-started-final.webm" type="video/webm" /></video>
 <figcaption>Short animation showing the final functional dashboard.</figcaption>
 
 ## Next Steps

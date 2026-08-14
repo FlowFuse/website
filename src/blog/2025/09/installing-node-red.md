@@ -118,7 +118,7 @@ FlowFuse shows you a device configuration window with two options. The **One-Lin
 
 The **NPM Installation** method provides manual instructions for Windows, Mac, or Linux.
 
-<video autoplay loop muted playsinline aria-label="FlowFuse Device Configuration Window"><source src="/blog/2025/09/images/device-configuration-window-2.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="FlowFuse Device Configuration Window" width="3024" height="1644" preload="none"><source src="/blog/2025/09/images/device-configuration-window-2.webm" type="video/webm" /></video>
 *Device configuration window showing installation options for the FlowFuse Device Agent*
 
 Follow the steps given within the window, which takes less than a minute to connect your device.
@@ -127,7 +127,7 @@ Follow the steps given within the window, which takes less than a minute to conn
 
 Once registered, you get complete control over your remote Node-RED instance through FlowFuse's management interface:
 
-<video autoplay loop muted playsinline aria-label="FlowFuse Device Management Tools"><source src="/blog/2025/09/images/ff-instance-tools.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="FlowFuse Device Management Tools" width="3024" height="1644" preload="none"><source src="/blog/2025/09/images/ff-instance-tools.webm" type="video/webm" /></video>
 *Tools for managing Node-RED instance remotely via FlowFuse*
 
 There are even more features available at the application level and team level that you can explore. To remove infrastructure management complexity of required services such as MQTT and PostgreSQL, they are built-in and available for use.

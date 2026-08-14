@@ -27,7 +27,7 @@ Widgets in Node-RED Dashboard 2.0 are the building blocks for creating a user in
 
 ## Building Applications with Dashboard 2.0 Widgets
 
-<video autoplay loop muted playsinline aria-label="Income-expense tracker built with dashboard 2.0"><source src="/blog/2024/05/images/exploring-dashboard-2-widgets-incom-expense-tracker-system.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Income-expense tracker built with dashboard 2.0" width="800" height="450" preload="none"><source src="/blog/2024/05/images/exploring-dashboard-2-widgets-incom-expense-tracker-system.webm" type="video/webm" /></video>
 _Income-expense tracker build with dashboard 2.0_
 
 In this guide, we'll create a basic application to input expenses and income. This will then be displayed in a chart and table for analysis. The application will utilize a wide range of widgets available in Dashboard 2.0, helping you understand and use them confidently.

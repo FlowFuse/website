@@ -44,7 +44,7 @@ Start your agentic development with for example:
 - "A shift handover screen showing outstanding alarms and recent operator notes"
 - "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
-<video autoplay loop muted playsinline aria-label="FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt" style="border: 2px solid #E5E7EB;"><source src="/blog/2026/05/images/expert-application-building.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt" style="border: 2px solid #E5E7EB;" width="1024" height="527" preload="none"><source src="/blog/2026/05/images/expert-application-building.webm" type="video/webm" /></video>
 <figcaption>FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt.</figcaption>
 
 ### Availability

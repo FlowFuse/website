@@ -153,7 +153,7 @@ For this article, we've built a demonstration data flow. We have a table named p
 
 We then created a data resource and exposed all the line data to it. Now, let's connect a AI Agent to this resource and explore the kinds of questions we can ask to monitor the factory floor effectively.
 
-<video autoplay loop muted playsinline aria-label="Monitoring Production Lines"><source src="/blog/2025/10/images/resource-demo.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Monitoring Production Lines" width="3024" height="1870" preload="none"><source src="/blog/2025/10/images/resource-demo.webm" type="video/webm" /></video>
 *Production line monitoring using MCP Resources*
 
 ### Defining an MCP Tool
@@ -241,7 +241,7 @@ Your MCP Tool is now active. When an AI agent invokes it, the connected flow exe
 
 In this example, the flow includes a tool that triggers a POST request to the maintenance system API, which was developed using FlowFuse and the FlowFuse Dashboard. The AI Assistant was then asked to identify which production line was performing the worst and schedule a maintenance task for it.
 
-<video autoplay loop muted playsinline aria-label="Scheduling Maintenance Example"><source src="/blog/2025/10/images/tools-demo.webm" type="video/webm"></source></video>
+<video autoplay loop muted playsinline aria-label="Scheduling Maintenance Example" width="3024" height="1638" preload="none"><source src="/blog/2025/10/images/tools-demo.webm" type="video/webm" /></video>
 *AI agent scheduling maintenance using an MCP Tool*
 
 Below is the flow that includes the Resource we created to monitor production lines and the Tool that sends a POST request.

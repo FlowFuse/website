@@ -90,8 +90,8 @@ To follow along, import the following flow into your Node-RED instance.
 
 ### Creating subflow of selection
 
-<video autoplay loop muted playsinline aria-label="Video showing process of creating subflow from the selection"><source src="/blog/2024/09/images/selecting-and-converting-subflow.webm" type="video/webm"></source></video>
-_Image showing process of creating subflow from the selection_
+<video autoplay loop muted playsinline aria-label="Video showing process of creating subflow from the selection" width="800" height="354" preload="none"><source src="/blog/2024/09/images/selecting-and-converting-subflow.webm" type="video/webm" /></video>
+_Video showing process of creating subflow from the selection_
 
 1. Select the flow you want to convert into a Subflow.
 2. Open the main menu by clicking the top-right menu icon, and select "Selection to Subflow" under the Subflows option.
