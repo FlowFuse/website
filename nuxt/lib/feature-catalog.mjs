@@ -29,6 +29,22 @@ export function planHref (label) {
 }
 
 /**
+ * The badges to render for a list of plan labels: each label that names a plan, paired with
+ * the page it links to.
+ *
+ * A label naming no plan is dropped rather than kept as an unlinked badge. An unlinked badge
+ * reads the same as a real one, so keeping it would state availability on a plan that does
+ * not exist. Everything the catalog produces is a plan name, so this only bites hand written
+ * markup carrying a typo or a retired plan name, and there rendering nothing is the safer
+ * failure: a missing badge gets noticed and fixed, a wrong one gets believed.
+ */
+export function planBadges (labels) {
+    return (labels ?? [])
+        .map(plan => ({ plan, href: planHref(plan) }))
+        .filter(badge => badge.href)
+}
+
+/**
  * Reduce a site path to a comparable form: no origin, no fragment, exactly one trailing slash.
  *
  * Catalog entries are hand written, so `/docs/user/expert`, `/docs/user/expert/` and

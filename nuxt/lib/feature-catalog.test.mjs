@@ -16,6 +16,7 @@ import {
     findFeatureByDocsPage,
     normalizePath,
     onPricing,
+    planBadges,
     planHref,
     planLabels,
 } from './feature-catalog.mjs'
@@ -110,6 +111,25 @@ test('planHref returns nothing for a label that names no plan', () => {
     assert.equal(planHref('Enterprise'), null)
     assert.equal(planHref(''), null)
     assert.equal(planHref(undefined), null)
+})
+
+test('planBadges pairs each plan label with the page it links to', () => {
+    assert.deepEqual(planBadges(['Edge', 'Fleet']), [
+        { plan: 'Edge', href: '/product/edge/' },
+        { plan: 'Fleet', href: '/product/fleet/' },
+    ])
+})
+
+// An unlinked badge reads the same as a real one, so a label naming no plan would state
+// availability on a plan that does not exist. Hand written markup is the only way to get one.
+test('planBadges drops a label that names no plan rather than rendering it unlinked', () => {
+    assert.deepEqual(planBadges(['Edge', 'Enterprise']), [{ plan: 'Edge', href: '/product/edge/' }])
+    assert.deepEqual(planBadges(['Starter', 'Team']), [])
+})
+
+test('planBadges treats nothing to badge as nothing to render', () => {
+    assert.deepEqual(planBadges([]), [])
+    assert.deepEqual(planBadges(undefined), [])
 })
 
 // The href is built from the plan id, so a plan whose product page is missing would badge a

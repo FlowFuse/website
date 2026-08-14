@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-ignore untyped module
-import { planHref } from '../../lib/feature-catalog.mjs'
+import { planBadges } from '../../lib/feature-catalog.mjs'
 
 const props = defineProps<{
     // Plan names from useChangelogPlans / useDocsPlans. Empty renders nothing, which is the
@@ -18,10 +18,10 @@ const planList = computed(() => Array.isArray(props.plans)
     ? props.plans
     : props.plans.split(',').map(plan => plan.trim()).filter(Boolean))
 
-// Each badge links to its own plan's product page. Anything that is not a plan name renders
-// unlinked rather than pointing at a page that does not exist; the catalog only ever produces
-// plan names, so this is a guard for hand written markup.
-const badges = computed(() => planList.value.map(plan => ({ plan, href: planHref(plan) })))
+// Each badge links to its own plan's product page. A label naming no plan is dropped, not
+// rendered unlinked: see planBadges. That empties the list, and the wrapper below goes with
+// it, so a page never shows "Available in" followed by nothing.
+const badges = computed(() => planBadges(planList.value))
 
 // window.capture is injected by the site's analytics script (see
 // src/_includes/analytics/body.html) and is a no-op wrapper around
@@ -34,16 +34,14 @@ function onBadgeClick (plan: string) {
 </script>
 
 <template>
-  <div v-if="planList.length" class="ff-tier-badges not-prose">
+  <div v-if="badges.length" class="ff-tier-badges not-prose">
     <span class="ff-tier-badges__label">Available in</span>
-    <template v-for="badge in badges" :key="badge.plan">
-      <NuxtLink
-        v-if="badge.href"
-        :to="badge.href"
-        class="ff-tier-badge"
-        @click="onBadgeClick(badge.plan)"
-      >{{ badge.plan }}</NuxtLink>
-      <span v-else class="ff-tier-badge">{{ badge.plan }}</span>
-    </template>
+    <NuxtLink
+      v-for="badge in badges"
+      :key="badge.plan"
+      :to="badge.href"
+      class="ff-tier-badge"
+      @click="onBadgeClick(badge.plan)"
+    >{{ badge.plan }}</NuxtLink>
   </div>
 </template>
