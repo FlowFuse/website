@@ -213,7 +213,7 @@ Now that we’ve gone through the full process of reading an OPC UA value and di
 
 The end result on the dashboard now looks like this - 
 
-![opc-read-dashboard.gif](./images/opc-ua-3/opc-read-dashboard.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the OPC UA dashboard reading live values from the server" width="800" height="450" preload="none"><source src="/blog/2023/07/images/opc-ua-3/opc-read-dashboard.webm" type="video/webm" /></video>
 ## Write OPC UA Values To Server Using OpcUa-Item and Opc-Ua-Client Nodes
 
 The next flow writes OPC UA values to the server using dashboard UI elements.  
@@ -245,7 +245,7 @@ The process is the same for `MySwitch` and `MyLevel`, the only difference being 
 
 When deployed, you can confirm values are being written to from the client to the server from the dashboard.
 
-![opc-write.gif](./images/opc-ua-3/opc-write.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing values being written from the client to the server on the dashboard" width="800" height="390" preload="none"><source src="/blog/2023/07/images/opc-ua-3/opc-write.webm" type="video/webm" /></video>
 
 ## Read Alarms & Events from OPC UA Server Using OpcUa-Event and Opc-Ua-Client Nodes
 
@@ -278,7 +278,7 @@ To make things simple, we’ll only track the last event.  But in a production s
 
 Adding alarms and events to our dashboard creates the following result - 
 
-![opc-event.gif](./images/opc-ua-3/opc-event.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing alarms and events displayed on the dashboard" width="800" height="450" preload="none"><source src="/blog/2023/07/images/opc-ua-3/opc-event.webm" type="video/webm" /></video>
 
 ## Using FlowFuse to Enhance Your Node-RED Application: Security, Scalability, and Robustness
 

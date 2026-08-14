@@ -48,7 +48,7 @@ Sometimes you might be working with nodes which don't output anything when they 
 
 You can do this using the Catch node. Drop the node onto your workspace then select if you want errors from some or all nodes. For this example I am going to select just the Read File node. If I then rerun the flow I get an error message out of the Catch node every time there is an error with reading the file.
 
-![Catching an error from the Read File node and outputting a message to debug](./images/catch.gif "Catching an error from the Read File node and outputting a message to debug")
+<video autoplay loop muted playsinline aria-label="Catching an error from the Read File node and outputting a message to debug" width="836" height="234" preload="none"><source src="/blog/2023/03/images/catch.webm" type="video/webm" /></video>
 
 Note that there are no wires connecting the flow to the error output. This means you can have a single Catch node monitoring a whole project and logging errors as well as sending alerts as needed. You can import the flows from this example using the code below.
 

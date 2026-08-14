@@ -82,8 +82,8 @@ Once you've configured the LwM2M node with the server details, you can confirm t
 3. Below this, you'll find the available objects that you can control for your devices and server.
 4. Click on the "Device" object option to read device realted information. In the instance 0 section click on the "R" for each object you want. Alternatively, you can click on the top "R" next to instance 0 or "Device-v1.0" to read all values at once. Note that this may not work if any values are unavailable for your device, it will return 404 not found.
 
-!["Image showing LwM2M Server reading the device details"](./images/lwm2m-server-reading.gif "Image showing LwM2M Server reading the device details")
-_Image showing LwM2M Server reading the device details_
+<video autoplay loop muted playsinline aria-label="Video showing LwM2M Server reading the device details" width="1908" height="838" preload="none"><source src="/node-red/protocol/images/lwm2m-server-reading.webm" type="video/webm" /></video>
+_Video showing LwM2M Server reading the device details_
 
 You can now read information such as device battery level, available memory, device manufacturer, timezone, device type, and a lot.
 
@@ -95,16 +95,16 @@ You can now read information such as device battery level, available memory, dev
 4. In the form that opens, enter the new value in the correct format.
 5. Click on "Write" to update the value for that resource.
 
-![Image showing how to perform write operation in the LwM2M server](./images/writing-in-server.gif "Image showing the LwM2M server executing reboot command for device")
-*Image showing how to perform write operation in the LwM2M server*
+<video autoplay loop muted playsinline aria-label="Video showing how to perform write operation in the LwM2M server" width="1908" height="838" preload="none"><source src="/node-red/protocol/images/writing-in-server.webm" type="video/webm" /></video>
+*Video showing how to perform write operation in the LwM2M server*
 
 6. Drag the **lwm2m client** node onto the canvas, select the correct configuration, and enable the "Subscribe LwM2M object events" option. This setting will trigger and send an event object when commands are executed on the server.
 7. Drag an exec node onto the canvas and add the command you want to execute. For example, you can add the "reboot" command.
 8. Connect the output of the **lwm2m client** node to the input of the **exec** node.
 9. To execute the commands, click on the 'exec' option next to resources such as Reboot.
 
-![Image showing the LwM2M server executing reboot command for device](./images/executing-command-from-server.gif "Image showing the LwM2M server executing reboot command for device")
-*Image showing the LwM2M server executing reboot command for device*
+<video autoplay loop muted playsinline aria-label="Video showing the LwM2M server executing reboot command for device" width="1908" height="772" preload="none"><source src="/node-red/protocol/images/executing-command-from-server.webm" type="video/webm" /></video>
+*Video showing the LwM2M server executing reboot command for device*
 
 ### Reading Data and Configuration from the LwM2M Server in Node-RED
 
@@ -114,8 +114,8 @@ You can now read information such as device battery level, available memory, dev
 4. Connect the output of the **inject** node to the input of the LwM2M client node, and connect the output of the **lwm2m client** node to the input of the **debug** node.
 5. Deploy the flow by clicking on the top-right "deploy" button.
 
-!["Image showing Node-RED flow that reading data from LwM2M Server"](./images/reading-data-from-server-in-nr.gif "Image showing Node-RED flow that reading data from LwM2M Server")
-_Image showing Node-RED flow that is reading data from LwM2M Server_
+<video autoplay loop muted playsinline aria-label="Video showing Node-RED flow that reading data from LwM2M Server" width="1908" height="830" preload="none"><source src="/node-red/protocol/images/reading-data-from-server-in-nr.webm" type="video/webm" /></video>
+_Video showing Node-RED flow that is reading data from LwM2M Server_
 
 ### Writing data and configuration to the LwM2M Server from Node-RED
 
@@ -126,7 +126,7 @@ _Image showing Node-RED flow that is reading data from LwM2M Server_
 5. Connect the **inject** node's output to the input of **lwm2m client out** node.
 6. Deploy the flow and click the inject button to perform the write operation.
 
-!["Image showing Node-RED flow that writing data to LwM2M Server"](./images/writing-data-to-server-from-nr.gif "Image showing Node-RED flow that writing data to LwM2M Server")
-_Image showing Node-RED flow that is writing data to LwM2M Server_
+<video autoplay loop muted playsinline aria-label="Video showing Node-RED flow that writing data to LwM2M Server" width="1908" height="832" preload="none"><source src="/node-red/protocol/images/writing-data-to-server-from-nr.webm" type="video/webm" /></video>
+_Video showing Node-RED flow that is writing data to LwM2M Server_
 
 In the same way, you can execute commands from node-red. You have to replace the notion and end that notion with `execute`, like `0/0/4/execute.` When executing the command, you will not have to specify the `msg.payload`.
