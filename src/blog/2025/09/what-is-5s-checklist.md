@@ -90,6 +90,8 @@ Create area-specific checklists rather than generic ones. A machine shop needs d
 
 Establish regular evaluation cycles: daily quick checks for immediate problems, weekly detailed reviews for improvement planning, and monthly comprehensive evaluations for trend analysis. The crucial element many programs miss is systematic follow-through. Identifying problems only creates value when those problems get solved with assigned responsibility and completion tracking.
 
+That same daily/weekly/monthly cadence, run by different levels of management, is the structure behind a [layered process audit](/blog/2026/08/layered-process-audit/). 5S checks workplace organization; an LPA checks whether the process itself is being run to standard. Many plants run both from the same tablet-based checklist workflow.
+
 ## The Digital Advantage with FlowFuse
 
 Traditional paper checklists have inherent limitations. Results get lost, data analysis becomes time-consuming, and accessing information from multiple locations proves challenging. Digital solutions eliminate these problems while adding capabilities that paper cannot match.
