@@ -2,6 +2,13 @@ name: Tests
 
 on: push
 
+# Pushing again to a branch replaces the commit the running build was checking, so cancel
+# that build rather than pay for a result nobody will look at. main is exempt: every commit
+# there keeps its own run, since those are the ones the ruleset and the history rely on.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 jobs:
   # The build itself lives in FlowFuse/github-actions-workflows so this repository and
   # FlowFuse/flowfuse documentation pull requests share one definition. The check this
