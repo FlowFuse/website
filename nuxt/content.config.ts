@@ -100,6 +100,7 @@ export default defineContentConfig({
                 date: z.coerce.date(),
                 authors: z.array(z.string()).optional(),
                 issues: z.array(z.string()).optional(),
+                metaTitle: z.string().optional(),
             })
         }),
         // Source files stay at src/blog/ (11ty's historical location) rather than
@@ -113,6 +114,7 @@ export default defineContentConfig({
             schema: z.object({
                 subtitle: z.string().optional(),
                 description: z.string().optional(),
+                metaTitle: z.string().optional(),
                 date: z.coerce.date(),
                 lastUpdated: z.coerce.date().optional(),
                 authors: z.array(z.string()).optional(),

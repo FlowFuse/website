@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Timer Tutorial: Stopwatch & Countdown"
 title: "Node-RED Timer Tutorial: Create Stopwatch and Countdown Timers"
 subtitle: "Implement stopwatch and countdown timers for industrial automation and process control applications"
 description: "Node-RED timer tutorial showing how to implement stopwatch and countdown timers for industrial automation and IoT applications."

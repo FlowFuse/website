@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.15: Node Collections & Schemas"
 title: "FlowFuse 2.15: Personal Node Collections, Smart Schema Suggestions and more control in DevOps Pipelines!"
 subtitle: Start building out your own collection of private nodes and Javascript libraries for Node-RED with our new Custom Node catalogues
 description: Start building out your own collection of private nodes and Javascript libraries for Node-RED with our new Custom Node catalogues

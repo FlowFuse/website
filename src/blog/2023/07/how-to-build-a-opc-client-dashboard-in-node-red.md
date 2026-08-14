@@ -1,4 +1,5 @@
 ---
+metaTitle: "How to Build an OPC UA Client Dashboard - Part 3"
 title: "How to Build an OPC UA Client Dashboard in Node-RED - Part 3 (2026)"
 subtitle: Interactive OPC UA Client dashboard that communicates with a 3rd party OPC UA Server
 description: Building a Dashboard-Driven OPC UA Client to Browse, Read, Write, and Get Events from a 3rd party OPC UA Server

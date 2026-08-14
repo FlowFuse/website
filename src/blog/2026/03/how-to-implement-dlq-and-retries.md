@@ -1,4 +1,5 @@
 ---
+metaTitle: "Stop Silent Pipeline Failures From Losing Data"
 title: "How to Stop Silent Pipeline Failures From Swallowing Your IIoT Data"
 subtitle: "When your pipeline fails, every dropped message is data you'll never get back, until now"
 description: "Most IIoT pipelines fail quietly. Learn how to build a fault-tolerant data pipeline that catches every failure and retries."

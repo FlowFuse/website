@@ -38,6 +38,7 @@ function issueLabel(issue: string): string {
 }
 
 const pageTitle = computed(() => page.value?.title || 'Changelog')
+const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
 // Changelog entries always get the "Changelog" qualifier on the brand name.
@@ -48,7 +49,7 @@ const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 useHead({ templateParams: { siteName: 'FlowFuse Changelog' } }, { tagPriority: 1000 })
 
 useSeoMeta({
-    title: pageTitle,
+    title: seoTitle,
     description: computed(() => page.value?.description || ''),
     ogDescription: computed(() => page.value?.description || ''),
     ogUrl: canonicalUrl,

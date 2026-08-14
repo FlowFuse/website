@@ -1,4 +1,5 @@
 ---
+metaTitle: "IT vs OT: Key Differences & Security Risks"
 title: "IT vs OT: Key Differences, Security Risks, and IT/OT Convergence"
 subtitle: "Two systems. Two priorities. One secure path to convergence."
 description: "IT vs OT explained for manufacturing in 2026: the key differences, security risks, and how to securely converge the two."
