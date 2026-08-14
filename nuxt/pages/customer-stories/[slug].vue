@@ -163,7 +163,7 @@ useSeoMeta({
           </div>
         </div>
 
-        <h3 v-if="relatedStories.length" class="-mb-4 mt-6 text-indigo-400">
+        <h3 v-if="relatedStories.length" class="mt-6 text-indigo-400">
           Read more stories
         </h3>
         <ul v-if="relatedStories.length" class="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-2 md:grid-cols-3">
