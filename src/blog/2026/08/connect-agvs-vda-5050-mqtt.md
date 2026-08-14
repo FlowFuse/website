@@ -208,7 +208,7 @@ The standard ships [JSON schemas](https://github.com/VDA5050/VDA5050/tree/main/j
 
 ### What you need
 
-- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial]({% include "sign-up-url.njk" %}) and set up your instance following the instructions in this [guide](/docs/device-agent/quickstart/).
+- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](https://app.flowfuse.com/account/create) and set up your instance following the instructions in this [guide](/docs/device-agent/quickstart/).
 - An MQTT broker your AGVs (or an AGV simulator) already publish to, or FlowFuse's [built-in team broker](/docs/user/teambroker/) if you're prototyping. If you're still [choosing a broker](/blog/2024/01/unified-namespace-what-broker/), any one with retained messages, last will, and per-client topic permissions will do.
 - At least one vehicle or simulator publishing VDA 5050 topics, so you have real messages to work with.
 
