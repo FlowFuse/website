@@ -182,6 +182,19 @@ The `<lite-youtube>` component is included globally on all pages — no addition
 
 > **Do not use raw `<iframe>` tags to embed YouTube videos.** Iframes load YouTube's scripts and set tracking cookies as soon as the page renders, before any user consent — which is not GDPR-compliant. Always use `<lite-youtube>` instead.
 
+For short, silent, looping screen-recordings, you can use a WebM video, GIFs can grow incredibly large, and WebM gives the same auto-playing loop at a fraction of the file size, with no YouTube upload needed:
+
+```html
+<video autoplay loop muted playsinline aria-label="Description of what the video shows" width="1280" height="720" preload="none"><source src="./images/example.webm" type="video/webm" /></video>
+```
+
+- `aria-label` replaces the alt text a static image would have had — describe what's happening, and make sure it says "video"/"animation" rather than "screenshot" or "image".
+- `autoplay loop muted playsinline` is what makes it behave like a GIF (no controls, no sound, loops forever).
+- `width`/`height` should match the WebM's actual pixel dimensions (`ffprobe -v error -select_streams v:0 -show_entries stream=width,height file.webm`) — without them the browser doesn't know the video's aspect ratio until it starts downloading, so the page layout shifts once it loads.
+- `preload="none"` stops the video from buffering until it scrolls into view — without it, every autoplaying video on the page starts downloading on page load regardless of viewport position.
+- `<source>` is a void element — self-close it (`<source ... />`), don't write a matching `</source>`.
+- Reserve `<lite-youtube>` for longer or narrated videos where a play button and audio make sense.
+
 ### TL;DR
 
 The `tldr` field adds a highlighted summary block that appears at the top of the article body, before the content. It helps readers quickly decide whether to read the full article and improves engagement for longer posts. It also supports AEO/GEO — answer engines (AI overviews, ChatGPT, Perplexity) prefer content that leads with the answer, and the TL;DR is the right place to do that. Write it as a direct, self-contained conclusion to the article's main question.

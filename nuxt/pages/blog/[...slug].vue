@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
 import { getAllBlogPosts } from '../../utils/sharedContent'
+// Handed to ContentRenderer explicitly below. Nuxt Content resolves a markdown component tag
+// against a registry it builds while parsing, and reaches it through an async loader. These
+// two nodes are spliced in after parsing, so that path renders nothing in a production build
+// even though it works in dev. Passing the components directly skips the registry entirely.
+import FeatureTierBadges from '../../components/content/FeatureTierBadges.vue'
+import FeatureReleaseLinks from '../../components/content/FeatureReleaseLinks.vue'
 
 definePageMeta({ layout: 'default' })
 
@@ -30,6 +36,14 @@ const { data: page } = await useAsyncData(
 
 if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.date))) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
+}
+
+// Release blogs get plan badges and changelog links injected under their `features:` headings.
+// Every other post passes straight through.
+const renderedPage = useReleaseFeaturePage(page)
+const releaseFeatureComponents = {
+    'feature-tier-badges': FeatureTierBadges,
+    'feature-release-links': FeatureReleaseLinks,
 }
 
 const { data: allPosts } = await useAsyncData(
@@ -185,7 +199,7 @@ if (routeInfo.value.kind === 'post') {
               </ul>
             </section>
 
-            <ContentRenderer :value="page" />
+            <ContentRenderer :value="renderedPage" :components="releaseFeatureComponents" />
           </div>
 
           <div class="mt-10">

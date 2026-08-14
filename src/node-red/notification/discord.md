@@ -69,7 +69,7 @@ To send a message to a user, you will need the ID of that user. Before copying t
 3. Set the `msg.payload` to the message you want to send and the `msg.user` to the user ID of the user you want to send the message to.
 4. Connect the Inject node's output to the input of the DiscordMessageManager node.
 
-!["Sending messages to Discord users"](./images/discord-with-node-red-sending-msg-to-user.gif "Sending messages to Discord users")
+<video autoplay loop muted playsinline aria-label="Sending messages to Discord users" width="800" height="450" preload="none"><source src="/node-red/notification/images/discord-with-node-red-sending-msg-to-user.webm" type="video/webm" /></video>
 
 ## Sending messages to the Discord server
 
@@ -98,7 +98,7 @@ To send a message to the Discord server, you have to make sure that your bot is 
 
 3. Connect the Inject node's output to the input of the DiscordMessageManager node.
 
-!["Sending message to Discord server's channel"](./images/discord-with-node-red-sending-msg-to-server.gif "Sending message to Discord server's channel")
+<video autoplay loop muted playsinline aria-label="Sending message to Discord server's channel" width="800" height="450" preload="none"><source src="/node-red/notification/images/discord-with-node-red-sending-msg-to-server.webm" type="video/webm" /></video>
 
 ## Receiving messages from Discord
 
@@ -108,7 +108,7 @@ To send a message to the Discord server, you have to make sure that your bot is 
 
 After deploying the flow, you will start receiving messages sent to your bot. In the debug panel in the sidebar, you will see the message object printed for each message, which contains different objects. Each object shows different details; for example, the author object contains details about the sender, and the channel object includes information of the channel if the message was sent in a channel.
 
-!["Receiving messages from users and server channels"](./images/discord-with-node-red-receiving-messages.gif "Receiving messages from users and server channels")
+<video autoplay loop muted playsinline aria-label="Receiving messages from users and server channels" width="800" height="450" preload="none"><source src="/node-red/notification/images/discord-with-node-red-receiving-messages.webm" type="video/webm" /></video>
 
 Below, I have provided the complete flow we built throughout the guide. Make sure to replace the environment variable 'BOT_TOKEN' with your actual bot token.
 

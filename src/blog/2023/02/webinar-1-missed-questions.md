@@ -18,7 +18,7 @@ Hi Irvin, thanks for the question. I suspect you might be better using a custom 
 
 I've come across [Flogger](https://flows.nodered.org/node/node-red-contrib-flogger) which seems to do a good job of logging, including support for multiple log files, and built in support for log rotation.
 
-![Capturing debug to a log file using Flogger](./images/flogger.gif "Capturing debug to a log file using Flogger")
+<video autoplay loop muted playsinline aria-label="Capturing debug to a log file using Flogger" width="1470" height="580" preload="none"><source src="/blog/2023/02/images/flogger.webm" type="video/webm" /></video>
 
 If you really wanted to log to a database rather than a log file you could create your own logging subflow. Once that's in place you can drop it into your flow as needed to capture your debug data for later consumption.
 

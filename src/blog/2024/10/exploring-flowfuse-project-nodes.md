@@ -94,8 +94,8 @@ By utilizing environment variables, this flow becomes reusable, allowing you to 
 
 ### Receiving Data to Monitor and Visualize
 
-![Image: Line chart visualizing CPU performance of all instances.](./images/device-monitoring-chart.gif){data-zoomable}
-_Image: Line chart visualizing CPU performance of all instances._
+<video autoplay loop muted playsinline aria-label="Video: Line chart visualizing CPU performance of all instances." width="800" height="263" preload="none"><source src="/blog/2024/10/images/device-monitoring-chart.webm" type="video/webm" /></video>
+_Video: Line chart visualizing CPU performance of all instances._
 
 To receive the CPU data from monitored instances, follow these steps in your centralized Node-RED instance:
 
@@ -117,8 +117,8 @@ Once deployed, open the dashboard to view an interactive live line chart display
 
 #### Visualizing Data for Specific Devices
 
-![Image: Gauges visualizing the CPU performance of different devices.](./images/device-monitoring-gauges.gif){data-zoomable}
-_Image: Gauges visualizing the CPU performance of different devices._
+<video autoplay loop muted playsinline aria-label="Video: Gauges visualizing the CPU performance of different devices." width="800" height="136" preload="none"><source src="/blog/2024/10/images/device-monitoring-gauges.webm" type="video/webm" /></video>
+_Video: Gauges visualizing the CPU performance of different devices._
 
 To visualize CPU data for specific devices separately, configure the **Project In** node to "Listen for broadcast messages from" and select the desired instance name that you want to monitor.
 
@@ -212,8 +212,8 @@ In this section, we will explore how to trigger the flow we created in the previ
 
 Now, once you click the **Inject** button, you will see the response that includes the temperature in the debug panel, which is read by the flow deployed on the Raspberry Pi.
 
-![Image showing the project call node triggering the flow to read the temperature data](./images/project-out-node-triggering-flow.gif){data-zoomable}
-_Image showing the project call node triggering the flow deployed on the device to read the temperature data._
+<video autoplay loop muted playsinline aria-label="Video showing the project call node triggering the flow to read the temperature data" width="1908" height="832" preload="none"><source src="/blog/2024/10/images/project-out-node-triggering-flow.webm" type="video/webm" /></video>
+_Video showing the project call node triggering the flow deployed on the device to read the temperature data._
 
 Now that you understand how to use FlowFuse project nodes, you can significantly improve the way your Node-RED instances communicate with one another.
 
