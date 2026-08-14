@@ -4,7 +4,7 @@ subtitle: "How the layers work, what belongs on the checklist, and a free templa
 description: "What a layered process audit is, how the layers and frequencies work, what to put on the checklist, and a free LPA checklist template to download."
 date: 2026-08-14
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/08/images/layered-process-audit-blog-tile.png
 tags:
    - posts
    - flowfuse
