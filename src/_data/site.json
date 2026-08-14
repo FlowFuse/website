@@ -1,6 +1,6 @@
 {
     "baseURL": "https://flowfuse.com",
-    "appURL": "https://app.flowfuse.com",
+    "appURL": "http://localhost:3000",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
     "messaging": {
         "tagLine": "The Edge-Native Platform for Industrial Applications",
