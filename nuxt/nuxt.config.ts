@@ -140,7 +140,7 @@ export default defineNuxtConfig({
     site: {
         url: site.baseURL,
         name: 'FlowFuse',
-        description: 'Low-code application development platform for Node-RED and industrial IoT.',
+        description: site.messaging.subtitle,
         defaultLocale: 'en',
     },
 
