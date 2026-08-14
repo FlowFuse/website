@@ -18,8 +18,7 @@ This release unlocks several new abilities for our users, speeding your developm
 
 <!--more-->
 
-::note
-Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::product-update-note
 ::
 
 ## FlowFuse Expert

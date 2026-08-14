@@ -59,8 +59,7 @@ An MQTT to InfluxDB is one of the most common and most critical pipelines in IIo
 
 <!--more-->
 
-::note
-Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::product-update-note
 ::
 
 The typical approach is a custom Python script that subscribes to the broker, parses the payload, and writes to InfluxDB. It works until a sensor changes its payload format, or the script quietly dies over a weekend and nobody notices until Monday. Now you're debugging a process nobody else fully understands, with no visibility into what failed or when. Others stitch together multiple tools, each with its own config, its own failure modes, and its own logs to dig through at 2am. The complexity ends up hidden in places that are hard to see, hard to debug, and hard to hand off.

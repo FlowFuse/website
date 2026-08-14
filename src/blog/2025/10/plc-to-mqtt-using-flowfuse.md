@@ -69,8 +69,7 @@ Getting PLC data into systems where it can be monitored, analyzed, and acted upo
 
 <!--more-->
 
-::note
-Exciting Update! FlowFuse is now available as three different products: [FlowFuse Edge for OT teams](https://flowfuse.com/product/edge/), [FlowFuse Hub for IT teams](https://flowfuse.com/product/hub/), and [FlowFuse Fleet](https://flowfuse.com/product/fleet/) for managing devices at scale. Visit the [FlowFuse Product Page](https://flowfuse.com/product/) to learn how the platform enables you to build and manage industrial apps at scale.
+::product-update-note
 ::
 
 The protocol itself is simple. But implementation in a real factory, with actual PLCs and production networks, is where things fall apart. Costs pile up, timelines drag on, and you end up needing expertise that's hard to find.
