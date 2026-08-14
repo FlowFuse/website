@@ -46,10 +46,12 @@ const releaseFeatureComponents = {
     'feature-release-links': FeatureReleaseLinks,
 }
 
+// Fixed key so `nuxt generate`'s shared-prerender-data caching reuses one fetch across
+// every blog route - the callback must therefore return the same result regardless of
+// which route triggers it first, so it can't branch on this page's own routeInfo.
 const { data: allPosts } = await useAsyncData(
     'blog-all-for-related',
     async () => {
-        if (routeInfo.value.kind !== 'post') return []
         const all = await getAllBlogPosts()
         // Only the fields this page needs travel into its payload; the shared cache
         // itself holds the wider field set other pages (listing, author) need.
