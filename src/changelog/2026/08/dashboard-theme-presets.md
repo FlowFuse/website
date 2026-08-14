@@ -6,14 +6,15 @@ authors: ["noley-holland"]
 tags:
   - changelog
 issues:
-  - https://github.com/FlowFuse/node-red-dashboard/issues/<id>
+  - https://github.com/FlowFuse/node-red-dashboard/issues/454
+  - https://github.com/FlowFuse/node-red-dashboard/issues/1538
 ---
 
 You can now start a Dashboard theme from a built-in preset — **Light**, **Dark**, **Dracula**, **Nord**, or **Sepia** — and get a complete colour scheme in one step, instead of setting each colour yourself.
 
 Every preset meets WCAG AA contrast, so your dashboard is readable on the first render. No checking dark-scheme text against its background before you ship. And nothing is locked: change any individual colour and the theme flips to **Custom**, keeping the rest of the scheme intact. New dashboards start on Light.
 
-Dark themes also get matching controls automatically. When a theme's page background is dark, Dashboard switches input fields, borders, and dividers to dark styling so they don't sit light against a dark background. This applies to any dark theme you build, not just the presets.
+Dark themes adapt automatically. When a theme's page background is dark, Dashboard switches input fields, borders, chart and gauge colours, and the browser's native date and time pickers to match, so nothing sits light against a dark background. This applies to any dark theme you build, not just the presets.
 
 To get started:
 
