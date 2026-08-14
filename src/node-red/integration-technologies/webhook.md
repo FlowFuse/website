@@ -173,4 +173,4 @@ return msg;
 1. With your flow updated to include the above, click the "Deploy" button in the top-right corner of the Node-RED Editor in each Node-RED instance.
 2. In server 3 Node-RED instance (Maintenance scheduling system), Locate the 'Open Dashboard' button at the top-right corner of the Dashboard 2.0 sidebar and click on it to navigate to the dashboard.
 
-!["Screenshot Displaying the flow of scheduled maintenance table"](./images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.gif "Screenshot Displaying the flow of scheduled maintenance table"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video displaying the flow of scheduled maintenance table" width="600" height="338" preload="none"><source src="/node-red/integration-technologies/images/using-webhook-with-node-red-scheduled-maintenance-table-dashboard-view.webm" type="video/webm" /></video>
