@@ -113,7 +113,7 @@ The table below is a common starting point rather than a rule. CQI-8 deliberatel
 | Layer 2 | Area manager             | Weekly            |
 | Layer 3 | Plant manager / Director | Monthly           |
 
-![Three layers of a layered process audit showing a supervisor auditing daily, an area manager weekly, and plant leadership monthly, all checking the same station](./images/three-layer-lpa.png)
+![Three layers of a layered process audit showing a supervisor auditing daily, an area manager weekly, and plant leadership monthly, all checking the same station](./images/layered-process-audit-level.png)
 
 ### Layer 1: Supervisor Audit
 
