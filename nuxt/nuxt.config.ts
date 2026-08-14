@@ -363,7 +363,13 @@ export default defineNuxtConfig({
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
                 ]
             })(),
-            crawlLinks: false
+            crawlLinks: false,
+            // Nitro renders one route at a time by default, which serialises much the
+            // longest phase of the build. A sizeable share of that phase is fixed per-route
+            // overhead rather than render work, and that part overlaps away as soon as
+            // several routes render at once. Matched to the vCPU count on GitHub's standard
+            // runner. Raising it further trades peak memory for wall time.
+            concurrency: 4
         }
     },
 
