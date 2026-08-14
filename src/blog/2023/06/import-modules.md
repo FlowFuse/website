@@ -87,6 +87,9 @@ Recently we wanted to use [moment](https://www.npmjs.com/package/moment) for som
 
 So, all we needed to do was import the module into a function node, and define our comparison there instead, here's a working example:
 
+:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ## Example: Easy CRC
 
 <video width="560" height="315" controls>

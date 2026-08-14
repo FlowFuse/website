@@ -126,6 +126,9 @@ When using the "multiple" topic, each value update arrives in OPC UA's DataValue
 
 Subscribing to multiple tags with OpcUa-Item nodes returns just the value.
 
+:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Stopping Subscriptions
 
 To stop receiving updates and free up server resources, you have two options:

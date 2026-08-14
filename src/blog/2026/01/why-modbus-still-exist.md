@@ -77,6 +77,9 @@ Industrial automation is full of protocol wars where vendors push their preferre
 
 Modbus doesn't care. It works with everyone's equipment. This vendor neutrality has enormous practical value in facilities running mixed automation systems. A typical factory floor might have Rockwell PLCs, ABB drives, Schneider Electric power meters, and Siemens HMIs all talking to each other. Getting all those vendors' preferred protocols to coexist would be a nightmare. Getting them all to speak Modbus is trivial.
 
+:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 This creates competitive pressure that keeps Modbus relevant. Device manufacturers can't afford to skip Modbus support because doing so immediately excludes them from projects with heterogeneous automation systems. Even vendors with their own sophisticated protocols implement Modbus as a fallback, ensuring interoperability when nothing else works.
 
 The open nature also prevents the protocol from becoming a competitive weapon. Nobody can leverage Modbus to lock customers into their platform. Nobody can obsolete older Modbus devices by dropping support in newer products. The protocol's longevity is guaranteed by the fact that no single entity controls its fate.

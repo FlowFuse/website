@@ -135,6 +135,9 @@ Implementing an OPC UA server requires managing an address space, handling multi
 
 This overhead is impractical for battery-powered sensors with infrequent reporting requirements. It's appropriate for a $2M manufacturing cell where understanding that a temperature reading represents "bearing temperature on the output shaft of motor 3, measured in Celsius, with a normal operating range of 40-65°C and critical alarm at 85°C" matters.
 
+:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### The Layer Mismatch
 
 Think about the OSI model, that seven-layer networking abstraction everyone learns and immediately forgets:

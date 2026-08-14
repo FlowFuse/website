@@ -55,6 +55,9 @@ This tiered approach does something important beyond just reducing bus load: it 
 
 The pushback you'll hear is that tiered polling is harder to configure and harder to document. That's true. A single scan rate is simple to explain and simple to hand off. But simple to configure and correct are different things, and a polling architecture that silently misses events or saturates a serial bus isn't simple. It's a problem that hasn't surfaced yet.
 
+:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 One more thing worth stating plainly: your scan rate has to account for the device's actual response capability, not just the rate you want data. Some field devices, including older PLCs, low-cost sensors, and anything running on an 8-bit microcontroller with slow UART handling, need 50 to 150ms just to process a request and formulate a response. If your fast-tier scan rate is 100ms and your device needs 120ms to respond, you're not getting 100ms data. You're getting collisions, timeouts, and a maintenance headache. Measure actual device response times before setting your fast-tier interval. The device datasheet will give you a starting point; a protocol analyzer will give you the truth.
 
 ## How Timeout Misconfiguration Kills Stability

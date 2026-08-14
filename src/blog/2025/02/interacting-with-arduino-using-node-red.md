@@ -59,6 +59,9 @@ _Importing Standard Firmata setup sketch from examples in Arduino IDE_
 
 Once the upload is complete, the Arduino is ready to communicate via the Firmata protocol.
 
+:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ### Step 3: Connecting Node-RED to Arduino via Serial Communication
 
 As mentioned earlier, Firmata typically works over a serial connection (such as USB), enabling communication between the Arduino board and your Node-RED instance. The serial communication allows Node-RED to send commands to the Arduino and receive data from it.

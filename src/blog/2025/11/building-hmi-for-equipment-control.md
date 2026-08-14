@@ -123,6 +123,9 @@ After saving the connection configuration, specify the **variable addresses that
 
 For sending commands (start motor, stop motor, setpoints), drag the corresponding output node onto your canvas. When configuring it, select the **same Server/Connection** from the dropdown instead of creating a new one. This shared connection approach means the IP address, port, and credentials only need to be configured once and can be reused across all your PLC/server nodes. You then only need to specify the variable addresses that control your equipment, and connect those nodes to your dashboard buttons or automation logic.
 
+:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 **Important Note:** Some PLCs require configuration in their engineering software before allowing external access. For example, Siemens S7 requires **PUT/GET communication** enabled in TIA Portal, and Allen-Bradley controllers may need **explicit messaging** enabled in Studio 5000. Refer to your PLC’s documentation for any communication prerequisites.
 
 **Test Your Connection:**

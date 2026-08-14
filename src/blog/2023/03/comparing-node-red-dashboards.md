@@ -74,6 +74,9 @@ There is also an [ongoing discussion](https://github.com/node-red/node-red/issue
 
 I believe a few improvements to the install process could make FlexDash a much more popular custom node.
 
+:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## How easy is it to get your first demo dashboard running?
 
 ### FlexDash - 1st place

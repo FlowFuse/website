@@ -52,6 +52,9 @@ For all our Teams and Enterprise Self-Hosted customers who also want to use the 
 
 Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
 
+:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Using the Plugin
 
 Once enabled, any messages emitted by a Dashboard 2.0 node will contain a new `msg._client.user` object, e.g:

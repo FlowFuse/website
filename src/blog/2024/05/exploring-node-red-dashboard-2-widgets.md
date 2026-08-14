@@ -76,6 +76,9 @@ return msg;
 
 Similarly, you can do this for storing expense data submitted using the expense submission form.
 
+:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Displaying Notifications
 
 For displaying notifications on the dashboard, we'll utilize the **ui-notification** widget, which emits notifications to the user's dashboard. It accepts `msg.payload` which should be a string format or raw HTML/JavaScript for custom formatting.

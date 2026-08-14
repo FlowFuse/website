@@ -60,6 +60,9 @@ Notice too that Dashboard will automatically setup some underlying configuration
 - `ui-group`: Each group contains a collection of widgets, and can be used to organize your Dashboard into logical sections.
 - `ui-theme`: Each `ui-page` can be assigned a given theme. Your "Themes" provide control over the aesthetic of your Dashboard like color, padding and margins.
 
+:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Configuring your layout
 
 Dashboard 2.0 adds a dedicated sidebar to Node-RED to provide a centralized view of your pages, groups and widgets. From here you can add new pages and groups, modify existing settings, and re-order content to your liking.

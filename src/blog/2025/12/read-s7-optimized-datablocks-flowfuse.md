@@ -132,6 +132,9 @@ Before exposing variables, you need to create an OPC UA server interface in your
 
 If you're using an S7-1500 PLC with firmware version 2.5 or higher, you have the option to enable the standard SIMATIC server interface. Simply check **Enable standard SIMATIC server interface** in the OPC UA settings. This automatically makes all PLC tags that are marked as accessible available through OPC UA.
 
+:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 **For S7-1200 PLCs (or manual configuration for S7-1500):**
 
 For S7-1200 PLCs, you must manually create a server interface and add the tags you want to expose:

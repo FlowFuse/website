@@ -87,6 +87,9 @@ For demonstration purposes, we will use a flow that simulates sensor reading and
 
 Deploy the flow above, and you might see a delay in the data shown on the debug panel. For this example, we added a Delay node before the Change node that converts temperature data from Kelvin to Celsius. While this delay is visible here, finding such delays in larger flows with many nodes can be difficult and time-consuming. Open Telemetry makes this easier by giving you detailed traces that show where delays or issues are happening
 
+:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ### Prerequisite
 
 Before you start, ensure you have the following:

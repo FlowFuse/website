@@ -134,6 +134,9 @@ If you prefer a video explanation, [Kurt Braun](https://www.linkedin.com/in/wago
 
 After collecting data from your Modbus device, the next step is transforming it into a usable format for cloud-based IoT applications. Modbus data typically comes in raw register values, and you may need to convert these values into human-readable formats like temperature, pressure, or other measurements.
 
+:::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 Let's walk through the transformation process step by step.
 
 **Step 2.1: Parsing and Converting Raw Modbus Data**

@@ -128,6 +128,9 @@ You can import this flow into Node-RED using the code below:
 
 To understand what is going on in this flow, we must refer back to the OPC UA Simulation Server `Address Space` tab.  
 
+:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 When we browse the OPC Server base folder structure in Node-RED, we will be browsing everything included under the `Objects` tree.  
 
 ![address-space.png](./images/opc-ua-3/address-space.png){data-zoomable}

@@ -52,6 +52,9 @@ All courses completed through Node-RED Academy provide a formal certification up
 
 The credential will be evidence of your Node-RED knowledge and abilities, and will be a great way to demonstrate your expertise to potential employers or clients.
 
+:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ## What Courses are Included?
 
 Our first course, The [Node-RED Fundamentals](https://node-red-academy.learnworlds.com/), takes about 90 minutes to complete, is free and available now. [Check it out!](https://node-red-academy.learnworlds.com/).
@@ -69,7 +72,6 @@ We also have plans for the following courses to follow in the future:
 - FlowFuse Advanced
 
 This list will likely grow beyond this too. We will be evolving our courses based on feedback and ideas from the community too!
-
 
 ## Who's behind the Node-RED Academy?
 

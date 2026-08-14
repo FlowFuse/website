@@ -42,6 +42,9 @@ We are actively investing into the development of FlowFuse Dashboard, and releas
 
 If there are any other features you'd like to see, please do open a [Feature Request](https://github.com/FlowFuse/node-red-dashboard/issues/new/choose), and we'll do our best to accommodate.
 
+:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Getting Started with FlowFuse Dashboard
 
 If you're ready to get started with FlowFuse Dashboard, you can install it directly from the Node-RED Palette Manager. Simply search for `@flowfuse/node-red-dashboard` and install the latest version.

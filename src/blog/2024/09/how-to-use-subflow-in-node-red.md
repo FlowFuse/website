@@ -101,6 +101,9 @@ _Image showing subflow node added in the node palette_
 
 Once selected, the Subflow will be added to the node palette like other nodes. The selected flow will also be converted into a single node representing the Subflow.
 
+:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ### Adding Properties to the Subflow
 
 1. Double-click on the Subflow, then click on **"Edit Subflow template"**.

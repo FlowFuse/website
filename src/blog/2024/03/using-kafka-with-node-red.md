@@ -50,6 +50,9 @@ During the writing of this tutorial, I utilized [Aiven’s cloud data platform](
 ## Installing Dashboard 2.0
 We will be installing Dashboard 2.0 to display real-time temperature data of various regions on a chart. If you are new to Dashboard 2.0, we recommend referring to [Getting started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/)\, which covers everything from basic concepts to installation and creating your first dashboard seamlessly.
 
+:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Installing and configuring Kafka custom node
 
 1. Install `node-red-kafka-manager` by the palette manager.

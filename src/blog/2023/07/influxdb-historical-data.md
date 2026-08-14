@@ -93,6 +93,9 @@ I selected “Generate All Access API Token,” but eventually you will want a c
 
 Copy your token and do not share it!  (mine will be deleted later)
 
+:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Connecting Node-RED to InfluxDB
 
 Navigate to “Manage Palette” in the Node-RED hamburger menu in the upper right corner of the flow editor.  I did a search for InfluxDB and selected the most popular one, “node-red-contrib-influxdb” by looking at the number of downloads per week at [https://flows.nodered.org/node/node-red-contrib-influxdb](https://flows.nodered.org/node/node-red-contrib-influxdb).  When you are just starting out, it can be a smart decision to go with the popular option. The popularity indicates a level of trust and adoption within the community, making it a reliable choice for beginners

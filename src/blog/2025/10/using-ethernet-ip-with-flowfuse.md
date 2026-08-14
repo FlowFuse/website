@@ -122,6 +122,9 @@ To communicate with Allen-Bradley PLCs from FlowFuse, use the popular node-red-c
 
 Once installed, you'll find the EtherNet/IP nodes in your palette under the "plc" category. The main nodes are `ethernet-ip in` for reading data and `ethernet-ip out` for writing data to the PLC.
 
+:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Configuring the EtherNet/IP Node
 
 Now that you have installed the EtherNet/IP node, it is time to configure the connection to your Allen-Bradley PLC.

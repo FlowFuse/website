@@ -82,6 +82,9 @@ In many cases, TEEP reveals that the fastest and cheapest way to increase output
 
 Importantly, TEEP is not about pushing equipment to run 24/7 at all costs. Instead, it provides the data needed to make **intentional, informed decisions** about scheduling, staffing, maintenance, and growth.
 
+:::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## TEEP vs OEE: Key Differences
 
 OEE and TEEP both measure equipment performance, but they look at different things. The big difference is what time period they measure against.

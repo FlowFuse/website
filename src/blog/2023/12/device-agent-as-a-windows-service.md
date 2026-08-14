@@ -88,6 +88,9 @@ icacls c:\opt\flowfuse-device /grant "user":F /T
 ```
 _where `"user"` is the service account (not the admin account)_
 
+:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Install nssm
 `nssm` can simply be downloaded and executed from any path.
 We will download it to the `c:\opt` directory, extract the files and copy the 64 bit version to the current directory.
