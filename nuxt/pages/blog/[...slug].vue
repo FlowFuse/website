@@ -59,14 +59,15 @@ const { data: allPosts } = await useAsyncData(
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
+// page.body is a minimark tree: { value: MinimarkNode[] } where a node is
+// either a text string or an element array [tag, attrs, ...children].
 function extractText(node: any): string {
-    if (!node) return ''
-    if (node.type === 'text') return node.value || ''
-    if (Array.isArray(node.children)) return node.children.map(extractText).join(' ')
+    if (typeof node === 'string') return node
+    if (Array.isArray(node)) return node.slice(2).map(extractText).join(' ')
     return ''
 }
 const readingTime = computed(() => {
-    const words = extractText(page.value?.body).split(/\s+/).filter(Boolean).length
+    const words = (page.value?.body?.value || []).map(extractText).join(' ').split(/\s+/).filter(Boolean).length
     return Math.max(1, Math.ceil(words / 200))
 })
 
@@ -148,8 +149,8 @@ if (routeInfo.value.kind === 'post') {
         <label>Article</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
-        <div class="flex flex-wrap items-center gap-2 text-sm text-gray-500 mt-4">
-          <div class="flex -space-x-2">
+        <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
+          <div class="flex -space-x-2 mr-1">
             <template v-if="authorMembers.length">
               <NuxtLink
                   v-for="author in authorMembers"
