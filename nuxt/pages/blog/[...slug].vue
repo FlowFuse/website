@@ -148,7 +148,28 @@ if (routeInfo.value.kind === 'post') {
         <label>Article</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
-        <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
+        <div class="flex flex-wrap items-center gap-2 text-sm text-gray-500 mt-4">
+          <div class="flex -space-x-2">
+            <template v-if="authorMembers.length">
+              <NuxtLink
+                  v-for="author in authorMembers"
+                  :key="author.slug"
+                  :to="authorPath(author.slug)"
+                  class="block w-8 h-8 rounded-full overflow-hidden bg-indigo-300 ring-2 ring-white"
+                  :title="author.name"
+              >
+                <img
+                    v-if="author.headshot"
+                    :src="`/images/team/headshot-${author.headshot}`"
+                    :alt="author.name"
+                    class="w-full h-full object-cover"
+                >
+              </NuxtLink>
+            </template>
+            <div v-else class="block w-8 h-8 rounded-full overflow-hidden bg-indigo-300 ring-2 ring-white" title="FlowFuse">
+              <img :src="'/images/flowfuse-icon.png'" alt="FlowFuse" class="w-full h-full object-cover">
+            </div>
+          </div>
           <span>By</span>
           <template v-if="authorMembers.length">
             <span v-for="(author, i) in authorMembers" :key="author.slug">
