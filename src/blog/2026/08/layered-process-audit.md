@@ -60,7 +60,7 @@ cta:
 tldr: "Layered process audits verify that critical process controls are being followed while production is running, before defects are made. Learn how the layers work, what to put on the checklist, and download a free LPA template for the shop floor."
 ---
 
-Most plants discover process problems after the parts are made. A defect appears at final inspection, a customer reports an issue, and the plant begins sorting, rework, and investigation.
+Most plants discover process problems after the parts are made. A defect appears at final inspection, a customer reports an issue, and the plant begins sorting, rework, and investigation. So how do you catch those problems while the line is still running? This guide shows you how, using a Layered Process Audit. It includes a checklist template you can take straight to the shop floor.
 
 <!--more-->
 
@@ -91,7 +91,7 @@ LPAs are common in [automotive manufacturing](/industries/automotive/) and other
 
 ## Why Manufacturers Run LPAs
 
-LPAs spread through automotive manufacturing on the back of OEM supplier requirements. The common approach was developed by DaimlerChrysler and General Motors under the auspices of the Automotive Industry Action Group, which published the first edition of the [CQI-8 Layered Process Audit Guideline](https://www.aiag.org/training-and-resources/manuals/details/CQI-8) in 2005 and a second edition in 2014. Today those requirements reach suppliers through customer-specific documents from OEMs such as General Motors and Stellantis, and CQI-8 remains the guidance most plants reference.
+Historically, LPAs spread through automotive manufacturing on the back of OEM supplier requirements. DaimlerChrysler and General Motors developed the common approach under the Automotive Industry Action Group, which published the first edition of the [CQI-8 Layered Process Audit Guideline](https://www.aiag.org/training-and-resources/manuals/details/CQI-8) in 2005 and a second edition in 2014. Today those requirements reach suppliers through customer-specific documents from OEMs such as General Motors and Stellantis, and CQI-8 remains the guidance most plants reference.
 
 The purpose is simple: verify that critical process controls are being followed while production is running. Finding a bypassed sensor today is far less expensive than sorting suspect parts weeks later.
 
