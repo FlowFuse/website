@@ -271,7 +271,7 @@ Data is most valuable when operators can interpret the meaning of takt time inst
 3. Connect the output of the Inject node to the input of the Change node that calculates available production time. Next, connect the output of this Change node to the input of the Change node that calculates takt time using the formula. Finally, connect the output of the takt time Change node to the input of the UI Template node
 4. Next, deploy the flow and open the dashboard to see real-time takt time updates
 
-![Simple takt time display dashboard built with FlowFuse](./images/takt-time-flowfuse.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Simple takt time display dashboard built with FlowFuse" width="558" height="546" preload="none"><source src="/blog/2025/09/images/takt-time-flowfuse.webm" type="video/webm" /></video>
 *Real-time takt time monitoring dashboard in FlowFuse showing the takt formula in action*
 
 Here's the complete flow we built for automated takt time calculation and visualization with FlowFuse, demonstrating how to calculate takt time in real-time.
