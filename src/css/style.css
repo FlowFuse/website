@@ -2243,6 +2243,11 @@ lite-youtube {
     background-size: cover;
     background-position: center;
     border-radius: 0.75rem;
+    /* Overrides fixed inline width/height some posts embed this with, so it stays responsive. */
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
 }
 
 lite-youtube::before {

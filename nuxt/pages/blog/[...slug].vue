@@ -46,10 +46,12 @@ const releaseFeatureComponents = {
     'feature-release-links': FeatureReleaseLinks,
 }
 
+// Fixed key so `nuxt generate`'s shared-prerender-data caching reuses one fetch across
+// every blog route - the callback must therefore return the same result regardless of
+// which route triggers it first, so it can't branch on this page's own routeInfo.
 const { data: allPosts } = await useAsyncData(
     'blog-all-for-related',
     async () => {
-        if (routeInfo.value.kind !== 'post') return []
         const all = await getAllBlogPosts()
         // Only the fields this page needs travel into its payload; the shared cache
         // itself holds the wider field set other pages (listing, author) need.
@@ -59,14 +61,15 @@ const { data: allPosts } = await useAsyncData(
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
+// page.body is a minimark tree: { value: MinimarkNode[] } where a node is
+// either a text string or an element array [tag, attrs, ...children].
 function extractText(node: any): string {
-    if (!node) return ''
-    if (node.type === 'text') return node.value || ''
-    if (Array.isArray(node.children)) return node.children.map(extractText).join(' ')
+    if (typeof node === 'string') return node
+    if (Array.isArray(node)) return node.slice(2).map(extractText).join(' ')
     return ''
 }
 const readingTime = computed(() => {
-    const words = extractText(page.value?.body).split(/\s+/).filter(Boolean).length
+    const words = (page.value?.body?.value || []).map(extractText).join(' ').split(/\s+/).filter(Boolean).length
     return Math.max(1, Math.ceil(words / 200))
 })
 
@@ -149,6 +152,27 @@ if (routeInfo.value.kind === 'post') {
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
         <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
+          <div class="flex -space-x-2 mr-1">
+            <template v-if="authorMembers.length">
+              <NuxtLink
+                  v-for="author in authorMembers"
+                  :key="author.slug"
+                  :to="authorPath(author.slug)"
+                  class="block w-8 h-8 rounded-full overflow-hidden bg-indigo-300 ring-2 ring-white"
+                  :title="author.name"
+              >
+                <img
+                    v-if="author.headshot"
+                    :src="`/images/team/headshot-${author.headshot}`"
+                    :alt="author.name"
+                    class="w-full h-full object-cover"
+                >
+              </NuxtLink>
+            </template>
+            <div v-else class="block w-8 h-8 rounded-full overflow-hidden bg-indigo-300 ring-2 ring-white" title="FlowFuse">
+              <img :src="'/images/flowfuse-icon.png'" alt="FlowFuse" class="w-full h-full object-cover">
+            </div>
+          </div>
           <span>By</span>
           <template v-if="authorMembers.length">
             <span v-for="(author, i) in authorMembers" :key="author.slug">
