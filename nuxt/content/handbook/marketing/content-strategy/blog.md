@@ -121,6 +121,21 @@ below more
 
 The title of the page can be seen on both the blog index and the articles.
 
+### Meta Title
+
+`metaTitle` is an optional field that overrides the browser tab title and Open Graph (social share) title — it does not change the on-page `title` shown as the article's H1 or on the blog index.
+
+```yaml
+---
+title: "Building Digital Work Instructions Dashboard for the Shop Floor"
+metaTitle: "Digital Work Instructions Dashboard"
+---
+```
+
+Use it when the on-page `title` is written for readers (descriptive, sometimes long) but doesn't make a good search-result or tab title. When set, it renders as `{metaTitle} | FlowFuse` in both places; when omitted, the browser tab and share title fall back to `{title} • FlowFuse Blog`.
+
+Keep `metaTitle` short and keyword-forward — it's for SEO/CTR in search results and social previews, not for readability on the page itself.
+
 ### Subtitle
 
 The subtitle is only shown on the articles.

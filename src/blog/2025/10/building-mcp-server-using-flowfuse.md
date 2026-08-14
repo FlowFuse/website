@@ -1,4 +1,5 @@
 ---
+metaTitle: "Building MCP Servers for AI Agent Integration"
 title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED, enabling AI agents to access data using a low-code approach."

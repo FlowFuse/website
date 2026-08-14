@@ -1,4 +1,5 @@
 ---
+metaTitle: "Download Node-RED for Production"
 title: "Download Node-RED for Production: Windows, Mac, Linux, Raspberry Pi (2026)"
 subtitle: Scale Node-RED from prototype to production with centralized management and 24/7 reliability
 description: "Learn how to install and run Node-RED on Windows, Mac, Linux, or Raspberry Pi, production-ready from the creators of Node-RED."

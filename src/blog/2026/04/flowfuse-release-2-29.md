@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.29: Expert Comes to Self-Hosted"
 title: "FlowFuse 2.29: FlowFuse Expert Comes to Self-Hosted Enterprise"
 subtitle: "Self-Hosted Enterprise customers can now enable FlowFuse Expert. Plus Azure DevOps Git support and clearer snapshot comparisons."
 description: "FlowFuse 2.29 brings FlowFuse Expert to self-hosted enterprise customers, adds Azure DevOps support, and clearer snapshot diffs."

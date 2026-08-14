@@ -80,7 +80,7 @@ const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.valu
 const pageTitle = computed(() => page.value?.title || 'Blog')
 provide('blogPostTitle', pageTitle)
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Blog`)
+const fullTitle = computed(() => page.value?.metaTitle ? `${page.value.metaTitle} | FlowFuse` : `${pageTitle.value} • FlowFuse Blog`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 const absoluteImage = computed(() => heroImage.value.startsWith('http') ? heroImage.value : `https://flowfuse.com${heroImage.value}`)
 

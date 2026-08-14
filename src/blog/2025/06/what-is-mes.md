@@ -1,4 +1,5 @@
 ---
+metaTitle: "What Is MES? How It Works & Benefits"
 title: "What Is MES (Manufacturing Execution System)? How It Works, Benefits, and Challenges"
 subtitle: "MES Explained: Essential Insights for Factory Operations"
 description: "Understand Manufacturing Execution Systems (MES): what they are, why your factory needs one, and how FlowFuse simplifies adoption."

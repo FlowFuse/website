@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse Expert: Automation, Not Code"
 title: "FlowFuse Expert: Let Your Engineers Build Automation, Not Write Code"
 subtitle: "Make Node-RED do more without writing code."
 description: "FlowFuse Expert helps manufacturing teams write Node-RED function nodes, parse machine data, and build custom dashboards."

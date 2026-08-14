@@ -1,4 +1,5 @@
 ---
+metaTitle: "Aviation & Aerospace Manufacturing Platform"
 layout: layouts/industry.njk
 meta:
   title: "Aviation & Aerospace Manufacturing Operations Platform | FlowFuse"

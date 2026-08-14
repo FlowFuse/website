@@ -1,4 +1,5 @@
 ---
+metaTitle: "Using FlowFuse Project Nodes for Efficiency"
 title: Using FlowFuse Project Nodes for Faster and More Efficient Communication
 subtitle: Easy Communication Between Node-RED Instances with FlowFuse
 description: Learn how to use FlowFuse project nodes for quick and efficient communication between Node-RED instances, making monitoring and data requests easier.

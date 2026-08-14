@@ -1,4 +1,5 @@
 ---
+metaTitle: "Poka Yoke Explained: Definition, Examples, Types"
 title: "Poka Yoke (Poke Yoke, Bokayoke) Explained: Definition, Examples, Types (2026)"
 subtitle: "How to mistake-proof your manufacturing processes"
 description: "Learn how poka yoke prevents manufacturing defects before they happen, and the four types of mistake-proofing you can use."

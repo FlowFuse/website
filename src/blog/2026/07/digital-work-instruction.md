@@ -1,4 +1,5 @@
 ---
+metaTitle: "Digital Work Instructions Dashboard"
 title: "Building Digital Work Instructions Dashboard for the Shop Floor"
 subtitle: "Give every operator their own work instructions, progress, and production history."
 description: "Learn how to build digital work instructions with FlowFuse: personalized operator apps with guided steps and traceability."

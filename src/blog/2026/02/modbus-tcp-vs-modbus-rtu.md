@@ -1,4 +1,5 @@
 ---
+metaTitle: "Modbus TCP vs Modbus RTU: Key Differences"
 title: "Modbus TCP vs Modbus RTU: Reliability, Latency, and Failure Modes"
 subtitle: "What nobody tells you until the line goes down"
 description: "A practical engineering guide to choosing between Modbus RTU and Modbus TCP, covering real latency numbers and failure modes."

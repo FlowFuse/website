@@ -1,4 +1,5 @@
 ---
+metaTitle: "Building a Label Scanner for Product Labels"
 title: "Building a Label Scanner with FlowFuse for Product Labels & Serial Numbers"
 subtitle: "A practical guide to automating text recognition in manufacturing workflows"
 description: "Step-by-step guide to building an OCR system in FlowFuse for scanning product labels, extracting text, and validating serial numbers using Node-RED flows."

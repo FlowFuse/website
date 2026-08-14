@@ -1,4 +1,5 @@
 ---
+metaTitle: "Factory KPIs Your MES Should Deliver"
 title: "What to Measure on the Shop Floor: Factory KPIs Your MES Should Deliver"
 subtitle: "From shop floor data to strategic advantage"
 description: "Learn the essential factory KPIs your Manufacturing Execution System should monitor to drive profitability and cut waste."

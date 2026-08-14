@@ -36,7 +36,7 @@ function issueLabel(issue: string): string {
 }
 
 const pageTitle = computed(() => page.value?.title || 'Changelog')
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Changelog`)
+const fullTitle = computed(() => page.value?.metaTitle ? `${page.value.metaTitle} | FlowFuse` : `${pageTitle.value} • FlowFuse Changelog`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
 useSeoMeta({

@@ -1,4 +1,5 @@
 ---
+metaTitle: "Choosing the Right IIoT Device Management Tool"
 title: How to Choose the Right IIoT Device Management Software for Your Business
 subtitle: Key Features and Considerations for Effective IIoT Device Management
 description: Learn how to choose the right IIoT device management software for your business with this comprehensive guide. Key features and considerations explained.

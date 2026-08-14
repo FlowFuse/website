@@ -1,4 +1,5 @@
 ---
+metaTitle: "Takt Time: Definition, Formula & Examples"
 title: "Takt Time: Definition, Formula, How to Calculate with Examples & More [2026 Edition]"
 subtitle: "Master takt time to synchronize production with customer demand using lean manufacturing principles"
 description: "A complete guide to takt time in manufacturing: the formula, calculation methods, implementation strategies, and examples."

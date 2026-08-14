@@ -1,4 +1,5 @@
 ---
+metaTitle: "Query Your Database with Natural Language"
 title: "Query Your Database with Natural Language Using FlowFuse Expert"
 subtitle: "A faster, more intuitive way to get data from your tables without writing a single line of SQL."
 description: "Learn the easiest way to connect to your database and get data using FlowFuse Expert, with no coding knowledge required."

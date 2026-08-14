@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse Dashboard vs UI-Builder Compared"
 title: "FlowFuse Dashboard vs UI-Builder: A Comprehensive Comparison"
 subtitle: Understanding the Differences Between FlowFuse Dashboard and UI-Builder
 description: Compare FlowFuse Dashboard and UI-Builder. Discover their installation ease, customization, performance, and support to find the best solution for your needs. 
