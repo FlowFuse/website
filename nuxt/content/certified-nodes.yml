@@ -4,6 +4,9 @@ intro: >-
   by FlowFuse, so a production connection never rests on an unmaintained community
   package. Hub covers the systems your business runs on; Edge covers the plant floor.
 
+# `url` is the node's documentation page. Keep these pointing at the same targets
+# the header's "By Integration" menu uses (nuxt/components/AppHeader.vue), so a
+# connector resolves to one canonical page wherever it is featured.
 bundles:
   - id: it
     label: Certified Nodes — IT
@@ -16,22 +19,27 @@ bundles:
           - name: Redis
             abbr: RE
             description: In-memory cache and fast key/value store.
+            url: /node-red/flowfuse/hub/redis/
           - name: MQTT
             abbr: MQ
             description: Lightweight pub/sub messaging for IoT and event-driven flows.
+            url: /node-red/flowfuse/mqtt/
           - name: HTTP Request
             abbr: HT
             description: Call REST APIs and web services.
+            url: /node-red/core-nodes/http-request/
       - label: AI
         nodes:
           - name: AI nodes
             abbr: AI
             description: LLM-powered flows with Gemini, Claude, ChatGPT, and Ollama.
             both: true
+            url: /node-red/flowfuse/ai/llm-nodes/
           - name: MCP Server
             abbr: MCP
             description: Turn your flows into a Model Context Protocol server so AI agents can call your logic as tools.
             both: true
+            url: /node-red/flowfuse/mcp/
 
   - id: ot
     label: Certified Nodes — OT
@@ -44,22 +52,28 @@ bundles:
           - name: OPC-UA
             abbr: OP
             description: The standard for industrial machine interoperability.
+            url: /node-red/flowfuse/edge/opcua/
           - name: Modbus TCP & RTU
             abbr: MO
             description: Ubiquitous protocol for PLCs and field devices.
+            url: /node-red/flowfuse/edge/modbus/
           - name: RTSP
             abbr: RT
             description: Stream video from IP cameras.
+            url: /node-red/flowfuse/edge/rtsp/
           - name: EtherNet/IP
             abbr: EI
             description: Rockwell / Allen-Bradley industrial Ethernet protocol.
+            url: /node-red/flowfuse/edge/cip-suite/
       - label: AI
         nodes:
           - name: AI nodes
             abbr: AI
             description: LLM-powered flows with Gemini, Claude, ChatGPT, and Ollama.
             both: true
+            url: /node-red/flowfuse/ai/llm-nodes/
           - name: MCP Server
             abbr: MCP
             description: Turn your flows into a Model Context Protocol server so AI agents can call your logic as tools.
             both: true
+            url: /node-red/flowfuse/mcp/
