@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { visibleGroups, matching, hasMore, search, showMore } = useChangelogList()
+const { entries, visibleGroups, hasMore, showMore, revealRelease } = useChangelogList()
 
 useSeoMeta({
     title: 'Changelog',
@@ -25,11 +25,34 @@ const anchorId = (release: string) => `release-${release.replace(/\./g, '-')}`
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
+// A release anchor shared from this page can name a release that is not rendered yet,
+// since the list starts at the newest entries only. Reveal it before the browser is
+// asked to scroll, otherwise the link lands at the top of the page.
+let hashResolved = false
+
+async function revealFromHash () {
+    if (!import.meta.client || hashResolved) return
+    const id = window.location.hash.replace(/^#/, '')
+    if (!id) { hashResolved = true; return }
+    // Matched against the releases that exist rather than by reversing anchorId, so a
+    // hash belonging to anything else on the page is left for the browser to handle.
+    const release = entries.value.find(e => anchorId(e.release) === id)?.release
+    if (!release || !revealRelease(release)) return
+    hashResolved = true
+    await nextTick()
+    document.getElementById(id)?.scrollIntoView()
+}
+
+// On the prerendered page the archive is in the payload by the time this mounts. In dev,
+// and on a client-side navigation, the query is still in flight then, so retry on arrival.
+watch(entries, () => { revealFromHash() })
+
 onMounted(() => {
     observer = new IntersectionObserver((records) => {
         if (records.some(r => r.isIntersecting) && hasMore.value) showMore()
     }, { rootMargin: '600px 0px' })
     if (sentinel.value) observer.observe(sentinel.value)
+    revealFromHash()
 })
 
 onUnmounted(() => observer?.disconnect())
@@ -44,7 +67,9 @@ onUnmounted(() => observer?.disconnect())
         <h1 class="mb-0 text-2xl font-medium">What's new</h1>
         <p class="my-0 text-gray-500">Every feature, improvement and fix we ship, newest first.</p>
       </div>
-      <div class="flex flex-row items-center gap-3 max-sm:mt-4">
+      <!-- Search runs on the same Algolia index as the blog, docs and handbook, filtered
+           to this section, so it reaches entry bodies and tolerates typos. -->
+      <div class="flex flex-row items-center gap-3 max-sm:mt-4 sm:w-80">
         <a
           href="/changelog/index.xml"
           class="inline-flex items-center gap-1.5 whitespace-nowrap text-sm text-gray-500 hover:text-indigo-600"
@@ -53,25 +78,11 @@ onUnmounted(() => observer?.disconnect())
           <UIcon name="i-heroicons-rss" class="w-4 h-4" />
           <span>RSS</span>
         </a>
-        <label class="relative">
-          <span class="sr-only">Search the changelog</span>
-          <UIcon name="i-heroicons-magnifying-glass" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-          <input
-            v-model="search"
-            type="search"
-            placeholder="Search"
-            class="w-full sm:w-56 rounded-full border border-gray-200 bg-white py-2 pl-9 pr-3 text-sm text-gray-700 placeholder:text-gray-400 focus:border-indigo-600 focus:outline-none"
-          >
-        </label>
+        <AlgoliaSearch index-filter="category:changelog" placeholder="Search the changelog" source-id="changelog" />
       </div>
     </div>
 
     <div class="mt-8">
-      <p v-if="!matching.length" class="py-16 text-center text-gray-500">
-        Nothing matches "{{ search }}".
-        <button class="text-indigo-600 hover:underline" @click="search = ''">Clear the search</button>
-      </p>
-
       <!-- The release label lives in a column beside its own entries rather than in a
            separate rail, so it lines up with the entries it belongs to, and sticks while
            you read through them. Two columns per release, not one list plus one nav. -->
@@ -88,17 +99,19 @@ onUnmounted(() => observer?.disconnect())
         <div class="hidden lg:block w-36 shrink-0 pt-7">
           <div class="h-full border-l border-gray-200">
             <!-- top-16 (64px), not further down: the site header (.ff-header) ends at
-                 56px, so anything lower leaves a gap of bare spine above the label. -->
-            <div class="sticky top-16 -ml-px border-l-2 border-indigo-600 pl-5 py-1 font-medium leading-tight text-indigo-600">
-              Release {{ group.release }}
-            </div>
+                 56px, so anything lower leaves a gap of bare spine above the label.
+                 The label is the release's own anchor, so it can be linked to directly. -->
+            <a
+              :href="`#${anchorId(group.release)}`"
+              class="sticky top-16 block -ml-px border-l-2 border-indigo-600 pl-5 py-1 font-medium leading-tight text-indigo-600 hover:underline"
+            >Release {{ group.release }}</a>
           </div>
         </div>
 
         <div class="flex-1 min-w-0 lg:pl-12">
           <!-- The label column is hidden below lg, so the release still needs naming. -->
-          <h2 class="lg:hidden mt-6 mb-0 text-base font-medium text-indigo-600">
-            Release {{ group.release }}
+          <h2 class="lg:hidden mt-6 mb-0 text-base font-medium">
+            <a :href="`#${anchorId(group.release)}`" class="text-indigo-600 hover:underline">Release {{ group.release }}</a>
           </h2>
           <ul class="flex flex-wrap">
             <ChangelogListItem v-for="entry in group.entries" :key="entry.path" :entry="entry" />

@@ -24,20 +24,12 @@ export function useChangelogList () {
         () => queryCollection('changelog').order('date', 'DESC').all()
     )
 
-    const search = ref('')
     const visibleCount = ref(CHANGELOG_INITIAL_VISIBLE)
 
     const entries = computed(() => (allEntries.value || []) as unknown as ChangelogEntry[])
 
-    const matching = computed(() => {
-        const term = search.value.trim().toLowerCase()
-        if (!term) return entries.value
-        return entries.value.filter(e =>
-            e.title?.toLowerCase().includes(term) || e.description?.toLowerCase().includes(term))
-    })
-
-    const visible = computed(() => matching.value.slice(0, visibleCount.value))
-    const hasMore = computed(() => visibleCount.value < matching.value.length)
+    const visible = computed(() => entries.value.slice(0, visibleCount.value))
+    const hasMore = computed(() => visibleCount.value < entries.value.length)
 
     function groupByRelease (list: ChangelogEntry[]): ChangelogReleaseGroup[] {
         const groups: ChangelogReleaseGroup[] = []
@@ -55,10 +47,21 @@ export function useChangelogList () {
     const visibleGroups = computed(() => groupByRelease(visible.value))
 
     function showMore () {
-        visibleCount.value = Math.min(visibleCount.value + CHANGELOG_VISIBLE_STEP, matching.value.length)
+        visibleCount.value = Math.min(visibleCount.value + CHANGELOG_VISIBLE_STEP, entries.value.length)
     }
 
-    watch(search, () => { visibleCount.value = CHANGELOG_INITIAL_VISIBLE })
+    /**
+     * Renders through the end of `release` so that /changelog/#release-2-20 resolves on
+     * arrival: only the newest entries are in the markup, so an older release's anchor
+     * does not exist until its entries are rendered. Returns false for an unknown release.
+     */
+    function revealRelease (release: string): boolean {
+        // Releases ship in date order and the list is date-ordered, so the run is contiguous.
+        const last = entries.value.findLastIndex(e => e.release === release)
+        if (last < 0) return false
+        visibleCount.value = Math.max(visibleCount.value, last + 1)
+        return true
+    }
 
-    return { matching, visibleGroups, hasMore, search, showMore }
+    return { entries, visibleGroups, hasMore, showMore, revealRelease }
 }
