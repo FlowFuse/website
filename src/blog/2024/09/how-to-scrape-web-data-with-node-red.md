@@ -49,6 +49,9 @@ To start scraping data, follow these steps to send an HTTP GET request to the we
 
 Once deployed, click the **inject** button. You will see the raw HTML printed in the debug panel.
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ### Parsing and Extracting Data from HTML
 
 Next, we need to process the raw HTML to extract meaningful data. This involves parsing the HTML content and identifying the specific information you want. To do this, first analyze the HTML structure of the webpage by opening the browser’s developer tools (press Ctrl + I or F12) and inspecting the elements to locate where the data is and in which HTML elements it resides.

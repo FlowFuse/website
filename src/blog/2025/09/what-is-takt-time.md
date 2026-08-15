@@ -92,6 +92,9 @@ This **formula of takt time** contains two critical components that require care
 
 ### Available Production Time
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 This is the net time available for production during your planning period (typically one shift or one day). When applying the takt formula, available production time includes only planned production time. It excludes planned breaks, meetings, shift changes, and scheduled maintenance, but does not include unplanned downtime such as breakdowns or minor stoppages. It excludes scheduled breaks and lunch periods, shift changeovers, planned maintenance windows, and scheduled meetings or training.
 
 Consider an example calculation of takt time. An eight-hour shift equals 480 minutes. Subtract a 10-minute break to yield 470 minutes. Subtract a 20-minute lunch to yield 450 minutes. Subtract a 30-minute planned changeover to yield 420 minutes. The available production time equals 420 minutes.

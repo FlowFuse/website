@@ -112,6 +112,9 @@ The device manual says this buffer breaks down as:
 - Bytes 5-6: Humidity reading
 - Bytes 7-8: CRC checksum
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 You need to extract temperature and humidity. Everything else is Modbus protocol overhead.
 
 The manual also specifies:

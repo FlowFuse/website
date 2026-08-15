@@ -38,6 +38,9 @@ All instances on FlowFuse can be configured with _"FlowFuse User Authentication"
 
 ##### FlowFuse Cloud
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 _Note: Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted._
 
 The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](/integrations/?certified=1) catalogue, accessible to our Teams and Enterprise customers.

@@ -33,6 +33,9 @@ That architecture imposes hard constraints. Only one device can transmit at a ti
 
 ![Image showing Modbus RTU on RS-485 and Modbus TCP on Ethernet.](./images/modbus-rtu-and-tcp-physical-layer.png "Image showing Modbus RTU on RS-485 and Modbus TCP on Ethernet.")
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 Modbus TCP moves the same application layer onto Ethernet and wraps it in a TCP socket. The serial constraints disappear. Multiple masters can coexist, transactions can be pipelined, and the physical layer handles collision detection and retransmission. What you gain in flexibility, you trade for a different set of assumptions. TCP guarantees delivery, but not timing. A retransmission storm on a busy network can stretch response times in ways that RTU, for all its limitations, never would.
 
 ## Latency: What the Numbers Actually Mean on the Floor

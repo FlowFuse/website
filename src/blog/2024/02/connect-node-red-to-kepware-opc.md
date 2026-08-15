@@ -31,11 +31,12 @@ The first thing we need to do is check our **OPC UA Configuration Manager** for 
 
 ![kepware tray](./images/kepserverex-tray.png)
 
-
 If your Node-RED instance lives on the same server that your KepserverEX is on, pick accordingly or click add if you need to define by ip address. This is for setting different credential requirements for localhost vs remote host access.  Also note, that if you have multiple network adapters, make sure to select the adapter that is in use. 
 
-![kepware endpoint definition](./images/kep-endpoint-definition.png)
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
+![kepware endpoint definition](./images/kep-endpoint-definition.png)
 
 We are testing locally on the server, so we will use the one selected for loopback addressing.  We will be leaving the OPC server port as default and select **Basic256Sha256** with **Sign and Encrypt**.
 
@@ -49,19 +50,15 @@ Import the flow below into your Node-RED environment.
 
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/04a84fe5b0db7cda9e74ba811e7b0ca5/share?height=250" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 
-
 Next, let's configure the **OPC UA Client**.  Click the **pencil** to add a new OPCUA-Endpoint.
 
 ![kepware node-red encrypted opc ua node](./images/opcua-endpoint-node-red-encrypted.png)
 
-
 For the endpoint, **copy** the endpoint definition from the KepserverEX OPC UA Configuration Manager.  In our example, it is ```opc.tcp://127.0.0.1:49320```, and paste it into the Endpoint.  For SecurityPolicy select **Basic256Sha256**. For SecurityMode, select **Sign&Encrypt**.  Lastly, we will be selecting **Anonymous**.  Click **Update**, then **Deploy**.  
-
 
 Trigger the flow by **clicking** on the inject node.  The server may not connect at this time, and it is expected.
 
 ![kepware node-red invalid endpoint](./images/node-red-opc-ua-invalid-endpoint.png)
-
 
 #### Step 3: KepserverEX
 
@@ -69,11 +66,9 @@ Moving back over to KepserverEX,  Click on the tray again in the bottom of the s
 
 ![kepware node-red anonymous login](./images/node-red-kepware-anonymous-login.png)
 
-
 Select the tray at the bottom of the screen again, and select **OPC UA Configuration**. Select the **Trusted Clients** tab.
 
 ![kepware node-red trusted client before](./images/kepserverex-trusted-client-before.png)
-
 
 Now select the **NodeOPCUA-Client** and then **click** Trust.  ***If you don't have the client option, trigger the inject node again from the Node-RED flow and check the logs***
 
@@ -90,7 +85,6 @@ Lastly,  Navigate back to Node-RED and **trigger** the inject node.  This node w
 We will be leveraging the default Simulated Examples for reading tags from KepserverEX.  Let's move on to the next set of flows.
 
 ![kepware node-red read tags](./images/node-red-kepware-read-tag.png)
-
 
 Edit the OPCUa-Item node and note the item.
 

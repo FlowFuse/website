@@ -97,6 +97,9 @@ Siemens S7-1200 and S7-1500 PLCs have built-in OPC UA server. Activate it in TIA
 
 When you modify your data block or recompile, your flows keep working because they reference variable names, not memory locations that might shift.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Prerequisites
 
 Before you begin, make sure you have:

@@ -66,6 +66,9 @@ Shingo made a key distinction between human mistakes and production defects. Mis
 
 Poka yoke is a systematic approach that uses automatic devices or methods to either make errors impossible or make them immediately obvious once they occur. It's any mechanism that helps equipment operators avoid mistakes by preventing, correcting, or drawing attention to human errors as they happen.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 The poka yoke meaning extends beyond simple error prevention. Rather than treating errors as moral failures or training deficiencies, it treats them as design problems. This lean manufacturing approach recognizes that even the most skilled workers experience moments of distraction, fatigue, or cognitive overload.
 
 Traditional quality control detects defects after they occur, requiring inspection, rework, and often scrapping of materials. The poka yoke approach prevents defects during production by making errors physically impossible or immediately visible. This prevention-first approach creates a cascading effect: quality control teams focus on complex issues rather than basic errors, workers gain confidence in their processes, customer satisfaction improves through consistent product quality, and excellence becomes the natural outcome rather than a heroic achievement.

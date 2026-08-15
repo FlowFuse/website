@@ -114,6 +114,9 @@ Rather than building the flow step-by-step, the flow source code will be present
 
 ## Browse Hierarchical Server Address Space Structure With OPC UA Browser Node
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 The first flow will browse the hierarchical OPC UA Server address space structure and display it on the dashboard.
 
 ![image-20230727-085611.png](./images/opc-ua-3/image-20230727-085611.png){data-zoomable}
@@ -137,7 +140,6 @@ In our flow, we get the base folder structure by using an OPC-UA Browser node, a
 The configuration of the endpoint properties includes no security credentials, as shown below.
 
 ![endpoint-configure.png](./images/opc-ua-3/endpoint-configure.png){data-zoomable}
-
 
 Using the output of a debug node, we get from the OPC UA Browser yield a payload with an array of 5 objects.  
 
@@ -204,7 +206,6 @@ Now we can actually read the values.  To do this, we use a `change` node again, 
 Going back to our OPC Server, we can see that exactly where that value is derived below - 
 
 ![sim-counter-server.png](./images/opc-ua-3/sim-counter-server.png){data-zoomable}
-
 
 Now we add a `gauge` dashboard node to visualize the counter on the dashboard.  In the OPC Server, it is shown that the counter increments in a range of 0-30 in 1 count increments.  
 

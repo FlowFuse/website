@@ -85,6 +85,9 @@ The FlowFuse User Addon is a plugin developed for Dashboard 2.0, leveraging the 
 
 ### Installing Flowfuse user addon
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 1. Click the Node-RED Settings (top-right)
 2. Click "Manage Palette"
 3. Switch to the "Install" tab

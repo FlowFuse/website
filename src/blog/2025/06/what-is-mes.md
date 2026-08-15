@@ -38,6 +38,9 @@ The MES collects real-time information to tell you:
 
 This means you always know the exact status of your production, live. Such real-time insights and operational control are at the core of what a modern MES delivers, often leveraging flexible platforms like FlowFuse to connect diverse factory data and orchestrate workflows.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 ## What MES is NOT 
 
 It's easy to get confused about all the different computer systems in a factory. To really get what a MES does, it helps to know what it isn't.

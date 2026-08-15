@@ -22,6 +22,9 @@ When taking data in from sensors sometimes a spurious value can be sent into you
 
 ![Using the Smooth node to return highest value from the last 100 payloads](./images/smooth.png "Using the Smooth node to return highest value from the last 100 payloads")
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 You can in turn use this to ignore values that deviate too far from the sample. To help demonstrate the Smooth node, I've created a flow you can import into Node-RED.
 
 ```json

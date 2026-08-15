@@ -115,6 +115,9 @@ For additional attributes and information, refer to the [pdfmake documentation](
 
 Here’s a simple example of how you can use these attributes to create a basic PDF:
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ```json
 {
   "content": [

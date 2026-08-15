@@ -91,6 +91,9 @@ The broker is a single point of failure unless you architect clustering separate
 
 MQTT is deliberately minimal. This simplicity at the transport layer enables its flexibility and efficiency.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### OPC UA: The Semantic Framework
 
 OPC UA (Unified Architecture) isn't primarily about moving data; it's about describing what data means, how it relates to other data, and what operations are valid.

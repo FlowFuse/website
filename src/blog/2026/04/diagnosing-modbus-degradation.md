@@ -49,6 +49,9 @@ One failure mode that gets far less attention than it deserves: bus contention f
 
 RS-485 is half-duplex. After sending a request, the master must de-assert its transmit driver before the device can respond. If the driver stays asserted even a few hundred microseconds too long (firmware timing bug, misconfigured enable pin, USB adapter with incorrect turnaround handling) the device's response overlaps with the master's still-active driver. The result is frame corruption on every transaction, every time, and it's indistinguishable from a severely damaged cable.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 A [protocol analyzer](https://en.wikipedia.org/wiki/Protocol_analyzer) confirms it immediately by showing both signals active simultaneously. Before you pull cable on a segment where every transaction is corrupted, swap the serial adapter or test with a different master. It takes ten minutes and it's right more often than people expect.
 
 ### Modbus TCP: connection management and latency
