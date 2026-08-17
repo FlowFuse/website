@@ -42,6 +42,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/platform/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/solutions/device-management/': { redirect: { to: '/use-cases/edge-connectivity/', statusCode: 301 } },
     '/blueprints/manufacturing/andon-task/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
+    '/email-signature/': { redirect: { to: '/handbook/design/branding/#email-signature', statusCode: 301 } },
     '/landing/technology-migration-1/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/landing/technology-migration-2/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/blog/2025/10/the-ai-orchestation-hype/': { redirect: { to: '/blog/2025/10/the-ai-orchestration-hype/', statusCode: 301 } },
