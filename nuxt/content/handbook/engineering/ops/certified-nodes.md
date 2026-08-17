@@ -91,7 +91,7 @@ These arrays feed `certNodesITCat` ("FlowFuse Hub Certified Nodes") and `certNod
 
 4. Deploy.
 
-The **Authentication** tab is also where customer instances/users (tokens) are managed — see [Generating Tokens for Access to Certified Nodes Registry](../contributing/certified-nodes.md#generating-tokens-for-access-to-certified-nodes-registry).
+The **Authentication** tab is also where customer instances/users (tokens) are managed — see [Enroll Customers](#enroll-customers) section.
 
 ### Result
 
