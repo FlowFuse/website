@@ -1,4 +1,6 @@
 import { queryCollection } from '@nuxt/content/server'
+// @ts-ignore untyped module
+import { findFeatureByChangelog, featurePlanLabels, planBadges } from '../../../lib/feature-catalog.mjs'
 
 async function loadPeople(mount: string): Promise<Record<string, { name: string }>> {
     const storage = useStorage(`assets:${mount}`)
@@ -75,30 +77,38 @@ function renderBodyToHtml(body: { value?: MinimarkNode[] } | undefined): string 
 export default defineEventHandler(async (event) => {
     // Full entry bodies are heavy - cap the feed to the most recent entries rather
     // than shipping the entire multi-megabyte changelog archive on every request.
-    const [entries, teamPeople, guestPeople] = await Promise.all([
+    const [entries, teamPeople, guestPeople, catalog] = await Promise.all([
         queryCollection(event, 'changelog').order('date', 'DESC').limit(20).all(),
         loadPeople('team'),
         loadPeople('guests'),
+        queryCollection(event, 'featureCatalog').first(),
     ])
     const people = { ...teamPeople, ...guestPeople }
 
     const updated = entries[0]?.date ? new Date(entries[0].date).toISOString() : new Date(0).toISOString()
 
     const items = entries.map((entry) => {
-        const absoluteUrl = `https://flowfuse.com${entry.path}/`
+        const entryUrl = `https://flowfuse.com${entry.path}/`
         const authorTags = (entry.authors || [])
             .map(username => people[username]?.name)
             .filter(Boolean)
             .map(name => `<author><name>${escapeXml(name)}</name></author>`)
             .join('\n        ')
-        const bodyHtml = renderBodyToHtml(entry.body).replace(/]]>/g, ']]&gt;')
+        // Mirrors the changelog page: FeatureTierBadges is looked up by this entry's own
+        // path against the feature catalog, not embedded in the markdown body.
+        const feature = findFeatureByChangelog(catalog, entry.path)
+        const badges = planBadges(featurePlanLabels(feature)) as Array<{ plan: string, href: string }>
+        const badgesHtml = badges.length
+            ? `<p>Available in: ${badges.map(badge => `<a href="${escapeXml(absoluteUrl(badge.href))}">${escapeXml(badge.plan)}</a>`).join(', ')}</p>`
+            : ''
+        const bodyHtml = badgesHtml + renderBodyToHtml(entry.body).replace(/]]>/g, ']]&gt;')
         return `    <entry>
-        <id>${absoluteUrl}</id>
+        <id>${entryUrl}</id>
         <title>${escapeXml(entry.title)}</title>
         <summary>${escapeXml(entry.subtitle || entry.description || '')}</summary>
         <content type="html"><![CDATA[${bodyHtml}]]></content>
         <updated>${new Date(entry.date).toISOString()}</updated>
-        <link href="${absoluteUrl}"/>
+        <link href="${entryUrl}"/>
         ${authorTags}
     </entry>`
     }).join('\n')

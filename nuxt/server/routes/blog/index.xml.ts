@@ -1,5 +1,9 @@
 import { queryCollection } from '@nuxt/content/server'
 import site from '../../../../src/_data/site.json'
+// @ts-ignore untyped module
+import { planBadges } from '../../../lib/feature-catalog.mjs'
+// @ts-ignore untyped module
+import { resolveReleaseFeatures, injectReleaseFeatures } from '../../../lib/release-features.mjs'
 
 // Mirrors nuxt/components/content/CtaImage.vue's DESTINATIONS map - kept in
 // sync manually since the feed can't import a .vue component's script setup.
@@ -84,8 +88,31 @@ function minimarkToHtml(node: MinimarkNode): string {
         const img = `<img src="${escapeXml(absoluteUrl(src))}" alt="${escapeXml(alt)}"/>`
         return href ? `<a href="${escapeXml(absoluteUrl(href))}">${img}</a>` : img
     }
-    // Other custom Vue components (e.g. feature-tier-badges) have no
-    // meaningful standalone markup, so the feed omits them entirely.
+    // Injected into release-blog bodies by injectReleaseFeatures (see below) - each
+    // plan names its own product page, mirroring FeatureTierBadges.vue.
+    if (tag === 'feature-tier-badges' && props) {
+        const plans = typeof props.plans === 'string' ? props.plans.split(',').map(p => p.trim()).filter(Boolean) : []
+        const badges = planBadges(plans) as Array<{ plan: string, href: string }>
+        if (!badges.length) return ''
+        const links = badges.map(badge => `<a href="${escapeXml(absoluteUrl(badge.href))}">${escapeXml(badge.plan)}</a>`).join(', ')
+        return `<p>Available in: ${links}</p>`
+    }
+    // Also injected by injectReleaseFeatures, mirroring FeatureReleaseLinks.vue.
+    if (tag === 'feature-release-links' && props) {
+        const changelog = Array.isArray(props.changelog) ? props.changelog as Array<{ url: string, label: string }> : []
+        const docs = props.docs as { href: string, label: string } | null | undefined
+        const parts: string[] = []
+        if (changelog.length) {
+            const links = changelog.map(entry => `<a href="${escapeXml(absoluteUrl(entry.url))}">${escapeXml(entry.label)}</a>`).join(' | ')
+            parts.push(`<p>Changelog: ${links}</p>`)
+        }
+        if (docs) {
+            parts.push(`<p>Docs: <a href="${escapeXml(absoluteUrl(docs.href))}">${escapeXml(docs.label)}</a></p>`)
+        }
+        return parts.join('')
+    }
+    // Other custom Vue components have no meaningful standalone markup, so the
+    // feed omits them entirely.
     if (tag.includes('-')) return ''
     const innerHtml = children.map(minimarkToHtml).join('')
     if (VOID_TAGS.has(tag)) return `<${tag}${attrsToHtml(props)}/>`
@@ -102,15 +129,28 @@ function buildSummary(entry: { tldr?: string | string[], description?: string, m
 }
 
 export default defineEventHandler(async (event) => {
-    const [allEntries, teamPeople, guestPeople] = await Promise.all([
+    const [allEntries, teamPeople, guestPeople, catalog, changelogPosts] = await Promise.all([
         queryCollection(event, 'blog').order('date', 'DESC').all(),
         loadPeople('team'),
         loadPeople('guests'),
+        queryCollection(event, 'featureCatalog').first(),
+        queryCollection(event, 'changelog').select('path', 'title').all(),
     ])
     const people = { ...teamPeople, ...guestPeople }
     // Full post bodies are heavy - cap the feed to the most recent posts rather
     // than shipping the entire multi-megabyte blog archive on every request.
     const entries = allEntries.filter(entry => !isFuturePost(entry.date)).slice(0, 20)
+
+    // Mirrors useReleaseFeaturePage: splices plan-availability badges and changelog/docs
+    // links into a release blog's body, resolved from its `features:` frontmatter.
+    const changelogTitles: Record<string, string> = Object.fromEntries(
+        changelogPosts.map(post => [`${post.path.replace(/\/+$/, '')}/`, post.title]),
+    )
+    function withReleaseFeatures(entry: typeof entries[number]) {
+        if (!entry.release || !entry.features?.length || !entry.body?.value) return entry.body
+        const resolved = resolveReleaseFeatures(entry.features, catalog, entry.release, changelogTitles)
+        return { ...entry.body, value: injectReleaseFeatures(entry.body.value, resolved) }
+    }
 
     const updated = entries[0]?.date ? new Date(entries[0].date).toISOString() : new Date(0).toISOString()
 
@@ -121,7 +161,7 @@ export default defineEventHandler(async (event) => {
             .filter(Boolean)
             .map(name => `<author><name>${escapeXml(name)}</name></author>`)
             .join('\n        ')
-        const bodyHtml = renderBodyToHtml(entry.body).replace(/]]>/g, ']]&gt;')
+        const bodyHtml = renderBodyToHtml(withReleaseFeatures(entry)).replace(/]]>/g, ']]&gt;')
         return `    <entry>
         <id>${absoluteUrl}</id>
         <title>${escapeXml(entry.title)}</title>
