@@ -7,7 +7,6 @@ const { entries, totalPages } = useChangelogList(props.page)
 
 useSeoMeta({
     title: 'Changelog',
-    ogTitle: 'Changelog',
 })
 </script>
 
