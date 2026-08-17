@@ -121,3 +121,4 @@ When a meeting needs to be moved:
 * Ensure buffer times remain intact.
 * Investor or board meetings may not be moved without direct CEO approval.
 * OOO boundaries must be respected unless the matter is urgent or board-related.
+* Internal meetings with the CEO may be rescheduled without approval if the requested slot is vacant on his calendar.
