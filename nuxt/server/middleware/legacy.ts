@@ -12,6 +12,12 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
 const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you']
 
+// Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
+// already falls through to the 11ty proxy by default). Remove entries here as they migrate:
+// / (homepage), /about, /ai, /blueprints, /careers, /community, /email-signature, /events,
+// /free-consultation, /industries, /landing, /node-red, /partners, /platform,
+// /professional-services, /support, /use-cases, /vs, /webinars
+
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
 
