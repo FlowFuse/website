@@ -70,6 +70,17 @@ function collectProductRoutes (dir: string): string[] {
     return routes
 }
 
+// Same idea as collectApplicationGuideRoutes above, for customer stories (flat
+// src/customer-stories/ dir, see content.config.ts).
+function collectStoryRoutes(dir: string): string[] {
+    const routes = ['/customer-stories/']
+    for (const file of readdirSync(dir)) {
+        if (!file.endsWith('.md')) continue
+        routes.push(`/customer-stories/${basename(file, '.md')}/`)
+    }
+    return routes
+}
+
 // Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
 // pages (and their own pagination, 19 entries/page) can be sized correctly, and its
 // `authors` so the /blog/author/{slug}/ pages can be enumerated.
@@ -361,6 +372,7 @@ export default defineNuxtConfig({
                     ...blogFiles.map(f => f.route),
                     ...blogAuthorRoutes,
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                    ...collectStoryRoutes(join(__dirname, '../src/customer-stories')),
                 ]
             })(),
             crawlLinks: false,
