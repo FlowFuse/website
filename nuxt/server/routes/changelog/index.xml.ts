@@ -28,7 +28,10 @@ type MinimarkNode = string | [string, Record<string, unknown> | null, ...Minimar
 const VOID_TAGS = new Set(['img', 'br', 'hr'])
 
 function absoluteUrl(url: string): string {
-    if (/^https?:\/\//.test(url)) return url
+    // Any URI with a scheme (https:, mailto:, tel:, ...) or an in-page anchor
+    // is already a complete reference - only a bare site-relative path needs
+    // the origin prepended.
+    if (/^[a-z][a-z0-9+.-]*:/i.test(url) || url.startsWith('#')) return url
     return `https://flowfuse.com${url.startsWith('/') ? '' : '/'}${url}`
 }
 
@@ -96,7 +99,7 @@ export default defineEventHandler(async (event) => {
             .join('\n        ')
         // Mirrors the changelog page: FeatureTierBadges is looked up by this entry's own
         // path against the feature catalog, not embedded in the markdown body.
-        const feature = findFeatureByChangelog(catalog, entry.path)
+        const feature = catalog ? findFeatureByChangelog(catalog, entry.path) : null
         const badges = planBadges(featurePlanLabels(feature)) as Array<{ plan: string, href: string }>
         const badgesHtml = badges.length
             ? `<p>Available in: ${badges.map(badge => `<a href="${escapeXml(absoluteUrl(badge.href))}">${escapeXml(badge.plan)}</a>`).join(', ')}</p>`

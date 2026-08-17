@@ -80,7 +80,10 @@ type MinimarkNode = string | [string, Record<string, unknown> | null, ...Minimar
 const VOID_TAGS = new Set(['img', 'br', 'hr'])
 
 function absoluteUrl(url: string): string {
-    if (/^https?:\/\//.test(url)) return url
+    // Any URI with a scheme (https:, mailto:, tel:, ...) or an in-page anchor
+    // is already a complete reference - only a bare site-relative path needs
+    // the origin prepended.
+    if (/^[a-z][a-z0-9+.-]*:/i.test(url) || url.startsWith('#')) return url
     return `https://flowfuse.com${url.startsWith('/') ? '' : '/'}${url}`
 }
 
@@ -183,7 +186,7 @@ export default defineEventHandler(async (event) => {
         changelogPosts.map(post => [`${post.path.replace(/\/+$/, '')}/`, post.title]),
     )
     function withReleaseFeatures(entry: typeof entries[number]) {
-        if (!entry.release || !entry.features?.length || !entry.body?.value) return entry.body
+        if (!catalog || !entry.release || !entry.features?.length || !entry.body?.value) return entry.body
         const resolved = resolveReleaseFeatures(entry.features, catalog, entry.release, changelogTitles)
         return { ...entry.body, value: injectReleaseFeatures(entry.body.value, resolved) }
     }
