@@ -134,7 +134,7 @@ metaTitle: "Digital Work Instructions Dashboard"
 
 Use it when the on-page `title` is written for readers (descriptive, sometimes long) but doesn't make a good search-result or tab title. When set, it renders as `{metaTitle} • FlowFuse Blog` in both places; when omitted, the browser tab and share title fall back to `{title} • FlowFuse Blog`.
 
-Keep `metaTitle` under 60 characters (including the ` • FlowFuse Blog` suffix) so it doesn't get truncated in Google search results, and keyword-forward — it's for SEO/CTR in search results and social previews, not for readability on the page itself.
+Keep `metaTitle` itself to 60 characters or fewer (before the ` • FlowFuse Blog` suffix is added) so the full title doesn't get truncated in Google search results, and keyword-forward — it's for SEO/CTR in search results and social previews, not for readability on the page itself.
 
 ### Subtitle
 
