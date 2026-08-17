@@ -175,7 +175,7 @@ Most MQTT implementations require setting up a separate broker either paying for
 
 Traditional PLC-to-cloud setups typically involve several moving parts: edge gateways running protocol drivers, a separate MQTT broker (cloud-hosted or self-managed), and your destination cloud services. Each layer adds configuration work, licensing costs, and potential failure points. When data stops flowing, you end up troubleshooting across multiple systems to locate the issue.
 
-FlowFuse consolidates those layers into a single integrated platform. It vides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
+FlowFuse consolidates those layers into a single integrated platform. It provides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
 
 To use the FlowFuse MQTT broker, you'll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
 
