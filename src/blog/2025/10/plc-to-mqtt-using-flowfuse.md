@@ -121,7 +121,7 @@ The Node-RED ecosystem that powers FlowFuse offers comprehensive tocol support. 
 - `node-red-contrib-omron-fins` – Omron PLCs
 - and many more
 
-Adding a tocol node to your FlowFuse instance takes just a few clicks. Open the palette manager from the hamburger menu, select **Manage palette**, go to the **Install** tab, and search for the node you need.
+Adding a protocol node to your FlowFuse instance takes just a few clicks. Open the palette manager from the hamburger menu, select **Manage palette**, go to the **Install** tab, and search for the node you need.
 
 ## Convincing the IT Team
 
