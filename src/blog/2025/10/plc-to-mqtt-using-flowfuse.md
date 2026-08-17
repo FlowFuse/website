@@ -117,7 +117,7 @@ The Node-RED ecosystem that powers FlowFuse offers comprehensive tocol support. 
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
 - `node-red-contrib-opcua` – OPC UA servers
 - `node-red-contrib-cip-ethernet-ip` – Allen-Bradley PLCs
-- `node-red-contrib-mctocol` – Mitsubishi PLCs
+- `node-red-contrib-mcprotocol` – Mitsubishi PLCs
 - `node-red-contrib-omron-fins` – Omron PLCs
 - and many more
 
