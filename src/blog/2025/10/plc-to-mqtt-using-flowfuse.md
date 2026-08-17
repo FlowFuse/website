@@ -127,7 +127,7 @@ Adding a protocol node to your FlowFuse instance takes just a few clicks. Open t
 
 When talking to people in the IIoT community, one recurring challenge always comes up, **convincing the IT team**.
 
-Traditional industrial gateways require inbound connections from the cloud. This means opening specific ports in your firewall, creating security exceptions, and giving external systems a pathway into your duction network. IT security teams push back on this, and rightly so. Inbound connections expand your attack surface and violate the principle of defense in depth.
+Traditional industrial gateways require inbound connections from the cloud. This means opening specific ports in your firewall, creating security exceptions, and giving external systems a pathway into your production network. IT security teams push back on this, and rightly so. Inbound connections expand your attack surface and violate the principle of defense in depth.
 
 FlowFuse solves this with an **edge-first architecture**. The Device Agent installs directly on hardware inside your factory network, a Raspberry Pi, an industrial PC, or even directly on supported PLCs. Once running, the agent initiates **outbound** connections to the FlowFuse platform using standard web tocols (HTTPS and WebSocket over port 443). All communication flows through this outbound connection. The platform never initiates connections back to your network.
 
