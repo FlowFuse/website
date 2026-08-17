@@ -159,7 +159,7 @@ You can use a **Change** node to:
 
 **Function Nodes for Custom Logic**
 
-Function nodes vide full JavaScript access for complex requirements. Write custom logic, install npm packages, and access the complete JavaScript standard library when Change nodes and JSONata reach their limits.
+Function nodes provide full JavaScript access for complex requirements. Write custom logic, install npm packages, and access the complete JavaScript standard library when Change nodes and JSONata reach their limits.
 
 *Tip: Use the [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to generate function nodes. Describe the transformation you need in plain English, and it will create the code for you. For best results, vide sample input data to ensure the output matches your requirements.*
 
