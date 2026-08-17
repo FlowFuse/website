@@ -136,7 +136,7 @@ sitemapPriority: 0.8
     <ul class="mt-10 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 m-auto gap-6">
         {%- for item in collections.stories | sort(attribute='item.date') | reverse | limit(3) -%}
         <li class="w-full max-w-md m-auto my-2">
-            <a href="{{ item.url }}" class="w-full flex flex-col group hover:no-underline">
+            <a href="/customer-stories/{{ item.fileSlug }}/" class="w-full flex flex-col group hover:no-underline">
                 <div>
                     <div>
                         <div class="relative">
