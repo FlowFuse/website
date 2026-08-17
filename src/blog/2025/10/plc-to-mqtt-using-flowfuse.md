@@ -136,7 +136,7 @@ No new inbound rules. No DMZ setup. No VPN tunnels to maintain.
 
 The device agent behaves like any other business application making secure outbound HTTPS requests, something your network already allows.  
 
-For networks with xy servers, the agent supports standard xy configurations through environment variables. For air-gapped networks, you can pre-cache Node-RED modules and deploy without internet connectivity after the initial setup.
+For networks with proxy servers, the agent supports standard proxy configurations through environment variables. For air-gapped networks, you can pre-cache Node-RED modules and deploy without internet connectivity after the initial setup.
 
 ## Step 2: Transform and Structure Your Data
 
