@@ -14,6 +14,42 @@ const CTA_IMAGE_DESTINATIONS: Record<string, string> = {
     pricing: '/pricing',
 }
 
+// Mirrors nuxt/components/BlogPostCta.vue's CTA_VARIANTS and fixed Cta*
+// button labels (see CtaSignUp/CtaBookDemo/CtaContactUs) - every post ends
+// with this block, defaulting to 'sign-up' when frontmatter `cta` is unset
+// or names an unrecognised type.
+const END_CTA_VARIANTS: Record<string, { title: string, description: string, label: string }> = {
+    'sign-up': {
+        title: 'Start building with your own industrial data',
+        description: 'Connect your systems, automate workflows, and see what’s possible in your environment.',
+        label: 'Try it out',
+    },
+    demo: {
+        title: 'See how FlowFuse works in real environments',
+        description: 'Walk through real use cases and see how teams connect systems, automate workflows, and deploy at scale.',
+        label: 'Book a Demo',
+    },
+    contact: {
+        title: 'Discuss your use case with our team',
+        description: 'See how FlowFuse can support your architecture, integrations, and deployment needs.',
+        label: 'Contact Us',
+    },
+    pricing: {
+        title: 'Explore plans that fit your deployment',
+        description: 'Compare options based on your scale, infrastructure, and security requirements.',
+        label: 'View Pricing',
+    },
+}
+
+function buildEndCta(entry: { cta?: { type?: string, title?: string, description?: string } | null }): string {
+    const type = entry.cta?.type && END_CTA_VARIANTS[entry.cta.type] ? entry.cta.type : 'sign-up'
+    const variant = END_CTA_VARIANTS[type]
+    const title = entry.cta?.title || variant.title
+    const description = entry.cta?.description || variant.description
+    const href = CTA_IMAGE_DESTINATIONS[type]
+    return `<p><strong>${escapeXml(title)}</strong></p><p>${escapeXml(description)}</p><p><a href="${escapeXml(absoluteUrl(href))}">${escapeXml(variant.label)}</a></p>`
+}
+
 async function loadPeople(mount: string): Promise<Record<string, { name: string }>> {
     const storage = useStorage(`assets:${mount}`)
     const people: Record<string, { name: string }> = {}
@@ -161,7 +197,7 @@ export default defineEventHandler(async (event) => {
             .filter(Boolean)
             .map(name => `<author><name>${escapeXml(name)}</name></author>`)
             .join('\n        ')
-        const bodyHtml = renderBodyToHtml(withReleaseFeatures(entry)).replace(/]]>/g, ']]&gt;')
+        const bodyHtml = (renderBodyToHtml(withReleaseFeatures(entry)) + buildEndCta(entry)).replace(/]]>/g, ']]&gt;')
         return `    <entry>
         <id>${absoluteUrl}</id>
         <title>${escapeXml(entry.title)}</title>
