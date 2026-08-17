@@ -1,7 +1,7 @@
 ---
 title: "What's the Difference Between Node-RED and FlowFuse"
 subtitle: "Understanding how FlowFuse extends Node-RED from a powerful development tool to a scalable enterprise platform"
-description: "Learn the key differences between Node-RED and FlowFuse. Discover how FlowFuse adds enterprise security, team collaboration, device management, and observability to Node-RED, making it ready for production at scale."
+description: "Learn the key differences between Node-RED and FlowFuse: enterprise security, team collaboration, and production readiness."
 lastUpdated: 2026-06-19
 date: 2025-10-08
 keywords: node-red vs flowfuse, difference between node-red and flowfuse, enterprise node-red
@@ -47,6 +47,9 @@ For small projects, prototypes, and learning, Node-RED provides what you need wi
 Your Node-RED flow works. It monitors equipment, processes data, and displays dashboards. Then the question arises: *'Can we deploy this across all 50 of our factories efficiently, without wasting time or money?*
 
 That question exposes the limitations of standalone Node-RED:
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 You need to deploy to 50 sites across three continents without manual setup at each location. Five engineers need to work on improvements without conflicts. You need alerts when any instance goes down because downtime stops production and costs money. Your security team requires SSO integration, role-based access control, and audit trails. You need to push updates to all sites at once, not travel to each location over weeks. When someone deploys a breaking change on Friday afternoon, you need to roll it back in seconds.
 

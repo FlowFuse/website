@@ -1,7 +1,7 @@
 ---
 title: "EtherNet/IP Integration with FlowFuse: Communicating with Allen-Bradley PLCs"
 subtitle: "A guide to connected and unconnected EtherNet/IP communication with FlowFuse"
-description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using EtherNet/IP. This guide covers connected and unconnected messaging, reading and writing tags, and building industrial automation workflows in Node-RED."
+description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using EtherNet/IP, covering messaging, tags, and automation workflows."
 lastUpdated: 2026-06-19
 date: 2025-10-10
 authors: ["sumit-shinde"]
@@ -96,6 +96,9 @@ Used for PLCs that connect directly via Ethernet without backplane routing, such
 **With Routing:**
 Used for chassis-based PLCs like ControlLogix and CompactLogix, where the processor sits in a backplane slot. In this case, the slot number must be specified, as it automatically creates a routing path through the backplane to reach the processor.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Unconnected Messaging
 
 Unconnected messaging sends individual requests without maintaining a persistent connection. Each transaction is standalone, request, response, done.
@@ -168,7 +171,7 @@ After configuring the endpoint, you need to specify which tags you want to read 
 
 4. Repeat this process for each tag you want to monitor or control. You can add multiple tags that will all use the same PLC connection you configured earlier.
 
-![Adding tags to read and write](./images/adding-tags.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Adding tags to read and write" width="800" height="628" preload="none"><source src="/blog/2025/10/images/adding-tags.webm" type="video/webm" /></video>
 _Adding tags to read and write_
 
 If your tag belongs to a different scope, click the “+ Add” button at the top to create a new scope. Then, within that scope, add the tags in the same manner.

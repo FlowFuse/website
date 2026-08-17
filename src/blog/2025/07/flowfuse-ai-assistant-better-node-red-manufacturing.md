@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse Expert: Let Your Engineers Build Automation, Not Write Code"
 subtitle: "Make Node-RED do more without writing code."
-description: "FlowFuse Expert helps manufacturing teams write Node-RED function nodes, parse machine data, and create custom dashboards. Learn how it works with real examples."
+description: "FlowFuse Expert helps manufacturing teams write Node-RED function nodes, parse machine data, and build custom dashboards."
 date: 2025-07-29
 authors: ["sumit-shinde"]
 keywords: AI in manufacturing, manufacturing automation, Node-RED automation, FlowFuse Expert, smart manufacturing, industrial IoT, custom dashboard manufacturing, function nodes
@@ -49,7 +49,7 @@ With FlowFuse Expert, the process changes completely. Your engineer opens a func
 
 The engineer reviews the code, tests it with their data, and moves on to solving actual manufacturing problems instead of wrestling with JavaScript syntax.
 
-![FlowFuse Expert generating a Node-RED function node to extract data from a CNC text report.](./images/function-ai.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert generating a Node-RED function node to extract data from a CNC text report." width="1258" height="720" preload="none"><source src="/blog/2025/07/images/function-ai.webm" type="video/webm" /></video>
 _FlowFuse Expert generating a Node-RED function node to extract data from a CNC text report._
 
 ## Creating Test Data in Seconds, Not Hours
@@ -62,7 +62,7 @@ With FlowFuse Expert, just ask:
 
 It's as simple as that.
 
-![FlowFuse Expert generating test JSON data with multiple machine records including production counts and efficiency metrics](./images/json-ai.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert generating test JSON data with multiple machine records including production counts and efficiency metrics" width="1356" height="720" preload="none"><source src="/blog/2025/07/images/json-ai.webm" type="video/webm" /></video>
 _FlowFuse Expert creating realistic test data for manufacturing dashboards, complete with machine IDs, production metrics, and maintenance dates._
 
 ## Building Custom Dashboards Without Web Development
@@ -77,14 +77,14 @@ With FlowFuse Expert, just describe what you need:
 
 > "Create a Pareto chart widget showing defect counts as bars with a cumulative percentage line. Include the 80% threshold."
 
-![FlowFuse Expert creating custom dashboard components and styling for manufacturing displays](./images/dashboard-ai.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert creating custom dashboard components and styling for manufacturing displays" width="1364" height="720" preload="none"><source src="/blog/2025/07/images/dashboard-ai.webm" type="video/webm" /></video>
 _FlowFuse Expert building both custom widgets and styling existing components for manufacturing dashboards._
 
 Or consider input boxes for operator data entry that look too modern. Your team prefers the familiar green LCD screens they've used for decades, you can ask FlowFuse Expert:
 
 > "Add CSS that makes the input with classes 'calculator' and 'text-input' look like an old green LCD calculator screen."
 
-![FlowFuse Expert generating CSS to style input fields with green LCD calculator display appearance](./images/css-ai.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert generating CSS to style input fields with green LCD calculator display appearance" width="1364" height="720" preload="none"><source src="/blog/2025/07/images/css-ai.webm" type="video/webm" /></video>
 _FlowFuse Expert creating CSS that transforms standard input boxes into retro LCD displays with glowing green text._
 
 Whether creating new widgets or styling existing ones, FlowFuse Expert handles the Vue.js and CSS complexity. You describe the outcome, it generates the code.
@@ -95,7 +95,7 @@ Production flows evolve over years into complex systems. Hundreds of nodes, crit
 
 FlowFuse Expert's Flow Explainer solves this. Select any flow or group of nodes, click "Explain," and get instant documentation. It analyzes connections, reads function code, and generates clear explanations of what everything does and why.
 
-![FlowFuse Expert explaining the purpose and behavior of a complex Node-RED flow in plain language.](./images/flow-expainer-ai.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert explaining the purpose and behavior of a complex Node-RED flow in plain language." width="1364" height="720" preload="none"><source src="/blog/2025/07/images/flow-expainer-ai.webm" type="video/webm" /></video>
 _FlowFuse Expert turning complex flows into clear documentation for easy knowledge transfer._
 
 ## Start Building Today

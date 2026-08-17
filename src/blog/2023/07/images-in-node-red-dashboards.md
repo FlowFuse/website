@@ -97,6 +97,9 @@ Before we begin, ensure you have the following custom nodes installed:
 
 [FlowFuse's static assets](https://flowforge.com/docs/user/static-asset-service/) service provides a simple way to manage images and other assets in Node-RED. Follow these steps to quickly add images to your Node-RED dashboard.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Steps to Add Images Using the Static Asset Service:
 
 ##### 1. Access the Static Assets Service
@@ -226,7 +229,7 @@ You can import this flow into Node-RED using the code below:
 
 I have also included some simple dashboard elements you can view alongside the images. Let's take a look at the dashboard:
 
-![The dashboard showing our images alongside other standard elements](./images/the-dashboard.gif "The dashboard showing our images alongside other standard elements")
+<video autoplay loop muted playsinline aria-label="The dashboard showing our images alongside other standard elements" width="646" height="656" preload="none"><source src="/blog/2023/07/images/the-dashboard.webm" type="video/webm" /></video>
 
 If you import these flows into Node-RED, you should see the images automatically loaded into the dashboard when you view it. You can also replace the URLs and file paths to try using some different images if you'd like to.
 

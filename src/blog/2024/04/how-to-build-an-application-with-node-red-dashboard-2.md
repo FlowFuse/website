@@ -1,7 +1,7 @@
 ---
 title: "How to Build An Application With Node-RED Dashboard 2.0 (2026)"
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
-description: Learn to build custom applications effortlessly with Node-RED Dashboard 2.0. This step-by-step guide walks you through building a personalized, secure, and fully functional application.
+description: "Learn to build custom applications effortlessly with Node-RED Dashboard 2.0 in this step-by-step, secure application guide."
 lastUpdated: 2026-06-03
 date: 2024-04-25
 authors: ["sumit-shinde"]
@@ -81,8 +81,7 @@ Before you begin the application development process, please make sure that Flow
 
 ## Building Task Management application
 
-!["Screenshot of the Todo application built with Node-RED Dashboard 2.0"](./images/building-an-application-with-dashboard-2-task-management-system.gif 
-"Screenshot of the task management system built with Node-RED Dashboard 2.0"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video of the Todo application built with Node-RED Dashboard 2.0" width="800" height="450" preload="none"><source src="/blog/2024/04/images/building-an-application-with-dashboard-2-task-management-system.webm" type="video/webm" /></video>
 
 Throughout this guide, we will be building a simple, secure, and personalized Task management application that will allow users to create and view their tasks.
 

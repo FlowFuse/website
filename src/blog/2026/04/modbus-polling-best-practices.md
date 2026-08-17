@@ -42,6 +42,9 @@ Consider what's actually living in a typical Modbus device: a temperature readin
 
 **Polling too slow loses events.** A motor fault flag that goes high for 800ms and then clears on its own will be completely invisible to a 1-second polling interval. Not occasionally invisible, reliably invisible. The bit flipped, the motor logged an internal fault, the fault self-cleared, and your polling cycle saw nothing but normal values on both sides of the event. You'll hear about that fault months later when the motor fails completely and maintenance pulls the device logs.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 The fix isn't complicated, but it requires making a deliberate decision you've probably been deferring: **categorize your data by how fast it actually changes, then assign poll rates to match.**
 
 A practical starting framework for most industrial installations:

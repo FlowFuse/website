@@ -1,7 +1,7 @@
 ---
 title: "How to Connect Industrial Edge Devices to AWS IoT Core"
 subtitle: "Send industrial data from the edge to AWS securely over MQTT"
-description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates. This step-by-step guide covers creating an IoT Thing, generating certificates, configuring policies, and publishing your first message from FlowFuse."
+description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates, from creating a Thing to publishing messages."
 lastUpdated: 2026-06-19
 date: 2026-04-16
 keywords: FlowFuse, AWS IoT Core, MQTT, X.509, IoT, industrial IoT, edge to cloud
@@ -242,7 +242,7 @@ Confirm the message arrived in AWS using the built-in MQTT test client.
 3. Go back to FlowFuse and click the inject button again.
 4. The message appears in the AWS test client within seconds.
 
-!["AWS IoT Core MQTT test client showing the successfully received JSON payload on the flowfuse/telemetry topic"](./images/flowfuse-to-aws.gif)
+<video autoplay loop muted playsinline aria-label="AWS IoT Core MQTT test client showing the successfully received JSON payload on the flowfuse/telemetry topic" width="1280" height="619" preload="none"><source src="/blog/2026/04/images/flowfuse-to-aws.webm" type="video/webm" /></video>
 _AWS MQTT test client showing the received JSON message on the flowfuse/telemetry topic_
 
 You've successfully connected FlowFuse to AWS IoT Core. Data published from your FlowFuse instance now flows securely into AWS over mutual TLS, ready to be routed to Lambda, DynamoDB, S3, or any other service in your stack via IoT Core rules.

@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.8: Static File Service, LDAP Updates & More"
 subtitle: Let's take a look at the new features and improvements in FlowFuse 2.8
-description: Let's take a look at the new features and improvements in FlowFuse 2.8
+description: "FlowFuse 2.8 introduces a Static File Service, LDAP updates, and more new features and improvements for the platform overall."
 date: 2024-08-29
 authors: ["joe-pavitt"]
 image: /blog/2024/08/images/release-2-8-august-2024.png

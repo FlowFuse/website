@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useDocsNavTree, findDocsBreadcrumb } from '~/composables/useDocsNav'
+
 definePageMeta({ layout: 'default' })
 
 const route = useRoute()
@@ -27,6 +29,9 @@ if (page.value.layout === 'redirect' && page.value.redirect?.to) {
 
 const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Documentation')
 
+// Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
+const plans = useDocsPlans(contentPath)
+
 useHead({
     title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Docs` : 'FlowFuse Documentation'),
     meta: [
@@ -34,13 +39,16 @@ useHead({
     ],
 })
 
-const breadcrumbs = computed(() => {
-    const parts = ['docs', ...slugParts.value]
-    let path = ''
-    return parts.map(part => {
-        path += '/' + part
-        return { name: part, path }
-    })
+// Same key+handler DocsLeftNav uses, so useAsyncData dedupes into one fetch per request.
+const { data: navGroups } = await useDocsNavTree()
+
+const breadcrumbItems = computed(() => {
+    const crumbs = findDocsBreadcrumb(navGroups.value ?? [], route.path)
+    const withRoot = [{ title: 'Docs', path: '/docs' }, ...crumbs]
+    return withRoot.map((crumb, i) => ({
+        label: crumb.title,
+        ...(i === withRoot.length - 1 ? {} : { to: crumb.path }),
+    }))
 })
 </script>
 
@@ -57,15 +65,7 @@ const breadcrumbs = computed(() => {
           <!-- Breadcrumbs + Search bar -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
-              <nav aria-label="Breadcrumb" class="text-sm text-gray-500">
-                <span v-for="(crumb, i) in breadcrumbs" :key="crumb.path">
-                  <NuxtLink v-if="i < breadcrumbs.length - 1"
-                    :href="crumb.path"
-                    class="hover:text-indigo-600 capitalize">{{ crumb.name }}</NuxtLink>
-                  <span v-else class="capitalize text-gray-700">{{ crumb.name }}</span>
-                  <span v-if="i < breadcrumbs.length - 1" class="mx-1">/</span>
-                </span>
-              </nav>
+              <Breadcrumbs :items="breadcrumbItems" />
             </div>
             <div class="w-full mb-1">
               <AlgoliaSearch index-filter="category:docs" placeholder="Search in Docs..." source-id="docs" />
@@ -77,6 +77,7 @@ const breadcrumbs = computed(() => {
         <div class="w-full">
           <div class="order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content handbook-content">
+              <FeatureTierBadges :plans="plans" />
               <ContentRenderer v-if="page" :value="page" />
             </div>
           </div>

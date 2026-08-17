@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.8 released
 subtitle: Inter-Project Communication, Default Teams, and realtime device management.
-description: Inter-Project Communication, Default Teams, and realtime device management.
+description: "FlowFuse 0.8 introduces Inter-Project Communication, Default Teams, and real-time device management for managing Node-RED at scale."
 date: 2022-08-04 12:00:00.0
 authors: ["sam-machin"]
 video: nCe_qs0G6ZQ
@@ -25,7 +25,7 @@ We've introduced our first custom FlowFuse nodes to the palette of new projects.
 These projects can be running in the cloud or on devices, with the communication powered by our own internal MQTT broker.
 Try these out today on FlowFuse Cloud by creating a new project or updating your existing project's stack. There's more information in the [README](https://github.com/FlowFuse/nr-project-nodes/blob/main/README.md) for the nodes.
 For local installs of FlowFuse, the nodes are only available with an Enterprise Edition license.
-!["Screenshot showing the message being sent from one project to another using project link nodes"](./images/ProjectLink.gif "Screenshot showing the message being sent from one project to another using project link nodes")
+<video autoplay loop muted playsinline aria-label="Video showing the message being sent from one project to another using project link nodes" width="1864" height="678" preload="none"><source src="/blog/2022/08/images/ProjectLink.webm" type="video/webm" /></video>
 
 
 [Start & Stop Flows](https://github.com/FlowFuse/flowfuse/issues/839)

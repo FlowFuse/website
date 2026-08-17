@@ -1,7 +1,7 @@
 ---
 title: "IT vs. OT: Who Actually Owns the Edge?"
 subtitle: "Who runs it, who breaks it, and why nobody wants the answer"
-description: "Most edge deployments do not fail because of technology. They fail because IT and OT never agreed on ownership. This article breaks down where that tension comes from, what it costs, and how to fix it."
+description: "Most edge deployments fail not because of technology but because IT and OT never agreed on ownership. Here's how to fix that."
 date: 2026-04-17
 keywords: IT vs OT, IT OT convergence, edge computing, industrial edge, edge ownership, IT OT integration, edge governance, edge device management, industrial IoT, Node-RED, FlowFuse
 authors: ["sumit-shinde"]

@@ -1,7 +1,7 @@
 ---
 title: "How to Ingest CSV Logs into MQTT, Databases, and Dashboards"
 subtitle: "Turn old CSV logs into live data streams using FlowFuse."
-description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards. Build real-time and batch processing pipelines with Node-RED and FlowFuse."
+description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards using FlowFuse today."
 lastUpdated: 2026-06-17
 date: 2025-11-10
 authors: ["sumit-shinde"]
@@ -399,7 +399,7 @@ Now we'll add a chart to visualize the temperature data in real-time.
 
 Once deployed, open the dashboard, you should see a real-time line chart displaying temperature values over time, with each device shown as a separate series. Data points will automatically update as new MQTT messages arrive.
 
-![Dashboard showing real-time line chart with temperature data updating as new MQTT messages arrive](./images/flowfuse-dashboard.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Dashboard showing real-time line chart with temperature data updating as new MQTT messages arrive" width="800" height="351" preload="none"><source src="/blog/2025/11/images/flowfuse-dashboard.webm" type="video/webm" /></video>
 *Live dashboard displaying real-time temperature readings from CSV data stream*
 
 ## What's Next

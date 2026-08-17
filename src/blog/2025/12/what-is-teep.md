@@ -1,7 +1,7 @@
 ---
 title: "What is TEEP? Calculation, Benchmarks & TEEP vs OEE (2026)"
 subtitle: "If you're tracking OEE, you're only seeing half the picture."
-description: "Your equipment sits idle 16+ hours daily. TEEP in 2026 measures this, OEE ignores it. Get the formula, learn when 35% TEEP beats 60%, and turn hidden capacity into profit without capital investment."
+description: "Your equipment sits idle 16+ hours daily. Learn the TEEP formula, benchmarks, and how to turn hidden capacity into profit."
 lastUpdated: 2026-06-17
 date: 2025-12-19
 keywords: TEEP, total effective equipment performance, TEEP calculation, TEEP vs OEE, OEE vs TEEP, equipment utilization, capacity planning, TEEP formula, TEEP benchmark, TEEP monitoring, overall equipment effectiveness, TEEP dashboard
@@ -43,7 +43,7 @@ meta:
     answer: "No. A low TEEP can simply reflect a deliberate single-shift schedule or low current demand rather than poor performance. The score becomes actionable only once you separate utilization losses (scheduling and demand) from operational losses (downtime, slow cycles, defects)."
 ---
 
-Total Effective Equipment Performance (TEEP) is a manufacturing KPI used to understand how much of an equipment investment is actually being utilized. While most manufacturers rely on [Overall Equipment Effectiveness (OEE)](/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/#what-is-oee%3F) to assess shop-floor performance, years of real-world use have revealed a critical blind spot: OEE only measures how well equipment runs *when it is scheduled to run*. It says nothing about the many hours assets sit idle due to planning decisions, demand patterns, labor availability, or maintenance strategy.
+Total Effective Equipment Performance (TEEP) is a manufacturing KPI used to understand how much of an equipment investment is actually being utilized. While most manufacturers rely on [Overall Equipment Effectiveness (OEE)](/blog/2025/04/what-is-an-oee-dashboard/#what-is-oee) to assess shop-floor performance, years of real-world use have revealed a critical blind spot: OEE only measures how well equipment runs *when it is scheduled to run*. It says nothing about the many hours assets sit idle due to planning decisions, demand patterns, labor availability, or maintenance strategy.
 
 <!--more-->
 
@@ -68,6 +68,9 @@ But availability now means operating time divided by total calendar time, not ju
 ## Why TEEP Matters
 
 TEEP matters because it connects operational performance to **business value**, not just shop-floor efficiency. While OEE shows how well equipment runs during scheduled shifts, it says nothing about how much of the asset you're actually using relative to what you paid for it. TEEP fills that gap.
+
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
 
 For capital-intensive manufacturing, this difference is critical. Equipment often represents millions in investment, yet much of that capacity may sit idle due to scheduling choices, demand patterns, labor availability, or maintenance strategy. TEEP makes this visible. It answers the executive-level question: **"Are we getting a return on our equipment, or is capacity hiding in plain sight?"**
 
@@ -169,7 +172,7 @@ Companies that want accurate TEEP need good data collection systems. Writing dow
 
 The money spent on measurement systems should match decision-making needs. Companies making frequent capacity investment decisions benefit from real-time TEEP monitoring. Organizations with stable capacity and clear bottlenecks might find quarterly manual calculations work fine.
 
-Building TEEP dashboards has become much simpler with modern tools. FlowFuse offers a practical solution for companies that want real-time equipment monitoring without complex programming. The platform bridges the gap between OT (Operational Technology) on the factory floor and IT systems in the office. It connects directly to your equipment, whether through [PLCs, SCADA systems](/solutions/scada/), or [machine controllers and MES platforms](/solutions/mes/), and creates visual dashboards that track performance metrics. You can see how straightforward the process is by looking at their [OEE dashboard blueprint](/blueprints/manufacturing/oee-dashboard/). The same approach works for TEEP, connect your data sources, set up the calculations, and view your equipment utilization in real-time. This makes professional-grade monitoring accessible even for smaller manufacturers or companies without dedicated programming staff.
+Building TEEP dashboards has become much simpler with modern tools. FlowFuse offers a practical solution for companies that want real-time equipment monitoring without complex programming. The platform bridges the gap between OT (Operational Technology) on the factory floor and IT systems in the office. It connects directly to your equipment, whether through [PLCs, SCADA systems](/use-cases/scada/), or [machine controllers and MES platforms](/use-cases/mes/), and creates visual dashboards that track performance metrics. You can see how straightforward the process is by looking at their [OEE dashboard blueprint](/blueprints/manufacturing/oee-dashboard/). The same approach works for TEEP, connect your data sources, set up the calculations, and view your equipment utilization in real-time. This makes professional-grade monitoring accessible even for smaller manufacturers or companies without dedicated programming staff.
 
 ***Want to see how TEEP monitoring would work for your specific equipment and production environment? [Book a demo](/book-demo/) with FlowFuse to explore how you can track equipment utilization, identify capacity opportunities, and make data-driven decisions about your manufacturing assets.***
 

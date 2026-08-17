@@ -1,7 +1,7 @@
 ---
 title: "Query Your Database with Natural Language Using FlowFuse Expert"
 subtitle: "A faster, more intuitive way to get data from your tables without writing a single line of SQL."
-description: "Learn the easiest way to connect to your database and get data, no coding knowledge required."
+description: "Learn the easiest way to connect to your database and get data using FlowFuse Expert, with no coding knowledge required."
 date: 2025-09-18
 keywords: FlowFuse Tables, SQL natural language, database queries, Query node, Node-RED, sensor data, temperature monitoring, industrial automation, low-code platform, data analysis
 authors: ["sumit-shinde"]
@@ -53,7 +53,7 @@ Now, let us test the natural language querying powered by the FlowFuse Expert:
 6. Connect a Debug node to see the results  
 7. Deploy the flow and click the Inject button to test it.
 
-![FlowFuse Expert in Query Node](./images/flowfuse-ai-assistance-table-demo.gif){data-zoomable}  
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert in Query Node" width="3024" height="1702" preload="none"><source src="/blog/2025/09/images/flowfuse-ai-assistance-table-demo.webm" type="video/webm" /></video>  
 _FlowFuse Expert in Query Node_
 
 ## Practical Query Examples

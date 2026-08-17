@@ -1,7 +1,7 @@
 ---
 title: "Monitoring and Optimizing Node-RED Flows with Open Telemetry (2026)"
 subtitle: Integrating Open Telemetry with Node-RED for Efficient Distributed Tracing
-description: Learn to integrate Open Telemetry with Node-RED to track and optimize flow performance.
+description: "Learn to integrate Open Telemetry with Node-RED in 2026 to track, monitor, and optimize your flow's overall performance."
 lastUpdated: 2026-06-03
 date: 2024-08-15
 authors: ["sumit-shinde"]
@@ -74,6 +74,9 @@ Open Telemetry is an open-source framework designed to help you monitor and unde
 In Node-RED The Open Telemetry module helps track messages by creating "spans" that record details about each message's journey. Every time a message moves from one node to another, a span is created to capture where it came from, where it’s going, and how long it took. These spans are linked together, showing the entire path of the message through the system. This makes it easier to spot slowdowns, fix problems, and improve how data moves through Node-RED. The module also makes sure this tracking information follows the message as it moves across different nodes and external services.
 
 ## Tracing in Node-RED Flows using Opentelemetry
+
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
 
 In a manufacturing plant, Node-RED manages different machines and sensors. Suppose there's a problem with the production line, such as a delay in processing or a GPIO node experiencing issues reading data. With Open Telemetry integrated, you can trace the data flow through the system to see exactly where the issue is happening. This helps you quickly identify whether the problem is with a specific node that is reading the machine data or a delay in data processing, allowing you to fix the issue faster and keep the production line running smoothly.
 

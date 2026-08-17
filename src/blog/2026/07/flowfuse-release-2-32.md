@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.32: Certified Redis, Git Pipelines for Any Server, Insights on Remote Instances, and Dark Mode"
 subtitle: "Connect DevOps pipelines to any Git server, ask your live edge data questions in plain language, and give your eyes a break on long sessions."
-description: "FlowFuse 2.32 certifies the Redis node, extends DevOps Git pipelines to any HTTPS server, and adds Insights mode on remote instances, plus dark mode, Device Agent 4, and a Plan Mode for the Expert."
+description: "FlowFuse 2.32 certifies the Redis node, extends Git pipelines to any HTTPS server, and adds Insights mode and dark theme."
 date: 2026-07-02
 authors: ["jamie-strusz"]
 image: /blog/2026/07/images/flowfuse-release-2-32.jpg

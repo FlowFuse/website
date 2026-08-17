@@ -114,6 +114,9 @@ Rather than building the flow step-by-step, the flow source code will be present
 
 ## Browse Hierarchical Server Address Space Structure With OPC UA Browser Node
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 The first flow will browse the hierarchical OPC UA Server address space structure and display it on the dashboard.
 
 ![image-20230727-085611.png](./images/opc-ua-3/image-20230727-085611.png){data-zoomable}
@@ -137,7 +140,6 @@ In our flow, we get the base folder structure by using an OPC-UA Browser node, a
 The configuration of the endpoint properties includes no security credentials, as shown below.
 
 ![endpoint-configure.png](./images/opc-ua-3/endpoint-configure.png){data-zoomable}
-
 
 Using the output of a debug node, we get from the OPC UA Browser yield a payload with an array of 5 objects.  
 
@@ -205,7 +207,6 @@ Going back to our OPC Server, we can see that exactly where that value is derive
 
 ![sim-counter-server.png](./images/opc-ua-3/sim-counter-server.png){data-zoomable}
 
-
 Now we add a `gauge` dashboard node to visualize the counter on the dashboard.  In the OPC Server, it is shown that the counter increments in a range of 0-30 in 1 count increments.  
 
 ![counter-properties.png](./images/opc-ua-3/counter-propertie.png){data-zoomable}
@@ -213,7 +214,7 @@ Now that we’ve gone through the full process of reading an OPC UA value and di
 
 The end result on the dashboard now looks like this - 
 
-![opc-read-dashboard.gif](./images/opc-ua-3/opc-read-dashboard.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the OPC UA dashboard reading live values from the server" width="800" height="450" preload="none"><source src="/blog/2023/07/images/opc-ua-3/opc-read-dashboard.webm" type="video/webm" /></video>
 ## Write OPC UA Values To Server Using OpcUa-Item and Opc-Ua-Client Nodes
 
 The next flow writes OPC UA values to the server using dashboard UI elements.  
@@ -245,7 +246,7 @@ The process is the same for `MySwitch` and `MyLevel`, the only difference being 
 
 When deployed, you can confirm values are being written to from the client to the server from the dashboard.
 
-![opc-write.gif](./images/opc-ua-3/opc-write.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing values being written from the client to the server on the dashboard" width="800" height="390" preload="none"><source src="/blog/2023/07/images/opc-ua-3/opc-write.webm" type="video/webm" /></video>
 
 ## Read Alarms & Events from OPC UA Server Using OpcUa-Event and Opc-Ua-Client Nodes
 
@@ -278,7 +279,7 @@ To make things simple, we’ll only track the last event.  But in a production s
 
 Adding alarms and events to our dashboard creates the following result - 
 
-![opc-event.gif](./images/opc-ua-3/opc-event.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing alarms and events displayed on the dashboard" width="800" height="450" preload="none"><source src="/blog/2023/07/images/opc-ua-3/opc-event.webm" type="video/webm" /></video>
 
 ## Using FlowFuse to Enhance Your Node-RED Application: Security, Scalability, and Robustness
 

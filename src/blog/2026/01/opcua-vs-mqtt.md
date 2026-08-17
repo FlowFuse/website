@@ -91,6 +91,9 @@ The broker is a single point of failure unless you architect clustering separate
 
 MQTT is deliberately minimal. This simplicity at the transport layer enables its flexibility and efficiency.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### OPC UA: The Semantic Framework
 
 OPC UA (Unified Architecture) isn't primarily about moving data; it's about describing what data means, how it relates to other data, and what operations are valid.
@@ -258,7 +261,7 @@ Work with your equipment, not against it. Siemens PLCs, Rockwell controllers, an
 
 Five hundred vibration sensors streaming to cloud storage align with MQTT's horizontal scaling through broker clusters. Fifty machines requiring discovered operations and validated method calls align with OPC UA's self-describing address spaces. Different problems, different optimal solutions.
 
-For example, you're connecting 50 CNC machines, 500 environmental sensors, [MES](/solutions/mes/), predictive maintenance, and cloud analytics.
+For example, you're connecting 50 CNC machines, 500 environmental sensors, [MES](/use-cases/mes/), predictive maintenance, and cloud analytics.
 
 ```
 - Machines → Edge: OPC UA (semantic interoperability for production coordination)

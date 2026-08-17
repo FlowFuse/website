@@ -63,6 +63,9 @@ Users will need to recreate their dashboards from scratch, as UI-Builder relies 
 
 ### FlowFuse Dashboard
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 [FlowFuse Dashboard](https://github.com/FlowFuse/node-red-dashboard/graphs/contributors), which replaced Node-RED Dashboard 1.0 in 2023, has shown consistent and high development activity. The project benefits from a dedicated team that regularly updates and improves it, ensuring it remains current with user needs and technological advancements.
 
 ![Screenshot of the FlowFuse Dashboard GitHub commit chart](./images/dashboard-2-commits.png)  
@@ -213,7 +216,6 @@ Additionally, updates about new features and enhancements are also provided thro
 UI-Builder does not have a publicly accessible project roadmap or a dedicated planning board for future updates. While development continues, details about forthcoming features and enhancements are regularly updated on the Node-RED Discourse forums by its author. 
 
 ## Summary Table
-
 
 | Feature                                  | FlowFuse Dashboard                          | UI-Builder                                       |
 |------------------------------------------|--------------------------------------------------|--------------------------------------------------|

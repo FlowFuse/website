@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-    author?: { name: string, title?: string, headshot?: string, bio?: string, email?: string, linkedin?: string, github?: string } | null
+    author?: { slug: string, name: string, title?: string, headshot?: string, bio?: string, email?: string, linkedin?: string, github?: string, twitter?: string | null } | null
 }>()
 </script>
 
@@ -15,7 +15,9 @@ defineProps<{
         />
       </div>
       <div class="flex-grow">
-        <h4 class="text-base font-medium mb-0">{{ author.name }}</h4>
+        <h4 class="text-base font-medium mb-0">
+          <NuxtLink :to="authorPath(author.slug)" class="hover:underline">{{ author.name }}</NuxtLink>
+        </h4>
         <p class="text-sm text-indigo-600 mb-3 -mt-1">{{ author.title }}</p>
         <p class="text-sm text-gray-700 mb-4">{{ author.bio }}</p>
         <div class="flex gap-3 text-sm">
@@ -27,6 +29,9 @@ defineProps<{
           </a>
           <a v-if="author.github" :href="`https://github.com/${author.github}`" target="_blank" rel="noopener" title="GitHub" class="text-gray-600 hover:text-indigo-600 transition-colors">
             <IconsGithubIcon class="w-5 h-5" />
+          </a>
+          <a v-if="author.twitter" :href="`https://twitter.com/${author.twitter}`" target="_blank" rel="noopener" title="X" class="text-gray-600 hover:text-indigo-600 transition-colors">
+            <IconsTwitterIcon class="w-5 h-5" />
           </a>
         </div>
       </div>

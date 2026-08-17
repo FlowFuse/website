@@ -1,7 +1,7 @@
 ---
 title: "How to Access Optimized Data Blocks in TIA Portal (S7-1200/1500)"
 subtitle: "Use OPC UA to read optimized data blocks by name instead of fighting with memory addresses"
-description: "Learn how to read Siemens S7-1200/1500 optimized data blocks using OPC UA and FlowFuse. Step-by-step guide with symbolic addressing for reliable PLC integration."
+description: "Learn how to read Siemens S7-1200/1500 optimized data blocks using OPC UA and FlowFuse, with reliable symbolic addressing."
 lastUpdated: 2026-06-19
 date: 2025-12-04
 keywords: Siemens S7-1200, Siemens S7-1500, optimized data blocks, TIA Portal, OPC UA, symbolic addressing, FlowFuse, Node-RED, PLC data access, S7 protocol, OPC UA client, industrial automation, PLC integration, S7-1200 OPC UA, S7-1500 OPC UA, Siemens PLC communication, reading optimized DB
@@ -96,6 +96,9 @@ OPC UA reads variables by name, not memory address. Instead of asking "what's at
 Siemens S7-1200 and S7-1500 PLCs have built-in OPC UA server. Activate it in TIA Portal, mark which variables to expose, and the PLC handles all memory mapping internally. FlowFuse connects and reads data by variable name, regardless of how the PLC organizes memory.
 
 When you modify your data block or recompile, your flows keep working because they reference variable names, not memory locations that might shift.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Prerequisites
 

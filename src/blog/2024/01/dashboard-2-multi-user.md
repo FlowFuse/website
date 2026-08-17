@@ -1,7 +1,7 @@
 ---
 title: Personalised Multi-user Dashboards with Node-RED Dashboard 2.0!
 subtitle: Explore how to build multi-user Dashboards, secured with FlowFuse Cloud!
-description: Discover how to create personalized multi-user dashboards secured with FlowFuse Cloud! Enable FlowFuse User Authentication and install the FlowFuse Node-RED Dashboard 2.0 User Addon for a customized dashboard experience.
+description: "Discover how to create personalized, secured multi-user dashboards with FlowFuse Cloud and the Dashboard 2.0 User Addon."
 date: 2024-01-24
 authors: ["joe-pavitt"]
 image: "/blog/2024/01/images/tile-dashboard-2-multi-user.png"
@@ -38,9 +38,12 @@ All instances on FlowFuse can be configured with _"FlowFuse User Authentication"
 
 ##### FlowFuse Cloud
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 _Note: Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted._
 
-The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](/certified-nodes/) catalogue, accessible to our Teams and Enterprise customers.
+The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](/integrations/?certified=1) catalogue, accessible to our Teams and Enterprise customers.
 
 Once the "FlowFuse User Authentication" option has been enabled on your instance, you can then install our plugin, `@flowfuse/node-red-dashboard-2-user-addon`, through the "Manage Palette" option in the Node-RED Editor.
 

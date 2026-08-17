@@ -1,7 +1,7 @@
 ---
 title: How to Scrape Data from Websites Using Node-RED
 subtitle: A step-by-step guide to leveraging Node-RED for efficient web scraping and automated data extraction.
-description: Learn how to use Node-RED for web scraping to efficiently collect, extract, and manage data from websites. This step-by-step guide covers everything you need to know about creating automated web scrapers using Node-RED.
+description: "Learn how to use Node-RED for web scraping to efficiently collect, extract, and manage data from websites automatically."
 date: 2024-09-16
 lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
@@ -48,6 +48,9 @@ To start scraping data, follow these steps to send an HTTP GET request to the we
 5. Click **Deploy** to save and deploy your flow.
 
 Once deployed, click the **inject** button. You will see the raw HTML printed in the debug panel.
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ### Parsing and Extracting Data from HTML
 

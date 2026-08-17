@@ -1,7 +1,7 @@
 ---
 title: "How to create and use Subflow in Node-RED (2026)"
 subtitle: A Practical Guide to Implementing Subflows in Node-RED for Efficient Workflow Management
-description: Learn how to effectively use subflows in Node-RED with this comprehensive guide. Discover the benefits, creation steps, and best practices for managing subflows to streamline your automation workflows.
+description: "Learn how to effectively use subflows in Node-RED, including the benefits, creation steps, and best practices to streamline flows."
 lastUpdated: 2026-06-03
 date: 2024-09-13
 authors: ["sumit-shinde"]
@@ -90,8 +90,11 @@ To follow along, import the following flow into your Node-RED instance.
 
 ### Creating subflow of selection
 
-![Image showing process of creating subflow from the selection](./images/selecting-and-converting-subflow.gif){data-zoomable}
-_Image showing process of creating subflow from the selection_
+<video autoplay loop muted playsinline aria-label="Video showing process of creating subflow from the selection" width="800" height="354" preload="none"><source src="/blog/2024/09/images/selecting-and-converting-subflow.webm" type="video/webm" /></video>
+_Video showing process of creating subflow from the selection_
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 1. Select the flow you want to convert into a Subflow.
 2. Open the main menu by clicking the top-right menu icon, and select "Selection to Subflow" under the Subflows option.

@@ -1,7 +1,7 @@
 ---
 title: "Processing RTSP Camera Feeds at the Edge"
 subtitle: "Turn idle camera streams into live views and AI-driven decisions, all on the plant floor"
-description: "Learn how to use the FlowFuse RTSP Video Feed node to pull frames from a camera stream, display them on a dashboard, and feed them to local AI models, without sending video off-site."
+description: "Learn how to use the FlowFuse RTSP Video Feed node to pull camera frames onto a dashboard and feed local AI models directly."
 date: 2026-06-23
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/rtsp-feeds-at-edge.png
@@ -146,7 +146,7 @@ FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we t
 
 That's a live line view anyone can pull up in a browser, with no NVR login and no separate video client.
 
-![FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible](./images/dashboard-view.gif)
+<video autoplay loop muted playsinline aria-label="FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible" width="800" height="434" preload="none"><source src="/blog/2026/06/images/dashboard-view.webm" type="video/webm" /></video>
 *FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible*
 
 > **Watch the message size.** FlowFuse Dashboard sends data over a socket connection capped at about 1 MB per message by default, and a full-resolution frame can exceed that. When it does, the message is silently dropped and the image just doesn't appear. If that happens, lower the camera resolution, keep the FPS low, or raise [`maxHttpBufferSize`](https://dashboard.flowfuse.com/user/settings.html#maxhttpbuffersize) in your instance settings.

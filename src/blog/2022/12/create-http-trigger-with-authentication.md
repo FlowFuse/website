@@ -1,7 +1,7 @@
 ---
 title: Create HTTP triggers with authentication
 subtitle: From any browser or command line you now have the ability to securely trigger your flows
-description: Learn how to create HTTP triggers with authentication in Node-RED using FlowFuse. Securely trigger flows from any browser or command line while safeguarding your endpoints with HTTP Basic Authentication.
+description: "Learn how to create HTTP triggers with authentication in Node-RED using FlowFuse, securely triggering flows from anywhere."
 date: 2022-12-07
 authors: ["rob-marcer"]
 tags:
@@ -47,7 +47,7 @@ curl -X POST https://example.flowforge.cloud/http-trigger
 => Unauthorized
 ```
 
-Let’s get it working again: (replace <username> and <password> with the details from the sticky note)
+Let’s get it working again: (replace `<username>` and `<password>` with the details from the sticky note)
 
 ```
 curl -X POST https://<username>:<password>@example.flowforge.cloud/http-trigger

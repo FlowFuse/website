@@ -1,7 +1,7 @@
 ---
 title: Static Outbound IP Addresses #9
 subtitle: Static IP addresses are here for your FlowFuse Cloud projects’ outbound connections
-description: Static IP addresses are here for your FlowFuse Cloud projects’ outbound connections
+description: "Static IP addresses are now available for your FlowFuse Cloud projects' outbound connections, simplifying firewall rules."
 date: 2022-09-27
 authors: ["rob-marcer"]
 tags:

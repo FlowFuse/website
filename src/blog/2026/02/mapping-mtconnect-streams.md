@@ -65,7 +65,7 @@ FlowFuse is an industrial application platform built on Node-RED that brings dat
 
 Before you begin, you need:
 
-- **FlowFuse instance** – An active FlowFuse account with an instance created and access to the Node-RED Editor. Sign up at https://app.flowfuse.com and follow the FlowFuse getting started guide at https://flowfuse.com/docs/user/introduction/#getting-started-with-flowfuse. If you are new to Node-RED, you can also check out our [course](https://node-red-academy.learnworlds.com/) on Node-RED.
+- **FlowFuse instance** – An active FlowFuse account with an instance created and access to the Node-RED Editor. Sign up at https://app.flowfuse.com and follow the [FlowFuse getting started guide](/docs/user/introduction/#getting-started-with-flowfuse). If you are new to Node-RED, you can also check out our [course](https://node-red-academy.learnworlds.com/) on Node-RED.
 - MTConnect agent – A CNC machine running an MTConnect agent or an MTConnect simulator such as the public agent at `agent.mtconnect.org` or a locally hosted agent
 - Network access – Connectivity from the FlowFuse instance to the MTConnect agent's HTTP endpoint, with the FlowFuse Remote Device Agent installed when connecting from cloud-hosted FlowFuse to on-premises machines
 
@@ -114,7 +114,7 @@ For this tutorial, we'll demonstrate two example data points: Controller Mode an
 
 I've provided additional data points with their `dataItemId`s below so you can practice. Try to match the dashboard shown in the image below, or create your own layout by selecting different `dataItemId`s and widget types. For more information on available dashboard widgets, see the FlowFuse documentation: [https://dashboard.flowfuse.com/nodes/widgets](https://dashboard.flowfuse.com/nodes/widgets).
 
-![MTConnect FlowFuse Dashboard at left and MTConnect demo public agent digital twin at right](./images/dashboard-with-mtconnect-agent-digital-twin.gif "MTConnect FlowFuse Dashboard at left and MTConnect demo public agent digital twin at right")
+<video autoplay loop muted playsinline aria-label="MTConnect FlowFuse Dashboard at left and MTConnect demo public agent digital twin at right" width="3014" height="1602" preload="none"><source src="/blog/2026/02/images/dashboard-with-mtconnect-agent-digital-twin.webm" type="video/webm" /></video>
 
 ### Available Data Points for Practice
 

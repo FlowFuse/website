@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
+import { getAllBlogPosts } from '../../utils/sharedContent'
+// Handed to ContentRenderer explicitly below. Nuxt Content resolves a markdown component tag
+// against a registry it builds while parsing, and reaches it through an async loader. These
+// two nodes are spliced in after parsing, so that path renders nothing in a production build
+// even though it works in dev. Passing the components directly skips the registry entirely.
+import FeatureTierBadges from '../../components/content/FeatureTierBadges.vue'
+import FeatureReleaseLinks from '../../components/content/FeatureReleaseLinks.vue'
 
 definePageMeta({ layout: 'default' })
 
@@ -31,23 +38,38 @@ if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.d
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
+// Release blogs get plan badges and changelog links injected under their `features:` headings.
+// Every other post passes straight through.
+const renderedPage = useReleaseFeaturePage(page)
+const releaseFeatureComponents = {
+    'feature-tier-badges': FeatureTierBadges,
+    'feature-release-links': FeatureReleaseLinks,
+}
+
+// Fixed key so `nuxt generate`'s shared-prerender-data caching reuses one fetch across
+// every blog route - the callback must therefore return the same result regardless of
+// which route triggers it first, so it can't branch on this page's own routeInfo.
 const { data: allPosts } = await useAsyncData(
     'blog-all-for-related',
-    () => routeInfo.value.kind === 'post'
-        ? queryCollection('blog').select('path', 'title', 'date', 'tags').order('date', 'DESC').all()
-        : Promise.resolve([])
+    async () => {
+        const all = await getAllBlogPosts()
+        // Only the fields this page needs travel into its payload; the shared cache
+        // itself holds the wider field set other pages (listing, author) need.
+        return all.map(post => ({ path: post.path, title: post.title, date: post.date, tags: post.tags }))
+    }
 )
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
+// page.body is a minimark tree: { value: MinimarkNode[] } where a node is
+// either a text string or an element array [tag, attrs, ...children].
 function extractText(node: any): string {
-    if (!node) return ''
-    if (node.type === 'text') return node.value || ''
-    if (Array.isArray(node.children)) return node.children.map(extractText).join(' ')
+    if (typeof node === 'string') return node
+    if (Array.isArray(node)) return node.slice(2).map(extractText).join(' ')
     return ''
 }
 const readingTime = computed(() => {
-    const words = extractText(page.value?.body).split(/\s+/).filter(Boolean).length
+    const words = (page.value?.body?.value || []).map(extractText).join(' ').split(/\s+/).filter(Boolean).length
     return Math.max(1, Math.ceil(words / 200))
 })
 
@@ -73,6 +95,7 @@ const tldrList = computed(() => Array.isArray(page.value?.tldr) ? page.value?.tl
 const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.value?.tldr : null)
 
 const pageTitle = computed(() => page.value?.title || 'Blog')
+provide('blogPostTitle', pageTitle)
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
 const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Blog`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
@@ -91,7 +114,6 @@ useSeoMeta({
 })
 
 if (routeInfo.value.kind === 'post') {
-    const firstAuthor = computed(() => authorMembers.value[0])
     useSchemaOrg([
         defineArticle({
             headline: pageTitle,
@@ -99,7 +121,11 @@ if (routeInfo.value.kind === 'post') {
             image: absoluteImage,
             datePublished: computed(() => page.value ? new Date(page.value.date).toISOString() : undefined),
             dateModified: computed(() => page.value ? new Date(page.value.lastUpdated || page.value.date).toISOString() : undefined),
-            author: computed(() => firstAuthor.value ? [{ name: firstAuthor.value.name, url: 'https://flowfuse.com' }] : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
+            // Each Person's @id is their /blog/author/{slug}/ page, so the article and the
+            // author page resolve to the same entity in the graph.
+            author: computed(() => authorMembers.value.length
+                ? authorMembers.value.map(authorSchema)
+                : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
         }),
         computed(() => page.value?.meta?.faq?.length ? {
             '@type': 'FAQPage',
@@ -126,17 +152,47 @@ if (routeInfo.value.kind === 'post') {
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
         <div class="flex flex-wrap items-center gap-1 text-sm text-gray-500 mt-4">
+          <div class="flex -space-x-2 mr-1">
+            <template v-if="authorMembers.length">
+              <NuxtLink
+                  v-for="author in authorMembers"
+                  :key="author.slug"
+                  :to="authorPath(author.slug)"
+                  class="block w-8 h-8 rounded-full overflow-hidden bg-indigo-300 ring-2 ring-white"
+                  :title="author.name"
+              >
+                <img
+                    v-if="author.headshot"
+                    :src="`/images/team/headshot-${author.headshot}`"
+                    :alt="author.name"
+                    class="w-full h-full object-cover"
+                >
+              </NuxtLink>
+            </template>
+            <div v-else class="block w-8 h-8 rounded-full overflow-hidden bg-indigo-300 ring-2 ring-white" title="FlowFuse">
+              <img :src="'/images/flowfuse-icon.png'" alt="FlowFuse" class="w-full h-full object-cover">
+            </div>
+          </div>
           <span>By</span>
-          <span v-for="(author, i) in authorMembers" :key="i">
-            <span v-if="i > 0">, </span>
-            <span class="font-medium">{{ author ? author.name : 'FlowFuse' }}</span>
-          </span>
+          <template v-if="authorMembers.length">
+            <span v-for="(author, i) in authorMembers" :key="author.slug">
+              <span v-if="i > 0">, </span>
+              <NuxtLink :to="authorPath(author.slug)" class="font-medium hover:underline">{{ author.name }}</NuxtLink>
+            </span>
+          </template>
+          <span v-else class="font-medium">FlowFuse</span>
           <span class="text-gray-300">|</span>
           <time :datetime="new Date(page.lastUpdated || page.date).toISOString()">
             {{ page.lastUpdated ? 'Updated ' : '' }}{{ formattedDate }}
           </time>
           <span class="text-gray-300">|</span>
           <span>{{ readingTime }} min read</span>
+          <span class="text-gray-300">|</span>
+          <NuxtLink
+              to="/handbook/marketing/content-strategy/blog/#blogging-process"
+              class="hover:underline"
+              title="Every FlowFuse article is reviewed by a subject-matter expert before publishing."
+          >Expert Reviewed</NuxtLink>
         </div>
       </div>
     </div>
@@ -167,7 +223,7 @@ if (routeInfo.value.kind === 'post') {
               </ul>
             </section>
 
-            <ContentRenderer :value="page" />
+            <ContentRenderer :value="renderedPage" :components="releaseFeatureComponents" />
           </div>
 
           <div class="mt-10">

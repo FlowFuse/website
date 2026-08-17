@@ -1,7 +1,7 @@
 ---
 title: "Poka Yoke (Poke Yoke, Bokayoke) Explained: Definition, Examples, Types (2026)"
 subtitle: "How to mistake-proof your manufacturing processes"
-description: "Learn how poka yoke prevents manufacturing defects before they happen. Discover the four types of mistake-proofing and how to implement poka yoke in your factory."
+description: "Learn how poka yoke prevents manufacturing defects before they happen, and the four types of mistake-proofing you can use."
 date: 2025-09-11
 lastUpdated: 2025-12-30
 authors: ["sumit-shinde"]
@@ -65,6 +65,9 @@ Shingo made a key distinction between human mistakes and production defects. Mis
 ## Poka Yoke Definition?
 
 Poka yoke is a systematic approach that uses automatic devices or methods to either make errors impossible or make them immediately obvious once they occur. It's any mechanism that helps equipment operators avoid mistakes by preventing, correcting, or drawing attention to human errors as they happen.
+
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
 
 The poka yoke meaning extends beyond simple error prevention. Rather than treating errors as moral failures or training deficiencies, it treats them as design problems. This lean manufacturing approach recognizes that even the most skilled workers experience moments of distraction, fatigue, or cognitive overload.
 

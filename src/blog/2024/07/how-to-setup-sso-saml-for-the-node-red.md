@@ -1,7 +1,7 @@
 ---
 title: How to Set Up SSO SAML for Node-RED
 subtitle: Step-by-step guide on setting up SSO SAML for your self-hosted FlowFuse platform
-description: Learn how to configure SSO SAML for your self-hosted FlowFuse platform using Google as the Identity Provider (IdP). Simplify user authentication across applications with this step-by-step guide.
+description: "Learn how to configure SSO SAML for your self-hosted FlowFuse platform using Google as the Identity Provider, step by step."
 date: 2024-07-17
 authors: ["sumit-shinde"]
 image: /blog/2024/07/images/sso-saml-with-node-red.png
@@ -136,7 +136,7 @@ Now that we have created the SAML app in the workspace, we need to update the Fl
 
 ### Signing in Using SSO
 
-To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user_management/#creating-new-users). Additionally, the user must already be logged in with that email in the browser.
+To sign in using SSO, users of your self-hosted FlowFuse must have a FlowFuse account created with an email ID associated with the domain configured with SSO. For more information, refer to [creating users in FlowFuse](/docs/admin/user-management/#creating-new-users). Additionally, the user must already be logged in with that email in the browser.
 
 1. Open your platform in the browser, Enter the email address in the username/email field.
 2. Click on "Login".

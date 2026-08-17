@@ -1,7 +1,7 @@
 ---
 title: "Interacting with Google Sheets from Node-RED (2026)"
 subtitle: Guide to learn how to write, read, update and delete data in Google sheet using Node-RED.
-description: Learn how to interact with Google Sheet from Node-RED to write, read, update and delete data.
+description: "Learn how to interact with Google Sheets from Node-RED in 2026: write, read, update, and delete spreadsheet data with ease."
 lastUpdated: 2026-06-03
 date: 2024-06-21
 authors: ["sumit-shinde"]
@@ -162,7 +162,7 @@ For demonstration purposes, I will write simulated sensor data which includes a 
 3. Drag the Debug node onto the canvas, which will help in debugging in case of any error.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the write operation"](./images/interacting-with-google-sheet-from-node-red-write.gif "Image showing the write operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the write operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-write.webm" type="video/webm" /></video>
 
 This flow generates a timestamp and a random number. The data is formatted as an array because I want the timestamp (the first item of the array) to be placed in column A and the random number (the second item of the array) to be placed in column B. If you want to insert data into additional columns, you can add more items to the array. For example, if you add a third item to the array, it will be placed in column C, a fourth item will be placed in column D, and so on.
 
@@ -173,7 +173,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the read operation"](./images/interacting-with-google-sheet-from-node-red-read.gif "Image showing the read operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the read operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-read.webm" type="video/webm" /></video>
 
 ### Updating Data of Cells
 
@@ -182,7 +182,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the update operation"](./images/interacting-with-google-sheet-from-node-red-update.gif "Image showing the update operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the update operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-update.webm" type="video/webm" /></video>
 
 ### Deleting Data from Cells
 
@@ -191,7 +191,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the delete operation"](./images/interacting-with-google-sheet-from-node-red-delete.gif "Image showing the delete operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the delete operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-delete.webm" type="video/webm" /></video>
 
 Below I have provided the complete flow that we have built through the guide, make sure to replace the environment variable with your environment variable added for the private key.
 

@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse Enterprise: More Power, More Confidence"
 subtitle: "Introducing Certified Nodes and AI Insights"
-description: "FlowFuse Enterprise now includes Certified Nodes and AI Insights, giving manufacturing teams the security, accountability, and speed they need to scale Node-RED confidently across sites. Here's what's new and why it matters."
+description: "FlowFuse Enterprise now includes Certified Nodes and AI Insights, giving teams the security and speed to scale Node-RED."
 keywords:
   - FlowFuse Enterprise
   - Node-RED enterprise

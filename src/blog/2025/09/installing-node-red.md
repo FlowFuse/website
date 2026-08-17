@@ -1,7 +1,7 @@
 ---
 title: "Download Node-RED for Production: Windows, Mac, Linux, Raspberry Pi (2026)"
 subtitle: Scale Node-RED from prototype to production with centralized management and 24/7 reliability
-description: "Learn how to install and run Node-RED on various platforms, such as local computer, Raspberry Pi, Mac, Linux, or Cloud. Production-ready solutions from the creators of Node-RED."
+description: "Learn how to install and run Node-RED on Windows, Mac, Linux, or Raspberry Pi, production-ready from the creators of Node-RED."
 lastUpdated: 2026-06-19
 date: 2025-09-19
 authors: ["sumit-shinde"]
@@ -68,6 +68,9 @@ After more than a decade of working directly with enterprise users deploying Nod
 
 FlowFuse makes Node-RED production-ready through centralized management across industrial infrastructure, incorporating years of real-world deployment experience from the creator of Node-RED himself.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ### Enterprise Reliability from Node-RED Experts
 
 When hardware fails, FlowFuse keeps operations running through High Availability mode that distributes processing across multiple instances. Device Agents monitor system health and provide secure remote access for engineering teams, features designed by the same team that built and maintains Node-RED's core architecture.
@@ -115,7 +118,7 @@ FlowFuse shows you a device configuration window with two options. The **One-Lin
 
 The **NPM Installation** method provides manual instructions for Windows, Mac, or Linux.
 
-![FlowFuse Device Configuration Window](./images/device-configuration-window-2.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Device Configuration Window" width="3024" height="1644" preload="none"><source src="/blog/2025/09/images/device-configuration-window-2.webm" type="video/webm" /></video>
 *Device configuration window showing installation options for the FlowFuse Device Agent*
 
 Follow the steps given within the window, which takes less than a minute to connect your device.
@@ -124,7 +127,7 @@ Follow the steps given within the window, which takes less than a minute to conn
 
 Once registered, you get complete control over your remote Node-RED instance through FlowFuse's management interface:
 
-![FlowFuse Device Management Tools](./images/ff-instance-tools.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Device Management Tools" width="3024" height="1644" preload="none"><source src="/blog/2025/09/images/ff-instance-tools.webm" type="video/webm" /></video>
 *Tools for managing Node-RED instance remotely via FlowFuse*
 
 There are even more features available at the application level and team level that you can explore. To remove infrastructure management complexity of required services such as MQTT and PostgreSQL, they are built-in and available for use.

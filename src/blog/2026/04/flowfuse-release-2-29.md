@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.29: FlowFuse Expert Comes to Self-Hosted Enterprise"
 subtitle: "Self-Hosted Enterprise customers can now enable FlowFuse Expert. Plus Azure DevOps Git support and clearer snapshot comparisons."
-description: "FlowFuse 2.29 brings FlowFuse Expert to self-hosted enterprise customers, adds Azure DevOps as a supported Git provider, and makes snapshot comparisons clearer with property-level diffs."
+description: "FlowFuse 2.29 brings FlowFuse Expert to self-hosted enterprise customers, adds Azure DevOps support, and clearer snapshot diffs."
 date: 2026-04-09
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/04/images/flowfuse-release-2-29.png
@@ -15,9 +15,9 @@ release: "2.29"
 features:
    - id: git-integration-azure
      heading: "Azure DevOps Git Integration"
-   - id: snapshot-compare
+   - id: snapshot-comparison
      heading: "See Exactly What Changed in a Snapshot"
-   - id: ff-expert
+   - id: flowfuse-expert-ai
      heading: "FlowFuse Expert, Available to More Teams and More Capable"
    - heading: "What else is new?"
 cta:
@@ -49,7 +49,7 @@ Expert responses previously surfaced information and suggestions. Acting on them
 
 Expert responses can now include clickable action links. Click one and Expert performs the action directly in your editor: opening a new flow tab, selecting the nodes it just mentioned, or importing a flow from the conversation.
 
-![Expert action links demo](/blog/2026/04/images/expert-action-links.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+<video autoplay loop muted playsinline aria-label="Expert action links demo" style="border: 2px solid #E5E7EB;" width="1400" height="886" preload="none"><source src="/blog/2026/04/images/expert-action-links.webm" type="video/webm" /></video>
 <figcaption>Expert responses can now act on your behalf, click a link and Expert opens a tab, selects nodes, or imports a flow directly in your editor.</figcaption>
 
 **Coming next:** spinning up Node-RED instances directly from Expert, letting you go from idea to running flow without leaving the chat.

@@ -1,7 +1,7 @@
 ---
 title: "Diagnosing Modbus Degradation: From CRC Errors to TCP Timeouts"
 subtitle: "CRC errors, connection exhaustion, dead poll lists, and the metrics that catch Modbus degradation early"
-description: "Modbus doesn't fail loudly. It drifts. This guide covers how to diagnose serial vs. TCP failures, eliminate dead device overhead, and build the metrics layer that tells you something is wrong before your operators do."
+description: "Modbus doesn't fail loudly, it drifts. Learn how to diagnose serial vs. TCP failures and build a metrics layer that warns you."
 date: 2026-04-29
 keywords: Modbus, Modbus RTU, Modbus TCP, RS-485, CRC errors, TCP timeouts, polling, connection exhaustion, industrial networking, SCADA, exception codes, latency, device backoff, response time, time-series monitoring
 authors: ["sumit-shinde"]
@@ -48,6 +48,9 @@ CRC errors distributed across all devices on a segment point to the shared mediu
 One failure mode that gets far less attention than it deserves: bus contention from a transmit driver that doesn't release the line cleanly.
 
 RS-485 is half-duplex. After sending a request, the master must de-assert its transmit driver before the device can respond. If the driver stays asserted even a few hundred microseconds too long (firmware timing bug, misconfigured enable pin, USB adapter with incorrect turnaround handling) the device's response overlaps with the master's still-active driver. The result is frame corruption on every transaction, every time, and it's indistinguishable from a severely damaged cable.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 A [protocol analyzer](https://en.wikipedia.org/wiki/Protocol_analyzer) confirms it immediately by showing both signals active simultaneously. Before you pull cable on a segment where every transaction is corrupted, swap the serial adapter or test with a different master. It takes ten minutes and it's right more often than people expect.
 

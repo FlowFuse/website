@@ -1,7 +1,7 @@
 ---
 title: "How to Embed Webpages on the FlowFuse Dashboard"
 subtitle: Learn how to embed external content like maps, reports, and widgets onto your FlowFuse dashboard.
-description:  Learn how to embed external web pages such as maps, reports, and widgets onto your FlowFuse dashboard. Follow this guide for easy, step-by-step instructions on improving your dashboard's functionality and collaboration.
+description: "Learn how to embed external web pages like maps, reports, and widgets onto your FlowFuse dashboard, step by step, with ease."
 date: 2025-05-13
 authors: ["sumit-shinde"]
 image: /blog/2025/05/images/emeding-webpage-on-flowfuse-dashboard.png
@@ -106,7 +106,7 @@ Some services provide an **iframe** tag. In this case, you need only copy the UR
 
 4. Click **Done** and **Deploy** to save your changes once you've added the code.
 
-![Animated weather widget on the Flowfuse dashboard, embedded with code.](./images/weather-widget.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Animated weather widget on the Flowfuse dashboard, embedded with code." width="800" height="1007" preload="none"><source src="/blog/2025/05/images/weather-widget.webm" type="video/webm" /></video>
 _Animated weather widget on the Flowfuse dashboard, embedded with code._
 
 Now that you’ve learned how to embed external content into your FlowFuse dashboard, one day you may need to embed your FlowFuse dashboard elsewhere, either on another FlowFuse dashboard or an external site. If you’ve tried and found that it’s not working as expected.

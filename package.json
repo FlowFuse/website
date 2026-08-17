@@ -91,7 +91,9 @@
         "oxc-minify": "0.131.0",
         "oxc-parser": "0.134.0",
         "oxc-transform": "0.131.0",
-        "rollup": "4.60.3"
+        "rollup": "4.60.3",
+        "@unhead/vue": "^3.2.3",
+        "unhead": "^3.2.3"
     },
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
@@ -101,7 +103,7 @@
         "algoliasearch": "^4.25.3",
         "codeowners": "^5.1.1",
         "eleventy-plugin-toc": "^1.1.5",
-        "js-yaml": "^4.3.0",
+        "js-yaml": "^4.3.1",
         "markdown-it-attrs": "^4.1.6",
         "xpath": "^0.0.34"
     }

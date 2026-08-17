@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.4: making it easier to work with Snapshots, Blueprints & Devices"
 subtitle: Our latest release introduces better ways to work with Snapshots, Blueprints, view the content of you flows in FlowFuse, and manage the version of Node-RED running on Devices
-description: FlowFuse 2.4 introduces better ways to work with Snapshots, Blueprints, view the content of you flows in FlowFuse, and manage the version of Node-RED running on Devices 
+description: "FlowFuse 2.4 introduces better ways to work with Snapshots and Blueprints, and manage the Node-RED version running on Devices."
 date: 2024-05-09 
 authors: ["rob-marcer"]
 image: /blog/2024/05/images/release-2-4-graphic.png

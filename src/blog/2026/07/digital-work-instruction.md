@@ -1,7 +1,7 @@
 ---
 title: "Building Digital Work Instructions Dashboard for the Shop Floor"
 subtitle: "Give every operator their own work instructions, progress, and production history."
-description: "Learn how to build digital work instructions with FlowFuse. Create personalized operator apps with work orders, guided steps, defect reporting, and traceability."
+description: "Learn how to build digital work instructions with FlowFuse: personalized operator apps with guided steps and traceability."
 date: 2026-07-24
 authors: ["sumit-shinde"]
 image: /blog/2026/07/images/digital-instructions-dashboard-flowfuse.png
@@ -69,7 +69,7 @@ In this article, we'll build a digital work instructions app in FlowFuse: an ope
 
 > **Note:** This demo is deliberately configured with a preset demo user so anyone can try it, even without being on the team where it's deployed. The version you build following this article uses FlowFuse User Authentication, which limits dashboard access to members of the same team.
 
-You can interact with the live demo here: <a href="https://expensive-pied-flycatcher-5052.flowfuse.cloud/dashboard/home" onclick="if (typeof capture !== 'undefined') { capture('blog-live-demo', { reference: 'Blog: {{ title | escape }}' }); }">Try the Digital Work Instruction Dashboard Demo</a>.
+You can interact with the live demo here: :live-demo-link{href="https://expensive-pied-flycatcher-5052.flowfuse.cloud/dashboard/home" label="Try the Digital Work Instruction Dashboard Demo"}.
 
 ## What You'll Need
 

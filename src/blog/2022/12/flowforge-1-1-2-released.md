@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.1.2 released
 subtitle: Release includes a fix for installing additional nodes into Node-RED.
-description: Release includes a fix for installing additional nodes into Node-RED.
+description: "FlowFuse 1.1.2 is released with a fix for installing additional nodes into Node-RED, improving overall platform stability."
 date: 2022-12-09 12:00:00.0
 authors: ["nick-oleary"]
 tags:

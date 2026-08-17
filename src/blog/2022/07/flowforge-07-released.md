@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.7 released
 subtitle: Rollbacks, Device Environment Variables and a FlowFuse Theme
-description: Rollbacks, Device Environment Variables and a FlowFuse Theme
+description: "FlowFuse 0.7 introduces Rollbacks, Device Environment Variables, and a brand new FlowFuse Theme for the platform overall. Learn about released with FlowFuse."
 date: 2022-07-07 12:00:00.0
 authors: ["sam-machin"]
 video: rl_Ln2_uEtg

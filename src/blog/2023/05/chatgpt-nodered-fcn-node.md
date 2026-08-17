@@ -1,7 +1,7 @@
 ---
 title: Chat GPT in Node-RED Function Nodes
 subtitle: New Node-RED function with embedded ChatGPT is now open-sourced and available to use!
-description: Discover how ChatGPT integrates with Node-RED function nodes, enabling automated code generation. Explore the prompt engineering process and additional features.
+description: "Discover how ChatGPT integrates with Node-RED function nodes, enabling automated code generation and the prompt process."
 date: 2023-05-02 12:00:00
 lastUpdated: 2025-07-23
 authors: ["joe-pavitt", "stephen-mclaughlin"]

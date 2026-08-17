@@ -80,6 +80,9 @@ Let's start with installing and building a stopwatch.
 
 ### Installing the Hourglass Node
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 First, install the **hourglass node** in your Node-RED instance:
 
 1. Open the Node-RED editor

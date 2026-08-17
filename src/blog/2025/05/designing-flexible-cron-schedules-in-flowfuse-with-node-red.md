@@ -1,7 +1,7 @@
 ---
 title: "Building a Flexible Node-RED Scheduler with Cron-Plus"
 subtitle: "Go Beyond Inject Nodes: Automate Smarter with Flexible Cron Schedules in Node-RED"
-description: Learn how to create powerful, flexible cron schedules in Node-RED using the cron-plus node within FlowFuse. Go beyond Inject nodes for smarter, time-based automation.
+description: "Learn how to create flexible cron schedules in Node-RED using the cron-plus node, going beyond simple Inject for automation."
 lastUpdated: 2025-12-31
 date: 2025-05-15
 authors: ["sumit-shinde","stephen-mclaughlin"]
@@ -131,8 +131,11 @@ Here are some advance patterns:
 
 To make it even easier to create and customize cron patterns, the cron-plus node includes a feature called Easy Builder. This feature provides a user-friendly interface that lets you quickly generate and adjust cron expressions without needing to write them manually. You can select options like time intervals, days of the week, and more, and the Easy Builder will generate the correct cron syntax for you.
 
-![Image showing the easy builder feature](./images/easy-builder.gif){data-zoomable}
-_Image showing the easy builder feature_
+<video autoplay loop muted playsinline aria-label="Video showing the easy builder feature" width="800" height="795" preload="none"><source src="/blog/2025/05/images/easy-builder.webm" type="video/webm" /></video>
+_Video showing the easy builder feature_
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ### Solar Event Schedules
 
@@ -371,8 +374,8 @@ Additionally, I'd like to share another demo that Steve has prepared for the com
 
 If you need to see the dynamic schedules of a specific node, double-click on it and click on the 'Dynamic Schedules' button from the configuration panel. This will show all of the dynamic schedules associated with that node.
 
-![Image showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events.](./images/dynamic-schedules-list.gif){data-zoomable}
-_Image showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events._
+<video autoplay loop muted playsinline aria-label="Video showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events." width="800" height="946" preload="none"><source src="/blog/2025/05/images/dynamic-schedules-list.webm" type="video/webm" /></video>
+_Video showing the 'Dynamic Schedules' button and the list of all dynamically scheduled events._
 
 As you can see, creating flexible and dynamic cron schedules Node-RED can give you complete control over your automation tasks. Whether it's simple, recurring events, or complex, time-sensitive triggers, the combination of cron expressions and dynamic controls allows for smarter, more efficient workflows.
 

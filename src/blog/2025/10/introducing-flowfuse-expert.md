@@ -1,7 +1,7 @@
 ---
 title: "Introducing FlowFuse Expert"
 subtitle: "Your AI expert for FlowFuse and Node-RED"
-description: "Meet FlowFuse Expert that gives you a clear recipe to build Node-RED flows, step by step."
+description: "Meet FlowFuse Expert, the AI copilot that gives you a clear, step-by-step recipe to build Node-RED flows even faster today."
 date: 2025-10-16
 keywords: node-red expert, node-red developer, flowfuse expert, iiot, industrial automation, mcp nodes, onnx nodes, ai-assisted development, rag, gpt-4.1
 authors: ["sumit-shinde"]
@@ -22,7 +22,7 @@ Instead of hunting through documentation or piecing together forum posts, you si
 
 Head over to [flowfuse.com]() and you'll see it right on the home page. Type what you're trying to build. FlowFuse Expert might ask a few questions to clarify your setup, and once you answer, it will provide a simple, easy-to-follow recipe: which nodes you need with exact copyable names, how to configure them, and how to wire them together.
 
-![FlowFuse Expert: Providing Recipe for Connecting Serial Devices](./images/flowfuse-expert.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert: Providing Recipe for Connecting Serial Devices" width="3024" height="1726" preload="none"><source src="/blog/2025/10/images/flowfuse-expert.webm" type="video/webm" /></video>
 _FlowFuse Expert: Providing a Recipe for Connecting Serial Devices_
 
 Down the road, we plan to integrate it directly into the FlowFuse environment. So if you're already using [FlowFuse Expert](/blog/2025/07/flowfuse-ai-assistant-better-node-red-manufacturing/) to speed up your development, FlowFuse Expert will be right there alongside it, answering questions and providing recipes for whatever you're trying to build.

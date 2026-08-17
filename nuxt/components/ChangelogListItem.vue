@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { findFeatureByChangelog, deriveTierLabel } from '../composables/useFeatureCatalog'
-
 const props = defineProps<{
     entry: { path: string, title: string, description?: string, date: string | Date, authors?: string[] }
 }>()
 
 const authorNames = computed(() => useAuthorNames(props.entry.authors))
 
-const catalogFeature = computed(() => findFeatureByChangelog(props.entry.path))
-const tierCloud = computed(() => deriveTierLabel(catalogFeature.value?.cloud))
-const tierSelfHosted = computed(() => deriveTierLabel(catalogFeature.value?.selfHosted))
+const plans = useChangelogPlans(() => props.entry.path)
 
 const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
 </script>
@@ -24,7 +20,7 @@ const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateStri
           <div class="author">{{ authorNames }}</div>
         </div>
       </NuxtLink>
-      <ChangelogTierBadges :cloud="tierCloud" :self-hosted="tierSelfHosted" />
+      <FeatureTierBadges :plans="plans" />
     </div>
     <div class="flex-grow pt-4">
       <div class="prose">

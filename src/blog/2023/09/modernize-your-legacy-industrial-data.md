@@ -1,7 +1,7 @@
 ---
 title: Modernize your legacy industrial data
 subtitle: Working with legacy industrial protocol data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world.
-description: Learn how to bridge legacy industrial protocols like Modbus to the IIoT era using Node-RED and buffer parsing. Explore data types, conversion challenges, and examples
+description: "Learn how to bridge legacy industrial protocols like Modbus to the IIoT era using Node-RED and buffer parsing techniques."
 date: 2023-09-14
 lastUpdated: 2025-07-23
 authors: ["stephen-mclaughlin"]
@@ -70,7 +70,7 @@ Here are 3 quick demonstrations that barely scratch the surface of possibilities
 
 #### Example 1: Modbus to MQTT
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer and passing them to an MQTT broker in 4 nodes!
-![Legacy data to MQTT](images/industrial-legacy-data-to-mqtt.gif)
+<video autoplay loop muted playsinline aria-label="Legacy data to MQTT" width="1575" height="376" preload="none"><source src="/blog/2023/09/images/industrial-legacy-data-to-mqtt.webm" type="video/webm" /></video>
 
 #### Example 2: Modbus to InfluxDB
 Converting an array of 16-bit unsigned integers to String, Float and a scaled integer for publishing to influxDB!

@@ -1,7 +1,7 @@
 ---
 title: "How to Deploy a Basic OPC-UA Server in Node-RED - Part 1 (2026)"
 subtitle: OPC-UA Server Information Modeling in Node-RED
-description: Introduction to OPC-UA and how to deploy a Node-RED server flow.
+description: "An introduction to OPC-UA and how to deploy a Node-RED server flow, Part 1 of a series on building OPC-UA servers with FlowFuse."
 lastUpdated: 2026-06-03
 date: 2023-07-13
 authors: ["richard-meyer"]
@@ -77,7 +77,6 @@ Because of OPC-UA’s wide industry acceptance, it is increasingly becoming nati
 !["Automation Pyramid"](./images/opc-ua-1/automation-pyramid.jpg "Automation Pyramid")
 *Image reference - [imagecontroltips.com](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/)*
 
-
 ## Fieldbus Model vs OPC-UA Information Model
 
 As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. 
@@ -89,7 +88,6 @@ Fieldbuses such as Profinet, Ethernet/IP, and EtherCAT, employ deterministic, re
 Traditionally, fieldbus protocols transmit only raw data from field devices (ie, a float to represent a pressure, or a boolean to represent the position of a switch).  The fieldbus data gets pushed up the automation stack layer by layer, where eventually it will be converted to a format suitable for IT systems to consume (such as OPC-UA).
 
 !["Fieldbus Model"](./images/opc-ua-1/fieldbus-model.png "Fieldbus Model")
-
 
 In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the [OPC Information model](https://reference.opcfoundation.org/Core/Part5/v104/docs/), and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
 
@@ -111,6 +109,9 @@ The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc
 ## Deploying an Example OPC-UA Server in Node-RED
 
 With some background on OPC-UA and how information is modeled in mind, we can take a look at the [node-red-contrib-opcua-server](https://flows.nodered.org/node/node-red-contrib-opcua-server) node, which is merely a compact version of the [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node that only focuses on the OPC-UA server and hence requires less dependencies.  
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
  An [example flow](https://github.com/BiancoRoyal/node-red-contrib-opcua-server/blob/master/examples/server-with-context.json) is provided on github that can serve as a basis for understanding how a OPC-UA server is constructed.  Let’s get the example server up and running.  
 
@@ -147,7 +148,6 @@ flow.set('isoOutput8', Math.random() + 8.0)
 We can confirm the values are being stored in memory by checking the flow context data and pressing the refresh button.
 
 !["Screenshot showing the Context Data option"](./images/opc-ua-1/context-data-1.png "Screenshot showing the Context Data option")
-
 
 ![Screenshot showing the flow variables in the context data tab](./images/opc-ua-1/context-data-2.png "Screenshot showing the flow variables in the context data tab")
 Each time we hit refresh, the values change, confirming that the values are randomly changing every second.

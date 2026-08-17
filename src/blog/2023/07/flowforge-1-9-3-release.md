@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 1.9.3 and Device Agent 1.9.5 released
 subtitle: A maintenance release to improve the Device Agent editor experience
-description: A maintenance release to improve the Device Agent editor experience
+description: "FlowFuse 1.9.3 and Device Agent 1.9.5 ship as a maintenance release improving the overall Device Agent editor experience."
 date: 2023-07-21
 authors: ["nick-oleary"]
 tags:
