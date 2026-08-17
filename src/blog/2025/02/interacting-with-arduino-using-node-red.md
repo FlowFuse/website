@@ -47,6 +47,9 @@ For a step-by-step guide on installing and running the FlowFuse device agent, re
 
 Now, let's download the setup to the Arduino. Before proceeding, ensure your Arduino is connected to your laptop or computer via the correct USB cable. The USB connection is essential for uploading the code (sketch) to the Arduino and will also be used by Firmata for communication later.
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 **Setting up Arduino IDE and Download the setup from examples:**
 
 1. Open the Arduino IDE on your computer.
@@ -58,9 +61,6 @@ Now, let's download the setup to the Arduino. Before proceeding, ensure your Ard
 _Importing Standard Firmata setup sketch from examples in Arduino IDE_
 
 Once the upload is complete, the Arduino is ready to communicate via the Firmata protocol.
-
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
-::
 
 ### Step 3: Connecting Node-RED to Arduino via Serial Communication
 

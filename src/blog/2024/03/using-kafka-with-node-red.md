@@ -42,6 +42,9 @@ docker run -p 9092:9092 `
 confluentinc/cp-kafka
 ```
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Running Kafka on the cloud
 To run Kafka on the cloud, you can consider utilizing any cloud service according to your preferences. For a guide on running Kafka on a cloud platform, the procedures may differ. You can refer to the documentation provided by your preferred cloud service for detailed instructions.
 
@@ -49,9 +52,6 @@ During the writing of this tutorial, I utilized [Aiven’s cloud data platform](
 
 ## Installing Dashboard 2.0
 We will be installing Dashboard 2.0 to display real-time temperature data of various regions on a chart. If you are new to Dashboard 2.0, we recommend referring to [Getting started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/)\, which covers everything from basic concepts to installation and creating your first dashboard seamlessly.
-
-:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
-::
 
 ## Installing and configuring Kafka custom node
 
@@ -136,7 +136,7 @@ Our temperature monitoring system is now complete and ready for deployment. To i
 
 !["Screenshot showing Node-RED flow of Real-time temperature monitoring system"](./images/using-kafka-with-node-red-temperature-monitoring-system-flow.png "Screenshot showing Node-RED flow of Real-time temperature monitoring system")
 
-!["Screenshot showing Dashboard 2.0 view of Real-time temperature monitoring system"](./images/using-kafka-with-node-red-temperature-monitoring-system.gif "Screenshot showing Dashboard 2.0 view of Real-time temperature monitoring system")
+<video autoplay loop muted playsinline aria-label="Video showing Dashboard 2.0 view of Real-time temperature monitoring system" width="600" height="338" preload="none"><source src="/blog/2024/03/images/using-kafka-with-node-red-temperature-monitoring-system.webm" type="video/webm" /></video>
 
 ## Conclusion 
 In this guide, we’ve gone over everything you need to know about how to get started with Kafka and Node-RED. additionally, in this article, we’re going to focus on solving a problem where the sensor data across the city need to be centrally stored for efficient monitoring and visualization. By solving this problem step-by-step, you’ll understand how to integrate Kafka into your Node-RED applications.

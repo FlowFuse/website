@@ -91,6 +91,9 @@ The broker is a single point of failure unless you architect clustering separate
 
 MQTT is deliberately minimal. This simplicity at the transport layer enables its flexibility and efficiency.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### OPC UA: The Semantic Framework
 
 OPC UA (Unified Architecture) isn't primarily about moving data; it's about describing what data means, how it relates to other data, and what operations are valid.
@@ -134,9 +137,6 @@ Security is integrated. Certificate-based authentication, message signing, and e
 Implementing an OPC UA server requires managing an address space, handling multiple services, maintaining subscriptions, and processing security handshakes. Client libraries are measured in megabytes, not kilobytes. A simple "read a value" operation involves session establishment, service negotiation, and potentially certificate exchange.
 
 This overhead is impractical for battery-powered sensors with infrequent reporting requirements. It's appropriate for a $2M manufacturing cell where understanding that a temperature reading represents "bearing temperature on the output shaft of motor 3, measured in Celsius, with a normal operating range of 40-65°C and critical alarm at 85°C" matters.
-
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ### The Layer Mismatch
 

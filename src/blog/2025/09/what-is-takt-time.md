@@ -92,6 +92,9 @@ This **formula of takt time** contains two critical components that require care
 
 ### Available Production Time
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 This is the net time available for production during your planning period (typically one shift or one day). When applying the takt formula, available production time includes only planned production time. It excludes planned breaks, meetings, shift changes, and scheduled maintenance, but does not include unplanned downtime such as breakdowns or minor stoppages. It excludes scheduled breaks and lunch periods, shift changeovers, planned maintenance windows, and scheduled meetings or training.
 
 Consider an example calculation of takt time. An eight-hour shift equals 480 minutes. Subtract a 10-minute break to yield 470 minutes. Subtract a 20-minute lunch to yield 450 minutes. Subtract a 30-minute planned changeover to yield 420 minutes. The available production time equals 420 minutes.
@@ -129,9 +132,6 @@ Now apply the takt time formula. Divide 420 minutes by 120 units to yield 3.5 mi
 Understanding the meaning of takt time in this result shows the production line must complete one brake assembly every 3.5 minutes to meet customer demand. If actual cycle time equals 5 minutes per unit, production will fall short by approximately 30 percent, completing only 84 units instead of the required 120 units. If actual cycle time equals 3 minutes per unit, the line produces 140 units, creating 20 units of excess inventory and risking overproduction waste.
 
 This example illustrates why defining takt time correctly matters for matching cycle time to customer demand. Cycle times significantly exceeding takt time reveal capacity shortfalls requiring immediate attention. Cycle times falling well below takt time suggest excess capacity that might be redeployed elsewhere or indicate risk of overproduction if production control systems fail to prevent excess output.
-
-:::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
-::
 
 ### Example 2: Electronics Assembly (Multiple Shifts)
 
@@ -274,7 +274,7 @@ Data is most valuable when operators can interpret the meaning of takt time inst
 3. Connect the output of the Inject node to the input of the Change node that calculates available production time. Next, connect the output of this Change node to the input of the Change node that calculates takt time using the formula. Finally, connect the output of the takt time Change node to the input of the UI Template node
 4. Next, deploy the flow and open the dashboard to see real-time takt time updates
 
-![Simple takt time display dashboard built with FlowFuse](./images/takt-time-flowfuse.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Simple takt time display dashboard built with FlowFuse" width="558" height="546" preload="none"><source src="/blog/2025/09/images/takt-time-flowfuse.webm" type="video/webm" /></video>
 *Real-time takt time monitoring dashboard in FlowFuse showing the takt formula in action*
 
 Here's the complete flow we built for automated takt time calculation and visualization with FlowFuse, demonstrating how to calculate takt time in real-time.

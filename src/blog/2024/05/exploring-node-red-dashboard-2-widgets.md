@@ -27,7 +27,7 @@ Widgets in Node-RED Dashboard 2.0 are the building blocks for creating a user in
 
 ## Building Applications with Dashboard 2.0 Widgets
 
-!["Income-expense tracker build with dashboard 2.0"](./images/exploring-dashboard-2-widgets-incom-expense-tracker-system.gif "Income-expense tracker build with dashboard 2.0"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Income-expense tracker built with dashboard 2.0" width="800" height="450" preload="none"><source src="/blog/2024/05/images/exploring-dashboard-2-widgets-incom-expense-tracker-system.webm" type="video/webm" /></video>
 _Income-expense tracker build with dashboard 2.0_
 
 In this guide, we'll create a basic application to input expenses and income. This will then be displayed in a chart and table for analysis. The application will utilize a wide range of widgets available in Dashboard 2.0, helping you understand and use them confidently.
@@ -54,6 +54,9 @@ The **ui-form** widget emits a payload object with key-value pairs of form eleme
 
 1. Drag a **function** node onto the canvas and add the following code. This will store the submission in the `income` global context variable, and then modify `msg.payload` to pass on a notification to any further connected nodes.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ```javascript
 // Retrieve the existing 'income' array from the global context, or initialize it as an empty array if it doesn't exist
 let income = global.get('income') || [];
@@ -75,9 +78,6 @@ return msg;
 ```
 
 Similarly, you can do this for storing expense data submitted using the expense submission form.
-
-:::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
-::
 
 ### Displaying Notifications
 

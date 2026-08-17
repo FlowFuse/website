@@ -33,6 +33,9 @@ That architecture imposes hard constraints. Only one device can transmit at a ti
 
 ![Image showing Modbus RTU on RS-485 and Modbus TCP on Ethernet.](./images/modbus-rtu-and-tcp-physical-layer.png "Image showing Modbus RTU on RS-485 and Modbus TCP on Ethernet.")
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 Modbus TCP moves the same application layer onto Ethernet and wraps it in a TCP socket. The serial constraints disappear. Multiple masters can coexist, transactions can be pipelined, and the physical layer handles collision detection and retransmission. What you gain in flexibility, you trade for a different set of assumptions. TCP guarantees delivery, but not timing. A retransmission storm on a busy network can stretch response times in ways that RTU, for all its limitations, never would.
 
 ## Latency: What the Numbers Actually Mean on the Floor
@@ -50,9 +53,6 @@ Modbus TCP removes the baud rate ceiling and adds pipelining. A well-configured 
 The catch is that Ethernet latency is not flat. It varies with network load, switch queue depth, and the TCP stack on the device side. Most of the time the numbers look excellent. Under the wrong conditions, they do not. A PLC with a modest embedded TCP stack, hit with traffic from a network scan or a broadcast storm, can stretch its response time by an order of magnitude. RTU would have delivered the same response time it always does.
 
 RTU offers better worst-case latency. TCP offers better average latency. In industrial control, worst-case is usually what you design for.
-
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 ## Failure Modes: What Breaks, How It Breaks, and Whether You Will Know
 

@@ -112,6 +112,9 @@ The device manual says this buffer breaks down as:
 - Bytes 5-6: Humidity reading
 - Bytes 7-8: CRC checksum
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 You need to extract temperature and humidity. Everything else is Modbus protocol overhead.
 
 The manual also specifies:
@@ -131,9 +134,6 @@ return msg;
 ```
 
 This works, but it's also fragile. When you need to add a pressure reading next month, you're editing code and hoping you don't break the offset calculations. When someone else looks at this flow, they have no idea what's happening without reading the function and if they don't understand JavaScript, they're stuck.
-
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 Buffer Parser turns this into configuration you can see and modify without touching code. Let's walk through a practical example.
 

@@ -119,6 +119,21 @@ export default defineContentConfig({
                 image: z.string().optional(),
                 video: z.string().optional(),
                 tags: z.array(z.string()).optional(),
+                // Release blogs only. Read by nuxt/lib/release-features.mjs to hang plan
+                // badges and changelog links off the matching section heading. Undeclared
+                // keys are stripped by @nuxt/content, so both have to be listed here.
+                release: z.string().optional(),
+                features: z.array(z.object({
+                    heading: z.string(),
+                    // A string, or several ids when one heading covers several catalog features.
+                    id: z.union([z.string(), z.array(z.string())]).optional(),
+                    // For a section that is not a catalog feature at all, e.g. "What else is new?".
+                    tiers: z.object({
+                        edge: z.boolean(),
+                        hub: z.boolean(),
+                        fleet: z.boolean(),
+                    }).optional(),
+                })).optional(),
                 tldr: z.union([z.string(), z.array(z.string())]).optional(),
                 cta: z.object({
                     type: z.string().optional(),
@@ -144,6 +159,46 @@ export default defineContentConfig({
                         })).optional(),
                     }).optional(),
                 }).optional(),
+            })
+        }),
+        // Source files stay at src/customer-stories/ (11ty's historical location) rather than
+        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
+        // The directory data file (src/customer-stories/customer-stories.json) sets
+        // `permalink: false` so 11ty keeps these in `collections.stories` (still read by a
+        // few live 11ty pages - src/landing/tulip.njk, src/node-red/index.njk,
+        // src/_includes/stories-block.njk) without also writing output files for them.
+        stories: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'customer-stories/**/*.md',
+            },
+            schema: z.object({
+                description: z.string().optional(),
+                image: z.string().optional(),
+                date: z.coerce.date(),
+                // Card-badge logo shown on the listing/related-stories tiles - distinct from
+                // story.logo below (the sidebar logo on the detail page). Most stories leave
+                // this unset even when story.logo is set; that's existing 11ty behaviour, not
+                // a migration bug. Nullable because most story files write the key with no
+                // value ("logo:"), which YAML parses as null rather than omitting the key.
+                logo: z.string().nullable().optional(),
+                usecase: z.array(z.string()).optional(),
+                subtitle: z.string().optional(),
+                hubspot: z.object({
+                    formId: z.string(),
+                }),
+                story: z.object({
+                    brand: z.string(),
+                    // Nullable for the same blank-key-in-YAML reason as top-level `logo` above.
+                    url: z.string().nullable().optional(),
+                    logo: z.string().optional(),
+                    quote: z.string().optional(),
+                    challenge: z.string(),
+                    solution: z.string(),
+                    products: z.array(z.string()),
+                    results: z.array(z.string()),
+                }),
             })
         }),
         ebooks: defineCollection({
@@ -258,12 +313,28 @@ export default defineContentConfig({
                         title: z.string(),
                         note: z.string().optional(),
                         description: z.string().optional(),
+                        docsLink: z.string().optional(),
+                        changelog: z.array(z.object({
+                            url: z.string(),
+                            release: z.string().optional(),
+                        })).optional(),
+                        subfeature: z.boolean().optional(),
+                        beta: z.boolean().optional(),
+                        // Defaults to true. False keeps the feature off /pricing while it
+                        // still carries a changelog or docs link for the badge lookups.
+                        showOnPricing: z.boolean().optional(),
+                        // Optional so a feature whose availability is not settled yet can
+                        // omit it and publish no badge at all. Everything /pricing renders
+                        // must have it, which the refine below enforces.
                         tiers: z.object({
                             edge: z.boolean(),
                             hub: z.boolean(),
                             fleet: z.boolean(),
-                        }),
-                    })),
+                        }).optional(),
+                    }).refine(
+                        feature => feature.showOnPricing === false || !!feature.tiers,
+                        { message: 'tiers is required unless showOnPricing is false', path: ['tiers'] },
+                    )),
                 })),
             })
         }),
@@ -286,6 +357,7 @@ export default defineContentConfig({
                             abbr: z.string(),
                             description: z.string(),
                             both: z.boolean().optional(),
+                            url: z.string(),
                         })),
                     })),
                 })),

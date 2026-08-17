@@ -70,6 +70,17 @@ function collectProductRoutes (dir: string): string[] {
     return routes
 }
 
+// Same idea as collectApplicationGuideRoutes above, for customer stories (flat
+// src/customer-stories/ dir, see content.config.ts).
+function collectStoryRoutes(dir: string): string[] {
+    const routes = ['/customer-stories/']
+    for (const file of readdirSync(dir)) {
+        if (!file.endsWith('.md')) continue
+        routes.push(`/customer-stories/${basename(file, '.md')}/`)
+    }
+    return routes
+}
+
 // Same idea for blog posts. Each entry also carries its `tags` so the 13 tag-listing
 // pages (and their own pagination, 19 entries/page) can be sized correctly, and its
 // `authors` so the /blog/author/{slug}/ pages can be enumerated.
@@ -140,7 +151,7 @@ export default defineNuxtConfig({
     site: {
         url: site.baseURL,
         name: 'FlowFuse',
-        description: 'Low-code application development platform for Node-RED and industrial IoT.',
+        description: site.messaging.subtitle,
         defaultLocale: 'en',
     },
 
@@ -361,9 +372,16 @@ export default defineNuxtConfig({
                     ...blogFiles.map(f => f.route),
                     ...blogAuthorRoutes,
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                    ...collectStoryRoutes(join(__dirname, '../src/customer-stories')),
                 ]
             })(),
-            crawlLinks: false
+            crawlLinks: false,
+            // Nitro renders one route at a time by default, which serialises much the
+            // longest phase of the build. A sizeable share of that phase is fixed per-route
+            // overhead rather than render work, and that part overlaps away as soon as
+            // several routes render at once. Matched to the vCPU count on GitHub's standard
+            // runner. Raising it further trades peak memory for wall time.
+            concurrency: 4
         }
     },
 

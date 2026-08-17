@@ -70,6 +70,11 @@ const CONTENT_SOURCES: ContentSource[] = [
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
     {
+        collection: 'stories',
+        fileRoot: 'src',
+        images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
+    },
+    {
         collection: 'ebooks',
         fileRoot: 'nuxt/content',
         images: entry => ['image', 'coverImage', 'thumbnail', 'secondaryImage', 'tertiaryImage']

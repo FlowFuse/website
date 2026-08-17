@@ -40,6 +40,9 @@ None of that happened.
 
 The [Modbus TCP market was valued at $1.35 billion in 2024 and is projected to reach $2.55 billion by 2032](https://www.futuremarketreport.com/industry-report/modbus-communication-module-market). That isn't legacy drag. That's active investment. New Modbus devices are being designed, manufactured, purchased, and installed in 2026, not as fallback options, but as deliberate first choices. Meanwhile, OPC UA adoption, while genuinely growing, remains concentrated in specific layers of the automation stack: SCADA systems, MES integrations, and IT/OT gateways. At the field device level, Modbus still dominates.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 The gap between expectation and reality isn't a failure of OPC UA's design. The protocol does what it promises. The gap exists because adoption in industrial automation doesn't follow software industry timelines. A protocol doesn't win by being technically superior. It wins by becoming the path of least resistance across every layer of the ecosystem simultaneously: device manufacturers, integrators, maintenance teams, procurement departments, and plant managers all have to move together. That has never happened with OPC UA, and understanding why requires looking at each layer honestly.
 
 ## The Complexity Tax Nobody Talks About
@@ -53,9 +56,6 @@ This isn't an unfair criticism. It's the honest cost of doing more. Modbus reads
 For device manufacturers, the math is punishing. A Modbus RTU interface costs roughly $5 to $10 in silicon and a few days of firmware work. A proper OPC UA server, implemented correctly with certificate management, secure channels, and a meaningful information model, requires a capable processor, sufficient memory, and weeks of engineering time. For a sensor company shipping into a price-sensitive market, that difference doesn't show up as a line item in the spec sheet. It shows up in whether the product gets built at all.
 
 Certificate management alone has quietly killed more OPC UA deployments than any technical limitation. Certificates expire. They need to be provisioned, rotated, and trusted across every client and server. In an IT environment with dedicated security teams, this is manageable. In a plant where the automation engineer also handles PLC programming, HMI design, and network troubleshooting, it becomes an ongoing burden that nobody budgeted for and nobody wants to own.
-
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 The OPC Foundation recognized this. Companion specifications like OPC UA FX and the Field Level Communications initiative are genuine attempts to bring the protocol closer to the field device layer. Progress is real but slow, and in the meantime, device manufacturers continue defaulting to Modbus because it ships today without a compliance checklist.
 

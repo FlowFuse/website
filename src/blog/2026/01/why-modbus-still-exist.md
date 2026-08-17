@@ -61,6 +61,9 @@ The numbers show how big this problem is. [The Modbus TCP market alone was $1.35
 
 ## It Costs Almost Nothing
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 The economics of Modbus implementation are absurdly compelling. A basic Modbus RTU interface costs manufacturers maybe $5-10 in components. Software licensing? Zero. The protocol is completely open, no royalties, no certification fees, no vendor lock-in. Compare that to implementing industrial Ethernet protocols where you might pay thousands for stack licenses, certification processes, and conformance testing.
 
 For device manufacturers, this matters enormously. A sensor company can add Modbus support for trivial cost and immediately become compatible with millions of existing installations. The development effort is minimal: the protocol specification fits in a few dozen pages, implementations are straightforward, and countless reference designs exist. You don't need specialized silicon or complex firmware. A basic microcontroller with a UART can speak Modbus RTU. Add an Ethernet chip and you've got Modbus TCP.
@@ -76,9 +79,6 @@ Perhaps Modbus's greatest strength is that nobody owns it. Modicon created it in
 Industrial automation is full of protocol wars where vendors push their preferred standards. Rockwell champions EtherNet/IP. Siemens invested heavily in Profinet. Every major automation vendor has protocols they'd rather you use: protocols that tie you into their ecosystem, their training programs, their support contracts.
 
 Modbus doesn't care. It works with everyone's equipment. This vendor neutrality has enormous practical value in facilities running mixed automation systems. A typical factory floor might have Rockwell PLCs, ABB drives, Schneider Electric power meters, and Siemens HMIs all talking to each other. Getting all those vendors' preferred protocols to coexist would be a nightmare. Getting them all to speak Modbus is trivial.
-
-:::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
-::
 
 This creates competitive pressure that keeps Modbus relevant. Device manufacturers can't afford to skip Modbus support because doing so immediately excludes them from projects with heterogeneous automation systems. Even vendors with their own sophisticated protocols implement Modbus as a fallback, ensuring interoperability when nothing else works.
 

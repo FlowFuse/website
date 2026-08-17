@@ -49,7 +49,7 @@ To start scraping data, follow these steps to send an HTTP GET request to the we
 
 Once deployed, click the **inject** button. You will see the raw HTML printed in the debug panel.
 
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
 ### Parsing and Extracting Data from HTML

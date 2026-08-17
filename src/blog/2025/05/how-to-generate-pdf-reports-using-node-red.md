@@ -115,6 +115,9 @@ For additional attributes and information, refer to the [pdfmake documentation](
 
 Here’s a simple example of how you can use these attributes to create a basic PDF:
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ```json
 {
   "content": [
@@ -190,9 +193,6 @@ This example creates a simple PDF featuring a centered logo, a title, a subtitle
 
 ![Example pdf result](./images/example-pdf.png){data-zoomable}
 _Example pdf result_
-
-:::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
-::
 
 ### Step 3: Creating a Flow to Generate a PDF
 

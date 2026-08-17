@@ -44,7 +44,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blueprints/manufacturing/andon-task/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
     '/landing/technology-migration-1/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/landing/technology-migration-2/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
-    '/customer-stories/scaling-manufacturing-automation-with-flowfuse/': { redirect: { to: '/customer-stories/', statusCode: 301 } },
     '/blog/2025/10/the-ai-orchestation-hype/': { redirect: { to: '/blog/2025/10/the-ai-orchestration-hype/', statusCode: 301 } },
     '/node-red/core-nodes/mqtt/': { redirect: { to: '/node-red/core-nodes/mqtt-in/', statusCode: 301 } },
     '/blueprints/manufacturing/manufacturing-support-request/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },

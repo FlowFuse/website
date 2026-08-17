@@ -49,7 +49,6 @@ Finally, we set the service to run under the **service** account.
 
 _NOTE: The instructions in this how to were written on **Windows 11 Pro 22H2**_
 
-
 ### TIP: Using domain accounts
 If the account is a domain account, append the domain name to the **user** e.g. `user@domain` whenever the **user** name is used in the instructions below.
 
@@ -58,6 +57,9 @@ If the account is a domain account, append the domain name to the **user** e.g. 
 ```bash
 powershell -Command "Start-Process 'cmd' -Verb runAs
 ```
+
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
 
 ### TIP: Launching an elevated powershell prompt window (e.g. as the admin user)
 
@@ -88,9 +90,6 @@ icacls c:\opt\flowfuse-device /grant "user":F /T
 ```
 _where `"user"` is the service account (not the admin account)_
 
-:::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
-::
-
 ## Install nssm
 `nssm` can simply be downloaded and executed from any path.
 We will download it to the `c:\opt` directory, extract the files and copy the 64 bit version to the current directory.
@@ -109,7 +108,6 @@ copy nssm-2.24\win64\nssm.exe .
 del nssm-2.24.zip
 rmdir /s /q nssm-2.24
 ```
-
 
 ### `powershell` version [elevated](#tip%3A-launching-an-elevated-powershell-prompt-window-(e.g.-as-the-admin-user)) powershell prompt
 If you don't have `cURL` installed, then powershell can be used to download the file. Here is how to do it:
@@ -132,7 +130,6 @@ Remove-Item -Path nssm-2.24 -Recurse
 If you prefer, you can download the nssm zip file manually from [https://nssm.cc/release/nssm-2.24.zip](https://nssm.cc/release/nssm-2.24.zip) and extract the files to the `c:\opt` directory. Then copy the 64 bit version to the current directory.
 
 Ultimately, you should end up with a file named `nssm.exe` in the `c:\opt\` directory.
-
 
 ## Install and configure the device-agent
 
@@ -228,7 +225,6 @@ Select the "Log on" tab, select "This account" and enter the service account nam
 Click the "Edit Service" button to save the changes.
 
 Now you have a service that will run the device-agent as the **service** account 🎉
-
 
 ### Controlling the service
 
