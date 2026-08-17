@@ -1,4 +1,5 @@
 ---
+metaTitle: "Arch Systems Connects 100+ Factory Databases"
 title: "How Arch Systems Connected 100+ Factory Databases with FlowFuse"
 subtitle: "Arch cut new-customer rollout time to a fraction of what it was, without adding operational complexity"
 description: "Arch Systems connects 100+ factory databases to a single analytics platform using FlowFuse, standardized subflows and pipelines."

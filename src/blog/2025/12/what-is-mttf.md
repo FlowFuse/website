@@ -1,4 +1,5 @@
 ---
+metaTitle: "Mean Time to Failure (MTTF): Formula & Calc"
 title: "Mean Time to Failure (MTTF): Formula, Calculation, MTTF vs MTBF vs MTTR, and More"
 subtitle: "Understanding equipment reliability and predicting failure patterns"
 description: "Learn what Mean Time to Failure (MTTF) means, how to calculate it with real examples, and how it improves maintenance planning."

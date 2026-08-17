@@ -1,4 +1,5 @@
 ---
+metaTitle: "Winning Through Open-Source in Manufacturing"
 title: "Winning Through Open-Source Software in Manufacturing Digitalization"
 subtitle: "Manufacturing organizations used to be leading in software but has lost the lead. Open Source Software is the way to now catch up"
 description: "Explore how open-source software helps manufacturers overcome vendor lock-in and accelerate their digital transformation efforts."

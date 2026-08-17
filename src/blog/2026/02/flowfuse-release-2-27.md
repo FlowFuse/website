@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.27: Editor in Remote Instances"
 title: "FlowFuse 2.27: Integrated Editor in Remote Instances & Context-Aware FlowFuse Expert"
 subtitle: "A more consistent Node-RED experience across environments and deeper live context for FlowFuse Expert."
 description: "FlowFuse 2.27 improves Remote workflows, simplifies rollback in developer mode, and adds a context-aware FlowFuse Expert."

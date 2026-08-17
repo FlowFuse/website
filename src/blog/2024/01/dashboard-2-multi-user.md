@@ -1,4 +1,5 @@
 ---
+metaTitle: "Personalised Multi-user Dashboards with Node-RED"
 title: Personalised Multi-user Dashboards with Node-RED Dashboard 2.0!
 subtitle: Explore how to build multi-user Dashboards, secured with FlowFuse Cloud!
 description: "Discover how to create personalized, secured multi-user dashboards with FlowFuse Cloud and the Dashboard 2.0 User Addon."

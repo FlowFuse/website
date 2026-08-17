@@ -1,4 +1,5 @@
 ---
+metaTitle: "How to Connect a Barcode Scanner to Node-RED"
 eleventyNavigation:
   key: "Barcode Scanner"
   parent: "Peripheral Devices"

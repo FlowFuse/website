@@ -1,4 +1,5 @@
 ---
+metaTitle: "EtherNet/IP Integration with Allen-Bradley PLCs"
 title: "EtherNet/IP Integration with FlowFuse: Communicating with Allen-Bradley PLCs"
 subtitle: "A guide to connected and unconnected EtherNet/IP communication with FlowFuse"
 description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using EtherNet/IP, covering messaging, tags, and automation workflows."

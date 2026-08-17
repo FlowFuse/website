@@ -97,6 +97,7 @@ const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.valu
 const pageTitle = computed(() => page.value?.title || 'Blog')
 provide('blogPostTitle', pageTitle)
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
+const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 const absoluteImage = computed(() => heroImage.value.startsWith('http') ? heroImage.value : `https://flowfuse.com${heroImage.value}`)
 
@@ -110,7 +111,7 @@ useHead({
 }, { tagPriority: 1000 })
 
 useSeoMeta({
-    title: pageTitle,
+    title: seoTitle,
     description: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
     ogDescription: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
     ogImage: computed(() => routeInfo.value.kind === 'post' ? absoluteImage.value : undefined),

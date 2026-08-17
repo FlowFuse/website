@@ -1,4 +1,5 @@
 ---
+metaTitle: "Build An Application With Node-RED Dashboard 2.0"
 title: "How to Build An Application With Node-RED Dashboard 2.0 (2026)"
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
 description: "Learn to build custom applications effortlessly with Node-RED Dashboard 2.0 in this step-by-step, secure application guide."

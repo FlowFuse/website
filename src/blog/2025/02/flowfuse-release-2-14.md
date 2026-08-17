@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.14: Third-Party Broker Integration"
 title: "FlowFuse 2.14: Announcing Third-Party Broker Integration, UNS Schemas, Enhanced Auth on Remote Instances and more!"
 subtitle: A huge wave of new features in FlowFuse elevates your MQTT experience as well as providing improved Remote Instances security and version control too
 description: A huge wave of new features in FlowFuse elevates your MQTT experience as well as providing improved Remote Instances security and version control too

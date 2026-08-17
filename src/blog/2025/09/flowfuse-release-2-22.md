@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.22: Expert for Node Editing & More"
 title: "FlowFuse 2.22: FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 subtitle: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 description: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"

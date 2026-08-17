@@ -1,4 +1,5 @@
 ---
+metaTitle: "Diagnosing Modbus Degradation"
 title: "Diagnosing Modbus Degradation: From CRC Errors to TCP Timeouts"
 subtitle: "CRC errors, connection exhaustion, dead poll lists, and the metrics that catch Modbus degradation early"
 description: "Modbus doesn't fail loudly, it drifts. Learn how to diagnose serial vs. TCP failures and build a metrics layer that warns you."

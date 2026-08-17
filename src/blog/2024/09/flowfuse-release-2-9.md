@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.9: Software Bill of Materials"
 title: "FlowFuse 2.9: Software Bill of Materials & Public Static Assets"
 subtitle: Let's take a look at the new features and improvements in FlowFuse 2.9
 description: "FlowFuse 2.9 introduces a Software Bill of Materials and Public Static Assets, among other new features and improvements."
