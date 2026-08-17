@@ -1,4 +1,14 @@
 import { queryCollection } from '@nuxt/content/server'
+import site from '../../../../src/_data/site.json'
+
+// Mirrors nuxt/components/content/CtaImage.vue's DESTINATIONS map - kept in
+// sync manually since the feed can't import a .vue component's script setup.
+const CTA_IMAGE_DESTINATIONS: Record<string, string> = {
+    'sign-up': `${site.appURL}/account/create`,
+    demo: '/book-demo/',
+    contact: '/contact-us/',
+    pricing: '/pricing',
+}
 
 async function loadPeople(mount: string): Promise<Record<string, { name: string }>> {
     const storage = useStorage(`assets:${mount}`)
@@ -64,7 +74,17 @@ function attrsToHtml(props: Record<string, unknown> | null): string {
 function minimarkToHtml(node: MinimarkNode): string {
     if (typeof node === 'string') return escapeXml(node)
     const [tag, props, ...children] = node
-    // Custom Vue components (e.g. cta-image, feature-tier-badges) have no
+    // ::cta-image{...} carries its own src/alt/cta, so it renders as a real
+    // <img> (linked to its destination) instead of being dropped like other
+    // custom components.
+    if (tag === 'cta-image' && props) {
+        const src = typeof props.src === 'string' ? props.src : ''
+        const alt = typeof props.alt === 'string' ? props.alt : ''
+        const href = CTA_IMAGE_DESTINATIONS[props.cta as string]
+        const img = `<img src="${escapeXml(absoluteUrl(src))}" alt="${escapeXml(alt)}"/>`
+        return href ? `<a href="${escapeXml(absoluteUrl(href))}">${img}</a>` : img
+    }
+    // Other custom Vue components (e.g. feature-tier-badges) have no
     // meaningful standalone markup, so the feed omits them entirely.
     if (tag.includes('-')) return ''
     const innerHtml = children.map(minimarkToHtml).join('')
@@ -74,6 +94,11 @@ function minimarkToHtml(node: MinimarkNode): string {
 
 function renderBodyToHtml(body: { value?: MinimarkNode[] } | undefined): string {
     return (body?.value || []).map(minimarkToHtml).join('')
+}
+
+function buildSummary(entry: { tldr?: string | string[], description?: string, meta?: { description?: string }, subtitle?: string }): string {
+    const tldr = Array.isArray(entry.tldr) ? entry.tldr.join(' ') : entry.tldr
+    return tldr || entry.description || entry.meta?.description || entry.subtitle || ''
 }
 
 export default defineEventHandler(async (event) => {
@@ -100,7 +125,7 @@ export default defineEventHandler(async (event) => {
         return `    <entry>
         <id>${absoluteUrl}</id>
         <title>${escapeXml(entry.title)}</title>
-        <summary>${escapeXml(entry.subtitle || entry.description || '')}</summary>
+        <summary>${escapeXml(buildSummary(entry))}</summary>
         <content type="html"><![CDATA[${bodyHtml}]]></content>
         <updated>${new Date(entry.date).toISOString()}</updated>
         <link href="${absoluteUrl}"/>
