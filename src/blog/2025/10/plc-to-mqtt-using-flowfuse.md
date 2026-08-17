@@ -146,7 +146,7 @@ Now let's move to the next step. Raw PLC data needs reshaping before cloud trans
 
 Change nodes handle simple transformations without coding. They allow you to map fields, modify values, convert units, and add metadata using dropdowns and form fields. JSONata allows more advanced data manipulation directly within the Change node.
 
-Plant engineers can work directly with these visual tools, no gramming required.
+Plant engineers can work directly with these visual tools, no programming required.
 
 For example, suppose you are receiving a pressure sensor value as `msg.payload` but it lacks context.
 
