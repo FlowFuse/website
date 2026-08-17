@@ -47,3 +47,5 @@ For industry decision-makers, this is a call to action. It is imperative to nurt
 
 Looking to the future, the success of modern manufacturing lies in its people and their ability to solve problems with the right tools at their fingertips. Citizen development has the potential to  break down the barriers. Organizations that recognize and invest in this potential will undoubtedly lead the charge.
 
+[One large US manufacturing company has already made this bet](/customer-stories/manufacturing-digital-transformation/), with its project leader describing Node-RED's low-code paradigm as a way to decentralize innovation and let subject matter experts build their own digital systems.
+

@@ -81,6 +81,8 @@ By converting OPC UA data into MQTT messages, you make the data from the CNC mac
 
 **Node-RED** is perfect for this job. It can connect both OPC UA and MQTT, making it easy to transform and route data between different systems. Its flexibility and support for many protocols make it great for integrating various industrial hardware and software. For more on how Node-RED can improve industrial operations, check out [Building on FlowFuse: Remote Device Monitoring](/blog/2024/07/building-on-flowfuse-devices/).
 
+[STFI's Model Factory uses this same bridging pattern in its textile manufacturing operations](/customer-stories/stfi-future-of-textile-powered-by-node-red/), connecting proprietary equipment protocols to OPC-UA with Node-RED.
+
 ## Bridging OPC UA Data to MQTT with Node-RED
 
 In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-RED. We will use simulated OPC UA server data from a CNC machine as an example. The goal is to show how you can efficiently transfer this data to an MQTT broker, making it accessible to various applications and systems.

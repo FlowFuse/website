@@ -42,7 +42,7 @@ Walter faced a critical operational challenge that threatened their ability to m
 Walter leveraged FlowFuse as the foundation of their standardized IoT infrastructure, creating a scalable platform that addresses their operational challenges through strategic implementation:
 
 ### Unified IoT Backbone Architecture
-FlowFuse serves as the central nervous system for Walter's entire production data ecosystem. Rather than maintaining 20+ separate solutions, the team now deploys standardized Node-RED flows that can connect to any machine configuration. This unified approach enables consistent data collection, transformation, and routing across all production facilities while requiring minimal local customization.
+FlowFuse serves as the central nervous system for Walter's entire production data ecosystem, similar to a [Unified Namespace](/use-cases/uns/) approach. Rather than maintaining 20+ separate solutions, the team now deploys standardized Node-RED flows that can connect to any machine configuration. This unified approach enables consistent data collection, transformation, and routing across all production facilities while requiring minimal local customization.
 
 ![Standardized Node-RED flows](./images/stories/walter-flow.png "Standardized Node-RED flows"){data-zoomable}
 
@@ -52,9 +52,9 @@ The team leveraged FlowFuse's Software-as-a-Service model to eliminate infrastru
 ### Industrial Application Platform
 FlowFuse processes and routes production data to multiple systems including:
 
-- **MES Integration:** Providing real-time machine status, runtime data, and downtime analysis
-- **SAP Connectivity:** Enabling bidirectional data exchange for production planning and resource management
-- **InfluxDB Storage:** Long-term historical data storage for trend analysis and optimization
+- **[MES](/use-cases/mes/) Integration:** Providing real-time machine status, runtime data, and downtime analysis
+- **SAP Connectivity:** Enabling bidirectional [data integration](/use-cases/data-integration/) for production planning and resource management
+- **[InfluxDB](/node-red/database/influxdb/) Storage:** Long-term historical data storage for trend analysis and optimization
 - **Live Dashboards:** Real-time production visualization and monitoring for operators and management
 - **Custom HMI Systems:** User interfaces for machine operators to input process parameters and quality data
 - **SaaS Energy Management System:** Optenda collects power consumption of some machines directly from the FlowFuse Broker 
@@ -90,13 +90,13 @@ FlowFuse processes and routes production data to multiple systems including:
 
 The solution architecture includes:
 
-- **Device Agent Deployment:** Shop floor-level agents connecting directly to manufacturing equipment via OPC-UA and other industrial protocols
+- **Device Agent Deployment:** Shop floor-level agents connecting directly to manufacturing equipment via [OPC-UA](/node-red/flowfuse/edge/opcua/) and other industrial protocols
 - **Encrypted Cloud Connectivity:** Secure communication between edge devices and FlowFuse cloud platform
 - **Data Processing Pipelines:** Node-RED flows handling data transformation, validation, and routing to multiple downstream systems
 - **Multi-System Integration:** Connections to MES, SAP, InfluxDB, custom dashboards, and HMI systems
 - **Centralized Management:** Single platform for deploying, monitoring, and maintaining flows across 130+ instances globally
-- **FlowFuse MQTT Broker** as a central Datahub for other systems (MES, SAP, InfluxDB, Energy Management System, Dashboards)
+- **[FlowFuse MQTT Broker](/blog/2024/06/how-to-use-mqtt-in-node-red/)** as a central Datahub for other systems (MES, SAP, InfluxDB, Energy Management System, Dashboards)
 ![Technical Architecture](./images/stories/waler-architecture.png "Technical Architecture"){data-zoomable}
 
 ## Looking Forward
-Walter continues to expand their FlowFuse implementation, with plans to present their complete use case at Node-RED Conference, showcasing how they've built a measurement machine integration that demonstrates the full potential of their unified IoT platform for complex manufacturing workflows.
+Walter continues to expand their FlowFuse implementation, with plans to present their complete use case at Node-RED Conference, showcasing how they've built a measurement machine integration that demonstrates the full potential of their unified IoT platform for complex manufacturing workflows. Other manufacturers are scaling the same way: [Arch Systems automates 100+ databases across its global manufacturing environments with FlowFuse](/customer-stories/scaling-manufacturing-automation-with-flowfuse/), and [a large US manufacturing company now runs thousands of Node-RED instances across its factories](/customer-stories/manufacturing-digital-transformation/).
