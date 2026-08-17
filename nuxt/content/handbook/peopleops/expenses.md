@@ -250,7 +250,7 @@ before making such arrangements.
 ### Coworking space allowance
 
 If you want to occasionally use a separate workspace to your home, the company
-will cover up to $150 a month in charges for renting a desk in a co-working
+will cover up to $400 a month in charges for renting a desk in a co-working
 space after manager approval.
 
 ### Mileage
