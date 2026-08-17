@@ -53,9 +53,7 @@ eleventyComputed:
     {% endif %}
 
     <!-- Browser Title -->
-    {% if metaTitle %}
-    <title>{{ metaTitle }} | FlowFuse</title>
-    {% elif navTitle %}
+    {% if navTitle %}
     <title>{{ navTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% elif meta and meta.title %}
     <title>{{ meta.title }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
@@ -86,9 +84,7 @@ eleventyComputed:
     {%- endif %}
 
     <!-- Open Graph Title -->
-    {% if metaTitle %}
-    <meta property="og:title" content="{{ metaTitle }} | FlowFuse" />
-    {% elif navTitle %}
+    {% if navTitle %}
     <meta property="og:title" content="{{ navTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% elif meta and meta.title %}
     <meta property="og:title" content="{{ meta.title }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
