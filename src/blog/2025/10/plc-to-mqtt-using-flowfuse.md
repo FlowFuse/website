@@ -173,7 +173,7 @@ For example, a popular node I'm using in my demo for parsing and transforming da
 
 Most MQTT implementations require setting up a separate broker either paying for a managed service or hosting your own. FlowFuse includes a managed MQTT broker built directly into the platform, eliminating this extra step.
 
-Traditional PLC-to-cloud setups typically involve several moving parts: edge gateways running tocol drivers, a separate MQTT broker (cloud-hosted or self-managed), and your destination cloud services. Each layer adds configuration work, licensing costs, and potential failure points. When data stops flowing, you end up troubleshooting across multiple systems to locate the issue.
+Traditional PLC-to-cloud setups typically involve several moving parts: edge gateways running protocol drivers, a separate MQTT broker (cloud-hosted or self-managed), and your destination cloud services. Each layer adds configuration work, licensing costs, and potential failure points. When data stops flowing, you end up troubleshooting across multiple systems to locate the issue.
 
 FlowFuse consolidates those layers into a single integrated platform. It vides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
 
