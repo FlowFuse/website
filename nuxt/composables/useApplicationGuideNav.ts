@@ -24,14 +24,17 @@ export const GUIDES = [
 
 export const guideById = (id: string) => GUIDES.find(guide => guide.id === id)
 
+// Sidebar/order is driven by the markdown pages' frontmatter (guide, slug, navOrder,
+// navTitle) — the same way the docs sidebar is driven by its markdown frontmatter.
+// The legacy YAML `applicationGuide` collection has been retired.
 export const useApplicationGuidePages = () => useAsyncData('application-guide-nav', async () => {
-    const pages = await queryCollection('applicationGuide').all()
+    const pages = await queryCollection('applicationGuideDoc').all()
 
     return pages
         .map((page: Record<string, unknown>): ApplicationGuidePageSummary => ({
             guide: page.guide as string,
             slug: page.slug as string,
-            title: page.title as string,
+            title: (page.navTitle as string) || (page.title as string),
             navOrder: (page.navOrder as number) ?? Infinity,
             blurb: page.blurb as string | undefined,
             path: `/application-guide/${page.guide}/${page.slug}/`,

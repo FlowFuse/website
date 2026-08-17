@@ -40,17 +40,17 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Application Guide pages are a `data` collection (see content.config.ts), so their routes
-// are not discoverable from @nuxt/content page paths. Derive them from the file names, which
-// are NN-<slug>.yml and match each file's `slug` field.
+// The Application Guide pages are markdown (`applicationGuideDoc`, a `page` collection).
+// Their routes are largely discoverable by @nuxt/content, but we keep an explicit prerender
+// list for the section index + each page. File names are <slug>.md and match the `slug` field.
 function collectApplicationGuideRoutes(dir: string): string[] {
     const routes = ['/application-guide/']
     for (const guide of readdirSync(dir)) {
         const guideDir = join(dir, guide)
         if (!statSync(guideDir).isDirectory()) continue
         for (const file of readdirSync(guideDir)) {
-            if (!file.endsWith('.yml')) continue
-            routes.push(`/application-guide/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
+            if (!file.endsWith('.md')) continue
+            routes.push(`/application-guide/${guide}/${basename(file, '.md').replace(/^\d+-/, '')}/`)
         }
     }
     return routes
