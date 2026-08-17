@@ -3,7 +3,7 @@
 
 import { execFileSync } from 'node:child_process'
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
-import { join, relative } from 'node:path'
+import { basename, dirname, join, relative } from 'node:path'
 import { tmpdir } from 'node:os'
 
 import { processMarkdown } from './docs-markdown.mjs'
@@ -96,43 +96,103 @@ function gitOutput (cwd, args) {
     }
 }
 
-function copyDocsDir (srcDir, repoRoot, contentDir, publicDir, version) {
-    mkdirSync(contentDir, { recursive: true })
-    mkdirSync(publicDir, { recursive: true })
+/**
+ * Where one source file lands: markdown becomes a page under content/, a README becomes
+ * its section index, and anything else is an asset served from public/.
+ */
+function destinationFor (relPath, contentDocsDir, publicDocsDir) {
+    const name = basename(relPath)
+    const dir = dirname(relPath)
+    const prefix = dir === '.' ? '' : dir
 
-    for (const entry of readdirSync(srcDir, { withFileTypes: true })) {
+    return name.endsWith('.md')
+        ? join(contentDocsDir, prefix, name === 'README.md' ? 'index.md' : name)
+        : join(publicDocsDir, prefix, name)
+}
+
+/**
+ * Copy one file out of the docs tree. Split out of copyDocsDir so a dev-server edit can
+ * sync just the file that changed through exactly the same code as a full build.
+ */
+function writeDocsFile ({ docsDir, sourceRoot, contentDocsDir, publicDocsDir, relPath, version }) {
+    const srcPath = join(docsDir, relPath)
+    const destPath = destinationFor(relPath, contentDocsDir, publicDocsDir)
+
+    mkdirSync(dirname(destPath), { recursive: true })
+
+    if (!relPath.endsWith('.md')) {
+        cpSync(srcPath, destPath)
+        return
+    }
+
+    // Argument array, not a shell string: the path comes from filenames in the source
+    // repo, so quoting it into a shell command would be an injection path.
+    const updated = gitOutput(sourceRoot, ['log', '-1', '--pretty=format:%ci', '--', relative(sourceRoot, srcPath)])
+
+    const raw = readFileSync(srcPath, 'utf8')
+    writeFileSync(destPath, processMarkdown(raw, relPath, updated, version), 'utf8')
+}
+
+function copyDocsDir ({ docsDir, sourceRoot, contentDocsDir, publicDocsDir, version, relDir = '' }) {
+    mkdirSync(join(contentDocsDir, relDir), { recursive: true })
+    mkdirSync(join(publicDocsDir, relDir), { recursive: true })
+
+    for (const entry of readdirSync(join(docsDir, relDir), { withFileTypes: true })) {
         if (entry.name.startsWith('.')) continue
 
-        const srcPath = join(srcDir, entry.name)
-        const destName = entry.name === 'README.md' ? 'index.md' : entry.name
+        const relPath = join(relDir, entry.name)
+        const args = { docsDir, sourceRoot, contentDocsDir, publicDocsDir, version }
 
         if (entry.isDirectory()) {
-            copyDocsDir(srcPath, repoRoot, join(contentDir, entry.name), join(publicDir, entry.name), version)
-        } else if (entry.name.endsWith('.md')) {
-            const relFromRepo = relative(repoRoot, srcPath)
-            const originalPath = relative(join(repoRoot, 'docs'), srcPath)
-
-            // Argument array, not a shell string: relFromRepo comes from filenames in the
-            // source repo, so quoting it into a shell command would be an injection path.
-            const updated = gitOutput(repoRoot, ['log', '-1', '--pretty=format:%ci', '--', relFromRepo])
-
-            const raw = readFileSync(srcPath, 'utf8')
-            writeFileSync(join(contentDir, destName), processMarkdown(raw, originalPath, updated, version), 'utf8')
+            copyDocsDir({ ...args, relDir: relPath })
         } else {
-            cpSync(srcPath, join(publicDir, entry.name))
+            writeDocsFile({ ...args, relPath })
         }
     }
 }
 
-function writeDocs ({ docsDir, sourceRoot, contentDocsDir, publicDocsDir, kind, ref }) {
-    let version = ''
+function readVersion (sourceRoot) {
     try {
-        version = JSON.parse(readFileSync(join(sourceRoot, 'package.json'), 'utf8')).version || ''
-    } catch { /* not fatal */ }
+        return JSON.parse(readFileSync(join(sourceRoot, 'package.json'), 'utf8')).version || ''
+    } catch {
+        return '' // not fatal
+    }
+}
+
+/**
+ * Sync a single file from the docs tree, or remove its output if the file has gone.
+ *
+ * The dev watcher calls this once per change. `syncDocs()` rebuilds the whole tree, which
+ * is what a build wants and what a running dev server cannot survive: deleting and
+ * recreating all 130-odd pages on every save makes @nuxt/content re-index the entire
+ * collection at once and exhaust its heap.
+ */
+export function syncDocsPath ({ docsDir, nuxtRoot, relPath }) {
+    const sourceRoot = join(docsDir, '..')
+    const contentDocsDir = join(nuxtRoot, 'content', 'docs')
+    const publicDocsDir = join(nuxtRoot, 'public', 'docs')
+
+    if (!existsSync(join(docsDir, relPath))) {
+        rmSync(destinationFor(relPath, contentDocsDir, publicDocsDir), { force: true })
+        return
+    }
+
+    writeDocsFile({
+        docsDir,
+        sourceRoot,
+        contentDocsDir,
+        publicDocsDir,
+        relPath,
+        version: readVersion(sourceRoot),
+    })
+}
+
+function writeDocs ({ docsDir, sourceRoot, contentDocsDir, publicDocsDir, kind, ref }) {
+    const version = readVersion(sourceRoot)
 
     rmSync(contentDocsDir, { recursive: true, force: true })
     rmSync(publicDocsDir, { recursive: true, force: true })
-    copyDocsDir(docsDir, sourceRoot, contentDocsDir, publicDocsDir, version)
+    copyDocsDir({ docsDir, sourceRoot, contentDocsDir, publicDocsDir, version })
 
     const manifest = {
         source: kind,
