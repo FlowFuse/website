@@ -40,7 +40,7 @@ When using AI internally:
 2. Use internal, synthetic, or publicly available data for experimentation whenever possible.
 3. Review AI-generated output before relying on it or including it in the product.
 4. Do not use AI tools to bypass security controls, access restrictions, or approval processes.
-Credentials may be given to an AI tool or agent where the work genuinely needs it, provided the access has been approved in advance and all of the following hold:
+5. Credentials may be given to an AI tool or agent where the work genuinely needs it, provided the access has been approved in advance and all of the following hold:
    - **Get approval first.** Open an [Access / Permission Request](https://github.com/FlowFuse/admin/issues/new?template=access-request.md) issue in the admin repo on GitHub before you create or share the credential, the same route as any other access request under the [Access Control Policy](./access-control.md). Set out what the agent will be doing, the access it needs, the scope you are asking for, and when the credential will be revoked. The request has to be approved before the credential is created: your manager as a minimum, and the CTO where it touches critical resources such as production. If you are not certain the access is needed at all, talk it through with a colleague before raising the request.
    - **Scope it to the job.** Grant the narrowest access that makes the task possible. For a FlowFuse Personal Access Token, that means scoping it to the single team you are working in, not your whole account.
    - **Read only by default.** Only grant write access where the task genuinely cannot be done without it.
