@@ -170,6 +170,16 @@ export default defineNuxtConfig({
         notes: [
             'This file only covers pages served by the Nuxt frontend. Some sections of flowfuse.com are still served by a legacy Eleventy site not represented here.',
         ],
+
+        // /raw/<path>.md, the per-page markdown endpoint the links below point at, is served
+        // by @nuxt/content's own llms feature rather than by nuxt-llms, and it searches every
+        // page-type collection by default. That included the handbook, so the exclusion above
+        // only held for llms.txt while /raw/handbook/company.md answered with the same content
+        // in markdown. Same reasoning applies to both surfaces.
+        contentRawMarkdown: {
+            excludeCollections: ['handbook'],
+        },
+
         sections: [
             {
                 title: 'Documentation',
