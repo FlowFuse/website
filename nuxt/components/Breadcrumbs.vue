@@ -19,10 +19,11 @@ useSchemaOrg([
 </script>
 
 <template>
+  <!-- No `capitalize`: every crumb is an authored page title, so capitalising each word only
+       mangles them, the same way it did in the sidebar. -->
   <UBreadcrumb
     :items="items"
     color="neutral"
-    class="capitalize"
     :ui="{ link: 'text-sm hover:text-indigo-600' }"
   >
     <template #separator>
