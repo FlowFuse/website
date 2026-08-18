@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             event.preventDefault()
 
+            // Explicit signal for the product to key its popup-specific
+            // layout off, instead of `window.opener` — that's also set for
+            // an ordinary ctrl/cmd-click "open in new tab", which isn't
+            // this popup at all.
+            const popupUrl = new URL(link.href)
+            popupUrl.searchParams.set('context', 'popup')
+
             const width = 420
             const height = Math.min(900, window.innerHeight * 0.75)
 
@@ -52,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const top = viewportTop + (window.innerHeight - height) / 2
 
             const popup = window.open(
-                link.href,
+                popupUrl.href,
                 'flowfuse-signup',
                 `width=${width},height=${height},left=${left},top=${top},menubar=no,toolbar=no,location=no,status=no`
             )
