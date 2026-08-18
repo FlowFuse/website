@@ -36,9 +36,11 @@ let resolvedHash: string | null = null
 
 async function revealFromHash () {
     if (!import.meta.client) return
-    // Read the address bar, not route.hash: a plain in-page anchor click is handled by the
-    // browser without going through the router, so route.hash can lag behind the real URL.
-    const id = window.location.hash.replace(/^#/, '')
+    // Neither source is the truth on its own. A plain in-page anchor click is handled by the
+    // browser without going through the router, so route.hash lags behind the address bar.
+    // On a cold load it is the other way round: the router already carries the hash while
+    // window.location has not been restored yet, which is when this used to give up.
+    const id = (window.location.hash || route.hash).replace(/^#/, '')
     if (!id || id === resolvedHash) return
     // Matched against the releases that exist rather than by reversing anchorId, so a
     // hash belonging to anything else on the page is left for the browser to handle.
