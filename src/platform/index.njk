@@ -1,0 +1,348 @@
+---
+layout: page
+nohero: true
+title: "The FlowFuse Platform"
+sitemapPriority: 0.9
+meta:
+    title: "The FlowFuse Platform"
+    description: "What FlowFuse is made of and how the pieces fit together. The major components of the platform, the two ways it distributes and manages code, and the design patterns that turn one working application into a fleet."
+hero:
+    eyebrow: "Platform"
+    heading: "FlowFuse is an app platform"
+    subheading: "Not because of what it draws on a screen, but because of how it distributes and manages code. This page covers the major components, how they fit together, and the patterns that take one working application to every site."
+distribution:
+    heading: "Why we call it an app platform"
+    intro: "Most industrial platforms give you one way to ship what you build. FlowFuse gives you two, and they cover opposite ends of how teams actually work."
+    models:
+        - label: "One to many, fully controlled"
+          icon: "queue-list"
+          title: "Ship the whole application"
+          detail: "Build the application once, capture it as a snapshot, and promote that exact snapshot through a pipeline to every instance and every device that should run it. Each target supplies its own configuration, so one artifact runs everywhere without an edit."
+          points:
+              - "Central team owns the application and the release"
+              - "Every site runs a known, identical version"
+              - "Per-site differences live in configuration, not in forked flows"
+        - label: "One to many, partially controlled"
+          icon: "puzzle-piece"
+          title: "Ship the building blocks"
+          detail: "Publish the parts worth standardizing, subflows and nodes, as packages into a library your teams pull from. Local teams assemble their own application out of blocks the platform team maintains."
+          points:
+              - "Local teams keep ownership of their own application"
+              - "Central team still controls the parts that matter"
+              - "Improvements to a block propagate by version bump"
+    closer: "The choice between these two is the first decision on any FlowFuse project, and it is what the design patterns below formalize."
+components:
+    heading: "The major components"
+    intro: "Five groups. Everything FlowFuse does sits in one of them."
+    groups:
+        - title: "Where applications run"
+          items:
+              - name: "Instances"
+                icon: "cloud"
+                detail: "Managed Node-RED runtimes, hosted by FlowFuse or in your own infrastructure."
+              - name: "Devices"
+                icon: "device-agent"
+                detail: "The Device Agent runs the same applications on edge hardware, including networks with no inbound access."
+                url: "/platform/device-agent/"
+              - name: "Groups"
+                icon: "squares-2x2"
+                detail: "Devices addressed as a fleet, so a deployment target can be a hundred machines rather than one."
+                url: "/docs/user/device-groups/"
+        - title: "How applications get built"
+          items:
+              - name: "Node-RED"
+                icon: "code-bracket"
+                detail: "The open runtime and flow editor underneath everything. The build surface, not the platform."
+                url: "/node-red/"
+              - name: "FlowFuse Expert"
+                icon: "sparkles"
+                detail: "Describe what you need and get starting flows, function code and explanations in the editor."
+                url: "/ai/"
+              - name: "FlowFuse Dashboard"
+                icon: "dashboard"
+                detail: "The operator-facing interface, built from the same flows rather than bolted on from a separate tool."
+                url: "/platform/dashboard/"
+              - name: "Blueprint Library"
+                icon: "building-library"
+                detail: "Working starting points for common industrial problems."
+                url: "/blueprints/"
+        - title: "How code is distributed and managed"
+          items:
+              - name: "Snapshots"
+                icon: "camera"
+                detail: "A versioned, restorable point in time for an application. The unit everything else moves around."
+                url: "/docs/user/snapshots/"
+              - name: "DevOps Pipelines"
+                icon: "arrow-long-right"
+                detail: "Promote a snapshot from development to test to production, and out to device groups."
+                url: "/docs/user/devops-pipelines/"
+              - name: "Environment Variables"
+                icon: "cog-6-tooth"
+                detail: "Per-target configuration held outside the flows, which is what lets one artifact run at every site."
+                url: "/docs/user/envvar/"
+              - name: "Shared Team Library"
+                icon: "rectangle-stack"
+                detail: "Flows and subflows shared across the team instead of copied between editors."
+                url: "/docs/user/shared-library/"
+              - name: "Custom Node Packages"
+                icon: "puzzle-piece"
+                detail: "Publish your own nodes and subflows as packages and install them like any other dependency."
+                url: "/docs/user/custom-npm-packages/"
+        - title: "What applications connect to"
+          items:
+              - name: "Integrations"
+                icon: "squares-plus"
+                detail: "Industrial protocols and enterprise systems, from OPC-UA and Modbus to ERP and cloud services."
+                url: "/integrations/"
+              - name: "Team Broker"
+                icon: "wifi"
+                detail: "A managed MQTT broker, so a Unified Namespace does not start with procuring infrastructure."
+                url: "/docs/user/teambroker/"
+              - name: "FlowFuse Tables"
+                icon: "circle-stack"
+                detail: "Managed storage for applications that need to keep state rather than pass it on."
+                url: "/docs/user/ff-tables/"
+              - name: "Project Nodes"
+                icon: "project-nodes"
+                detail: "Instance-to-instance messaging without wiring up a broker or opening ports."
+                url: "/docs/user/projectnodes/"
+        - title: "How it is governed"
+          items:
+              - name: "Role-Based Access Control"
+                icon: "role-based-access"
+                detail: "Who can edit, who can deploy, who can only look, per team and per application."
+                url: "/docs/user/role-based-access-control/"
+              - name: "Single Sign-On"
+                icon: "single-sign-on"
+                detail: "SAML and LDAP against your existing identity provider."
+                url: "/docs/admin/sso/"
+              - name: "Audit Logs"
+                icon: "audit-logs"
+                detail: "A record of who changed and deployed what, at team and instance level."
+              - name: "Self-hosted and certified"
+                icon: "shield-check"
+                detail: "SOC 2 Type 1 and Type 2, with a self-hosted option for air-gapped environments."
+                url: "/platform/security/"
+diagram:
+    placeholder: true
+    src: "https://placehold.co/1200x630/eef2ff/4338ca?text=FlowFuse+Platform+Architecture"
+    alt: "How the FlowFuse platform components fit together: edge devices and hosted instances running Node-RED applications, snapshots promoted through pipelines, configuration supplied per target, connected to brokers, databases and enterprise systems, under central access control."
+    caption: "Where each component sits and what moves between them: applications on instances and devices, snapshots travelling through pipelines, configuration applied per target, and the connections out to brokers, storage and enterprise systems."
+    heading: "How the pieces fit together"
+    intro: "The components are not a menu of unrelated features. They are one path from a flow in an editor to the same application running across a fleet."
+patterns:
+    heading: "The design patterns"
+    intro: "You do not start with Node-RED and later work out how to scale it. You choose the pattern first, then build inside it. There are six, split by where the application runs."
+    families:
+        - label: "Hardware patterns"
+          note: "Applications running on edge devices."
+          items:
+              - name: "Pipeline plus environment variables"
+                detail: "One application, distributed by pipeline. Everything site-specific lives in environment variables."
+              - name: "Pipeline plus external configuration"
+                detail: "One application, distributed by pipeline, reading its configuration at runtime from a central source so changes need no redeploy."
+              - name: "Edge building blocks"
+                detail: "Subflows published as packages and pulled from the team library, with each site assembling its own application."
+        - label: "Software patterns"
+          note: "Applications running on hosted instances."
+          items:
+              - name: "Packaged application"
+                detail: "Self-contained. Everything the application needs travels with it."
+              - name: "Data-driven application"
+                detail: "Behaviour driven by an external database rather than by what is wired into the flows."
+              - name: "Shared building blocks"
+                detail: "The hosted equivalent of edge building blocks, assembled per team from shared packages."
+    closer: "Naming the pattern up front is what makes an application scalable or not, whether or not the platform makes it easy."
+nodeRed:
+    heading: "Where Node-RED fits"
+    intro: "Node-RED is how the logic gets built. It is not what makes FlowFuse a platform, and treating it as the headline gets the order wrong."
+    points:
+        - title: "Platform first, then Node-RED"
+          detail: "Decide how the application will be distributed and governed, then open the editor. The reverse order produces flows that work on one machine and transfer to none."
+        - title: "The runtime stays open"
+          detail: "FlowFuse runs standard Node-RED. Your flows are portable and the foundation stays yours."
+        - title: "The platform is everything after the build"
+          detail: "Deployment across sites, versioning, access control, configuration, connectivity and audit. That is the part no editor gives you."
+---
+
+<div class="nohero w-full">
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <div class="w-full px-6 bg-[radial-gradient(ellipse_120%_140%_at_50%_-20%,theme(colors.indigo.50)_0%,theme(colors.white)_60%)]">
+        <div class="max-w-screen-lg mx-auto py-16 sm:py-24 text-center">
+            <p class="uppercase text-sm font-semibold text-indigo-500 mb-4">{{ hero.eyebrow }}</p>
+            <h1 class="m-auto max-w-3xl font-medium">{{ hero.heading }}</h1>
+            <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600">{{ hero.subheading }}</p>
+            <div class="mt-10 flex flex-wrap gap-4 justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'hero', 'page': 'platform'})">Book a demo</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-join', {'position': 'hero', 'page': 'platform'})">Get started</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         WHY WE CALL IT AN APP PLATFORM
+
+         The differentiator: two distribution models, not one. Everything
+         else on this page is downstream of this section.
+    ============================================================ -->
+    <div id="distribution" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">01 · How code moves</p>
+            <h2 class="max-md:text-center">{{ distribution.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-gray-600">{{ distribution.intro }}</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+                {% for model in distribution.models %}
+                <div class="rounded-xl border border-indigo-100 bg-indigo-50/60 p-6 flex flex-col gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 bg-white rounded-lg border border-indigo-100 flex items-center justify-center text-indigo-500">
+                            <span class="w-5 h-5">{% include "components/icons/" + model.icon + ".svg" %}</span>
+                        </div>
+                        <span class="text-indigo-500 text-xs font-semibold uppercase tracking-widest">{{ model.label }}</span>
+                    </div>
+                    <h3 class="m-0 text-gray-800">{{ model.title }}</h3>
+                    <p class="m-0 text-gray-600 text-sm">{{ model.detail }}</p>
+                    <ul class="m-0 mt-2 p-0 list-none flex flex-col gap-2">
+                        {% for point in model.points %}
+                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                            <span class="flex-shrink-0 w-4 h-4 text-indigo-500 mt-1">{% include "components/icons/check.svg" %}</span>
+                            <span>{{ point }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+            <p class="mt-8 max-w-3xl text-gray-600">{{ distribution.closer }}</p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         MAJOR COMPONENTS
+    ============================================================ -->
+    <div id="components" class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100 scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">02 · Major components</p>
+            <h2 class="max-md:text-center">{{ components.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-gray-600">{{ components.intro }}</p>
+            <div class="mt-12 flex flex-col gap-12">
+                {% for group in components.groups %}
+                <div>
+                    <h3 class="m-0 text-gray-800 pb-3 border-b border-gray-200">{{ group.title }}</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                        {% for item in group.items %}
+                        <div class="rounded-xl bg-white border border-gray-200 p-6 flex flex-col gap-3">
+                            <div class="w-9 h-9 bg-gray-50 rounded-lg border border-gray-200 flex items-center justify-center text-indigo-500">
+                                <span class="w-5 h-5">{% include "components/icons/" + item.icon + ".svg" %}</span>
+                            </div>
+                            <h4 class="m-0 text-gray-800">{{ item.name }}</h4>
+                            <p class="m-0 text-gray-600 text-sm flex-grow">{{ item.detail }}</p>
+                            {% if item.url %}
+                            <a class="inline-flex items-center gap-2 text-indigo-600 text-sm font-semibold" href="{{ item.url }}" onclick="capture('cta-component', {'position': 'platform-components', 'component': '{{ item.name }}'})">
+                                Learn more
+                                <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                            </a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HOW THE PIECES FIT TOGETHER
+    ============================================================ -->
+    <div id="architecture" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">03 · How it fits together</p>
+            <h2 class="max-md:text-center">{{ diagram.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-gray-600">{{ diagram.intro }}</p>
+            <figure class="mt-10 m-0">
+                <div class="rounded-xl overflow-hidden bg-gray-50 {% if diagram.placeholder %}border-2 border-dashed border-gray-300{% else %}border border-gray-200{% endif %}">
+                    {# width/height reserve the box before the image arrives, so
+                       the sections below do not jump on load. #}
+                    <img class="block w-full h-auto" src="{{ diagram.src }}" alt="{{ diagram.alt }}" width="{{ diagram.width or 1200 }}" height="{{ diagram.height or 630 }}" loading="lazy">
+                </div>
+                <figcaption class="mt-3 text-sm text-gray-400{% if diagram.placeholder %} italic{% endif %}">{% if diagram.placeholder %}Placeholder diagram, pending art request. {% endif %}{{ diagram.caption }}</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         DESIGN PATTERNS
+    ============================================================ -->
+    <div id="patterns" class="w-full bg-[radial-gradient(ellipse_120%_120%_at_50%_120%,theme(colors.indigo.600)_0%,theme(colors.indigo.900)_100%)] py-16 sm:py-24 px-6 scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase text-xs font-semibold text-indigo-300 mb-2">04 · Design patterns</p>
+            <h2 class="text-white max-md:text-center">{{ patterns.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-indigo-100 font-light">{{ patterns.intro }}</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+                {% for family in patterns.families %}
+                <div class="rounded-xl border border-indigo-400/40 bg-indigo-950/30 p-6">
+                    <span class="text-indigo-300 text-xs font-semibold uppercase tracking-widest">{{ family.label }}</span>
+                    <p class="text-indigo-100 font-light text-sm m-0 mt-1">{{ family.note }}</p>
+                    <div class="mt-6 flex flex-col gap-5">
+                        {% for item in family.items %}
+                        <div class="flex gap-4">
+                            <span class="text-indigo-300 text-lg font-semibold leading-none flex-shrink-0">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                            <div>
+                                <h4 class="text-white m-0">{{ item.name }}</h4>
+                                <p class="text-indigo-100 font-light m-0 mt-1 text-sm">{{ item.detail }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <p class="mt-8 max-w-3xl text-indigo-100 font-light">{{ patterns.closer }}</p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         WHERE NODE-RED FITS
+    ============================================================ -->
+    <div id="node-red" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
+        <div class="max-w-screen-lg mx-auto">
+            <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">05 · Node-RED</p>
+            <h2 class="max-md:text-center">{{ nodeRed.heading }}</h2>
+            <p class="mt-4 max-w-3xl text-gray-600">{{ nodeRed.intro }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                {% for point in nodeRed.points %}
+                <div class="rounded-xl bg-gray-50 border border-gray-200 p-6 flex flex-col gap-2">
+                    <span class="text-indigo-400 text-sm font-semibold">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+                    <h4 class="m-0 text-gray-800">{{ point.title }}</h4>
+                    <p class="m-0 text-gray-600 text-sm">{{ point.detail }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="mt-10 flex flex-wrap gap-6 items-center">
+                <a class="ff-btn ff-btn--primary-outlined uppercase" href="/node-red/" onclick="capture('cta-node-red', {'position': 'platform-node-red'})">What is Node-RED</a>
+                <a class="inline-flex items-center gap-2 text-indigo-600 font-semibold" href="/platform/features/" onclick="capture('cta-features', {'position': 'platform-node-red'})">
+                    See the full feature list
+                    <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         CLOSING CTA
+    ============================================================ -->
+    <div class="w-full px-6 py-20">
+        <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10 text-center">
+            <h3 class="mb-4 w-full text-center">See the platform on your operations</h3>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">Talk to an expert about which pattern fits your estate, or start building today.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'footer', 'page': 'platform'})">Book a demo</a>
+                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include 'sign-up-url.njk' %}" onclick="capture('cta-join', {'position': 'footer', 'page': 'platform'})">Get started</a>
+            </div>
+        </div>
+    </div>
+
+</div>
