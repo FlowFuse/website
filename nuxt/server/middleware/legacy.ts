@@ -14,7 +14,7 @@ const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
-// / (homepage), /about, /ai, /blueprints, /careers, /community, /email-signature, /events,
+// / (homepage), /about, /ai, /blueprints, /careers, /community, /events,
 // /free-consultation, /industries, /landing, /node-red, /partners, /platform,
 // /professional-services, /support, /use-cases, /vs, /webinars
 
