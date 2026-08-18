@@ -103,8 +103,13 @@ status = 200
 command = "npm run build:nuxt"
 
 [context.branch-deploy]
-# Deploy previews already build every PR commit; skip the redundant branch-deploy
-# build for the same commit to avoid double-building on every push.
+# A pull request already gets a deploy preview for every commit, so a branch
+# deploy of the same commit builds the site twice and takes a slot from the
+# three concurrent builds Netlify gives us. Skip it. The command stays so that
+# a branch deploy, should the ignore ever stop skipping, still builds Nuxt
+# only, rather than falling through to the root [build] command, which also
+# runs index:algolia and would write the search index from a branch.
+command = "npm run build:nuxt"
 ignore = "exit 0"
 
 [[plugins]]
