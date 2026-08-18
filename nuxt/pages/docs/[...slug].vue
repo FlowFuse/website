@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDocsNavTree, findDocsBreadcrumb } from '~/composables/useDocsNav'
+import { docsSeo } from '../../lib/docs-seo.mjs'
 
 definePageMeta({ layout: 'default' })
 
@@ -27,20 +28,43 @@ if (page.value.layout === 'redirect' && page.value.redirect?.to) {
     throw navigateTo(target, { redirectCode: 301, external: isExternal })
 }
 
-const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Documentation')
-
 // Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
 const plans = useDocsPlans(contentPath)
 
+const seo = computed(() => docsSeo(page.value as any, route.path, slugParts.value))
+
 useHead({
-    title: pageTitle,
-    meta: [
-        { name: 'description', content: computed(() => (page.value as any)?.meta?.description || '') },
-    ],
-})
-useHead({
-    templateParams: { siteName: () => slugParts.value.length ? 'FlowFuse Docs' : 'FlowFuse' },
+    templateParams: { siteName: () => seo.value.siteName },
 }, { tagPriority: 1000 })
+
+useSeoMeta({
+    // og:title is left out on purpose: it infers from the resolved title, brand suffix
+    // and all, so setting it here would only strip the suffix back off.
+    title: computed(() => seo.value.heading),
+    description: computed(() => seo.value.description),
+    ogDescription: computed(() => seo.value.description),
+    ogUrl: computed(() => seo.value.canonicalUrl),
+    ogType: 'article',
+    twitterCard: 'summary_large_image',
+    twitterSite: '@FlowFuseinc',
+})
+
+useSchemaOrg([
+    // TechArticle, not Article: these pages are product documentation, and it is the
+    // schema.org subtype for exactly that.
+    defineArticle({
+        '@type': 'TechArticle',
+        headline: computed(() => seo.value.heading),
+        description: computed(() => seo.value.description),
+        // The git commit date docs-sync stamps on the synced file, when it has one.
+        dateModified: computed(() => seo.value.dateModified),
+        author: [{ name: 'FlowFuse', url: 'https://flowfuse.com' }],
+    }),
+])
+
+// Server-side only, like every other defineOgImage call on the site: the tag it writes is
+// for crawlers reading the prerendered HTML, so it resolves once per page build.
+defineOgImage('Default', seo.value.ogImage)
 
 // Same key+handler DocsLeftNav uses, so useAsyncData dedupes into one fetch per request.
 const { data: navGroups } = await useDocsNavTree()
