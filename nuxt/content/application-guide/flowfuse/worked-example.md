@@ -24,10 +24,10 @@ It's not one app. OEE takes **two apps** — one at the edge, one in the cloud �
 
 **What it does** — Reads the machine signals on a line and publishes the line's state.
 
-- **Delivery method** — [reusable piece](/application-guide/flowfuse/app-delivery-methods/): built once, rolled out to every line.
-- **App pattern** — [hardware app · Edge Building Block](/application-guide/flowfuse/hardware-apps/).
+- **Delivery method** — [whole app](/application-guide/flowfuse/app-delivery-methods/): promoted as a snapshot through a pipeline to a Remote Instance on every line.
+- **App pattern** — [hardware app · Configurable App](/application-guide/flowfuse/hardware-apps/): the same build everywhere, with each line's PLC tag names loaded as per-site config.
 - **Runs on** — a Remote Instance, one per line.
-- **Why this shape** — the same job runs identically on every line, right next to the equipment, and keeps working if the link drops. Build it once; deploy it to the whole fleet.
+- **Why this shape** — the same flows run on every line, right next to the equipment, and keep working if the link drops — but each line's PLC tags differ, so the values are configured per install. Build it once; roll the same version to the whole fleet and point each at its own tags.
 - **See the flow** — [how OEE - Edge Aggregator is built in Node-RED →](/application-guide/node-red/oee-edge-aggregator/)
 
 ### 2 · OEE - Central Dashboard
@@ -74,5 +74,5 @@ legend:
 ::
 
 ::callout{icon="i-lucide-quote"}
-**The architecture, in one sentence** — OEE is the **Edge Aggregator** (a hardware Edge Building Block, on a Remote Instance per line) publishing machine state over the Team Broker to the **Central Dashboard** (a software Data-Driven App, on a Hosted Instance), which computes and displays OEE and writes history to an external time-series DB.
+**The architecture, in one sentence** — OEE is the **Edge Aggregator** (a hardware Configurable App, on a Remote Instance per line) publishing machine state over the Team Broker to the **Central Dashboard** (a software Data-Driven App, on a Hosted Instance), which computes and displays OEE and writes history to an external time-series DB.
 ::

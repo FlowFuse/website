@@ -65,7 +65,7 @@ edges:
 - **Flow** — Nodes wired left-to-right on a tab; a message enters, is transformed, and exits. One working unit of automation.
 - **Message (msg)** — The object that travels the wires, carrying **msg.payload** plus metadata between nodes.
 - **Subflow** — A block you define once and drop in many places, with its own inputs, outputs and per-instance config.
-- **Link nodes** — link in / link out / link call wire flows together across tabs with no visible wires — your in-process service calls.
+- **Link nodes** — link in / link out route messages across tabs with no visible wires; **link call** is the one that *returns* — your in-process service call.
 - **Context** — Storage that keeps state between messages — flow and global scope, in memory or persisted.
 - **Palette** — The library of installable nodes (npm) you add new capabilities from.
 - **Editor & runtime** — The browser editor where you wire flows, and the runtime that executes them continuously.

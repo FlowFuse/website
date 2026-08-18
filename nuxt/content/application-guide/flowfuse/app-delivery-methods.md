@@ -20,7 +20,7 @@ Two different units of code, delivered two ways. Ship the whole app — a comple
 ::flow-diagram
 ---
 nodes:
-  - { id: golden, label: "Golden instance", sub: "the one you build & test", accent: indigo }
+  - { id: golden, label: "Dev instance", sub: "the golden one you build & test", accent: indigo }
   - { id: fleet, label: "Instances", sub: "every place it runs", accent: slate, many: true }
 edges:
   - { from: golden, to: fleet, accent: indigo, label: "snapshot · pipeline" }

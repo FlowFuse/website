@@ -11,13 +11,15 @@ blurb: "The foundation to build on: what FlowFuse is, its core pieces, and how c
 
 The foundation to build on: what FlowFuse is, its core pieces, and how code is shared across teams.
 
+**FlowFuse is an application platform for building, deploying and managing industrial applications on Node-RED** — across IT, OT and IIoT, from the edge to the cloud, governed from one place.
+
 ## The big picture
 
 ::arch-diagram
 ---
 nodes:
   - { id: users, label: "Users", sub: "operators & teams", accent: slate, many: true, span: 2, col: 2, row: 1 }
-  - { id: hosted, label: "Hosted Instance", sub: "one or many, in the cloud", accent: indigo, many: true, col: 1, row: 2 }
+  - { id: hosted, label: "Hosted Instance", sub: "one or many · cloud or your server", accent: indigo, many: true, col: 1, row: 2 }
   - { id: dash, label: "Dashboard", sub: "live operator UI", accent: blue, col: 2, row: 2 }
   - { id: broker, label: "Team Broker", sub: "MQTT message bus", accent: teal, col: 3, row: 2 }
   - { id: tables, label: "FlowFuse Tables", sub: "shared SQL database", accent: green, col: 4, row: 2 }

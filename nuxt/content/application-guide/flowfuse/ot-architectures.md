@@ -43,7 +43,7 @@ slug: ot-architectures
   :::guide-tab{label="Air-gapped"}
     ::::arch-diagram
     ---
-    :edges: '[{"from":"net","to":"server","label":"blocked","dir":"none","dashed":true,"accent":"red"},{"from":"inst","to":"server","label":"deploys","accent":"slate"},{"from":"inst","to":"plc","label":"reads"}]'
+    :edges: '[{"from":"net","to":"server","label":"blocked","dir":"none","dashed":true,"accent":"red"},{"from":"server","to":"inst","label":"deploys","accent":"slate"},{"from":"inst","to":"plc","label":"reads"}]'
     :groups: '[{"id":"ot","label":"OT network · no internet","accent":"red","nodes":["server","inst","plc"]}]'
     :legend: '[{"swatch":"red","label":"OT zone"},{"line":"slate","label":"Authenticated"},{"line":"neutral","label":"Local wire"},{"line":"red","dashed":true,"label":"Blocked"}]'
     :nodes: '[{"id":"net","label":"Internet","accent":"neutral","col":1,"row":1},{"id":"server","label":"FlowFuse","sub":"self-managed · on-site","accent":"indigo","col":1,"row":2},{"id":"inst","label":"Instances","sub":"site apps","accent":"indigo","col":1,"row":3},{"id":"plc","label":"PLCs","sub":"equipment","col":1,"row":4}]'

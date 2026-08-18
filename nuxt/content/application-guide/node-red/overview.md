@@ -27,18 +27,18 @@ Node-RED is a visual programming platform for integration and logic: you build b
 
 ### [Design patterns](/application-guide/node-red/design-patterns/)
 
-- **Find the seams** — Find the three or four components hiding in a blob.
+- **Find the seams** — Name the three or four components hiding in a flow.
 - **Levels of reuse** — Reuse each piece at the lightest rung: link in/out, link call, subflow, or packaged node.
 
 ### [Handling data (PLC)](/application-guide/node-red/handling-data/)
 
-- **Classify the data** — Sort data by what it is for before tuning anything.
-- **Treat data reliably** — Split telemetry from control, each on its own path.
-- **Batching / rate limit** — Pace a fast source into a slow sink so memory doesn't blow.
-- **Use the context store** — Hold the object in context instead of threading it through wires.
-- **Config: env vars vs persisted context** — Env vars for deploy-time, persisted context for user edits.
+- **Classify the data** — Name each signal by shape, purpose, and direction.
+- **Separate the paths** — Give telemetry and control their own routes.
+- **Batch / rate-limit** — Pace a fast source into a slow sink so memory doesn't blow.
+- **Hold state in context** — Keep a logical object in context, not threaded through wires.
+- **Config** — Static in env vars, runtime in persisted context.
 
 ### [Worked examples](/application-guide/node-red/worked-examples/)
 
 - **OEE - Edge Aggregator** — the edge piece as a reusable subflow: poll, read, compute, publish.
-- **OEE - Central Dashboard** — subscribe, compute, dashboard, with history via a link call.
+- **OEE - Central Dashboard** — subscribe, compute, dashboard, fanning out via link out to a second link in for batched history.

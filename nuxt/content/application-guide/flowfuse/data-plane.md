@@ -4,14 +4,14 @@ navTitle: Data plane
 navOrder: 4
 guide: flowfuse
 slug: data-plane
-blurb: "Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the community over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on."
+blurb: "Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the fleet over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on."
 ---
 
 # Data plane
 
 **Data plane — start here**
 
-Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the community over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on.
+Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the fleet over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on.
 
 ::::guide-tabs
 :::guide-tab{label="Relational"}
@@ -35,7 +35,7 @@ A place for records that relate to each other — assets, config, users, orders 
 
 **Use it when** — The data has structure and relationships, and apps across the team should read and write the same store.
 
-**How it works** — FlowFuse Tables (managed PostgreSQL) via the Query node; because it ships with the server, any instance on the team reaches it natively over an authenticated connection. External systems can read it too.
+**How it works** — FlowFuse Tables (managed PostgreSQL) via the Query node; because it ships with the server, any instance on the team reaches it natively over an authenticated connection.
 
 **In FlowFuse**
 
@@ -114,7 +114,7 @@ A store built for a steady stream of timestamped readings — sensor data, telem
 
 **Use it when** — The data is a continuous stream of timestamped values, written at high rate and queried by time window.
 
-**How it works** — Run TimescaleDB, QuestDB or InfluxDB where you want. A Hosted Instance connects to it — Timescale and Quest speak the Postgres wire, so the Query node connects exactly like Tables — and fronts it; other instances reach it over Project Link, which always calls a Hosted Instance, with no inbound ports.
+**How it works** — Run TimescaleDB, QuestDB or InfluxDB where you want. A Hosted Instance connects to it — Timescale and Quest speak the Postgres wire, so the Query node connects exactly like Tables; InfluxDB connects through its own nodes — and fronts it; other instances reach it over Project Link, which always calls a Hosted Instance, with no inbound ports.
 
 **In FlowFuse**
 
@@ -148,7 +148,7 @@ legend:
 ---
 ::
 
-Any other store or service FlowFuse doesn't provide — an existing SQL database, an ML model, a site gateway. You run it where it already lives and expose it to the community of managed instances over Project Link, with no inbound ports.
+Any other store or service FlowFuse doesn't provide — an existing SQL database, an ML model, a site gateway. You run it where it already lives and expose it to the fleet of managed instances over Project Link, with no inbound ports.
 
 **Use it when** — You need to reach a store or service that isn't built in and isn't a time-series DB — an existing database, a model, a gateway.
 

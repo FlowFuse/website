@@ -25,7 +25,7 @@ Every FlowFuse deployment is the same building blocks — instances, broker, dat
 
 ## Separating dev from prod
 
-A modifier for any of the three worlds above. When your development server is a different server from production — dev in IT or the cloud, prod down in OT or air-gapped — a GitHub bridge carries the same versioned code across the boundary.
+A modifier for any of the three worlds above. When your development server is a different server from production — dev in IT or the cloud, prod down in OT or behind a tighter network boundary — a GitHub bridge carries the same versioned code across the boundary. (A truly air-gapped site can't pull from GitHub; there, code crosses by offline snapshot import instead.)
 
 ### GitHub bridge
 

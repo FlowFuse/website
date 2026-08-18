@@ -12,11 +12,11 @@ blurb: "A clean flow isn't luck — it's a handful of habits. Wire for reading, 
 
 **Good form — how not to make spaghetti**
 
-A clean flow isn't luck — it's a handful of habits. The golden rule: **shared things are *called*, every beginning is its own left-justified path, and no node has more than three wires into it.** Everything below follows from that.
+A clean flow isn't luck — it's a handful of habits. The golden rule: **shared things are *called* rather than funneled into, and every beginning is its own left-justified path.** Everything below follows from that.
 
 ::::guide-tabs
 :::guide-tab{label="Wire for reading"}
-**Call shared things; don't funnel into them** — four or more wires into one node is the core spaghetti anti-pattern.
+**Call shared things; don't funnel into them** — many paths wiring into one shared node is the core spaghetti anti-pattern.
 
 ::flow-diagram
 ---
@@ -39,7 +39,7 @@ When many paths share a dependency — a DB pool, a broker, a model call — don
 
 **The rules**
 
-- **No funnels** — four or more wires into a node means it should be a called service. Keep it to three wires in, max.
+- **No funnels into a shared dependency** — when many paths need the same service, they should *call* it, not all wire into it. (Aggregators like a `join` node that legitimately gather many inputs are the exception — that's their job, not a funnel.)
 - **Each beginning is its own path** — one straight, left-justified path per entry; don't merge them through a shared front door.
 - **Flow left → right** — beginning → prep → service call → format → sink. A backward (right-to-left) wire reads as tangle.
 - **A crossing is a missing link node** — if two wires cross, row-align the column with its targets or bridge it with a link node. Same for any wire longer than the canvas — a link node reads cleaner.
@@ -114,15 +114,15 @@ nodes:
 edges:
   - { from: in, to: work }
   - { from: work, to: sink, label: "ok" }
-  - { from: work, to: catch, label: "throws", accent: red, dashed: true }
+  - { from: work, to: catch, label: "in scope", accent: red, dashed: true }
   - { from: catch, to: errpath, accent: red, dashed: true }
 legend:
   - { line: neutral, label: "success" }
-  - { line: red, dashed: true, label: "error (Catch)" }
+  - { line: red, dashed: true, label: "Catch scope · not a wire" }
 ---
 ::
 
-Anything that talks to the outside world — an HTTP call, a DB write, a broker publish, a model call — will fail sometimes. Route those failures somewhere you control.
+Anything that talks to the outside world — an HTTP call, a DB write, a broker publish, a model call — will fail sometimes. Route those failures somewhere you control. (A Catch node has no input wire — it registers to catch errors from every node in its scope automatically; the dashed line marks that scope, not a connection you draw.)
 
 - **No work without a catch** — a tab with function / request / DB / link-call / AI nodes and no Catch node drops its errors silently.
 - **Scope the catch to cover the path** — make sure every reachable work node is in the catch's scope, or the ones outside it throw where nothing is listening.
@@ -133,7 +133,7 @@ Anything that talks to the outside world — an HTTP call, a DB write, a broker 
 **Swap a source by keeping the message shape** — good seams mean a data change touches one node, not the whole flow.
 
 - **Stable msg contract** — a query returns rows on the same property; the broker path is `msg.topic` + `msg.payload`. Keep the shape and only one node changes when you swap the source behind it.
-- **SQL goes on `msg.query`** — the query node reads `msg.query` (with `msg.params` for parameters), not `msg.payload`. Put SQL on the wrong property and the query silently runs empty.
+- **SQL goes on the property your node reads** — the Postgres query node reads `msg.query` (with `msg.params` for parameters); the mysql / sqlite nodes read `msg.topic`. Either way it's never `msg.payload` — put SQL on the wrong property and the query silently runs empty.
 - **Parameterize** — use parameterized queries and quote case-sensitive identifiers; don't string-build SQL into the payload.
 - **Preserve the message through the chain** — return context (a callback, a link-call return) has to survive every hop, so keep functions and query nodes passing `msg` through.
 

@@ -5,12 +5,20 @@ navOrder: 4.2
 guide: node-red
 slug: oee-central-dashboard
 parent: worked-examples
-blurb: "The cloud app from the OEE use case as a Node-RED flow — subscribe to every line, compute OEE, show it live, and write history through a link call, with UI decoupled from logic."
+blurb: "The cloud app from the OEE use case as a Node-RED flow — one link out fanning to two link ins on separate tabs (dashboard and batched history), so the live and history paths stay separate and easy to read."
 ---
 
 # OEE - Central Dashboard
 
-The cloud app from the FlowFuse [OEE worked example](/application-guide/flowfuse/worked-example/) — it subscribes to every line's state, computes OEE, shows it live, and writes each reading to history. It runs on one Hosted Instance. Here's how that app looks as a Node-RED flow, and the patterns that shape it.
+The cloud app from the FlowFuse [OEE worked example](/application-guide/flowfuse/worked-example/) — it subscribes to every line's state, computes OEE, shows it live, and writes each reading to history. It runs on one Hosted Instance. Unlike the Edge Aggregator, this one earns a design pattern and more than one data-handling method.
+
+## Definition
+
+- **The app** — subscribes to every line's state, computes OEE, shows it live, and writes each reading to history.
+- **Design pattern** — [link out / link in](/application-guide/node-red/design-patterns/): the OEE result leaves the calc through one link out; a link in on the dashboard tab and a separate link in on the history tab pick it up — a clean fan-out across tabs with no cross-tab wire.
+- **Data handling** — [classify](/application-guide/node-red/handling-data/) (a live event stream, plus history) → the two link-ins **[separate the paths](/application-guide/node-red/handling-data/)** (live vs history) → **batch** the history writes.
+- **Runs on** — one Hosted Instance.
+- **Why this shape** — a user-facing app driven by live data, with history kept off the live path so the dashboard never waits on the database.
 
 ## The flow
 
@@ -20,29 +28,32 @@ align: left
 nodes:
   - { id: sub, label: "MQTT in", sub: "subscribe · line state", accent: indigo, col: 1, row: 1 }
   - { id: oee, label: "compute OEE", sub: "availability × perf × quality", col: 2, row: 1 }
-  - { id: dash, label: "dashboard", sub: "view-model out · intent in", accent: indigo, col: 3, row: 1 }
-  - { id: hist, label: "link call", sub: "write history", accent: teal, col: 2, row: 2 }
-  - { id: tsdb, label: "time-series DB", sub: "external", accent: green, col: 3, row: 2 }
-  - { id: catch, label: "Catch", sub: "write fails", accent: red, col: 2, row: 3 }
+  - { id: lout, label: "link out", sub: "broadcast the result", accent: indigo, col: 3, row: 1 }
+  - { id: lindash, label: "link in", sub: "dashboard tab", accent: indigo, col: 3, row: 2 }
+  - { id: dash, label: "dashboard", sub: "live OEE per line", accent: indigo, col: 4, row: 2 }
+  - { id: lindb, label: "link in", sub: "history tab", accent: indigo, col: 3, row: 3 }
+  - { id: batch, label: "join / batch", sub: "N readings or T secs", col: 4, row: 3 }
+  - { id: db, label: "time-series DB", sub: "external · history", accent: green, col: 5, row: 3 }
 edges:
   - sub>oee
-  - oee>dash
-  - { from: oee, to: hist, label: "each reading" }
-  - { from: hist, to: tsdb, dir: both, label: "result back" }
-  - { from: hist, to: catch, dashed: true, accent: red }
+  - oee>lout
+  - { from: lout, to: lindash, dashed: true, label: "link" }
+  - { from: lout, to: lindb, dashed: true, label: "link" }
+  - lindash>dash
+  - lindb>batch
+  - batch>db
 legend:
-  - { line: red, dashed: true, label: "error path" }
+  - { line: neutral, dashed: true, label: "link out → link in" }
 ---
 ::
 
-## How the patterns shape it
+## Why these choices
 
-- **[Decouple UI from logic](/application-guide/node-red/good-form/).** The compute path builds a display-ready view-model; the dashboard widgets render it and emit `{action, payload}` intent back — no logic in the templates. Redesign the dashboard without touching a business-logic node.
-- **History as a [link call](/application-guide/node-red/design-patterns/).** Each reading is written to the external time-series DB through one link call, so the DB connection lives in a single shared service and the compute path stays clean.
-- **[Good form](/application-guide/node-red/good-form/).** The **dashboard is the single sink** — it displays and routes nothing. Everything else stays upstream.
-- **[Handling data](/application-guide/node-red/handling-data/).** Live state (MQTT in) and history (batched writes to the time-series DB) travel on separate paths, so the live view never waits on the historian.
-- **Catch the write.** A Catch on the history write keeps a database hiccup from taking down the live dashboard.
+- **Link out, two link ins on separate tabs** — the OEE result leaves the calc once through a link out; the dashboard tab and the history tab each pick it up through their own link in. Nothing crosses tabs, so each path reads on its own and the split is named — not a wire snaking across the canvas. (For two consumers on the *same* tab a plain node with two outputs would do; the link out/in earns its keep because these live on separate tabs.)
+- **The link-ins are the path split** — the live dashboard rides one, batched history the other; neither waits on the other.
+- **Batch the writes** — the history link in feeds a join / batch node, so readings land in the time-series DB in batches, not one insert per reading — cutting per-write overhead.
+- **Decouple UI from logic** — the compute path builds a display-ready view-model; the widgets render it and emit intent. That's [good form](/application-guide/node-red/good-form/), not a selection — it applies to every dashboard.
 
 ::callout{icon="i-lucide-check"}
-**In one line** — subscribe → compute → dashboard, with history written to an external DB via a link call, caught on failure.
+**In one line** — subscribe → compute → link out; one link in to the dashboard tab, a separate link in to a batch node then history.
 ::

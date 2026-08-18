@@ -102,7 +102,7 @@ legend:
 ---
 ::
 
-Split where apps live: company-wide apps run on a central corporate FlowFuse, while apps specific to a site run locally on that site's own FlowFuse server. You can still develop in one place and **share code down** to the sites — build once centrally, roll it out to every site.
+Split where apps live: company-wide apps run on a central corporate FlowFuse, while apps specific to a site run locally on that site's own FlowFuse server. You can still develop in one place and **share code down** to the sites — but because these are separate servers, that travels over the **GitHub bridge or a snapshot export**, not a Pipeline (a Pipeline only promotes within a single platform).
 
 **Use it when** — Some apps belong to the whole company and some are site-specific, and you want to build centrally but let each site run its own local apps.
 
