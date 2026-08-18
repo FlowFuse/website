@@ -327,6 +327,11 @@ export default defineNuxtConfig({
 
     nitro: {
         preset: 'netlify',
+        // Nitro emits a .mjs.map next to every server chunk, so the Netlify functions bundle
+        // ships one map file per chunk. Skipping them keeps the bundle smaller and the
+        // server build a little shorter. The cost is that a server-side stack trace in the
+        // function logs no longer resolves back to the original source.
+        sourceMap: false,
         serverAssets: [
             {
                 baseName: 'analytics',
