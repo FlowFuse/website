@@ -105,7 +105,7 @@ onUnmounted(() => {
         v-for="group in visibleGroups"
         :id="anchorId(group.release)"
         :key="group.release"
-        class="flex scroll-mt-24"
+        class="flex"
       >
         <!-- pt-7 so the label lines up with the first entry's title rather than sitting
              above it: each entry carries `my-2 py-6` before its title, which this column
