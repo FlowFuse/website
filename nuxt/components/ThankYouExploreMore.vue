@@ -46,8 +46,8 @@ const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
     <div class="w-full max-w-md md:max-w-none mx-auto flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-x-8 pt-8">
       <div class="w-full my-2 grid grid-cols-1 pb-4">
         <div class="pb-2 md:pb-0">
-          <a href="/blog/">
-            <img src="/images/home/blog.png" alt="Image of hands typing on laptop working on Node-RED flows" class="w-full max-w-[448px] mx-auto mb-4 aspect-video object-cover rounded-lg">
+          <a href="/blog/" class="md:min-w-[40%] max-w-[448px] mx-auto mb-4 aspect-video block overflow-hidden rounded-lg cursor-pointer">
+            <img :src="'/images/home/blog.png'" alt="Image of hands typing on laptop working on Node-RED flows" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
           </a>
           <h3 class="text-xl font-bold pb-3">
             Latest on the blog
@@ -66,8 +66,8 @@ const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
 
       <div v-if="webinar" class="w-full my-2 grid grid-cols-1 pb-4">
         <div class="pb-2 md:pb-0">
-          <a :href="webinar.path">
-            <img src="/images/home/webinar.png" alt="Image of hands typing on laptop working on Node-RED flows" class="w-full max-w-[448px] mx-auto mb-4 aspect-video object-cover rounded-lg">
+          <a :href="webinar.path" class="md:min-w-[40%] max-w-[448px] mx-auto mb-4 aspect-video block overflow-hidden rounded-lg cursor-pointer">
+            <img :src="'/images/home/webinar.png'" alt="Image of hands typing on laptop working on Node-RED flows" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
           </a>
           <h3 class="text-xl font-bold pb-3">
             {{ webinarIsUpcoming ? 'Upcoming' : 'Latest' }} Webinar
@@ -93,7 +93,7 @@ const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
 
       <div class="w-full my-2 grid grid-cols-1">
         <div class="pb-2 md:pb-0">
-          <img src="/images/home/newsletter.png" alt="Image of hands typing on laptop working on Node-RED flows" class="w-full max-w-[448px] mx-auto mb-4 aspect-video object-cover rounded-lg">
+          <img :src="'/images/home/newsletter.png'" alt="Image of hands typing on laptop working on Node-RED flows" class="w-full md:min-w-[40%] max-w-[448px] mx-auto mb-4 aspect-video object-cover rounded-lg">
           <h3 class="text-xl font-bold pb-3">
             Newsletter
           </h3>

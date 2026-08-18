@@ -16,7 +16,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="container m-auto max-w-5xl px-6 pb-16 pt-16">
+  <div class="page container m-auto max-w-5xl px-6 pb-16 pt-16">
     <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-x-12">
       <div class="order-1 text-center md:text-left md:col-start-1 md:row-start-1 min-w-0">
         <h1 class="text-indigo-600 mt-0">

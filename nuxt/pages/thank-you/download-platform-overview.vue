@@ -2,11 +2,12 @@
 useSeoMeta({
     title: 'Thank you for your interest!',
     description: 'We\'ve also sent a copy to your inbox',
+    robots: 'noindex',
 })
 </script>
 
 <template>
-  <div>
+  <div class="w-full">
     <div class="hero container m-auto text-center flex flex-wrap pt-6 px-6 pb-12 md:flex-nowrap md:max-w-4xl md:pt-12">
       <div class="mx-auto max-w-screen-xl md:max-w-xl">
         <h1>Thank you for your interest!</h1>

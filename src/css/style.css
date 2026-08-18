@@ -158,10 +158,17 @@ html, body {
     background-color: white;
 }
 
-*{
-    --tdur: 0.15s;
-    transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
-    -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+/* Layered (not a bare unlayered `*` rule) so Tailwind utilities — which compile
+   into @layer utilities, later in the `vendor, theme, base, components, utilities,
+   overrides` order declared above — can override transition-property/duration on
+   individual elements through normal cascade rules, instead of this always
+   winning outright regardless of specificity. */
+@layer base {
+    *{
+        --tdur: 0.15s;
+        transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+        -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+    }
 }
 
 /*
