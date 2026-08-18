@@ -79,7 +79,7 @@ onUnmounted(() => {
       <div>
         <!-- Sized explicitly: .ff-blog leaves h1 at 16px/400, identical to the subtitle
              below it, so the heading does not read as one. -->
-        <h1 class="mb-0 text-2xl font-medium">What's new</h1>
+        <h1 class="mb-0 font-medium">What's new</h1>
         <p class="my-0 text-gray-500">Every feature, improvement and fix we ship, newest first.</p>
       </div>
       <!-- Search runs on the same Algolia index as the blog, docs and handbook, filtered
