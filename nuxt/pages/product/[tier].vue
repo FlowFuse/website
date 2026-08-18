@@ -30,8 +30,6 @@ useSeoMeta({
     ogUrl: `https://flowfuse.com/product/${tierId}/`,
     twitterSite: '@FlowFuseinc',
 })
-
-const capture = useCapture()
 </script>
 
 <template>
@@ -49,12 +47,7 @@ const capture = useCapture()
           <p class="mt-6 text-lg max-w-xl mx-auto md:mx-0" v-html="tier.description" />
           <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center md:justify-start">
             <CtaBookDemo variant="highlight" :position="`${tierId}-hero`" />
-            <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: `${tierId}-hero` })">
-              <span class="flex items-center justify-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800">
-                <span>VIEW PRICING</span>
-                <IconsArrowRightIcon class="w-5 h-5" />
-              </span>
-            </a>
+            <CtaPricing variant="ghost" :position="`${tierId}-hero`" icon="i-lucide-arrow-right" />
           </div>
         </div>
         <div class="rounded-lg shadow-2xl border-2 border-red-100 overflow-hidden">

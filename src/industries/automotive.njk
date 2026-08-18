@@ -24,10 +24,6 @@ hero:
   eyebrowIcon: "components/icons/car.svg"
   heading: '<span class="text-red-600">Scale automotive operations</span> without rewiring your stack'
   description: "Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time."
-  primaryCta: "BOOK A DEMO"
-  primaryCtaLink: "/book-demo/"
-  secondaryCta: "VIEW PRICING"
-  secondaryCtaLink: "/pricing/"
   image: "/images/industries/automotive.jpg"
   imageAlt: "Aerial view of an automotive manufacturing plant floor"
   testimonial:
@@ -118,6 +114,8 @@ cta:
   buttonLink: "/book-demo/"
   position: "final-cta"
 ---
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
+{% from "components/cta/cta-pricing.njk" import ctaPricing %}
 <!-- ============================================================
      HERO
 ============================================================ -->
@@ -138,17 +136,8 @@ cta:
                 </h1>
                 <p class="mt-6 text-gray-700">{{ hero.description }}</p>
                 <div class="mt-8 flex gap-4 items-center max-md:justify-center flex-wrap">
-                    <a class="ff-btn ff-btn--highlight uppercase"
-                        href="{{ hero.primaryCtaLink }}"
-                        onclick="capture('cta-book-demo', {'position': 'hero'})">
-                        {{ hero.primaryCta }}
-                    </a>
-                    <a class="flex items-center gap-2 text-base uppercase font-bold text-indigo-600 hover:text-indigo-800"
-                        href="{{ hero.secondaryCtaLink }}"
-                        onclick="capture('cta-pricing', {'position': 'hero'})">
-                        {{ hero.secondaryCta }}
-                        {% include "components/icons/arrow-right.svg" %}
-                    </a>
+                    {{ ctaBookDemo('highlight', 'hero') }}
+                    {{ ctaPricing('ghost', 'hero', icon=true) }}
                 </div>
             </div>
             <div class="w-full md:flex md:items-center">

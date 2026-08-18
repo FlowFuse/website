@@ -1,0 +1,57 @@
+{#
+  Internal building block for the destination-specific CTA macros in this
+  folder (cta-sign-up.njk, cta-sign-in.njk, cta-contact-us.njk,
+  cta-book-demo.njk). Not meant to be included directly elsewhere - event
+  name, href, and copy are fixed per destination on purpose, so this macro
+  only ever handles *how it looks*.
+
+  Mirrors nuxt/components/cta/CtaButton.vue - event names and the
+  {position, variant} capture payload must stay identical to the Nuxt side so
+  PostHog reports can group clicks from both halves of the site under one
+  event name. No `plan` param here (unlike Nuxt's CtaButton): that's only
+  used on the pricing table, which is Nuxt-only - no 11ty caller needs it.
+#}
+{% macro ctaButton(event, href, label, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{%- set isNavText = variant == 'nav-text' -%}
+{%- set isGhost = variant == 'ghost' -%}
+{#- Vue's CtaButton defaults uppercase to `!isNavTextVariant` when the caller
+    doesn't pass it; `none` here is that same "not passed" sentinel. -#}
+{%- set showUppercase = uppercase if uppercase != none else not isNavText -%}
+{%- set caseClass = 'uppercase' if showUppercase else 'normal-case' -%}
+{%- if isNavText -%}
+    {#- ff-nav-freetrial (header "Free Trial") vs a plain inline link (utility
+        bar "Sign In") both come through as extraClass from the caller, same
+        as Nuxt. Font-weight is deliberately NOT set here (unlike Nuxt's
+        CtaButton, which hardcodes font-normal): Nuxt can get away with that
+        because Nuxt UI merges its `ui.base` and the caller's `class` through
+        tailwind-merge, which resolves a font-normal/font-medium clash by
+        override intent (the caller's class always wins). A plain <a class="">
+        here has no such merge step - two conflicting font-weight utilities
+        on the same element resolve by whichever rule Tailwind happened to
+        emit later in the compiled stylesheet, not by which one is "meant" to
+        win, so hardcoding font-normal previously fought Sign In's own
+        font-medium (from extraClass) and silently won, undoing it. Free
+        Trial still renders font-normal correctly without this - it comes
+        from the pre-existing `.ff-website header .cta a { font-normal }`
+        rule in style.css, which matches directly on the element and beats
+        inheritance cleanly (no utility-class collision involved). -#}
+    {%- set padClass = 'px-3 py-4' if padded else 'p-0' -%}
+    {%- set classes = caseClass ~ ' no-underline ' ~ padClass -%}
+{%- elif isGhost -%}
+    {%- set classes = 'ff-btn ff-btn--ghost ff-btn--ghost-' ~ (color if color else 'primary') ~ ' ' ~ caseClass -%}
+{%- else -%}
+    {%- set classes = 'ff-btn ff-btn--' ~ variant ~ ' ' ~ caseClass -%}
+{%- endif -%}
+{%- if extraClass -%}{%- set classes = classes ~ ' ' ~ extraClass -%}{%- endif -%}
+{%- set captureProps = {'position': position, 'variant': variant} -%}
+{#- The label+icon span is ONLY added when there's actually an icon to lay
+    out next to - a plain label stays a bare text node like before. Wrapping
+    unconditionally broke header CTAs: several `header ul span` / `header
+    span` rules (see style.css, written for the mega-menu's own label spans)
+    target any <span> under `header` with an explicit `:not(.ff-nav-label)`
+    escape hatch - a generic wrapper span here has neither that class nor
+    .ff-icon, so it got caught by those rules (forced padding, dark text)
+    instead of the button's own white/ff-btn styling. Icon usages (hero,
+    "Try it out", why-flowfuse) all live outside <header>, so this is safe. -#}
+<a class="{{ classes }}" href="{{ href }}" onclick='capture("{{ event }}", {{ captureProps | json | safe }})'>{% if isNavText %}<span class="ff-nav-label">{{ label }}</span>{% elif icon %}<span class="inline-flex items-center gap-2">{{ label }}{% include "components/icons/arrow-right.svg" %}</span>{% else %}{{ label }}{% endif %}</a>
+{%- endmacro %}

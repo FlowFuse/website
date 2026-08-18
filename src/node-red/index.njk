@@ -55,6 +55,8 @@ meta:
 description: Node-RED is the low-code programming language of choice for industrial applications. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
 sitemapPriority: 0.8
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!--First two sections-->
 <div class="nohero w-full">
     <!--Hero Content-->
@@ -70,12 +72,12 @@ sitemapPriority: 0.8
             </p>
             <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
             <p class="md:mb-10">Ready to <span class="font-semibold">get started building with Node-RED</span>?</p>
-            <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+            {{ ctaSignUp(site, 'primary', 'nodered', extraClass='hidden min-h-[40px] md:inline') }}
         </div>
         <div class="max-w-md md:w-1/2 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
             {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
         </div>
-        <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+        {{ ctaSignUp(site, 'primary', 'nodered-mobile', extraClass='flex flex-col w-full md:hidden max-w-md') }}
     </div>   
 </div>
 
@@ -327,7 +329,11 @@ sitemapPriority: 0.8
                                 {{ card.description }}
                             </p>
                         </div>
-                        <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}" {% if card.onClick %}onclick="{{ card.onClick }}"{% endif %}>{{ card.buttonText }}</a>
+                        {% if card.buttonLink == '/book-demo/' %}
+                        {{ ctaBookDemo('primary-outlined', 'nodered-deployment', extraClass='md:self-end align-baseline w-full mt-3') }}
+                        {% else %}
+                        <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}">{{ card.buttonText }}</a>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>

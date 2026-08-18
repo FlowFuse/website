@@ -1,0 +1,29 @@
+{
+    "signUp": {
+        "event": "cta-sign-up",
+        "hrefSuffix": "/account/create",
+        "label": "Try it out",
+        "navLabel": "Free Trial",
+        "navPositions": ["main-nav", "mobile-cta-bar"]
+    },
+    "signIn": {
+        "event": "cta-sign-in",
+        "hrefSuffix": "",
+        "label": "Sign In"
+    },
+    "contactUs": {
+        "event": "cta-contact-us",
+        "href": "/contact-us/",
+        "label": "Contact Us"
+    },
+    "bookDemo": {
+        "event": "cta-book-demo",
+        "href": "/book-demo/",
+        "label": "Book a Demo"
+    },
+    "pricing": {
+        "event": "cta-pricing",
+        "href": "/pricing/",
+        "label": "View Pricing"
+    }
+}

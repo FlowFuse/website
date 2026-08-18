@@ -268,9 +268,9 @@ This also covers old `/docs/**` paths left behind by a rename in `flowfuse/flowf
 
 ## Call-to-Action components
 
-**Nuxt only** — 11ty pages still use hand-written `<a class="ff-btn ...">` links; these components have no 11ty equivalent yet.
+Both frameworks have their own implementation of the same system — Vue components on Nuxt, Nunjucks macros on 11ty (see **11ty equivalent** below). The rendering/styling code itself is kept in sync by hand (Vue and Nunjucks share nothing at that level), but the *data* — event name, href, and fixed label per destination — lives in one file, `src/_data/ctaDestinations.json`, imported by both the Vue components and the Nunjucks macros (via a Nunjucks global, see below) so the two can't drift apart on copy or event names without both sides being touched. `site.json`'s `appURL` is combined with `ctaDestinations`' `hrefSuffix` for `signUp`/`signIn`, since the base URL differs per environment and doesn't belong duplicated a third time in `ctaDestinations.json`.
 
-There are exactly four CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same four URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
+There are exactly five CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same handful of URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
 
 | Component | href | Fixed label |
 |---|---|---|
@@ -278,8 +278,9 @@ There are exactly four CTA destinations, each with its own component with **fixe
 | `nuxt/components/CtaSignIn.vue` | `site.appURL` | "Sign In" |
 | `nuxt/components/CtaContactUs.vue` | `/contact-us/` | "Contact Us" |
 | `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Book a Demo" |
+| `nuxt/components/CtaPricing.vue` | `/pricing/` | "View Pricing" |
 
-All four are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a fifth destination-specific component is needed — not a prop that lets callers override copy on these four.
+All five are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a sixth destination-specific component is needed — not a prop that lets callers override copy on these five.
 
 **Props** (all optional except `variant`/`position`): `variant` (`primary` | `primary-outlined` | `highlight` | `highlight-outlined` | `ghost` | `nav-text`), `position` (free string, sent to PostHog — describes where on the page, e.g. `hero`, `pricing-card`), `plan` (e.g. `edge`/`hub`/`fleet`, sent to PostHog), `color` (`primary`|`highlight`|`white`, only for `variant="ghost"`, which has no background of its own), `icon` (Nuxt Icon name for a trailing icon), `uppercase`, `padded` (only for `variant="nav-text"` — whether it has the header-`<ul>` link padding or is true zero-padding inline text), `preview` (renders identically but doesn't navigate or call `capture()` — used by the handbook's live example gallery so clicking a doc example can't send a real event or leave the page).
 
@@ -287,7 +288,7 @@ All four are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which doe
 
 There's no `size` prop — every real-button variant's padding/font-size is hardcoded to match `.ff-btn` exactly (see the Computed-tab note in the gotchas below), so a size knob would only ever have affected icon dimensions. It was removed once confirmed nothing used a non-default value.
 
-Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`.
+Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`, `cta-pricing`.
 
 ### Gotchas already solved here (don't re-discover them)
 
@@ -298,6 +299,16 @@ Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composa
 - **`not-prose` on a wrapper also strips Tailwind Typography's code-block styling** (the dark background on `<pre>`) for anything nested inside it, not just its own prose text styling. `nuxt/components/content/CtaExample.vue` (the handbook's live example gallery) doesn't use `not-prose` for this reason, even though it also renders non-prose button/grid markup.
 - **The `ui` prop override doesn't reach compoundVariants-driven classes.** The gotcha above (full-string replacement) only applies to the app.config-level base extension; UButton's own `variant`/`color`-driven classes (e.g. `ghost`'s `hover:bg-{color}/10`) are computed separately and still get merged in via `tv()` regardless of what `ui.base` says. `CtaButton.vue`'s ghost color classes explicitly add `hover:bg-transparent` to cancel that default hover background, since a ghost CTA should have none at all.
 - **UButton's `to` prop treats any same-origin-looking path as a Nuxt route, even if Nuxt doesn't serve it.** `CtaContactUs`/`CtaBookDemo` point at `/contact-us/` and `/book-demo/`, which are still 11ty — without `external`, clicking does a client-side Vue Router navigation instead of a real page load, and 404s instead of reaching the server-side 11ty proxy. `CtaButton.vue` takes a fixed (non-caller-configurable) `external` prop per destination; `CtaContactUs`/`CtaBookDemo` set it `true`, `CtaSignUp`/`CtaSignIn` set it `false` (moot — those hrefs are already cross-origin). **When `/contact-us/` or `/book-demo/` actually migrates to Nuxt, flip that destination's `external` to `false`** — leaving it `true` would keep forcing a full page reload where a client-side nav would work fine.
+
+### 11ty equivalent
+
+`src/_includes/components/cta/` holds five Nunjucks macros (`ctaSignUp`, `ctaSignIn`, `ctaContactUs`, `ctaBookDemo`, `ctaPricing`) mirroring the Vue components above — same fixed copy/href/event per destination, same `{ position, variant }` capture payload (no `preview` or `external` prop: 11ty has no handbook gallery to guard against, and every `<a>` is a real page load already, no Vue Router to fight). All five delegate to a shared `ctaButton` macro in the same folder (`cta-button.njk`) for the actual class-building/tracking, same relationship as `CtaButton.vue` to its wrappers.
+
+No `plan` param on the 11ty side — that's only used on the pricing table, which is Nuxt-only (there's no 11ty pricing page to call it from). If 11ty ever grows a caller that needs it, add it back rather than passing it unused today.
+
+`ctaSignUp`/`ctaSignIn` take `site` as their first argument (`site.appURL` for the href) instead of reading it from the calling template's context — Nunjucks macros don't inherit the caller's context unless explicitly imported `with context`, and passing `site` explicitly avoids relying on that import mode everywhere the macro is used.
+
+Every hand-written `<a class="ff-btn ...">` pointing at one of the five destinations has been migrated to these macros — there should be no new ones. A link to a URL outside the five fixed destinations (e.g. `/ai/`) is not part of this system and stays hand-written.
 
 ## Naming conventions
 

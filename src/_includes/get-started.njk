@@ -1,3 +1,5 @@
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div class="m-auto w-full text-center sm:text-left mb-2">
     <h2 class="font-bold"><span class="text-red-600">Get Started</span> with FlowFuse</h2>
     <p class="-mt-1">Explore our <a href="/pricing/" class="underline">pricing</a></p>
@@ -11,9 +13,7 @@
             <h3 class="flex justify-center sm:justify-start font-semibold text-xl">FlowFuse Cloud</h3>
             <p class="font-light mt-6">Our managed hosted solution, maintained and supported by the FlowFuse team. Experience flexibility, scalability, and expert assistance to drive your business forward.</p>
         </div>
-        <a class="mt-4 ff-btn ff-btn--highlight uppercase inline-block self-center sm:self-start"
-            href="{% include "sign-up-url.njk" %}"
-            onclick="capture('cta-try-it-now', {'position': 'secondary'})">Try it out</a>
+        {{ ctaSignUp(site, 'highlight', 'secondary', extraClass='mt-4 inline-block self-center sm:self-start') }}
     </div>
     <div class="w-full mt-4 md:mt-0 flex flex-col justify-between">
         <div>
@@ -23,8 +23,6 @@
             <h3 class="flex justify-center sm:justify-start font-semibold text-xl">On Premise</h3>
             <p class="font-light mt-6">Deploy FlowFuse on your hardware for enhanced flexibility. Opt for self-hosted deployment with FlowFuse, enabling on-premises installation and full control over your deployment process.</p>
         </div>
-        <a class="mt-4 mb-6 sm:mb-0 ff-btn ff-btn--primary uppercase inline-block self-center sm:self-start"
-            href="/contact-us/" onclick="capture('cta-trial-license', {'position': 'secondary'})">CONTACT US
-        </a>
+        {{ ctaContactUs('primary', 'secondary', extraClass='mt-4 mb-6 sm:mb-0 inline-block self-center sm:self-start') }}
     </div>
 </div>

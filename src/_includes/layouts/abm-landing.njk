@@ -2,6 +2,8 @@
 layout: page
 nohero: true
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!--Hero Content-->
 <div class="w-full px-6">
     <div class="w-full py-12 md:pt-6">
@@ -21,25 +23,8 @@ nohero: true
                     </ul>
                 </div>
                 <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:inline md:items-start md:justify-start md:m-0">
-                    {% macro freeDemoButton(desktop=true) %}
-                    <a class="ff-btn ff-btn--primary text-base flex inline uppercase {% if desktop %}min-h-[40px]{% else %}w-full m-auto mt-12{% endif %}"
-                        href="{{ hero.buttonLink }}"
-                        onclick="capture('cta-demo', {'reference': '{{ hero.buttonReference }}'})">
-                        {{ hero.buttonText }}
-                    </a>
-                    {% endmacro %}
-                    {{freeDemoButton() }}
-                    {% macro tryItOutButton(desktop=true) %}
-                    <a class="ff-btn uppercase text-base {% if desktop %}inline{% else %}flex flex-col w-full m-auto sm:mt-12{% endif %}"
-                        href="{% include "sign-up-url.njk" %}"
-                        onclick="capture('cta-try-now', {'reference': '{{ hero.buttonReference }}'})">
-                        <span class="flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                            <span>Start Free Trial</span>
-                            {% include "components/icons/arrow-right.svg" %}
-                        </span>
-                    </a>
-                    {% endmacro %}
-                    {{ tryItOutButton() }}
+                    {{ ctaBookDemo('primary', 'hero', extraClass='inline min-h-[40px]') }}
+                    {{ ctaSignUp(site, 'ghost', 'hero', icon=true, extraClass='inline') }}
                 </div>
             </div>
             <div class="md:w-2/5 flex-grow relative">
@@ -49,8 +34,8 @@ nohero: true
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row md:hidden gap-3">
-                {{ freeDemoButton(false) }}
-                {{ tryItOutButton(false) }}
+                {{ ctaBookDemo('primary', 'hero-mobile', extraClass='w-full mt-12 min-h-[40px]') }}
+                {{ ctaSignUp(site, 'ghost', 'hero-mobile', icon=true, extraClass='flex flex-col w-full m-auto sm:mt-12') }}
             </div>
         </div>
     </div>
@@ -184,8 +169,8 @@ nohero: true
         <h3 class="mb-6 w-full text-center">{{ ctaSection.title }}</h3>
         <p class="text-center">{{ ctaSection.description }}</p>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center mt-8">
-            <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="{{ hero.buttonLink }}" onclick="capture('cta-demo', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ ctaSection.primaryCta }}</a>
-            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-now', {'position': 'secondary'}, {'reference': '{{ hero.buttonReference }}'})">{{ ctaSection.secondaryCta }}</a>
+            {{ ctaBookDemo('primary', 'secondary', extraClass='min-h-[40px]') }}
+            {{ ctaSignUp(site, 'primary-outlined', 'secondary', extraClass='min-h-[40px]') }}
         </div>
     </div>
 </div>
