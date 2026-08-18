@@ -2,6 +2,7 @@
 title: A Dedicated Home for Your Dashboards
 description: Browse and open every dashboard across your team from a new Dashboards view, without leaving FlowFuse.
 date: 2026-07-22 12:00:00
+release: "2.33"
 authors: ["noley-holland"]
 tags:
   - changelog

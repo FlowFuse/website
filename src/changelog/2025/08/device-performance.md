@@ -2,6 +2,7 @@
 title: FlowFuse Remote Instance Performance Data
 description: "View CPU and Memory usage of Remote Instances"
 date: 2025-08-28 16:00:00.0
+release: "2.21"
 authors: ['ben-hardill']
 tags:
   - changelog

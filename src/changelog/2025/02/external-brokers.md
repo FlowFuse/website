@@ -1,7 +1,8 @@
 ---
 title: External MQTT Brokers
-description:
+description: Connect FlowFuse to your existing external MQTT broker and get the same topic and activity insight as the Team Broker.
 date: 2025-02-12 12:00:00.0
+release: "2.14"
 authors: ['ben-hardill']
 tags:
   - changelog

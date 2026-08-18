@@ -2,6 +2,7 @@
 title: View Snapshot Details in the Immersive Editor
 description: You can now open and review snapshot details directly inside the immersive editor without leaving your editing session.
 date: 2026-04-07 12:00:00
+release: "2.29"
 authors: ['noley-holland']
 tags:
   - changelog

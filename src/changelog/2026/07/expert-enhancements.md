@@ -2,6 +2,7 @@
 title: FlowFuse Expert Enhancements
 description: FlowFuse Expert now supports Insights on your devices, Platform automations, Plan Mode, Human in the Loop and more...
 date: 2026-07-02 15:30:00
+release: "2.32"
 authors: ["stephen-mclaughlin", "serban-costin", "andrea-palmieri"]
 tags:
   - changelog

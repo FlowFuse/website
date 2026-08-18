@@ -2,6 +2,7 @@
 title: Device Group Management from Settings Page
 description: "Easily manage device groups directly from the Remote Instance settings page"
 date: 2025-10-21 12:00:00.0
+release: "2.23"
 authors: ['serban-costin']
 tags:
   - changelog

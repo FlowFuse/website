@@ -101,6 +101,11 @@ export default defineContentConfig({
                 authors: z.array(z.string()).optional(),
                 issues: z.array(z.string()).optional(),
                 metaTitle: z.string().optional(),
+                // The release an entry ships in, e.g. "2.33". Quoted in frontmatter so
+                // 2.30 does not parse as the number 2.3. Must be declared here or
+                // @nuxt/content strips it from the entry, which is what silently
+                // happened to `tags` on every changelog post.
+                release: z.string().regex(/^\d+\.\d+$/),
             })
         }),
         // Source files stay at src/blog/ (11ty's historical location) rather than
