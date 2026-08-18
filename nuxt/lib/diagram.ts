@@ -43,6 +43,9 @@ export interface DiagramLegendItem {
 }
 export interface DiagramSpec {
     layout?: 'flow' | 'grid'
+    // 'center' (default) centers each row within the grid width; 'left'
+    // anchors every row at column 1 (no per-row centering).
+    align?: 'center' | 'left'
     nodes: DiagramNode[]
     edges?: DiagramEdge[]
     groups?: DiagramGroup[]
@@ -97,9 +100,19 @@ function edge(a: Box, b: Box): string {
     }
 }
 
+// Stable short id from the spec so marker/filter/clip ids are unique per diagram
+// (multiple diagrams on one page must not share element ids — a shared id can
+// resolve into a hidden `display:none` tab and fail to render).
+function hashStr(s: string): string {
+    let h = 5381
+    for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0
+    return (h >>> 0).toString(36)
+}
+
 export function buildDiagramSvg(spec: DiagramSpec): string {
     const layout = spec.layout || 'flow'
     const nodes = spec.nodes || []
+    const uid = hashStr(JSON.stringify(spec))
 
     // Assign grid positions: flow auto-lanes (col = order); grid uses col/row.
     const pos = new Map<string, { col: number, row: number, span: number }>()
@@ -123,6 +136,7 @@ export function buildDiagramSvg(spec: DiagramSpec): string {
     const baseX = (col: number) => (col - 1) * (W + gx)
     const rowShift = new Map<number, number>()
     for (const r of new Set([...pos.values()].map(p => p.row))) {
+        if (spec.align === 'left') { rowShift.set(r, 0); continue }
         const inRow = [...pos.values()].filter(p => p.row === r)
         const left = Math.min(...inRow.map(p => baseX(p.col)))
         const right = Math.max(...inRow.map(p => baseX(p.col) + p.span * W + (p.span - 1) * gx))
@@ -173,8 +187,8 @@ export function buildDiagramSvg(spec: DiagramSpec): string {
         const dir = e.dir || 'to'
         const dash = e.dashed ? ' stroke-dasharray="6,5"' : ''
         const stroke = e.accent ? accent(e.accent).stroke : '#94a3b8'
-        const me = dir === 'to' || dir === 'both' ? ' marker-end="url(#ag-arrow)"' : ''
-        const ms = dir === 'both' ? ' marker-start="url(#ag-arrow-start)"' : ''
+        const me = dir === 'to' || dir === 'both' ? ` marker-end="url(#ag-arrow-${uid})"` : ''
+        const ms = dir === 'both' ? ` marker-start="url(#ag-arrow-start-${uid})"` : ''
         parts.push(`<path d="${d}" fill="none" stroke="${stroke}" stroke-width="1.8"${dash}${me}${ms}/>`)
         if (e.label) {
             const mx = (ba.x + ba.w / 2 + bb.x + bb.w / 2) / 2
@@ -196,12 +210,12 @@ export function buildDiagramSvg(spec: DiagramSpec): string {
             parts.push(`<rect x="${b.x + 16}" y="${b.y + 16}" width="${b.w}" height="${b.h}" rx="${R}" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>`)
             parts.push(`<rect x="${b.x + 8}" y="${b.y + 8}" width="${b.w}" height="${b.h}" rx="${R}" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>`)
         }
-        // White card, soft gray border + shadow.
-        parts.push(`<rect x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="${R}" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.3" filter="url(#ag-shadow)"/>`)
+        // White card, visible gray border + shadow.
+        parts.push(`<rect x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="${R}" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#ag-shadow-${uid})"/>`)
         // Accent header: a full-width bar clipped to the card's rounded shape, so its
         // top corners match the card and it spans edge to edge.
         if (hasAccent) {
-            const clip = `agc${idx}`
+            const clip = `agc-${uid}-${idx}`
             parts.push(`<clipPath id="${clip}"><rect x="${b.x}" y="${b.y}" width="${b.w}" height="${b.h}" rx="${R}"/></clipPath>`)
             parts.push(`<rect x="${b.x}" y="${b.y}" width="${b.w}" height="5" fill="${a.stroke}" clip-path="url(#${clip})"/>`)
         }
@@ -230,13 +244,19 @@ export function buildDiagramSvg(spec: DiagramSpec): string {
         }
     }
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" font-family="Heebo, Helvetica, Arial, sans-serif" style="width:100%;height:auto;display:block">`
+    // Fixed scale (1 viewBox unit = 1px) via an explicit width, so a box is the
+    // same physical size on every page instead of stretching to the container.
+    // max-width keeps very wide diagrams from overflowing; margin auto centers.
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" role="img" font-family="Heebo, Helvetica, Arial, sans-serif" style="max-width:100%;height:auto;display:block;margin:0 auto">`
         + `<defs>`
         // context-stroke → the arrowhead inherits its edge's stroke colour.
-        + `<marker id="ag-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>`
-        + `<marker id="ag-arrow-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M10,0 L0,5 L10,10 z" fill="context-stroke"/></marker>`
-        + `<filter id="ag-shadow" x="-20%" y="-30%" width="140%" height="170%"><feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#0f172a" flood-opacity="0.10"/></filter>`
+        + `<marker id="ag-arrow-${uid}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker>`
+        + `<marker id="ag-arrow-start-${uid}" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M10,0 L0,5 L10,10 z" fill="context-stroke"/></marker>`
+        + `<filter id="ag-shadow-${uid}" x="-20%" y="-30%" width="140%" height="170%"><feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.14"/></filter>`
         + `</defs>`
+        // Keep all line weights constant px regardless of how far the SVG is scaled
+        // to fit — otherwise wide diagrams render sub-pixel, near-invisible borders.
+        + `<style>rect,path,line,polygon{vector-effect:non-scaling-stroke}</style>`
         + parts.join('')
         + `</svg>`
 }

@@ -1,10 +1,11 @@
 ---
 title: Software apps
 navTitle: Software apps
-navOrder: 5
+navOrder: 3.2
 guide: flowfuse
 slug: software-apps
 blurb: "The three shapes a FlowFuse app takes when it runs on the platform. Pick by what it needs: a headless job (Packaged App), a user-facing app driven by data (Data-Driven App), or a reusable piece other apps embed (Shared Building Block)."
+parent: app-delivery-methods
 ---
 
 # Software apps
@@ -13,9 +14,19 @@ blurb: "The three shapes a FlowFuse app takes when it runs on the platform. Pick
 
 The three shapes a FlowFuse app takes when it runs on the platform. Pick by what it needs: a headless job (Packaged App), a user-facing app driven by data (Data-Driven App), or a reusable piece other apps embed (Shared Building Block).
 
-:::guide-tabs
-::guide-tab{label="Packaged App"}
-![Packaged App — diagram](/images/application-guide/flowfuse/software-apps-packaged.svg)
+::::guide-tabs
+:::guide-tab{label="Packaged App"}
+::flow-diagram
+---
+nodes:
+  - { id: broker, label: "Team Broker", sub: "MQTT", accent: teal }
+  - { id: instance, label: "Hosted Instance", sub: "headless · no UI", accent: indigo }
+  - { id: tables, label: "FlowFuse Tables", sub: "writes rows", accent: green }
+edges:
+  - { from: broker, to: instance, label: "subscribes" }
+  - { from: instance, to: tables, label: "writes" }
+---
+::
 
 A headless, self-contained job that runs the same everywhere — an MQTT-to-DB connector, a pipeline, a scheduled task. No UI.
 
@@ -35,9 +46,19 @@ A headless, self-contained job that runs the same everywhere — an MQTT-to-DB c
 - **Config** — baked into the snapshot; only fixed env vars at deploy.
 - **Data** — reads the Team Broker, writes FlowFuse Tables.
 
+:::
+:::guide-tab{label="Data-Driven App"}
+::flow-diagram
+---
+nodes:
+  - { id: users, label: "Users", sub: "browser", accent: slate }
+  - { id: instance, label: "Hosted Instance", sub: "data-driven app", accent: indigo }
+  - { id: tables, label: "FlowFuse Tables", sub: "records", accent: green }
+edges:
+  - { from: users, to: instance, label: "opens", dir: both }
+  - { from: instance, to: tables, label: "reads · writes", dir: both }
+---
 ::
-::guide-tab{label="Data-Driven App"}
-![Data-Driven App — diagram](/images/application-guide/flowfuse/software-apps-datadriven.svg)
 
 A user-facing app on a Hosted Instance — a time clock, an asset manager — whose content is driven by data. It needs a backend and a data source to be complete.
 
@@ -56,9 +77,21 @@ A user-facing app on a Hosted Instance — a time clock, an asset manager — wh
 - **Config** — app settings and records live in FlowFuse Tables (or context), editable without redeploying.
 - **Data** — FlowFuse Tables for records, the Team Broker for live values.
 
+:::
+:::guide-tab{label="Shared Building Block"}
+::flow-diagram
+---
+nodes:
+  - { id: block, label: "Shared Building Block", sub: "reusable subflows", accent: indigo }
+  - { id: library, label: "Team Library", sub: "catalogue", accent: slate }
+  - { id: instances, label: "Hosted Instances", sub: "embed & upgrade together", accent: indigo, many: true }
+edges:
+  - { from: block, to: library, label: "publish" }
+  - { from: library, to: instances, label: "embedded in", accent: red, dashed: true }
+legend:
+  - { line: red, dashed: true, label: "embedded in" }
+---
 ::
-::guide-tab{label="Shared Building Block"}
-![Shared Building Block — diagram](/images/application-guide/flowfuse/software-apps-shared.svg)
 
 A reusable piece of UI or logic that other apps embed — not an app itself. Think a common dashboard surface many Hosted Instances present through.
 
@@ -77,5 +110,5 @@ A reusable piece of UI or logic that other apps embed — not an app itself. Thi
 - **Config** — via the subflow's instance properties / env where it's embedded.
 - **Data** — none of its own; it embeds into the host app's data.
 
-::
 :::
+::::

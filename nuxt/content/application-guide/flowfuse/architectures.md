@@ -1,7 +1,7 @@
 ---
 title: Architectures
 navTitle: Architectures
-navOrder: 7
+navOrder: 5
 guide: flowfuse
 slug: architectures
 blurb: "Every FlowFuse deployment is the same building blocks arranged for where it runs — pick the world you're designing for."
@@ -33,7 +33,26 @@ A modifier for any of the three worlds above. When your development server is a 
 
 A pipeline pushes your dev work up to a repo; each site's instance pulls it back down. One versioned source of truth — with review, history and rollback in Git — and dev kept safely off the production deployment servers.
 
-![Architectures — diagram](/images/application-guide/flowfuse/architectures-overview.svg)
+::arch-diagram
+---
+nodes:
+  - { id: dev, label: "Dev instance", sub: "develop once", accent: indigo, col: 2, row: 1 }
+  - { id: github, label: "GitHub", sub: "versioned source of truth", accent: slate, col: 2, row: 2 }
+  - { id: siteA, label: "Instance", sub: "Site A · OT", accent: indigo, col: 1, row: 3 }
+  - { id: siteB, label: "Instance", sub: "Site B · IT", accent: indigo, col: 2, row: 3 }
+  - { id: siteC, label: "Instance", sub: "Site C · OT", accent: indigo, col: 3, row: 3 }
+groups:
+  - { label: "Dev · one build", nodes: [dev] }
+  - { label: "Sites · prod instances (OT & IT)", nodes: [siteA, siteB, siteC] }
+edges:
+  - { from: dev, to: github, label: "pipeline push", dashed: true, accent: red }
+  - { from: github, to: siteA, label: "pull", dashed: true, accent: red }
+  - { from: github, to: siteB, dashed: true, accent: red }
+  - { from: github, to: siteC, dashed: true, accent: red }
+legend:
+  - { line: red, dashed: true, label: "push / pull" }
+---
+::
 
 ::callout{icon="i-lucide-arrow-right"}
 **[App delivery methods →](/application-guide/flowfuse/app-delivery-methods/)** — Once code is on a server, it ships via snapshots or subflows.

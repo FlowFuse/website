@@ -9,6 +9,7 @@ const props = defineProps<{
     edges?: (DiagramEdge | string)[]
     groups?: DiagramGroup[]
     legend?: DiagramLegendItem[]
+    align?: 'center' | 'left'
 }>()
 
 const edges = computed<DiagramEdge[]>(() => (props.edges || []).map(e =>
@@ -17,7 +18,7 @@ const edges = computed<DiagramEdge[]>(() => (props.edges || []).map(e =>
         : e,
 ))
 
-const svg = computed(() => buildDiagramSvg({ layout: 'grid', nodes: props.nodes, edges: edges.value, groups: props.groups, legend: props.legend }))
+const svg = computed(() => buildDiagramSvg({ layout: 'grid', align: props.align, nodes: props.nodes, edges: edges.value, groups: props.groups, legend: props.legend }))
 </script>
 
 <template>

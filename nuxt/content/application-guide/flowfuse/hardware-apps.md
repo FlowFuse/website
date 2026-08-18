@@ -1,10 +1,11 @@
 ---
 title: Hardware apps
 navTitle: Hardware apps
-navOrder: 4
+navOrder: 3.1
 guide: flowfuse
 slug: hardware-apps
 blurb: "The three shapes a FlowFuse app takes when it runs on a device. Pick by how much varies per site: nothing (Packaged App), a few settings (Configurable App), or you assemble it yourself (Edge Building Block)."
+parent: app-delivery-methods
 ---
 
 # Hardware apps
@@ -13,9 +14,17 @@ blurb: "The three shapes a FlowFuse app takes when it runs on a device. Pick by 
 
 The three shapes a FlowFuse app takes when it runs on a device. Pick by how much varies per site: nothing (Packaged App), a few settings (Configurable App), or you assemble it yourself (Edge Building Block).
 
-:::guide-tabs
-::guide-tab{label="Packaged App"}
-![Packaged App — diagram](/images/application-guide/flowfuse/hardware-apps-packaged.svg)
+::::guide-tabs
+:::guide-tab{label="Packaged App"}
+::flow-diagram
+---
+nodes:
+  - { id: snap, label: "Pipeline snapshot", sub: "sealed · built once", accent: indigo }
+  - { id: inst, label: "Remote Instance", sub: "identical", accent: indigo, many: true }
+edges:
+  - { from: snap, to: inst, label: "deploy · sealed", accent: slate }
+---
+::
 
 A sealed product that ships on a piece of hardware and is identical everywhere — buy it, it runs on its device, nothing to configure.
 
@@ -35,9 +44,22 @@ A sealed product that ships on a piece of hardware and is identical everywhere �
 - **Config** — baked into the snapshot; only fixed env vars at deploy, nothing per-site.
 - **Data** — events to the Team Broker, records to FlowFuse Tables.
 
+:::
+:::guide-tab{label="Configurable App"}
+::flow-diagram
+---
+nodes:
+  - { id: snap, label: "Pipeline snapshot", sub: "same build", accent: indigo, col: 1, row: 1 }
+  - { id: cfg, label: "Per-site config", sub: "tags · broker · site", accent: slate, col: 1, row: 2 }
+  - { id: inst, label: "Remote Instance", sub: "per site", accent: indigo, many: true, col: 2, row: 1 }
+edges:
+  - { from: snap, to: inst, label: "same build", accent: slate }
+  - { from: cfg, to: inst, label: "loads its own config", accent: red, dashed: true }
+legend:
+  - { line: slate, label: "same build" }
+  - { line: red, dashed: true, label: "loads its own config" }
+---
 ::
-::guide-tab{label="Configurable App"}
-![Configurable App — diagram](/images/application-guide/flowfuse/hardware-apps-configurable.svg)
 
 The same shelf product, plus a few knobs — tag names, broker address, site name — that differ per site and live on the Remote Instance.
 
@@ -57,9 +79,19 @@ The same shelf product, plus a few knobs — tag names, broker address, site nam
 - **Config** — a per-site file on the device (tags, broker address, site name), backed up to FlowFuse Tables so a swap restores it.
 - **Data** — Team Broker + FlowFuse Tables.
 
+:::
+:::guide-tab{label="Edge Building Block"}
+::flow-diagram
+---
+nodes:
+  - { id: eq, label: "Equipment", sub: "signals / PLC", accent: slate }
+  - { id: inst, label: "Remote Instance", sub: "edge building block", accent: indigo }
+  - { id: broker, label: "Team Broker", sub: "MQTT", accent: indigo }
+edges:
+  - { from: eq, to: inst, label: "reads" }
+  - { from: inst, to: broker, label: "publishes", accent: slate }
+---
 ::
-::guide-tab{label="Edge Building Block"}
-![Edge Building Block — diagram](/images/application-guide/flowfuse/hardware-apps-edge.svg)
 
 Not a finished app — one hardware-facing block plus example flows, running on a Remote Instance. You assemble everything upstream of it yourself.
 
@@ -79,5 +111,5 @@ Not a finished app — one hardware-facing block plus example flows, running on 
 - **Config** — lives in the consuming flow you build around the block (env / context).
 - **Data** — Team Broker (normalized, upstream).
 
-::
 :::
+::::

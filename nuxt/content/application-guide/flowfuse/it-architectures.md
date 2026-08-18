@@ -1,9 +1,10 @@
 ---
 title: IT architectures
 navTitle: IT architectures
-navOrder: 8
+navOrder: 5.1
 guide: flowfuse
 slug: it-architectures
+parent: architectures
 ---
 
 # IT architectures
@@ -13,21 +14,18 @@ slug: it-architectures
 ::arch-diagram
 ---
 nodes:
-  - { id: plat, label: "FlowFuse platform", sub: "on your own servers", accent: indigo, col: 2, row: 1 }
-  - { id: i1, label: "Hosted Instance", sub: "app", accent: indigo, col: 1, row: 2 }
-  - { id: i2, label: "Hosted Instance", sub: "app", accent: indigo, col: 2, row: 2 }
-  - { id: i3, label: "Hosted Instance", sub: "app", accent: indigo, col: 3, row: 2 }
-  - { id: users, label: "IT users", sub: "dashboards & tools", accent: slate, col: 2, row: 3 }
+  - { id: users, label: "IT users", sub: "dashboards & tools", accent: slate, col: 2, row: 1 }
+  - { id: plat, label: "FlowFuse platform", sub: "on your own servers", accent: indigo, col: 2, row: 2 }
+  - { id: i1, label: "Hosted Instance", sub: "app", accent: indigo, col: 1, row: 3 }
+  - { id: i2, label: "Hosted Instance", sub: "app", accent: indigo, col: 2, row: 3 }
+  - { id: i3, label: "Hosted Instance", sub: "app", accent: indigo, col: 3, row: 3 }
 groups:
   - { id: dc, label: "On-prem IT data center · self-managed", accent: green, nodes: [plat, i1, i2, i3] }
-  - { id: usr, label: "IT users", accent: green, nodes: [users] }
 edges:
+  - { from: users, to: plat, label: "access" }
   - { from: plat, to: i1 }
   - { from: plat, to: i2, label: "hosts" }
   - { from: plat, to: i3 }
-  - { from: i1, to: users }
-  - { from: i2, to: users, label: "served to" }
-  - { from: i3, to: users }
 legend:
   - { swatch: green, label: "IT zone" }
 ---
@@ -68,50 +66,45 @@ The FlowFuse platform runs in the company's own cloud account (e.g. AWS) and dep
 ::arch-diagram
 ---
 nodes:
-  - { id: plat, label: "FlowFuse platform", sub: "own infra, cloud, or SaaS", accent: indigo, col: 2, row: 1 }
-  - { id: a, label: "IT service", sub: "team A", accent: slate, col: 1, row: 2 }
-  - { id: b, label: "IT service", sub: "team B", accent: slate, col: 2, row: 2 }
-  - { id: c, label: "IT service", sub: "team C", accent: slate, col: 3, row: 2 }
+  - { id: s1, label: "FlowFuse server", sub: "Site A · on-prem", accent: indigo, col: 1, row: 1 }
+  - { id: s2, label: "FlowFuse server", sub: "Site B · on-prem", accent: indigo, col: 2, row: 1 }
+  - { id: s3, label: "FlowFuse server", sub: "Site C · in the cloud", accent: indigo, col: 3, row: 1 }
 groups:
-  - { id: p, label: "Platform · host it where you want", accent: indigo, nodes: [plat] }
-  - { id: svc, label: "IT services across the org", accent: green, nodes: [a, b, c] }
-edges:
-  - { from: plat, to: a }
-  - { from: plat, to: b, label: "supports" }
-  - { from: plat, to: c }
+  - { id: sites, label: "Sites · one independent FlowFuse server each, host it where you want", accent: green, nodes: [s1, s2, s3] }
+edges: []
 legend:
-  - { swatch: green, label: "IT zone" }
+  - { swatch: green, label: "Site" }
 ---
 ::
 
-One FlowFuse platform supports IT services across the whole organisation, and you choose where it runs: your own infrastructure, your own AWS, or FlowFuse's SaaS. Same platform, same apps, wherever it is hosted.
+Scale out by running a **FlowFuse server at each site** — host each one where it fits, on-prem or in the cloud. Each site's server is fully independent: its own platform, run and governed on its own. There's no central server above them.
 
-**Use it when** — Supporting IT broadly and you want freedom to host the platform on-prem, in your cloud, or as SaaS.
+**Use it when** — Every site wants its own full, self-contained FlowFuse server, hosted wherever suits it, with nothing central above it.
 
 :::
 :::guide-tab{label="Enterprise governance"}
 ::arch-diagram
 ---
 nodes:
-  - { id: plat, label: "FlowFuse platform", sub: "central governance", accent: indigo, col: 2, row: 1 }
-  - { id: t1, label: "Team", sub: "site / BU", accent: slate, col: 1, row: 2 }
-  - { id: t2, label: "Team", sub: "site / BU", accent: slate, col: 2, row: 2 }
-  - { id: t3, label: "Team", sub: "site / BU", accent: slate, col: 3, row: 2 }
+  - { id: central, label: "FlowFuse", sub: "corporate apps", accent: indigo, col: 2, row: 1 }
+  - { id: s1, label: "FlowFuse server", sub: "Site A · local apps", accent: indigo, col: 1, row: 2 }
+  - { id: s2, label: "FlowFuse server", sub: "Site B · local apps", accent: indigo, col: 2, row: 2 }
+  - { id: s3, label: "FlowFuse server", sub: "Site C · local apps", accent: indigo, col: 3, row: 2 }
 groups:
-  - { id: ent, label: "Enterprise · one platform · central governance · one standard", accent: indigo, nodes: [plat] }
-  - { id: teams, label: "Teams — isolated by role-based access", accent: green, nodes: [t1, t2, t3] }
+  - { id: ent, label: "Corporate · company-wide apps", accent: indigo, nodes: [central] }
+  - { id: servers, label: "Sites · apps that run locally", accent: green, nodes: [s1, s2, s3] }
 edges:
-  - { from: plat, to: t1 }
-  - { from: plat, to: t2, label: "governs · isolates" }
-  - { from: plat, to: t3 }
+  - { from: central, to: s1 }
+  - { from: central, to: s2, label: "dev once · share code down" }
+  - { from: central, to: s3 }
 legend:
-  - { swatch: green, label: "Team zone" }
+  - { swatch: green, label: "Site server" }
 ---
 ::
 
-One FlowFuse platform serves the whole company. Each site or business unit is its own team — its own instances and applications — isolated by role-based access and unified under central governance and one standard.
+Split where apps live: company-wide apps run on a central corporate FlowFuse, while apps specific to a site run locally on that site's own FlowFuse server. You can still develop in one place and **share code down** to the sites — build once centrally, roll it out to every site.
 
-**Use it when** — Central governance and one standard across many sites, with each team's work kept separate.
+**Use it when** — Some apps belong to the whole company and some are site-specific, and you want to build centrally but let each site run its own local apps.
 
 :::
 ::::

@@ -75,11 +75,9 @@ defineOgImage('Default', { title: title.value, section: guide.value?.title ?? 'F
         </div>
       </div>
 
-      <div class="lg right-nav">
-        <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
-          <HandbookToc v-if="(mdPage as any)?.body?.toc?.links" :links="(mdPage as any).body.toc.links" />
-        </div>
-      </div>
+      <!-- Guided experience: no per-page TOC — the reclaimed column gives the
+           diagrams room to break out wider (see .ag-diagram in FlowDiagram.vue). -->
+      <div class="lg right-nav"></div>
 
     </div>
   </div>

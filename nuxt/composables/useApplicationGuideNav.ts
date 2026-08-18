@@ -5,6 +5,7 @@ export interface ApplicationGuidePageSummary {
     slug: string
     title: string
     navOrder: number
+    parent?: string
     blurb?: string
     path: string
 }
@@ -36,6 +37,7 @@ export const useApplicationGuidePages = () => useAsyncData('application-guide-na
             slug: page.slug as string,
             title: (page.navTitle as string) || (page.title as string),
             navOrder: (page.navOrder as number) ?? Infinity,
+            parent: page.parent as string | undefined,
             blurb: page.blurb as string | undefined,
             path: `/application-guide/${page.guide}/${page.slug}/`,
         }))

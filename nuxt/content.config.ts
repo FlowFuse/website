@@ -77,6 +77,8 @@ export default defineContentConfig({
                 slug: z.string(),
                 navTitle: z.string().optional(),
                 navOrder: z.number().optional(),
+                // slug of the parent page — nests this page under it in the sidebar.
+                parent: z.string().optional(),
                 blurb: z.string().optional(),
                 meta: z.object({
                     description: z.string().optional(),

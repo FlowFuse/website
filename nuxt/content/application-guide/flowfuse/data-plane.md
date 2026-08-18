@@ -1,7 +1,7 @@
 ---
 title: Data plane
 navTitle: Data plane
-navOrder: 6
+navOrder: 4
 guide: flowfuse
 slug: data-plane
 blurb: "Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the community over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on."
@@ -13,11 +13,23 @@ blurb: "Before you pick where things run, decide how data is handled. Two stores
 
 Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the community over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on.
 
-:::guide-tabs
-::guide-tab{label="Relational"}
+::::guide-tabs
+:::guide-tab{label="Relational"}
 **Built in** — ships with every FlowFuse server install; exposed to every instance.
 
-![Relational — diagram](/images/application-guide/flowfuse/data-plane-dp-relational.svg)
+::flow-diagram
+---
+nodes:
+  - { id: instances, label: "Instances", sub: "App A · B · C", accent: indigo, many: true }
+  - { id: tables, label: "FlowFuse Tables", sub: "relational", accent: green }
+edges:
+  - { from: instances, to: tables, label: "query & update", accent: slate }
+groups:
+  - { label: "Built into every FlowFuse server install", accent: green, nodes: [tables] }
+legend:
+  - { line: slate, label: "Authenticated · every instance reaches it" }
+---
+::
 
 A place for records that relate to each other — assets, config, users, orders — that you look up, join and update in place. It's FlowFuse Tables, built into every FlowFuse server install and exposed to every instance on the team.
 
@@ -36,11 +48,29 @@ A place for records that relate to each other — assets, config, users, orders 
 
 - **Watch out** — not for high-rate timestamped streams; use the time-series target for those.
 
-::
-::guide-tab{label="Broker / UNS"}
+:::
+:::guide-tab{label="Broker / UNS"}
 **Built in** — ships with every FlowFuse server install; publish once, many subscribe.
 
-![Broker / UNS — diagram](/images/application-guide/flowfuse/data-plane-dp-broker.svg)
+::arch-diagram
+---
+nodes:
+  - { id: dashboard, label: "Dashboard", sub: "subscribes", accent: blue, col: 1, row: 1 }
+  - { id: historian, label: "Historian", sub: "subscribes", accent: green, col: 2, row: 1 }
+  - { id: other, label: "Other app", sub: "subscribes", accent: slate, col: 3, row: 1 }
+  - { id: broker, label: "Team Broker", sub: "built in · UNS", accent: teal, col: 2, row: 2 }
+  - { id: pub, label: "Instance", sub: "publishes", accent: indigo, col: 2, row: 3 }
+edges:
+  - { from: pub, to: broker, label: "publish", accent: teal, dashed: true }
+  - { from: broker, to: dashboard, label: "subscribe", accent: teal, dashed: true }
+  - { from: broker, to: historian, accent: teal, dashed: true }
+  - { from: broker, to: other, accent: teal, dashed: true }
+groups:
+  - { label: "Built into every FlowFuse install", accent: teal, nodes: [broker] }
+legend:
+  - { line: teal, dashed: true, label: "MQTT · publish once, many subscribe" }
+---
+::
 
 A real-time bus, not storage: one instance publishes to a topic, any number subscribe. It's the Team Broker, built into every FlowFuse server install — the backbone of a Unified Namespace.
 
@@ -59,11 +89,26 @@ A real-time bus, not storage: one instance publishes to a topic, any number subs
 
 - **Watch out** — it carries data, it doesn't store it; write to Tables too if you need history.
 
-::
-::guide-tab{label="Time-series"}
+:::
+:::guide-tab{label="Time-series"}
 **Bring your own** — external today; FlowFuse has no built-in time-series DB.
 
-![Time-series — diagram](/images/application-guide/flowfuse/data-plane-dp-timeseries.svg)
+::flow-diagram
+---
+nodes:
+  - { id: db, label: "Time-series DB", sub: "Timescale / QuestDB", accent: slate }
+  - { id: hosted, label: "Hosted Instance", sub: "connects & fronts it", accent: indigo }
+  - { id: fleet, label: "Instances", sub: "query by time", accent: slate, many: true }
+edges:
+  - { from: db, to: hosted, label: "Postgres wire", accent: slate }
+  - { from: hosted, to: fleet, label: "Project Link", accent: red, dashed: true }
+groups:
+  - { label: "External · where the readings live", accent: slate, nodes: [db] }
+legend:
+  - { line: slate, label: "Postgres wire" }
+  - { line: red, dashed: true, label: "Project Link · target is a Hosted Instance" }
+---
+::
 
 A store built for a steady stream of timestamped readings — sensor data, telemetry, trends — written fast and queried by time. FlowFuse has no built-in time-series database, so you run one and expose it to the fleet.
 
@@ -82,11 +127,26 @@ A store built for a steady stream of timestamped readings — sensor data, telem
 
 - **Watch out** — not part of FlowFuse; you run and expose it. Pair with the Team Broker for live + history.
 
-::
-::guide-tab{label="Bring your own"}
+:::
+:::guide-tab{label="Bring your own"}
 **Bring your own** — expose any other store or service to the fleet over Project Link.
 
-![Bring your own — diagram](/images/application-guide/flowfuse/data-plane-dp-byo.svg)
+::flow-diagram
+---
+nodes:
+  - { id: store, label: "Your store / service", sub: "SQL · ML · gateway", accent: slate }
+  - { id: hosted, label: "Hosted Instance", sub: "connects & fronts it", accent: indigo }
+  - { id: fleet, label: "Instances", sub: "queries it", accent: slate, many: true }
+edges:
+  - { from: store, to: hosted, label: "connects", accent: slate }
+  - { from: hosted, to: fleet, label: "Project Link", accent: red, dashed: true }
+groups:
+  - { label: "Wherever it lives · you run it", accent: slate, nodes: [store] }
+legend:
+  - { line: slate, label: "connects" }
+  - { line: red, dashed: true, label: "Project Link · target is a Hosted Instance" }
+---
+::
 
 Any other store or service FlowFuse doesn't provide — an existing SQL database, an ML model, a site gateway. You run it where it already lives and expose it to the community of managed instances over Project Link, with no inbound ports.
 
@@ -105,8 +165,8 @@ Any other store or service FlowFuse doesn't provide — an existing SQL database
 
 - **Good for** — keeping data and services where they already live and exposing them securely to the fleet. FlowFuse doesn't care what the target is.
 
-::
 :::
+::::
 
 ::callout{icon="i-lucide-git-branch"}
 **Single service?** Calling one external endpoint from a flow — an HTTP request or webhook to one system — is a Node-RED decision, not a platform data target. [Node-RED guide →](/application-guide/node-red/handling-data/)
