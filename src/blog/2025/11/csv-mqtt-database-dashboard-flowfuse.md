@@ -1,7 +1,7 @@
 ---
 title: "How to Ingest CSV Logs into MQTT, Databases, and Dashboards"
 subtitle: "Turn old CSV logs into live data streams using FlowFuse."
-description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards. Build real-time and batch processing pipelines with Node-RED and FlowFuse."
+description: "Learn how to ingest CSV logs from PLCs and SCADA systems into MQTT brokers, databases, and dashboards using FlowFuse today."
 lastUpdated: 2026-06-17
 date: 2025-11-10
 authors: ["sumit-shinde"]
@@ -104,9 +104,11 @@ Before starting, ensure you have:
 
 If you don't have a CSV file and want to follow along, you can import the following flow and deploy it. This flow will simulate a temperature sensor and log readings to a daily CSV file.
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"66776385db5794bc","type":"group","z":"5a0080d134f80f7d","name":"","style":{"fill":"none","label":true,"fill-opacity":"0.57"},"nodes":["ac0d35a6466cfcb4","4aff5b57cbb63b8f","a5c5746934670306","23ebc0da4315ac46","2518dc909d447655"],"x":214,"y":279,"w":892,"h":82},{"id":"ac0d35a6466cfcb4","type":"csv","z":"5a0080d134f80f7d","g":"66776385db5794bc","name":"","spec":"rfc","sep":",","hdrin":true,"hdrout":"once","multi":"one","ret":"\\r","temp":"timestamp,temperature","skip":"0","strings":true,"include_empty_strings":"","include_null_values":"","x":670,"y":320,"wires":[["a5c5746934670306"]]},{"id":"4aff5b57cbb63b8f","type":"function","z":"5a0080d134f80f7d","g":"66776385db5794bc","name":"Daily PLC Logger","func":"// @ts-ignore Node ≥ 18.15 provides fs.statfsSync; editor types may lag\n\nconst now = new Date();\nconst dateStr = now.toISOString().split('T')[0];\nconst timestamp = now.toISOString();\n\nconst filename = `./plc_data_${dateStr}.csv`;\n\nmsg.payload = {\n    timestamp: timestamp,\n    temperature: msg.payload,\n};\n\nmsg.filename = filename;\n\n// Track last date in flow context\nconst lastDate = flow.get('lastDate') || '';\nif (lastDate !== dateStr) {\n    msg.reset = true; // Will trigger CSV node to write headers\n    flow.set('lastDate', dateStr);\n} \n\nreturn msg;\n","outputs":1,"timeout":0,"noerr":0,"initialize":"","finalize":"","libs":[],"x":490,"y":320,"wires":[["ac0d35a6466cfcb4"]]},{"id":"a5c5746934670306","type":"file","z":"5a0080d134f80f7d","g":"66776385db5794bc","name":"Log Data to CSV file","filename":"filename","filenameType":"msg","appendNewline":true,"createDir":true,"overwriteFile":"false","encoding":"none","x":840,"y":320,"wires":[["2518dc909d447655"]]},{"id":"23ebc0da4315ac46","type":"inject","z":"5a0080d134f80f7d","g":"66776385db5794bc","name":"","props":[{"p":"payload"}],"repeat":"5","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"$round(70 + ($random() * 2), 2)","payloadType":"jsonata","x":310,"y":320,"wires":[["4aff5b57cbb63b8f"]]},{"id":"2518dc909d447655","type":"debug","z":"5a0080d134f80f7d","g":"66776385db5794bc","name":"Result","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":1010,"y":320,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 ## Real-Time Data Pipeline
 
@@ -282,7 +284,7 @@ Now we'll configure the database insertion to write batched data efficiently.
 
 #### Enabling FlowFuse Database
 
-If you have a Enterprise account, you can use the built-in PostgreSQL database service instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](https://flowfuse.com/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
+If you have a Enterprise account, you can use the built-in PostgreSQL database service instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
 
 Once enabled, you'll have access to a fully managed PostgreSQL database that's automatically configured and ready to use with your FlowFuse flows.
 
@@ -397,7 +399,7 @@ Now we'll add a chart to visualize the temperature data in real-time.
 
 Once deployed, open the dashboard, you should see a real-time line chart displaying temperature values over time, with each device shown as a separate series. Data points will automatically update as new MQTT messages arrive.
 
-![Dashboard showing real-time line chart with temperature data updating as new MQTT messages arrive](./images/flowfuse-dashboard.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Dashboard showing real-time line chart with temperature data updating as new MQTT messages arrive" width="800" height="351" preload="none"><source src="/blog/2025/11/images/flowfuse-dashboard.webm" type="video/webm" /></video>
 *Live dashboard displaying real-time temperature readings from CSV data stream*
 
 ## What's Next

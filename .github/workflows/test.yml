@@ -2,60 +2,23 @@ name: Tests
 
 on: push
 
+# Pushing again to a branch replaces the commit the running build was checking, so cancel
+# that build rather than pay for a result nobody will look at. main is exempt: every commit
+# there keeps its own run, since those are the ones the ruleset and the history rely on.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
+  # The build itself lives in FlowFuse/github-actions-workflows so this repository and
+  # FlowFuse/flowfuse documentation pull requests share one definition. The check this
+  # reports is "test_website / Build and check", which the "protect main" ruleset requires.
   test_website:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate a token
-        id: generate_token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        with:
-          client-id: ${{ secrets.GH_CI_READONLY_APP_ID }}
-          private-key: ${{ secrets.GH_CI_READONLY_APP_KEY }}
-          owner: ${{ github.repository_owner }}
-          repositories: |
-            website
-            flowfuse
-            blueprint-library
-      - name: Check out website repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          path: 'website'
-          token: ${{ steps.generate_token.outputs.token }}
-      - name: Check out FlowFuse/flowfuse repository (to access the docs)
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: 'FlowFuse/flowfuse'
-          ref: main
-          path: 'flowfuse'
-          token: ${{ steps.generate_token.outputs.token }}
-      - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: 'FlowFuse/blueprint-library'
-          ref: main
-          path: 'blueprint-library'
-          token: ${{ steps.generate_token.outputs.token }}       
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 24
-          cache: 'npm'
-          cache-dependency-path: './website/package-lock.json'
-      - run: npm run docs
-        working-directory: 'website'
-      - run: npm run blueprints
-        working-directory: 'website'
-      - name: Install Dependencies
-        run: npm install
-        working-directory: 'website'
-      - name: Build the forge
-        run: npm run build:nuxt:skip-images
-        working-directory: 'website'
-      - name: Check links
-        uses: untitaker/hyperlink@9375bc4063712ad490d5eb3d54df0b6aade15e54 # 0.3.2
-        with:
-          args: website/nuxt/dist/ --check-anchors --sources website/src
+    uses: FlowFuse/github-actions-workflows/.github/workflows/build_website.yml@build_website/v1
+    with:
+      website_repository: ${{ github.repository }}
+      website_ref: ${{ github.sha }}
+      run_unit_tests: true
+    secrets:
+      ci_app_id: ${{ secrets.GH_CI_READONLY_APP_ID }}
+      ci_app_key: ${{ secrets.GH_CI_READONLY_APP_KEY }}

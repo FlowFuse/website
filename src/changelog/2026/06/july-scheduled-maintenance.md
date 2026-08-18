@@ -1,4 +1,5 @@
 ---
+metaTitle: "Scheduled Server Maintenance July 11th, 2026"
 title: "Updated: Upcoming Scheduled Server Maintenance on July 11th, 2026"
 description: Keeping the FlowFuse Cloud up to date with critical server maintenance.
 date: 2026-06-15 12:00:00.0
@@ -33,4 +34,4 @@ On FlowFuse Cloud, Starter teams already have this feature enabled for their ins
 
 Pro and Enterprise teams can opt-in on the Instance Settings - Maintenance page.
 
-More information is available in the [scheduled maintenance changelog entry](https://flowfuse.com/changelog/2025/12/scheduled-maintenance/).
+More information is available in the [scheduled maintenance changelog entry](/changelog/2025/12/scheduled-maintenance/).

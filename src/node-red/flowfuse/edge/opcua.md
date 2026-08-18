@@ -469,6 +469,8 @@ Each notification carries `msg.sequenceNumber`. Watch it for gaps to detect drop
 - **Named JSON structure**, inject a JSON object whose leaf values are NodeIds (the shape Explore produces); notifications arrive in the same shape with current readings.
 - **Entire subtree**, use Explore once (output type `NodeId`) to discover all variables under a branch, then feed that structure into Monitor to watch them all live.
 
+In the array and named-structure modes, the set you inject replaces the previous one. See [Changing or stopping what is monitored](#changing-or-stopping-what-is-monitored) to add, remove, or stop monitored items at runtime.
+
 ### Message properties (override node config per message)
 
 - `msg.outputType`, `Value` or `DataValue`.
@@ -496,9 +498,29 @@ msg.payload = [
 
 All items in the array share one subscription, sampling interval, and queue, more efficient than one Monitor node per variable. As a rough guide: under 10 items is trivial, 10–100 is the efficient sweet spot, 100–1000 may need tuned subscription parameters, and beyond 1000 split the work across multiple Monitor nodes.
 
+### Changing or stopping what is monitored
+
+The injected NodeId set is declarative: whatever you inject becomes the complete set of monitored items, replacing whatever was monitored before. The node has no separate stop or unsubscribe command because you do not need one, you change the set instead.
+
+- **Reduce the set**, inject a shorter array. The dropped NodeIds are released as monitored items on the server, not merely filtered out of the node's output.
+- **Stop monitoring**, inject an empty array (`[]`), or an empty object (`{}`) if you are injecting the named JSON structure. Every monitored item is released and the node stops emitting.
+- **Restart monitoring**, inject the NodeId array again. The subscription itself persists while empty, which costs almost nothing and makes restarting immediate.
+
+This is how you start and stop monitoring programmatically, from an Inject node or a dashboard control, without editing and redeploying the flow.
+
+Example, stop monitoring:
+
+```js
+msg.payload = [];
+```
+
+{% note %}
+Injecting an empty array releases the monitored items but leaves the now-empty subscription in place on the connection, so it is the right way to pause and resume a stream. To tear the session down completely, disconnect the connection instead.
+{% endnote %}
+
 ### Deadband filtering
 
-[Deadband filtering](/blog/2026/04/stop-noisy-sensor-data-deadband-filter-flowfuse/#what-is-a-deadband-filter%3F) suppresses insignificant changes, essential for analog values that jitter. The server applies it, so it also reduces network traffic.
+[Deadband filtering](/blog/2026/04/stop-noisy-sensor-data-deadband-filter-flowfuse/#what-is-a-deadband-filter) suppresses insignificant changes, essential for analog values that jitter. The server applies it, so it also reduces network traffic.
 
 | Type | Behaviour |
 |---|---|

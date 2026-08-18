@@ -1,7 +1,7 @@
 ---
 title: Node-RED Dashboard Formally Deprecated
 subtitle: It has just been announced that the predecessor to FlowFuse's Dashboard, Node-RED Dashboard, has been formally deprecated. Find out how FlowFuse Dashboard can help you build your Dashboards, and what we have planned in the near future.
-description: It has just been announced that the predecessor to FlowFuse's Dashboard, Node-RED Dashboard, has been formally deprecated. Find out what this means for your Node-RED instances, see how you can get started with FlowFuse's Dashboard, and what we have planned in the near future.
+description: "Node-RED Dashboard, the predecessor to FlowFuse's Dashboard, has been formally deprecated. Find out what this means for you."
 lastUpdated: 2026-02-23
 date: 2024-06-27
 authors: ["joe-pavitt"]
@@ -31,6 +31,9 @@ Not only have we made significant efforts to ensure that FlowFuse Dashboard has 
 - **New Nodes:** We've introduced a five new nodes; [Button Group](https://dashboard.flowfuse.com/nodes/widgets/ui-button-group.html), [Radio Group](https://dashboard.flowfuse.com/nodes/widgets/ui-radio-group.html), [File Upload](https://dashboard.flowfuse.com/nodes/widgets/ui-file-input.html), [Event](https://dashboard.flowfuse.com/nodes/widgets/ui-event.html) and [Table](https://dashboard.flowfuse.com/nodes/widgets/ui-table.html) to help you build your Dashboards, without needing to write custom code, or depend on third-party libraries.
 - **Directly Install on Mobile:** FlowFuse Dashboard is built as a Progressive Web App (PWA), this means that you're able to install it directly onto your mobile device as if it were a native mobile application.
 - **Vuetify Framework:** FlowFuse Dashboard is built on VueJS, and with that, we made the decision to integrate in [Vuetify](https://vuetifyjs.com/en/components/all/#containment), a very rich collection of functional UI widgets. All of these widgets are available, by default when you want to build your own custom widgets in a `ui-template` node.
+
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
 
 ## What we have planned
 
@@ -67,7 +70,7 @@ If you're looking to migrate your existing Node-RED Dashboard flows to FlowFuse 
 
 It's worth noting that FlowFuse Dashboard _will_ run side-by-side with the original Node-RED Dashboard, so you can take your time to migrate your flows over, and do so, piece-by-piece.
 
-This week, we also made available the first iteration of the [Dashboard Migration Service](https://flowfuse.com/platform/dashboard/#migration-service):
+This week, we also made available the first iteration of the [Dashboard Migration Service](/platform/dashboard/#migration-service):
 
 ![Screenshot showing the Dashboard Migration Service available on FlowFuse's website](./images/dashboard-migration-service.png){data-zoomable}
 _Screenshot showing the Dashboard Migration Service available on FlowFuse's website_

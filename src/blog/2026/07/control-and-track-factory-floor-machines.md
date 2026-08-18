@@ -1,7 +1,7 @@
 ---
 title: "Control and Track Machines on the Factory Floor"
 subtitle: "Build a FlowFuse dashboard to control a PLC-connected motor and stack light, then track runtime automatically"
-description: "Learn how to connect FlowFuse to a Siemens S7 PLC, build an operator dashboard to control a motor and stack light, and automatically track device runtime using the Hourglass node."
+description: "Learn how to connect FlowFuse to a Siemens S7 PLC, build an operator dashboard, and automatically track device runtime data."
 date: 2026-07-02
 usecase:
   - shop-floor-communication
@@ -68,7 +68,7 @@ In this tutorial, you'll connect FlowFuse to a Siemens S7 PLC, build an operator
 Before you begin, make sure you have the following:
 
 - A Siemens S7 PLC, or **S7-PLCSIM** if you're using a simulated PLC.
-- A FlowFuse instance running on your edge device with the Device Agent installed. If you don't already have one, [sign up]({% include "sign-up-url.njk" %}) and follow the [Device Agent Quick Start guide](/docs/device-agent/quickstart/) to connect your first device.
+- A FlowFuse instance running on your edge device with the Device Agent installed. If you don't already have one, [sign up](https://app.flowfuse.com/account/create) and follow the [Device Agent Quick Start guide](/docs/device-agent/quickstart/) to connect your first device.
 - The following packages installed:
   - `@flowfuse/node-red-dashboard`
   - `node-red-contrib-s7`

@@ -1,7 +1,7 @@
 ---
 title: Building a Unified Namespace (UNS) with FlowFuse
 subtitle: Implement your Unified Namespace seamlessly using our low-code platform
-description: Discover how FlowFuse helps you build a Unified Namespace (UNS) effortlessly, streamlining industrial data sharing, improving operational efficiency, and enabling real-time insights for smarter decision-making.
+description: "Discover how FlowFuse helps you build a Unified Namespace (UNS) effortlessly, streamlining industrial data sharing at scale."
 date: 2024-11-28
 lastUpdated: 2025-07-23
 authors: ["sumit-shinde"]
@@ -17,7 +17,7 @@ cta:
   description: FlowFuse brings together Node-RED, a built-in MQTT broker, and centralized device management, everything you need to connect your shop floor data into a single, real-time namespace.
 ---
 
-As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/solutions/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
+As systems and devices become more connected, managing data from different sources can be tricky. A [Unified Namespace (UNS)](/use-cases/uns/) solves this by centralizing all your data in one place, making it easy to access and use.
 
 <!--more-->
 

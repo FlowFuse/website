@@ -76,6 +76,9 @@ With a URL similar to the one above, depending on your specific network and Node
 
 One of the easiest ways to protect your flows is to add a username and password to your Node-RED instance.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 The first step is to find your Node-RED settings.js file. It's not always in the same place but on a default Debian Linux installation it can be found in this directory.
 
 ```cd ~/.node-red```
@@ -114,7 +117,7 @@ The last step is to restart Node-RED, I'm using Debian so the command is:
 
 Now, when we try to access Node-RED I will need to provide a username and password.
 
-![Using the username and password to login to Node-RED](./images/login.gif "Using the username and password to login to Node-RED")
+<video autoplay loop muted playsinline aria-label="Using the username and password to login to Node-RED" width="708" height="476" preload="none"><source src="/blog/2023/04/images/login.webm" type="video/webm" /></video>
 
 You might also want to consider turning off the editor interface once you are happy with your flows. This can make it a little harder to make changes to your project but it also gives you peace of mind that nobody has accidentally or deliberately changed your flows. You can turn off the editor interface as follows.
 
@@ -192,7 +195,7 @@ By default, the Node-RED editor is secured using your FlowFuse user credentials.
 
 All traffic to FlowFuse and your Node-RED instances is protected by HTTPS. FlowFuse has set up the domain name and manages the certificates, so you can spend time on your flows rather than configuring security. Additionally, remote device access is secured through encrypted tunnels, providing comprehensive protection for your deployments.
 
-FlowFuse has a [free trial]({% include "sign-up-url.njk" %}) if you'd like to see how we've made secure hosting of Node-RED easy.
+FlowFuse has a [free trial](https://app.flowfuse.com/account/create) if you'd like to see how we've made secure hosting of Node-RED easy.
 
 ## Conclusion
 

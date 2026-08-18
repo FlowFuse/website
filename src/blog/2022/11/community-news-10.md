@@ -1,7 +1,7 @@
 ---
 title: Community News October 2022 #10
 subtitle: News from the FlowFuse and Node-RED communities
-description: News from the FlowFuse and Node-RED communities
+description: "A roundup of October 2022 news from the FlowFuse and Node-RED communities, covering platform updates and community highlights."
 date: 2022-11-04
 authors: ["rob-marcer"]
 image: "/images/blog/community-news.jpeg"
@@ -29,10 +29,10 @@ Earlier this week, we announced a $7.25M seed round led by [Cota Capital](https:
 [**Node-RED Dashboard - Beginners Guide**](https://stevesnoderedguide.com/node-red-dashboard)  
 It's great to see members of the Node-RED community taking their personal time to help us all build better projects. This write up takes you through the basics of creating your first Dashboard through to more advanced techniques to help your interfaces look professional and provide great user experiences.
 
-[**FlowFuse Team News**](/team/)    
+[**FlowFuse Team News**](/about/)    
 We are currently recruiting [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004), a [Product Manager](https://boards.greenhouse.io/flowfuse/jobs/4717778004), a [Recruiter / PeopleOps Manager](https://boards.greenhouse.io/flowfuse/jobs/4687876004) and a [Senior Community Manager](https://boards.greenhouse.io/flowfuse/jobs/4700809004). You can view any of the roles we currently have open and apply on our [Jobs page](https://boards.greenhouse.io/flowfuse).
 
 We'd also like to welcome [Pez Cuckow](https://github.com/Pezmc) who joined FlowFuse as a Senior Software Engineer in October.
     
-[**Try FlowFuse for Free**]({% include "sign-up-url.njk" %}?code=RELEASE1)  
-As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link]({% include "sign-up-url.njk" %}?code=RELEASE010) or use the code RELEASE1 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](/docs/install/) for free, forever.
+[**Try FlowFuse for Free**](https://app.flowfuse.com/account/create?code=RELEASE1)  
+As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on our managed FlowFuse platform when you create a new team. To get this discount please follow [this link](https://app.flowfuse.com/account/create?code=RELEASE010) or use the code RELEASE1 when on the payment page after creating a new team. As an open source project you can also use [FlowFuse](/docs/install/) for free, forever.

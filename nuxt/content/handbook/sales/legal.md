@@ -1,5 +1,7 @@
 ---
 title: "Legal"
+navigation:
+  order: 21
 ---
 
 # Legal
@@ -17,7 +19,9 @@ agreement, we have a
 [standard response overview](https://docs.google.com/document/d/1US_eixmRtzzFHybl3l9woP0isrwvK2_t7nPXoKYiuq4/edit?tab=t.0#heading=h.w8522tz1d0cr).
 Any redline or non-standard MSA review must also have a task in the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list) — see the [Deal Desk process](/handbook/sales/engagements/#asana-deal-desk-tasks) for required context.
 
-All legal document reviews, including NDAs, MSAs, DPAs, security agreements, and customer paper, must be submitted through the [Deal Desk](https://flowfuse.com/handbook/sales/engagements/#deal-approval-process-(deal-desk)) process in Asana before review or approval.
+All legal document reviews, including NDAs, MSAs, DPAs, security agreements, and customer paper, must be submitted through the [Deal Desk](/handbook/sales/engagements/#deal-approval-process-deal-desk) process in Asana before review or approval.
+
+Signed subscription agreements and quotes/P.O.'s must be stored in the Google Drive folders listed in the [Closing a deal](/handbook/sales/engagements/#closing-a-deal) section.
 
 ## Accepted Payment Methods
 
@@ -63,7 +67,7 @@ FlowFuse has templates for standard NDA's:
 
 - [One way NDA](https://docs.google.com/document/d/1r6a3qgYrfKwNnNwQwx2Wp63QiC_sHGHYca8f9IR_fCI){rel="nofollow"} -
   When the other parties cannot share to any third parties
-- [Mutual NDA](https://docs.google.com/document/d/1YiOQPbcEwbqpLcnrYjaui9ur1iLO_8Y3Ty4TOVJNiTk){rel="nofollow} -
+- [Mutual NDA](https://docs.google.com/document/d/1YiOQPbcEwbqpLcnrYjaui9ur1iLO_8Y3Ty4TOVJNiTk){rel="nofollow"} -
   Neither party can discuss details outside of the listed parties
 
 If you need these for any discussions, please ask the PeopleOps Manager to send

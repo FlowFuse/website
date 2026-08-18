@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Library: Curated List of Nodes"
 eleventyNavigation:
   key: Node-RED Library
   parent: Getting Started
@@ -46,7 +47,7 @@ To install nodes through the Node-RED editor:
 5. Search for the required node
 6. Click **Install** next to the package
 
-![Installing a Node-RED node through the Palette Manager in the Node-RED editor](./images/installing-node-red-node.gif "Installing a Node-RED node through the Palette Manager"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Installing a Node-RED node through the Palette Manager in the Node-RED editor" width="1326" height="720" preload="none"><source src="/node-red/getting-started/library/images/installing-node-red-node.webm" type="video/webm" /></video>
 
 Installed nodes appear in your palette immediately and are ready for use in your flows.
 

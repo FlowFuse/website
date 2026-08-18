@@ -1,7 +1,8 @@
 ---
+metaTitle: "The Rosetta Stone for Factories"
 title: "The Rosetta Stone for Factories: Why IIoT Needs a Common Language First"
 subtitle: "Your factory isn't data-poor. It's data-illiterate. Here's the difference."
-description: "Discover why IIoT data integration fails at scale and how the Unified Namespace, OPC-UA, and MQTT create a common industrial data language that compounds value with every system you add."
+description: "Discover why IIoT data integration fails at scale and how Unified Namespace, OPC-UA, and MQTT create a common data language."
 date: 2026-04-30
 keywords: IIoT, Unified Namespace, OPC-UA, MQTT, Sparkplug B, industrial data integration, factory data, data interoperability, smart manufacturing, Industry 4.0, edge computing, PLC data, SCADA integration, industrial IoT architecture, FlowFuse
 authors: ["sumit-shinde"]
@@ -79,7 +80,7 @@ What actually works is three things aligned together.
 
 **A reliable transport layer.** OPC-UA defines the vocabulary. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) moves it. Lightweight, publish-subscribe, designed for the unreliable networks and constrained hardware that characterise real factory floors rather than data centre diagrams. Sparkplug B closes the gap that vanilla MQTT leaves open: without it, two systems both speaking MQTT can still be writing in different dialects. With it, every message has a predictable structure before you read a single byte of content.
 
-**An architecture that removes the N² problem entirely.** The [Unified Namespace](/solutions/uns/) is what changes the geometry. Instead of bilateral connections between systems, every device and every application publishes to and subscribes from a single broker. The broker is the fixed reference point, the Rosetta Stone. Every system maps to it. Every system becomes readable to every other system, not because they were directly connected, but because they share the same anchor.
+**An architecture that removes the N² problem entirely.** The [Unified Namespace](/use-cases/uns/) is what changes the geometry. Instead of bilateral connections between systems, every device and every application publishes to and subscribes from a single broker. The broker is the fixed reference point, the Rosetta Stone. Every system maps to it. Every system becomes readable to every other system, not because they were directly connected, but because they share the same anchor.
 
 !["Industrial data flow from PLC to analytics via MQTT broker"](./images/flowfuse-uns.png)
 _Industrial data flow from PLC to analytics via MQTT broker_

@@ -1,7 +1,8 @@
 ---
+metaTitle: "Modbus TCP vs Modbus RTU: Key Differences"
 title: "Modbus TCP vs Modbus RTU: Reliability, Latency, and Failure Modes"
 subtitle: "What nobody tells you until the line goes down"
-description: "A practical engineering guide to choosing between Modbus RTU and Modbus TCP, covering real latency numbers, failure modes that hide in plain sight, and how each protocol behaves when things go wrong."
+description: "A practical engineering guide to choosing between Modbus RTU and Modbus TCP, covering real latency numbers and failure modes."
 date: 2026-02-20
 authors: ["sumit-shinde"]
 image: /blog/2026/02/images/modbus-rtu-vs-tcp.png
@@ -32,6 +33,9 @@ The physical layer is almost always RS-485 in industrial installations, a differ
 That architecture imposes hard constraints. Only one device can transmit at a time. Timing between bytes within a frame matters: RTU uses silence on the line to mark frame boundaries, so a gap of 3.5 character times signals the end of one message and the start of the next. Get the baud rate wrong, introduce a noisy cable that stretches a byte, or misconfigure inter-character timing, and the frame parser loses its place. The message is silently discarded. No retransmission, no acknowledgment, just a timeout.
 
 ![Image showing Modbus RTU on RS-485 and Modbus TCP on Ethernet.](./images/modbus-rtu-and-tcp-physical-layer.png "Image showing Modbus RTU on RS-485 and Modbus TCP on Ethernet.")
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 Modbus TCP moves the same application layer onto Ethernet and wraps it in a TCP socket. The serial constraints disappear. Multiple masters can coexist, transactions can be pipelined, and the physical layer handles collision detection and retransmission. What you gain in flexibility, you trade for a different set of assumptions. TCP guarantees delivery, but not timing. A retransmission storm on a busy network can stretch response times in ways that RTU, for all its limitations, never would.
 

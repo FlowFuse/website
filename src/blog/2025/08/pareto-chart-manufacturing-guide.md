@@ -1,12 +1,13 @@
 ---
+metaTitle: "Pareto Chart & Diagram: Formula & Examples"
 title: "Pareto Chart & Diagram: What It Is, Formula, Examples & Manufacturing Applications"
 subtitle: "How the Pareto principle helps manufacturing teams focus where it matters most."
-description: "Learn how Pareto Charts and diagrams help manufacturing teams reduce defects by 80%. Includes formula, real examples, and applications in quality control & maintenance."
+description: "Learn how Pareto Charts and diagrams help manufacturing teams reduce defects by up to 80%, with formulas and real examples."
 date: 2025-08-28
 lastUpdated: 2025-12-29
 keywords: Pareto chart, Pareto diagram, Pareto analysis, manufacturing quality, defect reduction, quality control tools, root cause analysis, equipment maintenance, supply chain management, manufacturing efficiency
 authors: ["sumit-shinde"]
-image: blog/2025/08/images/pareto-chart-manufacturing-guide.png
+image: /blog/2025/08/images/pareto-chart-manufacturing-guide.png
 tags:
   - flowfuse
 meta:
@@ -46,7 +47,7 @@ meta:
 
     - question: "What if my Pareto chart shows an even distribution of problems?"
       answer: "If problems are evenly distributed with no clear 80/20 pattern, you may need to recategorize your data more specifically, look at cost impact instead of frequency, or consider that your process has multiple equally important issues requiring a different improvement approach."
-tldr: "A Pareto Chart is a quality control tool that combines a descending bar chart with a cumulative percentage line to visualize which problems defects, downtime causes, supplier issues account for the greatest impact, based on the 80/20 principle. Manufacturing teams use it to prioritize where to focus limited improvement resources for maximum return, and modern platforms like FlowFuse can generate Pareto charts automatically from real-time production data."
+tldr: "A Pareto chart pairs a descending bar chart with a cumulative percentage line to show which problems account for the greatest impact, based on the 80/20 principle. Manufacturing teams use it to decide where limited improvement resources will pay off most, and FlowFuse can generate one automatically from live production data."
 ---
 
 A Pareto Chart helps manufacturing teams cut through the chaos when problems arrive in clusters, defects, delays, downtime, and customer complaints all competing for attention. With limited resources and time, how do you decide which fire to put out first?
@@ -102,6 +103,9 @@ Starting from the largest category, add percentages progressively:
 ```
 Cumulative Percentage = Sum of all previous percentages + Current percentage
 ```
+
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
 
 ## What Does a Pareto Chart Show?
 
@@ -186,4 +190,4 @@ The first step is always the hardest, and the most important. Choose one persist
 
 **Ready to transform your manufacturing data into actionable insights?** 
 
-Stop guessing which problems to tackle first. [Try FlowFuse free for 30 days]({% include "sign-up-url.njk" %}) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.
+Stop guessing which problems to tackle first. [Try FlowFuse free for 30 days](https://app.flowfuse.com/account/create) and build automated Pareto Charts that connect directly to your production data, or [see a live demo](/book-demo/) of how leading manufacturers identify their vital few problems in real-time.

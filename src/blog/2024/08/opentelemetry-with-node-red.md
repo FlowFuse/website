@@ -1,7 +1,8 @@
 ---
+metaTitle: "Monitoring Node-RED Flows with Open Telemetry"
 title: "Monitoring and Optimizing Node-RED Flows with Open Telemetry (2026)"
 subtitle: Integrating Open Telemetry with Node-RED for Efficient Distributed Tracing
-description: Learn to integrate Open Telemetry with Node-RED to track and optimize flow performance.
+description: "Learn to integrate Open Telemetry with Node-RED in 2026 to track, monitor, and optimize your flow's overall performance."
 lastUpdated: 2026-06-03
 date: 2024-08-15
 authors: ["sumit-shinde"]
@@ -75,13 +76,18 @@ In Node-RED The Open Telemetry module helps track messages by creating "spans" t
 
 ## Tracing in Node-RED Flows using Opentelemetry
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 In a manufacturing plant, Node-RED manages different machines and sensors. Suppose there's a problem with the production line, such as a delay in processing or a GPIO node experiencing issues reading data. With Open Telemetry integrated, you can trace the data flow through the system to see exactly where the issue is happening. This helps you quickly identify whether the problem is with a specific node that is reading the machine data or a delay in data processing, allowing you to fix the issue faster and keep the production line running smoothly.
 
 For demonstration purposes, we will use a flow that simulates sensor reading and data processing. We will monitor this flow using Open Telemetry to track data across the system, identify bottlenecks, and optimize performance.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"78e4a1255f9d0ad1","type":"group","z":"45e56b4089cada94","name":"","style":{"label":true},"nodes":["636ac7b4d798a5c4","ac87db82c2ab66f5","c8a1749629359031","c0d30281031f07db"],"x":34,"y":139,"w":852,"h":82},{"id":"636ac7b4d798a5c4","type":"inject","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"Temperature sensor","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"300","payloadType":"jsonata","x":180,"y":180,"wires":[["c8a1749629359031"]]},{"id":"ac87db82c2ab66f5","type":"debug","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":780,"y":180,"wires":[]},{"id":"c8a1749629359031","type":"change","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"Kelvin to Celsius","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload - 273.15","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":400,"y":180,"wires":[["c0d30281031f07db"]]},{"id":"c0d30281031f07db","type":"delay","z":"45e56b4089cada94","g":"78e4a1255f9d0ad1","name":"","pauseType":"delay","timeout":"2","timeoutUnits":"seconds","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":600,"y":180,"wires":[["ac87db82c2ab66f5"]]}]
-{% endrenderFlow %}
+```
+::
 
 Deploy the flow above, and you might see a delay in the data shown on the debug panel. For this example, we added a Delay node before the Change node that converts temperature data from Kelvin to Celsius. While this delay is visible here, finding such delays in larger flows with many nodes can be difficult and time-consuming. Open Telemetry makes this easier by giving you detailed traces that show where delays or issues are happening
 
@@ -122,9 +128,11 @@ _Image showing the tototal duration taken by the flow_
 
 Since the issue was identified with the delay node, let's remove that delay node.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"636ac7b4d798a5c4","type":"inject","z":"350fb9fbb98012be","name":"Temperature sensor","props":[{"p":"payload"}],"repeat":"","crontab":"","once":true,"onceDelay":0.1,"topic":"","payload":"300","payloadType":"jsonata","x":200,"y":100,"wires":[["c8a1749629359031"]]},{"id":"ac87db82c2ab66f5","type":"debug","z":"350fb9fbb98012be","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":640,"y":100,"wires":[]},{"id":"c8a1749629359031","type":"change","z":"350fb9fbb98012be","name":"Kelvin to Celsius","rules":[{"t":"set","p":"payload","pt":"msg","to":"payload - 273.15","tot":"jsonata"}],"action":"","property":"","from":"","to":"","reg":false,"x":420,"y":100,"wires":[["ac87db82c2ab66f5"]]}]
-{% endrenderFlow %}
+```
+::
 
 After updating the flow, redeploy the flow and check the traces again. You should see that the total time has been reduced significantly, with the overall flow now taking around 8 milliseconds instead of the previous 2 seconds. This demonstrates how Open Telemetry helps in identifying and resolving performance issues in your Node-RED flows.
 

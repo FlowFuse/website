@@ -79,6 +79,21 @@ from = "/landing/accelerating-industrial-innovation-with-low-code-platforms/"
 to = "/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/"
 status = 301
 
+# Case-sensitive legacy casing redirects. These can't live in nuxt/redirects.ts:
+# Nitro's route rules match case-insensitively, so a rule keyed on the old casing
+# also matches the current lowercase canonical URL, redirecting it to itself in
+# an infinite loop. Netlify's edge redirects match exact case, so they redirect
+# only the old casing without touching the canonical URL.
+[[redirects]]
+from = "/blog/2023/05/Integrating-Modbus-with-Node-RED"
+to = "/blog/2023/05/integrating-modbus-with-node-red/"
+status = 301
+
+[[redirects]]
+from = "/blog/2026/03/Rethinking-Edge-AIs-Core-Orchestration/"
+to = "/blog/2026/03/rethinking-edge-ais-core-orchestration/"
+status = 301
+
 [[redirects]]
 from = "/*"
 to = "/.netlify/functions/server"
@@ -97,5 +112,7 @@ package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
     "nuxt/public/img", # Eleventy Image Disk Cache
-    ".cache/images" # Eleventy image processing cache
+    ".cache/images", # Eleventy image processing cache
+    "nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image", # nuxt-og-image's resolved font URLs + converted TTFs
+    "nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image-render" # nuxt-og-image's rendered-image build cache
   ]

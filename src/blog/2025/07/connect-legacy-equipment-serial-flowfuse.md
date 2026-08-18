@@ -1,12 +1,13 @@
 ---
+metaTitle: "Node-RED Serial Port Tutorial: RS232/RS485"
 title: "Node-RED Serial Port Tutorial: Connect RS232/RS485 Manufacturing Equipment (2026)"
 subtitle: "Learn how to bring serial-connected equipment online using Node-RED and FlowFuse"
-description: "Learn how to connect manufacturing equipment using serial interfaces like RS-232/422/485 in Node-RED with FlowFuse. Enable monitoring, data collection, and automation, no hardware changes required"
+description: "Learn how to connect manufacturing equipment using RS-232/422/485 serial interfaces in Node-RED with FlowFuse and its nodes."
 lastUpdated: 2026-06-03
 date: 2025-07-09
 authors: ["sumit-shinde"]
 keywords: node-red, serial communication, rs232, rs485, rs422, modbus, industrial automation, flowfuse, legacy equipment, machine data collection, manufacturing connectivity, serial port integration, factory floor monitoring, serial devices, equipment integration
-image: blog/2025/07/images/connect-serial-port-node-red-ff.png
+image: /blog/2025/07/images/connect-serial-port-node-red-ff.png
 tags:
    - flowfuse
    - opcua
@@ -104,6 +105,9 @@ Different machines use different physical standards. The most common are:
   * **RS-485**: Typically half-duplex and multi-device. Ideal for networks and even longer cable runs.
   * **USB (via adapter)**: Most modern PCs and gateways use USB-to-Serial adapters to talk to RS-232/422/485 devices.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Setting Up Serial Communication with FlowFuse
 
 Now that you understand how serial communication works and what kind of interfaces your machine might use, the next step is to put that knowledge into practice.
@@ -132,7 +136,7 @@ After installing the `node-red-node-serialport` package, follow these steps to c
 
 4.  Enter the serial port path (e.g., `/dev/ttyUSB0` on Linux or `COM3` on Windows). You can also click the **search** option to list available ports.
 
-   ![Screenshot of Node-RED serial port node configuration showing available serial ports after clicking the search option.](./images/searching-path.gif){data-zoomable}
+   <video autoplay loop muted playsinline aria-label="Screenshot of Node-RED serial port node configuration showing available serial ports after clicking the search option." width="1036" height="784" preload="none"><source src="/blog/2025/07/images/searching-path.webm" type="video/webm" /></video>
    _Screenshot of Node-RED serial port node configuration showing available serial ports after clicking the search option._
 
 6.  Set the **baud rate**, **data bits**, **stop bits**, and **parity** according to your machine's specifications. These values must match the device exactly, or communication will fail or result in corrupted data.

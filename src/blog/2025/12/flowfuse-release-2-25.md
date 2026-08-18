@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.25: MCP Resources in Expert & More"
 title: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
 subtitle: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
 description: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
@@ -20,7 +21,7 @@ This release comes with some big updates for the FlowFuse Expert.
 ![Image of MCP in FlowFuse](./images/mcp-in-flowfuse.png)
 _[FlowFuse Expert Interface]_
 
-Our [MCP nodes](https://flowfuse.com/node-red/flowfuse/mcp/) make is super easy to extend AI Agents with tools and resources in your environment. With this release, we're introducing the ability to interact your MCP servers directly within the FlowFuse Expert.
+Our [MCP nodes](/node-red/flowfuse/mcp/) make is super easy to extend AI Agents with tools and resources in your environment. With this release, we're introducing the ability to interact your MCP servers directly within the FlowFuse Expert.
 
 Previously, when setting up an MCP server in FlowFuse, you would first designate your tools, resources, and servers in side of Node-RED using the MCP nodes. Then, to interact with them, you needed a separate tool like VSCode to query and perform operations.
 
@@ -39,7 +40,7 @@ Previously, this was only available in Node-RED managed directly by the FlowFuse
 
 You will need an account on FlowFuse Cloud to connect it to, but for this release, it does *not* require a paid subscription to use.
 
-Check the FlowFuse Expert Assistant docs for [how to get started](https://flowfuse.com/docs/user/expert/#flowfuse-assistant-plugin).
+Check the FlowFuse Expert Assistant docs for [how to get started](/docs/user/expert/).
 
 ## Improved Update Scheduling
 ![Image of Scheduled Updates UI](./images/updates.png)
@@ -68,7 +69,7 @@ Which of these new features are you most excited to try? Reach out on GitHub or 
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

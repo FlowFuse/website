@@ -1,5 +1,7 @@
 ---
 title: "Edge Connectivity Sales Process"
+navigation:
+  order: 19
 ---
 
 # Edge Connectivity Sales Process
@@ -72,7 +74,7 @@ Next Step: Confirm the deal viability.
 
 Resource:
 - [Sales Deck](https://docs.google.com/presentation/d/1aK87jBFXP9ElvJz_b2U_sBmQqpqFD5ddCyjeuVVnnVs/edit)
-- [Sales Demo](https://flowfuse.com/handbook/sales/meetings/demo/)
+- [Sales Demo](/handbook/sales/meetings/demo/)
 
 ## **Meeting 2b:** Stakeholder Demo / Workshop (60–90 min)**
 

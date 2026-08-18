@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.6: AI Infused Node-RED & More"
 title: "FlowFuse 2.6: AI Infused Node-RED, Persistent File Storage & Lots More"
 subtitle: Lowering the barrier to entry for new users, and enhancing the flexibility and functionality of the platform.
 description: Discover the new features in FlowFuse 2.6, and it's focus on improving the Node-RED development experience.
@@ -17,7 +18,7 @@ tags:
    - Node-RED
 ---
 
-FlowFuse 2.6 is packed with great new features, and in this release we've had a heavy focus on improving the development experience of Node-RED, lowering the barrier to entry for new users and aligning to our [Simplified Hosting](https://flowfuse.com/handbook/engineering/product/strategy/#simplified-hosting) and [Low-Code](https://flowfuse.com/handbook/engineering/product/strategy/#low-code) plans from our [Product Strategy](https://flowfuse.com/handbook/engineering/product/strategy/).
+FlowFuse 2.6 is packed with great new features, and in this release we've had a heavy focus on improving the development experience of Node-RED, lowering the barrier to entry for new users and aligning to our [Simplified Hosting](/handbook/engineering/product/) and [Low-Code](/handbook/engineering/product/) plans from our [Product Strategy](/handbook/engineering/product/).
 
 <!--more-->
 
@@ -68,7 +69,7 @@ With the 2.6 release, each instance now gets a piece of persistent file system t
 
 This unlocks lots of new capabilities using nodes from the community. For example, the [SQLite](https://flows.nodered.org/node/node-red-node-sqlite) nodes can be used to quickly add a locally managed database to store your data in.
 
-All newly created instances of FlowFuse Cloud from today will have this storage enabled. If you have an existing instance you'd like to move over, then do get [in touch](https://flowfuse.com/contact-us/) and we can help move you over.
+All newly created instances of FlowFuse Cloud from today will have this storage enabled. If you have an existing instance you'd like to move over, then do get [in touch](/contact-us/) and we can help move you over.
 
 ## Other Highlights
 
@@ -86,7 +87,7 @@ The improvement here is that we've moved instances and devices to be shown as a 
 ![Screenshot showing the admin page for "Flow Blueprints" with the new "Import"/"Export" buttons](./images/blueprint-import-export.png){data-zoomable}
 _Screenshot showing the admin page for "Flow Blueprints" with the new "Import"/"Export" buttons_
 
-Administrators of FlowFuse instances can now import and export Blueprints. This is the first stage of a larger feature set for Blueprints that will make it easier to share common flows and patterns across FlowFuse instances, and see many extensions to our [Blueprint Library](https://flowfuse.com/blueprints/).
+Administrators of FlowFuse instances can now import and export Blueprints. This is the first stage of a larger feature set for Blueprints that will make it easier to share common flows and patterns across FlowFuse instances, and see many extensions to our [Blueprint Library](/blueprints/).
 
 ### Multi-line Environment Variables
 
@@ -113,7 +114,7 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 ### FlowFuse Cloud
 
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
 
 ## Upgrading FlowFuse
 

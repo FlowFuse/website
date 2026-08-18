@@ -1,4 +1,5 @@
 ---
+metaTitle: "Deploy Node-RED to Hundreds of Edge Devices"
 title: "How to deploy Node-RED to hundreds of PLCs and IoT edge devices"
 subtitle: Discover how to deploy and managed hundreds of devices running Node-RED on PLCs and IoT edge computers.
 description: Join Rob Marcer to learn efficient deployment and management of Node-RED on hundreds of PLCs and IoT edge devices. Discover FlowFuse’s automation and troubleshooting features.

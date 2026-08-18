@@ -1,7 +1,8 @@
 ---
+metaTitle: "FlowFuse 2.18: Smarter Monitoring & AI"
 title: "FlowFuse 2.18: Smarter Monitoring, AI Integration, Improved DevOps, and a preview of exciting things to come"
 subtitle: "Monitor and improve instance performance, run AI chat in your Dashboard, Git pull, and more."
-description: "Monitor and improve instance performance, run AI chat in your Dashboard, Git pull, and more."
+description: "FlowFuse 2.18 brings smarter monitoring, AI integration, and improved DevOps: run AI chat in your Dashboard, Git pull, and more."
 date: 2025-06-05
 authors: ["greg-stoutenburg"]
 image: /blog/2025/06/images/release-2-18.png
@@ -35,7 +36,7 @@ This Blueprint makes it simple to surface insights relevant to your Node-RED flo
 
 Check out the video demo to see it in action, featuring the agent connected to a worldmap node!
 
-To put this Blueprint to use, check out the Blueprint page for [OpenAI LLM Chat Agent.](https://flowfuse.com/blueprints/ai/llm-chat-agent/)
+To put this Blueprint to use, check out the Blueprint page for [OpenAI LLM Chat Agent.](/blueprints/ai/llm-chat-agent/)
 
 
 
@@ -51,7 +52,7 @@ More details are available in the [Git Integration changelog](/changelog/2025/06
 
 Organizations running self-hosted FlowFuse installations can now take advantage of the Blueprints we publish, bringing the same rapid development capabilities to on-premises and private cloud deployments. 
 
-Self-hosted installations will automatically pull down the [blueprint library](https://flowfuse.com/blueprints/), and will stay up to date when we publish new blueprints.
+Self-hosted installations will automatically pull down the [blueprint library](/blueprints/), and will stay up to date when we publish new blueprints.
 
 This update ensures that all FlowFuse users, regardless of their deployment model, can benefit from our growing library of pre-built solutions.
 
@@ -63,7 +64,7 @@ By combining AI assistance with Node-RED's visual programming approach, we're cr
 
 Here is a sneak peek of something we're working on: an AI chat in the Node-RED editor that allows you to ask questions about the instance you are working in. 
 
-![Preview of AI in Node-RED Editor](./images/AI_preview.gif)
+<video autoplay loop muted playsinline aria-label="Preview of AI in Node-RED Editor" width="971" height="679" preload="none"><source src="/blog/2025/06/images/AI_preview.webm" type="video/webm" /></video>
 
 ## What else is new?
 
@@ -85,4 +86,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

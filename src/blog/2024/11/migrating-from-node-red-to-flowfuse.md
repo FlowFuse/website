@@ -1,7 +1,8 @@
 ---
+metaTitle: "Migrating Self-Managed Node-RED to FlowFuse"
 title: Migrating from Self-Managed Node-RED to FlowFuse-Managed Node-RED
 subtitle: A Step-by-Step Guide to Transitioning Your Node-RED Flows to a Streamlined FlowFuse Environment
-description: Discover how to migrate from a self-managed Node-RED setup to a FlowFuse-managed environment, including step-by-step instructions for instance creation, data backup, and snapshot deployment.
+description: "Discover how to migrate from a self-managed Node-RED setup to a fully FlowFuse-managed environment, step by step, with ease."
 date: 2024-11-13
 authors: ["sumit-shinde"]
 image: /blog/2024/11/images/migrating-from-self-managed-nr-to-flowfuse-managed-nr.png
@@ -97,9 +98,11 @@ While the snapshot captures flows, credentials, and environment variables at the
 
 To get these variables, you can use the following flow to dump a list of all process environment variables into the debug window:
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"3ed886625239a5d0","type":"function","z":"a87879f70edc3463","name":"process.env","func":"msg.payload = process.env\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","libs":[{"var":"process","module":"process"}],"x":650,"y":480,"wires":[["9ca3edbd6857853f"]]},{"id":"b35ef390a46ff129","type":"inject","z":"a87879f70edc3463","name":"List env vars","props":[{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":430,"y":480,"wires":[["3ed886625239a5d0"]]},{"id":"9ca3edbd6857853f","type":"debug","z":"a87879f70edc3463","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","targetType":"msg","statusVal":"","statusType":"auto","x":880,"y":480,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 1. Import and deploy the flow into your self-managed Node-RED instance.
 2. Click the Inject Node's button

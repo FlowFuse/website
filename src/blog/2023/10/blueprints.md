@@ -1,7 +1,7 @@
 ---
 title: What are FlowFuse Blueprints?
 subtitle: Preconfigured Node-RED Applications
-description: Explore the concept of FlowFuse Blueprints, the pre-built solutions to simplify Node-RED experience, and take a look at the first three Blueprints we've launched for manufacturing applications.
+description: "Explore FlowFuse Blueprints, the pre-built solutions simplifying Node-RED, and see the first three launched for manufacturing."
 date: 2023-10-16
 authors: ["marian-demme"]
 image: "/blog/2023/10/images/blueprints.png"

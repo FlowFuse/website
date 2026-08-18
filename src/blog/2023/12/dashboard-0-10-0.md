@@ -64,7 +64,7 @@ export default {
 
 Some quick gotchas to note:
 
-- {% raw %}`<div>{{ msg }}</div>`{% endraw %} - is an example of how you render variables into the HTML.
+- `<div>{{ msg }}</div>` - is an example of how you render variables into the HTML.
 - `<div v-if="myVar"></div>` - lets you conditionally show/hide content based on a variable.
 - `<div v-for="item in items"></div>` - lets you loop over an array of items and render them into the HTML.
 - `<div @click="myMethod"></div>` - lets you bind a method to an event, in this case, when the user clicks on the div.

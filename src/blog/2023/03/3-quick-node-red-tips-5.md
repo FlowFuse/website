@@ -1,7 +1,7 @@
 ---
 title: Node-RED Tips - Importing, Exporting, and Grouping Flows
 subtitle: Save yourself time when working on Node-RED with these three tips.
-description: "Learn how to save time on Node-RED with three essential techniques: exporting and importing flows, accessing example flows from custom nodes, and organizing nodes using groups for improved clarity and management."
+description: "Learn how to save time in Node-RED with three techniques: importing/exporting flows, using example flows, and grouping nodes."
 date: 2023-03-27 12:00:00
 lastUpdated: 2025-07-23
 authors: ["rob-marcer"]
@@ -33,7 +33,7 @@ To export a flow, follow these steps:
 3. If you chose "File" you will be prompted to save a compressed JSON file to your computer; if you chose "Clipboard" the flow JSON will be copied to your clipboard.
 4. Use the exported file or clipboard content to import into a different instance of Node-RED.
 
-![Importing and exporting your flows](./images/import-export.gif "Importing and exporting your flows")
+<video autoplay loop muted playsinline aria-label="Importing and exporting your flows" width="978" height="474" preload="none"><source src="/blog/2023/03/images/import-export.webm" type="video/webm" /></video>
 
 Keep in mind that some nodes or flows may require additional setup or node installation on the Node-RED instance you import your flow to.
 
@@ -51,7 +51,7 @@ To use example flows in custom nodes, follow these steps:
 
 Once the example flow has been added to your workspace, you can modify it to fit your specific needs.
 
-![Using the example flow included in the moment node](./images/example.gif "Using the example flow included in the moment node")
+<video autoplay loop muted playsinline aria-label="Using the example flow included in the moment node" width="978" height="474" preload="none"><source src="/blog/2023/03/images/example.webm" type="video/webm" /></video>
 
 It's important to note that while custom node examples can be a useful starting point, they may not always work seamlessly with your other flows or nodes. Be sure to thoroughly test any custom node examples before incorporating them into a production environment.
 
@@ -67,7 +67,7 @@ The group feature in Node-RED allows users to visually group nodes together with
 
 4. Reduced clutter: Grouping nodes can help reduce the visual clutter in your workspace, making it easier to focus on key aspects of your flow.
 
-![Grouping your nodes to make them easier to read](./images/groups.gif "Grouping your nodes to make them easier to read")
+<video autoplay loop muted playsinline aria-label="Grouping your nodes to make them easier to read" width="978" height="474" preload="none"><source src="/blog/2023/03/images/groups.webm" type="video/webm" /></video>
 
 Overall, the group feature in Node-RED is a valuable tool that can help users better organise, edit, and share their flows.
 
@@ -87,4 +87,4 @@ You can read our previous Node-RED tips here.
 
 With FlowFuse [Team Library](/docs/user/shared-library/#shared-team-library), sharing flows across different Node-RED instances is effortless. This Library feature allows you to organize and share flows among team members without the need for manual copying, making collaboration more efficient and effective.
 
-**[Sign up]({% include "sign-up-url.njk" %}) for a free trial today and discover how FlowFuse can enhance your Node***
+**[Sign up](https://app.flowfuse.com/account/create) for a free trial today and discover how FlowFuse can enhance your Node***

@@ -170,10 +170,13 @@ Each manager is responsible for ensuring the BizzOps team is informed timely, be
 ## Quarterly & Period-Based Bonuses (MBOs)
 For bonuses tied to quarterly or period-based MBOs:
 * MBOs must be defined at the start of the period.
+* MBOs must be measurable: a specific target, metric, or deliverable with a clear threshold for attainment. 
 * MBOs must be communicated in writing (email is sufficient) between:
 * The manager
 * The employee
 * The CEO (cc)
+
+Confirmation means each party has explicitly agreed to the objectives as written.
 
 Bonuses will not be processed if MBOs are defined or changed after the period has started.
 

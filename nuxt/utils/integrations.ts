@@ -24,7 +24,11 @@ function docPathFromCatalogueUrl (url: string | undefined): string | undefined {
     try {
         const parsed = new URL(url)
         if (parsed.hostname !== 'flowfuse.com' && parsed.hostname !== 'www.flowfuse.com') return undefined
-        return parsed.pathname + parsed.search + parsed.hash
+        // Publishers are inconsistent about the trailing slash (the redis entry
+        // omits it). The site serves directory-style paths, so normalise rather
+        // than send every click through a redirect.
+        const path = parsed.pathname.endsWith('/') ? parsed.pathname : `${parsed.pathname}/`
+        return path + parsed.search + parsed.hash
     } catch {
         return undefined
     }
@@ -46,7 +50,7 @@ function normalizeCatalogueModule (
         categories: m.categories ?? [],
         npmScope: scopeFromId(m.id),
         tier,
-        collection,
+        collections: collection ? [collection] : undefined,
         version: m.version,
         downloads: { week: 0 },
         updatedAt: m.updated_at,
@@ -89,17 +93,9 @@ export async function fetchCatalogue (): Promise<IntegrationCatalogEntry[]> {
     const certifiedIds = new Set(certified.map(n => n._id))
     const apiIds = new Set(recommended.map(n => n._id))
 
-    /*
-        The FlowFuse Nodes feed overlaps the other two sources: most of its
-        modules are @flowfuse packages the library API already returns, with
-        download counts and author data this feed does not carry. Those richer
-        entries win, so only modules missing from both other sources are taken
-        from here. Today that is the AI and MCP server node packages, which are
-        published to the private registry and so never reach the public library.
-    */
-    const flowfuseOnly = flowfuseNodes.filter(
-        n => !certifiedIds.has(n._id) && !apiIds.has(n._id)
-    )
+    const flowfuseOnly = flowfuseNodes
+        .filter(n => !certifiedIds.has(n._id) && !apiIds.has(n._id))
+        .map(n => ({ ...n, tier: 'certified' as const, collections: ['hub', 'edge'] as CertifiedCollection[] }))
 
     return [
         ...certified,

@@ -1,7 +1,8 @@
 ---
+metaTitle: "Building MCP Servers for AI Agent Integration"
 title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
-description: "Learn how to build a fully functional MCP server in Node-RED with FlowFuse, enabling AI agents like Claude, Gemini, and GPT to access data, perform actions, and streamline industrial operations using a low-code approach."
+description: "Learn how to build a fully functional MCP server in Node-RED, enabling AI agents to access data using a low-code approach."
 date: 2025-10-14
 lastUpdated: 2025-02-06
 authors: ["sumit-shinde"]
@@ -62,6 +63,9 @@ Before defining resources or tools, the MCP Server must be configured. This serv
 3. **Click Done** to save the server configuration.
 
 Once the server is configured, clients can connect using a URL. The URL to connect with is your instance URL plus the MCP path you configured, for example:
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ```
 https://your-instance.flowfuse.cloud/mcp
@@ -153,7 +157,7 @@ For this article, we've built a demonstration data flow. We have a table named p
 
 We then created a data resource and exposed all the line data to it. Now, let's connect a AI Agent to this resource and explore the kinds of questions we can ask to monitor the factory floor effectively.
 
-![Monitoring Production Lines](./images/resource-demo.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Monitoring Production Lines" width="3024" height="1870" preload="none"><source src="/blog/2025/10/images/resource-demo.webm" type="video/webm" /></video>
 *Production line monitoring using MCP Resources*
 
 ### Defining an MCP Tool
@@ -241,16 +245,18 @@ Your MCP Tool is now active. When an AI agent invokes it, the connected flow exe
 
 In this example, the flow includes a tool that triggers a POST request to the maintenance system API, which was developed using FlowFuse and the FlowFuse Dashboard. The AI Assistant was then asked to identify which production line was performing the worst and schedule a maintenance task for it.
 
-![Scheduling Maintenance Example](./images/tools-demo.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Scheduling Maintenance Example" width="3024" height="1638" preload="none"><source src="/blog/2025/10/images/tools-demo.webm" type="video/webm" /></video>
 *AI agent scheduling maintenance using an MCP Tool*
 
 Below is the flow that includes the Resource we created to monitor production lines and the Tool that sends a POST request.
 
 *Note: The flow uses the FlowFuse Query node and FlowFuse tables, which are only available on the Enterprise tier. If you do not have Enterprise, you can use other data sources instead, such as HTTP Request, OPC UA, or other database nodes.*
 
-{% renderFlow 300 %}
+::render-flow{:height="300"}
+```json
 [{"id":"c0952d97df3a1491","type":"group","z":"3831e63ae3acc9b0","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["2da059f0b9465120","5ee2cab1a6affc67","1ea311e63b6b7b89","628139fa99072e2e"],"x":94,"y":179,"w":712,"h":142},{"id":"2da059f0b9465120","type":"mcp-response","z":"3831e63ae3acc9b0","g":"c0952d97df3a1491","name":"","x":700,"y":240,"wires":[]},{"id":"5ee2cab1a6affc67","type":"mcp-resource","z":"3831e63ae3acc9b0","g":"c0952d97df3a1491","name":"Lines MCP Resource","server":"460154892784fd4e","resourceUri":"mcp://monitor-all-production-lines","resourceId":"all-production-lines","title":"Monitoring All Production lines","description":"Represents the real-time data stream for all production Line. Contains sensor readings, operational status, and performance metrics accessible via the MCP server.","mimeType":"application/json","x":220,"y":220,"wires":[["1ea311e63b6b7b89"]]},{"id":"1ea311e63b6b7b89","type":"tables-query","z":"3831e63ae3acc9b0","g":"c0952d97df3a1491","name":"Retrieve Lines Data","query":"SELECT * FROM public.production_lines;","split":false,"rowsPerMsg":1,"x":450,"y":220,"wires":[["2da059f0b9465120"]]},{"id":"628139fa99072e2e","type":"catch","z":"3831e63ae3acc9b0","g":"c0952d97df3a1491","name":"Catch errors in this group","scope":"group","uncaught":false,"x":430,"y":280,"wires":[["2da059f0b9465120"]]},{"id":"460154892784fd4e","type":"mcp-server","name":"NODE-RED MCP SERVER","protocol":"http","path":"/mcp"},{"id":"a55471a9a3c7af9f","type":"group","z":"3831e63ae3acc9b0","style":{"stroke":"#b2b3bd","stroke-opacity":"1","fill":"#f2f3fb","fill-opacity":"0.5","label":true,"label-position":"nw","color":"#32333b"},"nodes":["7fd32aa0ef7ca984","a412bb732aa5e5e0","3b3c8c52146e69ef","03a75b77302b1d19"],"x":94,"y":339,"w":712,"h":142},{"id":"7fd32aa0ef7ca984","type":"http request","z":"3831e63ae3acc9b0","g":"a55471a9a3c7af9f","name":"Schedule Maintenance","method":"POST","ret":"txt","paytoqs":"ignore","url":"","tls":"","persist":false,"proxy":"","insecureHTTPParser":false,"authType":"","senderr":false,"headers":[],"x":440,"y":380,"wires":[["3b3c8c52146e69ef"]]},{"id":"a412bb732aa5e5e0","type":"mcp-tool","z":"3831e63ae3acc9b0","g":"a55471a9a3c7af9f","name":"","server":"460154892784fd4e","toolName":"maintenance","title":"Create Maintenance Task","description":"Handles maintenance tasks on the production line","inputSchema":"{\n  \"type\": \"object\",\n  \"properties\": {\n    \"line\": {\n      \"type\": \"string\",\n      \"description\": \"The production line where maintenance is required\",\n      \"minLength\": 1\n    },\n    \"description\": {\n      \"type\": \"string\",\n      \"description\": \"Description of the maintenance task\",\n      \"minLength\": 1\n    },\n    \"priority\": {\n      \"type\": \"string\",\n      \"description\": \"Priority of the task\",\n      \"enum\": [\n        \"Low\",\n        \"Medium\",\n        \"High\"\n      ]\n    }\n  },\n  \"required\": [\n    \"line\",\n    \"description\",\n    \"priority\"\n  ]\n}","x":190,"y":380,"wires":[["7fd32aa0ef7ca984"]]},{"id":"3b3c8c52146e69ef","type":"mcp-response","z":"3831e63ae3acc9b0","g":"a55471a9a3c7af9f","name":"","x":700,"y":380,"wires":[]},{"id":"03a75b77302b1d19","type":"catch","z":"3831e63ae3acc9b0","g":"a55471a9a3c7af9f","name":"Catch errors in this group","scope":"group","uncaught":false,"x":430,"y":440,"wires":[["3b3c8c52146e69ef"]]},{"id":"4e9c50c5940103ab","type":"global-config","env":[],"modules":{"@flowfuse-nodes/nr-mcp-server-nodes":"0.1.1","@flowfuse/nr-tables-nodes":"0.1.0"}}]
-{% endrenderFlow %}
+```
+::
 
 If you need more example flows, you can import the examples that come with the MCP nodes. Click the main menu from the top right, click Import, switch to Examples, and look for `@flowfuse-nodes/nr-mcp-server-node`, then select mcp_server and click Import. If you prefer a video tutorial, watch this [video tutorial on YouTube](https://www.youtube.com/watch?v=troUvaF8V68).
 
@@ -262,4 +268,4 @@ This guide demonstrated how to build a fully functional MCP server with FlowFuse
 
 FlowFuse [recently added ONNX AI nodes](/blog/2025/10/ai-on-flowfuse/). With these nodes, you can train custom models, deploy them in Node-RED, and execute tasks tailored to your processes. Combined with FlowFuse’s capabilities to collect, transform, and visualize industrial data, the platform makes development, monitoring, and optimization faster, smarter, and more scalable.
 
-Adopting MCP with FlowFuse is a strategic step toward AI-enabled, future-ready industrial automation. [Book a demo today](https://flowfuse.com/blog/2025/10/ai-on-flowfuse/) to see how FlowFuse connects, transforms, and visualizes your industrial data while making AI-driven operations easy and actionable.
+Adopting MCP with FlowFuse is a strategic step toward AI-enabled, future-ready industrial automation. [Book a demo today](/blog/2025/10/ai-on-flowfuse/) to see how FlowFuse connects, transforms, and visualizes your industrial data while making AI-driven operations easy and actionable.

@@ -1,9 +1,10 @@
 ---
+metaTitle: "FlowFuse Node-RED Stack for ctrlX AUTOMATION"
 title: FlowFuse announces a Node-RED stack for Industry 4.0 applications on ctrlX AUTOMATION
 subtitle: Rexroth ctrlX now have fully supported Node-RED stack available for production use
 description: FlowFuse is now offering Node-RED to customers that want to deploy it on the Rexrtoh ctrlX platform.
 authors: ["ian-skerrett"]
-image: blog/2023/09/images/bosch-rexroth-announce.png
+image: /blog/2023/09/images/bosch-rexroth-announce.png
 date: 2023-09-07
 tags:
     - posts

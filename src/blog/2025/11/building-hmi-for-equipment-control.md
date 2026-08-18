@@ -1,7 +1,7 @@
 ---
 title: "Building a Web HMI for Factory Equipment Control"
 subtitle: "Create web-based operator interfaces for industrial equipment"
-description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser"
+description: "Build a modern HMI using FlowFuse to monitor and control factory equipment from any browser, no dedicated hardware needed."
 lastUpdated: 2026-06-19
 date: 2025-11-19
 usecase:
@@ -90,11 +90,14 @@ If operators will use tablets, design for touch targets (minimum 44x44 pixels) a
 
 You need the FlowFuse agent running on an edge device that can reach your PLC over the network. 
 
-Start by creating a [FlowFuse account]({% include "sign-up-url.njk" %}). Once logged in, install and register the FlowFuse agent on your edge device by following this guide: [Installing Node-RED on Your Edge Device](/blog/2025/09/installing-node-red/)
+Start by creating a [FlowFuse account](https://app.flowfuse.com/account/create). Once logged in, install and register the FlowFuse agent on your edge device by following this guide: [Installing Node-RED on Your Edge Device](/blog/2025/09/installing-node-red/)
 
 ## Step 2: Connect to Your PLC
 
 Your HMI needs to talk to your PLC to read equipment status and send control commands. FlowFuse handles this through Node-RED's protocol nodes, which support every major industrial controller. No proprietary gateways, no per-tag licensing, no vendor lock-in, just direct communication with your PLC.
+
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
 
 Choose the node that matches your PLC:
 

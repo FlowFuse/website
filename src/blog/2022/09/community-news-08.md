@@ -1,7 +1,7 @@
 ---
 title: Community News August 2022
 subtitle: News from the FlowFuse and Node-RED communities
-description: News from the FlowFuse and Node-RED communities
+description: "A roundup of August 2022 news from the FlowFuse and Node-RED communities, covering platform updates and community highlights."
 date: 2022-09-16
 authors: ["rob-marcer"]
 image: "/images/blog/community-news.jpeg"
@@ -23,7 +23,7 @@ If you’d like to learn more about what else was included in 0.9 you can do so 
 [**Node-RED Con 2022**](https://nrcon.nodered.org/)  
 We are happy to again be involved in Node-RED con. The event is being held online on 7th October, with content for both English and Japanese speakers. You can find out more on the [Node-RED Con website](https://nrcon.nodered.org/).  
 
-[**FlowFuse Team News**](/team/)    
+[**FlowFuse Team News**](/about/)    
 We’d like to welcome Rob Marcer to the FlowFuse team. Rob has joined as our Developer Educator, he's going to work to help you get the best value from FlowFuse by developing our documentation and community support.  
   
 We are also recruiting for [NodeJS Developers](https://boards.greenhouse.io/flowfuse/jobs/4463977004), if you’re interested in joining our team please [apply here](https://boards.greenhouse.io/flowfuse/jobs/4463977004#app).
@@ -34,5 +34,5 @@ Docker has [announced](https://twitter.com/Docker/status/1559919666721693699?t=Q
 [**Simulating IOT Projects in Your Browser**](https://wokwi.com/)  
 While not directly related to FlowFuse we’ve enjoyed wasting a little too much time looking at the simulated IOT projects on [Wokwi](https://wokwi.com/). The [Simon Game with Score](https://wokwi.com/projects/328451800839488084) project is a little too addictive.
     
-[**Try FlowFuse for Free**]({% include "sign-up-url.njk" %})  
+[**Try FlowFuse for Free**](https://app.flowfuse.com/account/create)  
 As a thank you for reading our newsletters we’d like to offer you a free, small project for one month on FlowFuse when you create a new team. To get this discount please use the code RELEASE09 when on the payment page after creating a new team.

@@ -1,11 +1,12 @@
 ---
+metaTitle: "Historical Data Dashboard with InfluxDB"
 title: Creating a Historical Data Dashboard with InfluxDB and Node-RED
 subtitle: Detailed instructions on how to create a Node-RED dashboard that shows historical data.
 description: Discover how to build a Historical Data Dashboard with InfluxDB and Node-RED. Capture, store, and visualize data for insightful analysis.
 date: 2023-07-18
 lastUpdated: 2025-07-14
 authors: ["andrew-lynch"]
-image: blog/2023/07/images/historical-data-dashboard.png
+image: /blog/2023/07/images/historical-data-dashboard.png
 keywords: Node-RED InfluxDB, Time-series data, Industrial dashboard, Historical data visualization, IoT dashboard, Serial port sensor data,  Live and historical charts
 tags:
     - posts
@@ -58,7 +59,10 @@ Unfortunately, these values are not in a friendly form to work with.  Ideally, w
 
  <br>
 
-We need to extract the numeric part of the string using a regular expression with a “change” node and the JSONata expression $number($match(msg.payload,  /-?(\d+(\.\d+)?)/ , 10).match).  “$match” and “/-?(\d+(\.\d+)?)/” help the function pull out the numeric components of the string and “$number” parses these components to be an actual number data type.
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
+We need to extract the numeric part of the string using a regular expression with a “change” node and the JSONata expression `$number($match(msg.payload, /-?(\d+(\.\d+)?)/, 10).match)`.  `$match` and `/-?(\d+(\.\d+)?)/` help the function pull out the numeric components of the string and `$number` parses these components to be an actual number data type.
 
 Here are the properties of the “change” node.
 
@@ -69,7 +73,6 @@ When we look in the debugger we see the payload specified as a “number” and 
 ## Setting up serverless InfluxDB in the cloud
 
 Now we have some live data, let’s store it using InfluxDB. Below are the steps to set up an account with the InfluxDB free service.  Navigate to [https://www.influxdata.com/products/influxdb-overview/](https://www.influxdata.com/products/influxdb-overview/) and let’s begin.  Click on “Get Started for Free” under Cloud, InfluxDB Cloud Serverless.
-
 
 !["Screenshot showing the Influxdb cloud 'Getting started' button"](images/influxdb-historical-data/run-influxdb-8.png "Screenshot showing the Influxdb cloud 'Getting started' button")
 
@@ -105,7 +108,7 @@ After installing this package you will see three new nodes in your flow editor.
 
 ![Screenshot showing the installed influxdb nodes in the palette](images/influxdb-historical-data/influxdb-nodes-15.png "Screenshot showing the installed influxdb nodes in the palette")
 
-Drag and drop the “influxdb out” node into your flow, double click on it, and start filling out the needed fields.  The naming convention of “test&lt;<THING>>” works well for initial setups to make it clear what names should go where.
+Drag and drop the “influxdb out” node into your flow, double click on it, and start filling out the needed fields.  The naming convention of `test&lt;<THING>>` works well for initial setups to make it clear what names should go where.
 
 !["Screenshot showing the influxdb-out node config"](images/influxdb-historical-data/influxdb-out-node-16.png "Screenshot showing the influxdb-out node config")
 
@@ -165,7 +168,6 @@ Here is the code from the “time/date” function node.  A bit of juggling of l
 
 Here is the “change” node used to create the msg.rangeEnd.  The JSONatta expression is `$fromMillis($toMillis(msg.rangeStart) + msg.payload.window * 60 * 1000)`.  The expression combines the milliseconds from the `msg.rangeStart` with the calculated milliseconds in the “Window (minutes)” from the GUI.
 
-
 !["Screenshot of the change node properties tab"](images/influxdb-historical-data/change-node-26.png "Screenshot of the change node properties tab")
 
 <br>
@@ -220,7 +222,6 @@ The “join” node just needs to be set to “Combine each” msg.chartData obj
 
 The final “change” node, “format,” is where we prescribe the format needed for the “chart” node, [{"series":[""],"data":[[]],"labels":[""]}], and finally we insert our `msg.chartData` array into that structure.  Notice `msg.title` is now set to “Data Received.”
 
-
 !["Screenshot of the change node properties tab"](images/influxdb-historical-data/change-node-33.png "Screenshot of the change node properties tab")
 
 <br>
@@ -247,4 +248,4 @@ This is where **FlowFuse** comes in. It takes your existing Node-RED flows and a
 
 Your flows continue to work just as they are, FlowFuse simply makes them production-ready.
 
-[Try FlowFuse free for 30 days]({% include "sign-up-url.njk" %}) and see how it transforms Node-RED into a scalable, enterprise-ready platform.
+[Try FlowFuse free for 30 days](https://app.flowfuse.com/account/create) and see how it transforms Node-RED into a scalable, enterprise-ready platform.

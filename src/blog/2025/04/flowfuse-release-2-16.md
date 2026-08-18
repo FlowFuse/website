@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.16: Git Integration & Log Retention"
 title: "FlowFuse 2.16: Git Integration, improved log retention and more"
 subtitle: "Start pushing your snapshots to git, get alerted when resources are running low and more logging from Node-RED"
 description: "Start pushing your snapshots to git, get alerted when resources are running low and more logging from Node-RED"
@@ -12,7 +13,7 @@ tags:
 ---
 
 
-Another release from the FlowFuse team to keep [realising our mission](https://flowfuse.com/handbook/company/strategy/) to empower you to fuse the digital realm and physical reality.
+Another release from the FlowFuse team to keep [realising our mission](/handbook/company/strategy/) to empower you to fuse the digital realm and physical reality.
 
 <!--more-->
 
@@ -60,7 +61,7 @@ We've updated the provisioning token support to allow you to automatically assig
 
 The option to assign to a hosted instance is still there, but being able to assign to the appilcation is more generally useful for most workflows on the platform.
 
-Details available in the [changelog](https://flowfuse.com/changelog/2025/04/device-provisioning/).
+Details available in the [changelog](/changelog/2025/04/device-provisioning/).
 
 ## Local Login for Remote Instances
 
@@ -76,14 +77,14 @@ We expanded the notficiations we send to help you track the health of your Node-
 
 You can further opt-in or out of these notifications via the instance settings.
 
-Details available in the [changelog](https://flowfuse.com/changelog/2025/03/resource-notifications/)
+Details available in the [changelog](/changelog/2025/03/resource-notifications/)
 
 ## Changes to tags for `flowfuse/node-red` containers
 
 For kubernetes and docker environments, we've updated the base container our `latest` tag points at to ensure
 it defaults to the latest Node.js and Node-RED versions.
 
-Check the [changelog](https://flowfuse.com/changelog/2025/03/container-tags/) entry for full details
+Check the [changelog](/changelog/2025/03/container-tags/) entry for full details
 
 ## What Else Is New?
 
@@ -103,4 +104,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

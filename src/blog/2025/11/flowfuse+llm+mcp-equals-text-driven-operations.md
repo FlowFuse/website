@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse + LLM + MCP = Text Driven Operations"
 subtitle: "Moving from a Code driven interface to LLMs interpreting humans."
-description: "Discover how FlowFuse combines LLMs and Model Context Protocol (MCP) with Node-RED to enable text-driven operations, transforming industrial data into actionable insights through natural language queries."
+description: "Discover how FlowFuse combines LLMs and Model Context Protocol (MCP) with Node-RED to enable text-driven operations for teams."
 date: 2025-11-12
 authors: ["zeger-jan-van-de-weg"]
 image: /blog/2025/11/images/flowfuse+llm+mcp-equals-text-driven-operations.png
@@ -127,5 +127,5 @@ code for singular machines, to a conversational environment where high-level, na
 language queries drive intelligent, scalable actions across the entire enterprise.
 
 Ready to experience text-driven operations in your own facility?
-[Try FlowFuse for free]({% include "sign-up-url.njk" %}) or request a personalized demo to see how LLM-powered automation can transform your industrial processes.
-[Contact us today](https://flowfuse.com/contact-us/) or sign up for our upcoming webinar to stay ahead in the Industry 4.0 revolution.
+[Try FlowFuse for free](https://app.flowfuse.com/account/create) or request a personalized demo to see how LLM-powered automation can transform your industrial processes.
+[Contact us today](/contact-us/) or sign up for our upcoming webinar to stay ahead in the Industry 4.0 revolution.

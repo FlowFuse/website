@@ -1,8 +1,16 @@
 ---
 title: "Customer Success"
+navigation:
+  order: 3
 ---
 
 # Customer Success
+
+The Customer Success function owns the customer relationship after the commercial
+close: onboarding, adoption, renewals, and expansion. The **Customer Success
+Manager (CSM)** is the role within Customer Success, accountable for account
+health and for the value customers realize from FlowFuse — measured by customer
+outcomes, not just retention.
 
 FlowFuse CSMs are to drive adoption and expansion within accounts. Customers
 should be provided help and support to connect their assets, build applications
@@ -30,7 +38,9 @@ onboarding progress and completing this process, managing and tracking what's
 being built on our platform and the strategic significance, and ensuring
 inspiration to build new things right after. Throughout having customers achieve
 value and Return on Investment (ROI), cultivating internal champions, and
-driving strategic expansion (horizontal and vertical). CSMs are also the primary
+driving strategic expansion (horizontal and vertical) — see
+[Expansion Deals](/handbook/sales/hubspot/#expansion-deals) for when a CSM
+owns an expansion deal directly versus when the AE does. CSMs are also the primary
 FlowFuse contact that can establish and accelerate the pace of replacing or
 augmenting legacy MES/SCADA systems with our product. In turn resulting in
 higher net revenue retention (NRR) rates, and the development of strong customer
@@ -229,12 +239,12 @@ Support availability and response times are defined by the customer’s subscrip
 - Standard Support
   - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
   - First Response SLA: Next business day (within 24 hours)  
-  - Support tickets can be submitted at [our Support Form](https://flowfuse.com/support/)
+  - Support tickets can be submitted at [our Support Form](/support/)
 
 - Enterprise (Enterprise Support)
   - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
   - First Response SLA: 4 hours  
-  - Support tickets can be submitted at [https://flowfuse.com/support/](https://flowfuse.com/support/)
+  - Support tickets can be submitted at [https://flowfuse.com/support/](/support/)
 
 #### Escalation
 
@@ -347,7 +357,7 @@ should happen without customers even noticing.
    providing personalized help to ensure a smooth process.
 
 ## Handling Requests from Self-Hosted Customers to Enable FlowFuse Assistant
-The [FlowFuse Assistant](https://flowfuse.com/docs/user/expert/#flowfuse-assistant-plugin) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
+The [FlowFuse Assistant](/docs/user/expert/) is enabled by default for Cloud customers. Self-hosted customers can use it, too, but must request access through support. 
 
 When a customer requests access to the FlowFuse Assistant, do the following:
 1. Route the request to Engineering
@@ -360,16 +370,33 @@ When a customer requests access to the FlowFuse Assistant, do the following:
 
 ## Customer Success Commission Structure
 
-The Customer Success team is compensated under a quarterly commission plan that rewards retention, growth, and product engagement.
+The Customer Success team is compensated under a quarterly commission plan that
+rewards retention and growth.
 
 ### Commission Components
-Payouts are based on two equally weighted goals (50% each). Note that weightings and specific targets are subject to review at the start of each fiscal year or quarter.
+Payouts are based on one goal. Note that specific targets are subject to review at the start of each fiscal year or quarter.
 
-1. Net Retention Revenue (NRR) (50%): Measured against a 115% NRR goal. (100% NRR = 0% payout; 115% NRR = 100% payout).
-2. Quarterly KPI (50%): Focused on product engagement (e.g., 10 Customer PRs).
-**_Note: overachievement bonus applies to NRR only, and the KPI goal has no overachievement upside._**
+- Net Retention Revenue (NRR): Measured against a 115% NRR goal. (100% NRR = 0% payout; 115% NRR = 100% payout).
+**_Note: overachieving the NRR goal comes with a proportional upside bonus._**
 
-For payout timelines, submission requirements, and currency, see [Processing CSM Commission](/handbook/operations/commission-payment/#processing-csm-commission).
+#### NRR Bonus Formula
+
+The NRR portion of the payout is calculated on a linear scale between the baseline and goal:
+
+Variables
+- $X$: Achievement (Actual Net Retention Rate)
+- $Y$: Baseline (The 100% minimum threshold)
+- $G$: Goal (The target NRR for a standard 100% bonus payout)
+- $B_{\text{target}}$: Target Bonus (The dollar amount paid if the CSM exactly hits goal $G$)
+
+**Formula**
+
+$$
+\text{Bonus} = \max \left( 0, B_{\text{target}} \times \frac{X - Y}{G - Y} \right)
+$$
+
+For payout timelines, submission requirements, and currency, see
+[Processing CSM Commission](/handbook/operations/commission-payment/#processing-csm-commission).
 
 ### When Transactions are Credited
 Commission is credited based on the date the transaction is signed, or notice is given, ensuring CSMs are recognized in the quarter the outcome is determined.

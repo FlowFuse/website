@@ -1,7 +1,7 @@
 ---
 title: "Shop Floor AI: Dead on Arrival Without This"
 subtitle: "Why your industrial AI fails before it even starts - and the missing architecture that fixes it"
-description: "Industrial AI doesn't fail because of bad models - it fails because of bad architecture. Discover why signals need context and how a Unified Namespace makes AI work on the shop floor."
+description: "Industrial AI doesn't fail because of bad models, it fails from bad architecture. Learn why signals need context to work."
 lastUpdated: 2026-02-11
 date: 2026-02-06
 keywords: industrial AI, Unified Namespace, shop floor, signals, context, human decision layer, FlowFuse, Node-RED, operational data, real-time insights, factory automation, manufacturing AI
@@ -133,7 +133,7 @@ Through [FlowFuse MCP nodes](/node-red/flowfuse/mcp/), AI systems connect direct
 
 [FlowFuse AI Expert](/ai/) operates on the same MCP-backed context layer. Operators and engineers can ask questions in natural language (*"Is Line 3 behaving normally?"*, *"Have we seen this vibration pattern before?"*, *"What changed before the last failure?"*) and receive answers grounded in the live Unified Namespace.
 
-To learn how to build your own Unified Namespace with FlowFuse, [see our comprehensive guide](https://flowfuse.com/blog/2024/11/building-uns-with-flowfuse/).
+To learn how to build your own Unified Namespace with FlowFuse, [see our comprehensive guide](/blog/2024/11/building-uns-with-flowfuse/).
 
 The result is immediate insight without additional tooling, custom integrations, or fragile data pipelines. The architecture already exists. The context is already there. The questions can finally be asked at the speed decisions are made.
 

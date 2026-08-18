@@ -21,13 +21,20 @@ if (!page.value) {
 }
 
 const pageTitle = computed(() => page.value?.title || slugParts.value.at(-1) || 'Handbook')
-const fullTitle = computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook')
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
+// Nested pages get the "Handbook" qualifier on the brand name; the section root
+// doesn't (its own title already says "Handbook"). og:title infers from the
+// resolved title. Needs an explicit high tagPriority in its own useHead call —
+// nuxt-seo-utils pushes its own global siteName with tagPriority: 'low', and that
+// otherwise wins over a page-level override regardless of registration order.
+useHead({
+    templateParams: { siteName: () => slugParts.value.length ? 'FlowFuse Handbook' : 'FlowFuse' },
+}, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: fullTitle,
+    title: pageTitle,
     description: computed(() => page.value?.description || ''),
-    ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),
     ogUrl: canonicalUrl,
     ogType: 'article',
@@ -42,13 +49,17 @@ const githubEditUrl = computed(() => {
     return `https://github.com/FlowFuse/website/edit/main/nuxt/content/${stem}.md`
 })
 
+const breadcrumbItems = computed(() => {
+    // findPageBreadcrumb excludes the current page unless told otherwise - `current: true`
+    // includes it so it can be the last, unlinked crumb below.
+    const crumbs = findPageBreadcrumb(navTree.value ?? [], route.path, { current: true })
+    return crumbs.map((crumb, i) => ({
+        label: crumb.title ?? '',
+        ...(i === crumbs.length - 1 ? {} : { to: crumb.path }),
+    }))
+})
+
 useSchemaOrg([
-    // Exclude the last crumb (current page) — nuxt-schema-org appends it automatically
-    defineBreadcrumb({
-        itemListElement: findPageBreadcrumb(navTree.value ?? [], route.path)
-            .slice(0, -1)
-            .map(crumb => ({ name: crumb.title, item: crumb.path })),
-    }),
     defineArticle({
         headline: pageTitle,
         description: computed(() => page.value?.description || ''),
@@ -63,7 +74,7 @@ defineOgImage('Default', {
 </script>
 
 <template>
-  <div class="light w-full pl-6 bg-white">
+  <div class="light w-full pl-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->
@@ -75,7 +86,7 @@ defineOgImage('Default', {
           <!-- Breadcrumbs + Search bar -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
-              <HandbookBreadcrumbs />
+              <Breadcrumbs :items="breadcrumbItems" />
             </div>
             <div class="w-full mb-1">
               <HandbookSearch />

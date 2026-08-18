@@ -16,4 +16,4 @@ This will save you a lot of time if you have a large number of remote instances 
 ![Screenshot of creating a provisioning token](./images/create-provisioning-token.png){data-zoomable}
 _Screenshot of creating a provisioning token_
 
-Checkout the Bulk Registration section in the [Device Agent Registration](https://flowfuse.com/docs/device-agent/register) documentation for more information on how to use this feature.
+Checkout the Bulk Registration section in the [Device Agent Registration](/docs/device-agent/register) documentation for more information on how to use this feature.

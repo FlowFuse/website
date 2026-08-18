@@ -1,4 +1,5 @@
 ---
+metaTitle: "What is 5S Checklist? Benefits & Template"
 title: "What is 5S Checklist: Definition, Benefits, Implementation, and Template"
 subtitle: "Understand 5S Checklists, Improve Work Area Efficiency, and Start with a Ready-to-Use FlowFuse Template"
 description: "Learn what a 5S checklist is, how it improves work area organization, and how to implement it easily with FlowFuse, plus get a ready-to-use template."
@@ -90,6 +91,8 @@ Create area-specific checklists rather than generic ones. A machine shop needs d
 
 Establish regular evaluation cycles: daily quick checks for immediate problems, weekly detailed reviews for improvement planning, and monthly comprehensive evaluations for trend analysis. The crucial element many programs miss is systematic follow-through. Identifying problems only creates value when those problems get solved with assigned responsibility and completion tracking.
 
+That same daily/weekly/monthly cadence, run by different levels of management, is the structure behind a [layered process audit](/blog/2026/08/layered-process-audit/). 5S checks workplace organization; an LPA checks whether the process itself is being run to standard. Many plants run both from the same tablet-based checklist workflow.
+
 ## The Digital Advantage with FlowFuse
 
 Traditional paper checklists have inherent limitations. Results get lost, data analysis becomes time-consuming, and accessing information from multiple locations proves challenging. Digital solutions eliminate these problems while adding capabilities that paper cannot match.
@@ -100,20 +103,8 @@ As an industrial data platform, FlowFuse enables seamless integration of 5S chec
 
 Mobile access transforms team interaction with the evaluation process. Workers complete checklists on tablets or smartphones directly in work areas, take photos documenting conditions, and immediately see how current scores compare to previous evaluations. This real-time feedback creates engagement impossible with paper forms.
 
-[Sign up]({% include "sign-up-url.njk" %}) for FlowFuse now and get started building your individual 5S checklist.
+[Sign up](https://app.flowfuse.com/account/create) for FlowFuse now and get started building your individual 5S checklist.
 
 ## Up next
 
 If you want to start immediately without creating a checklist from scratch, FlowFuse’s pre-built 5S Checklist Blueprint is ready to use. It includes 25 evaluation questions to assess work area organization, scoring to measure compliance, and follow-up tracking to ensure issues are resolved. The dashboard provides a clear view of improvements over time, and the entire system is fully customizable to match the unique needs of your operations.
-
-<div class="cta-card" style="display: flex; align-items: center; gap: 20px; background-color: #EEF2FF; padding: 20px; border-radius: 8px; font-family: sans-serif; border: 1px solid #6366F1;">  
-    <!-- Left side image -->  
-    <div style="flex: 1;">  
-        <img src="https://flowfuse.com/img/5s-checklist-eYy2xo4REM-650.avif" alt="FlowFuse 5S Checklist Blueprint" style="width: 100%; height: auto; border-radius: 6px;">  
-    </div>  
-    <div style="flex: 1;">  
-        <h3 style="font-size: 1.5em; margin: 0 0 10px;">Ready to Transform Your Work Area?</h3>  
-        <p style="font-size: 1em; margin: 0 0 20px;">Get started with FlowFuse's customizable 5S Checklist Blueprint and build your digital evaluation system in minutes.</p>  
-        <a href="https://flowfuse.com/blueprints/manufacturing/5s-checklist/" class="cta-button" style="display: inline-block; background-color:#4f46e5; color: #ffffff; padding: 8px 18px; text-decoration: none; border-radius: 9999px; font-weight: bold; font-size: 0.95em; transition: background-color 0.3s ease;">Explore 5S Checklist Blueprint →</a>  
-    </div>  
-</div> 

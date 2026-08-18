@@ -289,6 +289,91 @@
     animation-timing-function: linear;
 }
 
+/*
+    Certified node callout, rendered by
+    src/_includes/components/certified-node-callout.njk inside the prose of
+    /node-red topic pages to cross-link them to the certified node covering the
+    same technology. It lives beside the catalog's certified styles rather than
+    in node-red-style.css so the badge vocabulary stays in one place and reads
+    identically here and on /integrations.
+*/
+.certified-callout {
+    margin: 32px 0;
+    padding: 20px 24px;
+    border-left: 4px solid var(--color-indigo-400);
+    border-radius: 0 8px 8px 0;
+    background-color: var(--color-indigo-50);
+}
+
+.certified-callout--title {
+    font-size: 20px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin: 0 0 8px 0;
+}
+
+.certified-callout--lede {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--color-gray-700);
+    margin: 0 0 16px 0;
+}
+
+.certified-callout--list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    display: grid;
+    gap: 12px;
+}
+
+/*
+    Name and collection pill share a row; the description spans both columns.
+    Column two is 1fr so the (much wider) description takes the slack: with two
+    auto columns the description's width would stretch the pill across the row.
+*/
+.certified-callout--item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 4px 8px;
+}
+
+.certified-callout--item .certified-pill {
+    justify-self: start;
+}
+
+.certified-callout--name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-indigo-700);
+}
+
+.certified-callout--name:hover {
+    color: var(--color-indigo-800);
+}
+
+.certified-callout--description {
+    grid-column: 1 / -1;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-gray-700);
+    margin: 0;
+}
+
+.certified-callout--foot {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-gray-600);
+    margin: 0;
+}
+
+.certified-callout--foot a {
+    color: var(--color-indigo-700);
+    font-weight: 600;
+}
+
 } /* end @layer components */
 
 @keyframes placeHolderShimmer {

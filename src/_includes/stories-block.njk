@@ -2,6 +2,6 @@
     {% from "stories/customer-story.njk" import storyTile %}
 
     {%- for item in collections.stories | excludeCurrent(page.url) | shuffle | limit(3) -%}
-        {{ storyTile(title=item.data.title, url=item.url, brand=item.data.story.brand, logo=item.data.logo, image=item.data.image) }}
+        {{ storyTile(title=item.data.title, url="/customer-stories/" ~ item.fileSlug ~ "/", brand=item.data.story.brand, logo=item.data.logo, image=item.data.image) }}
     {%- endfor -%}
 </ul>

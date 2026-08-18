@@ -1,6 +1,7 @@
 import { visit } from 'unist-util-visit'
 import type { Root } from 'mdast'
 import type { VFile } from 'vfile'
+import { slugifyAnchor } from './slugify-anchor'
 
 function posixDirname(path: string): string {
     const i = path.lastIndexOf('/')
@@ -17,29 +18,42 @@ function posixResolve(base: string, rel: string): string {
     return '/' + out.filter(Boolean).join('/')
 }
 
-// Converts relative image/link URLs in handbook markdown to absolute paths.
+// Anchors whose markdown lives outside nuxt/content/ but whose pages are still
+// served at a matching, trailing-slash Nuxt route (e.g. /changelog/YYYY/MM/slug/).
+const ANCHORS = ['/handbook/', '/changelog/', '/blog/']
+
+// Converts relative image/link URLs in handbook/changelog/blog markdown to absolute paths.
 // This is needed because @nuxt/content serves pages with trailing-slash URLs,
 // which would mis-resolve relative paths without this fix.
 export default function remarkHandbookLinks() {
     return (tree: Root, file: VFile) => {
         const filePath: string = (file.path || file.history?.[0] || '') as string
-        if (!filePath.includes('/handbook/')) return
+        const anchor = ANCHORS.find(a => filePath.includes(a))
+        if (!anchor) return
 
-        // Extract the handbook-relative portion: e.g. /handbook/engineering/frontend/layouts.md
-        const handbookIdx = filePath.lastIndexOf('/handbook/')
-        const relPath = filePath.slice(handbookIdx)
+        // Extract the anchor-relative portion: e.g. /handbook/engineering/frontend/layouts.md
+        const anchorIdx = filePath.lastIndexOf(anchor)
+        const relPath = filePath.slice(anchorIdx)
         const baseDir = posixDirname(relPath) + '/'
 
         function resolveUrl(url: string): string {
             if (!url) return url
-            // Leave absolute, protocol, hash and mailto URLs unchanged
-            if (/^(https?:|#|mailto:|\/|data:)/.test(url)) return url
+            // Leave external protocol and mailto/data URLs unchanged
+            if (/^(https?:|mailto:|data:)/.test(url)) return url
+            // In-page anchors: normalise to the generated heading id.
+            if (url.startsWith('#')) return slugifyAnchor(url)
+            // Absolute site paths: normalise the anchor fragment, leave the path as-is.
+            if (url.startsWith('/')) {
+                const anchor = slugifyAnchor(url.match(/#.*/)?.[0] ?? '')
+                const pathPart = url.replace(/#.*$/, '')
+                return pathPart + anchor
+            }
             // Strip .md extension (+ optional anchor): ./foo.md#bar → ./foo#bar
             url = url.replace(/\.md(#.*)?$/, (_, anchor) => anchor ?? '')
             // Strip README: README#bar → #bar (or empty → current page)
             url = url.replace(/README(#.*)?$/, (_, anchor) => anchor ?? '.')
             // Resolve relative URL against the base directory
-            const anchor = url.match(/#.*/)?.[0] ?? ''
+            const anchor = slugifyAnchor(url.match(/#.*/)?.[0] ?? '')
             const pathPart = url.replace(/#.*$/, '')
             const resolved = posixResolve(baseDir, pathPart)
             return resolved + anchor

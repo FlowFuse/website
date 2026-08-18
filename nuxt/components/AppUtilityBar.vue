@@ -1,9 +1,11 @@
 <script setup>
 import { onMounted } from 'vue'
+import { useEvents } from '~/composables/useEvents'
 
-// Mirrors src/_includes/components/top-utility-bar.njk (11ty). Events come
-// from 11ty global data and are not available here, so only the standing
-// promos rotate; keep both files in sync when editing.
+// Mirrors src/_includes/components/top-utility-bar.njk (11ty); keep both
+// files in sync when editing.
+const events = useEvents()
+
 onMounted(() => {
     const items = document.querySelectorAll('.ff-utility-announce > .ff-utility-item')
     if (items.length === 0) return
@@ -19,31 +21,27 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="ff-utility-bar w-full bg-indigo-700 text-indigo-100 text-sm px-6">
+  <div class="ff-utility-bar w-full bg-indigo-700 text-indigo-100 text-sm px-6" data-nav-zone="utility">
     <div class="mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px] flex items-center justify-between gap-4 py-3">
-      <!-- Announcements (standing promos) -->
+      <!-- Announcements (rotating): entries with no `expire` stay visible indefinitely -->
       <div class="ff-utility-announce min-w-0 flex-1 flex items-center">
-        <a href="/ai/" class="ff-utility-item group inline-flex items-center gap-2 min-w-0 no-underline hover:no-underline text-indigo-100 hover:text-white">
-          <span class="shrink-0 font-semibold">New</span>
+        <a
+          v-for="event in events"
+          :key="event.link"
+          :href="event.link"
+          class="ff-utility-item group inline-flex items-center gap-2 min-w-0 no-underline hover:no-underline text-indigo-100 hover:text-white"
+        >
+          <span class="shrink-0 font-semibold">{{ event.type }}</span>
           <span class="hidden sm:block">-</span>
-          <span class="truncate">Meet FlowFuse Expert: build industrial applications with AI.</span>
+          <span class="truncate">{{ event.title }}</span>
           <span class="shrink-0 hidden sm:inline-flex items-center gap-1 font-medium text-white underline underline-offset-2">
-            Learn more
-            <span class="transition-transform group-hover:translate-x-0.5">&rarr;</span>
-          </span>
-        </a>
-        <a href="/docs/device-agent/install/overview/" class="ff-utility-item group inline-flex items-center gap-2 min-w-0 no-underline hover:no-underline text-indigo-100 hover:text-white">
-          <span class="shrink-0 font-semibold">Get started</span>
-          <span class="hidden sm:block">-</span>
-          <span class="truncate">Begin with installing the FlowFuse device agent on your hardware.</span>
-          <span class="shrink-0 hidden sm:inline-flex items-center gap-1 font-medium text-white underline underline-offset-2">
-            Install on edge
+            {{ event.buttonText }}
             <span class="transition-transform group-hover:translate-x-0.5">&rarr;</span>
           </span>
         </a>
       </div>
       <!-- Mobile Sign In (quick-links nav below is hidden under md) -->
-      <a href="https://app.flowfuse.com" class="md:hidden shrink-0 text-indigo-100 hover:text-white no-underline hover:no-underline font-medium">Sign In</a>
+      <CtaSignIn variant="nav-text" position="utility-bar-mobile" class="md:hidden shrink-0 text-indigo-100 hover:text-white no-underline hover:no-underline font-medium" />
       <!-- Quick links (right) -->
       <nav class="hidden md:flex items-center gap-5 shrink-0" aria-label="Quick links">
         <a href="/about/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">About us</a>
@@ -52,7 +50,7 @@ onMounted(() => {
         <a href="/support/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Support</a>
         <a href="/docs/device-agent/install/overview/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Install on edge</a>
         <span class="h-4 w-px bg-indigo-400/40" aria-hidden="true"></span>
-        <a href="https://app.flowfuse.com" class="text-indigo-100 hover:text-white no-underline hover:no-underline font-medium">Sign In</a>
+        <CtaSignIn variant="nav-text" position="utility-bar" class="text-indigo-100 hover:text-white no-underline hover:no-underline font-medium" />
       </nav>
     </div>
   </div>

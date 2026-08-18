@@ -2,8 +2,7 @@
 _site
 node_modules
 src/handbook/media
-src/docs/*
-!src/docs/docs.json
+nuxt/content/docs/
 src/blueprints/*
 !src/blueprints/*.njk
 

@@ -1,7 +1,8 @@
 ---
+metaTitle: "Multi-Tenancy in FlowFuse's Dashboard 2.0"
 title: Multi-Tenancy available for everyone with FlowFuse's Dashboard 2.0
 subtitle: With a recent update in Node-RED Dashboard 2.0, we've made some significant changes to the multi-tenancy feature set. Discover what's new and how it can benefit your projects.
-description: With a recent update in Node-RED Dashboard 2.0, we've made some significant changes to the multi-tenancy feature. Discover what's new and how it can benefit your projects.
+description: "With a recent Dashboard 2.0 update, discover what's new in multi-tenancy and how it can benefit your team's ongoing projects."
 date: 2024-06-21
 authors: ["joe-pavitt"]
 image: /blog/2024/06/images/tile-dashboard-2-multi-tenancy.png
@@ -90,7 +91,7 @@ You can [install the FlowFuse User Addon](https://flows.nodered.org/node/@flowfu
 ![Screenshot of the Instance settings in FlowFuse to enable "FlowFuse User Authentication"](./images/flowfuse-instance-security.png){data-zoomable}
 _Screenshot of the Instance settings in FlowFuse to enable "FlowFuse User Authentication"_
 
-It's worth noting that instances must have ["FlowFuse User Authentication"](https://flowfuse.com/blog/2024/04/displaying-logged-in-users-on-dashboard/#enabling-flowfuse-user-authentication) switched on in the instance's settings.
+It's worth noting that instances must have ["FlowFuse User Authentication"](/blog/2024/04/displaying-logged-in-users-on-dashboard/#enabling-flowfuse-user-authentication) switched on in the instance's settings.
 
 
 ### Cloudfare User Addon (Community Contribution)

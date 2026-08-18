@@ -1,7 +1,8 @@
 ---
+metaTitle: "Preventive Maintenance in Manufacturing"
 title: "Preventive Maintenance in Manufacturing: Avoid Multi-Million Dollar Equipment Failures"
 subtitle: "How industrial data platforms are turning equipment failures from crisis events into predictable, manageable costs"
-description: "Unplanned downtime costs manufacturers millions. Learn how preventive maintenance software and data platforms like FlowFuse cut failures, boost OEE, and deliver lasting ROI."
+description: "Unplanned downtime costs manufacturers millions. Learn how preventive maintenance software and FlowFuse cut failures and boost OEE."
 date: 2025-09-04
 usecase:
   - production-monitoring
@@ -121,7 +122,7 @@ Calculate your current failure costs honestly. Include not just repair expenses 
 
 The manufacturers moving decisively are gaining first-mover advantages in operational excellence that their competitors will struggle to match. Those delaying risk permanent disadvantage in an increasingly data-driven industry.
 
-**Ready to transform equipment failures from crisis events into predictable costs?** [Discover how FlowFuse enables comprehensive equipment monitoring](https://flowfuse.com/book-demo/) that delivers measurable competitive advantages from day one.
+**Ready to transform equipment failures from crisis events into predictable costs?** [Discover how FlowFuse enables comprehensive equipment monitoring](/book-demo/) that delivers measurable competitive advantages from day one.
 
 ## References
 

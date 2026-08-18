@@ -1,4 +1,5 @@
 ---
+metaTitle: "MES Data Acquisition: Unlock Hidden Data"
 title: "MES Data Acquisition: How to Unlock Your Factory’s Hidden Data"
 subtitle: Breaking Down Data Silos to Empower Your MES
 description: Learn how to effectively acquire and integrate operational data from your factory floor for MES using FlowFuse.
@@ -63,14 +64,14 @@ Following are some of the most commonly used protocol nodes:
 - **Modbus:** <https://flows.nodered.org/node/node-red-contrib-modbus>
 - **OPC UA:** <https://flows.nodered.org/node/node-red-contrib-opcua>
 - **OPC DA:** <https://flows.nodered.org/node/node-red-contrib-opc-da>
-- **MQTT:** <https://flowfuse.com/node-red/core-nodes/mqtt-in/>
+- **MQTT:** [/node-red/core-nodes/mqtt-in/](/node-red/core-nodes/mqtt-in/)
 - **Ethernet/IP:** <https://flows.nodered.org/node/node-red-contrib-ethernet-ip>
 - **Siemens S7:** <https://flows.nodered.org/node/node-red-contrib-s7comm>
 - **MITSUBISHI MC:** <https://flows.nodered.org/node/node-red-contrib-mcprotocol>
 - **OMRON FINS:** <https://flows.nodered.org/node/node-red-contrib-omron-fins>
-- **HTTP:** <https://flowfuse.com/node-red/core-nodes/http-in/>
+- **HTTP:** [/node-red/core-nodes/http-in/](/node-red/core-nodes/http-in/)
 - **LwM2M:** <https://flows.nodered.org/node/node-red-contrib-lwm2m>
-- **AMQP:** <https://flowfuse.com/node-red/protocol/amqp/>
+- **AMQP:** [/node-red/protocol/amqp/](/node-red/protocol/amqp/)
 - **Serialport:** <https://flows.nodered.org/node/node-red-node-serialport>
 - **GPIO:** <https://flows.nodered.org/node/node-red-contrib-gpio>
 - **Lorawan:** <https://flows.nodered.org/node/node-red-contrib-lorawan>

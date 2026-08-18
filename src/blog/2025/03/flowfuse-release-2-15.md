@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.15: Node Collections & Schemas"
 title: "FlowFuse 2.15: Personal Node Collections, Smart Schema Suggestions and more control in DevOps Pipelines!"
 subtitle: Start building out your own collection of private nodes and Javascript libraries for Node-RED with our new Custom Node catalogues
 description: Start building out your own collection of private nodes and Javascript libraries for Node-RED with our new Custom Node catalogues
@@ -34,7 +35,7 @@ Until now, to utilise these packages within FlowFuse, you would either need to p
 
 With our new update, every Team- and Enterprise-Tier Library in FlowFuse has an in-built private Node collection, ready for you to go. This means that you can push your custom node packages directly to that registry, and make it available to all of your Instances running in FlowFuse within seconds. This comes built in with full version control and all of the great update mechanisms that you already have in Node-RED.
 
-This new feature also integrates seamlessly ith our [Bill of Materials](https://flowfuse.com/docs/user/bill-of-materials/) view, providing you the single source of truth to all of your Instance's dependencies in one-place, making it easier to audit and manage your Node-RED instances and their dependencies.
+This new feature also integrates seamlessly ith our [Bill of Materials](/docs/user/bill-of-materials/) view, providing you the single source of truth to all of your Instance's dependencies in one-place, making it easier to audit and manage your Node-RED instances and their dependencies.
 
 ## MQTT Broker Integration
 
@@ -91,4 +92,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

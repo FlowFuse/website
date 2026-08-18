@@ -7,7 +7,7 @@ tags:
     - changelog
 ---
 
-Users of FlowFuse Cloud can now make use of an enhanced navigation tool and visibility selector when using the [static file service feature](https://flowfuse.com/blog/2024/08/flowfuse-2-8-release/#static-assets-service).
+Users of FlowFuse Cloud can now make use of an enhanced navigation tool and visibility selector when using the [static file service feature](/blog/2024/08/flowfuse-2-8-release/#static-assets-service).
 
 By settings the visibility of a folder to 'public', their Node-RED instance will automatically make any files in that folder publicly available - on a path of the user's choosing.
 

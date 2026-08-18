@@ -1,7 +1,8 @@
 ---
+metaTitle: "FlowFuse 2.31: Agentic Development in Open Beta"
 title: "FlowFuse 2.31: Agentic Development Now in Open Beta, FlowFuse Expert Builds Your Industrial App on Edge Devices"
 subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and platform-level AI controls and real-time platform updates."
-description: "In FlowFuse 2.31, FlowFuse Expert builds your industrial application for you, now an open beta on FlowFuse Cloud and Self-Hosted Enterprise, and working on Remote Instances as well as Hosted ones. Plus per-team and platform-level AI controls and real-time platform updates."
+description: "FlowFuse 2.31 puts FlowFuse Expert in open beta, building your industrial app for you on Cloud, Self-Hosted, and edge devices."
 date: 2026-06-04
 authors: ["dimitrie-hoekstra"]
 image: /blog/2026/06/images/flowfuse-release-2-31.jpg
@@ -12,16 +13,13 @@ tags:
    - releases
 release: "2.31"
 features:
-   - id: ff-expert-application-building
+   - id: flowfuse-expert-application-building
      heading: "Let FlowFuse Expert build your industrial application"
-   - id: certified-nodes
+   # The heading covers both bundles, so it badges the union of their plans.
+   - id: [certified-nodes-it, certified-nodes-ot]
      heading: "Certified Nodes for industrial connectivity and AI"
    - heading: "What else is new?"
-     tiers:
-       cloud: all
-       selfHosted: all
-# Certified Nodes Self-Hosted renders "Coming soon" from the catalog SH value ('time').
-# Flip that tier to true in 2.32 when Self-Hosted support ships.
+     tiers: { edge: true, hub: true, fleet: true }
 tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and platform-level control over AI."
 cta:
   type: contact
@@ -33,7 +31,7 @@ FlowFuse 2.31 lets FlowFuse Expert build your industrial application for you, no
 
 <!--more-->
 
-## Let FlowFuse Expert build your industrial application {#expert-agentic-ga}
+## Let FlowFuse Expert build your industrial application
 
 *FlowFuse Expert is our integrated AI assistant, in the website, the platform, and the immersive Node-RED editor.*
 
@@ -41,7 +39,7 @@ Describe what you want to build, an OEE dashboard, an MES handover screen, a UNS
 
 It now works on Remote Instances as well as Hosted Instances, so you get the same build-it-for-me experience across both. Agentic flow building requires the nr-assistant plugin at v0.16.0 or newer, and FlowFuse Expert will let you know when an update is available in your instance's immersive editor.
 
-## Certified Nodes for industrial connectivity and AI {#certified-nodes}
+## Certified Nodes for industrial connectivity and AI
 
 FlowFuse now offers certified nodes: vetted, FlowFuse-supported nodes you can add to your instances. At launch you can get:
 

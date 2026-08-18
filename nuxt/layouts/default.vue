@@ -8,7 +8,7 @@
     <AppHeader />
     <div class="flex-grow base">
       <div class="w-full">
-        <main id="main-content" class="flex flex-col mx-auto items-center justify-center gradient-bg">
+        <main id="main-content" class="flex flex-col mx-auto items-center justify-center bg-white gradient-bg">
           <slot />
         </main>
       </div>

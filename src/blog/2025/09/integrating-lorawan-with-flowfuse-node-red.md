@@ -1,7 +1,7 @@
 ---
 title: "Integrating LoRaWAN with FlowFuse"
 subtitle: Connect and Communicate with LoRaWAN Devices using FlowFuse
-description: "Learn how to easily integrate LoRaWAN devices with FlowFuse using TTN. This comprehensive guide covers MQTT setup, data processing methods, and real-time sensor data visualization for scalable IoT applications."
+description: "Learn how to integrate LoRaWAN devices with FlowFuse using TTN, covering MQTT setup and real-time sensor data visualization."
 date: 2025-09-17
 authors: ["sumit-shinde"]
 image: /blog/2025/09/images/lorawan-flowfuse.png
@@ -37,7 +37,7 @@ Now that we understand the basics of LoRaWAN, let's set up the integration with 
 
 Before we begin, make sure you have the following components ready:
 
-1. Node-RED instance – Ensure you have a running Node-RED instance. The quickest way to set one up is through FlowFuse. [Sign up]({% include "sign-up-url.njk" %}), create your instance, and you will be able to manage, deploy, scale, and secure your flows with ease. FlowFuse also provides enterprise-ready features out of the box.
+1. Node-RED instance – Ensure you have a running Node-RED instance. The quickest way to set one up is through FlowFuse. [Sign up](https://app.flowfuse.com/account/create), create your instance, and you will be able to manage, deploy, scale, and secure your flows with ease. FlowFuse also provides enterprise-ready features out of the box.
 2. LoRaWAN device and gateway registered on TTN – You need a sensor or device connected to TTN and a gateway that can receive its uplinks.
 
 If you do not have a LoRaWAN device, you can simulate one using available tools. For this article, I am using the [LWN-Simulator](https://github.com/UniCT-ARSLab/LWN-Simulator).
@@ -134,8 +134,8 @@ Now you will see the object with the parsed sensor data in the debug panel. The 
 
 As you can see in the image below, TTN console shows live data with uplink message on the left side, and FlowFuse successfully reads and processes it on the right side.
 
-![Image showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right](./images/live-data-ttn-ff1.gif){data-zoomable}
-*Image showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right*
+<video autoplay loop muted playsinline aria-label="Video showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right" width="3024" height="1312" preload="none"><source src="/blog/2025/09/images/live-data-ttn-ff1.webm" type="video/webm" /></video>
+*Video showing TTN console with live uplink messages on the left and FlowFuse debug panel with processed sensor data on the right*
 
 ## Sending Commands to Devices (Downlink)
 
@@ -172,15 +172,15 @@ return msg;
 
 In the image below, you can see FlowFuse sending and processing the downlink message, while TTN console displays the live data on the left.
 
-![Image showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right](./images/live-data-ttn-downlink.gif){data-zoomable}
-*Image showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right*
+<video autoplay loop muted playsinline aria-label="Video showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right" width="3024" height="1332" preload="none"><source src="/blog/2025/09/images/live-data-ttn-downlink.webm" type="video/webm" /></video>
+*Video showing TTN console with live Downlink messages on the left and FlowFuse debug panel with processed sensor data on the right*
 
 ## Next Steps
 
 Next, you can store this data in a database. With FlowFuse, a managed PostgreSQL database is already provided, so you do not need to install or configure one manually. FlowFuse also offers a Query node that is automatically configured for your instance. Inside the Query node, you can use FlowFuse Expert, which allows you to write natural language prompts instead of SQL queries. The assistant will generate SQL automatically based on your table schema.
 
-For a complete guide on storing and visualizing data, see the article on [Building Historical Data Dashboards with FlowFuse Tables](https://flowfuse.com/blog/2025/08/time-series-dashboard-flowfuse-postgresql/). It also includes step-by-step instructions for creating dashboards using [FlowFuse Dashboard](https://dashboard.flowfuse.com/), a low-code way to build powerful industrial dashboards that also allows you to send downlink data to devices interactively.
+For a complete guide on storing and visualizing data, see the article on [Building Historical Data Dashboards with FlowFuse Tables](/blog/2025/08/time-series-dashboard-flowfuse-postgresql/). It also includes step-by-step instructions for creating dashboards using [FlowFuse Dashboard](https://dashboard.flowfuse.com/), a low-code way to build powerful industrial dashboards that also allows you to send downlink data to devices interactively.
 
 With FlowFuse, you get a complete enterprise-grade platform built around visual programming, perfect for production-ready IoT deployments. It adds powerful capabilities like centralized management of Node-RED instances, DevOps tools, snapshots, real-time team collaboration, audit logs, RBAC, SSO, Built mqtt broker and database service and more, all designed to help you scale and manage your applications with ease.
 
-If you're interested in exploring FlowFuse further for your industrial IoT applications, come visit us at our booth at upcoming TTN conferences to see live manufacturing demos. You can also [book a demo](/book-demo/) to see how FlowFuse can streamline your development and deployment workflows, or [start your free trial]({% include "sign-up-url.njk" %}) and build your first LoRaWAN-enabled dashboard today.
+If you're interested in exploring FlowFuse further for your industrial IoT applications, come visit us at our booth at upcoming TTN conferences to see live manufacturing demos. You can also [book a demo](/book-demo/) to see how FlowFuse can streamline your development and deployment workflows, or [start your free trial](https://app.flowfuse.com/account/create) and build your first LoRaWAN-enabled dashboard today.

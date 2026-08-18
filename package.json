@@ -10,33 +10,34 @@
         "nuxt"
     ],
     "scripts": {
-        "test": "node --test nuxt/server/lib/*.test.mjs",
-        "dev": "concurrently \"npm run dev:eleventy\" \"npm run dev:postcss\" \"npm run dev:postcss-nuxt\" \"dotenv -- npm run dev --workspace=nuxt\"",
-        "start": "npm-run-all2 clean:dev build:js docs blueprints --parallel dev:*",
+        "test": "node --test nuxt/server/lib/*.test.mjs nuxt/lib/*.test.mjs",
+        "dev": "concurrently \"npm run dev:eleventy\" \"npm run dev:docs\" \"npm run dev:postcss\" \"npm run dev:postcss-nuxt\" \"dotenv -- npm run dev --workspace=nuxt\"",
+        "start": "npm-run-all2 clean:dev build:js blueprints --parallel dev:*",
         "build:js": "terser -c -m -o _site/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js _site/js/flowrenderer.min.js",
         "build": "dotenv -v NODE_ENV=production -- npm-run-all2 clean build:js --parallel prod:*",
         "build:skip-images": "dotenv -v SKIP_IMAGES=true -- npm run build",
-        "clean:dev": "dotenv -- npx del-cli '_site/!(img)' 'src/docs/**/*.md' 'src/blueprints/**/!(*submit.njk)' && dotenv -- npx mkdirp '_site/js/flows'",
+        "clean:dev": "dotenv -- npx del-cli '_site/!(img)' 'src/blueprints/**/!(*submit.njk)' && dotenv -- npx mkdirp '_site/js/flows'",
         "clean": "dotenv -- npx del-cli '_site/!(img)' && dotenv -- mkdir -p '_site/js'",
-        "dev:docs": "node scripts/copy_docs.js --watch",
         "dev:blueprints": "node scripts/watch_blueprints.js",
+        "dev:docs": "node scripts/watch_docs.mjs",
         "dev:netlify": "npx netlify dev -c \"dotenv -- npx @11ty/eleventy --serve --quiet --incremental\"",
-        "dev:postcss": "dotenv -- npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
-        "dev:postcss-nuxt": "dotenv -- npx postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js -w",
-        "docs": "node scripts/copy_docs.js",
+        "dev:postcss": "dotenv -v TAILWIND_MODE=watch -- npx postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js -w",
+        "dev:postcss-nuxt": "dotenv -v TAILWIND_MODE=watch -- npx postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js -w",
         "blueprints": "node scripts/copy_blueprints.js",
+        "docs": "node scripts/sync_docs.mjs",
         "index:algolia": "node scripts/index-algolia.js",
         "dev:eleventy": "dotenv -- npx @11ty/eleventy --serve --port 8080 --quiet",
+        "dev:nuxt": "dotenv -- npm run dev --workspace=nuxt",
         "old_dev:eleventy": "dotenv -v NODE_ENV=development -- ELEVENTY_ENV=development npx @11ty/eleventy --serve --quiet",
         "prod:eleventy": "npx @11ty/eleventy",
         "prod:postcss": "postcss ./src/css/style.css -o ./_site/css/style.css --config ./postcss.config.js",
-        "clean:nuxt": "npx del-cli 'nuxt/public/!(img|handbook|images)' 'nuxt/.output' 'nuxt/.netlify' && npx mkdirp 'nuxt/public/js' 'nuxt/public/css'",
+        "clean:nuxt": "npx del-cli 'nuxt/public/!(img|handbook|images|docs)' 'nuxt/.output' 'nuxt/.netlify' && npx mkdirp 'nuxt/public/js' 'nuxt/public/css'",
         "build:js:nuxt": "terser -c -m -o nuxt/public/js/cc.min.js node_modules/vanilla-cookieconsent/dist/cookieconsent.umd.js src/js/cookieconsent-config.js && cp node_modules/@flowfuse/flow-renderer/index.min.js nuxt/public/js/flowrenderer.min.js",
         "prod:postcss-nuxt": "postcss ./src/css/style.css -o ./nuxt/public/css/style.css --config ./postcss.config.js",
         "prod:eleventy-nuxt": "npx @11ty/eleventy --output=./nuxt/public/",
         "prod:nuxt": "npm run build --workspace=nuxt",
-        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt",
-        "build:nuxt:skip-images": "dotenv -v SKIP_IMAGES=true -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt docs blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
+        "build:nuxt": "dotenv -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt",
+        "build:nuxt:skip-images": "dotenv -v SKIP_IMAGES=true -v NODE_ENV=production -- npm-run-all2 clean:nuxt build:js:nuxt blueprints prod:postcss-nuxt prod:eleventy-nuxt prod:nuxt"
     },
     "devDependencies": {
         "@11ty/eleventy": "^3.1.2",
@@ -50,6 +51,7 @@
         "@tailwindcss/typography": "^0.5.14",
         "@types/markdown-it-attrs": "^4.1.3",
         "@types/markdown-it-footnote": "^3.0.4",
+        "chokidar": "^3.6.0",
         "concurrently": "^9.0.0",
         "del-cli": "^5.0.0",
         "dotenv-cli": "^7.4.4",
@@ -68,7 +70,7 @@
         "netlify-plugin-cache": "^1.0.3",
         "nodemon": "^2.0.20",
         "npm-run-all2": "^7.0.1",
-        "postcss": "^8.5.10",
+        "postcss": "^8.5.24",
         "postcss-cli": "^9.0.1",
         "postcss-minify": "^1.1.0",
         "seedrandom": "^3.0.5",
@@ -78,6 +80,7 @@
         "vanilla-cookieconsent": "^3.0.0"
     },
     "overrides": {
+        "comark": "0.3.2",
         "yaml": ">=1.10.3",
         "simple-update-notifier": {
             "semver": ">=7.5.2"
@@ -90,7 +93,9 @@
         "oxc-minify": "0.131.0",
         "oxc-parser": "0.134.0",
         "oxc-transform": "0.131.0",
-        "rollup": "4.60.3"
+        "rollup": "4.60.3",
+        "@unhead/vue": "^3.2.3",
+        "unhead": "^3.2.3"
     },
     "dependencies": {
         "@11ty/eleventy-fetch": "^4.0.0",
@@ -100,7 +105,7 @@
         "algoliasearch": "^4.25.3",
         "codeowners": "^5.1.1",
         "eleventy-plugin-toc": "^1.1.5",
-        "js-yaml": "^4.3.0",
+        "js-yaml": "^4.3.1",
         "markdown-it-attrs": "^4.1.6",
         "xpath": "^0.0.34"
     }

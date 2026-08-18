@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.1 released
 subtitle: Making the first release of the platform and transitioning to open development
-description: Making the first release of the platform and transitioning to open development
+description: "FlowFuse 0.1 marks the very first release of the platform, transitioning the whole project fully to open development for all."
 date: 2022-01-20 1:00:00.0
 authors: ["nick-oleary"]
 tags:

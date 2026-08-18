@@ -1,5 +1,7 @@
 ---
 title: "Engagements & Pricing"
+navigation:
+  order: 14
 ---
 
 # Engagements
@@ -7,11 +9,15 @@ title: "Engagements & Pricing"
 Pricing is publicly available at [our pricing page](/pricing/). When discussing
 pricing with enterprise customers, make a copy of
 [our internal pricing template deck](https://docs.google.com/presentation/d/1kaW6aZxpnCaVuQVdVsi0RTulhRMbeqglhZHkzSP-2kM/)
-to discuss.
+to discuss. For per-product commercial conversations, use the relevant
+[Pricing Decks](./pricing-decks.md) (Edge, Hub, and Fleet).
 
-For FlowFuse Edge deals, use the
-[Edge pricing calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
+For all FlowFuse deals, use the
+[Pricing Calculator](https://docs.google.com/spreadsheets/d/1v8Eo8zcdVZZsHxdmqmc03EM1p3QUp0sln14IBpyoo4M/edit?gid=736958252#gid=736958252)
 (internal only) for current list prices and quote generation.
+
+For discounts, custom agreements, or any other non-standard terms, follow the
+[Deal Approval Process (Deal Desk)](#deal-approval-process-deal-desk).
 
 ## Creating a Deal
 
@@ -24,6 +30,9 @@ To open a deal, be sure to set the correct properties.
    - Expansions - Upsells that are to be booked in-term
    - Renewal - Changes to the subscription effective on renewal date
 
+For the full rules on when to create each deal type, who owns it, and how to
+set its amount fields, see [Deal Management](/handbook/sales/hubspot/#deal-management).
+
 ## Generating a Quote
 
 Clearly written, easy to understand quotes are crucial for customers to
@@ -33,22 +42,9 @@ following guide.
 
 ### What to Quote
 
-When preparing a quote, include both the plan and any extras that go beyond what
-comes with the plan at the designated tier. Include a note in the Terms section
-that indicates what comes with the plan. (This will be pre-filled when using one
-of the HubSpot quote templates). The product plan will be listed as its own
-line, with a quantity of 1, and the minimum purchase price for that plan. The
-add-on options should also be added to the product section, as referenced by the
-purchase term template.
+When preparing a quote, include the product, quantities, and any required add-ons, if applicable. Always choose the matching product quote template — Edge, Hub, or Fleet — which pre-fills the correct features and terms onto the quote.
 
-| Item & Description                   | Quantity | Unit Price  | Total  |
-| ------------------------------------ | -------- | ----------- | ------ |
-| FlowFuse Enterprise Platform - Cloud | 1        | $X,000/year | $X,000 |
-| Enterprise - Instance Add-On         | 10       | $X,000/year | $X,000 |
-| Enterprise - Remote Device Add-On    | 10       | $X,000      | $X,000 |
-
-Annual Subtotal	 $XX,000\
-**Total** $XX,000
+Use the internal pricing calculator linked above to configure each product sale, including the correct quantities and add-ons.
 
 ### Creating a Quote
 
@@ -71,10 +67,16 @@ Follow these steps to create a quote.
 5. Set Signature and Payment settings as needed. Ensure a countersignature is
    required from either the CEO or Head of GTM.
 6. In the Template and Details section, choose the appropriate Quote Template
-   from the dropdown menu. Choosing the correct Quote Template is important
-   because it will pre-fill the correct plan features onto the quote. You can
-   include additional Comments to Buyer or Purchase Terms here. They will not
-   overwrite the Terms and Comments included with the Quote Template.
+   from the dropdown menu. Always use one of the three product templates that
+   correspond to our pricing packages:
+   - **Edge**
+   - **Hub**
+   - **Fleet**
+
+   Choosing the correct Quote Template is important because it will pre-fill the
+   correct plan features onto the quote. You can include additional Comments to
+   Buyer or Purchase Terms here. They will not overwrite the Terms and Comments
+   included with the Quote Template.
 7. Review your Quote, and when everything is correct, click Create to create the
    quote attached to the relevant Deal.
 
@@ -103,21 +105,27 @@ as evidenced by a PO or signed quote, is the sole determinant.
 
 1. Verify, again, if the quote has all the right properties set according to
    [Generating a Quote](#generating-a-quote) instructions.
-   - Verify the Deal amount is set correctly based on Deal Type:
-     - New Business: ACV (Annual Contract Value)
-     - Expansions/Renewals: Incremental ARR
+   - Verify the Deal amount fields are set correctly per
+     [Deal Amount Fields](/handbook/sales/hubspot/#deal-amount-fields).
    - On the HubSpot Deal view, check and update:
      - Hosting Environment
      - Contract Start Date
      - Company address
      - Renewal Date
      - Use Case
+     - Contract Term (months): the total length of the agreement.
+     - Payment Terms: Upfront or Annual Installments. Required whenever
+       Contract Term exceeds 12 months.
      - Spiced
-     - Amount in USD based on Deal Type:
-       - New Business: ACV (Annual Contract Value)
-       - Expansions/Renewals: Incremental ARR
    - Under contract management; check the box for MSA if a custom subscription
      agreement is agreed upon.
+   - Contract Term and Payment Terms drive multi-year commission tiering
+     (see [Sales Compensation Plan](/handbook/sales/commission-plan/), Exhibit
+     A, Sections 10-11): multi-year deals paid upfront get 100% commission
+     credit, while deals paid in annual installments are credited 100%/50%/25%
+     by contract year. If these fields aren't set at close, payouts default to
+     treating the deal as a standard 1-year term, which has caused at least
+     one overpayment.
 1. Upload the documents to the Google Drive in the correct directory
    - [Signed quotes and P.O.'s](https://drive.google.com/drive/folders/1Nb3UqFiE56ymgQnyfkDKHMAe6L3akNzQ)
    - If negotiated custom, the
@@ -152,7 +160,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
      - Invite customer as owner to the team
      - Remove own email adress after sign up customer
    - _Self-Managed_
-     - Generate a [license key](../sales/meetings/poc.md#generating-a-license)
+     - Generate a [license key](../sales/meetings/pov.md#generating-a-license)
      - Send the license key with the onboarding email to the customer, following
        this
        [HubSpot Template](https://app-eu1.hubspot.com/templates/26586079/edit/135404737?q=welco&page=1).

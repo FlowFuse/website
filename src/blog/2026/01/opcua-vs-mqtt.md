@@ -1,4 +1,5 @@
 ---
+metaTitle: "MQTT vs OPC UA: Which One Should You Use?"
 title: "MQTT vs OPC UA: Why This Question Never Has a Straight Answer"
 subtitle: "Why comparing MQTT and OPC UA is a category error, and how to choose based on requirements rather than marketing"
 description: "MQTT vs OPC UA isn't a real choice; they solve different problems. Learn when to use each protocol based on your actual requirements, not vendor marketing."
@@ -90,6 +91,9 @@ MQTT has no concept of data types. That "72.4" could be Celsius, Fahrenheit, or 
 The broker is a single point of failure unless you architect clustering separately. Security implementation depends on broker configuration; MQTT itself focuses on message transport. Discovery mechanisms must be implemented externally; subscribers must know exact topic names in advance or use wildcards and filter received messages.
 
 MQTT is deliberately minimal. This simplicity at the transport layer enables its flexibility and efficiency.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ### OPC UA: The Semantic Framework
 
@@ -258,7 +262,7 @@ Work with your equipment, not against it. Siemens PLCs, Rockwell controllers, an
 
 Five hundred vibration sensors streaming to cloud storage align with MQTT's horizontal scaling through broker clusters. Fifty machines requiring discovered operations and validated method calls align with OPC UA's self-describing address spaces. Different problems, different optimal solutions.
 
-For example, you're connecting 50 CNC machines, 500 environmental sensors, [MES](/solutions/mes/), predictive maintenance, and cloud analytics.
+For example, you're connecting 50 CNC machines, 500 environmental sensors, [MES](/use-cases/mes/), predictive maintenance, and cloud analytics.
 
 ```
 - Machines → Edge: OPC UA (semantic interoperability for production coordination)

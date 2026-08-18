@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.17: Remote Instance Onboarding & More"
 title: "FlowFuse 2.17: Easier remote instance onboarding, Dashboard blueprint, PDF generation, and more"
 subtitle: "Build a dashboard in one click, create PDF reports from your data, and import instances when installing Device Agent"
 description: "Build a dashboard in one click, create PDF reports from your data, and import instances when installing Device Agent"
@@ -36,7 +37,7 @@ Our new Getting Started with Dashboard Blueprint deploys to a new Node-RED insta
 
 New Dashboard nodes are added on a regular basis, and we will keep in mind which ones users would like help using as we iterate on this Blueprint.
 
-To put this Blueprint to use, check out the Blueprint page for [Getting Started with Dashboard.](https://flowfuse.com/blueprints/getting-started/dashboard/)
+To put this Blueprint to use, check out the Blueprint page for [Getting Started with Dashboard.](/blueprints/getting-started/dashboard/)
 
 
 ## Blueprint: PDF Report Generator
@@ -50,7 +51,7 @@ This new Blueprint makes it very easy to create PDF reports from your data. Usin
 
 To get you started using this Blueprint, we've included sample data that is generated automatically. 
 
-Instructions for using this Blueprint, including how to map fields from your database to our preconfigured fields, [check out the Blueprint page.](https://flowfuse.com/blueprints/manufacturing/pdf-report-generator/)
+Instructions for using this Blueprint, including how to map fields from your database to our preconfigured fields, [check out the Blueprint page.](/blueprints/manufacturing/pdf-report-generator/)
 
 
 ## Where are we headed?
@@ -78,4 +79,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

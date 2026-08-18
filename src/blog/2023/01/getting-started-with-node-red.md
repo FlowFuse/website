@@ -24,7 +24,7 @@ First, you'll need to get an installation of Node-RED up and running. There are 
 
 #### FlowFuse
 
-To get Node-RED running on FlowFuse [sign up as a new user]({% include "sign-up-url.njk" %}). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
+To get Node-RED running on FlowFuse [sign up as a new user](https://app.flowfuse.com/account/create). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
 
 Once that instance has booted up you can access Node-RED by pressing "Open Editor".
 
@@ -42,7 +42,7 @@ Once Node-RED is installed, you can start it by running the following command:
 node-red
 ```
 
-This will start the Node-RED server and open up the [editor in your web browser](http://localhost:1880). You can also specify a different port or a settings file if you want to. If you want to run Node-RED locally but manage it remotely through FlowFuse, check out [this guide](https://flowfuse.com/blog/2025/09/installing-node-red/).
+This will start the Node-RED server and open up the [editor in your web browser](http://localhost:1880). You can also specify a different port or a settings file if you want to. If you want to run Node-RED locally but manage it remotely through FlowFuse, check out [this guide](/blog/2025/09/installing-node-red/).
 
 ### First Flow
 
@@ -80,7 +80,8 @@ In addition to the built-in nodes, Node-RED also has a palette manager feature w
 
 If you want to view this flow you can import it using the code below. Copy the code then select Import from the top right menu in Node-RED. Paste the code into the field then press Import.
 
-{% renderFlow %}
+::render-flow
+```json
 [
     {
         "id": "a742e7a95697bb40",
@@ -138,8 +139,9 @@ If you want to view this flow you can import it using the code below. Copy the c
         ]
     }
 ]
-{% endrenderFlow %}
+```
+::
 
 ### What's Next?
 
-Well done, you've now got your first flow up and running. Enjoy using Node-RED and thanks for reading. Now if you want to start with your first beginner friendly project, building a weather dashboard is great, read this [article for getting started](/blog/2025/12/getting-weather-data-in-node-red/). If you'd like to dive deeper into more Node-RED capabilities and how it can help in an enterprise setting, check out our [eBook The Ultimate Beginner Guide to a Professional Node-RED](https://flowfuse.com/ebooks/beginner-guide-to-a-professional-nodered/).
+Well done, you've now got your first flow up and running. Enjoy using Node-RED and thanks for reading. Now if you want to start with your first beginner friendly project, building a weather dashboard is great, read this [article for getting started](/blog/2025/12/getting-weather-data-in-node-red/). If you'd like to dive deeper into more Node-RED capabilities and how it can help in an enterprise setting, check out our [eBook The Ultimate Beginner Guide to a Professional Node-RED](/ebooks/beginner-guide-to-a-professional-nodered/).

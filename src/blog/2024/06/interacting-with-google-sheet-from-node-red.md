@@ -1,7 +1,7 @@
 ---
 title: "Interacting with Google Sheets from Node-RED (2026)"
 subtitle: Guide to learn how to write, read, update and delete data in Google sheet using Node-RED.
-description: Learn how to interact with Google Sheet from Node-RED to write, read, update and delete data.
+description: "Learn how to interact with Google Sheets from Node-RED in 2026: write, read, update, and delete spreadsheet data with ease."
 lastUpdated: 2026-06-03
 date: 2024-06-21
 authors: ["sumit-shinde"]
@@ -162,7 +162,7 @@ For demonstration purposes, I will write simulated sensor data which includes a 
 3. Drag the Debug node onto the canvas, which will help in debugging in case of any error.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the write operation"](./images/interacting-with-google-sheet-from-node-red-write.gif "Image showing the write operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the write operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-write.webm" type="video/webm" /></video>
 
 This flow generates a timestamp and a random number. The data is formatted as an array because I want the timestamp (the first item of the array) to be placed in column A and the random number (the second item of the array) to be placed in column B. If you want to insert data into additional columns, you can add more items to the array. For example, if you add a third item to the array, it will be placed in column C, a fourth item will be placed in column D, and so on.
 
@@ -173,7 +173,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the read operation"](./images/interacting-with-google-sheet-from-node-red-read.gif "Image showing the read operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the read operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-read.webm" type="video/webm" /></video>
 
 ### Updating Data of Cells
 
@@ -182,7 +182,7 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the update operation"](./images/interacting-with-google-sheet-from-node-red-update.gif "Image showing the update operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the update operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-update.webm" type="video/webm" /></video>
 
 ### Deleting Data from Cells
 
@@ -191,13 +191,15 @@ This flow generates a timestamp and a random number. The data is formatted as an
 3. Drag a Debug node onto the canvas.
 4. Connect the output of the Inject node to the input of the GSheet node, and the output of the GSheet node to the input of the Debug node.
 
-!["Image showing the delete operation"](./images/interacting-with-google-sheet-from-node-red-delete.gif "Image showing the delete operation"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing the delete operation" width="800" height="450" preload="none"><source src="/blog/2024/06/images/interacting-with-google-sheet-from-node-red-delete.webm" type="video/webm" /></video>
 
 Below I have provided the complete flow that we have built through the guide, make sure to replace the environment variable with your environment variable added for the private key.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"7d0282761979574c","type":"inject","z":"baa50b8a4762ec1f","name":"Wrting data to the cells","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\t    $moment(),\t    $random()*100\t    \t]","payloadType":"jsonata","x":240,"y":140,"wires":[["eda23377d98e1a51"]]},{"id":"eda23377d98e1a51","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"append","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C1000","flatten":false,"name":"","x":510,"y":140,"wires":[["3e670f575b8227d0"]]},{"id":"3e670f575b8227d0","type":"debug","z":"baa50b8a4762ec1f","name":"debug 1","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":140,"wires":[]},{"id":"2c916b1d5c10dffe","type":"inject","z":"baa50b8a4762ec1f","name":"Read the cells data","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":210,"y":260,"wires":[["941c7fe7c7dbcbcd"]]},{"id":"941c7fe7c7dbcbcd","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"get","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C3","flatten":false,"name":"","x":490,"y":260,"wires":[["f910d7637788361a"]]},{"id":"f910d7637788361a","type":"debug","z":"baa50b8a4762ec1f","name":"debug 2","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":260,"wires":[]},{"id":"c20997333f9d4bda","type":"inject","z":"baa50b8a4762ec1f","name":"Updating the cells data","props":[{"p":"payload"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"[\t   \"none\",\t   \"none\"\t    \t]","payloadType":"jsonata","x":220,"y":360,"wires":[["d9ca2a1e0614f764"]]},{"id":"d9ca2a1e0614f764","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"update","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A35","flatten":false,"name":"","x":510,"y":360,"wires":[["9febe629870b7a54"]]},{"id":"9febe629870b7a54","type":"debug","z":"baa50b8a4762ec1f","name":"debug 3","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":760,"y":360,"wires":[]},{"id":"c9ceec9844fa74a9","type":"inject","z":"baa50b8a4762ec1f","name":"Deleting the cells data","props":[],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","x":220,"y":460,"wires":[["b9cef9c376d1bea3"]]},{"id":"b9cef9c376d1bea3","type":"GSheet","z":"baa50b8a4762ec1f","creds":"d38cb80ae8574ea6","method":"clear","action":"","sheet":"1TEEShkuxxrb3WH4NTFyk1COeDyWpgX1w6HN08ZezC7s","cells":"Sheet1!A2:C20","flatten":false,"name":"","x":500,"y":460,"wires":[["a1766b498efb50f4"]]},{"id":"a1766b498efb50f4","type":"debug","z":"baa50b8a4762ec1f","name":"debug 4","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","statusVal":"","statusType":"auto","x":780,"y":460,"wires":[]},{"id":"d38cb80ae8574ea6","type":"gauth","name":"Unknown"}]
-{% endrenderFlow %}
+```
+::
 
 ## Conclusion
 

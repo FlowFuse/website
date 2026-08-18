@@ -1,7 +1,8 @@
 ---
+metaTitle: "Why Pricing Models Matter in Automation"
 title: "The Evolution of Business Automation: Why Pricing Models Matter"
 subtitle: The importance of a predictable pricing model in workflow automation
-description: The importance of a predictable pricing model in workflow automation
+description: "The importance of a predictable pricing model in workflow automation, and how it shapes how teams choose their automation tools."
 date: 2025-08-08
 authors: ["pablo-filomeno"]
 keywords: node-red, n8n, pricing, business automation
@@ -90,4 +91,4 @@ Experience automation without the complexity of execution counting or artificial
 
 ---
 
-*Ready to get started? [Explore FlowFuse today](https://flowfuse.com/) and see why businesses choose purpose-built automation platforms.*
+*Ready to get started? [Explore FlowFuse today](/) and see why businesses choose purpose-built automation platforms.*

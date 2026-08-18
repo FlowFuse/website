@@ -53,7 +53,7 @@ Devices are now bound to "Instances", you'll see these in the "Devices" view, an
 
 ## Node-RED 3.1 Beta Available
 
-FlowFuse Cloud is a great place to try out the new Node-RED features, with FlowFuse Cloud now including the [Node-RED 3.1.0-beta.2](https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192). If you want to try this version you can [duplicate your application](https://flowfuse.com/docs/user/instance-settings/#copy-instance) or [upgrade your stack](/docs/user/changestack/).
+FlowFuse Cloud is a great place to try out the new Node-RED features, with FlowFuse Cloud now including the [Node-RED 3.1.0-beta.2](https://discourse.nodered.org/t/node-red-3-1-0-beta-2-released/76192). If you want to try this version you can [duplicate your application](/docs/user/instance-settings/#copy-instance) or [upgrade your stack](/docs/user/changestack/).
 
 ## Other Improvements
 
@@ -72,7 +72,7 @@ FlowFuse Cloud is a great place to try out the new Node-RED features, with FlowF
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

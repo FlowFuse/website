@@ -1,7 +1,8 @@
 ---
+metaTitle: "The Node-RED Revolution in Low-Code"
 title: "The Node-RED Revolution: How Low-Code is Democratizing Industrial Automation"
 subtitle: "Looking back on where Node-RED came from to understand the impact it has had on industry"
-description: "Looking back on where Node-RED came from to understand the impact it has had on industry"
+description: "Look back at where Node-RED came from and understand the impact it has had on industrial automation and low-code development."
 date: 2025-10-09
 keywords: 
 authors: ["nick-oleary"]

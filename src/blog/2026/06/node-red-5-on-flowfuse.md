@@ -1,7 +1,7 @@
 ---
 title: "Node-RED 5 Is Here: What It Means for Industrial Teams"
 subtitle: "The biggest change to the editor since the project began, and it's already live on FlowFuse Cloud."
-description: "Node-RED 5 reshapes the editor with redesigned sidebars, an Explorer panel, and a built-in dark theme. Here's what changes for teams running it in production on FlowFuse, and how to upgrade your instances."
+description: "Node-RED 5 reshapes the editor with redesigned sidebars, an Explorer panel, and a built-in dark theme. Here's how to upgrade."
 date: 2026-06-09
 authors: ["sumit-shinde"]
 video: fI7r7Cj-slI
@@ -57,6 +57,9 @@ Node-RED 5 is the first release built around the editor itself. Previous major v
 ![The redesigned Node-RED 5 editor showing the new sidebars and Explorer panel.](./images/node-red-5.png)
 *The Node-RED 5 editor, redesigned around the place teams spend their whole day.*
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 The **redesigned sidebars** now behave the same on both sides of the editor. Controls are grouped together instead of buried in a menu, and you can split one vertically to keep two panels open at once. A new **Explorer panel** gives you a structured view of your flows, making large projects with dozens of tabs far easier to navigate. And a **built-in dark theme** now ships in core, with no custom packages needed, alongside an accessibility review of the default theme.
 
 ![The Node-RED 5 editor in its built-in dark theme.](./images/nr-dark-theme.png)
@@ -80,7 +83,7 @@ FlowFuse provides the platform capabilities industrial teams need to run Node-RE
 
 The Node-RED 5 stack is available on FlowFuse Cloud today, allowing teams to take advantage of the redesigned editor, Explorer panel, built-in dark theme, and the latest platform improvements as soon as they upgrade their instances.
 
-Alongside Node-RED 5, FlowFuse continues to improve how teams build applications. With the [FlowFuse 2.31 release](/blog/2026/06/flowfuse-release-2-31/#expert-agentic-ga), FlowFuse Expert introduced agentic application building in open beta. Describe your application requirements in plain language, and FlowFuse Expert generates a working starting flow directly in your workspace for both Hosted and Remote Instances.
+Alongside Node-RED 5, FlowFuse continues to improve how teams build applications. With the [FlowFuse 2.31 release](/blog/2026/06/flowfuse-release-2-31/#let-flowfuse-expert-build-your-industrial-application), FlowFuse Expert introduced agentic application building in open beta. Describe your application requirements in plain language, and FlowFuse Expert generates a working starting flow directly in your workspace for both Hosted and Remote Instances.
 
 ![FlowFuse Expert generating a starting flow in a Node-RED 5 workspace from a plain-language prompt.](./images/flowfuse-expert-node-red-5.png)
 *FlowFuse Expert builds a working starting flow from a plain-language prompt, now on Node-RED 5.*

@@ -1,7 +1,7 @@
 ---
 title: IBM Cloud removes Node-RED starter application
 subtitle: Get up and running with a Starter Application for Node-RED with FlowFuse or migrate your existing flows from IBM Cloud
-description: IBM Cloud has recently announced that they will no longer be providing their Cloud App Service Starter Kits, including the Node-RED Starter Application. Don't worry though, FlowFuse has you covered.
+description: "IBM Cloud is removing its Node-RED starter application from its Cloud App Service Starter Kits. FlowFuse has you covered."
 date: 2023-03-29 12:00:00
 authors: ["joe-pavitt"]
 image: /images/blog/tile-ibm-cloud-starter-removed--text.png
@@ -23,7 +23,7 @@ As an ex-IBM Employee myself, over the years, I've been very dependant upon the 
 
 If you're now looking for somewhere to rely on in order to easily spin up new instance of Node-RED, then FlowFuse is the obvious answer. If you're completely new for Node-RED too, we can also help you there with our [Getting Started](/blog/2023/01/getting-started-with-node-red/) guide.
 
-You can sign up for a [free FlowFuse Cloud Account]({% include "sign-up-url.njk" %}) where you'll be given one small Node-RED instance for free, for your first month.
+You can sign up for a [free FlowFuse Cloud Account](https://app.flowfuse.com/account/create) where you'll be given one small Node-RED instance for free, for your first month.
 
 ## Integrations
 

@@ -17,7 +17,7 @@ and a separate group of Team Viewers.
 Whenever a user logs in via SSO, the platform will update their roles to match
 the groups they are in.
 
-More information on configuring groups can be found in [our Single Sign-on](https://flowfuse.com/docs/admin/sso/)
+More information on configuring groups can be found in [our Single Sign-on](/docs/admin/sso/)
 documentation.
 
 This feature is available to Enterprise Tier teams on FlowFuse Cloud, as well as

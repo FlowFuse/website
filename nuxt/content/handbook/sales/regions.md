@@ -1,5 +1,7 @@
 ---
 title: "Sales Regions"
+navigation:
+  order: 7
 ---
 
 We manage our sales opportunities across three primary sales regions:

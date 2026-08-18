@@ -92,6 +92,9 @@ While Node-RED doesn't include Modbus nodes by default, adding them to your pale
 
 Next, you'll need to configure the Modbus connection based on your device type. Modbus devices can communicate using two primary protocols: **Modbus RTU** (over serial) or **Modbus TCP** (over Ethernet/Wi-Fi). The specific choice depends on the type of Device you are working with.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 1. Drag a **Modbus Read** node onto your Node-RED Canvas.
 2. Double-click on the **Modbus Read** node to open its configuration.
 3. In the configuration window:
@@ -282,7 +285,7 @@ _MQTT Out node configuration for temperature data_
 
 **Using FlowFuse MQTT Nodes**
 
-If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas, no manual setup of server address, Client ID, username, or password required. You also won't need to manually create clients in the broker; they're automatically created when you use these nodes. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](https://flowfuse.com/node-red/flowfuse/mqtt/).
+If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas, no manual setup of server address, Client ID, username, or password required. You also won't need to manually create clients in the broker; they're automatically created when you use these nodes. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](/node-red/flowfuse/mqtt/).
 
 **Step 3.3: Configure MQTT Nodes for Remaining Metrics**
 

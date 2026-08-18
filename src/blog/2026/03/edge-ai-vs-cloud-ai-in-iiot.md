@@ -1,7 +1,8 @@
 ---
+metaTitle: "Edge vs Cloud AI in Manufacturing"
 title: "Edge vs Cloud AI in Manufacturing: Where Each Actually Belongs"
 subtitle: "Should we run our AI at the edge or in the cloud?"
-description: "Industrial AI works best when edge and cloud are treated as complementary layers. This article explores how manufacturers use hierarchical architectures to combine real-time inference on the plant floor with large-scale model training in the cloud."
+description: "Industrial AI works best when edge and cloud are complementary layers combining real-time inference with cloud model training."
 lastUpdated: 2026-06-19
 date: 2026-03-16
 authors: ["sumit-shinde"]
@@ -117,4 +118,4 @@ The technology to do this exists. The frameworks are mature, the hardware is pro
 
 Define the decision. Map it to the hierarchy. Build the infrastructure that decision requires. Then train the model.
 
-That sequence is what industrial AI at scale actually looks like, and [FlowFuse](https://flowfuse.com) is the platform built to run it. From connecting machines and collecting data, to transforming and visualizing it in real time, to running model inference directly in the flow with ONNX nodes, wiring live plant data into AI agents with MCP, and letting operators query their operations in plain language with Expert Insights. One platform. Every level of the hierarchy.
+That sequence is what industrial AI at scale actually looks like, and [FlowFuse]() is the platform built to run it. From connecting machines and collecting data, to transforming and visualizing it in real time, to running model inference directly in the flow with ONNX nodes, wiring live plant data into AI agents with MCP, and letting operators query their operations in plain language with Expert Insights. One platform. Every level of the hierarchy.

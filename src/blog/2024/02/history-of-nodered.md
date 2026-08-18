@@ -4,7 +4,7 @@ subtitle: How it all started as told by Node-RED creator Nick O'Leary
 description: Read about Node-RED's evolution from a proof-of-concept to a leading IoT platform in Nick O'Leary's firsthand account. An inspiring journey in open-source tech.
 date: 2024-02-28
 authors: ["nick-oleary"]
-image: blog/2024/02/images/history-of-node-red.png
+image: /blog/2024/02/images/history-of-node-red.png
 tags:
     - posts
     - flowfuse

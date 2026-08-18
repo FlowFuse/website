@@ -1,11 +1,12 @@
 ---
+metaTitle: "Deploy a Basic OPC-UA Server in Node-RED - Part 1"
 title: "How to Deploy a Basic OPC-UA Server in Node-RED - Part 1 (2026)"
 subtitle: OPC-UA Server Information Modeling in Node-RED
-description: Introduction to OPC-UA and how to deploy a Node-RED server flow.
+description: "An introduction to OPC-UA and how to deploy a Node-RED server flow, Part 1 of a series on building OPC-UA servers with FlowFuse."
 lastUpdated: 2026-06-03
 date: 2023-07-13
 authors: ["richard-meyer"]
-image: blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
+image: /blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png
 keywords: opc ua server, opc ua server free, opc ua gateway, opc ua example, node-red-contrib-opcua, nodered opcua, node red opcua, node-red opcua, opcua node red, opcua nodered
 tags:
    - posts
@@ -77,7 +78,6 @@ Because of OPC-UA’s wide industry acceptance, it is increasingly becoming nati
 !["Automation Pyramid"](./images/opc-ua-1/automation-pyramid.jpg "Automation Pyramid")
 *Image reference - [imagecontroltips.com](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/)*
 
-
 ## Fieldbus Model vs OPC-UA Information Model
 
 As of today, industrial ethernet fieldbuses dominate the field/device-level (level 0) and controller/PLC-level (level 1) of the automation pyramid. 
@@ -90,8 +90,7 @@ Traditionally, fieldbus protocols transmit only raw data from field devices (ie,
 
 !["Fieldbus Model"](./images/opc-ua-1/fieldbus-model.png "Fieldbus Model")
 
-
-In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the [OPC Information model](lhttps://reference.opcfoundation.org/Core/Part5/v104/docs/), and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
+In contrast to fieldbus protocols, OPC-UA represents automation data in the form of nodes. The framework for constructing nodes is referred to as the [OPC Information model](https://reference.opcfoundation.org/Core/Part5/v104/docs/), and consists of pre-defined classes and methods that are programmed in the OPC Server address space.  
 
 !["OPC Information Model"](./images/opc-ua-1/opc-information-model.png "OPC Information Model")
 Devices can be described as objects that give a holistic view of the device, beyond simply the raw value.  To construct a device object, we can take different individual attributes associated with a device, such as the transmitter raw value, transmitter fault flag, alarm setpoint, and combine them, similar to how user-defined datatypes (UDTs) are objects used to represent devices in PLCs.  The information model also defines a folder structure, to allow devices information to reside in a structured hierarchy.  Using the example temperature transmitter above, an example folder structure can be constructed as follows:
@@ -111,6 +110,9 @@ The OPC client simply needs to subscribe to the OPC Server endpoint url (ex. opc
 ## Deploying an Example OPC-UA Server in Node-RED
 
 With some background on OPC-UA and how information is modeled in mind, we can take a look at the [node-red-contrib-opcua-server](https://flows.nodered.org/node/node-red-contrib-opcua-server) node, which is merely a compact version of the [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua) node that only focuses on the OPC-UA server and hence requires less dependencies.  
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
  An [example flow](https://github.com/BiancoRoyal/node-red-contrib-opcua-server/blob/master/examples/server-with-context.json) is provided on github that can serve as a basis for understanding how a OPC-UA server is constructed.  Let’s get the example server up and running.  
 
@@ -147,7 +149,6 @@ flow.set('isoOutput8', Math.random() + 8.0)
 We can confirm the values are being stored in memory by checking the flow context data and pressing the refresh button.
 
 !["Screenshot showing the Context Data option"](./images/opc-ua-1/context-data-1.png "Screenshot showing the Context Data option")
-
 
 ![Screenshot showing the flow variables in the context data tab](./images/opc-ua-1/context-data-2.png "Screenshot showing the flow variables in the context data tab")
 Each time we hit refresh, the values change, confirming that the values are randomly changing every second.

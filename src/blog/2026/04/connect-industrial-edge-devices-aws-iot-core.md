@@ -1,7 +1,7 @@
 ---
 title: "How to Connect Industrial Edge Devices to AWS IoT Core"
 subtitle: "Send industrial data from the edge to AWS securely over MQTT"
-description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates. This step-by-step guide covers creating an IoT Thing, generating certificates, configuring policies, and publishing your first message from FlowFuse."
+description: "Learn how to connect FlowFuse to AWS IoT Core using MQTT and X.509 certificates, from creating a Thing to publishing messages."
 lastUpdated: 2026-06-19
 date: 2026-04-16
 keywords: FlowFuse, AWS IoT Core, MQTT, X.509, IoT, industrial IoT, edge to cloud
@@ -73,7 +73,7 @@ If you're new to MQTT and want to understand how it works before diving in, [thi
 
 Before you begin, make sure you have the following in place:
 
-- A FlowFuse account with a running instance. If you don't have one yet, [sign up]({% include "sign-up-url.njk" %}).
+- A FlowFuse account with a running instance. If you don't have one yet, [sign up](https://app.flowfuse.com/account/create).
 - An AWS account with access to the IoT Core service.
 - Basic familiarity with the AWS console.
 
@@ -168,7 +168,7 @@ Every AWS account has a unique IoT Core endpoint. This is the host address you w
 xxxxxxxxxxxxxxx-ats.iot.us-east-1.amazonaws.com
 ```
 
-Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](https://flowfuse.com/docs/user/envvar/), for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
+Rather than pasting this endpoint directly into the Node-RED broker configuration, store it as a [FlowFuse environment variable](/docs/user/envvar/), for example, `SERVER`. You can then reference it as `${SERVER}` in the Server field. This keeps the endpoint out of your flow JSON and means the same flow snapshot deploys across multiple edge instances pointing at different AWS accounts or regions without any edits.
 
 ## Step 4: Configure the MQTT Connection in FlowFuse
 
@@ -187,7 +187,7 @@ First, upload your certificates so Node-RED can use them for the TLS handshake.
 | Client ID | `${CLIENT_ID}`, set via FlowFuse environment variable |
 | Keep alive | `60` |
 
-Define `SERVER` and `CLIENT_ID` under your instance's environment settings in FlowFuse. See [FlowFuse Environment Variables](https://flowfuse.com/docs/user/envvar/) for how to configure them. Keeping these values out of the flow JSON means you can deploy the same flow to multiple edge instances, each with its own Thing name and endpoint, without touching the flow itself. The Client ID must still match your Thing name exactly, so each instance gets its own variable value.
+Define `SERVER` and `CLIENT_ID` under your instance's environment settings in FlowFuse. See [FlowFuse Environment Variables](/docs/user/envvar/) for how to configure them. Keeping these values out of the flow JSON means you can deploy the same flow to multiple edge instances, each with its own Thing name and endpoint, without touching the flow itself. The Client ID must still match your Thing name exactly, so each instance gets its own variable value.
 
 4. Check **Enable TLS**. A TLS configuration field appears.
 5. Click the **+** icon next to it to add a new TLS config.
@@ -242,7 +242,7 @@ Confirm the message arrived in AWS using the built-in MQTT test client.
 3. Go back to FlowFuse and click the inject button again.
 4. The message appears in the AWS test client within seconds.
 
-!["AWS IoT Core MQTT test client showing the successfully received JSON payload on the flowfuse/telemetry topic"](./images/flowfuse-to-aws.gif)
+<video autoplay loop muted playsinline aria-label="AWS IoT Core MQTT test client showing the successfully received JSON payload on the flowfuse/telemetry topic" width="1280" height="619" preload="none"><source src="/blog/2026/04/images/flowfuse-to-aws.webm" type="video/webm" /></video>
 _AWS MQTT test client showing the received JSON message on the flowfuse/telemetry topic_
 
 You've successfully connected FlowFuse to AWS IoT Core. Data published from your FlowFuse instance now flows securely into AWS over mutual TLS, ready to be routed to Lambda, DynamoDB, S3, or any other service in your stack via IoT Core rules.

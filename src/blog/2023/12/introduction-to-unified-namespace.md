@@ -1,4 +1,5 @@
 ---
+metaTitle: "Introduction to the Unified Namespace (UNS)"
 title: "Introduction to the Unified Namespace (UNS) – 2026 Updated Guide"
 subtitle: "Making data available for Industry 4.0 use-cases"
 description: Explore how the Unified Namespace (UNS) empowers Industry 4.0 with seamless data exchange, maximizing organizational potential.
@@ -14,7 +15,7 @@ tags:
 
 As your organization is generating more data there’s key architectural
 decisions to be made to ensure the full value can be unlocked and you’re
-leveraging not just the tip of the iceberg. The [Unified Namespace (UNS)](/solutions/uns/)
+leveraging not just the tip of the iceberg. The [Unified Namespace (UNS)](/use-cases/uns/)
 provides a blueprint to allow data to be consumed by many data-consumers.
 FlowFuse helps you manage this migration and the operationalization of your
 data.
@@ -79,4 +80,4 @@ You can also watch this webinar that explores the core concepts of the Unified N
 
 While Node-RED is highly effective for implementing UNS, managing and deploying it can be complex. FlowFuse provides a unified platform that simplifies deployment with one-click operations, secure management, and scalable Node-RED applications. It also includes features that enhance collaboration, alongside offering centralized management of all Node-RED instances to ensure streamlined operations and increased efficiency.
 
-**[Sign up]({% include "sign-up-url.njk" %}) now for a free trial and experience FlowFuse's features**
+**[Sign up](https://app.flowfuse.com/account/create) now for a free trial and experience FlowFuse's features**

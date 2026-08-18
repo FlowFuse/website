@@ -1,5 +1,7 @@
 ---
 title: "Sales Deck"
+navigation:
+  order: 17
 ---
 
 # Sales Deck
@@ -9,6 +11,8 @@ The [FlowFuse Sales Deck](https://docs.google.com/presentation/d/1xygs4VS6A7sHY8
 ## When to Use It
 
 Use it in **intro and discovery calls** — the first or second meeting with a new prospect. It's also appropriate for executive briefings or re-engagement conversations where a high-level overview is more useful than a deep technical walkthrough.
+
+Once the conversation turns to commercials, move to the per-product [Pricing Decks](./pricing-decks.md) (Edge, Hub, and Fleet).
 
 ## How to Use It
 

@@ -16,4 +16,4 @@ The last 10 Auto Snapshots will be kept on a first in first out basis. Older Aut
 
 ![](./images/Device-auto-snapshot2.png)
 
-Click the following links to learn more about [devices](https://flowfuse.com/docs/device-agent/) and [snapshots](https://flowfuse.com/docs/user/snapshots/#snapshots).
+Click the following links to learn more about [devices](/docs/device-agent/) and [snapshots](/docs/user/snapshots/#snapshots).

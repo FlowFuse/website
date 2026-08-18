@@ -1,7 +1,8 @@
 ---
+metaTitle: "Run FlowFuse Device Agent on MacOS with Docker"
 title: Run FlowFuse Device Agent as a service on MacOS using Docker
 subtitle: Automating FlowFuse Device Agent on macOS with Docker and Colima.
-description: Learn how to run the FlowFuse Device Agent as a service on macOS using Docker and Colima, ensuring automatic startup and seamless integration with the FlowFuse platform for managing IoT edge devices.
+description: "Learn how to run the FlowFuse Device Agent as a service on macOS using Docker and Colima for reliable automatic startup."
 date: 2024-11-12
 authors: ["sumit-shinde","rob-marcer"]
 image: /blog/2024/11/images/flowfuse-as-service-on-mac.png
@@ -21,7 +22,7 @@ In this article, we will explore how to run the FlowFuse Device Agent as a servi
 
 Before starting, ensure that you have the following set up:
 
-- **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can [sign up]({% include "sign-up-url.njk" %}?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Run%20FlowFuse%20Device%20Agent%20as%20a%20service%20on%20MacOS%20using%20Docker) at FlowFuse.
+- **FlowFuse Account**: You need an active FlowFuse account to register your device and manage your flows remotely. If you don't have an account, you can [sign up](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Run%20FlowFuse%20Device%20Agent%20as%20a%20service%20on%20MacOS%20using%20Docker) at FlowFuse.
 
 *NOTE: The instructions in this guide were tested on MacBook M1 & M4 MacBook Pro*
 

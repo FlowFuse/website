@@ -47,7 +47,7 @@ Additionally, for the demonstration purpose, the article uses a simple weather d
 
 Before proceeding further, ensure the following:
 
-- A running MySQL database instance, whether hosted in the cloud or locally, along with connection details, should be ready, and environment variables for those connection details should be added. For more information on how to add environment variables, refer to [Using Environment Variables in Node-RED](https://flowfuse.com/blog/2023/01/environment-variables-in-node-red/).
+- A running MySQL database instance, whether hosted in the cloud or locally, along with connection details, should be ready, and environment variables for those connection details should be added. For more information on how to add environment variables, refer to [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/).
 - The MySQL custom node [node-red-contrib-mysql](https://flows.nodered.org/node/node-red-node-mysql) is installed in your Node-RED environment.
 
 ### Configuring MySQL Custom Node

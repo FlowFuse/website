@@ -1,7 +1,8 @@
 ---
+metaTitle: "The Industrial IoT Market Shift: PTC Divestment"
 title: "The Industrial IoT Market Shift: What the PTC Divestment Means for Your Data Strategy"
 subtitle: "Understanding the bigger picture behind the $600M Kepware and ThingWorx sale"
-description: "PTC's $600M divestment of Kepware and ThingWorx to TPG raises critical questions for industrial organizations. Learn what this means for your data strategy and why open-source alternatives like FlowFuse offer a path forward."
+description: "PTC's $600M divestment of Kepware and ThingWorx to TPG raises critical questions for industrial data strategy going forward."
 date: 2025-11-06
 authors: ["pablo-filomeno"]
 image: /blog/2025/11/images/the-industrial-iot-market-shift.png
@@ -59,7 +60,7 @@ For organizations evaluating their options, the differences between FlowFuse and
 
 - Future-proof architecture: FlowFuse is cloud-ready, portable, and designed to evolve with your infrastructure. After multiple ownership transitions, Kepware's future direction under TPG remains uncertain.
 
-You can explore these differences in detail at https://flowfuse.com/vs/kepware.
+You can explore these differences in detail at [flowfuse.com/vs/kepware](/vs/kepware/).
 
 
 ## Connect to Anything, Collect Everything
@@ -116,7 +117,7 @@ At FlowFuse, we believe that foundation is open source. It's why we've built our
 
 If you're evaluating your options, whether you're currently on Kepware, ThingWorx, or another platform, [we'd love to talk](/book-demo/).
 
-See [how we stack up against Kepware](https://flowfuse.com/vs/kepware/) to learn more about how FlowFuse compares to traditional industrial connectivity platforms, or [contact our team](/contact-us/) to speak with one of our Migration Experts. We can help you understand your options, plan a migration strategy, and show you how open-source industrial data integration can transform your operations.
+See [how we stack up against Kepware](/vs/kepware/) to learn more about how FlowFuse compares to traditional industrial connectivity platforms, or [contact our team](/contact-us/) to speak with one of our Migration Experts. We can help you understand your options, plan a migration strategy, and show you how open-source industrial data integration can transform your operations.
 
 The industrial IoT market is shifting. Make sure your data strategy is built to adapt.
 

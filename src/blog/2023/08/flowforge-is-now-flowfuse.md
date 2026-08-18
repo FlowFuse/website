@@ -2,7 +2,7 @@
 title: "FlowForge is now FlowFuse"
 lastUpdated: 2026-06-03
 subtitle: New identity but same vision for industrial data integration
-description: FlowForge is being renamed to FlowFuse. Our mission and commitment to our customers stays the same.
+description: "FlowForge is being renamed to FlowFuse. The company's mission and commitment to customers stays the same under the new name."
 date: 2023-08-17
 authors: ["zeger-jan-van-de-weg"]
 image: "/blog/2023/08/images/flowforge-is-now-flowfuse.jpg"
@@ -37,6 +37,9 @@ tldr: "FlowForge is rebranding to FlowFuse following a trademark challenge, with
 We are happy to announce that FlowForge is changing its name to FlowFuse. Changing our corporate identity wasn’t our top priority but a recent trademark challenge has promoted us to create a new brand for our company. 
 
 <!--more-->
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 We believe that this new name better reflects our core mission and aspirations. Just as electricity fuses elements to create energy, the FlowFuse platform fuses together data, ideas, processes, and technologies to generate a powerful force of innovation and transformation.
 

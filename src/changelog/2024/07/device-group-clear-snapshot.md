@@ -13,4 +13,4 @@ An update to let you know you can now clear the target snapshot of a device grou
 
 For those unfamiliar with FlowFuse device groups, essentially, they permit you to deploy a snapshot to one or many devices via a pipeline in a single action. This is great for managing changes across a fleet of devices.
 
-See the [device groups documentation](https://flowfuse.com/docs/user/device-groups) for more information on how to make use of device groups.
+See the [device groups documentation](/docs/user/device-groups) for more information on how to make use of device groups.

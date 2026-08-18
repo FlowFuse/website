@@ -1,7 +1,7 @@
 ---
 title: "Interacting with ESP32 Using Node-RED and MQTT (2026)"
 subtitle: "A step-by-step guide to controlling and monitoring an ESP32 over MQTT, with a FlowFuse dashboard."
-description: "Learn how to connect an ESP32 to Node-RED using MQTT in 2026. Step-by-step guide covering the MQTT broker setup, Arduino IDE code, and building a dashboard to control your IoT device remotely, ideal for beginners and IoT hobbyists."
+description: "Learn how to connect an ESP32 to Node-RED using MQTT in 2026, from broker setup to building a remote control dashboard for it."
 lastUpdated: 2026-06-03
 date: 2024-11-14
 authors: ["sumit-shinde"]
@@ -57,14 +57,14 @@ meta:
       answer: "Yes. The same setup works in both directions. Have the ESP32 publish sensor readings to a topic, add an mqtt in node in Node-RED subscribed to that topic, and route the values to a dashboard, database, or alerting logic. Use separate topics for commands and data to keep flows organized."
     - question: "Does this work with the ESP8266 as well as the ESP32?"
       answer: "Yes. The same MQTT approach works on the ESP8266 with minor code changes, mainly including the ESP8266WiFi library instead of WiFi.h. The Node-RED side, broker setup, and dashboard are identical."
-tldr: "This guide explains how to connect an ESP32 to Node-RED using MQTT. The two devices don't talk directly, they exchange messages through an MQTT broker. Using FlowFuse's managed broker (broker.flowfuse.cloud), you create one MQTT client for Node-RED and one for the ESP32, build a Node-RED flow and FlowFuse dashboard that publishes commands (for example to /LedControl), and program the ESP32 in the Arduino IDE with the PubSubClient library to subscribe to that topic and act on the payload, turning an LED on or off. Because everything routes through the broker, you can control the device from anywhere with Wi-Fi, and the same pattern works in reverse to read sensor data back into Node-RED."
+tldr: "An ESP32 and Node-RED don't talk directly, they exchange messages through an MQTT broker. Using FlowFuse's managed broker you create one MQTT client for each side, publish commands from a FlowFuse dashboard, and program the ESP32 in the Arduino IDE with PubSubClient to subscribe and act on them. The same pattern works in reverse for sensor data."
 ---
 
 The ESP32 is an affordable and powerful microchip that combines Wi-Fi and Bluetooth in one small package. It's commonly used in smart devices like home automation systems, wearables, and other IoT projects. Despite its low cost (around $6), it offers strong performance, and low power consumption, and is compatible with popular platforms like Arduino. Whether you're a hobbyist or a business, the ESP32 provides great value, making it easy to create wireless devices without a big investment. This tutorial demonstrates how to set up communication between the ESP32 and Node-RED using MQTT, along with an interactive dashboard via FlowFuse for a user-friendly interface. 
 
 <!--more-->
 
-<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="width: 704px; height: 100%;" title="YouTube video player"></lite-youtube>
+<lite-youtube videoid="ecfJ-9MxyVE" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 ## Prerequisites
 
@@ -76,7 +76,7 @@ To follow this tutorial, you'll need the following:
     - Additionally, if you haven't set up the Arduino IDE for the ESP32 board, please follow this tutorial: [How to Set Up ESP32 with Arduino IDE](https://www.youtube.com/watch?v=CD8VJl27n94)
 - **FlowFuse account**: This will allow you to create and deploy Node-RED instances securely on the cloud with a single click, collaborate on your Node-RED projects with your team, manage and program your edge devices remotely, and provide an MQTT broker with an interface for securely managing clients.
 
-If you haven’t signed up for a FlowFuse account yet, [sign up]({% include "sign-up-url.njk" %}?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20ESP32%20Using%20Node-RED%20and%20MQTT) now.
+If you haven’t signed up for a FlowFuse account yet, [sign up](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Interacting%20with%20ESP32%20Using%20Node-RED%20and%20MQTT) now.
 
 ## Getting Started with ESP32 and Node-RED
 
@@ -87,6 +87,9 @@ In this section, we’ll set up Node-RED on FlowFuse, create an MQTT connection,
 Start by logging into your [FlowFuse](/) account and creating a new Node-RED instance. For more information on creating a Node-RED instance, refer to the [FlowFuse documentation](/docs/user/introduction/#creating-a-node-red-instance).
 
 Once the instance is created, open the Node-RED editor.
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ### Step 2: Creating and Configuring MQTT Clients in FlowFuse
 
@@ -143,9 +146,11 @@ For this example, we will create a very simple dashboard. If you're not familiar
 5. Connect the output of both buttons to the input of the **mqtt out** node.
 6. Click "Deploy" to save the flow.
 
-{% renderFlow %}
+::render-flow
+```json
 [{"id":"59887a8115c95eae","type":"tab","label":"Flow 1","disabled":false,"info":"","env":[]},{"id":"02c25e8a30f9379d","type":"ui-base","name":"My Dashboard","path":"/dashboard","appIcon":"","includeClientData":true,"acceptsClientConfig":["ui-notification","ui-control"],"showPathInSidebar":false,"showPageTitle":true,"navigationStyle":"default","titleBarStyle":"default"},{"id":"cfb2ab9ff30660fc","type":"ui-theme","name":"Default Theme","colors":{"surface":"#ffffff","primary":"#0094CE","bgPage":"#eeeeee","groupBg":"#ffffff","groupOutline":"#cccccc"},"sizes":{"density":"default","pagePadding":"12px","groupGap":"12px","groupBorderRadius":"4px","widgetGap":"12px"}},{"id":"d263574af6876c7a","type":"ui-page","name":"ESP32","ui":"02c25e8a30f9379d","path":"/page1","icon":"home","layout":"grid","theme":"cfb2ab9ff30660fc","breakpoints":[{"name":"Default","px":"0","cols":"3"},{"name":"Tablet","px":"576","cols":"6"},{"name":"Small Desktop","px":"768","cols":"9"},{"name":"Desktop","px":"1024","cols":"12"}],"order":1,"className":"","visible":"true","disabled":"false"},{"id":"3ae115ea7ede6827","type":"ui-group","name":"Group 1","page":"d263574af6876c7a","width":"6","height":"1","order":1,"showTitle":false,"className":"","visible":"true","disabled":"false","groupType":"default"},{"id":"def97b29f5f7baab","type":"mqtt-broker","name":"","broker":"broker.flowfuse.cloud","port":"1883","clientid":"","autoConnect":true,"usetls":false,"protocolVersion":"4","keepalive":"60","cleansession":true,"autoUnsubscribe":true,"birthTopic":"","birthQos":"0","birthRetain":"false","birthPayload":"","birthMsg":{},"closeTopic":"","closeQos":"0","closeRetain":"false","closePayload":"","closeMsg":{},"willTopic":"","willQos":"0","willRetain":"false","willPayload":"","willMsg":{},"userProps":"","sessionExpiry":""},{"id":"5a9162986a34a4d6","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"ON","order":1,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"1","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"green","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":120,"wires":[["9239f8a7cca5c858"]]},{"id":"f9c194994d9491a8","type":"ui-button","z":"59887a8115c95eae","group":"3ae115ea7ede6827","name":"","label":"OFF","order":2,"width":"3","height":"2","emulateClick":false,"tooltip":"","color":"","bgcolor":"","className":"","icon":"","iconPosition":"left","payload":"2","payloadType":"num","topic":"topic","topicType":"msg","buttonColor":"red","textColor":"","iconColor":"","enableClick":true,"enablePointerdown":false,"pointerdownPayload":"","pointerdownPayloadType":"str","enablePointerup":false,"pointerupPayload":"","pointerupPayloadType":"str","x":190,"y":160,"wires":[["9239f8a7cca5c858"]]},{"id":"9239f8a7cca5c858","type":"mqtt out","z":"59887a8115c95eae","name":"","topic":"/LedControl","qos":"","retain":"","respTopic":"","contentType":"","userProps":"","correl":"","expiry":"","broker":"def97b29f5f7baab","x":390,"y":140,"wires":[]}]
-{% endrenderFlow %}
+```
+::
 
 Now, when you click either the "ON" or "OFF" button on the dashboard, it will send either 1 or 2 as the payload. The ESP32 will use this payload in its code to turn the LED on or off. To view the dashboard, switch to the Dashboard 2.0 tab on the right side and click the Open Dashboard button. The dashboard will look similar to the image below.
 

@@ -1,7 +1,8 @@
 ---
+metaTitle: "FlowFuse 2.27: Editor in Remote Instances"
 title: "FlowFuse 2.27: Integrated Editor in Remote Instances & Context-Aware FlowFuse Expert"
 subtitle: "A more consistent Node-RED experience across environments and deeper live context for FlowFuse Expert."
-description: "FlowFuse 2.27 improves Remote workflows, simplifies rollback in developer mode, enhances FlowFuse Expert with live context, and introduces rolling restarts for HA Hosted instances."
+description: "FlowFuse 2.27 improves Remote workflows, simplifies rollback in developer mode, and adds a context-aware FlowFuse Expert."
 date: 2026-02-12
 authors: ["jamie-strusz"]
 image: /blog/2026/02/images/flowfuse-release-2-27.png
@@ -24,7 +25,7 @@ Teams run production and edge workloads in Remote instances. When tooling behave
 
 FlowFuse now brings the integrated editor experience to Remote instances. Clicking **Open Editor** provides the same FlowFuse capabilities regardless of where your instance runs.
 
-![Immersive Mode on a Remote Instance](./images/remote-instance-immersive.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Immersive Mode on a Remote Instance" width="2026" height="1340" preload="none"><source src="/blog/2026/02/images/remote-instance-immersive.webm" type="video/webm" /></video>
 _Immersive Mode accessed from a remote instance_
 
 Device Agent v3.8.0 also allows you to restore snapshots while remaining in developer mode. You no longer need to exit developer mode to roll back changes. Pipeline protections remain in place, but manual recovery is faster.
@@ -54,7 +55,7 @@ FlowFuse Expert now:
 
 FlowFuse Expert surfaces context and performs actions only when initiated by the user.
 
-![FlowFuse Expert using live palette context](./images/ff-expert-palette-context.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert using live palette context" width="1411" height="720" preload="none"><source src="/blog/2026/02/images/ff-expert-palette-context.webm" type="video/webm" /></video>
 _FlowFuse Expert answering palette queries with live context_
 
 ### In practice
@@ -91,7 +92,7 @@ If something in this release improves your workflow, or if there is still fricti
 ### FlowFuse Cloud
 
 The fastest way to get started is with FlowFuse Cloud.  
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in minutes.
 
 ### Self-Hosted
 

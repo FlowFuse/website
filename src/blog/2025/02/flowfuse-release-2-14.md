@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.14: Third-Party Broker Integration"
 title: "FlowFuse 2.14: Announcing Third-Party Broker Integration, UNS Schemas, Enhanced Auth on Remote Instances and more!"
 subtitle: A huge wave of new features in FlowFuse elevates your MQTT experience as well as providing improved Remote Instances security and version control too
 description: A huge wave of new features in FlowFuse elevates your MQTT experience as well as providing improved Remote Instances security and version control too
@@ -97,4 +98,4 @@ We're confident you can have self managed FlowFuse running locally in under 30 m
 
 The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

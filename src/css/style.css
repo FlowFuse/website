@@ -1,7 +1,10 @@
-@layer vendor, theme, base, components, overrides, utilities;
+@layer vendor, theme, base, components, utilities, overrides;
 
 @config "../../tailwind.config.js";
 @import "tailwindcss";
+/* Utility classes for the nav and footer live in this data file rather than in
+   a template, so name it explicitly: automatic source detection skips JSON. */
+@source "../_data/chrome.json";
 @plugin "@tailwindcss/typography";
 
 @theme {
@@ -108,6 +111,19 @@
 @import "../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css" layer(vendor);
 @import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css" layer(components);
 
+/* forge-ui-components resets bare h1-h3 for its own standalone docs site.
+   Neutralize within the vendor layer itself (source order wins ties inside
+   a layer) so our own heading styles always apply, regardless of how
+   vendor ranks against base/theme at the document level. */
+@layer vendor {
+    h1, h2, h3 {
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        margin-bottom: inherit;
+    }
+}
+
 
 /* Skip to main content link */
 .skip-to-main {
@@ -138,6 +154,7 @@ html, body {
     font-size: 16px;
     font-family: var(--font-sans);
     scroll-padding-top: 75px;
+    scroll-behavior: smooth;
     background-color: white;
 }
 
@@ -201,9 +218,6 @@ html, body {
         color: var(--color-gray-700);
     }
 
-    h1, h2, h3, h4 {
-        font-weight: 400;
-    }
 }
 
 
@@ -380,6 +394,80 @@ dl.message-properties > dd {
 
 .main-content .ff-blue-card {
     @apply mb-6;
+}
+
+/*
+    Terminal frame: wraps a recording of a CLI session in window chrome, emitted by
+    the terminalFrame 11ty shortcode and by the TerminalFrame MDC component that
+    stands in for it on Nuxt-rendered pages. The background matches the recording's
+    own background (#0E1114) so the padding reads as terminal padding rather than a
+    border, and both the chrome and the padding scale down with the viewport so a
+    small recording is not swallowed by its frame.
+*/
+.ff-terminal-frame {
+    background-color: #0e1114;
+    @apply w-full overflow-hidden rounded-lg border border-gray-700 shadow-lg sm:rounded-xl;
+}
+
+/* In prose the frame is a block of its own, rather than a cell in a page layout. */
+.ff-terminal-frame--prose {
+    @apply my-8;
+}
+
+.ff-terminal-frame__bar {
+    background-color: #191d22;
+    @apply flex items-center gap-1.5 px-2.5 py-2 sm:gap-2 sm:px-4 sm:py-3;
+}
+
+.ff-terminal-frame__dot {
+    @apply h-2 w-2 rounded-full sm:h-3 sm:w-3;
+}
+
+.ff-terminal-frame__dot--close {
+    @apply bg-red-500;
+}
+
+.ff-terminal-frame__dot--minimise {
+    @apply bg-yellow-400;
+}
+
+.ff-terminal-frame__dot--expand {
+    @apply bg-green-500;
+}
+
+.ff-terminal-frame__screen {
+    @apply p-1.5 sm:p-3 md:p-4;
+}
+
+.ff-terminal-frame__screen img {
+    @apply block w-full h-auto rounded;
+}
+
+/*
+    Copy-pastable shell command. Wraps rather than scrolls so the whole command
+    stays readable, with the copy button pinned to the top right. Alignment is
+    stated rather than inherited: inside .ff-blue-card a command would otherwise
+    pick up that card's centred mobile text, which wrapped commands read badly in.
+*/
+.ff-command {
+    background-color: #0e1114;
+    @apply flex items-start justify-between gap-4 rounded-lg p-4 text-left;
+}
+
+.ff-command__text {
+    @apply text-sm text-gray-100 whitespace-pre-wrap break-all;
+}
+
+.ff-command__copy {
+    @apply shrink-0 rounded border border-gray-600 px-3 py-1 text-xs font-medium uppercase tracking-wide text-gray-200;
+}
+
+.ff-command__copy:hover {
+    @apply border-gray-400 text-white;
+}
+
+.ff-command__copy--done {
+    @apply border-green-500 text-green-400;
 }
 
 /*
@@ -791,8 +879,58 @@ h4:hover .header-anchor::before {
     Header
 */
 @layer components {
+    h1, h2, h3, h4 {
+        font-weight: 400;
+    }
+
     .ff-website .ff-header {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
+    }
+
+    /* Subtle wave sweeping left-to-right THROUGH the logo's own fill on hover:
+       each logo path takes a horizontal gradient (declared inside the SVG) whose
+       stops shift colour in staggered sequence, so the colour flows across the
+       letterforms rather than a block passing over them.
+
+       Both front ends are driven from here. The 11ty includes
+       (components/flowfuse-wordmark*.njk, components/flowfuse-square.svg) and the
+       Nuxt components (AppHeader.vue, AppFooter.vue) each carry the gradient, and
+       Nuxt links this same stylesheet via nuxt.config.ts, so one rule set covers
+       both. Keep the gradients at five stops or the stagger below goes uneven.
+
+       The colours are custom properties because the three marks rest on different
+       fills: brand orange for the wordmark, a lighter red for the tablet square
+       in Nuxt, footer grey in the footer. Custom properties inherit down to the
+       <stop> elements, so setting them on the link is enough. */
+    @keyframes ff-logo-wave {
+        0%, 100% { stop-color: var(--ff-wave-base); }
+        50%      { stop-color: var(--ff-wave-peak); }
+    }
+    .ff-website header .ff-logo-link {
+        --ff-wave-base: #DA3D0B;
+        --ff-wave-peak: #6366f1;
+    }
+    /* Nuxt's tablet-width square mark rests on a lighter red than the wordmark. */
+    .ff-website header .ff-logo-link .ff-wave-square {
+        --ff-wave-base: #ED4E4E;
+    }
+    .ff-website footer .ff-footer-logo {
+        --ff-wave-base: #1F2937;
+        --ff-wave-peak: #DA3D0B;
+    }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(1),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(1) { animation: ff-logo-wave 0.5s ease 0s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(2),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(2) { animation: ff-logo-wave 0.5s ease 0.09s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(3),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(3) { animation: ff-logo-wave 0.5s ease 0.18s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(4),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(4) { animation: ff-logo-wave 0.5s ease 0.27s; }
+    .ff-website header .ff-logo-link:hover svg stop:nth-child(5),
+    .ff-website footer .ff-footer-logo:hover svg stop:nth-child(5) { animation: ff-logo-wave 0.5s ease 0.36s; }
+    @media (prefers-reduced-motion: reduce) {
+        .ff-website header .ff-logo-link:hover svg stop,
+        .ff-website footer .ff-footer-logo:hover svg stop { animation: none; }
     }
 
     .ff-website header .ff-wordmark path,
@@ -912,11 +1050,16 @@ h4:hover .header-anchor::before {
         @apply text-current;
     }
 
-    .ff-website header a > span:not(.ff-nav-label) {
+    /* Excluding .ff-icon: this pair predates the header's Heroicons becoming
+       Nuxt UI <UIcon>. Those render as a masked <span>, not an inline <svg>, so
+       on the Nuxt side every nav icon started matching a span selector that no
+       icon could match before, picking up the shrink and rotating a half turn
+       on hover. Eleventy was unaffected because its icons are still <svg>. */
+    .ff-website header a > span:not(.ff-nav-label):not(.ff-icon) {
         transform: scale(0.75);
     }
 
-    .ff-website header a:hover > span:not(.ff-nav-label) {
+    .ff-website header a:hover > span:not(.ff-nav-label):not(.ff-icon) {
         transform: scale(0.75)rotate(180deg);
     }
 
@@ -1817,34 +1960,29 @@ h4:hover .header-anchor::before {
     }
 }
 
-/* Tier badges for changelog & blog */
+/* Plan availability badges, rendered by FeatureTierBadges.vue on changelog and docs pages */
 .ff-tier-badges {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 8px;
     margin: 8px 0 16px 0;
 }
 
-.ff-tier-badges--h2 {
-    margin-top: -15.2px;
-}
-
-.ff-tier-badge {
-    @apply inline-flex whitespace-nowrap text-current;
+.ff-tier-badges__label {
+    @apply text-gray-500 font-medium;
     font-size: 0.75rem;
     line-height: 1rem;
 }
 
-.ff-tier-badge__label {
-    @apply px-2.5 py-0.5 text-gray-600 font-medium bg-gray-100 border border-r-0 border-gray-200 rounded-l;
+.ff-tier-badge {
+    @apply inline-flex whitespace-nowrap px-2.5 py-0.5 text-gray-600 font-medium bg-gray-100 border border-gray-200 rounded no-underline;
+    font-size: 0.75rem;
+    line-height: 1rem;
 }
 
-.ff-tier-badge__value {
-    @apply px-2.5 py-0.5 text-gray-500 font-light bg-white border border-l-0 border-gray-200 rounded-r;
-}
-
-.ff-feature-info {
-    margin: 4px 0 16px 0;
+.ff-tier-badge:hover {
+    @apply text-indigo-600 border-indigo-200 bg-indigo-50 no-underline;
 }
 
 .ff-related-changelogs {
@@ -2105,6 +2243,11 @@ lite-youtube {
     background-size: cover;
     background-position: center;
     border-radius: 0.75rem;
+    /* Overrides fixed inline width/height some posts embed this with, so it stays responsive. */
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
 }
 
 lite-youtube::before {
@@ -2401,6 +2544,12 @@ lite-youtube::before {
         color: var(--color-white);
         border: 1px solid var(--color-red-700);
     }
+
+    /* Shared "Get Started" CTA backdrop - homepage (cta-get-started.njk and
+       its includers) and the /product page both use this exact gradient. */
+    .ff-get-started-bg {
+        background: radial-gradient(ellipse 50% 150% at 50% 100%, var(--color-indigo-500), #211c64);
+    }
 }
 
 @layer utilities {
@@ -2595,14 +2744,15 @@ lite-youtube::before {
         border: 1px solid #e5e7eb;
         background: #fff;
     }
-    /* `contain`, not `cover`: highlight images come from each linked page's own
-       front matter and are not all 16/9, so cover was cropping the taller ones
-       (the Platform panel's AI image most visibly). */
+    /* `cover`, so the card fills its 16/9 frame. Highlight images come from each
+       linked page's own front matter and are not all 16/9, so any that are the
+       wrong ratio get cropped rather than letterboxed. The fix for those is to
+       crop the source image to 16/9, not to letterbox every card. */
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card img {
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         transition: transform 0.3s ease;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card:hover img {
@@ -2746,6 +2896,17 @@ lite-youtube::before {
     margin-left: 0 !important;
     border-left: 0 !important;
 }
+/* Nested sub-items (e.g. product tiers under "Product"). Needs a dedicated
+   rule since #nav-content li's `border-none` reset above beats a bare
+   Tailwind border utility on layer order. */
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent {
+    margin-left: 0.6rem !important;
+    padding-left: 0 !important;
+    border-left: 2px solid var(--color-gray-200) !important;
+}
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent > a {
+    padding-left: 1rem !important;
+}
 /* Mobile accordion: eyebrows indent to the link icon column, moderate row
    height, and tap feedback via a text-hugging underline (the desktop
    animated line needs a text span the link markup does not have) */
@@ -2760,6 +2921,14 @@ lite-youtube::before {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
         padding-left: 2.5rem !important; /* indent links under the section eyebrow (1.5rem) */
+    }
+    /* Same centering math as the desktop rule above, but against this
+       breakpoint's pl-2.5rem (40px) icon column: 40px + 10px = 50px = 3.125rem. */
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent {
+        margin-left: 3.125rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent > a {
+        padding-left: 0.75rem !important;
     }
     /* Roomier mobile drawer: inset the whole menu and enlarge the top-level item
        labels for easier tapping. Scoped to mobile only; desktop nav unaffected.
@@ -3004,18 +3173,17 @@ lite-youtube::before {
     }
 }
 
-/* FAQ / accordion header interaction: colour shift plus a plain underline on
-   hover and keyboard focus. Only the sweeping animation is reserved for the main
-   navigation, so the underline itself stays here. The open/close chevron
-   rotation is driven by JS inline styles and is left untouched; the chevron
-   stroke uses currentColor so it follows the colour shift. */
+/* FAQ / accordion header interaction: colour shift only. No underline, because
+   the header is a button that expands an answer in place, and an underline reads
+   as a link promising navigation. The open/close chevron rotation is driven by JS
+   inline styles and is left untouched; the chevron stroke uses currentColor so it
+   follows the colour shift. */
 .ff-website .question {
     transition: color 0.2s ease;
 }
 .ff-website .question:hover,
 .ff-website .question:focus-visible {
     color: var(--color-indigo-600);
-    text-decoration: underline;
 }
 .ff-website .question:focus {
     outline: none;
@@ -3101,3 +3269,17 @@ lite-youtube::before {
 .ff-utility-announce > .ff-utility-item { display: none; }
 .ff-utility-announce > .ff-utility-item:first-child { display: inline-flex; }
 .ff-utility-bar a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Header icon spans. Nuxt UI renders the header's Heroicons as a masked <span>
+   where Eleventy still emits an inline <svg>, so span-targeting nav rules that
+   could never hit an icon before now hit 45 of them. The padding one is the
+   damaging half: with border-box, 8px/16px padding floors the box at 32x24,
+   while the inline SVGs beside it sit at 20x20, so the two render at visibly
+   different sizes in the same row.
+
+   Deliberately unlayered, matching the utility bar rules above: the rules that
+   supply that padding are themselves unlayered, so a reset inside
+   @layer components would lose to them regardless of specificity. */
+.ff-website header a > span.ff-icon {
+    padding: 0;
+}

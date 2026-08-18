@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const installGifUrl = '/node-red/getting-started/library/images/installing-node-red-node.gif'
+const installVideoUrl = '/node-red/getting-started/library/images/installing-node-red-node.webm'
 const installPngUrl = '/images/integrations/palette-manager-install.png'
 </script>
 
@@ -21,20 +21,23 @@ const installPngUrl = '/images/integrations/palette-manager-install.png'
         <p class="text-sm text-gray-600 mb-3">
             Install in Node-RED via the
             <a
-                href="https://flowfuse.com/node-red/getting-started/library/#using-the-palette-manager"
+                href="/node-red/getting-started/library/#using-the-palette-manager"
                 class="text-indigo-600 hover:text-indigo-800 font-semibold"
                 target="_blank"
                 rel="noopener noreferrer"
             >palette manager</a>.
         </p>
-        <img
-            :src="installGifUrl"
-            alt="Animation of the Node-RED palette manager: open Manage Palette, search for the node, then click Install."
-            loading="lazy"
+        <video
+            :src="installVideoUrl"
+            aria-label="Animation of the Node-RED palette manager: open Manage Palette, search for the node, then click Install."
+            autoplay
+            loop
+            muted
+            playsinline
             width="1326"
             height="720"
             class="motion-reduce:hidden block w-full rounded border border-gray-200"
-        />
+        ></video>
         <NuxtImg
             :src="installPngUrl"
             alt="Node-RED Palette Manager dialog with the node selected and the Install button visible."

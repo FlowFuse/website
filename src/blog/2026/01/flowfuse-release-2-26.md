@@ -1,7 +1,7 @@
 ---
 title: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
 subtitle: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
-description: "FlowFuse 2.26: Bringing access-controls to your MCP nodes"
+description: "FlowFuse 2.26 brings access controls to your MCP nodes, giving teams finer-grained permissions over AI tool access and use."
 date: 2026-01-15
 authors: ["nick-oleary"]
 image: /blog/2026/01/images/release-2-26.png
@@ -41,7 +41,7 @@ This release also brings some new abilities for the FlowFuse Expert to help you 
 
 Make sure you've updated the `@flowfuse/nr-assistant` module inside your instance to unlock these new capabilities.
 
-![FlowFuse Expert Install Node](./images/ff-expert-install-node.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert Install Node" width="1260" height="850" preload="none"><source src="/blog/2026/01/images/ff-expert-install-node.webm" type="video/webm" /></video>
 *FlowFuse Expert integration with the Palette Manager*
 
 
@@ -59,7 +59,7 @@ Which of these new features are you most excited to try? Reach out on GitHub or 
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

@@ -16,4 +16,4 @@ _Screenshot showing Device Group Environment Variables_
 
 We hope this feature will make it easier to manage your devices and keep your configuration in one place.
 
-See the [Device Group](https://flowfuse.com/docs/user/device-groups) documentation for more information on how to set environment variables for your device groups.
+See the [Device Group](/docs/user/device-groups) documentation for more information on how to set environment variables for your device groups.

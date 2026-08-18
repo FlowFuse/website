@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 1.11: Easier Node-RED Setup"
 title: FlowFuse 1.11 makes it easier to get started with FlowFuse and Node-RED
 subtitle: Our latest release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
 description: The new FlowFuse 1.11 release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
@@ -62,7 +63,7 @@ Together, we can make FlowFuse better with each release!
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free]({% include "sign-up-url.njk" %}) on FlowFuse Cloud.
+If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
 
 ## Upgrading FlowFuse
 

@@ -181,15 +181,34 @@ Always include it in external emails (clients, partners, vendors, community memb
 
 If you're using Gmail in your browser:
 
-1. Go to [flowfuse.com/email-signature/](/email-signature/)
-2. Copy the signature displayed on the page
-3. Paste it into your Gmail signature settings following [these instructions](https://support.google.com/mail/answer/8395?hl=en&co=GENIE.Platform%3DDesktop)
-4. Update the placeholder text with your personal information
- 
+1. Select and copy the signature below
+2. Paste it into your Gmail signature settings following [these instructions](https://support.google.com/mail/answer/8395?hl=en&co=GENIE.Platform%3DDesktop)
+3. Update the placeholder text with your personal information
+
+:::email-signature-example
+```html
+<table cellpadding="0" cellspacing="0" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; color:#333; width:auto; margin-top:0; margin-bottom:0">
+    <tr>
+        <td style="padding-right:10px; vertical-align:middle;">
+            <img src="https://flowfuse.com/images/flowfuse-icon.png" alt="FlowFuse icon" width="48" height="48" style="display:block;border:0;border-radius:0;outline:none;width:65px;height:65px;">
+        </td>
+        <td style="padding-left:4px; vertical-align:middle;">
+            <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:600;font-size:15.6px;color:#1F2937;line-height:1.1;">Full Name</div>
+            <div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:400;font-size:13.2px;color:#6B7280;line-height:1.2;margin-top:2px;">Job Title – FlowFuse</div>
+            <!-- spacer -->
+            <div style="height:8px;font-size:1px;line-height:1px;">&nbsp;</div>
+            <div style="font-size:12px;line-height:14px;">
+                <a href="https://flowfuse.com/" style="color:rgb(17,85,204);text-decoration:none;">https://flowfuse.com/</a>
+            </div>
+        </td>
+    </tr>
+</table>
+```
+:::
 
 #### Apple Mail
 
-If you're using the Apple Mail app, you can follow [this video tutorial](https://www.youtube.com/watch?v=Gb4dbik1YPI) which covers most of the steps below. The main difference is that we're providing you with the [signature code](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk) directly, so you can skip the HTML generation part.
+If you're using the Apple Mail app, you can follow [this video tutorial](https://www.youtube.com/watch?v=Gb4dbik1YPI) which covers most of the steps below. The main difference is that we're providing you with the signature code directly (click "Show code" above), so you can skip the HTML generation part.
 
 Here are the detailed steps:
 
@@ -201,7 +220,7 @@ Here are the detailed steps:
 
 4. Find the file with the `*.mailsignature` extension and open it in a text editor.
 
-5. Replace everything below the line `Mime-Version: [version]` with the code from [email-signature.njk](https://github.com/FlowFuse/website/blob/main/src/email-signature.njk).
+5. Replace everything below the line `Mime-Version: [version]` with the code shown above.
 
 6. Save the file, then press **Command + I** to open the Info window and check **Locked**.
 
@@ -233,3 +252,12 @@ Clicking the template will create an editable copy in your Drive — just like w
 ### Video Call Backgrounds
 
 As part of our design assets, we have [branded images](https://drive.google.com/open?id=1B0-m5L_X2dvLqbQXvW9RqpMvSDC_FM_0&usp=drive_fs) in our company drive that can be used as backgrounds for video calls. Both regular and mirrored versions are available to suit the platform and view mode you have set up.
+
+### LinkedIn Profile
+
+Setting up your personal LinkedIn profile to reflect that you work at FlowFuse helps reinforce our brand and makes it easy for your network to recognize the connection.
+
+1. Set your current position to FlowFuse, using the official [FlowFuse LinkedIn Page](https://www.linkedin.com/company/flowfuse-inc/) as the associated company. This ensures your role shows up under FlowFuse's "People" tab and links back to the company page.
+2. Update your profile banner image to the [official FlowFuse LinkedIn banner](https://drive.google.com/file/d/16xKY0Gewt7CUxIm_kXJy6dp1Ie_xN1lr/view?usp=drive_link). Download the image, then upload it under **Edit profile > Edit background image**.
+
+> **Note:** Please use the banner image as provided, without modification, to maintain a consistent, recognizable look across the team's profiles.

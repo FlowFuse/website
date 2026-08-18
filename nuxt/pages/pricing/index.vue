@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// Shared with the badge lookups, so "has a row here" and "may badge elsewhere" cannot drift.
+// @ts-ignore untyped module
+import { onPricing } from '../../lib/feature-catalog.mjs'
+
 const { data: plans } = await useAsyncData('plans', () => queryCollection('plans').order('order', 'ASC').all())
 const { data: featureCatalog } = await useAsyncData('featureCatalog', () => queryCollection('featureCatalog').first())
 const { data: faq } = await useAsyncData('faq-pricing', () => queryCollection('faq').where('page', '=', 'pricing').first())
@@ -7,12 +11,17 @@ const tableTiers = computed(() => (plans.value ?? []).map(p => ({
   id: p.tierId,
   title: p.title,
   highlight: p.highlight,
+  bestFitFor: p.bestFitFor,
 })))
 
 const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
   label: item.question,
   content: item.answer,
 })))
+
+const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
+  .map(section => ({ ...section, features: section.features.filter(onPricing) }))
+  .filter(section => section.features.length > 0))
 
 // UPricingTable's feature-title slot types `feature` without `description`,
 // even though the featureCatalog content schema does define it.
@@ -23,6 +32,13 @@ interface CatalogFeature {
 function featureDescription (feature: CatalogFeature) {
   return feature.description
 }
+
+useSeoMeta({
+  title: 'Pricing',
+  description: 'Products built around the job, deploying and scaling automation across plants, or integrating the business systems and data sources you run on. All governed on one platform.',
+  ogUrl: 'https://flowfuse.com/pricing/',
+  twitterSite: '@FlowFuseinc',
+})
 
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
@@ -36,25 +52,62 @@ useSchemaOrg([
 <template>
   <div class="w-full px-6">
     <div class="max-w-5xl mx-auto py-16 px-4">
-        <h1 class="text-center mb-16"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
-        <UPricingPlans>
-        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ button: 'text-base font-bold', featureTitle: 'whitespace-normal overflow-visible text-clip' }" />
+        <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
+        <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the product that fits your team</h2>
+        <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse has a product for you.</p>
+        <UPricingPlans :ui="{ base: 'gap-x-4' }">
+        <UPricingPlan v-for="plan in plans" :key="plan.id" v-bind="plan" :ui="{ root: 'bg-radial-[at_bottom_right] from-indigo-50 to-white ring-indigo-100 lg:p-6 xl:p-6', button: 'text-base font-bold', titleWrapper: 'mb-4', features: 'mt-2' }">
+            <template #description>
+                <p>{{ plan.description }}</p>
+                <p class="mt-6 text-sm font-semibold text-gray-900">Everything in the <a href="#comparison" class="text-indigo-600 hover:underline">core FlowFuse platform</a> plus:</p>
+            </template>
+            <template #features>
+                <li v-for="feature in plan.features" :key="feature" class="flex items-center gap-2 min-w-0">
+                    <UIcon name="i-lucide-check" class="size-5 shrink-0 text-primary" />
+                    <span class="text-muted text-sm whitespace-normal overflow-visible text-clip">{{ feature }}</span>
+                </li>
+            </template>
+            <template #button>
+                <CtaContactUs variant="primary" position="pricing-card" :plan="plan.tierId" class="w-full" />
+            </template>
+        </UPricingPlan>
         </UPricingPlans>
+
         <SocialProof class="mt-16" />
 
-        <h2 class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
+        <h2 id="comparison" class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
         <UPricingTable
         v-if="featureCatalog"
         class="mt-16"
         :tiers="tableTiers"
-        :sections="featureCatalog.sections"
+        :sections="comparisonSections"
         :ui="{
+            tier: 'border-x border-t border-b border-default bg-radial-[at_bottom_right] from-indigo-50 to-white [&:nth-child(2)]:rounded-tl-lg last:rounded-tr-lg',
+            td: 'border-x border-default',
+            th: 'px-6 border-l border-default',
+            tr: '*:py-4',
+            tbody: '[&>tr[data-slot]]:bg-indigo-50/50 [&>tr:first-child>th]:border-t [&>tr:first-child>th]:border-default [&>tr:first-child>th]:rounded-tl-lg [&>tr:last-child>th]:rounded-bl-lg [&>tr:last-child>td:last-child]:rounded-br-lg',
             tierWrapper: 'items-center text-center',
             tierTitleWrapper: 'justify-center',
-            tierDescription: 'hidden',
+            tierDescription: 'w-full',
             tierPriceWrapper: 'hidden',
+            tierButton: 'w-full',
         }"
         >
+        <template #tier-button="{ tier }">
+            <CtaContactUs variant="primary" position="pricing-comparison" :plan="tier.id" class="w-full" />
+        </template>
+        <template #tier-description="{ tier }">
+            <div v-if="tier.bestFitFor?.length" class="w-full mt-4 text-left">
+                <p class="text-sm font-semibold text-gray-900">Best Fit For:</p>
+                <ul class="mt-1.5 flex flex-col gap-1.5 text-sm text-gray-600">
+                    <li v-for="fit in tier.bestFitFor" :key="fit" class="flex items-start gap-1.5">
+                        <UIcon name="i-lucide-check" class="size-4 shrink-0 mt-0.5 text-indigo-600" />
+                        <span>{{ fit }}</span>
+                    </li>
+                </ul>
+            </div>
+        </template>
         <template #feature-title="{ feature }">
             <UPopover v-if="featureDescription(feature)" :content="{ side: 'top' }">
                 <button type="button" class="inline-flex items-center gap-1 text-left hover:text-indigo-600">
@@ -69,11 +122,26 @@ useSchemaOrg([
         </template>
         </UPricingTable>
 
-        <div v-if="faq" class="mt-28 mx-auto">
+        <CertifiedNodes class="mt-20" />
+    </div>
+  </div>
+
+  <EnterpriseSecurity class="mt-24" />
+
+  <div class="w-full px-6">
+    <div class="max-w-5xl mx-auto pb-16 px-4">
+        <div v-if="faq" class="mt-20 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
-        <UAccordion :items="faqAccordionItems">
+        <UAccordion
+            :items="faqAccordionItems"
+            :ui="{
+                trigger: 'text-lg font-medium text-gray-900 py-4 hover:text-indigo-600 transition-colors duration-200',
+                body: 'text-base text-gray-700 pb-4',
+                label: 'text-start break-words',
+            }"
+        >
             <template #body="{ item }">
-            <div v-html="item.content" />
+            <div class="prose max-w-none" v-html="item.content" />
             </template>
         </UAccordion>
         </div>

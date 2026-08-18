@@ -19,11 +19,20 @@ function resolveRepoRoot (cwd = process.cwd()) {
     }
 }
 
+function shuffle (array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[array[i], array[j]] = [array[j], array[i]]
+    }
+    return array
+}
+
 export default defineEventHandler(() => {
     const logosDir = join(resolveRepoRoot(), 'src/images/home-logos')
 
-    return readdirSync(logosDir)
+    const logos = readdirSync(logosDir)
         .filter(file => file.endsWith('.svg') || file.endsWith('.png'))
-        .sort(() => Math.random() - 0.5)
         .map(file => `/images/home-logos/${file}`)
+
+    return shuffle(logos)
 })

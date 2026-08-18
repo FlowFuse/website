@@ -1,7 +1,7 @@
 ---
 title: "How to Connect Any PLC to MQTT in Under an Hour"
 subtitle: "Connect any PLC to MQTT without the typical complexity, costs, and expertise requirements"
-description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, OPC UA, and Modbus, transform it, and publish to MQTT using FlowFuse, without expensive gateways or consultants."
+description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, and Modbus, then publish it to MQTT using FlowFuse."
 lastUpdated: 2026-06-17
 date: 2025-10-27
 keywords: MQTT, PLC, Siemens, S7, Allen-Bradley, EtherNet/IP, Omron, FINS, Mitsubishi, MC Protocol, Modbus, Modbus-RTU, Modbus-TCP, OPC-UA, FlowFuse, Node-RED, Industrial IoT, IIoT
@@ -92,7 +92,7 @@ The solution lies in low-code integration platforms that consolidate protocol ha
 Before you start, make sure you have the following:
 
 - A properly configured and fully operational PLCs, located on the same network as the edge device that will be reading its data.
-- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](https://flowfuse.com/blog/2025/09/installing-node-red/) and set up your instance following the instructions in this article.
+- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](/blog/2025/09/installing-node-red/) and set up your instance following the instructions in this article.
 
 # Getting Started
 
@@ -101,6 +101,9 @@ Now, let's get started. First, watch this demo, where I have built a FlowFuse fl
 <lite-youtube videoid="vptAoDR78Cc" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 This flow standardizes data from each protocol into a consistent JSON format, enriches it with contextual metadata, and publishes everything to the FlowFuse MQTT Broker, all within a single instance. The following guide explains how to replicate this setup for any PLC on your factory floor.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Step 1: Extract Data from Your PLC
 

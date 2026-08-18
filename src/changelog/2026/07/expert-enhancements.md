@@ -13,12 +13,11 @@ issues:
 
 With the release of device-agent 4.0.0 and FlowFuse 2.32.0, FlowFuse Expert Insights Agent can now work with Remote Instances and Self Hosted Instances.
 
-{% caution %}
-**Important:**
+::caution
+**Important:** 
 
 In order to achieve Insights on Remote Instances and Self Hosted Instances,  we had to modify how data is routed through the platform. Your old Hosted Instances on FlowFuse Cloud will require an update to the latest Launcher Version (2.23.0 or greater) to continue working.
-
-{% endcaution %}
+::
 
 ![Resource from Hosted and Remote Instances can now be selected](./images/insights-1.png){data-zoomable}
 *Resource from Hosted and Remote Instances can now be selected*
@@ -42,6 +41,15 @@ The Expert can now take action on your FlowFuse platform directly. Instead of te
 
 Behind the scenes, FlowFuse exposes over 30 automation tools covering instances, devices, applications, snapshots, teams, and configuration. When you ask the Expert to do something, it picks the right tools, calls them with your permissions, and reports back.
 
+
+## Better Formatted Replies
+
+Expert replies now render markdown more fully in the chat panel. Tables, ordered lists, blockquotes, and checklists all display with proper formatting instead of falling back to plain text, making longer, more structured answers much easier to scan.
+
+Tables come with a copy button that copies the contents as tab-separated values, ready to paste straight into a spreadsheet.
+
+![An Expert reply showing a formatted table, ordered list, and checklist](./images/markdown-rendering.png){data-zoomable}
+*A formatted reply with the tab-separated copy button in the table's top-right corner*
 
 ## Support Agent
 

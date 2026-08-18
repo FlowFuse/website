@@ -1,7 +1,7 @@
 ---
 title: Configure FlowFuse in Docker to secure all traffic
 subtitle: Use Let's Encrypt and Acme Companion to quickly set up FlowFuse to encrypt all traffic
-description: Discover how to effortlessly secure all web traffic for your FlowFuse server using Let's Encrypt and Acme Companion with Docker. Encrypt HTTP traffic for secure communication.
+description: "Discover how to secure all web traffic for your FlowFuse server using Let's Encrypt and Acme Companion with Docker easily."
 date: 2022-12-09
 authors: ["rob-marcer"]
 tags:

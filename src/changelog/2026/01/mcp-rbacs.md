@@ -13,10 +13,10 @@ This permits a level of control over who can access what. This is just a first s
 ### MCP Tools Node
 
 To facilitate a level of role based access control in the Expert, we have leveraged the new Granular RBACs and MCP annotations to introduce 2 means of filtering and control:
-1. By [application](https://flowfuse.com/docs/user/concepts/#application) - as introduced in FlowFuse 1.5 
+1. By [application](/docs/user/concepts/#application) - as introduced in FlowFuse 1.5 
 2. By pre-defined role level mapping to the annotation hints. For instance, users with a 'Viewer' role will only be exposed to tools marked with the Read Only hint, while Destructive tools are reserved for 'Owners'. The screenshot below indicates more clearly what this mapping is.
 
-To facilitate this, we have the next version of our (MCP Server Nodes)[https://flowfuse.com/node-red/flowfuse/mcp/] will introduce the 4 MCP standard annotations:
+To facilitate this, we have the next version of our [MCP Server Nodes](/node-red/flowfuse/mcp/) will introduce the 4 MCP standard annotations:
 
 - **Read Only Hint**: Lets the MCP Client know that the tool is read-only and does not modify any data or state. This hint can be used by LLMs to understand that invoking this tool will not have side effects, making it safe for exploratory queries or information retrieval.
 - **Destructive Hint**: Lets the MCP Client know that the tool performs destructive actions that may modify or delete data. This hint can be used by LLMs to exercise caution when invoking this tool, as it may have irreversible effects.

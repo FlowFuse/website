@@ -1,7 +1,8 @@
 ---
+metaTitle: "OPC UA Security: A Defensible Architecture"
 title: "OPC UA Security: How to Establish a Defensible OPC UA Security Architecture"
 subtitle: "Part 1 showed how attackers walk in. This is the blueprint that locks every door behind them."
-description: "Turn every OPC UA attack vector into a configuration decision you control: Reverse Connect to keep the firewall closed, enforced trust lists, SignAndEncrypt, GDS certificate management, RBAC, and the field anti-patterns that quietly undo all of it."
+description: "Turn every OPC UA attack vector into a configuration decision you control: Reverse Connect, trust lists, and SignAndEncrypt."
 date: 2026-06-05
 authors: ["sumit-shinde"]
 image: /blog/2026/06/images/opc-ua-security.png
@@ -181,7 +182,7 @@ Non-negotiables regardless of scale:
 
 One field tip even with a GDS: keep a local rejected-certificate store on each application, so you can still see and reason about what tried to connect.
 
-If you're building this on FlowFuse, the OPC UA connectivity is available as one of the Certified Nodes introduced in [FlowFuse 2.31](https://flowfuse.com/blog/2026/06/flowfuse-release-2-31/), vetted and FlowFuse-supported rather than pulled unmaintained from the community registry, which is the supply-chain point above made concrete. As with any OPC UA client, confirm it's set to reject untrusted server certificates before you go to production rather than auto-accepting them.
+If you're building this on FlowFuse, the OPC UA connectivity is available as one of the Certified Nodes introduced in [FlowFuse 2.31](/blog/2026/06/flowfuse-release-2-31/), vetted and FlowFuse-supported rather than pulled unmaintained from the community registry, which is the supply-chain point above made concrete. As with any OPC UA client, confirm it's set to reject untrusted server certificates before you go to production rather than auto-accepting them.
 
 ## Keep the audit trail on, and watched
 

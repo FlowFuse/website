@@ -46,6 +46,9 @@ The [Node-RED Academy](https://node-red-academy.learnworlds.com/) provides Node-
 
 Node-RED Academy is a brand new learning portal for Node-RED. Whether you're a complete beginner to Node-RED or have been building applications for years, Node-RED Academy courses will take your expertise to the next level, and provide you with formal certification that are evidence of your Node-RED knowledge and skills.
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ## Can I Earn a Credential?
 
 All courses completed through Node-RED Academy provide a formal certification upon successful course completion. You can share this certificate on LinkedIn, add it to your CV or show it off anywhere else you like.
@@ -70,12 +73,11 @@ We also have plans for the following courses to follow in the future:
 
 This list will likely grow beyond this too. We will be evolving our courses based on feedback and ideas from the community too!
 
-
 ## Who's behind the Node-RED Academy?
 
 There are many great resources for Node-RED education out there, but the Node-RED Academy has been curated by the authors and developers behind Node-RED and covers everything you'll need to know from building your first flow to integrating with industrial hardware.
 
-FlowFuse is an enterprise-grade industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. You can sign up for free [here]({% include "sign-up-url.njk" %}) to give it a go.
+FlowFuse is an enterprise-grade industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. You can sign up for free [here](https://app.flowfuse.com/account/create) to give it a go.
 
 ## How Do I Get Started?
 

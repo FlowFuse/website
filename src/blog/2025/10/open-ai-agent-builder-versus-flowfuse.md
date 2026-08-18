@@ -1,7 +1,8 @@
 ---
+metaTitle: "OpenAI's AgentKit or FlowFuse: Which to Choose"
 title: "OpenAI's AgentKit or FlowFuse: Choosing the Right Low-Code App for Your Needs"
 subtitle: "Understanding the key differences between AI-native agent development and edge-focused industrial automation"
-description: "Learn how OpenAI's AgentKit and FlowFuse differ in their approach to AI agents, and discover which platform is right for building applications that connect the physical and digital worlds."
+description: "Learn how OpenAI's AgentKit and FlowFuse differ in their approach to AI agents connecting the physical and digital worlds."
 date: 2025-10-07
 keywords: OpenAI AgentKit, FlowFuse, AI agents, Node-RED, edge computing, IoT, industrial automation, AI Assistant, low-code platform, edge data extraction
 authors: ["zeger-jan-van-de-weg"]
@@ -105,5 +106,5 @@ Whether you're monitoring production lines, building predictive maintenance
 systems, or implementing Industry 4.0 initiatives, FlowFuse provides the 
 infrastructure to collect, transform, and act on data from the edge.
 
-**Start building today:** [Try FlowFuse free]({% include "sign-up-url.njk" %}) or  [book a demo](https://flowfuse.com/book-demo/) to 
+**Start building today:** [Try FlowFuse free](https://app.flowfuse.com/account/create) or  [book a demo](/book-demo/) to 
 see how we help teams manage industrial data at scale.

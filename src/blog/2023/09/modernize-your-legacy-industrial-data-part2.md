@@ -57,7 +57,7 @@ That is a lot of nodes and a lot of duplication!
 What is worse, is that the developer continues down this path and begins converting the data ready for publishing to MQTT. Here is how this might evolve:
 
 _Image 2: individual reads with data processing_
-![Image showing 10 individual reads with data processing](images/industrial-legacy-data-pt2-10polls.gif)
+<video autoplay loop muted playsinline aria-label="Video showing 10 individual reads with data processing" width="1030" height="684" preload="none"><source src="/blog/2023/09/images/industrial-legacy-data-pt2-10polls.webm" type="video/webm" /></video>
 
 Yippie! We have the data, it works, we publish it to MQTT, job done. Right?
 
@@ -117,14 +117,14 @@ Now that we have good data, we need to process it in readiness for IIoT. In this
 The first, instinctive approach is to fan out the data and process it individually:
 
 _Image 5: block reads, individual processing_
-![image showing 1 modbus poll with individual processing](images/industrial-legacy-data-pt2-1poll-fixed.gif)
+<video autoplay loop muted playsinline aria-label="Video showing 1 modbus poll with individual processing" width="926" height="636" preload="none"><source src="/blog/2023/09/images/industrial-legacy-data-pt2-1poll-fixed.webm" type="video/webm" /></video>
 
 This may be fine for a handful of registers but it soon becomes unwieldy and unmaintainable.
 
 But lets be smarter about this. We know that the data is consistent and we know that we can read it in one go. So, lets process it in one go too:
 
 _Image 6: block reads, smart processing, no-code solution_
-![image showing 1 modbus poll with smart processing](images/industrial-legacy-data-pt2-1poll-extensible.gif)
+<video autoplay loop muted playsinline aria-label="Video showing 1 modbus poll with smart processing" width="886" height="621" preload="none"><source src="/blog/2023/09/images/industrial-legacy-data-pt2-1poll-extensible.webm" type="video/webm" /></video>
 
 ## Node-RED in Production
 
@@ -132,7 +132,7 @@ Node-RED is a powerful tool widely used in IoT and IIoT industries, including ma
 
 FlowFuse simplifies these tasks by providing a unified platform for managing all Node-RED instances. It enhances collaboration, ensures security, and supports scalability, making deployment and management more efficient. With features like [snapshots](/docs/user/snapshots/), team collaboration tools, one-click deployment, and [multi-factor authentication](/docs/user/user-settings/#security), FlowFuse streamlines the process and enhances the operational capabilities of Node-RED in production settings.
 
-**[Sign up]({% include "sign-up-url.njk" %}) now for a free trial and experience FlowFuse's features**
+**[Sign up](https://app.flowfuse.com/account/create) now for a free trial and experience FlowFuse's features**
 
 ## Wrap up
 

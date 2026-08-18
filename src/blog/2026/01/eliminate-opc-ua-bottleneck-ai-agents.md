@@ -1,7 +1,7 @@
 ---
 title: "Agentic AI Reads OPC UA Servers So You Don't Have To"
 subtitle: "Why manual OPC UA investigation is the bottleneck, and how agentic AI eliminates it"
-description: "Learn how agentic AI transforms OPC UA server investigations, automating data access, analysis, and root cause detection to turn hours of manual work into minutes."
+description: "Learn how agentic AI transforms OPC UA server investigations, automating data access, analysis, and root cause detection."
 date: 2026-01-30
 keywords: OPC UA, AI Agents, MCP, FlowFuse, Industrial IoT, Root Cause Analysis, Node-RED.
 authors: ["sumit-shinde"]
@@ -72,7 +72,7 @@ _High-level architecture diagram showing the interaction between Al agents and i
 
 The architecture separates concerns cleanly. AI handles the reasoning, figuring out what data matters and how to interpret it. FlowFuse handles the execution, dealing with industrial protocols, data access, and system integration. Neither tries to do the other's job.
 
-For teams building their own integrations, the implementation details are documented here: [Building MCP Server Using FlowFuse](https://flowfuse.com/blog/2025/10/building-mcp-server-using-flowfuse/)
+For teams building their own integrations, the implementation details are documented here: [Building MCP Server Using FlowFuse](/blog/2025/10/building-mcp-server-using-flowfuse/)
 
 **Watch It Work**
 

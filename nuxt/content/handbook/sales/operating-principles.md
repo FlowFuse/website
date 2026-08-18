@@ -1,20 +1,23 @@
 ---
-title: "Sales Team Operating Principles"
-description: "Professional standards and expectations for the FlowFuse Sales organization."
+title: "Commercial Team Operating Principles"
+navigation:
+  order: 6
+description: "Professional standards and expectations for the FlowFuse Commercial Organization."
 ---
 
-# Sales Team Operating Principles
+# Commercial Team Operating Principles
 
-The Sales Team Operating Principles define how FlowFuse sales team members conduct themselves in internal and external interactions. These principles create consistency, set expectations, and support a high-performing sales organization.
+The Commercial Team Operating Principles define how FlowFuse team members conduct themselves in internal and external interactions. These principles create consistency, set expectations, and support a high-performing organization.
 
 ## Purpose
 
 These principles outline the professional behaviors, standards, and habits required to represent FlowFuse effectively.
-They apply to all Sales team members and complement related pages in the Sales Handbook, including Discovery, Follow-Up, SPICED, and CRM Requirements.
+They apply to all members of the Commercial Organization and complement related pages in this handbook, including Discovery, Follow-Up, SPICED, and CRM Requirements.
+For the team's operating rhythm and escalation routing, see [Working Norms](./working-norms.md).
 
 ## Professional Presence
 
-Sales team members represent FlowFuse at all times. Expectations:
+Commercial team members represent FlowFuse at all times. Expectations:
 
 * Join meetings from a professional, quiet, and distraction-free environment
 * Ensure stable internet and high-quality audio
@@ -33,7 +36,7 @@ Being prepared and on time reflects professionalism and respect:
 
 ## Meeting Preparedness
 
-Every meeting requires clear preparation and shared expectations. Sales team members:
+Every meeting requires clear preparation and shared expectations. Commercial team members:
 
 * Review previous call notes, Fathom transcripts, HubSpot activity, and prior correspondence
 * Research the company, use case, buyer personas, and relevant industry context
@@ -46,7 +49,7 @@ Every meeting requires clear preparation and shared expectations. Sales team mem
 
 ## Meeting and Call Excellence
 
-Sales calls follow the standards outlined in the Sales Methodology:
+Customer calls follow the standards outlined in the Sales Methodology:
 
 * Use Fathom Notetaker for all customer calls
 * Follow the SPICED discovery framework
@@ -71,12 +74,12 @@ Timely follow-up maintains momentum and demonstrates reliability:
 
 ## Internal Collaboration
 
-Sales operates as a single team. Expectations:
+The Commercial Organization operates as a single team. Expectations:
 
 * Ask for help early to avoid delays later in the cycle
 * Use shared Slack channels for visibility
 * Provide full context when requesting assistance from other teams
-* Share common objections, patterns, and discoveries with Sales leadership
+* Share common objections, patterns, and discoveries with leadership
 * Use internal communication tools consistently and transparently
 
 ## Data Hygiene and Operational Discipline
@@ -91,7 +94,7 @@ Accurate CRM and process discipline ensure high-quality forecasting and customer
 
 ## Professional Ethics and Conduct
 
-Sales team members uphold FlowFuse’s values and maintain customer trust:
+Commercial team members uphold FlowFuse’s values and maintain customer trust:
 
 * Represent product capabilities and pricing with accuracy
 * Maintain confidentiality and follow NDA requirements
@@ -101,7 +104,7 @@ Sales team members uphold FlowFuse’s values and maintain customer trust:
 
 ## Continuous Improvement
 
-FlowFuse sales culture emphasizes learning, growth, and refinement:
+FlowFuse's commercial culture emphasizes learning, growth, and refinement:
 
 * Participate actively in call reviews and team training
 * Regularly self-review calls and opportunities
@@ -111,7 +114,7 @@ FlowFuse sales culture emphasizes learning, growth, and refinement:
 ## Accountability
 
 These principles guide expectations for professional conduct.
-Sales leadership reinforces them through:
+Leadership reinforces them through:
 
 * Coaching
 * Performance reviews

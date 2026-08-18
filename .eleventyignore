@@ -1,0 +1,11 @@
+# Changelog and blog are served by Nuxt (nuxt/content.config.ts sources these files
+# directly); 11ty must not also render them.
+src/changelog/**/*.md
+src/blog/**/*.md
+
+# Customer stories listing page is served by Nuxt (nuxt/pages/customer-stories/index.vue).
+# The individual story markdown files are NOT ignored here - they keep `permalink: false`
+# (src/customer-stories/customer-stories.json) instead, so `collections.stories` stays
+# populated for the few live 11ty pages that still read it (src/landing/tulip.njk,
+# src/node-red/index.njk, src/_includes/stories-block.njk) without 11ty writing output files.
+src/customer-stories.njk

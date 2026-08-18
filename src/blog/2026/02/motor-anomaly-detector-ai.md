@@ -1,4 +1,5 @@
 ---
+metaTitle: "AI Vibration Anomaly Detector for Motors"
 title: "Building an AI Vibration Anomaly Detector for Industrial Motors"
 subtitle: "Detect motor faults early using AI-driven vibration analysis and anomaly detection."
 description: "Learn how to monitor industrial motors continuously, train a custom autoencoder on healthy vibration data, and deploy real-time anomaly detection in Node-RED."
@@ -399,7 +400,7 @@ The model now knows what healthy looks like. This section builds the Node-RED fl
 
 FlowFuse provides a dedicated AI nodes package for Node-RED that includes ONNX runtime support.
 
-> **Note:** These nodes are only available to FlowFuse users. If you don't have an account, [get started here]({% include "sign-up-url.njk" %}) and follow the steps to [run the device agent](/blog/2025/09/installing-node-red/).
+> **Note:** These nodes are only available to FlowFuse users. If you don't have an account, [get started here](https://app.flowfuse.com/account/create) and follow the steps to [run the device agent](/blog/2025/09/installing-node-red/).
 
 1. Open the Node-RED editor and go to **Menu → Manage Palette**
 2. Search for `@flowfuse-nodes/nr-ai-nodes`

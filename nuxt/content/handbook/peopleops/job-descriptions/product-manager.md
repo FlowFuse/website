@@ -45,7 +45,7 @@ What the Product Manager brings to the table:
 ## Hiring Plan
 
 1. Resume Screening: Review resumes and cover letters to assess candidate qualifications, experience, and domain expertise. Done by the hiring manager.
-1. [Screening call](https://flowfuse.com/handbook/peopleops/hiring/screening-call/) for 20 minutes. Done by recruiter.
+1. [Screening call](/handbook/peopleops/hiring/screening-call/) for 20 minutes. Done by recruiter.
 1. CEO Interview (STAR, Technical, and Role Fit) for 45m: Conduct a video interview to evaluate technical knowledge relevant to industrial automation, IIoT, and Product Management, as well as communication skills. Ask candidate about the proposed roadmap for the next year.
 1. CTO Interview (Technical) for 45m: A video interview that covers their technical knowledge, background and approach to the role.
 1. GTM Interview (Role fit, GTM compatibility) for 30m: Understand how the candidate thinks they can influence GTM and create more growth. Done by the VP of Sales.

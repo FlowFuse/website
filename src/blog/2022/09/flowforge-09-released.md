@@ -1,7 +1,7 @@
 ---
 title: FlowFuse 0.9 released
 subtitle: Suspended projects, login with email and Team Types
-description: Suspended projects, login with email and Team Types
+description: "FlowFuse 0.9 introduces suspended projects, login with email, and Team Types for organizing users across the whole platform. Learn about released with FlowFuse."
 date: 2022-09-01 12:00:00.0
 authors: ["sam-machin"]
 video: d23Pmyc0k7I
@@ -70,7 +70,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Try it out
 
-[Sign up for FlowFuse Cloud]({% include "sign-up-url.njk" %}) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
+[Sign up for FlowFuse Cloud](https://app.flowfuse.com/account/create) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 

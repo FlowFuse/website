@@ -1,7 +1,8 @@
 ---
+metaTitle: "FlowFuse 2.19: More Powerful AI in Node-RED"
 title: "FlowFuse 2.19: More Powerful AI in Node-RED, Drop-In Blueprints, Memory Monitoring, and Faster Onboarding"
 subtitle: "AI enhancements to Node-RED, streamlined onboarding with social authentication and device flow selection, improved Blueprint experience, more comprehensive performance monitoring, and a refreshed user interface."
-description: "AI enhancements to Node-RED, streamlined onboarding with social authentication, improved Blueprint experience, more comprehensive performance monitoring, and a refreshed user interface."
+description: "FlowFuse 2.19 brings more powerful AI to Node-RED, drop-in Blueprints, memory monitoring, and faster onboarding for teams."
 date: 2025-07-03
 authors: ["greg-stoutenburg"]
 image: /blog/2025/07/images/release-2-19.png
@@ -16,8 +17,8 @@ This release focuses on speeding time to value with more powerful AI functionali
 <!--more-->
 
 ## AI Enhancements to Node-RED
-![GIF of AI Flow Explainer](./images/assistant-0-3-0-flow-explainer-3tbNoRlb4T-1089.gif)
-_GIF of AI Flow Explainer_
+<video autoplay loop muted playsinline aria-label="Video of AI Flow Explainer" width="1089" height="790" preload="none"><source src="/blog/2025/07/images/assistant-0-3-0-flow-explainer-3tbNoRlb4T-1089.webm" type="video/webm" /></video>
+_Video of AI Flow Explainer_
 
 The FlowFuse Expert can now do more than create a Function node based on your text instructions. With this release, you can highlight a flow in the Node-RED editor and ask the FlowFuse Expert to explain the purpose of the flow. This new functionality is perfect for learning and collaboration.
 
@@ -102,7 +103,7 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 The quickest way to get started is with FlowFuse Cloud.
 
-[Get started for free]({% include "sign-up-url.njk" %}) and have your Node-RED instances running in the cloud within minutes.
+[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

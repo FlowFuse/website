@@ -1,4 +1,5 @@
 ---
+metaTitle: "Beyond Cloud AI: Hybrid Edge-Cloud Intelligence"
 title: "Beyond Cloud AI Orchestration: Why the Future is Hybrid Edge-Cloud Intelligence"
 subtitle: "While cloud orchestration excels in digital workflows, the industrial world needs a hybrid approach."
 description: "How edge-cloud hybrid AI architectures unlock new possibilities for industrial applications while leveraging the best of both worlds."
@@ -51,4 +52,4 @@ Choosing the right approach comes down to understanding your requirements. For d
 ## Ready to Build the Future of Industrial AI?
 FlowFuse is built for the challenges of industrial and IoT data. Whether you're implementing Industry 4.0 initiatives or building predictive maintenance systems, we provide the platform to deploy and manage intelligence across both cloud and edge environments.
 
-[Start building today: Try FlowFuse free]({% include "sign-up-url.njk" %}) or [Book a demo](https://flowfuse.com/book-demo/)
+[Start building today: Try FlowFuse free](https://app.flowfuse.com/account/create) or [Book a demo](/book-demo/)

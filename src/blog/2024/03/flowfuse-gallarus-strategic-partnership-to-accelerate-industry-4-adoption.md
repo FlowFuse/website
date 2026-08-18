@@ -1,7 +1,8 @@
 ---
+metaTitle: "FlowFuse and Gallarus Strategic Partnership"
 title: FlowFuse and Gallarus Announce Strategic Partnership to Accelerate Industry 4.0 Adoption
 subtitle: Strategic partnership to empower businesses with low-code development for Industry 4.0 Transformation
-description: Press release on FlowFuse and Gallarus Strategic Partnership 
+description: "FlowFuse and Gallarus announce a strategic partnership to accelerate Industry 4.0 adoption across manufacturing operations."
 date: 2024-03-28
 authors: ["-"]
 image: /blog/2024/03/images/Flowfuse-Gallarus-Partnership.png
@@ -27,4 +28,4 @@ This combined expertise will address the complexities of digital transformation 
  - Breakdown data silos enabling organization-wide data availability via the UNS.
  - Enable citizen developers to build extremely useful industrial applications.  
 
-For more information about FlowFuse and Gallarus Industry Solutions Limited, please visit their respective websites at [flowfuse.com](http://flowfuse.com) and [gis.ie.](http://gis.ie)
+For more information about FlowFuse and Gallarus Industry Solutions Limited, please visit their respective websites at [flowfuse.com](/) and [gis.ie.](http://gis.ie)

@@ -30,6 +30,6 @@ FlowFuse customers can install the MCP Server nodes today via the Node-RED Palet
 
 ### Additional links
 
-- [Blog article](https://flowfuse.com/blog/2025/10/building-mcp-server-using-flowfuse/) 
+- [Blog article](/blog/2025/10/building-mcp-server-using-flowfuse/) 
 - [Youtube demonstration video](https://www.youtube.com/watch?v=troUvaF8V68)
 
