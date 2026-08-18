@@ -31,19 +31,22 @@ _Screnshot of where to enter Certfied Nodes Token_
 
 ## Adding New Nodes
 
-1. Evaluate all existing Node-RED Comunity nodes
+1. Evaluate all existing Node-RED Comunity nodes 
+    - Pick one with a permisive license, e.g. Apache or MIT
+    - Good comunity reputation
+    - Regular updates
 2. Select one of above or create new from scratch
-3. Create a new private GitHub repository with the name `ffcn-` prefix
+3. Create a new private GitHub repository with the name `ffcn-` prefix (name should be short and descriptive e.g. `ffcn-modbus`)
 4. If using an exisitng node, create copy of GitHub respository as follows
     - `git clone --bare <url of existing repo>`
     - cd into the created directory
     - `git push --mirror git@github.com:FlowFuse/ffcn-<repo-name>.git`
 5. Complete the new repository check [list](https://github.com/FlowFuse/admin/issues/new?template=new-repo.md)
 6. Make changes to the `package.json` to update
-    - The name and scope to be `@flowfuse-certified-nodes/<name>`, where name should be shortest sensible name 
+    - The name and scope to be `@flowfuse-certified-nodes/<name>`, where name should be shortest sensible name (and match the repo name)
     - The `homepage` link to FlowFuse documentation for the node
     - The `publishConfig.registry` to point to the FlowFuse registry (`https://registry.flowfuse.com`)
-    - Add .github/workflows/release-publish.yml` and the matching `CERTIFIED_NODES_PUBLISH_TOKEN` secret from 1Password.
+    - Add `.github/workflows/release-publish.yml` and the matching `CERTIFIED_NODES_PUBLISH_TOKEN` secret from 1Password.
 7. Publish the node to the FlowFuse registry.
 
 ## Updating the Catalog
