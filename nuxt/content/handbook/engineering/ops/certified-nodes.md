@@ -33,7 +33,7 @@ _Screnshot of where to enter Certfied Nodes Token_
 
 1. Evaluate all existing Node-RED Comunity nodes 
     - Pick one with a permisive license, e.g. Apache or MIT
-    - Good comunity reputation
+    - Good community reputation
     - Regular updates
 2. Select one of above or create new from scratch
 3. Create a new private GitHub repository with the name `ffcn-` prefix (name should be short and descriptive e.g. `ffcn-modbus`)
