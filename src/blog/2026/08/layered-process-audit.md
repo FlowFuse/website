@@ -196,6 +196,8 @@ A calibration date on a checklist is only as good as the record behind it. For w
 - Is the batch or serial number recorded correctly?
 - Can the current part be traced to its material lot?
 
+A checklist answer of "yes" is only as good as the genealogy behind it. For what that record needs to capture and how forward and backward tracing work during a recall, see [Automotive Traceability: How Manufacturers Track Parts, Processes, and Data](/blog/2026/08/automotive-traceability/).
+
 **Safety and workplace condition**
 
 - Are required PPE items being worn?
