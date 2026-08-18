@@ -1,5 +1,5 @@
 ---
-title: "Automotive Traceability: How Manufacturers Track Parts, Processes, and Data"
+title: "Automotive Traceability: How Production Data Gets Tied to a Part"
 metaTitle: "Automotive Traceability in Manufacturing: A Practical Guide"
 subtitle: "How automotive manufacturers connect production data to individual parts, and what it takes to build traceability across existing factory systems."
 description: "Learn how automotive traceability works, what data manufacturers need to track, and how to connect PLCs, scanners, and MES systems into a searchable production history."
