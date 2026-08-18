@@ -94,6 +94,7 @@
         --tw-prose-bold: var(--color-gray-500);
     }
     .prose img { max-width: 100%; }
+    .prose:not(.prose-natural-size-images) img { width: 100%; height: auto; }
 }
 
 @import "./style.page.css";
