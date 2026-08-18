@@ -152,12 +152,28 @@ module.exports = function(eleventyConfig) {
 
     // CTA event/href/label data (single source of truth shared with the Nuxt
     // Cta* components, which import the same src/_data/ctaDestinations.json)
-    // registered as a Nunjucks *global* rather than page data: the four
-    // ctaSignUp/ctaSignIn/ctaContactUs/ctaBookDemo macros need to read it, and
-    // Nunjucks macros don't see page-context data (addGlobalData) unless it's
-    // explicitly passed in as an argument - addNunjucksGlobal makes it visible
-    // everywhere, macros included, with no per-call-site plumbing.
-    eleventyConfig.addNunjucksGlobal('ctaDestinations', require('./src/_data/ctaDestinations.json'))
+    // registered as a Nunjucks *global* rather than page data: the five
+    // ctaSignUp/ctaSignIn/ctaContactUs/ctaBookDemo/ctaPricing macros need to
+    // read it, and Nunjucks macros don't see page-context data
+    // (addGlobalData) unless it's explicitly passed in as an argument -
+    // addNunjucksGlobal makes it visible everywhere, macros included, with no
+    // per-call-site plumbing.
+    // Registered once with a stable object reference, then refreshed IN PLACE
+    // on every build (not re-registered via a second addNunjucksGlobal call,
+    // which only affected later builds - templates already held a reference
+    // to the first, now-stale value, so mid-watch edits rendered `undefined`
+    // until the whole process restarted). Mutating the same object's keys
+    // means every template holding a reference to it sees the update too.
+    const ctaDestinationsPath = require.resolve('./src/_data/ctaDestinations.json')
+    const ctaDestinations = require(ctaDestinationsPath)
+    eleventyConfig.addNunjucksGlobal('ctaDestinations', ctaDestinations)
+    eleventyConfig.addWatchTarget(ctaDestinationsPath)
+    eleventyConfig.on('eleventy.before', () => {
+        delete require.cache[ctaDestinationsPath]
+        const fresh = require(ctaDestinationsPath)
+        Object.keys(ctaDestinations).forEach(key => delete ctaDestinations[key])
+        Object.assign(ctaDestinations, fresh)
+    })
 
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )

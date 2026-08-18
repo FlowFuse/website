@@ -130,7 +130,7 @@ meta:
 
 ## Call-to-Action Buttons
 
-The site has four main call-to-action destinations, each with **fixed copy** — you cannot write new button text for these, only choose how the button looks and where it sits on the page:
+The site has five main call-to-action destinations, each with **fixed copy** — you cannot write new button text for these, only choose how the button looks and where it sits on the page:
 
 | Component        | Goes to                           | Button text                                          |
 | ---------------- | --------------------------------- | ---------------------------------------------------- |
@@ -138,10 +138,11 @@ The site has four main call-to-action destinations, each with **fixed copy** —
 | `<CtaSignIn>`    | `app.flowfuse.com`                | "Sign In"                                            |
 | `<CtaContactUs>` | `/contact-us/`                    | "Contact Us"                                         |
 | `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
+| `<CtaPricing>`   | `/pricing/`                       | "View Pricing"                                       |
 
-If a page needs different wording than what's listed above, that's a sign the destination needs a fifth CTA, not a new prop on these four or custom inline code.
+If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
-**These exact components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`). The part of the site still served by Eleventy uses the equivalent Nunjucks macros described in [11ty pages](#11ty-pages) below — same four destinations, same fixed copy, same tracking, just written differently since the two frameworks don't share templates.
+**These exact components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`). The part of the site still served by Eleventy uses the equivalent Nunjucks macros described in [11ty pages](#11ty-pages) below — same five destinations, same fixed copy, same tracking, just written differently since the two frameworks don't share templates.
 
 ### Choosing a style
 
@@ -224,7 +225,7 @@ The dark card above is just to make the white text visible in this doc, use `col
 
 ### 11ty pages
 
-Pages still served by Eleventy (most of the site outside the handbook, docs, and a handful of migrated Nuxt pages) use four Nunjucks macros instead of the Vue components above, in `src/_includes/components/cta/`: `ctaSignUp`, `ctaSignIn`, `ctaContactUs`, `ctaBookDemo`. Same four destinations, same fixed copy, same variants, and the same tracking (they send the same `cta-sign-up`/`cta-sign-in`/`cta-contact-us`/`cta-book-demo` events with `{ position, variant }`), so a PostHog report doesn't need to care which framework a click came from.
+Pages still served by Eleventy (most of the site outside the handbook, docs, and a handful of migrated Nuxt pages) use five Nunjucks macros instead of the Vue components above, in `src/_includes/components/cta/`: `ctaSignUp`, `ctaSignIn`, `ctaContactUs`, `ctaBookDemo`, `ctaPricing`. Same five destinations, same fixed copy, same variants, and the same tracking (they send the same `cta-sign-up`/`cta-sign-in`/`cta-contact-us`/`cta-book-demo`/`cta-pricing` events with `{ position, variant }`), so a PostHog report doesn't need to care which framework a click came from.
 
 ```njk
 {% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}

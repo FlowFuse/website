@@ -20,5 +20,10 @@
         "event": "cta-book-demo",
         "href": "/book-demo/",
         "label": "Book a Demo"
+    },
+    "pricing": {
+        "event": "cta-pricing",
+        "href": "/pricing/",
+        "label": "View Pricing"
     }
 }
