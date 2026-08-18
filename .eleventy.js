@@ -150,6 +150,15 @@ module.exports = function(eleventyConfig) {
         watch: ["_site/**/*.css", "_site/**/*.js"],
     })
 
+    // CTA event/href/label data (single source of truth shared with the Nuxt
+    // Cta* components, which import the same src/_data/ctaDestinations.json)
+    // registered as a Nunjucks *global* rather than page data: the four
+    // ctaSignUp/ctaSignIn/ctaContactUs/ctaBookDemo macros need to read it, and
+    // Nunjucks macros don't see page-context data (addGlobalData) unless it's
+    // explicitly passed in as an argument - addNunjucksGlobal makes it visible
+    // everywhere, macros included, with no per-call-site plumbing.
+    eleventyConfig.addNunjucksGlobal('ctaDestinations', require('./src/_data/ctaDestinations.json'))
+
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
     eleventyConfig.addGlobalData('DEV_MODE', () => DEV_MODE || DEV_MODE_POSTS)

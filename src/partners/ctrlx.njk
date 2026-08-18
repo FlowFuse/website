@@ -8,6 +8,7 @@ description:
     
 sitemapPriority: 0.6
 ---
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="nohero w-full px-6">
     <!--Hero Content-->
     <div class="w-full px-6 pt-8 md:pt-16 pb-16 md:px-0">
@@ -113,11 +114,7 @@ sitemapPriority: 0.6
                         </p>
                     </div>
                     <div class="container m-auto text-center max-w-4xl flex flex-col md:items-start mt-6 md:mt-8">
-                        <a class="ff-btn ff-btn--primary no-underline flex flex-col" href="/book-demo">
-                            <span class="text-base uppercase md:px-4">
-                                BOOK A DEMO
-                            </span>
-                        </a>
+                        {{ ctaBookDemo('primary', 'hero', extraClass='no-underline flex flex-col') }}
                     </div>
                 </div>
             </div>

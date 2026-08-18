@@ -141,7 +141,7 @@ The site has four main call-to-action destinations, each with **fixed copy** —
 
 If a page needs different wording than what's listed above, that's a sign the destination needs a fifth CTA, not a new prop on these four or custom inline code.
 
-**These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
+**These exact components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`). The part of the site still served by Eleventy uses the equivalent Nunjucks macros described in [11ty pages](#11ty-pages) below — same four destinations, same fixed copy, same tracking, just written differently since the two frameworks don't share templates.
 
 ### Choosing a style
 
@@ -221,6 +221,20 @@ The dark card above is just to make the white text visible in this doc, use `col
 | `plan`     | No       | Which pricing plan the button belongs to, if relevant (e.g. `edge`, `hub`, `fleet`) — also shows up in analytics                              |
 | `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |
 | `icon`     | No       | An icon name to show after the button text, e.g. `i-lucide-arrow-right`                                                                       |
+
+### 11ty pages
+
+Pages still served by Eleventy (most of the site outside the handbook, docs, and a handful of migrated Nuxt pages) use four Nunjucks macros instead of the Vue components above, in `src/_includes/components/cta/`: `ctaSignUp`, `ctaSignIn`, `ctaContactUs`, `ctaBookDemo`. Same four destinations, same fixed copy, same variants, and the same tracking (they send the same `cta-sign-up`/`cta-sign-in`/`cta-contact-us`/`cta-book-demo` events with `{ position, variant }`), so a PostHog report doesn't need to care which framework a click came from.
+
+```njk
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
+...
+{{ ctaBookDemo('highlight', 'hero') }}
+```
+
+`ctaSignUp` and `ctaSignIn` need `site` (the global 11ty site data) as their first argument, since Nunjucks macros don't automatically see the calling page's variables: `{{ ctaSignUp(site, 'primary-outlined', 'footer') }}`.
+
+There's no `plan` prop on the 11ty side (nothing on Eleventy calls the pricing table, which is Nuxt-only) — everything else in the props reference above applies the same way, just as positional/keyword macro arguments instead of Vue props.
 
 ## Requesting New Website Pages
 

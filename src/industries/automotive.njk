@@ -118,6 +118,7 @@ cta:
   buttonLink: "/book-demo/"
   position: "final-cta"
 ---
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!-- ============================================================
      HERO
 ============================================================ -->
@@ -137,13 +138,9 @@ cta:
                     {{ hero.heading | safe }}
                 </h1>
                 <p class="mt-6 text-gray-700">{{ hero.description }}</p>
-                <div class="mt-8 flex gap-4 items-center max-md:justify-center flex-wrap">
-                    <a class="ff-btn ff-btn--highlight uppercase"
-                        href="{{ hero.primaryCtaLink }}"
-                        onclick="capture('cta-book-demo', {'position': 'hero'})">
-                        {{ hero.primaryCta }}
-                    </a>
-                    <a class="flex items-center gap-2 text-base uppercase font-bold text-indigo-600 hover:text-indigo-800"
+                <div class="mt-8 flex gap-8 items-center max-md:justify-center flex-wrap">
+                    {{ ctaBookDemo('highlight', 'hero') }}
+                    <a class="flex items-center gap-2 text-base uppercase font-bold text-indigo-600 hover:text-indigo-800 hover:no-underline"
                         href="{{ hero.secondaryCtaLink }}"
                         onclick="capture('cta-pricing', {'position': 'hero'})">
                         {{ hero.secondaryCta }}

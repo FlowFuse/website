@@ -141,7 +141,9 @@ resources:
     alt: "Diagnosing and fixing PLC communication latency"
     url: "/blog/2026/06/plc-communication-latency-causes-and-fixes/"
 ---
-
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="nohero w-full">
 
     <!-- ============================================================
@@ -158,8 +160,8 @@ resources:
                         FlowFuse bridges Programmable Logic Controllers, Siemens, Allen-Bradley, Omron, and more, to MQTT, OPC UA, cloud platforms, and enterprise systems. No expensive gateways, no custom code.
                     </p>
                     <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
-                        <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'plc'})">TALK TO AN EXPERT</a>
-                        <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'plc'})">GET STARTED NOW</a>
+                        {{ ctaContactUs('primary', 'primary', extraClass='min-h-[40px]') }}
+                        {{ ctaSignUp(site, 'primary-outlined', 'primary', extraClass='min-h-[40px]') }}
                     </div>
                 </div>
                 <div class="md:w-2/5 flex-grow relative">
@@ -256,7 +258,7 @@ resources:
                 </div>
             </div>
             <div class="mt-10">
-                <a class="ff-btn ff-btn--primary-outlined" href="/book-demo/" onclick="capture('cta-plc-to-cloud', {'position': 'mid-page'}, {'page': 'plc'})">See a Live PLC-to-Cloud Demo →</a>
+                {{ ctaBookDemo('ghost', 'mid-page', icon=true) }}
             </div>
         </div>
     </div>
@@ -445,7 +447,7 @@ resources:
                 {% endfor %}
             </div>
             <div class="text-center mt-8">
-                <a href="/blog/plc/" class="ff-btn ff-btn--primary-outlined">See All PLC Articles →</a>
+                <a href="/blog/plc/" class="ff-btn uppercase">See All PLC Articles →</a>
             </div>
         </div>
     </div>
@@ -461,8 +463,8 @@ resources:
                     Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack, in a live demo or a free trial.
                 </p>
                 <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
-                    <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'secondary'}, {'page': 'plc'})">Book a Demo</a>
-                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started-free', {'position': 'secondary'}, {'page': 'plc'})">Get Started Free</a>
+                    {{ ctaBookDemo('primary', 'secondary', extraClass='min-h-[40px]') }}
+                    {{ ctaSignUp(site, 'primary-outlined', 'secondary', extraClass='min-h-[40px]') }}
                 </div>
             </div>
         </div>

@@ -60,6 +60,8 @@ meta:
           answer: >
             Yes! FlowFuse is designed for seamless migration, fully compatible with existing Node-RED logic and integrations. 
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="nohero w-full px-6">
     <!--Hero Content-->
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
@@ -81,8 +83,8 @@ meta:
                     </lite-youtube>
                 </div>
                 <div class="flex gap-3 max-md:mx-auto max-sm:flex-col max-md:justify-center">
-                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'primary'}, {'page': 'why-flowfuse'})">GET A FREE DEMO</a>
-                    <a class="ff-btn min-h-[40px] flex gap-2" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'why-flowfuse'})"><span class="flex gap-2 items-center text-indigo-600 hover:text-indigo-800"><span>GET STARTED</span> {% include "components/icons/arrow-right.svg" %}</span></a>
+                    {{ ctaBookDemo('primary', 'primary', extraClass='min-h-[40px]') }}
+                    {{ ctaSignUp(site, 'ghost', 'primary', icon=true, extraClass='min-h-[40px]') }}
                 </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[550px] ff-image-rounded rounded-lg drop-shadow-lg w-full">
