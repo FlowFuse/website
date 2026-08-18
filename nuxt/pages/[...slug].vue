@@ -14,7 +14,7 @@ if (!page.value) {
 // computes its own X-Robots-Tag/meta before this component ever runs, so a manual
 // `useHead` robots meta tag here would only race against it, not control it.
 useHead({
-    title: `${page.value.title} • FlowFuse`
+    title: page.value.title
 })
 </script>
 

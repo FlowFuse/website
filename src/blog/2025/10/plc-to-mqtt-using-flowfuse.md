@@ -102,6 +102,9 @@ Now, let's get started. First, watch this demo, where I have built a FlowFuse fl
 
 This flow standardizes data from each protocol into a consistent JSON format, enriches it with contextual metadata, and publishes everything to the FlowFuse MQTT Broker, all within a single instance. The following guide explains how to replicate this setup for any PLC on your factory floor.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ## Step 1: Extract Data from Your PLC
 
 As mentioned earlier, extracting data is the first and most complex step. Get this wrong, and the complexity and costs can spiral out of control. FlowFuse simplifies this process. Its pre-built connectors handle Modbus, OPC UA, EtherNet/IP, and other protocols right out of the box, no custom coding, expensive proprietary gateways, or per-tag licensing fees required. You can configure your connections visually and have data flowing within minutes.

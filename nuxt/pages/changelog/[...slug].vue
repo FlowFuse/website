@@ -25,6 +25,8 @@ const otherRecentEntries = computed(() =>
 
 const authorMembers = computed(() => useAuthorMembers(page.value?.authors))
 
+const plans = useChangelogPlans(() => page.value?.path)
+
 function issueHref(issue: string): string {
     if (issue.startsWith('#')) return `https://github.com/FlowFuse/flowfuse/issues/${issue.substring(1)}`
     if (issue.startsWith('http')) return issue
@@ -36,13 +38,19 @@ function issueLabel(issue: string): string {
 }
 
 const pageTitle = computed(() => page.value?.title || 'Changelog')
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Changelog`)
+const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
+// Changelog entries always get the "Changelog" qualifier on the brand name.
+// og:title infers from the resolved title. Needs an explicit high tagPriority in
+// its own useHead call — nuxt-seo-utils pushes its own global siteName with
+// tagPriority: 'low', and that otherwise wins over a page-level override
+// regardless of registration order.
+useHead({ templateParams: { siteName: 'FlowFuse Changelog' } }, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: fullTitle,
+    title: seoTitle,
     description: computed(() => page.value?.description || ''),
-    ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),
     ogUrl: canonicalUrl,
     ogType: 'article',
@@ -58,6 +66,7 @@ useSeoMeta({
         <label>Changelog</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
+        <FeatureTierBadges :plans="plans" />
       </div>
     </div>
 

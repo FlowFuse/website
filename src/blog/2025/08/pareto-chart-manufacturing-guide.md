@@ -1,4 +1,5 @@
 ---
+metaTitle: "Pareto Chart & Diagram: Formula & Examples"
 title: "Pareto Chart & Diagram: What It Is, Formula, Examples & Manufacturing Applications"
 subtitle: "How the Pareto principle helps manufacturing teams focus where it matters most."
 description: "Learn how Pareto Charts and diagrams help manufacturing teams reduce defects by up to 80%, with formulas and real examples."

@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse v1.4: Bulk Device Provisioning"
 title: FlowFuse v1.4 with device provisioning in bulk and staged development process
 subtitle: Our second release of 2023 with some great new features to try out.
 description: Deploy Node-RED to many devices quickly, and allow a staged development process with the latest release of FlowFuse v1.4.

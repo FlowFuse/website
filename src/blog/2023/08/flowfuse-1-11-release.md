@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 1.11: Easier Node-RED Setup"
 title: FlowFuse 1.11 makes it easier to get started with FlowFuse and Node-RED
 subtitle: Our latest release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.
 description: The new FlowFuse 1.11 release includes a new starter tier for FlowFuse Cloud, Personal Access Tokens for API access and improvements to device management.

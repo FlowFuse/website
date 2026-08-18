@@ -29,12 +29,18 @@ if (page.value.layout === 'redirect' && page.value.redirect?.to) {
 
 const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Documentation')
 
+// Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
+const plans = useDocsPlans(contentPath)
+
 useHead({
-    title: computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Docs` : 'FlowFuse Documentation'),
+    title: pageTitle,
     meta: [
         { name: 'description', content: computed(() => (page.value as any)?.meta?.description || '') },
     ],
 })
+useHead({
+    templateParams: { siteName: () => slugParts.value.length ? 'FlowFuse Docs' : 'FlowFuse' },
+}, { tagPriority: 1000 })
 
 // Same key+handler DocsLeftNav uses, so useAsyncData dedupes into one fetch per request.
 const { data: navGroups } = await useDocsNavTree()
@@ -74,6 +80,7 @@ const breadcrumbItems = computed(() => {
         <div class="w-full">
           <div class="order-last md:order-first">
             <div class="mt-6 mb-4 prose prose-blue main-content handbook-content">
+              <FeatureTierBadges :plans="plans" />
               <ContentRenderer v-if="page" :value="page" />
             </div>
           </div>

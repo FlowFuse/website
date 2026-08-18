@@ -1,4 +1,5 @@
 ---
+metaTitle: "Introduction to the Unified Namespace (UNS)"
 title: "Introduction to the Unified Namespace (UNS) – 2026 Updated Guide"
 subtitle: "Making data available for Industry 4.0 use-cases"
 description: Explore how the Unified Namespace (UNS) empowers Industry 4.0 with seamless data exchange, maximizing organizational potential.

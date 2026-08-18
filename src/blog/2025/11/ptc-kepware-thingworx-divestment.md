@@ -1,4 +1,5 @@
 ---
+metaTitle: "The Industrial IoT Market Shift: PTC Divestment"
 title: "The Industrial IoT Market Shift: What the PTC Divestment Means for Your Data Strategy"
 subtitle: "Understanding the bigger picture behind the $600M Kepware and ThingWorx sale"
 description: "PTC's $600M divestment of Kepware and ThingWorx to TPG raises critical questions for industrial data strategy going forward."

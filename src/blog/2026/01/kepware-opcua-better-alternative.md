@@ -1,4 +1,5 @@
 ---
+metaTitle: "Beyond Kepware: A Modern Alternative"
 title: "Beyond Kepware: Why Modern Industrial Connectivity Demands a Second Look"
 subtitle: "Why per-tag pricing, scale penalties, and private-equity ownership change the risk equation"
 description: "Kepware became the default when industrial connectivity was hard. Learn why pricing and ownership changes make it risky now."

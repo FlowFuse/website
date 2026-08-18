@@ -13,12 +13,12 @@ tags:
    - releases
 release: "2.30"
 features:
-   - id: ff-expert-application-building
+   - id: flowfuse-expert-application-building
      heading: "FlowFuse Expert Builds Your Industrial Application"
    - heading: "What else is new?"
    - id: immersive-editor-drawer
      heading: "A smoother iteration experience with Expert"
-   - id: snapshot-compare
+   - id: snapshot-comparison
      heading: "More usable snapshot comparisons"
 cta:
   type: contact
@@ -44,7 +44,7 @@ Start your agentic development with for example:
 - "A shift handover screen showing outstanding alarms and recent operator notes"
 - "An asset utilization dashboard for the packaging cell, refreshed every minute"
 
-![FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt](/blog/2026/05/images/expert-application-building.gif){data-zoomable style="border: 2px solid #E5E7EB;"}
+<video autoplay loop muted playsinline aria-label="FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt" style="border: 2px solid #E5E7EB;" width="1024" height="527" preload="none"><source src="/blog/2026/05/images/expert-application-building.webm" type="video/webm" /></video>
 <figcaption>FlowFuse Expert assembling an application on the Node-RED workspace from a chat prompt.</figcaption>
 
 ### Availability

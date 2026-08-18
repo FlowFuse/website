@@ -12,13 +12,12 @@ const guides = computed(() => GUIDES.map(guide => ({
 
 const breadcrumbItems = [{ label: 'Application Guide' }]
 
-const title = 'FlowFuse Application Guide'
+const title = 'Application Guide'
 const description = 'How to build and deploy with FlowFuse and Node-RED: the packages, the architectures and the flow patterns we teach during a proof of concept.'
 
 useSeoMeta({
     title,
     description,
-    ogTitle: title,
     ogDescription: description,
     ogUrl: 'https://flowfuse.com/application-guide/',
     ogType: 'website',

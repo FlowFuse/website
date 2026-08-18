@@ -1,4 +1,5 @@
 ---
+metaTitle: "What Is a System Integrator?"
 title: "What Is a System Integrator? Understanding Manufacturing's Most Misunderstood Role"
 subtitle: "The specialists who make your factory equipment talk to your business software"
 description: "System integrators connect factory equipment to business systems. Learn what they do and how modern tools are changing the role."

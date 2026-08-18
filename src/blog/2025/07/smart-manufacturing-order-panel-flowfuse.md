@@ -1,4 +1,5 @@
 ---
+metaTitle: "Building a Smart Manufacturing Order Panel"
 title: "How we Built a Smart Manufacturing Order Execution Panel with FlowFuse"
 subtitle: "Control and track manufacturing orders with FlowFuse"
 description: "See how a Smart Manufacturing Order Execution Panel was built with FlowFuse to connect with Odoo ERP and track production."

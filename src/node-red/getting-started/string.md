@@ -1,4 +1,5 @@
 ---
+metaTitle: "Strings in Node-RED: Convert, Split & Trim"
 eleventyNavigation:
   key: String
   order: 6

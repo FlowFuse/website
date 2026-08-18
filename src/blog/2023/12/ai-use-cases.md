@@ -1,4 +1,5 @@
 ---
+metaTitle: "Beyond Automation: AI Use Cases in Manufacturing"
 title: Beyond Automation - AI Use Cases that are shaping the next manufacturing frontier
 subtitle: In which AI-powered capabilities should one invest to bring about transformative changes in the manufacturing environment?
 description: Discover how AI is revolutionizing manufacturing with citizen development, demand forecasting, and predictive maintenance

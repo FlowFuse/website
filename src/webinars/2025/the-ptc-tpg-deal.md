@@ -1,4 +1,5 @@
 ---
+metaTitle: "The PTC/TPG Deal: What It Means for Industry"
 title: "The PTC/TPG Deal: What It Means for the Industry (And Your Next Move)"
 subtitle: 
 meta:
