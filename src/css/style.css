@@ -1807,15 +1807,11 @@ h4:hover .header-anchor::before {
     }
 
     .ff-certify-list > .ff-item {
-        @apply grid grid-cols-[1fr,50px,1fr] sm:grid-cols-[24px,1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr),60px,minmax(18px,1fr)];
-    }
-
-    .ff-certify-list > .ff-item:first-of-type {
-        @apply sm:grid-rows-[36px,minmax(18px,1fr)];
+        @apply grid grid-cols-[1fr_50px_1fr] sm:grid-cols-[24px_1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr)_60px_minmax(18px,1fr)];
     }
 
     .ff-certified {
-        @apply sm:grid-cols-[24px,1fr,86px];
+        @apply sm:grid-cols-[24px_1fr_86px];
     }
 
     .ff-line-container {
