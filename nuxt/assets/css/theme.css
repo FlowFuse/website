@@ -1,4 +1,7 @@
-@import "tailwindcss";
+/* Skips the preflight reset (unlike the "tailwindcss" shorthand) — it would
+   duplicate the one src/css/style.css already serves for both 11ty and Nuxt. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 @import "@nuxt/ui";
 
 /* Utility classes for the nav and footer live in this data file rather than in
