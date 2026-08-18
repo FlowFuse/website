@@ -5,6 +5,8 @@ const props = defineProps<{
 
 const authorNames = computed(() => useAuthorNames(props.entry.authors))
 
+const plans = useChangelogPlans(() => props.entry.path)
+
 const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
 </script>
 
@@ -18,6 +20,7 @@ const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateStri
         </div>
         <time class="block text-xs text-gray-500 mt-1 mb-3">{{ formattedDate }}</time>
       </NuxtLink>
+      <FeatureTierBadges :plans="plans" />
     </div>
     <!-- pt-4 only while the columns are stacked; side by side the description should
          start on the same line as the title, not below it. -->

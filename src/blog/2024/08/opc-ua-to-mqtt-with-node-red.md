@@ -95,6 +95,9 @@ In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-R
 
 - MQTT Broker: We’ll need an MQTT broker for data communication. FlowFuse offers an integrated MQTT Broker Service within Platform for easy setup. For more details, check out [FlowFuse's MQTT Broker Announcement](/blog/2024/10/announcement-mqtt-broker/).
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 ### Retrieving Data from the OPC UA Server
 
 To begin retrieving data from your OPC UA server using Node-RED, follow these steps:
@@ -151,8 +154,8 @@ _Configuring the mqtt out node with broker information_
 4. Connect the output of the **join** node to the input of the **mqtt out** node.
 5. Deploy the flow. After deploying, you will see the status "connected" with a green dot at the bottom of each node, indicating that you have successfully connected to your MQTT broker.
 
-![Image showing the successful bridging of OPC UA data to MQTT](./images/opcua-to-mqtt.gif){data-zoomable}
-_Image showing the successful bridging of OPC UA data to MQTT_
+<video autoplay loop muted playsinline aria-label="Video showing the successful bridging of OPC UA data to MQTT" width="1904" height="956" preload="none"><source src="/blog/2024/08/images/opcua-to-mqtt.webm" type="video/webm" /></video>
+_Video showing the successful bridging of OPC UA data to MQTT_
 
 ::render-flow
 ```json
@@ -171,8 +174,8 @@ For example, an MES can send commands or configuration changes via MQTT, which t
 3. Add an **OpcUa-Client** node to the canvas and configure it with your OPC UA server. Set the action type to "WRITE" to send the received data.
 4. Connect the output of the **mqtt in** node to the input of the **change** node, and the output of the **change** node to the input of the **OpcUa-Client** node.
 
-![Image showing the successful bridging of MQTT data to OPC UA](./images/mqtt-to-opcua.gif){data-zoomable}
-_Image showing the successful bridging of OPC UA data to MQTT_
+<video autoplay loop muted playsinline aria-label="Video showing the successful bridging of MQTT data to OPC UA" width="1910" height="820" preload="none"><source src="/blog/2024/08/images/mqtt-to-opcua.webm" type="video/webm" /></video>
+_Video showing the successful bridging of OPC UA data to MQTT_
 
 ::render-flow
 ```json

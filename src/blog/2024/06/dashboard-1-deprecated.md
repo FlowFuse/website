@@ -32,6 +32,9 @@ Not only have we made significant efforts to ensure that FlowFuse Dashboard has 
 - **Directly Install on Mobile:** FlowFuse Dashboard is built as a Progressive Web App (PWA), this means that you're able to install it directly onto your mobile device as if it were a native mobile application.
 - **Vuetify Framework:** FlowFuse Dashboard is built on VueJS, and with that, we made the decision to integrate in [Vuetify](https://vuetifyjs.com/en/components/all/#containment), a very rich collection of functional UI widgets. All of these widgets are available, by default when you want to build your own custom widgets in a `ui-template` node.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ## What we have planned
 
 We are actively investing into the development of FlowFuse Dashboard, and releasing new features and updates on a regular basis. We have a public [Project Management Board](https://github.com/orgs/FlowFuse/projects/15/views/1) that show exactly what we're working on, and what we have planned in the near future. Some particular highlights include:

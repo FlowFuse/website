@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 1.3: Share Flows via Team Libraries"
 title: FlowFuse 1.3 is now available, share your flows through our new team libraries and much more
 subtitle: Our first release of 2023 with some great new features to try out, happy new year from everyone at FlowFuse!
 description: "FlowFuse 1.3 is now available. Share your flows through the brand new team libraries, plus much more in this latest release."

@@ -5,7 +5,7 @@
 // unified destinations, so it keeps a plain ff-btn link, same precedent as
 // BlogPostCta.vue's pricing fallback.
 useSeoMeta({
-    title: 'FlowFuse Features',
+    title: 'Features',
     description: 'FlowFuse provides the features companies require to reliably deliver industrial applications to devices and cloud in a collaborative, secure manner.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',

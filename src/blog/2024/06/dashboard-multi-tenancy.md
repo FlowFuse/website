@@ -1,4 +1,5 @@
 ---
+metaTitle: "Multi-Tenancy in FlowFuse's Dashboard 2.0"
 title: Multi-Tenancy available for everyone with FlowFuse's Dashboard 2.0
 subtitle: With a recent update in Node-RED Dashboard 2.0, we've made some significant changes to the multi-tenancy feature set. Discover what's new and how it can benefit your projects.
 description: "With a recent Dashboard 2.0 update, discover what's new in multi-tenancy and how it can benefit your team's ongoing projects."

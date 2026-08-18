@@ -1,4 +1,5 @@
 ---
+metaTitle: "Scheduled Server Maintenance July 11th, 2026"
 title: "Updated: Upcoming Scheduled Server Maintenance on July 11th, 2026"
 description: Keeping the FlowFuse Cloud up to date with critical server maintenance.
 date: 2026-06-15 12:00:00.0

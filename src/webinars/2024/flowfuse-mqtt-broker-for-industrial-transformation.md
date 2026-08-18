@@ -1,4 +1,5 @@
 ---
+metaTitle: "Unlocking Real-Time Data with FlowFuse MQTT"
 title: "Unlocking the Power of Real-Time Data: FlowFuse MQTT Broker for Industrial Transformation"
 subtitle: This webinar introduces the new FlowFuse MQTT Broker service which helps simplify access to real-time data for optimizing your industrial processes.
 image: /images/webinars/flowfuse-mqtt-broker-for-industrial-transformation.jpg

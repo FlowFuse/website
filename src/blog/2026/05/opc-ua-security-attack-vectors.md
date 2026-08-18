@@ -1,4 +1,5 @@
 ---
+metaTitle: "OPC UA Security: How Attackers Exploit It"
 title: "OPC UA Security: How Threat Actors Exploit Industrial Protocol Vulnerabilities"
 subtitle: "The attacks that work in the field aren't broken cryptography, they're security that was never switched on"
 description: "Most OPC UA breaches don't crack encryption. Learn how attackers actually exploit disabled trust lists and stale ciphers."

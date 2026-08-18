@@ -3,7 +3,6 @@ const { entries, visibleGroups, hasMore, showMore, revealRelease } = useChangelo
 
 useSeoMeta({
     title: 'Changelog',
-    ogTitle: 'Changelog',
 })
 
 // The Atom feed at /changelog/index.xml has always existed but nothing advertised it,

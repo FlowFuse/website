@@ -1,4 +1,5 @@
 ---
+metaTitle: "The Node-RED Story: From Lab to Industry"
 title: "The Node-RED Story: How Visual Programming Escaped the Lab and Conquered Industry"
 subtitle: "From a single weekend hack to millions of deployments across homes and industry."
 description: "Read how Node-RED evolved from a weekend IBM project into a global phenomenon powering a 4,300+ node community worldwide."

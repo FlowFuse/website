@@ -67,11 +67,11 @@ Guidelines for including images:
     - You can use the `@skip` tag to disable the image pipeline entirely for an image `![Name of Image](../relative-path-to-image.jpeg "@skip")`
   - The MDC image component in page body: `<NuxtImg src="./relative-path-to-image.png" alt="Image alt tag for screen readers" width="150" />`
     - Where `width` is the maximum width the image will be displayed on the page (source image should be two times this width)
-- GIFs can grow incredibly large, consider using a video in a modern format if the animation is longer than a few seconds
+- GIFs can grow incredibly large, consider using a video in a modern format if the animation is longer than a few seconds — a silent looping WebM (see [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body)) works well for short screen-recording style animations, while YouTube is better suited to longer or narrated videos
 
 ## Non-Image Assets
 
-If you need to include things other than images, e.g. Video or resource bundles (zip files), these should be uploaded to the `website-data` S3 bucket in the Production AWS account.
+If you need to include things other than images, e.g. Video or resource bundles (zip files), these should be uploaded to the `website-data` S3 bucket in the Production AWS account. The exceptions are YouTube videos and short WebM clips (see below) — both are embedded without an S3 upload.
 
 This can be done by [Ben](/about#ben-hardill), [Nick](/about#nick-oleary), [Piotr](/about#piotr-pawlowski) or [ZJ](/about#zeger-jan-van-de-weg).
 
@@ -86,6 +86,16 @@ YouTube videos can be embedded directly in pages using the `<lite-youtube>` web 
 ```
 
 > **Do not use raw** **`<iframe>`** **tags** to embed YouTube videos. Iframes load YouTube's scripts and set tracking cookies on page load, before any user consent, which is not GDPR-compliant. The `<lite-youtube>` component only loads the YouTube player when the user explicitly clicks play. See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
+
+### WebM Videos
+
+For short, silent, looping animations that would otherwise be a GIF, check a `.webm` file into the post's own `images/` folder (same as any other image asset — no S3 upload needed) and embed it directly:
+
+```html
+<video autoplay loop muted playsinline aria-label="Description of what the video shows" width="1280" height="720" preload="none"><source src="./images/example.webm" type="video/webm" /></video>
+```
+
+`width`/`height` should match the WebM's actual pixel dimensions so the browser can reserve layout space before the video loads, and `preload="none"` stops it from buffering until it scrolls into view. See [Embedding Videos in Article Body](/handbook/marketing/content-strategy/blog/#embedding-videos-in-article-body) for more detail.
 
 ## Meta Keywords
 

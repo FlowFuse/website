@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.6: AI Infused Node-RED & More"
 title: "FlowFuse 2.6: AI Infused Node-RED, Persistent File Storage & Lots More"
 subtitle: Lowering the barrier to entry for new users, and enhancing the flexibility and functionality of the platform.
 description: Discover the new features in FlowFuse 2.6, and it's focus on improving the Node-RED development experience.

@@ -1,4 +1,5 @@
 ---
+metaTitle: "Complex Logic in Node-RED Function Nodes"
 title: "Exploring Quick Ways to Write Complex Logic in Function Nodes in Node-RED" 
 subtitle: "Enhancing Your Node-RED Experience"
 description: "Learn how to efficiently write complex logic in Function Nodes within Node-RED, simplifying your development process and improving your workflows."
@@ -69,8 +70,8 @@ Using Blockly-based Function Nodes simplifies the creation of complex logic in N
 
 ### Using FlowFuse Expert
 
-![Image showing the quick function node generation with FlowFuse Expert](./images/flowfuse-ai-assistant.gif){data-zoomable}
-_Image showing the quick function node generation with FlowFuse Expert_
+<video autoplay loop muted playsinline aria-label="Video showing the quick function node generation with FlowFuse Expert" width="2992" height="1574" preload="none"><source src="/blog/2024/10/images/flowfuse-ai-assistant.webm" type="video/webm" /></video>
+_Video showing the quick function node generation with FlowFuse Expert_
 
 The FlowFuse Expert is an AI-based plugin integrated into the FlowFuse platform within the Node-RED editor, making it incredibly easy to generate complex functions using prompts.
 

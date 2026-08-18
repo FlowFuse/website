@@ -24,8 +24,8 @@ Meanwhile, databases handle real-time monitoring and automated alerts, cross-fun
 This isn't an either/or choice. It's a dual-track system where databases provide operational speed and CSVs provide the permanence layer, ensuring your compliance records and critical data outlive any technology stack.
 This guide shows how to implement PLC data logging with **FlowFuse** in a way that keeps running, stable, resilient, and production-ready.
 
-![Image showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file.](./images/plc-to-csv.gif){data-zoomable}
-_Image showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file._
+<video autoplay loop muted playsinline aria-label="Video showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file." width="3024" height="1474" preload="none"><source src="/blog/2025/10/images/plc-to-csv.webm" type="video/webm" /></video>
+_Video showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file._
 
 ## Prerequisites
 

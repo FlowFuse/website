@@ -1,4 +1,5 @@
 ---
+metaTitle: "MQTT Sparkplug B Implementation Guide"
 title: "MQTT Sparkplug B Implementation: Protocol, Architecture & Best Practices"
 subtitle: "Standardize and manage industrial IoT data with MQTT Sparkplug B"
 description: "Learn how to implement MQTT Sparkplug B with Node-RED for standardized, reliable Industrial IoT data flows and scalable production deployments."

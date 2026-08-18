@@ -1,4 +1,5 @@
 ---
+metaTitle: "OPC UA Security: A Defensible Architecture"
 title: "OPC UA Security: How to Establish a Defensible OPC UA Security Architecture"
 subtitle: "Part 1 showed how attackers walk in. This is the blueprint that locks every door behind them."
 description: "Turn every OPC UA attack vector into a configuration decision you control: Reverse Connect, trust lists, and SignAndEncrypt."

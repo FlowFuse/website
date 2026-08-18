@@ -121,6 +121,21 @@ below more
 
 The title of the page can be seen on both the blog index and the articles.
 
+### Meta Title
+
+`metaTitle` is an optional field that overrides the browser tab title and Open Graph (social share) title — it does not change the on-page `title` shown as the article's H1 or on the blog index.
+
+```yaml
+---
+title: "Building Digital Work Instructions Dashboard for the Shop Floor"
+metaTitle: "Digital Work Instructions Dashboard"
+---
+```
+
+Use it when the on-page `title` is written for readers (descriptive, sometimes long) but doesn't make a good search-result or tab title. When set, it renders as `{metaTitle} • FlowFuse Blog` in both places; when omitted, the browser tab and share title fall back to `{title} • FlowFuse Blog`.
+
+Keep `metaTitle` itself to 60 characters or fewer (before the ` • FlowFuse Blog` suffix is added) so the full title doesn't get truncated in Google search results, and keyword-forward — it's for SEO/CTR in search results and social previews, not for readability on the page itself.
+
 ### Subtitle
 
 The subtitle is only shown on the articles.
@@ -181,6 +196,19 @@ The video ID is the part after `v=` in a YouTube URL. For example:
 The `<lite-youtube>` component is included globally on all pages — no additional imports needed. It shows a static thumbnail and only loads the YouTube player when the user clicks play.
 
 > **Do not use raw `<iframe>` tags to embed YouTube videos.** Iframes load YouTube's scripts and set tracking cookies as soon as the page renders, before any user consent — which is not GDPR-compliant. Always use `<lite-youtube>` instead.
+
+For short, silent, looping screen-recordings, you can use a WebM video, GIFs can grow incredibly large, and WebM gives the same auto-playing loop at a fraction of the file size, with no YouTube upload needed:
+
+```html
+<video autoplay loop muted playsinline aria-label="Description of what the video shows" width="1280" height="720" preload="none"><source src="./images/example.webm" type="video/webm" /></video>
+```
+
+- `aria-label` replaces the alt text a static image would have had — describe what's happening, and make sure it says "video"/"animation" rather than "screenshot" or "image".
+- `autoplay loop muted playsinline` is what makes it behave like a GIF (no controls, no sound, loops forever).
+- `width`/`height` should match the WebM's actual pixel dimensions (`ffprobe -v error -select_streams v:0 -show_entries stream=width,height file.webm`) — without them the browser doesn't know the video's aspect ratio until it starts downloading, so the page layout shifts once it loads.
+- `preload="none"` stops the video from buffering until it scrolls into view — without it, every autoplaying video on the page starts downloading on page load regardless of viewport position.
+- `<source>` is a void element — self-close it (`<source ... />`), don't write a matching `</source>`.
+- Reserve `<lite-youtube>` for longer or narrated videos where a play button and audio make sense.
 
 ### TL;DR
 

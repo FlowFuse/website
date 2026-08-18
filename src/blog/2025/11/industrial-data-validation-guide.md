@@ -1,4 +1,5 @@
 ---
+metaTitle: "Protect Your Factory From Bad Data"
 title: "How to Protect Your Factory From Bad Data: A Must-Have Read for IIoT"
 subtitle: "How to validate industrial data before it enters your systems."
 description: "Build a bulletproof data validation gateway that catches corrupted sensor readings and malformed MQTT payloads before they spread."
