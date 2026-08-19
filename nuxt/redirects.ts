@@ -144,4 +144,13 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/handbook/development/releases/': { redirect: { to: '/handbook/engineering/releases/', statusCode: 301 } },
     '/handbook/peopleops/job-descriptions/dashboard-engineer/': { redirect: { to: '/handbook/peopleops/job-descriptions/', statusCode: 301 } },
 
+    // The changelog was paginated 19 entries to a page, which at 181 entries reached
+    // /changelog/10/. It is one page now, grouped by release and revealed as you
+    // scroll, so the numbered pages fold back into the listing.
+    ...Object.fromEntries(
+        Array.from({ length: 9 }, (_, i) => [
+            `/changelog/${i + 2}/`,
+            { redirect: { to: '/changelog/', statusCode: 301 } },
+        ])
+    ),
 }

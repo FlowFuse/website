@@ -2,6 +2,7 @@
 title: Snapshot Upload
 description: FlowFuse now supports uploading application and device snapshots across instances, enhancing flexibility in managing Node-RED versions and configurations.
 date: 2024-05-21 13:03:00.0
+release: "2.5"
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog

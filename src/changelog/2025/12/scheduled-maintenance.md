@@ -2,6 +2,7 @@
 title: Scheduled Maintenance Mode
 description: Schedule time and day of the week to apply Node-RED updates
 date: 2025-12-19 12:00:00.0
+release: "2.26"
 authors: ['ben-hardill']
 tags:
   - changelog

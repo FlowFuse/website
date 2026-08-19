@@ -1,7 +1,8 @@
 ---
 title: Device Editor Access Speed Up
-description:
+description: The remote instance editor loads considerably faster on Node-RED 4.0 and newer, especially over a slow network link.
 date: 2024-12-19 14:00:00.0
+release: "2.12"
 authors: ["ben-hardill"]
 tags:
     - changelog

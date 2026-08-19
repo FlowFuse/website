@@ -2,6 +2,7 @@
 title: Multi-line Environment Variables
 description: FlowFuse now supports multi-line Environment Variables.
 date: 2024-06-26 13:00:00.0
+release: "2.6"
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog

@@ -2,6 +2,7 @@
 title: Changes to tags for flowfuse/node-red
 description: Updating what Node-RED version the latest tag points to
 date: 2025-04-09 12:00:00.0
+release: "2.16"
 authors: ['ben-hardill']
 tags:
  - changelog

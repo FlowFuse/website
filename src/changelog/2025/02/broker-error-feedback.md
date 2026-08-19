@@ -1,7 +1,8 @@
 ---
 title: Improved Broker Connection Feedback
-description:
+description: Clearer feedback when a third-party broker fails to connect, so you can diagnose and fix it faster.
 date: 2025-02-28 12:00:00.0
+release: "2.15"
 authors: ['joe-pavitt']
 tags:
   - changelog

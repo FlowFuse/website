@@ -2,6 +2,7 @@
 title: Azure DevOps Pipeline support
 description: DevOps Pipeline Git Stages now support Azure DevOps repositories alongside GitHub
 date: 2026-03-24 17:00:00
+release: "2.29"
 authors: ['ben-hardill']
 tags:
  - changelog

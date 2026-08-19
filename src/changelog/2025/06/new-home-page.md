@@ -2,6 +2,7 @@
 title: Introducing the New Home Page Experience
 description: "A modernized Home page with enhanced usability for FlowFuse users"
 date: 2025-06-24 12:00:00.0  
+release: "2.19"
 authors: ["serban-costin"]
 tags:
   - changelog

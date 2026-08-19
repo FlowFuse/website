@@ -2,6 +2,7 @@
 title: FlowFuse Tables with a little help from the Assistant
 description: "Build FlowFuse Tables Queries with a bit of AI Assistance."
 date: 2025-08-28 12:00:00.0  
+release: "2.21"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

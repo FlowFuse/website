@@ -79,7 +79,7 @@ const breadcrumbItems = computed(() => {
         <!-- Page content -->
         <div class="w-full">
           <div class="order-last md:order-first">
-            <div class="mt-6 mb-4 prose prose-blue main-content handbook-content">
+            <div class="mt-6 mb-4 prose prose-blue main-content handbook-content prose-natural-size-images">
               <FeatureTierBadges :plans="plans" />
               <ContentRenderer v-if="page" :value="page" />
             </div>

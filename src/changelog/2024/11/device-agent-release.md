@@ -2,6 +2,7 @@
 title: Device Agent 3.0 released
 description: "New version of the Device Agent drops support for old Node.js versions"
 date: 2024-11-08 13:00:00.0
+release: "2.11"
 
 authors: ["nick-oleary"]
 tags:

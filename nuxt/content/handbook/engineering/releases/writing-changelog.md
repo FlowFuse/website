@@ -45,7 +45,8 @@ Every post requires the following fields at the top of the file:
 |---|---|
 | `title` | The name of the feature or change. Title case. Keep it short. |
 | `description` | One sentence summarising the change. This appears in link previews and search results, so it should make sense without any surrounding context. |
-| `date` | The date and time the feature shipped, in `YYYY-MM-DD HH:mm:ss` format (e.g., `2026-03-24 17:00:00`). The timestamp ensures correct sorting when you add multiple features on the same day. |
+| `date` | The date and time the feature shipped, in `YYYY-MM-DD HH:mm:ss` format (e.g., `2026-03-24 17:00:00`). Zero-pad the month and day. The timestamp ensures correct sorting when you add multiple features on the same day. |
+| `release` | The release this ships in for Self Hosted users, quoted, as `MAJOR.MINOR` (e.g. `"2.33"`). This is the same version you name in the availability note, and the changelog page groups entries by it. Your change is live on FlowFuse Cloud already, so this is the next release that has not shipped yet: take the version from the current [milestone](https://github.com/FlowFuse/flowfuse/milestones). Quote it, or `2.30` is read as the number `2.3`. |
 | `authors` | Your handle from `src/_data/team`. Leave it out if there is no single clear author. |
 | `tags` | Always include `changelog`. |
 | `issues` | A list of related GitHub issue URLs. Link any issues that tracked the work this post announces. |
@@ -59,6 +60,7 @@ You can start a new changelog post with the following template:
 title: Short Feature Title
 description: One sentence summarising the change, written for a user, not an engineer.
 date: YYYY-MM-DD HH:mm:ss
+release: "X.Y"
 authors: your-handle
 tags:
   - changelog

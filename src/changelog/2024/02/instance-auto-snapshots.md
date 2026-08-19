@@ -2,6 +2,7 @@
 title: Instance Auto Snapshots
 description: FlowFuse Cloud now offers extended auto snapshots for hosted Node-RED instances. Automatically manage flow changes with up to 10 snapshots.
 date: 2024-02-28 13:00:00.0
+release: "2.2"
 authors: ["marian-demme"]
 tags:
     - changelog

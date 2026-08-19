@@ -2,6 +2,7 @@
 title: Snapshot Upload
 description: FlowFuse now supports uploading locally downloaded snapshots, facilitating easy migration between FlowFuse platforms or automation via APIs.
 date: 2024-05-16 13:03:00.0
+release: "2.5"
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog
