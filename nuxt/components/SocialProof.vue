@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // Infinite-scroll logo marquee, ported from src/_includes/social-proof.njk.
-// The original duplicates the logos into two sibling divs at runtime so the
-// CSS `slide` keyframe (translateX 0 -> -100%, see .social-proof-carousel in
-// src/css/style.css) can loop seamlessly; we render both copies directly in
-// the template instead of mutating the DOM.
-const { data: logos } = await useFetch('/api/home-logos')
+// Both copies are rendered directly (the original duplicates via JS) so the
+// `slide` keyframe can loop seamlessly.
+// useState so the shuffle happens once on the server and ships in the
+// payload, avoiding a client/server hydration mismatch.
+const logos = useState('home-logos', () => useHomeLogos())
 
 function altFromPath (path: string) {
     return path
