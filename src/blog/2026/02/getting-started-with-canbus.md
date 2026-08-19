@@ -1,4 +1,5 @@
 ---
+metaTitle: "CAN Bus Tutorial: Connect to Dashboards"
 title: "CAN Bus Tutorial: Connect to Dashboards, Cloud, and Industrial Systems"
 subtitle: "Build vehicle and industrial automation systems without low-level drivers or proprietary tools"
 description: "Learn how to set up SocketCAN on Linux, configure CAN interfaces, and build CAN bus applications using FlowFuse's visual programming platform."

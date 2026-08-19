@@ -21,6 +21,7 @@ before the [CEO's meeting hours](#ceo-meeting-hours).
 1. [Calendar Management](/handbook/operations/ceo-ops/calendar-management/)
 1. [CEO Task Management](/handbook/operations/ceo-ops/task-managment/)
 1. [Travel Booking](/handbook/operations/ceo-ops/travel-booking/)
+1. [ZJ Social Media](https://docs.google.com/document/d/1Iqj8EKx-cLHrm7CN9eOrZYdvzE3LynvvyozKOROzyYg/edit?tab=t.0) — check 3 times a week
 1. Other tasks to pick up (Peopleops, bizops, etc)
 
 ### CEO meeting hours

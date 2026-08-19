@@ -1,4 +1,5 @@
 ---
+metaTitle: "Run FlowFuse Device Agent on MacOS with Docker"
 title: Run FlowFuse Device Agent as a service on MacOS using Docker
 subtitle: Automating FlowFuse Device Agent on macOS with Docker and Colima.
 description: "Learn how to run the FlowFuse Device Agent as a service on macOS using Docker and Colima for reliable automatic startup."

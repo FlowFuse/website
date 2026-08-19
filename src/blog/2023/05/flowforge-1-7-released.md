@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 1.7: Remote Node-RED Editor Access"
 title: FlowFuse 1.7 Now Available with Remote Node-RED Editor Access
 subtitle: Further improving fleet management and maintenance of remote Node-RED instances
 description: "FlowFuse 1.7 is now available with remote Node-RED Editor access, letting teams edit flows directly on their own devices."

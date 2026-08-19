@@ -1,4 +1,5 @@
 ---
+metaTitle: "Scaling Industrial IoT Operations"
 title: Scaling Industrial IoT Operations While Maintaining Competitive Edge
 description: Discover how Walter built a future-proof industrial application platform with FlowFuse, connecting machines, unifying data, and scaling operations without increasing IT overhead.
 image: /images/stories/walter.png

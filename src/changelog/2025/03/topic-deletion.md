@@ -2,6 +2,7 @@
 title: MQTT Topic Management
 description: "MQTT Topics can now be removed from the Topic Hierarchy"
 date: 2025-03-12 12:00:00.0  
+release: "2.15"
 authors: ["stephen-mclaughlin"]
 tags:
   - changelog

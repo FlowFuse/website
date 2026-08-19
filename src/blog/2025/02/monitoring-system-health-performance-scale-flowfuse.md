@@ -1,4 +1,5 @@
---- 
+---
+metaTitle: "Monitoring Device Health at Scale" 
 title: "Monitoring Device Health and Performance at Scale with FlowFuse" 
 subtitle: "Track and Optimize Edge Device Performance with Node-RED and FlowFuse."
 description: "Learn how to monitor system health and performance with Node-RED, tracking CPU, memory, and other key device metrics at scale."

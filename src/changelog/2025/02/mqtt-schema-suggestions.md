@@ -2,6 +2,7 @@
 title: MQTT Smart Schema Suggestions  
 description: "MQTT topics suggestions"
 date: 2025-03-04 13:00:00.0  
+release: "2.15"
 authors: ["serban-costin"]  
 tags:  
 - changelog  

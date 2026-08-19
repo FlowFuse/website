@@ -23,6 +23,7 @@ Your job is simple in principle: work leads and move conversations forward. Nurt
 * Collaborate closely with Account Executives to ensure smooth handoff into discovery
 * Feed structured insight back to marketing on lead quality, objections, and messaging gaps
 * Track and report on core metrics: speed to first touch, MQL-to-meeting rate, follow-up velocity
+* HubSpot experience: Prior experience using HubSpot CRM for sequencing, activity logging, and managing inbound/outbound pipeline is a strong plus.
 
 ## Role Evolution
 

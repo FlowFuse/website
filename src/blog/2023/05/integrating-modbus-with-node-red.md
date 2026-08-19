@@ -1,4 +1,5 @@
 ---
+metaTitle: "Integrating a Modbus Device With Node-RED"
 title: "Best Practices Integrating a Modbus Device With Node-RED (2026)"
 subtitle: Integrate Modbus with Node-RED
 description: "Modbus is a widely adopted protocol for legacy manufacturing equipment. Learn best practices for integrating it with Node-RED."

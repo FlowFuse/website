@@ -1,4 +1,5 @@
 ---
+metaTitle: "How to Read and Write Siemens S7 PLC Data"
 title: "How to Read and Write Siemens S7 PLC Data, A Node-RED Guide (2026)"
 subtitle: "A step-by-step beginner's guide to reading, writing, and monitoring data from Siemens S7-1200 and S7-1500 PLCs."
 description: "Learn how to read and write Siemens S7 PLC data using this Node-RED guide, covering setup, addressing, and building dashboards."

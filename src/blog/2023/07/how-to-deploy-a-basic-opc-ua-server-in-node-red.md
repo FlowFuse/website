@@ -1,4 +1,5 @@
 ---
+metaTitle: "Deploy a Basic OPC-UA Server in Node-RED - Part 1"
 title: "How to Deploy a Basic OPC-UA Server in Node-RED - Part 1 (2026)"
 subtitle: OPC-UA Server Information Modeling in Node-RED
 description: "An introduction to OPC-UA and how to deploy a Node-RED server flow, Part 1 of a series on building OPC-UA servers with FlowFuse."

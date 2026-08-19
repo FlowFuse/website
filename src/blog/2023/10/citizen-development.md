@@ -1,4 +1,5 @@
 ---
+metaTitle: "Why Manufacturing Must Embrace Citizen Developers"
 title: Innovate from within - Why manufacturing must embrace Citizen Developers
 subtitle: Empower your Operational Technology teams as Citizen Developers
 description: "Explore the significance of Citizen Developers in manufacturing, bridging the IT-OT gap with low-code platforms like Node-RED."

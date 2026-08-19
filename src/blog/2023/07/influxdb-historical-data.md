@@ -1,4 +1,5 @@
 ---
+metaTitle: "Historical Data Dashboard with InfluxDB"
 title: Creating a Historical Data Dashboard with InfluxDB and Node-RED
 subtitle: Detailed instructions on how to create a Node-RED dashboard that shows historical data.
 description: Discover how to build a Historical Data Dashboard with InfluxDB and Node-RED. Capture, store, and visualize data for insightful analysis.

@@ -1,4 +1,5 @@
 ---
+metaTitle: "Edge vs Cloud AI in Manufacturing"
 title: "Edge vs Cloud AI in Manufacturing: Where Each Actually Belongs"
 subtitle: "Should we run our AI at the edge or in the cloud?"
 description: "Industrial AI works best when edge and cloud are complementary layers combining real-time inference with cloud model training."

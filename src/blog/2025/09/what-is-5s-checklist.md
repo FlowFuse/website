@@ -1,4 +1,5 @@
 ---
+metaTitle: "What is 5S Checklist? Benefits & Template"
 title: "What is 5S Checklist: Definition, Benefits, Implementation, and Template"
 subtitle: "Understand 5S Checklists, Improve Work Area Efficiency, and Start with a Ready-to-Use FlowFuse Template"
 description: "Learn what a 5S checklist is, how it improves work area organization, and how to implement it easily with FlowFuse, plus get a ready-to-use template."

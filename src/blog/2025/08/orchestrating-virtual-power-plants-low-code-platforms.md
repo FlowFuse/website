@@ -1,4 +1,5 @@
 ---
+metaTitle: "Orchestrating Virtual Power Plants with Low-Code"
 title: "Orchestrating Virtual Power Plants: How Low-Code Platforms Bridge the Gap"
 subtitle: "Why low-code tools are the missing link in scaling distributed energy systems"
 description: "Learn how low-code platforms like FlowFuse and Node-RED simplify integrating and managing distributed energy resources at scale."

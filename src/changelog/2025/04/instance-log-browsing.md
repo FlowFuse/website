@@ -2,6 +2,7 @@
 title: Better Node-RED log handling
 description: "Keeping the last 7 days of log history and making it easier to access"
 date: 2025-04-09 12:00:00.0  
+release: "2.16"
 authors: ["nick-oleary"]
 tags:
   - changelog

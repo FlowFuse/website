@@ -3,6 +3,7 @@ title: Device Agent v4 released
 subtitle: Updated Node.js, JSON logging, bearer token auth, and a more secure container runtime.
 description: Device Agent v4 ships with Node.js 22 as the default runtime, structured JSON logging, bearer token authentication, and a hardened container security model. This is a major release with breaking changes - read on to know what to update before upgrading.
 date: 2026-06-29
+release: "2.32"
 authors: ["nick-oleary"]
 tags:
   - changelog

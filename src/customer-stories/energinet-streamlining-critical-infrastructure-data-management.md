@@ -1,4 +1,5 @@
 ---
+metaTitle: "Critical Infrastructure Data for Denmark"
 title: Streamlining Critical Infrastructure Data Management for Denmark's Energy Transition
 description: Energinet, Denmark's national TSO, uses FlowFuse to govern real-time data pipelines across 7,000 km of grid infrastructure, connecting SCADA systems and IoT sensors to InfluxDB, MySQL, and Grafana.
 image: /images/stories/energinet.jpg

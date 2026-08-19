@@ -1,4 +1,5 @@
 ---
+metaTitle: "Boosting Sales with Digital Twin Demonstrations"
 title: Reducing Costs and Boosting Sales Performance Through Automated Digital Twin Demonstrations
 description: Neoception uses FlowFuse to automate demos and enable self-service customer trials, reducing costs, accelerating sales cycles, and improving conversion rates.
 image: /images/stories/neoception.png

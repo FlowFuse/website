@@ -1,4 +1,5 @@
 ---
+metaTitle: "OPC UA Tutorial: Advanced Monitoring & Alarms"
 title: "OPC UA Tutorial: Advanced Monitoring with Subscriptions, Alarms, and Historical Data"
 subtitle: "Master advanced OPC UA features in Node-RED for production-ready industrial automation"
 description: "Learn advanced OPC UA techniques in Node-RED: real-time subscriptions, alarm handling, historical data, and method calls."
