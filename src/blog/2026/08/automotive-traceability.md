@@ -5,7 +5,7 @@ subtitle: "How automotive manufacturers connect production data to individual pa
 description: "Learn how automotive traceability works, what data manufacturers need to track, and how to connect PLCs, scanners, and MES systems into a searchable production history."
 date: 2026-08-18
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/08/images/automotive-traceability.png
 tags:
   - flowfuse
 tldr:
