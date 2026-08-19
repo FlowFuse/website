@@ -103,4 +103,6 @@ FlowFuse also excels at connecting diverse systems. Its vast library of nodes al
 
 In our upcoming articles, we will go deeper. We plan to explain and practically demonstrate how FlowFuse can be used to build your own MES, giving you the control and flexibility you need without the typical high investment or the need to buy a pre-packaged system. Stay tuned to see how you can create a tailored MES solution for your factory with FlowFuse.
 
+This isn't just theoretical: [Arch Systems uses FlowFuse to connect more than 100 databases across its MES integration and automate task generation for global manufacturers](/customer-stories/scaling-manufacturing-automation-with-flowfuse/).
+
 If you're ready to explore how FlowFuse can help you build a modern MES tailored to your factory, [get in touch](/contact-us/) with our team today. We'd love to learn about your needs and help you take the next step toward a more efficient and profitable factory.

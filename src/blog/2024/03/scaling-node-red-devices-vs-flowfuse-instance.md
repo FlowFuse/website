@@ -37,3 +37,5 @@ Not all instances of Node-RED need to be deployed at the edge and can be deploye
 
 FlowFuse addresses scalability challenges in Node-RED deployments by providing an easy-to-use platform that enables users to manage multiple instances at scale while maintaining security and performance. By understanding the differences between a FlowFuse instance and a device instance, you can make informed decisions about your deployment strategy and leverage the full potential of Node-RED for your applications. Stay tuned for our upcoming blogs where we will dive deeper into the areas of security, dev ops, and backup solutions provided by FlowFuse.
 
+[Walter took this exact path, growing from a single Node-RED instance to more than 130 across its global production network without adding headcount to its IT team](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/), using FlowFuse device agents to manage that scale.
+

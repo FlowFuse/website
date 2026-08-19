@@ -292,6 +292,8 @@ If we go to `Views`, we can see the custom hierarchy defined in the example serv
 ![OPC Client View](./images/opc-ua-1/opc-client-view.png)
 ## Summary
 
-In this article, we compare OPC-UA to traditional fieldbus protocols, explain the importance of the OPC UA Information Model to understand how data is modeled in the address space of an OPC Server, and then walk through and deploy an example compact OPC-UA Server flow.  
+In this article, we compare OPC-UA to traditional fieldbus protocols, explain the importance of the OPC UA Information Model to understand how data is modeled in the address space of an OPC Server, and then walk through and deploy an example compact OPC-UA Server flow.
+
+This isn't just a lab exercise: [Opto 22, one of the original vendors behind the OPC standard, ships Node-RED pre-installed on its groov EPIC edge controllers](/customer-stories/opto22-embraces-node-red/), putting this same OPC-UA server pattern into production on the factory floor.
 
 In our next article, we will build a custom OPC-UA Server in Node-RED with data pulled from an Allen Bradley PLC over Ethernet/IP, using the PLC data to develop a custom OPC UA Information Model programmed in the OPC server address space.
