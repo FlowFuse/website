@@ -43,13 +43,11 @@ cta:
   description: "Connect PLCs, scanners, inspection systems, and databases into production workflows you can deploy across every line with FlowFuse."
 ---
 
-A car can contain thousands of individual parts, and many of those parts pass through multiple machines, production lines, suppliers, and quality checks before the vehicle leaves the factory. When something goes wrong, manufacturers need to answer one question: where did this part come from, and what happened to it along the way?
+A finished vehicle carries more than its physical components. It carries a production history: the materials used, processes performed, machines involved, and quality checks completed along the way.
 
 <!--more-->
 
-That is the problem automotive traceability solves. It connects a physical part or vehicle to the production data that belongs to it, including serial number, supplier, batch, machine, operator, process parameters, inspection results, and the time it passed through each stage.
-
-It sounds straightforward. In practice, it rarely is. A modern automotive factory runs PLCs controlling machines, vision systems inspecting components, robots moving parts, databases holding quality records, and separate software managing production. The challenge is not collecting all this data. It is connecting the data to the right part at the right time, and that connection is what makes traceability useful.
+Automotive traceability makes that history possible to reconstruct.
 
 ## What Is Automotive Traceability?
 
