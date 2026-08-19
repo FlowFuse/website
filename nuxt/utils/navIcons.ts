@@ -49,6 +49,7 @@ import iServerStack from '../../src/_includes/components/icons/server-stack.svg?
 import iShare from '../../src/_includes/components/icons/share.svg?raw'
 import iShieldCheck from '../../src/_includes/components/icons/shield-check.svg?raw'
 import iSparkles from '../../src/_includes/components/icons/sparkles.svg?raw'
+import iSquares2x2 from '../../src/_includes/components/icons/squares-2x2.svg?raw'
 import iSquaresPlus from '../../src/_includes/components/icons/squares-plus.svg?raw'
 import iStar from '../../src/_includes/components/icons/star.svg?raw'
 import iUns from '../../src/_includes/components/icons/uns.svg?raw'
@@ -99,6 +100,7 @@ export const navIcons: Record<string, string> = {
     'share': iShare,
     'shield-check': iShieldCheck,
     'sparkles': iSparkles,
+    'squares-2x2': iSquares2x2,
     'squares-plus': iSquaresPlus,
     'star': iStar,
     'uns': iUns,
