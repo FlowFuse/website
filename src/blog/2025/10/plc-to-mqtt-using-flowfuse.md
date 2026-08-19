@@ -111,7 +111,7 @@ As mentioned earlier, extracting data is the first and most complex step. Get th
 
 This is not just theory, Fortune 500 manufacturers are already running production systems on FlowFuse. Their consistent feedback? Massive cost savings compared to legacy systems, especially when deployed across multiple facilities. The enterprise features of FlowFuse handle the scale and security requirements large operations demand.
 
-The Node-RED ecosystem that powers FlowFuse offers comprehensive tocol support. You'll find nodes available for every major PLC manufacturer, including:
+The Node-RED ecosystem that powers FlowFuse offers comprehensive protocol support. You'll find nodes available for every major PLC manufacturer, including:
 
 - `node-red-contrib-modbus` – Modbus RTU/TCP PLCs and devices
 - `node-red-contrib-s7` – Siemens S7-300/400/1200/1500
