@@ -72,7 +72,7 @@ useSeoMeta({
             </div>
           </div>
         </div>
-        <HubSpotFormSection
+        <HubSpotForm
           title="Submit a ticket"
           description="If you need assistance with the FlowFuse application, account, or billing, please submit a ticket by filling out the form below."
           form-id="74ffcab1-a984-459a-871f-5751b8d69ac2"

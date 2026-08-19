@@ -51,7 +51,7 @@ useSeoMeta({
             </div>
           </div>
         </div>
-        <HubSpotFormSection
+        <HubSpotForm
           title="Contact us"
           description="Reach out to discuss how FlowFuse experts can help with your FlowFuse and Node-RED projects."
           form-id="b8ae3144-7eb2-4f5a-a9f8-f99e5c7bb07f"

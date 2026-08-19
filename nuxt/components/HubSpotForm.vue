@@ -1,11 +1,18 @@
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     formId: string
     cta?: string
     reference?: string
     region?: string
     portalId?: string
-}>()
+    /** Optional heading shown above the embed, e.g. "Submit a ticket". Renders the embed inside a centered gray-band section instead of bare. */
+    title?: string
+    description?: string
+    /** Tighter vertical spacing for the title/description section, matching professional-services' original layout. Only relevant when `title` is set. */
+    compact?: boolean
+}>(), {
+    compact: false,
+})
 
 const containerId = `hs-form-${props.formId.replace(/-/g, '')}`
 const region = props.region ?? 'eu1'
@@ -55,15 +62,25 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div>
-    <div :id="containerId" />
-    <div v-if="showFallback" class="ff-hubspot-consent-fallback text-center border bg-red-50/25 border-red-300 rounded-lg px-6 pt-8 pb-4">
-      <p class="text-red-400">
-        <strong>Hmm… there was supposed to be a form here</strong>
-      </p>
-      <p class="text-gray-600">
-        If this form does not load, try adjusting your privacy settings or switching browsers.
-      </p>
+  <div :class="title ? ['w-full bg-gray-50 px-0', compact ? 'py-8' : 'py-16'] : ''">
+    <template v-if="title">
+      <div class="text-center m-auto md:max-w-xl px-6" :class="compact ? 'pt-10 md:pt-8 mb-6 md:mb-12' : 'mb-6'">
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+      </div>
+    </template>
+    <div :class="title ? 'container m-auto md:max-w-xl' : ''">
+      <div :class="title ? ['px-6', { 'mb-16': compact }] : ''">
+        <div :id="containerId" />
+        <div v-if="showFallback" class="ff-hubspot-consent-fallback text-center border bg-red-50/25 border-red-300 rounded-lg px-6 pt-8 pb-4">
+          <p class="text-red-400">
+            <strong>Hmm… there was supposed to be a form here</strong>
+          </p>
+          <p class="text-gray-600">
+            If this form does not load, try adjusting your privacy settings or switching browsers.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
