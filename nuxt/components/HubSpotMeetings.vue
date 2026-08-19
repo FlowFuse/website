@@ -54,7 +54,8 @@ onMounted(() => {
         Prefer to view availability on this page?<br>
         <a
           class="cursor-pointer text-indigo-200 underline"
-          @click="() => (window as any).CookieConsent && (window as any).CookieConsent.showPreferences()"
+          type="button"
+          data-cc="show-preferencesModal"
         >Enable analytics cookies.</a>
       </p>
     </div>
