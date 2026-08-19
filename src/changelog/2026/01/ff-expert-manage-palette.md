@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: Enhanced Palette Integration"
 description: "The FlowFuse Expert now detects installed nodes and provides direct links to manage them."
 date: 2026-01-26 13:00:00.0
+release: "2.27"
 authors: ['steve-mclaughlin']
 tags:
   - changelog

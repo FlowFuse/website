@@ -2,6 +2,7 @@
 title: FlowFuse Expert Can Now Work With Your Tables
 description: The Expert can now list your FlowFuse Tables databases, inspect table schemas, and preview a sample of a table's rows on your behalf, and Tables now works correctly with schemas other than public.
 date: 2026-07-28 18:12:00
+release: "2.33"
 authors: ['andrea-palmieri']
 tags:
   - changelog

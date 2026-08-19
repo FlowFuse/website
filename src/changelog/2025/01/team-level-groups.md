@@ -2,6 +2,7 @@
 title: Team level view of Groups
 description: We've introduced a new feature that provides teams with a comprehensive view of Groups, helping to streamline collaboration and organization.
 date: 2025-01-16 14:00:00.0
+release: "2.13"
 authors: [ "serban-costin" ]
 tags:
   - changelog

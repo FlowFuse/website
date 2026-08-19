@@ -2,6 +2,7 @@
 title: Static File Service Navigation and Visibility
 description: Navigate static files with better navigation and visibility selector
 date: 2024-09-19 13:00:00.0
+release: "2.9"
 authors: ["serban-costin"]
 tags:
     - changelog

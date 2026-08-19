@@ -2,6 +2,7 @@
 title: New Blueprints added
 description: Explore FlowFuse Cloud's latest blueprints designed for manufacturing scenarios, including Andon Live, CRUD for MongoDB, Performance Operator Terminal and more.
 date: 2024-01-22 13:00:00.0
+release: "2.1"
 authors: ["marian-demme"]
 tags:
     - changelog

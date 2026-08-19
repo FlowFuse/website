@@ -66,24 +66,23 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
-        // The Application Guide pages are strongly structured rather than free prose: each page
-        // is a list of blocks, and most blocks are a tabbed set of patterns with a diagram and
-        // fixed sections. Authoring that as data keeps every page consistent and makes a copy
-        // edit a YAML edit. Rendered by pages/application-guide/[guide]/[slug].vue.
-        // File names must be NN-<slug>.yml and match the `slug` field - nuxt.config's
-        // prerender list derives the routes from the file names.
-        applicationGuide: defineCollection({
-            type: 'data',
-            source: 'application-guide/**/*.yml',
+        // Markdown-driven Application Guide pages, rendered by
+        // pages/application-guide/[guide]/[slug].vue via ContentRenderer, like /docs.
+        // The sidebar/order is driven by frontmatter (guide, slug, navOrder, navTitle).
+        applicationGuideDoc: defineCollection({
+            type: 'page',
+            source: 'application-guide/**/*.md',
             schema: z.object({
                 guide: z.enum(['flowfuse', 'node-red']),
                 slug: z.string(),
-                title: z.string(),
-                navOrder: z.number(),
+                navTitle: z.string().optional(),
+                navOrder: z.number().optional(),
+                // slug of the parent page — nests this page under it in the sidebar.
+                parent: z.string().optional(),
                 blurb: z.string().optional(),
-                // Block shapes vary by `type` and are validated by the components that render
-                // them; a discriminated union here would need updating for every new block type.
-                blocks: z.array(z.any()),
+                meta: z.object({
+                    description: z.string().optional(),
+                }).optional(),
             })
         }),
         // Source files stay at src/changelog/ (11ty's historical location) rather than
@@ -101,6 +100,11 @@ export default defineContentConfig({
                 authors: z.array(z.string()).optional(),
                 issues: z.array(z.string()).optional(),
                 metaTitle: z.string().optional(),
+                // The release an entry ships in, e.g. "2.33". Quoted in frontmatter so
+                // 2.30 does not parse as the number 2.3. Must be declared here or
+                // @nuxt/content strips it from the entry, which is what silently
+                // happened to `tags` on every changelog post.
+                release: z.string().regex(/^\d+\.\d+$/),
             })
         }),
         // Source files stay at src/blog/ (11ty's historical location) rather than
@@ -201,6 +205,21 @@ export default defineContentConfig({
                     products: z.array(z.string()),
                     results: z.array(z.string()),
                 }),
+            })
+        }),
+        // ThankYouStoriesBlock.vue also queries this `stories` collection - no separate one needed.
+        // Source files stay at src/webinars/ (still served by 11ty, see LEGACY_PREFIXES
+        // in nuxt/server/middleware/legacy.ts) - only queried for the "Latest/Upcoming
+        // Webinar" tile on the thank-you pages, so no `sitemap` field either.
+        webinars: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'webinars/**/*.md',
+            },
+            schema: z.object({
+                date: z.coerce.date(),
+                time: z.string().optional(),
             })
         }),
         ebooks: defineCollection({

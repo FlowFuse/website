@@ -2,6 +2,7 @@
 title: Immersive Mode for Remote Instances
 description: "Remote instances can now be accessed in Immersive Mode for a cleaner, distraction-free editing experience"
 date: 2026-02-11 12:00:00.0
+release: "2.27"
 authors: ['serban-costin']
 tags:
   - changelog

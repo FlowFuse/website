@@ -2,6 +2,7 @@
 title: Allow SSO groups to be shared with the Node-RED Dashboard
 description: SAML Group information included in the FlowFuse Authentication information passed to the Node-RED Dashboard
 date: 2025-09-25 12:00:00.0
+release: "2.22"
 authors: ['ben-hardill']
 tags:
   - changelog
