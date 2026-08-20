@@ -88,3 +88,5 @@ Integration servers, the gateways stitching multiple OPC UA systems together, ar
 The vulnerabilities threat actors exploit in OPC UA are rarely clever zero days. They're disabled trust lists, anonymous logins, stale ciphers, exposed servers, and trusted clients fed bad data. The protocol gives you the tools to close every one. The question is whether they're switched on.
 
 That's an architecture problem, and it's where we're headed next. In the follow-up, *How to Establish a Defensible OPC UA Security Architecture*, we'll turn these attack vectors into a concrete blueprint for building OPC UA deployments that hold up.
+
+See [why security isn't optional with OPC UA](/integrations/opcua/#opc-ua-security) for how FlowFuse's OPC UA client and server keep these openings closed by default.

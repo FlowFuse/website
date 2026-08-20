@@ -195,6 +195,6 @@ Storing data is only half the story. The InfluxDB In node lets you query reading
 
 ## Where to go from here
 
-You now have a durable, queryable record of your equipment's behavior. From here you can read more tags, tag each reading with its machine or line so you can slice the data later, and build dashboards on top of InfluxDB to chart trends and spot the slow drift that real-time values hide.
+You now have a durable, queryable record of your equipment's behavior. From here you can read more tags off the [OPC UA server](/integrations/opcua/#opc-ua-client-and-server-capabilities), tag each reading with its machine or line so you can slice the data later, and build dashboards on top of InfluxDB to chart trends and spot the slow drift that real-time values hide.
 
 The real payoff comes when you stop reacting to problems and start seeing them coming. A pump that's drawing a little more current each week, a tank that's taking longer to fill, a temperature that's creeping past its usual range, all of it now sits in a history you can query, instead of vanishing the moment it happens.
