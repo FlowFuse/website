@@ -2,6 +2,7 @@
 title: No more @flowforge/flowforge-device-agent releases
 description: "The FlowFuse Device agent will no longer update the old package name"
 date: 2025-09-22 12:00:00.0
+release: "2.22"
 authors: ['ben-hardill']
 tags:
  - changelog

@@ -2,6 +2,7 @@
 title: Improved Diagnostics
 description: "Improved diagnostic info directly to your inbox"
 date: 2025-01-14 13:00:00.0
+release: "2.13"
 
 
 authors: ["stephen-mclaughlin"]

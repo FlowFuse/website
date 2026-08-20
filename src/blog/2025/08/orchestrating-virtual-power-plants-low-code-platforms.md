@@ -59,6 +59,8 @@ FlowFuse is also designed with **industrial-grade security** and management capa
 
 And importantly, FlowFuse supports **collaborative development**. No more siloed knowledge stuck with one engineer. Teams can work together in a controlled environment, making development faster and more sustainable.
 
+This isn't just theoretical: [Energinet, Denmark's national transmission system operator, uses FlowFuse to govern real-time grid data pipelines across its energy network](/customer-stories/energinet-streamlining-critical-infrastructure-data-management/), meeting the reliability standards required of critical infrastructure at national scale.
+
 ## Ready to Build Smarter Energy Systems?
 
 Virtual Power Plants are the future of the energy grid, but building them without the right tools is slow, brittle, and expensive. Low-code platforms like **FlowFuse** change that. They offer a practical, scalable, and secure way to integrate DERs, manage fleet operations, and coordinate distributed energy like never before.

@@ -144,6 +144,8 @@ Instead, a better practice would be to more narrowly define what you want to acc
 ### Final Thoughts
 If not done right, there could be some hard lessons, so it’s best to monitor the processes to help track down bugs.  Add a log, keep your eyes out, and as a community let’s work to create stable systems.
 
+[Opto 22 customers rely on this same Node-RED-to-Modbus pattern in production](/customer-stories/opto22-embraces-node-red/), transforming Modbus registry data from groov EPIC controllers into human-readable, contextual data for other applications.
+
 ![Logging failures](./images/integrating-modbus-9.png "Logging failures")
 
 How readily upper management gives an “okay” to this new technology comes with how well it is implemented.  There will be some growing pains, but by the end, you will have supercharged your plant, bringing it into the 21st century.

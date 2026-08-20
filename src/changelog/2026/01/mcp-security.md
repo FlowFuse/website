@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: MCP-Powered Insights"
 description: "The FlowFuse expert can now access your secured Model Context Protocol (MCP) Tools and Resources"
 date: 2026-01-21 13:00:00.0
+release: "2.27"
 authors: ['steve-mclaughlin']
 tags:
   - changelog

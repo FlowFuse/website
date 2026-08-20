@@ -2,6 +2,7 @@
 title: Application Roles from SSO Groups
 description: Control Application level Role overrides from SSO Groups
 date: 2026-07-15 12:00:00
+release: "2.33"
 authors: ['ben-hardill']
 tags:
  - changelog

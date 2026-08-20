@@ -2,6 +2,7 @@
 title: Customisable Immersive Editor Drawer
 description: The immersive editor drawer is now pinnable, switchable, and resizable, with your preferences saved between sessions.
 date: 2026-04-29 12:00:00
+release: "2.30"
 authors: ['noley-holland']
 tags:
   - changelog

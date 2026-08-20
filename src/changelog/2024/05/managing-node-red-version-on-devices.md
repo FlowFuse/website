@@ -2,6 +2,7 @@
 title: Managing Node-RED versions on Devices
 description: FlowFuse now allows specifying Node-RED versions for application-assigned devices, overriding active snapshots for greater flexibility.
 date: 2024-05-09 13:01:00.0
+release: "2.4"
 authors: ["nick-oleary"]
 tags:
     - changelog

@@ -94,6 +94,7 @@
         --tw-prose-bold: var(--color-gray-500);
     }
     .prose img { max-width: 100%; }
+    .prose:not(.prose-natural-size-images) img { width: 100%; height: auto; }
 }
 
 @import "./style.page.css";
@@ -158,16 +159,27 @@ html, body {
     background-color: white;
 }
 
-*{
-    --tdur: 0.15s;
-    transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
-    -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+/* Layered (not a bare unlayered `*` rule) so Tailwind utilities — which compile
+   into @layer utilities, later in the `vendor, theme, base, components, utilities,
+   overrides` order declared above — can override transition-property/duration on
+   individual elements through normal cascade rules, instead of this always
+   winning outright regardless of specificity. */
+@layer base {
+    *{
+        --tdur: 0.15s;
+        transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+        -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+    }
 }
 
 /*
     Standard FlowFuse Sizings
+
+    In `components`, not `base` — beats @nuxt/ui's preflight reset (also in
+    `base`) since a later layer always wins, while still losing to explicit
+    size classes (e.g. `text-4xl`) in `utilities`.
 */
-@layer base {
+@layer components {
     h1 {
         font-size: 2.75rem;
         line-height: 3.1rem;
@@ -1807,15 +1819,11 @@ h4:hover .header-anchor::before {
     }
 
     .ff-certify-list > .ff-item {
-        @apply grid grid-cols-[1fr,50px,1fr] sm:grid-cols-[24px,1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr),60px,minmax(18px,1fr)];
-    }
-
-    .ff-certify-list > .ff-item:first-of-type {
-        @apply sm:grid-rows-[36px,minmax(18px,1fr)];
+        @apply grid grid-cols-[1fr_50px_1fr] sm:grid-cols-[24px_1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr)_60px_minmax(18px,1fr)];
     }
 
     .ff-certified {
-        @apply sm:grid-cols-[24px,1fr,86px];
+        @apply sm:grid-cols-[24px_1fr_86px];
     }
 
     .ff-line-container {

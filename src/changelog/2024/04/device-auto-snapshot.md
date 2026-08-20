@@ -2,6 +2,7 @@
 title: Direct Dashboard Access
 description: FlowFuse introduces Direct Dashboard Access with an 'open dashboard' button for streamlined navigation to Dashboard 2.0 UI.
 date: 2024-03-06 13:00:00.0
+release: "2.2"
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog

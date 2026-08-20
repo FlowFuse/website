@@ -2,6 +2,7 @@
 title: Developer Mode Now Accessible from the Immersive Editor
 description: The Developer Mode tab is now available directly in the immersive editor drawer, so you can manage snapshots and auto snapshot settings without leaving the editor.
 date: 2026-04-07 00:00:00
+release: "2.29"
 authors: ['noley-holland']
 tags:
   - changelog
