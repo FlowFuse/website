@@ -17,7 +17,30 @@ The Demo is where the customer first meets the **[FlowFuse Application Guide](/a
 
 The use case shown in the demo is a **hook**, not the point — ideally something close or relatable to the customer's own problem from [Discovery](/handbook/sales/meetings/discovery/) — used to make the delivery methods concrete. Coming out of the Demo, the customer should understand the **fundamentals** and the **delivery methods**: enough to move into the [Solution](/handbook/sales/meetings/solution/) stage, where the rest of the guide is tailored to their environment.
 
-## Setup - Before the Demo
+## Tailored demos
+
+A **tailored demo** is a real, working FlowFuse app built for a *specific* prospect's own use case, so the Demo walks the backend of *their* problem rather than a relatable stand-in. The goal is unchanged from any Demo — establish the [fundamentals](/application-guide/flowfuse/foundations/) and the [app delivery methods](/application-guide/flowfuse/app-delivery-methods/) (how code and components are shared and shipped). Using the prospect's *own* use case simply softens a barrier: they don't have to make sense of an unfamiliar example at the same time as taking in what FlowFuse is and how it ships apps. Tailored demos are their own asset — built per deal, owned by the engagement. They are also the starting point for the public catalog: if a tailored demo turns out to be a strong, broadly relevant use case, we can later decide to roll it into the reusable [Demo Apps](/handbook/sales/demo-apps/) registry so every prospect can find it. A canal monitoring and control demo, built for a water district from their own project plan, was the first of these.
+
+The process for creating one:
+
+1. **Fill out a PoV workbook and put it in the customer's Google Drive folder.** Take everything the customer has already shared — project plan, [Discovery](/handbook/sales/meetings/discovery/) notes, requirements — and fill out a [PoV workbook](/handbook/sales/pov-workbook/) from it, **one App tab per app**. This is a required step of every tailored demo: the completed workbook goes in the customer's folder in Google Drive. Even when the engagement isn't formally a PoV, the workbook is the right shape — it's the same use case the customer would be scoping for themselves, so it keeps the demo anchored to real pains rather than a feature tour.
+2. **Review before building.** The workbook gets a once-over from the SE lead before any build starts — confirming the right apps, the right architecture, and one tab per app. This review gate is what keeps the built demo honest to the use case.
+3. **Build the app in FlowFuse.** Build the working app in a **dedicated FlowFuse team for the customer**, driven by the reviewed workbook.
+4. **Host the tailored front end.** The app ships with its front end / architecture page hosted so the prospect can explore *their* use case ahead of the call.
+5. **Demo = walk the backend.** On the call, walk the backend of the app they've already seen on the front end.
+
+After the demo, decide whether the use case is worth publishing. A strong, broadly relevant tailored demo is a candidate to graduate into the [Demo Apps](/handbook/sales/demo-apps/) registry — its own `Demo App - {Use-case name}` team — where it becomes discoverable to every prospect.
+
+Filling the workbook and building the app are both AI-assisted (Claude, from the customer's project plan), which is what makes turning a prospect's requirements into a working, tailored demo fast enough to do per deal.
+
+## Standard demo environment
+
+::callout{icon="i-lucide-triangle-alert"}
+**Legacy — to be deprecated.** The standard demo environment and the script that follow
+are the original, one-size-fits-all demo. They are being superseded by
+[tailored demos](#tailored-demos) and the [Demo Apps](/handbook/sales/demo-apps/)
+registry, and will be deprecated once that model is fully established.
+::
 
 We have a team prepared on FlowFuse Cloud called [Acme Manufacturing Corp](https://app.flowfuse.com/team/acme-man-corp/overview) which includes everything you will need to complete this demo.
 
