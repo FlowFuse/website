@@ -2,6 +2,7 @@
 title: Customizing instance health-check settings
 description: FlowFuse now allows customization of instance health-check intervals to optimize performance for intensive workflows. 
 date: 2024-05-09 13:00:00.0
+release: "2.4"
 authors: ["nick-oleary"]
 tags:
     - changelog

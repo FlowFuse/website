@@ -3,6 +3,7 @@ title: Free Tier now more accessible to all
 description: Signing up to our Free Tier no longer requires a credit card
 date: 2025-03-06 12:00:00.0  
 lastUpdated: 2026-08-13
+release: "2.15"
 authors: ['nick-oleary']  
 tags:  
   - changelog  

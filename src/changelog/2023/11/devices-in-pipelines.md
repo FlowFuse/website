@@ -3,6 +3,7 @@ title: Devices in DevOps Pipelines
 description: "FlowFuse's latest update: Devices can now integrate into DevOps Pipelines, enhancing management flexibility and efficiency"
 date: 2023-11-23 12:00:00.0
 lastUpdated: 2026-08-13
+release: "1.14"
 authors: ["marian-demme"]
 tags:
     - changelog

@@ -87,7 +87,7 @@ Bear in mind that you will need to edit the server and database details in your 
 
 You should now be ready to test your flow is writing data to InfluxDB correctly. There is no output in Node-RED to confirm you data was written, so you will need to check directly on InfluxDB.
 
-![Checking the data has arrived in InfluxDB](./images/data_in_influx.gif "Checking the data has arrived in InfluxDB")
+<video autoplay loop muted playsinline aria-label="Checking the data has arrived in InfluxDB" width="904" height="654" preload="none"><source src="/node-red/database/images/data_in_influx.webm" type="video/webm" /></video>
 
 Great, our data has arrived correctly and is ready to be used.
 

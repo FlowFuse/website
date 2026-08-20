@@ -1,4 +1,5 @@
 ---
+metaTitle: "How to Build an Admin Dashboard with Node-RED"
 title: "How to Build an Admin Dashboard with Node-RED Dashboard 2.0 (2026)"
 subtitle: A guide to building an Admin Dashboard in Node-RED with Dashboard 2.0
 description: "Discover step-by-step instructions for building an admin-only page in Node-RED Dashboard 2.0 using the FlowFuse Multiuser addon."

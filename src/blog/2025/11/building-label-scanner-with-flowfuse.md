@@ -1,4 +1,5 @@
 ---
+metaTitle: "Building a Label Scanner for Product Labels"
 title: "Building a Label Scanner with FlowFuse for Product Labels & Serial Numbers"
 subtitle: "A practical guide to automating text recognition in manufacturing workflows"
 description: "Step-by-step guide to building an OCR system in FlowFuse for scanning product labels, extracting text, and validating serial numbers using Node-RED flows."
@@ -54,7 +55,7 @@ Once installed, you’ll see the **simple-ocr** node under the **Function** cate
 
 Now, let’s build a scanner dashboard that you can open on a mobile device, allowing the phone to act as a scanner for capturing product labels and serial numbers.
 
-![Label Scanner Built with FlowFuse](./images/flowfuse-scanner.gif)
+<video autoplay loop muted playsinline aria-label="Label Scanner Built with FlowFuse" width="1280" height="720" preload="none"><source src="/blog/2025/11/images/flowfuse-scanner.webm" type="video/webm" /></video>
 _[Label Scanner Built with FlowFuse]_
 
 To capture images directly from your browser, you can use the **FlowFuse Dashboard** along with the **Webcam widget**, let's install them first.

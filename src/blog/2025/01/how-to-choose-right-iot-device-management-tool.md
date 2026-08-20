@@ -1,4 +1,5 @@
 ---
+metaTitle: "Choosing the Right IIoT Device Management Tool"
 title: How to Choose the Right IIoT Device Management Software for Your Business
 subtitle: Key Features and Considerations for Effective IIoT Device Management
 description: Learn how to choose the right IIoT device management software for your business with this comprehensive guide. Key features and considerations explained.
@@ -128,6 +129,8 @@ So, after all’s said and done, the secret to choosing the right IIoT device ma
 ## FlowFuse – The Ultimate IIoT Device Management Solution
 
 FlowFuse is an open-source industrial data platform that simplifies the management, scaling, and security of IIoT devices. Whether you're managing a handful of devices or overseeing thousands, FlowFuse [consolidates everything into a single, intuitive interface](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/). With seamless cross-platform support, you can control all your devices from one central hub, streamlining operations and enhancing efficiency.
+
+[Paloma Irrigation and Drainage District chose FlowFuse for exactly this reason](/customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation/), managing remote Node-RED edge applications to automate delivery of 185,000 acre-feet of water annually.
 
 Built on the flexible [Node-RED](/node-red) framework, FlowFuse easily integrates with a wide range of hardware, services, and APIs with over [5000 community contributed nodes](/integrations/), allowing you to tailor and scale your IIoT network to meet evolving demands. The best part? You don’t need coding knowledge to get started, Node-RED’s visual programming interface makes it easy to create custom workflows with drag-and-drop functionality. With 24/7 expert support and an active community, you'll have access to the resources you need to resolve any challenges quickly.
 

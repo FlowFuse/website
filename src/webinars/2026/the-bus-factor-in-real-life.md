@@ -1,4 +1,5 @@
 ---
+metaTitle: "How FlowFuse Deployed Stack Resilience"
 title: "Applying The Bus Factor - How FlowFuse Deployed Stack Resilience in Real Life"
 subtitle: What the Bus Factor Reveals About Industrial System Resilience - and What Happened When We Had to Find Out the Hard Way
 meta:

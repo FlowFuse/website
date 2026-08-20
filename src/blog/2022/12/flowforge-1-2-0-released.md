@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 1.2: Single Sign On & Context Storage"
 title: FlowFuse 1.2 is now available with single sign on and persistent context storage
 subtitle: Our final release for 2022 with some great new features to try out
 description: "FlowFuse 1.2 is now available with single sign-on and persistent context storage, marking the final release for 2022 overall."

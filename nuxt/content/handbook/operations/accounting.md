@@ -45,6 +45,10 @@ An invoice should only be written off as bad debt if the client has already rece
 2. **Email Zeni Accounting Team** at team@zeni.ai with the invoice number to notify them that the invoice is being written off as bad debt. You can also flag it in Slack as an additional notice, but the main notice should go out via email. 
 4. **In QBO**, the Zeni accounting team will verify that the credit memo has been applied to the invoice — either automatically through the HubSpot sync or manually if it did not sync correctly.
 
+## Brex Rewards
+
+Monthly, redeem Brex reward points for cash via the [Brex Rewards dashboard](https://dashboard.brex.com/p/rewards?drawer=cashRedemption). The redeemed cash goes into the treasury account, where it's invested into T-bills.
+
 ## Tax Compliance Calendar
 
 

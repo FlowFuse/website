@@ -96,6 +96,9 @@ Start by creating a [FlowFuse account](https://app.flowfuse.com/account/create).
 
 Your HMI needs to talk to your PLC to read equipment status and send control commands. FlowFuse handles this through Node-RED's protocol nodes, which support every major industrial controller. No proprietary gateways, no per-tag licensing, no vendor lock-in, just direct communication with your PLC.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 Choose the node that matches your PLC:
 
 - **[node-red-contrib-modbus](/node-red/protocol/modbus/)** – Modbus RTU/TCP PLCs and devices

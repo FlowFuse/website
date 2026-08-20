@@ -22,7 +22,7 @@ const publications = [
 ]
 
 useHead({
-    title: 'Publications: eBooks and Whitepapers • FlowFuse',
+    title: 'Publications: eBooks and Whitepapers',
     meta: [
         { name: 'description', content: 'Browse our library of whitepapers and eBooks and discover the power of our low-code industrial data platform.' },
     ]

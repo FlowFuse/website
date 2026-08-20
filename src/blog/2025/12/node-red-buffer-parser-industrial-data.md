@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Buffer Parser Guide for Modbus Data"
 title: "Node-RED Buffer Parser Guide: Decode Modbus and Industrial Device Data (2026)"
 subtitle: "A practical guide to visual buffer parsing in Node-RED"
 description: "Learn how to parse Modbus and industrial device buffers in Node-RED using the visual Buffer Parser node, no coding required."
@@ -111,6 +112,9 @@ The device manual says this buffer breaks down as:
 - Bytes 3-4: Temperature reading
 - Bytes 5-6: Humidity reading
 - Bytes 7-8: CRC checksum
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 You need to extract temperature and humidity. Everything else is Modbus protocol overhead.
 

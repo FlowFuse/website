@@ -2,6 +2,7 @@
 title: FlowFuse expert action links
 description: When the Expert instructs you to select nodes or search flows, it now presents direct action links
 date: 2026-04-09 00:00:00
+release: "2.29"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

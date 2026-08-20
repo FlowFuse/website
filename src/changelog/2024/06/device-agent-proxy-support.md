@@ -2,6 +2,7 @@
 title: Running the Device Agent behind an HTTP proxy
 description: Running the Device Agent behind an HTTP proxy
 date: 2024-06-18 13:00:00.0
+release: "2.6"
 authors: ["nick-oleary"]
 tags:
     - changelog

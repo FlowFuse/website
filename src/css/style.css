@@ -94,6 +94,7 @@
         --tw-prose-bold: var(--color-gray-500);
     }
     .prose img { max-width: 100%; }
+    .prose:not(.prose-natural-size-images) img { width: 100%; height: auto; }
 }
 
 @import "./style.page.css";
@@ -158,16 +159,27 @@ html, body {
     background-color: white;
 }
 
-*{
-    --tdur: 0.15s;
-    transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
-    -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+/* Layered (not a bare unlayered `*` rule) so Tailwind utilities — which compile
+   into @layer utilities, later in the `vendor, theme, base, components, utilities,
+   overrides` order declared above — can override transition-property/duration on
+   individual elements through normal cascade rules, instead of this always
+   winning outright regardless of specificity. */
+@layer base {
+    *{
+        --tdur: 0.15s;
+        transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+        -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+    }
 }
 
 /*
     Standard FlowFuse Sizings
+
+    In `components`, not `base` — beats @nuxt/ui's preflight reset (also in
+    `base`) since a later layer always wins, while still losing to explicit
+    size classes (e.g. `text-4xl`) in `utilities`.
 */
-@layer base {
+@layer components {
     h1 {
         font-size: 2.75rem;
         line-height: 3.1rem;
@@ -1807,15 +1819,11 @@ h4:hover .header-anchor::before {
     }
 
     .ff-certify-list > .ff-item {
-        @apply grid grid-cols-[1fr,50px,1fr] sm:grid-cols-[24px,1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr),60px,minmax(18px,1fr)];
-    }
-
-    .ff-certify-list > .ff-item:first-of-type {
-        @apply sm:grid-rows-[36px,minmax(18px,1fr)];
+        @apply grid grid-cols-[1fr_50px_1fr] sm:grid-cols-[24px_1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr)_60px_minmax(18px,1fr)];
     }
 
     .ff-certified {
-        @apply sm:grid-cols-[24px,1fr,86px];
+        @apply sm:grid-cols-[24px_1fr_86px];
     }
 
     .ff-line-container {
@@ -1948,46 +1956,47 @@ h4:hover .header-anchor::before {
         animation: 60s slide infinite linear;
     }
 
+    /* Descendant selector so sizing reaches <img> inside 11ty's <picture> wrapper too. */
     .social-proof-carousel div img,
     .social-proof-carousel div picture {
         flex-shrink: 0;
         max-height: 60px;
         width: auto;
         display: inline-block;
-        @apply mx-6;
         overflow-clip-margin: content-box;
         overflow: clip;
     }
+
+    /* Child combinator so this only applies once per logo (descendant would double it: picture + nested img). */
+    .social-proof-carousel div > img,
+    .social-proof-carousel div > picture {
+        @apply mx-12;
+    }
 }
 
-/* Tier badges for changelog & blog */
+/* Plan availability badges, rendered by FeatureTierBadges.vue on changelog and docs pages */
 .ff-tier-badges {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 8px;
     margin: 8px 0 16px 0;
 }
 
-.ff-tier-badges--h2 {
-    margin-top: -15.2px;
-}
-
-.ff-tier-badge {
-    @apply inline-flex whitespace-nowrap text-current;
+.ff-tier-badges__label {
+    @apply text-gray-500 font-medium;
     font-size: 0.75rem;
     line-height: 1rem;
 }
 
-.ff-tier-badge__label {
-    @apply px-2.5 py-0.5 text-gray-600 font-medium bg-gray-100 border border-r-0 border-gray-200 rounded-l;
+.ff-tier-badge {
+    @apply inline-flex whitespace-nowrap px-2.5 py-0.5 text-gray-600 font-medium bg-gray-100 border border-gray-200 rounded no-underline;
+    font-size: 0.75rem;
+    line-height: 1rem;
 }
 
-.ff-tier-badge__value {
-    @apply px-2.5 py-0.5 text-gray-500 font-light bg-white border border-l-0 border-gray-200 rounded-r;
-}
-
-.ff-feature-info {
-    margin: 4px 0 16px 0;
+.ff-tier-badge:hover {
+    @apply text-indigo-600 border-indigo-200 bg-indigo-50 no-underline;
 }
 
 .ff-related-changelogs {
@@ -2248,6 +2257,11 @@ lite-youtube {
     background-size: cover;
     background-position: center;
     border-radius: 0.75rem;
+    /* Overrides fixed inline width/height some posts embed this with, so it stays responsive. */
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
 }
 
 lite-youtube::before {

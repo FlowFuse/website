@@ -1,4 +1,5 @@
 ---
+metaTitle: "The Death of Point-to-Point Connections"
 title: "The Death of Point-to-Point: Why You Need a Unified Namespace"
 subtitle: Traditional Point-to-Point Connection Model is Holding Back Manufacturing Innovation - Unified Namespace (UNS) Can Transform Factory Operations
 description: "Learn why point-to-point connections are outdated in manufacturing and how a Unified Namespace simplifies system integration."

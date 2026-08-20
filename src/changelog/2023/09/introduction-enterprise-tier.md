@@ -3,6 +3,7 @@ title: Introducing the Enterprise Tier
 description: Introducing FlowFuse's new Enterprise Tier. Upgrade via Team Settings for Cloud customers or by license for self-hosted. Find features and pricing details on our website.
 date: 2023-09-28 12:00:00.1
 lastUpdated: 2026-08-13
+release: "1.12"
 authors: ["marian-demme"]
 tags:
     - changelog

@@ -95,6 +95,9 @@ While Node-RED doesn't include Modbus nodes by default, adding them to your pale
 
 Next, you'll need to configure the Modbus connection based on your device type. Modbus devices can communicate using two primary protocols: **Modbus RTU** (over serial) or **Modbus TCP** (over Ethernet/Wi-Fi). The specific choice depends on the type of Device you are working with.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 1. Drag a **Modbus Read** node onto your Node-RED Canvas.
 2. Double-click on the **Modbus Read** node to open its configuration.
 3. In the configuration window:

@@ -57,7 +57,7 @@ Now that we have completed all the basic and necessary configurations for the fo
 
 ### Adding Input Fields to the Form Statically
 
-![Adding Form Elements](./images/adding-form-element.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Adding Form Elements" width="800" height="726" preload="none"><source src="/blog/2025/06/images/adding-form-element.webm" type="video/webm" /></video>
 _Adding Form Elements_
 
 The widget supports various input element types that can be tailored to specific use cases, from collecting simple text to selecting dates or choosing from predefined options.
@@ -335,7 +335,7 @@ For practice, we use an SQLite database. However, since your recipe is often use
 
 *Note: This is just a simple demo we built. When using it in a production environment, you might need to make additional considerations based on your specific requirements."*
 
-![FlowFuse form designed for updating production recipes. The form shows a dropdown for recipe selection, dynamically populates fields with recipe parameters, and allows the user to modify and submit updates.](./images/recipe-update-form.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="FlowFuse form designed for updating production recipes. The form shows a dropdown for recipe selection, dynamically populates fields with recipe parameters, and allows the user to modify and submit updates." width="800" height="415" preload="none"><source src="/blog/2025/06/images/recipe-update-form.webm" type="video/webm" /></video>
 _A demonstration of the dynamic **form for recipe updates** in action, showing how it streamlines data entry and submission._
 
 Below is the complete flow of the system we built.

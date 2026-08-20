@@ -1,4 +1,5 @@
 ---
+metaTitle: "Using Different Protocols with Node-RED"
 eleventyNavigation:
   key: "Communication Protocols"
   order: 9

@@ -3,6 +3,7 @@ title: "Team Plan Renamed to Pro Plan"
 description: "The Team tier has been renamed to Pro tier to better reflect the plan's capabilities and target audience"
 date: 2025-08-04 12:00:00.0
 lastUpdated: 2026-08-13
+release: "2.21"
 authors: ["greg-stoutenburg"]
 tags:
   - changelog

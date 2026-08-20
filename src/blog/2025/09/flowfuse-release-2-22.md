@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.22: Expert for Node Editing & More"
 title: "FlowFuse 2.22: FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 subtitle: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
 description: "FlowFuse Expert for node editing, FlowFuse Broker schema autodetection, Improved Snapshots Interface, eCharts enablement, and FlowFuse Dashboard Updates"
@@ -16,7 +17,7 @@ FlowFuse 2.22 provides more powerful development by bringing the FlowFuse Assist
 <!--more-->
 
 ## AI Expert for Node Editing
-![Gif showing FlowFuse Expert in Function node](./images/inline-assist-function.gif)
+<video autoplay loop muted playsinline aria-label="Video showing FlowFuse Expert in Function node" width="1106" height="789" preload="none"><source src="/blog/2025/09/images/inline-assist-function.webm" type="video/webm" /></video>
 _FlowFuse Expert at work_
 
 We've enhanced the capabilities of the FlowFuse Expert, which now provides automatic suggestions to draft and edit your code that extends to Tables nodes, Dashboard Template nodes (ui-template), and Function nodes. You can now simply start typing, and the FlowFuse Assistant will provide code for you based on your context, making the FlowFuse Assistant your AI copilot in Node-RED.

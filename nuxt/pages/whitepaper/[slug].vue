@@ -11,7 +11,7 @@ if (!page.value) {
 }
 
 useHead({
-    title: `${page.value.meta?.title} • FlowFuse`,
+    title: page.value.meta?.title,
     meta: [
         { name: 'description', content: page.value.meta?.description ?? '' },
     ]

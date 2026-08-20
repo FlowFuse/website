@@ -46,9 +46,12 @@ So, with that in mind, we wanted to offer a new "Getting Started" guide that wil
 
 ## Adding your first widgets
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 With the nodes installed, getting started is as easy as choosing a node from the Palette (the left-hand side list of nodes) in Node-RED, and dropping it onto your canvas.
 
-![Screen recording to show how easy it is to deploy your first Dashboard 2.0 application.](./images/dashboard-getting-started-add-widget.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Screen recording to show how easy it is to deploy your first Dashboard 2.0 application." width="800" height="460" preload="none"><source src="/blog/2024/03/images/dashboard-getting-started-add-widget.webm" type="video/webm" /></video>
 <figcaption>Screen recording to show how easy it is to deploy your first Dashboard 2.0 application.</figcaption>
 
 In this case, we drop in a `ui-button`, click "Deploy" and then can see the button running live in our user interface.
@@ -83,7 +86,6 @@ Currently, we have three different options for page layout:
 - **Fixed:** ([docs](https://dashboard.flowfuse.com/layouts/types/fixed.html)) Each component will render at a _fixed_ width, no matter what the screen size is. The "width" property is converted a fixed pixel value (multiples of 48px by default).
 - **Notebook:** ([docs](https://dashboard.flowfuse.com/layouts/types/notebook.html)) This layout will stretch to 100% width, up to a maximum width of 1024px, and will centrally align. It's particularly useful for storytelling (e.g. articles/blogs) or analysis type user interfaces (e.g. Jupyter Notebooks), where you want the user to digest content in a particular order through scrolling.
 
-
 ### Navigation Sidebar
 
 Dashboard 2.0 offers various options on the appearance of the navigation sidebar:
@@ -93,7 +95,6 @@ Dashboard 2.0 offers various options on the appearance of the navigation sidebar
 - **Collapse to Icons:** When minimized, users can still navigate between pages by clicking on the icons representing each page in the sidebar.
 - **Appear over Content:** When the sidebar is opened, the page is given an overlay, and the sidebar sits on top.
 - **Always Hide:** The sidebar will never show, and navigation between pages can instead be driven by [`ui-control`](https://dashboard.flowfuse.com/nodes/widgets/ui-control.html).
-
 
 ### Define Your Layout
 
@@ -146,7 +147,7 @@ The final step we're going to make is to modify our `ui-button`. We're going to 
 
 With all of this together, we have the following functional Dashboard:
 
-![Short animation showing the final functional dashboard](./images/dashboard-getting-started-final.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Short animation showing the final functional dashboard" width="800" height="450" preload="none"><source src="/blog/2024/03/images/dashboard-getting-started-final.webm" type="video/webm" /></video>
 <figcaption>Short animation showing the final functional dashboard.</figcaption>
 
 ## Next Steps
