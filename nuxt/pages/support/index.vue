@@ -21,7 +21,7 @@ useSeoMeta({
           <h4>Find answers<span class="text-indigo-600"> instantly</span></h4>
         </div>
         <div class="max-w-screen-lg m-auto px-6 md:px-0 md:mb-10">
-          <AlgoliaSearch source-id="everything" />
+          <AlgoliaSearch source-id="everything" index-filter="NOT category:handbook" />
         </div>
         <div class="container m-auto max-w-screen-lg ">
           <div class="grid px-6 grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-12 gap-y-12 mb-16">
