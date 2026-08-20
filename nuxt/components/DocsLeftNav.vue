@@ -37,6 +37,20 @@ function isOpen(node: DocsNavNode): boolean {
 function ulStyle(node: DocsNavNode) {
     return isOpen(node) ? { maxHeight: 'initial' } : {}
 }
+
+// Where an entry should point, or null for an entry that is only a name.
+//
+// A section whose own page just redirects (docs/install/index.md and eleven more) names the
+// section but is not one of its pages, so it renders as a heading above its children rather
+// than as a second link to the same place. A redirect page with no children is different:
+// docs/community-support.md and docs/admin/licensing.md point at the Node-RED forum and the
+// pricing page, so they stay clickable, straight to the target. Nothing links to the
+// redirecting URL itself, which is what nuxt-link-checker would flag on every docs page.
+function linkTarget(node: DocsNavNode): string | null {
+    if (node.isPage) return node.path
+    if (node.redirectTo && node.children.length === 0) return node.redirectTo
+    return null
+}
 </script>
 
 <template>
@@ -51,7 +65,8 @@ function ulStyle(node: DocsNavNode) {
 
         <template v-for="entry in group.children" :key="entry.path">
           <li :class="{ active: isActive(entry.path), open: isOpen(entry) && entry.children.length > 0 }">
-            <NuxtLink :href="entry.path">{{ entry.title }}</NuxtLink>
+            <NuxtLink v-if="linkTarget(entry)" :href="linkTarget(entry)!">{{ entry.title }}</NuxtLink>
+            <span v-else class="nav-label">{{ entry.title }}</span>
             <button v-if="entry.children.length"
               @click="toggle(entry.path)"
               :aria-expanded="isOpen(entry).toString()"
@@ -69,7 +84,8 @@ function ulStyle(node: DocsNavNode) {
             <ul class="handbook-nav-nested" :style="ulStyle(entry)">
               <template v-for="child in entry.children" :key="child.path">
                 <li :class="{ active: isActive(child.path), open: isOpen(child) && child.children.length > 0 }">
-                  <NuxtLink :href="child.path">{{ child.title }}</NuxtLink>
+                  <NuxtLink v-if="linkTarget(child)" :href="linkTarget(child)!">{{ child.title }}</NuxtLink>
+                  <span v-else class="nav-label">{{ child.title }}</span>
                   <button v-if="child.children.length"
                     @click="toggle(child.path)"
                     :aria-expanded="isOpen(child).toString()"
@@ -87,7 +103,8 @@ function ulStyle(node: DocsNavNode) {
                   <ul class="handbook-nav-nested-2" :style="ulStyle(child)">
                     <li v-for="grandchild in child.children" :key="grandchild.path"
                       :class="{ active: isActive(grandchild.path) }">
-                      <NuxtLink :href="grandchild.path">{{ grandchild.title }}</NuxtLink>
+                      <NuxtLink v-if="linkTarget(grandchild)" :href="linkTarget(grandchild)!">{{ grandchild.title }}</NuxtLink>
+                      <span v-else class="nav-label">{{ grandchild.title }}</span>
                     </li>
                   </ul>
                 </li>

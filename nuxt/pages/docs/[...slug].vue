@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDocsNavTree, findDocsBreadcrumb } from '~/composables/useDocsNav'
+import { useDocsNavTree, findDocsBreadcrumb, findDocsSurround } from '~/composables/useDocsNav'
 
 definePageMeta({ layout: 'default' })
 
@@ -50,7 +50,22 @@ const breadcrumbItems = computed(() => {
     const withRoot = [{ title: 'Docs', path: '/docs' }, ...crumbs]
     return withRoot.map((crumb, i) => ({
         label: crumb.title,
-        ...(i === withRoot.length - 1 ? {} : { to: crumb.path }),
+        // A section crumb whose own page only redirects links to the target instead, so no
+        // crumb points at a URL that answers with a 301.
+        ...(i === withRoot.length - 1 ? {} : { to: (crumb as { redirectTo?: string }).redirectTo ?? crumb.path }),
+    }))
+})
+
+// Previous and next page in sidebar reading order, so a reader finishing a page has
+// somewhere to go. Order comes from the same tree the sidebar renders, rather than from
+// queryCollectionItemSurroundings, which reads in collection order and would disagree with
+// the nav on every page.
+const surround = computed(() => {
+    const [previous, next] = findDocsSurround(navGroups.value ?? [], route.path)
+    return [previous, next].map(entry => entry && ({
+        path: entry.path,
+        title: entry.title,
+        description: entry.group,
     }))
 })
 </script>
@@ -83,6 +98,7 @@ const breadcrumbItems = computed(() => {
               <FeatureTierBadges :plans="plans" />
               <ContentRenderer v-if="page" :value="page" />
             </div>
+            <UContentSurround :surround="surround" class="not-prose mb-10" />
           </div>
         </div>
       </div>

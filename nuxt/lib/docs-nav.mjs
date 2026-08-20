@@ -17,12 +17,17 @@ export function buildDocsNav (pages) {
     const tree = {}
 
     // A page whose only purpose is `redirect: { to }` (e.g. FlowFuse/flowfuse's
-    // docs/admin/licensing.md and docs/community-support.md) has no content of its own to
-    // link to from the sidebar. Rendering it as a nav entry means every single docs page
-    // gets flagged by nuxt-link-checker's `redirects` inspection, so it's left out.
-    const linkable = pages.filter(page => !page.redirect)
-
-    const sorted = [...linkable].sort((a, b) => {
+    // docs/install/index.md and docs/community-support.md) has no content of its own, but it
+    // is where its section's `navTitle`, `navGroup` and `navGroupOrder` are declared. It
+    // used to be dropped here, which cost twelve sections their title and their group: the
+    // sidebar labelled them with the directory slug and dumped them in Other.
+    //
+    // So it stays in the tree and contributes its frontmatter, and `isPage` marks it as
+    // somewhere a reader cannot land. Nothing links to the redirecting URL itself, which is
+    // what would otherwise flag every docs page in nuxt-link-checker's `redirects`
+    // inspection: DocsLeftNav renders a section as an unlinked heading, and a childless
+    // entry links to `redirectTo` instead.
+    const sorted = [...pages].sort((a, b) => {
         const depthA = a.path.split('/').filter(Boolean).length
         const depthB = b.path.split('/').filter(Boolean).length
         return depthA - depthB
@@ -44,6 +49,11 @@ export function buildDocsNav (pages) {
                     group: isLeaf ? (page.navGroup ?? undefined) : undefined,
                     groupOrder: isLeaf ? (page.navGroupOrder ?? undefined) : undefined,
                     order: isLeaf ? (page.navOrder ?? Infinity) : Infinity,
+                    // False while this is somewhere a reader cannot land: a position
+                    // invented to hold children, e.g. /docs/user/teams when the only page
+                    // is /docs/user/teams/billing, or a page that only redirects.
+                    isPage: isLeaf && !page.redirect,
+                    redirectTo: isLeaf ? (page.redirect?.to ?? undefined) : undefined,
                     children: {},
                 }
             } else if (isLeaf) {
@@ -52,6 +62,8 @@ export function buildDocsNav (pages) {
                 current[part].group = page.navGroup ?? undefined
                 current[part].groupOrder = page.navGroupOrder ?? undefined
                 current[part].order = page.navOrder ?? Infinity
+                current[part].isPage = !page.redirect
+                current[part].redirectTo = page.redirect?.to ?? undefined
             }
 
             current = current[part].children
@@ -65,6 +77,8 @@ export function buildDocsNav (pages) {
             group: node.group,
             groupOrder: node.groupOrder,
             order: node.order,
+            isPage: node.isPage,
+            redirectTo: node.redirectTo,
             children: toDocsNavNodes(node.children),
         }))
     }
@@ -112,4 +126,55 @@ export function findDocsBreadcrumb (groups, path) {
     // findPageBreadcrumb excludes the current page by default - callers here want the
     // full chain (they decide themselves whether the last crumb should link anywhere).
     return findPageBreadcrumb(groups.flatMap(g => g.children), path, { current: true })
+}
+
+function withoutTrailingSlash (path) {
+    return path.length > 1 && path.endsWith('/') ? path.slice(0, -1) : path
+}
+
+/**
+ * Every docs page in sidebar reading order: groups in `navGroupOrder`, sections in
+ * `navOrder`, each section followed by its own children.
+ *
+ * Positions the tree invented to hold children are skipped, so the sequence only contains
+ * pages a reader can actually land on. Each entry carries its group name, because the
+ * sequence runs straight through the manual and a reader crossing from the last page of one
+ * group into the first of the next deserves to be told.
+ *
+ * @param {ReturnType<typeof buildDocsNav>} groups
+ * @returns {Array<{path: string, title: string, group: string}>}
+ */
+export function flattenDocsNav (groups) {
+    const pages = []
+
+    function walk (nodes, group) {
+        for (const node of nodes) {
+            if (node.isPage) pages.push({ path: node.path, title: node.title, group })
+            walk(node.children, group)
+        }
+    }
+
+    for (const group of groups ?? []) walk(group.children, group.name)
+
+    return pages
+}
+
+/**
+ * The pages either side of `path` in that reading order, as `[previous, next]`, with null
+ * where there is nothing to go to.
+ *
+ * A path that is not a page of its own, an invented node or an unknown URL, gets no
+ * neighbours rather than the neighbours of the nearest position: offering a pair of links
+ * on a page that does not render is worse than offering none.
+ *
+ * @param {ReturnType<typeof buildDocsNav>} groups
+ * @param {string} path
+ */
+export function findDocsSurround (groups, path) {
+    const pages = flattenDocsNav(groups)
+    const current = pages.findIndex(page => page.path === withoutTrailingSlash(path ?? ''))
+
+    if (current === -1) return [null, null]
+
+    return [pages[current - 1] ?? null, pages[current + 1] ?? null]
 }

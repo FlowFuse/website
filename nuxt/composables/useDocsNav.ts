@@ -1,7 +1,7 @@
 // The builder lives in nuxt/lib/ as plain JS so `node --test` can run it directly
 // (same reason as docs-sync.mjs); this file is the typed surface components import.
 // @ts-ignore untyped module
-import { buildDocsNav as build, findDocsBreadcrumb as findBreadcrumb } from '../lib/docs-nav.mjs'
+import { buildDocsNav as build, findDocsBreadcrumb as findBreadcrumb, findDocsSurround as findSurround, flattenDocsNav as flatten } from '../lib/docs-nav.mjs'
 
 export interface DocsNavNode {
     // Matches @nuxt/content's ContentNavigationItem shape (title/path/children)
@@ -10,7 +10,19 @@ export interface DocsNavNode {
     group?: string
     groupOrder?: number
     order: number
+    // False for somewhere a reader cannot land: a position invented to hold children, or a
+    // page that only redirects. Such a node names a section without being one of its pages.
+    isPage: boolean
+    // Where a redirect-only page points, so the sidebar can offer the target instead of the
+    // redirecting URL.
+    redirectTo?: string
     children: DocsNavNode[]
+}
+
+export interface DocsNavEntry {
+    path: string
+    title: string
+    group: string
 }
 
 export interface DocsNavGroup {
@@ -42,6 +54,16 @@ export function buildDocsNav (pages: DocsNavPage[]): DocsNavGroup[] {
 
 export function findDocsBreadcrumb (groups: DocsNavGroup[], path: string): DocsNavNode[] {
     return findBreadcrumb(groups, path)
+}
+
+/** Every docs page in sidebar reading order, redirects and invented positions left out. */
+export function flattenDocsNav (groups: DocsNavGroup[]): DocsNavEntry[] {
+    return flatten(groups)
+}
+
+/** The pages either side of `path` in that order, as `[previous, next]`. */
+export function findDocsSurround (groups: DocsNavGroup[], path: string): [DocsNavEntry | null, DocsNavEntry | null] {
+    return findSurround(groups, path)
 }
 
 export const useDocsNavTree = () =>
