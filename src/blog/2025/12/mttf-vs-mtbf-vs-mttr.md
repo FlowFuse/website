@@ -10,8 +10,8 @@ tags:
     - flowfuse
 cta:
   type: contact
-  title: "Automate MTTF Tracking Across Your Fleet"
-  description: "FlowFuse connects to PLCs, SCADA, and your CMMS to calculate MTTF from real operating data instead of manual logs."
+  title: "Automate MTTF, MTBF & MTTR Tracking Across Your Fleet"
+  description: "FlowFuse connects to PLCs, SCADA, and your CMMS to calculate MTTF, MTBF, and MTTR from real operating data instead of manual logs."
 meta:
   faq:
   - question: "What does MTTF stand for?"
@@ -37,15 +37,47 @@ meta:
 tldr: "Mean Time to Failure (MTTF) is the average operating lifetime of non-repairable components, such as bulbs, batteries, and electronic modules, that get replaced rather than repaired. Divide total operating time by the number of failures. MTTF differs from MTBF, which covers repairable systems, and MTTR, which measures repair time."
 ---
 
-A motor bearing assembly rated for a year fails after six months. Was that bad luck, a bad batch, or has this part always run hot in your facility? Without a number to compare against, there's no way to tell.
+A motor bearing assembly rated for a year fails after six months. Is that an MTTF problem, an MTBF problem, or something you should be tracking as MTTR instead? Attach the wrong metric to the wrong type of equipment, and your maintenance planning is built on a number that was never meant to apply.
 
 <!--more-->
 
-Mean Time to Failure (MTTF) is that number. It measures the average operational lifetime of non-repairable components before permanent failure, and it's what turns "that failed early" into a data-driven decision about replacement timing, spare parts inventory, and component selection.
+MTTF, MTBF, and MTTR all measure reliability, but they answer different questions. MTTF (Mean Time to Failure) tracks how long a non-repairable part lasts before it's replaced. MTBF (Mean Time Between Failures) tracks how long a repairable system runs between fixes. MTTR (Mean Time to Repair) tracks how long those fixes take. Confuse the three and you end up comparing numbers that were never meant to be compared, and basing replacement schedules, spare parts inventory, and supplier decisions on the wrong one.
 
-MTTF emerged as a core reliability engineering metric in the 1950s during the development of military and aerospace reliability theory. Today, it remains essential across industries where component reliability determines operational success, from semiconductor manufacturing to data centers to industrial automation.
+These metrics emerged as core reliability engineering concepts in the 1950s during the development of military and aerospace reliability theory, and remain essential across industries where component and system reliability determine operational success, from semiconductor manufacturing to data centers to industrial automation.
 
-This guide explains what MTTF measures, how to calculate it correctly with real examples, how it differs from related metrics, and how to use MTTF data for strategic maintenance planning.
+This guide breaks down what each metric measures and when to use which one, then dives into how to calculate MTTF correctly with real examples and how to use that data for strategic maintenance planning.
+
+## MTTF vs MTBF vs MTTR: What's the Difference?
+
+These three acronyms measure fundamentally different aspects of reliability.
+
+### What is MTBF (Mean Time Between Failures)?
+
+MTBF is the average operating time between failures for a **repairable** system, one that gets fixed and returned to service rather than discarded. It's the metric to use for motors, pumps, HVAC units, and vehicles.
+
+```
+MTBF = Total Operating Time / Number of Repair Events (excluding repair time)
+```
+
+### What is MTTR (Mean Time to Repair)?
+
+MTTR is the average time it takes to complete a repair once a failure happens, covering diagnosis, parts sourcing, and the fix itself. It applies to any equipment that gets repaired rather than replaced.
+
+```
+MTTR = Total Repair Time / Number of Repairs
+```
+
+### MTTF vs MTBF vs MTTR at a glance
+
+| Metric | What It Measures | Use For | Example |
+|--------|-----------------|---------|---------|
+| **MTTF** | Average time until permanent failure | Non-repairable items replaced when they fail | Light bulbs, batteries, hard drives, sealed bearings |
+| **MTBF** | Average time between repair events | Repairable systems fixed and returned to service | Motors, pumps, HVAC systems, vehicles |
+| **MTTR** | Average time to complete repairs | Any equipment requiring repair | All repairable systems |
+
+**The key distinction**: MTTF applies when you discard and replace it. MTBF applies when you fix it and keep using it. MTTR tells you how long the fixing takes.
+
+A facility might track MTTF for LED bulbs in their fixtures (replace when burned out) while tracking MTBF for the fixtures themselves (repair when they fail). Both metrics serve different planning purposes.
 
 ## What is Mean Time to Failure (MTTF)?
 
@@ -127,38 +159,6 @@ One of the most common mistakes when calculating MTTF is confusing calendar time
 Small sample sizes also lead to misleading results. Calculating MTTF from just a few failures can produce numbers that fluctuate widely and don’t reflect real performance. In practice, at least 20 to 30 failures are needed to produce meaningful averages, with larger datasets providing more reliable insight. Operating conditions are another major source of error. The same component can have very different lifespans depending on factors like temperature, dust, vibration, and load, so MTTF values should always be compared under similar conditions.
 
 Finally, MTTF is often misunderstood as a guaranteed lifespan. It is only an average. Some components will fail much earlier than the MTTF value, while others will last significantly longer. Maintenance planning should account for this natural variation instead of treating MTTF as a minimum life expectancy.
-
-## MTTF vs MTBF vs MTTR: What's the Difference?
-
-These three acronyms measure fundamentally different aspects of reliability.
-
-### What is MTBF (Mean Time Between Failures)?
-
-MTBF is the average operating time between failures for a **repairable** system, one that gets fixed and returned to service rather than discarded. It's the metric to use for motors, pumps, HVAC units, and vehicles.
-
-```
-MTBF = Total Operating Time / Number of Repair Events (excluding repair time)
-```
-
-### What is MTTR (Mean Time to Repair)?
-
-MTTR is the average time it takes to complete a repair once a failure happens, covering diagnosis, parts sourcing, and the fix itself. It applies to any equipment that gets repaired rather than replaced.
-
-```
-MTTR = Total Repair Time / Number of Repairs
-```
-
-### MTTF vs MTBF vs MTTR at a glance
-
-| Metric | What It Measures | Use For | Example |
-|--------|-----------------|---------|---------|
-| **MTTF** | Average time until permanent failure | Non-repairable items replaced when they fail | Light bulbs, batteries, hard drives, sealed bearings |
-| **MTBF** | Average time between repair events | Repairable systems fixed and returned to service | Motors, pumps, HVAC systems, vehicles |
-| **MTTR** | Average time to complete repairs | Any equipment requiring repair | All repairable systems |
-
-**The key distinction**: MTTF applies when you discard and replace it. MTBF applies when you fix it and keep using it. MTTR tells you how long the fixing takes.
-
-A facility might track MTTF for LED bulbs in their fixtures (replace when burned out) while tracking MTBF for the fixtures themselves (repair when they fail). Both metrics serve different planning purposes.
 
 ## Where to Find Reliable MTTF Data
 
