@@ -48,7 +48,7 @@ FlowFuse, an industrial application platform, works directly inside the environm
 
 This article breaks down what SCADA is, how it works, how it compares to related systems like PLCs and HMIs, and why it still matters in brownfield environments today.
 
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::cta-image{src="./images/scada-article-cta.png" alt="Extend your SCADA, don't replace it — connect to a PLC over OPC UA or Modbus and build a view on top" cta="sign-up"}
 ::
 
 ## How Does SCADA Work? The Core Components
