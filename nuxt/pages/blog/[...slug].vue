@@ -135,16 +135,16 @@ if (routeInfo.value.kind === 'post') {
                 ? authorMembers.value.map(authorSchema)
                 : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
         }),
-        computed(() => page.value?.meta?.faq?.length ? {
+        computed(() => page.value?.structuredData?.faq?.length ? {
             '@type': 'FAQPage',
-            mainEntity: page.value.meta.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+            mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
         } : undefined),
-        computed(() => page.value?.meta?.howto ? defineHowTo({
-            name: page.value.meta.howto.name || pageTitle.value,
-            description: page.value.meta.howto.description || pageDescription.value,
-            totalTime: page.value.meta.howto.totalTime,
-            tool: page.value.meta.howto.tool,
-            step: (page.value.meta.howto.steps || []).map(s => defineHowToStep({ name: s.name, text: s.text, url: s.url ? `${canonicalUrl.value}#${s.url}` : undefined })),
+        computed(() => page.value?.structuredData?.howto ? defineHowTo({
+            name: page.value.structuredData.howto.name || pageTitle.value,
+            description: page.value.structuredData.howto.description || pageDescription.value,
+            totalTime: page.value.structuredData.howto.totalTime,
+            tool: page.value.structuredData.howto.tool,
+            step: (page.value.structuredData.howto.steps || []).map(s => defineHowToStep({ name: s.name, text: s.text, url: s.url ? `${canonicalUrl.value}#${s.url}` : undefined })),
         }) : undefined),
     ])
 }
@@ -238,9 +238,9 @@ if (routeInfo.value.kind === 'post') {
             <BlogPostCta :title="page.title" :cta="page.cta" />
           </div>
 
-          <div v-if="page.meta?.faq?.length" class="prose mt-12">
+          <div v-if="page.structuredData?.faq?.length" class="prose mt-12">
             <h2 class="mb-1">Frequently Asked Questions</h2>
-            <BlogFaq :faq="page.meta.faq" />
+            <BlogFaq :faq="page.structuredData.faq" />
           </div>
 
           <BlogAuthorCard v-for="(author, i) in authorMembers" :key="i" :author="author" />
