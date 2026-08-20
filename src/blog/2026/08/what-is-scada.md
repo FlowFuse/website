@@ -16,22 +16,16 @@ meta:
   faq:
     - question: "Is SCADA the same as an operational application?"
       answer: "No. SCADA monitors and controls equipment in real time, while an operational application is custom software built for a specific workflow, often using data pulled from SCADA."
-
     - question: "What industries use SCADA systems?"
       answer: "SCADA is common in manufacturing, [energy](/industries/renewables/), water treatment, and utilities, including [automotive](/industries/automotive/), [semiconductors](/industries/semiconductors/), and [aerospace components](/industries/aerospace-components/)."
-
     - question: "Can SCADA data be sent to cloud platforms?"
       answer: "Yes, but it usually requires a middleware layer to translate SCADA data into formats cloud platforms, MES, or ERP systems can use securely."
-
     - question: "Do all manufacturers need a full SCADA system?"
       answer: "Not always. Smaller or single-line operations sometimes rely on standalone HMIs, while SCADA becomes more valuable as sites and equipment scale up."
-
     - question: "How is SCADA different from a Unified Namespace?"
       answer: "SCADA collects real-time data from PLCs and field devices. A Unified Namespace organizes data from multiple sources, including SCADA, into one structured model."
-
     - question: "What are signs a SCADA system needs to be extended?"
       answer: "Manual data exports, trouble connecting new equipment, and limited visibility across sites usually point to a need for better IT/OT connectivity."
-
     - question: "Does FlowFuse replace SCADA systems?"
       answer: "No. FlowFuse connects to existing SCADA systems and PLCs as part of building and deploying operational applications, without replacing the SCADA layer."
 cta:
