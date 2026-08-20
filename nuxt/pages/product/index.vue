@@ -40,6 +40,24 @@ const TIERS = [
     },
 ]
 
+const DIFFERENTIATORS = [
+    {
+        heading: 'Vendor-Free Open Source',
+        description: 'Every factory is different, so why deploy the same solution as everyone else? Build your way with <a class="text-indigo-600 hover:underline" href="/blueprints/">ready-made blueprints</a>, your own app store, or anything in between — we never dictate your tools.',
+        icon: 'i-lucide-puzzle',
+    },
+    {
+        heading: 'Flexible and Secure',
+        description: 'From whole-factory rollouts to last-mile fixes across any industry. Build your solution, then secure it with <a class="text-indigo-600 hover:underline" href="/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/">granular RBAC</a>, auditing, <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">version control</a>, and traceability.',
+        icon: 'i-lucide-shield-check',
+    },
+    {
+        heading: 'Seamless Collaboration',
+        description: 'OT teams prototype and deploy fast while IT keeps the governance, security, and auditability they need — no trade-offs.',
+        icon: 'i-lucide-handshake',
+    },
+]
+
 const CAPABILITIES = [
     { label: 'Industrial AI', to: '/ai/' },
     { label: 'IT/OT Middleware', to: '/use-cases/it-ot-middleware/' },
@@ -122,7 +140,17 @@ onUnmounted(() => {
           <h2 class="mb-10 max-md:text-center">
             The needs of modern industry requires <span class="text-indigo-600">modern solutions</span>
           </h2>
-          <DifferentiatorCards class="mb-16" />
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div
+              v-for="diff in DIFFERENTIATORS"
+              :key="diff.heading"
+              class="rounded-lg bg-gradient-to-br from-indigo-50/50 to-red-50/50 p-6 pt-8 flex flex-col gap-4 text-center md:text-left"
+            >
+              <Icon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
+              <h3 class="text-xl font-semibold text-indigo-600">{{ diff.heading }}</h3>
+              <p class="mb-0" v-html="diff.description" />
+            </div>
+          </div>
 
           <!-- Tier scrollytelling -->
           <div class="max-w-screen-lg mx-auto pt-8 pb-20">
@@ -168,6 +196,8 @@ onUnmounted(() => {
           <div class="max-w-screen-lg mx-auto pt-8 pb-20 text-center lg:text-left">
             <h2 class="m-0">The FlowFuse platform is <span class="text-indigo-600">the foundation for all of your IT/OT applications</span></h2>
             <p class="mt-6 text-gray-500">Leveraging enterprise-grade development, deployment, and governance solutions, you can build faster, scale more efficiently, and secure deployments of any size.</p>
+            <p class="mt-4 text-gray-500">Every application is assembled from the same core pieces — managed Node-RED instances running in the cloud or at the edge, a built-in Team Broker for your Unified Namespace, shared Tables for operational data, operator dashboards, and fleet-wide device management. The same building blocks arrange into the IT, OT, and IIoT architectures that fit how you run — wherever the work happens.</p>
+            <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" to="/product/how-it-works/" @click="capture('cta-learn-more', { position: 'how-it-works' })">Learn how it works &rarr;</NuxtLink>
             <div class="mt-10">
               <div class="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-4">Integrations</div>
               <div class="product-cap-links flex flex-nowrap sm:flex-wrap justify-center lg:justify-start gap-2">
