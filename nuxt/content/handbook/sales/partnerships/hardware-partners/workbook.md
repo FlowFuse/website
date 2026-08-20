@@ -1,14 +1,14 @@
 ---
-title: "Partner Workbook"
+title: "Hardware Partner Workbook"
 navigation:
-  order: 3
+  order: 1
 ---
 
-## Partner Workbook
+## Hardware Partner Workbook
 
-The **Partner Workbook** is the single document that runs a
+The **Hardware Partner Workbook** is the single document that runs a
 [hardware partnership](/handbook/sales/partnerships/hardware-partners/) — copy the
-[FlowFuse Partner Workbook template](https://docs.google.com/spreadsheets/d/1c2UXyzkADJCwOjG9Rrz8B01watDYBkg7eKa2BYhxcdI/edit){rel="nofollow"}
+[FlowFuse Hardware Partner Workbook template](https://docs.google.com/spreadsheets/d/1c2UXyzkADJCwOjG9Rrz8B01watDYBkg7eKa2BYhxcdI/edit){rel="nofollow"}
 per partner. It is a first-class asset of the engagement, alongside the
 [Partner Stages](https://docs.google.com/spreadsheets/d/1X3Z9kX4_42Gx5WMzHVnhij61xJGXyOCopnUNFsmqf8s/edit){rel="nofollow"}.
 Like the PoV workbook, it is the through-line across the whole partnership: each

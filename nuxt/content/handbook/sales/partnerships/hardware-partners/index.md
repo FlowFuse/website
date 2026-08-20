@@ -1,7 +1,5 @@
 ---
 title: "Hardware Partners"
-navigation:
-  order: 1
 ---
 
 # Hardware Partners
@@ -10,14 +8,14 @@ Hardware partners are device / edge-hardware makers whose product ships running,
 **certified** for, FlowFuse — bringing a device to market with FlowFuse fleet
 management built in. This is a **technical, gated** partnership: prove the device
 works, then take it to market. It is run from the
-[Partner Workbook](/handbook/sales/partnerships/partner-workbook/).
+[Hardware Partner Workbook](/handbook/sales/partnerships/hardware-partners/workbook/).
 
 ## The partnership process
 
 It runs through five **stages**, each with **entrance and exit criteria** (see the
 [Partner Stages](https://docs.google.com/spreadsheets/d/1X3Z9kX4_42Gx5WMzHVnhij61xJGXyOCopnUNFsmqf8s/edit){rel="nofollow"}).
 Every stage produces or executes a portion of the
-[Partner Workbook](/handbook/sales/partnerships/partner-workbook/).
+[Hardware Partner Workbook](/handbook/sales/partnerships/hardware-partners/workbook/).
 
 The single most important rule: **prove the technical first.** Whether FlowFuse runs
 on the partner's hardware is the roadblock — until it's confirmed you have a *gate*,
