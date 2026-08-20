@@ -1,11 +1,10 @@
 ---
 title: "How to Connect to Beckhoff TwinCAT PLC Using ADS (2026)"
 subtitle: "Read and write TwinCAT PLC variables from FlowFuse using the ADS protocol, no additional licensing required."
-description: "Learn how to connect Beckhoff TwinCAT to FlowFuse using ADS, covering AMS routing and reading and writing PLC variables."
+description: "Connect Beckhoff TwinCAT to FlowFuse over ADS: configure AMS routing, then read, subscribe to, and write PLC variables without extra licensing."
 lastUpdated: 2026-06-19
 date: 2026-03-13
 authors: ["sumit-shinde"]
-image: /blog/2026/03/images/backoff-twincat.png
 tags:
 - flowfuse
 - plc
@@ -55,7 +54,7 @@ meta:
       answer: "The most common cause is that your FlowFuse device and the TwinCAT machine are not on the same network as the interface TwinCAT's AMS Net ID is bound to. Verify the AMS Net ID under About TwinCAT System, confirm the route exists with Flags 0, and enable Allow Half Open if the PLC runtime is slow to initialize."
 ---
 
-Beckhoff TwinCAT is one of the most widely deployed PLC platforms in industrial automation. ADS, its native communication protocol, gives you direct read and write access to PLC variables without additional licensing or middleware, and connecting from FlowFuse means tapping into that same channel TwinCAT uses internally.
+ADS is the protocol TwinCAT uses internally, between its own runtime, its HMI, and its PLC and NC tasks, and Beckhoff exposes it for external tools too. That means connecting to a TwinCAT PLC over ADS gives you direct read and write access to its variables, no additional licensing or middleware required, over the same channel TwinCAT already relies on.
 
 <!--more-->
 
@@ -81,13 +80,9 @@ Before you begin, make sure you have the following in place:
 
 ## What is ADS and Why It Matters
 
-ADS, Automation Device Specification, is not an integration layer Beckhoff added for external tools. It is the internal communication backbone of the TwinCAT runtime itself. The same protocol TwinCAT XAE uses when you go online with a PLC, the same one the HMI uses to read variables, the same one the NC task uses to talk to the PLC task. When you connect from FlowFuse, you are using that same channel.
-
 Every TwinCAT device has an AMS Net ID. It looks like an IP address with two extra octets: `10.68.82.232.1.1`. The first four typically match the device IP, the last two are almost always `1.1` by convention. This is how the ADS router identifies devices on the network, and it is what you will configure in every connection you make from FlowFuse.
 
 Within a device, different TwinCAT components are reachable on different ADS ports. The PLC runtime listens on port `851` by default. If your machine runs multiple PLC tasks, each task gets its own port: the first task is `851`, the second is `852`, and so on. Check with the controls engineer which port corresponds to the task containing your variables.
-
-Three things cause silent failures: wrong AMS Net ID, missing route, blocked port 48898. ADS gives you nothing when any of these are wrong. No error, no timeout message, just silence. That is why we cover routing before touching a single FlowFuse node.
 
 ::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::
@@ -180,7 +175,7 @@ Once the installation is complete, a few nodes will appear in the right-hand pal
 
 ![Optional settings tab showing Router Address, Router TCP Port, Local AMS Net ID and Local ADS Port fields](./images/twincat-config-optional-tab.png)
 
-The **Router Address** and **Router TCP Port** allow the ADS client to reach the TwinCAT router over the network. The **Local AMS Net ID** identifies your FlowFuse edge device inside the ADS routing system and must match the route configured in `StaticRoutes.xml`. The **Local ADS Port** defines the local ADS endpoint used by the client and normally does not need to be changed.
+The **Local AMS Net ID** must match the route configured in `StaticRoutes.xml`. **Local ADS Port** normally does not need to be changed.
 
 > **Note:** If your TwinCAT system is in config mode or the PLC runtime takes time to initialize on startup, enable **Allow Half Open** in the connection settings. Without it the client performs a strict system state check on connect and will fail with ADS error 7 even if the router is reachable. With it enabled the client connects regardless and waits for the runtime to become ready.
 
@@ -301,7 +296,7 @@ The PLC is not in Run mode. The TwinCAT system tray icon must be green. A blue i
 
 ## Setting Up a Test PLC
 
-This section is for readers who do not have a real TwinCAT PLC available and want to set up a minimal test environment to follow along with this guide. If you already have a PLC running, you do not need this section.
+For readers without a real TwinCAT PLC available: this sets up a minimal test environment to follow along with. Skip this section if you already have a PLC running.
 
 ### What You Need
 
@@ -378,10 +373,8 @@ Your test PLC is now running. Go back to the [Configuring ADS Routes](#configuri
 
 ## Conclusion
 
-You now have a working ADS connection between FlowFuse and TwinCAT, reading variables on demand, subscribing to live changes, and writing values back to the PLC. But this is just the starting point.
+You now have a working ADS connection between FlowFuse and TwinCAT: reading variables on demand, subscribing to live changes, and writing values back to the PLC. The `node-red-contrib-ads-client` package includes several other nodes worth exploring on your own.
 
-This guide covered the core nodes to get you connected and working. The `node-red-contrib-ads-client` package includes several other nodes worth exploring on your own, and future articles will cover more advanced use cases in depth.
-
-With FlowFuse you can take this further. Build real-time dashboards that visualize live PLC data, connect TwinCAT to other systems like databases, ERP, or cloud platforms, set up alerts when variables go out of range, and create operator interfaces that let your team interact with the machine from anywhere. All of it built on the same connection you just configured, without writing a single line of custom integration code.
+From here, build real-time dashboards on live PLC data, connect TwinCAT to databases, ERP, or cloud platforms, set up alerts when variables go out of range, and give your team operator interfaces they can reach from anywhere, all on the connection you just configured, without custom integration code.
 
 Beckhoff TwinCAT ADS is one of many PLCs FlowFuse connects to the modern industrial stack. For Siemens, Allen-Bradley, Omron, Modbus, OPC UA, and more, see the [FlowFuse PLC integration overview](/landing/plc/).
