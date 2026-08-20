@@ -1,5 +1,5 @@
 ---
-metaTitle: "FlowFuse 3.0: Edge/Hub/Fleet, Industrial AI & Dashboard Themes"
+metaTitle: "FlowFuse 3.0: Edge/Hub/Fleet, AI & Dashboard Themes"
 title: "FlowFuse 3.0: Build, deploy, and govern — matched to how you run"
 subtitle: 
 description: "FlowFuse 3.0 introduces Edge, Hub, and Fleet for Node-RED, opens Expert to your AI assistant, and ships new Node-RED Dashboard themes. The latest Node-RED news."
