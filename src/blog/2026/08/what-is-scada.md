@@ -3,7 +3,7 @@ title: "What Is SCADA? Supervisory Control and Data Acquisition"
 metaTitle: "What Is SCADA: A Guide to How It Works in Manufacturing"
 subtitle: "How SCADA systems monitor and control industrial operations, and how they fit with PLCs, HMIs, and modern IT/OT platforms."
 description: "What is SCADA? Learn how it works, how it compares to PLCs and HMIs, and why it still matters for industrial operations and multi-site manufacturers today."
-date: 2026-08-18
+date: 2026-08-20
 authors: ["sumit-shinde"]
 image: 
 tags:
@@ -35,9 +35,9 @@ meta:
     - question: "Does FlowFuse replace SCADA systems?"
       answer: "No. FlowFuse connects to existing SCADA systems and PLCs as part of building and deploying operational applications, without replacing the SCADA layer."
 cta:
-  type: contact
-  title: "Modernize SCADA Without Replacing It"
-  description: "Connect your existing SCADA and industrial systems to modern IT/OT workflows and deploy proven applications across multiple sites with FlowFuse."
+  type: sign-up
+  title: "Reading about SCADA only gets you so far"
+  description: "Connect to a PLC over OPC UA or Modbus, watch live tags arrive, and build a view on top of them."
 ---
 
 A production line goes down and the first alarm appears on a screen minutes before anyone on the floor notices. For teams managing multiple plants, that screen is often the only real-time view into what is happening across PLCs, sensors, and equipment scattered across dozens of sites. Understanding what SCADA is matters more than ever, especially with unplanned downtime costing industrial manufacturers an estimated [$50 billion](https://www.eng.auburn.edu/~szm0001/papers/GC23-technology.pdf) a year.
