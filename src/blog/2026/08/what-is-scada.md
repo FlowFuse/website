@@ -5,7 +5,7 @@ subtitle: "How SCADA systems monitor and control industrial operations, and how 
 description: "What is SCADA? Learn how it works, how it compares to PLCs and HMIs, and why it still matters for industrial operations and multi-site manufacturers today."
 date: 2026-08-20
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/08/images/what-is-scada.png
 tags:
   - flowfuse
 tldr:
@@ -48,7 +48,7 @@ FlowFuse, an industrial application platform, works directly inside the environm
 
 This article breaks down what SCADA is, how it works, how it compares to related systems like PLCs and HMIs, and why it still matters in brownfield environments today.
 
-::cta-image{src="./images/scada-article-cta.png" alt="Extend your SCADA, don't replace it — connect to a PLC over OPC UA or Modbus and build a view on top" cta="sign-up"}
+::cta-image{src="/blog/2026/08/images/scada-article-cta.png" alt="Extend your SCADA, don't replace it — connect to a PLC over OPC UA or Modbus and build a view on top" cta="sign-up"}
 ::
 
 ## How Does SCADA Work? The Core Components
