@@ -200,6 +200,16 @@ export default defineContentConfig({
                     url: z.string().nullable().optional(),
                     logo: z.string().optional(),
                     quote: z.string().optional(),
+                    // Byline for `quote`. Preferred: `quoteAuthorSlug` names a file in
+                    // src/_data/team/ or src/_data/guests/ (resolved via useTeamMember) so
+                    // name/title/headshot come from that JSON. Not every quoted person has
+                    // one, so quoteAuthor/quoteRole/quoteAvatar remain as a manual fallback -
+                    // quoteRole is job title only, `brand` above supplies the company name
+                    // and is concatenated at render time rather than duplicated here.
+                    quoteAuthorSlug: z.string().optional(),
+                    quoteAuthor: z.string().optional(),
+                    quoteRole: z.string().optional(),
+                    quoteAvatar: z.string().optional(),
                     challenge: z.string(),
                     solution: z.string(),
                     products: z.array(z.string()),
