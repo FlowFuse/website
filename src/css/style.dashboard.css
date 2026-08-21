@@ -84,47 +84,70 @@
 .ffd-dash {
     background-color: var(--ffd-bg);
     color: var(--ffd-ink);
-    padding: 14px;
+    padding: 12px;              /* pagePadding */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;                  /* groupGap */
     font-size: 13px;
     transition: background-color 0.22s ease, color 0.22s ease;
     container-type: inline-size;
 }
 
+/* Preset values are lifted verbatim from THEME_PRESETS in the Dashboard source
+   (nodes/config/ui_base.html), so the preview shows the real palettes rather than
+   an approximation. Slot names match the ui-theme node: surface drives the app
+   bar, bgPage the page behind the groups, groupBg the group cards, groupOutline
+   their borders, primary every interactive element.
+   --ffd-ink / --ffd-muted and the semantic trio are not part of a preset (the
+   Dashboard derives text colour by contrast, and widget states are per-widget),
+   so those are picked per theme from the same upstream palette family. */
+
 .ffd-dash[data-preset="light"] {
-    --ffd-bg: #ffffff;  --ffd-surface: #f4f4f7; --ffd-border: #e2e2e9;
-    --ffd-ink: #1f2937; --ffd-muted: #6b7280;   --ffd-grid: #e8e8ee;
-    --ffd-accent: #4f46e5; --ffd-accent2: #0ea5e9;
-    --ffd-good: #16a34a;   --ffd-warn: #d97706;  --ffd-crit: #dc2626;
+    --ffd-surface: #fcfcfd; --ffd-bg: #f9f9fb; --ffd-card: #ffffff; --ffd-border: #d9d9e0;
+    --ffd-accent: #0d74ce;  --ffd-accent2: #12a594;
+    --ffd-ink: #1c2024;     --ffd-muted: #60646c;
+    --ffd-good: #16a34a;    --ffd-warn: #d97706;  --ffd-crit: #dc2626;
+    --ffd-grid: #e8e8ec;
 }
 .ffd-dash[data-preset="dark"] {
-    --ffd-bg: #121212;  --ffd-surface: #1e1e1e; --ffd-border: #2f2f2f;
-    --ffd-ink: #e8e8e8; --ffd-muted: #9a9a9a;   --ffd-grid: #2a2a2a;
-    --ffd-accent: #818cf8; --ffd-accent2: #38bdf8;
-    --ffd-good: #4ade80;   --ffd-warn: #fbbf24;  --ffd-crit: #f87171;
+    --ffd-surface: #18191b; --ffd-bg: #111113; --ffd-card: #212225; --ffd-border: #363a3f;
+    --ffd-accent: #0d74ce;  --ffd-accent2: #12a594;
+    --ffd-ink: #edeef0;     --ffd-muted: #b0b4ba;
+    --ffd-good: #4ade80;    --ffd-warn: #fbbf24;  --ffd-crit: #f87171;
+    --ffd-grid: #2a2d31;
 }
 .ffd-dash[data-preset="dracula"] {
-    --ffd-bg: #282a36;  --ffd-surface: #343746; --ffd-border: #44475a;
-    --ffd-ink: #f8f8f2; --ffd-muted: #a3a6b8;   --ffd-grid: #3c3f51;
-    --ffd-accent: #bd93f9; --ffd-accent2: #8be9fd;
-    --ffd-good: #50fa7b;   --ffd-warn: #f1fa8c;  --ffd-crit: #ff5555;
+    --ffd-surface: #21222c; --ffd-bg: #282a36; --ffd-card: #343746; --ffd-border: #44475a;
+    --ffd-accent: #bd93f9;  --ffd-accent2: #8be9fd;
+    --ffd-ink: #f8f8f2;     --ffd-muted: #a8abbd;
+    --ffd-good: #50fa7b;    --ffd-warn: #f1fa8c;  --ffd-crit: #ff5555;
+    --ffd-grid: #3c3f51;
 }
 .ffd-dash[data-preset="nord"] {
-    --ffd-bg: #2e3440;  --ffd-surface: #3b4252; --ffd-border: #4c566a;
-    --ffd-ink: #eceff4; --ffd-muted: #a9b1c1;   --ffd-grid: #434c5e;
-    --ffd-accent: #88c0d0; --ffd-accent2: #81a1c1;
-    --ffd-good: #a3be8c;   --ffd-warn: #ebcb8b;  --ffd-crit: #bf616a;
+    --ffd-surface: #3b4252; --ffd-bg: #2e3440; --ffd-card: #3b4252; --ffd-border: #4c566a;
+    --ffd-accent: #88c0d0;  --ffd-accent2: #81a1c1;
+    --ffd-ink: #eceff4;     --ffd-muted: #b8c0cf;
+    --ffd-good: #a3be8c;    --ffd-warn: #ebcb8b;  --ffd-crit: #bf616a;
+    --ffd-grid: #434c5e;
 }
 .ffd-dash[data-preset="sepia"] {
-    --ffd-bg: #f4ecd8;  --ffd-surface: #eadfc4; --ffd-border: #d8c9a6;
-    --ffd-ink: #4a3f2f; --ffd-muted: #7d6f58;   --ffd-grid: #dfd2b4;
-    --ffd-accent: #8b5e3c; --ffd-accent2: #a8763e;
-    --ffd-good: #5f7d4f;   --ffd-warn: #a86b1f;  --ffd-crit: #a13d2d;
+    --ffd-surface: #f2e5bc; --ffd-bg: #ebdbb2; --ffd-card: #fbf1c7; --ffd-border: #d5c4a1;
+    --ffd-accent: #af3a03;  --ffd-accent2: #427b58;
+    --ffd-ink: #3c3836;     --ffd-muted: #7c6f64;
+    --ffd-good: #79740e;    --ffd-warn: #b57614;  --ffd-crit: #9d0006;
+    --ffd-grid: #ddcca7;
 }
 
-.ffd-head { display: flex; align-items: center; gap: 10px; }
+.ffd-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--ffd-surface);
+    border: 1px solid var(--ffd-border);
+    border-radius: 4px;
+    padding: 8px 10px;
+    transition: background-color 0.22s ease, border-color 0.22s ease;
+}
 .ffd-title {
     font-size: 13px;
     font-weight: 600;
@@ -144,9 +167,9 @@
 }
 
 .ffd-card {
-    background-color: var(--ffd-surface);
+    background-color: var(--ffd-card);
     border: 1px solid var(--ffd-border);
-    border-radius: 7px;
+    border-radius: 4px;         /* groupBorderRadius */
     padding: 10px;
     transition: background-color 0.22s ease, border-color 0.22s ease;
     min-width: 0;
@@ -160,7 +183,7 @@
     margin-bottom: 6px;
 }
 
-.ffd-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.ffd-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .ffd-kpi-val {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 19px;
@@ -211,7 +234,7 @@
 .ffd-row3 {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.25fr);
-    gap: 10px;
+    gap: 12px;
     align-items: start;
 }
 .ffd-gauge-card { display: flex; flex-direction: column; align-items: center; }
@@ -242,7 +265,7 @@
     width: 100%;
     text-align: center;
     background-color: var(--ffd-accent);
-    color: var(--ffd-bg);
+    color: #fff;
     border: 0;
     border-radius: 5px;
     padding: 8px 10px;
