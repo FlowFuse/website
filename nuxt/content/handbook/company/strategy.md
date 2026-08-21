@@ -27,15 +27,10 @@ any scale.
 
 Furthermore, FlowFuse aims to make it a great experience to build, deploy, and
 maintain software -- especially for non-software engineers. Allowing complex
-things to be achieved. Two good examples are
-
-1. FlowFuse Dashboard - Allowing to build Dashboards and interactive
-   applications
-1. Project-Link - Linking Edge devices to the Cloud, enabling broadcasts and
-   point-to-point connections
+things to be achieved. 
 
 A key differentiator for FlowFuse is our approach to licensing of our software.
-The core is open, free as in beer and as in speech. Our product is open for
+The core is open. Our product is open for
 scrutiny, usage, improvements, for the world. While there's a subset of the
 product proprietary licensed, the source is available to read. We believe that
 Open Source Software plays a key part in education, reducing vendor lock-in, and
@@ -75,6 +70,14 @@ often Architects, Engineering Managers, and specialists in IT or OT.
    This complexity makes it difficult for teams to integrate and leverage data
    from different sources into a view of operations that can help identify
    optimizations.
+1. No Control Over Applications at Scale: Once solutions spread beyond a single
+   Node-RED, teams lose track of what is running where, who changed it, and
+   whether it still meets the organisation's security and compliance obligations.
+   IT becomes accountable for systems it cannot see into, and OT gets slowed
+   by approval processes designed for a different kind of software. Teams
+   need change to be traceable, permissioned, and auditable across every
+   plant — without reintroducing the delays that drove them to low-code in the
+   first place.
 
 ## Why these problems are significant
 
