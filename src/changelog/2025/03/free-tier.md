@@ -2,11 +2,15 @@
 title: Free Tier now more accessible to all
 description: Signing up to our Free Tier no longer requires a credit card
 date: 2025-03-06 12:00:00.0  
+lastUpdated: 2026-08-13
 release: "2.15"
 authors: ['nick-oleary']  
 tags:  
   - changelog  
 ---
+
+::product-update-note
+::
 
 We introduced the Free tier on FlowFuse Cloud [back in December](/blog/2024/12/flowfuse-release-2-12/). This allows you to manage two remote instances using the FlowFuse Device Agent completely free of charge.
 
