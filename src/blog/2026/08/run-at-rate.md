@@ -61,7 +61,7 @@ The math only needs two numbers: what the line was supposed to produce, and what
 
 Take an 8-hour shift, with a 436-minute production window and a 60-second target cycle time. The theoretical output for that window is 436 units.
 
-![Run at rate calculation diagram showing theoretical output, good parts produced, and resulting percentage](./images/run-at-rate-calculation.png)
+![Run at rate calculation diagram showing theoretical output, good parts produced, and resulting percentage](./images/run-at-rate-calculation-img.png)
 
 During the run, 45 minutes are lost to downtime, leaving 391 minutes of actual production time. The line produces 396 units during the run, but 12 are scrapped, leaving 384 good parts.
 
