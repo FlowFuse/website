@@ -40,17 +40,17 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Application Guide pages are markdown (`applicationGuideDoc`, a `page` collection).
-// Their routes are largely discoverable by @nuxt/content, but we keep an explicit prerender
-// list for the section index + each page. File names are <slug>.md and match the `slug` field.
+// The Application Guide pages are a `data` collection (see content.config.ts), so their routes
+// are not discoverable from @nuxt/content page paths. Derive them from the file names, which
+// are NN-<slug>.yml and match each file's `slug` field.
 function collectApplicationGuideRoutes(dir: string): string[] {
     const routes = ['/application-guide/']
     for (const guide of readdirSync(dir)) {
         const guideDir = join(dir, guide)
         if (!statSync(guideDir).isDirectory()) continue
         for (const file of readdirSync(guideDir)) {
-            if (!file.endsWith('.md')) continue
-            routes.push(`/application-guide/${guide}/${basename(file, '.md').replace(/^\d+-/, '')}/`)
+            if (!file.endsWith('.yml')) continue
+            routes.push(`/application-guide/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
         }
     }
     return routes
@@ -170,16 +170,6 @@ export default defineNuxtConfig({
         notes: [
             'This file only covers pages served by the Nuxt frontend. Some sections of flowfuse.com are still served by a legacy Eleventy site not represented here.',
         ],
-
-        // /raw/<path>.md, the per-page markdown endpoint the links below point at, is served
-        // by @nuxt/content's own llms feature rather than by nuxt-llms, and it searches every
-        // page-type collection by default. That included the handbook, so the exclusion above
-        // only held for llms.txt while /raw/handbook/company.md answered with the same content
-        // in markdown. Same reasoning applies to both surfaces.
-        contentRawMarkdown: {
-            excludeCollections: ['handbook'],
-        },
-
         sections: [
             {
                 title: 'Documentation',
@@ -321,17 +311,11 @@ export default defineNuxtConfig({
     routeRules: {
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
-        '/thank-you/**': { robots: false },
         ...redirects,
     },
 
     nitro: {
         preset: 'netlify',
-        // Nitro emits a .mjs.map next to every server chunk, so the Netlify functions bundle
-        // ships one map file per chunk. Skipping them keeps the bundle smaller and the
-        // server build a little shorter. The cost is that a server-side stack trace in the
-        // function logs no longer resolves back to the original source.
-        sourceMap: false,
         serverAssets: [
             {
                 baseName: 'analytics',
@@ -350,9 +334,9 @@ export default defineNuxtConfig({
         ],
         prerender: {
             routes: (() => {
-                // The changelog listing is a single page now (grouped by release, revealed
-                // as you scroll), so there are no /changelog/<n>/ pages to enumerate.
                 const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
+                const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
+                const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
 
                 const blogListingRoutes = paginatedListingRoutes('/blog', blogFiles.length)
                 const blogTagRoutes = BLOG_TAGS.flatMap(tag =>
@@ -365,6 +349,11 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/pricing',
                     '/product',
+                    // Static hub page under /product/. collectProductRoutes only enumerates
+                    // the tier pages (/product/{edge,hub,fleet}/) from content/products/*.yml,
+                    // and crawlLinks is off, so this file-based page must be listed explicitly
+                    // or it never prerenders and the nav link to it 404s site-wide.
+                    '/product/how-it-works/',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
@@ -375,10 +364,6 @@ export default defineNuxtConfig({
                     // content-urls.get.ts) silently resolves to undefined. Explicitly listing
                     // it here bakes it at build time instead, inside the git checkout.
                     '/sitemap.xml',
-                    '/contact-us',
-                    '/book-demo',
-                    '/support',
-                    '/professional-services',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -388,7 +373,7 @@ export default defineNuxtConfig({
                     '/resources/publications/',
                     ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
-                    '/changelog/',
+                    ...changelogListingRoutes,
                     ...changelog.routes,
                     '/blog/index.xml',
                     ...blogListingRoutes,
