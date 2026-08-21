@@ -1,0 +1,386 @@
+/* ==========================================================================
+   /platform/dashboard/ — theme preview widget and page components.
+
+   The preview is a mock dashboard that re-skins live between the five theme
+   presets Dashboard ships (Light, Dark, Dracula, Nord, Sepia). Each preset is
+   a block of custom properties on .ffd-dash; every element inside paints from
+   those vars, so switching a single data attribute re-themes the whole mock.
+
+   Everything is namespaced .ffd- so it cannot collide with site components.
+   Rules that set link colour carry a .nohero prefix, because .nohero a already
+   paints links blue at (0,1,1) and would otherwise win.
+   ========================================================================== */
+
+@layer components {
+
+/* The site loads Heebo only. Reuse the stack style.css already uses for code
+   rather than pulling in another webfont for a handful of numeric labels. */
+.ffd-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ---------- preset switcher ---------- */
+.ffd-seg {
+    display: inline-flex;
+    background-color: var(--color-gray-100);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+}
+.ffd-seg button {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.3125rem 0.625rem;
+    border-radius: 999px;
+    border: 0;
+    background-color: transparent;
+    color: var(--color-gray-500);
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+.ffd-seg button:hover { color: var(--color-gray-900); }
+.ffd-seg button[aria-pressed="true"] {
+    background-color: var(--color-gray-900);
+    color: white;
+}
+
+/* ---------- browser frame ---------- */
+.ffd-frame {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-200);
+    box-shadow: 0 1px 2px rgb(17 24 39 / 0.04), 0 18px 40px -18px rgb(17 24 39 / 0.22);
+}
+.ffd-chrome {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 12px;
+    background-color: var(--color-gray-100);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+.ffd-chrome i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--color-gray-300);
+    display: block;
+}
+.ffd-chrome span {
+    margin-left: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.6875rem;
+    color: var(--color-gray-400);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ---------- the mock dashboard ---------- */
+.ffd-dash {
+    background-color: var(--ffd-bg);
+    color: var(--ffd-ink);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    transition: background-color 0.22s ease, color 0.22s ease;
+    container-type: inline-size;
+}
+
+.ffd-dash[data-preset="light"] {
+    --ffd-bg: #ffffff;  --ffd-surface: #f4f4f7; --ffd-border: #e2e2e9;
+    --ffd-ink: #1f2937; --ffd-muted: #6b7280;   --ffd-grid: #e8e8ee;
+    --ffd-accent: #4f46e5; --ffd-accent2: #0ea5e9;
+    --ffd-good: #16a34a;   --ffd-warn: #d97706;  --ffd-crit: #dc2626;
+}
+.ffd-dash[data-preset="dark"] {
+    --ffd-bg: #121212;  --ffd-surface: #1e1e1e; --ffd-border: #2f2f2f;
+    --ffd-ink: #e8e8e8; --ffd-muted: #9a9a9a;   --ffd-grid: #2a2a2a;
+    --ffd-accent: #818cf8; --ffd-accent2: #38bdf8;
+    --ffd-good: #4ade80;   --ffd-warn: #fbbf24;  --ffd-crit: #f87171;
+}
+.ffd-dash[data-preset="dracula"] {
+    --ffd-bg: #282a36;  --ffd-surface: #343746; --ffd-border: #44475a;
+    --ffd-ink: #f8f8f2; --ffd-muted: #a3a6b8;   --ffd-grid: #3c3f51;
+    --ffd-accent: #bd93f9; --ffd-accent2: #8be9fd;
+    --ffd-good: #50fa7b;   --ffd-warn: #f1fa8c;  --ffd-crit: #ff5555;
+}
+.ffd-dash[data-preset="nord"] {
+    --ffd-bg: #2e3440;  --ffd-surface: #3b4252; --ffd-border: #4c566a;
+    --ffd-ink: #eceff4; --ffd-muted: #a9b1c1;   --ffd-grid: #434c5e;
+    --ffd-accent: #88c0d0; --ffd-accent2: #81a1c1;
+    --ffd-good: #a3be8c;   --ffd-warn: #ebcb8b;  --ffd-crit: #bf616a;
+}
+.ffd-dash[data-preset="sepia"] {
+    --ffd-bg: #f4ecd8;  --ffd-surface: #eadfc4; --ffd-border: #d8c9a6;
+    --ffd-ink: #4a3f2f; --ffd-muted: #7d6f58;   --ffd-grid: #dfd2b4;
+    --ffd-accent: #8b5e3c; --ffd-accent2: #a8763e;
+    --ffd-good: #5f7d4f;   --ffd-warn: #a86b1f;  --ffd-crit: #a13d2d;
+}
+
+.ffd-head { display: flex; align-items: center; gap: 10px; }
+.ffd-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ffd-ink);
+    letter-spacing: -0.01em;
+}
+.ffd-tagchip {
+    margin-left: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ffd-muted);
+    border: 1px solid var(--ffd-border);
+    border-radius: 999px;
+    padding: 2px 7px;
+}
+
+.ffd-card {
+    background-color: var(--ffd-surface);
+    border: 1px solid var(--ffd-border);
+    border-radius: 7px;
+    padding: 10px;
+    transition: background-color 0.22s ease, border-color 0.22s ease;
+    min-width: 0;
+}
+.ffd-lbl {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ffd-muted);
+    margin-bottom: 6px;
+}
+
+.ffd-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.ffd-kpi-val {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ffd-ink);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+}
+.ffd-kpi-val small {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--ffd-muted);
+    margin-left: 2px;
+}
+.ffd-kpi-delta {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 10px;
+    margin-top: 3px;
+    font-variant-numeric: tabular-nums;
+}
+.ffd-up { color: var(--ffd-good); }
+.ffd-down { color: var(--ffd-crit); }
+
+.ffd-chart-title { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.ffd-legend {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9.5px;
+    color: var(--ffd-muted);
+}
+.ffd-legend i {
+    display: inline-block;
+    width: 8px;
+    height: 2px;
+    vertical-align: 2px;
+    margin-right: 4px;
+}
+.ffd-chart { display: block; width: 100%; height: auto; }
+.ffd-chart .ffd-axis text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 8px;
+    fill: var(--ffd-muted);
+}
+.ffd-chart .ffd-grid line { stroke: var(--ffd-grid); stroke-width: 1; }
+
+.ffd-row3 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 10px;
+    align-items: start;
+}
+.ffd-gauge-card { display: flex; flex-direction: column; align-items: center; }
+.ffd-gauge { width: 100%; max-width: 104px; height: auto; display: block; }
+.ffd-gauge-arc { fill: none; stroke: var(--ffd-grid); stroke-width: 9; stroke-linecap: round; }
+.ffd-gauge-val {
+    fill: none;
+    stroke-width: 9;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.22s ease;
+}
+.ffd-gauge-num {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    fill: var(--ffd-ink);
+    font-variant-numeric: tabular-nums;
+}
+.ffd-gauge-unit {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9px;
+    fill: var(--ffd-muted);
+}
+
+.ffd-ctl { display: flex; flex-direction: column; gap: 8px; }
+.ffd-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--ffd-accent);
+    color: var(--ffd-bg);
+    border: 0;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.25;
+    cursor: pointer;
+    transition: background-color 0.22s ease, color 0.22s ease;
+}
+.ffd-btn--ghost {
+    background-color: transparent;
+    color: var(--ffd-accent);
+    border: 1px solid var(--ffd-border);
+}
+.ffd-picker {
+    width: 100%;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 11px;
+    background-color: var(--ffd-bg);
+    color: var(--ffd-ink);
+    border: 1px solid var(--ffd-border);
+    border-radius: 5px;
+    padding: 6px 7px;
+    transition: background-color 0.22s ease, color 0.22s ease;
+}
+
+.ffd-scroll { overflow-x: auto; }
+.ffd-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+.ffd-table th {
+    text-align: left;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ffd-muted);
+    padding: 0 8px 6px 0;
+    border-bottom: 1px solid var(--ffd-border);
+    white-space: nowrap;
+}
+.ffd-table td {
+    padding: 6px 8px 6px 0;
+    border-bottom: 1px solid var(--ffd-border);
+    color: var(--ffd-ink);
+    vertical-align: middle;
+}
+.ffd-table tr:last-child td { border-bottom: 0; }
+.ffd-table .ffd-ts {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--ffd-ink);
+}
+.ffd-chip {
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+}
+.ffd-chip--ok { color: var(--ffd-good); }
+.ffd-chip--warn { color: var(--ffd-warn); }
+.ffd-chip--crit { color: var(--ffd-crit); }
+
+/* The preview sits in a ~470px column on desktop, so keep three KPIs across
+   until it is genuinely narrow. */
+@container (max-width: 400px) {
+    .ffd-kpis { grid-template-columns: 1fr 1fr; }
+    .ffd-row3 { grid-template-columns: 1fr 1fr; }
+    .ffd-ctl { grid-column: 1 / -1; }
+}
+
+/* ---------- capability tag pills ---------- */
+/* .nohero prefix beats `.nohero a { color: blue-600 }`. */
+.nohero .ffd-tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 999px;
+    padding: 0.3125rem 0.6875rem;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--color-gray-700);
+    background-color: white;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+.nohero a.ffd-tag:hover {
+    border-color: var(--color-indigo-600);
+    color: var(--color-indigo-600);
+    background-color: var(--color-indigo-50);
+    text-decoration: none;
+}
+
+/* ---------- cross-sell + resource cards ---------- */
+.nohero .ffd-xs,
+.nohero .ffd-res { text-decoration: none; }
+.nohero .ffd-xs:hover,
+.nohero .ffd-res:hover { text-decoration: none; }
+.nohero .ffd-xs:hover { border-color: var(--color-indigo-300); }
+.nohero .ffd-res:hover { border-color: var(--color-indigo-300); }
+.nohero .ffd-res:hover .ffd-res-title { color: var(--color-indigo-600); }
+.nohero .ffd-xs:hover .ffd-xs-go { text-decoration: underline; }
+
+/* Links that must read indigo rather than the .nohero blue default. */
+.nohero .ffd-link { color: var(--color-indigo-600); }
+.nohero .ffd-link:hover { color: var(--color-indigo-700); }
+
+} /* end @layer components */
+
+/* ==========================================================================
+   Migration importer inside the two-column layout.
+
+   Deliberately OUTSIDE @layer components: .ff-dashboard-migration and
+   .ff-file-drop-zone are declared unlayered in style.css, and unlayered
+   declarations outrank every layer, so a layered override here would lose.
+   Specificity (0,2,0) then beats the (0,1,0) base rule, including the one
+   inside its min-width:680px media query — media queries add no specificity.
+   ========================================================================== */
+
+/* The importer's own 1fr 1fr split is keyed to the viewport, not its container,
+   so in a half-width column it would stay side by side and crush both halves.
+   Stack it instead: drop zone above, form below. */
+.ffd-migrate-col .ff-dashboard-migration {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 64px of padding is sized for a full-width drop zone; halve it here and give
+   the zone a floor so it still reads as a target rather than a thin strip. */
+.ffd-migrate-col .ff-file-drop-zone {
+    padding: 32px 24px;
+    min-height: 150px;
+    border-radius: 8px;
+}
