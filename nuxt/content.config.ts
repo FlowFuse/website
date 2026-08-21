@@ -146,7 +146,7 @@ export default defineContentConfig({
                     title: z.string().optional(),
                     description: z.string().optional(),
                 }).optional(),
-                meta: z.object({
+                structuredData: z.object({
                     title: z.string().optional(),
                     description: z.string().optional(),
                     faq: z.array(z.object({

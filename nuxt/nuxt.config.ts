@@ -395,6 +395,13 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        'content:file:beforeParse' ({ file, collection }) {
+            if (collection.name !== 'blog') return
+            file.body = file.body.replace(
+                /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
+                (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
+            )
+        },
         // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
         // Can't use Nuxt's $fetch here — it only exists at nitro runtime.
         async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {
