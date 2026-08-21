@@ -297,3 +297,5 @@ In this article, we compare OPC-UA to traditional fieldbus protocols, explain th
 This isn't just a lab exercise: [Opto 22, one of the original vendors behind the OPC standard, ships Node-RED pre-installed on its groov EPIC edge controllers](/customer-stories/opto22-embraces-node-red/), putting this same OPC-UA server pattern into production on the factory floor.
 
 In our next article, we will build a custom OPC-UA Server in Node-RED with data pulled from an Allen Bradley PLC over Ethernet/IP, using the PLC data to develop a custom OPC UA Information Model programmed in the OPC server address space.
+
+For FlowFuse's production-ready OPC UA server, maintained as a certified node rather than a hand-rolled flow, see [hosting an OPC UA server](/integrations/opcua/#opc-ua-client-and-server-capabilities) on the FlowFuse OPC UA overview.

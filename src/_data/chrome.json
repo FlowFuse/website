@@ -217,7 +217,7 @@
                             },
                             {
                                 "label": "OPC UA",
-                                "href": "/node-red/flowfuse/edge/opcua/",
+                                "href": "/integrations/opcua/",
                                 "icon": "server-stack"
                             },
                             {
@@ -601,7 +601,7 @@
                             },
                             {
                                 "label": "OPC UA",
-                                "href": "/node-red/flowfuse/edge/opcua/"
+                                "href": "/integrations/opcua/"
                             },
                             {
                                 "label": "RTSP",
