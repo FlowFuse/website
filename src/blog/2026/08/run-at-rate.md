@@ -69,7 +69,7 @@ During the run, 45 minutes are lost to downtime, leaving 435 minutes of actual p
 
 Downtime and scrap don't get calculated separately and added back in. They show up as fewer good parts against the theoretical output, which is why a line can be running most of the shift and still post a rate well under target..
 
-::cta-image{src="/blog/2026/08/images/run-at-rate-cta-image.png" alt="Tracking run-at-rate data manually?" cta="sign-up"}
+::cta-image{src="/blog/2026/08/images/run-at-rate-cta-1.png" alt="Tracking run-at-rate data manually?" cta="sign-up"}
 ::
 
 ## What Does Pass or Fail Look Like?
