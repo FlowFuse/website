@@ -59,15 +59,15 @@ The math only needs two numbers: what the line was supposed to produce, and what
 
 **Run at rate %** \= (net good output ÷ theoretical output) × 100
 
-Take an 8-hour shift, with a 436-minute production window and a 60-second target cycle time. The theoretical output for that window is 436 units.
+Take an 8-hour shift, or 480 minutes, against a 60-second target cycle time. The theoretical output for that window is 480 units.
 
-![Run at rate calculation diagram showing theoretical output, good parts produced, and resulting percentage](./images/run-at-rate-calculation-img.png)
+![Run at rate calculation diagram showing theoretical output, good parts produced, and resulting percentage](./images/run-at-rate-calculation-image.png)
 
-During the run, 45 minutes are lost to downtime, leaving 391 minutes of actual production time. The line produces 396 units during the run, but 12 are scrapped, leaving 384 good parts.
+During the run, 45 minutes are lost to downtime, leaving 435 minutes of actual production time. At the target cycle time, the line produces 435 units, but 12 are scrapped, leaving 423 good parts.
 
-**Run at rate** \= (384 ÷ 436\) × 100 \= **88.1%**
+**Run at rate = (423 ÷ 480) × 100 = 88.1%**
 
-Downtime and scrap don't get calculated separately and added back in. They show up as fewer good parts against the theoretical output, which is why a line can be running most of the shift and still post a rate well under target.
+Downtime and scrap don't get calculated separately and added back in. They show up as fewer good parts against the theoretical output, which is why a line can be running most of the shift and still post a rate well under target..
 
 ::cta-image{src="/blog/2026/08/images/run-at-rate-cta-image.png" alt="Tracking run-at-rate data manually?" cta="sign-up"}
 ::
