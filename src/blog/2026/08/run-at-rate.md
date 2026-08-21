@@ -87,6 +87,8 @@ Process validation confirms a process can hold tolerance, usually at reduced vol
 
 PPAP is the larger documentation package: control plans, measurement system analysis, part approval as a whole. Run at rate is one piece of that package, specific to volume. It isn't a substitute for the rest of the file, and the rest of the file isn't a substitute for it.
 
+![Comparison diagram showing PPAP components and where run at rate fits within the approval process](./images/pap-vs-run-rate.png)
+
 ## Why capacity gaps still show up after launch
 
 Changeover time gets estimated instead of measured live, and the real changeover, with new operators and no rehearsal, runs longer than planned. A station that tested fine on its own turns out to be the actual bottleneck once the full line runs together, starved for parts or backed up behind a slower neighbor. [Quality](/blog/2026/07/defect-and-quality-monitoring) that looked stable during a short trial drifts once tooling wears across a full shift, a failure mode a short run wouldn't catch.
