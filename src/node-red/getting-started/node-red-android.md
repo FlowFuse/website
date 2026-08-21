@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Node-RED On Android
-  order: 4
+  order: 6
   parent: Getting Started
 meta:
   title: Installing Node-RED on Android

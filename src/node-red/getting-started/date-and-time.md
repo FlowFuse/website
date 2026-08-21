@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Date & Time
-  order: 7
+  order: 9
   parent: Getting Started
 meta:
   title: Working with Dates and Times in Node-RED

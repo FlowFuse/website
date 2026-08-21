@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Port Configuration
-  order: 2
+  order: 3
   parent: Getting Started
 meta:
   title: Node-RED Port (localhost:1880)
