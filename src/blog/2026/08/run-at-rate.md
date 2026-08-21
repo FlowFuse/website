@@ -32,7 +32,7 @@ cta:
 
 The distinction matters because process validation alone doesn't prove it. A supplier can pass validation with every checked part coming back within spec, launch, and still miss its shift target three weeks in, at which point it's a customer problem instead of an engineering one. Run at rate is the check meant to catch that before launch happens, not after.
 
-::cta-image{src="/blog/2026/08/images/run-at-rate-cta-2.png" alt="Need to prove production capacity before launch?" cta="demo"}
+::cta-image{src="/blog/2026/08/images/run-at-rate-cta2.png" alt="Need to prove production capacity before launch?" cta="demo"}
 ::
 
 ## Where the requirement comes from
