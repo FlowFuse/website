@@ -52,6 +52,7 @@ meta:
         - question: "How is Node-RED used in IoT?"
           answer: >
             Node-RED is very popular in the manufacturing and industrial automation industries (IIoT) as an edge computing solution. Often deployed on PLCs and IoT gateways, Node-RED supports collecting data from legacy and proprietary systems (Siemens S7, Modbus, OPC-UA, etc), integrating the industrial data with other data sources (weather data, enterprise data), filtering data on the edge, and then sending the data to the cloud. FlowFuse offers remote device deployment to IIoT edge devices. Node-RED is also very popular with DIY home automation enthusiasts, in particular the <a href='https://community.home-assistant.io/t/home-assistant-community-add-on-node-red/55023/' target='_blank'>Home Assistant</a> community. 
+installCommandsHeading: "Or install Node-RED on your own machine"
 description: Node-RED is the low-code programming language of choice for industrial applications. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
 sitemapPriority: 0.8
 ---
@@ -69,21 +70,42 @@ sitemapPriority: 0.8
                 Co-created by Nick O'Leary, CTO of FlowFuse, Node-RED is <span class="font-semibold">the <span class="inline-block">low-code</span> programming language of choice for industrial applications</span>. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
             </p>
             <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
-            <p class="md:mb-10">Ready to <span class="font-semibold">get started building with Node-RED</span>?</p>
-            <a class="ff-btn ff-btn--primary hidden min-h-[40px] md:inline" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+            <p class="md:mb-6">Ready to <span class="font-semibold">get started building with Node-RED</span>? There are two ways in.</p>
+            <div class="max-md:hidden md:mb-10">
+                <a class="ff-btn ff-btn--primary min-h-[40px] md:inline" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+                <p class="font-light mt-3 mb-0">
+                    Nothing to install, you get an editor in the browser. Or
+                    <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
+                    with one command.
+                </p>
+            </div>
         </div>
         <div class="max-w-md md:w-1/2 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
             {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
         </div>
-        <a class="ff-btn ff-btn--primary flex flex-col w-full md:hidden max-w-md" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+        <div class="md:hidden w-full max-w-md m-auto">
+            <a class="ff-btn ff-btn--primary flex flex-col w-full" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+            <p class="font-light mt-3 mb-0 text-center">
+                Nothing to install, you get an editor in the browser. Or
+                <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
+                with one command.
+            </p>
+        </div>
     </div>
 </div>
 
-    <!--Install commands, directly under the hero: the fastest way to get Node-RED
-        running on a machine you already have. Shared with /platform/device-agent/.-->
+    <!--Install commands, directly under the hero. This is the second of the two routes
+        the hero names: TRY IT NOW signs you up for a hosted editor, this one runs
+        Node-RED on hardware you already have. Shared with /platform/device-agent/.-->
     <div id="install-node-red-from-your-terminal" class="w-full scroll-mt-24 pb-16">
         <div class="max-w-screen-lg mx-auto px-6">
             {% include "components/device-agent-install-commands.njk" %}
+            <p class="font-light mt-6 max-md:max-w-md max-md:mx-auto">
+                One command installs Node.js, Node-RED and the FlowFuse Device Agent, sets it up as a
+                service so it restarts on boot, and opens your browser to connect it. It creates a
+                FlowFuse account for you if you do not have one. If the machine already runs Node-RED,
+                it offers to import those flows.
+            </p>
         </div>
     </div>
 
