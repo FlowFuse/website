@@ -8,18 +8,31 @@ title: "Product Swimlanes"
 [Product swimlanes](https://en.wikipedia.org/wiki/Swimlane) are areas of focus and expertise within the Flowfuse product.
 
 ## Why we use them
-Swimlanes allow us to 
-1. Develop deep expertise in a particular focus area of the product
-2. Assign decision rights to an individual when it comes to the features, roadmap, design and stakeholders of that area
-3. Ship Faster: The teams' velocity increases as they deepen their experience within the product area.
+
+They allow us to:
+1. identify the functional areas we work within
+2. provide enough granuality so that every feature has a natural home
+3. ensure we are iterating across the whole product surface
+
+As a team, we routinely work across all of the lanes.
 
 ## Our swimlanes
 
-### AI Focus
-AI enablement within the FlowFuse platform, including the FlowFuse Expert AI agent which has offers support and enablement (basic, pro/free) and data insights (advanced enterprise).
+| # | Lane | Scope |
+| :---- | :---- | :---- |
+| 1 | Edge & device | Device agent, fleet-scale provisioning, offline resilience, OS/hardware/container support matrix, brownfield protocol coverage |
+| 2 | DevOps for OT | Environments, promotion pipelines, snapshots, git workflows, testing, rollback |
+| 3 | Data layer | Broker, historian, contextualisation, Unified Namespace |
+| 4 | Application & UX | Dashboard, HMI, blueprints, the build surface for non-Node-RED users |
+| 5 | AI | FlowFuse Expert, assisted authoring, data insights, MCP access to live data, agents at the edge |
+| 6 | Enterprise readiness | SSO/SCIM, RBAC granularity, audit, HA, air-gapped, multi-tenancy |
+| 7 | Security & product hardening | Hardening, vulnerability posture, secure defaults |
+| 8 | Ecosystem & extensibility | Certified nodes, catalogue, plugin/extension architecture, partner and OEM/white-label paths |
+| 9 | Platform health | Debt, migrations, scalability, upgrade paths |
 
-### Edge Orchestration and data acquisition
-Everything edge related, from data acquisition to fleet orchestration.
+Not all of these lanes can be handled equally.
 
-### Platform Core
-The engine that runs the ship. all things relevant to the platform and its operation and resilience.
+- **AI** is pervasive across the whole product surface.
+- **Platform Health** is the ongoing background work that customers do not notice unless it doesn't happen.  
+- **Security & product hardening** splits into value delivered under the Govern pillar, as well as our own, non-discretionary compliance work.
+
