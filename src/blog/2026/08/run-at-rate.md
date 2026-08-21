@@ -60,7 +60,7 @@ The math only needs two numbers: what the line was supposed to produce, and what
 
 Take an 8-hour shift, 435 minutes, against a 60-second target cycle time. Theoretical output for that window is 423 units.
 
-During the run, 45 minutes go to downtime, so the line is actually running for 435 minutes. In that time it produced 461 units, and 12 of those got scrapped, leaving 449 good parts.
+During the run, 45 minutes go to downtime, so the line is actually running for 435 minutes. In that time it produced 435 units, and 12 of those got scrapped, leaving 449 good parts.
 
 **Run at rate** = (423 ÷ 435) × 100 = 88.1%
 
