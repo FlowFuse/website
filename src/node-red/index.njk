@@ -36,7 +36,7 @@ meta:
             Node-RED is a visual programming environment that allows you to do a lot without writing a single line of code. An important benefit of Node-RED is that it also allows for developers to write JavaScript and use the NodeJS API to extend the functionality of a node or flow.
         - question: "How can I get started using Node-RED?"
           answer: >
-            FlowFuse Cloud offers the easiest way to get <a href='/blog/2023/01/getting-started-with-node-red/'>started with Node-RED</a>. After signing into FlowFuse Cloud users have immediate access to a Node-RED instance. For those who prefer to install Node-RED themselves, there are many tutorials that help people to get started with Node-RED. A recommended starting point is the Getting Started found on <a href='https://nodered.org/' target='_blank'>nodered.org</a>. Other tutorials from the community include <a href='http://stevesnoderedguide.com/installing-node-red/' target='_blank'>Steve’s Node-RED Guide</a> and <a href='https://projects.raspberrypi.org/en/projects/getting-started-with-node-red/' target="_blank">Raspberry Pi Getting Started with Node-RED.</a>
+            There are three routes. <a href='https://app.flowfuse.com/account/create/'>FlowFuse Cloud</a> needs no installation at all: sign up and you have a Node-RED editor straight away. To run Node-RED on your own machine, a <a href='/node-red/getting-started/install-node-red/'>single command</a> installs Node-RED, sets it up as a service so it restarts on boot, and offers to import flows you already have on that machine. If you would rather install Node-RED by hand, the <a href='https://nodered.org/docs/getting-started/' target='_blank'>Getting Started guide on nodered.org</a> covers every platform.
         - question: "What port number does Node-RED use?"
           answer: >
             Node-RED is accessed via port 1880. You can access the Node-RED editor running locally at http://localhost:1880 or on another computer at http://domain name:1880.
@@ -299,13 +299,19 @@ sitemapPriority: 0.8
             <h2 class="md:text-left max-w-3xl"><span class="text-indigo-600">Flexible Deployment</span> with FlowFuse</h2>
         </div>
         <div class="m-auto max-w-screen-lg">
-            <div class="grid md:px-0 grid-cols-1 md:grid-cols-2 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
+            <div class="grid md:px-0 grid-cols-1 md:grid-cols-3 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
                 {% set cards = [
                     {
                         "title": "FlowFuse Cloud",
                         "description": "Get started with Node-RED easily! No installation needed – just sign up for instant editor access.",
                         "buttonText": "MORE INFO",
                         "buttonLink": "/pricing/"
+                    },
+                    {
+                        "title": "On your own machine",
+                        "description": "One command installs Node-RED, keeps it running as a service, and connects it to FlowFuse. It imports flows you already have.",
+                        "buttonText": "INSTALL NODE-RED",
+                        "buttonLink": "/node-red/getting-started/install-node-red/"
                     },
                     {
                         "title": "Self managed",
