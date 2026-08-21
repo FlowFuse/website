@@ -100,14 +100,29 @@
    their borders, primary every interactive element.
    --ffd-ink / --ffd-muted and the semantic trio are not part of a preset (the
    Dashboard derives text colour by contrast, and widget states are per-widget),
-   so those are picked per theme from the same upstream palette family. */
+   so those are picked per theme from the same upstream palette family.
+
+   --ffd-on-accent is the text colour for a filled primary button, chosen per
+   theme so every one clears WCAG AA (4.5:1). White fails badly on the light
+   primaries -- Nord #88c0d0 is 2.00:1, Dracula #bd93f9 is 2.41:1 -- so those
+   two take their page background as the foreground instead (6.24:1, 5.90:1).
+   The page advertises AA-compliant themes, so the preview has to hold to it.
+   The good/warn/crit trio was raised for the same reason: several were between
+   2.5:1 and 4.3:1 on their card, so each was walked along its own lightness
+   ramp -- hue and saturation held -- until it cleared 4.5:1.
+
+   color-scheme tells the browser to draw native controls for the theme. Without
+   it the date input's calendar glyph renders dark-on-dark on the dark presets --
+   exactly the defect this release fixes. */
 
 .ffd-dash[data-preset="light"] {
     --ffd-surface: #fcfcfd; --ffd-bg: #f9f9fb; --ffd-card: #ffffff; --ffd-border: #d9d9e0;
     --ffd-accent: #0d74ce;  --ffd-accent2: #12a594;
     --ffd-ink: #1c2024;     --ffd-muted: #60646c;
-    --ffd-good: #16a34a;    --ffd-warn: #d97706;  --ffd-crit: #dc2626;
+    --ffd-good: #12873d;    --ffd-warn: #b06105;  --ffd-crit: #dc2626;
     --ffd-grid: #e8e8ec;
+    --ffd-on-accent: #ffffff;
+    color-scheme: light;
 }
 .ffd-dash[data-preset="dark"] {
     --ffd-surface: #18191b; --ffd-bg: #111113; --ffd-card: #212225; --ffd-border: #363a3f;
@@ -115,27 +130,35 @@
     --ffd-ink: #edeef0;     --ffd-muted: #b0b4ba;
     --ffd-good: #4ade80;    --ffd-warn: #fbbf24;  --ffd-crit: #f87171;
     --ffd-grid: #2a2d31;
+    --ffd-on-accent: #ffffff;
+    color-scheme: dark;
 }
 .ffd-dash[data-preset="dracula"] {
     --ffd-surface: #21222c; --ffd-bg: #282a36; --ffd-card: #343746; --ffd-border: #44475a;
     --ffd-accent: #bd93f9;  --ffd-accent2: #8be9fd;
     --ffd-ink: #f8f8f2;     --ffd-muted: #a8abbd;
-    --ffd-good: #50fa7b;    --ffd-warn: #f1fa8c;  --ffd-crit: #ff5555;
+    --ffd-good: #50fa7b;    --ffd-warn: #f1fa8c;  --ffd-crit: #ff7979;
     --ffd-grid: #3c3f51;
+    --ffd-on-accent: #282a36;
+    color-scheme: dark;
 }
 .ffd-dash[data-preset="nord"] {
     --ffd-surface: #3b4252; --ffd-bg: #2e3440; --ffd-card: #3b4252; --ffd-border: #4c566a;
     --ffd-accent: #88c0d0;  --ffd-accent2: #81a1c1;
     --ffd-ink: #eceff4;     --ffd-muted: #b8c0cf;
-    --ffd-good: #a3be8c;    --ffd-warn: #ebcb8b;  --ffd-crit: #bf616a;
+    --ffd-good: #a3be8c;    --ffd-warn: #ebcb8b;  --ffd-crit: #d9a1a7;
     --ffd-grid: #434c5e;
+    --ffd-on-accent: #2e3440;
+    color-scheme: dark;
 }
 .ffd-dash[data-preset="sepia"] {
     --ffd-surface: #f2e5bc; --ffd-bg: #ebdbb2; --ffd-card: #fbf1c7; --ffd-border: #d5c4a1;
     --ffd-accent: #af3a03;  --ffd-accent2: #427b58;
-    --ffd-ink: #3c3836;     --ffd-muted: #7c6f64;
-    --ffd-good: #79740e;    --ffd-warn: #b57614;  --ffd-crit: #9d0006;
+    --ffd-ink: #3c3836;     --ffd-muted: #766a5f;
+    --ffd-good: #736f0d;    --ffd-warn: #956110;  --ffd-crit: #9d0006;
     --ffd-grid: #ddcca7;
+    --ffd-on-accent: #ffffff;
+    color-scheme: light;
 }
 
 .ffd-head {
@@ -265,7 +288,7 @@
     width: 100%;
     text-align: center;
     background-color: var(--ffd-accent);
-    color: #fff;
+    color: var(--ffd-on-accent);
     border: 0;
     border-radius: 5px;
     padding: 8px 10px;
@@ -278,8 +301,8 @@
 }
 .ffd-btn--ghost {
     background-color: transparent;
-    color: var(--ffd-accent);
-    border: 1px solid var(--ffd-border);
+    color: var(--ffd-ink);
+    border: 1px solid var(--ffd-accent);
 }
 .ffd-picker {
     width: 100%;
