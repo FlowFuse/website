@@ -32,7 +32,7 @@ Run at rate is a timed production run, performed at the actual target cycle time
 
 The distinction matters because process validation alone doesn't prove it. A supplier can pass validation with every checked part coming back within spec, launch, and still miss its shift target three weeks in, at which point it's a customer problem instead of an engineering one. Run at rate is the check meant to catch that before launch happens, not after.
 
-::cta-image{src="/blog/2026/08/images/run-at-rate-cta" alt="Automate your next run at rate event" cta="sign-up"}
+::cta-image{src="/blog/2026/08/images/run-at-rate-cta.png" alt="Automate your next run at rate event" cta="sign-up"}
 ::
 
 ## Where the requirement comes from
