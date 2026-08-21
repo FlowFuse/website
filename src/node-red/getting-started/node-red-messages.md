@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Working with Messages
-  order: 5
+  order: 7
   parent: Getting Started
 meta:
   title: Understanding Node-RED Messages
