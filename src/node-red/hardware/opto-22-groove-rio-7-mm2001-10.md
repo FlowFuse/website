@@ -60,6 +60,8 @@ sudo flowfuse-device-agent -o <insert-your-three-word-token> https://app.flowfus
 
 > **Important:** Be sure to include the --port 1881 flag when running the command. By default, the Opto-22 firewall only allows access to port 1880 (default Node-RED port) by a very restricted list of users, so the Groov Rio R7 requires specifying port 1881 for the Device Agent to start correctly.
 
+> If you would rather use the one-line installer, pass the same port to it: append `--port 1881` to the installer command.
+
 Once executed, you should see an output similar to the one below, indicating that the FlowFuse Device Agent has been successfully configured:
 
 ```bash

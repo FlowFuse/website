@@ -26,6 +26,10 @@ Siemens [announced](https://press.siemens.com/global/en/pressrelease/new-siemens
 
 The goal of this documentation is to guide the user through the installation process of getting FlowFuse Device agent installed on an IoT2050. The IoT2050 comes pre-installed with version 12.22.x Node.js on the [IOT2050_Example_Image_V1.3.1](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB) image. A requirement to install FlowFuse Device Agent, Node.js needs to be upgraded to version 18 minimum.  We will be going through that process.
 
+{% note %}
+The FlowFuse Device Agent installer brings its own Node.js runtime, so the Node.js upgrade steps below are only needed if you want a newer Node.js for other software on the device. To skip them, follow [How to Install Node-RED](/node-red/getting-started/install-node-red/) instead.
+{% endnote %}
+
 ## Prerequisites 
 
 We will be working with the IoT2050 Advanced, *6ES7 647-0BA00-1YA2*. The device has been [upgraded](https://support.industry.siemens.com/cs/attachments/109741799/IOT2050_How_To_Firmware_Update_V1.3.pdf) to the latest firmware at the time of writing this article of v1.3.1.  We will be leveraging the IOT2050_Example_Image_V1.3.1.zip image which is a Debian base OS.  To complete this guide, knowledge of Linux-based cli is necessary.  Documentation to complete these requirements can be found [here](https://support.industry.siemens.com/cs/document/109741799/downloads-for-simatic-iot20x0?dti=0&lc=en-GB).
