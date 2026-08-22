@@ -1,0 +1,10 @@
+{
+    "name": "CRUD-MongoDB",
+    "version": "1.0.1",
+    "description": "SEE README",
+    "main": "flow.json",
+    "license": "SEE LICENSE IN /blueprint-library/LICENSE",
+    "dependencies": {
+      "node-red-contrib-mongodb4": "^3.1.1"
+    }
+  }
