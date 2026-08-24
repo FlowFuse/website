@@ -13,7 +13,7 @@ issues:
 FlowFuse Expert is no longer the only AI that can work your platform. FlowFuse now acts as an MCP server, so the agent your team already uses can query your teams and instances, and build Node-RED applications for you.
 
 ![Your own AI agent signs in to one FlowFuse address, and FlowFuse reaches your instances and your open editor session](./images/connect-your-own-agent.svg)
-*Your agent talks to one address. FlowFuse reaches the instances, so they stay unexposed.*
+*Your agent talks to one address. FlowFuse reaches the instances, so they are never opened up.*
 
 Add the FlowFuse address in your agent's connector settings, sign in, and choose which teams the agent may reach and whether it may make changes. Microsoft Copilot, ChatGPT and Claude all connect this way, and so do command-line and editor agents such as Claude Code, Cursor and Visual Studio Code.
 

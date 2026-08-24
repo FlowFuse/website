@@ -50,6 +50,6 @@
     <text x="862" y="257" text-anchor="middle" font-size="11.5" fill="#6b7280">when you open it</text>
 
     <!-- footnote -->
-    <text x="330" y="296" font-size="12.5" fill="#6b7280">Your agent talks to one address. FlowFuse reaches the instances, so they stay unexposed.</text>
+    <text x="330" y="296" font-size="12.5" fill="#6b7280">Your agent talks to one address. FlowFuse reaches the instances, so they are never opened up.</text>
   </g>
 </svg>
