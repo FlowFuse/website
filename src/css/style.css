@@ -3248,6 +3248,103 @@ lite-youtube::before {
     height: 2.5rem;
     color: var(--color-indigo-600);
 }
+/* "Differs by agent" clause: sits under a capability whose behaviour is not identical
+   on the FlowFuse Expert path and the bring-your-own-agent path. Quieter than the body
+   copy, and set off by a rule, so it reads as a qualification rather than a feature. */
+.ff-cap-differs {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    padding-left: 0.875rem;
+    border-left: 2px solid var(--color-indigo-200);
+}
+
+/* Showcase tabs: text labels with a timing line, not buttons. The line under the active
+   tab fills over the rotation interval so the switch is expected rather than sudden. */
+.ff-show-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Each tab takes an equal share of the row, so the timing lines together span the
+   full width of the well below them. */
+.ff-show-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+}
+.ff-show-tab__label {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--color-gray-500);
+    transition: color 0.15s ease;
+    white-space: nowrap;
+}
+.ff-show-tab.is-active .ff-show-tab__label,
+.ff-show-tab:hover .ff-show-tab__label {
+    color: var(--color-gray-900);
+}
+.ff-show-tab.is-active .ff-show-tab__label { font-weight: 500; }
+
+.ff-show-tab__track {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-gray-200);
+    overflow: hidden;
+}
+.ff-show-tab__fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: var(--color-indigo-600);
+}
+.ff-show-tab__fill.is-full { width: 100%; }
+.ff-show-tab__fill.is-running {
+    animation: ffShowFill var(--ff-show-duration, 6000ms) linear forwards;
+}
+@keyframes ffShowFill {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ff-show-tab__fill.is-running { animation: none; width: 100%; }
+}
+
+/* Agent tab strip: scrolls sideways rather than wrapping, so the row stays one line at
+   any width. Thin scrollbar so it reads as a control, not a scroll container. */
+.ff-agent-tabs {
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+.ff-agent-tabs::-webkit-scrollbar {
+    height: 6px;
+}
+.ff-agent-tabs::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray-300);
+    border-radius: 3px;
+}
+
+/* Media well: a reserved 16:9 slot under each capability, for a screenshot or a
+   short loop. Deliberately visible while empty so the page shows where the assets
+   go, rather than collapsing and then reflowing when they land. */
+.ff-cap-well {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-indigo-100);
+}
+
 .ff-cap-icon svg {
     width: 1.875rem;
     height: 1.875rem;

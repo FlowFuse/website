@@ -23,22 +23,18 @@ capabilityGroups:
       subtitle: "FlowFuse Expert turns intent into working industrial applications, right in the editor."
       items:
         - name: "AI-assisted engineering"
-          svgPath: "components/icons/code-bracket.svg"
           status: "Available"
           statusKind: "live"
           description: "Generate and edit Node-RED flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up. It works inline in the editor your team already uses, so there is no separate tool to context-switch into. That turns unfamiliar or inherited flows into something the whole team can read and maintain."
         - name: "Prompt-to-app"
-          svgPath: "components/icons/sparkles.svg"
           status: "Available"
           statusKind: "live"
           description: "Describe the application you need and FlowFuse Expert agentically builds the starting flows and logic directly in your workspace. You begin from a working draft instead of a blank canvas, then refine it like any other flow. Everything it creates stays inside the platform, so the same permissions and review apply from the first node."
         - name: "Build your own AI agents"
-          svgPath: "components/icons/squares-plus.svg"
           status: "Available"
           statusKind: "live"
           description: "Start from an agent blueprint, like the <a href='/blueprints/ai/llm-chat-agent/' class='text-indigo-600 hover:text-indigo-800 underline'>LLM chat agent</a> or <a href='/blueprints/ai/rag-chat-agent/' class='text-indigo-600 hover:text-indigo-800 underline'>RAG chat agent</a>, to stand up a task-specific AI agent grounded in your own data, tools and context. It gives you a proven structure to adapt rather than wiring an agent up from scratch. With MCP servers you can give the agent access to anything, including your RAG applications. Because it runs on the platform, the agent operates within the access you grant it."
-        - name: "Built-in product expert"
-          svgPath: "components/icons/book-open.svg"
+        - name: "Built-in product knowledge"
           status: "Available"
           statusKind: "live"
           description: "A chat assistant with answers grounded in FlowFuse and Node-RED documentation, so guidance comes from the product, not stale wikis. Ask how a node works or how to approach a build and get an answer without leaving your workspace. It shortens the path from question to working flow for new and experienced users alike."
@@ -47,22 +43,20 @@ capabilityGroups:
       subtitle: "AI that acts inside your flows and answers questions about live operations, always behind your controls."
       items:
         - name: "Governed autonomous operations"
-          svgPath: "components/icons/bolt.svg"
+          externalNote: "For external agents, approval cards do not apply. The access you granted is the control, enforced on every call."
           status: "Available"
           statusKind: "live"
           description: "Platform Automations let AI act on live systems, with every write behind an approval card, session-scoped and fully audited. A person approves, edits or rejects each proposed change before it reaches a machine. Nothing runs outside the permissions and RBAC that already govern your teams."
         - name: "Ask your plant anything"
-          svgPath: "components/icons/chat-bubble-left-right.svg"
+          externalNote: "For external agents, whether they can reach the MCP servers you build in your own flows depends on the agent."
           status: "Available"
           statusKind: "live"
           description: "In Insights mode, ask questions in natural language and get answers grounded in live machine state, alarms and logs. Operators and engineers can check what is happening on the floor without building a report or querying a database by hand. Table and MQTT-broker reading are coming soon."
         - name: "Automated visual inspection"
-          svgPath: "components/icons/camera.svg"
           status: "Available"
           statusKind: "live"
           description: "Run ONNX vision models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant."
         - name: "Use any model within flows"
-          svgPath: "components/icons/cog-6-tooth.svg"
           status: "Available"
           statusKind: "live"
           description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control."
@@ -71,12 +65,10 @@ capabilityGroups:
       subtitle: "The agent your company already approved, working your platform and building in Node-RED. Your agent, your model, on a boundary you set."
       items:
         - name: "Bring your own AI agent"
-          svgPath: "components/icons/arrows-right-left.svg"
           status: "Available"
           statusKind: "live"
           description: "Point Microsoft Copilot, ChatGPT, Claude or a local model at FlowFuse, sign in, and it can query your teams and instances and build Node-RED applications for you. Where company policy only permits an approved AI assistant, this is how that assistant reaches your operations, instead of nobody getting AI on the platform at all."
         - name: "You decide what it reaches"
-          svgPath: "components/icons/lock-closed.svg"
           status: "Available"
           statusKind: "live"
           description: "Signing in asks which teams the agent may act on and whether it may make changes at all. FlowFuse holds you to that on every call, so a read-only grant is refused whatever the agent tries. Nothing an agent reaches can delete an instance, an application, a snapshot or a team, and deploying stays yours."
@@ -85,110 +77,100 @@ capabilityGroups:
       subtitle: "The other direction. Your flows become tools that an agent can call as part of its work."
       items:
         - name: "AI that uses your tools"
-          svgPath: "components/icons/puzzle-piece.svg"
+          externalNote: "Anyone can build them. For external agents, whether they can call them depends on the agent."
           status: "Available"
           statusKind: "live"
           description: "Build your own MCP servers and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register."
-scenarios:
-    eyebrow: "What people do with it"
-    title: "What you can do with AI <span class='text-indigo-600'>here</span>"
-    subtitle: "Concrete things teams run on the platform today, whichever agent is doing the work."
-    items:
-        - name: "Ask the plant anything"
-          svgPath: "components/icons/chat-bubble-left-right.svg"
-          description: "Ask in plain language what a line is doing and get an answer grounded in live machine state, alarms and logs. No report to build and no database to query by hand."
-        - name: "Build a flow by describing it"
-          svgPath: "components/icons/sparkles.svg"
-          description: "Say what you need and watch it appear on the canvas: nodes wired up, configured, and corrected against Node-RED's own validation when something is wrong."
-        - name: "Understand a flow you inherited"
-          svgPath: "components/icons/book-open.svg"
-          description: "Point AI at an unfamiliar flow and get an explanation of what it actually does, so a flow one person wrote does not stay a flow only that person can maintain."
-        - name: "Inspect parts at the edge"
-          svgPath: "components/icons/camera.svg"
-          description: "Run vision models next to the machine with camera ingest over RTSP. Inference keeps working offline and no image data leaves your network."
-        - name: "Act on live systems, behind approval"
-          svgPath: "components/icons/bolt.svg"
-          description: "Let AI propose changes to running systems, with every write held for a person to approve, edit or reject before it reaches a machine."
-        - name: "Use any model in a flow"
-          svgPath: "components/icons/cog-6-tooth.svg"
-          description: "Bring OpenAI, Anthropic, Gemini or a local model via Ollama into any flow with your own keys, or keep everything local when data cannot leave the plant."
-choose:
-    eyebrow: "Two ways in"
-    title: "So how do you want <span class='text-indigo-600'>to get it</span>?"
-    subtitle: "The capabilities above are the same either way. What differs is whose agent does the work."
-    options:
-        - label: "Use FlowFuse Expert"
-          eyebrow: "Our agent"
-          description: "Built into the platform and the Node-RED editor. Nothing to configure, nothing to get approved."
-          href: "#flowfuse-expert"
-          event: "expert"
-        - label: "Connect your own agent"
-          eyebrow: "Your agent, your model"
-          description: "Point the AI your company already uses at FlowFuse and it works your operations."
-          href: "#connect-your-agent"
-          event: "byo-agent"
-expert:
-    eyebrow: "Our agent"
-    title: "FlowFuse Expert is already <span class='text-indigo-600'>in your editor</span>"
-    subtitle: "Built into the platform and the Node-RED editor. Nothing to install, nothing to get approved, no connector to configure."
-    differentiator: "It is not a general assistant pointed at your screen. Expert knows your flows, your installed nodes, your live data and your environment, which is why it can produce something that runs rather than something that merely looks right."
-    steps:
-        - title: "Open any instance"
-          description: "Expert is in the editor and across the platform already. There is no setup step."
-        - title: "Ask for what you need"
-          description: "Build a flow, explain one you inherited, write the Function node, or ask what is running."
-        - title: "Approve what it proposes"
-          description: "Every write waits for you. Approve it, edit it, or reject it before anything reaches a machine."
 connect:
-    eyebrow: "New in 3.0"
-    title: "FlowFuse becomes an extension of <span class='text-indigo-600'>your own agent</span>"
-    subtitle: "Your agent, your model, working your platform and building in Node-RED. Only your own authenticated agent can connect."
-    endpointLabel: "Add this address in your agent's connector settings"
     endpoint: "https://app.flowfuse.com/api/v1/mcp"
     endpointNote: "Self-hosted, use your own platform address."
-    steps:
-        - title: "Add the address"
-          description: "Paste it into your agent's connector settings. Where that lives depends on your agent."
-        - title: "Sign in to FlowFuse"
-          description: "A normal FlowFuse sign-in. There is no key to generate and nothing to paste."
-        - title: "Choose what it reaches"
-          description: "Which teams the agent may act on, and whether it may make changes at all."
+    step1:
+        title: "Copy the FlowFuse connector URL"
+        description: "You will paste this into your agent in the next step."
+    step3:
+        title: "Sign in and choose what it reaches"
+        description: "Which teams the agent may act on, and whether it has editing rights or read access only."
+    # Each client renders `logo` when set and its name as text when not. Drop a mark in
+    # src/images/ai/agents/ and add e.g. `logo: "/images/ai/agents/claude.svg"` to that
+    # client. See the README in that directory for sources and the trademark position.
     clients:
-        - name: "Microsoft Copilot"
-          where: "Copilot Studio, Tools, add a Model Context Protocol tool"
-        - name: "ChatGPT"
-          where: "Settings, connectors, developer mode"
-        - name: "Claude"
-          where: "Settings, Customize, Connectors"
-        - name: "Local models"
-          where: "Your own MCP client, pointed at your own model"
-    adminTitle: "If your IT team controls which AI you use"
-    adminBody: "Adding a connector is often an admin's call, and on ChatGPT and Claude an administrator or owner adds it once for the organisation before anyone connects. It is a small, specific ask: one address, and each person still signs in with their own FlowFuse account and chooses what the agent may reach."
-    storeBody: "Coming soon: FlowFuse in the Microsoft Copilot, Claude and ChatGPT connector directories. No custom connector, no admin request. FlowFuse Cloud first."
-    eyesTitle: "It builds on the canvas in front of you"
-    eyesBody: "Node-RED has always been visual development. Asking about your platform needs nothing open, and when an agent builds a flow it builds it in an editor session you opened for it, so you watch the nodes appear and you deploy. Visual development, now AI-assisted, with your eyes on it."
-    rulesTitle: "Your agent, your rules"
-    rules:
-        - "FlowFuse marks every tool it offers as read-only or as making a change, so your agent knows before it acts."
-        - "Your agent applies its own confirmation behaviour on top of that."
-        - "The access you granted is enforced by FlowFuse on every call, whatever the agent decides to try."
-    codingNote: "Command-line and editor agents such as Claude Code, Cursor, Visual Studio Code and Gemini CLI connect the same way."
+        - id: "expert"
+          logo: "/images/ai/agents/flowfuse-expert.svg"
+          name: "FlowFuse Expert"
+          builtIn: true
+          step1Title: "Sign in to FlowFuse"
+          step1Body: "A new account puts you in a hosted instance with Expert already in the editor. Nothing to add, no connector, no token."
+          step1Label: "Start a free trial"
+          step2Title: "Or start with the Device Agent"
+          step2Body: "Already running Node-RED on your own hardware? Connect it as a remote instance and Expert works there in the same way."
+          step2Label: "Install the Device Agent"
+          step2Url: "/docs/device-agent/quickstart/"
+          step3Title: "Ask for what you need"
+          step3Body: "Build a flow, explain one you inherited, write the Function node, or ask what is running on the floor. Every write waits for you to approve, edit or reject."
+          noStep3Cta: true
+        - id: "copilot"
+          logo: "/images/ai/agents/microsoft-copilot.svg"
+          name: "Microsoft Copilot"
+          step2Title: "Go to Copilot Studio, then Tools"
+          step2Body: "Add a tool, New tool, Model Context Protocol. Paste the URL as the server address and describe what it is for, since the orchestrator reads that to decide when to call it."
+          step2Label: "Open Copilot Studio"
+          step2Url: "https://copilotstudio.microsoft.com/"
+        - id: "chatgpt"
+          logo: "/images/ai/agents/chatgpt.svg"
+          name: "ChatGPT"
+          step2Title: "Go to Settings, then Connectors"
+          step2Body: "A workspace administrator enables custom connectors first, under Permissions and Roles. Then add FlowFuse as a connector and paste the URL."
+          step2Label: "Open ChatGPT"
+          step2Url: "https://chatgpt.com/"
+        - id: "claude"
+          logo: "/images/ai/agents/claude.svg"
+          name: "Claude"
+          step2Title: "Go to Settings, Customize, Connectors"
+          step2Body: "Add a custom connector and paste the URL. On Team and Enterprise an owner adds it once for the organisation, then everyone connects their own."
+          step2Label: "Open Claude connectors"
+          step2Url: "https://claude.ai/settings/connectors"
+        - id: "gemini"
+          logo: "/images/ai/agents/gemini.svg"
+          name: "Gemini"
+          step2Title: "Go to Connected apps, then Add MCP Server"
+          step2Body: "In Gemini Enterprise, open Settings and help, then Manage team, then Connected apps, and add the FlowFuse URL as an MCP server. Gemini supports the Streamable HTTP transport, which is what FlowFuse serves."
+          step2Label: "Open Gemini"
+          step2Url: "https://gemini.google.com/"
+        - id: "local"
+          logoInclude: "components/icons/server-stack.svg"
+          name: "Local and Custom Agents"
+          step2Title: "Add it to your MCP client's config"
+          step2Body: "Any MCP-capable client works, pointed at your own model, so nothing has to leave your network."
+          step2Label: "See the documentation"
+          step2Url: "/docs/user/expert/third-party-agents/#local-and-self-hosted-models"
+    codingNote: "Command-line and editor agents such as Claude Code, Cursor, Visual Studio Code and Gemini CLI connect to the same URL."
+showcase:
+    interval: 6000
+    slides:
+        - id: "expert"
+          label: "FlowFuse Expert"
+          media: "https://placehold.co/1600x900/eef2ff/4f46e5/png?text=FlowFuse+Expert+building+a+flow"
+          mediaAlt: "Placeholder. FlowFuse Expert building a flow on the Node-RED canvas."
+        - id: "external"
+          label: "Your own agent"
+          media: "https://placehold.co/1600x900/eef2ff/4f46e5/png?text=External+agent+driving+FlowFuse"
+          mediaAlt: "Placeholder. An external AI agent driving FlowFuse and building in Node-RED."
 governance:
-    title: "Governance you can <span class='text-indigo-600'>prove</span>"
+    title: "AI Governance you can <span class='text-indigo-600'>prove</span>"
     subtitle: "The control plane every AI action runs through, the same one that governs your teams."
     items:
-        - svgPath: "components/icons/check-circle.svg"
-          title: "Approval cards on writes"
-          description: "FlowFuse Expert and Platform Automations hold every write action for a human to approve, reject or edit."
         - svgPath: "components/icons/lock-closed.svg"
-          title: "Scoped on connect"
-          description: "A connected agent gets the teams you granted and nothing else, enforced on every call it makes."
+          title: "Only the teams you grant"
+          description: "AI reaches the teams you allow and nothing else, enforced by the platform on every call."
         - svgPath: "components/icons/shield-check.svg"
           title: "Role-based access"
           description: "The same RBAC that governs your teams governs what AI can see and do."
+        - svgPath: "components/icons/check-circle.svg"
+          title: "Nothing gets deleted"
+          description: "No agent can remove an instance, an application, a snapshot or a team. There is no tool for it."
         - svgPath: "components/icons/clipboard-document-check.svg"
           title: "Audit on everything"
-          description: "Every action AI touches is logged, so you can show exactly what happened and when."
+          description: "Every action AI takes is logged and attributed, so you can show exactly what happened and when."
 ---
 <!--Hero Content (background-image treatment, pattern from the homepage hero) -->
 <section class="w-full relative bg-white">
@@ -213,250 +195,171 @@ governance:
                         {% include "components/ai-chat-interface.njk" %}
                         {% include "components/ai-expert-modal.njk" %}
                     #}
-                    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-                        <a href="{{ site.appURL }}/account/create" class="ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3"
-                           onclick="if(typeof capture === 'function') capture('cta-ai-trial', {'position': 'hero'})">Start a free trial</a>
-                        <a href="{{ hero.buttonLink }}" class="ff-btn ff-btn--secondary uppercase whitespace-nowrap px-6 py-3"
-                           onclick="if(typeof capture === 'function') capture('cta-ai-demo', {'position': 'hero'})">{{ hero.buttonText }}</a>
+                    <!-- GETTING STARTED: pick your agent, Expert first. Lives in the hero because
+                         it is the primary action on this page. -->
+    <!-- CONNECTOR: pick your agent, then three steps that are specific to it. One
+         component rather than a generic step list plus a separate grid of tiles, so
+         the reader only sees the instructions that apply to them. Tiles fall back to a
+         text wordmark when no logo file is set. -->
+    <div class="mt-12 border border-gray-200 bg-white">
+        <div class="ff-agent-tabs flex flex-nowrap gap-1 overflow-x-auto border-b border-gray-200 p-2" role="tablist" aria-label="Choose your AI agent">
+            {% for client in connect.clients %}
+            <button type="button" role="tab" id="ff-tab-{{ client.id }}"
+                    aria-controls="ff-panel-{{ client.id }}"
+                    aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+                    data-ff-tab="{{ client.id }}"
+                    class="ff-agent-tab ff-btn flex flex-none items-center gap-2 whitespace-nowrap {% if loop.first %}ff-btn--primary{% else %}text-gray-700 hover:bg-gray-100{% endif %}"
+                    onclick="capture('cta-ai-agent-tab', {'position': '{{ client.id }}'})">
+                {# A brand mark keeps its own colours, so it stays an <img>. Our own neutral
+                   glyph is inlined, so it inherits currentColor and turns white with the
+                   label when the tab is active. #}
+                {% if client.logoInclude %}<span class="flex-none w-4 h-4" aria-hidden="true">{% include client.logoInclude %}</span>
+                {% elif client.logo %}<img src="{{ client.logo }}" alt="" class="h-4 w-auto flex-none" aria-hidden="true">{% endif %}
+                <span>{{ client.name }}</span>
+            </button>
+            {% endfor %}
+        </div>
+
+        {% for client in connect.clients %}
+        <div id="ff-panel-{{ client.id }}" role="tabpanel" aria-labelledby="ff-tab-{{ client.id }}"
+             data-ff-panel="{{ client.id }}"
+             class="ff-agent-panel grid grid-cols-1 md:grid-cols-3 gap-8 p-6 md:p-8{% if not loop.first %} hidden{% endif %}">
+
+            <div class="flex flex-col">
+                <p class="font-mono text-xs font-semibold text-indigo-600 m-0">01</p>
+                <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{% if client.builtIn %}{{ client.step1Title }}{% else %}{{ connect.step1.title }}{% endif %}</p>
+                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{% if client.builtIn %}{{ client.step1Body }}{% else %}{{ connect.step1.description }}{% endif %}</p>
+                {% if client.builtIn and client.step1Label %}
+                <div class="mt-auto pt-5">
+                    <a href="{% include 'sign-up-url.njk' %}" class="ff-btn ff-btn--primary"
+                       onclick="capture('cta-try-it-out', {'position': 'ai-tab-expert'})">{{ client.step1Label | upper }}</a>
+                </div>
+                {% endif %}
+                {% if not client.builtIn %}
+                <div class="mt-auto pt-5">
+                    <p class="text-xs text-gray-500 mb-2">{{ connect.endpointNote }}</p>
+                    <div class="ff-command">
+                        <code class="ff-command__text">{{ connect.endpoint }}</code>
+                        <button type="button" class="ff-command__copy" data-copy-command
+                                onclick="capture('cta-copy-mcp-endpoint', {'position': '{{ client.id }}'})">Copy</button>
                     </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="flex flex-col">
+                <p class="font-mono text-xs font-semibold text-indigo-600 m-0">02</p>
+                <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.step2Title }}</p>
+                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.step2Body }}</p>
+                <div class="mt-auto pt-5">
+                    <a href="{{ client.step2Url }}" class="ff-btn ff-btn--primary-outlined"
+                       {% if "http" in client.step2Url %}target="_blank" rel="noopener"{% endif %}
+                       onclick="capture('cta-ai-open-client', {'position': '{{ client.id }}'})">{{ client.step2Label }}</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <p class="font-mono text-xs font-semibold text-indigo-600 m-0">03</p>
+                <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{% if client.step3Title %}{{ client.step3Title }}{% else %}{{ connect.step3.title }}{% endif %}</p>
+                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{% if client.step3Body %}{{ client.step3Body }}{% else %}{{ connect.step3.description }}{% endif %}</p>
+                {% if not client.noStep3Cta %}
+                <div class="mt-auto pt-5">
+                    <a href="{% include 'sign-up-url.njk' %}" class="ff-btn ff-btn--primary"
+                       onclick="capture('cta-try-it-out', {'position': 'ai-connect-step3'})">GET STARTED</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="text-sm text-gray-500 mt-5 mb-0">{{ connect.codingNote }} <a href="/docs/user/expert/third-party-agents/" class="text-indigo-600 font-semibold">See the documentation</a>.</p>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SCENARIOS: lead with what people actually do, before explaining the product or
-     asking anyone to choose a path. Shared ground: true whichever agent does the work. -->
-<div class="w-full bg-white px-6 pb-16 sm:pb-24">
-    <div class="md:max-w-screen-lg m-auto">
-        <div class="max-w-3xl">
-            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">{{ scenarios.eyebrow }}</p>
-            <h2 class="w-full mt-3">{{ scenarios.title | safe }}</h2>
-            <p class="mt-3 text-gray-600">{{ scenarios.subtitle }}</p>
+<!-- SHOWCASE: one well, two views, alternating on a timer so both stories get seen
+     without the reader doing anything. Clicking a tab takes over and stops the rotation,
+     which is the expected behaviour for an auto-advancing control. Honours
+     prefers-reduced-motion by not rotating at all. Images are placeholders. -->
+<div class="w-full bg-white px-6 pb-8 sm:pb-10">
+    <div class="md:max-w-screen-lg mx-auto" data-ff-showcase data-interval="{{ showcase.interval }}">
+        <div class="ff-show-tabs" role="tablist" aria-label="Choose a view">
+            {% for slide in showcase.slides %}
+            <button type="button" role="tab" id="ff-show-tab-{{ slide.id }}"
+                    aria-controls="ff-show-panel-{{ slide.id }}"
+                    aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+                    data-ff-show-tab="{{ slide.id }}"
+                    class="ff-show-tab{% if loop.first %} is-active{% endif %}">
+                <span class="ff-show-tab__label">{{ slide.label }}</span>
+                <span class="ff-show-tab__track"><span class="ff-show-tab__fill"></span></span>
+            </button>
+            {% endfor %}
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {% for item in scenarios.items %}
-            <div class="border border-gray-200 border-t-[3px] border-t-indigo-600 p-6 bg-white">
-                <span class="ff-cap-icon" aria-hidden="true">{% include item.svgPath %}</span>
-                <p class="text-lg font-medium text-gray-900 mt-4 mb-0">{{ item.name }}</p>
-                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ item.description }}</p>
+        <div class="ff-showcase">
+            {% for slide in showcase.slides %}
+            <div id="ff-show-panel-{{ slide.id }}" role="tabpanel" aria-labelledby="ff-show-tab-{{ slide.id }}"
+                 data-ff-show-panel="{{ slide.id }}" class="ff-cap-well{% if not loop.first %} hidden{% endif %}">
+                <img src="{{ slide.media }}" alt="{{ slide.mediaAlt }}" class="w-full h-full object-cover" loading="lazy">
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
 
-<!-- CAPABILITIES: every AI use case, formalized, grouped by how it shows up in operations.
-     NOTE: Predictive analytics and Edge ML are intentionally omitted from public claims
-     (not shipped / not on the roadmap). Do not add them here without product sign-off. -->
-<div id="capabilities" class="w-full bg-indigo-50/60 py-16 sm:py-24 px-6 border-t border-gray-100 scroll-mt-16">
-    <div class="md:max-w-screen-lg m-auto">
-        <div class="max-w-4xl">
-            <h2 class="w-full">{{ capabilityIntro.title | safe }}</h2>
-            <p class="mt-3 text-gray-600">{{ capabilityIntro.subtitle }}</p>
-        </div>
-        {% for group in capabilityGroups %}
-        <section class="ff-cap-group md:grid md:grid-cols-5 md:gap-x-12 lg:gap-x-16 mt-24 {% if not loop.first %}pt-20 border-t border-indigo-200/70{% endif %}">
-            <!-- LEFT: group header, pins on desktop while the right column scrolls -->
-            <div class="ff-cap-sticky md:col-span-2 max-md:mb-10">
-                <p class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">
-                    <span class="font-mono text-indigo-600">0{{ loop.index }}</span>
-                    <span>{{ group.eyebrow }}</span>
-                </p>
-                <h3 class="text-3xl md:text-4xl font-medium text-gray-900 leading-tight mt-4 mb-0">{{ group.title }}</h3>
-                <p class="text-gray-600 font-light max-w-md mt-4 mb-0">{{ group.subtitle }}</p>
-            </div>
-            <!-- RIGHT: the group's capabilities as icon-marked, scrolling blocks.
-                 These are informational, not links: no click affordance, no tabindex. -->
-            <div class="md:col-span-3">
-                {% for item in group.items %}
-                <div class="ff-cap-item px-2 py-7 {% if not loop.first %}mt-6 pt-14 border-t border-indigo-100{% endif %}">
-                    <div class="flex items-start gap-4 sm:gap-5">
-                        <span class="ff-cap-icon" aria-hidden="true">{% include item.svgPath %}</span>
-                        <div class="flex-1 min-w-0">
-                            <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
-                                <span class="text-xl font-medium text-gray-900">{{ item.name }}</span>
-                                {% if item.statusKind == 'soon' %}
-                                <span class="ff-cap-soon bg-amber-50 text-amber-700 border border-amber-200">Coming soon</span>
-                                {% endif %}
-                            </div>
-                            <p class="text-gray-600 font-light mt-2 mb-0">{{ item.description | safe }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
-        {% endfor %}
-    </div>
-</div>
-<!-- THE FORK: only now, once the reader knows what AI does here. Each card lands on a
-     section of its own, and neither section contains the other path. -->
-<div id="choose" class="w-full py-16 sm:py-20 px-6 bg-white border-t border-gray-100 scroll-mt-16">
-    <div class="md:max-w-screen-lg m-auto">
-        <div class="max-w-3xl">
-            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">{{ choose.eyebrow }}</p>
-            <h2 class="w-full mt-3">{{ choose.title | safe }}</h2>
-            <p class="mt-3 text-gray-600">{{ choose.subtitle }}</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
-            {% for opt in choose.options %}
-            <a href="{{ opt.href }}"
-               class="group block border border-gray-200 border-t-[3px] border-t-indigo-600 bg-white p-6 hover:border-indigo-300 transition-colors"
-               onclick="if(typeof capture === 'function') capture('ai-path-selected', {'path': '{{ opt.event }}'})">
-                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600 m-0">{{ opt.eyebrow }}</p>
-                <p class="text-xl font-medium text-gray-900 mt-2 mb-0 group-hover:text-indigo-700">{{ opt.label }}</p>
-                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ opt.description }}</p>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-
-<!-- PATH ONE: FlowFuse Expert. Deliberately the same shape as the connect section below,
-     so the two read as genuine alternatives rather than one being an afterthought. -->
-<div id="flowfuse-expert" class="w-full py-16 sm:py-24 px-6 bg-indigo-50/60 border-t border-gray-100 scroll-mt-16">
-    <div class="md:max-w-screen-lg m-auto">
-        <div class="max-w-3xl">
-            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">{{ expert.eyebrow }}</p>
-            <h2 class="w-full mt-3">{{ expert.title | safe }}</h2>
-            <p class="mt-3 text-gray-600">{{ expert.subtitle }}</p>
-        </div>
-
-        <p class="mt-8 max-w-3xl text-gray-700">{{ expert.differentiator }}</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-            {% for step in expert.steps %}
-            <div class="border-t border-indigo-200 pt-4">
-                <p class="font-mono text-xs font-semibold text-indigo-600 m-0">0{{ loop.index }}</p>
-                <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ step.title }}</p>
-                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ step.description }}</p>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div class="mt-12 w-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
-            <div class="w-full bg-white ff-image-cover ff-image-rounded left">
-                {% image "./images/ai/ai-ui.png", "FlowFuse Expert showing AI-generated flow suggestions", [1200] %}
-            </div>
-        </div>
-
-        <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a href="{{ site.appURL }}/account/create" class="ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3"
-               onclick="if(typeof capture === 'function') capture('cta-ai-trial', {'position': 'flowfuse-expert'})">Start a free trial</a>
-            <a href="/docs/user/expert/" class="text-indigo-600 font-semibold">Already a customer? Open an instance and ask it something</a>
-        </div>
-    </div>
-</div>
-
-<!-- PATH TWO: bring your own agent. The 3.0 headline. One flow for every agent, because sign-in is the
-     advertised route. Client tiles fall back to a text wordmark when no logo file is set, so a
-     mark that legal has not cleared can be dropped without touching the layout. -->
-<div id="connect-your-agent" class="w-full py-16 sm:py-24 px-6 bg-white border-t border-gray-100 scroll-mt-16">
-    <div class="md:max-w-screen-lg m-auto">
-        <div class="max-w-3xl">
-            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">{{ connect.eyebrow }}</p>
-            <h2 class="w-full mt-3">{{ connect.title | safe }}</h2>
-            <p class="mt-3 text-gray-600">{{ connect.subtitle }}</p>
-        </div>
-
-        <!-- endpoint -->
-        <div class="mt-10 max-w-2xl">
-            <p class="text-sm text-gray-600 mb-2">{{ connect.endpointLabel }}</p>
-            <div class="flex items-stretch border border-gray-300 bg-gray-50">
-                <code id="ff-mcp-endpoint" class="flex-1 min-w-0 px-4 py-3 font-mono text-sm text-gray-900 overflow-x-auto whitespace-nowrap">{{ connect.endpoint }}</code>
-                <button type="button" data-copy-target="ff-mcp-endpoint"
-                        class="ff-copy-endpoint flex-none px-4 border-l border-gray-300 text-sm font-semibold text-indigo-600 hover:bg-indigo-50 transition-colors"
-                        onclick="if(typeof capture === 'function') capture('ai-endpoint-copied')">Copy</button>
-            </div>
-            <p class="text-sm text-gray-500 mt-2 mb-0">{{ connect.endpointNote }}</p>
-        </div>
-
-        <!-- three steps -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
-            {% for step in connect.steps %}
-            <div class="border-t border-indigo-200 pt-4">
-                <p class="font-mono text-xs font-semibold text-indigo-600 m-0">0{{ loop.index }}</p>
-                <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ step.title }}</p>
-                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ step.description }}</p>
-            </div>
-            {% endfor %}
-        </div>
-
-        <!-- clients -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-            {% for client in connect.clients %}
-            <div class="border border-gray-200 p-5">
-                <div class="h-8 flex items-center">
-                    {% if client.logo %}
-                    <img src="{{ client.logo }}" alt="{{ client.name }}" class="max-h-8 w-auto" loading="lazy">
-                    {% else %}
-                    <span class="text-base font-medium text-gray-900">{{ client.name }}</span>
-                    {% endif %}
-                </div>
-                <p class="text-sm text-gray-600 font-light mt-3 mb-0">{{ client.where }}</p>
-            </div>
-            {% endfor %}
-        </div>
-        <p class="text-sm text-gray-500 mt-5 mb-0">{{ connect.codingNote }} <a href="/docs/user/expert/third-party-agents/" class="text-indigo-600 font-semibold">See the documentation</a>.</p>
-
-        <!-- eyes on it, and the rules -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-            <div class="border-l-4 border-indigo-400 bg-indigo-50/60 px-6 py-6">
-                <p class="text-lg font-medium text-indigo-800 m-0">{{ connect.eyesTitle }}</p>
-                <p class="text-gray-700 font-light mt-2 mb-0">{{ connect.eyesBody }}</p>
-            </div>
-            <div class="border border-gray-200 px-6 py-6">
-                <p class="text-lg font-medium text-gray-900 m-0">{{ connect.rulesTitle }}</p>
-                <ul class="mt-3 mb-0 space-y-2 list-none p-0">
-                    {% for rule in connect.rules %}
-                    <li class="text-gray-600 font-light text-sm flex gap-3">
-                        <span class="font-mono text-xs text-indigo-600 flex-none mt-1">0{{ loop.index }}</span>
-                        <span>{{ rule }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <!-- the admin question, and the answer -->
-        <div class="mt-12 border border-gray-200 px-6 py-6 md:px-8">
-            <p class="text-lg font-medium text-gray-900 m-0">{{ connect.adminTitle }}</p>
-            <p class="text-gray-600 font-light mt-2 mb-0">{{ connect.adminBody }}</p>
-            <p class="mt-4 mb-0 text-indigo-700 font-medium">{{ connect.storeBody }}</p>
-        </div>
-
-        <!-- diagram -->
-        <div class="mt-12 max-w-3xl mx-auto">
-            <img src="/images/ai/connect-your-own-agent.svg" alt="Your own AI agent signs in to one FlowFuse address. FlowFuse checks the access you granted, then reaches your Node-RED instances and the editor session you have opened." class="w-full h-auto" loading="lazy">
-        </div>
-
-        <!-- CTA -->
-        <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a href="{{ site.appURL }}/account/create" class="ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3"
-               onclick="if(typeof capture === 'function') capture('cta-ai-trial', {'position': 'connect-your-agent'})">Start a free trial</a>
-            <a href="/docs/user/expert/third-party-agents/" class="text-indigo-600 font-semibold">Already a customer? Connect an agent</a>
-        </div>
-    </div>
-</div>
 <script>
-// Copy the MCP address. The site's only other clipboard helper lives in the Expert modal
-// script, which this page no longer loads, so this is self-contained.
-document.querySelectorAll('.ff-copy-endpoint').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        var el = document.getElementById(btn.dataset.copyTarget);
-        if (!el || !navigator.clipboard) { return; }
-        navigator.clipboard.writeText(el.textContent.trim()).then(function () {
-            var was = btn.textContent;
-            btn.textContent = 'Copied';
-            setTimeout(function () { btn.textContent = was; }, 1600);
-        }).catch(function () { /* clipboard blocked; leave the address selectable */ });
-    });
-});
+// Showcase rotation. The active tab's line fills over the interval, so the timing is
+// visible rather than a surprise. Picking a view stops the rotation for good and the line
+// simply stays full. No rotation at all when the visitor prefers reduced motion.
+(function () {
+    var root = document.querySelector('[data-ff-showcase]')
+    if (!root) return
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[data-ff-show-tab]'))
+    var panels = Array.prototype.slice.call(document.querySelectorAll('[data-ff-show-panel]'))
+    if (tabs.length < 2) return
+
+    var interval = parseInt(root.dataset.interval, 10) || 6000
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    var timer = null
+
+    function show (id, animate) {
+        tabs.forEach(function (tab) {
+            var on = tab.dataset.ffShowTab === id
+            tab.setAttribute('aria-selected', on ? 'true' : 'false')
+            tab.classList.toggle('is-active', on)
+            var fill = tab.querySelector('.ff-show-tab__fill')
+            // restart the animation from zero: drop the class, force a reflow, re-add
+            fill.classList.remove('is-running', 'is-full')
+            void fill.offsetWidth
+            if (on) { fill.classList.add(animate ? 'is-running' : 'is-full') }
+        })
+        panels.forEach(function (p) { p.classList.toggle('hidden', p.dataset.ffShowPanel !== id) })
+    }
+
+    root.style.setProperty('--ff-show-duration', interval + 'ms')
+    show(tabs[0].dataset.ffShowTab, !reduced)
+
+    if (!reduced) {
+        var i = 0
+        timer = setInterval(function () {
+            i = (i + 1) % tabs.length
+            show(tabs[i].dataset.ffShowTab, true)
+        }, interval)
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            if (timer) { clearInterval(timer); timer = null }
+            show(tab.dataset.ffShowTab, false)
+        })
+    })
+})()
 </script>
 
 <!-- GOVERNANCE: the control plane every AI action runs through -->
-<div class="w-full py-16 sm:py-24 px-6 border-t border-gray-100">
+<div class="w-full pt-4 pb-16 sm:pt-6 sm:pb-24 px-6">
     <div class="md:max-w-screen-lg m-auto ff-blue-card pt-12 pb-12 px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto">
             <h2 class="w-full">{{ governance.title | safe }}</h2>
@@ -474,16 +377,119 @@ document.querySelectorAll('.ff-copy-endpoint').forEach(function (btn) {
     </div>
 </div>
 
-
-
-<!-- USE CASES: where AI meets operations (cross-links per web task) -->
-<div class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-t border-gray-100">
-    <div class="max-w-screen-lg mx-auto">
-        <h2 class="max-md:text-center">Where AI meets <span class="text-indigo-600">your operations</span></h2>
-        <p class="mt-4 max-w-3xl text-gray-600">The use cases pair with FlowFuse AI, from governed agent access to AI-assisted monitoring.</p>
-        {% set featuredUseCases = ["production-monitoring", "shop-floor-communication"] %}
-        {% include "components/use-case-links.njk" %}
-        <p class="mt-8"><a href="/use-cases/" class="text-indigo-600 font-semibold">See all use cases</a></p>
+<!-- CAPABILITIES: every AI use case, formalized, grouped by how it shows up in operations.
+     NOTE: Predictive analytics and Edge ML are intentionally omitted from public claims
+     (not shipped / not on the roadmap). Do not add them here without product sign-off. -->
+<div id="capabilities" class="w-full bg-indigo-50/60 py-16 sm:py-24 px-6 border-t border-gray-100 scroll-mt-16">
+    <div class="md:max-w-screen-lg m-auto">
+        <div class="max-w-4xl">
+            <h2 class="w-full">{{ capabilityIntro.title | safe }}</h2>
+            <p class="mt-3 text-gray-600">{{ capabilityIntro.subtitle }}</p>
+        </div>
+        {% for group in capabilityGroups %}
+        <section class="ff-cap-group md:grid md:grid-cols-5 md:gap-x-12 lg:gap-x-16 mt-24 {% if not loop.first %}pt-20 border-t border-indigo-200/70{% endif %}">
+            <!-- GROUP HEADER: pins on desktop while the items column scrolls. Sides
+                 alternate per group (odd left, even right) via explicit grid placement,
+                 so the DOM order stays header-then-items for mobile stacking. -->
+            <div class="ff-cap-sticky md:col-span-2 max-md:mb-10{% if loop.index % 2 == 0 %} md:col-start-4{% endif %}">
+                <p class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">
+                    <span class="font-mono text-indigo-600">0{{ loop.index }}</span>
+                    <span>{{ group.eyebrow }}</span>
+                </p>
+                <h3 class="text-3xl md:text-4xl font-medium text-gray-900 leading-tight mt-4 mb-0">{{ group.title }}</h3>
+                <p class="text-gray-600 font-light max-w-md mt-4 mb-0">{{ group.subtitle }}</p>
+            </div>
+            <!-- The group's capabilities as icon-marked, scrolling blocks. These are
+                 informational, not links: no click affordance, no tabindex. -->
+            <div class="md:col-span-3{% if loop.index % 2 == 0 %} md:col-start-1 md:row-start-1{% endif %}">
+                {% for item in group.items %}
+                <div class="ff-cap-item px-2 py-7 {% if loop.first %}md:pt-0{% else %}mt-6 pt-14 border-t border-indigo-100{% endif %}">
+                    <!-- MEDIA WELL: a sized slot for a screenshot or short loop, above the copy
+                         so the eye lands on the visual first. Add `media:` to the item in
+                         frontmatter to fill it and `mediaAlt:` to describe it. A .webm or .mp4
+                         renders as a muted autoplaying loop, which is how this site carries
+                         former GIFs; anything else renders as an image. Empty until the assets
+                         exist. -->
+                    <div class="ff-cap-well">
+                        {% if item.media %}
+                            {% if ".webm" in item.media or ".mp4" in item.media %}
+                        <video autoplay loop muted playsinline preload="none" aria-label="{{ item.mediaAlt }}" class="w-full h-full object-cover">
+                            <source src="{{ item.media }}" type="video/{% if '.webm' in item.media %}webm{% else %}mp4{% endif %}" />
+                        </video>
+                            {% else %}
+                        <img src="{{ item.media }}" alt="{{ item.mediaAlt }}" class="w-full h-full object-cover" loading="lazy">
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mt-5">
+                        <span class="text-xl font-medium text-gray-900">{{ item.name }}</span>
+                        {% if item.statusKind == 'soon' %}
+                        <span class="ff-cap-soon bg-amber-50 text-amber-700 border border-amber-200">Coming soon</span>
+                        {% endif %}
+                    </div>
+                    <p class="text-gray-600 font-light mt-2 mb-0">{{ item.description | safe }}</p>
+                    {% if item.externalNote %}
+                    <p class="ff-cap-differs mt-3 mb-0">{{ item.externalNote }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
     </div>
 </div>
+<script>
+// Agent tabs. Swaps which set of connect instructions is shown. No dependency on the
+// Expert modal script, which this page no longer loads.
+document.querySelectorAll('[data-ff-tab]').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+        var id = tab.dataset.ffTab;
+        document.querySelectorAll('[data-ff-tab]').forEach(function (t) {
+            var on = t.dataset.ffTab === id;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.classList.toggle('ff-btn--primary', on);
+            t.classList.toggle('text-gray-700', !on);
+            t.classList.toggle('hover:bg-gray-100', !on);
+        });
+        document.querySelectorAll('[data-ff-panel]').forEach(function (p) {
+            p.classList.toggle('hidden', p.dataset.ffPanel !== id);
+        });
+    });
+});
+
+// Copy buttons for the MCP address, the same helper as src/platform/device-agent.njk:
+// the text is read from the sibling <code> so the markup stays the single source of
+// truth, and it falls back to execCommand outside a secure context.
+document.querySelectorAll('[data-copy-command]').forEach(function (button) {
+    button.addEventListener('click', async function () {
+        var code = button.parentElement.querySelector('.ff-command__text')
+        if (!code) return
+        var text = code.textContent.trim()
+        try {
+            if (navigator.clipboard) {
+                await navigator.clipboard.writeText(text)
+            } else {
+                var field = document.createElement('textarea')
+                field.value = text
+                field.setAttribute('readonly', '')
+                field.style.position = 'absolute'
+                field.style.left = '-9999px'
+                document.body.appendChild(field)
+                field.select()
+                document.execCommand('copy')
+                document.body.removeChild(field)
+            }
+        } catch (err) {
+            return
+        }
+        var original = button.textContent
+        button.textContent = 'Copied'
+        button.classList.add('ff-command__copy--done')
+        setTimeout(function () {
+            button.textContent = original
+            button.classList.remove('ff-command__copy--done')
+        }, 2000)
+    })
+})
+</script>
 
