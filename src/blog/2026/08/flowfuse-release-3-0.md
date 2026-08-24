@@ -2,7 +2,7 @@
 metaTitle: "FlowFuse 3.0: Edge/Hub/Fleet, AI & Dashboard Themes"
 title: "FlowFuse 3.0: Build, deploy, and govern — matched to how you run"
 subtitle: 
-description: "FlowFuse 3.0 introduces Edge, Hub, and Fleet for Node-RED, opens Expert to your AI assistant, and ships new Node-RED Dashboard themes. The latest Node-RED news."
+description: "FlowFuse 3.0 introduces Edge, Hub, and Fleet for Node-RED, opens FlowFuse to your own AI agent, and ships new Node-RED Dashboard themes. The latest Node-RED news."
 date: 2026-08-27
 authors: ["jamie-strusz"]
 image: /blog/2026/08/images/flowfuse-release-3-0.jpg
@@ -50,7 +50,7 @@ Fleet fits telemetry collection, distributed device deployments, and hardware an
 
 It's the same strong platform underneath. The difference is which problem each one is tuned for — data center, manufacturing site, or a distributed fleet — so the path from "sign up" to "in production" is shorter for every team, making everything easier from POCs to prod and scaling.
 
-Every product is enabled by FlowFuse Expert.
+Every product is enabled by FlowFuse Expert, and every product connects the AI agent you already use.
 
 ## Build: faster from idea to working application
 
@@ -60,17 +60,23 @@ FlowFuse 3.0 makes it easier to go from an idea to a working application, with n
 
 Describe what you want to build, and [FlowFuse Expert](/docs/user/expert/) helps assemble it.
 
-Expert works through a set of tools on the FlowFuse MCP server. In 3.0, it stops being the only client that can use them. Point Cursor, Claude Code, or Gemini CLI at the server and it gets the same tools FlowFuse Expert has, not a reduced API, the same set.
+### Connect Your Own AI Agent
 
-Until now, AI assistance stopped at the product boundary. The client your team already works in knew your repo and your tickets, but your Node-RED instances were invisible to it. Now they aren't.
+Expert works through a set of tools on the FlowFuse MCP server. In 3.0, it stops being the only agent that can use them.
 
-Ask it to subscribe to `factory/line1/temp` and chart the reading on a dashboard gauge. It builds the flow in your instance, reads the debug output back, and fixes its own node configuration when validation rejects it. The tools carry Node-RED's type schemas and return its validation errors, so the model sees exactly what it got wrong and repairs it in place instead of guessing.
+Point the AI agent you already use at FlowFuse, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT and Claude, and coding agents like Cursor, Claude Code and Gemini CLI, all reach the same capabilities FlowFuse Expert does, not a cut-down API. Because the agent is yours, so is the model behind it.
+
+Until now, AI assistance stopped at the product boundary. The agent your team already works in knew your repo and your tickets, but your Node-RED instances were invisible to it. For many companies that was not a preference, it was policy: approved-AI-only rules, and FlowFuse Expert is not on the approved list, so there was no AI on the platform at all. What happened instead was copy and paste, prompting an external tool for flow JSON and hand-importing it. The work was already being done by AI. It just was not being done through us.
+
+Ask it to subscribe to `factory/line1/temp` and chart the reading on a dashboard gauge. It builds the flow on the canvas in front of you, reads the debug output back, and fixes its own node configuration when validation rejects it. The tools carry Node-RED's type schemas and return its validation errors, so the model sees exactly what it got wrong and repairs it in place instead of guessing. You watch it happen, and deploying stays yours.
 
 Three things follow from that:
 
-- **Your client, your setup.** Each developer stays in the client they already work in, next to their existing MCP servers and customizations.
-- **Instances your client couldn't otherwise touch.** Your client connects to FlowFuse; FlowFuse connects to the instance. Remote instances in air-gapped networks and DMZs come into reach without exposing them.
-- **Platform operations, not just flow editing.** Query teams, instances, snapshots, and pipelines, and run FlowFuse itself from the client.
+- **Your agent, your setup.** Each engineer stays in the agent they already work in, next to their existing MCP servers and customizations.
+- **Instances your agent couldn't otherwise touch.** Your agent connects to FlowFuse; FlowFuse connects to the instance. Remote instances in air-gapped networks and DMZs come into reach without opening them up.
+- **Platform operations, not just flow editing.** Query teams, instances, snapshots and pipelines, and work FlowFuse itself from your agent.
+
+Only your own authenticated agent can connect to a session. [Connecting your own agent](/docs/user/expert/third-party-agents/) covers the setup.
 
 <video autoplay loop muted playsinline aria-label="Video demo of querying FlowFuse teams and instances from an AI client" width="1600" height="900" preload="none"><source src="./images/flowfuse-expert-mcp-ai-assistant.webm" type="video/webm" /></video>
 _Video demo of querying FlowFuse teams and instances from an AI client_
