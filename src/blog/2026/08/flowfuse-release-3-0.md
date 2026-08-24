@@ -13,9 +13,9 @@ tags:
 release: "3.0"
 tldr: 
 cta:
-  type: 
-  title: 
-  description: 
+  type: demo
+  title: Find out which FlowFuse product fits how you run
+  description: Walk through Hub, Edge, and Fleet with our team and leave with the right fit for your deployment, not a generic tier.
 ---
 
 FlowFuse exists to do one thing well: help teams build, deploy, and govern the operational applications that run their production. This goes from a single data center to every machine on the plant floor to thousands of devices in the field.
@@ -25,8 +25,6 @@ FlowFuse exists to do one thing well: help teams build, deploy, and govern the o
 FlowFuse 3.0 sharpens that promise. We reorganized the way you buy the platform around how you actually work, so the edition you run matches your use case and you get exactly what you need out of the box. We also made updates that move the build experience forward: faster app creation, more usable dashboard interface, and additional certified connectivity.
 
 ## Introducing FlowFuse Hub, Edge, and Fleet
-
-> ⚠️ **PLACEHOLDER — video pending.** Insert video recording from ZJ here.
 
 ### Which FlowFuse Product Should I Use?
 
@@ -74,14 +72,17 @@ Three things follow from that:
 - **Instances your client couldn't otherwise touch.** Your client connects to FlowFuse; FlowFuse connects to the instance. Remote instances in air-gapped networks and DMZs come into reach without exposing them.
 - **Platform operations, not just flow editing.** Query teams, instances, snapshots, and pipelines, and run FlowFuse itself from the client.
 
+<video autoplay loop muted playsinline aria-label="Video demo of querying FlowFuse teams and instances from an AI client" width="1600" height="900" preload="none"><source src="./images/flowfuse-expert-mcp-ai-assistant.webm" type="video/webm" /></video>
+_Video demo of querying FlowFuse teams and instances from an AI client_
+
 ### What's new with FlowFuse Dashboard?
 
 [FlowFuse's Dashboard](https://dashboard.flowfuse.com/) v1.30.3 delivers a round of UX and UI improvements — the low-friction fixes that make building and reading a dashboard feel obvious instead of fiddly. [Built-in themes for Node-RED Dashboard 2.0 lead the release](http://dashboard.flowfuse.com/nodes/config/ui-theme.html): predictable to edit, and every preset meets WCAG AA contrast, so dark mode stays legible. Charts render instead of leaving empty boxes. Tables show readable dates instead of raw epoch numbers. Plus a run of smaller UI fixes — labels and gauges that stay inside their cards, spacing that holds at narrow widths. Less setup. More dashboard.
 
-![Node-RED Dashboard theme showcase, switching between Light, Dark, Dracula, Nord, and Sepia themes](./images/dashboard-theme-showcase.gif)
+<video autoplay loop muted playsinline aria-label="Node-RED Dashboard theme showcase, switching between Light, Dark, Dracula, Nord, and Sepia themes" width="1000" height="517" preload="none"><source src="./images/dashboard-theme-showcase.webm" type="video/webm" /></video>
 _Five built-in themes, one dropdown, all meet WCAG AA contrast._
 
-![Node-RED Dashboard table showing a date formats column rendering epoch values as readable dates](./images/dashboard-table-date-formats.gif)
+<video autoplay loop muted playsinline aria-label="Node-RED Dashboard table showing a date formats column rendering epoch values as readable dates" width="1000" height="571" preload="none"><source src="./images/dashboard-table-date-formats.webm" type="video/webm" /></video>
 _Set the column type to Date, Time, or Datetime. Epoch values format themselves._
 
 ## Deploy: to the edge, at any scale
