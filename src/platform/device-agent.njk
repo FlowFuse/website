@@ -47,7 +47,8 @@ meta:
                     <p class="font-light">
                         Start where your hardware already is. Run the installer on the machine you want to bring
                         online and it walks you through the rest, including creating a FlowFuse account if you
-                        don't have one yet.
+                        don't have one yet. If the machine already runs Node-RED, the installer offers to import
+                        those flows.
                     </p>
                 </div>
                 <div class="flex justify-center m-auto max-md:mt-10 md:w-1/2 lg:w-6/12">
@@ -60,12 +61,12 @@ meta:
                 <h2 class="font-medium w-full text-center md:text-left mb-6">Install on edge, straight from your terminal</h2>
                 <p class="font-medium mb-2">Linux and macOS</p>
                 <div class="ff-command mb-6">
-                    <code class="ff-command__text">/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)"</code>
+                    <code class="ff-command__text">/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)" &amp;&amp; ./flowfuse-device-agent-installer</code>
                     <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
                 </div>
                 <p class="font-medium mb-2">Windows (run elevated)</p>
                 <div class="ff-command">
-                    <code class="ff-command__text">powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1|iex"</code>
+                    <code class="ff-command__text">Set-Location $env:USERPROFILE; powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1 | iex"; .\flowfuse-device-agent-installer.exe</code>
                     <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
                 </div>
                 <p class="font-light mt-6">

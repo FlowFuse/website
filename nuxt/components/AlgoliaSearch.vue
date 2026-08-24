@@ -3,8 +3,8 @@
 // scripts/index-algolia.js, which scans nuxt/dist after the Nuxt build and derives
 // `category` from the first path segment, so /handbook/* and /docs/* are both covered.
 const props = withDefaults(defineProps<{
-    /** Algolia filter expression, e.g. `category:docs`. */
-    indexFilter: string
+    /** Algolia filter expression, e.g. `category:docs`. Omit to search everything. */
+    indexFilter?: string
     placeholder?: string
     sourceId?: string
 }>(), {
