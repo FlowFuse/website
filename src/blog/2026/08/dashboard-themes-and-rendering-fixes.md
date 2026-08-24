@@ -88,13 +88,3 @@ Two things stand in the way, and they're what the next two releases are about.
 We're still working out the shape of both, including where tags should live. If you're running dashboards across machines, sites or lines, tell us what you'd bind, what you'd want stored, and what would have to be true for this to replace how you wire data today.
 
 Tell us at PLACEHOLDER.
-
-## Getting this release
-
-Dashboard 1.30.3 is available now. Update `@flowfuse/node-red-dashboard` through the Node-RED palette manager, or run:
-
-```bash
-npm install @flowfuse/node-red-dashboard@latest
-```
-
-Dashboard is open source under Apache 2.0 and runs in any Node-RED instance.
