@@ -15,6 +15,9 @@ We're excited to announce that FlowFuse customers can now choose annual billing 
 
 <!--more-->
 
+::product-update-note
+::
+
 ## How Annual Billing Works
 
 Switching to annual billing is straightforward:

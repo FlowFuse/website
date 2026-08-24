@@ -3,7 +3,7 @@ title: "How to Bridge Modbus to MQTT: Step-by-Step Guide"
 subtitle: Build a Production-Ready Modbus to MQTT Bridge with Node-RED
 description: Learn how to bridge Modbus data to MQTT in 2026 and publish it to a Unified Namespace (UNS) using FlowFuse for real-time monitoring and cloud integration.
 date: 2024-12-04
-lastUpdated: 2025-12-19
+lastUpdated: 2026-08-13
 authors: ["sumit-shinde"]
 image: /blog/2024/12/images/how-to-bridge-modbus-to-mqtt.png
 keywords: modbus to mqtt, mqtt to modbus, node-red as gateway, bridging modbus to mqtt, modbus to uns, modbus data to unified namespace
@@ -37,6 +37,9 @@ tldr: "Bridging Modbus to MQTT with Node-RED solves the OT/IT integration gap by
 Converting Modbus to MQTT unlocks the value trapped in legacy industrial equipment. Industrial facilities worldwide face a persistent challenge: their Modbus-based sensors, PLCs, and controllers generate valuable operational data, but that data remains isolated in local control networks, unable to feed modern cloud analytics, remote dashboards, or predictive maintenance systems.
 
 <!--more-->
+
+::product-update-note
+::
 
 We've built Modbus to MQTT bridges for manufacturing plants ranging from small production lines to enterprise-scale facilities, and the root problem is always the same protocol mismatch. Modbus requires a master-slave architecture with polling, one device requests data, another responds. MQTT enables publish-subscribe messaging, devices push data to a central broker where any authorized application can subscribe. These are fundamentally incompatible communication patterns.
 
