@@ -153,6 +153,7 @@ export default defineNuxtConfig({
         name: 'FlowFuse',
         description: site.messaging.subtitle,
         defaultLocale: 'en',
+        trailingSlash: true,
     },
 
     // Only covers content already served by Nuxt. The handbook is deliberately excluded

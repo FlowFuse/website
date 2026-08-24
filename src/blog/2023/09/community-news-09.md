@@ -3,6 +3,7 @@ title: Community News September 2023
 subtitle: Your monthly update for the FlowFuse and Node-RED communities
 description: "A roundup of September 2023 news from the FlowFuse and Node-RED communities, covering platform updates and community highlights."
 date: 2023-09-09
+lastUpdated: 2026-08-13
 authors: ["ian-skerrett"]
 image: "/images/blog/community-news.jpeg"
 tags:
@@ -17,6 +18,9 @@ Welcome to the FlowFuse newsletter for September 2023, a monthly roundup of what
 The big news this month is that [FlowForge is now FlowFuse](/blog/2023/08/flowforge-is-now-flowfuse/). Yes, we have changed our name but we are still focus on delivering great products for the Node-RED community.
 
 <!--more-->
+
+::product-update-note
+::
 
 ## New Releases
 
