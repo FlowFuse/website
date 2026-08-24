@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.25: MCP Resources in Expert & More"
 title: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
 subtitle: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"
 description: "FlowFuse 2.25: Interacting with MCP Resources in FlowFuse Expert, Improved Update Scheduling, and lots of UI improvements!"

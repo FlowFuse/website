@@ -2,10 +2,15 @@
 title: New Onboarding Tour for Free Tier Users
 description: For new, free-tier users on FlowFuse Cloud, we have a new onboarding tour to help you get started
 date: 2025-01-07 14:00:00.0
+lastUpdated: 2026-08-13
+release: "2.13"
 authors: ["joe-pavitt"]
 tags:
     - changelog
 ---
+
+::product-update-note
+::
 
 ![Screenshot from the new onboarding tour for "Free" tier FlowFuse Cloud users](./images/free-tier-onboarding.png){data-zoomable}
 _Screenshot from the new onboarding tour for "Free" tier FlowFuse Cloud users_

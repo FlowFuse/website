@@ -1,4 +1,5 @@
 ---
+metaTitle: "Why Manufacturing Must Embrace Citizen Developers"
 title: Innovate from within - Why manufacturing must embrace Citizen Developers
 subtitle: Empower your Operational Technology teams as Citizen Developers
 description: "Explore the significance of Citizen Developers in manufacturing, bridging the IT-OT gap with low-code platforms like Node-RED."
@@ -46,4 +47,6 @@ FlowFuse takes things one step further, offering organizations a way to official
 For industry decision-makers, this is a call to action. It is imperative to nurture this growing community within your workforce, providing them with the tools, platforms, and, importantly, the organizational support they require. The empowerment of citizen developers could very well be the deciding factor in your organization's ability to stay competitive, agile, and innovative in a rapidly evolving market.
 
 Looking to the future, the success of modern manufacturing lies in its people and their ability to solve problems with the right tools at their fingertips. Citizen development has the potential to  break down the barriers. Organizations that recognize and invest in this potential will undoubtedly lead the charge.
+
+[One large US manufacturing company has already made this bet](/customer-stories/manufacturing-digital-transformation/), with its project leader describing Node-RED's low-code paradigm as a way to decentralize innovation and let subject matter experts build their own digital systems.
 

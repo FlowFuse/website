@@ -70,6 +70,11 @@ const CONTENT_SOURCES: ContentSource[] = [
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
     {
+        collection: 'stories',
+        fileRoot: 'src',
+        images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
+    },
+    {
         collection: 'ebooks',
         fileRoot: 'nuxt/content',
         images: entry => ['image', 'coverImage', 'thumbnail', 'secondaryImage', 'tertiaryImage']
@@ -99,7 +104,8 @@ export default defineSitemapEventHandler(async (event) => {
                 if (!entry.path || entry.path.endsWith('.navigation')) continue
                 if (source.filter && !source.filter(entry)) continue
 
-                const url: SitemapUrl = { loc: source.rewriteLoc ? source.rewriteLoc(entry.path) : entry.path }
+                const rawLoc = source.rewriteLoc ? source.rewriteLoc(entry.path) : entry.path
+                const url: SitemapUrl = { loc: rawLoc.endsWith('/') ? rawLoc : `${rawLoc}/` }
 
                 const lastmod = source.lastmod
                     ? source.lastmod(entry)

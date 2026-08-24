@@ -1,4 +1,5 @@
 ---
+metaTitle: "Statistical Process Control (SPC) Guide"
 title: "Statistical Process Control (SPC): Benefits and Implementation Guide"
 subtitle: "A practical guide to implementing Statistical Process Control with FlowFuse"
 description: "Learn how to build real-time SPC charts using Node-RED and FlowFuse for manufacturing quality control."
@@ -298,7 +299,7 @@ return msg;
 
 The following image demonstrates the advanced alerting system in action, detecting specific patterns beyond simple control limit violations:
 
-![SPC system detecting process drift in real-time, showing chart responding to simulated measurement changes and triggering alerts](./images/simulated-drift-alert.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="SPC system detecting process drift in real-time, showing chart responding to simulated measurement changes and triggering alerts" width="400" height="227" preload="none"><source src="/blog/2025/07/images/simulated-drift-alert.webm" type="video/webm" /></video>
 _Real-time SPC monitoring detecting process drift and triggering appropriate alerts based on trend analysis_
 
 ## Connecting to Real Equipment

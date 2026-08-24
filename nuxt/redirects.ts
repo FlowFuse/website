@@ -42,9 +42,9 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/platform/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/solutions/device-management/': { redirect: { to: '/use-cases/edge-connectivity/', statusCode: 301 } },
     '/blueprints/manufacturing/andon-task/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
+    '/email-signature/': { redirect: { to: '/handbook/design/branding/#email-signature', statusCode: 301 } },
     '/landing/technology-migration-1/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/landing/technology-migration-2/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
-    '/customer-stories/scaling-manufacturing-automation-with-flowfuse/': { redirect: { to: '/customer-stories/', statusCode: 301 } },
     '/blog/2025/10/the-ai-orchestation-hype/': { redirect: { to: '/blog/2025/10/the-ai-orchestration-hype/', statusCode: 301 } },
     '/node-red/core-nodes/mqtt/': { redirect: { to: '/node-red/core-nodes/mqtt-in/', statusCode: 301 } },
     '/blueprints/manufacturing/manufacturing-support-request/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
@@ -74,7 +74,8 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/handbook/development/frontend/layouts/': { redirect: { to: '/handbook/engineering/frontend/layouts/', statusCode: 301 } },
     '/handbook/development/frontend/services/': { redirect: { to: '/handbook/engineering/frontend/services/', statusCode: 301 } },
     '/handbook/development/frontend/testing/': { redirect: { to: '/handbook/engineering/frontend/testing/', statusCode: 301 } },
-    '/handbook/development/contributing/certified-nodes/': { redirect: { to: '/handbook/engineering/contributing/certified-nodes/', statusCode: 301 } },
+    '/handbook/development/contributing/certified-nodes/': { redirect: { to: '/handbook/engineering/ops/certified-nodes/', statusCode: 301 } },
+    '/handbook/engineering/contributing/certified-nodes/': { redirect: { to: '/handbook/engineering/ops/certified-nodes/', statusCode: 301 } },
     '/handbook/development/contributing/ff-tables/': { redirect: { to: '/handbook/engineering/contributing/ff-tables/', statusCode: 301 } },
     '/handbook/development/contributing/team-npm-registry/': { redirect: { to: '/handbook/engineering/contributing/team-npm-registry/', statusCode: 301 } },
     '/handbook/development/releases/dashboard-2/': { redirect: { to: '/handbook/engineering/releases/dashboard-2/', statusCode: 301 } },
@@ -104,6 +105,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-2/': { redirect: { to: '/blog/2025/04/build-manufacturing-oee-dashboard/', statusCode: 301 } },
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/': { redirect: { to: '/blog/2025/04/design-and-scale-oee-dashboard/', statusCode: 301 } },
     '/sign-up/': { redirect: { to: 'https://app.flowfuse.com/account/create', statusCode: 301 } },
+    '/blog/2025/12/what-is-mttf/': { redirect: { to: '/blog/2025/12/mttf-vs-mtbf-vs-mttr/', statusCode: 301 } },
 
     '/handbook/development/contributing/': { redirect: { to: '/handbook/engineering/contributing/', statusCode: 301 } },
     '/changelog/2025/06/instance-performance-view/': { redirect: { to: '/changelog/2025/06/team-performance-view/', statusCode: 301 } },
@@ -143,4 +145,13 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/handbook/development/releases/': { redirect: { to: '/handbook/engineering/releases/', statusCode: 301 } },
     '/handbook/peopleops/job-descriptions/dashboard-engineer/': { redirect: { to: '/handbook/peopleops/job-descriptions/', statusCode: 301 } },
 
+    // The changelog was paginated 19 entries to a page, which at 181 entries reached
+    // /changelog/10/. It is one page now, grouped by release and revealed as you
+    // scroll, so the numbered pages fold back into the listing.
+    ...Object.fromEntries(
+        Array.from({ length: 9 }, (_, i) => [
+            `/changelog/${i + 2}/`,
+            { redirect: { to: '/changelog/', statusCode: 301 } },
+        ])
+    ),
 }

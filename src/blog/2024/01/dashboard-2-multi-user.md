@@ -1,4 +1,5 @@
 ---
+metaTitle: "Personalised Multi-user Dashboards with Node-RED"
 title: Personalised Multi-user Dashboards with Node-RED Dashboard 2.0!
 subtitle: Explore how to build multi-user Dashboards, secured with FlowFuse Cloud!
 description: "Discover how to create personalized, secured multi-user dashboards with FlowFuse Cloud and the Dashboard 2.0 User Addon."
@@ -37,6 +38,9 @@ All instances on FlowFuse can be configured with _"FlowFuse User Authentication"
 #### Step 2: Install FlowFuse's User Addon
 
 ##### FlowFuse Cloud
+
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
 
 _Note: Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted._
 

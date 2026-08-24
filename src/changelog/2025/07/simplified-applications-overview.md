@@ -2,6 +2,7 @@
 title: Simplified Applications Page with Summary Tiles
 description: "Simplified Applications overview with clearer status summaries for hosted and remote instances"
 date: 2025-07-29 12:00:00.0
+release: "2.20"
 authors: ["serban-costin"]
 tags:
 - changelog

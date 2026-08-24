@@ -2,6 +2,7 @@
 title: Tougher Rate Limiting on Public Routes
 description: FlowFuse now enhances security with stricter rate limiting on public routes, ensuring robust protection against misuse while maintaining seamless access for legitimate users.
 date: 2024-04-11 12:01:01.0
+release: "2.3"
 authors: ["nick-oleary"]
 tags:
     - changelog

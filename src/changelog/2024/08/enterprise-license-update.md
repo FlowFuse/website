@@ -3,9 +3,11 @@ title: Enforcing Enterprise Restrictions
 description: "A stricter approach to expired licenses"
 
 date: 2024-07-24 13:00:00.0
+release: "2.7"
 
 authors: ["ben-hardill"]
 tags:
+    - changelog
     - license
     - enterprise
 ---

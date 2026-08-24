@@ -1,7 +1,8 @@
 ---
 title: Allow Dashboards to be embedded in iFrames
-description: 
+description: Set the HTTP headers needed to embed a Node-RED dashboard hosted on FlowFuse into another page as an iframe.
 date: 2024-12-19 13:00:00.0
+release: "2.12"
 authors: ["ben-hardill"]
 tags:
     - changelog

@@ -3,6 +3,7 @@ title: "FlowFuse 2.20: AI-Assisted Node-RED & New Database Service"
 subtitle: "Introducing FlowFuse Tables for data storage, Tables nodes for database querying, Smart Suggestions in the Node-RED editor, More Powerful Instances, Retrieval Augmented Generation Blueprint for building intelligent applications, and a redesigned Applications page for better workspace management."
 description: "FlowFuse 2.20 introduces AI-assisted Node-RED and a brand new database service, plus Smart Suggestions in the flow editor."
 date: 2025-07-31
+lastUpdated: 2026-08-13
 authors: ["greg-stoutenburg"]
 image: /blog/2025/07/images/release-2-20.png
 tags:
@@ -15,6 +16,9 @@ tags:
 This release represents a major leap forward in FlowFuse's data management and AI capabilities, introducing our new FlowFuse Tables database feature, along with enhanced AI assistance features and a streamlined user interface. These improvements make FlowFuse a complete solution for building industrial applications, even while reducing development time.
 
 <!--more-->
+
+::product-update-note
+::
 
 ## Introducing: FlowFuse Tables
 
@@ -36,8 +40,8 @@ Alongside the new Tables offering, we have shipped a new node that you can find 
 
 ## AI-Assisted Node-RED with Smart Suggestions
 
-![GIF of Smart Suggestions](./images/smart-suggestion.gif){data-zoomable}
-_GIF of Smart Suggestions in Action_
+<video autoplay loop muted playsinline aria-label="Video of Smart Suggestions" width="1139" height="702" preload="none"><source src="/blog/2025/07/images/smart-suggestion.webm" type="video/webm" /></video>
+_Video of Smart Suggestions in Action_
 
 Development in Node-RED is now even faster with Smart Suggestions, an agent that runs in-browser and offers intelligent flow completion for next-node recommendations. With Smart Suggestions, as you place a node, the agent will automatically calculate the most likely next node to place, and will offer suggestions for the node's configuration. It present up to 5 options, so even if the first suggestion isn't correct, it's very likely that the correct choice is only a quick keyboard shortcut away.
 

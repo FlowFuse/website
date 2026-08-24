@@ -40,6 +40,9 @@ None of that happened.
 
 The [Modbus TCP market was valued at $1.35 billion in 2024 and is projected to reach $2.55 billion by 2032](https://www.futuremarketreport.com/industry-report/modbus-communication-module-market). That isn't legacy drag. That's active investment. New Modbus devices are being designed, manufactured, purchased, and installed in 2026, not as fallback options, but as deliberate first choices. Meanwhile, OPC UA adoption, while genuinely growing, remains concentrated in specific layers of the automation stack: SCADA systems, MES integrations, and IT/OT gateways. At the field device level, Modbus still dominates.
 
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
+
 The gap between expectation and reality isn't a failure of OPC UA's design. The protocol does what it promises. The gap exists because adoption in industrial automation doesn't follow software industry timelines. A protocol doesn't win by being technically superior. It wins by becoming the path of least resistance across every layer of the ecosystem simultaneously: device manufacturers, integrators, maintenance teams, procurement departments, and plant managers all have to move together. That has never happened with OPC UA, and understanding why requires looking at each layer honestly.
 
 ## The Complexity Tax Nobody Talks About

@@ -69,6 +69,9 @@ Historically in Node-RED, you would have needed to manually `npm install` module
 
 ![Location of the "add" button in order to import an npm module intoa  function node](./images/npmimport-add.jpg "Location of the 'add' button in order to import an npm module intoa  function node")
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 All you need is the name of the module you want to import, then:
 
 1. Drop in a new "function" node & double-click it

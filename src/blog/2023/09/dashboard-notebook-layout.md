@@ -58,7 +58,7 @@ The joy of `ui-markdown` in Dashboard 2.0 is _dynamic_ content, i.e. content tha
 
 Resulting in:
 
-![Dynamic markdown with an updating timestamp every 1 second](./images/md-timestamp.gif)
+<video autoplay loop muted playsinline aria-label="Dynamic markdown with an updating timestamp every 1 second" width="1314" height="318" preload="none"><source src="/blog/2023/09/images/md-timestamp.webm" type="video/webm" /></video>
 
 ## Adding More Widgets
 

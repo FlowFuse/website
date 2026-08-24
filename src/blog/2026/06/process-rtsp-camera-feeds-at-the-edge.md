@@ -146,7 +146,7 @@ FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we t
 
 That's a live line view anyone can pull up in a browser, with no NVR login and no separate video client.
 
-![FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible](./images/dashboard-view.gif)
+<video autoplay loop muted playsinline aria-label="FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible" width="800" height="434" preload="none"><source src="/blog/2026/06/images/dashboard-view.webm" type="video/webm" /></video>
 *FlowFuse Dashboard 2.0 page showing a live frame from the mill camera, with the grinding mill, feed conveyor and flotation line visible*
 
 > **Watch the message size.** FlowFuse Dashboard sends data over a socket connection capped at about 1 MB per message by default, and a full-resolution frame can exceed that. When it does, the message is silently dropped and the image just doesn't appear. If that happens, lower the camera resolution, keep the FPS low, or raise [`maxHttpBufferSize`](https://dashboard.flowfuse.com/user/settings.html#maxhttpbuffersize) in your instance settings.
@@ -166,3 +166,5 @@ Where they land is set by the **File path** field. Point it at a directory you c
 ## Wrapping up
 
 Camera feeds don't have to sit in a silo while the rest of the floor gets connected. With the **RTSP Video Feed** node, a stream becomes still frames; with a dashboard, those frames become a live view; and with the **FlowFuse AI** nodes, they become decisions, all at the edge, with nothing leaving the plant.
+
+[Abrasive Technology already puts this pattern to work](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/), piping video feeds straight into a Node-RED dashboard to monitor its precision manufacturing lines.

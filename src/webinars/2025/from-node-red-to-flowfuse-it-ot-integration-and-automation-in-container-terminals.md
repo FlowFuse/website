@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED to FlowFuse: IT/OT Integration"
 title: "From Node-RED to FlowFuse: IT/OT Integration and Automation in Container Terminals"
 subtitle: Turning siloed data into real-time intelligence for heavy-duty industrial operations
 meta:

@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Dashboard 2.0 Layout & Styling Guide"
 title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling"
 subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to style Dashboard 2.0 elements effortlessly.
 description: "Discover Node-RED Dashboard 2.0's three layouts, five sidebar styles, themes, and custom CSS in this complete styling guide."
@@ -107,7 +108,7 @@ In this layout, the width value is converted to "units", with each unit being `9
 1. Navigate to the page configuration by clicking on the **edit** button of your page in the Dashboard 2.0 sidebar.
 2. In the page configuration, you can select the preferred layout for that page within the layout field.
 
-!["Image showing process of setting page layout"](./images/node-red-dashboard-2-layout-navigation-styling-setting-new-page-layout.gif "Image showing process of setting page layout"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of setting page layout" width="800" height="450" preload="none"><source src="/blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling-setting-new-page-layout.webm" type="video/webm" /></video>
 
 ## Setting Dashboard 2.0 elements size
 
@@ -134,7 +135,7 @@ To set the size of groups and widgets in Dashboard 2.0, follow these steps:
 1. Go to the Dashboard 2.0 sidebar and click on the edit button next to the element you want to resize.
 2. Adjust the size using the size property.
 
-!["Image showing process of setting element size"](./images/node-red-dashboard-2-layout-navigation-styling-setting-size.gif "Image showing process of setting element size"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of setting element size" width="800" height="450" preload="none"><source src="/blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling-setting-size.webm" type="video/webm" /></video>
 
 ## Understanding Dashboard 2.0 Theme 
 
@@ -159,7 +160,7 @@ For additional information on the `ui-theme` settings, please refer to the [ui-t
 4. Now switch to the layout tab and click on the edit button next to the page for which you want to set a new theme.
 5. In the page config, select the newly added theme in the Theme field.
 
-!["Image showing process of adding new theme"](./images/node-red-dashboard-2-layout-navigation-styling-adding-new-theme.gif "Image showing process of adding new theme"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of adding new theme" width="800" height="450" preload="none"><source src="/blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling-adding-new-theme.webm" type="video/webm" /></video>
 
 ## Dashboard 2.0 Navigation
 
@@ -169,7 +170,7 @@ For additional information on the `ui-theme` settings, please refer to the [ui-t
 2. Click on the "Edit Settings" button located at the top left side of the Dashboard 2.0 sidebar.
 3. Select your preferred sidebar style from the "Style" field in the sidebar options section.
 
-!["Image showing process of changing sidebar style"](./images/node-red-dashboard-2-layout-navigation-styling-setting-sidebar.gif "Image showing process of changing sidebar style"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing process of changing sidebar style" width="800" height="450" preload="none"><source src="/blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling-setting-sidebar.webm" type="video/webm" /></video>
 
 ### Sidebar Navigation Options
 
@@ -179,7 +180,7 @@ In Dashboard 2.0, we have 5 different navigation options for your application.
 
 This is the default sidebar, when it's opened, the page content adjusts to the width of the sidebar.
 
-!["Image showing 'Collapsing' sidebar"](./images/node-red-dashboard-2-layout-navigation-styling-collapsing-sidebar.gif "Image showing Collapsing sidebar"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing 'Collapsing' sidebar" width="800" height="450" preload="none"><source src="/blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling-collapsing-sidebar.webm" type="video/webm" /></video>
 
 You can see in the image above how the page content automatically adjusts when the sidebar is opened.
 
@@ -193,13 +194,13 @@ In this type, the sidebar is always visible and fixed on the left side, and the 
 
 This type of sidebar is similar to the collapsible one, but when the sidebar is collapsed, you can still navigate through different pages as the page icons become visible.
 
-!["Image showing 'Collapse to icon' sidebar"](./images/node-red-dashboard-2-layout-navigation-styling-collaps-to-icon-sidebar.gif "Image showing Collapse to icon sidebar"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing 'Collapse to icon' sidebar" width="800" height="450" preload="none"><source src="/blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling-collaps-to-icon-sidebar.webm" type="video/webm" /></video>
 
 #### Apear over content 
 
 When the sidebar is opened, the page is partially covered by a transparent layer, and the sidebar appears on top of this layer
 
-!["Image showing 'Apear over content' sidebar"](./images/node-red-dashboard-2-layout-navigation-styling-appear-over-content.gif "screenshot displaying searching for botFather bot for creating custom bot"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing 'Appear over content' sidebar" width="800" height="450" preload="none"><source src="/blog/2024/05/images/node-red-dashboard-2-layout-navigation-styling-appear-over-content.webm" type="video/webm" /></video>
 
 In this type of sidebar, you can notice how the sidebar opens without affecting the width of the page content
 

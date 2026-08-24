@@ -2,6 +2,7 @@
 title: Local Login for Remote Instances
 description: "Local Login option for Remote Instances, powered by Device Agent"
 date: 2025-03-27 12:00:00.0  
+release: "2.16"
 authors: ["stephen-mclaughlin"]
 tags:
   - changelog

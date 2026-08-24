@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: Ask about your flows"
 description: "The FlowFuse Expert can now use your selected flows as context for smarter troubleshooting."
 date: 2026-01-30 13:00:00.0
+release: "2.27"
 authors: ['steve-mclaughlin']
 tags:
   - changelog

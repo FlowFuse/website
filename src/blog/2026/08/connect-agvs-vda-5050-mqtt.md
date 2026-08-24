@@ -2,7 +2,7 @@
 title: "VDA 5050 Tutorial: Connect AGVs to Factory Systems over MQTT"
 subtitle: "How the six VDA 5050 MQTT topics work, and how to build a master control flow for a mixed AGV fleet."
 description: "VDA 5050 explained: how the standard structures AGV communication over MQTT, and how to build a working master control flow in FlowFuse."
-date: 2025-08-12
+date: 2026-08-12
 authors: ["sumit-shinde"]
 image: /blog/2026/08/images/vda5050-tutorial.png
 tags:
@@ -208,7 +208,7 @@ The standard ships [JSON schemas](https://github.com/VDA5050/VDA5050/tree/main/j
 
 ### What you need
 
-- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial]({% include "sign-up-url.njk" %}) and set up your instance following the instructions in this [guide](/docs/device-agent/quickstart/).
+- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](https://app.flowfuse.com/account/create) and set up your instance following the instructions in this [guide](/docs/device-agent/quickstart/).
 - An MQTT broker your AGVs (or an AGV simulator) already publish to, or FlowFuse's [built-in team broker](/docs/user/teambroker/) if you're prototyping. If you're still [choosing a broker](/blog/2024/01/unified-namespace-what-broker/), any one with retained messages, last will, and per-client topic permissions will do.
 - At least one vehicle or simulator publishing VDA 5050 topics, so you have real messages to work with.
 

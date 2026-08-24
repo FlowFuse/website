@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.31: Agentic Development in Open Beta"
 title: "FlowFuse 2.31: Agentic Development Now in Open Beta, FlowFuse Expert Builds Your Industrial App on Edge Devices"
 subtitle: "FlowFuse Expert can now build your industrial application on both Hosted and Remote Instances, on FlowFuse Cloud and now Self-Hosted Enterprise. Plus per-team and platform-level AI controls and real-time platform updates."
 description: "FlowFuse 2.31 puts FlowFuse Expert in open beta, building your industrial app for you on Cloud, Self-Hosted, and edge devices."
@@ -12,16 +13,13 @@ tags:
    - releases
 release: "2.31"
 features:
-   - id: ff-expert-application-building
+   - id: flowfuse-expert-application-building
      heading: "Let FlowFuse Expert build your industrial application"
-   - id: certified-nodes
+   # The heading covers both bundles, so it badges the union of their plans.
+   - id: [certified-nodes-it, certified-nodes-ot]
      heading: "Certified Nodes for industrial connectivity and AI"
    - heading: "What else is new?"
-     tiers:
-       cloud: all
-       selfHosted: all
-# Certified Nodes Self-Hosted renders "Coming soon" from the catalog SH value ('time').
-# Flip that tier to true in 2.32 when Self-Hosted support ships.
+     tiers: { edge: true, hub: true, fleet: true }
 tldr: "FlowFuse 2.31 brings agentic application building to open beta: describe what you want and FlowFuse Expert builds it on your Node-RED workspace. Plus new Certified Nodes (RTSP, OPC UA, AI) and per-team and platform-level control over AI."
 cta:
   type: contact

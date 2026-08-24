@@ -5,7 +5,7 @@ navigation:
   order: 23
 ---
 
-Below is the FlowFuse subscription agreement that applies to Team and Enterprise tier customers buying annual subscriptions. If you'd like to make alterations for your organization, please download the .docx file in the following form and initiate the legal part of the negotiation through your account executive.
+Below is the FlowFuse subscription agreement that applies to few Edge, Hub, and Fleet tier customers buying annual subscriptions, and most customers on the legacy Enterprise Platform. If you'd like to make alterations for your organization, please download the .docx file in the following form and initiate the legal part of the negotiation through your account executive.
 
 Note alterations to the following agreement are only accepted on the Enterprise tier.
 

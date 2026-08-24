@@ -2,6 +2,7 @@
 title: NPM Package Hosting
 description: Make private NPM packages available to Instances
 date: 2025-03-13 12:00:00.0
+release: "2.15"
 authors: ['ben-hardill']
 tags:
   - changelog

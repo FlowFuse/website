@@ -67,6 +67,9 @@ MQTT has three Quality of Service levels:
 
 **QoS 2** - Exactly once through a four-way handshake. Slowest but guaranteed.
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 Pick based on what you're sending. Temperature readings every 10 seconds? QoS 0 is fine. Critical alarm messages? QoS 2.
 
 ## How Kafka Works

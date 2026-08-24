@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.28: Troubleshoot Faster & More"
 title: "FlowFuse 2.28: Troubleshoot Faster, Manage Edge Devices Centrally, and More Self-Hosted Flexibility"
 subtitle: "Point FlowFuse Expert at your debug logs, configure Node.js runtime options for edge devices, and gain more control over self-hosted deployments."
 description: "FlowFuse 2.28 lets you troubleshoot flows faster with debug log context and manage Remote Instances centrally with more options."
@@ -11,19 +12,16 @@ tags:
    - releases
 release: "2.28"
 features:
-   - id: ff-expert-support
+   - id: flowfuse-expert-support-mode
      heading: "Point Expert at Your Debug Logs"
-   - id: ff-expert
+   - id: flowfuse-expert-ai
      heading: "Always Have the Latest Expert Capabilities"
    - id: edge-devices
      heading: "New Device Agent Configuration Options"
+   # No plan badge: this section is about a deployment model, not about plan availability.
    - heading: "More Flexibility for Self-Hosted Deployments"
-     tiers:
-       selfHosted: all
    - heading: "What else is new?"
-     tiers:
-       cloud: all
-       selfHosted: all
+     tiers: { edge: true, hub: true, fleet: true }
 ---
 
 FlowFuse 2.28 focuses on making your day-to-day work faster and giving you more control, whether you are debugging a flow, managing edge devices, or running FlowFuse on your own infrastructure.

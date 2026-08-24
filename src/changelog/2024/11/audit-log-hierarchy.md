@@ -2,6 +2,7 @@
 title: Audit logs show hierarchical events
 description: "Audit logs for Team, Application and Instance will now include child events"
 date: 2024-11-20 13:00:00.0
+release: "2.11"
 
 authors: ["stephen-mclaughlin"]
 tags:

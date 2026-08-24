@@ -246,7 +246,7 @@ The final step is to visualize the query result.
 
 3.  Deploy the flow. Your complete historical data dashboard is now live, you can explore it and experiment with different time ranges to see the results.
 
-![historical data dashboard retrieving historical data nd displying it](./images/historical-data-dashboard.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="historical data dashboard retrieving historical data nd displying it" width="3024" height="1640" preload="none"><source src="/blog/2025/08/images/historical-data-dashboard.webm" type="video/webm" /></video>
 _Historical data dashboard retrieving and displaying historical data_
 
 Below is the complete flow we built in this tutorial.
@@ -264,5 +264,7 @@ You have successfully built a historical data dashboard using FlowFuse Tables an
 With FlowFuse Tables now part of the platform, you can build complete industrial applications without juggling external databases or leaving the FlowFuse environment. FlowFuse is now a comprehensive data platform with the ability to collect, connect, transform, store, and visualize data. Combined with FlowFuse's enterprise features, team collaboration, version control, device management, and secure deployments, you have everything needed to take your IIoT projects from prototype to production within one integrated platform.
 
 This means less complexity and faster time to value for your industrial data initiatives. Your historical dashboards, real-time monitoring, and OEE dashboards can all live in the same ecosystem, managed by the same team, with consistent security and governance controls. See where a historical view fits alongside the other [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/) running on the shop floor.
+
+[Opto 22 customers already do this in the field](/customer-stories/opto22-embraces-node-red/), collecting sensor data and control variables with Node-RED and storing it straight into a SQL database.
 
 Ready to build your own time-series dashboard? [Get started with FlowFuse Tables](https://app.flowfuse.com/account/create) or [explore our industrial blueprints](/blueprints/)
