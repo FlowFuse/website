@@ -3,7 +3,7 @@ title: "Dashboard 1.30.3: five themes, and widgets that render properly"
 description: "Dashboard 1.30.3 ships five built-in themes, a dark mode that renders properly across every widget, and fixes for the defects that made a default dashboard look unfinished."
 date: 2026-08-27
 authors: ["noley-holland"]
-image: /blog/2026/08/images/dashboard-1-30-3-tile.png
+image: /blog/2026/08/images/dashboard-theme-dracula.png
 tags:
   - posts
   - news
