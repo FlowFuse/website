@@ -54,11 +54,7 @@ Every product is enabled by FlowFuse Expert, and every product connects the AI a
 
 ## Build: faster from idea to working application
 
-FlowFuse 3.0 makes it easier to go from an idea to a working application, with new AI capabilities and a more intuitive dashboard experience.
-
-### What's new in FlowFuse Expert
-
-Describe what you want to build, and [FlowFuse Expert](/docs/user/expert/) helps assemble it.
+FlowFuse 3.0 makes it easier to go from an idea to a working application, with new AI capabilities and a more intuitive dashboard experience. Describe what you want to build, and [FlowFuse Expert](/docs/user/expert/) helps assemble it.
 
 ### Connect Your Own AI Agent
 
