@@ -5,7 +5,7 @@ subtitle: "Point Microsoft Copilot, ChatGPT or Claude at FlowFuse, and it works 
 description: "FlowFuse 3.0 makes FlowFuse an MCP server, so the AI agent your company already approved can query your operations and build Node-RED flows. How to connect one, and what you keep control of."
 date: 2026-08-27
 keywords: flowfuse, mcp, model context protocol, ai agent, microsoft copilot, copilot studio, chatgpt, claude, node-red, industrial ai
-authors: ["dimitrie-hoekstra"]
+authors: ["serban-costin"]
 tags:
 - flowfuse
 - ai
