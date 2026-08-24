@@ -89,19 +89,56 @@ capabilityGroups:
           status: "Available"
           statusKind: "live"
           description: "Build your own MCP servers and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register."
+scenarios:
+    eyebrow: "What people do with it"
+    title: "What you can do with AI <span class='text-indigo-600'>here</span>"
+    subtitle: "Concrete things teams run on the platform today, whichever agent is doing the work."
+    items:
+        - name: "Ask the plant anything"
+          svgPath: "components/icons/chat-bubble-left-right.svg"
+          description: "Ask in plain language what a line is doing and get an answer grounded in live machine state, alarms and logs. No report to build and no database to query by hand."
+        - name: "Build a flow by describing it"
+          svgPath: "components/icons/sparkles.svg"
+          description: "Say what you need and watch it appear on the canvas: nodes wired up, configured, and corrected against Node-RED's own validation when something is wrong."
+        - name: "Understand a flow you inherited"
+          svgPath: "components/icons/book-open.svg"
+          description: "Point AI at an unfamiliar flow and get an explanation of what it actually does, so a flow one person wrote does not stay a flow only that person can maintain."
+        - name: "Inspect parts at the edge"
+          svgPath: "components/icons/camera.svg"
+          description: "Run vision models next to the machine with camera ingest over RTSP. Inference keeps working offline and no image data leaves your network."
+        - name: "Act on live systems, behind approval"
+          svgPath: "components/icons/bolt.svg"
+          description: "Let AI propose changes to running systems, with every write held for a person to approve, edit or reject before it reaches a machine."
+        - name: "Use any model in a flow"
+          svgPath: "components/icons/cog-6-tooth.svg"
+          description: "Bring OpenAI, Anthropic, Gemini or a local model via Ollama into any flow with your own keys, or keep everything local when data cannot leave the plant."
 choose:
-    title: "Two ways to get AI into <span class='text-indigo-600'>your operations</span>"
+    eyebrow: "Two ways in"
+    title: "So how do you want <span class='text-indigo-600'>to get it</span>?"
+    subtitle: "The capabilities above are the same either way. What differs is whose agent does the work."
     options:
         - label: "Use FlowFuse Expert"
           eyebrow: "Our agent"
           description: "Built into the platform and the Node-RED editor. Nothing to configure, nothing to get approved."
-          href: "#capabilities"
+          href: "#flowfuse-expert"
           event: "expert"
         - label: "Connect your own agent"
           eyebrow: "Your agent, your model"
           description: "Point the AI your company already uses at FlowFuse and it works your operations."
           href: "#connect-your-agent"
           event: "byo-agent"
+expert:
+    eyebrow: "Our agent"
+    title: "FlowFuse Expert is already <span class='text-indigo-600'>in your editor</span>"
+    subtitle: "Built into the platform and the Node-RED editor. Nothing to install, nothing to get approved, no connector to configure."
+    differentiator: "It is not a general assistant pointed at your screen. Expert knows your flows, your installed nodes, your live data and your environment, which is why it can produce something that runs rather than something that merely looks right."
+    steps:
+        - title: "Open any instance"
+          description: "Expert is in the editor and across the platform already. There is no setup step."
+        - title: "Ask for what you need"
+          description: "Build a flow, explain one you inherited, write the Function node, or ask what is running."
+        - title: "Approve what it proposes"
+          description: "Every write waits for you. Approve it, edit it, or reject it before anything reaches a machine."
 connect:
     eyebrow: "New in 3.0"
     title: "FlowFuse becomes an extension of <span class='text-indigo-600'>your own agent</span>"
@@ -168,24 +205,19 @@ governance:
                             <p class="text-center max-w-4xl mx-auto text-gray-600">{{ p | safe }}</p>
                         {% endfor %}
                     </div>
-                    <!-- PATH CHOOSER. Replaces the live FlowFuse Expert prompt widget, which is
-                         disabled for now rather than removed: re-enable by restoring the two
-                         includes below. The components and src/js/ai-expert-modal.js are untouched.
-                         {% include "components/ai-chat-interface.njk" %}
-                         {% include "components/ai-expert-modal.njk" %} -->
-                    <div class="mt-10 max-w-4xl mx-auto">
-                        <p class="text-center text-sm font-semibold uppercase tracking-[0.16em] text-indigo-600 mb-6">{{ choose.title | striptags }}</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            {% for opt in choose.options %}
-                            <a href="{{ opt.href }}"
-                               class="group block border border-gray-200 border-t-[3px] border-t-indigo-600 bg-white p-6 hover:border-indigo-300 transition-colors"
-                               onclick="if(typeof capture === 'function') capture('ai-path-selected', {'path': '{{ opt.event }}'})">
-                                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600 m-0">{{ opt.eyebrow }}</p>
-                                <p class="text-xl font-medium text-gray-900 mt-2 mb-0 group-hover:text-indigo-700">{{ opt.label }}</p>
-                                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ opt.description }}</p>
-                            </a>
-                            {% endfor %}
-                        </div>
+                    {#
+                        The live FlowFuse Expert prompt widget is disabled for now, not removed.
+                        These are Nunjucks comments on purpose: an HTML comment does not stop
+                        Nunjucks executing the include, so the modal and its script would still
+                        ship. To re-enable, move these two lines out of this comment block.
+                        {% include "components/ai-chat-interface.njk" %}
+                        {% include "components/ai-expert-modal.njk" %}
+                    #}
+                    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                        <a href="{{ site.appURL }}/account/create" class="ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3"
+                           onclick="if(typeof capture === 'function') capture('cta-ai-trial', {'position': 'hero'})">Start a free trial</a>
+                        <a href="{{ hero.buttonLink }}" class="ff-btn ff-btn--secondary uppercase whitespace-nowrap px-6 py-3"
+                           onclick="if(typeof capture === 'function') capture('cta-ai-demo', {'position': 'hero'})">{{ hero.buttonText }}</a>
                     </div>
                 </div>
             </div>
@@ -193,18 +225,27 @@ governance:
     </div>
 </section>
 
-<!-- PRODUCT: FlowFuse Expert in action. Sits between the hero and the capability
-     sections so the page shows the product before it explains it, and so the hero
-     is not separated from the rest of the page by a band of empty white. -->
-<div class="w-full bg-white px-6 pb-16 sm:pb-20">
-    <div class="md:max-w-screen-lg mx-auto">
-        <div class="w-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
-            <div class="w-full bg-white ff-image-cover ff-image-rounded left">
-                {% image "./images/ai/ai-ui.png", "FlowFuse Expert showing AI-generated flow suggestions", [1200] %}
+<!-- SCENARIOS: lead with what people actually do, before explaining the product or
+     asking anyone to choose a path. Shared ground: true whichever agent does the work. -->
+<div class="w-full bg-white px-6 pb-16 sm:pb-24">
+    <div class="md:max-w-screen-lg m-auto">
+        <div class="max-w-3xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">{{ scenarios.eyebrow }}</p>
+            <h2 class="w-full mt-3">{{ scenarios.title | safe }}</h2>
+            <p class="mt-3 text-gray-600">{{ scenarios.subtitle }}</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            {% for item in scenarios.items %}
+            <div class="border border-gray-200 border-t-[3px] border-t-indigo-600 p-6 bg-white">
+                <span class="ff-cap-icon" aria-hidden="true">{% include item.svgPath %}</span>
+                <p class="text-lg font-medium text-gray-900 mt-4 mb-0">{{ item.name }}</p>
+                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ item.description }}</p>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
+
 <!-- CAPABILITIES: every AI use case, formalized, grouped by how it shows up in operations.
      NOTE: Predictive analytics and Edge ML are intentionally omitted from public claims
      (not shipped / not on the roadmap). Do not add them here without product sign-off. -->
@@ -249,7 +290,66 @@ governance:
         {% endfor %}
     </div>
 </div>
-<!-- CONNECT YOUR AGENT: the 3.0 headline. One flow for every agent, because sign-in is the
+<!-- THE FORK: only now, once the reader knows what AI does here. Each card lands on a
+     section of its own, and neither section contains the other path. -->
+<div id="choose" class="w-full py-16 sm:py-20 px-6 bg-white border-t border-gray-100 scroll-mt-16">
+    <div class="md:max-w-screen-lg m-auto">
+        <div class="max-w-3xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">{{ choose.eyebrow }}</p>
+            <h2 class="w-full mt-3">{{ choose.title | safe }}</h2>
+            <p class="mt-3 text-gray-600">{{ choose.subtitle }}</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
+            {% for opt in choose.options %}
+            <a href="{{ opt.href }}"
+               class="group block border border-gray-200 border-t-[3px] border-t-indigo-600 bg-white p-6 hover:border-indigo-300 transition-colors"
+               onclick="if(typeof capture === 'function') capture('ai-path-selected', {'path': '{{ opt.event }}'})">
+                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-600 m-0">{{ opt.eyebrow }}</p>
+                <p class="text-xl font-medium text-gray-900 mt-2 mb-0 group-hover:text-indigo-700">{{ opt.label }}</p>
+                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ opt.description }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- PATH ONE: FlowFuse Expert. Deliberately the same shape as the connect section below,
+     so the two read as genuine alternatives rather than one being an afterthought. -->
+<div id="flowfuse-expert" class="w-full py-16 sm:py-24 px-6 bg-indigo-50/60 border-t border-gray-100 scroll-mt-16">
+    <div class="md:max-w-screen-lg m-auto">
+        <div class="max-w-3xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">{{ expert.eyebrow }}</p>
+            <h2 class="w-full mt-3">{{ expert.title | safe }}</h2>
+            <p class="mt-3 text-gray-600">{{ expert.subtitle }}</p>
+        </div>
+
+        <p class="mt-8 max-w-3xl text-gray-700">{{ expert.differentiator }}</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+            {% for step in expert.steps %}
+            <div class="border-t border-indigo-200 pt-4">
+                <p class="font-mono text-xs font-semibold text-indigo-600 m-0">0{{ loop.index }}</p>
+                <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ step.title }}</p>
+                <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ step.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-12 w-full rounded-lg border-1 border-transparent bg-gradient-to-br from-red-400 to-indigo-400 p-[1px]">
+            <div class="w-full bg-white ff-image-cover ff-image-rounded left">
+                {% image "./images/ai/ai-ui.png", "FlowFuse Expert showing AI-generated flow suggestions", [1200] %}
+            </div>
+        </div>
+
+        <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a href="{{ site.appURL }}/account/create" class="ff-btn ff-btn--primary uppercase whitespace-nowrap px-6 py-3"
+               onclick="if(typeof capture === 'function') capture('cta-ai-trial', {'position': 'flowfuse-expert'})">Start a free trial</a>
+            <a href="/docs/user/expert/" class="text-indigo-600 font-semibold">Already a customer? Open an instance and ask it something</a>
+        </div>
+    </div>
+</div>
+
+<!-- PATH TWO: bring your own agent. The 3.0 headline. One flow for every agent, because sign-in is the
      advertised route. Client tiles fall back to a text wordmark when no logo file is set, so a
      mark that legal has not cleared can be dropped without touching the layout. -->
 <div id="connect-your-agent" class="w-full py-16 sm:py-24 px-6 bg-white border-t border-gray-100 scroll-mt-16">
