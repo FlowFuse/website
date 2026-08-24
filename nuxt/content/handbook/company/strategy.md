@@ -1,19 +1,33 @@
 ---
-title: "Strategy"
+title: Strategy
+description: 'FlowFuse company strategy'
 ---
 
 # Strategy
 
 Please also review:
-* our [company values](/handbook/company/values/).
-* our [Messaging Framework](/handbook/marketing/messaging/).
 
-## FlowFuse's Mission
+- our [company values](/handbook/company/values/).
+- our [Messaging Framework](/handbook/marketing/messaging/).
 
-FlowFuse will empower 1 billion people to fuse the digital realm and physical
-reality through building bespoke workflows, applications, and integrations,
-unleashing their creativity so that they can effortlessly leverage their own
-skills and expertise.
+## Core Belief
+
+<!--
+Purpose: this is the objective, industry-wide observation that justifies why a
+company like FlowFuse needs to exist at all. It must hold true regardless of
+FlowFuse -- it describes the state of the world, not our product or strategy.
+It's the starting premise a new employee should internalize before reading
+anything about what FlowFuse does. Keep it evergreen: revisit only if the
+underlying observation about the industrial world stops being true, not when
+our product or go-to-market changes.
+-->
+
+The physical world must adopt tailor made software like digital companies have
+already done,  but connecting, moving, visualizing, and interacting with their data
+from machines and assets is expensive and error-prone. The wide range of software systems,
+assets, machines, some new and some decades old, have made the challenge too big.
+As a result, most industrial equipment goes unmonitored and unoptimized, leaving
+large gains in efficiency and safety on the table.
 
 ### Achieving our Mission
 
