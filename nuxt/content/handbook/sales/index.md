@@ -27,7 +27,7 @@ lifecycle:
   renewals, and expansion; measured by customer outcomes, not just retention.
 - **[Professional Services](./professional-services.md)** — Deliver scoped,
   high-impact engagements that accelerate implementation and time-to-value.
-- **[Sales Partnerships](./partnerships.md)** — Extend FlowFuse's reach through
+- **[Sales Partnerships](./partnerships/)** — Extend FlowFuse's reach through
   resellers, referrers, and system integrators.
 
 Together these teams form a single commercial engine aligned around one goal:
@@ -58,7 +58,7 @@ Each function is accountable for a specific phase of the customer journey:
 | **[Sales](./sales-team.md)** | New business, opportunity qualification, demos, proposals, closing new and expansion ARR |
 | **[Solution Engineering](./solution-engineering.md)** | Technical discovery, demos, proofs of value, onboarding, architecture and expansion advisory |
 | **[Customer Success](./customer-success.md)** | Onboarding, adoption, renewals, advocacy, and driving account health and growth |
-| **[Sales Partnerships](./partnerships.md)** | Reseller, referrer, and system-integrator motions; partner enablement |
+| **[Sales Partnerships](./partnerships/)** | Reseller, referrer, and system-integrator motions; partner enablement |
 | **[Professional Services](./professional-services.md)** | Scoped implementation, integration, and enablement services |
 
 ## Regional coverage

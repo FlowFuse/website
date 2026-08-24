@@ -104,7 +104,7 @@ An automotive parts manufacturer produces brake assemblies during an eight-hour 
 
 Available production time: 480 − 30 − 20 − 10 = 420 minutes. Takt time: 420 ÷ 120 = **3.5 minutes per unit**.
 
-The line must complete one brake assembly every 3.5 minutes. At a 5-minute actual cycle time, production falls about 30% short (84 units instead of 120). At 3 minutes per unit, the line overproduces by 20 units, creating excess inventory. Cycle times significantly above takt time reveal capacity shortfalls; cycle times well below it suggest redeployable capacity or overproduction risk.
+The line must complete one brake assembly every 3.5 minutes. At a 5-minute actual cycle time, production falls about 30% short (84 units instead of 120). At 3 minutes per unit, the line overproduces by 20 units, creating excess inventory. Cycle times significantly above takt time reveal capacity shortfalls; cycle times well below it suggest redeployable capacity or overproduction risk. Takt time sets the required pace; a [run at rate](/blog/2026/08/run-at-rate/) verifies that the line can sustain it under real production conditions.
 
 ### Example 2: Electronics Assembly (Multiple Shifts)
 

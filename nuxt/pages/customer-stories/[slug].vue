@@ -42,6 +42,10 @@ const productIcons: Record<string, string> = {
 }
 
 const pageTitle = computed(() => page.value?.title ?? 'Customer Story')
+const breadcrumbItems = computed(() => [
+    { label: 'Customer Stories', to: '/customer-stories' },
+    { label: pageTitle.value },
+])
 const fullTitle = computed(() => `${pageTitle.value} • FlowFuse`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
@@ -79,6 +83,7 @@ useSeoMeta({
 
     <div class="blog nohero w-full bg-gray-50 pb-24 pt-6">
       <div class="container m-auto flex flex-col items-stretch text-left max-lg:px-6 md:max-w-screen-lg">
+        <Breadcrumbs :items="breadcrumbItems" class="mb-3" />
         <NuxtLink to="/customer-stories" class="group mb-5 inline-flex items-center gap-1 hover:no-underline md:mb-4">
           <UIcon name="i-heroicons-chevron-left" />
           <span class="group-hover:underline">Back to Customer Stories</span>
