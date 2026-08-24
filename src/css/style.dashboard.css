@@ -38,7 +38,7 @@
     border-radius: 999px;
     border: 0;
     background-color: transparent;
-    color: var(--color-gray-500);
+    color: var(--color-gray-600);   /* gray-500 on gray-100 is 4.39:1 -- under AA */
     cursor: pointer;
     transition: background-color 0.15s, color 0.15s;
 }
@@ -74,7 +74,7 @@
     margin-left: 6px;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 0.6875rem;
-    color: var(--color-gray-400);
+    color: var(--color-gray-600);   /* gray-400 on gray-100 is 2.31:1 */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -379,6 +379,21 @@
     background-color: white;
     text-decoration: none;
     transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+/* Only some pills lead anywhere. Hover and cursor cannot convey that on touch,
+   so a linked pill is marked statically -- indigo label, indigo border and a
+   trailing arrow -- while a plain label keeps the grey, arrow-less treatment.
+   The arrow is the load-bearing signal: colour alone would not be enough. */
+.nohero a.ffd-tag {
+    color: var(--color-indigo-700);
+    border-color: var(--color-indigo-200);
+}
+.nohero a.ffd-tag::after {
+    content: "\2192";
+    margin-left: 0.375rem;
+    font-size: 0.875em;
+    line-height: 1;
+    color: var(--color-indigo-600);
 }
 .nohero a.ffd-tag:hover {
     border-color: var(--color-indigo-600);
