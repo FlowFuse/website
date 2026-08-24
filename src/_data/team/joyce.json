@@ -1,16 +1,16 @@
 {
-    "order": 31,
-    "name": "Joyce Yeung",
-    "title": "VP of Marketing",
-    "github": "JoycePlaysFootball",
-    "linkedin": "joyceyeung",
-    "country": "US",
-    "email": "joyce@flowfuse.com",
-    "headshot": "joyce.jpg",
-    "reports_to": "ZJ van de Weg",
-    "facts": [
-        "TODO fact 1",
-        "TODO fact 2",
-        "TODO fact 3"
-    ]
+  "order": 31,
+  "name": "Joyce Yeung",
+  "title": "VP of Marketing",
+  "github": "JoycePlaysFootball",
+  "linkedin": "joyceyeung",
+  "country": "US",
+  "email": "joyce@flowfuse.com",
+  "headshot": "joyce.jpg",
+  "reports_to": "ZJ van de Weg",
+  "facts": [
+    "5X founding operator for manufacturing start-ups",
+    "Specializes in the zero to one phase",
+    "Enjoys soccer, futsal, BJJ, and most recently, pickleball"
+  ]
 }
