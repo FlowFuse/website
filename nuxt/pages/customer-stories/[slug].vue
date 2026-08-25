@@ -73,9 +73,9 @@ useSeoMeta({
 })
 
 useSchemaOrg([
-    computed(() => page.value?.meta?.faq?.length ? {
+    computed(() => page.value?.structuredData?.faq?.length ? {
         '@type': 'FAQPage',
-        mainEntity: page.value.meta.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+        mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
     } : undefined),
 ])
 </script>
@@ -121,9 +121,9 @@ useSchemaOrg([
               <ContentRenderer :value="page" />
             </div>
 
-            <div v-if="page.meta?.faq?.length" class="prose">
-              <ProseH2>{{ page.meta.faqTitle || 'Frequently Asked Questions' }}</ProseH2>
-              <BlogFaq :faq="page.meta.faq" />
+            <div v-if="page.structuredData?.faq?.length" class="prose">
+              <ProseH2>{{ page.structuredData.faqTitle || 'Frequently Asked Questions' }}</ProseH2>
+              <BlogFaq :faq="page.structuredData.faq" />
             </div>
           </div>
 

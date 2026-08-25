@@ -194,7 +194,10 @@ export default defineContentConfig({
                 hubspot: z.object({
                     formId: z.string(),
                 }),
-                meta: z.object({
+                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
+                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, same
+                // shim the blog collection uses, so existing story files don't need editing.
+                structuredData: z.object({
                     // Falls back to "Frequently Asked Questions" (the blog's fixed heading)
                     // when unset - only set this when a story wants its own FAQ heading.
                     faqTitle: z.string().optional(),

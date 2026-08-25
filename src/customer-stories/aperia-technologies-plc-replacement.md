@@ -9,19 +9,19 @@ usecase:
 logo:
 hubspot:
     formId: 2ccbf229-f98a-4926-9518-5cf70d5051b8
-meta:
-faqTitle: "FAQ: PLC Replacement with FlowFuse"
-faq:
-- question: "What does \"PLC replacement\" mean in this context?"
-  answer: "It means removing a proprietary PLC from the center of the control architecture and replacing it with Node-RED, managed by FlowFuse, running on edge hardware. The edge layer talks directly to sensors, actuators, and controllers using standard industrial protocols instead of routing through a closed PLC."
-- question: "Does FlowFuse only replace PLCs, or can it also connect to existing ones?"
-  answer: "Both, depending on what the manufacturer needs. [FlowFuse can connect to existing PLCs from different vendors](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-1-extract-data-from-your-plc) ([Siemens](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/), Rockwell, Schneider, and others) so they finally share data with each other and with IT systems, without ripping anything out. Or, as in Aperia's case, FlowFuse and Node-RED can sit at the center of the architecture in place of a PLC entirely, handling logic and control directly. Which approach makes sense depends on whether the goal is integrating a mixed-vendor PLC environment or removing PLC-driven bottlenecks at the station level."
-- question: "Why would a manufacturer consider PLC replacement instead of sticking with existing PLC infrastructure?"
-  answer: "In Aperia's case, PLC replacement solved two specific bottlenecks: idle capital equipment (EOL testers sitting unused for 8-12 hours a day) and slow, manual reconfiguration (walking to every station with a USB stick to update torque specs)."
-- question: "Does replacing a PLC with FlowFuse mean losing industrial protocol support?"
-  answer: "No. Node-RED, managed by FlowFuse, communicates using the same standard industrial protocols a PLC would: Modbus TCP and RTU, RS232, raw TCP, and EtherNet/IP, along with serial and SPI connections for custom sensor integrations."
-- question: "How does FlowFuse handle security for a PLC replacement in a regulated manufacturing environment?"
-  answer: "Through layered controls: role-based access control at the instance/dashboard/team/application level, deployment options including air-gapped instances, token-based device authentication combined with IP whitelisting, and password-protected remote dashboards."
+structuredData:
+    faqTitle: "FAQ: PLC Replacement with FlowFuse"
+    faq:
+        - question: "What does \"PLC replacement\" mean in this context?"
+          answer: "It means removing a proprietary PLC from the center of the control architecture and replacing it with Node-RED, managed by FlowFuse, running on edge hardware. The edge layer talks directly to sensors, actuators, and controllers using standard industrial protocols instead of routing through a closed PLC."
+        - question: "Does FlowFuse only replace PLCs, or can it also connect to existing ones?"
+          answer: "Both, depending on what the manufacturer needs. [FlowFuse can connect to existing PLCs from different vendors](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-1-extract-data-from-your-plc) ([Siemens](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/), Rockwell, Schneider, and others) so they finally share data with each other and with IT systems, without ripping anything out. Or, as in Aperia's case, FlowFuse and Node-RED can sit at the center of the architecture in place of a PLC entirely, handling logic and control directly. Which approach makes sense depends on whether the goal is integrating a mixed-vendor PLC environment or removing PLC-driven bottlenecks at the station level."
+        - question: "Why would a manufacturer consider PLC replacement instead of sticking with existing PLC infrastructure?"
+          answer: "In Aperia's case, PLC replacement solved two specific bottlenecks: idle capital equipment (EOL testers sitting unused for 8-12 hours a day) and slow, manual reconfiguration (walking to every station with a USB stick to update torque specs)."
+        - question: "Does replacing a PLC with FlowFuse mean losing industrial protocol support?"
+          answer: "No. Node-RED, managed by FlowFuse, communicates using the same standard industrial protocols a PLC would: Modbus TCP and RTU, RS232, raw TCP, and EtherNet/IP, along with serial and SPI connections for custom sensor integrations."
+        - question: "How does FlowFuse handle security for a PLC replacement in a regulated manufacturing environment?"
+          answer: "Through layered controls: role-based access control at the instance/dashboard/team/application level, deployment options including air-gapped instances, token-based device authentication combined with IP whitelisting, and password-protected remote dashboards."
 story:
     brand: Aperia Technologies
     url: https://aperiatech.com/
