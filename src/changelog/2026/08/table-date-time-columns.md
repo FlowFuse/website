@@ -15,7 +15,7 @@ Previously, sending a timestamp to a Dashboard table showed either a long epoch 
 
 The column accepts whatever you already have: an epoch in seconds or milliseconds, an ISO-8601 string, or a `Date`.
 
-Dashboard v1.30.3 or later is required. To get started:
+Dashboard v1.31.0 or later is required. To get started:
 
 1. On your `ui-table` node, turn off **Auto Columns** and add a column.
 2. Set its **Type** to **Date & Time**, **Date**, or **Time**.
@@ -24,4 +24,4 @@ Dashboard v1.30.3 or later is required. To get started:
 ![A FlowFuse Dashboard ui-table rendering a timestamp as Date & Time, Date, and Time columns](./images/table-date-columns.gif)
 *The same epoch value in three columns, with no function node upstream — the table reads the raw timestamp directly.*
 
-This feature is available to all FlowFuse Cloud users and Self Hosted users from Dashboard v1.30.3.
+This feature is available to all FlowFuse Cloud users and Self Hosted users from Dashboard v1.31.0.
