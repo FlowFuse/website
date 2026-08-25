@@ -1,6 +1,6 @@
 ---
-title: "Dashboard 1.30.3: five themes, and widgets that render properly"
-description: "Dashboard 1.30.3 ships five built-in themes, a dark mode that renders properly across every widget, and fixes for the defects that made a default dashboard look unfinished."
+title: "Dashboard 1.31.0: five themes, and widgets that render properly"
+description: "Dashboard 1.31.0 ships five built-in themes, a dark mode that renders properly across every widget, and fixes for the defects that made a default dashboard look unfinished."
 date: 2026-08-27
 authors: ["noley-holland"]
 image: /blog/2026/08/images/dashboard-theme-dracula.png
@@ -11,7 +11,7 @@ tags:
   - dashboard
 ---
 
-Dashboard 1.30.3 ships five built-in themes, including dark modes where every widget renders legibly. Alongside them are fixes for widgets that weren't using the space they were given: charts that drew nothing at their default size, button labels that clipped mid-word, gauges sliced off by their own card.
+Dashboard 1.31.0 ships five built-in themes, including dark modes where every widget renders legibly. Alongside them are fixes for widgets that weren't using the space they were given: charts that drew nothing at their default size, button labels that clipped mid-word, gauges sliced off by their own card.
 
 <!--more-->
 
