@@ -1,7 +1,7 @@
 ---
 title: Theme Presets for Dashboard
 description: Start a Dashboard theme from a built-in preset — Light, Dark, Dracula, Nord, or Sepia — instead of picking colours by hand.
-date: 2026-08-14 12:00:00
+date: 2026-08-27 12:00:00
 authors: ["noley-holland"]
 tags:
   - changelog
@@ -25,4 +25,4 @@ To get started:
 ![Adding a Dashboard theme, switching its preset in the editor, and previewing Light, Dark, Dracula, Nord, and Sepia](./images/dashboard-theme-presets.gif)
 *Switching presets updates every colour at once — the same dashboard, five schemes, no per-colour editing.*
 
-This feature is available to all FlowFuse Dashboard users on FlowFuse Cloud and Self Hosted, from Dashboard v1.30.3.
+This feature is available to all FlowFuse Dashboard users on FlowFuse Cloud and Self Hosted, from Dashboard v1.31.0.
