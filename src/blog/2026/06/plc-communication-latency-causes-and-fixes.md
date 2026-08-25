@@ -1,4 +1,5 @@
 ---
+metaTitle: "Fixing PLC Communication Latency"
 title: "Fixing PLC Communication Latency: Where the Milliseconds Really Go"
 subtitle: "Find the few settings draining your milliseconds and the timing follows."
 description: "Troubleshoot PLC communication latency by identifying common causes such as poll rates, timeout settings, connection limits, and protocol selection."

@@ -1,4 +1,5 @@
 ---
+metaTitle: "AI Vibration Anomaly Detector for Motors"
 title: "Building an AI Vibration Anomaly Detector for Industrial Motors"
 subtitle: "Detect motor faults early using AI-driven vibration analysis and anomaly detection."
 description: "Learn how to monitor industrial motors continuously, train a custom autoencoder on healthy vibration data, and deploy real-time anomaly detection in Node-RED."

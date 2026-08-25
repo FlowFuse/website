@@ -69,6 +69,9 @@ But availability now means operating time divided by total calendar time, not ju
 
 TEEP matters because it connects operational performance to **business value**, not just shop-floor efficiency. While OEE shows how well equipment runs during scheduled shifts, it says nothing about how much of the asset you're actually using relative to what you paid for it. TEEP fills that gap.
 
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
+::
+
 For capital-intensive manufacturing, this difference is critical. Equipment often represents millions in investment, yet much of that capacity may sit idle due to scheduling choices, demand patterns, labor availability, or maintenance strategy. TEEP makes this visible. It answers the executive-level question: **"Are we getting a return on our equipment, or is capacity hiding in plain sight?"**
 
 TEEP is especially valuable when:

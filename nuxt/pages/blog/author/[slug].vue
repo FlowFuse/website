@@ -23,17 +23,22 @@ const { data: posts } = await useAsyncData(
 
 const topics = computed(() => author.value?.knowsAbout || [])
 
-const pageTitle = computed(() => `${author.value?.name} - FlowFuse Blog`)
+const pageTitle = computed(() => author.value?.name ?? '')
 const pageDescription = computed(() => {
     const member = author.value
     if (!member) return ''
     return `Articles by ${member.name}${member.title ? `, ${member.title}` : ''} on the FlowFuse blog.`
 })
 
+// Author pages always get the "Blog" qualifier on the brand name. og:title infers
+// from the resolved title. Needs an explicit high tagPriority in its own useHead
+// call — nuxt-seo-utils pushes its own global siteName with tagPriority: 'low',
+// and that otherwise wins over a page-level override regardless of registration order.
+useHead({ templateParams: { siteName: 'FlowFuse Blog' } }, { tagPriority: 1000 })
+
 useSeoMeta({
     title: pageTitle,
     description: pageDescription,
-    ogTitle: pageTitle,
     ogDescription: pageDescription,
     ogUrl: computed(() => `https://flowfuse.com${route.path}`),
     ogType: 'profile',

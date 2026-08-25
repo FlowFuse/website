@@ -40,17 +40,17 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Application Guide pages are a `data` collection (see content.config.ts), so their routes
-// are not discoverable from @nuxt/content page paths. Derive them from the file names, which
-// are NN-<slug>.yml and match each file's `slug` field.
+// The Application Guide pages are markdown (`applicationGuideDoc`, a `page` collection).
+// Their routes are largely discoverable by @nuxt/content, but we keep an explicit prerender
+// list for the section index + each page. File names are <slug>.md and match the `slug` field.
 function collectApplicationGuideRoutes(dir: string): string[] {
     const routes = ['/application-guide/']
     for (const guide of readdirSync(dir)) {
         const guideDir = join(dir, guide)
         if (!statSync(guideDir).isDirectory()) continue
         for (const file of readdirSync(guideDir)) {
-            if (!file.endsWith('.yml')) continue
-            routes.push(`/application-guide/${guide}/${basename(file, '.yml').replace(/^\d+-/, '')}/`)
+            if (!file.endsWith('.md')) continue
+            routes.push(`/application-guide/${guide}/${basename(file, '.md').replace(/^\d+-/, '')}/`)
         }
     }
     return routes
@@ -66,6 +66,17 @@ function collectProductRoutes (dir: string): string[] {
         if (!file.endsWith('.yml')) continue
         const { tierId } = parseYaml(readFileSync(join(dir, file), 'utf8'))
         routes.push(`/product/${tierId}/`)
+    }
+    return routes
+}
+
+// Same idea as collectApplicationGuideRoutes above, for customer stories (flat
+// src/customer-stories/ dir, see content.config.ts).
+function collectStoryRoutes(dir: string): string[] {
+    const routes = ['/customer-stories/']
+    for (const file of readdirSync(dir)) {
+        if (!file.endsWith('.md')) continue
+        routes.push(`/customer-stories/${basename(file, '.md')}/`)
     }
     return routes
 }
@@ -142,6 +153,7 @@ export default defineNuxtConfig({
         name: 'FlowFuse',
         description: site.messaging.subtitle,
         defaultLocale: 'en',
+        trailingSlash: true,
     },
 
     // Only covers content already served by Nuxt. The handbook is deliberately excluded
@@ -159,6 +171,16 @@ export default defineNuxtConfig({
         notes: [
             'This file only covers pages served by the Nuxt frontend. Some sections of flowfuse.com are still served by a legacy Eleventy site not represented here.',
         ],
+
+        // /raw/<path>.md, the per-page markdown endpoint the links below point at, is served
+        // by @nuxt/content's own llms feature rather than by nuxt-llms, and it searches every
+        // page-type collection by default. That included the handbook, so the exclusion above
+        // only held for llms.txt while /raw/handbook/company.md answered with the same content
+        // in markdown. Same reasoning applies to both surfaces.
+        contentRawMarkdown: {
+            excludeCollections: ['handbook'],
+        },
+
         sections: [
             {
                 title: 'Documentation',
@@ -261,6 +283,10 @@ export default defineNuxtConfig({
 
     app: {
         head: {
+            // nuxt-seo-utils' default title template is `%s %separator %siteName`; the
+            // separator defaults to '|' if unset. This makes every page's <title>/og:title
+            // "{page title} • FlowFuse" without each page having to append the brand itself.
+            templateParams: { separator: '•' },
             link: [
                 { rel: 'stylesheet', href: '/css/style.css' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -296,11 +322,17 @@ export default defineNuxtConfig({
     routeRules: {
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
+        '/thank-you/**': { robots: false },
         ...redirects,
     },
 
     nitro: {
         preset: 'netlify',
+        // Nitro emits a .mjs.map next to every server chunk, so the Netlify functions bundle
+        // ships one map file per chunk. Skipping them keeps the bundle smaller and the
+        // server build a little shorter. The cost is that a server-side stack trace in the
+        // function logs no longer resolves back to the original source.
+        sourceMap: false,
         serverAssets: [
             {
                 baseName: 'analytics',
@@ -319,9 +351,9 @@ export default defineNuxtConfig({
         ],
         prerender: {
             routes: (() => {
+                // The changelog listing is a single page now (grouped by release, revealed
+                // as you scroll), so there are no /changelog/<n>/ pages to enumerate.
                 const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
-                const changelogPageCount = Math.max(1, Math.ceil(changelog.entryCount / 19))
-                const changelogListingRoutes = ['/changelog/', ...Array.from({ length: changelogPageCount - 1 }, (_, i) => `/changelog/${i + 2}/`)]
 
                 const blogListingRoutes = paginatedListingRoutes('/blog', blogFiles.length)
                 const blogTagRoutes = BLOG_TAGS.flatMap(tag =>
@@ -344,6 +376,10 @@ export default defineNuxtConfig({
                     // content-urls.get.ts) silently resolves to undefined. Explicitly listing
                     // it here bakes it at build time instead, inside the git checkout.
                     '/sitemap.xml',
+                    '/contact-us',
+                    '/book-demo',
+                    '/support',
+                    '/professional-services',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -353,7 +389,7 @@ export default defineNuxtConfig({
                     '/resources/publications/',
                     ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
-                    ...changelogListingRoutes,
+                    '/changelog/',
                     ...changelog.routes,
                     '/blog/index.xml',
                     ...blogListingRoutes,
@@ -361,6 +397,7 @@ export default defineNuxtConfig({
                     ...blogFiles.map(f => f.route),
                     ...blogAuthorRoutes,
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
+                    ...collectStoryRoutes(join(__dirname, '../src/customer-stories')),
                 ]
             })(),
             crawlLinks: false,
@@ -374,6 +411,13 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        'content:file:beforeParse' ({ file, collection }) {
+            if (collection.name !== 'blog') return
+            file.body = file.body.replace(
+                /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
+                (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
+            )
+        },
         // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
         // Can't use Nuxt's $fetch here — it only exists at nitro runtime.
         async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {

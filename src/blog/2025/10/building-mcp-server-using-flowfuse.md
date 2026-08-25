@@ -1,4 +1,5 @@
 ---
+metaTitle: "Building MCP Servers for AI Agent Integration"
 title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED, enabling AI agents to access data using a low-code approach."
@@ -62,6 +63,9 @@ Before defining resources or tools, the MCP Server must be configured. This serv
 3. **Click Done** to save the server configuration.
 
 Once the server is configured, clients can connect using a URL. The URL to connect with is your instance URL plus the MCP path you configured, for example:
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ```
 https://your-instance.flowfuse.cloud/mcp

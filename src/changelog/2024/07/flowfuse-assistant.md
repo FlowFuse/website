@@ -3,6 +3,7 @@ title: The FlowFuse Expert
 description: "Introducing the FlowFuse Expert: making low-code even more accessible."
 
 date: 2024-07-04 13:00:00.0
+release: "2.6"
 
 authors: ["stephen-mclaughlin"]
 tags:

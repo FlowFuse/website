@@ -2,6 +2,7 @@
 title: Team Scoped Personal Access Tokens
 description: Restrict a Personal Access Token to specific teams, limit it to read-only operations, or control whether it carries admin privileges.
 date: 2026-07-02 15:30:00
+release: "2.32"
 authors: ["serban-costin"]
 tags:
 - changelog

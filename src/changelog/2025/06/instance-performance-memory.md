@@ -2,6 +2,7 @@
 title: Memory Metrics in Instance Performance View
 description: "The Performance view for hosted Node-RED instances now includes a memory usage chart"
 date: 2025-06-20 12:00:00.0
+release: "2.19"
 authors: ["serban-costin"]
 tags:
   - changelog

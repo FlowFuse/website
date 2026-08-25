@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.5: Snapshots & LDAP Integration"
 title: "FlowFuse 2.5: New features to visualize snapshots, LDAP integration, and more"
 subtitle: Enhancing security, visualization, and deployment flexibility.
 description: "Discover the new features in FlowFuse 2.5, including LDAP integration, visual snapshot comparisons, and blueprint previews."

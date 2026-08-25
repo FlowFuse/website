@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Dashboard 2.0 Layout & Styling Guide"
 title: "Comprehensive guide: Node-RED Dashboard 2.0 layout, sidebar, and styling"
 subtitle: Explore Dashboard 2.0 Different layouts and sidebars. learn how to style Dashboard 2.0 elements effortlessly.
 description: "Discover Node-RED Dashboard 2.0's three layouts, five sidebar styles, themes, and custom CSS in this complete styling guide."

@@ -1,4 +1,5 @@
 ---
+metaTitle: "Modbus Polling Setups: How to Fix Yours"
 title: "Most Modbus Polling Setups Are Wrong: Here's How to Fix Yours"
 subtitle: "The configuration decisions made at setup time that cause problems you'll blame on hardware"
 description: "Most Modbus polling problems aren't hardware failures. They're three configuration mistakes made at commissioning and never revisited. Here's how to fix them."
@@ -41,6 +42,9 @@ Consider what's actually living in a typical Modbus device: a temperature readin
 **Polling too fast punishes your bus and your devices.** RS-485 is a shared medium. Every query you send to one device occupies the bus for the duration of that transaction: the request frame, the device processing time, and the response frame. On a 9600 baud network with 20 devices, a 500ms scan rate across all of them isn't 500ms per device. It's a queue. If each transaction takes 50ms, your 20-device poll cycle takes a full second to complete, which means the data you're getting from device 20 is already a second stale before you even start the next cycle. Slow sensors get polled ten times before their value could possibly have changed. Fast-changing signals still get missed.
 
 **Polling too slow loses events.** A motor fault flag that goes high for 800ms and then clears on its own will be completely invisible to a 1-second polling interval. Not occasionally invisible, reliably invisible. The bit flipped, the motor logged an internal fault, the fault self-cleared, and your polling cycle saw nothing but normal values on both sides of the event. You'll hear about that fault months later when the motor fails completely and maintenance pulls the device logs.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 The fix isn't complicated, but it requires making a deliberate decision you've probably been deferring: **categorize your data by how fast it actually changes, then assign poll rates to match.**
 

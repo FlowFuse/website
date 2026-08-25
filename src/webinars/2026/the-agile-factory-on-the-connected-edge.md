@@ -1,4 +1,5 @@
 ---
+metaTitle: "The Agile Factory on the Connected Edge"
 title: "The Agile Factory on the Connected Edge: Streamlining Operational Complexity into High-Value Insights"
 subtitle: Unifying Uncoordinated Edge Assets into a Centralized Smart Farm Alongside Custom Endpoints, and Beyond
 meta:

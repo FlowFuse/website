@@ -2,6 +2,7 @@
 title: FlowFuse Expert can help you write code
 description: "The FlowFuse Expert will now offer inline completions when writing functions, SQL and Dashboard templates"
 date: 2025-09-05 12:00:00.0
+release: "2.22"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

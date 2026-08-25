@@ -42,6 +42,9 @@ docker run -p 9092:9092 `
 confluentinc/cp-kafka
 ```
 
+::cta-image{src="/images/cta/power-workplace-book-demo.png" alt="Power Workplace relies on FlowFuse for scalability, reliability and security audits - book a demo" cta="demo"}
+::
+
 ## Running Kafka on the cloud
 To run Kafka on the cloud, you can consider utilizing any cloud service according to your preferences. For a guide on running Kafka on a cloud platform, the procedures may differ. You can refer to the documentation provided by your preferred cloud service for detailed instructions.
 

@@ -123,6 +123,8 @@ In summary, FlowFuse is a platform that streamlines collaboration on Node-RED pr
 
 With FlowFuse, factories can achieve faster, safer, and more scalable collaboration on data pipelines, edge device management, and IT-OT integration.
 
+[PowerWorkplace relies on this same collaborative workflow to rapidly develop and deploy tailored building management solutions to customer premises](/customer-stories/node-red-building-management/), while giving security auditors confidence in the platform underneath.
+
 ## Up Next
 
 Explore more resources and deepen your understanding of FlowFuse with these articles:

@@ -38,13 +38,23 @@ function issueLabel(issue: string): string {
 }
 
 const pageTitle = computed(() => page.value?.title || 'Changelog')
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Changelog`)
+const breadcrumbItems = computed(() => [
+    { label: 'Changelog', to: '/changelog' },
+    { label: pageTitle.value },
+])
+const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
+// Changelog entries always get the "Changelog" qualifier on the brand name.
+// og:title infers from the resolved title. Needs an explicit high tagPriority in
+// its own useHead call — nuxt-seo-utils pushes its own global siteName with
+// tagPriority: 'low', and that otherwise wins over a page-level override
+// regardless of registration order.
+useHead({ templateParams: { siteName: 'FlowFuse Changelog' } }, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: fullTitle,
+    title: seoTitle,
     description: computed(() => page.value?.description || ''),
-    ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),
     ogUrl: canonicalUrl,
     ogType: 'article',
@@ -57,6 +67,7 @@ useSeoMeta({
   <div class="w-full page post">
     <div class="post-title container m-auto text-center max-lg:px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
       <div class="text-left md:pr-32">
+        <Breadcrumbs :items="breadcrumbItems" class="mb-2" />
         <label>Changelog</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>

@@ -104,6 +104,9 @@ _Screenshot showing the 'Show page name in the header bar' option in the dashboa
 3. Choose the page on which you want to render the buttons if you selected `page-scope`, or choose correct ui if `ui-scope` is selected.
 4. Paste the following Vue snippet into the template widget. In this snippet, note how we specify the "to" attribute targeting the `#app-bar-title` ID in the teleport tag:
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ```html
 <template>
     <!-- Teleport the button to the #app-bar-actions area when mounted -->

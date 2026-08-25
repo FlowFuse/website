@@ -27,13 +27,12 @@ const CTA_VARIANTS: Record<string, { title: string, description: string }> = {
     },
 }
 
-// Missing type defaults to 'contact'; an unrecognised one (e.g. typo'd
-// `type: signup`) falls back to 'sign-up' - same two fallbacks as before.
+// Missing type, or an unrecognised one (e.g. typo'd `type: signup`), falls
+// back to 'sign-up'.
 const KNOWN_TYPES = new Set(['sign-up', 'demo', 'contact', 'pricing'])
 const ctaType = computed(() => {
     const type = props.cta?.type
-    if (!type) return 'contact'
-    return KNOWN_TYPES.has(type) ? type : 'sign-up'
+    return type && KNOWN_TYPES.has(type) ? type : 'sign-up'
 })
 const currentCta = computed(() => CTA_VARIANTS[ctaType.value])
 

@@ -2,6 +2,7 @@
 title: Enhanced Snapshot Selection
 description: Explore enhanced snapshot deployment options for application-assigned devices with FlowFuse's new 'Deploy Snapshot' feature.
 date: 2023-10-16 11:00:00.0
+release: "1.13"
 authors: ["marian-demme"]
 tags:
     - changelog

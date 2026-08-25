@@ -265,4 +265,6 @@ With FlowFuse Tables now part of the platform, you can build complete industrial
 
 This means less complexity and faster time to value for your industrial data initiatives. Your historical dashboards, real-time monitoring, and OEE dashboards can all live in the same ecosystem, managed by the same team, with consistent security and governance controls. See where a historical view fits alongside the other [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/) running on the shop floor.
 
+[Opto 22 customers already do this in the field](/customer-stories/opto22-embraces-node-red/), collecting sensor data and control variables with Node-RED and storing it straight into a SQL database.
+
 Ready to build your own time-series dashboard? [Get started with FlowFuse Tables](https://app.flowfuse.com/account/create) or [explore our industrial blueprints](/blueprints/)

@@ -1,4 +1,5 @@
 ---
+metaTitle: "EtherNet/IP Integration with Allen-Bradley PLCs"
 title: "EtherNet/IP Integration with FlowFuse: Communicating with Allen-Bradley PLCs"
 subtitle: "A guide to connected and unconnected EtherNet/IP communication with FlowFuse"
 description: "Learn how to integrate Allen-Bradley PLCs with FlowFuse using EtherNet/IP, covering messaging, tags, and automation workflows."
@@ -95,6 +96,9 @@ Used for PLCs that connect directly via Ethernet without backplane routing, such
 
 **With Routing:**
 Used for chassis-based PLCs like ControlLogix and CompactLogix, where the processor sits in a backplane slot. In this case, the slot number must be specified, as it automatically creates a routing path through the backplane to reach the processor.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ### Unconnected Messaging
 
