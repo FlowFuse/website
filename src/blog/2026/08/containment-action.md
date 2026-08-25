@@ -47,6 +47,9 @@ A defect reaching the customer plant is the starting point, but controlled shipp
 
 For [automotive quality manufacturing](/industries/automotive/), the trigger event is rarely the hard part. The harder part is proving, with data, that every unit shipped afterward meets the added inspection requirement. Without a system connecting inspection points to production data in real time, that proof often depends on manual logs that are slow to compile and easy to dispute during a customer audit.
 
+::cta-image{src="/blog/2026/08/images/containment-blog-cta-1.png" alt="Replace manual containment logs - see how it works" cta="demo"}
+::
+
 ## Building Containment That Holds Up Under Scrutiny
 
 Surviving CS1 or CS2 status depends on more than reacting to the initial defect notice. Automakers and third-party auditors expect proof that every containment action is documented, repeatable, and traceable back to a specific inspection point and operator sign-off. Building that level of rigor across multiple sites, each with its own systems and habits, requires structure in three key areas.
@@ -59,9 +62,6 @@ Every added inspection step needs a written record: what is being checked, how o
 
 Customer containment often involves the automaker's own quality team reviewing supplier data directly. A shared [FlowFuse Dashboard](/platform/dashboard/) gives operators, quality engineers, and customer auditors the same live view of inspection results, so sign-offs reflect what actually happened on the line, not a summary written after the fact.
 
-::cta-image{src="/blog/2026/08/images/containment-blog-cta-1.png" alt="Replace manual containment logs - see how it works" cta="demo"}
-::
-
 ### Where CS1/CS2 Automotive Plans Break Down
 
 Most CS1/CS2 automotive plans fail at scale, not on day one. A process that works on a single line becomes inconsistent across five plants using different spreadsheets and different definitions of "checked." Standardizing the same containment action across every site closes that gap without rebuilding it at each location.
@@ -70,9 +70,6 @@ Most CS1/CS2 automotive plans fail at scale, not on day one. A process that work
 
 Contained parts need distinct marking, usually a containment label or coloured tag, agreed with the customer and applied from a defined start date. That marking is how the customer separates parts that passed containment inspection from parts shipped before containment began. Containment also covers material sitting in your warehouse, already in transit, and on the floor at the customer's plant, not only what ships next. That marking needs to tie back to the same [automotive traceability](/blog/2026/08/automotive-traceability/) record as everything else you ship, not a separate log that only exists for the duration of containment.
 
-::cta-image{src="/blog/2026/08/images/containment-action-cta-2.png" alt="Track contained parts from line to customer - build with FlowFuse" cta="sign-up"}
-::
-
 ## From Customer Containment to Exiting CS1 and CS2 for Good
 
 Passing containment inspections is only half the work. To exit CS1 or CS2 status permanently, a supplier has to show the automaker that the root cause has been identified and corrected, not just contained. That shift from reactive inspection to lasting correction happens across three areas.
@@ -80,6 +77,9 @@ Passing containment inspections is only half the work. To exit CS1 or CS2 status
 ### Connecting Containment Data to Root Cause
 
 Containment inspection data is only useful if it points back to where the defect originated. Ongoing [defect and quality monitoring](/blog/2026/07/defect-and-quality-monitoring/) at the line level helps quality teams trace a recurring issue to a specific machine, shift, or process step. Structuring that investigation with a tool like an [Ishikawa fishbone diagram](/blog/2026/07/ishikawa-fishbone-diagram/) keeps the search organized instead of guessing at a fix.
+
+::cta-image{src="/blog/2026/08/images/containment-action-cta-2.png" alt="Track contained parts from line to customer - build with FlowFuse" cta="sign-up"}
+::
 
 ### Keeping Every Shift Aligned on Corrective Action
 
