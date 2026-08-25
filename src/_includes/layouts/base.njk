@@ -53,7 +53,9 @@ eleventyComputed:
     {% endif %}
 
     <!-- Browser Title -->
-    {% if navTitle %}
+    {% if metaTitle %}
+    <title>{{ metaTitle }} | FlowFuse</title>
+    {% elif navTitle %}
     <title>{{ navTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% elif meta and meta.title %}
     <title>{{ meta.title }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
@@ -84,7 +86,9 @@ eleventyComputed:
     {%- endif %}
 
     <!-- Open Graph Title -->
-    {% if navTitle %}
+    {% if metaTitle %}
+    <meta property="og:title" content="{{ metaTitle }} | FlowFuse" />
+    {% elif navTitle %}
     <meta property="og:title" content="{{ navTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% elif meta and meta.title %}
     <meta property="og:title" content="{{ meta.title }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
@@ -199,7 +203,7 @@ eleventyComputed:
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ col.listClasses }}">
                                         {%- for item in col.links %}
-                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid %}{% endnavoption %}
+                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent" %}{% endnavoption %}
                                         {%- endfor %}
                                     </ul>
                                 </li>

@@ -1,0 +1,58 @@
+tierId: edge
+label: FlowFuse Edge
+metaDescription: "Run the plant floor and standardize it everywhere. FlowFuse Edge connects your PLCs, machines, and controllers and governs the data between them, built for how OT teams work."
+eyebrow: "For OT & Digitalization Leadership"
+headingLead: "Run the plant floor."
+headingHighlight: "Standardize it everywhere."
+description: "FlowFuse Edge connects your PLCs, machines, and controllers and governs the data between them. Designed for how OT teams work. If you're looking for an IT solution instead, check out <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
+heroImage:
+  src: /images/home/home-scada.png
+  alt: "FlowFuse Edge: industrial edge connectivity"
+quote:
+  text: "The ability to edit once and deploy everywhere has added real efficiency to how we manage integrations. This is how enterprises scale automation."
+  author: "Sevan Petrosian"
+  role: "Sr. Application Engineer, Arch Systems"
+  avatar: /images/customer-headshots/servan-petrosian-arch-systems.png
+fitYes:
+  - "Data originates at machines on the plant floor: PLCs, SCADA, sensors, and controllers."
+  - "You need OT-certified industrial protocol connectivity: OPC-UA, Modbus, EtherNet/IP, and more."
+  - "OT or digitalization teams are standardizing production across multiple sites."
+fitNo:
+  - "Your data moves purely between software systems, like ERPs, databases, and cloud APIs. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
+  - "Managing large fleets of distributed devices is your primary unit of scale. That's <a class=\"text-indigo-600 hover:underline\" href=\"/product/fleet/\">FlowFuse Fleet</a>."
+  - "You have no industrial hardware to connect. A pure IT integration project belongs on <a class=\"text-indigo-600 hover:underline\" href=\"/product/hub/\">FlowFuse Hub</a>."
+included:
+  - title: "Connect the plant floor"
+    chips:
+      - label: "Certified OT Connections (OPC-UA, Modbus, EtherNet/IP, RTSP)"
+        href: "/integrations/?product=edge&certified=1"
+      - label: "MQTT Broker"
+        href: "/docs/user/teambroker/"
+      - label: "HTTP Request"
+        href: "/node-red/core-nodes/http-request/"
+  - title: "Develop & deploy at the edge"
+    chips:
+      - label: "Edge Development (remote editor proxy)"
+        href: "/docs/device-agent/running/"
+      - label: "Edge Instances"
+        href: "/docs/device-agent/deploy/"
+      - label: "Snapshots & Rollback"
+        href: "/docs/user/snapshots/"
+  - title: "Manage devices across sites"
+    chips:
+      - label: "Device Fleet Updates"
+        href: "/docs/device-agent/deploy/"
+      - label: "Device Group Management"
+        href: "/docs/user/device-groups/"
+      - "Performance Monitoring & Alerts"
+  - title: "Built to collaborate"
+    chips:
+      - label: "OT App Blueprints"
+        href: "/blueprints/"
+      - label: "Team Library"
+        href: "/docs/user/shared-library/"
+      - label: "Everything in the core FlowFuse platform"
+        href: "/product/"
+certifiedDefault: ot
+crossLinkEyebrow: "For OT Teams"
+crossLinkDescription: "Connect PLCs, machines, and controllers and standardize automation across every site."

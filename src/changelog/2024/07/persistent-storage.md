@@ -2,6 +2,7 @@
 title: Persistent Storage on FlowFuse Cloud
 description: Bring persistent storage to FlowFuse Cloud and self-hosted Kubernetes platforms
 date: 2024-07-04 13:00:00.0
+release: "2.6"
 authors: ["ben-hardill"]
 tags:
     - changelog

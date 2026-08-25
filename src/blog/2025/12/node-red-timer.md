@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Timer Tutorial: Stopwatch & Countdown"
 title: "Node-RED Timer Tutorial: Create Stopwatch and Countdown Timers"
 subtitle: "Implement stopwatch and countdown timers for industrial automation and process control applications"
 description: "Node-RED timer tutorial showing how to implement stopwatch and countdown timers for industrial automation and IoT applications."
@@ -79,6 +80,9 @@ We'll use two Node-RED community nodes for this tutorial: **node-red-contrib-hou
 Let's start with installing and building a stopwatch.
 
 ### Installing the Hourglass Node
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 First, install the **hourglass node** in your Node-RED instance:
 

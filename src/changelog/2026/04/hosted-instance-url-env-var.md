@@ -2,6 +2,7 @@
 title: Hosted Instances know their own URL
 description: Hosted Instances now get an FF_INSTANCE_URL environment variable
 date: 2026-04-07 17:00:00
+release: "2.29"
 authors: ['ben-hardill']
 tags:
  - changelog

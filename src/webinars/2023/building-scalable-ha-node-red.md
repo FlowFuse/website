@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Apps for Scalability & High Availability"
 title: "Building Node-RED Applications for Scalability and High Availability"
 subtitle: Join Marian Demme, FlowFuse Product Manger, to learn how to build Node-RED applications that can scale and be highly available.
 description: Join Marian Demme in a webinar on building scalable and highly available Node-RED applications with FlowFuse. Gain insights and best practices for robust Node-RED deployments.

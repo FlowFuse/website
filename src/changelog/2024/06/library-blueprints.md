@@ -2,6 +2,7 @@
 title: Custom hostnames for your instances
 description: Enterprise teams on FlowFuse Cloud can now configure custom subdomains to point to their Node-RED applications, enhancing accessibility and branding.
 date: 2024-06-05 13:00:00.0
+release: "2.5"
 authors: ["nick-oleary"]
 tags:
     - changelog

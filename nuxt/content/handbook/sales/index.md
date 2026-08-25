@@ -27,7 +27,7 @@ lifecycle:
   renewals, and expansion; measured by customer outcomes, not just retention.
 - **[Professional Services](./professional-services.md)** — Deliver scoped,
   high-impact engagements that accelerate implementation and time-to-value.
-- **[Sales Partnerships](./partnerships.md)** — Extend FlowFuse's reach through
+- **[Sales Partnerships](./partnerships/)** — Extend FlowFuse's reach through
   resellers, referrers, and system integrators.
 
 Together these teams form a single commercial engine aligned around one goal:
@@ -58,7 +58,7 @@ Each function is accountable for a specific phase of the customer journey:
 | **[Sales](./sales-team.md)** | New business, opportunity qualification, demos, proposals, closing new and expansion ARR |
 | **[Solution Engineering](./solution-engineering.md)** | Technical discovery, demos, proofs of value, onboarding, architecture and expansion advisory |
 | **[Customer Success](./customer-success.md)** | Onboarding, adoption, renewals, advocacy, and driving account health and growth |
-| **[Sales Partnerships](./partnerships.md)** | Reseller, referrer, and system-integrator motions; partner enablement |
+| **[Sales Partnerships](./partnerships/)** | Reseller, referrer, and system-integrator motions; partner enablement |
 | **[Professional Services](./professional-services.md)** | Scoped implementation, integration, and enablement services |
 
 ## Regional coverage
@@ -76,7 +76,10 @@ rules.
 - [Systems & Tools](./tools.md) — the commercial tech stack
 - [Onboarding & Development](./onboarding.md) — ramping and growing the team
 - [Processes](./processes/) — the process and methodology index
-- [Sales Meetings](./meetings/) — [Discovery](./meetings/discovery.md), [Demo](./meetings/demo.md), [PoC](./meetings/poc.md)
+- [Sales Meetings](./meetings/) — [Discovery](./meetings/discovery.md), [Demo](./meetings/demo.md), [Solution](./meetings/solution.md), [PoV](./meetings/pov.md)
+- [PoV Workbook](./pov-workbook.md) — the deal document that spans the SE stages, and its shared definitions
+- [FlowFuse Trial Environment](./flowfuse-trial-environment.md) — the running FlowFuse the customer tests in, and the trial-license policy
+- [Demo Apps](./demo-apps.md) — the public FlowFuse team where our demo apps live, and the criteria for publishing to it
 - [Engagements & Pricing](./engagements.md)
 - [Forecast Review](./forecast-review.md)
 - [Sales Deck](./sales-deck.md) and [Pricing Decks](./pricing-decks.md)

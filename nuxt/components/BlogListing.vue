@@ -14,12 +14,6 @@ const featuredAuthorNames = computed(() => useAuthorNames(featured.value?.author
 const featuredSummary = computed(() => featured.value?.description || featured.value?.meta?.description || '')
 const featuredImage = computed(() => featured.value?.image || '/images/og-blog.jpg')
 const featuredDate = computed(() => featured.value ? new Date(featured.value.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
-
-const pageTitle = computed(() => props.tag ? 'Blog' : 'Blog')
-useSeoMeta({
-    title: pageTitle,
-    ogTitle: pageTitle,
-})
 </script>
 
 <template>

@@ -2,6 +2,7 @@
 title: Multiple Device Groups in a pipeline
 description: "Device Groups can now be chained in a Pipeline, further simplifying device management across your fleet"
 date: 2025-03-10 12:00:00.0  
+release: "2.15"
 authors: ["stephen-mclaughlin"]
 tags:
   - changelog

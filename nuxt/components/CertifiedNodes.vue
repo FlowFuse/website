@@ -1,10 +1,12 @@
 <script setup lang="ts">
+const props = withDefaults(defineProps<{ defaultTier?: 'it' | 'ot' }>(), { defaultTier: 'it' })
+
 const { data } = await useAsyncData('certified-nodes', () => queryCollection('certifiedNodes').first())
 
 const bundles = computed(() => data.value?.bundles ?? [])
 type Bundle = typeof bundles.value[number]
 
-const active = ref<'it' | 'ot'>('it')
+const active = ref<'it' | 'ot'>(props.defaultTier)
 const activeBundle = computed(() => bundles.value.find(b => b.id === active.value) ?? bundles.value[0])
 const nodeCount = (b?: Bundle) => b ? b.groups.reduce((n, g) => n + g.nodes.length, 0) : 0
 
@@ -12,6 +14,12 @@ const ACCENT: Record<string, string> = { indigo: 'bg-indigo-600', red: 'bg-red-6
 const accentClass = (b: Bundle) => ACCENT[b.accent] ?? 'bg-gray-500'
 const tileClass = (b: Bundle, node: { both?: boolean }) =>
     node.both ? 'bg-gradient-to-br from-indigo-600 to-red-600' : accentClass(b)
+
+// Same event the /node-red/ certified grid emits (src/node-red/index.njk), so
+// clicks on a connector aggregate across every place it is featured.
+const capture = useCapture()
+const captureNodeClick = (name: string, bundle: Bundle) =>
+    capture('certified-node-click', { node: name, collection: bundle.tier, page: location.pathname })
 </script>
 
 <template>
@@ -54,6 +62,8 @@ const tileClass = (b: Bundle, node: { both?: boolean }) =>
                             :name="node.name"
                             :description="node.description"
                             :tile-class="tileClass(b, node)"
+                            :href="node.url"
+                            @click="captureNodeClick(node.name, b)"
                         />
                     </div>
                 </div>

@@ -130,7 +130,7 @@ Several quality management standards include calibration requirements.
 - **[ISO 13485](https://www.iso.org/standard/59752.html)** — calibration control for medical-device manufacturers.
 - **[AS9100](https://en.wikipedia.org/wiki/AS9100)** — aerospace calibration controls and record requirements.
 
-Audit findings are frequently related to missing records, overdue equipment, unclear status identification, or inadequate impact assessment rather than to the calibration measurement itself.
+Audit findings are frequently related to missing records, overdue equipment, unclear status identification, or inadequate impact assessment rather than to the calibration measurement itself. A shop-floor [layered process audit](/blog/2026/08/layered-process-audit/) is one of the places these gaps get caught early, since checking whether a tool is within its calibration date is a standard item on that checklist.
 
 ## Where Calibration Data Should Be Managed
 

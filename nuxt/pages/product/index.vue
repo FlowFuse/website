@@ -5,7 +5,7 @@
 // unified destinations, so it keeps a plain ff-btn link, same precedent as
 // BlogPostCta.vue's pricing fallback.
 useSeoMeta({
-    title: 'FlowFuse Features',
+    title: 'Features',
     description: 'FlowFuse provides the features companies require to reliably deliver industrial applications to devices and cloud in a collaborative, secure manner.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',
@@ -37,24 +37,6 @@ const TIERS = [
         description: 'Push flows, ship updates, and roll back remotely across thousands of distributed devices, without waiting on a firmware release. Built for hardware OEMs, partners, and asset operators.',
         idealFit: "Ideal fit if you're dealing with: distributed devices, remote sites, sensors and telemetry at scale, or shipping Node-RED inside your own product.",
         image: { src: '/images/product/fleet.jpg', alt: 'FlowFuse Fleet: device fleet management console' },
-    },
-]
-
-const DIFFERENTIATORS = [
-    {
-        heading: 'Vendor-Free Open Source',
-        description: 'Every factory is different, so why deploy the same solution as everyone else? Build your way with <a class="text-indigo-600 hover:underline" href="/blueprints/">ready-made blueprints</a>, your own app store, or anything in between — we never dictate your tools.',
-        icon: 'i-lucide-puzzle',
-    },
-    {
-        heading: 'Flexible and Secure',
-        description: 'From whole-factory rollouts to last-mile fixes across any industry. Build your solution, then secure it with <a class="text-indigo-600 hover:underline" href="/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/">granular RBAC</a>, auditing, <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">version control</a>, and traceability.',
-        icon: 'i-lucide-shield-check',
-    },
-    {
-        heading: 'Seamless Collaboration',
-        description: 'OT teams prototype and deploy fast while IT keeps the governance, security, and auditability they need — no trade-offs.',
-        icon: 'i-lucide-handshake',
     },
 ]
 
@@ -116,7 +98,7 @@ onUnmounted(() => {
               <h1 class="text-4xl md:text-5xl font-medium">
                 Build, deploy, and govern industrial applications - <span class="text-red-600">in record time</span>
               </h1>
-              <p class="mt-6 text-lg text-gray-500 max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
+              <p class="mt-6 text-lg max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
               <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
                 <CtaBookDemo variant="highlight" position="hero" />
                 <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'hero' })">
@@ -140,17 +122,7 @@ onUnmounted(() => {
           <h2 class="mb-10 max-md:text-center">
             The needs of modern industry requires <span class="text-indigo-600">modern solutions</span>
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div
-              v-for="diff in DIFFERENTIATORS"
-              :key="diff.heading"
-              class="rounded-lg bg-gradient-to-br from-indigo-50/50 to-red-50/50 p-6 pt-8 flex flex-col gap-4 text-center md:text-left"
-            >
-              <Icon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
-              <h3 class="text-xl font-semibold text-indigo-600">{{ diff.heading }}</h3>
-              <p class="mb-0" v-html="diff.description" />
-            </div>
-          </div>
+          <DifferentiatorCards class="mb-16" />
 
           <!-- Tier scrollytelling -->
           <div class="max-w-screen-lg mx-auto pt-8 pb-20">
@@ -182,7 +154,7 @@ onUnmounted(() => {
                     <h3 class="text-3xl mt-2">{{ tier.heading }}</h3>
                     <p class="mt-4 text-gray-500" v-html="tier.description" />
                     <ProseNote class="mt-4"><span v-html="tier.idealFit" /></ProseNote>
-                    <a class="mt-6 inline-flex items-center gap-1 font-medium blue-600 hover:underline" href="/pricing/" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</a>
+                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${tier.id}/`" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</NuxtLink>
                   </div>
                   <div class="min-h-64 rounded-lg overflow-hidden border border-gray-200">
                     <img :src="tier.image.src" :alt="tier.image.alt" class="block w-full h-full object-cover" loading="lazy">

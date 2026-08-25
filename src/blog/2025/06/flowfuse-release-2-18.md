@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.18: Smarter Monitoring & AI"
 title: "FlowFuse 2.18: Smarter Monitoring, AI Integration, Improved DevOps, and a preview of exciting things to come"
 subtitle: "Monitor and improve instance performance, run AI chat in your Dashboard, Git pull, and more."
 description: "FlowFuse 2.18 brings smarter monitoring, AI integration, and improved DevOps: run AI chat in your Dashboard, Git pull, and more."
@@ -63,7 +64,7 @@ By combining AI assistance with Node-RED's visual programming approach, we're cr
 
 Here is a sneak peek of something we're working on: an AI chat in the Node-RED editor that allows you to ask questions about the instance you are working in. 
 
-![Preview of AI in Node-RED Editor](./images/AI_preview.gif)
+<video autoplay loop muted playsinline aria-label="Preview of AI in Node-RED Editor" width="971" height="679" preload="none"><source src="/blog/2025/06/images/AI_preview.webm" type="video/webm" /></video>
 
 ## What else is new?
 

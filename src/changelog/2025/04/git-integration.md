@@ -1,7 +1,8 @@
 ---
 title: Git Integration with Pipelines
-description: ""
+description: "Add a Git Repository stage to a deployment pipeline, so every trigger pushes the latest snapshot to your configured repository."
 date: 2025-04-09 12:00:00.0  
+release: "2.16"
 authors: ["nick-oleary"]
 tags:
   - changelog

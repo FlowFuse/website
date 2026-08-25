@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: Now with MCP-Powered Insights"
 description: "Connect FlowFuse Expert to your own tools and data using the Model Context Protocol (MCP)."
 date: 2025-11-19 13:00:00.0
+release: "2.24"
 authors: ['steve-mclaughlin']
 tags:
   - changelog

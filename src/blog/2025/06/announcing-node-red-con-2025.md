@@ -1,4 +1,5 @@
 ---
+metaTitle: "Announcing Node-RED Con 2025"
 title: "Announcing Node-RED Con 2025: A Community Conference on Industrial Applications"  
 subtitle: "We're excited to support this year's community conference focused on Node-RED in industry. The Call for Papers is now open!"  
 description: "FlowFuse sponsors Node-RED Con 2025, a free online conference dedicated to industrial applications. Submit your talk today."

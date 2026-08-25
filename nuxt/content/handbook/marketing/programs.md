@@ -72,7 +72,7 @@ the value of our product.
     an excellent in-app experience.
   - **Sales-Led Proof of Concept (PoC)**: For larger or more complex
     deployments, prospective customers may engage in a structured Proof of
-    Concept. This is a [sales-led process](/handbook/sales/meetings/poc/)
+    Concept. This is a [sales-led process](/handbook/sales/meetings/pov/)
     designed to validate specific use cases. Marketing supports this motion by
     providing relevant content and materials like customer stories and technical
     documentation.

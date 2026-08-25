@@ -1,7 +1,8 @@
 ---
 title: Team-wide search
-description: 
+description: Find applications, instances and remote instances from a search bar in the top header, on every page.
 date: 2024-11-21 13:00:00.0
+release: "2.11"
 
 authors: ["nick-oleary"]
 tags:

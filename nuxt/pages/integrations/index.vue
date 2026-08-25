@@ -6,7 +6,7 @@ import { nodeProducts } from '../../utils/integrations-ui'
 type CatalogueNode = IntegrationCatalogEntry & { _idLc: string }
 type ProductFilter = 'all' | CertifiedCollection
 
-useHead({ title: 'Integrations • FlowFuse' })
+useHead({ title: 'Integrations' })
 
 const route = useRoute()
 const router = useRouter()

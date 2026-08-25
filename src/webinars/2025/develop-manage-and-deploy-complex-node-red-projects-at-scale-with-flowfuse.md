@@ -1,4 +1,5 @@
 ---
+metaTitle: "Deploy Complex Node-RED Projects at Scale"
 title: "Develop, Manage, and Deploy Complex Node-RED Projects at Scale, with FlowFuse"
 subtitle: Watch Rob Marcer show how to easily develop complex, multi-instance Node-RED applications, test them in development, and then deploy to production environments with confidence.
 meta:

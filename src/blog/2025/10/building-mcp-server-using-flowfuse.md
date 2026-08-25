@@ -1,4 +1,5 @@
 ---
+metaTitle: "Building MCP Servers for AI Agent Integration"
 title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED, enabling AI agents to access data using a low-code approach."
@@ -62,6 +63,9 @@ Before defining resources or tools, the MCP Server must be configured. This serv
 3. **Click Done** to save the server configuration.
 
 Once the server is configured, clients can connect using a URL. The URL to connect with is your instance URL plus the MCP path you configured, for example:
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ```
 https://your-instance.flowfuse.cloud/mcp
@@ -153,7 +157,7 @@ For this article, we've built a demonstration data flow. We have a table named p
 
 We then created a data resource and exposed all the line data to it. Now, let's connect a AI Agent to this resource and explore the kinds of questions we can ask to monitor the factory floor effectively.
 
-![Monitoring Production Lines](./images/resource-demo.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Monitoring Production Lines" width="3024" height="1870" preload="none"><source src="/blog/2025/10/images/resource-demo.webm" type="video/webm" /></video>
 *Production line monitoring using MCP Resources*
 
 ### Defining an MCP Tool
@@ -241,7 +245,7 @@ Your MCP Tool is now active. When an AI agent invokes it, the connected flow exe
 
 In this example, the flow includes a tool that triggers a POST request to the maintenance system API, which was developed using FlowFuse and the FlowFuse Dashboard. The AI Assistant was then asked to identify which production line was performing the worst and schedule a maintenance task for it.
 
-![Scheduling Maintenance Example](./images/tools-demo.gif){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Scheduling Maintenance Example" width="3024" height="1638" preload="none"><source src="/blog/2025/10/images/tools-demo.webm" type="video/webm" /></video>
 *AI agent scheduling maintenance using an MCP Tool*
 
 Below is the flow that includes the Resource we created to monitor production lines and the Tool that sends a POST request.

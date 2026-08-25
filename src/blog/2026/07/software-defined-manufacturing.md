@@ -1,4 +1,5 @@
 ---
+metaTitle: "Software-Defined Manufacturing Explained"
 title: "Software-Defined Manufacturing: Improve Without Hardware Changes"
 subtitle: "Why manufacturing improvement is shifting from one-off hardware projects to a growing library of connected applications"
 description: "Software-defined manufacturing (SDM) is changing how factories improve operations. Learn what it means and how FlowFuse helps."

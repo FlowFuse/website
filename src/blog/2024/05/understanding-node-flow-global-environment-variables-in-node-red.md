@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Variables: Flow, Global & Context"
 title: "How to Use Variables in Node-RED: Flow, Global, Context & Environment (2026)"
 subtitle: A complete guide to setting, retrieving, and persisting Node-RED variables for efficient, production-ready flows.
 description: "Learn how to use Node-RED global, flow, context, and environment variables in 2026, with step-by-step examples and an FAQ."
@@ -176,7 +177,7 @@ FlowFuse provides persistent storage that survives restarts, redeployments, and 
 
 In the change node, select "persistent" from the store dropdown instead of "memory".
 
-!["Screenshot showing how to set global variable using the change node"](./images/variables-in-node-red-change-node-persistent-store-option-for-while-setting-variable.gif "Screenshot showing how to set global variable using the change node"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to set global variable using the change node" width="538" height="366" preload="none"><source src="/blog/2024/05/images/variables-in-node-red-change-node-persistent-store-option-for-while-setting-variable.webm" type="video/webm" /></video>
 
 In function nodes, add "persistent" as a third parameter:
 
@@ -190,7 +191,7 @@ context.set('processedCount', count, 'persistent');
 
 In a change, inject, or switch node, ensure you're selecting from the "persistent" store.
 
-!["Screenshot showing how to retrieve global variable using the change node"](./images/variables-in-node-red-change-node-persistent-store-option.gif "Screenshot showing how to retrieve global variable using the change node"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to retrieve global variable using the change node" width="528" height="366" preload="none"><source src="/blog/2024/05/images/variables-in-node-red-change-node-persistent-store-option.webm" type="video/webm" /></video>
 
 In function nodes:
 
@@ -239,7 +240,7 @@ Node-RED supports environment variables at two levels:
 3. Add your variables as name-value pairs
 4. Click Done and deploy
 
-!["Screenshot showing how to set flow level environment variables"](./images/variables-in-node-red-setting-flow-scope-enviroment-variable.gif "Screenshot showing how to set flow level environment variables"){data-zoomable}
+<video autoplay loop muted playsinline aria-label="Video showing how to set flow level environment variables" width="800" height="450" preload="none"><source src="/blog/2024/05/images/variables-in-node-red-setting-flow-scope-enviroment-variable.webm" type="video/webm" /></video>
 
 For global-level environment variables, see [Using Environment Variables in Node-RED](/blog/2023/01/environment-variables-in-node-red/) for detailed instructions.
 
