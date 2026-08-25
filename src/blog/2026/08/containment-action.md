@@ -53,7 +53,7 @@ Surviving CS1 or CS2 status depends on more than reacting to the initial defect 
 
 ### Documenting Every Inspection Point
 
-Every added inspection step needs a written record: what is being checked, how often, and by whom. Inspection also has to happen in a dedicated containment area, separate from normal production flow, staffed by people other than the operators who produced the part. Real-time [production monitoring](/use-cases/production-monitoring/) can capture this automatically at the line level, giving you a live record instead of a stack of paper checklists compiled after each shift.
+Every added inspection step needs a written record: what is being checked, how often, and by whom. Inspection also has to happen in a dedicated containment area, separate from normal production flow, staffed by people other than the operators who produced the part. Real-time [production monitoring](/use-cases/production-monitoring/) can capture this automatically at the line level, giving you a live record instead of a stack of paper checklists compiled after each shift. It's the same discipline a [layered process audit](/blog/2026/08/layered-process-audit/) runs on: defined checks, at a defined frequency, signed off by someone other than the operator.
 
 ### Sign-Offs That Hold Up During Customer Containment
 
@@ -68,7 +68,7 @@ Most CS1/CS2 automotive plans fail at scale, not on day one. A process that work
 
 ### Identifying Certified Stock
 
-Contained parts need distinct marking, usually a containment label or coloured tag, agreed with the customer and applied from a defined start date. That marking is how the customer separates parts that passed containment inspection from parts shipped before containment began. Containment also covers material sitting in your warehouse, already in transit, and on the floor at the customer's plant, not only what ships next.
+Contained parts need distinct marking, usually a containment label or coloured tag, agreed with the customer and applied from a defined start date. That marking is how the customer separates parts that passed containment inspection from parts shipped before containment began. Containment also covers material sitting in your warehouse, already in transit, and on the floor at the customer's plant, not only what ships next. That marking needs to tie back to the same [automotive traceability](/blog/2026/08/automotive-traceability/) record as everything else you ship, not a separate log that only exists for the duration of containment.
 
 ::cta-image{src="/blog/2026/08/images/containment-action-cta-2.png" alt="Track contained parts from line to customer - build with FlowFuse" cta="sign-up"}
 ::
@@ -79,7 +79,7 @@ Passing containment inspections is only half the work. To exit CS1 or CS2 status
 
 ### Connecting Containment Data to Root Cause
 
-Containment inspection data is only useful if it points back to where the defect originated. Ongoing [defect and quality monitoring](/blog/2026/07/defect-and-quality-monitoring/) at the line level helps quality teams trace a recurring issue to a specific machine, shift, or process step instead of guessing at a fix.
+Containment inspection data is only useful if it points back to where the defect originated. Ongoing [defect and quality monitoring](/blog/2026/07/defect-and-quality-monitoring/) at the line level helps quality teams trace a recurring issue to a specific machine, shift, or process step. Structuring that investigation with a tool like an [Ishikawa fishbone diagram](/blog/2026/07/ishikawa-fishbone-diagram/) keeps the search organized instead of guessing at a fix.
 
 ### Keeping Every Shift Aligned on Corrective Action
 
