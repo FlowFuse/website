@@ -194,6 +194,15 @@ export default defineContentConfig({
                 hubspot: z.object({
                     formId: z.string(),
                 }),
+                meta: z.object({
+                    // Falls back to "Frequently Asked Questions" (the blog's fixed heading)
+                    // when unset - only set this when a story wants its own FAQ heading.
+                    faqTitle: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                }).optional(),
                 story: z.object({
                     brand: z.string(),
                     // Nullable for the same blank-key-in-YAML reason as top-level `logo` above.

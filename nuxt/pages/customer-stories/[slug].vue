@@ -71,6 +71,13 @@ useSeoMeta({
     twitterCard: 'summary_large_image',
     twitterSite: '@FlowFuseinc',
 })
+
+useSchemaOrg([
+    computed(() => page.value?.meta?.faq?.length ? {
+        '@type': 'FAQPage',
+        mainEntity: page.value.meta.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+    } : undefined),
+])
 </script>
 
 <template>
@@ -112,6 +119,11 @@ useSeoMeta({
                 :avatar="quoteAuthorAvatar"
               />
               <ContentRenderer :value="page" />
+            </div>
+
+            <div v-if="page.meta?.faq?.length" class="prose">
+              <ProseH2>{{ page.meta.faqTitle || 'Frequently Asked Questions' }}</ProseH2>
+              <BlogFaq :faq="page.meta.faq" />
             </div>
           </div>
 
