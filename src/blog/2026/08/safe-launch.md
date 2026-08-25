@@ -4,7 +4,7 @@ metaTitle: "Safe Launch in Automotive Manufacturing After PPAP Approval"
 description: "Learn what a safe launch program requires after PPAP, and see how FlowFuse turns containment inspection and escalation criteria into live, real-time data."
 date: 2026-08-25
 authors: ["sumit-shinde"]
-image: /blog/2026/08/images/safe-launch.png
+image: /blog/2026/08/images/safe-launch-image.png
 tags:
   - flowfuse
 tldr:
