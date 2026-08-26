@@ -62,7 +62,7 @@ Expert works through a set of tools on the FlowFuse MCP server. In 3.0, it stops
 
 Add the FlowFuse MCP server to whichever AI agent you already use, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT, Claude and Gemini all connect this way, as does a local agent with MCP capabilities running any model. Command-line agents use the same address as well and all have access to the same tools as our integrated agent.
 
-This is the AI your company already approved. Where policy allows one assistant, that assistant now reaches FlowFuse, under the same governance you apply everywhere else. The agent that already knows your repositories and your tickets knows your Node-RED instances too.
+This way the AI your company already approved can be extended with FlowFuse and Node-RED, under the same governance you already have in place. The agent you are familiar with, now extended.
 
 Ask it about anything the platform holds: teams and applications, hosted and remote instances, pipelines and snapshots, brokers, device groups, or the nodes in your bill of materials. Then describe the flow you need. It builds it in the Node-RED editor in front of you, reads the debug output, and corrects its own node configuration when validation rejects it. You watch it happen, and deploying stays yours.
 
