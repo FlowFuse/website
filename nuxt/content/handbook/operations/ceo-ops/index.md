@@ -16,7 +16,12 @@ A shared 1Password vault is available to the CEO and the exec assistant. All pas
 The P.A.'s tasks is to run complete certain tasks every day. For some, even
 multiple times a day. Capture the output of these in a "Daily Briefing" send
 before the [CEO's meeting hours](#ceo-meeting-hours). 
- 
+
+Before compiling the briefing, confirm which timezone the CEO is currently in
+(he travels regularly between Amsterdam and the US) — check the calendar for
+travel/OOO blocks, or ask directly if it's unclear. Lead the briefing with
+that timezone rather than defaulting to Amsterdam.
+
 1. [Inbox Management](/handbook/operations/ceo-ops/inbox-management/)
 1. [Calendar Management](/handbook/operations/ceo-ops/calendar-management/)
 1. [CEO Task Management](/handbook/operations/ceo-ops/task-managment/)
