@@ -1,7 +1,7 @@
 ---
 metaTitle: "FlowFuse 3.0: Edge/Hub/Fleet, AI & Dashboard Themes"
 title: "FlowFuse 3.0: Build, deploy, and govern — matched to how you run"
-subtitle: 
+subtitle: "New FlowFuse products, new AI tooling, an updated Dashboard experience, and more"
 description: "FlowFuse 3.0 introduces Edge, Hub, and Fleet for Node-RED, opens FlowFuse to your own AI agent, and ships new Node-RED Dashboard themes. The latest Node-RED news."
 date: 2026-08-27
 authors: ["jamie-strusz"]
@@ -68,8 +68,9 @@ Ask it to subscribe to `factory/line1/temp` and chart the reading on a dashboard
 
 Three things follow from that:
 
+- Company-sanctioned AI is unlocked, allowing you to govern and secure agentic development and orchestration at scale.
 - **Your agent, your setup.** Each engineer stays in the agent they already work in, next to their existing MCP servers and customizations.
-- **FlowFuse platform operations and editing Node-RED flows become an extension of your existing AI workflow.
+- FlowFuse platform operations and editing Node-RED flows become an extension of your existing AI workflow.
 
 FlowFuse ensures control and enforces on every call what you granted: the teams, and read access or editing rights. Flow work runs in one of your own browser sessions making sure you have visibility and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
 
