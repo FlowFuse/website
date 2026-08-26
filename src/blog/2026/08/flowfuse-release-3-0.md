@@ -74,7 +74,7 @@ Three things follow from that:
 
 FlowFuse ensures control and enforces on every call what you granted: the teams, and read access or editing rights. Flow work runs in one of your own browser sessions making sure you have visibility and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
 
-[Pick your agent on the AI page](/ai/) for the address and the three steps. [Connecting your own agent](/docs/user/expert/third-party-agents/) covers the detail.
+[Pick your agent on the AI page](/ai/) to get setup in three simple steps.
 
 <video autoplay loop muted playsinline aria-label="Connecting an AI agent to FlowFuse over MCP, granting it a team and an access level, then asking it to set up an instance" width="1600" height="900" preload="none"><source src="./images/connect-your-own-ai-agent.webm" type="video/webm" /></video>
 _Connect the agent you already use, grant it a team and an access level, and work with FlowFuse from there._
