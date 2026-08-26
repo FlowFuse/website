@@ -72,7 +72,7 @@ Three things follow from that:
 - **Your agent, your setup.** Each engineer stays in the agent they already work in, next to their existing MCP servers and customizations.
 - **One workflow.** FlowFuse platform operations and Node-RED flow editing become a natural extension of the AI workflow you already own leading you to more efficiently and effectively deliver results.
 
-FlowFuse ensures control and enforces on every call what you granted: the teams, and read access or editing rights. Flow work runs in one of your own browser sessions making sure you have visibility and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
+FlowFuse ensures control and enforces on every call what you granted: the teams, and read access or editing rights. Visual coding work runs in one of your own browser sessions making sure you have visibility and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
 
 [Pick your agent on the AI page](/ai/) to get setup in three simple steps.
 
