@@ -70,7 +70,7 @@ Three things follow from that:
 
 - **Company-sanctioned AI, unlocked.** Govern and secure agentic development and orchestration at scale.
 - **Your agent, your setup.** Each engineer stays in the agent they already work in, next to their existing MCP servers and customizations.
-- **One workflow.** FlowFuse platform operations and Node-RED flow editing become an extension of the AI workflow you already have.
+- **One workflow.** FlowFuse platform operations and Node-RED flow editing become a natural extension of the AI workflow you already own leading you to more efficiently and effectively deliver results.
 
 FlowFuse ensures control and enforces on every call what you granted: the teams, and read access or editing rights. Flow work runs in one of your own browser sessions making sure you have visibility and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
 
