@@ -60,24 +60,24 @@ FlowFuse 3.0 makes it easier to go from an idea to a working application, with n
 
 Expert works through a set of tools on the FlowFuse MCP server. In 3.0, it stops being the only agent that can use them.
 
-Point the AI agent you already use at FlowFuse, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT, Claude and Gemini all connect this way, as does a local agent with MCP capabilities running any model. Command-line and editor agents use the same address. They reach the same platform tools FlowFuse Expert does, not a cut-down API, though the assistance built into the editor stays a first-party feature. Because the agent is yours, so is the model behind it.
+Add the FlowFuse MCP server to whichever AI agent you already use, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT, Claude and Gemini all connect this way, as does a local agent with MCP capabilities running any model. Command-line and editor agents use the same address. They reach the same platform tools FlowFuse Expert does, and because the agent is yours, so is the model behind it.
 
-Until now, AI assistance stopped at the product boundary. The agent your team already works in knew your repo and your tickets, but your Node-RED instances were invisible to it. For many companies that was not a preference, it was policy: approved-AI-only rules, and FlowFuse Expert is not on the approved list, so there was no AI on the platform at all. What happened instead was copy and paste, prompting an external tool for flow JSON and hand-importing it. The work was already being done by AI. It just was not being done through us.
+This is the AI your company already approved. Where policy allows one assistant, that assistant now reaches FlowFuse, under the same governance you apply everywhere else. The agent that already knows your repositories and your tickets knows your Node-RED instances too.
 
-Ask it to subscribe to `factory/line1/temp` and chart the reading on a dashboard gauge. It builds the flow in the Node-RED editor right in front of you, reads the debug output, and fixes it's own node configuration when validation rejects it. You watch it happen, and deploying stays yours.
+Ask it about anything the platform holds: teams and applications, hosted and remote instances, pipelines and snapshots, brokers, device groups, or the nodes in your bill of materials. Then describe the flow you need. It builds it in the Node-RED editor in front of you, reads the debug output, and corrects its own node configuration when validation rejects it. You watch it happen, and deploying stays yours.
 
 Three things follow from that:
 
-- Company-sanctioned AI is unlocked, allowing you to govern and secure agentic development and orchestration at scale.
+- **Company-sanctioned AI, unlocked.** Govern and secure agentic development and orchestration at scale.
 - **Your agent, your setup.** Each engineer stays in the agent they already work in, next to their existing MCP servers and customizations.
-- FlowFuse platform operations and editing Node-RED flows become an extension of your existing AI workflow.
+- **One workflow.** FlowFuse platform operations and Node-RED flow editing become an extension of the AI workflow you already have.
 
 FlowFuse ensures control and enforces on every call what you granted: the teams, and read access or editing rights. Flow work runs in one of your own browser sessions making sure you have visibility and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
 
 [Pick your agent on the AI page](/ai/) for the address and the three steps. [Connecting your own agent](/docs/user/expert/third-party-agents/) covers the detail.
 
-<video autoplay loop muted playsinline aria-label="Video demo of querying FlowFuse teams and instances from an AI client" width="1600" height="900" preload="none"><source src="./images/flowfuse-expert-mcp-ai-assistant.webm" type="video/webm" /></video>
-_Video demo of querying FlowFuse teams and instances from an AI client_
+<video autoplay loop muted playsinline aria-label="Connecting an AI agent to FlowFuse over MCP, granting it a team and an access level, then asking it to set up an instance" width="1600" height="900" preload="none"><source src="./images/connect-your-own-ai-agent.webm" type="video/webm" /></video>
+_Connect the agent you already use, grant it a team and an access level, and work with FlowFuse from there._
 
 ### What's new with FlowFuse Dashboard?
 
