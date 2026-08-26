@@ -69,7 +69,6 @@ Ask it to subscribe to `factory/line1/temp` and chart the reading on a dashboard
 Three things follow from that:
 
 - **Your agent, your setup.** Each engineer stays in the agent they already work in, next to their existing MCP servers and customizations.
-- **Instances your agent couldn't otherwise touch.** Your agent connects to FlowFuse; FlowFuse connects to the instance. Remote instances in air-gapped networks and DMZs come into reach without opening them up.
 - **FlowFuse platform operations and editing Node-RED flows become an extension of your existing AI workflow.
 
 What FlowFuse enforces on every call is what you granted: the teams, and read access or editing rights. Flow work runs in one of your own browser sessions, which you point the agent at from the platform header and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
