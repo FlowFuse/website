@@ -29,6 +29,24 @@ assets, machines, some new and some decades old, have made the challenge too big
 As a result, most industrial equipment goes unmonitored and unoptimized, leaving
 large gains in efficiency and safety on the table.
 
+## Our Belief
+
+Non-software engineers are reliant on software to monitor and interact with
+their machines and assets, and to gain insight from them. We believe they
+should be able to build, deploy, and govern that software themselves, rather
+than depend on a scarce pool of professional developers to do it for them.
+
+There are far more of these people than there are software engineers to serve
+them. The World Federation of Engineering Organisations puts the global
+engineering workforce at roughly 30 million people
+([WFEO](https://www.wfeo.org/world-engineering-day-engineering-for-a-healthy-planet-celebrating-the-unesco-engineering-report/)),
+while the global population of professional software developers was estimated
+at about 28.7 million in 2024
+([Statista](https://www.statista.com/statistics/627312/worldwide-developer-population/)).
+Even on those figures alone, most engineers are not software engineers -- and
+that's before counting the technicians and operators who work alongside them
+and depend on the same software every day.
+
 ### Achieving our Mission
 
 At the core of FlowFuse is Node-RED, the Low-Code platform that allows many to
