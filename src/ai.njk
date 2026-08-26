@@ -3,10 +3,26 @@ layout: page
 nohero: true
 imageDescription: "Plant worker interacting with an HMI"
 meta:
-    title: "Industrial AI: Our Agent, or Bring Your Own"
-    description: "Industrial AI with FlowFuse: build with FlowFuse Expert, or connect the AI agent your company already approved. Microsoft Copilot, ChatGPT, Claude and local models can query your operations and build Node-RED applications, with the permissions, RBAC and audit your plants require."
+    faq:
+        - question: "What is AI for industrial applications?"
+          answer: >
+            AI for industrial applications means using AI to work with industrial data, equipment and processes. Common uses include helping engineers build automation applications, analysing machine data, inspecting products with computer vision, and allowing people or AI agents to interact with production systems. FlowFuse provides a platform for connecting these AI capabilities to industrial data and applications.
+        - question: "How is AI used in industrial applications?"
+          answer: >
+            AI can support different parts of an industrial operation, from engineering and quality inspection to production monitoring and automation. For example, it can help generate application logic, analyse live machine data, identify defects from camera feeds, or let an AI agent interact with industrial systems. FlowFuse brings these capabilities into the same environment as the industrial applications and data they need to work with.
+        - question: "What are examples of AI for industrial applications?"
+          answer: >
+            Examples include AI-assisted engineering, automated visual inspection, natural-language access to production data, AI agents that interact with industrial systems, and AI models running locally at the edge. With FlowFuse, teams can use FlowFuse Expert to build and explain applications, connect external AI agents over MCP, run ONNX vision models, and use cloud or local LLMs within industrial workflows.
+        - question: "Can I use my own AI agent with FlowFuse?"
+          answer: >
+            Yes. FlowFuse acts as an MCP server, so Microsoft Copilot, ChatGPT, Claude, Gemini or a local model can connect to it and work your platform. You add one address, sign in, and choose which teams the agent may act on and whether it has editing rights or read access only. Because the agent is yours, so is the model behind it.
+        - question: "How do you keep AI from making changes you did not approve?"
+          answer: >
+            Every AI action runs through the same permissions and role-based access control that govern your teams, enforced on every call, so a read-only grant is refused whatever the agent tries. No agent can delete an instance, an application, a snapshot or a team, deploying stays with a person, and every action is logged and attributed in the audit log.
+    title: "AI for Industrial Applications: Governed AI for Industry"
+    description: "AI for industrial applications, without losing control: use FlowFuse Expert, or connect Copilot, ChatGPT, Claude or a local model to your operations."
 hero:
-    title: "<span class='text-indigo-600'>Industrial AI,</span> Governed and Built-In"
+    title: "<span class='text-indigo-600'>AI for Industrial Applications,</span> Governed and Built-In"
     description:
         - "AI capability is table stakes in 2026. Governed access to your operations is the difference."
     buttonText: "Request a Demo"
@@ -25,7 +41,7 @@ capabilityGroups:
         - name: "AI-assisted engineering"
           status: "Available"
           statusKind: "live"
-          description: "Generate and edit Node-RED flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up. It works inline in the editor your team already uses, so there is no separate tool to context-switch into. That turns unfamiliar or inherited flows into something the whole team can read and maintain."
+          description: "Generate and edit <a href='/node-red/' class='text-indigo-600 hover:text-indigo-800 underline'>Node-RED</a> flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up. It works inline in the editor your team already uses, so there is no separate tool to context-switch into. That turns unfamiliar or inherited flows into something the whole team can read and maintain."
         - name: "Prompt-to-app"
           status: "Available"
           statusKind: "live"
@@ -55,11 +71,11 @@ capabilityGroups:
         - name: "Automated visual inspection"
           status: "Available"
           statusKind: "live"
-          description: "Run ONNX vision models inside flows next to the machine, with camera ingest over RTSP, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant."
+          description: "Run <a href='/node-red/flowfuse/ai/onxx/' class='text-indigo-600 hover:text-indigo-800 underline'>ONNX</a> vision models inside flows next to the machine, with camera ingest over <a href='/node-red/flowfuse/edge/rtsp/' class='text-indigo-600 hover:text-indigo-800 underline'>RTSP</a>, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant."
         - name: "Use any model within flows"
           status: "Available"
           statusKind: "live"
-          description: "Certified LLM nodes bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control."
+          description: "<a href='/node-red/flowfuse/ai/llm-nodes/' class='text-indigo-600 hover:text-indigo-800 underline'>Certified LLM nodes</a> bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control."
     - title: "Connect your own agent"
       eyebrow: "Connect in"
       subtitle: "The agent your company already approved, working your platform and building in Node-RED. Your agent, your model, on a boundary you set."
@@ -80,7 +96,7 @@ capabilityGroups:
           externalNote: "Anyone can build them. For external agents, whether they can call them depends on the agent."
           status: "Available"
           statusKind: "live"
-          description: "Build your own MCP servers and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register."
+          description: "Build your own <a href='/node-red/flowfuse/mcp/' class='text-indigo-600 hover:text-indigo-800 underline'>MCP servers</a> and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register."
 connect:
     endpoint: "https://app.flowfuse.com/mcp"
     endpointNote: "Self-hosted, use your own platform address."
@@ -438,6 +454,33 @@ governance:
         {% endfor %}
     </div>
 </div>
+
+<!-- FURTHER READING: the AI blog, plus the posts closest to what this page claims.
+     Keeps the page from being a dead end and points at where the depth actually is. -->
+<div class="w-full px-6 pb-16 sm:pb-20">
+    <div class="md:max-w-screen-lg m-auto">
+        <h2 class="max-md:text-center">More on <span class="text-indigo-600">industrial AI</span></h2>
+        <p class="mt-3 text-gray-600 max-w-3xl">Worked examples and the thinking behind them, from the <a href="/blog/ai/" class="text-indigo-600 hover:text-indigo-800 underline">FlowFuse AI blog</a>.</p>
+        <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0">
+            <li class="m-0"><a href="/blog/2026/03/ai-usecases-in-factory/" class="text-indigo-600 hover:text-indigo-800 underline">5 Places Smart Factories Are Already Using AI</a></li>
+            <li class="m-0"><a href="/blog/2026/03/last-mile-problem-ai/" class="text-indigo-600 hover:text-indigo-800 underline">The Last Mile Problem in Industrial AI</a></li>
+            <li class="m-0"><a href="/blog/2026/06/process-rtsp-camera-feeds-at-the-edge/" class="text-indigo-600 hover:text-indigo-800 underline">Processing RTSP Camera Feeds at the Edge</a></li>
+            <li class="m-0"><a href="/blog/2026/02/motor-anomaly-detector-ai/" class="text-indigo-600 hover:text-indigo-800 underline">Building an AI Vibration Anomaly Detector for Industrial Motors</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- FAQ: same partial and meta.faq shape as the homepage, so jsonld.njk emits FAQPage
+     structured data off the frontmatter without any extra wiring here. -->
+<div class="w-full px-6 pt-20 bg-indigo-50/50 mb-10">
+    <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-1">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
+        <div class="-mt-20">
+            {% include "faq.njk" %}
+        </div>
+    </div>
+</div>
+
 <script>
 // Agent tabs. Swaps which set of connect instructions is shown. No dependency on the
 // Expert modal script, which this page no longer loads.
