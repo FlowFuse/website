@@ -36,7 +36,7 @@ That's a bad place for us to be. It also isn't really an argument about AI. It's
 
 FlowFuse now acts as an MCP server. Your agent connects to it as a client.
 
-That means the agent your company already approved can work the platform directly: look at your teams and applications, check what your instances are doing, read runtime logs, query your FlowFuse Tables data, create applications and instances, and build and edit the flows inside your Node-RED instances.
+That means the agent your company already approved can work the platform directly: look at your teams and applications, check what your instances are doing, read runtime logs, query your [FlowFuse Tables](/node-red/flowfuse/flowfuse-tables/) data, create applications and instances, and build and edit the flows inside your Node-RED instances.
 
 Because the agent is yours, so is the model. Which model or provider sits behind it is your agent's business, not ours. If your organisation runs everything through Azure, or through a local model because nothing leaves the network, that keeps working exactly as it does today.
 
