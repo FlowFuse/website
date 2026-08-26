@@ -125,7 +125,7 @@ const CLIENTS = [
         step2Title: "Your MCP client's config",
         step2Body: 'Any MCP-capable client works, pointed at your own model, so nothing has to leave your network.',
         step2Label: 'See the documentation',
-        step2Url: '/docs/user/expert/third-party-agents/#local-and-self-hosted-models',
+        step2Url: '/docs/user/expert/',
     },
 ]
 
@@ -156,7 +156,7 @@ const CAPABILITY_INTRO = {
 
 // NOTE: Predictive analytics and Edge ML are intentionally omitted from public
 // claims (not shipped / not on the roadmap). Do not add them here without product
-// sign-off. `media` is an empty slot per item until the assets exist.
+// sign-off.
 const CAPABILITY_GROUPS = [
     {
         id: 'build',
@@ -360,7 +360,7 @@ onUnmounted(() => {
                  reads as somewhere to go rather than as fine print under step 03.
                  The whole card is the link, which is what marks it as navigable. -->
             <a
-              href="/docs/user/expert/third-party-agents/"
+              href="/docs/user/expert/"
               class="ff-doc-note mt-5 flex items-start gap-4 rounded-lg border border-indigo-100 bg-indigo-50/50 p-5 no-underline transition duration-300 ease-in-out hover:bg-indigo-50 hover:no-underline"
               @click="capture('cta-ai-docs', { position: 'connector-note' })"
             >
