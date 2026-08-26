@@ -1,7 +1,7 @@
 ---
 metaTitle: "Industrial AI agents: the one you approved can now run ops"
 title: "Your Company Already Picked an AI Agent. Now It Can Run Your Operations."
-subtitle: "Point Microsoft Copilot, ChatGPT or Claude at FlowFuse, and it works your platform and builds your flows."
+subtitle: "Microsoft Copilot, ChatGPT, or Claude can become industrial AI agents in FlowFuse, working your platform and building your flows."
 description: "FlowFuse 3.0 turns FlowFuse into an MCP server, allowing industrial AI agents to query operations and build Node-RED flows while you keep control."
 date: 2026-08-27
 keywords: flowfuse, mcp, model context protocol, ai agent, microsoft copilot, copilot studio, chatgpt, claude, node-red, industrial ai
