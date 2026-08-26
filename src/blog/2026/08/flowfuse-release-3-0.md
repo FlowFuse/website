@@ -60,7 +60,7 @@ FlowFuse 3.0 makes it easier to go from an idea to a working application, with n
 
 Expert works through a set of tools on the FlowFuse MCP server. In 3.0, it stops being the only agent that can use them.
 
-Point the AI agent you already use at FlowFuse, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT and Claude, and coding agents like Cursor, Claude Code and Gemini CLI, all reach the same capabilities FlowFuse Expert does, not a cut-down API. Because the agent is yours, so is the model behind it.
+Point the AI agent you already use at FlowFuse, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT, Claude and Gemini all connect this way, as does a local model through any MCP client you point at it. Command-line and editor agents use the same address. They reach the same platform tools FlowFuse Expert does, not a cut-down API, though the assistance built into the editor stays a first-party feature. Because the agent is yours, so is the model behind it.
 
 Until now, AI assistance stopped at the product boundary. The agent your team already works in knew your repo and your tickets, but your Node-RED instances were invisible to it. For many companies that was not a preference, it was policy: approved-AI-only rules, and FlowFuse Expert is not on the approved list, so there was no AI on the platform at all. What happened instead was copy and paste, prompting an external tool for flow JSON and hand-importing it. The work was already being done by AI. It just was not being done through us.
 
@@ -70,9 +70,11 @@ Three things follow from that:
 
 - **Your agent, your setup.** Each engineer stays in the agent they already work in, next to their existing MCP servers and customizations.
 - **Instances your agent couldn't otherwise touch.** Your agent connects to FlowFuse; FlowFuse connects to the instance. Remote instances in air-gapped networks and DMZs come into reach without opening them up.
-- **Platform operations, not just flow editing.** Query teams, instances, snapshots and pipelines, and work FlowFuse itself from your agent.
+- **Platform operations, not just flow editing.** Query teams, applications, instances and snapshots, read your FlowFuse Tables data, and work FlowFuse itself from your agent.
 
-Only your own authenticated agent can connect to a session. [Connecting your own agent](/docs/user/expert/third-party-agents/) covers the setup.
+What FlowFuse enforces on every call is what you granted: the teams, and read access or editing rights. Flow work runs in one of your own browser sessions, which you point the agent at from the platform header and which ends when you close the tab. Every action lands in the audit log attributed to you and marked `via MCP`.
+
+[Pick your agent on the AI page](/ai/) for the address and the three steps. [Connecting your own agent](/docs/user/expert/third-party-agents/) covers the detail.
 
 <video autoplay loop muted playsinline aria-label="Video demo of querying FlowFuse teams and instances from an AI client" width="1600" height="900" preload="none"><source src="./images/flowfuse-expert-mcp-ai-assistant.webm" type="video/webm" /></video>
 _Video demo of querying FlowFuse teams and instances from an AI client_
