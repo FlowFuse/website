@@ -96,6 +96,10 @@ const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.valu
 
 const pageTitle = computed(() => page.value?.title || 'Blog')
 provide('blogPostTitle', pageTitle)
+const breadcrumbItems = computed(() => [
+    { label: 'Blog', to: '/blog' },
+    { label: pageTitle.value },
+])
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
 const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
@@ -156,6 +160,7 @@ if (routeInfo.value.kind === 'post') {
   <div v-else-if="page" class="w-full page post">
     <div class="post-title container m-auto text-center max-lg:px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
       <div class="text-left md:pr-32">
+        <Breadcrumbs :items="breadcrumbItems" class="mb-2" />
         <label>Article</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>

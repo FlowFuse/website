@@ -109,7 +109,9 @@ account. You'll need to link your family, see also [their docs](https://support.
 
 ##### Launch Lunch
 
-A lunch is organized to celebrate every release, and team members participating in a social Zoom call are encouraged to order a meal. You can [expense](./expenses) the lunch, up to a maximum of $25, and all reimbursements must be processed through Deel.
+A lunch is organized to celebrate every release, and team members participating in a launch's social call are encouraged to order a meal. You can [expense](./expenses) the lunch, up to a maximum of $25 USD, and all reimbursements must be processed through Deel under the 'Launch Lunch' expense category.
+
+Reimbursement is capped at $25. If the receipt is higher, upload the full receipt but enter $25 as the requested amount in Deel. The employee will cover the difference from the cap.
 
 ##### Dinner Bonus
 

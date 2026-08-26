@@ -38,6 +38,10 @@ function issueLabel(issue: string): string {
 }
 
 const pageTitle = computed(() => page.value?.title || 'Changelog')
+const breadcrumbItems = computed(() => [
+    { label: 'Changelog', to: '/changelog' },
+    { label: pageTitle.value },
+])
 const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
@@ -63,6 +67,7 @@ useSeoMeta({
   <div class="w-full page post">
     <div class="post-title container m-auto text-center max-lg:px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
       <div class="text-left md:pr-32">
+        <Breadcrumbs :items="breadcrumbItems" class="mb-2" />
         <label>Changelog</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
