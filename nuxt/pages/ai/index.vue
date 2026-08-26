@@ -23,6 +23,21 @@ const capture = useCapture()
 
 const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
 
+// Icons are the repo's own SVGs, inlined the way src/ai.njk did with
+// {% include %}. UIcon was tried first and four of the six lucide names had no
+// CSS rule emitted at all (no local @iconify-json collection to resolve them
+// from), so those tiles rendered as empty spans. These carry stroke="currentColor"
+// so the tab glyph still turns white when its tab is active.
+const ICON = {
+    lock: "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' width='100%' height='100%'> <path stroke-linecap='round' stroke-linejoin='round' d='M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z' /> </svg>",
+    shieldCheck: "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' width='100%' height='100%'> <path stroke-linecap='round' stroke-linejoin='round' d='M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z' /> </svg>",
+    checkCircle: "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' width='100%' height='100%'> <path stroke-linecap='round' stroke-linejoin='round' d='M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z' /> </svg>",
+    clipboardCheck: "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' width='100%' height='100%'> <path stroke-linecap='round' stroke-linejoin='round' d='M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75' /> </svg>",
+    serverStack: "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' width='100%' height='100%'> <path stroke-linecap='round' stroke-linejoin='round' d='M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z' /> </svg>",
+    chevronDown: "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-5 ff-icon--down'><path stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'/></svg>",
+}
+
+
 const FAQ = [
     {
         question: 'What is AI for industrial applications?',
@@ -120,7 +135,7 @@ const CLIENTS = [
     },
     {
         id: 'local',
-        icon: 'i-lucide-server',
+        icon: ICON.serverStack,
         name: 'Local and Custom Agents',
         step2Title: "Your MCP client's config",
         step2Body: 'Any MCP-capable client works, pointed at your own model, so nothing has to leave your network.',
@@ -191,10 +206,10 @@ const GOVERNANCE = {
     title: 'AI Governance you can <span class="text-indigo-600">prove</span>',
     subtitle: 'The control plane every AI action runs through, the same one that governs your teams.',
     items: [
-        { icon: 'i-lucide-lock', title: 'Only the teams you grant', description: 'AI reaches the teams you allow and nothing else, enforced by the platform on every call.' },
-        { icon: 'i-lucide-shield-check', title: 'Role-based access', description: 'The same RBAC that governs your teams governs what AI can see and do.' },
-        { icon: 'i-lucide-circle-check', title: 'Nothing gets deleted', description: 'No agent can remove an instance, an application, a snapshot or a team. There is no tool for it.' },
-        { icon: 'i-lucide-clipboard-check', title: 'Audit on everything', description: 'Every action AI takes is logged and attributed, so you can show exactly what happened and when.' },
+        { icon: ICON.lock, title: 'Only the teams you grant', description: 'AI reaches the teams you allow and nothing else, enforced by the platform on every call.' },
+        { icon: ICON.shieldCheck, title: 'Role-based access', description: 'The same RBAC that governs your teams governs what AI can see and do.' },
+        { icon: ICON.checkCircle, title: 'Nothing gets deleted', description: 'No agent can remove an instance, an application, a snapshot or a team. There is no tool for it.' },
+        { icon: ICON.clipboardCheck, title: 'Audit on everything', description: 'Every action AI takes is logged and attributed, so you can show exactly what happened and when.' },
     ],
 }
 
@@ -294,7 +309,8 @@ const openFaq = ref<number | null>(null)
                   :class="activeClient === client.id ? 'ff-btn--primary' : 'text-gray-700 hover:bg-gray-100'"
                   @click="selectClient(client.id)"
                 >
-                  <UIcon v-if="client.icon" :name="client.icon" class="flex-none size-4" aria-hidden="true" />
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <span v-if="client.icon" class="flex-none w-4 h-4" aria-hidden="true" v-html="client.icon" />
                   <img v-else-if="client.logo" :src="client.logo" alt="" class="h-4 w-auto flex-none" aria-hidden="true">
                   <span>{{ client.name }}</span>
                 </button>
@@ -412,7 +428,8 @@ const openFaq = ref<number | null>(null)
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           <div v-for="tile in GOVERNANCE.items" :key="tile.title" class="flex flex-col items-center text-center gap-3">
-            <UIcon :name="tile.icon" class="size-8 text-indigo-600" aria-hidden="true" />
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <span class="w-8 h-8 text-indigo-600" aria-hidden="true" v-html="tile.icon" />
             <p class="font-medium text-indigo-700 m-0">{{ tile.title }}</p>
             <p class="text-sm text-gray-600 font-light m-0">{{ tile.description }}</p>
           </div>
@@ -498,11 +515,12 @@ const openFaq = ref<number | null>(null)
               @click="openFaq = openFaq === i ? null : i"
             >
               <span>{{ item.question }}</span>
-              <UIcon
-                name="i-lucide-chevron-down"
-                class="size-5 shrink-0 transition-transform duration-300 ease-in-out"
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <span
+                class="w-5 h-5 shrink-0 transition-transform duration-300 ease-in-out"
                 :class="{ 'rotate-180': openFaq === i }"
                 aria-hidden="true"
+                v-html="ICON.chevronDown"
               />
             </button>
           </h3>
