@@ -4,7 +4,7 @@ subtitle: "Closing the gap between documented control plan requirements and real
 description: "Control plans define what to measure, how often, and how to react, but shop-floor equipment rarely knows it. Here's how to connect control plan characteristics to live measurement data."
 date: 2026-08-26
 authors: ["sumit-shinde"]
-image: /images/blog/control-plans.png
+image: /blog/2026/08/images/control-plans.png
 tags:
    - posts
    - flowfuse
