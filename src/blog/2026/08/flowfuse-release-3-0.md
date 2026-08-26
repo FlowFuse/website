@@ -64,7 +64,7 @@ Add the FlowFuse MCP server to whichever AI agent you already use, sign in, and 
 
 This way the AI your company already approved can be extended with FlowFuse and Node-RED, under the same governance you already have in place. The agent you are familiar with, now extended.
 
-Ask it about anything the platform holds: teams and applications, hosted and remote instances, pipelines and snapshots, brokers, device groups, or the nodes in your bill of materials. Then describe the flow you need. It builds it in the Node-RED editor in front of you, reads the debug output, and corrects its own node configuration when validation rejects it. You watch it happen, and deploying stays yours.
+Tell it what you want to build and it will build it for you with what the platform offers including applications, hosted and remote instances, snapshots, mqtt brokers, tables, device groups, or the materials in your team library like custom nodes from submodules or blueprints. It will navigate your browser session to the Node-RED editor so it can build it out in front of you, read the debug output, and correct its own node configuration when needed. You stay in control, you can watch it happen and take over at any point.
 
 Three things follow from that:
 
