@@ -6,6 +6,7 @@ description: "FlowFuse 3.0 introduces Edge, Hub, and Fleet for Node-RED, opens F
 date: 2026-08-27
 authors: ["jamie-strusz"]
 image: /blog/2026/08/images/flowfuse-release-3-0.jpg
+video: Q9KkSIp71Wg
 tags:
    - flowfuse
    - news
