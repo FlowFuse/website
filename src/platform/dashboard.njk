@@ -1,409 +1,411 @@
-/* ==========================================================================
-   /platform/dashboard/ — theme preview widget and page components.
+---
+layout: nohero
+meta:
+  title: FlowFuse Dashboard
+  description: Build enterprise-class dashboards for Node-RED without writing CSS. Five built-in themes that all pass WCAG AA contrast, included with FlowFuse Edge, Hub and Fleet.
+---
 
-   The preview is a mock dashboard that re-skins live between the five theme
-   presets Dashboard ships (Light, Dark, Dracula, Nord, Sepia). Each preset is
-   a block of custom properties on .ffd-dash; every element inside paints from
-   those vars, so switching a single data attribute re-themes the whole mock.
+<!-- ==================== Hero ==================== -->
+<div class="w-full px-6">
+    <div class="max-w-md sm:max-w-screen-lg mx-auto pt-10 md:pt-12">
+        <div class="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] gap-10 md:gap-12 items-stretch">
 
-   Everything is namespaced .ffd- so it cannot collide with site components.
-   Rules that set link colour carry a .nohero prefix, because .nohero a already
-   paints links blue at (0,1,1) and would otherwise win.
-   ========================================================================== */
+            <!-- copy column -->
+            <div class="flex flex-col gap-5 text-center md:text-left">
+                <h1 class="font-medium m-0 max-sm:text-4xl">
+                    A dashboard that looks right the moment you build it.
+                    <span class="text-indigo-600">Without writing CSS.</span>
+                </h1>
+                <p class="text-lg text-gray-500 font-light max-w-xl mx-auto md:mx-0 m-0">
+                    FlowFuse Dashboard is how your Node-RED application gets a user interface that
+                    looks finished. With five built-in themes that all pass WCAG&nbsp;AA contrast,
+                    you can deploy enterprise-class dashboards quickly and easily. You get deeper
+                    context, easier access to insights, and flexible visualisation &mdash; included
+                    with <a class="ffd-link" href="/product/edge/">FlowFuse Edge</a>,
+                    <a class="ffd-link" href="/product/hub/">Hub</a>, and
+                    <a class="ffd-link" href="/product/fleet/">Fleet</a>.
+                </p>
+                <div class="flex flex-row flex-wrap gap-4 items-center justify-center md:justify-start mt-2">
+                    <a class="ff-btn ff-btn--highlight uppercase" href="/book-demo/">Book a Demo</a>
+                    <a class="ff-btn" href="/pricing/">
+                        <span class="text-base uppercase text-indigo-600 hover:text-indigo-800">View Pricing</span>
+                    </a>
+                </div>
 
-@layer components {
+                <hr class="border-0 border-t border-gray-200 w-full max-w-md mx-auto md:mx-0 mt-1 mb-0">
 
-/* The site loads Heebo only. Reuse the stack style.css already uses for code
-   rather than pulling in another webfont for a handful of numeric labels. */
-.ffd-mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+                <figure class="border-l-2 border-indigo-100 pl-5 max-w-lg mx-auto md:mx-0 my-auto text-left">
+                    <blockquote class="m-0 text-base italic font-light text-gray-800 leading-relaxed">
+                        &ldquo;FlowFuse allows us to rapidly roll out updates to clients without
+                        burdening our development team. We can deliver custom dashboards to
+                        customers without involving any of our core developers.&rdquo;
+                    </blockquote>
+                    <figcaption class="mt-3 flex items-center gap-3 text-sm text-gray-500">
+                        <span class="w-9 h-9 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 grid place-items-center text-xs font-bold shrink-0 ffd-mono" aria-hidden="true">DO</span>
+                        <span><span class="font-semibold text-gray-700">Dave Olsen</span> &middot; Product Manager, Wenco</span>
+                    </figcaption>
+                </figure>
+            </div>
 
-/* ---------- preset switcher ---------- */
-.ffd-seg {
-    display: inline-flex;
-    background-color: var(--color-gray-100);
-    border: 1px solid var(--color-gray-200);
-    border-radius: 999px;
-    padding: 3px;
-    gap: 2px;
-}
-.ffd-seg button {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.3125rem 0.625rem;
-    border-radius: 999px;
-    border: 0;
-    background-color: transparent;
-    color: var(--color-gray-500);
-    cursor: pointer;
-    transition: background-color 0.15s, color 0.15s;
-}
-.ffd-seg button:hover { color: var(--color-gray-900); }
-.ffd-seg button[aria-pressed="true"] {
-    background-color: var(--color-gray-900);
-    color: white;
-}
+            <!-- live theme preview -->
+            <div class="flex flex-col gap-3 min-w-0">
+                <div class="flex flex-wrap gap-2.5 items-center justify-center md:justify-start">
+                    <div class="ffd-seg" role="group" aria-label="Theme preset">
+                        <button type="button" data-ffd-preset="light" aria-pressed="true">Light</button>
+                        <button type="button" data-ffd-preset="dark" aria-pressed="false">Dark</button>
+                        <button type="button" data-ffd-preset="dracula" aria-pressed="false">Dracula</button>
+                        <button type="button" data-ffd-preset="nord" aria-pressed="false">Nord</button>
+                        <button type="button" data-ffd-preset="sepia" aria-pressed="false">Sepia</button>
+                    </div>
+                </div>
 
-/* ---------- browser frame ---------- */
-.ffd-frame {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--color-gray-200);
-    box-shadow: 0 1px 2px rgb(17 24 39 / 0.04), 0 18px 40px -18px rgb(17 24 39 / 0.22);
-}
-.ffd-chrome {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 9px 12px;
-    background-color: var(--color-gray-100);
-    border-bottom: 1px solid var(--color-gray-200);
-}
-.ffd-chrome i {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background-color: var(--color-gray-300);
-    display: block;
-}
-.ffd-chrome span {
-    margin-left: 6px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.6875rem;
-    color: var(--color-gray-400);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+                <div class="ffd-frame">
+                    <div class="ffd-chrome">
+                        <i></i><i></i><i></i>
+                        <span>Line 3 &mdash; Packaging &middot; FlowFuse Dashboard</span>
+                    </div>
 
-/* ---------- the mock dashboard ---------- */
-.ffd-dash {
-    background-color: var(--ffd-bg);
-    color: var(--ffd-ink);
-    padding: 12px;              /* pagePadding */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;                  /* groupGap */
-    font-size: 13px;
-    transition: background-color 0.22s ease, color 0.22s ease;
-    container-type: inline-size;
-}
+                    <div class="ffd-dash" id="ffd-dash" data-preset="light">
+                        <div class="ffd-head">
+                            <span class="ffd-title">Line 3 &mdash; Packaging</span>
+                            <span class="ffd-tagchip">Live</span>
+                        </div>
 
-/* Preset values are lifted verbatim from THEME_PRESETS in the Dashboard source
-   (nodes/config/ui_base.html), so the preview shows the real palettes rather than
-   an approximation. Slot names match the ui-theme node: surface drives the app
-   bar, bgPage the page behind the groups, groupBg the group cards, groupOutline
-   their borders, primary every interactive element.
-   --ffd-ink / --ffd-muted and the semantic trio are not part of a preset (the
-   Dashboard derives text colour by contrast, and widget states are per-widget),
-   so those are picked per theme from the same upstream palette family. */
+                        <div class="ffd-kpis">
+                            <div class="ffd-card">
+                                <div class="ffd-lbl">OEE</div>
+                                <div class="ffd-kpi-val">78.4<small>%</small></div>
+                                <div class="ffd-kpi-delta ffd-up">&#9650; 2.1 vs shift avg</div>
+                            </div>
+                            <div class="ffd-card">
+                                <div class="ffd-lbl">Units / hr</div>
+                                <div class="ffd-kpi-val">1,246</div>
+                                <div class="ffd-kpi-delta ffd-up">&#9650; 38</div>
+                            </div>
+                            <div class="ffd-card">
+                                <div class="ffd-lbl">Downtime</div>
+                                <div class="ffd-kpi-val">11<small>min</small></div>
+                                <div class="ffd-kpi-delta ffd-down">&#9660; 4 vs target</div>
+                            </div>
+                        </div>
 
-.ffd-dash[data-preset="light"] {
-    --ffd-surface: #fcfcfd; --ffd-bg: #f9f9fb; --ffd-card: #ffffff; --ffd-border: #d9d9e0;
-    --ffd-accent: #0d74ce;  --ffd-accent2: #12a594;
-    --ffd-ink: #1c2024;     --ffd-muted: #60646c;
-    --ffd-good: #16a34a;    --ffd-warn: #d97706;  --ffd-crit: #dc2626;
-    --ffd-grid: #e8e8ec;
-}
-.ffd-dash[data-preset="dark"] {
-    --ffd-surface: #18191b; --ffd-bg: #111113; --ffd-card: #212225; --ffd-border: #363a3f;
-    --ffd-accent: #0d74ce;  --ffd-accent2: #12a594;
-    --ffd-ink: #edeef0;     --ffd-muted: #b0b4ba;
-    --ffd-good: #4ade80;    --ffd-warn: #fbbf24;  --ffd-crit: #f87171;
-    --ffd-grid: #2a2d31;
-}
-.ffd-dash[data-preset="dracula"] {
-    --ffd-surface: #21222c; --ffd-bg: #282a36; --ffd-card: #343746; --ffd-border: #44475a;
-    --ffd-accent: #bd93f9;  --ffd-accent2: #8be9fd;
-    --ffd-ink: #f8f8f2;     --ffd-muted: #a8abbd;
-    --ffd-good: #50fa7b;    --ffd-warn: #f1fa8c;  --ffd-crit: #ff5555;
-    --ffd-grid: #3c3f51;
-}
-.ffd-dash[data-preset="nord"] {
-    --ffd-surface: #3b4252; --ffd-bg: #2e3440; --ffd-card: #3b4252; --ffd-border: #4c566a;
-    --ffd-accent: #88c0d0;  --ffd-accent2: #81a1c1;
-    --ffd-ink: #eceff4;     --ffd-muted: #b8c0cf;
-    --ffd-good: #a3be8c;    --ffd-warn: #ebcb8b;  --ffd-crit: #bf616a;
-    --ffd-grid: #434c5e;
-}
-.ffd-dash[data-preset="sepia"] {
-    --ffd-surface: #f2e5bc; --ffd-bg: #ebdbb2; --ffd-card: #fbf1c7; --ffd-border: #d5c4a1;
-    --ffd-accent: #af3a03;  --ffd-accent2: #427b58;
-    --ffd-ink: #3c3836;     --ffd-muted: #7c6f64;
-    --ffd-good: #79740e;    --ffd-warn: #b57614;  --ffd-crit: #9d0006;
-    --ffd-grid: #ddcca7;
-}
+                        <div class="ffd-card">
+                            <div class="ffd-chart-title">
+                                <span class="ffd-lbl" style="margin:0">Zone temperature &mdash; last 12 h</span>
+                                <span class="ffd-legend">
+                                    <span><i style="background:var(--ffd-accent)"></i>Oven</span>
+                                    <span><i style="background:var(--ffd-accent2)"></i>Coolant</span>
+                                </span>
+                            </div>
+                            <svg class="ffd-chart" viewBox="0 0 520 170" role="img"
+                                 aria-label="Line chart of oven and coolant temperature over the last twelve hours">
+                                <g class="ffd-grid">
+                                    <line x1="40" y1="20" x2="505" y2="20"/>
+                                    <line x1="40" y1="52" x2="505" y2="52"/>
+                                    <line x1="40" y1="85" x2="505" y2="85"/>
+                                    <line x1="40" y1="117" x2="505" y2="117"/>
+                                    <line x1="40" y1="150" x2="505" y2="150"/>
+                                </g>
+                                <g class="ffd-axis">
+                                    <text x="34" y="23" text-anchor="end">240</text>
+                                    <text x="34" y="88" text-anchor="end">200</text>
+                                    <text x="34" y="153" text-anchor="end">160</text>
+                                    <text x="40" y="165">08:00</text>
+                                    <text x="270" y="165" text-anchor="middle">14:00</text>
+                                    <text x="500" y="165" text-anchor="end">20:00</text>
+                                </g>
+                                <line x1="40" y1="150" x2="505" y2="150" stroke="var(--ffd-border)" stroke-width="1"/>
+                                <line x1="40" y1="20" x2="40" y2="150" stroke="var(--ffd-border)" stroke-width="1"/>
+                                <polygon points="40,114.3 78.3,104.5 116.7,93.1 155,80.1 193.3,86.6 231.7,73.6 270,62.3 308.3,70.4 346.7,59 385,50.9 423.3,55.8 461.7,44.4 500,49.3 500,150 40,150"
+                                         fill="var(--ffd-accent)" opacity=".13"/>
+                                <polyline points="40,114.3 78.3,104.5 116.7,93.1 155,80.1 193.3,86.6 231.7,73.6 270,62.3 308.3,70.4 346.7,59 385,50.9 423.3,55.8 461.7,44.4 500,49.3"
+                                          fill="none" stroke="var(--ffd-accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                                <polyline points="40,130.5 78.3,125.6 116.7,132.1 155,120.8 193.3,124 231.7,115.9 270,119.1 308.3,111 346.7,114.3 385,106.1 423.3,109.4 461.7,102.9 500,104.5"
+                                          fill="none" stroke="var(--ffd-accent2)" stroke-width="2" stroke-dasharray="4 3" stroke-linejoin="round" stroke-linecap="round"/>
+                                <circle cx="500" cy="49.3" r="3.2" fill="var(--ffd-accent)"/>
+                            </svg>
+                        </div>
 
-.ffd-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--ffd-surface);
-    border: 1px solid var(--ffd-border);
-    border-radius: 4px;
-    padding: 8px 10px;
-    transition: background-color 0.22s ease, border-color 0.22s ease;
-}
-.ffd-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ffd-ink);
-    letter-spacing: -0.01em;
-}
-.ffd-tagchip {
-    margin-left: auto;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 9.5px;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--ffd-muted);
-    border: 1px solid var(--ffd-border);
-    border-radius: 999px;
-    padding: 2px 7px;
-}
+                        <div class="ffd-row3">
+                            <div class="ffd-card ffd-gauge-card">
+                                <div class="ffd-lbl">Oven</div>
+                                <svg class="ffd-gauge" viewBox="0 0 120 112" role="img" aria-label="Oven temperature gauge, 222 degrees Celsius">
+                                    <path class="ffd-gauge-arc" d="M 28.9 91.1 A 44 44 0 1 1 91.1 91.1"/>
+                                    <path class="ffd-gauge-val" id="ffd-g1" d="M 28.9 91.1 A 44 44 0 1 1 91.1 91.1"
+                                          stroke="var(--ffd-warn)" stroke-dasharray="207.3" stroke-dashoffset="62"/>
+                                    <text class="ffd-gauge-num" x="60" y="64" text-anchor="middle">222</text>
+                                    <text class="ffd-gauge-unit" x="60" y="79" text-anchor="middle">&deg;C</text>
+                                </svg>
+                            </div>
+                            <div class="ffd-card ffd-gauge-card">
+                                <div class="ffd-lbl">Coolant</div>
+                                <svg class="ffd-gauge" viewBox="0 0 120 112" role="img" aria-label="Coolant pressure gauge, 4.1 bar">
+                                    <path class="ffd-gauge-arc" d="M 28.9 91.1 A 44 44 0 1 1 91.1 91.1"/>
+                                    <path class="ffd-gauge-val" id="ffd-g2" d="M 28.9 91.1 A 44 44 0 1 1 91.1 91.1"
+                                          stroke="var(--ffd-good)" stroke-dasharray="207.3" stroke-dashoffset="118"/>
+                                    <text class="ffd-gauge-num" x="60" y="64" text-anchor="middle">4.1</text>
+                                    <text class="ffd-gauge-unit" x="60" y="79" text-anchor="middle">bar</text>
+                                </svg>
+                            </div>
+                            <div class="ffd-card ffd-ctl">
+                                <div class="ffd-lbl">Shift actions</div>
+                                <button type="button" class="ffd-btn">Acknowledge compressor fault</button>
+                                <button type="button" class="ffd-btn ffd-btn--ghost">Reset counter</button>
+                                <label class="ffd-lbl" for="ffd-date" style="margin:0">Shift date</label>
+                                <input class="ffd-picker" id="ffd-date" type="date" value="2026-08-27">
+                            </div>
+                        </div>
 
-.ffd-card {
-    background-color: var(--ffd-card);
-    border: 1px solid var(--ffd-border);
-    border-radius: 4px;         /* groupBorderRadius */
-    padding: 10px;
-    transition: background-color 0.22s ease, border-color 0.22s ease;
-    min-width: 0;
-}
-.ffd-lbl {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 9.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ffd-muted);
-    margin-bottom: 6px;
-}
+                        <div class="ffd-card">
+                            <div class="ffd-lbl">Event log</div>
+                            <div class="ffd-scroll">
+                                <table class="ffd-table">
+                                    <thead>
+                                        <tr><th>Machine</th><th>Event</th><th>Timestamp</th><th>State</th></tr>
+                                    </thead>
+                                    <tbody id="ffd-events"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-.ffd-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.ffd-kpi-val {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 19px;
-    font-weight: 700;
-    color: var(--ffd-ink);
-    font-variant-numeric: tabular-nums;
-    line-height: 1.1;
-}
-.ffd-kpi-val small {
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--ffd-muted);
-    margin-left: 2px;
-}
-.ffd-kpi-delta {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 10px;
-    margin-top: 3px;
-    font-variant-numeric: tabular-nums;
-}
-.ffd-up { color: var(--ffd-good); }
-.ffd-down { color: var(--ffd-crit); }
+            </div>
+        </div>
+    </div>
+</div>
 
-.ffd-chart-title { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
-.ffd-legend {
-    margin-left: auto;
-    display: flex;
-    gap: 10px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 9.5px;
-    color: var(--ffd-muted);
-}
-.ffd-legend i {
-    display: inline-block;
-    width: 8px;
-    height: 2px;
-    vertical-align: 2px;
-    margin-right: 4px;
-}
-.ffd-chart { display: block; width: 100%; height: auto; }
-.ffd-chart .ffd-axis text {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 8px;
-    fill: var(--ffd-muted);
-}
-.ffd-chart .ffd-grid line { stroke: var(--ffd-grid); stroke-width: 1; }
+<!-- ==================== What You Get ==================== -->
+<div class="w-full bg-gray-50 border-t border-b border-gray-200 mt-20">
+    <div class="w-full px-6 py-16 md:py-20">
+        <div class="max-w-md sm:max-w-screen-lg mx-auto">
+            <span class="ffd-mono text-xs uppercase tracking-[0.16em] text-gray-600">In the box</span>
+            <h2 class="mt-3 mb-3 text-center w-full md:text-left">
+                What You Get with <span class="text-indigo-600">FlowFuse Dashboard</span>
+            </h2>
+            <p class="max-w-3xl mx-auto md:mx-0 text-gray-500 font-light">
+                The Dashboard is how a FlowFuse instance can display its data in a human-friendly,
+                visual way. You can surface your data and insights &mdash; and then leverage
+                governance, hosting, and deployment via the core FlowFuse product to power your entire
+                system.
+            </p>
 
-.ffd-row3 {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.25fr);
-    gap: 12px;
-    align-items: start;
-}
-.ffd-gauge-card { display: flex; flex-direction: column; align-items: center; }
-.ffd-gauge { width: 100%; max-width: 104px; height: auto; display: block; }
-.ffd-gauge-arc { fill: none; stroke: var(--ffd-grid); stroke-width: 9; stroke-linecap: round; }
-.ffd-gauge-val {
-    fill: none;
-    stroke-width: 9;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 0.5s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.22s ease;
-}
-.ffd-gauge-num {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 20px;
-    font-weight: 700;
-    fill: var(--ffd-ink);
-    font-variant-numeric: tabular-nums;
-}
-.ffd-gauge-unit {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 9px;
-    fill: var(--ffd-muted);
-}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <div class="rounded-lg border border-indigo-200 bg-white p-6">
+                    <h3 class="text-lg font-semibold m-0 mb-4 text-indigo-600 text-center md:text-left">Governed on the FlowFuse platform</h3>
+                    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                        <a class="ffd-tag" href="/docs/user/role-based-access-control/">Application-level RBAC</a>
+                        <a class="ffd-tag" href="/docs/user/instance-settings/">Endpoint security</a>
+                        <a class="ffd-tag" href="https://dashboard.flowfuse.com/user/multi-tenancy.html">Multi-user dashboards</a>
+                        <a class="ffd-tag" href="/docs/user/devops-pipelines/">DevOps pipelines</a>
+                        <a class="ffd-tag" href="/docs/user/high-availability/">Hosting &amp; HA</a>
+                    </div>
+                </div>
+                <div class="rounded-lg border border-indigo-200 bg-white p-6">
+                    <h3 class="text-lg font-semibold m-0 mb-4 text-indigo-600 text-center md:text-left">Adaptive Widgets</h3>
+                    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                        <span class="ffd-tag">Charts</span>
+                        <span class="ffd-tag">Gauges</span>
+                        <span class="ffd-tag">Tables</span>
+                        <span class="ffd-tag">Forms</span>
+                        <span class="ffd-tag">Buttons</span>
+                        <span class="ffd-tag">Text input</span>
+                        <span class="ffd-tag">Dropdowns</span>
+                        <span class="ffd-tag">Sliders &amp; switches</span>
+                        <span class="ffd-tag">Markdown</span>
+                        <span class="ffd-tag">Templates</span>
+                    </div>
+                </div>
+                <div class="rounded-lg border border-indigo-200 bg-white p-6">
+                    <h3 class="text-lg font-semibold m-0 mb-4 text-indigo-600 text-center md:text-left">Open, and yours</h3>
+                    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                        <a class="ffd-tag" href="https://dashboard.flowfuse.com/">Installs into any Node-RED instance</a>
+                        <a class="ffd-tag" href="https://github.com/FlowFuse/node-red-dashboard">Open source</a>
+                        <span class="ffd-tag">Community widget ecosystem</span>
+                        <a class="ffd-tag" href="#migration-service">Dashboard 1.0 migration</a>
+                    </div>
+                </div>
+                <div class="rounded-lg border border-indigo-200 bg-white p-6">
+                    <h3 class="text-lg font-semibold m-0 mb-4 text-indigo-600 text-center md:text-left">Easy to Deploy</h3>
+                    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                        <span class="ffd-tag">5 theme presets</span>
+                        <span class="ffd-tag">WCAG AA contrast</span>
+                        <span class="ffd-tag">Default chart sizing</span>
+                        <span class="ffd-tag">Widget fit &amp; alignment</span>
+                        <span class="ffd-tag">Localised date columns</span>
+                        <a class="ffd-tag" href="https://dashboard.flowfuse.com/nodes/config/ui-theme.html">Custom brand colours</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-.ffd-ctl { display: flex; flex-direction: column; gap: 8px; }
-.ffd-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background-color: var(--ffd-accent);
-    color: #fff;
-    border: 0;
-    border-radius: 5px;
-    padding: 8px 10px;
-    font-family: var(--font-sans);
-    font-size: 11.5px;
-    font-weight: 600;
-    line-height: 1.25;
-    cursor: pointer;
-    transition: background-color 0.22s ease, color 0.22s ease;
-}
-.ffd-btn--ghost {
-    background-color: transparent;
-    color: var(--ffd-accent);
-    border: 1px solid var(--ffd-border);
-}
-.ffd-picker {
-    width: 100%;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 11px;
-    background-color: var(--ffd-bg);
-    color: var(--ffd-ink);
-    border: 1px solid var(--ffd-border);
-    border-radius: 5px;
-    padding: 6px 7px;
-    transition: background-color 0.22s ease, color 0.22s ease;
-}
+<!-- ==================== Migration ==================== -->
+<div class="w-full px-6 py-16 md:py-20">
+    <div class="max-w-md sm:max-w-screen-lg mx-auto">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
 
-.ffd-scroll { overflow-x: auto; }
-.ffd-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
-.ffd-table th {
-    text-align: left;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 9.5px;
-    font-weight: 500;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--ffd-muted);
-    padding: 0 8px 6px 0;
-    border-bottom: 1px solid var(--ffd-border);
-    white-space: nowrap;
-}
-.ffd-table td {
-    padding: 6px 8px 6px 0;
-    border-bottom: 1px solid var(--ffd-border);
-    color: var(--ffd-ink);
-    vertical-align: middle;
-}
-.ffd-table tr:last-child td { border-bottom: 0; }
-.ffd-table .ffd-ts {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-    color: var(--ffd-ink);
-}
-.ffd-chip {
-    display: inline-block;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 9px;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 999px;
-    border: 1px solid currentColor;
-}
-.ffd-chip--ok { color: var(--ffd-good); }
-.ffd-chip--warn { color: var(--ffd-warn); }
-.ffd-chip--crit { color: var(--ffd-crit); }
+            <!-- left: the pitch -->
+            <div>
+                <span class="ffd-mono text-xs uppercase tracking-[0.16em] text-gray-600">Migration</span>
+                <h2 id="migration-service" class="mt-3 text-center w-full md:text-left">
+                    Coming from Dashboard 1.0? <span class="text-indigo-600">Bring your flows.</span>
+                </h2>
+                <p class="mt-4 text-gray-500 font-light">
+                    Upload your flow and migrate to FlowFuse Dashboard. Today, you can convert the
+                    following nodes:
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-4 justify-center md:justify-start">
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_tab</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_link</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_group</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_text</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_text_input</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_slider</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_switch</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_form</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_dropdown</code>
+                    <code class="ffd-mono text-xs text-gray-700 bg-white border border-gray-200 rounded px-1.5 py-0.5">ui_button</code>
+                </div>
+                <p class="mt-5 text-sm text-center md:text-left">
+                    <a class="ffd-link" href="https://github.com/FlowFuse/node-red-dashboard-2-migration">Supported nodes in detail &rarr;</a>
+                </p>
+            </div>
 
-/* The preview sits in a ~470px column on desktop, so keep three KPIs across
-   until it is genuinely narrow. */
-@container (max-width: 400px) {
-    .ffd-kpis { grid-template-columns: 1fr 1fr; }
-    .ffd-row3 { grid-template-columns: 1fr 1fr; }
-    .ffd-ctl { grid-column: 1 / -1; }
-}
+            <!-- right: the importer -->
+            <div class="ffd-migrate-col">
+                {% include "migration.njk" %}
+            </div>
+        </div>
+    </div>
+</div>
 
-/* ---------- capability tag pills ---------- */
-/* .nohero prefix beats `.nohero a { color: blue-600 }`. */
-.nohero .ffd-tag {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid var(--color-gray-200);
-    border-radius: 999px;
-    padding: 0.3125rem 0.6875rem;
-    font-size: 0.8125rem;
-    font-weight: 400;
-    color: var(--color-gray-700);
-    background-color: white;
-    text-decoration: none;
-    transition: border-color 0.15s, color 0.15s, background-color 0.15s;
-}
-.nohero a.ffd-tag:hover {
-    border-color: var(--color-indigo-600);
-    color: var(--color-indigo-600);
-    background-color: var(--color-indigo-50);
-    text-decoration: none;
-}
+<!-- ==================== Learn ==================== -->
+<div class="w-full bg-gray-50 border-t border-b border-gray-200">
+    <div class="w-full px-6 py-16 md:py-20">
+        <div class="max-w-md sm:max-w-screen-lg mx-auto">
+            <span class="ffd-mono text-xs uppercase tracking-[0.16em] text-gray-600">Learn</span>
+            <h2 class="mt-3 text-center w-full md:text-left">Get a Dashboard By This Afternoon</h2>
+            <ul class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 m-auto p-0 list-none">
+                {%- for item in dashboard.resources -%}
+                <li class="w-full max-w-md m-auto">
+                    <a href="{{ item.url }}" class="ffd-res w-full h-full flex flex-col rounded-lg border border-gray-200 bg-white overflow-hidden group">
+                        <div class="ff-image-cover ff-image-rounded scale w-full aspect-video border-b border-gray-200">
+                            {% set imageSrc = ["./", item.image ] | join %}
+                            {% set imageDescription = ["Image representing ", item.title] | join %}
+                            {% image imageSrc, imageDescription, [285] %}
+                        </div>
+                        <span class="p-5 flex flex-col gap-1.5">
+                            <span class="ffd-res-title text-base font-medium text-gray-900 leading-snug">{{ item.title }}</span>
+                        </span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="flex justify-end mt-6">
+                <a href="/blog/dashboard/" class="ffd-link font-light flex flex-row items-center gap-1 flex-wrap">
+                    All Dashboard posts {% include "components/icons/arrow-long-right.svg" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
-/* ---------- cross-sell + resource cards ---------- */
-.nohero .ffd-xs,
-.nohero .ffd-res { text-decoration: none; }
-.nohero .ffd-xs:hover,
-.nohero .ffd-res:hover { text-decoration: none; }
-.nohero .ffd-xs:hover { border-color: var(--color-indigo-300); }
-.nohero .ffd-res:hover { border-color: var(--color-indigo-300); }
-.nohero .ffd-res:hover .ffd-res-title { color: var(--color-indigo-600); }
-.nohero .ffd-xs:hover .ffd-xs-go { text-decoration: underline; }
+<!-- ==================== The rest of the platform ==================== -->
+<div class="w-full px-6 py-16 md:py-20">
+    <div class="max-w-md sm:max-w-screen-lg mx-auto">
+        <span class="ffd-mono text-xs uppercase tracking-[0.16em] text-gray-600">The rest of the platform</span>
+        <h2 class="mt-3 mb-3 text-center w-full md:text-left">
+            Dashboard is the face. <span class="text-indigo-600">Here is what runs behind it.</span>
+        </h2>
+        <p class="max-w-3xl mx-auto md:mx-0 text-gray-500 font-light">
+            The Dashboard is how a FlowFuse instance can display its data in a human-friendly,
+            visual way. You can surface your data and insights &mdash; and then leverage
+            governance, hosting, and deployment via the core FlowFuse product to power your entire system.
+        </p>
 
-/* Links that must read indigo rather than the .nohero blue default. */
-.nohero .ffd-link { color: var(--color-indigo-600); }
-.nohero .ffd-link:hover { color: var(--color-indigo-700); }
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <a href="/product/edge/" class="ffd-xs rounded-lg border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/50 p-6 flex flex-col gap-2">
+                <span class="ffd-mono text-[0.625rem] uppercase tracking-[0.12em] text-red-700">For OT teams</span>
+                <h3 class="text-2xl font-medium m-0 text-gray-900">FlowFuse Edge</h3>
+                <p class="m-0 text-gray-500 font-light">Connect PLCs, machines and controllers, and standardise automation across every site.</p>
+                <span class="mt-3 ffd-xs-go text-indigo-600">Explore Edge &rarr;</span>
+            </a>
+            <a href="/product/hub/" class="ffd-xs rounded-lg border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/50 p-6 flex flex-col gap-2">
+                <span class="ffd-mono text-[0.625rem] uppercase tracking-[0.12em] text-red-700">For IT &amp; integration teams</span>
+                <h3 class="text-2xl font-medium m-0 text-gray-900">FlowFuse Hub</h3>
+                <p class="m-0 text-gray-500 font-light">Connect ERPs, databases and cloud APIs into one governed system.</p>
+                <span class="mt-3 ffd-xs-go text-indigo-600">Explore Hub &rarr;</span>
+            </a>
+            <a href="/product/fleet/" class="ffd-xs rounded-lg border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/50 p-6 flex flex-col gap-2">
+                <span class="ffd-mono text-[0.625rem] uppercase tracking-[0.12em] text-red-700">For device fleets</span>
+                <h3 class="text-2xl font-medium m-0 text-gray-900">FlowFuse Fleet</h3>
+                <p class="m-0 text-gray-500 font-light">Push flows, ship updates and roll back remotely across thousands of distributed devices.</p>
+                <span class="mt-3 ffd-xs-go text-indigo-600">Explore Fleet &rarr;</span>
+            </a>
+        </div>
+    </div>
+</div>
 
-} /* end @layer components */
+<!-- ==================== Closing CTA ==================== -->
+<div class="w-full px-6 pb-20">
+    <div class="max-w-md sm:max-w-screen-lg mx-auto">
+        <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-6 text-center ff-get-started-bg">
+            <p class="text-white text-3xl md:text-4xl font-medium m-0 max-w-2xl">
+                See what your operators would actually be looking at.
+            </p>
+            <p class="text-indigo-50 font-light text-lg max-w-2xl m-0">
+                Bring a screen you already run. We will rebuild it with you in the call.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 items-center">
+                <a class="ff-btn ff-btn--highlight uppercase" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'dashboard-footer'})">Book a Demo</a>
+                <a class="ff-btn uppercase text-white hover:text-gray-200" href="https://app.flowfuse.com/account/create" rel="noopener noreferrer">Try it out &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-/* ==========================================================================
-   Migration importer inside the two-column layout.
+<script>
+(function () {
+    var dash = document.getElementById('ffd-dash');
+    if (!dash) { return; }
 
-   Deliberately OUTSIDE @layer components: .ff-dashboard-migration and
-   .ff-file-drop-zone are declared unlayered in style.css, and unlayered
-   declarations outrank every layer, so a layered override here would lose.
-   Specificity (0,2,0) then beats the (0,1,0) base rule, including the one
-   inside its min-width:680px media query — media queries add no specificity.
-   ========================================================================== */
+    var body = document.getElementById('ffd-events');
+    var g1 = document.getElementById('ffd-g1');
+    var g2 = document.getElementById('ffd-g2');
 
-/* The importer's own 1fr 1fr split is keyed to the viewport, not its container,
-   so in a half-width column it would stay side by side and crush both halves.
-   Stack it instead: drop zone above, form below. */
-.ffd-migrate-col .ff-dashboard-migration {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding-left: 0;
-    padding-right: 0;
-}
+    /* Real epoch values, formatted in the visitor's own locale and timezone --
+       which is exactly what the date/time column types do. */
+    var events = [
+        { m: 'Filler 2',   e: 'Recipe changeover',  t: 1787839200000, s: 'ok',   sl: 'Complete' },
+        { m: 'Capper 1',   e: 'Torque out of band', t: 1787842740000, s: 'warn', sl: 'Warning'  },
+        { m: 'Labeller',   e: 'Web break',          t: 1787846280000, s: 'crit', sl: 'Stopped'  },
+        { m: 'Palletiser', e: 'Cycle resumed',      t: 1787849820000, s: 'ok',   sl: 'Running'  }
+    ];
 
-/* 64px of padding is sized for a full-width drop zone; halve it here and give
-   the zone a floor so it still reads as a target rather than a thin strip. */
-.ffd-migrate-col .ff-file-drop-zone {
-    padding: 32px 24px;
-    min-height: 150px;
-    border-radius: 8px;
-}
+    var fmt = new Intl.DateTimeFormat(undefined, {
+        year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+    });
+
+    body.innerHTML = events.map(function (r) {
+        return '<tr><td>' + r.m + '</td><td>' + r.e + '</td>' +
+               '<td class="ffd-ts">' + fmt.format(new Date(r.t)) + '</td>' +
+               '<td><span class="ffd-chip ffd-chip--' + r.s + '">' + r.sl + '</span></td></tr>';
+    }).join('');
+
+    document.querySelectorAll('.ffd-seg button[data-ffd-preset]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            btn.parentElement.querySelectorAll('button').forEach(function (b) {
+                b.setAttribute('aria-pressed', String(b === btn));
+            });
+            var preset = btn.dataset.ffdPreset;
+            dash.dataset.preset = preset;
+            /* nudge the needles so a theme switch reads as live instrumentation */
+            var jitter = { light: 0, dark: 6, dracula: -5, nord: 4, sepia: -3 }[preset] || 0;
+            g1.setAttribute('stroke-dashoffset', String(62 + jitter));
+            g2.setAttribute('stroke-dashoffset', String(118 - jitter));
+        });
+    });
+})();
+</script>
