@@ -19,7 +19,7 @@ meta:
     - question: "What are the three types of control plans?"
       answer: "Control plans are typically developed in three stages that align with APQP: prototype control plans (used during early builds), pre-launch control plans (used after prototype and before full production), and production control plans (used for ongoing full-rate manufacturing)."
 cta:
-  type: contact
+  type: demo
   title: "Connect your control plans to production data"
   description: "See how FlowFuse integrates measurement data from OPC UA, Modbus, and MQTT sources with your control plan requirements to automate quality reactions in real time."
 tldr: "Control plans specify what to measure, how often, and how to react, but this logic is rarely connected to the equipment collecting data on the floor, creating gaps in identifiers, limits, inspection frequency, and reaction plans. Closing the gap requires mapping characteristics to measurement points, capturing production context with each reading, maintaining a single source of truth for limits, and triggering reactions automatically when measurements fall out of spec."
@@ -46,7 +46,7 @@ A control plan is a structured document, typically created during APQP and maint
 
 Each row spells out how one characteristic is controlled: what to check, how often, which limits apply, and what to do if a result comes back unacceptable.
 
-Special characteristics often carry extra requirements on top of that - tighter inspection frequency, [SPC](/blog/2026/08/statistical-process-control/), or specific capability targets, depending on what the customer and applicable standards call for.
+Special characteristics often carry extra requirements on top of that, such as tighter inspection frequency, [SPC](/blog/2026/08/statistical-process-control/), or specific capability targets, depending on what the customer and applicable standards call for.
 
 ## Where the link breaks down, and what closes it
 
@@ -54,11 +54,11 @@ Control plans are usually created before production starts, reviewed and approve
 
 ### Identifiers don't match
 
-A control plan might identify a characteristic as "Bore Diameter, Station 30," while the CMM stores the same measurement as `DIM_30_04`. Unless those identifiers are mapped, there is no reliable way to establish that both systems refer to the same characteristic - so the fix starts with a stable mapping from "bore diameter, station 30" to a specific measurement point, tag, register, or device output. That mapping is what lets the measurement system identify which control plan characteristic produced a given value.
+A control plan might identify a characteristic as "Bore Diameter, Station 30," while the CMM stores the same measurement as `DIM_30_04`. Unless those identifiers are mapped, there is no reliable way to establish that both systems refer to the same characteristic, so the fix starts with a stable mapping from "bore diameter, station 30" to a specific measurement point, tag, register, or device output. That mapping is what lets the measurement system identify which control plan characteristic produced a given value.
 
 ### Measurements arrive without context
 
-A torque reading of 42.1 Nm is only useful for [traceability](/blog/2026/08/automotive-traceability/) once it's tied to the part or serial number, the workstation, a timestamp, who ran the job, and which device took the reading. Capturing that context at the moment of measurement avoids having to reconstruct it later from separate systems - a reconstruction that isn't always possible.
+A torque reading of 42.1 Nm is only useful for [traceability](/blog/2026/08/automotive-traceability/) once it's tied to the part or serial number, the workstation, a timestamp, who ran the job, and which device took the reading. Capturing that context at the moment of measurement avoids having to reconstruct it later from separate systems, a reconstruction that isn't always possible.
 
 ### Limits drift apart
 
@@ -66,9 +66,9 @@ The control plan might specify a torque range of 40 to 45 Nm, while the torque c
 
 ### Reactions stay manual
 
-The control plan may require a failed part to be rejected, held, and reported to the line lead, while the measurement device simply records the failed value - someone still has to catch it and act. Closing this gap means triggering the reaction at the moment the measurement is captured: the part put on hold, the right person notified, and the event logged automatically, rather than waiting for someone to find it in a report.
+The control plan may require a failed part to be rejected, held, and reported to the line lead, while the measurement device simply records the failed value. Someone still has to catch it and act. Closing this gap means triggering the reaction at the moment the measurement is captured: the part put on hold, the right person notified, and the event logged automatically, rather than waiting for someone to find it in a report.
 
-Inspection frequency compounds all four. The control plan may require 100% inspection, but the measurement system typically just collects whatever gets recorded - the presence of data doesn't prove the required frequency was actually followed. Solving the four gaps above is also what makes frequency verifiable, since a mapped, contextualized measurement stream is what lets you confirm every required check actually happened.
+Inspection frequency compounds all four. The control plan may require 100% inspection, but the measurement system typically just collects whatever gets recorded. The presence of data doesn't prove the required frequency was actually followed. Solving the four gaps above is also what makes frequency verifiable, since a mapped, contextualized measurement stream is what lets you confirm every required check actually happened.
 
 ::cta-image{src="/blog/2026/08/images/control-plan-cta-2.png" alt="Not sure where your measurement data gaps are? Book a demo" cta="demo"}
 
@@ -84,13 +84,13 @@ The torque controller records a measurement of 38 Nm.
 
 In a disconnected setup, the controller simply stores the value in its local history. A technician or quality engineer has to find the failed measurement, determine which part it belongs to, and decide whether the required reaction was taken.
 
-With the characteristic mapped to the measurement stream, that same 38 Nm reading gets evaluated as soon as it's captured - the system already knows the characteristic, the affected part, the location, the timestamp, and the applicable limit. The part gets held, the line lead gets notified, and the event lands in the production record, all without anyone hunting for it after the fact.
+With the characteristic mapped to the measurement stream, that same 38 Nm reading gets evaluated as soon as it's captured. The system already knows the characteristic, the affected part, the location, the timestamp, and the applicable limit. The part gets held, the line lead gets notified, and the event lands in the production record, all without anyone hunting for it after the fact.
 
 ## Where this fits in the data architecture
 
 Measurement data may come from PLCs, gauges, CMMs, torque controllers, vision systems, or other equipment on the floor. Wherever it originates, it has to be collected, tied to production context, checked against the applicable limits, and sent on to whatever system handles the next step.
 
-FlowFuse can sit between these systems as the integration layer - pulling measurement data from sources like [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), [Modbus](/blog/2025/09/using-modbus-with-flowfuse/), and [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), tying it to production context, checking it against configured limits, and routing anything out of spec to an [MES](/blog/2025/06/what-is-mes/), notification system, quality database, or wherever it needs to go next.
+FlowFuse can sit between these systems as the integration layer, pulling measurement data from sources like [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), [Modbus](/blog/2025/09/using-modbus-with-flowfuse/), and [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), tying it to production context, checking it against configured limits, and routing anything out of spec to an [MES](/blog/2025/06/what-is-mes/), notification system, quality database, or wherever it needs to go next.
 
 The control plan can remain in the system where the quality team manages it. The measurement workflow can use the relevant control requirements to evaluate production data and trigger the required response.
 
@@ -100,6 +100,6 @@ Connecting control plan characteristics to measurement data does not replace the
 
 It also cannot fix a poorly defined control. An incorrect tolerance, unclear sampling requirement, or incomplete reaction plan still needs to be corrected by the quality team.
 
-Calibration is a different matter entirely. Confirming that a characteristic was checked against the right limits is not the same as confirming the gauge doing the checking is accurate or still within its calibration window - a connected system tells you the former, not the latter. [What Is Instrument Calibration?](/blog/2026/07/what-is-instrument-calibration/)
+Calibration is a different matter entirely. Confirming that a characteristic was checked against the right limits is not the same as confirming the gauge doing the checking is accurate or still within its calibration window. A connected system tells you the former, not the latter. [What Is Instrument Calibration?](/blog/2026/07/what-is-instrument-calibration/)
 
 What this ultimately connects is simple: the characteristic the control plan defines, the measurement taken on the floor, the limit it gets checked against, and what happens when a result falls outside spec. In practice, that's what quality teams need: proof of what got measured, when, and how the process reacted.
