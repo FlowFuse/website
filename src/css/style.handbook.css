@@ -43,9 +43,19 @@
 }
 
 .handbook-nav li a,
+.handbook-nav li .nav-label,
 .handbook-nav li.handbook-nav-group {
     flex-grow: 1;
     @apply py-1.5 px-4;
+}
+
+/* A section named by a page that only redirects, e.g. docs/install/index.md. It labels the
+   pages beneath it without being one of them, so it keeps a link's box to hold the rhythm of
+   the tree while reading as a heading: muted, and nothing happens on hover. */
+.handbook-nav li .nav-label {
+    padding-left: var(--nav-pl);
+    color: var(--color-gray-500);
+    cursor: default;
 }
 
 .handbook-nav li.handbook-nav-group {
