@@ -27,6 +27,8 @@ tldr: "Control plans specify what to measure, how often, and how to react, but t
 
 Most control plans are disconnected from the equipment they are supposed to govern. The control plan says a bore diameter must be checked on every part, within a defined tolerance, with a specific reaction if it goes out of limits. The CMM measures the bore, but it does not know which control plan characteristic that measurement belongs to. The two systems operate independently.
 
+<!--more-->
+
 That gap is separate from a more basic question: whether the CMM's own reading can be trusted in the first place. A gauge that's [overdue for calibration](/blog/2026/07/calibration-management-dashboard/) can pass along consistent-looking data that's quietly wrong, and no amount of mapping or context-capture downstream will catch that on its own.
 
 ::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration - sign up for FlowFuse" cta="sign-up"}
