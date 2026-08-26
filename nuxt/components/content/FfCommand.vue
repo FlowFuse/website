@@ -12,7 +12,12 @@ const props = withDefaults(defineProps<{
     // click whether or not the copy landed; this only counts real copies.
     event?: string
     position?: string
-}>(), { event: undefined, position: undefined })
+    // Puts the copy control below the address as a full-width primary button
+    // instead of a small chip inside the dark block. For narrow columns, where
+    // the inline button leaves too little room for the address to stay on one
+    // line, and where the button needs to match the other CTAs beside it.
+    stacked?: boolean
+}>(), { event: undefined, position: undefined, stacked: false })
 
 const capture = useCapture()
 const copied = ref(false)
@@ -51,9 +56,18 @@ onUnmounted(() => clearTimeout(resetTimer))
 </script>
 
 <template>
-  <div class="ff-command">
+  <div class="ff-command" :class="{ 'ff-command--stacked': stacked }">
     <code class="ff-command__text">{{ command }}</code>
+    <!-- Stacked uses the site's own button classes rather than the chip styling,
+         so it is the same object as the CTAs it sits beside. -->
     <button
+      v-if="stacked"
+      type="button"
+      class="ff-btn ff-btn--primary flex w-full uppercase"
+      @click="copy"
+    >{{ copied ? 'Copied' : 'Copy' }}</button>
+    <button
+      v-else
       type="button"
       class="ff-command__copy"
       :class="{ 'ff-command__copy--done': copied }"
