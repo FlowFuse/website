@@ -28,7 +28,7 @@ The AI is already doing the work. It's just doing it through the clipboard.
 
 Ask why they don't use the AI built into the platform, and the answer usually isn't about quality. It's policy.
 
-Plenty of the companies we work with run an approved-AI-only rule. One assistant is sanctioned, it went through security review, and that's the list. FlowFuse Expert isn't on it. So for those teams the choice wasn't "our AI or yours". It was "your AI, through the clipboard" or no AI on the platform at all.
+Plenty of the companies we work with run an approved-AI-only rule. One agent is sanctioned, it went through security review, and that's the list. FlowFuse Expert isn't on it. So for those teams the choice wasn't "our AI or yours". It was "your AI, through the clipboard" or no AI on the platform at all.
 
 That's a bad place for us to be. It also isn't really an argument about AI. It's an argument about which vendor's AI, and we were on the wrong side of a decision that had already been made somewhere else.
 
@@ -44,7 +44,9 @@ Because the agent is yours, so is the model. Which model or provider sits behind
 
 Three steps, and they're the same three whichever agent you use.
 
-You add one address in your agent's connector settings. You sign in to FlowFuse, the same way you'd sign in to anything else. Then you pick which teams the agent may act on, and whether it gets editing rights or read access only.
+You add one address in your agent's connector settings. On FlowFuse Cloud that address is `https://app.flowfuse.com/mcp`. You sign in to FlowFuse, the same way you'd sign in to anything else. Then you pick which teams the agent may act on, and whether it gets editing rights or read access only.
+
+The only requirement on your side is an agent that speaks MCP over HTTP. Most now do.
 
 The shape of it matters more than the steps. Your agent talks to one FlowFuse address. FlowFuse talks to your instances. The agent never touches an instance directly, which is why instances sitting in a DMZ or on a restricted plant network come into reach without being opened up to anything.
 
@@ -62,7 +64,7 @@ If you want FlowFuse available to everyone on the tenant rather than in one make
 
 One thing IT teams like hearing: Copilot Studio reaches MCP servers through Power Platform connectors, so whatever data policy you already have there governs this too. It isn't a new thing to police.
 
-ChatGPT and Claude work the same way, in **Settings**, then connectors. Command-line agents like Claude Code, Cursor and Gemini CLI point at the same address.
+ChatGPT, Claude and Gemini work the same way, in their own connector settings. So does a local model, through any MCP client you point at it, which is the route to take when nothing may leave the network. The [AI page](/ai/) has the exact path for each one. Command-line and editor agents use the same address too.
 
 ## What you're actually granting
 
@@ -73,6 +75,10 @@ You choose the teams. If you have a production team and a development team, gran
 You choose read access or editing rights. Read access is genuinely useful on its own: what's running, what's failing, what the logs say, what's in your tables. An agent with read access has no ability to change anything.
 
 And there are things nobody can grant. An agent working through FlowFuse can't delete an instance, an application, a snapshot or a team, because those tools don't exist. Deploying is still done by you.
+
+Two things run underneath all of it. The role-based access control that already governs your teams governs the agent too, so it can't reach past what your own account reaches. And every action it takes lands in the audit log attributed to you and marked `via MCP`, so "what did the AI do last Tuesday" is a question with an answer.
+
+Most agents also ask before they act. That prompt belongs to the agent rather than to FlowFuse, so it looks different in each one, but in practice you see the tool call before it runs.
 
 Both of those are true today rather than forever. We're working towards AI that can act as required in production setups and in setups where experimentation is fine, and those are different settings for different customers. But that's the boundary as it ships.
 
@@ -100,4 +106,4 @@ If you're on FlowFuse Cloud, you can do this today. Add the address, sign in, gr
 
 Then decide whether you want it building flows, and give it editing rights on a team where a mistake costs you nothing.
 
-[Connecting your own agent](/docs/user/expert/third-party-agents/) has the setup for each agent, and what to do when something doesn't behave.
+The [AI page](/ai/) has the address to copy and the three steps for whichever agent you use. [Connecting your own agent](/docs/user/expert/third-party-agents/) has the detail, and what to do when something doesn't behave.
