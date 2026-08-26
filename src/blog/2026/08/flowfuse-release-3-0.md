@@ -60,7 +60,7 @@ FlowFuse 3.0 makes it easier to go from an idea to a working application, with n
 
 Expert works through a set of tools on the FlowFuse MCP server. In 3.0, it stops being the only agent that can use them.
 
-Add the FlowFuse MCP server to whichever AI agent you already use, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT, Claude and Gemini all connect this way, as does a local agent with MCP capabilities running any model. Command-line and editor agents use the same address. They reach the same platform tools FlowFuse Expert does, and because the agent is yours, so is the model behind it.
+Add the FlowFuse MCP server to whichever AI agent you already use, sign in, and choose which teams it can reach and whether it has editing rights. Microsoft Copilot, ChatGPT, Claude and Gemini all connect this way, as does a local agent with MCP capabilities running any model. Command-line agents use the same address as well and all have access to the same tools as our integrated agent.
 
 This is the AI your company already approved. Where policy allows one assistant, that assistant now reaches FlowFuse, under the same governance you apply everywhere else. The agent that already knows your repositories and your tickets knows your Node-RED instances too.
 
