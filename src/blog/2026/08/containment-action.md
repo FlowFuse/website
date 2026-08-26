@@ -2,7 +2,7 @@
 title: "Containment Action and Controlled Shipping: Surviving CS1 and CS2"
 metaTitle: "Containment Action Guide for Surviving CS1 and CS2"
 description: "Learn what triggers CS1 and CS2 status, and see how FlowFuse helps build a containment action that holds up under audit and survives customer scrutiny."
-date: 2026-08-29
+date: 2026-08-26
 authors: ["sumit-shinde"]
 image: /blog/2026/08/images/containment-action-guide.png
 tags:
