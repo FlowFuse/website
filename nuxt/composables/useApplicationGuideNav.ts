@@ -1,3 +1,6 @@
+import { findPageBreadcrumb } from '@nuxt/content/utils'
+import type { MenuTreeNode } from '~/utils/navigationMenu'
+
 // Shared by the section landing page, the guide pages and the left nav so all three
 // agree on order and on the /application-guide/{guide}/{slug}/ route shape.
 export interface ApplicationGuidePageSummary {
@@ -48,3 +51,42 @@ export const useApplicationGuidePages = () => useAsyncData('application-guide-na
 
 export const pagesForGuide = (pages: ApplicationGuidePageSummary[] | null, guide: string) =>
     (pages ?? []).filter(page => page.guide === guide)
+
+// One tree per guide, nested via the `parent` frontmatter field — shared by GuideLeftNav
+// (rendered through the same NavigationMenuItem builder as Handbook/Docs) and
+// findGuideBreadcrumb below.
+function toGuideNode(inGuide: ApplicationGuidePageSummary[]) {
+    const build = (page: ApplicationGuidePageSummary): MenuTreeNode => ({
+        title: page.title,
+        path: page.path.replace(/\/$/, ''),
+        children: inGuide.filter(p => p.parent === page.slug).map(build),
+    })
+    return build
+}
+
+export const applicationGuideNavGroups = (pages: ApplicationGuidePageSummary[] | null): MenuTreeNode[] =>
+    GUIDES.map((guide) => {
+        const inGuide = pagesForGuide(pages, guide.id)
+        return {
+            title: guide.title,
+            path: `/application-guide/${guide.id}`,
+            children: inGuide.filter(p => !p.parent).map(toGuideNode(inGuide)),
+        }
+    })
+
+// Mirrors findDocsBreadcrumb/findPageBreadcrumb (handbook, docs) so all three sections
+// derive breadcrumbs the same way. The per-guide group node ("FlowFuse Guide") isn't a
+// real page — `page: false` marks it unlinked, the same convention @nuxt/content's own
+// nav tree uses for directory-only nodes.
+export function findGuideBreadcrumb(pages: ApplicationGuidePageSummary[] | null, path: string) {
+    const root = {
+        title: 'Application Guide',
+        path: '/application-guide',
+        children: applicationGuideNavGroups(pages).map(group => ({ ...group, page: false as const })),
+    }
+    const crumbs = findPageBreadcrumb([root], path, { current: true })
+    return crumbs.map((crumb, i) => ({
+        label: crumb.title ?? '',
+        ...(i === crumbs.length - 1 || crumb.page === false ? {} : { to: crumb.path }),
+    }))
+}

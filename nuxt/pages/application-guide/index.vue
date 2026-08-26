@@ -10,7 +10,7 @@ const guides = computed(() => GUIDES.map(guide => ({
     pages: pagesForGuide(pages.value, guide.id),
 })))
 
-const breadcrumbItems = [{ label: 'Application Guide' }]
+const breadcrumbItems = computed(() => findGuideBreadcrumb(pages.value, '/application-guide'))
 
 const title = 'Application Guide'
 const description = 'How to build and deploy with FlowFuse and Node-RED: the packages, the architectures and the flow patterns we teach during a proof of concept.'
