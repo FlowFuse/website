@@ -48,45 +48,27 @@ Each row spells out how one characteristic is controlled: what to check, how oft
 
 Special characteristics often carry extra requirements on top of that - tighter inspection frequency, [SPC](/blog/2026/08/statistical-process-control/), or specific capability targets, depending on what the customer and applicable standards call for.
 
-## Why the link to measurement data breaks down
+## Where the link breaks down, and what closes it
 
-Control plans are usually created before production starts, reviewed and approved, and then stored as controlled documents. The equipment on the production floor operates separately. Gauges, CMMs, torque controllers, vision systems, and [PLCs](/blog/2025/12/what-is-plc/) collect measurements without necessarily knowing what the control plan requires.
+Control plans are usually created before production starts, reviewed and approved, and then stored as controlled documents. The equipment on the production floor operates separately. Gauges, CMMs, torque controllers, vision systems, and [PLCs](/blog/2025/12/what-is-plc/) collect measurements without necessarily knowing what the control plan requires. Four gaps show up consistently, and each has a specific fix.
 
-A control plan might identify a characteristic as "Bore Diameter, Station 30," while the CMM stores the same measurement as `DIM_30_04`. Unless those identifiers are mapped, there is no reliable way to establish that both systems refer to the same characteristic.
+### Identifiers don't match
 
-The same problem occurs with limits. The control plan might specify a torque range of 40 to 45 Nm, while the torque controller has limits of 39 to 46 Nm. Both systems are working, but they are enforcing different requirements. Change one without updating the other, and that mismatch can go unnoticed for a long time.
+A control plan might identify a characteristic as "Bore Diameter, Station 30," while the CMM stores the same measurement as `DIM_30_04`. Unless those identifiers are mapped, there is no reliable way to establish that both systems refer to the same characteristic - so the fix starts with a stable mapping from "bore diameter, station 30" to a specific measurement point, tag, register, or device output. That mapping is what lets the measurement system identify which control plan characteristic produced a given value.
 
-Inspection frequency creates another gap. The control plan may require 100% inspection, but the measurement system may simply collect whatever measurements the operator or machine records. The presence of measurement data does not prove that the required inspection frequency was followed.
+### Measurements arrive without context
 
-Reaction plans can also remain manual. The control plan may require a failed part to be rejected, placed on hold, and reported to the line lead, while the measurement device simply records the failed value. Someone still has to identify the failure and initiate the required response.
+A torque reading of 42.1 Nm is only useful for [traceability](/blog/2026/08/automotive-traceability/) once it's tied to the part or serial number, the workstation, a timestamp, who ran the job, and which device took the reading. Capturing that context at the moment of measurement avoids having to reconstruct it later from separate systems - a reconstruction that isn't always possible.
 
-## What connecting them requires
+### Limits drift apart
 
-Connecting control plan characteristics to production measurements requires each measurement to be associated with the requirement it is intended to satisfy.
+The control plan might specify a torque range of 40 to 45 Nm, while the torque controller enforces 39 to 46 Nm. Both systems are working; they're just enforcing different requirements, and a change to one without the other can go unnoticed for a long time. The fix is a single defined source for the limits and a controlled path for pushing them to the equipment, with changes logged so a quality engineer can later tell which limits were active when a given part was produced.
 
-### A stable identifier for each characteristic
+### Reactions stay manual
 
-"Bore diameter, station 30" needs to map to a specific measurement point, tag, register, or device output.
+The control plan may require a failed part to be rejected, held, and reported to the line lead, while the measurement device simply records the failed value - someone still has to catch it and act. Closing this gap means triggering the reaction at the moment the measurement is captured: the part put on hold, the right person notified, and the event logged automatically, rather than waiting for someone to find it in a report.
 
-This mapping allows the measurement system to identify which control plan characteristic produced a particular value.
-
-### Context captured with the measurement
-
-A torque reading of 42.1 Nm is only useful for [traceability](/blog/2026/08/automotive-traceability/) when it is associated with the relevant production context. That usually means the part or serial number, the workstation, a timestamp, who ran the job or which run it belongs to, and which device took the reading.
-
-Capturing this information when the measurement occurs avoids having to reconstruct it later from separate systems.
-
-### One source for the required limits
-
-If the control plan specifies one limit and the equipment uses another, the two systems are enforcing different requirements.
-
-The limits need a defined source and a controlled method for reaching the equipment. Changes should also be traceable so a quality engineer can determine which limits were active when a particular part was produced.
-
-### Reactions triggered by the measurement
-
-If an out-of-tolerance measurement requires a part to be held, the reaction should start when the measurement is captured.
-
-The part can be put on hold, the right person notified, and the event logged as it happens, instead of waiting for someone to catch it in a report later.
+Inspection frequency compounds all four. The control plan may require 100% inspection, but the measurement system typically just collects whatever gets recorded - the presence of data doesn't prove the required frequency was actually followed. Solving the four gaps above is also what makes frequency verifiable, since a mapped, contextualized measurement stream is what lets you confirm every required check actually happened.
 
 ::cta-image{src="/blog/2026/08/images/control-plan-cta-2.png" alt="Not sure where your measurement data gaps are? Book a demo" cta="demo"}
 
@@ -100,11 +82,9 @@ Consider a fastener torque check with the following requirements:
 
 The torque controller records a measurement of 38 Nm.
 
-In a disconnected setup, the controller may simply store the value in its local history. A technician or quality engineer has to find the failed measurement, determine which part it belongs to, and decide whether the required reaction was taken.
+In a disconnected setup, the controller simply stores the value in its local history. A technician or quality engineer has to find the failed measurement, determine which part it belongs to, and decide whether the required reaction was taken.
 
-With the characteristic mapped to the measurement stream, the 38 Nm reading can be evaluated as soon as it is captured. The system can identify the failed characteristic, affected part, measurement location, timestamp, and applicable limit.
-
-From there the part gets held, the line lead gets notified, and the event lands in the production record.
+With the characteristic mapped to the measurement stream, that same 38 Nm reading gets evaluated as soon as it's captured - the system already knows the characteristic, the affected part, the location, the timestamp, and the applicable limit. The part gets held, the line lead gets notified, and the event lands in the production record, all without anyone hunting for it after the fact.
 
 ## Where this fits in the data architecture
 
@@ -122,6 +102,4 @@ It also cannot fix a poorly defined control. An incorrect tolerance, unclear sam
 
 Calibration is a different matter entirely. Confirming that a characteristic was checked against the right limits is not the same as confirming the gauge doing the checking is accurate or still within its calibration window - a connected system tells you the former, not the latter. [What Is Instrument Calibration?](/blog/2026/07/what-is-instrument-calibration/)
 
-What this ultimately connects is simple: the characteristic the control plan defines, the measurement taken on the floor, the limit it gets checked against, and what happens when a result falls outside spec.
-
-In practice, that's what quality teams need: proof of what got measured, when, and how the process reacted.
+What this ultimately connects is simple: the characteristic the control plan defines, the measurement taken on the floor, the limit it gets checked against, and what happens when a result falls outside spec. In practice, that's what quality teams need: proof of what got measured, when, and how the process reacted.
