@@ -156,6 +156,8 @@ Good questions usually come from:
 - Scrap and rework data
 - Past audit findings
 
+A control plan check should verify the characteristic itself, its specification and tolerance, and the reaction if a reading falls outside them. See [Control Plans: Linking Quality Characteristics to Measurement Data](/blog/2026/08/control-plans/) for how that mapping works in practice.
+
 Write questions so they can be answered *Yes* or *No* by observing the process.
 
 | Avoid                                    | Better question                                                      |
