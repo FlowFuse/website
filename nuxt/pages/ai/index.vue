@@ -274,7 +274,7 @@ const openFaq = ref<number | null>(null)
 </script>
 
 <template>
-  <div>
+  <div class="w-full">
     <!-- HERO: the agent picker is the primary action on this page, so it lives here
          rather than below a wall of positioning copy. -->
     <section class="w-full relative bg-white">
