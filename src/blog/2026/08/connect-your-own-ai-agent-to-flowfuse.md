@@ -1,5 +1,5 @@
 ---
-metaTitle: "Connect Your Own AI Agent to FlowFuse"
+metaTitle: "Industrial AI agents: the one you approved can now run ops"
 title: "Your Company Already Picked an AI Agent. Now It Can Run Your Operations."
 subtitle: "Point Microsoft Copilot, ChatGPT or Claude at FlowFuse, and it works your platform and builds your flows."
 description: "FlowFuse 3.0 turns FlowFuse into an MCP server, allowing industrial AI agents to query operations and build Node-RED flows while you keep control."
