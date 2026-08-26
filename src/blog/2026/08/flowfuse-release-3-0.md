@@ -64,7 +64,7 @@ Point the AI agent you already use at FlowFuse, sign in, and choose which teams 
 
 Until now, AI assistance stopped at the product boundary. The agent your team already works in knew your repo and your tickets, but your Node-RED instances were invisible to it. For many companies that was not a preference, it was policy: approved-AI-only rules, and FlowFuse Expert is not on the approved list, so there was no AI on the platform at all. What happened instead was copy and paste, prompting an external tool for flow JSON and hand-importing it. The work was already being done by AI. It just was not being done through us.
 
-Ask it to subscribe to `factory/line1/temp` and chart the reading on a dashboard gauge. It builds the flow on the canvas in front of you, reads the debug output back, and fixes its own node configuration when validation rejects it. The tools carry Node-RED's type schemas and return its validation errors, so the model sees exactly what it got wrong and repairs it in place instead of guessing. You watch it happen, and deploying stays yours.
+Ask it to subscribe to `factory/line1/temp` and chart the reading on a dashboard gauge. It builds the flow in the Node-RED editor right in front of you, reads the debug output, and fixes it's own node configuration when validation rejects it. You watch it happen, and deploying stays yours.
 
 Three things follow from that:
 
