@@ -17,12 +17,7 @@ FlowFuse Expert is no longer the only AI that can work your platform. FlowFuse n
 
 Add the FlowFuse address in your agent's connector settings, sign in, and choose which teams the agent may reach and whether it may make changes.
 
-Some agents take it in one click:
-
-- Visual Studio Code: [add FlowFuse](https://insiders.vscode.dev/redirect/mcp/install?name=flowfuse&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fapp.flowfuse.com%2Fmcp%22%7D)
-- Cursor: [add FlowFuse](cursor://anysphere.cursor-deeplink/mcp/install?name=flowfuse&config=eyJ0eXBlIjoiaHR0cCIsInVybCI6Imh0dHBzOi8vYXBwLmZsb3dmdXNlLmNvbS9tY3AifQ==)
-- Claude Code: `claude mcp add --transport http flowfuse https://app.flowfuse.com/mcp`
-- Claude, ChatGPT and Copilot Studio: add `https://app.flowfuse.com/mcp` as a custom connector
+The address is `https://app.flowfuse.com/mcp`. [Pick your agent on the AI page](/ai/) for where that goes in [Microsoft Copilot](https://copilotstudio.microsoft.com/), [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/settings/connectors) or [Gemini](https://gemini.google.com/), and for the three steps in each. A local model works the same way through any MCP client that speaks HTTP, and so do command-line and editor agents.
 
 This matters most where company policy only permits an approved AI agent. Until now that meant no AI on the platform at all, because the only way in was our own. Now the agent your company already sanctioned can do the work.
 
