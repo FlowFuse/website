@@ -1,5 +1,6 @@
 import { findPageBreadcrumb } from '@nuxt/content/utils'
-import type { MenuTreeNode } from '~/utils/navigationMenu'
+import type { NavigationMenuItem } from '@nuxt/ui'
+import { buildNavigationMenuItems, type MenuTreeNode } from '~/utils/navigationMenu'
 
 // Shared by the section landing page, the guide pages and the left nav so all three
 // agree on order and on the /application-guide/{guide}/{slug}/ route shape.
@@ -52,9 +53,9 @@ export const useApplicationGuidePages = () => useAsyncData('application-guide-na
 export const pagesForGuide = (pages: ApplicationGuidePageSummary[] | null, guide: string) =>
     (pages ?? []).filter(page => page.guide === guide)
 
-// One tree per guide, nested via the `parent` frontmatter field — shared by GuideLeftNav
-// (rendered through the same NavigationMenuItem builder as Handbook/Docs) and
-// findGuideBreadcrumb below.
+// One tree per guide, nested via the `parent` frontmatter field — shared by
+// applicationGuideNavItems (rendered through the same NavigationMenuItem builder as
+// Handbook/Docs) and findGuideBreadcrumb below.
 function toGuideNode(inGuide: ApplicationGuidePageSummary[]) {
     const build = (page: ApplicationGuidePageSummary): MenuTreeNode => ({
         title: page.title,
@@ -73,6 +74,17 @@ export const applicationGuideNavGroups = (pages: ApplicationGuidePageSummary[] |
             children: inGuide.filter(p => !p.parent).map(toGuideNode(inGuide)),
         }
     })
+
+// Left-nav items for the Application Guide — same NavigationMenuItem tree + SidebarNav
+// as Handbook and Docs, built inline in each page rather than through a dedicated
+// left-nav component, since there's no page-specific markup left to wrap.
+export const applicationGuideNavItems = (pages: ApplicationGuidePageSummary[] | null, currentPath: string): NavigationMenuItem[] => [
+    { label: 'Application Guide', to: '/application-guide' },
+    ...applicationGuideNavGroups(pages).flatMap(group => [
+        { type: 'label', label: group.title } satisfies NavigationMenuItem,
+        ...buildNavigationMenuItems(group.children ?? [], currentPath),
+    ]),
+]
 
 // Mirrors findDocsBreadcrumb/findPageBreadcrumb (handbook, docs) so all three sections
 // derive breadcrumbs the same way. The per-guide group node ("FlowFuse Guide") isn't a

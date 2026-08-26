@@ -3,7 +3,9 @@
 // guide pages and /docs, so the section reads as one coherent, on-brand experience.
 definePageMeta({ layout: 'default' })
 
+const route = useRoute()
 const { data: pages } = await useApplicationGuidePages()
+const navItems = computed(() => applicationGuideNavItems(pages.value, route.path))
 
 const guides = computed(() => GUIDES.map(guide => ({
     ...guide,
@@ -32,7 +34,7 @@ defineOgImage('Default', { title: 'FlowFuse Application Guide', section: 'FlowFu
   <div class="w-full pl-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
-      <GuideLeftNav />
+      <SidebarNav :items="navItems" />
 
       <div class="px-10 pt-8">
         <div class="w-full font-medium pb-1">

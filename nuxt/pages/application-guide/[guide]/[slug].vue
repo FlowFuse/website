@@ -22,13 +22,14 @@ if (!mdPage.value || !guide.value) {
 const title = computed(() => (mdPage.value as any)?.title || slug.value)
 const blurb = computed(() => (mdPage.value as any)?.blurb || guide.value?.tagline || '')
 
+const { data: pages } = await useApplicationGuidePages()
+const navItems = computed(() => applicationGuideNavItems(pages.value, route.path))
+const breadcrumbItems = computed(() => findGuideBreadcrumb(pages.value, route.path))
+
 const siblings = computed(() => pagesForGuide(pages.value, guideId.value))
 const currentIndex = computed(() => siblings.value.findIndex(e => e.slug === slug.value))
 const previous = computed(() => currentIndex.value > 0 ? siblings.value[currentIndex.value - 1] : null)
 const next = computed(() => currentIndex.value > -1 && currentIndex.value < siblings.value.length - 1 ? siblings.value[currentIndex.value + 1] : null)
-
-const { data: pages } = await useApplicationGuidePages()
-const breadcrumbItems = computed(() => findGuideBreadcrumb(pages.value, route.path))
 
 const baseTitle = computed(() => `${title.value} • ${guide.value?.title}`)
 
@@ -55,7 +56,7 @@ defineOgImage('Default', { title: title.value, section: guide.value?.title ?? 'F
   <div class="w-full pl-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
-      <GuideLeftNav />
+      <SidebarNav :items="navItems" />
 
       <div class="px-10 pt-8">
         <div class="w-full font-medium pb-1">
