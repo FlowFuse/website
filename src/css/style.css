@@ -3426,6 +3426,16 @@ lite-youtube::before {
 .ff-agent-step__cta {
     margin-top: auto;
     padding-top: 1.25rem;
+    /* Stacked, a step is as wide as the whole prose column, and a control stretched
+       across that reads as a banner rather than something to click. Shrink to the
+       label and sit left. The w-full utilities on the three CTAs are overridden here
+       rather than removed from the template, because they are still what makes the
+       three fill their columns in the wide layout below. */
+    align-self: flex-start;
+    max-width: 100%;
+}
+.ff-agent-step__cta > * {
+    width: auto;
 }
 .ff-agent-step__cta a {
     text-decoration: none;
@@ -3442,6 +3452,14 @@ lite-youtube::before {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 2.5rem;
         padding: 2rem;
+    }
+    /* Three across, the columns are narrow enough that filling them is right: the row
+       then reads as one control repeated rather than three different-width buttons. */
+    .ff-agent-step__cta {
+        align-self: stretch;
+    }
+    .ff-agent-step__cta > * {
+        width: 100%;
     }
 }
 
