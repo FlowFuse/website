@@ -70,14 +70,6 @@ often Architects, Engineering Managers, and specialists in IT or OT.
    This complexity makes it difficult for teams to integrate and leverage data
    from different sources into a view of operations that can help identify
    optimizations.
-1. No Control Over Applications at Scale: Once solutions spread beyond a single
-   Node-RED, teams lose track of what is running where, who changed it, and
-   whether it still meets the organisation's security and compliance obligations.
-   IT becomes accountable for systems it cannot see into, and OT gets slowed
-   by approval processes designed for a different kind of software. Teams
-   need change to be traceable, permissioned, and auditable across every
-   plant — without reintroducing the delays that drove them to low-code in the
-   first place.
 
 ## Why these problems are significant
 
