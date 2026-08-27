@@ -3,7 +3,7 @@ title: Connect your own AI agent to FlowFuse
 description: The AI agent your team already uses can now work your platform and build Node-RED applications, with you deciding what it may reach.
 date: 2026-08-27 12:00:00
 release: "3.0"
-authors: ["serban-costin"]
+authors: ["serban-costin", "andrea-palmieri", "stephen-mclaughlin"]
 tags:
 - changelog
 issues:
