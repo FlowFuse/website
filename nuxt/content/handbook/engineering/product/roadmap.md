@@ -102,7 +102,7 @@ Here is how those problems can be ranked to align with where we are today and wh
 
 | Rank | Problem | Our position | Pillar | Roadmap posture |
 | :---- | :---- | :---- | :---- | :---- |
-| **1** | Barriers to building solutions | The gap we most want to close — via AI and the platform tooling around Node-RED | Build | **Invest** |
+| **1** | Barriers to building solutions | The gap we most want to close — via AI and the platform tooling. | Build | **Invest** |
 | **2** | Lack of visualization and feedback loops | Needs improvement | Build · Govern | **Invest** |
 | **3** | No control over applications at scale | A key concern for our typical buyer — with a lot of scope for improvement. | Govern | **Invest** |
 | **4** | Data is in silos and inaccessible | Well served already | Deploy | **Maintain** |
