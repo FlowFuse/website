@@ -17,18 +17,18 @@ useSchemaOrg([
     }),
 ])
 
-// The indigo hover only makes sense on crumbs that actually navigate — a plain span
-// (no `to`, e.g. the current page or a non-navigable group label) getting the same
-// hover color as a real link falsely signals it's clickable.
-const items = computed(() => props.items.map(item => ({
+const displayItems = computed(() => props.items.map((item, index) => ({
     ...item,
-    ui: item.to ? { link: 'hover:text-indigo-600' } : undefined,
+    ui: {
+        ...(item.to ? { link: 'hover:text-indigo-600' } : {}),
+        ...(index < props.items.length - 1 ? { item: 'shrink-0' } : {}),
+    },
 })))
 </script>
 
 <template>
   <UBreadcrumb
-    :items="items"
+    :items="displayItems"
     color="neutral"
     class="capitalize"
     :ui="{ link: 'text-sm' }"
