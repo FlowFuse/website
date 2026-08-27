@@ -17,7 +17,7 @@ We expect this roadmap to evolve as we progress along it - and this is reflected
 
 ## Vision
 
-**FlowFuse provides the application platform for Industrial Applications. Applications that can access data from any machine or asset within the organization; applications that can provide meaningful visualizations where they are needed; applications that are infused with AI to bring greater insight and value. FlowFuse becomes the natural language interface to the whole industrial organization: MCP tooling, standardized data models, and custom skills combining so that anything FlowFuse can connect to can be asked a question.**
+**FlowFuse provides the platform for Industrial Applications. Applications that can access data from any machine or asset within the organization; applications that can provide meaningful visualizations where they are needed; applications that are infused with AI to bring greater insight and value. FlowFuse becomes the natural language interface to the whole industrial organization: MCP tooling, standardized data models, and custom skills combining so that anything FlowFuse can connect to can be asked a question.**
 
 ## Foundations
 
