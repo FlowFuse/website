@@ -10,16 +10,16 @@ issues:
 - https://github.com/FlowFuse/flowfuse/issues/8192
 ---
 
-FlowFuse Expert is no longer the only AI that can work your platform. FlowFuse now acts as an MCP server, so the agent your team already uses can query your teams and instances, and build Node-RED applications for you.
+You can now connect your own AI agent to FlowFuse. Your company-approved AI can manage your platform and build Node-RED applications for you.
 
-Add the FlowFuse address in your agent's connector settings, sign in, and choose which teams the agent may reach and whether it may make changes.
+Add the FlowFuse address, sign in with OAuth, and you decide which teams the agent reaches and whether it can make changes.
 
-The address is `https://app.flowfuse.com/mcp`. [Pick your agent on the AI page](/ai/) for where that goes in [Microsoft Copilot](https://copilotstudio.microsoft.com/), [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/settings/connectors) or [Gemini](https://gemini.google.com/), and for the three steps in each. A local model works the same way through any MCP client that speaks HTTP, and so do command-line and editor agents.
+The address is `https://app.flowfuse.com/mcp`. [Pick your agent on the AI page](/ai/) for the exact steps in [Microsoft Copilot](https://copilotstudio.microsoft.com/), [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/settings/connectors) or [Gemini](https://gemini.google.com/). Any MCP client that supports the HTTP transport works too, including command-line and editor agents and local models. Sign-in uses OAuth where the client supports it, with a token fallback where it does not.
 
-This matters most where company policy only permits an approved AI agent. Until now that meant no AI on the platform at all, because the only way in was our own. Now the agent your company already sanctioned can do the work.
+Your own agent gets the full, growing set of FlowFuse platform automation and flow-building tools to run. That matters most where company policy only permits an approved AI agent, so FlowFuse Expert wasn't an option.
 
-The access you grant is enforced on every call, so a read-only grant is refused whatever the agent tries. Nothing an agent reaches through FlowFuse can delete an instance, an application, a snapshot or a team, and deploying stays yours. Everything it does lands in the audit log, marked `via MCP`.
+Your grant is enforced on every call: a read-only agent stays read-only, and no agent can delete an instance, application, snapshot or team. Every action is recorded in the audit log, marked `via MCP`.
 
-Flow building happens on the canvas in front of you. Open the instance, turn on the MCP toggle in the page header, and you watch the agent work.
+When the agent builds a flow, you watch it happen on the canvas: open the instance and turn on the MCP toggle in the page header. Nothing goes live until you deploy.
 
 This is available to all FlowFuse Cloud users and to Enterprise self-hosted installations from v3.0, across FlowFuse Hub, Edge and Fleet. See [connecting your own agent](/docs/user/expert/third-party-agents/) for setup, including what to check on an instance before asking for a flow.
