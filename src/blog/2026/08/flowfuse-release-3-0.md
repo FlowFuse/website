@@ -94,7 +94,7 @@ _Set the column type to Date, Time, or Datetime. Epoch values format themselves.
 
 The Hub / Edge / Fleet split is, at its core, a deployment story. Whether your applications live in a data center, run per manufacturing site, or spread across thousands of small instances in the field, 3.0 gives you a product shaped for that reality rather than a one-size-fits-all tier. Deploying to the edge and scaling out stop being exceptions you work around and start being the default the product expects.
 
-> ⚠️ **PLACEHOLDER — section pending.** Device Agent scope for 3.0 is still being finalized.
+Running at the edge starts with our Device Agent; it provides the bridge back to the FlowFuse platform. We’re continuing to improve the entire experience of getting setup with the Device Agent - making it as easy as possible to install while retaining flexibility in how you want it set up. This release of the installer guides you through more options on where the agent gets installed and how it gets run - making it easier than ever to get running on your hardware.
 
 ## Govern: centralized control wherever flows run
 
