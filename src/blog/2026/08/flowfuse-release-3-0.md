@@ -12,7 +12,7 @@ tags:
    - news
    - releases
 release: "3.0"
-tldr: "FlowFuse 3.0 introduces three new products - Flowfuse Edge, FlowFuse Hub, and FlowFuse Fleet - as well as updates to FlowFuse Expert and Dashboards."
+tldr: "FlowFuse 3.0 introduces three new products - Flowfuse Edge, FlowFuse Hub, and FlowFuse Fleet - now allows connecting your own AI agent and brings updates to Dashboards."
 cta:
   type: demo
   title: Find out which FlowFuse product fits how you run
