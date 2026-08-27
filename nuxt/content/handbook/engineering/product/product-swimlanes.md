@@ -25,7 +25,7 @@ As a team, we routinely work across all of the lanes.
 | 3 | Data layer | Broker, historian, contextualisation, Unified Namespace |
 | 4 | Application & UX | Dashboard, HMI, blueprints, the build surface for non-Node-RED users |
 | 5 | AI | FlowFuse Expert, assisted authoring, data insights, MCP access to live data, agents at the edge |
-| 6 | Enterprise readiness | SSO/SCIM, RBAC granularity, audit, HA, air-gapped, multi-tenancy |
+| 6 | Governance and Operability | SSO/SCIM, RBAC granularity, audit, HA, air-gapped, multi-tenancy |
 | 7 | Security & product hardening | Hardening, vulnerability posture, secure defaults |
 | 8 | Ecosystem & extensibility | Certified nodes, catalogue, plugin/extension architecture, partner and OEM/white-label paths |
 | 9 | Platform health | Debt, migrations, scalability, upgrade paths |
