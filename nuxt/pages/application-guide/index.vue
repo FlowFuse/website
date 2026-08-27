@@ -3,14 +3,16 @@
 // guide pages and /docs, so the section reads as one coherent, on-brand experience.
 definePageMeta({ layout: 'default' })
 
+const route = useRoute()
 const { data: pages } = await useApplicationGuidePages()
+const navItems = computed(() => applicationGuideNavItems(pages.value, route.path))
 
 const guides = computed(() => GUIDES.map(guide => ({
     ...guide,
     pages: pagesForGuide(pages.value, guide.id),
 })))
 
-const breadcrumbItems = [{ label: 'Application Guide' }]
+const breadcrumbItems = computed(() => findGuideBreadcrumb(pages.value, '/application-guide'))
 
 const title = 'Application Guide'
 const description = 'How to build and deploy with FlowFuse and Node-RED: the packages, the architectures and the flow patterns we teach during a proof of concept.'
@@ -32,7 +34,7 @@ defineOgImage('Default', { title: 'FlowFuse Application Guide', section: 'FlowFu
   <div class="w-full pl-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
-      <GuideLeftNav />
+      <SidebarNav :items="navItems" />
 
       <div class="px-10 pt-8">
         <div class="w-full font-medium pb-1">
