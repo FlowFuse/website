@@ -43,7 +43,8 @@ engineering workforce at roughly 30 million people
 while the global population of professional software developers was estimated
 at about 28.7 million in 2024
 ([Statista](https://www.statista.com/statistics/627312/worldwide-developer-population/)).
-Even on those figures alone, most engineers are not software engineers -- and
+Even the world's entire population of software developers is smaller than the
+world's engineering workforce in every other discipline combined -- and
 that's before counting the technicians and operators who work alongside them
 and depend on the same software every day.
 
