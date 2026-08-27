@@ -52,6 +52,9 @@ useSchemaOrg([
     ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
 ])
 
+// The Cloud address. Self-hosted platforms answer on their own domain, so the block
+// takes one (host-swap) rather than telling the reader in prose to edit what they
+// have just copied.
 const ENDPOINT = 'https://app.flowfuse.com/mcp'
 
 const STEP1 = {
@@ -326,7 +329,7 @@ onUnmounted(() => {
                     <CtaSignUp variant="primary" position="ai-tab-expert" class="w-full" />
                   </div>
                   <div v-else class="mt-auto pt-5">
-                    <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="client.id" stacked />
+                    <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="client.id" stacked host-swap />
                   </div>
                 </div>
 
