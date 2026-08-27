@@ -12,7 +12,7 @@ tags:
    - news
    - releases
 release: "3.0"
-tldr: 
+tldr: "FlowFuse 3.0 introduces three new products - Flowfuse Edge, FlowFuse Hub, and FlowFuse Fleet - as well as updates to FlowFuse Expert and Dashboards."
 cta:
   type: demo
   title: Find out which FlowFuse product fits how you run
