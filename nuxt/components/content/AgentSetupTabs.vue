@@ -25,6 +25,9 @@ const props = withDefaults(defineProps<{
 
 const capture = useCapture()
 
+// The Cloud address. Self-hosted platforms answer on their own domain, so the block
+// takes one (host-swap) rather than telling the reader in prose to edit what they
+// have just copied.
 const ENDPOINT = 'https://app.flowfuse.com/mcp'
 
 const STEP1 = {
@@ -161,7 +164,7 @@ function selectClient (id: string) {
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
         <div v-else class="ff-agent-step__cta">
-          <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked />
+          <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap />
         </div>
       </div>
 
