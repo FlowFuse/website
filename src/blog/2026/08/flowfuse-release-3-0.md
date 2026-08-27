@@ -108,4 +108,4 @@ Explore the [product page](/product/) to decide if FlowFuse Edge, FlowFuse Hub, 
 2. See the full feature set and request [Pricing](/pricing/)
 3. [Set up a demo](/book-demo/) to see all of these new features
 
-> ⚠️ **PLACEHOLDER — pending confirmation.** Marketing/Product to confirm the final release date and add any self-hosted upgrade note; self-hosted requires the 3.0 release for the new license types.
+Note: FlowFuse Self-Hosted requires the 3.0 release installed for the new license types and features mentioned in this release.
