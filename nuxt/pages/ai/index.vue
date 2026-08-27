@@ -206,7 +206,7 @@ onUnmounted(() => {
 
             <!-- CONNECTOR: pick your agent, then three steps specific to it, so the
                  reader only sees the instructions that apply to them. -->
-            <AgentSetupTabs />
+            <AgentSetupTabs class="mt-12" />
             <!-- Docs pointer, not a step. Carded in the same tinted, hover-lifting
                  treatment the platform page uses for its How-it-works blocks, so it
                  reads as somewhere to go rather than as fine print under step 03.

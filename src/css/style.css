@@ -3328,7 +3328,13 @@ lite-youtube::before {
    because the viewport was wide while the column was not. */
 .ff-agent-card {
     container-type: inline-size;
+}
+/* In prose the card is a block between paragraphs and needs air on both sides. Left
+   off the base rule so /ai keeps setting its own top margin, where the card is
+   followed by the docs-pointer card rather than by body copy. */
+.prose .ff-agent-card {
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 /* Agent tab: a segmented control on the tinted rail, not a row of CTA buttons.
@@ -3427,15 +3433,16 @@ lite-youtube::before {
     margin-top: auto;
     padding-top: 1.25rem;
     /* Stacked, a step is as wide as the whole prose column, and a control stretched
-       across that reads as a banner rather than something to click. Shrink to the
-       label and sit left. The w-full utilities on the three CTAs are overridden here
-       rather than removed from the template, because they are still what makes the
-       three fill their columns in the wide layout below. */
+       across that reads as a banner rather than something to click. So the CTAs get a
+       fixed width and sit left: still one width for all three, so the column reads as
+       one control repeated, but nothing like the full measure. 18rem is set by the
+       widest thing one has to hold, the connector URL in the copy block at ~274px. */
     align-self: flex-start;
+    width: 18rem;
     max-width: 100%;
 }
 .ff-agent-step__cta > * {
-    width: auto;
+    width: 100%;
 }
 .ff-agent-step__cta a {
     text-decoration: none;
@@ -3453,13 +3460,10 @@ lite-youtube::before {
         gap: 2.5rem;
         padding: 2rem;
     }
-    /* Three across, the columns are narrow enough that filling them is right: the row
-       then reads as one control repeated rather than three different-width buttons. */
+    /* Three across, the columns are narrow enough that filling them is right. */
     .ff-agent-step__cta {
         align-self: stretch;
-    }
-    .ff-agent-step__cta > * {
-        width: 100%;
+        width: auto;
     }
 }
 
