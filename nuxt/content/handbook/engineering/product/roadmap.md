@@ -17,11 +17,11 @@ We expect this roadmap to evolve as we progress along it - and this is reflected
 
 ## Vision
 
-**FlowFuse provides a natural language interface to the whole industrial organization: MCP tooling, standardized data models, and custom skills combining so that anything FlowFuse can connect to can be asked a question.**
+**FlowFuse provides the application platform for Industrial Applications. Applications that can access data from any machine or asset within the organization; applications that can provide meaningful visualizations where they are needed; applications that are infused with AI to bring greater insight and value. FlowFuse becomes the natural language interface to the whole industrial organization: MCP tooling, standardized data models, and custom skills combining so that anything FlowFuse can connect to can be asked a question.**
 
 ## Foundations
 
-This section pulls key points from our strategy from other parts of the handbook and resolves it to a roadmap-usable form.
+This roadmap is built on strategy, principles and structure established in other parts of the handbook.
 
 Source pages:
 
@@ -31,81 +31,18 @@ Source pages:
 - [Product Swimlanes](https://flowfuse.com/handbook/engineering/product/product-swimlanes/) — lane definitions
 - [Product Principles](https://flowfuse.com/handbook/engineering/product/principles/) — configuration and open-core rules
 
-### What we're anchored to
-
-|  |  |
-| :---- | :---- |
-| Mission | Empower 1 billion people to fuse the digital realm and physical reality by building bespoke workflows, applications, and integrations. |
-| Success condition | Node-RED becomes the default way hundreds of thousands of people write software. FlowFuse remains its primary contributor and the best way to run it at any scale. |
-| Positioning | The open-source Industrial Application Platform. Tagline: *The Edge-Native Platform for Industrial Applications*. |
-
-### Product Pillars
-
-**Pillars** are what the customer is doing. They're outcome-facing, and they're the justification — the answer to "why should this exist at all?"  
-
-The company one-liner is the source:
-
-> Build, deploy, and govern operational applications across every plant and production line, distributed to the edge and accelerated by AI.
-
-**Build · Deploy · Govern** are the pillars. Every roadmap item advances at least one. An item that advances none is a candidate for the non-goals list.
-
-| Pillar | What the customer is doing | Roadmap test |
-| :---- | :---- | :---- |
-| **Build** | Creating the application, flow, model, or interface | Does this let someone build something they couldn't, or build it materially faster? |
-| **Deploy** | Getting it running — and running correctly — across plants, lines, and devices | Does this make the tenth site as cheap as the first? |
-| **Govern** | Keeping it secure, auditable, compliant, and under control at scale | Would an IT buyer approve rollout because of this? |
-
-### Product Lanes
-
-**Lanes** are where the work lives — the answer to "who does this, and what does it sit next to?". They're a working structure we chose to give the roadmap resolution.
-
-| # | Lane | Scope |
-| :---- | :---- | :---- |
-| 1 | Edge & device | Device agent, fleet-scale provisioning, offline resilience, OS/hardware/container support matrix, brownfield protocol coverage |
-| 2 | DevOps for OT | Environments, promotion pipelines, snapshots, git workflows, testing, rollback |
-| 3 | Data layer | Broker, historian, contextualization, Unified Namespace |
-| 4 | Application & UX | Dashboard, HMI, blueprints, the build surface for non-Node-RED users |
-| 5 | AI | FlowFuse Expert, assisted authoring, data insights, MCP access to live data, agents at the edge |
-| 6 | Enterprise readiness | SSO/SCIM, RBAC granularity, audit, HA, air-gapped, multi-tenancy |
-| 7 | Security & product hardening | Hardening, vulnerability posture, secure defaults |
-| 8 | Ecosystem & extensibility | Certified nodes, catalog, plugin/extension architecture, partner and OEM/white-label paths |
-| 9 | Platform health | Debt, migrations, scalability, upgrade paths |
-
-Not all of these lanes can be handled equally.
-
-- **AI** is pervasive across the whole product surface.
-- **Platform Health** is the ongoing background work that customers do not notice unless it doesn't happen.  
-- **Security & product hardening** splits into value delivered under the Govern pillar, as well as our own, non-discretionary compliance work.
-
-### Lane → pillar map
-
-| Lane | Build | Deploy | Govern |
-| :---- | :---: | :---: | :---: |
-| 1 Edge & device |  | ● | ○ |
-| 2 DevOps for OT |  | ● | ○ |
-| 3 Data layer | ● |  | ○ |
-| 4 Application & UX | ● |  |  |
-| 5 AI | ● | ● | ● |
-| 6 Enterprise readiness |  |  | ● |
-| 7 Security & hardening |  |  | ● |
-| 8 Ecosystem & extensibility | ● |  |  |
-| 9 Platform health | - | - | - |
-
-● primary · ○ secondary
-
 ### Aligning with our Company Strategy
 
-Our [Company Strategy](https://flowfuse.com/handbook/company/strategy/) highlights five key customer problems we set out to solve.
+Our [Company Strategy](https://flowfuse.com/handbook/company/strategy/) highlights four key customer problems we set out to solve.
 
 Here is how those problems can be ranked to align with where we are today and where we want to get to:
 
 | Rank | Problem | Our position | Pillar | Roadmap posture |
 | :---- | :---- | :---- | :---- | :---- |
-| **1** | Barriers to building solutions | The gap we most want to close — via AI and the platform tooling. | Build | **Invest** |
+| **1** | Barriers to building solutions | The gap we most want to close — via AI and the platform tooling. | Build · Govern | **Invest** |
 | **2** | Lack of visualization and feedback loops | Needs improvement | Build · Govern | **Invest** |
-| **3** | No control over applications at scale | A key concern for our typical buyer — with a lot of scope for improvement. | Govern | **Invest** |
-| **4** | Data is in silos and inaccessible | Well served already | Deploy | **Maintain** |
-| **5** | Overwhelming complexity of protocols | Well served by Node-RED integrations; AI helps simplify for the end user | Build · Deploy | **Maintain** |
+| **3** | Data is in silos and inaccessible | Well served already | Deploy | **Maintain** |
+| **4** | Overwhelming complexity of protocols | Well served by Node-RED integrations; AI helps simplify for the end user | Build · Deploy | **Maintain** |
 
 Note - **Maintain** does not mean low priority. They are problems we already serve well within the product, but we must not lose ground. They still require capacity within the roadmap.
 
