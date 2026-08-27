@@ -21,7 +21,7 @@ const displayItems = computed(() => props.items.map((item, index) => ({
     ...item,
     ui: {
         ...(item.to ? { link: 'hover:text-indigo-600' } : {}),
-        ...(index < props.items.length - 1 ? { item: 'shrink-0' } : {}),
+        ...(index === 0 && props.items.length > 1 ? { item: 'shrink-0' } : {}),
     },
 })))
 </script>
