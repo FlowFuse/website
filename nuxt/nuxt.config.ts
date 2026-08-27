@@ -384,6 +384,7 @@ export default defineNuxtConfig({
                     '/book-demo',
                     '/support',
                     '/professional-services',
+                    '/dashboard/tags-and-canvas-feedback',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
