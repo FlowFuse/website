@@ -31,7 +31,12 @@ let resetTimer: ReturnType<typeof setTimeout> | undefined
 // Shared by every FfCommand on the page rather than held per instance. /ai renders
 // one per agent tab, so per-instance state would mean typing the address again on
 // each tab, which is the friction this is here to remove.
-const host = useState('ff-command-host', () => '')
+//
+// It holds what the reader typed, untouched, and the host is derived from it.
+// Normalising the field itself on each keystroke does not work: the first slash of
+// "https://" reads as the start of a path the moment it lands, so it is stripped
+// again and the scheme can never complete.
+const typed = useState('ff-command-host', () => '')
 const editing = useState('ff-command-host-editing', () => false)
 
 const STORAGE_KEY = 'ff-command-host'
@@ -41,13 +46,14 @@ function normaliseHost (value: string) {
     return value.trim().replace(/^[a-z][a-z0-9+.-]*:\/\//i, '').replace(/[/?#].*$/, '')
 }
 
+const host = computed(() => normaliseHost(typed.value))
+
 const shownCommand = computed(() => {
     if (!props.hostSwap || !host.value) return props.command
     return props.command.replace(/^(https?:\/\/)[^/\s]+/i, `$1${host.value}`)
 })
 
-function setHost (value: string) {
-    host.value = normaliseHost(value)
+function remember () {
     try {
         if (host.value) localStorage.setItem(STORAGE_KEY, host.value)
         else localStorage.removeItem(STORAGE_KEY)
@@ -57,8 +63,14 @@ function setHost (value: string) {
     }
 }
 
+function onHostInput (event: Event) {
+    typed.value = (event.target as HTMLInputElement).value
+    remember()
+}
+
 function useCloud () {
-    setHost('')
+    typed.value = ''
+    remember()
     editing.value = false
 }
 
@@ -66,11 +78,11 @@ function useCloud () {
 // address, so reading storage any earlier would make the server and client markup
 // disagree.
 onMounted(() => {
-    if (!props.hostSwap || host.value) return
+    if (!props.hostSwap || typed.value) return
     try {
         const stored = localStorage.getItem(STORAGE_KEY)
         if (stored) {
-            host.value = stored
+            typed.value = stored
             editing.value = true
         }
     } catch {
@@ -118,9 +130,38 @@ onUnmounted(() => clearTimeout(resetTimer))
 </script>
 
 <template>
-  <!-- The wrapper exists so the address field can sit under the block: the block is
-       the thing you copy, and the field changes what that is. -->
+  <!-- The wrapper exists so the address field can sit above the block: the block is
+       the thing you copy, and the field changes what that is. Above rather than below
+       so the copy button stays the last element, level with the CTAs in the columns
+       beside it on /ai. -->
   <div>
+    <div v-if="hostSwap" class="ff-command__host">
+      <button
+        v-if="!editing"
+        type="button"
+        class="ff-command__host-toggle"
+        @click="editing = true"
+      >Self-hosted? Use your own address</button>
+      <div v-else class="ff-command__host-field">
+        <input
+          :value="typed"
+          type="text"
+          inputmode="url"
+          autocomplete="off"
+          spellcheck="false"
+          class="ff-command__host-input"
+          placeholder="flowfuse.example.com"
+          aria-label="Your FlowFuse address"
+          @input="onHostInput"
+        >
+        <button
+          type="button"
+          class="ff-command__host-reset"
+          @click="useCloud"
+        >Use FlowFuse Cloud</button>
+      </div>
+    </div>
+
     <div class="ff-command" :class="{ 'ff-command--stacked': stacked }">
       <code class="ff-command__text">{{ shownCommand }}</code>
       <!-- Stacked uses the site's own button classes rather than the chip styling,
@@ -138,33 +179,6 @@ onUnmounted(() => clearTimeout(resetTimer))
         :class="{ 'ff-command__copy--done': copied }"
         @click="copy"
       >{{ copied ? 'Copied' : 'Copy' }}</button>
-    </div>
-
-    <div v-if="hostSwap" class="ff-command__host">
-      <button
-        v-if="!editing"
-        type="button"
-        class="ff-command__host-toggle"
-        @click="editing = true"
-      >Self-hosted? Use your own address</button>
-      <div v-else class="ff-command__host-field">
-        <input
-          :value="host"
-          type="text"
-          inputmode="url"
-          autocomplete="off"
-          spellcheck="false"
-          class="ff-command__host-input"
-          placeholder="flowfuse.example.com"
-          aria-label="Your FlowFuse address"
-          @input="setHost(($event.target as HTMLInputElement).value)"
-        >
-        <button
-          type="button"
-          class="ff-command__host-reset"
-          @click="useCloud"
-        >Use FlowFuse Cloud</button>
-      </div>
     </div>
   </div>
 </template>

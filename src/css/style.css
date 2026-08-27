@@ -515,7 +515,7 @@ dl.message-properties > dd {
    copy, and this changes what that is. Closed by default as a single line of link
    text, because most readers are on Cloud and the address is already right for them. */
 .ff-command__host {
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .ff-command__host-toggle,
