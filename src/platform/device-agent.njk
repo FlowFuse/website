@@ -56,65 +56,12 @@ meta:
                 </div>
             </div>
 
-            <!--Install commands, full width so nothing is clipped-->
-            <div class="ff-blue-card max-md:max-w-md max-md:mx-auto mt-12 md:mt-16">
-                <h2 class="font-medium w-full text-center md:text-left mb-6">Install on edge, straight from your terminal</h2>
-                <p class="font-medium mb-2">Linux and macOS</p>
-                <div class="ff-command mb-6">
-                    <code class="ff-command__text">/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)" &amp;&amp; ./flowfuse-device-agent-installer</code>
-                    <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
-                </div>
-                <p class="font-medium mb-2">Windows (run elevated)</p>
-                <div class="ff-command">
-                    <code class="ff-command__text">Set-Location $env:USERPROFILE; powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1 | iex"; .\flowfuse-device-agent-installer.exe</code>
-                    <button type="button" class="ff-command__copy" data-copy-command>Copy</button>
-                </div>
-                <p class="font-light mt-6">
-                    Installing with npm or Docker instead? The
-                    <a href="/docs/device-agent/install/overview/">installation docs</a> cover every route.
-                </p>
+            <!--Install commands, full width so nothing is clipped. Shared with /node-red/.-->
+            <div class="mt-12 md:mt-16">
+                {% include "components/device-agent-install-commands.njk" %}
             </div>
         </div>
     </div>
-
-    <script>
-        // Copy buttons for the install commands. The command text is read from the
-        // sibling <code> element so the markup stays the single source of truth.
-        (function () {
-            document.querySelectorAll('[data-copy-command]').forEach(function (button) {
-                button.addEventListener('click', async function () {
-                    var code = button.parentElement.querySelector('.ff-command__text')
-                    if (!code) return
-                    var text = code.textContent.trim()
-                    try {
-                        if (navigator.clipboard) {
-                            await navigator.clipboard.writeText(text)
-                        } else {
-                            // navigator.clipboard is unavailable outside secure contexts
-                            var field = document.createElement('textarea')
-                            field.value = text
-                            field.setAttribute('readonly', '')
-                            field.style.position = 'absolute'
-                            field.style.left = '-9999px'
-                            document.body.appendChild(field)
-                            field.select()
-                            document.execCommand('copy')
-                            document.body.removeChild(field)
-                        }
-                    } catch (err) {
-                        return
-                    }
-                    var original = button.textContent
-                    button.textContent = 'Copied'
-                    button.classList.add('ff-command__copy--done')
-                    setTimeout(function () {
-                        button.textContent = original
-                        button.classList.remove('ff-command__copy--done')
-                    }, 2000)
-                })
-            })
-        })()
-    </script>
 
     <!-- Seamlessly manage your devices all in one place -->  
     <div class="w-full">

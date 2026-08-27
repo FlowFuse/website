@@ -2,7 +2,7 @@
 title: "How to Connect Any PLC to MQTT in Under an Hour"
 subtitle: "Connect any PLC to MQTT without the typical complexity, costs, and expertise requirements"
 description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, and Modbus, then publish it to MQTT using FlowFuse."
-lastUpdated: 2026-06-17
+lastUpdated: 2026-08-13
 date: 2025-10-27
 keywords: MQTT, PLC, Siemens, S7, Allen-Bradley, EtherNet/IP, Omron, FINS, Mitsubishi, MC Protocol, Modbus, Modbus-RTU, Modbus-TCP, OPC-UA, FlowFuse, Node-RED, Industrial IoT, IIoT
 authors: ["sumit-shinde"]
@@ -68,6 +68,9 @@ tldr: "This tutorial shows how to publish PLC data to MQTT using FlowFuse and No
 Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand, flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
 
 <!--more-->
+
+::product-update-note
+::
 
 The protocol itself is simple. But implementation in a real factory, with actual PLCs and production networks, is where things fall apart. Costs pile up, timelines drag on, and you end up needing expertise that's hard to find.
 

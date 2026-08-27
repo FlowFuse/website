@@ -399,6 +399,16 @@ To override the default height (in pixels), pass it as a bound prop:
 ::render-flow{:height="300"}
 ```
 
+### Interlinking
+
+Link to other blog posts, changelog entries, docs pages, or customer stories whenever there's a genuine opportunity. It spreads SEO authority across the site, helps Google crawl and understand our content, and keeps readers on the site longer.
+
+Rules:
+
+- Only link a word or phrase if the page you're linking to actually explains or expands on it. If the sentence reads fine without the link, don't add it.
+- Never insert a link just to have one in a section — a paragraph with no natural fit gets no link.
+- Link each keyword only once per post, on its first natural occurrence. Repeats stay plain text.
+
 ### Writing content
 
 FlowFuse blog posts are written in markdown. To learn how to style content and

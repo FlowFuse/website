@@ -40,6 +40,9 @@ The new Free plan on FlowFuse Cloud will allow you to manage two remote instance
 
 <!--more-->
 
+::product-update-note
+::
+
 FlowFuse is an industrial data platform that enables engineers to build, manage, scale, and secure their Node-RED solutions for digitalizing processes and operations. More fundamentally though, it's a great platform to manage multiple instances of Node-RED.
 
 <div class="blog-update-notes">

@@ -2,11 +2,15 @@
 title: Pricing change Enterprise & Teams Tier
 description: FlowFuse Cloud updates pricing for Enterprise and Teams tiers, effective immediately, with options tailored to varying instance needs.
 date: 2024-04-03 13:00:00.0
+lastUpdated: 2026-08-13
 release: "2.3"
 authors: ["marian-demme"]
 tags:
     - changelog
 ---
+
+::product-update-note
+::
 
 We're updating our pricing model for the Enterprise and Teams tiers on FlowFuse Cloud, with changes taking effect immediately. All information is available on our [pricing page](/pricing/).
 
