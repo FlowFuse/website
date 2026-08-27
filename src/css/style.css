@@ -3431,8 +3431,13 @@ lite-youtube::before {
     text-decoration: none;
 }
 
-/* Three across only once the component itself is wide enough for it. */
-@container (min-width: 44rem) {
+/* Three across only once the component itself is wide enough for it. 60rem is set by
+   the widest thing a column has to hold without clipping: the connector URL in the
+   copy block, ~270px of mono text plus its padding, times three, plus the gaps and
+   the panel padding. Below that the steps stack, which is what the changelog entry
+   and the docs page get in their ~700px prose column. At 44rem the docs page took
+   three 190px columns and cut the URL off mid-domain. */
+@container (min-width: 60rem) {
     .ff-agent-panel {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 2.5rem;
