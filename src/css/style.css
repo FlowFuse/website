@@ -483,6 +483,35 @@ dl.message-properties > dd {
     @apply border-green-500 text-green-400;
 }
 
+/* Stacked variant: the address block on its own, with the copy control below it as
+   a full-width primary button rather than a chip inside the dark block.
+
+   Why it exists: side by side, the inline button plus the block's own padding took
+   106px of the AI page's 293px column, leaving 186px for an address that needs
+   236px at 14px - so it broke across three lines. Shrinking the type was the wrong
+   trade for something you are about to paste. Below the block the address gets the
+   full column and stays on one line, and the button becomes the same object as the
+   CTAs in the columns beside it instead of a third kind of control.
+
+   Defined after the base rules rather than with higher specificity, so the two
+   stay legible as "default" and "the variant that overrides it". */
+.ff-command--stacked {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0;
+    background-color: transparent;
+}
+.ff-command--stacked .ff-command__text {
+    display: block;
+    width: 100%;
+    background-color: #0e1114;
+    white-space: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    @apply rounded-lg p-4;
+}
+
 /*
     Event banner
 */
@@ -3219,24 +3248,6 @@ lite-youtube::before {
     height: 1.25rem;
 }
 
-/* AI page ("/ai/") capabilities: sticky-header, scrolling-items layout.
-   The left group header pins while that group's icon-marked blocks scroll on
-   the right, then the next group's header takes over. These rules live in
-   the UNLAYERED block on purpose: the Tailwind `utilities` layer is
-   outranked by unlayered top-level rules, so the load-bearing sticky
-   positioning is placed here to avoid being silently overridden. */
-@media (min-width: 768px) {
-    .ff-cap-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        /* clear the sticky site header (roughly 75px) with breathing room */
-        top: 100px;
-        /* take natural height inside the taller grid row so there is travel
-           room for the pin; without this the column stretches full height */
-        align-self: start;
-    }
-}
-
 /* Capability marker icon: the item's own icon stands in for the old number
    chip, so the blocks read as a parallel list rather than an ordered sequence.
    Sized slot, indigo to match the brand accent, aligned to the block top. */
@@ -3249,9 +3260,155 @@ lite-youtube::before {
     height: 2.5rem;
     color: var(--color-indigo-600);
 }
+/* "Differs by agent" clause: sits under a capability whose behaviour is not identical
+   on the FlowFuse Expert path and the bring-your-own-agent path. Quieter than the body
+   copy, and set off by a rule, so it reads as a qualification rather than a feature. */
+.ff-cap-differs {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    padding-left: 0.875rem;
+    border-left: 2px solid var(--color-indigo-200);
+}
+
+/* Agent tab: a segmented control on the tinted rail, not a row of CTA buttons.
+   The brand's solid indigo marks the active one; the rest stay quiet until hovered.
+   Sizing and colour are utility classes on the element - only the focus ring lives
+   here, because the ring has to clear the pill on all four sides inside a scroller
+   that would otherwise clip it. */
+.ff-agent-tab:focus {
+    outline: none;
+}
+.ff-agent-tab:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 2px;
+}
+/* The brand marks are <img>, so they keep their own colours; our own glyphs are
+   masked spans that inherit currentColor and turn white with the label. */
+.ff-agent-tab img {
+    flex: none;
+}
+
+/* The three step CTAs are three different elements - CtaSignUp's UButton, an
+   <a class="ff-btn"> and the copy <button> - so their intrinsic heights land 4px
+   apart (36 / 38 / 40) even with identical padding and font size, because a
+   <button>, an <a> and a UButton each resolve line-height differently. Pin the two
+   ff-btn ones to the UButton's 40px so the row reads as one control repeated
+   rather than three lookalikes. Width comes from w-full on each, so all three fill
+   their column and line up. */
+.ff-agent-panel .ff-btn {
+    height: 40px;
+    align-items: center;
+    line-height: 1.5;
+    /* Vertical padding would push the outlined variant to 42px, since its 1px
+       borders sit outside the padding box. The flex centering above does the job
+       the padding was doing. */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Agent tab strip: scrolls sideways rather than wrapping, so the row stays one line at
+   any width. Thin scrollbar so it reads as a control, not a scroll container. */
+.ff-agent-tabs {
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+.ff-agent-tabs::-webkit-scrollbar {
+    height: 6px;
+}
+.ff-agent-tabs::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray-300);
+    border-radius: 3px;
+}
+
+/* Media well: the frame around each capability's schematic. */
+.ff-cap-well {
+    /* Matches the diagram's 720x150 viewBox, so the frame hugs the drawing instead
+       of leaving a 16:9 box mostly empty. Full column width - the drawing is wide
+       enough to fill it, so the width costs nothing in height. */
+    aspect-ratio: 720 / 150;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-indigo-100);
+    border-radius: 0.5rem;
+}
+
 .ff-cap-icon svg {
     width: 1.875rem;
     height: 1.875rem;
+}
+
+/* .ff-blue-card bakes mt-6 into its @apply, which every other user of it wants but
+   this page does not: here the section already owns the vertical rhythm, so that
+   24px landed on top of the section padding and put the governance card 152px below
+   the connector while it sat 64px above the section after it - lopsided, and wider
+   than the 128px every other section boundary uses.
+
+   Unlayered and scoped rather than an mt-0 utility on the element: .ff-blue-card is
+   itself unlayered, and Tailwind's utilities layer is outranked by unlayered rules,
+   so the utility would silently lose. */
+.ff-ai-governance .ff-blue-card {
+    margin-top: 0;
+}
+
+/* Capability schematics (AiCapabilityDiagram): a neutral card for the parts that
+   are yours, an accent card for the FlowFuse piece, a static arrow for direction.
+   The SVG's 720x150 viewBox fills the well, so nothing is scaled up.
+
+   Colour is set once per column on the group (.is-accent) rather than per element,
+   so a card, its glyph and its label cannot end up in different states. */
+.ff-aidiag {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+}
+.ff-aidiag__card {
+    fill: var(--color-white);
+    stroke: var(--color-indigo-100);
+    stroke-width: 1.25;
+}
+.ff-aidiag__glyph {
+    fill: none;
+    stroke: var(--color-gray-400);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* 12 in a 720-wide viewBox that renders at ~800: about 13px on screen, so a
+   diagram label sits below the 16px body copy rather than competing with it. */
+.ff-aidiag__label {
+    font-size: 12px;
+    fill: var(--color-gray-600);
+}
+
+/* The FlowFuse column: filled, brand-bordered, and its glyph and label lift with
+   it, so the governed piece is what the eye lands on. */
+.ff-aidiag .is-accent .ff-aidiag__card {
+    fill: var(--color-indigo-50);
+    stroke: var(--color-indigo-600);
+}
+.ff-aidiag .is-accent .ff-aidiag__glyph {
+    stroke: var(--color-indigo-600);
+    stroke-width: 1.7;
+}
+.ff-aidiag .is-accent .ff-aidiag__label {
+    fill: var(--color-indigo-800);
+    font-weight: 500;
+}
+
+/* Static connector. Eleven of these scroll past on one page, so direction is
+   carried by an arrowhead rather than by animation - travelling dots at that count
+   read as eleven things moving at the reader. */
+.ff-aidiag__flow {
+    stroke: var(--color-indigo-300);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.ff-aidiag__arrowhead {
+    fill: var(--color-indigo-300);
 }
 
 /* "Coming soon" pill: shape and type only. The amber colour comes from utility
