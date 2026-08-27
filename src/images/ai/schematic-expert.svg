@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"
+     role="img" aria-label="FlowFuse Expert sits inside the FlowFuse platform and Node-RED, as part of it.">
+  <title>FlowFuse Expert is part of the platform</title>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <!-- Geometry: the platform occupies exactly the same 1300x770 footprint that the two
+       overlapping boxes occupy in the other view, so flipping between the two keeps the
+       outline in place. Expert is inset a uniform 80 from the top, right and bottom. -->
+  <g font-family="Roboto, system-ui, -apple-system, 'Segoe UI', sans-serif">
+
+    <rect x="150" y="65" width="1300" height="770" rx="52" fill="#f9fafb" stroke="#d1d5db" stroke-width="3"/>
+
+    <rect x="1070" y="145" width="300" height="610" rx="42" fill="#eef2ff" stroke="#4f46e5" stroke-width="3"/>
+
+    <text x="610" y="437" text-anchor="middle" font-size="44" fill="#374151">FlowFuse Platform</text>
+    <text x="610" y="491" text-anchor="middle" font-size="44" fill="#374151">Node-RED</text>
+
+    <text x="1220" y="437" text-anchor="middle" font-size="40" fill="#3730a3">FlowFuse</text>
+    <text x="1220" y="487" text-anchor="middle" font-size="40" fill="#3730a3">Expert</text>
+  </g>
+</svg>

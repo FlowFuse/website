@@ -20,17 +20,17 @@
   "resources": [
     {
       "url": "/blog/2024/03/dashboard-getting-started/",
-      "title": "Getting Started with Node-RED Dashboard 2.0",
+      "title": "Getting started with FlowFuse Dashboard",
       "image": "/blog/2024/03/images/getting-started-with-dashboard-2.png"
     },
     {
       "url": "/webinars/2024/node-red-dashboard-multi-user/",
-      "title": "Personalised Multi User Dashboards with Node-RED Dashboard 2.0",
+      "title": "Multi-user dashboards: a screen per person",
       "image": "/images/webinars/multi-user-dashboard-with-node-red-dashboard-2-0-webinar-2024-february.jpg"
     },
     {
       "url": "/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/",
-      "title": "The Ultimate Guide to Building Applications with FlowFuse Dashboard for Node-RED",
+      "title": "The ultimate guide to building applications with FlowFuse Dashboard",
       "image": "/images/ebooks/ebook_dashboard.png"
     }
   ]
