@@ -27,7 +27,9 @@ that timezone rather than defaulting to Amsterdam.
 1. [CEO Task Management](/handbook/operations/ceo-ops/task-managment/)
 1. [Travel Booking](/handbook/operations/ceo-ops/travel-booking/)
 1. [ZJ Social Media](https://docs.google.com/document/d/1Iqj8EKx-cLHrm7CN9eOrZYdvzE3LynvvyozKOROzyYg/edit?tab=t.0) — (Check Mondays, Wednesdays, Fridays)
+1. [LinkedIn Engagement with Buyers](https://docs.google.com/spreadsheets/d/1ipqA0-FNOsdCPwGCKd1haiEa5G0yYv8LLg3IVnLTBsg/edit?gid=1805072134#gid=1805072134)
 1. Other tasks to pick up (Peopleops, bizops, etc)
+
 
 ### CEO meeting hours
 
