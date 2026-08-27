@@ -129,14 +129,11 @@ Screenshots should ideally be **1408px wide**. Height can vary depending on what
 
 ### Screen recordings and videos
 
-Use a video or GIF when the change is easier to show than describe.
+Use a video when the change is easier to show than describe.
 
-**GIFs** work well for short, simple interactions where a video would be overkill. If you use one:
+For short, silent, looping interactions, use a [WebM video](/handbook/marketing/content-strategy/blog/#video) — small file size, autoplays on load, and needs no YouTube upload.
 
-- It must be sharp and legible. No blurred or low-resolution captures.
-- It must be under 1MB. If it is larger, use a video instead.
-
-**Videos** are the recommended way to show screen recordings. To add one:
+**Videos** are the recommended way to show longer or narrated screen recordings. To add one:
 
 1. Ask in [#dev-marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) to have the recording uploaded to YouTube. Give them the video title. They publish it as **unlisted** by default. If the recording has voiceover and refined editing, flag it for public publishing.
 
@@ -179,6 +176,10 @@ Always write an availability note in the post as well. Badges name the plans, bu
 > This feature is available on the Edge and Fleet plans from vX.Y.
 
 Put it at the end of the post, or immediately after the main announcement if it affects whether the user can access the feature at all.
+
+### Interlinking
+
+Link to related docs pages, other changelog posts, or a blog post covering the same feature whenever there's a genuine opportunity — a changelog post is short by design, and a link is how a user gets to the depth it doesn't have room for. See [Interlinking](/handbook/marketing/content-strategy/blog/#interlinking) for the rule on when a link is warranted.
 
 ## Writing style
 
