@@ -12,7 +12,7 @@ issues:
 
 You can now connect your own AI agent to FlowFuse. Your company-approved AI can manage your platform and build Node-RED applications for you.
 
-Add the FlowFuse address, sign in with OAuth, and you decide which teams the agent reaches and whether it can make changes.
+Add the FlowFuse address to connect, then decide which teams the agent reaches and whether it can make changes.
 
 The address is `https://app.flowfuse.com/mcp`. [Pick your agent on the AI page](/ai/) for the exact steps in [Microsoft Copilot](https://copilotstudio.microsoft.com/), [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/settings/connectors) or [Gemini](https://gemini.google.com/). Any MCP client that supports the HTTP transport works too, including command-line and editor agents and local models. Sign-in uses OAuth where the client supports it, with a token fallback where it does not.
 
