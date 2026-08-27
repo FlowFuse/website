@@ -8,7 +8,7 @@ defineProps<{ items: NavigationMenuItem[] }>()
 </script>
 
 <template>
-  <div class="lg:pt-2 text-sm">
+  <div class="lg:pt-2 text-sm capitalize">
     <UNavigationMenu
       :items="items"
       orientation="vertical"
