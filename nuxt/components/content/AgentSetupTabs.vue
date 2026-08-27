@@ -5,8 +5,12 @@
 // changelog entry and the third-party-agents docs page need the same steps /ai has,
 // and hand-copying them into each surface is how they drift apart.
 //
-// Styling comes from .ff-agent-tabs / .ff-agent-tab / .ff-agent-panel in
-// src/css/style.css, which nuxt.config.ts links on every Nuxt page.
+// Styling comes from the .ff-agent-* rules in src/css/style.css, which nuxt.config.ts
+// links on every Nuxt page, rather than from utility classes on the elements. That is
+// forced: this renders inside .prose on the changelog and docs pages, and the site's
+// prose rules sit in @layer overrides, which outranks Tailwind's @layer utilities
+// whatever the specificity. As utilities, `h-4` on a tab logo lost to .prose img's
+// width:100% and the marks blew up to full column width.
 const props = withDefaults(defineProps<{
     // Drops the FlowFuse Expert tab. For surfaces that are specifically about
     // connecting your own agent, where Expert is not one of the options.
@@ -120,22 +124,22 @@ function selectClient (id: string) {
 </script>
 
 <template>
-  <div class="mt-12 overflow-hidden rounded-xl border border-indigo-100 bg-white shadow-sm">
-    <div class="ff-agent-tabs flex flex-nowrap gap-1 overflow-x-auto border-b border-indigo-100 bg-indigo-50/60 p-2" role="tablist" aria-label="Choose your AI agent">
+  <div class="ff-agent-card overflow-hidden rounded-xl border border-indigo-100 bg-white shadow-sm">
+    <div class="ff-agent-tabs border-b border-indigo-100 bg-indigo-50/60" role="tablist" aria-label="Choose your AI agent">
       <button
         v-for="client in clients"
         :id="`ff-tab-${client.id}`"
         :key="client.id"
         type="button"
         role="tab"
+        class="ff-agent-tab"
+        :class="{ 'ff-agent-tab--active': activeClient === client.id }"
         :aria-controls="`ff-panel-${client.id}`"
         :aria-selected="activeClient === client.id"
-        class="ff-agent-tab flex flex-none items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition"
-        :class="activeClient === client.id ? 'bg-indigo-600 text-white shadow-sm' : 'text-gray-600 hover:bg-white hover:text-gray-900'"
         @click="selectClient(client.id)"
       >
-        <UIcon v-if="client.icon" :name="client.icon" class="flex-none size-4" aria-hidden="true" />
-        <img v-else-if="client.logo" :src="client.logo" alt="" class="h-4 w-auto flex-none" aria-hidden="true">
+        <UIcon v-if="client.icon" :name="client.icon" class="ff-agent-tab__glyph" aria-hidden="true" />
+        <img v-else-if="client.logo" :src="client.logo" alt="" aria-hidden="true">
         <span>{{ client.name }}</span>
       </button>
     </div>
@@ -147,25 +151,25 @@ function selectClient (id: string) {
       :key="`panel-${client.id}`"
       role="tabpanel"
       :aria-labelledby="`ff-tab-${client.id}`"
-      class="ff-agent-panel grid grid-cols-1 gap-8 p-6 md:grid-cols-3 md:gap-10 md:p-8"
+      class="ff-agent-panel"
     >
-      <div class="flex flex-col">
-        <p class="font-mono text-xs font-semibold text-indigo-600 m-0">01</p>
-        <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
-        <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
-        <div v-if="client.builtIn" class="mt-auto pt-5">
+      <div class="ff-agent-step">
+        <p class="ff-agent-step__num">01</p>
+        <p class="ff-agent-step__title">{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
+        <p class="ff-agent-step__body">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
+        <div v-if="client.builtIn" class="ff-agent-step__cta">
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
-        <div v-else class="mt-auto pt-5">
+        <div v-else class="ff-agent-step__cta">
           <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked />
         </div>
       </div>
 
-      <div class="flex flex-col">
-        <p class="font-mono text-xs font-semibold text-indigo-600 m-0">02</p>
-        <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.step2Title }}</p>
-        <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.step2Body }}</p>
-        <div class="mt-auto pt-5">
+      <div class="ff-agent-step">
+        <p class="ff-agent-step__num">02</p>
+        <p class="ff-agent-step__title">{{ client.step2Title }}</p>
+        <p class="ff-agent-step__body">{{ client.step2Body }}</p>
+        <div class="ff-agent-step__cta">
           <a
             :href="client.step2Url"
             class="ff-btn ff-btn--primary-outlined flex w-full"
@@ -176,11 +180,11 @@ function selectClient (id: string) {
         </div>
       </div>
 
-      <div class="flex flex-col">
-        <p class="font-mono text-xs font-semibold text-indigo-600 m-0">03</p>
-        <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.step3Title || STEP3.title }}</p>
-        <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.step3Body || STEP3.description }}</p>
-        <div v-if="signup && !client.noStep3Cta" class="mt-auto pt-5">
+      <div class="ff-agent-step">
+        <p class="ff-agent-step__num">03</p>
+        <p class="ff-agent-step__title">{{ client.step3Title || STEP3.title }}</p>
+        <p class="ff-agent-step__body">{{ client.step3Body || STEP3.description }}</p>
+        <div v-if="signup && !client.noStep3Cta" class="ff-agent-step__cta">
           <CtaSignUp variant="primary" :position="`${surface}-connect-step3`" class="w-full" />
         </div>
       </div>

@@ -3271,14 +3271,62 @@ lite-youtube::before {
     border-left: 2px solid var(--color-indigo-200);
 }
 
+/* AgentSetupTabs: the agent picker and its three setup steps. Unlayered on purpose.
+   The component renders inside .prose on the changelog entry and the third-party-agents
+   docs page as well as standalone on /ai, and the site's prose rules live in
+   @layer overrides, which outranks Tailwind's @layer utilities however specific the
+   utility is. So the component's look cannot live in utility classes on the elements:
+   .prose img's width:100% beat `h-4` and blew the tab marks up to full column width,
+   and .prose p forced the step text to 12px. Unlayered outranks every layer, so these
+   rules hold in prose and out of it. Keep visual values here, not in the template.
+
+   Sizing is driven by the component's own width via @container, not by the viewport.
+   A viewport md: breakpoint gave three 186px columns inside a 704px prose column,
+   because the viewport was wide while the column was not. */
+.ff-agent-card {
+    container-type: inline-size;
+    margin-top: 2rem;
+}
+
 /* Agent tab: a segmented control on the tinted rail, not a row of CTA buttons.
-   The brand's solid indigo marks the active one; the rest stay quiet until hovered.
-   Sizing and colour are utility classes on the element - only the focus ring lives
-   here, because the ring has to clear the pill on all four sides inside a scroller
-   that would otherwise clip it. */
+   The brand's solid indigo marks the active one; the rest stay quiet until hovered. */
+.ff-agent-tabs {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    /* Wraps rather than scrolling. In a prose column the strip is too narrow to show
+       five agents on one line, and a sideways scroller hides the last of them off the
+       edge with nothing to say so. */
+    flex-wrap: wrap;
+}
+.ff-agent-tab {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: var(--color-gray-600);
+    transition: background-color 0.15s, color 0.15s;
+}
+.ff-agent-tab:hover {
+    background-color: #fff;
+    color: var(--color-gray-900);
+}
+.ff-agent-tab--active,
+.ff-agent-tab--active:hover {
+    background-color: var(--color-indigo-600);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
 .ff-agent-tab:focus {
     outline: none;
 }
+/* The ring has to clear the pill on all four sides. */
 .ff-agent-tab:focus-visible {
     outline: 2px solid var(--color-indigo-600);
     outline-offset: 2px;
@@ -3286,7 +3334,67 @@ lite-youtube::before {
 /* The brand marks are <img>, so they keep their own colours; our own glyphs are
    masked spans that inherit currentColor and turn white with the label. */
 .ff-agent-tab img {
+    height: 1rem;
+    width: auto;
     flex: none;
+    margin: 0;
+    border-radius: 0;
+}
+.ff-agent-tab__glyph {
+    height: 1rem;
+    width: 1rem;
+    flex: none;
+}
+
+.ff-agent-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+.ff-agent-step {
+    display: flex;
+    flex-direction: column;
+}
+.ff-agent-step__num {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+    color: var(--color-indigo-600);
+}
+.ff-agent-step__title {
+    margin: 0.5rem 0 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: var(--color-gray-900);
+}
+.ff-agent-step__body {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    color: var(--color-gray-600);
+}
+/* mt-auto: pins every CTA to the bottom so the three line up however unevenly the
+   bodies above them wrap. */
+.ff-agent-step__cta {
+    margin-top: auto;
+    padding-top: 1.25rem;
+}
+.ff-agent-step__cta a {
+    text-decoration: none;
+}
+
+/* Three across only once the component itself is wide enough for it. */
+@container (min-width: 44rem) {
+    .ff-agent-panel {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2.5rem;
+        padding: 2rem;
+    }
 }
 
 /* The three step CTAs are three different elements - CtaSignUp's UButton, an
@@ -3305,21 +3413,6 @@ lite-youtube::before {
        the padding was doing. */
     padding-top: 0;
     padding-bottom: 0;
-}
-
-/* Agent tab strip: scrolls sideways rather than wrapping, so the row stays one line at
-   any width. Thin scrollbar so it reads as a control, not a scroll container. */
-.ff-agent-tabs {
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
-}
-.ff-agent-tabs::-webkit-scrollbar {
-    height: 6px;
-}
-.ff-agent-tabs::-webkit-scrollbar-thumb {
-    background-color: var(--color-gray-300);
-    border-radius: 3px;
 }
 
 /* Media well: the frame around each capability's schematic. */
