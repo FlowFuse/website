@@ -1,4 +1,3 @@
-import { findPageBreadcrumb } from '@nuxt/content/utils'
 import type { NavigationMenuItem } from '@nuxt/ui'
 import { buildNavigationMenuItems, type MenuTreeNode } from '~/utils/navigationMenu'
 
@@ -86,19 +85,34 @@ export const applicationGuideNavItems = (pages: ApplicationGuidePageSummary[] | 
     ]),
 ]
 
-// Mirrors findDocsBreadcrumb/findPageBreadcrumb (handbook, docs) so all three sections
-// derive breadcrumbs the same way. The per-guide group node ("FlowFuse Guide") isn't a
-// real page — `page: false` marks it unlinked, the same convention @nuxt/content's own
-// nav tree uses for directory-only nodes.
+// Unlike docs/handbook, a guide page's URL doesn't mirror its nesting — every page
+// lives at the flat /application-guide/{guide}/{slug}/, and `parent` only nests it in
+// the sidebar tree. @nuxt/content's findPageBreadcrumb matches by URL-path prefix, so it
+// can't find a page whose ancestors aren't URL prefixes of it — this walks the `parent`
+// chain directly against the page data instead.
+//
+// The guide itself ("FlowFuse Guide"/"Node-RED Guide") isn't included, mirroring
+// findDocsBreadcrumb: it's a sidebar grouping label with no page/path of its own, same as
+// a docs navGroup — see nuxt/lib/docs-nav.mjs's findDocsBreadcrumb, which flattens groups
+// out before building the crumb trail for the same reason.
 export function findGuideBreadcrumb(pages: ApplicationGuidePageSummary[] | null, path: string) {
-    const root = {
-        title: 'Application Guide',
-        path: '/application-guide',
-        children: applicationGuideNavGroups(pages).map(group => ({ ...group, page: false as const })),
+    const norm = (p: string) => (p.endsWith('/') ? p.slice(0, -1) : p) || '/'
+
+    const page = (pages ?? []).find(p => norm(p.path) === norm(path))
+    if (!page) return [{ label: 'Application Guide' }]
+
+    const ancestors: ApplicationGuidePageSummary[] = []
+    for (let current: ApplicationGuidePageSummary | undefined = page; current; ) {
+        ancestors.unshift(current)
+        const parentSlug: string | undefined = current.parent
+        current = parentSlug ? pagesForGuide(pages, page.guide).find(p => p.slug === parentSlug) : undefined
     }
-    const crumbs = findPageBreadcrumb([root], path, { current: true })
-    return crumbs.map((crumb, i) => ({
-        label: crumb.title ?? '',
-        ...(i === crumbs.length - 1 || crumb.page === false ? {} : { to: crumb.path }),
-    }))
+
+    return [
+        { label: 'Application Guide', to: '/application-guide' },
+        ...ancestors.map((ancestor, i) => ({
+            label: ancestor.title,
+            ...(i === ancestors.length - 1 ? {} : { to: norm(ancestor.path) }),
+        })),
+    ]
 }
