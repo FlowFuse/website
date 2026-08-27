@@ -4,7 +4,7 @@ import { defineEventHandler, proxyRequest } from 'h3'
 // Extend this list as pages are migrated. Trailing slashes are matched automatically.
 // Note: /sitemap-legacy.xml is deliberately NOT listed here — it only exists in
 // nuxt/public/ after a production build, so in dev it must keep proxying to 11ty's _site/.
-const NUXT_ROUTES = new Set(['/terms', '/privacy-policy', '/integrations', '/resources/publications', '/sitemap.xml', '/robots.txt', '/llms.txt', '/llms-full.txt', '/contact-us', '/book-demo', '/support', '/professional-services', '/dashboard/tags-and-canvas-feedback'])
+const NUXT_ROUTES = new Set(['/ai', '/terms', '/privacy-policy', '/integrations', '/resources/publications', '/sitemap.xml', '/robots.txt', '/llms.txt', '/llms-full.txt', '/contact-us', '/book-demo', '/support', '/professional-services', '/dashboard/tags-and-canvas-feedback'])
 
 // Path prefixes handled by Nuxt. Used for dynamic routes like /integrations/{id}.
 const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
@@ -14,7 +14,7 @@ const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
-// / (homepage), /about, /ai, /blueprints, /careers, /community, /events,
+// / (homepage), /about, /blueprints, /careers, /community, /events,
 // /free-consultation, /industries, /landing, /node-red, /partners, /platform,
 // /use-cases, /vs, /webinars
 

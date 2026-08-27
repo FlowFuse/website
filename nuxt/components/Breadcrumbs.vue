@@ -16,6 +16,14 @@ useSchemaOrg([
         })),
     }),
 ])
+
+// The indigo hover only makes sense on crumbs that actually navigate — a plain span
+// (no `to`, e.g. the current page or a non-navigable group label) getting the same
+// hover color as a real link falsely signals it's clickable.
+const items = computed(() => props.items.map(item => ({
+    ...item,
+    ui: item.to ? { link: 'hover:text-indigo-600' } : undefined,
+})))
 </script>
 
 <template>
@@ -23,7 +31,7 @@ useSchemaOrg([
     :items="items"
     color="neutral"
     class="capitalize"
-    :ui="{ link: 'text-sm hover:text-indigo-600' }"
+    :ui="{ link: 'text-sm' }"
   >
     <template #separator>
       <span class="mx-1 text-gray-400">/</span>

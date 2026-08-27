@@ -97,7 +97,7 @@ Two things stand in the way, and they're what the next two releases are about.
 
 We're still working out the shape of both, including where tags should live. If you're running FlowFuse dashboards across machines, sites or lines, tell us what you'd bind, what you'd want stored, and what would have to be true for this to replace how you wire data today.
 
-Tell us at [PLACEHOLDER].
+Tell us [on this form](/dashboard/tags-and-canvas-feedback/).
 
 ## FlowFuse Dashboard 1.31.0 FAQ
 

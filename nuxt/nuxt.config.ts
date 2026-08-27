@@ -366,6 +366,10 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/pricing',
                     '/product',
+                    // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
+                    // Nuxt prerender crawler never parses, so it has to be listed explicitly
+                    // or the route is missing from nuxt/dist and every link to it breaks.
+                    '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
