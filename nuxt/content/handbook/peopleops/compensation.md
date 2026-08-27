@@ -242,7 +242,7 @@ Once approved in writing by the CEO:
   * Performance period (e.g. “Q4 2025”)
   * Reason for payment (e.g. “Quarterly MBO attainment”)
 
-Bonuses are paid in the next payroll cycle after approval.
+Bonuses are paid out in USD and in the next payroll cycle after approval.
 
 ## Template Email — Bonus Confirmation to Employee
 

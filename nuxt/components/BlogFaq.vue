@@ -7,6 +7,22 @@ const openIndex = ref<number | null>(null)
 function toggle(i: number) {
     openIndex.value = openIndex.value === i ? null : i
 }
+
+const ESCAPE_MAP: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }
+function escapeHtml(text: string) {
+    return text.replace(/[&<>"]/g, char => ESCAPE_MAP[char])
+}
+
+// Answers are plain text (any literal "<...>" in existing FAQ content - e.g. "<ip>",
+// "<img>" placeholders - must stay literal, not be parsed as markup), so escape first.
+// The only markup this renders is [label](url) links, converted after escaping so a URL
+// or label can't reintroduce raw HTML.
+function renderAnswer(answer: string) {
+    return escapeHtml(answer).replace(
+        /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g,
+        '<a href="$2" class="text-indigo-600 hover:underline">$1</a>',
+    )
+}
 </script>
 
 <template>
@@ -30,7 +46,8 @@ function toggle(i: number) {
             </button>
           </h3>
           <div v-show="openIndex === i" class="px-6 mt-6">
-            <p>{{ item.answer }}</p>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <p v-html="renderAnswer(item.answer)" />
           </div>
         </div>
       </div>
