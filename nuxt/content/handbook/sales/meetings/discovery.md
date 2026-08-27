@@ -32,3 +32,8 @@ runs (see the [Customer Adoption Maturity Model](https://docs.google.com/documen
 The next step depends on the outcome of the call, but usually results in a more
 technical discussion, a product [Demo](/handbook/sales/meetings/demo/), or sending
 relevant content to follow up on at an appropriate time in the future.
+
+Before moving on, complete the
+[Post-meeting HubSpot updates](/handbook/sales/meetings/#post-meeting-hubspot-updates) —
+logging the call, updating lead status, and answering the MQL-to-SQL
+qualifying questions if this call qualifies the prospect.
