@@ -9,7 +9,12 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync
 import { basename, join, relative } from 'node:path'
 import { tmpdir } from 'node:os'
 
-import { mintInstallationToken } from './github-app-token.mjs'
+// Imported lazily (inside cloneBlueprints, not here) because it pulls in @octokit/auth-app.
+// CI checks out blueprint-library as a sibling and calls `npm run blueprints` before
+// `npm install` runs - see nuxt/lib/docs-sync.mjs's own note on staying dependency-free -
+// so a static import here would crash a build that never even takes the clone path. Only
+// Netlify's production build (no sibling checkout) reaches the clone path, and by then
+// npm install has already completed.
 
 const REPO_OWNER = 'FlowFuse'
 const REPO_NAME = 'blueprint-library'
@@ -61,6 +66,7 @@ export function resolveSource ({ repoRoot, env = process.env, exists = existsSyn
  * error, so failures are reported from stderr text with the token stripped out.
  */
 async function cloneBlueprints (ref, env, logger) {
+    const { mintInstallationToken } = await import('./github-app-token.mjs')
     const token = await mintInstallationToken({
         appId: env.GH_BOT_APP_ID,
         privateKey: env.GH_BOT_APP_KEY,
