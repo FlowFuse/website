@@ -47,7 +47,7 @@ These pages help you setup additional infrastructure for local development.
 
 ## Front-End
 
-A collection of how-to's and best practice guides for FlowFuse's front-end development.
+A collection of how-tos and best practice guides for FlowFuse's front-end development.
 
 - [Data Attributes](./frontend/data-attributes.md)
 - [Services](./frontend/services.md)
