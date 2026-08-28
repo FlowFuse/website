@@ -5,37 +5,35 @@ title: "Sales Development Representative (SDR)"
 # Sales Development Representative (SDR)
 
 The SDR works leads — inbound and outbound — toward a booked meeting. The role
-sits organizationally within the Marketing department, reflecting how closely
-SDR output (meetings attended and qualified) depends on marketing's lead
-generation and activation work. See the
-[SDR job description](/handbook/peopleops/job-descriptions/sales-development-representative/)
+sits organizationally within the Marketing department, as the SDR output
+(meetings attended and qualified) depends on marketing's lead generation and
+activation work. See the [SDR job description](/handbook/peopleops/job-descriptions/sales-development-representative/)
 for the full role definition.
 
 ## Bonus Structure
 
-The SDR is compensated under a quarterly bonus plan tied to a single goal:
-`First Meetings`, defined as **meetings attended and qualified** — not merely
-booked. Note that specific targets are subject to review at the start of each
-fiscal year or quarter.
+The SDR is compensated under a monthly bonus plan tied to a single goal:
+`First Meetings`, defined as **meetings attended and qualified**. Note that
+specific targets are subject to review at the start of each month.
 
-- First Meetings (Attended and Qualified): Measured against a quarterly goal.
-**_Note: overachieving the goal comes with a proportional upside bonus._**
-
-### First Meetings Bonus Formula
-
-The bonus is calculated on a linear scale between the baseline and goal:
+Each qualifying First Meeting in the month earns a per-meeting bonus that
+increases with the SDR's running meeting count for that month, up to a cap:
 
 Variables
-- $X$: Achievement (Actual First Meetings attended and qualified)
-- $Y$: Baseline (The minimum First Meetings threshold before any payout)
-- $G$: Goal (The target First Meetings for a standard 100% bonus payout)
-- $B_{\text{target}}$: Target Bonus (The dollar amount paid if the SDR exactly hits goal $G$)
+- $n$: the sequence number of the meeting within the month (1 for the
+  SDR's first qualifying meeting that month, 2 for the second, and so on)
+- $B(n)$: the bonus earned for that meeting
 
-**Formula**
+### Formula
 
 $$
-\text{Bonus} = \max \left( 0, B_{\text{target}} \times \frac{X - Y}{G - Y} \right)
+B(n) = \min(38.18 \times n, 500)
 $$
+
+The monthly bonus is the sum of $B(n)$ over all qualifying meetings in the
+month. For example, 10 First Meetings in a month earn
+$\sum_{n=1}^{10} B(n) \approx \$2{,}100$. Once $n$ reaches 14 ($38.18 \times 14
+> 500$), each further meeting is capped at $500.
 
 For payout timelines and submission requirements, see
 [Processing non-commission Bonuses](/handbook/operations/commission-payment/#processing-non-commission-bonuses).
