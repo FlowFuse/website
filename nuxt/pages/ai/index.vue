@@ -6,8 +6,9 @@ import { getAllBlogPosts } from '~/utils/sharedContent'
 // What the port changes on purpose:
 //  - The two hand-rolled DOM scripts (agent tabs, showcase rotation) become
 //    reactive state. That was ~120 lines of querySelectorAll in the .njk.
-//  - The copy button becomes <FfCommand>, shared with the changelog and any other
-//    markdown page, instead of markup plus a copy helper pasted per page.
+//  - The copy button becomes <FfCommand>, and the whole agent picker becomes
+//    <AgentSetupTabs>, both shared with the changelog and the docs page instead
+//    of markup plus a copy helper pasted per page.
 //  - jsonld.njk's meta.faq becomes useSchemaOrg, which escapes properly. The 11ty
 //    partial interpolated answers straight into a JSON string.
 //  - Sign-up buttons become <CtaSignUp>, so the copy is the site's fixed "Try it
@@ -55,82 +56,7 @@ useSchemaOrg([
 // The Cloud address. Self-hosted platforms answer on their own domain, so the block
 // takes one (host-swap) rather than telling the reader in prose to edit what they
 // have just copied.
-const ENDPOINT = 'https://app.flowfuse.com/mcp'
-
-const STEP1 = {
-    title: 'Copy the FlowFuse connector URL',
-    description: 'You will paste this into your agent in the next step.',
-}
-const STEP3 = {
-    title: 'Sign in and choose what it reaches',
-    description: 'Which teams the agent may act on, and whether it has editing rights or read access only.',
-}
-
-// A client renders `logo` as a brand mark when set, `icon` as our own glyph when not.
-// A brand mark keeps its own colours so it stays an <img>; the glyph inherits
-// currentColor and turns white with the label when its tab is active.
-const CLIENTS = [
-    {
-        id: 'expert',
-        logo: '/images/ai/agents/flowfuse-expert.svg',
-        name: 'FlowFuse Expert',
-        builtIn: true,
-        step1Title: 'Sign in to FlowFuse',
-        step1Body: 'A new account puts you in a hosted instance with Expert already in the editor. Nothing to add, no connector, no token.',
-        step2Title: 'Or start with the Device Agent',
-        step2Body: 'Already running Node-RED on your own hardware? Connect it as a remote instance and Expert works there in the same way.',
-        step2Label: 'Install the Device Agent',
-        step2Url: '/docs/device-agent/quickstart/',
-        step3Title: 'Ask for what you need',
-        step3Body: 'Build a flow, explain one you inherited, write the Function node, or ask what is running on the floor. Every write waits for you to approve, edit or reject.',
-        noStep3Cta: true,
-    },
-    {
-        id: 'copilot',
-        logo: '/images/ai/agents/microsoft-copilot.svg',
-        name: 'Microsoft Copilot',
-        step2Title: 'Copilot Studio, Tools, Add a tool',
-        step2Body: 'Choose Model Context Protocol and paste the URL. Describe what it is for: the orchestrator reads that to decide when to call it.',
-        step2Label: 'Open Copilot Studio',
-        step2Url: 'https://copilotstudio.microsoft.com/',
-    },
-    {
-        id: 'chatgpt',
-        logo: '/images/ai/agents/chatgpt.svg',
-        name: 'ChatGPT',
-        step2Title: 'Enable developer mode, then add a connector',
-        step2Body: 'Custom connectors sit behind developer mode, which a workspace administrator turns on. The connector itself is added from the prompt dashboard.',
-        step2Label: 'Open ChatGPT',
-        step2Url: 'https://chatgpt.com/',
-    },
-    {
-        id: 'claude',
-        logo: '/images/ai/agents/claude.svg',
-        name: 'Claude',
-        step2Title: 'Add a custom connector',
-        step2Body: 'Where custom connectors are available on your plan, add one and paste the URL. On Team and Enterprise an owner adds it once for everyone.',
-        step2Label: 'Open Claude',
-        step2Url: 'https://claude.ai/',
-    },
-    {
-        id: 'local',
-        icon: 'i-lucide-server',
-        name: 'Local and Custom Agents',
-        step2Title: "Your MCP client's config",
-        step2Body: 'Any MCP-capable client works, pointed at your own model, so nothing has to leave your network.',
-        step2Label: 'See the documentation',
-        step2Url: '/docs/user/expert/',
-    },
-]
-
 const CODING_NOTE = 'Command-line and editor agents such as Claude Code, Cursor, Visual Studio Code and Gemini CLI connect to the same URL.'
-
-const activeClient = ref(CLIENTS[0].id)
-
-function selectClient (id: string) {
-    activeClient.value = id
-    capture('cta-ai-agent-tab', { position: id })
-}
 
 const GOVERNANCE = {
     title: 'AI Governance you can <span class="text-indigo-600">prove</span>',
@@ -283,72 +209,7 @@ onUnmounted(() => {
 
             <!-- CONNECTOR: pick your agent, then three steps specific to it, so the
                  reader only sees the instructions that apply to them. -->
-            <div class="mt-12 overflow-hidden rounded-xl border border-indigo-100 bg-white shadow-sm">
-              <div class="ff-agent-tabs flex flex-nowrap gap-1 overflow-x-auto border-b border-indigo-100 bg-indigo-50/60 p-2" role="tablist" aria-label="Choose your AI agent">
-                <button
-                  v-for="client in CLIENTS"
-                  :id="`ff-tab-${client.id}`"
-                  :key="client.id"
-                  type="button"
-                  role="tab"
-                  :aria-controls="`ff-panel-${client.id}`"
-                  :aria-selected="activeClient === client.id"
-                  class="ff-agent-tab flex flex-none items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition"
-                  :class="activeClient === client.id ? 'bg-indigo-600 text-white shadow-sm' : 'text-gray-600 hover:bg-white hover:text-gray-900'"
-                  @click="selectClient(client.id)"
-                >
-                  <UIcon v-if="client.icon" :name="client.icon" class="flex-none size-4" aria-hidden="true" />
-                  <img v-else-if="client.logo" :src="client.logo" alt="" class="h-4 w-auto flex-none" aria-hidden="true">
-                  <span>{{ client.name }}</span>
-                </button>
-              </div>
-
-              <div
-                v-for="client in CLIENTS"
-                v-show="activeClient === client.id"
-                :id="`ff-panel-${client.id}`"
-                :key="`panel-${client.id}`"
-                role="tabpanel"
-                :aria-labelledby="`ff-tab-${client.id}`"
-                class="ff-agent-panel grid grid-cols-1 gap-8 p-6 md:grid-cols-3 md:gap-10 md:p-8"
-              >
-                <div class="flex flex-col">
-                  <p class="font-mono text-xs font-semibold text-indigo-600 m-0">01</p>
-                  <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
-                  <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
-                  <div v-if="client.builtIn" class="mt-auto pt-5">
-                    <CtaSignUp variant="primary" position="ai-tab-expert" class="w-full" />
-                  </div>
-                  <div v-else class="mt-auto pt-5">
-                    <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="client.id" stacked host-swap />
-                  </div>
-                </div>
-
-                <div class="flex flex-col">
-                  <p class="font-mono text-xs font-semibold text-indigo-600 m-0">02</p>
-                  <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.step2Title }}</p>
-                  <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.step2Body }}</p>
-                  <div class="mt-auto pt-5">
-                    <a
-                      :href="client.step2Url"
-                      class="ff-btn ff-btn--primary-outlined flex w-full"
-                      :target="client.step2Url.startsWith('http') ? '_blank' : undefined"
-                      :rel="client.step2Url.startsWith('http') ? 'noopener' : undefined"
-                      @click="capture('cta-ai-open-client', { position: client.id })"
-                    >{{ client.step2Label }}</a>
-                  </div>
-                </div>
-
-                <div class="flex flex-col">
-                  <p class="font-mono text-xs font-semibold text-indigo-600 m-0">03</p>
-                  <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.step3Title || STEP3.title }}</p>
-                  <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.step3Body || STEP3.description }}</p>
-                  <div v-if="!client.noStep3Cta" class="mt-auto pt-5">
-                    <CtaSignUp variant="primary" position="ai-connect-step3" class="w-full" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <AgentSetupTabs class="mt-12" />
             <!-- Docs pointer, not a step. Carded in the same tinted, hover-lifting
                  treatment the platform page uses for its How-it-works blocks, so it
                  reads as somewhere to go rather than as fine print under step 03.
