@@ -73,6 +73,9 @@ In this guide, we'll build a Todo application to guide you through the features 
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) to install and get things started.
 
+::cta-image{src="/blog/2024/04/images/build-app-cta-1.png" alt="Get a free FlowFuse instance and follow every step of this tutorial with your own data" cta="sign-up"}
+::
+
 ## Installing Flowfuse user addon
 
 The FlowFuse User Addon is a plugin developed for Dashboard 2.0, that levereges the FlowFuse API to access logged in user's information at Dashboard 2.0. For detailed information refer to the [Exploring the FlowFuse User Addon](/blog/2024/04/displaying-logged-in-users-on-dashboard/#exploring-the-flowfuse-user-addon) and make sure to install it.
