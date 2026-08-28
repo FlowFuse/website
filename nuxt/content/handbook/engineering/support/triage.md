@@ -89,7 +89,7 @@ Some customers have response-time SLAs based on their subscription.
 
 Triage leads are not responsible for enforcing SLAs directly, but are responsible for ensuring tickets are routed and acknowledged in a way that supports them.
 
-Current SLA definitions and response expectations are documented in the [Subscription Agreement](/handbook/sales/subscription-agreement-1.6/).
+Current SLA definitions and response expectations are documented in [Customer Success](/handbook/sales/customer-success/#sla).
 
 When triaging:
 
