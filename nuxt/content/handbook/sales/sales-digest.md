@@ -43,8 +43,15 @@ Every Friday at 12:00 PM EST, build the weekly sales digest.
 Rules: name the account behind every point. Quote only what the customer
 actually said on the call. Keep it short and plain, no filler.
 ```
+
+## Review and post
+
+1. Read the automated digest in Asana. Remove anything confidential or sensitive, then rewrite it as a Slack message — clear and concise.
+2. Share the draft with BizOps members for review.
+3. Once BizOps approves it, post the digest to #general on Monday and mark the subtask complete.
+
  
-## Slack Message Digest template
+### Slack Message Digest template
  
 ```markdown
 **Weekly Sales Digest — week of [date]**
@@ -58,4 +65,3 @@ actually said on the call. Keep it short and plain, no filler.
 **Testimonials and quotes**
 - [Account] — "[quote]" — [name, title]
 ```
- 
