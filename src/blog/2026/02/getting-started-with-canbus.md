@@ -65,6 +65,9 @@ SocketCAN brings CAN bus support directly into the Linux networking stack, treat
 
 In this tutorial, you'll set up SocketCAN on Linux, integrate it with FlowFuse, and learn how to send and receive CAN frames, establishing the foundation for connecting your CAN infrastructure to the broader industrial ecosystem.
 
+::cta-image{src="/blog/2026/02/images/socket-can-cta-1.png" alt="Try FlowFuse free - install one node and read live CAN frames the same day, no drivers, no C code" cta="sign-up"}
+::
+
 ## What Is CAN Bus?
 
 **CAN bus** (Controller Area Network) is a message-based communication protocol that lets multiple electronic control units (ECUs), sensors, and actuators exchange data over a single, shared two-wire connection, without a central computer routing every message. Bosch developed it in the 1980s to simplify automotive wiring, and it now runs everything from car dashboards to industrial machines, farm equipment, and medical devices.
@@ -263,6 +266,9 @@ sudo apt install -y build-essential
 ```
 
 After installing the build tools, retry installing `node-red-contrib-socketcan` from the FlowFuse palette.
+
+::cta-image{src="/blog/2026/02/images/can-bus-cta-2.png" alt="Talk to our team about connecting your CAN bus data to MQTT, OPC UA, or ERP systems" cta="demo"}
+::
 
 ### Working with CAN Frames in FlowFuse
 
