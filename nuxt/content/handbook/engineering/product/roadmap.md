@@ -123,7 +123,7 @@ This roadmap does not highlight any specific nodes for the roadmap; that will be
 | **AI: chat history** — persistent history, separate chats each with their own context | 5 AI | Build | FlowFuse | Context is lost between sessions | A user can have multiple chats and switch between them |
 | **AI: custom team skills** — teams author skills specific to their use cases | 5 AI | Govern · Build | FlowFuse | Organizational standards aren't encoded anywhere the AI can apply them | Standardization of custom use-cases within an organization |
 | **AI: custom models** — connect the agent to customer-hosted models | 5 AI | Build · Govern | FlowFuse | Sovereignty requirements rule out vendor-hosted models | Orgs with specific model requirements are able to use our AI services |
-| **Bill of Material reports** - downloadable SBOM | 6 Enterprise readiness | Govern | FlowFuse | Existing BoM is a readonly page - cannot be snapshotted for audit or automated checks | Compliance requirements can be met |
+| **Bill of Material reports** - downloadable SBOM | 6 Governance and Operability | Govern | FlowFuse | Existing BoM is a readonly page - cannot be snapshotted for audit or automated checks | Compliance requirements can be met |
 | **Managed Dependency Updates** - actionable updates based on the SBoM at both a team and instance level | 6 Enterprise readiness | Govern · Deploy | FlowFuse | SBom identifies out of data dependencies, but doesn't help users resolve them | Software easier to keep up to date - either automatically or by policy |
 
 ## Year 2 — Q4 2027 to Q3 2028
@@ -142,7 +142,7 @@ Half-year themes. No dates. Each names what has to be true in Year 1 for it to s
 | ----- | ----- | ----- | ----- | ----- |
 | **FlowFuse Node-RED becomes the default install** — the standard way an industrial engineer installs Node-RED, not an alternative to it | 1 Edge & device | Deploy | New estates arrive connectable rather than needing to be connected | FlowFuse Node-RED and FlowFuse Node-RED Plugin (Q4 26), plus partner uptake |
 | **FlowFuse provides a digital twin of an organization** — sites, lines and assets modeled on the platform and bound to live data | 3 Data layer · 4 Application & UX | Build · Deploy | An OT engineer can model their environment to gain insight | Data Modeling (Q4 26) |
-| **Governance becomes purchasable** — downloadable SBOM, managed dependency updates, audit trail | 6 Enterprise readiness | Govern | An IT buyer can satisfy an audit from the platform rather than around it | Bill of Material reports · Managed Dependency Updates |
+| **Governance becomes purchasable** — downloadable SBOM, managed dependency updates, audit trail | 6 Governance and Operability | Govern | An IT buyer can satisfy an audit from the platform rather than around it | Bill of Material reports · Managed Dependency Updates |
 | **AI knows the organization** — custom team skills, custom models, persistent chat context | 5 AI | Govern · Build | Organizational standards are encoded where the AI applies them, and sovereignty requirements stop being a blocker | Data Modeling (Q4 26) gives the AI something structured to reason over |
 
 ### H2 (Q2 2028 – Q3 2028)
@@ -182,7 +182,7 @@ Three bets. Each is a hypothesis with evidence conditions, not a commitment.
 
 |  |  |
 | ----- | ----- |
-| Lane(s) | 6 Enterprise readiness · 2 DevOps for OT |
+| Lane(s) | 6 Governance and Operability · 2 DevOps for OT |
 | Hypothesis | Air-gapped and sovereign deployment is a distinct product with its own economics, not a hardening checklist on the existing one |
 | What's genuinely uncertain | Whether the demand is a handful of named accounts or a segment. Sovereign requirements also pull against the hosted-service assumptions the AI work depends on |
 | Evidence that advances it | Sovereign or air-gapped requirements appearing as a qualification gate rather than a late-stage objection |
