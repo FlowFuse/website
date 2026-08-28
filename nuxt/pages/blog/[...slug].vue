@@ -160,7 +160,6 @@ if (routeInfo.value.kind === 'post') {
   <div v-else-if="page" class="w-full page post">
     <div class="post-title container m-auto text-center max-lg:px-6 flex mt-6 mb-6 md:max-w-screen-lg md:mt-12">
       <div class="text-left md:pr-32">
-        <Breadcrumbs :items="breadcrumbItems" class="mb-2" />
         <label>Article</label>
         <h1>{{ page.title }}</h1>
         <h4 v-if="page.subtitle">{{ page.subtitle }}</h4>
@@ -213,10 +212,7 @@ if (routeInfo.value.kind === 'post') {
     <div class="blog nohero w-full pb-24">
       <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
         <div class="ff-prose min-w-0">
-          <NuxtLink class="group hover:no-underline inline-flex items-center gap-1 mb-4" to="/blog">
-            <UIcon name="i-heroicons-chevron-left" />
-            <span class="group-hover:underline">Back to Blog Posts</span>
-          </NuxtLink>
+          <Breadcrumbs :items="breadcrumbItems" class="mb-4" />
 
           <div class="prose w-full flex-grow">
             <div class="mb-4 hero-img">
