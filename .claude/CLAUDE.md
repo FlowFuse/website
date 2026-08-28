@@ -20,6 +20,10 @@ The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framew
 | `/docs/**` | **Migrated** — served by Nuxt; source resolved from `flowfuse/flowfuse` at build time |
 | All other routes | Still on 11ty, proxied through Nuxt in dev |
 
+### New pages belong in Nuxt
+
+Never create a new page under `src/` — even a landing/marketing page that looks like the fastest way to match an existing 11ty page's pattern. Build it in Nuxt (`nuxt/pages/`, `.vue`/`.md`) instead; only edits to already-existing 11ty pages belong in `src/`. `nuxt/lib/legacy-pages.test.mjs` enforces this with no allowlist to maintain: it fetches main's current tip and fails `npm test` (and therefore the required `test_website / Build and check` PR check) if any `.njk` file under `src/` doesn't already exist there — i.e. a brand-new `.njk` file, anywhere in `src/`, on any route. Editing an existing `.njk` file is unaffected. See `/handbook/marketing/website#new-pages-must-be-built-in-nuxt` for the non-engineer-facing explanation.
+
 ### Production build order
 
 ```

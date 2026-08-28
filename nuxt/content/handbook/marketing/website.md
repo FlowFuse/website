@@ -236,6 +236,16 @@ In many cases, this helps keep changes focused and iterations small when the pag
 
 For design-related considerations, see the [Design Review process](/handbook/design/process/#design-review).
 
+## New Pages Must Be Built in Nuxt
+
+The site is migrating from Eleventy (11ty) to Nuxt, section by section, as 11ty is phased out. Any brand-new page (a landing page, a campaign page, etc.) needs to be built in Nuxt, never as a new page in the old 11ty system, even if it looks like the fastest way to copy an existing 11ty page's pattern.
+
+A test in the site's automated test suite catches this automatically: a pull request that adds any brand-new `.njk` file (the file type 11ty page templates are built with) fails the PR's required checks until it's moved to Nuxt. Editing an existing `.njk` page is unaffected; this only catches genuinely new pages.
+
+This only looks at `.njk` files, so it never affects the markdown and images you add day to day. New blog posts, webinars, blueprints, changelog entries, and customer stories are all `.md` files (plus their images), not `.njk`. Keep publishing those as normal.
+
+If a page truly needs to ship on 11ty before its Nuxt equivalent exists, a member of the GitHub "admin" team can merge anyway via "Merge without waiting for requirements to be met".
+
 ## Pull Request Scope
 
 To support fast iteration:
