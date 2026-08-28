@@ -14,7 +14,7 @@ They allow us to:
 2. provide enough granuality so that every feature has a natural home
 3. ensure we are iterating across the whole product surface
 
-As a team, we routinely work across all of the lanes.
+As a team, we work across all of the lanes over time, but not all of them in any one release. A release will typically invest heavily in two or three lanes, touch a few others lightly, and do nothing in the rest. That's intentional prioritisation.
 
 ## Our swimlanes
 
