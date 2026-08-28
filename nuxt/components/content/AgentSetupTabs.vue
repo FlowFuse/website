@@ -71,7 +71,7 @@ const CLIENTS = [
         id: 'chatgpt',
         logo: '/images/ai/agents/chatgpt.svg',
         name: 'ChatGPT',
-        step2Title: 'Settings, Apps and Connectors, Advanced settings',
+        step2Title: 'Settings, Apps & Connectors, Advanced settings',
         step2Body: 'Turn on developer mode there, then add FlowFuse by URL. Developer mode needs a paid plan, so it is not on the free tier.',
         step2Label: 'Open ChatGPT',
         step2Url: 'https://chatgpt.com/',
