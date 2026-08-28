@@ -77,17 +77,17 @@ FlowFuse ensures control and enforces on every call what you granted: the teams,
 
 [Pick your agent on the AI page](/ai/) to get setup in three simple steps.
 
-<video autoplay loop muted playsinline aria-label="Connecting an AI agent to FlowFuse over MCP, granting it a team and an access level, then asking it to set up an instance" width="1600" height="900" preload="none"><source src="./images/connect-your-own-ai-agent.webm" type="video/webm" /></video>
+<video autoplay loop muted playsinline aria-label="Connecting an AI agent to FlowFuse over MCP, granting it a team and an access level, then asking it to set up an instance" width="1600" height="900" preload="none"><source src="/blog/2026/08/images/connect-your-own-ai-agent.webm" type="video/webm" /></video>
 _Connect the agent you already use, grant it a team and an access level, and work with FlowFuse from there._
 
 ### What's new with FlowFuse Dashboard?
 
 [FlowFuse's Dashboard](https://dashboard.flowfuse.com/) v1.31.0 delivers a round of UX and UI improvements — the low-friction fixes that make building and reading a dashboard feel obvious instead of fiddly. [Built-in themes for Node-RED Dashboard 2.0 lead the release](http://dashboard.flowfuse.com/nodes/config/ui-theme.html): predictable to edit, and every preset meets WCAG AA contrast, so dark mode stays legible. Charts render instead of leaving empty boxes. Tables show readable dates instead of raw epoch numbers. Plus a run of smaller UI fixes — labels and gauges that stay inside their cards, spacing that holds at narrow widths. Less setup. More dashboard.
 
-<video autoplay loop muted playsinline aria-label="Node-RED Dashboard theme showcase, switching between Light, Dark, Dracula, Nord, and Sepia themes" width="1000" height="517" preload="none"><source src="./images/dashboard-theme-showcase.webm" type="video/webm" /></video>
+<video autoplay loop muted playsinline aria-label="Node-RED Dashboard theme showcase, switching between Light, Dark, Dracula, Nord, and Sepia themes" width="1000" height="517" preload="none"><source src="/blog/2026/08/images/dashboard-theme-showcase.webm" type="video/webm" /></video>
 _Five built-in themes, one dropdown, all meet WCAG AA contrast._
 
-<video autoplay loop muted playsinline aria-label="Node-RED Dashboard table showing a date formats column rendering epoch values as readable dates" width="1000" height="571" preload="none"><source src="./images/dashboard-table-date-formats.webm" type="video/webm" /></video>
+<video autoplay loop muted playsinline aria-label="Node-RED Dashboard table showing a date formats column rendering epoch values as readable dates" width="1000" height="571" preload="none"><source src="/blog/2026/08/images/dashboard-table-date-formats.webm" type="video/webm" /></video>
 _Set the column type to Date, Time, or Datetime. Epoch values format themselves._
 
 ## Deploy: to the edge, at any scale
