@@ -16,13 +16,20 @@ A shared 1Password vault is available to the CEO and the exec assistant. All pas
 The P.A.'s tasks is to run complete certain tasks every day. For some, even
 multiple times a day. Capture the output of these in a "Daily Briefing" send
 before the [CEO's meeting hours](#ceo-meeting-hours). 
- 
+
+Before compiling the briefing, confirm which timezone the CEO is currently in
+(he travels regularly between Amsterdam and the US) — check the calendar for
+travel/OOO blocks, or ask directly if it's unclear. Lead the briefing with
+that timezone rather than defaulting to Amsterdam.
+
 1. [Inbox Management](/handbook/operations/ceo-ops/inbox-management/)
 1. [Calendar Management](/handbook/operations/ceo-ops/calendar-management/)
 1. [CEO Task Management](/handbook/operations/ceo-ops/task-managment/)
 1. [Travel Booking](/handbook/operations/ceo-ops/travel-booking/)
-1. [ZJ Social Media](https://docs.google.com/document/d/1Iqj8EKx-cLHrm7CN9eOrZYdvzE3LynvvyozKOROzyYg/edit?tab=t.0) — check 3 times a week
+1. [ZJ Social Media](https://docs.google.com/document/d/1Iqj8EKx-cLHrm7CN9eOrZYdvzE3LynvvyozKOROzyYg/edit?tab=t.0) — (Check Mondays, Wednesdays, Fridays)
+1. [LinkedIn Engagement with Buyers](https://docs.google.com/spreadsheets/d/1ipqA0-FNOsdCPwGCKd1haiEa5G0yYv8LLg3IVnLTBsg/edit?gid=1805072134#gid=1805072134)
 1. Other tasks to pick up (Peopleops, bizops, etc)
+
 
 ### CEO meeting hours
 
@@ -33,7 +40,7 @@ during the meeting hours, it is generally bookable.
 #### Pacific time zone
 
 Core meeting hours:
-* Monday–Friday, 05:00 - 14:00 PT.
+* Monday–Friday, 06:00 - 15:00 PT.
 
 #### Amsterdam time zone
 
