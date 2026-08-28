@@ -20,7 +20,6 @@ useSeoMeta({
     subtitle-icon="i-lucide-arrow-right"
     description="See how you'd build, deploy, and govern operational applications across your own plants and production lines."
     :highlights="highlights"
-    social-proof-title="Over 36,000 users have trusted FlowFuse"
   >
     <HubSpotMeetings data-src="https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team?embed=true" />
   </MqlContactPage>

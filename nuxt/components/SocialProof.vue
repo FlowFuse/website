@@ -6,6 +6,18 @@
 // payload, avoiding a client/server hydration mismatch.
 const logos = useState('home-logos', () => useHomeLogos())
 
+const DEFAULT_EYEBROW = 'Over 36,000 users have trusted FlowFuse'
+
+// String to override the copy, `false` to hide it, omitted for the homepage default.
+// eyebrowBg: the homepage-only radial-gradient glow behind the eyebrow — off by default.
+const props = withDefaults(defineProps<{
+    eyebrow?: string | false
+    eyebrowBg?: boolean
+}>(), {
+    eyebrow: DEFAULT_EYEBROW,
+    eyebrowBg: false,
+})
+
 function altFromPath (path: string) {
     return path
         .replace('/images/home-logos/', '')
@@ -16,12 +28,19 @@ function altFromPath (path: string) {
 </script>
 
 <template>
-  <div v-if="logos?.length" class="social-proof-carousel">
-    <div class="mix-blend-luminosity opacity-70 saturate-0">
-      <img v-for="logo in logos" :key="logo" :src="logo" :alt="altFromPath(logo)" loading="lazy">
+  <div>
+    <div v-if="props.eyebrow" class="w-full text-center min-h-14 flex justify-center items-center mt-8" :class="{ 'bg-radial-indigo': props.eyebrowBg }">
+      <h2 class="text-gray-600 text-lg font-semibold">
+        {{ props.eyebrow }}
+      </h2>
     </div>
-    <div class="mix-blend-luminosity opacity-70 saturate-0" aria-hidden="true">
-      <img v-for="logo in logos" :key="`dup-${logo}`" :src="logo" :alt="altFromPath(logo)" loading="lazy">
+    <div v-if="logos?.length" class="social-proof-carousel">
+      <div class="mix-blend-luminosity opacity-70 saturate-0">
+        <img v-for="logo in logos" :key="logo" :src="logo" :alt="altFromPath(logo)" loading="lazy">
+      </div>
+      <div class="mix-blend-luminosity opacity-70 saturate-0" aria-hidden="true">
+        <img v-for="logo in logos" :key="`dup-${logo}`" :src="logo" :alt="altFromPath(logo)" loading="lazy">
+      </div>
     </div>
   </div>
 </template>

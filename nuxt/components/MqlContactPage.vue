@@ -9,7 +9,7 @@ withDefaults(defineProps<{
     subtitleIcon?: string
     description: string
     highlights?: string[]
-    socialProofTitle?: string
+    socialProofTitle?: string | false
     otherChannels?: Array<{
         title: string
         description: string
@@ -77,10 +77,7 @@ withDefaults(defineProps<{
       </div>
 
       <div class="order-3 md:col-start-1 md:col-span-2 md:row-start-3 min-w-0 border-t border-gray-200 pt-6">
-        <p v-if="socialProofTitle" class="text-center text-gray-500 font-medium mb-6">
-          {{ socialProofTitle }}
-        </p>
-        <SocialProof />
+        <SocialProof :eyebrow="socialProofTitle" />
       </div>
     </div>
   </div>
