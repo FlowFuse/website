@@ -2,7 +2,7 @@
 title: "Control Plans: Linking Quality Characteristics to Measurement Data"
 subtitle: "Closing the gap between documented control plan requirements and real-time production measurements"
 description: "Control plans define what to measure, how often, and how to react, but shop-floor equipment rarely knows it. Here's how to connect control plan characteristics to live measurement data."
-date: 2026-08-26
+date: 2026-08-28
 authors: ["sumit-shinde"]
 image: /blog/2026/08/images/control-plans.png
 tags:
@@ -29,11 +29,14 @@ tldr: "Control plans specify what to measure, how often, and how to react, but t
 
 A control plan requires a bore diameter check on every part, within a defined tolerance, with a reaction if it falls outside. The gauge records the measurement under its own point ID; the CMM uses another. Neither is directly linked to the control plan.
 
+<!--more-->
+
 That makes compliance a manual exercise: match measurements to control plan requirements, check inspection coverage, verify limits, and confirm reactions.
 
 The solution is to connect control plan characteristics to production measurements so each reading can be evaluated against the right requirement as it happens. That only works when the measurement data itself is trustworthy, including [calibration status](/blog/2026/07/calibration-management-dashboard/).
 
-::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration - sign up for FlowFuse" cta="sign-up"}::
+::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration - sign up for FlowFuse" cta="sign-up"}
+::
 
 ## What a control plan specifies
 
