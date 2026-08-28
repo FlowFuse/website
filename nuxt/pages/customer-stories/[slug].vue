@@ -101,11 +101,7 @@ useSchemaOrg([
 
     <div class="blog nohero w-full bg-gray-50 pb-24 pt-6">
       <div class="container m-auto flex flex-col items-stretch text-left max-lg:px-6 md:max-w-screen-lg">
-        <Breadcrumbs :items="breadcrumbItems" class="mb-3" />
-        <NuxtLink to="/customer-stories" class="group mb-5 inline-flex items-center gap-1 hover:no-underline md:mb-4">
-          <UIcon name="i-heroicons-chevron-left" />
-          <span class="group-hover:underline">Back to Customer Stories</span>
-        </NuxtLink>
+        <Breadcrumbs :items="breadcrumbItems" class="mb-5 md:mb-4" />
 
         <div class="ff-prose mb-6 flex flex-col-reverse border-b md:flex-row md:gap-8">
           <div class="flex-grow">
