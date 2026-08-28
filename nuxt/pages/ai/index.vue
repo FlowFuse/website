@@ -40,7 +40,7 @@ const FAQ = [
     },
     {
         question: 'Can I use my own AI agent with FlowFuse?',
-        answer: 'Yes. FlowFuse acts as an MCP server, so Microsoft Copilot, ChatGPT, Claude, Gemini or a local model can connect to it and work your platform. You add one address, sign in, and choose which teams the agent may act on and whether it has editing rights or read access only. Because the agent is yours, so is the model behind it.',
+        answer: 'Yes. FlowFuse acts as an MCP server, so Microsoft Copilot, ChatGPT, Claude or a local model can connect to it and work your platform. You add one address, sign in, and choose which teams the agent may act on and whether it has editing rights or read access only. Because the agent is yours, so is the model behind it.',
     },
     {
         question: 'How do you keep AI from making changes you did not approve?',
@@ -53,6 +53,9 @@ useSchemaOrg([
     ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
 ])
 
+// The Cloud address. Self-hosted platforms answer on their own domain, so the block
+// takes one (host-swap) rather than telling the reader in prose to edit what they
+// have just copied.
 const CODING_NOTE = 'Command-line and editor agents such as Claude Code, Cursor, Visual Studio Code and Gemini CLI connect to the same URL.'
 
 const GOVERNANCE = {
