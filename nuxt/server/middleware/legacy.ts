@@ -18,6 +18,11 @@ const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs
 // /free-consultation, /industries, /landing, /node-red, /partners, /platform,
 // /use-cases, /vs, /webinars
 
+// New pages should never grow that fallback set: nuxt/lib/legacy-pages.test.mjs fails
+// `npm test` if a PR adds a new .njk file under src/ that doesn't already exist on main,
+// regardless of which route it's under — so there's nothing to keep in sync with the
+// list above, it's informational only.
+
 export default defineEventHandler(async (event) => {
     if (process.env.NODE_ENV !== 'development') return
 
