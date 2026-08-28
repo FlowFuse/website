@@ -244,6 +244,8 @@ A test in the site's automated test suite catches this automatically: a pull req
 
 This only looks at `.njk` files, so it never affects the markdown and images you add day to day. New blog posts, webinars, blueprints, changelog entries, and customer stories are all `.md` files (plus their images), not `.njk`. Keep publishing those as normal.
 
+That also means a brand-new page built as a `.md` file reusing an existing 11ty layout (rather than a new `.njk`) will not fail this check. The rule above still applies to it: build it in Nuxt. The test is a safety net for the most common case, not a substitute for following the rule.
+
 If a page truly needs to ship on 11ty before its Nuxt equivalent exists, a member of the GitHub "admin" team can merge anyway via "Merge without waiting for requirements to be met".
 
 ## Pull Request Scope
