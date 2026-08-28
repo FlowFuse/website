@@ -30,10 +30,13 @@ The following steps are taken in order to cut a release for Node-RED Dashboard 2
 
 ## Publish to Node-RED Palette Manager
 
-Once the package has been updated on `npm`, you need to update the entry for Dashboard 2.0 in Node-RED Palette Manager too:
+As part of the GitHub Action that published the package to `npm` it should automatically poke `flows.nodered.org` to update the catalogue.json.
+If `npm` is being a little slow this may not find the very latest version you can manually check the version on the site.
 
-- Navigate to the ["Adding a node"](https://flows.nodered.org/add/node) section of the Node-RED Palette Manager
-- Enter `@flowfuse/node-red-dashboard` into the library name field
-- Click "Add Node"
+- Navigate to the ["@flowfuse/node-red-dashboard"](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) page.
+- If the version shown is not current then you need to be signed in with an account (it uses GitHub to sign in)
+- Once singed in, you should see the "check for update" link. Click it
+
+![Update action](/handbook/engineering/images/dashboard-2-flows-update.png)
 
 Within the next 25-30 minutes, the entry Node-RED's Palette Manager will live update for all Node-RED's worldwide.
