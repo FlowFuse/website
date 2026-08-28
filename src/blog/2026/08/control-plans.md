@@ -75,7 +75,8 @@ The control plan may require a failed part to be rejected, held, and reported, b
 
 Inspection frequency compounds all four. A control plan may require 100% inspection, but a measurement system just collects whatever gets recorded. The presence of data doesn't prove the required frequency was followed. Solving the four gaps above is what makes frequency verifiable in the first place: a mapped, contextualized measurement stream is what lets you confirm every required check actually happened.
 
-::cta-image{src="/blog/2026/08/images/control-plan-cta-2.png" alt="Not sure where your measurement data gaps are? Book a demo" cta="demo"}::
+::cta-image{src="/blog/2026/08/images/control-plan-cta-2.png" alt="Not sure where your measurement data gaps are? Book a demo" cta="demo"}
+::
 
 ## A practical example
 
