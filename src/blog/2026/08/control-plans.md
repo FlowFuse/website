@@ -33,7 +33,7 @@ That makes compliance a manual exercise: match measurements to control plan requ
 
 The solution is to connect control plan characteristics to production measurements so each reading can be evaluated against the right requirement as it happens. That only works when the measurement data itself is trustworthy, including [calibration status](/blog/2026/07/calibration-management-dashboard/).
 
-::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration - sign up for FlowFuse" cta="sign-up"}
+::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration - sign up for FlowFuse" cta="sign-up"}::
 
 ## What a control plan specifies
 
@@ -72,7 +72,7 @@ The control plan may require a failed part to be rejected, held, and reported, b
 
 Inspection frequency compounds all four. A control plan may require 100% inspection, but a measurement system just collects whatever gets recorded. The presence of data doesn't prove the required frequency was followed. Solving the four gaps above is what makes frequency verifiable in the first place: a mapped, contextualized measurement stream is what lets you confirm every required check actually happened.
 
-::cta-image{src="/blog/2026/08/images/control-plan-cta-2.png" alt="Not sure where your measurement data gaps are? Book a demo" cta="demo"}
+::cta-image{src="/blog/2026/08/images/control-plan-cta-2.png" alt="Not sure where your measurement data gaps are? Book a demo" cta="demo"}::
 
 ## A practical example
 
