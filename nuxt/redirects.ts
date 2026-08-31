@@ -142,5 +142,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/handbook/development/releases': { redirect: { to: '/handbook/engineering/releases/', statusCode: 301 } },
     '/handbook/development/releases/': { redirect: { to: '/handbook/engineering/releases/', statusCode: 301 } },
     '/handbook/peopleops/job-descriptions/dashboard-engineer/': { redirect: { to: '/handbook/peopleops/job-descriptions/', statusCode: 301 } },
+    '/roi-calculator/': { redirect: { to: '/pricing/roi-calculator/', statusCode: 301 } },
+    '/roi-calculator': { redirect: { to: '/pricing/roi-calculator/', statusCode: 301 } },
 
 }
