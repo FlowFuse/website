@@ -2,6 +2,7 @@
 title: Date & Time Columns for Tables
 description: FlowFuse Dashboard table columns can now display timestamps as locale-aware dates and times, with no function node or template needed.
 date: 2026-08-27 12:00:00
+release: "3.0"
 authors: ["noley-holland"]
 tags:
   - changelog
