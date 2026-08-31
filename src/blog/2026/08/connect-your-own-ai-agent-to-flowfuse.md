@@ -13,7 +13,7 @@ cta:
     type: demo
     title: Want to see this against your own setup?
     description: Walk through connecting your agent with our team, on your instances, and see what it can and cannot reach.
-tldr: "FlowFuse 3.0 acts as an MCP server, so the AI agent your company already approved can operate FlowFuse and build flows in your Node-RED instances. You add one address, sign in, and choose which teams the agent reaches and whether it gets editing rights. It builds on a canvas you are watching, it cannot delete anything, and you still deploy. For teams under approved-AI-only policy, this is the difference between no AI on the platform and all of it."
+tldr: "FlowFuse 3.0 acts as an MCP server, so the AI agent your company already approved can operate FlowFuse and build flows in your Node-RED instances. You add one address, sign in, and choose which teams the agent reaches and whether it gets editing rights. It manages the FlowFuse platform and builds flows on a Node-RED canvas you are watching, it cannot delete anything, and you remain in control of deploying your flows. For teams under approved-AI-only policy, this is the difference between no AI on the platform and all of it."
 meta:
   howto:
     name: "How Do I Connect an AI Agent to My Industrial Systems?"
