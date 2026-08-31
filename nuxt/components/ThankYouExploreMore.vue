@@ -87,8 +87,8 @@ const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
         <CtaCustom
           :label="webinarIsUpcoming ? 'Register Now' : 'Watch Webinar'"
           :href="webinar.path"
-          event="cta-webinar-followup"
-          :position="hubspotReference"
+          destination-key="latestWebinar"
+          position="webinar"
           :variant="downloadFollowUp ? 'primary' : 'primary-outlined'"
           class="mt-4 self-end justify-self-end"
         />

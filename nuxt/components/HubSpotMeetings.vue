@@ -43,9 +43,9 @@ onMounted(() => {
         30-minute session with our team.
       </p>
       <CtaCustom
-        label="Pick a time →"
-        href="https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team"
-        event="calendar_fallback_cta_clicked"
+        label="Pick a time"
+        icon="i-lucide-arrow-right"
+        destination-key="hubspotMeeting"
         variant="highlight"
         position="consent-fallback"
         class="mb-2"

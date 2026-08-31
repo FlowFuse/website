@@ -14,7 +14,7 @@ defineProps<{ error: { statusCode: number; statusMessage: string } }>()
         <!-- external (CtaCustom's default) forces a full page navigation — /
              is served by 11ty and a client-side Nuxt redirect would leave the
              page blank. -->
-        <CtaCustom label="Return to homepage" href="/" event="cta-error-homepage" variant="primary" position="error-404" :uppercase="false" class="mt-4" />
+        <CtaCustom label="Return to homepage" destination-key="homepage" variant="primary" position="hero" :uppercase="false" class="mt-4" />
       </div>
     </div>
   </NuxtLayout>

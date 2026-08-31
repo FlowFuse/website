@@ -167,7 +167,7 @@ function selectClient (id: string) {
           <CtaCustom
             :label="client.step2Label"
             :href="client.step2Url"
-            event="cta-ai-open-client"
+            destination-key="agentSetupClientOpen"
             :position="pos(client.id)"
             :target="client.step2Url.startsWith('http') ? '_blank' : undefined"
             variant="primary-outlined"
