@@ -169,6 +169,7 @@ function selectClient (id: string) {
             :href="client.step2Url"
             destination-key="agentSetupClientOpen"
             :position="pos(client.id)"
+            :external="client.step2Url.startsWith('http')"
             :target="client.step2Url.startsWith('http') ? '_blank' : undefined"
             variant="primary-outlined"
             class="w-full"

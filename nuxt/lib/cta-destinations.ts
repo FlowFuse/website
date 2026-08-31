@@ -1,5 +1,10 @@
 import site from '../../src/_data/site.json'
 
+// Shared by CtaCustom.vue and custom-cta-destinations.ts, both of which
+// compare hrefs for equality - a trailing slash shouldn't make two otherwise
+// identical URLs count as different destinations.
+export const normalizeHref = (href: string) => href.replace(/\/+$/, '')
+
 // Single source of truth for the five reserved CTA destinations' event name,
 // href, and fixed label - read by each Cta*.vue component (instead of each
 // one hardcoding its own copy of this) and by CtaCustom.vue, which uses the

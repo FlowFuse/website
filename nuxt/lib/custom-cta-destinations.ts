@@ -1,4 +1,4 @@
-import { CTA_DESTINATIONS } from './cta-destinations'
+import { CTA_DESTINATIONS, normalizeHref } from './cta-destinations'
 
 // Registry for one-off CTA destinations that aren't one of the five reserved
 // ones (see cta-destinations.ts) but still deserve one fixed PostHog event -
@@ -23,6 +23,14 @@ import { CTA_DESTINATIONS } from './cta-destinations'
 // dynamic (varies per instance, e.g. per webinar or per AI client) - for
 // those, only the event can be pinned here; the caller still supplies `href`
 // each time, same as before.
+// A note on migrated events, here and on agentSetupClientOpen below: only
+// the EVENT NAME is preserved from each destination's pre-CtaCustom
+// hand-written capture() call, so existing PostHog insights/dashboards
+// filtering by that name keep working. The property payload is not
+// preserved byte-for-byte - CtaButton always sends {position, variant,
+// plan?} now, which is a deliberate enrichment (hubspotMeeting's original
+// call sent no properties at all; agentSetupClientOpen's sent only
+// `position`), not an attempt at an identical payload shape.
 export const CUSTOM_CTA_DESTINATIONS = {
     hubspotMeeting: {
         href: 'https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team',
@@ -47,8 +55,9 @@ export const CUSTOM_CTA_DESTINATIONS = {
         event: 'cta-latest-webinar',
     },
     // href varies per AI client (Claude Desktop, Cursor, etc.) - only the
-    // event is fixed. Kept as the same name AgentSetupTabs.vue's tab-click
-    // tracking already used, for continuity with existing PostHog data.
+    // event is fixed. Kept as the same event name AgentSetupTabs.vue already
+    // used (see the payload note above - only the name matches, not the
+    // full property shape).
     agentSetupClientOpen: {
         event: 'cta-ai-open-client',
     },
@@ -68,17 +77,15 @@ export const CUSTOM_CTA_DESTINATIONS = {
 // would still catch it then, but only for a key that's actually used
 // somewhere, not the instant the bad entry is registered.
 //
-// Same normalization CtaCustom.vue uses for its own reserved-destination
-// check - without it, "/book-demo/" and "/book-demo" would count as
-// different URLs and slip past this check.
-const normalize = (href: string) => href.replace(/\/+$/, '')
-
+// Uses the same normalizeHref CtaCustom.vue uses for its own
+// reserved-destination check - without it, "/book-demo/" and "/book-demo"
+// would count as different URLs and slip past this check.
 const hrefOwners = new Map<string, string>(
-    Object.values(CTA_DESTINATIONS).map(dest => [normalize(dest.href), dest.component]),
+    Object.values(CTA_DESTINATIONS).map(dest => [normalizeHref(dest.href), dest.component]),
 )
 for (const [key, dest] of Object.entries(CUSTOM_CTA_DESTINATIONS)) {
     if (!('href' in dest) || !dest.href) continue
-    const normalizedHref = normalize(dest.href)
+    const normalizedHref = normalizeHref(dest.href)
     const owner = hrefOwners.get(normalizedHref)
     if (owner) {
         throw new Error(`custom-cta-destinations.ts: "${dest.href}" is registered under both "${owner}" and "${key}" - reuse "${owner}" instead of adding a second key for the same URL.`)

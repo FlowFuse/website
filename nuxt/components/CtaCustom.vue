@@ -29,7 +29,7 @@
 // descriptive error" convention as CtaImage.vue's invalid-cta check (see
 // CLAUDE.md).
 import CtaButton from './cta/CtaButton.vue'
-import { CTA_DESTINATIONS } from '../lib/cta-destinations'
+import { CTA_DESTINATIONS, normalizeHref } from '../lib/cta-destinations'
 import { CUSTOM_CTA_DESTINATIONS } from '../lib/custom-cta-destinations'
 
 const props = withDefaults(defineProps<{
@@ -61,23 +61,41 @@ const props = withDefaults(defineProps<{
     icon?: string
 }>(), { uppercase: undefined, external: true })
 
-const destination = CUSTOM_CTA_DESTINATIONS[props.destinationKey] as { href?: string, event: string } | undefined
-if (!destination) {
-    throw new Error(`CtaCustom destinationKey "${props.destinationKey}" isn't in lib/custom-cta-destinations.ts - add an entry there first.`)
-}
-if (destination.href && props.href && destination.href !== props.href) {
-    throw new Error(`CtaCustom destinationKey "${props.destinationKey}" already fixes its href to "${destination.href}" in lib/custom-cta-destinations.ts - don't also pass a conflicting href="${props.href}" prop.`)
-}
-if (!destination.href && !props.href) {
-    throw new Error(`CtaCustom destinationKey "${props.destinationKey}" has no fixed href in lib/custom-cta-destinations.ts, so an href prop is required here.`)
-}
-const HREF = destination.href ?? props.href!
-const EVENT = destination.event
+// A single definition of "was this actually provided" used everywhere below,
+// instead of relying on JS truthiness (which would treat an empty string the
+// same as "not passed" in an `&&` check, but as "passed" in a `??` fallback -
+// two different rules for the same question, in the same function).
+const isNonEmptyString = (value: unknown): value is string => typeof value === 'string' && value.length > 0
 
-const normalize = (href: string) => href.replace(/\/+$/, '')
-const collision = Object.values(CTA_DESTINATIONS).find(dest => normalize(dest.href) === normalize(HREF))
-if (collision) {
-    throw new Error(`CtaCustom cannot point at "${HREF}" - use <${collision.component}> instead, so PostHog keeps grouping this destination under one event name.`)
+// computed(), not a plain const: these depend on reactive props, so if a
+// parent ever changed `destinationKey` or `href` after mount, a plain const
+// captured once at setup() would silently go stale instead of updating.
+const destination = computed(() => {
+    const dest = CUSTOM_CTA_DESTINATIONS[props.destinationKey] as { href?: string, event: string } | undefined
+    if (!dest) {
+        throw new Error(`CtaCustom destinationKey "${props.destinationKey}" isn't in lib/custom-cta-destinations.ts - add an entry there first.`)
+    }
+    return dest
+})
+
+const HREF = computed(() => {
+    const fixedHref = destination.value.href
+    const hasFixedHref = isNonEmptyString(fixedHref)
+    const hasCallerHref = isNonEmptyString(props.href)
+    if (hasFixedHref && hasCallerHref && fixedHref !== props.href) {
+        throw new Error(`CtaCustom destinationKey "${props.destinationKey}" already fixes its href to "${fixedHref}" in lib/custom-cta-destinations.ts - don't also pass a conflicting href="${props.href}" prop.`)
+    }
+    if (!hasFixedHref && !hasCallerHref) {
+        throw new Error(`CtaCustom destinationKey "${props.destinationKey}" has no fixed href in lib/custom-cta-destinations.ts, so an href prop is required here.`)
+    }
+    return hasFixedHref ? fixedHref : props.href!
+})
+
+const EVENT = computed(() => destination.value.event)
+
+const collision = computed(() => Object.values(CTA_DESTINATIONS).find(dest => normalizeHref(dest.href) === normalizeHref(HREF.value)))
+if (collision.value) {
+    throw new Error(`CtaCustom cannot point at "${HREF.value}" - use <${collision.value.component}> instead, so PostHog keeps grouping this destination under one event name.`)
 }
 </script>
 
