@@ -59,6 +59,14 @@ sections:
         beta: true
         showOnPricing: false
         tiers: { edge: true, hub: true, fleet: true }
+      - id: third-party-agents
+        title: Connect Your Own AI Agent
+        description: "Point the AI agent your company already uses at FlowFuse, so it can query your teams and instances and build Node-RED applications, with you deciding which teams it reaches and whether it can make changes."
+        docsLink: /docs/user/expert/third-party-agents/
+        changelog:
+          - url: /changelog/2026/08/connect-your-own-ai-agent/
+            release: "3.0"
+        tiers: { edge: true, hub: true, fleet: true }
       - id: mcp-servers
         title: Agentic Operations
         description: "Expose your Node-RED flows as tools an AI agent can call directly, so agents can query the state of the factory or trigger actions without custom integration work."

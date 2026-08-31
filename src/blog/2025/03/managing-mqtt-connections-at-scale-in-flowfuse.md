@@ -16,6 +16,9 @@ FlowFuse makes it easy to deploy Node-RED flows at scale using DevOps pipelines 
 
 This article shows how to continue using FlowFuse’s one-click deployment while ensuring that remote instances in each stage of your pipeline connect to the desired MQTT broker without manual configuration.
 
+::cta-image{src="/blog/2025/03/images/managing-connections-scale-cta-1.png" alt="Try FlowFuse free and connect a thousand devices to your broker without editing a single config by hand" cta="sign-up"}
+::
+
 ## Goal and Prerequisites
 
 This article explains how to deploy Node-RED flows across different pipeline stages while ensuring each stage connects to its appropriate MQTT broker.

@@ -34,6 +34,9 @@ What separates industry leaders from the rest? They refuse to accept "normal" wa
 
 This guide shows you exactly how to build a real-time SPC system using FlowFuse. You'll create a live dashboard that tracks measurements and alerts operators the moment something goes wrong. No statistics degree needed, just practical steps you can implement today.
 
+::cta-image{src="/blog/2025/07/images/spc-cta-1.png" alt="Try FlowFuse free and build a real-time control chart from your own machine data" cta="sign-up"}
+::
+
 ## Why Traditional Quality Control Falls Short                   
 
 Most manufacturers still rely on end-of-line inspection. Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:
@@ -301,6 +304,9 @@ The following image demonstrates the advanced alerting system in action, detecti
 
 <video autoplay loop muted playsinline aria-label="SPC system detecting process drift in real-time, showing chart responding to simulated measurement changes and triggering alerts" width="400" height="227" preload="none"><source src="/blog/2025/07/images/simulated-drift-alert.webm" type="video/webm" /></video>
 _Real-time SPC monitoring detecting process drift and triggering appropriate alerts based on trend analysis_
+
+::cta-image{src="/blog/2025/07/images/spc-cta-2.png" alt="Talk to our team about deploying this to every line with one click, not copy-pasting flows by hand" cta="demo"}
+::
 
 ## Connecting to Real Equipment
 

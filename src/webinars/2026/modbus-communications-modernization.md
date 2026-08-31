@@ -7,44 +7,45 @@ image: /images/webinars/modbus-communications-modernization.jpg
 date: 2026-08-25
 time: 17:00 CET (11:00am ET)
 duration: 60
-video: 
+video: yad3KwBrQwI
 hosts: ["kristopher-sandoval", "mandeep-sidhu"]
 hubspot:
     formId: d3ab1705-0a83-4a28-8673-9bc3e2948033
     downloadFormId: 
 ---
 
-This session is going to pit ModBus against the modern data stack to settle where a 47-year-old protocol still belongs. You'll get an honest, practical map of where Modbus genuinely wins, where it quietly costs you, and how to free the data trapped in your legacy devices with FlowFuse.
+Modbus Communications is a 47-year-old protocol that still runs a huge share of the modern factory floor, and Mandeep Sidhu (Schneider Electric) and Kristopher Sandoval (FlowFuse) sat down to settle the question everyone asks about it: keep it, bridge it, or replace it? The recording is above, catch the full session to see how they answer it.
 
 <!--more-->
 
+## What This Modbus Communications Recording Covers
+
+- [The origin story](#why-modbus-communications-still-run-the-modern-factory-floor): how Modicon invented Modbus, gave it away royalty-free, and accidentally guaranteed its immortality.
+- [The honest scorecard](#honest-scorecard): where Modbus beats OPC UA and MQTT on simplicity and ubiquity, and where it loses.
+- [The keep, bridge, or replace decision framework](#decision-framework), and why bridging wins by default.
+- [A live demo](#live-demo) bridging Modbus registers into a unified namespace and dashboard with FlowFuse and Node-RED.
+- The live Q&A, where attendees brought their own Modbus-at-scale dilemmas.
+
 ## Why Modbus Communications Still Run the Modern Factory Floor
 
-If the world ended tomorrow, two things would persist - cockroaches and ModBus. It's the world's most stubborn manufacturing protocol - and there's a good chance it's powering a big chunk of your shopfloor (and secretly powering some innovative solutions and systems).
+If the world ended tomorrow, two things would persist: cockroaches and Modbus. It's the world's most stubborn manufacturing protocol, and there's a good chance it's powering a bigger chunk of your shop floor than you realize, and quietly running some surprising places too.
 
-Imagine inheriting a factory floor where half your devices speak a language older than the world wide web. A protocol from 1979, running on hardware that has outlived the companies that installed it, still faithfully moving the water and gas that keep a country running. It works — until you're asked to feed that data to the cloud, to an AI model, to a cross-functional team that needs real-time visibility now. Suddenly you're staring at register maps, wrestling with security and context, and being told by every vendor that the only path forward is to rip it all out. 
+In the recording, Mandeep traces Modbus Communications back to its 1968 origins at Bedford Associates and Schneider's Modicon platform, and shows how a 1979 connectivity protocol ended up becoming an open, royalty-free standard that never really left. It's a short watch, and it reframes the "isn't this too old?" question most engineers start with.
 
-## Modbus vs. OPC UA, MQTT, and Sparkplug: Settling the Protocol Debate
+## The Honest Scorecard: Modbus vs. OPC UA and MQTT {#honest-scorecard}
 
-Between the protocol that refuses to die and the "Modbus killers" that promised to replace it, a lot of good engineers get paralyzed — and their most valuable data stays stranded on the plant floor. In this webinar we will… settle it — live. 
+Kristopher and Mandeep put Modbus, OPC UA, and MQTT side by side and score them honestly, no protocol tribalism. Watch for the page-count comparison alone (spoiler: one spec is a lot longer than the other), it's a good gut check for how much complexity you actually need for the problem in front of you.
 
-Join Mandeep Sidhu and Kristopher Sandoval in this protocol thunderdome, taking a deep dive into ModBus - and its competitors (OPC UA, MQTT, and Sparkplug) to figure out where it works, where it doesn't, and what lessons you can take to your modern data solution.
+## Keep, Bridge, or Replace: The Decision Framework {#decision-framework}
 
-In this webinar Mandeep and Kristopher will dig into where Modbus wins outright, where it burns you, and why the honest answer is almost never "rip and replace." 
+This is the core of the session: a practical framework for deciding when to leave a Modbus device alone, when it's actually worth replacing, and why bridging is the default answer more often than not. If you've got a mixture of legacy devices and a growing list of systems that want their data, this is the part of the recording worth pausing and rewinding. It pairs well with our guide on [bridging Modbus to MQTT and a unified namespace](/blog/2024/12/publishing-modbus-data-to-uns/), which walks through the same pattern in more technical detail.
 
-## What This Modbus Communications Webinar Will Cover
+## Live Demo: Bridging Modbus Data with FlowFuse and Node-RED {#live-demo}
 
-- The origin story: how Modicon invented Modbus, gave it away royalty-free, and accidentally guaranteed its immortality.
-- How it works: a walk through the detailed and complicated mechanics of ModBus itself, and how you can bridge it to modern solutions.
-- The honest scorecard: where Modbus beats OPC UA and MQTT on simplicity and ubiquity — and where it loses on security, context, and discovery.
-- Modbus in the wild: what it actually looks like across manufacturing, water, gas, and utility infrastructure where downtime isn't an option - and how consumers still in Industry 3.0 leverage DataOps to transform legacy into potential.
-- Building the bridge: funneling legacy Modbus data into a unified namespace, cloud databases, and AI queries through FlowFuse — no rip-and-replace required.
-- Interactive Q&A Session: bring your own "should I keep Modbus or move on?" dilemma and put it to an honest debate.
+Around the halfway mark, Kristopher switches over to a live demo in FlowFuse and Node-RED: raw Modbus registers going in one end, and a named, typed, dashboarded data stream coming out the other. If you'd rather follow along with a written walkthrough afterward, our [Using Modbus with FlowFuse](/blog/2025/09/using-modbus-with-flowfuse/) guide covers the same setup step by step.
 
-## Live Demo: Bridging Modbus Data with FlowFuse and Node-RED
+Also worth a look once you're in the recording: the live Q&A, where attendees bring in real issues, from Modbus TCP connections that quietly go blank to how much visibility you can actually get into what's on the bus. If any of that sounds familiar, our posts on [Modbus polling best practices](/blog/2026/04/modbus-polling-best-practices/) and [diagnosing Modbus degradation](/blog/2026/04/diagnosing-modbus-degradation/) dig further into the same failure modes. And if you're still weighing Modbus against the alternatives, [why OPC UA isn't replacing Modbus yet](/blog/2026/03/why-opcua-is-not-replacing-modbus-yet/) and [Modbus TCP vs. Modbus RTU](/blog/2026/02/modbus-tcp-vs-modbus-rtu/) are good next reads, and the [Modbus protocol page](/node-red/protocol/modbus/) has the full Node-RED node documentation whenever you're ready to build.
 
-Expect a live look at Modbus data flowing through Node-RED via FlowFuse into a dashboard and a unified namespace — your 1979 device joining 2026 in real time.
+## Who This Session Is For
 
-## Who Should Attend
-
-This webinar is ideal for Controls Engineers, OT/IIoT Solutions Architects, and Plant Operations Managers who want to stop treating legacy protocols as a liability and start treating them as an asset — without drowning in custom integration code. Don't miss out on joining us live to watch the oldest argument in industrial automation play out fairly, and to leave with a practical path for turning the gift Modicon gave the world into the data that powers your next decade.
+This session is built for Controls Engineers, OT/IIoT Solutions Architects, and Plant Operations Managers who want to stop treating legacy protocols as a liability and start treating them as an asset, without drowning in custom integration code. Watch the recording above, and if a Modbus bridging project is already on your list, [talk to our team](/book-demo/) or [send us a message](/contact-us/) about your specific keep, bridge, or replace dilemma.

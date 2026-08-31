@@ -39,6 +39,9 @@ These aren't competing protocols. They're answers to incompatible constraints. M
 
 This article shows what each protocol actually demands, where each fails under real constraints, and why teams consistently choose wrong, not because they pick inferior technology, but because they never validated their deployment requirements.
 
+::cta-image{src="/blog/2026/02/images/mqtt-vs-coap-cta-1.png" alt="Try FlowFuse free and test MQTT and CoAP against real traffic on the same edge device" cta="sign-up"}
+::
+
 ## What Actually Separates These Protocols
 
 To choose between CoAP and MQTT, you need to understand what these protocols do and what architectural assumptions they force on your system.
@@ -122,6 +125,9 @@ MQTT provides another capability CoAP implementers often underestimate: stateful
 MQTT's persistent sessions enable offline message queuing. If a device disconnects, battery dies, network drops, enters a tunnel, messages published to its subscribed topics get queued by the broker and delivered when it reconnects. This is invaluable for mobile devices, intermittently connected sensors, and scenarios where guaranteed delivery matters more than real-time delivery. Examples include fleet management tracking vehicles, medical devices uploading telemetry, and remote monitoring in areas with poor connectivity.
 
 CoAP can implement message queuing, but it requires additional infrastructure, essentially building broker-like services for state management and persistence. At which point, you've rebuilt the pattern MQTT provides natively.
+
+::cta-image{src="/blog/2026/02/images/mqtt-vs-coap-cta-2.png" alt="Tell us your device's constraints and we'll help you pick the right protocol" cta="demo"}
+::
 
 ## Security: Choose Based on What You Can Measure
 
