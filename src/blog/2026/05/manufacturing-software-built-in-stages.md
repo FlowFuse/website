@@ -1,4 +1,5 @@
 ---
+metaTitle: "All-or-Nothing Software Is Killing Your Agility"
 title: "All-or-Nothing Manufacturing Software Is Killing Your Agility"
 subtitle: "Deploy the capabilities you need today. Build the rest tomorrow."
 description: "Stop waiting years for manufacturing software projects to deliver value. See how FlowFuse enables composable applications."

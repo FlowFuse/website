@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.15: Node Collections & Schemas"
 title: "FlowFuse 2.15: Personal Node Collections, Smart Schema Suggestions and more control in DevOps Pipelines!"
 subtitle: Start building out your own collection of private nodes and Javascript libraries for Node-RED with our new Custom Node catalogues
 description: Start building out your own collection of private nodes and Javascript libraries for Node-RED with our new Custom Node catalogues
@@ -18,6 +19,9 @@ Our three focal points for the latest release of FlowFuse have been:
 - **DevOps:** We've improved Pipelines now to let you deploy to Device Groups in the middle of a Pipeline, this is just the first step in a wider set of improvements to come for DevOps Pipelines.
 
 <!--more-->
+
+::product-update-note
+::
 
 ## Custom Node Catalogues
 

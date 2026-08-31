@@ -1,4 +1,4 @@
-@layer vendor, theme, base, components, utilities, overrides;
+@layer vendor, theme, base, components, utilities;
 
 @config "../../tailwind.config.js";
 @import "tailwindcss";
@@ -85,19 +85,25 @@
 @source not "../../nuxt/.netlify/**";
 @source "../../nuxt/**";
 
-@layer overrides {
-    .prose {
-        --tw-prose-body: var(--color-gray-700);
-        --tw-prose-headings: var(--color-gray-600);
-        --tw-prose-links: var(--color-blue-600);
-        --tw-prose-code: var(--color-red-700);
-        --tw-prose-bold: var(--color-gray-500);
+.prose {
+    --tw-prose-body: var(--color-gray-700);
+    --tw-prose-headings: var(--color-gray-600);
+    --tw-prose-links: var(--color-blue-600);
+    --tw-prose-code: var(--color-red-700);
+    --tw-prose-bold: var(--color-gray-500);
+}
+.prose img { max-width: 100%; }
+
+@layer components {
+    .prose:not(.prose-natural-size-images) img {
+        width: 100%;
+        height: auto;
     }
-    .prose img { max-width: 100%; }
 }
 
 @import "./style.page.css";
 @import "./style.nohero.css";
+@import "./style.dashboard.css";
 @import "./style.handbook.css";
 @import "./style.catalog.css";
 @import "./style.eleventy.nav.css";
@@ -158,16 +164,27 @@ html, body {
     background-color: white;
 }
 
-*{
-    --tdur: 0.15s;
-    transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
-    -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+/* Layered (not a bare unlayered `*` rule) so Tailwind utilities — which compile
+   into @layer utilities, later in the `vendor, theme, base, components, utilities`
+   order declared above — can override transition-property/duration on
+   individual elements through normal cascade rules, instead of this always
+   winning outright regardless of specificity. */
+@layer base {
+    *{
+        --tdur: 0.15s;
+        transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+        -webkit-transition: var(--tdur) background-color, var(--tdur) color, var(--tdur) fill, var(--tdur) stroke;
+    }
 }
 
 /*
     Standard FlowFuse Sizings
+
+    In `components`, not `base` — beats @nuxt/ui's preflight reset (also in
+    `base`) since a later layer always wins, while still losing to explicit
+    size classes (e.g. `text-4xl`) in `utilities`.
 */
-@layer base {
+@layer components {
     h1 {
         font-size: 2.75rem;
         line-height: 3.1rem;
@@ -468,6 +485,78 @@ dl.message-properties > dd {
 
 .ff-command__copy--done {
     @apply border-green-500 text-green-400;
+}
+
+/* Stacked variant: the address block on its own, with the copy control below it as
+   a full-width primary button rather than a chip inside the dark block.
+
+   Why it exists: side by side, the inline button plus the block's own padding took
+   106px of the AI page's 293px column, leaving 186px for an address that needs
+   236px at 14px - so it broke across three lines. Shrinking the type was the wrong
+   trade for something you are about to paste. Below the block the address gets the
+   full column and stays on one line, and the button becomes the same object as the
+   CTAs in the columns beside it instead of a third kind of control.
+
+   Defined after the base rules rather than with higher specificity, so the two
+   stay legible as "default" and "the variant that overrides it". */
+.ff-command--stacked {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0;
+    background-color: transparent;
+}
+.ff-command--stacked .ff-command__text {
+    display: block;
+    width: 100%;
+    background-color: #0e1114;
+    white-space: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    @apply rounded-lg p-4;
+}
+
+/* Self-hosted address control. Under the block, not inside it: the block is what you
+   copy, and this changes what that is. Closed by default as a single line of link
+   text, because most readers are on Cloud and the address is already right for them. */
+.ff-command__host {
+    margin-bottom: 0.5rem;
+}
+
+.ff-command__host-toggle,
+.ff-command__host-reset {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--color-indigo-600);
+}
+
+.ff-command__host-toggle:hover,
+.ff-command__host-reset:hover {
+    color: var(--color-indigo-800);
+}
+
+.ff-command__host-field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ff-command__host-input {
+    flex: 1 1 12rem;
+    min-width: 0;
+    font-size: 0.875rem;
+    color: var(--color-gray-900);
+    border: 1px solid var(--color-gray-300);
+    @apply rounded px-3 py-2;
+}
+
+.ff-command__host-input:focus {
+    outline: none;
+    border-color: var(--color-indigo-500);
+    box-shadow: 0 0 0 1px var(--color-indigo-500);
 }
 
 /*
@@ -1807,15 +1896,11 @@ h4:hover .header-anchor::before {
     }
 
     .ff-certify-list > .ff-item {
-        @apply grid grid-cols-[1fr,50px,1fr] sm:grid-cols-[24px,1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr),60px,minmax(18px,1fr)];
-    }
-
-    .ff-certify-list > .ff-item:first-of-type {
-        @apply sm:grid-rows-[36px,minmax(18px,1fr)];
+        @apply grid grid-cols-[1fr_50px_1fr] sm:grid-cols-[24px_1fr] sm:grid-flow-col md:px-10 sm:gap-x-6 sm:grid-rows-[minmax(18px,1fr)_60px_minmax(18px,1fr)];
     }
 
     .ff-certified {
-        @apply sm:grid-cols-[24px,1fr,86px];
+        @apply sm:grid-cols-[24px_1fr_86px];
     }
 
     .ff-line-container {
@@ -1948,15 +2033,21 @@ h4:hover .header-anchor::before {
         animation: 60s slide infinite linear;
     }
 
+    /* Descendant selector so sizing reaches <img> inside 11ty's <picture> wrapper too. */
     .social-proof-carousel div img,
     .social-proof-carousel div picture {
         flex-shrink: 0;
         max-height: 60px;
         width: auto;
         display: inline-block;
-        @apply mx-6;
         overflow-clip-margin: content-box;
         overflow: clip;
+    }
+
+    /* Child combinator so this only applies once per logo (descendant would double it: picture + nested img). */
+    .social-proof-carousel div > img,
+    .social-proof-carousel div > picture {
+        @apply mx-12;
     }
 }
 
@@ -2243,6 +2334,11 @@ lite-youtube {
     background-size: cover;
     background-position: center;
     border-radius: 0.75rem;
+    /* Overrides fixed inline width/height some posts embed this with, so it stays responsive. */
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
 }
 
 lite-youtube::before {
@@ -3199,24 +3295,6 @@ lite-youtube::before {
     height: 1.25rem;
 }
 
-/* AI page ("/ai/") capabilities: sticky-header, scrolling-items layout.
-   The left group header pins while that group's icon-marked blocks scroll on
-   the right, then the next group's header takes over. These rules live in
-   the UNLAYERED block on purpose: the Tailwind `utilities` layer is
-   outranked by unlayered top-level rules, so the load-bearing sticky
-   positioning is placed here to avoid being silently overridden. */
-@media (min-width: 768px) {
-    .ff-cap-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        /* clear the sticky site header (roughly 75px) with breathing room */
-        top: 100px;
-        /* take natural height inside the taller grid row so there is travel
-           room for the pin; without this the column stretches full height */
-        align-self: start;
-    }
-}
-
 /* Capability marker icon: the item's own icon stands in for the old number
    chip, so the blocks read as a parallel list rather than an ordered sequence.
    Sized slot, indigo to match the brand accent, aligned to the block top. */
@@ -3229,9 +3307,278 @@ lite-youtube::before {
     height: 2.5rem;
     color: var(--color-indigo-600);
 }
+/* "Differs by agent" clause: sits under a capability whose behaviour is not identical
+   on the FlowFuse Expert path and the bring-your-own-agent path. Quieter than the body
+   copy, and set off by a rule, so it reads as a qualification rather than a feature. */
+.ff-cap-differs {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    padding-left: 0.875rem;
+    border-left: 2px solid var(--color-indigo-200);
+}
+
+/* AgentSetupTabs: the agent picker and its three setup steps. Unlayered on purpose.
+   The component renders inside .prose on the changelog entry and the third-party-agents
+   docs page as well as standalone on /ai. .prose p still forces the step text's font
+   size via Tailwind Typography's own (unlayered) rules, which outrank Tailwind's
+   @layer utilities however specific the utility is — so the component's text size
+   still can't live in a utility class on the element. (.prose img's width:100% used
+   to be unlayered too and beat `h-4`, blowing the tab marks up to full column width;
+   it now lives in @layer components — see .prose above — so a utility class on an
+   image here would win. The component doesn't rely on that, but don't assume image
+   sizing needs the same unlayered treatment as text sizing going forward.)
+   Keep visual values here, not in the template.
+
+   Sizing is driven by the component's own width via @container, not by the viewport.
+   A viewport md: breakpoint gave three 186px columns inside a 704px prose column,
+   because the viewport was wide while the column was not. */
+.ff-agent-card {
+    container-type: inline-size;
+}
+/* In prose the card is a block between paragraphs and needs air on both sides. Left
+   off the base rule so /ai keeps setting its own top margin, where the card is
+   followed by the docs-pointer card rather than by body copy. */
+.prose .ff-agent-card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Agent tab: a segmented control on the tinted rail, not a row of CTA buttons.
+   The brand's solid indigo marks the active one; the rest stay quiet until hovered. */
+.ff-agent-tabs {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    /* Wraps rather than scrolling. In a prose column the strip is too narrow to show
+       five agents on one line, and a sideways scroller hides the last of them off the
+       edge with nothing to say so. */
+    flex-wrap: wrap;
+}
+.ff-agent-tab {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: var(--color-gray-600);
+    transition: background-color 0.15s, color 0.15s;
+}
+.ff-agent-tab:hover {
+    background-color: #fff;
+    color: var(--color-gray-900);
+}
+.ff-agent-tab--active,
+.ff-agent-tab--active:hover {
+    background-color: var(--color-indigo-600);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+.ff-agent-tab:focus {
+    outline: none;
+}
+/* The ring has to clear the pill on all four sides. */
+.ff-agent-tab:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 2px;
+}
+/* The brand marks are <img>, so they keep their own colours; our own glyphs are
+   masked spans that inherit currentColor and turn white with the label. */
+.ff-agent-tab img {
+    height: 1rem;
+    width: auto;
+    flex: none;
+    margin: 0;
+    border-radius: 0;
+}
+.ff-agent-tab__glyph {
+    height: 1rem;
+    width: 1rem;
+    flex: none;
+}
+
+.ff-agent-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+.ff-agent-step {
+    display: flex;
+    flex-direction: column;
+}
+.ff-agent-step__num {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+    color: var(--color-indigo-600);
+}
+.ff-agent-step__title {
+    margin: 0.5rem 0 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: var(--color-gray-900);
+}
+.ff-agent-step__body {
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    color: var(--color-gray-600);
+}
+/* mt-auto: pins every CTA to the bottom so the three line up however unevenly the
+   bodies above them wrap. */
+.ff-agent-step__cta {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    /* Stacked, a step is as wide as the whole prose column, and a control stretched
+       across that reads as a banner rather than something to click. So the CTAs get a
+       fixed width and sit left: still one width for all three, so the column reads as
+       one control repeated, but nothing like the full measure. 18rem is set by the
+       widest thing one has to hold, the connector URL in the copy block at ~274px. */
+    align-self: flex-start;
+    width: 18rem;
+    max-width: 100%;
+}
+.ff-agent-step__cta > * {
+    width: 100%;
+}
+.ff-agent-step__cta a {
+    text-decoration: none;
+}
+
+/* Three across only once the component itself is wide enough for it. 60rem is set by
+   the widest thing a column has to hold without clipping: the connector URL in the
+   copy block, ~270px of mono text plus its padding, times three, plus the gaps and
+   the panel padding. Below that the steps stack, which is what the changelog entry
+   and the docs page get in their ~700px prose column. At 44rem the docs page took
+   three 190px columns and cut the URL off mid-domain. */
+@container (min-width: 60rem) {
+    .ff-agent-panel {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2.5rem;
+        padding: 2rem;
+    }
+    /* Three across, the columns are narrow enough that filling them is right. */
+    .ff-agent-step__cta {
+        align-self: stretch;
+        width: auto;
+    }
+}
+
+/* The three step CTAs are three different elements - CtaSignUp's UButton, an
+   <a class="ff-btn"> and the copy <button> - so their intrinsic heights land 4px
+   apart (36 / 38 / 40) even with identical padding and font size, because a
+   <button>, an <a> and a UButton each resolve line-height differently. Pin the two
+   ff-btn ones to the UButton's 40px so the row reads as one control repeated
+   rather than three lookalikes. Width comes from w-full on each, so all three fill
+   their column and line up. */
+.ff-agent-panel .ff-btn {
+    height: 40px;
+    align-items: center;
+    line-height: 1.5;
+    /* Vertical padding would push the outlined variant to 42px, since its 1px
+       borders sit outside the padding box. The flex centering above does the job
+       the padding was doing. */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Media well: the frame around each capability's schematic. */
+.ff-cap-well {
+    /* Matches the diagram's 720x150 viewBox, so the frame hugs the drawing instead
+       of leaving a 16:9 box mostly empty. Full column width - the drawing is wide
+       enough to fill it, so the width costs nothing in height. */
+    aspect-ratio: 720 / 150;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-indigo-100);
+    border-radius: 0.5rem;
+}
+
 .ff-cap-icon svg {
     width: 1.875rem;
     height: 1.875rem;
+}
+
+/* .ff-blue-card bakes mt-6 into its @apply, which every other user of it wants but
+   this page does not: here the section already owns the vertical rhythm, so that
+   24px landed on top of the section padding and put the governance card 152px below
+   the connector while it sat 64px above the section after it - lopsided, and wider
+   than the 128px every other section boundary uses.
+
+   Unlayered and scoped rather than an mt-0 utility on the element: .ff-blue-card is
+   itself unlayered, and Tailwind's utilities layer is outranked by unlayered rules,
+   so the utility would silently lose. */
+.ff-ai-governance .ff-blue-card {
+    margin-top: 0;
+}
+
+/* Capability schematics (AiCapabilityDiagram): a neutral card for the parts that
+   are yours, an accent card for the FlowFuse piece, a static arrow for direction.
+   The SVG's 720x150 viewBox fills the well, so nothing is scaled up.
+
+   Colour is set once per column on the group (.is-accent) rather than per element,
+   so a card, its glyph and its label cannot end up in different states. */
+.ff-aidiag {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+}
+.ff-aidiag__card {
+    fill: var(--color-white);
+    stroke: var(--color-indigo-100);
+    stroke-width: 1.25;
+}
+.ff-aidiag__glyph {
+    fill: none;
+    stroke: var(--color-gray-400);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* 12 in a 720-wide viewBox that renders at ~800: about 13px on screen, so a
+   diagram label sits below the 16px body copy rather than competing with it. */
+.ff-aidiag__label {
+    font-size: 12px;
+    fill: var(--color-gray-600);
+}
+
+/* The FlowFuse column: filled, brand-bordered, and its glyph and label lift with
+   it, so the governed piece is what the eye lands on. */
+.ff-aidiag .is-accent .ff-aidiag__card {
+    fill: var(--color-indigo-50);
+    stroke: var(--color-indigo-600);
+}
+.ff-aidiag .is-accent .ff-aidiag__glyph {
+    stroke: var(--color-indigo-600);
+    stroke-width: 1.7;
+}
+.ff-aidiag .is-accent .ff-aidiag__label {
+    fill: var(--color-indigo-800);
+    font-weight: 500;
+}
+
+/* Static connector. Eleven of these scroll past on one page, so direction is
+   carried by an arrowhead rather than by animation - travelling dots at that count
+   read as eleven things moving at the reader. */
+.ff-aidiag__flow {
+    stroke: var(--color-indigo-300);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.ff-aidiag__arrowhead {
+    fill: var(--color-indigo-300);
 }
 
 /* "Coming soon" pill: shape and type only. The amber colour comes from utility

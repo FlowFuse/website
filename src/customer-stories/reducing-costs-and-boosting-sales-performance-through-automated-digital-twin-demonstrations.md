@@ -1,4 +1,5 @@
 ---
+metaTitle: "Boosting Sales with Digital Twin Demonstrations"
 title: Reducing Costs and Boosting Sales Performance Through Automated Digital Twin Demonstrations
 description: Neoception uses FlowFuse to automate demos and enable self-service customer trials, reducing costs, accelerating sales cycles, and improving conversion rates.
 image: /images/stories/neoception.png
@@ -47,7 +48,7 @@ The breakthrough came with easy to duplicate, FlowFuse-powered companion applica
 
 - **Data Management Interface:** Customers can manually enter data through dashboard forms or download CSV templates, mass-populate them with thousands of  datasets, and upload them back to the system
 - **File Management System:** Integration with Azure Blob Storage allows customers to upload, browse, download, and manage files directly through the FlowFuse dashboard
-- **Real-time Data Processing:** All customer data is automatically processed into SQL databases and connected to Neoception's digital twin software as structured data models
+- **Real-time Data Processing:** All customer data is automatically processed into [SQL databases](/use-cases/data-integration/) and connected to Neoception's digital twin software as structured data models
 - **Dynamic Visualization:** Changes are immediately reflected in the digital twin representations
 
 ### Key Results
@@ -74,10 +75,10 @@ The breakthrough came with easy to duplicate, FlowFuse-powered companion applica
 
 The solution architecture includes:
 - **Multi-Instance Setup:** Separate test and production FlowFuse instances for static demonstrations and live customer trials
-- **Data Processing Pipeline:** Automated CSV parsing, data validation, and SQL database integration
+- **Data Processing Pipeline:** Automated CSV parsing, [data validation](/blog/2025/06/structuring-storing-data-mes-integration/), and SQL database integration
 - **Cloud Storage Integration:** Direct Azure Blob Storage connectivity for file management and retrieval
 - **Dynamic UI Generation:** Automatically generated dashboard forms and tables based on customer data structures
 - **Real-time Synchronization:** Live connection between FlowFuse data processing and Neoception's digital twin software
 
 ### Looking Forward
-Neoception continues to expand their FlowFuse implementation, exploring additional data source integrations and enhanced customer self-service capabilities to further streamline their sales process and customer onboarding experience.
+Neoception continues to expand their FlowFuse implementation, exploring additional data source integrations and enhanced customer self-service capabilities to further streamline their sales process and customer onboarding experience. That same lean-team-at-scale approach shows up elsewhere too: [Walter scaled its industrial IoT platform from 1 to 130+ instances with an unchanged IT team](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/), and [PowerWorkplace deploys building management solutions with a smaller headcount using FlowFuse](/customer-stories/node-red-building-management/).

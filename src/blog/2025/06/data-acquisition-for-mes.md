@@ -1,4 +1,5 @@
 ---
+metaTitle: "MES Data Acquisition: Unlock Hidden Data"
 title: "MES Data Acquisition: How to Unlock Your Factory’s Hidden Data"
 subtitle: Breaking Down Data Silos to Empower Your MES
 description: Learn how to effectively acquire and integrate operational data from your factory floor for MES using FlowFuse.

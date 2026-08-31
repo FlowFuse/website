@@ -134,6 +134,9 @@ To make it even easier to create and customize cron patterns, the cron-plus node
 <video autoplay loop muted playsinline aria-label="Video showing the easy builder feature" width="800" height="795" preload="none"><source src="/blog/2025/05/images/easy-builder.webm" type="video/webm" /></video>
 _Video showing the easy builder feature_
 
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
+
 ### Solar Event Schedules
 
 Solar event-based triggers are a great feature in cron-plus for automating tasks based on sunlight events like sunrise, sunset, dawn, and dusk. You can fine-tune your triggers with offsets, like triggering an action 30 minutes after sunset.

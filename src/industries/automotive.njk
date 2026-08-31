@@ -172,8 +172,8 @@ cta:
             </div>
         </div>
         <div class="max-w-screen-lg mx-auto mt-16 text-center">
-            <p class="text-gray-500 text-lg font-semibold">{{ hero.trustedByText }}</p>
             <div class="mx-auto text-center -mt-0.5 -mb-10">
+                {% set socialProofEyebrow = hero.trustedByText %}
                 {% include "social-proof.njk" %}
             </div>
         </div>

@@ -1,11 +1,9 @@
 <script setup lang="ts">
 // Ported from src/platform/features.njk (11ty). Cta* components enforce
 // fixed copy/destinations (see CLAUDE.md), so the old custom-copy "Request a
-// Demo" buttons become <CtaBookDemo>; "View Pricing" isn't one of the four
-// unified destinations, so it keeps a plain ff-btn link, same precedent as
-// BlogPostCta.vue's pricing fallback.
+// Demo" and "View Pricing" buttons become <CtaBookDemo>/<CtaPricing>.
 useSeoMeta({
-    title: 'FlowFuse Features',
+    title: 'Features',
     description: 'FlowFuse provides the features companies require to reliably deliver industrial applications to devices and cloud in a collaborative, secure manner.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',
@@ -37,24 +35,6 @@ const TIERS = [
         description: 'Push flows, ship updates, and roll back remotely across thousands of distributed devices, without waiting on a firmware release. Built for hardware OEMs, partners, and asset operators.',
         idealFit: "Ideal fit if you're dealing with: distributed devices, remote sites, sensors and telemetry at scale, or shipping Node-RED inside your own product.",
         image: { src: '/images/product/fleet.jpg', alt: 'FlowFuse Fleet: device fleet management console' },
-    },
-]
-
-const DIFFERENTIATORS = [
-    {
-        heading: 'Vendor-Free Open Source',
-        description: 'Every factory is different, so why deploy the same solution as everyone else? Build your way with <a class="text-indigo-600 hover:underline" href="/blueprints/">ready-made blueprints</a>, your own app store, or anything in between — we never dictate your tools.',
-        icon: 'i-lucide-puzzle',
-    },
-    {
-        heading: 'Flexible and Secure',
-        description: 'From whole-factory rollouts to last-mile fixes across any industry. Build your solution, then secure it with <a class="text-indigo-600 hover:underline" href="/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/">granular RBAC</a>, auditing, <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">version control</a>, and traceability.',
-        icon: 'i-lucide-shield-check',
-    },
-    {
-        heading: 'Seamless Collaboration',
-        description: 'OT teams prototype and deploy fast while IT keeps the governance, security, and auditability they need — no trade-offs.',
-        icon: 'i-lucide-handshake',
     },
 ]
 
@@ -119,12 +99,7 @@ onUnmounted(() => {
               <p class="mt-6 text-lg max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
               <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
                 <CtaBookDemo variant="highlight" position="hero" />
-                <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'hero' })">
-                  <span class="flex items-center justify-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800">
-                    <span>VIEW PRICING</span>
-                    <IconsArrowRightIcon class="w-5 h-5" />
-                  </span>
-                </a>
+                <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
               </div>
             </div>
             <div class="w-full">
@@ -140,17 +115,7 @@ onUnmounted(() => {
           <h2 class="mb-10 max-md:text-center">
             The needs of modern industry requires <span class="text-indigo-600">modern solutions</span>
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div
-              v-for="diff in DIFFERENTIATORS"
-              :key="diff.heading"
-              class="rounded-lg bg-gradient-to-br from-indigo-50/50 to-red-50/50 p-6 pt-8 flex flex-col gap-4 text-center md:text-left"
-            >
-              <Icon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
-              <h3 class="text-xl font-semibold text-indigo-600">{{ diff.heading }}</h3>
-              <p class="mb-0" v-html="diff.description" />
-            </div>
-          </div>
+          <DifferentiatorCards class="mb-16" />
 
           <!-- Tier scrollytelling -->
           <div class="max-w-screen-lg mx-auto pt-8 pb-20">
@@ -219,12 +184,7 @@ onUnmounted(() => {
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="get-started" />
-            <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'get-started' })">
-              <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
-              <span>VIEW PRICING</span>
-                <IconsArrowRightIcon class="w-5 h-5" />
-              </span>
-            </a>
+            <CtaPricing variant="ghost" color="white" position="get-started" icon="i-lucide-arrow-right" />
           </div>
         </div>
       </div>

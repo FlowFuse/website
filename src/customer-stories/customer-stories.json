@@ -4,5 +4,6 @@
     ],
     "layout": "layouts/story.njk",
     "nav": "customer-stories",
-    "searchTitle": "Customer Stories"
+    "searchTitle": "Customer Stories",
+    "permalink": false
 }

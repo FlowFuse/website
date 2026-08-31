@@ -2,6 +2,7 @@
 title: Usability improvements to Device Management
 description: Explore enhanced Device Management with application-level device association for simplified Node-RED editing on edge devices, plus new snapshot creation for standalone devices.
 date: 2023-09-28 12:00:02.0
+release: "1.12"
 authors: ["marian-demme"]
 tags:
     - changelog

@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse & HiveMQ: Building a Unified Namespace"
 title: "FlowFuse & HiveMQ: Powering the Core Components of a Unified Namespace"
 meta:
     description: Watch this webinar to learn how to use FlowFuse (Node-RED) and HiveMQ (MQTT) platforms to build a Unified Namespace (UNS) that integrates enterprise and control domain data for improved production scheduling and machine performance monitoring.

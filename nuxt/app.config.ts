@@ -10,5 +10,10 @@ export default defineAppConfig({
                 base: 'uppercase font-semibold no-underline',
             },
         },
+        navigationMenu: {
+            slots: {
+                label: 'text-[color:var(--ui-primary)] pr-4 pt-4 pb-2',
+            },
+        },
     },
 })

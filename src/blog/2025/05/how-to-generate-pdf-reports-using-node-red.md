@@ -1,4 +1,5 @@
 ---
+metaTitle: "Generate PDF Reports Using Node-RED"
 title: "How to Generate PDF Reports Using Node-RED in FlowFuse (2026)"
 subtitle: Learn how to automate the generation of dynamic PDF reports within Node-RED and FlowFuse.
 description: "Discover how to create automated PDF reports in Node-RED with FlowFuse, from setup to generating reports with dynamic data."
@@ -114,6 +115,9 @@ When working with this node, you can use various attributes to customize the con
 For additional attributes and information, refer to the [pdfmake documentation](https://pdfmake.github.io/docs/0.1/document-definition-object/), as pdfbuilder-node uses this library to generate PDFs.
 
 Here’s a simple example of how you can use these attributes to create a basic PDF:
+
+::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
+::
 
 ```json
 {

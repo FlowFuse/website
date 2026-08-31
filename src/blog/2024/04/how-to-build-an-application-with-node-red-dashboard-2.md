@@ -1,4 +1,5 @@
 ---
+metaTitle: "Build An Application With Node-RED Dashboard 2.0"
 title: "How to Build An Application With Node-RED Dashboard 2.0 (2026)"
 subtitle: A step-by-step guide to building a personalized, secure, and fully functional application with Dashboard 2.0.
 description: "Learn to build custom applications effortlessly with Node-RED Dashboard 2.0 in this step-by-step, secure application guide."
@@ -71,6 +72,9 @@ In this guide, we'll build a Todo application to guide you through the features 
 <!--more-->
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) to install and get things started.
+
+::cta-image{src="/blog/2024/04/images/build-app-cta-1.png" alt="Get a free FlowFuse instance and follow every step of this tutorial with your own data" cta="sign-up"}
+::
 
 ## Installing Flowfuse user addon
 

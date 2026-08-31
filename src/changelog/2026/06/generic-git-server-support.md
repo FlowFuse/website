@@ -2,6 +2,7 @@
 title: Connect Pipelines to Any Git Server
 description: DevOps Pipeline Git stages now push and pull snapshots to any HTTPS Git server, GitLab, Bitbucket, Gitea, or self-hosted, including servers behind a private certificate authority.
 date: 2026-06-29 12:00:00
+release: "2.32"
 authors: ['noley-holland']
 tags:
   - changelog

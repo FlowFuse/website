@@ -1,4 +1,5 @@
 ---
+metaTitle: "OPC UA Tutorial: Connect Industrial Equipment"
 title: "OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment"
 subtitle: "A practical guide to accessing industrial data through OPC UA server gateways"
 description: "Connect Node-RED to industrial PLCs step-by-step: configure Kepware endpoints and read/write Siemens S7 tags in this free guide."

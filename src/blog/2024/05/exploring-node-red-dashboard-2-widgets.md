@@ -54,6 +54,9 @@ The **ui-form** widget emits a payload object with key-value pairs of form eleme
 
 1. Drag a **function** node onto the canvas and add the following code. This will store the submission in the `income` global context variable, and then modify `msg.payload` to pass on a notification to any further connected nodes.
 
+::cta-image{src="/images/cta/wenco-book-demo.png" alt="Wenco deploys new dashboard pages in days with FlowFuse - book a demo" cta="demo"}
+::
+
 ```javascript
 // Retrieve the existing 'income' array from the global context, or initialize it as an empty array if it doesn't exist
 let income = global.get('income') || [];

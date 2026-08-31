@@ -4,10 +4,9 @@ const props = defineProps<{
     cta?: { type?: string, title?: string, description?: string } | null
 }>()
 
-// 'sign-up' / 'demo' / 'contact' now render one of the unified Cta* components
-// (fixed copy/href/event) instead of a local buttonText/buttonUrl pair, so the
-// blog CTA can't drift from the rest of the site's copy. 'pricing' isn't one
-// of the four unified destinations, so it keeps its own link.
+// All four types now render one of the unified Cta* components (fixed
+// copy/href/event) instead of a local buttonText/buttonUrl pair, so the blog
+// CTA can't drift from the rest of the site's copy.
 const CTA_VARIANTS: Record<string, { title: string, description: string }> = {
     'sign-up': {
         title: 'Start building with your own industrial data',
@@ -27,13 +26,12 @@ const CTA_VARIANTS: Record<string, { title: string, description: string }> = {
     },
 }
 
-// Missing type defaults to 'contact'; an unrecognised one (e.g. typo'd
-// `type: signup`) falls back to 'sign-up' - same two fallbacks as before.
+// Missing type, or an unrecognised one (e.g. typo'd `type: signup`), falls
+// back to 'sign-up'.
 const KNOWN_TYPES = new Set(['sign-up', 'demo', 'contact', 'pricing'])
 const ctaType = computed(() => {
     const type = props.cta?.type
-    if (!type) return 'contact'
-    return KNOWN_TYPES.has(type) ? type : 'sign-up'
+    return type && KNOWN_TYPES.has(type) ? type : 'sign-up'
 })
 const currentCta = computed(() => CTA_VARIANTS[ctaType.value])
 
@@ -61,7 +59,7 @@ function onCtaClick (event: MouseEvent) {
         <CtaSignUp v-if="ctaType === 'sign-up'" variant="highlight" position="blog-post-cta" />
         <CtaBookDemo v-else-if="ctaType === 'demo'" variant="highlight" position="blog-post-cta" />
         <CtaContactUs v-else-if="ctaType === 'contact'" variant="highlight" position="blog-post-cta" />
-        <a v-else class="ff-btn ff-btn--highlight uppercase items-center text-base no-underline" href="/pricing">View Pricing</a>
+        <CtaPricing v-else variant="highlight" position="blog-post-cta" />
       </div>
     </div>
   </div>

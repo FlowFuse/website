@@ -1,7 +1,8 @@
 ---
 title: Hidden Environment Variables
-summary: Users can now hide environment variable values in the UI when creating or editing them.
+description: Users can now hide environment variable values in the UI when creating or editing them.
 date: 2025-01-21 14:00:00.0
+release: "2.14"
 authors: ["serban-costin"]
 tags:
   - changelog

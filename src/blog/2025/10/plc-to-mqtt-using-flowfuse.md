@@ -2,7 +2,7 @@
 title: "How to Connect Any PLC to MQTT in Under an Hour"
 subtitle: "Connect any PLC to MQTT without the typical complexity, costs, and expertise requirements"
 description: "Learn how to extract data from Siemens, Allen-Bradley, Omron, Mitsubishi, and Modbus, then publish it to MQTT using FlowFuse."
-lastUpdated: 2026-06-17
+lastUpdated: 2026-08-13
 date: 2025-10-27
 keywords: MQTT, PLC, Siemens, S7, Allen-Bradley, EtherNet/IP, Omron, FINS, Mitsubishi, MC Protocol, Modbus, Modbus-RTU, Modbus-TCP, OPC-UA, FlowFuse, Node-RED, Industrial IoT, IIoT
 authors: ["sumit-shinde"]
@@ -69,6 +69,9 @@ Getting PLC data into systems where it can be monitored, analyzed, and acted upo
 
 <!--more-->
 
+::product-update-note
+::
+
 The protocol itself is simple. But implementation in a real factory, with actual PLCs and production networks, is where things fall apart. Costs pile up, timelines drag on, and you end up needing expertise that's hard to find.
 
 This guide cuts through that complexity. You'll learn how to connect PLCs using MQTT without the typical headaches. We'll walk through extracting data from any PLC protocol, transforming it properly, and publishing it reliably, with working examples you can adapt to your own setup.
@@ -101,6 +104,9 @@ Now, let's get started. First, watch this demo, where I have built a FlowFuse fl
 <lite-youtube videoid="vptAoDR78Cc" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 
 This flow standardizes data from each protocol into a consistent JSON format, enriches it with contextual metadata, and publishes everything to the FlowFuse MQTT Broker, all within a single instance. The following guide explains how to replicate this setup for any PLC on your factory floor.
+
+::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
+::
 
 ## Step 1: Extract Data from Your PLC
 

@@ -2,6 +2,7 @@
 title: Project Nodes for Devices
 description: Project Nodes now available for devices assigned to applications in FlowFuse, improving functionality previously limited to instance-bound devices.
 date: 2023-11-23 11:02:00.0
+release: "1.14"
 authors: ["marian-demme"]
 tags:
     - changelog

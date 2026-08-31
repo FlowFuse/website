@@ -38,13 +38,23 @@ function issueLabel(issue: string): string {
 }
 
 const pageTitle = computed(() => page.value?.title || 'Changelog')
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse Changelog`)
+const breadcrumbItems = computed(() => [
+    { label: 'Changelog', to: '/changelog' },
+    { label: pageTitle.value },
+])
+const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
+// Changelog entries always get the "Changelog" qualifier on the brand name.
+// og:title infers from the resolved title. Needs an explicit high tagPriority in
+// its own useHead call — nuxt-seo-utils pushes its own global siteName with
+// tagPriority: 'low', and that otherwise wins over a page-level override
+// regardless of registration order.
+useHead({ templateParams: { siteName: 'FlowFuse Changelog' } }, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: fullTitle,
+    title: seoTitle,
     description: computed(() => page.value?.description || ''),
-    ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),
     ogUrl: canonicalUrl,
     ogType: 'article',
@@ -67,10 +77,7 @@ useSeoMeta({
     <div class="blog nohero w-full pb-24">
       <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
         <div class="ff-prose flex-grow">
-          <NuxtLink to="/changelog" class="inline-flex items-center gap-1 mb-4">
-            <UIcon name="i-heroicons-chevron-left" />
-            Back to the Changelog
-          </NuxtLink>
+          <Breadcrumbs :items="breadcrumbItems" class="mb-4" />
           <div class="prose">
             <ContentRenderer :value="page" />
           </div>

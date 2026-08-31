@@ -28,6 +28,9 @@ The formula is simple. Implementing it honestly almost never is. Definitions dri
 
 This article looks at where OEE typically goes wrong on the shop floor, in how data is captured, how it is defined, and how it gets used, and what to fix so the number starts matching reality.
 
+::cta-image{src="/blog/2026/05/images/oee-cta-1.png" alt="Talk to our team about automatically capturing small stops instead of relying on manual logs that miss them" cta="demo"}
+::
+
 ## Most OEE numbers are made up
 
 When operators log downtime on paper or fill in a spreadsheet at the end of the shift, [manual systems typically capture only 60-70% of actual downtime](https://oxmaint.com/industries/steel-plant/common-oee-mistakes-in-manufacturing). Micro-stops under five minutes get skipped almost entirely. Added up, [these small losses often represent 10 to 15% of production time](https://teeptrak.com/en/fiabilite-donnees-oee-erreurs-solutions/).
