@@ -87,6 +87,7 @@ You add one address in your agent's connector settings. On FlowFuse Cloud that a
 If you want to jump ahead and get connected:
 
 ::agent-setup-tabs{:exclude-expert="true" surface="blog"}
+::
 
 *Very soon connecting with FlowFuse will also be supported through the connector marketplace of your own AI provider, starting with Microsoft Copilot, Claude, and ChatGPT.*
 
