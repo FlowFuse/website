@@ -5,7 +5,7 @@ subtitle: "Understand VDA 6.3 process elements, scoring, audit evidence, and how
 description: "Learn how VDA 6.3 process audits work, what auditors evaluate, how scoring works, and how manufacturers can prepare with reliable process evidence."
 date: 2026-08-31
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/08/images/vda-6-3-explained.png
 tags:
   - flowfuse
   - posts
