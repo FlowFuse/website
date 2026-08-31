@@ -3379,8 +3379,15 @@ lite-youtube::before {
     outline-offset: 2px;
 }
 /* The brand marks are <img>, so they keep their own colours; our own glyphs are
-   masked spans that inherit currentColor and turn white with the label. */
-.ff-agent-tab img {
+   masked spans that inherit currentColor and turn white with the label.
+
+   Three classes on purpose. Unlayered beats layered, but it does not beat a more
+   specific unlayered rule, and .prose:not(.prose-natural-size-images) img is
+   (0,2,1) while .ff-agent-tab img is only (0,1,1). On the surfaces whose prose
+   container opts out (docs) that rule never applies, but the blog post and the
+   changelog entry use a plain .prose, so there it won and every mark rendered at
+   width:100% of the column: the ChatGPT square came out 780px. */
+.ff-agent-card .ff-agent-tabs .ff-agent-tab img {
     height: 1rem;
     width: auto;
     flex: none;
