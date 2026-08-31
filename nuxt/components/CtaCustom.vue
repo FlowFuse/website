@@ -2,15 +2,23 @@
 // Free-form CTA for one-off destinations that don't need (and shouldn't get)
 // a dedicated fixed component - reuses CtaButton's style system, but does NOT
 // get the copy/event guarantee the five reserved Cta* components do: the
-// caller supplies both `label` and `href` directly.
+// caller supplies `label`, `href`, AND `event` directly - all three, by
+// design, since this component's whole point is full customization.
 //
-// Guarded at render time against pointing at one of those five reserved
+// `event` is required, not defaulted to some generic 'cta-custom' - a
+// default would mean every instance quietly falls into one undifferentiated
+// PostHog bucket unless someone remembers to opt out of it, which is exactly
+// the kind of fragmentation/aggregation problem this Cta* system exists to
+// prevent. Forcing the caller to name it keeps click data meaningful from
+// the start.
+//
+// Guarded at render time against pointing at one of the five reserved
 // destinations - use the matching component instead (CtaSignUp, CtaSignIn,
 // CtaContactUs, CtaBookDemo, CtaPricing) so PostHog keeps grouping that
 // destination's clicks under one event name. A CtaCustom silently pointed at
-// e.g. /book-demo/ would fragment that metric again, exactly what the Cta*
-// system exists to prevent. Same "throw a descriptive error" convention as
-// CtaImage.vue's invalid-cta check (see CLAUDE.md).
+// e.g. /book-demo/ would fragment that metric again. Same "throw a
+// descriptive error" convention as CtaImage.vue's invalid-cta check (see
+// CLAUDE.md).
 import CtaButton from './cta/CtaButton.vue'
 import { CTA_DESTINATIONS } from '../lib/cta-destinations'
 
@@ -25,6 +33,14 @@ const props = withDefaults(defineProps<{
     // the safer choice: a full page load always works, while defaulting to
     // `false` could 404 a link to a still-11ty page via client-side routing.
     external?: boolean
+    // Required - see the note above. When migrating an existing hand-written
+    // button that already had a meaningful PostHog event (e.g.
+    // 'cta-ai-open-client'), pass that same name so no tracking history is lost.
+    event: string
+    // For a link to an actual external site, where opening in the current
+    // tab would navigate the visitor away - not needed for `external`, which
+    // only controls Vue Router vs. real navigation, not what tab it opens in.
+    target?: string
     plan?: string
     color?: 'primary' | 'highlight' | 'white'
     uppercase?: boolean
@@ -32,8 +48,6 @@ const props = withDefaults(defineProps<{
     preview?: boolean
     icon?: string
 }>(), { uppercase: undefined, external: true })
-
-const EVENT = 'cta-custom'
 
 const normalize = (href: string) => href.replace(/\/+$/, '')
 const collision = Object.values(CTA_DESTINATIONS).find(dest => normalize(dest.href) === normalize(props.href))
@@ -43,5 +57,5 @@ if (collision) {
 </script>
 
 <template>
-  <CtaButton :event="EVENT" :href="href" :external="external" :label="label" :variant="variant" :position="position" :plan="plan" :icon="icon" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
+  <CtaButton :event="event" :href="href" :external="external" :target="target" :label="label" :variant="variant" :position="position" :plan="plan" :icon="icon" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
 </template>

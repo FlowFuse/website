@@ -20,6 +20,11 @@ const props = withDefaults(defineProps<{
     position: string
     plan?: string
     icon?: string
+    // Passed straight through to the underlying UButton/NuxtLink. None of the
+    // five reserved destinations need this (they're all same-tab), but
+    // CtaCustom exposes it for one-off links to an actual external site,
+    // where opening in the current tab would navigate the visitor away.
+    target?: string
     // Only meaningful for variant="ghost" - which text color to use, since a
     // ghost button has no background of its own to imply one. "white" exists
     // because the homepage hero's "Try it out" sits on a dark photo.
@@ -94,6 +99,11 @@ const GHOST_COLOR_CLASSES: Record<string, string> = {
 const uiVariant = computed(() => VARIANT_MAP[props.variant])
 const capture = useCapture()
 
+// `noopener` is a security default whenever a link opens a new tab, not a
+// caller-facing choice - computed here so a `target="_blank"` caller doesn't
+// have to remember to add it separately.
+const relAttr = computed(() => props.target === '_blank' ? 'noopener' : undefined)
+
 // app.config.ts's base slot ("uppercase font-semibold no-underline") suits a
 // real button, but not a nav text link - those read as plain inline text
 // (nav "Free Trial", utility bar "Sign In"): no button padding, font-medium
@@ -136,6 +146,8 @@ function onClick () {
   <UButton
     :to="preview ? undefined : href"
     :external="external"
+    :target="target"
+    :rel="relAttr"
     :color="uiVariant.color"
     :variant="uiVariant.variant"
     :trailing-icon="icon"

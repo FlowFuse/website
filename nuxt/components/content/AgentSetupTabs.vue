@@ -164,13 +164,15 @@ function selectClient (id: string) {
         <p class="ff-agent-step__title">{{ client.step2Title }}</p>
         <p class="ff-agent-step__body">{{ client.step2Body }}</p>
         <div class="ff-agent-step__cta">
-          <a
+          <CtaCustom
+            :label="client.step2Label"
             :href="client.step2Url"
-            class="ff-btn ff-btn--primary-outlined flex w-full"
+            event="cta-ai-open-client"
+            :position="pos(client.id)"
             :target="client.step2Url.startsWith('http') ? '_blank' : undefined"
-            :rel="client.step2Url.startsWith('http') ? 'noopener' : undefined"
-            @click="capture('cta-ai-open-client', { position: pos(client.id) })"
-          >{{ client.step2Label }}</a>
+            variant="primary-outlined"
+            class="w-full"
+          />
         </div>
       </div>
 

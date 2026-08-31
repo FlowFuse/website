@@ -84,11 +84,14 @@ const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
             </template>
           </div>
         </div>
-        <a
+        <CtaCustom
+          :label="webinarIsUpcoming ? 'Register Now' : 'Watch Webinar'"
           :href="webinar.path"
-          class="mt-4 ff-btn uppercase inline-block self-end justify-self-end"
-          :class="downloadFollowUp ? 'ff-btn--primary' : 'ff-btn--primary-outlined'"
-        >{{ webinarIsUpcoming ? 'REGISTER NOW' : 'WATCH WEBINAR' }}</a>
+          event="cta-webinar-followup"
+          :position="hubspotReference"
+          :variant="downloadFollowUp ? 'primary' : 'primary-outlined'"
+          class="mt-4 self-end justify-self-end"
+        />
       </div>
 
       <div class="w-full my-2 grid grid-cols-1">
