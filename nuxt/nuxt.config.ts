@@ -153,6 +153,7 @@ export default defineNuxtConfig({
         name: 'FlowFuse',
         description: site.messaging.subtitle,
         defaultLocale: 'en',
+        trailingSlash: true,
     },
 
     // Only covers content already served by Nuxt. The handbook is deliberately excluded
@@ -365,6 +366,10 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/pricing',
                     '/product',
+                    // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
+                    // Nuxt prerender crawler never parses, so it has to be listed explicitly
+                    // or the route is missing from nuxt/dist and every link to it breaks.
+                    '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
@@ -379,6 +384,7 @@ export default defineNuxtConfig({
                     '/book-demo',
                     '/support',
                     '/professional-services',
+                    '/dashboard/tags-and-canvas-feedback',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -410,6 +416,13 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        'content:file:beforeParse' ({ file, collection }) {
+            if (collection.name !== 'blog') return
+            file.body = file.body.replace(
+                /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
+                (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
+            )
+        },
         // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
         // Can't use Nuxt's $fetch here — it only exists at nitro runtime.
         async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {

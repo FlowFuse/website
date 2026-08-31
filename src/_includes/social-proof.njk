@@ -1,3 +1,8 @@
+{% if socialProofEyebrow != false %}
+<div class="w-full text-center min-h-14 flex justify-center items-center mt-8{% if socialProofEyebrowBg %} bg-radial-indigo{% endif %}">
+    <h2 class="text-gray-600 text-lg font-semibold">{{ socialProofEyebrow if socialProofEyebrow else "Over 36,000 users have trusted FlowFuse" }}</h2>
+</div>
+{% endif %}
 <div class="social-proof-carousel">
     <div class="mix-blend-luminosity opacity-70 saturate-0">
     {%- for logo in collections.homeLogos | shuffle -%}

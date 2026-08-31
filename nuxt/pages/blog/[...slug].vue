@@ -96,6 +96,10 @@ const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.valu
 
 const pageTitle = computed(() => page.value?.title || 'Blog')
 provide('blogPostTitle', pageTitle)
+const breadcrumbItems = computed(() => [
+    { label: 'Blog', to: '/blog' },
+    { label: pageTitle.value },
+])
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
 const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
@@ -135,16 +139,16 @@ if (routeInfo.value.kind === 'post') {
                 ? authorMembers.value.map(authorSchema)
                 : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
         }),
-        computed(() => page.value?.meta?.faq?.length ? {
+        computed(() => page.value?.structuredData?.faq?.length ? {
             '@type': 'FAQPage',
-            mainEntity: page.value.meta.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+            mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
         } : undefined),
-        computed(() => page.value?.meta?.howto ? defineHowTo({
-            name: page.value.meta.howto.name || pageTitle.value,
-            description: page.value.meta.howto.description || pageDescription.value,
-            totalTime: page.value.meta.howto.totalTime,
-            tool: page.value.meta.howto.tool,
-            step: (page.value.meta.howto.steps || []).map(s => defineHowToStep({ name: s.name, text: s.text, url: s.url ? `${canonicalUrl.value}#${s.url}` : undefined })),
+        computed(() => page.value?.structuredData?.howto ? defineHowTo({
+            name: page.value.structuredData.howto.name || pageTitle.value,
+            description: page.value.structuredData.howto.description || pageDescription.value,
+            totalTime: page.value.structuredData.howto.totalTime,
+            tool: page.value.structuredData.howto.tool,
+            step: (page.value.structuredData.howto.steps || []).map(s => defineHowToStep({ name: s.name, text: s.text, url: s.url ? `${canonicalUrl.value}#${s.url}` : undefined })),
         }) : undefined),
     ])
 }
@@ -208,10 +212,7 @@ if (routeInfo.value.kind === 'post') {
     <div class="blog nohero w-full pb-24">
       <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
         <div class="ff-prose min-w-0">
-          <NuxtLink class="group hover:no-underline inline-flex items-center gap-1 mb-4" to="/blog">
-            <UIcon name="i-heroicons-chevron-left" />
-            <span class="group-hover:underline">Back to Blog Posts</span>
-          </NuxtLink>
+          <Breadcrumbs :items="breadcrumbItems" class="mb-4" />
 
           <div class="prose w-full flex-grow">
             <div class="mb-4 hero-img">
@@ -238,9 +239,9 @@ if (routeInfo.value.kind === 'post') {
             <BlogPostCta :title="page.title" :cta="page.cta" />
           </div>
 
-          <div v-if="page.meta?.faq?.length" class="prose mt-12">
+          <div v-if="page.structuredData?.faq?.length" class="prose mt-12">
             <h2 class="mb-1">Frequently Asked Questions</h2>
-            <BlogFaq :faq="page.meta.faq" />
+            <BlogFaq :faq="page.structuredData.faq" />
           </div>
 
           <BlogAuthorCard v-for="(author, i) in authorMembers" :key="i" :author="author" />

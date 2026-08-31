@@ -146,7 +146,7 @@ export default defineContentConfig({
                     title: z.string().optional(),
                     description: z.string().optional(),
                 }).optional(),
-                meta: z.object({
+                structuredData: z.object({
                     title: z.string().optional(),
                     description: z.string().optional(),
                     faq: z.array(z.object({
@@ -194,12 +194,34 @@ export default defineContentConfig({
                 hubspot: z.object({
                     formId: z.string(),
                 }),
+                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
+                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, same
+                // shim the blog collection uses, so existing story files don't need editing.
+                structuredData: z.object({
+                    // Falls back to "Frequently Asked Questions" (the blog's fixed heading)
+                    // when unset - only set this when a story wants its own FAQ heading.
+                    faqTitle: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                }).optional(),
                 story: z.object({
                     brand: z.string(),
                     // Nullable for the same blank-key-in-YAML reason as top-level `logo` above.
                     url: z.string().nullable().optional(),
                     logo: z.string().optional(),
                     quote: z.string().optional(),
+                    // Byline for `quote`. Preferred: `quoteAuthorSlug` names a file in
+                    // src/_data/team/ or src/_data/guests/ (resolved via useTeamMember) so
+                    // name/title/headshot come from that JSON. Not every quoted person has
+                    // one, so quoteAuthor/quoteRole/quoteAvatar remain as a manual fallback -
+                    // quoteRole is job title only, `brand` above supplies the company name
+                    // and is concatenated at render time rather than duplicated here.
+                    quoteAuthorSlug: z.string().optional(),
+                    quoteAuthor: z.string().optional(),
+                    quoteRole: z.string().optional(),
+                    quoteAvatar: z.string().optional(),
                     challenge: z.string(),
                     solution: z.string(),
                     products: z.array(z.string()),

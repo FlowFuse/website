@@ -105,6 +105,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-2/': { redirect: { to: '/blog/2025/04/build-manufacturing-oee-dashboard/', statusCode: 301 } },
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/': { redirect: { to: '/blog/2025/04/design-and-scale-oee-dashboard/', statusCode: 301 } },
     '/sign-up/': { redirect: { to: 'https://app.flowfuse.com/account/create', statusCode: 301 } },
+    '/blog/2025/12/what-is-mttf/': { redirect: { to: '/blog/2025/12/mttf-vs-mtbf-vs-mttr/', statusCode: 301 } },
 
     '/handbook/development/contributing/': { redirect: { to: '/handbook/engineering/contributing/', statusCode: 301 } },
     '/changelog/2025/06/instance-performance-view/': { redirect: { to: '/changelog/2025/06/team-performance-view/', statusCode: 301 } },

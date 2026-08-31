@@ -1,9 +1,7 @@
 <script setup lang="ts">
 // Ported from src/platform/features.njk (11ty). Cta* components enforce
 // fixed copy/destinations (see CLAUDE.md), so the old custom-copy "Request a
-// Demo" buttons become <CtaBookDemo>; "View Pricing" isn't one of the four
-// unified destinations, so it keeps a plain ff-btn link, same precedent as
-// BlogPostCta.vue's pricing fallback.
+// Demo" and "View Pricing" buttons become <CtaBookDemo>/<CtaPricing>.
 useSeoMeta({
     title: 'Features',
     description: 'FlowFuse provides the features companies require to reliably deliver industrial applications to devices and cloud in a collaborative, secure manner.',
@@ -101,12 +99,7 @@ onUnmounted(() => {
               <p class="mt-6 text-lg max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
               <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
                 <CtaBookDemo variant="highlight" position="hero" />
-                <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'hero' })">
-                  <span class="flex items-center justify-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800">
-                    <span>VIEW PRICING</span>
-                    <IconsArrowRightIcon class="w-5 h-5" />
-                  </span>
-                </a>
+                <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
               </div>
             </div>
             <div class="w-full">
@@ -191,12 +184,7 @@ onUnmounted(() => {
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="get-started" />
-            <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'get-started' })">
-              <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
-              <span>VIEW PRICING</span>
-                <IconsArrowRightIcon class="w-5 h-5" />
-              </span>
-            </a>
+            <CtaPricing variant="ghost" color="white" position="get-started" icon="i-lucide-arrow-right" />
           </div>
         </div>
       </div>
