@@ -17,12 +17,11 @@ tldr: "FlowFuse 3.0 acts as an MCP server, so the AI agent your company already 
 meta:
   howto:
     name: "How Do I Connect an AI Agent to My Industrial Systems?"
-    description: "Learn how to connect an AI agent to your industrial systems through FlowFuse MCP, control its access, query operational data, and build Node-RED flows."
+    description: "Learn how to connect an AI agent to your industrial systems through FlowFuse MCP, control its access, query operational data, manage your industrial applications, and build Node-RED flows."
     totalTime: "PT10M"
     tool:
-      - "FlowFuse"
       - "Node-RED"
-      - "Microsoft Copilot Studio"
+      - "Microsoft Copilot"
       - "ChatGPT"
       - "Claude"
     steps:
@@ -33,10 +32,10 @@ meta:
         text: "Authenticate the connection with your FlowFuse account. The AI agent uses your existing FlowFuse permissions and cannot access resources beyond what your account can access."
         url: "how-the-connection-works"
       - name: "Choose the teams and permissions the agent can access"
-        text: "Select which FlowFuse teams the AI agent can access and whether it has read-only or editing permissions. For example, you can give the agent access to development without giving it access to production."
+        text: "Select which FlowFuse teams the AI agent can access and whether it has read-only or editing permissions. For example, you can give the agent access to a development team without giving it access to a production team."
         url: "what-youre-granting"
       - name: "Configure your AI agent"
-        text: "Add the FlowFuse MCP server as a tool or connector in your AI platform. In Microsoft Copilot Studio, open Tools, select Add a tool, then New tool and Model Context Protocol, and enter the FlowFuse MCP server URL."
+        text: "Add the FlowFuse MCP server as a connector in your AI platform. This will be different per agent. For instructions see the AI page.
         url: "worked-example-connecting-microsoft-copilot"
       - name: "Ask your AI agent about your operations"
         text: "Start with read access and ask the AI agent about your applications, running instances, runtime logs, or FlowFuse Tables data. After confirming the connection, grant editing permissions if you want it to build or modify Node-RED flows."
@@ -45,11 +44,11 @@ meta:
     - question: "How do I connect an AI agent to my industrial systems?"
       answer: "Connect an MCP-compatible AI agent to the FlowFuse MCP server at https://app.flowfuse.com/mcp. Sign in with your FlowFuse account, select the teams the agent can access, and choose read-only or editing permissions. The agent can then interact with your industrial operations through FlowFuse."
     - question: "What can an AI agent do with my industrial systems?"
-      answer: "With read access, an AI agent can query applications, instances, runtime logs, and FlowFuse Tables data. With editing permissions, it can create supported resources and build or modify Node-RED flows that connect to equipment, MQTT brokers, databases, APIs, and other industrial systems."
+      answer: "With read access, an AI agent can query applications, instances, runtime logs, and FlowFuse Tables data. With editing permissions, it can create supported FlowFuse resources like instances and applications and build or modify Node-RED flows that connect to equipment, MQTT brokers, databases, APIs, and other industrial systems."
     - question: "Can an AI agent build Node-RED flows?"
       answer: "Yes. With editing permissions, an AI agent can build and modify Node-RED flows in FlowFuse. You can describe a workflow, such as reading temperature data from MQTT, checking it against a threshold, and writing the result to FlowFuse Tables. The agent can create and connect the required nodes while you review the changes."
     - question: "Can an AI agent query my industrial data?"
-      answer: "Yes. With read access, an AI agent can query FlowFuse Tables data alongside application, instance, and runtime information. This lets it answer questions about stored process values, downtime, throughput, and other operational data without giving it permission to make changes."
+      answer: "Yes. With read access, an AI agent can query FlowFuse Tables data alongside application, instance, and runtime information. This lets it answer questions about stored process values, downtime, throughput, and other operational data without giving it permission to make changes. This requires your data to be stored in FlowFuse tables. If your data is elsewhere, you can ask it to create custom Node-RED MCP servers that are specific to your production environment to request specific data."
     - question: "Which AI agents work with FlowFuse?"
       answer: "FlowFuse can connect to AI agents and clients that support Model Context Protocol (MCP) over HTTP, including ChatGPT, Microsoft Copilot, Claude, and Gemini. You can also use a local AI model through an MCP-compatible client."
     - question: "Is it safe to connect an AI agent to production systems?"
