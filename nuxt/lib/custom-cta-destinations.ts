@@ -1,3 +1,5 @@
+import { CTA_DESTINATIONS } from './cta-destinations'
+
 // Registry for one-off CTA destinations that aren't one of the five reserved
 // ones (see cta-destinations.ts) but still deserve one fixed PostHog event -
 // whether because the same URL is used in more than one place, or because the
@@ -53,16 +55,33 @@ export const CUSTOM_CTA_DESTINATIONS = {
 } as const
 
 // Self-check, run once when this module loads (so at build/dev-start time,
-// before any page renders): CtaCustom's own checks stop a *caller* from
-// mismatching an href and a key, but nothing stopped a second entry from
-// being added HERE with the same href as an existing one - reuse the
-// existing key instead of adding a new one for a URL already registered.
-const hrefOwners = new Map<string, string>()
+// before any page renders and regardless of whether anything uses the new
+// entry yet): CtaCustom's own checks stop a *caller* from mismatching an
+// href and a key, but nothing stopped a second entry from being added HERE
+// with the same href as an existing one - reuse the existing key instead of
+// adding a new one for a URL already registered.
+//
+// Also checked against the five RESERVED destinations (cta-destinations.ts):
+// without this, adding a custom entry whose href duplicates e.g. bookDemo's
+// would load fine and only fail later, if and when some page actually
+// rendered a <CtaCustom> with that key - CtaCustom's own render-time guard
+// would still catch it then, but only for a key that's actually used
+// somewhere, not the instant the bad entry is registered.
+//
+// Same normalization CtaCustom.vue uses for its own reserved-destination
+// check - without it, "/book-demo/" and "/book-demo" would count as
+// different URLs and slip past this check.
+const normalize = (href: string) => href.replace(/\/+$/, '')
+
+const hrefOwners = new Map<string, string>(
+    Object.values(CTA_DESTINATIONS).map(dest => [normalize(dest.href), dest.component]),
+)
 for (const [key, dest] of Object.entries(CUSTOM_CTA_DESTINATIONS)) {
     if (!('href' in dest) || !dest.href) continue
-    const owner = hrefOwners.get(dest.href)
+    const normalizedHref = normalize(dest.href)
+    const owner = hrefOwners.get(normalizedHref)
     if (owner) {
         throw new Error(`custom-cta-destinations.ts: "${dest.href}" is registered under both "${owner}" and "${key}" - reuse "${owner}" instead of adding a second key for the same URL.`)
     }
-    hrefOwners.set(dest.href, key)
+    hrefOwners.set(normalizedHref, key)
 }
