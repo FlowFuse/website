@@ -130,7 +130,7 @@ meta:
 
 ## Call-to-Action Buttons
 
-The site has four main call-to-action destinations, each with **fixed copy** — you cannot write new button text for these, only choose how the button looks and where it sits on the page:
+The site has five main call-to-action destinations, each with **fixed copy** — you cannot write new button text for these, only choose how the button looks and where it sits on the page:
 
 | Component        | Goes to                           | Button text                                          |
 | ---------------- | --------------------------------- | ---------------------------------------------------- |
@@ -138,8 +138,9 @@ The site has four main call-to-action destinations, each with **fixed copy** —
 | `<CtaSignIn>`    | `app.flowfuse.com`                | "Sign In"                                            |
 | `<CtaContactUs>` | `/contact-us/`                    | "Contact Us"                                         |
 | `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
+| `<CtaPricing>`   | `/pricing/`                       | "View Pricing"                                       |
 
-If a page needs different wording than what's listed above, that's a sign the destination needs a fifth CTA, not a new prop on these four or custom inline code.
+If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
 **These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
 
@@ -172,6 +173,13 @@ Every component takes the same `variant` prop, which controls the look. Click "S
   :::cta-example{component="CtaContactUs" variant="highlight-outlined"}
   ```mdc
   ::CtaContactUs{variant="highlight-outlined" position="hero"}
+  ::
+  ```
+  :::
+
+  :::cta-example{component="CtaPricing" variant="primary-outlined"}
+  ```mdc
+  ::CtaPricing{variant="primary-outlined" position="hero"}
   ::
   ```
   :::
