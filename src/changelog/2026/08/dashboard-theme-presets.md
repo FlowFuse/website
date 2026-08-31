@@ -2,6 +2,7 @@
 title: Theme Presets for Dashboard
 description: Start a Dashboard theme from a built-in preset — Light, Dark, Dracula, Nord, or Sepia — instead of picking colours by hand.
 date: 2026-08-27 12:00:00
+release: "3.0"
 authors: ["noley-holland"]
 tags:
   - changelog
