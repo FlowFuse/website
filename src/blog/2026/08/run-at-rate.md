@@ -85,7 +85,7 @@ If the agreed threshold is 95%, a result of 95% or higher passes. In the example
 
 Process validation confirms a process can hold tolerance, usually at reduced volume with an engineer watching each unit come off the line. That's a different test than holding tolerance for 400 consecutive cycles at full speed with nobody intervening, which is what runs at rate checks.
 
-PPAP is the larger documentation package: control plans, measurement system analysis, part approval as a whole. Run at rate is one piece of that package, specific to volume. It isn't a substitute for the rest of the file, and the rest of the file isn't a substitute for it.
+PPAP is the larger documentation package: control plans, measurement system analysis, part approval as a whole. Run at rate is one piece of that package, specific to volume. It isn't a substitute for the rest of the file, and the rest of the file isn't a substitute for it. For how a control plan's characteristics get tied to the measurement data collected on the floor, see [Control Plans: Linking Quality Characteristics to Measurement Data](/blog/2026/08/control-plans/).
 
 ![Comparison diagram showing PPAP components and where run at rate fits within the approval process](./images/pap-vs-run-rate.png)
 
