@@ -20,6 +20,12 @@ The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framew
 | `/docs/**` | **Migrated** — served by Nuxt; source resolved from `flowfuse/flowfuse` at build time |
 | All other routes | Still on 11ty, proxied through Nuxt in dev |
 
+### New pages belong in Nuxt
+
+Never create a new `.njk` page under `src/` — even a landing/marketing page that looks like the fastest way to match an existing 11ty page's pattern. Build it in Nuxt (`nuxt/pages/`, `.vue`/`.md`) instead; only edits to already-existing 11ty pages belong in `src/`. `nuxt/lib/legacy-pages.test.mjs` enforces this with no allowlist to maintain: it fetches main and fails `npm test` (and therefore the required `test_website / Build and check` PR check) if any `.njk` file under `src/` didn't already exist there — i.e. a brand-new `.njk` file, anywhere in `src/`, on any route. Editing an existing `.njk` file is unaffected.
+
+This is scoped to `.njk` on purpose and does not extend to `.md`: new content in `src/blog/`, `src/changelog/`, `src/customer-stories/`, `src/webinars/`, and `src/blueprints/` (new posts, entries, blueprints) is expected routine work and must keep landing there unchanged, no matter how this section reads out of context. The gap this leaves — a brand-new page built as a bare `.md` file against an *existing* layout, with no new `.njk` involved — is real and not caught by the test; avoiding that is a matter of following this rule, not something enforced automatically. See `/handbook/marketing/website#new-pages-must-be-built-in-nuxt` for the non-engineer-facing explanation.
+
 ### Production build order
 
 ```
@@ -270,7 +276,7 @@ This also covers old `/docs/**` paths left behind by a rename in `flowfuse/flowf
 
 **Nuxt only** — 11ty pages still use hand-written `<a class="ff-btn ...">` links; these components have no 11ty equivalent yet.
 
-There are exactly four CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same four URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
+There are exactly five CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same handful of URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
 
 | Component | href | Fixed label |
 |---|---|---|
@@ -278,8 +284,9 @@ There are exactly four CTA destinations, each with its own component with **fixe
 | `nuxt/components/CtaSignIn.vue` | `site.appURL` | "Sign In" |
 | `nuxt/components/CtaContactUs.vue` | `/contact-us/` | "Contact Us" |
 | `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Book a Demo" |
+| `nuxt/components/CtaPricing.vue` | `/pricing/` | "View Pricing" |
 
-All four are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a fifth destination-specific component is needed — not a prop that lets callers override copy on these four.
+All five are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a sixth destination-specific component is needed — not a prop that lets callers override copy on these five.
 
 **Props** (all optional except `variant`/`position`): `variant` (`primary` | `primary-outlined` | `highlight` | `highlight-outlined` | `ghost` | `nav-text`), `position` (free string, sent to PostHog — describes where on the page, e.g. `hero`, `pricing-card`), `plan` (e.g. `edge`/`hub`/`fleet`, sent to PostHog), `color` (`primary`|`highlight`|`white`, only for `variant="ghost"`, which has no background of its own), `icon` (Nuxt Icon name for a trailing icon), `uppercase`, `padded` (only for `variant="nav-text"` — whether it has the header-`<ul>` link padding or is true zero-padding inline text), `preview` (renders identically but doesn't navigate or call `capture()` — used by the handbook's live example gallery so clicking a doc example can't send a real event or leave the page).
 
@@ -287,7 +294,7 @@ All four are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which doe
 
 There's no `size` prop — every real-button variant's padding/font-size is hardcoded to match `.ff-btn` exactly (see the Computed-tab note in the gotchas below), so a size knob would only ever have affected icon dimensions. It was removed once confirmed nothing used a non-default value.
 
-Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`.
+Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`, `cta-pricing`.
 
 ### Gotchas already solved here (don't re-discover them)
 

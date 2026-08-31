@@ -85,13 +85,13 @@ If the agreed threshold is 95%, a result of 95% or higher passes. In the example
 
 Process validation confirms a process can hold tolerance, usually at reduced volume with an engineer watching each unit come off the line. That's a different test than holding tolerance for 400 consecutive cycles at full speed with nobody intervening, which is what runs at rate checks.
 
-PPAP is the larger documentation package: control plans, measurement system analysis, part approval as a whole. Run at rate is one piece of that package, specific to volume. It isn't a substitute for the rest of the file, and the rest of the file isn't a substitute for it.
+PPAP is the larger documentation package: control plans, measurement system analysis, part approval as a whole. Run at rate is one piece of that package, specific to volume. It isn't a substitute for the rest of the file, and the rest of the file isn't a substitute for it. For how a control plan's characteristics get tied to the measurement data collected on the floor, see [Control Plans: Linking Quality Characteristics to Measurement Data](/blog/2026/08/control-plans/).
 
 ![Comparison diagram showing PPAP components and where run at rate fits within the approval process](./images/pap-vs-run-rate.png)
 
 ## Why capacity gaps still show up after launch
 
-Changeover time gets estimated instead of measured live, and the real changeover, with new operators and no rehearsal, runs longer than planned. A station that tested fine on its own turns out to be the actual bottleneck once the full line runs together, starved for parts or backed up behind a slower neighbor. [Quality](/blog/2026/07/defect-and-quality-monitoring) that looked stable during a short trial drifts once tooling wears across a full shift, a failure mode a short run wouldn't catch.
+Changeover time gets estimated instead of measured live, and the real changeover, with new operators and no rehearsal, runs longer than planned. A station that tested fine on its own turns out to be the actual bottleneck once the full line runs together, starved for parts or backed up behind a slower neighbor. [Quality](/blog/2026/07/defect-and-quality-monitoring) that looked stable during a short trial drifts once tooling wears across a full shift, a failure mode a short run wouldn't catch. If that drift reaches the customer plant, it's the kind of defect that triggers [CS1 or CS2 controlled shipping](/blog/2026/08/containment-action/).
 
 Some of the challenge comes down to how run-at-rate data is collected. During a live run, cycle times, downtime, production counts, and rejects are often recorded manually, making it difficult to capture every event accurately. Much of this data is already available from the equipment through [PLC](/landing/plc/) tags and machine states. A platform like [FlowFuse](/) can connect to that equipment to automatically collect the data, calculate the demonstrated production rate, and visualize the results as the run progresses, giving teams a clearer view of how the line is performing against its target.
 
