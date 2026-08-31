@@ -8,9 +8,9 @@
 // Styling comes from the .ff-agent-* rules in src/css/style.css, which nuxt.config.ts
 // links on every Nuxt page, rather than from utility classes on the elements. That is
 // forced: this renders inside .prose on the changelog and docs pages, and the site's
-// prose rules sit in @layer overrides, which outranks Tailwind's @layer utilities
-// whatever the specificity. As utilities, `h-4` on a tab logo lost to .prose img's
-// width:100% and the marks blew up to full column width.
+// prose rules are unlayered, which outranks Tailwind's @layer utilities whatever the
+// specificity. As utilities, `h-4` on a tab logo lost to .prose img's width:100% and
+// the marks blew up to full column width.
 const props = withDefaults(defineProps<{
     // Drops the FlowFuse Expert tab. For surfaces that are specifically about
     // connecting your own agent, where Expert is not one of the options.
