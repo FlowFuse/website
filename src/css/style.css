@@ -1,4 +1,4 @@
-@layer vendor, theme, base, components, utilities, overrides;
+@layer vendor, theme, base, components, utilities;
 
 @config "../../tailwind.config.js";
 @import "tailwindcss";
@@ -85,17 +85,15 @@
 @source not "../../nuxt/.netlify/**";
 @source "../../nuxt/**";
 
-@layer overrides {
-    .prose {
-        --tw-prose-body: var(--color-gray-700);
-        --tw-prose-headings: var(--color-gray-600);
-        --tw-prose-links: var(--color-blue-600);
-        --tw-prose-code: var(--color-red-700);
-        --tw-prose-bold: var(--color-gray-500);
-    }
-    .prose img { max-width: 100%; }
-    .prose:not(.prose-natural-size-images) img { width: 100%; height: auto; }
+.prose {
+    --tw-prose-body: var(--color-gray-700);
+    --tw-prose-headings: var(--color-gray-600);
+    --tw-prose-links: var(--color-blue-600);
+    --tw-prose-code: var(--color-red-700);
+    --tw-prose-bold: var(--color-gray-500);
 }
+.prose img { max-width: 100%; }
+.prose:not(.prose-natural-size-images) img { width: 100%; height: auto; }
 
 @import "./style.page.css";
 @import "./style.nohero.css";
@@ -161,8 +159,8 @@ html, body {
 }
 
 /* Layered (not a bare unlayered `*` rule) so Tailwind utilities — which compile
-   into @layer utilities, later in the `vendor, theme, base, components, utilities,
-   overrides` order declared above — can override transition-property/duration on
+   into @layer utilities, later in the `vendor, theme, base, components, utilities`
+   order declared above — can override transition-property/duration on
    individual elements through normal cascade rules, instead of this always
    winning outright regardless of specificity. */
 @layer base {
@@ -3316,8 +3314,8 @@ lite-youtube::before {
 
 /* AgentSetupTabs: the agent picker and its three setup steps. Unlayered on purpose.
    The component renders inside .prose on the changelog entry and the third-party-agents
-   docs page as well as standalone on /ai, and the site's prose rules live in
-   @layer overrides, which outranks Tailwind's @layer utilities however specific the
+   docs page as well as standalone on /ai, and the site's prose rules are also unlayered
+   (see .prose above), which outranks Tailwind's @layer utilities however specific the
    utility is. So the component's look cannot live in utility classes on the elements:
    .prose img's width:100% beat `h-4` and blew the tab marks up to full column width,
    and .prose p forced the step text to 12px. Unlayered outranks every layer, so these
