@@ -1,8 +1,7 @@
 <script setup lang="ts">
 // Single-page guide layout: normal FlowFuse chrome, the reading-progress rail +
-// section nav on the LEFT, content in the middle, and a sticky conversion CTA on
-// the right. Scroll-spy and progress are computed here and passed down, so the
-// left rail tracks one scrolling page.
+// section nav on the LEFT and content to its right. Scroll-spy and progress are
+// computed here and passed down, so the left rail tracks one scrolling page.
 import '~/assets/css/getting-started.css'
 
 const activeId = ref('')
@@ -49,9 +48,6 @@ onBeforeUnmount(() => {
           <div class="gs-topbar"><GsShare /></div>
           <slot />
         </main>
-        <aside class="gs-rail">
-          <div class="gs-rail__inner"><GsStickyCta /></div>
-        </aside>
       </div>
     </div>
     <AppFooter />
@@ -60,7 +56,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .gs-shell { max-width: 86rem; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr; }
-.gs-sidebar, .gs-rail { display: none; }
+.gs-sidebar { display: none; }
 .gs-main { min-width: 0; padding: 0 1.5rem; }
 .gs-topbar { display: flex; justify-content: flex-end; padding-top: 1.25rem; }
 @media (min-width: 1024px) {
@@ -69,10 +65,5 @@ onBeforeUnmount(() => {
   /* top clears the sticky site header (~75px) so the rail isn't hidden behind
      it once the page scrolls; matches the sections' scroll-margin-top. */
   .gs-sidebar__inner { position: sticky; top: 5.75rem; max-height: calc(100vh - 7.25rem); overflow-y: auto; padding: 0.25rem 0 1.75rem 1.5rem; }
-}
-@media (min-width: 1280px) {
-  .gs-shell { grid-template-columns: 232px minmax(0, 1fr) 248px; }
-  .gs-rail { display: block; }
-  .gs-rail__inner { position: sticky; top: 5.75rem; padding: 0.25rem 1.5rem 1.75rem 0; }
 }
 </style>
