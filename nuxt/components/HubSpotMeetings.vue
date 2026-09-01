@@ -42,14 +42,14 @@ onMounted(() => {
       <p class="text-indigo-200">
         30-minute session with our team.
       </p>
-      <a
-        href="https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team"
-        class="inline-block ff-btn ff-btn--highlight uppercase mb-2"
-        style="cursor: pointer;"
-        @click="() => (typeof (window as any).capture === 'function') && (window as any).capture('calendar_fallback_cta_clicked')"
-      >
-        Pick a time →
-      </a>
+      <CtaCustom
+        label="Pick a time"
+        icon="i-lucide-arrow-right"
+        destination-key="hubspotMeeting"
+        variant="highlight"
+        position="consent-fallback"
+        class="mb-2"
+      />
       <p class="mt-4 text-indigo-200 italic font-xs">
         Prefer to view availability on this page?<br>
         <a
