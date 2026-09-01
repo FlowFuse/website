@@ -90,14 +90,16 @@ const VARIANT_MAP: Record<string, { color: string, variant: string, hover: strin
     ghost: { color: 'primary', variant: 'ghost', hover: '' },
 }
 
-// UButton's own "ghost" variant compoundVariants add a faint hover background
-// (hover:bg-{color}/10) - that's Nuxt UI's default ghost affordance, but a
-// ghost CTA here should have no background at any point, hover included, so
-// every entry explicitly cancels it with hover:bg-transparent.
+// UButton's own "ghost" variant compoundVariants add a faint hover AND active
+// background (hover:bg-{color}/10, active:bg-{color}/10) - that's Nuxt UI's
+// default ghost affordance, but a ghost CTA here should have no background at
+// any point, hover and click both, so every entry cancels both explicitly.
+// Missing active:bg-transparent here used to leave a visible fill flash on
+// click/tap even though hover looked fine.
 const GHOST_COLOR_CLASSES: Record<string, string> = {
-    primary: 'text-primary hover:text-primary/75 hover:bg-transparent',
-    highlight: 'text-highlight hover:text-highlight/75 hover:bg-transparent',
-    white: 'text-white hover:text-gray-200 hover:bg-transparent',
+    primary: 'text-primary hover:text-primary/75 hover:bg-transparent active:bg-transparent',
+    highlight: 'text-highlight hover:text-highlight/75 hover:bg-transparent active:bg-transparent',
+    white: 'text-white hover:text-gray-200 hover:bg-transparent active:bg-transparent',
 }
 
 const uiVariant = computed(() => VARIANT_MAP[props.variant])
