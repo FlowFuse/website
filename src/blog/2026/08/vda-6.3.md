@@ -46,9 +46,9 @@ This guide covers VDA 6.3 process elements, scoring, audit evidence, common find
 
 ## What VDA 6.3 audits
 
-VDA 6.3 was developed by the Verband der Automobilindustrie (VDA). It evaluates process performance across the product and process lifecycle. The [VDA QMC]([https://vda-qmc.de/en/education/vda-6-3-process-audit-at-a-glance-id-380/]%28https://vda-qmc.de/en/education/vda-6-3-process-audit-at-a-glance-id-380/%29) describes it as a reference manual for process audits across the supply chain.
+VDA 6.3 was developed by the Verband der Automobilindustrie (VDA) to evaluate process performance across the product and process lifecycle. The [VDA QMC](https://vda-qmc.de/en/education/vda-6-3-process-audit-at-a-glance-id-380/) describes it as a reference manual for conducting process audits across the automotive supply chain.
 
-VDA 6.3 is different from [IATF 16949]([https://www.iatfglobaloversight.org/]%28https://www.iatfglobaloversight.org/%29). IATF 16949 focuses on the quality management system, while VDA 6.3 examines whether a specific process is planned, controlled, and capable of producing the required output. VDA 6.5, by comparison, focuses on the product itself.
+VDA 6.3 is different from [IATF 16949](https://www.iatfglobaloversight.org/). IATF 16949 focuses on the automotive quality management system, while VDA 6.3 examines whether a specific process is planned, controlled, and capable of producing the required output. VDA 6.5, by comparison, focuses on the product itself.
 
 Auditors review documented procedures, inspect the production floor, question process owners, and compare records with actual conditions. Having IATF 16949 certification does not guarantee a strong VDA 6.3 result.
 
