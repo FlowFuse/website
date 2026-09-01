@@ -261,6 +261,16 @@ export default defineNuxtConfig({
         // trailing-slash: 11ty pages use trailing slashes intentionally
         // no-error-response: links to 11ty pages return 404 in the Nuxt-only static output
         skipInspections: ['trailing-slash', 'no-error-response'],
+        // By default the module re-inspects every prerendered page once the build finishes,
+        // and that pass has grown with the page count: 4m34s over 251 routes on 28 Jul,
+        // 10m10s over 563 on 30 Jul, 19m15s over 2363 now, which is most of a 24m CI job.
+        // What it buys us there is small. Only three of its inspections are error scope, and
+        // no-error-response is already skipped above, leaving missing-hash and no-javascript;
+        // everything else is a warning that no ruleset gates on. The CI build workflow also
+        // runs hyperlink with --check-anchors over the built nuxt/dist tree in well under a
+        // second, and that already covers broken links and anchors. Switching this off keeps
+        // the module's dev-time and devtools checking, it only drops the build-time pass.
+        runOnBuild: false,
     },
 
     // @nuxt/content generates import statements for remark plugin keys.
