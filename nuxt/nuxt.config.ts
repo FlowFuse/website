@@ -374,7 +374,6 @@ export default defineNuxtConfig({
                     '/terms',
                     '/privacy-policy',
                     '/integrations',
-                    '/integrations/opcua',
                     '/pricing',
                     '/product',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
