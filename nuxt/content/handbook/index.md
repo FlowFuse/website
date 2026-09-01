@@ -29,7 +29,7 @@ It's All About Our Values.
 
 ## Internal information
 Whilst instinctively we want to be open in all we do, there will inevitably be 
-content that is [not appropriate to make public][data-class]. That content is not
+content that is [not appropriate to make public][data-class]. That content is not fjajfadfajdf
 shared in this handbook.
 
 [data-class]: /handbook/company/security/data-management/#data-classification
