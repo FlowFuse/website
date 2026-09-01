@@ -25,17 +25,21 @@ meta:
       answer: "VDA 6.3 audit questions are scored using 0, 4, 6, 8, or 10 points. The results are used to calculate process and overall scores, which are classified as A, B, or C."
     - question: "What is the full form of the VDA standard?"
       answer: "VDA stands for Verband der Automobilindustrie, which translates to German Association of the Automotive Industry. VDA 6.3 is the VDA process audit standard for evaluating processes across the automotive supply chain."
+    - question: "How does FlowFuse support to VDA 6.3?"
+      answer: "FlowFuse can support the data side of process monitoring by connecting production equipment and systems. This helps manufacturers make operational data more accessible when investigating process performance or preparing audit evidence."
 cta:
   type: demo
   title: "Connect your production data with FlowFuse"
   description: "Bring data from machines, PLCs, and industrial systems into one place to make process information easier to access and monitor."
 ---
 
-VDA 6.3 is a process audit standard used across the German automotive supply chain. It evaluates whether a manufacturing process can consistently produce conforming parts.
+VDA 6.3 audits assess whether automotive processes are consistently controlled and capable of meeting requirements. For suppliers, the challenge is not just following procedures but being able to demonstrate how processes perform with reliable evidence.
 
 <!--more-->
 
-Unlike a quality management system audit, VDA 6.3 focuses on how a specific process works in practice. This guide explains the seven process elements, scoring system, audit evidence, common findings, and how to prepare.
+That evidence is often spread across machines, [PLCs](/landing/plc/), sensors, [MES platforms](/use-cases/mes/), and quality systems. FlowFuse can connect these production systems and bring operational data together, making it easier to access the evidence needed to monitor and demonstrate process performance.
+
+This guide covers VDA 6.3 process elements, scoring, audit evidence, common findings, and how to prepare.
 
 ::cta-image{src="/blog/2026/08/images/vda-6-3.cta.png" alt="make process data easier to access during audits - book a demo" cta="demo"}
 ::
@@ -113,13 +117,11 @@ Auditors compare documented requirements with what is happening on the productio
 
 They may check control plans against the current process, FMEA and [control plan](/blog/2026/08/control-plans) linkage, [SPC](/blog/2026/08/statistical-process-control) data and capability values such as Cp and Cpk, reaction plans for out-of-control conditions, operator training records, corrective actions and their effectiveness, and production and inspection records.
 
-The main risk is a gap between documentation and actual production.
+The main risk is a gap between documentation and actual production. When production data is spread across different machines and systems, it can be difficult to connect that data back to the documented process and demonstrate that the required controls were followed.
 
 For example, a control plan may identify a bore diameter as a critical characteristic, while the measurement system stores that value under a different name with different limits. If the systems are not connected, proving that the characteristic was checked correctly can require manual data matching.
 
-Connecting production systems can make this evidence easier to access. Manufacturers can collect data from PLCs, sensors, [MES](/blog/2025/06/what-is-mes), and industrial protocols such as [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), [Modbus](/node-red/protocol/modbus/), and [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), then display current process data in a dashboard.
-
-[FlowFuse](/) can connect these systems and provide a live view of production data. This does not replace required quality documentation, but it can make process evidence easier to access during an audit.
+By connecting these systems, FlowFuse can help make the production data behind these checks easier to access and trace.
 
 ## Common reasons suppliers lose points
 
