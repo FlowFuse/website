@@ -1,0 +1,1901 @@
+[
+    {
+        "id": "6d7f21a00014d7f8",
+        "type": "tab",
+        "label": "Chat Widget",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c0d325682a6fa4e7",
+        "type": "tab",
+        "label": "Chat - Open AI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "03505629d980e16f",
+        "type": "tab",
+        "label": "Chat + Worldmap",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d305317051db82a0",
+        "type": "group",
+        "z": "6d7f21a00014d7f8",
+        "name": "Hardcoded Responses",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "adfa29919d3f5cb3",
+            "cb2615837e4f7c34",
+            "ba37a5471fb218a1",
+            "991a4abae153fd3d",
+            "d3cd86c8bfb984b0",
+            "6e3395202a30906f",
+            "98c1dbd11b9c08b4",
+            "12776640bb5ee3a0"
+        ],
+        "x": 54,
+        "y": 39,
+        "w": 912,
+        "h": 162
+    },
+    {
+        "id": "84f3327e4d0dbe5d",
+        "type": "group",
+        "z": "c0d325682a6fa4e7",
+        "name": "Open AI Integration - Define Agent Setup Prompts",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b0147c403aad4d29",
+            "bc28b72b6281d448",
+            "b3285a8cbc368252",
+            "c35213bae87de70a",
+            "d341b70b74764f68",
+            "7f3cb5659521a31a",
+            "20e01f0f34bbf984"
+        ],
+        "x": 30,
+        "y": 51,
+        "w": 1056,
+        "h": 130
+    },
+    {
+        "id": "2d2fb11cd03df7f6",
+        "type": "group",
+        "z": "c0d325682a6fa4e7",
+        "name": "Open AI Integration - Handle back/forth conversation logic",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "43ad0045b0f172eb",
+            "710cbba9927f44ea",
+            "92d16605b3c69771",
+            "bb3dbd3f95f32a9a",
+            "acb4c10432f06e56",
+            "a05a12a08b755e5a",
+            "ec5b996e3d09570d",
+            "85abaf46507aea70",
+            "0ed6d4a47594d14a",
+            "612bdea1a32d0e45",
+            "204c73657d385d12",
+            "aad997a9b8a55eab",
+            "0f22e4f06fa138db",
+            "84e0da4f4e04e5e7",
+            "37b1892b8541f51c"
+        ],
+        "x": 46,
+        "y": 219,
+        "w": 1000,
+        "h": 266
+    },
+    {
+        "id": "a9643c48182f2513",
+        "type": "group",
+        "z": "03505629d980e16f",
+        "name": "Define Agent Setup Prompts",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "639b5a2ba67ba586",
+            "1821ae14505b80b6",
+            "76c54d85cb1cc4ac",
+            "a6e7bb550f447375",
+            "bea831d5ab7b593d",
+            "2a929d749e3c8729",
+            "6147d5a6413f11b8"
+        ],
+        "x": 30,
+        "y": 51,
+        "w": 1056,
+        "h": 130
+    },
+    {
+        "id": "ff34b88c7ead1be3",
+        "type": "group",
+        "z": "03505629d980e16f",
+        "name": "Handle back/forth conversation logic",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b3f30650e9d7e7c5",
+            "3d73f94b516d6a2f",
+            "6284253414e9be68",
+            "124d5f9415fa4010",
+            "6895155d21154e41",
+            "b38a2e91dd68e630",
+            "92cc6bf8f085513e",
+            "f3351d5cdd50b703",
+            "6c4211e3201e6556",
+            "5a398e07a5a702d0",
+            "0de11a1829ac07da",
+            "2e8b25e2541e6227",
+            "846c1226e9e58bb5",
+            "63999b0b10801ea7",
+            "77525091301000ba",
+            "24dbf2cbd6d71127",
+            "83aeb9848b716b9b",
+            "188a7aaf72703b41",
+            "857f3cdac7624ec5",
+            "483a8b7974c8a450",
+            "cefa3b172df24477",
+            "34b7f675e535a348"
+        ],
+        "x": 46,
+        "y": 219,
+        "w": 1696,
+        "h": 298
+    },
+    {
+        "id": "a99cdff63cd86673",
+        "type": "group",
+        "z": "c0d325682a6fa4e7",
+        "name": "Error Handling",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "fcf54fce1ca227b6",
+            "b1f0a9d8741a3fe5",
+            "9a2809cfe1bb917d",
+            "92b4189cb3f4929d"
+        ],
+        "x": 34,
+        "y": 539,
+        "w": 422,
+        "h": 122
+    },
+    {
+        "id": "bdae9a1bad2e9051",
+        "type": "group",
+        "z": "03505629d980e16f",
+        "name": "Error Handling",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7546b72aa928611e",
+            "6edafb1fa14e73f4",
+            "2b13a69a817638ac",
+            "f93d5c7c658b3f26"
+        ],
+        "x": 34,
+        "y": 559,
+        "w": 422,
+        "h": 122
+    },
+    {
+        "id": "21141d928559788f",
+        "type": "ui-group",
+        "name": "Harcoded Responses",
+        "page": "6d04aacbb1427a2c",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6d04aacbb1427a2c",
+        "type": "ui-page",
+        "name": "Chat Examples",
+        "ui": "c2e1aa56f50f03bd",
+        "path": "/chat",
+        "icon": "message",
+        "layout": "grid",
+        "theme": "afa24cae12543ca5",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "c2e1aa56f50f03bd",
+        "type": "ui-base",
+        "name": "FlowFuse",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": false,
+        "notificationDisplayTime": "5",
+        "showDisconnectNotification": false,
+        "allowInstall": true
+    },
+    {
+        "id": "afa24cae12543ca5",
+        "type": "ui-theme",
+        "name": "Chat Theme",
+        "colors": {
+            "surface": "#1f2937",
+            "primary": "#168d9c",
+            "bgPage": "#eeeeee",
+            "groupBg": "#fafdff",
+            "groupOutline": "#c7c7c7"
+        },
+        "sizes": {
+            "groupGap": "12px",
+            "widgetGap": "12px",
+            "pagePadding": "12px",
+            "groupBorderRadius": "0px",
+            "density": "default"
+        }
+    },
+    {
+        "id": "ba8f623313f5d346",
+        "type": "ui-group",
+        "name": "Open AI Integration",
+        "page": "6d04aacbb1427a2c",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b0a2a2cc7d4d7aef",
+        "type": "Service Host",
+        "apiBase": "https://api.openai.com/v1",
+        "secureApiKeyHeaderOrQueryName": "Authorization",
+        "organizationId": "",
+        "name": "Blueprint API Key"
+    },
+    {
+        "id": "74e605d83a8592c5",
+        "type": "ui-group",
+        "name": "Geography Expert",
+        "page": "b24427d8eaf4f812",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b24427d8eaf4f812",
+        "type": "ui-page",
+        "name": "Worldmap Integration",
+        "ui": "c2e1aa56f50f03bd",
+        "path": "/worldmap-chat",
+        "icon": "earth",
+        "layout": "grid",
+        "theme": "afa24cae12543ca5",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "0e288a4671abd06a",
+        "type": "comment",
+        "z": "6d7f21a00014d7f8",
+        "name": "README",
+        "info": "On this tab, the chat interface\nand responses are hardcoded.\n\nHowever, for the \"Chat - Open AI\"\nand \"Chat + Worldmap\" tabs, you need\nto configure you own OpenAI API key.\n\nYou can find the instructions on\nhow to do this [here](https://flowfuse.com/blueprints/ai/llm-chat-agent/#setup)",
+        "x": 120,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "cb2615837e4f7c34",
+        "type": "inject",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "Set \"Typing...\" Status",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "_typing",
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "adfa29919d3f5cb3"
+            ]
+        ]
+    },
+    {
+        "id": "ba37a5471fb218a1",
+        "type": "inject",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "Send Message",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Via Inject Node",
+        "payload": "Hello World!",
+        "payloadType": "str",
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "adfa29919d3f5cb3"
+            ]
+        ]
+    },
+    {
+        "id": "adfa29919d3f5cb3",
+        "type": "ui-chat",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "Harcoded Response",
+        "group": "21141d928559788f",
+        "order": 1,
+        "width": "6",
+        "height": "10",
+        "showAuthor": true,
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "d3cd86c8bfb984b0",
+                "991a4abae153fd3d"
+            ]
+        ]
+    },
+    {
+        "id": "991a4abae153fd3d",
+        "type": "delay",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 140,
+        "wires": [
+            [
+                "12776640bb5ee3a0"
+            ]
+        ]
+    },
+    {
+        "id": "d3cd86c8bfb984b0",
+        "type": "change",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "Send \"Typing...\" command",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "_typing",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 100,
+        "wires": [
+            [
+                "6e3395202a30906f"
+            ]
+        ]
+    },
+    {
+        "id": "6e3395202a30906f",
+        "type": "link out",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "98c1dbd11b9c08b4"
+        ],
+        "x": 925,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "98c1dbd11b9c08b4",
+        "type": "link in",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "link in 5",
+        "links": [
+            "6e3395202a30906f"
+        ],
+        "x": 285,
+        "y": 120,
+        "wires": [
+            [
+                "adfa29919d3f5cb3"
+            ]
+        ]
+    },
+    {
+        "id": "12776640bb5ee3a0",
+        "type": "change",
+        "z": "6d7f21a00014d7f8",
+        "g": "d305317051db82a0",
+        "name": "Send \"Hi!\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hi!",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Hardcoded Response",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 140,
+        "wires": [
+            [
+                "6e3395202a30906f"
+            ]
+        ]
+    },
+    {
+        "id": "b0147c403aad4d29",
+        "type": "template",
+        "z": "c0d325682a6fa4e7",
+        "g": "84f3327e4d0dbe5d",
+        "name": "Define Setup Prompts",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "You are an assistant that is an expert in Node-RED\nYou do not use emojis\nYou should only reply with plain text",
+        "output": "str",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "bc28b72b6281d448"
+            ]
+        ]
+    },
+    {
+        "id": "bc28b72b6281d448",
+        "type": "split",
+        "z": "c0d325682a6fa4e7",
+        "g": "84f3327e4d0dbe5d",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 482,
+        "y": 140,
+        "wires": [
+            [
+                "b3285a8cbc368252"
+            ]
+        ]
+    },
+    {
+        "id": "b3285a8cbc368252",
+        "type": "change",
+        "z": "c0d325682a6fa4e7",
+        "g": "84f3327e4d0dbe5d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "content",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.role",
+                "pt": "msg",
+                "to": "developer",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "content",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "content",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 644,
+        "y": 140,
+        "wires": [
+            [
+                "c35213bae87de70a"
+            ]
+        ]
+    },
+    {
+        "id": "c35213bae87de70a",
+        "type": "join",
+        "z": "c0d325682a6fa4e7",
+        "g": "84f3327e4d0dbe5d",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 806,
+        "y": 140,
+        "wires": [
+            [
+                "d341b70b74764f68"
+            ]
+        ]
+    },
+    {
+        "id": "d341b70b74764f68",
+        "type": "change",
+        "z": "c0d325682a6fa4e7",
+        "g": "84f3327e4d0dbe5d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "prompts",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f3cb5659521a31a",
+        "type": "inject",
+        "z": "c0d325682a6fa4e7",
+        "g": "84f3327e4d0dbe5d",
+        "name": "Run",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 126,
+        "y": 140,
+        "wires": [
+            [
+                "b0147c403aad4d29"
+            ]
+        ]
+    },
+    {
+        "id": "20e01f0f34bbf984",
+        "type": "comment",
+        "z": "c0d325682a6fa4e7",
+        "g": "84f3327e4d0dbe5d",
+        "name": "Define Agent's Behaviour Here",
+        "info": "",
+        "x": 298,
+        "y": 92,
+        "wires": []
+    },
+    {
+        "id": "710cbba9927f44ea",
+        "type": "ui-chat",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Open AI Integration",
+        "group": "ba8f623313f5d346",
+        "order": 1,
+        "width": "6",
+        "height": "10",
+        "showAuthor": true,
+        "x": 210,
+        "y": 284,
+        "wires": [
+            [
+                "92d16605b3c69771",
+                "0f22e4f06fa138db"
+            ]
+        ]
+    },
+    {
+        "id": "92d16605b3c69771",
+        "type": "function",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Add Message to History",
+        "func": "const prompts = flow.get('prompts') || []\nconst history = flow.get('conversation') || []\n\nconst conversation = [\n    ...prompts,\n    ...history,\n    {\n        role: 'user',\n        content: msg.payload\n    }\n]\n\nmsg.payload = conversation\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 434,
+        "y": 260,
+        "wires": [
+            [
+                "612bdea1a32d0e45"
+            ]
+        ]
+    },
+    {
+        "id": "bb3dbd3f95f32a9a",
+        "type": "function",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Store in Conversation",
+        "func": "const reply = msg.payload\nconst history = flow.get('conversation') || []\n\nconst conversation = [\n    ...history,\n    reply\n]\n\nflow.set('conversation', conversation)",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 356,
+        "wires": []
+    },
+    {
+        "id": "acb4c10432f06e56",
+        "type": "change",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Extract Response",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.choices[0].message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 414,
+        "y": 380,
+        "wires": [
+            [
+                "bb3dbd3f95f32a9a",
+                "85abaf46507aea70"
+            ]
+        ]
+    },
+    {
+        "id": "a05a12a08b755e5a",
+        "type": "link out",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "ec5b996e3d09570d"
+        ],
+        "x": 729,
+        "y": 404,
+        "wires": []
+    },
+    {
+        "id": "ec5b996e3d09570d",
+        "type": "link in",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "link in 1",
+        "links": [
+            "a05a12a08b755e5a",
+            "84e0da4f4e04e5e7",
+            "92b4189cb3f4929d"
+        ],
+        "x": 87,
+        "y": 284,
+        "wires": [
+            [
+                "710cbba9927f44ea"
+            ]
+        ]
+    },
+    {
+        "id": "85abaf46507aea70",
+        "type": "change",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Reply in Chat UI",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.content",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Open AI",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 404,
+        "wires": [
+            [
+                "a05a12a08b755e5a"
+            ]
+        ]
+    },
+    {
+        "id": "0ed6d4a47594d14a",
+        "type": "template",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Format for Open AI",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"model\": \"gpt-4.1\",\n    \"messages\": {{{ payload }}}\n}",
+        "output": "json",
+        "x": 846,
+        "y": 260,
+        "wires": [
+            [
+                "204c73657d385d12"
+            ]
+        ]
+    },
+    {
+        "id": "612bdea1a32d0e45",
+        "type": "json",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "JSON to String",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 652,
+        "y": 260,
+        "wires": [
+            [
+                "0ed6d4a47594d14a"
+            ]
+        ]
+    },
+    {
+        "id": "204c73657d385d12",
+        "type": "link out",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "aad997a9b8a55eab"
+        ],
+        "x": 1005,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "aad997a9b8a55eab",
+        "type": "link in",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "link in 2",
+        "links": [
+            "204c73657d385d12"
+        ],
+        "x": 87,
+        "y": 380,
+        "wires": [
+            [
+                "43ad0045b0f172eb"
+            ]
+        ]
+    },
+    {
+        "id": "0f22e4f06fa138db",
+        "type": "change",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Set \"Typing...\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "_typing",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 404,
+        "y": 308,
+        "wires": [
+            [
+                "84e0da4f4e04e5e7"
+            ]
+        ]
+    },
+    {
+        "id": "84e0da4f4e04e5e7",
+        "type": "link out",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "ec5b996e3d09570d"
+        ],
+        "x": 519,
+        "y": 308,
+        "wires": []
+    },
+    {
+        "id": "37b1892b8541f51c",
+        "type": "comment",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "Add your OpenAI credentials to the \"Service Host\" field of this Open AI node",
+        "info": "",
+        "x": 346,
+        "y": 444,
+        "wires": []
+    },
+    {
+        "id": "43ad0045b0f172eb",
+        "type": "OpenAI API",
+        "z": "c0d325682a6fa4e7",
+        "g": "2d2fb11cd03df7f6",
+        "name": "OpenAI: Get Reply",
+        "property": "payload",
+        "propertyType": "msg",
+        "service": "b0a2a2cc7d4d7aef",
+        "method": "createChatCompletion",
+        "x": 210,
+        "y": 380,
+        "wires": [
+            [
+                "acb4c10432f06e56"
+            ]
+        ]
+    },
+    {
+        "id": "fcf54fce1ca227b6",
+        "type": "catch",
+        "z": "c0d325682a6fa4e7",
+        "g": "a99cdff63cd86673",
+        "name": "",
+        "scope": [
+            "43ad0045b0f172eb"
+        ],
+        "uncaught": false,
+        "x": 110,
+        "y": 600,
+        "wires": [
+            [
+                "b1f0a9d8741a3fe5",
+                "9a2809cfe1bb917d"
+            ]
+        ]
+    },
+    {
+        "id": "b1f0a9d8741a3fe5",
+        "type": "debug",
+        "z": "c0d325682a6fa4e7",
+        "g": "a99cdff63cd86673",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "9a2809cfe1bb917d",
+        "type": "change",
+        "z": "c0d325682a6fa4e7",
+        "g": "a99cdff63cd86673",
+        "name": "Reply with Error",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 580,
+        "wires": [
+            [
+                "92b4189cb3f4929d"
+            ]
+        ]
+    },
+    {
+        "id": "92b4189cb3f4929d",
+        "type": "link out",
+        "z": "c0d325682a6fa4e7",
+        "g": "a99cdff63cd86673",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "ec5b996e3d09570d"
+        ],
+        "x": 415,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "639b5a2ba67ba586",
+        "type": "template",
+        "z": "03505629d980e16f",
+        "g": "a9643c48182f2513",
+        "name": "Define Setup Prompts",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "You are an assistant that provides information about places around the world.\nWhen you respond, you should provide a JSON message.\nThe JSON message should ahve two properties: 'text' and 'location'.\nThe 'text' property should include a text-based response to the user's query.\nIf your answer includes information about a location, then include the latitude (as the property 'lat') and longitude (as the property 'lon') of that place in the 'location' field, with a 'name' field detailing the name of that location, if there is no location mentioned then leave it null.",
+        "output": "str",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "1821ae14505b80b6"
+            ]
+        ]
+    },
+    {
+        "id": "1821ae14505b80b6",
+        "type": "split",
+        "z": "03505629d980e16f",
+        "g": "a9643c48182f2513",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 482,
+        "y": 140,
+        "wires": [
+            [
+                "76c54d85cb1cc4ac"
+            ]
+        ]
+    },
+    {
+        "id": "76c54d85cb1cc4ac",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "a9643c48182f2513",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "content",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.role",
+                "pt": "msg",
+                "to": "developer",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "content",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "content",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 644,
+        "y": 140,
+        "wires": [
+            [
+                "a6e7bb550f447375"
+            ]
+        ]
+    },
+    {
+        "id": "a6e7bb550f447375",
+        "type": "join",
+        "z": "03505629d980e16f",
+        "g": "a9643c48182f2513",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 806,
+        "y": 140,
+        "wires": [
+            [
+                "bea831d5ab7b593d"
+            ]
+        ]
+    },
+    {
+        "id": "bea831d5ab7b593d",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "a9643c48182f2513",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "prompts",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a929d749e3c8729",
+        "type": "inject",
+        "z": "03505629d980e16f",
+        "g": "a9643c48182f2513",
+        "name": "Run",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 126,
+        "y": 140,
+        "wires": [
+            [
+                "639b5a2ba67ba586"
+            ]
+        ]
+    },
+    {
+        "id": "6147d5a6413f11b8",
+        "type": "comment",
+        "z": "03505629d980e16f",
+        "g": "a9643c48182f2513",
+        "name": "Define Agent's Behaviour Here",
+        "info": "",
+        "x": 298,
+        "y": 92,
+        "wires": []
+    },
+    {
+        "id": "b3f30650e9d7e7c5",
+        "type": "OpenAI API",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "OpenAI: Get Reply",
+        "property": "payload",
+        "propertyType": "msg",
+        "service": "b0a2a2cc7d4d7aef",
+        "method": "createChatCompletion",
+        "x": 210,
+        "y": 380,
+        "wires": [
+            [
+                "6895155d21154e41"
+            ]
+        ]
+    },
+    {
+        "id": "3d73f94b516d6a2f",
+        "type": "ui-chat",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Geography Expert",
+        "group": "74e605d83a8592c5",
+        "order": 1,
+        "width": "4",
+        "height": "10",
+        "showAuthor": true,
+        "x": 210,
+        "y": 284,
+        "wires": [
+            [
+                "6284253414e9be68",
+                "846c1226e9e58bb5"
+            ]
+        ]
+    },
+    {
+        "id": "6284253414e9be68",
+        "type": "function",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Add Message to History",
+        "func": "const prompts = flow.get('prompts') || []\nconst history = flow.get('conversation') || []\n\nconst conversation = [\n    ...prompts,\n    ...history,\n    {\n        role: 'user',\n        content: msg.payload\n    }\n]\n\nmsg.payload = conversation\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 434,
+        "y": 260,
+        "wires": [
+            [
+                "5a398e07a5a702d0"
+            ]
+        ]
+    },
+    {
+        "id": "124d5f9415fa4010",
+        "type": "function",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Store in History",
+        "func": "const reply = msg.payload\nconst history = flow.get('conversation') || []\n\nconst conversation = [\n    ...history,\n    {\n        role: 'assistant',\n        content: reply\n    }\n]\n\nflow.set('conversation', conversation)",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1112,
+        "y": 332,
+        "wires": []
+    },
+    {
+        "id": "6895155d21154e41",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Extract Response",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.choices[0].message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 414,
+        "y": 380,
+        "wires": [
+            [
+                "83aeb9848b716b9b"
+            ]
+        ]
+    },
+    {
+        "id": "b38a2e91dd68e630",
+        "type": "link out",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "92cc6bf8f085513e"
+        ],
+        "x": 1047,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "92cc6bf8f085513e",
+        "type": "link in",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "link in 3",
+        "links": [
+            "b38a2e91dd68e630",
+            "63999b0b10801ea7",
+            "f93d5c7c658b3f26"
+        ],
+        "x": 87,
+        "y": 284,
+        "wires": [
+            [
+                "3d73f94b516d6a2f"
+            ]
+        ]
+    },
+    {
+        "id": "f3351d5cdd50b703",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Get Text Only",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 916,
+        "y": 356,
+        "wires": [
+            [
+                "b38a2e91dd68e630",
+                "124d5f9415fa4010"
+            ]
+        ]
+    },
+    {
+        "id": "6c4211e3201e6556",
+        "type": "template",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Format for Open AI",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"model\": \"gpt-4.1\",\n    \"messages\": {{{ payload }}}\n}",
+        "output": "json",
+        "x": 846,
+        "y": 260,
+        "wires": [
+            [
+                "0de11a1829ac07da"
+            ]
+        ]
+    },
+    {
+        "id": "5a398e07a5a702d0",
+        "type": "json",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "JSON to String",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 652,
+        "y": 260,
+        "wires": [
+            [
+                "6c4211e3201e6556"
+            ]
+        ]
+    },
+    {
+        "id": "0de11a1829ac07da",
+        "type": "link out",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "2e8b25e2541e6227"
+        ],
+        "x": 1005,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2e8b25e2541e6227",
+        "type": "link in",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "link in 4",
+        "links": [
+            "0de11a1829ac07da"
+        ],
+        "x": 87,
+        "y": 380,
+        "wires": [
+            [
+                "b3f30650e9d7e7c5"
+            ]
+        ]
+    },
+    {
+        "id": "846c1226e9e58bb5",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Set \"Typing...\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "_typing",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 404,
+        "y": 308,
+        "wires": [
+            [
+                "63999b0b10801ea7"
+            ]
+        ]
+    },
+    {
+        "id": "63999b0b10801ea7",
+        "type": "link out",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "92cc6bf8f085513e"
+        ],
+        "x": 519,
+        "y": 308,
+        "wires": []
+    },
+    {
+        "id": "83aeb9848b716b9b",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Get Full Reply",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.content",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Open AI",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "188a7aaf72703b41"
+            ]
+        ]
+    },
+    {
+        "id": "188a7aaf72703b41",
+        "type": "json",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 754,
+        "y": 380,
+        "wires": [
+            [
+                "f3351d5cdd50b703",
+                "857f3cdac7624ec5"
+            ]
+        ]
+    },
+    {
+        "id": "857f3cdac7624ec5",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Get Location",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.location",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 906,
+        "y": 404,
+        "wires": [
+            [
+                "483a8b7974c8a450"
+            ]
+        ]
+    },
+    {
+        "id": "483a8b7974c8a450",
+        "type": "json",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 1054,
+        "y": 428,
+        "wires": [
+            [
+                "cefa3b172df24477"
+            ]
+        ]
+    },
+    {
+        "id": "cefa3b172df24477",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "Add Clear Existing Layer Command",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.command.clearlayer",
+                "pt": "msg",
+                "to": "unknown",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.command.zoom",
+                "pt": "msg",
+                "to": "5",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.command.lat",
+                "pt": "msg",
+                "to": "payload.lat",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.command.lon",
+                "pt": "msg",
+                "to": "payload.lon",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1278,
+        "y": 428,
+        "wires": [
+            [
+                "77525091301000ba"
+            ]
+        ]
+    },
+    {
+        "id": "34b7f675e535a348",
+        "type": "ui-button",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "group": "74e605d83a8592c5",
+        "name": "",
+        "label": "Clear Worldmap",
+        "order": 3,
+        "width": "12",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{ \"command\": { \"clearlayer\": \"unknown\", \"zoom\": 2 }}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1348,
+        "y": 476,
+        "wires": [
+            [
+                "77525091301000ba"
+            ]
+        ]
+    },
+    {
+        "id": "24dbf2cbd6d71127",
+        "type": "ui-iframe",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "",
+        "group": "74e605d83a8592c5",
+        "order": 2,
+        "src": "/worldmap",
+        "width": "8",
+        "height": "10",
+        "x": 1666,
+        "y": 476,
+        "wires": []
+    },
+    {
+        "id": "77525091301000ba",
+        "type": "worldmap",
+        "z": "03505629d980e16f",
+        "g": "ff34b88c7ead1be3",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "false",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1524,
+        "y": 452,
+        "wires": []
+    },
+    {
+        "id": "7546b72aa928611e",
+        "type": "catch",
+        "z": "03505629d980e16f",
+        "g": "bdae9a1bad2e9051",
+        "name": "",
+        "scope": [
+            "b3f30650e9d7e7c5"
+        ],
+        "uncaught": false,
+        "x": 110,
+        "y": 620,
+        "wires": [
+            [
+                "6edafb1fa14e73f4",
+                "2b13a69a817638ac"
+            ]
+        ]
+    },
+    {
+        "id": "6edafb1fa14e73f4",
+        "type": "debug",
+        "z": "03505629d980e16f",
+        "g": "bdae9a1bad2e9051",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 260,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "2b13a69a817638ac",
+        "type": "change",
+        "z": "03505629d980e16f",
+        "g": "bdae9a1bad2e9051",
+        "name": "Reply with Error",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 600,
+        "wires": [
+            [
+                "f93d5c7c658b3f26"
+            ]
+        ]
+    },
+    {
+        "id": "f93d5c7c658b3f26",
+        "type": "link out",
+        "z": "03505629d980e16f",
+        "g": "bdae9a1bad2e9051",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "92cc6bf8f085513e"
+        ],
+        "x": 415,
+        "y": 620,
+        "wires": []
+    }
+]
