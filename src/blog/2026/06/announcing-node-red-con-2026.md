@@ -56,11 +56,4 @@ has accumulated 3,100+ views and is still growing.
 
 Want to be notified when registration opens? Sign up below.
 
-<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-<script>
-  hbspt.forms.create({
-    portalId: "26586079",
-    formId: "9a447b67-0957-4f40-90e9-69db1ab9c70a",
-    region: "eu1"
-  });
-</script>
+::HubSpotForm{formId="9a447b67-0957-4f40-90e9-69db1ab9c70a" cta="cta-node-red-con-2026" reference="article"}
