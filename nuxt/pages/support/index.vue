@@ -41,11 +41,7 @@ useSeoMeta({
                 </p>
               </div>
               <div class="container text-center max-w-4xl flex flex-col md:items-start mt-6">
-                <a class="ff-btn ff-btn--primary flex flex-col" href="https://discourse.nodered.org/c/vendors/flowfuse/24/">
-                  <span class="text-base uppercase no-underline md:px-4">
-                    COMMUNITY FORUM
-                  </span>
-                </a>
+                <CtaCustom label="Community Forum" destination-key="communityForum" variant="primary" position="community" />
               </div>
             </div>
             <div class="md:flex md:flex-col md:justify-between text-left self-start md:h-full">

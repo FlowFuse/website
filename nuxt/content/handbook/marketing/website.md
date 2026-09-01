@@ -230,6 +230,35 @@ The dark card above is just to make the white text visible in this doc, use `col
 | `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |
 | `icon`     | No       | An icon name to show after the button text, e.g. `i-lucide-arrow-right`                                                                       |
 
+### One-off links (`CtaCustom`)
+
+Occasionally a page needs a button-styled link that genuinely isn't one of the five destinations above — a link to a HubSpot meeting scheduler, an external community forum, and so on. There's a `CtaCustom` component for that, with its own copy and destination, still using the same look and tracking system as everything else on this page.
+
+Using it takes two steps:
+
+1. Register the destination in `nuxt/lib/custom-cta-destinations.ts` — a short list of entries, each just a name, a URL, and a PostHog event name (no coding beyond typing those three things in). This is what keeps the same URL from accidentally getting tracked under two different event names if it's ever linked from more than one place.
+2. Reference that name from `<CtaCustom>` in the page, along with the button's copy and style — same as any other `Cta*` component.
+
+Both steps are plain text edits — no different in spirit from adding a new entry to `events.yaml` or a new industry page's frontmatter.
+
+**Example.** The support page's link to the Node-RED community forum works like this. First, an entry in `nuxt/lib/custom-cta-destinations.ts`:
+
+```ts
+communityForum: {
+    href: 'https://discourse.nodered.org/c/vendors/flowfuse/24/',
+    event: 'cta-community-forum',
+},
+```
+
+Then, in the page itself:
+
+```mdc
+::CtaCustom{label="Community Forum" destination-key="communityForum" variant="primary" position="community"}
+::
+```
+
+`destination-key` must match the name chosen in step 1 exactly (`communityForum` in both places above) - that's the link between the button and the destination it's registered to.
+
 ## Requesting New Website Pages
 
 If you would like the marketing team to create a new page, landing page, or apply website

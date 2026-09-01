@@ -20,6 +20,15 @@ const props = withDefaults(defineProps<{
     position: string
     plan?: string
     icon?: string
+    // Passed straight through to the underlying UButton/NuxtLink, which adds
+    // `rel="noopener noreferrer"` on its own for target="_blank" - not
+    // recomputed here, so that safer default isn't accidentally weakened to
+    // just "noopener" (missing noreferrer) by a second, competing rel value.
+    // None of the five reserved destinations need this (they're all
+    // same-tab), but CtaCustom exposes it for one-off links to an actual
+    // external site, where opening in the current tab would navigate the
+    // visitor away.
+    target?: string
     // Only meaningful for variant="ghost" - which text color to use, since a
     // ghost button has no background of its own to imply one. "white" exists
     // because the homepage hero's "Try it out" sits on a dark photo.
@@ -136,6 +145,7 @@ function onClick () {
   <UButton
     :to="preview ? undefined : href"
     :external="external"
+    :target="target"
     :color="uiVariant.color"
     :variant="uiVariant.variant"
     :trailing-icon="icon"
