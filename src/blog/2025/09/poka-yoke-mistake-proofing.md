@@ -137,7 +137,7 @@ The future of poka yoke increasingly incorporates Industry 4.0 technologies that
 
 Modern smart manufacturing systems integrate digital work instructions that guide operators through complex procedures step-by-step, ensuring consistency while accommodating process variations. Adaptive tooling automatically adjusts parameters based on real-time measurements, preventing specification deviations while maintaining production efficiency.
 
-FlowFuse enables sophisticated poka yoke implementations by connecting IoT sensors, machine data, and quality control systems in real-time workflows. Manufacturing teams can build automated solutions that trigger immediate alerts, stop processes when deviations occur, and guide operators through corrective actions, all without complex programming or expensive custom solutions.
+FlowFuse enables sophisticated poka yoke implementations by connecting IoT sensors, machine data, and quality control systems in real-time workflows. Manufacturing teams can build automated solutions that trigger immediate alerts, stop processes when deviations occur, and guide operators through [corrective actions](/blog/2026/09/capa-corrective-preventive-action/), all without complex programming or expensive custom solutions.
 
 ## Conclusion
 

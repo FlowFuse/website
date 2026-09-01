@@ -83,7 +83,7 @@ Use this simple template to run the analysis, filling in each line with a verifi
 - **Why 2:** Why did *that* condition exist?
 - **Why 3–5 (as needed):** Keep asking why of the previous answer.
 - **Root cause:** The systemic gap you can actually fix.
-- **Corrective action:** The specific fix, owner, and deadline.
+- **[Corrective action](/blog/2026/09/capa-corrective-preventive-action/):** The specific fix, owner, and deadline.
 
 Each answer should be something you can verify: a physical observation, sensor data, a log, or direct testimony, not speculation. "Probably the operator forgot" isn't an answer; "the feed line was clogged, confirmed by checking oil flow" is. Stop once you reach a process failure or systemic gap you can fix with a clear corrective action, revising a maintenance procedure or adding a training step, rather than "operator error" or "equipment failure," which are symptoms, not causes.
 

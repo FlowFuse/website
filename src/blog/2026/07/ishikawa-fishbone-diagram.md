@@ -54,7 +54,7 @@ meta:
     - question: "Who invented the Ishikawa diagram and when?"
       answer: "Kaoru Ishikawa (1915–1989), a Japanese engineer and University of Tokyo professor, popularized the diagram in the 1960s while developing quality-management processes at the Kawasaki shipyards, and formalized it in his 1968 book Guide to Quality Control. It is one of the seven basic quality tools and was designed so that ordinary workers, not just specialists, could analyze the causes of quality problems."
     - question: "Can I build a fishbone diagram in FlowFuse?"
-      answer: "FlowFuse isn't a drawing tool for the diagram itself; a whiteboard or diagramming app is quicker for the brainstorming stage. Where FlowFuse helps is the step after: it connects to your PLCs, sensors, and quality systems so you can verify which suspected cause on the fishbone is real, using live production data, and build dashboards that confirm your corrective action actually worked."
+      answer: "FlowFuse isn't a drawing tool for the diagram itself; a whiteboard or diagramming app is quicker for the brainstorming stage. Where FlowFuse helps is the step after: it connects to your PLCs, sensors, and quality systems so you can verify which suspected cause on the fishbone is real, using live production data, and build dashboards that confirm your [corrective action](/blog/2026/09/capa-corrective-preventive-action/) actually worked."
 cta:
   type: contact
   title: "Turn suspected causes into verified ones"
