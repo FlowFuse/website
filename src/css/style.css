@@ -93,7 +93,13 @@
     --tw-prose-bold: var(--color-gray-500);
 }
 .prose img { max-width: 100%; }
-.prose:not(.prose-natural-size-images) img { width: 100%; height: auto; }
+
+@layer components {
+    .prose:not(.prose-natural-size-images) img {
+        width: 100%;
+        height: auto;
+    }
+}
 
 @import "./style.page.css";
 @import "./style.nohero.css";
@@ -3314,12 +3320,15 @@ lite-youtube::before {
 
 /* AgentSetupTabs: the agent picker and its three setup steps. Unlayered on purpose.
    The component renders inside .prose on the changelog entry and the third-party-agents
-   docs page as well as standalone on /ai, and the site's prose rules are also unlayered
-   (see .prose above), which outranks Tailwind's @layer utilities however specific the
-   utility is. So the component's look cannot live in utility classes on the elements:
-   .prose img's width:100% beat `h-4` and blew the tab marks up to full column width,
-   and .prose p forced the step text to 12px. Unlayered outranks every layer, so these
-   rules hold in prose and out of it. Keep visual values here, not in the template.
+   docs page as well as standalone on /ai. .prose p still forces the step text's font
+   size via Tailwind Typography's own (unlayered) rules, which outrank Tailwind's
+   @layer utilities however specific the utility is — so the component's text size
+   still can't live in a utility class on the element. (.prose img's width:100% used
+   to be unlayered too and beat `h-4`, blowing the tab marks up to full column width;
+   it now lives in @layer components — see .prose above — so a utility class on an
+   image here would win. The component doesn't rely on that, but don't assume image
+   sizing needs the same unlayered treatment as text sizing going forward.)
+   Keep visual values here, not in the template.
 
    Sizing is driven by the component's own width via @container, not by the viewport.
    A viewport md: breakpoint gave three 186px columns inside a 704px prose column,
