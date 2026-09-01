@@ -1,6 +1,5 @@
 ---
-title: "CAPA: Corrective and Preventive Action Process, Examples, and Effectiveness"
-metaTitle: "CAPA: Corrective and Preventive Action Guide"
+title: "CAPA: Corrective and Preventive Action Guide"
 subtitle: "What CAPA means, how corrective and preventive action differ, and how to verify an action actually worked."
 description: "Learn what CAPA means, how corrective and preventive actions work, common CAPA process steps and examples, and how to verify that an action was effective."
 date: 2026-09-01
@@ -57,9 +56,9 @@ Corrective and preventive actions depend on understanding why a problem occurred
 
 A few methods cover most cases:
 
-* **[5 Whys](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/):** Ask "why" repeatedly, with each answer guiding the next question, until you reach an actionable cause rather than restating the symptom.
-* **[Fishbone (Ishikawa) diagram](/blog/2026/07/ishikawa-fishbone-diagram/):** Maps potential causes across categories such as people, methods, materials, and equipment. It's useful when a problem may have several contributing causes.
-* **Fault tree analysis:** Works backward from a failure, breaking it into the combination of conditions that had to be present for it to occur. It's commonly used for complex or safety-critical processes; NASA's [Fault Tree Handbook](https://s3vi.ndc.nasa.gov/ssri-kb/static/resources/Fault%20Tree%20Handbook_NASA.pdf) is a widely cited reference for the method.
+- **[5 Whys](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/):** Ask "why" repeatedly, with each answer guiding the next question, until you reach an actionable cause rather than restating the symptom.
+- **[Fishbone (Ishikawa) diagram](/blog/2026/07/ishikawa-fishbone-diagram/):** Maps potential causes across categories such as people, methods, materials, and equipment. It's useful when a problem may have several contributing causes.
+- **Fault tree analysis:** Works backward from a failure, breaking it into the combination of conditions that had to be present for it to occur. It's commonly used for complex or safety-critical processes; NASA's [Fault Tree Handbook](https://s3vi.ndc.nasa.gov/ssri-kb/static/resources/Fault%20Tree%20Handbook_NASA.pdf) is a widely cited reference for the method.
 
 The investigation should draw on multiple sources of evidence, including process records, operator interviews, maintenance logs, and inspection results. A problem can have more than one contributing cause, so addressing only one may not prevent recurrence.
 
@@ -116,18 +115,18 @@ A strong CAPA process needs clear ownership, an evidence-based investigation, an
 
 ## How FlowFuse Supports CAPA
 
-CAPA work can involve data from machines, PLCs, databases, and quality systems. [FlowFuse](/) connects these systems so manufacturers can use production data as part of their existing quality processes.
+CAPA investigations and effectiveness checks often require data from multiple systems, including machines, PLCs, databases, and quality systems. When that information is disconnected, teams may have to rely on manual records or piece together evidence from several sources.
 
-Manufacturers can use FlowFuse to:
+[FlowFuse](/) connects production systems and data sources so manufacturers can use operational data as part of their existing CAPA process.
 
-- **Connect production and quality data** across machines, [PLCs](/landing/plc/), [databases](/node-red/database/), and other factory systems.
-- **Standardize workflows** for [collecting data](/use-cases/data-integration/), handling quality events, and following up on corrective actions.
-- **Automate routine steps** such as [detecting production events](/use-cases/production-monitoring/), sending [notifications](/node-red/notification/), and passing data between systems.
-- **Support investigations and effectiveness checks** with production data linked to the quality issue.
-- **Scale across lines and plants** by reusing integrations and workflows instead of creating separate solutions for each operation.
-- **Build custom applications** for [quality dashboards](/blog/2026/08/manufacturing-dashboard-examples/#_4-quality-dashboard-defect-quality-monitoring), alerts, forms, and other workflows without replacing existing manufacturing systems.
+For example, FlowFuse can help teams:
 
-This lets manufacturers connect CAPA processes to the systems already running their production operations, while keeping the same approach across different lines and plants.
+- **Collect relevant production data** when a quality issue or nonconformity occurs using [data integration](/use-cases/data-integration/) workflows.
+- **Connect data across machines, PLCs, databases, and quality systems** to support root cause investigations.
+- **Automate workflows and notifications** when production or quality events require attention, including [production monitoring](/use-cases/production-monitoring/) and [notifications](/node-red/notification/).
+- **Monitor process and quality data after an action is implemented** to provide evidence for effectiveness checks, such as through [quality dashboards](/blog/2026/08/manufacturing-dashboard-examples/#_4-quality-dashboard-defect-quality-monitoring).
+
+FlowFuse does not replace an organization's CAPA or quality management system. Instead, it helps connect the production data and operational workflows that support investigations, corrective actions, and verification that an action actually worked.
 
 ## Tracking CAPA Effectiveness
 
@@ -136,13 +135,3 @@ Closing a CAPA does not mean the problem is solved. Teams need to check whether 
 Useful measures include CAPA cycle time, recurrence rate, overdue actions, and recurring root causes. A [Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/) can help identify which causes need attention, while [MTTF, MTBF, and MTTR](/blog/2025/12/mttf-vs-mtbf-vs-mttr/) can help measure the effect of corrective actions on equipment reliability.
 
 The quality of these measures depends on the data behind them. Production records, process measurements, machine states, and maintenance history can give teams the evidence they need to investigate a problem and confirm that the action was effective.
-
-## CAPA in Regulated Industries
-
-In medical device, pharmaceutical, and aerospace manufacturing, CAPA is an important part of quality management and regulatory compliance. The specific requirements vary by industry and standard.
-
-For medical device manufacturers, ISO 13485 includes requirements for corrective and preventive action within the quality management system.
-
-In the United States, the FDA's **Quality Management System Regulation (QMSR)** became effective on February 2, 2026. The QMSR incorporates ISO 13485:2016 by reference into 21 CFR Part 820, aligning the FDA's medical device quality system requirements more closely with the international standard.
-
-For regulated manufacturers, CAPA activities should connect to appropriate risk management, documented investigations, and objective evidence. Effectiveness checks should demonstrate that an action achieved its intended result rather than simply showing that the action was completed.
