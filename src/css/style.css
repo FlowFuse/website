@@ -2360,7 +2360,7 @@ lite-youtube::before {
 }
 
 .bg-radial-red {
-    background: radial-gradient(ellipse 30% 70% at center bottom, rgb(from var(--color-red-50) r g b / 0.3) 0%, rgb(from var(--color-red-50) r g b / 0) 100%);
+    background: radial-gradient(ellipse 30% 70% at center bottom, rgb(from var(--color-red-100) r g b / 0.3) 0%, rgb(from var(--color-red-100) r g b / 0) 100%);
 }
 
 /* AI Chat Interface Styles */
