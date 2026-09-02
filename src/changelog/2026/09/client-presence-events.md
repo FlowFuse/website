@@ -2,6 +2,7 @@
 title: Track Client Presence in Your Flows
 description: Detect when a client connects, reconnects, or leaves your dashboard, keyed to a stable client ID that survives reconnects.
 date: 2026-09-02 12:00:00
+release: "3.1"
 authors: ["noley-holland"]
 tags:
   - changelog
