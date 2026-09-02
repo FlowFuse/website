@@ -137,7 +137,7 @@ A practical rule is: the higher the layer, the wider the scope and the lower the
 4. **Train the auditors.** Auditors should observe the process, ask factual questions, and record evidence rather than opinions.
 5. **Perform the audit at the station.** Watch the operation and record answers while standing at the workstation.
 6. **Correct immediate issues.** Fix simple problems during the audit whenever possible.
-7. **Assign corrective actions.** Give each finding an owner and a due date.
+7. **Assign [corrective actions](/blog/2026/09/capa-corrective-preventive-action/).** Give each finding an owner and a due date.
 8. **Verify closure.** Confirm that the action was completed and remains effective during the next audit cycle.
 
 Most LPAs take 5 to 15 minutes. If an audit takes much longer, the checklist is usually too large for a routine layered audit.

@@ -398,7 +398,7 @@ This is the widget that answers whether defects are being closed fast enough, no
 2. Add a change node named "Extract Status Funnel Data": set `payload` to `payload[0].status_funnel` (msg).
 3. Add a ui-chart node in the Status Funnel group, chart type Bar, `status` on the x-axis, `defect_count` on the y.
 
-The query orders it by workflow stage (Detected, RCA, Corrective Action, Resolved, Verified), so a pile-up at any stage is visible at a glance.
+The query orders it by workflow stage (Detected, RCA, [Corrective Action](/blog/2026/09/capa-corrective-preventive-action/), Resolved, Verified), so a pile-up at any stage is visible at a glance.
 
 ![Screenshot: the Status Funnel bar chart, ordered by workflow stage](./images/status-funnel.png)
 *The status funnel bar chart, bars in workflow order.*
