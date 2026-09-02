@@ -266,10 +266,7 @@ onUnmounted(() => {
       </article>
     </div>
 
-    <!-- The widget's own bar: position on the left, the onward action on the right.
-         One Try it out for the whole set, not one per card - the prompts all run
-         against the same platform, so nine identical CTAs would just be nine copies
-         of the same next step. -->
+    <!-- The widget's own bar, carrying the position readout. -->
     <div class="ff-prompts__bar">
       <!-- One dot per prompt rather than per view: nine is few enough to show them
            all, and a dot can carry the prompt's own name for a screen reader in a way
@@ -285,18 +282,6 @@ onUnmounted(() => {
           :aria-label="`Go to prompt ${index + 1} of ${PROMPTS.length}: ${prompt.label}`"
           :aria-current="inView[0] === index ? 'true' : undefined"
           @click="goTo(index)"
-        />
-      </div>
-      <!-- CtaSignUp rather than a hand-written link: the label, the destination and
-           the cta-sign-up event are fixed there per destination and only position
-           varies per insertion, so this stays in the same PostHog series as every
-           other Try it out on the site. -->
-      <div class="ff-prompts__try">
-        <CtaSignUp
-          variant="primary-outlined"
-          :position="`${surface}-prompts`"
-          :uppercase="false"
-          icon="i-lucide-arrow-up-right"
         />
       </div>
     </div>
