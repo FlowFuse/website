@@ -87,6 +87,7 @@ Follow these steps to create a quote.
    new quote.
    - Ensure the Deal Type is set up, "Expension" is an in-term upsel
    - Name the quote per the [Quote Naming Convention](#quote-naming-convention)
+   - Ensure the Deal Type is set up, "Expansion" is an in-term upsell
 2. Fill in the Buyer Information section. This will pre-fill with the
    information from the contact in the Deal.
 3. The default Quote creator will be you. Change this if necessary.
