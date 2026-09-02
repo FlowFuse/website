@@ -61,6 +61,12 @@ export const CUSTOM_CTA_DESTINATIONS = {
     agentSetupClientOpen: {
         event: 'cta-ai-open-client',
     },
+    // Event name preserved from the hand-written capture() call this replaces
+    // on the OPC UA integration page (see the note above on migrated events).
+    opcuaCertifiedNodeDocs: {
+        href: '/node-red/flowfuse/edge/opcua/',
+        event: 'cta-certified-opcua-node',
+    },
 } as const
 
 // Self-check, run once when this module loads (so at build/dev-start time,
