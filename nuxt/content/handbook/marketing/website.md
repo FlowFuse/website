@@ -140,6 +140,8 @@ The site has five main call-to-action destinations, each with **fixed copy** —
 | `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
 | `<CtaPricing>`   | `/pricing/`                       | "View Pricing"                                       |
 
+Contact Us vs. Book a Demo: these two CTAs carry different intent signals and should be treated accordingly. Contact Us is for general inquiries — support questions, partnership asks, anything that isn't a sales-ready request. Book a Demo is a high-intent motion: someone clicking it has effectively raised their hand to buy, so the path from click to booked call should have as little friction as possible. This is why Book a Demo needs to be visible from the main nav and not buried.
+
 If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
 **These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
