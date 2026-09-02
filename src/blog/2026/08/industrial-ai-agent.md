@@ -80,12 +80,7 @@ Connecting an AI agent to FlowFuse takes three steps depending on the agent you 
 
 You add one address in your AI agent's connector settings. On FlowFuse Cloud that address is `https://app.flowfuse.com/mcp`. You are then triggered to sign in to FlowFuse, after which you pick which teams the AI agent may act on, and whether it gets editing rights or read access only.
 
-If you want to jump ahead and get connected now:
-
-::agent-setup-tabs{:exclude-expert="true" surface="blog"}
-::
-
-*Very soon connecting with FlowFuse will also be supported through the connector marketplace of your own AI provider, starting with Microsoft Copilot, Claude, and ChatGPT.*
+If you want to jump ahead and get connected now, [skip to the steps at the end](#connect-your-own-agent).
 
 ## What you're actually granting
 
@@ -117,7 +112,13 @@ Most people reading this can't add a connector on their company sanctioned AI ag
 
 It's one address. Everyone still signs in with their own FlowFuse account, and still chooses their own scopes, so nobody inherits anyone else's access. Nothing about it makes FlowFuse a new data processor for your organisation.
 
-We're also working on removing the question at all. Coming soon: FlowFuse in the Microsoft Copilot, Claude and ChatGPT connector directories. No custom connector, no admin request. FlowFuse Cloud only.
+## Coming soon
+
+We're also working on removing the question at all.
+
+::note
+FlowFuse in the Microsoft Copilot, Claude and ChatGPT connector directories. No custom connector, no admin request. FlowFuse Cloud only.
+::
 
 ## Where to start
 
@@ -129,3 +130,12 @@ For now, begin with any of the following prompts when authenticated with the pla
 
 ::prompt-carousel{surface="blog"}
 ::
+
+## Connect your own agent
+
+Three steps, and they depend on which agent you would like to use.
+
+::agent-setup-tabs{:exclude-expert="true" surface="blog"}
+::
+
+*Very soon connecting with FlowFuse will also be supported through the connector marketplace of your own AI provider, starting with Microsoft Copilot, Claude, and ChatGPT.*
