@@ -149,7 +149,7 @@ onMounted(() => {
 
       <!-- Mobile hamburger -->
       <div class="flex items-center gap-2 md:hidden relative z-20">
-        <CtaContactUs variant="primary" position="header-mobile" />
+        <CtaBookDemo variant="primary" position="header-mobile" />
         <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
           <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -187,7 +187,7 @@ onMounted(() => {
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
         <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
         <li class="flex">
-          <CtaContactUs variant="primary" position="main-nav" class="ml-2" />
+          <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
         </li>
       </ul>
     </nav>
@@ -198,7 +198,7 @@ onMounted(() => {
         <CtaSignIn variant="primary-outlined" position="mobile-cta-bar" />
         <CtaSignUp variant="primary-outlined" position="mobile-cta-bar" />
       </div>
-      <CtaContactUs variant="primary" position="mobile-cta-bar" />
+      <CtaBookDemo variant="primary" position="mobile-cta-bar" />
     </div>
   </header>
 </template>

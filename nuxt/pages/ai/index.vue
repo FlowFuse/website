@@ -349,12 +349,7 @@ onUnmounted(() => {
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="get-started" />
-            <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'get-started' })">
-              <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
-                <span>VIEW PRICING</span>
-                <IconsArrowRightIcon class="w-5 h-5" />
-              </span>
-            </a>
+            <CtaPricing variant="ghost" color="white" position="get-started" icon="i-lucide-arrow-right" />
           </div>
         </div>
       </div>

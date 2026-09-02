@@ -223,7 +223,7 @@
                             },
                             {
                                 "label": "OPC UA",
-                                "href": "/node-red/flowfuse/edge/opcua/",
+                                "href": "/integrations/opcua/",
                                 "icon": "server-stack"
                             },
                             {
@@ -300,8 +300,13 @@
                     {
                         "title": "Reference",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-5 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
+                            {
+                                "label": "Guides",
+                                "href": "/application-guide/",
+                                "icon": "book-open"
+                            },
                             {
                                 "label": "Docs",
                                 "href": "/docs/",
@@ -338,7 +343,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "resources"
             },
             {
@@ -607,7 +612,7 @@
                             },
                             {
                                 "label": "OPC UA",
-                                "href": "/node-red/flowfuse/edge/opcua/"
+                                "href": "/integrations/opcua/"
                             },
                             {
                                 "label": "RTSP",
@@ -669,6 +674,10 @@
                     {
                         "title": "Reference",
                         "links": [
+                            {
+                                "label": "Guides",
+                                "href": "/application-guide/"
+                            },
                             {
                                 "label": "Docs",
                                 "href": "/docs/"

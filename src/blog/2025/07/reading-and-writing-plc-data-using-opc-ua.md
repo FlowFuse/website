@@ -294,4 +294,4 @@ When it is time to move beyond prototypes, **FlowFuse** delivers what industrial
 
 If you’re ready to simplify your OPC UA integration and scale industrial workflows with Node-RED, [start your free trial](https://app.flowfuse.com/account/create) of FlowFuse today.
 
-OPC UA is one of several protocols FlowFuse uses to connect PLCs to MQTT, cloud platforms, and enterprise systems. See the [FlowFuse PLC integration overview](/landing/plc/) for EtherNet/IP, Siemens S7, Modbus, and more.
+For the full rundown of FlowFuse as an [OPC UA client and server](/integrations/opcua/#opc-ua-client-and-server-capabilities), certified node included, see the FlowFuse OPC UA overview. OPC UA is one of several protocols FlowFuse uses to connect PLCs to MQTT, cloud platforms, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/) for EtherNet/IP, Siemens S7, Modbus, and more.

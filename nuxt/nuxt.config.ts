@@ -316,6 +316,9 @@ export default defineNuxtConfig({
                 // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
                 // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
                 { src: '/js/nav-tracking.js', defer: true },
+                // Opens sign-up in a small popup window on desktop/tablet.
+                // Source is src/js/signup-popup.js; copied the same way as nav-tracking.js.
+                { src: '/js/signup-popup.js', defer: true },
             ]
         }
     },
@@ -374,6 +377,7 @@ export default defineNuxtConfig({
                     '/terms',
                     '/privacy-policy',
                     '/integrations',
+                    '/integrations/opcua',
                     '/pricing',
                     '/pricing/roi-calculator',
                     '/product',
