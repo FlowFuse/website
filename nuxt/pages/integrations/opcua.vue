@@ -308,7 +308,7 @@ function toggleFaq (i: number) {
     <!-- Hero -->
     <div class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pt-12 pb-20 md:pt-20 md:pb-24">
-        <div class="md:flex md:flex-row md:justify-between items-stretch max-md:text-center gap-12">
+        <div class="md:flex md:flex-row md:justify-between items-stretch gap-12">
           <div class="m-auto md:w-1/2">
             <h1 class="w-full mt-0 mb-6 m-auto font-medium">
               <span class="text-red-600 inline-block">OPC UA</span> Client and Server
@@ -322,7 +322,7 @@ function toggleFaq (i: number) {
             </div>
           </div>
           <div class="md:w-1/2 flex-grow relative max-md:mt-12">
-            <div class="ff-image-cover ff-image-rounded md:relative w-full h-full border-2 border-red-100">
+            <div class="ff-image-cover ff-image-rounded md:relative w-full h-full max-md:max-h-[300px] border-2 border-red-100">
               <img src="/images/integrations/opcua-landing-image.png" alt="Industrial engineer building an OPC UA flow with FlowFuse on a laptop" class="md:absolute md:inset-0 rounded-none!">
             </div>
           </div>
@@ -331,10 +331,10 @@ function toggleFaq (i: number) {
     </div>
 
     <!-- What is OPC UA -->
-    <div class="w-full relative py-20 px-6">
+    <div class="w-full relative max-md:pb-10 py-20 px-6">
       <div class="absolute inset-0 opacity-30 solution-section-bg-flipped" aria-hidden="true" />
       <div class="relative z-10 max-w-screen-lg mx-auto">
-        <ScrollSpySections :items="OPCUA_SECTIONS" aria-label="OPC UA overview, client, and server">
+        <ScrollSpySections :items="OPCUA_SECTIONS" breakpoint="md" aria-label="OPC UA overview, client, and server">
           <template v-for="section in OPCUA_SECTIONS" :key="section.id" #[section.id]="{ item }">
             <div class="max-w-3xl space-y-5">
               <h2 :id="item.headingId" class="mt-0" v-html="item.heading" />
@@ -347,7 +347,7 @@ function toggleFaq (i: number) {
 
     <!-- Certified node + core capabilities -->
     <div class="w-full pt-10 px-6">
-      <div class="ff-blue-card p-14 pb-12">
+      <div class="ff-blue-card text-left p-14 pb-12">
         <h2 id="opc-ua-certified-node" class="font-semibold mb-8">Backed by a <span class="text-red-600">FlowFuse Certified Node</span></h2>
         <div class="space-y-5">
           <p>
@@ -625,7 +625,7 @@ function toggleFaq (i: number) {
     <!-- CTA -->
     <div class="w-full px-6 pb-24">
       <div class="max-w-screen-lg mx-auto">
-        <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
+        <div class="rounded-xl px-6 md:px-9 py-8 md:py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
           <h2 class="text-white font-medium">Ready to build an OPC UA client or server the right way?</h2>
           <p class="text-indigo-50 font-light text-xl max-w-3xl mt-0">No per-tag licensing. No Security Policy left at None. Connect to any OPC UA server, host your own, and bridge both to Modbus, MQTT, or a historian without extra middleware. See it live, or start free.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">

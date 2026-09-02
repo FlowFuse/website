@@ -21,11 +21,22 @@ const props = withDefaults(defineProps<{
     ariaLabel?: string
     gapClass?: string
     dividerClass?: string
+    // Viewport width at which the nav switches from stacked-above-content to
+    // beside it. 'lg' is /product's original width (its item content is
+    // wider - text + image per step); opcua's items are text-only and have
+    // room to go side-by-side sooner, at 'md'. Literal class strings below
+    // (not a template-interpolated breakpoint) since Tailwind's build-time
+    // scanner only picks up classes it can see written out in full.
+    breakpoint?: 'md' | 'lg'
 }>(), {
     ariaLabel: undefined,
     gapClass: 'gap-16',
     dividerClass: 'pt-16 border-t border-gray-200',
+    breakpoint: 'lg',
 })
+
+const rowClass = computed(() => props.breakpoint === 'md' ? 'flex flex-col md:flex-row gap-10' : 'flex flex-col lg:flex-row gap-10')
+const navClass = computed(() => props.breakpoint === 'md' ? 'hidden md:block md:w-44 shrink-0' : 'hidden lg:block lg:w-44 shrink-0')
 
 const active = ref(props.items[0]?.id ?? '')
 const stepRefs = ref<Record<string, HTMLElement | null>>({})
@@ -59,8 +70,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col lg:flex-row gap-10">
-    <nav class="hidden lg:block lg:w-44 shrink-0" :aria-label="ariaLabel">
+  <div :class="rowClass">
+    <nav :class="navClass" :aria-label="ariaLabel">
       <ul class="sticky top-24 flex flex-col border-l border-gray-200">
         <li v-for="item in items" :key="item.id">
           <a
