@@ -252,31 +252,54 @@ onUnmounted(() => {
         <p class="ff-prompts__num">{{ String(index + 1).padStart(2, '0') }}</p>
         <p class="ff-prompts__label">{{ prompt.label }}</p>
         <p class="ff-prompts__text">{{ prompt.text }}</p>
-        <div class="ff-prompts__cta">
+        <!-- Copy is per card, since what it copies is this card's prompt. The
+             onward action is not: it goes once on the widget's own bar below. -->
+        <div class="ff-prompts__foot">
           <button
             type="button"
-            class="ff-btn ff-btn--primary-outlined flex w-full uppercase"
+            class="ff-prompts__copy"
             @click="copy(prompt)"
-          >{{ copiedId === prompt.id ? 'Copied' : 'Copy prompt' }}</button>
+          >
+            <UIcon :name="copiedId === prompt.id ? 'i-lucide-check' : 'i-lucide-copy'" aria-hidden="true" />
+            <span>{{ copiedId === prompt.id ? 'Copied' : 'Copy prompt' }}</span>
+          </button>
         </div>
       </article>
     </div>
 
-    <!-- One dot per prompt rather than per view: nine is few enough to show them all,
-         and a dot can carry the prompt's own name for a screen reader in a way a
-         "3 of 5" counter cannot. Every showing card lights its dot, so on a desktop
-         column two are lit at once, which is what is on screen. -->
-    <div class="ff-prompts__dots">
-      <button
-        v-for="(prompt, index) in PROMPTS"
-        :key="`dot-${prompt.id}`"
-        type="button"
-        class="ff-prompts__dot"
-        :class="{ 'ff-prompts__dot--active': inView.includes(index) }"
-        :aria-label="`Go to prompt ${index + 1} of ${PROMPTS.length}: ${prompt.label}`"
-        :aria-current="inView[0] === index ? 'true' : undefined"
-        @click="goTo(index)"
-      />
+    <!-- The widget's own bar: position on the left, the onward action on the right.
+         One Try it out for the whole set, not one per card - the prompts all run
+         against the same platform, so nine identical CTAs would just be nine copies
+         of the same next step. -->
+    <div class="ff-prompts__bar">
+      <!-- One dot per prompt rather than per view: nine is few enough to show them
+           all, and a dot can carry the prompt's own name for a screen reader in a way
+           a "3 of 5" counter cannot. Every showing card lights its dot, so on a
+           desktop column two are lit at once, which is what is on screen. -->
+      <div class="ff-prompts__dots">
+        <button
+          v-for="(prompt, index) in PROMPTS"
+          :key="`dot-${prompt.id}`"
+          type="button"
+          class="ff-prompts__dot"
+          :class="{ 'ff-prompts__dot--active': inView.includes(index) }"
+          :aria-label="`Go to prompt ${index + 1} of ${PROMPTS.length}: ${prompt.label}`"
+          :aria-current="inView[0] === index ? 'true' : undefined"
+          @click="goTo(index)"
+        />
+      </div>
+      <!-- CtaSignUp rather than a hand-written link: the label, the destination and
+           the cta-sign-up event are fixed there per destination and only position
+           varies per insertion, so this stays in the same PostHog series as every
+           other Try it out on the site. -->
+      <div class="ff-prompts__try">
+        <CtaSignUp
+          variant="primary-outlined"
+          :position="`${surface}-prompts`"
+          :uppercase="false"
+          icon="i-lucide-arrow-up-right"
+        />
+      </div>
     </div>
   </div>
 </template>
