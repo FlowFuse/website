@@ -25,7 +25,7 @@ All our FlowFuse Cloud users can select a Blueprint directly while creating a ne
 
 ## The first three Blueprints
 
-In the coming weeks, we'll be releasing a multitude of blueprints tailored for diverse use cases. However, we decided to start with with three foundational manufacturing applications designed with the [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com/).
+In the coming weeks, we'll be releasing a multitude of blueprints tailored for diverse use cases. However, we decided to start with with three foundational manufacturing applications designed with the [Node-RED Dashboard 2.0](/platform/dashboard/).
 
 ### ANDON Operator Terminal
 The Andon Operator Terminal is designed to be at the start of an Andon process, allowing end-users to report any issues with the cell to a supervisor.

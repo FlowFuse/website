@@ -139,7 +139,7 @@ Once you see live values in the debug panel, your PLC connection is working and 
 
 ## Step 3: Build Your HMI Dashboard
 
-With your PLC connected, let's create the operator interface using FlowFuse Dashboard, a set of UI nodes that build web-based interfaces without writing HTML or JavaScript.
+With your PLC connected, let's create the operator interface using [FlowFuse Dashboard](/platform/dashboard/), a set of UI nodes that build web-based interfaces without writing HTML or JavaScript.
 
 ### Install Dashboard 2.0
 

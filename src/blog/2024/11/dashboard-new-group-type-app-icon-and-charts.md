@@ -12,7 +12,7 @@ tags:
    - dashboard
 ---
 
-It has been one of the most requested features for FlowFuse Dashboard, and is now available in its first iteration. It is now possible to resize and move groups in the Dashboard itself using the new "Edit Layout" feature. That's not all though, we've added a new "Spacer" widget to assist with layouts, added improvements to the rendering of charts and plenty more.
+It has been one of the most requested features for [FlowFuse Dashboard](/platform/dashboard/), and is now available in its first iteration. It is now possible to resize and move groups in the Dashboard itself using the new "Edit Layout" feature. That's not all though, we've added a new "Spacer" widget to assist with layouts, added improvements to the rendering of charts and plenty more.
 
 <!--more-->
 

@@ -71,7 +71,7 @@ FlowFuse processes and routes production data to multiple systems including:
 
 ### Empowering Engineers with data access
 
-- With FlowFuse, Walter IT can easily provide production engineers with direct access to their data. Using FlowFuse Dashboard they can visualize and explore the data by themselves, without additional effort from IT
+- With FlowFuse, Walter IT can easily provide production engineers with direct access to their data. Using [FlowFuse Dashboard](/platform/dashboard/) they can visualize and explore the data by themselves, without additional effort from IT
 - Engineers from different production units now exchange ideas and support each other in a collaborative way
 <lite-youtube videoid="7nceTJrDnIo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 

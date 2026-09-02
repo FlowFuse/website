@@ -194,7 +194,7 @@ _InfluxDB Data Explorer showing the temperature filling in_
 
 You'll see your readings listed in a table, one row per read interval. If new rows keep appearing as time passes, your pipeline is working end to end: equipment to OPC UA to FlowFuse to InfluxDB.
 
-Storing data is only half the story. The InfluxDB In node lets you query readings back from InfluxDB, whether you need the latest values, historical trends, or aggregated metrics. You can then feed the results directly into a [FlowFuse Dashboard](https://dashboard.flowfuse.com) to build charts, tables, and real-time monitoring views of your OPC UA data.
+Storing data is only half the story. The InfluxDB In node lets you query readings back from InfluxDB, whether you need the latest values, historical trends, or aggregated metrics. You can then feed the results directly into a [FlowFuse Dashboard](/platform/dashboard/) to build charts, tables, and real-time monitoring views of your OPC UA data.
 
 ## Where to go from here
 

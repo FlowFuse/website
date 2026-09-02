@@ -107,7 +107,7 @@ Never use `*` for `Allow-Origin` in production, specify exact domains.
 
 Now that you've learned how to create REST APIs in Node-RED, let's explore an example of reading data using a HTTP GET request. This example will demonstrate how to fetch data from an external API and process it and display on dashboard chart.
 
-For the example we will fetch the data of Node-RED Dashboard 2.0 Downloads from npm registry api.
+For the example we will fetch the data of [Node-RED Dashboard 2.0](/platform/dashboard/) Downloads from npm registry api.
 `https://api.npmjs.org/downloads/range/last-month/@flowforge/node-red-dashboard`.
 
 A simple flow to fetch data from npm registry  would be:
