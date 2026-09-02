@@ -1,11 +1,11 @@
 ---
-metaTitle: "Industrial AI agents: the one you approved can now run ops"
-title: "Connect Your Approved AI Agent to Industrial Operations."
-subtitle: "Microsoft Copilot, ChatGPT, or Claude can become industrial AI agents in FlowFuse, working your platform and building your flows."
-description: "FlowFuse 3.0 turns FlowFuse into an MCP server, allowing industrial AI agents to query operations and build Node-RED flows while you keep control."
+metaTitle: "Connect Your Industrial AI Agent to FlowFuse"
+title: "Connect Your Industrial AI Agent to FlowFuse"
+subtitle: "Turn Microsoft Copilot, ChatGPT, or Claude into industrial AI agents."
+description: "Connect ChatGPT, Microsoft Copilot, or Claude to FlowFuse and turn your approved AI agent into an industrial AI agent that builds Node-RED flows directly."
 date: 2026-08-27
-keywords: flowfuse, mcp, model context protocol, ai agent, microsoft copilot, copilot studio, chatgpt, claude, node-red, industrial ai
-authors: ["serban-costin"]
+keywords: flowfuse, mcp, model context protocol, industrial ai agent, ai agent, microsoft copilot, copilot studio, chatgpt, claude, node-red, industrial ai
+authors: ["dimitrie-hoekstra"]
 tags:
 - flowfuse
 - ai
@@ -13,11 +13,11 @@ cta:
     type: demo
     title: Want to see this against your own setup?
     description: Walk through connecting your agent with our team, on your instances, and see what it can and cannot reach.
-tldr: "FlowFuse 3.0 acts as an MCP server, so the AI agent your company already approved can operate FlowFuse and build flows in your Node-RED instances. You add one address, sign in, and choose which teams the agent reaches and whether it gets editing rights. It manages the FlowFuse platform and builds flows on a Node-RED canvas you are watching, it cannot delete anything, and you remain in control of deploying your flows. For teams under approved-AI-only policy, this is the difference between no AI on the platform and all of it."
+tldr: "FlowFuse 3.0 acts as an MCP server, so the AI agent your company already approved can operate FlowFuse and build flows in your Node-RED instances. You add one address, sign in, and choose which teams the agent reaches and whether it gets editing rights. It manages the FlowFuse platform and builds flows on a Node-RED canvas you are watching. It cannot delete anything, so you remain in control of deploying your flows. For teams under approved-AI-only policy, this is the difference between no AI on the platform and all of it."
 meta:
   howto:
-    name: "How Do I Connect an AI Agent to My Industrial Systems?"
-    description: "Learn how to connect an AI agent to your industrial systems through FlowFuse MCP, control its access, query operational data, manage your industrial applications, and build Node-RED flows."
+    name: "How Do I Connect an Industrial AI Agent to My Systems?"
+    description: "Learn how to connect an industrial AI agent to your industrial systems through FlowFuse MCP, control its access, query operational data, manage your industrial applications, and build Node-RED flows."
     totalTime: "PT10M"
     tool:
       - "Node-RED"
@@ -27,64 +27,60 @@ meta:
     steps:
       - name: "Connect your AI agent to FlowFuse"
         text: "Open your AI agent's connector or tool settings and add the FlowFuse MCP server address. On FlowFuse Cloud, use https://app.flowfuse.com/mcp. Your AI agent must support MCP over HTTP."
-        url: "how-an-industrial-ai-agent-connects-to-flowfuse"
+        url: "how-an-ai-agent-connects-to-flowfuse"
       - name: "Sign in to FlowFuse"
         text: "Authenticate the connection with your FlowFuse account. The AI agent uses your existing FlowFuse permissions and cannot access resources beyond what your account can access."
-        url: "how-an-industrial-ai-agent-connects-to-flowfuse"
+        url: "how-an-ai-agent-connects-to-flowfuse"
       - name: "Choose the teams and permissions the agent can access"
         text: "Select which FlowFuse teams the AI agent can access and whether it has read-only or editing permissions. For example, you can give the agent access to a development team without giving it access to a production team."
         url: "what-youre-actually-granting"
-      - name: "Configure your AI agent"
-        text: "Add the FlowFuse MCP server as a connector in your AI platform. This will be different per agent. For instructions see the AI page."
-        url: "connect-your-own-agent"
-      - name: "Ask your AI agent about your operations"
+      - name: "Ask your industrial AI agent about your operations"
         text: "Start with read access and ask the AI agent about your applications, running instances, runtime logs, or FlowFuse Tables data. After confirming the connection, grant editing permissions if you want it to build or modify Node-RED flows."
         url: "where-to-start"
   faq:
-    - question: "How do I connect an AI agent to my industrial systems?"
-      answer: "Connect an MCP-compatible AI agent to the FlowFuse MCP server at https://app.flowfuse.com/mcp. Sign in with your FlowFuse account, select the teams the agent can access, and choose read-only or editing permissions. The agent can then interact with your industrial operations through FlowFuse."
-    - question: "What can an AI agent do with my industrial systems?"
-      answer: "With read access, an AI agent can query applications, instances, runtime logs, and FlowFuse Tables data. With editing permissions, it can create supported FlowFuse resources like instances and applications and build or modify Node-RED flows that connect to equipment, MQTT brokers, databases, APIs, and other industrial systems."
-    - question: "Can an AI agent build Node-RED flows?"
-      answer: "Yes. With editing permissions, an AI agent can build and modify Node-RED flows in FlowFuse. You can describe a workflow, such as reading temperature data from MQTT, checking it against a threshold, and writing the result to FlowFuse Tables. The agent can create and connect the required nodes while you review the changes."
-    - question: "Can an AI agent query my industrial data?"
-      answer: "Yes. With read access, an AI agent can query FlowFuse Tables data alongside application, instance, and runtime information. This lets it answer questions about stored process values, downtime, throughput, and other operational data without giving it permission to make changes. This requires your data to be stored in FlowFuse tables. If your data is elsewhere, you can ask it to create custom Node-RED MCP servers that are specific to your production environment to request specific data."
-    - question: "Which AI agents work with FlowFuse?"
-      answer: "FlowFuse can connect to AI agents and clients that support Model Context Protocol (MCP) over HTTP, including ChatGPT, Microsoft Copilot, Claude, and Gemini. You can also use a local AI model through an MCP-compatible client."
-    - question: "Is it safe to connect an AI agent to production systems?"
-      answer: "You control the agent's exposure through FlowFuse team scope and permissions. You can restrict it to specific teams and start with read-only access before granting editing rights. Existing role-based access control applies, unsupported operations such as deleting instances or teams are not available to the agent, and deployment remains under your control."
+    - question: "How do I connect an industrial AI agent to my systems?"
+      answer: "Follow the three steps for your specific MCP-compatible AI agent at flowfuse.com/ai. It will instruct you to add https://app.flowfuse.com/mcp as a connector or plugin. Sign in with your FlowFuse account, select the teams the agent can access, and choose read-only or editing permissions. Once connected, it becomes an industrial AI agent that can interact with your operations through FlowFuse."
+    - question: "What can an industrial AI agent do with my systems?"
+      answer: "With read access, an industrial AI agent can query applications, instances, runtime logs, and FlowFuse Tables data. With editing permissions, it can also create supported FlowFuse resources like instances and applications, and build or modify Node-RED flows that connect to equipment, MQTT brokers, databases, APIs, and other industrial systems."
+    - question: "Can an industrial AI agent build Node-RED flows?"
+      answer: "Yes. With editing permissions, an industrial AI agent can build and modify Node-RED flows in FlowFuse. You can describe a workflow, for example reading temperature data from MQTT, checking it against a threshold, and writing the result to FlowFuse Tables, and the agent creates and connects the required nodes while you review the changes."
+    - question: "Can an industrial AI agent query my industrial data?"
+      answer: "Yes. With read access, an industrial AI agent can query FlowFuse Tables data alongside application, instance, and runtime information, answering questions about stored process values, downtime, throughput, and other operational data without any ability to make changes. If your data lives elsewhere, you can have the agent build a custom MCP server node tailored to your production environment to request it."
+    - question: "Which AI agents can become industrial AI agents in FlowFuse?"
+      answer: "FlowFuse can connect to any AI agents that act as clients that support Model Context Protocol (MCP) over HTTP, including ChatGPT, Microsoft Copilot, Claude, and Gemini. See the Industrial AI page for agent-specific setup steps. A local AI model can also connect through an MCP-compatible client."
+    - question: "Is it safe to connect an industrial AI agent to production systems?"
+      answer: "You control an industrial AI agent's exposure through FlowFuse team scope and role-based access control. You can restrict it to specific teams and start with read-only access before granting editing rights. Ideally start a new team used for experimentation. Unsupported operations such as deleting instances or teams aren't available to any agent, and deployment stays under your control regardless of what the agent proposes."
 ---
-There is a workflow I keep hearing about, and nobody is proud of it.
+What used to happen is that an engineer would open their AI agent of choice in another tab or application, describe what they would need to happen in Node-RED, they get the JSON back, then copy, paste, and import that into the editor. Doing so, on repeat, until it is right. The AI is already doing the work, just not in an efficient way that requires you to be a part of it.
 
-An engineer has ChatGPT open in another tab. They describe the flow they want, get JSON back, copy it, paste it into the Node-RED editor, and fix whatever came back wrong. Next time, same thing. The AI is already doing the work, just not in an efficient way requiring you for part of it.
+That's not how an industrial AI agent should work. It should be able to work directly with your industrial systems, rather than generating something for you to copy and paste.
 
-That's not how an industrial AI agent should work. It should be able to work directly with your industrial systems, rather than generating something for you to copy into Node-RED.
+That's what our first class integrated industrial AI agent, FlowFuse Expert, was built to do. It works within the FlowFuse platform, where it can understand your applications, instances, flows, and operational data, and then build and edit the operational flows directly in Node-RED instances.
 
-That's what our industrial AI agent, FlowFuse Expert, was built to do. It works within the FlowFuse platform, where it can understand your applications, instances, flows, and operational data, and then in Node-RED build and edit the flows directly.
+|  | **Without FlowFuse Expert** | **With FlowFuse Expert** |
+| :- | :- | :- |
+| **Creating and editing Node-RED flows** | Wiring flows by hand or asking an external AI for JSON to be copy and pasted over, including errors. | The industrial AI agent creates or edits the flows right in front of you. |
+| **Setting up an industrial application** | Manually setting up FlowFuse applications, instances, and connecting them together through submodules or pipelines so it's ready for a production setup, plus configuring the flows. | The industrial AI agent helps you set it up from start to finish. You can even plan with the AI agent so you are sure it aligns with your expectations. The AI will help you ensure it will be ready for a production setup. |
+| **Asking about your industrial fleet** | Manually walking through the platform UI to figure out what runs how. | The industrial AI agent scans your FlowFuse instance and understands what there is and its status, then reports it to you in natural language. |
+| **Asking about your operational data** | Manually configuring the data aggregation, modeling, and visualisation into dashboards, then monitoring those. | The industrial AI agent configures the data aggregation, modeling, and visualisation for you into a usable dashboard. And it can also create custom MCP servers which allow you to ask about your operational data in natural language. |
 
-## Why the clipboard and not our first class agent?
+## So why did this happen?
 
-Ask why they don't use the industrial AI agent built into the platform, and the answer usually isn't about quality. It's policy.
+Ask why they don't use the FlowFuse Expert built into the platform, and the answer usually isn't about quality; it's about policy. Plenty of the companies we work with run an approved-AI-only rule. So for those teams the only option was to use "their AI, through the clipboard" with the alternative being no AI-support at all.
 
-Plenty of the companies we work with run an approved-AI-only rule. So for those teams the only option was to use "their AI, through the clipboard" or no AI-support on the platform at all.
+## What changed in FlowFuse 3.0
 
-## What changed in 3.0
+FlowFuse now acts as an MCP server. Your own AI agent connects to it as a client and because the AI agent is yours, so is the choice of model it uses.
 
-FlowFuse now acts as an MCP server. Your agent connects to it as a client.
+That means the AI agent your company already approved can work the platform directly: look at your teams and applications, check what your instances are doing, read runtime logs, query your [FlowFuse Tables](/node-red/flowfuse/flowfuse-tables/) data, create applications and instances, and build and edit the flows inside your instances.
 
-That means the agent your company already approved can work the platform directly: look at your teams and applications, check what your instances are doing, read runtime logs, query your [FlowFuse Tables](/node-red/flowfuse/flowfuse-tables/) data, create applications and instances, and build and edit the flows inside your Node-RED instances.
+## How an AI agent connects to FlowFuse
 
-Because the agent is yours, so is the model. Which model or provider sits behind it is your agent's business, not ours.
+Connecting an AI agent to FlowFuse takes three steps depending on the agent you would like to use.
 
-## How an industrial AI agent connects to FlowFuse
+You add one address in your AI agent's connector settings. On FlowFuse Cloud that address is `https://app.flowfuse.com/mcp`. You are then triggered to sign in to FlowFuse, after which you pick which teams the AI agent may act on, and whether it gets editing rights or read access only.
 
-Connecting an industrial AI agent to FlowFuse takes three steps, and they're the same whichever agent you use.
-
-You add one address in your agent's connector settings. On FlowFuse Cloud that address is `https://app.flowfuse.com/mcp`. You sign in to FlowFuse, the same way you'd sign in to anything else. Then you pick which teams the agent may act on, and whether it gets editing rights or read access only.
-
-## Connect your own agent
-
-If you want to jump ahead and get connected:
+If you want to jump ahead and get connected now:
 
 ::agent-setup-tabs{:exclude-expert="true" surface="blog"}
 ::
@@ -93,40 +89,43 @@ If you want to jump ahead and get connected:
 
 ## What you're actually granting
 
-This is the part worth being precise about, because "we gave an industrial AI agent access to production" is a sentence that ends conversations.
+"We gave an AI agent access to production" is usually a sentence that ends conversations, so let's clarify.
 
 You choose the teams. If you have a production team and a development team, granting only development means an instruction can only hit what you manage in that team.
 
-You choose read access or editing rights. Read access is genuinely useful on its own: what's running, what's failing, what the logs say, what's in your tables. An agent with read access has no ability to change anything.
+You choose read access or editing rights. Read access is useful on its own: what's running, what's failing, what the logs say, what's in your tables, and so on. An industrial AI agent with read access has no ability to change anything. When permitting editing rights, the agent can set up applications, instances, and edit the flows inside of them.
 
-And there are things nobody can grant. An agent working through FlowFuse can't delete an instance, an application, a snapshot or a team, because those tools don't exist. Deploying a Node-RED flow is, for now, still done by you as well.
+And there are things nobody can grant. An industrial AI agent working through FlowFuse can't delete an instance, an application, a snapshot, or a team. That is because those tools don't exist. Lastly, deploying a Node-RED flow is, for now, still done by you manually as well.
 
-Two things run underneath all of it. The role-based access control that already governs your teams governs the agent too, so it can't reach past what your own account reaches. And every action it takes lands in the audit log attributed to you and marked `via MCP`, so "what did the AI do last Tuesday" is a question with an answer.
+Two things run underneath all of it. The role-based access control that already governs your teams affects the industrial agent too, so it can't reach past what your own account reaches. And every action it takes lands in the audit log attributed to you and marked `via MCP`, so "what the AI did last Tuesday" is a question with an answer.
 
-Most agents also ask before they act. That prompt belongs to the agent rather than to FlowFuse, so it looks different in each one, but in practice you see the tool call before it runs.
+Most agents will prompt you and ask before they act. This logic belongs to the agent itself rather than to FlowFuse, so it looks different in each one, but in practice you see the tool call before it runs, so you retain visibility and control.
 
-Both of those are true today rather than forever. We're working towards AI that can act as required in production setups and in setups where experimentation is fine, and those are different settings for different scenarios. But that's the boundary as it ships.
+We're working towards AI that can act as required in production setups and in setups where experimentation is fine, and those are different settings for different scenarios. But what is described above is the boundary as it ships right now.
 
 ## It builds where you can see it
 
 Node-RED has always been visual. You look at a flow and you can tell what it does.
 
-We didn't want to trade away control for AI. So when your agent builds a flow, it builds it in a live editor session, on the canvas in front of you. You watch the nodes appear and get wired up. If it's going somewhere you don't like, you can see that while it's happening rather than afterwards.
+We didn't want to trade away control for AI, so when your agent builds a flow, it builds it in a live editor session, on the canvas in front of you. You watch the nodes appear and get wired up. If it's going somewhere you don't like, you can see that while it's happening rather than afterwards. Up for review before you enable the deployment.
 
-Asking questions about your platform needs nothing open at all. It's flow work specifically that runs in an editor you're looking at.
+Asking questions about your platform needs no active browser session open at all. It's flow work specifically that runs in an editor you're looking at.
 
 ## The conversation with IT
 
-Most people reading this can't add a connector on  their company sanctioned AI agent. On ChatGPT, a workspace administrator switches on custom connectors. On Claude Team and Enterprise, an owner adds the connector for the organisation and then people connect individually. On Microsoft Copilot, a tenant administrator approves it.
+Most people reading this can't add a connector on their company sanctioned AI agent. On ChatGPT, a workspace administrator switches on custom connectors. On Claude Team and Enterprise, an owner adds the connector for the organisation and then people connect individually. On Microsoft Copilot, a tenant administrator approves it.
 
 It's one address. Everyone still signs in with their own FlowFuse account, and still chooses their own scopes, so nobody inherits anyone else's access. Nothing about it makes FlowFuse a new data processor for your organisation.
 
-We're also working on removing the ask. Coming soon: FlowFuse in the Microsoft Copilot, Claude and ChatGPT connector directories. No custom connector, no admin request. FlowFuse Cloud only.
+We're also working on removing the question at all. Coming soon: FlowFuse in the Microsoft Copilot, Claude and ChatGPT connector directories. No custom connector, no admin request. FlowFuse Cloud only.
 
 ## Where to start
 
-If you're on FlowFuse Cloud, you can get connected today. Add the address, sign in, grant read access to one team, and ask your agent what's running. That's a two-minute version of the whole thing, and it tells you more than any description of it will.
+If your team is on FlowFuse Cloud, you can get connected already. Our [Industrial AI page](/ai/) has the three steps for whichever agent you use similar as noted above.
 
-Then decide whether you want your industrial AI agent building flows, and give it editing rights on a team where a mistake costs you nothing.
+If your team is on FlowFuse self-hosted, make sure to be on at least version FlowFuse 3.0 or higher. On self-hosted, platform messaging runs over the MQTT broker, so the Team Broker needs to be available. Whether anything is needed from you depends on how your self-hosted platform was installed. [Our documentation](/docs/user/expert/third-party-agents/) has further details on what to do for custom situations.
 
-The [AI page](/ai/) has the address to copy and the three steps for whichever agent you use similar as noted above. [Connecting your own agent](/docs/user/expert/third-party-agents/) has the detail, and what to do for custom situations.
+For now, begin with any of the following prompts when authenticated with the platform:
+
+::prompt-carousel{surface="blog"}
+::
