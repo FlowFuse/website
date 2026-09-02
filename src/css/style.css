@@ -3428,16 +3428,28 @@ lite-youtube::before {
     background-color: var(--color-gray-50);
     padding: 1.25rem;
 }
+/* Same size, face and weight as the heading beside it, so the two read as one line
+   of text rather than a label stuck to a title. Only the colour separates them. */
 .ff-agent-step__num {
     margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    line-height: 1rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.75rem;
     color: var(--color-indigo-600);
 }
+/* The number and the heading share one line, in both layouts. Baseline rather than
+   centre, so the mono digits sit on the heading's baseline instead of floating
+   against its cap height. Wraps when a long heading needs two lines, and the number
+   stays put on the first. */
+.ff-agent-step__head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+/* No top margin any more: the gap that used to separate it from the number above is
+   now the row gap beside it. */
 .ff-agent-step__title {
-    margin: 0.5rem 0 0;
+    margin: 0;
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.75rem;
@@ -3760,16 +3772,8 @@ lite-youtube::before {
     background-color: var(--color-gray-50);
     padding: 1.25rem;
 }
-.ff-prompts__num {
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    line-height: 1rem;
-    color: var(--color-indigo-600);
-}
 .ff-prompts__label {
-    margin: 0.5rem 0 0;
+    margin: 0;
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.75rem;
@@ -3918,4 +3922,25 @@ lite-youtube::before {
     .ff-prompts__dot--active:hover {
         transform: none;
     }
+}
+
+/* A note with a heading. Nuxt UI's ::note is Callout color="info" and takes no title
+   prop, and its slot is <slot mdc-unwrap="p">, so the paragraphs written in markdown
+   are unwrapped and the heading would otherwise run straight into the body text on
+   the same line. The heading is the note's leading <strong>, which survives the
+   unwrap as a direct child, promoted to its own line here. A real markdown heading
+   would also survive but would claim an anchor and a place in the page's heading
+   outline, which a callout should not have.
+
+   Scoped to the ff-note--titled class rather than restyling prose.callout, because
+   that theme is shared with the handbook's notes and with ::product-update-note in
+   around twenty other posts. Unlayered, so it beats the utilities the callout theme
+   applies. The colour is left alone: this is the site's standard info note. */
+.prose .ff-note--titled > strong:first-of-type {
+    display: block;
+    margin-bottom: 0.125rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: inherit;
 }

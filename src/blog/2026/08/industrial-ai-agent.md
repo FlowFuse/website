@@ -112,11 +112,11 @@ Most people reading this can't add a connector on their company sanctioned AI ag
 
 It's one address. Everyone still signs in with their own FlowFuse account, and still chooses their own scopes, so nobody inherits anyone else's access. Nothing about it makes FlowFuse a new data processor for your organisation.
 
-## Coming soon
-
 We're also working on removing the question at all.
 
-::note
+::note{.ff-note--titled}
+**Coming soon**
+
 FlowFuse in the Microsoft Copilot, Claude and ChatGPT connector directories. No custom connector, no admin request. FlowFuse Cloud only.
 ::
 
@@ -137,5 +137,3 @@ Three steps, and they depend on which agent you would like to use.
 
 ::agent-setup-tabs{:exclude-expert="true" surface="blog"}
 ::
-
-*Very soon connecting with FlowFuse will also be supported through the connector marketplace of your own AI provider, starting with Microsoft Copilot, Claude, and ChatGPT.*

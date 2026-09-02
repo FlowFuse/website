@@ -249,7 +249,6 @@ onUnmounted(() => {
         aria-roledescription="slide"
         :aria-label="`${index + 1} of ${PROMPTS.length}: ${prompt.label}`"
       >
-        <p class="ff-prompts__num">{{ String(index + 1).padStart(2, '0') }}</p>
         <p class="ff-prompts__label">{{ prompt.label }}</p>
         <p class="ff-prompts__text">{{ prompt.text }}</p>
         <!-- Copy is per card, since what it copies is this card's prompt. The

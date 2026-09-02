@@ -148,8 +148,10 @@ function selectClient (id: string) {
       class="ff-agent-panel"
     >
       <div class="ff-agent-step">
-        <p class="ff-agent-step__num">01</p>
-        <p class="ff-agent-step__title">{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
+        <div class="ff-agent-step__head">
+          <p class="ff-agent-step__num">01</p>
+          <p class="ff-agent-step__title">{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
+        </div>
         <p class="ff-agent-step__body">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
         <div v-if="client.builtIn" class="ff-agent-step__cta">
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
@@ -160,8 +162,10 @@ function selectClient (id: string) {
       </div>
 
       <div class="ff-agent-step">
-        <p class="ff-agent-step__num">02</p>
-        <p class="ff-agent-step__title">{{ client.step2Title }}</p>
+        <div class="ff-agent-step__head">
+          <p class="ff-agent-step__num">02</p>
+          <p class="ff-agent-step__title">{{ client.step2Title }}</p>
+        </div>
         <p class="ff-agent-step__body">{{ client.step2Body }}</p>
         <div class="ff-agent-step__cta">
           <CtaCustom
@@ -178,8 +182,10 @@ function selectClient (id: string) {
       </div>
 
       <div class="ff-agent-step">
-        <p class="ff-agent-step__num">03</p>
-        <p class="ff-agent-step__title">{{ client.step3Title || STEP3.title }}</p>
+        <div class="ff-agent-step__head">
+          <p class="ff-agent-step__num">03</p>
+          <p class="ff-agent-step__title">{{ client.step3Title || STEP3.title }}</p>
+        </div>
         <p class="ff-agent-step__body">{{ client.step3Body || STEP3.description }}</p>
         <div v-if="signup && !client.noStep3Cta" class="ff-agent-step__cta">
           <CtaSignUp variant="primary" :position="`${surface}-connect-step3`" class="w-full" />
