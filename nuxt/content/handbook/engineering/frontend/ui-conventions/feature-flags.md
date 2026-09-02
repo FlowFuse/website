@@ -68,8 +68,9 @@ the team key `teamHttpSecurity`.
 ### Platform keys
 
 Register the key on the backend with `app.config.features.register(name, value, isPublic)`.
-Most platform features are registered in `forge/ee/lib/index.js` behind the
-relevant license check:
+Registrations live under `forge/ee/lib/`, behind the relevant license check.
+Many sit together in `forge/ee/lib/index.js`; features with a module of their own
+register there instead, as Tables does in `forge/ee/lib/tables/index.js`:
 
 ```js
 app.config.features.register('tables', true, true)
@@ -98,8 +99,9 @@ const featureNames = {
 
 That file is imported directly by the admin Team Type edit dialog
 (`frontend/src/pages/admin/TeamTypes/dialogs/TeamTypeEditDialog.vue`), which
-renders one checkbox per entry. A team key that isn't in `featureList` won't
-appear there, so an admin will have no way to toggle it.
+renders a checkbox for each entry available on this installation. A team key
+that isn't in `featureList` won't appear there, so an admin will have no way to
+toggle it.
 
 ## How the checks combine
 
