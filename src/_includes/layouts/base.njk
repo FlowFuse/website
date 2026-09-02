@@ -183,8 +183,8 @@ eleventyComputed:
                         {% include "components/flowfuse-square.svg" %}
                     </a>
                     <div class="flex items-center gap-2 md:hidden relative z-20">
-                        <a class="ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header-mobile'})">
-                            Contact Us
+                        <a class="ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'header-mobile'})">
+                            Book a Demo
                         </a>
                         <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
                             <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
@@ -224,8 +224,8 @@ eleventyComputed:
                     <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
 			            <li class="hidden md:flex"><a class="ff-nav-freetrial" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})"><span class="ff-nav-label">Free Trial</span></a></li>
                         <li class="flex">
-                            <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/contact-us" onclick="capture('cta-talk-us', {'position': 'header'})">
-                                Contact Us
+                            <a class="ml-2 ff-btn ff-btn--primary uppercase text-sm inline-flex whitespace-nowrap" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'header'})">
+                                Book a Demo
                             </a>
                         </li>
                     </ul>
@@ -236,7 +236,7 @@ eleventyComputed:
                         <a href="{{ site.appURL }}" class="ff-btn ff-btn--primary-outlined">Sign In</a>
                         <a href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'header'})" class="ff-btn ff-btn--primary-outlined">Free Trial</a>
                     </div>
-                    <a class="ff-btn ff-btn--primary" href="/contact-us" onclick="capture('cta-talk-to-sales', {'position': 'header'})">Contact Us</a>
+                    <a class="ff-btn ff-btn--primary" href="/book-demo/" onclick="capture('cta-book-demo', {'position': 'mobile-cta-bar'})">Book a Demo</a>
                 </div>
             </header>
     <!-- Main Content: wrapped in the flex-grow base so the column layout still
