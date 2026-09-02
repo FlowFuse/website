@@ -35,10 +35,10 @@ Take the whole app — every flow, setting and dependency — as a versioned sna
 
 **Major components**
 
-- **Snapshot** — the whole app, frozen as one versioned build
-- **Pipeline** — promotes that snapshot through dev → staging → prod
-- **Dev instance** — where you build and test the project
-- **Remote / Hosted Instances** — the fleet each snapshot rolls out to
+- **[Snapshot](/docs/user/snapshots/)** — the whole app, frozen as one versioned build
+- **[Pipeline](/docs/user/devops-pipelines/)** — promotes that snapshot through dev → staging → prod
+- **[Dev instance](/docs/user/concepts/#instance)** — where you build and test the project
+- **[Remote / Hosted Instances](/docs/user/concepts/#instance)** — the fleet each snapshot rolls out to
 
 **Where config & data live** depends on the kind of app you're shipping — a hardware app tied to a device, or a software app on the platform. See [Hardware apps →](/application-guide/flowfuse/hardware-apps/) and [Software apps →](/application-guide/flowfuse/software-apps/).
 
@@ -85,11 +85,11 @@ Package a single piece of a flow — a block of logic or UI — as a reusable su
 
 **Major components**
 
-- **Subflow** — the one reusable piece you package
-- **Custom node** — the installable package your subflow is exported to
-- **Team Library** — example flows the team shares (a custom node can ship with one to show its use)
-- **Instances** — the apps that install and run the piece
-- **Bill of Materials** — tracks which version each app runs
+- **[Subflow](/docs/user/packaging-subflows/)** — the one reusable piece you package
+- **[Custom node](/docs/user/custom-npm-packages/)** — the installable package your subflow is exported to
+- **[Team Library](/docs/user/shared-library/)** — example flows the team shares (a custom node can ship with one to show its use)
+- **[Instances](/docs/user/concepts/#instance)** — the apps that install and run the piece
+- **[Bill of Materials](/docs/user/bill-of-materials/)** — tracks which version each app runs
 
 **Where config & data live**
 

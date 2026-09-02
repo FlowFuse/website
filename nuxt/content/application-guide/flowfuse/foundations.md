@@ -36,11 +36,11 @@ edges:
 ## The core pieces
 
 - **Single platform** — Manage, secure, and govern everything from one place.
-- **Instances** — Node-RED runtimes. A **Hosted Instance** runs on FlowFuse-managed infrastructure (cloud or your own server); a **Remote Instance** runs on your own edge hardware via the Device Agent. Same runtime either way — it connects to whatever the job needs (hardware, data, cloud) and can serve its own Dashboard. [What an instance connects to →](/application-guide/node-red/foundations/)
-- **Team Broker** — A shared message bus that ties data together across sites.
-- **Database** — One shared operational data store.
-- **Dashboards** — Operator-facing UIs for the people who run it.
-- **Edge & device management** — Deploy and manage across many devices, lines, and plants.
+- **[Instances](/docs/user/concepts/#instance)** — Node-RED runtimes. A **Hosted Instance** runs on FlowFuse-managed infrastructure (cloud or your own server); a **Remote Instance** runs on your own edge hardware via the [Device Agent](/docs/device-agent/introduction/). Same runtime either way — it connects to whatever the job needs (hardware, data, cloud) and can serve its own Dashboard. [What an instance connects to →](/application-guide/node-red/foundations/)
+- **[Team Broker](/docs/user/teambroker/)** — A shared message bus that ties data together across sites.
+- **[Database](/docs/user/ff-tables/)** — One shared operational data store.
+- **[Dashboards](https://dashboard.flowfuse.com/)** — Operator-facing UIs for the people who run it.
+- **[Edge & device management](/docs/device-agent/introduction/)** — Deploy and manage across many devices, lines, and plants.
 
 ::callout{icon="i-lucide-square-stack"}
 **Remote Instance** — A Remote Instance lives in both worlds: edge execution down in OT, or an on-prem worker under an IT/cloud platform.
