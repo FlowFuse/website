@@ -3411,12 +3411,22 @@ lite-youtube::before {
 .ff-agent-panel {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    /* Tighter than the 2rem this used to carry, because stacked the steps are now
+       cards and the border does the separating that the whitespace was doing. */
+    gap: 1rem;
     padding: 1.5rem;
 }
+/* Stacked, each step is a card. One column of three headings with nothing but air
+   between them read as one continuous block, so 02 looked like more of 01 rather
+   than the next thing to do. Three across, the columns already separate themselves
+   and a border around each would just be noise, so the wide state below strips it. */
 .ff-agent-step {
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.5rem;
+    background-color: var(--color-gray-50);
+    padding: 1.25rem;
 }
 .ff-agent-step__num {
     margin: 0;
@@ -3472,6 +3482,14 @@ lite-youtube::before {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 2.5rem;
         padding: 2rem;
+    }
+    /* Back to bare columns: side by side the steps are already separate, so the card
+       treatment the stacked state needs becomes three boxes inside a box. */
+    .ff-agent-step {
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        padding: 0;
     }
     /* Three across, the columns are narrow enough that filling them is right. */
     .ff-agent-step__cta {
