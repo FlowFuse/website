@@ -24,13 +24,22 @@ const GITHUB_HEADERS = {
 
 // Mirrors GitHub's own heading slugger so anchors written against a README's
 // GitHub-rendered preview (e.g. `#egm-optional` for "## EGM (optional)") keep resolving here.
+//
+// One space per hyphen, not one per run of them. GitHub strips the punctuation first and
+// hyphenates whatever spaces are left, each on its own, so a heading with punctuation
+// between two words keeps the space on both sides of it and lands a double hyphen:
+// "Bugs / Feature request" is `#bugs--feature-request` there. Collapsing runs with \s+
+// gave `#bugs-feature-request` and every table-of-contents link a README author wrote
+// against GitHub for such a heading pointed at an id that did not exist. Headings whose
+// words are separated by a single space are identical either way, which is why only the
+// punctuated ones broke.
 function githubSlugify (heading: string): string {
     return encodeURIComponent(
         heading
             .trim()
             .toLowerCase()
             .replace(/[^\w一-龥\- ]/g, '')
-            .replace(/\s+/g, '-')
+            .replace(/\s/g, '-')
     )
 }
 
