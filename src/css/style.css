@@ -3843,3 +3843,20 @@ lite-youtube::before {
         transform: none;
     }
 }
+
+/* The agent picker's tab marks, inside prose.
+
+   The .ff-agent-tab img rule further up moved the sizing out of utility classes
+   precisely so .prose could not beat it, but it is not specific enough to finish the
+   job: the site's own `.prose:not(.prose-natural-size-images) img` is 0-2-1 against
+   that rule's 0-1-1, so in a blog post, changelog entry or docs page the marks get
+   width:100% and height:auto back. Being flex items in an auto-width button, the
+   100% cannot resolve against anything, so each mark falls back to its intrinsic
+   size: the ChatGPT glyph is 780px square in its own file and renders at that.
+   /ai has no .prose wrapper, which is why the picker looks right there and only
+   there. Matching .prose's own specificity and sitting later in the file takes it
+   back. */
+.prose .ff-agent-tab img {
+    height: 1rem;
+    width: auto;
+}
