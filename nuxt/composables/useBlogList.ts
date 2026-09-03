@@ -6,10 +6,13 @@ export const BLOG_PAGE_SIZE = 19
 // which of these show as nav buttons; 'tips' has a route but isn't in that button list).
 export const BLOG_TAGS = ['how-to', 'node-red', 'ai', 'uns', 'dashboard', 'flowfuse', 'releases', 'news', 'plc', 'mqtt', 'opcua', 'modbus', 'tips']
 
-// Mirrors .eleventy.js's DEV_MODE_POSTS: future-dated posts are hidden outside production
-// (Netlify sets CONTEXT), so deploy previews and dev can still preview scheduled posts.
+// Mirrors .eleventy.js's DEV_MODE_POSTS: future-dated posts are hidden outside production,
+// so deploy previews and dev can still preview scheduled posts. The flag is baked at build
+// time (see nuxt.config.ts) rather than read from process.env here: a scheduled post gets no
+// prerendered file, so its URL is served by the Netlify function, where process.env.CONTEXT
+// is always undefined. That switched this check off and served the post before its date.
 export function isFuturePost(date: string | Date): boolean {
-    return new Date(date) > new Date() && process.env.CONTEXT === 'production'
+    return new Date(date) > new Date() && useRuntimeConfig().public.isProductionContext
 }
 
 export function useBlogList(tag: string | null, pageNumber: number) {

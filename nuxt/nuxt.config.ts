@@ -134,11 +134,14 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
 
-    // Captured at build time (Netlify sets CONTEXT during the build, not necessarily
-    // in the deployed Function's runtime), then baked into the server bundle via
-    // runtimeConfig so analytics.ts doesn't depend on a process.env read at request time.
+    // Captured at build time (Netlify sets CONTEXT during the build, but passes only URL,
+    // SITE_NAME and SITE_ID to the deployed Function at runtime), then baked in via
+    // runtimeConfig so nothing depends on a process.env read at request time. Under `public`
+    // so the blog's scheduled-post check reads the same value everywhere it runs.
     runtimeConfig: {
-        isProductionContext: process.env.CONTEXT === 'production'
+        public: {
+            isProductionContext: process.env.CONTEXT === 'production'
+        }
     },
 
     css: ['~/assets/css/theme.css'],
