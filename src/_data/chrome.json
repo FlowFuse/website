@@ -85,7 +85,7 @@
                     {
                         "title": "Capabilities",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-[7] md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "listClasses": "row-span-[8] md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
                                 "label": "Industrial AI",
@@ -121,11 +121,16 @@
                                 "label": "Data Integration",
                                 "href": "/use-cases/data-integration/",
                                 "icon": "arrows-right-left"
+                            },
+                            {
+                                "label": "PLC Integration",
+                                "href": "/landing/plc/",
+                                "icon": "cog-6-tooth"
                             }
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(9,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "platform"
             },
             {
@@ -529,6 +534,10 @@
                             {
                                 "label": "Data Integration",
                                 "href": "/use-cases/data-integration/"
+                            },
+                            {
+                                "label": "PLC Integration",
+                                "href": "/landing/plc/"
                             }
                         ],
                         "classes": "lg:col-start-2 lg:row-start-1 lg:row-span-2"
