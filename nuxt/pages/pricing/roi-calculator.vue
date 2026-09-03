@@ -83,10 +83,8 @@ useSchemaOrg([
 
 <template>
   <div class="w-full roi-page">
-    <div class="roi-hero-bg" aria-hidden="true"></div>
-
     <!-- ============================ HERO ============================ -->
-    <section class="w-full px-6 relative z-10">
+    <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pt-8">
         <Breadcrumbs :items="[{ label: 'Pricing', to: '/pricing/' }, { label: 'ROI Calculator' }]" />
       </div>
@@ -98,14 +96,14 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ CALCULATOR ============================ -->
-    <section class="w-full px-6 relative z-10">
+    <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-12">
         <RoiCalculator />
       </div>
     </section>
 
     <!-- ============================ AUDIENCES ============================ -->
-    <section class="w-full px-6 relative z-10">
+    <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-12">
         <div class="text-center mb-8">
           <span class="roi-pill">Who this is for</span>
@@ -123,7 +121,7 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ EVIDENCE ============================ -->
-    <section class="w-full px-6 relative z-10">
+    <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-8">
         <div class="text-center mb-8">
           <span class="roi-pill">The evidence</span>
@@ -141,7 +139,7 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ METHODOLOGY ============================ -->
-    <section class="w-full px-6 relative z-10">
+    <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-12">
         <details class="roi-method">
           <summary>How the calculation works</summary>
@@ -156,7 +154,7 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ FAQ ============================ -->
-    <section class="w-full px-6 relative z-10">
+    <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-14">
         <h2 class="text-center mb-8">ROI questions industrial teams ask</h2>
         <BlogFaq :faq="faqs" />
@@ -179,24 +177,6 @@ useSchemaOrg([
 </template>
 
 <style scoped>
-.roi-page { position: relative; background: #ffffff; }
-.roi-hero-bg {
-  position: absolute; top: 0; left: 0; right: 0; height: 420px;
-  z-index: 0; overflow: hidden; pointer-events: none;
-  background:
-    radial-gradient(46% 62% at 6% -8%, rgba(99,102,241,0.24), transparent 60%),
-    radial-gradient(42% 54% at 104% -6%, rgba(255,110,74,0.12), transparent 58%),
-    linear-gradient(180deg, #EEF0FF 0%, #ffffff 82%);
-}
-.roi-hero-bg::after {
-  content: ""; position: absolute; inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(79,70,229,0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(79,70,229,0.06) 1px, transparent 1px);
-  background-size: 42px 42px;
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 66%);
-  mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 66%);
-}
 .roi-pill { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #4f46e5; background: #eef2ff; border: 1px solid #e0e4ff; border-radius: 9999px; padding: .3rem .8rem; }
 
 /* Audiences */
