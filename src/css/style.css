@@ -401,16 +401,22 @@ dl.message-properties > dd {
     vertical-align: top;
 }
 
-.ff-blue-card {
-    box-shadow:  inset 13px 13px 26px var(--color-indigo-100),
-    inset -13px -13px 26px var(--color-white),
-    10px 10px 26px var(--color-indigo-100),
-    -10px -10px 26px var(--color-white);
-    @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
-}
+/* @layer components (not the default unlayered), so a plain Tailwind utility on a
+   .ff-blue-card element (e.g. p-4, mt-0) overrides these via normal layer order
+   instead of silently losing to them - see the removed .ff-ai-governance
+   .ff-blue-card override below for what that used to require. */
+@layer components {
+    .ff-blue-card {
+        box-shadow:  inset 13px 13px 26px var(--color-indigo-100),
+        inset -13px -13px 26px var(--color-white),
+        10px 10px 26px var(--color-indigo-100),
+        -10px -10px 26px var(--color-white);
+        @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
+    }
 
-.main-content .ff-blue-card {
-    @apply mb-6;
+    .main-content .ff-blue-card {
+        @apply mb-6;
+    }
 }
 
 /*
@@ -3508,19 +3514,6 @@ lite-youtube::before {
 .ff-cap-icon svg {
     width: 1.875rem;
     height: 1.875rem;
-}
-
-/* .ff-blue-card bakes mt-6 into its @apply, which every other user of it wants but
-   this page does not: here the section already owns the vertical rhythm, so that
-   24px landed on top of the section padding and put the governance card 152px below
-   the connector while it sat 64px above the section after it - lopsided, and wider
-   than the 128px every other section boundary uses.
-
-   Unlayered and scoped rather than an mt-0 utility on the element: .ff-blue-card is
-   itself unlayered, and Tailwind's utilities layer is outranked by unlayered rules,
-   so the utility would silently lose. */
-.ff-ai-governance .ff-blue-card {
-    margin-top: 0;
 }
 
 /* Capability schematics (AiCapabilityDiagram): a neutral card for the parts that
