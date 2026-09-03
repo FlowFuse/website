@@ -7,6 +7,44 @@ problem: "Your operation is running. You just can't see it clearly enough, until
 industries: ["automotive", "food-beverage", "life-sciences", "aviation-aerospace", "aerospace-components", "renewables", "semiconductors", "electronics-appliances"]
 values: ["production-performance"]
 
+howItWorks:
+  heading: "How FlowFuse builds production monitoring."
+  intro: "Production monitoring is not one app you install. It is a handful of pieces you define once and then replicate. This is how the problem breaks down, and which FlowFuse pattern carries it across every line and site."
+  designPattern:
+    kind: "Hardware pattern"
+    name: "Pipeline plus environment variables"
+    detail: "The monitoring application is built once and distributed to every line by a DevOps pipeline. Everything site-specific, tag addresses, line names, shift boundaries, lives in environment variables instead of inside the flows, so the same snapshot runs everywhere without an edit."
+    docsUrl: "/docs/user/devops-pipelines/"
+  diagram:
+    placeholder: true
+    src: "https://placehold.co/1200x630/eef2ff/4338ca?text=Production+Monitoring+Architecture"
+    alt: "End-to-end architecture for production monitoring: PLCs and machines feeding edge instances, publishing to a broker and historian, with role-specific dashboards on top and a pipeline distributing the application across sites."
+    caption: "Machines and PLCs into edge instances, out over MQTT into your historian, role-specific dashboards on top, and one pipeline distributing the whole application across every line."
+  pieces:
+    - icon: "queue-list"
+      title: "Define the data model"
+      detail: "Name the equipment hierarchy and tag structure first: site, line, cell, signal. Every later piece depends on it, and this is exactly the part an off-the-shelf tool decides for you."
+    - icon: "chart"
+      title: "Derive the metrics"
+      detail: "Counts, cycle times, downtime reasons and OEE are calculated from the model rather than read off a machine. The logic sits in Node-RED flows your own team can read and change."
+    - icon: "device-agent"
+      title: "Collect at the edge"
+      detail: "The Device Agent runs an instance on existing edge hardware and speaks OPC-UA, Modbus, S7 or MQTT to whatever is already on the floor."
+      docsUrl: "/docs/device-agent/introduction/"
+    - icon: "arrows-right-left"
+      title: "Publish and store"
+      detail: "Contextualized data leaves the edge on a stable topic structure and lands in your historian or database. The schema and the storage stay yours."
+    - icon: "dashboard"
+      title: "Visualize per role"
+      detail: "A line view for the supervisor, trend detail for the maintenance engineer, a roll-up for the plant manager. FlowFuse Dashboard builds all three from the same data."
+    - icon: "rectangle-stack"
+      title: "Replicate across sites"
+      detail: "Snapshot the working application and let the pipeline push it to every other line, with each site's specifics supplied by environment variables."
+      docsUrl: "/docs/user/envvar/"
+  docsCta:
+    label: "Read the pipeline docs"
+    url: "/docs/user/devops-pipelines/"
+
 aiBuildLayer:
   intro: "The FlowFuse Expert works on this use case with you: describe the monitoring you need and get a working starting flow, then query what it captures in plain language."
   steps:
