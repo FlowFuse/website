@@ -307,7 +307,7 @@ function toggleFaq (i: number) {
 
     <!-- Hero -->
     <div class="w-full px-6">
-      <div class="max-w-screen-lg mx-auto pt-12 pb-20 md:pt-20 md:pb-24">
+      <div class="max-w-screen-lg mx-auto pt-12 pb-3 md:pt-20">
         <div class="md:flex md:flex-row md:justify-between items-stretch gap-12">
           <div class="m-auto md:w-1/2">
             <h1 class="w-full mt-0 mb-6 m-auto font-medium">
@@ -327,6 +327,7 @@ function toggleFaq (i: number) {
             </div>
           </div>
         </div>
+        <SocialProof class="mt-12" eyebrow-bg="red" />
       </div>
     </div>
 
