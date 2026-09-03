@@ -2,10 +2,10 @@
 // The starter prompts: one card per prompt, stepped through sideways. Lives in
 // components/content/ so markdown can use it as ::prompt-carousel as well as pages
 // using it directly, for the same reason AgentSetupTabs does: the blog post, /ai and
-// the third-party-agents docs page all want to hand a reader the same nine openers,
-// and hand-copying nine paragraphs into three surfaces is how they drift apart.
+// the third-party-agents docs page all want to hand a reader the same openers, and
+// hand-copying eight paragraphs into three surfaces is how they drift apart.
 //
-// A carousel rather than a list because these are long. Nine of them stacked is a
+// A carousel rather than a list because these are long. Eight of them stacked is a
 // wall of near-identical paragraphs that a reader scrolls past; one at a time, with
 // the next one's edge visible, is something they read and copy.
 //
@@ -59,37 +59,31 @@ const PROMPTS = [
     {
         id: 'quality-check',
         label: 'A quality check at the machine',
-        text: 'I want a check at the machine that measures each part against the tolerance for whatever is running, tells the operator the moment one fails, and records every result rather than only the failures. Simulate the measurements.',
+        text: 'I want a check at the machine that measures each part against the tolerance for the product currently running, tells the operator on the dashboard the moment one is out of tolerance, and records every measurement rather than only the failures. Simulate the measurements.',
     },
     {
         id: 'traceability',
-        label: 'One record per unit, both directions',
-        text: 'I want one record per unit that follows it through every step with the conditions it was produced under, so a recall question can be answered in both directions. Simulate the production steps.',
+        label: 'One record per serial, both directions',
+        text: 'Each assembled unit gets a serial number at the first station. I want one record per serial listing the stations it passed through, with the torque, temperature and operator captured at each, so I can look up one serial, or list every serial that passed a given station in a shift. Simulate the production steps.',
     },
     {
         id: 'machine-health',
         label: 'Early warning on machine health',
-        text: 'I want the few signals that tell me a machine is going bad, cycle time drift, current, temperature and fault counts, judged against what is normal for that machine, and maintenance told before it stops. Simulate the machine signals.',
+        text: 'I want the few signals that tell me a machine is going bad, cycle time drift, current, temperature and fault counts, judged against what is normal for that machine, and a dashboard that flags it plus a message to maintenance before it stops. Simulate the machine signals.',
     },
     {
         id: 'namespace',
         label: 'Every protocol, one topic structure',
-        text: 'I want every machine, whatever protocol it speaks, to arrive in the same shape on a topic structure of site, area, line and asset, so my historian and my MES can each take what they need. Simulate a few machines on different protocols.',
-    },
-    {
-        id: 'error-reporting',
-        label: 'One view of what is broken, fleet-wide',
-        text: 'I want every application I have deployed to report its errors the same way, grouped so one fault across nine sites is one problem, with a single view of what is broken and since when. Simulate failures from a few instances.',
+        text: 'I want every machine, whatever protocol it speaks, to publish to one MQTT topic structure of site, area, line and asset, with the same payload fields on every message: value, unit, timestamp and source. Simulate a few machines on different protocols.',
     },
 ]
 
 const track = ref<HTMLElement | null>(null)
-// Which cards are currently showing, not a single "active" index. The track is two
-// cards wide in a desktop prose column and one on a phone, and nine cards do not
-// divide by two: at the far end the track shows cards 8 and 9 together and can scroll
-// no further, so card 9's own snap position is never reached. Tracked as a single
-// index, the last dot could never light and the next arrow could never disable, which
-// is what the first Playwright pass on this component caught.
+// Which cards are currently showing, not a single "active" index. The track stops
+// scrolling once the final cards are in view, so the last card never comes to rest at
+// the scrollport's start and its own snap position is never reached. Tracked as a
+// single index, the last dot could never light and the next arrow could never disable,
+// which is what the first Playwright pass on this component caught.
 const inView = ref<number[]>([0])
 // From the scroll extent rather than from the index, for the same reason: "there is
 // nowhere left to go" is a fact about the scroll position, not about which card is
@@ -277,7 +271,7 @@ onUnmounted(() => {
 
     <!-- The widget's own bar, carrying the position readout. -->
     <div class="ff-prompts__bar">
-      <!-- One dot per prompt rather than per view: nine is few enough to show them
+      <!-- One dot per prompt rather than per view: eight is few enough to show them
            all, and a dot can carry the prompt's own name for a screen reader in a way
            a "3 of 5" counter cannot. Every showing card lights its dot, so on a
            desktop column two are lit at once, which is what is on screen. -->
