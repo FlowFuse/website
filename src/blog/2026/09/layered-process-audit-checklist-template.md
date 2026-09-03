@@ -20,7 +20,7 @@ A [Layered Process Audit (LPA)](/blog/2026/08/layered-process-audit/) checklist 
 
 A good checklist is focused rather than comprehensive. It should cover the controls that matter most to the process and use questions that can be answered by observing the work.
 
-If you're building an LPA program, having a consistent set of questions makes it easier for different management layers to audit the same critical controls. Use the free checklist below as a starting point for creating your own LPA.
+*If you're building an LPA program, having a consistent set of questions makes it easier for different management layers to audit the same critical controls. Download the free checklist below as a starting point for creating your own LPA.*
 
 ::hub-spot-form{form-id="f76521d1-8ea3-4da1-a673-fe39b03b6414" cta="cta-lpa-checklist-template" reference="layered-process-audit-checklist-template"}
 ::
