@@ -31,7 +31,7 @@ Manufacturing problems are often found after production rather than where they s
 
 A **Layered Process Audit (LPA)** helps manufacturers catch these problems earlier by regularly checking critical process controls while production is running.
 
-This guide explains what an LPA is, how the layers work, and how manufacturers use them on the shop floor.
+This guide explains what an LPA is, how the layers work, and how manufacturers use them on the shop floor. As LPA programs grow, digitizing audits can make it easier to capture findings, track corrective actions, and connect audit results with production data.
 
 ::cta-image{src="/blog/2026/08/images/lpa-cta-1.png" alt="Turn Shop-Floor Audits Into Actionable Data" cta="sign-up"}
 ::
