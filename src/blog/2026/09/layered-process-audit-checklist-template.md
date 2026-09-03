@@ -3,7 +3,7 @@ title: "Layered Process Audit Checklist: Free Template and Examples"
 metaTitle: "Layered Process Audit Checklist: Free Template"
 subtitle: "Download a free LPA checklist template with practical questions for checking critical manufacturing processes."
 description: "Download a free layered process audit checklist template and see examples of LPA questions for standard work, materials, equipment, error-proofing, and traceability."
-date: 2026-09-01
+date: 2026-09-03
 authors: ["sumit-shinde"]
 image: /blog/2026/09/images/layered-process-audit-checklist.png
 tags:
