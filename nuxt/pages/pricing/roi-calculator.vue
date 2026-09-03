@@ -85,11 +85,11 @@ useSchemaOrg([
 </script>
 
 <template>
-  <div class="w-full roi-page">
+  <div class="w-full">
     <!-- ============================ HERO ============================ -->
     <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pt-14 pb-8 text-center">
-        <p class="text-indigo-600 text-sm font-semibold uppercase m-0">ROI calculator</p>
+        <p class="eyebrow">ROI calculator</p>
         <h1 class="mt-2 leading-tight text-4xl sm:text-5xl">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
         <p class="my-8 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, rebuilding and hand-deploying work, and riding out downtime. Put your plant, fleet or project numbers in — every figure below traces to published research.</p>
       </div>
@@ -106,7 +106,7 @@ useSchemaOrg([
     <section class="w-full px-6 pt-16">
       <div class="max-w-screen-lg mx-auto pb-12">
         <div class="mb-16">
-          <p class="text-indigo-600 text-sm font-semibold uppercase m-0">Who this is for</p>
+          <p class="eyebrow">Who this is for</p>
           <h2 class="my-4">Where the return comes from in industrial automation</h2>
           <p class="max-w-2xl mt-2">The same three categories apply whether you run one plant, integrate for dozens of customers, or ship machines into the field. What changes is which line dominates.</p>
         </div>
@@ -119,7 +119,7 @@ useSchemaOrg([
       <div class="absolute -inset-y-1 inset-x-0 solution-section-bg" aria-hidden="true" />
       <div class="max-w-screen-lg mx-auto relative">
         <div class="mb-12">
-          <p class="text-indigo-600 text-sm font-semibold uppercase m-0">The evidence</p>
+          <p class="eyebrow">The evidence</p>
           <h2 class="my-4">Why these numbers hold up</h2>
           <p class="max-w-2xl mt-2">Every figure traces to published research, and the defaults are set deliberately on the conservative side.</p>
         </div>
@@ -172,7 +172,7 @@ useSchemaOrg([
     <div class="w-full px-6 pb-16">
       <div class="max-w-screen-lg mx-auto">
         <div class="rounded-xl px-6 md:px-9 py-8 md:py-12 flex flex-col items-center gap-6 text-center ff-get-started-bg">
-          <h2 class="text-white font-medium max-w-2xl">Stop paying for the work your team keeps redoing.</h2>
+          <h2 class="text-white font-medium max-w-2xl">Stop paying for the work your team keeps redoing</h2>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaSignUp variant="highlight" position="roi-final" />
             <CtaBookDemo variant="ghost" color="white" icon="i-lucide-arrow-right" position="roi-final" />
@@ -182,4 +182,11 @@ useSchemaOrg([
     </div>
   </div>
 </template>
+
+<style scoped>
+@reference "~/assets/css/theme.css";
+
+/* Repeated across hero + 2 section headers; @apply, not a hand-written value. */
+.eyebrow { @apply text-indigo-600 text-sm font-semibold uppercase m-0; }
+</style>
 

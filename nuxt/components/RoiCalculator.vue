@@ -125,89 +125,90 @@ const faultFields = [
   { key: 'costPerHour', label: 'Cost per hour of downtime', type: 'money', hint: 'Industry average is ~$125k/hr (ABB, 2023). Default is deliberately conservative.' },
   { key: 'recoverReduction', label: 'Downtime avoided via snapshots & rollback', type: 'pct' },
 ]
+
 </script>
 
 <template>
-  <div class="roi-calc grid lg:grid-cols-2 gap-6 items-start">
+  <div class="grid lg:grid-cols-2 gap-6 items-start">
 
     <!-- Inputs -->
-    <div class="roi-col">
+    <div class="flex flex-col gap-4">
       <!-- Team -->
-      <div class="roi-card border border-gray-200 pb-8">
-        <h3 class="roi-card__h font-semibold">Your team</h3>
-        <label v-for="fld in teamFields" :key="fld.key" class="roi-field">
-          <span class="roi-field__label font-semibold">{{ fld.label }}</span>
-          <div v-if="fld.type === 'money'" class="roi-input-wrap">
-            <span class="roi-input-prefix">$</span>
-            <input v-model.number="f[fld.key]" type="number" min="0" step="5000" class="roi-input roi-input--prefixed" />
+      <div class="card border border-gray-200 pb-8">
+        <h3 class="text-base mb-5 text-gray-900 font-semibold">Your team</h3>
+        <label v-for="fld in teamFields" :key="fld.key" class="block mb-4 last:mb-0">
+          <span class="block text-sm text-gray-700 mb-1.5 font-semibold">{{ fld.label }}</span>
+          <div v-if="fld.type === 'money'" class="relative">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+            <input v-model.number="f[fld.key]" type="number" min="0" step="5000" class="input pl-6" />
           </div>
-          <input v-else v-model.number="f[fld.key]" type="number" min="0" class="roi-input" />
-          <span v-if="fld.hint" class="roi-field__hint">{{ fld.hint }}</span>
+          <input v-else v-model.number="f[fld.key]" type="number" min="0" class="input pl-3" />
+          <span v-if="fld.hint" class="block text-xs text-gray-400 mt-1.5 leading-snug">{{ fld.hint }}</span>
         </label>
-        <label class="roi-field roi-field--tight">
-          <span class="roi-field__label font-semibold">Sites / deployments (for your investment)</span>
-          <input v-model.number="f.sites" type="number" min="1" max="500" class="roi-input" />
+        <label class="block mb-3.5 last:mb-0">
+          <span class="block text-sm text-gray-700 mb-1.5 font-semibold">Sites / deployments (for your investment)</span>
+          <input v-model.number="f.sites" type="number" min="1" max="500" class="input pl-3" />
         </label>
 
-        <p v-if="compact" class="roi-card__foot">
+        <p v-if="compact" class="text-xs text-gray-500 leading-normal mt-5 pt-4 border-t border-gray-100">
           Running on conservative defaults for reuse, deployment automation and downtime recovery.
-          <a :href="FULL_CALCULATOR_URL" @click="capture('roi-open-full', { position: 'pricing-embed' })" class="font-semibold">Open the full ROI calculator</a> to tune every lever and see the research behind it.
+          <a :href="FULL_CALCULATOR_URL" @click="capture('roi-open-full', { position: 'pricing-embed' })" class="font-semibold text-indigo-600">Open the full ROI calculator</a> to tune every lever and see the research behind it.
         </p>
       </div>
 
       <template v-if="!compact">
         <!-- 1 · Waste elimination -->
-        <div class="roi-card roi-cat border-2 border-indigo-300 pb-8">
-          <div class="roi-cat__head">
-            <div><span class="roi-cat__num bg-indigo-100 text-indigo-700 font-semibold">1</span><h3 class="roi-card__h roi-card__h--inline font-semibold">Waste elimination</h3></div>
-            <span class="roi-cat__sub text-indigo-700 font-semibold">{{ fmtK(cat1) }}/yr</span>
+        <div class="card border-2 border-indigo-300 pb-8">
+          <div class="flex items-center justify-between mb-2">
+            <div><span class="badge bg-indigo-100 text-indigo-700">1</span><h3 class="text-base m-0 inline text-gray-900 font-semibold">Waste elimination</h3></div>
+            <span class="text-base text-indigo-700 font-semibold">{{ fmtK(cat1) }}/yr</span>
           </div>
-          <p class="roi-cat__note">Each engineer loses about <b>{{ hoursLostSearch }} hours a year</b> ({{ (SEARCH_SHARE * 100) }}% of the week) tracking down documentation and context. FlowFuse Expert surfaces it instead.</p>
-          <label class="roi-slider">
+          <p class="text-sm text-gray-500 leading-normal mt-1 mb-4">Each engineer loses about <b class="text-gray-700">{{ hoursLostSearch }} hours a year</b> ({{ (SEARCH_SHARE * 100) }}% of the week) tracking down documentation and context. FlowFuse Expert surfaces it instead.</p>
+          <label class="flex flex-col gap-1.5 text-sm text-gray-700 mb-4 last:mb-0">
             <span>Search time FlowFuse recovers <b class="text-indigo-700">{{ f.searchRecovery }}%</b></span>
-            <input v-model.number="f.searchRecovery" type="range" min="0" max="60" class="roi-range roi-range--waste" :style="rangeStyle(f.searchRecovery, 60, 'var(--color-indigo-400)', 'var(--color-indigo-100)')" />
+            <input v-model.number="f.searchRecovery" type="range" min="0" max="60" class="w-full roi-range--waste" :style="rangeStyle(f.searchRecovery, 60, 'var(--color-indigo-400)', 'var(--color-indigo-100)')" />
           </label>
         </div>
 
         <!-- 2 · Speed to deploy -->
-        <div class="roi-card roi-cat border-2 border-gray-300 pb-8">
-          <div class="roi-cat__head">
-            <div><span class="roi-cat__num bg-gray-100 text-gray-700 font-semibold">2</span><h3 class="roi-card__h roi-card__h--inline font-semibold">Speed to deploy</h3></div>
-            <span class="roi-cat__sub text-gray-700 font-semibold">{{ fmtK(cat2) }}/yr</span>
+        <div class="card border-2 border-gray-300 pb-8">
+          <div class="flex items-center justify-between mb-2">
+            <div><span class="badge bg-gray-100 text-gray-700">2</span><h3 class="text-base m-0 inline text-gray-900 font-semibold">Speed to deploy</h3></div>
+            <span class="text-base text-gray-700 font-semibold">{{ fmtK(cat2) }}/yr</span>
           </div>
-          <p class="roi-cat__note">Reusing components instead of rebuilding, and shipping through pipelines instead of walking machine to machine.</p>
+          <p class="text-sm text-gray-500 leading-normal mt-1 mb-4">Reusing components instead of rebuilding, and shipping through pipelines instead of walking machine to machine.</p>
           <template v-for="fld in speedFields" :key="fld.key">
-            <label v-if="fld.type === 'pct'" class="roi-slider">
+            <label v-if="fld.type === 'pct'" class="flex flex-col gap-1.5 text-sm text-gray-700 mb-4 last:mb-0">
               <span>{{ fld.label }} <b class="text-gray-700">{{ f[fld.key] }}%</b></span>
-              <input v-model.number="f[fld.key]" type="range" min="0" max="90" class="roi-range roi-range--speed" :style="rangeStyle(f[fld.key], 90, 'var(--color-gray-400)', 'var(--color-gray-100)')" />
+              <input v-model.number="f[fld.key]" type="range" min="0" max="90" class="w-full roi-range--speed" :style="rangeStyle(f[fld.key], 90, 'var(--color-gray-400)', 'var(--color-gray-100)')" />
             </label>
-            <label v-else class="roi-field roi-field--tight">
-              <span class="roi-field__label font-semibold">{{ fld.label }}</span>
-              <input v-model.number="f[fld.key]" type="number" min="0" class="roi-input" />
+            <label v-else class="block mb-3.5 last:mb-0">
+              <span class="block text-sm text-gray-700 mb-1.5 font-semibold">{{ fld.label }}</span>
+              <input v-model.number="f[fld.key]" type="number" min="0" class="input pl-3" />
             </label>
           </template>
         </div>
 
         <!-- 3 · Fault tolerance -->
-        <div class="roi-card roi-cat border-2 border-red-100 pb-8">
-          <div class="roi-cat__head">
-            <div><span class="roi-cat__num bg-red-50 text-red-700 font-semibold">3</span><h3 class="roi-card__h roi-card__h--inline font-semibold">Fault tolerance</h3></div>
-            <span class="roi-cat__sub text-red-700 font-semibold">{{ fmtK(cat3) }}/yr</span>
+        <div class="card border-2 border-red-100 pb-8">
+          <div class="flex items-center justify-between mb-2">
+            <div><span class="badge bg-red-50 text-red-700">3</span><h3 class="text-base m-0 inline text-gray-900 font-semibold">Fault tolerance</h3></div>
+            <span class="text-base text-red-700 font-semibold">{{ fmtK(cat3) }}/yr</span>
           </div>
-          <p class="roi-cat__note">When something breaks and you can’t roll back fast, machines sit idle, engineers scramble, and you’re exposed to client disputes.</p>
+          <p class="text-sm text-gray-500 leading-normal mt-1 mb-4">When something breaks and you can’t roll back fast, machines sit idle, engineers scramble, and you’re exposed to client disputes.</p>
           <template v-for="fld in faultFields" :key="fld.key">
-            <label v-if="fld.type === 'pct'" class="roi-slider">
+            <label v-if="fld.type === 'pct'" class="flex flex-col gap-1.5 text-sm text-gray-700 mb-4 last:mb-0">
               <span>{{ fld.label }} <b class="text-red-700">{{ f[fld.key] }}%</b></span>
-              <input v-model.number="f[fld.key]" type="range" min="0" max="90" class="roi-range roi-range--fault" :style="rangeStyle(f[fld.key], 90, 'var(--color-red-200)', 'var(--color-red-50)')" />
+              <input v-model.number="f[fld.key]" type="range" min="0" max="90" class="w-full roi-range--fault" :style="rangeStyle(f[fld.key], 90, 'var(--color-red-200)', 'var(--color-red-50)')" />
             </label>
-            <label v-else class="roi-field roi-field--tight">
-              <span class="roi-field__label font-semibold">{{ fld.label }}</span>
-              <div v-if="fld.type === 'money'" class="roi-input-wrap">
-                <span class="roi-input-prefix">$</span>
-                <input v-model.number="f[fld.key]" type="number" min="0" step="1000" class="roi-input roi-input--prefixed" />
+            <label v-else class="block mb-3.5 last:mb-0">
+              <span class="block text-sm text-gray-700 mb-1.5 font-semibold">{{ fld.label }}</span>
+              <div v-if="fld.type === 'money'" class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+                <input v-model.number="f[fld.key]" type="number" min="0" step="1000" class="input pl-6" />
               </div>
-              <input v-else v-model.number="f[fld.key]" type="number" min="0" class="roi-input" />
-              <span v-if="fld.hint" class="roi-field__hint">{{ fld.hint }}</span>
+              <input v-else v-model.number="f[fld.key]" type="number" min="0" class="input pl-3" />
+              <span v-if="fld.hint" class="block text-xs text-gray-400 mt-1.5 leading-snug">{{ fld.hint }}</span>
             </label>
           </template>
         </div>
@@ -215,29 +216,32 @@ const faultFields = [
     </div>
 
     <!-- Results -->
-    <div class="roi-result" :class="{ 'sticky top-20': !compact }">
-      <div class="roi-result__eyebrow font-semibold">Estimated annual recovery</div>
-      <div class="roi-result__big font-semibold">{{ fmt(gross) }}<span class="roi-result__per font-medium">/ year</span></div>
+    <div
+        class="rounded-2xl p-7 text-white bg-gradient-to-b from-indigo-600 via-indigo-800 via-60% to-indigo-950 shadow-2xl shadow-indigo-600/28"
+        :class="{ 'sticky top-20': !compact }"
+    >
+      <div class="text-xs tracking-widest uppercase text-indigo-200 font-semibold">Estimated annual recovery</div>
+      <div class="text-5xl tracking-tight leading-none mt-1 font-semibold">{{ fmt(gross) }}<span class="text-base text-indigo-200 ml-1.5 font-medium">/ year</span></div>
 
-      <div class="roi-bars">
-        <div v-for="c in categories" :key="c.key" class="roi-bar">
-          <div class="roi-bar__top">
-            <span>{{ c.label }} <em>· {{ c.sub }}</em></span>
-            <span class="roi-bar__val font-semibold">{{ fmtK(c.value) }}</span>
+      <div class="mt-6 flex flex-col gap-3.5">
+        <div v-for="c in categories" :key="c.key">
+          <div class="flex justify-between gap-3 text-sm text-indigo-100 mb-1">
+            <span>{{ c.label }} <em class="text-indigo-300 not-italic text-xs">· {{ c.sub }}</em></span>
+            <span class="text-white whitespace-nowrap font-semibold">{{ fmtK(c.value) }}</span>
           </div>
-          <div class="roi-bar__track"><span :class="c.barClass" :style="{ width: (c.value / maxCat * 100) + '%' }"></span></div>
+          <div class="h-2 rounded-full bg-white/15 overflow-hidden"><span :class="c.barClass" class="block h-full rounded-full transition-all duration-300 ease-in-out" :style="{ width: (c.value / maxCat * 100) + '%' }"></span></div>
         </div>
       </div>
 
       <!-- Net — computed in-form -->
-      <div class="roi-net">
-        <div class="roi-net__row">
+      <div class="mt-6 pt-5 border-t border-white/20">
+        <div class="flex items-baseline justify-between gap-4 text-sm text-indigo-100">
           <span>Net savings after your FlowFuse investment</span>
-          <b class="font-semibold">{{ positive ? fmt(netSavings) : '—' }}</b>
+          <b class="text-2xl text-white whitespace-nowrap font-semibold">{{ positive ? fmt(netSavings) : '—' }}</b>
         </div>
-        <div class="roi-net__chips" v-if="positive">
-          <span class="roi-chip font-semibold">≈{{ roiMultiple }}× return</span>
-          <span class="roi-chip font-semibold">pays for itself in {{ paybackBand }}</span>
+        <div class="flex flex-wrap gap-2 mt-3" v-if="positive">
+          <span class="chip">≈{{ roiMultiple }}× return</span>
+          <span class="chip">pays for itself in {{ paybackBand }}</span>
         </div>
       </div>
 
@@ -245,43 +249,30 @@ const faultFields = [
         <CtaSignUp variant="highlight" :position="ctaPosition" />
         <CtaBookDemo variant="ghost" color="white" icon="i-lucide-arrow-right" :position="ctaPosition" />
       </div>
-      <p class="roi-result__fine">Directional estimate for comparison, not a quote. Every input is yours to change.</p>
+      <p class="text-xs text-indigo-200 mt-4 leading-snug">Directional estimate for comparison, not a quote. Every input is yours to change.</p>
     </div>
   </div>
 </template>
 
 <style scoped>
-/* Input column */
-.roi-col { display: flex; flex-direction: column; gap: 1rem; }
-.roi-card { background: #fff; border-radius: 1rem; padding-top: 1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; box-shadow: 0 16px 40px rgba(2,6,13,0.06); }
-.roi-card__h { font-size: 1.05rem; margin: 0 0 1.15rem; color: #111827; }
-.roi-card__h--inline { margin: 0; display: inline; }
-.roi-card__foot { font-size: .78rem; color: #6b7280; line-height: 1.45; margin: 1.15rem 0 0; padding-top: 1rem; border-top: 1px solid #f3f4f6; }
-.roi-card__foot a { color: #4f46e5; }
-.roi-cat__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: .5rem; }
-.roi-cat__num { display: inline-grid; place-items: center; width: 1.4rem; height: 1.4rem; border-radius: 9999px; font-size: .8rem; margin-right: .55rem; vertical-align: middle; }
-.roi-cat__sub { font-size: 1.05rem; }
-.roi-cat__note { font-size: .84rem; color: #6b7280; line-height: 1.45; margin: .1rem 0 1rem; }
-.roi-cat__note b { color: #374151; }
+@reference "~/assets/css/theme.css";
 
-.roi-field { display: block; margin-bottom: 1.05rem; }
-.roi-field--tight { margin-bottom: .9rem; }
-.roi-field:last-child, .roi-field--tight:last-child { margin-bottom: 0; }
-.roi-field__label { display: block; font-size: .88rem; color: #374151; margin-bottom: .4rem; }
-.roi-field__hint { display: block; font-size: .75rem; color: #9ca3af; margin-top: .35rem; line-height: 1.35; }
-.roi-input { width: 100%; border: 1.5px solid #e5e7eb; border-radius: .6rem; padding: .55rem .8rem; font-size: 1rem; color: #111827; background: #fff; }
-.roi-input:focus { outline: none; border-color: #4f46e5; }
-.roi-input-wrap { position: relative; }
-.roi-input-prefix { position: absolute; left: .8rem; top: 50%; transform: translateY(-50%); color: #9ca3af; }
-.roi-input--prefixed { padding-left: 1.6rem; }
-.roi-slider { display: flex; flex-direction: column; gap: .35rem; font-size: .85rem; color: #374151; margin-bottom: 1rem; }
-.roi-slider:last-child { margin-bottom: 0; }
-.roi-slider input[type=range] { width: 100%; }
+/* Small utility-combos reused 2-4 times each across this template (`@apply`, not
+   hand-written values) — kept out of `padding-left`/anything a caller overrides per
+   instance, since a scoped rule always wins over a Tailwind utility on the same
+   property regardless of specificity (unlayered beats `@layer utilities`). `.input`
+   deliberately omits left padding for that reason: callers add `pl-3`/`pl-6` themselves. */
+.card { @apply bg-white rounded-2xl shadow-xl shadow-gray-900/6 pt-6 pl-6 pr-6; }
+.input { @apply w-full border border-gray-200 rounded-lg py-2 pr-3 text-base text-gray-900 bg-white focus:outline-none focus:border-indigo-600; }
+.badge { @apply inline-grid place-items-center w-6 h-6 rounded-full text-xs mr-2 align-middle font-semibold; }
+.chip { @apply text-xs bg-white/15 text-white rounded-full py-1 px-3 font-semibold; }
 
 /* Per-category thumb color, overriding the site-wide indigo reset (src/css/style.css).
-   Hover variants are needed too: the global rule's `input[type="range"]::-webkit-slider-
-   thumb:hover` selector is otherwise more specific than a plain classed one at the same
-   specificity tier and would win the tie-break, reverting the thumb to indigo on hover. */
+   Tailwind has no utility for vendor pseudo-elements, so this is the one part of this
+   component that can't move to a class. Hover variants are needed too: the global rule's
+   `input[type="range"]::-webkit-slider-thumb:hover` selector is otherwise more specific
+   than a plain classed one at the same specificity tier and would win the tie-break,
+   reverting the thumb to indigo on hover. */
 .roi-range--waste::-webkit-slider-thumb { background-color: var(--color-indigo-400); border-color: var(--color-indigo-100); }
 .roi-range--waste::-moz-range-thumb { background-color: var(--color-indigo-400); border-color: var(--color-indigo-100); }
 .roi-range--waste::-webkit-slider-thumb:hover { background-color: var(--color-indigo-600); }
@@ -294,22 +285,4 @@ const faultFields = [
 .roi-range--fault::-moz-range-thumb { background-color: var(--color-red-200); border-color: var(--color-red-50); }
 .roi-range--fault::-webkit-slider-thumb:hover { background-color: var(--color-red-600); }
 .roi-range--fault::-moz-range-thumb:hover { background-color: var(--color-red-600); }
-
-/* Results card */
-.roi-result { border-radius: 1rem; padding: 1.75rem; color: #fff; background: linear-gradient(160deg, #4f46e5 0%, #3730a3 60%, #211c64 100%); box-shadow: 0 24px 54px rgba(79,70,229,0.28); }
-.roi-result__eyebrow { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: #c7d2fe; }
-.roi-result__big { font-size: 2.9rem; letter-spacing: -0.02em; line-height: 1.05; margin-top: .25rem; }
-.roi-result__per { font-size: 1rem; color: #c7d2fe; margin-left: .4rem; }
-.roi-bars { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .9rem; }
-.roi-bar__top { display: flex; justify-content: space-between; gap: .75rem; font-size: .85rem; color: #e0e7ff; margin-bottom: .3rem; }
-.roi-bar__top em { color: #a5b4fc; font-style: normal; font-size: .78rem; }
-.roi-bar__val { color: #fff; white-space: nowrap; }
-.roi-bar__track { height: 8px; border-radius: 9999px; background: rgba(255,255,255,0.16); overflow: hidden; }
-.roi-bar__track span { display: block; height: 100%; border-radius: 9999px; transition: width .3s ease; }
-.roi-net { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.2); }
-.roi-net__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; font-size: .9rem; color: #e0e7ff; }
-.roi-net__row b { font-size: 1.5rem; color: #fff; white-space: nowrap; }
-.roi-net__chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
-.roi-chip { font-size: .78rem; background: rgba(255,255,255,0.16); color: #fff; border-radius: 9999px; padding: .3rem .7rem; }
-.roi-result__fine { font-size: .74rem; color: #c7d2fe; margin: 1rem 0 0; line-height: 1.4; }
 </style>
