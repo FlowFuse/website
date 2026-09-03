@@ -12,7 +12,6 @@ function capture (eventName?: string, props?: Record<string, unknown>) {
 }
 
 const DEMO_URL = '/book-demo/'
-const SIGNUP_URL = 'https://app.flowfuse.com/account/create'
 
 const evidence = [
   { stat: '~20% of the work-week', claim: 'is lost searching for internal information.', source: 'McKinsey Global Institute — The Social Economy (2012)', url: 'https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy' },
@@ -165,17 +164,17 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ CLOSING CTA ============================ -->
-    <section class="w-full px-6 relative z-10">
-      <div class="max-w-screen-lg mx-auto pb-16">
-        <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-6 text-center" style="background: radial-gradient(ellipse 50% 150% at 50% 100%, #6366f1, #211c64)">
-          <p class="text-white text-3xl sm:text-4xl font-medium m-0 max-w-2xl">Stop paying for the work your team keeps redoing.</p>
+    <div class="w-full px-6 pb-16">
+      <div class="max-w-screen-lg mx-auto">
+        <div class="rounded-xl px-6 md:px-9 py-8 md:py-12 flex flex-col items-center gap-6 text-center ff-get-started-bg">
+          <h2 class="text-white font-medium max-w-2xl">Stop paying for the work your team keeps redoing.</h2>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
-            <a class="ff-btn ff-btn--highlight" :href="SIGNUP_URL" @click="capture('cta-start-free', { position: 'roi-final' })">Start Free</a>
-            <a class="ff-btn" style="background:#ffffff;color:#211c64;" :href="DEMO_URL" @click="capture('cta-book-demo', { position: 'roi-final' })">Book a Demo</a>
+            <CtaSignUp variant="highlight" position="roi-final" />
+            <CtaBookDemo variant="ghost" color="white" icon="i-lucide-arrow-right" position="roi-final" />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
