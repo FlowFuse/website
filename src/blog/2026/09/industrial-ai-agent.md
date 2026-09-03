@@ -3,9 +3,10 @@ metaTitle: "Connect Your Industrial AI Agent to FlowFuse"
 title: "Connect Your Industrial AI Agent to FlowFuse"
 subtitle: "Turn Microsoft Copilot, ChatGPT, or Claude into industrial AI agents."
 description: "Connect ChatGPT, Microsoft Copilot, or Claude to FlowFuse and turn your approved AI agent into an industrial AI agent that builds Node-RED flows directly."
-date: 2026-08-27
+date: 2026-09-03
 keywords: flowfuse, mcp, model context protocol, industrial ai agent, ai agent, microsoft copilot, copilot studio, chatgpt, claude, node-red, industrial ai
 authors: ["dimitrie-hoekstra"]
+image: /blog/2026/09/images/industrial-ai-agent.png
 tags:
 - flowfuse
 - ai
