@@ -1,10 +1,9 @@
 ---
-title: Data plane
-navTitle: Data plane
-navOrder: 4
-guide: flowfuse
-slug: data-plane
-blurb: "Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the fleet over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on."
+title: "Data plane"
+navTitle: "Data plane"
+navOrder: 3
+meta:
+    description: "Before you pick where things run, decide how data is handled. Two stores come built into every FlowFuse server install — the Team Broker and relational Tables — exposed to every instance with nothing extra to stand up. Everything else you bring your own: run it (a time-series DB, an existing database, a model) and expose it to the fleet over Project Link, no inbound ports. This is the data plane the architectures on the next pages all sit on."
 ---
 
 # Data plane
@@ -169,5 +168,5 @@ Any other store or service FlowFuse doesn't provide — an existing SQL database
 ::::
 
 ::callout{icon="i-lucide-git-branch"}
-**Single service?** Calling one external endpoint from a flow — an HTTP request or webhook to one system — is a Node-RED decision, not a platform data target. [Node-RED guide →](/application-guide/node-red/handling-data/)
+**Single service?** Calling one external endpoint from a flow — an HTTP request or webhook to one system — is a Node-RED decision, not a platform data target. [Node-RED guide →](/docs/node-red-guide/patterns/handling-data/)
 ::

@@ -1,10 +1,7 @@
 ---
-title: OT architectures
-guide: flowfuse
-navOrder: 5.2
-navTitle: OT architectures
-parent: architectures
-slug: ot-architectures
+title: "OT architectures"
+navTitle: "OT architectures"
+navOrder: 2
 ---
 
 # OT architectures

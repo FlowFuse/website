@@ -1,10 +1,9 @@
 ---
-title: Foundations
-navTitle: Foundations
-navOrder: 2
-guide: flowfuse
-slug: foundations
-blurb: "The foundation to build on: what FlowFuse is, its core pieces, and how code is shared across teams."
+title: "Foundations"
+navTitle: "Foundations"
+navOrder: 1
+meta:
+    description: "The foundation to build on: what FlowFuse is, its core pieces, and how code is shared across teams."
 ---
 
 # Foundations
@@ -36,7 +35,7 @@ edges:
 ## The core pieces
 
 - **Single platform** — Manage, secure, and govern everything from one place.
-- **Instances** — Node-RED runtimes. A **Hosted Instance** runs on FlowFuse-managed infrastructure (cloud or your own server); a **Remote Instance** runs on your own edge hardware via the Device Agent. Same runtime either way — it connects to whatever the job needs (hardware, data, cloud) and can serve its own Dashboard. [What an instance connects to →](/application-guide/node-red/foundations/)
+- **Instances** — Node-RED runtimes. A **Hosted Instance** runs on FlowFuse-managed infrastructure (cloud or your own server); a **Remote Instance** runs on your own edge hardware via the Device Agent. Same runtime either way — it connects to whatever the job needs (hardware, data, cloud) and can serve its own Dashboard. [What an instance connects to →](/docs/node-red-guide/foundations/)
 - **Team Broker** — A shared message bus that ties data together across sites.
 - **Database** — One shared operational data store.
 - **Dashboards** — Operator-facing UIs for the people who run it.
@@ -55,5 +54,5 @@ edges:
 Two ways code moves in FlowFuse: promote a whole app through environments, or compose an app from shared parts.
 
 ::callout{icon="i-lucide-arrow-right"}
-**[App delivery methods →](/application-guide/flowfuse/app-delivery-methods/)** — whole app or reusable pieces: how a build reaches every place that should run it.
+**[App delivery methods →](/docs/application-guide/app-delivery-methods/)** — whole app or reusable pieces: how a build reaches every place that should run it.
 ::

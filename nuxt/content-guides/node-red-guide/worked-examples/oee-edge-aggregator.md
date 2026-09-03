@@ -1,22 +1,20 @@
 ---
-title: OEE - Edge Aggregator
-navTitle: OEE - Edge Aggregator
-navOrder: 4.1
-guide: node-red
-slug: oee-edge-aggregator
-parent: worked-examples
-blurb: "The edge app from the OEE use case as a Node-RED flow — a straight-line flow packaged as a subflow and configured per line (its PLC tags, via a config UI and a get-config node), with the data treated as a stream and its counts held in context."
+title: "OEE - Edge Aggregator"
+navTitle: "OEE - Edge Aggregator"
+navOrder: 1
+meta:
+    description: "The edge app from the OEE use case as a Node-RED flow — a straight-line flow packaged as a subflow and configured per line (its PLC tags, via a config UI and a get-config node), with the data treated as a stream and its counts held in context."
 ---
 
 # OEE - Edge Aggregator
 
-The edge app from the FlowFuse [OEE worked example](/application-guide/flowfuse/worked-example/) — it reads a line's machine signals and publishes its state, one Remote Instance per line. The flow logic is a simple straight line; the choices that matter are packaging it for reuse and treating the data as a stream.
+The edge app from the FlowFuse [OEE worked example](/docs/application-guide/worked-examples/oee/) — it reads a line's machine signals and publishes its state, one Remote Instance per line. The flow logic is a simple straight line; the choices that matter are packaging it for reuse and treating the data as a stream.
 
 ## Definition
 
 - **The app** — reads a line's machine signals and publishes its state.
-- **Design pattern** — [subflow](/application-guide/node-red/design-patterns/), applied to the *whole* flow (not to extract an internal seam): the straight-line flow is packaged as one subflow and dropped onto every line, each configured with its own line's PLC tags as per-instance config — the Node-RED side of the [Configurable App](/application-guide/flowfuse/hardware-apps/) pattern.
-- **Data handling** — [classify](/application-guide/node-red/handling-data/) (the signals are a telemetry **stream**, read at the poll cadence) → hold the running run/stop counts in **[context](/application-guide/node-red/handling-data/)**.
+- **Design pattern** — [subflow](/docs/node-red-guide/patterns/design-patterns/), applied to the *whole* flow (not to extract an internal seam): the straight-line flow is packaged as one subflow and dropped onto every line, each configured with its own line's PLC tags as per-instance config — the Node-RED side of the [Configurable App](/docs/application-guide/app-delivery-methods/hardware-apps/) pattern.
+- **Data handling** — [classify](/docs/node-red-guide/patterns/handling-data/) (the signals are a telemetry **stream**, read at the poll cadence) → hold the running run/stop counts in **[context](/docs/node-red-guide/patterns/handling-data/)**.
 - **Runs on** — a Remote Instance, one per line.
 - **Why this shape** — the same complete job runs identically on every line, right next to the equipment, and keeps working if the link drops.
 
@@ -56,7 +54,7 @@ legend:
 - **Configured per line — why it's a Configurable App** — a config UI node sets this line's PLC tag names into context; a *get config* node in front of the PLC read loads them, so the one subflow reads different tags on every line without changing the build. That per-line configuration is exactly what makes it a Configurable App.
 - **Classify: it's a stream** — the signals are telemetry read at the poll cadence, so the latest value matters more than any single earlier one. One read → one compute → one publish per tick; the poll interval already paces it, so there's no fast-in / slow-out to rate-limit.
 - **Context for the counts** — running run/stop counts live in flow context, not threaded through the wires.
-- **Catch the read** — a PLC read can time out; a Catch scoped to the read handles a dropped read so it doesn't stall the publish. A Catch node isn't wired *from* the read — it registers to catch errors in its scope, so the dashed line shows that scope, not a connection. Catching errors is [good form](/application-guide/node-red/good-form/), not a per-flow choice.
+- **Catch the read** — a PLC read can time out; a Catch scoped to the read handles a dropped read so it doesn't stall the publish. A Catch node isn't wired *from* the read — it registers to catch errors in its scope, so the dashed line shows that scope, not a connection. Catching errors is [good form](/docs/node-red-guide/patterns/good-form/), not a per-flow choice.
 
 ::callout{icon="i-lucide-check"}
 **In one line** — a subflow per line: set the tags in a config UI, load them, then poll → read → compute → publish (with a scoped catch); the data call is treating it as a stream and holding the counts in context.

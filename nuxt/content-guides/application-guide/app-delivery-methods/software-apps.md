@@ -1,11 +1,9 @@
 ---
-title: Software apps
-navTitle: Software apps
-navOrder: 3.2
-guide: flowfuse
-slug: software-apps
-blurb: "The three shapes a FlowFuse app takes when it runs on the platform. Pick by what it needs: a headless job (Packaged App), a user-facing app driven by data (Data-Driven App), or a reusable piece other apps embed (Shared Building Block)."
-parent: app-delivery-methods
+title: "Software apps"
+navTitle: "Software apps"
+navOrder: 2
+meta:
+    description: "The three shapes a FlowFuse app takes when it runs on the platform. Pick by what it needs: a headless job (Packaged App), a user-facing app driven by data (Data-Driven App), or a reusable piece other apps embed (Shared Building Block)."
 ---
 
 # Software apps

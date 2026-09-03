@@ -1,10 +1,9 @@
 ---
-title: Foundations
-navTitle: Foundations
-navOrder: 2
-guide: node-red
-slug: foundations
-blurb: "The handful of concepts you need to build with Node-RED, and how they fit together."
+title: "Foundations"
+navTitle: "Foundations"
+navOrder: 1
+meta:
+    description: "The handful of concepts you need to build with Node-RED, and how they fit together."
 ---
 
 # Foundations

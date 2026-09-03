@@ -35,6 +35,11 @@ export default defineContentConfig({
                 navGroupOrder: z.number().optional(),
                 navOrder: z.number().optional(),
                 originalPath: z.string().optional(),
+                // Set only on pages overlaid from this repo's nuxt/content-guides/ tree
+                // (see nuxt/lib/guides-sync.mjs). `originalPath` marks a page imported
+                // from FlowFuse/flowfuse and the docs page builds a flowfuse edit link
+                // from it; a page carrying `editUrl` links back here instead.
+                editUrl: z.string().optional(),
                 updated: z.string().optional(),
                 version: z.string().optional(),
                 layout: z.string().optional(),
@@ -63,25 +68,6 @@ export default defineContentConfig({
                     // Read by useHandbookNav for sort order; without it declared
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
-                }).optional(),
-            })
-        }),
-        // Markdown-driven Application Guide pages, rendered by
-        // pages/application-guide/[guide]/[slug].vue via ContentRenderer, like /docs.
-        // The sidebar/order is driven by frontmatter (guide, slug, navOrder, navTitle).
-        applicationGuideDoc: defineCollection({
-            type: 'page',
-            source: 'application-guide/**/*.md',
-            schema: z.object({
-                guide: z.enum(['flowfuse', 'node-red']),
-                slug: z.string(),
-                navTitle: z.string().optional(),
-                navOrder: z.number().optional(),
-                // slug of the parent page — nests this page under it in the sidebar.
-                parent: z.string().optional(),
-                blurb: z.string().optional(),
-                meta: z.object({
-                    description: z.string().optional(),
                 }).optional(),
             })
         }),
