@@ -85,10 +85,7 @@ useSchemaOrg([
   <div class="w-full roi-page">
     <!-- ============================ HERO ============================ -->
     <section class="w-full px-6">
-      <div class="max-w-screen-lg mx-auto pt-8">
-        <Breadcrumbs :items="[{ label: 'Pricing', to: '/pricing/' }, { label: 'ROI Calculator' }]" />
-      </div>
-      <div class="max-w-screen-lg mx-auto pt-6 pb-8 text-center">
+      <div class="max-w-screen-lg mx-auto pt-14 pb-8 text-center">
         <span class="roi-pill">ROI calculator</span>
         <h1 class="mt-4 leading-tight text-4xl sm:text-5xl font-bold">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
         <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, rebuilding and hand-deploying work, and riding out downtime. Put your plant, fleet or project numbers in — every figure below traces to published research.</p>
