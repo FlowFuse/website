@@ -103,54 +103,67 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ AUDIENCES ============================ -->
-    <section class="w-full px-6 py-16">
+    <section class="w-full px-6 pt-16">
       <div class="max-w-screen-lg mx-auto pb-12">
-        <div class="text-center mb-16">
+        <div class="mb-16">
           <p class="text-indigo-600 text-sm font-semibold uppercase m-0">Who this is for</p>
           <h2 class="my-4">Where the return comes from in industrial automation</h2>
-          <p class="text-gray-500 max-w-2xl mx-auto mt-2">The same three categories apply whether you run one plant, integrate for dozens of customers, or ship machines into the field. What changes is which line dominates.</p>
+          <p class="max-w-2xl mt-2">The same three categories apply whether you run one plant, integrate for dozens of customers, or ship machines into the field. What changes is which line dominates.</p>
         </div>
-        <DifferentiatorCards :items="audiences" />
+        <DifferentiatorCards :items="audiences" description-class="text-sm" />
       </div>
     </section>
 
     <!-- ============================ EVIDENCE ============================ -->
-    <section class="w-full px-6">
-      <div class="max-w-screen-lg mx-auto pb-8">
-        <div class="text-center mb-8">
+    <section class="w-full px-6 py-16 relative overflow-hidden">
+      <div class="absolute -inset-y-1 inset-x-0 solution-section-bg" aria-hidden="true" />
+      <div class="max-w-screen-lg mx-auto relative">
+        <div class="mb-12">
           <p class="text-indigo-600 text-sm font-semibold uppercase m-0">The evidence</p>
-          <h2 class="mt-4">Why these numbers hold up</h2>
-          <p class="text-gray-500 max-w-2xl mx-auto mt-2">Every figure traces to published research, and the defaults are set deliberately on the conservative side.</p>
+          <h2 class="my-4">Why these numbers hold up</h2>
+          <p class="max-w-2xl mt-2">Every figure traces to published research, and the defaults are set deliberately on the conservative side.</p>
         </div>
-        <div class="roi-evidence">
-          <a v-for="e in evidence" :key="e.source" :href="e.url" target="_blank" rel="noopener" class="roi-ev" @click="capture('roi-evidence', { source: e.source })">
-            <div class="roi-ev__stat font-semibold">{{ e.stat }}</div>
-            <div class="roi-ev__claim">{{ e.claim }}</div>
-            <div class="roi-ev__src">{{ e.source }} &nearr;</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <a
+              v-for="e in evidence"
+              :key="e.source"
+              :href="e.url"
+              target="_blank"
+              rel="noopener"
+              class="group relative overflow-hidden bg-white rounded-xl border border-gray-200 p-5 flex flex-col transition duration-300 ease-in-out hover:border-indigo-600 hover:drop-shadow-lg hover:no-underline"
+              @click="capture('roi-evidence', { source: e.source })"
+          >
+            <UIcon name="i-heroicons-arrow-top-right-on-square" class="absolute top-4 right-4 z-10 w-4 h-4 text-gray-400 group-hover:text-indigo-600" />
+            <div class="text-xl font-semibold text-indigo-600 pr-6">{{ e.stat }}</div>
+            <p class="text-sm text-gray-600 leading-snug flex-grow mb-0 mt-3">{{ e.claim }}</p>
+            <span class="text-sm text-blue-600 mt-3 md:hidden">{{ e.source }}</span>
+            <div class="hidden md:flex absolute inset-0 items-center justify-center text-center px-6 bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+              <span class="text-sm font-medium text-gray-900">Read more at <span class="text-indigo-600">{{ e.source }}</span></span>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
     <!-- ============================ METHODOLOGY ============================ -->
-    <section class="w-full px-6">
-      <div class="max-w-screen-lg mx-auto pb-12">
-        <details class="roi-method">
-          <summary class="font-semibold">How the calculation works</summary>
-          <div class="roi-method__body">
-            <p><b class="font-semibold">1 · Waste elimination.</b> Engineers lose ~20% of the week finding information (McKinsey). We recover the share you set (default 30%): <code>engineers × salary × 0.20 × recovery</code>.</p>
-            <p><b class="font-semibold">2 · Speed to deploy.</b> Building from scratch and hand-deploying is labour you can reclaim with reuse and pipelines: <code>(apps × hrs/app × reuse% + deploys × hrs/deploy × pipeline%) × hourly rate</code>. Reuse gains are grounded in Lim (40–57%); deployment automation in DORA.</p>
-            <p><b class="font-semibold">3 · Fault tolerance.</b> Slow recovery means idle machines and engineers: <code>incidents × downtime hrs × cost/hr × avoided%</code>. The $125k/hr industry average (ABB) is the ceiling; we default far lower.</p>
-            <p><b class="font-semibold">Net &amp; payback.</b> A representative FlowFuse package cost is subtracted from gross savings to show net savings, an ROI multiple, and a payback window. It’s an estimate for comparison — see <a href="/pricing/">FlowFuse pricing</a> for what each product includes, or <a :href="DEMO_URL">book a demo</a> for an exact quote.</p>
+    <section class="w-full px-6 pt-6">
+      <div class="max-w-screen-lg mx-auto py-12">
+        <div class="border border-gray-200 rounded-xl bg-gray-50">
+          <div class="px-5 py-4 text-gray-700 font-semibold">How the calculation works</div>
+          <div class="prose prose-sm max-w-none px-5 pb-5">
+            <p><b>1 · Waste elimination.</b> Engineers lose ~20% of the week finding information (McKinsey). We recover the share you set (default 30%): <code>engineers × salary × 0.20 × recovery</code>.</p>
+            <p><b>2 · Speed to deploy.</b> Building from scratch and hand-deploying is labour you can reclaim with reuse and pipelines: <code>(apps × hrs/app × reuse% + deploys × hrs/deploy × pipeline%) × hourly rate</code>. Reuse gains are grounded in Lim (40–57%); deployment automation in DORA.</p>
+            <p><b>3 · Fault tolerance.</b> Slow recovery means idle machines and engineers: <code>incidents × downtime hrs × cost/hr × avoided%</code>. The $125k/hr industry average (ABB) is the ceiling; we default far lower.</p>
+            <p><b>Net &amp; payback.</b> A representative FlowFuse package cost is subtracted from gross savings to show net savings, an ROI multiple, and a payback window. It’s an estimate for comparison — see <a href="/pricing/">FlowFuse pricing</a> for what each product includes, or <a :href="DEMO_URL">book a demo</a> for an exact quote.</p>
           </div>
-        </details>
+        </div>
       </div>
     </section>
 
     <!-- ============================ FAQ ============================ -->
-    <section class="w-full px-6 pt-16">
-      <div class="max-w-screen-lg mx-auto pb-14">
-        <h2 class="text-center mb-8">ROI questions industrial teams ask</h2>
+    <section class="w-full px-6 pt-10">
+      <div class="max-w-screen-lg mx-auto pb-18">
+        <h2 class="mb-8"><span class="text-indigo-600">ROI questions</span> industrial teams ask</h2>
         <BlogFaq :faq="faqs" />
       </div>
     </section>
@@ -170,20 +183,3 @@ useSchemaOrg([
   </div>
 </template>
 
-<style scoped>
-/* Evidence */
-.roi-evidence { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
-.roi-ev { display: block; border: 1px solid #e5e7eb; border-radius: .75rem; padding: 1.1rem 1.25rem; background: #fff; transition: border-color .15s ease, box-shadow .15s ease; text-decoration: none; }
-.roi-ev:hover { border-color: #c7d2fe; box-shadow: 0 8px 24px rgba(2,6,13,0.07); }
-.roi-ev__stat { font-size: 1.25rem; color: #4f46e5; letter-spacing: -0.01em; }
-.roi-ev__claim { font-size: .86rem; color: #374151; margin-top: .3rem; line-height: 1.4; }
-.roi-ev__src { font-size: .73rem; color: #9ca3af; margin-top: .6rem; }
-
-/* Methodology */
-.roi-method { border: 1px solid #e5e7eb; border-radius: .75rem; background: #fafafa; }
-.roi-method summary { cursor: pointer; padding: 1rem 1.25rem; color: #374151; }
-.roi-method__body { padding: 0 1.25rem 1.25rem; }
-.roi-method__body p { font-size: .88rem; color: #4b5563; line-height: 1.5; margin: .6rem 0; }
-.roi-method__body code { background: #eef2ff; color: #3730a3; padding: .1rem .35rem; border-radius: .3rem; font-size: .82rem; }
-.roi-method__body a { color: #4f46e5; }
-</style>
