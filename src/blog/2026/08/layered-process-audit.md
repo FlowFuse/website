@@ -4,7 +4,7 @@ subtitle: "Understand how LPAs work, what the different layers mean, and how man
 description: "Learn what a layered process audit (LPA) is, how the different audit layers work, and how manufacturers use LPAs to verify critical process controls."
 date: 2026-08-14
 authors: ["sumit-shinde"]
-image: /blog/2026/08/images/layered-process-audit-blog-tile.png
+image: /blog/2026/08/images/what-is-layered-process-audit-lpa.png
 tags:
   - posts
   - flowfuse
