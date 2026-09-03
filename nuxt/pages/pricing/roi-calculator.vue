@@ -113,7 +113,7 @@ useSchemaOrg([
         </div>
         <div class="roi-aud">
           <div v-for="a in audiences" :key="a.who" class="roi-aud__card">
-            <h3 class="roi-aud__who">{{ a.who }}</h3>
+            <h3 class="roi-aud__who font-semibold">{{ a.who }}</h3>
             <p class="roi-aud__lead">{{ a.lead }}</p>
             <p class="roi-aud__body" v-html="a.body"></p>
           </div>
@@ -133,7 +133,7 @@ useSchemaOrg([
         </div>
         <div class="roi-evidence">
           <a v-for="e in evidence" :key="e.source" :href="e.url" target="_blank" rel="noopener" class="roi-ev" @click="capture('roi-evidence', { source: e.source })">
-            <div class="roi-ev__stat">{{ e.stat }}</div>
+            <div class="roi-ev__stat font-semibold">{{ e.stat }}</div>
             <div class="roi-ev__claim">{{ e.claim }}</div>
             <div class="roi-ev__src">{{ e.source }} &nearr;</div>
           </a>
@@ -145,12 +145,12 @@ useSchemaOrg([
     <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-12">
         <details class="roi-method">
-          <summary>How the calculation works</summary>
+          <summary class="font-semibold">How the calculation works</summary>
           <div class="roi-method__body">
-            <p><b>1 · Waste elimination.</b> Engineers lose ~20% of the week finding information (McKinsey). We recover the share you set (default 30%): <code>engineers × salary × 0.20 × recovery</code>.</p>
-            <p><b>2 · Speed to deploy.</b> Building from scratch and hand-deploying is labour you can reclaim with reuse and pipelines: <code>(apps × hrs/app × reuse% + deploys × hrs/deploy × pipeline%) × hourly rate</code>. Reuse gains are grounded in Lim (40–57%); deployment automation in DORA.</p>
-            <p><b>3 · Fault tolerance.</b> Slow recovery means idle machines and engineers: <code>incidents × downtime hrs × cost/hr × avoided%</code>. The $125k/hr industry average (ABB) is the ceiling; we default far lower.</p>
-            <p><b>Net &amp; payback.</b> A representative FlowFuse package cost is subtracted from gross savings to show net savings, an ROI multiple, and a payback window. It’s an estimate for comparison — see <a href="/pricing/">FlowFuse pricing</a> for what each product includes, or <a :href="DEMO_URL">book a demo</a> for an exact quote.</p>
+            <p><b class="font-semibold">1 · Waste elimination.</b> Engineers lose ~20% of the week finding information (McKinsey). We recover the share you set (default 30%): <code>engineers × salary × 0.20 × recovery</code>.</p>
+            <p><b class="font-semibold">2 · Speed to deploy.</b> Building from scratch and hand-deploying is labour you can reclaim with reuse and pipelines: <code>(apps × hrs/app × reuse% + deploys × hrs/deploy × pipeline%) × hourly rate</code>. Reuse gains are grounded in Lim (40–57%); deployment automation in DORA.</p>
+            <p><b class="font-semibold">3 · Fault tolerance.</b> Slow recovery means idle machines and engineers: <code>incidents × downtime hrs × cost/hr × avoided%</code>. The $125k/hr industry average (ABB) is the ceiling; we default far lower.</p>
+            <p><b class="font-semibold">Net &amp; payback.</b> A representative FlowFuse package cost is subtracted from gross savings to show net savings, an ROI multiple, and a payback window. It’s an estimate for comparison — see <a href="/pricing/">FlowFuse pricing</a> for what each product includes, or <a :href="DEMO_URL">book a demo</a> for an exact quote.</p>
           </div>
         </details>
       </div>
@@ -183,7 +183,7 @@ useSchemaOrg([
 /* Audiences */
 .roi-aud { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 .roi-aud__card { border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; background: #fff; box-shadow: 0 16px 40px rgba(2,6,13,0.05); }
-.roi-aud__who { font-size: 1rem; font-weight: 700; color: #4f46e5; margin: 0; }
+.roi-aud__who { font-size: 1rem; color: #4f46e5; margin: 0; }
 .roi-aud__lead { font-size: 1.05rem; font-weight: 600; color: #111827; margin: .6rem 0 .5rem; line-height: 1.35; }
 .roi-aud__body { font-size: .88rem; color: #4b5563; line-height: 1.55; margin: 0; }
 .roi-aud__body :deep(b) { color: #111827; font-weight: 600; }
@@ -192,13 +192,13 @@ useSchemaOrg([
 .roi-evidence { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
 .roi-ev { display: block; border: 1px solid #e5e7eb; border-radius: .75rem; padding: 1.1rem 1.25rem; background: #fff; transition: border-color .15s ease, box-shadow .15s ease; text-decoration: none; }
 .roi-ev:hover { border-color: #c7d2fe; box-shadow: 0 8px 24px rgba(2,6,13,0.07); }
-.roi-ev__stat { font-size: 1.25rem; font-weight: 800; color: #4f46e5; letter-spacing: -0.01em; }
+.roi-ev__stat { font-size: 1.25rem; color: #4f46e5; letter-spacing: -0.01em; }
 .roi-ev__claim { font-size: .86rem; color: #374151; margin-top: .3rem; line-height: 1.4; }
 .roi-ev__src { font-size: .73rem; color: #9ca3af; margin-top: .6rem; }
 
 /* Methodology */
 .roi-method { border: 1px solid #e5e7eb; border-radius: .75rem; background: #fafafa; }
-.roi-method summary { cursor: pointer; padding: 1rem 1.25rem; font-weight: 600; color: #374151; }
+.roi-method summary { cursor: pointer; padding: 1rem 1.25rem; color: #374151; }
 .roi-method__body { padding: 0 1.25rem 1.25rem; }
 .roi-method__body p { font-size: .88rem; color: #4b5563; line-height: 1.5; margin: .6rem 0; }
 .roi-method__body code { background: #eef2ff; color: #3730a3; padding: .1rem .35rem; border-radius: .3rem; font-size: .82rem; }
