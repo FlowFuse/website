@@ -140,6 +140,8 @@ The site has five main call-to-action destinations, each with **fixed copy** —
 | `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
 | `<CtaPricing>`   | `/pricing/`                       | "View Pricing"                                       |
 
+Contact Us vs. Book a Demo: these two CTAs carry different intent signals and should be treated accordingly. Contact Us is for general inquiries — support questions, partnership asks, anything that isn't a sales-ready request. Book a Demo is a high-intent motion: someone clicking it has effectively raised their hand to buy, so the path from click to booked call should have as little friction as possible. This is why Book a Demo needs to be visible from the main nav and not buried.
+
 If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
 **These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
@@ -229,6 +231,35 @@ The dark card above is just to make the white text visible in this doc, use `col
 | `plan`     | No       | Which pricing plan the button belongs to, if relevant (e.g. `edge`, `hub`, `fleet`) — also shows up in analytics                              |
 | `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |
 | `icon`     | No       | An icon name to show after the button text, e.g. `i-lucide-arrow-right`                                                                       |
+
+### One-off links (`CtaCustom`)
+
+Occasionally a page needs a button-styled link that genuinely isn't one of the five destinations above — a link to a HubSpot meeting scheduler, an external community forum, and so on. There's a `CtaCustom` component for that, with its own copy and destination, still using the same look and tracking system as everything else on this page.
+
+Using it takes two steps:
+
+1. Register the destination in `nuxt/lib/custom-cta-destinations.ts` — a short list of entries, each just a name, a URL, and a PostHog event name (no coding beyond typing those three things in). This is what keeps the same URL from accidentally getting tracked under two different event names if it's ever linked from more than one place.
+2. Reference that name from `<CtaCustom>` in the page, along with the button's copy and style — same as any other `Cta*` component.
+
+Both steps are plain text edits — no different in spirit from adding a new entry to `events.yaml` or a new industry page's frontmatter.
+
+**Example.** The support page's link to the Node-RED community forum works like this. First, an entry in `nuxt/lib/custom-cta-destinations.ts`:
+
+```ts
+communityForum: {
+    href: 'https://discourse.nodered.org/c/vendors/flowfuse/24/',
+    event: 'cta-community-forum',
+},
+```
+
+Then, in the page itself:
+
+```mdc
+::CtaCustom{label="Community Forum" destination-key="communityForum" variant="primary" position="community"}
+::
+```
+
+`destination-key` must match the name chosen in step 1 exactly (`communityForum` in both places above) - that's the link between the button and the destination it's registered to.
 
 ## Requesting New Website Pages
 

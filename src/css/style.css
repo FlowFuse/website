@@ -93,7 +93,13 @@
     --tw-prose-bold: var(--color-gray-500);
 }
 .prose img { max-width: 100%; }
-.prose:not(.prose-natural-size-images) img { width: 100%; height: auto; }
+
+@layer components {
+    .prose:not(.prose-natural-size-images) img {
+        width: 100%;
+        height: auto;
+    }
+}
 
 @import "./style.page.css";
 @import "./style.nohero.css";
@@ -395,16 +401,22 @@ dl.message-properties > dd {
     vertical-align: top;
 }
 
-.ff-blue-card {
-    box-shadow:  inset 13px 13px 26px var(--color-indigo-100),
-    inset -13px -13px 26px var(--color-white),
-    10px 10px 26px var(--color-indigo-100),
-    -10px -10px 26px var(--color-white);
-    @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
-}
+/* @layer components (not the default unlayered), so a plain Tailwind utility on a
+   .ff-blue-card element (e.g. p-4, mt-0) overrides these via normal layer order
+   instead of silently losing to them - see the removed .ff-ai-governance
+   .ff-blue-card override below for what that used to require. */
+@layer components {
+    .ff-blue-card {
+        box-shadow:  inset 13px 13px 26px var(--color-indigo-100),
+        inset -13px -13px 26px var(--color-white),
+        10px 10px 26px var(--color-indigo-100),
+        -10px -10px 26px var(--color-white);
+        @apply m-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 border border-white rounded-lg mt-6;
+    }
 
-.main-content .ff-blue-card {
-    @apply mb-6;
+    .main-content .ff-blue-card {
+        @apply mb-6;
+    }
 }
 
 /*
@@ -3314,12 +3326,15 @@ lite-youtube::before {
 
 /* AgentSetupTabs: the agent picker and its three setup steps. Unlayered on purpose.
    The component renders inside .prose on the changelog entry and the third-party-agents
-   docs page as well as standalone on /ai, and the site's prose rules are also unlayered
-   (see .prose above), which outranks Tailwind's @layer utilities however specific the
-   utility is. So the component's look cannot live in utility classes on the elements:
-   .prose img's width:100% beat `h-4` and blew the tab marks up to full column width,
-   and .prose p forced the step text to 12px. Unlayered outranks every layer, so these
-   rules hold in prose and out of it. Keep visual values here, not in the template.
+   docs page as well as standalone on /ai. .prose p still forces the step text's font
+   size via Tailwind Typography's own (unlayered) rules, which outrank Tailwind's
+   @layer utilities however specific the utility is — so the component's text size
+   still can't live in a utility class on the element. (.prose img's width:100% used
+   to be unlayered too and beat `h-4`, blowing the tab marks up to full column width;
+   it now lives in @layer components — see .prose above — so a utility class on an
+   image here would win. The component doesn't rely on that, but don't assume image
+   sizing needs the same unlayered treatment as text sizing going forward.)
+   Keep visual values here, not in the template.
 
    Sizing is driven by the component's own width via @container, not by the viewport.
    A viewport md: breakpoint gave three 186px columns inside a 704px prose column,
@@ -3499,19 +3514,6 @@ lite-youtube::before {
 .ff-cap-icon svg {
     width: 1.875rem;
     height: 1.875rem;
-}
-
-/* .ff-blue-card bakes mt-6 into its @apply, which every other user of it wants but
-   this page does not: here the section already owns the vertical rhythm, so that
-   24px landed on top of the section padding and put the governance card 152px below
-   the connector while it sat 64px above the section after it - lopsided, and wider
-   than the 128px every other section boundary uses.
-
-   Unlayered and scoped rather than an mt-0 utility on the element: .ff-blue-card is
-   itself unlayered, and Tailwind's utilities layer is outranked by unlayered rules,
-   so the utility would silently lose. */
-.ff-ai-governance .ff-blue-card {
-    margin-top: 0;
 }
 
 /* Capability schematics (AiCapabilityDiagram): a neutral card for the parts that

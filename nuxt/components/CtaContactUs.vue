@@ -2,6 +2,7 @@
 // Fixed destination, copy, and tracked event - only the look (variant) and
 // where it lives on the page (position) vary per insertion.
 import CtaButton from './cta/CtaButton.vue'
+import { CTA_DESTINATIONS } from '../lib/cta-destinations'
 
 withDefaults(defineProps<{
     variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
@@ -14,9 +15,10 @@ withDefaults(defineProps<{
     icon?: string
 }>(), { uppercase: undefined })
 
-const EVENT = 'cta-contact-us'
-const HREF = '/contact-us/'
-const LABEL = 'Contact Us'
+const DEST = CTA_DESTINATIONS.contactUs
+const EVENT = DEST.event
+const HREF = DEST.href
+const LABEL = DEST.label
 </script>
 
 <template>

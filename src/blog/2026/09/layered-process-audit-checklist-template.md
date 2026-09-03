@@ -3,7 +3,7 @@ title: "Layered Process Audit Checklist: Free Template and Examples"
 metaTitle: "Layered Process Audit Checklist: Free Template"
 subtitle: "Download a free LPA checklist template with practical questions for checking critical manufacturing processes."
 description: "Download a free layered process audit checklist template and see examples of LPA questions for standard work, materials, equipment, error-proofing, and traceability."
-date: 2026-09-01
+date: 2026-09-03
 authors: ["sumit-shinde"]
 image: /blog/2026/09/images/layered-process-audit-checklist.png
 tags:
@@ -20,10 +20,10 @@ A [Layered Process Audit (LPA)](/blog/2026/08/layered-process-audit/) checklist 
 
 A good checklist is focused rather than comprehensive. It should cover the controls that matter most to the process and use questions that can be answered by observing the work.
 
-If you're building an LPA program, having a consistent set of questions makes it easier for different management layers to audit the same critical controls. Use the free checklist below as a starting point for creating your own LPA.
+*If you're building an LPA program, having a consistent set of questions makes it easier for different management layers to audit the same critical controls. Download the free checklist below as a starting point for creating your own LPA.*
 
 ::hub-spot-form{form-id="f76521d1-8ea3-4da1-a673-fe39b03b6414" cta="cta-lpa-checklist-template" reference="layered-process-audit-checklist-template"}
-
+::
 <!--more-->
 
 ## What Should Be on an LPA Checklist?

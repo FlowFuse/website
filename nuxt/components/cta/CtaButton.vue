@@ -20,6 +20,15 @@ const props = withDefaults(defineProps<{
     position: string
     plan?: string
     icon?: string
+    // Passed straight through to the underlying UButton/NuxtLink, which adds
+    // `rel="noopener noreferrer"` on its own for target="_blank" - not
+    // recomputed here, so that safer default isn't accidentally weakened to
+    // just "noopener" (missing noreferrer) by a second, competing rel value.
+    // None of the five reserved destinations need this (they're all
+    // same-tab), but CtaCustom exposes it for one-off links to an actual
+    // external site, where opening in the current tab would navigate the
+    // visitor away.
+    target?: string
     // Only meaningful for variant="ghost" - which text color to use, since a
     // ghost button has no background of its own to imply one. "white" exists
     // because the homepage hero's "Try it out" sits on a dark photo.
@@ -81,14 +90,16 @@ const VARIANT_MAP: Record<string, { color: string, variant: string, hover: strin
     ghost: { color: 'primary', variant: 'ghost', hover: '' },
 }
 
-// UButton's own "ghost" variant compoundVariants add a faint hover background
-// (hover:bg-{color}/10) - that's Nuxt UI's default ghost affordance, but a
-// ghost CTA here should have no background at any point, hover included, so
-// every entry explicitly cancels it with hover:bg-transparent.
+// UButton's own "ghost" variant compoundVariants add a faint hover AND active
+// background (hover:bg-{color}/10, active:bg-{color}/10) - that's Nuxt UI's
+// default ghost affordance, but a ghost CTA here should have no background at
+// any point, hover and click both, so every entry cancels both explicitly.
+// Missing active:bg-transparent here used to leave a visible fill flash on
+// click/tap even though hover looked fine.
 const GHOST_COLOR_CLASSES: Record<string, string> = {
-    primary: 'text-primary hover:text-primary/75 hover:bg-transparent',
-    highlight: 'text-highlight hover:text-highlight/75 hover:bg-transparent',
-    white: 'text-white hover:text-gray-200 hover:bg-transparent',
+    primary: 'text-primary hover:text-primary/75 hover:bg-transparent active:bg-transparent',
+    highlight: 'text-highlight hover:text-highlight/75 hover:bg-transparent active:bg-transparent',
+    white: 'text-white hover:text-gray-200 hover:bg-transparent active:bg-transparent',
 }
 
 const uiVariant = computed(() => VARIANT_MAP[props.variant])
@@ -136,6 +147,7 @@ function onClick () {
   <UButton
     :to="preview ? undefined : href"
     :external="external"
+    :target="target"
     :color="uiVariant.color"
     :variant="uiVariant.variant"
     :trailing-icon="icon"
