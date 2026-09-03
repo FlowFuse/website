@@ -104,7 +104,7 @@ When the node successfully retrieves data, it outputs the following fields: `msg
 
 ## Building the Dashboard
 
-Now that you're successfully retrieving MTConnect data, the next step is to display it on a live dashboard. FlowFuse makes this straightforward with its [dashboard package](https://dashboard.flowfuse.com). You can bind any data item to a visual component, and it updates automatically whenever new data arrives.
+Now that you're successfully retrieving MTConnect data, the next step is to display it on a live dashboard. FlowFuse makes this straightforward with its [dashboard package](/platform/dashboard/). You can bind any data item to a visual component, and it updates automatically whenever new data arrives.
 
 Before you start, make sure to install the `@flowfuse/node-red-dashboard` package to add the dashboard nodes.
 

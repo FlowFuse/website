@@ -84,7 +84,7 @@ FlowFuse sits in the middle layer, connecting to these systems through protocols
 
 A key advantage is FlowFuse's built-in MQTT broker, which enables you to build a [Unified Namespace (UNS)](/blog/2024/11/building-uns-with-flowfuse/), a standardized data structure that simplifies how machines, applications, and business systems communicate. With a UNS in place, integrations become faster to build and easier to maintain as your stack grows.
 
-On top of this data layer, manufacturers can build applications with [FlowFuse Dashboards](https://dashboard.flowfuse.com/) for OEE tracking, quality workflows, downtime monitoring, maintenance alerts, and work order management. Because these capabilities remain independent, teams can deploy and improve them incrementally as requirements evolve.
+On top of this data layer, manufacturers can build applications with [FlowFuse Dashboards](/platform/dashboard/) for OEE tracking, quality workflows, downtime monitoring, maintenance alerts, and work order management. Because these capabilities remain independent, teams can deploy and improve them incrementally as requirements evolve.
 
 FlowFuse also includes the enterprise capabilities needed to operate these applications at scale, including:
 

@@ -58,7 +58,7 @@ The result: production counts, machine states, and reject rates are available to
 ### Where this shows up in practice
 
 - **OEE and downtime tracking**: feed `ConveyorRunning` and cycle-time tags into a calculation flow to surface availability and performance losses as they happen, instead of reconstructing them from end-of-shift reports.
-- **Live operations dashboards**: wire tag changes straight into [FlowFuse Dashboard](https://dashboard.flowfuse.com/) widgets so operators and supervisors see machine state and counts update in real time.
+- **Live operations dashboards**: wire tag changes straight into [FlowFuse Dashboard](/platform/dashboard/) widgets so operators and supervisors see machine state and counts update in real time.
 - **Recipe and setpoint downloads**: use `cip-write` to push new setpoints, batch parameters, or recipe values to the PLC from an MES, a dashboard form, or a database lookup.
 - **Threshold alerting**: route a `Temperature` or `Pressure` tag through a `switch` node and fire a Slack, Teams, or email notification the moment a value crosses a quality limit.
 - **Unified Namespace / MQTT bridging**: treat the PLC as a data source feeding a plant-wide UNS, so IT and OT systems consume the same live tag data instead of duplicating integrations per PLC.

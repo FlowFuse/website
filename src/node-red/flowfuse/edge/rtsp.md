@@ -33,7 +33,7 @@ A camera above a packaging line already streams to the site NVR. Point the RTSP 
 ### Where this shows up in practice
 
 - **Machine vision**: feed frames to a [FlowFuse AI node](/node-red/flowfuse/ai/) for object detection or image classification, then act on the result, for example counting parts on a line, checking a fill level, or verifying a safety gate is closed.
-- **Remote monitoring**: display the frames live on a [FlowFuse Dashboard](https://dashboard.flowfuse.com/) so an operator can watch a machine or area from anywhere the dashboard is reachable, alongside the process data on the same page.
+- **Remote monitoring**: display the frames live on a [FlowFuse Dashboard](/platform/dashboard/) so an operator can watch a machine or area from anywhere the dashboard is reachable, alongside the process data on the same page.
 - **Event snapshots**: route frames through a `function` or `switch` node and keep only the ones that matter, for example the frame captured the moment a PLC tag or sensor reports a fault, and forward it with an [`mqtt out`](/node-red/flowfuse/mqtt/mqtt-out/) node or attach it to an alert.
 - **Timelapse and archiving**: switch to disk-writing mode and the node writes a numbered sequence of PNG files for later review or timelapse assembly, without adding any messages to the flow.
 
@@ -98,7 +98,7 @@ The node emits each captured frame as a message at the configured FPS rate.
 | `msg.payload` | Buffer | The captured frame as a PNG image buffer. |
 | `msg.topic` | String | The topic configured on the node. |
 
-The output can be wired to any node that accepts an image buffer, including [FlowFuse Dashboard widgets](https://dashboard.flowfuse.com/), [MQTT out nodes](/node-red/flowfuse/mqtt/mqtt-out/), and [FlowFuse AI nodes](/node-red/flowfuse/ai/).
+The output can be wired to any node that accepts an image buffer, including [FlowFuse Dashboard widgets](/platform/dashboard/), [MQTT out nodes](/node-red/flowfuse/mqtt/mqtt-out/), and [FlowFuse AI nodes](/node-red/flowfuse/ai/).
 
 {% note %}
 Every captured frame becomes a message in the flow. A high FPS value increases the number and size of messages being processed. Set FPS no higher than your use case requires.

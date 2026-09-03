@@ -130,7 +130,7 @@ Follow these steps to configure and test writing:
 
 4. Deploy the flow and press **Inject**. The Modbus device should update immediately.
 
-**Tip:** Use a **UI input (slider, switch, or numeric box)** from the [FlowFuse Dashboard](https://dashboard.flowfuse.com/) instead of an Inject node for real-time control via a web interface.
+**Tip:** Use a **UI input (slider, switch, or numeric box)** from the [FlowFuse Dashboard](/platform/dashboard/) instead of an Inject node for real-time control via a web interface.
 
 ## Scaling and Interpreting Values
 

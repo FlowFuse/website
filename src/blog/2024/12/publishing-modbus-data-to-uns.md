@@ -322,7 +322,7 @@ _FlowFuse topic hierarchy interface showing UNS structure_
 Once your flow is successfully publishing data, you've established your Unified Namespace. Other systems can now subscribe to these MQTT topics to consume the data for:
 
 - **Cloud analytics platforms** for historical analysis and reporting
-- **[FlowFuse Dashboard](https://dashboard.flowfuse.com/)** for real-time monitoring and visualization
+- **[FlowFuse Dashboard](/platform/dashboard/)** for real-time monitoring and visualization
 - **Predictive maintenance systems** for equipment health monitoring
 - **Business intelligence tools** for operational insights
 - **Alert and notification systems** for automated responses to threshold breaches

@@ -128,7 +128,7 @@ _OEE Dashboard broken layout on smaller screen_
 
 ### To make the dashboard truly responsive:
 
-1. Open the **Page Settings** in the Node-RED Dashboard editor.
+1. Open the **Page Settings** in the [Node-RED Dashboard](/platform/dashboard/) editor.
 2. Scroll down to locate the **Breakpoint Settings Table** for different device sizes.
 3. Identify the **Tablet** row in the table.
 4. Notice that the current Tablet column count is set to `9`.
