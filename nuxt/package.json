@@ -17,7 +17,6 @@
         "nuxt-llms": "^0.2.0",
         "rehype-katex": "^7.0.1",
         "remark-math": "^6.0.0",
-        "sanitize-html": "^2.17.7",
         "satori": "^0.26.0",
         "unstorage": "^1.17.5"
     },
@@ -28,7 +27,6 @@
         "@nuxt/image": "^2.0.0",
         "@nuxt/ui": "^4.8.2",
         "@nuxtjs/seo": "^5.3.12",
-        "@types/sanitize-html": "^2.16.1",
         "better-sqlite3": "^12.10.0",
         "nuxt": "^4.5.1",
         "nuxt-link-checker": "^5.0.10",
