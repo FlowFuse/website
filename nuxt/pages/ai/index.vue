@@ -229,6 +229,14 @@ onUnmounted(() => {
                 <span class="mt-2 block text-sm font-semibold text-indigo-600">See the documentation &rarr;</span>
               </span>
             </a>
+
+            <!-- What to ask once the picker above has you connected. Placed after the
+                 docs note rather than between it and the picker, so the note stays
+                 attached to the steps it belongs to, and the three read in order:
+                 how to connect, where to read more, what to say first.
+                 surface="ai" keeps these copies separable in PostHog from the same
+                 component on the blog post. -->
+            <PromptCarousel surface="ai" />
           </div>
         </div>
       </div>
