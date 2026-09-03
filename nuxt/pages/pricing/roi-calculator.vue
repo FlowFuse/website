@@ -48,24 +48,24 @@ const audiences = [
 // Questions industrial buyers actually ask when they take this to a finance review.
 const faqs = [
   {
-    q: 'How do you calculate ROI on an industrial automation platform?',
-    a: 'Industrial automation ROI is annual value recovered divided by annual platform investment. This calculator builds the value side from three measurable sources — engineering time lost finding information, engineering time spent rebuilding and hand-deploying applications, and production time lost to slow recovery from failure — then subtracts a representative FlowFuse package cost to show net savings, an ROI multiple and a payback window.',
+    question: 'How do you calculate ROI on an industrial automation platform?',
+    answer: 'Industrial automation ROI is annual value recovered divided by annual platform investment. This calculator builds the value side from three measurable sources — engineering time lost finding information, engineering time spent rebuilding and hand-deploying applications, and production time lost to slow recovery from failure — then subtracts a representative FlowFuse package cost to show net savings, an ROI multiple and a payback window.',
   },
   {
-    q: 'What is a realistic payback period for a Node-RED platform like FlowFuse?',
-    a: 'For most industrial teams the payback lands inside the first year, and frequently inside the first quarter. The reason is the asymmetry between the two sides of the equation: platform licensing is a five-figure annual line, while a single hour of unplanned downtime at industry-average cost is roughly $125,000 (ABB, 2023). Avoiding a handful of hours a year covers the investment on its own.',
+    question: 'What is a realistic payback period for a Node-RED platform like FlowFuse?',
+    answer: 'For most industrial teams the payback lands inside the first year, and frequently inside the first quarter. The reason is the asymmetry between the two sides of the equation: platform licensing is a five-figure annual line, while a single hour of unplanned downtime at industry-average cost is roughly $125,000 (ABB, 2023). Avoiding a handful of hours a year covers the investment on its own.',
   },
   {
-    q: 'What should a system integrator include in an ROI model?',
-    a: 'Beyond licence cost, include the engineer-hours per project you can eliminate through reuse, the travel and on-site time removed by remote deployment, the cost of maintaining bespoke one-off applications across a customer estate, and the risk-adjusted cost of a rollback you cannot perform quickly. Those are the inputs this calculator exposes, so you can hand a finance team a model rather than a claim.',
+    question: 'What should a system integrator include in an ROI model?',
+    answer: 'Beyond licence cost, include the engineer-hours per project you can eliminate through reuse, the travel and on-site time removed by remote deployment, the cost of maintaining bespoke one-off applications across a customer estate, and the risk-adjusted cost of a rollback you cannot perform quickly. Those are the inputs this calculator exposes, so you can hand a finance team a model rather than a claim.',
   },
   {
-    q: 'Are the assumptions in this ROI calculator conservative?',
-    a: 'Deliberately. The downtime default is set at $25,000 per hour against a published industry average of $125,000. The information-search figure comes from McKinsey rather than from vendor benchmarks, and the reuse gain sits at the bottom of the 40–57% range published by Lim in IEEE Software. Every source is linked on this page so you can substitute your own numbers.',
+    question: 'Are the assumptions in this ROI calculator conservative?',
+    answer: 'Deliberately. The downtime default is set at $25,000 per hour against a published industry average of $125,000. The information-search figure comes from McKinsey rather than from vendor benchmarks, and the reuse gain sits at the bottom of the 40–57% range published by Lim in IEEE Software. Every source is linked on this page so you can substitute your own numbers.',
   },
   {
-    q: 'Does the calculator give me a quote?',
-    a: 'No — it produces a directional estimate for comparison. The investment figure is a representative blended package price with a volume taper, not your price. Book a demo and we will build the model against your actual site count, engineering headcount and downtime cost.',
+    question: 'Does the calculator give me a quote?',
+    answer: 'No — it produces a directional estimate for comparison. The investment figure is a representative blended package price with a volume taper, not your price. Book a demo and we will build the model against your actual site count, engineering headcount and downtime cost.',
   },
 ]
 
@@ -78,7 +78,7 @@ useSeoMeta({
 
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
-  ...faqs.map(item => defineQuestion({ question: item.q, answer: item.a })),
+  ...faqs.map(item => defineQuestion(item)),
 ])
 </script>
 
@@ -160,12 +160,7 @@ useSchemaOrg([
     <section class="w-full px-6 relative z-10">
       <div class="max-w-screen-lg mx-auto pb-14">
         <h2 class="text-center mb-8">ROI questions industrial teams ask</h2>
-        <div class="roi-faq">
-          <details v-for="item in faqs" :key="item.q" class="roi-faq__item">
-            <summary>{{ item.q }}</summary>
-            <p>{{ item.a }}</p>
-          </details>
-        </div>
+        <BlogFaq :faq="faqs" />
       </div>
     </section>
 
@@ -228,11 +223,4 @@ useSchemaOrg([
 .roi-method__body p { font-size: .88rem; color: #4b5563; line-height: 1.5; margin: .6rem 0; }
 .roi-method__body code { background: #eef2ff; color: #3730a3; padding: .1rem .35rem; border-radius: .3rem; font-size: .82rem; }
 .roi-method__body a { color: #4f46e5; }
-
-/* FAQ */
-.roi-faq { display: flex; flex-direction: column; gap: .75rem; }
-.roi-faq__item { border: 1px solid #e5e7eb; border-radius: .75rem; background: #fff; }
-.roi-faq__item summary { cursor: pointer; padding: 1rem 1.25rem; font-weight: 600; color: #111827; font-size: 1rem; }
-.roi-faq__item summary:hover { color: #4f46e5; }
-.roi-faq__item p { padding: 0 1.25rem 1.25rem; margin: 0; font-size: .92rem; color: #4b5563; line-height: 1.6; }
 </style>
