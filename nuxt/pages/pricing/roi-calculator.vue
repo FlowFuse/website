@@ -28,19 +28,22 @@ const evidence = [
 // of the model moves most for them.
 const audiences = [
   {
-    who: 'System integrators & automation partners',
+    heading: 'System integrators & automation partners',
     lead: 'Every project you win is a project you have to staff.',
-    body: 'The margin on an integration contract is decided by how much of it you rebuild from scratch. Standardised Blueprints, a shared Team Library and versioned pipelines let one engineer carry more sites, and let a junior ship work that used to need your most senior person. On the model above that shows up in <b>speed to deploy</b> — the largest single line for most integrator teams.',
+    description: 'The margin on an integration contract is decided by how much of it you rebuild from scratch. Standardised Blueprints, a shared Team Library and versioned pipelines let one engineer carry more sites, and let a junior ship work that used to need your most senior person. On the model above that shows up in <b class="font-semibold text-gray-900">speed to deploy</b> — the largest single line for most integrator teams.',
+    icon: 'i-lucide-blocks',
   },
   {
-    who: 'Manufacturers & plant engineering teams',
+    heading: 'Manufacturers & plant engineering teams',
     lead: 'Your downtime number is bigger than your software number.',
-    body: 'A single unplanned line stop costs more than a year of platform licensing. Snapshots, one-click rollback and remote deployment across the fleet turn a multi-hour recovery into a multi-minute one. That is the <b>fault tolerance</b> line, and it is why the payback window in this calculator is usually measured in months rather than years.',
+    description: 'A single unplanned line stop costs more than a year of platform licensing. Snapshots, one-click rollback and remote deployment across the fleet turn a multi-hour recovery into a multi-minute one. That is the <b class="font-semibold text-gray-900">fault tolerance</b> line, and it is why the payback window in this calculator is usually measured in months rather than years.',
+    icon: 'i-lucide-factory',
   },
   {
-    who: 'OEMs & machine builders',
+    heading: 'OEMs & machine builders',
     lead: 'You ship the same application to hundreds of customer sites.',
-    body: 'Managing that estate by hand — remoting into each machine, tracking which one runs which version — does not scale past a few dozen deployments. Centralised device management and staged rollout collapse the per-site cost of every update, which compounds across <b>waste elimination</b> and <b>speed to deploy</b> at once.',
+    description: 'Managing that estate by hand — remoting into each machine, tracking which one runs which version — does not scale past a few dozen deployments. Centralised device management and staged rollout collapse the per-site cost of every update, which compounds across <b class="font-semibold text-gray-900">waste elimination</b> and <b class="font-semibold text-gray-900">speed to deploy</b> at once.',
+    icon: 'i-lucide-boxes',
   },
 ]
 
@@ -86,11 +89,9 @@ useSchemaOrg([
     <!-- ============================ HERO ============================ -->
     <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pt-14 pb-8 text-center">
-        <span class="inline-flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-indigo-600">
-          <span class="font-medium">ROI calculator</span>
-        </span>
-        <h1 class="mt-4 leading-tight text-4xl sm:text-5xl">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
-        <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, rebuilding and hand-deploying work, and riding out downtime. Put your plant, fleet or project numbers in — every figure below traces to published research.</p>
+        <p class="text-indigo-600 text-sm font-semibold uppercase m-0">ROI calculator</p>
+        <h1 class="mt-2 leading-tight text-4xl sm:text-5xl">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
+        <p class="my-8 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, rebuilding and hand-deploying work, and riding out downtime. Put your plant, fleet or project numbers in — every figure below traces to published research.</p>
       </div>
     </section>
 
@@ -102,22 +103,14 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ AUDIENCES ============================ -->
-    <section class="w-full px-6">
+    <section class="w-full px-6 py-16">
       <div class="max-w-screen-lg mx-auto pb-12">
-        <div class="text-center mb-8">
-          <span class="inline-flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-indigo-600">
-            <span class="font-medium">Who this is for</span>
-          </span>
-          <h2 class="mt-4">Where the return comes from in industrial automation</h2>
+        <div class="text-center mb-16">
+          <p class="text-indigo-600 text-sm font-semibold uppercase m-0">Who this is for</p>
+          <h2 class="my-4">Where the return comes from in industrial automation</h2>
           <p class="text-gray-500 max-w-2xl mx-auto mt-2">The same three categories apply whether you run one plant, integrate for dozens of customers, or ship machines into the field. What changes is which line dominates.</p>
         </div>
-        <div class="roi-aud">
-          <div v-for="a in audiences" :key="a.who" class="roi-aud__card">
-            <h3 class="roi-aud__who font-semibold">{{ a.who }}</h3>
-            <p class="roi-aud__lead">{{ a.lead }}</p>
-            <p class="roi-aud__body" v-html="a.body"></p>
-          </div>
-        </div>
+        <DifferentiatorCards :items="audiences" />
       </div>
     </section>
 
@@ -125,9 +118,7 @@ useSchemaOrg([
     <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-8">
         <div class="text-center mb-8">
-          <span class="inline-flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-indigo-600">
-            <span class="font-medium">The evidence</span>
-          </span>
+          <p class="text-indigo-600 text-sm font-semibold uppercase m-0">The evidence</p>
           <h2 class="mt-4">Why these numbers hold up</h2>
           <p class="text-gray-500 max-w-2xl mx-auto mt-2">Every figure traces to published research, and the defaults are set deliberately on the conservative side.</p>
         </div>
@@ -157,7 +148,7 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ FAQ ============================ -->
-    <section class="w-full px-6">
+    <section class="w-full px-6 pt-16">
       <div class="max-w-screen-lg mx-auto pb-14">
         <h2 class="text-center mb-8">ROI questions industrial teams ask</h2>
         <BlogFaq :faq="faqs" />
@@ -180,14 +171,6 @@ useSchemaOrg([
 </template>
 
 <style scoped>
-/* Audiences */
-.roi-aud { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-.roi-aud__card { border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; background: #fff; box-shadow: 0 16px 40px rgba(2,6,13,0.05); }
-.roi-aud__who { font-size: 1rem; color: #4f46e5; margin: 0; }
-.roi-aud__lead { font-size: 1.05rem; font-weight: 600; color: #111827; margin: .6rem 0 .5rem; line-height: 1.35; }
-.roi-aud__body { font-size: .88rem; color: #4b5563; line-height: 1.55; margin: 0; }
-.roi-aud__body :deep(b) { color: #111827; font-weight: 600; }
-
 /* Evidence */
 .roi-evidence { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
 .roi-ev { display: block; border: 1px solid #e5e7eb; border-radius: .75rem; padding: 1.1rem 1.25rem; background: #fff; transition: border-color .15s ease, box-shadow .15s ease; text-decoration: none; }
