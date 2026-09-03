@@ -23,7 +23,7 @@ A good checklist is focused rather than comprehensive. It should cover the contr
 If you're building an LPA program, having a consistent set of questions makes it easier for different management layers to audit the same critical controls. Use the free checklist below as a starting point for creating your own LPA.
 
 ::hub-spot-form{form-id="f76521d1-8ea3-4da1-a673-fe39b03b6414" cta="cta-lpa-checklist-template" reference="layered-process-audit-checklist-template"}
-
+::
 <!--more-->
 
 ## What Should Be on an LPA Checklist?
