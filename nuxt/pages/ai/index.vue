@@ -260,9 +260,9 @@ onUnmounted(() => {
          the capabilities band, which reads as the card floating low in a gap rather
          than as a section change. Doubling is for boundaries that also change
          background, the way the capabilities band does. -->
-    <section class="ff-ai-demo w-full px-6 pt-12 sm:pt-16 pb-0">
+    <section class="ff-ai-demo w-full px-6 pb-12 sm:pb-16 pt-24">
       <div class="md:max-w-screen-lg m-auto">
-        <h2 class="max-md:text-center">Connect and build <span class="text-indigo-600">faster than ever</span></h2>
+        <h2 class="max-md:text-center">Connect and build <span class="text-red-600">faster than ever</span></h2>
         <p class="mt-3 text-gray-600 max-w-3xl">
           Connect in seconds and start building. Use natural-language to leverage your company-sanctioned AI in a secure and governed way.
         </p>
@@ -273,7 +273,7 @@ onUnmounted(() => {
              bordered / shadowed treatment the product page gives its hero shot.
              A plain div rather than a figure now the caption is gone - a figure with
              nothing to caption is just a wrapper. -->
-        <div class="mt-8 overflow-hidden rounded-lg border-2 border-indigo-100 shadow-2xl">
+        <div class="mt-8 overflow-hidden rounded-lg border-2 border-red-100 shadow-2xl">
           <video
             class="block w-full"
             poster="/images/ai/demo-external-agents-poster.jpg"
@@ -294,7 +294,7 @@ onUnmounted(() => {
 
     <!-- GOVERNANCE: the control plane every AI action runs through. Path-neutral,
          which is what lets it sit above the picker rather than under Expert. -->
-    <div class="ff-ai-governance w-full px-6 py-12 sm:py-16">
+    <div class="ff-ai-governance w-full px-6 py-12 sm:py-16 sm:pb-32">
       <div class="md:max-w-screen-lg m-auto ff-blue-card pt-12 pb-12 px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto">
           <!-- eslint-disable-next-line vue/no-v-html -->
