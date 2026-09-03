@@ -1,32 +1,31 @@
 ---
-# Note: Do not delete this file. It's still referenced in contracts and quotes.
-title: "Subscription Agreement 1.5"
+title: "Subscription Agreement 1.6"
 navigation:
-  order: 23
+  order: 24
 ---
 
-**Superseded.** This version has been replaced by the [Subscription Agreement 1.6](/handbook/sales/subscription-agreement-1.6/) and is kept here only because it's still referenced by existing contracts and quotes. Do not link new customers to this page.
-
-Below is the FlowFuse subscription agreement that applies to few Edge, Hub, and Fleet tier customers buying annual subscriptions, and most customers on the legacy Enterprise Platform. If you'd like to make alterations for your organization, please download the .docx file in the following form and initiate the legal part of the negotiation through your account executive.
+Below is the FlowFuse subscription agreement that applies to Edge, Hub, and Fleet tier customers buying annual subscriptions. If you'd like to make alterations for your organization, please download the .docx file in the following form and initiate the legal part of the negotiation through your account executive.
 
 Note alterations to the following agreement are only accepted on the Enterprise tier.
 
-::HubSpotForm{formId="f5a6441c-63a5-4a4a-b676-87aab37df998" cta="subscription-agreement" reference="subscription-agreement"}
+::HubSpotForm{formId="bd1ee89a-6709-47fa-a3c5-8bc10aae3ab0" cta="subscription-agreement" reference="subscription-agreement"}
 ::
 
 ## Subscription Agreement
 
-This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse with offices at 548 Market St PMB 24889, San Francisco, California 94104-5401 (or, if a different corporate entity is listed as "FlowFuse" on a Quote [as defined below], ("FlowFuse"), and the individual or entity signing or electronically accepting this Agreement, or any Quote that references this Agreement ("Customer"). This Agreement is entered into on the earlier of, (a) Customer clicking "Agree" or "Yes" to the terms of this Agreement to gain initial access to, or use of, the Software, (b) FlowFuse and Customer agreeing to a Quote referencing this Agreement, or (c) Customer is given access to the Software ("Effective Date").
+This Subscription Agreement ("Agreement") is between FlowFuse Inc. with offices at 548 Market St PMB 24889, San Francisco, California 94104-5401 (or, if a different corporate entity is listed as "FlowFuse" on a Quote [as defined below], ("FlowFuse"), and the individual or entity signing or electronically accepting this Agreement, or any Quote that references this Agreement ("Customer"). This Agreement is entered into on the earlier of, (a) Customer clicking "Agree" or "Yes" to the terms of this Agreement to gain initial access to, or use of, the Software, (b) FlowFuse and Customer agreeing to a Quote referencing this Agreement, or (c) Customer is given access to the Software ("Effective Date").
 
-- **Individual Signing on Behalf of Company.** IF THE INDIVIDUAL ACCEPTING THIS AGREEMENT IS ACCEPTING ON BEHALF OF AN ENTERPRISE OR OTHER LEGAL ENTITY, SUCH INDIVIDUAL REPRESENTS THAT THEY HAVE THE AUTHORITY TO BIND SUCH ENTERPRISE AND ITS AFFILIATES TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERM "CUSTOMER" SHALL REFER TO SUCH ENTERPRISE AND ITS AFFILIATES.
+- Individual Signing on Behalf of Company. IF THE INDIVIDUAL ACCEPTING THIS AGREEMENT IS ACCEPTING ON BEHALF OF AN ENTERPRISE OR OTHER LEGAL ENTITY, SUCH INDIVIDUAL REPRESENTS THAT THEY HAVE THE AUTHORITY TO BIND SUCH ENTERPRISE AND ITS AFFILIATES TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERM "CUSTOMER" SHALL REFER TO SUCH ENTERPRISE AND ITS AFFILIATES.
 
-- **Individual Not Authorized to Sign on Behalf of Company.** IF THE INDIVIDUAL ACCEPTING THIS AGREEMENT DOES NOT HAVE SUCH AUTHORITY, OR DOES NOT AGREE WITH THESE TERMS AND CONDITIONS, SUCH INDIVIDUAL MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICES OR SOFTWARE.
+- Individual Not Authorized to Sign on Behalf of Company. IF THE INDIVIDUAL ACCEPTING THIS AGREEMENT DOES NOT HAVE SUCH AUTHORITY, OR DOES NOT AGREE WITH THESE TERMS AND CONDITIONS, SUCH INDIVIDUAL MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICES OR SOFTWARE.
 
-- **Individual Signing on Behalf of Individual But Using Company Email.** IF THE INDIVIDUAL ACCEPTING THIS AGREEMENT IS ACCEPTING THIS AGREEMENT ON HIS OR HER OWN BEHALF BUT USING AN ENTERPRISE EMAIL ADDRESS TO DO SO, SUCH INDIVIDUAL ACKNOWLEDGES AND AGREES THAT USE OF SUCH ENTERPRISE EMAIL ADDRESS WILL ESTABLISH A FLOWFUSE ACCOUNT THAT WILL BE ASSOCIATED WITH THE APPLICABLE ENTERPRISE, AND CAN AND WILL BE TRANSFERRED ENTIRELY (BOTH CONTROL AND DATA/INFORMATION WITHIN THE ACCOUNT) TO SUCH ENTERPRISE UPON SUCH COMPANY'S REQUEST WITHOUT NOTICE OR LIABILITY TO THE INDIVIDUAL. AS SUCH, TO ENSURE NO LOSS OF PERSONAL CONTENT, FLOWFUSE STRONGLY RECOMMENDS ESTABLISHING A FLOWFUSE ACCOUNT TIED TO A PERSONAL EMAIL ADDRESS.
+- Individual Signing on Behalf of Individual But Using Company Email. IF THE INDIVIDUAL ACCEPTING THIS AGREEMENT IS ACCEPTING THIS AGREEMENT ON HIS OR HER OWN BEHALF BUT USING AN ENTERPRISE EMAIL ADDRESS TO DO SO, SUCH INDIVIDUAL ACKNOWLEDGES AND AGREES THAT USE OF SUCH ENTERPRISE EMAIL ADDRESS WILL ESTABLISH A FLOWFUSE ACCOUNT THAT WILL BE ASSOCIATED WITH THE APPLICABLE ENTERPRISE, AND CAN AND WILL BE TRANSFERRED ENTIRELY (BOTH CONTROL AND DATA/INFORMATION WITHIN THE ACCOUNT) TO SUCH ENTERPRISE UPON SUCH COMPANY'S REQUEST WITHOUT NOTICE OR LIABILITY TO THE INDIVIDUAL. AS SUCH, TO ENSURE NO LOSS OF PERSONAL CONTENT, FLOWFUSE STRONGLY RECOMMENDS ESTABLISHING A FLOWFUSE ACCOUNT TIED TO A PERSONAL EMAIL ADDRESS.
 
 ### 1. DEFINITIONS
 
-"Acceptance" of a Quote shall occur at the earliest of the following: (a) execution of a Quote, (b) reference to a Quote No. within a purchase order or similar document, or (c) the use of Software.
+"Acceptance" of a Quote shall occur at the earliest of the following: (a) execution of a Quote, (b) reference to a Quote number within a purchase order or similar document, or (c) the use of Software.
+
+"Active Runtime" means a single running instance of an application engine managed through the Software, whether hosted by FlowFuse or deployed by Customer on its own infrastructure.
 
 "Affiliate" means any entity(ies) controlling, controlled by, and/or under common control with a party hereto, where "control" means the ownership of more than 50% of the voting securities in such an entity.
 
@@ -42,9 +41,11 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 "Customer Records" collectively means books, records, contracts and accounts relating to the payments due to FlowFuse under this Agreement.
 
-"Customer Success Services" means adoption services which are provided as part of the Subscription, as set forth in Appendix 1. Customer Success Services include the collection of Operational Data (as further stated in Appendix 1). Customer Success Services are only available to Customers who are purchasing Software, and are not available for Free Software.
+"Customer Success Services" means adoption services which are provided as part of the Subscription, as set forth in a Quote. Customer Success Services include the collection of Operational Data. Customer Success Services are only available to Customers who are purchasing Software, and are not available for Free Software.
 
 "Customer Support" means technical support of the Software provided by FlowFuse.
+
+"Deployment" means a single instance of an application deployed by Customer via the Software.
 
 "Designated National" is any person or entity on the U.S. Department of Treasury's List of Specially Designated Nationals or the U.S. Department of Commerce's Table of Denial Orders.
 
@@ -62,17 +63,19 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 "List Price" means the list price of the FlowFuse Software excluding (if applicable) any discount(s) set forth in a Quote or as purchased via the Website.
 
-"Node-RED instance" means a runtime, editor, or other part of the Node-RED software offering.
-
 "Open-Source Edition Software" means the publicly available, community-developed open-source software and components which may be provided with the Software. Open-Source Edition Software is provided as Free Software (as defined herein).
 
-"Quote" is a transactional document agreed to between the parties which states the Software and/or Supplemental Services being purchased, term of use, price, subscription duration, and other applicable transaction details. For the avoidance of doubt, the parties acknowledge and agree the terms and conditions stated within this Agreement and an executed Quote shall govern with respect to all matters contemplated herein.
+"Quote" is a transactional document agreed to between the parties which states the Software and/or Supplemental Services being purchased, term of use, price, subscription duration, and other applicable transaction details. For the avoidance of doubt, the parties acknowledge and agree the terms and conditions stated within this Agreement and an executed Quote shall govern with respect to all matters contemplated herein. Each Quote will identify the Product(s) purchased, the applicable Support Tier, and any applicable usage limitations.
+
+"Site" means a physical or logical location to which Customer deploys the Software.
 
 "Purchase Order" is a Customer's processing document, or similar record, which is used by Customer to demonstrate internal approval and /or record of a purchase. Any terms stated within a Purchase Order shall be null and void and are expressly rejected by the parties.
 
+"Product" means a distinct branded offering of Software made available by FlowFuse under a specific name (including, without limitation, FlowFuse Hub, FlowFuse Edge, and FlowFuse Fleet), as may be introduced, renamed, or discontinued by FlowFuse from time to time.
+
 "Software" means software, and other branded offerings made available by FlowFuse or its Affiliate(s), including but not limited to, FlowFuse's Application Platform.
 
-"Subscription" refers to the applicable services, support and function(s) of the Software as provided. Subscriptions are provided in tiers / levels as described in Appendix 1 and are based on the number of Node-RED instances and Users.
+"Subscription" refers to the applicable services, support and function(s) of the Software, as set forth on the applicable Quote.
 
 "Subscription Start Date" is, unless otherwise agreed to in writing, the start date, (i) stated on a Quote, or, the date in which Customer is given access to the Software (whichever is later), or (ii) as indicated via a Website transaction, regardless if such purchase is direct with FlowFuse or via an Authorized Partner.
 
@@ -86,7 +89,7 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 ### 2. SCOPE OF AGREEMENT
 
-2.1 This Agreement establishes a framework that will enable FlowFuse to provide Customer with the Software. Software is provided as part of a Subscription, as described in Appendix 1. Software provided as a hosted solution, or Software-as-a-Service ("SaaS Software"), shall be subject to the attached Appendix 2 entitled "Software as a Service (SaaS) Offering".
+2.1 This Agreement establishes a framework that will enable FlowFuse to provide Customer with the Software. Software is provided as part of a Subscription, as described the Quote. Software provided as a hosted solution, or Software-as-a-Service ("SaaS Software"), regardless of the underlying Product, shall be subject to the attached Appendix 1 entitled "Software as a Service (SaaS) Offering". For the avoidance of doubt, Software that Customer deploys and operates on its own infrastructure ("Self-Hosted Software") is not SaaS Software, and Appendix 1 does not apply to Self-Hosted Software.
 
 ### 3. ORDERING PROCESS
 
@@ -104,7 +107,9 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 3.3 License Upgrades will be invoiced quarterly if accessed via FlowFuse Cloud, or immediately if Customer is self-hosted and requests a License Upgrade. License Upgrades will be payable in accordance with Section 6 (six) of this Agreement.
 
-3.4 FlowFuse and Customer acknowledge and agree that Free Software may be: (i) modified and/or updated, without notice, and (ii) limited in functionality, features, maintenance, support and contain other limitations not present in Software purchased. NOTWITHSTANDING THE "WARRANTY" AND "INDEMNIFICATION" SECTIONS BELOW, FREE SOFTWARE AND SOFTWARE OFFERED ON A TRIAL BASIS (AS STATED IN A QUOTE OR WEB-PORTAL PURCHASE) ARE PROVIDED "AS-IS" WITHOUT ANY WARRANTY AND FLOWFUSE SHALL HAVE NO INDEMNIFICATION OBLIGATIONS NOR LIABILITY OF ANY TYPE WITH RESPECT TO SUCH FREE SOFTWARE UNLESS SUCH EXCLUSION OF LIABILITY IS NOT ENFORCEABLE UNDER APPLICABLE LAW, IN WHICH CASE FLOWFUSE'S LIABILITY WITH RESPECT TO SUCH FREE SOFTWARE SHALL NOT EXCEED $1,000.00USD.
+3.4 FlowFuse and Customer acknowledge and agree that Free Software may be: (i) modified and/or updated, without notice, and (ii) limited in functionality, features, maintenance, support and contain other limitations not present in Software purchased. NOTWITHSTANDING THE "WARRANTY" AND "INDEMNIFICATION" SECTIONS BELOW, FREE SOFTWARE AND SOFTWARE OFFERED ON A TRIAL BASIS (AS STATED IN AN QUOTE OR WEB-PORTAL PURCHASE) ARE PROVIDED "AS-IS" WITHOUT ANY WARRANTY AND FLOWFUSE SHALL HAVE NO INDEMNIFICATION OBLIGATIONS NOR LIABILITY OF ANY TYPE WITH RESPECT TO SUCH FREE SOFTWARE UNLESS SUCH EXCLUSION OF LIABILITY IS NOT ENFORCEABLE UNDER APPLICABLE LAW, IN WHICH CASE FLOWFUSE'S LIABILITY WITH RESPECT TO SUCH FREE SOFTWARE SHALL NOT EXCEED $1,000.00USD.
+
+3.5 The features, functionality, and entitlements included within a given Product and Support Tier are as described at flowfuse.com/pricing (or successor URL) as of the date of the applicable Quote. FlowFuse may update, add, or remove such features on a prospective basis without amending this Agreement, provided that no feature or functionality described at such URL as of the Subscription Start Date will be materially degraded or removed during the then-current Subscription Term without Customer's prior consent.
 
 ### 4. TERM AND TERMINATION
 
@@ -142,7 +147,7 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 5.2 Nothing in this Agreement shall prohibit Customer from using the Software for benchmark testing or comparative analysis. Customer will comply with all applicable data privacy and security laws and shall have appropriate technological, administrative, and physical controls in place to ensure such compliance.
 
-5.3 In addition to the obligations set forth in Section 5.4, and subject to the rights set forth in Section 5.7, Customer shall ensure the collection of data as required in order to use the Software ("Subscription Data") shall remain unchanged. An overview of the Subscription Data can be found at [https://flowfuse.com/docs/admin/telemetry/#collected-data](/docs/admin/telemetry/#collected-data).
+5.3 Telemetry. In addition to the obligations set forth in Section 5.4, and subject to the rights set forth in Section 5.7, the Software collects operational and usage data ("Subscription Data") for license verification and service improvement purposes. An overview of Subscription Data is available at [https://flowfuse.com/docs/admin/telemetry/#collected-data](/docs/admin/telemetry/#collected-data). Customer shall not modify or interfere with the collection of Subscription Data, and shall ensure that no firewalls or other technical devices prevent the Software from transmitting Subscription Data to FlowFuse. This Section 5.3 does not apply to any Subscription designated as "Air-Gapped" or "Reduced Telemetry" on the applicable Quote; for such Subscriptions, the parties' respective obligations regarding data collection and transmission will be as stated on the Quote.
 
 5.4 In accordance with this Agreement, FlowFuse has the right to verify electronically (or otherwise), and generate reports related to Customer's installation of, access to, use of the Software to ensure compliance with the terms of this Agreement, and to ensure proper installation and use of the Software. Customer shall maintain Customer Records during the term of this Agreement and for two (2) years thereafter. FlowFuse may, upon thirty (30) days' prior written notice to Customer and during Customer's normal business hours and subject to industry-standard confidentiality obligations, hire an independent third-party auditor to audit the Customer Records only to verify the amounts payable under this Agreement with respect to Customer usage of the Software. If an audit reveals underpayment, Customer shall promptly pay the deficiency to FlowFuse plus late fees pursuant to Section 6. FlowFuse shall bear the cost of an audit unless the audit reveals underpayment by more than 5% for the audited period, in which case Customer shall promptly pay FlowFuse for the reasonable costs of the audit.
 
@@ -152,11 +157,9 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 (ii) any acts or omissions carried out by Contractors on Customer's behalf. Customer shall ensure that Contractors are subject to terms no less stringent than those stated herein.
 
-(iii) ensuring no firewalls or any other technical device prevent the Software from sending periodic pings to FlowFuse to enable it to monitor Customer's license compliance, or for any other reason.
+(iii) ensuring that Sublicense Referrals execute a Subscription Agreement with terms at least as restrictive as those set forth herein; for sake of clarity, Customer will be liable for Sublicense Referrals' breach of this Agreement as though it were a Customer breach.
 
-(iv) ensuring that Sublicense Referrals execute a Subscription Agreement with terms at least as restrictive as those set forth herein; for sake of clarity, Customer will be liable for Sublicense Referrals' breach of this Agreement as though it were a Customer breach.
-
-5.6 Subject to this Agreement and the applicable Quote, FlowFuse will provide Customer Support to Customer for the Subscriptions, during the Subscription Term, at no additional cost. Details regarding Customer Support can be found in Appendix 1.
+5.6 Subject to this Agreement and the applicable Quote, FlowFuse will provide Customer Support to Customer for the Subscriptions, during the Subscription Term, at no additional cost. Details regarding Customer Support can be found in the Quote.
 
 5.7 Portions of the Software are governed by underlying open source licenses. This Agreement and applicable Appendix(eces) establish the rights and obligations associated with Subscriptions and Software and are not intended to limit Customer's right to software code under the terms of an open source license.
 
@@ -172,7 +175,7 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 6.1 With respect to purchases direct from FlowFuse, all web-portal purchase Fees shall be due and payable immediately.
 
-6.2 With respect to purchases direct from FlowFuse, the Quote shall: (i) reference this Agreement; (ii) state the Subscription Term(s) and Subscription(s) that are being purchased; and (iii) state the Fees due for the applicable Subscription(s).
+6.2 With respect to purchases direct from FlowFuse, the Quote shall: (i) reference this Agreement; (ii) state the Subscription Term(s) and Subscription(s) that are being purchased; (iii) state the Fees due for the applicable Subscription(s); and (iv) state the Product(s) being purchased.
 
 6.3 With respect to purchases direct from FlowFuse, such Quote is hereby incorporated into this Agreement by reference. The parties hereby agree to the terms and conditions stated within this Agreement and those found within a Quote to the exclusion of all other terms. The parties agree that all terms stated within a Purchase Order, or other similar document, shall be null and void and are expressly rejected.
 
@@ -200,7 +203,7 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 ### 8. INTELLECTUAL PROPERTY RIGHTS
 
-8.1 Subject to the terms and conditions of this Agreement, FlowFuse hereby grants to Customer and its Affiliates a limited, non-exclusive, non-transferable, non-sublicensable license for Customer's and its Affiliates' Users to use, reproduce, modify, prepare derivative works based upon, and display the code of Software at the tier level selected by Customer, or as set forth in a Quote, solely for: (i) its internal use in connection with the development of Customer's and/or its Affiliates' own software; and (ii) the number of Users for which Customer has paid FlowFuse. Notwithstanding anything to the contrary, Customer agrees that FlowFuse and/or its licensors (as applicable) retain all right, title and interest in and to all Software incorporated in such modifications and/or patches, and all such Software may only be used, copied, modified, displayed, distributed, or otherwise exploited in full compliance with this Agreement, and with a valid Subscription for the correct number of Users.
+8.1 Subject to the terms and conditions of this Agreement, FlowFuse hereby grants to Customer and its Affiliates a limited, non-exclusive, non-transferable, non-sublicensable license for Customer's and its Affiliates' Users to use, reproduce, modify, prepare derivative works based upon, and display the code of Software at the tier level selected by Customer, or as set forth in a Quote, solely for its internal use in connection with the development of Customer's and/or its Affiliates' own software. The license granted herein is limited to the usage limitations and other limitations stated on the applicable Quote, and Customer shall not exceed such limitations. Customer's right to use any modifications, derivative works, or patches created under this license is contingent upon maintaining a valid Subscription for the applicable Product.
 
 8.2 Except as expressly set forth herein, FlowFuse (and its licensors, where applicable) will retain all intellectual property rights relating to the Software and any suggestions, ideas, enhancement requests, feedback, or other recommendations provided by Customer, its Affiliates, Users or any third party relating to the Software (herein referred to as "Feedback Materials"), which are hereby assigned to FlowFuse. For the avoidance of doubt, Feedback Materials shall not include Customer Confidential Information or intellectual property owned by Customer. This Agreement does not constitute a sale of the Software and does not convey to Customer any rights of ownership in or related to the Software or any other intellectual property rights.
 
@@ -280,25 +283,13 @@ This Subscription Agreement ("Agreement") is between FlowFuse Inc. DBA FlowFuse 
 
 Both parties agree to the above terms by signing the Quote in which these terms are linked.
 
-## APPENDIX 1: FlowFuse Support Policies
-
-The applicable level of support and/or functionality of the Software, as set forth in the table below. In the event Customer does not reasonably comply with written specifications or instructions from FlowFuse's service engineers, regarding any support issue or request (including without limitation, failure to make backups of Customer Content or versions of Software) (each, a "Support Issue"), FlowFuse may cease its support obligations to Customer with respect to such Support Issue upon fifteen (15) days written notice and Customer's inability to cure such noncompliance within the notice period.
-
-#### SUBSCRIPTIONS AND LEVELS OF SUPPORT
-
-| Subscription\* | Level of Support (*First Response Time*) | Support Details |
-|---|---|---|
-| Open-Source | Node-RED Community Forum | |
-| Team | FlowFuse Standard Support | 24 x 5 Support. Next business day response (24 hour SLA). Submit Tickets at [https://flowfuse.com/support/](/support/) |
-| Enterprise | FlowFuse Enterprise Support | 24 x 5 Support. First Response Time SLA 4 Hours. Submit Tickets at [https://flowfuse.com/support/](/support/) |
-
-## APPENDIX 2: Software as a Service (SaaS) Offering
+## APPENDIX 1: Software as a Service (SaaS) Offering
 
 With respect to Customer's purchase and/or use of the SaaS Software, the following additional terms shall apply.
 
 #### AVAILABILITY
 
-The SaaS Software will be available to Customer 99.5% of each calendar month commencing with the first full calendar month following the Effective Date ("Uptime"). Availability shall be calculated by subtracting the cumulative minutes of Downtime in a month from the total number of minutes in the applicable month, and representing the remaining minutes as a percentage of the total number of minutes that month (i.e., (total monthly minutes – cumulative minutes of Downtime) / (total monthly minutes). Availability to the SaaS Software will be measured, and reported on, by FlowFuse using instrumentation and observation tools specifically designed to provide a representative measure of service availability. Recent status, references to availability measurement definition, and historical reporting will be available at or linked from the FlowFuse system status site located at https://status.FlowFuse.com/.
+The SaaS Software will be available to Customer 99.5% of each calendar month commencing with the first full calendar month following the Effective Date ("Uptime"). Availability shall be calculated by subtracting the cumulative minutes of Downtime in a month from the total number of minutes in the applicable month, and representing the remaining minutes as a percentage of the total number of minutes that month (i.e., (total monthly minutes - cumulative minutes of Downtime) / (total monthly minutes). Availability to the SaaS Software will be measured, and reported on, by FlowFuse using instrumentation and observation tools specifically designed to provide a representative measure of service availability. Recent status, references to availability measurement definition, and historical reporting will be available at or linked from the FlowFuse system status site located at [https://status.flowfuse.com/](https://status.flowfuse.com/).
 
 Subject to the exclusions herein, "Downtime" is defined as any period of time during which Customer is unable to access the SaaS Software. "Downtime" specifically excludes: (i) scheduled maintenance, which is conducted between 9:00 PM (PT) and 4:00 AM (PT); (ii) Customer's systems, networks, equipment, or connections; (iii) Customer's acts other than in accordance with the Agreement, including, without limitation, any negligence, willful misconduct or use of the SaaS Software in breach of this Agreement; or (iv) Force Majeure - circumstances beyond FlowFuse's reasonable control including, without limitation, acts of any governmental body, war, insurrection, sabotage, embargo, fire, flood, strike or other labor disturbance, unavailability of or interruption or delay in telecommunications or third party services, failure of third party software or inability to obtain supplies used in or equipment needed for provision of the SaaS Software.
 
