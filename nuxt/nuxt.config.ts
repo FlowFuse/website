@@ -379,7 +379,7 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/integrations/opcua',
                     '/pricing',
-                    '/pricing/roi-calculator',
+                    '/resources/roi-calculator',
                     '/product',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly

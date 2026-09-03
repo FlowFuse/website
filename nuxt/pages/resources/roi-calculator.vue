@@ -74,7 +74,7 @@ const faqs = [
 useSeoMeta({
   title: 'Industrial Automation ROI Calculator | FlowFuse',
   description: 'Calculate the ROI of industrial automation for your plant, integration business or machine fleet. Estimate recovered engineering time, faster deployment and avoided downtime — every assumption traced to published research, with net savings and payback period.',
-  ogUrl: 'https://flowfuse.com/pricing/roi-calculator/',
+  ogUrl: 'https://flowfuse.com/resources/roi-calculator/',
   twitterSite: '@FlowFuseinc',
 })
 

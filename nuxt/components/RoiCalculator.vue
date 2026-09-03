@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// The ROI model, shared by the full calculator page (/pricing/roi-calculator/) and the
+// The ROI model, shared by the full calculator page (/resources/roi-calculator/) and the
 // truncated teaser embedded on /pricing/. `compact` drops the three category cards and
 // runs them on their defaults, so the numbers on both surfaces come from one model and
 // cannot drift apart.
@@ -13,7 +13,7 @@ function capture (eventName?: string, payload?: Record<string, unknown>) {
   }
 }
 
-const FULL_CALCULATOR_URL = '/pricing/roi-calculator/'
+const FULL_CALCULATOR_URL = '/resources/roi-calculator/'
 
 // Fixed, research-grounded constant (see the evidence section on the calculator page).
 const SEARCH_SHARE = 0.20 // McKinsey (2012): ~20% of the work-week lost to finding information

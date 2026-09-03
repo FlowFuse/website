@@ -82,7 +82,7 @@ useSchemaOrg([
         <h2 class="text-center mb-3">What FlowFuse <span class="text-indigo-600">pays back</span></h2>
         <p class="text-center text-lg text-gray-500 max-w-2xl mx-auto mb-10">Put your team’s numbers in to see what recovered engineering time, faster deployment and avoided downtime are worth against the price of the platform.</p>
         <RoiCalculator compact />
-        <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/pricing/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
+        <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/resources/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
     </div>
   </div>
 
