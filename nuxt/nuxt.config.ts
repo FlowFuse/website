@@ -336,6 +336,7 @@ export default defineNuxtConfig({
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
         '/thank-you/**': { robots: false },
+        '/handbook/sales/subscription-agreement-1.5': { robots: false },
         ...redirects,
     },
 

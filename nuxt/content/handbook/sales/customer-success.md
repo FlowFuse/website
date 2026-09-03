@@ -234,16 +234,16 @@ customer direct to a repo for a 3rd party node question.
 
 #### SLA
 
-Support availability and response times are defined by the customer’s subscription level:
+All paying customers get a Standard Support SLA by default. A faster, Enterprise-level SLA can be purchased and negotiated as an upgrade.
 
-- Standard Support
+- Standard Support (default for all paying customers)
   - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
-  - First Response SLA: Next business day (within 24 hours)  
+  - First Response SLA: Next business day (within 24 hours)
   - Support tickets can be submitted at [our Support Form](/support/)
 
-- Enterprise (Enterprise Support)
+- Enterprise Support (purchasable/negotiable upgrade)
   - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
-  - First Response SLA: 4 hours  
+  - First Response SLA: 4 hours
   - Support tickets can be submitted at [https://flowfuse.com/support/](/support/)
 
 #### Escalation
