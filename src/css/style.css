@@ -3428,23 +3428,14 @@ lite-youtube::before {
     background-color: var(--color-gray-50);
     padding: 1.25rem;
 }
-/* Same size, face and weight as the heading beside it, so the two read as one line
-   of text rather than a label stuck to a title. Only the colour separates them. */
+/* The number sits inside the heading as inline text, so it inherits the heading's
+   size, face and weight and only the colour separates them. Inline rather than a
+   flex sibling on purpose: as a sibling, a heading that wrapped to two lines put its
+   second line against the title's own left edge, leaving a hole under the number.
+   In the text flow the wrap runs the full column width, the way prose does. */
 .ff-agent-step__num {
-    margin: 0;
-    font-size: 1.125rem;
-    font-weight: 500;
-    line-height: 1.75rem;
+    margin-right: 0.5rem;
     color: var(--color-indigo-600);
-}
-/* The number and the heading share one line, in both layouts. Baseline rather than
-   centre, so the mono digits sit on the heading's baseline instead of floating
-   against its cap height. Wraps when a long heading needs two lines, and the number
-   stays put on the first. */
-.ff-agent-step__head {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
 }
 /* No top margin any more: the gap that used to separate it from the number above is
    now the row gap beside it. */
@@ -3492,12 +3483,25 @@ lite-youtube::before {
 @container (min-width: 60rem) {
     .ff-agent-panel {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 2.5rem;
+        /* Heading, body, CTA. The body row takes the slack so the CTA row stays at the
+           bottom, which is what the CTA's own margin-top:auto used to do alone. */
+        grid-template-rows: auto 1fr auto;
+        column-gap: 2.5rem;
+        row-gap: 0;
         padding: 2rem;
     }
     /* Back to bare columns: side by side the steps are already separate, so the card
-       treatment the stacked state needs becomes three boxes inside a box. */
+       treatment the stacked state needs becomes three boxes inside a box.
+
+       subgrid so the three columns share the panel's rows rather than each stacking
+       its own: heading, body, then CTA. Without it every column starts its body
+       wherever its own heading stopped, so a heading that wrapped to two lines pushed
+       that column's body a line below its neighbours. The rows are inherited, so the
+       body row starts level across all three however the headings wrap. */
     .ff-agent-step {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
         border: 0;
         border-radius: 0;
         background-color: transparent;
