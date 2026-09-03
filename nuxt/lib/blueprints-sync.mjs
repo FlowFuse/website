@@ -67,19 +67,34 @@ export function resolveSource ({ repoRoot, env = process.env, exists = existsSyn
  */
 async function cloneBlueprints (ref, env, logger) {
     const { mintInstallationToken } = await import('./github-app-token.mjs')
-    const token = await mintInstallationToken({
-        appId: env.GH_BOT_APP_ID,
-        privateKey: env.GH_BOT_APP_KEY,
-        owner: REPO_OWNER,
-        repo: REPO_NAME,
-    })
-    const authedUrl = REPO_URL.replace('https://', `https://x-access-token:${token}@`)
-    const redact = (text) => text.split(token).join('***')
 
     let lastMessage = 'unknown error'
     for (let attempt = 1; attempt <= CLONE_ATTEMPTS; attempt++) {
         const tmpDir = join(tmpdir(), `blueprint-library-${process.pid}-${attempt}`)
         if (existsSync(tmpDir)) rmSync(tmpDir, { recursive: true, force: true })
+
+        // Minted fresh each attempt so a transient failure here gets the same retry +
+        // redaction as the clone/checkout below, rather than failing the build outright.
+        let token
+        try {
+            token = await mintInstallationToken({
+                appId: env.GH_BOT_APP_ID,
+                privateKey: env.GH_BOT_APP_KEY,
+                owner: REPO_OWNER,
+                repo: REPO_NAME,
+            })
+        } catch (err) {
+            lastMessage = err?.message || String(err)
+            if (attempt === CLONE_ATTEMPTS) break
+
+            const wait = CLONE_BACKOFF_MS * attempt
+            logger.warn(`Blueprint token mint attempt ${attempt}/${CLONE_ATTEMPTS} failed, retrying in ${wait}ms`)
+            await sleep(wait)
+            continue
+        }
+
+        const authedUrl = REPO_URL.replace('https://', `https://x-access-token:${token}@`)
+        const redact = (text) => text.split(token).join('***')
 
         try {
             // Blobless but not shallow: dating a blueprint page needs that page's history,
