@@ -26,21 +26,30 @@ const capture = useCapture()
 // dots have something to announce. Every one ends by asking the agent to simulate its
 // own inputs, which is the point: a reader can run these on a fresh trial team with
 // nothing connected to the platform yet and still watch a flow get built.
+//
+// The first three name a dashboard as the output on purpose. Reviewed 2026-09-03: a
+// prompt that only says what it wants to know leaves the agent free to answer with a
+// database write, an email or an MQTT topic, and the reader sees nothing. Naming the
+// surface is also the best-supported thing to ask for, since Dashboard UI Template is
+// one of the skills already exposed over MCP. The remaining six are unreviewed and
+// left as first written; several of them lean on skills that do not exist yet
+// (alarming and deadband, unified-namespace patterns, protocol nodes, flow-level
+// error handling), so their output is mixed by nature rather than by phrasing.
 const PROMPTS = [
     {
         id: 'oee',
         label: 'Live OEE for one line',
-        text: 'I run one line and I want live availability, performance and quality for it, with every stop carrying a reason. Simulate the machine signals so it runs before I connect anything.',
+        text: 'I run one line and I want a dashboard showing live availability, performance and quality for it, with every stop carrying a reason. Simulate the machine signals so it runs before I connect anything.',
     },
     {
         id: 'andon',
         label: 'Andon calls with the evidence attached',
-        text: 'When an operator raises a problem on the line I want the machine and its recent signals captured with it, an owner and a state on the record, and the same signals compared again after the fix. Simulate the line and a handful of open actions.',
+        text: 'When an operator flags a problem at a machine I want a record created with that machine\'s recent signals attached, an owner and a status on it, and a dashboard my supervisor can work through. Simulate the line and a handful of open problems.',
     },
     {
         id: 'shift-board',
-        label: 'A shift board with skills and cover',
-        text: 'I want a board my supervisors can use mid-shift: what has to run, who is qualified to run it, and where a station is about to be left uncovered, with every reassignment recorded. Simulate the orders, the roster and the skills.',
+        label: 'A mid-shift board of orders and skills',
+        text: 'I want a dashboard my supervisors can use mid-shift: what has to run on each station and who on shift is qualified to run it. Simulate the orders, the roster and the skills.',
     },
     {
         id: 'escalation',
