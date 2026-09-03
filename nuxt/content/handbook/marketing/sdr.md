@@ -37,3 +37,37 @@ $\sum_{n=1}^{10} B(n) \approx \$2{,}100$. Once $n$ reaches 14 ($38.18 \times 14
 
 For payout timelines and submission requirements, see
 [Processing non-commission Bonuses](/handbook/operations/commission-payment/#processing-non-commission-bonuses).
+
+#### CRM Hygiene
+
+The SDR is responsible for keeping lifecycle stage and lead status current in
+HubSpot based on the outcome of each call. Lifecycle stage will be set to
+`Disqualified` and lead status will be set to `Unqualified` for all contacts
+that have no business relevance.
+
+##### SDR Focus Areas
+
+**Warm outreach:**
+- Webinar follow-up
+- Free trials that didn't convert
+- Tradeshow follow-up
+- Case study downloads
+- Contact Us forms
+
+The SDR does not respond to "Book a Demo" form submissions — these are routed
+directly to the AE.
+
+**Cold outbound:**
+- Cold calling
+
+###### SDR Credit
+
+The SDR has a 45-day protection window, which grants sourcing credit if a lead
+they worked re-enters the sales funnel through another method within that
+window.
+
+**Examples:**
+1. An SDR follows up on a webinar lead, and that lead submits a "Book a Demo"
+   form within 45 days.
+2. An SDR calls a cold lead, and that lead submits a "Book a Demo" form within
+   45 days.
