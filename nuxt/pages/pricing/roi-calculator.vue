@@ -86,8 +86,10 @@ useSchemaOrg([
     <!-- ============================ HERO ============================ -->
     <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pt-14 pb-8 text-center">
-        <span class="roi-pill">ROI calculator</span>
-        <h1 class="mt-4 leading-tight text-4xl sm:text-5xl font-bold">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
+        <span class="inline-flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-indigo-600">
+          <span class="font-medium">ROI calculator</span>
+        </span>
+        <h1 class="mt-4 leading-tight text-4xl sm:text-5xl">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
         <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, rebuilding and hand-deploying work, and riding out downtime. Put your plant, fleet or project numbers in — every figure below traces to published research.</p>
       </div>
     </section>
@@ -103,7 +105,9 @@ useSchemaOrg([
     <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-12">
         <div class="text-center mb-8">
-          <span class="roi-pill">Who this is for</span>
+          <span class="inline-flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-indigo-600">
+            <span class="font-medium">Who this is for</span>
+          </span>
           <h2 class="mt-4">Where the return comes from in industrial automation</h2>
           <p class="text-gray-500 max-w-2xl mx-auto mt-2">The same three categories apply whether you run one plant, integrate for dozens of customers, or ship machines into the field. What changes is which line dominates.</p>
         </div>
@@ -121,7 +125,9 @@ useSchemaOrg([
     <section class="w-full px-6">
       <div class="max-w-screen-lg mx-auto pb-8">
         <div class="text-center mb-8">
-          <span class="roi-pill">The evidence</span>
+          <span class="inline-flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-indigo-600">
+            <span class="font-medium">The evidence</span>
+          </span>
           <h2 class="mt-4">Why these numbers hold up</h2>
           <p class="text-gray-500 max-w-2xl mx-auto mt-2">Every figure traces to published research, and the defaults are set deliberately on the conservative side.</p>
         </div>
@@ -174,8 +180,6 @@ useSchemaOrg([
 </template>
 
 <style scoped>
-.roi-pill { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #4f46e5; background: #eef2ff; border: 1px solid #e0e4ff; border-radius: 9999px; padding: .3rem .8rem; }
-
 /* Audiences */
 .roi-aud { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 .roi-aud__card { border: 1px solid #e5e7eb; border-radius: 1rem; padding: 1.5rem; background: #fff; box-shadow: 0 16px 40px rgba(2,6,13,0.05); }
