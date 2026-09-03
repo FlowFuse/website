@@ -215,7 +215,7 @@ const faultFields = [
     </div>
 
     <!-- Results -->
-    <div class="roi-result sticky top-20">
+    <div class="roi-result" :class="{ 'sticky top-20': !compact }">
       <div class="roi-result__eyebrow font-semibold">Estimated annual recovery</div>
       <div class="roi-result__big font-semibold">{{ fmt(gross) }}<span class="roi-result__per font-medium">/ year</span></div>
 

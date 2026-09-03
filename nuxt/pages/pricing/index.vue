@@ -51,7 +51,7 @@ useSchemaOrg([
 
 <template>
   <div class="w-full px-6">
-    <div class="max-w-5xl mx-auto py-16 px-4">
+    <div class="max-w-5xl mx-auto pt-16 px-4">
         <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the product that fits your team</h2>
         <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse has a product for you.</p>
@@ -74,15 +74,21 @@ useSchemaOrg([
         </UPricingPlans>
 
         <SocialProof class="mt-16" />
+    </div>
+  </div>
 
-        <div id="roi" class="mt-28">
-            <h2 class="text-center mb-3">What FlowFuse <span class="text-indigo-600">pays back</span></h2>
-            <p class="text-center text-lg text-gray-500 max-w-2xl mx-auto mb-10">Put your team’s numbers in to see what recovered engineering time, faster deployment and avoided downtime are worth against the price of the platform.</p>
-            <RoiCalculator compact />
-            <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/pricing/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
-        </div>
+  <div id="roi" class="w-full bg-indigo-50/50 py-16">
+    <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-center mb-3">What FlowFuse <span class="text-indigo-600">pays back</span></h2>
+        <p class="text-center text-lg text-gray-500 max-w-2xl mx-auto mb-10">Put your team’s numbers in to see what recovered engineering time, faster deployment and avoided downtime are worth against the price of the platform.</p>
+        <RoiCalculator compact />
+        <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/pricing/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
+    </div>
+  </div>
 
-        <h2 id="comparison" class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
+  <div class="w-full px-6">
+    <div class="max-w-5xl mx-auto pb-16 px-4">
+        <h2 id="comparison" class="text-center mt-14 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
         <UPricingTable
         v-if="featureCatalog"
         class="mt-16"
