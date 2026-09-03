@@ -17,7 +17,7 @@ the [PoV](/handbook/sales/meetings/pov/) is run.
 **Where FlowFuse lives defines it.** The architecture decision of where FlowFuse
 itself runs — in the cloud, or on the customer's own infrastructure — is the same
 decision as which trial environment they get. See
-[Architectures](/application-guide/flowfuse/architectures/) in the Application Guide.
+[Architectures](/docs/application-guide/architectures/) in the Application Guide.
 
 ## Two forms
 

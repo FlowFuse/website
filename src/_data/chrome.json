@@ -298,7 +298,7 @@
                         "links": [
                             {
                                 "label": "Guides",
-                                "href": "/application-guide/",
+                                "href": "/docs/application-guide/",
                                 "icon": "book-open"
                             },
                             {
@@ -670,7 +670,7 @@
                         "links": [
                             {
                                 "label": "Guides",
-                                "href": "/application-guide/"
+                                "href": "/docs/application-guide/"
                             },
                             {
                                 "label": "Docs",

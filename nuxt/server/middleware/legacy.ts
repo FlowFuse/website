@@ -10,6 +10,9 @@ const NUXT_ROUTES = new Set(['/ai', '/terms', '/privacy-policy', '/integrations'
 const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
+// /application-guide no longer has pages of its own - the guides moved under /docs - but it
+// stays listed so its 301s in nuxt/redirects.ts are served by Nitro in dev rather than
+// being proxied to 11ty, which has nothing there either.
 const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above

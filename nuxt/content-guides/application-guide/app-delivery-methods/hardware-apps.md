@@ -1,11 +1,9 @@
 ---
-title: Hardware apps
-navTitle: Hardware apps
-navOrder: 3.1
-guide: flowfuse
-slug: hardware-apps
-blurb: "The three shapes a FlowFuse app takes when it runs on a device. Pick by how much varies per site: nothing (Packaged App), a few settings (Configurable App), or you assemble it yourself (Edge Building Block)."
-parent: app-delivery-methods
+title: "Hardware apps"
+navTitle: "Hardware apps"
+navOrder: 1
+meta:
+    description: "The three shapes a FlowFuse app takes when it runs on a device. Pick by how much varies per site: nothing (Packaged App), a few settings (Configurable App), or you assemble it yourself (Edge Building Block)."
 ---
 
 # Hardware apps
