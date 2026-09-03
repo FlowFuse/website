@@ -33,11 +33,14 @@ A **Layered Process Audit (LPA)** helps manufacturers catch these problems earli
 
 This guide explains what an LPA is, how the layers work, and how manufacturers use them on the shop floor.
 
+::cta-image{src="/blog/2026/08/images/lpa-cta-1.png" alt="Turn Shop-Floor Audits Into Actionable Data" cta="sign-up"}
+::
+
 <!--more-->
 
 ## What Is a Layered Process Audit?
 
-A **Layered Process Audit (LPA)** is a short, structured audit used to verify that a manufacturing process is being performed according to its defined requirements.
+A **Layered Process Audit (LPA)** is a structured, process-focused audit in which personnel at different levels of an organization systematically verify that critical manufacturing processes, controls, and work practices conform to defined requirements and standards.
 
 Instead of inspecting finished parts, an LPA checks the process itself. An auditor observes the operation and verifies selected controls such as machine settings, standard work, tooling, materials, or error-proofing.
 
@@ -58,6 +61,8 @@ Each layer checks important process controls at a different frequency.
 | Layer 3 | Plant manager / Director | Monthly           |
 
 These frequencies are common starting points, not universal requirements. Manufacturers can adjust them based on process risk.
+
+![Three layered process audit levels: Layer 1 Supervisor daily, Layer 2 Area Manager weekly, and Layer 3 Plant Leadership monthly, all checking the same critical controls at the same station.](./images/layered-process-audit-level.png){data-zoomable}
 
 Layer 1 is closest to the operation and focuses on whether the process is being followed as defined.
 
@@ -89,7 +94,7 @@ Start with a process where regular verification is valuable, such as one with re
 
 ### Define What to Verify
 
-Use information from the PFMEA, control plan, work instructions, and previous quality problems to identify the critical controls.
+Use information from the PFMEA, [control plan](/blog/2026/08/control-plans), [work instructions](/blog/2026/07/digital-work-instruction/), and previous quality problems to identify the critical controls. Our [LPA checklist template](/blog/2026/09/layered-process-audit-checklist-template/) has example questions to help you get started.
 
 ### Assign the Layers
 
@@ -136,8 +141,8 @@ Manufacturers can start an LPA program with paper forms or spreadsheets, but man
 
 A digital LPA can help schedule audits, record findings, notify responsible people, and track actions through closure.
 
-Connecting the audit with production data provides another benefit. With FlowFuse, manufacturers can connect an LPA application to machines, PLCs, sensors, databases, and other industrial systems.
+Connecting the audit with production data provides another benefit. With FlowFuse, manufacturers can connect an LPA application to machines, [PLCs](/landing/plc/), sensors, [databases](/node-red/database/), and other industrial systems.
 
 This allows audit results to be viewed alongside production information such as downtime, machine states, or process parameters. Instead of only recording that a process failed, teams can investigate what was happening around the failure.
 
-With [FlowFuse Dashboard](/blog/2024/03/dashboard-getting-started/), manufacturers can build applications to record audit results, track findings, and visualize them alongside operational data.
+With [FlowFuse Dashboard](/platform/dashboard), manufacturers can build applications to record audit results, track findings, and visualize them alongside operational data.

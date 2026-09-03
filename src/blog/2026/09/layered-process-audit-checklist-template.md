@@ -9,13 +9,20 @@ image: /blog/2026/09/images/layered-process-audit-checklist.png
 tags:
   - posts
   - flowfuse
+cta:
+  type: contact
+  title: "Build a Digital LPA with FlowFuse"
+  description: "Use FlowFuse to build digital LPA forms, connect audit results to machine and production data, trigger alerts, and track corrective actions."
+tldr: "A layered process audit (LPA) checklist helps manufacturers consistently verify critical process controls. Learn what to include, how to write effective LPA questions, and download a free checklist template."
 ---
 
-A Layered Process Audit (LPA) checklist gives supervisors and managers a consistent way to verify critical process controls on the shop floor.
+A [Layered Process Audit (LPA)](/blog/2026/08/layered-process-audit/) checklist gives supervisors and managers a consistent way to verify critical process controls on the shop floor.
 
 A good checklist is focused rather than comprehensive. It should cover the controls that matter most to the process and use questions that can be answered by observing the work.
 
-[Download the free Layered Process Audit checklist template](https://drive.google.com/file/d/19plwlUo8vKPunGl7LRF1TMFjqGBZoih4/view?usp=sharing) and adapt it to your process.
+If you're building an LPA program, having a consistent set of questions makes it easier for different management layers to audit the same critical controls. Use the free checklist below as a starting point for creating your own LPA.
+
+::hub-spot-form{form-id="f76521d1-8ea3-4da1-a673-fe39b03b6414" cta="cta-lpa-checklist-template" reference="layered-process-audit-checklist-template"}
 
 <!--more-->
 
@@ -52,9 +59,9 @@ Consider an automotive assembly station where a component is fastened using a to
 
 The checklist might verify that the current work instruction is being used, the correct component is at the station, the torque tool is within its approved range, and the error-proofing system is active.
 
-During the audit, the supervisor finds that the torque setting is outside the approved range. The issue can be corrected and recorded as a finding for follow-up.
+During the audit, the supervisor finds the torque setting outside the approved range. They correct the setting, record the finding, and check what the station has built since the last verified check. Anything suspect gets segregated before it moves down the line.
 
-A later audit can verify that the setting remains correct.
+A later audit verifies the setting held.
 
 The checklist makes these critical controls easy to verify consistently without turning the LPA into a full process audit.
 
