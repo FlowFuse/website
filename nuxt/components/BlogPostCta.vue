@@ -51,10 +51,7 @@ function onCtaClick (event: MouseEvent) {
 </script>
 
 <template>
-  <!-- No max-w-prose: at 65ch that is narrower than the article column the card sits
-       in, so it was inset on both sides while every other block in the post, the
-       agent picker and the prompt carousel included, ran the full measure. -->
-  <div class="ff-blue-card blog-post-cta p-8 sm:p-12">
+  <div class="ff-blue-card blog-post-cta p-8 sm:p-12 m-auto">
     <div class="flex flex-col gap-6 sm:gap-8 text-center sm:text-left">
       <h3 class="mt-0 mb-0 !text-3xl text-indigo-800">{{ cta?.title || currentCta.title }}</h3>
       <p class="mt-0 mb-0 max-w-4xl mx-auto sm:mx-0 leading-relaxed">{{ cta?.description || currentCta.description }}</p>
