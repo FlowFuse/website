@@ -96,29 +96,5 @@ Finally, **hard refresh** in the environment you just enabled to pull the latest
 
 ## Using feature flags in code
 
-The FlowFuse frontend wires PostHog flags through the `account-settings` store (`frontend/src/stores/account-settings.js`).
-
-**Where to add the flag** — register its key in the `POSTHOG_FLAGS` constant, then expose a boolean check in the `featuresCheck` getter:
-
-```js
-export const POSTHOG_FLAGS = {
-    EXPERT_COMMS_BETA_ENABLED: 'EXPERT_COMMS_BETA_ENABLED'
-}
-
-// in featuresCheck:
-checks.isExpertCommsBetaEnabled = !!state.posthogFlags[POSTHOG_FLAGS.EXPERT_COMMS_BETA_ENABLED]
-```
-
-**How to use it** — read the check from the resolved `featuresCheck` object wherever you need it. In a component template:
-
-```html
-<template v-if="featuresCheck?.isExpertCommsBetaEnabled"> … </template>
-```
-
-Or in script/logic — gate a method, computed property, route guard, etc:
-
-```js
-if (featuresCheck?.isExpertCommsBetaEnabled) {
-    // run the gated behaviour
-}
-```
+Once the flag exists in PostHog, it gets wired into the frontend by adding a
+`posthogKey` to the feature's entry in `FEATURE_CONFIGS`.

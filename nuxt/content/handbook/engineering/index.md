@@ -49,9 +49,11 @@ These pages help you setup additional infrastructure for local development.
 
 A collection of how-tos and best practice guides for FlowFuse's front-end development.
 
+- [UI Conventions and Style Guide](./frontend/ui-conventions/) - the conventions we follow when building platform UI
 - [Data Attributes](./frontend/data-attributes.md)
 - [Services](./frontend/services.md)
 - [Testing](./frontend/testing.md)
+- [Layouts](./frontend/layouts.md)
 
 ## Operations
 
