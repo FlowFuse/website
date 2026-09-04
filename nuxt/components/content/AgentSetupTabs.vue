@@ -15,13 +15,10 @@ const props = withDefaults(defineProps<{
     // Drops the FlowFuse Expert tab. For surfaces that are specifically about
     // connecting your own agent, where Expert is not one of the options.
     excludeExpert?: boolean
-    // Whether step 03 ends on a sign-up CTA. Off for documentation, where the
-    // reader already has an account.
-    signup?: boolean
     // Distinguishes this instance in PostHog. 'ai' keeps the positions the /ai
     // page already reports, so its existing numbers stay comparable.
     surface?: string
-}>(), { excludeExpert: false, signup: true, surface: 'ai' })
+}>(), { excludeExpert: false, surface: 'ai' })
 
 const capture = useCapture()
 
@@ -56,7 +53,6 @@ const CLIENTS = [
         step2Url: '/docs/device-agent/quickstart/',
         step3Title: 'Ask for what you need',
         step3Body: 'Build a flow, explain one you inherited, write the Function node, or ask what is running on the floor. Every write waits for you to approve, edit or reject.',
-        noStep3Cta: true,
     },
     {
         id: 'copilot',
@@ -148,8 +144,7 @@ function selectClient (id: string) {
       class="ff-agent-panel"
     >
       <div class="ff-agent-step">
-        <p class="ff-agent-step__num">01</p>
-        <p class="ff-agent-step__title">{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
+        <p class="ff-agent-step__title"><span class="ff-agent-step__num">01</span>{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
         <p class="ff-agent-step__body">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
         <div v-if="client.builtIn" class="ff-agent-step__cta">
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
@@ -160,8 +155,7 @@ function selectClient (id: string) {
       </div>
 
       <div class="ff-agent-step">
-        <p class="ff-agent-step__num">02</p>
-        <p class="ff-agent-step__title">{{ client.step2Title }}</p>
+        <p class="ff-agent-step__title"><span class="ff-agent-step__num">02</span>{{ client.step2Title }}</p>
         <p class="ff-agent-step__body">{{ client.step2Body }}</p>
         <div class="ff-agent-step__cta">
           <CtaCustom
@@ -178,12 +172,8 @@ function selectClient (id: string) {
       </div>
 
       <div class="ff-agent-step">
-        <p class="ff-agent-step__num">03</p>
-        <p class="ff-agent-step__title">{{ client.step3Title || STEP3.title }}</p>
+        <p class="ff-agent-step__title"><span class="ff-agent-step__num">03</span>{{ client.step3Title || STEP3.title }}</p>
         <p class="ff-agent-step__body">{{ client.step3Body || STEP3.description }}</p>
-        <div v-if="signup && !client.noStep3Cta" class="ff-agent-step__cta">
-          <CtaSignUp variant="primary" :position="`${surface}-connect-step3`" class="w-full" />
-        </div>
       </div>
     </div>
   </div>

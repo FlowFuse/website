@@ -3411,23 +3411,36 @@ lite-youtube::before {
 .ff-agent-panel {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    /* Tighter than the 2rem this used to carry, because stacked the steps are now
+       cards and the border does the separating that the whitespace was doing. */
+    gap: 1rem;
     padding: 1.5rem;
 }
+/* Stacked, each step is a card. One column of three headings with nothing but air
+   between them read as one continuous block, so 02 looked like more of 01 rather
+   than the next thing to do. Three across, the columns already separate themselves
+   and a border around each would just be noise, so the wide state below strips it. */
 .ff-agent-step {
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.5rem;
+    background-color: var(--color-gray-50);
+    padding: 1.25rem;
 }
+/* The number sits inside the heading as inline text, so it inherits the heading's
+   size, face and weight and only the colour separates them. Inline rather than a
+   flex sibling on purpose: as a sibling, a heading that wrapped to two lines put its
+   second line against the title's own left edge, leaving a hole under the number.
+   In the text flow the wrap runs the full column width, the way prose does. */
 .ff-agent-step__num {
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 600;
-    line-height: 1rem;
+    margin-right: 0.5rem;
     color: var(--color-indigo-600);
 }
+/* No top margin any more: the gap that used to separate it from the number above is
+   now the row gap beside it. */
 .ff-agent-step__title {
-    margin: 0.5rem 0 0;
+    margin: 0;
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.75rem;
@@ -3470,8 +3483,29 @@ lite-youtube::before {
 @container (min-width: 60rem) {
     .ff-agent-panel {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 2.5rem;
+        /* Heading, body, CTA. The body row takes the slack so the CTA row stays at the
+           bottom, which is what the CTA's own margin-top:auto used to do alone. */
+        grid-template-rows: auto 1fr auto;
+        column-gap: 2.5rem;
+        row-gap: 0;
         padding: 2rem;
+    }
+    /* Back to bare columns: side by side the steps are already separate, so the card
+       treatment the stacked state needs becomes three boxes inside a box.
+
+       subgrid so the three columns share the panel's rows rather than each stacking
+       its own: heading, body, then CTA. Without it every column starts its body
+       wherever its own heading stopped, so a heading that wrapped to two lines pushed
+       that column's body a line below its neighbours. The rows are inherited, so the
+       body row starts level across all three however the headings wrap. */
+    .ff-agent-step {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        padding: 0;
     }
     /* Three across, the columns are narrow enough that filling them is right. */
     .ff-agent-step__cta {
@@ -3617,4 +3651,260 @@ lite-youtube::before {
    @layer components would lose to them regardless of specificity. */
 .ff-website header a > span.ff-icon {
     padding: 0;
+}
+
+/* Prompt carousel (nuxt/components/content/PromptCarousel.vue): the starter prompts,
+   stepped through sideways.
+
+   Unlayered on purpose, for the same reason the .ff-agent-* block above is: this
+   renders inside .prose on the blog post, and the site's prose rules are unlayered,
+   so they outrank Tailwind's @layer utilities whatever the specificity. As utilities,
+   .prose p would have set the card body to 12px and .prose p's own margins would have
+   reopened the gaps the cards close deliberately. Keep visual values here, not in the
+   template.
+
+   Sizing is driven by the component's own width via @container, not by the viewport,
+   because a blog post's prose column is ~704px inside a much wider viewport. */
+.ff-prompts {
+    container-type: inline-size;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-indigo-100);
+    border-radius: 0.75rem;
+    background-color: #fff;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+/* The header rail carries the label and the arrows, tinted like the agent card's tab
+   strip so the two read as the same family of object. */
+.ff-prompts__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-indigo-100);
+    background-color: color-mix(in srgb, var(--color-indigo-50) 60%, transparent);
+    padding: 0.75rem 1rem;
+}
+.ff-prompts__kicker {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-indigo-600);
+}
+.ff-prompts__nav {
+    display: flex;
+    flex: none;
+    gap: 0.375rem;
+}
+.ff-prompts__arrow {
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: var(--color-gray-600);
+    box-shadow: var(--shadow-sm);
+    transition: color 0.15s, background-color 0.15s, opacity 0.15s;
+}
+.ff-prompts__arrow:hover:not(:disabled) {
+    background-color: var(--color-indigo-600);
+    color: #fff;
+}
+.ff-prompts__arrow:focus {
+    outline: none;
+}
+.ff-prompts__arrow:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 2px;
+}
+/* Dimmed rather than hidden at the ends: a control that disappears moves the one
+   beside it, and the reader loses the target they were aiming at. */
+.ff-prompts__arrow:disabled {
+    opacity: 0.35;
+    box-shadow: none;
+    cursor: default;
+}
+.ff-prompts__arrow > * {
+    height: 1rem;
+    width: 1rem;
+}
+
+/* scroll-snap so a swipe or a flick lands on a card edge rather than halfway between
+   two, and so the arrows and the gesture agree on where "one along" is. */
+.ff-prompts__track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 1rem;
+    padding: 1.5rem 1rem;
+    /* The scrollbar is redundant next to the arrows and the dots, and on macOS it
+       overlaps the copy button while it is fading out. */
+    scrollbar-width: none;
+}
+.ff-prompts__track::-webkit-scrollbar {
+    display: none;
+}
+.ff-prompts__track:focus {
+    outline: none;
+}
+.ff-prompts__track:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: -2px;
+}
+
+/* 85% rather than 100%: the sliver of the next card is what tells a reader there is
+   one, before they have found the arrows. Nine stacked paragraphs got scrolled past;
+   an edge that is visibly cut off gets clicked. */
+.ff-prompts__card {
+    display: flex;
+    flex: none;
+    width: 85%;
+    flex-direction: column;
+    scroll-snap-align: start;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.5rem;
+    background-color: var(--color-gray-50);
+    padding: 1.25rem;
+}
+.ff-prompts__label {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    color: var(--color-gray-900);
+}
+/* The prompt verbatim, in the mono face, because it is a thing to be copied rather
+   than read as prose. */
+.ff-prompts__text {
+    margin: 0.5rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: var(--color-gray-600);
+}
+/* The card's action strip, divided off the prompt with a hairline that runs the
+   full width of the card. The negative inline margins take the rule out past the
+   card's 1.25rem padding to its edges, and the padding goes back on the row so the
+   button stays inside the measure.
+
+   mt-auto pins the strip to the bottom so it lines up across cards however unevenly
+   the prompts above them wrap. */
+.ff-prompts__foot {
+    margin-top: auto;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--color-gray-200);
+    padding: 0.875rem 1.25rem 0;
+}
+
+/* Quiet by design: the bordered Try it out on the widget's bar is the page's onward
+   step, and a second bordered button per card would compete with it nine times over.
+   The icon swaps to a tick on a successful copy, so the label and the mark agree. */
+.ff-prompts__copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    margin-left: -0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: var(--color-gray-600);
+    transition: color 0.15s, background-color 0.15s;
+}
+.ff-prompts__copy:hover {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-900);
+}
+.ff-prompts__copy:focus {
+    outline: none;
+}
+.ff-prompts__copy:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 2px;
+}
+.ff-prompts__copy > *:first-child {
+    height: 0.875rem;
+    width: 0.875rem;
+    flex: none;
+}
+
+/* The widget's bar, holding the position readout. */
+.ff-prompts__bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--color-indigo-100);
+    padding: 0.75rem 1rem;
+}
+
+/* Dots as the position readout and as a jump target. Nine is few enough to show them
+   all; a "3 / 9" counter would say where you are without offering to move you. */
+.ff-prompts__dots {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.ff-prompts__dot {
+    height: 0.5rem;
+    width: 0.5rem;
+    flex: none;
+    border-radius: 9999px;
+    background-color: var(--color-gray-300);
+    transition: background-color 0.15s, transform 0.15s;
+}
+.ff-prompts__dot:hover {
+    background-color: var(--color-gray-400);
+}
+.ff-prompts__dot--active,
+.ff-prompts__dot--active:hover {
+    background-color: var(--color-indigo-600);
+    transform: scale(1.25);
+}
+.ff-prompts__dot:focus {
+    outline: none;
+}
+.ff-prompts__dot:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 3px;
+}
+
+/* Two across once the component itself is wide enough that a single card would run to
+   an uncomfortable measure. 42rem is set by the prompts themselves: the longest is
+   ~340 characters, and at ~46rem of card the mono text reaches a 100-character line.
+   Below this the cards stay one at a time, which is what a phone gets. */
+@container (min-width: 42rem) {
+    .ff-prompts__card {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+/* Nothing animates for a reader who asked for that. The snap stays, since it is
+   layout rather than motion; only the smooth scroll and the dot's scale go. */
+@media (prefers-reduced-motion: reduce) {
+    .ff-prompts__track {
+        scroll-behavior: auto;
+    }
+    .ff-prompts__dot--active,
+    .ff-prompts__dot--active:hover {
+        transform: none;
+    }
 }
