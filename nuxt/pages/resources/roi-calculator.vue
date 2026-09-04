@@ -91,7 +91,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto pt-14 pb-8 text-center">
         <p class="eyebrow">ROI calculator</p>
         <h1 class="mt-2 leading-tight text-4xl sm:text-5xl">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
-        <p class="my-8 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, rebuilding and hand-deploying work, and riding out downtime. Put your plant, fleet or project numbers in — every figure below traces to published research.</p>
+        <p class="my-8 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, manual rework, and tracking downtime. Plug in your numbers, every figure below traces to published research.</p>t,
       </div>
     </section>
 
@@ -107,8 +107,8 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto pb-12">
         <div class="mb-16">
           <p class="eyebrow">Who this is for</p>
-          <h2 class="my-4">Where the return comes from in industrial automation</h2>
-          <p class="max-w-2xl mt-2">The same three categories apply whether you run one plant, integrate for dozens of customers, or ship machines into the field. What changes is which line dominates.</p>
+          <h2 class="my-4">How to justify the ROI of industrial automation to your boss</h2>
+          <p class="max-w-2xl mt-2">Improvements in speed of deployment, waste elimination, and machine uptime directly affects operational costs and revenue. Here's how to justify ROI to decision-makers, depending on your business</p>
         </div>
         <DifferentiatorCards :items="audiences" description-class="text-sm" />
       </div>
@@ -120,7 +120,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto relative">
         <div class="mb-12">
           <p class="eyebrow">The evidence</p>
-          <h2 class="my-4">Why these numbers hold up</h2>
+          <h2 class="my-4">Why research behind the analysis</h2>
           <p class="max-w-2xl mt-2">Every figure traces to published research, and the defaults are set deliberately on the conservative side.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
