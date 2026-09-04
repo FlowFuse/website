@@ -78,7 +78,7 @@ export const applicationGuideNavGroups = (pages: ApplicationGuidePageSummary[] |
 // as Handbook and Docs, built inline in each page rather than through a dedicated
 // left-nav component, since there's no page-specific markup left to wrap.
 export const applicationGuideNavItems = (pages: ApplicationGuidePageSummary[] | null, currentPath: string): NavigationMenuItem[] => [
-    { label: 'Application Guide', to: '/application-guide' },
+    { label: 'Application Guide', to: '/application-guide/' },
     ...applicationGuideNavGroups(pages).flatMap(group => [
         { type: 'label', label: group.title } satisfies NavigationMenuItem,
         ...buildNavigationMenuItems(group.children ?? [], currentPath),
@@ -109,7 +109,7 @@ export function findGuideBreadcrumb(pages: ApplicationGuidePageSummary[] | null,
     }
 
     return [
-        { label: 'Application Guide', to: '/application-guide' },
+        { label: 'Application Guide', to: '/application-guide/' },
         ...ancestors.map((ancestor, i) => ({
             label: ancestor.title,
             ...(i === ancestors.length - 1 ? {} : { to: norm(ancestor.path) }),

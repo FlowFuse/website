@@ -265,7 +265,7 @@ if (routeInfo.value.kind === 'post') {
             <h3 class="mb-3 pt-6 border-t-2">{{ relatedHeading }}</h3>
             <ul class="ml-6 list-disc">
               <li v-for="post in postsToShow" :key="post.path" class="mb-3">
-                <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
+                <NuxtLink :to="withTrailingSlash(post.path)">{{ post.title }}</NuxtLink>
               </li>
             </ul>
             <div class="mb-6 pb-6 pt-6 border-t-2">
