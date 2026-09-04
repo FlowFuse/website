@@ -4,21 +4,24 @@ meta:
   title: "Automotive Manufacturing Applications | FlowFuse"
   description: "Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time."
   faq:
-    - question: "Do I need to replace my existing SCADA or MES?"
+    - question: "How do I trace a VIN through body shop, paint, and assembly?"
       answer: >
-        No. FlowFuse is designed to complement your existing manufacturing software, not replace it. You can extend your current systems with custom applications for production monitoring, downtime tracking, quality, workflows, and reporting.
-    - question: "Which industrial protocols does FlowFuse support?"
+        FlowFuse allows you to collect data from each station, associate it with the relevant VIN as it's captured, and route it to the systems where that data is stored and used. This connects weld records, paint parameters, torque results, inspection outcomes, and other production data across the vehicle's journey, making it easier to build a complete production history.
+    - question: "Can FlowFuse get OEE from a line with mixed Siemens and Allen-Bradley PLCs?"
       answer: >
-        FlowFuse supports a wide range of industrial and IT protocols, including OPC UA, MQTT, Modbus, Siemens S7, EtherNet/IP, databases, and REST APIs. With over 6,000 integrations, it can connect PLCs, manufacturing software, enterprise systems, cloud services, and thousands of other technologies.
-    - question: "Is FlowFuse suitable for enterprise manufacturing?"
+        Yes. FlowFuse reads tag data from both S7 and EtherNet/IP-connected PLCs in the same flow, normalizes it, and calculates OEE metrics regardless of which controller brand runs which station.
+    - question: "What does IATF 16949 require for production data retention?"
       answer: >
-        Yes. FlowFuse includes enterprise capabilities such as role-based access control (RBAC), single sign-on (SSO), audit logging, centralized management, and self-hosted deployment options for large manufacturing organizations.
-    - question: "Can FlowFuse be deployed on-premises?"
+        IATF 16949 requires traceable records of process parameters, torque, weld, and inspection data, retained at a level of detail that supports root-cause investigation and audit. FlowFuse allows you to capture this data at the source, connect and process it, and route it to the systems where it can be stored and queried for quality, traceability, and audit needs.
+    - question: "How long does FlowFuse deployment take on one line versus twenty plants?"
       answer: >
-        Yes. FlowFuse supports on-premises, self-hosted, private cloud, and air-gapped deployments, allowing manufacturers to meet their security, compliance, and operational requirements.
-    - question: "Can I build applications without extensive software development?"
+        Deployment time depends on the complexity of the application, the plant environment, and the systems being connected. Once a flow is built and validated, it can be reused and deployed across additional lines or plants rather than rebuilt from scratch each time, helping reduce the integration effort involved in scaling.
+    - question: "Can FlowFuse run air-gapped in a plant with no cloud connectivity?"
       answer: >
-        Yes. FlowFuse combines low-code development with FlowFuse AI, enabling engineering and manufacturing teams to build industrial applications faster. AI-powered expert assistance and agentic development help accelerate application creation, while developers retain full control to customize logic and integrations as needed.
+        Yes. FlowFuse supports self-hosted, on-premises, and air-gapped deployments for manufacturing with strict network isolation requirements.
+    - question: "How is this FlowFuse different from adding a module to our existing MES?"
+      answer: >
+        MES modules are built for standard workflows. FlowFuse handles the plant-specific gaps (custom quality gates, one-off traceability rules, non-standard handovers) that MES modules typically can't cover without a vendor change request.
 hero:
   eyebrow: "Automotive Manufacturing"
   eyebrowIcon: "components/icons/car.svg"
