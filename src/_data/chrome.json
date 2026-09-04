@@ -8,8 +8,13 @@
                     {
                         "title": "Overview",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-[7] xl:col-start-2 xl:row-start-2",
                         "links": [
+                            {
+                                "label": "Platform",
+                                "href": "/platform/",
+                                "icon": "squares-2x2"
+                            },
                             {
                                 "label": "Product",
                                 "href": "/product/",
@@ -442,6 +447,10 @@
                     {
                         "title": "Overview",
                         "links": [
+                            {
+                                "label": "Platform",
+                                "href": "/platform/"
+                            },
                             {
                                 "label": "Product",
                                 "href": "/product/"
