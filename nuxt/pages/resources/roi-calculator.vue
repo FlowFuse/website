@@ -29,20 +29,20 @@ const evidence = [
 const audiences = [
   {
     heading: 'System integrators & automation partners',
-    lead: 'Every project you win is a project you have to staff.',
-    description: 'The margin on an integration contract is decided by how much of it you rebuild from scratch. Standardised Blueprints, a shared Team Library and versioned pipelines let one engineer carry more sites, and let a junior ship work that used to need your most senior person. On the model above that shows up in <b class="font-semibold text-gray-900">speed to deploy</b> — the largest single line for most integrator teams.',
+    lead: 'More output per engineer',
+    description: 'Reusable Blueprints and versioned pipelines cut the time to ship each site, so the same team handles more work without adding headcount. That's <b class="font-semibold text-gray-900">increase in revenue</b> and speed of deployment, the largest single line for most integrator teams.',
     icon: 'i-lucide-blocks',
   },
   {
     heading: 'Manufacturers & plant engineering teams',
-    lead: 'Your downtime number is bigger than your software number.',
-    description: 'A single unplanned line stop costs more than a year of platform licensing. Snapshots, one-click rollback and remote deployment across the fleet turn a multi-hour recovery into a multi-minute one. That is the <b class="font-semibold text-gray-900">fault tolerance</b> line, and it is why the payback window in this calculator is usually measured in months rather than years.',
+    lead: 'One avoided outage pays for the platform',
+    description: 'A single unplanned line stop can cost more than a year of licensing. Snapshots, one-click rollback, and remote deployment turn a multi-hour recovery into minutes. That <b class="font-semibold text-gray-900">uptime</b> and recovery speed, and it is why the payback window in this calculator is usually measured in months rather than years.',
     icon: 'i-lucide-factory',
   },
   {
     heading: 'OEMs & machine builders',
-    lead: 'You ship the same application to hundreds of customer sites.',
-    description: 'Managing that estate by hand — remoting into each machine, tracking which one runs which version — does not scale past a few dozen deployments. Centralised device management and staged rollout collapse the per-site cost of every update, which compounds across <b class="font-semibold text-gray-900">waste elimination</b> and <b class="font-semibold text-gray-900">speed to deploy</b> at once.',
+    lead: 'Grow your install base without growing support headcount',
+    description: 'Manually managing multiple sites by remoting in, tracking versions, etc. stops scaling past a few dozen machines. Centralized device management and staged rollout keep per-site cost flat as the fleet grows, compounding <b class="font-semibold text-gray-900">waste elimination</b> and <b class="font-semibold text-gray-900">speed to deploy</b> at once.',
     icon: 'i-lucide-boxes',
   },
 ]
