@@ -120,7 +120,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto relative">
         <div class="mb-12">
           <p class="eyebrow">The evidence</p>
-          <h2 class="my-4">Why research behind the analysis</h2>
+          <h2 class="my-4">The research behind the ROI analysis</h2>
           <p class="max-w-2xl mt-2">Every figure traces to published research, and the defaults are set deliberately on the conservative side.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
