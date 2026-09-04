@@ -30,19 +30,19 @@ const audiences = [
   {
     heading: 'System integrators & automation partners',
     lead: 'More output per engineer',
-    description: 'Reusable Blueprints and versioned pipelines cut the time to ship each site, so the same team handles more work without adding headcount. That's <b class="font-semibold text-gray-900">increase in revenue</b> and speed of deployment, the largest single line for most integrator teams.',
+    description: 'Reusable <a class="text-indigo-600 hover:underline" href="/blueprints/">Blueprints</a> and <a class="text-indigo-600 hover:underline" href="/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/">versioned pipelines</a> cut the time to ship each site, so the same team handles more work without adding headcount. That’s an <b class="font-semibold text-gray-900">increase in revenue</b> and speed of deployment, the largest single line for most integrator teams.',
     icon: 'i-lucide-blocks',
   },
   {
     heading: 'Manufacturers & plant engineering teams',
     lead: 'One avoided outage pays for the platform',
-    description: 'A single unplanned line stop can cost more than a year of licensing. Snapshots, one-click rollback, and remote deployment turn a multi-hour recovery into minutes. That <b class="font-semibold text-gray-900">uptime</b> and recovery speed, and it is why the payback window in this calculator is usually measured in months rather than years.',
+    description: 'A single <a class="text-indigo-600 hover:underline" href="/use-cases/production-monitoring/">unplanned line stop</a> can cost more than a year of licensing. <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">Snapshots, one-click rollback</a>, and remote deployment turn a multi-hour recovery into minutes. That is <b class="font-semibold text-gray-900">uptime</b> and recovery speed, and it is why the payback window in this calculator is usually measured in months rather than years.',
     icon: 'i-lucide-factory',
   },
   {
     heading: 'OEMs & machine builders',
     lead: 'Grow your install base without growing support headcount',
-    description: 'Manually managing multiple sites by remoting in, tracking versions, etc. stops scaling past a few dozen machines. Centralized device management and staged rollout keep per-site cost flat as the fleet grows, compounding <b class="font-semibold text-gray-900">waste elimination</b> and <b class="font-semibold text-gray-900">speed to deploy</b> at once.',
+    description: 'Manually managing multiple sites by remoting in, tracking versions, etc. stops scaling past a few dozen machines. <a class="text-indigo-600 hover:underline" href="/platform/device-agent/">Centralized device management</a> and <a class="text-indigo-600 hover:underline" href="/product/fleet/">staged rollout</a> keep per-site cost flat as the fleet grows, compounding <b class="font-semibold text-gray-900">waste elimination</b> and <b class="font-semibold text-gray-900">speed to deploy</b> at once.',
     icon: 'i-lucide-boxes',
   },
 ]
@@ -51,15 +51,15 @@ const audiences = [
 const faqs = [
   {
     question: 'How do you calculate ROI on an industrial automation platform?',
-    answer: 'Industrial automation ROI is annual value recovered divided by annual platform investment. This calculator builds the value side from three measurable sources — engineering time lost finding information, engineering time spent rebuilding and hand-deploying applications, and production time lost to slow recovery from failure — then subtracts a representative FlowFuse package cost to show net savings, an ROI multiple and a payback window.',
+    answer: 'Industrial automation ROI is annual value recovered divided by annual [platform](/platform/why-flowfuse/) investment. This calculator builds the value side from three measurable sources — engineering time lost finding information, engineering time spent rebuilding and hand-deploying applications, and production time lost to slow recovery from failure — then subtracts a representative [FlowFuse package](/pricing/) cost to show net savings, an ROI multiple and a payback window.',
   },
   {
     question: 'What is a realistic payback period for a Node-RED platform like FlowFuse?',
-    answer: 'For most industrial teams the payback lands inside the first year, and frequently inside the first quarter. The reason is the asymmetry between the two sides of the equation: platform licensing is a five-figure annual line, while a single hour of unplanned downtime at industry-average cost is roughly $125,000 (ABB, 2023). Avoiding a handful of hours a year covers the investment on its own.',
+    answer: 'For most industrial teams the payback on a [Node-RED platform](/node-red/) lands inside the first year, and frequently inside the first quarter. The reason is the asymmetry between the two sides of the equation: platform licensing is a five-figure annual line, while a single hour of unplanned downtime at industry-average cost is roughly $125,000 (ABB, 2023). Avoiding a handful of hours a year covers the investment on its own, which is the pattern our [customer stories](/customer-stories/) describe.',
   },
   {
     question: 'What should a system integrator include in an ROI model?',
-    answer: 'Beyond licence cost, include the engineer-hours per project you can eliminate through reuse, the travel and on-site time removed by remote deployment, the cost of maintaining bespoke one-off applications across a customer estate, and the risk-adjusted cost of a rollback you cannot perform quickly. Those are the inputs this calculator exposes, so you can hand a finance team a model rather than a claim.',
+    answer: 'Beyond license cost, include the engineer-hours per project you can eliminate through [reuse](/blueprints/), the travel and on-site time removed by [remote deployment](/platform/device-agent/), the cost of maintaining bespoke one-off applications across a customer estate, and the risk-adjusted cost of a rollback you cannot perform quickly. Those are the inputs this calculator exposes, so you can hand a finance team a model rather than a claim. If you deliver FlowFuse to your own customers, the [partner program](/partners/) covers the commercial side.',
   },
   {
     question: 'Are the assumptions in this ROI calculator conservative?',
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     question: 'Does the calculator give me a quote?',
-    answer: 'No — it produces a directional estimate for comparison. The investment figure is a representative blended package price with a volume taper, not your price. Book a demo and we will build the model against your actual site count, engineering headcount and downtime cost.',
+    answer: 'No — it produces a directional estimate for comparison. The investment figure is a representative blended package price with a volume taper, not your price. The full breakdown of what each product includes is on the [pricing page](/pricing/). [Book a demo](/book-demo/) and we will build the model against your actual site count, engineering headcount and downtime cost.',
   },
 ]
 
@@ -91,7 +91,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto pt-14 pb-8 text-center">
         <p class="eyebrow">ROI calculator</p>
         <h1 class="mt-2 leading-tight text-4xl sm:text-5xl">Industrial automation ROI, <span class="text-indigo-600">in your numbers.</span></h1>
-        <p class="my-8 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, manual rework, and tracking downtime. Plug in your numbers, every figure below traces to published research.</p>t,
+        <p class="my-8 text-lg text-gray-500 max-w-2xl mx-auto">Three places industrial automation teams quietly bleed money: hunting for information, manual rework, and tracking downtime. Plug in your numbers, every figure below traces to published research.</p>
       </div>
     </section>
 
@@ -108,7 +108,7 @@ useSchemaOrg([
         <div class="mb-16">
           <p class="eyebrow">Who this is for</p>
           <h2 class="my-4">How to justify the ROI of industrial automation to your boss</h2>
-          <p class="max-w-2xl mt-2">Improvements in speed of deployment, waste elimination, and machine uptime directly affects operational costs and revenue. Here's how to justify ROI to decision-makers, depending on your business</p>
+          <p class="max-w-2xl mt-2">Improvements in speed of deployment, waste elimination, and machine uptime directly affect operational costs and revenue. Here’s how to justify ROI to decision-makers, depending on your business</p>
         </div>
         <DifferentiatorCards :items="audiences" description-class="text-sm" />
       </div>
@@ -151,9 +151,9 @@ useSchemaOrg([
         <div class="border border-gray-200 rounded-xl bg-gray-50">
           <div class="px-5 py-4 text-gray-700 font-semibold">How the calculation works</div>
           <div class="prose prose-sm max-w-none px-5 pb-5">
-            <p><b>1 · Waste elimination.</b> Engineers lose ~20% of the week finding information (McKinsey). We recover the share you set (default 30%): <code>engineers × salary × 0.20 × recovery</code>.</p>
-            <p><b>2 · Speed to deploy.</b> Building from scratch and hand-deploying is labour you can reclaim with reuse and pipelines: <code>(apps × hrs/app × reuse% + deploys × hrs/deploy × pipeline%) × hourly rate</code>. Reuse gains are grounded in Lim (40–57%); deployment automation in DORA.</p>
-            <p><b>3 · Fault tolerance.</b> Slow recovery means idle machines and engineers: <code>incidents × downtime hrs × cost/hr × avoided%</code>. The $125k/hr industry average (ABB) is the ceiling; we default far lower.</p>
+            <p><b>1 · Waste elimination.</b> Engineers lose ~20% of the week <a class="text-indigo-600 hover:underline" href="/use-cases/uns/">finding information</a> (McKinsey). We recover the share you set (default 30%): <code>engineers × salary × 0.20 × recovery</code>.</p>
+            <p><b>2 · Speed to deploy.</b> Building from scratch and hand-deploying is labor you can reclaim with <a class="text-indigo-600 hover:underline" href="/blueprints/">reuse</a> and <a class="text-indigo-600 hover:underline" href="/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/">pipelines</a>: <code>(apps × hrs/app × reuse% + deploys × hrs/deploy × pipeline%) × hourly rate</code>. Reuse gains are grounded in Lim (40–57%); deployment automation in DORA.</p>
+            <p><b>3 · Fault tolerance.</b> <a class="text-indigo-600 hover:underline" href="/blog/2025/12/mttf-vs-mtbf-vs-mttr/">Slow recovery</a> means idle machines and engineers: <code>incidents × downtime hrs × cost/hr × avoided%</code>. The $125k/hr industry average (ABB) is the ceiling; we default far lower.</p>
             <p><b>Net &amp; payback.</b> A representative FlowFuse package cost is subtracted from gross savings to show net savings, an ROI multiple, and a payback window. It’s an estimate for comparison — see <a href="/pricing/">FlowFuse pricing</a> for what each product includes, or <a :href="DEMO_URL">book a demo</a> for an exact quote.</p>
           </div>
         </div>
