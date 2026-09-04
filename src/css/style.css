@@ -3908,3 +3908,95 @@ lite-youtube::before {
         transform: none;
     }
 }
+
+/* HMI panel hero (/platform/hmi/). A full-bleed photograph of an industrial panel
+   with a FlowFuse Dashboard projected onto its glass.
+
+   Nothing is ever cropped or clipped here, at any viewport width. An earlier version
+   ran a 2.17:1 crop of the source in a height-capped band, which trimmed the
+   enclosure top and the button row on a wide monitor and read as a broken image.
+   The band is now simply the whole frame at its own aspect ratio, however tall that
+   makes it, and the headline sits above it so the fold is not spent on photograph.
+
+   The dashboard is a separate <img> in a percentage-positioned box over the photo
+   rather than a flattened composite, so it renders at the device's own resolution
+   and the screen contents can be swapped without re-compositing anything. The photo
+   sizes the box, so the percentages are always percentages of the photo itself.
+
+   The percentages are measured, not eyeballed: in the 2816x1536 source the
+   bezel-to-glass brightness step sits at x 739..2075 and y 378..1103, which is
+   26.243% / 24.609% in and 47.443% x 47.201% across. Re-cropping the photo means
+   re-measuring these, which is the trap the capped-band version fell into. */
+.ff-hmi-hero {
+    position: relative;
+    width: 100%;
+}
+
+/* Photo and projection as one block. The photo is an ordinary in-flow image, so the
+   box takes its height from the image itself: there is no aspect-ratio to keep in
+   sync with the file and no object-fit that could crop or stretch it. That is
+   deliberate. The previous version pinned aspect-ratio here and covered the image
+   into it, which meant swapping the photo for one of a different shape silently
+   cropped it, and a stale stylesheet cropped it by 15%. Now a mismatched photo can
+   only misplace the projection, which is visible immediately, rather than quietly
+   trimming the panel. */
+.ff-hmi-panel {
+    position: relative;
+    width: 100%;
+}
+
+/* display:block on both, so no inline baseline gap opens under the photo. */
+.ff-hmi-panel picture {
+    display: block;
+}
+
+.ff-hmi-panel__photo {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.ff-hmi-panel__screen {
+    height: 47.201%;
+    left: 26.243%;
+    overflow: hidden;
+    position: absolute;
+    top: 24.609%;
+    width: 47.443%;
+    /* The display's corners are barely rounded in the photo; a larger radius reads
+       as a phone mockup rather than as an industrial panel. */
+    border-radius: 0.35%;
+    /* Seats the projection under the bezel. Without it the dashboard's own dark
+       background meets the black bezel as a flat join and the screen looks pasted
+       on rather than recessed. */
+    box-shadow: inset 0 0 12px rgb(0 0 0 / 55%);
+}
+
+.ff-hmi-panel__ui {
+    width: 100%;
+    height: 100%;
+    /* The dashboard is 1.917:1 and the glass is 1.843:1, so cover trims a little
+       from each side rather than letterboxing the screen. */
+    object-fit: cover;
+    object-position: center;
+    /* Matches the photo's daylight: an untouched screenshot is darker and more
+       saturated than any screen photographed in that light, which is what makes a
+       projection read as a pasted rectangle. */
+    filter: brightness(1.06) contrast(0.94) saturate(0.92);
+}
+
+/* Reflection on the glass, following the soft diagonal already in the photo. Sits
+   above the dashboard and is inert to pointers so it never eats a click if this
+   panel is ever made interactive. */
+.ff-hmi-panel__glare {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        118deg,
+        rgb(255 255 255 / 13%) 0%,
+        rgb(255 255 255 / 5%) 26%,
+        rgb(255 255 255 / 0%) 52%,
+        rgb(255 255 255 / 3%) 100%
+    );
+}

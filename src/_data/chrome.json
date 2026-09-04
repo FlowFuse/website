@@ -56,6 +56,11 @@
                                 "icon": "dashboard"
                             },
                             {
+                                "label": "HMI",
+                                "href": "/platform/hmi/",
+                                "icon": "screen"
+                            },
+                            {
                                 "label": "Device Agent",
                                 "href": "/platform/device-agent/",
                                 "icon": "device-agent"
@@ -475,6 +480,10 @@
                             {
                                 "label": "FlowFuse Dashboard",
                                 "href": "/platform/dashboard/"
+                            },
+                            {
+                                "label": "HMI",
+                                "href": "/platform/hmi/"
                             },
                             {
                                 "label": "Device Agent",
