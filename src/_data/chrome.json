@@ -48,7 +48,7 @@
                     {
                         "title": "Components",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-6 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-7 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
                                 "label": "FlowFuse Dashboard",
