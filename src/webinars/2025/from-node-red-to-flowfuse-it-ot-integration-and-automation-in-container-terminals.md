@@ -37,7 +37,7 @@ The terminal further enhanced operational visibility by integrating Node-RED flo
 
 The session includes a live demonstration of:
 
-- **FlowFuse Dashboard 2.0** for operational monitoring.
+- **[FlowFuse Dashboard](/platform/dashboard/) 2.0** for operational monitoring.
 - **Automated ticket printing** using TCP nodes for thermal receipt printers.
 - **PDFMaker integration** to generate digital transaction reports.
 

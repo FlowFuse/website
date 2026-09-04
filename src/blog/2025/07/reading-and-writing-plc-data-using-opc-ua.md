@@ -281,7 +281,7 @@ This setup allows you to prepare multiple tag values and write them all at once,
 
 You’ve now mastered the fundamentals of OPC UA integration, connecting to servers, browsing tags, and reading or writing data. These core building blocks lay the foundation for powerful industrial automation.
 
-In real deployments, you will want more than Inject nodes and debug panels. With **FlowFuse Dashboard 2.0**, you can build full operator interfaces, live gauges, control buttons, trend charts, fully connected to your OPC UA data.
+In real deployments, you will want more than Inject nodes and debug panels. With **[FlowFuse Dashboard](/platform/dashboard/) 2.0**, you can build full operator interfaces, live gauges, control buttons, trend charts, fully connected to your OPC UA data.
 
 This guide covered the basics, but OPC UA offers far more. In the next article, we will explore:
 

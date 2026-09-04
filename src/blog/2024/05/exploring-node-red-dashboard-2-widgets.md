@@ -15,7 +15,7 @@ cta:
   description: FlowFuse gives you everything you need to build, secure, and scale Node-RED Dashboard applications, with multi-user support, authentication, and production-ready deployment built in.
 ---
 
-This guide delves into Node-RED Dashboard 2.0 widgets. It is a guide on how to build a Dashboard application, and will cover many of the widgets available today.
+This guide delves into [Node-RED Dashboard 2.0](/platform/dashboard/) widgets. It is a guide on how to build a Dashboard application, and will cover many of the widgets available today.
 
 <!--more-->
 
