@@ -1,10 +1,7 @@
 ---
-title: IT architectures
-navTitle: IT architectures
-navOrder: 5.1
-guide: flowfuse
-slug: it-architectures
-parent: architectures
+title: "IT architectures"
+navTitle: "IT architectures"
+navOrder: 1
 ---
 
 # IT architectures

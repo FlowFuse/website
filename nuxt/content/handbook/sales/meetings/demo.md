@@ -10,10 +10,10 @@ The demo outlined below is tailored for customers who are already familiar with 
 
 ## What the Demo establishes
 
-The Demo is where the customer first meets the **[FlowFuse Application Guide](/application-guide/flowfuse/overview/)**. Its job is to establish two things:
+The Demo is where the customer first meets the **[FlowFuse Application Guide](/docs/application-guide/)**. Its job is to establish two things:
 
-- **Fundamentals** — what FlowFuse is and its core pieces. → [Foundations](/application-guide/flowfuse/foundations/)
-- **App delivery methods** — shipping the whole app by pipeline, or publishing reusable components to the Team Library. → [App delivery methods](/application-guide/flowfuse/app-delivery-methods/)
+- **Fundamentals** — what FlowFuse is and its core pieces. → [Foundations](/docs/application-guide/foundations/)
+- **App delivery methods** — shipping the whole app by pipeline, or publishing reusable components to the Team Library. → [App delivery methods](/docs/application-guide/app-delivery-methods/)
 
 The use case shown in the demo is a **hook**, not the point — ideally something close or relatable to the customer's own problem from [Discovery](/handbook/sales/meetings/discovery/) — used to make the delivery methods concrete. Coming out of the Demo, the customer should understand the **fundamentals** and the **delivery methods**: enough to move into the [Solution](/handbook/sales/meetings/solution/) stage, where the rest of the guide is tailored to their environment.
 

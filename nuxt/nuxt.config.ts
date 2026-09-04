@@ -40,22 +40,6 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Application Guide pages are markdown (`applicationGuideDoc`, a `page` collection).
-// Their routes are largely discoverable by @nuxt/content, but we keep an explicit prerender
-// list for the section index + each page. File names are <slug>.md and match the `slug` field.
-function collectApplicationGuideRoutes(dir: string): string[] {
-    const routes = ['/application-guide/']
-    for (const guide of readdirSync(dir)) {
-        const guideDir = join(dir, guide)
-        if (!statSync(guideDir).isDirectory()) continue
-        for (const file of readdirSync(guideDir)) {
-            if (!file.endsWith('.md')) continue
-            routes.push(`/application-guide/${guide}/${basename(file, '.md').replace(/^\d+-/, '')}/`)
-        }
-    }
-    return routes
-}
-
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
 // so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
 // each file's `tierId` field rather than the filename, since that's the field the page route
@@ -70,7 +54,7 @@ function collectProductRoutes (dir: string): string[] {
     return routes
 }
 
-// Same idea as collectApplicationGuideRoutes above, for customer stories (flat
+// Same idea as collectProductRoutes above, for customer stories (flat
 // src/customer-stories/ dir, see content.config.ts).
 function collectStoryRoutes(dir: string): string[] {
     const routes = ['/customer-stories/']
@@ -216,7 +200,7 @@ export default defineNuxtConfig({
                     { title: 'Home', href: `${site.baseURL}/`, description: 'FlowFuse platform overview' },
                     { title: 'Pricing', href: `${site.baseURL}/pricing/`, description: 'Plans and pricing information' },
                     { title: 'Integrations', href: `${site.baseURL}/integrations/`, description: 'Supported integrations and connectors' },
-                    { title: 'Application Guide', href: `${site.baseURL}/application-guide/`, description: 'Patterns for building FlowFuse applications' },
+                    { title: 'Application Guide', href: `${site.baseURL}/docs/application-guide/`, description: 'Patterns for building FlowFuse applications' },
                     { title: 'Create an account', href: `${site.appURL}/account/create`, description: 'Start a free trial' },
                     { title: 'Terms of Service', href: `${site.baseURL}/terms/` },
                     { title: 'Privacy Policy', href: `${site.baseURL}/privacy-policy/` },
@@ -428,7 +412,6 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
-                    ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
                     '/changelog/',
                     ...changelog.routes,

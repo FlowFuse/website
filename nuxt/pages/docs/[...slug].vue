@@ -32,6 +32,18 @@ const pageTitle = computed(() => page.value?.navTitle || page.value?.title || sl
 // Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
 const plans = useDocsPlans(contentPath)
 
+// /docs is assembled from two repos, so "Edit this page" has to point at whichever one
+// owns the page. Guides overlaid from this repo carry a ready-made `editUrl` (stamped by
+// nuxt/lib/guides-sync.mjs); everything else came from FlowFuse/flowfuse and is addressed
+// by its path within that repo's docs/ tree.
+const editHref = computed(() => {
+    const source = page.value as { editUrl?: string, originalPath?: string } | null
+    if (source?.editUrl) return source.editUrl
+    return source?.originalPath
+        ? `https://github.com/FlowFuse/flowfuse/edit/main/docs/${source.originalPath}`
+        : undefined
+})
+
 useHead({
     title: pageTitle,
     meta: [
@@ -95,9 +107,8 @@ const breadcrumbItems = computed(() => {
             Updated: <RelativeTime :value="page.updated" />
           </div>
           <ClientOnly>
-            <div v-if="page?.originalPath" class="text-xs pb-1 text-right italic max-lg:hidden">
-              <a :href="`https://github.com/FlowFuse/flowfuse/edit/main/docs/${page.originalPath}`"
-                target="_blank" rel="noopener">Edit this page</a>
+            <div v-if="editHref" class="text-xs pb-1 text-right italic max-lg:hidden">
+              <a :href="editHref" target="_blank" rel="noopener">Edit this page</a>
             </div>
           </ClientOnly>
         </div>

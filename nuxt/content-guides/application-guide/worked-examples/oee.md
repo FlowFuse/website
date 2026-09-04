@@ -1,11 +1,9 @@
 ---
-title: OEE, end to end
-navTitle: OEE, end to end
-navOrder: 6.1
-guide: flowfuse
-slug: worked-example
-blurb: "One use case — OEE across three lines — broken into two apps and two shared services, then drawn out end to end."
-parent: worked-examples
+title: "OEE, end to end"
+navTitle: "OEE, end to end"
+navOrder: 1
+meta:
+    description: "One use case — OEE across three lines — broken into two apps and two shared services, then drawn out end to end."
 ---
 
 # OEE, end to end
@@ -24,21 +22,21 @@ It's not one app. OEE takes **two apps** — one at the edge, one in the cloud �
 
 **What it does** — Reads the machine signals on a line and publishes the line's state.
 
-- **Delivery method** — [whole app](/application-guide/flowfuse/app-delivery-methods/): promoted as a snapshot through a pipeline to a Remote Instance on every line.
-- **App pattern** — [hardware app · Configurable App](/application-guide/flowfuse/hardware-apps/): the same build everywhere, with each line's PLC tag names loaded as per-site config.
+- **Delivery method** — [whole app](/docs/application-guide/app-delivery-methods/): promoted as a snapshot through a pipeline to a Remote Instance on every line.
+- **App pattern** — [hardware app · Configurable App](/docs/application-guide/app-delivery-methods/hardware-apps/): the same build everywhere, with each line's PLC tag names loaded as per-site config.
 - **Runs on** — a Remote Instance, one per line.
 - **Why this shape** — the same flows run on every line, right next to the equipment, and keep working if the link drops — but each line's PLC tags differ, so the values are configured per install. Build it once; roll the same version to the whole fleet and point each at its own tags.
-- **See the flow** — [how OEE - Edge Aggregator is built in Node-RED →](/application-guide/node-red/oee-edge-aggregator/)
+- **See the flow** — [how OEE - Edge Aggregator is built in Node-RED →](/docs/node-red-guide/worked-examples/oee-edge-aggregator/)
 
 ### 2 · OEE - Central Dashboard
 
 **What it does** — Subscribes to the line states, computes availability, performance and quality, and presents the live OEE dashboard.
 
-- **Delivery method** — [whole app](/application-guide/flowfuse/app-delivery-methods/): promoted dev → staging → prod as one versioned build.
-- **App pattern** — [software app · Data-Driven App](/application-guide/flowfuse/software-apps/).
+- **Delivery method** — [whole app](/docs/application-guide/app-delivery-methods/): promoted dev → staging → prod as one versioned build.
+- **App pattern** — [software app · Data-Driven App](/docs/application-guide/app-delivery-methods/software-apps/).
 - **Runs on** — a Hosted Instance in the cloud.
 - **Why this shape** — it's a user-facing app driven by live data, with no hardware of its own; one instance serves the whole plant.
-- **See the flow** — [how OEE - Central Dashboard is built in Node-RED →](/application-guide/node-red/oee-central-dashboard/)
+- **See the flow** — [how OEE - Central Dashboard is built in Node-RED →](/docs/node-red-guide/worked-examples/oee-central-dashboard/)
 
 ### Shared services
 

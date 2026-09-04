@@ -154,4 +154,32 @@ export const redirects: Record<string, NitroRouteRules> = {
             { redirect: { to: '/changelog/', statusCode: 301 } },
         ])
     ),
+
+    // The Application Guide moved under /docs when it became part of the documentation
+    // set: its pages are now overlaid onto the docs content tree from
+    // nuxt/content-guides/ (see nuxt/lib/guides-sync.mjs). Every previously published
+    // URL is listed, including the two guides' own index pages, which became the
+    // section indexes of their new docs sections.
+    '/application-guide/': { redirect: { to: '/docs/application-guide/', statusCode: 301 } },
+    '/application-guide/flowfuse/app-delivery-methods/': { redirect: { to: '/docs/application-guide/app-delivery-methods/', statusCode: 301 } },
+    '/application-guide/flowfuse/architectures/': { redirect: { to: '/docs/application-guide/architectures/', statusCode: 301 } },
+    '/application-guide/flowfuse/data-plane/': { redirect: { to: '/docs/application-guide/data-plane/', statusCode: 301 } },
+    '/application-guide/flowfuse/foundations/': { redirect: { to: '/docs/application-guide/foundations/', statusCode: 301 } },
+    '/application-guide/flowfuse/hardware-apps/': { redirect: { to: '/docs/application-guide/app-delivery-methods/hardware-apps/', statusCode: 301 } },
+    '/application-guide/flowfuse/iiot-architectures/': { redirect: { to: '/docs/application-guide/architectures/iiot/', statusCode: 301 } },
+    '/application-guide/flowfuse/it-architectures/': { redirect: { to: '/docs/application-guide/architectures/it/', statusCode: 301 } },
+    '/application-guide/flowfuse/ot-architectures/': { redirect: { to: '/docs/application-guide/architectures/ot/', statusCode: 301 } },
+    '/application-guide/flowfuse/overview/': { redirect: { to: '/docs/application-guide/', statusCode: 301 } },
+    '/application-guide/flowfuse/software-apps/': { redirect: { to: '/docs/application-guide/app-delivery-methods/software-apps/', statusCode: 301 } },
+    '/application-guide/flowfuse/worked-example/': { redirect: { to: '/docs/application-guide/worked-examples/oee/', statusCode: 301 } },
+    '/application-guide/flowfuse/worked-examples/': { redirect: { to: '/docs/application-guide/worked-examples/', statusCode: 301 } },
+    '/application-guide/node-red/design-patterns/': { redirect: { to: '/docs/node-red-guide/patterns/design-patterns/', statusCode: 301 } },
+    '/application-guide/node-red/foundations/': { redirect: { to: '/docs/node-red-guide/foundations/', statusCode: 301 } },
+    '/application-guide/node-red/good-form/': { redirect: { to: '/docs/node-red-guide/patterns/good-form/', statusCode: 301 } },
+    '/application-guide/node-red/handling-data/': { redirect: { to: '/docs/node-red-guide/patterns/handling-data/', statusCode: 301 } },
+    '/application-guide/node-red/oee-central-dashboard/': { redirect: { to: '/docs/node-red-guide/worked-examples/oee-central-dashboard/', statusCode: 301 } },
+    '/application-guide/node-red/oee-edge-aggregator/': { redirect: { to: '/docs/node-red-guide/worked-examples/oee-edge-aggregator/', statusCode: 301 } },
+    '/application-guide/node-red/overview/': { redirect: { to: '/docs/node-red-guide/', statusCode: 301 } },
+    '/application-guide/node-red/patterns/': { redirect: { to: '/docs/node-red-guide/patterns/', statusCode: 301 } },
+    '/application-guide/node-red/worked-examples/': { redirect: { to: '/docs/node-red-guide/worked-examples/', statusCode: 301 } },
 }

@@ -7,6 +7,10 @@ export interface MenuTreeNode {
     title: string
     path: string
     icon?: string
+    // false for a branch whose index page only redirects (see nuxt/lib/docs-nav.mjs): it
+    // still titles, groups and expands the branch, but must not be a link target. `path`
+    // stays set either way - auto-expand below matches on it.
+    link?: boolean
     children?: MenuTreeNode[]
 }
 
@@ -22,7 +26,7 @@ export function buildNavigationMenuItems(nodes: MenuTreeNode[], currentPath: str
         const children = node.children?.length ? buildNavigationMenuItems(node.children, currentPath) : undefined
         return {
             label: node.title,
-            to: node.path,
+            ...(node.link === false ? {} : { to: node.path }),
             icon: node.icon,
             defaultOpen: children ? isOrContains(node.path, currentPath) : undefined,
             children,

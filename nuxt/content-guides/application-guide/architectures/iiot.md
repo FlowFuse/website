@@ -1,10 +1,7 @@
 ---
-title: IIoT architectures
-navTitle: IIoT architectures
-navOrder: 5.3
-guide: flowfuse
-slug: iiot-architectures
-parent: architectures
+title: "IIoT architectures"
+navTitle: "IIoT architectures"
+navOrder: 3
 ---
 
 # IIoT architectures

@@ -1,10 +1,9 @@
 ---
-title: App delivery methods
-navTitle: App delivery methods
-navOrder: 3
-guide: flowfuse
-slug: app-delivery-methods
-blurb: "Two different units of code, delivered two ways. Ship the whole app — a complete, versioned project promoted through environments — or publish one reusable piece — a package the whole team installs and upgrades in one place. Pick by what you're shipping: the app, or a part of it."
+title: "App delivery methods"
+navTitle: "App delivery methods"
+navOrder: 2
+meta:
+    description: "Two different units of code, delivered two ways. Ship the whole app — a complete, versioned project promoted through environments — or publish one reusable piece — a package the whole team installs and upgrades in one place. Pick by what you're shipping: the app, or a part of it."
 ---
 
 # App delivery methods
@@ -40,7 +39,7 @@ Take the whole app — every flow, setting and dependency — as a versioned sna
 - **Dev instance** — where you build and test the project
 - **Remote / Hosted Instances** — the fleet each snapshot rolls out to
 
-**Where config & data live** depends on the kind of app you're shipping — a hardware app tied to a device, or a software app on the platform. See [Hardware apps →](/application-guide/flowfuse/hardware-apps/) and [Software apps →](/application-guide/flowfuse/software-apps/).
+**Where config & data live** depends on the kind of app you're shipping — a hardware app tied to a device, or a software app on the platform. See [Hardware apps →](/docs/application-guide/app-delivery-methods/hardware-apps/) and [Software apps →](/docs/application-guide/app-delivery-methods/software-apps/).
 
 **More phases when you need them** — a pipeline isn't limited to two stages. Add the phases your process needs — an extra staging tier, an approval gate, per-region rollouts — each one a controlled promotion of the same golden build:
 
@@ -100,9 +99,9 @@ Package a single piece of a flow — a block of logic or UI — as a reusable su
 ::::
 
 ::callout{icon="i-lucide-triangle-alert"}
-**Dev and prod in the same team?** Every instance on a team reaches the same shared resources — the Team Broker, FlowFuse Tables, project links, any external Postgres. So a dev instance can read and write the very data prod depends on. **Name and namespace resources per environment** so test data and real data never mix: separate broker topic prefixes, table or schema names, and project-link targets, driven by each instance's env vars. [See the Data plane →](/application-guide/flowfuse/data-plane/)
+**Dev and prod in the same team?** Every instance on a team reaches the same shared resources — the Team Broker, FlowFuse Tables, project links, any external Postgres. So a dev instance can read and write the very data prod depends on. **Name and namespace resources per environment** so test data and real data never mix: separate broker topic prefixes, table or schema names, and project-link targets, driven by each instance's env vars. [See the Data plane →](/docs/application-guide/data-plane/)
 ::
 
 ::callout{icon="i-lucide-git-branch"}
-Dev and prod on **separate servers** — dev in IT or the cloud, prod in OT or air-gapped? A **GitHub bridge** carries the same versioned code across the boundary. That's an architecture decision. [See Architectures →](/application-guide/flowfuse/architectures/)
+Dev and prod on **separate servers** — dev in IT or the cloud, prod in OT or air-gapped? A **GitHub bridge** carries the same versioned code across the boundary. That's an architecture decision. [See Architectures →](/docs/application-guide/architectures/)
 ::
