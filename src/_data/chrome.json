@@ -327,12 +327,17 @@
                     {
                         "title": "Customers",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-2 md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
                                 "label": "Customer Stories",
                                 "href": "/customer-stories/",
                                 "icon": "presentation"
+                            },
+                            {
+                                "label": "ROI Calculator",
+                                "href": "/resources/roi-calculator/",
+                                "icon": "arrow-trending-up"
                             }
                         ]
                     }
