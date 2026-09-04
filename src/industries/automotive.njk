@@ -101,23 +101,27 @@ enterprise:
   linkText: "Review our security and compliance details"
   linkHref: "/platform/security/"
 compliance:
-  heading: "Automotive Compliance & Standards"
+  heading: "Automotive <span class=\"text-indigo-600\">Compliance & Standards</span>"
   subtitle: "The Data Your Audit Asks For, In One Place"
   description: "Automotive carries traceability requirements most industries don't. FlowFuse helps ensure the data an auditor asks for exists and is queryable when they ask for it."
   items:
     - title: "IATF 16949"
-      text: "asks for traceable process records. FlowFuse captures torque, weld, and inspection data at the source and keeps it queryable."
+      icon: "components/icons/certificate.svg"
+      text: "Asks for traceable process records. FlowFuse captures torque, weld, and inspection data at the source and keeps it queryable."
       linkText: "Learn more about how FlowFuse helps with layered process audits"
       linkHref: "/blog/2026/08/layered-process-audit/"
     - title: "VDA 6.3"
-      text: "asks you to follow a part across stations and shifts. FlowFuse replaces disconnected tool logs with one record per unit."
+      icon: "components/icons/clipboard-document-check.svg"
+      text: "Asks you to follow a part across stations and shifts. FlowFuse replaces disconnected tool logs with one record per unit."
       linkText: "Learn more about how FlowFuse enables process audits"
       linkHref: "/blog/2026/08/vda-6.3/"
     - title: "PPAP"
-      text: "needs real production data. FlowFuse pulls it straight from the line instead of reconstructing it after the fact."
+      icon: "components/icons/document-chart-bar.svg"
+      text: "Needs real production data. FlowFuse pulls it straight from the line instead of reconstructing it after the fact."
       linkText: "Learn more about how FlowFuse helps safe launch"
       linkHref: "/blog/2026/08/safe-launch/"
     - title: "Recall defense"
+      icon: "components/icons/shield-check.svg"
       text: "FlowFuse traces a VIN back through every recorded step, fast."
       linkText: "Learn more about how FlowFuse enables automotive traceability"
       linkHref: "/blog/2026/08/automotive-traceability/"
@@ -301,21 +305,24 @@ cta:
 <!-- ============================================================
      AUTOMOTIVE COMPLIANCE & STANDARDS
 ============================================================ -->
-<section class="w-full py-16 md:py-24 px-6 bg-white">
+<section class="w-full py-16 md:py-24 px-6 bg-radial-[ellipse_60%_70%_at_center_bottom] from-blue-200/30 to-blue-200/0">
     <div class="max-w-screen-lg mx-auto">
         <div class="max-w-2xl mb-12">
-            <h2 class="text-gray-700 mb-2">{{ compliance.heading }}</h2>
-            <p class="text-indigo-600 text-xl font-medium mt-0 mb-4">{{ compliance.subtitle }}</p>
+            <h2 class="text-gray-700 mb-2">{{ compliance.heading | safe }}</h2>
+            <p class="text-xl font-medium mt-0 mb-4">{{ compliance.subtitle }}</p>
             <p class="text-gray-600">{{ compliance.description }}</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {% for item in compliance.items %}
-            <a href="{{ item.linkHref }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
-                <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ item.title }}</h3>
+            <a href="{{ item.linkHref }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-5 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                <div class="w-6 h-6 text-indigo-600">
+                    {% include item.icon %}
+                </div>
+                <h3 class="m-0 text-lg font-medium text-gray-800 group-hover:text-indigo-600 transition-colors">{{ item.title }}</h3>
                 <p class="m-0 text-gray-600 text-sm flex-grow">{{ item.text }}</p>
                 <span class="mt-2 text-blue-600 text-sm flex items-center gap-1.5 group-hover:underline">
                     {{ item.linkText }}
-                    {% include "components/icons/arrow-long-right.svg" %}
+                    <span class="shrink-0">{% include "components/icons/arrow-long-right.svg" %}</span>
                 </span>
             </a>
             {% endfor %}
