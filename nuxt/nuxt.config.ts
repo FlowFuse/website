@@ -400,6 +400,10 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
+                    // Static file-based page (pages/getting-started/index.vue). crawlLinks is
+                    // off, so it must be listed explicitly or it never prerenders and the nav
+                    // link to it 404s site-wide.
+                    '/getting-started/',
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
