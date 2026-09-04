@@ -126,3 +126,84 @@ test('findDocsBreadcrumb returns nothing for an unknown path', () => {
     const nav = buildDocsNav([section('/docs/user', { group: 'User Manuals', groupOrder: 1 })])
     assert.deepEqual(findDocsBreadcrumb(nav, '/docs/nonexistent'), [])
 })
+
+// Most section index pages in FlowFuse/flowfuse are `layout: redirect` stubs pointing at
+// the section's introduction page. They still carry the frontmatter the section is
+// grouped, labelled and ranked by.
+function redirectStub (path, { group, groupOrder, order, navTitle } = {}) {
+    return { ...section(path, { group, groupOrder, order, navTitle }), redirect: { to: path + '/introduction' } }
+}
+
+test('a redirect stub still groups, titles and ranks the section its children create', () => {
+    const nav = buildDocsNav([
+        redirectStub('/docs/user', { group: 'User Manuals', groupOrder: 1, order: 1, navTitle: 'Using FlowFuse' }),
+        section('/docs/user/introduction', { order: 1, navTitle: 'Introduction' }),
+        section('/docs/user/concepts', { order: 2, navTitle: 'Concepts' }),
+    ])
+
+    assert.deepEqual(names(nav), ['User Manuals'])
+    const user = nav[0].children[0]
+    assert.equal(user.title, 'Using FlowFuse')
+    assert.equal(user.path, '/docs/user')
+    assert.deepEqual(user.children.map(c => c.title), ['Introduction', 'Concepts'])
+})
+
+test('a redirect stub is not a link target, so the sidebar never points at a 301', () => {
+    const nav = buildDocsNav([
+        redirectStub('/docs/user', { group: 'User Manuals', groupOrder: 1, navTitle: 'Using FlowFuse' }),
+        section('/docs/user/introduction', { order: 1, navTitle: 'Introduction' }),
+    ])
+
+    assert.equal(nav[0].children[0].link, false)
+    // A real page in the same position stays linkable.
+    const real = buildDocsNav([section('/docs/quick-start', { group: 'G', groupOrder: 1 })])
+    assert.notEqual(real[0].children[0].link, false)
+})
+
+test('a group whose sections are all redirect stubs still renders', () => {
+    // Device Agent, FlowFuse Cloud and Contributing each had every member stubbed, so the
+    // group came out empty and was filtered away entirely.
+    const nav = buildDocsNav([
+        redirectStub('/docs/device-agent', { group: 'Device Agent', groupOrder: 2, order: 1, navTitle: 'Device Agent' }),
+        section('/docs/device-agent/quickstart', { order: 1, navTitle: 'Quickstart' }),
+        redirectStub('/docs/hardware', { group: 'Device Agent', groupOrder: 2, order: 2, navTitle: 'Hardware Guides' }),
+        section('/docs/hardware/raspbian', { order: 1, navTitle: 'Raspberry Pi' }),
+    ])
+
+    assert.deepEqual(names(nav), ['Device Agent'])
+    assert.deepEqual(nav[0].children.map(c => c.title), ['Device Agent', 'Hardware Guides'])
+})
+
+test('a stubbed section no longer falls into Other titled by its path segment', () => {
+    const nav = buildDocsNav([
+        redirectStub('/docs/admin', { group: 'Self-Hosted', groupOrder: 4, order: 4, navTitle: 'Administering FlowFuse' }),
+        section('/docs/admin/introduction', { order: 1, navTitle: 'Introduction' }),
+        section('/docs/quick-start', { group: 'Self-Hosted', groupOrder: 4, order: 1, navTitle: 'Quick Start' }),
+    ])
+
+    assert.deepEqual(names(nav), ['Self-Hosted'])
+    assert.deepEqual(nav[0].children.map(c => c.title), ['Quick Start', 'Administering FlowFuse'])
+})
+
+test('a redirect stub with no pages beneath it contributes nothing', () => {
+    // docs/admin/licensing.md and docs/community-support.md are leaf redirects with no
+    // children; they should not appear as dead, unclickable labels.
+    const nav = buildDocsNav([
+        section('/docs/debugging', { group: 'Support', groupOrder: 5, navTitle: 'Debugging' }),
+        redirectStub('/docs/community-support', { group: 'Support', groupOrder: 5 }),
+    ])
+
+    assert.deepEqual(nav[0].children.map(c => c.title), ['Debugging'])
+})
+
+test('breadcrumbs through a stubbed section use its real title', () => {
+    const nav = buildDocsNav([
+        redirectStub('/docs/user', { group: 'User Manuals', groupOrder: 1, navTitle: 'Using FlowFuse' }),
+        section('/docs/user/concepts', { order: 1, navTitle: 'Concepts' }),
+    ])
+
+    assert.deepEqual(
+        findDocsBreadcrumb(nav, '/docs/user/concepts').map(c => c.title),
+        ['Using FlowFuse', 'Concepts'],
+    )
+})
