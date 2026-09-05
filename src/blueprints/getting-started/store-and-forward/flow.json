@@ -1,0 +1,1045 @@
+[
+    {
+        "id": "6888ddc02c4199d0",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "name": "README",
+        "info": "# Store and Forward\n\nNever lose data due to network interruptions again. This blueprint provides an enterprise-grade solution for buffering data locally when network connectivity becomes unreliable or intermittent. By automatically storing data in a local SQLite database during transmission failures—and seamlessly forwarding it when connectivity returns—you ensure complete data integrity across industrial applications, remote sensors, and edge devices.\n\n## How It Works\n\nThe blueprint implements an intelligent buffering system designed to handle real-world connectivity challenges:\n\n### 1. Local Database Initialization\n\nOn startup, the system automatically creates a SQLite database table to store buffered messages. Each entry includes comprehensive metadata: **timestamp, payload, and send status**.\n\n### 2. Data Collection and Buffering\n\nAll incoming data is immediately stored in the local database, creating a resilient safety net. The example flow includes a simulated sensor that generates realistic machine measurements (temperature, pressure, vibration, RPM). Simply replace this with your actual data source to get started.\n\n### 3. Connection Monitoring\n\nThe system actively monitors internet connectivity by pinging a remote server every 5 seconds. The moment connection is restored, it automatically triggers the data forwarding process—no manual intervention required.\n\n### 4. Smart Data Forwarding\n\nUnsent records are intelligently retrieved from the buffer in optimized batches of 50 and published via project nodes (though you can easily adapt this to use HTTP requests, webhooks, MQTT, or other protocols). Each buffered message is sent to the destination. Successfully transmitted records are marked as sent and then cleanly removed from the buffer, keeping your database lean and efficient.\n\n### 5. Error Handling and Retry Logic\n\nBuilt-in resilience ensures nothing falls through the cracks. The system captures transmission errors and connection status changes. When transmission fails, data remains safely in the buffer, ready for the next transmission attempt.\n\n## Prerequisites\n\nTo get started, you'll need:\n\n* A FlowFuse account with Starter, Pro, or Enterprise tier access.\n\n## Setting Up the Blueprint on a Hosted Instance\n\n1. To get started with the blueprint, click the **Deploy** button on the right side. This will redirect you to the FlowFuse instance-creation interface with the blueprint pre-selected.\n2. Select the appropriate settings based on your preferences, such as instance type, application, and Node-RED version.\n3. Click the **Create Instance** button.\n\nOnce the instance is successfully created, open the Node-RED editor and you will see the blueprint flow along with all necessary node packages installed.\n\n## Setting Up the Blueprint on a Remote Instance\n\n1. To use this blueprint on a remote instance, open the Node-RED editor for your remote instance.\n2. Open the **Main Menu** in the top-right corner, select **Import**, choose **Blueprints** from the left, select your blueprint, and click **Import**.\n\n## Getting Started\n\n### 1. Replace the Simulated Sensor\n\nThe flow includes a simulated sensor that generates random machine data every 5 seconds.\n\n1. Locate the **Simulate Sensor** inject node in the flow.\n2. Delete it and connect your actual data source—sensors, MQTT subscriptions, HTTP requests, database queries, or whatever you're working with.\n3. Make sure your data flows into the **Stringify JSON** node, which node converts your data object into a text string for storage. If your data source already provides a JSON string (not an object), you must delete this node.\n\n### 2. Choose Your Output\n\nThis blueprint uses project nodes as an example. Replace the project nodes with whatever you need—HTTP requests, webhooks, MQTT outputs, database writes, etc.—and configure them accordingly. The buffering logic doesn't depend on the protocol. It stores your data locally and pushes it through whatever output you configure.\n\n### 3. Deploy and Test\n\n1. Click the **Deploy** button.\n2. Trigger your data source and watch the Debug panel to see data flowing through.\n3. Verify your data reaches the destination (MQTT broker, API, database, etc.).\n\nTo test the buffering:\n\n1. Turn off internet access on the Store and Forward instance.\n2. Generate some data—it should store in the local buffer.\n3. Restore your connection and watch the buffered data automatically forward.\n\n### 4. Adjusting Intervals (Optional)\n\nIf you want to change how often the system checks for connectivity or sends buffered data:\n\n* **Connection check interval**: Open the **Ping** node and change the interval. The default is 5 seconds, but you can set this higher or lower based on your needs.\n\n### Understanding Error Detection and Successful Transmission\n\nThe flow uses Catch and Status nodes to detect failures. For confirming successful data transmission when replacing the project-out node:\n\n* If you use an MQTT Out node: Add a corresponding MQTT In node subscribed to the same topic to verify the message was received by the broker.\n* If you're using HTTP, check the response status code. Any **2xx** value indicates successful transmission.",
+        "x": 340,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "815f738d2e25730a",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 170,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5b1c32e1157fdcb8",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "name": "",
+        "style": {
+            "fill": "#ffdf7f",
+            "fill-opacity": "0.77",
+            "label": true
+        },
+        "nodes": [
+            "67f903a77068f320",
+            "1d41b61aa64fa04f",
+            "ce2afb37be53562d",
+            "9d0569a3e1c78c7c",
+            "d7300faef7bff10a",
+            "2b2f4ad4d9f49e7c",
+            "1a28c64c265d7d48"
+        ],
+        "x": 28,
+        "y": 113,
+        "w": 1204,
+        "h": 1234
+    },
+    {
+        "id": "67f903a77068f320",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "g": "5b1c32e1157fdcb8",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "43539e28ccca447f",
+            "1e909b13f0ad19da",
+            "df958473a30ec156",
+            "27fc5dd81cfabcfe"
+        ],
+        "x": 54,
+        "y": 139,
+        "w": 592,
+        "h": 142
+    },
+    {
+        "id": "43539e28ccca447f",
+        "type": "sqlite",
+        "z": "d7101f3a4d45deed",
+        "g": "67f903a77068f320",
+        "mydb": "a767229463386b6a",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS data_buffer (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    timestamp INTEGER NOT NULL,\n    sent INTEGER DEFAULT 0,\n    payload TEXT,\n    created_at INTEGER DEFAULT (strftime('%s','now') * 1000)\n);\n",
+        "name": "Create Table ",
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "df958473a30ec156"
+            ]
+        ]
+    },
+    {
+        "id": "1e909b13f0ad19da",
+        "type": "inject",
+        "z": "d7101f3a4d45deed",
+        "g": "67f903a77068f320",
+        "name": "Trigger on deploy",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "43539e28ccca447f"
+            ]
+        ]
+    },
+    {
+        "id": "df958473a30ec156",
+        "type": "debug",
+        "z": "d7101f3a4d45deed",
+        "g": "67f903a77068f320",
+        "name": "Result",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "27fc5dd81cfabcfe",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "g": "67f903a77068f320",
+        "name": "Creates SQLite data_buffer table on startup to store data locally",
+        "info": "",
+        "x": 350,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a767229463386b6a",
+        "type": "sqlitedb",
+        "db": "sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "1d41b61aa64fa04f",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "g": "5b1c32e1157fdcb8",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "5e77bb4667360157",
+            "44271f2f8d96ec77",
+            "40fa32054508b242",
+            "3dc5e8cf5574eb63",
+            "1d44f9e73f2c5aca"
+        ],
+        "x": 54,
+        "y": 299,
+        "w": 752,
+        "h": 142
+    },
+    {
+        "id": "5e77bb4667360157",
+        "type": "inject",
+        "z": "d7101f3a4d45deed",
+        "g": "1d41b61aa64fa04f",
+        "name": "Simulate Sensor",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\t   \"device_id\": \"machine_A12\",\t   \"location\": \"factory_floor_2\",\t   \"measurements\": {\t       \"temperature\": 45 + $random() * 30,\t       \"pressure\": 100 + $random() * 50,\t       \"vibration\": $random() * 10,\t       \"rpm\": 1500 + $random() * 500     \t   },\t   \"timestamp\": $moment() \t}",
+        "payloadType": "jsonata",
+        "x": 190,
+        "y": 400,
+        "wires": [
+            [
+                "40fa32054508b242"
+            ]
+        ]
+    },
+    {
+        "id": "44271f2f8d96ec77",
+        "type": "sqlite",
+        "z": "d7101f3a4d45deed",
+        "g": "1d41b61aa64fa04f",
+        "mydb": "a767229463386b6a",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO data_buffer (timestamp, payload,sent) \nVALUES ($ts, $payload,0);",
+        "name": "Store Data",
+        "x": 710,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "40fa32054508b242",
+        "type": "json",
+        "z": "d7101f3a4d45deed",
+        "g": "1d41b61aa64fa04f",
+        "name": "stringify JSON",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "3dc5e8cf5574eb63"
+            ]
+        ]
+    },
+    {
+        "id": "3dc5e8cf5574eb63",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "1d41b61aa64fa04f",
+        "name": "Set Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$ts",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "params.$payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 400,
+        "wires": [
+            [
+                "44271f2f8d96ec77"
+            ]
+        ]
+    },
+    {
+        "id": "1d44f9e73f2c5aca",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "g": "1d41b61aa64fa04f",
+        "name": "Simulates sensor data and stores in buffer (replace inject with real data input)",
+        "info": "",
+        "x": 390,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ce2afb37be53562d",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "g": "5b1c32e1157fdcb8",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "604b5b6896522e73",
+            "b205b7049527bc3e",
+            "75a8d56bf335f69d",
+            "c6a5d229f3f45dae",
+            "fbfccd18d8ba554e",
+            "651dacdf94d4fdb0",
+            "46d9dd88a6d66a31"
+        ],
+        "x": 54,
+        "y": 459,
+        "w": 1142,
+        "h": 182
+    },
+    {
+        "id": "604b5b6896522e73",
+        "type": "ping",
+        "z": "d7101f3a4d45deed",
+        "g": "ce2afb37be53562d",
+        "protocol": "Automatic",
+        "mode": "timed",
+        "name": "Connection Check",
+        "host": "flowfuse.com",
+        "timer": "5",
+        "inputs": 0,
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "b205b7049527bc3e"
+            ]
+        ]
+    },
+    {
+        "id": "b205b7049527bc3e",
+        "type": "switch",
+        "z": "d7101f3a4d45deed",
+        "g": "ce2afb37be53562d",
+        "name": "If Connected To Internet?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 390,
+        "y": 580,
+        "wires": [
+            [
+                "651dacdf94d4fdb0"
+            ],
+            [
+                "75a8d56bf335f69d"
+            ]
+        ]
+    },
+    {
+        "id": "75a8d56bf335f69d",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "ce2afb37be53562d",
+        "name": "Set Network Online",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::networkOnline",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 600,
+        "wires": [
+            [
+                "46d9dd88a6d66a31"
+            ]
+        ]
+    },
+    {
+        "id": "c6a5d229f3f45dae",
+        "type": "link out",
+        "z": "d7101f3a4d45deed",
+        "g": "ce2afb37be53562d",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "289987b450f7da79"
+        ],
+        "x": 1155,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "fbfccd18d8ba554e",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "g": "ce2afb37be53562d",
+        "name": "Pings cloud every 10s, resets failure flag when connection restored and there is no error",
+        "info": "",
+        "x": 420,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "651dacdf94d4fdb0",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "ce2afb37be53562d",
+        "name": "Set Network Offline",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::networkOnline",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46d9dd88a6d66a31",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "ce2afb37be53562d",
+        "name": "Reset Flow Errror Flag",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::flowError",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 600,
+        "wires": [
+            [
+                "c6a5d229f3f45dae"
+            ]
+        ]
+    },
+    {
+        "id": "9d0569a3e1c78c7c",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "g": "5b1c32e1157fdcb8",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "7b9a453533600502",
+            "e4218bd2794880fc",
+            "16dfa5f4b1154055",
+            "155a857658e17c1b",
+            "c677e4829fb5a736",
+            "289987b450f7da79",
+            "c8036f584952f0eb"
+        ],
+        "x": 54,
+        "y": 659,
+        "w": 1152,
+        "h": 142
+    },
+    {
+        "id": "7b9a453533600502",
+        "type": "sqlite",
+        "z": "d7101f3a4d45deed",
+        "g": "9d0569a3e1c78c7c",
+        "mydb": "a767229463386b6a",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM data_buffer \nWHERE sent = 0 \nORDER BY timestamp ASC \nLIMIT 50",
+        "name": "Retrieve unsent records",
+        "x": 250,
+        "y": 760,
+        "wires": [
+            [
+                "e4218bd2794880fc"
+            ]
+        ]
+    },
+    {
+        "id": "e4218bd2794880fc",
+        "type": "split",
+        "z": "d7101f3a4d45deed",
+        "g": "9d0569a3e1c78c7c",
+        "name": "Split Array",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 450,
+        "y": 760,
+        "wires": [
+            [
+                "16dfa5f4b1154055"
+            ]
+        ]
+    },
+    {
+        "id": "16dfa5f4b1154055",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "9d0569a3e1c78c7c",
+        "name": "Prepare Forward Message",
+        "rules": [
+            {
+                "t": "set",
+                "p": "record_id",
+                "pt": "msg",
+                "to": "payload.id",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 760,
+        "wires": [
+            [
+                "155a857658e17c1b"
+            ]
+        ]
+    },
+    {
+        "id": "155a857658e17c1b",
+        "type": "json",
+        "z": "d7101f3a4d45deed",
+        "g": "9d0569a3e1c78c7c",
+        "name": "JSON String to JSON Object",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 920,
+        "y": 760,
+        "wires": [
+            [
+                "c677e4829fb5a736"
+            ]
+        ]
+    },
+    {
+        "id": "c677e4829fb5a736",
+        "type": "link out",
+        "z": "d7101f3a4d45deed",
+        "g": "9d0569a3e1c78c7c",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "778585f59c75f46d"
+        ],
+        "x": 1165,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "289987b450f7da79",
+        "type": "link in",
+        "z": "d7101f3a4d45deed",
+        "g": "9d0569a3e1c78c7c",
+        "name": "link in 2",
+        "links": [
+            "c6a5d229f3f45dae"
+        ],
+        "x": 95,
+        "y": 760,
+        "wires": [
+            [
+                "7b9a453533600502"
+            ]
+        ]
+    },
+    {
+        "id": "c8036f584952f0eb",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "g": "9d0569a3e1c78c7c",
+        "name": "Retrieves unsent records (50 at a time) and prepares for sending",
+        "info": "",
+        "x": 350,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "d7300faef7bff10a",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "g": "5b1c32e1157fdcb8",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "aa504d6586d21b6f",
+            "83a615fda2a1aa29",
+            "99fd972375b93e72",
+            "9eebb1b389aac450",
+            "f19f3c687dc5a9c8",
+            "adc3bf7842ac58c5"
+        ],
+        "x": 54,
+        "y": 819,
+        "w": 732,
+        "h": 182
+    },
+    {
+        "id": "aa504d6586d21b6f",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "d7300faef7bff10a",
+        "name": "Set Network Failure Flag",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::networkOnline",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "83a615fda2a1aa29",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "g": "d7300faef7bff10a",
+        "name": "Catches errors and status, sets failure flag",
+        "info": "",
+        "x": 280,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "99fd972375b93e72",
+        "type": "catch",
+        "z": "d7101f3a4d45deed",
+        "g": "d7300faef7bff10a",
+        "name": "Catch errors",
+        "scope": null,
+        "uncaught": false,
+        "x": 150,
+        "y": 920,
+        "wires": [
+            [
+                "adc3bf7842ac58c5"
+            ]
+        ]
+    },
+    {
+        "id": "9eebb1b389aac450",
+        "type": "status",
+        "z": "d7101f3a4d45deed",
+        "g": "d7300faef7bff10a",
+        "name": "Check Project Out Node Status",
+        "scope": [
+            "5ad70beb337318e1",
+            "d310835b74b8faaf"
+        ],
+        "x": 210,
+        "y": 960,
+        "wires": [
+            [
+                "f19f3c687dc5a9c8"
+            ]
+        ]
+    },
+    {
+        "id": "f19f3c687dc5a9c8",
+        "type": "switch",
+        "z": "d7101f3a4d45deed",
+        "g": "d7300faef7bff10a",
+        "name": "Disconnected?",
+        "property": "status.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "disconnected",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 960,
+        "wires": [
+            [
+                "aa504d6586d21b6f"
+            ]
+        ]
+    },
+    {
+        "id": "adc3bf7842ac58c5",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "d7300faef7bff10a",
+        "name": "Set Flow Error Flag",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::flowError",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b2f4ad4d9f49e7c",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "g": "5b1c32e1157fdcb8",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "ef06b0014b78803e",
+            "44e890c2a36b4cc4",
+            "aa029a6aea453b6f",
+            "5ad70beb337318e1",
+            "778585f59c75f46d",
+            "04cbee9185e59b15"
+        ],
+        "x": 54,
+        "y": 1019,
+        "w": 1012,
+        "h": 142
+    },
+    {
+        "id": "ef06b0014b78803e",
+        "type": "switch",
+        "z": "d7101f3a4d45deed",
+        "g": "2b2f4ad4d9f49e7c",
+        "name": "If network online?",
+        "property": "#:(persistent)::networkOnline",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 1120,
+        "wires": [
+            [
+                "aa029a6aea453b6f"
+            ]
+        ]
+    },
+    {
+        "id": "44e890c2a36b4cc4",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "g": "2b2f4ad4d9f49e7c",
+        "name": "Publishes buffered records",
+        "info": "",
+        "x": 230,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "aa029a6aea453b6f",
+        "type": "switch",
+        "z": "d7101f3a4d45deed",
+        "g": "2b2f4ad4d9f49e7c",
+        "name": "If no errors?",
+        "property": "#:(persistent)::flowError",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 1120,
+        "wires": [
+            [
+                "04cbee9185e59b15"
+            ]
+        ]
+    },
+    {
+        "id": "5ad70beb337318e1",
+        "type": "project link out",
+        "z": "d7101f3a4d45deed",
+        "g": "2b2f4ad4d9f49e7c",
+        "name": "machine_A12 measurements",
+        "mode": "link",
+        "broadcast": true,
+        "project": "",
+        "topic": "acme_manufacturing/plant_01/floor_2/cell_a/machine_A12/measurements",
+        "x": 920,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "778585f59c75f46d",
+        "type": "link in",
+        "z": "d7101f3a4d45deed",
+        "g": "2b2f4ad4d9f49e7c",
+        "name": "link in 1",
+        "links": [
+            "c677e4829fb5a736"
+        ],
+        "x": 95,
+        "y": 1120,
+        "wires": [
+            [
+                "ef06b0014b78803e"
+            ]
+        ]
+    },
+    {
+        "id": "04cbee9185e59b15",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "2b2f4ad4d9f49e7c",
+        "name": "Add Record ID to Payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.record_id",
+                "pt": "msg",
+                "to": "record_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 1120,
+        "wires": [
+            [
+                "5ad70beb337318e1"
+            ]
+        ]
+    },
+    {
+        "id": "1a28c64c265d7d48",
+        "type": "group",
+        "z": "d7101f3a4d45deed",
+        "g": "5b1c32e1157fdcb8",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "84a6552728dcf4a8",
+            "0be76f662c2be455",
+            "d3b91e137e579335",
+            "d310835b74b8faaf",
+            "df6f39a96e497dde"
+        ],
+        "x": 54,
+        "y": 1179,
+        "w": 952,
+        "h": 142
+    },
+    {
+        "id": "84a6552728dcf4a8",
+        "type": "sqlite",
+        "z": "d7101f3a4d45deed",
+        "g": "1a28c64c265d7d48",
+        "mydb": "a767229463386b6a",
+        "sqlquery": "prepared",
+        "sql": "DELETE FROM data_buffer\nWHERE id = $record_id\nAND sent = 1;\n",
+        "name": "Delete sent record",
+        "x": 890,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0be76f662c2be455",
+        "type": "change",
+        "z": "d7101f3a4d45deed",
+        "g": "1a28c64c265d7d48",
+        "name": "Set Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "params.$record_id",
+                "pt": "msg",
+                "to": "payload.record_id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 1280,
+        "wires": [
+            [
+                "d3b91e137e579335"
+            ]
+        ]
+    },
+    {
+        "id": "d3b91e137e579335",
+        "type": "sqlite",
+        "z": "d7101f3a4d45deed",
+        "g": "1a28c64c265d7d48",
+        "mydb": "a767229463386b6a",
+        "sqlquery": "prepared",
+        "sql": "UPDATE data_buffer \nSET sent = 1\nWHERE id = $record_id;",
+        "name": "Mark record as sent",
+        "x": 640,
+        "y": 1280,
+        "wires": [
+            [
+                "84a6552728dcf4a8"
+            ]
+        ]
+    },
+    {
+        "id": "d310835b74b8faaf",
+        "type": "project link in",
+        "z": "d7101f3a4d45deed",
+        "g": "1a28c64c265d7d48",
+        "name": "machine_A12 measurements",
+        "project": "all",
+        "broadcast": true,
+        "topic": "acme_manufacturing/plant_01/floor_2/cell_a/machine_A12/measurements",
+        "x": 200,
+        "y": 1280,
+        "wires": [
+            [
+                "0be76f662c2be455"
+            ]
+        ]
+    },
+    {
+        "id": "df6f39a96e497dde",
+        "type": "comment",
+        "z": "d7101f3a4d45deed",
+        "g": "1a28c64c265d7d48",
+        "name": "Marks records as sent and removes successfully sent entries",
+        "info": "",
+        "x": 340,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "93334c67a3c3e66b",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-sqlite": "1.1.1",
+            "node-red-node-ping": "0.3.3",
+            "@flowfuse/nr-project-nodes": "0.7.7"
+        }
+    }
+]
