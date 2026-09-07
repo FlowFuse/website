@@ -97,4 +97,6 @@ Finally, **hard refresh** in the environment you just enabled to pull the latest
 ## Using feature flags in code
 
 Once the flag exists in PostHog, it gets wired into the frontend by adding a
-`posthogKey` to the feature's entry in `FEATURE_CONFIGS`.
+`posthogKey` to the feature's entry in `FEATURE_CONFIGS`. For the full details,
+see [PostHog flags](/handbook/engineering/frontend/ui-conventions/feature-flags/#posthog-flags)
+in the frontend Feature Flags guide.
