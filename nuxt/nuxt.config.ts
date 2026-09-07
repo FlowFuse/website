@@ -422,6 +422,10 @@ export default defineNuxtConfig({
                     '/support',
                     '/professional-services',
                     '/dashboard/tags-and-canvas-feedback',
+                    // Listed for the same reason as /ai above. Left out, /hmi is missing
+                    // from nuxt/dist, and the link check then fails on every page in the
+                    // build, since the nav links to it from all of them.
+                    '/hmi',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
