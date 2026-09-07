@@ -26,7 +26,21 @@ export default defineContentConfig({
         }),
         docs: defineCollection({
             type: 'page',
-            source: 'docs/**/*.md',
+            // Two sources, not one directory: FlowFuse/flowfuse's docs land in
+            // nuxt/content/docs (materialized there by nuxt/lib/docs-sync.mjs, which
+            // still needs a real git clone for per-file history - see that file), and
+            // this repo's own guides are read straight out of nuxt/content-guides/ with
+            // no copy step. `prefix: 'docs'` puts the second source's pages at the same
+            // `docs/...` path the first source's `docs/**/*.md` glob derives from its own
+            // directory name, so both land under /docs/ and a path collision between them
+            // fails the build (the `docs` collection's `id` is a primary key). The
+            // `content:file:beforeParse` hook in nuxt.config.ts stamps guide pages with
+            // `editUrl`/`updated` frontmatter as they're read; nuxt/lib/guides-sync.mjs
+            // only still copies the guides' non-markdown assets to public/docs.
+            source: [
+                { include: 'docs/**/*.md' },
+                { cwd: join(__dirname, 'content-guides'), include: '**/*.md', prefix: 'docs' },
+            ],
             schema: z.object({
                 navTitle: z.string().optional(),
                 // The browser/search-result title, when the sidebar label is too short to
@@ -40,7 +54,7 @@ export default defineContentConfig({
                 navGroupOrder: z.number().optional(),
                 navOrder: z.number().optional(),
                 originalPath: z.string().optional(),
-                // Set only on pages overlaid from this repo's nuxt/content-guides/ tree
+                // Set only on pages read from this repo's nuxt/content-guides/ source
                 // (see nuxt/lib/guides-sync.mjs). `originalPath` marks a page imported
                 // from FlowFuse/flowfuse and the docs page builds a flowfuse edit link
                 // from it; a page carrying `editUrl` links back here instead.

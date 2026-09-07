@@ -1,29 +1,35 @@
-// Overlays the website-authored guides onto the docs content tree.
+// Wires the website-authored guides into the docs content tree.
 //
 // /docs is assembled from two repos. FlowFuse/flowfuse owns the product documentation -
 // how-to and reference, versioned with the code it describes - and docs-sync.mjs copies
-// it in. This module copies the second source: the guides authored in *this* repo under
-// nuxt/content-guides/, which explain how to shape an application rather than how to
-// drive a feature, and so are not tied to a product release.
+// it into nuxt/content/docs. This module covers the second source: the guides authored in
+// *this* repo under nuxt/content-guides/, which explain how to shape an application rather
+// than how to drive a feature, and so are not tied to a product release.
 //
-// Both land in nuxt/content/docs, so @nuxt/content sees a single `docs` collection and
-// the sidebar, breadcrumbs, prerender list, sitemap and search treat the two sources
-// identically. nuxt/content/docs is gitignored and wiped on every sync, which is why the
-// guides cannot simply be authored there.
+// Unlike the flowfuse docs, the guides are already MDC and already live in this repo, so
+// they do not need copying to become a `docs` collection page: nuxt/content.config.ts
+// declares nuxt/content-guides/ as a second source of the `docs` collection (its own `cwd`,
+// prefixed onto the `docs/` path so it lands next to the flowfuse pages), and the
+// `content:file:beforeParse` hook in nuxt.config.ts calls injectGuideFrontmatter below to
+// stamp each guide page with the same `editUrl`/`updated` provenance this module used to
+// write by hand. What is left here is what a content-collection source cannot do by
+// itself: copying the guides' non-markdown assets (images, mostly) to nuxt/public/docs so
+// they resolve at runtime, and failing the build if a guide's path would collide with a
+// page FlowFuse/flowfuse already publishes.
 //
 // Kept free of Nuxt imports, like docs-sync.mjs, so `scripts/sync_docs.mjs` can run it
 // before `npm install` and `node --test` can exercise it directly.
 
 import { execFileSync } from 'node:child_process'
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
-import { basename, dirname, join } from 'node:path'
+import { cpSync, existsSync, mkdirSync, readdirSync, rmSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 
 // Repo-relative, so it can be both the source directory and the tail of the edit URL.
 export const GUIDES_SOURCE = 'nuxt/content-guides'
 
-const EDIT_BASE = 'https://github.com/FlowFuse/website/edit/main'
+export const EDIT_BASE = 'https://github.com/FlowFuse/website/edit/main'
 
-function gitOutput (cwd, args) {
+export function gitOutput (cwd, args) {
     try {
         // stderr is discarded rather than inherited: outside a git checkout (a unit test,
         // a tarball build) git's "not a git repository" is expected and handled below.
@@ -31,21 +37,6 @@ function gitOutput (cwd, args) {
     } catch {
         return ''
     }
-}
-
-/**
- * Where one guide file lands. Same rules docs-sync uses for the flowfuse tree - markdown
- * becomes a page, README.md becomes its section index, anything else is a public asset -
- * so a directory of guides nests in the sidebar exactly like a directory of docs.
- */
-export function destinationFor (relPath, contentDocsDir, publicDocsDir) {
-    const name = basename(relPath)
-    const dir = dirname(relPath)
-    const prefix = dir === '.' ? '' : dir
-
-    return name.endsWith('.md')
-        ? join(contentDocsDir, prefix, name === 'README.md' ? 'index.md' : name)
-        : join(publicDocsDir, prefix, name)
 }
 
 /**
@@ -73,36 +64,32 @@ export function injectFrontmatter (content, { editUrl, updated }) {
 }
 
 /**
- * Copy one guide file into the docs tree.
- *
- * Deliberately does NOT run docs-markdown's processMarkdown: that exists to repair
- * Eleventy-era markup in the flowfuse docs (Nunjucks callouts, inline custom-element
- * scripts, blank lines inside raw HTML blocks). The guides are authored as MDC against
- * the components in nuxt/components/content/, and those transforms would mangle them.
+ * Called from the `content:file:beforeParse` hook for every file @nuxt/content reads out
+ * of the content-guides source. `absPath` is that hook's `file.path` - the real path on
+ * disk, which is what lets this run entirely inside the hook rather than needing a
+ * separate copy step: the git history it reads is this repo's own, at the guide's real
+ * location, not a location this module chose.
  */
-export function writeGuideFile ({ guidesDir, repoRoot, contentDocsDir, publicDocsDir, relPath }) {
-    const srcPath = join(guidesDir, relPath)
-    const destPath = destinationFor(relPath, contentDocsDir, publicDocsDir)
-
-    mkdirSync(dirname(destPath), { recursive: true })
-
-    if (!relPath.endsWith('.md')) {
-        cpSync(srcPath, destPath)
-        return destPath
-    }
-
-    const sourcePath = `${GUIDES_SOURCE}/${relPath}`
-    // Argument array, not a shell string: the path comes from filenames on disk, so
-    // interpolating it into a shell command would be an injection path.
+export function injectGuideFrontmatter (content, { repoRoot, absPath }) {
+    const guidesDir = join(repoRoot, GUIDES_SOURCE)
+    const sourcePath = `${GUIDES_SOURCE}/${stripPrefix(guidesDir, absPath)}`
     const updated = gitOutput(repoRoot, ['log', '-1', '--pretty=format:%ci', '--', sourcePath])
 
-    const raw = readFileSync(srcPath, 'utf8')
-    writeFileSync(destPath, injectFrontmatter(raw, {
+    return injectFrontmatter(content, {
         editUrl: `${EDIT_BASE}/${sourcePath}`,
         updated,
-    }), 'utf8')
+    })
+}
 
-    return destPath
+/** Whether a `content:file:beforeParse` file came from the guides source. */
+export function isGuidePath (absPath, repoRoot) {
+    const guidesDir = join(repoRoot, GUIDES_SOURCE)
+    return absPath === guidesDir || absPath.startsWith(guidesDir + '/')
+}
+
+// The guide's path under GUIDES_SOURCE, with no leading slash.
+function stripPrefix (from, to) {
+    return to.startsWith(from) ? to.slice(from.length).replace(/^\/+/, '') : to
 }
 
 /** Every file under the guides tree, as paths relative to it. */
@@ -121,55 +108,60 @@ export function listGuideFiles (guidesDir, relDir = '') {
 }
 
 /**
- * Copy the whole guides tree into nuxt/content/docs, after docs-sync has populated it.
- *
- * A guide that lands on a path the flowfuse docs already occupy would silently replace
- * that page - the overlay runs second - and the loss would only show up as a docs page
- * mysteriously missing from production. Collisions therefore fail the build.
+ * Copy one guide asset (a non-markdown file) into nuxt/public/docs, or remove it if it has
+ * gone. Markdown is not handled here: @nuxt/content reads it straight out of
+ * nuxt/content-guides/ as a source of the `docs` collection.
  */
-export function syncGuides ({ repoRoot, nuxtRoot, logger = console } = {}) {
+export function syncGuideAssetPath ({ repoRoot, nuxtRoot, relPath }) {
+    if (relPath.endsWith('.md')) return
+
+    const guidesDir = join(repoRoot, GUIDES_SOURCE)
+    const destPath = join(nuxtRoot, 'public', 'docs', relPath)
+
+    if (!existsSync(join(guidesDir, relPath))) {
+        rmSync(destPath, { force: true })
+        return
+    }
+
+    mkdirSync(dirname(destPath), { recursive: true })
+    cpSync(join(guidesDir, relPath), destPath)
+}
+
+/**
+ * Copy the guides' non-markdown assets into nuxt/public/docs, and fail the build if a
+ * guide's path would collide with a page FlowFuse/flowfuse already publishes.
+ *
+ * The collision check used to be the only thing standing between a colliding guide and a
+ * docs page it would silently replace, because both were written into the same directory
+ * and the second write won. Now that guides are a separate content-collection source, a
+ * real collision - the same `docs` path served by both sources - fails anyway (the `docs`
+ * table's `id` is a primary key), but as a SQL constraint error naming a key, not a guide
+ * file. Checking here first keeps the friendlier message.
+ */
+export function syncGuideAssets ({ repoRoot, nuxtRoot, logger = console } = {}) {
     const guidesDir = join(repoRoot, GUIDES_SOURCE)
     const contentDocsDir = join(nuxtRoot, 'content', 'docs')
-    const publicDocsDir = join(nuxtRoot, 'public', 'docs')
 
     if (!existsSync(guidesDir)) {
         logger.warn(`No guides to overlay: ${GUIDES_SOURCE} does not exist`)
-        return { count: 0 }
+        return { pages: 0, assets: 0 }
     }
 
     const files = listGuideFiles(guidesDir)
-    const collisions = files.filter(relPath =>
-        existsSync(destinationFor(relPath, contentDocsDir, publicDocsDir)))
+    const pages = files.filter(relPath => relPath.endsWith('.md'))
+    const assets = files.filter(relPath => !relPath.endsWith('.md'))
 
+    const collisions = pages.filter(relPath => existsSync(join(contentDocsDir, relPath)))
     if (collisions.length) {
         throw new Error(
             `Guide files collide with pages from FlowFuse/flowfuse and would overwrite them: ${collisions.join(', ')}`
         )
     }
 
-    for (const relPath of files) {
-        writeGuideFile({ guidesDir, repoRoot, contentDocsDir, publicDocsDir, relPath })
+    for (const relPath of assets) {
+        syncGuideAssetPath({ repoRoot, nuxtRoot, relPath })
     }
 
-    logger.info(`Overlaid ${files.length} guide files from ${GUIDES_SOURCE} onto content/docs`)
-    return { count: files.length }
-}
-
-/**
- * Sync a single guide file, for the dev watcher. Mirrors syncDocsPath: a full re-sync on
- * every save would delete and recreate every page in the collection, and @nuxt/content
- * re-indexing all of them at once exhausts the dev server's heap.
- */
-export function syncGuidePath ({ repoRoot, nuxtRoot, relPath }) {
-    const guidesDir = join(repoRoot, GUIDES_SOURCE)
-    const contentDocsDir = join(nuxtRoot, 'content', 'docs')
-    const publicDocsDir = join(nuxtRoot, 'public', 'docs')
-
-    if (!existsSync(join(guidesDir, relPath))) {
-        // Same destination mapping as the write, so deleting a README removes its index.md.
-        rmSync(destinationFor(relPath, contentDocsDir, publicDocsDir), { force: true })
-        return
-    }
-
-    writeGuideFile({ guidesDir, repoRoot, contentDocsDir, publicDocsDir, relPath })
+    logger.info(`Copied ${assets.length} guide assets to public/docs; ${pages.length} guide pages read directly from ${GUIDES_SOURCE}`)
+    return { pages: pages.length, assets: assets.length }
 }
