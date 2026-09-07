@@ -1,7 +1,8 @@
 ---
 title: FlowFuse User Authentication on Remote Instances
-description:
+description: Device Agent 3.1.1 lets you require FlowFuse user authentication on a remote instance endpoint.
 date: 2025-02-13 12:00:00.0
+release: "2.14"
 authors: ['nick-oleary']
 tags:
   - changelog

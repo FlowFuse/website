@@ -1,4 +1,5 @@
 ---
+metaTitle: "Stop Noisy Sensor Data From Flooding Systems"
 title: "How to Stop Noisy Sensor Data from Flooding Your Industrial System"
 subtitle: "A practical guide to suppressing sensor noise in industrial systems using FlowFuse"
 description: "Learn how to implement a deadband filter in FlowFuse to suppress noisy sensor data from PLCs and other connected field devices."

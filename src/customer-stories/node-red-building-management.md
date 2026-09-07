@@ -73,3 +73,5 @@ It’s also making it a lot easier for us to complete security audits for our cu
 
 **Alan Yeung:** You can read more about Power Workplace on our [website](https://www.powerworkplace.com/).
 
+PowerWorkplace's use of FlowFuse to connect [IoT devices](/use-cases/edge-connectivity/) across customer sites while keeping a lean team mirrors [Walter's experience scaling its industrial IoT platform without growing its IT team](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/).
+

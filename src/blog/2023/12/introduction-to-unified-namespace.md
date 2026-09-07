@@ -1,4 +1,5 @@
 ---
+metaTitle: "Introduction to the Unified Namespace (UNS)"
 title: "Introduction to the Unified Namespace (UNS) – 2026 Updated Guide"
 subtitle: "Making data available for Industry 4.0 use-cases"
 description: Explore how the Unified Namespace (UNS) empowers Industry 4.0 with seamless data exchange, maximizing organizational potential.
@@ -24,6 +25,9 @@ data.
 To facilitate a many to many connection between data producers and data consumers, there are two changes to be made to your architecture:
 1. Data transport through a hub-and-spokes model
 1. Set structure of the Data
+
+::cta-image{src="/blog/2023/12/images/intro-uns-cta-1.png" alt="Get a free FlowFuse instance and connect your first data source to a Unified Namespace today" cta="sign-up"}
+::
 
 ## Hub and spokes model replaces Point to Point
 

@@ -2,6 +2,7 @@
 title: Restoring snapshots to developer-mode Remote Instances
 description: "A significant workflow improvement introduced by Device Agent v3.8.0"
 date: 2026-02-12 12:00:00.0
+release: "2.27"
 authors: ['nick-oleary']
 tags:
   - changelog

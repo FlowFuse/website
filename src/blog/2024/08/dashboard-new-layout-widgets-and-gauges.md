@@ -1,4 +1,5 @@
 ---
+metaTitle: "New Layout, Widgets and Gauges in Dashboard"
 title: New Layout, Widget and Gauges Now Available in FlowFuse Dashboard
 subtitle: Our latest update for FlowFuse Dashboard introduces a new layout type, Tabs, a new widget, Number Input, and two fresh gauges, Battery and Tank Level, along with much more.
 description: "FlowFuse Dashboard adds a new Tabs layout, a Number Input widget, and Battery and Tank Level gauges, plus many more updates."

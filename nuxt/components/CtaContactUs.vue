@@ -2,8 +2,7 @@
 // Fixed destination, copy, and tracked event - only the look (variant) and
 // where it lives on the page (position) vary per insertion.
 import CtaButton from './cta/CtaButton.vue'
-// Shared with the equivalent 11ty macro (cta-contact-us.njk) - see CtaSignUp.vue.
-import ctaDestinations from '../../src/_data/ctaDestinations.json'
+import { CTA_DESTINATIONS } from '../lib/cta-destinations'
 
 withDefaults(defineProps<{
     variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
@@ -16,14 +15,12 @@ withDefaults(defineProps<{
     icon?: string
 }>(), { uppercase: undefined })
 
-const dest = ctaDestinations.contactUs
-const EVENT = dest.event
-const HREF = dest.href
-const LABEL = dest.label
-// /contact-us/ is still served by 11ty, not a Nuxt route - see CtaButton.vue's
-// `external` prop.
+const DEST = CTA_DESTINATIONS.contactUs
+const EVENT = DEST.event
+const HREF = DEST.href
+const LABEL = DEST.label
 </script>
 
 <template>
-  <CtaButton :event="EVENT" :href="HREF" :external="true" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
+  <CtaButton :event="EVENT" :href="HREF" :external="false" :label="LABEL" :variant="variant" :position="position" :plan="plan" :icon="icon" :uppercase="uppercase" :padded="padded" :color="color" :preview="preview" />
 </template>

@@ -1,6 +1,8 @@
 ---
 title: Device Auto Snapshots
+description: "Deploying a change to your device flows now takes a snapshot automatically, keeping the most recent ten."
 date: 2024-02-15 13:00:00.0
+release: "2.1"
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog

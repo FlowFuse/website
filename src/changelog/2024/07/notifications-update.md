@@ -3,6 +3,7 @@ title: Notifications Inbox
 description: "More notifications and alerts in FlowFuse"
 
 date: 2024-08-27 13:00:00.0
+release: "2.8"
 
 authors: ["stephen-mclaughlin"]
 tags:

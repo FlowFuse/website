@@ -82,7 +82,7 @@ Great news! You no longer need to manage OpenAI API keys or configure ChatGPT no
 Available on FlowFuse Cloud, the Assistant offers:
 
 - **Quick Function Node Creation**: Add function nodes to your flow without dragging from the palette
-- **In-line Code Generation**: Generate JavaScript code for function nodes, JSON for JSON editors, and Vue.js for FlowFuse Dashboard ui-template widgets
+- **In-line Code Generation**: Generate JavaScript code for function nodes, JSON for JSON editors, and Vue.js for [FlowFuse Dashboard](/platform/dashboard/) ui-template widgets
 - **Flow Explainer**: Select nodes and click "Explain Flows" to understand what they do
 
 FlowFuse Assistant helps developers work faster and smarter with Node-RED. [Start your free trial](https://app.flowfuse.com/account/create) to experience AI-powered Node-RED development on FlowFuse Cloud.

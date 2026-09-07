@@ -1,4 +1,5 @@
 ---
+metaTitle: "Scaling from Digital to Smart with Revolution Pi"
 title: "Live from the Shop Floor: Scaling from Digital to Smart with FlowFuse & Revolution Pi"
 subtitle: Transforming industrial operations with FlowFuse and Revolution Pi, live demo from a real production site
 meta:

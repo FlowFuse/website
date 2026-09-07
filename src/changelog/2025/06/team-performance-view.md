@@ -2,6 +2,7 @@
 title: Instance Performance View
 description: "A new view for monitoring the performance of your hosted Node-RED instances"
 date: 2025-06-02 12:00:00.0  
+release: "2.18"
 authors: ["joe-pavitt"]
 tags:
   - changelog

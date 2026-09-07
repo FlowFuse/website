@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Serial Port Tutorial: RS232/RS485"
 title: "Node-RED Serial Port Tutorial: Connect RS232/RS485 Manufacturing Equipment (2026)"
 subtitle: "Learn how to bring serial-connected equipment online using Node-RED and FlowFuse"
 description: "Learn how to connect manufacturing equipment using RS-232/422/485 serial interfaces in Node-RED with FlowFuse and its nodes."

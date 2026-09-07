@@ -26,7 +26,7 @@ Furthermore, on the management layer of most companies, Excel and Google Sheets 
 
 ![csv dashboard](./images/csv-dashboard.png)
 
-This simple flow allows the user to visualize data from a CSV in the Node-RED Dashboard. The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL database to saving it.
+This simple flow allows the user to visualize data from a CSV in the [Node-RED Dashboard](/platform/dashboard/). The button then allows the user to initiate a request to send the data to the next step. This next step could be anything from loading into a SQL database to saving it.
 
 ### Instructions ###
 1. Install Node-RED Dashboard 2.0. Follow these [instructions](/blog/2024/03/dashboard-getting-started/) to install.  

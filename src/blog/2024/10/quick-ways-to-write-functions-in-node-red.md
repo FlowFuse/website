@@ -1,4 +1,5 @@
 ---
+metaTitle: "Complex Logic in Node-RED Function Nodes"
 title: "Exploring Quick Ways to Write Complex Logic in Function Nodes in Node-RED" 
 subtitle: "Enhancing Your Node-RED Experience"
 description: "Learn how to efficiently write complex logic in Function Nodes within Node-RED, simplifying your development process and improving your workflows."

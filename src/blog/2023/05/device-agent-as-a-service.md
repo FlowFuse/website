@@ -1,4 +1,5 @@
 ---
+metaTitle: "Running the Device Agent on a Raspberry Pi"
 title: Running the FlowFuse Device Agent as a service on a Raspberry Pi
 subtitle: Step by step guide to run the device agent as a service
 description: "Learn how to run the FlowFuse Device Agent as a service on your Raspberry Pi, ensuring uninterrupted operation after restarts."

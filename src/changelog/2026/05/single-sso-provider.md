@@ -2,6 +2,7 @@
 title: Single SSO provider for all users
 description: This allows admins to configure a Single SAML SSO provider for all users regardless of email domain.
 date: 2026-05-07 12:00:00
+release: "2.30"
 authors: ["ben-hardill"]
 tags:
   - changelog

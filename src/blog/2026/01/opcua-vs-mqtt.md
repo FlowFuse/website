@@ -1,4 +1,5 @@
 ---
+metaTitle: "MQTT vs OPC UA: Which One Should You Use?"
 title: "MQTT vs OPC UA: Why This Question Never Has a Straight Answer"
 subtitle: "Why comparing MQTT and OPC UA is a category error, and how to choose based on requirements rather than marketing"
 description: "MQTT vs OPC UA isn't a real choice; they solve different problems. Learn when to use each protocol based on your actual requirements, not vendor marketing."
@@ -290,4 +291,4 @@ It's "MQTT where? OPC UA where? Both where?"
 
 Answer that based on your requirements, not vendor marketing.
 
-For a practical guide to connecting PLCs via both OPC UA and MQTT in FlowFuse, alongside EtherNet/IP, Siemens S7, and Modbus, see the [FlowFuse PLC integration overview](/landing/plc/).
+See the [OPC UA vs MQTT breakdown](/integrations/opcua/#opc-ua-vs-mqtt-modbus-kepware) on FlowFuse's OPC UA overview for the same comparison against Modbus and Kepware. For a practical guide to connecting PLCs via both OPC UA and MQTT in FlowFuse, alongside EtherNet/IP, Siemens S7, and Modbus, see the [FlowFuse PLC integration overview](/landing/plc/).

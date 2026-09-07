@@ -16,14 +16,22 @@ useSchemaOrg([
         })),
     }),
 ])
+
+const displayItems = computed(() => props.items.map((item, index) => ({
+    ...item,
+    ui: {
+        ...(item.to ? { link: 'hover:text-indigo-600' } : {}),
+        ...(index === 0 && props.items.length > 1 ? { item: 'shrink-0' } : {}),
+    },
+})))
 </script>
 
 <template>
   <UBreadcrumb
-    :items="items"
+    :items="displayItems"
     color="neutral"
     class="capitalize"
-    :ui="{ link: 'text-sm hover:text-indigo-600' }"
+    :ui="{ link: 'text-sm' }"
   >
     <template #separator>
       <span class="mx-1 text-gray-400">/</span>

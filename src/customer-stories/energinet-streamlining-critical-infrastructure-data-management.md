@@ -1,4 +1,5 @@
 ---
+metaTitle: "Critical Infrastructure Data for Denmark"
 title: Streamlining Critical Infrastructure Data Management for Denmark's Energy Transition
 description: Energinet, Denmark's national TSO, uses FlowFuse to govern real-time data pipelines across 7,000 km of grid infrastructure, connecting SCADA systems and IoT sensors to InfluxDB, MySQL, and Grafana.
 image: /images/stories/energinet.jpg
@@ -49,7 +50,7 @@ As a national transmission system operator, Energinet operates under regulatory 
 - Operational transparency - Clear ownership and accountability for all systems supporting grid operations
 - Business continuity - Rapid recovery capability if any component fails
 
-The operational requirement was clear: establish a governed orchestration layer that could reliably collect data from SCADA systems and modern IoT deployments, transform it appropriately for different operational systems, and deliver it to time-series databases, monitoring platforms, and analytical tools - all while meeting the governance standards expected of critical national infrastructure.
+The operational requirement was clear: establish a governed orchestration layer that could reliably collect data from [SCADA systems](/use-cases/scada/) and modern [IoT deployments](/use-cases/edge-connectivity/), transform it appropriately for different operational systems, and deliver it to time-series databases, monitoring platforms, and analytical tools - all while meeting the governance standards expected of critical national infrastructure.
 
 The decision criteria weren't technical - they were operational: Could a solution provide the reliability, governance, and lifecycle management required for a system that supports Denmark's energy security?
 
@@ -69,8 +70,8 @@ FlowFuse serves as a production infrastructure connecting Energinet's operationa
 
 ### Operational System Delivery:
 
-- Time-Series Analytics: Governed delivery to InfluxDB databases supporting trend analysis, predictive maintenance, and renewable integration planning
-- Operational Databases: Structured routing to MySQL systems for compliance reporting and operational record-keeping
+- Time-Series Analytics: Governed delivery to [InfluxDB](/node-red/database/influxdb/) databases supporting trend analysis, predictive maintenance, and renewable integration planning
+- Operational Databases: Structured routing to [MySQL](/node-red/database/mysql/) systems for compliance reporting and operational record-keeping
 - Real-Time Monitoring: Live data feeds to Grafana visualization platforms enabling 24/7 grid surveillance and incident response
 
 ### Enterprise Governance Meeting TSO Standards
@@ -118,4 +119,4 @@ Governed Orchestration Platform for Critical Infrastructure:
 
 ## Looking Forward
 
-As Denmark expands its role as a renewable energy leader - developing the Bornholm Energy Island, enabling offshore wind capacity, and pioneering cross-border energy coordination - Energinet's FlowFuse-based orchestration platform provides the scalable, governed foundation required to integrate growing operational complexity while maintaining the reliability standards expected of critical national infrastructure. For an organization responsible for a country's energy infrastructure, having a solution with governance, testing protocols, and operational accountability built in from day one is essential. FlowFuse provides a platform Energinet can depend on for grid operations - not a tool that requires constant management - delivering the confidence needed when operational decisions affect Denmark's energy security and renewable energy transition.
+As Denmark expands its role as a renewable energy leader - developing the Bornholm Energy Island, enabling offshore wind capacity, and pioneering cross-border energy coordination - Energinet's FlowFuse-based orchestration platform provides the scalable, governed foundation required to integrate growing operational complexity while maintaining the reliability standards expected of critical national infrastructure. For an organization responsible for a country's energy infrastructure, having a solution with governance, testing protocols, and operational accountability built in from day one is essential. FlowFuse provides a platform Energinet can depend on for grid operations - not a tool that requires constant management - delivering the confidence needed when operational decisions affect Denmark's energy security and renewable energy transition. Other critical infrastructure operators rely on that same reliability, from the [World Meteorological Organization's use of Node-RED to modernize global weather data sharing](/customer-stories/un-wmo-nr-data-sharing/) to [Walter's unified IoT platform connecting machines across its global production network](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/).

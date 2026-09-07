@@ -2,6 +2,7 @@
 title: Blueprints
 description: Explore FlowFuse Blueprints, Accelerate onboarding and solution development with customizable pre-built flows.
 date: 2023-10-16 10:00:00.0
+release: "1.13"
 authors: ["marian-demme"]
 tags:
     - changelog

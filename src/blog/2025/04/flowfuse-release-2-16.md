@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.16: Git Integration & Log Retention"
 title: "FlowFuse 2.16: Git Integration, improved log retention and more"
 subtitle: "Start pushing your snapshots to git, get alerted when resources are running low and more logging from Node-RED"
 description: "Start pushing your snapshots to git, get alerted when resources are running low and more logging from Node-RED"

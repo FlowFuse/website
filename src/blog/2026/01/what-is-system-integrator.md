@@ -1,4 +1,5 @@
 ---
+metaTitle: "What Is a System Integrator?"
 title: "What Is a System Integrator? Understanding Manufacturing's Most Misunderstood Role"
 subtitle: "The specialists who make your factory equipment talk to your business software"
 description: "System integrators connect factory equipment to business systems. Learn what they do and how modern tools are changing the role."
@@ -41,6 +42,9 @@ And somehow, it all has to work together.
 That's what system integrators do. They look at what you've got and figure out how to make it run as one system. They write the code that connects it, wire the panels that power it, and test it until it works the way it needs to. When they're done right, everything just runs: the line moves, parts flow, production hits its numbers.
 
 But here's what most people don't see: the complexity behind making that happen. Even if you work with system integrators regularly, the full scope of what they do often stays hidden beneath the surface. This article pulls back that curtain.
+
+::cta-image{src="/blog/2026/01/images/system-integrator-cta-1.png" alt="Try FlowFuse free and reuse the same flows across every client instead of rebuilding from scratch" cta="sign-up"}
+::
 
 ## What System Integrators Actually Do, and Why They Matter 
 
@@ -115,6 +119,9 @@ The combination enables new patterns. Node-RED can run at the edge, close to mac
 The tools are also changing who can do integration work. Software developers and IT teams can now contribute meaningfully to industrial systems. The line between OT and IT continues to blur. Still, the core challenge remains the same. Someone must understand both the factory floor and the business systems. Someone must decide what runs at the edge, what belongs in the cloud, and how failures ripple across systems. The tools make integration faster and more scalable, but they don't replace the need for skilled system integrators.
 
 That's why choosing the right integrator still matters.
+
+::cta-image{src="/blog/2026/01/images/integrator-cta-1.png" alt="Talk to our team about where FlowFuse fits alongside your system integrator, or in place of one" cta="demo"}
+::
 
 ## How to Choose a System Integrator
 

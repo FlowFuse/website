@@ -21,13 +21,20 @@ if (!page.value) {
 }
 
 const pageTitle = computed(() => page.value?.title || slugParts.value.at(-1) || 'Handbook')
-const fullTitle = computed(() => slugParts.value.length ? `${pageTitle.value} • FlowFuse Handbook` : 'FlowFuse Handbook')
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
+// Nested pages get the "Handbook" qualifier on the brand name; the section root
+// doesn't (its own title already says "Handbook"). og:title infers from the
+// resolved title. Needs an explicit high tagPriority in its own useHead call —
+// nuxt-seo-utils pushes its own global siteName with tagPriority: 'low', and that
+// otherwise wins over a page-level override regardless of registration order.
+useHead({
+    templateParams: { siteName: () => slugParts.value.length ? 'FlowFuse Handbook' : 'FlowFuse' },
+}, { tagPriority: 1000 })
+
 useSeoMeta({
-    title: fullTitle,
+    title: pageTitle,
     description: computed(() => page.value?.description || ''),
-    ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),
     ogUrl: canonicalUrl,
     ogType: 'article',
@@ -90,7 +97,7 @@ defineOgImage('Default', {
         <!-- Page content -->
         <div class="w-full">
           <div class="order-last md:order-first">
-            <div class="mt-6 mb-4 prose prose-blue main-content handbook-content">
+            <div class="mt-6 mb-4 prose prose-blue main-content handbook-content prose-natural-size-images">
               <ContentRenderer v-if="page" :value="page" />
             </div>
           </div>

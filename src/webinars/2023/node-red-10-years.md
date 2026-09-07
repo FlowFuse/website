@@ -1,4 +1,5 @@
 ---
+metaTitle: "Celebrate 10 Years of Node-RED"
 title: "Celebrate 10 Years of Node-RED and What’s New in 3.1 and Beyond"
 subtitle: Join FlowFuse's CTO Nick O'Leary and co-creator of Node-RED to learn about what's new in the new release of Node-RED and what is next for the community.
 description: Join Nick O'Leary, co-creator of Node-RED, to celebrate 10 years of Node-RED and explore what's new in version 3.1 and beyond. Get a sneak peek of Dashboard 2.0 and the future of Node-RED.

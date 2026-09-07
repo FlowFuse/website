@@ -17,6 +17,17 @@ const { data: allStories } = await useAsyncData(
 
 const otherStories = computed(() => (allStories.value || []).filter(item => item.path !== page.value?.path))
 
+// Prefer resolving the quote byline from src/_data/team|guests/*.json (name/title/headshot)
+// when `quoteAuthorSlug` is set; not every quoted person has a JSON entry, so fall back to
+// the manual quoteAuthor/quoteRole/quoteAvatar fields on `story`.
+const quoteAuthorMember = computed(() => useTeamMember(page.value?.story?.quoteAuthorSlug))
+const quoteAuthorName = computed(() => quoteAuthorMember.value?.name || page.value?.story?.quoteAuthor)
+const quoteAuthorTitle = computed(() => quoteAuthorMember.value?.title
+  || (page.value?.story?.quoteRole ? `${page.value.story.quoteRole}, ${page.value.story.brand}` : undefined))
+const quoteAuthorAvatar = computed(() => quoteAuthorMember.value?.headshot
+  ? `/images/team/headshot-${quoteAuthorMember.value.headshot}`
+  : page.value?.story?.quoteAvatar)
+
 // Deterministic on first render (SSR and pre-hydration client render must match to avoid a
 // hydration mismatch); onMounted then reshuffles client-side so each visit gets a fresh pick,
 // matching the spirit of 11ty's per-build `shuffle` filter without freezing one order into the
@@ -42,6 +53,10 @@ const productIcons: Record<string, string> = {
 }
 
 const pageTitle = computed(() => page.value?.title ?? 'Customer Story')
+const breadcrumbItems = computed(() => [
+    { label: 'Customer Stories', to: '/customer-stories' },
+    { label: pageTitle.value },
+])
 const fullTitle = computed(() => `${pageTitle.value} • FlowFuse`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
@@ -56,6 +71,13 @@ useSeoMeta({
     twitterCard: 'summary_large_image',
     twitterSite: '@FlowFuseinc',
 })
+
+useSchemaOrg([
+    computed(() => page.value?.structuredData?.faq?.length ? {
+        '@type': 'FAQPage',
+        mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+    } : undefined),
+])
 </script>
 
 <template>
@@ -79,18 +101,25 @@ useSeoMeta({
 
     <div class="blog nohero w-full bg-gray-50 pb-24 pt-6">
       <div class="container m-auto flex flex-col items-stretch text-left max-lg:px-6 md:max-w-screen-lg">
-        <NuxtLink to="/customer-stories" class="group mb-5 inline-flex items-center gap-1 hover:no-underline md:mb-4">
-          <UIcon name="i-heroicons-chevron-left" />
-          <span class="group-hover:underline">Back to Customer Stories</span>
-        </NuxtLink>
+        <Breadcrumbs :items="breadcrumbItems" class="mb-5 md:mb-4" />
 
         <div class="ff-prose mb-6 flex flex-col-reverse border-b md:flex-row md:gap-8">
           <div class="flex-grow">
             <div class="prose">
-              <q v-if="page.story.quote" class="block w-full px-6 py-6 text-xl font-bold italic text-gray-600 md:pt-3">
-                {{ page.story.quote }}
-              </q>
+              <QuoteBlock
+                v-if="page.story.quote"
+                class="mx-6 my-6"
+                :quote="page.story.quote"
+                :author="quoteAuthorName"
+                :role="quoteAuthorTitle"
+                :avatar="quoteAuthorAvatar"
+              />
               <ContentRenderer :value="page" />
+            </div>
+
+            <div v-if="page.structuredData?.faq?.length" class="prose">
+              <ProseH2>{{ page.structuredData.faqTitle || 'Frequently Asked Questions' }}</ProseH2>
+              <BlogFaq :faq="page.structuredData.faq" />
             </div>
           </div>
 

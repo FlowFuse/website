@@ -1,7 +1,8 @@
 ---
 title: Team BOM and Pipeline Views
-description:
+description: See every pipeline and the full bill of materials across your whole team, rather than one application at a time.
 date: 2024-12-16 13:00:00.0
+release: "2.12"
 authors: ["ben-hardill"]
 tags:
     - changelog

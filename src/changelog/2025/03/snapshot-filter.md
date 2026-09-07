@@ -2,6 +2,7 @@
 title: Filtering Snapshots
 description: "Filter Snapshots to show all, user or auto snapshots"
 date: 2025-03-11 12:00:00.0  
+release: "2.15"
 authors: ["stephen-mclaughlin"]
 tags:
   - changelog

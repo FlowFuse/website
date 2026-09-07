@@ -1,4 +1,5 @@
 ---
+metaTitle: "Why Pricing Models Matter in Automation"
 title: "The Evolution of Business Automation: Why Pricing Models Matter"
 subtitle: The importance of a predictable pricing model in workflow automation
 description: "The importance of a predictable pricing model in workflow automation, and how it shapes how teams choose their automation tools."

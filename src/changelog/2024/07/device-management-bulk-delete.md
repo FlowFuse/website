@@ -3,6 +3,7 @@ title: Managing devices
 description: "Making device management that little bit easier."
 
 date: 2024-07-19 13:00:00.0
+release: "2.7"
 
 authors: ["stephen-mclaughlin"]
 tags:

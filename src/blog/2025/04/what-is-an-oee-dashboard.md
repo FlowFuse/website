@@ -71,6 +71,8 @@ Measuring and improving OEE allows you to improve the utilization of existing ma
 
 Two caveats worth knowing before you build a dashboard around this number. First, OEE is easy to calculate in a way that flatters the plant - [OEE is misleading your factory: here's how to fix it](/blog/2026/05/fixing-oee-measurement-in-manufacturing/) covers the common measurement mistakes. Second, OEE only judges equipment during *scheduled* production time; [TEEP](/blog/2025/12/what-is-teep/) is the companion metric that accounts for the hours your assets sit idle by choice.
 
+For a launch or capacity-approval event, a [run at rate](/blog/2026/08/run-at-rate/) is the separate test that verifies the line can hold its required output with production tooling and staffing.
+
 ## How is OEE calculated?
 
 OEE is calculated using the formula:

@@ -2,6 +2,7 @@
 title: MQTT Topic Hierarchy view
 description: "View your in-use MQTT topics"
 date: 2024-11-21 10:00:00.0
+release: "2.11"
 
 authors: ["nick-oleary"]
 tags:

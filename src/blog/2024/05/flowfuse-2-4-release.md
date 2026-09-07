@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.4: Easier Snapshots & Blueprints"
 title: "FlowFuse 2.4: making it easier to work with Snapshots, Blueprints & Devices"
 subtitle: Our latest release introduces better ways to work with Snapshots, Blueprints, view the content of you flows in FlowFuse, and manage the version of Node-RED running on Devices
 description: "FlowFuse 2.4 introduces better ways to work with Snapshots and Blueprints, and manage the Node-RED version running on Devices."

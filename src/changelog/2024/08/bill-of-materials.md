@@ -2,9 +2,11 @@
 title: Bill of Materials
 description: "Get a single view of all dependencies used by your applications"
 date: 2024-09-25 10:00:00.0
+release: "2.9"
 
 authors: ["serban-costin"]
 tags:
+    - changelog
     - license
     - enterprise
 ---

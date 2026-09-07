@@ -64,6 +64,8 @@ This “character” comes through in everything we do: product design, document
 Whether writing an email, blog post, tweet, UI message, or sales pitch:
 
 - **Lead with clarity.** Avoid intros that bury the point. Say what matters, early.
+- **Write in active voice.** Name who does the thing. "FlowFuse deploys your flows", not "your flows are deployed by FlowFuse". Passive voice hides the actor and adds words.
+  - See [Use the active voice](https://writing.wisc.edu/handbook/ccs_activevoice/) for how to spot and fix it — and the handful of cases where passive is the better choice.
 - **Support with value.** Back up claims with real features, use cases, or customer wins.
 - **Reflect empathy.** Know your audience’s context and pain points.
 - **Use consistent terminology.** Refer to our features, solutions, and mission the same way across channels.
@@ -71,6 +73,16 @@ Whether writing an email, blog post, tweet, UI message, or sales pitch:
 - **Sound human.** Write like someone who’s been in the room — and understands.
 
 ## Terminology & Style Guidelines
+### FlowFuse Components
+When we discuss components of FlowFuse - for instance, our dashboard solution, artificial intelligence features, etc. - they should always be attached to FlowFuse. Examples include (but are not limited to):
+
+- FlowFuse Dashboard
+- FlowFuse Expert
+- FlowFuse Edge
+- FlowFuse Hub
+- FlowFuse Fleet
+
+The product or component in question should not be orphaned from FlowFuse. Don't say "the Expert" - say "the FlowFuse Expert".
 
 ### Node-RED
 

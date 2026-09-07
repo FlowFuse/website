@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// Disable nuxt-seo-utils' automatic "| SiteName" suffix — our pages already carry the brand
-useHead({ titleTemplate: '%s' })
-
 useSchemaOrg([
     defineOrganization({
         name: 'FlowFuse',

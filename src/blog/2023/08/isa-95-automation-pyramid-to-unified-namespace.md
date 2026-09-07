@@ -1,4 +1,5 @@
 ---
+metaTitle: "Why the Automation Pyramid Blocks Transformation"
 title: Why the Automation Pyramid blocks digital transformation - The Role of Unified Namespace
 subtitle: A Critical Examination of the Automation Pyramid's Obstruction to Digital Transformation
 description: "This article analyzes the Automation Pyramid's constraints and explains how Unified Namespace can evolve digital transformation."
@@ -13,6 +14,10 @@ tags:
 
 A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle-marian-raphael-demme/), in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the Unified Namespace (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks, and update my article.
 <!--more-->
+
+::cta-image{src="/blog/2023/08/images/auto-pyramid-cta-1.png" alt="Talk to our team about replacing point-to-point wiring with certified OPC-UA and Modbus connections - no custom drivers" cta="demo"}
+::
+
 ## The Pyramid’s Dilemma
 
 The Automation Pyramid is grounded in the standard [ISA-95](https://www.isa.org/products/ansi-isa-95-00-01-2010-iec-62264-1-mod-enterprise), which aligns with [IEC 62264](https://www.iso.org/standard/57308.html) and [DIN EN 62264](https://www.beuth.de/en/standard/din-en-62264-1/207270059). It delineates the functional hierarchy within a manufacturing enterprise. Over 25 variations of the Automation Pyramid exist in academic literature, all of them fundamentally mapping to the same core concept, tracing back to the [Computer-integrated manufacturing](https://en.wikipedia.org/wiki/Computer-integrated_manufacturing) (CIM)-Pyramid of the 1970s. Although ISA-95 does not explicitly refer to a pyramid, it introduces five functional hierarchical levels often visualized as a pyramid.

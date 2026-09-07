@@ -1,4 +1,5 @@
 ---
+metaTitle: "Simplifying OPC UA: Scalable Information Models"
 title: "Simplifying OPC UA: Implement Scalable Information Models with FlowFuse "
 subtitle: Tackle industrial communication challenges with OPC UA, using the P4NR (PLUS for Node-RED) package and FlowFuse’s Enterprise features to build secure, scalable solutions
 meta:

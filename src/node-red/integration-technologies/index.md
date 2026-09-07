@@ -1,4 +1,5 @@
 ---
+metaTitle: "Building Applications with Node-RED"
 eleventyNavigation:
   key: "Integration Technologies"
   order: 10

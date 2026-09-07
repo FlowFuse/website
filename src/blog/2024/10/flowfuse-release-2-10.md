@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.10: MQTT Broker & Version Control"
 title: "FlowFuse 2.10: MQTT Broker, Improved Version Control & More!"
 subtitle: Let's take a look at the new features and improvements in FlowFuse 2.9
 description: "FlowFuse 2.10 adds an MQTT Broker and improved version control, plus other new features and improvements over FlowFuse 2.9."

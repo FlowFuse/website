@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.13: Remote Instances & UNS Schemas"
 title: "FlowFuse 2.13: Remote Instances, UNS Schemas & Improved Management at Scale"
 subtitle: FlowFuse 2.13 brings clarity to "Instances" in FlowFuse, automated documentation for your MQTT Broker, better management and deployment to multiple Remote Instances, and more.
 description: "FlowFuse 2.13 brings clarity to Instances, automated MQTT Broker documentation, and better Remote Instance management overall."
@@ -14,6 +15,9 @@ tags:
 Happy New Year everyone! We're back with another release of FlowFuse, and whilst it's been a shorter sprint for us this time round, with most of the team out for a well-earned break over Christmas and New Year, that hasn't stopped us packing in lot of great new value into FlowFuse nonetheless.
 
 <!--more-->
+
+::product-update-note
+::
 
 ## Hosted & Remote Instances
 

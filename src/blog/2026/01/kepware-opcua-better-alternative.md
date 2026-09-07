@@ -1,4 +1,5 @@
 ---
+metaTitle: "Beyond Kepware: A Modern Alternative"
 title: "Beyond Kepware: Why Modern Industrial Connectivity Demands a Second Look"
 subtitle: "Why per-tag pricing, scale penalties, and private-equity ownership change the risk equation"
 description: "Kepware became the default when industrial connectivity was hard. Learn why pricing and ownership changes make it risky now."
@@ -114,4 +115,4 @@ Evaluate alternatives now from strength. Or negotiate renewals later from weakne
 
 Kepware won through early dominance and ecosystem lock-in. That's separate from being the right architecture for current operations.
 
-See [how FlowFuse connects any PLC to MQTT, OPC UA, cloud, and enterprise systems](/landing/plc/), without per-tag licensing or proprietary lock-in.
+See [OPC UA vs Kepware and other gateway products](/integrations/opcua/#opc-ua-vs-mqtt-modbus-kepware) for the comparison, or [how FlowFuse connects any PLC to MQTT, OPC UA, cloud, and enterprise systems](/landing/plc/), without per-tag licensing or proprietary lock-in.

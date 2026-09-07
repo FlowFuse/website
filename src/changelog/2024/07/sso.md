@@ -3,9 +3,11 @@ title: Single Sign On Updates
 description: "Direct User Provisioning and Admin Group management"
 
 date: 2024-07-24 13:00:00.0
+release: "2.7"
 
 authors: ["ben-hardill"]
 tags:
+    - changelog
     - sso
 ---
 

@@ -3,9 +3,11 @@ title: LDAP Single Sign On Updates
 description: "Team membership controlled by LDAP groups"
 
 date: 2024-08-28 13:00:00.0
+release: "2.8"
 
 authors: ["ben-hardill"]
 tags:
+    - changelog
     - sso
 ---
 

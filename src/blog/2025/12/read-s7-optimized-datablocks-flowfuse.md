@@ -1,4 +1,5 @@
 ---
+metaTitle: "Access Optimized Data Blocks in TIA Portal"
 title: "How to Access Optimized Data Blocks in TIA Portal (S7-1200/1500)"
 subtitle: "Use OPC UA to read optimized data blocks by name instead of fighting with memory addresses"
 description: "Learn how to read Siemens S7-1200/1500 optimized data blocks using OPC UA and FlowFuse, with reliable symbolic addressing."

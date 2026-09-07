@@ -2,6 +2,7 @@
 title: Personalized Schema Documentation 
 description: "View personalized schema documentation for your MQTT brokers in this new, automatically generated view."  
 date: 2025-02-12 13:00:00.0  
+release: "2.14"
 authors: ["joe-pavitt"]  
 tags:  
 - changelog  

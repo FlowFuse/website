@@ -2,6 +2,7 @@
 title: Smart Suggestions
 description: Next Node Smart Suggestions to speed up flow development
 date: 2025-07-31 13:00:00.0
+release: "2.20"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

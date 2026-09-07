@@ -1,4 +1,5 @@
 ---
+metaTitle: "NIS2 Compliance: Why IEC 62443 Matters"
 title: "NIS2 Compliance for Manufacturers: Why IEC 62443 Is the Missing Standard"
 subtitle: "A practical starting point for mid-market manufacturers stuck on Article 21"
 description: "NIS2 tells you what to do, not how. IEC 62443 is the technical standard regulators, accredited bodies, and auditors keep pointing to. Here is where to start."

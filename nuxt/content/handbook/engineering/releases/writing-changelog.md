@@ -45,7 +45,8 @@ Every post requires the following fields at the top of the file:
 |---|---|
 | `title` | The name of the feature or change. Title case. Keep it short. |
 | `description` | One sentence summarising the change. This appears in link previews and search results, so it should make sense without any surrounding context. |
-| `date` | The date and time the feature shipped, in `YYYY-MM-DD HH:mm:ss` format (e.g., `2026-03-24 17:00:00`). The timestamp ensures correct sorting when you add multiple features on the same day. |
+| `date` | The date and time the feature shipped, in `YYYY-MM-DD HH:mm:ss` format (e.g., `2026-03-24 17:00:00`). Zero-pad the month and day. The timestamp ensures correct sorting when you add multiple features on the same day. |
+| `release` | The release this ships in for Self Hosted users, quoted, as `MAJOR.MINOR` (e.g. `"2.33"`). This is the same version you name in the availability note, and the changelog page groups entries by it. Your change is live on FlowFuse Cloud already, so this is the next release that has not shipped yet: take the version from the current [milestone](https://github.com/FlowFuse/flowfuse/milestones). Quote it, or `2.30` is read as the number `2.3`. |
 | `authors` | Your handle from `src/_data/team`. Leave it out if there is no single clear author. |
 | `tags` | Always include `changelog`. |
 | `issues` | A list of related GitHub issue URLs. Link any issues that tracked the work this post announces. |
@@ -59,6 +60,7 @@ You can start a new changelog post with the following template:
 title: Short Feature Title
 description: One sentence summarising the change, written for a user, not an engineer.
 date: YYYY-MM-DD HH:mm:ss
+release: "X.Y"
 authors: your-handle
 tags:
   - changelog
@@ -127,14 +129,11 @@ Screenshots should ideally be **1408px wide**. Height can vary depending on what
 
 ### Screen recordings and videos
 
-Use a video or GIF when the change is easier to show than describe.
+Use a video when the change is easier to show than describe.
 
-**GIFs** work well for short, simple interactions where a video would be overkill. If you use one:
+For short, silent, looping interactions, use a [WebM video](/handbook/marketing/content-strategy/blog/#video) — small file size, autoplays on load, and needs no YouTube upload.
 
-- It must be sharp and legible. No blurred or low-resolution captures.
-- It must be under 1MB. If it is larger, use a video instead.
-
-**Videos** are the recommended way to show screen recordings. To add one:
+**Videos** are the recommended way to show longer or narrated screen recordings. To add one:
 
 1. Ask in [#dev-marketing](https://flowfuse.slack.com/archives/C02TG4WH5PC) to have the recording uploaded to YouTube. Give them the video title. They publish it as **unlisted** by default. If the recording has voiceover and refined editing, flag it for public publishing.
 
@@ -177,6 +176,10 @@ Always write an availability note in the post as well. Badges name the plans, bu
 > This feature is available on the Edge and Fleet plans from vX.Y.
 
 Put it at the end of the post, or immediately after the main announcement if it affects whether the user can access the feature at all.
+
+### Interlinking
+
+Link to related docs pages, other changelog posts, or a blog post covering the same feature whenever there's a genuine opportunity — a changelog post is short by design, and a link is how a user gets to the depth it doesn't have room for. See [Interlinking](/handbook/marketing/content-strategy/blog/#interlinking) for the rule on when a link is warranted.
 
 ## Writing style
 

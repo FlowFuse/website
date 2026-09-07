@@ -24,13 +24,19 @@ const GITHUB_HEADERS = {
 
 // Mirrors GitHub's own heading slugger so anchors written against a README's
 // GitHub-rendered preview (e.g. `#egm-optional` for "## EGM (optional)") keep resolving here.
+// GitHub strips punctuation first and only then turns each remaining space into its own
+// hyphen — it does not collapse runs of spaces. A heading like "Bugs / Feature request"
+// drops the slash but keeps both spaces around it, so it slugs to "bugs--feature-request"
+// (double hyphen), not "bugs-feature-request". Matching \s+ instead of a literal space
+// collapsed that run and produced anchors that never matched GitHub's own, breaking any
+// in-README link pointing at a heading with adjacent punctuation.
 function githubSlugify (heading: string): string {
     return encodeURIComponent(
         heading
             .trim()
             .toLowerCase()
-            .replace(/[^\w一-龥\- ]/g, '')
-            .replace(/\s+/g, '-')
+            .replace(/[^\p{L}\p{M}\p{N}\p{Pc}\- ]/gu, '')
+            .replace(/ /g, '-')
     )
 }
 

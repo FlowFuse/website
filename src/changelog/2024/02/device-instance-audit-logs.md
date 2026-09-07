@@ -2,6 +2,7 @@
 title: Device Instance Audit Logging
 description: "Device Instance Audit Logging: The Device Instance now logs Node-RED events on your device, providing enhanced visibility into flow updates and configuration changes."
 date: 2024-02-08 13:00:00.0
+release: "2.1"
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog

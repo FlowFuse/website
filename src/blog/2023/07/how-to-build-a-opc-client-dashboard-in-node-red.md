@@ -1,4 +1,5 @@
 ---
+metaTitle: "How to Build an OPC UA Client Dashboard - Part 3"
 title: "How to Build an OPC UA Client Dashboard in Node-RED - Part 3 (2026)"
 subtitle: Interactive OPC UA Client dashboard that communicates with a 3rd party OPC UA Server
 description: Building a Dashboard-Driven OPC UA Client to Browse, Read, Write, and Get Events from a 3rd party OPC UA Server
@@ -293,7 +294,9 @@ If you're interested in learning how to use Node-RED for professional use cases,
 
 In this final article, we went over building a OPC UA Client dashboard that can browse the address space, read values from an OPC Server, write values to an OPC Server, and get events from an OPC Server.  
 
-This flow provides examples that can serve as a foundation for an interactive OPC Client application built in Node-RED.  This now concludes the OPC UA Series.  
+This flow provides examples that can serve as a foundation for an interactive OPC Client application built in Node-RED.  This now concludes the OPC UA Series.
+
+For a production-grade OPC UA client, maintained as a certified node with subscriptions, alarms, and historical access built in, see [FlowFuse's OPC UA client and server capabilities](/integrations/opcua/#opc-ua-client-and-server-capabilities).
 
 full source code for this project - 
 

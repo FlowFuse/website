@@ -1,4 +1,5 @@
 ---
+metaTitle: "OpenAI's AgentKit or FlowFuse: Which to Choose"
 title: "OpenAI's AgentKit or FlowFuse: Choosing the Right Low-Code App for Your Needs"
 subtitle: "Understanding the key differences between AI-native agent development and edge-focused industrial automation"
 description: "Learn how OpenAI's AgentKit and FlowFuse differ in their approach to AI agents connecting the physical and digital worlds."

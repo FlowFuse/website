@@ -3,6 +3,7 @@ title: Immersive Editor Experience
 description: "Closer integration between the FlowFuse and Node-RED experiences"
 
 date: 2024-07-02 13:00:00.0
+release: "2.6"
 
 authors: ["joe-pavitt"]
 tags:

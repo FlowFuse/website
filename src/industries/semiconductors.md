@@ -1,4 +1,5 @@
 ---
+metaTitle: "Semiconductors & Electronics Manufacturing"
 layout: layouts/industry.njk
 meta:
   title: "Semiconductors & Electronics Manufacturing Platform | FlowFuse"

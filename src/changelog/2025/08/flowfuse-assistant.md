@@ -2,6 +2,7 @@
 title: FlowFuse Expert documents your flows
 description: "Document your flows at the click of a button with the power of AI"
 date: 2025-08-06 12:00:00.0  
+release: "2.21"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

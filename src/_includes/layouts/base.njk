@@ -25,7 +25,7 @@ eleventyComputed:
 
 {% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-sign-in.njk" import ctaSignIn %}
-{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -56,7 +56,9 @@ eleventyComputed:
     {% endif %}
 
     <!-- Browser Title -->
-    {% if navTitle %}
+    {% if metaTitle %}
+    <title>{{ metaTitle }} | FlowFuse</title>
+    {% elif navTitle %}
     <title>{{ navTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
     {% elif meta and meta.title %}
     <title>{{ meta.title }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}{% if page.url and page.url.match('\/docs\/.+') %} Docs{% endif %}</title>
@@ -87,7 +89,9 @@ eleventyComputed:
     {%- endif %}
 
     <!-- Open Graph Title -->
-    {% if navTitle %}
+    {% if metaTitle %}
+    <meta property="og:title" content="{{ metaTitle }} | FlowFuse" />
+    {% elif navTitle %}
     <meta property="og:title" content="{{ navTitle }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
     {% elif meta and meta.title %}
     <meta property="og:title" content="{{ meta.title }} &#x2022; FlowFuse{% if page.url and page.url.match('\/handbook\/.+') %} Handbook{% endif %}" />
@@ -161,6 +165,8 @@ eleventyComputed:
     <script type="module" src="/js/flowrenderer.min.js"></script>
     <!-- Explicit nav-click tracking; keep in sync with the Nuxt copy -->
     <script defer src="/js/nav-tracking.js"></script>
+    <!-- Opens sign-up in a small popup window on desktop/tablet -->
+    <script defer src="/js/signup-popup.js"></script>
 
     {%- if not DEV_MODE -%}
     {% include "analytics/head.html" %}
@@ -182,7 +188,7 @@ eleventyComputed:
                         {% include "components/flowfuse-square.svg" %}
                     </a>
                     <div class="flex items-center gap-2 md:hidden relative z-20">
-                        {{ ctaContactUs('primary', 'header-mobile', extraClass='text-sm inline-flex whitespace-nowrap') }}
+                        {{ ctaBookDemo('primary', 'header-mobile', extraClass='text-sm inline-flex whitespace-nowrap') }}
                         <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
                             <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                             <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -221,7 +227,7 @@ eleventyComputed:
                     <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
 			            <li class="hidden md:flex">{{ ctaSignUp(site, 'nav-text', 'main-nav', padded=true, extraClass='ff-nav-freetrial text-base') }}</li>
                         <li class="flex">
-                            {{ ctaContactUs('primary', 'main-nav', extraClass='ml-2 text-sm inline-flex whitespace-nowrap') }}
+                            {{ ctaBookDemo('primary', 'main-nav', extraClass='ml-2 text-sm inline-flex whitespace-nowrap') }}
                         </li>
                     </ul>
                 </nav>
@@ -231,7 +237,7 @@ eleventyComputed:
                         {{ ctaSignIn(site, 'primary-outlined', 'mobile-cta-bar') }}
                         {{ ctaSignUp(site, 'primary-outlined', 'mobile-cta-bar') }}
                     </div>
-                    {{ ctaContactUs('primary', 'mobile-cta-bar') }}
+                    {{ ctaBookDemo('primary', 'mobile-cta-bar') }}
                 </div>
             </header>
     <!-- Main Content: wrapped in the flex-grow base so the column layout still

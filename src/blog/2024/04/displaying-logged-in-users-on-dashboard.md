@@ -69,7 +69,7 @@ If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Das
 
 ## Enabling FlowFuse User Authentication
 
-Before we display logged-in user data on the dashboard, first we need to set up a login mechanism with FlowFuse for the dashboard. This simplifies securing Node-RED Dashboards and provides contextual user data within the Dashboard itself for who is logged in.
+Before we display logged-in user data on the dashboard, first we need to set up a login mechanism with FlowFuse for the dashboard. This simplifies securing [Node-RED Dashboard](/platform/dashboard/)s and provides contextual user data within the Dashboard itself for who is logged in.
 
 1. Navigate to the Instance "settings".
 2. Select the "Security" tab.

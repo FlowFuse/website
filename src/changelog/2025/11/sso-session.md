@@ -2,6 +2,7 @@
 title: SSO control over Session life
 description: Individual SSO profiles can now override Session life and idle time
 date: 2025-11-06 12:00:00.0
+release: "2.24"
 authors: ['ben-hardill']
 tags:
   - changelog

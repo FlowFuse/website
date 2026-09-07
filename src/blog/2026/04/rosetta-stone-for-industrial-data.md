@@ -1,4 +1,5 @@
 ---
+metaTitle: "The Rosetta Stone for Factories"
 title: "The Rosetta Stone for Factories: Why IIoT Needs a Common Language First"
 subtitle: "Your factory isn't data-poor. It's data-illiterate. Here's the difference."
 description: "Discover why IIoT data integration fails at scale and how Unified Namespace, OPC-UA, and MQTT create a common data language."

@@ -31,7 +31,13 @@ const authorIsLinkable = computed(() => {
     return Boolean(url) && (url.includes('github.com') || url.includes('npmjs.com'))
 })
 
-useHead({ title: () => `${node.value._id} • FlowFuse Integrations` })
+// Integration pages always get the "Integrations" qualifier on the brand name.
+// og:title infers from the resolved title. Needs an explicit high tagPriority in
+// its own useHead call — nuxt-seo-utils pushes its own global siteName with
+// tagPriority: 'low', and that otherwise wins over a page-level override
+// regardless of registration order.
+useHead({ templateParams: { siteName: 'FlowFuse Integrations' } }, { tagPriority: 1000 })
+useHead({ title: () => node.value._id })
 
 const activeTab = ref<'overview' | 'examples'>('overview')
 function switchTab (tab: 'overview' | 'examples') {

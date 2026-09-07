@@ -2,6 +2,7 @@
 title: Pulling snapshots from Git with Pipelines
 description: "Adding git pull support to DevOps Pipelines"
 date: 2025-06-02 12:00:00.0  
+release: "2.18"
 authors: ["nick-oleary"]
 tags:
   - changelog

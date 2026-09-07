@@ -3,6 +3,7 @@ title: FlowFuse Expert Writes JSON
 description: "The FlowFuse Expert gets more helpful."
 
 date: 2024-07-16 13:00:00.0
+release: "2.7"
 
 authors: ["stephen-mclaughlin"]
 tags:

@@ -2,6 +2,7 @@
 title: Streamlined Device assignment
 description: "Streamlined Device Assignment: Assign devices to applications upon creation for a quicker start to flow editing, enhancing user experience."
 date: 2024-01-23 13:00:00.0
+release: "2.1"
 authors: ["nick-oleary"]
 tags:
     - changelog

@@ -58,7 +58,7 @@ A weather dashboard is honestly the best first project if you're getting into No
 
 This isn't one of our typical deep-dive industrial posts, it's a straightforward starter tutorial. You'll be building something real: calling an actual weather API, handling JSON responses, and watching live data appear on your dashboard. It's the kind of project that makes Node-RED's flow-based approach suddenly make sense. Once you've built it, you'll have a solid foundation for more complex projects.
 
-We'll use FlowFuse Dashboard for the UI since it's modern and easier to work with. If you know how to drag nodes around and hit the deploy button, you're ready to start.
+We'll use [FlowFuse Dashboard](/platform/dashboard/) for the UI since it's modern and easier to work with. If you know how to drag nodes around and hit the deploy button, you're ready to start.
 
 ## What You'll Need
 
@@ -280,5 +280,7 @@ That's it! You've built a real-time weather dashboard and learned the basics of 
 Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashboard for the UI. If you're just starting out, FlowFuse makes things easier, no server setup, no port forwarding, and your dashboard works anywhere. Plus, when you're ready to build bigger projects, features like team collaboration, DevOps pipelines, RBAC, snapshots, and audit logs are already built in.
 
 Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same, you're just swapping data sources and visualizations.
+
+This same pattern scales to a global level, too: [the World Meteorological Organization uses Node-RED to modernize how meteorological data is shared between national weather services worldwide](/customer-stories/un-wmo-nr-data-sharing/).
 
 [Start your free FlowFuse trial](https://app.flowfuse.com/account/create) and keep building.

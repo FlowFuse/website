@@ -1,4 +1,5 @@
 ---
+metaTitle: "Orchestrating Virtual Power Plants with Low-Code"
 title: "Orchestrating Virtual Power Plants: How Low-Code Platforms Bridge the Gap"
 subtitle: "Why low-code tools are the missing link in scaling distributed energy systems"
 description: "Learn how low-code platforms like FlowFuse and Node-RED simplify integrating and managing distributed energy resources at scale."
@@ -57,6 +58,8 @@ Need to onboard new assets? You can do it from the same platform, without custom
 FlowFuse is also designed with **industrial-grade security** and management capabilities, essential for critical infrastructure environments. Role-based access control, audit logs, and deployment workflows are all built in.
 
 And importantly, FlowFuse supports **collaborative development**. No more siloed knowledge stuck with one engineer. Teams can work together in a controlled environment, making development faster and more sustainable.
+
+This isn't just theoretical: [Energinet, Denmark's national transmission system operator, uses FlowFuse to govern real-time grid data pipelines across its energy network](/customer-stories/energinet-streamlining-critical-infrastructure-data-management/), meeting the reliability standards required of critical infrastructure at national scale.
 
 ## Ready to Build Smarter Energy Systems?
 

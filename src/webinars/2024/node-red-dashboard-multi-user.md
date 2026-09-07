@@ -1,4 +1,5 @@
 ---
+metaTitle: "Personalised Multi User Dashboards"
 title: Personalised Multi User Dashboards with Node-RED Dashboard 2.0
 subtitle: Join Joe Pavitt, lead developer on Node-RED Dashboard 2.0, as he discusses the new Personalised Multi User Dashboards feature, and how to get started with it.
 image: /images/webinars/multi-user-dashboard-with-node-red-dashboard-2-0-webinar-2024-february.jpg

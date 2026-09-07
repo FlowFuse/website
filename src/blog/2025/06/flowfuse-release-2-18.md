@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.18: Smarter Monitoring & AI"
 title: "FlowFuse 2.18: Smarter Monitoring, AI Integration, Improved DevOps, and a preview of exciting things to come"
 subtitle: "Monitor and improve instance performance, run AI chat in your Dashboard, Git pull, and more."
 description: "FlowFuse 2.18 brings smarter monitoring, AI integration, and improved DevOps: run AI chat in your Dashboard, Git pull, and more."

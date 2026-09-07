@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: Integration with Node-RED"
 description: "The FlowFuse Expert can now help you install nodes and import flows with a single click."
 date: 2026-01-14 13:00:00.0
+release: "2.26"
 authors: ['steve-mclaughlin']
 tags:
   - changelog

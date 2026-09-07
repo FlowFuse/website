@@ -2,6 +2,7 @@
 title: Dark Mode
 description: FlowFuse now supports light and dark themes across the app, with a System option that follows your operating system preference.
 date: 2026-06-02 10:00:00
+release: "2.31"
 authors: ["noley-holland"]
 tags:
   - changelog

@@ -2,6 +2,7 @@
 title: Import Node-RED Flows During Remote Instance Setup
 description: Streamline your Remote Instance setup by importing Node-RED flows with the FlowFuse Device Agent.
 date: 2025-05-08 12:00:00.0
+release: "2.17"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

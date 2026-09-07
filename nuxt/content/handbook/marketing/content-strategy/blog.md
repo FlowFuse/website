@@ -121,6 +121,21 @@ below more
 
 The title of the page can be seen on both the blog index and the articles.
 
+### Meta Title
+
+`metaTitle` is an optional field that overrides the browser tab title and Open Graph (social share) title — it does not change the on-page `title` shown as the article's H1 or on the blog index.
+
+```yaml
+---
+title: "Building Digital Work Instructions Dashboard for the Shop Floor"
+metaTitle: "Digital Work Instructions Dashboard"
+---
+```
+
+Use it when the on-page `title` is written for readers (descriptive, sometimes long) but doesn't make a good search-result or tab title. When set, it renders as `{metaTitle} • FlowFuse Blog` in both places; when omitted, the browser tab and share title fall back to `{title} • FlowFuse Blog`.
+
+Keep `metaTitle` itself to 60 characters or fewer (before the ` • FlowFuse Blog` suffix is added) so the full title doesn't get truncated in Google search results, and keyword-forward — it's for SEO/CTR in search results and social previews, not for readability on the page itself.
+
 ### Subtitle
 
 The subtitle is only shown on the articles.
@@ -383,6 +398,16 @@ To override the default height (in pixels), pass it as a bound prop:
 ```text
 ::render-flow{:height="300"}
 ```
+
+### Interlinking
+
+Link to other blog posts, changelog entries, docs pages, or customer stories whenever there's a genuine opportunity. It spreads SEO authority across the site, helps Google crawl and understand our content, and keeps readers on the site longer.
+
+Rules:
+
+- Only link a word or phrase if the page you're linking to actually explains or expands on it. If the sentence reads fine without the link, don't add it.
+- Never insert a link just to have one in a section — a paragraph with no natural fit gets no link.
+- Link each keyword only once per post, on its first natural occurrence. Repeats stay plain text.
 
 ### Writing content
 

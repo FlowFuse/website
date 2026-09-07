@@ -1,4 +1,5 @@
 ---
+metaTitle: "Why Downtime Spreadsheets Fail"
 title: "Why Downtime Spreadsheets Fail and How to Automate Detection and Escalation"
 subtitle: "Detect machine stops instantly, escalate automatically, and capture accurate downtime data."
 description: "Build an event-driven workflow in FlowFuse that detects machine stops instantly and auto-escalates downtime, no spreadsheet."

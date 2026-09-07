@@ -2,7 +2,7 @@
 title: "How to Build an MQTT-to-InfluxDB Data Pipeline (2026)"
 subtitle: "From MQTT broker to InfluxDB bucket, the right way."
 description: "Learn how to build a reliable MQTT-to-InfluxDB data pipeline using FlowFuse and Node-RED, with no custom scripts required."
-lastUpdated: 2026-06-19
+lastUpdated: 2026-08-13
 date: 2026-02-26
 keywords: MQTT, InfluxDB, IIoT, FlowFuse, Node-RED, Sensor telemetry, Time-series database
 authors: ["sumit-shinde"]
@@ -59,9 +59,15 @@ An MQTT to InfluxDB is one of the most common and most critical pipelines in IIo
 
 <!--more-->
 
+::product-update-note
+::
+
 The typical approach is a custom Python script that subscribes to the broker, parses the payload, and writes to InfluxDB. It works until a sensor changes its payload format, or the script quietly dies over a weekend and nobody notices until Monday. Now you're debugging a process nobody else fully understands, with no visibility into what failed or when. Others stitch together multiple tools, each with its own config, its own failure modes, and its own logs to dig through at 2am. The complexity ends up hidden in places that are hard to see, hard to debug, and hard to hand off.
 
 This article takes a different approach. Using FlowFuse (the enterprise platform built on [Node-RED](/)), you'll build the entire pipeline as a visual flow covering MQTT subscription, payload transformation, and InfluxDB write. Every step is visible, editable, and easy to hand off.
+
+::cta-image{src="/blog/2026/02/images/mqtt-to-influxdb-cta-1.png" alt="Try FlowFuse free and get your MQTT data into InfluxDB with drag-and-drop nodes, not a Python script" cta="sign-up"}
+::
 
 ## TL;DR
 

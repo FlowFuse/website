@@ -2,6 +2,7 @@
 title: Capture Async API data from FlowFuse Team Broker
 description: "Adding the ability to capture message payload schema from topics published on the FlowFuse Team Broker"
 date: 2025-09-22 12:00:00.0
+release: "2.22"
 authors: ['ben-hardill']
 tags:
   - changelog

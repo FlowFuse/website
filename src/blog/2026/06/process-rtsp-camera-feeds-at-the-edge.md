@@ -117,7 +117,7 @@ Once the node connects, it shows a green Running status underneath it on the can
 
 A buffer in the debug sidebar confirms the feed works, but it's no use to an operator. Let's get the frame onto a screen anyone can open in a browser.
 
-This assumes you have FlowFuse Dashboard 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
+This assumes you have [FlowFuse Dashboard](/platform/dashboard/) 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
 
 FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we turn each PNG into a base64 data URI and render it with a standard image tag. The conversion is handled by the **base64** node, which you'll need to install: add `node-red-node-base64` from the Palette Manager.
 
@@ -166,3 +166,5 @@ Where they land is set by the **File path** field. Point it at a directory you c
 ## Wrapping up
 
 Camera feeds don't have to sit in a silo while the rest of the floor gets connected. With the **RTSP Video Feed** node, a stream becomes still frames; with a dashboard, those frames become a live view; and with the **FlowFuse AI** nodes, they become decisions, all at the edge, with nothing leaving the plant.
+
+[Abrasive Technology already puts this pattern to work](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/), piping video feeds straight into a Node-RED dashboard to monitor its precision manufacturing lines.

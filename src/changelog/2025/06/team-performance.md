@@ -1,7 +1,8 @@
 ---
 title: Team Performance Feature
 description: "A new feature providing comprehensive visualization of instance CPU usage"
-date: 2025-06-5 11:43:32.0
+date: 2025-06-05 11:43:32.0
+release: "2.18"
 authors: [ "serban-costin" ]
 tags:
   - changelog

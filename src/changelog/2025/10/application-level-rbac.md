@@ -2,6 +2,7 @@
 title: Application-level access control for Enterprise teams
 description: "Giving you finer-grained control over who can do what in your team"
 date: 2025-10-08 12:00:00.0  
+release: "2.23"
 authors: ['nick-oleary']
 tags:
   - changelog

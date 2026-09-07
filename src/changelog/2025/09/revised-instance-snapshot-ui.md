@@ -2,6 +2,7 @@
 title: Streamlined Snapshot Management
 description: "All snapshot actions are now consolidated in a single, unified view"
 date: 2025-09-19 12:00:00.0  
+release: "2.22"
 authors: ['serban-costin']
 tags:
   - changelog

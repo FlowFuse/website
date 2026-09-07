@@ -46,6 +46,7 @@
     posthog.init('{{ POSTHOG_APIKEY }}', {
         api_host: 'https://eu.i.posthog.com',
         person_profiles: 'always',
+        capture_pageview: 'history_change',
         capture_pageleave: false,
         disable_surveys: true
     });

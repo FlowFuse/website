@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.17: Remote Instance Onboarding & More"
 title: "FlowFuse 2.17: Easier remote instance onboarding, Dashboard blueprint, PDF generation, and more"
 subtitle: "Build a dashboard in one click, create PDF reports from your data, and import instances when installing Device Agent"
 description: "Build a dashboard in one click, create PDF reports from your data, and import instances when installing Device Agent"

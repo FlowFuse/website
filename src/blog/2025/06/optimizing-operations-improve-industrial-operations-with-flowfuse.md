@@ -1,4 +1,5 @@
 ---
+metaTitle: "Improve Industrial Operations with FlowFuse"
 title: "Optimizing operations: Improve Industrial Operations with FlowFuse"
 subtitle: "FlowFuse raises $7.2M to empower you to connect the physical and digital worlds of industry."
 description: "With $7.25M in new funding, FlowFuse is enhancing its low-code platform for industry, bridging the OT/IT gap with new AI features."

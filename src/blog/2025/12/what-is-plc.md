@@ -1,4 +1,5 @@
 ---
+metaTitle: "What Is a PLC (Programmable Logic Controller) ? How It Works"
 title: "What Is a PLC (Programmable Logic Controller)? What It Does, How It Works, and Where It's Used"
 subtitle: "How Dick Morley's New Year's Day Hangover Changed Manufacturing Forever"
 description: "What a PLC is, the seven parts inside it, how the scan cycle works, which protocols PLCs speak, and how to get PLC data into the systems that need it."

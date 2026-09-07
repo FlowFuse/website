@@ -2,6 +2,7 @@
 title: 'Export SubFlow as Node-RED module'
 description: 'Allow SubFlows to be packaged as nodes and published to Team Library'
 date: 2025-08-28 12:00:05.0
+release: "2.21"
 authors: ['ben-hardill']
 tags:
   - changelog

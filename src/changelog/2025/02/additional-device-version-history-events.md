@@ -1,7 +1,8 @@
 ---
 title: New Remote Instances Version History Events
-description:
+description: The Version History timeline now records more remote instance events, including snapshots deployed through a pipeline.
 date: 2025-02-25 12:00:00.0
+release: "2.15"
 authors: ['serban-costin']
 tags:
   - changelog

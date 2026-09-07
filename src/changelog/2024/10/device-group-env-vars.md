@@ -2,6 +2,7 @@
 title: Environment Variables for your Device Groups
 description: "Set Environment Variables in your Device Groups for its member devices to utilize"
 date: 2024-10-21 13:00:00.0
+release: "2.10"
 
 authors: ["stephen-mclaughlin"]
 tags:

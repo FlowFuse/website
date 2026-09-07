@@ -1,4 +1,5 @@
 ---
+metaTitle: "Automating DevOps Pipelines for Node-RED"
 title: Creating and Automating DevOps Pipelines for Node-RED in Industrial Environments
 subtitle: Streamlining Deployments for Efficiency and Safety in Industrial Environments
 description: "Learn how to build and automate DevOps pipelines for Node-RED deployments in manufacturing and automotive industry environments."

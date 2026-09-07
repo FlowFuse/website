@@ -1,19 +1,52 @@
 ---
-title: "Strategy"
+title: Strategy
+description: 'FlowFuse company strategy'
 ---
 
 # Strategy
 
 Please also review:
-* our [company values](/handbook/company/values/).
-* our [Messaging Framework](/handbook/marketing/messaging/).
 
-## FlowFuse's Mission
+- our [company values](/handbook/company/values/).
+- our [Messaging Framework](/handbook/marketing/messaging/).
 
-FlowFuse will empower 1 billion people to fuse the digital realm and physical
-reality through building bespoke workflows, applications, and integrations,
-unleashing their creativity so that they can effortlessly leverage their own
-skills and expertise.
+## Core Belief
+
+<!--
+Purpose: this is the objective, industry-wide observation that justifies why a
+company like FlowFuse needs to exist at all. It must hold true regardless of
+FlowFuse -- it describes the state of the world, not our product or strategy.
+It's the starting premise a new employee should internalize before reading
+anything about what FlowFuse does. Keep it evergreen: revisit only if the
+underlying observation about the industrial world stops being true, not when
+our product or go-to-market changes.
+-->
+
+The physical world must adopt tailor made software like digital companies have
+already done,  but connecting, moving, visualizing, and interacting with their data
+from machines and assets is expensive and error-prone. The wide range of software systems,
+assets, machines, some new and some decades old, have made the challenge too big.
+As a result, most industrial equipment goes unmonitored and unoptimized, leaving
+large gains in efficiency and safety on the table.
+
+## Our Belief
+
+Non-software engineers are reliant on software to monitor and interact with
+their machines and assets, and to gain insight from them. We believe they
+should be able to build, deploy, and govern that software themselves, rather
+than depend on a scarce pool of professional developers to do it for them.
+
+There are far more of these people than there are software engineers to serve
+them. The World Federation of Engineering Organisations puts the global
+engineering workforce at roughly 30 million people
+([WFEO](https://www.wfeo.org/world-engineering-day-engineering-for-a-healthy-planet-celebrating-the-unesco-engineering-report/)),
+while the global population of professional software developers was estimated
+at about 28.7 million in 2024
+([Statista](https://www.statista.com/statistics/627312/worldwide-developer-population/)).
+Even the world's entire population of software developers is smaller than the
+world's engineering workforce in every other discipline combined -- and
+that's before counting the technicians and operators who work alongside them
+and depend on the same software every day.
 
 ### Achieving our Mission
 

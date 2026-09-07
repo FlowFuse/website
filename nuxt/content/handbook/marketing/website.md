@@ -140,9 +140,11 @@ The site has five main call-to-action destinations, each with **fixed copy** —
 | `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
 | `<CtaPricing>`   | `/pricing/`                       | "View Pricing"                                       |
 
+Contact Us vs. Book a Demo: these two CTAs carry different intent signals and should be treated accordingly. Contact Us is for general inquiries — support questions, partnership asks, anything that isn't a sales-ready request. Book a Demo is a high-intent motion: someone clicking it has effectively raised their hand to buy, so the path from click to booked call should have as little friction as possible. This is why Book a Demo needs to be visible from the main nav and not buried.
+
 If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
-**These exact components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`). The part of the site still served by Eleventy uses the equivalent Nunjucks macros described in [11ty pages](#11ty-pages) below — same five destinations, same fixed copy, same tracking, just written differently since the two frameworks don't share templates.
+**These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
 
 ### Choosing a style
 
@@ -173,6 +175,13 @@ Every component takes the same `variant` prop, which controls the look. Click "S
   :::cta-example{component="CtaContactUs" variant="highlight-outlined"}
   ```mdc
   ::CtaContactUs{variant="highlight-outlined" position="hero"}
+  ::
+  ```
+  :::
+
+  :::cta-example{component="CtaPricing" variant="primary-outlined"}
+  ```mdc
+  ::CtaPricing{variant="primary-outlined" position="hero"}
   ::
   ```
   :::
@@ -223,19 +232,34 @@ The dark card above is just to make the white text visible in this doc, use `col
 | `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |
 | `icon`     | No       | An icon name to show after the button text, e.g. `i-lucide-arrow-right`                                                                       |
 
-### 11ty pages
+### One-off links (`CtaCustom`)
 
-Pages still served by Eleventy (most of the site outside the handbook, docs, and a handful of migrated Nuxt pages) use five Nunjucks macros instead of the Vue components above, in `src/_includes/components/cta/`: `ctaSignUp`, `ctaSignIn`, `ctaContactUs`, `ctaBookDemo`, `ctaPricing`. Same five destinations, same fixed copy, same variants, and the same tracking (they send the same `cta-sign-up`/`cta-sign-in`/`cta-contact-us`/`cta-book-demo`/`cta-pricing` events with `{ position, variant }`), so a PostHog report doesn't need to care which framework a click came from.
+Occasionally a page needs a button-styled link that genuinely isn't one of the five destinations above — a link to a HubSpot meeting scheduler, an external community forum, and so on. There's a `CtaCustom` component for that, with its own copy and destination, still using the same look and tracking system as everything else on this page.
 
-```njk
-{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
-...
-{{ ctaBookDemo('highlight', 'hero') }}
+Using it takes two steps:
+
+1. Register the destination in `nuxt/lib/custom-cta-destinations.ts` — a short list of entries, each just a name, a URL, and a PostHog event name (no coding beyond typing those three things in). This is what keeps the same URL from accidentally getting tracked under two different event names if it's ever linked from more than one place.
+2. Reference that name from `<CtaCustom>` in the page, along with the button's copy and style — same as any other `Cta*` component.
+
+Both steps are plain text edits — no different in spirit from adding a new entry to `events.yaml` or a new industry page's frontmatter.
+
+**Example.** The support page's link to the Node-RED community forum works like this. First, an entry in `nuxt/lib/custom-cta-destinations.ts`:
+
+```ts
+communityForum: {
+    href: 'https://discourse.nodered.org/c/vendors/flowfuse/24/',
+    event: 'cta-community-forum',
+},
 ```
 
-`ctaSignUp` and `ctaSignIn` need `site` (the global 11ty site data) as their first argument, since Nunjucks macros don't automatically see the calling page's variables: `{{ ctaSignUp(site, 'primary-outlined', 'footer') }}`.
+Then, in the page itself:
 
-There's no `plan` prop on the 11ty side (nothing on Eleventy calls the pricing table, which is Nuxt-only) — everything else in the props reference above applies the same way, just as positional/keyword macro arguments instead of Vue props.
+```mdc
+::CtaCustom{label="Community Forum" destination-key="communityForum" variant="primary" position="community"}
+::
+```
+
+`destination-key` must match the name chosen in step 1 exactly (`communityForum` in both places above) - that's the link between the button and the destination it's registered to.
 
 ## Requesting New Website Pages
 
@@ -250,6 +274,18 @@ Starting with a draft copy is often the fastest way to get feedback and move int
 In many cases, this helps keep changes focused and iterations small when the page is built.
 
 For design-related considerations, see the [Design Review process](/handbook/design/process/#design-review).
+
+## New Pages Must Be Built in Nuxt
+
+The site is migrating from Eleventy (11ty) to Nuxt, section by section, as 11ty is phased out. Any brand-new page (a landing page, a campaign page, etc.) needs to be built in Nuxt, never as a new page in the old 11ty system, even if it looks like the fastest way to copy an existing 11ty page's pattern.
+
+A test in the site's automated test suite catches this automatically: a pull request that adds any brand-new `.njk` file (the file type 11ty page templates are built with) fails the PR's required checks until it's moved to Nuxt. Editing an existing `.njk` page is unaffected; this only catches genuinely new pages.
+
+This only looks at `.njk` files, so it never affects the markdown and images you add day to day. New blog posts, webinars, blueprints, changelog entries, and customer stories are all `.md` files (plus their images), not `.njk`. Keep publishing those as normal.
+
+That also means a brand-new page built as a `.md` file reusing an existing 11ty layout (rather than a new `.njk`) will not fail this check. The rule above still applies to it: build it in Nuxt. The test is a safety net for the most common case, not a substitute for following the rule.
+
+If a page truly needs to ship on 11ty before its Nuxt equivalent exists, a member of the GitHub "admin" team can merge anyway via "Merge without waiting for requirements to be met".
 
 ## Pull Request Scope
 

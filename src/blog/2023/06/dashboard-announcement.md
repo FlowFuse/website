@@ -1,4 +1,5 @@
 ---
+metaTitle: "The Successor to the Node-RED Dashboard"
 title: The Next Step in Data Visualization - Announcing the Successor to the Node-RED Dashboard
 subtitle: FlowFuse's Journey Towards a New Node-RED Dashboard
 description: "FlowFuse unveils its plans to build the successor to the Node-RED Dashboard, the next step in industrial data visualization."

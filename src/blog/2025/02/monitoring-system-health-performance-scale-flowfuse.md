@@ -1,4 +1,5 @@
---- 
+---
+metaTitle: "Monitoring Device Health at Scale" 
 title: "Monitoring Device Health and Performance at Scale with FlowFuse" 
 subtitle: "Track and Optimize Edge Device Performance with Node-RED and FlowFuse."
 description: "Learn how to monitor system health and performance with Node-RED, tracking CPU, memory, and other key device metrics at scale."
@@ -332,5 +333,7 @@ Now, you have the system data of all devices broadcasted on the topic and the de
 ## Conclusion
 
 Building a monitoring flow in Node-RED is simple. It allows you to track key system metrics like CPU usage, memory, and uptime with minimal effort. Its low-code Interface makes it easy to create and deploy monitoring solutions quickly.
+
+[One large US manufacturing company relies on this same approach to monitor thousands of Node-RED instances deployed across its factories](/customer-stories/manufacturing-digital-transformation/), maintaining multiple versions of instances across its device fleet.
 
 However, manually deploying this monitoring flow across 10,000 or even 100,000 devices can be a complex and time-consuming task. This is where FlowFuse makes a difference. With features like Device Groups and DevOps pipelines, you can deploy your application from a single device or hosted Node-RED instance to thousands of devices with just a single click. FlowFuse also provides powerful tools for scaling, managing, and monitoring industrial operations, making large-scale deployments more efficient and hassle-free.

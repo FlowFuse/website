@@ -2,6 +2,7 @@
 title: Device Agent Docker Containers updated
 description: Expanding the available NodeJS versions available
 date: 2026-01-27 12:00:00.0
+release: "2.27"
 authors: ['ben-hardill']
 tags:
   - changelog

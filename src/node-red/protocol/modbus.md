@@ -15,6 +15,12 @@ In manufacturing companies there is often a small set of production data, curren
 
 Node-RED, along with Modbus and Dashboard modules, can easily create a web-based dashboard, shareable with a weblink and viewable on any web browser on the network.  Imagine the advantages of digital signage in the breakroom spurring healthy competition or a manager being able to check daily totals and live process values from the phone in their pocket.
 
+<a href="https://app.flowfuse.com/account/create"
+   class="mb-4 block"
+   onclick="capture('blog-cta', { reference: 'Node-RED: Using Modbus with Node-RED', position: 'inline-image', cta_type: 'sign-up' })">
+  <img src="/node-red/protocol/images/modbus-node-red-cta-1.png" alt="Read Modbus data from every device on your floor, not just one instance" loading="lazy">
+</a>
+
 ## What is Modbus
 
 Modbus is a serial protocol that is often found in the industrial world to allow devices to communicate. Originally developed by Schneider Electric, it is an open protocol and has been adopted by brands across the industry.  [Simply Modbus](https://www.simplymodbus.ca/) is a terrific resource to learn more about how the communication is structured. The beauty of Node-RED’s low-code environment is that a user only has to understand Modbus at the highest level to be able to implement it.  

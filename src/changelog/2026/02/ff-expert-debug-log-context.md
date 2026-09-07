@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: Helping you make sense of your debug log"
 description: "You can now send debug log entries to the FlowFuse Expert as context, making it easier to track down errors in your flows."
 date: 2026-03-05 13:00:00.0
+release: "2.28"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

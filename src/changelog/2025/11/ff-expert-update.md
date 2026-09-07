@@ -2,6 +2,7 @@
 title: FlowFuse Expert Update
 description: "FlowFuse Expert Now Available In-App"
 date: 2025-11-07 14:52:00.0
+release: "2.24"
 authors: ['greg-stoutenburg']
 tags:
   - changelog

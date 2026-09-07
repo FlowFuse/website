@@ -2,6 +2,7 @@
 title: FlowFuse AI Nodes
 description: "New FlowFuse nodes for ONNX Models running Inference in your flows"
 date: 2025-10-15 12:00:00.0
+release: "2.23"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

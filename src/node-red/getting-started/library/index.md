@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED Library: Curated List of Nodes"
 eleventyNavigation:
   key: Node-RED Library
   parent: Getting Started

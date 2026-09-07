@@ -2,6 +2,7 @@
 title: DevOps Pipeline with action selection
 description: FlowFuse now supports action selection in DevOps pipelines, enabling flexible snapshot management by creating or copying snapshots, and pushing them through the pipeline.
 date: 2023-09-28 12:00:03.0
+release: "1.12"
 authors: ["marian-demme"]
 tags:
     - changelog

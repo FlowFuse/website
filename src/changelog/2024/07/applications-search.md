@@ -3,6 +3,7 @@ title: Applications Search
 description: Centralized search across all of your FlowFuse instances, devices and applications.
 
 date: 2024-07-16 13:00:00.0
+release: "2.7"
 
 authors: ["serban-costan"]
 tags:

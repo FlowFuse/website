@@ -2,6 +2,7 @@
 title: Import flows during instance creation
 description: "Making it easier to get started by importing existing Node-RED flows when creating new instances"
 date: 2025-10-21 12:00:00.0
+release: "2.23"
 authors: ['serban-costin']
 tags:
 - changelog

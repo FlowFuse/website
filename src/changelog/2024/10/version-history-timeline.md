@@ -2,6 +2,7 @@
 title: Version History Timeline
 description: "Components of a what to include in a snapshot can now be selected."
 date: 2024-10-24 13:00:00.0
+release: "2.10"
 
 authors: ["serban-costin"]
 tags:

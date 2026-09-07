@@ -1,7 +1,8 @@
 ---
 title: Re-send Team Invitations
-description:
+description: Re-send a team invitation to extend its expiry, so someone who missed the first one can still join.
 date: 2025-02-21 12:00:00.0
+release: "2.15"
 authors: ['serban-costin']
 tags:
 - changelog

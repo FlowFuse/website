@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.23: MCP and ONNX Nodes & More"
 title: "FlowFuse 2.23: MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Expert for Self-Hosted, and more!"
 subtitle: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Expert for Self-Hosted, and more!"
 description: "MCP and ONNX nodes, FlowFuse AI Expert on the homepage, Application-level Permission Control, FlowFuse Expert for Self-Hosted, and more!"

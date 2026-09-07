@@ -1,4 +1,5 @@
 ---
+metaTitle: "Migrating Self-Managed Node-RED to FlowFuse"
 title: Migrating from Self-Managed Node-RED to FlowFuse-Managed Node-RED
 subtitle: A Step-by-Step Guide to Transitioning Your Node-RED Flows to a Streamlined FlowFuse Environment
 description: "Discover how to migrate from a self-managed Node-RED setup to a fully FlowFuse-managed environment, step by step, with ease."

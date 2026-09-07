@@ -1,4 +1,5 @@
 ---
+metaTitle: "Enterprise Edge Fleet Management with balena"
 title: "Enterprise-grade Edge Device Fleet Management with balena and FlowFuse"
 subtitle: Join FlowFuse's Grey Dziuba and balena's Marc Pous to learn about Fleet Management.
 description: Join Grey Dziuba and Marc Pous to learn about enterprise-grade edge device fleet management with balena and FlowFuse.

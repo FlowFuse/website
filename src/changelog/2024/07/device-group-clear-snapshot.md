@@ -3,6 +3,7 @@ title: Device Groups Snapshots
 description: "It is now possible clear a the target snapshot of a device group."
 
 date: 2024-07-30 13:00:00.0
+release: "2.7"
 
 authors: ["stephen-mclaughlin"]
 tags:

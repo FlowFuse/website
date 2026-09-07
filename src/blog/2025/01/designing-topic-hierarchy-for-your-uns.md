@@ -24,6 +24,9 @@ A well-structured topic hierarchy is critical in manufacturing, where vast amoun
 
 In this post, we'll explore the significance of topic structuring for your UNS, outline why it's essential for scalability and performance, and share best practices for designing a robust topic hierarchy that can evolve alongside your business.
 
+::cta-image{src="/blog/2025/01/images/design-topic-structer-cta-1.png" alt="Try FlowFuse free and see your entire MQTT namespace mapped out visually" cta="sign-up"}
+::
+
 ## Why Topic Structuring is Crucial for Your UNS
 
 When building a UNS for manufacturing environments, [MQTT](/blog/2025/01/mqtt-frontrunner-for-uns/) is one of the most popular and preferred choices due to its lightweight, efficient, and scalable design. MQTT’s publish-subscribe model is perfect for handling the real-time, high-volume data flow in factories, where machines, sensors, and devices constantly generate information. However, while MQTT is a powerful tool, how you structure your topics plays a pivotal role in ensuring that your UNS is scalable and efficient.

@@ -1,4 +1,5 @@
 ---
+metaTitle: "Deploy Custom-Trained AI Models with ONNX"
 title: "Deploy Custom-Trained AI Models: Using ONNX with Node-RED and FlowFuse"
 subtitle: "Using ONNX runtime to run inference in Node-RED"
 description: "Learn how to train and export an image classifier model, and integrate it with FlowFuse AI Nodes for low-code inference in Node-RED."

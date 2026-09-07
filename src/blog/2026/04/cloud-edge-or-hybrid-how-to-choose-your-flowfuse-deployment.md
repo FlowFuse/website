@@ -1,4 +1,5 @@
 ---
+metaTitle: "Cloud, Edge, or Both? Choosing Your Deployment"
 title: "Cloud, Edge, or Both? How to Choose Your Deployment Before an Outage Does It For You"
 subtitle: "Cloud, edge, or hybrid: a practical guide to FlowFuse deployment."
 description: "Cloud, edge, or hybrid? Learn how to choose the right FlowFuse deployment model for your industrial workflows - before an outage exposes the wrong architecture."

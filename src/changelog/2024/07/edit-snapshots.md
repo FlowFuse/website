@@ -2,6 +2,7 @@
 title: Edit Snapshots
 description: We've now enabled the ability to edit the names and descriptions of Snapshots after they've been created.
 date: 2024-08-01 10:00:00.0
+release: "2.7"
 
 authors: ["stephen-mclaughlin"]
 tags:

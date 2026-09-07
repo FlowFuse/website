@@ -2,6 +2,7 @@
 title: AI Snapshot Descriptions Now Work with Remote Instances
 description: "AI-powered snapshot descriptions now available for remote instances"
 date: 2025-09-11 12:00:00.0
+release: "2.22"
 authors: ['serban-costin']
 tags:
   - changelog

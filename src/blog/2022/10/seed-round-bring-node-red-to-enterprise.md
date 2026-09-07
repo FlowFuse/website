@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse Raises $7.25M Seed Round"
 title: FlowFuse raises $7.25M Seed Round to bring Node-RED to the Enterprise
 subtitle: Allowing all developers to integrate IT and OT through low-code
 description: "FlowFuse raises a $7.25M Seed Round from Cota Capital and Open Core Ventures to bring Node-RED to the enterprise market."

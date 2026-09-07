@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: MCP-Powered Insights with RBACs"
 description: "You can now limit which user roles see which Model Context Protocol (MCP) tools when querying your MCP servers with the FlowFuse Expert."
 date: 2026-01-14 13:00:00.0
+release: "2.26"
 authors: ['steve-mclaughlin']
 tags:
   - changelog

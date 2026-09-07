@@ -66,24 +66,23 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
-        // The Application Guide pages are strongly structured rather than free prose: each page
-        // is a list of blocks, and most blocks are a tabbed set of patterns with a diagram and
-        // fixed sections. Authoring that as data keeps every page consistent and makes a copy
-        // edit a YAML edit. Rendered by pages/application-guide/[guide]/[slug].vue.
-        // File names must be NN-<slug>.yml and match the `slug` field - nuxt.config's
-        // prerender list derives the routes from the file names.
-        applicationGuide: defineCollection({
-            type: 'data',
-            source: 'application-guide/**/*.yml',
+        // Markdown-driven Application Guide pages, rendered by
+        // pages/application-guide/[guide]/[slug].vue via ContentRenderer, like /docs.
+        // The sidebar/order is driven by frontmatter (guide, slug, navOrder, navTitle).
+        applicationGuideDoc: defineCollection({
+            type: 'page',
+            source: 'application-guide/**/*.md',
             schema: z.object({
                 guide: z.enum(['flowfuse', 'node-red']),
                 slug: z.string(),
-                title: z.string(),
-                navOrder: z.number(),
+                navTitle: z.string().optional(),
+                navOrder: z.number().optional(),
+                // slug of the parent page — nests this page under it in the sidebar.
+                parent: z.string().optional(),
                 blurb: z.string().optional(),
-                // Block shapes vary by `type` and are validated by the components that render
-                // them; a discriminated union here would need updating for every new block type.
-                blocks: z.array(z.any()),
+                meta: z.object({
+                    description: z.string().optional(),
+                }).optional(),
             })
         }),
         // Source files stay at src/changelog/ (11ty's historical location) rather than
@@ -100,6 +99,12 @@ export default defineContentConfig({
                 date: z.coerce.date(),
                 authors: z.array(z.string()).optional(),
                 issues: z.array(z.string()).optional(),
+                metaTitle: z.string().optional(),
+                // The release an entry ships in, e.g. "2.33". Quoted in frontmatter so
+                // 2.30 does not parse as the number 2.3. Must be declared here or
+                // @nuxt/content strips it from the entry, which is what silently
+                // happened to `tags` on every changelog post.
+                release: z.string().regex(/^\d+\.\d+$/),
             })
         }),
         // Source files stay at src/blog/ (11ty's historical location) rather than
@@ -113,6 +118,7 @@ export default defineContentConfig({
             schema: z.object({
                 subtitle: z.string().optional(),
                 description: z.string().optional(),
+                metaTitle: z.string().optional(),
                 date: z.coerce.date(),
                 lastUpdated: z.coerce.date().optional(),
                 authors: z.array(z.string()).optional(),
@@ -140,7 +146,7 @@ export default defineContentConfig({
                     title: z.string().optional(),
                     description: z.string().optional(),
                 }).optional(),
-                meta: z.object({
+                structuredData: z.object({
                     title: z.string().optional(),
                     description: z.string().optional(),
                     faq: z.array(z.object({
@@ -188,17 +194,54 @@ export default defineContentConfig({
                 hubspot: z.object({
                     formId: z.string(),
                 }),
+                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
+                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, same
+                // shim the blog collection uses, so existing story files don't need editing.
+                structuredData: z.object({
+                    // Falls back to "Frequently Asked Questions" (the blog's fixed heading)
+                    // when unset - only set this when a story wants its own FAQ heading.
+                    faqTitle: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                }).optional(),
                 story: z.object({
                     brand: z.string(),
                     // Nullable for the same blank-key-in-YAML reason as top-level `logo` above.
                     url: z.string().nullable().optional(),
                     logo: z.string().optional(),
                     quote: z.string().optional(),
+                    // Byline for `quote`. Preferred: `quoteAuthorSlug` names a file in
+                    // src/_data/team/ or src/_data/guests/ (resolved via useTeamMember) so
+                    // name/title/headshot come from that JSON. Not every quoted person has
+                    // one, so quoteAuthor/quoteRole/quoteAvatar remain as a manual fallback -
+                    // quoteRole is job title only, `brand` above supplies the company name
+                    // and is concatenated at render time rather than duplicated here.
+                    quoteAuthorSlug: z.string().optional(),
+                    quoteAuthor: z.string().optional(),
+                    quoteRole: z.string().optional(),
+                    quoteAvatar: z.string().optional(),
                     challenge: z.string(),
                     solution: z.string(),
                     products: z.array(z.string()),
                     results: z.array(z.string()),
                 }),
+            })
+        }),
+        // ThankYouStoriesBlock.vue also queries this `stories` collection - no separate one needed.
+        // Source files stay at src/webinars/ (still served by 11ty, see LEGACY_PREFIXES
+        // in nuxt/server/middleware/legacy.ts) - only queried for the "Latest/Upcoming
+        // Webinar" tile on the thank-you pages, so no `sitemap` field either.
+        webinars: defineCollection({
+            type: 'page',
+            source: {
+                cwd: join(__dirname, '../src'),
+                include: 'webinars/**/*.md',
+            },
+            schema: z.object({
+                date: z.coerce.date(),
+                time: z.string().optional(),
             })
         }),
         ebooks: defineCollection({

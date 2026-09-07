@@ -2,6 +2,7 @@
 title: Direct SSO Login
 description: "Allows direct redirects to SAML SSO providers"
 date: 2025-08-28 12:00:00.0
+release: "2.21"
 authors: ["ben-hardill"]
 tags:
   - changelog

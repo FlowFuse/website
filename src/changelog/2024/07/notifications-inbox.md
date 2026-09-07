@@ -3,6 +3,7 @@ title: Notifications Inbox
 description: "Clearer notifications and alerts in FlowFuse"
 
 date: 2024-07-21 13:00:00.0
+release: "2.7"
 
 authors: ["serban-costan"]
 tags:

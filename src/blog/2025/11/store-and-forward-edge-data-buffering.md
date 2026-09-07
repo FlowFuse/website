@@ -1,4 +1,5 @@
 ---
+metaTitle: "Store-and-Forward at the Edge"
 title: "Store-and-Forward at the Edge: Buffering Production Data During Network Outages"
 subtitle: "Keep collecting data when your network goes down"
 description: "Learn how to implement store-and-forward buffering with FlowFuse to maintain data continuity during network outages at the edge."

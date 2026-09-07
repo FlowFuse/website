@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse API: Automating Node-RED Instances"
 title: "FlowFuse API for Industry: Automating Node-RED Instances, Devices, and CI/CD Tasks"
 subtitle: "Automate Industrial Workflows with the FlowFuse API workflows"
 description: "Use the FlowFuse API to simplify industrial automation, reduce manual tasks, and streamline deployments."

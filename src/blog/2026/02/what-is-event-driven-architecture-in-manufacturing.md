@@ -1,4 +1,5 @@
 ---
+metaTitle: "Event-Driven Architecture Explained"
 title: "Event-Driven Architecture: 99% of Your System Requests Are Worthless"
 subtitle: "What Happens When Your Factory Stops Asking and Starts Listening"
 description: "Learn how Event-Driven Architecture enables real-time responsiveness in manufacturing, replacing request-response models."

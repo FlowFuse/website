@@ -1,4 +1,5 @@
 ---
+metaTitle: "Beyond Cloud AI: Hybrid Edge-Cloud Intelligence"
 title: "Beyond Cloud AI Orchestration: Why the Future is Hybrid Edge-Cloud Intelligence"
 subtitle: "While cloud orchestration excels in digital workflows, the industrial world needs a hybrid approach."
 description: "How edge-cloud hybrid AI architectures unlock new possibilities for industrial applications while leveraging the best of both worlds."

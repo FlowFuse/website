@@ -2,6 +2,7 @@
 title:  API Endpoint for DevOps Pipeline
 description: Discover our new API endpoint for executing DevOps Pipelines, enabling automation and integration possibilities via Node-RED
 date: 2023-09-28 12:00:00.0
+release: "1.12"
 authors: ["marian-demme"]
 tags:
     - changelog

@@ -2,6 +2,7 @@
 title: Snapshot Improvements
 description: FlowFuse now allows viewing snapshot contents and downloading them locally, enhancing backup and workflow flexibility.
 date: 2024-05-09 13:03:00.0
+release: "2.4"
 authors: ["nick-oleary"]
 tags:
     - changelog

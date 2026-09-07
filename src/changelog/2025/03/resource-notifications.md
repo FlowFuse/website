@@ -2,6 +2,7 @@
 title: Resource Alerts
 description: "Notifications and email alerts to help you stay ahead of resource limits"
 date: 2025-03-25 12:00:00.0  
+release: "2.16"
 authors: ["stephen-mclaughlin"]
 tags:
   - changelog

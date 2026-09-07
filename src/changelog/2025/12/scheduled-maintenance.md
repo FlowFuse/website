@@ -2,12 +2,17 @@
 title: Scheduled Maintenance Mode
 description: Schedule time and day of the week to apply Node-RED updates
 date: 2025-12-19 12:00:00.0
+lastUpdated: 2026-08-13
+release: "2.26"
 authors: ['ben-hardill']
 tags:
   - changelog
 issues:
   - "https://github.com/FlowFuse/flowfuse/issues/5554"
 ---
+
+::product-update-note
+::
 
 Included in the FlowFuse 2.25.0 release is the ability to schedule times and days of the 
 week for Hosted Node-RED instances to upgrade to the latest available version.

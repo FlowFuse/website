@@ -25,6 +25,9 @@ As systems and devices become more connected, managing data from different sourc
 
 This article will show you how to build your UNS using FlowFuse, step by step.
 
+::cta-image{src="/blog/2024/11/images/build-uns-cta-1.png" alt="Get a free instance and connect your first sensor to a live Unified Namespace in minutes" cta="sign-up"}
+::
+
 ## Building a UNS with Real-Time Sensor Data
 
 This section explains how to set up a Unified Namespace (UNS) using FlowFuse, a Raspberry Pi, and an ADXL345 sensor. The Raspberry Pi collects data from the sensor, which we collect and process in Node-RED, calculate vibration magnitude, format it, and send it to the UNS using standardized topic names.

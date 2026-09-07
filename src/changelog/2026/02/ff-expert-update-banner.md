@@ -2,6 +2,7 @@
 title: "FlowFuse Expert: Never Miss an Update"
 description: "FlowFuse Expert now shows a banner when a new version is available, so you can update in one click."
 date: 2026-02-27 13:00:00.0
+release: "2.28"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

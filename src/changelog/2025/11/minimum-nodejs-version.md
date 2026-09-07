@@ -2,6 +2,7 @@
 title: Node.js v20 Minimum Version Requirement
 description: Minimum Node.js version bumped to v20 and above
 date: 2025-11-11 12:00:00.0
+release: "2.24"
 authors: [ 'serban-costin' ]
 tags:
   - changelog

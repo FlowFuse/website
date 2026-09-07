@@ -1,4 +1,5 @@
 ---
+metaTitle: "OPC UA Tutorial: Connect Industrial Equipment"
 title: "OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment"
 subtitle: "A practical guide to accessing industrial data through OPC UA server gateways"
 description: "Connect Node-RED to industrial PLCs step-by-step: configure Kepware endpoints and read/write Siemens S7 tags in this free guide."
@@ -280,7 +281,7 @@ This setup allows you to prepare multiple tag values and write them all at once,
 
 You’ve now mastered the fundamentals of OPC UA integration, connecting to servers, browsing tags, and reading or writing data. These core building blocks lay the foundation for powerful industrial automation.
 
-In real deployments, you will want more than Inject nodes and debug panels. With **FlowFuse Dashboard 2.0**, you can build full operator interfaces, live gauges, control buttons, trend charts, fully connected to your OPC UA data.
+In real deployments, you will want more than Inject nodes and debug panels. With **[FlowFuse Dashboard](/platform/dashboard/) 2.0**, you can build full operator interfaces, live gauges, control buttons, trend charts, fully connected to your OPC UA data.
 
 This guide covered the basics, but OPC UA offers far more. In the next article, we will explore:
 
@@ -293,4 +294,4 @@ When it is time to move beyond prototypes, **FlowFuse** delivers what industrial
 
 If you’re ready to simplify your OPC UA integration and scale industrial workflows with Node-RED, [start your free trial](https://app.flowfuse.com/account/create) of FlowFuse today.
 
-OPC UA is one of several protocols FlowFuse uses to connect PLCs to MQTT, cloud platforms, and enterprise systems. See the [FlowFuse PLC integration overview](/landing/plc/) for EtherNet/IP, Siemens S7, Modbus, and more.
+For the full rundown of FlowFuse as an [OPC UA client and server](/integrations/opcua/#opc-ua-client-and-server-capabilities), certified node included, see the FlowFuse OPC UA overview. OPC UA is one of several protocols FlowFuse uses to connect PLCs to MQTT, cloud platforms, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/) for EtherNet/IP, Siemens S7, Modbus, and more.

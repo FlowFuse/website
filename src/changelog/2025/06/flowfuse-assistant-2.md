@@ -2,6 +2,7 @@
 title: FlowFuse Expert just got smarter
 description: "Understand what your teams flows are doing with the power of AI"
 date: 2025-06-30 12:00:00.0  
+release: "2.19"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

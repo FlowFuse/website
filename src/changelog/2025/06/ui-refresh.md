@@ -2,6 +2,7 @@
 title: Navigation UI Refresh
 description: "Redesigned top navigation with improved layout, colors, and menu styling for a cleaner user experience."
 date: 2025-06-11 12:00:00.0  
+release: "2.19"
 authors: ["serban-costin"]
 tags:
   - changelog

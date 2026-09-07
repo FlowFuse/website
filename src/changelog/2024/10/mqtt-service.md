@@ -2,6 +2,7 @@
 title: MQTT Broker Service
 description: "Generic MQTT Broker Service"
 date: 2024-10-24 13:00:00.0
+release: "2.10"
 authors: ["ben-hardill"]
 tags:
     - changelog

@@ -121,4 +121,6 @@ Open up the **Quick Client** within KepserverEX and navigate to the address of *
 
 ### Conclusion
 
-This guide was designed to help you easily connect your Node-RED instance to KepserverEX with security.  For more examples of how to do more advanced configuration, please watch the past [webinar](/webinars/2023/getting-started-opcua-node-red/) going over these [examples](https://github.com/mikakaraila/node-red-contrib-opcua/tree/master/examples) in detail.  
+This guide was designed to help you easily connect your Node-RED instance to KepserverEX with security.  For more examples of how to do more advanced configuration, please watch the past [webinar](/webinars/2023/getting-started-opcua-node-red/) going over these [examples](https://github.com/mikakaraila/node-red-contrib-opcua/tree/master/examples) in detail.
+
+KepServerEX is one option for an OPC UA server; see [FlowFuse's OPC UA client and server capabilities](/integrations/opcua/#opc-ua-client-and-server-capabilities) for its own certified OPC UA node, including hosting a server directly instead of going through a gateway.

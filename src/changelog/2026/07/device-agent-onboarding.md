@@ -2,6 +2,7 @@
 title: Getting started with FlowFuse straight from the terminal
 description: Onboard a remote instance directly from your terminal with a new interactive setup
 date: 2026-07-30 12:00:00
+release: "2.33"
 authors: ["nick-oleary"]
 tags:
 - changelog

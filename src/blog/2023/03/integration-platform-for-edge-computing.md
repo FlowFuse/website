@@ -1,4 +1,5 @@
 ---
+metaTitle: "Node-RED: Integration Platform for IIoT Edge"
 title: 'Node-RED: The Integration Platform for IIoT Edge Computing & PLCs'
 subtitle: Node-RED's Role in IIoT Edge Computing & PLC Integration
 description: Discover why Node-RED is the go-to integration platform for IIoT edge computing and PLCs, embraced by leading vendors for its versatility and ease of use.

@@ -1,4 +1,5 @@
 ---
+metaTitle: "FlowFuse 2.28: Troubleshoot Faster & More"
 title: "FlowFuse 2.28: Troubleshoot Faster, Manage Edge Devices Centrally, and More Self-Hosted Flexibility"
 subtitle: "Point FlowFuse Expert at your debug logs, configure Node.js runtime options for edge devices, and gain more control over self-hosted deployments."
 description: "FlowFuse 2.28 lets you troubleshoot flows faster with debug log context and manage Remote Instances centrally with more options."

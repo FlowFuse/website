@@ -1,4 +1,5 @@
 ---
+metaTitle: "Be an Industry 4.0 Hero: Shop Floor to Dashboards"
 title: "Be an Industry 4.0 Hero: From Shop Floor Data to Real-Time Dashboards"
 subtitle: Transform your manufacturing operations from data chaos to competitive advantage with real-time insights from your shop floor.
 meta:

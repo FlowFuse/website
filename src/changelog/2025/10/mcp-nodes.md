@@ -2,6 +2,7 @@
 title: FlowFuse MCP Server Nodes
 description: "New FlowFuse nodes for creating MCP Server Tools, Resources and Prompts"
 date: 2025-10-14 12:00:00.0
+release: "2.23"
 authors: ['stephen-mclaughlin']
 tags:
   - changelog

@@ -72,7 +72,7 @@ through other marketing activities too, but wasn't nurtured to the point of a me
 
 ## Deal Management
 
-A HubSpot deal represents a specific revenue opportunity with a customer or prospect: an active buying process with an engaged buyer, a realistic close date, and next steps the deal owner can work. We open a deal for each type of revenue opportunity: new business, expansion (in-term or at renewal), pilot-contingent expansion, and renewal. The rules for each type are below. Once a deal is open, quoting and closing it follows [Engagements & Pricing](/handbook/sales/engagements/#creating-a-deal).
+A HubSpot deal represents a specific revenue opportunity with a customer or prospect: an active buying process with an engaged buyer, a realistic close date, and next steps the deal owner can work. We open a deal for each type of revenue opportunity: new business, expansion (in-term or at renewal), pilot-contingent expansion, and renewal. The rules for each type are below. Once a deal is open, quoting and closing it follows [Engagements & Pricing](/handbook/sales/engagements/#creating-a-deal), including the [quote naming convention](/handbook/sales/engagements/#quote-naming-convention).
 
 ### Deal Amount Fields
 

@@ -1,12 +1,12 @@
 ---
-title: "CAN Bus Tutorial: Connect to Dashboards, Cloud, and Industrial Systems"
-subtitle: "Build vehicle and industrial automation systems without low-level drivers or proprietary tools"
-description: "Learn how to set up SocketCAN on Linux, configure CAN interfaces, and build CAN bus applications using FlowFuse's visual programming platform."
+metaTitle: "CAN Bus & CAN Network Explained + Tutorial"
+title: "CAN Bus & CAN Network Explained: Protocol, Frames & Setup"
+subtitle: "How the CAN network and protocol actually work, then a hands-on tutorial connecting it to dashboards, cloud, and industrial systems"
+description: "What is CAN bus? How the CAN network and protocol work, frame structure and arbitration explained, plus a hands-on SocketCAN + FlowFuse tutorial."
 lastUpdated: 2026-06-19
 date: 2026-02-13
 keywords: 
 authors: ["sumit-shinde"]
-image: /blog/2026/02/images/canbus-tutorial.png
 tags:
 - flowfuse
 cta:
@@ -38,6 +38,10 @@ meta:
         text: "Add a socketcan-in node in transmit mode, drive it from an inject node whose payload contains canid and data fields, and deploy to send frames onto the bus."
         url: "transmitting-can-frames"
   faq:
+    - question: "What is CAN bus used for?"
+      answer: "CAN bus is the standard in-vehicle network for cars and trucks (it underlies OBD-II diagnostics), and it's equally common in industrial machinery, agricultural and construction equipment, elevators, medical devices, and marine electronics, anywhere multiple controllers and sensors need to share data over one durable, noise-resistant bus."
+    - question: "How does CAN bus arbitration work?"
+      answer: "Every CAN frame's identifier doubles as its priority. When two nodes transmit at the same instant, each bit is dominant (0) or recessive (1); the node sending the lower identifier keeps transmitting while the other silently backs off and retries, so higher-priority messages always win without a collision or a central scheduler."
     - question: "What is SocketCAN?"
       answer: "SocketCAN is a Linux kernel feature that integrates CAN bus support into the networking stack. It exposes CAN hardware as standard network interfaces such as can0 or vcan0, so you can configure and use CAN with familiar Linux networking commands."
     - question: "Can I use CAN bus in FlowFuse without physical hardware?"
@@ -61,9 +65,40 @@ SocketCAN brings CAN bus support directly into the Linux networking stack, treat
 
 In this tutorial, you'll set up SocketCAN on Linux, integrate it with FlowFuse, and learn how to send and receive CAN frames, establishing the foundation for connecting your CAN infrastructure to the broader industrial ecosystem.
 
-## Understanding CAN Bus
+::cta-image{src="/blog/2026/02/images/socket-can-cta-1.png" alt="Try FlowFuse free - install one node and read live CAN frames the same day, no drivers, no C code" cta="sign-up"}
+::
 
-CAN (Controller Area Network) is a robust communication protocol that allows multiple devices, such as sensors, controllers, and actuators, to share data over a two-wire bus. Commonly used in automotive, industrial, and embedded systems, CAN broadcasts all messages to every device on the network, with each message identified by an ID that devices use to filter relevant data.
+## What Is CAN Bus?
+
+**CAN bus** (Controller Area Network) is a message-based communication protocol that lets multiple electronic control units (ECUs), sensors, and actuators exchange data over a single, shared two-wire connection, without a central computer routing every message. Bosch developed it in the 1980s to simplify automotive wiring, and it now runs everything from car dashboards to industrial machines, farm equipment, and medical devices.
+
+## How the CAN Network Works
+
+A CAN network has no master node and no dedicated point-to-point wiring between devices. Every node connects to the same twisted pair of wires (CAN High and CAN Low), and every message broadcasts to every other node at once, each device decides for itself whether a message is relevant based on its identifier, rather than a switch routing traffic to a specific address.
+
+When two nodes transmit at the same instant, the protocol resolves it without a collision: each bit is either dominant (0) or recessive (1), and during arbitration the node sending the lower, higher-priority identifier wins automatically while the other silently backs off and retries. The network prioritizes itself, a safety-critical message like a brake signal always wins arbitration over a routine one like cabin temperature, without any central scheduler.
+
+## CAN Protocol: Frame Structure
+
+Every message on the bus is a **CAN frame**. Its identifier field drives both filtering and arbitration:
+
+- **Identifier**: 11 bits (standard frame) or 29 bits (extended frame), both the message's priority and its "address"; a lower value wins arbitration
+- **DLC (Data Length Code)**: how many data bytes follow, 0-8
+- **Data**: up to 8 bytes of payload
+- **CRC**: a checksum every receiver verifies before acknowledging
+- **ACK**: a single bit any node on the bus can assert to confirm the frame was received without errors
+
+Because every node sees every frame, error-checking is a network-wide guarantee rather than a point-to-point one: if a frame fails its CRC anywhere, every node flags it and the sender automatically retransmits.
+
+## CAN Controllers and Transceivers
+
+Each node reaches the bus through two components: a **CAN controller**, the chip or microcontroller peripheral that handles framing, arbitration, and error detection, and a **CAN transceiver**, which converts the controller's logic-level signals into the differential voltage the bus actually carries. Some microcontrollers include a built-in CAN controller; others pair an add-on controller chip like the MCP2515 with a transceiver like the MCP2551. On Linux, SocketCAN abstracts all of this behind a standard network interface, which is what the rest of this guide uses.
+
+## Where CAN Bus Is Used
+
+CAN bus is the standard in-vehicle network for nearly every car and truck built since the 1990s, it's the physical layer underneath OBD-II diagnostics, but it's just as common outside automotive: industrial machinery and robotics, agricultural and construction equipment, elevators, medical devices, and marine electronics all use CAN to connect controllers, sensors, and actuators over one durable, noise-resistant bus instead of dedicated point-to-point wiring for every signal.
+
+Reading and writing that traffic from software is where SocketCAN and FlowFuse come in.
 
 ## What Is SocketCAN?
 
@@ -231,6 +266,9 @@ sudo apt install -y build-essential
 ```
 
 After installing the build tools, retry installing `node-red-contrib-socketcan` from the FlowFuse palette.
+
+::cta-image{src="/blog/2026/02/images/can-bus-cta-2.png" alt="Talk to our team about connecting your CAN bus data to MQTT, OPC UA, or ERP systems" cta="demo"}
+::
 
 ### Working with CAN Frames in FlowFuse
 

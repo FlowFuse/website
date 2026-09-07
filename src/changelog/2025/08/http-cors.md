@@ -2,6 +2,7 @@
 title: Configure HTTP CORS
 description: "Allows setting HTTP CORS values for Hosted Instances"
 date: 2025-08-28 12:00:00.0
+release: "2.21"
 authors: ["ben-hardill"]
 tags:
   - changelog

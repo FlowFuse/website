@@ -3,9 +3,7 @@
 // where it lives on the page (position) vary per insertion.
 // First component to give the Sign In link any tracking at all.
 import CtaButton from './cta/CtaButton.vue'
-import site from '../../src/_data/site.json'
-// Shared with the equivalent 11ty macro (cta-sign-in.njk) - see CtaSignUp.vue.
-import ctaDestinations from '../../src/_data/ctaDestinations.json'
+import { CTA_DESTINATIONS } from '../lib/cta-destinations'
 
 withDefaults(defineProps<{
     variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
@@ -18,10 +16,10 @@ withDefaults(defineProps<{
     icon?: string
 }>(), { uppercase: undefined })
 
-const dest = ctaDestinations.signIn
-const EVENT = dest.event
-const HREF = `${site.appURL}${dest.hrefSuffix}`
-const LABEL = dest.label
+const DEST = CTA_DESTINATIONS.signIn
+const EVENT = DEST.event
+const HREF = DEST.href
+const LABEL = DEST.label
 </script>
 
 <template>

@@ -2,6 +2,7 @@
 title: Compare Snapshots flows
 description: FlowFuse now allows selecting and comparing snapshots to visualize differences, facilitating easier understanding of changes between snapshots.
 date: 2024-06-05 13:00:00.0
+release: "2.5"
 authors: ["stephen-mclaughlin"]
 tags:
     - changelog

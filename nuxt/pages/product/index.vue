@@ -1,11 +1,9 @@
 <script setup lang="ts">
 // Ported from src/platform/features.njk (11ty). Cta* components enforce
 // fixed copy/destinations (see CLAUDE.md), so the old custom-copy "Request a
-// Demo" buttons become <CtaBookDemo>; "View Pricing" isn't one of the four
-// unified destinations, so it keeps a plain ff-btn link, same precedent as
-// BlogPostCta.vue's pricing fallback.
+// Demo" and "View Pricing" buttons become <CtaBookDemo>/<CtaPricing>.
 useSeoMeta({
-    title: 'FlowFuse Features',
+    title: 'Features',
     description: 'FlowFuse provides the features companies require to reliably deliver industrial applications to devices and cloud in a collaborative, secure manner.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',
@@ -40,24 +38,6 @@ const TIERS = [
     },
 ]
 
-const DIFFERENTIATORS = [
-    {
-        heading: 'Vendor-Free Open Source',
-        description: 'Every factory is different, so why deploy the same solution as everyone else? Build your way with <a class="text-indigo-600 hover:underline" href="/blueprints/">ready-made blueprints</a>, your own app store, or anything in between — we never dictate your tools.',
-        icon: 'i-lucide-puzzle',
-    },
-    {
-        heading: 'Flexible and Secure',
-        description: 'From whole-factory rollouts to last-mile fixes across any industry. Build your solution, then secure it with <a class="text-indigo-600 hover:underline" href="/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/">granular RBAC</a>, auditing, <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">version control</a>, and traceability.',
-        icon: 'i-lucide-shield-check',
-    },
-    {
-        heading: 'Seamless Collaboration',
-        description: 'OT teams prototype and deploy fast while IT keeps the governance, security, and auditability they need — no trade-offs.',
-        icon: 'i-lucide-handshake',
-    },
-]
-
 const CAPABILITIES = [
     { label: 'Industrial AI', to: '/ai/' },
     { label: 'IT/OT Middleware', to: '/use-cases/it-ot-middleware/' },
@@ -67,42 +47,9 @@ const CAPABILITIES = [
     { label: 'Edge Connectivity', to: '/use-cases/edge-connectivity/' },
     { label: 'Data Integration', to: '/use-cases/data-integration/' },
 ]
-const activeTier = ref('edge')
-const stepRefs = ref<Record<string, HTMLElement | null>>({})
-
-// Whichever step's top has crossed the viewport's vertical midpoint is active -
-// walking the steps in DOM order and overwriting on each match means the
-// deepest (furthest scrolled-to) step wins. An IntersectionObserver watching a
-// thin band around the midpoint was tried first, but the gap between steps
-// (mt-20/pt-20/border-t below) is wider than that band, so scrolling through
-// a gap left neither step intersecting and the indicator stuck on whichever
-// step was active before the gap.
-function updateActiveTier () {
-    const steps = Object.entries(stepRefs.value).filter((entry): entry is [string, HTMLElement] => !!entry[1])
-    if (!steps.length) return
-    const mid = window.innerHeight / 2
-    let current = steps[0][0]
-    for (const [tier, el] of steps) {
-        if (el.getBoundingClientRect().top <= mid) current = tier
-    }
-    activeTier.value = current
-}
-
-let tierTicking = false
-function onTierScroll () {
-    if (!tierTicking) { tierTicking = true; requestAnimationFrame(() => { tierTicking = false; updateActiveTier() }) }
-}
-
-onMounted(() => {
-    window.addEventListener('scroll', onTierScroll, { passive: true })
-    window.addEventListener('resize', onTierScroll, { passive: true })
-    updateActiveTier()
-})
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', onTierScroll)
-    window.removeEventListener('resize', onTierScroll)
-})
+// ScrollSpySections needs each item's nav-anchor id up front, distinct from
+// tier.id (which is also the /product/{id}/ route slug used below).
+const TIER_ITEMS = TIERS.map(tier => ({ ...tier, slug: tier.id, id: `tier-${tier.id}` }))
 </script>
 
 <template>
@@ -135,56 +82,27 @@ onUnmounted(() => {
           <h2 class="mb-10 max-md:text-center">
             The needs of modern industry requires <span class="text-indigo-600">modern solutions</span>
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div
-              v-for="diff in DIFFERENTIATORS"
-              :key="diff.heading"
-              class="rounded-lg bg-gradient-to-br from-indigo-50/50 to-red-50/50 p-6 pt-8 flex flex-col gap-4 text-center md:text-left"
-            >
-              <Icon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
-              <h3 class="text-xl font-semibold text-indigo-600">{{ diff.heading }}</h3>
-              <p class="mb-0" v-html="diff.description" />
-            </div>
-          </div>
+          <DifferentiatorCards class="mb-16" />
 
           <!-- Tier scrollytelling -->
           <div class="max-w-screen-lg mx-auto pt-8 pb-20">
             <h2 class="mb-12 max-lg:text-center">Find the product for <span class="text-indigo-600">how you work</span></h2>
-            <div class="flex flex-col lg:flex-row gap-10">
-              <nav class="hidden lg:block lg:w-44 shrink-0">
-                <ul class="sticky top-24 flex flex-col border-l border-gray-200">
-                  <li v-for="tier in TIERS" :key="tier.id">
-                    <a
-                      :href="`#tier-${tier.id}`"
-                      class="block py-[0.6rem] pl-5 -ml-px border-l-2 font-medium transition-colors duration-200"
-                      :class="activeTier === tier.id ? 'text-indigo-600 border-indigo-600' : 'border-transparent text-gray-500 hover:text-indigo-600'"
-                    >{{ tier.label }}</a>
-                  </li>
-                </ul>
-              </nav>
-              <div class="flex-1 min-w-0 flex flex-col gap-20">
-                <div
-                  v-for="(tier, index) in TIERS"
-                  :id="`tier-${tier.id}`"
-                  :key="tier.id"
-                  :ref="(el) => { stepRefs[tier.id] = el as HTMLElement | null }"
-                  :data-tier="tier.id"
-                  class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center md:items-stretch"
-                  :class="index > 0 ? 'pt-20 border-t border-gray-100' : ''"
-                >
+            <ScrollSpySections :items="TIER_ITEMS" gap-class="gap-20" divider-class="pt-20 border-t border-gray-100" aria-label="FlowFuse Edge, Hub, and Fleet">
+              <template v-for="tier in TIER_ITEMS" :key="tier.id" #[tier.id]="{ item }">
+                <div class="grid md:grid-cols-2 gap-12 items-center md:items-stretch">
                   <div class="flex flex-col justify-center text-center md:text-left">
-                    <div class="text-sm font-semibold uppercase tracking-wide text-red-300">{{ tier.label }}</div>
-                    <h3 class="text-3xl mt-2">{{ tier.heading }}</h3>
-                    <p class="mt-4 text-gray-500" v-html="tier.description" />
-                    <ProseNote class="mt-4"><span v-html="tier.idealFit" /></ProseNote>
-                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${tier.id}/`" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</NuxtLink>
+                    <div class="text-sm font-semibold uppercase tracking-wide text-red-300">{{ item.label }}</div>
+                    <h3 class="text-3xl mt-2">{{ item.heading }}</h3>
+                    <p class="mt-4 text-gray-500" v-html="item.description" />
+                    <ProseNote class="mt-4"><span v-html="item.idealFit" /></ProseNote>
+                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${item.slug}/`" @click="capture('cta-learn-more', { position: `features-${item.slug}` })">Learn more about {{ item.label }} &rarr;</NuxtLink>
                   </div>
                   <div class="min-h-64 rounded-lg overflow-hidden border border-gray-200">
-                    <img :src="tier.image.src" :alt="tier.image.alt" class="block w-full h-full object-cover" loading="lazy">
+                    <img :src="item.image.src" :alt="item.image.alt" class="block w-full h-full object-cover" loading="lazy">
                   </div>
                 </div>
-              </div>
-            </div>
+              </template>
+            </ScrollSpySections>
           </div>
 
           <!-- FlowFuse Platform / integrations -->

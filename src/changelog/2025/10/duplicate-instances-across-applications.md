@@ -2,6 +2,7 @@
 title: Duplicate Instances Across Different Applications
 description: Instance duplication now works across applications, allowing you to copy existing instances to different applications within your team.
 date: 2025-10-28 12:00:00.0
+release: "2.24"
 authors: [ 'serban-costin' ]
 tags:
   - changelog

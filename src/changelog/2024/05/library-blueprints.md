@@ -2,6 +2,7 @@
 title: Blueprints added to Library
 description: FlowFuse now features Blueprints directly accessible from the Library sidebar, facilitating easy exploration and utilization for kick-starting new Node-RED applications.
 date: 2024-05-01 13:00:00.0
+release: "2.4"
 authors: ["joe-pavitt"]
 tags:
     - changelog

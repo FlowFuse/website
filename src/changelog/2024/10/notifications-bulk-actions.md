@@ -2,6 +2,7 @@
 title: Managing Notifications
 description: "Interact with notifications"
 date: 2024-10-04 10:00:00.0
+release: "2.10"
 
 authors: ["serban-costin"]
 tags:

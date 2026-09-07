@@ -1,4 +1,5 @@
 ---
+metaTitle: "Monitoring Node-RED Flows with Open Telemetry"
 title: "Monitoring and Optimizing Node-RED Flows with Open Telemetry (2026)"
 subtitle: Integrating Open Telemetry with Node-RED for Efficient Distributed Tracing
 description: "Learn to integrate Open Telemetry with Node-RED in 2026 to track, monitor, and optimize your flow's overall performance."

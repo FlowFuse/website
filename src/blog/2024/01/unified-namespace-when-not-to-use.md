@@ -1,4 +1,5 @@
 ---
+metaTitle: "Unified Namespace: When to Use It"
 title: "Unified Namespace: When to Use It, and When to Choose Something Else"
 subtitle: Data isn't created equal, some data doesn't fit the UNS 
 description: "Explore when to use the Unified Namespace (UNS) architecture and when to choose alternatives, covering latency and security."

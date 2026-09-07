@@ -2,6 +2,7 @@
 title: Bearer Token Authentication for Node-RED Instances
 description: FlowFuse now supports Bearer Token authentication for Node-RED instances, ensuring secure access to HTTP endpoints.
 date: 2024-03-14 10:00:00.0
+release: "2.2"
 authors: ["marian-demme", "ben-hardill"]
 tags:
     - changelog

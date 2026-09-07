@@ -2,6 +2,7 @@
 title: HA Hosted Instance Rolling Restart
 description: Hosted Instances with HA enabled will now restart one at a time
 date: 2026-02-12 12:00:00.0
+release: "2.27"
 authors: ['ben-hardill']
 tags:
   - changelog
