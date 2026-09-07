@@ -5,7 +5,6 @@ navOrder: 50
 meta:
   description: 'Connect a FlowFuse instance to industrial OPC UA servers: read, write, monitor, call methods, browse, read history, work with files, or host your own OPC UA server. A FlowFuse Certified Node.'
 ---
-
 # OPC UA for FlowFuse - FlowFuse Certified Node
 
 Connect a FlowFuse instance to industrial OPC UA servers. Read and write values, monitor changes in real time, call methods, browse the address space, read history, work with files, or host your own OPC UA server, all from within your flows.
@@ -809,7 +808,9 @@ Use the Browse node to discover available File objects, and the Read node to ins
 
 On **self-hosted FlowFuse**, the certified node can run an OPC UA server inside your instance using only Function nodes, no `settings.js` edit, no external module declaration, no extra npm install.
 
+<div class="ff-callout ff-callout--caution"><p class="ff-callout__title">Caution</p><div class="ff-callout__content">
 Server hosting is **not supported on FlowFuse Cloud**, Cloud exposes HTTP/HTTPS only and cannot expose the arbitrary TCP port (`opc.tcp://`) a server needs. Use a self-hosted FlowFuse instance and ensure the chosen port is reachable through your container and network configuration.
+</div></div>
 
 When the palette loads, it publishes a bootstrap helper in the Node-RED global context. Retrieve it and destructure `{ bootstrap, opcua }`: `bootstrap` carries the server helpers and `opcua` re-exports the full `node-opcua` namespace. This works even with `functionExternalModules: false`.
 

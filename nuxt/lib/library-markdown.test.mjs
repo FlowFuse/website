@@ -89,6 +89,30 @@ test('a flow JSON fence is not mangled by mustache protection', () => {
     assert.doesNotMatch(out, /`\{\{msg\.payload\}\}`/)
 })
 
+test('a caution callout keeps its box instead of becoming a bare paragraph', () => {
+    // The regression this guards: docs-markdown's convertCallouts knows note, warning and
+    // critical, then strips every remaining Nunjucks tag, so {% caution %} lost its
+    // styling silently. The OPC UA guide uses it for "not supported on FlowFuse Cloud".
+    const out = processLibraryMarkdown('{% caution %}\nNot supported on Cloud.\n{% endcaution %}')
+
+    assert.match(out, /ff-callout--caution/)
+    assert.match(out, /Not supported on Cloud\./)
+})
+
+test('a mustache in the middle of a longer code span is left alone', () => {
+    // The regression this guards: checking only for an adjacent backtick re-wrapped this
+    // and split the span in two, leaving the mustache bare and MDC free to bind it.
+    const out = protectMustaches('a template like `<p>Hello {{payload.name}}!</p>`.')
+
+    assert.equal(out, 'a template like `<p>Hello {{payload.name}}!</p>`.')
+})
+
+test('a raw guard wrapping a code span from the outside still leaves the span whole', () => {
+    const out = protectMustaches('like this: {% raw %}`<p>{{payload.name}}</p>`{% endraw %}.')
+
+    assert.equal(out, 'like this: `<p>{{payload.name}}</p>`.')
+})
+
 test('library links move to the docs tree', () => {
     assert.equal(rewriteLibraryPaths('[x](/node-red/protocol/modbus/)'), '[x](/docs/node-red/protocol/modbus/)')
     assert.equal(rewriteLibraryPaths('src="/node-red/hardware/images/a.png"'), 'src="/docs/node-red/hardware/images/a.png"')

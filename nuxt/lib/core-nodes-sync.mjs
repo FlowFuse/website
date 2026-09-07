@@ -161,27 +161,29 @@ export function renderCoreNodePage (node, { useCase, help, navOrder }) {
     return `---\n${fm}\n---\n\n${body}\n`
 }
 
-/** The category index, listing its nodes. */
-export function renderCategoryPage (category, nodes) {
-    const meta = CATEGORIES[category]
-    const list = nodes
-        .map(n => `- [${n.name}](/docs/node-red/core-nodes/${n.slug}/)${n.description ? `: ${n.description}` : ''}`)
-        .join('\n')
-
-    return `---
-title: "Node-RED ${meta.title} nodes"
-navTitle: "${meta.title}"
-navOrder: ${meta.order}
-meta:
-    description: "Reference for the ${meta.title.toLowerCase()} nodes in the default Node-RED palette."
----
-
-# ${meta.title} nodes
-
-The ${meta.title.toLowerCase()} nodes in Node-RED's default palette.
-
-${list}
-`
+/**
+ * The node list for the section index, grouped by palette category.
+ *
+ * Deliberately NOT one page per category. A category page at
+ * core-nodes/<category>/ collides with the node page at core-nodes/<category>.md
+ * whenever a node shares its category's name, and one does: the Function node sits in
+ * the `function` category, so both resolved to /docs/node-red/core-nodes/function/ and
+ * @nuxt/content picked whichever it indexed last. The old Eleventy site had no category
+ * route at all, and the legacy redirect for that URL points at the Function NODE, so the
+ * node page keeps the URL and the grouping becomes headings on the section index.
+ */
+export function renderCategorySections (nodes) {
+    return Object.entries(CATEGORIES)
+        .sort((a, b) => a[1].order - b[1].order)
+        .filter(([category]) => nodes.some(n => n.category === category))
+        .map(([category, meta]) => {
+            const list = nodes
+                .filter(n => n.category === category)
+                .map(n => `- [${n.name}](/docs/node-red/core-nodes/${n.slug}/)${n.description ? `: ${n.description}` : ''}`)
+                .join('\n')
+            return `## ${meta.title}\n\n${list}`
+        })
+        .join('\n\n')
 }
 
 /**
@@ -228,21 +230,13 @@ meta:
 Every node in Node-RED's default palette, grouped the way the editor groups them. Each
 page opens with why you would reach for that node, then mirrors the node's built-in help.
 
-${Object.entries(CATEGORIES)
-        .sort((a, b) => a[1].order - b[1].order)
-        .filter(([c]) => nodes.some(n => n.category === c))
-        .map(([c, m]) => `- [${m.title}](/docs/node-red/core-nodes/${c}/)`)
-        .join('\n')}
+${renderCategorySections(nodes)}
 `, 'utf8')
 
     let count = 1
     for (const [category] of Object.entries(CATEGORIES)) {
         const inCategory = nodes.filter(n => n.category === category)
         if (!inCategory.length) continue
-
-        mkdirSync(join(outDir, category), { recursive: true })
-        writeFileSync(join(outDir, category, 'index.md'),
-            renderCategoryPage(category, inCategory), 'utf8')
 
         for (const node of inCategory) {
             const useCasePath = join(repoRoot, 'src/_includes/core-nodes', `${node.slug}-use-case.md`)

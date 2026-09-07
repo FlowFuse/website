@@ -6,7 +6,6 @@ meta:
   description: Learn essential string operations in Node-RED including converting between strings and numbers, splitting and concatenating text, parsing JSON, extracting substrings, trimming whitespace, and more. Step-by-step guide with practical examples.
   keywords: node-red strings, working with strings in node-red, node-red string operations, node-red string manipulation, node-red text processing, node-red change node strings, node-red jsonata string functions, node-red template node strings, node-red function node strings, node-red parsing strings, node-red string conversion, node-red split string, node-red concatenate strings
 ---
-
 # Strings in Node-RED: Convert String to Number, Split, Concatenate, Trim, and More
 
 Strings are one of the most common data types in Node-RED. Whether you're converting sensor values, parsing API responses, or building dynamic messages, understanding string operations is essential for building reliable flows.
@@ -81,7 +80,7 @@ Combining strings is common when building messages, URLs, or formatted output.
 4. Click **Done**
 5. Connect to where you need the processed data
 
-Each `{{variableName}}` is replaced with actual data. For example, the template `Hello `{{payload.name}}`, your order #`{{payload.orderId}}` has shipped to `{{payload.city}}`.` with data containing name "Sarah", orderId "12345", and city "Portland" produces: `Hello Sarah, your order #12345 has shipped to Portland.`
+Each `{{variableName}}` is replaced with actual data. For example, the template `Hello {{payload.name}}, your order #{{payload.orderId}} has shipped to {{payload.city}}.` with data containing name "Sarah", orderId "12345", and city "Portland" produces: `Hello Sarah, your order #12345 has shipped to Portland.`
 
 ::render-flow
 ```json

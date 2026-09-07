@@ -7,7 +7,10 @@
 // 404, which is what a path-preserving splat would do for every typo and stale deep link.
 //
 // The core-node entries are derived from src/_data/coreNodes.json, since those pages were
-// paginated out of that catalogue and never existed as files.
+// paginated out of that catalogue and never existed as files. Only real node slugs are
+// listed: a bare category path like /node-red/core-nodes/common/ was never a page either,
+// because the .njk templates were pagination-only. /node-red/core-nodes/function/ IS
+// listed, because that was the Function node's own URL.
 import type { NitroRouteRules } from 'nitropack'
 
 const moved: Record<string, string> = {
@@ -16,7 +19,6 @@ const moved: Record<string, string> = {
     '/node-red/core-nodes/catch/': '/docs/node-red/core-nodes/catch/',
     '/node-red/core-nodes/change/': '/docs/node-red/core-nodes/change/',
     '/node-red/core-nodes/comment/': '/docs/node-red/core-nodes/comment/',
-    '/node-red/core-nodes/common/': '/docs/node-red/core-nodes/common/',
     '/node-red/core-nodes/complete/': '/docs/node-red/core-nodes/complete/',
     '/node-red/core-nodes/csv/': '/docs/node-red/core-nodes/csv/',
     '/node-red/core-nodes/debug/': '/docs/node-red/core-nodes/debug/',
@@ -34,15 +36,11 @@ const moved: Record<string, string> = {
     '/node-red/core-nodes/link/': '/docs/node-red/core-nodes/link/',
     '/node-red/core-nodes/mqtt-in/': '/docs/node-red/core-nodes/mqtt-in/',
     '/node-red/core-nodes/mqtt-out/': '/docs/node-red/core-nodes/mqtt-out/',
-    '/node-red/core-nodes/network/': '/docs/node-red/core-nodes/network/',
-    '/node-red/core-nodes/parsers/': '/docs/node-red/core-nodes/parsers/',
     '/node-red/core-nodes/range/': '/docs/node-red/core-nodes/range/',
     '/node-red/core-nodes/read-file/': '/docs/node-red/core-nodes/read-file/',
-    '/node-red/core-nodes/sequence/': '/docs/node-red/core-nodes/sequence/',
     '/node-red/core-nodes/sort/': '/docs/node-red/core-nodes/sort/',
     '/node-red/core-nodes/split/': '/docs/node-red/core-nodes/split/',
     '/node-red/core-nodes/status/': '/docs/node-red/core-nodes/status/',
-    '/node-red/core-nodes/storage/': '/docs/node-red/core-nodes/storage/',
     '/node-red/core-nodes/switch/': '/docs/node-red/core-nodes/switch/',
     '/node-red/core-nodes/tcp-in/': '/docs/node-red/core-nodes/tcp-in/',
     '/node-red/core-nodes/template/': '/docs/node-red/core-nodes/template/',

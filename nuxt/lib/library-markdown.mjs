@@ -60,21 +60,31 @@ export function resolveTitleInterpolation (content, title) {
  * into an inline code span, which MDC does not interpolate, and which is how the rest of
  * the docs already write `msg.payload`.
  *
- * A mustache already inside a code span or a fenced block is left alone: fences are
- * skipped wholesale, and an existing backtick immediately around the match is honoured.
+ * A mustache that is already inside a code span or a fenced block is left exactly as it
+ * is. Both are found by splitting the text on them, NOT by looking at the characters
+ * either side of the match. An earlier version checked only for an adjacent backtick,
+ * which silently broke the common case: a mustache in the MIDDLE of a longer span, such
+ * as `<p>Hello {{payload.name}}!</p>`, has no backtick beside it, so it was re-wrapped
+ * and the surrounding span was split in two, leaving the mustache as bare text and
+ * turning the prose around it into bogus inline code. That is the exact failure this
+ * function exists to prevent, so it is pinned by tests against the real fragments.
  */
 export function protectMustaches (content) {
-    const segments = content.split(/(^```[\s\S]*?^```)/gm)
+    // Fences first, since a fence may contain backticks and must survive byte for byte.
+    return content.split(/(^```[\s\S]*?^```)/gm).map((block, blockIndex) => {
+        // Odd indices are the captured fenced blocks.
+        if (blockIndex % 2 === 1) return block
 
-    return segments.map((segment, i) => {
-        // Odd indices are the captured fenced blocks. Node-RED syntax shown in a fence is
-        // already safe and must keep its exact bytes.
-        if (i % 2 === 1) return segment
+        // The raw guards are Eleventy-only and go regardless of where they sit, including
+        // when they wrap a code span from the outside.
+        const unguarded = block.replace(/\{%-?\s*(?:end)?raw\s*-?%\}\r?\n?/g, '')
 
-        return segment
-            .replace(/\{%-?\s*(?:end)?raw\s*-?%\}\r?\n?/g, '')
-            .replace(/(`?)(\{\{[^{}\n]*\}\})(`?)/g, (whole, before, mustache, after) =>
-                (before && after) ? whole : `\`${mustache}\``)
+        // Then split on inline code spans, so only the text between them is rewritten.
+        return unguarded.split(/(`[^`\n]*`)/g).map((part, partIndex) =>
+            partIndex % 2 === 1
+                ? part
+                : part.replace(/\{\{[^{}\n]*\}\}/g, (mustache) => `\`${mustache}\``)
+        ).join('')
     }).join('')
 }
 
@@ -93,6 +103,25 @@ export function rewriteLibraryPaths (content) {
 }
 
 /**
+ * Convert the `{% caution %}` callout, which docs-markdown does not know about.
+ *
+ * `convertCallouts` handles note, warning and critical, then strips every remaining
+ * Nunjucks tag, so a caution block loses its box and becomes an ordinary paragraph. The
+ * library uses it, and .eleventy.js treated it as a first-class callout with its own
+ * icon: the OPC UA guide flags "server hosting is not supported on FlowFuse Cloud" with
+ * it, which must not read as body text. Emits the same markup shape convertCallouts
+ * does, so style.docs.css already covers it. Run BEFORE convertCallouts.
+ */
+export function convertCautionCallouts (content) {
+    return content.replace(
+        /\{%-?\s*caution\s*-?%\}([\s\S]*?)\{%-?\s*endcaution\s*-?%\}/g,
+        (_, body) => '<div class="ff-callout ff-callout--caution">' +
+            '<p class="ff-callout__title">Caution</p>' +
+            `<div class="ff-callout__content">\n\n${body.trim()}\n\n</div></div>`
+    )
+}
+
+/**
  * Everything, in the one order that works.
  *
  * `title` comes from the page's own frontmatter and is only used to resolve the H1.
@@ -102,6 +131,7 @@ export function processLibraryMarkdown (content, { title } = {}) {
     out = resolveTitleInterpolation(out, title)
     out = protectMustaches(out)
     out = rewriteLibraryPaths(out)
+    out = convertCautionCallouts(out)
     out = joinHtmlBlocks(out)
     // Last: this strips every Nunjucks tag still standing.
     return convertCallouts(out)

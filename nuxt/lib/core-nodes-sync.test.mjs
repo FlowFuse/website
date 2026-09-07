@@ -148,7 +148,30 @@ test('a sync missing any node help fails loudly and names the node', () => {
     )
 })
 
-test('a full sync writes a page per node plus the section and category indexes', () => {
+test('a node whose name matches its category does not collide with a category page', () => {
+    // The Function node lives in the `function` category. A category page at
+    // core-nodes/function/ and the node page at core-nodes/function.md both resolve to
+    // /docs/node-red/core-nodes/function/, and @nuxt/content picks whichever it indexed
+    // last. The legacy redirect for that URL is the NODE, so no category pages are
+    // emitted at all.
+    const root = mkdtempSync(join(tmpdir(), 'core-nodes-collide-'))
+    const catalogue = { function: [{ xpath: 'function', name: 'Function', file: '10-function' }] }
+
+    syncCoreNodes({
+        repoRoot: root,
+        nuxtRoot: join(root, 'nuxt'),
+        coreNodes: catalogue,
+        help: { 'function/function': '<p>f</p>' },
+        logger: { info () {} },
+    })
+
+    const entries = readdirSync(join(root, 'nuxt/content/docs/node-red/core-nodes')).sort()
+
+    assert.deepEqual(entries, ['function.md', 'index.md'])
+    assert.ok(!entries.includes('function'), 'no category directory may shadow the node page')
+})
+
+test('a full sync writes a page per node plus the section index', () => {
     const root = mkdtempSync(join(tmpdir(), 'core-nodes-'))
     const help = { 'common/inject': '<p>i</p>', 'network/mqtt-in': '<p>m</p>' }
 
@@ -167,7 +190,13 @@ test('a full sync writes a page per node plus the section and category indexes',
     // index.md, not README.md: this writes straight into the content tree rather than
     // through guides-sync, which is what renames README on the way in. README.md here
     // prerenders as /docs/node-red/core-nodes/README/ and 404s the build.
-    assert.deepEqual(entries, ['common', 'index.md', 'inject.md', 'mqtt-in.md', 'network'])
+    //
+    // And no per-category directories: one node page per node, flat, plus the section
+    // index. See the collision note on renderCategorySections.
+    assert.deepEqual(entries, ['index.md', 'inject.md', 'mqtt-in.md'])
     assert.match(readFileSync(join(dir, 'index.md'), 'utf8'), /navTitle: "Core nodes"/)
-    assert.match(readFileSync(join(dir, 'common/index.md'), 'utf8'), /\/docs\/node-red\/core-nodes\/inject\//)
+    // The section index carries the per-category grouping the category pages used to.
+    const index = readFileSync(join(dir, 'index.md'), 'utf8')
+    assert.match(index, /## Common/)
+    assert.match(index, /\/docs\/node-red\/core-nodes\/inject\//)
 })
