@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url'
 
 import { syncDocs } from '../nuxt/lib/docs-sync.mjs'
 import { syncGuides } from '../nuxt/lib/guides-sync.mjs'
-import { syncCoreNodes } from '../nuxt/lib/core-nodes-sync.mjs'
+import { fetchCoreNodeHelp, syncCoreNodes } from '../nuxt/lib/core-nodes-sync.mjs'
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 
@@ -17,9 +17,5 @@ const nuxtRoot = join(repoRoot, 'nuxt')
 await syncDocs({ repoRoot, nuxtRoot })
 // After syncDocs, which wipes the tree it writes into.
 syncGuides({ repoRoot, nuxtRoot })
-syncCoreNodes({
-    repoRoot,
-    nuxtRoot,
-    coreNodes: JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8')),
-    help: JSON.parse(readFileSync(join(nuxtRoot, 'lib', 'core-node-help.json'), 'utf8')),
-})
+const coreNodes = JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8'))
+syncCoreNodes({ repoRoot, nuxtRoot, coreNodes, help: await fetchCoreNodeHelp({ coreNodes }) })

@@ -6,8 +6,8 @@ import test from 'node:test'
 
 import {
     extractHelp,
+    fetchCoreNodeHelp,
     listNodes,
-    refreshCoreNodeHelp,
     renderCoreNodePage,
     slugFor,
     syncCoreNodes,
@@ -55,19 +55,69 @@ test('the catalogue flattens to nodes carrying their category and slug', () => {
     assert.deepEqual(nodes.map(n => `${n.category}/${n.slug}`), ['common/inject', 'network/mqtt-in'])
 })
 
-test('a refresh that cannot find a node throws instead of storing nothing', async () => {
-    const fetchImpl = async () => ({ ok: true, text: async () => '<script data-help-name="other">x</script>' })
+const ok = (body) => async () => ({ ok: true, status: 200, text: async () => body })
+
+test('a fetch that cannot find the help name fails the build and names every miss', async () => {
+    // The regression this guards: the Eleventy version got an empty node-set here, joined
+    // it to '' and published the page anyway. Four pages shipped with no help that way.
+    const fetchImpl = ok('<script data-help-name="something else">x</script>')
 
     await assert.rejects(
-        () => refreshCoreNodeHelp({ coreNodes: CATALOGUE, fetchImpl }),
-        /no data-help-name/
+        () => fetchCoreNodeHelp({ coreNodes: CATALOGUE, fetchImpl }),
+        (err) => /Upstream help not found for 2 core node\(s\)/.test(err.message)
+            && /Inject/.test(err.message) && /MQTT In/.test(err.message)
     )
 })
 
-test('a refresh propagates an upstream HTTP failure', async () => {
-    const fetchImpl = async () => ({ ok: false, status: 404 })
+test('a 404 is a real mismatch and is not retried', async () => {
+    let calls = 0
+    const fetchImpl = async () => { calls++; return { ok: false, status: 404 } }
 
-    await assert.rejects(() => refreshCoreNodeHelp({ coreNodes: CATALOGUE, fetchImpl }), /404/)
+    await assert.rejects(() => fetchCoreNodeHelp({ coreNodes: CATALOGUE, fetchImpl, delay: 0 }), /404/)
+    assert.equal(calls, 1, 'a 404 never becomes a success, so retrying only slows the build')
+})
+
+test('a transient 5xx is retried and then succeeds', async () => {
+    let calls = 0
+    const fetchImpl = async () => {
+        calls++
+        return calls === 1
+            ? { ok: false, status: 503 }
+            : { ok: true, status: 200, text: async () => '<script data-help-name="inject">i</script><script data-help-name="mqtt in">m</script>' }
+    }
+
+    const help = await fetchCoreNodeHelp({ coreNodes: CATALOGUE, fetchImpl, delay: 0 })
+
+    assert.equal(help['common/inject'], 'i')
+    assert.ok(calls > 1, 'one bad minute at GitHub must not fail a deploy')
+})
+
+test('a persistent 5xx gives up and fails the build', async () => {
+    const fetchImpl = async () => ({ ok: false, status: 502 })
+
+    await assert.rejects(
+        () => fetchCoreNodeHelp({ coreNodes: CATALOGUE, fetchImpl, retries: 2, delay: 0 }),
+        /Could not fetch core node help.*502/s
+    )
+})
+
+test('one locale file serving several nodes is fetched once', async () => {
+    const shared = {
+        network: [
+            { xpath: 'mqtt in', name: 'MQTT In', file: '10-mqtt' },
+            { xpath: 'mqtt out', name: 'MQTT Out', file: '10-mqtt' },
+        ],
+    }
+    let calls = 0
+    const fetchImpl = async () => {
+        calls++
+        return { ok: true, status: 200, text: async () => '<script data-help-name="mqtt in">i</script><script data-help-name="mqtt out">o</script>' }
+    }
+
+    const help = await fetchCoreNodeHelp({ coreNodes: shared, fetchImpl, delay: 0 })
+
+    assert.equal(calls, 1)
+    assert.deepEqual(help, { 'network/mqtt-in': 'i', 'network/mqtt-out': 'o' })
 })
 
 test('a page leads with the FlowFuse use case and puts the mirrored help under its own heading', () => {
@@ -94,7 +144,7 @@ test('a sync missing any node help fails loudly and names the node', () => {
             help: { 'common/inject': 'x' },
             logger: { info () {} },
         }),
-        /MQTT In.*refresh_core_node_help/s
+        /No help fetched for.*MQTT In/s
     )
 })
 
@@ -114,7 +164,10 @@ test('a full sync writes a page per node plus the section and category indexes',
     const entries = readdirSync(dir).sort()
 
     assert.equal(count, 2)
-    assert.deepEqual(entries, ['README.md', 'common', 'inject.md', 'mqtt-in.md', 'network'])
-    assert.match(readFileSync(join(dir, 'README.md'), 'utf8'), /navGroup|navTitle: "Core nodes"/)
-    assert.match(readFileSync(join(dir, 'common/README.md'), 'utf8'), /\/docs\/node-red\/core-nodes\/inject\//)
+    // index.md, not README.md: this writes straight into the content tree rather than
+    // through guides-sync, which is what renames README on the way in. README.md here
+    // prerenders as /docs/node-red/core-nodes/README/ and 404s the build.
+    assert.deepEqual(entries, ['common', 'index.md', 'inject.md', 'mqtt-in.md', 'network'])
+    assert.match(readFileSync(join(dir, 'index.md'), 'utf8'), /navTitle: "Core nodes"/)
+    assert.match(readFileSync(join(dir, 'common/index.md'), 'utf8'), /\/docs\/node-red\/core-nodes\/inject\//)
 })

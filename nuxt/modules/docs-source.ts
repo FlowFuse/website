@@ -9,7 +9,7 @@ import { syncDocs } from '../lib/docs-sync.mjs'
 // @ts-ignore same
 import { syncGuides } from '../lib/guides-sync.mjs'
 // @ts-ignore same
-import { syncCoreNodes } from '../lib/core-nodes-sync.mjs'
+import { fetchCoreNodeHelp, syncCoreNodes } from '../lib/core-nodes-sync.mjs'
 
 const logger = useLogger('docs-source')
 
@@ -40,15 +40,11 @@ export default defineNuxtModule({
         await syncDocs({ repoRoot, nuxtRoot, logger })
         syncGuides({ repoRoot, nuxtRoot, logger })
         // The core-node pages were never files: under Eleventy they were paginated out of
-        // coreNodes.json. They are generated from that catalogue plus the committed help
-        // snapshot, so a deploy never reaches out to raw.githubusercontent.com.
-        syncCoreNodes({
-            repoRoot,
-            nuxtRoot,
-            coreNodes: JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8')),
-            help: JSON.parse(readFileSync(join(nuxtRoot, 'lib', 'core-node-help.json'), 'utf8')),
-            logger,
-        })
+        // coreNodes.json, each fetching its help from the Node-RED repo. They still fetch
+        // per build, so the help is never a stale copy, but a node whose help cannot be
+        // found now fails the build instead of rendering an empty section.
+        const coreNodes = JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8'))
+        syncCoreNodes({ repoRoot, nuxtRoot, coreNodes, help: await fetchCoreNodeHelp({ coreNodes }), logger })
 
         if (!existsSync(contentDocsDir)) return
 

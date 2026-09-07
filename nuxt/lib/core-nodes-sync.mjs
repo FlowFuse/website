@@ -6,11 +6,17 @@
 // repo at build time (`lib/core-node-docs.js`). @nuxt/content indexes files, so the pages
 // have to exist as markdown before it runs.
 //
-// The help text is upstream's, so it is mirrored rather than owned: `data/core-node-help.json`
-// holds a snapshot, committed, and `refreshCoreNodeHelp` re-fetches it on demand. That
-// keeps the production build hermetic. Fetching per build would put a third-party raw
-// githubusercontent URL on the critical path of every deploy and fail the site whenever
-// upstream renamed a locale file.
+// The help text is upstream's, so it is fetched from the Node-RED repo on every build
+// rather than copied into this one. That is a deliberate trade: a copy cannot be 1:1 with
+// upstream, and nobody should have to remember to refresh it. The cost is that a deploy
+// depends on raw.githubusercontent.com being reachable and on the catalogue still matching
+// upstream's help names.
+//
+// What is NOT acceptable is the old failure mode. `lib/core-node-docs.js` selected the
+// help with an xpath, got an empty node-set when upstream renamed a block, joined it to
+// an empty string and rendered the page anyway. Four pages shipped an empty "Node
+// Documentation" section that way. So every miss here throws, and a rename stops the
+// build instead of quietly emptying a page.
 //
 // The FlowFuse-authored half is `src/_includes/core-nodes/<slug>-use-case.md`: a short
 // "why you would reach for this node" intro that exists for every node. That is the part
@@ -75,22 +81,59 @@ export function listNodes (coreNodes) {
 }
 
 /**
- * Re-fetch every node's help from upstream and rewrite the snapshot.
+ * Fetch every node's help from the Node-RED repo.
  *
- * Run deliberately (`node scripts/refresh_core_node_help.mjs`), never from a build. A node
- * whose help cannot be fetched throws rather than being written empty: a silently
- * help-less page looks fine in CI and is useless to a reader.
+ * Uses the global fetch and nothing else: `scripts/sync_docs.mjs` runs this before
+ * `npm install` in CI, so it cannot reach for a dependency.
+ *
+ * Two failures are told apart on purpose. A transport failure or a 5xx is transient and
+ * retried, because one bad minute at GitHub should not fail a deploy. A 404, or a file
+ * that does not contain the help name the catalogue asked for, is a real mismatch that no
+ * retry will fix, so it throws immediately and names both the node and the URL.
+ *
+ * One locale file often serves several nodes, so responses are fetched once per file and
+ * reused. That is 21 requests for 38 nodes.
  */
-export async function refreshCoreNodeHelp ({ coreNodes, fetchImpl = fetch } = {}) {
+export async function fetchCoreNodeHelp ({ coreNodes, fetchImpl = fetch, retries = 3, delay = 500 } = {}) {
+    const nodes = listNodes(coreNodes)
+    const files = new Map()
+
+    for (const url of new Set(nodes.map(n => `${UPSTREAM}/${n.category}/${n.file}.html`))) {
+        let lastError
+        for (let attempt = 1; attempt <= retries; attempt++) {
+            try {
+                const res = await fetchImpl(url)
+                if (res.status === 404) throw new Error(`${url} returned 404; the catalogue points at a file upstream no longer has`)
+                if (!res.ok) { lastError = new Error(`${url} returned ${res.status}`); }
+                else { files.set(url, await res.text()); lastError = null; break }
+            } catch (err) {
+                if (/404/.test(err.message)) throw err
+                lastError = err
+            }
+            if (attempt < retries) await new Promise(r => setTimeout(r, delay * attempt))
+        }
+        if (lastError) throw new Error(`Could not fetch core node help: ${lastError.message}`)
+    }
+
     const help = {}
-    for (const node of listNodes(coreNodes)) {
+    const missing = []
+    for (const node of nodes) {
         const url = `${UPSTREAM}/${node.category}/${node.file}.html`
-        const res = await fetchImpl(url)
-        if (!res.ok) throw new Error(`${node.name}: ${url} returned ${res.status}`)
-        const extracted = extractHelp(await res.text(), node.xpath)
-        if (!extracted) throw new Error(`${node.name}: no data-help-name="${node.xpath}" in ${url}`)
+        const extracted = extractHelp(files.get(url), node.xpath)
+        if (!extracted) missing.push(`${node.name} (wanted data-help-name="${node.xpath}" in ${node.category}/${node.file}.html)`)
         help[`${node.category}/${node.slug}`] = extracted
     }
+
+    // Reported together rather than one at a time: when upstream reorganises a locale
+    // file, several nodes move at once and one error per run makes that take several runs
+    // to discover.
+    if (missing.length) {
+        throw new Error(
+            'Upstream help not found for ' + missing.length + ' core node(s):\n  ' + missing.join('\n  ') +
+            '\nUpstream renamed or moved these help blocks. Fix src/_data/coreNodes.json.'
+        )
+    }
+
     return help
 }
 
@@ -149,6 +192,9 @@ ${list}
  * gitignored and wiped on every sync - the same place guides-sync writes to, and the
  * reason these generated pages are not committed. Writing them into content-guides/
  * instead would dirty the working tree on every build.
+ *
+ * Takes `help` rather than fetching it, so the whole tree-writing half stays synchronous
+ * and testable without a network stub.
  */
 export function syncCoreNodes ({ repoRoot, nuxtRoot, coreNodes, help, logger = console }) {
     const outDir = join(nuxtRoot, 'content', 'docs', 'node-red', 'core-nodes')
@@ -157,15 +203,19 @@ export function syncCoreNodes ({ repoRoot, nuxtRoot, coreNodes, help, logger = c
 
     if (missing.length) {
         throw new Error(
-            'No mirrored help for: ' + missing.map(n => n.name).join(', ') +
-            '. Run scripts/refresh_core_node_help.mjs.'
+            'No help fetched for: ' + missing.map(n => n.name).join(', ') +
+            '. fetchCoreNodeHelp should have thrown before this point.'
         )
     }
 
     mkdirSync(outDir, { recursive: true })
 
-    // Section index.
-    writeFileSync(join(outDir, 'README.md'), `---
+    // `index.md`, not `README.md`. The README convention belongs to the sync layer:
+    // guides-sync's destinationFor renames it on the way into the content tree. This
+    // writes straight into that tree, so it has to use the name @nuxt/content and the
+    // prerender collector expect. Getting this wrong produced routes like
+    // /docs/node-red/core-nodes/README/ that prerendered as 404s and failed the build.
+    writeFileSync(join(outDir, 'index.md'), `---
 title: "Node-RED core nodes"
 navTitle: "Core nodes"
 navOrder: 3
@@ -191,7 +241,7 @@ ${Object.entries(CATEGORIES)
         if (!inCategory.length) continue
 
         mkdirSync(join(outDir, category), { recursive: true })
-        writeFileSync(join(outDir, category, 'README.md'),
+        writeFileSync(join(outDir, category, 'index.md'),
             renderCategoryPage(category, inCategory), 'utf8')
 
         for (const node of inCategory) {
