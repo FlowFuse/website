@@ -70,6 +70,4 @@ socialProofText: "Built for 24/7 precision operations on Node-RED"
 cta:
   title: "Ready to modernize your electronics line?"
   description: "Describe your current automation setup, and the team will show a tailored architecture using FlowFuse."
-  buttonText: "BOOK A DISCOVERY CALL"
-  buttonLink: "/book-demo/"
 ---

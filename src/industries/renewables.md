@@ -55,6 +55,4 @@ socialProofText: "Used by industrial teams to run 24/7 operations on top of Node
 cta:
   title: "Ready to see your assets in one view?"
   description: "Share a sample of your renewable assets and the team will show how FlowFuse would monitor them in real time."
-  buttonText: "BOOK YOUR DEMO"
-  buttonLink: "/book-demo/"
 ---

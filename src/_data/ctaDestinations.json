@@ -1,5 +1,6 @@
 {
     "signUp": {
+        "component": "CtaSignUp",
         "event": "cta-sign-up",
         "hrefSuffix": "/account/create",
         "label": "Try it out",
@@ -7,21 +8,25 @@
         "navPositions": ["main-nav", "mobile-cta-bar"]
     },
     "signIn": {
+        "component": "CtaSignIn",
         "event": "cta-sign-in",
         "hrefSuffix": "",
         "label": "Sign In"
     },
     "contactUs": {
+        "component": "CtaContactUs",
         "event": "cta-contact-us",
         "href": "/contact-us/",
         "label": "Contact Us"
     },
     "bookDemo": {
+        "component": "CtaBookDemo",
         "event": "cta-book-demo",
         "href": "/book-demo/",
         "label": "Book a Demo"
     },
     "pricing": {
+        "component": "CtaPricing",
         "event": "cta-pricing",
         "href": "/pricing/",
         "label": "View Pricing"

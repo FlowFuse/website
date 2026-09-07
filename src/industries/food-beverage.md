@@ -58,6 +58,4 @@ socialProofText: "Used by food and beverage manufacturing teams to standardize o
 cta:
   title: "Ready to see your batch traceability in one view?"
   description: "Share a sample of your production lines and food safety requirements and the team will show how FlowFuse would manage containment, traceability, and compliance in real time."
-  buttonText: "BOOK YOUR DEMO"
-  buttonLink: "/book-demo/"
 ---

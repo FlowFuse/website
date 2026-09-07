@@ -176,6 +176,13 @@ module.exports = function(eleventyConfig) {
         Object.assign(ctaDestinations, fresh)
     })
 
+    // Nunjucks has no `throw` statement usable mid-template - this global lets
+    // a macro fail the build with a real, descriptive error (same "throw"
+    // convention Nuxt's Cta*.vue components use for an invalid prop) instead
+    // of either silently rendering broken output or crashing later with an
+    // opaque error somewhere downstream. See ctaButton's variant/color checks.
+    eleventyConfig.addNunjucksGlobal('raiseError', (message) => { throw new Error(message) })
+
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
     eleventyConfig.addGlobalData('POSTHOG_APIKEY', () => process.env.POSTHOG_APIKEY || '' )
     eleventyConfig.addGlobalData('DEV_MODE', () => DEV_MODE || DEV_MODE_POSTS)

@@ -254,8 +254,8 @@ hubspot:
         <h2 class="mt-4 md:text-5xl">FlowFuse is the industrial application platform that sits between your systems and your operations</h2>
         <p>Whether you're extending an existing system, standardizing a proven solution across sites, or connecting OT and IT data flows, FlowFuse gives your team the platform to <strong>build once and run everywhere</strong>.</p>
         <div class="flex gap-4 items-center max-md:justify-center flex-wrap mt-6">
-            {{ ctaBookDemo('primary', 'secondary') }}
-            {{ ctaSignUp(site, 'ghost', 'secondary', icon=true) }}
+            {{ ctaBookDemo('primary', 'solution') }}
+            {{ ctaSignUp(site, 'ghost', 'solution', icon=true) }}
         </div>
     </div>
 </div>
@@ -420,8 +420,6 @@ hubspot:
     {% set cta = {
         title: "Get Started with FlowFuse",
         description: "Your first operational application could be running this week. Book a demo to see how, or start a free trial and build it yourself.",
-        buttonText: "BOOK A DEMO",
-        buttonLink: "/book-demo/",
         position: "get-started"
     } %}
     {% include "cta-get-started.njk" %}

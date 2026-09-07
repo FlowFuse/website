@@ -59,6 +59,4 @@ socialProofText: "Used by aerospace and defence manufacturing teams to standardi
 cta:
   title: "Ready to see your build records in one view?"
   description: "Share a sample of your production operations and the team will show how FlowFuse would capture, link, and manage traceability data in real time."
-  buttonText: "BOOK YOUR DEMO"
-  buttonLink: "/book-demo/"
 ---

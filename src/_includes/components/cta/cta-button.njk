@@ -12,6 +12,19 @@
   used on the pricing table, which is Nuxt-only - no 11ty caller needs it.
 #}
 {% macro ctaButton(event, href, label, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{#- Nuxt's CtaButton.vue gets this for free from TypeScript's literal union
+    types - a typo'd variant fails at compile time. Nunjucks has no such
+    check, so without this, {{ 'ff-btn ff-btn--' ~ variant }} below would
+    silently emit a nonexistent CSS class (e.g. "ff-btn--primry") and render
+    an unstyled button instead of failing the build. -#}
+{%- set VALID_VARIANTS = ['primary', 'primary-outlined', 'highlight', 'highlight-outlined', 'ghost', 'nav-text'] -%}
+{%- if variant not in VALID_VARIANTS -%}
+    {{ raiseError('ctaButton: unknown variant "' ~ variant ~ '" - must be one of ' ~ (VALID_VARIANTS | join(', '))) }}
+{%- endif -%}
+{%- set VALID_COLORS = ['primary', 'highlight', 'white'] -%}
+{%- if color and color not in VALID_COLORS -%}
+    {{ raiseError('ctaButton: unknown color "' ~ color ~ '" - must be one of ' ~ (VALID_COLORS | join(', '))) }}
+{%- endif -%}
 {%- set isNavText = variant == 'nav-text' -%}
 {%- set isGhost = variant == 'ghost' -%}
 {#- Vue's CtaButton defaults uppercase to `!isNavTextVariant` when the caller
