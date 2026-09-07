@@ -178,7 +178,7 @@ useSchemaOrg([
                 </ul>
               </div>
 
-              <CtaBookDemo variant="primary" position="customer-story" uppercase class="mt-3 w-full md:self-end" />
+              <CtaBookDemo variant="primary" position="right-column-summary" uppercase class="mt-3 w-full md:self-end" />
             </div>
 
             <div v-if="page.hubspot?.formId" class="mt-6 flex flex-col px-6">

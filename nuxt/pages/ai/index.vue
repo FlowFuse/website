@@ -418,8 +418,8 @@ onUnmounted(() => {
           <p class="text-white text-4xl sm:text-5xl font-medium m-0">Get Started with FlowFuse</p>
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
-            <CtaBookDemo variant="highlight" position="get-started" />
-            <CtaPricing variant="ghost" color="white" position="get-started" icon="i-lucide-arrow-right" />
+            <CtaBookDemo variant="highlight" position="bottom-cta-card" />
+            <CtaPricing variant="ghost" color="white" position="bottom-cta-card" icon="i-lucide-arrow-right" />
           </div>
         </div>
       </div>

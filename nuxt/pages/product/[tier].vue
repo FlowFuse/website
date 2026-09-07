@@ -46,8 +46,8 @@ useSeoMeta({
           <h1 class="text-4xl sm:text-5xl font-medium">{{ tier.headingLead }} <span class="text-red-600">{{ tier.headingHighlight }}</span></h1>
           <p class="mt-6 text-lg max-w-xl mx-auto md:mx-0" v-html="tier.description" />
           <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center md:justify-start">
-            <CtaBookDemo variant="highlight" :position="`${tierId}-hero`" />
-            <CtaPricing variant="ghost" :position="`${tierId}-hero`" icon="i-lucide-arrow-right" />
+            <CtaBookDemo variant="highlight" position="hero" />
+            <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
           </div>
         </div>
         <div class="rounded-lg shadow-2xl border-2 border-red-100 overflow-hidden">
@@ -132,8 +132,8 @@ useSeoMeta({
       <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
         <h2 class="text-white font-medium m-0 max-w-2xl">Join hundreds of global organizations building, governing, and deploying operational applications.</h2>
         <div class="flex flex-col sm:flex-row gap-4 items-center">
-          <CtaBookDemo variant="highlight" :position="`${tierId}-final`" />
-          <CtaSignUp variant="ghost" color="white" icon="i-lucide-arrow-right" :position="`${tierId}-final`" />
+          <CtaBookDemo variant="highlight" position="bottom-cta-card" />
+          <CtaSignUp variant="ghost" color="white" icon="i-lucide-arrow-right" position="bottom-cta-card" />
         </div>
       </div>
     </div>
