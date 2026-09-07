@@ -14,24 +14,24 @@ This is a **FlowFuse Certified Node**. Unlike community nodes, which vary in qua
 
 ## Table of contents
 
-1. [Overview](#1.-overview)
-2. [Get the certified node in FlowFuse](#2.-get-the-certified-node-in-flowfuse)
-3. [The node set](#3.-the-node-set)
-4. [NodeIds and how to address data](#4.-nodeids-and-how-to-address-data)
-5. [Configure a connection](#5.-configure-a-connection)
-6. [Read](#6.-read)
-7. [Write](#7.-write)
-8. [Extension Object](#8.-extension-object)
-9. [Call](#9.-call)
-10. [Monitor](#10.-monitor)
-11. [Monitor Event](#11.-monitor-event)
-12. [Browse](#12.-browse)
-13. [Explore](#13.-explore)
-14. [History Read](#14.-history-read)
-15. [File Operation](#15.-file-operation)
-16. [Hosting an OPC UA server](#16.-hosting-an-opc-ua-server)
-17. [Network requirements](#17.-network-requirements)
-18. [Troubleshooting](#18.-troubleshooting)
+1. [Overview](#_1-overview)
+2. [Get the certified node in FlowFuse](#_2-get-the-certified-node-in-flowfuse)
+3. [The node set](#_3-the-node-set)
+4. [NodeIds and how to address data](#_4-nodeids-and-how-to-address-data)
+5. [Configure a connection](#_5-configure-a-connection)
+6. [Read](#_6-read)
+7. [Write](#_7-write)
+8. [Extension Object](#_8-extension-object)
+9. [Call](#_9-call)
+10. [Monitor](#_10-monitor)
+11. [Monitor Event](#_11-monitor-event)
+12. [Browse](#_12-browse)
+13. [Explore](#_13-explore)
+14. [History Read](#_14-history-read)
+15. [File Operation](#_15-file-operation)
+16. [Hosting an OPC UA server](#_16-hosting-an-opc-ua-server)
+17. [Network requirements](#_17-network-requirements)
+18. [Troubleshooting](#_18-troubleshooting)
 
 ## 1. Overview
 
@@ -61,14 +61,14 @@ A filling machine exposes `FillLevel`, `LineSpeed`, and an alarm hierarchy throu
 
 #### Where this shows up in practice
 
-Real deployments usually combine several of the nodes on a single shared connection (see [The node set](#3.-the-node-set) for what each one does):
+Real deployments usually combine several of the nodes on a single shared connection (see [The node set](#_3-the-node-set) for what each one does):
 
-- **Unified Namespace and broker integration**: subscribe to the variables that matter with [Monitor](#10.-monitor) and publish changes to MQTT, so every system in the plant consumes the same live equipment data instead of integrating with each machine separately.
-- **Supervisory control**: fetch current values on demand with [Read](#6.-read), push setpoints and recipe parameters back with [Write](#7.-write), and invoke machine operations such as starting a batch or acknowledging an alarm with [Call](#9.-call). Writes change real-world state, so gate them behind validation or an operator confirmation step.
-- **Alarm-driven maintenance**: subscribe to a server's alarms and events with [Monitor Event](#11.-monitor-event), filter by type and severity on the server side, and route what remains to notifications, dashboards, or logs, so the maintenance team hears about a fault from the machine, not from the operator.
-- **Shift reports, trends, and audits**: pull raw or server-aggregated values over a time range with [History Read](#14.-history-read) to build end-of-shift reports, quality trends, and incident timelines from data the equipment already recorded.
-- **Fast commissioning**: map a machine's entire address space with [Explore](#13.-explore) and feed the result straight into a Monitor node, turning hours of manual tag mapping into a single deploy.
-- **Exposing flow data to SCADA and historians**: on self-hosted FlowFuse, [host an OPC UA server](#16.-hosting-an-opc-ua-server) so external OPC UA clients, including another FlowFuse instance, can read the data your flows produce. This is not available on FlowFuse Cloud.
+- **Unified Namespace and broker integration**: subscribe to the variables that matter with [Monitor](#_10-monitor) and publish changes to MQTT, so every system in the plant consumes the same live equipment data instead of integrating with each machine separately.
+- **Supervisory control**: fetch current values on demand with [Read](#_6-read), push setpoints and recipe parameters back with [Write](#_7-write), and invoke machine operations such as starting a batch or acknowledging an alarm with [Call](#_9-call). Writes change real-world state, so gate them behind validation or an operator confirmation step.
+- **Alarm-driven maintenance**: subscribe to a server's alarms and events with [Monitor Event](#_11-monitor-event), filter by type and severity on the server side, and route what remains to notifications, dashboards, or logs, so the maintenance team hears about a fault from the machine, not from the operator.
+- **Shift reports, trends, and audits**: pull raw or server-aggregated values over a time range with [History Read](#_14-history-read) to build end-of-shift reports, quality trends, and incident timelines from data the equipment already recorded.
+- **Fast commissioning**: map a machine's entire address space with [Explore](#_13-explore) and feed the result straight into a Monitor node, turning hours of manual tag mapping into a single deploy.
+- **Exposing flow data to SCADA and historians**: on self-hosted FlowFuse, [host an OPC UA server](#_16-hosting-an-opc-ua-server) so external OPC UA clients, including another FlowFuse instance, can read the data your flows produce. This is not available on FlowFuse Cloud.
 
 ## 2. Get the Certified Node in FlowFuse
 
@@ -243,7 +243,7 @@ Auto-accepting the server certificate is convenient but means the client does no
 
 </div></div>
 
-Client and server nodes in your instance share one PKI store. On FlowFuse it lives under `<instance working directory>/opcua-for-flow-fuse/PKI`. For trust decisions to survive restarts and redeploys, that directory must be on persistent storage, see [Hosting an OPC UA server](#16.-hosting-an-opc-ua-server) for the storage details, which apply to client connections too.
+Client and server nodes in your instance share one PKI store. On FlowFuse it lives under `<instance working directory>/opcua-for-flow-fuse/PKI`. For trust decisions to survive restarts and redeploys, that directory must be on persistent storage, see [Hosting an OPC UA server](#_16-hosting-an-opc-ua-server) for the storage details, which apply to client connections too.
 
 If the client certificate is not yet trusted by the server, **Check Connection** reports the handshake failure and reminds you to add the client certificate to the server's trusted list:
 
@@ -568,7 +568,7 @@ The Monitor Event node subscribes to events and alarms rather than value changes
 - **Where Clause**, a server-side filter selecting which events to receive. Far more efficient than post-filtering in a Function node.
 - **Select Clause**: comma-separated fields to retrieve (e.g. `EventId, Time, Message, Severity`). The `...` button opens a graphical selector that browses the event type hierarchy. Request only the fields you use: smaller messages, less processing. Common sets: basic `EventId,Time,Message,Severity`; alarms add `SourceName,ActiveState,AckedState`; audits add `ActionTimeStamp,ClientUserId`.
 
-Match the subscription to the event rate: a slower publishing interval suits alarms and audits, a faster one suits high-frequency process events. For mixed workloads, use separate Monitor Event nodes on different subscriptions (see [Configure a connection](#5.-configure-a-connection)) so critical alarms don't queue behind noisy low-priority events.
+Match the subscription to the event rate: a slower publishing interval suits alarms and audits, a faster one suits high-frequency process events. For mixed workloads, use separate Monitor Event nodes on different subscriptions (see [Configure a connection](#_5-configure-a-connection)) so critical alarms don't queue behind noisy low-priority events.
 
 ### Where Clause syntax
 
