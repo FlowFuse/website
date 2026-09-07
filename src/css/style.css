@@ -3909,7 +3909,7 @@ lite-youtube::before {
     }
 }
 
-/* HMI panel hero (/platform/hmi/). A full-bleed photograph of an industrial panel
+/* HMI panel hero (/hmi/). A full-bleed photograph of an industrial panel
    with a FlowFuse Dashboard projected onto its glass.
 
    Nothing is ever cropped or clipped here, at any viewport width. An earlier version

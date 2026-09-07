@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// /platform/hmi/ - the operator-screen page, sibling to /platform/dashboard/.
+// /hmi/ - the operator-screen page. Its counterpart is /platform/dashboard/.
 //
 // Why a separate page from /platform/dashboard/: that page sells Dashboard as a
 // visualisation tool to a Node-RED audience. This one answers a different buyer's
@@ -18,7 +18,7 @@ useSeoMeta({
     // '• FlowFuse', and spelling it out again gave 'HMI Software ... | FlowFuse • FlowFuse'.
     title: 'HMI Software for Industrial Machines',
     description: 'Build operator screens in Node-RED and run them on the panel at the machine. One design, deployed to every station, with the PLC connectivity, access control and rollback of a managed platform.',
-    ogUrl: 'https://flowfuse.com/platform/hmi/',
+    ogUrl: 'https://flowfuse.com/hmi/',
     twitterSite: '@FlowFuseinc',
 })
 
@@ -239,9 +239,9 @@ const READING = [
     <section class="ff-hmi-hero">
       <div class="ff-hmi-panel">
         <picture>
-          <source srcset="/images/platform/hmi/hmi-panel.webp" type="image/webp">
+          <source srcset="/images/hmi/hmi-panel.webp" type="image/webp">
           <img
-            src="/images/platform/hmi/hmi-panel.jpg"
+            src="/images/hmi/hmi-panel.jpg"
             :alt="PANEL_ALT"
             width="2560"
             height="1396"
@@ -251,7 +251,7 @@ const READING = [
         </picture>
         <div class="ff-hmi-panel__screen">
           <img
-            src="/images/platform/hmi/oee-dashboard.png"
+            src="/images/hmi/oee-dashboard.png"
             alt=""
             width="3014"
             height="1572"

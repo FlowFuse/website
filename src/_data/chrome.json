@@ -57,7 +57,7 @@
                             },
                             {
                                 "label": "HMI",
-                                "href": "/platform/hmi/",
+                                "href": "/hmi/",
                                 "icon": "screen"
                             },
                             {
@@ -488,7 +488,7 @@
                             },
                             {
                                 "label": "HMI",
-                                "href": "/platform/hmi/"
+                                "href": "/hmi/"
                             },
                             {
                                 "label": "Device Agent",
