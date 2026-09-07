@@ -6,8 +6,9 @@ import { getAllBlogPosts } from '~/utils/sharedContent'
 // What the port changes on purpose:
 //  - The two hand-rolled DOM scripts (agent tabs, showcase rotation) become
 //    reactive state. That was ~120 lines of querySelectorAll in the .njk.
-//  - The copy button becomes <FfCommand>, shared with the changelog and any other
-//    markdown page, instead of markup plus a copy helper pasted per page.
+//  - The copy button becomes <FfCommand>, and the whole agent picker becomes
+//    <AgentSetupTabs>, both shared with the changelog and the docs page instead
+//    of markup plus a copy helper pasted per page.
 //  - jsonld.njk's meta.faq becomes useSchemaOrg, which escapes properly. The 11ty
 //    partial interpolated answers straight into a JSON string.
 //  - Sign-up buttons become <CtaSignUp>, so the copy is the site's fixed "Try it
@@ -55,82 +56,7 @@ useSchemaOrg([
 // The Cloud address. Self-hosted platforms answer on their own domain, so the block
 // takes one (host-swap) rather than telling the reader in prose to edit what they
 // have just copied.
-const ENDPOINT = 'https://app.flowfuse.com/mcp'
-
-const STEP1 = {
-    title: 'Copy the FlowFuse connector URL',
-    description: 'You will paste this into your agent in the next step.',
-}
-const STEP3 = {
-    title: 'Sign in and choose what it reaches',
-    description: 'Which teams the agent may act on, and whether it has editing rights or read access only.',
-}
-
-// A client renders `logo` as a brand mark when set, `icon` as our own glyph when not.
-// A brand mark keeps its own colours so it stays an <img>; the glyph inherits
-// currentColor and turns white with the label when its tab is active.
-const CLIENTS = [
-    {
-        id: 'expert',
-        logo: '/images/ai/agents/flowfuse-expert.svg',
-        name: 'FlowFuse Expert',
-        builtIn: true,
-        step1Title: 'Sign in to FlowFuse',
-        step1Body: 'A new account puts you in a hosted instance with Expert already in the editor. Nothing to add, no connector, no token.',
-        step2Title: 'Or start with the Device Agent',
-        step2Body: 'Already running Node-RED on your own hardware? Connect it as a remote instance and Expert works there in the same way.',
-        step2Label: 'Install the Device Agent',
-        step2Url: '/docs/device-agent/quickstart/',
-        step3Title: 'Ask for what you need',
-        step3Body: 'Build a flow, explain one you inherited, write the Function node, or ask what is running on the floor. Every write waits for you to approve, edit or reject.',
-        noStep3Cta: true,
-    },
-    {
-        id: 'copilot',
-        logo: '/images/ai/agents/microsoft-copilot.svg',
-        name: 'Microsoft Copilot',
-        step2Title: 'Copilot Studio, Tools, Add a tool',
-        step2Body: 'Choose Model Context Protocol and paste the URL. Describe what it is for: the orchestrator reads that to decide when to call it.',
-        step2Label: 'Open Copilot Studio',
-        step2Url: 'https://copilotstudio.microsoft.com/',
-    },
-    {
-        id: 'chatgpt',
-        logo: '/images/ai/agents/chatgpt.svg',
-        name: 'ChatGPT',
-        step2Title: 'Enable developer mode, then add a connector',
-        step2Body: 'Custom connectors sit behind developer mode, which a workspace administrator turns on. The connector itself is added from the prompt dashboard.',
-        step2Label: 'Open ChatGPT',
-        step2Url: 'https://chatgpt.com/',
-    },
-    {
-        id: 'claude',
-        logo: '/images/ai/agents/claude.svg',
-        name: 'Claude',
-        step2Title: 'Add a custom connector',
-        step2Body: 'Where custom connectors are available on your plan, add one and paste the URL. On Team and Enterprise an owner adds it once for everyone.',
-        step2Label: 'Open Claude',
-        step2Url: 'https://claude.ai/',
-    },
-    {
-        id: 'local',
-        icon: 'i-lucide-server',
-        name: 'Local and Custom Agents',
-        step2Title: "Your MCP client's config",
-        step2Body: 'Any MCP-capable client works, pointed at your own model, so nothing has to leave your network.',
-        step2Label: 'See the documentation',
-        step2Url: '/docs/user/expert/',
-    },
-]
-
 const CODING_NOTE = 'Command-line and editor agents such as Claude Code, Cursor, Visual Studio Code and Gemini CLI connect to the same URL.'
-
-const activeClient = ref(CLIENTS[0].id)
-
-function selectClient (id: string) {
-    activeClient.value = id
-    capture('cta-ai-agent-tab', { position: id })
-}
 
 const GOVERNANCE = {
     title: 'AI Governance you can <span class="text-indigo-600">prove</span>',
@@ -266,7 +192,11 @@ onUnmounted(() => {
          wash anchored at the top right, and an opaque hero sits exactly over it. The
          connector card below keeps its own white, because that is a card. -->
     <section class="w-full relative">
-      <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-12 sm:pb-16">
+      <!-- pb-0: the recording below is the picker's own result, so the space between
+           them belongs to that section's pt rather than being split across a section
+           boundary here. Two paddings meeting in the middle of one thread is what
+           left 128px of empty gradient under the docs card. -->
+      <div class="relative z-10 w-full px-6 pt-12 md:pt-24 pb-0">
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
           <div class="container m-auto text-left max-w-screen-lg">
             <div class="max-w-3xl mx-auto">
@@ -283,72 +213,7 @@ onUnmounted(() => {
 
             <!-- CONNECTOR: pick your agent, then three steps specific to it, so the
                  reader only sees the instructions that apply to them. -->
-            <div class="mt-12 overflow-hidden rounded-xl border border-indigo-100 bg-white shadow-sm">
-              <div class="ff-agent-tabs flex flex-nowrap gap-1 overflow-x-auto border-b border-indigo-100 bg-indigo-50/60 p-2" role="tablist" aria-label="Choose your AI agent">
-                <button
-                  v-for="client in CLIENTS"
-                  :id="`ff-tab-${client.id}`"
-                  :key="client.id"
-                  type="button"
-                  role="tab"
-                  :aria-controls="`ff-panel-${client.id}`"
-                  :aria-selected="activeClient === client.id"
-                  class="ff-agent-tab flex flex-none items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition"
-                  :class="activeClient === client.id ? 'bg-indigo-600 text-white shadow-sm' : 'text-gray-600 hover:bg-white hover:text-gray-900'"
-                  @click="selectClient(client.id)"
-                >
-                  <UIcon v-if="client.icon" :name="client.icon" class="flex-none size-4" aria-hidden="true" />
-                  <img v-else-if="client.logo" :src="client.logo" alt="" class="h-4 w-auto flex-none" aria-hidden="true">
-                  <span>{{ client.name }}</span>
-                </button>
-              </div>
-
-              <div
-                v-for="client in CLIENTS"
-                v-show="activeClient === client.id"
-                :id="`ff-panel-${client.id}`"
-                :key="`panel-${client.id}`"
-                role="tabpanel"
-                :aria-labelledby="`ff-tab-${client.id}`"
-                class="ff-agent-panel grid grid-cols-1 gap-8 p-6 md:grid-cols-3 md:gap-10 md:p-8"
-              >
-                <div class="flex flex-col">
-                  <p class="font-mono text-xs font-semibold text-indigo-600 m-0">01</p>
-                  <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
-                  <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
-                  <div v-if="client.builtIn" class="mt-auto pt-5">
-                    <CtaSignUp variant="primary" position="ai-tab-expert" class="w-full" />
-                  </div>
-                  <div v-else class="mt-auto pt-5">
-                    <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="client.id" stacked host-swap />
-                  </div>
-                </div>
-
-                <div class="flex flex-col">
-                  <p class="font-mono text-xs font-semibold text-indigo-600 m-0">02</p>
-                  <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.step2Title }}</p>
-                  <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.step2Body }}</p>
-                  <div class="mt-auto pt-5">
-                    <a
-                      :href="client.step2Url"
-                      class="ff-btn ff-btn--primary-outlined flex w-full"
-                      :target="client.step2Url.startsWith('http') ? '_blank' : undefined"
-                      :rel="client.step2Url.startsWith('http') ? 'noopener' : undefined"
-                      @click="capture('cta-ai-open-client', { position: client.id })"
-                    >{{ client.step2Label }}</a>
-                  </div>
-                </div>
-
-                <div class="flex flex-col">
-                  <p class="font-mono text-xs font-semibold text-indigo-600 m-0">03</p>
-                  <p class="text-lg font-medium text-gray-900 mt-2 mb-0">{{ client.step3Title || STEP3.title }}</p>
-                  <p class="text-gray-600 font-light text-sm mt-2 mb-0">{{ client.step3Body || STEP3.description }}</p>
-                  <div v-if="!client.noStep3Cta" class="mt-auto pt-5">
-                    <CtaSignUp variant="primary" position="ai-connect-step3" class="w-full" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <AgentSetupTabs class="mt-12" />
             <!-- Docs pointer, not a step. Carded in the same tinted, hover-lifting
                  treatment the platform page uses for its How-it-works blocks, so it
                  reads as somewhere to go rather than as fine print under step 03.
@@ -364,14 +229,80 @@ onUnmounted(() => {
                 <span class="mt-2 block text-sm font-semibold text-indigo-600">See the documentation &rarr;</span>
               </span>
             </a>
+
+            <!-- What to ask once the picker above has you connected. Placed after the
+                 docs note rather than between it and the picker, so the note stays
+                 attached to the steps it belongs to, and the three read in order:
+                 how to connect, where to read more, what to say first.
+                 surface="ai" keeps these copies separable in PostHog from the same
+                 component on the blog post. -->
+            <PromptCarousel surface="ai" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO: the payoff of the picker above. Those three steps say how to connect
+         an outside agent; this is what it looks like when you do, consent screen
+         included - the part a reader does not take on faith. It also hands off to
+         the governance section directly below, which is the same grant stated as a
+         claim rather than shown.
+         Autoplaying muted loop, the same treatment the install animation uses. The
+         controls stay on for one reason: at 57 seconds this runs long enough that
+         moving content needs a way to stop it, and the play/pause button is it.
+         Browsers pause an offscreen muted autoplay video by themselves, so there is
+         no observer here, and no preload hint either - autoplay settles that. The
+         poster still earns its place as the first paint before playback starts.
+         WebM only, and no MP4 fallback: full WebM support starts at Safari 16 and
+         iOS 17.4, which leaves 1.1% of global users out, and an H.264 copy costs
+         1.9MB to reach them - more than the WebM itself, on a video that now
+         autoplays for everyone. Those readers get the poster and a play button that
+         does nothing, which is the trade. Kept as a <source> with a type rather than
+         src on the video so a browser that cannot play WebM never fetches it.
+         The recording has no audio track at all, so muted is both the autoplay
+         precondition and the truth, and playsinline stops iOS taking it fullscreen.
+         pb-0 for the same reason the hero has it: these three sections are all
+         transparent, so a boundary between them is space and nothing else, and each
+         one owning only its top padding keeps that space to a single 64px. Doubling
+         up here put 128px above the governance card while the card sat 64px above
+         the capabilities band, which reads as the card floating low in a gap rather
+         than as a section change. Doubling is for boundaries that also change
+         background, the way the capabilities band does. -->
+    <section class="ff-ai-demo w-full px-6 pb-12 sm:pb-16 pt-24">
+      <div class="md:max-w-screen-lg m-auto">
+        <h2 class="max-md:text-center">Connect and build <span class="text-red-600">faster than ever</span></h2>
+        <p class="mt-3 text-gray-600 max-w-3xl">
+          Connect in seconds and start building. Use natural-language to leverage your company-sanctioned AI in a secure and governed way.
+        </p>
+        <!-- The frame is the wrapper, not the video, and it clips: Chrome builds its
+             native control bar in shadow DOM and ignores the video's own
+             border-radius, so a radius set directly on the video left the bar's
+             square corners poking out past the rounded border. Same rounded /
+             bordered / shadowed treatment the product page gives its hero shot.
+             A plain div rather than a figure now the caption is gone - a figure with
+             nothing to caption is just a wrapper. -->
+        <div class="mt-8 overflow-hidden rounded-lg border-2 border-red-100 shadow-2xl">
+          <video
+            class="block w-full"
+            poster="/images/ai/demo-external-agents-poster.jpg"
+            width="1600"
+            height="1056"
+            autoplay
+            loop
+            muted
+            playsinline
+            controls
+            aria-label="Screen recording: Claude adds FlowFuse as a custom MCP connector, signs in, is granted full access to one team, and then provisions a Node-RED instance from the OEE blueprint."
+          >
+            <source src="/images/ai/demo-external-agents.webm" type="video/webm">
+          </video>
         </div>
       </div>
     </section>
 
     <!-- GOVERNANCE: the control plane every AI action runs through. Path-neutral,
          which is what lets it sit above the picker rather than under Expert. -->
-    <div class="ff-ai-governance w-full px-6 py-12 sm:py-16">
+    <div class="ff-ai-governance w-full px-6 py-12 sm:py-16 sm:pb-32">
       <div class="md:max-w-screen-lg m-auto ff-blue-card pt-12 pb-12 px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto">
           <!-- eslint-disable-next-line vue/no-v-html -->
@@ -488,12 +419,7 @@ onUnmounted(() => {
           <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="get-started" />
-            <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: 'get-started' })">
-              <span class="text-base uppercase items-center text-base flex gap-2 uppercase items-center text-white hover:text-gray-200">
-                <span>VIEW PRICING</span>
-                <IconsArrowRightIcon class="w-5 h-5" />
-              </span>
-            </a>
+            <CtaPricing variant="ghost" color="white" position="get-started" icon="i-lucide-arrow-right" />
           </div>
         </div>
       </div>

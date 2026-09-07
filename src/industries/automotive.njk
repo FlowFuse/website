@@ -4,21 +4,24 @@ meta:
   title: "Automotive Manufacturing Applications | FlowFuse"
   description: "Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time."
   faq:
-    - question: "Do I need to replace my existing SCADA or MES?"
+    - question: "How do I trace a VIN through body shop, paint, and assembly?"
       answer: >
-        No. FlowFuse is designed to complement your existing manufacturing software, not replace it. You can extend your current systems with custom applications for production monitoring, downtime tracking, quality, workflows, and reporting.
-    - question: "Which industrial protocols does FlowFuse support?"
+        FlowFuse allows you to collect data from each station, associate it with the relevant VIN as it's captured, and route it to the systems where that data is stored and used. This connects weld records, paint parameters, torque results, inspection outcomes, and other production data across the vehicle's journey, making it easier to build a complete production history.
+    - question: "Can FlowFuse get OEE from a line with mixed Siemens and Allen-Bradley PLCs?"
       answer: >
-        FlowFuse supports a wide range of industrial and IT protocols, including OPC UA, MQTT, Modbus, Siemens S7, EtherNet/IP, databases, and REST APIs. With over 6,000 integrations, it can connect PLCs, manufacturing software, enterprise systems, cloud services, and thousands of other technologies.
-    - question: "Is FlowFuse suitable for enterprise manufacturing?"
+        Yes. FlowFuse reads tag data from both S7 and EtherNet/IP-connected PLCs in the same flow, normalizes it, and calculates OEE metrics regardless of which controller brand runs which station.
+    - question: "What does IATF 16949 require for production data retention?"
       answer: >
-        Yes. FlowFuse includes enterprise capabilities such as role-based access control (RBAC), single sign-on (SSO), audit logging, centralized management, and self-hosted deployment options for large manufacturing organizations.
-    - question: "Can FlowFuse be deployed on-premises?"
+        IATF 16949 requires traceable records of process parameters, torque, weld, and inspection data, retained at a level of detail that supports root-cause investigation and audit. FlowFuse allows you to capture this data at the source, connect and process it, and route it to the systems where it can be stored and queried for quality, traceability, and audit needs.
+    - question: "How long does FlowFuse deployment take on one line versus twenty plants?"
       answer: >
-        Yes. FlowFuse supports on-premises, self-hosted, private cloud, and air-gapped deployments, allowing manufacturers to meet their security, compliance, and operational requirements.
-    - question: "Can I build applications without extensive software development?"
+        Deployment time depends on the complexity of the application, the plant environment, and the systems being connected. Once a flow is built and validated, it can be reused and deployed across additional lines or plants rather than rebuilt from scratch each time, helping reduce the integration effort involved in scaling.
+    - question: "Can FlowFuse run air-gapped in a plant with no cloud connectivity?"
       answer: >
-        Yes. FlowFuse combines low-code development with FlowFuse AI, enabling engineering and manufacturing teams to build industrial applications faster. AI-powered expert assistance and agentic development help accelerate application creation, while developers retain full control to customize logic and integrations as needed.
+        Yes. FlowFuse supports self-hosted, on-premises, and air-gapped deployments for manufacturing with strict network isolation requirements.
+    - question: "How is this FlowFuse different from adding a module to our existing MES?"
+      answer: >
+        MES modules are built for standard workflows. FlowFuse handles the plant-specific gaps (custom quality gates, one-off traceability rules, non-standard handovers) that MES modules typically can't cover without a vendor change request.
 hero:
   eyebrow: "Automotive Manufacturing"
   eyebrowIcon: "components/icons/car.svg"
@@ -81,20 +84,6 @@ applications:
       image: "/images/industries/automotive/4-quality-traceability.png"
       imageAlt: "Screenshot of a quality traceability application"
       variant: "indigo"
-    - title: "Digitize Shop Floor Operations"
-      description: "Replace paper forms and spreadsheets with applications for inspections, quality checks, maintenance requests, shift handovers, digital work instructions, and operator workflows."
-      linkText: "See how FlowFuse Forms simplify shop floor data collection"
-      linkHref: "/blog/2025/06/flowfuse-forms-easy-data-collection-factory-floor/"
-      image: "/images/industries/automotive/5-digitize-operations.png"
-      imageAlt: "Operator using a tablet application on the shop floor"
-      variant: "red"
-    - title: "Build Once, Deploy Across Every Plant"
-      description: "Build applications once, then deploy, manage, and update them across production lines and manufacturing plants from a single platform. Standardize operations while reducing maintenance effort across every site."
-      linkText: "Read the docs on DevOps Pipelines"
-      linkHref: "/docs/user/devops-pipelines/"
-      image: "/images/industries/automotive/6-flowfuse-ui.png"
-      imageAlt: "FlowFuse dashboard UI deployed across multiple plants"
-      variant: "mixed"
 enterprise:
   heading: 'Built for <span class="text-indigo-600">Enterprise Manufacturing</span>'
   description: "FlowFuse is SOC 2 Type I and Type II certified, with role-based access control, single sign-on, audit logging, and air-gapped, self-hosted deployment options, built for the security and compliance requirements of large-scale manufacturing organizations."
@@ -111,6 +100,31 @@ enterprise:
       label: "Air-Gapped / Self-Hosted Deployment"
   linkText: "Review our security and compliance details"
   linkHref: "/platform/security/"
+compliance:
+  heading: "Automotive <span class=\"text-indigo-600\">Compliance & Standards</span>"
+  subtitle: "The Data Your Audit Asks For, In One Place"
+  description: "Automotive carries traceability requirements most industries don't. FlowFuse helps ensure the data an auditor asks for exists and is queryable when they ask for it."
+  items:
+    - title: "IATF 16949"
+      icon: "components/icons/certificate.svg"
+      text: "Asks for traceable process records. FlowFuse captures torque, weld, and inspection data at the source and keeps it queryable."
+      linkText: "Learn more about how FlowFuse helps with layered process audits"
+      linkHref: "/blog/2026/08/layered-process-audit/"
+    - title: "VDA 6.3"
+      icon: "components/icons/clipboard-document-check.svg"
+      text: "Asks you to follow a part across stations and shifts. FlowFuse replaces disconnected tool logs with one record per unit."
+      linkText: "Learn more about how FlowFuse enables process audits"
+      linkHref: "/blog/2026/08/vda-6.3/"
+    - title: "PPAP"
+      icon: "components/icons/document-chart-bar.svg"
+      text: "Needs real production data. FlowFuse pulls it straight from the line instead of reconstructing it after the fact."
+      linkText: "Learn more about how FlowFuse helps safe launch"
+      linkHref: "/blog/2026/08/safe-launch/"
+    - title: "Recall defense"
+      icon: "components/icons/shield-check.svg"
+      text: "FlowFuse traces a VIN back through every recorded step, fast."
+      linkText: "Learn more about how FlowFuse enables automotive traceability"
+      linkHref: "/blog/2026/08/automotive-traceability/"
 cta:
   title: "Bring your production challenge"
   description: "Every automotive manufacturer has different operational challenges. FlowFuse lets you build the automotive manufacturing applications your teams need using the systems already running your plant."
@@ -284,6 +298,33 @@ cta:
                 </div>
                 <p class="text-gray-600 text-sm m-0">{{ item.label }}</p>
             </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- ============================================================
+     AUTOMOTIVE COMPLIANCE & STANDARDS
+============================================================ -->
+<section class="w-full py-16 md:py-24 px-6 bg-radial-[ellipse_60%_70%_at_center_bottom] from-blue-200/30 to-blue-200/0">
+    <div class="max-w-screen-lg mx-auto">
+        <div class="max-w-2xl mb-12">
+            <h2 class="text-gray-700 mb-2">{{ compliance.heading | safe }}</h2>
+            <p class="text-xl font-medium mt-0 mb-4">{{ compliance.subtitle }}</p>
+            <p class="text-gray-600">{{ compliance.description }}</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {% for item in compliance.items %}
+            <a href="{{ item.linkHref }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-5 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                <div class="w-6 h-6 text-indigo-600">
+                    {% include item.icon %}
+                </div>
+                <h3 class="m-0 text-lg font-medium text-gray-800 group-hover:text-indigo-600 transition-colors">{{ item.title }}</h3>
+                <p class="m-0 text-gray-600 text-sm flex-grow">{{ item.text }}</p>
+                <span class="mt-2 text-blue-600 text-sm flex items-center gap-1.5 group-hover:underline">
+                    {{ item.linkText }}
+                    <span class="shrink-0">{% include "components/icons/arrow-long-right.svg" %}</span>
+                </span>
+            </a>
             {% endfor %}
         </div>
     </div>

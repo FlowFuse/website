@@ -7,20 +7,12 @@
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { readFileSync, readdirSync, statSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { join, dirname, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { findFiles } from './find-files.mjs'
 
 const CHANGELOG_DIR = join(dirname(fileURLToPath(import.meta.url)), '../../src/changelog')
-
-function markdownFiles (dir, found = []) {
-    for (const name of readdirSync(dir)) {
-        const path = join(dir, name)
-        if (statSync(path).isDirectory()) markdownFiles(path, found)
-        else if (name.endsWith('.md')) found.push(path)
-    }
-    return found
-}
 
 function frontmatter (text) {
     const match = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text)
@@ -38,7 +30,7 @@ function frontmatter (text) {
     return fields
 }
 
-const entries = markdownFiles(CHANGELOG_DIR).sort().map(path => ({
+const entries = findFiles(CHANGELOG_DIR, ['.md']).sort().map(path => ({
     name: relative(CHANGELOG_DIR, path),
     fields: frontmatter(readFileSync(path, 'utf8')),
 }))

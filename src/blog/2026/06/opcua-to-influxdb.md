@@ -194,10 +194,10 @@ _InfluxDB Data Explorer showing the temperature filling in_
 
 You'll see your readings listed in a table, one row per read interval. If new rows keep appearing as time passes, your pipeline is working end to end: equipment to OPC UA to FlowFuse to InfluxDB.
 
-Storing data is only half the story. The InfluxDB In node lets you query readings back from InfluxDB, whether you need the latest values, historical trends, or aggregated metrics. You can then feed the results directly into a [FlowFuse Dashboard](https://dashboard.flowfuse.com) to build charts, tables, and real-time monitoring views of your OPC UA data.
+Storing data is only half the story. The InfluxDB In node lets you query readings back from InfluxDB, whether you need the latest values, historical trends, or aggregated metrics. You can then feed the results directly into a [FlowFuse Dashboard](/platform/dashboard/) to build charts, tables, and real-time monitoring views of your OPC UA data.
 
 ## Where to go from here
 
-You now have a durable, queryable record of your equipment's behavior. From here you can read more tags, tag each reading with its machine or line so you can slice the data later, and build dashboards on top of InfluxDB to chart trends and spot the slow drift that real-time values hide.
+You now have a durable, queryable record of your equipment's behavior. From here you can read more tags off the [OPC UA server](/integrations/opcua/#opc-ua-client-and-server-capabilities), tag each reading with its machine or line so you can slice the data later, and build dashboards on top of InfluxDB to chart trends and spot the slow drift that real-time values hide.
 
 The real payoff comes when you stop reacting to problems and start seeing them coming. A pump that's drawing a little more current each week, a tank that's taking longer to fill, a temperature that's creeping past its usual range, all of it now sits in a history you can query, instead of vanishing the moment it happens.

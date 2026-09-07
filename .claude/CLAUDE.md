@@ -20,6 +20,12 @@ The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framew
 | `/docs/**` | **Migrated** — served by Nuxt; source resolved from `flowfuse/flowfuse` at build time |
 | All other routes | Still on 11ty, proxied through Nuxt in dev |
 
+### New pages belong in Nuxt
+
+Never create a new `.njk` page under `src/` — even a landing/marketing page that looks like the fastest way to match an existing 11ty page's pattern. Build it in Nuxt (`nuxt/pages/`, `.vue`/`.md`) instead; only edits to already-existing 11ty pages belong in `src/`. `nuxt/lib/legacy-pages.test.mjs` enforces this with no allowlist to maintain: it fetches main and fails `npm test` (and therefore the required `test_website / Build and check` PR check) if any `.njk` file under `src/` didn't already exist there — i.e. a brand-new `.njk` file, anywhere in `src/`, on any route. Editing an existing `.njk` file is unaffected.
+
+This is scoped to `.njk` on purpose and does not extend to `.md`: new content in `src/blog/`, `src/changelog/`, `src/customer-stories/`, `src/webinars/`, and `src/blueprints/` (new posts, entries, blueprints) is expected routine work and must keep landing there unchanged, no matter how this section reads out of context. The gap this leaves — a brand-new page built as a bare `.md` file against an *existing* layout, with no new `.njk` involved — is real and not caught by the test; avoiding that is a matter of following this rule, not something enforced automatically. See `/handbook/marketing/website#new-pages-must-be-built-in-nuxt` for the non-engineer-facing explanation.
+
 ### Production build order
 
 ```
@@ -270,7 +276,7 @@ This also covers old `/docs/**` paths left behind by a rename in `flowfuse/flowf
 
 **Nuxt only** — 11ty pages still use hand-written `<a class="ff-btn ...">` links; these components have no 11ty equivalent yet.
 
-There are exactly four CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same four URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
+There are exactly five CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same handful of URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
 
 | Component | href | Fixed label |
 |---|---|---|
@@ -278,16 +284,28 @@ There are exactly four CTA destinations, each with its own component with **fixe
 | `nuxt/components/CtaSignIn.vue` | `site.appURL` | "Sign In" |
 | `nuxt/components/CtaContactUs.vue` | `/contact-us/` | "Contact Us" |
 | `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Book a Demo" |
+| `nuxt/components/CtaPricing.vue` | `/pricing/` | "View Pricing" |
 
-All four are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a fifth destination-specific component is needed — not a prop that lets callers override copy on these four.
+All five are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a sixth destination-specific component is needed — not a prop that lets callers override copy on these five.
 
-**Props** (all optional except `variant`/`position`): `variant` (`primary` | `primary-outlined` | `highlight` | `highlight-outlined` | `ghost` | `nav-text`), `position` (free string, sent to PostHog — describes where on the page, e.g. `hero`, `pricing-card`), `plan` (e.g. `edge`/`hub`/`fleet`, sent to PostHog), `color` (`primary`|`highlight`|`white`, only for `variant="ghost"`, which has no background of its own), `icon` (Nuxt Icon name for a trailing icon), `uppercase`, `padded` (only for `variant="nav-text"` — whether it has the header-`<ul>` link padding or is true zero-padding inline text), `preview` (renders identically but doesn't navigate or call `capture()` — used by the handbook's live example gallery so clicking a doc example can't send a real event or leave the page).
+**Props** (all optional except `variant`/`position`): `variant` (`primary` | `primary-outlined` | `highlight` | `highlight-outlined` | `ghost` | `nav-text`), `position` (free string, sent to PostHog — describes *where on the page* the button sits, e.g. `hero`, `footer`, `pricing-card` — never which page; PostHog already captures the page URL on every event, so encoding the page into `position` too would just duplicate that and make it look like a placement dimension when it isn't one), `plan` (e.g. `edge`/`hub`/`fleet`, sent to PostHog), `color` (`primary`|`highlight`|`white`, only for `variant="ghost"`, which has no background of its own), `icon` (Nuxt Icon name for a trailing icon — not a `→`/`←` character baked into `label` itself, which every fixed component's copy avoids), `uppercase`, `padded` (only for `variant="nav-text"` — whether it has the header-`<ul>` link padding or is true zero-padding inline text), `target` (passed straight through to the underlying link; none of the five fixed destinations need it, it exists for `CtaCustom` linking off-site), `preview` (renders identically but doesn't navigate or call `capture()` — used by the handbook's live example gallery so clicking a doc example can't send a real event or leave the page).
+
+### CtaCustom — one-off destinations
+
+`nuxt/components/CtaCustom.vue` is the escape hatch for a CTA that doesn't fit one of the five fixed destinations above — it takes `label` and (usually) `href` directly from the caller. What it does NOT take is a free-form `event` string: the event (and, for a genuinely fixed URL, the `href` too) comes from a `destinationKey` prop that looks up an entry in `nuxt/lib/custom-cta-destinations.ts`.
+
+This exists because a raw `event` prop would let two different `CtaCustom` instances pointed at the same URL drift onto two different PostHog events with nothing to catch it — exactly the fragmentation this whole system exists to prevent, just one level down from the five reserved destinations. Keying off a shared registry entry instead makes "this destination has exactly one event" structural: there's one place it's decided, not N call sites each typing a string by hand.
+
+- **Fixed-URL destinations** (e.g. `hubspotMeeting`, `communityForum`, `homepage`) store both `href` and `event` in the registry; `CtaCustom` reads the href from there and rejects a caller-supplied `href` that conflicts with it. The registry file also self-checks on load for a second key reusing an href already claimed by another key — checked against both other entries in this same file and the five reserved destinations in `cta-destinations.ts` — so that mistake fails immediately at build/dev-start rather than only when (and if) some page actually renders the offending `<CtaCustom>`.
+- **Dynamic-URL destinations** (e.g. `latestWebinar`, whose target is whichever webinar is currently most-recently-dated; `agentSetupClientOpen`, whose target varies per AI client) have no `href` in the registry — only the event is pinned there, and the caller still supplies `href` each time. This is a real, accepted limit: nothing can statically verify that two different call sites' *dynamic* hrefs never coincidentally collide, since the actual value only exists at render time and can change over time (this session's design discussion concluded that's fine — a coincidental runtime overlap between two conceptually different destinations, like "always show the newest webinar" vs. "a blog post links to this specific one," isn't the same kind of drift as two call sites hand-typing the same static URL with different event names).
+- `destinationKey` is required and its TS type is `keyof typeof CUSTOM_CTA_DESTINATIONS` — there's no way to point `CtaCustom` at a URL without first adding an entry to that file, by design.
+- Like the five fixed components, `CtaCustom` throws a descriptive error (same convention as `CtaImage.vue`'s invalid-`cta` check) if pointed at one of the five *reserved* destinations' hrefs — use the matching fixed component instead.
 
 `nav-text` is deliberately not called `text` — it's the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar) specifically, not a general-purpose inline link. A future `text` variant (styled like a normal paragraph link — the site's blue-700, underline-on-hover convention) is reserved for that.
 
 There's no `size` prop — every real-button variant's padding/font-size is hardcoded to match `.ff-btn` exactly (see the Computed-tab note in the gotchas below), so a size knob would only ever have affected icon dimensions. It was removed once confirmed nothing used a non-default value.
 
-Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`.
+Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`, `cta-pricing`.
 
 ### Gotchas already solved here (don't re-discover them)
 

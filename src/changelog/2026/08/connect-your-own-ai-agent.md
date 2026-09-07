@@ -14,7 +14,12 @@ You can now connect your own AI agent to FlowFuse. Your company-approved AI can 
 
 Add the FlowFuse address to connect, then decide which teams the agent reaches and whether it can make changes.
 
-The address is `https://app.flowfuse.com/mcp`. [Pick your agent on the AI page](/ai/) for the exact steps in [Microsoft Copilot](https://copilotstudio.microsoft.com/), [ChatGPT](https://chatgpt.com/) or [Claude](https://claude.ai/). Any MCP client that supports the HTTP transport works too, including command-line and editor agents and local models. Sign-in uses OAuth where the client supports it, with a token fallback where it does not.
+Pick your agent, and follow the three steps:
+
+::agent-setup-tabs{:exclude-expert="true" surface="changelog"}
+::
+
+Any MCP client that supports the HTTP transport works, including command-line and editor agents and local models. Sign-in uses OAuth where the client supports it, with a token fallback where it does not.
 
 Your own agent gets the full, growing set of FlowFuse platform automation and flow-building tools to run. That matters most where company policy only permits an approved AI agent, so FlowFuse Expert wasn't an option.
 

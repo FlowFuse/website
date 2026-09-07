@@ -375,7 +375,7 @@ sections:
       - id: baa-for-hipaa
         title: BAA for HIPAA
         description: "FlowFuse can sign a Business Associate Agreement to ensure proper safeguarding of protected health information handled on your behalf."
-        docsLink: /handbook/sales/subscription-agreement-1.5/
+        docsLink: /handbook/sales/subscription-agreement-1.6/
         tiers: { edge: false, hub: true, fleet: false }
       - id: sbom
         title: Software Bill of Materials

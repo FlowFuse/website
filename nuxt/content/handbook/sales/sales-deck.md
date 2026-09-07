@@ -6,7 +6,7 @@ navigation:
 
 # Sales Deck
 
-The [FlowFuse Sales Deck](https://docs.google.com/presentation/d/1xygs4VS6A7sHY8tmx0EoE7eNrlIWHHkHZbMXQ5PhtL0/) is the primary presentation used to introduce FlowFuse to prospects. It establishes the problem we solve, who we solve it for, and why FlowFuse — before moving into a product demo.
+The [FlowFuse Sales Deck](https://docs.google.com/presentation/d/1KQt8Em5qlOJOLRZxvPT9nZDHuijo-W-LpjIQzpV5klo/edit?usp=sharing) is the primary presentation used to introduce FlowFuse to prospects. It establishes the problem we solve, who we solve it for, and why FlowFuse — before moving into a product demo.
 
 ## When to Use It
 

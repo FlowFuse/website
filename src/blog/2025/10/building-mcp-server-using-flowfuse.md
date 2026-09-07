@@ -243,7 +243,7 @@ Your MCP Tool is now active. When an AI agent invokes it, the connected flow exe
 
 #### Example: Scheduling Maintenance for Production Lines
 
-In this example, the flow includes a tool that triggers a POST request to the maintenance system API, which was developed using FlowFuse and the FlowFuse Dashboard. The AI Assistant was then asked to identify which production line was performing the worst and schedule a maintenance task for it.
+In this example, the flow includes a tool that triggers a POST request to the maintenance system API, which was developed using FlowFuse and the [FlowFuse Dashboard](/platform/dashboard/). The AI Assistant was then asked to identify which production line was performing the worst and schedule a maintenance task for it.
 
 <video autoplay loop muted playsinline aria-label="Scheduling Maintenance Example" width="3024" height="1638" preload="none"><source src="/blog/2025/10/images/tools-demo.webm" type="video/webm" /></video>
 *AI agent scheduling maintenance using an MCP Tool*

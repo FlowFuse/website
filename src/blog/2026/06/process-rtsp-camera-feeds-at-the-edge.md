@@ -117,7 +117,7 @@ Once the node connects, it shows a green Running status underneath it on the can
 
 A buffer in the debug sidebar confirms the feed works, but it's no use to an operator. Let's get the frame onto a screen anyone can open in a browser.
 
-This assumes you have FlowFuse Dashboard 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
+This assumes you have [FlowFuse Dashboard](/platform/dashboard/) 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
 
 FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we turn each PNG into a base64 data URI and render it with a standard image tag. The conversion is handled by the **base64** node, which you'll need to install: add `node-red-node-base64` from the Palette Manager.
 

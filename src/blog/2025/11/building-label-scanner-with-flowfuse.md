@@ -39,7 +39,7 @@ If you do not have one yet, you can [sign up for the 30-day free trial](https://
 
 To perform text extraction from images, you’ll need to install the `@sumit_shinde_84/node-red-contrib-simple-ocr` node in your FlowFuse instance.
 This node uses the Tesseract OCR engine under the hood to recognize text from image files or image buffers.
-To capture images and build a dashboard, you’ll also need the **FlowFuse Dashboard** and **Webcam** packages.
+To capture images and build a dashboard, you’ll also need the **[FlowFuse Dashboard](/platform/dashboard/)** and **Webcam** packages.
 
 1. Open your **FlowFuse** editor.
 2. From the main menu, select **Manage palette → Install**.

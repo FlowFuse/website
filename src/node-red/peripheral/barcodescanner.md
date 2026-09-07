@@ -28,7 +28,7 @@ Test your barcode scanner against any barcode your scanner works with and you sh
 
 ![USB HID Scanned Barcode in Node-RED](./images/usbhid-scanned-barcode.png)
 
-You could even take it a step further and create a [QR code](https://smalldev.tools/qr-code-generator-online) for your favorite pizza ingredients as seen here on the new [Dashboard 2.0](https://dashboard.flowfuse.com/). 
+You could even take it a step further and create a [QR code](https://smalldev.tools/qr-code-generator-online) for your favorite pizza ingredients as seen here on the new [Dashboard 2.0](/platform/dashboard/). 
 
 ![USB HID Scanned Barcode Pizza Ingredients](./images/usbhid-qr-pizza-order.png)
 
