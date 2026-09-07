@@ -8,10 +8,10 @@ heroImg: ./images/pictograms/edge_blue.png
 description:
     <p>FlowFuse simplifies the management of deployments to edge devices in manufacturing, from equipment to <a href="/landing/plc/">PLCs</a>. Our platform ensures secure and reliable handling of large-scale deployments, providing seamless edge connectivity solutions.</p>
 ---
-
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div>
     <div class="mt-6 text-center">
-        <a href="/contact-us/" class="inline-block ff-btn ff-btn--highlight shadow uppercase">Speak to our team</a>
+        {{ ctaContactUs('highlight', 'hero', extraClass='inline-block shadow') }}
     </div>
 </div>
 
@@ -91,7 +91,7 @@ description:
             Ready to learn more?
         </p>
         <div>
-            <a href="/contact-us/" class="inline-block ff-btn ff-btn--primary m-auto">Get in touch</a>
+            {{ ctaContactUs('primary', 'footer', extraClass='inline-block m-auto') }}
         </div>
     </div>
 </div>

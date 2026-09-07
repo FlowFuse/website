@@ -1,3 +1,5 @@
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div class="w-full bg-white pt-12 pb-10">
     <h3 class="flex items-center text-center justify-center">
         <div class="flex flex-col leading-9 text-3xl mb-4 red-gradient font-semibold">
@@ -13,8 +15,7 @@
                 </p>
             </div>
             <div class="flex flex-col items-center">
-                <a class='ff-btn ff-btn--primary-outlined uppercase align-baseline w-full' href='/contact-us/'
-                onclick="capture('cta-contact-us', {'position': 'secondary'}, {'reference': '{{ title or meta.title or "common-cta" }}'})">Contact Us</a>
+                {{ ctaContactUs('primary-outlined', 'secondary', extraClass='align-baseline w-full') }}
             </div>
         </div>
         <div class="features-card">
@@ -25,7 +26,7 @@
                 </p>
             </div>
             <div class="flex flex-col items-center">
-                <a class="ff-btn ff-btn--primary uppercase align-baseline w-full" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'secondary'})">TRY FOR FREE</a>
+                {{ ctaSignUp(site, 'primary', 'secondary', extraClass='align-baseline w-full') }}
             </div>
         </div>
     </div>

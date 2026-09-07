@@ -56,6 +56,8 @@ installCommandsHeading: "Or install Node-RED on your own machine"
 description: Node-RED is the low-code programming language of choice for industrial applications. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
 sitemapPriority: 0.8
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!--First two sections-->
 <div class="nohero w-full">
     <!--Hero Content-->
@@ -72,7 +74,7 @@ sitemapPriority: 0.8
             <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
             <p class="md:mb-6">Ready to <span class="font-semibold">get started building with Node-RED</span>? There are two ways in.</p>
             <div class="max-md:hidden md:mb-10">
-                <a class="ff-btn ff-btn--primary min-h-[40px] md:inline" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+                {{ ctaSignUp(site, 'primary', 'nodered', extraClass='min-h-[40px] md:inline') }}
                 <p class="font-light mt-3 mb-0">
                     Nothing to install, you get an editor in the browser. Or
                     <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
@@ -84,7 +86,7 @@ sitemapPriority: 0.8
             {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
         </div>
         <div class="md:hidden w-full max-w-md m-auto">
-            <a class="ff-btn ff-btn--primary flex flex-col w-full" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+            {{ ctaSignUp(site, 'primary', 'nodered-mobile', extraClass='flex flex-col w-full') }}
             <p class="font-light mt-3 mb-0 text-center">
                 Nothing to install, you get an editor in the browser. Or
                 <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
@@ -363,7 +365,11 @@ sitemapPriority: 0.8
                                 {{ card.description }}
                             </p>
                         </div>
-                        <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}" {% if card.onClick %}onclick="{{ card.onClick }}"{% endif %}>{{ card.buttonText }}</a>
+                        {% if card.buttonLink == '/book-demo/' %}
+                        {{ ctaBookDemo('primary-outlined', 'nodered-deployment', extraClass='md:self-end align-baseline w-full mt-3') }}
+                        {% else %}
+                        <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}">{{ card.buttonText }}</a>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>

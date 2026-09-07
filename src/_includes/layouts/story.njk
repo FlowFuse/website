@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
-
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="w-full page post story">
     {% if title %}
     <div class="w-full py-6 bg-cover bg-center md:py-9 md:min-h-[272px] md:flex md:content-center" style="background-image: linear-gradient(to right, #1F2937, #1F293700), url({{ image }})">
@@ -94,8 +94,7 @@ layout: layouts/base.njk
                                 {% endfor %}
                             </ul>
                         </div>
-                        <a class="md:self-end ff-btn ff-btn--primary uppercase align-baseline w-full mt-3" href="/book-demo/"
-                        onclick="capture('cta-book-demo', {'reference': 'Customer Story: {{ title }}'})">BOOK A DEMO</a>
+                        {{ ctaBookDemo('primary', 'story-cta', extraClass='md:self-end align-baseline w-full mt-3') }}
                     </div>
                     {% if hubspot.formId %}
                     <div class="flex flex-col mt-6 px-6">

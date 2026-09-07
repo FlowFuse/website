@@ -1,5 +1,10 @@
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
+{#- Every caller of this include sets cta.buttonLink to /book-demo/ - the
+    fixed CtaBookDemo destination/copy/event replace the old data-driven
+    buttonLink/buttonText/event trio, so only cta.title/description (and
+    cta.position, for tracking) still come from the caller. -#}
 <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
     <p class="text-white text-5xl font-medium m-0">{{ cta.title }}</p>
     <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">{{ cta.description }}</p>
-    <a class="ff-btn ff-btn--highlight" href="{{ cta.buttonLink }}" onclick="capture('cta-book-demo', {'position': '{{ cta.position }}'})">{{ cta.buttonText }}</a>
+    {{ ctaBookDemo('highlight', cta.position) }}
 </div>
