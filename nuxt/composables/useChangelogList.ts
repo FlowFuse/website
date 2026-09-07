@@ -1,3 +1,5 @@
+import { withTrailingSlash } from '~/utils/withTrailingSlash'
+
 // How many entries are in the markup before any scrolling. The whole archive is
 // fetched in one query either way (it always was - the old paginated page fetched
 // everything and sliced it), so this only governs how much is rendered up front.
@@ -21,7 +23,10 @@ export interface ChangelogReleaseGroup {
 export function useChangelogList () {
     const { data: allEntries } = useAsyncData(
         'changelog-all',
-        () => queryCollection('changelog').order('date', 'DESC').all()
+        async () => {
+            const entries = await queryCollection('changelog').order('date', 'DESC').all()
+            return entries.map(entry => ({ ...entry, path: withTrailingSlash(entry.path) }))
+        }
     )
 
     const visibleCount = ref(CHANGELOG_INITIAL_VISIBLE)

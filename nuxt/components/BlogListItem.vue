@@ -3,6 +3,8 @@ const props = defineProps<{
     entry: { path: string, title: string, description?: string, meta?: { description?: string }, date: string | Date, authors?: string[], image?: string }
 }>()
 
+const linkPath = computed(() => withTrailingSlash(props.entry.path))
+
 const authorNames = computed(() => useAuthorNames(props.entry.authors))
 const summary = computed(() => props.entry.description || props.entry.meta?.description || '')
 const formattedDate = computed(() => new Date(props.entry.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
@@ -11,7 +13,7 @@ const imageSrc = computed(() => props.entry.image || '/images/og-blog.jpg')
 
 <template>
   <li class="w-full md:w-1/3 my-2 px-2 pb-6 border-b">
-    <NuxtLink :to="entry.path" class="w-full flex flex-col group hover:no-underline">
+    <NuxtLink :to="linkPath" class="w-full flex flex-col group hover:no-underline">
       <time class="block text-xs mb-2 text-gray-500">{{ formattedDate }}</time>
       <div class="ff-blog-tile">
         <div class="w-full h-auto">

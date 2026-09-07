@@ -102,7 +102,7 @@ useSeoMeta({
             <h3 class="mb-3 pt-6 border-t-2">Recent Updates:</h3>
             <ul class="ml-6 list-disc">
               <li v-for="entry in otherRecentEntries" :key="entry.path" class="mb-3">
-                <NuxtLink :to="entry.path">{{ entry.title }}</NuxtLink>
+                <NuxtLink :to="withTrailingSlash(entry.path)">{{ entry.title }}</NuxtLink>
               </li>
             </ul>
 
