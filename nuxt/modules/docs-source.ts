@@ -1,5 +1,5 @@
 import { defineNuxtModule, useLogger } from '@nuxt/kit'
-import { existsSync, readdirSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, basename, dirname } from 'node:path'
 
 // Lives in nuxt/lib/, not alongside this file: Nuxt auto-registers everything in
@@ -8,6 +8,8 @@ import { join, basename, dirname } from 'node:path'
 import { syncDocs } from '../lib/docs-sync.mjs'
 // @ts-ignore same
 import { syncGuides } from '../lib/guides-sync.mjs'
+// @ts-ignore same
+import { syncCoreNodes } from '../lib/core-nodes-sync.mjs'
 
 const logger = useLogger('docs-source')
 
@@ -37,6 +39,16 @@ export default defineNuxtModule({
         // authored in this repo have to be overlaid after it, not before.
         await syncDocs({ repoRoot, nuxtRoot, logger })
         syncGuides({ repoRoot, nuxtRoot, logger })
+        // The core-node pages were never files: under Eleventy they were paginated out of
+        // coreNodes.json. They are generated from that catalogue plus the committed help
+        // snapshot, so a deploy never reaches out to raw.githubusercontent.com.
+        syncCoreNodes({
+            repoRoot,
+            nuxtRoot,
+            coreNodes: JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8')),
+            help: JSON.parse(readFileSync(join(nuxtRoot, 'lib', 'core-node-help.json'), 'utf8')),
+            logger,
+        })
 
         if (!existsSync(contentDocsDir)) return
 

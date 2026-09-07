@@ -20,7 +20,6 @@ const pluginTOC = require('eleventy-plugin-toc');
 const { decodeHTML } = require('entities');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
-const coreNodeDoc = require("./lib/core-node-docs.js");
 const { isSearchPage, isSearchUrl, extractHeadingRecords } = require("./lib/search-index.js");
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
@@ -222,10 +221,6 @@ module.exports = function(eleventyConfig) {
         // Transform coreNodes object into an array
         return Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));		
     })
-
-    eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {
-        return await coreNodeDoc(category, node)
-    });
 
     eleventyConfig.addFilter("filterNodeCategory", function(nodes, category) {
         if (category === "all") {

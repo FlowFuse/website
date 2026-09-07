@@ -102,16 +102,15 @@
             "file": "06-httpproxy"
         },
         {
-            "xpath": "mqtt-in",
+            "xpath": "mqtt in",
             "name": "MQTT In",
             "file": "10-mqtt"
         },
         {
-            "xpath": "mqtt-out",
+            "xpath": "mqtt out",
             "name": "MQTT Out",
             "file": "10-mqtt"
-        }
-        ,
+        },
         {
             "xpath": "http in",
             "name": "HTTP in",
@@ -133,12 +132,12 @@
             "file": "31-tcpin"
         },
         {
-            "xpath": "upd",
+            "xpath": "udp in",
             "name": "UDP In",
             "file": "32-udp"
         },
         {
-            "xpath": "upd",
+            "xpath": "udp out",
             "name": "UDP Out",
             "file": "32-udp"
         }

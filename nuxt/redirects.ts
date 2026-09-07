@@ -8,7 +8,10 @@
 // domain redirects already there for the pattern.
 import type { NitroRouteRules } from 'nitropack'
 
+import { nodeRedRedirects } from './redirects-node-red'
+
 export const redirects: Record<string, NitroRouteRules> = {
+    ...nodeRedRedirects,
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
