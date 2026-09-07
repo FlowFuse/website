@@ -31,7 +31,7 @@ the right questions.
 ## The Context Challenge
 
 Data capture involves integrating various machine protocols (like
-[OPC-UA](/node-red/protocol/opc-ua/) or [Modbus](/node-red/protocol/modbus/)),
+[OPC-UA](/docs/node-red/protocol/opc-ua/) or [Modbus](/docs/node-red/protocol/modbus/)),
 transporting, combining, and visualizing the information. While low-code tools
 like Node-RED have decreased the implementation time to mere hours, the full
 problem isn't solved: what happens *after* the data is collected?
@@ -66,7 +66,7 @@ functionality (tools) they want to expose to the LLM.
 *   **Resources** are read-only, like sensor readings, employee staff lists, vacation calendars, or specification sheets (e.g., upper and lower temperature limits).
 *   **Tools** are functions that allow the LLM to perform an action or change a state in the physical world.
 
-By feeding this context into an MCP server (such as the official [FlowFuse MCP node](/node-red/flowfuse/mcp/)),
+By feeding this context into an MCP server (such as the official [FlowFuse MCP node](/docs/flowfuse-nodes/mcp/)),
 the LLM transforms into a powerful operational partner.
 
 For example, an operator can ask: "Can you show me the last five temp sensor readings recorded?".

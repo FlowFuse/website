@@ -2,7 +2,7 @@ Extracts elements from an HTML document.
 
 ## Where and why do we use the HTML node?
 
-The HTML node parses HTML documents and extracts specific elements using CSS selectors. This is essential when you need to scrape data from web pages, extract specific content from HTML responses, or process HTML documents to retrieve structured information. Unlike the [template node](/node-red/core-nodes/template/) which generates HTML, this node is purely for parsing and extraction.
+The HTML node parses HTML documents and extracts specific elements using CSS selectors. This is essential when you need to scrape data from web pages, extract specific content from HTML responses, or process HTML documents to retrieve structured information. Unlike the [template node](/docs/node-red/core-nodes/template/) which generates HTML, this node is purely for parsing and extraction.
 
 ## How it works
 

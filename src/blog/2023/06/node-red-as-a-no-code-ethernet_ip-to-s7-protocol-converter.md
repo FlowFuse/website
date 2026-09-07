@@ -197,7 +197,7 @@ Depending on how noisy the REAL data is, which is common with unfiltered 4-20mA 
 
 !["Screenshot showing the Filter node Configuration"](./images/ethip-to-S7/e-to-p-23.png "Screenshot showing the Filter node Configuration")
 
-In the example above, we arbitrarily applied a 3% [deadband](/node-red/core-nodes/filter/)
+In the example above, we arbitrarily applied a 3% [deadband](/docs/node-red/core-nodes/filter/)
 to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
 
 You can adjust the deadband to find the right balance for your particular application.

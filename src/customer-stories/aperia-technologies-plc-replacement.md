@@ -54,7 +54,7 @@ This manual overhead was limiting Aperia's ability to scale manufacturing operat
 
 ## The FlowFuse Solution
 
-Aperia's answer was to remove the proprietary PLC from the center of the architecture entirely. Instead, smart fixtures run Node-RED on an edge Windows instance, managed by FlowFuse. At the hardware layer, Node-RED talks directly to sensors, actuators, scanners, and motors using standard industrial protocols: [Modbus TCP](/node-red/protocol/modbus/)/[RTU](/blog/2025/09/using-modbus-with-flowfuse/), [RS232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), [raw TCP](/node-red/core-nodes/tcp-in/), and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/). At the software layer, it triggers label printing, logs serialized telemetry to [MongoDB](/node-red/database/mongodb/), syncs maintenance events to Limble, and pulls data from NetSuite ERP. [FlowFuse functions as the orchestration layer](/use-cases/it-ot-middleware/) that ties hardware protocols and enterprise APIs into one canvas, through two strategic implementations:
+Aperia's answer was to remove the proprietary PLC from the center of the architecture entirely. Instead, smart fixtures run Node-RED on an edge Windows instance, managed by FlowFuse. At the hardware layer, Node-RED talks directly to sensors, actuators, scanners, and motors using standard industrial protocols: [Modbus TCP](/docs/node-red/protocol/modbus/)/[RTU](/blog/2025/09/using-modbus-with-flowfuse/), [RS232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), [raw TCP](/docs/node-red/core-nodes/tcp-in/), and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/). At the software layer, it triggers label printing, logs serialized telemetry to [MongoDB](/docs/node-red/database/mongodb/), syncs maintenance events to Limble, and pulls data from NetSuite ERP. [FlowFuse functions as the orchestration layer](/use-cases/it-ot-middleware/) that ties hardware protocols and enterprise APIs into one canvas, through two strategic implementations:
 
 ### Turning Idle Test Equipment into R&D Capacity
 
@@ -88,7 +88,7 @@ Aperia's solution was a vision-integrated screw assembly station connected to th
 The solution architecture includes:
 
   - **Edge Control Layer:** Node-RED running on edge Windows instances, managed by FlowFuse, in place of proprietary PLC logic
-  - [**Industrial Protocol Support**](/node-red/protocol/)**:** Modbus TCP/RTU, RS232, raw TCP, and EtherNet/IP for direct communication with sensors, actuators, scanners, and motors
+  - [**Industrial Protocol Support**](/docs/node-red/protocol/)**:** Modbus TCP/RTU, RS232, raw TCP, and EtherNet/IP for direct communication with sensors, actuators, scanners, and motors
   - **Enterprise System Integration:** MongoDB for serialized telemetry, DronaHQ for dashboards, NetSuite for ERP data, and Limble for maintenance event syncing
   - **Alerting:** Slack API integration for instant anomaly and downtime alerts
   - **Deployment Management:** FlowFuse pipelines for pushing device configuration updates to full device groups across the factory floor

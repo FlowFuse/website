@@ -429,7 +429,7 @@ The flow has five stages: receive the payload, extract features, scale and prepa
 
 Add an **mqtt-in** node and configure it to connect to the same broker and topic used during training. Set the output to auto-detect so the JSON payload is parsed automatically.
 
-If you are using the built-in FlowFuse MQTT broker, use the [FlowFuse MQTT nodes](/node-red/flowfuse/mqtt/) , these connect automatically when dragged into the flow.
+If you are using the built-in FlowFuse MQTT broker, use the [FlowFuse MQTT nodes](/docs/flowfuse-nodes/mqtt/) , these connect automatically when dragged into the flow.
 
 **2. Extract Features**
 
@@ -548,7 +548,7 @@ Once deployed, the flow should look like this:
 
 **5. Act on the Result**
 
-Connect the scoring output to whatever suits your operation. For testing, a debug node shows results in real time. For production, an mqtt-out node can publish anomaly alerts downstream, the [FlowFuse Dashboard](/platform/dashboard/) package can visualise the anomaly score over time with a clear motor state indicator, and alerting nodes can notify your team directly, via [Telegram](/node-red/notification/email/), [email](/node-red/notification/telegram/), or [SIGNL4](/blueprints/other/mobile-alerting/) for structured mobile alerts with on-call scheduling and acknowledgement tracking.
+Connect the scoring output to whatever suits your operation. For testing, a debug node shows results in real time. For production, an mqtt-out node can publish anomaly alerts downstream, the [FlowFuse Dashboard](/platform/dashboard/) package can visualise the anomaly score over time with a clear motor state indicator, and alerting nodes can notify your team directly, via [Telegram](/docs/node-red/notification/email/), [email](/docs/node-red/notification/telegram/), or [SIGNL4](/blueprints/other/mobile-alerting/) for structured mobile alerts with on-call scheduling and acknowledgement tracking.
 
 ### What the Output Looks Like
 

@@ -35,11 +35,11 @@ Our next webinar will be focused on the device management capabilities in the Fl
 
 - [Node-RED as a No-Code Ethernet/IP to S7 Protocol Converter](/blog/2023/06/node-red-as-a-no-code-ethernet_ip-to-s7-protocol-converter/) - A guide to using Node-RED for converting ethernet IP data to Siemens S7.  Also a [video version](https://youtu.be/dteXgcBXUnk) of the same content. 
 
-- [MQTT and its Role in IoT and Industrial IoT](/node-red/protocol/mqtt/) - A practical explainer on the role of MQTT in IoT use cases and how to connect with an MQTT broker in Node-RED.
+- [MQTT and its Role in IoT and Industrial IoT](/docs/node-red/protocol/mqtt/) - A practical explainer on the role of MQTT in IoT use cases and how to connect with an MQTT broker in Node-RED.
 
 - Two new Node-RED Nodes Explained articles
-    - [Nodes explained: Split](/node-red/core-nodes/split/)
-    - [Nodes explained: Filter](/node-red/core-nodes/filter/)
+    - [Nodes explained: Split](/docs/node-red/core-nodes/split/)
+    - [Nodes explained: Filter](/docs/node-red/core-nodes/filter/)
 
 ## From the Community
 

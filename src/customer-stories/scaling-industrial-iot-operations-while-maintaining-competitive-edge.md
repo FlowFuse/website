@@ -55,7 +55,7 @@ FlowFuse processes and routes production data to multiple systems including:
 
 - **[MES](/use-cases/mes/) Integration:** Providing real-time machine status, runtime data, and downtime analysis
 - **SAP Connectivity:** Enabling bidirectional [data integration](/use-cases/data-integration/) for production planning and resource management
-- **[InfluxDB](/node-red/database/influxdb/) Storage:** Long-term historical data storage for trend analysis and optimization
+- **[InfluxDB](/docs/node-red/database/influxdb/) Storage:** Long-term historical data storage for trend analysis and optimization
 - **Live Dashboards:** Real-time production visualization and monitoring for operators and management
 - **Custom HMI Systems:** User interfaces for machine operators to input process parameters and quality data
 - **SaaS Energy Management System:** Optenda collects power consumption of some machines directly from the FlowFuse Broker 
@@ -91,7 +91,7 @@ FlowFuse processes and routes production data to multiple systems including:
 
 The solution architecture includes:
 
-- **Device Agent Deployment:** Shop floor-level agents connecting directly to manufacturing equipment via [OPC-UA](/node-red/flowfuse/edge/opcua/) and other industrial protocols
+- **Device Agent Deployment:** Shop floor-level agents connecting directly to manufacturing equipment via [OPC-UA](/docs/flowfuse-nodes/edge/opcua/) and other industrial protocols
 - **Encrypted Cloud Connectivity:** Secure communication between edge devices and FlowFuse cloud platform
 - **Data Processing Pipelines:** Node-RED flows handling data transformation, validation, and routing to multiple downstream systems
 - **Multi-System Integration:** Connections to MES, SAP, InfluxDB, custom dashboards, and HMI systems

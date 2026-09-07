@@ -14,7 +14,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
   - **Ignore:** If enabled Payload will be ignored.
   - **Append to query-string parameter:** Enabling this option will Allow sending URL query string parameters using `msg.payload`.
   - **Send as request:** Send payload data as part of the request body.
-- **Enable Secure Connection:** Allows to activate SSL/TLS for secure communication. TLS configuration options are available, For more information refer to [TLS config node](/node-red/core-nodes/tls).
+- **Enable Secure Connection:** Allows to activate SSL/TLS for secure communication. TLS configuration options are available, For more information refer to [TLS config node](/docs/node-red/core-nodes/tls).
 - **Use Authentication:** If required, allow to provide credentials for authentication.
   - **Type:** Select the authentication type.
     - **basic:** Uses Basic authentication where the username and password are sent in the request headers in Base64-encoded form.
@@ -24,7 +24,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
     - **bearer:** Uses Bearer token authentication where a bearer token, typically a JSON Web Token (JWT), is sent in the Authorization header.
       - **Token:** Provide the bearer token if bearer authentication is selected.
 - **Enable Connection Keep-Alive:** Enabling this option will allow Maintain persistent connections for efficiency.
-- **Use Proxy:** Allows to Route requests through a proxy server if necessary, for more information on the configuration of [HTTP Proxy](/node-red/core-nodes/http-proxy/) config node
+- **Use Proxy:** Allows to Route requests through a proxy server if necessary, for more information on the configuration of [HTTP Proxy](/docs/node-red/core-nodes/http-proxy/) config node
 - **Only send non-2xx responses to Catch node:** Enabling this option will send only non-success responses to the Catch node.
 - **Disable Strict HTTP Parsing:** Enabling this option relaxes how Node-RED interprets HTTP responses. It's handy when dealing with responses that don't perfectly match the standard HTTP format.
 - **Return:** Allows to Choose the format for response data conversion
@@ -37,7 +37,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
 
 1. **API Integration:** The HTTP request node allows seamless integration with external APIs. Developers can utilize it to fetch data from APIs using GET requests or send data to APIs using POST/PUT requests. For instance, fetching weather data from a weather API or posting data to a messaging service like Slack are common scenarios.
 
-2. **Webhooks:** With the HTTP request node, users can set up webhooks to trigger actions in response to specific events. This enables real-time communication between different applications. For example, triggering a webhook to notify a third-party service when certain conditions are met or when data is received from a sensor. For more information, refer to [Using webhook with Node-RED](/node-red/integration-technologies/webhook/)
+2. **Webhooks:** With the HTTP request node, users can set up webhooks to trigger actions in response to specific events. This enables real-time communication between different applications. For example, triggering a webhook to notify a third-party service when certain conditions are met or when data is received from a sensor. For more information, refer to [Using webhook with Node-RED](/docs/node-red/integration-technologies/webhook/)
 
 3. **Remote Control and Device Management:** In smart home systems, the HTTP request node can be used to facilitates remote device management. It allows users to control various devices such as lights, thermostats, and security cameras via web or mobile interfaces by interacting with device APIs. Actions like toggling devices, adjusting settings, and receiving real-time updates can be achieved through the HTTP request node.
 

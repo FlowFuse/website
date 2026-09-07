@@ -306,7 +306,7 @@ Once installed, you'll find the "telegram sender" and "telegram receiver" nodes 
 
 ### Creating Your Telegram Bot and Getting Your Chat ID
 
-Before you can send alerts, you need to create a Telegram bot and get your Chat ID. We have a detailed guide that walks you through the entire process:  [How to Create a Telegram Bot and Find Your Chat ID](/node-red/notification/telegram/#creating-a-bot-in-telegram)
+Before you can send alerts, you need to create a Telegram bot and get your Chat ID. We have a detailed guide that walks you through the entire process:  [How to Create a Telegram Bot and Find Your Chat ID](/docs/node-red/notification/telegram/#creating-a-bot-in-telegram)
 
 Once you have your **bot token** and **Chat ID**, come back here to continue with the alert setup.
 

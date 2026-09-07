@@ -141,7 +141,7 @@ Manufacturers can start an LPA program with paper forms or spreadsheets, but man
 
 A digital LPA can help schedule audits, record findings, notify responsible people, and track actions through closure.
 
-Connecting the audit with production data provides another benefit. With FlowFuse, manufacturers can connect an LPA application to machines, [PLCs](/landing/plc/), sensors, [databases](/node-red/database/), and other industrial systems.
+Connecting the audit with production data provides another benefit. With FlowFuse, manufacturers can connect an LPA application to machines, [PLCs](/landing/plc/), sensors, [databases](/docs/node-red/database/), and other industrial systems.
 
 This allows audit results to be viewed alongside production information such as downtime, machine states, or process parameters. Instead of only recording that a process failed, teams can investigate what was happening around the failure.
 

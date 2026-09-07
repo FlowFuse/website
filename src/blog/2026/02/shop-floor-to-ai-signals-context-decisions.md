@@ -129,7 +129,7 @@ Crucially, in a Unified Namespace, context is added at the moment data enters th
 
 That enriched information is then published into a shared MQTT-based Namespace. One location. One structure. One source of truth. Dashboards, analytics, and AI systems all subscribe to the same contextualized view of reality.
 
-Through [FlowFuse MCP nodes](/node-red/flowfuse/mcp/), AI systems connect directly to the namespace, querying live operational context instead of pulling raw time-series data from isolated historians and attempting to reconstruct meaning after the fact.
+Through [FlowFuse MCP nodes](/docs/flowfuse-nodes/mcp/), AI systems connect directly to the namespace, querying live operational context instead of pulling raw time-series data from isolated historians and attempting to reconstruct meaning after the fact.
 
 [FlowFuse AI Expert](/ai/) operates on the same MCP-backed context layer. Operators and engineers can ask questions in natural language (*"Is Line 3 behaving normally?"*, *"Have we seen this vibration pattern before?"*, *"What changed before the last failure?"*) and receive answers grounded in the live Unified Namespace.
 

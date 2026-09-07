@@ -140,11 +140,11 @@ In an ideal lean environment: **Cycle Time should sit at roughly 90–95% of Tak
 
 ## Implementing Takt Time Monitoring with FlowFuse
 
-Understanding takt time in theory is one thing; putting it into practice requires the right tools. [FlowFuse](/) connects to your existing systems, whether [PLCs](/blog/2025/10/plc-to-mqtt-using-flowfuse/), [databases](/node-red/database/), or ERP software, to calculate takt time automatically in real time instead of on static spreadsheets. Before starting, [create a FlowFuse account](https://app.flowfuse.com/account/create) if you don't already have one.
+Understanding takt time in theory is one thing; putting it into practice requires the right tools. [FlowFuse](/) connects to your existing systems, whether [PLCs](/blog/2025/10/plc-to-mqtt-using-flowfuse/), [databases](/docs/node-red/database/), or ERP software, to calculate takt time automatically in real time instead of on static spreadsheets. Before starting, [create a FlowFuse account](https://app.flowfuse.com/account/create) if you don't already have one.
 
 ### Step 1: Connect to Your Data Sources
 
-FlowFuse supports connections to industrial systems through its library of [protocol](/node-red/protocol/) and [database](/node-red/database/) nodes, pulling customer orders from your [ERP system](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/), production schedules from MES, and real-time counts from PLCs.
+FlowFuse supports connections to industrial systems through its library of [protocol](/docs/node-red/protocol/) and [database](/docs/node-red/database/) nodes, pulling customer orders from your [ERP system](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/), production schedules from MES, and real-time counts from PLCs.
 
 For this demo, simulate customer orders with an Inject node:
 

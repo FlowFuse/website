@@ -103,7 +103,7 @@ Let's now see how to call a Python script from Node-RED. First, we'll create a b
 ```
 ::
 
-Now, let's execute this Python script from Node-RED. To do that, we will use Node-RED's [Exec](/node-red/core-nodes/exec/) node, which allows running commands on your system.
+Now, let's execute this Python script from Node-RED. To do that, we will use Node-RED's [Exec](/docs/node-red/core-nodes/exec/) node, which allows running commands on your system.
 
 1. Drag an Inject node onto the canvas.
 2. Drag an Exec node onto the canvas and Configure the command to `python ./example.py -u`. The -u flag prevents potential output buffering issues when executing Python scripts via exec.
@@ -125,7 +125,7 @@ Now, when you deploy this flow and click on the inject node to execute the file,
 
 Having explored how to run a Python script within Node-RED with the basic practical example, let's move to a real-world scenario. We'll demonstrate how to read sensor data using Python, despite Node-RED providing numerous community-built nodes for this purpose. This approach provides deeper insights into integrating external scripts, showcasing the flexibility of Node-RED for custom solutions.
 
-Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/node-red/hardware/), In this case, we are running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
+Before proceeding, ensure that Node-RED is running on a device connected to a temperature sensor. For detailed instructions, refer to [Setting Up Node-RED on Different Hardware](/docs/node-red/hardware/), In this case, we are running Node-RED on a Raspberry Pi 5 with a DHT11 sensor connected to it.
 
 1. Drag an Inject node onto the canvas, and set repeat to 1 seconds of interval.
 2. Drag an Exec node and set the path to `python <filename>.py`, replace the filename with the name of the file which reads the sensor data, and make sure the python file doesn't contain the loop.
