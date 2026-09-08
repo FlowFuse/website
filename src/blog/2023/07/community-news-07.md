@@ -38,8 +38,8 @@ Our next webinar will be focused on the device management capabilities in the Fl
 - [MQTT and its Role in IoT and Industrial IoT](/docs/node-red/protocol/mqtt/) - A practical explainer on the role of MQTT in IoT use cases and how to connect with an MQTT broker in Node-RED.
 
 - Two new Node-RED Nodes Explained articles
-    - [Nodes explained: Split](/docs/node-red/core-nodes/split/)
-    - [Nodes explained: Filter](/docs/node-red/core-nodes/filter/)
+    - [Nodes explained: Split](/docs/node-red/core-nodes/sequence/split/)
+    - [Nodes explained: Filter](/docs/node-red/core-nodes/function/filter/)
 
 ## From the Community
 

@@ -180,7 +180,7 @@ Connect the change node output to a new chart node, and voila:
 
 While we created a chart and it has some data, there's one more thing to explain.
 How can the data be kept up-to-date? It's straight forward to have the `Inject`
-node [run every night](/docs/node-red/core-nodes/inject/),
+node [run every night](/docs/node-red/core-nodes/common/inject/),
 but the chart would now have multiple data points
 for the same day. This paints multiple lines on top of each other. While that works,
 the hover of the chart will display the duplication and it's wastefull.

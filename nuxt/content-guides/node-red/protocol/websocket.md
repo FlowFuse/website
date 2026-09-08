@@ -107,4 +107,4 @@ _Testing Websocket Client with Websocket Server_
 
 Now, to test the client, you can send messages from the server and see the debug window for that message in the client instance. Similarly, you can send messages from the client Instance to the server and observe the responses in the debug window of server instance.
 
-For more information on the advaced websocket node configuration refer to the [Websocket Node Documentation](/docs/node-red/core-nodes/websocket/)
+For more information on the advaced websocket node configuration refer to the [Websocket Node Documentation](/docs/node-red/core-nodes/network/websocket/)

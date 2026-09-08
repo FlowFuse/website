@@ -10,7 +10,7 @@ meta:
             Industrial IoT (IIoT) is the use of connected sensors and devices to collect data from industrial operations and feed it into software for monitoring and real-time action. FlowFuse is the platform that runs on top of that data: the flows that connect it, the dashboards that display it, and the governance that keeps it under control.
         - question: "What's the difference between FlowFuse Hub, Edge, and Fleet?"
           answer: >
-            Hub integrates enterprise systems and <a href="/docs/node-red/core-nodes/http-request/">APIs</a> for IT teams. Edge connects <a href="/landing/plc/">PLCs</a> and machines across sites for OT teams. Fleet manages <a href="/node-red/">Node-RED</a> across thousands of distributed devices. All three run on the same platform; the difference is which deployment shape each one is built for.
+            Hub integrates enterprise systems and <a href="/docs/node-red/core-nodes/network/http-request/">APIs</a> for IT teams. Edge connects <a href="/landing/plc/">PLCs</a> and machines across sites for OT teams. Fleet manages <a href="/node-red/">Node-RED</a> across thousands of distributed devices. All three run on the same platform; the difference is which deployment shape each one is built for.
         - question: "How do I know which industrial IoT solution is right for my setup?"
           answer: >
             It comes down to where your applications live: a data center (<a href="/product/hub/">Hub</a>), a plant floor (<a href="/product/edge/">Edge</a>), or thousands of field devices (<a href="/product/fleet/">Fleet</a>). We'll walk through all three live in the webinar and help map your specific setup to one of them. Bring your architecture and we'll sort it live in the Q&A.
@@ -44,7 +44,7 @@ Join Kristopher Sandoval (Product Marketing), Jamie Strusz (Engineering), Drew G
 
 ## Which industrial IoT solution fits my setup?
 
-- FlowFuse Hub integrates [enterprise systems](/landing/enterprise-integration/) and [APIs](/docs/node-red/core-nodes/http-request/), FlowFuse Edge connects [PLCs](/landing/plc/) and machines across sites, FlowFuse Fleet manages [Node-RED](/node-red/) across thousands of devices. We'll map your setup to one of the three, live.
+- FlowFuse Hub integrates [enterprise systems](/landing/enterprise-integration/) and [APIs](/docs/node-red/core-nodes/network/http-request/), FlowFuse Edge connects [PLCs](/landing/plc/) and machines across sites, FlowFuse Fleet manages [Node-RED](/node-red/) across thousands of devices. We'll map your setup to one of the three, live.
 - Build faster with Industrial AI: [FlowFuse Expert](/docs/user/expert/) opens its [MCP server](/blog/2025/10/building-mcp-server-using-flowfuse/) to 3rd party agents, such as Cursor, Claude Code, Gemini CLI, and even in-house agents. Any MCP-speaking agent works. Point your AI agent at your FlowFuse instance and it builds, debugs, and fixes flows directly.
 - See what's running, everywhere: [role-based access control](/docs/user/role-based-access-control/), [audit logging](/docs/user/logs/#audit-log), and [one place to manage every instance and device](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/), no matter which product you run.
 - Read a [dashboard](/platform/dashboard/) at a glance: new [built-in themes](https://dashboard.flowfuse.com/nodes/config/ui-theme.html) with WCAG AA contrast, [charts](https://dashboard.flowfuse.com/nodes/widgets/ui-chart) that render instead of leaving empty boxes, and readable dates instead of raw timestamps.

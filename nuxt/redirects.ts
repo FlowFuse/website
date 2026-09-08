@@ -49,7 +49,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/landing/technology-migration-1/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/landing/technology-migration-2/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/blog/2025/10/the-ai-orchestation-hype/': { redirect: { to: '/blog/2025/10/the-ai-orchestration-hype/', statusCode: 301 } },
-    '/node-red/core-nodes/mqtt/': { redirect: { to: '/docs/node-red/core-nodes/mqtt-in/', statusCode: 301 } },
+    '/node-red/core-nodes/mqtt/': { redirect: { to: '/docs/node-red/core-nodes/network/mqtt-in/', statusCode: 301 } },
     '/blueprints/manufacturing/manufacturing-support-request/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
     '/blueprints/other/remote-buffering/': { redirect: { to: '/blueprints/getting-started/store-and-forward/', statusCode: 301 } },
     '/vs/tulip/': { redirect: { to: '/landing/tulip/', statusCode: 301 } },

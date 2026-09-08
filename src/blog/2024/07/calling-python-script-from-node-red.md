@@ -103,7 +103,7 @@ Let's now see how to call a Python script from Node-RED. First, we'll create a b
 ```
 ::
 
-Now, let's execute this Python script from Node-RED. To do that, we will use Node-RED's [Exec](/docs/node-red/core-nodes/exec/) node, which allows running commands on your system.
+Now, let's execute this Python script from Node-RED. To do that, we will use Node-RED's [Exec](/docs/node-red/core-nodes/function/exec/) node, which allows running commands on your system.
 
 1. Drag an Inject node onto the canvas.
 2. Drag an Exec node onto the canvas and Configure the command to `python ./example.py -u`. The -u flag prevents potential output buffering issues when executing Python scripts via exec.

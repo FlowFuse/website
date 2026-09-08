@@ -104,7 +104,7 @@ graph TD
 
 #### For...of / ForEach Loop
 
-In traditional programming, `for...of` and `forEach` loops are commonly used to iterate through arrays or object properties, allowing for individual element processing. Since Node-RED doesn’t include these specific constructs, you can replicate their functionality by using a combination of nodes, particularly the **[Split](/docs/node-red/core-nodes/split/)** and **[Join](/docs/node-red/core-nodes/join/)** nodes.
+In traditional programming, `for...of` and `forEach` loops are commonly used to iterate through arrays or object properties, allowing for individual element processing. Since Node-RED doesn’t include these specific constructs, you can replicate their functionality by using a combination of nodes, particularly the **[Split](/docs/node-red/core-nodes/sequence/split/)** and **[Join](/docs/node-red/core-nodes/sequence/join/)** nodes.
 
 Here’s how you can replicate this functionality in Node-RED:
 

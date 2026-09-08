@@ -136,7 +136,7 @@ test('a page leads with the FlowFuse use case and puts the mirrored help under i
 })
 
 test("a node page's browser title is the one the Eleventy page it replaces had", () => {
-    // /node-red/core-nodes/mqtt-in/ 301s onto /docs/node-red/core-nodes/mqtt-in/, so the
+    // /node-red/core-nodes/mqtt-in/ 301s onto /docs/node-red/core-nodes/network/mqtt-in/, so the
     // title has to survive the move or the redirect hands Google a different page. The
     // docs page prefers metaTitle over navTitle for exactly this; without it the title
     // would be the bare node name.
@@ -162,12 +162,12 @@ test('a sync missing any node help fails loudly and names the node', () => {
     )
 })
 
-test('a node whose name matches its category does not collide with a category page', () => {
-    // The Function node lives in the `function` category. A category page at
-    // core-nodes/function/ and the node page at core-nodes/function.md both resolve to
-    // /docs/node-red/core-nodes/function/, and @nuxt/content picks whichever it indexed
-    // last. The legacy redirect for that URL is the NODE, so no category pages are
-    // emitted at all.
+test('a node whose name matches its category does not collide with its category page', () => {
+    // The Function node lives in the `function` category, and both want to be called
+    // "function". Flat, the category page at core-nodes/function/ and the node page at
+    // core-nodes/function.md resolved to the same URL and @nuxt/content kept whichever it
+    // indexed last, with no build error. Nesting separates them: the category owns the
+    // directory, the node is a file inside it.
     const root = mkdtempSync(join(tmpdir(), 'core-nodes-collide-'))
     const catalogue = { function: [{ xpath: 'function', name: 'Function', file: '10-function' }] }
 
@@ -179,10 +179,13 @@ test('a node whose name matches its category does not collide with a category pa
         logger: { info () {} },
     })
 
-    const entries = readdirSync(join(root, 'nuxt/content/docs/node-red/core-nodes')).sort()
+    const dir = join(root, 'nuxt/content/docs/node-red/core-nodes')
+    assert.deepEqual(readdirSync(dir).sort(), ['function', 'index.md'])
+    assert.deepEqual(readdirSync(join(dir, 'function')).sort(), ['function.md', 'index.md'])
 
-    assert.deepEqual(entries, ['function.md', 'index.md'])
-    assert.ok(!entries.includes('function'), 'no category directory may shadow the node page')
+    // /docs/node-red/core-nodes/function/ is the category, and the node is one level down.
+    assert.match(readFileSync(join(dir, 'function/index.md'), 'utf8'), /navTitle: "Function"/)
+    assert.match(readFileSync(join(dir, 'function/function.md'), 'utf8'), /navTitle: "Function"/)
 })
 
 test('a full sync writes a page per node plus the section index', () => {
@@ -198,19 +201,27 @@ test('a full sync writes a page per node plus the section index', () => {
     })
 
     const dir = join(root, 'nuxt/content/docs/node-red/core-nodes')
-    const entries = readdirSync(dir).sort()
 
     assert.equal(count, 2)
     // index.md, not README.md: this writes straight into the content tree rather than
     // through guides-sync, which is what renames README on the way in. README.md here
     // prerenders as /docs/node-red/core-nodes/README/ and 404s the build.
     //
-    // And no per-category directories: one node page per node, flat, plus the section
-    // index. See the collision note on renderCategorySections.
-    assert.deepEqual(entries, ['index.md', 'inject.md', 'mqtt-in.md'])
+    // A directory per palette category, each with its own index, so the sidebar nests the
+    // way the editor's palette does. Categories with no nodes in the catalogue are skipped.
+    assert.deepEqual(readdirSync(dir).sort(), ['common', 'index.md', 'network'])
+    assert.deepEqual(readdirSync(join(dir, 'common')).sort(), ['index.md', 'inject.md'])
+    assert.deepEqual(readdirSync(join(dir, 'network')).sort(), ['index.md', 'mqtt-in.md'])
+
     assert.match(readFileSync(join(dir, 'index.md'), 'utf8'), /navTitle: "Core nodes"/)
-    // The section index carries the per-category grouping the category pages used to.
-    const index = readFileSync(join(dir, 'index.md'), 'utf8')
-    assert.match(index, /## Common/)
-    assert.match(index, /\/docs\/node-red\/core-nodes\/inject\//)
+    assert.match(readFileSync(join(dir, 'common/index.md'), 'utf8'), /navTitle: "Common"/)
+
+    // Both the section index and the category page link the node at its nested URL.
+    for (const page of ['index.md', 'common/index.md']) {
+        assert.match(readFileSync(join(dir, page), 'utf8'), /\/docs\/node-red\/core-nodes\/common\/inject\//)
+    }
+
+    // navOrder ranks a node among its own category's nodes, so each category restarts at 1.
+    assert.match(readFileSync(join(dir, 'common/inject.md'), 'utf8'), /navOrder: 1/)
+    assert.match(readFileSync(join(dir, 'network/mqtt-in.md'), 'utf8'), /navOrder: 1/)
 })

@@ -244,7 +244,7 @@ Steps:
 3. Set the action to "Always convert to JavaScript Object" and click Done.
 4. Connect the JSON node between the source node (sending the JSON string) and the destination node (requiring the parsed object).
 
-The JSON node automatically converts incoming JSON strings into JavaScript objects. For more details, see the [JSON node documentation](/docs/node-red/core-nodes/json/).
+The JSON node automatically converts incoming JSON strings into JavaScript objects. For more details, see the [JSON node documentation](/docs/node-red/core-nodes/parsers/json/).
 
 ## Common Mistakes to Avoid
 

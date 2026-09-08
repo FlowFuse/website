@@ -36,7 +36,7 @@ To implement If-Else logic in Node-RED, you can use the Switch node, which align
 
 ### Using Switch Node
 
-The [Switch](/docs/node-red/core-nodes/switch/) node in Node-RED is used for routing messages based on specific conditions, offering a straightforward, low-code approach to implementing conditional logic in your flows. The Switch node allows you to set up rules using a visual interface, making it ideal for users who prefer a more intuitive method for handling conditions. However, it’s important to note that the Switch node represents a different, independent concept known as the "[switch statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)." While it serves a similar purpose to If-Else logic by building conditional flows, it operates under its own programming paradigm.
+The [Switch](/docs/node-red/core-nodes/function/switch/) node in Node-RED is used for routing messages based on specific conditions, offering a straightforward, low-code approach to implementing conditional logic in your flows. The Switch node allows you to set up rules using a visual interface, making it ideal for users who prefer a more intuitive method for handling conditions. However, it’s important to note that the Switch node represents a different, independent concept known as the "[switch statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)." While it serves a similar purpose to If-Else logic by building conditional flows, it operates under its own programming paradigm.
 
 To demonstrate the Switch node, we'll set up a flow to make decisions based on the temperature value. We will route messages through different outputs based on temperature thresholds.
 

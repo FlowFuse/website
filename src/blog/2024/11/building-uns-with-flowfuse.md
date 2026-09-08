@@ -80,7 +80,7 @@ While this is more readable, it can still be challenging to monitor changes in v
 ![Change node: Calculating Magnitude](./images/change-node-calculating-magnitude.png){data-zoomable}
 _Change node: Calculating Magnitude_
 
-After calculating the Magnitude using a [Change node](/docs/node-red/core-nodes/change/), the data might look like this:
+After calculating the Magnitude using a [Change node](/docs/node-red/core-nodes/function/change/), the data might look like this:
 
 ```json
 {
@@ -160,7 +160,7 @@ While Sparkplug B provides a standardized topic model, its hierarchy may not alw
 
 ### Step 5: Sending Collected metrics to UNS
 
-With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/docs/node-red/core-nodes/mqtt-in/) node to send the transformed data to the broker.
+With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/docs/node-red/core-nodes/network/mqtt-in/) node to send the transformed data to the broker.
 
 1. Drag an MQTT out node into your flow.  
 2. Configure the node to connect to the FlowFuse MQTT Broker using the client credentials generated earlier.

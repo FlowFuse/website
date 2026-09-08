@@ -10,7 +10,7 @@ meta:
 
 # How to Debug Node-RED Flows Using Debugger
 
-When it comes to debugging application flows in Node-RED, the tool most Node-RED developers often reach for is the [Debug](/docs/node-red/core-nodes/debug/) node. It provides a simple way to output message payloads or other data to the debug sidebar, helping you gain insights into how your flow is working. But what if you needed more control and visibility over the flow’s execution? What if you wanted to step through each node in detail, inspect variables, or pause the flow at specific points to understand what’s happening?
+When it comes to debugging application flows in Node-RED, the tool most Node-RED developers often reach for is the [Debug](/docs/node-red/core-nodes/common/debug/) node. It provides a simple way to output message payloads or other data to the debug sidebar, helping you gain insights into how your flow is working. But what if you needed more control and visibility over the flow’s execution? What if you wanted to step through each node in detail, inspect variables, or pause the flow at specific points to understand what’s happening?
 
 In these cases, using the **Node-RED Debugger** becomes invaluable. The debugger allows you to trace the execution of your flows interactively, set breakpoints, and gain deeper insights beyond what the Debug node offers. This Documentation will show you how to effectively use the Node-RED Debugger to pinpoint issues and fine-tune your applications.
 
@@ -105,7 +105,7 @@ Manually stepping through the flow is useful for understanding how the flow oper
 
 ## Adding Breakpoints for Debugging Flows
 
-Now that we've pinpointed the problem to be somewhere between the[Switch](/docs/node-red/core-nodes/switch/) node and the [Join](/docs/node-red/core-nodes/join/) node, it’s time to leverage breakpoints for a more efficient debugging experience. These breakpoints allow you to pause the flow automatically allowing you to inspect messages and context without having to step through each node manually. This is especially useful for larger or more intricate flows.
+Now that we've pinpointed the problem to be somewhere between the[Switch](/docs/node-red/core-nodes/function/switch/) node and the [Join](/docs/node-red/core-nodes/sequence/join/) node, it’s time to leverage breakpoints for a more efficient debugging experience. These breakpoints allow you to pause the flow automatically allowing you to inspect messages and context without having to step through each node manually. This is especially useful for larger or more intricate flows.
 
 First, let’s discuss where exactly we should add breakpoints. Our previous debugging shows that all 11 messages are correctly reaching the input of the Switch node. However, we need to check how many messages pass through the Switch node's condition and whether they contain the required part object for the Join node to create a single value (array).
 

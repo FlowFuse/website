@@ -137,6 +137,42 @@ export async function fetchCoreNodeHelp ({ coreNodes, fetchImpl = fetch, retries
     return help
 }
 
+/**
+ * One palette category: the sidebar group its nodes sit in, and a page listing them.
+ *
+ * The categories are a level of the tree rather than headings on one page because
+ * nuxt/lib/docs-nav.mjs builds the sidebar from paths alone - there is no nav-only
+ * grouping field below the top-level navGroup - and the editor's own palette is grouped
+ * this way, so the sidebar should be too.
+ *
+ * Nesting is also what keeps the Function node and the Function category apart. Flat, both
+ * wanted /docs/node-red/core-nodes/function/ and whichever @nuxt/content resolved last
+ * won, silently. As a directory the category is that path and the node is
+ * core-nodes/function/function/, which is unambiguous.
+ */
+export function renderCoreNodeCategoryPage (category, meta, nodes) {
+    const list = nodes
+        .map(n => `- [${n.name}](/docs/node-red/core-nodes/${category}/${n.slug}/)${n.description ? `: ${n.description}` : ''}`)
+        .join('\n')
+
+    return `---
+title: "Node-RED ${meta.title.toLowerCase()} nodes"
+metaTitle: "Node-RED ${meta.title} Nodes"
+navTitle: "${meta.title}"
+navOrder: ${meta.order}
+meta:
+    description: "The ${meta.title} nodes in Node-RED's default palette, and what each one is for."
+---
+
+# ${meta.title}
+
+The **${meta.title}** section of Node-RED's default palette. Each page opens with why you
+would reach for that node, then mirrors the node's built-in help.
+
+${list}
+`
+}
+
 /** One page: the FlowFuse use-case intro, then the mirrored upstream help. */
 export function renderCoreNodePage (node, { useCase, help, navOrder }) {
     const fm = [
@@ -184,9 +220,9 @@ export function renderCategorySections (nodes) {
         .map(([category, meta]) => {
             const list = nodes
                 .filter(n => n.category === category)
-                .map(n => `- [${n.name}](/docs/node-red/core-nodes/${n.slug}/)${n.description ? `: ${n.description}` : ''}`)
+                .map(n => `- [${n.name}](/docs/node-red/core-nodes/${category}/${n.slug}/)${n.description ? `: ${n.description}` : ''}`)
                 .join('\n')
-            return `## ${meta.title}\n\n${list}`
+            return `## [${meta.title}](/docs/node-red/core-nodes/${category}/)\n\n${list}`
         })
         .join('\n\n')
 }
@@ -233,28 +269,35 @@ meta:
 
 # Core nodes
 
-Every node in Node-RED's default palette, grouped the way the editor groups them. Each
-page opens with why you would reach for that node, then mirrors the node's built-in help.
+Every node in Node-RED's default palette, grouped into the same sections the editor's
+palette uses. Each page opens with why you would reach for that node, then mirrors the
+node's built-in help.
 
 ${renderCategorySections(nodes)}
 `, 'utf8')
 
-    let count = 1
-    for (const [category] of Object.entries(CATEGORIES)) {
+    for (const [category, meta] of Object.entries(CATEGORIES)) {
         const inCategory = nodes.filter(n => n.category === category)
         if (!inCategory.length) continue
 
+        const categoryDir = join(outDir, category)
+        mkdirSync(categoryDir, { recursive: true })
+        writeFileSync(join(categoryDir, 'index.md'), renderCoreNodeCategoryPage(category, meta, inCategory), 'utf8')
+
+        // Restarts per category: navOrder ranks a node among its siblings, which are now
+        // the nodes in its own category rather than all of them.
+        let navOrder = 1
         for (const node of inCategory) {
             const useCasePath = join(repoRoot, 'src/_includes/core-nodes', `${node.slug}-use-case.md`)
             const useCase = existsSync(useCasePath)
                 ? processLibraryMarkdown(readFileSync(useCasePath, 'utf8'), { title: node.name })
                 : ''
-            const dest = join(outDir, `${node.slug}.md`)
+            const dest = join(categoryDir, `${node.slug}.md`)
             mkdirSync(dirname(dest), { recursive: true })
             writeFileSync(dest, renderCoreNodePage(node, {
                 useCase,
                 help: help[`${node.category}/${node.slug}`],
-                navOrder: count++,
+                navOrder: navOrder++,
             }), 'utf8')
         }
     }
