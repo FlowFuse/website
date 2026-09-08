@@ -3235,7 +3235,13 @@ lite-youtube::before {
     align-items: center;
     gap: 0.5rem;
     width: 100%;
-    padding: 0.75rem 1.5rem;
+    /* 3.5rem is the height of the nav row itself, so a row of this menu is the
+       same height as the bar it drops out of and the panel reads as an extension
+       of the header rather than a denser list pinned under it. Height by
+       min-height plus centring, not by vertical padding, so a label that wraps
+       at a narrow width grows the row instead of overflowing it. */
+    min-height: 3.5rem;
+    padding: 0 1.5rem;
     text-align: left;
 }
 /* on hover they behave like every other panel link (text-indigo-700),
