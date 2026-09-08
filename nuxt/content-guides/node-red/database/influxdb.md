@@ -16,6 +16,7 @@ InfluxDB is a time series database that is commonly used for storing and analysi
 In this documentation, we will show you how to write data to InfluxDB from a Node-RED flow. We will also provide you with a few tips for writing data to InfluxDB effectively.
 
 ::cta-image{src="/docs/node-red/database/images/influxdb-node-red-cta-1.png" alt="Write to InfluxDB from every Node-RED instance you run, all from one place" cta="sign-up" reference="Node-RED: Using InfluxDB with Node-RED"}
+::
 
 ## Step 1: Install the InfluxDB Node-RED package
 

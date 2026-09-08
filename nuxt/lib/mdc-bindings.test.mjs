@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 import { findFiles } from './find-files.mjs'
 import { GUIDES_SOURCE } from './guides-sync.mjs'
 import { isDirectory } from './meta-title-length.mjs'
-import { bindableMustaches } from './mdc-bindings.mjs'
+import { bindableMustaches, unclosedMdcBlocks } from './mdc-bindings.mjs'
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..')
 
@@ -95,4 +95,32 @@ test('no content file carries a mustache MDC would read as a binding', () => {
         }
     }
     assert.deepEqual(hits, [], `put the mustache in a code span or a fenced block:\n${hits.join('\n')}`)
+})
+
+test('an MDC component block that is never closed is reported', () => {
+    // `::component{...}` opens a container and the closing `::` is not optional. Without
+    // it the container swallows the rest of the file, so every heading after it stops
+    // being a heading, and nothing errors: the component still renders. This shipped once,
+    // on three guides whose CTA was converted from a raw `<a onclick=...>`, and the only
+    // symptom was 23 anchors in those pages' own tables of contents pointing at headings
+    // that had quietly stopped existing.
+    assert.deepEqual(
+        unclosedMdcBlocks('# T\n\n::cta-image{src="a" cta="sign-up"}\n\n## Heading\n'),
+        [{ line: 3, component: 'cta-image' }]
+    )
+
+    // Closed, nested, and inside a fence are all fine.
+    assert.deepEqual(unclosedMdcBlocks('::cta-image{src="a"}\n::\n\n## Heading\n'), [])
+    assert.deepEqual(unclosedMdcBlocks('::callout{icon="x"}\ntext\n::\n\n::cta-image{src="a"}\n::\n'), [])
+    assert.deepEqual(unclosedMdcBlocks('```\n::cta-image{src="a"}\n```\n'), [])
+})
+
+test('every MDC component block in the guides is closed', () => {
+    const offenders = []
+    for (const path of findFiles(join(REPO_ROOT, GUIDES_SOURCE), ['.md'])) {
+        for (const { line, component } of unclosedMdcBlocks(readFileSync(path, 'utf8'))) {
+            offenders.push(`${relative(REPO_ROOT, path)}:${line}: ::${component} is never closed`)
+        }
+    }
+    assert.deepEqual(offenders, [], offenders.join('\n'))
 })

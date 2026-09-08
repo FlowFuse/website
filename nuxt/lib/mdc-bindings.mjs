@@ -71,3 +71,37 @@ export function bindableMustaches (markdown) {
     })
     return hits
 }
+
+/**
+ * MDC component blocks that are opened and never closed.
+ *
+ * `::component{...}` opens a container, and its closing `::` is not optional: without it
+ * the container swallows the rest of the file, so every heading after it stops being a
+ * heading. Nothing errors and the component still renders, which is why this is worth a
+ * check. It shipped once: three guides had a raw `<a onclick=...>` CTA replaced with
+ * `::cta-image{...}` and no closing `::`, and the only symptom was 23 anchors in those
+ * pages' own tables of contents pointing at headings that no longer existed.
+ *
+ * Counts openers against closers rather than parsing: a `::` on its own line closes the
+ * innermost open block, so the two must balance over a file.
+ *
+ * @param {string} markdown
+ * @returns {Array<{line: number, component: string}>} unclosed openers, outermost first
+ */
+export function unclosedMdcBlocks (markdown) {
+    const lines = blankFencedBlocks(String(markdown).split('\n'))
+    const open = []
+
+    lines.forEach((line, index) => {
+        // An opener names a component; a bare `::` closes one. A single-colon
+        // `:component{...}` is the inline form and needs no close.
+        const opener = line.match(/^\s*::([a-z][a-z0-9-]*)/i)
+        if (opener) {
+            open.push({ line: index + 1, component: opener[1] })
+            return
+        }
+        if (/^\s*::\s*$/.test(line)) open.pop()
+    })
+
+    return open
+}
