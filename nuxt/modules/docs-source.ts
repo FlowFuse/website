@@ -6,6 +6,8 @@ import { join, basename, dirname } from 'node:path'
 // nuxt/modules/ as a Nuxt module, so a plain helper there fails the build.
 // @ts-ignore untyped module, kept as plain JS so `node --test` can run it directly
 import { syncDocs } from '../lib/docs-sync.mjs'
+// @ts-ignore same
+import { syncGuides } from '../lib/guides-sync.mjs'
 
 const logger = useLogger('docs-source')
 
@@ -29,10 +31,17 @@ export default defineNuxtModule({
         const nuxtRoot = nuxt.options.rootDir
         const contentDocsDir = join(nuxtRoot, 'content', 'docs')
 
-        await syncDocs({ repoRoot: dirname(nuxtRoot), nuxtRoot, logger })
+        const repoRoot = dirname(nuxtRoot)
+
+        // Order matters: syncDocs wipes content/docs before writing, so the guides
+        // authored in this repo have to be overlaid after it, not before.
+        await syncDocs({ repoRoot, nuxtRoot, logger })
+        syncGuides({ repoRoot, nuxtRoot, logger })
 
         if (!existsSync(contentDocsDir)) return
 
+        // Collected after the overlay, so the guide pages get prerendered with the rest
+        // of /docs and need no route list of their own in nuxt.config.
         const docsRoutes = collectRoutes(contentDocsDir, '/docs')
         nuxt.options.nitro.prerender ??= {}
         const existing = (nuxt.options.nitro.prerender.routes as string[] | undefined) ?? []

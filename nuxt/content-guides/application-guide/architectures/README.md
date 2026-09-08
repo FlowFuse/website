@@ -1,10 +1,9 @@
 ---
-title: Architectures
-navTitle: Architectures
-navOrder: 5
-guide: flowfuse
-slug: architectures
-blurb: "Every FlowFuse deployment is the same building blocks arranged for where it runs — pick the world you're designing for."
+title: "Architectures"
+navTitle: "Architectures"
+navOrder: 4
+meta:
+    description: "Every FlowFuse deployment is the same building blocks arranged for where it runs — pick the world you're designing for."
 ---
 
 # Architectures
@@ -12,15 +11,15 @@ blurb: "Every FlowFuse deployment is the same building blocks arranged for where
 Every FlowFuse deployment is the same building blocks — instances, broker, data, edge — arranged for where it runs. Read any diagram as a vertical stack, then pick the world you're designing for.
 
 ::callout{icon="i-lucide-arrow-right"}
-**[OT architectures →](/application-guide/flowfuse/ot-architectures/)** — Near the equipment — edge deployments with the server in IT or in an OT/DMZ, hardware-saving consolidation, and air-gapped sites.
+**[OT architectures →](/docs/application-guide/architectures/ot/)** — Near the equipment — edge deployments with the server in IT or in an OT/DMZ, hardware-saving consolidation, and air-gapped sites.
 ::
 
 ::callout{icon="i-lucide-arrow-right"}
-**[IT architectures →](/application-guide/flowfuse/it-architectures/)** — Hosting and governing — on-prem, your cloud per-site, hosting choice at scale, enterprise governance, and secure data exposure.
+**[IT architectures →](/docs/application-guide/architectures/it/)** — Hosting and governing — on-prem, your cloud per-site, hosting choice at scale, enterprise governance, and secure data exposure.
 ::
 
 ::callout{icon="i-lucide-arrow-right"}
-**[IIoT architectures →](/application-guide/flowfuse/iiot-architectures/)** — The live data backbone — a Unified Namespace where edge publishes once and many subscribe, across every site.
+**[IIoT architectures →](/docs/application-guide/architectures/iiot/)** — The live data backbone — a Unified Namespace where edge publishes once and many subscribe, across every site.
 ::
 
 ## Separating dev from prod
@@ -55,5 +54,5 @@ legend:
 ::
 
 ::callout{icon="i-lucide-arrow-right"}
-**[App delivery methods →](/application-guide/flowfuse/app-delivery-methods/)** — Once code is on a server, it ships via snapshots or subflows.
+**[App delivery methods →](/docs/application-guide/app-delivery-methods/)** — Once code is on a server, it ships via snapshots or subflows.
 ::

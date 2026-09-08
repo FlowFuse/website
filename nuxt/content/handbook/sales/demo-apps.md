@@ -33,8 +33,8 @@ Every use case added to Demo Apps must meet these criteria:
 
 1. **Its own team, named `Demo App - {Use-case name}`.** Each use case is a dedicated FlowFuse team using that exact naming convention — not a shared team, a personal instance, or a one-off environment.
 2. **A PoV doc for the use case.** Every contributed use case has a [PoV workbook](/handbook/sales/pov-workbook/) defined that showcases FlowFuse's value *over Node-RED* — what the platform adds beyond the flows themselves. Source docs for use cases live in [this shared folder](https://drive.google.com/drive/folders/12BjizVCMc5O6KeBN5Ce7j1yxdHiq0wzM){rel="nofollow"}.
-3. **Built with the app delivery methods.** The app uses one or both of FlowFuse's [app delivery methods](/application-guide/flowfuse/app-delivery-methods/).
-4. **Conforms to an app pattern.** The app follows one of the app patterns in the Application Guide — a [hardware app](/application-guide/flowfuse/hardware-apps/) or a [software app](/application-guide/flowfuse/software-apps/).
+3. **Built with the app delivery methods.** The app uses one or both of FlowFuse's [app delivery methods](/docs/application-guide/app-delivery-methods/).
+4. **Conforms to an app pattern.** The app follows one of the app patterns in the Application Guide — a [hardware app](/docs/application-guide/app-delivery-methods/hardware-apps/) or a [software app](/docs/application-guide/app-delivery-methods/software-apps/).
 5. **Listed in the website use case registry.** The use case is registered in the FlowFuse website's use case registry so prospects can discover it and explore it from the front end.
 6. **A built-in architecture page.** The app must include an architecture page that is the PoV doc visualized on the front end of the app — so a prospect exploring the front end sees the same architecture the PoV describes.
 

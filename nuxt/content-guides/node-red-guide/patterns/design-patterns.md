@@ -1,11 +1,9 @@
 ---
-title: Design patterns
-navTitle: Design patterns
-navOrder: 3.1
-guide: node-red
-slug: design-patterns
-blurb: "The structural choices you select for a flow: find the seams it breaks into, then reuse each piece at the lightest level that solves it — link in/out, link call, subflow, or packaged node."
-parent: patterns
+title: "Design patterns"
+navTitle: "Design patterns"
+navOrder: 1
+meta:
+    description: "The structural choices you select for a flow: find the seams it breaks into, then reuse each piece at the lightest level that solves it — link in/out, link call, subflow, or packaged node."
 ---
 
 # Design patterns
@@ -152,7 +150,7 @@ edges:
 :::guide-tab{label="Palette node"}
 **Real packaged code** — *distributed.*
 
-The top rung: package a piece as an installable palette node — real code, versioned and installed like any library dependency. It's the same **custom node** the [FlowFuse app delivery methods](/application-guide/flowfuse/app-delivery-methods/) publish for reuse across apps, and the point where Node-RED reuse hands off to the FlowFuse guide's distribution story.
+The top rung: package a piece as an installable palette node — real code, versioned and installed like any library dependency. It's the same **custom node** the [FlowFuse app delivery methods](/docs/application-guide/app-delivery-methods/) publish for reuse across apps, and the point where Node-RED reuse hands off to the FlowFuse guide's distribution story.
 
 **Select it when** — a piece is used across many projects or teams and deserves to be versioned, installed, and upgraded like a dependency — not copied, and beyond what a shared subflow can carry.
 

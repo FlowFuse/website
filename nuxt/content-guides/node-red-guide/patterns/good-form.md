@@ -1,11 +1,9 @@
 ---
-title: Good form
-navTitle: Good form
-navOrder: 3.3
-guide: node-red
-slug: good-form
-parent: patterns
-blurb: "A clean flow isn't luck — it's a handful of habits. Wire for reading, lay it out on a grid, decouple UI from logic, catch errors where you can see them, and keep data on a stable contract. Follow these and a flow stays readable, reusable, and out of spaghetti."
+title: "Good form"
+navTitle: "Good form"
+navOrder: 3
+meta:
+    description: "A clean flow isn't luck — it's a handful of habits. Wire for reading, lay it out on a grid, decouple UI from logic, catch errors where you can see them, and keep data on a stable contract. Follow these and a flow stays readable, reusable, and out of spaghetti."
 ---
 
 # Good form

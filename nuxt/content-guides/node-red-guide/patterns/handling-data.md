@@ -1,11 +1,9 @@
 ---
-title: Handling data
-navTitle: Handling data
-navOrder: 3.2
-guide: node-red
-slug: handling-data
-blurb: "Classify each signal by shape, purpose and direction, then pick the methods it needs — separate the paths, pace the flow, hold state in context, and manage config. The methods you select to move a flow's data."
-parent: patterns
+title: "Handling data"
+navTitle: "Handling data"
+navOrder: 2
+meta:
+    description: "Classify each signal by shape, purpose and direction, then pick the methods it needs — separate the paths, pace the flow, hold state in context, and manage config. The methods you select to move a flow's data."
 ---
 
 # Handling data

@@ -1,10 +1,9 @@
 ---
-title: Worked examples
-navTitle: Worked examples
-navOrder: 6
-guide: flowfuse
-slug: worked-examples
-blurb: "Start from a use case, break it into apps, and draw the architecture that ties them together — the same method a FlowFuse Proof of Value runs."
+title: "Worked examples"
+navTitle: "Worked examples"
+navOrder: 5
+meta:
+    description: "Start from a use case, break it into apps, and draw the architecture that ties them together — the same method a FlowFuse Proof of Value runs."
 ---
 
 # Worked examples
@@ -21,13 +20,13 @@ Every example runs the same four moves:
 
 1. **Name the use case** — the pain in plain business terms, and what "good" looks like.
 2. **Break it into apps** — list each app the use case needs and say, in one sentence, what it does. Most use cases are more than one app.
-3. **Pin down each app** — for every app, name its **delivery method** (a [whole app](/application-guide/flowfuse/app-delivery-methods/) or a reusable [piece](/application-guide/flowfuse/app-delivery-methods/)) and its **app pattern** ([hardware](/application-guide/flowfuse/hardware-apps/) or [software](/application-guide/flowfuse/software-apps/) app), where it runs, and why that shape.
-4. **Draw the architecture** — place the apps, the [data plane](/application-guide/flowfuse/data-plane/) and the broker into one picture that shows how it ties together, and state the whole [architecture](/application-guide/flowfuse/architectures/) in a sentence.
+3. **Pin down each app** — for every app, name its **delivery method** (a [whole app](/docs/application-guide/app-delivery-methods/) or a reusable [piece](/docs/application-guide/app-delivery-methods/)) and its **app pattern** ([hardware](/docs/application-guide/app-delivery-methods/hardware-apps/) or [software](/docs/application-guide/app-delivery-methods/software-apps/) app), where it runs, and why that shape.
+4. **Draw the architecture** — place the apps, the [data plane](/docs/application-guide/data-plane/) and the broker into one picture that shows how it ties together, and state the whole [architecture](/docs/application-guide/architectures/) in a sentence.
 
 ## The examples
 
 ::callout{icon="i-lucide-arrow-right"}
-**[OEE, end to end →](/application-guide/flowfuse/worked-example/)** — one use case, two apps and two shared services, from edge to broker to cloud to history.
+**[OEE, end to end →](/docs/application-guide/worked-examples/oee/)** — one use case, two apps and two shared services, from edge to broker to cloud to history.
 ::
 
 More worked examples will land here — each one a use case, broken into its apps and drawn out end to end.
