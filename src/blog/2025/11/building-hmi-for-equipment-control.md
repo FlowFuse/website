@@ -101,7 +101,7 @@ Your HMI needs to talk to your PLC to read equipment status and send control com
 
 Choose the node that matches your PLC:
 
-- **[node-red-contrib-modbus](/node-red/protocol/modbus/)** – Modbus RTU/TCP PLCs and devices
+- **[node-red-contrib-modbus](/docs/node-red/protocol/modbus/)** – Modbus RTU/TCP PLCs and devices
 - **[node-red-contrib-s7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/)** – Siemens S7-300/400/1200/1500
 - **[node-red-contrib-opcua](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)** – OPC UA servers (universal industrial standard)
 - **[node-red-contrib-cip-ethernet-ip](/blog/2025/10/using-ethernet-ip-with-flowfuse/)** – Allen-Bradley/Rockwell PLCs
@@ -139,7 +139,7 @@ Once you see live values in the debug panel, your PLC connection is working and 
 
 ## Step 3: Build Your HMI Dashboard
 
-With your PLC connected, let's create the operator interface using FlowFuse Dashboard, a set of UI nodes that build web-based interfaces without writing HTML or JavaScript.
+With your PLC connected, let's create the operator interface using [FlowFuse Dashboard](/platform/dashboard/), a set of UI nodes that build web-based interfaces without writing HTML or JavaScript.
 
 ### Install Dashboard 2.0
 

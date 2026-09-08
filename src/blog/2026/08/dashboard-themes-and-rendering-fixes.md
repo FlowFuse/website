@@ -12,7 +12,7 @@ tags:
   - dashboard
 ---
 
-FlowFuse Dashboard 1.31.0 adds five built-in themes, giving you everything you need to build a dark mode dashboard, along with layout improvements for charts, buttons, and gauges. Previously, dark mode had contrast issues across widgets, charts collapsed to empty boxes at their default size, long button labels clipped mid-word, and gauges got sliced off by their own card.
+[FlowFuse Dashboard](/platform/dashboard/) 1.31.0 adds five built-in themes, giving you everything you need to build a dark mode dashboard, along with layout improvements for charts, buttons, and gauges. Previously, dark mode had contrast issues across widgets, charts collapsed to empty boxes at their default size, long button labels clipped mid-word, and gauges got sliced off by their own card.
 
 <!--more-->
 

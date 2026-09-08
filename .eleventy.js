@@ -20,7 +20,6 @@ const pluginTOC = require('eleventy-plugin-toc');
 const { decodeHTML } = require('entities');
 const imageHandler = require('./lib/image-handler.js')
 const site = require("./src/_data/site");
-const coreNodeDoc = require("./lib/core-node-docs.js");
 const { isSearchPage, isSearchUrl, extractHeadingRecords } = require("./lib/search-index.js");
 const yaml = require("js-yaml");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
@@ -141,6 +140,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
     eleventyConfig.addPassthroughCopy("src/js/hm-promo-banner.js");
     eleventyConfig.addPassthroughCopy("src/js/nav-tracking.js");
+    eleventyConfig.addPassthroughCopy("src/js/signup-popup.js");
 
     // Watch content images for the image pipeline
     eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg,gif}");
@@ -148,6 +148,31 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setServerOptions({
         // Additional files to watch that will trigger server updates
         watch: ["_site/**/*.css", "_site/**/*.js"],
+    })
+
+    // CTA event/href/label data (single source of truth shared with the Nuxt
+    // Cta* components, which import the same src/_data/ctaDestinations.json)
+    // registered as a Nunjucks *global* rather than page data: the five
+    // ctaSignUp/ctaSignIn/ctaContactUs/ctaBookDemo/ctaPricing macros need to
+    // read it, and Nunjucks macros don't see page-context data
+    // (addGlobalData) unless it's explicitly passed in as an argument -
+    // addNunjucksGlobal makes it visible everywhere, macros included, with no
+    // per-call-site plumbing.
+    // Registered once with a stable object reference, then refreshed IN PLACE
+    // on every build (not re-registered via a second addNunjucksGlobal call,
+    // which only affected later builds - templates already held a reference
+    // to the first, now-stale value, so mid-watch edits rendered `undefined`
+    // until the whole process restarted). Mutating the same object's keys
+    // means every template holding a reference to it sees the update too.
+    const ctaDestinationsPath = require.resolve('./src/_data/ctaDestinations.json')
+    const ctaDestinations = require(ctaDestinationsPath)
+    eleventyConfig.addNunjucksGlobal('ctaDestinations', ctaDestinations)
+    eleventyConfig.addWatchTarget(ctaDestinationsPath)
+    eleventyConfig.on('eleventy.before', () => {
+        delete require.cache[ctaDestinationsPath]
+        const fresh = require(ctaDestinationsPath)
+        Object.keys(ctaDestinations).forEach(key => delete ctaDestinations[key])
+        Object.assign(ctaDestinations, fresh)
     })
 
     // make global accessible in src/_includes/layouts/base.njk for loading of PH scripts
@@ -187,18 +212,6 @@ module.exports = function(eleventyConfig) {
         return `<div id="nr-flow-${flowId}" style="height: ${height}px" data-grid-lines="true" data-zoom="true" data-images="true" data-link-lines="false" data-labels="true"></div>
         <script type="module">const flow${flowId} = ${JSON.stringify(flow).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')};
         new FlowRenderer().renderFlows(JSON.parse(flow${flowId}.replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&')), { container: document.getElementById('nr-flow-${flowId}') })</script>`
-    });
-
-    eleventyConfig.addGlobalData("coreNodesArray", () => {
-        // Read the JSON file with core nodes
-        const coreNodes = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', '_data', 'coreNodes.json'), 'utf-8'));
-
-        // Transform coreNodes object into an array
-        return Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));		
-    })
-
-    eleventyConfig.addAsyncShortcode("coreNodeDoc", async function (category, node) {
-        return await coreNodeDoc(category, node)
     });
 
     eleventyConfig.addFilter("filterNodeCategory", function(nodes, category) {

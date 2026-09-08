@@ -47,42 +47,9 @@ const CAPABILITIES = [
     { label: 'Edge Connectivity', to: '/use-cases/edge-connectivity/' },
     { label: 'Data Integration', to: '/use-cases/data-integration/' },
 ]
-const activeTier = ref('edge')
-const stepRefs = ref<Record<string, HTMLElement | null>>({})
-
-// Whichever step's top has crossed the viewport's vertical midpoint is active -
-// walking the steps in DOM order and overwriting on each match means the
-// deepest (furthest scrolled-to) step wins. An IntersectionObserver watching a
-// thin band around the midpoint was tried first, but the gap between steps
-// (mt-20/pt-20/border-t below) is wider than that band, so scrolling through
-// a gap left neither step intersecting and the indicator stuck on whichever
-// step was active before the gap.
-function updateActiveTier () {
-    const steps = Object.entries(stepRefs.value).filter((entry): entry is [string, HTMLElement] => !!entry[1])
-    if (!steps.length) return
-    const mid = window.innerHeight / 2
-    let current = steps[0][0]
-    for (const [tier, el] of steps) {
-        if (el.getBoundingClientRect().top <= mid) current = tier
-    }
-    activeTier.value = current
-}
-
-let tierTicking = false
-function onTierScroll () {
-    if (!tierTicking) { tierTicking = true; requestAnimationFrame(() => { tierTicking = false; updateActiveTier() }) }
-}
-
-onMounted(() => {
-    window.addEventListener('scroll', onTierScroll, { passive: true })
-    window.addEventListener('resize', onTierScroll, { passive: true })
-    updateActiveTier()
-})
-
-onUnmounted(() => {
-    window.removeEventListener('scroll', onTierScroll)
-    window.removeEventListener('resize', onTierScroll)
-})
+// ScrollSpySections needs each item's nav-anchor id up front, distinct from
+// tier.id (which is also the /product/{id}/ route slug used below).
+const TIER_ITEMS = TIERS.map(tier => ({ ...tier, slug: tier.id, id: `tier-${tier.id}` }))
 </script>
 
 <template>
@@ -120,41 +87,22 @@ onUnmounted(() => {
           <!-- Tier scrollytelling -->
           <div class="max-w-screen-lg mx-auto pt-8 pb-20">
             <h2 class="mb-12 max-lg:text-center">Find the product for <span class="text-indigo-600">how you work</span></h2>
-            <div class="flex flex-col lg:flex-row gap-10">
-              <nav class="hidden lg:block lg:w-44 shrink-0">
-                <ul class="sticky top-24 flex flex-col border-l border-gray-200">
-                  <li v-for="tier in TIERS" :key="tier.id">
-                    <a
-                      :href="`#tier-${tier.id}`"
-                      class="block py-[0.6rem] pl-5 -ml-px border-l-2 font-medium transition-colors duration-200"
-                      :class="activeTier === tier.id ? 'text-indigo-600 border-indigo-600' : 'border-transparent text-gray-500 hover:text-indigo-600'"
-                    >{{ tier.label }}</a>
-                  </li>
-                </ul>
-              </nav>
-              <div class="flex-1 min-w-0 flex flex-col gap-20">
-                <div
-                  v-for="(tier, index) in TIERS"
-                  :id="`tier-${tier.id}`"
-                  :key="tier.id"
-                  :ref="(el) => { stepRefs[tier.id] = el as HTMLElement | null }"
-                  :data-tier="tier.id"
-                  class="scroll-mt-24 grid md:grid-cols-2 gap-12 items-center md:items-stretch"
-                  :class="index > 0 ? 'pt-20 border-t border-gray-100' : ''"
-                >
+            <ScrollSpySections :items="TIER_ITEMS" gap-class="gap-20" divider-class="pt-20 border-t border-gray-100" aria-label="FlowFuse Edge, Hub, and Fleet">
+              <template v-for="tier in TIER_ITEMS" :key="tier.id" #[tier.id]="{ item }">
+                <div class="grid md:grid-cols-2 gap-12 items-center md:items-stretch">
                   <div class="flex flex-col justify-center text-center md:text-left">
-                    <div class="text-sm font-semibold uppercase tracking-wide text-red-300">{{ tier.label }}</div>
-                    <h3 class="text-3xl mt-2">{{ tier.heading }}</h3>
-                    <p class="mt-4 text-gray-500" v-html="tier.description" />
-                    <ProseNote class="mt-4"><span v-html="tier.idealFit" /></ProseNote>
-                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${tier.id}/`" @click="capture('cta-learn-more', { position: `features-${tier.id}` })">Learn more about {{ tier.label }} &rarr;</NuxtLink>
+                    <div class="text-sm font-semibold uppercase tracking-wide text-red-300">{{ item.label }}</div>
+                    <h3 class="text-3xl mt-2">{{ item.heading }}</h3>
+                    <p class="mt-4 text-gray-500" v-html="item.description" />
+                    <ProseNote class="mt-4"><span v-html="item.idealFit" /></ProseNote>
+                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${item.slug}/`" @click="capture('cta-learn-more', { position: `features-${item.slug}` })">Learn more about {{ item.label }} &rarr;</NuxtLink>
                   </div>
                   <div class="min-h-64 rounded-lg overflow-hidden border border-gray-200">
-                    <img :src="tier.image.src" :alt="tier.image.alt" class="block w-full h-full object-cover" loading="lazy">
+                    <img :src="item.image.src" :alt="item.image.alt" class="block w-full h-full object-cover" loading="lazy">
                   </div>
                 </div>
-              </div>
-            </div>
+              </template>
+            </ScrollSpySections>
           </div>
 
           <!-- FlowFuse Platform / integrations -->

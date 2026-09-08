@@ -128,7 +128,7 @@ _OEE Dashboard broken layout on smaller screen_
 
 ### To make the dashboard truly responsive:
 
-1. Open the **Page Settings** in the Node-RED Dashboard editor.
+1. Open the **Page Settings** in the [Node-RED Dashboard](/platform/dashboard/) editor.
 2. Scroll down to locate the **Breakpoint Settings Table** for different device sizes.
 3. Identify the **Tablet** row in the table.
 4. Notice that the current Tablet column count is set to `9`.
@@ -271,7 +271,7 @@ To make the dashboard truly useful in a live setting, you must understand how to
 2. Replace the existing `sqlite` nodes in your flow with the nodes for the database you are using.
 3. If using SQL based database, queries may remain unchanged. For NoSQL or time-series DBs, rewrite the queries as needed.
 
-For help, refer to our [Database](/node-red/database/) section, which includes guides for MongoDB, PostgreSQL, InfluxDB, TimescaleDB, and DynamoDB. If you do not already have a database to point at, [FlowFuse Tables](/docs/user/ff-tables/) gives you a managed PostgreSQL instance inside the platform - we walk through that pattern end to end in [Building a historical data dashboard with FlowFuse Tables](/blog/2025/08/time-series-dashboard-flowfuse-postgresql/).
+For help, refer to our [Database](/docs/node-red/database/) section, which includes guides for MongoDB, PostgreSQL, InfluxDB, TimescaleDB, and DynamoDB. If you do not already have a database to point at, [FlowFuse Tables](/docs/user/ff-tables/) gives you a managed PostgreSQL instance inside the platform - we walk through that pattern end to end in [Building a historical data dashboard with FlowFuse Tables](/blog/2025/08/time-series-dashboard-flowfuse-postgresql/).
 
 When connecting to your real data source, you may notice that the field names used in your database differ from those used in the our oee dashboard sqlite node queries. While this seems like a lot of manual work, the dashboard is designed with flexibility in mind. You only need to make two changes to adapt the queries to your schema.
 

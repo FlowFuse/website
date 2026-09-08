@@ -54,7 +54,7 @@ tldr: "Build a manufacturing OEE dashboard in FlowFuse: generate simulated produ
 ---
 
 In [Part 1](/blog/2025/04/what-is-an-oee-dashboard/), we explored the fundamentals of OEE, outlined a basic design of the dashboard, and identified the key elements to include in the OEE dashboard. 
-In this second part, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](https://dashboard.flowfuse.com/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data, the same kind of data you'd track for torque, weld cycle time, or paint throughput on an [automotive](/industries/automotive/) line.
+In this second part, we will focus on building the OEE dashboard interface using [FlowFuse Dashboard](/platform/dashboard/) (Node-RED Dashboard 2.0) and FlowFuse, utilizing simulated production and downtime data, the same kind of data you'd track for torque, weld cycle time, or paint throughput on an [automotive](/industries/automotive/) line.
 
 <!--more-->
 
@@ -79,7 +79,7 @@ Before you begin building the OEE Dashboard with FlowFuse, make sure you have th
 
 - **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create) and learn how to create an instance in FlowFuse.
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
-- **SQLite Contrib Node:** Ensure you have [node-red-contrib-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) installed. We use SQLite here because it needs no setup, but the flow works against any database - [FlowFuse Tables](/docs/user/ff-tables/) gives you managed PostgreSQL if you want something production-grade from the start, and our [Database](/node-red/database/) guides cover MongoDB, InfluxDB, TimescaleDB, and DynamoDB.
+- **SQLite Contrib Node:** Ensure you have [node-red-contrib-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) installed. We use SQLite here because it needs no setup, but the flow works against any database - [FlowFuse Tables](/docs/user/ff-tables/) gives you managed PostgreSQL if you want something production-grade from the start, and our [Database](/docs/node-red/database/) guides cover MongoDB, InfluxDB, TimescaleDB, and DynamoDB.
 
 ### Preparing Simulated Data
 

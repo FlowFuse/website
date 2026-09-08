@@ -197,7 +197,7 @@ try {
 }
 ```
 
-3. Connect it to your notification system to alert when space is critical, for notification you can use [email](/node-red/notification/email/), [telegram](/node-red/notification/telegram/), discord with [FlowFuse](/node-red/notification/discord/).
+3. Connect it to your notification system to alert when space is critical, for notification you can use [email](/docs/node-red/notification/email/), [telegram](/docs/node-red/notification/telegram/), discord with [FlowFuse](/docs/node-red/notification/discord/).
 4. Deploy the flow
 
 Now you'll get warnings before disk space becomes critical, giving you time to archive old data or expand storage.

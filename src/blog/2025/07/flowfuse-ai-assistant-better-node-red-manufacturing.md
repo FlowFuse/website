@@ -68,7 +68,7 @@ _FlowFuse Expert creating realistic test data for manufacturing dashboards, comp
 
 ## Building Custom Dashboards Without Web Development
 
-[FlowFuse Dashboard](https://dashboard.flowfuse.com) widgets cover most UI needs, but manufacturing can often demand more. Custom visualizations for specific KPIs can be build in Dashboard with the ["Template"](https://dashboard.flowfuse.com/nodes/widgets/ui-template) node, where developers can write their own Vue.js templates. 
+[FlowFuse Dashboard](/platform/dashboard/) widgets cover most UI needs, but manufacturing can often demand more. Custom visualizations for specific KPIs can be build in Dashboard with the ["Template"](https://dashboard.flowfuse.com/nodes/widgets/ui-template) node, where developers can write their own Vue.js templates. 
 
 Developing custom components to match your HMI design standards takes CSS expertise. Whether you're building new widgets or styling existing ones, you're suddenly in web development territory, far from where most automation engineers want to be.
 

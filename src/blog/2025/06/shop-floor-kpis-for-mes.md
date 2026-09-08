@@ -129,7 +129,7 @@ WHERE machine_id = $machine_id
 
 12.  **Deploy** the flow to continuously calculate and output the Machine Downtime Percentage in real time.
 
-After deploying the flow, observe the debug sidebar on the right. You'll see the calculated machine downtime percentage being continuously printed. To present this data visually, leverage [Flowfuse Dashboard](https://dashboard.flowfuse.com).
+After deploying the flow, observe the debug sidebar on the right. You'll see the calculated machine downtime percentage being continuously printed. To present this data visually, leverage [Flowfuse Dashboard](/platform/dashboard/).
 
 ![Downtime printed on debug panel](./images/downtime.png){data-zoomable}
 _Downtime printed on debug panel_

@@ -78,7 +78,7 @@ Before you start building, get these ready:
 
 - **A FlowFuse account.** [Sign up](https://app.flowfuse.com/account/create) for FlowFuse Cloud, or use a self-hosted instance.
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
-- **FlowFuse Dashboard installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-template`, `ui-table`, `ui-form`, `ui-button`, `ui-control`, `ui-event`, `ui-text`) to build the operator interface. Install it from the Palette Manager if it isn't already in your instance.
+- **[FlowFuse Dashboard](/platform/dashboard/) installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-template`, `ui-table`, `ui-form`, `ui-button`, `ui-control`, `ui-event`, `ui-text`) to build the operator interface. Install it from the Palette Manager if it isn't already in your instance.
 - **The FlowFuse Dashboard user addon.** This is what attaches the logged-in user to every dashboard message. We'll install it in the first section.
 
 > Note: The Multi-User addon is available to Teams and Enterprise Self-Hosted customers. If you're on a different tier, [contact us](/contact-us/) for the configuration to get started.

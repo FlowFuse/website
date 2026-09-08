@@ -10,6 +10,8 @@ export interface DocsNavNode {
     group?: string
     groupOrder?: number
     order: number
+    // false when this section's index page is a redirect stub - see nuxt/lib/docs-nav.mjs.
+    link?: boolean
     children: DocsNavNode[]
 }
 

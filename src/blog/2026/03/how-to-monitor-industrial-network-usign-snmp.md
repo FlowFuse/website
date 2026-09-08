@@ -328,7 +328,7 @@ The debug panel will show a concise status array for every interface:
 
 This is the most efficient way to run a continuous interface health check, one subtree poll every 10 seconds tells you the operational state of every interface on the device without fetching data you do not need.
 
-With all three polling operations in place, the next step is wiring this data into a [FlowFuse Dashboard](https://dashboard.flowfuse.com/) so the information is visible at a glance.
+With all three polling operations in place, the next step is wiring this data into a [FlowFuse Dashboard](/platform/dashboard/) so the information is visible at a glance.
 
 ## Wrapping Up
 

@@ -56,6 +56,8 @@ installCommandsHeading: "Or install Node-RED on your own machine"
 description: Node-RED is the low-code programming language of choice for industrial applications. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
 sitemapPriority: 0.8
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!--First two sections-->
 <div class="nohero w-full">
     <!--Hero Content-->
@@ -72,7 +74,7 @@ sitemapPriority: 0.8
             <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
             <p class="md:mb-6">Ready to <span class="font-semibold">get started building with Node-RED</span>? There are two ways in.</p>
             <div class="max-md:hidden md:mb-10">
-                <a class="ff-btn ff-btn--primary min-h-[40px] md:inline" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+                {{ ctaSignUp(site, 'primary', 'nodered', extraClass='min-h-[40px] md:inline') }}
                 <p class="font-light mt-3 mb-0">
                     Nothing to install, you get an editor in the browser. Or
                     <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
@@ -84,7 +86,7 @@ sitemapPriority: 0.8
             {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
         </div>
         <div class="md:hidden w-full max-w-md m-auto">
-            <a class="ff-btn ff-btn--primary flex flex-col w-full" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-try-it-now', {'position': 'nodered'})">TRY IT NOW</a>
+            {{ ctaSignUp(site, 'primary', 'nodered-mobile', extraClass='flex flex-col w-full') }}
             <p class="font-light mt-3 mb-0 text-center">
                 Nothing to install, you get an editor in the browser. Or
                 <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
@@ -129,7 +131,7 @@ sitemapPriority: 0.8
                     {
                         "svgPath": "components/icons/document-chart-bar.svg",
                         "title": "Data Visualization",
-                        "description": '<a href="https://dashboard.flowfuse.com/" target="_blank">Node-RED Dashboard</a> makes it easy
+                        "description": '<a href="/platform/dashboard/">Node-RED Dashboard</a> makes it easy
                         to visualize your data in charts that integrate directly with actions and events that respond to
                         the data.'
                     }
@@ -308,13 +310,13 @@ sitemapPriority: 0.8
             <p class="text-blue-700 mb-10 mt-7">
                 <a href="https://node-red-academy.learnworlds.com/">Node-RED Academy</a>
                 <span class="px-3">|</span>
-                <a href="/node-red/core-nodes/">Core Nodes</a>
+                <a href="/docs/node-red/core-nodes/">Core Nodes</a>
                 <span class="px-3">|</span>
                 <a href="/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/">Variables</a>
                 <span class="px-3">|</span>
                 <a href="/blog/2023/04/3-quick-node-red-tips-6/">Quick Tips</a>
             </p>
-            <a class="ff-btn ff-btn--primary min-h-[40px] md:inline mb-2 md:mb-0 md:mr-2" href="/node-red/learn/">SEE MORE</a>
+            <a class="ff-btn ff-btn--primary min-h-[40px] md:inline mb-2 md:mb-0 md:mr-2" href="/docs/node-red/">SEE MORE</a>
             <a class="ff-btn ff-btn--primary-outlined min-h-[40px] md:inline" href="/professional-services/">GET IMPLEMENTATION SUPPORT</a>
         </div>
     </div>
@@ -363,7 +365,11 @@ sitemapPriority: 0.8
                                 {{ card.description }}
                             </p>
                         </div>
-                        <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}" {% if card.onClick %}onclick="{{ card.onClick }}"{% endif %}>{{ card.buttonText }}</a>
+                        {% if card.buttonLink == '/book-demo/' %}
+                        {{ ctaBookDemo('primary-outlined', 'nodered-deployment', extraClass='md:self-end align-baseline w-full mt-3') }}
+                        {% else %}
+                        <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}">{{ card.buttonText }}</a>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>

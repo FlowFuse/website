@@ -211,44 +211,9 @@
                         "listClasses": "row-span-[9] md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
-                                "label": "Redis",
-                                "href": "/node-red/flowfuse/hub/redis/",
-                                "icon": "circle-stack"
-                            },
-                            {
                                 "label": "OPC UA",
-                                "href": "/node-red/flowfuse/edge/opcua/",
+                                "href": "/integrations/opcua/",
                                 "icon": "server-stack"
-                            },
-                            {
-                                "label": "RTSP",
-                                "href": "/node-red/flowfuse/edge/rtsp/",
-                                "icon": "camera"
-                            },
-                            {
-                                "label": "EtherNet/IP",
-                                "href": "/node-red/flowfuse/edge/cip-suite/",
-                                "icon": "share"
-                            },
-                            {
-                                "label": "MQTT",
-                                "href": "/node-red/flowfuse/mqtt/",
-                                "icon": "wifi"
-                            },
-                            {
-                                "label": "ONNX",
-                                "href": "/node-red/flowfuse/ai/onxx/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "LLM Nodes",
-                                "href": "/node-red/flowfuse/ai/llm-nodes/",
-                                "icon": "sparkles"
-                            },
-                            {
-                                "label": "MCP",
-                                "href": "/node-red/flowfuse/mcp/",
-                                "icon": "puzzle-piece"
                             },
                             {
                                 "label": "See all integrations",
@@ -294,8 +259,13 @@
                     {
                         "title": "Reference",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-5 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
+                            {
+                                "label": "Guides",
+                                "href": "/docs/application-guide/",
+                                "icon": "book-open"
+                            },
                             {
                                 "label": "Docs",
                                 "href": "/docs/",
@@ -322,17 +292,22 @@
                     {
                         "title": "Customers",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-2 md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
                                 "label": "Customer Stories",
                                 "href": "/customer-stories/",
                                 "icon": "presentation"
+                            },
+                            {
+                                "label": "ROI Calculator",
+                                "href": "/resources/roi-calculator/",
+                                "icon": "arrow-trending-up"
                             }
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "resources"
             },
             {
@@ -596,36 +571,8 @@
                         "title": "By Integration",
                         "links": [
                             {
-                                "label": "Redis",
-                                "href": "/node-red/flowfuse/hub/redis/"
-                            },
-                            {
                                 "label": "OPC UA",
-                                "href": "/node-red/flowfuse/edge/opcua/"
-                            },
-                            {
-                                "label": "RTSP",
-                                "href": "/node-red/flowfuse/edge/rtsp/"
-                            },
-                            {
-                                "label": "EtherNet/IP",
-                                "href": "/node-red/flowfuse/edge/cip-suite/"
-                            },
-                            {
-                                "label": "MQTT",
-                                "href": "/node-red/flowfuse/mqtt/"
-                            },
-                            {
-                                "label": "ONNX",
-                                "href": "/node-red/flowfuse/ai/onxx/"
-                            },
-                            {
-                                "label": "LLM Nodes",
-                                "href": "/node-red/flowfuse/ai/llm-nodes/"
-                            },
-                            {
-                                "label": "MCP",
-                                "href": "/node-red/flowfuse/mcp/"
+                                "href": "/integrations/opcua/"
                             },
                             {
                                 "label": "See all integrations",
@@ -663,6 +610,10 @@
                     {
                         "title": "Reference",
                         "links": [
+                            {
+                                "label": "Guides",
+                                "href": "/docs/application-guide/"
+                            },
                             {
                                 "label": "Docs",
                                 "href": "/docs/"
