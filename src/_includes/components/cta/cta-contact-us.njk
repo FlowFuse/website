@@ -1,0 +1,18 @@
+{% from "components/cta/cta-button.njk" import ctaButton %}
+{#
+  Fixed destination, copy, and tracked event - only the look (variant) and
+  where it lives on the page (position) vary per insertion. Mirrors
+  nuxt/components/CtaContactUs.vue.
+
+  Event/href/label come from src/_data/ctaDestinations.json - the single
+  source of truth shared with the Nuxt component.
+
+  Standardises on the 'cta-contact-us' event name used by Nuxt - previously
+  11ty fired five different names for this same destination (cta-talk-us,
+  cta-talk-to-sales, cta-talk-to-expert, cta-contact, plus this one), which
+  made it impossible to report "all Contact Us clicks" as a single metric.
+#}
+{% macro ctaContactUs(variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{%- set dest = ctaDestinations.contactUs -%}
+{{ ctaButton(dest.event, dest.href, dest.label, variant, position, color, icon, uppercase, padded, extraClass) }}
+{%- endmacro %}
