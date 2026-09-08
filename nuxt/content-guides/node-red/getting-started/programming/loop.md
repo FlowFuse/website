@@ -135,7 +135,7 @@ graph TD
 
 #### Implementing Loops with the Function Node
 
-Implementing loops with the **[Function](/docs/node-red/core-nodes/function/)** node is straightforward if you're familiar with JavaScript, as it allows you to write custom code. However, a common issue is figuring out how to send a message on each iteration without ending the loop after the first iteration. In this section, we’ll show you how to implement loops in the `Function` node correctly, ensuring that each iteration is processed and sent out properly without prematurely breaking the loop.
+Implementing loops with the **[Function](/docs/node-red/core-nodes/function/function/)** node is straightforward if you're familiar with JavaScript, as it allows you to write custom code. However, a common issue is figuring out how to send a message on each iteration without ending the loop after the first iteration. In this section, we’ll show you how to implement loops in the `Function` node correctly, ensuring that each iteration is processed and sent out properly without prematurely breaking the loop.
 
 For demonstration purposes, we will implement a `for` loop.
 

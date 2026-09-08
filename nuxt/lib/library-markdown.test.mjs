@@ -9,6 +9,32 @@ import {
     rewriteLibraryPaths,
 } from './library-markdown.mjs'
 
+test('a fence indented under a list item is still protected', () => {
+    // Anchored at column 0 this missed every indented fence, so the mustache rewrite
+    // reached into code samples: the Template node's page teaches Mustache syntax in a
+    // block indented under a list item, and shipped it with backticks inside the sample.
+    const input = [
+        '* Template:',
+        '    ```text',
+        '    {%- raw -%}',
+        '    {',
+        '        "product": "{{payload.0}}"',
+        '    }',
+        '    {% endraw %}',
+        '    ```',
+        '',
+        'And in prose, {{payload.0}} must still be protected.',
+    ].join('\n')
+
+    const out = protectMustaches(input)
+
+    // Untouched inside the fence, and the guards took their whole lines with them so the
+    // closing fence still lines up with the opening one.
+    assert.match(out, /^ {4}```text\n {4}\{\n {8}"product": "\{\{payload\.0\}\}"\n {4}\}\n {4}```$/m)
+    // Still code-spanned outside it, which is the whole point of the pass.
+    assert.match(out, /prose, `\{\{payload\.0\}\}` must/)
+})
+
 test('renderFlow becomes the render-flow component with its height carried over', () => {
     const out = convertRenderFlow('{% renderFlow 300 %}\n[{"id":"a"}]\n{% endrenderFlow %}')
 

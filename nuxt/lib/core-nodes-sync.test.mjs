@@ -17,6 +17,7 @@ import {
     slugFor,
     syncCoreNodes,
 } from './core-nodes-sync.mjs'
+import { findDuplicateSiblingNavTitles, findPagesWithUnreachableTitle } from './guides-frontmatter.mjs'
 import { processLibraryMarkdown } from './library-markdown.mjs'
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
@@ -266,6 +267,33 @@ test('nothing links a core node at a path without its category', () => {
     assert.deepEqual(offenders, [], offenders.join('\n'))
 })
 
+test('the generated tree holds up to the same nav checks the authored guides do', () => {
+    // The sidebar is built from every source of the `docs` collection, but
+    // guides-frontmatter.test.mjs only ever points its checks at nuxt/content-guides. That
+    // left these 40-odd generated pages unchecked, and they promptly reintroduced the
+    // parent-labelled-like-its-child clash those checks exist for: Node-RED names one node
+    // after its own category, so a category page titled "Function" sat directly above a
+    // node also titled "Function".
+    const root = mkdtempSync(join(tmpdir(), 'core-nodes-nav-'))
+    const coreNodes = catalogue()
+    const help = Object.fromEntries(
+        listNodes(coreNodes).map(n => [`${n.category}/${n.slug}`, '<p>help</p>'])
+    )
+
+    syncCoreNodes({ repoRoot: root, nuxtRoot: join(root, 'nuxt'), coreNodes, help, logger: { info () {} } })
+    const generated = join(root, 'nuxt/content/docs')
+
+    const clashes = findDuplicateSiblingNavTitles(generated)
+    assert.deepEqual(clashes, [], clashes
+        .map(c => `under ${c.under}/: ${c.files.length} entries labelled "${c.navTitle}"`)
+        .join('\n'))
+
+    const unreachable = findPagesWithUnreachableTitle(generated)
+    assert.deepEqual(unreachable, [], unreachable
+        .map(u => `${u.file}: title "${u.title}" never renders, navTitle "${u.navTitle}" wins`)
+        .join('\n'))
+})
+
 test('a sync missing any node help fails loudly and names the node', () => {
     assert.throws(
         () => syncCoreNodes({
@@ -301,7 +329,9 @@ test('a node whose name matches its category does not collide with its category 
     assert.deepEqual(readdirSync(join(dir, 'function')).sort(), ['function.md', 'index.md'])
 
     // /docs/node-red/core-nodes/function/ is the category, and the node is one level down.
-    assert.match(readFileSync(join(dir, 'function/index.md'), 'utf8'), /navTitle: "Function"/)
+    // Their nav labels have to differ as well as their paths: the category is the sidebar
+    // parent of the node, so two entries reading "Function" would be indistinguishable.
+    assert.match(readFileSync(join(dir, 'function/index.md'), 'utf8'), /navTitle: "Function nodes"/)
     assert.match(readFileSync(join(dir, 'function/function.md'), 'utf8'), /navTitle: "Function"/)
 })
 
@@ -331,7 +361,7 @@ test('a full sync writes a page per node plus the section index', () => {
     assert.deepEqual(readdirSync(join(dir, 'network')).sort(), ['index.md', 'mqtt-in.md'])
 
     assert.match(readFileSync(join(dir, 'index.md'), 'utf8'), /navTitle: "Core nodes"/)
-    assert.match(readFileSync(join(dir, 'common/index.md'), 'utf8'), /navTitle: "Common"/)
+    assert.match(readFileSync(join(dir, 'common/index.md'), 'utf8'), /navTitle: "Common nodes"/)
 
     // Both the section index and the category page link the node at its nested URL.
     for (const page of ['index.md', 'common/index.md']) {

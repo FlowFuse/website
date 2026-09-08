@@ -198,9 +198,9 @@
             "file": "10-file"
         },
         {
-            "xpath": "watch",
+            "xpath": "file in",
             "name": "Read File",
-            "file": "23-watch"
+            "file": "10-file"
         }
     ]
 }

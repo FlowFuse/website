@@ -177,9 +177,15 @@ The flow below demonstrates all the concepts covered in this guide. You can expl
 ::
 
 <div style="border: 2px solid #7fb7df; padding: 20px; border-radius: 10px; margin-top: 40px; background-color: #f5faff;">
+
 ### Try FlowFuse's Built-In Database Service
+
 [FlowFuse now includes a fully integrated database service that makes connecting and querying your data effortless](/blog/2025/08/getting-started-with-flowfuse-tables/). With the FlowFuse Query Node, you do not need to configure the connection manually, the node sets itself up automatically.
+
 Even better, the [FlowFuse Expert allows you to query your tables using natural language](/blog/2025/09/ai-assistant-flowfuse-tables/). Simply type your request, and it will generate the correct SQL for you based on your table.
+
 Deploy, manage, scale, and secure your Node-RED applications with FlowFuse, and take full control of your industrial workflows and data.
-[**Start with FlowFuse today**](https://app.flowfuse.com/) 
+
+[**Start with FlowFuse today**](https://app.flowfuse.com/)
+
 </div>

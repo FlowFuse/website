@@ -32,14 +32,22 @@ import { processLibraryMarkdown } from './library-markdown.mjs'
 
 const UPSTREAM = 'https://raw.githubusercontent.com/node-red/node-red/master/packages/node_modules/%40node-red/nodes/locales/en-US'
 
-/** The sidebar label and ordering for each palette category. */
+/**
+ * The heading, sidebar label and ordering for each palette category.
+ *
+ * `navTitle` is not just `title` with a word added: a category's sidebar entry is the
+ * parent of its nodes, and Node-RED names one node after its own category, so a bare
+ * "Function" would appear immediately above a node also called "Function" with nothing to
+ * tell them apart. `title` stays the plain palette name for the section index's headings,
+ * where it is a heading rather than a nav entry and reads better short.
+ */
 export const CATEGORIES = {
-    common: { title: 'Common', order: 1 },
-    function: { title: 'Function', order: 2 },
-    network: { title: 'Network', order: 3 },
-    sequence: { title: 'Sequence', order: 4 },
-    parsers: { title: 'Parsers', order: 5 },
-    storage: { title: 'Storage', order: 6 },
+    common: { title: 'Common', navTitle: 'Common nodes', order: 1 },
+    function: { title: 'Function', navTitle: 'Function nodes', order: 2 },
+    network: { title: 'Network', navTitle: 'Network nodes', order: 3 },
+    sequence: { title: 'Sequence', navTitle: 'Sequence nodes', order: 4 },
+    parsers: { title: 'Parsers', navTitle: 'Parser nodes', order: 5 },
+    storage: { title: 'Storage', navTitle: 'Storage nodes', order: 6 },
 }
 
 /** `Read File` -> `read-file`, matching the URLs these pages have always had. */
@@ -69,9 +77,23 @@ export function extractHelp (html, helpName) {
         /<script[^>]*\bdata-help-name="([^"]*)"[^>]*>([\s\S]*?)<\/script>/g
     )]
     const want = normalise(helpName)
-    const hit = scripts.find(([, name]) => normalise(name) === want)
-        ?? scripts.find(([, name]) => normalise(name).startsWith(want))
-    return hit ? hit[2].trim() : ''
+
+    // An exact name wins on its own. Without this, asking for `file` (Write File) would
+    // also drag in `file in` (Read File) by prefix and put both nodes' help on one page.
+    const exact = scripts.find(([, name]) => normalise(name) === want)
+    if (exact) return exact[2].trim()
+
+    // Otherwise every name starting with the requested one, joined in document order.
+    // Several catalogue entries name a whole family rather than one node - `link` covers
+    // link in, link out and link call; `websocket` covers four - and the Eleventy page
+    // showed all of them: its xpath was starts-with() over a node set, joined. Taking
+    // only the first match here dropped most of those pages' help while still captioning
+    // it as the node's complete built-in help, which is worse than dropping it visibly.
+    return scripts
+        .filter(([, name]) => normalise(name).startsWith(want))
+        .map(([, , help]) => help.trim())
+        .filter(Boolean)
+        .join('\n\n')
 }
 
 /** Every node in the catalogue, flattened, with its category and slug resolved. */
@@ -179,7 +201,8 @@ export function foldUseCaseHeadings (content, nodeName) {
     const normaliseHeading = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
     const isNodeName = (text) => normaliseHeading(text) === normaliseHeading(nodeName)
 
-    return content.split(/(^```[\s\S]*?^```)/gm).map((block, index) => {
+    // Indentation allowed, so a fence inside a list item is recognised too.
+    return content.split(/(^[ \t]*```[\s\S]*?^[ \t]*```)/gm).map((block, index) => {
         if (index % 2 === 1) return block
 
         return block
@@ -209,7 +232,7 @@ export function renderCoreNodeCategoryPage (category, meta, nodes) {
     return `---
 title: "Node-RED ${meta.title.toLowerCase()} nodes"
 metaTitle: "Node-RED ${meta.title} Nodes"
-navTitle: "${meta.title}"
+navTitle: "${meta.navTitle}"
 navOrder: ${meta.order}
 meta:
     description: "The ${meta.title} nodes in Node-RED's default palette, and what each one is for."

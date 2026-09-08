@@ -70,17 +70,25 @@ export function resolveTitleInterpolation (content, title) {
  * function exists to prevent, so it is pinned by tests against the real fragments.
  */
 export function protectMustaches (content) {
-    // Fences first, since a fence may contain backticks and must survive byte for byte.
-    return content.split(/(^```[\s\S]*?^```)/gm).map((block, blockIndex) => {
+    // The raw guards are Eleventy-only and go regardless of where they sit, fences
+    // included: they are scaffolding around a sample, never part of it. A guard alone on
+    // its line takes the whole line with it, because leaving the indentation behind shifts
+    // the lines that followed it - enough, inside a list item, to indent a closing fence
+    // past the point where it still closes anything.
+    const unguarded = content
+        .replace(/^[ \t]*\{%-?\s*(?:end)?raw\s*-?%\}[ \t]*\r?\n/gm, '')
+        .replace(/\{%-?\s*(?:end)?raw\s*-?%\}/g, '')
+
+    // Then fences, which must survive byte for byte. The leading `[ \t]*` is load-bearing:
+    // anchored at column 0 this missed every fence indented under a list item, so the
+    // mustache rewrite below reached into code samples and backticked their contents. The
+    // Template node's page teaches Mustache syntax in exactly such a block.
+    return unguarded.split(/(^[ \t]*```[\s\S]*?^[ \t]*```)/gm).map((block, blockIndex) => {
         // Odd indices are the captured fenced blocks.
         if (blockIndex % 2 === 1) return block
 
-        // The raw guards are Eleventy-only and go regardless of where they sit, including
-        // when they wrap a code span from the outside.
-        const unguarded = block.replace(/\{%-?\s*(?:end)?raw\s*-?%\}\r?\n?/g, '')
-
         // Then split on inline code spans, so only the text between them is rewritten.
-        return unguarded.split(/(`[^`\n]*`)/g).map((part, partIndex) =>
+        return block.split(/(`[^`\n]*`)/g).map((part, partIndex) =>
             partIndex % 2 === 1
                 ? part
                 : part.replace(/\{\{[^{}\n]*\}\}/g, (mustache) => `\`${mustache}\``)

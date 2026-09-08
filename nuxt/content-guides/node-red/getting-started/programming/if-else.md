@@ -81,7 +81,7 @@ _Node-RED flow using the Switch node to route messages based on temperature thre
 
 ### Using Function Node
 
-The [Function](/docs/node-red/core-nodes/function/) node allows for more complex logic by writing JavaScript. It's suitable when you need more control, or multiple values must be checked together.
+The [Function](/docs/node-red/core-nodes/function/function/) node allows for more complex logic by writing JavaScript. It's suitable when you need more control, or multiple values must be checked together.
 
 For demonstration purposes, let's use the temperature example where we determine whether to turn the air conditioner on or off based on the temperature:
 
