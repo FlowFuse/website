@@ -4432,3 +4432,18 @@ lite-youtube::before {
 .ff-website header .ff-nav-startbuilding-panel li + li a {
     min-height: calc(3.5rem - 1px);
 }
+
+/* A primary row is at least the height of the nav row it drops out of, the same
+   floor the Start building menu uses. Only the primary column: a secondary
+   column is a plain link list and reads correctly at its own tighter rhythm. */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary a {
+        min-height: 3.5rem;
+    }
+    /* The primary column has no eyebrow, so its first row sits directly on the
+       panel's top border and the row's own rule doubled it. The panel draws
+       that line; the row only draws the ones between rows. */
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary > li:first-child > a {
+        border-top: 0;
+    }
+}
