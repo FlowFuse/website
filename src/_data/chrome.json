@@ -3,134 +3,53 @@
     "header": {
         "dropdowns": [
             {
-                "label": "Platform",
+                "label": "Product",
                 "href": "/product/",
                 "columns": [
                     {
-                        "title": "Overview",
+                        "title": "",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-3 xl:col-start-2 xl:row-start-2",
                         "links": [
-                            {
-                                "label": "Product",
-                                "href": "/product/",
-                                "icon": "star",
-                                "description": "Edge, Hub and Fleet, and how they fit together."
-                            },
                             {
                                 "label": "FlowFuse Edge",
                                 "href": "/product/edge/",
                                 "icon": "chip",
-                                "description": "Connect the PLCs, machines and controllers on your plant floor.",
-                                "indent": true
+                                "description": "Connect the PLCs, machines and controllers on your plant floor."
                             },
                             {
                                 "label": "FlowFuse Hub",
                                 "href": "/product/hub/",
                                 "icon": "circle-stack",
-                                "description": "Connect ERPs, databases and cloud APIs into one governed system.",
-                                "indent": true
+                                "description": "Connect ERPs, databases and cloud APIs into one governed system."
                             },
                             {
                                 "label": "FlowFuse Fleet",
                                 "href": "/product/fleet/",
                                 "icon": "server-stack",
-                                "description": "Run and update Node-RED across thousands of distributed devices.",
-                                "indent": true
+                                "description": "Run and update Node-RED across thousands of distributed devices."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Pricing & security",
+                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
+                        "listClasses": "row-span-3 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "links": [
+                            {
+                                "label": "Pricing",
+                                "href": "/pricing/",
+                                "icon": "dollar"
                             },
                             {
                                 "label": "Security Statement",
                                 "href": "/platform/security/",
                                 "icon": "lock-closed"
-                            },
-                            {
-                                "label": "Pricing",
-                                "href": "/pricing/",
-                                "icon": "dollar"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Components",
-                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-6 md:col-start-2 md:row-start-2 xl:col-start-3",
-                        "links": [
-                            {
-                                "label": "FlowFuse Dashboard",
-                                "href": "/platform/dashboard/",
-                                "icon": "dashboard"
-                            },
-                            {
-                                "label": "Device Agent",
-                                "href": "/platform/device-agent/",
-                                "icon": "device-agent"
-                            },
-                            {
-                                "label": "Node-RED",
-                                "href": "/node-red/",
-                                "icon": "code-bracket"
-                            },
-                            {
-                                "label": "FlowFuse Expert",
-                                "href": "/docs/user/expert/",
-                                "icon": "sparkles"
-                            },
-                            {
-                                "label": "Integrations",
-                                "href": "/integrations/",
-                                "icon": "squares-plus"
-                            },
-                            {
-                                "label": "Blueprint Library",
-                                "href": "/blueprints/",
-                                "icon": "building-library"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Capabilities",
-                        "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-[7] md:col-start-3 md:row-start-2 xl:col-start-4",
-                        "links": [
-                            {
-                                "label": "Industrial AI",
-                                "href": "/ai/",
-                                "icon": "sparkles"
-                            },
-                            {
-                                "label": "IT/OT middleware",
-                                "href": "/use-cases/it-ot-middleware/",
-                                "icon": "cog"
-                            },
-                            {
-                                "label": "Unified Namespace",
-                                "href": "/use-cases/uns/",
-                                "icon": "uns"
-                            },
-                            {
-                                "label": "MES",
-                                "href": "/use-cases/mes/",
-                                "icon": "chart"
-                            },
-                            {
-                                "label": "SCADA",
-                                "href": "/use-cases/scada/",
-                                "icon": "screen"
-                            },
-                            {
-                                "label": "Edge Connectivity",
-                                "href": "/use-cases/edge-connectivity/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "Data Integration",
-                                "href": "/use-cases/data-integration/",
-                                "icon": "arrows-right-left"
                             }
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(4,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "platform"
             },
             {
@@ -182,7 +101,6 @@
                                 "href": "/industries/aviation-aerospace/",
                                 "icon": "airplane"
                             }
-
                         ]
                     },
                     {
@@ -404,6 +322,98 @@
                 "classes": "nav-collapsible"
             }
         ],
+        "_retired": [
+            {
+                "label": "Product",
+                "href": "/product/",
+                "wasIn": "Product > Overview",
+                "why": "The dropdown itself is now labelled Product and links to /product/, so the row was the same label pointing at the same page directly under it."
+            },
+            {
+                "label": "See all industries",
+                "href": "/industries/",
+                "wasIn": "Solutions > By Industry",
+                "why": "The Solutions dropdown now links to /industries/, so the row was a second way to the same page in the same panel."
+            },
+            {
+                "label": "FlowFuse Dashboard",
+                "href": "/platform/dashboard/",
+                "wasIn": "Product > Components",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Device Agent",
+                "href": "/platform/device-agent/",
+                "wasIn": "Product > Components",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Node-RED",
+                "href": "/node-red/",
+                "wasIn": "Product > Components",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "FlowFuse Expert",
+                "href": "/docs/user/expert/",
+                "wasIn": "Product > Components",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Integrations",
+                "href": "/integrations/",
+                "wasIn": "Product > Components",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Blueprint Library",
+                "href": "/blueprints/",
+                "wasIn": "Product > Components",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Industrial AI",
+                "href": "/ai/",
+                "wasIn": "Product > Capabilities",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "IT/OT middleware",
+                "href": "/use-cases/it-ot-middleware/",
+                "wasIn": "Product > Capabilities",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Unified Namespace",
+                "href": "/use-cases/uns/",
+                "wasIn": "Product > Capabilities",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "MES",
+                "href": "/use-cases/mes/",
+                "wasIn": "Product > Capabilities",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "SCADA",
+                "href": "/use-cases/scada/",
+                "wasIn": "Product > Capabilities",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Edge Connectivity",
+                "href": "/use-cases/edge-connectivity/",
+                "wasIn": "Product > Capabilities",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Data Integration",
+                "href": "/use-cases/data-integration/",
+                "wasIn": "Product > Capabilities",
+                "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            }
+        ],
         "startBuilding": {
             "_comment": "The header's primary action, replacing the single 'Free Trial' link: one entry per way of getting started, because the first instance a visitor creates can live in three different places and the nav only advertised one of them. An item carries EITHER a 'cta' key naming a reserved destination in ctaDestinations.json (which owns that row's copy, href and PostHog event, so the sign-up funnel stays one event) OR its own label and href for an ordinary page.",
             "label": "Start building",
@@ -428,7 +438,7 @@
     "footer": {
         "sections": [
             {
-                "title": "Platform",
+                "title": "Product",
                 "gridClasses": "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8",
                 "groups": [
                     {
@@ -666,7 +676,9 @@
                                 "href": "/blog/#sign-up",
                                 "capture": {
                                     "event": "cta-blog-subscribe",
-                                    "props": { "position": "footer" }
+                                    "props": {
+                                        "position": "footer"
+                                    }
                                 }
                             }
                         ]
