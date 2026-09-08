@@ -30,6 +30,8 @@ tldr: "First Article Inspection (FAI) verifies that a newly manufactured part me
 
 Before full-scale production, [automotive manufacturers](/landing/automotive/) need to verify that a part can be produced according to its engineering requirements. First Article Inspection (FAI) provides documented evidence that a part produced using the intended manufacturing process conforms to its engineering drawing, specifications, and other applicable requirements.
 
+<!--more-->
+
 Much of this still runs on paper checklists and spreadsheets, which makes it easy for inspection results to drift away from the production data that explains them.
 
 ::cta-image{src="/blog/2026/09/images/fai-process-cta1.png" alt="Use FlowFuse to connect production data, build digital inspection workflows, and get better visibility into your quality processes - start your free trial" cta="sign-up"}
