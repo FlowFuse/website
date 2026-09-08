@@ -7,25 +7,12 @@
 // This replaces a build-time generator that fetched the same content and baked it into
 // generated markdown. The pages are ordinary content files now: each asks for its help by
 // name through the ::node-red-help component, and this answers.
-import sanitizeHtml from 'sanitize-html'
-
-import { extractHelp, helpUrlFor, isSafeHelpRef } from '../../lib/node-red-help.mjs'
+import { extractHelp, helpUrlFor, isSafeHelpRef, sanitiseHelp } from '../../lib/node-red-help.mjs'
 import { cachedFetch } from '../utils/build-cache'
 
 // A day. The help changes rarely, and a stale hour costs nothing; the point of caching is
 // that a full prerender asks GitHub for ~20 files rather than one per page.
 const TTL_MS = 24 * 60 * 60 * 1000
-
-// Node-RED's help is prose and simple tables. Nothing here needs script, style, iframes or
-// event handlers, so the allowlist is the shape of the content rather than a denylist of
-// the dangerous parts: this is third-party HTML rendered with v-html.
-const ALLOWED_TAGS = [
-    'p', 'br', 'b', 'strong', 'i', 'em', 'code', 'pre', 'kbd', 'span',
-    'ul', 'ol', 'li', 'dl', 'dt', 'dd',
-    'h3', 'h4', 'h5',
-    'table', 'thead', 'tbody', 'tr', 'th', 'td',
-    'a', 'blockquote',
-]
 
 export default defineEventHandler(async (event) => {
     const { category, file, node } = getQuery(event)
@@ -54,11 +41,7 @@ export default defineEventHandler(async (event) => {
         })
     }
 
-    return {
-        html: sanitizeHtml(help, {
-            allowedTags: ALLOWED_TAGS,
-            allowedAttributes: { a: ['href', 'title'], th: ['scope'] },
-            allowedSchemes: ['http', 'https', 'mailto'],
-        }),
-    }
+    // The allowlist lives in nuxt/lib/node-red-help.mjs beside the selection rules, so
+    // `node --test` can assert what it keeps and what it drops without a running server.
+    return { html: sanitiseHelp(help) }
 })

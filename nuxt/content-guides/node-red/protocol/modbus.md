@@ -14,11 +14,7 @@ In manufacturing companies there is often a small set of production data, curren
 
 Node-RED, along with Modbus and Dashboard modules, can easily create a web-based dashboard, shareable with a weblink and viewable on any web browser on the network.  Imagine the advantages of digital signage in the breakroom spurring healthy competition or a manager being able to check daily totals and live process values from the phone in their pocket.
 
-<a href="https://app.flowfuse.com/account/create"
-   class="mb-4 block"
-   onclick="capture('blog-cta', { reference: 'Node-RED: Using Modbus with Node-RED', position: 'inline-image', cta_type: 'sign-up' })">
-  <img src="/docs/node-red/protocol/images/modbus-node-red-cta-1.png" alt="Read Modbus data from every device on your floor, not just one instance" loading="lazy">
-</a>
+::cta-image{src="/docs/node-red/protocol/images/modbus-node-red-cta-1.png" alt="Read Modbus data from every device on your floor, not just one instance" cta="sign-up" reference="Node-RED: Using Modbus with Node-RED"}
 
 ## What is Modbus
 

@@ -12,11 +12,7 @@ meta:
 
 Regular updates keep your Node-RED installation running smoothly with the latest features, improvements, and bug fixes. Each new release brings enhancements that expand what you can build and improve your development experience. Whether you installed Node-RED through npm, used the Raspberry Pi script, or are running it in Docker, this guide walks you through the update process step by step. We'll also cover how to check your version, update your installation, and handle updates in FlowFuse.
 
-<a href="https://app.flowfuse.com/account/create"
-   class="mb-4 block"
-   onclick="capture('blog-cta', { reference: 'Node-RED: How to Update Node-RED', position: 'inline-image', cta_type: 'sign-up' })">
-  <img src="/docs/node-red/getting-started/images/update-node-red-cta-1.png" alt="Update hundreds of Node-RED instances in one click, not one at a time" loading="lazy">
-</a>
+::cta-image{src="/docs/node-red/getting-started/images/update-node-red-cta-1.png" alt="Update hundreds of Node-RED instances in one click, not one at a time" cta="sign-up" reference="Node-RED: How to Update Node-RED"}
 
 ## Checking Your Current Version
 
