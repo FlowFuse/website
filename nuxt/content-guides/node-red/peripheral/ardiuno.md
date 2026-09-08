@@ -1,5 +1,6 @@
 ---
 title: Connecting Arduino to Node-RED
+metaTitle: "Connecting Arduino to Node-RED"
 navTitle: Arduino
 navOrder: 50
 meta:

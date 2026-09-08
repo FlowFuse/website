@@ -1,5 +1,6 @@
 ---
 title: Using MQTT with Node-RED
+metaTitle: "Using MQTT with Node-RED"
 navTitle: MQTT
 navOrder: 50
 meta:

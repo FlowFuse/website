@@ -1,5 +1,6 @@
 ---
 title: Using DynamoDB with Node-RED (2026 Updated)
+metaTitle: "Using DynamoDB with Node-RED (2026 Updated)"
 navTitle: DynamoDB
 navOrder: 50
 meta:

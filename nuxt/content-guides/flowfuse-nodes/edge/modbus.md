@@ -1,5 +1,6 @@
 ---
 title: Modbus
+metaTitle: "Modbus"
 navTitle: Modbus
 navOrder: 3
 meta:

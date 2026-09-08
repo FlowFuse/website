@@ -1,5 +1,6 @@
 ---
 title: Node-RED Editor Workspace
+metaTitle: "Node-RED Editor Workspace"
 navTitle: Workspace
 navOrder: 50
 meta:

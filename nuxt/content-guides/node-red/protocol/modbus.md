@@ -1,5 +1,6 @@
 ---
 title: Using Modbus with Node-RED
+metaTitle: "Using Modbus with Node-RED"
 navTitle: Modbus
 navOrder: 50
 meta:

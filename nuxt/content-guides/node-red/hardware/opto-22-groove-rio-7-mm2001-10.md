@@ -1,5 +1,6 @@
 ---
 title: Setting up Node-RED on Opto-22 Groov Rio R7
+metaTitle: "Setting up Node-RED on Opto-22 Groov Rio R7"
 navTitle: Opto-22 Groov Epic
 navOrder: 50
 meta:

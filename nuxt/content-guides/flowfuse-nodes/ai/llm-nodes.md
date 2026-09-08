@@ -1,5 +1,6 @@
 ---
 title: LLM Nodes
+metaTitle: "LLM Nodes"
 navTitle: LLM Nodes
 navOrder: 5
 meta:

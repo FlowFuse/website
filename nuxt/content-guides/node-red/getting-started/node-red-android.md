@@ -1,5 +1,6 @@
 ---
 title: Installing Node-RED on Android
+metaTitle: "Installing Node-RED on Android"
 navTitle: Node-RED On Android
 navOrder: 4
 meta:

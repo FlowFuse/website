@@ -1,5 +1,6 @@
 ---
 title: Getting Started with Node-RED
+metaTitle: "Getting Started with Node-RED"
 navTitle: Getting started
 navOrder: 2
 meta:

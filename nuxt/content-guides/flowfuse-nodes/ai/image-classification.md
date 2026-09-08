@@ -1,5 +1,6 @@
 ---
 title: Image Classification
+metaTitle: "Image Classification"
 navTitle: Image Classification
 navOrder: 50
 meta:

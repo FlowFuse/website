@@ -1,5 +1,6 @@
 ---
 title: CIP Suite, EtherNet/IP Nodes
+metaTitle: "CIP Suite, EtherNet/IP Nodes"
 navTitle: CIP Suite, EtherNet/IP Nodes
 navOrder: 2
 meta:

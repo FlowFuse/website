@@ -1,5 +1,6 @@
 ---
 title: ONXX
+metaTitle: "ONXX"
 navTitle: ONXX
 navOrder: 50
 meta:

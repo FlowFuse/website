@@ -1,5 +1,6 @@
 ---
 title: Setting Up Node-RED on Different Hardware
+metaTitle: "Setting Up Node-RED on Different Hardware"
 navTitle: Hardware
 navOrder: 8
 meta:

@@ -1,5 +1,6 @@
 ---
 title: Node-RED Editor Palette
+metaTitle: "Node-RED Editor Palette"
 navTitle: Palette
 navOrder: 50
 meta:

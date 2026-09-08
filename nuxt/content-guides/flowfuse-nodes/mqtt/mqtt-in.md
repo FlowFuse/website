@@ -1,5 +1,6 @@
 ---
 title: MQTT In
+metaTitle: "MQTT In"
 navTitle: MQTT In
 navOrder: 50
 meta:

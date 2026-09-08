@@ -1,5 +1,6 @@
 ---
 title: How to Filter, Map, Sort, and Reduce Data in Node-RED
+metaTitle: "How to Filter, Map, Sort, and Reduce Data in Node-RED"
 navTitle: Data Tranformation
 navOrder: 50
 meta:

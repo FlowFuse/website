@@ -1,5 +1,6 @@
 ---
 title: FlowFuse Nodes
+metaTitle: "FlowFuse Nodes"
 navTitle: FlowFuse Node-RED nodes
 navOrder: 4
 navGroup: FlowFuse User Manuals

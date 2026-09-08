@@ -1,5 +1,6 @@
 ---
 title: Using MongoDB With Node-RED (2026 Updated)
+metaTitle: "Using MongoDB With Node-RED (2026 Updated)"
 navTitle: MongoDB
 navOrder: 50
 meta:

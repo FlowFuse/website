@@ -1,5 +1,6 @@
 ---
 title: Node-RED Terminology
+metaTitle: "Node-RED Terminology"
 navTitle: Terminology
 navOrder: 10
 meta:

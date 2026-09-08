@@ -141,6 +141,11 @@ export async function fetchCoreNodeHelp ({ coreNodes, fetchImpl = fetch, retries
 export function renderCoreNodePage (node, { useCase, help, navOrder }) {
     const fm = [
         `title: "Node-RED ${node.name} node"`,
+        // The <title> and search-result title, kept byte-identical to the Eleventy page
+        // this replaces ("Node-RED - Inject Node"), because these 39 URLs 301 onto the new
+        // ones and carry their ranking with them. Without it the docs page falls back to
+        // navTitle and the title becomes the bare node name, "Inject".
+        `metaTitle: "Node-RED - ${node.name} Node"`,
         `navTitle: "${node.name}"`,
         `navOrder: ${navOrder}`,
         'meta:',
@@ -219,6 +224,7 @@ export function syncCoreNodes ({ repoRoot, nuxtRoot, coreNodes, help, logger = c
     // /docs/node-red/core-nodes/README/ that prerendered as 404s and failed the build.
     writeFileSync(join(outDir, 'index.md'), `---
 title: "Node-RED core nodes"
+metaTitle: "Node-RED Core Nodes"
 navTitle: "Core nodes"
 navOrder: 3
 meta:

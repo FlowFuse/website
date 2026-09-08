@@ -1,5 +1,6 @@
 ---
 title: MCP Prompt
+metaTitle: "MCP Prompt"
 navTitle: MCP Prompt
 navOrder: 50
 meta:

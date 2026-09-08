@@ -1,5 +1,6 @@
 ---
 title: Using MySQL with Node-RED (2026 Updated)
+metaTitle: "Using MySQL with Node-RED (2026 Updated)"
 navTitle: MySQL
 navOrder: 50
 meta:

@@ -1,5 +1,6 @@
 ---
 title: Understanding Node-RED Messages
+metaTitle: "Understanding Node-RED Messages"
 navTitle: Working with Messages
 navOrder: 5
 meta:

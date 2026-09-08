@@ -1,5 +1,6 @@
 ---
 title: Sending and receiving Discord messages with Node-RED
+metaTitle: "Sending and receiving Discord messages with Node-RED"
 navTitle: Discord
 navOrder: 50
 meta:

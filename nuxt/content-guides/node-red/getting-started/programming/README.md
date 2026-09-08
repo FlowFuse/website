@@ -1,7 +1,8 @@
 ---
 title: Node-RED Programming
-navTitle: Getting started
-navOrder: 2
+metaTitle: "Node-RED Programming"
+navTitle: Programming
+navOrder: 8
 meta:
   description: Master Node-RED programming fundamentals including flows, nodes, messages, conditional logic, and data manipulation. Learn essential concepts for building sophisticated visual programming solutions.
   keywords: Node-RED programming, visual programming, Node-RED flows, Node-RED nodes, message passing, conditional logic, data manipulation, flow-based programming, Node-RED tutorial, IoT programming

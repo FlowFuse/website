@@ -1,5 +1,6 @@
 ---
 title: Using Redis with Node-RED (2026 Updated)
+metaTitle: "Using Redis with Node-RED (2026 Updated)"
 navTitle: Redis
 navOrder: 50
 meta:

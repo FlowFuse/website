@@ -1,5 +1,6 @@
 ---
 title: Node-RED Editor Header component
+metaTitle: "Node-RED Editor Header component"
 navTitle: Header
 navOrder: 50
 meta:

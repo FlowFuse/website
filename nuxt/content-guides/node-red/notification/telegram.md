@@ -1,5 +1,6 @@
 ---
 title: Sending and receiving Telegram messages with Node-RED
+metaTitle: "Sending and receiving Telegram messages with Node-RED"
 navTitle: Telegram
 navOrder: 50
 meta:

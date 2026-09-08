@@ -1,7 +1,8 @@
 ---
 title: Node-RED Library – A Curated and Actively Maintained List of Nodes
-navTitle: Getting started
-navOrder: 2
+metaTitle: "Node-RED Library: Curated List of Nodes"
+navTitle: Node-RED Library
+navOrder: 3
 meta:
   description: Browse the Node-RED Library for community-built nodes and integrations. FlowFuse's curated catalog offers tested, documented, enterprise-ready solutions with professional support for critical deployments.
   keywords: node-red library, node-red nodes, node-red integrations, community nodes, node-red packages, custom nodes, node-red flows

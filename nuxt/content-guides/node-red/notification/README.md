@@ -1,5 +1,6 @@
 ---
 title: Notification Services in Node-RED
+metaTitle: "Notification Services in Node-RED"
 navTitle: Notification services
 navOrder: 7
 meta:

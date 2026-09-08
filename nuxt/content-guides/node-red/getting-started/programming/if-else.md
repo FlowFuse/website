@@ -1,5 +1,6 @@
 ---
 title: How to Use If-Else Logic in Node-RED
+metaTitle: "How to Use If-Else Logic in Node-RED"
 navTitle: If-Else
 navOrder: 50
 meta:

@@ -1,5 +1,6 @@
 ---
 title: Integrating Node-RED with Peripheral Devices
+metaTitle: "Integrating Node-RED with Peripheral Devices"
 navTitle: Peripheral devices
 navOrder: 9
 meta:

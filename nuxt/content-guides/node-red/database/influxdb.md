@@ -1,5 +1,6 @@
 ---
 title: Using InfluxDB with Node-RED (2026 Updated)
+metaTitle: "Using InfluxDB with Node-RED (2026 Updated)"
 navTitle: InfluxDB
 navOrder: 50
 meta:

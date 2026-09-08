@@ -1,5 +1,6 @@
 ---
 title: Using Firebase with Node-RED (2026 Updated)
+metaTitle: "Using Firebase with Node-RED (2026 Updated)"
 navTitle: Firebase
 navOrder: 50
 meta:

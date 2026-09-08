@@ -1,5 +1,6 @@
 ---
 title: MCP Nodes
+metaTitle: "MCP Nodes"
 navTitle: MCP
 navOrder: 2
 meta:

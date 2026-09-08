@@ -1,5 +1,6 @@
 ---
 title: RTSP Video Feed
+metaTitle: "RTSP Video Feed"
 navTitle: RTSP Video Feed
 navOrder: 1
 meta:

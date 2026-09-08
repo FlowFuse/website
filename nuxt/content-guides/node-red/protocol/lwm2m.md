@@ -1,5 +1,6 @@
 ---
 title: Using LwM2M with Node-RED
+metaTitle: "Using LwM2M with Node-RED"
 navTitle: LwM2M
 navOrder: 50
 meta:

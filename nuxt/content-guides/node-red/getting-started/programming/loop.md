@@ -1,5 +1,6 @@
 ---
 title: How to implement loops in Node-RED flows
+metaTitle: "How to implement loops in Node-RED flows"
 navTitle: Loop
 navOrder: 50
 meta:

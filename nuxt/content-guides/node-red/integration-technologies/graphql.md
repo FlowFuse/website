@@ -1,5 +1,6 @@
 ---
 title: Integrating GraphQL APIs in Node-RED
+metaTitle: "Integrating GraphQL APIs in Node-RED"
 navTitle: GraphQL API
 navOrder: 50
 meta:

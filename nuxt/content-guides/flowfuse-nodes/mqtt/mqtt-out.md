@@ -1,5 +1,6 @@
 ---
 title: MQTT Out
+metaTitle: "MQTT Out"
 navTitle: MQTT Out
 navOrder: 50
 meta:

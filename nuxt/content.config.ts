@@ -29,6 +29,11 @@ export default defineContentConfig({
             source: 'docs/**/*.md',
             schema: z.object({
                 navTitle: z.string().optional(),
+                // The browser/search-result title, when the sidebar label is too short to
+                // serve as one. Read by nuxt/pages/docs/[...slug].vue; like navGroupOrder
+                // below, an undeclared key is stripped from frontmatter, which would make
+                // that read silently undefined.
+                metaTitle: z.string().optional(),
                 navGroup: z.string().optional(),
                 // Read by useDocsNav to rank the sidebar group headings; without it
                 // declared here @nuxt/content strips the key from frontmatter.

@@ -1,5 +1,6 @@
 ---
 title: Using SQLite with Node-RED (2026 Updated)
+metaTitle: "Using SQLite with Node-RED (2026 Updated)"
 navTitle: SQLite
 navOrder: 50
 meta:

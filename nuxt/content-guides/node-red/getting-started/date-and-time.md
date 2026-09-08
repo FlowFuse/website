@@ -1,5 +1,6 @@
 ---
 title: Working with Dates and Times in Node-RED
+metaTitle: "Working with Dates and Times in Node-RED"
 navTitle: Date & Time
 navOrder: 7
 meta:

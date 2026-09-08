@@ -1,5 +1,6 @@
 ---
 title: How to Debug Node-RED Flows Using Debugger
+metaTitle: "How to Debug Node-RED Flows Using Debugger"
 navTitle: Debugging
 navOrder: 50
 meta:

@@ -1,5 +1,6 @@
 ---
 title: Node-RED Database Integration Guides
+metaTitle: "Node-RED Database Integration Guides"
 navTitle: Databases
 navOrder: 5
 meta:

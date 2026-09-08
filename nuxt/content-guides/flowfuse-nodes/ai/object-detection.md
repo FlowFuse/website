@@ -1,5 +1,6 @@
 ---
 title: Object Detection
+metaTitle: "Object Detection"
 navTitle: Object Detection
 navOrder: 50
 meta:

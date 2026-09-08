@@ -1,5 +1,6 @@
 ---
 title: FlowFuse AI Nodes
+metaTitle: "FlowFuse AI Nodes"
 navTitle: AI
 navOrder: 1
 meta:

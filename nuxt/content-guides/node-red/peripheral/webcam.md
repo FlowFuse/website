@@ -1,5 +1,6 @@
 ---
 title: Using webcam with Node-RED
+metaTitle: "Using webcam with Node-RED"
 navTitle: Webcam
 navOrder: 50
 meta:

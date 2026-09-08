@@ -1,5 +1,6 @@
 ---
 title: Run Node-RED on Siemens IoT2050
+metaTitle: "Run Node-RED on Siemens IoT2050"
 navTitle: Siemens IoT2050
 navOrder: 50
 meta:

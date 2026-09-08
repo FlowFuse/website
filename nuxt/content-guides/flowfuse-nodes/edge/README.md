@@ -1,5 +1,6 @@
 ---
 title: Edge Certified Nodes
+metaTitle: "Edge Certified Nodes"
 navTitle: Edge
 navOrder: 4
 meta:

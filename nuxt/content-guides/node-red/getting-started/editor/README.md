@@ -1,7 +1,8 @@
 ---
 title: Getting Started with the Node-RED Editor
-navTitle: Getting started
-navOrder: 2
+metaTitle: "Getting Started with the Node-RED Editor"
+navTitle: Editor
+navOrder: 1
 meta:
   description: Learn about the powerful features of Node-RED Editor.
   keywords: node red editor, node-red editor, nodered flow, node-red flows, nodered workspace

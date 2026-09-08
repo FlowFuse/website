@@ -1,5 +1,6 @@
 ---
 title: Node-RED Editor Sidebar component
+metaTitle: "Node-RED Editor Sidebar component"
 navTitle: Sidebar
 navOrder: 50
 meta:

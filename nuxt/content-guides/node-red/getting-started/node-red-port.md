@@ -1,5 +1,6 @@
 ---
 title: Node-RED Port (localhost:1880)
+metaTitle: "Node-RED Port (localhost:1880)"
 navTitle: Port Configuration
 navOrder: 2
 meta:

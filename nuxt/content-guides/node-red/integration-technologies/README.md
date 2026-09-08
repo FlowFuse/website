@@ -1,5 +1,6 @@
 ---
 title: Using Different Technologies for Building Applications with Node-RED.
+metaTitle: "Building Applications with Node-RED"
 navTitle: Integration technologies
 navOrder: 6
 meta:

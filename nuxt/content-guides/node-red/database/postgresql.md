@@ -1,5 +1,6 @@
 ---
 title: Using PostgreSQL with Node-RED (2026 Updated)
+metaTitle: "Using PostgreSQL with Node-RED (2026 Updated)"
 navTitle: PostgreSQL
 navOrder: 50
 meta:

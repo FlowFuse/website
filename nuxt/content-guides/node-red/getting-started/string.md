@@ -1,5 +1,6 @@
 ---
 title: 'Strings in Node-RED: Convert String to Number, Split, Concatenate, Trim, and More'
+metaTitle: "Strings in Node-RED: Convert, Split & Trim"
 navTitle: String
 navOrder: 6
 meta:

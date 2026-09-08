@@ -1,5 +1,6 @@
 ---
 title: How to Update Node-RED
+metaTitle: "How to Update Node-RED"
 navTitle: Update Node-RED
 navOrder: 3
 meta:

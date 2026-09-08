@@ -1,5 +1,6 @@
 ---
 title: Building Secure OPC-UA Server in Node-RED.
+metaTitle: "Building Secure OPC-UA Server in Node-RED."
 navTitle: OPC-UA
 navOrder: 50
 meta:

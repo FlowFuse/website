@@ -1,5 +1,6 @@
 ---
 title: Query
+metaTitle: "Query"
 navTitle: Query
 navOrder: 50
 meta:

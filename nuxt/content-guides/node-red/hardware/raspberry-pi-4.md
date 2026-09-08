@@ -1,5 +1,6 @@
 ---
 title: Setting Node-RED on Raspberry Pi 4
+metaTitle: "Setting Node-RED on Raspberry Pi 4"
 navTitle: Raspberry Pi 4
 navOrder: 50
 meta:

@@ -1,5 +1,6 @@
 ---
 title: OPC UA for FlowFuse - FlowFuse Certified Node
+metaTitle: "OPC UA for FlowFuse - FlowFuse Certified Node"
 navTitle: OPC UA
 navOrder: 50
 meta:

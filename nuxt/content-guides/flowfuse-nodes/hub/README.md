@@ -1,5 +1,6 @@
 ---
 title: Hub Certified Nodes
+metaTitle: "Hub Certified Nodes"
 navTitle: Hub
 navOrder: 5
 meta:

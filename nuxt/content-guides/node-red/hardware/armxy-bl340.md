@@ -1,5 +1,6 @@
 ---
 title: Setting Node-RED on BLIIOT ARMxy BL340
+metaTitle: "Setting Node-RED on BLIIOT ARMxy BL340"
 navTitle: BLIIOT ARMxy BL340
 navOrder: 50
 meta:

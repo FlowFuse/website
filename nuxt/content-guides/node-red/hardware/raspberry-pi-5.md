@@ -1,5 +1,6 @@
 ---
 title: Setting Up Node-RED on Raspberry Pi 5
+metaTitle: "Setting Up Node-RED on Raspberry Pi 5"
 navTitle: Raspberry Pi 5
 navOrder: 50
 meta:

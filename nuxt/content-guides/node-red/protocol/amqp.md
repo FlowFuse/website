@@ -1,5 +1,6 @@
 ---
 title: Using AMQP with Node-RED
+metaTitle: "Using AMQP with Node-RED"
 navTitle: AMQP
 navOrder: 50
 meta:

@@ -1,5 +1,6 @@
 ---
 title: MCP Tool
+metaTitle: "MCP Tool"
 navTitle: MCP Tool
 navOrder: 50
 meta:

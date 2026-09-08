@@ -1,5 +1,6 @@
 ---
 title: Sending and receiving emails with Node-RED
+metaTitle: "Sending and receiving emails with Node-RED"
 navTitle: Email
 navOrder: 50
 meta:

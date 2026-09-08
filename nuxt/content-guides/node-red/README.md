@@ -1,20 +1,21 @@
 ---
 title: "Using Node-RED"
+metaTitle: "Node-RED Documentation"
 navTitle: "Using Node-RED"
 navOrder: 1
 navGroup: "Node-RED"
 navGroupOrder: 7
 meta:
-    description: "Reference for working with Node-RED itself: connecting it to databases, protocols, hardware and notification services, and what each core node does."
-    keywords: node-red, node red, core nodes, database, hardware, protocols, industrial iot
+    description: "Reference documentation for using Node-RED with databases, communication protocols, hardware, peripheral devices, notification services and integration technologies."
+    keywords: node-red, node red, node-red documentation, node-red core nodes, node-red database, node-red protocols, node-red hardware, industrial iot
 ---
 
 # Using Node-RED
 
-Node-RED is the open-source runtime FlowFuse runs, governs and scales. This section is
-reference material about Node-RED itself: how to connect it to a database, speak an
-industrial protocol, run it on a particular piece of hardware, and what each core node
-does.
+Node-RED is the open-source runtime FlowFuse runs, governs and scales. This section
+provides reference documentation for working with Node-RED itself: connecting it to
+databases, communication protocols, hardware and notification services, and
+understanding what each core node does.
 
 It is here to answer a question you already have. It is not a path into FlowFuse, and it
 does not need to be read in order. If you are setting FlowFuse up, start with
@@ -35,27 +36,27 @@ message. [Getting started](/docs/node-red/getting-started/)
 
 ## Core nodes
 
-What each node in the default palette does, and a worked reason to reach for it.
-[Core nodes](/docs/node-red/core-nodes/)
+Reference documentation for each node in the default Node-RED palette, with a worked
+reason to reach for it. [Core nodes](/docs/node-red/core-nodes/)
 
 ## Communication protocols
 
-Modbus, OPC UA, MQTT, AMQP, WebSocket and LwM2M, for talking to controllers and edge
-equipment. [Communication protocols](/docs/node-red/protocol/)
+Modbus, OPC UA, MQTT, AMQP, WebSocket and LwM2M, for connecting Node-RED to controllers
+and edge equipment. [Communication protocols](/docs/node-red/protocol/)
 
 ## Databases
 
-Reading and writing SQL, NoSQL and time-series databases, one guide per database.
-[Databases](/docs/node-red/database/)
+Reading and writing SQL, NoSQL and time-series databases with Node-RED, one guide per
+database. [Databases](/docs/node-red/database/)
 
 ## Integration technologies
 
-Webhooks, REST APIs and GraphQL, for wiring Node-RED to the rest of your systems.
+Webhooks, REST APIs and GraphQL, for connecting Node-RED to the rest of your systems.
 [Integration technologies](/docs/node-red/integration-technologies/)
 
 ## Notification services
 
-Sending alerts by email, Telegram and Discord.
+Sending alerts from Node-RED by email, Telegram and Discord.
 [Notification services](/docs/node-red/notification/)
 
 ## Hardware
@@ -65,13 +66,13 @@ Running Node-RED on a Raspberry Pi, a Siemens IoT2050, and other industrial gate
 
 ## Peripheral devices
 
-Webcams, barcode scanners and other things plugged into the machine Node-RED runs on.
+Webcams, barcode scanners and other devices connected to the machine Node-RED runs on.
 [Peripheral devices](/docs/node-red/peripheral/)
 
 ## Reference
 
-[Terminology](/docs/node-red/terminology/) for the words that come up in Node-RED
-discussions, and [keyboard shortcuts](/docs/node-red/keyboard/) for the editor.
+[Terminology](/docs/node-red/terminology/) for the words used in Node-RED documentation,
+and [keyboard shortcuts](/docs/node-red/keyboard/) for the editor.
 
 ::callout{icon="i-lucide-arrow-right"}
 **Running Node-RED for an organisation?** Access control, version history, deployment

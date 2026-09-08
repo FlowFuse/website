@@ -1,5 +1,6 @@
 ---
 title: Redis
+metaTitle: "Redis"
 navTitle: Redis
 navOrder: 1
 meta:

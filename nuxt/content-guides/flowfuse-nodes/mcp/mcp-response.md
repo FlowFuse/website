@@ -1,5 +1,6 @@
 ---
 title: MCP Response
+metaTitle: "MCP Response"
 navTitle: MCP Responses
 navOrder: 50
 meta:

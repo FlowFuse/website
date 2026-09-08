@@ -1,5 +1,6 @@
 ---
 title: Setting Node-RED on Robustel EG5120
+metaTitle: "Setting Node-RED on Robustel EG5120"
 navTitle: Robustel EG5120
 navOrder: 50
 meta:

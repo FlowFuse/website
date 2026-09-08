@@ -1,5 +1,6 @@
 ---
 title: Creating REST API's with Node-RED
+metaTitle: "Creating REST API's with Node-RED"
 navTitle: REST API
 navOrder: 50
 meta:

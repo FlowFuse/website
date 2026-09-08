@@ -1,5 +1,6 @@
 ---
 title: MQTT Nodes
+metaTitle: "MQTT Nodes"
 navTitle: FlowFuse MQTT Nodes
 navOrder: 5
 meta:

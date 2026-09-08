@@ -1,5 +1,6 @@
 ---
 title: Using TimescaleDB with Node-RED (2026 Updated)
+metaTitle: "Using TimescaleDB with Node-RED (2026 Updated)"
 navTitle: TimescaleDB
 navOrder: 50
 meta:

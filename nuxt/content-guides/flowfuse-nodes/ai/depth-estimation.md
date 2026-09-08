@@ -1,5 +1,6 @@
 ---
 title: Depth Estimation
+metaTitle: "Depth Estimation"
 navTitle: Depth Estimation
 navOrder: 50
 meta:

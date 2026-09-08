@@ -1,5 +1,6 @@
 ---
 title: Node-RED Keyboard Shortcuts
+metaTitle: "Node-RED Keyboard Shortcuts"
 navTitle: Keyboard shortcuts
 navOrder: 11
 meta:

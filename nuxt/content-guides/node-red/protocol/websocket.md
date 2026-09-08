@@ -1,5 +1,6 @@
 ---
 title: Using Websocket with Node-RED
+metaTitle: "Using Websocket with Node-RED"
 navTitle: Websocket
 navOrder: 50
 meta:

@@ -1,5 +1,6 @@
 ---
 title: Connect ESP32 with Node-RED using MQTT
+metaTitle: "Connect ESP32 with Node-RED using MQTT"
 navTitle: ESP32
 navOrder: 50
 meta:

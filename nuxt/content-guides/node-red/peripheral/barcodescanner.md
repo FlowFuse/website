@@ -1,5 +1,6 @@
 ---
 title: How to connect a barcode scanner to your Node-RED application
+metaTitle: "How to Connect a Barcode Scanner to Node-RED"
 navTitle: Barcode Scanner
 navOrder: 50
 meta:

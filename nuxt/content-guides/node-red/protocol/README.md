@@ -1,5 +1,6 @@
 ---
 title: Using Different Protocols for Building Applications with Node-RED
+metaTitle: "Using Different Protocols with Node-RED"
 navTitle: Communication protocols
 navOrder: 4
 meta:

@@ -1,5 +1,6 @@
 ---
 title: MCP Resource
+metaTitle: "MCP Resource"
 navTitle: MCP Resource
 navOrder: 50
 meta:

@@ -135,6 +135,20 @@ test('a page leads with the FlowFuse use case and puts the mirrored help under i
     assert.match(out, /<p>upstream<\/p>/)
 })
 
+test("a node page's browser title is the one the Eleventy page it replaces had", () => {
+    // /node-red/core-nodes/mqtt-in/ 301s onto /docs/node-red/core-nodes/mqtt-in/, so the
+    // title has to survive the move or the redirect hands Google a different page. The
+    // docs page prefers metaTitle over navTitle for exactly this; without it the title
+    // would be the bare node name.
+    const out = renderCoreNodePage(
+        { name: 'MQTT In', description: 'Subscribes to a topic' },
+        { useCase: '', help: '<p>upstream</p>', navOrder: 1 }
+    )
+
+    assert.match(out, /metaTitle: "Node-RED - MQTT In Node"/)
+    assert.match(out, /navTitle: "MQTT In"/)
+})
+
 test('a sync missing any node help fails loudly and names the node', () => {
     assert.throws(
         () => syncCoreNodes({
