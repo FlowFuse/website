@@ -1150,11 +1150,11 @@ h4:hover .header-anchor::before {
        on the Nuxt side every nav icon started matching a span selector that no
        icon could match before, picking up the shrink and rotating a half turn
        on hover. Eleventy was unaffected because its icons are still <svg>. */
-    .ff-website header a > span:not(.ff-nav-label):not(.ff-icon) {
+    .ff-website header a > span:not(.ff-nav-label):not(.ff-icon):not(.ff-nav-desc) {
         transform: scale(0.75);
     }
 
-    .ff-website header a:hover > span:not(.ff-nav-label):not(.ff-icon) {
+    .ff-website header a:hover > span:not(.ff-nav-label):not(.ff-icon):not(.ff-nav-desc) {
         transform: scale(0.75)rotate(180deg);
     }
 
@@ -1189,25 +1189,34 @@ h4:hover .header-anchor::before {
         left: 3rem;
     }
 
-    /* Mega panel (ul.mega): full viewport width, flush under the header, content centered.
-       The trigger li is made static so the panel positions against the header nav,
-       whose center equals the viewport center. */
+    /* Mega panel (ul.mega): a card sized to its own columns, flush under the
+       header and left-aligned with the nav, rather than a full-bleed band.
+       The trigger li is made static so the panel positions against the header
+       nav, whose left edge is the content container's left edge - so `left: 0`
+       puts every panel's edge on the same line as the logo and the first nav
+       item, whatever the panel holds. A panel that ran to both viewport edges
+       to carry three columns of links spent most of its width on empty white,
+       and gave the reader no edge to read the columns against. */
     @media (min-width: 768px) {
         .ff-website header .ff-nav-dropdown > ul.mega {
             position: absolute;
             top: 100%;
             right: auto;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            max-width: 100vw;
+            left: 0;
+            transform: none;
+            width: max-content;
+            /* The shared dropdown rule floors a panel at the width of its
+               trigger (min-width: 100%). A mega panel's containing block is the
+               header nav, not the trigger, so that floor was the full content
+               width and max-content could never shrink the panel. */
+            min-width: 0;
+            max-width: 100%;
             margin-top: 0;
             border-radius: 0;
             background-color: #fff;
-            border-top: 1px solid #e5e7eb;
-            border-bottom: 1px solid #e5e7eb;
+            border: 1px solid #e5e7eb;
             box-shadow: 0 18px 28px -18px rgb(15 23 42 / 0.22);
-            justify-content: center;
+            justify-content: flex-start;
             column-gap: 3rem;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
@@ -2757,11 +2766,11 @@ lite-youtube::before {
    the panel used less of the available width the narrower it got. */
 @media (min-width: 768px) and (max-width: 1023px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
-        justify-content: space-between;
+        justify-content: flex-start;
         column-gap: 1.5rem;
         font-size: 0.875rem;
-        padding-left: max(0.75rem, calc((100vw - 960px) / 2));
-        padding-right: max(0.75rem, calc((100vw - 960px) / 2));
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 }
 /* lg-to-xl: constrain the category columns to a centred band and spread them
@@ -2772,10 +2781,10 @@ lite-youtube::before {
    highlight section below. */
 @media (min-width: 1024px) and (max-width: 1279px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
-        justify-content: space-between;
+        justify-content: flex-start;
         column-gap: 2.5rem;
-        padding-left: max(2rem, calc((100vw - 1120px) / 2));
-        padding-right: max(2rem, calc((100vw - 1120px) / 2));
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -2986,10 +2995,16 @@ lite-youtube::before {
    every dropdown. Unchanged by the narrower bands above. */
 @media (min-width: 1280px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
-        grid-template-columns: 18.5rem 16.5rem 16.5rem 16.5rem !important;
+        /* Track 2 carries the described product rows, so it is given a fixed
+           width for the descriptions to wrap inside. The two plain link columns
+           after it size to their own labels instead of to a shared fixed width:
+           the panel is content-width now, so a fixed track just pads the panel
+           out with white on the right. */
+        grid-template-columns: 18.5rem 21rem auto auto !important;
         justify-content: flex-start;
         column-gap: 3rem;
-        padding-left: max(1.5rem, calc((100vw - 80rem) / 2));
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         /* fit the highlight card in dropdowns with few rows without letting
            it stretch the link rows (the card itself is height-0 above).
            Budget: 1.5rem panel padding-top + title row + 7px card offset +
@@ -4004,5 +4019,75 @@ lite-youtube::before {
     .ff-prompts__dot--active,
     .ff-prompts__dot--active:hover {
         transform: none;
+    }
+}
+
+/* A dropdown trigger that is also a link to its section's landing page. Same box
+   and same rules as the plain <span> trigger it replaces - only the cursor
+   differs, because .ff-nav-dropdown a sets `cursor: default` for the panel rows
+   (which are links but read as menu items) and this one is a real navigation.
+   Unlayered so it beats that rule without raising its specificity. */
+.ff-website header .ff-nav-dropdown > a.ff-nav-trigger {
+    cursor: pointer;
+}
+
+/* Described rows (the product tiers in the Platform panel). The icon spans both
+   text rows on the left; the label and the description stack beside it. The
+   panel sets white-space: nowrap so its plain rows never wrap mid-label, so the
+   description has to opt back into wrapping explicitly or it would widen the
+   panel to one long line. */
+.ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 0.5rem;
+    align-items: start;
+    /* `header ul a` centres its text for the mobile drawer; a described row is a
+       two-line block and has to read from a left edge. */
+    text-align: left;
+}
+/* Row alignment across columns is off in a panel that has described rows. The
+   sub-menus are grid-rows-subgrid so every column's row N shares a baseline,
+   which is right when all rows are one line tall - but a described row is two,
+   so the plain columns beside it inherit that height and their links drift
+   apart with nothing in the gaps. Each column packs its own rows instead. */
+.ff-website header .ff-nav-dropdown > ul.mega:has(a.ff-nav-row--described) ul.sub-menu {
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    align-content: start;
+}
+.ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described > .ff-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin-top: 0.15rem;
+}
+.ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described > .ff-nav-label {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+}
+.ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described > .ff-nav-desc {
+    grid-column: 2;
+    grid-row: 2;
+    white-space: normal;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    color: var(--color-gray-500);
+    margin-top: 0.125rem;
+    text-align: left;
+    /* `header ul span` pads every span in the panel; .ff-nav-label opts out with
+       its own reset, and the description has to as well or it sits 16px right of
+       the label it belongs to. */
+    padding: 0;
+}
+/* The row's own hover colour must not drag the description with it: the label
+   goes indigo, the description stays secondary. */
+.ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described:hover > .ff-nav-desc {
+    color: var(--color-gray-500);
+}
+/* Under md the panel is a drawer section, where a description would push the
+   sections apart more than it helps. */
+@media (max-width: 767px) {
+    .ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described > .ff-nav-desc {
+        display: none;
     }
 }

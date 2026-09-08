@@ -4,6 +4,7 @@
         "dropdowns": [
             {
                 "label": "Platform",
+                "href": "/product/",
                 "columns": [
                     {
                         "title": "Overview",
@@ -13,24 +14,28 @@
                             {
                                 "label": "Product",
                                 "href": "/product/",
-                                "icon": "star"
+                                "icon": "star",
+                                "description": "Edge, Hub and Fleet, and how they fit together."
                             },
                             {
                                 "label": "FlowFuse Edge",
                                 "href": "/product/edge/",
                                 "icon": "chip",
+                                "description": "Connect the PLCs, machines and controllers on your plant floor.",
                                 "indent": true
                             },
                             {
                                 "label": "FlowFuse Hub",
                                 "href": "/product/hub/",
                                 "icon": "circle-stack",
+                                "description": "Connect ERPs, databases and cloud APIs into one governed system.",
                                 "indent": true
                             },
                             {
                                 "label": "FlowFuse Fleet",
                                 "href": "/product/fleet/",
                                 "icon": "server-stack",
+                                "description": "Run and update Node-RED across thousands of distributed devices.",
                                 "indent": true
                             },
                             {
@@ -130,6 +135,7 @@
             },
             {
                 "label": "Solutions",
+                "href": "/industries/",
                 "columns": [
                     {
                         "title": "By Industry",
@@ -175,12 +181,8 @@
                                 "label": "Aviation & Aerospace",
                                 "href": "/industries/aviation-aerospace/",
                                 "icon": "airplane"
-                            },
-                            {
-                                "label": "See all industries",
-                                "href": "/industries/",
-                                "icon": "arrow-right"
                             }
+
                         ]
                     },
                     {

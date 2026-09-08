@@ -629,7 +629,7 @@ module.exports = function(eleventyConfig) {
         }
     });
 
-    eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid, addClasses) {
+    eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid, addClasses, description) {
         let svg, iconSvg = '', classes, chevron
         if (icon) {
             svg = loadSVG(icon)
@@ -647,10 +647,27 @@ module.exports = function(eleventyConfig) {
 
         if (content) {
             const chevronDown = loadSVG('chevron-down')
+            // A dropdown with a landing page is a link as well as a trigger, so
+            // the section itself is reachable and not only the pages under it.
+            // Same inner markup either way, so one set of CSS rules covers both;
+            // the mobile drawer suppresses the navigation and expands instead
+            // (see the .ff-nav-trigger handler in src/_includes/base.js).
+            const inner = `${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-chevron">${chevronDown}</span>`
+            const trigger = link
+                ? `<a class="ff-nav-trigger flex items-center gap-1" href="${link}">${inner}</a>`
+                : `<span class="ff-nav-trigger flex items-center gap-1">${inner}</span>`
             // data-nav-section labels every link inside this panel for nav-click
             // tracking (src/js/nav-tracking.js), independent of styling classes.
-            return `<li class="${classes}" data-nav-section="${label}"><span class="flex items-center gap-1">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-chevron">${chevronDown}</span></span>${content}</li>`
+            return `<li class="${classes}" data-nav-section="${label}">${trigger}${content}</li>`
         } else if (link) {
+            // A described row is a grid rather than a flex line: the icon spans
+            // both rows on the left, the label and the description stack beside
+            // it. Only some rows carry a description (the product tiers), so the
+            // plain row keeps its simpler box.
+            if (description) {
+                const escaped = description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+                return `<li class="${classes}"><a class="ff-nav-row--described" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-desc">${escaped}</span></a></li>`
+            }
             return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span></a></li>`
         } else {
             return `<li class="${classes}"><span class="flex items-center gap-2">${iconSvg}<span class="ff-nav-label">${label}</span></span></li>`

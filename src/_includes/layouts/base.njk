@@ -198,7 +198,7 @@ eleventyComputed:
                     <!-- Nav -->
                     <ul id="nav-content" class="">
                         {%- for dd in chrome.header.dropdowns %}
-                        {% navoption dd.label, null, 0 %}
+                        {% navoption dd.label, dd.href | resolveHref(site), 0 %}
                             <ul class="{{ dd.megaClasses }}">
                                 {% set hl = navHighlights[dd.highlight] %}{% include "components/nav-highlight.njk" %}
                                 {%- for col in dd.columns %}
@@ -206,7 +206,7 @@ eleventyComputed:
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ col.listClasses }}">
                                         {%- for item in col.links %}
-                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent" %}{% endnavoption %}
+                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent", item.description %}{% endnavoption %}
                                         {%- endfor %}
                                     </ul>
                                 </li>

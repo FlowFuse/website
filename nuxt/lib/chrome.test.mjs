@@ -20,7 +20,10 @@ const footerLinks = [
     ...chrome.footer.company.grid.flatMap(g => g.links),
     ...chrome.footer.company.trailing.links,
 ]
-const allLinks = [...navLinks, ...chrome.header.direct, ...startBuildingLinks, ...footerLinks]
+// A dropdown that has a landing page is a link as well as a panel trigger.
+const dropdownLandingLinks = chrome.header.dropdowns.filter(d => d.href)
+const allLinks = [...navLinks, ...chrome.header.direct, ...dropdownLandingLinks,
+    ...startBuildingLinks, ...footerLinks]
 
 // Every row that draws an icon, whichever list it came from - the two guards
 // below are about the icon set, not about where the link points.
@@ -172,6 +175,34 @@ test('the Start building menu is rendered by both renderers', () => {
     // Once for the desktop CTA cluster, once for the mobile drawer.
     assert.equal(eleventy.match(/components\/nav-start-building\.njk/g)?.length, 2)
     assert.equal(nuxtHeader.match(/<NavStartBuilding/g)?.length, 2)
+})
+
+test('a dropdown landing page is not one of its own panel links', () => {
+    // The trigger and the row would then be two ways to the same page sitting a
+    // few pixels apart, which reads as a mistake rather than a shortcut. The
+    // Platform panel is the exception and states it: /product/ is the first row
+    // of its Overview column on purpose, because that column IS the product
+    // list and dropping the row would hide the overview from the panel.
+    const allowed = new Set(['Platform'])
+    for (const dd of chrome.header.dropdowns) {
+        if (!dd.href || allowed.has(dd.label)) continue
+        const clash = dd.columns.flatMap(c => c.links).find(l => l.href === dd.href)
+        assert.ok(!clash, `${dd.label} links to ${dd.href}, which is also its `
+            + `"${clash?.label}" row - drop one of the two`)
+    }
+})
+
+test('a described row keeps its description a plain one-liner', () => {
+    // Descriptions render as text, not markup, and sit on one nav row: a long
+    // one wraps past the two lines the row reserves and pushes the panel taller
+    // than the rows beside it.
+    for (const { label, description } of navLinks) {
+        if (description === undefined) continue
+        assert.equal(typeof description, 'string', `${label} has a non-string description`)
+        assert.ok(!/[<>]/.test(description), `${label}'s description contains markup`)
+        assert.ok(description.length <= 80,
+            `${label}'s description is ${description.length} chars - keep it under 80`)
+    }
 })
 
 test('the footer bottom row keeps its two alignment slots', () => {
