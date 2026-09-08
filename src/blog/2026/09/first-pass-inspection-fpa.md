@@ -3,9 +3,9 @@ title: "First Article Inspection (FAI): Process, Requirements & Report"
 metaTitle: "First Article Inspection (FAI): Process, Requirements & Report"
 subtitle: "Understand the FAI process, when it is required, what an FAI report includes, and how it compares with PPAP."
 description: "Learn what First Article Inspection (FAI) is, when it is required, how the process works, what an FAI report includes, and how FAI differs from PPAP."
-date: 2026-09-03
+date: 2026-09-08
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/09/images/first-article-inspection-tile.png
 tags:
   - posts
   - flowfuse
