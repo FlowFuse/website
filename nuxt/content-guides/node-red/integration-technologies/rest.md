@@ -133,13 +133,13 @@ Where we paste the API URL into the settings panel:
 When running this flow you'll see a blob of text in the `Debug` pane. This is a
 great first start, but a blob isn't useful for the rest of the flow.
 
-We need to parse the data as JSON. While the [JSON node](/docs/node-red/core-nodes/json)
+We need to parse the data as JSON. While the [JSON node](/docs/node-red/core-nodes/parsers/json/)
 would work, the HTTP request node can do this natively. Let `a parsed JSON object`
 the `Return` settings of the HTTP request node.
 
 So now we got the data, and a little more than we need, so let's change the
 message output to keep only what we're interested in; `payload.downloads`. To
-do this, we'll use the [change node](/docs/node-red/core-nodes/change).
+do this, we'll use the [change node](/docs/node-red/core-nodes/function/change/).
 
 ![Change node to set the payload with downloads](./images/change-node-set-downloads-payload.png "Change node to set the payload")
 
@@ -164,7 +164,7 @@ The default theme is great, so just accept that, and save all dialogs to continu
 #### Normalizing the data
 
 The data for the chart needs to be changed before we can show it. The messages should have a `x` and `y` key. So let's prepare the data with
-a combination of the [Split](/docs/node-red/core-nodes/split) and change node.
+a combination of the [Split](/docs/node-red/core-nodes/sequence/split/) and change node.
 
 The Split node with the default configuration allows to 30 elements of the array
 to be mapped individually. The change node will set the `payload.x` and `payload.y`

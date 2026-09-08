@@ -17,10 +17,11 @@ export function readGuidePages (guidesDir) {
         .map(relPath => ({ relPath, frontmatter: readFrontmatter(join(guidesDir, relPath)) || {} }))
 }
 
-// A directory index, under either name. The guides are authored as README.md and
-// guides-sync renames them to index.md on the way into the content tree, so both spellings
-// have to count: recognising only one leaves every nested index in a bucket of its own,
-// and the duplicate-label check below then passes for the wrong reason.
+// A directory index, under either name. A guide's section index is a README.md in the
+// authored tree and an index.md in the content tree, and where that rename happens has
+// already moved once, so both spellings have to count. Recognising only one leaves every
+// nested index alone in its own bucket, and the duplicate-label check below then passes
+// for the wrong reason instead of failing.
 const INDEX_NAMES = new Set(['README.md', 'index.md'])
 
 /**

@@ -91,8 +91,8 @@ export function listNodes (coreNodes) {
  * that does not contain the help name the catalogue asked for, is a real mismatch that no
  * retry will fix, so it throws immediately and names both the node and the URL.
  *
- * One locale file often serves several nodes, so responses are fetched once per file and
- * reused. That is 21 requests for 38 nodes.
+ * One locale file often serves several nodes (mqtt in/out, udp in/out, split/join), so
+ * responses are fetched once per file and reused rather than once per node.
  */
 export async function fetchCoreNodeHelp ({ coreNodes, fetchImpl = fetch, retries = 3, delay = 500 } = {}) {
     const nodes = listNodes(coreNodes)
@@ -135,6 +135,27 @@ export async function fetchCoreNodeHelp ({ coreNodes, fetchImpl = fetch, retries
     }
 
     return help
+}
+
+/** Where a core-node page's images and videos are served from, whatever the page's depth. */
+export const CORE_NODE_ASSETS = '/docs/node-red/core-nodes/images/'
+
+/**
+ * Make a use-case include's asset references absolute.
+ *
+ * The includes live in src/_includes/core-nodes/ but their images live with the library
+ * pages, so they reference them as `./images/x.png`. A relative reference resolves against
+ * the directory the built page sits in, which means it silently depends on how deep the
+ * page's URL is. That held while the pages were flat, directly under core-nodes/ where
+ * images/ also sits, and broke the moment the palette categories added a level: every
+ * `./images/x.png` started resolving to core-nodes/<category>/images/x.png.
+ *
+ * Writing the asset path out means the page's depth stops mattering. The absolute
+ * references some includes already use for <video> were unaffected either way, which is
+ * exactly the inconsistency this removes.
+ */
+export function absolutiseUseCaseAssets (content) {
+    return content.replace(/(["'(])\.\/images\//g, `$1${CORE_NODE_ASSETS}`)
 }
 
 /**
@@ -208,9 +229,9 @@ export function renderCoreNodePage (node, { useCase, help, navOrder }) {
     const fm = [
         `title: "Node-RED ${node.name} node"`,
         // The <title> and search-result title, kept byte-identical to the Eleventy page
-        // this replaces ("Node-RED - Inject Node"), because these 39 URLs 301 onto the new
-        // ones and carry their ranking with them. Without it the docs page falls back to
-        // navTitle and the title becomes the bare node name, "Inject".
+        // this replaces ("Node-RED - Inject Node"), because every one of these URLs 301s
+        // onto its new one and carries its ranking with it. Without this the docs page
+        // falls back to navTitle and the title becomes the bare node name, "Inject".
         `metaTitle: "Node-RED - ${node.name} Node"`,
         `navTitle: "${node.name}"`,
         `navOrder: ${navOrder}`,
@@ -235,13 +256,9 @@ export function renderCoreNodePage (node, { useCase, help, navOrder }) {
 /**
  * The node list for the section index, grouped by palette category.
  *
- * Deliberately NOT one page per category. A category page at
- * core-nodes/<category>/ collides with the node page at core-nodes/<category>.md
- * whenever a node shares its category's name, and one does: the Function node sits in
- * the `function` category, so both resolved to /docs/node-red/core-nodes/function/ and
- * @nuxt/content picked whichever it indexed last. The old Eleventy site had no category
- * route at all, and the legacy redirect for that URL points at the Function NODE, so the
- * node page keeps the URL and the grouping becomes headings on the section index.
+ * Each heading links its category's own page, which renderCoreNodeCategoryPage writes;
+ * the rationale for the categories being pages at all is there rather than repeated here.
+ * The section index lists every node as well, so it stays usable as one flat overview.
  */
 export function renderCategorySections (nodes) {
     return Object.entries(CATEGORIES)
@@ -321,7 +338,8 @@ ${renderCategorySections(nodes)}
             const useCasePath = join(repoRoot, 'src/_includes/core-nodes', `${node.slug}-use-case.md`)
             const useCase = existsSync(useCasePath)
                 ? foldUseCaseHeadings(
-                    processLibraryMarkdown(readFileSync(useCasePath, 'utf8'), { title: node.name }),
+                    absolutiseUseCaseAssets(
+                        processLibraryMarkdown(readFileSync(useCasePath, 'utf8'), { title: node.name })),
                     node.name)
                 : ''
             const dest = join(categoryDir, `${node.slug}.md`)

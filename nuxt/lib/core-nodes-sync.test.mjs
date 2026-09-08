@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { execFileSync } from 'node:child_process'
 import { mkdtempSync, readFileSync, readdirSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
@@ -6,6 +7,8 @@ import { fileURLToPath } from 'node:url'
 import test from 'node:test'
 
 import {
+    CORE_NODE_ASSETS,
+    absolutiseUseCaseAssets,
     extractHelp,
     fetchCoreNodeHelp,
     foldUseCaseHeadings,
@@ -17,6 +20,10 @@ import {
 import { processLibraryMarkdown } from './library-markdown.mjs'
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
+
+/** The real palette catalogue, so these checks track it rather than a fixture. */
+const catalogue = () => JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8'))
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
 const CATALOGUE = {
     common: [{ xpath: 'inject', name: 'Inject', file: '20-inject', description: 'Injects a message', keywords: 'inject' }],
@@ -199,6 +206,61 @@ test('every real use-case include leaves the assembled page with exactly one H1'
             .split(/^```[\s\S]*?^```/gm)
             .flatMap(part => part.match(/^# .+$/gm) || [])
         if (h1s.length !== 1) offenders.push(`${file}: ${h1s.length} H1s (${h1s.join(' | ')})`)
+    }
+
+    assert.deepEqual(offenders, [], offenders.join('\n'))
+})
+
+test('a use-case asset reference does not depend on how deep the page sits', () => {
+    // `./images/x.png` resolves against the built page's own directory, so it quietly
+    // encoded the flat layout: it worked only while the pages sat directly under
+    // core-nodes/, beside images/. Adding the category level broke all 17 of them at once,
+    // and only the link checker noticed.
+    assert.equal(
+        absolutiseUseCaseAssets('![Example](./images/change-default.png)'),
+        `![Example](${CORE_NODE_ASSETS}change-default.png)`
+    )
+    assert.equal(
+        absolutiseUseCaseAssets('<source src="./images/debug.webm" />'),
+        `<source src="${CORE_NODE_ASSETS}debug.webm" />`
+    )
+    // Already absolute, and must not gain a second prefix.
+    const absolute = `<source src="${CORE_NODE_ASSETS}debug.webm" />`
+    assert.equal(absolutiseUseCaseAssets(absolute), absolute)
+})
+
+test('no committed use-case include still points at an asset relatively', () => {
+    const useCaseDir = join(repoRoot, 'src/_includes/core-nodes')
+    const offenders = []
+
+    for (const file of readdirSync(useCaseDir).filter(f => f.endsWith('-use-case.md'))) {
+        const processed = absolutiseUseCaseAssets(readFileSync(join(useCaseDir, file), 'utf8'))
+        const relative = processed.match(/["'(]\.{0,2}\/?images\/[^"')]+/g) || []
+        if (relative.length) offenders.push(`${file}: ${relative.join(', ')}`)
+    }
+
+    assert.deepEqual(offenders, [], offenders.join('\n'))
+})
+
+test('nothing links a core node at a path without its category', () => {
+    // The nodes moved a level deeper, so a category-less link is now a 404. Seven of these
+    // survived the first rewrite because they had no trailing slash for it to match.
+    const slugs = Object.values(catalogue()).flat()
+        .map(n => (typeof n === 'string' ? n : n.name).toLowerCase().replace(/\s+/g, '-'))
+    const categories = Object.keys(catalogue())
+    const pattern = new RegExp(`/docs/node-red/core-nodes/(${slugs.map(escapeRegExp).join('|')})(?![\\w/-])`, 'g')
+
+    const tracked = execFileSync('git', ['grep', '-l', '/docs/node-red/core-nodes/'], {
+        cwd: repoRoot, encoding: 'utf8',
+    }).split('\n').filter(Boolean)
+
+    const offenders = []
+    for (const rel of tracked) {
+        if (rel === 'nuxt/redirects-node-red.ts') continue          // the map's keys are the OLD urls
+        for (const match of readFileSync(join(repoRoot, rel), 'utf8').matchAll(pattern)) {
+            // A slug that is also a category name is the category page, which is fine.
+            if (!categories.includes(match[1])) offenders.push(`${rel}: ${match[0]}`)
+        }
     }
 
     assert.deepEqual(offenders, [], offenders.join('\n'))

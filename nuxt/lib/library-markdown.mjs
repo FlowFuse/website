@@ -10,7 +10,7 @@
 // column-0 raw-HTML style.
 //
 // ORDER MATTERS. `convertCallouts` finishes by stripping every remaining `{% ... %}`
-// tag, which would silently swallow the 77 `{% renderFlow %}` blocks and every
+// tag, which would silently swallow every `{% renderFlow %}` block and every
 // `{% raw %}` guard on the page. Everything that needs to read a Nunjucks tag therefore
 // runs before it. `processLibraryMarkdown` encodes that order; call it rather than
 // composing these by hand.
@@ -40,7 +40,7 @@ export function convertRenderFlow (content) {
 /**
  * Resolve the `{{ meta.title }}` interpolation the pages use for their own H1.
  *
- * Eleventy rendered frontmatter into the body, so 70 of these pages open with
+ * Eleventy rendered frontmatter into the body, so some of these pages open with
  * `# {{meta.title}}` rather than a literal heading. @nuxt/content does not interpolate
  * frontmatter into markdown, and the docs page component renders the H1 from the body,
  * so the title has to be written out. Whitespace inside the braces varies in the source.

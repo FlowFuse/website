@@ -14,7 +14,7 @@ Below, you'll find a range of settings to tailor HTTP requests to fit the needs 
   - **Ignore:** If enabled Payload will be ignored.
   - **Append to query-string parameter:** Enabling this option will Allow sending URL query string parameters using `msg.payload`.
   - **Send as request:** Send payload data as part of the request body.
-- **Enable Secure Connection:** Allows to activate SSL/TLS for secure communication. TLS configuration options are available, For more information refer to [TLS config node](/docs/node-red/core-nodes/tls).
+- **Enable Secure Connection:** Allows to activate SSL/TLS for secure communication. TLS configuration options are available, For more information refer to [TLS config node](/docs/node-red/core-nodes/network/tls/).
 - **Use Authentication:** If required, allow to provide credentials for authentication.
   - **Type:** Select the authentication type.
     - **basic:** Uses Basic authentication where the username and password are sent in the request headers in Base64-encoded form.
