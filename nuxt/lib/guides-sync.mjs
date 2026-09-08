@@ -58,7 +58,14 @@ export function destinationFor (relPath, contentDocsDir, publicDocsDir) {
  * repo's history rather than flowfuse's.
  */
 export function injectFrontmatter (content, { editUrl, updated }) {
-    const injected = `editUrl: ${editUrl}\nupdated: ${updated}\n`
+    // `updated` is omitted rather than emitted empty when git could not answer. YAML reads
+    // a valueless key as null, which the collection schema (`z.string().optional()`)
+    // accepts as absent but not as null, so an empty value turns a missing timestamp into
+    // a parse complaint on every guide page at once.
+    const injected = [
+        `editUrl: ${editUrl}`,
+        updated ? `updated: ${updated}` : null,
+    ].filter(Boolean).join('\n') + '\n'
 
     return /^---/.test(content)
         ? content.replace(/^---\n/, `---\n${injected}`)

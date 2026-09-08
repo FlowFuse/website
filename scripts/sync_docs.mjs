@@ -15,7 +15,9 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 const nuxtRoot = join(repoRoot, 'nuxt')
 
 await syncDocs({ repoRoot, nuxtRoot })
-// After syncDocs, which wipes the tree it writes into.
-syncGuides({ repoRoot, nuxtRoot })
+// After syncDocs, which wipes the tree it writes into, and after syncCoreNodes, whose
+// pages syncGuides has to see to refuse a collision with them by name. Same order as
+// nuxt/modules/docs-source.ts, for the same reasons.
 const coreNodes = JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8'))
 syncCoreNodes({ repoRoot, nuxtRoot, coreNodes, help: await fetchCoreNodeHelp({ coreNodes }) })
+syncGuides({ repoRoot, nuxtRoot })

@@ -35,22 +35,35 @@ export default defineNuxtModule({
 
         const repoRoot = dirname(nuxtRoot)
 
-        // Order matters: syncDocs wipes content/docs before writing, so the guides
-        // authored in this repo have to be overlaid after it, not before.
+        // Order matters twice over. syncDocs wipes content/docs before writing, so
+        // everything this repo contributes has to land after it. And syncGuides is the step
+        // that refuses a collision by name, comparing each guide against what is already on
+        // disk, so the generated core-node pages have to be there by the time it looks -
+        // otherwise a guide colliding with one of them slips past the friendly error and
+        // surfaces as @nuxt/content's raw primary-key failure instead.
         await syncDocs({ repoRoot, nuxtRoot, logger })
-        syncGuides({ repoRoot, nuxtRoot, logger })
         // The core-node pages were never files: under Eleventy they were paginated out of
         // coreNodes.json, each fetching its help from the Node-RED repo. They still fetch
         // per build, so the help is never a stale copy, but a node whose help cannot be
         // found now fails the build instead of rendering an empty section.
         const coreNodes = JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8'))
         syncCoreNodes({ repoRoot, nuxtRoot, coreNodes, help: await fetchCoreNodeHelp({ coreNodes }), logger })
+        syncGuides({ repoRoot, nuxtRoot, logger })
 
         if (!existsSync(contentDocsDir)) return
 
         // Collected after the overlay, so the guide pages get prerendered with the rest
         // of /docs and need no route list of their own in nuxt.config.
         const docsRoutes = collectRoutes(contentDocsDir, '/docs')
+        // A floor rather than a log line, following the same call in nuxt.config.ts for the
+        // integrations. Collecting nothing means the tree above did not land, and on the
+        // netlify preset unprerendered routes still SSR, so the only symptom would be a
+        // thinner static site and slow cold pages - nothing that looks like a failure.
+        if (docsRoutes.length === 0) {
+            throw new Error(
+                '[docs-source] collected 0 docs routes to prerender - refusing to build /docs with no pages'
+            )
+        }
         nuxt.options.nitro.prerender ??= {}
         const existing = (nuxt.options.nitro.prerender.routes as string[] | undefined) ?? []
         nuxt.options.nitro.prerender.routes = [...existing, ...docsRoutes]

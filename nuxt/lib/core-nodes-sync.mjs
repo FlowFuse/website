@@ -312,7 +312,11 @@ export function renderCategorySections (nodes) {
 export function syncCoreNodes ({ repoRoot, nuxtRoot, coreNodes, help, logger = console }) {
     const outDir = join(nuxtRoot, 'content', 'docs', 'node-red', 'core-nodes')
     const nodes = listNodes(coreNodes)
-    const missing = nodes.filter(n => !help[`${n.category}/${n.slug}`])
+    // Trimmed, because renderCoreNodePage trims before deciding whether there is help to
+    // show. Guarding on the untrimmed value let whitespace-only help through, which then
+    // rendered the "Node help" heading and its callout with nothing underneath - the exact
+    // empty-section failure this module exists to make impossible.
+    const missing = nodes.filter(n => !String(help[`${n.category}/${n.slug}`] ?? '').trim())
 
     if (missing.length) {
         throw new Error(

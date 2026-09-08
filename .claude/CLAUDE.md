@@ -180,11 +180,25 @@ Collection config: `nuxt/content.config.ts` (defines the `handbook` collection)
 
 ### Product docs
 
-**Source:** `flowfuse/flowfuse` repo, `docs/` directory — **do not edit in this repo**; cloned automatically at build time by `nuxt/modules/docs-source.ts`.  
+`/docs` is assembled from three sources. Which one owns a page decides where to edit it,
+and two of the three are not editable here at all.
+
+| Source | Owns | Edit where |
+|---|---|---|
+| `flowfuse/flowfuse` repo, `docs/` | the product documentation, versioned with the code | that repo, **not here** |
+| `nuxt/content-guides/` | this repo's own guides: the Application Guide, the Node-RED guide, and the Node-RED library under `/docs/node-red/` and `/docs/flowfuse-nodes/` | **here**, in place |
+| `nuxt/lib/core-nodes-sync.mjs` | `/docs/node-red/core-nodes/**`, generated per build from `src/_data/coreNodes.json` plus a fetch of the Node-RED repo | the catalogue and the use-case fragments in `src/_includes/core-nodes/` |
+
 **URL:** `/docs/{section}/{slug}/`  
 **Rendered by:** Nuxt — `nuxt/pages/docs/[...slug].vue` + `DocsLeftNav` component  
-**Local content:** `nuxt/content/docs/` (gitignored, build-generated)  
+**Local content:** `nuxt/content/docs/` (gitignored, build-generated — never edit, it is wiped every build). The guides are read straight out of `nuxt/content-guides/` and are **not** copied into it.  
 **Local assets:** `nuxt/public/docs/` (images, etc.)
+
+A page's browser title is `metaTitle || navTitle || title` (`nuxt/lib/docs-page-title.mjs`).
+`navTitle` is the sidebar label and is often much shorter, so a page whose full title
+matters for search needs `metaTitle` set. **Any frontmatter key not declared in the `docs`
+collection schema in `nuxt/content.config.ts` is stripped before a page ever sees it**, which
+makes a missing declaration look like a missing value rather than an error.
 
 ```yaml
 ---
@@ -200,7 +214,7 @@ layout: redirect
 ---
 ```
 
-**Nav groups** (in order): FlowFuse User Manuals · Device Agent · FlowFuse Cloud · FlowFuse Self-Hosted · Support · Contributing  
+**Nav groups** (in order): Application Guide · FlowFuse User Manuals · Device Agent · FlowFuse Cloud · FlowFuse Self-Hosted · Support · Contributing · Node-RED  
 **Nav composable:** `nuxt/composables/useDocsNav.ts`  
 **Collection config:** `nuxt/content.config.ts` (defines the `docs` collection)
 

@@ -70,7 +70,7 @@ sections:
       - id: mcp-servers
         title: Agentic Operations
         description: "Expose your Node-RED flows as tools an AI agent can call directly, so agents can query the state of the factory or trigger actions without custom integration work."
-        docsLink: /node-red/flowfuse/mcp/
+        docsLink: /docs/flowfuse-nodes/mcp/
         tiers: { edge: true, hub: true, fleet: true }
       - id: onnx-integration
         title: ONNX Integration
