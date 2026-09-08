@@ -528,55 +528,55 @@
                 "label": "Redis",
                 "href": "/node-red/flowfuse/hub/redis/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "OPC UA",
                 "href": "/integrations/opcua/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "RTSP",
                 "href": "/node-red/flowfuse/edge/rtsp/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "EtherNet/IP",
                 "href": "/node-red/flowfuse/edge/cip-suite/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "MQTT",
                 "href": "/node-red/flowfuse/mqtt/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "ONNX",
                 "href": "/node-red/flowfuse/ai/onxx/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "LLM Nodes",
                 "href": "/node-red/flowfuse/ai/llm-nodes/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "MCP",
                 "href": "/node-red/flowfuse/mcp/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "See all integrations",
                 "href": "/integrations/",
                 "wasIn": "Solutions > By Integration",
-                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+                "why": "Panel reshaped to industries plus use cases and architectures. These pages have since moved into /docs with the rest of the Node-RED library, and main removed them from the footer's Solutions section too, which now keeps only OPC UA and a link to all integrations."
             },
             {
                 "label": "Blog",
