@@ -9,6 +9,18 @@ image: /blog/2026/09/images/first-article-inspection-tile.png
 tags:
   - posts
   - flowfuse
+meta:
+  faq:
+    - question: "What is a first article inspection?"
+      answer: "First Article Inspection (FAI) is a documented inspection process used to verify that a manufactured part meets its engineering and design requirements."
+    - question: "What is included in a first article inspection?"
+      answer: "An FAI typically includes dimensional measurements, material and process information, inspection results, and traceability records required by the applicable customer or industry requirements."
+    - question: "When is a first article inspection required?"
+      answer: "FAI is commonly required for new parts, significant design or process changes, new tooling or equipment, or production at a new location. Specific requirements depend on the customer, contract, and applicable standards."
+    - question: "Does AS9100 require first article inspection?"
+      answer: "No. AS9100 does not specifically require FAI. It may be required by a customer, contract, drawing, or applicable standard such as AS9102."
+    - question: "What is the difference between FAI and PPAP?"
+      answer: "FAI verifies that a part meets its specified design requirements, while PPAP provides broader evidence that the production process can consistently produce conforming parts. FAI is common in aerospace, while PPAP is widely used in automotive manufacturing."
 cta:
   type: contact
   title: "Connect First Article Inspection Data with FlowFuse"
