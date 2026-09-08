@@ -306,7 +306,7 @@ There are exactly five CTA destinations, each with its own component with **fixe
 
 | Component | href | Fixed label |
 |---|---|---|
-| `nuxt/components/CtaSignUp.vue` | `{site.appURL}/account/create` | "Free Trial" on `position="main-nav"`/`"mobile-cta-bar"`, else "Try it out" |
+| `nuxt/components/CtaSignUp.vue` | `{site.appURL}/account/create` | "From FlowFuse Cloud" on `position="start-building-menu"` (its row in the header's Start building menu), "Free Trial" on `position="mobile-cta-bar"`, else "Try it out" |
 | `nuxt/components/CtaSignIn.vue` | `site.appURL` | "Sign In" |
 | `nuxt/components/CtaContactUs.vue` | `/contact-us/` | "Contact Us" |
 | `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Book a Demo" |

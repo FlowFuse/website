@@ -4,7 +4,9 @@
         "hrefSuffix": "/account/create",
         "label": "Try it out",
         "navLabel": "Free Trial",
-        "navPositions": ["main-nav", "mobile-cta-bar"]
+        "navPositions": ["mobile-cta-bar"],
+        "menuLabel": "From FlowFuse Cloud",
+        "menuPositions": ["start-building-menu"]
     },
     "signIn": {
         "event": "cta-sign-in",

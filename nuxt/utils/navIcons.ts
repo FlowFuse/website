@@ -27,6 +27,7 @@ import iCheckBadge from '../../src/_includes/components/icons/check-badge.svg?ra
 import iChip from '../../src/_includes/components/icons/chip.svg?raw'
 import iCircleStack from '../../src/_includes/components/icons/circle-stack.svg?raw'
 import iCodeBracket from '../../src/_includes/components/icons/code-bracket.svg?raw'
+import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
 import iCog from '../../src/_includes/components/icons/cog.svg?raw'
 import iCog6Tooth from '../../src/_includes/components/icons/cog-6-tooth.svg?raw'
 import iDashboard from '../../src/_includes/components/icons/dashboard.svg?raw'
@@ -77,6 +78,7 @@ export const navIcons: Record<string, string> = {
     'check-badge': iCheckBadge,
     'chip': iChip,
     'circle-stack': iCircleStack,
+    'cloud': iCloud,
     'code-bracket': iCodeBracket,
     'cog': iCog,
     'cog-6-tooth': iCog6Tooth,

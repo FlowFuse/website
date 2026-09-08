@@ -17,10 +17,14 @@ export const CTA_DESTINATIONS = {
         // Copy varies by placement, per the PostHog CTA analysis: the nav's
         // sitewide "Free Trial" and everywhere else's "Try it out" were the
         // two highest-volume variants for this destination, each proven in
-        // its own context.
+        // its own context. The third variant reads as one row of the header's
+        // "Start building" menu, where the other rows name the other two
+        // places a first instance can live, so it names this one.
         label: 'Try it out',
         navLabel: 'Free Trial',
-        navPositions: ['main-nav', 'mobile-cta-bar'],
+        navPositions: ['mobile-cta-bar'],
+        menuLabel: 'From FlowFuse Cloud',
+        menuPositions: ['start-building-menu'],
     },
     signIn: {
         component: 'CtaSignIn',

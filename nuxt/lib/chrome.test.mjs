@@ -12,18 +12,25 @@ const repo = join(dirname(fileURLToPath(import.meta.url)), '..', '..')
 const chrome = JSON.parse(readFileSync(join(repo, 'src/_data/chrome.json'), 'utf8'))
 
 const navLinks = chrome.header.dropdowns.flatMap(d => d.columns.flatMap(c => c.links))
+// A "Start building" row is either a reserved CTA destination (no href of its
+// own - ctaDestinations.json holds it) or an ordinary page link.
+const startBuildingLinks = chrome.header.startBuilding.items.filter(i => i.href)
 const footerLinks = [
     ...chrome.footer.sections.flatMap(s => s.groups.flatMap(g => g.links)),
     ...chrome.footer.company.grid.flatMap(g => g.links),
     ...chrome.footer.company.trailing.links,
 ]
-const allLinks = [...navLinks, ...chrome.header.direct, ...footerLinks]
+const allLinks = [...navLinks, ...chrome.header.direct, ...startBuildingLinks, ...footerLinks]
+
+// Every row that draws an icon, whichever list it came from - the two guards
+// below are about the icon set, not about where the link points.
+const iconRows = [...navLinks, ...chrome.header.startBuilding.items]
 
 test('every icon key resolves to an icon file', () => {
-    for (const { icon, label } of navLinks) {
-        assert.ok(icon, `${label} has no icon`)
+    for (const { icon, label, cta } of iconRows) {
+        assert.ok(icon, `${label || cta} has no icon`)
         assert.ok(existsSync(join(repo, `src/_includes/components/icons/${icon}.svg`)),
-            `${label} points at a missing icon: ${icon}.svg`)
+            `${label || cta} points at a missing icon: ${icon}.svg`)
     }
 })
 
@@ -31,9 +38,9 @@ test('every icon key is in the Nuxt icon map', () => {
     // Eleventy loads icons off disk by name, Nuxt needs an explicit import.
     const map = readFileSync(join(repo, 'nuxt/utils/navIcons.ts'), 'utf8')
     const covered = new Set([...map.matchAll(/^\s*'([^']+)':/gm)].map(m => m[1]))
-    for (const { icon, label } of navLinks) {
+    for (const { icon, label, cta } of iconRows) {
         assert.ok(covered.has(icon),
-            `${label} uses icon "${icon}" - add it to nuxt/utils/navIcons.ts`)
+            `${label || cta} uses icon "${icon}" - add it to nuxt/utils/navIcons.ts`)
     }
 })
 
@@ -126,6 +133,45 @@ test('every dropdown column reserves enough grid rows for its links', () => {
             `${dd.label} declares ${megaRows[1]} mega rows but its tallest column needs `
             + `${tallest} - raise the repeat() count in src/_data/chrome.json`)
     }
+})
+
+test('every Start building row names exactly one destination', () => {
+    // The menu is the header's primary action and each row is one way to get a
+    // first instance running, so a row that resolves to nothing (or to two
+    // things) is a dead primary action rather than a cosmetic slip. A `cta` row
+    // deliberately carries no label or href: ctaDestinations.json owns that
+    // row's copy, URL and PostHog event, which is what keeps every sign-up
+    // click on a single event name across both renderers.
+    const ctaDestinations = JSON.parse(
+        readFileSync(join(repo, 'src/_data/ctaDestinations.json'), 'utf8'))
+    const items = chrome.header.startBuilding.items
+    assert.ok(items.length > 0, 'the Start building menu has no rows')
+    assert.ok(chrome.header.startBuilding.label, 'the Start building menu has no trigger label')
+    for (const item of items) {
+        if (item.cta) {
+            assert.ok(!item.href && !item.label,
+                `Start building row "${item.cta}" also sets a label or href - `
+                + 'a cta row takes both from src/_data/ctaDestinations.json')
+            assert.ok(ctaDestinations[item.cta],
+                `Start building row names cta "${item.cta}", which is not in `
+                + 'src/_data/ctaDestinations.json')
+        } else {
+            assert.ok(item.href && item.label,
+                `Start building row ${JSON.stringify(item)} needs both a label and an href`)
+        }
+    }
+})
+
+test('the Start building menu is rendered by both renderers', () => {
+    // Two independent templates draw this menu, and the Eleventy one is an
+    // include rather than a component import, so nothing but a check like this
+    // notices if one of them is dropped and the header quietly loses its
+    // primary action on half the site.
+    const eleventy = readFileSync(join(repo, 'src/_includes/layouts/base.njk'), 'utf8')
+    const nuxtHeader = readFileSync(join(repo, 'nuxt/components/AppHeader.vue'), 'utf8')
+    // Once for the desktop CTA cluster, once for the mobile drawer.
+    assert.equal(eleventy.match(/components\/nav-start-building\.njk/g)?.length, 2)
+    assert.equal(nuxtHeader.match(/<NavStartBuilding/g)?.length, 2)
 })
 
 test('the footer bottom row keeps its two alignment slots', () => {

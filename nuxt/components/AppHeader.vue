@@ -176,6 +176,11 @@ onMounted(() => {
         <!-- Direct links -->
         <li v-for="item in chrome.header.direct" :key="item.label" :class="item.classes"><a class="flex items-center gap-2" :href="item.href"><span class="ff-nav-label">{{ item.label }}</span></a></li>
 
+        <!-- Mobile copy of the Start building menu: the CTA cluster below is
+             hidden under md, so the drawer is where these three rows live on a
+             phone. -->
+        <NavStartBuilding class="md:hidden" />
+
         <!-- More overflow (populated by JS) -->
         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
           <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
@@ -185,7 +190,11 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-        <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
+        <!-- Primary action: a menu, not a single link, because a first instance
+             can start on Cloud, on the visitor's own edge hardware, or from the
+             AI agent they already use, and only the first of the three used to
+             be advertised here. -->
+        <NavStartBuilding class="hidden md:flex" />
         <li class="flex">
           <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
         </li>

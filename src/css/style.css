@@ -3138,21 +3138,21 @@ lite-youtube::before {
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"] .ff-nav-label {
     color: #6b7280;
 }
-/* Free Trial keeps its brand-purple colour at rest (it carries a .ff-nav-label
-   for the animated underline, which would otherwise render it grey). */
-.ff-website header .ff-nav-freetrial .ff-nav-label {
-    color: var(--color-indigo-600);
-}
-/* The Free Trial CTA sits in the right-hand actions <ul>, outside #nav-content,
-   so the top-level desktop underline rule (#nav-content > li > a::after) never
-   reaches it and hover showed no line. Give its label the same left-to-right
-   animated underline on desktop; mobile is already covered by the shared
-   .ff-nav-label::after rule inside the max-width:767px block above. */
+/* "Start building" is a top-level nav item that happens to sit in the
+   right-hand actions <ul> rather than in #nav-content, so none of the
+   `#nav-content > li` rules reach it and it would otherwise rest, hover and
+   underline unlike every item beside it. This restates that treatment for it:
+   same rest colour (inherited, not the brand purple the Free Trial link it
+   replaced used), same left-to-right animated underline, same :hover and
+   :focus-within triggers. Desktop only - under md the menu renders as an
+   ordinary drawer section, which the shared .ff-nav-label rules in the
+   max-width:767px block already cover. Scoped with `>` to the trigger's own
+   label, so the rows inside the panel stay ordinary panel links. */
 @media (min-width: 768px) {
-    .ff-website header .ff-nav-freetrial .ff-nav-label {
+    .ff-website header .ff-nav-startbuilding > span > .ff-nav-label {
         position: relative;
     }
-    .ff-website header .ff-nav-freetrial .ff-nav-label::after {
+    .ff-website header .ff-nav-startbuilding > span > .ff-nav-label::after {
         content: "";
         position: absolute;
         left: 0;
@@ -3164,15 +3164,79 @@ lite-youtube::before {
         transform-origin: left center;
         transition: transform 0.22s ease;
     }
-    .ff-website header .ff-nav-freetrial:hover .ff-nav-label::after,
-    .ff-website header .ff-nav-freetrial:focus-visible .ff-nav-label::after {
+    .ff-website header .ff-nav-startbuilding:hover > span > .ff-nav-label::after,
+    .ff-website header .ff-nav-startbuilding:focus-within > span > .ff-nav-label::after {
         transform: scaleX(1);
     }
 }
 @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
-    .ff-website header .ff-nav-freetrial .ff-nav-label::after {
+    .ff-website header .ff-nav-startbuilding > span > .ff-nav-label::after {
         transition: none;
     }
+}
+/* The "Start building" panel is a content-width mega panel: the same flush,
+   white, square-cornered surface as ul.mega, with the same left-aligned icon
+   rows, but sized to its three rows instead of the viewport - it hangs off the
+   right-hand action cluster rather than the centred nav, so full-bleed would be
+   a 1440px panel to hold three links. Separated rows, because each row is a
+   different way to start rather than one list of related pages.
+
+   Stated outright here, and unlayered, for two reasons. The shared
+   .ff-nav-dropdown rules draw the OTHER panel idiom (the floating rounded card
+   behind #nav-more-list), so they have to be overridden rather than extended.
+   And the rows do not all have the same DOM: one is a CtaSignUp, so it arrives
+   carrying the nav-text variant's own `p-0` utility (plus, on Nuxt, UButton's
+   inline-flex root), and Tailwind's utilities layer comes after the @layer
+   components block, so a layered rule would lose to it and that row alone would
+   sit flush while its siblings kept the panel's padding. */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-startbuilding > ul {
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-radius: 0;
+        background-color: #fff;
+        /* The border-top is the line between the header and the panel. ul.mega
+           draws its own for the same reason: the header's bottom edge stops
+           where the panel starts, so without it the two whites run together and
+           the menu looks like it is floating in the header. */
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 18px 28px -18px rgb(15 23 42 / 0.22);
+    }
+    /* ul.mega drops the pointer arrow for the same reason: a panel flush against
+       the header has nothing to point across. */
+    .ff-website header .ff-nav-startbuilding > ul:before {
+        content: none;
+    }
+    /* Open and close exactly like a mega panel: a hover-intent delay so brushing
+       across the header on the way to Book a Demo does not flash the menu open,
+       and an opacity fade rather than the base dropdown's max-height reveal. */
+    .ff-website header .ff-nav-startbuilding > ul {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.12s ease, visibility 0s linear 0.18s;
+    }
+    .ff-website header .ff-nav-startbuilding:hover > ul,
+    .ff-website header .ff-nav-startbuilding:focus-within > ul {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.15s ease 0.18s, visibility 0s linear 0.18s;
+    }
+}
+.ff-website header .ff-nav-startbuilding-panel li {
+    background-color: #fff;
+    text-align: left;
+}
+.ff-website header .ff-nav-startbuilding-panel li + li {
+    border-top: 1px solid var(--color-gray-200);
+}
+.ff-website header .ff-nav-startbuilding-panel li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    text-align: left;
 }
 /* on hover they behave like every other panel link (text-indigo-700),
    which also colors the currentColor underline */

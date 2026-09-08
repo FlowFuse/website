@@ -217,6 +217,10 @@ eleventyComputed:
                         {%- for item in chrome.header.direct %}
                         {% navoption item.label, item.href, 0, false, false, item.classes %}{% endnavoption %}
                         {%- endfor %}
+                        {#- Mobile copy of the same menu: the CTA cluster above is
+                            hidden under md, so the drawer is where these three rows
+                            live on a phone. -#}
+                        {% set sbClasses = 'md:hidden' %}{% include "components/nav-start-building.njk" %}
                         <!-- More dropdown for overflow items -->
                         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
                             <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
@@ -225,7 +229,11 @@ eleventyComputed:
                     </ul>
                     <!-- CTAs -->
                     <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-			            <li class="hidden md:flex">{{ ctaSignUp(site, 'nav-text', 'main-nav', padded=true, extraClass='ff-nav-freetrial text-base') }}</li>
+                        {#- Primary action: a menu, not a single link, because a first
+                            instance can start on Cloud, on the visitor's own edge
+                            hardware, or from the AI agent they already use, and only
+                            the first of the three used to be advertised here. -#}
+                        {% set sbClasses = 'hidden md:flex' %}{% include "components/nav-start-building.njk" %}
                         <li class="flex">
                             {{ ctaBookDemo('primary', 'main-nav', extraClass='ml-2 text-sm inline-flex whitespace-nowrap') }}
                         </li>

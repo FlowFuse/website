@@ -401,7 +401,27 @@
                 "href": "/pricing/",
                 "classes": "nav-collapsible"
             }
-        ]
+        ],
+        "startBuilding": {
+            "_comment": "The header's primary action, replacing the single 'Free Trial' link: one entry per way of getting started, because the first instance a visitor creates can live in three different places and the nav only advertised one of them. An item carries EITHER a 'cta' key naming a reserved destination in ctaDestinations.json (which owns that row's copy, href and PostHog event, so the sign-up funnel stays one event) OR its own label and href for an ordinary page.",
+            "label": "Start building",
+            "items": [
+                {
+                    "cta": "signUp",
+                    "icon": "cloud"
+                },
+                {
+                    "label": "From your edge hardware",
+                    "href": "/platform/device-agent/",
+                    "icon": "device-agent"
+                },
+                {
+                    "label": "From your personal AI agent",
+                    "href": "/ai/",
+                    "icon": "sparkles"
+                }
+            ]
+        }
     },
     "footer": {
         "sections": [
