@@ -1,17 +1,22 @@
 import assert from 'node:assert/strict'
 import { mkdtempSync, readFileSync, readdirSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import test from 'node:test'
 
 import {
     extractHelp,
     fetchCoreNodeHelp,
+    foldUseCaseHeadings,
     listNodes,
     renderCoreNodePage,
     slugFor,
     syncCoreNodes,
 } from './core-nodes-sync.mjs'
+import { processLibraryMarkdown } from './library-markdown.mjs'
+
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
 
 const CATALOGUE = {
     common: [{ xpath: 'inject', name: 'Inject', file: '20-inject', description: 'Injects a message', keywords: 'inject' }],
@@ -147,6 +152,56 @@ test("a node page's browser title is the one the Eleventy page it replaces had",
 
     assert.match(out, /metaTitle: "Node-RED - MQTT In Node"/)
     assert.match(out, /navTitle: "MQTT In"/)
+})
+
+test('a use-case include cannot add a second H1 to the page', () => {
+    // mqtt-out-use-case.md opens with `# {{ meta.title }}`, which resolves to the node's
+    // own name, so the page rendered "MQTT Out" as an H1 twice in a row. Eleventy had the
+    // same duplicate but empty, which is why it survived this long.
+    assert.equal(
+        foldUseCaseHeadings('# MQTT Out\n\nReach for this to publish.\n', 'MQTT Out'),
+        'Reach for this to publish.\n'
+    )
+
+    // An H1 that says something else is a section of the page, not its title.
+    assert.equal(
+        foldUseCaseHeadings('# What is TCP-Out Nodes in Node-RED ?\n\nbody\n', 'TCP Out'),
+        '## What is TCP-Out Nodes in Node-RED ?\n\nbody\n'
+    )
+
+    // A `#` inside a fence is a comment in an example, not a heading.
+    assert.equal(
+        foldUseCaseHeadings('```bash\n# install it\n```\n', 'Exec'),
+        '```bash\n# install it\n```\n'
+    )
+})
+
+test('every real use-case include leaves the assembled page with exactly one H1', () => {
+    // Over the committed includes rather than a fixture: the duplication was in the
+    // content, not the code, and only two of the files had it.
+    const useCaseDir = join(repoRoot, 'src/_includes/core-nodes')
+    const offenders = []
+
+    for (const file of readdirSync(useCaseDir).filter(f => f.endsWith('-use-case.md'))) {
+        const name = file.replace(/-use-case\.md$/, '')
+        const page = renderCoreNodePage(
+            { name, description: 'd' },
+            {
+                useCase: foldUseCaseHeadings(
+                    processLibraryMarkdown(readFileSync(join(useCaseDir, file), 'utf8'), { title: name }),
+                    name),
+                help: '<p>help</p>',
+                navOrder: 1,
+            }
+        )
+        // Outside fenced blocks, so a `#` comment in an example does not count.
+        const h1s = page
+            .split(/^```[\s\S]*?^```/gm)
+            .flatMap(part => part.match(/^# .+$/gm) || [])
+        if (h1s.length !== 1) offenders.push(`${file}: ${h1s.length} H1s (${h1s.join(' | ')})`)
+    }
+
+    assert.deepEqual(offenders, [], offenders.join('\n'))
 })
 
 test('a sync missing any node help fails loudly and names the node', () => {

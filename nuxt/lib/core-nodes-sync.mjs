@@ -138,6 +138,36 @@ export async function fetchCoreNodeHelp ({ coreNodes, fetchImpl = fetch, retries
 }
 
 /**
+ * Fold a use-case include's own H1s under the H1 this generator emits.
+ *
+ * The page is assembled here, so it owns the `# <node name>` heading; a use-case file that
+ * also opens with one leaves the page with two. `mqtt-in-use-case.md` and
+ * `mqtt-out-use-case.md` start with `# {{ meta.title }}`, which the library transforms
+ * resolve to the node's own name, so those two rendered the node name twice in a row.
+ *
+ * On Eleventy the same duplicate H1 was there but empty (`meta.title` was undefined on a
+ * paginated core-node page), so it was invisible and stayed. Resolving the interpolation
+ * made it visible, which is how the review caught it.
+ *
+ * A heading that just repeats the node name is dropped rather than demoted, since it says
+ * nothing the H1 above it has not. Any other H1 becomes an H2, which is what it should
+ * have been inside an include: a section of the page, not the page's title. Fenced blocks
+ * are left byte for byte, so a `#` comment in an example is not a heading.
+ */
+export function foldUseCaseHeadings (content, nodeName) {
+    const normaliseHeading = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+    const isNodeName = (text) => normaliseHeading(text) === normaliseHeading(nodeName)
+
+    return content.split(/(^```[\s\S]*?^```)/gm).map((block, index) => {
+        if (index % 2 === 1) return block
+
+        return block
+            .replace(/^# +(.+?)[ \t]*$\n?(?:[ \t]*\n)*/gm, (_match, text) =>
+                isNodeName(text) ? '' : `## ${text}\n\n`)
+    }).join('')
+}
+
+/**
  * One palette category: the sidebar group its nodes sit in, and a page listing them.
  *
  * The categories are a level of the tree rather than headings on one page because
@@ -290,7 +320,9 @@ ${renderCategorySections(nodes)}
         for (const node of inCategory) {
             const useCasePath = join(repoRoot, 'src/_includes/core-nodes', `${node.slug}-use-case.md`)
             const useCase = existsSync(useCasePath)
-                ? processLibraryMarkdown(readFileSync(useCasePath, 'utf8'), { title: node.name })
+                ? foldUseCaseHeadings(
+                    processLibraryMarkdown(readFileSync(useCasePath, 'utf8'), { title: node.name }),
+                    node.name)
                 : ''
             const dest = join(categoryDir, `${node.slug}.md`)
             mkdirSync(dirname(dest), { recursive: true })
