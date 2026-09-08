@@ -1,0 +1,16 @@
+{% from "components/cta/cta-button.njk" import ctaButton %}
+{#
+  Fixed destination, copy, and tracked event - only the look (variant) and
+  where it lives on the page (position) vary per insertion. Mirrors
+  nuxt/components/CtaSignIn.vue.
+
+  Event/href-suffix/label come from src/_data/ctaDestinations.json - the
+  single source of truth shared with the Nuxt component.
+
+  First 11ty usage to give the Sign In link any tracking at all - it
+  previously had no capture() call anywhere on the site.
+#}
+{% macro ctaSignIn(site, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{%- set dest = ctaDestinations.signIn -%}
+{{ ctaButton(dest.event, site.appURL ~ dest.hrefSuffix, dest.label, variant, position, color, icon, uppercase, padded, extraClass) }}
+{%- endmacro %}

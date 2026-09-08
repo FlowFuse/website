@@ -1,0 +1,25 @@
+{% from "components/cta/cta-button.njk" import ctaButton %}
+{#
+  Fixed destination, copy, and tracked event - only the look (variant) and
+  where it lives on the page (position) vary per insertion. Mirrors
+  nuxt/components/CtaSignUp.vue.
+
+  Event/href-suffix/label all come from src/_data/ctaDestinations.json - the
+  single source of truth shared with the Nuxt component, which imports the
+  same file - so the two never drift apart on those without both being
+  updated at once.
+
+  `site` is passed explicitly (rather than relied on via `with context`
+  import) so this macro works the same regardless of how it's imported.
+  `ctaDestinations` isn't a parameter: it's a Nunjucks global (see
+  .eleventy.js), so it doesn't need one.
+#}
+{% macro ctaSignUp(site, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{#- Copy varies by placement, per the PostHog CTA analysis referenced in
+    CtaSignUp.vue: "Free Trial" in the nav, "Try it out" everywhere else.
+    Fixed lookup, not a caller-supplied prop, so callers can't reintroduce
+    arbitrary copy variants - only `position` decides. -#}
+{%- set dest = ctaDestinations.signUp -%}
+{%- set label = dest.navLabel if position in dest.navPositions else dest.label -%}
+{{ ctaButton(dest.event, site.appURL ~ dest.hrefSuffix, label, variant, position, color, icon, uppercase, padded, extraClass) }}
+{%- endmacro %}

@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div class="w-full">
 
     <!-- ============================================================
@@ -25,21 +27,8 @@ layout: default
                     <div class="md:mt-3 gap-2 hidden md:flex md:flex-col md:items-start md:justify-start">
                         {% if hero.subCta %}<p class="text-sm text-gray-600 m-0 mb-1">{{ hero.subCta }}</p>{% endif %}
                         <div class="flex gap-4 items-center flex-row">
-                            <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
-                                href="{{ hero.primaryCtaLink }}"
-                                onclick="capture('cta-book-demo', {'position': 'hero', 'page': '{{ slug }}'})">
-                                <span class="text-base uppercase items-center">
-                                    {{ hero.primaryCta }}
-                                </span>
-                            </a>
-                            <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
-                                href="{{ hero.secondaryCtaLink }}"
-                                onclick="capture('cta-contact', {'position': 'hero', 'page': '{{ slug }}'})">
-                                <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                                {{ hero.secondaryCta }}
-                                {% include "components/icons/arrow-right.svg" %}
-                                </span>
-                            </a>
+                            {{ ctaBookDemo('highlight', 'hero', extraClass='min-h-[40px]') }}
+                            {{ ctaContactUs('ghost', 'hero', icon=true) }}
                         </div>
                     </div>
                 </div>
@@ -51,21 +40,8 @@ layout: default
                 <div class="flex flex-col md:hidden gap-3 mt-8 items-start">
                     {% if hero.subCta %}<p class="text-sm text-gray-600 m-0 mb-1">{{ hero.subCta }}</p>{% endif %}
                     <div class="flex flex-row gap-4 items-center justify-start flex-wrap">
-                        <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
-                            href="{{ hero.primaryCtaLink }}"
-                            onclick="capture('cta-book-demo', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
-                            <span class="text-base uppercase items-center">
-                                {{ hero.primaryCta }}
-                            </span>
-                        </a>
-                        <a class="ff-btn flex items-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800"
-                            href="{{ hero.secondaryCtaLink }}"
-                            onclick="capture('cta-contact', {'position': 'hero-mobile', 'page': '{{ slug }}'})">
-                            <span class="text-base uppercase items-center flex gap-2 uppercase items-center text-indigo-600 hover:text-indigo-800">
-                                {{ hero.secondaryCta }}
-                                {% include "components/icons/arrow-right.svg" %}
-                            </span>
-                        </a>
+                        {{ ctaBookDemo('highlight', 'hero-mobile', extraClass='min-h-[40px]') }}
+                        {{ ctaContactUs('ghost', 'hero-mobile', icon=true) }}
                     </div>
                 </div>
             </div>
@@ -209,11 +185,7 @@ layout: default
             <h3 class="mb-4 w-full text-center">{{ cta.title }}</h3>
             <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">{{ cta.description }}</p>
             <div class="flex justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase"
-                    href="{{ cta.buttonLink }}"
-                    onclick="capture('cta-book-demo', {'position': 'cta', 'page': '{{ slug }}'})">
-                    {{ cta.buttonText }}
-                </a>
+                {{ ctaBookDemo('highlight', 'cta', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>
