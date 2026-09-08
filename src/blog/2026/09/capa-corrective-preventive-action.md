@@ -1,10 +1,11 @@
 ---
-title: "CAPA: Corrective and Preventive Action Guide"
+title: "CAPA: Corrective and Preventive Action Process & Effectiveness"
+metaTitle: "CAPA: Corrective and Preventive Action Guide"
 subtitle: "What CAPA means, how corrective and preventive action differ, and how to verify an action actually worked."
 description: "Learn what CAPA means, how corrective and preventive actions work, common CAPA process steps and examples, and how to verify that an action was effective."
-date: 2026-09-01
+date: 2026-09-08
 authors: ["sumit-shinde"]
-image:
+image: /blog/2026/09/images/capa-corrective-and-preventive-action.png
 tags:
   - flowfuse
 tldr:
@@ -32,6 +33,9 @@ It's a core part of quality management in standards such as [ISO 9001](https://w
 
 This article explains the difference between corrective and preventive action, how each process works, where CAPA systems break down, and how [FlowFuse supports CAPA](#how-flowfuse-supports-capa) with connected production data.
 
+::cta-image{src="/blog/2026/09/images/capa-cta-1.png" alt="Connect production data to your CAPA process - explore FlowFuse" cta="sign-up"}
+::
+
 ## What Is Corrective Action and Preventive Action?
 
 Corrective action is the action taken to eliminate the cause of an existing nonconformity and prevent it from recurring.
@@ -43,6 +47,8 @@ Under ISO 9001:2015, corrective action is addressed in **Clause 10.2**. Preventi
 ### A Simple Example
 
 Say a machine's cutting tool wears down and starts producing parts outside tolerance. Replacing the worn tool and changing the maintenance interval to prevent the same failure from recurring is corrective action because it addresses an actual defect and its cause.
+
+![Diagram comparing corrective action, taken after a torque deviation is found out of spec, with preventive action, taken after monitoring shows torque drifting toward the lower limit](./images/corrective-vs-preventive.png){data-zoomable}
 
 If a technician notices during a routine check that a different tool on a similar machine is wearing faster than expected and replaces it before it produces a bad part, that's preventive action. No defect has occurred; the action addresses a potential failure.
 
@@ -112,6 +118,9 @@ A CAPA process can look complete on paper and still fail to solve the underlying
 Even when the right action is identified, closing the CAPA without objective evidence can make it difficult to determine whether the change actually worked.
 
 A strong CAPA process needs clear ownership, an evidence-based investigation, and a defined effectiveness check. Production data can support this. For example, [SPC charts](/blog/2025/07/quality-control-automation-spc-charts/) built from live process data can show whether a corrective action actually shifted a process back into control.
+
+::cta-image{src="/blog/2026/09/images/capa-cta-2.png" alt="See what data-driven CAPA could look like - talk to the FlowFuse team" cta="demo"}
+::
 
 ## How FlowFuse Supports CAPA
 
