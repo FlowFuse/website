@@ -28,7 +28,7 @@ cta:
 tldr: "First Article Inspection (FAI) verifies that a newly manufactured part meets its engineering requirements. Learn when FAI is required, how the process works, what an FAI report includes, and how it differs from PPAP."
 ---
 
-Before full-scale production, [automotive manufacturers](/landing/automotive/) need to verify that a part can be produced according to its engineering requirements. First Article Inspection (FAI) provides documented evidence that a part produced using the intended manufacturing process conforms to its engineering drawing, specifications, and other applicable requirements.
+Before full-scale production, [automotive manufacturers](/industries/automotive/) need to verify that a part can be produced according to its engineering requirements. First Article Inspection (FAI) provides documented evidence that a part produced using the intended manufacturing process conforms to its engineering drawing, specifications, and other applicable requirements.
 
 <!--more-->
 
