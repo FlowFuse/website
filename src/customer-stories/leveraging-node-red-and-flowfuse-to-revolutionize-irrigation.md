@@ -55,7 +55,7 @@ Recognizing the need for a technological overhaul, PIDD embraced Node-RED, a flo
 
 #### Evolving Hardware Landscape
 
-Initially relying on [Raspberry Pi](/node-red/hardware/raspberry-pi-4/) devices, PIDD faced challenges related to heat, especially in Arizona's high-temperature environment. To address this, they decided to transition to [PLCs](/blog/2025/12/what-is-plc/), with the Groov EPIC system being the preferred choice for improved stability in industrial use.
+Initially relying on [Raspberry Pi](/docs/node-red/hardware/raspberry-pi-4/) devices, PIDD faced challenges related to heat, especially in Arizona's high-temperature environment. To address this, they decided to transition to [PLCs](/blog/2025/12/what-is-plc/), with the Groov EPIC system being the preferred choice for improved stability in industrial use.
 
 #### Impact on Operations
 
@@ -69,7 +69,7 @@ The adoption of Node-RED and FlowFuse had a profound impact on PIDD's operations
 PIDD's forward-thinking approach extends to their future plans:
 - Transition to PLCs: The organization is moving towards PLCs, specifically the Groov EPIC system used by [Opto 22](/customer-stories/opto22-embraces-node-red/), for enhanced stability in challenging environmental conditions.
 - Command and Control with Ignition: Consideration is given to using [Ignition](/vs/ignition/) for command and control, complemented by [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) for data communication.
-- Data Retention Strategy: PIDD aims to implement a robust data retention strategy, possibly involving relational databases like [MySQL](/node-red/database/mysql/) or [Postgres](/node-red/database/postgresql/), to store and retrieve historical data.
+- Data Retention Strategy: PIDD aims to implement a robust data retention strategy, possibly involving relational databases like [MySQL](/docs/node-red/database/mysql/) or [Postgres](/docs/node-red/database/postgresql/), to store and retrieve historical data.
 
 #### Conclusion
 

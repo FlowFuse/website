@@ -41,7 +41,7 @@ Before you begin, ensure you have the following:
 
 * **A running FlowFuse Enterprise instance.** If you do not have one, [contact us](/contact-us/) to discuss Enterprise options and get started.
 
-* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed**. This will add the [MCP nodes](/node-red/flowfuse/mcp/) to your Node palette in your instance editor.
+* **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed**. This will add the [MCP nodes](/docs/flowfuse-nodes/mcp/) to your Node palette in your instance editor.
 
 > **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are only available on the Enterprise tier.
 

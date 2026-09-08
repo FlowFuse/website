@@ -64,7 +64,7 @@ export const CUSTOM_CTA_DESTINATIONS = {
     // Event name preserved from the hand-written capture() call this replaces
     // on the OPC UA integration page (see the note above on migrated events).
     opcuaCertifiedNodeDocs: {
-        href: '/node-red/flowfuse/edge/opcua/',
+        href: '/docs/flowfuse-nodes/edge/opcua/',
         event: 'cta-certified-opcua-node',
     },
 } as const

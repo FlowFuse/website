@@ -29,7 +29,7 @@ Each SE stage owns a portion of the workbook:
 | Stage | Portion of the workbook |
 |-------|-------------------------|
 | **[Discovery](/handbook/sales/meetings/discovery/)** | The **use case** — the pain. May surface candidate apps, but they don't take form yet. |
-| **[Demo](/handbook/sales/meetings/demo/)** | No workbook portion directly — introduces the [Application Guide](/application-guide/flowfuse/overview/), establishing the **fundamentals** and **app delivery methods** via a relatable use-case hook, so the apps *can* take form in Solution. |
+| **[Demo](/handbook/sales/meetings/demo/)** | No workbook portion directly — introduces the [Application Guide](/docs/application-guide/), establishing the **fundamentals** and **app delivery methods** via a relatable use-case hook, so the apps *can* take form in Solution. |
 | **[Solution](/handbook/sales/meetings/solution/)** | Tailors the guide to the customer's environment (**app pattern, data plane, architecture**), then fills the **apps**, **scoping criteria / pass signals** and **plan** — the bulk of it. |
 | **[PoV / Validate](/handbook/sales/meetings/pov/)** | **Executes** the workbook: proves each criterion, runs the plan, works the Questions. |
 

@@ -162,7 +162,7 @@ It has tons of nodes for almost every database and cloud storage system you'll f
 
 This includes direct **connections** to normal databases like [MySQL](https://flows.nodered.org/node/node-red-node-mysql) and [PostgreSQL](https://flows.nodered.org/node/node-red-contrib-postgresql) for your organized production data.
 
-It also has special nodes for time-series databases like [InfluxDB](https://flows.nodered.org/node/node-red-contrib-influxdb) and [TimescaleDB](/node-red/database/timescaledb/) to handle fast sensor and machine data.
+It also has special nodes for time-series databases like [InfluxDB](https://flows.nodered.org/node/node-red-contrib-influxdb) and [TimescaleDB](/docs/node-red/database/timescaledb/) to handle fast sensor and machine data.
 
 Plus, FlowFuse **connects** to big Data Lakes and Cloud Storage services like [Amazon S3](https://flows.nodered.org/node/node-red-node-aws), [Google Cloud Storage](https://flows.nodered.org/node/node-red-contrib-google-cloud), and [Microsoft Azure](https://flows.nodered.org/node/node-red-contrib-azure-storage).
 

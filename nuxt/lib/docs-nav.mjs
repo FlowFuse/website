@@ -10,6 +10,33 @@
 
 import { findPageBreadcrumb } from '@nuxt/content/utils'
 
+const stripSlash = path => (path.endsWith('/') ? path.slice(0, -1) : path) || '/'
+
+/**
+ * Give each node the frontmatter of the redirect stub sitting at its path, if there is one.
+ *
+ * `link: false` marks it as a label rather than a destination: nuxt/utils/navigationMenu.ts
+ * omits `to` for those, so the branch is still titled, grouped and expandable without the
+ * sidebar ever pointing at a URL that 301s. The node keeps its own path, which is what the
+ * menu's auto-expand and the breadcrumb trail match on.
+ *
+ * @param {Array<{path: string, title: string, group?: string, groupOrder?: number, order: number, children: Array}>} nodes
+ * @param {Map<string, {navTitle?: string|null, title?: string|null, navGroup?: string|null, navGroupOrder?: number|null, navOrder?: number|null}>} stubs
+ */
+function applyStubFrontmatter (nodes, stubs) {
+    for (const node of nodes) {
+        const stub = stubs.get(stripSlash(node.path))
+        if (stub) {
+            node.title = stub.navTitle || stub.title || node.title
+            if (stub.navGroup != null) node.group = stub.navGroup
+            if (stub.navGroupOrder != null) node.groupOrder = stub.navGroupOrder
+            if (stub.navOrder != null) node.order = stub.navOrder
+            node.link = false
+        }
+        applyStubFrontmatter(node.children, stubs)
+    }
+}
+
 /**
  * @param {Array<{path: string, title?: string|null, navTitle?: string|null, navOrder?: number|null, navGroup?: string|null, navGroupOrder?: number|null, redirect?: {to: string}|null}>} pages
  */
@@ -19,8 +46,24 @@ export function buildDocsNav (pages) {
     // A page whose only purpose is `redirect: { to }` (e.g. FlowFuse/flowfuse's
     // docs/admin/licensing.md and docs/community-support.md) has no content of its own to
     // link to from the sidebar. Rendering it as a nav entry means every single docs page
-    // gets flagged by nuxt-link-checker's `redirects` inspection, so it's left out.
-    const linkable = pages.filter(page => !page.redirect)
+    // gets flagged by nuxt-link-checker's `redirects` inspection, so it never becomes a
+    // link target.
+    //
+    // Its frontmatter still matters though. Most section index pages in FlowFuse/flowfuse
+    // are redirect stubs (docs/user, docs/install, docs/admin, docs/cloud, docs/device-agent,
+    // docs/hardware, docs/migration, docs/contribute), and each one carries the navGroup,
+    // navGroupOrder, navTitle and navOrder that its whole section is grouped, labelled and
+    // ranked by. Discarding the page discarded that too, so those sections were built only
+    // from the paths of their children: no group (they fell into "Other"), and titled by raw
+    // path segment ("user", "admin"). Three groups had every member stubbed and vanished
+    // entirely. So the metadata is kept here and applied to the node the children create,
+    // and only the link is withheld.
+    const linkable = []
+    const stubs = new Map()
+    for (const page of pages) {
+        if (page.redirect) stubs.set(stripSlash(page.path), page)
+        else linkable.push(page)
+    }
 
     const sorted = [...linkable].sort((a, b) => {
         const depthA = a.path.split('/').filter(Boolean).length
@@ -76,6 +119,9 @@ export function buildDocsNav (pages) {
     }
 
     const root = toDocsNavNodes(tree)
+    // Before grouping and sorting, which both read these fields.
+    applyStubFrontmatter(root, stubs)
+
     const docsRoot = root.find(n => n.path === '/docs')
     if (!docsRoot) return []
 
