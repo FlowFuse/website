@@ -203,7 +203,7 @@ reference costs a page its whole Node help section with nothing failing, which i
 
 **URL:** `/docs/{section}/{slug}/`  
 **Rendered by:** Nuxt — `nuxt/pages/docs/[...slug].vue` + `DocsLeftNav` component  
-**Local content:** `nuxt/content/docs/` (gitignored, build-generated — never edit, it is wiped every build). Both sources are copied into it: `nuxt/lib/docs-sync.mjs` brings in the flowfuse tree and `nuxt/lib/guides-sync.mjs` overlays `nuxt/content-guides/` on top (stamping each guide with an `editUrl`), so `@nuxt/content` sees one `docs` collection. A guide edit therefore only reaches a running dev server once that overlay re-runs: `npm run dev:docs` is the watcher that does it, and without it an edit under `nuxt/content-guides/` shows up on the page only after a restart.  
+**Local content:** `nuxt/content/docs/` (gitignored, build-generated — never edit, it is wiped every build) holds only the flowfuse tree, materialized by `nuxt/lib/docs-sync.mjs`. The guides are **not** copied into it: they are a second source of the `docs` collection, read straight out of `nuxt/content-guides/` (see `nuxt/content.config.ts`), so editing one shows up without a re-sync. `nuxt/lib/guides-sync.mjs` copies only their non-markdown assets, into `nuxt/public/docs/`, and fails the build on a path collision between the two sources.  
 **Local assets:** `nuxt/public/docs/` (images, etc.)
 
 A page's browser title is `metaTitle || navTitle || title` (`nuxt/lib/docs-page-title.mjs`).
