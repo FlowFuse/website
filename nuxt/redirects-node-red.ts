@@ -6,10 +6,10 @@
 // An explicit map also means a path that was never published cannot silently 301 into a
 // 404, which is what a path-preserving splat would do for every typo and stale deep link.
 //
-// The core-node entries are derived from src/_data/coreNodes.json, since those pages were
-// paginated out of that catalogue and never existed as files. They gain a category segment
-// on the way: the palette categories are a level of the sidebar again, so the Inject node
-// is /docs/node-red/core-nodes/common/inject/. A bare category path like
+// The core-node entries gain a category segment on the way: the palette categories are a
+// level of the tree again, so the Inject node is /docs/node-red/core-nodes/common/inject/.
+// Under Eleventy those pages were paginated out of a JSON catalogue and never existed as
+// files; they are ordinary content pages now. A bare category path like
 // /node-red/core-nodes/common/ was never a page under Eleventy - the .njk templates were
 // pagination-only - but it now has a real page to land on, so it is mapped rather than
 // left to 404. /node-red/core-nodes/function/ is the exception: that was the Function

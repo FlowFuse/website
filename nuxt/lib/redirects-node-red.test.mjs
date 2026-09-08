@@ -3,9 +3,9 @@
 // every way of breaking one is silent: a 301 into a 404 is a normal-looking response, and
 // the build has no idea a redirect target does not exist.
 //
-// The core-node half is derived from src/_data/coreNodes.json rather than authored, so it
-// goes stale on its own. Move a node between palette categories and the generated page
-// appears at a new path while the map keeps pointing at the old one, with nothing failing.
+// The core-node half maps an old flat URL onto a page that now sits under its palette
+// category, so it goes stale the moment a page moves between categories: the map keeps
+// pointing at the old path and nothing fails.
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
@@ -13,7 +13,6 @@ import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { CATEGORIES, listNodes } from './core-nodes-sync.mjs'
 import { GUIDES_SOURCE, listGuideFiles } from './guides-sync.mjs'
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
@@ -34,7 +33,7 @@ function siteRedirectSources () {
     return [...read('nuxt/redirects.ts').matchAll(/'(\/[^']+)':\s*\{\s*redirect:/g)].map(([, from]) => from)
 }
 
-/** Every /docs/ URL that will exist: the authored guides plus the generated core nodes. */
+/** Every /docs/ URL the authored guides produce. */
 function docsUrlsThatWillExist () {
     const urls = new Set()
 
@@ -43,14 +42,23 @@ function docsUrlsThatWillExist () {
         urls.add(withSlashes('/docs/' + relPath.replace(/(README|index)?\.md$/, '')))
     }
 
-    const coreNodes = JSON.parse(read('src/_data/coreNodes.json'))
-    urls.add('/docs/node-red/core-nodes/')
-    for (const node of listNodes(coreNodes)) {
-        urls.add(`/docs/node-red/core-nodes/${node.category}/`)
-        urls.add(`/docs/node-red/core-nodes/${node.category}/${node.slug}/`)
+    return urls
+}
+
+/** slug -> category, read off the core-node pages themselves. */
+function coreNodeCategories () {
+    const prefix = 'node-red/core-nodes/'
+    const bySlug = new Map()
+
+    for (const relPath of listGuideFiles(join(repoRoot, GUIDES_SOURCE))) {
+        if (!relPath.startsWith(prefix) || !relPath.endsWith('.md')) continue
+        const rest = relPath.slice(prefix.length)
+        const [category, file] = rest.split('/')
+        if (!file || file === 'index.md') continue
+        bySlug.set(file.replace(/\.md$/, ''), category)
     }
 
-    return urls
+    return bySlug
 }
 
 test('every redirect lands on a page that will exist', () => {
@@ -77,25 +85,23 @@ test('no redirect target is itself a redirect source', () => {
     assert.deepEqual(hops, [], hops.join('\n'))
 })
 
-test('the core-node entries match what the generator will actually write', () => {
-    // The half of the map that is derived rather than authored. A node moving between
-    // palette categories changes the page's path, and this is what notices.
-    const coreNodes = JSON.parse(read('src/_data/coreNodes.json'))
+test('the core-node entries point at where the pages actually are', () => {
+    // The one half of the map that is a function of something else: a node page's URL is
+    // its category directory plus its filename, so moving a page between categories
+    // strands the redirect on a path nothing serves.
+    const categories = coreNodeCategories()
     const expected = { '/node-red/core-nodes/': '/docs/node-red/core-nodes/' }
 
-    for (const category of Object.keys(CATEGORIES)) {
-        if (!listNodes(coreNodes).some(n => n.category === category)) continue
-        // /node-red/core-nodes/function/ is excluded on purpose: that was the Function
-        // NODE's own URL under Eleventy, so it keeps pointing at the node, one level down.
-        const nodeOwnsThisPath = listNodes(coreNodes).some(n => n.slug === category)
-        if (!nodeOwnsThisPath) {
-            expected[`/node-red/core-nodes/${category}/`] = `/docs/node-red/core-nodes/${category}/`
-        }
+    for (const [slug, category] of categories) {
+        expected[`/node-red/core-nodes/${slug}/`] = `/docs/node-red/core-nodes/${category}/${slug}/`
     }
 
-    for (const node of listNodes(coreNodes)) {
-        expected[`/node-red/core-nodes/${node.slug}/`] =
-            `/docs/node-red/core-nodes/${node.category}/${node.slug}/`
+    // A bare category path was never a page under Eleventy, but it is one now, so it is
+    // mapped too - except where a node already owns that URL. /node-red/core-nodes/function/
+    // was the Function NODE's own URL and keeps pointing at the node, one level down.
+    for (const category of new Set(categories.values())) {
+        if (categories.has(category)) continue
+        expected[`/node-red/core-nodes/${category}/`] = `/docs/node-red/core-nodes/${category}/`
     }
 
     const actual = Object.fromEntries(

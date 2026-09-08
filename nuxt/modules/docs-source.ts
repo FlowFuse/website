@@ -1,5 +1,5 @@
 import { defineNuxtModule, useLogger } from '@nuxt/kit'
-import { existsSync, readdirSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync } from 'node:fs'
 import { join, basename, dirname } from 'node:path'
 
 // Lives in nuxt/lib/, not alongside this file: Nuxt auto-registers everything in
@@ -9,7 +9,6 @@ import { syncDocs } from '../lib/docs-sync.mjs'
 // @ts-ignore same
 import { syncGuides } from '../lib/guides-sync.mjs'
 // @ts-ignore same
-import { fetchCoreNodeHelp, syncCoreNodes } from '../lib/core-nodes-sync.mjs'
 
 const logger = useLogger('docs-source')
 
@@ -35,19 +34,9 @@ export default defineNuxtModule({
 
         const repoRoot = dirname(nuxtRoot)
 
-        // Order matters twice over. syncDocs wipes content/docs before writing, so
-        // everything this repo contributes has to land after it. And syncGuides is the step
-        // that refuses a collision by name, comparing each guide against what is already on
-        // disk, so the generated core-node pages have to be there by the time it looks -
-        // otherwise a guide colliding with one of them slips past the friendly error and
-        // surfaces as @nuxt/content's raw primary-key failure instead.
+        // Order matters: syncDocs wipes content/docs before writing, so the guides overlaid
+        // from this repo have to land after it, not before.
         await syncDocs({ repoRoot, nuxtRoot, logger })
-        // The core-node pages were never files: under Eleventy they were paginated out of
-        // coreNodes.json, each fetching its help from the Node-RED repo. They still fetch
-        // per build, so the help is never a stale copy, but a node whose help cannot be
-        // found now fails the build instead of rendering an empty section.
-        const coreNodes = JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8'))
-        syncCoreNodes({ repoRoot, nuxtRoot, coreNodes, help: await fetchCoreNodeHelp({ coreNodes }), logger })
         syncGuides({ repoRoot, nuxtRoot, logger })
 
         if (!existsSync(contentDocsDir)) return

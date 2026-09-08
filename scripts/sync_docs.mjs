@@ -2,22 +2,16 @@
 // Populates nuxt/content/docs outside of a Nuxt build, so CI can resolve the docs before
 // installing dependencies. Uses only node builtins: this runs before `npm install`.
 
-import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { syncDocs } from '../nuxt/lib/docs-sync.mjs'
 import { syncGuides } from '../nuxt/lib/guides-sync.mjs'
-import { fetchCoreNodeHelp, syncCoreNodes } from '../nuxt/lib/core-nodes-sync.mjs'
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 
 const nuxtRoot = join(repoRoot, 'nuxt')
 
 await syncDocs({ repoRoot, nuxtRoot })
-// After syncDocs, which wipes the tree it writes into, and after syncCoreNodes, whose
-// pages syncGuides has to see to refuse a collision with them by name. Same order as
-// nuxt/modules/docs-source.ts, for the same reasons.
-const coreNodes = JSON.parse(readFileSync(join(repoRoot, 'src/_data/coreNodes.json'), 'utf8'))
-syncCoreNodes({ repoRoot, nuxtRoot, coreNodes, help: await fetchCoreNodeHelp({ coreNodes }) })
+// After syncDocs, which wipes the tree it writes into.
 syncGuides({ repoRoot, nuxtRoot })

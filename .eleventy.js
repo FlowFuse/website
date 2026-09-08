@@ -214,14 +214,6 @@ module.exports = function(eleventyConfig) {
         new FlowRenderer().renderFlows(JSON.parse(flow${flowId}.replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&')), { container: document.getElementById('nr-flow-${flowId}') })</script>`
     });
 
-    eleventyConfig.addGlobalData("coreNodesArray", () => {
-        // Read the JSON file with core nodes
-        const coreNodes = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', '_data', 'coreNodes.json'), 'utf-8'));
-
-        // Transform coreNodes object into an array
-        return Object.entries(coreNodes).map(([key, nodes]) => ({ key, nodes }));		
-    })
-
     eleventyConfig.addFilter("filterNodeCategory", function(nodes, category) {
         if (category === "all") {
           return nodes;
