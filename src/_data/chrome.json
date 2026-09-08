@@ -238,6 +238,82 @@
                 "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
             },
             {
+                "label": "Blog",
+                "href": "/blog/",
+                "columns": [
+                    {
+                        "title": "",
+                        "titleGrid": "md:col-start-1 md:row-start-1",
+                        "listClasses": "md:col-start-1 md:row-start-1 md:row-span-2",
+                        "links": [
+                            {
+                                "label": "Releases",
+                                "href": "/blog/releases/",
+                                "icon": "rocket-launch"
+                            },
+                            {
+                                "label": "How-To",
+                                "href": "/blog/how-to/",
+                                "icon": "book-open"
+                            },
+                            {
+                                "label": "Node-RED",
+                                "href": "/blog/node-red/",
+                                "icon": "code-bracket"
+                            },
+                            {
+                                "label": "AI",
+                                "href": "/blog/ai/",
+                                "icon": "sparkles"
+                            },
+                            {
+                                "label": "News",
+                                "href": "/blog/news/",
+                                "icon": "newspaper"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "More topics",
+                        "titleGrid": "md:col-start-2 md:row-start-1",
+                        "listClasses": "md:col-start-2 md:row-start-2",
+                        "links": [
+                            {
+                                "label": "Unified Namespace",
+                                "href": "/blog/uns/",
+                                "icon": "uns"
+                            },
+                            {
+                                "label": "Dashboard",
+                                "href": "/blog/dashboard/",
+                                "icon": "dashboard"
+                            },
+                            {
+                                "label": "PLC",
+                                "href": "/blog/plc/",
+                                "icon": "chip"
+                            },
+                            {
+                                "label": "MQTT",
+                                "href": "/blog/mqtt/",
+                                "icon": "wifi"
+                            },
+                            {
+                                "label": "OPC UA",
+                                "href": "/blog/opcua/",
+                                "icon": "cog"
+                            },
+                            {
+                                "label": "Modbus",
+                                "href": "/blog/modbus/",
+                                "icon": "arrows-right-left"
+                            }
+                        ]
+                    }
+                ],
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
+            },
+            {
                 "label": "Customers",
                 "href": "/customer-stories/",
                 "columns": [
@@ -350,23 +426,7 @@
                 "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
             }
         ],
-        "direct": [
-            {
-                "label": "Blog",
-                "href": "/blog/",
-                "classes": "nav-collapsible"
-            },
-            {
-                "label": "Industrial AI",
-                "href": "/ai/",
-                "classes": "nav-collapsible"
-            },
-            {
-                "label": "Pricing",
-                "href": "/pricing/",
-                "classes": "nav-collapsible"
-            }
-        ],
+        "direct": [],
         "_retired": [
             {
                 "label": "Product",
@@ -523,6 +583,18 @@
                 "href": "/blog/",
                 "wasIn": "Resources > Learn",
                 "why": "Promoted to a top-level nav item, so the row would have been a second way to the same page from the same bar."
+            },
+            {
+                "label": "Industrial AI",
+                "href": "/ai/",
+                "wasIn": "Top nav",
+                "why": "Dropped from the top nav. Still reachable from the header through Start building > From your personal AI agent, and listed in the footer's Product section."
+            },
+            {
+                "label": "Pricing",
+                "href": "/pricing/",
+                "wasIn": "Top nav",
+                "why": "Dropped from the top nav. Still in the Product panel's Pricing & security column and in the footer."
             }
         ],
         "startBuilding": {
