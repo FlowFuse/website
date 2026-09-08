@@ -56,9 +56,9 @@
                 "href": "/industries/",
                 "columns": [
                     {
-                        "title": "By Industry",
+                        "title": "",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "row-span-[8] md:col-start-1 md:row-start-2",
+                        "listClasses": "row-span-[8] md:col-start-1 md:row-start-1",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -148,9 +148,9 @@
                 "label": "Resources",
                 "columns": [
                     {
-                        "title": "Learn",
+                        "title": "",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "row-span-[4] md:col-start-1 md:row-start-2",
+                        "listClasses": "row-span-[4] md:col-start-1 md:row-start-1",
                         "links": [
                             {
                                 "label": "Blog",
@@ -231,9 +231,9 @@
                 "label": "Company",
                 "columns": [
                     {
-                        "title": "Company",
+                        "title": "",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "row-span-[5] md:col-start-1 md:row-start-2",
+                        "listClasses": "row-span-[5] md:col-start-1 md:row-start-1",
                         "links": [
                             {
                                 "label": "Why FlowFuse",
@@ -429,7 +429,24 @@
                     "icon": "sparkles"
                 }
             ]
-        }
+        },
+        "_retiredHeadings": [
+            {
+                "heading": "By Industry",
+                "wasIn": "Solutions",
+                "why": "A panel's first column carries no eyebrow: the dropdown above it already names the section, and without one the column's first rule sits on the panel's top edge."
+            },
+            {
+                "heading": "Learn",
+                "wasIn": "Resources",
+                "why": "A panel's first column carries no eyebrow: the dropdown above it already names the section, and without one the column's first rule sits on the panel's top edge."
+            },
+            {
+                "heading": "Company",
+                "wasIn": "Company",
+                "why": "A panel's first column carries no eyebrow: the dropdown above it already names the section, and without one the column's first rule sits on the panel's top edge."
+            }
+        ]
     },
     "footer": {
         "sections": [
