@@ -1,7 +1,7 @@
 ---
 title: "Using Node-RED"
-metaTitle: "Node-RED Documentation"
 navTitle: "Using Node-RED"
+metaTitle: "Node-RED Documentation | Using Node-RED"
 navOrder: 1
 navGroup: "Node-RED"
 navGroupOrder: 7
