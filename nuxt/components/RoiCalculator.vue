@@ -103,7 +103,7 @@ const paybackBand = computed(() => {
 })
 
 // Where a CTA click came from, so the two placements are separable in analytics.
-const ctaPosition = computed(() => props.compact ? 'roi-pricing-embed' : 'roi-result')
+const ctaPosition = computed(() => props.compact ? 'roi-embed' : 'roi-result')
 
 // ── Input descriptors (rendered with v-for; keeps the template lean) ──
 const teamFields = [

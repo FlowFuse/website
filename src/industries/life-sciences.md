@@ -58,6 +58,4 @@ socialProofText: "Used by biopharmaceutical and life sciences operations teams t
 cta:
   title: "Ready to see your batch operations in one view?"
   description: "Share a sample of your instrument estate and production workflows and the team will show how FlowFuse would connect, automate, and manage your operations in real time."
-  buttonText: "BOOK YOUR DEMO"
-  buttonLink: "/book-demo/"
 ---

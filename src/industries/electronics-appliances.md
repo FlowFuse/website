@@ -58,6 +58,4 @@ socialProofText: "Used by electronics, appliance, and industrial controls manufa
 cta:
   title: "Ready to see your production lines in one view?"
   description: "Share a sample of your production signals and quality data and the team will show how FlowFuse would monitor, escalate, and coordinate responses in real time."
-  buttonText: "BOOK YOUR DEMO"
-  buttonLink: "/book-demo/"
 ---

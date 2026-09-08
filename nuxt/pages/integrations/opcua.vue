@@ -317,8 +317,8 @@ function toggleFaq (i: number) {
               Using the FlowFuse Certified Node for OPC UA, connect to any OPC UA server as a client, or host your own server on self-hosted FlowFuse. Bridge structured, secured industrial data to Modbus, EtherNet/IP, MQTT, historians, and the cloud, all from one canvas.
             </p>
             <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
-              <CtaBookDemo variant="highlight" position="opcua-hero" />
-              <CtaSignUp variant="ghost" position="opcua-hero" icon="i-lucide-arrow-right" />
+              <CtaBookDemo variant="highlight" position="hero" />
+              <CtaSignUp variant="ghost" position="hero" icon="i-lucide-arrow-right" />
             </div>
           </div>
           <div class="md:w-1/2 flex-grow relative max-md:mt-12">
@@ -630,8 +630,8 @@ function toggleFaq (i: number) {
           <h2 class="text-white font-medium">Ready to build an OPC UA client or server the right way?</h2>
           <p class="text-indigo-50 font-light text-xl max-w-3xl mt-0">No per-tag licensing. No Security Policy left at None. Connect to any OPC UA server, host your own, and bridge both to Modbus, MQTT, or a historian without extra middleware. See it live, or start free.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
-            <CtaBookDemo variant="highlight" position="opcua-final" />
-            <CtaSignUp variant="ghost" color="white" icon="i-lucide-arrow-right" position="opcua-final" />
+            <CtaBookDemo variant="highlight" position="bottom-cta-card" />
+            <CtaSignUp variant="ghost" color="white" icon="i-lucide-arrow-right" position="bottom-cta-card" />
           </div>
         </div>
       </div>

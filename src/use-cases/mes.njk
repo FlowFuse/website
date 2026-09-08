@@ -45,10 +45,6 @@ whySection:
           description: "Empowering your teams to build custom solutions with ease."
 ctaSection:
     title: "Ready to build the MES your business needs?"
-    primaryUrl: "/book-demo/"
-    primaryCta: "Contact us for Demo"
-    secondaryUrl: "sign-up-url"
-    secondaryCta: "Try FlowFuse Now"
 meta:
     title: "FlowFuse for your own MES"
     description: "FlowFuse provides everything you need to build the robust Manufacturing Execution System (MES) you want, providing everything from production tracking to data analysis, with the components you need and the flexibility to customize as you see fit."
@@ -74,8 +70,8 @@ meta:
                     {% image image, imageAlt, [400] %}
                 </div>
                 <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
-                    {{ ctaContactUs('primary', 'primary', extraClass='min-h-[40px]') }}
-                    {{ ctaSignUp(site, 'primary-outlined', 'primary', extraClass='min-h-[40px]') }}
+                    {{ ctaContactUs('primary', 'hero', extraClass='min-h-[40px]') }}
+                    {{ ctaSignUp(site, 'primary-outlined', 'hero', extraClass='min-h-[40px]') }}
                 </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[550px]">
@@ -143,8 +139,8 @@ meta:
     <div class="ff-blue-card max-sm:max-w-none">
         <h4 class="mb-6 w-full text-center">{{ ctaSection.title }}</h4>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
-            {{ ctaBookDemo('primary', 'secondary', extraClass='min-h-[40px]') }}
-            {{ ctaSignUp(site, 'primary-outlined', 'secondary', extraClass='min-h-[40px]') }}
+            {{ ctaBookDemo('primary', 'bottom-cta-card', extraClass='min-h-[40px]') }}
+            {{ ctaSignUp(site, 'primary-outlined', 'bottom-cta-card', extraClass='min-h-[40px]') }}
         </div>
     </div>
 </div>

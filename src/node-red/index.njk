@@ -58,6 +58,7 @@ sitemapPriority: 0.8
 ---
 {% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
+{% from "components/cta/cta-pricing.njk" import ctaPricing %}
 <!--First two sections-->
 <div class="nohero w-full">
     <!--Hero Content-->
@@ -74,10 +75,10 @@ sitemapPriority: 0.8
             <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
             <p class="md:mb-6">Ready to <span class="font-semibold">get started building with Node-RED</span>? There are two ways in.</p>
             <div class="max-md:hidden md:mb-10">
-                {{ ctaSignUp(site, 'primary', 'nodered', extraClass='min-h-[40px] md:inline') }}
+                {{ ctaSignUp(site, 'primary', 'hero', extraClass='min-h-[40px] md:inline') }}
                 <p class="font-light mt-3 mb-0">
                     Nothing to install, you get an editor in the browser. Or
-                    <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
+                    <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'hero'})">install Node-RED on your own machine</a>
                     with one command.
                 </p>
             </div>
@@ -86,10 +87,10 @@ sitemapPriority: 0.8
             {% image "../images/pseudo-editor.png", "Node-RED pseudo UI", [500] %}
         </div>
         <div class="md:hidden w-full max-w-md m-auto">
-            {{ ctaSignUp(site, 'primary', 'nodered-mobile', extraClass='flex flex-col w-full') }}
+            {{ ctaSignUp(site, 'primary', 'hero-mobile', extraClass='flex flex-col w-full') }}
             <p class="font-light mt-3 mb-0 text-center">
                 Nothing to install, you get an editor in the browser. Or
-                <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
+                <a href="#install-node-red-from-your-terminal" onclick="capture('cta-install-terminal', {'position': 'hero-mobile'})">install Node-RED on your own machine</a>
                 with one command.
             </p>
         </div>
@@ -287,7 +288,7 @@ sitemapPriority: 0.8
         </ul>
         <div class="mt-10 flex flex-wrap items-center gap-4">
             <a class="ff-btn ff-btn--primary min-h-[40px]" href="/integrations/?certified=1"
-               onclick="capture('cta-browse-certified-nodes', {'position': 'nodered'})">BROWSE CERTIFIED NODES</a>
+               onclick="capture('cta-browse-certified-nodes', {'position': 'certified-nodes'})">BROWSE CERTIFIED NODES</a>
         </div>
     </div>
 </div>
@@ -332,12 +333,16 @@ sitemapPriority: 0.8
         </div>
         <div class="m-auto max-w-screen-lg">
             <div class="grid md:px-0 grid-cols-1 md:grid-cols-3 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
+                {#- `cta` says which fixed macro a card renders - explicit, so
+                    the dispatch below doesn't depend on matching a URL
+                    string that could change for unrelated reasons. Omitted
+                    on the one card that isn't one of the five destinations
+                    (it keeps its own hand-written link). -#}
                 {% set cards = [
                     {
                         "title": "FlowFuse Cloud",
                         "description": "Get started with Node-RED easily! No installation needed – just sign up for instant editor access.",
-                        "buttonText": "MORE INFO",
-                        "buttonLink": "/pricing/"
+                        "cta": "pricing"
                     },
                     {
                         "title": "On your own machine",
@@ -348,8 +353,7 @@ sitemapPriority: 0.8
                     {
                         "title": "Self managed",
                         "description": "Run FlowFuse where you prefer; that's possible too! In your cloud of preference, or even on-site.",
-                        "buttonText": "TALK TO SALES",
-                        "buttonLink": "/book-demo/"
+                        "cta": "bookDemo"
                     }
                 ] %}
 
@@ -365,8 +369,10 @@ sitemapPriority: 0.8
                                 {{ card.description }}
                             </p>
                         </div>
-                        {% if card.buttonLink == '/book-demo/' %}
-                        {{ ctaBookDemo('primary-outlined', 'nodered-deployment', extraClass='md:self-end align-baseline w-full mt-3') }}
+                        {% if card.cta == 'bookDemo' %}
+                        {{ ctaBookDemo('primary-outlined', 'deployment-cards', extraClass='md:self-end align-baseline w-full mt-3') }}
+                        {% elif card.cta == 'pricing' %}
+                        {{ ctaPricing('primary-outlined', 'deployment-cards', extraClass='md:self-end align-baseline w-full mt-3') }}
                         {% else %}
                         <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{{ card.buttonLink }}">{{ card.buttonText }}</a>
                         {% endif %}

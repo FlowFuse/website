@@ -57,6 +57,4 @@ socialProofText: "Used by aerospace component shops to automate compliance and s
 cta:
   title: "Ready to see your shop floor compliance in one view?"
   description: "Share a sample of your active jobs and quality requirements and the team will show how FlowFuse would manage traceability, compliance, and delivery in real time."
-  buttonText: "BOOK YOUR DEMO"
-  buttonLink: "/book-demo/"
 ---
