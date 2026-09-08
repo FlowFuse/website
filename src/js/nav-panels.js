@@ -6,7 +6,7 @@
  * 1. ANCHORING. A panel is content-width now, so left-aligning every one of them
  *    to the nav put the Company panel most of the width of the page away from
  *    the word "Company". The panel's left edge follows its trigger instead, and
- *    is pulled back when that would push it off the right of the viewport - a
+ *    is pulled back when that would carry it past the content container - a
  *    clamp that needs the measured panel width, so it cannot be a stylesheet
  *    rule.
  *
@@ -32,7 +32,6 @@
     'use strict'
 
     var MOBILE_BREAKPOINT = 768
-    var VIEWPORT_MARGIN = 16
     var TRANSITION_NAME = 'ff-nav-panel'
 
     var root = document.documentElement
@@ -51,7 +50,7 @@
 
     /**
      * Put the panel's left edge under its trigger, then pull it back inside the
-     * viewport if the panel is wide enough to overhang the right edge. Measured
+     * container if the panel is wide enough to overhang its right edge. Measured
      * against the nav, because a mega panel's containing block is the nav (its
      * trigger li is position: static so the panel can be wider than the word
      * that opens it).
@@ -64,10 +63,13 @@
         var triggerBox = trigger.getBoundingClientRect()
         var width = panel.offsetWidth
         var left = triggerBox.left - navBox.left
-        var maxLeft = window.innerWidth - VIEWPORT_MARGIN - width - navBox.left
-        var minLeft = VIEWPORT_MARGIN - navBox.left
+        // Clamp to the content container, not the window: the nav already sits
+        // inside the page gutter, and clamping to the viewport let a wide panel
+        // run out past the container and finish 16px from the window edge while
+        // every other element on the page stopped at the gutter.
+        var maxLeft = navBox.width - width
         if (left > maxLeft) left = maxLeft
-        if (left < minLeft) left = minLeft
+        if (left < 0) left = 0
         panel.style.left = Math.round(left) + 'px'
     }
 

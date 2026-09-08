@@ -4381,3 +4381,54 @@ lite-youtube::before {
         animation-duration: 0.01s;
     }
 }
+
+/* Audit fixes. */
+
+/* The "Start building" label wrapped at 1024, which grew the whole header from
+   56px to 80px and pushed every panel down with it. */
+.ff-website header .ff-nav-startbuilding > a,
+.ff-website header .ff-nav-startbuilding > span {
+    white-space: nowrap;
+}
+
+/* A column eyebrow sat hard against the panel's top border once the panel's own
+   padding went, because the existing `ul.mega li.title span` rule pins its
+   padding with !important. Same selector, stated later, so this wins. */
+.ff-website header .ff-nav-dropdown > ul.mega li.title span {
+    padding-top: 1.25rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+/* Below lg the columns asked for more width than the panel could be given, and
+   the panel's overflow: hidden cut the last column mid-word (50px lost at
+   768px). Narrow the floors so the widest panel fits the smallest desktop. */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary {
+        min-width: 15rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--rest {
+        min-width: 9.5rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu:has(a.ff-nav-row--described) {
+        width: 19rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.title span {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega > li.title:not(:first-child),
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--rest {
+        padding-left: 0 !important;
+    }
+}
+
+/* Start building rows measured 56, 57, 57: the separator is a border on the
+   <li>, which adds to the rows that have one. Take it back off the row's
+   minimum so all three are the height of the nav row. */
+.ff-website header .ff-nav-startbuilding-panel li + li a {
+    min-height: calc(3.5rem - 1px);
+}
