@@ -30,6 +30,19 @@ function write (path, content) {
     writeFileSync(path, content, 'utf8')
 }
 
+test('a timestamp git could not supply is left out, not emitted empty', () => {
+    // `updated:` with no value is YAML null. The collection schema takes the key as
+    // optional but not nullable, so an empty value turns "git was unavailable" into a
+    // parse complaint on every guide page at once. Reachable whenever .git is absent or
+    // the commit touching the file falls outside a shallow fetch.
+    const withTimestamp = injectFrontmatter('---\ntitle: T\n---\n', { editUrl: 'u', updated: '2026-09-08' })
+    assert.match(withTimestamp, /^---\neditUrl: u\nupdated: 2026-09-08\ntitle: T\n/)
+
+    const without = injectFrontmatter('---\ntitle: T\n---\n', { editUrl: 'u', updated: '' })
+    assert.match(without, /^---\neditUrl: u\ntitle: T\n/)
+    assert.ok(!/updated:/.test(without), 'an empty timestamp must not leave a valueless key')
+})
+
 test('a README becomes its section index, so a directory of guides nests like a directory of docs', () => {
     assert.equal(
         destinationFor('application-guide/README.md', '/content/docs', '/public/docs'),

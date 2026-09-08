@@ -180,11 +180,37 @@ Collection config: `nuxt/content.config.ts` (defines the `handbook` collection)
 
 ### Product docs
 
-**Source:** `flowfuse/flowfuse` repo, `docs/` directory — **do not edit in this repo**; cloned automatically at build time by `nuxt/modules/docs-source.ts`.  
+`/docs` is assembled from two sources. Which one owns a page decides where to edit it,
+and one of the two is not editable here at all.
+
+| Source | Owns | Edit where |
+|---|---|---|
+| `flowfuse/flowfuse` repo, `docs/` | the product documentation, versioned with the code | that repo, **not here** |
+| `nuxt/content-guides/` | this repo's own guides: the Application Guide, the Node-RED guide, and the Node-RED library under `/docs/node-red/` and `/docs/flowfuse-nodes/` | **here**, in place |
+
+The 38 core-node pages under `/docs/node-red/core-nodes/**` are ordinary guide files in
+that second source, not generator output. Each ends with a
+`::node-red-help{category=... file=... node=... name=...}` directive; the component
+(`nuxt/components/content/NodeRedHelp.vue`) asks `nuxt/server/api/node-red-help.get.ts` for
+that node's built-in help, which fetches the Node-RED project's locale file, selects the
+matching `<script data-help-name=...>` block and sanitises it. The selection rules and the
+sanitiser allowlist both live in `nuxt/lib/node-red-help.mjs` so `npm test` can check them
+without a network. Note what happens when a reference is wrong: the route answers an error,
+the component renders its "could not be read" notice instead of the help, and the page
+prerenders successfully anyway - Nitro's prerender has no `failOnError`. So a broken
+reference costs a page its whole Node help section with nothing failing, which is why
+`nuxt/lib/node-red-help.test.mjs` validates every reference in the tree offline.
+
 **URL:** `/docs/{section}/{slug}/`  
 **Rendered by:** Nuxt — `nuxt/pages/docs/[...slug].vue` + `DocsLeftNav` component  
-**Local content:** `nuxt/content/docs/` (gitignored, build-generated)  
+**Local content:** `nuxt/content/docs/` (gitignored, build-generated — never edit, it is wiped every build). Both sources are copied into it: `nuxt/lib/docs-sync.mjs` brings in the flowfuse tree and `nuxt/lib/guides-sync.mjs` overlays `nuxt/content-guides/` on top (stamping each guide with an `editUrl`), so `@nuxt/content` sees one `docs` collection. A guide edit therefore only reaches a running dev server once that overlay re-runs: `npm run dev:docs` is the watcher that does it, and without it an edit under `nuxt/content-guides/` shows up on the page only after a restart.  
 **Local assets:** `nuxt/public/docs/` (images, etc.)
+
+A page's browser title is `metaTitle || navTitle || title` (`nuxt/lib/docs-page-title.mjs`).
+`navTitle` is the sidebar label and is often much shorter, so a page whose full title
+matters for search needs `metaTitle` set. **Any frontmatter key not declared in the `docs`
+collection schema in `nuxt/content.config.ts` is stripped before a page ever sees it**, which
+makes a missing declaration look like a missing value rather than an error.
 
 ```yaml
 ---
@@ -200,7 +226,7 @@ layout: redirect
 ---
 ```
 
-**Nav groups** (in order): FlowFuse User Manuals · Device Agent · FlowFuse Cloud · FlowFuse Self-Hosted · Support · Contributing  
+**Nav groups** (in order): Application Guide · FlowFuse User Manuals · Device Agent · FlowFuse Cloud · FlowFuse Self-Hosted · Support · Contributing · Node-RED  
 **Nav composable:** `nuxt/composables/useDocsNav.ts`  
 **Collection config:** `nuxt/content.config.ts` (defines the `docs` collection)
 

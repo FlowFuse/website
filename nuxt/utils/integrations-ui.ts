@@ -14,7 +14,7 @@ export function nodeProducts (node: Pick<IntegrationCatalogEntry, 'collections'>
 export function certifiedHref (node: Pick<IntegrationCatalogEntry, 'docsUrl' | 'collections'>): string | null {
     if (node.docsUrl) return node.docsUrl
     const collection = nodeProducts(node)[0]
-    return collection ? `/node-red/flowfuse/${collection}/` : null
+    return collection ? `/docs/flowfuse-nodes/${collection}/` : null
 }
 
 export function tileClass (node: Pick<IntegrationCatalogEntry, 'collections' | 'tier'>): string {

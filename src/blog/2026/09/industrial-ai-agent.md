@@ -73,7 +73,7 @@ Ask why they don't use the FlowFuse Expert built into the platform, and the answ
 
 FlowFuse now acts as an MCP server. Your own AI agent connects to it as a client and because the AI agent is yours, so is the choice of model it uses.
 
-That means the AI agent your company already approved can work the platform directly: look at your teams and applications, check what your instances are doing, read runtime logs, query your [FlowFuse Tables](/node-red/flowfuse/flowfuse-tables/) data, create applications and instances, and build and edit the flows inside your instances.
+That means the AI agent your company already approved can work the platform directly: look at your teams and applications, check what your instances are doing, read runtime logs, query your [FlowFuse Tables](/docs/flowfuse-nodes/flowfuse-tables/) data, create applications and instances, and build and edit the flows inside your instances.
 
 ## How an AI agent connects to FlowFuse
 

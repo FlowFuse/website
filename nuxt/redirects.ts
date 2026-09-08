@@ -8,7 +8,10 @@
 // domain redirects already there for the pattern.
 import type { NitroRouteRules } from 'nitropack'
 
+import { nodeRedRedirects } from './redirects-node-red'
+
 export const redirects: Record<string, NitroRouteRules> = {
+    ...nodeRedRedirects,
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
@@ -46,7 +49,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/landing/technology-migration-1/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/landing/technology-migration-2/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/blog/2025/10/the-ai-orchestation-hype/': { redirect: { to: '/blog/2025/10/the-ai-orchestration-hype/', statusCode: 301 } },
-    '/node-red/core-nodes/mqtt/': { redirect: { to: '/node-red/core-nodes/mqtt-in/', statusCode: 301 } },
+    '/node-red/core-nodes/mqtt/': { redirect: { to: '/docs/node-red/core-nodes/network/mqtt-in/', statusCode: 301 } },
     '/blueprints/manufacturing/manufacturing-support-request/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
     '/blueprints/other/remote-buffering/': { redirect: { to: '/blueprints/getting-started/store-and-forward/', statusCode: 301 } },
     '/vs/tulip/': { redirect: { to: '/landing/tulip/', statusCode: 301 } },
@@ -96,7 +99,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/legal/terms/': { redirect: { to: '/terms/', statusCode: 301 } },
     '/book-a-demo/': { redirect: { to: '/book-demo/', statusCode: 301 } },
-    '/education/': { redirect: { to: '/node-red/learn/', statusCode: 301 } },
+    '/education/': { redirect: { to: '/docs/node-red/', statusCode: 301 } },
     '/handbook/marketing/education/': { redirect: { to: '/handbook/marketing/', statusCode: 301 } },
     '/handbook/sales/org/account-executives/': { redirect: { to: '/handbook/sales/sales-team/', statusCode: 301 } },
     '/handbook/sales/org/': { redirect: { to: '/handbook/sales/', statusCode: 301 } },

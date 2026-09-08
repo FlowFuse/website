@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDocsNavTree, findDocsBreadcrumb } from '~/composables/useDocsNav'
+import { docsPageTitle } from '~/lib/docs-page-title.mjs'
 
 definePageMeta({ layout: 'default' })
 
@@ -27,7 +28,10 @@ if (page.value.layout === 'redirect' && page.value.redirect?.to) {
     throw navigateTo(target, { redirectCode: 301, external: isExternal })
 }
 
-const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Documentation')
+// The order is asserted in nuxt/lib/docs-page-title.mjs, which explains why it is that
+// order. It decides the <title> of every page under /docs and getting it wrong shows up
+// nowhere except in the rendered title, so it is not left inline as a bare expression.
+const pageTitle = computed(() => docsPageTitle(page.value, slugParts.value))
 
 // Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
 const plans = useDocsPlans(contentPath)

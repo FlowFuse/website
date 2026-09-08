@@ -211,44 +211,9 @@
                         "listClasses": "row-span-[9] md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
-                                "label": "Redis",
-                                "href": "/node-red/flowfuse/hub/redis/",
-                                "icon": "circle-stack"
-                            },
-                            {
                                 "label": "OPC UA",
                                 "href": "/integrations/opcua/",
                                 "icon": "server-stack"
-                            },
-                            {
-                                "label": "RTSP",
-                                "href": "/node-red/flowfuse/edge/rtsp/",
-                                "icon": "camera"
-                            },
-                            {
-                                "label": "EtherNet/IP",
-                                "href": "/node-red/flowfuse/edge/cip-suite/",
-                                "icon": "share"
-                            },
-                            {
-                                "label": "MQTT",
-                                "href": "/node-red/flowfuse/mqtt/",
-                                "icon": "wifi"
-                            },
-                            {
-                                "label": "ONNX",
-                                "href": "/node-red/flowfuse/ai/onxx/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "LLM Nodes",
-                                "href": "/node-red/flowfuse/ai/llm-nodes/",
-                                "icon": "sparkles"
-                            },
-                            {
-                                "label": "MCP",
-                                "href": "/node-red/flowfuse/mcp/",
-                                "icon": "puzzle-piece"
                             },
                             {
                                 "label": "See all integrations",
@@ -606,36 +571,8 @@
                         "title": "By Integration",
                         "links": [
                             {
-                                "label": "Redis",
-                                "href": "/node-red/flowfuse/hub/redis/"
-                            },
-                            {
                                 "label": "OPC UA",
                                 "href": "/integrations/opcua/"
-                            },
-                            {
-                                "label": "RTSP",
-                                "href": "/node-red/flowfuse/edge/rtsp/"
-                            },
-                            {
-                                "label": "EtherNet/IP",
-                                "href": "/node-red/flowfuse/edge/cip-suite/"
-                            },
-                            {
-                                "label": "MQTT",
-                                "href": "/node-red/flowfuse/mqtt/"
-                            },
-                            {
-                                "label": "ONNX",
-                                "href": "/node-red/flowfuse/ai/onxx/"
-                            },
-                            {
-                                "label": "LLM Nodes",
-                                "href": "/node-red/flowfuse/ai/llm-nodes/"
-                            },
-                            {
-                                "label": "MCP",
-                                "href": "/node-red/flowfuse/mcp/"
                             },
                             {
                                 "label": "See all integrations",

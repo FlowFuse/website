@@ -27,7 +27,7 @@ To create a Pareto Chart for manufacturing data, you'll need access to industria
 
 ### Step 1: Connect to Your Data Source
 
-The first step to create a Pareto Chart is accessing the data you want to analyze. In industrial environments, machine or process data is commonly collected via [industrial protocols](/node-red/protocol/) such as [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), or direct [database](/node-red/database/) queries. Modern industrial platforms support nearly all industrial protocols and databases, making it easy to connect to your existing systems.
+The first step to create a Pareto Chart is accessing the data you want to analyze. In industrial environments, machine or process data is commonly collected via [industrial protocols](/docs/node-red/protocol/) such as [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), or direct [database](/docs/node-red/database/) queries. Modern industrial platforms support nearly all industrial protocols and databases, making it easy to connect to your existing systems.
 
 To connect your data:
 

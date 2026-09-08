@@ -29,7 +29,7 @@ included:
       - label: "MQTT Broker"
         href: "/docs/user/teambroker/"
       - label: "HTTP Request"
-        href: "/node-red/core-nodes/http-request/"
+        href: "/docs/node-red/core-nodes/network/http-request/"
   - title: "Develop & deploy at the edge"
     chips:
       - label: "Edge Development (remote editor proxy)"
