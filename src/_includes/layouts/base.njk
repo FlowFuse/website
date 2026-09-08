@@ -211,8 +211,12 @@ eleventyComputed:
                                 {% set colClass = "ff-nav-col--primary" if loop.first else "ff-nav-col--rest" %}{% if col.title %}{% navoption col.title, null, 1, null, true, "pl-3 title border-l-2 " + colClass + " " + col.titleGrid %}{% endnavoption %}{% endif %}
                                 <li class="contents">
                                     <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ colClass }} {{ col.listClasses }}">
-                                        {%- for item in col.links %}
-                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent", item.description %}{% endnavoption %}
+                                        {#- A column can be filled from a data file rather than
+                                            from chrome.json: the Blog panel's first column is the
+                                            latest posts, which change every week. -#}
+                                        {%- set rows = latestPosts.posts if col.source == "latestPosts" else col.links %}
+                                        {%- for item in rows %}
+                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent", item.description, col.source %}{% endnavoption %}
                                         {%- endfor %}
                                     </ul>
                                 </li>

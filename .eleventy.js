@@ -630,7 +630,7 @@ module.exports = function(eleventyConfig) {
         }
     });
 
-    eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid, addClasses, description) {
+    eleventyConfig.addPairedShortcode("navoption", function(content, label, link, depth, icon, iconSolid, addClasses, description, source) {
         let svg, iconSvg = '', classes, chevron
         if (icon) {
             svg = loadSVG(icon)
@@ -669,7 +669,10 @@ module.exports = function(eleventyConfig) {
                 const escaped = description.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
                 return `<li class="${classes}"><a class="ff-nav-row--described" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span><span class="ff-nav-desc">${escaped}</span></a></li>`
             }
-            return `<li class="${classes}"><a class="flex items-center gap-2" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span></a></li>`
+            // A post title is a sentence, not a menu word: it wraps, so its row
+            // is marked for the stylesheet to let it.
+            const rowClass = source === 'latestPosts' ? 'flex items-center gap-2 ff-nav-post' : 'flex items-center gap-2'
+            return `<li class="${classes}"><a class="${rowClass}" href="${link}">${iconSvg}<span class="ff-nav-label">${label}</span></a></li>`
         } else {
             return `<li class="${classes}"><span class="flex items-center gap-2">${iconSvg}<span class="ff-nav-label">${label}</span></span></li>`
         }

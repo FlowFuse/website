@@ -3,6 +3,10 @@ import { onMounted } from 'vue'
 // Shared with the Eleventy layout, which reads the same file as an 11ty _data
 // global. Edit the nav or footer there and both renderers follow.
 import chrome from '../../src/_data/chrome.json'
+// The Blog panel's first column is the latest posts. Generated from src/blog by
+// scripts/build_latest_posts.mjs and imported here rather than queried, so this
+// header and the Eleventy one always show the same rows in the same order.
+import latestPosts from '../../src/_data/latestPosts.json'
 
 const resolveHref = useResolveHref()
 
@@ -172,7 +176,7 @@ onMounted(() => {
                        spans both rows on the left, the label and the description
                        stack beside it. Only the product tiers carry one, so the
                        plain row keeps its simpler box. -->
-                  <li v-for="item in col.links" :key="item.label" :class="{ 'nav-indent': item.indent }"><a :class="item.description ? 'ff-nav-row--described' : 'flex items-center gap-2'" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span><span v-if="item.description" class="ff-nav-desc">{{ item.description }}</span></a></li>
+                  <li v-for="item in (col.source === 'latestPosts' ? latestPosts.posts : col.links)" :key="item.label" :class="{ 'nav-indent': item.indent }"><a :class="item.description ? 'ff-nav-row--described' : ['flex items-center gap-2', { 'ff-nav-post': col.source === 'latestPosts' }]" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span><span v-if="item.description" class="ff-nav-desc">{{ item.description }}</span></a></li>
                 </ul>
               </li>
             </template>

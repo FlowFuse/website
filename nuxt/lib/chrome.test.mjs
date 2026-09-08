@@ -209,6 +209,35 @@ test('a described row keeps its description a plain one-liner', () => {
     }
 })
 
+test('a data-filled column declares a source and carries no static links', () => {
+    // The Blog panel's first column is the latest posts, which cannot live in
+    // this file. A column either lists its links here or names a data file, and
+    // doing both would mean the rows in the two renderers depended on which one
+    // the template happened to prefer.
+    const generated = JSON.parse(
+        readFileSync(join(repo, 'src/_data/latestPosts.json'), 'utf8'))
+    let sourced = 0
+    for (const dd of chrome.header.dropdowns) {
+        for (const col of dd.columns) {
+            if (!col.source) continue
+            sourced++
+            assert.equal(col.source, 'latestPosts',
+                `${dd.label} > "${col.title}" names an unknown source "${col.source}"`)
+            assert.equal(col.links.length, 0,
+                `${dd.label} > "${col.title}" is filled from ${col.source} but also lists links`)
+            assert.ok(col.title,
+                `${dd.label} > "${col.title}" needs a heading: a reader cannot tell what a list of `
+                + 'headlines is without one')
+        }
+    }
+    assert.equal(sourced, 1, 'expected exactly one data-filled column (the Blog panel)')
+    assert.ok(generated.posts.length > 0, 'src/_data/latestPosts.json has no posts')
+    for (const post of generated.posts) {
+        assert.ok(post.label && post.href, `a generated post is missing a label or href: ${JSON.stringify(post)}`)
+        assert.match(post.href, /^\/blog\/.+\/$/, `${post.label} has an unexpected blog URL: ${post.href}`)
+    }
+})
+
 test('the footer bottom row keeps its two alignment slots', () => {
     // 4/2/2/2 on purpose: the nested grid lines up under the Solutions
     // sub-columns above and the trailing group under Resources.

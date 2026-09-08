@@ -242,9 +242,16 @@
                 "href": "/blog/",
                 "columns": [
                     {
-                        "title": "",
+                        "title": "Latest posts",
+                        "source": "latestPosts",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "md:col-start-1 md:row-start-1 md:row-span-2",
+                        "listClasses": "md:col-start-1 md:row-start-2",
+                        "links": []
+                    },
+                    {
+                        "title": "Categories",
+                        "titleGrid": "md:col-start-2 md:row-start-1",
+                        "listClasses": "md:col-start-2 md:row-start-2",
                         "links": [
                             {
                                 "label": "Releases",
@@ -270,14 +277,7 @@
                                 "label": "News",
                                 "href": "/blog/news/",
                                 "icon": "newspaper"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "More topics",
-                        "titleGrid": "md:col-start-2 md:row-start-1",
-                        "listClasses": "md:col-start-2 md:row-start-2",
-                        "links": [
+                            },
                             {
                                 "label": "Unified Namespace",
                                 "href": "/blog/uns/",

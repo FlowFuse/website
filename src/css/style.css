@@ -4447,3 +4447,35 @@ lite-youtube::before {
         border-top: 0;
     }
 }
+
+/* Post rows in the Blog panel. A post title is a sentence, so unlike every other
+   row in a panel it has to wrap - the panel sets white-space: nowrap so a menu
+   word never breaks mid-label, and a title left under that rule would widen the
+   panel to the length of the longest headline. */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown > ul.mega a.ff-nav-post {
+        align-items: flex-start;
+        white-space: normal;
+        /* `header ul a` centres its text for the mobile drawer. A one-word menu
+           label survives that; a wrapped headline has to read from a left edge. */
+        text-align: left;
+        padding-top: 0.85rem !important;
+        padding-bottom: 0.85rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega a.ff-nav-post .ff-nav-label {
+        white-space: normal;
+        line-height: 1.35;
+        text-align: left;
+    }
+    /* Wider than a category column: these are headlines, and at the panel's
+       normal width they would break after two or three words. */
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary:has(a.ff-nav-post) {
+        width: 27rem;
+    }
+    /* The chevron stays on the first line rather than centring against a
+       two-line title. */
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary a.ff-nav-post::after {
+        align-self: flex-start;
+        margin-top: 0.35rem;
+    }
+}
