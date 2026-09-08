@@ -1,6 +1,6 @@
 ---
-title: "First Article Inspection (FAI) Explained"
-metaTitle: "First Article Inspection (FAI) Guide"
+title: "First Article Inspection (FAI): Process, Requirements & Report"
+metaTitle: "First Article Inspection (FAI): Process, Requirements & Report"
 subtitle: "Understand the FAI process, when it is required, what an FAI report includes, and how it compares with PPAP."
 description: "Learn what First Article Inspection (FAI) is, when it is required, how the process works, what an FAI report includes, and how FAI differs from PPAP."
 date: 2026-09-03
@@ -20,7 +20,7 @@ Before full-scale production, [automotive manufacturers](/landing/automotive/) n
 
 Much of this still runs on paper checklists and spreadsheets, which makes it easy for inspection results to drift away from the production data that explains them.
 
-::cta-image{src="/blog/2026/09/images/fai-process-cta2.png" alt="Use FlowFuse to connect production data, build digital inspection workflows, and get better visibility into your quality processes - start your free trial" cta="sign-up"}
+::cta-image{src="/blog/2026/09/images/fai-process-cta1.png" alt="Use FlowFuse to connect production data, build digital inspection workflows, and get better visibility into your quality processes - start your free trial" cta="sign-up"}
 ::
 
 ## What Is First Article Inspection (FAI)?
@@ -136,7 +136,7 @@ Calibration is where inspection records most often lose their weight. Calibratio
 
 Using the correct drawing revision, appropriate and calibrated inspection equipment, the intended production process, and traceable inspection records helps avoid these errors. Tracking calibration status against due dates in a [live dashboard](/blog/2026/07/calibration-management-dashboard/) makes it easier to catch an overdue instrument before it ends up on an FAI report.
 
-::cta-image{src="/blog/2026/09/images/fai-process-cta-1.png" alt="Use FlowFuse to connect your equipment data, track calibration status and due dates, and build a dashboard around your calibration workflow - build a calibration dashboard" cta="sign-up"}
+::cta-image{src="/blog/2026/09/images/fai-cta2.png" alt="Use FlowFuse to connect your equipment data, track calibration status and due dates, and build a dashboard around your calibration workflow - build a calibration dashboard" cta="sign-up"}
 ::
 
 ## Improving First Article Inspection With Digital Data
