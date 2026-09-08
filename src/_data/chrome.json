@@ -52,7 +52,7 @@
                 "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
             },
             {
-                "label": "Solutions",
+                "label": "Industries",
                 "href": "/industries/",
                 "columns": [
                     {
@@ -103,14 +103,14 @@
                         ]
                     },
                     {
-                        "title": "By Use Case",
+                        "title": "Use cases",
                         "titleGrid": "md:col-start-2 md:row-start-1",
                         "listClasses": "md:col-start-2 md:row-start-2",
                         "links": [
                             {
                                 "label": "Production Monitoring",
                                 "href": "/use-cases/production-monitoring/",
-                                "icon": "pulse"
+                                "icon": "chart"
                             },
                             {
                                 "label": "Shop Floor Communication",
@@ -125,19 +125,39 @@
                         ]
                     },
                     {
-                        "title": "By Integration",
+                        "title": "Architectures",
                         "titleGrid": "md:col-start-3 md:row-start-1",
                         "listClasses": "md:col-start-3 md:row-start-2",
                         "links": [
                             {
-                                "label": "OPC UA",
-                                "href": "/integrations/opcua/",
-                                "icon": "server-stack"
+                                "label": "Unified Namespace",
+                                "href": "/use-cases/uns/",
+                                "icon": "uns"
                             },
                             {
-                                "label": "See all integrations",
-                                "href": "/integrations/",
-                                "icon": "arrow-right"
+                                "label": "MES",
+                                "href": "/use-cases/mes/",
+                                "icon": "chart"
+                            },
+                            {
+                                "label": "SCADA",
+                                "href": "/use-cases/scada/",
+                                "icon": "screen"
+                            },
+                            {
+                                "label": "IT/OT middleware",
+                                "href": "/use-cases/it-ot-middleware/",
+                                "icon": "cog"
+                            },
+                            {
+                                "label": "Edge Connectivity",
+                                "href": "/use-cases/edge-connectivity/",
+                                "icon": "chip"
+                            },
+                            {
+                                "label": "Data Integration",
+                                "href": "/use-cases/data-integration/",
+                                "icon": "arrows-right-left"
                             }
                         ]
                     }
@@ -152,11 +172,6 @@
                         "titleGrid": "md:col-start-1 md:row-start-1",
                         "listClasses": "md:col-start-1 md:row-start-1 md:row-span-2",
                         "links": [
-                            {
-                                "label": "Blog",
-                                "href": "/blog/",
-                                "icon": "newspaper"
-                            },
                             {
                                 "label": "Webinars",
                                 "href": "/webinars/",
@@ -208,19 +223,48 @@
                         ]
                     },
                     {
-                        "title": "Customers",
+                        "title": "Tools",
                         "titleGrid": "md:col-start-3 md:row-start-1",
                         "listClasses": "md:col-start-3 md:row-start-2",
                         "links": [
                             {
-                                "label": "Customer Stories",
-                                "href": "/customer-stories/",
-                                "icon": "presentation"
-                            },
-                            {
                                 "label": "ROI Calculator",
                                 "href": "/resources/roi-calculator/",
                                 "icon": "arrow-trending-up"
+                            }
+                        ]
+                    }
+                ],
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
+            },
+            {
+                "label": "Customers",
+                "href": "/customer-stories/",
+                "columns": [
+                    {
+                        "title": "",
+                        "titleGrid": "md:col-start-1 md:row-start-1",
+                        "listClasses": "row-span-[4] md:col-start-1 md:row-start-1 md:row-span-2",
+                        "links": [
+                            {
+                                "label": "Aperia Technologies",
+                                "href": "/customer-stories/aperia-technologies-plc-replacement/",
+                                "icon": "chip"
+                            },
+                            {
+                                "label": "Energinet",
+                                "href": "/customer-stories/energinet-streamlining-critical-infrastructure-data-management/",
+                                "icon": "power"
+                            },
+                            {
+                                "label": "Neoception",
+                                "href": "/customer-stories/reducing-costs-and-boosting-sales-performance-through-automated-digital-twin-demonstrations/",
+                                "icon": "presentation"
+                            },
+                            {
+                                "label": "Walter",
+                                "href": "/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/",
+                                "icon": "cog"
                             }
                         ]
                     }
@@ -307,6 +351,11 @@
             }
         ],
         "direct": [
+            {
+                "label": "Blog",
+                "href": "/blog/",
+                "classes": "nav-collapsible"
+            },
             {
                 "label": "Industrial AI",
                 "href": "/ai/",
@@ -408,6 +457,72 @@
                 "href": "/use-cases/data-integration/",
                 "wasIn": "Product > Capabilities",
                 "why": "Column dropped so the Product panel is the product tiers plus a pricing and security column. Still listed in the footer's Product section."
+            },
+            {
+                "label": "Customer Stories",
+                "href": "/customer-stories/",
+                "wasIn": "Resources > Customers",
+                "why": "Promoted to its own Customers dropdown in the top nav, so the row would have been a second way to the same page from the same bar."
+            },
+            {
+                "label": "Redis",
+                "href": "/node-red/flowfuse/hub/redis/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "OPC UA",
+                "href": "/integrations/opcua/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "RTSP",
+                "href": "/node-red/flowfuse/edge/rtsp/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "EtherNet/IP",
+                "href": "/node-red/flowfuse/edge/cip-suite/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "MQTT",
+                "href": "/node-red/flowfuse/mqtt/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "ONNX",
+                "href": "/node-red/flowfuse/ai/onxx/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "LLM Nodes",
+                "href": "/node-red/flowfuse/ai/llm-nodes/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "MCP",
+                "href": "/node-red/flowfuse/mcp/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "See all integrations",
+                "href": "/integrations/",
+                "wasIn": "Solutions > By Integration",
+                "why": "Panel reshaped to industries plus use cases and architectures. Still listed in the footer's Solutions section."
+            },
+            {
+                "label": "Blog",
+                "href": "/blog/",
+                "wasIn": "Resources > Learn",
+                "why": "Promoted to a top-level nav item, so the row would have been a second way to the same page from the same bar."
             }
         ],
         "startBuilding": {

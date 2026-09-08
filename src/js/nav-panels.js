@@ -73,8 +73,23 @@
         panel.style.left = Math.round(left) + 'px'
     }
 
+    /**
+     * A closed panel is only hidden, not removed from layout, and it is
+     * absolutely positioned - so an inline `left` left over from a wider
+     * viewport still counts towards the document's scrollable width and gives
+     * the page a horizontal scrollbar. Clear it whenever a panel is not the
+     * open one.
+     */
+    function clearPosition (item) {
+        var panel = panelOf(item)
+        if (panel) panel.style.left = ''
+    }
+
     function applyOpen (item) {
-        if (openItem && openItem !== item) openItem.classList.remove('ff-nav-open')
+        if (openItem && openItem !== item) {
+            openItem.classList.remove('ff-nav-open')
+            clearPosition(openItem)
+        }
         if (item) {
             position(item)
             item.classList.add('ff-nav-open')
@@ -167,6 +182,11 @@
         window.addEventListener('resize', function () {
             clearTimeout(resizeTimer)
             resizeTimer = setTimeout(function () {
+                // Every panel is re-measured from scratch: a stale offset on a
+                // closed one is what widens the document after a resize down.
+                items.forEach(function (item) {
+                    if (item !== openItem) clearPosition(item)
+                })
                 if (!isDesktop()) { applyOpen(null); return }
                 if (openItem) position(openItem)
             }, 60)
