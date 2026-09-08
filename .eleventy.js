@@ -140,6 +140,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
     eleventyConfig.addPassthroughCopy("src/js/hm-promo-banner.js");
     eleventyConfig.addPassthroughCopy("src/js/nav-tracking.js");
+    eleventyConfig.addPassthroughCopy("src/js/nav-panels.js");
     eleventyConfig.addPassthroughCopy("src/js/signup-popup.js");
 
     // Watch content images for the image pipeline

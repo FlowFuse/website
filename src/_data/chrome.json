@@ -9,7 +9,7 @@
                     {
                         "title": "",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "row-span-[3] md:col-start-1 md:row-start-1",
+                        "listClasses": "md:col-start-1 md:row-start-1 md:row-span-2",
                         "links": [
                             {
                                 "label": "FlowFuse Edge",
@@ -34,7 +34,7 @@
                     {
                         "title": "Pricing & security",
                         "titleGrid": "md:col-start-2 md:row-start-1",
-                        "listClasses": "row-span-[2] md:col-start-2 md:row-start-2",
+                        "listClasses": "md:col-start-2 md:row-start-2",
                         "links": [
                             {
                                 "label": "Pricing",
@@ -49,7 +49,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(4,auto)] md:pr-1 md:auto-rows-auto items-center"
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
             },
             {
                 "label": "Solutions",
@@ -58,7 +58,7 @@
                     {
                         "title": "",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "row-span-[8] md:col-start-1 md:row-start-1",
+                        "listClasses": "md:col-start-1 md:row-start-1 md:row-span-2",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -105,7 +105,7 @@
                     {
                         "title": "By Use Case",
                         "titleGrid": "md:col-start-2 md:row-start-1",
-                        "listClasses": "row-span-[3] md:col-start-2 md:row-start-2",
+                        "listClasses": "md:col-start-2 md:row-start-2",
                         "links": [
                             {
                                 "label": "Production Monitoring",
@@ -127,7 +127,7 @@
                     {
                         "title": "By Integration",
                         "titleGrid": "md:col-start-3 md:row-start-1",
-                        "listClasses": "row-span-[9] md:col-start-3 md:row-start-2",
+                        "listClasses": "md:col-start-3 md:row-start-2",
                         "links": [
                             {
                                 "label": "OPC UA",
@@ -142,7 +142,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(10,auto)] md:pr-1 md:auto-rows-auto items-center"
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
             },
             {
                 "label": "Resources",
@@ -150,7 +150,7 @@
                     {
                         "title": "",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "row-span-[4] md:col-start-1 md:row-start-1",
+                        "listClasses": "md:col-start-1 md:row-start-1 md:row-span-2",
                         "links": [
                             {
                                 "label": "Blog",
@@ -177,7 +177,7 @@
                     {
                         "title": "Reference",
                         "titleGrid": "md:col-start-2 md:row-start-1",
-                        "listClasses": "row-span-[5] md:col-start-2 md:row-start-2",
+                        "listClasses": "md:col-start-2 md:row-start-2",
                         "links": [
                             {
                                 "label": "Guides",
@@ -210,7 +210,7 @@
                     {
                         "title": "Customers",
                         "titleGrid": "md:col-start-3 md:row-start-1",
-                        "listClasses": "row-span-[2] md:col-start-3 md:row-start-2",
+                        "listClasses": "md:col-start-3 md:row-start-2",
                         "links": [
                             {
                                 "label": "Customer Stories",
@@ -225,7 +225,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center"
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
             },
             {
                 "label": "Company",
@@ -233,7 +233,7 @@
                     {
                         "title": "",
                         "titleGrid": "md:col-start-1 md:row-start-1",
-                        "listClasses": "row-span-[5] md:col-start-1 md:row-start-1",
+                        "listClasses": "md:col-start-1 md:row-start-1 md:row-span-2",
                         "links": [
                             {
                                 "label": "Why FlowFuse",
@@ -265,7 +265,7 @@
                     {
                         "title": "Partners & Services",
                         "titleGrid": "md:col-start-2 md:row-start-1",
-                        "listClasses": "row-span-[2] md:col-start-2 md:row-start-2",
+                        "listClasses": "md:col-start-2 md:row-start-2",
                         "links": [
                             {
                                 "label": "Partnerships",
@@ -282,7 +282,7 @@
                     {
                         "title": "Support",
                         "titleGrid": "md:col-start-3 md:row-start-1",
-                        "listClasses": "row-span-[3] md:col-start-3 md:row-start-2",
+                        "listClasses": "md:col-start-3 md:row-start-2",
                         "links": [
                             {
                                 "label": "Service Status",
@@ -303,7 +303,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center"
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:pr-1 items-start"
             }
         ],
         "direct": [

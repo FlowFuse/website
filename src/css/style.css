@@ -4279,3 +4279,105 @@ lite-youtube::before {
         translate: none;
     }
 }
+
+/* Each column lays itself out. The sub-menus used to be grid-rows-subgrid, which
+   made every column share one set of per-link rows with every other column: a
+   76px feature row in the first column then set the row height for the plain
+   link sitting beside it, which is what stranded the secondary columns and left
+   dead space under them. Each list now owns a single grid cell and stacks its
+   own links inside it, so a column's spacing is its own. */
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu {
+        display: block !important;
+        grid-template-rows: none !important;
+        grid-auto-rows: auto !important;
+        align-self: start;
+    }
+    /* The eyebrow row and the list row both start at the top of the panel. */
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        /* Two rows: one for the eyebrows, one for the lists. Declared here and
+           not as a `md:grid-rows-[auto_1fr]` class in chrome.json, because
+           Tailwind did not extract that arbitrary value out of the JSON and the
+           panel silently ended up with no row template at all. */
+        grid-template-rows: auto 1fr !important;
+        align-items: start !important;
+        align-content: start !important;
+        /* No top padding: the first column has no eyebrow, so its first rule is
+           the panel's top edge. The eyebrow columns carry their own top inset. */
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega .title span {
+        padding-top: 1.25rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+    /* A list with no eyebrow above it starts hard against the panel's top edge;
+       one that follows an eyebrow is already spaced by it. */
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu.ff-nav-col--rest {
+        padding-bottom: 1.25rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu.ff-nav-col--primary {
+        padding-bottom: 0;
+    }
+}
+
+/* Panels open on a class once nav-panels.js is running, and on :hover when it
+   is not. Both paths are kept: the script owns the open state so a swap between
+   two menus can go through a view transition, but with the script absent the
+   header must still work, so the stylesheet keeps the hover path behind
+   `html:not(.js-nav)`. */
+@media (min-width: 768px) {
+    html:not(.js-nav) .ff-website header .ff-nav-dropdown:hover > ul.mega,
+    html:not(.js-nav) .ff-website header .ff-nav-dropdown:focus-within > ul.mega,
+    .ff-website header .ff-nav-dropdown.ff-nav-open > ul.mega {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.15s ease 0.18s, visibility 0s linear 0.18s;
+    }
+    /* With the script running, hover alone must NOT open a panel, or the class
+       and the hover would fight during a transition and both panels would show. */
+    html.js-nav .ff-website header .ff-nav-dropdown:hover > ul.mega:not(.ff-nav-open),
+    html.js-nav .ff-website header .ff-nav-dropdown:focus-within > ul.mega:not(.ff-nav-open) {
+        opacity: 0;
+        visibility: hidden;
+    }
+    html.js-nav .ff-website header .ff-nav-dropdown.ff-nav-open > ul.mega {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    /* The trigger keeps its fill while its panel is open, not only while the
+       pointer is on the word itself. */
+    html.js-nav .ff-website header .ff-nav-dropdown.ff-nav-open > a,
+    html.js-nav .ff-website header .ff-nav-dropdown.ff-nav-open > span {
+        background-color: var(--color-indigo-50);
+    }
+    html.js-nav .ff-website header .ff-nav-dropdown.ff-nav-open > a > .ff-nav-label,
+    html.js-nav .ff-website header .ff-nav-dropdown.ff-nav-open > span > .ff-nav-label {
+        color: var(--color-indigo-700);
+    }
+}
+
+/* The morph itself. Both panels carry the same view-transition-name for the
+   duration of a swap, so the browser tweens one box into the other instead of
+   fading one out and the next in. The contents cross-fade over that tween,
+   which is what stops a tall panel's rows from stretching into a short one's. */
+::view-transition-group(ff-nav-panel) {
+    animation-duration: 0.24s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+::view-transition-old(ff-nav-panel),
+::view-transition-new(ff-nav-panel) {
+    /* Height is what differs most between panels; letting both children keep
+       their own height makes the contents slide rather than squash. */
+    height: 100%;
+    object-fit: none;
+    object-position: top left;
+    animation-duration: 0.24s;
+}
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(ff-nav-panel),
+    ::view-transition-old(ff-nav-panel),
+    ::view-transition-new(ff-nav-panel) {
+        animation-duration: 0.01s;
+    }
+}

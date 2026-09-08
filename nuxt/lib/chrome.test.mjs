@@ -113,28 +113,32 @@ test('every utility class in the data file is a plain literal', () => {
     }
 })
 
-test('every dropdown column reserves enough grid rows for its links', () => {
-    // The row counts are the one part of this file that has to agree with the
-    // number of links beside it. A sub-menu is grid-rows-subgrid with row-span-N,
-    // so once it holds more than N links the rest spill into implicit rows and
-    // shove the following column out of its alignment. Slack is harmless, a
-    // shortfall is not, so this asserts the floor rather than an exact match.
+test('every dropdown column is placed in its own column track', () => {
+    // The panel is two rows - one for the eyebrows, one for the lists - and one
+    // track per column. Each list then lays its own links out inside its single
+    // cell. It used to be one shared row per link across every column, which
+    // meant a tall row in one column set the spacing of the plain link beside
+    // it, so a two-link column got stretched to the height of a six-row one.
+    // A column that is placed in the wrong track silently lands on top of
+    // another one, so the track numbers are checked rather than assumed.
     for (const dd of chrome.header.dropdowns) {
-        const megaRows = dd.megaClasses.match(/grid-rows-\[repeat\((\d+),auto\)\]/)
-        assert.ok(megaRows, `${dd.label} has no explicit mega row count`)
-        let tallest = 0
-        for (const col of dd.columns) {
-            const span = col.listClasses.match(/row-span-\[?(\d+)\]?/)
-            assert.ok(span, `${dd.label} > ${col.title} has no row-span`)
-            assert.ok(Number(span[1]) >= col.links.length,
-                `${dd.label} > ${col.title} spans ${span[1]} rows but has `
-                + `${col.links.length} links - raise its row-span in src/_data/chrome.json`)
-            // A column occupies its title row plus one row per link.
-            tallest = Math.max(tallest, 1 + col.links.length)
-        }
-        assert.ok(Number(megaRows[1]) >= tallest,
-            `${dd.label} declares ${megaRows[1]} mega rows but its tallest column needs `
-            + `${tallest} - raise the repeat() count in src/_data/chrome.json`)
+        // The row template lives in style.css, deliberately: an arbitrary
+        // Tailwind value written in this JSON is not extracted, so a class here
+        // would compile to nothing and the panel would lose its rows silently.
+        assert.doesNotMatch(dd.megaClasses, /grid-rows-/,
+            `${dd.label} declares grid rows as a class; put them in style.css`)
+        dd.columns.forEach((col, i) => {
+            const track = i + 1
+            assert.match(col.listClasses, new RegExp(`md:col-start-${track}\\b`),
+                `${dd.label} > "${col.title}" is column ${track} but its list is not in that track`)
+            assert.match(col.titleGrid, new RegExp(`md:col-start-${track}\\b`),
+                `${dd.label} > "${col.title}" is column ${track} but its eyebrow is not in that track`)
+            // A column with no eyebrow has nothing above its list, so the list
+            // takes both rows; one with an eyebrow starts on the second.
+            const expected = col.title ? 'md:row-start-2' : 'md:row-start-1 md:row-span-2'
+            assert.ok(col.listClasses.includes(expected),
+                `${dd.label} > "${col.title}" should place its list with "${expected}"`)
+        })
     }
 })
 
