@@ -2,6 +2,7 @@ import { visit } from 'unist-util-visit'
 import type { Root } from 'mdast'
 import type { VFile } from 'vfile'
 import { slugifyAnchor } from './slugify-anchor'
+import { docsPathForSourceFile } from '../lib/docs-content-path.mjs'
 
 function posixDirname(path: string): string {
     const i = path.lastIndexOf('/')
@@ -27,10 +28,12 @@ function posixResolve(base: string, rel: string): string {
 export default function remarkDocsLinks() {
     return (tree: Root, file: VFile) => {
         const filePath: string = (file.path || file.history?.[0] || '') as string
-        if (!filePath.includes('/docs/')) return
+        // Both sources of the docs collection, not just the materialized one: the guides
+        // are read from nuxt/content-guides/, whose path has no `/docs/` segment to key
+        // off. See nuxt/lib/docs-content-path.mjs.
+        const relPath = docsPathForSourceFile(filePath)
+        if (!relPath) return
 
-        const docsIdx = filePath.lastIndexOf('/docs/')
-        const relPath = filePath.slice(docsIdx)
         const baseDir = posixDirname(relPath) + '/'
 
         function resolveUrl(url: string): string {

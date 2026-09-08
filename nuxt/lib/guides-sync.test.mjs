@@ -80,7 +80,10 @@ test('injectGuideFrontmatter stamps an edit URL back to this repo, keyed off the
         })
 
         assert.match(out, /editUrl: https:\/\/github\.com\/FlowFuse\/website\/edit\/main\/nuxt\/content-guides\/application-guide\/index\.md/)
-        assert.match(out, /updated: \n/) // not a git checkout, so gitOutput falls back to ''
+        // Not a git checkout, so gitOutput has nothing to report and the key is left out
+        // rather than written empty: a valueless key is YAML null, which the collection
+        // schema takes as neither a string nor absent.
+        assert.ok(!/updated:/.test(out), 'an unanswerable timestamp must not leave a valueless key')
         assert.match(out, /title: Guide/)
     } finally {
         cleanup()
