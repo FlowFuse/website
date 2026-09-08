@@ -1,14 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
-import navHighlights from '../../src/_data/navHighlights.json'
 // Shared with the Eleventy layout, which reads the same file as an 11ty _data
 // global. Edit the nav or footer there and both renderers follow.
 import chrome from '../../src/_data/chrome.json'
-
-const hl = (key) => {
-    const entry = navHighlights[key]
-    return { ...entry, image: entry.image || '/images/og-blog.jpg' }
-}
 
 const resolveHref = useResolveHref()
 
@@ -166,11 +160,14 @@ onMounted(() => {
                expands the section instead. -->
           <component :is="dd.href ? 'a' : 'span'" :href="dd.href ? resolveHref(dd.href) : undefined" class="ff-nav-trigger flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></component>
           <ul :class="dd.megaClasses">
-            <li class="mega-highlight"><a :href="hl(dd.highlight).link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl(dd.highlight).title }}</span><span class="mega-highlight-media"><img :src="hl(dd.highlight).image" alt="" loading="lazy"></span></a></li>
-            <template v-for="col in dd.columns" :key="col.title">
-              <li class="pl-3 title border-l-2 border-gray-200" :class="col.titleGrid"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
+            <template v-for="(col, colIndex) in dd.columns" :key="col.title">
+              <!-- A column can go without an eyebrow (the Product tiers: the
+                   dropdown above already names them). Skip the element rather
+                   than render an empty one, or it holds a blank row open at the
+                   top of the column. -->
+              <li v-if="col.title" class="pl-3 title border-l-2 border-gray-200" :class="[colIndex === 0 ? 'ff-nav-col--primary' : 'ff-nav-col--rest', col.titleGrid]"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
               <li class="contents">
-                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="col.listClasses">
+                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="[colIndex === 0 ? 'ff-nav-col--primary' : 'ff-nav-col--rest', col.listClasses]">
                   <!-- A described row is a grid rather than a flex line: the icon
                        spans both rows on the left, the label and the description
                        stack beside it. Only the product tiers carry one, so the

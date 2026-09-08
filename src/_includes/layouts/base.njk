@@ -200,11 +200,15 @@ eleventyComputed:
                         {%- for dd in chrome.header.dropdowns %}
                         {% navoption dd.label, dd.href | resolveHref(site), 0 %}
                             <ul class="{{ dd.megaClasses }}">
-                                {% set hl = navHighlights[dd.highlight] %}{% include "components/nav-highlight.njk" %}
                                 {%- for col in dd.columns %}
-                                {% navoption col.title, null, 1, null, true, "pl-3 title border-l-2 " + col.titleGrid %}{% endnavoption %}
+                                {#- A column can go without an eyebrow (the Product
+                                    tiers: the dropdown above already names them).
+                                    Skip the element entirely rather than render an
+                                    empty one, or it holds a blank row open at the
+                                    top of the column. -#}
+                                {% set colClass = "ff-nav-col--primary" if loop.first else "ff-nav-col--rest" %}{% if col.title %}{% navoption col.title, null, 1, null, true, "pl-3 title border-l-2 " + colClass + " " + col.titleGrid %}{% endnavoption %}{% endif %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ col.listClasses }}">
+                                    <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ colClass }} {{ col.listClasses }}">
                                         {%- for item in col.links %}
                                         {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent", item.description %}{% endnavoption %}
                                         {%- endfor %}

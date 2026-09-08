@@ -2951,8 +2951,7 @@ lite-youtube::before {
    three lines at this width, so that is a line of slack. */
 @media (min-width: 860px) and (max-width: 1023px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
-        grid-template-columns: 8rem auto auto auto !important;
-        min-height: 13.75rem;
+        grid-template-columns: none !important;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         width: 8rem;
@@ -2981,9 +2980,7 @@ lite-youtube::before {
    navHighlights titles ask for two lines, so that is two lines of slack. */
 @media (min-width: 1024px) and (max-width: 1279px) {
     .ff-website header .ff-nav-dropdown > ul.mega {
-        grid-template-columns: 11.5rem auto auto auto !important;
-        column-gap: 1.5rem;
-        min-height: 15.5rem;
+        grid-template-columns: none !important;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         width: 11.5rem;
@@ -3000,17 +2997,11 @@ lite-youtube::before {
            after it size to their own labels instead of to a shared fixed width:
            the panel is content-width now, so a fixed track just pads the panel
            out with white on the right. */
-        grid-template-columns: 18.5rem 21rem auto auto !important;
+        grid-template-columns: none !important;
         justify-content: flex-start;
         column-gap: 3rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-        /* fit the highlight card in dropdowns with few rows without letting
-           it stretch the link rows (the card itself is height-0 above).
-           Budget: 1.5rem panel padding-top + title row + 7px card offset +
-           10rem image (16rem wide at 16:10) + 0.625rem title margin + two
-           title lines + 1.75rem panel padding-bottom */
-        min-height: 19.5rem;
     }
     .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight a.mega-highlight-card {
         width: 16rem;
@@ -3355,25 +3346,34 @@ lite-youtube::before {
    The rule and the fill both belong to the <a>, not the <li>, so they span the
    row the pointer can actually hit. The highlight card is excluded throughout:
    it is an image promo, not a row. */
+/* Two weights of row, so a panel has a hierarchy instead of one uniform list.
+   The FIRST column is the panel's answer to "what is this section" - its rows
+   are ruled and fill on hover, edge to edge across the column. Every column
+   after it is a plain link list under an eyebrow: no rule, no fill, just a
+   colour change, because giving forty links the same weight as four is what
+   made the panel read as noise.
+   Panel children run title, list, title, list..., so the first column's list is
+   child 2 and every later one is child 4, 6, ... - hence the n+3 boundary. */
 @media (min-width: 768px) {
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card) {
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary a {
         position: relative;
         border-top: 1px solid var(--color-gray-200);
         transition: background-color 0.15s ease;
     }
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):hover,
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card):focus-visible {
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary a:hover,
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary a:focus-visible {
         background-color: var(--color-indigo-50);
     }
-    /* An indented tier row (Edge/Hub/Fleet under Product) already carries the
-       2px stripe on its <li> that marks it as nested; a rule across the top of
-       its anchor as well reads as a second, competing divider. */
-    .ff-website header .ff-nav-dropdown ul.mega ul.sub-menu li.nav-indent > a {
-        border-top: 0;
+    /* Plain link columns: tighter, and they change colour rather than fill. */
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--rest a {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+        transition: color 0.15s ease;
     }
 }
 @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
-    .ff-website header .ff-nav-dropdown ul.mega a:not(.mega-highlight-card) {
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary a,
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--rest a {
         transition: none;
     }
 }
@@ -4051,11 +4051,15 @@ lite-youtube::before {
 .ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    column-gap: 0.5rem;
-    align-items: start;
-    /* `header ul a` centres its text for the mobile drawer; a described row is a
+    column-gap: 1rem;
+    /* Centred, not top-aligned: the icon belongs to the whole row, so it sits
+       against the middle of the title-plus-description block rather than
+       hanging off the first line. */
+    align-items: center;
+    /* `header ul a` centres its text for the mobile drawer; a feature row is a
        two-line block and has to read from a left edge. */
     text-align: left;
+    padding: 1rem 1.5rem !important;
 }
 /* Row alignment across columns is off in a panel that has described rows. The
    sub-menus are grid-rows-subgrid so every column's row N shares a baseline,
@@ -4070,7 +4074,13 @@ lite-youtube::before {
 .ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described > .ff-icon {
     grid-column: 1;
     grid-row: 1 / span 2;
-    margin-top: 0.15rem;
+    align-self: center;
+    /* A feature row's icon carries the row, so it is sized to the block beside
+       it rather than to a single line of text. */
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-top: 0;
+    stroke-width: 1.25px;
 }
 .ff-website header .ff-nav-dropdown ul.mega a.ff-nav-row--described > .ff-nav-label {
     grid-column: 2;
@@ -4151,39 +4161,70 @@ lite-youtube::before {
    choices rather than words floating in white.
    Desktop only - the mobile drawer is already a stack of ruled rows. */
 @media (min-width: 768px) {
-    /* Between top-level nav items. #nav-content li carries a border-none reset,
-       so this has to out-rank it rather than sit beside it. */
-    .ff-website header #nav-content > li + li {
-        border-left: 1px solid var(--color-gray-200) !important;
-    }
     /* Between a panel's columns. The panel's children run
        highlight, title, list, title, list..., so everything from the fourth
        onwards belongs to a column after the first. The list wrapper is
        display: contents and has no box of its own, so its rule goes on the
        <ul> inside it. Both carry !important because the "mega panel polish"
        block strips these borders with !important of its own. */
-    .ff-website header .ff-nav-dropdown > ul.mega > li.title:nth-child(n+4),
-    .ff-website header .ff-nav-dropdown > ul.mega > li:nth-child(n+4) > ul.sub-menu {
+    /* The divider is the column's own left edge, with no gap on either side of
+       it - the columns butt together the way `divide-x` does. The breathing
+       room comes from each row's own padding instead, which is what lets a row
+       run the full width of its column: a rule or a hover fill that stopped at
+       the text would leave the column looking ragged against the divider
+       beside it.
+       The panel sets align-items: center, so each piece would otherwise float
+       in the middle of its grid row and the eyebrow's segment of the rule would
+       stop short of the list's. Stretching them makes it one line. */
+    .ff-website header .ff-nav-dropdown > ul.mega > li.title.ff-nav-col--rest,
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--rest {
         border-left: 1px solid var(--color-gray-200) !important;
-        padding-left: 3rem !important;
-        /* The panel sets align-items: center, so each piece floats in the middle
-           of its grid row and the two halves of the rule stop short of each
-           other. Stretching them makes the eyebrow's segment and the list's
-           segment meet as one line. */
         align-self: stretch;
     }
-}
-/* The inset matches each band's column gap, so the rule sits midway between the
-   column it follows and the column it introduces instead of hugging one of them. */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .ff-website header .ff-nav-dropdown > ul.mega > li.title:nth-child(n+4),
-    .ff-website header .ff-nav-dropdown > ul.mega > li:nth-child(n+4) > ul.sub-menu {
+    /* No gap between columns: the divider does the separating, and a gap would
+       put dead space between a row's edge and the line beside it. */
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        column-gap: 0 !important;
+    }
+    /* Rows and eyebrows fill their column, edge to edge, and carry the inset
+       themselves. */
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu {
+        width: 100%;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu > li {
+        width: 100%;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a {
+        width: 100%;
         padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega li.title span {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    /* The highlight card is in the first track and has no column of rows to
+       align with, so it keeps the inset the panel used to provide. */
+    .ff-website header .ff-nav-dropdown > ul.mega li.mega-highlight {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+    /* The panel's own side padding goes, or every column would sit inside it and
+       nothing would reach the panel's edge. */
+    .ff-website header .ff-nav-dropdown > ul.mega {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
-@media (min-width: 1024px) and (max-width: 1279px) {
-    .ff-website header .ff-nav-dropdown > ul.mega > li.title:nth-child(n+4),
-    .ff-website header .ff-nav-dropdown > ul.mega > li:nth-child(n+4) > ul.sub-menu {
-        padding-left: 2.5rem !important;
+
+@media (min-width: 768px) {
+    /* A feature column is fixed, so its descriptions break in the same place on
+       every panel instead of at whatever width the longest label happens to
+       need. A plain column sizes to its links, with a floor. */
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--primary:has(a.ff-nav-row--described) {
+        width: 26rem;
+    }
+    .ff-website header .ff-nav-dropdown > ul.mega > li > ul.sub-menu.ff-nav-col--rest {
+        min-width: 13rem;
     }
 }
