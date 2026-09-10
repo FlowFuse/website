@@ -1,6 +1,9 @@
----
+# Lifted verbatim from src/use-cases/production-monitoring.njk (11ty), which had no template body: the whole
+# page was frontmatter read by layouts/use-case.njk. Rendered now by
+# pages/use-cases/[slug].vue through the components in components/use-case/.
+slug: production-monitoring
 title: "Production Monitoring"
-meta:
+seoMeta:
   title: "Production Monitoring | Use Cases | FlowFuse"
   description: "Real-time visibility into what your production lines are actually doing. Build the monitoring app your operation needs with FlowFuse and Node-RED: connect any protocol, deploy at the edge or in the cloud, and roll out across sites."
 problem: "Your operation is running. You just can't see it clearly enough, until something breaks."
@@ -116,4 +119,3 @@ comparison:
       detail: "Deploy the Device Agent on existing edge hardware. Run instances in FlowFuse Cloud. Mix and match based on what your network allows."
     - title: "Snapshot, replicate, and roll out at scale"
       detail: "Once your monitoring app works on one line, FlowFuse lets you snapshot it and push it across every site, with environment-specific variables, centrally managed. Built on open Node-RED, the foundation stays yours."
----
