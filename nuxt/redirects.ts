@@ -99,6 +99,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/legal/terms/': { redirect: { to: '/terms/', statusCode: 301 } },
     '/book-a-demo/': { redirect: { to: '/book-demo/', statusCode: 301 } },
+    '/roi/': { redirect: { to: '/resources/roi-calculator/', statusCode: 301 } },
     '/education/': { redirect: { to: '/docs/node-red/', statusCode: 301 } },
     '/handbook/marketing/education/': { redirect: { to: '/handbook/marketing/', statusCode: 301 } },
     '/handbook/sales/org/account-executives/': { redirect: { to: '/handbook/sales/sales-team/', statusCode: 301 } },
