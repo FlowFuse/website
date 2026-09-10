@@ -383,6 +383,10 @@ export default defineNuxtConfig({
                     '/pricing',
                     '/resources/roi-calculator',
                     '/product',
+                    // The event pages are .vue files with no listing to crawl from.
+                    '/events/proveit-2026/',
+                    '/events/hannover-messe-2026/',
+                    '/events/hannover-messe-2025/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
