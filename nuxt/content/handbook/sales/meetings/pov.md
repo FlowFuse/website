@@ -76,13 +76,18 @@ Getting the customer a running FlowFuse — the
 [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/), a Cloud
 trial or a self-hosted install — is set up in the Solution stage. The licensing
 tasks the SE performs during the PoV live here. A **license key applies only to
-self-hosting**; a Cloud trial never needs one.
+self-hosting**; a Cloud trial never needs one. On Cloud the package is the
+team's type (Edge, Hub or Fleet), set by a platform Administrator in Admin >
+Team Types, which is also where trial duration and limits live.
 
 #### Generating a license
 
 - Generate one by [filling out this form](https://energetic-sanderling-4472.flowfuse.cloud/dashboard/license){rel="nofollow"}.
 - Trial license expiry date should be set for 30 days, even in cases where longer than 30 days may be warranted.
-- Include 10 users, 10 teams, and 10 Node-RED instances on the Enterprise Tier.
+- Select the packages the customer is evaluating: Hub, Edge or Fleet. At least one is required.
+  This is what unlocks features, and Hub on its own switches remote instances off, so tick
+  Edge or Fleet as well when the PoV uses remote instances or the MQTT broker.
+- Include 10 users, 10 teams, 10 Node-RED instances, 10 remote instances and 20 MQTT clients.
 
 All generated licenses are added [to this sheet](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0){rel="nofollow"} automatically.
 
