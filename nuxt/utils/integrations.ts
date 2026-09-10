@@ -76,6 +76,20 @@ async function fetchCatalogueFeed (
     }
 }
 
+/*
+    Just the two FlowFuse Certified catalogues, each entry tagged with the one collection
+    it came from. fetchCatalogue() below merges these with the npm catalogue and the
+    flowfuse-nodes feed, and tags that last group `certified` too - so filtering its
+    result by tier returns more than these two feeds hold. /node-red/ lists exactly these,
+    which is what src/_data/certifiedNodes.js fetched before it was retired.
+*/
+export function fetchCertifiedCatalogues (): Promise<IntegrationCatalogEntry[][]> {
+    return Promise.all([
+        fetchCatalogueFeed(CERTIFIED_HUB_API, 'certified', 'hub'),
+        fetchCatalogueFeed(CERTIFIED_EDGE_API, 'certified', 'edge')
+    ])
+}
+
 export async function fetchCatalogue (): Promise<IntegrationCatalogEntry[]> {
     const [api, hub, edge, flowfuseNodes] = await Promise.all([
         ofetch<CatalogApiResponse>(INTEGRATIONS_API).catch(() => ({ catalogue: [] as IntegrationCatalogEntry[] })),
