@@ -1,0 +1,7 @@
+# Listing metadata only. The page itself is pages/use-cases/uns.vue - this one
+# had a real markup body in src/use-cases/uns.njk, so it did not lift into data the way the
+# two operational use-cases did. Kept here so /use-cases/ still builds its cards from
+# one place rather than a hand-maintained list.
+slug: uns
+title: "FlowFuse for UNS"
+problem: "Adopt a Unified Namespace without ripping out existing infrastructure. FlowFuse connects producers and consumers through MQTT with low-code flows."

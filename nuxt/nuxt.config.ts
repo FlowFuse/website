@@ -40,6 +40,17 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
+// The two operational use-cases render through pages/use-cases/[slug].vue, so their
+// routes are not discoverable from the page tree. They are the entries carrying `values:`;
+// the rest of the collection is listing metadata for pages that have their own .vue file.
+function collectUseCaseRoutes (dir: string): string[] {
+    return readdirSync(dir)
+        .filter(file => file.endsWith('.yml'))
+        .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
+        .filter(entry => Array.isArray(entry.values) && entry.values.length)
+        .map(entry => `/use-cases/${entry.slug}/`)
+}
+
 // Webinars are one .md per file under src/webinars/<year>/, sourced in place by the
 // `webinars` collection, so their routes come from the tree rather than from a field.
 function collectWebinarRoutes(dir: string, basePath: string): string[] {
@@ -404,6 +415,11 @@ export default defineNuxtConfig({
                     '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
+                    // /use-cases/ plus the two entries served by pages/use-cases/[slug].vue.
+                    // The six architecture pages are their own .vue files, so Nuxt finds
+                    // those itself; only the dynamic route needs enumerating.
+                    '/use-cases/',
+                    ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
