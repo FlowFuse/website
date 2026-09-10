@@ -27,9 +27,11 @@ import iCertificate from '../../src/_includes/components/icons/certificate.svg?r
 import iChart from '../../src/_includes/components/icons/chart.svg?raw'
 import iClipboardDocumentCheck from '../../src/_includes/components/icons/clipboard-document-check.svg?raw'
 import iClock from '../../src/_includes/components/icons/clock.svg?raw'
+import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
 import iCodeblock from '../../src/_includes/components/icons/codeblock.svg?raw'
 import iChat from '../../src/_includes/components/icons/chat.svg?raw'
 import iComputerDesktop from '../../src/_includes/components/icons/computer-desktop.svg?raw'
+import iCubeTransparent from '../../src/_includes/components/icons/cube-transparent.svg?raw'
 import iData from '../../src/_includes/components/icons/data.svg?raw'
 import iDatabase from '../../src/_includes/components/icons/database.svg?raw'
 import iDocumentCheck from '../../src/_includes/components/icons/document-check.svg?raw'
@@ -94,8 +96,10 @@ export const navIcons: Record<string, string> = {
     'chat': iChat,
     'clipboard-document-check': iClipboardDocumentCheck,
     'clock': iClock,
+    'cloud': iCloud,
     'codeblock': iCodeblock,
     'computer-desktop': iComputerDesktop,
+    'cube-transparent': iCubeTransparent,
     'data': iData,
     'database': iDatabase,
     'document-check': iDocumentCheck,

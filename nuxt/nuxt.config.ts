@@ -434,6 +434,7 @@ export default defineNuxtConfig({
                     // file, so Nuxt finds that itself.
                     '/industries/',
                     ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries'),
+                    ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback

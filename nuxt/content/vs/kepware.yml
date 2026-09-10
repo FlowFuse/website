@@ -1,0 +1,61 @@
+# Lifted from src/vs/kepware.njk (11ty). The three /vs/ pages shared the same seven sections
+# with per-page copy, so they are one data collection rendered by pages/vs/[slug].vue.
+# sectionSubtitle is dropped: it was in all three frontmatters and read by none.
+slug: kepware
+competitor: "Kepware"
+accent: indigo
+heroImage: /vs/images/kepware.png
+heroImageAlt: "Plant manager with a laptop in a factory setting"
+heroTitle: "A Modern Alternative to <span class='text-indigo-600'>Kepware</span>"
+seoMeta:
+    title: "A Modern Alternative to Kepware"
+    description: "FlowFuse is the open, cloud-ready solution engineers choose to replace legacy tools like PTC Kepware. Build faster, integrate easier, and modernize your industrial workflows, without vendor lock-in."
+hero:
+    buttonText: "Talk to a Migration Expert"
+    buttonLink: "https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation"
+    buttonReference: "vs-kepware"
+sectionTitle: "Why Industrial Teams Are <span class='text-indigo-600'>Moving Away from Kepware to FlowFuse</span>"
+sections:
+    - svgPath: "cloud"
+      title: "Built for the cloud"
+      description: "Run your automation flows wherever you need: edge, on-prem or cloud."
+    - svgPath: "arrows-pointing-out"
+      title: "Open & extensible"
+      description: "Based on open-source Node-RED. No more black boxes."
+    - svgPath: "puzzle-piece"
+      title: "Faster integrations"
+      description: "Native support for MQTT, OPC-UA, REST, and custom APIs."
+table:
+    - feature: "Open-source base"
+      flowFuse: "Node-RED & OSS ecosystem"
+      competitor: "Proprietary stack"
+    - feature: "Vendor lock-in"
+      flowFuse: "None"
+      competitor: "Strong lock-in"
+    - feature: "Integration flexibility"
+      flowFuse: "MQTT, OPC-UA, REST, SQL…"
+      competitor: "Limited/custom connectors"
+    - feature: "License & scaling model"
+      flowFuse: "Transparent & usage-based"
+      competitor: "Expensive & tiered"
+    - feature: "Community and transparency"
+      flowFuse: "Active OSS community"
+      competitor: "Closed ecosystem"
+    - feature: "Future-proof architecture"
+      flowFuse: "Portable & cloud-ready"
+      competitor: "Uncertainty post-acquisition"
+switch:
+    title: How to Switch from Kepware to FlowFuse
+    content:
+        - "<span class='font-semibold'>Migration consultation:</span> We analyze your current setup and challenges."
+        - "<span class='font-semibold'>Try FlowFuse with your data:</span> Build real flows using your industrial environment."
+        - "<span class='font-semibold'>Go live with expert support:</span> From pilot to full rollout, we’ve got your back."
+    cta: BOOK A DEMO
+    ctaUrl: "/book-demo"
+cta:
+    title: "Ready to Leave Kepware Behind?"
+    content: "See how FlowFuse helps teams like yours modernize their industrial automation infrastructure, faster, more flexibly, and at lower cost. <a href='https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation' class='font-semibold'>Book a Demo with a FlowFuse Expert</a>."
+tableHeading: "<span class='text-indigo-600'>FlowFuse and Kepware</span> at a Glance"
+columnFlowFuse: "FlowFuse"
+columnCompetitor: "Kepware"
+socialProofText: "Trusted by industrial teams worldwide to modernize their OT‑IT data infrastructure and edge architectures."
