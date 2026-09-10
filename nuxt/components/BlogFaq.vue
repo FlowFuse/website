@@ -2,7 +2,7 @@
 // The answer renderer moved to nuxt/lib/faq-answer.mjs so it can be unit tested and so
 // the escaping rules live in one place; it also gained *italic*, **bold** and blank-line
 // paragraphs, which the 11ty pages expressed with raw <i> and <p> tags under `| safe`.
-import { renderFaqAnswer } from '../lib/faq-answer.mjs'
+import { isListBlock, renderFaqAnswer } from '../lib/faq-answer.mjs'
 
 defineProps<{
     faq: Array<{ question: string, answer: string }>
@@ -35,8 +35,13 @@ function toggle(i: number) {
             </button>
           </h3>
           <div v-show="openIndex === i" class="px-6 mt-6">
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <p v-for="(paragraph, p) in renderFaqAnswer(item.answer)" :key="p" v-html="paragraph" />
+            <template v-for="(block, b) in renderFaqAnswer(item.answer)" :key="b">
+              <!-- A <ul>/<ol> cannot sit inside a <p>, so a list block renders bare.
+                   eslint-disable-next-line vue/no-v-html -->
+              <div v-if="isListBlock(block)" class="ff-faq-list" v-html="block" />
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <p v-else v-html="block" />
+            </template>
           </div>
         </div>
       </div>

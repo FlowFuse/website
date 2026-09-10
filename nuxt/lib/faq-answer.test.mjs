@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 
-import { renderFaqAnswer } from './faq-answer.mjs'
+import { isListBlock, renderFaqAnswer } from './faq-answer.mjs'
 
 test('escapes markup so placeholders stay literal', () => {
     assert.deepEqual(renderFaqAnswer('use <ip> here'), ['use &lt;ip&gt; here'])
@@ -43,4 +43,46 @@ test('a blank line starts a new paragraph', () => {
 test('empty input renders no paragraphs', () => {
     assert.deepEqual(renderFaqAnswer(''), [])
     assert.deepEqual(renderFaqAnswer(undefined), [])
+})
+
+test('renders an unordered list when every line is a bullet', () => {
+    assert.deepEqual(
+        renderFaqAnswer('- first\n- second'),
+        ['<ul><li>first</li><li>second</li></ul>'],
+    )
+})
+
+test('renders an ordered list, and links inside items', () => {
+    assert.deepEqual(
+        renderFaqAnswer('1. go to [pricing](/pricing)\n2. pick a plan'),
+        ['<ol><li>go to <a href="/pricing" class="text-indigo-600 hover:underline">pricing</a></li><li>pick a plan</li></ol>'],
+    )
+})
+
+test('a paragraph that only partly looks like a list stays a paragraph', () => {
+    assert.deepEqual(
+        renderFaqAnswer('Here is why:\n- because'),
+        ['Here is why: - because'],
+    )
+})
+
+test('joins the wrapped lines of a paragraph with spaces', () => {
+    assert.deepEqual(
+        renderFaqAnswer('one line\nwrapped onto another'),
+        ['one line wrapped onto another'],
+    )
+})
+
+test('a list and a paragraph in one answer render as separate blocks', () => {
+    assert.deepEqual(
+        renderFaqAnswer('Uses include:\n\n- monitoring\n- alerting\n\nAnd more.'),
+        ['Uses include:', '<ul><li>monitoring</li><li>alerting</li></ul>', 'And more.'],
+    )
+})
+
+test('isListBlock marks only list blocks', () => {
+    assert.equal(isListBlock('<ul><li>x</li></ul>'), true)
+    assert.equal(isListBlock('<ol><li>x</li></ol>'), true)
+    assert.equal(isListBlock('plain text'), false)
+    assert.equal(isListBlock('<strong>bold</strong> text'), false)
 })

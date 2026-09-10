@@ -17,6 +17,7 @@ import aAdjustmentsVertical from '../../src/_includes/components/icons/adjustmen
 import aAirGappedDeployment from '../../src/_includes/components/icons/air-gapped-deployment.svg?raw'
 import aAirplane from '../../src/_includes/components/icons/airplane.svg?raw'
 import aArchiveBoxXMark from '../../src/_includes/components/icons/archive-box-x-mark.svg?raw'
+import aArrowLongRight from '../../src/_includes/components/icons/arrow-long-right.svg?raw'
 import aArrowPath from '../../src/_includes/components/icons/arrow-path.svg?raw'
 import aArrowPathRoundedSquare from '../../src/_includes/components/icons/arrow-path-rounded-square.svg?raw'
 import aArrowSmallDown from '../../src/_includes/components/icons/arrow-small-down.svg?raw'
@@ -34,6 +35,7 @@ import aCalendar from '../../src/_includes/components/icons/calendar.svg?raw'
 import aCamera from '../../src/_includes/components/icons/camera.svg?raw'
 import aCar from '../../src/_includes/components/icons/car.svg?raw'
 import aCertificate from '../../src/_includes/components/icons/certificate.svg?raw'
+import aCertifiedNode from '../../src/_includes/components/icons/certified-node.svg?raw'
 import aChart from '../../src/_includes/components/icons/chart.svg?raw'
 import aChatBubbleBottomCenterText from '../../src/_includes/components/icons/chat-bubble-bottom-center-text.svg?raw'
 import aChatBubbleLeftRightSm from '../../src/_includes/components/icons/chat-bubble-left-right-sm.svg?raw'
@@ -106,6 +108,7 @@ export const siteArt: Record<string, string> = {
     'air-gapped-deployment': aAirGappedDeployment,
     'airplane': aAirplane,
     'archive-box-x-mark': aArchiveBoxXMark,
+    'arrow-long-right': aArrowLongRight,
     'arrow-path': aArrowPath,
     'arrow-path-rounded-square': aArrowPathRoundedSquare,
     'arrow-small-down': aArrowSmallDown,
@@ -123,6 +126,7 @@ export const siteArt: Record<string, string> = {
     'camera': aCamera,
     'car': aCar,
     'certificate': aCertificate,
+    'certified-node': aCertifiedNode,
     'chart': aChart,
     'chat-bubble-bottom-center-text': aChatBubbleBottomCenterText,
     'chat-bubble-left-right-sm': aChatBubbleLeftRightSm,

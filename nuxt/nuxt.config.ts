@@ -441,6 +441,7 @@ export default defineNuxtConfig({
                     '/community/newsletter/',
                     '/pricing/request-quote/',
                     '/about/',
+                    '/node-red/',
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
