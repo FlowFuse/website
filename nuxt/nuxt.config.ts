@@ -74,6 +74,17 @@ function readEntries (dir: string): Array<Record<string, any>> {
         .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
 }
 
+// The two operational use-cases render through pages/use-cases/[slug].vue, so their
+// routes are not discoverable from the page tree. They are the entries carrying `values:`;
+// the rest of the collection is listing metadata for pages that have their own .vue file.
+function collectUseCaseRoutes (dir: string): string[] {
+    return readdirSync(dir)
+        .filter(file => file.endsWith('.yml'))
+        .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
+        .filter(entry => Array.isArray(entry.values) && entry.values.length)
+        .map(entry => `/use-cases/${entry.slug}/`)
+}
+
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
 // so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
 // each file's `tierId` field rather than the filename, since that's the field the page route
@@ -178,9 +189,9 @@ export default defineNuxtConfig({
     },
 
     // Only covers content already served by Nuxt. The handbook is deliberately excluded
-    // (internal company content, not product documentation) - see README.md. Everything
-    // still on the legacy Eleventy site (customer-stories, use-cases, platform, etc.) isn't
-    // visible to @nuxt/content, so it's absent here too until those pages are migrated.
+    // (internal company content, not product documentation) - see README.md. Anything left
+    // on the legacy Eleventy site is not visible to @nuxt/content, so it is absent here too
+    // until it migrates - the named examples are gone now, so the list is not kept here.
     llms: {
         domain: site.baseURL,
         title: 'FlowFuse',
@@ -282,6 +293,16 @@ export default defineNuxtConfig({
             // pages left sitemap-legacy.xml when their .njk files were deleted, so without
             // this they are in neither sitemap.
             ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
+        ],
+        urls: [
+            ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+            // The two operational use-cases render through pages/use-cases/[slug].vue over a
+            // `data` collection, so the module's static-route discovery cannot see them, and
+            // content-urls.get.ts cannot either (it keys on `path`, which a data collection
+            // has no equivalent of). Without this they are in neither sitemap, having left
+            // sitemap-legacy.xml when their .njk files were deleted. The six architecture
+            // pages have their own .vue files and are discovered normally.
+            ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')).map(loc => ({ loc })),
         ],
         exclude: ['/_studio/**', '/api/**'],
     },
@@ -428,6 +449,13 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The six architecture pages are .vue files with no listing that links to them all, so the crawler never reaches them.
+                    '/use-cases/data-integration/',
+                    '/use-cases/edge-connectivity/',
+                    '/use-cases/it-ot-middleware/',
+                    '/use-cases/mes/',
+                    '/use-cases/scada/',
+                    '/use-cases/uns/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
@@ -438,6 +466,12 @@ export default defineNuxtConfig({
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
 
                     ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
+
+                    // /use-cases/ plus the two entries served by pages/use-cases/[slug].vue.
+                    // The six architecture pages are their own .vue files, so Nuxt finds
+                    // those itself; only the dynamic route needs enumerating.
+                    '/use-cases/',
+                    ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
