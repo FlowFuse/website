@@ -233,6 +233,83 @@ export default defineContentConfig({
             schema: z.object({
                 date: z.coerce.date(),
                 time: z.string().optional(),
+
+            })
+        }),
+        // The seven industry pages were pure 11ty frontmatter read by layouts/industry.njk,
+        // the same shape as the operational use-cases. /industries/automotive/ is not here:
+        // it had a bespoke markup body and stays a hand-written Vue page, which is why the
+        // listing merges this collection with that one entry.
+        industries: defineCollection({
+            type: 'data',
+            source: 'industries/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                // Named seoMeta rather than meta because `meta` is reserved by
+                // @nuxt/content and a declared `meta` field is silently replaced.
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }),
+                metaTitle: z.string().optional(),
+                hero: z.object({
+                    eyebrow: z.string().optional(),
+                    // A NavIcon registry key. The .njk named an SVG path under
+                    // src/_includes/; the lift rewrote those to keys.
+                    eyebrowIcon: z.string().optional(),
+                    heading: z.string(),
+                    description: z.string().optional(),
+                    image: z.string(),
+                    imageAlt: z.string().optional(),
+                    subCta: z.string().optional(),
+                }),
+                // Overrides the default "The Problem Today" heading.
+                problemTitle: z.string().optional(),
+                problems: z.array(z.string()),
+                problemImage: z.string(),
+                solution: z.object({
+                    title: z.string(),
+                    benefits: z.array(z.object({
+                        svgPath: z.string().optional(),
+                        text: z.string(),
+                    })).optional(),
+                }),
+                solutionImage: z.string(),
+                outcomes: z.object({
+                    title: z.string(),
+                    subtitle: z.string().optional(),
+                    items: z.array(z.object({
+                        svgPath: z.string().optional(),
+                        title: z.string(),
+                        description: z.string(),
+                    })).optional(),
+                }),
+                // Either a flat `items` list or the same tiles under `groups`.
+                useCases: z.object({
+                    title: z.string(),
+                    items: z.array(z.object({
+                        image: z.string(),
+                        imageAlt: z.string().optional(),
+                        description: z.string(),
+                    })).optional(),
+                    groups: z.array(z.object({
+                        label: z.string(),
+                        items: z.array(z.object({
+                            image: z.string(),
+                            imageAlt: z.string().optional(),
+                            description: z.string(),
+                        })),
+                    })).optional(),
+                }),
+                socialProofText: z.string().optional(),
+                cta: z.object({
+                    title: z.string(),
+                    description: z.string().optional(),
+                    // The .njk carried these but the layout never read them: it renders the
+                    // shared Book-a-demo CTA, whose copy and href come from the registry.
+                    buttonText: z.string().optional(),
+                    buttonLink: z.string().optional(),
+                }),
             })
         }),
         ebooks: defineCollection({

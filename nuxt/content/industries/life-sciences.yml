@@ -1,17 +1,19 @@
----
-layout: layouts/industry.njk
-meta:
+# Lifted verbatim from src/industries/life-sciences.md (11ty), which had no body: the whole page was
+# frontmatter read by layouts/industry.njk. Rendered now by
+# pages/industries/[slug].vue through the components in components/industry/.
+slug: life-sciences
+seoMeta:
   title: "Life Sciences Manufacturing Operations Platform"
   description: "Connect bioreactors, analytical instruments, LIMS, MES, ELN, and ERP in one place. FlowFuse helps life sciences teams automate batch coordination, maintain data integrity, and accelerate the path from development to GMP production."
 hero:
   eyebrow: "Life Sciences"
-  eyebrowIcon: "components/icons/academic-cap.svg"
+  eyebrowIcon: "academic-cap"
   heading: "Your Electronic Batch Record should be built during production, <span class=\"text-red-600\">not assembled after it ends</span>"
   description: "Connect bioreactors, analytical instruments, LIMS, MES, ELN, and ERP in one place. FlowFuse helps teams automate batch stage coordination, maintain 21 CFR Part 11 data integrity, and carry process logic from development through to commercial GMP production."
   image: "/images/industries/life-sciences.jpg"
   imageAlt: "Wide view of a GMP biopharmaceutical manufacturing facility with stainless steel bioreactors, automated process equipment, and cleanroom production infrastructure."
   subCta: ""
-problemImage: "images/industries/life-sciences-problem.svg"
+problemImage: "/images/industries/life-sciences-problem.svg"
 problems:
     - "Scientific instruments operate as isolated systems, process events on one cannot trigger actions on another without manual intervention, consuming scientist and operator time that should be spent on higher-value work."
     - "Electronic Batch Records are assembled after production by pulling data from MES, LIMS, historian, and paper logs, delaying batch release, introducing data integrity risk, and failing the contemporaneous data standard that FDA and EMA inspectors require."
@@ -19,27 +21,27 @@ problems:
 solution:
   title: "What You Get with FlowFuse"
   benefits:
-    - svgPath: "components/icons/link.svg"
+    - svgPath: "link"
       text: "One platform to <strong>connect instruments and systems</strong> (bioreactors, analysers, LIMS, MES, ELN) via open protocols, without replacing any of them or renegotiating vendor contracts."
-    - svgPath: "components/icons/bolt.svg"
+    - svgPath: "bolt"
       text: "Low-code automation built on Node-RED so scientists and engineers can <strong>configure and iterate workflows without vendor dependency or specialist IT</strong>."
-    - svgPath: "components/icons/rectangle-stack.svg"
+    - svgPath: "rectangle-stack"
       text: "Dev/test/prod environments that <strong>support GMP computer system validation (CSV) requirements</strong> and enable controlled, auditable deployment across scales and sites."
-solutionImage: "images/industries/life-sciences-solution.svg"
+solutionImage: "/images/industries/life-sciences-solution.svg"
 outcomes:
   title: "Key Outcomes"
   subtitle: "for Life Sciences Manufacturers"
   items:
-    - svgPath: "components/icons/document-check.svg"
+    - svgPath: "document-check"
       title: "Complete EBR at end of production"
       description: "with process parameters, quality results, and operator confirmations captured continuously as the batch progresses, QA-ready without post-production compilation."
-    - svgPath: "components/icons/bolt.svg"
+    - svgPath: "bolt"
       title: "Accelerate batch stage transitions"
       description: "by automating hold/release decisions and downstream equipment scheduling from LIMS results, eliminating manual coordination delays between operations."
-    - svgPath: "components/icons/arrows-pointing-out.svg"
+    - svgPath: "arrows-pointing-out"
       title: "Reduce tech transfer and scale-up rework"
       description: "with parameterized workflow templates that carry process logic from development through clinical to commercial GMP, configuration, not rebuild."
-    - svgPath: "components/icons/bell-alert.svg"
+    - svgPath: "bell-alert"
       title: "Improve deviation response"
       description: "with automatic workflow initiation at point of parameter exceedance, full batch context captured without manual reconstruction, CAPA initiated with full linkage."
 useCases:
@@ -60,4 +62,3 @@ cta:
   description: "Share a sample of your instrument estate and production workflows and the team will show how FlowFuse would connect, automate, and manage your operations in real time."
   buttonText: "BOOK YOUR DEMO"
   buttonLink: "/book-demo/"
----
