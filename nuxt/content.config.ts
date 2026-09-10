@@ -185,9 +185,11 @@ export default defineContentConfig({
                 hubspot: z.object({
                     formId: z.string(),
                 }),
-                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
-                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, same
-                // shim the blog collection uses, so existing story files don't need editing.
+                // Story frontmatter writes "structuredData:" directly, unlike the blog and
+                // webinars, whose files still say "meta:" and go through the rewrite hook in
+                // nuxt.config.ts. The name matters either way: `meta` is reserved by
+                // @nuxt/content (it holds the <!--more--> excerpt) and a collection that
+                // declares its own `meta` field silently loses everything under it.
                 structuredData: z.object({
                     // Falls back to "Frequently Asked Questions" (the blog's fixed heading)
                     // when unset - only set this when a story wants its own FAQ heading.
@@ -233,6 +235,79 @@ export default defineContentConfig({
             schema: z.object({
                 date: z.coerce.date(),
                 time: z.string().optional(),
+            })
+        }),
+        // The two operational use-cases (the ones carrying `values:`) were pure 11ty
+        // frontmatter with no template body - layouts/use-case.njk rendered a fixed set of
+        // optional blocks from it. That is a data collection, rendered by
+        // pages/use-cases/[slug].vue through the components in components/use-case/.
+        // The six architecture pages had real markup bodies and stay hand-written Vue
+        // pages; they appear on the listing via useCaseArchitectures in that page.
+        useCases: defineCollection({
+            type: 'data',
+            source: 'use-cases/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                title: z.string(),
+                problem: z.string(),
+                // SEO only. Named seoMeta rather than meta because `meta` is reserved by
+                // @nuxt/content and a declared `meta` field is silently replaced.
+                seoMeta: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
+                // Industry lens slugs, rendered as the context band near the page foot.
+                industries: z.array(z.string()).optional(),
+                // Value-pillar slugs. Presence of this is what puts a page under
+                // "Operational use cases" rather than "By architecture" on the listing.
+                values: z.array(z.string()).optional(),
+                architecture: z.string().optional(),
+                customerPain: z.object({
+                    heading: z.string(),
+                    intro: z.array(z.string()).optional(),
+                    cards: z.array(z.object({
+                        icon: z.string().optional(),
+                        title: z.string(),
+                        detail: z.string(),
+                    })).optional(),
+                }).optional(),
+                outcomeFirst: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    dimensions: z.array(z.object({
+                        label: z.string(),
+                        title: z.string(),
+                        detail: z.string(),
+                    })).optional(),
+                }).optional(),
+                whyItMatters: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    points: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                }).optional(),
+                competition: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    traps: z.array(z.object({
+                        label: z.string(),
+                        title: z.string(),
+                        detail: z.string(),
+                    })).optional(),
+                }).optional(),
+                comparison: z.object({
+                    without: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    with: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                }).optional(),
+                aiBuildLayer: z.object({
+                    heading: z.string().optional(),
+                    intro: z.string().optional(),
+                    steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    note: z.string().optional(),
+                }).optional(),
+                closingCta: z.object({
+                    heading: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
             })
         }),
         ebooks: defineCollection({
