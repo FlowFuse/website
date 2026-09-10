@@ -11,7 +11,10 @@
 //
 // Every file here declares width="100%" height="100%", so it sizes to whatever box the
 // caller puts it in, exactly as the {% include %} did.
+import aArrowSmallDown from '../../src/_includes/components/icons/arrow-small-down.svg?raw'
+import aArrowTopRightOnSquare from '../../src/_includes/components/icons/arrow-top-right-on-square.svg?raw'
 import aBookOpen from '../../src/_includes/components/icons/book-open.svg?raw'
+import aCalendar from '../../src/_includes/components/icons/calendar.svg?raw'
 import aCertificate from '../../src/_includes/components/icons/certificate.svg?raw'
 import aChatBubbleBottomCenterText from '../../src/_includes/components/icons/chat-bubble-bottom-center-text.svg?raw'
 import aCheckBadge from '../../src/_includes/components/icons/check-badge.svg?raw'
@@ -22,7 +25,10 @@ import aDocumentChartBar from '../../src/_includes/components/icons/document-cha
 import aShieldCheck from '../../src/_includes/components/icons/shield-check.svg?raw'
 
 export const siteArt: Record<string, string> = {
+    'arrow-small-down': aArrowSmallDown,
+    'arrow-top-right-on-square': aArrowTopRightOnSquare,
     'book-open': aBookOpen,
+    'calendar': aCalendar,
     'certificate': aCertificate,
     'chat-bubble-bottom-center-text': aChatBubbleBottomCenterText,
     'check-badge': aCheckBadge,
