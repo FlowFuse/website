@@ -8,9 +8,13 @@
 // the derived use-case grid, which is the one band it shared with that layout.
 //
 // What the port changes on purpose:
-//  - Icons the .njk {% include %}d raw, with no wrapper, become <SiteArt>: they are drawn
-//    on their own canvases (93x80, 220x220) and coloured by `currentColor` from their
-//    container, so neither <NavIcon> nor an <img> reproduces them.
+//  - The "Built for Enterprise Manufacturing" section becomes <EnterpriseSecurity>, which
+//    was extracted from this very block when /product/ and /pricing/ were ported. It uses
+//    its own radial-gradient background where this page had comparison-section-bg, and a
+//    lucide arrow on its link; that is the shared component's look, not a new choice here.
+//  - The four compliance glyphs, which the .njk {% include %}d raw with no wrapper, become
+//    <SiteArt>: they take their colour from `currentColor` on the container, so an <img>
+//    would lose it, and NavIcon's wrapper would override the container's size.
 //  - The eyebrow glyph keeps the NavIcon wrapper, which is what that markup had.
 //  - faq.njk becomes <BlogFaq> plus useSchemaOrg; cta-get-started.njk becomes the markup
 //    below with <CtaBookDemo>; social-proof.njk becomes <SocialProof>.
@@ -61,18 +65,11 @@ const APPLICATIONS = {
     ],
 }
 
+// <EnterpriseSecurity>'s defaults already carry this page's heading, badge label, item
+// list and link, because that component was extracted from this very block. Only the
+// description is passed, and only so the divergence is obvious if either side changes.
 const ENTERPRISE = {
     description: 'FlowFuse is SOC 2 Type I and Type II certified, with role-based access control, single sign-on, audit logging, and air-gapped, self-hosted deployment options, built for the security and compliance requirements of large-scale manufacturing organizations.',
-    badge: 'soc-2-badge',
-    badgeLabel: 'SOC 2 Type II',
-    items: [
-        { icon: 'single-sign-on', label: 'Single Sign-On' },
-        { icon: 'audit-logs', label: 'Audit Logs' },
-        { icon: 'role-based-access', label: 'Role-Based Access Control' },
-        { icon: 'air-gapped-deployment', label: 'Air-Gapped / Self-Hosted Deployment' },
-    ],
-    linkText: 'Review our security and compliance details',
-    linkHref: '/platform/security/',
 }
 
 const COMPLIANCE = {
@@ -226,34 +223,7 @@ useSchemaOrg([
       </div>
     </section>
 
-    <section class="w-full comparison-section-bg py-20 px-6">
-      <div class="max-w-screen-lg mx-auto flex flex-col md:flex-row gap-12 items-center justify-between">
-        <div class="shrink md:basis-2/5 md:min-w-0 max-md:text-center">
-          <h2 class="m-0">Built for <span class="text-indigo-600">Enterprise Manufacturing</span></h2>
-          <p class="text-gray-600">{{ ENTERPRISE.description }}</p>
-          <NuxtLink :to="ENTERPRISE.linkHref" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center">
-            {{ ENTERPRISE.linkText }}
-            <UIcon name="i-heroicons-arrow-long-right" class="shrink-0 w-5 h-5" />
-          </NuxtLink>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-7 gap-4 w-full max-w-md md:max-w-[646px] md:shrink md:basis-3/5 md:min-w-0">
-          <div class="col-span-2 md:col-span-3 md:row-span-2 flex flex-col items-center justify-between gap-4 rounded-xl border border-white p-5 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]">
-            <div class="w-full max-w-[220px] aspect-square m-auto">
-              <SiteArt :name="ENTERPRISE.badge" />
-            </div>
-            <p class="text-gray-500 text-sm m-0">{{ ENTERPRISE.badgeLabel }}</p>
-          </div>
-          <div
-              v-for="item in ENTERPRISE.items"
-              :key="item.label"
-              class="md:col-span-2 flex flex-col gap-2 items-center justify-center text-center rounded-xl border border-white p-3 bg-[linear-gradient(135deg,_theme(colors.white)_0%,_theme(colors.white/10%)_100%)]"
-          >
-            <div class="w-full max-w-14 aspect-square"><SiteArt :name="item.icon" /></div>
-            <p class="text-gray-600 text-sm m-0">{{ item.label }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <EnterpriseSecurity :description="ENTERPRISE.description" />
 
     <section class="w-full py-16 md:py-24 px-6 bg-radial-[ellipse_60%_70%_at_center_bottom] from-blue-200/30 to-blue-200/0">
       <div class="max-w-screen-lg mx-auto">
