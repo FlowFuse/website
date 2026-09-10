@@ -428,6 +428,11 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The partner pages are .vue files; only the listing is linked from the nav.
+                    '/partners/',
+                    '/partners/certify-hardware/',
+                    '/partners/ctrlx/',
+                    '/partners/referral-sign-up/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
