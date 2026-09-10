@@ -436,6 +436,10 @@ export default defineNuxtConfig({
                     ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries'),
                     ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
                     ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
+                    // Singles whose 11ty pages had no listing to crawl from.
+                    '/free-consultation/',
+                    '/community/newsletter/',
+                    '/pricing/request-quote/',
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
