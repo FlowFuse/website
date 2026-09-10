@@ -383,6 +383,8 @@ export default defineNuxtConfig({
                     '/pricing',
                     '/resources/roi-calculator',
                     '/product',
+                    // The homepage itself: nothing links to it that the crawler starts from.
+                    '/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.

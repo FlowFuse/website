@@ -49,7 +49,7 @@ export const CUSTOM_CTA_DESTINATIONS = {
     },
     // href varies - always the single most-recently-dated webinar (past or
     // upcoming), never the general webinars listing (see
-    // ThankYouExploreMore.vue's query). Named for that destination, not for
+    // ExploreMoreContent.vue's query). Named for that destination, not for
     // the fact that it's shown as a post-conversion suggestion.
     latestWebinar: {
         event: 'cta-latest-webinar',
