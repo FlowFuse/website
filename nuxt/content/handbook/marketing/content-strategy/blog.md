@@ -158,9 +158,9 @@ The author can be seen on both the blog index and the articles. If you need to a
 authors: ["rob-marcer", "joe-pavitt"]
 ```
 
-If the authors are FlowFuse team members, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/src/_data/team)
+If the authors are FlowFuse team members, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/nuxt/data/team)
 
-If they're not FlowFuse team members, they need to be added to the [guests list](https://github.com/FlowFuse/website/tree/main/src/_data/guests). Duplicate any of the files already in that folder, proceed to change the name of the file and update the info inside the `json` file. You'll also need to add a headshot in the images/team [folder](https://github.com/FlowFuse/website/tree/main/src/images/team) following the same name convention as the rest of the files.
+If they're not FlowFuse team members, they need to be added to the [guests list](https://github.com/FlowFuse/website/tree/main/nuxt/data/guests). Duplicate any of the files already in that folder, proceed to change the name of the file and update the info inside the `json` file. You'll also need to add a headshot in the images/team [folder](https://github.com/FlowFuse/website/tree/main/nuxt/public/images/team) following the same name convention as the rest of the files.
 
 ### Video
 
@@ -313,7 +313,7 @@ Tracking is automatic and fires the same `blog-cta` event as the end-of-article 
 
 #### Shared CTA image library
 
-CTA images are shared across articles, so they go in `src/images/cta/` — not in an article's own images folder. Reference them as `/images/cta/<name>.png`. Put any new CTA image there too, and add it to this table:
+CTA images are shared across articles, so they go in `nuxt/public/images/cta/` — not in an article's own images folder. Reference them as `/images/cta/<name>.png`. Put any new CTA image there too, and add it to this table:
 
 | Image | Use it on |
 |-------|-----------|

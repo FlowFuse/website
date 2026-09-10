@@ -188,7 +188,7 @@ Content here.
 ::
 ```
 
-**Docs, blog, and changelog pages** (`src/docs/`, `src/blog/`, `src/changelog/`):
+**Docs, blog, and changelog pages** (`nuxt/content/docs/`, `nuxt/content/blog/`, `nuxt/content/changelog/`):
 
 ```
 {% note %}

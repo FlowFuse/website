@@ -1,4 +1,4 @@
-import site from '../../src/_data/site.json'
+import site from '../data/site.json'
 
 // Shared by CtaCustom.vue and custom-cta-destinations.ts, both of which
 // compare hrefs for equality - a trailing slash shouldn't make two otherwise

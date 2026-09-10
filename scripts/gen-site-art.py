@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Regenerate nuxt/utils/siteArt.ts from the icon keys the site actually references.
 
-<SiteArt> inlines an SVG from src/_includes/components/icons/ verbatim, which is what
+<SiteArt> inlines an SVG from nuxt/assets/icons/ verbatim, which is what
 page content that used a bare {% include %} needs. The registry is written out rather
 than globbed, so the bundle carries only the icons in use - an eager glob of that
 directory inlines ~137 KB, most of it unused art.
@@ -17,7 +17,7 @@ import re
 import sys
 from pathlib import Path
 
-ICON_DIR = Path('src/_includes/components/icons')
+ICON_DIR = Path('nuxt/assets/icons')
 
 
 def referenced_keys(root: Path) -> tuple[set[str], set[str]]:

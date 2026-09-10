@@ -1,8 +1,0 @@
-# Changelog and blog are served by Nuxt (nuxt/content.config.ts sources these files
-# directly); 11ty must not also render them.
-src/changelog/**/*.md
-src/blog/**/*.md
-
-# Webinars are served by Nuxt (pages/webinars/, sourced from these files via the
-# `webinars` collection in nuxt/content.config.ts); 11ty must not also render them.
-src/webinars/**/*.md
