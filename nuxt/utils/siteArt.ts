@@ -42,6 +42,7 @@ import aChatBubbleLeftRightSm from '../../src/_includes/components/icons/chat-bu
 import aCheckBadge from '../../src/_includes/components/icons/check-badge.svg?raw'
 import aCheckCircle from '../../src/_includes/components/icons/check-circle.svg?raw'
 import aChevronDown from '../../src/_includes/components/icons/chevron-down.svg?raw'
+import aChevronLeft from '../../src/_includes/components/icons/chevron-left.svg?raw'
 import aChevronRight from '../../src/_includes/components/icons/chevron-right.svg?raw'
 import aChevronRightSm from '../../src/_includes/components/icons/chevron-right-sm.svg?raw'
 import aChip from '../../src/_includes/components/icons/chip.svg?raw'
@@ -133,6 +134,7 @@ export const siteArt: Record<string, string> = {
     'check-badge': aCheckBadge,
     'check-circle': aCheckCircle,
     'chevron-down': aChevronDown,
+    'chevron-left': aChevronLeft,
     'chevron-right': aChevronRight,
     'chevron-right-sm': aChevronRightSm,
     'chip': aChip,

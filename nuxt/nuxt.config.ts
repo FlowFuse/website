@@ -151,7 +151,7 @@ const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, '../src
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', './modules/blueprints-source', 'nuxt-llms'],
 
     // Captured at build time (Netlify sets CONTEXT during the build, but passes only URL,
     // SITE_NAME and SITE_ID to the deployed Function at runtime), then baked in via
