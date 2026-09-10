@@ -1,9 +1,12 @@
----
-layout: layouts/abm-landing.njk
+# Lifted verbatim from src/landing/edge-connectivity.njk (11ty), which had no body: the whole page was
+# frontmatter read by layouts/abm-landing.njk.
+# Rendered now by pages/landing/[slug].vue.
+slug: edge-connectivity
+kind: abm
 image: /landing/images/edge-hero.png
 imageDescription: "Plant manager with a laptop in a factory setting"
-heroTitle: "<span class='text-indigo-600'>Break Free</span> from Edge Data Lock&#8209;In"
-meta:
+heroTitle: "<span class='text-indigo-600'>Break Free</span> from Edge Data Lock‑In"
+seoMeta:
     title: "Break Free from Edge Data Lock-In"
     description: "Your machine data shouldn't be trapped in proprietary silos. FlowFuse unleashes open-edge connectivity so you control your data – not the vendors."
 values:
@@ -20,16 +23,16 @@ solution:
     title: "<span class='text-indigo-600'>FlowFuse:</span> Open Edge Connectivity at Enterprise Scale"
     description: "FlowFuse is built on Node-RED, the open-source standard for industrial connectivity. That means you can connect ANY device, ANY protocol, ANY data source – without vendor permission."
     benefits:
-        - svgPath: "components/icons/globe-alt.svg"
+        - svgPath: "globe-alt"
           title: "Universal Connectivity"
           description: "OPC-UA, Modbus, MQTT, REST APIs, PLCs, sensors – if it speaks a protocol, FlowFuse connects it. No more waiting for vendor integrations or paying for expensive gateways."
-        - svgPath: "components/icons/arrows-pointing-out.svg"
+        - svgPath: "arrows-pointing-out"
           title: "Deploy Once, Scale Everywhere"
           description: "Build your edge flows once and deploy them across hundreds of locations with centralized management. Update remotely, monitor in real-time, rollback instantly."
-        - svgPath: "components/icons/eye.svg"
+        - svgPath: "eye"
           title: "Real-Time Visibility"
           description: "Stop flying blind. Stream data from every edge device to dashboards, databases, or cloud platforms – in seconds, not weeks."
-        - svgPath: "components/icons/shield-check.svg"
+        - svgPath: "shield-check"
           title: "Enterprise-Grade Reliability"
           description: "Built for production environments with security, audit trails, version control, and DevOps workflows for OT teams."
 testimonialsTitle: "Trusted by <span class='text-indigo-600'>Engineering Teams Worldwide</span>"
@@ -58,23 +61,22 @@ how:
 features:
     title: "Everything You Need for <span class='text-indigo-600'>Enterprise Edge</span>"
     features:
-        - svgPath: "components/icons/chip.svg"
+        - svgPath: "chip"
           title: "Centralized device management"
-        - svgPath: "components/icons/wifi.svg"
+        - svgPath: "wifi"
           title: "Remote deployment & updates"
-        - svgPath: "components/icons/arrow-path.svg"
+        - svgPath: "arrow-path"
           title: "Version control & rollback"
-        - svgPath: "components/icons/lock-closed.svg"
+        - svgPath: "lock-closed"
           title: "Security & role-based access"
-        - svgPath: "components/icons/shield-check.svg"
+        - svgPath: "shield-check"
           title: "Audit trails & compliance"
-        - svgPath: "components/icons/camera.svg"
+        - svgPath: "camera"
           title: "Snapshot & recovery"
-        - svgPath: "components/icons/arrow-path-rounded-square.svg"
+        - svgPath: "arrow-path-rounded-square"
           title: "CI/CD pipelines for OT"
-        - svgPath: "components/icons/arrows-pointing-out.svg"
+        - svgPath: "arrows-pointing-out"
           title: "Multi-site orchestration"  
 ctaSection:
     title: "Take Back Control of Your Edge Data"
     description: "Stop letting vendors hold your data hostage. See how FlowFuse delivers open, scalable edge connectivity in a live demo."
----

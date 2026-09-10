@@ -1,9 +1,12 @@
----
-layout: layouts/abm-landing.njk
+# Lifted verbatim from src/landing/line-control.njk (11ty), which had no body: the whole page was
+# frontmatter read by layouts/abm-landing.njk.
+# Rendered now by pages/landing/[slug].vue.
+slug: line-control
+kind: abm
 image: /landing/images/hero-line-control.png
 imageDescription: "Plant worker interacting with an HMI"
 heroTitle: "<span class='text-indigo-600'>Operators Flying Blind?</span> Not Anymore"
-meta:
+seoMeta:
     title: "Operators Flying Blind?"
     description: "Give your line teams instant visibility and control. FlowFuse delivers real-time HMI and line orchestration, no code required."
 values:
@@ -19,22 +22,22 @@ solution:
     title: "<span class='text-indigo-600'>Line-Level Control</span> Made Simple"
     description: "Build and deploy modern HMIs and line orchestration apps with visual flows – no custom software, no SCADA headaches."
     benefits:
-        - svgPath: "components/icons/bell-alert.svg"
+        - svgPath: "bell-alert"
           title: "Real-Time Alarms & Status"
           description: "Get instant alerts, monitor run conditions, and see live data for every line, all from a unified dashboard."
-        - svgPath: "components/icons/adjustments-horizontal.svg"
+        - svgPath: "adjustments-horizontal"
           title: "Customizable HMIs"
           description: "Design operator screens for every station and device. Adapt flows as needs change, with rapid visual configuration."
-        - svgPath: "components/icons/wrench-screwdriver.svg"
+        - svgPath: "wrench-screwdriver"
           title: "Engineer Empowerment"
           description: "Put controls in the hands of your engineers. Make improvements, troubleshoot, and scale new features in hours, not weeks."
-        - svgPath: "components/icons/bolt.svg"
+        - svgPath: "bolt"
           title: "Rapid Deployment"
           description: "Go from whiteboard to working solution in days. No vendor bottlenecks, no custom code, no endless consulting."
 testimonialsTitle: "Proven on <span class='text-indigo-600'>Hundreds of Lines</span>"
 useCases:
     title: "How Line Teams Use <span class='text-indigo-600'>FlowFuse</span>"
-    image: /landing/images/line-solution.png
+    image: "/landing/images/line-solution.png"
     imgAlt: "Plant workers looking at a screen with a dashboard"
     case:
         - title: "Real-Time Line Dashboards"
@@ -57,21 +60,20 @@ how:
 features:
     title: "Everything You Need to <span class='text-indigo-600'>Own Your Line</span>"
     features:
-        - svgPath: "components/icons/squares-plus.svg"
+        - svgPath: "squares-plus"
           title: "User-friendly visual flow builder"
-        - svgPath: "components/icons/computer-desktop.svg"
+        - svgPath: "computer-desktop"
           title: "HMI and dashboard templates"
-        - svgPath: "components/icons/bell-alert.svg"
+        - svgPath: "bell-alert"
           title: "Alarm management & escalation"
-        - svgPath: "components/icons/rocket-launch.svg"
+        - svgPath: "rocket-launch"
           title: "Rapid deployment to production"
-        - svgPath: "components/icons/lock-closed.svg"
+        - svgPath: "lock-closed"
           title: "Secure access, versioning & rollback"
-        - svgPath: "components/icons/queue-list.svg"
+        - svgPath: "queue-list"
           title: "Multi-line orchestration"
-        - svgPath: "components/icons/arrow-path-rounded-square.svg"
+        - svgPath: "arrow-path-rounded-square"
           title: "Integration with MES/ERP/Cloud"
 ctaSection:
     title: "Put Control Back in Operator Hands"
     description: "See how FlowFuse empowers your line teams to improve efficiency, reduce downtime, and own their workflows."
----
