@@ -63,11 +63,11 @@ and import the CSV just downloaded from HubSpot into the "All Deals" sheet.
 "File" -> "Import" -> "Upload" -> "Replace Current Sheet".
 
 Now "All Deals" have been listed, that adds all the deal closers to the "Team"
-tab. Fill out all the cells for team members with their yearly quota, etc.
-
-You will need to visually inspect that the names to ensure that the mapping 
-from team member to "Deal Closers" is correct. This may be a little bit more
-difficult in months where not everyone closes a deal.
+tab. Column A (Name) should be automatically updated from the "All Deals" sheet. 
+You can fill in Column B to D if you have the information at hand. 
+Column E (Commission %) should be automatically filled in from "Check" sheet. Please double check if this rate has changed in the recent months before proceeding. 
+Column F (Withholdings) should be filled in only if we find deals that haven't been paid by the customer. Or else, enter 0. 
+Column G (Deal Closers apply) should match the information from Column A for all team members outside of the manager. For the manager, fill in the cell with the manager's name and all the other team members that have closed a deal in that current month. This may be a little bit more difficult in months where not everyone closes a deal.
 
 You will also need to update the template if any new sales folks have started
 in the last month.
