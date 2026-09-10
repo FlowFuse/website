@@ -2,6 +2,9 @@
     "baseURL": "https://flowfuse.com",
     "appURL": "https://app.flowfuse.com",
     "jobBoard": "https://boards.greenhouse.io/flowfuse",
+    "meetings": {
+        "salesRoundRobin": "https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef"
+    },
     "messaging": {
         "tagLine": "The Edge-Native Platform for Industrial Applications",
         "heroTagLine": "The Edge-Native Platform for Industrial IT, OT, and IIOT Applications",
