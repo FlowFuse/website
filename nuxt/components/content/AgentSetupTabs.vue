@@ -46,7 +46,7 @@ const CLIENTS = [
         name: 'FlowFuse Expert',
         builtIn: true,
         step1Title: 'Sign in to FlowFuse',
-        step1Body: 'A new account puts you in a hosted instance with Expert already in the editor. Nothing to add, no connector, no token.',
+        step1Body: 'A hosted instance has Expert already in the editor. Nothing to add, no connector, no token.',
         step2Title: 'Or start with the Device Agent',
         step2Body: 'Already running Node-RED on your own hardware? Connect it as a remote instance and Expert works there in the same way.',
         step2Label: 'Install the Device Agent',
@@ -147,7 +147,7 @@ function selectClient (id: string) {
         <p class="ff-agent-step__title"><span class="ff-agent-step__num">01</span>{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
         <p class="ff-agent-step__body">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
         <div v-if="client.builtIn" class="ff-agent-step__cta">
-          <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
+          <CtaSignIn variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
         <div v-else class="ff-agent-step__cta">
           <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap />

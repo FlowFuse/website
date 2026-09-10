@@ -48,7 +48,6 @@ meta:
     description: "FlowFuse provides SCADA value in an Industry 4.0 way and unlocks the potential to modernize your SCADA system with its powerful, customizable, modular components that streamline operations, reduce dependence on costly, monolithic solutions."
     keywords: "FlowFuse, manufacturing, SCADA, Industry 4.0, Siemens S7, PLC, Sentron"
 ---
-{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 {% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="nohero w-full px-6">
@@ -69,7 +68,6 @@ meta:
                 </div>
                 <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                     {{ ctaContactUs('primary', 'primary', extraClass='min-h-[40px]') }}
-                    {{ ctaSignUp(site, 'primary-outlined', 'primary', extraClass='min-h-[40px]') }}
                 </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[450px]">
@@ -128,7 +126,6 @@ meta:
         <h4 class="mb-6 w-full text-center">{{ ctaSection.title }}</h4>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
             {{ ctaBookDemo('primary', 'secondary', extraClass='min-h-[40px]') }}
-            {{ ctaSignUp(site, 'primary-outlined', 'secondary', extraClass='min-h-[40px]') }}
         </div>
     </div>
 </div>
