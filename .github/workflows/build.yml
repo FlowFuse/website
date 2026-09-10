@@ -44,7 +44,7 @@ jobs:
           cd ./website
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add src/blueprints/* -A -f
+          git add nuxt/content/blueprints nuxt/public/blueprints -A -f
           git commit -a -m "Bot: update blueprints"
       - name: Push to 'live' branch
         run: git push --force origin HEAD:live
