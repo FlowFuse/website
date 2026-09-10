@@ -90,3 +90,12 @@ All generated licenses are added [to this sheet](https://docs.google.com/spreads
 
 - **Cloud** — use the 'Extend Trial' button on the Team Settings page (platform Administrators only). Without admin access, raise a [CloudProject change request](/handbook/operations/change/#flowfuse-cloud-change-control) with details.
 - **Self-hosted** — issue a new license key with a later expiry. Trial extensions need to be approved by management.
+
+#### Selecting a package
+
+Every trial runs on a package, so pick one before the customer starts testing.
+
+- **Cloud** — set the team's type (Edge, Hub or Fleet) on the team's Change Type page. Platform Administrators can change it for a team on manual billing.
+- **Self-hosted** — tick the packages on the license form. At least one is required, and the choice decides which features the key unlocks.
+
+Certified nodes are not part of the package selection. Request them by opening a [certified nodes request](https://github.com/FlowFuse/CloudProject/issues/new?template=certified-nodes-request.yml){rel="nofollow"} on CloudProject, stating whether the customer is self-hosted or on Cloud and which catalogues they need.
