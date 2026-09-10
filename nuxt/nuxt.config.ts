@@ -44,11 +44,20 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
 // routes are not discoverable from the page tree. They are the entries carrying `values:`;
 // the rest of the collection is listing metadata for pages that have their own .vue file.
 function collectUseCaseRoutes (dir: string): string[] {
+    return readEntries(dir)
+        .filter(entry => Array.isArray(entry.values) && entry.values.length)
+        .map(entry => `/use-cases/${entry.slug}/`)
+}
+
+// A data collection whose every entry is a page, routed by its `slug` field.
+function collectSlugRoutes (dir: string, basePath: string): string[] {
+    return readEntries(dir).map(entry => `${basePath}/${entry.slug}/`)
+}
+
+function readEntries (dir: string): Array<Record<string, any>> {
     return readdirSync(dir)
         .filter(file => file.endsWith('.yml'))
         .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
-        .filter(entry => Array.isArray(entry.values) && entry.values.length)
-        .map(entry => `/use-cases/${entry.slug}/`)
 }
 
 // Webinars are one .md per file under src/webinars/<year>/, sourced in place by the
@@ -420,6 +429,11 @@ export default defineNuxtConfig({
                     // those itself; only the dynamic route needs enumerating.
                     '/use-cases/',
                     ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')),
+                    // /industries/ plus the seven entries served by
+                    // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
+                    // file, so Nuxt finds that itself.
+                    '/industries/',
+                    ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
