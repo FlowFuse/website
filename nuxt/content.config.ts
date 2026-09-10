@@ -272,6 +272,16 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
+        // Long-form prose pages under /platform/. Separate from the `pages` collection
+        // above because that one is rendered by [...slug].vue, which routeRules mark
+        // noindex; /platform/security/ is a linked, indexable page.
+        platformPages: defineCollection({
+            type: 'page',
+            source: 'platform/*.md',
+            schema: z.object({
+                title: z.string(),
+            })
+        }),
         // The seven industry pages were pure 11ty frontmatter read by layouts/industry.njk,
         // the same shape as the operational use-cases. /industries/automotive/ is not here:
         // it had a bespoke markup body and stays a hand-written Vue page, which is why the
