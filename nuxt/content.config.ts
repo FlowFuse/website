@@ -233,6 +233,69 @@ export default defineContentConfig({
             schema: z.object({
                 date: z.coerce.date(),
                 time: z.string().optional(),
+
+            })
+        }),
+        // The three competitor comparison pages. They shared the same seven sections with
+        // per-page copy, so they are one collection rendered by pages/vs/[slug].vue.
+        vsPages: defineCollection({
+            type: 'data',
+            source: 'vs/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                // Display name, used in the table column and the section headings.
+                competitor: z.string(),
+                // Drives the hero border, the section icon badges and the table heading.
+                accent: z.enum(['orange', 'red', 'indigo']),
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }),
+                heroTitle: z.string(),
+                heroImage: z.string(),
+                heroImageAlt: z.string(),
+                hero: z.object({
+                    buttonText: z.string(),
+                    buttonLink: z.string(),
+                    // PostHog `reference` prop on the migration-expert button.
+                    buttonReference: z.string(),
+                }),
+                // The two tinted cards under the hero. /vs/kepware/ has none.
+                cards: z.array(z.object({
+                    title: z.string(),
+                    content: z.string(),
+                })).optional(),
+                sectionTitle: z.string(),
+                sectionIntro: z.string().optional(),
+                sections: z.array(z.object({
+                    // A NavIcon registry key.
+                    svgPath: z.string(),
+                    title: z.string(),
+                    description: z.string(),
+                })),
+                tableHeading: z.string(),
+                columnFlowFuse: z.string(),
+                columnCompetitor: z.string(),
+                table: z.array(z.object({
+                    feature: z.string(),
+                    flowFuse: z.string(),
+                    // Keyed by the competitor's own name in the .njk; one key here so one
+                    // renderer can read every page.
+                    competitor: z.string(),
+                })),
+                switch: z.object({
+                    title: z.string(),
+                    content: z.array(z.string()),
+                    // The .njk carried cta/ctaUrl here but rendered the same
+                    // migration-expert button as the hero, so neither was read.
+                    cta: z.string().optional(),
+                    ctaUrl: z.string().optional(),
+                }),
+                socialProofText: z.string(),
+                cta: z.object({
+                    title: z.string(),
+                    content: z.string(),
+                }),
             })
         }),
         ebooks: defineCollection({
