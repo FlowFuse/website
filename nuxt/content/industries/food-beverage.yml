@@ -1,17 +1,19 @@
----
-layout: layouts/industry.njk
-meta:
+# Lifted verbatim from src/industries/food-beverage.md (11ty), which had no body: the whole page was
+# frontmatter read by layouts/industry.njk. Rendered now by
+# pages/industries/[slug].vue through the components in components/industry/.
+slug: food-beverage
+seoMeta:
   title: "Food & Beverage Manufacturing Operations Platform"
   description: "Connect filling lines, packaging equipment, MES, ERP, and lab systems in one place. FlowFuse helps food and beverage teams respond faster, standardize across sites, and maintain complete batch traceability in real time."
 hero:
   eyebrow: "Food & Beverage"
-  eyebrowIcon: "components/icons/factory.svg"
+  eyebrowIcon: "factory"
   heading: "When a CCP breaches, containment should be automatic, <span class=\"text-red-600\">not operator-dependent.</span>"
   description: "Connect filling lines, packaging equipment, MES, ERP, and lab systems in one place. FlowFuse helps teams automate food safety response, maintain complete lot traceability, and standardize workflows across every line and site."
   image: "/images/industries/food-beverage.jpg"
   imageAlt: "Wide-angle view of a modern beverage manufacturing plant with automated bottling lines, stainless steel processing equipment, and high-speed conveyors transporting bottles through production."
   subCta: ""
-problemImage: "images/industries/food-beverage-problem.svg"
+problemImage: "/images/industries/food-beverage-problem.svg"
 problems:
     - "CCP breaches and food safety events trigger manual containment: operators stop lines based on individual judgment, and containment scope is determined without full lot traceability context, increasing recall risk and audit exposure."
     - "Recipe and specification changes are communicated via email and printed sheets, leaving some lines running on outdated versions until someone notices."
@@ -19,27 +21,27 @@ problems:
 solution:
   title: "What You Get with FlowFuse"
   benefits:
-    - svgPath: "components/icons/link.svg"
+    - svgPath: "link"
       text: "One platform to <strong>connect OT data</strong> (filling lines, packaging equipment, CIP systems, sensors) with IT systems (ERP, MES, LIMS, quality reporting)."
-    - svgPath: "components/icons/bolt.svg"
+    - svgPath: "bolt"
       text: "Low-code automation built on Node-RED so engineers can <strong>ship and iterate flows without custom integration projects</strong>."
-    - svgPath: "components/icons/rectangle-stack.svg"
+    - svgPath: "rectangle-stack"
       text: "Dev/test/prod environments to <strong>safely roll out standardized workflows across lines and plants</strong>."
-solutionImage: "images/industries/food-beverage-solution.svg"
+solutionImage: "/images/industries/food-beverage-solution.svg"
 outcomes:
   title: "Key Outcomes"
   subtitle: "for Food & Beverage Manufacturers"
   items:
-    - svgPath: "components/icons/shield-check.svg"
+    - svgPath: "shield-check"
       title: "Accelerate food safety response"
       description: "with automatic CCP breach workflows that flag affected lots and route disposition through quality approval gates, no manual containment decisions."
-    - svgPath: "components/icons/document-check.svg"
+    - svgPath: "document-check"
       title: "Reduce recall scope and cost"
       description: "by maintaining complete lot-to-lot traceability in real time, one-up/one-down trace report generated in minutes, not hours."
-    - svgPath: "components/icons/arrows-pointing-out.svg"
+    - svgPath: "arrows-pointing-out"
       title: "Standardize recipe rollout across all lines and sites"
       description: "with confirmation gates that prevent production before the correct specification version is acknowledged."
-    - svgPath: "components/icons/bolt.svg"
+    - svgPath: "bolt"
       title: "Improve OEE data accuracy"
       description: "with downtime reasons captured at the moment of event, not at shift end, linked to line, shift, and work order."
 useCases:
@@ -60,4 +62,3 @@ cta:
   description: "Share a sample of your production lines and food safety requirements and the team will show how FlowFuse would manage containment, traceability, and compliance in real time."
   buttonText: "BOOK YOUR DEMO"
   buttonLink: "/book-demo/"
----

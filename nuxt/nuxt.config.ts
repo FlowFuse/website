@@ -293,6 +293,16 @@ export default defineNuxtConfig({
             // this they are in neither sitemap.
             ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
         ],
+        urls: [
+            ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+            // /industries/<slug>/ is one [slug].vue over a `data` collection, so the
+            // module's static-route discovery cannot see it, and content-urls.get.ts cannot
+            // either (it keys on `path`, which a data collection has no equivalent of).
+            // Without this the seven pages are in neither sitemap, having left
+            // sitemap-legacy.xml when their .md files moved. /industries/automotive/ has its
+            // own .vue file, so that one is discovered normally.
+            ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries').map(loc => ({ loc })),
+        ],
         exclude: ['/_studio/**', '/api/**'],
     },
 
@@ -455,6 +465,11 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // /industries/ plus the seven entries served by
+                    // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
+                    // file, so Nuxt finds that itself.
+                    '/industries/',
+                    ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries'),
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
