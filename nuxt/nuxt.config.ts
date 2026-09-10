@@ -293,6 +293,17 @@ export default defineNuxtConfig({
             // this they are in neither sitemap.
             ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
         ],
+        urls: [
+            ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+            // /landing/<slug>/ is one [slug].vue over a `data` collection, so the module's
+            // static-route discovery cannot see it, and content-urls.get.ts cannot either
+            // (it keys on `path`, which a data collection has no equivalent of). Without
+            // this they are in neither sitemap, having left sitemap-legacy.xml when their
+            // .njk files were deleted. `skipIndex` entries stay out, as they are noindex.
+            ...readEntries(join(__dirname, 'content/landing'))
+                .filter(entry => !entry.skipIndex)
+                .map(entry => ({ loc: `/landing/${entry.slug}/` })),
+        ],
         exclude: ['/_studio/**', '/api/**'],
     },
 
@@ -438,6 +449,10 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The four campaign pages with their own layout are .vue files, linked only from off-site campaigns.
+                    '/landing/tulip/',
+                    '/landing/plc/',
+                    '/landing/factory-efficiency/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
@@ -448,6 +463,8 @@ export default defineNuxtConfig({
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
 
                     ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
+
+                    ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
