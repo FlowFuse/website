@@ -40,6 +40,17 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
+// A data collection whose every entry is a page, routed by its `slug` field.
+function collectSlugRoutes (dir: string, basePath: string): string[] {
+    return readEntries(dir).map(entry => `${basePath}/${entry.slug}/`)
+}
+
+function readEntries (dir: string): Array<Record<string, any>> {
+    return readdirSync(dir)
+        .filter(file => file.endsWith('.yml'))
+        .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
+}
+
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
 // so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
 // each file's `tierId` field rather than the filename, since that's the field the page route
@@ -383,11 +394,17 @@ export default defineNuxtConfig({
                     '/pricing',
                     '/resources/roi-calculator',
                     '/product',
+                    // The four campaign pages with their own layout are .vue files, linked only from off-site campaigns.
+                    '/landing/tulip/',
+                    '/landing/plc/',
+                    '/landing/factory-efficiency/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
+
+                    ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
