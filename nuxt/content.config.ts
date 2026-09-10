@@ -224,6 +224,9 @@ export default defineContentConfig({
         // Source files stay at src/webinars/ (still served by 11ty, see LEGACY_PREFIXES
         // in nuxt/server/middleware/legacy.ts) - only queried for the "Latest/Upcoming
         // Webinar" tile on the thank-you pages, so no `sitemap` field either.
+        // Source files stay at src/webinars/ (11ty's historical location) rather than being
+        // copied into nuxt/content/, same as blog/changelog/customer-stories above.
+        // Rendered by pages/webinars/[...slug].vue; listed by pages/webinars/index.vue.
         webinars: defineCollection({
             type: 'page',
             source: {
@@ -231,8 +234,40 @@ export default defineContentConfig({
                 include: 'webinars/**/*.md',
             },
             schema: z.object({
+                subtitle: z.string().optional(),
+                description: z.string().optional(),
+                // Overrides the <title> when set, same precedence as the blog.
+                metaTitle: z.string().optional(),
                 date: z.coerce.date(),
                 time: z.string().optional(),
+                // Minutes. Rendered as "45 mins" / "1h 30m".
+                duration: z.number().optional(),
+                image: z.string().optional(),
+                // YouTube id. When set it replaces the hero image with the embed.
+                video: z.string().optional(),
+                // src/_data/{team,guests} basenames, resolved through useAuthorMembers.
+                hosts: z.array(z.string()).optional(),
+                hubspot: z.object({
+                    // Registration form, shown only while the webinar is still upcoming.
+                    formId: z.string().nullable().optional(),
+                    // Slide download, shown once the recording is published. Nullable
+                    // because most entries write the key with no value, which YAML
+                    // parses as null rather than omitting the key.
+                    downloadFormId: z.string().nullable().optional(),
+                }).optional(),
+                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
+                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, the
+                // same shim the blog collection uses. `meta` itself is reserved by
+                // @nuxt/content (it holds the <!--more--> excerpt), so a declared `meta`
+                // field is silently replaced and everything under it is lost.
+                structuredData: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                }).optional(),
             })
         }),
         ebooks: defineCollection({
