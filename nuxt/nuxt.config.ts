@@ -6,6 +6,10 @@ import remarkDocsLinks from './utils/remark-docs-links'
 import { BLOG_TAGS } from './composables/useBlogList'
 import { redirects } from './redirects'
 import site from '../src/_data/site.json'
+// @ts-ignore untyped module, kept as plain JS so `node --test` can run it directly
+import { injectGuideFrontmatter, isGuidePath } from './lib/guides-sync.mjs'
+
+const REPO_ROOT = join(__dirname, '..')
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -440,11 +444,19 @@ export default defineNuxtConfig({
 
     hooks: {
         'content:file:beforeParse' ({ file, collection }) {
-            if (collection.name !== 'blog') return
-            file.body = file.body.replace(
-                /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
-                (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
-            )
+            if (collection.name === 'blog') {
+                file.body = file.body.replace(
+                    /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
+                    (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
+                )
+                return
+            }
+            // The `docs` collection's second source reads nuxt/content-guides/ directly
+            // (see content.config.ts and nuxt/lib/guides-sync.mjs) - this is where those
+            // pages get the editUrl/updated provenance a copy step used to write by hand.
+            if (collection.name === 'docs' && file.path && isGuidePath(file.path, REPO_ROOT)) {
+                file.body = injectGuideFrontmatter(file.body, { repoRoot: REPO_ROOT, absPath: file.path })
+            }
         },
         // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
         // Can't use Nuxt's $fetch here — it only exists at nitro runtime.

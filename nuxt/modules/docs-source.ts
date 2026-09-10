@@ -7,7 +7,7 @@ import { join, basename, dirname } from 'node:path'
 // @ts-ignore untyped module, kept as plain JS so `node --test` can run it directly
 import { syncDocs } from '../lib/docs-sync.mjs'
 // @ts-ignore same
-import { syncGuides } from '../lib/guides-sync.mjs'
+import { GUIDES_SOURCE, syncGuideAssets } from '../lib/guides-sync.mjs'
 // @ts-ignore same
 
 const logger = useLogger('docs-source')
@@ -33,21 +33,28 @@ export default defineNuxtModule({
         const contentDocsDir = join(nuxtRoot, 'content', 'docs')
 
         const repoRoot = dirname(nuxtRoot)
+        const guidesDir = join(repoRoot, GUIDES_SOURCE)
 
-        // Order matters: syncDocs wipes content/docs before writing, so the guides overlaid
-        // from this repo have to land after it, not before.
         await syncDocs({ repoRoot, nuxtRoot, logger })
-        syncGuides({ repoRoot, nuxtRoot, logger })
+        // The guide pages themselves are a second source of the `docs` collection (see
+        // content.config.ts) and are never copied into content/docs - this only copies
+        // their non-markdown assets and fails the build on a path collision with a page
+        // from FlowFuse/flowfuse. Order no longer matters against syncDocs because of
+        // that: nothing here writes into contentDocsDir any more.
+        syncGuideAssets({ repoRoot, nuxtRoot, logger })
 
-        if (!existsSync(contentDocsDir)) return
-
-        // Collected after the overlay, so the guide pages get prerendered with the rest
-        // of /docs and need no route list of their own in nuxt.config.
-        const docsRoutes = collectRoutes(contentDocsDir, '/docs')
+        // Collected from both of the `docs` collection's sources, so every page gets
+        // prerendered with the rest of /docs and neither source needs a route list of its
+        // own in nuxt.config. contentDocsDir covers FlowFuse/flowfuse's docs, materialized
+        // by syncDocs; guidesDir covers this repo's guides, read directly.
+        const docsRoutes = [
+            ...(existsSync(contentDocsDir) ? collectRoutes(contentDocsDir, '/docs') : []),
+            ...(existsSync(guidesDir) ? collectRoutes(guidesDir, '/docs') : []),
+        ]
         // A floor rather than a log line, following the same call in nuxt.config.ts for the
-        // integrations. Collecting nothing means the tree above did not land, and on the
-        // netlify preset unprerendered routes still SSR, so the only symptom would be a
-        // thinner static site and slow cold pages - nothing that looks like a failure.
+        // integrations. Both arms above swallow a missing tree, so collecting nothing means
+        // a source did not land; on the netlify preset unprerendered routes still SSR, so
+        // the only symptom would be a thinner static site and slow cold pages.
         if (docsRoutes.length === 0) {
             throw new Error(
                 '[docs-source] collected 0 docs routes to prerender - refusing to build /docs with no pages'

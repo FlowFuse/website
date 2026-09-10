@@ -1,12 +1,19 @@
 #!/usr/bin/env node
-// Keeps nuxt/content/docs in step with its two sources while the dev server runs:
-// a local flowfuse checkout (when the docs resolve to one) and this repo's own
-// nuxt/content-guides tree. nuxt/modules/docs-source.ts syncs once during setup and never
-// again, so without this an edit to either only shows up after a restart.
+// Keeps the docs collection's two sources in step while the dev server runs.
+//
+// The flowfuse docs are still a copy (nuxt/lib/docs-sync.mjs materializes them into
+// nuxt/content/docs, once, at Nuxt module setup), so an edit to a local checkout of them
+// only shows up after a restart without this watcher re-running that copy per file.
+//
+// The guides, by contrast, are a native content-collection source read straight out of
+// nuxt/content-guides/ (see content.config.ts) - @nuxt/content's own dev-mode watcher
+// re-parses a changed guide page on its own, incrementally, so this script only still
+// needs to watch that tree for its non-markdown assets, which nuxt/lib/guides-sync.mjs
+// copies to public/docs and which nothing else watches.
 //
 // One edit syncs one file. Re-running a whole sync instead would delete and recreate all
-// 130-odd pages on every save, and @nuxt/content re-indexing the entire collection that way
-// exhausts the dev server's heap.
+// 130-odd flowfuse pages on every save, and @nuxt/content re-indexing the entire collection
+// that way exhausts the dev server's heap.
 
 import { basename, dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -14,7 +21,7 @@ import { fileURLToPath } from 'node:url'
 import chokidar from 'chokidar'
 
 import { resolveSource, syncDocsPath } from '../nuxt/lib/docs-sync.mjs'
-import { GUIDES_SOURCE, syncGuidePath } from '../nuxt/lib/guides-sync.mjs'
+import { GUIDES_SOURCE, syncGuideAssetPath } from '../nuxt/lib/guides-sync.mjs'
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 const nuxtRoot = join(repoRoot, 'nuxt')
@@ -25,11 +32,11 @@ const verbs = { add: 'Added', change: 'Synced', unlink: 'Removed' }
  * @param {string} root directory to watch
  * @param {(relPath: string) => void} sync
  */
-function watch (root, sync) {
+function watch (root, sync, { ignoreMarkdown = false } = {}) {
     const watcher = chokidar.watch(root, {
         // The Nuxt module has already synced by the time this starts.
         ignoreInitial: true,
-        ignored: (path) => basename(path).startsWith('.'),
+        ignored: (path) => basename(path).startsWith('.') || (ignoreMarkdown && path.endsWith('.md')),
         // Editors write a file in more than one step, so wait for it to settle rather than
         // publish a half-written page.
         awaitWriteFinish: { stabilityThreshold: 100, pollInterval: 50 },
@@ -57,9 +64,8 @@ function watch (root, sync) {
     watcher.on('ready', () => console.log(`Watching ${root} for docs changes`))
 }
 
-// The guides live in this repo, so unlike the flowfuse docs there is always something
-// local to watch.
-watch(join(repoRoot, GUIDES_SOURCE), relPath => syncGuidePath({ repoRoot, nuxtRoot, relPath }))
+// Assets only - see the module comment above for why markdown is @nuxt/content's job now.
+watch(join(repoRoot, GUIDES_SOURCE), relPath => syncGuideAssetPath({ repoRoot, nuxtRoot, relPath }), { ignoreMarkdown: true })
 
 // The same precedence the build uses, rather than a second hardcoded path that could drift
 // from it: FLOWFUSE_DOCS_LOCAL, then a sibling checkout, then a clone.
