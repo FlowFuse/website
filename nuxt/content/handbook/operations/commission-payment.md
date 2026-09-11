@@ -130,6 +130,12 @@ If the employee agrees to the commission, process the payment in Deel as USD pay
 Sign into Deel and browse to the profile of the commission receiver. For contractors
 the commission is a **Payment Adjustment**, and mark it as a **commission** payment not as a bonus.
 For EOR team members, you'll need to add an item under "Payments and Submissions" manually.
+For PEO team members, include them in the next regular payroll cycle. 
+1. Go to Payroll in the left navigation menu and select Payroll cycles.
+2. Under the Active tab, locate the relevant pay period and click Review on the cycle row. If the most active payroll is already completed, go to the upcoming payroll cycle. 
+3. In the employee pay review table, find the employee, click the three dots, and click "add item"
+4. Pick commission from the drop-down and enter the amount. 
+5. Complete the review steps and select Submit Report before the cut-off date (5 days prior to payday).
 
 In both cases be explicit about this being a bonus or commission for achievements for a certain 
 time period and what the achievement was.
