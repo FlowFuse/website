@@ -11,9 +11,7 @@ We expect this roadmap to evolve as we progress along it.
 
 - **Vision** — the destination we are working towards.
 - **Foundations** — the pillars, lanes and customer problems that every roadmap item is measured against.
-- **Year 1** — specific items, quarter by quarter. Deliberately granular: this is work we intend to do.
-- **Year 2** — half-year themes, no dates. Each names what has to be true in Year 1 for it to start.
-- **Year 3** — a small number of bets, stated as hypotheses.
+- **Direction** — the headline items we are considering over the next year.
 
 ## Vision
 
