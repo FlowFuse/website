@@ -169,14 +169,3 @@ Three bets. Each is a hypothesis with evidence conditions, not a commitment.
 | Kill criteria | If adoption of MCP tooling is still low by the end of Year 2, this is a feature and not a bet |
 | Decision point | Q2 2028 |
 
-### FlowFuse Node-RED becomes the standard industrial distribution
-
-|  |  |
-| ----- | ----- |
-| Lane(s) | 1 Edge & device · 8 Ecosystem |
-| Hypothesis | If the supported distribution is a genuine drop-in, it becomes what hardware partners ship and what engineers install by default, which collapses acquisition and deployment into one motion |
-| What's genuinely uncertain | Partner trust. The barrier with vendors is not capability, it is willingness to ship someone else's distribution |
-| Evidence that advances it | Share of new connections arriving via the distribution rather than migration. Partners shipping it preinstalled |
-| Kill criteria | If by end of Year 2 the distribution is a minority of new connections, we are running two onboarding paths permanently and should pick one |
-| Decision point | Q4 2027 |
-
