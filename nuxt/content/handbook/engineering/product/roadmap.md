@@ -158,14 +158,3 @@ Half-year themes. No dates. Each names what has to be true in Year 1 for it to s
 
 Three bets. Each is a hypothesis with evidence conditions, not a commitment.
 
-### Natural language as the interface to the estate
-
-|  |  |
-| ----- | ----- |
-| Lane(s) | 5 AI · 3 Data layer |
-| Hypothesis | With standardized models, MCP tooling and team skills in place, asking the estate a question becomes the primary way non-builders interact with what has been built. If true, Insights mode is a product line rather than a feature of Expert |
-| What's genuinely uncertain | Whether customers will stand up and maintain their own MCP servers, and whether the end-user persona actually adopts a chat surface over a dashboard |
-| Evidence that advances it | Insights mode usage by end users rather than builders. Number of customer-authored MCP servers connected |
-| Kill criteria | If adoption of MCP tooling is still low by the end of Year 2, this is a feature and not a bet |
-| Decision point | Q2 2028 |
-
