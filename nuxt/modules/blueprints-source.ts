@@ -17,14 +17,20 @@ export default defineNuxtModule({
 
         const { entries } = syncBlueprints({ repoRoot, nuxtRoot, logger })
 
-        // A production build with no blueprints means the library was neither checked out
-        // beside this repo nor committed by the Build Site workflow. Publishing an empty
-        // Blueprint Library looks like a content change rather than a broken build, and on
-        // the netlify preset the pages would still SSR, so nothing else would flag it.
+        // The production deploy builds the `live` branch, which the Build Site workflow has
+        // committed this tree to, so resolving nothing there means the library was neither
+        // checked out beside this repo nor committed. Publishing an empty Blueprint Library
+        // looks like a content change rather than a broken build, and on the netlify preset
+        // the pages would still SSR, so nothing else would flag it.
+        //
+        // Only that context is fatal. A deploy preview builds a branch that has never
+        // carried the committed tree, and Netlify checks out no second repository, so a
+        // preview has legitimately never had blueprints. Neither has a contributor without
+        // access to the private library.
         if (entries.length === 0) {
             const message = '[blueprints-source] no blueprints resolved - check out FlowFuse/blueprint-library beside this repo or set FLOWFUSE_BLUEPRINTS_LOCAL'
-            if (process.env.NODE_ENV === 'production') throw new Error(message)
-            logger.warn(`${message} (continuing: /blueprints/ will be empty in dev)`)
+            if (process.env.CONTEXT === 'production') throw new Error(message)
+            logger.warn(`${message} (continuing: /blueprints/ will be empty)`)
         }
 
         const pageCount = Math.max(1, Math.ceil(entries.length / BLUEPRINTS_PAGE_SIZE))

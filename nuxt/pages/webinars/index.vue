@@ -11,12 +11,17 @@
 //    text and the size never arrived. Both tiles fall back to /images/og-webinar.jpg here,
 //    which is what the call site meant; the past-webinar tiles previously fell back to
 //    /images/og-blog.jpg through the same shifted-argument path.
-//  - summary.njk ran the summary through markdown and stripped links. These summaries are
-//    plain sentences with no markup, so this renders them as text.
+//  - summary.njk read `excerpt or description or meta.description`, rendered it as
+//    markdown and stripped links. The excerpt is everything a webinar writes above its
+//    <!--more-->, which is more than one paragraph on some of them, so it is read from
+//    the parsed tree and printed one <p> per paragraph, links flattened to their text.
 //  - The hand-written onclick="capture('cta-webinar-info')" becomes useCapture(), matching
 //    every other Nuxt CTA.
+import { minimarkParagraphs } from '../../lib/minimark-text.mjs'
+import { shortDate } from '../../lib/short-date.mjs'
+
 const { data: webinars } = await useAsyncData('webinars-listing', () =>
-    queryCollection('webinars').select('path', 'title', 'date', 'time', 'duration', 'image', 'description', 'structuredData').all()
+    queryCollection('webinars').select('path', 'title', 'date', 'time', 'duration', 'image', 'description', 'meta', 'structuredData').all()
 )
 
 const capture = useCapture()
@@ -47,11 +52,17 @@ const past = computed(() =>
     (webinars.value || []).filter(item => !isUpcoming(item.date)).sort(byDateAscending).reverse()
 )
 
-// summary.njk read excerpt -> description -> meta.description. @nuxt/content puts the
-// <!--more--> excerpt on `description` when the frontmatter has none, which collapses the
-// first two into one lookup.
-function summaryOf(item: { description?: string, structuredData?: { description?: string } }) {
-    return item.description || item.structuredData?.description || ''
+// summary.njk read excerpt -> description -> meta.description, in that order.
+//
+// `description` holds only the excerpt's first paragraph when a webinar has no
+// frontmatter description, so reading it alone drops the rest of the excerpt.
+// The excerpt lands on `meta.excerpt`: `meta` is @nuxt/content's own column, which is why
+// a webinar's frontmatter `meta:` block is rewritten to `structuredData:` before parsing.
+function summaryOf(item: { description?: string, meta?: { excerpt?: unknown }, structuredData?: { description?: string } }): string[] {
+    const excerpt = minimarkParagraphs(item.meta?.excerpt)
+    if (excerpt.length) return excerpt
+    const fallback = item.description || item.structuredData?.description
+    return fallback ? [fallback] : []
 }
 
 function tileImage(item: { image?: string }) {
@@ -62,10 +73,7 @@ function longDate(date: string | Date) {
     return new Date(date).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
 }
 
-// 11ty's `shortDate` filter rendered "27 Jan, 2026" via spacetime.
-function shortDate(date: string | Date) {
-    return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).replace(/ (\d{4})$/, ', $1')
-}
+
 
 // 11ty's `duration` filter, which takes minutes.
 function duration(mins?: number) {
@@ -116,7 +124,7 @@ useSeoMeta({
               </NuxtLink>
               <div class="flex flex-col justify-between md:w-1/2 md:px-2">
                 <div class="grow">
-                  <p v-if="summaryOf(item)">{{ summaryOf(item) }}</p>
+                  <p v-for="(para, i) in summaryOf(item)" :key="i">{{ para }}</p>
                 </div>
                 <div>
                   <NuxtLink

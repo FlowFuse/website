@@ -136,7 +136,7 @@ useSchemaOrg([
                       <div class="flex flex-col mt-12">
                           <div class="m-auto flex gap-4 items-center justify-center flex-row">
                               <CtaBookDemo variant="highlight" position="hero" class="flex flex-col mb-6" />
-                              <CtaSignUp variant="ghost" position="hero" icon class="flex flex-col mb-6" />
+                              <CtaSignUp variant="ghost" color="white" position="hero" icon class="flex flex-col mb-6" />
                           </div>
                       </div>
                   </div>
@@ -371,7 +371,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto">
           <h2 class="mb-1">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
           <div class="-mt-20">
-              <BlogFaq :faq="FAQ" />
+              <BlogFaq :faq="FAQ" variant="page" />
           </div>
       </div>
   </div>

@@ -14,6 +14,8 @@
 //    placeholders that must not become markup).
 //  - The registration form's "is this still upcoming" test was the dateInFuture filter
 //    (spacetime, today counts as future). isUpcoming below keeps that boundary exactly.
+import { shortDate } from '../../lib/short-date.mjs'
+
 const route = useRoute()
 const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug
 
@@ -35,9 +37,7 @@ const formattedDuration = computed(() => {
 })
 
 // 11ty's `shortDate` filter rendered "27 Jan, 2026" via spacetime.
-const formattedDate = computed(() => page.value?.date
-    ? new Date(page.value.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).replace(/ (\d{4})$/, ', $1')
-    : '')
+const formattedDate = computed(() => page.value?.date ? shortDate(page.value.date) : '')
 
 // Matches 11ty's dateInFuture: a webinar happening today still counts as upcoming.
 const isUpcoming = computed(() => {

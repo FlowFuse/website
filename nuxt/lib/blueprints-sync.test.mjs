@@ -92,7 +92,10 @@ test('syncBlueprints publishes the markdown, its assets and nothing else', () =>
         assert.match(page, /^image: \/blueprints\/manufacturing\/oee-calculator\/oee-calculator\.png$/m)
         assert.match(page, /!\[flow\]\(\/blueprints\/manufacturing\/oee-calculator\/images\/flow\.png\)/)
         assert.doesNotMatch(page, /layout:/)
-        assert.match(page, /^updated: /m)
+        // The fixture is a plain directory, not a git checkout, so there is no date to
+        // record and the key is left out entirely rather than written empty. See
+        // injectUpdated in blueprints-markdown.mjs for why that matters.
+        assert.doesNotMatch(page, /^updated:/m)
 
         const publicDir = join(nuxtRoot, 'public', 'blueprints', 'manufacturing', 'oee-calculator')
         assert.ok(existsSync(join(publicDir, 'oee-calculator.png')))
@@ -140,6 +143,26 @@ test('syncBlueprints keeps the published tree when no library is available', () 
         assert.equal(manifest.source, 'prebuilt')
         assert.deepEqual(manifest.entries, [{ category: 'other', slug: 'mobile-alerting' }])
         assert.ok(existsSync(join(contentDir, 'other', 'mobile-alerting.md')))
+    })
+})
+
+test('syncBlueprints warns when the published pages have no screenshots beside them', () => {
+    withTempDirs((root) => {
+        const nuxtRoot = join(root, 'website', 'nuxt')
+        const contentDir = join(nuxtRoot, 'content', 'blueprints')
+        mkdirSync(join(contentDir, 'other'), { recursive: true })
+        writeFileSync(join(contentDir, 'other', 'mobile-alerting.md'), '---\ntitle: Mobile Alerting\n---\n')
+
+        const warnings = []
+        syncBlueprints({
+            repoRoot: join(root, 'website'),
+            nuxtRoot,
+            env: {},
+            logger: { info () {}, warn: (message) => warnings.push(message) },
+        })
+
+        assert.equal(warnings.length, 1)
+        assert.match(warnings[0], /screenshots will 404/)
     })
 })
 

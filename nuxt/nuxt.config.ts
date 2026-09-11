@@ -62,14 +62,22 @@ function readEntries (dir: string): Array<Record<string, any>> {
 
 // Webinars are one .md per file under src/webinars/<year>/, sourced in place by the
 // `webinars` collection, so their routes come from the tree rather than from a field.
+//
+// `<slug>/index.md` is the directory's own page, not a page called "index". One webinar is
+// authored that way (2025/simplifying-opc-ua), because it shipped a flow export alongside
+// its markdown, and naming that route wrong is a prerender 404 rather than a missing page.
+//
+// A year directory contributes no route of its own (there is no /webinars/2025/ page),
+// while a webinar directory holding index.md does.
 function collectWebinarRoutes(dir: string, basePath: string): string[] {
-    const routes: string[] = [`${basePath}/`]
+    const routes: string[] = []
     for (const file of readdirSync(dir)) {
         const fullPath = join(dir, file)
         if (statSync(fullPath).isDirectory()) {
-            routes.push(...collectWebinarRoutes(fullPath, `${basePath}/${file}`).filter(route => route !== `${basePath}/${file}/`))
+            routes.push(...collectWebinarRoutes(fullPath, `${basePath}/${file}`))
         } else if (file.endsWith('.md')) {
-            routes.push(`${basePath}/${basename(file, '.md')}/`)
+            const slug = basename(file, '.md')
+            routes.push(slug === 'index' ? `${basePath}/` : `${basePath}/${slug}/`)
         }
     }
     return routes
@@ -423,6 +431,7 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
+                    '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
                     // /use-cases/ plus the two entries served by pages/use-cases/[slug].vue.
                     // The six architecture pages are their own .vue files, so Nuxt finds

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict'
 
 import {
     assetBaseFor,
+    injectUpdated,
     processBlueprint,
     resolveAssetPath,
     rewriteBodyImages,
@@ -106,6 +107,12 @@ test('processBlueprint applies every transform once', () => {
         `![user view](${base}/multi-users-dashboard(1).png "User view")`,
         '',
     ].join('\n'))
+})
+
+test('injectUpdated leaves the content alone when there is no date to record', () => {
+    const input = '---\ntitle: x\n---\nbody\n'
+    assert.equal(injectUpdated(input, ''), input)
+    assert.equal(processBlueprint(input, { assetBase: BASE, updated: '' }), input)
 })
 
 test('processBlueprint gives a README with no frontmatter one, rather than dropping the date', () => {

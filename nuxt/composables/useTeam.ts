@@ -24,14 +24,32 @@ function keyFor(path: string): string {
     return path.split('/').pop()!.replace(/\.json$/, '')
 }
 
-const people: Record<string, TeamMember> = {}
-for (const [path, mod] of Object.entries({ ...teamModules, ...guestModules })) {
-    const slug = keyFor(path)
-    people[slug] = { slug, ...(mod as Omit<TeamMember, 'slug'>) }
+function index(modules: Record<string, unknown>): Record<string, TeamMember> {
+    const out: Record<string, TeamMember> = {}
+    for (const [path, mod] of Object.entries(modules)) {
+        const slug = keyFor(path)
+        out[slug] = { slug, ...(mod as Omit<TeamMember, 'slug'>) }
+    }
+    return out
 }
 
+const staff = index(teamModules)
+const people: Record<string, TeamMember> = { ...staff, ...index(guestModules) }
+
+/** Everyone who can be named as an author: current staff and guest writers alike. */
 export function useTeam() {
     return people
+}
+
+/**
+ * Current staff only, for /about/'s "Meet the Team" grid.
+ *
+ * A guest file is not only an outside writer: three of them are former team members, and
+ * they keep the `order` field they had while they were staff. Reading the merged map here
+ * put all three back on the page.
+ */
+export function useStaff() {
+    return staff
 }
 
 export function useTeamMember(slug?: string): TeamMember | null {

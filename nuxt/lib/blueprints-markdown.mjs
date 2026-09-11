@@ -71,8 +71,15 @@ export function rewriteBodyImages (content, assetBase) {
     return joinFrontmatter(frontmatter, rewritten)
 }
 
-/** Record when the source README last changed, for the sitemap's lastmod. */
+/**
+ * Record when the source README last changed, for the sitemap's lastmod.
+ *
+ * A blank date is left out rather than written as an empty key: YAML reads `updated:` with
+ * no value as null, which the collection's `z.string().optional()` rejects, and a schema
+ * failure drops the whole page. That happens whenever the library is not a git checkout.
+ */
 export function injectUpdated (content, updated) {
+    if (!updated) return content
     const { frontmatter, body } = splitFrontmatter(content)
     return joinFrontmatter(`updated: ${updated}\n${frontmatter}`, body)
 }

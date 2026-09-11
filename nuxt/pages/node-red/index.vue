@@ -348,7 +348,7 @@ useSchemaOrg([
           <h2 class="max-md:text-center -mb-12">
               Frequently Asked <span class="text-indigo-600">Questions</span>
           </h2>
-          <BlogFaq :faq="FAQ" />
+          <BlogFaq :faq="FAQ" variant="page" />
       </div>
   </div>
 </template>

@@ -157,6 +157,12 @@ export function syncBlueprints ({ repoRoot, nuxtRoot, env = process.env, logger 
     if (source.kind === 'prebuilt') {
         const entries = collectPublishedBlueprints(contentDir)
         logger.info(`No blueprint-library checkout found; using the ${entries.length} blueprint page(s) already in nuxt/content/blueprints`)
+        // The two trees are committed together by the Build Site workflow. Pages without
+        // their screenshots would build and deploy silently, showing broken images on
+        // every blueprint, so say so here rather than leave it to be noticed on the site.
+        if (entries.length && !existsSync(publicDir)) {
+            logger.warn(`${entries.length} blueprint page(s) are published but ${publicDir} is missing, so their screenshots will 404`)
+        }
         return { source: source.kind, ref: '', sha: '', entries }
     }
 

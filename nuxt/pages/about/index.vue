@@ -3,8 +3,9 @@
 // classes from src/css/style.css.
 //
 // What the port changes on purpose:
-//  - The team grid read the `team` global and sorted by `order`. It uses useTeam(), the
-//    same data through the same files, which the blog byline already reads.
+//  - The team grid read the `team` global and sorted by `order`. It uses useStaff(), the
+//    same files, which is the team/ directory only: useTeam() also merges guests/, whose
+//    former-staff entries still carry an `order`.
 //  - The social glyphs were {% include %}d partials; components/icons/ already has Vue
 //    components for GitHub, LinkedIn and Twitter, so those are reused. The mail and RSS
 //    links use <UIcon>.
@@ -14,7 +15,7 @@
 //    hand-built JSON string. It goes through useSchemaOrg, which escapes properly.
 //  - Production renders a second, empty <h1> from layouts/page.njk's `nohero` branch,
 //    because the page sets no `title`. Only the real heading survives.
-const team = useTeam()
+const team = useStaff()
 
 const members = computed(() =>
     Object.values(team)
@@ -172,22 +173,35 @@ useSchemaOrg([
                   <div class="name">{{ member.name }}</div>
                   <div class="role">{{ member.title }}</div>
                 </div>
+                <!-- Each link keeps its <span> wrapper: style.page.css spaces and colours
+                     the icons through `.team .socials span`, so a bare <a> renders them
+                     jammed together in the browser's default link colour. -->
                 <div class="socials">
-                  <a v-if="member.email" :href="`mailto:${member.email}`" :aria-label="`Email ${member.name}`">
-                    <UIcon name="i-lucide-mail" class="w-5 h-5" />
-                  </a>
-                  <a v-if="member.twitter" target="_blank" rel="noopener" :href="`https://twitter.com/${member.twitter}`" :aria-label="`${member.name} on Twitter`">
-                    <IconsTwitterIcon class="w-5 h-5" />
-                  </a>
-                  <a v-if="member.github" target="_blank" rel="noopener" :href="`https://github.com/${member.github}`" :aria-label="`${member.name} on GitHub`">
-                    <IconsGithubIcon class="w-5 h-5" />
-                  </a>
-                  <a v-if="member.linkedin" target="_blank" rel="noopener" :href="`https://www.linkedin.com/in/${member.linkedin}`" :aria-label="`${member.name} on LinkedIn`">
-                    <IconsLinkedinIcon class="w-5 h-5" />
-                  </a>
-                  <a v-if="member.blog" target="_blank" rel="noopener" :href="member.blog" :aria-label="`${member.name}'s blog`">
-                    <UIcon name="i-lucide-rss" class="w-5 h-5" />
-                  </a>
+                  <span v-if="member.email">
+                    <a :href="`mailto:${member.email}`" :aria-label="`Email ${member.name}`">
+                      <UIcon name="i-lucide-mail" class="w-5 h-5" />
+                    </a>
+                  </span>
+                  <span v-if="member.twitter">
+                    <a target="_blank" rel="noopener" :href="`https://twitter.com/${member.twitter}`" :aria-label="`${member.name} on Twitter`">
+                      <IconsTwitterIcon class="w-5 h-5" />
+                    </a>
+                  </span>
+                  <span v-if="member.github">
+                    <a target="_blank" rel="noopener" :href="`https://github.com/${member.github}`" :aria-label="`${member.name} on GitHub`">
+                      <IconsGithubIcon class="w-5 h-5" />
+                    </a>
+                  </span>
+                  <span v-if="member.linkedin">
+                    <a target="_blank" rel="noopener" :href="`https://www.linkedin.com/in/${member.linkedin}`" :aria-label="`${member.name} on LinkedIn`">
+                      <IconsLinkedinIcon class="w-5 h-5" />
+                    </a>
+                  </span>
+                  <span v-if="member.blog">
+                    <a target="_blank" rel="noopener" :href="member.blog" :aria-label="`${member.name}'s blog`">
+                      <UIcon name="i-lucide-rss" class="w-5 h-5" />
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>
