@@ -186,4 +186,10 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/application-guide/node-red/overview/': { redirect: { to: '/docs/node-red-guide/', statusCode: 301 } },
     '/application-guide/node-red/patterns/': { redirect: { to: '/docs/node-red-guide/patterns/', statusCode: 301 } },
     '/application-guide/node-red/worked-examples/': { redirect: { to: '/docs/node-red-guide/worked-examples/', statusCode: 301 } },
+
+    // /community/newsletter/ was an orphan page: nothing on the site links to it, its
+    // archive of past issues hadn't been updated since November 2023, and the sign-up
+    // form it hosted is duplicated elsewhere (src/_includes/explore-more-content.njk,
+    // nuxt/components/ThankYouExploreMore.vue). Removed rather than ported.
+    '/community/newsletter/': { redirect: { to: '/blog/', statusCode: 301 } },
 }
