@@ -25,6 +25,16 @@ As a team, we work across all of the lanes over time, but not all of them in any
 | 3 | Certified Nodes | Certified nodes, catalogue, plugin/extension architecture, partner and OEM/white-label paths |
 | 4 | Platform | Everything else the product needs. See the areas below |
 
+Platform covers a wide surface. These are the areas within it:
+
+- **Data layer:** broker, historian, contextualisation, Unified Namespace
+- **Edge & device:** device agent, fleet-scale provisioning, offline resilience, OS/hardware/container support matrix, brownfield protocol coverage
+- **DevOps for OT:** environments, promotion pipelines, snapshots, git workflows, testing, rollback
+- **Enterprise readiness:** SSO/SCIM, RBAC granularity, audit, HA, air-gapped, multi-tenancy
+- **Security & product hardening:** hardening, vulnerability posture, secure defaults
+- **Platform health:** debt, migrations, scalability, upgrade paths
+- **The editor:** the Node-RED editing experience itself, including collaborative editing
+
 Not all of these lanes can be handled equally.
 
 - **AI** is pervasive across the whole product surface.
