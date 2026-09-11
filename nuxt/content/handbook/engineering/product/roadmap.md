@@ -147,10 +147,3 @@ Half-year themes. No dates. Each names what has to be true in Year 1 for it to s
 | **Governance becomes purchasable** — downloadable SBOM, managed dependency updates, audit trail | 6 Governance and Operability | Govern | An IT buyer can satisfy an audit from the platform rather than around it | Bill of Material reports · Managed Dependency Updates |
 | **AI knows the organization** — custom team skills, custom models, persistent chat context | 5 AI | Govern · Build | Organizational standards are encoded where the AI applies them, and sovereignty requirements stop being a blocker | Data Modeling (Q4 26) gives the AI something structured to reason over |
 
-### H2 (Q2 2028 – Q3 2028)
-
-| Theme | Lane | Pillar | Outcome | Depends on (Y1) |
-| ----- | ----- | ----- | ----- | ----- |
-| **The data layer holds context** — contextualization, Unified Namespace, models shared across instances rather than per team, TSDB management UI | 3 Data layer | Build · Govern | A model defined once is used estate-wide, and event data is queryable without a separate stack | Data Modeling, Time Series Database and Data Mapping Tooling — all three Year 1 items |
-| **DevOps for OT at fleet scale** — promotion, environments, rollback across sites | 2 DevOps for OT | Deploy | A change is promoted to fifty sites with the same confidence as one | Dynamic Flow Configuration (Q2 27) |
-
