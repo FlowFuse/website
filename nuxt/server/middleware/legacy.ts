@@ -13,11 +13,11 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // /application-guide no longer has pages of its own - the guides moved under /docs - but it
 // stays listed so its 301s in nuxt/redirects.ts are served by Nitro in dev rather than
 // being proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/community']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
-// / (homepage), /about, /blueprints, /careers, /community, /events,
+// / (homepage), /about, /blueprints, /careers, /events,
 // /free-consultation, /industries, /landing, /node-red, /partners, /platform,
 // /use-cases, /vs
 
