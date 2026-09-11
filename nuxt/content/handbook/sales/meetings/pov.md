@@ -83,6 +83,8 @@ another package. If a combined trial (eg Hub+Edge) is required, an Administrator
 
 Self-hosted can trial any combination of packages based on what the license is configured to enable.
 
+Sales issues trials are recommended to have both Hub and Edge enabled to ensure a client has all required capabilities for a successful PoC phase.
+
 #### Generating a license
 
 - Generate one by [filling out this form](https://energetic-sanderling-4472.flowfuse.cloud/dashboard/license){rel="nofollow"}.
