@@ -180,13 +180,3 @@ Three bets. Each is a hypothesis with evidence conditions, not a commitment.
 | Kill criteria | If by end of Year 2 the distribution is a minority of new connections, we are running two onboarding paths permanently and should pick one |
 | Decision point | Q4 2027 |
 
-### Governed fleet at sovereign and air-gapped scale
-
-|  |  |
-| ----- | ----- |
-| Lane(s) | 6 Governance and Operability · 2 DevOps for OT |
-| Hypothesis | Air-gapped and sovereign deployment is a distinct product with its own economics, not a hardening checklist on the existing one |
-| What's genuinely uncertain | Whether the demand is a handful of named accounts or a segment. Sovereign requirements also pull against the hosted-service assumptions the AI work depends on |
-| Evidence that advances it | Sovereign or air-gapped requirements appearing as a qualification gate rather than a late-stage objection |
-| Kill criteria | If it stays concentrated in a small number of accounts, it is bespoke delivery and should be priced that way rather than roadmapped |
-| Decision point | Q1 2029 |
