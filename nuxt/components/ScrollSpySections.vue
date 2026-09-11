@@ -1,8 +1,8 @@
-<script setup lang="ts" generic="T extends { id: string; label: string }">
+<script setup lang="ts" generic="T extends { id: string; label: string; icon?: string }">
 // Sticky left nav + stacked, always-visible content sections, with the nav
 // link highlighted for whichever section the reader has scrolled to. Shared by
-// /product ("Find the product for how you work") and /integrations/opcua
-// ("What is OPC UA").
+// /product ("Find the product for how you work"), /integrations/opcua
+// ("What is OPC UA") and /platform (the five stages of the platform).
 //
 // Deliberately not @nuxt/ui's UContentToc/useScrollspy: that tracks active
 // headings via IntersectionObserver on the heading elements themselves, which
@@ -15,7 +15,7 @@
 //
 // Generic over T (not just { id, label }) so a scoped slot can read whatever
 // extra fields a caller's item carries (e.g. /product's heading/image/slug)
-// without a cast.
+// without a cast. `icon` is read by the boxed variant only.
 const props = withDefaults(defineProps<{
     items: T[]
     ariaLabel?: string
@@ -28,15 +28,28 @@ const props = withDefaults(defineProps<{
     // (not a template-interpolated breakpoint) since Tailwind's build-time
     // scanner only picks up classes it can see written out in full.
     breakpoint?: 'md' | 'lg'
+    // 'rail' is the original: a hairline down the left with the active label
+    // and its 2px segment inked. 'boxed' puts the same list in a bordered
+    // panel, one row per stage with its icon, and inks the whole active row -
+    // /platform needs the nav to read as the platform's five stages rather
+    // than as a table of contents beside them.
+    variant?: 'rail' | 'boxed'
 }>(), {
     ariaLabel: undefined,
     gapClass: 'gap-16',
     dividerClass: 'pt-16 border-t border-gray-200',
     breakpoint: 'lg',
+    variant: 'rail',
 })
 
 const rowClass = computed(() => props.breakpoint === 'md' ? 'flex flex-col md:flex-row gap-10' : 'flex flex-col lg:flex-row gap-10')
-const navClass = computed(() => props.breakpoint === 'md' ? 'hidden md:block md:w-44 shrink-0' : 'hidden lg:block lg:w-44 shrink-0')
+// The boxed variant carries an icon and a trailing arrow per row, so w-44
+// clips its labels; 15rem is the narrowest width that holds "Deliver" plus
+// both glyphs without wrapping.
+const navClass = computed(() => {
+    if (props.variant === 'boxed') return props.breakpoint === 'md' ? 'hidden md:block md:w-60 shrink-0' : 'hidden lg:block lg:w-60 shrink-0'
+    return props.breakpoint === 'md' ? 'hidden md:block md:w-44 shrink-0' : 'hidden lg:block lg:w-44 shrink-0'
+})
 
 const active = ref(props.items[0]?.id ?? '')
 const stepRefs = ref<Record<string, HTMLElement | null>>({})
@@ -72,7 +85,27 @@ onUnmounted(() => {
 <template>
   <div :class="rowClass">
     <nav :class="navClass" :aria-label="ariaLabel">
-      <ul class="sticky top-24 flex flex-col border-l border-gray-200">
+      <ul v-if="variant === 'boxed'" class="sticky top-24 flex list-none flex-col border border-gray-200 bg-white p-0">
+        <li v-for="(item, index) in items" :key="item.id" class="m-0" :class="index > 0 ? 'border-t border-gray-200' : ''">
+          <a
+              :href="`#${item.id}`"
+              class="flex items-center gap-3 px-4 py-3 no-underline transition-colors duration-200 hover:no-underline"
+              :class="active === item.id ? 'bg-indigo-50 text-gray-900' : 'text-gray-500 hover:text-gray-900'"
+              :aria-current="active === item.id ? 'true' : undefined"
+          >
+            <UIcon
+                v-if="item.icon"
+                :name="item.icon"
+                class="size-4 flex-none"
+                :class="active === item.id ? 'text-indigo-600' : 'text-gray-400'"
+                aria-hidden="true"
+            />
+            <span class="flex-1 font-medium">{{ item.label }}</span>
+            <UIcon v-if="active === item.id" name="i-lucide-arrow-right" class="size-4 flex-none text-indigo-600" aria-hidden="true" />
+          </a>
+        </li>
+      </ul>
+      <ul v-else class="sticky top-24 flex flex-col border-l border-gray-200">
         <li v-for="item in items" :key="item.id">
           <a
               :href="`#${item.id}`"
@@ -92,7 +125,13 @@ onUnmounted(() => {
           class="scroll-mt-24"
           :class="index > 0 ? dividerClass : ''"
       >
-        <slot :name="item.id" :item="item" :index="index" />
+        <!-- Per-id named slot for callers whose stages each need their own markup
+             (/product, /integrations/opcua). Falling back to one `item` slot lets a
+             caller whose stages are uniform - /platform's five - write the template
+             once instead of five near-identical named slots. -->
+        <slot :name="item.id" :item="item" :index="index">
+          <slot name="item" :item="item" :index="index" />
+        </slot>
       </div>
     </div>
   </div>
