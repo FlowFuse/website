@@ -10,6 +10,11 @@ interface TeamMember {
     github?: string
     twitter?: string | null
     knowsAbout?: string[]
+    // Read by /about/: `order` sorts the grid, `facts` is the hover panel, `blog` is one
+    // more social link. Declared here so that page is typed rather than casting.
+    order?: number
+    facts?: string[]
+    blog?: string
 }
 
 const teamModules = import.meta.glob('../../src/_data/team/*.json', { eager: true, import: 'default' })

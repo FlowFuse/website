@@ -1,4 +1,9 @@
 <script setup lang="ts">
+// The answer renderer moved to nuxt/lib/faq-answer.mjs so it can be unit tested and so
+// the escaping rules live in one place; it also gained *italic*, **bold** and blank-line
+// paragraphs, which the 11ty pages expressed with raw <i> and <p> tags under `| safe`.
+import { isListBlock, renderFaqAnswer } from '../lib/faq-answer.mjs'
+
 defineProps<{
     faq: Array<{ question: string, answer: string }>
 }>()
@@ -6,22 +11,6 @@ defineProps<{
 const openIndex = ref<number | null>(null)
 function toggle(i: number) {
     openIndex.value = openIndex.value === i ? null : i
-}
-
-const ESCAPE_MAP: Record<string, string> = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }
-function escapeHtml(text: string) {
-    return text.replace(/[&<>"]/g, char => ESCAPE_MAP[char])
-}
-
-// Answers are plain text (any literal "<...>" in existing FAQ content - e.g. "<ip>",
-// "<img>" placeholders - must stay literal, not be parsed as markup), so escape first.
-// The only markup this renders is [label](url) links, converted after escaping so a URL
-// or label can't reintroduce raw HTML.
-function renderAnswer(answer: string) {
-    return escapeHtml(answer).replace(
-        /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g,
-        '<a href="$2" class="text-indigo-600 hover:underline">$1</a>',
-    )
 }
 </script>
 
@@ -46,8 +35,13 @@ function renderAnswer(answer: string) {
             </button>
           </h3>
           <div v-show="openIndex === i" class="px-6 mt-6">
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <p v-html="renderAnswer(item.answer)" />
+            <template v-for="(block, b) in renderFaqAnswer(item.answer)" :key="b">
+              <!-- A <ul>/<ol> cannot sit inside a <p>, so a list block renders bare.
+                   eslint-disable-next-line vue/no-v-html -->
+              <div v-if="isListBlock(block)" class="ff-faq-list" v-html="block" />
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <p v-else v-html="block" />
+            </template>
           </div>
         </div>
       </div>

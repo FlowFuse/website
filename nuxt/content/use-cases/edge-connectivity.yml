@@ -1,0 +1,7 @@
+# Listing metadata only. The page itself is pages/use-cases/edge-connectivity.vue - this one
+# had a real markup body in src/use-cases/edge-connectivity.njk, so it did not lift into data the way the
+# two operational use-cases did. Kept here so /use-cases/ still builds its cards from
+# one place rather than a hand-maintained list.
+slug: edge-connectivity
+title: "FlowFuse for Edge Connectivity"
+problem: "Deploy and manage Node-RED instances on edge hardware at scale, from a single pane of glass, without touching each device."

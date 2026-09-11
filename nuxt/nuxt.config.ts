@@ -40,6 +40,41 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
+// The two operational use-cases render through pages/use-cases/[slug].vue, so their
+// routes are not discoverable from the page tree. They are the entries carrying `values:`;
+// the rest of the collection is listing metadata for pages that have their own .vue file.
+function collectUseCaseRoutes (dir: string): string[] {
+    return readEntries(dir)
+        .filter(entry => Array.isArray(entry.values) && entry.values.length)
+        .map(entry => `/use-cases/${entry.slug}/`)
+}
+
+// A data collection whose every entry is a page, routed by its `slug` field.
+function collectSlugRoutes (dir: string, basePath: string): string[] {
+    return readEntries(dir).map(entry => `${basePath}/${entry.slug}/`)
+}
+
+function readEntries (dir: string): Array<Record<string, any>> {
+    return readdirSync(dir)
+        .filter(file => file.endsWith('.yml'))
+        .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
+}
+
+// Webinars are one .md per file under src/webinars/<year>/, sourced in place by the
+// `webinars` collection, so their routes come from the tree rather than from a field.
+function collectWebinarRoutes(dir: string, basePath: string): string[] {
+    const routes: string[] = [`${basePath}/`]
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            routes.push(...collectWebinarRoutes(fullPath, `${basePath}/${file}`).filter(route => route !== `${basePath}/${file}/`))
+        } else if (file.endsWith('.md')) {
+            routes.push(`${basePath}/${basename(file, '.md')}/`)
+        }
+    }
+    return routes
+}
+
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
 // so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
 // each file's `tierId` field rather than the filename, since that's the field the page route
@@ -116,7 +151,7 @@ const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, '../src
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', './modules/blueprints-source', 'nuxt-llms'],
 
     // Captured at build time (Netlify sets CONTEXT during the build, but passes only URL,
     // SITE_NAME and SITE_ID to the deployed Function at runtime), then baked in via
@@ -388,6 +423,25 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
+                    ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
+                    // /use-cases/ plus the two entries served by pages/use-cases/[slug].vue.
+                    // The six architecture pages are their own .vue files, so Nuxt finds
+                    // those itself; only the dynamic route needs enumerating.
+                    '/use-cases/',
+                    ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')),
+                    // /industries/ plus the seven entries served by
+                    // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
+                    // file, so Nuxt finds that itself.
+                    '/industries/',
+                    ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries'),
+                    ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
+                    ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
+                    // Singles whose 11ty pages had no listing to crawl from.
+                    '/free-consultation/',
+                    '/community/newsletter/',
+                    '/pricing/request-quote/',
+                    '/about/',
+                    '/node-red/',
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
@@ -439,8 +493,12 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        // `meta` is reserved by @nuxt/content - it holds the <!--more--> excerpt - so a
+        // collection that declares its own `meta` schema field silently loses everything
+        // under it. These collections' frontmatter still writes "meta:", so rewrite the key
+        // to "structuredData:" before parsing rather than editing hundreds of content files.
         'content:file:beforeParse' ({ file, collection }) {
-            if (collection.name !== 'blog') return
+            if (!['blog', 'webinars'].includes(collection.name)) return
             file.body = file.body.replace(
                 /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
                 (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')

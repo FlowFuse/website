@@ -21,7 +21,7 @@ useSeoMeta({
     </div>
     <div class="flex flex-col max-w-5xl mx-auto gap-x-10 px-6">
       <div class="max-w-md sm:max-w-screen-lg m-auto pb-6">
-        <ThankYouExploreMore download-follow-up hubspot-reference="thank-you-flowfuse-overview" />
+        <ExploreMoreContent download-follow-up hubspot-reference="thank-you-flowfuse-overview" />
       </div>
     </div>
     <div class="w-full max-w-md sm:max-w-screen-lg m-auto mt-6 px-6 border-t border-gray-200">

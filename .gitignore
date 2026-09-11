@@ -3,8 +3,10 @@ _site
 node_modules
 src/handbook/media
 nuxt/content/docs/
-src/blueprints/*
-!src/blueprints/*.njk
+# Synced from FlowFuse/blueprint-library by nuxt/modules/blueprints-source.ts. The
+# Build Site workflow force-adds this tree to the `live` branch that Netlify deploys,
+# because the library is private and cannot be cloned from a build.
+nuxt/content/blueprints/
 
 # Local development config
 .vscode/

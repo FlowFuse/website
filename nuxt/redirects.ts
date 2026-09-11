@@ -12,6 +12,11 @@ import { nodeRedRedirects } from './redirects-node-red'
 
 export const redirects: Record<string, NitroRouteRules> = {
     ...nodeRedRedirects,
+    // src/careers.njk was a page whose only content was a <script> calling
+    // location.replace(site.jobBoard). A real redirect instead: no blank page while the
+    // script runs, and it works with JavaScript disabled. 302 rather than 301 because the
+    // board's address is not a permanent property of this URL.
+    '/careers/': { redirect: { to: 'https://boards.greenhouse.io/flowfuse', statusCode: 302 } },
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },

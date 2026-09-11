@@ -1,4 +1,5 @@
-// Icon markup for the marketing nav, keyed exactly as src/_data/chrome.json spells it.
+// Icon markup for the marketing nav, keyed exactly as src/_data/chrome.json spells it,
+// plus the handful of keys page content asks for by name through <NavIcon>.
 //
 // These are the same files Eleventy's `navoption` shortcode reads, so both
 // renderers draw the identical glyph from one source. The imports are listed
@@ -12,7 +13,10 @@ import iAcademicCap from '../../src/_includes/components/icons/academic-cap.svg?
 import iAirplane from '../../src/_includes/components/icons/airplane.svg?raw'
 import iArrowRight from '../../src/_includes/components/icons/arrow-right.svg?raw'
 import iArrowTrendingUp from '../../src/_includes/components/icons/arrow-trending-up.svg?raw'
+import iArrowsPointingOut from '../../src/_includes/components/icons/arrows-pointing-out.svg?raw'
 import iArrowsRightLeft from '../../src/_includes/components/icons/arrows-right-left.svg?raw'
+import iBellAlert from '../../src/_includes/components/icons/bell-alert.svg?raw'
+import iBolt from '../../src/_includes/components/icons/bolt.svg?raw'
 import iBookOpen from '../../src/_includes/components/icons/book-open.svg?raw'
 import iBuildingLibrary from '../../src/_includes/components/icons/building-library.svg?raw'
 import iBuildingOffice2 from '../../src/_includes/components/icons/building-office-2.svg?raw'
@@ -21,7 +25,20 @@ import iCar from '../../src/_includes/components/icons/car.svg?raw'
 import iCase from '../../src/_includes/components/icons/case.svg?raw'
 import iCertificate from '../../src/_includes/components/icons/certificate.svg?raw'
 import iChart from '../../src/_includes/components/icons/chart.svg?raw'
+import iClipboardDocumentCheck from '../../src/_includes/components/icons/clipboard-document-check.svg?raw'
+import iClock from '../../src/_includes/components/icons/clock.svg?raw'
+import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
+import iCodeblock from '../../src/_includes/components/icons/codeblock.svg?raw'
 import iChat from '../../src/_includes/components/icons/chat.svg?raw'
+import iComputerDesktop from '../../src/_includes/components/icons/computer-desktop.svg?raw'
+import iCubeTransparent from '../../src/_includes/components/icons/cube-transparent.svg?raw'
+import iData from '../../src/_includes/components/icons/data.svg?raw'
+import iDatabase from '../../src/_includes/components/icons/database.svg?raw'
+import iDocumentCheck from '../../src/_includes/components/icons/document-check.svg?raw'
+import iFactory from '../../src/_includes/components/icons/factory.svg?raw'
+import iGlobeAlt from '../../src/_includes/components/icons/globe-alt.svg?raw'
+import iLink from '../../src/_includes/components/icons/link.svg?raw'
+import iLock from '../../src/_includes/components/icons/lock.svg?raw'
 import iChatBubbleLeftRightSm from '../../src/_includes/components/icons/chat-bubble-left-right-sm.svg?raw'
 import iCheckBadge from '../../src/_includes/components/icons/check-badge.svg?raw'
 import iChip from '../../src/_includes/components/icons/chip.svg?raw'
@@ -44,6 +61,7 @@ import iPower from '../../src/_includes/components/icons/power.svg?raw'
 import iPresentation from '../../src/_includes/components/icons/presentation.svg?raw'
 import iPulse from '../../src/_includes/components/icons/pulse.svg?raw'
 import iPuzzlePiece from '../../src/_includes/components/icons/puzzle-piece.svg?raw'
+import iRectangleStack from '../../src/_includes/components/icons/rectangle-stack.svg?raw'
 import iRocketLaunch from '../../src/_includes/components/icons/rocket-launch.svg?raw'
 import iScreen from '../../src/_includes/components/icons/screen.svg?raw'
 import iServerStack from '../../src/_includes/components/icons/server-stack.svg?raw'
@@ -63,7 +81,10 @@ export const navIcons: Record<string, string> = {
     'airplane': iAirplane,
     'arrow-right': iArrowRight,
     'arrow-trending-up': iArrowTrendingUp,
+    'arrows-pointing-out': iArrowsPointingOut,
     'arrows-right-left': iArrowsRightLeft,
+    'bell-alert': iBellAlert,
+    'bolt': iBolt,
     'book-open': iBookOpen,
     'building-library': iBuildingLibrary,
     'building-office-2': iBuildingOffice2,
@@ -73,6 +94,19 @@ export const navIcons: Record<string, string> = {
     'certificate': iCertificate,
     'chart': iChart,
     'chat': iChat,
+    'clipboard-document-check': iClipboardDocumentCheck,
+    'clock': iClock,
+    'cloud': iCloud,
+    'codeblock': iCodeblock,
+    'computer-desktop': iComputerDesktop,
+    'cube-transparent': iCubeTransparent,
+    'data': iData,
+    'database': iDatabase,
+    'document-check': iDocumentCheck,
+    'factory': iFactory,
+    'globe-alt': iGlobeAlt,
+    'link': iLink,
+    'lock': iLock,
     'chat-bubble-left-right-sm': iChatBubbleLeftRightSm,
     'check-badge': iCheckBadge,
     'chip': iChip,
@@ -95,6 +129,7 @@ export const navIcons: Record<string, string> = {
     'presentation': iPresentation,
     'pulse': iPulse,
     'puzzle-piece': iPuzzlePiece,
+    'rectangle-stack': iRectangleStack,
     'rocket-launch': iRocketLaunch,
     'screen': iScreen,
     'server-stack': iServerStack,
