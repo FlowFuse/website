@@ -7,14 +7,10 @@ useSeoMeta({
 
 <template>
   <div class="w-full">
-    <div class="hero container m-auto text-center flex flex-wrap pt-6 px-6 pb-12 md:flex-nowrap md:max-w-4xl md:pt-12">
-      <div class="mx-auto max-w-screen-xl md:max-w-xl">
-        <h1>Professional Services</h1>
-        <p class="lead-p m-auto mt-3">
-          At FlowFuse, we partner with our customers to ensure their successful deployment of FlowFuse and Node-RED. Our professional services are available to Enterprise tier customers, providing expert support for critical projects.
-        </p>
-      </div>
-    </div>
+    <PageHero
+        title="Professional Services"
+        description="At FlowFuse, we partner with our customers to ensure their successful deployment of FlowFuse and Node-RED. Our professional services are available to Enterprise tier customers, providing expert support for critical projects."
+    />
     <div class="text-left max-w-full">
       <div class="w-full pt-0 md:pt-12 px-0">
         <div class="m-auto max-w-4xl pb-8 md:pb-16">
