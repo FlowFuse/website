@@ -212,8 +212,8 @@ useSchemaOrg([
     <section class="w-full py-16 px-6 bg-white">
       <div class="max-w-screen-lg mx-auto">
         <div class="max-w-3xl max-md:mx-auto max-md:text-center">
-          <h2 class="text-gray-700 mb-4">The Gap Between Your Systems Is What Costs You</h2>
-          <p class="text-gray-600 m-0">Most production challenges don't need new hardware or a new platform. PLCs, robots, SCADA, MES, historians, and cloud services already hold the data your teams need, they just run separately, so engineers close the gap by hand. That manual work shows up as engineering hours spent searching and rebuilding, and production hours lost when something breaks with no fast way back. Set your team size, sites, and cost of downtime against it below.</p>
+          <h2 class="text-gray-700 mb-4">Every Disconnected System Has a Price Tag</h2>
+          <p class="text-gray-600 m-0">PLCs, robots, SCADA, MES, historians, and cloud systems already hold the data your teams need; they just don't talk to each other. Closing that gap manually costs engineering hours spent searching and rebuilding, and production hours when something breaks with no quick solution. See what that's costing you below.</p>
         </div>
         <div class="mt-10">
           <RoiCalculator compact />
