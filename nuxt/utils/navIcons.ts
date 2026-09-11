@@ -21,7 +21,11 @@ import iCar from '../../src/_includes/components/icons/car.svg?raw'
 import iCase from '../../src/_includes/components/icons/case.svg?raw'
 import iCertificate from '../../src/_includes/components/icons/certificate.svg?raw'
 import iChart from '../../src/_includes/components/icons/chart.svg?raw'
+
+import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
 import iChat from '../../src/_includes/components/icons/chat.svg?raw'
+
+import iCubeTransparent from '../../src/_includes/components/icons/cube-transparent.svg?raw'
 import iChatBubbleLeftRightSm from '../../src/_includes/components/icons/chat-bubble-left-right-sm.svg?raw'
 import iCheckBadge from '../../src/_includes/components/icons/check-badge.svg?raw'
 import iChip from '../../src/_includes/components/icons/chip.svg?raw'
@@ -73,6 +77,9 @@ export const navIcons: Record<string, string> = {
     'certificate': iCertificate,
     'chart': iChart,
     'chat': iChat,
+
+    'cloud': iCloud,
+    'cube-transparent': iCubeTransparent,
     'chat-bubble-left-right-sm': iChatBubbleLeftRightSm,
     'check-badge': iCheckBadge,
     'chip': iChip,

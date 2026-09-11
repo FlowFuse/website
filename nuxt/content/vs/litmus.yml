@@ -1,0 +1,64 @@
+# Lifted from src/vs/litmus.njk (11ty). The three /vs/ pages shared the same seven sections
+# with per-page copy, so they are one data collection rendered by pages/vs/[slug].vue.
+# sectionSubtitle is dropped: it was in all three frontmatters and read by none.
+slug: litmus
+competitor: "Litmus"
+accent: red
+heroImage: /vs/images/flowfuse-vs-litmus-hero.png
+heroImageAlt: "FlowFuse vs Litmus Hero Image"
+heroTitle: "A Flexible Alternative to <span class='text-red-600'>Litmus</span>"
+seoMeta:
+    title: "A Flexible Alternative to Litmus"
+    description: "FlowFuse is an open, cloud-ready platform that industrial teams choose as an alternative to Litmus. Build faster, stay flexible, and scale Industrial AI on your terms, without unnecessary lock-in."
+hero:
+    buttonText: "Talk to a Migration Expert"
+    buttonLink: "https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation"
+    buttonReference: "vs-litmus"
+sectionTitle: "Why Industrial Teams Consider <span class='text-red-600'>FlowFuse Instead of Litmus</span>"
+sections:
+    - svgPath: "cube-transparent"
+      title: "Built for open architectures"
+      description: "Run your Industrial IoT and AI workloads at the edge, on-premise, or in the cloud, leveraging maximum flexibility for deployment."
+    - svgPath: "squares-plus"
+      title: "Open & extensible"
+      description: "Built on open-source Node-RED so engineering teams can integrate a wide range of OT assets, IT systems, and AI services with full visibility into every flow."
+    - svgPath: "link"
+      title: "Fast integrations"
+      description: "Accelerate time from prototype to production and eliminate glue code with native support for MQTT, OPC-UA, REST APIs, SQL targets, and UNS-style architectures."
+table:
+    - feature: "Foundation & Governance"
+      flowFuse: "<span class='font-medium'>Open-source (Node-RED).</span> Full transparency with human-readable JSON flows. Users own, inspect, and govern every line of logic."
+      competitor: "<span class='font-medium'>Proprietary</span>. All-in-one 'black box' stack. Governance and visibility are limited to what the vendor's tools allow."
+    - feature: "Deployment & Extensibility"
+      flowFuse: "<span class='font-medium'>Infrastructure agnostic.</span> Runs on edge, cloud, or on-prem. Extendable via plain JavaScript/APIs; your team owns the logic."
+      competitor: "<span class='font-medium'>Platform-dictated.</span> Optimized for large rollouts, but architectural decisions and customization are bounded by the ecosystem."
+    - feature: "Integration & Connectivity"
+      flowFuse: "<span class='font-medium'>Unrestricted.</span> 5,000+ community nodes + native MQTT, OPC-UA, and UNS. Connect to anything without vendor roadmaps."
+      competitor: "<span class='font-medium'>Pre-built.</span> Offers connectors for major platforms, but limited to the specific integrations Litmus has prioritized."
+    - feature: "Industrial AI Strategy"
+      flowFuse: "<span class='font-medium'>Agnostic.</span> Bring your own models and services. Your AI strategy remains flexible as the market evolves."
+      competitor: "<span class='font-medium'>Opinionated.</span> Fast to start with an integrated stack, but your AI choices are tied to the vendor's specific roadmap."
+    - feature: "Vendor Lock-in Risk"
+      flowFuse: "<span class='font-medium'>Zero.</span> Fully portable, version-controlled code that is never held hostage by a single vendor."
+      competitor: "<span class='font-medium'>High.</span> Requires full buy-in to a single vendor stack for connectivity, analytics, and AI."
+switch:
+    title: How to Move Workloads <span class='text-red-600'>from Litmus to FlowFuse</span>
+    content:
+        - "<span class='font-semibold'>Migration consultation:</span> We review your current Litmus deployment and data flows to propose a FlowFuse architecture that preserves requirements while increasing openness."
+        - "<span class='font-semibold'>Try FlowFuse with your data:</span> Connect your OT assets and replicate key pipelines in a controlled pilot to verify performance and operator experience before you commit."
+        - "<span class='font-semibold'>Gradual rollout with expert support:</span> We provide expert support from the initial pilot through multi-site rollout, helping your team standardize patterns and train engineers."
+    cta: TALK TO A MIGRATION EXPERT
+    ctaUrl: "/book-demo"
+cta:
+    title: "Exploring Alternatives to Litmus?"
+    content: "Discover how FlowFuse can help your team modernize its industrial edge and data infrastructure with an open, flexible platform that complements your existing AI and analytics strategy. <a href='https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?utm_campa[…]113138546&utm_content=113138546&utm_source=hs_automation' class='font-semibold'>Book a Demo with a FlowFuse Expert</a>."
+cards:
+    - title: "Open, flexible edge architecture"
+      content: "Customers can run FlowFuse where it makes sense, <span class='font-medium'>at the edge, on-premises, or in the cloud</span>, and integrate with a wide range of clouds, data platforms, and AI services, rather than a single, tightly coupled stack."
+    - title: "Reduced vendor lock-in and higher portability"
+      content: "Because flows remain Node-RED-compatible and <span class='font-medium'>rely on open standards</span>, organizations can evolve their Industrial AI strategy over time without being constrained by a monolithic, proprietary edge data platform."
+sectionIntro: "Industrial organizations evaluating Litmus often explore FlowFuse for a more open, modular approach to edge connectivity, data orchestration, and Industrial AI workloads.​"
+tableHeading: "<span class='text-red-600'>FlowFuse and Litmus</span> at a Glance"
+columnFlowFuse: "FlowFuse (Open & Flexible)"
+columnCompetitor: "Litmus (Proprietary & Unified)"
+socialProofText: "Trusted by industrial teams worldwide to modernize their OT‑IT data infrastructure and edge architectures."
