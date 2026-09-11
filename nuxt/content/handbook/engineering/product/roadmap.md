@@ -7,7 +7,7 @@ title: "Product Roadmap"
 The product roadmap sets out what we are building towards with FlowFuse, and why.
 It is a statement of intent that we can work towards as a company.
 
-We expect this roadmap to evolve as we progress along it - and this is reflected in the granularity of detail at each stage.
+We expect this roadmap to evolve as we progress along it.
 
 - **Vision** — the destination we are working towards.
 - **Foundations** — the pillars, lanes and customer problems that every roadmap item is measured against.
