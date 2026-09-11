@@ -38,6 +38,6 @@ Platform covers a wide surface. These are the areas within it:
 Not all of these lanes can be handled equally.
 
 - **AI** is pervasive across the whole product surface.
-- **Platform Health** is the ongoing background work that customers do not notice unless it doesn't happen.  
+- **Platform health** is the ongoing background work that customers do not notice unless it doesn't happen.
 - **Security & product hardening** splits into value delivered under the Govern pillar, as well as our own, non-discretionary compliance work.
-
+- **Certified Nodes** is customer-led and carries ongoing maintenance cost, so it is sustained rather than expanded by default.
