@@ -89,8 +89,6 @@ They are not listed in any order and they are not commitments. The list will cha
 
 Where a delivery date has been committed to a customer, that commitment lives in the relevant issue, not here.
 
-#### Q4 2026
-
 | Item | Lane | Pillar | Scope | Problem | Product outcome |
 | :---- | :---- | :---- | :---- | :---- | :---- |
 | **Data Modeling** — team-level versioned schema registry (JSON Schema) + NR validator node | 3 Data layer | Build · Govern | FlowFuse | Functional gap against competitors | A team defines a shared model once and validates against it in more than one flow |
