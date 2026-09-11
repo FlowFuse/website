@@ -406,10 +406,8 @@ export default defineNuxtConfig({
                     '/pricing',
                     '/resources/roi-calculator',
                     '/product',
-                    // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
-                    // Nuxt prerender crawler never parses, so it has to be listed explicitly
-                    // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
+                    '/industries/automotive',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
