@@ -74,16 +74,18 @@ Certified Nodes is where FlowFuse provides additional Governance assurance to cu
 
 This roadmap does not highlight any specific nodes for the roadmap; that will be managed separately.
 
-## Year 1 — Q4 2026 to Q3 2027
+## Direction
 
-### Year 1 outcomes
+These are the outcomes we are working towards:
 
-1. FlowFuse provides a data layer that underpins the applications built on the platform  
-2. A seamless onboarding journey from standalone Node-RED to FlowFuse managed  
-3. Dashboard tooling that gets the job done without a steep learning curve  
+1. FlowFuse provides a data layer that underpins the applications built on the platform
+2. A seamless onboarding journey from standalone Node-RED to FlowFuse managed
+3. Dashboard tooling that gets the job done without a steep learning curve
 4. An AI experience encompassing these things
 
-**Note:** the sequencing of the items below is a work in progress.
+Below are the headline items we are considering over the next year. They are not ordered and they are not commitments. The list will change as strategic priorities evolve, and items may be dropped.
+
+Where a delivery date has been committed to a customer, that commitment lives in the relevant issue, not here.
 
 #### Q4 2026
 
