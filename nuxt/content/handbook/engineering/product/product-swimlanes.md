@@ -20,15 +20,10 @@ As a team, we work across all of the lanes over time, but not all of them in any
 
 | # | Lane | Scope |
 | :---- | :---- | :---- |
-| 1 | Edge & device | Device agent, fleet-scale provisioning, offline resilience, OS/hardware/container support matrix, brownfield protocol coverage |
-| 2 | DevOps for OT | Environments, promotion pipelines, snapshots, git workflows, testing, rollback |
-| 3 | Data layer | Broker, historian, contextualisation, Unified Namespace |
-| 4 | Application & UX | Dashboard, HMI, blueprints, the build surface for non-technical users |
-| 5 | AI | FlowFuse Expert, assisted authoring, data insights, MCP access to live data, agents at the edge |
-| 6 | Governance and Operability | SSO/SCIM, RBAC granularity, audit, HA, air-gapped, multi-tenancy |
-| 7 | Security & product hardening | Hardening, vulnerability posture, secure defaults |
-| 8 | Ecosystem & extensibility | Certified nodes, catalogue, plugin/extension architecture, partner and OEM/white-label paths |
-| 9 | Platform health | Debt, migrations, scalability, upgrade paths |
+| 1 | AI | FlowFuse Expert, assisted authoring, data insights, MCP access to live data, agents at the edge |
+| 2 | Dashboard | Dashboard, HMI, blueprints, the build surface for non-technical users |
+| 3 | Certified Nodes | Certified nodes, catalogue, plugin/extension architecture, partner and OEM/white-label paths |
+| 4 | Platform | Everything else the product needs. See the areas below |
 
 Not all of these lanes can be handled equally.
 
