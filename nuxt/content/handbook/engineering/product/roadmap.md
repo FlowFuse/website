@@ -89,6 +89,8 @@ They are not listed in any order and they are not commitments. The list will cha
 
 Where a delivery date has been committed to a customer, that commitment lives in the relevant issue, not here.
 
+Solution definitions are being worked through separately. Two items below hold regardless of where that work lands: **Data Modeling** and the **Time Series Database** underpin every solution candidate currently under discussion. The rest of the list will be re-cut once those definitions exist.
+
 | Item | Lane | Pillar | Scope | Problem | Product outcome |
 | :---- | :---- | :---- | :---- | :---- | :---- |
 | **Data Modeling** — team-level versioned schema registry (JSON Schema) + NR validator node | Platform | Build · Govern | FlowFuse | Functional gap against competitors | A team defines a shared model once and validates against it in more than one flow |
@@ -107,3 +109,11 @@ Where a delivery date has been committed to a customer, that commitment lives in
 | **AI: chat history** — persistent history, separate chats each with their own context | AI | Build | FlowFuse | Context is lost between sessions | A user can have multiple chats and switch between them |
 | **AI: custom team skills** — teams author skills specific to their use cases | AI | Govern · Build | FlowFuse | Organizational standards aren't encoded anywhere the AI can apply them | Standardization of custom use-cases within an organization |
 | **AI: custom models** — connect the agent to customer-hosted models | AI | Build · Govern | FlowFuse | Sovereignty requirements rule out vendor-hosted models | Orgs with specific model requirements are able to use our AI services |
+
+### Known gaps, not yet scoped
+
+Named as needed, with nothing on the list above that covers them. Recorded here so they are not lost, not as a commitment to build them.
+
+- **Scheduling** and **quality monitoring** - identified as prerequisites for an OEE-style solution.
+- **Migration path for existing Node-RED users** - we have an onboarding story for building from scratch, and a connection story for an existing install, but nothing for moving an established estate across.
+- **Ownership of ongoing maintenance** - no way for FlowFuse to own the upkeep of a deployed solution on a customer's behalf, rather than handing that back to them.
