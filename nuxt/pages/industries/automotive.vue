@@ -209,32 +209,16 @@ useSchemaOrg([
     <!-- ============================================================
          THE PROBLEM, AND WHAT IT COSTS  (+ ROI CALCULATOR)
     ============================================================ -->
-    <section class="w-full py-16 md:py-24 px-6 bg-white">
+    <section class="w-full py-16 px-6 bg-white">
       <div class="max-w-screen-lg mx-auto">
-        <div class="flex flex-col md:flex-row gap-12 items-stretch">
-          <div class="md:w-1/2 relative">
-            <div class="ff-image-cover ff-image-rounded w-full h-full">
-              <img src="/images/industries/automotive-line-stoppage.jpg" alt="Automotive assembly line with robotic welding stations and real-time production monitoring for line stoppage detection and incident management." loading="lazy">
-            </div>
-          </div>
-          <div class="md:w-1/2 max-md:text-center md:pt-6 self-center">
-            <h2 class="text-gray-700">The Gap Between Your Systems Is What Costs You</h2>
-            <p class="text-gray-700">Most production challenges don't require new hardware or replacing existing systems. PLCs, robots, SCADA, MES, historians, databases, and cloud services already hold the data your teams need. They just run separately, so engineers close the gap by hand: hunting for the flow someone built two years ago, rebuilding an integration that already exists on another line, walking machine to machine to push an update.</p>
-            <p class="text-gray-700">That manual work carries a number. It shows up as engineering hours spent searching, engineering hours spent rebuilding and hand-deploying, and production hours lost when something breaks and there is no fast way back.</p>
-          </div>
+        <div class="max-w-3xl max-md:mx-auto max-md:text-center">
+          <h2 class="text-gray-700 mb-4">The Gap Between Your Systems Is What Costs You</h2>
+          <p class="text-gray-600 m-0">Most production challenges don't need new hardware or a new platform. PLCs, robots, SCADA, MES, historians, and cloud services already hold the data your teams need, they just run separately, so engineers close the gap by hand. That manual work shows up as engineering hours spent searching and rebuilding, and production hours lost when something breaks with no fast way back. Set your team size, sites, and cost of downtime against it below.</p>
         </div>
-
-        <div class="mt-16 md:mt-24">
-          <div class="max-w-3xl max-md:text-center max-md:mx-auto">
-            <p class="text-indigo-600 text-sm font-semibold uppercase m-0">What the gap costs</p>
-            <h2 class="mt-2 mb-4 text-gray-700">Put your plant's numbers against it</h2>
-            <p class="text-gray-600">FlowFuse brings those systems together on the infrastructure you already run. Set the size of your team, your sites, and your cost of downtime to see what recovered engineering time, faster deployment, and avoided line stoppages are worth against the price of the platform.</p>
-          </div>
-          <div class="mt-10">
-            <RoiCalculator compact />
-          </div>
-          <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/resources/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
+        <div class="mt-10">
+          <RoiCalculator compact />
         </div>
+        <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/resources/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
       </div>
     </section>
 
