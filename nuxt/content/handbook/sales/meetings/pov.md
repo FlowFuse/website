@@ -76,10 +76,12 @@ Getting the customer a running FlowFuse — the
 [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/), a Cloud
 trial or a self-hosted install — is set up in the Solution stage. The licensing
 tasks the SE performs during the PoV live here. A **license key applies only to
-self-hosting**; a Cloud trial never needs one. Both still need a package. A Cloud
-trial starts on Edge by default, and a platform Administrator can change it to
-another package, or include more than one, on the team's Change Type page. On
-self-hosted the package is ticked on the license form.
+self-hosting**; a Cloud trial never needs one.
+
+A Cloud trial starts on Edge by default, and a platform Administrator can change it to
+another package. If a combined trial (eg Hub+Edge) is required, an Administrator can modify the team limits on the Team Settings page to unlock specific features for the team. 
+
+Self-hosted can trial any combination of packages based on what the license is configured to enable.
 
 #### Generating a license
 
