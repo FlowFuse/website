@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
-import navHighlights from '../../src/_data/navHighlights.json'
+import navHighlights from '../data/navHighlights.json'
 // Shared with the Eleventy layout, which reads the same file as an 11ty _data
 // global. Edit the nav or footer there and both renderers follow.
-import chrome from '../../src/_data/chrome.json'
+import chrome from '../data/chrome.json'
 
 const hl = (key) => {
     const entry = navHighlights[key]

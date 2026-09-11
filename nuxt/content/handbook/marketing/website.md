@@ -16,7 +16,7 @@ sitemap:
 
 The event banner at the top of the website can display more than one event or announcement.
 
-To add or update an event, you'll need to modify the [following file](https://github.com/FlowFuse/website/blob/main/src/_data/events.yaml). The information should be formatted as follows for each banner:
+To add or update an event, you'll need to modify the [following file](https://github.com/FlowFuse/website/blob/main/nuxt/data/events.yaml). The information should be formatted as follows for each banner:
 
 ```text
 - type: "Webinar"

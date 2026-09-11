@@ -6,11 +6,11 @@ import { dirname, join } from 'node:path'
 import { MAX_META_TITLE_LENGTH, findOverlongMetaTitles, isDirectory } from './meta-title-length.mjs'
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
-const blogDir = join(repoRoot, 'src/blog')
-const changelogDir = join(repoRoot, 'src/changelog')
+const blogDir = join(repoRoot, 'nuxt/content/blog')
+const changelogDir = join(repoRoot, 'nuxt/content/changelog')
 
 // Guards the fixture-free tests below against a silent no-op if the source layout moves.
-test('src/blog and src/changelog exist where these tests expect them', () => {
+test('the blog and changelog content trees exist where these tests expect them', () => {
     assert.ok(isDirectory(blogDir), `expected ${blogDir} to exist`)
     assert.ok(isDirectory(changelogDir), `expected ${changelogDir} to exist`)
 })

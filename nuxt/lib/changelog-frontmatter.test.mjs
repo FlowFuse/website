@@ -12,7 +12,7 @@ import { join, dirname, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { findFiles } from './find-files.mjs'
 
-const CHANGELOG_DIR = join(dirname(fileURLToPath(import.meta.url)), '../../src/changelog')
+const CHANGELOG_DIR = join(dirname(fileURLToPath(import.meta.url)), '../content/changelog')
 
 function frontmatter (text) {
     const match = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text)

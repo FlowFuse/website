@@ -10,7 +10,7 @@
 // The .njk's inline script queried .hero-slide and ran two timers with no teardown. This
 // is one interval, cleared on unmount, and it still honours prefers-reduced-motion by
 // never starting.
-import slides from '../../src/images/home/hero/config.json'
+import slides from '../public/images/home/hero/config.json'
 
 const FIRST_ADVANCE_MS = 3200
 const INTERVAL_MS = 4400

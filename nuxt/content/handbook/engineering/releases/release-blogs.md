@@ -16,10 +16,10 @@ The release wrangler owns the first draft. Engineers who shipped features in the
 
 ## Creating the file
 
-Posts live in the [website repository](https://github.com/FlowFuse/website/tree/main/src/blog). Navigate to the correct year and month folder and create a new `.md` file.
+Posts live in the [website repository](https://github.com/FlowFuse/website/tree/main/nuxt/content/blog). Navigate to the correct year and month folder and create a new `.md` file.
 
 ```
-src/blog/YYYY/MM/flowfuse-release-X-YY.md
+nuxt/content/blog/YYYY/MM/flowfuse-release-X-YY.md
 ```
 
 If the folder for that month does not yet exist, create it.
@@ -34,7 +34,7 @@ Every post requires the following fields:
 | `subtitle` | One sentence expanding on the title. Names the next tier of features if the title does not cover them. |
 | `description` | One sentence for link previews and search results. Should make sense without surrounding context. |
 | `date` | Release date in `YYYY-MM-DD` format. |
-| `authors` | Your handle from `src/_data/team`. |
+| `authors` | Your handle from `nuxt/data/team`. |
 | `image` | Path to the hero image. Coordinate with design. |
 | `tags` | Always include `flowfuse`, `news`, and `releases`. |
 | `release` | The release number as a string, e.g. `"2.29"`. |
