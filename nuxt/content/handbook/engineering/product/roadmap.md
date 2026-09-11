@@ -128,13 +128,3 @@ Where a delivery date has been committed to a customer, that commitment lives in
 | **Bill of Material reports** - downloadable SBOM | 6 Governance and Operability | Govern | FlowFuse | Existing BoM is a readonly page - cannot be snapshotted for audit or automated checks | Compliance requirements can be met |
 | **Managed Dependency Updates** - actionable updates based on the SBoM at both a team and instance level | 6 Enterprise readiness | Govern · Deploy | FlowFuse | SBom identifies out of data dependencies, but doesn't help users resolve them | Software easier to keep up to date - either automatically or by policy |
 
-## Year 2 — Q4 2027 to Q3 2028
-
-Half-year themes. No dates. Each names what has to be true in Year 1 for it to start.
-
-### Year 2 outcomes
-
-1. An IT team can evidence what is running, where, and whether it is compliant, without asking OT  
-2. The AI knows the organization's own standards and data, not just the product's  
-3. The data layer holds context, not just values
-
