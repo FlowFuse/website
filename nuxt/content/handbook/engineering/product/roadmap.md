@@ -81,7 +81,11 @@ These are the outcomes we are working towards:
 3. Dashboard tooling that gets the job done without a steep learning curve
 4. An AI experience encompassing these things
 
-Below are the headline items we are considering over the next year. They are not ordered and they are not commitments. The list will change as strategic priorities evolve, and items may be dropped.
+### Items under consideration
+
+Below are the headline items we are considering over the next year. 
+
+They are not listed in any order and they are not commitments. The list will change as strategic priorities evolve, and items may be dropped.
 
 Where a delivery date has been committed to a customer, that commitment lives in the relevant issue, not here.
 
