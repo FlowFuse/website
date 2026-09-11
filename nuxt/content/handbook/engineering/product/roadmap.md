@@ -154,7 +154,3 @@ Half-year themes. No dates. Each names what has to be true in Year 1 for it to s
 | **The data layer holds context** — contextualization, Unified Namespace, models shared across instances rather than per team, TSDB management UI | 3 Data layer | Build · Govern | A model defined once is used estate-wide, and event data is queryable without a separate stack | Data Modeling, Time Series Database and Data Mapping Tooling — all three Year 1 items |
 | **DevOps for OT at fleet scale** — promotion, environments, rollback across sites | 2 DevOps for OT | Deploy | A change is promoted to fifty sites with the same confidence as one | Dynamic Flow Configuration (Q2 27) |
 
-## Year 3 — Q4 2028 to Q3 2029
-
-Three bets. Each is a hypothesis with evidence conditions, not a commitment.
-
