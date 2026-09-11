@@ -79,11 +79,20 @@ trial or a self-hosted install — is set up in the Solution stage. The licensin
 tasks the SE performs during the PoV live here. A **license key applies only to
 self-hosting**; a Cloud trial never needs one.
 
+A Cloud trial starts on Edge by default, and a platform Administrator can change it to
+another package. If a combined trial (eg Hub+Edge) is required, an Administrator can modify the team limits on the Team Settings page to unlock specific features for the team. 
+
+Self-hosted can trial any combination of packages based on what the license is configured to enable.
+
+Sales issues trials are recommended to have both Hub and Edge enabled to ensure a client has all required capabilities for a successful PoC phase.
+
 #### Generating a license
 
 - Generate one by [filling out this form](https://energetic-sanderling-4472.flowfuse.cloud/dashboard/license){rel="nofollow"}.
 - Trial license expiry date should be set for 30 days, even in cases where longer than 30 days may be warranted.
+- Tick the packages the customer is evaluating: Hub, Edge or Fleet. At least one is required, and the choice decides which features the key unlocks.
 - Include 10 users, 10 teams, and 10 Node-RED instances on the Enterprise Tier.
+- Certified nodes are separate from the package. Request them with a [certified nodes request](https://github.com/FlowFuse/CloudProject/issues/new?template=certified-nodes-request.yml){rel="nofollow"} on CloudProject, for a self-hosted or a Cloud customer.
 
 All generated licenses are added [to this sheet](https://docs.google.com/spreadsheets/d/1wM_o8IWjjkwi-WMRueKfS-lrmkQYzV83xm4BIzZNAO0){rel="nofollow"} automatically.
 
