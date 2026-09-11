@@ -40,6 +40,29 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
+// Webinars are one .md per file under src/webinars/<year>/, sourced in place by the
+// `webinars` collection, so their routes come from the tree rather than from a field.
+//
+// `<slug>/index.md` is the directory's own page, not a page called "index". One webinar is
+// authored that way (2025/simplifying-opc-ua), because it shipped a flow export alongside
+// its markdown, and naming that route wrong is a prerender 404 rather than a missing page.
+//
+// A year directory contributes no route of its own (there is no /webinars/2025/ page),
+// while a webinar directory holding index.md does.
+function collectWebinarRoutes(dir: string, basePath: string): string[] {
+    const routes: string[] = []
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            routes.push(...collectWebinarRoutes(fullPath, `${basePath}/${file}`))
+        } else if (file.endsWith('.md')) {
+            const slug = basename(file, '.md')
+            routes.push(slug === 'index' ? `${basePath}/` : `${basePath}/${slug}/`)
+        }
+    }
+    return routes
+}
+
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
 // so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
 // each file's `tierId` field rather than the filename, since that's the field the page route
@@ -386,6 +409,8 @@ export default defineNuxtConfig({
                     '/ai',
                     '/industries/automotive',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
+                    '/webinars/',
+                    ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
@@ -437,8 +462,12 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        // `meta` is reserved by @nuxt/content - it holds the <!--more--> excerpt - so a
+        // collection that declares its own `meta` schema field silently loses everything
+        // under it. These collections' frontmatter still writes "meta:", so rewrite the key
+        // to "structuredData:" before parsing rather than editing hundreds of content files.
         'content:file:beforeParse' ({ file, collection }) {
-            if (collection.name !== 'blog') return
+            if (!['blog', 'webinars'].includes(collection.name)) return
             file.body = file.body.replace(
                 /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
                 (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
