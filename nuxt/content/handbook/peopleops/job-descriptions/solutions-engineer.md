@@ -1,5 +1,6 @@
 ---
 title: "Solutions Engineer"
+description: "Explore the Solutions Engineer role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Solutions Engineer

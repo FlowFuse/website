@@ -1,5 +1,6 @@
 ---
 title: "Head of Marketing"
+description: "Explore the Head of Marketing role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Head of Marketing

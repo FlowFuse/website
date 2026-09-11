@@ -1,5 +1,6 @@
 ---
 title: "Account Executive"
+description: "Explore the Account Executive role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Account Executive

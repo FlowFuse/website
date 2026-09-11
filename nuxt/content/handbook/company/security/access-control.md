@@ -1,5 +1,6 @@
 ---
 title: "Access Control Policy"
+description: "Read FlowFuse's Access Control Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Access Control Policy

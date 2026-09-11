@@ -1,5 +1,6 @@
 ---
 title: "PoV Workbook"
+description: "Review FlowFuse's approach to PoV Workbook, including the principles, processes, roles, and practical guidance used across the company."
 navigation:
   order: 13.5
   icon: i-lucide-clipboard-list

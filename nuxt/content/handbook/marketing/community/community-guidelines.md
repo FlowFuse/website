@@ -1,5 +1,6 @@
 ---
 title: "Community Guidelines"
+description: "Review FlowFuse's approach to Community Guidelines, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 ## Node-RED is FlowFuse

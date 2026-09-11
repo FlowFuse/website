@@ -1,5 +1,6 @@
 ---
 title: "Risk Management Policy"
+description: "Read FlowFuse's Risk Management Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Data Management Policy
