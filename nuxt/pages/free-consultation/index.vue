@@ -5,10 +5,6 @@
 //
 // hs-form.njk becomes <HubSpotForm> and social-proof.njk becomes <SocialProof>. The
 // frontmatter's `robots: noindex, nofollow` is a real meta tag here.
-import { renderRichText } from '../../lib/rich-text.mjs'
-
-const INTRO = 'Facing challenges with your Node-RED applications in industrial or enterprise environments? <span class="font-bold">Schedule a free 30-minute consultation with our experts.</span> We\'ll assess your current setup and provide tailored recommendations to help you address pain points such as scalability, security, and workflow automation.'
-
 const CARD_TEXT = 'Our expertise has helped businesses across the world streamline Node-RED operations, developer velocity, security, and compliance.'
 
 useSeoMeta({
@@ -36,8 +32,12 @@ useHead({ meta: [{ name: 'robots', content: 'noindex, nofollow' }] })
         <div class="w-full pt-6 pb-24">
           <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8">
             <div class="max-w-screen-sm w-full">
-              <!-- eslint-disable-next-line vue/no-v-html -->
-              <p v-html="renderRichText(INTRO)" />
+              <p>
+                Facing challenges with your Node-RED applications in industrial or enterprise environments?
+                <span class="font-bold">Schedule a free 30-minute consultation with our experts.</span>
+                We'll assess your current setup and provide tailored recommendations to help you address
+                pain points such as scalability, security, and workflow automation.
+              </p>
               <div class="ff-blue-card flex flex-row gap-6 items-center">
                 <div class="max-w-24">
                   <img src="/images/node-red-icon.png" alt="Node-RED logo" width="100" class="w-full h-auto">
