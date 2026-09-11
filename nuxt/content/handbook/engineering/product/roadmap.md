@@ -138,12 +138,3 @@ Half-year themes. No dates. Each names what has to be true in Year 1 for it to s
 2. The AI knows the organization's own standards and data, not just the product's  
 3. The data layer holds context, not just values
 
-### H1 (Q4 2027 – Q1 2028)
-
-| Theme | Lane | Pillar | Outcome | Depends on (Y1) |
-| ----- | ----- | ----- | ----- | ----- |
-| **FlowFuse Node-RED becomes the default install** — the standard way an industrial engineer installs Node-RED, not an alternative to it | 1 Edge & device | Deploy | New estates arrive connectable rather than needing to be connected | FlowFuse Node-RED and FlowFuse Node-RED Plugin (Q4 26), plus partner uptake |
-| **FlowFuse provides a digital twin of an organization** — sites, lines and assets modeled on the platform and bound to live data | 3 Data layer · 4 Application & UX | Build · Deploy | An OT engineer can model their environment to gain insight | Data Modeling (Q4 26) |
-| **Governance becomes purchasable** — downloadable SBOM, managed dependency updates, audit trail | 6 Governance and Operability | Govern | An IT buyer can satisfy an audit from the platform rather than around it | Bill of Material reports · Managed Dependency Updates |
-| **AI knows the organization** — custom team skills, custom models, persistent chat context | 5 AI | Govern · Build | Organizational standards are encoded where the AI applies them, and sovereignty requirements stop being a blocker | Data Modeling (Q4 26) gives the AI something structured to reason over |
-
