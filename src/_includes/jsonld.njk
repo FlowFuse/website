@@ -70,6 +70,33 @@
         "url": "https://www.g2.com/sellers/flowfuse"
       }
     }
+    {% if tags and 'industry' in tags %}
+    ,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site.baseURL }}{{ page.url }}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.baseURL }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Industries",
+          "item": "{{ site.baseURL }}/industries/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ hero.eyebrow | safe }}",
+          "item": "{{ site.baseURL }}{{ page.url }}"
+        }
+      ]
+    }
+    {% endif %}
     {% if type == "post" %}
     ,
     {
