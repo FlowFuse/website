@@ -233,6 +233,17 @@ export default defineContentConfig({
             schema: z.object({
                 date: z.coerce.date(),
                 time: z.string().optional(),
+
+            })
+        }),
+        // Long-form prose pages under /platform/. Separate from the `pages` collection
+        // above because that one is rendered by [...slug].vue, which routeRules mark
+        // noindex; /platform/security/ is a linked, indexable page.
+        platformPages: defineCollection({
+            type: 'page',
+            source: 'platform/*.md',
+            schema: z.object({
+                title: z.string(),
             })
         }),
         ebooks: defineCollection({
