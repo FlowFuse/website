@@ -1,0 +1,7 @@
+# Listing metadata only. The page itself is pages/use-cases/data-integration.vue - this one
+# had a real markup body in src/use-cases/data-integration.njk, so it did not lift into data the way the
+# two operational use-cases did. Kept here so /use-cases/ still builds its cards from
+# one place rather than a hand-maintained list.
+slug: data-integration
+title: "FlowFuse for Data Integration"
+problem: "Collect, transform, and route data from any industrial source to any destination, without writing integration code from scratch."
