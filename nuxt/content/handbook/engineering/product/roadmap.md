@@ -96,19 +96,3 @@ Where a delivery date has been committed to a customer, that commitment lives in
 | **FlowFuse Node-RED Plugin** — connects an existing NR install to the platform, subset of Device Agent capability | 1 Edge & device | Deploy | FlowFuse | High barrier to connecting an existing install | An existing install connects without migration |
 | **Dashboard: usable by default** — better out-of-the-box defaults | 4 Application & UX | Build | FF Dashboard | Too much work required to reach a good-looking dashboard | A first dashboard looks presentable without configuration |
 
-#### Q1 2027
-
-| Item | Lane | Pillar | Scope | Problem | Product outcome |
-| :---- | :---- | :---- | :---- | :---- | :---- |
-| **Time Series Database** — team-scoped TSDB + NR nodes to read/write; management UI in a later iteration | 3 Data layer | Build | FlowFuse | Repeated customer signal from Fleet/Edge: nowhere to put event data that doesn't fit a relational model | A team stores event data on the platform instead of standing up their own store |
-| **Dashboard: data-binding layer** — widgets bind to tagged data values; flows update the data layer | 4 Application & UX | Build | FF Dashboard | Widgets only update when a message arrives, so users wire messages into each one - overt complexity | A flow updates a value once and every bound widget reflects it |
-| **Dashboard: canvas pages** — freeform WYSIWYG drawing with elements bound to live data | 4 Application & UX | Build | FF Dashboard | Grid layout can't represent a production line visually | A builder produces an HMI that mirrors the physical line |
-
-#### Q2 2027
-
-| Item | Lane | Pillar | Scope | Problem | Product outcome |
-| :---- | :---- | :---- | :---- | :---- | :---- |
-| **Multi-user editing** — extend multiplayer mode to interactive concurrent editing | 4 Application & UX | Build | Node-RED | Collaboration on a single runtime is limited | Two people edit the same runtime without coordinating out of band |
-| **Dynamic Flow Configuration** — platform UX for key/value config + NR node to pull and cache at runtime | 1 Edge & device | Deploy | FlowFuse | Environment variables are static and require a full redeploy to change | A team changes device-specific configuration without redeploying |
-| **Dashboard: WYSIWYG layout authoring** — drag, arrange, resize, configure, connect to data | 4 Application & UX | Build | FF Dashboard | Page and layout authoring is unintuitive and the visual editor is limited | A builder lays out a page without trial-and-error redeploys |
-
