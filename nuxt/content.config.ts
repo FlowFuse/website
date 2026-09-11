@@ -233,6 +233,94 @@ export default defineContentConfig({
             schema: z.object({
                 date: z.coerce.date(),
                 time: z.string().optional(),
+
+            })
+        }),
+        // The /landing/ pages that were pure 11ty frontmatter. Two shapes, both routed
+        // through pages/landing/[slug].vue and told apart by `kind`:
+        //  - abm         (layouts/abm-landing.njk) - problem/solution/how/features
+        //  - comparison  (layouts/landing-comparison.njk) - two cards and a gated brief
+        // /landing/plc/, /tulip/ and /factory-efficiency/ had markup bodies and stay
+        // hand-written Vue pages.
+        landingPages: defineCollection({
+            type: 'data',
+            source: 'landing/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                kind: z.enum(['abm', 'comparison']),
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string().optional(),
+                }),
+                // The comparison briefs are campaign landing pages, kept out of the sitemap.
+                skipIndex: z.boolean().optional(),
+
+                // --- abm ---------------------------------------------------------------
+                heroTitle: z.string().optional(),
+                image: z.string().optional(),
+                imageDescription: z.string().optional(),
+                values: z.array(z.string()).optional(),
+                problem: z.object({
+                    title: z.string(),
+                    description: z.array(z.string()),
+                }).optional(),
+                solution: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                    benefits: z.array(z.object({
+                        svgPath: z.string(),
+                        title: z.string(),
+                        description: z.string(),
+                    })),
+                }).optional(),
+                testimonialsTitle: z.string().optional(),
+                useCases: z.object({
+                    title: z.string(),
+                    image: z.string(),
+                    imgAlt: z.string(),
+                    case: z.array(z.object({ title: z.string(), description: z.string() })),
+                }).optional(),
+                how: z.object({
+                    title: z.string(),
+                    steps: z.array(z.object({ title: z.string(), description: z.string() })),
+                }).optional(),
+                features: z.object({
+                    title: z.string(),
+                    features: z.array(z.object({ svgPath: z.string(), title: z.string() })),
+                }).optional(),
+                ctaSection: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }).optional(),
+
+                // --- comparison --------------------------------------------------------
+                hubspot: z.object({
+                    formId: z.string(),
+                    cta: z.string(),
+                    reference: z.string(),
+                }).optional(),
+                hero: z.object({
+                    headline: z.string(),
+                    headlineHighlight: z.string(),
+                    intro1: z.string(),
+                    intro2: z.string(),
+                    image: z.string(),
+                    imageAlt: z.string(),
+                    buttonText: z.string(),
+                }).optional(),
+                leftCard: z.object({
+                    title: z.string(),
+                    items: z.array(z.object({ icon: z.string(), text: z.string() })),
+                }).optional(),
+                rightCard: z.object({
+                    title: z.string(),
+                    items: z.array(z.object({ icon: z.string(), text: z.string() })),
+                }).optional(),
+                takeaway: z.object({
+                    para1: z.string(),
+                    para2: z.string(),
+                }).optional(),
+                form: z.object({ title: z.string() }).optional(),
             })
         }),
         ebooks: defineCollection({
