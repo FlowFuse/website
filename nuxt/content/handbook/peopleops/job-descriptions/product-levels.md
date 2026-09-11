@@ -58,7 +58,7 @@ Examples:
 - Cross-lane conflicts caught during planning, not during a release
 - Packaging and tier placement decided with the pricing and positioning consequences understood
 - Downstream load on support, documentation and go-to-market anticipated and planned for, not discovered after launch
-- The tree kept coherent, so any committed issue can be traced back to the objective it serves
+- There is an adequate and maintained artifact that connects and translates engineering outcomes to business outcomes.
 - Recurring customer friction traced to its cause rather than patched one request at a time
 
 ### 4. Collaboration and Influence
