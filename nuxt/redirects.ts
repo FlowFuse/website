@@ -192,4 +192,11 @@ export const redirects: Record<string, NitroRouteRules> = {
     // form it hosted is duplicated elsewhere (src/_includes/explore-more-content.njk,
     // nuxt/components/ThankYouExploreMore.vue). Removed rather than ported.
     '/community/newsletter/': { redirect: { to: '/blog/', statusCode: 301 } },
+
+    // /free-consultation/ was also an orphan: its one referring link
+    // (src/blog/2024/03/low-code-is-better.md) now points at /contact-us/ instead, and
+    // nothing else on the site linked to it. Removed rather than ported; redirected to
+    // /contact-us/ (the nearest live equivalent) for anyone with an old bookmark or an
+    // indexed link.
+    '/free-consultation/': { redirect: { to: '/contact-us/', statusCode: 301 } },
 }
