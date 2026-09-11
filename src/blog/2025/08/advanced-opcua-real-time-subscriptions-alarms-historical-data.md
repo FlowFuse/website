@@ -59,7 +59,7 @@ To create your first subscription:
 
 1. Drag an Inject node onto your canvas. This will trigger the subscription to start.
 
-> Note: This article uses Inject nodes for manual triggering to illustrate key concepts. In production, it is advisable to create interactive dashboards with FlowFuse Dashboard to enable effective monitoring and control. For more information on designing operator interfaces, please refer to [this article](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/).
+> Note: This article uses Inject nodes for manual triggering to illustrate key concepts. In production, it is advisable to create interactive dashboards with [FlowFuse Dashboard](/platform/dashboard/) to enable effective monitoring and control. For more information on designing operator interfaces, please refer to [this article](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/).
 
 2. Add an OpcUa-Item node. Double-click it and enter the NodeId of the tag you want to monitor, like `ns=2;i=2007`. Select the correct data type for your tag.
 
@@ -297,6 +297,6 @@ Managing OPC UA flows across multiple sites? FlowFuse helps teams deploy Node-RE
 
 Following our managed MQTT broker, we've now added database services built right into the platform, plus new AI features that make building flows faster than ever.
 
-Connecting PLCs beyond OPC UA? FlowFuse also supports Siemens S7, EtherNet/IP, Modbus TCP/RTU, and MQTT, see the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
+See [OPC UA subscriptions, alarms, and historical access](/integrations/opcua/#opc-ua-client-and-server-capabilities) for how these capabilities fit into FlowFuse's broader OPC UA client and server support. Connecting PLCs beyond OPC UA? FlowFuse also supports Siemens S7, EtherNet/IP, Modbus TCP/RTU, and MQTT, see the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
 
 [Get started free](https://app.flowfuse.com/account/create) and scale and manage your Node-RED deployments today.

@@ -6,6 +6,8 @@ meta:
   title: "Industries"
   description: "FlowFuse helps industrial teams connect, automate, and standardize operations across sectors. Explore how FlowFuse is applied in your industry."
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div class="w-full">
 
     <!-- HERO with CTA buttons -->
@@ -15,7 +17,7 @@ meta:
             <h1 class="m-auto max-w-3xl font-medium">Built for the way <span class="text-indigo-600">your industry</span> operates</h1>
             <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">FlowFuse meets manufacturers where they are, connecting OT and IT systems, automating workflows, and standardizing operations across every site.</p>
             <div class="mt-10 flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'page': 'industries-hub'})">Talk to an expert</a>
+                {{ ctaContactUs('highlight', 'hero', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>
@@ -52,8 +54,8 @@ meta:
             <h3 class="mb-4 w-full text-center">See it in your plant</h3>
             <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">Talk to an expert, or get started with FlowFuse today.</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'page': 'industries-hub'})">Talk to an expert</a>
-                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'footer', 'page': 'industries-hub'})">Get started</a>
+                {{ ctaContactUs('highlight', 'footer', extraClass='min-h-[40px]') }}
+                {{ ctaSignUp(site, 'primary-outlined', 'footer', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>

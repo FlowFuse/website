@@ -103,6 +103,8 @@ Dashboards work best when they're designed around a specific decision, not a gen
 
 A production dashboard answers one question in real time: is the line hitting its target? FlowFuse's **Andon Live Dashboard** gives operators and supervisors a shop-floor view of actual output against target, shift progress, and current line status, so a gap can be caught and addressed before it grows.
 
+The same live data is useful during a [run at rate](/blog/2026/08/run-at-rate/), when a team needs to verify that the line can sustain its required output before launch.
+
 ![FlowFuse Andon Live dashboard showing a target of 100 against an actual count of 84, a delta of 16, stoppage timers, and the current shift for Production Line 33](./images/andon-live-dashboard.png)
 *FlowFuse Andon Live dashboard showing a target of 100 against an actual count of 84, a delta of 16, stoppage timers, and the current shift for Production Line 33*
 

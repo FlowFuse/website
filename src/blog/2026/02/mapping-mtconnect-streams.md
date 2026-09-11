@@ -75,7 +75,7 @@ Bringing MTConnect data into FlowFuse is the first step toward a live dashboard.
 
 The Solution Engine node (`node-red-contrib-solution-engine`) makes this straightforward because it lets you access any data point directly by its dataItemId, without having to worry about parsing XML or navigating nested structures.
 
-You can install the node by following the instructions in the FlowFuse documentation: [Using the Palette Manager](/node-red/getting-started/library/#using-the-palette-manager).
+You can install the node by following the instructions in the FlowFuse documentation: [Using the Palette Manager](/docs/node-red/getting-started/library/#using-the-palette-manager).
 
 Once installed, follow these steps to start collecting data:
 
@@ -104,7 +104,7 @@ When the node successfully retrieves data, it outputs the following fields: `msg
 
 ## Building the Dashboard
 
-Now that you're successfully retrieving MTConnect data, the next step is to display it on a live dashboard. FlowFuse makes this straightforward with its [dashboard package](https://dashboard.flowfuse.com). You can bind any data item to a visual component, and it updates automatically whenever new data arrives.
+Now that you're successfully retrieving MTConnect data, the next step is to display it on a live dashboard. FlowFuse makes this straightforward with its [dashboard package](/platform/dashboard/). You can bind any data item to a visual component, and it updates automatically whenever new data arrives.
 
 Before you start, make sure to install the `@flowfuse/node-red-dashboard` package to add the dashboard nodes.
 

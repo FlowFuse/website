@@ -111,7 +111,7 @@ With Instance Protection Mode activated, team members can still view flows, but 
 
 HTTP is one of the most widely used protocols for enabling communication between different applications and services. In Node-RED, you can quickly create these APIs using HTTP-In nodes, which allow for communication. However, while this convenience is excellent, ensuring that only authorized users can access your APIs is essential.
 
-FlowFuse provides robust options for securing all HTTP endpoints served by Flow and the Node-RED Dashboard. To manage this, each instance has a dedicated interface that you can access by navigating to **your instance -> Settings -> Security**. Here, you’ll find several options for securing your APIs:
+FlowFuse provides robust options for securing all HTTP endpoints served by Flow and the [Node-RED Dashboard](/platform/dashboard/). To manage this, each instance has a dedicated interface that you can access by navigating to **your instance -> Settings -> Security**. Here, you’ll find several options for securing your APIs:
 
 ![Options to enable authentication for the HTTP endpoints created in the Node-RED instance](./images/http-api-auth.png){data-zoomable}
 _Flowfuse: Options to enable authentication for the HTTP endpoints created in the Node-RED instance._

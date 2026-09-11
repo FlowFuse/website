@@ -30,8 +30,6 @@ useSeoMeta({
     ogUrl: `https://flowfuse.com/product/${tierId}/`,
     twitterSite: '@FlowFuseinc',
 })
-
-const capture = useCapture()
 </script>
 
 <template>
@@ -49,12 +47,7 @@ const capture = useCapture()
           <p class="mt-6 text-lg max-w-xl mx-auto md:mx-0" v-html="tier.description" />
           <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center md:justify-start">
             <CtaBookDemo variant="highlight" :position="`${tierId}-hero`" />
-            <a class="ff-btn group flex flex-col" href="/pricing/" @click="capture('cta-pricing', { position: `${tierId}-hero` })">
-              <span class="flex items-center justify-center gap-2 text-base uppercase text-indigo-600 hover:text-indigo-800">
-                <span>VIEW PRICING</span>
-                <IconsArrowRightIcon class="w-5 h-5" />
-              </span>
-            </a>
+            <CtaPricing variant="ghost" :position="`${tierId}-hero`" icon="i-lucide-arrow-right" />
           </div>
         </div>
         <div class="rounded-lg shadow-2xl border-2 border-red-100 overflow-hidden">
@@ -63,19 +56,7 @@ const capture = useCapture()
       </div>
 
       <!-- Quote -->
-      <figure class="mt-24 border-l-4 border-red-100 pl-6">
-        <blockquote class="font-normal italic text-2xl m-0">
-          "{{ tier.quote.text }}"
-        </blockquote>
-        <figcaption class="mt-4 flex items-center gap-3 text-sm text-gray-500">
-          <span v-if="tier.quote.avatar" class="w-14 h-14 rounded-full bg-red-200 border-2 border-white shadow-md overflow-hidden shrink-0">
-            <img :src="tier.quote.avatar" :alt="tier.quote.author" class="w-full h-full object-cover">
-          </span>
-          <span>
-            <span class="font-semibold text-gray-700">{{ tier.quote.author }}</span> · {{ tier.quote.role }}
-          </span>
-        </figcaption>
-      </figure>
+      <QuoteBlock class="mt-24" :quote="tier.quote.text" :author="tier.quote.author" :role="tier.quote.role" :avatar="tier.quote.avatar" />
 
       <!-- Fit -->
       <div class="mt-24 grid md:grid-cols-2 gap-6">

@@ -16,6 +16,9 @@ Happy New Year everyone! We're back with another release of FlowFuse, and whilst
 
 <!--more-->
 
+::product-update-note
+::
+
 ## Hosted & Remote Instances
 
 This release you'll notice that we've changed the terminology of two of our key concepts in FlowFuse:

@@ -42,6 +42,15 @@ layout: layouts/base.njk
                         {{ content | safe }}
                     </div>
                 </div>
+                {% if meta.faq %}
+                <div class="max-w-[706px] mt-12">
+                    <div class="prose">
+                        <h2 class="mb-1">Frequently Asked Questions</h2>
+                    </div>
+                    {% set type = 'post' %}
+                    {% include "faq.njk" %}
+                </div>
+                {% endif %}
             </div>
             <div class="w-72 max-w-full">
                 {% if date | dateInFuture and not hubspot.downloadFormId %}

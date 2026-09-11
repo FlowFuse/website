@@ -37,14 +37,14 @@ included:
   - title: "Certified for IT systems"
     chips:
       - label: "MQTT"
-        href: "/node-red/flowfuse/mqtt/"
+        href: "/docs/flowfuse-nodes/mqtt/"
       - label: "HTTP Request"
-        href: "/node-red/core-nodes/http-request/"
+        href: "/docs/node-red/core-nodes/network/http-request/"
       - "Kafka"
       - label: "Redis"
-        href: "/node-red/flowfuse/hub/redis/"
+        href: "/docs/flowfuse-nodes/hub/redis/"
       - label: "AI nodes (Gemini, Claude, ChatGPT, Ollama)"
-        href: "/node-red/flowfuse/ai/llm-nodes/"
+        href: "/docs/flowfuse-nodes/ai/llm-nodes/"
   - title: "Governed by default"
     chips:
       - label: "Application-Level RBAC"

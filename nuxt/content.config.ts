@@ -29,12 +29,22 @@ export default defineContentConfig({
             source: 'docs/**/*.md',
             schema: z.object({
                 navTitle: z.string().optional(),
+                // The browser/search-result title, when the sidebar label is too short to
+                // serve as one. Read by nuxt/pages/docs/[...slug].vue; like navGroupOrder
+                // below, an undeclared key is stripped from frontmatter, which would make
+                // that read silently undefined.
+                metaTitle: z.string().optional(),
                 navGroup: z.string().optional(),
                 // Read by useDocsNav to rank the sidebar group headings; without it
                 // declared here @nuxt/content strips the key from frontmatter.
                 navGroupOrder: z.number().optional(),
                 navOrder: z.number().optional(),
                 originalPath: z.string().optional(),
+                // Set only on pages overlaid from this repo's nuxt/content-guides/ tree
+                // (see nuxt/lib/guides-sync.mjs). `originalPath` marks a page imported
+                // from FlowFuse/flowfuse and the docs page builds a flowfuse edit link
+                // from it; a page carrying `editUrl` links back here instead.
+                editUrl: z.string().optional(),
                 updated: z.string().optional(),
                 version: z.string().optional(),
                 layout: z.string().optional(),
@@ -63,25 +73,6 @@ export default defineContentConfig({
                     // Read by useHandbookNav for sort order; without it declared
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
-                }).optional(),
-            })
-        }),
-        // Markdown-driven Application Guide pages, rendered by
-        // pages/application-guide/[guide]/[slug].vue via ContentRenderer, like /docs.
-        // The sidebar/order is driven by frontmatter (guide, slug, navOrder, navTitle).
-        applicationGuideDoc: defineCollection({
-            type: 'page',
-            source: 'application-guide/**/*.md',
-            schema: z.object({
-                guide: z.enum(['flowfuse', 'node-red']),
-                slug: z.string(),
-                navTitle: z.string().optional(),
-                navOrder: z.number().optional(),
-                // slug of the parent page — nests this page under it in the sidebar.
-                parent: z.string().optional(),
-                blurb: z.string().optional(),
-                meta: z.object({
-                    description: z.string().optional(),
                 }).optional(),
             })
         }),
@@ -146,7 +137,7 @@ export default defineContentConfig({
                     title: z.string().optional(),
                     description: z.string().optional(),
                 }).optional(),
-                meta: z.object({
+                structuredData: z.object({
                     title: z.string().optional(),
                     description: z.string().optional(),
                     faq: z.array(z.object({
@@ -194,12 +185,34 @@ export default defineContentConfig({
                 hubspot: z.object({
                     formId: z.string(),
                 }),
+                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
+                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, same
+                // shim the blog collection uses, so existing story files don't need editing.
+                structuredData: z.object({
+                    // Falls back to "Frequently Asked Questions" (the blog's fixed heading)
+                    // when unset - only set this when a story wants its own FAQ heading.
+                    faqTitle: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                }).optional(),
                 story: z.object({
                     brand: z.string(),
                     // Nullable for the same blank-key-in-YAML reason as top-level `logo` above.
                     url: z.string().nullable().optional(),
                     logo: z.string().optional(),
                     quote: z.string().optional(),
+                    // Byline for `quote`. Preferred: `quoteAuthorSlug` names a file in
+                    // src/_data/team/ or src/_data/guests/ (resolved via useTeamMember) so
+                    // name/title/headshot come from that JSON. Not every quoted person has
+                    // one, so quoteAuthor/quoteRole/quoteAvatar remain as a manual fallback -
+                    // quoteRole is job title only, `brand` above supplies the company name
+                    // and is concatenated at render time rather than duplicated here.
+                    quoteAuthorSlug: z.string().optional(),
+                    quoteAuthor: z.string().optional(),
+                    quoteRole: z.string().optional(),
+                    quoteAvatar: z.string().optional(),
                     challenge: z.string(),
                     solution: z.string(),
                     products: z.array(z.string()),

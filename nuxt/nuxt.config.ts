@@ -40,22 +40,6 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Application Guide pages are markdown (`applicationGuideDoc`, a `page` collection).
-// Their routes are largely discoverable by @nuxt/content, but we keep an explicit prerender
-// list for the section index + each page. File names are <slug>.md and match the `slug` field.
-function collectApplicationGuideRoutes(dir: string): string[] {
-    const routes = ['/application-guide/']
-    for (const guide of readdirSync(dir)) {
-        const guideDir = join(dir, guide)
-        if (!statSync(guideDir).isDirectory()) continue
-        for (const file of readdirSync(guideDir)) {
-            if (!file.endsWith('.md')) continue
-            routes.push(`/application-guide/${guide}/${basename(file, '.md').replace(/^\d+-/, '')}/`)
-        }
-    }
-    return routes
-}
-
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
 // so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
 // each file's `tierId` field rather than the filename, since that's the field the page route
@@ -70,7 +54,7 @@ function collectProductRoutes (dir: string): string[] {
     return routes
 }
 
-// Same idea as collectApplicationGuideRoutes above, for customer stories (flat
+// Same idea as collectProductRoutes above, for customer stories (flat
 // src/customer-stories/ dir, see content.config.ts).
 function collectStoryRoutes(dir: string): string[] {
     const routes = ['/customer-stories/']
@@ -134,11 +118,14 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
 
-    // Captured at build time (Netlify sets CONTEXT during the build, not necessarily
-    // in the deployed Function's runtime), then baked into the server bundle via
-    // runtimeConfig so analytics.ts doesn't depend on a process.env read at request time.
+    // Captured at build time (Netlify sets CONTEXT during the build, but passes only URL,
+    // SITE_NAME and SITE_ID to the deployed Function at runtime), then baked in via
+    // runtimeConfig so nothing depends on a process.env read at request time. Under `public`
+    // so the blog's scheduled-post check reads the same value everywhere it runs.
     runtimeConfig: {
-        isProductionContext: process.env.CONTEXT === 'production'
+        public: {
+            isProductionContext: process.env.CONTEXT === 'production'
+        }
     },
 
     css: ['~/assets/css/theme.css'],
@@ -153,6 +140,7 @@ export default defineNuxtConfig({
         name: 'FlowFuse',
         description: site.messaging.subtitle,
         defaultLocale: 'en',
+        trailingSlash: true,
     },
 
     // Only covers content already served by Nuxt. The handbook is deliberately excluded
@@ -215,7 +203,7 @@ export default defineNuxtConfig({
                     { title: 'Home', href: `${site.baseURL}/`, description: 'FlowFuse platform overview' },
                     { title: 'Pricing', href: `${site.baseURL}/pricing/`, description: 'Plans and pricing information' },
                     { title: 'Integrations', href: `${site.baseURL}/integrations/`, description: 'Supported integrations and connectors' },
-                    { title: 'Application Guide', href: `${site.baseURL}/application-guide/`, description: 'Patterns for building FlowFuse applications' },
+                    { title: 'Application Guide', href: `${site.baseURL}/docs/application-guide/`, description: 'Patterns for building FlowFuse applications' },
                     { title: 'Create an account', href: `${site.appURL}/account/create`, description: 'Start a free trial' },
                     { title: 'Terms of Service', href: `${site.baseURL}/terms/` },
                     { title: 'Privacy Policy', href: `${site.baseURL}/privacy-policy/` },
@@ -271,6 +259,16 @@ export default defineNuxtConfig({
         // trailing-slash: 11ty pages use trailing slashes intentionally
         // no-error-response: links to 11ty pages return 404 in the Nuxt-only static output
         skipInspections: ['trailing-slash', 'no-error-response'],
+        // By default the module re-inspects every prerendered page once the build finishes,
+        // and that pass has grown with the page count: 4m34s over 251 routes on 28 Jul,
+        // 10m10s over 563 on 30 Jul, 19m15s over 2363 now, which is most of a 24m CI job.
+        // What it buys us there is small. Only three of its inspections are error scope, and
+        // no-error-response is already skipped above, leaving missing-hash and no-javascript;
+        // everything else is a warning that no ruleset gates on. The CI build workflow also
+        // runs hyperlink with --check-anchors over the built nuxt/dist tree in well under a
+        // second, and that already covers broken links and anchors. Switching this off keeps
+        // the module's dev-time and devtools checking, it only drops the build-time pass.
+        runOnBuild: false,
     },
 
     // @nuxt/content generates import statements for remark plugin keys.
@@ -305,6 +303,9 @@ export default defineNuxtConfig({
                 // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
                 // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
                 { src: '/js/nav-tracking.js', defer: true },
+                // Opens sign-up in a small popup window on desktop/tablet.
+                // Source is src/js/signup-popup.js; copied the same way as nav-tracking.js.
+                { src: '/js/signup-popup.js', defer: true },
             ]
         }
     },
@@ -322,11 +323,26 @@ export default defineNuxtConfig({
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
         '/thank-you/**': { robots: false },
+        '/handbook/sales/subscription-agreement-1.5': { robots: false },
         ...redirects,
     },
 
     nitro: {
         preset: 'netlify',
+        // sanitize-html is CommonJS but depends on htmlparser2 ^12, which is ESM-only
+        // ("type": "module", main ./dist/index.js). Left external, Nitro require()s it from
+        // /var/task/node_modules in the deployed function, and require() of an ES module only
+        // works on Node >= 22.12 - which is why sanitize-html declares engines node >=22.12.0.
+        // The Lambda runtime under this site is older than that, so the require threw
+        // ERR_REQUIRE_ESM at module load. server/utils is auto-imported by Nitro, so that one
+        // throw took down every route the fallback function serves: robots.txt, /api/*, and
+        // every 404, all returning 502. Inlining it makes rollup resolve htmlparser2 at build
+        // time, so the function no longer require()s ESM and this holds on any runtime.
+        // The runtime version itself is a Netlify site setting (AWS_LAMBDA_JS_RUNTIME); it
+        // cannot be set from netlify.toml, so it is not fixable here.
+        externals: {
+            inline: ['sanitize-html']
+        },
         // Nitro emits a .mjs.map next to every server chunk, so the Netlify functions bundle
         // ships one map file per chunk. Skipping them keeps the bundle smaller and the
         // server build a little shorter. The cost is that a server-side stack trace in the
@@ -363,8 +379,14 @@ export default defineNuxtConfig({
                     '/terms',
                     '/privacy-policy',
                     '/integrations',
+                    '/integrations/opcua',
                     '/pricing',
+                    '/resources/roi-calculator',
                     '/product',
+                    // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
+                    // Nuxt prerender crawler never parses, so it has to be listed explicitly
+                    // or the route is missing from nuxt/dist and every link to it breaks.
+                    '/ai',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
@@ -375,10 +397,18 @@ export default defineNuxtConfig({
                     // content-urls.get.ts) silently resolves to undefined. Explicitly listing
                     // it here bakes it at build time instead, inside the git checkout.
                     '/sitemap.xml',
+                    // Same hybrid-preset gate as /sitemap.xml above: @nuxtjs/robots only
+                    // writes robots.txt to nuxt/dist when isNuxtGenerate() is true, so on the
+                    // netlify preset it was served live by the fallback function instead. Any
+                    // fault in that function therefore turned robots.txt into a 5xx, and
+                    // Google reads a 5xx on robots.txt as "crawl nothing" for the first ~12h.
+                    // Listing it here makes it a static file, independent of the function.
+                    '/robots.txt',
                     '/contact-us',
                     '/book-demo',
                     '/support',
                     '/professional-services',
+                    '/dashboard/tags-and-canvas-feedback',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -386,7 +416,6 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
-                    ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
                     '/changelog/',
                     ...changelog.routes,
@@ -410,6 +439,13 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        'content:file:beforeParse' ({ file, collection }) {
+            if (collection.name !== 'blog') return
+            file.body = file.body.replace(
+                /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
+                (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
+            )
+        },
         // Enumerate /integrations/{id}/ routes at config-time so SSG prerenders them.
         // Can't use Nuxt's $fetch here — it only exists at nitro runtime.
         async 'nitro:config' (nitroConfig: import('nitropack').NitroConfig) {

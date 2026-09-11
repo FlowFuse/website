@@ -102,29 +102,8 @@ provide('guideTabs', { active, register })
 .ff-tab-panel > :first-child { margin-top: 0; }
 .ff-tab-panel > :last-child { margin-bottom: 0; }
 
-/* Desktop: the guide drops the right-hand TOC, so the whole tab box breaks out
-   into that reclaimed width — this gives tabbed diagrams the same room as
-   standalone ones (they were being clipped by the narrow box before). */
-@media (min-width: 1024px) {
-    .ff-tabs {
-        max-width: none;
-        margin-left: -24px;
-        margin-right: -290px;
-    }
-    /* A diagram inside a tab must NOT break out again — the box already did. */
-    .ff-tabs .ag-diagram {
-        margin-left: 0;
-        margin-right: 0;
-        max-width: none;
-    }
-    /* Keep the tab's prose at a readable measure even though the box is wide. */
-    .ff-tab-panel > p,
-    .ff-tab-panel > ul,
-    .ff-tab-panel > ol {
-        max-width: 720px;
-    }
-}
-@media (min-width: 1536px) {
-    .ff-tabs { margin-right: -300px; }
-}
+/* No desktop breakout. This box used to widen itself into the right-hand column on
+   the assumption that guide pages had no TOC. They are docs pages now and that column
+   holds a real table of contents, so a wider box would simply run underneath it. The
+   diagrams inside are SVG and scale to whatever width they are given. */
 </style>

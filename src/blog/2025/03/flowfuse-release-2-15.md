@@ -20,6 +20,9 @@ Our three focal points for the latest release of FlowFuse have been:
 
 <!--more-->
 
+::product-update-note
+::
+
 ## Custom Node Catalogues
 
 ![Screenshot of the new "Custom Nodes" view in Team Library"](./images/screenshot-custon-catalog.png){data-zoomable}

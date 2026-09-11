@@ -11,7 +11,8 @@ FlowFuse partners with external specialists to ensure global and domestic tax co
 | Income Tax      | Tax Consultants (filing in all states with physical presence/nexus)| Annual / Quarterly
 | Tax R&D Credit  | Tax Consultants (specialized study and filing)                     | Annual
 | USA Sales Tax   | TBC                                                                | Monthly/Quarterly
-| UK Sales Tax    | Calculated and filled by third party (#monthly-uk-vat-filing-sop-taxually-submission)                                 | Quarterly
+| UK Sales Tax    | Calculated by FlowFuse and filled by third party (#monthly-uk-vat-filing-sop-taxually-submission)                                 | Quarterly
+| Washington Excise Tax | Calculated and filled by FlowFuse  (#quarterly-washington-state-excise-taxes)                               | Quarterly
 
 To find out the names of the providers, please visit our [vendor sheet](https://docs.google.com/spreadsheets/d/1ro77wy0cRK6gpzVv_iq4vpdmbdMq61X5-tTwI_F3hXM/edit?gid=0#gid=0). 
 
@@ -59,6 +60,7 @@ Monthly, redeem Brex reward points for cash via the [Brex Rewards dashboard](htt
 | R&D tax credit (Form 6765), filed with the 1120                    |  April 15 (annual, or Oct 15 if extended)| Tax Consultant | Can make election to apply the credit against payroll tax (vs. income tax) must be made on this return.
 | California franchise tax (Form 100)                                | April 15 (Annual) | FlowFuse | $800 minimum tax; applies because FlowFuse does business in CA even though it's incorporated in DE. Pay through [link](https://www.ftb.ca.gov/pay/bank-account/index.asp). Enter California Entity ID that can be found in 1password.
 | San Francisco business registration renewal + gross receipts tax   |  March 2 (annual) | Flowfuse/ Our accountants | Flowfuse alerts our accountants to prepare the documents for us to file 
+| Washington State Excise Tax                                        |  Quarterly (end of April / July / Oct / Jan)     | Flowfuse BizOps | BizOps follows the steps provided below to calculate and submit excise taxes in time 
 
 ## Monthly UK VAT Filing SOP: Taxually Submission
 
@@ -191,6 +193,43 @@ Once you open the software for the first time, it'll ask you some questions:
   - EU Sales through Northern Ireland only -> **Always zero**
 - Box 9: Goods NI from EU (exc)
   - EU Purchases through Northern Ireland only -> **Always zero**
+
+## Quarterly Washington State Excise Taxes
+Find the previous quarter's worksheet to see what we submitted to the State. You can find them in this [drive](https://drive.google.com/drive/folders/1M6EC0R0RZKYYQyQcOu6D-Xn27ZtzJYD3?usp=drive_link)
+
+### Collecting the data for the quarter
+First off, find the filing from last quarter and duplicate the workbook.
+
+**Stripe Data**
+- Log into the Stripe Dashboard → Reports (left sidebar).
+- Look under the Balance report category and select "Itemized balance change from activity" — this is the report that matches the exact column structure Zeni used before (balance_transaction_id, gross, fee, net, reporting_category, etc.).
+- Set the date range to your desired range.
+- In the workbook that you duplicated, add the new data from Stripe in a new sheet.
+- Filter the sheet for the "customer_address_country" for "US"
+- Add column "State & non- US" to the right of customer_address_state. See how it got done in the previous filing for inspiration.
+- Add formula in the new column you created =IF(AU2="","",IF(AU2="US",VLOOKUP(AT2,'Zip codes for states'!$A$2:$B$53,2,0),"Non US"))
+- Review the output. If you see any "N/A" remaining, view "Customer Address State" column and manually copy the data to the "State & Non-US" column
+- Add a month column in Month A similar to the previous workbook
+- For any rows that you still have N/A, ask Claude to find the states and update the "zip code for states" sheet with the new information
+- Redrag the formula in "State & non-US" column
+- You should now have the full list of clients in WA. Filter for the quarter you are analyzing for in column A
+
+**HubSpot Data**
+You can create a report in HubSpot to find if there were any subscriptions closed in the State of Washington (WA). You can also ask Claude, if you have it connected, to double check if you've missed anything not tagged properly.
+
+#### Submitting the excise tax
+- Open https://secureaccess.wa.gov and sign-in. Login information stored in 1Password.
+- Click on Business Licensing and Taxes (Department of Revenue)
+- Click on Action Items. You should see the filing you need to complete
+- Choose the following options "Retailing (B&O)", "Retail Sales", "Local City/County Sales Tax", and "Services & Other Activities". To be sure, have Claude analyze your revenue from the state you collected above and ask it to confirm which ones to select.
+- For B&O Retailing -> You should fill in with the total amount from Stripe
+- For Services & Other Activities -> You should fill in with the total amount from Hubspot
+- For Retail Sales -> You should fill in with the total amount from Stripe
+- For Local City/County Sales Tax -> Find the full address of your customers in Stripe and find their location code from this [website](https://webgis.dor.wa.gov/taxratelookup/SalesTax.aspx)
+- Once you have the location codes, add them in to add the cities and fill in the amount respective to each city. You can find some of the codes in the previous quarter's document on previous clients.
+- Review everything
+- Pay with a credit card and submit
+- Download the copies of your submissions and add them to the folder [here](https://drive.google.com/drive/folders/1M6EC0R0RZKYYQyQcOu6D-Xn27ZtzJYD3?usp=drive_link), in the respective quarter
 
 ## Internal Documentation & Storage
 All finalized tax filings, monthly financial packages, and signed vendor contracts are stored in [this folder in Google Drive](https://drive.google.com/drive/folders/1xtrbFJaAmwgF9VdWnvzztevXi1MUJDMR). Access is limited to the Accounting Team and Executive Leadership.

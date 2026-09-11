@@ -18,7 +18,7 @@ tldr: "Node-RED Dashboard (Dashboard 1.0) has been formally deprecated, with no 
 
 Dave Conway-Jones, the lead maintainer of Node-RED Dashboard, has [just announced](https://discourse.nodered.org/t/node-red-dashboard-v1-deprecation-notice/89006) that Node-RED Dashboard has been formally deprecated, meaning there will be no further development activity on the project.
 
-[FlowFuse Dashboard](https://dashboard.flowfuse.com/) (also known as Node-RED Dashboard 2.0) is a natural successor to Node-RED Dashboard, and in this article, we detail what FlowFuse Dashboard offers, and how you can get started.
+[FlowFuse Dashboard](/platform/dashboard/) (also known as Node-RED Dashboard 2.0) is a natural successor to Node-RED Dashboard, and in this article, we detail what FlowFuse Dashboard offers, and how you can get started.
 
 <!--more-->
 

@@ -1,0 +1,15 @@
+{% from "components/cta/cta-button.njk" import ctaButton %}
+{#
+  Fixed destination, copy, and tracked event - only the look (variant) and
+  where it lives on the page (position) vary per insertion. Mirrors
+  nuxt/components/CtaBookDemo.vue. Already the one destination that was
+  consistently named 'cta-book-demo' across all of 11ty, so no rename needed
+  here - just centralising the markup.
+
+  Event/href/label come from src/_data/ctaDestinations.json - the single
+  source of truth shared with the Nuxt component.
+#}
+{% macro ctaBookDemo(variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{%- set dest = ctaDestinations.bookDemo -%}
+{{ ctaButton(dest.event, dest.href, dest.label, variant, position, color, icon, uppercase, padded, extraClass) }}
+{%- endmacro %}

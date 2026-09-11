@@ -2,11 +2,15 @@
 title: Pricing change for Devices
 description: "FlowFuse Cloud introduces a simplified pricing structure: Devices are now priced at $25 each for Teams Tier and $50 each for Enterprise Tier."
 date: 2024-02-09 13:00:00.0
+lastUpdated: 2026-08-13
 release: "2.1"
 authors: ["marian-demme"]
 tags:
     - changelog
 ---
+
+::product-update-note
+::
 
 Starting today, we have introduced a simplification of the pricing structure for devices on FlowFuse Cloud, effective immediately. All information is available on our [pricing page](/pricing/). 
 The new pricing scheme is as follows:

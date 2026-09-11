@@ -3,6 +3,7 @@ title: "MQTT Service Now Available on FlowFuse"
 subtitle: We are thrilled to announce a significant milestone for FlowFuse, we now offer our very own MQTT service, built-in and ready to use with your Node-RED applications.
 description: "FlowFuse now offers its own built-in MQTT service, ready to use with your Node-RED applications right out of the box today."
 date: 2024-10-31
+lastUpdated: 2026-08-13
 authors: ["joe-pavitt"]
 image: /blog/2024/10/images/ff-mqtt.png
 tags:
@@ -16,6 +17,9 @@ tags:
 In our [recent product update](/blog/2024/10/flowfuse-release-2-10) we have added our very own MQTT service, built-in and ready to use alongside your Node-RED applications. We are always engaging with users and prospective customers and this has been a highly requested feature, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Pro and Enterprise teams.
 
 <!--more-->
+
+::product-update-note
+::
 
 The MQTT Service is available now on [FlowFuse Cloud](https://app.flowfuse.com/account/create/). FlowFuse permits you to setup your own secure clients to begin publishing and subscribing to your own topics.
 

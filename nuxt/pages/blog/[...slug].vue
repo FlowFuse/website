@@ -89,13 +89,24 @@ const recommendedPosts = computed(() => (allPosts.value || []).filter(post => !i
 const relatedHeading = computed(() => relatedPosts.value.length ? 'Related Articles:' : 'Recommended Articles:')
 const postsToShow = computed(() => relatedPosts.value.length ? relatedPosts.value : recommendedPosts.value)
 
-const formattedDate = computed(() => page.value ? new Date(page.value.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
+const displayDate = computed(() => {
+    if (!page.value) return null
+    const published = new Date(page.value.date)
+    const updated = page.value.lastUpdated ? new Date(page.value.lastUpdated) : null
+    return updated && updated > published ? updated : published
+})
+const isUpdated = computed(() => !!page.value?.lastUpdated && displayDate.value > new Date(page.value.date))
+const formattedDate = computed(() => displayDate.value ? displayDate.value.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
 const heroImage = computed(() => page.value?.image || '/images/og-blog.jpg')
 const tldrList = computed(() => Array.isArray(page.value?.tldr) ? page.value?.tldr : null)
 const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.value?.tldr : null)
 
 const pageTitle = computed(() => page.value?.title || 'Blog')
 provide('blogPostTitle', pageTitle)
+const breadcrumbItems = computed(() => [
+    { label: 'Blog', to: '/blog' },
+    { label: pageTitle.value },
+])
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
 const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
@@ -128,23 +139,23 @@ if (routeInfo.value.kind === 'post') {
             description: pageDescription,
             image: absoluteImage,
             datePublished: computed(() => page.value ? new Date(page.value.date).toISOString() : undefined),
-            dateModified: computed(() => page.value ? new Date(page.value.lastUpdated || page.value.date).toISOString() : undefined),
+            dateModified: computed(() => displayDate.value?.toISOString()),
             // Each Person's @id is their /blog/author/{slug}/ page, so the article and the
             // author page resolve to the same entity in the graph.
             author: computed(() => authorMembers.value.length
                 ? authorMembers.value.map(authorSchema)
                 : [{ name: 'FlowFuse', url: 'https://flowfuse.com' }]),
         }),
-        computed(() => page.value?.meta?.faq?.length ? {
+        computed(() => page.value?.structuredData?.faq?.length ? {
             '@type': 'FAQPage',
-            mainEntity: page.value.meta.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+            mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
         } : undefined),
-        computed(() => page.value?.meta?.howto ? defineHowTo({
-            name: page.value.meta.howto.name || pageTitle.value,
-            description: page.value.meta.howto.description || pageDescription.value,
-            totalTime: page.value.meta.howto.totalTime,
-            tool: page.value.meta.howto.tool,
-            step: (page.value.meta.howto.steps || []).map(s => defineHowToStep({ name: s.name, text: s.text, url: s.url ? `${canonicalUrl.value}#${s.url}` : undefined })),
+        computed(() => page.value?.structuredData?.howto ? defineHowTo({
+            name: page.value.structuredData.howto.name || pageTitle.value,
+            description: page.value.structuredData.howto.description || pageDescription.value,
+            totalTime: page.value.structuredData.howto.totalTime,
+            tool: page.value.structuredData.howto.tool,
+            step: (page.value.structuredData.howto.steps || []).map(s => defineHowToStep({ name: s.name, text: s.text, url: s.url ? `${canonicalUrl.value}#${s.url}` : undefined })),
         }) : undefined),
     ])
 }
@@ -190,8 +201,8 @@ if (routeInfo.value.kind === 'post') {
           </template>
           <span v-else class="font-medium">FlowFuse</span>
           <span class="text-gray-300">|</span>
-          <time :datetime="new Date(page.lastUpdated || page.date).toISOString()">
-            {{ page.lastUpdated ? 'Updated ' : '' }}{{ formattedDate }}
+          <time :datetime="displayDate.toISOString()">
+            {{ isUpdated ? 'Updated ' : '' }}{{ formattedDate }}
           </time>
           <span class="text-gray-300">|</span>
           <span>{{ readingTime }} min read</span>
@@ -208,10 +219,7 @@ if (routeInfo.value.kind === 'post') {
     <div class="blog nohero w-full pb-24">
       <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
         <div class="ff-prose min-w-0">
-          <NuxtLink class="group hover:no-underline inline-flex items-center gap-1 mb-4" to="/blog">
-            <UIcon name="i-heroicons-chevron-left" />
-            <span class="group-hover:underline">Back to Blog Posts</span>
-          </NuxtLink>
+          <Breadcrumbs :items="breadcrumbItems" class="mb-4" />
 
           <div class="prose w-full flex-grow">
             <div class="mb-4 hero-img">
@@ -238,9 +246,9 @@ if (routeInfo.value.kind === 'post') {
             <BlogPostCta :title="page.title" :cta="page.cta" />
           </div>
 
-          <div v-if="page.meta?.faq?.length" class="prose mt-12">
+          <div v-if="page.structuredData?.faq?.length" class="prose mt-12">
             <h2 class="mb-1">Frequently Asked Questions</h2>
-            <BlogFaq :faq="page.meta.faq" />
+            <BlogFaq :faq="page.structuredData.faq" />
           </div>
 
           <BlogAuthorCard v-for="(author, i) in authorMembers" :key="i" :author="author" />

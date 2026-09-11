@@ -71,6 +71,8 @@ Measuring and improving OEE allows you to improve the utilization of existing ma
 
 Two caveats worth knowing before you build a dashboard around this number. First, OEE is easy to calculate in a way that flatters the plant - [OEE is misleading your factory: here's how to fix it](/blog/2026/05/fixing-oee-measurement-in-manufacturing/) covers the common measurement mistakes. Second, OEE only judges equipment during *scheduled* production time; [TEEP](/blog/2025/12/what-is-teep/) is the companion metric that accounts for the hours your assets sit idle by choice.
 
+For a launch or capacity-approval event, a [run at rate](/blog/2026/08/run-at-rate/) is the separate test that verifies the line can hold its required output with production tooling and staffing.
+
 ## How is OEE calculated?
 
 OEE is calculated using the formula:
@@ -109,7 +111,7 @@ For this series, we will be building the dashboard at the line-level. In this ca
 
 As mentioned earlier, the dashboard will calculate OEE for a production line, presenting key metrics such as availability, performance, quality, and the overall OEE score. While the overall OEE score provides a quick snapshot of performance, it does not offer enough detail to pinpoint specific areas that need improvement.
 
-To address this, the dashboard will break down the OEE calculation at the machine level as well, enabling managers to identify underperforming machines that affect overall efficiency. Additionally, it will display recent downtime incidents, summarizing this data to uncover trends and identify potential root causes. This breakdown will provide a clearer understanding of where inefficiencies are occurring and allow for targeted corrective actions. The dashboard only displays downtime events, so something has to record them first. If you do not already capture stoppages with a reason attached, our [machine downtime logger](/blog/2026/07/build-downtime-logger/) covers building that: catching stop and start signals over MQTT and letting operators log why the line stopped.
+To address this, the dashboard will break down the OEE calculation at the machine level as well, enabling managers to identify underperforming machines that affect overall efficiency. Additionally, it will display recent downtime incidents, summarizing this data to uncover trends and identify potential root causes. This breakdown will provide a clearer understanding of where inefficiencies are occurring and allow for targeted [corrective actions](/blog/2026/09/capa-corrective-preventive-action/). The dashboard only displays downtime events, so something has to record them first. If you do not already capture stoppages with a reason attached, our [machine downtime logger](/blog/2026/07/build-downtime-logger/) covers building that: catching stop and start signals over MQTT and letting operators log why the line stopped.
 
 The dashboard will also track production quality, displaying the number of acceptable versus defective parts to ensure a continued focus on quality control. Additionally, last 30-days OEE trend analysis will be included, offering insights into performance changes over time. This will help managers identify patterns, monitor improvements, and highlight areas requiring attention.
 

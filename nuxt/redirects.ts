@@ -8,7 +8,10 @@
 // domain redirects already there for the pattern.
 import type { NitroRouteRules } from 'nitropack'
 
+import { nodeRedRedirects } from './redirects-node-red'
+
 export const redirects: Record<string, NitroRouteRules> = {
+    ...nodeRedRedirects,
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
@@ -46,7 +49,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/landing/technology-migration-1/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/landing/technology-migration-2/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
     '/blog/2025/10/the-ai-orchestation-hype/': { redirect: { to: '/blog/2025/10/the-ai-orchestration-hype/', statusCode: 301 } },
-    '/node-red/core-nodes/mqtt/': { redirect: { to: '/node-red/core-nodes/mqtt-in/', statusCode: 301 } },
+    '/node-red/core-nodes/mqtt/': { redirect: { to: '/docs/node-red/core-nodes/network/mqtt-in/', statusCode: 301 } },
     '/blueprints/manufacturing/manufacturing-support-request/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
     '/blueprints/other/remote-buffering/': { redirect: { to: '/blueprints/getting-started/store-and-forward/', statusCode: 301 } },
     '/vs/tulip/': { redirect: { to: '/landing/tulip/', statusCode: 301 } },
@@ -96,7 +99,8 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/legal/terms/': { redirect: { to: '/terms/', statusCode: 301 } },
     '/book-a-demo/': { redirect: { to: '/book-demo/', statusCode: 301 } },
-    '/education/': { redirect: { to: '/node-red/learn/', statusCode: 301 } },
+    '/roi/': { redirect: { to: '/resources/roi-calculator/', statusCode: 301 } },
+    '/education/': { redirect: { to: '/docs/node-red/', statusCode: 301 } },
     '/handbook/marketing/education/': { redirect: { to: '/handbook/marketing/', statusCode: 301 } },
     '/handbook/sales/org/account-executives/': { redirect: { to: '/handbook/sales/sales-team/', statusCode: 301 } },
     '/handbook/sales/org/': { redirect: { to: '/handbook/sales/', statusCode: 301 } },
@@ -154,4 +158,32 @@ export const redirects: Record<string, NitroRouteRules> = {
             { redirect: { to: '/changelog/', statusCode: 301 } },
         ])
     ),
+
+    // The Application Guide moved under /docs when it became part of the documentation
+    // set: its pages are now overlaid onto the docs content tree from
+    // nuxt/content-guides/ (see nuxt/lib/guides-sync.mjs). Every previously published
+    // URL is listed, including the two guides' own index pages, which became the
+    // section indexes of their new docs sections.
+    '/application-guide/': { redirect: { to: '/docs/application-guide/', statusCode: 301 } },
+    '/application-guide/flowfuse/app-delivery-methods/': { redirect: { to: '/docs/application-guide/app-delivery-methods/', statusCode: 301 } },
+    '/application-guide/flowfuse/architectures/': { redirect: { to: '/docs/application-guide/architectures/', statusCode: 301 } },
+    '/application-guide/flowfuse/data-plane/': { redirect: { to: '/docs/application-guide/data-plane/', statusCode: 301 } },
+    '/application-guide/flowfuse/foundations/': { redirect: { to: '/docs/application-guide/foundations/', statusCode: 301 } },
+    '/application-guide/flowfuse/hardware-apps/': { redirect: { to: '/docs/application-guide/app-delivery-methods/hardware-apps/', statusCode: 301 } },
+    '/application-guide/flowfuse/iiot-architectures/': { redirect: { to: '/docs/application-guide/architectures/iiot/', statusCode: 301 } },
+    '/application-guide/flowfuse/it-architectures/': { redirect: { to: '/docs/application-guide/architectures/it/', statusCode: 301 } },
+    '/application-guide/flowfuse/ot-architectures/': { redirect: { to: '/docs/application-guide/architectures/ot/', statusCode: 301 } },
+    '/application-guide/flowfuse/overview/': { redirect: { to: '/docs/application-guide/', statusCode: 301 } },
+    '/application-guide/flowfuse/software-apps/': { redirect: { to: '/docs/application-guide/app-delivery-methods/software-apps/', statusCode: 301 } },
+    '/application-guide/flowfuse/worked-example/': { redirect: { to: '/docs/application-guide/worked-examples/oee/', statusCode: 301 } },
+    '/application-guide/flowfuse/worked-examples/': { redirect: { to: '/docs/application-guide/worked-examples/', statusCode: 301 } },
+    '/application-guide/node-red/design-patterns/': { redirect: { to: '/docs/node-red-guide/patterns/design-patterns/', statusCode: 301 } },
+    '/application-guide/node-red/foundations/': { redirect: { to: '/docs/node-red-guide/foundations/', statusCode: 301 } },
+    '/application-guide/node-red/good-form/': { redirect: { to: '/docs/node-red-guide/patterns/good-form/', statusCode: 301 } },
+    '/application-guide/node-red/handling-data/': { redirect: { to: '/docs/node-red-guide/patterns/handling-data/', statusCode: 301 } },
+    '/application-guide/node-red/oee-central-dashboard/': { redirect: { to: '/docs/node-red-guide/worked-examples/oee-central-dashboard/', statusCode: 301 } },
+    '/application-guide/node-red/oee-edge-aggregator/': { redirect: { to: '/docs/node-red-guide/worked-examples/oee-edge-aggregator/', statusCode: 301 } },
+    '/application-guide/node-red/overview/': { redirect: { to: '/docs/node-red-guide/', statusCode: 301 } },
+    '/application-guide/node-red/patterns/': { redirect: { to: '/docs/node-red-guide/patterns/', statusCode: 301 } },
+    '/application-guide/node-red/worked-examples/': { redirect: { to: '/docs/node-red-guide/worked-examples/', statusCode: 301 } },
 }

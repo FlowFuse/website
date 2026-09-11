@@ -48,6 +48,9 @@ meta:
     description: "FlowFuse provides SCADA value in an Industry 4.0 way and unlocks the potential to modernize your SCADA system with its powerful, customizable, modular components that streamline operations, reduce dependence on costly, monolithic solutions."
     keywords: "FlowFuse, manufacturing, SCADA, Industry 4.0, Siemens S7, PLC, Sentron"
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="nohero w-full px-6">
     <!--Hero Content-->
     <div class="w-full pt-12 pb-20 md:pt-6 md:pb-8">
@@ -65,8 +68,8 @@ meta:
                     {% image image, imageAlt, [400] %}
                 </div>
                 <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
-                    <a class="ff-btn ff-btn--primary min-h-[40px]" href="/contact-us/" onclick="capture('cta-talk-to-an-expert', {'position': 'primary'}, {'page': 'scada'})">TALK TO AN EXPERT</a>
-                    <a class="ff-btn ff-btn--primary-outlined min-h-[40px]" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-get-started', {'position': 'primary'}, {'page': 'scada'})">GET STARTED</a>
+                    {{ ctaContactUs('primary', 'primary', extraClass='min-h-[40px]') }}
+                    {{ ctaSignUp(site, 'primary-outlined', 'primary', extraClass='min-h-[40px]') }}
                 </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[450px]">
@@ -124,8 +127,8 @@ meta:
     <div class="ff-blue-card max-sm:max-w-none">
         <h4 class="mb-6 w-full text-center">{{ ctaSection.title }}</h4>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
-            <a class="ff-btn ff-btn--primary min-h-[40px] uppercase" href="{{ ctaSection.primaryUrl }}" onclick="capture('cta-contact-us-for-demo', {'position': 'secondary'}, {'page': 'scada'})">{{ ctaSection.primaryCta }}</a>
-            <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% if ctaSection.secondaryUrl == 'sign-up-url' %}{% include "sign-up-url.njk" %}{% else %}{{ ctaSection.secondaryUrl }}{% endif %}" onclick="capture('cta-try-flowfuse-now', {'position': 'secondary'}, {'page': 'scada'})">{{ ctaSection.secondaryCta }}</a>
+            {{ ctaBookDemo('primary', 'secondary', extraClass='min-h-[40px]') }}
+            {{ ctaSignUp(site, 'primary-outlined', 'secondary', extraClass='min-h-[40px]') }}
         </div>
     </div>
 </div>

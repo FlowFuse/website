@@ -8,8 +8,9 @@ import CtaSignUp from '../CtaSignUp.vue'
 import CtaSignIn from '../CtaSignIn.vue'
 import CtaContactUs from '../CtaContactUs.vue'
 import CtaBookDemo from '../CtaBookDemo.vue'
+import CtaPricing from '../CtaPricing.vue'
 
-const COMPONENTS = { CtaSignUp, CtaSignIn, CtaContactUs, CtaBookDemo }
+const COMPONENTS = { CtaSignUp, CtaSignIn, CtaContactUs, CtaBookDemo, CtaPricing }
 
 const props = defineProps<{
     component: keyof typeof COMPONENTS

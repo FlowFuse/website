@@ -46,6 +46,39 @@ When preparing a quote, include the product, quantities, and any required add-on
 
 Use the internal pricing calculator linked above to configure each product sale, including the correct quantities and add-ons.
 
+### Quote Naming Convention
+
+Every quote is named the same way, so that quotes are identifiable at a glance
+in HubSpot and stay identifiable once the signed copy is filed in Drive
+alongside purchase orders and agreements:
+
+`Quote - [Company] - [Order Type] - [Product] - [Year] - v##`
+
+For example: `Quote - Acme Corp - Renewal - Hub - 2026 - v01`
+
+- **Company** - the company name exactly as it appears on the HubSpot Company
+  record. This is internal identification only; the contracting legal entity is
+  set in the Buyer Information section of the quote itself.
+- **Order Type** - `New Business`, `Expansion`, or `Renewal`, matching the
+  deal's [Deal Type](#creating-a-deal). Use `Amendment` for a change to an
+  already-executed contract; it is a document type only and has no
+  corresponding Deal Type.
+- **Product** - `Edge`, `Hub`, or `Fleet`, matching the Quote Template selected
+  in [Creating a Quote](#creating-a-quote). For more than one product, join them
+  with a slash (`Edge/Hub`, `Edge/Fleet`). Use `Services` for a Professional
+  Services-only quote.
+- **Year** - the year the subscription term starts, not the year the quote is
+  written. A renewal quoted in December 2026 for a term starting January 2027 is
+  `2027`.
+- **v##** - the version, starting at `v01`. Increment it for each quote created
+  for the same transaction. Never reuse a number, including for a quote that was
+  voided.
+
+Do not put the HubSpot record ID or the execution status in the name. HubSpot
+tracks both, and the Company Quote Reference Number printed on the quote is the
+identifier customers cite on a purchase order (see
+[Closing a deal](#closing-a-deal)).
+
 ### Creating a Quote
 
 Follow these steps to create a quote.
@@ -53,6 +86,8 @@ Follow these steps to create a quote.
 1. In HubSpot, open the relevant Deal. In the Quotes area, click Add to begin a
    new quote.
    - Ensure the Deal Type is set up, "Expension" is an in-term upsel
+   - Name the quote per the [Quote Naming Convention](#quote-naming-convention)
+   - Ensure the Deal Type is set up, "Expansion" is an in-term upsell
 2. Fill in the Buyer Information section. This will pre-fill with the
    information from the contact in the Deal.
 3. The default Quote creator will be you. Change this if necessary.

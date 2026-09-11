@@ -9,7 +9,7 @@ withDefaults(defineProps<{
     subtitleIcon?: string
     description: string
     highlights?: string[]
-    socialProofTitle?: string
+    socialProofTitle?: string | false
     otherChannels?: Array<{
         title: string
         description: string
@@ -34,9 +34,8 @@ withDefaults(defineProps<{
         <p v-if="eyebrow" class="text-indigo-500 mb-3 text-sm font-semibold uppercase">
           {{ eyebrow }}
         </p>
-        <h1 class="m-0 mb-2">
-          {{ title }}
-        </h1>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <h1 class="m-0 mb-2" v-html="title" />
         <h2 v-if="subtitle" class="flex items-center justify-center md:justify-start gap-2 text-xl text-gray-500 font-light mt-3 mb-6">
           <UIcon v-if="subtitleIcon" :name="subtitleIcon" class="size-5 shrink-0 text-indigo-400" />
           {{ subtitle }}
@@ -50,6 +49,7 @@ withDefaults(defineProps<{
             <span v-html="highlight" />
           </li>
         </ul>
+        <slot name="callout" />
       </div>
 
       <div class="order-2 md:col-start-2 md:row-start-1 md:row-span-2 min-w-0 overflow-hidden">
@@ -77,10 +77,7 @@ withDefaults(defineProps<{
       </div>
 
       <div class="order-3 md:col-start-1 md:col-span-2 md:row-start-3 min-w-0 border-t border-gray-200 pt-6">
-        <p v-if="socialProofTitle" class="text-center text-gray-500 font-medium mb-6">
-          {{ socialProofTitle }}
-        </p>
-        <SocialProof />
+        <SocialProof :eyebrow="socialProofTitle" />
       </div>
     </div>
   </div>

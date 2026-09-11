@@ -2,7 +2,7 @@
 title: "Working with MQTT in Node-RED: Complete Guide (2026)"
 subtitle: "Connect, subscribe, and publish MQTT messages in Node-RED"
 description: "Complete MQTT Node-RED tutorial: configure brokers, implement pub/sub messaging, use mqtt-in and mqtt-out nodes, and create dynamic subscriptions for IoT"
-lastUpdated: 2026-06-03
+lastUpdated: 2026-08-13
 date: 2024-06-05
 authors: ["sumit-shinde"]
 image: /blog/2024/06/images/working-with-mqtt.jpg
@@ -61,6 +61,9 @@ MQTT handles the messaging layer for most IoT deployments. Node-RED provides bui
 
 <!--more-->
 
+::product-update-note
+::
+
 This guide walks through the configuration steps and common patterns you'll need for working implementations.
 
 ## What You'll Need
@@ -74,7 +77,7 @@ Before you start, make sure you have:
 
 Node-RED ships with MQTT nodes already installed. Open your Node-RED editor and look in the palette, you'll find **mqtt-in** and **mqtt-out** under the network section.
 
-> If you're using FlowFuse's managed MQTT broker, this is straightforward. Use the [ff-mqtt-in](/node-red/flowfuse/mqtt/mqtt-in/) and [ff-mqtt-out](/node-red/flowfuse/mqtt/mqtt-out/) nodes instead of the standard MQTT nodes. Simply drag one onto the canvas, and the connection to FlowFuse's broker will be configured automatically.
+> If you're using FlowFuse's managed MQTT broker, this is straightforward. Use the [ff-mqtt-in](/docs/flowfuse-nodes/mqtt/mqtt-in/) and [ff-mqtt-out](/docs/flowfuse-nodes/mqtt/mqtt-out/) nodes instead of the standard MQTT nodes. Simply drag one onto the canvas, and the connection to FlowFuse's broker will be configured automatically.
 
 For any other broker, drag an **mqtt-in** or **mqtt-out** node onto your workspace. Double-click it to open the configuration panel.
 

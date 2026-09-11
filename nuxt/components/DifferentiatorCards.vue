@@ -3,13 +3,24 @@
 // (nuxt/pages/product/index.vue) so it can be reused elsewhere, e.g. book-demo.
 interface Differentiator {
     heading: string
+    // Short bolded hook sentence between the heading and the description.
+    // Optional: added for the ROI calculator's audience cards, existing callers don't set it.
+    lead?: string
     description: string
     icon: string
 }
 
 withDefaults(defineProps<{
     items?: Differentiator[]
+    // Class for the description paragraph. Optional: existing callers (product page,
+    // book-demo) rely on the default size; the ROI calculator's descriptions run much
+    // longer and need a smaller size, which a parent-level class can't reach — Vue's
+    // attrs fallthrough only lands on this component's root, not this nested <p>, and
+    // a legacy global `p { font-size: 1rem }` rule (src/css/style.css) blocks simple
+    // inheritance from an ancestor too.
+    descriptionClass?: string
 }>(), {
+    descriptionClass: '',
     items: () => [
         {
             heading: 'Vendor-Free Open Source',
@@ -39,7 +50,8 @@ withDefaults(defineProps<{
     >
       <Icon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
       <h3 class="text-xl font-semibold text-indigo-600">{{ diff.heading }}</h3>
-      <p class="mb-0" v-html="diff.description" />
+      <p v-if="diff.lead" class="font-medium leading-snug m-0 -mb-6">{{ diff.lead }}</p>
+      <p class="mb-0" :class="descriptionClass" v-html="diff.description" />
     </div>
   </div>
 </template>

@@ -57,15 +57,18 @@ meta:
 
 Connecting the two (IT/OT convergence) is central to Industry 4.0, but it only works once you understand where these systems differ and why.
 
+::cta-image{src="/blog/2025/09/images/it-vs-ot-cta-1.png" alt="Talk to our team about access controls both IT and OT can actually agree on" cta="demo"}
+::
+
 ## What is OT (Operational Technology)?
 
 OT is the umbrella term for the systems that directly run production: [Programmable Logic Controllers (PLCs)](/blog/2025/10/plc-to-mqtt-using-flowfuse/) that execute real-time control logic, [SCADA](/use-cases/scada/) systems that provide centralized monitoring across distributed sites, Distributed Control Systems (DCS) for complex continuous processes, and [Human-Machine Interfaces (HMI)](/blog/2025/11/building-hmi-for-equipment-control/) that give operators visualization and control. Safety Instrumented Systems, Building Management Systems, and [Manufacturing Execution Systems (MES)](/use-cases/mes/) round out the OT landscape. Collectively, these are known as Industrial Control Systems (ICS).
 
-OT prioritizes safety, availability, and reliability above everything else. These systems were historically air-gapped, receive updates rarely (often only during planned shutdowns), and communicate over industrial protocols like [Modbus](/node-red/protocol/modbus/), Profibus, [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) rather than standard internet protocols. Equipment stays in service for 15-25+ years, runs on millisecond timing, and has essentially zero tolerance for downtime: every stopped minute costs money.
+OT prioritizes safety, availability, and reliability above everything else. These systems were historically air-gapped, receive updates rarely (often only during planned shutdowns), and communicate over industrial protocols like [Modbus](/docs/node-red/protocol/modbus/), Profibus, [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) rather than standard internet protocols. Equipment stays in service for 15-25+ years, runs on millisecond timing, and has essentially zero tolerance for downtime: every stopped minute costs money.
 
 ## What is IT (Information Technology)?
 
-IT covers the systems, software, and infrastructure that manage business data and enable enterprise operations: [email](/node-red/notification/email/) and [databases](/node-red/database/), ERP and CRM platforms, business intelligence, and increasingly cloud and SaaS applications.
+IT covers the systems, software, and infrastructure that manage business data and enable enterprise operations: [email](/docs/node-red/notification/email/) and [databases](/docs/node-red/database/), ERP and CRM platforms, business intelligence, and increasingly cloud and SaaS applications.
 
 IT prioritizes data confidentiality and integrity, stays connected to the internet by default, and receives patches on monthly or quarterly cycles over standardized protocols like TCP/IP, HTTP, and HTTPS. Equipment typically cycles out every 3-5 years, and businesses can usually tolerate minutes-to-hours of downtime for maintenance.
 

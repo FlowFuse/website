@@ -115,6 +115,14 @@ Keep the post to a single, well-defined call to action. Multiple CTAs split the 
 
 The CTA is already handled via front matter. For guidance on how to add or customize it, refer to the handbook: [CTA Guidelines](/handbook/marketing/content-strategy/blog/#cta). Do not add a `## Try FlowFuse` block manually in the body, as it will render twice on the published page.
 
+### Screenshots and videos
+
+Include a screenshot or short screen recording for any feature that's easier to show than describe, same as changelog posts — see [Screenshots](/handbook/engineering/releases/writing-changelog/#screenshots) and [Screen recordings and videos](/handbook/engineering/releases/writing-changelog/#screen-recordings-and-videos) for the full guidance. For short, silent, looping recordings, use a [WebM video](/handbook/marketing/content-strategy/blog/#video).
+
+### Interlinking
+
+Link to docs pages, changelog posts, and earlier release blogs whenever there's a genuine opportunity — a release blog covers a lot of ground quickly, and links are how a reader gets to the depth this format doesn't have room for. See [Interlinking](/handbook/marketing/content-strategy/blog/#interlinking) for the rule on when a link is warranted.
+
 ## Writing style
 
 Write for the user, not the engineer. Every release blog can tell two stories, what changed in the product, and what improved for the person using it. Always tell the second one.
