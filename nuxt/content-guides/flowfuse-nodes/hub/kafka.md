@@ -67,8 +67,6 @@ That makes it a good fit for these jobs:
 
 Where a node has two outputs, the first fires on success and the second on failure. Wire the second one up so errors don't disappear.
 
-Every node has a **Name** field, which only changes the label shown on the canvas.
-
 ## Set up the connection (Kafka Broker)
 
 Create **one Kafka Broker config node for each Kafka cluster**, then point your other nodes at it. You only enter the connection details once, and the nodes that use it share a single connection to the cluster.
@@ -89,15 +87,14 @@ Once the connection exists, the other nodes pick it from their own **Broker** dr
 | -------------------------------- | ----------------------------------------------------------------------------------- |
 | **Hosts**                        | A table of brokers to start from. Click **+Add** for each one and fill in its **Name** (hostname or IP) and **Port** |
 | **Hosts process.env name**       | The name of an environment variable holding the host list, used instead of the table. See below |
-| **Use TLS**                      | Tick this if your cluster requires TLS                                               |
-| **Self Sign**                    | Accepts a self-signed certificate. Useful in test environments, and best avoided in production |
+| **via Zookeeper**                | `true`/`false`, default `true`. Legacy field from when clients connected through ZooKeeper. Leave it as it is |
+| **Use TLS**                      | Tick this if your cluster requires TLS. Ticking it also reveals a field for picking a TLS configuration node, where the certificates go |
+| **Self Sign**                    | Controls the certificate check behind **Use TLS**. Left unticked, certificates are not verified, which is what lets a self-signed certificate through. Tick it to have the certificate verified. Turning verification off is for test environments, and best avoided in production |
 | **Use Credentials (SASL plain)** | Tick this to authenticate with a username and password                               |
 | **User**                         | Username, used when **Use Credentials** is ticked                                    |
 | **Password**                     | Password, used when **Use Credentials** is ticked                                    |
 
 Authentication here is SASL PLAIN only, so the username and password travel in the clear unless you also turn on **Use TLS**. Tick both together on anything but a local test cluster.
-
-You only need one or two entries in **Hosts**. Kafka uses them to find the cluster, then learns about the remaining brokers on its own, so there is no need to list every broker you run.
 
 ### Keeping hosts out of your flows
 
@@ -127,6 +124,8 @@ These control the connection itself rather than anything about your messages. Th
 | **Auto Connect**           | `True`/`False` | True    | `True` connects on deploy. `False` waits until a node actually needs the connection |
 | **Idle Connection (mins)** |                | 5       | How long a quiet connection is kept open before it is dropped                 |
 | **Reconnect On Idle**      | `True`/`False` | True    | `True` reopens the connection after it has been dropped, so a quiet flow keeps working. Set to `False` only if you want the connection to stay closed |
+| **Max Async Requests (ms)** |               | 10      | How many requests the client keeps in flight at once. The label says ms, but it is a count, not a time |
+| **Check Interval (secs)**  |                | 10      | How often the brokers are checked to see whether they can still be reached |
 
 On a slow or busy network, raising **Connect Timeout** and **Request Timeout** is usually the first thing to try.
 
@@ -138,22 +137,25 @@ The examples on this page use `127.0.0.1` and `9092` as stand-ins for a local Ka
 
 | Field                          | Options                                          | Default  | What it does                                                                 |
 | ------------------------------ | ------------------------------------------------ | -------- | ---------------------------------------------------------------------------- |
-| **Type**                       | `Producer`, `High Level`                         | Producer | `Producer` writes to the partition you pick. `High Level` spreads messages across the topic's partitions using round robin instead |
+| **Type**                       | `Producer`, `High Level (round robin)`           | Producer | `Producer` writes to the partition you pick. `High Level (round robin)` spreads messages across the topic's partitions using round robin instead |
 | **Broker**                     | your Kafka Broker configs                        |          | Which connection to send through                                              |
-| **Topic**                      |                                                  |          | The topic to write to. Can also come from `msg.topic`                         |
-| **Require Ack**                |                                                  | 1        | How many brokers must confirm the write. `0` doesn't wait at all, `1` waits for the leader, `-1` waits for every replica |
+| **Topic**                      |                                                  |          | The topic to write to. Can also come from `msg.topic`, while **Message Topic Overides** is on |
+| **Message Topic Overides**     | `true`/`false`                                   | true     | When `true`, `msg.topic` takes the place of the **Topic** set here. Set it to `false` to pin the node to one topic |
+| **Message Overides**           | `true`/`false`                                   | true     | When `true`, `msg.key`, `msg.partition`, and `msg.attributes` take the place of the values set here |
+| **Require Ack**                | `0`, `1`                                         | 1        | How many brokers must confirm the write. The node treats `0` the same as `1`, so a write always waits for the partition leader |
 | **Ack Timeout (Ms)**           |                                                  | 100      | How long to wait for those confirmations                                      |
 | **Partitioner**                | see [Partitioner options](#partitioner-options)  | default  | How a partition is picked when you haven't set one                            |
 | **Key**                        |                                                  |          | The message key. Consumers read it back from `msg._kafka.key`                 |
-| **Partition**                  |                                                  | 0        | The partition to write to. Numbering starts at `0`. Ignored when **Type** is `High Level` |
+| **Partition**                  |                                                  | 0        | The partition to write to. Numbering starts at `0`. Ignored when **Type** is `High Level (round robin)` |
 | **Compression**                | see [Compression options](#compression-options)  | none     | Compresses messages before sending. Worth turning on for high volumes of text |
 | **Convert message from JSON**  | checkbox                                         | Off      | Turns an object payload into text for you, so you don't need a separate `json` node |
-| **Topic replace / with .**     | checkbox                                         | Off      | Converts `/` to `.` in the topic name, so MQTT-style topics work with Kafka    |
+| **Topic replace / with .**     | checkbox                                         | Off      | Converts the first `/` in a topic name coming from `msg.topic` to `.`, so MQTT-style topics work with Kafka |
 | **producer max Q depth**       |                                                  | 1000     | How many messages the node holds while waiting to send                         |
+| **Deadletter Topic**           |                                                  | deadletter | Where a message goes when the send fails. The whole `msg` is written there as gzipped JSON. Clear the field to discard failed messages instead |
 
 **Key** is a typed input, so you can enter a fixed string or point it at a message property.
 
-**Require Ack** is the setting worth thinking about. `0` is fastest and can lose messages silently. `1` is the usual compromise. `-1` is the safest and the slowest, and only makes sense on a topic with more than one replica.
+**Require Ack** offers only `0` and `1`, and the node falls back to `1` when it is left at `0`, so every write waits for the partition leader to confirm it. Waiting for every replica, which Kafka itself writes as `acks=-1`, is not available from this node.
 
 ### Partitioner options
 
@@ -191,31 +193,15 @@ Where a codec has **best speed** and **best compression** variants, you are trad
 
 Whatever you pick, whatever reads the topic has to understand it. If your consumers are also Kafka Consumer nodes, set the same codec on their **Decompression** field. If anything else reads the topic, stick to `gzip` or `Snappy`, which every Kafka client handles. The other codecs here are not part of the standard Kafka set, so a Java or Python consumer may not be able to read them.
 
-### Setting values from the message
-
-Four of these fields can come from the incoming message instead of the node:
-
-- **`msg.topic`** — the topic to write to
-- **`msg.key`** — the message key
-- **`msg.partition`** — the partition to write to
-- **`msg.attributes`** — the attribute flag sent with the message. There is no field for this in the dialog, so the message is the only way to set it
-
-If the message does not carry one of these, the node's own value is used instead. The node settings are defaults, in other words, and any message can override them.
-
-This is what lets a single producer node serve many topics. Leave **Topic** blank on the node, set `msg.topic` in a `change` node beforehand, and the same producer handles all of them.
-
-Say you have a `Temperature` topic with three partitions, carrying `downtown` on partition `0`, `suburban` on `1`, and `industrial` on `2`, with the region name as the key. You can build that with three producer nodes, each configured for its own region, or with one node and a `change` node that sets `msg.key` and `msg.partition`.
-
 ## Receive messages (Kafka Consumer)
 
 **Kafka Consumer** has no input. It sends out one `msg` for every Kafka message that arrives.
 
-Two fields sit above the tabs, alongside **Name**:
+One field sits above the tabs, alongside **Name**:
 
-| Field      | Options                   | Default  | What it does                                                             |
-| ---------- | ------------------------- | -------- | ------------------------------------------------------------------------ |
-| **Type**   | dropdown                  | Base     | Which client to use. Leave it alone unless you have a reason to change it |
-| **Broker** | your Kafka Broker configs |          | Which connection to read through                                          |
+| Field      | Options                   | What it does                     |
+| ---------- | ------------------------- | -------------------------------- |
+| **Broker** | your Kafka Broker configs | Which connection to read through |
 
 The remaining settings are split across four tabs: **Topics**, **Options**, **Fetch**, and **Encoding**.
 
@@ -261,16 +247,19 @@ Raising **Fetch Min Bytes** and **Fetch Max Wait** means fewer, fuller round tri
 | **Encoding**                | `utf8`, `raw`                    | utf8    | How the message value is decoded. `raw` gives you the bytes untouched, for binary payloads |
 | **Key Encoding**            | `utf8`, `raw`                    | utf8    | The same, for the message key                                                 |
 | **Convert message to JSON** | checkbox                         | Off     | Parses the message into an object for you, so you don't need a separate `json` node |
-| **Decompression**           | see [Compression options](#compression-options) | none    | How to decompress messages that were compressed by the producer. Must match what the producer used |
+| **Decompression**           | `none`, `gzip`, `zip`, `Lempel-Ziv-Markov`, `Brotli`, `Snappy`, `Inflate` | none | How to decompress messages that were compressed by the producer. Must match the codec the producer used |
+
+The **Decompression** list is shorter than the producer's, because the *best speed* and *best compression* variants only affect compressing. Pick the plain codec: a producer set to `gzip best compression` is read back with `gzip`. The producer's `Deflate` is listed here as `Inflate`, which is the same codec.
 
 Pick `earliest` on **From Offset** when a new consumer needs the history that is already in the topic. Pick `latest` when it should only see what happens from now on.
 
 ### What arrives in the message
 
-Every message the node sends out carries two things:
+Every message the node sends out carries three things:
 
 - **`msg.payload`** — the message itself. With the default `utf8` encoding this is text, unless you turn on **Convert message to JSON**. See [Payloads are text](#payloads-are-text)
-- **`msg._kafka`** — the details from Kafka: which topic the message came from, the partition and offset it was read at, and the key set by the producer as `msg._kafka.key`
+- **`msg.topic`** — the Kafka topic the message came from, so a flow reading several topics can tell them apart
+- **`msg._kafka`** — the details from Kafka: `topic`, `partition`, `offset`, `key` (the key set by the producer), and `highWaterOffset` (the end of that partition, so `highWaterOffset - offset` is how far behind this message was read)
 
 Keep `msg._kafka` on the message if you plan to commit or roll back later, because Kafka Commit and Kafka Rollback both need it.
 
@@ -280,7 +269,7 @@ Keep `msg._kafka` on the message if you plan to commit or roll back later, becau
 
 Use a group when you need to handle more messages. Use separate Kafka Consumer nodes when every consumer needs to see every message.
 
-Above the tabs it has **Type** and **Broker**, the same as Kafka Consumer. **Type** only offers `Base`, so there is nothing to decide there.
+Above the tabs it has **Type** and **Broker**. **Type** offers only `Base`, so there is nothing to decide there. Kafka Consumer has no **Type** field at all.
 
 ### Topics tab
 
@@ -290,7 +279,7 @@ Add a row for each topic. Unlike Kafka Consumer, you only give the **Name** here
 
 | Field                            | Options                      | Default     | What it does                                                            |
 | -------------------------------- | ---------------------------- | ----------- | ----------------------------------------------------------------------- |
-| **Group Id**                     |                              |             | The group name. Every member sharing the work uses the same one           |
+| **Group Id**                     |                              | `aGroup`    | The group name. Every member sharing the work uses the same one           |
 | **Session Timeout (ms)**         |                              | 15000       | How long before a quiet member is treated as gone and its work reassigned |
 | **Protocol**                     | `Round Robin`, `Range`       | Round Robin | How partitions are shared out. Round robin deals them out one at a time, range gives each member a contiguous block |
 | **Encoding**                     | `utf8`, `raw`                | utf8        | How the message value is decoded                                         |
@@ -320,9 +309,7 @@ By default a consumer commits automatically, so Kafka treats a message as done a
 
 Neither node has a **Broker** field, or any setting beyond **Name** — they get the connection from the message. Both have two outputs: the first for success, the second for failure.
 
-> **Note**
->
-> Kafka keeps sending messages to a consumer whether or not an earlier commit is still outstanding. A commit therefore marks every message up to that point as done, not just the one that triggered it. If that matters to you, keep the number of messages in flight low.
+> **Note**: Kafka keeps sending messages to a consumer whether or not an earlier commit is still outstanding. A commit therefore marks every message up to that point as done, not just the one that triggered it. If that matters to you, keep the number of messages in flight low.
 
 ## Administration (Kafka Admin)
 
@@ -347,15 +334,13 @@ An `inject` node is the easiest way to drive it. Set its **Topic** to the comman
 
 Send these with `msg.topic` set and no payload.
 
-| Command                   | What comes back                                                |
-| ------------------------- | -------------------------------------------------------------- |
-| `listTopics`              | Every topic in the cluster, with its partitions and replicas   |
-| `listGroups`              | All groups the coordinator knows about                          |
-| `listConsumerGroups`      | Consumer groups only                                            |
-| `describeCluster`         | The brokers, the cluster ID, and which broker is the controller |
-| `describeLogDirs`         | How much disk each broker is using                              |
-| `describeReplicaLogDirs`  | Which directory each replica is stored in                       |
-| `describeDelegationToken` | The delegation tokens in use                                    |
+| Command              | What comes back                                              |
+| -------------------- | ------------------------------------------------------------ |
+| `listTopics`         | Every topic in the cluster, with its partitions and replicas |
+| `listGroups`         | All groups the coordinator knows about                        |
+| `listConsumerGroups` | Consumer groups only                                          |
+
+These three are the only commands that run without a payload. Everything else in the next table needs one, and a command name the node doesn't recognise comes out of the second output as an `invalid request` error.
 
 ### Commands that take arguments
 
@@ -369,7 +354,8 @@ Arguments always go in `msg.payload`.
 | **Consumer groups**   | `describeGroups`, `describeConsumerGroups`, `deleteConsumerGroups`, `listConsumerGroupOffsets` |
 | **Records**           | `deleteRecords`                                                                      |
 | **ACLs**              | `createAcls`, `describeAcls`, `deleteAcls`                                            |
-| **Log directories**   | `alterReplicaLogDirs`                                                                |
+| **Log directories**   | `describeLogDirs`, `alterReplicaLogDirs`                                              |
+| **Configuration**     | `describeConfigs`                                                                     |
 | **Delegation tokens** | `createDelegationToken`, `renewDelegationToken`, `expireDelegationToken`             |
 
 ### Examples
@@ -392,6 +378,8 @@ The payload is an array, so one message can create several topics at once. Add `
 ```
 
 **List every topic.** Set `msg.topic` to `listTopics` and send no payload.
+
+**Read a topic's settings.** Set `msg.topic` to `describeConfigs` and `msg.payload` to `{ "type": "topic", "name": "Temperature" }`. Unlike the other commands, this one takes a plain object rather than an array, and `type` can be `topic` or `broker`.
 
 **Add partitions to a topic.** Set `msg.topic` to `createPartitions`. You can only ever add partitions, never remove them, so this cannot be undone. Adding partitions also changes which partition each key goes to, so existing keys stop landing where they used to.
 
@@ -416,12 +404,14 @@ It uses two message properties:
 - **`msg.action`** — which of the four actions to run. You can also put this in `msg.topic`
 - **`msg.payload`** — the arguments for that action
 
-| Action                | What it returns                                            |
-| --------------------- | ---------------------------------------------------------- |
-| `fetch`               | Offsets for a topic and partition, up to `maxNum` of them  |
-| `fetchEarliestOffset` | The oldest offset still held for a topic                   |
-| `fetchLatestOffsets`  | The newest offset for a topic, in other words the end of it |
-| `fetchCommits`        | The offsets a consumer group has committed                  |
+| Action                 | What it returns                                           |
+| ---------------------- | --------------------------------------------------------- |
+| `fetch`                | Offsets for a topic and partition, up to `maxNum` of them |
+| `fetchEarliestOffsets` | The oldest offsets still held for a topic                  |
+| `fetchLatestOffsets`   | The newest offsets for a topic, in other words the end of it |
+| `fetchCommits`         | The offsets a consumer group has committed                 |
+
+Note the spelling of `fetchEarliestOffsets`: it is plural, and the node's own built-in help has it wrong. An action the node doesn't recognise comes out of the second output as `invalid msg action or topic`.
 
 ### Payloads
 
@@ -431,7 +421,13 @@ It uses two message properties:
 [{ "topic": "test", "partition": 0, "maxNum": 100 }]
 ```
 
-`fetchEarliestOffset` and `fetchLatestOffsets` just take the topic:
+`fetchEarliestOffsets` and `fetchLatestOffsets` take the same payload as `fetch`, because all three run the same underlying request. The `time` field is what decides which end of the topic you get: `-2` for the earliest offset, `-1` for the latest.
+
+```json
+[{ "topic": "test", "partition": 0, "time": -2 }]
+```
+
+Leave `time` out and you get the offset as of now, which is the latest. So `fetchLatestOffsets` works with the short payload below, while `fetchEarliestOffsets` needs `"time": -2` to return what its name promises.
 
 ```json
 [{ "topic": "test" }]
@@ -452,6 +448,8 @@ Note the spelling: `groupid`, all lower case.
 
 Run `fetchLatestOffsets` for the topic and `fetchCommits` for the group reading it, then subtract one from the other. The gap is how many messages the group still has to get through. Raise an alert when it grows past a threshold you are comfortable with.
 
+A Kafka Consumer's own messages carry the same figures, if you would rather not poll: `msg._kafka.highWaterOffset` minus `msg._kafka.offset` is the lag at the moment that message was read.
+
 These are also the offsets you put in a consumer's **Topic** table when you want to read a period of data again.
 
 ## Payloads are text
@@ -460,7 +458,7 @@ Kafka stores messages as bytes. With the default `utf8` encoding, a consumer giv
 
 The nodes can handle the conversion for you, or you can do it in the flow:
 
-- **Sending:** turn on **Convert message from JSON** on Kafka Producer, or put a [`json`](/docs/node-red/core-nodes/parsers/json/) node in stringify mode before it.
+- **Sending:** Kafka Producer already stringifies an object payload for you, so an object goes out as JSON text with no extra work. Turn on **Convert message from JSON** to stringify every payload, including strings and numbers, or put a [`json`](/docs/node-red/core-nodes/parsers/json/) node in stringify mode before the producer if you would rather control it in the flow.
 - **Receiving:** turn on **Convert message to JSON** on Kafka Consumer, or put a `json` node in parse mode after it.
 
 Kafka Consumer Group has no equivalent option, so use a `json` node there.
