@@ -112,19 +112,3 @@ Where a delivery date has been committed to a customer, that commitment lives in
 | **Dynamic Flow Configuration** — platform UX for key/value config + NR node to pull and cache at runtime | 1 Edge & device | Deploy | FlowFuse | Environment variables are static and require a full redeploy to change | A team changes device-specific configuration without redeploying |
 | **Dashboard: WYSIWYG layout authoring** — drag, arrange, resize, configure, connect to data | 4 Application & UX | Build | FF Dashboard | Page and layout authoring is unintuitive and the visual editor is limited | A builder lays out a page without trial-and-error redeploys |
 
-#### Q3 2027
-
-| Item | Lane | Pillar | Scope | Problem | Product outcome |
-| :---- | :---- | :---- | :---- | :---- | :---- |
-| **Data Mapping Tooling** — NR nodes for mapping message structure between models, UX-led | 3 Data layer | Build | FlowFuse | Mapping between models is manual and error-prone | A builder maps between two models without hand-writing transforms |
-
-#### Not yet scheduled - work in progress
-
-| Item | Lane | Pillar | Scope | Problem | Product outcome |
-| :---- | :---- | :---- | :---- | :---- | :---- |
-| **AI: chat history** — persistent history, separate chats each with their own context | 5 AI | Build | FlowFuse | Context is lost between sessions | A user can have multiple chats and switch between them |
-| **AI: custom team skills** — teams author skills specific to their use cases | 5 AI | Govern · Build | FlowFuse | Organizational standards aren't encoded anywhere the AI can apply them | Standardization of custom use-cases within an organization |
-| **AI: custom models** — connect the agent to customer-hosted models | 5 AI | Build · Govern | FlowFuse | Sovereignty requirements rule out vendor-hosted models | Orgs with specific model requirements are able to use our AI services |
-| **Bill of Material reports** - downloadable SBOM | 6 Governance and Operability | Govern | FlowFuse | Existing BoM is a readonly page - cannot be snapshotted for audit or automated checks | Compliance requirements can be met |
-| **Managed Dependency Updates** - actionable updates based on the SBoM at both a team and instance level | 6 Enterprise readiness | Govern · Deploy | FlowFuse | SBom identifies out of data dependencies, but doesn't help users resolve them | Software easier to keep up to date - either automatically or by policy |
-
