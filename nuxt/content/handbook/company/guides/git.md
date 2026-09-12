@@ -28,7 +28,7 @@ If you are comfortable with Git and the command line, you can contribute directl
 
 1. Check out the latest `main` branch.
 2. Create a new branch with a descriptive `kebab-case` name.
-3. Edit files under `src/handbook/` (the source of truth for handbook content).
+3. Edit files under `nuxt/content/handbook/` (the source of truth for handbook content).
 4. Commit your changes and push the branch.
 5. Open a Pull Request on GitHub and assign a reviewer.
 6. Once approved, the reviewer merges the PR.

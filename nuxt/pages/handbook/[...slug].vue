@@ -49,6 +49,13 @@ const githubEditUrl = computed(() => {
     return `https://github.com/FlowFuse/website/edit/main/nuxt/content/${stem}.md`
 })
 
+// Studio mounts its editor on whichever page you are viewing once you have a session, so
+// this link only has to carry you through sign-in and back. `?redirect=` is the parameter
+// Studio's own keyboard shortcut uses. Docs pages keep their GitHub link, since that
+// markdown lives in FlowFuse/flowfuse and Studio is configured for this repository.
+const studioRoute = useRuntimeConfig().public.studio?.route || '/_studio'
+const studioEditUrl = computed(() => `${studioRoute}?redirect=${encodeURIComponent(route.path)}`)
+
 const breadcrumbItems = computed(() => {
     // findPageBreadcrumb excludes the current page unless told otherwise - `current: true`
     // includes it so it can be the last, unlinked crumb below.
@@ -108,9 +115,17 @@ defineOgImage('Default', {
       <div class="lg right-nav">
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
           <HandbookToc :links="page?.body?.toc?.links" />
-          <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
-            <a :href="githubEditUrl" target="_blank" rel="noopener">Edit this page</a>
-          </div>
+          <!-- Client-only, as pages/docs/[...slug].vue does with its own edit link: /_studio is
+               a server route with no prerendered file, so hyperlink (the build's link checker,
+               which cannot be told to ignore a path) reads it as a broken link when it is in
+               the static HTML. -->
+          <ClientOnly>
+            <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
+              <a :href="studioEditUrl">Edit this page</a>
+              <span class="px-1" aria-hidden="true">·</span>
+              <a :href="githubEditUrl" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </ClientOnly>
         </div>
       </div>
 
