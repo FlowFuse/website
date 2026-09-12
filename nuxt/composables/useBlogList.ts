@@ -6,6 +6,22 @@ export const BLOG_PAGE_SIZE = 19
 // which of these show as nav buttons; 'tips' has a route but isn't in that button list).
 export const BLOG_TAGS = ['how-to', 'node-red', 'ai', 'uns', 'dashboard', 'flowfuse', 'releases', 'news', 'plc', 'mqtt', 'opcua', 'modbus', 'tips']
 
+export const BLOG_TAG_TOPICS: Record<string, string> = {
+    'how-to': 'Node-RED how-to guides',
+    'node-red': 'Node-RED',
+    ai: 'AI and Node-RED',
+    uns: 'Unified Namespace',
+    dashboard: 'Node-RED dashboards',
+    flowfuse: 'FlowFuse platform',
+    releases: 'FlowFuse releases',
+    news: 'FlowFuse news',
+    plc: 'PLC integration and troubleshooting',
+    mqtt: 'MQTT and industrial messaging',
+    opcua: 'OPC UA and industrial data',
+    modbus: 'Modbus and industrial connectivity',
+    tips: 'Node-RED tips',
+}
+
 // Mirrors .eleventy.js's DEV_MODE_POSTS: future-dated posts are hidden outside production,
 // so deploy previews and dev can still preview scheduled posts. The flag is baked at build
 // time (see nuxt.config.ts) rather than read from process.env here: a scheduled post gets no

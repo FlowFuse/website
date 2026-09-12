@@ -1,5 +1,6 @@
 ---
 title: "FlowFuse Trial Environment"
+description: "Review FlowFuse's approach to FlowFuse Trial Environment, including the principles, processes, roles, and practical guidance used across the company."
 navigation:
   order: 13.6
   icon: i-lucide-server

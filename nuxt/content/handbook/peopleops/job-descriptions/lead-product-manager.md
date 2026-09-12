@@ -1,5 +1,6 @@
 ---
 title: "Lead Product Manager"
+description: "Explore the Lead Product Manager role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Lead Product Manager

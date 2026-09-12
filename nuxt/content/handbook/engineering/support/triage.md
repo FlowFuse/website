@@ -1,5 +1,6 @@
 ---
 title: "Triage Duty"
+description: "Review FlowFuse's approach to Triage Duty, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Support Triage Duty

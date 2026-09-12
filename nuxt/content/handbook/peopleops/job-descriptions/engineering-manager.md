@@ -1,5 +1,6 @@
 ---
 title: "Engineering Manager"
+description: "Explore the Engineering Manager role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 # Engineering Manager
 

@@ -1,5 +1,6 @@
 ---
 title: Website
+description: "Review FlowFuse's approach to Website, including the principles, processes, roles, and practical guidance used across the company."
 sitemap:
   loc: /handbook/marketing/website
 ---

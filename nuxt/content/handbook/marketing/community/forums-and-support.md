@@ -1,5 +1,6 @@
 ---
 title: Forums And Support
+description: "Review FlowFuse's approach to Forums And Support, including the principles, processes, roles, and practical guidance used across the company."
 navTitle: Forums and Support
 ---
 

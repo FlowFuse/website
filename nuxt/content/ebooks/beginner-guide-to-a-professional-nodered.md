@@ -4,7 +4,7 @@ image: /images/ebooks/beginner-guide-node-red.png
 thumbnail: /images/publications/ebook_-The-Ultimate-Beginner-Guide-to-a-Professional-Node-RED.png
 meta:
   title: The Ultimate Beginner Guide to a Professional Node-RED
-  description: Here's your free guide to an enterprise-ready Node-RED. Learn all about Node-RED history to securing your flows and dashboard data visualization. Download now!
+  description: "Download the beginner's guide to building professional Node-RED applications for automation, data integration, and device management."
 hubspot:
   formId: 922ba9f5-223e-4af3-890f-97afce05f290
   cta: download-ebook

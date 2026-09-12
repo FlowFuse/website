@@ -1,5 +1,6 @@
 ---
 title: "Solution"
+description: "Learn how FlowFuse runs the Solution stage of its sales process, including its purpose, preparation, roles, and expected outcomes."
 navigation:
   order: 3
 ---

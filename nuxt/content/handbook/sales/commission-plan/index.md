@@ -1,5 +1,6 @@
 ---
 title: "Sales Compensation Plan"
+description: "Review FlowFuse's approach to Sales Compensation Plan, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # FY 2026 SALES COMPENSATION PLAN

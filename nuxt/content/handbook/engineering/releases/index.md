@@ -1,5 +1,6 @@
 ---
 title: "Releases"
+description: "Review FlowFuse's approach to Releases, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Releases

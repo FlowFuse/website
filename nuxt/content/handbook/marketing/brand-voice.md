@@ -1,5 +1,6 @@
 ---
 title: Brand Voice
+description: "Review FlowFuse's approach to Brand Voice, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Brand Personality, Tone of Voice & Character

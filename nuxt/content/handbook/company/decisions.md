@@ -1,5 +1,6 @@
 ---
 title: "Decision making and project management"
+description: "Learn how FlowFuse makes decisions and assigns project ownership using clear roles, direct responsibility, and documented processes."
 ---
 
 # How we make decisions

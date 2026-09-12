@@ -9,7 +9,7 @@ usecase:
   - production-monitoring
 meta:
   title: The Ultimate Guide to Building Applications with FlowFuse Dashboard for Node-RED
-  description: Discover the power of the FlowFuse Dashboard for Node-RED with our comprehensive eBook. Learn how to effortlessly create stunning UIs, from data charts to custom components, and enable collaborative full-stack application development. Ideal for developers of all levels, this guide unlocks the potential of your data in industrial IoT environments.
+  description: "Download the guide to building powerful Node-RED applications with FlowFuse Dashboard, from core concepts to practical implementation."
 
 hubspot:
   formId: 372e557c-9f90-48e8-81da-d7e462f8ef55

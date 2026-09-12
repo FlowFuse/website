@@ -1,5 +1,6 @@
 ---
 title: "Discovery Meeting"
+description: "Learn how FlowFuse runs the Discovery Meeting stage of its sales process, including its purpose, preparation, roles, and expected outcomes."
 navigation:
   order: 1
 ---

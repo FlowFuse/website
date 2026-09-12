@@ -1,5 +1,6 @@
 ---
 title: "CEO"
+description: "Explore the CEO role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # CEO

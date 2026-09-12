@@ -1,5 +1,6 @@
 ---
 title: "Product Marketer"
+description: "Explore the Product Marketer role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Product Marketer
