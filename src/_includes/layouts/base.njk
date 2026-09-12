@@ -165,6 +165,8 @@ eleventyComputed:
     <script type="module" src="/js/flowrenderer.min.js"></script>
     <!-- Explicit nav-click tracking; keep in sync with the Nuxt copy -->
     <script defer src="/js/nav-tracking.js"></script>
+    <!-- Dropdown panel anchoring + the menu-to-menu view transition; keep in sync with the Nuxt copy -->
+    <script defer src="/js/nav-panels.js"></script>
     <!-- Opens sign-up in a small popup window on desktop/tablet -->
     <script defer src="/js/signup-popup.js"></script>
 
@@ -198,15 +200,23 @@ eleventyComputed:
                     <!-- Nav -->
                     <ul id="nav-content" class="">
                         {%- for dd in chrome.header.dropdowns %}
-                        {% navoption dd.label, null, 0 %}
+                        {% navoption dd.label, dd.href | resolveHref(site), 0 %}
                             <ul class="{{ dd.megaClasses }}">
-                                {% set hl = navHighlights[dd.highlight] %}{% include "components/nav-highlight.njk" %}
                                 {%- for col in dd.columns %}
-                                {% navoption col.title, null, 1, null, true, "pl-3 title border-l-2 " + col.titleGrid %}{% endnavoption %}
+                                {#- A column can go without an eyebrow (the Product
+                                    tiers: the dropdown above already names them).
+                                    Skip the element entirely rather than render an
+                                    empty one, or it holds a blank row open at the
+                                    top of the column. -#}
+                                {% set colClass = "ff-nav-col--primary" if loop.first else "ff-nav-col--rest" %}{% if col.title %}{% navoption col.title, null, 1, null, true, "pl-3 title border-l-2 " + colClass + " " + col.titleGrid %}{% endnavoption %}{% endif %}
                                 <li class="contents">
-                                    <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ col.listClasses }}">
-                                        {%- for item in col.links %}
-                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent" %}{% endnavoption %}
+                                    <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 {{ colClass }} {{ col.listClasses }}">
+                                        {#- A column can be filled from a data file rather than
+                                            from chrome.json: the Blog panel's first column is the
+                                            latest posts, which change every week. -#}
+                                        {%- set rows = latestPosts.posts if col.source == "latestPosts" else col.links %}
+                                        {%- for item in rows %}
+                                        {% navoption item.label, item.href | resolveHref(site), 1, item.icon, item.solid, item.indent and "nav-indent", item.description, col.source %}{% endnavoption %}
                                         {%- endfor %}
                                     </ul>
                                 </li>
@@ -217,6 +227,10 @@ eleventyComputed:
                         {%- for item in chrome.header.direct %}
                         {% navoption item.label, item.href, 0, false, false, item.classes %}{% endnavoption %}
                         {%- endfor %}
+                        {#- Mobile copy of the same menu: the CTA cluster above is
+                            hidden under md, so the drawer is where these three rows
+                            live on a phone. -#}
+                        {% set sbClasses = 'md:hidden' %}{% include "components/nav-start-building.njk" %}
                         <!-- More dropdown for overflow items -->
                         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
                             <span class="flex items-center gap-1"><span class="ff-nav-label">More</span><span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span></span>
@@ -225,7 +239,11 @@ eleventyComputed:
                     </ul>
                     <!-- CTAs -->
                     <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-			            <li class="hidden md:flex">{{ ctaSignUp(site, 'nav-text', 'main-nav', padded=true, extraClass='ff-nav-freetrial text-base') }}</li>
+                        {#- Primary action: a menu, not a single link, because a first
+                            instance can start on Cloud, on the visitor's own edge
+                            hardware, or from the AI agent they already use, and only
+                            the first of the three used to be advertised here. -#}
+                        {% set sbClasses = 'hidden md:flex' %}{% include "components/nav-start-building.njk" %}
                         <li class="flex">
                             {{ ctaBookDemo('primary', 'main-nav', extraClass='ml-2 text-sm inline-flex whitespace-nowrap') }}
                         </li>
@@ -255,7 +273,7 @@ eleventyComputed:
     <!-- Footer -->
     <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
         <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
-            <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
+            <!-- Sections synced with the top nav: Product / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
                 {%- for sec in chrome.footer.sections %}
                 <section class="pt-5" data-nav-section="{{ sec.title }}">
@@ -278,7 +296,7 @@ eleventyComputed:
             <!-- Company -->
             <section class="mt-12 border-t border-gray-300 pt-9" data-nav-section="Company">
                 <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
-                     under Platform, the three groups under Solutions' sub-columns, and the
+                     under Product, the three groups under Solutions' sub-columns, and the
                      last group under Resources. -->
                 <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
                     <div>

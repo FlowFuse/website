@@ -1,0 +1,33 @@
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{#
+  The header's primary action: one row per place a first instance can live.
+  Mirrors nuxt/components/NavStartBuilding.vue - keep both in sync.
+
+  Rendered twice from this one file, because the header has two surfaces and
+  they are different places in the document: the desktop CTA cluster (right of
+  the nav, left of Book a Demo) and the mobile drawer, which is the only header
+  surface that exists under md. The caller sets `sbClasses` to hide whichever
+  copy does not apply at the current breakpoint.
+
+  Rows come from chrome.header.startBuilding. A row carrying a `cta` key is
+  rendered through that reserved destination's own macro, so its copy, href and
+  PostHog event stay owned by src/_data/ctaDestinations.json instead of being
+  restated here - that is what keeps every sign-up click on one event name.
+#}
+<li class="ff-nav-dropdown ff-nav-startbuilding relative hover:cursor-pointer {{ sbClasses }}" data-nav-section="Start building">
+    <span class="flex items-center gap-1">
+        <span class="ff-nav-label">{{ chrome.header.startBuilding.label }}</span>
+        <span class="ff-nav-chevron">{% include "components/icons/chevron-down.svg" %}</span>
+    </span>
+    <ul class="ff-nav-startbuilding-panel">
+        {%- for item in chrome.header.startBuilding.items %}
+        <li>
+            {%- if item.cta == 'signUp' -%}
+            {{ ctaSignUp(site, 'nav-text', 'start-building-menu', navIcon=item.icon) }}
+            {%- else -%}
+            <a class="flex items-center gap-2" href="{{ item.href }}"><svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24">{% include "components/icons/" + item.icon + ".svg" %}</svg><span class="ff-nav-label">{{ item.label }}</span></a>
+            {%- endif -%}
+        </li>
+        {%- endfor %}
+    </ul>
+</li>

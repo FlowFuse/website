@@ -14,7 +14,7 @@ const onCaptureClick = (item) => {
 <template>
     <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
         <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
-            <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
+            <!-- Sections synced with the top nav: Product / Solutions / Resources / Company -->
             <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
                 <section v-for="sec in chrome.footer.sections" :key="sec.title" class="pt-5" :data-nav-section="sec.title">
                     <p class="text-lg font-medium text-gray-900 mb-6">{{ sec.title }}</p>
@@ -31,7 +31,7 @@ const onCaptureClick = (item) => {
             <!-- Company -->
             <section class="mt-12 border-t border-gray-300 pt-9" data-nav-section="Company">
                 <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
-                     under Platform, the three groups under Solutions' sub-columns, and the
+                     under Product, the three groups under Solutions' sub-columns, and the
                      last group under Resources. -->
                 <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
                     <div>

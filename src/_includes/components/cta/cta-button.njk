@@ -11,7 +11,7 @@
   event name. No `plan` param here (unlike Nuxt's CtaButton): that's only
   used on the pricing table, which is Nuxt-only - no 11ty caller needs it.
 #}
-{% macro ctaButton(event, href, label, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{% macro ctaButton(event, href, label, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='', navIcon='') %}
 {%- set isNavText = variant == 'nav-text' -%}
 {%- set isGhost = variant == 'ghost' -%}
 {#- Vue's CtaButton defaults uppercase to `!isNavTextVariant` when the caller
@@ -19,9 +19,9 @@
 {%- set showUppercase = uppercase if uppercase != none else not isNavText -%}
 {%- set caseClass = 'uppercase' if showUppercase else 'normal-case' -%}
 {%- if isNavText -%}
-    {#- ff-nav-freetrial (header "Free Trial") vs a plain inline link (utility
-        bar "Sign In") both come through as extraClass from the caller, same
-        as Nuxt. Font-weight is deliberately NOT set here (unlike Nuxt's
+    {#- Any per-insertion class (the utility bar "Sign In"'s inline-link
+        styling, say) comes through as extraClass from the caller, same as
+        Nuxt. Font-weight is deliberately NOT set here (unlike Nuxt's
         CtaButton, which hardcodes font-normal): Nuxt can get away with that
         because Nuxt UI merges its `ui.base` and the caller's `class` through
         tailwind-merge, which resolves a font-normal/font-medium clash by
@@ -30,13 +30,20 @@
         on the same element resolve by whichever rule Tailwind happened to
         emit later in the compiled stylesheet, not by which one is "meant" to
         win, so hardcoding font-normal previously fought Sign In's own
-        font-medium (from extraClass) and silently won, undoing it. Free
-        Trial still renders font-normal correctly without this - it comes
-        from the pre-existing `.ff-website header .cta a { font-normal }`
-        rule in style.css, which matches directly on the element and beats
+        font-medium (from extraClass) and silently won, undoing it. The
+        header's own nav-text CTA (the "Start building" menu's Cloud row)
+        still renders font-normal without this - it comes from the
+        pre-existing `.ff-website header .cta a { font-normal }` rule in
+        style.css, which matches directly on the element and beats
         inheritance cleanly (no utility-class collision involved). -#}
     {%- set padClass = 'px-3 py-4' if padded else 'p-0' -%}
+    {#- navIcon: a leading icon from the same set chrome.json names, for a
+        nav-text CTA that sits as one row of a nav panel (the "Start building"
+        menu's Cloud row) and has to match the icon rows beside it. Not a
+        general styling hook - only the nav-text variant reads it, and the row
+        layout it needs comes with it. Mirrors CtaButton.vue's `navIcon`. -#}
     {%- set classes = caseClass ~ ' no-underline ' ~ padClass -%}
+    {%- if navIcon -%}{%- set classes = classes ~ ' flex items-center gap-2' -%}{%- endif -%}
 {%- elif isGhost -%}
     {%- set classes = 'ff-btn ff-btn--ghost ff-btn--ghost-' ~ (color if color else 'primary') ~ ' ' ~ caseClass -%}
 {%- else -%}
@@ -53,5 +60,5 @@
     .ff-icon, so it got caught by those rules (forced padding, dark text)
     instead of the button's own white/ff-btn styling. Icon usages (hero,
     "Try it out", why-flowfuse) all live outside <header>, so this is safe. -#}
-<a class="{{ classes }}" href="{{ href }}" onclick='capture("{{ event }}", {{ captureProps | json | safe }})'>{% if isNavText %}<span class="ff-nav-label">{{ label }}</span>{% elif icon %}<span class="inline-flex items-center gap-2">{{ label }}{% include "components/icons/arrow-right.svg" %}</span>{% else %}{{ label }}{% endif %}</a>
+<a class="{{ classes }}" href="{{ href }}" onclick='capture("{{ event }}", {{ captureProps | json | safe }})'>{% if isNavText %}{% if navIcon %}<svg class="ff-icon ff-icon-sm" fill="none" viewbox="0 0 24 24">{% include "components/icons/" + navIcon + ".svg" %}</svg>{% endif %}<span class="ff-nav-label">{{ label }}</span>{% elif icon %}<span class="inline-flex items-center gap-2">{{ label }}{% include "components/icons/arrow-right.svg" %}</span>{% else %}{{ label }}{% endif %}</a>
 {%- endmacro %}

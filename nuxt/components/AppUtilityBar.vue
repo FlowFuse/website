@@ -43,12 +43,13 @@ onMounted(() => {
       <!-- Mobile Sign In (quick-links nav below is hidden under md) -->
       <CtaSignIn variant="nav-text" position="utility-bar-mobile" class="md:hidden shrink-0 text-indigo-100 hover:text-white no-underline hover:no-underline font-medium" />
       <!-- Quick links (right) -->
-      <nav class="hidden md:flex items-center gap-5 shrink-0" aria-label="Quick links">
+      <!-- pr-4 matches the Book a Demo button's own px-4 in the header below, so
+           Sign In's text lines up with that button's label rather than with its
+           outer edge - the two rows read as one right-hand column. -->
+      <nav class="hidden md:flex items-center gap-5 shrink-0 pr-4" aria-label="Quick links">
         <a href="/about/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">About us</a>
-        <a href="/blog/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Blog</a>
         <a href="/docs/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Docs</a>
         <a href="/support/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Support</a>
-        <a href="/docs/device-agent/install/overview/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Install on edge</a>
         <span class="h-4 w-px bg-indigo-400/40" aria-hidden="true"></span>
         <CtaSignIn variant="nav-text" position="utility-bar" class="text-indigo-100 hover:text-white no-underline hover:no-underline font-medium" />
       </nav>
