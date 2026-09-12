@@ -113,7 +113,6 @@ hubspot:
   cta: "cta-blog-subscribe"
   reference: "homepage"
 ---
-{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!--Hero Content-->
 <section class="w-full relative bg-indigo-800 md:min-h-[800px]">
@@ -145,7 +144,6 @@ hubspot:
                     <div class="flex flex-col mt-12">
                         <div class="m-auto flex gap-4 items-center justify-center flex-row">
                             {{ ctaBookDemo('highlight', 'hero', extraClass='flex flex-col mb-6') }}
-                            {{ ctaSignUp(site, 'ghost', 'hero', color='white', icon=true, extraClass='flex flex-col mb-6') }}
                         </div>
                     </div>
                 </div>
@@ -255,7 +253,6 @@ hubspot:
         <p>Whether you're extending an existing system, standardizing a proven solution across sites, or connecting OT and IT data flows, FlowFuse gives your team the platform to <strong>build once and run everywhere</strong>.</p>
         <div class="flex gap-4 items-center max-md:justify-center flex-wrap mt-6">
             {{ ctaBookDemo('primary', 'secondary') }}
-            {{ ctaSignUp(site, 'ghost', 'secondary', icon=true) }}
         </div>
     </div>
 </div>
@@ -419,7 +416,7 @@ hubspot:
     <!-- Get Started -->
     {% set cta = {
         title: "Get Started with FlowFuse",
-        description: "Your first operational application could be running this week. Book a demo to see how, or start a free trial and build it yourself.",
+        description: "Your first operational application could be running this week. Book a demo and we will show you how.",
         buttonText: "BOOK A DEMO",
         buttonLink: "/book-demo/",
         position: "get-started"

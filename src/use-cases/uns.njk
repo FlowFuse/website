@@ -9,7 +9,6 @@ meta:
     description: "FlowFuse simplifies UNS adoption for manufacturing companies by providing a user-friendly, low-code platform for deploying and using data from a UNS."
     keywords: "FlowFuse, UNS, Unified Namespace, manufacturing, data, data integration, data management, data visualization, data analysis, data-driven decisions, data silos, real-time data, collaboration, Node-RED, MQTT Broker, low-code, open-source, rapid implementation, seamless integration"
 ---
-{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 {% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <!--First two sections-->
@@ -29,7 +28,6 @@ meta:
                 </div>
                 <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                     {{ ctaContactUs('primary', 'primary', extraClass='min-h-[40px]') }}
-                    {{ ctaSignUp(site, 'primary-outlined', 'primary', extraClass='min-h-[40px]') }}
                 </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[400px]">
@@ -153,7 +151,6 @@ meta:
         <h4 class="mb-6 w-full text-center">Ready to simplify your UNS journey and unlock the power of your industrial data?</h4>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
             {{ ctaBookDemo('primary', 'secondary', extraClass='min-h-[40px]') }}
-            {{ ctaSignUp(site, 'primary-outlined', 'secondary', extraClass='min-h-[40px]') }}
         </div>
     </div>
     <!-- Learn UNS -->

@@ -60,7 +60,6 @@ meta:
           answer: >
             Yes! FlowFuse is designed for seamless migration, fully compatible with existing Node-RED logic and integrations. 
 ---
-{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="nohero w-full px-6">
     <!--Hero Content-->
@@ -84,7 +83,6 @@ meta:
                 </div>
                 <div class="flex gap-3 max-md:mx-auto max-sm:flex-col max-md:justify-center">
                     {{ ctaBookDemo('primary', 'primary', extraClass='min-h-[40px]') }}
-                    {{ ctaSignUp(site, 'ghost', 'primary', icon=true, extraClass='min-h-[40px]') }}
                 </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[550px] ff-image-rounded rounded-lg drop-shadow-lg w-full">

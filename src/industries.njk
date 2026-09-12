@@ -6,7 +6,6 @@ meta:
   title: "Industries"
   description: "FlowFuse helps industrial teams connect, automate, and standardize operations across sectors. Explore how FlowFuse is applied in your industry."
 ---
-{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div class="w-full">
 
@@ -56,10 +55,9 @@ meta:
     <div class="w-full px-6 py-20">
         <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10 text-center">
             <h3 class="mb-4 w-full text-center">See it in your plant</h3>
-            <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">Talk to an expert, or get started with FlowFuse today.</p>
+            <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">Talk to an expert about your plant.</p>
             <div class="flex flex-wrap gap-4 justify-center">
                 {{ ctaContactUs('highlight', 'footer', extraClass='min-h-[40px]') }}
-                {{ ctaSignUp(site, 'primary-outlined', 'footer', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>

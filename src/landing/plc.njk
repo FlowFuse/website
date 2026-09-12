@@ -142,7 +142,6 @@ resources:
     alt: "Diagnosing and fixing PLC communication latency"
     url: "/blog/2026/06/plc-communication-latency-causes-and-fixes/"
 ---
-{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
 {% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 {% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="nohero w-full">
@@ -162,7 +161,6 @@ resources:
                     </p>
                     <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                         {{ ctaContactUs('primary', 'primary', extraClass='min-h-[40px]') }}
-                        {{ ctaSignUp(site, 'primary-outlined', 'primary', extraClass='min-h-[40px]') }}
                     </div>
                 </div>
                 <div class="md:w-2/5 flex-grow relative">
@@ -461,11 +459,10 @@ resources:
             <div class="ff-blue-card">
                 <h4 class="mb-6 w-full text-center">Ready to unlock your PLC data?</h4>
                 <p class="text-center text-gray-600 mb-8">
-                    Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack, in a live demo or a free trial.
+                    Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack, in a live demo.
                 </p>
                 <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
                     {{ ctaBookDemo('primary', 'secondary', extraClass='min-h-[40px]') }}
-                    {{ ctaSignUp(site, 'primary-outlined', 'secondary', extraClass='min-h-[40px]') }}
                 </div>
             </div>
         </div>

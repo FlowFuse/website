@@ -8,10 +8,6 @@ const props = defineProps<{
 // copy/href/event) instead of a local buttonText/buttonUrl pair, so the blog
 // CTA can't drift from the rest of the site's copy.
 const CTA_VARIANTS: Record<string, { title: string, description: string }> = {
-    'sign-up': {
-        title: 'Start building with your own industrial data',
-        description: 'Connect your systems, automate workflows, and see what’s possible in your environment.',
-    },
     demo: {
         title: 'See how FlowFuse works in real environments',
         description: 'Walk through real use cases and see how teams connect systems, automate workflows, and deploy at scale.',
@@ -26,14 +22,28 @@ const CTA_VARIANTS: Record<string, { title: string, description: string }> = {
     },
 }
 
-// Missing type, or an unrecognised one (e.g. typo'd `type: signup`), falls
-// back to 'sign-up'.
-const KNOWN_TYPES = new Set(['sign-up', 'demo', 'contact', 'pricing'])
+// Self-serve sign-up is not offered from page content for now, so a post
+// asking for the sign-up CTA gets the demo one instead. That covers 320 of
+// the 415 posts: 274 declare no `cta` block at all and reach this through
+// the fallback, 43 ask for `sign-up` and 3 for a typo'd `signup`.
+//
+// Those posts' own `cta.title`/`cta.description` are ignored too (see
+// `heading`/`body`): 46 of them say "Sign up for FlowFuse" or "start a free
+// trial" in the copy directly above the button, which would otherwise now
+// sit above a Book a Demo. Ignoring the override keeps every post's copy
+// truthful without editing 46 markdown files, so putting sign-up back is
+// this block and nothing else.
+const SIGNUP_TYPES = new Set(['sign-up', 'signup'])
+const KNOWN_TYPES = new Set(['demo', 'contact', 'pricing'])
+const FALLBACK_TYPE = 'demo'
 const ctaType = computed(() => {
     const type = props.cta?.type
-    return type && KNOWN_TYPES.has(type) ? type : 'sign-up'
+    return type && KNOWN_TYPES.has(type) ? type : FALLBACK_TYPE
 })
 const currentCta = computed(() => CTA_VARIANTS[ctaType.value])
+const isRedirectedSignUp = computed(() => SIGNUP_TYPES.has(props.cta?.type ?? ''))
+const heading = computed(() => (isRedirectedSignUp.value ? currentCta.value.title : props.cta?.title || currentCta.value.title))
+const body = computed(() => (isRedirectedSignUp.value ? currentCta.value.description : props.cta?.description || currentCta.value.description))
 
 // Kept as-is from Eleventy for data continuity - fires alongside, not
 // instead of, each Cta* component's own cta-* event.
@@ -53,11 +63,10 @@ function onCtaClick (event: MouseEvent) {
 <template>
   <div class="ff-blue-card blog-post-cta p-8 sm:p-12 m-auto">
     <div class="flex flex-col gap-6 sm:gap-8 text-center sm:text-left">
-      <h3 class="mt-0 mb-0 !text-3xl text-indigo-800">{{ cta?.title || currentCta.title }}</h3>
-      <p class="mt-0 mb-0 max-w-4xl mx-auto sm:mx-0 leading-relaxed">{{ cta?.description || currentCta.description }}</p>
+      <h3 class="mt-0 mb-0 !text-3xl text-indigo-800">{{ heading }}</h3>
+      <p class="mt-0 mb-0 max-w-4xl mx-auto sm:mx-0 leading-relaxed">{{ body }}</p>
       <div class="flex justify-center sm:justify-start" @click="onCtaClick">
-        <CtaSignUp v-if="ctaType === 'sign-up'" variant="highlight" position="blog-post-cta" />
-        <CtaBookDemo v-else-if="ctaType === 'demo'" variant="highlight" position="blog-post-cta" />
+        <CtaBookDemo v-if="ctaType === 'demo'" variant="highlight" position="blog-post-cta" />
         <CtaContactUs v-else-if="ctaType === 'contact'" variant="highlight" position="blog-post-cta" />
         <CtaPricing v-else variant="highlight" position="blog-post-cta" />
       </div>
