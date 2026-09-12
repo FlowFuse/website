@@ -4,11 +4,16 @@
 
 This repository contains the source of the FlowFuse website.
 
-It is hosted on Netlify with each commit to the `main` branch being automatically deployed to the live site.
-This works by the [Build Site](.github/workflows/build.yml) action updating the `live` branch, committing onto it the
-blueprints pulled from [FlowFuse/blueprint-library](https://github.com/FlowFuse/blueprint-library).
+It is hosted on Netlify, which watches the `main` branch directly and deploys on every commit to it.
+Netlify's own build resolves everything it needs at build time — product documentation from `main` of
+[FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse), and blueprints from
+[FlowFuse/blueprint-library](https://github.com/FlowFuse/blueprint-library) (see `npm run blueprints` /
+`nuxt/lib/blueprints-sync.mjs`) — so nothing needs to be pre-fetched and committed to a separate branch first.
 
-Netlify is then configured to watch the `live` branch for any changes, once detected, it will automatically pull the contents of this branch and deploy to our production site. Product documentation is not part of that snapshot — Netlify clones it directly from `main` of [FlowFuse/flowfuse](https://github.com/FlowFuse/flowfuse) during its own build.
+A commit to `flowfuse/flowfuse` or `blueprint-library` doesn't push anything to this repo, so it wouldn't otherwise
+trigger a Netlify rebuild on its own. The [Build Site](.github/workflows/build.yml) action covers that gap: it's
+dispatched by `flowfuse/flowfuse`'s `Publish Documentation` workflow after a docs PR merges, and also runs on a
+schedule to pick up blueprint-library changes — either way it just calls a Netlify build hook to rebuild `main`.
 
 ## Repository structure
 
@@ -106,6 +111,27 @@ Nothing needs configuring for that to happen. Every build resolves the docs in t
 `npm run docs` runs that resolution on its own, without a full build, writing `nuxt/content/docs` and `nuxt/public/docs`. Both are generated, and neither is committed on `main`.
 
 `npm run dev` and `npm start` also watch the resolved docs and re-sync each file as it changes, so an edit appears without restarting. `npm run dev:nuxt` on its own does not include that watcher; run `npm run dev:docs` beside it if you want one.
+
+### Running Blueprints
+
+Blueprints are maintained in the (private) [FlowFuse/blueprint-library](https://github.com/FlowFuse/blueprint-library) repo. To work with them locally, clone that repository alongside this one, the same way as `flowfuse` above:
+
+```
+/<parent_directory>
+    /website
+    /blueprint-library
+```
+
+Every build resolves blueprints in this order, and logs which one it used:
+
+| Order | Source | Used when |
+|-------|--------|-----------|
+| 1 | `BLUEPRINTS_LOCAL=/path/to/blueprint-library` | The env var is set. A path that does not exist is an error, not a fallback. |
+| 2 | A sibling checkout: `../blueprint-library` | It exists. This is what local development relies on. |
+| 3 | A clone, authenticated with a minted GitHub App installation token (`GH_BOT_APP_ID`/`GH_BOT_APP_KEY`) | Nothing above applied, and those env vars are set. This is what Netlify production deploys use — `blueprint-library` is private, so this can't clone anonymously the way docs does. |
+| 4 | Skipped | Nothing above applied. Matches the previous behaviour for contributors without access to the private repo. |
+
+`npm run blueprints` runs that resolution on its own, writing `src/blueprints`, which is gitignored. `npm start` re-runs it whenever the resolved source changes (`scripts/watch_blueprints.js`), but only when it found a source to watch in the first place — no sibling checkout means no watching.
 
 ## llms.txt
 
