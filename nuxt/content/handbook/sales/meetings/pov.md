@@ -59,7 +59,7 @@ are met is the most common way one stalls.
 2. **The apps are defined.** The app or apps that will solve the use case are identified and follow FlowFuse's app delivery methods, so the PoV showcases FlowFuse as an app-building platform — not a test of Node-RED.
 3. **Success criteria are well defined.** Each criterion has a concrete, agreed pass signal, so "success" is not open to interpretation when the PoV ends.
 4. **The plan is agreed with the customer.** Tasks, owners and dates are agreed jointly, not just internally.
-5. **FlowFuse is available to test.** The customer has either installed FlowFuse (self-hosted) or signed up for a Cloud trial — set up as the [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/) during the Solution stage.
+5. **FlowFuse is available to test.** The customer has either installed FlowFuse (self-hosted) or signed up for a Cloud trial — set up as the [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/) during the Solution stage. For a self-hosted install this is more than "installed": the environment must be able to reach the hosts FlowFuse needs — in particular to **install and update nodes and packages** — with any firewall change requested *and proven* before the PoV starts, not discovered mid-PoV. See [Networking requirements](/docs/install/networking-requirements/).
 
 ### PoV meetings
 
