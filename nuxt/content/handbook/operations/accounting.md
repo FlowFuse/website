@@ -74,10 +74,10 @@ Monthly, redeem Brex reward points for cash via the [Brex Rewards dashboard](htt
    - These 5 columns compute the GBP conversion and the VAT-inclusive Net/VAT split for each transaction. If you ever need to rebuild them from scratch, the formulas are:
 
      - **GBP Converted Sales** (Gross in GBP): `=IF(AY2="GB",ROUND(XLOOKUP(INT(P2),'GBP exchange rate'!D:D,'GBP exchange rate'!E:E,0,1)*AG2,2),0)`
-     - **GBP Calc Tax** (VAT in GBP, backed out, not added on top): `=ROUND(IF(AND(AY2="GB",AM2=""),BA2-BA2/1.2,0),2)`
-     - **GBP Net Sales**: `=BA2-BB2`
+     - **GBP Calc Tax** (VAT in GBP, backed out, not added on top): `=ROUND(IF(AND(AY2="GB",AM2=""),BC2-BC2/1.2,0),2)`
+     - **GBP Net Sales**: `=BC2-BD2`
      - **USD Net (VAT back-out)**: `=IF(AND(AY2="GB",AM2=""),ROUND(AG2/1.2,2),AG2)`
-     - **USD VAT (back-out)**: `=ROUND(AG2-BD2,2)`
+     - **USD VAT (back-out)**: `=ROUND(AG2-BF2,2)`
    - *(Column letters: AY, AM, AG, P, assume Stripe's standard export order. Confirm they still point at Customer Address Country, Customer Tax ID, Amount Paid, and Paid At (UTC) before dragging down.)*
 5. **Sanity-check the totals** look reasonable before moving on (roughly in line with prior months, no wildly implausible numbers).
 
@@ -101,16 +101,20 @@ Review this [report](https://app-eu1.hubspot.com/reports-list/26586079/369512537
 
 Also worth a quick address/postcode glance rather than trusting the Country/Region field alone — we've caught multiple accounts (Cargill, Moderna, Nintendo, a Maastricht university) with a Country field that doesn't match their actual address.
 
-### Phase 4: Populate "Your data"
+### Phase 4: Update Exchange Rates
+
+In the **GBP exchange rate** sheet, update the Start/End dates to cover this month (Excel/Sheets will pull the rates automatically). Set the start and end date a few days before/past the actual period end, to make sure a rate is available for the next business day after month-close.
+
+### Phase 5: Populate "Your data"
 
 In the "Your data" sheet, clear existing contents in columns **C–F** and **J** (keep A, B, G, H, I, K as pre-filled template defaults). Once the data is removed, fill it in with the following sources:
 
 | **Column** | **Source** | **Notes** |
 |:-:|:-:|:-:|
-| **D** – VAT number | Paste from **Customer Tax ID from the stripe monthly data export sheet** | Check every pasted value. If the "GB" prefix is missing (a recurring Excel-formatting glitch, especially with Pool Sentry), add it back manually. |
-| **E** – Transaction date | Paste from **Paid At from the stripe monthly data export sheet** | Format as DD-MM-YYYY (select column → Format → Number → Custom date and time). |
-| **F** – Invoice number | Paste from **Number from the stripe monthly data export sheet** | |
-| **J** – Gross amount | Paste from **Amount Paid from the stripe monthly data export sheet** | |
+| **D** – VAT number | Paste from **"Customer Tax ID"** column from the stripe monthly data export sheet | Check every pasted value. If the "GB" prefix is missing (a recurring Excel-formatting glitch, especially with Pool Sentry), add it back manually. |
+| **E** – Transaction date | Paste from **"Paid At"** column from the stripe monthly data export sheet | Format as DD-MM-YYYY (select column → Format → Number → Custom date and time). |
+| **F** – Invoice number | Paste from **Number** column from the stripe monthly data export sheet | |
+| **J** – Gross amount | Paste from **"Amount Paid"** column from the stripe monthly data export sheet | |
 
 **Columns L (VAT Rate), M (Net amount), N (VAT amount)** should already have formulas that autofill down — but for reference, the logic is:
 
@@ -125,10 +129,6 @@ In words: if there's a VAT number in column D, it's a B2B reverse-charge sale (0
 - Confirm every row has data in every column A–N.
 - **Never populate columns O–T** (Invoice date, Local currency, Exchange rate, or any "_local" amount column). These exist in the template but aren't part of Taxually's actual spec — populating them is what caused repeated "Exchange rate incorrect" rejections. Double check they're not just hidden; open the columns and visually confirm they're empty, since a hidden-but-populated column still uploads.
 - Cross-check the row count in "Your data" against the row count of GB + paid rows in the raw month sheet, to catch anything missing.
-
-### Phase 5: Update Exchange Rates
-
-In the **GBP exchange rate** sheet, update the Start/End dates to cover this month (Excel/Sheets will pull the rates automatically). Set the start and end date a few days before/past the actual period end, to make sure a rate is available for the next business day after month-close.
 
 ### Phase 6: Create the Submission Copy & Submit
 
