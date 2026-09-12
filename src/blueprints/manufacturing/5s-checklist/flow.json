@@ -1,0 +1,4365 @@
+[
+    {
+        "id": "d4aa6dd5b63a56de",
+        "type": "tab",
+        "label": "5s",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0256c6eb48109c11",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Home",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b4c5402d79ec77dc",
+            "577d8f73370c558a",
+            "c9b05896fdcd5005",
+            "787c0cf856941d5a",
+            "7df54c71e0f50cdc",
+            "d113f1b49e09d3e4",
+            "40e2672cf292e7d3",
+            "d622e1435b53b8a3",
+            "d5e3ca79ea514130",
+            "7c377f13ba85744c",
+            "9c90b19ed79e85c4",
+            "c4984596a74cf81c",
+            "09746462ab489027",
+            "28063764f4dc54ed",
+            "e15fef4cf4c7097c",
+            "85a216738dc62d50",
+            "456d70880f511bd9",
+            "1296d4df9e06320f",
+            "1bd8581f932d520f",
+            "188b71e40be0152d",
+            "3a8f0bda6428ed87",
+            "650812bb62c24cce"
+        ],
+        "x": 34,
+        "y": 299,
+        "w": 852,
+        "h": 628
+    },
+    {
+        "id": "1fc9f093d1c94152",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Dashboard",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "56891cf2040d0749",
+            "ad011f9f8b8ed61e",
+            "ad401755701ebc2b",
+            "335bd427bb822247",
+            "4a01baaa93d0ba73",
+            "4293adacf884fcc0",
+            "b0b8d12cddfee9de",
+            "6aeab35aeef57600",
+            "c686ca8383b548d3",
+            "ccd4e16f9de6c077",
+            "1ca22d8eb4dddef3",
+            "a870dbc9d9c7811f",
+            "3dc8ff2df0c0d663",
+            "bdb6fb8980536d98",
+            "17b844dfb4b932b4"
+        ],
+        "x": 34,
+        "y": 959,
+        "w": 852,
+        "h": 402
+    },
+    {
+        "id": "350691ea509b4ec6",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Audit",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3504e66bebadadbd",
+            "02e46440362b07d6",
+            "f46c76eeafbd6617",
+            "a2b9c33f53a9b1ec",
+            "e3644bf42e1342a6",
+            "b369e4561fa8bf7f",
+            "3e44f7e2f0641ce4",
+            "e13284a3e534d6ef",
+            "843259bcf823a214",
+            "a7eddcbb9727ef2a",
+            "b2b046337906e245",
+            "c79f9eaeea24f61c",
+            "870699c231d45d87",
+            "0f49943d46c0a377",
+            "c68a04d19f8fa9de",
+            "527b2891ef863598",
+            "6d01e11cdf18b927",
+            "44d73b6848b53904",
+            "1e783b976181d299"
+        ],
+        "x": 954,
+        "y": 299,
+        "w": 932,
+        "h": 442
+    },
+    {
+        "id": "eff25d98eece7970",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Follow-ups",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "73735e7b29185507",
+            "626ad44786d35f6f",
+            "0f161b28f0df2abc",
+            "9110c17c8bf6cb73",
+            "43ca2cc1073eceab",
+            "a2d2f889b70e4bac",
+            "50f9900345bdfbb4",
+            "253e43713d8befbc",
+            "6796ccf57dc7316d",
+            "24f7a117920dfe9a",
+            "9ba61e885b69968c",
+            "71542098250e042b",
+            "b6b5b0e1d7164141",
+            "1d29d201a7504fb0",
+            "b122b64927286005"
+        ],
+        "x": 954,
+        "y": 779,
+        "w": 932,
+        "h": 482
+    },
+    {
+        "id": "4af97a279e03c7c5",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Report audit non-conformance or Follow up page",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2a08239f52bc7357",
+            "a10ec14535e386b0",
+            "b51cf4c91eb01ecb",
+            "9fa33727e0118d56",
+            "f35877c48cc20f73",
+            "ab39390603e8afd5",
+            "d3c84e7de45494de",
+            "77242295ed3bf7bf",
+            "ca5e9c2dfa6af534",
+            "f6e4c3da637adfed",
+            "9d342654afaefe19",
+            "986a4a7fdb628dac",
+            "c6d9dc26049c64ea",
+            "66eec4f3e7dc2afe",
+            "e8294daa6246f404"
+        ],
+        "x": 954,
+        "y": 1299,
+        "w": 932,
+        "h": 302
+    },
+    {
+        "id": "0d092c145297790a",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Page Change Monitor",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "81b488a33359d3e9",
+            "f1b3c9c997b5c07b",
+            "d171242b0f397f7b",
+            "bbb225885fafd520",
+            "a2fedd64f606978d",
+            "f478402a354852d5",
+            "1687d2a8f9fce834",
+            "c5750ef45c271583",
+            "00ea07fe0f83e57e",
+            "aa681d9d1dee0c05"
+        ],
+        "x": 34,
+        "y": 1399,
+        "w": 852,
+        "h": 202
+    },
+    {
+        "id": "b62760e9ebbef0e6",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Setup and initialization",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f277e91fc6162faa",
+            "217462c1328dfa02",
+            "4c04b5e097878ae8",
+            "2ee26525a1428401",
+            "77e797ad86cad8e4"
+        ],
+        "x": 34,
+        "y": 93,
+        "w": 1838,
+        "h": 174
+    },
+    {
+        "id": "939b1007fa123315",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "name": "Debug",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3ba114c9aff7a978",
+            "f74b8a578f92ce29",
+            "7de08a4235ecba10",
+            "374722fe77089176",
+            "ed87adfbc03e28af",
+            "e160485d80866ebd"
+        ],
+        "x": 34,
+        "y": 1639,
+        "w": 652,
+        "h": 122
+    },
+    {
+        "id": "28063764f4dc54ed",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "New Audit Dialog",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a58992010e62245d",
+            "7c318f0425b1cfef",
+            "ed351158e369d62a",
+            "f624a203d5b7f5e5",
+            "cbfa4c84e8566313",
+            "1e838fe88fe7f726",
+            "50e48c8bb4709ac5",
+            "cda375c2c8adb964",
+            "25a9600ad9471707",
+            "42cc57114c9f860c",
+            "1e0c7084217cfbe8",
+            "0b8598c47f712c8e",
+            "f4cb796190d54016",
+            "3d5c136674c68be9"
+        ],
+        "x": 74,
+        "y": 699,
+        "w": 712,
+        "h": 202
+    },
+    {
+        "id": "1d29d201a7504fb0",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Close follow up Dialog",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "bbf72626dd659271",
+            "bd1e30836ab9c049",
+            "f9d594868dcad591",
+            "806fb5ad3575deda",
+            "166efc6e2fa6d961",
+            "47ea5eeae24c77a5",
+            "bc0c37fd43fb911e",
+            "1c80217ce738b1d5",
+            "70422e7a6f4abbd1",
+            "117bd619f35b6185"
+        ],
+        "x": 994,
+        "y": 919,
+        "w": 652,
+        "h": 202
+    },
+    {
+        "id": "217462c1328dfa02",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "b62760e9ebbef0e6",
+        "name": "Retrieve users locale and TZ for date time formatting",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "dd41f142946f9953",
+            "e0f587bdcf904c1d"
+        ],
+        "x": 1414,
+        "y": 139,
+        "w": 432,
+        "h": 82
+    },
+    {
+        "id": "4c04b5e097878ae8",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "b62760e9ebbef0e6",
+        "name": "Site CSS for colors and other formatting",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "dcb0118f06bd2b84"
+        ],
+        "x": 1094,
+        "y": 139,
+        "w": 255,
+        "h": 82
+    },
+    {
+        "id": "2ee26525a1428401",
+        "type": "group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "b62760e9ebbef0e6",
+        "name": "Setup locations and questions",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "30399e5fb0fca68d",
+            "a27c0a728f2095a4",
+            "ac6c60be2d06d4a2",
+            "19394866c27da198",
+            "2694c30cc1f9ab2a",
+            "a995590afa23ef70"
+        ],
+        "x": 294,
+        "y": 119,
+        "w": 752,
+        "h": 122
+    },
+    {
+        "id": "71542098250e042b",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "x": 1640,
+        "y": 1220,
+        "wires": [
+            [
+                "9374e5dcc743bd11"
+            ]
+        ]
+    },
+    {
+        "id": "b6b5b0e1d7164141",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "x": 1640,
+        "y": 1180,
+        "wires": [
+            [
+                "9374e5dcc743bd11"
+            ]
+        ]
+    },
+    {
+        "id": "e15fef4cf4c7097c",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "d113f1b49e09d3e4"
+            ]
+        ]
+    },
+    {
+        "id": "1c80217ce738b1d5",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "x": 1420,
+        "y": 1040,
+        "wires": [
+            [
+                "47ea5eeae24c77a5"
+            ]
+        ]
+    },
+    {
+        "id": "9374e5dcc743bd11",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "x": 1700,
+        "y": 1020,
+        "wires": [
+            [
+                "9110c17c8bf6cb73"
+            ]
+        ]
+    },
+    {
+        "id": "44d73b6848b53904",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "x": 1680,
+        "y": 400,
+        "wires": [
+            [
+                "a7eddcbb9727ef2a"
+            ]
+        ]
+    },
+    {
+        "id": "3d5c136674c68be9",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "x": 600,
+        "y": 780,
+        "wires": [
+            [
+                "cda375c2c8adb964"
+            ]
+        ]
+    },
+    {
+        "id": "bdb6fb8980536d98",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "x": 300,
+        "y": 1280,
+        "wires": [
+            [
+                "6aeab35aeef57600"
+            ]
+        ]
+    },
+    {
+        "id": "3a8f0bda6428ed87",
+        "type": "junction",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "x": 660,
+        "y": 560,
+        "wires": [
+            [
+                "d113f1b49e09d3e4"
+            ]
+        ]
+    },
+    {
+        "id": "25f447d87d1ce5c9",
+        "type": "ui-base",
+        "name": "Dashboard",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ],
+        "headerContent": "page",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 5,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "a52e2aee436b2e26",
+        "type": "ui-theme",
+        "name": "Dashboard",
+        "colors": {
+            "surface": "#fafaff",
+            "primary": "#0094ce",
+            "bgPage": "#fcfcfc",
+            "groupBg": "#fafafa",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "466d64c7e52120e5",
+        "type": "ui-page",
+        "name": "Event",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/event",
+        "icon": "",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 5,
+        "className": "",
+        "visible": false,
+        "disabled": false
+    },
+    {
+        "id": "c5414601756df1a7",
+        "type": "ui-page",
+        "name": "Dashboard",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/dashboard",
+        "icon": "mdi-monitor-dashboard",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "de5923834c83b6c9",
+        "type": "ui-page",
+        "name": "Follow-ups",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/actions",
+        "icon": "mdi-briefcase-outline",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ccc4825f24719240",
+        "type": "ui-page",
+        "name": "Audit",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/audit",
+        "icon": "mdi-invoice-text-outline",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "1bc173050737de02",
+        "type": "ui-group",
+        "name": "question and image section",
+        "page": "ccc4825f24719240",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "388073d857766f13",
+        "type": "ui-group",
+        "name": "audit grade options",
+        "page": "ccc4825f24719240",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "f8130b57e2f7f61f",
+        "type": "ui-group",
+        "name": "header-stepper",
+        "page": "ccc4825f24719240",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "header-stepper"
+    },
+    {
+        "id": "d2c065fe637b3d61",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "466d64c7e52120e5",
+        "width": "12",
+        "height": "2",
+        "order": 3,
+        "showTitle": false,
+        "className": "footer",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "99ebb0140d03a311",
+        "type": "ui-group",
+        "name": "Report audit non-conformance",
+        "page": "466d64c7e52120e5",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": ""
+    },
+    {
+        "id": "37e1fafe6e84119c",
+        "type": "ui-page",
+        "name": "Home",
+        "ui": "25f447d87d1ce5c9",
+        "path": "/",
+        "icon": "",
+        "layout": "grid",
+        "theme": "a52e2aee436b2e26",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b95b554e4f268469",
+        "type": "ui-group",
+        "name": "Follow up",
+        "page": "466d64c7e52120e5",
+        "width": "6",
+        "height": "4",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "483d8aa48dd9f63c",
+        "type": "ui-group",
+        "name": "Select a location",
+        "page": "37e1fafe6e84119c",
+        "width": "6",
+        "height": "6",
+        "order": 3,
+        "showTitle": true,
+        "className": "location-form",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "752556b56b1dddb2",
+        "type": "ui-group",
+        "name": "Selected location details",
+        "page": "37e1fafe6e84119c",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "location-details",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "9139adec501ea015",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "37e1fafe6e84119c",
+        "width": "12",
+        "height": "1",
+        "order": 4,
+        "showTitle": false,
+        "className": "footer",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5e8ce4c4db63599e",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "c5414601756df1a7",
+        "width": "12",
+        "height": "2",
+        "order": 4,
+        "showTitle": false,
+        "className": "footer",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "44e723a1c7f6a8b9",
+        "type": "ui-group",
+        "name": "Score by section (all locations)",
+        "page": "c5414601756df1a7",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a9d4bff06566501d",
+        "type": "ui-group",
+        "name": "Average score for area",
+        "page": "c5414601756df1a7",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "area-avg-score",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c45d1751e4644648",
+        "type": "ui-group",
+        "name": "Leaderboard",
+        "page": "c5414601756df1a7",
+        "width": "6",
+        "height": "5",
+        "order": 3,
+        "showTitle": true,
+        "className": "leaderboard",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "48b101b73a6aff92",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "de5923834c83b6c9",
+        "width": "12",
+        "height": "2",
+        "order": 3,
+        "showTitle": false,
+        "className": "footer",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7778bc8551ec32b5",
+        "type": "ui-group",
+        "name": "Follow-ups",
+        "page": "de5923834c83b6c9",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "follow-up-group",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c82276a84966f7da",
+        "type": "ui-group",
+        "name": "Close Action",
+        "page": "de5923834c83b6c9",
+        "width": "4",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "dialog"
+    },
+    {
+        "id": "f2722b544580bc1b",
+        "type": "ui-group",
+        "name": "footer",
+        "page": "ccc4825f24719240",
+        "width": "12",
+        "height": "2",
+        "order": 4,
+        "showTitle": false,
+        "className": "footer",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c525d4493572586c",
+        "type": "ui-spacer",
+        "group": "f2722b544580bc1b",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 2,
+        "width": "6",
+        "height": 1,
+        "className": "hidden-sm-and-down"
+    },
+    {
+        "id": "c796e507fd11e80b",
+        "type": "ui-group",
+        "name": "New Audit",
+        "page": "37e1fafe6e84119c",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "false",
+        "disabled": "false",
+        "groupType": "dialog"
+    },
+    {
+        "id": "9033fe62d221a62c",
+        "type": "ui-spacer",
+        "group": "c796e507fd11e80b",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 2,
+        "width": "2",
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "bc8ad4db70050677",
+        "type": "ui-spacer",
+        "group": "9139adec501ea015",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 3,
+        "width": "6",
+        "height": 1,
+        "className": "hidden-sm-and-down"
+    },
+    {
+        "id": "3504e66bebadadbd",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f2722b544580bc1b",
+        "name": "",
+        "label": "Previous",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "mdi-arrow-left",
+        "iconPosition": "left",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "previous",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1060,
+        "y": 520,
+        "wires": [
+            [
+                "c79f9eaeea24f61c"
+            ]
+        ]
+    },
+    {
+        "id": "02e46440362b07d6",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f2722b544580bc1b",
+        "name": "",
+        "label": "Follow up",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "follow-up",
+        "icon": "mdi-briefcase-plus-outline",
+        "iconPosition": "left",
+        "payload": "Event",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1060,
+        "y": 400,
+        "wires": [
+            [
+                "44d73b6848b53904"
+            ]
+        ]
+    },
+    {
+        "id": "f46c76eeafbd6617",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f2722b544580bc1b",
+        "name": "",
+        "label": "Next",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "next",
+        "icon": "mdi-arrow-right",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "next",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1050,
+        "y": 460,
+        "wires": [
+            [
+                "c79f9eaeea24f61c",
+                "e3644bf42e1342a6"
+            ]
+        ]
+    },
+    {
+        "id": "a2b9c33f53a9b1ec",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "1bc173050737de02",
+        "page": "",
+        "ui": "",
+        "name": "Show question and image",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "head": "",
+        "format": "<template>\n  <div>\n    <p style=\"font-size:19px;\">{{ msg.currentQuestion.question }}</p>\n    <br>\n    <div class=\"image-container\">\n    <img width=\"100%\" height=\"300\" style=\"object-fit: cover;\" :src=\"msg.currentQuestion.imageUrl\" alt=\"Question Image\">\n    <br>\n    <i style=\"font-size:12px;\">Question {{ (msg.currentQuestion?.index || 0) + 1 }} of {{ msg.questionCount }}</i>\n  </div>\n</template>\n\n\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "audit-quiz",
+        "x": 1510,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3644bf42e1342a6",
+        "type": "ui-radio-group",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "388073d857766f13",
+        "name": "",
+        "label": "Select Option:",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "columns": 1,
+        "passthru": false,
+        "options": [
+            {
+                "label": "Great (5)",
+                "value": 5,
+                "type": "num"
+            },
+            {
+                "label": "Good (4)",
+                "value": 4,
+                "type": "num"
+            },
+            {
+                "label": "Ok  (3)",
+                "value": 3,
+                "type": "num"
+            },
+            {
+                "label": "Need improvement (2)",
+                "value": 2,
+                "type": "num"
+            },
+            {
+                "label": "Unacceptable (1)",
+                "value": 1,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "audit-grade",
+        "x": 1260,
+        "y": 460,
+        "wires": [
+            [
+                "b369e4561fa8bf7f"
+            ]
+        ]
+    },
+    {
+        "id": "b369e4561fa8bf7f",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "storeQuestionScore",
+        "func": "let currentIndex = global.get('fives.currentIndex') || 0\nlet currentQuiz = global.get('fives.currentQuiz')\nif (!currentQuiz[currentIndex]) {\n    return\n}\ncurrentQuiz[currentIndex].answer = msg.payload || 1\nglobal.set('fives.currentQuiz', currentQuiz);\nmsg.payload = currentQuiz[currentIndex]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e44f7e2f0641ce4",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1800,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e13284a3e534d6ef",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Complete?",
+        "property": "done",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1470,
+        "y": 520,
+        "wires": [
+            [
+                "843259bcf823a214"
+            ]
+        ]
+    },
+    {
+        "id": "2a08239f52bc7357",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "group": "d2c065fe637b3d61",
+        "name": "",
+        "label": "Add",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "log-event",
+        "icon": "mdi-briefcase-plus-outline",
+        "iconPosition": "left",
+        "payload": "#:(persistent)::fives.eventDesc",
+        "payloadType": "flow",
+        "topic": "-1",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1050,
+        "y": 1520,
+        "wires": [
+            [
+                "9d342654afaefe19"
+            ]
+        ]
+    },
+    {
+        "id": "a10ec14535e386b0",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "group": "d2c065fe637b3d61",
+        "name": "",
+        "label": "Cancel",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "mdi-close-circle-outline",
+        "iconPosition": "left",
+        "payload": "Audit",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1060,
+        "y": 1560,
+        "wires": [
+            [
+                "ab39390603e8afd5"
+            ]
+        ]
+    },
+    {
+        "id": "b51cf4c91eb01ecb",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "group": "99ebb0140d03a311",
+        "page": "",
+        "ui": "",
+        "name": "report audit non-conformance",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n<div class=\"detail-text\">Procedure : <span class=\"detail-value\">5s audit</span></div>\n<div class=\"detail-text\">Location  : <span class=\"detail-value\">{{msg.payload.location}}</span> </div>\n<div class=\"detail-text\">Section   : <span class=\"detail-value\">{{msg.payload.section}}</span></div>\n<div class=\"detail-text\">Question  : <span class=\"detail-value\">{{msg.payload.question}}</span></div>\n</template>\n\n<style scoped>\n  div.detail-text {\n    font-family: monospace;\n    font-weight:530;\n    font-size:15px;\n  }\n  div.detail-text > span.detail-value {\n    font-family: arial;\n    font-weight:700;\n    font-size:15px;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "location-details",
+        "x": 1730,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fa33727e0118d56",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "Log Follow up",
+        "func": "if (!msg.payload) {\n    return [null, { payload: \"Description is required\" }]\n}\n\nconst followUp = msg.payload\nconst events = global.get('fives.followUps', 'persistent') || []\nconst currentQuestion = global.get('fives.currentQuestion')\nconst currentSection = global.get('fives.currentSection')\nconst groupId = global.get('currentStep');\nconst location = global.get('fives.currentLocation')\nconst currentInspector = global.get('fives.currentInspector')\nconst groups = ['sort', 'set in order', 'shine', 'standardize', 'sustain']\nconst section = currentSection.name\n\nlet event = {\n    id: events.length,\n    createdOn: Date.now(),\n    createdBy: currentInspector,\n    location,\n    section,\n    question: currentQuestion.question,\n    followUp,\n    closedOn: null,\n    closedBy: '',\n    status: \"open\"\n}\n\n\nevents.push(event)\nglobal.set('fives.followUps', events, 'persistent')\n\nmsg.payload = msg.previousPage || 'Audit'\n\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1520,
+        "wires": [
+            [
+                "f35877c48cc20f73"
+            ],
+            [
+                "986a4a7fdb628dac"
+            ]
+        ]
+    },
+    {
+        "id": "843259bcf823a214",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Store and reset",
+        "func": "/**\n * @typedef Answer\n * @property { Number } index - Question index\n * @property { String } section - Section Title\n * @property { String } question - Question\n * @property { Number } answer - Answer\n*/\n\nlet results = global.get('fives.results', 'persistent') || []\nlet location = global.get('fives.currentLocation');\n\nconst sections = RED.util.cloneMessage(msg.sections)\nconst questionsRemaining = msg.questionsRemaining\nconst questionsAnswered = msg.questionsAnswered\n\n/** @type {Answer[]} */\nconst currentQuiz = msg.currentQuiz\n\nlet totalScore = 0;\nlet totalQuestions = questionsAnswered + questionsRemaining;\nconst result = {\n  datetime: Date.now(),\n  inspector: msg.currentInspector,\n  location,\n  questionsRemaining, \n  questionsAnswered,\n  totalQuestions,\n  totalScore: msg.currentScore,\n  score: msg.currentScore / totalQuestions,\n  sections,\n  complete: msg.done,\n}\n\nresults.push(result)\nglobal.set('fives.results', results, 'persistent')\n\n// reset currentQuiz and currentIndex\nglobal.set('fives.currentIndex', 0)\nglobal.set('fives.currentQuiz', undefined)\nglobal.set('fives.currentSection', undefined)\nglobal.set('fives.currentQuestion', undefined)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 520,
+        "wires": [
+            [
+                "527b2891ef863598"
+            ]
+        ]
+    },
+    {
+        "id": "a7eddcbb9727ef2a",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1800,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f35877c48cc20f73",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1800,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab39390603e8afd5",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1300,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b4c5402d79ec77dc",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "752556b56b1dddb2",
+        "page": "",
+        "ui": "",
+        "name": "location audit details",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>  \n  <div> \n    <span class=\"detail-text\">Last audit</span> <span class=\"detail-value\">{{formattedDateTime}}</span>\n  </div> \n  <div> \n    <span class=\"detail-text\">Last score</span> <span class=\"detail-value\">{{msg.payload?.lastAuditScore ? msg.payload.lastAuditScore.toFixed(2) : \"-\"}}%</span>\n  </div> \n  <div> \n    <span class=\"detail-text\" >Audit count</span> <span class=\"detail-value\">{{msg.payload?.auditCount ?? \"-\"}}</span>\n  </div> \n  <div> \n    <span class=\"detail-text\" >Open Follow ups</span> <span class=\"detail-value\">{{msg.payload?.openEvents ?? \"-\"}}</span>\n  </div> \n</template>\n\n<script>\n    export default {\n        data() {\n            return { }\n        },\n        watch: {\n            msg: function () {\n            }\n        },\n        computed: {\n            formattedDateTime: function () {\n                if (!this.msg?.payload?.lastAuditDate) {\n                  return '-'\n                }\n                const d = new Date(this.msg.payload?.lastAuditDate)\n                return d.toLocaleString()\n            }\n        },\n    }\n</script>\n\n<style scoped>\n  span.detail-text {\n    width: 150px;\n    font-family: monospace;\n    font-weight: 530;\n    font-size: 15px;\n    display: inline-block;\n  }\n  span.detail-value {\n    font-family: arial;\n    font-weight:700;\n    font-size:15px;\n  }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "location-details",
+        "x": 760,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "577d8f73370c558a",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "9139adec501ea015",
+        "name": "",
+        "label": "Dashboard",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "dashboard-btn",
+        "icon": "mdi-monitor-dashboard",
+        "iconPosition": "left",
+        "payload": "Dashboard",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "e15fef4cf4c7097c"
+            ]
+        ]
+    },
+    {
+        "id": "c9b05896fdcd5005",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "9139adec501ea015",
+        "name": "",
+        "label": "New Audit",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "new-audit",
+        "icon": "mdi-invoice-text-plus-outline",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "1296d4df9e06320f"
+            ]
+        ]
+    },
+    {
+        "id": "b2b046337906e245",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "New Audit",
+        "links": [
+            "50e48c8bb4709ac5"
+        ],
+        "x": 1060,
+        "y": 580,
+        "wires": [
+            [
+                "c79f9eaeea24f61c"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "56891cf2040d0749",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "5e8ce4c4db63599e",
+        "name": "",
+        "label": "Home",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "home",
+        "iconPosition": "left",
+        "payload": "Home",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 1280,
+        "wires": [
+            [
+                "bdb6fb8980536d98"
+            ]
+        ]
+    },
+    {
+        "id": "ad011f9f8b8ed61e",
+        "type": "ui-dropdown",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "a9d4bff06566501d",
+        "name": "Audit location dropdown",
+        "label": "Select Option:",
+        "tooltip": "",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "passthru": true,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": false,
+        "msgTrigger": "onChange",
+        "x": 750,
+        "y": 1160,
+        "wires": [
+            [
+                "4293adacf884fcc0"
+            ]
+        ]
+    },
+    {
+        "id": "ad401755701ebc2b",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "a9d4bff06566501d",
+        "page": "",
+        "ui": "",
+        "name": "Average score for area",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "head": "",
+        "format": "<template>\n   <div class=\"text-center avg-score ma-4 pa-2\">\n      <div class=\"text-center score\">{{msg.payload?.avgScore?.toFixed(2)}}%</div>\n      <div>Average score</div>\n   </div>\n   <hr>\n\n   <div class=\"text-center actions ma-2 pa-2\">\n      <div>\n         <div class=\"score\">{{msg.payload?.openEvents || \"0\"}}</div>\n         <div>Pending <br>  Follow-ups</div>\n      </div>\n      <div>\n         <div class=\"score\">{{msg.payload?.closedEvents || \"0\"}}</div>\n         <div>Closed <br>  Follow-ups</div>\n      </div>\n   </div>\n</template>\n\n<style scoped>\n   .avg-score{\n      text-align:center;\n   }\n\n   .score{\n      font-size:24px;\n      font-weight:700px;\n   }\n\n   .actions{\n      margin-top:5px;\n      display:flex;\n      justify-content:space-around;\n   }\n\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "avg-area-score",
+        "x": 740,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "335bd427bb822247",
+        "type": "ui-table",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "c45d1751e4644648",
+        "name": "Leaderboard table",
+        "label": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "maxrows": "5",
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 730,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a01baaa93d0ba73",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Prep leader table",
+        "func": "const results = global.get('fives.results') || global.get('fives.results', 'persistent') || [];\n\nconst TOP_SCOPE = 5\n\nconst groupedByLocation = {}\nfor (let index = 0; index < results.length; index++) {\n    const result = results[index];\n    groupedByLocation[result.location] = groupedByLocation[result.location] || {\n        location: result.location,\n        count: 0,\n        totalQuestions: 0,\n        totalScore: 0\n    }\n    groupedByLocation[result.location].count++\n    groupedByLocation[result.location].totalQuestions += result.totalQuestions\n    groupedByLocation[result.location].totalScore += result.totalScore\n}\n\nconst summaryByLocation = []\nfor (let key in groupedByLocation) {\n    if (groupedByLocation.hasOwnProperty(key)) {\n        const e = groupedByLocation[key]\n        const MAX_SCORE = e.totalQuestions * TOP_SCOPE\n        summaryByLocation.push({\n            \"Location\": e.location,\n            \"Audit Count\": e.count,\n            \"Performance\": ((e.totalScore / MAX_SCORE) * 100).toFixed(2) + '%'\n        })\n    }\n}\n\n\nmsg.payload = summaryByLocation;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1100,
+        "wires": [
+            [
+                "335bd427bb822247"
+            ]
+        ]
+    },
+    {
+        "id": "c79f9eaeea24f61c",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "handleActions",
+        "func": "// Retrieve or initialize global variables\nlet currentInspector = global.get('fives.currentInspector') || \"Anonymous\"\n/** @type {Number} */\nlet currentIndex = global.get('fives.currentIndex') || 0\n/** @type {Array<Answer>} */\nlet currentQuiz = global.get('fives.currentQuiz');\n/** @type {Array<Question>} */\nconst questions = global.get(\"fives.questions\") || []\n\nif (!questions) {\n    node.error(\"No questions setup\", msg);\n    return\n}\n\nif (!currentQuiz || msg.topic === \"NewAudit\") {\n    // @ts-ignore\n    currentQuiz = RED.util.cloneMessage(questions)\n    currentIndex = 0\n}\n\n/**\n * @typedef Question\n * @property { String } section - Section Title\n * @property { String } question - Section Title\n * @property { String } imageUrl - Image to display\n*/\n\n/**\n * @typedef Answer\n * @property { Number } index - Question index\n * @property { String } section - Section Title\n * @property { String } question - Question\n * @property { Number } answer - Answer\n*/\n\n\n\n// Handle previous and next actions\nif (msg.topic === \"next\") {\n    currentIndex++\n    if (!currentQuiz[currentIndex]) {\n        currentIndex = currentQuiz.length - 1\n    }\n} else if (msg.topic === \"previous\") {\n    currentIndex--\n    if (!currentQuiz[currentIndex]) {\n        currentIndex = 0\n    }\n}\n\n\nconst sectionArray = []\nlet sectionCount = 0\nlet questionsAnswered = 0\nlet totalScore = 0\nlet questionsRemaining = currentQuiz.length\nfor (let index = 0; index < currentQuiz.length; index++) {\n    const answer = currentQuiz[index];  \n    answer.index = index\n    answer.answer = answer.answer || null\n    let section = sectionArray.find(e => e.name === answer.section)\n    if (!section) {\n        section = {\n            index: sectionCount,\n            name: answer.section,\n            answerTotal: 0,\n            answerCount: 0,\n            questionCount: 0,\n            complete: false\n        }\n        sectionArray.push(section)\n        sectionCount++\n    }\n    section.questionCount++\n    if (typeof answer.answer === 'number' && answer.answer > 0) {\n        questionsAnswered++\n        questionsRemaining--\n        totalScore += answer.answer\n        section.answerTotal += answer.answer\n        section.answerCount++\n    }\n}\n\nsectionArray.forEach(section => {\n    section.complete = section.answerCount === section.questionCount\n})\n\nconst allComplete = currentQuiz.every(q => typeof q.answer === 'number' && q.answer > 0)\nconst lastQuestion = currentIndex === (questions.length-1)\n\nconst currentQuestion = currentQuiz[currentIndex]\nconst currentSection = sectionArray.find(section => currentQuestion?.section === section.name)\n\n// Set updated global variables\nglobal.set('fives.currentQuestion', currentQuestion);\nglobal.set('fives.currentIndex', currentIndex);\nglobal.set('fives.currentSection', currentSection);\nglobal.set('fives.currentQuiz', currentQuiz);\n\nmsg.payload = currentQuestion.answer\nmsg.currentInspector = currentInspector\nmsg.currentQuiz = currentQuiz\nmsg.currentIndex = currentIndex\nmsg.currentQuestion = currentQuestion\nmsg.currentScore = totalScore\nmsg.questionCount = currentQuiz.length\nmsg.questionsRemaining = questionsRemaining\nmsg.questionsAnswered = questionsAnswered\nmsg.sections = sectionArray\nmsg.currentSection = currentSection\nmsg.done = msg.topic === \"next\" && lastQuestion && allComplete\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 520,
+        "wires": [
+            [
+                "a2b9c33f53a9b1ec",
+                "e13284a3e534d6ef",
+                "e3644bf42e1342a6",
+                "0f49943d46c0a377"
+            ]
+        ]
+    },
+    {
+        "id": "4293adacf884fcc0",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Prepare avg scors data",
+        "func": "let events = global.get('fives.followUps') || global.get('fives.followUps', 'persistent') || []\nlet results = global.get('fives.results') || global.get('fives.results', 'persistent') || []\nlet currentLocation = msg.payload\nlet filteredResults = results.filter(e => e.location == currentLocation)\n\nconst MAX_SCORE = 5\nconst totalScore = filteredResults.reduce((acc, obj) => acc + (obj.score || 0), 0)\nconst averageScore = ((totalScore / filteredResults.length) / MAX_SCORE) * 100\n\nconst locationEvents = events.filter(item => item.location == currentLocation)\nconst openEvents = locationEvents.filter(e => e.status === \"open\")\n// node.warn({ currentLocation, events, locationEvents, openEvents, totalScore , averageScore})\nmsg.payload = {}\nmsg.payload.avgScore = averageScore\nmsg.payload.openEvents = openEvents.length\nmsg.payload.closedEvents = locationEvents.length - openEvents.length\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 1220,
+        "wires": [
+            [
+                "ad401755701ebc2b"
+            ]
+        ]
+    },
+    {
+        "id": "b0b8d12cddfee9de",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "a9d4bff06566501d",
+        "name": "",
+        "label": "Follow-ups",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "follow-up",
+        "icon": "mdi-briefcase-eye-outline",
+        "iconPosition": "left",
+        "payload": "Follow-ups",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 1320,
+        "wires": [
+            [
+                "bdb6fb8980536d98"
+            ]
+        ]
+    },
+    {
+        "id": "73735e7b29185507",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "group": "48b101b73a6aff92",
+        "name": "",
+        "label": "Back",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "mdi-arrow-left",
+        "iconPosition": "left",
+        "payload": "-1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1050,
+        "y": 1180,
+        "wires": [
+            [
+                "9ba61e885b69968c"
+            ]
+        ]
+    },
+    {
+        "id": "626ad44786d35f6f",
+        "type": "ui-table",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "group": "7778bc8551ec32b5",
+        "name": "Event details",
+        "label": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "maxrows": "5",
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "click",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "x": 1710,
+        "y": 840,
+        "wires": [
+            [
+                "50f9900345bdfbb4"
+            ]
+        ]
+    },
+    {
+        "id": "0f161b28f0df2abc",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Format Action Details Table Data",
+        "func": "const events = global.get('fives.followUps','persistent') || []\nconst locale = global.get(\"fives.locale.userLocale\") || global.get(\"fives.locale.userLocales\") || 'en-GB';\nconst tz = global.get(\"fives.locale.tz\") || undefined\nconst dtFormatter = new Intl.DateTimeFormat(locale, {\n    year: 'numeric',\n    month: 'numeric',\n    day: 'numeric',\n    hour: '2-digit',\n    minute: '2-digit',\n    timeZone: tz\n});\n\nconst tableData = [...events].map(e => {\n    const row = {\n        id: e.id,\n        \"Inspector\": e.createdBy || 'Anonymous',\n        \"Raised\": e.createdOn ? dtFormatter.format(e.createdOn) : '-',\n        Location: e.location,\n        Section: e.section || e.sectionName || '-',\n        Question: e.question || '-',\n        \"Follow up\": e.feedback || e.followUp,\n        \"Reviewer\": e.closedBy || '',\n        \"Closed\": e.closedOn ? dtFormatter.format(e.closedOn) : '-',\n        Status: e.status== \"open\" ? \"🔓\" : \"🔒\"\n    }\n    return row\n})\n\n\nmsg.payload = tableData\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1440,
+        "y": 840,
+        "wires": [
+            [
+                "626ad44786d35f6f"
+            ]
+        ]
+    },
+    {
+        "id": "9110c17c8bf6cb73",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 1800,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6aeab35aeef57600",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 700,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "787c0cf856941d5a",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Showing last audit details",
+        "info": "Here we display the average score of the last audit, including details such as date and time, the average score presented as a percentage, \nand the total number of audits performed and count of open followups",
+        "x": 170,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c686ca8383b548d3",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Displaying audit details",
+        "info": "- Here, we display the average score of the month for 5s question groups.\n- Additionally, we display the average score of the month for specific areas. Users have the ability to choose an area by selecting an option from the dropdown menu.\n- Users can view the number of pending and closed events. They can also view and close details by navigating to the event details page, accessed by clicking the \"Action Details\" button.\n- Moreover, users can observe the average percentage of the month for both areas on the leaderboard.",
+        "x": 160,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "870699c231d45d87",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Performing audit ",
+        "info": "Here, we have three buttons: 'Previous', 'Create follow-up', and 'Next', along with a section where we display questions and images based on the 'currentIndex' variable. \nWe utilize an array of objects containing questions and image URLs. The display adjusts according to the 'currentIndex' variable. When the 'Next' button is clicked, \nthe 'currentIndex' increases; however, when 'Previous' is clicked, 'currentIndex' decreases. When 'currentIndex' reaches 25, the user will navigate to the home page. \nThis logic governs how the display behaves.\n\nAdditionally, there's a 'Create follow-up' button that allows logging events for specific questions.\n\nWe also have two steppers:\n\nOne for displaying the current question, based on the 'count' variable.\nAnother for the current question group, operating on the 'currentStep' variable",
+        "x": 1060,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "964792f2fa683a74",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "name": "LICENSE",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 100,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ab0f6e1b6e848a65",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "name": "README",
+        "info": "# 5S Checklist\n\nThe 5S Checklist app makes it quick and easy to capture and analyze 5S audit data for reporting. End users are guided through 25 checks that can be configured to meet your operational needs. \nThis leans app allows you to store data automatically and view it in an included dashboard.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the Node-RED sidebar drop down\n2. Select \"Dashboard 2.0\"\n2. Click \"Open Dashboard\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a page or dialog on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 260,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "43ca2cc1073eceab",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Display and close events ",
+        "info": "Here, we display all follow-up action events in a table where users can view details such as the location where the audit was performed, \nthe related question, the question group, a description of the event, and its status (indicating whether the action is closed or open).\nAdditionally, can click an entry in the table to mark it as closed.",
+        "x": 1090,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "d3c84e7de45494de",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "Creating follow-up action",
+        "info": "Here, users can create a follow-up action. On the left side, they can view details \nfor which they want to create a follow-up action. On the right side, users can enter \na description for that specific follow-up action. After clicking on 'Log Event', \nthe data will be stored in the global context.",
+        "x": 1090,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "77242295ed3bf7bf",
+        "type": "ui-text-input",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "group": "b95b554e4f268469",
+        "name": "Describe",
+        "label": "Describe the non-conformance and actions required",
+        "order": 1,
+        "width": "6",
+        "height": "3",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "textarea",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": false,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 1060,
+        "y": 1480,
+        "wires": [
+            [
+                "ca5e9c2dfa6af534"
+            ]
+        ]
+    },
+    {
+        "id": "ca5e9c2dfa6af534",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.eventDesc",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1350,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f6e4c3da637adfed",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 1420,
+        "wires": [
+            [
+                "77242295ed3bf7bf"
+            ]
+        ]
+    },
+    {
+        "id": "9d342654afaefe19",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "fives.eventDesc",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "previousPage",
+                "pt": "msg",
+                "to": "fives.previousPage",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 1520,
+        "wires": [
+            [
+                "9fa33727e0118d56"
+            ]
+        ]
+    },
+    {
+        "id": "81b488a33359d3e9",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "change",
+        "x": 140,
+        "y": 1500,
+        "wires": [
+            [
+                "f1b3c9c997b5c07b"
+            ]
+        ]
+    },
+    {
+        "id": "f1b3c9c997b5c07b",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "change",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 1500,
+        "wires": [
+            [
+                "1687d2a8f9fce834"
+            ]
+        ]
+    },
+    {
+        "id": "d171242b0f397f7b",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "Page Changed",
+        "mode": "link",
+        "links": [
+            "bbb225885fafd520",
+            "1ca22d8eb4dddef3",
+            "c6d9dc26049c64ea",
+            "d622e1435b53b8a3",
+            "24f7a117920dfe9a"
+        ],
+        "x": 760,
+        "y": 1500,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "30399e5fb0fca68d",
+        "type": "template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "2ee26525a1428401",
+        "name": "Setup Questions",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    {\n        \"section\": \"Sort\",\n        \"question\": \"Is there unnecessary material lying around?\",\n        \"imageUrl\": \"https://i.ibb.co/6sfjHvt/Screenshot-176.png\"\n    },\n    {\n        \"section\": \"Sort\",\n        \"question\": \"Are workstations organized and clutter-free?\",\n        \"imageUrl\": \"https://i.ibb.co/ssr76d9/Screenshot-184.png\"\n    },\n    {\n        \"section\": \"Sort\",\n        \"question\": \"Are tools properly labeled and stored?\",\n        \"imageUrl\": \"https://i.ibb.co/v3pStX9/Screenshot-182.png\"\n    },\n    {\n        \"section\": \"Sort\",\n        \"question\": \"Are safety hazards promptly addressed?\",\n        \"imageUrl\": \"https://i.ibb.co/8sVkLSF/Screenshot-181.png\"\n    },\n    {\n        \"section\": \"Set in order\",\n        \"question\": \"Are cleaning schedules regularly followed?\",\n        \"imageUrl\": \"https://i.ibb.co/LhPdZg8/Screenshot-188.png\"\n    },\n    {\n        \"section\": \"Set in order\",\n        \"question\": \"Are all equipment and machinery well-maintained?\",\n        \"imageUrl\": \"https://i.ibb.co/HNwHjc0/Screenshot-183.png\"\n    },\n    {\n        \"section\": \"Set in order\",\n        \"question\": \"Is there a systematic arrangement for inventory?\",\n        \"imageUrl\": \"https://i.ibb.co/gjjTCW5/Screenshot-177.png\"\n    },\n    {\n        \"section\": \"Set in order\",\n        \"question\": \"Are employees trained in 5S principles?\",\n        \"imageUrl\": \"https://i.ibb.co/DLV8Wrr/Screenshot-185.png\"\n    },\n    {\n        \"section\": \"Set in order\",\n        \"question\": \"Is the workplace free of unnecessary documents?\",\n        \"imageUrl\": \"https://i.ibb.co/DzS5vPm/Screenshot-178.png\"\n    },\n    {\n        \"section\": \"Shine\",\n        \"question\": \"Are walkways clear of obstructions?\",\n        \"imageUrl\": \"https://i.ibb.co/9NxSbKJ/Screenshot-186.png\"\n    },\n    {\n        \"section\": \"Shine\",\n        \"question\": \"Are safety signs and labels clearly visible?\",\n        \"imageUrl\": \"https://i.ibb.co/2PChLpt/Screenshot-189.png\"\n    },\n    {\n        \"section\": \"Shine\",\n        \"question\": \"Are cleaning supplies adequately stocked?\",\n        \"imageUrl\": \"https://i.ibb.co/wzVZY4Y/Screenshot-191.png\"\n    },\n    {\n        \"section\": \"Shine\",\n        \"question\": \"Are shelves and storage areas well-organized?\",\n        \"imageUrl\": \"https://i.ibb.co/dm1JKWV/Screenshot-192.png\"\n    },\n    {\n        \"section\": \"Shine\",\n        \"question\": \"Is waste properly segregated for disposal?\",\n        \"imageUrl\": \"https://i.ibb.co/5xbHgJM/Screenshot-196.png\"\n    },\n    {\n        \"section\": \"Standardize\",\n        \"question\": \"Are work instructions easily accessible?\",\n        \"imageUrl\": \"https://i.ibb.co/XsJVxzk/Screenshot-193.png\"\n    },\n    {\n        \"section\": \"Standardize\",\n        \"question\": \"Are inspection and maintenance logs up-to-date?\",\n        \"imageUrl\": \"https://i.ibb.co/cCC5Kv2/Screenshot-194.png\"\n    },\n    {\n        \"section\": \"Standardize\",\n        \"question\": \"Is lighting adequate across all work areas?\",\n        \"imageUrl\": \"https://i.ibb.co/5xbHgJM/Screenshot-196.png\"\n    },\n    {\n        \"section\": \"Standardize\",\n        \"question\": \"Are fire exits and emergency routes clear?\",\n        \"imageUrl\": \"https://i.ibb.co/gjjTCW5/Screenshot-177.png\"\n    },\n    {\n        \"section\": \"Standardize\",\n        \"question\": \"Are personal protective equipment (PPE) available?\",\n        \"imageUrl\": \"https://i.ibb.co/5xbHgJM/Screenshot-196.png\"\n    },\n    {\n        \"section\": \"Standardize\",\n        \"question\": \"Are spills and leaks promptly addressed?\",\n        \"imageUrl\": \"https://i.ibb.co/pwRK7qw/Screenshot-201.png\"\n    },\n    {\n        \"section\": \"Sustain\",\n        \"question\": \"Are tools and equipment inspected regularly?\",\n        \"imageUrl\": \"https://i.ibb.co/0FT3Lqx/Screenshot-195.png\"\n    },\n    {\n        \"section\": \"Sustain\",\n        \"question\": \"Is the workspace optimized for efficiency?\",\n        \"imageUrl\": \"https://i.ibb.co/DLV8Wrr/Screenshot-185.png\"\n    },\n    {\n        \"section\": \"Sustain\",\n        \"question\": \"Are employees actively engaged in 5S practices?\",\n        \"imageUrl\": \"https://i.ibb.co/2PChLpt/Screenshot-189.png\"\n    },\n    {\n        \"section\": \"Sustain\",\n        \"question\": \"Are non-essential items removed from workspaces?\",\n        \"imageUrl\": \"https://i.ibb.co/DzS5vPm/Screenshot-178.png\"\n    },\n    {\n        \"section\": \"Sustain\",\n        \"question\": \"Is there continuous improvement in 5S implementation?\",\n        \"imageUrl\": \"https://i.ibb.co/pwRK7qw/Screenshot-201.png\"\n    }\n]\n",
+        "output": "json",
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "a27c0a728f2095a4"
+            ]
+        ]
+    },
+    {
+        "id": "a27c0a728f2095a4",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "2ee26525a1428401",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.questions",
+                "pt": "global",
+                "to": "null",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "fives.questions",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "init",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 200,
+        "wires": [
+            [
+                "a995590afa23ef70"
+            ]
+        ]
+    },
+    {
+        "id": "0f49943d46c0a377",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "group": "f8130b57e2f7f61f",
+        "page": "",
+        "ui": "",
+        "name": "Update Section stepper",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div>\n      <v-stepper v-if=\"msg?.sections\" :model-value=\"msg?.currentSection?.index + 1 || 1\" class=\"stepper\">\n        <v-stepper-header>\n          <template v-for=\"(section, i) in msg.sections || []\">\n            <v-divider v-if=\"section.index > 0\"></v-divider>\n            <v-stepper-item\n              :title=\"section.name || `Section ${section.index}`\"\n              :class=\"section.complete ? green : ''\"\n              :value=\"section.index + 1\"\n              :complete=\"!!section.complete\"            >\n            </v-stepper-item>\n          </template>\n        </v-stepper-header>\n      </v-stepper>\n    </div>\n</template>\n\n\n<script>\n    export default {\n        data() {\n            return {\n                count: 0\n            }\n        }\n    }\n</script>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "stepper ",
+        "x": 1510,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac6c60be2d06d4a2",
+        "type": "template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "2ee26525a1428401",
+        "name": "Setup Locations",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n  {\n      \"value\": \"Inspection dept\",\n      \"label\": \"Inspection dept\"\n  },\n  {\n      \"value\": \"Machine shop\",\n      \"label\": \"Machine shop\"\n  }\n]",
+        "output": "json",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "19394866c27da198"
+            ]
+        ]
+    },
+    {
+        "id": "19394866c27da198",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "2ee26525a1428401",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.locations",
+                "pt": "global",
+                "to": "null",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "fives.locations",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 160,
+        "wires": [
+            [
+                "30399e5fb0fca68d"
+            ]
+        ]
+    },
+    {
+        "id": "7df54c71e0f50cdc",
+        "type": "ui-dropdown",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "483d8aa48dd9f63c",
+        "name": "Location dropdown",
+        "label": "Select Location:",
+        "tooltip": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": false,
+        "msgTrigger": "onChange",
+        "x": 170,
+        "y": 660,
+        "wires": [
+            [
+                "c4984596a74cf81c"
+            ]
+        ]
+    },
+    {
+        "id": "bbb225885fafd520",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "Page Changed",
+        "links": [
+            "d171242b0f397f7b"
+        ],
+        "x": 520,
+        "y": 1560,
+        "wires": [
+            [
+                "a2fedd64f606978d"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "c68a04d19f8fa9de",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Go Home",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Home",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1660,
+        "y": 620,
+        "wires": [
+            [
+                "3e44f7e2f0641ce4"
+            ]
+        ]
+    },
+    {
+        "id": "7c318f0425b1cfef",
+        "type": "ui-text-input",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "group": "c796e507fd11e80b",
+        "name": "",
+        "label": "User Name",
+        "order": 1,
+        "width": "6",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": true,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 350,
+        "y": 740,
+        "wires": [
+            [
+                "a58992010e62245d"
+            ]
+        ]
+    },
+    {
+        "id": "ed351158e369d62a",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "group": "c796e507fd11e80b",
+        "name": "",
+        "label": "Continue",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 160,
+        "y": 820,
+        "wires": [
+            [
+                "1e0c7084217cfbe8"
+            ]
+        ]
+    },
+    {
+        "id": "f624a203d5b7f5e5",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "group": "c796e507fd11e80b",
+        "name": "",
+        "label": "Cancel",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "white",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"groups\":{\"hide\":[\"New Audit\"]}}",
+        "payloadType": "json",
+        "topic": "cancel",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 160,
+        "y": 780,
+        "wires": [
+            [
+                "cbfa4c84e8566313"
+            ]
+        ]
+    },
+    {
+        "id": "a58992010e62245d",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.newInspector",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbfa4c84e8566313",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "fives.newInspector",
+                "pt": "global"
+            },
+            {
+                "t": "delete",
+                "p": "fives.newLocation",
+                "pt": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"groups\":{\"hide\":[{\"page\":\"Home\",\"group\":\"New Audit\"}]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 780,
+        "wires": [
+            [
+                "3d5c136674c68be9"
+            ]
+        ]
+    },
+    {
+        "id": "1e838fe88fe7f726",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.currentInspector",
+                "pt": "global",
+                "to": "fives.newInspector",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "fives.currentLocation",
+                "pt": "global",
+                "to": "fives.newLocation",
+                "tot": "global"
+            },
+            {
+                "t": "delete",
+                "p": "fives.newInspector",
+                "pt": "global"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "NewAudit",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Audit",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 820,
+        "wires": [
+            [
+                "50e48c8bb4709ac5",
+                "3d5c136674c68be9"
+            ]
+        ]
+    },
+    {
+        "id": "50e48c8bb4709ac5",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "New Audit",
+        "mode": "link",
+        "links": [
+            "b2b046337906e245"
+        ],
+        "x": 700,
+        "y": 820,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "d113f1b49e09d3e4",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "ui control",
+        "ui": "25f447d87d1ce5c9",
+        "events": "all",
+        "x": 800,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cda375c2c8adb964",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "ui control",
+        "ui": "25f447d87d1ce5c9",
+        "events": "connect",
+        "x": 700,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2fedd64f606978d",
+        "type": "debug",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "ui-control msg",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "ccd4e16f9de6c077",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Dashboard Page?",
+        "property": "fives.currentPage",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Dashboard",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 255,
+        "y": 1060,
+        "wires": [
+            [
+                "a870dbc9d9c7811f",
+                "4a01baaa93d0ba73",
+                "17b844dfb4b932b4"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1ca22d8eb4dddef3",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Page Changed",
+        "links": [
+            "d171242b0f397f7b"
+        ],
+        "x": 140,
+        "y": 1060,
+        "wires": [
+            [
+                "ccd4e16f9de6c077"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "a870dbc9d9c7811f",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "Average by section",
+        "func": "let results = global.get('fives.results', 'persistent') || []\nconst TOP_SCORE = 5\n\nconst sections = results.map((e, i) => {\n    const location = e.location\n    const sections = e.sections?.map(s => {\n        return {\n            location,\n            section: s.name,\n            score: s.answerTotal / s.questionCount\n        }\n    }) || []\n    return sections\n})\n\nconst flat = sections.flat()\nconst grouped = {}\n\nflat.forEach(item => {\n    const { location, section, score } = item\n    const key = `${location}-${section}`\n    if (!grouped[key]) {\n        grouped[key] = { location, section, totalScore: 0, count: 0 }\n    }\n    grouped[key].totalScore += score\n    grouped[key].count += 1\n})\n\nconst averaged = Object.values(grouped).map(group => {\n    return {\n        location: group.location,\n        section: group.section,\n        score: (((group.totalScore / group.count) / TOP_SCORE) * 100)\n    }\n})\n\nmsg.payload = averaged\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1060,
+        "wires": [
+            [
+                "3dc8ff2df0c0d663"
+            ]
+        ]
+    },
+    {
+        "id": "3dc8ff2df0c0d663",
+        "type": "ui-chart",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "group": "44e723a1c7f6a8b9",
+        "name": "Bar Chart",
+        "label": "",
+        "order": 1,
+        "chartType": "bar",
+        "category": "location",
+        "categoryType": "property",
+        "xAxisLabel": "",
+        "xAxisProperty": "section",
+        "xAxisPropertyType": "property",
+        "xAxisType": "category",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "%",
+        "yAxisProperty": "score",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": "",
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#37b067",
+            "#edb40e",
+            "#527ce0",
+            "#e26060",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "12",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 700,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "986a4a7fdb628dac",
+        "type": "ui-notification",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "ui": "25f447d87d1ce5c9",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "error",
+        "name": "",
+        "x": 1770,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6d9dc26049c64ea",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "Page Changed",
+        "links": [
+            "d171242b0f397f7b"
+        ],
+        "x": 1060,
+        "y": 1380,
+        "wires": [
+            [
+                "e8294daa6246f404"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "66eec4f3e7dc2afe",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "setup payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.location",
+                "pt": "msg",
+                "to": "fives.currentLocation",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.section",
+                "pt": "msg",
+                "to": "fives.currentSection.name",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.question",
+                "pt": "msg",
+                "to": "fives.currentQuestion.question",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 1380,
+        "wires": [
+            [
+                "b51cf4c91eb01ecb"
+            ]
+        ]
+    },
+    {
+        "id": "e8294daa6246f404",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4af97a279e03c7c5",
+        "name": "Current Page?",
+        "property": "fives.currentPage",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Event",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1195,
+        "y": 1380,
+        "wires": [
+            [
+                "66eec4f3e7dc2afe",
+                "f6e4c3da637adfed"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "bbf72626dd659271",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "group": "c82276a84966f7da",
+        "name": "",
+        "label": "Complete",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "mdi-briefcase-check-outline",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1080,
+        "y": 960,
+        "wires": [
+            [
+                "806fb5ad3575deda"
+            ]
+        ]
+    },
+    {
+        "id": "bd1e30836ab9c049",
+        "type": "ui-text-input",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "group": "c82276a84966f7da",
+        "name": "User",
+        "label": "User Name",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": true,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 1330,
+        "y": 1080,
+        "wires": [
+            [
+                "bc0c37fd43fb911e"
+            ]
+        ]
+    },
+    {
+        "id": "f9d594868dcad591",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "group": "c82276a84966f7da",
+        "name": "",
+        "label": "Cancel",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "mdi-close-circle-outline",
+        "iconPosition": "left",
+        "payload": "Audit",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1080,
+        "y": 1040,
+        "wires": [
+            [
+                "1c80217ce738b1d5"
+            ]
+        ]
+    },
+    {
+        "id": "bc0c37fd43fb911e",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "name": "update actionReviewer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.actionReviewer",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1520,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47ea5eeae24c77a5",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"groups\":{\"hide\":[{\"page\":\"Follow-ups\",\"group\":\"Close Action\"}]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 980,
+        "wires": [
+            [
+                "9374e5dcc743bd11"
+            ]
+        ]
+    },
+    {
+        "id": "a2d2f889b70e4bac",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.selectedEvent",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"groups\":{\"show\":[{\"page\":\"Follow-ups\",\"group\":\"Close Action\"}]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1600,
+        "y": 880,
+        "wires": [
+            [
+                "9374e5dcc743bd11"
+            ]
+        ]
+    },
+    {
+        "id": "806fb5ad3575deda",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "name": "closedAction",
+        "func": "const events = global.get('fives.followUps', 'persistent') || []\nconst reviewer = global.get('fives.actionReviewer') || ''\nconst selectedEvent = global.get('fives.selectedEvent') || ''\n\nif (!reviewer) {\n    return [null, { payload: \"Please enter a User Name\" }]\n}\nif (!selectedEvent) {\n    return [null, { payload: \"Please select an Event\" }]\n}\n\nlet id = +selectedEvent.id\n\nlet event = events.find(event => event.id === id)\nif (event) {\n    event.status = \"closed\"\n    event.closedBy = reviewer\n    event.closedOn = Date.now()\n}\nnode.warn({ _: \"event review\", event, events });\n\nglobal.set('fives.followUps', events, 'persistent')\n\nreturn msg;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 960,
+        "wires": [
+            [
+                "47ea5eeae24c77a5",
+                "6796ccf57dc7316d"
+            ],
+            [
+                "166efc6e2fa6d961"
+            ]
+        ]
+    },
+    {
+        "id": "166efc6e2fa6d961",
+        "type": "ui-notification",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "ui": "25f447d87d1ce5c9",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "error",
+        "name": "",
+        "x": 1290,
+        "y": 1006,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50f9900345bdfbb4",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "is open?",
+        "property": "payload.Status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "🔓",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1440,
+        "y": 880,
+        "wires": [
+            [
+                "a2d2f889b70e4bac"
+            ]
+        ]
+    },
+    {
+        "id": "253e43713d8befbc",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "group": "48b101b73a6aff92",
+        "name": "",
+        "label": "Home",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "previous",
+        "icon": "home",
+        "iconPosition": "left",
+        "payload": "Home",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 1050,
+        "y": 1220,
+        "wires": [
+            [
+                "71542098250e042b"
+            ]
+        ]
+    },
+    {
+        "id": "527b2891ef863598",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "Hide Audit",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"pages\":{\"hide\":[{\"page\":\"Audit\"}]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1490,
+        "y": 580,
+        "wires": [
+            [
+                "6d01e11cdf18b927",
+                "3e44f7e2f0641ce4"
+            ]
+        ]
+    },
+    {
+        "id": "6d01e11cdf18b927",
+        "type": "delay",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1555,
+        "y": 620,
+        "wires": [
+            [
+                "c68a04d19f8fa9de"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "40e2672cf292e7d3",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Get location summary",
+        "func": "let results = global.get('fives.results') || global.get('fives.results', 'persistent') || []\nlet currentLocation = global.get('fives.currentLocation') || global.get('fives.newLocation')\nif (msg.topic === 'change-location' && msg.payload) {\n    currentLocation = msg.payload\n}\nlet filteredResults = results.filter(e => e.location == currentLocation)\nlet lastResult = filteredResults.slice(-1)[0]\n\nlet events = global.get('fives.followUps') || global.get('fives.followUps', 'persistent') || []\nconst locationEvents = events.filter(item => item.location == currentLocation)\nconst openEvents = locationEvents.filter(e => e.status === \"open\")\n\nmsg.payload = {}\nmsg.payload.lastAuditDate = lastResult?.datetime || null\nmsg.payload.lastAuditScore = ((lastResult?.score || 0) / 5) * 100\nmsg.payload.auditCount = filteredResults.length\nmsg.payload.openEvents = openEvents.length\nmsg.payload.closedEvents = locationEvents.length - openEvents.length\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "b4c5402d79ec77dc"
+            ]
+        ]
+    },
+    {
+        "id": "d622e1435b53b8a3",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Page/Location Changed",
+        "links": [
+            "7c377f13ba85744c",
+            "d171242b0f397f7b"
+        ],
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "d5e3ca79ea514130"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "d5e3ca79ea514130",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "Current Page?",
+        "property": "fives.currentPage",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Home",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 315,
+        "y": 400,
+        "wires": [
+            [
+                "40e2672cf292e7d3",
+                "85a216738dc62d50"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "24f7a117920dfe9a",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Page Changed",
+        "links": [
+            "d171242b0f397f7b"
+        ],
+        "x": 1100,
+        "y": 860,
+        "wires": [
+            [
+                "6796ccf57dc7316d"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "6796ccf57dc7316d",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "Current Page?",
+        "property": "fives.currentPage",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Follow-ups",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1235,
+        "y": 860,
+        "wires": [
+            [
+                "0f161b28f0df2abc",
+                "b122b64927286005"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "c4984596a74cf81c",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "change-location",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "fives.newLocation",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 660,
+        "wires": [
+            [
+                "7c377f13ba85744c"
+            ]
+        ]
+    },
+    {
+        "id": "7c377f13ba85744c",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "d622e1435b53b8a3"
+        ],
+        "x": 775,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "9c90b19ed79e85c4",
+        "type": "ui-button",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "group": "9139adec501ea015",
+        "name": "",
+        "label": "Follow ups",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "follow-up",
+        "icon": "mdi-briefcase-eye-outline",
+        "iconPosition": "left",
+        "payload": "Follow-ups",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 150,
+        "y": 500,
+        "wires": [
+            [
+                "e15fef4cf4c7097c"
+            ]
+        ]
+    },
+    {
+        "id": "9ba61e885b69968c",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "fives.previousPage",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "previousPage",
+                "pt": "msg",
+                "to": "fives.previousPage",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload ? payload : \"Home\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 1180,
+        "wires": [
+            [
+                "b6b5b0e1d7164141"
+            ]
+        ]
+    },
+    {
+        "id": "f277e91fc6162faa",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "b62760e9ebbef0e6",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "init",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "77e797ad86cad8e4"
+            ]
+        ]
+    },
+    {
+        "id": "a995590afa23ef70",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "2ee26525a1428401",
+        "name": "init",
+        "mode": "link",
+        "links": [
+            "c5750ef45c271583",
+            "1e783b976181d299"
+        ],
+        "x": 970,
+        "y": 180,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "2694c30cc1f9ab2a",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "2ee26525a1428401",
+        "name": "setup",
+        "links": [
+            "77e797ad86cad8e4"
+        ],
+        "x": 370,
+        "y": 180,
+        "wires": [
+            [
+                "ac6c60be2d06d4a2"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "09746462ab489027",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "locations",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "fives.locations[0].value",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "fives.locations",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 600,
+        "wires": [
+            [
+                "7df54c71e0f50cdc"
+            ]
+        ]
+    },
+    {
+        "id": "25a9600ad9471707",
+        "type": "ui-notification",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "ui": "25f447d87d1ce5c9",
+        "position": "center center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "error",
+        "name": "",
+        "x": 670,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e0c7084217cfbe8",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "",
+        "property": "fives.newInspector",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 275,
+        "y": 820,
+        "wires": [
+            [
+                "1e838fe88fe7f726"
+            ],
+            [
+                "42cc57114c9f860c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "42cc57114c9f860c",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Please enter a valid Name",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 860,
+        "wires": [
+            [
+                "25a9600ad9471707"
+            ]
+        ]
+    },
+    {
+        "id": "dd41f142946f9953",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "217462c1328dfa02",
+        "group": "",
+        "page": "",
+        "ui": "25f447d87d1ce5c9",
+        "name": "client locale",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>  \n  <div class=\"d-none\"> \n  </div> \n</template>\n\n<script>\n    /* This control is for sending the users local to serverside for date/time formatting */\n    export default {\n        mounted () {\n            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone\n            const userLocale = navigator.language; // e.g., \"en-US\", \"es-ES\"\n            const userLocales = navigator.languages; // e.g., [\"en-US\", \"en\", \"es-ES\"]\n            this.send({topic:'locale', payload: {\n                userLocale,\n                userLocales,\n                tz\n            }})\n        }\n    }\n</script>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "d-none",
+        "x": 1510,
+        "y": 180,
+        "wires": [
+            [
+                "e0f587bdcf904c1d"
+            ]
+        ]
+    },
+    {
+        "id": "e0f587bdcf904c1d",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "217462c1328dfa02",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.locale",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1720,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcb0118f06bd2b84",
+        "type": "ui-template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "4c04b5e097878ae8",
+        "group": "",
+        "page": "",
+        "ui": "25f447d87d1ce5c9",
+        "name": "CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "\n.nrdb-ui-group.follow-up-group .nrdb-ui-widget.nrdb-ui-table table > tbody > tr > td:nth-child(1), \n.nrdb-ui-group.follow-up-group .nrdb-ui-widget.nrdb-ui-table table > thead > tr > th:nth-child(1) {\n    display: none;\n}\n\ndiv.v-card {\n  height: 100%;\n}\n\n/* Button styles within dashboard button */\n.dashboard-btn .v-btn {\n    background: rgb(232, 240, 250);\n    color: rgb(101, 144, 221);\n}\n\n/* Button styles within new audit button */\n.new-audit .v-btn {\n    background: rgb(34, 159, 32);\n    color: white;\n}\n\n/* Button styles within previous button */\n.previous .v-btn {\n    background: rgb(232, 240, 250);\n    color: rgb(101, 144, 221);\n}\n\n/* Button styles within follow-up button */\n.follow-up .v-btn {\n    background: rgb(188, 0, 12);\n    color: white;\n}\n\n/* Button styles within next button */\n.next .v-btn {\n    background: rgb(36, 104, 220);\n    color: white;\n}\n\n/* Button styles within log event button */\n.log-event .v-btn {\n    background: rgb(188, 0, 12);\n    color: white;\n}\n\n/* Styles for detail text */\n.detail-text {\n    font-weight: 500;\n}\n\n/* Styles for stepper */\n.stepper {\n    /* position: absolute;\n    top: 0;\n    padding-bottom: 10px;\n    left: 80px;\n    width: 700px; */\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n}\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 1170,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f478402a354852d5",
+        "type": "comment",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "Page change",
+        "info": "Here we capture the page change events and store them in current and previous variables.\nThis is to condition updates and provide a way to go \"back\" to the previous page using\nui-control",
+        "x": 130,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "b122b64927286005",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "eff25d98eece7970",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "70422e7a6f4abbd1"
+        ],
+        "x": 1315,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "70422e7a6f4abbd1",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "name": "link in 1",
+        "links": [
+            "b122b64927286005"
+        ],
+        "x": 1035,
+        "y": 1080,
+        "wires": [
+            [
+                "117bd619f35b6185"
+            ]
+        ]
+    },
+    {
+        "id": "117bd619f35b6185",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1d29d201a7504fb0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "fives.actionReviewer",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload ? payload : \"\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1160,
+        "y": 1080,
+        "wires": [
+            [
+                "bd1e30836ab9c049"
+            ]
+        ]
+    },
+    {
+        "id": "85a216738dc62d50",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "0b8598c47f712c8e",
+            "456d70880f511bd9"
+        ],
+        "x": 415,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "0b8598c47f712c8e",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "link in 2",
+        "links": [
+            "85a216738dc62d50"
+        ],
+        "x": 115,
+        "y": 740,
+        "wires": [
+            [
+                "f4cb796190d54016"
+            ]
+        ]
+    },
+    {
+        "id": "f4cb796190d54016",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "28063764f4dc54ed",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "fives.newInspector",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload ? payload : \"\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 215,
+        "y": 740,
+        "wires": [
+            [
+                "7c318f0425b1cfef"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "456d70880f511bd9",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "link in 3",
+        "links": [
+            "85a216738dc62d50"
+        ],
+        "x": 95,
+        "y": 600,
+        "wires": [
+            [
+                "650812bb62c24cce"
+            ]
+        ]
+    },
+    {
+        "id": "3ba114c9aff7a978",
+        "type": "template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "939b1007fa123315",
+        "name": "Setup Questions",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "[\n    {\n        \"section\": \"Sort\",\n        \"question\": \"Is there unnecessary material lying around?\",\n        \"imageUrl\": \"https://i.ibb.co/6sfjHvt/Screenshot-176.png\"\n    },\n    {\n        \"section\": \"Set in order\",\n        \"question\": \"Is the workplace free of unnecessary documents?\",\n        \"imageUrl\": \"https://i.ibb.co/DzS5vPm/Screenshot-178.png\"\n    },\n    {\n        \"section\": \"Shine\",\n        \"question\": \"Are walkways clear of obstructions?\",\n        \"imageUrl\": \"https://i.ibb.co/9NxSbKJ/Screenshot-186.png\"\n    },\n    {\n        \"section\": \"Standardize\",\n        \"question\": \"Are personal protective equipment (PPE) available?\",\n        \"imageUrl\": \"https://i.ibb.co/5xbHgJM/Screenshot-196.png\"\n    },\n    {\n        \"section\": \"Sustain\",\n        \"question\": \"Is there continuous improvement in 5S implementation?\",\n        \"imageUrl\": \"https://i.ibb.co/pwRK7qw/Screenshot-201.png\"\n    }\n]\n",
+        "output": "json",
+        "x": 350,
+        "y": 1680,
+        "wires": [
+            [
+                "f74b8a578f92ce29"
+            ]
+        ]
+    },
+    {
+        "id": "f74b8a578f92ce29",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "939b1007fa123315",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.questions",
+                "pt": "global",
+                "to": "null",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "fives.questions",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7de08a4235ecba10",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "939b1007fa123315",
+        "name": "small quiz",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1680,
+        "wires": [
+            [
+                "3ba114c9aff7a978"
+            ]
+        ]
+    },
+    {
+        "id": "374722fe77089176",
+        "type": "template",
+        "z": "d4aa6dd5b63a56de",
+        "g": "939b1007fa123315",
+        "name": "Dummy Data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"followUps\": [\n        {\n            \"id\": 0,\n            \"createdOn\": 1753091820515,\n            \"createdBy\": \"Steve\",\n            \"location\": \"Inspection dept\",\n            \"section\": \"Sort\",\n            \"question\": \"Are tools properly labeled and stored?\",\n            \"followUp\": \"3 missing labels\",\n            \"closedOn\": 1753092304020,\n            \"closedBy\": \"Gerry\",\n            \"status\": \"closed\"\n        },\n        {\n            \"id\": 1,\n            \"createdOn\": 1753091856754,\n            \"createdBy\": \"Steve\",\n            \"location\": \"Inspection dept\",\n            \"section\": \"Set in order\",\n            \"question\": \"Are employees trained in 5S principles?\",\n            \"followUp\": \"2 new starters not had training\",\n            \"closedOn\": null,\n            \"closedBy\": \"\",\n            \"status\": \"open\"\n        },\n        {\n            \"id\": 2,\n            \"createdOn\": 1753091902390,\n            \"createdBy\": \"Steve\",\n            \"location\": \"Inspection dept\",\n            \"section\": \"Shine\",\n            \"question\": \"Is waste properly segregated for disposal?\",\n            \"followUp\": \"Swarf in recycle bin\",\n            \"closedOn\": null,\n            \"closedBy\": \"\",\n            \"status\": \"open\"\n        },\n        {\n            \"id\": 3,\n            \"createdOn\": 1753091973572,\n            \"createdBy\": \"Steve\",\n            \"location\": \"Inspection dept\",\n            \"section\": \"Standardize\",\n            \"question\": \"Is lighting adequate across all work areas?\",\n            \"followUp\": \"1 light over workbench broken\",\n            \"closedOn\": null,\n            \"closedBy\": \"\",\n            \"status\": \"open\"\n        },\n        {\n            \"id\": 4,\n            \"createdOn\": 1753092145112,\n            \"createdBy\": \"Ted\",\n            \"location\": \"Machine shop\",\n            \"section\": \"Set in order\",\n            \"question\": \"Is the workplace free of unnecessary documents?\",\n            \"followUp\": \"Drawings left out at EOS\",\n            \"closedOn\": null,\n            \"closedBy\": \"\",\n            \"status\": \"open\"\n        },\n        {\n            \"id\": 5,\n            \"createdOn\": 1753092192275,\n            \"createdBy\": \"Ted\",\n            \"location\": \"Machine shop\",\n            \"section\": \"Shine\",\n            \"question\": \"Are walkways clear of obstructions?\",\n            \"followUp\": \"Trip hazard: Empty Palettes left on walkway!\",\n            \"closedOn\": null,\n            \"closedBy\": \"\",\n            \"status\": \"open\"\n        },\n        {\n            \"id\": 6,\n            \"createdOn\": 1753092236455,\n            \"createdBy\": \"Ted\",\n            \"location\": \"Machine shop\",\n            \"section\": \"Standardize\",\n            \"question\": \"Are personal protective equipment (PPE) available?\",\n            \"followUp\": \"No ear plugs in cupboard\",\n            \"closedOn\": null,\n            \"closedBy\": \"\",\n            \"status\": \"open\"\n        }\n    ],\n    \"results\": [\n        {\n            \"datetime\": 1753092022901,\n            \"inspector\": \"Steve\",\n            \"location\": \"Inspection dept\",\n            \"questionsRemaining\": 0,\n            \"questionsAnswered\": 25,\n            \"totalQuestions\": 25,\n            \"totalScore\": 92,\n            \"score\": 3.68,\n            \"sections\": [\n                {\n                    \"index\": 0,\n                    \"name\": \"Sort\",\n                    \"answerTotal\": 13,\n                    \"answerCount\": 4,\n                    \"questionCount\": 4,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 1,\n                    \"name\": \"Set in order\",\n                    \"answerTotal\": 18,\n                    \"answerCount\": 5,\n                    \"questionCount\": 5,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 2,\n                    \"name\": \"Shine\",\n                    \"answerTotal\": 19,\n                    \"answerCount\": 5,\n                    \"questionCount\": 5,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 3,\n                    \"name\": \"Standardize\",\n                    \"answerTotal\": 23,\n                    \"answerCount\": 6,\n                    \"questionCount\": 6,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 4,\n                    \"name\": \"Sustain\",\n                    \"answerTotal\": 19,\n                    \"answerCount\": 5,\n                    \"questionCount\": 5,\n                    \"complete\": true\n                }\n            ],\n            \"complete\": true\n        },\n        {\n            \"datetime\": 1753092268430,\n            \"inspector\": \"Ted\",\n            \"location\": \"Machine shop\",\n            \"questionsRemaining\": 0,\n            \"questionsAnswered\": 25,\n            \"totalQuestions\": 25,\n            \"totalScore\": 96,\n            \"score\": 3.84,\n            \"sections\": [\n                {\n                    \"index\": 0,\n                    \"name\": \"Sort\",\n                    \"answerTotal\": 18,\n                    \"answerCount\": 4,\n                    \"questionCount\": 4,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 1,\n                    \"name\": \"Set in order\",\n                    \"answerTotal\": 17,\n                    \"answerCount\": 5,\n                    \"questionCount\": 5,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 2,\n                    \"name\": \"Shine\",\n                    \"answerTotal\": 17,\n                    \"answerCount\": 5,\n                    \"questionCount\": 5,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 3,\n                    \"name\": \"Standardize\",\n                    \"answerTotal\": 23,\n                    \"answerCount\": 6,\n                    \"questionCount\": 6,\n                    \"complete\": true\n                },\n                {\n                    \"index\": 4,\n                    \"name\": \"Sustain\",\n                    \"answerTotal\": 21,\n                    \"answerCount\": 5,\n                    \"questionCount\": 5,\n                    \"complete\": true\n                }\n            ],\n            \"complete\": true\n        }\n    ]\n}",
+        "output": "json",
+        "x": 330,
+        "y": 1720,
+        "wires": [
+            [
+                "ed87adfbc03e28af"
+            ]
+        ]
+    },
+    {
+        "id": "ed87adfbc03e28af",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "939b1007fa123315",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(persistent)::fives",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e160485d80866ebd",
+        "type": "inject",
+        "z": "d4aa6dd5b63a56de",
+        "g": "939b1007fa123315",
+        "name": "dummy data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1720,
+        "wires": [
+            [
+                "374722fe77089176"
+            ]
+        ]
+    },
+    {
+        "id": "1687d2a8f9fce834",
+        "type": "function",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "Update page memory",
+        "func": "\nconst asyncGlobalGet = (name, store = \"memory\") => {\n    return new Promise((resolve, reject) => {\n        global.get(name, store, (err, result) => {\n            if (err) {\n                node.warn(err);\n                return reject(err)\n            }\n            resolve(result)\n        })\n    })\n}\n\nconst asyncGlobalSet = (name, value, store = \"memory\") => {\n    return new Promise((resolve, reject) => {\n        global.set(name, value, store, (err) => {\n            if (err) {\n                node.warn(err);\n                return reject(err)\n            }\n            resolve()\n        })\n    })\n}\n\nlet newCurrentPage = msg.name\nlet currentPage = await asyncGlobalGet(\"fives.currentPage\")\n// node.warn({_:\"Read fives.currentPage from context\", currentPage});\n\nawait asyncGlobalSet('fives.currentPage', newCurrentPage)\n// node.warn({_:\"Set fives.currentPage in context\", newCurrentPage});\nawait asyncGlobalSet('fives.previousPage', currentPage)\n// node.warn({_:\"Set fives.previousPage in context\", currentPage});\n\nmsg.previousPage = await asyncGlobalGet(\"fives.previousPage\")\n// node.warn(\"Read fives.previousPage back from context : \" + msg.previousPage);\nmsg.currentPage = await asyncGlobalGet(\"fives.currentPage\")\n// node.warn(\"Read fives.currentPage back from context : \" + msg.currentPage);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1500,
+        "wires": [
+            [
+                "d171242b0f397f7b"
+            ]
+        ]
+    },
+    {
+        "id": "77e797ad86cad8e4",
+        "type": "link out",
+        "z": "d4aa6dd5b63a56de",
+        "g": "b62760e9ebbef0e6",
+        "name": "Initial Setup",
+        "mode": "link",
+        "links": [
+            "2694c30cc1f9ab2a"
+        ],
+        "x": 150,
+        "y": 180,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "c5750ef45c271583",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "init",
+        "links": [
+            "a995590afa23ef70"
+        ],
+        "x": 130,
+        "y": 1560,
+        "wires": [
+            [
+                "aa681d9d1dee0c05"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "00ea07fe0f83e57e",
+        "type": "ui-control",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "",
+        "ui": "25f447d87d1ce5c9",
+        "events": "change",
+        "x": 320,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa681d9d1dee0c05",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0d092c145297790a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Home",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 215,
+        "y": 1560,
+        "wires": [
+            [
+                "00ea07fe0f83e57e"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1e783b976181d299",
+        "type": "link in",
+        "z": "d4aa6dd5b63a56de",
+        "g": "350691ea509b4ec6",
+        "name": "init",
+        "links": [
+            "a995590afa23ef70"
+        ],
+        "x": 1050,
+        "y": 640,
+        "wires": [
+            [
+                "527b2891ef863598"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "17b844dfb4b932b4",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "1fc9f093d1c94152",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "fives.currentLocation",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "alt",
+                "pt": "msg",
+                "to": "fives.newLocation",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "first",
+                "pt": "msg",
+                "to": "fives.locations[0].value",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload ? payload : first",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload ? payload : alt",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "options",
+                "pt": "msg",
+                "to": "fives.locations",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 315,
+        "y": 1160,
+        "wires": [
+            [
+                "ad011f9f8b8ed61e"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1296d4df9e06320f",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "",
+        "property": "fives.newLocation",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 245,
+        "y": 540,
+        "wires": [
+            [
+                "1bd8581f932d520f"
+            ],
+            [
+                "188b71e40be0152d"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1bd8581f932d520f",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fives.currentLocation",
+                "pt": "global",
+                "to": "fives.locations[0].value",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 520,
+        "wires": [
+            [
+                "188b71e40be0152d"
+            ]
+        ]
+    },
+    {
+        "id": "188b71e40be0152d",
+        "type": "change",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"groups\":{\"show\":[{\"page\":\"Home\",\"group\":\"New Audit\"}]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "3a8f0bda6428ed87"
+            ]
+        ]
+    },
+    {
+        "id": "650812bb62c24cce",
+        "type": "switch",
+        "z": "d4aa6dd5b63a56de",
+        "g": "0256c6eb48109c11",
+        "name": "",
+        "property": "fives.newLocation",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 245,
+        "y": 600,
+        "wires": [
+            [
+                "09746462ab489027"
+            ]
+        ],
+        "l": false
+    }
+]

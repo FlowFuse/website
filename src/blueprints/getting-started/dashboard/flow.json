@@ -1,0 +1,1107 @@
+[
+    {
+        "id": "49ea6c31024abae6",
+        "type": "ui-markdown",
+        "z": "362339b58db270ed",
+        "group": "d3eba34004118e4b",
+        "name": "Welcome Page",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "# Dashboard Blueprint\n\nHere you'll find a\ncollection of small examples to get you up and\nrunning with your own Dashboard journey on FlowFuse.\n\nEach example is available to use on their respective pages,\nwhich you can navigate to in the left-side menu, or\nby clicking the items below:\n\n## Setup\n\nIn order to show the logged in user, you should enable the \"FlowFuse User Authentication\" setting on your Instance. \n\nTo do this, in FlowFuse, navigate to your Instance > Settings > Security. Then select \"FlowFuse User Authentication\".\n\n## Examples\n\n### [Audit Log](/dashboard/audit-log)\n\nTrack users that visit your Dashboard, and the pages that they view.\n\n### [Data Entry](/dashboard/data-entry)\n\nA simple form that adds data to a Table. The table is cofnigured with manual columns to show progress bars and boolean data as a tick or cross.\n\n### [Data Visualisation](/dashboard/data-visualisation)\n\nA small collection of charts and gauges that are linked to interactive sliders so that you can quickly see how visualisation within Dashboard operates.",
+        "className": "",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac7ff81a46f3b807",
+        "type": "comment",
+        "z": "362339b58db270ed",
+        "name": "To open the Dashboard - Open the \"Dashboard 2.0\" sidebar, and click \"Open Dashboard\"",
+        "info": "",
+        "x": 390,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "3b7f8fca28eaed2e",
+        "type": "group",
+        "z": "362339b58db270ed",
+        "name": "Data Visualisation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "f6e25260e8a7ceac",
+            "f9a4bac49736f02f",
+            "9807df136e2bd2f5",
+            "013e468f9520c0d6",
+            "2e86d7153f8ba295",
+            "f5e9d46097c644b1",
+            "2c9fd98ff288b833",
+            "031c65a4a6c1f0d8",
+            "58b110842a9b783c"
+        ],
+        "x": 74,
+        "y": 519,
+        "w": 792,
+        "h": 202
+    },
+    {
+        "id": "f6e25260e8a7ceac",
+        "type": "ui-chart",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "group": "250d0c2388fe9427",
+        "name": "",
+        "label": "Line Chart",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "10",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "6",
+        "className": "",
+        "interpolation": "linear",
+        "x": 390,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9a4bac49736f02f",
+        "type": "ui-slider",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "group": "250d0c2388fe9427",
+        "name": "",
+        "label": "Slider 1",
+        "tooltip": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "all",
+        "topic": "Slider 1",
+        "topicType": "str",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 180,
+        "y": 560,
+        "wires": [
+            [
+                "f6e25260e8a7ceac",
+                "58b110842a9b783c"
+            ]
+        ]
+    },
+    {
+        "id": "9807df136e2bd2f5",
+        "type": "ui-slider",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "group": "250d0c2388fe9427",
+        "name": "",
+        "label": "Slider 2",
+        "tooltip": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "all",
+        "topic": "Slider 2",
+        "topicType": "str",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "red",
+        "colorTrack": "red",
+        "colorThumb": "red",
+        "showTextField": false,
+        "x": 180,
+        "y": 680,
+        "wires": [
+            [
+                "f6e25260e8a7ceac",
+                "58b110842a9b783c"
+            ]
+        ]
+    },
+    {
+        "id": "013e468f9520c0d6",
+        "type": "ui-button",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "group": "250d0c2388fe9427",
+        "name": "",
+        "label": "Clear Chart",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "f6e25260e8a7ceac",
+                "58b110842a9b783c"
+            ]
+        ]
+    },
+    {
+        "id": "2e86d7153f8ba295",
+        "type": "ui-gauge",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "name": "",
+        "group": "a67e4783fd9bc7db",
+        "order": 1,
+        "width": "2",
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Classic Gauge",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 760,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "f5e9d46097c644b1",
+        "type": "ui-slider",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "group": "a67e4783fd9bc7db",
+        "name": "",
+        "label": "Slider",
+        "tooltip": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "all",
+        "topic": "Slider",
+        "topicType": "str",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 570,
+        "y": 620,
+        "wires": [
+            [
+                "2e86d7153f8ba295",
+                "2c9fd98ff288b833",
+                "031c65a4a6c1f0d8"
+            ]
+        ]
+    },
+    {
+        "id": "2c9fd98ff288b833",
+        "type": "ui-gauge",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "name": "",
+        "group": "a67e4783fd9bc7db",
+        "order": 2,
+        "width": "2",
+        "height": 3,
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Tank Level",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff"
+            },
+            {
+                "from": "3",
+                "color": "#55dbec"
+            },
+            {
+                "from": "5",
+                "color": "#53b4fd"
+            },
+            {
+                "from": "8",
+                "color": "#2397d1"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 750,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "031c65a4a6c1f0d8",
+        "type": "ui-gauge",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "name": "",
+        "group": "a67e4783fd9bc7db",
+        "order": 3,
+        "width": "2",
+        "height": 3,
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Tile Status",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#fd5b49"
+            },
+            {
+                "from": "3",
+                "color": "#ffe53d"
+            },
+            {
+                "from": "5",
+                "color": "#2dd738"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 750,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "58b110842a9b783c",
+        "type": "ui-chart",
+        "z": "362339b58db270ed",
+        "g": "3b7f8fca28eaed2e",
+        "group": "250d0c2388fe9427",
+        "name": "",
+        "label": "Bar Chart",
+        "order": 2,
+        "chartType": "bar",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "",
+        "xAxisProperty": "topic",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "category",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "10",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "3",
+        "height": "6",
+        "className": "",
+        "interpolation": "linear",
+        "x": 380,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "250d0c2388fe9427",
+        "type": "ui-group",
+        "name": "Slider > Chart",
+        "page": "3611cf89f16d95e4",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a67e4783fd9bc7db",
+        "type": "ui-group",
+        "name": "Slider > Gauge",
+        "page": "3611cf89f16d95e4",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "3611cf89f16d95e4",
+        "type": "ui-page",
+        "name": "Data Visualisation",
+        "ui": "b5596668551e86da",
+        "path": "/data-visualisation",
+        "icon": "chart-bar",
+        "layout": "notebook",
+        "theme": "da9c10d17ffc2ada",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b5596668551e86da",
+        "type": "ui-base",
+        "name": "FlowFuse Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "fixed",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": "1",
+        "showDisconnectNotification": true
+    },
+    {
+        "id": "da9c10d17ffc2ada",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#1f2937",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "b66c69b55bfc2aca",
+        "type": "group",
+        "z": "362339b58db270ed",
+        "name": "Audit Log",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2f9ea5280848a33b",
+            "91ce9b1a47fb57e9",
+            "2f8548289cfbccca",
+            "d98a114453010b73",
+            "267dfcd7307d6916"
+        ],
+        "x": 74,
+        "y": 159,
+        "w": 532,
+        "h": 182
+    },
+    {
+        "id": "2f9ea5280848a33b",
+        "type": "comment",
+        "z": "362339b58db270ed",
+        "g": "b66c69b55bfc2aca",
+        "name": "Track users that visit your Dashboard, and the pages that they view.",
+        "info": "",
+        "x": 340,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "91ce9b1a47fb57e9",
+        "type": "ui-event",
+        "z": "362339b58db270ed",
+        "g": "b66c69b55bfc2aca",
+        "ui": "b5596668551e86da",
+        "name": "",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "d98a114453010b73"
+            ]
+        ]
+    },
+    {
+        "id": "2f8548289cfbccca",
+        "type": "ui-table",
+        "z": "362339b58db270ed",
+        "g": "b66c69b55bfc2aca",
+        "group": "9869d7992a7f742d",
+        "name": "",
+        "label": "",
+        "order": 2,
+        "width": "12",
+        "height": "1",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "x": 530,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d98a114453010b73",
+        "type": "change",
+        "z": "362339b58db270ed",
+        "g": "b66c69b55bfc2aca",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.timestamp",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "payload.event",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.user",
+                "pt": "msg",
+                "to": "_client.user.name",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.path",
+                "pt": "msg",
+                "to": "payload.page.path",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.page",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.query",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "2f8548289cfbccca"
+            ]
+        ]
+    },
+    {
+        "id": "267dfcd7307d6916",
+        "type": "ui-button",
+        "z": "362339b58db270ed",
+        "g": "b66c69b55bfc2aca",
+        "group": "9869d7992a7f742d",
+        "name": "Clear Log",
+        "label": "Clear Log",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "2f8548289cfbccca"
+            ]
+        ]
+    },
+    {
+        "id": "9869d7992a7f742d",
+        "type": "ui-group",
+        "name": "Log",
+        "page": "599b6e80a5634088",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "599b6e80a5634088",
+        "type": "ui-page",
+        "name": "Audit Log",
+        "ui": "b5596668551e86da",
+        "path": "/audit-log",
+        "icon": "invoice-list",
+        "layout": "grid",
+        "theme": "da9c10d17ffc2ada",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "dedbcc601449aa00",
+        "type": "group",
+        "z": "362339b58db270ed",
+        "style": {
+            "stroke": "#b2b3bd",
+            "stroke-opacity": "1",
+            "fill": "#f2f3fb",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#32333b"
+        },
+        "nodes": [
+            "510d3b06fa07290f",
+            "305f1daae9bae129"
+        ],
+        "x": 634,
+        "y": 159,
+        "w": 252,
+        "h": 122
+    },
+    {
+        "id": "510d3b06fa07290f",
+        "type": "ui-template",
+        "z": "362339b58db270ed",
+        "g": "dedbcc601449aa00",
+        "group": "",
+        "page": "",
+        "ui": "b5596668551e86da",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <!-- Move this HTML into the #app-bar-acctions element on the page -->\n    <Teleport v-if=\"loaded\" to=\"#app-bar-actions\">\n        <div class=\"user-info\" v-if=\"setup.socketio.auth\">\n            <!-- Use the in-built \"setup.scketio.auth\" variable to access the User object -->\n            <img :src=\"setup.socketio.auth.user.image\" />\n            <span>Hi, {{ setup.socketio.auth.user.name }}!</span>\n        </div>\n        <div class=\"user-info\" v-else>\n            No User Found\n        </div>\n    </Teleport>\n</template>\n\n<script>\n    export default {\n    data () {\n        return {\n            loaded: false\n        }\n    },\n    mounted() {\n        // code here runs when the component is first loaded\n        this.loaded = true // tell the Teleport element the component has loaded\n    }\n}\n</script>\n\n<style>\n    .user-info {\n        display: flex;\n        align-items: center;\n        gap: 8px;\n        margin-right: 12px;\n    }\n\n    .user-info img {\n        width: 24px;\n        height: 24px;\n    }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 720,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "305f1daae9bae129",
+        "type": "comment",
+        "z": "362339b58db270ed",
+        "g": "dedbcc601449aa00",
+        "name": "Display Logged In User",
+        "info": "This requires you to have configured\n[FlowFuse User Authentication](https://flowfuse.com/docs/user/instance-settings/#security) on your\ninstance too.",
+        "x": 760,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "08ceae54db65fe99",
+        "type": "group",
+        "z": "362339b58db270ed",
+        "name": "Data Entry",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ad44eb52d260fc03",
+            "d4cdca4ef3b113de",
+            "b31ae3902e359b81"
+        ],
+        "x": 74,
+        "y": 359,
+        "w": 452,
+        "h": 142
+    },
+    {
+        "id": "ad44eb52d260fc03",
+        "type": "comment",
+        "z": "362339b58db270ed",
+        "g": "08ceae54db65fe99",
+        "name": "A simple form > table demonstration to show data entry",
+        "info": "",
+        "x": 300,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d4cdca4ef3b113de",
+        "type": "ui-form",
+        "z": "362339b58db270ed",
+        "g": "08ceae54db65fe99",
+        "name": "",
+        "group": "63eaf73392c77843",
+        "label": "",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "options": [
+            {
+                "label": "Product Name",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Remaining Stock",
+                "key": "stock",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Available",
+                "key": "isAvailable",
+                "type": "switch",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": "",
+            "stock": "",
+            "isAvailable": false
+        },
+        "payload": "",
+        "submit": "Add",
+        "cancel": "Clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "b31ae3902e359b81"
+            ]
+        ]
+    },
+    {
+        "id": "b31ae3902e359b81",
+        "type": "ui-table",
+        "z": "362339b58db270ed",
+        "g": "08ceae54db65fe99",
+        "group": "1021d9c3535c5788",
+        "name": "",
+        "label": "",
+        "order": 1,
+        "width": "9",
+        "height": "1",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Product",
+                "key": "name",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "stock",
+                "keyType": "key",
+                "type": "progress",
+                "width": "",
+                "align": "center"
+            },
+            {
+                "title": "",
+                "key": "isAvailable",
+                "keyType": "key",
+                "type": "tickcross",
+                "width": "",
+                "align": "center"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "x": 290,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63eaf73392c77843",
+        "type": "ui-group",
+        "name": "Add Product",
+        "page": "5ec1638b3e4e78e0",
+        "width": "3",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1021d9c3535c5788",
+        "type": "ui-group",
+        "name": "All Products",
+        "page": "5ec1638b3e4e78e0",
+        "width": "9",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5ec1638b3e4e78e0",
+        "type": "ui-page",
+        "name": "Data Entry",
+        "ui": "b5596668551e86da",
+        "path": "/data-entry",
+        "icon": "table",
+        "layout": "grid",
+        "theme": "da9c10d17ffc2ada",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "3"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "3"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "d3eba34004118e4b",
+        "type": "ui-group",
+        "name": "Welcome",
+        "page": "81ce5b4ff4606d32",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "81ce5b4ff4606d32",
+        "type": "ui-page",
+        "name": "Getting Started",
+        "ui": "b5596668551e86da",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "notebook",
+        "theme": "da9c10d17ffc2ada",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "fc23cedbf1194ca4",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 270,
+        "y": 20,
+        "wires": []
+    }
+]

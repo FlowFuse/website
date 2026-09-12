@@ -1,0 +1,1609 @@
+[
+    {
+        "id": "0713437f4df37065",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d82d902449151c0c",
+        "type": "group",
+        "z": "0713437f4df37065",
+        "name": "Reading Historical Data from InfluxDB",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6194b273493732ca",
+            "e8d89867e77699d9",
+            "87de19a7b8c6934f",
+            "c85b0bcde81259ef",
+            "459e41ac4386128e",
+            "d63a244f46475c14",
+            "369f0898bc6cce96",
+            "021d3632f2469bde",
+            "65e6c12a18bf638d",
+            "27d89462fb32eaa6",
+            "e5c07de28b6d20ad",
+            "f7b0b1f7cd4d2f1b",
+            "aeb4da017329d713",
+            "d9868e66ba3dbd61",
+            "84cf3775d2e91731",
+            "5f545eed9dd9eafd",
+            "1f8c33dfcc66e490",
+            "e15e9daf83181a9a",
+            "0a6c16c8a3862ded",
+            "9fd902457d424a10"
+        ],
+        "x": 94,
+        "y": 479,
+        "w": 1472,
+        "h": 262
+    },
+    {
+        "id": "c4e1baee80a78139",
+        "type": "group",
+        "z": "0713437f4df37065",
+        "name": "Displaying Data on a Chart and Other Progress Bars",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0f8a9902447b69e6",
+            "ca587451b6ed0f4a",
+            "868256e8ab2d0f82",
+            "ba9e41a3efec5474",
+            "dfb2af06b0fee10c",
+            "87e95d7b1aba67de",
+            "955582b7b09d1833",
+            "d59b68985beae16a",
+            "9210494ba2e9e984",
+            "28f540a9725943ff",
+            "9d84e25a78865b32",
+            "e6bc93937427e0e9",
+            "f7ace6a508f46189",
+            "38b442fce59c7c9c",
+            "3f27eeda2f881996",
+            "d0f91361af41e06e",
+            "a5a789ea1a25ec97",
+            "f16222d931fb3b2c",
+            "a464b6ceeec6e638",
+            "fc532a4788f2338d",
+            "26dcfbb516d4f085",
+            "3fed53b81823a1b5",
+            "db32d84a23972670"
+        ],
+        "x": 804,
+        "y": 159,
+        "w": 702,
+        "h": 282
+    },
+    {
+        "id": "f96717e12513881a",
+        "type": "group",
+        "z": "0713437f4df37065",
+        "name": "Sending Data to InfluxDB",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "35420e81d8e3c640",
+            "821b9d10d3c09d02",
+            "c0feca701bd3bb64",
+            "034d39ec8b87ac27",
+            "1294a0228efc9431",
+            "f876c5d2d76747c1",
+            "13469961ca8c7121",
+            "457a7300041e0f39",
+            "a18c0a3683ac3194",
+            "7b99dfc531c0ff30",
+            "d692886f512164dd",
+            "7e4e400c4f05314a",
+            "324831a5c859f0e7",
+            "e14e53a93fd4b1a5",
+            "d3ab15a0c2116e15",
+            "b7da8dadb134d63f",
+            "ec0b13edcb4e1e11",
+            "11bf06a482c74f05",
+            "8801f99a0f4b487d"
+        ],
+        "x": 94,
+        "y": 159,
+        "w": 672,
+        "h": 282
+    },
+    {
+        "id": "b179ca182fb32487",
+        "type": "comment",
+        "z": "0713437f4df37065",
+        "name": "LICENSE",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 160,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "3f52e10e770ef2e1",
+        "type": "comment",
+        "z": "0713437f4df37065",
+        "name": "README",
+        "info": "# Historical Data Dashboard with InfluxDB\n\nThis dashboard demonstrates the utilization of InfluxDB for retrieving and displaying both real-time and historical data with timestamp series.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a page on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 300,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "0f8a9902447b69e6",
+        "type": "ui-markdown",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "name": "rainfall lable",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "content": "### Rainfall",
+        "className": "rainfall",
+        "x": 1410,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca587451b6ed0f4a",
+        "type": "ui-markdown",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "name": "wind lable",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "content": "### Wind",
+        "className": "wind",
+        "x": 1400,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "868256e8ab2d0f82",
+        "type": "ui-markdown",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "name": "cloud lable",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "content": "### Cloud ",
+        "className": "cloud",
+        "x": 1410,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba9e41a3efec5474",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "",
+        "page": "",
+        "ui": "59985407809865cb",
+        "name": "CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".home {\nposition:relative;\n}\n\n.v-main {\nflex: 1 0 auto;\nmax-width: 100%;\ntransition: .2s cubic-bezier(.4, 0, .2, 1);\npadding-left: 0px !important;\npadding-right: 0px;\npadding-top: 64px;\npadding-bottom: 0px;\n}\n\n/* Navigation drawer style */\n.v-navigation-drawer__content, .v-navigation-drawer {\nwidth: 0px;\ndisplay: none;\n}\n\n/* Toolbar button and title hiding */\n.v-toolbar__content .v-btn, .v-toolbar-title__placeholder {\ndisplay: none;\n}\n\n/* Styling for the logo group with ID */\n\n#nrdb-ui-group-a03b486e0e5b33ab {\nposition: absolute;\nz-index: 1000;\ntop: -70px;\nwidth: 100%;\nheight: 70px;\n}\n\n/* Header styling */\nheader {\nz-index: -1 !important;\n}\n\n/* Styling for the logo group with  */\n#nrdb-ui-group-a03b486e0e5b33ab .v-card-text {\nbackground: rgb(0, 0, 0);\nheight: 70px;\n}\n\n/* logo SVG */\nsvg {\nwidth: 130px;\n}\n\n/* Styling for humidity circular live progress */\n.humidity {\nmargin-left: 30px;\n}\n\n/* Styling history circular pressure progress */\n.pressure {\nposition: relative;\nbottom: 102px;\nleft: 20px;\n\n}\n\n/* Styling history circular progress group */\n#nrdb-ui-group-027a81d9d4d364b1 .v-card-text {\ndisplay: flex;\njustify-content: center;\nheight: 330px;\n\n}\n\n/* Styling for group titles */\n.v-card-title {\ncolor: rgb(210, 146, 255);\nfont-family: Verdana, Arial, sans-serif;\nfont-size: 15px;\nmargin: 0px auto;\n}\n\n.v-card-item {\ntext-align: center;\n}\n\n/* Styling for live progress-linear title */\n.rainfall {\nposition: absolute;\ntop: 240px;\ncolor: rgba(140, 30, 30, .9);\n}\n\n/* Styling for live progress-linear title */\n.cloud {\nposition: absolute;\ntop: 276px;\ncolor: rgba(200, 200, 200, .6);\n}\n\n/* Styling for live progress-linear title */\n.wind {\nposition: absolute;\ntop: 315px;\ncolor: rgba(60, 118, 190, .8);\n}\n\n/* Styling for the first linear progress bar */\n.first-loader .first-loader {\nmargin-top: 100px;\n}\n\n/* Styling for progress-linear */\n.v-progress-linear__content {\ncolor: rgb(209, 209, 205);\n}\n\n\n/* Styling for progress-linear */\n#nrdb-ui-widget-d59b68985beae16a, #nrdb-ui-widget-9210494ba2e9e984, #nrdb-ui-widget-28f540a9725943ff {\ndisplay: grid;\njustify-content: end;\n}\n\n/* Styling for pressure-title */\n.pressure-title {\nposition: relative;\ntop: 65px;\nright: 100px;\n}\n\n/* Styling group to ensure consistensy */\n#nrdb-ui-group-fb3f360726da3a5b .v-card-text {\nheight: 385px;\n}\n\n/* Styling group to ensure consistensy */\n#nrdb-ui-group-bbad16115003a778 .v-card-text {\nheight: 334px;\n}\n\n/* Styling for form button */\n.v-btn {\nbackground: rgb(210, 146, 255);\ncolor: blue;\n}\n\n/* Styling for form button */\n\n.v-btn--variant-outlined {\nbackground: rgba(140, 30, 30, .9);\nborder-color: rgba(60, 118, 190, .8);\n}\n\n/* Styling for form */\n.form {\ncolor: rgb(210, 146, 255);\n}\n\n\n\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 1390,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfb2af06b0fee10c",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "a03b486e0e5b33ab",
+        "page": "",
+        "ui": "",
+        "name": "logo",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<div><img style=\"margin-bottom:20px;\" alt=\"FlowFuse Logo in White\" loading=\"lazy\" decoding=\"async\" src=\"https://flowfuse.com/img/flowfuse-logo-wordmark-white-3077JPjB4N-300.avif\" width=\"150\" >\n\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "logo",
+        "x": 1390,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87e95d7b1aba67de",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "page": "26b4bf2b1d2af782",
+        "name": "live humidity circular progress",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "head": "",
+        "format": "<v-progress-circular style=\"font-size:30px;\" :model-value=\"msg.payload\" :size=\"140\" :width=\"6\" color=\"rgb(210,146,255)\">{{ value }}%</v-progress-circular>",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1190,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "955582b7b09d1833",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "page": "26b4bf2b1d2af782",
+        "name": "live pressure circular progress",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "head": "",
+        "format": "<v-progress-circular style=\"font-size:30px;\" :model-value=\"msg.payload\" :size=\"140\" :width=\"6\" color=\"rgba(255, 255, 255,0.8)\">{{ value }}%</v-progress-circular>",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1190,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d59b68985beae16a",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "page": "26b4bf2b1d2af782",
+        "name": "rainfall line progress ",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<v-progress-linear  style=\"width:250px;color:rgba(140, 30, 30, .9);margin:50px 0px 10px 0px;\" :model-value=\"msg.payload\" :height=\"15\" >{{ value }}%</v-progress-linear>\n",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "loaders",
+        "x": 1160,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9210494ba2e9e984",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "page": "26b4bf2b1d2af782",
+        "name": "wind line progress ",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<v-progress-linear style=\"width:250px;display:grid; justify-content:end;color:rgba(200,200,200,.6);margin:0px 0px 0px 0px;\" :model-value=\"msg.payload\" :height=\"12\">{{value}}%</v-progress-linear>\n",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "loaders",
+        "x": 1150,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28f540a9725943ff",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "500cc92b53abb292",
+        "page": "26b4bf2b1d2af782",
+        "name": "cloud line progress ",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<v-progress-linear style=\"width:250px;color:rgba(60, 118, 190, .8);margin:-20px 0px 0px 0px;\" :model-value=\"msg.payload\" :height=\"12\">{{value}}%</v-progress-linear>\n",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "loaders",
+        "x": 1150,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d84e25a78865b32",
+        "type": "ui-chart",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "group": "fb3f360726da3a5b",
+        "name": "",
+        "label": "temprature live chart ",
+        "order": 9007199254740991,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "yAxisProperty": "",
+        "ymin": "",
+        "ymax": "",
+        "showLegend": false,
+        "removeOlder": "10",
+        "removeOlderUnit": "1",
+        "removeOlderPoints": "",
+        "colors": [
+            "#d292ff",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "width": "8",
+        "height": "7",
+        "className": "",
+        "x": 1160,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35420e81d8e3c640",
+        "type": "inject",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "datapoint point",
+        "props": [
+            {
+                "p": "value",
+                "v": "100* $random()",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "c0feca701bd3bb64",
+                "e14e53a93fd4b1a5"
+            ]
+        ]
+    },
+    {
+        "id": "821b9d10d3c09d02",
+        "type": "influxdb out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "influxdb": "",
+        "name": "InfluxDb (Write) ",
+        "measurement": "temperature",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "Maharastra",
+        "bucket": "weather",
+        "x": 660,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c0feca701bd3bb64",
+        "type": "change",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "Format",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fields.temperature",
+                "pt": "msg",
+                "to": "value",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "tags.timestamp",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$append(fields,tags)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 200,
+        "wires": [
+            [
+                "821b9d10d3c09d02"
+            ]
+        ]
+    },
+    {
+        "id": "034d39ec8b87ac27",
+        "type": "inject",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "datapoint point",
+        "props": [
+            {
+                "p": "value",
+                "v": "100* $random()",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "f876c5d2d76747c1",
+                "d3ab15a0c2116e15"
+            ]
+        ]
+    },
+    {
+        "id": "1294a0228efc9431",
+        "type": "influxdb out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "influxdb": "",
+        "name": "InfluxDb (Write) ",
+        "measurement": "humidity",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "Maharastra",
+        "bucket": "weather",
+        "x": 660,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f876c5d2d76747c1",
+        "type": "change",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "Format",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fields.humidity",
+                "pt": "msg",
+                "to": "value",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "tags.timestamp",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$append(fields,tags)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "1294a0228efc9431"
+            ]
+        ]
+    },
+    {
+        "id": "13469961ca8c7121",
+        "type": "inject",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "datapoint point",
+        "props": [
+            {
+                "p": "value",
+                "v": "100* $random()",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 280,
+        "wires": [
+            [
+                "a18c0a3683ac3194",
+                "b7da8dadb134d63f"
+            ]
+        ]
+    },
+    {
+        "id": "457a7300041e0f39",
+        "type": "influxdb out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "influxdb": "",
+        "name": "InfluxDb (Write) ",
+        "measurement": "pressure",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "Maharastra",
+        "bucket": "weather",
+        "x": 660,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a18c0a3683ac3194",
+        "type": "change",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "Format",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fields.pressure",
+                "pt": "msg",
+                "to": "value",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "tags.timestamp",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$append(fields,tags)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "457a7300041e0f39"
+            ]
+        ]
+    },
+    {
+        "id": "7b99dfc531c0ff30",
+        "type": "inject",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "datapoint point",
+        "props": [
+            {
+                "p": "value",
+                "v": "100* $random()",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 320,
+        "wires": [
+            [
+                "ec0b13edcb4e1e11"
+            ]
+        ]
+    },
+    {
+        "id": "d692886f512164dd",
+        "type": "inject",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "datapoint point",
+        "props": [
+            {
+                "p": "value",
+                "v": "100* $random()",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "11bf06a482c74f05"
+            ]
+        ]
+    },
+    {
+        "id": "7e4e400c4f05314a",
+        "type": "inject",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "datapoint point",
+        "props": [
+            {
+                "p": "value",
+                "v": "100* $random()",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 400,
+        "wires": [
+            [
+                "8801f99a0f4b487d"
+            ]
+        ]
+    },
+    {
+        "id": "6194b273493732ca",
+        "type": "ui-form",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "",
+        "group": "bbad16115003a778",
+        "label": "",
+        "order": 0,
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Date",
+                "key": "date",
+                "type": "date",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Time",
+                "key": "time",
+                "type": "time",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "window(min)",
+                "key": "window",
+                "type": "number",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "date": "",
+            "time": "",
+            "window": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "form",
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "87de19a7b8c6934f"
+            ]
+        ]
+    },
+    {
+        "id": "e8d89867e77699d9",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "group": "027a81d9d4d364b1",
+        "page": "26b4bf2b1d2af782",
+        "name": "history pressure circular progress",
+        "order": 2,
+        "width": "2",
+        "height": "5",
+        "head": "",
+        "format": "<v-progress-circular :model-value=\"msg.payload\" :size=\"100\"  :width=\"10\" color=\"rgba(255, 255, 255, .8)\"></v-progress-circular>",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "pressure",
+        "x": 1400,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87de19a7b8c6934f",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "storeFormData",
+        "func": "let dataDate = msg.payload.date;\nlet dataTime = msg.payload.time;\n\nlet dateTimeString = `${dataDate}T${dataTime}:00.000Z`;\nlet date = new Date(dateTimeString).toUTCString()\n\nglobal.set('rangeStart', dateTimeString);\nglobal.set('formData', msg.payload);\n\nmsg.payload = date\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 600,
+        "wires": [
+            [
+                "021d3632f2469bde"
+            ]
+        ]
+    },
+    {
+        "id": "c85b0bcde81259ef",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "group": "027a81d9d4d364b1",
+        "page": "26b4bf2b1d2af782",
+        "name": "historicalCircularProgressTittles",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "\n<p style=\"font-size:17px;color:rgb(210, 143, 255);\">Humidity :<span style=\"margin-left:20px;\">{{msg.payload.humidity || 0 }}%</span></p>\n<p style=\"font-size:17px;color:rgba(255, 255, 255, .8);\">Pressure :<span style=\"margin-left:20px;\">{{msg.payload.pressure || 0 }}%</span></p>",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1390,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "459e41ac4386128e",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "filterDataProperty",
+        "func": "const data = msg.payload\n\n\n// Filter the data based on the 'x' property\nconst filteredData = data.map(item => ({\n   x:Number(item['timestamp']),\n   y: Math.floor(item._value)\n}));\n\n\nnode.send({payload:[]});\nmsg.payload = filteredData\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 560,
+        "wires": [
+            [
+                "d63a244f46475c14"
+            ]
+        ]
+    },
+    {
+        "id": "d63a244f46475c14",
+        "type": "ui-chart",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "group": "99a978aa008a01bd",
+        "name": "",
+        "label": "temprature historical chart",
+        "order": 9007199254740991,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "yAxisProperty": "",
+        "ymin": "",
+        "ymax": "",
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#d292ff",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "width": "6",
+        "height": "6",
+        "className": "",
+        "x": 1370,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "369f0898bc6cce96",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "filterDataProperty",
+        "func": "const dataArray = msg.payload\nconst valuesArray = dataArray.map(item => item._value);\n\n// Calculating the average value\nconst sum = valuesArray.reduce((acc, value) => acc + value, 0);\nconst average = sum / valuesArray.length;\nglobal.set('pressure',Math.floor(average))\nmsg.payload = average\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 600,
+        "wires": [
+            [
+                "e15e9daf83181a9a"
+            ]
+        ]
+    },
+    {
+        "id": "021d3632f2469bde",
+        "type": "moment",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "LocalTzToUtcTzFormatter",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Calcutta",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "en-US",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "ETC/UTC",
+        "x": 530,
+        "y": 600,
+        "wires": [
+            [
+                "e5c07de28b6d20ad",
+                "5f545eed9dd9eafd",
+                "aeb4da017329d713"
+            ]
+        ]
+    },
+    {
+        "id": "65e6c12a18bf638d",
+        "type": "comment",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "Using \"node-red-contrib-moment\"",
+        "info": "## Using \"node-red-contrib-moment\" to Convert Local Time to UTC Time\n\nIn Node-RED, by default, timestamps are handled in UTC time. If you need to convert local time to UTC time, you can use the \"node-red-contrib-moment\" palette nodes.\n\nNote : - Replace input timezone with your timezone  Date-Time formatter.\n",
+        "x": 550,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "27d89462fb32eaa6",
+        "type": "comment",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "Custom filter functions",
+        "info": "## Custom filter functions\nhear in the filterDataBasedOnDate function we filter data based on date and time for historical chart and cicular progress",
+        "x": 1120,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e5c07de28b6d20ad",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "Query",
+        "func": "const data = global.get('temprature')\nlet rangeStart = new Date(msg.payload)\n\nconst windowMin = Number(global.get('formData').window);\nconst endDate = new Date(rangeStart.getTime() + windowMin * 60000);\n\nlet endDateTime = new Date(endDate)\nendDateTime = endDateTime.toISOString()\n\n\nmsg.query = `\n  from(bucket: \"weather\") \n  |> range(start: ${rangeStart.toISOString()} , stop: ${endDateTime}  ) \n  |> filter(fn: (r) => r[\"_measurement\"] == \"temperature\") \n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 560,
+        "wires": [
+            [
+                "f7b0b1f7cd4d2f1b"
+            ]
+        ]
+    },
+    {
+        "id": "f7b0b1f7cd4d2f1b",
+        "type": "influxdb in",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "influxdb": "",
+        "name": "InfluxDb (Read) ",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "Maharastra",
+        "x": 900,
+        "y": 560,
+        "wires": [
+            [
+                "459e41ac4386128e"
+            ]
+        ]
+    },
+    {
+        "id": "aeb4da017329d713",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "Query",
+        "func": "const data = global.get('temprature')\nlet rangeStart = new Date(msg.payload)\n\nconst windowMin = Number(global.get('formData').window);\nconst endDate = new Date(rangeStart.getTime() + windowMin * 60000);\n\nlet endDateTime = new Date(endDate)\nendDateTime = endDateTime.toISOString()\n\n\nmsg.query = `\n  from(bucket: \"weather\") \n  |> range(start: ${rangeStart.toISOString()} , stop: ${endDateTime}  ) \n  |> filter(fn: (r) => r[\"_measurement\"] == \"humidity\") \n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 600,
+        "wires": [
+            [
+                "d9868e66ba3dbd61"
+            ]
+        ]
+    },
+    {
+        "id": "d9868e66ba3dbd61",
+        "type": "influxdb in",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "influxdb": "",
+        "name": "InfluxDb (Read) ",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "Maharastra",
+        "x": 900,
+        "y": 600,
+        "wires": [
+            [
+                "369f0898bc6cce96"
+            ]
+        ]
+    },
+    {
+        "id": "84cf3775d2e91731",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "filterDataProperty",
+        "func": "const dataArray = msg.payload\nconst valuesArray = dataArray.map(item => item._value);\n\n// Calculating the average value\nconst sum = valuesArray.reduce((acc, value) => acc + value, 0);\nconst average = sum / valuesArray.length;\nglobal.set('humidity',Math.floor(average))\nmsg.payload = average\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 640,
+        "wires": [
+            [
+                "e8d89867e77699d9",
+                "0a6c16c8a3862ded"
+            ]
+        ]
+    },
+    {
+        "id": "5f545eed9dd9eafd",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "Query",
+        "func": "const data = global.get('temprature')\nlet rangeStart = new Date(msg.payload)\n\nconst windowMin = Number(global.get('formData').window);\nconst endDate = new Date(rangeStart.getTime() + windowMin * 60000);\n\nlet endDateTime = new Date(endDate)\nendDateTime = endDateTime.toISOString()\n\n\nmsg.query = `\n  from(bucket: \"weather\") \n  |> range(start: ${rangeStart.toISOString()} , stop: ${endDateTime}  ) \n  |> filter(fn: (r) => r[\"_measurement\"] == \"pressure\") \n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 640,
+        "wires": [
+            [
+                "1f8c33dfcc66e490"
+            ]
+        ]
+    },
+    {
+        "id": "1f8c33dfcc66e490",
+        "type": "influxdb in",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "influxdb": "",
+        "name": "InfluxDb (Read) ",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "Maharastra",
+        "x": 900,
+        "y": 640,
+        "wires": [
+            [
+                "84cf3775d2e91731"
+            ]
+        ]
+    },
+    {
+        "id": "e15e9daf83181a9a",
+        "type": "ui-template",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "group": "027a81d9d4d364b1",
+        "page": "26b4bf2b1d2af782",
+        "name": "history humidity circular progress",
+        "order": 1,
+        "width": "2",
+        "height": "5",
+        "head": "",
+        "format": "<v-progress-circular :model-value=\"msg.payload\" :size=\"140\"  :width=\"10\" color=\"rgb(210, 143, 255)\"></v-progress-circular>",
+        "storeOutMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1400,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0a6c16c8a3862ded",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "getContextData",
+        "func": "let humidity = global.get('humidity')\nlet pressure = global.get('pressure')\nmsg.payload ={ \n  \"humidity\":humidity,\n  \"pressure\": pressure\n  }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 700,
+        "wires": [
+            [
+                "c85b0bcde81259ef"
+            ]
+        ]
+    },
+    {
+        "id": "324831a5c859f0e7",
+        "type": "comment",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "Sending Data to InfluxDB",
+        "info": "## Sending Data to InfluxDB\n\nThis guide demonstrates how to send data to InfluxDB using Node-RED. Ensure proper configuration of the 'influxdb-out' node by providing the necessary credentials, such as the bucket name, measurement (create a separate measurement for each data type), server, and token.\n\nFor a detailed setup guide, please refer to our blog post: [Creating a Historical Data Dashboard with InfluxDB and Node-RED.](https://flowfuse.com/blog/2023/07/influxdb-historical-data)\n\nExample Configuration\n\n`msg.payload.field = 'precipitation';`\n\nIn this example, we've set up a 'precipitation' measurement. The 'field' is specified as 'precipitation' in the change node:",
+        "x": 530,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e14e53a93fd4b1a5",
+        "type": "link out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "e6bc93937427e0e9"
+        ],
+        "x": 355,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e6bc93937427e0e9",
+        "type": "link in",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "link in 1",
+        "links": [
+            "e14e53a93fd4b1a5"
+        ],
+        "x": 845,
+        "y": 200,
+        "wires": [
+            [
+                "f7ace6a508f46189"
+            ]
+        ]
+    },
+    {
+        "id": "f7ace6a508f46189",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "setPayload",
+        "func": "msg.payload = Math.floor(msg.value)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 200,
+        "wires": [
+            [
+                "9d84e25a78865b32"
+            ]
+        ]
+    },
+    {
+        "id": "d3ab15a0c2116e15",
+        "type": "link out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "38b442fce59c7c9c"
+        ],
+        "x": 355,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b7da8dadb134d63f",
+        "type": "link out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "d0f91361af41e06e"
+        ],
+        "x": 355,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ec0b13edcb4e1e11",
+        "type": "link out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "f16222d931fb3b2c"
+        ],
+        "x": 355,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "11bf06a482c74f05",
+        "type": "link out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "fc532a4788f2338d"
+        ],
+        "x": 355,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8801f99a0f4b487d",
+        "type": "link out",
+        "z": "0713437f4df37065",
+        "g": "f96717e12513881a",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "3fed53b81823a1b5"
+        ],
+        "x": 355,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "38b442fce59c7c9c",
+        "type": "link in",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "link in 2",
+        "links": [
+            "d3ab15a0c2116e15"
+        ],
+        "x": 845,
+        "y": 240,
+        "wires": [
+            [
+                "3f27eeda2f881996"
+            ]
+        ]
+    },
+    {
+        "id": "3f27eeda2f881996",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "setPayload",
+        "func": "msg.payload = Math.floor(msg.value)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 240,
+        "wires": [
+            [
+                "87e95d7b1aba67de"
+            ]
+        ]
+    },
+    {
+        "id": "d0f91361af41e06e",
+        "type": "link in",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "link in 3",
+        "links": [
+            "b7da8dadb134d63f"
+        ],
+        "x": 845,
+        "y": 280,
+        "wires": [
+            [
+                "a5a789ea1a25ec97"
+            ]
+        ]
+    },
+    {
+        "id": "a5a789ea1a25ec97",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "setPayload",
+        "func": "msg.payload = Math.floor(msg.value)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 280,
+        "wires": [
+            [
+                "955582b7b09d1833"
+            ]
+        ]
+    },
+    {
+        "id": "f16222d931fb3b2c",
+        "type": "link in",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "link in 4",
+        "links": [
+            "ec0b13edcb4e1e11"
+        ],
+        "x": 845,
+        "y": 320,
+        "wires": [
+            [
+                "a464b6ceeec6e638"
+            ]
+        ]
+    },
+    {
+        "id": "a464b6ceeec6e638",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "setPayload",
+        "func": "msg.payload = Math.floor(msg.value)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 320,
+        "wires": [
+            [
+                "d59b68985beae16a"
+            ]
+        ]
+    },
+    {
+        "id": "fc532a4788f2338d",
+        "type": "link in",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "link in 5",
+        "links": [
+            "11bf06a482c74f05"
+        ],
+        "x": 845,
+        "y": 360,
+        "wires": [
+            [
+                "26dcfbb516d4f085"
+            ]
+        ]
+    },
+    {
+        "id": "26dcfbb516d4f085",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "setPayload",
+        "func": "msg.payload = Math.floor(msg.value)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 360,
+        "wires": [
+            [
+                "9210494ba2e9e984"
+            ]
+        ]
+    },
+    {
+        "id": "3fed53b81823a1b5",
+        "type": "link in",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "link in 6",
+        "links": [
+            "8801f99a0f4b487d"
+        ],
+        "x": 845,
+        "y": 400,
+        "wires": [
+            [
+                "db32d84a23972670"
+            ]
+        ]
+    },
+    {
+        "id": "db32d84a23972670",
+        "type": "function",
+        "z": "0713437f4df37065",
+        "g": "c4e1baee80a78139",
+        "name": "setPayload",
+        "func": "msg.payload = Math.floor(msg.value)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 400,
+        "wires": [
+            [
+                "28f540a9725943ff"
+            ]
+        ]
+    },
+    {
+        "id": "9fd902457d424a10",
+        "type": "comment",
+        "z": "0713437f4df37065",
+        "g": "d82d902449151c0c",
+        "name": "Retrieving Data from InfluxDB",
+        "info": "## Retrieving Data from InfluxDB\n\nThis guide demonstrates how to retrieve data from InfluxDB using Node-RED. Ensure proper configuration of the 'influxdb-in' node by providing all the necessary details. For a comprehensive setup guide, refer to our blog post: [Creating a Historical Data Dashboard with InfluxDB and Node-RED.](https://flowfuse.com/blog/2023/07/influxdb-historical-data)\n\nExample Configuration\nIn this example, we retrieve historical data from the 'precipitation' measurement within a specified time range. To do so, you can use a query like the following:\n\n`msg.query = `\n  from(bucket: \"your-bucket-name\") // Specify your InfluxDB bucket\n  |> range(start: ${startFormattedDate}, stop: ${endFormattedDate}) \n  |> filter(fn: (r) => r[\"_measurement\"] == \"precipitation\") \n\nreturn msg;`\n",
+        "x": 840,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "500cc92b53abb292",
+        "type": "ui-group",
+        "name": "Live Data",
+        "page": "26b4bf2b1d2af782",
+        "width": "4",
+        "height": "1",
+        "order": 2,
+        "className": ""
+    },
+    {
+        "id": "59985407809865cb",
+        "type": "ui-base",
+        "name": "Dashboard",
+        "path": "/dashboard"
+    },
+    {
+        "id": "a03b486e0e5b33ab",
+        "type": "ui-group",
+        "name": "Logo",
+        "page": "26b4bf2b1d2af782",
+        "width": "1",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": ""
+    },
+    {
+        "id": "26b4bf2b1d2af782",
+        "type": "ui-page",
+        "name": "home",
+        "ui": "59985407809865cb",
+        "path": "/",
+        "layout": "grid",
+        "theme": "3da752450f5278a1",
+        "order": 1,
+        "className": "home"
+    },
+    {
+        "id": "fb3f360726da3a5b",
+        "type": "ui-group",
+        "name": "Live Chart",
+        "page": "26b4bf2b1d2af782",
+        "width": "8",
+        "height": "1",
+        "order": 3,
+        "className": "map"
+    },
+    {
+        "id": "bbad16115003a778",
+        "type": "ui-group",
+        "name": "Select",
+        "page": "26b4bf2b1d2af782",
+        "width": "4",
+        "height": "1",
+        "order": 4,
+        "className": "chart"
+    },
+    {
+        "id": "027a81d9d4d364b1",
+        "type": "ui-group",
+        "name": "History",
+        "page": "26b4bf2b1d2af782",
+        "width": "2",
+        "height": "2",
+        "order": 5,
+        "className": ""
+    },
+    {
+        "id": "99a978aa008a01bd",
+        "type": "ui-group",
+        "name": "Historical Chart",
+        "page": "26b4bf2b1d2af782",
+        "width": "6",
+        "height": "1",
+        "order": 6,
+        "className": ""
+    },
+    {
+        "id": "3da752450f5278a1",
+        "type": "ui-theme",
+        "name": "Dashboard",
+        "colors": {
+            "surface": "#000000",
+            "primary": "#2268dc",
+            "bgPage": "#00002b",
+            "groupBg": "#00002e",
+            "groupOutline": "#05123d"
+        }
+    }
+]
