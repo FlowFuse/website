@@ -30,6 +30,10 @@ qualified leads.
 - **[Trade Shows & Industry Events](/handbook/marketing/events/)**: We
   participate in key industry events to build brand presence, network with
   potential customers and partners, and generate leads.
+- **[Looked But Didn't Buy (LBDB)](/handbook/marketing/looked-but-didnt-buy/)**:
+  A continuous, SDR-run campaign to re-engage lapsed MQLs and non-converted
+  free trial users — warm contacts who already showed buying intent but
+  didn't convert.
 
 ## 2. Content & Community Marketing
 
