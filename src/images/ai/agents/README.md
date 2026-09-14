@@ -9,8 +9,8 @@ Each tab in the "connect your own agent" section renders `client.logo` when it i
 | `chatgpt.svg` | ChatGPT | OpenAI brand kit, `OAI_OpenAI-Blossom_Black.svg`, downloaded by hand from `openai.com/brand` because that page blocks automated fetching. This is the OpenAI symbol, which is the icon form their kit provides. |
 | `claude.svg` | Claude | Anthropic press kit, `anthropic.com/press-kit`, which redirects to an official CDN zip. File is "Claude Spark - Clay", the icon form intended to sit beside a label. Unmodified, in its own brand colour. |
 | `gemini.svg` | Gemini | Google's own CDN, the Gemini sparkle used by Gemini's product surfaces. |
-| _(none)_ | Claude Code | Deliberately no brand mark. Uses the `i-lucide-terminal` glyph, so nothing here needs a trademark check. |
-| _(none)_ | Codex | Deliberately no brand mark. Uses the `i-lucide-square-terminal` glyph, for the same reason. |
+| `claude.svg` | Claude Code | The same Anthropic mark as the Claude tab. Same vendor, so one file serves both and there is no second provenance to track. |
+| `chatgpt.svg` | Codex | The same OpenAI mark as the ChatGPT tab, for the same reason. |
 | _(none)_ | Local and Custom Agents | Not a brand mark by design. The repo icon `components/icons/server-stack.svg` is inlined instead of linked as a file, so it inherits `currentColor` and turns white when the tab is active. |
 
 All marks are used unmodified, at their own aspect ratio, in a 16px-tall slot beside the

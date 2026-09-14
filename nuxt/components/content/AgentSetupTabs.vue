@@ -87,7 +87,7 @@ const CLIENTS = [
     // `mcp add`; Codex documents only its config file and UI. Asking works on both.
     {
         id: 'claude-code',
-        icon: 'i-lucide-terminal',
+        logo: '/images/ai/agents/claude.svg',
         name: 'Claude Code',
         step1Title: 'Copy the prompt',
         step1Body: 'This is the whole setup.',
@@ -99,7 +99,7 @@ const CLIENTS = [
     },
     {
         id: 'codex',
-        icon: 'i-lucide-square-terminal',
+        logo: '/images/ai/agents/chatgpt.svg',
         name: 'Codex',
         step1Title: 'Copy the prompt',
         step1Body: 'This is the whole setup.',
