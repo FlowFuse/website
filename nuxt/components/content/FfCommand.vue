@@ -50,7 +50,12 @@ const host = computed(() => normaliseHost(typed.value))
 
 const shownCommand = computed(() => {
     if (!props.hostSwap || !host.value) return props.command
-    return props.command.replace(/^(https?:\/\/)[^/\s]+/i, `$1${host.value}`)
+    // Not anchored to the start of the string. Every command used to be a bare
+    // address, so `^` was harmless; the coding-agent tabs pass a whole sentence
+    // with the address inside it, and an anchored match silently left a
+    // self-hosted reader copying app.flowfuse.com. Unanchored and ungreedy, so
+    // the first address is swapped and any later one is left alone.
+    return props.command.replace(/(https?:\/\/)[^/\s]+/i, `$1${host.value}`)
 })
 
 function remember () {
