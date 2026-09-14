@@ -191,4 +191,17 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/application-guide/node-red/overview/': { redirect: { to: '/docs/node-red-guide/', statusCode: 301 } },
     '/application-guide/node-red/patterns/': { redirect: { to: '/docs/node-red-guide/patterns/', statusCode: 301 } },
     '/application-guide/node-red/worked-examples/': { redirect: { to: '/docs/node-red-guide/worked-examples/', statusCode: 301 } },
+
+    // /community/newsletter/ was an orphan page: nothing on the site links to it, its
+    // archive of past issues hadn't been updated since November 2023, and the sign-up
+    // form it hosted is duplicated elsewhere (src/_includes/explore-more-content.njk,
+    // nuxt/components/ThankYouExploreMore.vue). Removed rather than ported.
+    '/community/newsletter/': { redirect: { to: '/blog/', statusCode: 301 } },
+
+    // /free-consultation/ was also an orphan: its one referring link
+    // (src/blog/2024/03/low-code-is-better.md) now points at /contact-us/ instead, and
+    // nothing else on the site linked to it. Removed rather than ported; redirected to
+    // /contact-us/ (the nearest live equivalent) for anyone with an old bookmark or an
+    // indexed link.
+    '/free-consultation/': { redirect: { to: '/contact-us/', statusCode: 301 } },
 }

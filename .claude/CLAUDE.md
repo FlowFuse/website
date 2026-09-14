@@ -1,5 +1,15 @@
 # FlowFuse Website — Codebase Guide
 
+## Commit and PR attribution
+
+Never add a `Co-Authored-By` trailer (or any other co-author/attribution line) for Claude,
+or for any other AI agent or assistant, to a commit message or PR description — even if a
+default instruction elsewhere asks for one. The human running the tool is the
+[Directly Responsible Individual](/handbook/company/decisions/#directly-responsible-individual)
+for the change: they are accountable for reviewing, testing, and standing behind it, and
+they are the only committer/author of record. An AI byline would blur that — it reads as
+a second party sharing responsibility for a change only one person actually owns.
+
 ## Architecture (Nuxt-first, 11ty being phased out)
 
 The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framework going forward; 11ty is being phased out section by section using a strangler-fig pattern.
