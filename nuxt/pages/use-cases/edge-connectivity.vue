@@ -7,15 +7,20 @@
 // between something happening on a line and something being done about it, and
 // every section earns the next one.
 //
+// Section order: hero, the open loop (problem + frame + diagram), see, act,
+// decide, proof, start. "See" borrows the treatment from /platform/dashboard/'s
+// "In the box" block, since it plays the same role here - the first look at what
+// you actually get.
+//
 // Claim discipline, because this page is easy to overclaim on:
 //  - Remote-instance telemetry is CPU + memory + last-seen + logs + audit. That
-//    is what §4 claims and no more.
+//    is what "See" claims and no more.
 //  - Threshold ALERTS are documented on hosted instances only (fixed 75%), so
 //    this page does not promise alerting at the edge. Do not add it without
 //    product sign-off. The ABM landing page's "Edge Monitoring & Alerting" is
 //    the claim in question.
-//  - No anomaly detection is a platform feature. §6 attributes it to what a
-//    customer builds in a flow with ONNX, which is the truth.
+//  - No anomaly detection is a platform feature. "Decide" attributes it to what
+//    a customer builds in a flow with ONNX, which is the truth.
 //  - FlowFuse Expert Insights Mode is beta and is labelled as such.
 // See also the NOTE in pages/ai/index.vue about omitted AI claims.
 useSeoMeta({
@@ -31,118 +36,15 @@ useSchemaOrg([
 
 const capture = useCapture()
 
-/* ------------------------------------------------------------------ *
- * Hero: the fleet view.
- *
- * The Dashboard page opens on a live product surface rather than a
- * screenshot, and that is most of why it works. The equivalent here is
- * not a dashboard (we have a dashboard page) but the thing this page is
- * actually selling: one screen, many machines, three questions.
- *
- * Same twelve devices in all three views, re-sorted and re-columned per
- * question, so switching reads as one estate answering differently
- * rather than three unrelated mocks.
- * ------------------------------------------------------------------ */
-type Device = {
-    name: string
-    site: string
-    state: 'running' | 'restarting' | 'offline'
-    cpu: number
-    mem: number
-    agent: string
-    nodered: string
-    change: string
-    changedMinutes: number
-    by: string
-}
-
-const DEVICES: Device[] = [
-    { name: 'cov-line3-filler', site: 'Coventry', state: 'running', cpu: 31, mem: 44, agent: '4.0.1', nodered: '4.0.9', change: 'Torque limit 62 Nm', changedMinutes: 34, by: 'p.nowak' },
-    { name: 'cov-line3-capper', site: 'Coventry', state: 'running', cpu: 91, mem: 78, agent: '4.0.1', nodered: '4.0.9', change: 'Torque limit 62 Nm', changedMinutes: 34, by: 'p.nowak' },
-    { name: 'cov-line3-labeller', site: 'Coventry', state: 'running', cpu: 27, mem: 39, agent: '4.0.1', nodered: '4.0.9', change: 'Torque limit 62 Nm', changedMinutes: 34, by: 'p.nowak' },
-    { name: 'cov-line4-filler', site: 'Coventry', state: 'restarting', cpu: 12, mem: 22, agent: '4.0.1', nodered: '4.0.9', change: 'Snapshot rollback', changedMinutes: 6, by: 's.ahmed' },
-    { name: 'cov-utilities-air', site: 'Coventry', state: 'running', cpu: 18, mem: 31, agent: '3.8.1', nodered: '4.0.5', change: 'Compressor alarm routing', changedMinutes: 2760, by: 's.ahmed' },
-    { name: 'gda-line1-press', site: 'Gdańsk', state: 'running', cpu: 44, mem: 51, agent: '4.0.1', nodered: '4.0.9', change: 'Cycle counter reset', changedMinutes: 420, by: 'm.kowal' },
-    { name: 'gda-line1-oven', site: 'Gdańsk', state: 'running', cpu: 38, mem: 47, agent: '4.0.1', nodered: '4.0.9', change: 'Zone 2 setpoint', changedMinutes: 420, by: 'm.kowal' },
-    { name: 'gda-line2-press', site: 'Gdańsk', state: 'offline', cpu: 0, mem: 0, agent: '3.6.0', nodered: '3.1.11', change: 'Recipe sync', changedMinutes: 11520, by: 'm.kowal' },
-    { name: 'gda-packing-robot', site: 'Gdańsk', state: 'running', cpu: 52, mem: 58, agent: '4.0.1', nodered: '4.0.9', change: 'Pallet pattern B', changedMinutes: 1440, by: 'm.kowal' },
-    { name: 'mty-line1-weld', site: 'Monterrey', state: 'running', cpu: 35, mem: 42, agent: '4.0.1', nodered: '4.0.9', change: 'Weld log to historian', changedMinutes: 95, by: 'j.ibarra' },
-    { name: 'mty-line1-vision', site: 'Monterrey', state: 'running', cpu: 63, mem: 66, agent: '4.0.1', nodered: '4.0.9', change: 'Reject threshold 0.82', changedMinutes: 95, by: 'j.ibarra' },
-    { name: 'mty-utilities-water', site: 'Monterrey', state: 'running', cpu: 9, mem: 17, agent: '3.8.1', nodered: '4.0.5', change: 'Flow totaliser', changedMinutes: 8640, by: 'j.ibarra' },
-]
-
-const VIEWS = [
-    { id: 'health', label: 'Health', question: 'Is anything unhappy right now?' },
-    { id: 'versions', label: 'Versions', question: 'What is each device actually running?' },
-    { id: 'changes', label: 'Last change', question: 'What changed out there, and who changed it?' },
-] as const
-
-type ViewId = typeof VIEWS[number]['id']
-const view = ref<ViewId>('health')
-
-function selectView (id: ViewId) {
-    view.value = id
-    capture('edge-fleet-view', { view: id })
-}
-
-// Agent versions are dotted strings, so compare numerically per segment rather
-// than lexically: '3.8.1' must sort before '4.0.1', and '3.10.0' after '3.8.1'.
-function compareVersions (a: string, b: string) {
-    const left = a.split('.').map(Number)
-    const right = b.split('.').map(Number)
-    for (let i = 0; i < Math.max(left.length, right.length); i++) {
-        const diff = (left[i] ?? 0) - (right[i] ?? 0)
-        if (diff !== 0) return diff
+// The hero recording loops silently. Anyone who has asked their OS for less
+// motion gets the poster frame instead - autoplay is not something CSS can
+// switch off, so it has to be done here.
+const heroVideo = ref<HTMLVideoElement | null>(null)
+onMounted(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+        heroVideo.value?.pause()
     }
-    return 0
-}
-
-// Each view sorts by whatever makes its own question answerable at a glance:
-// health puts whatever needs a human first, versions puts the oldest agent
-// first (that is the upgrade queue), changes puts the most recent first.
-const STATE_ORDER: Record<Device['state'], number> = { offline: 0, restarting: 1, running: 2 }
-
-const rows = computed(() => {
-    const list = [...DEVICES]
-    if (view.value === 'health') {
-        return list.sort((a, b) => STATE_ORDER[a.state] - STATE_ORDER[b.state] || b.cpu - a.cpu)
-    }
-    if (view.value === 'versions') {
-        return list.sort((a, b) => compareVersions(a.agent, b.agent) || a.name.localeCompare(b.name))
-    }
-    return list.sort((a, b) => a.changedMinutes - b.changedMinutes)
 })
-
-const siteCount = new Set(DEVICES.map(device => device.site)).size
-const needsAttention = DEVICES.filter(device => device.state !== 'running' || device.cpu >= 75).length
-
-const STATE_LABEL: Record<Device['state'], string> = {
-    running: 'Running',
-    restarting: 'Restarting',
-    offline: 'Offline',
-}
-
-// Status is never colour alone - every chip carries its word, and the CPU meter
-// always prints its number beside the bar.
-function stateClass (state: Device['state']) {
-    if (state === 'offline') return 'ec-chip ec-chip--critical'
-    if (state === 'restarting') return 'ec-chip ec-chip--warn'
-    return 'ec-chip ec-chip--good'
-}
-
-function meterClass (cpu: number) {
-    if (cpu >= 85) return 'ec-meter-fill ec-meter-fill--critical'
-    if (cpu >= 75) return 'ec-meter-fill ec-meter-fill--warn'
-    return 'ec-meter-fill'
-}
-
-function relativeTime (minutes: number) {
-    if (minutes < 60) return `${minutes} min ago`
-    if (minutes < 1440) return `${Math.round(minutes / 60)} h ago`
-    return `${Math.round(minutes / 1440)} d ago`
-}
-
-const LATEST_AGENT = '4.0.1'
 
 /* ------------------------------------------------------------------ *
  * Section content
@@ -153,7 +55,6 @@ const LATEST_AGENT = '4.0.1'
 const SEE_CARDS = [
     {
         title: 'Every device, one view',
-        icon: 'i-lucide-layout-grid',
         chips: [
             { label: 'Instance state and last seen', href: '/docs/user/instance-states/' },
             { label: 'CPU and memory over time', href: '/docs/device-agent/introduction/' },
@@ -163,7 +64,6 @@ const SEE_CARDS = [
     },
     {
         title: 'What changed, and who changed it',
-        icon: 'i-lucide-history',
         chips: [
             { label: 'Audit log across the team', href: '/docs/user/logs/' },
             { label: 'Snapshot comparison', href: '/docs/user/snapshots/' },
@@ -173,7 +73,6 @@ const SEE_CARDS = [
     },
     {
         title: 'When something goes wrong',
-        icon: 'i-lucide-siren',
         chips: [
             { label: 'Node-RED logs without SSH', href: '/docs/user/logs/' },
             { label: 'Health checks and auto-restart', href: '/docs/user/instance-states/' },
@@ -183,7 +82,6 @@ const SEE_CARDS = [
     },
     {
         title: 'Reach a machine you cannot touch',
-        icon: 'i-lucide-plug-zap',
         chips: [
             { label: 'Open the editor from your browser', href: '/docs/device-agent/running/' },
             { label: 'Developer Mode tunnel for live debugging', href: '/docs/device-agent/deploy/' },
@@ -202,21 +100,18 @@ const ACT_STEPS = [
 const DECIDE_CARDS = [
     {
         title: 'Run the model where the data is',
-        icon: 'i-lucide-cpu',
         beta: false,
         body: 'Drop a trained ONNX model into a flow and run inference on the edge device itself. No round trip, no inference bill, no data leaving the plant. One of our own builds catches motor anomalies from an accelerometer using a 33-feature autoencoder trained only on what normal looks like.',
         link: { label: 'ONNX in flows', href: '/docs/flowfuse-nodes/ai/onxx/' },
     },
     {
         title: 'Give an agent hands, not just answers',
-        icon: 'i-lucide-bot',
         beta: false,
         body: 'Expose your flows as MCP tools and let Copilot, Claude, ChatGPT or your own agent read live operational state and act on it, inside the role-based access control you already run. Read-only stays read-only. No agent can delete an instance, an application, a snapshot or a team. Every action is logged as via MCP.',
         link: { label: 'MCP servers', href: '/docs/flowfuse-nodes/mcp/' },
     },
     {
         title: 'Ask the factory a question',
-        icon: 'i-lucide-message-square-text',
         beta: true,
         body: 'FlowFuse Expert Insights Mode connects to the MCP servers in your Node-RED instances, so you can query live state in plain language instead of building a report for it.',
         link: { label: 'FlowFuse Expert', href: '/docs/user/expert/' },
@@ -279,28 +174,28 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
 
     <!-- ==================================================================
          01 · HERO
-         The promise, then the estate. No pictogram, no subtitle slot: this
-         is why the page leaves the shared `solution` layout behind.
+         The recording is landscape and full of real UI, so it gets the full
+         column width under a two-column headline rather than being squeezed
+         into half a grid beside the copy.
     =================================================================== -->
     <section class="w-full px-6">
-      <div class="max-w-md sm:max-w-screen-lg mx-auto pt-10 md:pt-14">
-        <div class="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] gap-10 md:gap-12 items-start">
+      <div class="max-w-md sm:max-w-screen-lg mx-auto pt-10 md:pt-14 pb-16 md:pb-20">
+        <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">For OT and controls teams</span>
 
-          <!-- copy column -->
-          <div class="flex flex-col gap-5 text-center md:text-left">
-            <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">For OT and controls teams</span>
-            <h1 class="font-medium m-0 max-sm:text-4xl">
-              See what every machine is doing.
-              <span class="text-indigo-600">Change it without leaving your desk.</span>
-            </h1>
-            <p class="text-lg text-gray-500 font-light max-w-xl mx-auto md:mx-0 m-0">
+        <div class="grid md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] gap-6 md:gap-12 md:items-end mt-4">
+          <h1 class="font-medium m-0 max-sm:text-4xl">
+            See what every machine is doing.
+            <span class="text-indigo-600">Change it without leaving your desk.</span>
+          </h1>
+
+          <div class="flex flex-col gap-5">
+            <p class="text-lg text-gray-500 font-light m-0">
               FlowFuse runs <a href="/node-red/" :class="LINK">Node-RED</a> next to your machines and
               governs it from one place. Read the PLC, watch the instance, open the editor on a line
               400 km away, and roll the fix to every site that needs it. No site visit. No USB stick.
               No inbound firewall rule.
             </p>
-
-            <div class="flex flex-row flex-wrap gap-4 items-center justify-center md:justify-start mt-1">
+            <div class="flex flex-row flex-wrap gap-4 items-center">
               <CtaBookDemo variant="highlight" position="edge-hero" />
               <a
                 class="text-base uppercase font-semibold text-indigo-600 hover:text-indigo-800 no-underline"
@@ -308,158 +203,80 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
                 @click="capture('cta-device-agent-install', { position: 'edge-hero' })"
               >Install the Device Agent →</a>
             </div>
-
-            <hr class="border-0 border-t border-gray-200 w-full max-w-md mx-auto md:mx-0 mt-2 mb-0">
-
-            <figure class="border-l-2 border-indigo-100 pl-5 max-w-lg mx-auto md:mx-0 my-0 text-left">
-              <blockquote class="m-0 text-base italic font-light text-gray-800 leading-relaxed">
-                &ldquo;It&rsquo;s not just about connecting machines &mdash; it&rsquo;s about creating
-                the foundation that makes everything else possible.&rdquo;
-              </blockquote>
-              <figcaption class="mt-3 flex items-center gap-3 text-sm text-gray-500">
-                <span class="w-9 h-9 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 grid place-items-center text-xs font-bold shrink-0 ec-mono" aria-hidden="true">FR</span>
-                <span><span class="font-semibold text-gray-700">Felix Reck</span> &middot; IT Application Manager, Walter</span>
-              </figcaption>
-            </figure>
           </div>
-
-          <!-- fleet view -->
-          <div class="flex flex-col gap-3 min-w-0">
-            <div class="ec-seg" role="group" aria-label="Fleet view">
-              <button
-                v-for="item in VIEWS"
-                :key="item.id"
-                type="button"
-                :aria-pressed="view === item.id"
-                @click="selectView(item.id)"
-              >{{ item.label }}</button>
-            </div>
-
-            <div class="ec-frame">
-              <div class="ec-chrome">
-                <i /><i /><i />
-                <span>Fleet &middot; {{ DEVICES.length }} devices &middot; {{ siteCount }} sites</span>
-              </div>
-
-              <div class="ec-panel">
-                <p class="ec-question">
-                  {{ VIEWS.find(item => item.id === view)?.question }}
-                  <span v-if="view === 'health'" class="ec-attention">{{ needsAttention }} need attention</span>
-                </p>
-
-                <div class="ec-scroll">
-                  <table class="ec-table">
-                    <thead>
-                      <tr v-if="view === 'health'">
-                        <th>Device</th><th>Site</th><th>State</th><th class="ec-num">CPU</th>
-                      </tr>
-                      <tr v-else-if="view === 'versions'">
-                        <th>Device</th><th>Site</th><th>Agent</th><th>Node-RED</th>
-                      </tr>
-                      <tr v-else>
-                        <th>Device</th><th>Last change</th><th>When</th><th>By</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-for="device in rows" :key="device.name">
-                        <td class="ec-name">{{ device.name }}</td>
-
-                        <template v-if="view === 'health'">
-                          <td class="ec-dim">{{ device.site }}</td>
-                          <td><span :class="stateClass(device.state)">{{ STATE_LABEL[device.state] }}</span></td>
-                          <td class="ec-num">
-                            <span class="ec-meter-wrap">
-                              <span class="ec-meter" aria-hidden="true">
-                                <span :class="meterClass(device.cpu)" :style="{ width: `${device.cpu}%` }" />
-                              </span>
-                              <span class="ec-meter-val">{{ device.state === 'offline' ? '—' : `${device.cpu}%` }}</span>
-                            </span>
-                          </td>
-                        </template>
-
-                        <template v-else-if="view === 'versions'">
-                          <td class="ec-dim">{{ device.site }}</td>
-                          <td>
-                            <span :class="device.agent === LATEST_AGENT ? 'ec-chip ec-chip--good' : 'ec-chip ec-chip--warn'">{{ device.agent }}</span>
-                          </td>
-                          <td class="ec-dim ec-mono">{{ device.nodered }}</td>
-                        </template>
-
-                        <template v-else>
-                          <td class="ec-dim">{{ device.change }}</td>
-                          <td class="ec-dim ec-mono">{{ relativeTime(device.changedMinutes) }}</td>
-                          <td class="ec-dim ec-mono">{{ device.by }}</td>
-                        </template>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <p class="text-xs text-gray-400 text-center md:text-left m-0">
-              Illustrative fleet. Every column is a field FlowFuse reports today.
-            </p>
-          </div>
-
         </div>
+
+        <figure class="m-0 mt-10 md:mt-12">
+          <div class="rounded-xl border border-gray-200 overflow-hidden bg-white ec-shot">
+            <video
+              ref="heroVideo"
+              autoplay loop muted playsinline preload="none"
+              poster="/images/use-cases/edge-remote-instance-poster.jpg"
+              width="1400" height="630"
+              class="w-full h-auto block"
+              aria-label="A Remote Instance in FlowFuse: connection status and last seen, agent and Node-RED versions, target snapshot and device mode, with a live activity log. The view then switches to the Node-RED editor running on that same device."
+            >
+              <source src="/images/use-cases/edge-remote-instance.webm" type="video/webm">
+            </video>
+          </div>
+          <figcaption class="mt-3 text-sm text-gray-400">
+            One remote instance in FlowFuse &mdash; state, versions and recent activity, then the editor
+            open on the device itself.
+          </figcaption>
+        </figure>
+
+        <figure class="border-l-2 border-indigo-100 pl-5 max-w-2xl mt-10 mb-0 mx-0 text-left">
+          <blockquote class="m-0 text-base italic font-light text-gray-800 leading-relaxed">
+            &ldquo;It&rsquo;s not just about connecting machines &mdash; it&rsquo;s about creating
+            the foundation that makes everything else possible.&rdquo;
+          </blockquote>
+          <figcaption class="mt-3 flex items-center gap-3 text-sm text-gray-500">
+            <span class="w-9 h-9 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 grid place-items-center text-xs font-bold shrink-0 ec-mono" aria-hidden="true">FR</span>
+            <span><span class="font-semibold text-gray-700">Felix Reck</span> &middot; IT Application Manager, Walter</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- ==================================================================
-         02 · THE GAP
+         02 · THE OPEN LOOP
+         The problem and the frame for it, in one section: the gap IS an open
+         loop, so splitting them into two sections made the page state the
+         same idea twice.
     =================================================================== -->
-    <section class="w-full bg-gray-50 border-t border-b border-gray-200 mt-20">
-      <div class="w-full px-6 py-16 md:py-20">
-        <div class="max-w-md sm:max-w-screen-lg mx-auto">
-          <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">The gap</span>
-          <h2 class="mt-3 mb-6 text-center w-full md:text-left">
-            Most plants aren&rsquo;t short of data. They&rsquo;re short of a <span class="text-indigo-600">place to stand.</span>
-          </h2>
+    <section class="w-full px-6 py-16 md:py-24 border-t border-gray-200">
+      <div class="max-w-md sm:max-w-screen-lg mx-auto">
+        <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">The open loop</span>
+        <h2 class="mt-3 mb-8 text-center w-full md:text-left">
+          Most plants aren&rsquo;t short of data. <span class="text-indigo-600">They&rsquo;re short of a closed loop.</span>
+        </h2>
 
-          <div class="grid md:grid-cols-2 gap-6 md:gap-10 max-w-5xl">
-            <div class="flex flex-col gap-4 text-gray-500 font-light">
-              <p class="m-0">
-                Your machines produce more signal than they ever have. The PLC knows the cycle time.
-                The drive knows the current draw. The vision system knows the reject rate. All of it
-                exists, somewhere, in a format someone chose years ago.
-              </p>
-              <p class="m-0">
-                What doesn&rsquo;t exist is one place to look at it &mdash; and one place to do
-                something about it.
-              </p>
-            </div>
-            <div class="flex flex-col gap-4 text-gray-500 font-light">
-              <p class="m-0">
-                So the work goes sideways. An engineer drives to a pumping station to read a gauge. A
-                torque spec change means reprogramming fifteen controllers by hand, across five lines,
-                with a USB stick. One production unit reports runtime and downtime to the MES; the unit
-                next door reports nothing, because nobody has built it yet and nobody has the time.
-              </p>
-              <p class="m-0">
-                It holds until it doesn&rsquo;t. A bearing gives up at 2:47 on a Tuesday. The vibration
-                had been climbing for six weeks. Nobody was watching that number, because watching it
-                would have meant building something, and building something would have meant a project.
-              </p>
-            </div>
-          </div>
+        <!-- The opening beat runs full width and the two consequences sit beside
+             each other, so neither column is left with a hole under it. -->
+        <p class="max-w-4xl text-lg text-gray-500 font-light m-0">
+          Your machines produce more signal than they ever have. The PLC knows the cycle time. The
+          drive knows the current draw. The vision system knows the reject rate. All of it exists,
+          somewhere, in a format someone chose years ago. What doesn&rsquo;t exist is one place to
+          look at it &mdash; and one place to do something about it.
+        </p>
 
-          <p class="mt-10 text-xl md:text-2xl font-light text-gray-800 max-w-3xl m-0">
-            The gap isn&rsquo;t between your machines and the cloud. It&rsquo;s between noticing
-            something and <span class="text-indigo-600">being able to do anything about it.</span>
+        <div class="grid md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mt-8">
+          <p class="m-0 text-gray-500 font-light">
+            So the work goes sideways. An engineer drives to a pumping station to read a gauge. A
+            torque spec change means reprogramming fifteen controllers by hand, across five lines,
+            with a USB stick. One production unit reports runtime and downtime to the MES; the unit
+            next door reports nothing, because nobody has built it yet and nobody has the time.
+          </p>
+          <p class="m-0 text-gray-500 font-light">
+            It holds until it doesn&rsquo;t. A bearing gives up at 2:47 on a Tuesday. The vibration
+            had been climbing for six weeks. Nobody was watching that number, because watching it
+            would have meant building something, and building something would have meant a project.
           </p>
         </div>
-      </div>
-    </section>
 
-    <!-- ==================================================================
-         03 · THE LOOP
-    =================================================================== -->
-    <section class="w-full px-6 py-16 md:py-24">
-      <div class="max-w-md sm:max-w-screen-lg mx-auto">
-        <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">The loop</span>
-        <h2 class="mt-3 mb-6 text-center w-full md:text-left">
+        <h3 class="mt-14 mb-6 text-2xl font-medium text-gray-900 text-center w-full md:text-left">
           Every improvement you want is a loop. <span class="text-indigo-600">The edge is where it closes.</span>
-        </h2>
+        </h3>
 
         <div class="grid md:grid-cols-2 gap-6 md:gap-10 max-w-5xl">
           <div class="flex flex-col gap-4 text-gray-500 font-light">
@@ -492,74 +309,82 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
              renders about 700px across and reads as an aside, when it is the
              section's argument. Inline SVG so it inherits the page's type and
              needs no library at runtime. -->
-        <figure class="m-0 mt-10 md:mt-12 rounded-xl border border-gray-200 bg-white px-4 py-8 md:px-14 md:py-12">
-            <svg
-              viewBox="0 0 720 320"
-              class="w-full h-auto"
-              role="img"
-              aria-label="Diagram: a machine feeds Signal, then Context, then Action, which returns to the machine in milliseconds on the device. A longer dashed path routes the same loop through the cloud, taking 20 to 100 milliseconds and only while the link is up."
-            >
-              <!-- cloud path (the long way round) -->
-              <path d="M 96 108 C 140 26, 300 18, 360 18 C 430 18, 570 30, 616 108"
-                    fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5 5" />
-              <rect x="300" y="0" width="122" height="34" rx="17" fill="#ffffff" stroke="#e5e7eb" />
-              <text x="361" y="22" text-anchor="middle" font-size="14" fill="#6b7280">Cloud / IT</text>
-              <text x="361" y="54" text-anchor="middle" font-size="12.5" fill="#9ca3af">
-                20&ndash;100 ms, and only while the link is up
-              </text>
-              <polygon points="616,112 611,100 621,100" fill="#9ca3af" />
+        <figure class="m-0 mt-10 md:mt-12 rounded-xl border border-gray-200 bg-gray-50 px-4 py-8 md:px-14 md:py-12">
+          <svg
+            viewBox="0 0 720 320"
+            class="w-full h-auto"
+            role="img"
+            aria-label="Diagram: a machine feeds Signal, then Context, then Action, which returns to the machine in milliseconds on the device. A longer dashed path routes the same loop through the cloud, taking 20 to 100 milliseconds and only while the link is up."
+          >
+            <!-- cloud path (the long way round) -->
+            <path d="M 96 108 C 140 26, 300 18, 360 18 C 430 18, 570 30, 616 108"
+                  fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5 5" />
+            <rect x="300" y="0" width="122" height="34" rx="17" fill="#ffffff" stroke="#e5e7eb" />
+            <text x="361" y="22" text-anchor="middle" font-size="14" fill="#6b7280">Cloud / IT</text>
+            <text x="361" y="54" text-anchor="middle" font-size="12.5" fill="#9ca3af">
+              20&ndash;100 ms, and only while the link is up
+            </text>
+            <polygon points="616,112 611,100 621,100" fill="#9ca3af" />
 
-              <!-- machine -->
-              <rect x="30" y="118" width="120" height="76" rx="10" fill="#f9fafb" stroke="#d1d5db" stroke-width="2" />
-              <text x="90" y="150" text-anchor="middle" font-size="14" font-weight="500" fill="#374151">Machine</text>
-              <text x="90" y="170" text-anchor="middle" font-size="12" fill="#9ca3af">PLC &middot; drive &middot; sensor</text>
+            <!-- machine -->
+            <rect x="30" y="118" width="120" height="76" rx="10" fill="#ffffff" stroke="#d1d5db" stroke-width="2" />
+            <text x="90" y="150" text-anchor="middle" font-size="14" font-weight="500" fill="#374151">Machine</text>
+            <text x="90" y="170" text-anchor="middle" font-size="12" fill="#9ca3af">PLC &middot; drive &middot; sensor</text>
 
-              <!-- the three stages -->
-              <g>
-                <rect x="190" y="124" width="140" height="64" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" />
-                <text x="260" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#4f46e5">Signal</text>
-                <text x="260" y="170" text-anchor="middle" font-size="12" fill="#6b7280">2.3 A</text>
+            <!-- the three stages -->
+            <g>
+              <rect x="190" y="124" width="140" height="64" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" />
+              <text x="260" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#4f46e5">Signal</text>
+              <text x="260" y="170" text-anchor="middle" font-size="12" fill="#6b7280">2.3 A</text>
 
-                <rect x="360" y="124" width="140" height="64" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" />
-                <text x="430" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#4f46e5">Context</text>
-                <text x="430" y="170" text-anchor="middle" font-size="12" fill="#6b7280">line, recipe, history</text>
+              <rect x="360" y="124" width="140" height="64" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" />
+              <text x="430" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#4f46e5">Context</text>
+              <text x="430" y="170" text-anchor="middle" font-size="12" fill="#6b7280">line, recipe, history</text>
 
-                <rect x="530" y="124" width="140" height="64" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" />
-                <text x="600" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#4f46e5">Action</text>
-                <text x="600" y="170" text-anchor="middle" font-size="12" fill="#6b7280">alert, setpoint, stop</text>
-              </g>
+              <rect x="530" y="124" width="140" height="64" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" />
+              <text x="600" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#4f46e5">Action</text>
+              <text x="600" y="170" text-anchor="middle" font-size="12" fill="#6b7280">alert, setpoint, stop</text>
+            </g>
 
-              <!-- forward arrows -->
-              <g stroke="#4f46e5" stroke-width="2" fill="none">
-                <line x1="152" y1="156" x2="182" y2="156" />
-                <line x1="332" y1="156" x2="352" y2="156" />
-                <line x1="502" y1="156" x2="522" y2="156" />
-              </g>
-              <g fill="#4f46e5">
-                <polygon points="190,156 178,151 178,161" />
-                <polygon points="360,156 348,151 348,161" />
-                <polygon points="530,156 518,151 518,161" />
-              </g>
+            <!-- forward arrows -->
+            <g stroke="#4f46e5" stroke-width="2" fill="none">
+              <line x1="152" y1="156" x2="182" y2="156" />
+              <line x1="332" y1="156" x2="352" y2="156" />
+              <line x1="502" y1="156" x2="522" y2="156" />
+            </g>
+            <g fill="#4f46e5">
+              <polygon points="190,156 178,151 178,161" />
+              <polygon points="360,156 348,151 348,161" />
+              <polygon points="530,156 518,151 518,161" />
+            </g>
 
-              <!-- return path (the short way round) -->
-              <path d="M 600 190 L 600 256 L 90 256 L 90 198"
-                    fill="none" stroke="#4f46e5" stroke-width="2" />
-              <polygon points="90,192 85,204 95,204" fill="#4f46e5" />
-              <rect x="248" y="240" width="228" height="32" rx="16" fill="#ffffff" />
-              <text x="362" y="261" text-anchor="middle" font-size="13" font-weight="500" fill="#4f46e5">
-                milliseconds, on the device
-              </text>
+            <!-- return path (the short way round) -->
+            <path d="M 600 190 L 600 256 L 90 256 L 90 198"
+                  fill="none" stroke="#4f46e5" stroke-width="2" />
+            <polygon points="90,192 85,204 95,204" fill="#4f46e5" />
+            <rect x="248" y="240" width="228" height="32" rx="16" fill="#f9fafb" />
+            <text x="362" y="261" text-anchor="middle" font-size="13" font-weight="500" fill="#4f46e5">
+              milliseconds, on the device
+            </text>
 
-              <text x="362" y="300" text-anchor="middle" font-size="12.5" fill="#9ca3af">
-                The loop keeps closing when the link drops.
-              </text>
-            </svg>
+            <text x="362" y="300" text-anchor="middle" font-size="12.5" fill="#9ca3af">
+              The loop keeps closing when the link drops.
+            </text>
+          </svg>
         </figure>
+
+        <p class="mt-10 text-xl md:text-2xl font-light text-gray-800 max-w-3xl m-0">
+          The gap isn&rsquo;t between your machines and the cloud. It&rsquo;s between noticing
+          something and <span class="text-indigo-600">being able to do anything about it.</span>
+        </p>
       </div>
     </section>
 
     <!-- ==================================================================
-         04 · SEE
+         03 · SEE
+         Same treatment as "In the box" on /platform/dashboard/: a short lead,
+         then bordered cards of linked capability chips. It plays the same role
+         here - the first concrete look at what you get.
     =================================================================== -->
     <section class="w-full bg-gray-50 border-t border-b border-gray-200">
       <div class="w-full px-6 py-16 md:py-20">
@@ -575,10 +400,7 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <div v-for="card in SEE_CARDS" :key="card.title" class="rounded-lg border border-indigo-200 bg-white p-6">
-              <h3 class="text-lg font-semibold m-0 mb-4 text-indigo-600 flex items-center gap-2.5 justify-center md:justify-start">
-                <UIcon :name="card.icon" class="size-5 shrink-0" aria-hidden="true" />
-                {{ card.title }}
-              </h3>
+              <h3 class="text-lg font-semibold m-0 mb-4 text-indigo-600 text-center md:text-left">{{ card.title }}</h3>
               <div class="flex flex-wrap gap-2 justify-center md:justify-start">
                 <template v-for="chip in card.chips" :key="chip.label">
                   <a v-if="chip.href" class="ec-tag" :href="chip.href">{{ chip.label }}</a>
@@ -598,7 +420,7 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
     </section>
 
     <!-- ==================================================================
-         05 · ACT
+         04 · ACT
     =================================================================== -->
     <section class="w-full px-6 py-16 md:py-24">
       <div class="max-w-md sm:max-w-screen-lg mx-auto">
@@ -629,10 +451,10 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
             </p>
           </div>
 
-          <ol class="list-none m-0 p-0 flex flex-col gap-4">
+          <ol class="list-none m-0 p-0 flex flex-col gap-4 min-w-0">
             <li v-for="step in ACT_STEPS" :key="step.n" class="ec-step">
               <span class="ec-step-n ec-mono">{{ step.n }}</span>
-              <span class="flex flex-col gap-1">
+              <span class="flex flex-col gap-1 min-w-0">
                 <span class="font-medium text-gray-900">{{ step.title }}</span>
                 <span class="text-gray-500 font-light">{{ step.detail }}</span>
               </span>
@@ -643,7 +465,7 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
     </section>
 
     <!-- ==================================================================
-         06 · DECIDE
+         05 · DECIDE
     =================================================================== -->
     <section class="w-full bg-gray-50 border-t border-b border-gray-200">
       <div class="w-full px-6 py-16 md:py-20">
@@ -662,8 +484,7 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             <div v-for="card in DECIDE_CARDS" :key="card.title" class="rounded-lg border border-gray-200 bg-white p-6 flex flex-col gap-3">
-              <div class="flex items-center gap-2.5">
-                <UIcon :name="card.icon" class="size-5 text-indigo-600 shrink-0" aria-hidden="true" />
+              <div class="flex items-center gap-2.5 min-h-[1.25rem]">
                 <span v-if="card.beta" class="ec-beta">Beta</span>
               </div>
               <h3 class="text-lg font-semibold m-0 text-gray-900">{{ card.title }}</h3>
@@ -680,7 +501,7 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
     </section>
 
     <!-- ==================================================================
-         07 · PROOF
+         06 · PROOF
     =================================================================== -->
     <section class="w-full px-6 py-16 md:py-24">
       <div class="max-w-md sm:max-w-screen-lg mx-auto">
@@ -726,47 +547,85 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
     </section>
 
     <!-- ==================================================================
-         08 · WHO OWNS THIS
-         The gatekeeper section. Openness lives here rather than in the hero:
-         it is what gets FlowFuse through architecture review, and it is a
-         claim every competitor makes at the top of a page.
+         07 · START
     =================================================================== -->
     <section class="w-full bg-gray-50 border-t border-b border-gray-200">
       <div class="w-full px-6 py-16 md:py-20">
         <div class="max-w-md sm:max-w-screen-lg mx-auto">
-          <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">Who owns this</span>
+          <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">Start</span>
           <h2 class="mt-3 mb-3 text-center w-full md:text-left">
-            IT needs to know it&rsquo;s safe. OT needs it to not get in the way.
-            <span class="text-indigo-600">Same system, two views.</span>
+            Bring one machine online. <span class="text-indigo-600">Then decide.</span>
           </h2>
-          <p class="max-w-3xl mx-auto md:mx-0 text-gray-500 font-light">
-            You cannot scale what you cannot see, and you cannot secure what nobody owns. Edge estates
-            usually fail on the second one first &mdash; a machine somebody set up in 2021, a flow that
-            exists in one person&rsquo;s memory, a Raspberry Pi under a desk that nothing on the network
-            inventory knows about.
-          </p>
 
-          <div class="grid md:grid-cols-2 gap-6 mt-10">
-            <div class="rounded-lg border border-gray-200 bg-white p-6">
-              <h3 class="text-lg font-semibold m-0 mb-3 text-gray-900">For IT and architecture</h3>
-              <p class="m-0 text-gray-500 font-light">
-                Outbound-only connections from every device: no inbound ports, no VPN, no static IPs, no
-                certificates to manage. SSO, two-factor and role-based access across the whole estate.
-                A full audit log of every change, every deploy, every agent action. Structured JSON
-                logging into the stack you already run. And an open core &mdash; FlowFuse is built on
-                Node-RED, the Device Agent is
-                <a href="https://github.com/FlowFuse/device-agent" :class="LINK">open source</a>, and the
-                flows you build stay portable. Nothing you build here is trapped here.
-              </p>
-            </div>
-            <div class="rounded-lg border border-gray-200 bg-white p-6">
-              <h3 class="text-lg font-semibold m-0 mb-3 text-gray-900">For OT and controls</h3>
-              <p class="m-0 text-gray-500 font-light">
-                The editor you already know, on the hardware you already have. Flows keep running when
-                the link drops. Developer Mode when you need to work on live equipment, Fleet Mode when
-                you need a device to stay exactly as deployed.
-                <a href="/docs/user/snapshots/" :class="LINK">Snapshots</a> and one-click rollback, so
-                changing something on a running line stops being the scariest part of the week.
+          <!-- min-w-0 on both children: the stacked command block below sets
+               white-space:nowrap on the install command, and without this its
+               min-content width sizes the single mobile grid track, pushing the
+               whole page sideways at phone widths. -->
+          <div class="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-10 md:gap-14 items-start mt-8">
+            <ol class="list-none m-0 p-0 flex flex-col gap-6 min-w-0">
+              <li class="ec-step">
+                <span class="ec-step-n ec-mono">01</span>
+                <span class="flex flex-col gap-1 min-w-0">
+                  <span class="font-medium text-gray-900">Install the agent</span>
+                  <span class="text-gray-500 font-light">
+                    Run one command on the machine you want to connect. The installer registers the device,
+                    creates your account if you don&rsquo;t have one, and offers to import the flows if it&rsquo;s
+                    already running Node-RED.
+                  </span>
+                </span>
+              </li>
+              <li class="ec-step">
+                <span class="ec-step-n ec-mono">02</span>
+                <span class="flex flex-col gap-1 min-w-0">
+                  <span class="font-medium text-gray-900">Connect what&rsquo;s on it</span>
+                  <span class="text-gray-500 font-light">
+                    Read the PLC with certified
+                    <a href="/docs/flowfuse-nodes/edge/opcua/" :class="LINK">OPC-UA</a>,
+                    <a href="/docs/flowfuse-nodes/edge/modbus/" :class="LINK">Modbus</a>,
+                    <a href="/docs/flowfuse-nodes/edge/cip-suite/" :class="LINK">EtherNet/IP</a> or
+                    <a href="/docs/flowfuse-nodes/edge/rtsp/" :class="LINK">RTSP</a> nodes &mdash; maintained
+                    and security-patched by FlowFuse, so a production connection never rests on an
+                    unmaintained community package.
+                  </span>
+                </span>
+              </li>
+              <li class="ec-step">
+                <span class="ec-step-n ec-mono">03</span>
+                <span class="flex flex-col gap-1 min-w-0">
+                  <span class="font-medium text-gray-900">Do it again, 200 times</span>
+                  <span class="text-gray-500 font-light">
+                    Snapshot what works. Group your devices by site or line. Push through a
+                    <a href="/docs/user/devops-pipelines/" :class="LINK">pipeline</a>. Nobody logs into an
+                    edge node again.
+                  </span>
+                </span>
+              </li>
+            </ol>
+
+            <!-- w-full: .ff-blue-card carries `m-auto`, and auto margins on a grid
+                 item make it shrink-to-fit rather than stretch - so it sized itself
+                 to the nowrap install command and clamped at max-w-md (448px),
+                 overflowing a 342px phone track. -->
+            <div class="ff-blue-card min-w-0 w-full">
+              <h3 class="font-medium w-full text-center md:text-left mb-6 m-0">Install on edge, straight from your terminal</h3>
+              <p class="font-medium mb-2">Linux and macOS</p>
+              <FfCommand
+                command='/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)" && ./flowfuse-device-agent-installer'
+                event="cta-copy-device-agent-install"
+                position="edge-connectivity"
+                stacked
+              />
+              <p class="font-medium mb-2 mt-6">Windows (run elevated)</p>
+              <FfCommand
+                command='Set-Location $env:USERPROFILE; powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1 | iex"; .\flowfuse-device-agent-installer.exe'
+                event="cta-copy-device-agent-install"
+                position="edge-connectivity"
+                stacked
+              />
+              <p class="font-light mt-6 m-0">
+                Installing with npm or Docker instead? The
+                <a href="/docs/device-agent/install/overview/" :class="LINK">installation docs</a> cover
+                every route.
               </p>
             </div>
           </div>
@@ -775,94 +634,9 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
     </section>
 
     <!-- ==================================================================
-         09 · START
+         08 · CLOSING CTA
     =================================================================== -->
-    <section class="w-full px-6 py-16 md:py-24">
-      <div class="max-w-md sm:max-w-screen-lg mx-auto">
-        <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">Start</span>
-        <h2 class="mt-3 mb-3 text-center w-full md:text-left">
-          Bring one machine online. <span class="text-indigo-600">Then decide.</span>
-        </h2>
-
-        <!-- min-w-0 on both children: the stacked command block below sets
-             white-space:nowrap on the install command, and without this its
-             min-content width sizes the single mobile grid track, pushing the
-             whole page sideways at phone widths. -->
-        <div class="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] gap-10 md:gap-14 items-start mt-8">
-          <ol class="list-none m-0 p-0 flex flex-col gap-6 min-w-0">
-            <li class="ec-step">
-              <span class="ec-step-n ec-mono">01</span>
-              <span class="flex flex-col gap-1">
-                <span class="font-medium text-gray-900">Install the agent</span>
-                <span class="text-gray-500 font-light">
-                  Run one command on the machine you want to connect. The installer registers the device,
-                  creates your account if you don&rsquo;t have one, and offers to import the flows if it&rsquo;s
-                  already running Node-RED.
-                </span>
-              </span>
-            </li>
-            <li class="ec-step">
-              <span class="ec-step-n ec-mono">02</span>
-              <span class="flex flex-col gap-1">
-                <span class="font-medium text-gray-900">Connect what&rsquo;s on it</span>
-                <span class="text-gray-500 font-light">
-                  Read the PLC with certified
-                  <a href="/docs/flowfuse-nodes/edge/opcua/" :class="LINK">OPC-UA</a>,
-                  <a href="/docs/flowfuse-nodes/edge/modbus/" :class="LINK">Modbus</a>,
-                  <a href="/docs/flowfuse-nodes/edge/cip-suite/" :class="LINK">EtherNet/IP</a> or
-                  <a href="/docs/flowfuse-nodes/edge/rtsp/" :class="LINK">RTSP</a> nodes &mdash; maintained
-                  and security-patched by FlowFuse, so a production connection never rests on an
-                  unmaintained community package.
-                </span>
-              </span>
-            </li>
-            <li class="ec-step">
-              <span class="ec-step-n ec-mono">03</span>
-              <span class="flex flex-col gap-1">
-                <span class="font-medium text-gray-900">Do it again, 200 times</span>
-                <span class="text-gray-500 font-light">
-                  Snapshot what works. Group your devices by site or line. Push through a
-                  <a href="/docs/user/devops-pipelines/" :class="LINK">pipeline</a>. Nobody logs into an
-                  edge node again.
-                </span>
-              </span>
-            </li>
-          </ol>
-
-          <!-- w-full: .ff-blue-card carries `m-auto`, and auto margins on a grid
-               item make it shrink-to-fit rather than stretch - so it sized itself
-               to the nowrap install command and clamped at max-w-md (448px),
-               overflowing a 342px phone track. -->
-          <div class="ff-blue-card min-w-0 w-full">
-            <h3 class="font-medium w-full text-center md:text-left mb-6 m-0">Install on edge, straight from your terminal</h3>
-            <p class="font-medium mb-2">Linux and macOS</p>
-            <FfCommand
-              command='/bin/bash -c "$(curl -fsSL https://flowfuse.github.io/device-agent/get.sh)" && ./flowfuse-device-agent-installer'
-              event="cta-copy-device-agent-install"
-              position="edge-connectivity"
-              stacked
-            />
-            <p class="font-medium mb-2 mt-6">Windows (run elevated)</p>
-            <FfCommand
-              command='Set-Location $env:USERPROFILE; powershell -c "irm https://flowfuse.github.io/device-agent/get.ps1 | iex"; .\flowfuse-device-agent-installer.exe'
-              event="cta-copy-device-agent-install"
-              position="edge-connectivity"
-              stacked
-            />
-            <p class="font-light mt-6 m-0">
-              Installing with npm or Docker instead? The
-              <a href="/docs/device-agent/install/overview/" :class="LINK">installation docs</a> cover
-              every route.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================================================================
-         10 · CLOSING CTA
-    =================================================================== -->
-    <section class="w-full px-6 pb-20">
+    <section class="w-full px-6 py-16 md:py-20">
       <div class="max-w-md sm:max-w-screen-lg mx-auto">
         <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-6 text-center ff-get-started-bg">
           <p class="text-white text-3xl md:text-4xl font-medium m-0 max-w-2xl">
@@ -896,211 +670,9 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* ---------- view switcher ---------- */
-.ec-seg {
-    display: inline-flex;
-    background-color: var(--color-gray-100);
-    border: 1px solid var(--color-gray-200);
-    border-radius: 999px;
-    padding: 3px;
-    gap: 2px;
-}
-.ec-seg button {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.3125rem 0.75rem;
-    border-radius: 999px;
-    border: 0;
-    background-color: transparent;
-    color: var(--color-gray-500);
-    cursor: pointer;
-    transition: background-color 0.15s, color 0.15s;
-}
-.ec-seg button:hover {
-    color: var(--color-gray-800);
-}
-.ec-seg button[aria-pressed="true"] {
-    background-color: #ffffff;
-    color: #4f46e5;
-    box-shadow: 0 1px 2px rgb(17 24 39 / 0.12);
-}
-
-/* ---------- the framed estate ---------- */
-/* min-width/max-width: a grid item defaults to min-width:auto, which lets the
-   nowrap table below push the whole column past the viewport at phone widths
-   instead of letting .ec-scroll scroll. */
-.ec-frame {
-    border: 1px solid var(--color-gray-200);
-    border-radius: 0.625rem;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 12px 28px -18px rgb(17 24 39 / 0.35);
-    min-width: 0;
-    max-width: 100%;
-}
-.ec-chrome {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    background-color: var(--color-gray-50);
-    border-bottom: 1px solid var(--color-gray-200);
-}
-.ec-chrome i {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 999px;
-    background-color: var(--color-gray-300);
-}
-.ec-chrome span {
-    margin-left: 0.375rem;
-    font-size: 0.6875rem;
-    color: var(--color-gray-500);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-.ec-panel {
-    padding: 0.875rem 1rem 1rem;
-    min-width: 0;
-}
-.ec-question {
-    margin: 0 0 0.75rem;
-    font-size: 0.8125rem;
-    color: var(--color-gray-600);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-}
-.ec-attention {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.6875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #b45309;
-    background-color: #fffbeb;
-    border: 1px solid #fde68a;
-    border-radius: 999px;
-    padding: 0.125rem 0.5rem;
-}
-
-/* A table can be wider than a phone; give it its own scroller rather than
-   letting the page scroll sideways. */
-.ec-scroll {
-    overflow-x: auto;
-    /* Tall enough for all twelve rows, so the panel reads as a whole estate
-       rather than a list cut off mid-scroll. */
-    max-height: 26rem;
-    overflow-y: auto;
-    min-width: 0;
-    max-width: 100%;
-}
-.ec-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.75rem;
-    white-space: nowrap;
-}
-.ec-table th {
-    text-align: left;
-    font-weight: 500;
-    font-size: 0.625rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-gray-400);
-    padding: 0 0.5rem 0.4375rem;
-    border-bottom: 1px solid var(--color-gray-200);
-    position: sticky;
-    top: 0;
-    background-color: #ffffff;
-}
-.ec-table td {
-    padding: 0.4375rem 0.5rem;
-    border-bottom: 1px solid var(--color-gray-100);
-    color: var(--color-gray-700);
-    vertical-align: middle;
-}
-.ec-table tr:last-child td {
-    border-bottom: 0;
-}
-.ec-name {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.6875rem;
-    color: var(--color-gray-900);
-}
-.ec-dim {
-    color: var(--color-gray-500);
-}
-.ec-num {
-    text-align: right;
-}
-
-/* ---------- status chips ----------
-   Reserved status colours, never reused as decoration, and never colour
-   alone: each chip carries its own word. */
-.ec-chip {
-    display: inline-block;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.625rem;
-    letter-spacing: 0.04em;
-    border-radius: 999px;
-    padding: 0.125rem 0.4375rem;
-    border: 1px solid transparent;
-}
-.ec-chip--good {
-    color: #15803d;
-    background-color: #f0fdf4;
-    border-color: #bbf7d0;
-}
-.ec-chip--warn {
-    color: #b45309;
-    background-color: #fffbeb;
-    border-color: #fde68a;
-}
-.ec-chip--critical {
-    color: #b91c1c;
-    background-color: #fef2f2;
-    border-color: #fecaca;
-}
-
-/* ---------- CPU meter ----------
-   Thin, baseline-anchored, rounded data end, and the number always printed
-   beside it so the bar is never the only carrier of the value. */
-.ec-meter-wrap {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4375rem;
-    justify-content: flex-end;
-}
-.ec-meter {
-    display: inline-block;
-    width: 3.25rem;
-    height: 0.375rem;
-    border-radius: 999px;
-    background-color: var(--color-gray-100);
-    overflow: hidden;
-}
-.ec-meter-fill {
-    display: block;
-    height: 100%;
-    border-radius: 999px;
-    background-color: #4f46e5;
-    transition: width 0.25s ease;
-}
-.ec-meter-fill--warn {
-    background-color: #d97706;
-}
-.ec-meter-fill--critical {
-    background-color: #dc2626;
-}
-.ec-meter-val {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.6875rem;
-    color: var(--color-gray-600);
-    min-width: 2.25rem;
-    text-align: right;
+/* ---------- hero recording ---------- */
+.ec-shot {
+    box-shadow: 0 18px 40px -24px rgb(17 24 39 / 0.4);
 }
 
 /* ---------- capability tags ---------- */
