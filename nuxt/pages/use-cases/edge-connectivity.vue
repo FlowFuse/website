@@ -182,13 +182,17 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
       <div class="max-w-md sm:max-w-screen-lg mx-auto pt-10 md:pt-14 pb-16 md:pb-20">
         <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">For OT and controls teams</span>
 
-        <div class="grid md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] gap-6 md:gap-12 md:items-end mt-4">
+        <!-- items-start, not items-end: the right column is taller than the
+             headline, so bottom-aligning pushed the h1 down and left a hole under
+             the eyebrow. Both columns start at the same top edge instead, with a
+             small optical nudge on the smaller type. -->
+        <div class="grid md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] gap-6 md:gap-12 md:items-start mt-4">
           <h1 class="font-medium m-0 max-sm:text-4xl">
             See what every machine is doing.
             <span class="text-indigo-600">Change it without leaving your desk.</span>
           </h1>
 
-          <div class="flex flex-col gap-5">
+          <div class="flex flex-col gap-5 md:pt-2">
             <p class="text-lg text-gray-500 font-light m-0">
               FlowFuse runs <a href="/node-red/" :class="LINK">Node-RED</a> next to your machines and
               governs it from one place. Read the PLC, watch the instance, open the editor on a line
@@ -225,12 +229,14 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
           </figcaption>
         </figure>
 
-        <figure class="border-l-2 border-indigo-100 pl-5 max-w-2xl mt-10 mb-0 mx-0 text-left">
-          <blockquote class="m-0 text-base italic font-light text-gray-800 leading-relaxed">
+        <!-- Full container width rather than a narrow column: at max-w-2xl under a
+             1024px recording it read as a leftover, not as the close of the hero. -->
+        <figure class="border-l-2 border-indigo-100 pl-6 md:pl-8 mt-12 mb-0 mx-0 text-left">
+          <blockquote class="m-0 text-xl md:text-2xl italic font-light text-gray-800 leading-snug">
             &ldquo;It&rsquo;s not just about connecting machines &mdash; it&rsquo;s about creating
             the foundation that makes everything else possible.&rdquo;
           </blockquote>
-          <figcaption class="mt-3 flex items-center gap-3 text-sm text-gray-500">
+          <figcaption class="mt-4 flex items-center gap-3 text-sm text-gray-500">
             <span class="w-9 h-9 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 grid place-items-center text-xs font-bold shrink-0 ec-mono" aria-hidden="true">FR</span>
             <span><span class="font-semibold text-gray-700">Felix Reck</span> &middot; IT Application Manager, Walter</span>
           </figcaption>
@@ -248,14 +254,14 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
       <div class="max-w-md sm:max-w-screen-lg mx-auto">
         <span class="ec-mono text-xs uppercase tracking-[0.16em] text-gray-600">The open loop</span>
         <h2 class="mt-3 mb-8 text-center w-full md:text-left">
-          Most plants aren&rsquo;t short of data. <span class="text-indigo-600">They&rsquo;re short of a closed loop.</span>
+          Most plants don&rsquo;t lack data. <span class="text-indigo-600">They lack connectivity.</span>
         </h2>
 
         <p class="max-w-3xl text-lg text-gray-500 font-light m-0">
-          Every improvement you want is a loop: a signal, the context that makes it mean something,
-          and an action that changes what the machine does next. Most plants close that loop in the
-          cloud, in someone&rsquo;s head, or in next month&rsquo;s report &mdash; which is how a
-          bearing climbs for six weeks and still fails at 2:47 on a Tuesday.
+          Any change you want to make in a modern factory is a loop: a signal, the context that makes
+          it mean something, and an action that changes what the machine does next. If you lack
+          connectivity at the edge, you don&rsquo;t just lack information &mdash; you lack the ability
+          to deploy controls and effectively govern your systems.
         </p>
 
         <!-- Loop diagram. This section is heading, one paragraph, diagram, one
@@ -327,8 +333,8 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
         </figure>
 
         <p class="mt-10 text-xl md:text-2xl font-light text-gray-800 max-w-3xl m-0">
-          A historian tells you what happened. A dashboard tells you what&rsquo;s happening.
-          <span class="text-indigo-600">FlowFuse closes the loop where the machine is.</span>
+          Edge connectivity is about more than polling &mdash;
+          <span class="text-indigo-600">it&rsquo;s about full control and observability across your entire system.</span>
         </p>
       </div>
     </section>
