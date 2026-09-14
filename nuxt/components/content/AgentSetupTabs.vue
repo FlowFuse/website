@@ -82,6 +82,15 @@ const CLIENTS = [
         step2Url: 'https://claude.ai/',
     },
     {
+        id: 'gemini',
+        logo: '/images/ai/agents/gemini.svg',
+        name: 'Gemini',
+        step2Title: 'Settings & help, Connected Apps, Add a custom app',
+        step2Body: 'Paste the URL there. This runs in Gemini Spark, which Google currently limits to personal accounts in the US, so it is not available everywhere yet.',
+        step2Label: 'Open Gemini',
+        step2Url: 'https://gemini.google.com/',
+    },
+    {
         id: 'local',
         icon: 'i-lucide-server',
         name: 'Local and Custom Agents',
