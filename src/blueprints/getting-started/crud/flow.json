@@ -1,0 +1,876 @@
+[
+    {
+        "id": "ad0d2e8ce07aeb8b",
+        "type": "tab",
+        "label": "API CRUD",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a58a5749c9114036",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Create",
+        "style": {
+            "label": true,
+            "stroke": "#001f60"
+        },
+        "nodes": [
+            "4aa2a0d5d9bf9060",
+            "c4847f23142cf5f2",
+            "ad111eb01039849b",
+            "88f88e2da5c0b03c",
+            "9fd6d836cdb8fd5d",
+            "bd49f5cb9a403916",
+            "084c6ccb2bb86751",
+            "38ea6182bbeb8e33"
+        ],
+        "x": 34,
+        "y": 79,
+        "w": 812,
+        "h": 202
+    },
+    {
+        "id": "74f16ace957e789d",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Read",
+        "style": {
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "25c4c2462dc9a54a",
+            "64b9f989f24b8d97",
+            "a34a920ec3d71a08",
+            "9d4aacb03d168194",
+            "449a4dfaaf78af87",
+            "a1133454f576470e",
+            "0aa29241a1c96c2e",
+            "1742c2e2743d02bd",
+            "0159d2b0428ffb9f",
+            "a2e1d42ca00d5f97",
+            "ab053546da8f86c1"
+        ],
+        "x": 34,
+        "y": 299,
+        "w": 812,
+        "h": 262
+    },
+    {
+        "id": "db20c7b2556a6b6f",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Update",
+        "style": {
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "300db3f910d3623a",
+            "0bbe00cff521dace",
+            "16a85d5036a9ee6c",
+            "5c3b5215d29ef1f3",
+            "266334f878e3ed92",
+            "38b37d87c04dcbc0",
+            "1dba4102fba41abe",
+            "6fa6c3aa1a01ba55"
+        ],
+        "x": 34,
+        "y": 579,
+        "w": 812,
+        "h": 202
+    },
+    {
+        "id": "87e8ec425f7915f5",
+        "type": "group",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "Delete",
+        "style": {
+            "stroke": "#001f60",
+            "label": true
+        },
+        "nodes": [
+            "2fc6fde3dd5a0a5e",
+            "e16915ce44b5b7ba",
+            "be10b9449ece7af7",
+            "6687372dd2e155dc",
+            "1a8060a33899c94d",
+            "a8c6da30f80791bb",
+            "2c86651e80f1faa0",
+            "c14dd0bfe910c289"
+        ],
+        "x": 34,
+        "y": 799,
+        "w": 812,
+        "h": 202
+    },
+    {
+        "id": "276bef09a3fa7cd7",
+        "type": "mongodb4-client",
+        "name": "My MongoDB",
+        "protocol": "mongodb+srv",
+        "hostname": "${MONGO_HOST}",
+        "port": "",
+        "dbName": "${MONGO_DATABASE}",
+        "appName": "${MONGO_APPNAME}",
+        "credentials": {
+            "username": "${MONGO_USER}"
+        },
+        "authSource": "",
+        "authMechanism": "DEFAULT",
+        "tls": false,
+        "tlsCAFile": "",
+        "tlsCertificateKeyFile": "",
+        "tlsInsecure": false,
+        "connectTimeoutMS": "30000",
+        "socketTimeoutMS": "0",
+        "minPoolSize": "0",
+        "maxPoolSize": "100",
+        "maxIdleTimeMS": "0",
+        "uri": "",
+        "advanced": "{}",
+        "uriTabActive": "tab-uri-simple"
+    },
+    {
+        "id": "d31289e601967a91",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "README",
+        "info": "# Basic MongoDB CRUD implementation\n\nA demonstration of how to implement a basic CRUD datastore API with MongoDB.\nThis store is backed by a MongoDB instance, you will need to supply connection\ndetails for your database. \n\nTo start with you can make use of a free [here](https://www.mongodb.com/pricing)\nusing the \"Shared\" plan.\n\n## Integration\n\nBefore integrating this example into your environment:\n\n1. Familiarize yourself with the provided flow. \n2. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a\n   previous state.\n3. Add ENV VARs for connection to MongoDB. This can be done in the FlowFuse platform \n   under **instance** > **settings** > **Environment Variables** or in the Node-RED\n   **tab settings** or Node-RED **global settings**.\n   The required env vars are:\n   * `MONGO_HOST` e.g. `my-cluster.ab123xyz.mongodb.net`\n   * `MONGO_USER` e.g. `my_mongo_user`\n   * `MONGO_APPNAME` e.g. `my-app-name`\n   * `MONGO_DATABASE` e.g. `my-db`\n4. Enter the password in the Mongo DB Config\n5. Enable security on the API in the FlowFuse platform under\n   **instance** > **settings** > **HTTP Node Security**\n\n## Improvement Ideas\n1. Improve the `catch` nodes return path for richer error to the http response\n2. Add paging to the GET all results endpoint\n3. Add a `patch` endpoint for partial updates\n\n## Snapshots\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).",
+        "x": 100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4add5310cc5eaf0e",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "name": "License",
+        "info": "The FlowFuse License\nCopyright (c) 2021-present FlowFuse Inc\n\nWith regard to the FlowFuse Software:\n\nThis software and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowFuse Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowFuse Inc (\"FlowFuse\"), and otherwise have a valid FlowFuse Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowFuse and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription. You agree that FlowFuse\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications. You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowFuse Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 250,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "4aa2a0d5d9bf9060",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "name": "",
+        "url": "/food",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "9fd6d836cdb8fd5d"
+            ]
+        ]
+    },
+    {
+        "id": "c4847f23142cf5f2",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ad111eb01039849b",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.insertedId",
+                "pt": "msg",
+                "to": "payload.id",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.acknowledged",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "c4847f23142cf5f2"
+            ]
+        ]
+    },
+    {
+        "id": "88f88e2da5c0b03c",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "name": "Create",
+        "info": "A HTTP POST command to `/food` \nwith a content type of \n`application/json` will create a new \nfood entry in the database and \nreturn a json object with an `id` \nvalue",
+        "x": 110,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9fd6d836cdb8fd5d",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "clientNode": "276bef09a3fa7cd7",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "insertOne",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "",
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "ad111eb01039849b"
+            ]
+        ]
+    },
+    {
+        "id": "bd49f5cb9a403916",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "name": "Example cURL commands",
+        "info": "### Set up an env var for host\n```shell\nexport host=https://_host_url_\n```\n\n# POST request for Pizza\n```shell\ncurl -X POST \\\n  \"${host}/food\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n        \"name\": \"Pizza\",\n        \"type\": \"Italian\",\n        \"toppings\": [\n            \"cheese\",\n            \"pepperoni\",\n            \"mushrooms\"\n        ],\n        \"ingredients\": [\n            \"flour\",\n            \"tomato sauce\",\n            \"olive oil\"\n        ]\n    }'\n```\n\n# POST request for Sushi\n```shell\ncurl -X POST \\\n  \"${host}/food\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n        \"name\": \"Sushi\",\n        \"type\": \"Japanese\",\n        \"ingredients\": [\n            \"rice\",\n            \"fish\",\n            \"seaweed\"\n        ]\n    }'\n```\n\n# POST request for Biryani\n```shell\ncurl -X POST \\\n  \"${host}/food\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n        \"name\": \"Biryani\",\n        \"type\": \"Indian\",\n        \"ingredients\": [\n            \"rice\",\n            \"spices\",\n            \"meat\"\n        ]\n    }'\n```\n\n# POST request for Beef Taco\n```shell\ncurl -X POST \\\n  \"${host}/food\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n        \"name\": \"Beef Taco\",\n        \"type\": \"Mexican\",\n        \"fillings\": [\n            \"beef\",\n            \"lettuce\",\n            \"cheese\"\n        ]\n    }'\n```\n",
+        "x": 710,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "084c6ccb2bb86751",
+        "type": "catch",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "38ea6182bbeb8e33"
+            ]
+        ]
+    },
+    {
+        "id": "38ea6182bbeb8e33",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "a58a5749c9114036",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.error",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 240,
+        "wires": [
+            [
+                "c4847f23142cf5f2"
+            ]
+        ]
+    },
+    {
+        "id": "25c4c2462dc9a54a",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "",
+        "url": "/food/:id",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "a34a920ec3d71a08"
+            ]
+        ]
+    },
+    {
+        "id": "64b9f989f24b8d97",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "a34a920ec3d71a08",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload._id",
+                "pt": "msg",
+                "to": "req.params.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 460,
+        "wires": [
+            [
+                "449a4dfaaf78af87"
+            ]
+        ]
+    },
+    {
+        "id": "9d4aacb03d168194",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "Read",
+        "info": "A HTTP GET command to `/food/:id` \nwill return a JSON object representing\nthe food matching the supplied `id`",
+        "x": 110,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "449a4dfaaf78af87",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "clientNode": "276bef09a3fa7cd7",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "findOne",
+        "output": "forEach",
+        "maxTimeMS": "0",
+        "handleDocId": true,
+        "name": "",
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "64b9f989f24b8d97"
+            ]
+        ]
+    },
+    {
+        "id": "a1133454f576470e",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "",
+        "url": "/food",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 400,
+        "wires": [
+            [
+                "0aa29241a1c96c2e"
+            ]
+        ]
+    },
+    {
+        "id": "0aa29241a1c96c2e",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "clientNode": "276bef09a3fa7cd7",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "find",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": true,
+        "name": "",
+        "x": 550,
+        "y": 400,
+        "wires": [
+            [
+                "1742c2e2743d02bd"
+            ]
+        ]
+    },
+    {
+        "id": "1742c2e2743d02bd",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0159d2b0428ffb9f",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "Example cURL commands",
+        "info": "### Set up an env var for host\n```shell\nexport host=https://_host_url_\n```\n\n# GET request for all food\n```shell\ncurl -X GET \"${host}/food\"\n```\n\n# GET request for 1 food\n```shell\ncurl -X GET \"${host}/food/_id_of_entry_\"\n```\n",
+        "x": 710,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a2e1d42ca00d5f97",
+        "type": "catch",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 320,
+        "y": 520,
+        "wires": [
+            [
+                "ab053546da8f86c1"
+            ]
+        ]
+    },
+    {
+        "id": "ab053546da8f86c1",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "74f16ace957e789d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.error",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 520,
+        "wires": [
+            [
+                "64b9f989f24b8d97"
+            ]
+        ]
+    },
+    {
+        "id": "300db3f910d3623a",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "name": "",
+        "url": "/food/:id",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 680,
+        "wires": [
+            [
+                "16a85d5036a9ee6c"
+            ]
+        ]
+    },
+    {
+        "id": "0bbe00cff521dace",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "16a85d5036a9ee6c",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "req.params.id",
+                "pt": "msg",
+                "to": "req.params._id",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "temp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[$.req.params, $.temp]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 680,
+        "wires": [
+            [
+                "266334f878e3ed92"
+            ]
+        ]
+    },
+    {
+        "id": "5c3b5215d29ef1f3",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "name": "Update",
+        "info": "A HTTP PUT command to `/food/:id` \nwith a a JSON object as the body will\nreplace the current food entry matching\nthe supplied `id`",
+        "x": 110,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "266334f878e3ed92",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "clientNode": "276bef09a3fa7cd7",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "replaceOne",
+        "output": "forEach",
+        "maxTimeMS": "0",
+        "handleDocId": true,
+        "name": "",
+        "x": 570,
+        "y": 680,
+        "wires": [
+            [
+                "0bbe00cff521dace"
+            ]
+        ]
+    },
+    {
+        "id": "38b37d87c04dcbc0",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "name": "Example cURL commands",
+        "info": "### Set up an env var for host\n```shell\nexport host=https://_host_url_\n```\n\n# PUT request to update Biryani\n```shell\ncurl -X PUT \\\n  \"${host}/food/_id_of_biryani\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n        \"name\": \"Biryani\",\n        \"type\": \"Persian\",\n        \"ingredients\": [\n            \"rice\",\n            \"spices\",\n            \"meat\"\n        ]\n    }'\n```\n",
+        "x": 710,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "1dba4102fba41abe",
+        "type": "catch",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 320,
+        "y": 740,
+        "wires": [
+            [
+                "6fa6c3aa1a01ba55"
+            ]
+        ]
+    },
+    {
+        "id": "6fa6c3aa1a01ba55",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "db20c7b2556a6b6f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.error",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 740,
+        "wires": [
+            [
+                "0bbe00cff521dace"
+            ]
+        ]
+    },
+    {
+        "id": "2fc6fde3dd5a0a5e",
+        "type": "http in",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "name": "",
+        "url": "/food/:id",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 900,
+        "wires": [
+            [
+                "be10b9449ece7af7"
+            ]
+        ]
+    },
+    {
+        "id": "e16915ce44b5b7ba",
+        "type": "http response",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "be10b9449ece7af7",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload._id",
+                "pt": "msg",
+                "to": "req.params.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 900,
+        "wires": [
+            [
+                "1a8060a33899c94d"
+            ]
+        ]
+    },
+    {
+        "id": "6687372dd2e155dc",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "name": "Delete",
+        "info": "A HTTP DELETE command to `/food/:id` \nwill remove the entry with the matching\n`id`",
+        "x": 110,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "1a8060a33899c94d",
+        "type": "mongodb4",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "clientNode": "276bef09a3fa7cd7",
+        "mode": "collection",
+        "collection": "food",
+        "operation": "deleteOne",
+        "output": "forEach",
+        "maxTimeMS": "0",
+        "handleDocId": true,
+        "name": "",
+        "x": 570,
+        "y": 900,
+        "wires": [
+            [
+                "e16915ce44b5b7ba"
+            ]
+        ]
+    },
+    {
+        "id": "a8c6da30f80791bb",
+        "type": "comment",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "name": "Example cURL commands",
+        "info": "### Set up an env var for host\n```shell\nexport host=https://_host_url_\n```\n\n# DELETE request to remove Biryani\n```shell\ncurl -X DELETE \"${host}/food/_id_of_biryani\"\n```\n",
+        "x": 710,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "2c86651e80f1faa0",
+        "type": "catch",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 320,
+        "y": 960,
+        "wires": [
+            [
+                "c14dd0bfe910c289"
+            ]
+        ]
+    },
+    {
+        "id": "c14dd0bfe910c289",
+        "type": "change",
+        "z": "ad0d2e8ce07aeb8b",
+        "g": "87e8ec425f7915f5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.error",
+                "pt": "msg",
+                "to": "error.message",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 960,
+        "wires": [
+            [
+                "e16915ce44b5b7ba"
+            ]
+        ]
+    }
+]

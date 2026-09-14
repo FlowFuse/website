@@ -1,0 +1,1587 @@
+[
+    {
+        "id": "c8a392f3b380b9eb",
+        "type": "tab",
+        "label": "ANDON Live",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bafca6bb93ab832b",
+        "type": "subflow",
+        "name": "Stopwatch - Subflow",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 120,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "059248c5259e5378"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1200,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "56b85be367b59317",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "a3f7447948120b78",
+        "type": "group",
+        "z": "bafca6bb93ab832b",
+        "name": "Stopwatch",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "649e0c9271602ca8",
+            "a07e6c57b1a1c8c0",
+            "cdd0a96f03d825dd",
+            "4f71dedcce348bad",
+            "56b85be367b59317",
+            "11c3bf981a8b75cb",
+            "059248c5259e5378",
+            "efd8c7ef06c87dba"
+        ],
+        "x": 34,
+        "y": 119,
+        "w": 1132,
+        "h": 222
+    },
+    {
+        "id": "0526db9b11fd3912",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Dashboard Header",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b1f951d26cc4cd05",
+            "0ae420e6d254e581",
+            "6c0fe22c5943237f",
+            "907a76c5ca622f32",
+            "fd89105e964b4671",
+            "f4d10b1c5cc15d87",
+            "3d059b8ceeed91b7"
+        ],
+        "x": 114,
+        "y": 99,
+        "w": 652,
+        "h": 202
+    },
+    {
+        "id": "9f49f843bb8012a7",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Current Malfunction - Timer",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "332950fe8f1246fc",
+            "18ddc7b73215d0ad"
+        ],
+        "x": 1434,
+        "y": 299,
+        "w": 232,
+        "h": 122
+    },
+    {
+        "id": "9954140bb37b1f47",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Total Malfunctions UI",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "21507cc37b399e3d",
+            "bd36b5e690ddfa88"
+        ],
+        "x": 1434,
+        "y": 439,
+        "w": 212,
+        "h": 122
+    },
+    {
+        "id": "1b2ba4d414edb47f",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Shift Overview",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "42310ef23b714d3e",
+            "214324c4900ccb31"
+        ],
+        "x": 1434,
+        "y": 599,
+        "w": 192,
+        "h": 122
+    },
+    {
+        "id": "f8892b8fc1f4da3b",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Target",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "51d6adc16ac34d11",
+            "2f9d5a23482e9bdb",
+            "01b49adc3c48bc2e",
+            "6a2a3c606b123ac8"
+        ],
+        "x": 114,
+        "y": 319,
+        "w": 652,
+        "h": 122
+    },
+    {
+        "id": "bf097c3cd9d9aa53",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Actual",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "e93ac9cf432997f9",
+            "eacf77ab8f58614f"
+        ],
+        "x": 554,
+        "y": 459,
+        "w": 212,
+        "h": 122
+    },
+    {
+        "id": "fae60da0e44fd0f3",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Delta",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "018dca89158c28ce",
+            "e44ddba55a92b290"
+        ],
+        "x": 554,
+        "y": 599,
+        "w": 212,
+        "h": 122
+    },
+    {
+        "id": "ebbccb93ab441b06",
+        "type": "group",
+        "z": "c8a392f3b380b9eb",
+        "name": "Malfunction data simulation",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "7cd015c748dade7b",
+            "a78e06386f14c7ad",
+            "d1c7c906384bcc8c",
+            "15a88ba5e41dac88",
+            "9e4d4bc297270789",
+            "c0439de21c36c16a",
+            "54eefa541230dadb",
+            "f0acfc74e2c902b9",
+            "81d92491d1865a61",
+            "5c7a0196b5f1f611",
+            "9276e57a45af7b6b",
+            "9869c9639717c3d2",
+            "1ce72292285e4d37",
+            "08b54eae476f441a"
+        ],
+        "x": 834,
+        "y": 179,
+        "w": 552,
+        "h": 542
+    },
+    {
+        "id": "afea04ce8735c0a6",
+        "type": "ui-base",
+        "name": "UI Name",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-control",
+            "ui-notification"
+        ]
+    },
+    {
+        "id": "6d8bff5f3fded5c2",
+        "type": "ui-theme",
+        "name": "FF Theme",
+        "colors": {
+            "surface": "#1f2937",
+            "primary": "#8ce2e7",
+            "bgPage": "#4b5563",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        }
+    },
+    {
+        "id": "f6b6a4e75084de2b",
+        "type": "ui-page",
+        "name": "Andon Live",
+        "ui": "afea04ce8735c0a6",
+        "path": "/",
+        "layout": "grid",
+        "theme": "6d8bff5f3fded5c2",
+        "order": 1
+    },
+    {
+        "id": "fad4ba7289d20e7e",
+        "type": "ui-group",
+        "name": "Actual",
+        "page": "f6b6a4e75084de2b",
+        "width": "8",
+        "height": "2",
+        "order": 4,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1ec8c135dac65a7f",
+        "type": "ui-group",
+        "name": "Target",
+        "page": "f6b6a4e75084de2b",
+        "width": "8",
+        "height": "2",
+        "order": 2,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0416d2bb16cbd31a",
+        "type": "ui-group",
+        "name": "Delta",
+        "page": "f6b6a4e75084de2b",
+        "width": "8",
+        "height": "2",
+        "order": 6,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0dcaf5fb191dbaee",
+        "type": "ui-group",
+        "name": "Malfunction",
+        "page": "f6b6a4e75084de2b",
+        "width": "4",
+        "height": "2",
+        "order": 3,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "11ca8b5bf4f80e63",
+        "type": "ui-group",
+        "name": "Total Malfunctions",
+        "page": "f6b6a4e75084de2b",
+        "width": "4",
+        "height": "2",
+        "order": 5,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "4492b3069ea6758d",
+        "type": "ui-group",
+        "name": "Shift",
+        "page": "f6b6a4e75084de2b",
+        "width": "4",
+        "height": "2",
+        "order": 7,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "12f2779fe5020739",
+        "type": "ui-group",
+        "name": "Header Bar",
+        "page": "f6b6a4e75084de2b",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "649e0c9271602ca8",
+        "type": "inject",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "every 1 second",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "a07e6c57b1a1c8c0"
+            ]
+        ]
+    },
+    {
+        "id": "a07e6c57b1a1c8c0",
+        "type": "switch",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "flow.clock_state == \"RUN\" ?",
+        "property": "clock_state",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "RUN",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "4f71dedcce348bad"
+            ]
+        ]
+    },
+    {
+        "id": "cdd0a96f03d825dd",
+        "type": "change",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "set clock_value to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "clock_value",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "clock_state",
+                "pt": "flow",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 240,
+        "wires": [
+            [
+                "56b85be367b59317"
+            ]
+        ]
+    },
+    {
+        "id": "4f71dedcce348bad",
+        "type": "function",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "increment flow.clock_value",
+        "func": "let clock_value = flow.get(\"clock_value\") || 0;\n\nclock_value++; \n\nif (clock_value < 0 || isNaN(clock_value)) clock_value = 0;\n\nflow.set(\"clock_value\", clock_value);\n\nmsg.payload = clock_value;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 160,
+        "wires": [
+            [
+                "56b85be367b59317"
+            ]
+        ]
+    },
+    {
+        "id": "56b85be367b59317",
+        "type": "function",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "seconds to minute:seconds",
+        "func": "let secsDecimal = msg.payload;\n\nlet mins = Math.floor(secsDecimal / 60);\nlet secs = secsDecimal % 60;\n\n// Format the minutes and seconds into \"mm:ss\" format\nmsg.payload = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "11c3bf981a8b75cb",
+        "type": "function",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "toggle flow.clock_state",
+        "func": "let clock_state = flow.get(\"clock_state\") || \"STOP\";\n\nclock_state = clock_state === \"RUN\" ? \"RUN\" : (clock_state || \"STOP\");\n\nflow.set(\"clock_state\", clock_state );\n\nmsg.payload = +(flow.get(\"clock_value\") || 0);\n\nif (isNaN(msg.payload)) {\n    msg.payload = 0\n    flow.set(\"clock_value\", 0)\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "56b85be367b59317"
+            ]
+        ]
+    },
+    {
+        "id": "059248c5259e5378",
+        "type": "switch",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "RUN",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 260,
+        "wires": [
+            [
+                "cdd0a96f03d825dd"
+            ],
+            [
+                "efd8c7ef06c87dba"
+            ]
+        ]
+    },
+    {
+        "id": "efd8c7ef06c87dba",
+        "type": "change",
+        "z": "bafca6bb93ab832b",
+        "g": "a3f7447948120b78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "clock_state",
+                "pt": "flow",
+                "to": "topic",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 300,
+        "wires": [
+            [
+                "11c3bf981a8b75cb"
+            ]
+        ]
+    },
+    {
+        "id": "211efa9c53c47a23",
+        "type": "comment",
+        "z": "c8a392f3b380b9eb",
+        "name": "LICENSE",
+        "info": "The FlowForge License\nCopyright (c) 2021-present FlowForge Inc\n\nWith regard to the FlowForge Software:\n\nThis Node-RED flow and associated documentation files (the \"Software\") may only be\nused in production, if you (and any entity that you represent) have agreed to,\nand are in compliance with, the FlowForge Subscription Terms (the \"Terms\"),\nor other agreements governing the use of the Software, as mutually agreed by you\nand FlowForge Inc (\"FlowForge\"), and otherwise have a valid FlowForge Subscription\nfor the active usage. Subject to the foregoing sentence, you are free to modify\nthis Software and publish patches to the Software. You agree that FlowForge and/or\nits licensors (as applicable) retain all right, title and interest in and to all\nsuch modifications and/or patches, and all such modifications and/or patches may\nonly be used, copied, modified, displayed, distributed, or otherwise exploited\nwith a valid Subscription.\nNotwithstanding the foregoing, you may copy and modify the Software for development\nand testing purposes, without requiring a subscription.  You agree that FlowForge\nand/or its licensors (as applicable) retain all right, title and interest in and\nto all such modifications.  You are not granted any other rights beyond what is\nexpressly stated herein. Subject to the foregoing, it is forbidden to copy, merge,\npublish, distribute, sublicense, and/or sell the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\nFor all third party components incorporated into the FlowForge Software, those\ncomponents are licensed under the original license provided by the owner of the\napplicable component.",
+        "x": 100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "0ae420e6d254e581",
+        "type": "function",
+        "z": "c8a392f3b380b9eb",
+        "g": "0526db9b11fd3912",
+        "name": "Generate Time and Date",
+        "func": "// Get the current timestamp\nvar currentTimestamp = new Date();\n\n// Format the date and time\nvar usDate = currentTimestamp.toLocaleDateString(\"en-US\", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });\nvar usTime = currentTimestamp.toLocaleTimeString(\"en-US\", { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });\n\n// Concatenate the formatted date and time into a single string\nvar combinedDateTime = usDate + \", \" + usTime;\n\n// Output the concatenated string\nmsg.payload = combinedDateTime;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "6c0fe22c5943237f"
+            ]
+        ]
+    },
+    {
+        "id": "b1f951d26cc4cd05",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "0526db9b11fd3912",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "0ae420e6d254e581"
+            ]
+        ]
+    },
+    {
+        "id": "6c0fe22c5943237f",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "0526db9b11fd3912",
+        "group": "12f2779fe5020739",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "name": "Time and Date",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "20",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "",
+        "x": 660,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "13f862cf8932be2d",
+        "type": "ui-template",
+        "z": "c8a392f3b380b9eb",
+        "group": "",
+        "page": "f6b6a4e75084de2b",
+        "ui": "",
+        "name": "CSS",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".nrdb-ui-widget.nrdb-ui-text.align-right {\n  text-align: right;\n  justify-content: right;\n}\n.nrdb-ui-widget.nrdb-ui-text.align-center {\n  text-align: center;\n  justify-content: center;\n  vertical-align: middle;\n}\n\ndiv.v-card {\n  height: 100%;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 630,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "907a76c5ca622f32",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "0526db9b11fd3912",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Springfield Plant",
+        "payloadType": "str",
+        "x": 450,
+        "y": 200,
+        "wires": [
+            [
+                "3d059b8ceeed91b7"
+            ]
+        ]
+    },
+    {
+        "id": "fd89105e964b4671",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "0526db9b11fd3912",
+        "group": "12f2779fe5020739",
+        "order": 3,
+        "width": "4",
+        "height": "1",
+        "name": "Production Line",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "20",
+        "color": "#000000",
+        "className": "align-right",
+        "x": 660,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f4d10b1c5cc15d87",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "0526db9b11fd3912",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Production Line 33",
+        "payloadType": "str",
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "fd89105e964b4671"
+            ]
+        ]
+    },
+    {
+        "id": "3d059b8ceeed91b7",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "0526db9b11fd3912",
+        "group": "12f2779fe5020739",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "name": "Plant Name",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "20",
+        "color": "#000000",
+        "className": "align-center",
+        "x": 650,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e93ac9cf432997f9",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "bf097c3cd9d9aa53",
+        "group": "fad4ba7289d20e7e",
+        "order": 1,
+        "width": "4",
+        "height": "2",
+        "name": "",
+        "label": "Actual",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "100",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "",
+        "x": 630,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "51d6adc16ac34d11",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "f8892b8fc1f4da3b",
+        "group": "1ec8c135dac65a7f",
+        "order": 1,
+        "width": "4",
+        "height": "2",
+        "name": "",
+        "label": "Target",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "100",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "",
+        "x": 630,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "018dca89158c28ce",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "fae60da0e44fd0f3",
+        "group": "0416d2bb16cbd31a",
+        "order": 1,
+        "width": "4",
+        "height": "2",
+        "name": "",
+        "label": "Delta",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "100",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "",
+        "x": 630,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "2f9d5a23482e9bdb",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "f8892b8fc1f4da3b",
+        "group": "1ec8c135dac65a7f",
+        "order": 2,
+        "width": "4",
+        "height": "2",
+        "name": "Target Number",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "100",
+        "color": "#0000ff",
+        "wrapText": false,
+        "className": "align-right",
+        "x": 660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "eacf77ab8f58614f",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "bf097c3cd9d9aa53",
+        "group": "fad4ba7289d20e7e",
+        "order": 2,
+        "width": "4",
+        "height": "2",
+        "name": "Actual Number",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "100",
+        "color": "#f7cf02",
+        "className": "align-right",
+        "x": 660,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e44ddba55a92b290",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "fae60da0e44fd0f3",
+        "group": "0416d2bb16cbd31a",
+        "order": 2,
+        "width": "4",
+        "height": "2",
+        "name": "Delta Number",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "100",
+        "color": "#8c101c",
+        "className": "align-right",
+        "x": 660,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "332950fe8f1246fc",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "9f49f843bb8012a7",
+        "group": "0dcaf5fb191dbaee",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Current Stoppage",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "25",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "align-center",
+        "x": 1550,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "18ddc7b73215d0ad",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "9f49f843bb8012a7",
+        "group": "0dcaf5fb191dbaee",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "35",
+        "color": "#8c101c",
+        "wrapText": false,
+        "className": "align-center",
+        "x": 1510,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "21507cc37b399e3d",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "9954140bb37b1f47",
+        "group": "11ca8b5bf4f80e63",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Total Stoppages",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "25",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "align-center",
+        "x": 1540,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "bd36b5e690ddfa88",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "9954140bb37b1f47",
+        "group": "11ca8b5bf4f80e63",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "35",
+        "color": "#8c101c",
+        "wrapText": false,
+        "className": "align-center",
+        "x": 1510,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "42310ef23b714d3e",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "1b2ba4d414edb47f",
+        "group": "4492b3069ea6758d",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Shift",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "25",
+        "color": "#000000",
+        "wrapText": false,
+        "className": "align-center",
+        "x": 1510,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "214324c4900ccb31",
+        "type": "ui-text",
+        "z": "c8a392f3b380b9eb",
+        "g": "1b2ba4d414edb47f",
+        "group": "4492b3069ea6758d",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "Current Shift",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": true,
+        "font": "Arial Black,Arial Black,Gadget,sans-serif",
+        "fontSize": "35",
+        "color": "#0000ff",
+        "wrapText": false,
+        "className": "align-center",
+        "x": 1530,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5e080ee1286bdb51",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "ProductionState",
+                "v": "ProductionState",
+                "vt": "flow"
+            },
+            {
+                "p": "ProductionCount",
+                "v": "ProductionCount",
+                "vt": "flow"
+            },
+            {
+                "p": "ProductionTarget",
+                "v": "ProductionTarget",
+                "vt": "flow"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 600,
+        "wires": [
+            [
+                "fdff7e9067742b12"
+            ]
+        ]
+    },
+    {
+        "id": "fdff7e9067742b12",
+        "type": "function",
+        "z": "c8a392f3b380b9eb",
+        "name": "Simulate Production",
+        "func": "// Initialize the counter if it doesn't exist\nlet count = msg.ProductionCount || 0;\nlet target = msg.ProductionTarget || 100\n\n\n// Increment the counter\nif (msg.ProductionState == 'RUN') {\n    count++;\n}\n// Reset the counter when it reaches 101\nif (count > target) {\n    count = 0;\n}\n\n// Output the current count value\nconst m1 = RED.util.cloneMessage(msg);\nm1.payload = count;\nconst m2 = RED.util.cloneMessage(msg);\nm2.payload = target - count;\n\nflow.set('ProductionCount', count)\n\nreturn [\n    m1, // counter\n    m2, // delta\n]",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 600,
+        "wires": [
+            [
+                "eacf77ab8f58614f"
+            ],
+            [
+                "e44ddba55a92b290"
+            ]
+        ]
+    },
+    {
+        "id": "01b49adc3c48bc2e",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "f8892b8fc1f4da3b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "100",
+        "payloadType": "num",
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "6a2a3c606b123ac8"
+            ]
+        ]
+    },
+    {
+        "id": "7cd015c748dade7b",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "FAULT",
+        "x": 895,
+        "y": 400,
+        "wires": [
+            [
+                "f0acfc74e2c902b9"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a78e06386f14c7ad",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "RUN",
+        "x": 895,
+        "y": 360,
+        "wires": [
+            [
+                "08b54eae476f441a"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "d1c7c906384bcc8c",
+        "type": "subflow:bafca6bb93ab832b",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "",
+        "x": 1260,
+        "y": 380,
+        "wires": [
+            [
+                "18ddc7b73215d0ad",
+                "15a88ba5e41dac88"
+            ]
+        ]
+    },
+    {
+        "id": "15a88ba5e41dac88",
+        "type": "function",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "Save Time",
+        "func": "// Retrieve the previous payload from the flow context\nconst previousPayload = flow.get(\"PreviousPayload\") || null;\n\nif (msg.topic === \"RUN\") {\n    // Store the previous payload into the AndonTime flow context variable\n    msg.AndonTime = previousPayload;\n}\n// Always update PreviousPayload for the next iteration\nflow.set(\"PreviousPayload\", msg.payload);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 480,
+        "wires": [
+            [
+                "9e4d4bc297270789"
+            ]
+        ]
+    },
+    {
+        "id": "9e4d4bc297270789",
+        "type": "function",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "Calculate Total Malfunction Time",
+        "func": "const AndonTime = msg.AndonTime || \"00:00\";\nconst OverallAndonTime = flow.get(\"OverallAndonTime\") || \"00:00\";\n\nconst [ah, am] = AndonTime.split(\":\").map(Number);\nconst [oh, om] = OverallAndonTime.split(\":\").map(Number);\n\nconst totalMinutes = am + om;\nconst additionalHours = Math.floor(totalMinutes / 60);\n\nconst newMinutes = totalMinutes % 60;\nconst newHours = ah + oh + additionalHours;\n\nconst newOverallAndonTime = String(newHours).padStart(2, \"0\") + \":\" + String(newMinutes).padStart(2, \"0\");\n\nflow.set(\"OverallAndonTime\", newOverallAndonTime);\n\nmsg.payload = newOverallAndonTime;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 520,
+        "wires": [
+            [
+                "bd36b5e690ddfa88"
+            ]
+        ]
+    },
+    {
+        "id": "c0439de21c36c16a",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "Reset",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 930,
+        "y": 280,
+        "wires": [
+            [
+                "54eefa541230dadb",
+                "08b54eae476f441a"
+            ]
+        ]
+    },
+    {
+        "id": "54eefa541230dadb",
+        "type": "change",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "Reset on deploy",
+        "rules": [
+            {
+                "t": "set",
+                "p": "OverallAndonTime",
+                "pt": "flow",
+                "to": "00:00",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "ProductionState",
+                "pt": "flow",
+                "to": "RUN",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "PreviousPayload",
+                "pt": "flow",
+                "to": "00:00",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1240,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53716ffe8c008a9a",
+        "type": "comment",
+        "z": "c8a392f3b380b9eb",
+        "name": "README",
+        "info": "# Andon Live Dashboard for Node-RED\n\nAndon Live serves as both a real-time shift status and an informational board. \nDirectly in the production zone, it exhibits not only the actual and target quantities \nbut also other vital key figures, providing a clear visualization of the progress during the current shift.\n\n## Accessing the Dashboard\n\nTo access the dashboard:\n1. Click on the right navigation bar in Dashboard 2.0.\n2. Select \"Open Dashboard.\"\n3. The Dashboard will launch in a new pop-up window.\n\nFor further details about the Dashboard, visit: [FlowFuse Dashboard](https://dashboard.flowfuse.com/)\n\n## Andon Live - Flow Structure\n\nThe flow's structure mirrors that of the dashboard. In the Node-RED Editor, \neach group corresponds to a group on the Node-RED Dashboard. \nEvery group comes with a headline that is prominently displayed on the Dashboard itself.\n\n## Data Integration: Simulation vs. Live Data\n\nBefore integrating the Dashboard into your environment:\n1. Familiarize yourself with the provided data simulation. \nIt helps users understand the expected input and offers guidance on how to adjust data sources and streams within Node-RED.\n2. Modify the flows to connect to your live data sources. Before making any changes, it's crucial to:\n   - **Create a Snapshot**: This step ensures that you have a backup to revert to. \n   If any issues arise while adjusting the flows, you can effortlessly revert to a previous state.\n\nFor comprehensive details on utilizing Snapshots, \nrefer to: [FlowFuse Snapshots Documentation](https://flowfuse.com/docs/user/snapshots/).\n",
+        "x": 260,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "5f96fd8e0193b02b",
+        "type": "comment",
+        "z": "c8a392f3b380b9eb",
+        "name": "Connect to your production live data e.g. PLCs",
+        "info": "",
+        "x": 290,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "5c7a0196b5f1f611",
+        "type": "comment",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "Connect to your ANDON workflow",
+        "info": "",
+        "x": 1140,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f0acfc74e2c902b9",
+        "type": "change",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "FAULT",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "FAULT",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "ProductionState",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ProductionState",
+                "pt": "flow",
+                "to": "ProductionState",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 400,
+        "wires": [
+            [
+                "9869c9639717c3d2"
+            ]
+        ]
+    },
+    {
+        "id": "81d92491d1865a61",
+        "type": "inject",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 895,
+        "y": 680,
+        "wires": [
+            [
+                "9276e57a45af7b6b"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "9276e57a45af7b6b",
+        "type": "change",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "Set Shift Label",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(\t    /*\t    * JSONata function to get the current day name and append a time-based suffix.\t    *\t    * The suffix is determined by the hour:\t    * - \"Early\" if the hour is 6 AM or later (and before 2 PM)\t    * - \"Late\" if the hour is 2 PM or later (and before 10 PM)\t    * - \"Night\" if the hour is 10 PM or later\t    *\t    * @param {number} [timestamp] - Optional. A Unix timestamp (milliseconds) to use.\t    * If not provided, the current time ($now()) will be used.\t    * @returns {string} - The day name followed by the appropriate time suffix (e.g., \"Friday Early\").\t    */\t    $timestamp := $now();\t    $m := $moment($timestamp);\t\t    /* Get the day name (e.g., \"Monday\", \"Tuesday\") */\t    $dayName := $m.format('dddd');\t\t    /* Get the hour (0-23) */\t    $hour := $m.hour();\t\t    /* Determine the time suffix based on the hour */\t    $timeSuffix := (\t        $hour >= 22 ? \"Night\" : /* 10 PM (22:00) or later */\t        $hour >= 14 ? \"Late\" :  /* 2 PM (14:00) or later */\t        $hour >= 6 ? \"Early\" :  /* 6 AM (06:00) or later */\t        \"Night\"                 /* Before 6 AM (considered Night) */\t    );\t\t    /* Combine the day name and the time suffix */\t    $dayName & \" \" & $timeSuffix\t\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 680,
+        "wires": [
+            [
+                "214324c4900ccb31"
+            ]
+        ]
+    },
+    {
+        "id": "9869c9639717c3d2",
+        "type": "change",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "RUN",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1095,
+        "y": 400,
+        "wires": [
+            [
+                "d1c7c906384bcc8c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "1ce72292285e4d37",
+        "type": "change",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "RUN",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1095,
+        "y": 360,
+        "wires": [
+            [
+                "d1c7c906384bcc8c"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "6a2a3c606b123ac8",
+        "type": "change",
+        "z": "c8a392f3b380b9eb",
+        "g": "f8892b8fc1f4da3b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ProductionTarget",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [
+                "2f9d5a23482e9bdb"
+            ]
+        ]
+    },
+    {
+        "id": "08b54eae476f441a",
+        "type": "change",
+        "z": "c8a392f3b380b9eb",
+        "g": "ebbccb93ab441b06",
+        "name": "RUN",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "RUN",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "ProductionState",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ProductionState",
+                "pt": "flow",
+                "to": "ProductionState",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 360,
+        "wires": [
+            [
+                "1ce72292285e4d37"
+            ]
+        ]
+    }
+]
