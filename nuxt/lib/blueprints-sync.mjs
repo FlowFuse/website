@@ -1,20 +1,35 @@
-// Resolves the FlowFuse blueprint library for a build and copies its content into
-// src/blueprints (11ty's blueprint source - see .eleventy.js's setUseGitIgnore(false)
-// note). Mirrors nuxt/lib/docs-sync.mjs's local -> sibling -> clone precedence, but the
-// source repo (FlowFuse/blueprint-library) is private, so the clone step authenticates
-// with a minted GitHub App installation token instead of cloning anonymously.
+// Resolves the FlowFuse Blueprint Library for a build and copies it into
+// nuxt/content/blueprints (the markdown) and nuxt/public/blueprints (the screenshots and
+// flow exports). Kept free of Nuxt imports so `node --test` can exercise it directly.
+//
+// This replaces scripts/copy_blueprints.mjs, which wrote into src/blueprints/ for 11ty.
+// The library is a separate, private repository, so the clone step authenticates with a
+// minted GitHub App installation token rather than cloning anonymously - the same path
+// nuxt/lib/docs-sync.mjs takes for the public docs repo, with credentials added.
+//
+// Precedence is local -> sibling -> clone -> whatever is already on disk. That last case
+// is a contributor without access to FlowFuse/blueprint-library: the build continues and
+// /blueprints/ is empty rather than failing for them. A production deploy has the App
+// credentials and so always reaches the clone, which is why an empty result there is
+// fatal (see nuxt/modules/blueprints-source.ts).
 
 import { execFileSync } from 'node:child_process'
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync, cpSync } from 'node:fs'
-import { basename, join, relative } from 'node:path'
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
+import { basename, join } from 'node:path'
 
-// Imported lazily (inside cloneBlueprints, not here) because it pulls in @octokit/auth-app.
-// CI checks out blueprint-library as a sibling and calls `npm run blueprints` before
-// `npm install` runs - see nuxt/lib/docs-sync.mjs's own note on staying dependency-free -
-// so a static import here would crash a build that never even takes the clone path. Only
-// Netlify's production build (no sibling checkout) reaches the clone path, and by then
-// npm install has already completed.
+import { assetBaseFor, processBlueprint } from './blueprints-markdown.mjs'
+
+// Whatever checkout sits next to the website repo wins, which is where the Build Site
+// workflow puts it.
+export const SIBLING_PATHS = ['../blueprint-library']
+
+// What a blueprint directory is allowed to publish. Everything production served came
+// down to screenshots and the flow export; an allowlist keeps a stray file in the library
+// from being republished from flowfuse.com by accident. `package.json` carries each
+// blueprint's Node-RED dependencies and is deliberately not one of them.
+const ASSET_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.json'])
+const ASSET_DENYLIST = new Set(['package.json', 'package-lock.json'])
 
 const REPO_OWNER = 'FlowFuse'
 const REPO_NAME = 'blueprint-library'
@@ -25,35 +40,42 @@ const CLONE_BACKOFF_MS = 2000
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
+export const MANIFEST_FILE = '.source.json'
+
 /**
- * Decide where the blueprints come from. Pure: touches nothing, so the precedence is
- * testable.
+ * Decide where the blueprints come from. Pure: touches nothing but `exists`, so the
+ * precedence is testable.
  *
- * 1. `BLUEPRINTS_LOCAL` - an explicit checkout path
+ * 1. `FLOWFUSE_BLUEPRINTS_LOCAL` - an explicit checkout path
  * 2. a sibling checkout of blueprint-library
- * 3. a clone, authenticated with the GitHub App - only if credentials are configured
- * 4. skip - matches the previous copy_blueprints.js behaviour for contributors without
- *    access to the (private) blueprint-library repo
+ * 3. an authenticated clone, when the GitHub App credentials are configured
+ * 4. nothing, in which case the caller keeps the tree it already has
  */
 export function resolveSource ({ repoRoot, env = process.env, exists = existsSync }) {
-    const local = env.BLUEPRINTS_LOCAL
+    const local = env.FLOWFUSE_BLUEPRINTS_LOCAL
     if (local) {
+        // A typo here would otherwise fall through to the committed tree and quietly
+        // publish yesterday's blueprints while looking like it honoured the variable.
         if (!exists(local)) {
-            throw new Error(`BLUEPRINTS_LOCAL is set but ${local} does not exist`)
+            throw new Error(`FLOWFUSE_BLUEPRINTS_LOCAL is set but ${local} does not exist`)
         }
-        return { kind: 'local', dir: local }
+        return { kind: 'local', libraryDir: local }
     }
 
-    const sibling = join(repoRoot, '..', 'blueprint-library')
-    if (exists(sibling)) {
-        return { kind: 'sibling', dir: sibling }
+    for (const sibling of SIBLING_PATHS) {
+        const libraryDir = join(repoRoot, sibling)
+        if (exists(libraryDir)) {
+            return { kind: 'sibling', libraryDir }
+        }
     }
 
+    // Only a build with the App credentials can reach the private library; everyone else
+    // falls through to whatever is already on disk.
     if (env.GH_BOT_APP_ID && env.GH_BOT_APP_KEY) {
         return { kind: 'clone', ref: env.BLUEPRINTS_REF || DEFAULT_REF }
     }
 
-    return { kind: 'skip' }
+    return { kind: 'prebuilt' }
 }
 
 /**
@@ -125,136 +147,174 @@ function gitOutput (cwd, args) {
     }
 }
 
+function isAsset (name) {
+    if (ASSET_DENYLIST.has(name)) return false
+    const dot = name.lastIndexOf('.')
+    return dot > 0 && ASSET_EXTENSIONS.has(name.slice(dot).toLowerCase())
+}
+
 /**
- * Copy one blueprint markdown file, stamping it with its last-commit date and rewriting
- * its `image:` frontmatter path to match where it lands under src/blueprints. Ported
- * as-is from the previous scripts/copy_blueprints.js.
+ * A blueprint is `<category>/<slug>/README.md`. Directory names are lower-cased on the way
+ * out, as copy_blueprints.js did, so the published URL never depends on how the directory
+ * happened to be capitalised in the library.
  */
-function writeBlueprintMarkdown ({ sourceRoot, srcPath, destPath, inputRelDir }) {
-    const relPath = relative(sourceRoot, srcPath)
-    const updated = gitOutput(sourceRoot, ['log', '-1', '--pretty=format:%ci', '--', relPath])
-
-    const content = readFileSync(srcPath, 'utf8')
-    let body = `---\nupdated: ${updated}\n---\n${content}`
-    if (/^---/.test(content)) {
-        // The original file starts with yaml front-matter, so remove the double-delimiter
-        // we've just introduced.
-        body = body.replace(/---\r?\n---\r?\n/s, '')
+function collectSourceBlueprints (libraryDir, skipped = []) {
+    const found = []
+    for (const category of readdirSync(libraryDir, { withFileTypes: true })) {
+        if (!category.isDirectory() || category.name.startsWith('.')) continue
+        for (const slug of readdirSync(join(libraryDir, category.name), { withFileTypes: true })) {
+            if (!slug.isDirectory() || slug.name.startsWith('.')) continue
+            // A directory with no README.md is not a blueprint page. Record it: a rename
+            // upstream (README.markdown, readme.md on a case-sensitive runner) looks exactly
+            // like this and would otherwise drop a live page with nothing in the log.
+            if (!existsSync(join(libraryDir, category.name, slug.name, 'README.md'))) {
+                skipped.push(join(category.name, slug.name))
+                continue
+            }
+            found.push({
+                sourceDir: join(category.name, slug.name),
+                category: category.name.toLowerCase(),
+                slug: slug.name.toLowerCase(),
+            })
+        }
     }
-
-    // tileImage's shortcode (.eleventy.js) resolves item.data.image relative to 11ty's
-    // input folder (src/), not as a filesystem or site-root path - so this stays relative,
-    // e.g. "blueprints/foo/bar/img.png", never "src/blueprints/..." or "/blueprints/...".
-    const imageRegex = /^image:\s*(\S.+)$/m
-    if (imageRegex.test(body)) {
-        body = body.replace(imageRegex, (match, p1) => {
-            const relImage = p1.replace(/^"\.\//, '').replace(/"$/, '')
-            return `image: ${join(inputRelDir, relImage)}`
-        })
-    }
-
-    writeFileSync(destPath, body)
+    return found
 }
 
-// Removes only the entries under destDir that no longer exist in the source - never
-// submit.njk (this repo's own "Submit Your Own" page, not something blueprint-library
-// provides) and never an entry copyTree/writeBlueprints is about to repopulate anyway.
-// Deliberately narrower than docs-sync.mjs's full wipe: the rest of copyTree already
-// overwrites every file in place on each sync (11ty sees a cheap "changed" event), so
-// wiping unaffected entries too would turn that into a delete+recreate of the entire tree
-// on every sync - noisy for 11ty's watcher and briefly 404s a page mid-rebuild for no reason.
-function clearOrphans (destDir, currentNames) {
-    if (!existsSync(destDir)) return
-    for (const entry of readdirSync(destDir, { withFileTypes: true })) {
-        if (entry.name === 'submit.njk' || currentNames.has(entry.name)) continue
-        rmSync(join(destDir, entry.name), { recursive: true, force: true })
-    }
-}
-
-// The name an entry lands under once copied - directories are lower-cased and a README
-// becomes that section's index, same transforms copyTree itself applies below.
-function destinationName (entry) {
-    return entry.isDirectory() ? entry.name.toLowerCase() : entry.name.replace(/README/, 'index')
-}
-
-function copyTree (srcDir, destDir, sourceRoot, inputRelDir) {
-    mkdirSync(destDir, { recursive: true })
-    const entries = readdirSync(srcDir, { withFileTypes: true }).filter(entry => !entry.name.startsWith('.'))
-    // Prunes at every level copyTree recurses into - a single file removed from an
-    // otherwise-unchanged blueprint (an old screenshot, a renamed README) is caught here
-    // too, not just a whole blueprint folder disappearing.
-    clearOrphans(destDir, new Set(entries.map(destinationName)))
-
-    for (const entry of entries) {
-        const srcPath = join(srcDir, entry.name)
+function copyAssets ({ libraryDir, sourceDir, destDir, relDir = '' }) {
+    for (const entry of readdirSync(join(libraryDir, sourceDir, relDir), { withFileTypes: true })) {
+        if (entry.name.startsWith('.')) continue
+        const relPath = join(relDir, entry.name)
         if (entry.isDirectory()) {
-            const lowerCaseName = entry.name.toLowerCase()
-            copyTree(srcPath, join(destDir, lowerCaseName), sourceRoot, join(inputRelDir, lowerCaseName))
-            continue
-        }
-
-        const destPath = join(destDir, entry.name.replace(/README/, 'index'))
-        if (entry.name.endsWith('.md')) {
-            writeBlueprintMarkdown({ sourceRoot, srcPath, destPath, inputRelDir })
-        } else {
-            cpSync(srcPath, destPath)
+            copyAssets({ libraryDir, sourceDir, destDir, relDir: relPath })
+        } else if (isAsset(entry.name)) {
+            const destPath = join(destDir, relPath)
+            mkdirSync(join(destPath, '..'), { recursive: true })
+            cpSync(join(libraryDir, sourceDir, relPath), destPath)
         }
     }
 }
 
-/**
- * Populate src/blueprints from `dir` (one category folder per top-level entry, one
- * blueprint per folder below that) and return the manifest describing what was published.
- * The top-level category list is pruned here, since `dir` itself also holds files
- * (LICENSE, README.md) that copyTree would otherwise treat as content to copy; everything
- * below a category is pruned by copyTree itself as it recurses.
- */
-function writeBlueprints ({ dir, websiteRoot, kind, ref }) {
-    const destRoot = join(websiteRoot, 'src', 'blueprints')
-    const categories = readdirSync(dir, { withFileTypes: true })
-        .filter(entry => entry.isDirectory() && !entry.name.startsWith('.'))
-    clearOrphans(destRoot, new Set(categories.map(entry => entry.name)))
+function writeBlueprints ({ libraryDir, contentDir, publicDir, skipped = [] }) {
+    const sources = collectSourceBlueprints(libraryDir, skipped)
 
-    for (const category of categories) {
-        const categorySrcDir = join(dir, category.name)
-        copyTree(categorySrcDir, join(destRoot, basename(categorySrcDir)), dir, join('blueprints', basename(categorySrcDir)))
+    rmSync(contentDir, { recursive: true, force: true })
+    rmSync(publicDir, { recursive: true, force: true })
+    // Only the per-blueprint loop below recreates contentDir, so a library that resolves but
+    // holds nothing would leave the manifest write with nowhere to go - a raw ENOENT, after
+    // the committed trees are already gone, instead of the "no blueprints" report the
+    // callers are written to give.
+    mkdirSync(contentDir, { recursive: true })
+
+    const entries = []
+    for (const { sourceDir, category, slug } of sources) {
+        // Argument array, not a shell string: the path comes from directory names in the
+        // source repo, so quoting it into a shell command would be an injection path.
+        const updated = gitOutput(libraryDir, ['log', '-1', '--pretty=format:%ci', '--', join(sourceDir, 'README.md')])
+        const raw = readFileSync(join(libraryDir, sourceDir, 'README.md'), 'utf8')
+
+        const destPath = join(contentDir, category, `${slug}.md`)
+        mkdirSync(join(destPath, '..'), { recursive: true })
+        writeFileSync(destPath, processBlueprint(raw, { assetBase: assetBaseFor(category, slug), updated }), 'utf8')
+
+        copyAssets({ libraryDir, sourceDir, destDir: join(publicDir, category, slug) })
+        entries.push({ category, slug })
+    }
+    return entries.sort((a, b) => `${a.category}/${a.slug}`.localeCompare(`${b.category}/${b.slug}`))
+}
+
+/** What is already on disk, for the case where no library checkout is available. */
+export function collectPublishedBlueprints (contentDir) {
+    if (!existsSync(contentDir)) return []
+    const entries = []
+    for (const category of readdirSync(contentDir, { withFileTypes: true })) {
+        if (!category.isDirectory() || category.name.startsWith('.')) continue
+        for (const file of readdirSync(join(contentDir, category.name))) {
+            if (file.endsWith('.md')) entries.push({ category: category.name, slug: basename(file, '.md') })
+        }
+    }
+    return entries.sort((a, b) => `${a.category}/${a.slug}`.localeCompare(`${b.category}/${b.slug}`))
+}
+
+/**
+ * Populate nuxt/content/blueprints and nuxt/public/blueprints, and return a manifest
+ * describing what was published.
+ */
+/**
+ * Write one resolved checkout into nuxt/content/blueprints and nuxt/public/blueprints.
+ * Split out of syncBlueprints so the cloned and already-on-disk routes share it.
+ */
+function publish ({ libraryDir, kind, contentDir, publicDir, logger }) {
+
+    // What the last sync published, read before writeBlueprints clears the tree. The
+    // workflow commits whatever is on disk afterwards, so a library that resolves but is
+    // incomplete would quietly unpublish live pages on a green build. Only zero entries is
+    // fatal (modules/blueprints-source.ts), so a shrink has to be visible in the log.
+    const published = collectPublishedBlueprints(contentDir)
+
+    const skipped = []
+    const entries = writeBlueprints({ libraryDir: libraryDir, contentDir, publicDir, skipped })
+
+    if (skipped.length) {
+        logger.warn(`Skipped ${skipped.length} director(ies) under ${libraryDir} with no README.md: ${skipped.join(', ')}`)
+    }
+    const synced = new Set(entries.map(({ category, slug }) => `${category}/${slug}`))
+    const dropped = published
+        .map(({ category, slug }) => `${category}/${slug}`)
+        .filter(key => !synced.has(key))
+    if (dropped.length) {
+        logger.warn(`${dropped.length} blueprint page(s) published before are not in this sync and will be unpublished: ${dropped.join(', ')}`)
     }
 
-    return {
+    const manifest = {
         source: kind,
-        ref: ref || gitOutput(dir, ['rev-parse', '--abbrev-ref', 'HEAD']),
-        sha: gitOutput(dir, ['rev-parse', 'HEAD']),
+        ref: gitOutput(libraryDir, ['rev-parse', '--abbrev-ref', 'HEAD']),
+        sha: gitOutput(libraryDir, ['rev-parse', 'HEAD']),
         syncedAt: new Date().toISOString(),
+        count: entries.length,
     }
+    writeFileSync(join(contentDir, MANIFEST_FILE), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
+
+    logger.info(`Blueprints synced from ${manifest.source} (${manifest.ref || 'unknown'} ${manifest.sha.slice(0, 8) || 'unknown'}): ${entries.length} page(s)`)
+    return { ...manifest, entries }
 }
 
 /**
- * Populate src/blueprints and return the manifest describing what was published, or null
- * if there was no source to sync from (matches the previous copy_blueprints.js's
- * "skipping" behaviour for contributors without access to blueprint-library).
+ * Populate nuxt/content/blueprints and nuxt/public/blueprints, and return a manifest
+ * describing what was published.
+ *
+ * Async because the clone route awaits a minted installation token; the callers in
+ * scripts/sync_blueprints.mjs and nuxt/modules/blueprints-source.ts await it.
  */
-export async function syncBlueprints ({ repoRoot, env = process.env, logger = console } = {}) {
+export async function syncBlueprints ({ repoRoot, nuxtRoot, env = process.env, logger = console } = {}) {
+    const contentDir = join(nuxtRoot, 'content', 'blueprints')
+    const publicDir = join(nuxtRoot, 'public', 'blueprints')
     const source = resolveSource({ repoRoot, env })
 
-    if (source.kind === 'skip') {
-        logger.info('Blueprint library not found and no GH_BOT_APP_ID/GH_BOT_APP_KEY configured - skipping')
-        return null
+    if (source.kind === 'prebuilt') {
+        const entries = collectPublishedBlueprints(contentDir)
+        logger.info(`No blueprint-library checkout found; using the ${entries.length} blueprint page(s) already in nuxt/content/blueprints`)
+        // The two trees are committed together by the Build Site workflow. Pages without
+        // their screenshots would build and deploy silently, showing broken images on
+        // every blueprint, so say so here rather than leave it to be noticed on the site.
+        if (entries.length && !existsSync(publicDir)) {
+            logger.warn(`${entries.length} blueprint page(s) are published but ${publicDir} is missing, so their screenshots will 404`)
+        }
+        return { source: source.kind, ref: '', sha: '', entries }
     }
 
-    let manifest
     if (source.kind === 'clone') {
         logger.info(`Cloning ${REPO_OWNER}/${REPO_NAME} from ${source.ref}...`)
         const tmpDir = await cloneBlueprints(source.ref, env, logger)
         try {
-            manifest = writeBlueprints({ dir: tmpDir, websiteRoot: repoRoot, kind: source.kind, ref: source.ref })
+            return publish({ libraryDir: tmpDir, kind: source.kind, contentDir, publicDir, logger })
         } finally {
+            // The clone is a few hundred MB of blobless history; a build that runs this
+            // twice would otherwise leave both copies behind in the runner's tmp.
             if (existsSync(tmpDir)) rmSync(tmpDir, { recursive: true, force: true })
         }
-    } else {
-        logger.info(`Using ${source.kind} blueprints from ${source.dir}`)
-        manifest = writeBlueprints({ dir: source.dir, websiteRoot: repoRoot, kind: source.kind })
     }
 
-    logger.info(`Blueprints synced from ${manifest.source} (${manifest.ref} ${manifest.sha.slice(0, 8) || 'unknown'})`)
-    return manifest
+    logger.info(`Using ${source.kind} blueprints from ${source.libraryDir}`)
+    return publish({ libraryDir: source.libraryDir, kind: source.kind, contentDir, publicDir, logger })
 }

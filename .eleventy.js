@@ -54,7 +54,7 @@ console.info(`[11ty] Image build profile: ${IMAGE_BUILD_PROFILE}`)
 module.exports = function(eleventyConfig) {
 
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents)); // Add support for YAML data files
-    eleventyConfig.setUseGitIgnore(false); // Blueprints are generated into gitignored src/blueprints/, so they must not be ignored
+    eleventyConfig.setUseGitIgnore(false); // Nothing generated into src/ is gitignored any more; kept until 11ty itself is retired
     eleventyConfig.setWatchThrottleWaitTime(500); // in milliseconds
     eleventyConfig.setFrontMatterParsingOptions({
         excerpt: true,
@@ -134,7 +134,6 @@ module.exports = function(eleventyConfig) {
 
     // Naive copy of images for backwards compatibility of non short-code image handling (use of <img or in CSS)
     eleventyConfig.addPassthroughCopy("src/**/images/**/*");
-    eleventyConfig.addPassthroughCopy("src/blueprints/**/flow.json");
     eleventyConfig.addPassthroughCopy("src/events/hm25-invite.ics");
     eleventyConfig.addPassthroughCopy("src/webinars/2025/simplifying-opc-ua/opc-ua-webinar-flows.zip");
     eleventyConfig.addPassthroughCopy("src/js/ai-expert-modal.js");
@@ -589,13 +588,6 @@ module.exports = function(eleventyConfig) {
                         <span>${teamMember.title}</span>
                     </div>
                 </div>`
-    });
-
-    eleventyConfig.addShortcode("renderCompanyTile", function (company) {
-        return `<div class="company-tile">
-            <img class="company-tile-logo" src="${company.img}" />
-            <a href="${company.url}" class="no-underline text-gray-700">${company.name}</a>
-        </div>`
     });
 
     eleventyConfig.addShortcode("renderIntegration", function (integration) {
