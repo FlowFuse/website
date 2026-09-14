@@ -9,13 +9,19 @@ const logos = useState('home-logos', () => useHomeLogos())
 const DEFAULT_EYEBROW = 'Over 36,000 users have trusted FlowFuse'
 
 // String to override the copy, `false` to hide it, omitted for the homepage default.
-// eyebrowBg: the homepage-only radial-gradient glow behind the eyebrow — off by default.
+// eyebrowBg: radial-gradient glow behind the eyebrow — off by default. `true` (or 'indigo')
+// matches the homepage; 'red' is for pages themed around the red accent (e.g. /integrations/opcua/).
 const props = withDefaults(defineProps<{
     eyebrow?: string | false
-    eyebrowBg?: boolean
+    eyebrowBg?: boolean | 'indigo' | 'red'
 }>(), {
     eyebrow: DEFAULT_EYEBROW,
     eyebrowBg: false,
+})
+
+const eyebrowBgClass = computed(() => {
+    if (!props.eyebrowBg) return ''
+    return props.eyebrowBg === 'red' ? 'bg-radial-red' : 'bg-radial-indigo'
 })
 
 function altFromPath (path: string) {
@@ -29,7 +35,7 @@ function altFromPath (path: string) {
 
 <template>
   <div>
-    <div v-if="props.eyebrow" class="w-full text-center min-h-14 flex justify-center items-center mt-8" :class="{ 'bg-radial-indigo': props.eyebrowBg }">
+    <div v-if="props.eyebrow" class="w-full text-center min-h-14 flex justify-center items-center mt-8" :class="eyebrowBgClass">
       <h2 class="text-gray-600 text-lg font-semibold">
         {{ props.eyebrow }}
       </h2>

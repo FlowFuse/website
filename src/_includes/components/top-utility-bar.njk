@@ -1,3 +1,4 @@
+{% from "components/cta/cta-sign-in.njk" import ctaSignIn %}
 {# Slim top utility bar: rotating announcements (left) + quick links (right).
    Pattern adapted from tailscale.com's slim top bar. The announcement slot
    rotates through every entry in src/_data/events.yaml; entries without an
@@ -23,7 +24,7 @@
             {% endfor %}
         </div>
         <!-- Mobile Sign In (quick-links nav below is hidden under md) -->
-        <a href="{{ site.appURL }}" class="md:hidden shrink-0 text-indigo-100 hover:text-white no-underline hover:no-underline font-medium">Sign In</a>
+        {{ ctaSignIn(site, 'nav-text', 'utility-bar-mobile', extraClass='md:hidden shrink-0 text-indigo-100 hover:text-white no-underline hover:no-underline font-medium') }}
         <!-- Quick links (right) -->
         <nav class="hidden md:flex items-center gap-5 shrink-0" aria-label="Quick links">
             <a href="/about/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">About us</a>
@@ -32,7 +33,7 @@
             <a href="/support/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Support</a>
             <a href="/platform/device-agent/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Install on edge</a>
             <span class="h-4 w-px bg-indigo-400/40" aria-hidden="true"></span>
-            <a href="{{ site.appURL }}" class="text-indigo-100 hover:text-white no-underline hover:no-underline font-medium">Sign In</a>
+            {{ ctaSignIn(site, 'nav-text', 'utility-bar', extraClass='text-indigo-100 hover:text-white no-underline hover:no-underline font-medium') }}
         </nav>
     </div>
 </div>

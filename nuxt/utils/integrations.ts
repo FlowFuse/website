@@ -35,7 +35,7 @@ function docPathFromCatalogueUrl (url: string | undefined): string | undefined {
 }
 
 const DOCS_URL_OVERRIDES: Record<string, string> = {
-    '@flowfuse-certified-nodes/opcua': '/node-red/flowfuse/edge/opcua/'
+    '@flowfuse-certified-nodes/opcua': '/docs/flowfuse-nodes/edge/opcua/'
 }
 
 function normalizeCatalogueModule (

@@ -147,18 +147,39 @@ test('getHandbookChanges produces well-formed, newest-first weekly data', () => 
 })
 
 test('the actual latest handbook commit appears in the most recent week', () => {
-    // Ask git directly (independent of handbookChanges.mjs) for the single most
-    // recent commit that touched a tracked handbook file, and confirm it shows
-    // up in weeks[0]. Asserting against a hardcoded PR number here would rot the
-    // moment anyone else edits the handbook, since "most recent" keeps moving.
-    const latest = execFileSync('git', [
-        'log', '--no-merges', '-M', '-1', '--name-status', '--date=short',
-        '--pretty=format:%H%x1f%ad%x1f%s',
+    // Ask git directly (independent of handbookChanges.mjs) for the handbook commit
+    // with the newest AUTHOR date, and confirm it shows up in weeks[0]. Asserting
+    // against a hardcoded PR number here would rot the moment anyone else edits the
+    // handbook, since "most recent" keeps moving.
+    //
+    // Not `git log -1`. That returns the newest commit in traversal order, which git
+    // ranks by COMMIT date, while getHandbookChanges buckets weeks by author date and
+    // sorts them on that. The two diverge whenever a commit is authored before, but
+    // landed after, another one - so after any rebase, and after any PR that sat open
+    // while a later-authored one merged ahead of it. Using -1 here made this test fail
+    // for a reason that had nothing to do with the module: the branch tip was authored
+    // 2026-09-03 while the newest handbook change was authored 2026-09-07, two
+    // different weeks. Pick the maximum author date, which is what weeks[0] is built
+    // from.
+    const RECORD = '\x1e'
+    const log = execFileSync('git', [
+        'log', '--no-merges', '-M', '--name-status', '--date=short',
+        `--pretty=format:${RECORD}%H%x1f%ad%x1f%s`,
         '--', 'nuxt/content/handbook', 'src/handbook'
-    ], { cwd: process.cwd() }).toString()
+    ], { cwd: process.cwd(), maxBuffer: 64 * 1024 * 1024 }).toString()
 
-    const [header, ...fileLines] = latest.split('\n').filter(Boolean)
-    const [sha, date, subject] = header.split('\x1f')
+    const parsed = log.split(RECORD).filter(chunk => chunk.trim()).map(chunk => {
+        const [header, ...files] = chunk.split('\n').filter(Boolean)
+        const [sha, date, subject] = header.split('\x1f')
+        return { sha, date, subject, files }
+    })
+    assert.ok(parsed.length > 0, 'git reports at least one handbook commit')
+
+    // Ties on the same date are fine: any commit from that date lands in the same week,
+    // and the per-page assertions below only need one of them.
+    const newest = parsed.reduce((a, b) => (b.date > a.date ? b : a))
+    const { sha, date, subject } = newest
+    const fileLines = newest.files
     const prMatch = subject.match(/\(#(\d+)\)\s*$/)
     const files = fileLines.map(line => line.split('\t')).map(parts =>
         parts[0].startsWith('R') || parts[0].startsWith('C') ? parts[2] : parts[1]

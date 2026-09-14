@@ -162,7 +162,7 @@ It has tons of nodes for almost every database and cloud storage system you'll f
 
 This includes direct **connections** to normal databases like [MySQL](https://flows.nodered.org/node/node-red-node-mysql) and [PostgreSQL](https://flows.nodered.org/node/node-red-contrib-postgresql) for your organized production data.
 
-It also has special nodes for time-series databases like [InfluxDB](https://flows.nodered.org/node/node-red-contrib-influxdb) and [TimescaleDB](/node-red/database/timescaledb/) to handle fast sensor and machine data.
+It also has special nodes for time-series databases like [InfluxDB](https://flows.nodered.org/node/node-red-contrib-influxdb) and [TimescaleDB](/docs/node-red/database/timescaledb/) to handle fast sensor and machine data.
 
 Plus, FlowFuse **connects** to big Data Lakes and Cloud Storage services like [Amazon S3](https://flows.nodered.org/node/node-red-node-aws), [Google Cloud Storage](https://flows.nodered.org/node/node-red-contrib-google-cloud), and [Microsoft Azure](https://flows.nodered.org/node/node-red-contrib-azure-storage).
 
@@ -170,7 +170,7 @@ Plus, FlowFuse **connects** to big Data Lakes and Cloud Storage services like [A
 
 Once your factory data is effectively structured, validated, and routed by FlowFuse to the right place, it becomes an incredibly powerful asset for your MES.
 
-FlowFuse doesn't just manage your data; it also empowers you to easily build the user interface (UI) for your MES. You can create insightful dashboards and industrial applications using a no-code, drag-and-drop approach with components from [FlowFuse Dashboard](https://dashboard.flowfuse.com/). This allows you to design the screens operators use to visualize critical information and control processes, all built upon the reliable data foundation you've established.
+FlowFuse doesn't just manage your data; it also empowers you to easily build the user interface (UI) for your MES. You can create insightful dashboards and industrial applications using a no-code, drag-and-drop approach with components from [FlowFuse Dashboard](/platform/dashboard/). This allows you to design the screens operators use to visualize critical information and control processes, all built upon the reliable data foundation you've established.
 
 ## Final Thought
 

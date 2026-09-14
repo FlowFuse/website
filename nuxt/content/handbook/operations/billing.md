@@ -35,6 +35,15 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 2. If no additional information is needed on the invoice, directly send the automated invoice to the customer.
 3. [Structuring Subscriptions and Invoicing in HubSpot](https://docs.google.com/document/d/1UtRYUv7Wjb7CjON4DnNgv-nD-Gt4Bytymgtv1y9eLWY/edit?usp=sharing)
 
+### Creating a multi year subscription
+
+1. If a customer signs a multi year deal with incremental annual payments, create a separate subscription for each payment.
+2. Within the subscription you'll choose the line items and billing start date.
+3. Set the line item to fixed number of payments.
+4. On the final subscription, the line item will be set to automatically renew until cancelled.
+5. Add the PO number if needed to the subscription details.
+6. Ensure that the invoice setting are on automatically sent invoice on billing date.
+
 ### Creating an invoice
 
 1. On the Deal page, find the Invoices section on the right-hand side, then click Create Blank Invoice.

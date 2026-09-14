@@ -117,7 +117,7 @@ Once the node connects, it shows a green Running status underneath it on the can
 
 A buffer in the debug sidebar confirms the feed works, but it's no use to an operator. Let's get the frame onto a screen anyone can open in a browser.
 
-This assumes you have FlowFuse Dashboard 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
+This assumes you have [FlowFuse Dashboard](/platform/dashboard/) 2.0 installed. If you don't, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html#installation) to add it and set up your first page, then come back.
 
 FlowFuse Dashboard has no built-in widget that takes a raw image buffer, so we turn each PNG into a base64 data URI and render it with a standard image tag. The conversion is handled by the **base64** node, which you'll need to install: add `node-red-node-base64` from the Palette Manager.
 
@@ -155,7 +155,7 @@ That's a live line view anyone can pull up in a browser, with no NVR login and n
 
 A live view is a real win, but notice what you have now: the camera's output is a PNG buffer moving through your flow, one message per frame. Once a frame is just another message, you can do more than display it. You can ask what's in it.
 
-That's what the [**FlowFuse AI** nodes](/node-red/flowfuse/ai/) are for. They run vision models locally, inside your flow, with nothing sent to an outside service. The **Object Detection** node takes a PNG buffer as its input, which is exactly what the camera node outputs, so you wire the camera straight into it, no conversion step in between. From there the flow stops watching and starts acting: counting material on the conveyor, flagging a person near the flotation cells, or catching a stopped belt before the line backs up. Each detection comes back as structured data, a label, a confidence score, and a position, which you handle like any other signal in FlowFuse.
+That's what the [**FlowFuse AI** nodes](/docs/flowfuse-nodes/ai/) are for. They run vision models locally, inside your flow, with nothing sent to an outside service. The **Object Detection** node takes a PNG buffer as its input, which is exactly what the camera node outputs, so you wire the camera straight into it, no conversion step in between. From there the flow stops watching and starts acting: counting material on the conveyor, flagging a person near the flotation cells, or catching a stopped belt before the line backs up. Each detection comes back as structured data, a label, a confidence score, and a position, which you handle like any other signal in FlowFuse.
 
 ## Recording frames to disk
 

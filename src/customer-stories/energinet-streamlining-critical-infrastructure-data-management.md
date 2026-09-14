@@ -70,8 +70,8 @@ FlowFuse serves as a production infrastructure connecting Energinet's operationa
 
 ### Operational System Delivery:
 
-- Time-Series Analytics: Governed delivery to [InfluxDB](/node-red/database/influxdb/) databases supporting trend analysis, predictive maintenance, and renewable integration planning
-- Operational Databases: Structured routing to [MySQL](/node-red/database/mysql/) systems for compliance reporting and operational record-keeping
+- Time-Series Analytics: Governed delivery to [InfluxDB](/docs/node-red/database/influxdb/) databases supporting trend analysis, predictive maintenance, and renewable integration planning
+- Operational Databases: Structured routing to [MySQL](/docs/node-red/database/mysql/) systems for compliance reporting and operational record-keeping
 - Real-Time Monitoring: Live data feeds to Grafana visualization platforms enabling 24/7 grid surveillance and incident response
 
 ### Enterprise Governance Meeting TSO Standards

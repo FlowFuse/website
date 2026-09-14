@@ -69,8 +69,10 @@ function escapeXml(value: string): string {
         .replace(/>/g, '&gt;')
 }
 
-function isFuturePost(date: string | Date): boolean {
-    return new Date(date) > new Date() && process.env.CONTEXT === 'production'
+// See useBlogList.ts: the production flag is baked at build time, not read from
+// process.env, which is empty of it inside the deployed Netlify function.
+function isFuturePost(date: string | Date, isProductionContext: boolean): boolean {
+    return new Date(date) > new Date() && isProductionContext
 }
 
 // entry.body is a minimark tree: { value: MinimarkNode[] } where a node is
@@ -178,7 +180,8 @@ export default defineEventHandler(async (event) => {
     const people = { ...teamPeople, ...guestPeople }
     // Full post bodies are heavy - cap the feed to the most recent posts rather
     // than shipping the entire multi-megabyte blog archive on every request.
-    const entries = allEntries.filter(entry => !isFuturePost(entry.date)).slice(0, 20)
+    const { isProductionContext } = useRuntimeConfig(event).public
+    const entries = allEntries.filter(entry => !isFuturePost(entry.date, isProductionContext)).slice(0, 20)
 
     // Mirrors useReleaseFeaturePage: splices plan-availability badges and changelog/docs
     // links into a release blog's body, resolved from its `features:` frontmatter.

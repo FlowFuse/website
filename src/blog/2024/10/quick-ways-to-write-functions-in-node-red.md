@@ -28,7 +28,7 @@ _Image showing the function node_
 
 ## What Are Function Nodes and Common Challenges?
 
-[Function Nodes](/node-red/core-nodes/function/) in Node-RED allow you to write custom JavaScript for processing messages. While they provide flexibility, many users find it challenging to turn complex business rules into code and manage variables. For more details on the benefits and drawbacks of using Function Nodes, refer to this [Article](/blog/2023/03/why-should-you-use-node-red-function-nodes/).
+[Function Nodes](/docs/node-red/core-nodes/function/) in Node-RED allow you to write custom JavaScript for processing messages. While they provide flexibility, many users find it challenging to turn complex business rules into code and manage variables. For more details on the benefits and drawbacks of using Function Nodes, refer to this [Article](/blog/2023/03/why-should-you-use-node-red-function-nodes/).
 
 Before using Function Nodes, consider if existing low-code nodes can fulfill your needs. Using standard low-code nodes can simplify your approach and enhance collaboration and clarity. If you still feel the need to use Function Nodes, don’t worry, In the following section, we’ll explore straightforward strategies to make working with Function Nodes easier.
 

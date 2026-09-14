@@ -14,7 +14,7 @@ It's often a pain to get important data from the factory floor. Things like doin
 
 <!--more-->
 
-This article will show you an easy way to gather data via a form entry. We'll look at how forms in FlowFuse Dashboard can make collecting data from factory workers much simpler. You'll learn how to build useful forms that connects your team's knowledge directly to your industrial processes. As a practical example, we'll walk you through building a solution to digitize production recipe updates, showing you exactly how to implement it.
+This article will show you an easy way to gather data via a form entry. We'll look at how forms in [FlowFuse Dashboard](/platform/dashboard/) can make collecting data from factory workers much simpler. You'll learn how to build useful forms that connects your team's knowledge directly to your industrial processes. As a practical example, we'll walk you through building a solution to digitize production recipe updates, showing you exactly how to implement it.
 
 ## Prerequisites
 

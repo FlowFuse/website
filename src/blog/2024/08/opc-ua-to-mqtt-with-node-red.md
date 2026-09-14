@@ -190,13 +190,13 @@ _Video showing the successful bridging of OPC UA data to MQTT_
 - [OPC UA Client and Server on FlowFuse](/integrations/opcua/)
   See FlowFuse's full OPC UA client and server capabilities, certified node, and security model in one place.
 
-- [Using MQTT with Node-RED](/node-red/protocol/mqtt/)
+- [Using MQTT with Node-RED](/docs/node-red/protocol/mqtt/)
   Learn how to integrate MQTT with Node-RED to enhance your IoT solutions with real-time data messaging.
 
 - [How to Build an OPC UA Client Dashboard in Node-RED](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/)
   Follow a step-by-step guide to create a comprehensive OPC UA client dashboard in Node-RED for effective monitoring and control.
 
-- [Building a Secure OPC UA Server in Node-RED](/node-red/protocol/opc-ua/)
+- [Building a Secure OPC UA Server in Node-RED](/docs/node-red/protocol/opc-ua/)
   Explore best practices for configuring a secure OPC UA server in Node-RED to ensure safe and reliable data exchange.
 
 - [How to Deploy a Basic OPC UA Server in Node-RED](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/)

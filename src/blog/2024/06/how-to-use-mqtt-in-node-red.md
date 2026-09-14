@@ -77,7 +77,7 @@ Before you start, make sure you have:
 
 Node-RED ships with MQTT nodes already installed. Open your Node-RED editor and look in the palette, you'll find **mqtt-in** and **mqtt-out** under the network section.
 
-> If you're using FlowFuse's managed MQTT broker, this is straightforward. Use the [ff-mqtt-in](/node-red/flowfuse/mqtt/mqtt-in/) and [ff-mqtt-out](/node-red/flowfuse/mqtt/mqtt-out/) nodes instead of the standard MQTT nodes. Simply drag one onto the canvas, and the connection to FlowFuse's broker will be configured automatically.
+> If you're using FlowFuse's managed MQTT broker, this is straightforward. Use the [ff-mqtt-in](/docs/flowfuse-nodes/mqtt/mqtt-in/) and [ff-mqtt-out](/docs/flowfuse-nodes/mqtt/mqtt-out/) nodes instead of the standard MQTT nodes. Simply drag one onto the canvas, and the connection to FlowFuse's broker will be configured automatically.
 
 For any other broker, drag an **mqtt-in** or **mqtt-out** node onto your workspace. Double-click it to open the configuration panel.
 

@@ -42,9 +42,17 @@ test('no nav or footer link points at a redirected path', () => {
     // accept it. So a page that was removed and redirected can sit in the nav
     // indefinitely, still labelled, pointing somewhere it was never meant to.
     // Advertise the destination, not the redirect.
+    // Both maps, because they are written in different shapes. nuxt/redirects.ts uses the
+    // full Nitro rule object; nuxt/redirects-node-red.ts is a plain `from: to` record fed
+    // through a builder. Reading only the first left every /node-red/** redirect invisible
+    // here, which is exactly the set most likely to be left behind in the nav.
     const redirectsSrc = readFileSync(join(repo, 'nuxt/redirects.ts'), 'utf8')
+    const nodeRedSrc = readFileSync(join(repo, 'nuxt/redirects-node-red.ts'), 'utf8')
     const sources = new Set(
-        [...redirectsSrc.matchAll(/^\s*'([^']+)':\s*{\s*redirect:\s*{\s*to:\s*'([^']+)'/gm)]
+        [
+            ...redirectsSrc.matchAll(/^\s*'([^']+)':\s*{\s*redirect:\s*{\s*to:\s*'([^']+)'/gm),
+            ...nodeRedSrc.matchAll(/^\s*'([^']+)':\s*'([^']+)',/gm),
+        ]
             // A rule whose destination is its own source sends the link nowhere
             // else, so it is not the drift this test is looking for. There is one
             // in the file today (/docs/user/expert/), which is its own bug.

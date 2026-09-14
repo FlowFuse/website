@@ -16,7 +16,7 @@ Within FlowFuse Cloud, Node-RED instances are reached by their provided url: `<n
 With this new option, it is possible to add a custom hostname for the instance that works alongside
 the provided url.
 
-For example, if you have built a [dashboard](https://dashboard.flowfuse.com) you can now configure your instance to make that available via `dashboard.example.com` or any other subdomain you own.
+For example, if you have built a [dashboard](/platform/dashboard/) you can now configure your instance to make that available via `dashboard.example.com` or any other subdomain you own.
 
 We only support subdomains at this time, but adding support for top-level domains is [on the roadmap](https://github.com/FlowFuse/flowfuse/issues/3982).
 

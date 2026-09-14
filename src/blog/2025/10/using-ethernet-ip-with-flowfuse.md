@@ -185,7 +185,7 @@ If your tag belongs to a different scope, click the “+ Add” button at the to
 
 ## Getting Started
 
-Before we start, I'd like to show you what I've prepared, a flow where I'm sending commands to the PLC to control the stack light. To interact with it, I've built a nice dashboard using [FlowFuse Dashboard](https://dashboard.flowfuse.com/). Here's a quick demonstration:
+Before we start, I'd like to show you what I've prepared, a flow where I'm sending commands to the PLC to control the stack light. To interact with it, I've built a nice dashboard using [FlowFuse Dashboard](/platform/dashboard/). Here's a quick demonstration:
 
 <lite-youtube videoid="6X9HXJLKPyo" params="rel=0" style="margin-top: 20px; margin-bottom: 20px; width: 100%; height: 480px;" title="YouTube video player"></lite-youtube>
 

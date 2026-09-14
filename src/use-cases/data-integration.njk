@@ -8,10 +8,10 @@ heroImg: ./images/pictograms/data_integration_blue.png
 description:
     <p class="mt-0">Data integration can be a challenging task, especially when dealing with multiple data formats, protocols, and sources. FlowFuse's low-code industrial application platform allows anyone to collect data from multiple sources, apply the data, and update, store, and transmit data to a new service.</p>
 ---
-
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div>
     <div class="mt-6 text-center">
-        <a href="/contact-us/" class="inline-block ff-btn ff-btn--highlight shadow">GET IN TOUCH</a>
+        {{ ctaContactUs('highlight', 'hero', extraClass='inline-block shadow') }}
     </div>
 </div>
 
@@ -137,7 +137,7 @@ description:
             Discover how FlowFuse can power your Data Integration.
         </p>
         <div>
-            <a href="/contact-us" class="inline-block ff-btn ff-btn--primary m-auto">GET IN TOUCH</a>
+            {{ ctaContactUs('primary', 'footer', extraClass='inline-block m-auto') }}
         </div>
     </div>
 </div>

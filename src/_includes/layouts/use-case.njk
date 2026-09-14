@@ -2,6 +2,8 @@
 layout: layouts/base.njk
 sitemapPriority: 0.7
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 {# ============================================================
    USE CASE LAYOUT (content-driven, pain-led narrative)
 
@@ -39,7 +41,7 @@ sitemapPriority: 0.7
             <h1 class="m-auto max-w-3xl font-medium"><span class="text-indigo-600">{{ title }}</span></h1>
             <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">{{ problem }}</p>
             <div class="mt-10 flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'usecase': '{{ page.fileSlug }}'})">Talk to an expert</a>
+                {{ ctaBookDemo('highlight', 'hero', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>
@@ -315,8 +317,8 @@ sitemapPriority: 0.7
             <h3 class="mb-4 w-full text-center">{{ closingCta.heading or "See it on your operations" }}</h3>
             <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">{{ closingCta.description or "Talk to an expert, or get started with FlowFuse today." }}</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/book-demo/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'usecase': '{{ page.fileSlug }}'})">Talk to an expert</a>
-                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'footer', 'usecase': '{{ page.fileSlug }}'})">Get started</a>
+                {{ ctaBookDemo('highlight', 'footer', extraClass='min-h-[40px]') }}
+                {{ ctaSignUp(site, 'primary-outlined', 'footer', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>

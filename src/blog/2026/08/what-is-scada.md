@@ -62,7 +62,7 @@ Programmable Logic Controllers and Remote Terminal Units take the raw signals fr
 
 ### Communication Networks
 
-Communication networks carry data between field devices, controllers, and the central SCADA software, using protocols like [Modbus](/node-red/protocol/modbus/), [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), or [Ethernet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) depending on the equipment and environment. This layer determines how reliably and securely data moves across a facility, and it becomes especially important when connecting older equipment to newer IT/OT platforms.
+Communication networks carry data between field devices, controllers, and the central SCADA software, using protocols like [Modbus](/docs/node-red/protocol/modbus/), [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), or [Ethernet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) depending on the equipment and environment. This layer determines how reliably and securely data moves across a facility, and it becomes especially important when connecting older equipment to newer IT/OT platforms.
 
 ### HMI And Central Monitoring Software
 

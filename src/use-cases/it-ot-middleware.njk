@@ -29,10 +29,11 @@ heroImg: ./images/pictograms/factory_blue.png
 description:
     <p>FlowFuse streamlines manufacturing automation, from production monitoring to supply chain management. Our intuitive, customizable platform enables simple creation of custom solutions for unique manufacturing needs.</p>
 ---
-
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-book-demo.njk" import ctaBookDemo %}
 <div class="w-full flex justify-center mt-6">
     <div class="mx-auto text-center flex flex-row gap-8">
-        <a href="/book-demo/" class="inline-block ff-btn ff-btn--highlight shadow uppercase">Book a demo</a>
+        {{ ctaBookDemo('highlight', 'hero', extraClass='inline-block shadow') }}
         <a href="#whitepapers" onclick="scrollToAnchor(event, 'whitepapers')" class="inline-block ff-btn ff-btn--primary-outlined shadow uppercase">Read Whitepaper</a>
     </div>
 </div>
@@ -253,7 +254,7 @@ description:
                             The easiest way to start building industrial applications. No installation required! Simply sign up and gain immediate access to the editor.
                         </p>
                     </div>
-                    <a class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'manufacturing'})">SIGN UP</a>
+                    {{ ctaSignUp(site, 'primary-outlined', 'manufacturing', extraClass='md:self-end align-baseline w-full mt-3') }}
                 </div>
                 <div class="deployment-card white-bg">
                     <div>

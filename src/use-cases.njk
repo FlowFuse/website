@@ -6,6 +6,8 @@ meta:
   title: "Use Cases"
   description: "Generic operational workflow patterns for industrial teams. Turn events into action with FlowFuse. Placeholder skeleton hub."
 ---
+{% from "components/cta/cta-sign-up.njk" import ctaSignUp %}
+{% from "components/cta/cta-contact-us.njk" import ctaContactUs %}
 <div class="w-full">
 
     <!-- HERO with CTA buttons -->
@@ -15,7 +17,7 @@ meta:
             <h1 class="m-auto max-w-3xl font-medium">Turn industrial events into <span class="text-indigo-600">action</span></h1>
             <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">Operational workflow patterns that follow Event, Decision, Action. Explore how each one is operationalized with FlowFuse.</p>
             <div class="mt-10 flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'hero', 'page': 'use-cases-hub'})">Talk to an expert</a>
+                {{ ctaContactUs('highlight', 'hero', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>
@@ -70,8 +72,8 @@ meta:
             <h3 class="mb-4 w-full text-center">See it on your workflow</h3>
             <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">Talk to an expert, or get started with FlowFuse today.</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a class="ff-btn ff-btn--highlight min-h-[40px] uppercase" href="/contact-us/" onclick="capture('cta-talk-to-expert', {'position': 'footer', 'page': 'use-cases-hub'})">Talk to an expert</a>
-                <a class="ff-btn ff-btn--primary-outlined min-h-[40px] uppercase" href="{% include "sign-up-url.njk" %}" onclick="capture('cta-join', {'position': 'footer', 'page': 'use-cases-hub'})">Get started</a>
+                {{ ctaContactUs('highlight', 'footer', extraClass='min-h-[40px]') }}
+                {{ ctaSignUp(site, 'primary-outlined', 'footer', extraClass='min-h-[40px]') }}
             </div>
         </div>
     </div>

@@ -40,17 +40,24 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Application Guide pages are markdown (`applicationGuideDoc`, a `page` collection).
-// Their routes are largely discoverable by @nuxt/content, but we keep an explicit prerender
-// list for the section index + each page. File names are <slug>.md and match the `slug` field.
-function collectApplicationGuideRoutes(dir: string): string[] {
-    const routes = ['/application-guide/']
-    for (const guide of readdirSync(dir)) {
-        const guideDir = join(dir, guide)
-        if (!statSync(guideDir).isDirectory()) continue
-        for (const file of readdirSync(guideDir)) {
-            if (!file.endsWith('.md')) continue
-            routes.push(`/application-guide/${guide}/${basename(file, '.md').replace(/^\d+-/, '')}/`)
+// Webinars are one .md per file under src/webinars/<year>/, sourced in place by the
+// `webinars` collection, so their routes come from the tree rather than from a field.
+//
+// `<slug>/index.md` is the directory's own page, not a page called "index". One webinar is
+// authored that way (2025/simplifying-opc-ua), because it shipped a flow export alongside
+// its markdown, and naming that route wrong is a prerender 404 rather than a missing page.
+//
+// A year directory contributes no route of its own (there is no /webinars/2025/ page),
+// while a webinar directory holding index.md does.
+function collectWebinarRoutes(dir: string, basePath: string): string[] {
+    const routes: string[] = []
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            routes.push(...collectWebinarRoutes(fullPath, `${basePath}/${file}`))
+        } else if (file.endsWith('.md')) {
+            const slug = basename(file, '.md')
+            routes.push(slug === 'index' ? `${basePath}/` : `${basePath}/${slug}/`)
         }
     }
     return routes
@@ -70,7 +77,7 @@ function collectProductRoutes (dir: string): string[] {
     return routes
 }
 
-// Same idea as collectApplicationGuideRoutes above, for customer stories (flat
+// Same idea as collectProductRoutes above, for customer stories (flat
 // src/customer-stories/ dir, see content.config.ts).
 function collectStoryRoutes(dir: string): string[] {
     const routes = ['/customer-stories/']
@@ -134,11 +141,14 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
 
-    // Captured at build time (Netlify sets CONTEXT during the build, not necessarily
-    // in the deployed Function's runtime), then baked into the server bundle via
-    // runtimeConfig so analytics.ts doesn't depend on a process.env read at request time.
+    // Captured at build time (Netlify sets CONTEXT during the build, but passes only URL,
+    // SITE_NAME and SITE_ID to the deployed Function at runtime), then baked in via
+    // runtimeConfig so nothing depends on a process.env read at request time. Under `public`
+    // so the blog's scheduled-post check reads the same value everywhere it runs.
     runtimeConfig: {
-        isProductionContext: process.env.CONTEXT === 'production'
+        public: {
+            isProductionContext: process.env.CONTEXT === 'production'
+        }
     },
 
     css: ['~/assets/css/theme.css'],
@@ -216,7 +226,7 @@ export default defineNuxtConfig({
                     { title: 'Home', href: `${site.baseURL}/`, description: 'FlowFuse platform overview' },
                     { title: 'Pricing', href: `${site.baseURL}/pricing/`, description: 'Plans and pricing information' },
                     { title: 'Integrations', href: `${site.baseURL}/integrations/`, description: 'Supported integrations and connectors' },
-                    { title: 'Application Guide', href: `${site.baseURL}/application-guide/`, description: 'Patterns for building FlowFuse applications' },
+                    { title: 'Application Guide', href: `${site.baseURL}/docs/application-guide/`, description: 'Patterns for building FlowFuse applications' },
                     { title: 'Create an account', href: `${site.appURL}/account/create`, description: 'Start a free trial' },
                     { title: 'Terms of Service', href: `${site.baseURL}/terms/` },
                     { title: 'Privacy Policy', href: `${site.baseURL}/privacy-policy/` },
@@ -394,12 +404,17 @@ export default defineNuxtConfig({
                     '/integrations',
                     '/integrations/opcua',
                     '/pricing',
+                    '/resources/roi-calculator',
                     '/product',
+                    '/pricing/request-quote/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
+                    '/industries/automotive',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
+                    '/webinars/',
+                    ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
@@ -428,7 +443,6 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
-                    ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
                     '/changelog/',
                     ...changelog.routes,
@@ -452,8 +466,12 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        // `meta` is reserved by @nuxt/content - it holds the <!--more--> excerpt - so a
+        // collection that declares its own `meta` schema field silently loses everything
+        // under it. These collections' frontmatter still writes "meta:", so rewrite the key
+        // to "structuredData:" before parsing rather than editing hundreds of content files.
         'content:file:beforeParse' ({ file, collection }) {
-            if (collection.name !== 'blog') return
+            if (!['blog', 'webinars'].includes(collection.name)) return
             file.body = file.body.replace(
                 /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
                 (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')

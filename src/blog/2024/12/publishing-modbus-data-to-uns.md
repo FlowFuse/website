@@ -130,7 +130,7 @@ After configuring the connection, it's time to test the data collection.
 
 If no data appears, check the connection settings (IP address, Unit ID, port, etc.) and ensure your Modbus device is correctly configured and accessible. If you use a simulator like ModSim, ensure it’s running and properly configured to send data.
 
-For more information on using Modbus with Node-RED, please read our tutorial on [Using Modbus with Node-RED](/node-red/protocol/modbus/).
+For more information on using Modbus with Node-RED, please read our tutorial on [Using Modbus with Node-RED](/docs/node-red/protocol/modbus/).
 
 If you prefer a video explanation, [Kurt Braun](https://www.linkedin.com/in/wago-kurt-braun/) from WAGO demonstrates how to collect Modbus data using Node-RED in FlowFuse:
 
@@ -161,7 +161,7 @@ We must convert these raw register values into human-readable formats for cloud 
 
 To determine how to process raw Modbus data, such as dividing by a specific value, concatenating, or applying other transformation formulas, refer to the manual of the sensor you use for specific instructions.
 
-In Node-RED, you can use various nodes for transformation. You can choose the [Function node](/node-red/core-nodes/function/) for advanced processing, the [Change node](/node-red/core-nodes/change/) for simpler operations, or the [Template node](/node-red/core-nodes/template/) for defining schemas. For more complex data parsing scenarios, such as handling multiple data types (floats, 32-bit integers, strings), dealing with big-endian/little-endian conversions, or performing byte swapping, consider using the `node-red-contrib-buffer-parser` node. This specialized node simplifies parsing Modbus buffers into various data formats without writing custom code. Learn more in our guide on [using Buffer Parser for industrial data](/blog/2025/12/node-red-buffer-parser-industrial-data/). In this article, I will demonstrate a low-code approach using the Change node to process the data cleanly.
+In Node-RED, you can use various nodes for transformation. You can choose the [Function node](/docs/node-red/core-nodes/function/) for advanced processing, the [Change node](/docs/node-red/core-nodes/function/change/) for simpler operations, or the [Template node](/docs/node-red/core-nodes/function/template/) for defining schemas. For more complex data parsing scenarios, such as handling multiple data types (floats, 32-bit integers, strings), dealing with big-endian/little-endian conversions, or performing byte swapping, consider using the `node-red-contrib-buffer-parser` node. This specialized node simplifies parsing Modbus buffers into various data formats without writing custom code. Learn more in our guide on [using Buffer Parser for industrial data](/blog/2025/12/node-red-buffer-parser-industrial-data/). In this article, I will demonstrate a low-code approach using the Change node to process the data cleanly.
 
 Additionally, for better organization and accessibility, I will send each metric separately and include additional metadata such as the `timestamp` and `unit`.
 
@@ -288,7 +288,7 @@ _MQTT Out node configuration for temperature data_
 
 **Using FlowFuse MQTT Nodes**
 
-If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas, no manual setup of server address, Client ID, username, or password required. You also won't need to manually create clients in the broker; they're automatically created when you use these nodes. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](/node-red/flowfuse/mqtt/).
+If you're using the FlowFuse MQTT broker, FlowFuse provides specialized MQTT nodes that simplify configuration. These nodes automatically configure the broker connection details when you drop them onto the canvas, no manual setup of server address, Client ID, username, or password required. You also won't need to manually create clients in the broker; they're automatically created when you use these nodes. This streamlines the development process and reduces configuration errors. Learn more about [FlowFuse MQTT nodes](/docs/flowfuse-nodes/mqtt/).
 
 **Step 3.3: Configure MQTT Nodes for Remaining Metrics**
 
@@ -322,7 +322,7 @@ _FlowFuse topic hierarchy interface showing UNS structure_
 Once your flow is successfully publishing data, you've established your Unified Namespace. Other systems can now subscribe to these MQTT topics to consume the data for:
 
 - **Cloud analytics platforms** for historical analysis and reporting
-- **[FlowFuse Dashboard](https://dashboard.flowfuse.com/)** for real-time monitoring and visualization
+- **[FlowFuse Dashboard](/platform/dashboard/)** for real-time monitoring and visualization
 - **Predictive maintenance systems** for equipment health monitoring
 - **Business intelligence tools** for operational insights
 - **Alert and notification systems** for automated responses to threshold breaches

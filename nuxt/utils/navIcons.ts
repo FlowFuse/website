@@ -11,6 +11,7 @@
 import iAcademicCap from '../../src/_includes/components/icons/academic-cap.svg?raw'
 import iAirplane from '../../src/_includes/components/icons/airplane.svg?raw'
 import iArrowRight from '../../src/_includes/components/icons/arrow-right.svg?raw'
+import iArrowTrendingUp from '../../src/_includes/components/icons/arrow-trending-up.svg?raw'
 import iArrowsRightLeft from '../../src/_includes/components/icons/arrows-right-left.svg?raw'
 import iBookOpen from '../../src/_includes/components/icons/book-open.svg?raw'
 import iBuildingLibrary from '../../src/_includes/components/icons/building-library.svg?raw'
@@ -61,6 +62,7 @@ export const navIcons: Record<string, string> = {
     'academic-cap': iAcademicCap,
     'airplane': iAirplane,
     'arrow-right': iArrowRight,
+    'arrow-trending-up': iArrowTrendingUp,
     'arrows-right-left': iArrowsRightLeft,
     'book-open': iBookOpen,
     'building-library': iBuildingLibrary,

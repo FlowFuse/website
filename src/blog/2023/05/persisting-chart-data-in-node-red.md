@@ -20,7 +20,7 @@ One of the most useful features of Dashboard 1 is the ability to store historic 
 
 <div class="blog-update-notes">
     <p><strong>UPDATE:</strong> Since this article was published, Node-RED Dashboard (1.0) has been <a href="https://discourse.nodered.org/t/announcement-node-red-dashboard-v1-deprecation-notice/89006" target="_blank">deprecated</a>.</p>
-    <p>Instead, it is recommended to use <a href="https://dashboard.flowfuse.com/">FlowFuse Dashboard (Dashboard 2.0)</a> which is a more modern and feature-rich dashboard solution for Node-RED.</p>
+    <p>Instead, it is recommended to use <a href="/platform/dashboard/">FlowFuse Dashboard (Dashboard 2.0)</a> which is a more modern and feature-rich dashboard solution for Node-RED.</p>
 </div>
 
 ### The Importance of Persisting Chart Data

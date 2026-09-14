@@ -137,7 +137,7 @@ This example showcases one of many powerful use cases for FlowFuse project nodes
 
 ## Using Project Call Nodes
 
-**Project Call** nodes are ideal for triggering flows deployed on another Node-RED instance and retrieving the final result as a response. While they function similarly to [webhooks](/node-red/integration-technologies/webhook/), they utilize [MQTT](/node-red/protocol/mqtt/) as their underlying mechanism instead of HTTP. In this section, we will demonstrate the use of a **Project Call** node through an example of making an on-demand temperature request.
+**Project Call** nodes are ideal for triggering flows deployed on another Node-RED instance and retrieving the final result as a response. While they function similarly to [webhooks](/docs/node-red/integration-technologies/webhook/), they utilize [MQTT](/docs/node-red/protocol/mqtt/) as their underlying mechanism instead of HTTP. In this section, we will demonstrate the use of a **Project Call** node through an example of making an on-demand temperature request.
 
 ### How Project Call Nodes Work
 
@@ -175,7 +175,7 @@ Throughout this section, we will explore how to utilize the **Project Call** nod
 ```
 ::
 
-1. Copy/download the flow above and import/upload it into your Raspberry Pi Node-RED instance. Ensure you have correctly interfaced the DHT11 sensor with your Raspberry Pi. For more information, refer to our guide on [Setting Up Node-RED on Raspberry Pi 4](/node-red/hardware/raspberry-pi-4/), which explains how to install the device agent on the Raspberry Pi and read temperature data from the DHT11 sensor.
+1. Copy/download the flow above and import/upload it into your Raspberry Pi Node-RED instance. Ensure you have correctly interfaced the DHT11 sensor with your Raspberry Pi. For more information, refer to our guide on [Setting Up Node-RED on Raspberry Pi 4](/docs/node-red/hardware/raspberry-pi-4/), which explains how to install the device agent on the Raspberry Pi and read temperature data from the DHT11 sensor.
 2. Deploy the flow.
 
 Once you deploy the flow, you will see the temperature data displayed on the Debug panel if everything was done correctly. Now, let’s add the project nodes to trigger the temperature reading flow on demand and retrieve the data accordingly.

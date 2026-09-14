@@ -144,7 +144,7 @@ The four metrics worth tracking continuously are transaction success rate, respo
 
 ### Putting it into practice
 
-Instrument your polling layer to write a timestamped record on every transaction: device address, function code, success or failure, response time in milliseconds, exception code on failures, and error type (timeout vs. CRC vs. exception response). Write those records to a [time-series store](/node-red/database/). [InfluxDB](/node-red/database/influxdb/) is a common choice for industrial deployments; a [PostgreSQL](/blog/2025/08/getting-started-with-flowfuse-tables/) table with a timestamp index works fine too.
+Instrument your polling layer to write a timestamped record on every transaction: device address, function code, success or failure, response time in milliseconds, exception code on failures, and error type (timeout vs. CRC vs. exception response). Write those records to a [time-series store](/docs/node-red/database/). [InfluxDB](/docs/node-red/database/influxdb/) is a common choice for industrial deployments; a [PostgreSQL](/blog/2025/08/getting-started-with-flowfuse-tables/) table with a timestamp index works fine too.
 
 A reasonable retention strategy is to keep raw transaction records for 7 days and roll up to hourly aggregates (per-device success rate, median response time, CRC error count) for 90 days of trend data.
 

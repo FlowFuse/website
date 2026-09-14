@@ -62,7 +62,7 @@ meta:
 tldr: "FlowFuse Dashboard now supports deep visual customization including custom headers, themes, and layout modifications. Using Teleports inside the ui-template node, you can inject custom elements into specific dashboard areas without complex CSS. This guide covers adding header buttons, custom logos, modifying color themes, and adjusting group and page padding."
 ---
 
-A recent release of FlowFuse Dashboard (Dashboard 2.0) has taken customization to the next level.
+A recent release of [FlowFuse Dashboard](/platform/dashboard/) (Dashboard 2.0) has taken customization to the next level.
 
 <!--more-->
 

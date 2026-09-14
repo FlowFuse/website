@@ -69,7 +69,7 @@ However, in that example, the MQTT node's broker configuration would be locked t
 
 We're making it possible to expose the choice of a configuration node in the Subflow properties - so each instance can be customised even further.
 
-Another common use for this will be with Node-RED Dashboard - which uses config nodes to set the location of a widget. With Node-RED today, you cannot really use dashboard nodes inside subflows as you end up with multiple copies of the widgets all packed into the same group. With this update, you'll be able to configure the subflow instance with exactly what dashboard group to place its contents into.
+Another common use for this will be with [Node-RED Dashboard](/platform/dashboard/) - which uses config nodes to set the location of a widget. With Node-RED today, you cannot really use dashboard nodes inside subflows as you end up with multiple copies of the widgets all packed into the same group. With this update, you'll be able to configure the subflow instance with exactly what dashboard group to place its contents into.
 
 ### Updated JSONata
 

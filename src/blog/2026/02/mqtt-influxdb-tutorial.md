@@ -80,7 +80,7 @@ This article takes a different approach. Using FlowFuse (the enterprise platform
 Before you start, make sure you have the following in place.
 
 - A running FlowFuse instance. If you don't have one yet, [sign up](https://app.flowfuse.com/account/create) to get started.
-- An MQTT broker. FlowFuse Pro and Enterprise include a [built-in broker](/docs/user/teambroker/), and the [MQTT nodes](/node-red/flowfuse/mqtt/) configure themselves automatically. If you are using an external broker, keep your host, port, and credentials handy.
+- An MQTT broker. FlowFuse Pro and Enterprise include a [built-in broker](/docs/user/teambroker/), and the [MQTT nodes](/docs/flowfuse-nodes/mqtt/) configure themselves automatically. If you are using an external broker, keep your host, port, and credentials handy.
 - A running InfluxDB instance, either local or on InfluxDB Cloud. Keep your URL, token, organization, and bucket name handy.
 
 ## Building the Pipeline

@@ -127,7 +127,7 @@ No. Node-RED and FlowFuse are not competitors, they’re complementary. FlowFuse
 
 When Node-RED improves, FlowFuse improves too. This is the same dynamic seen in other open-source ecosystems: Linux thrives alongside Red Hat, Kubernetes powers enterprise platforms, and PostgreSQL continues to evolve while vendors provide enterprise features. The open-source project remains free and independent, while the commercial platform adds operational value on top.
 
-FlowFuse also invests back into the ecosystem. A good example is the [FlowFuse Dashboard](https://dashboard.flowfuse.com) (often called Node-RED Dashboard 2.0), which replaced the deprecated original Node-RED Dashboard. By sponsoring and maintaining this project, FlowFuse ensures the community continues to have a modern, supported visualization tool.
+FlowFuse also invests back into the ecosystem. A good example is the [FlowFuse Dashboard](/platform/dashboard/) (often called Node-RED Dashboard 2.0), which replaced the deprecated original Node-RED Dashboard. By sponsoring and maintaining this project, FlowFuse ensures the community continues to have a modern, supported visualization tool.
 
 And importantly, your flows remain portable. Anything you build in FlowFuse works in plain Node-RED. There is no vendor lock-in. FlowFuse exists to extend Node-RED, not replace it.
 

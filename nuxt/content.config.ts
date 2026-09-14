@@ -29,12 +29,22 @@ export default defineContentConfig({
             source: 'docs/**/*.md',
             schema: z.object({
                 navTitle: z.string().optional(),
+                // The browser/search-result title, when the sidebar label is too short to
+                // serve as one. Read by nuxt/pages/docs/[...slug].vue; like navGroupOrder
+                // below, an undeclared key is stripped from frontmatter, which would make
+                // that read silently undefined.
+                metaTitle: z.string().optional(),
                 navGroup: z.string().optional(),
                 // Read by useDocsNav to rank the sidebar group headings; without it
                 // declared here @nuxt/content strips the key from frontmatter.
                 navGroupOrder: z.number().optional(),
                 navOrder: z.number().optional(),
                 originalPath: z.string().optional(),
+                // Set only on pages overlaid from this repo's nuxt/content-guides/ tree
+                // (see nuxt/lib/guides-sync.mjs). `originalPath` marks a page imported
+                // from FlowFuse/flowfuse and the docs page builds a flowfuse edit link
+                // from it; a page carrying `editUrl` links back here instead.
+                editUrl: z.string().optional(),
                 updated: z.string().optional(),
                 version: z.string().optional(),
                 layout: z.string().optional(),
@@ -63,25 +73,6 @@ export default defineContentConfig({
                     // Read by useHandbookNav for sort order; without it declared
                     // here @nuxt/content strips the key from frontmatter.
                     order: z.number().optional(),
-                }).optional(),
-            })
-        }),
-        // Markdown-driven Application Guide pages, rendered by
-        // pages/application-guide/[guide]/[slug].vue via ContentRenderer, like /docs.
-        // The sidebar/order is driven by frontmatter (guide, slug, navOrder, navTitle).
-        applicationGuideDoc: defineCollection({
-            type: 'page',
-            source: 'application-guide/**/*.md',
-            schema: z.object({
-                guide: z.enum(['flowfuse', 'node-red']),
-                slug: z.string(),
-                navTitle: z.string().optional(),
-                navOrder: z.number().optional(),
-                // slug of the parent page — nests this page under it in the sidebar.
-                parent: z.string().optional(),
-                blurb: z.string().optional(),
-                meta: z.object({
-                    description: z.string().optional(),
                 }).optional(),
             })
         }),
@@ -233,6 +224,9 @@ export default defineContentConfig({
         // Source files stay at src/webinars/ (still served by 11ty, see LEGACY_PREFIXES
         // in nuxt/server/middleware/legacy.ts) - only queried for the "Latest/Upcoming
         // Webinar" tile on the thank-you pages, so no `sitemap` field either.
+        // Source files stay at src/webinars/ (11ty's historical location) rather than being
+        // copied into nuxt/content/, same as blog/changelog/customer-stories above.
+        // Rendered by pages/webinars/[...slug].vue; listed by pages/webinars/index.vue.
         webinars: defineCollection({
             type: 'page',
             source: {
@@ -240,8 +234,40 @@ export default defineContentConfig({
                 include: 'webinars/**/*.md',
             },
             schema: z.object({
+                subtitle: z.string().optional(),
+                description: z.string().optional(),
+                // Overrides the <title> when set, same precedence as the blog.
+                metaTitle: z.string().optional(),
                 date: z.coerce.date(),
                 time: z.string().optional(),
+                // Minutes. Rendered as "45 mins" / "1h 30m".
+                duration: z.number().optional(),
+                image: z.string().optional(),
+                // YouTube id. When set it replaces the hero image with the embed.
+                video: z.string().optional(),
+                // src/_data/{team,guests} basenames, resolved through useAuthorMembers.
+                hosts: z.array(z.string()).optional(),
+                hubspot: z.object({
+                    // Registration form, shown only while the webinar is still upcoming.
+                    formId: z.string().nullable().optional(),
+                    // Slide download, shown once the recording is published. Nullable
+                    // because most entries write the key with no value, which YAML
+                    // parses as null rather than omitting the key.
+                    downloadFormId: z.string().nullable().optional(),
+                }).optional(),
+                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
+                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, the
+                // same shim the blog collection uses. `meta` itself is reserved by
+                // @nuxt/content (it holds the <!--more--> excerpt), so a declared `meta`
+                // field is silently replaced and everything under it is lost.
+                structuredData: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                }).optional(),
             })
         }),
         ebooks: defineCollection({

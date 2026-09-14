@@ -398,7 +398,7 @@ This is the widget that answers whether defects are being closed fast enough, no
 2. Add a change node named "Extract Status Funnel Data": set `payload` to `payload[0].status_funnel` (msg).
 3. Add a ui-chart node in the Status Funnel group, chart type Bar, `status` on the x-axis, `defect_count` on the y.
 
-The query orders it by workflow stage (Detected, RCA, Corrective Action, Resolved, Verified), so a pile-up at any stage is visible at a glance.
+The query orders it by workflow stage (Detected, RCA, [Corrective Action](/blog/2026/09/capa-corrective-preventive-action/), Resolved, Verified), so a pile-up at any stage is visible at a glance.
 
 ![Screenshot: the Status Funnel bar chart, ordered by workflow stage](./images/status-funnel.png)
 *The status funnel bar chart, bars in workflow order.*
@@ -409,6 +409,6 @@ Deploy and open the dashboard. Every widget populates from the seeded data at on
 
 You've built a working quality dashboard: a `defects` table, a single query that computes every KPI in one pass, and a page of stat cards, a Pareto chart, trend and breakdown charts, an SLA table, and a status funnel, all filtering live by line, shift, and date.
 
-Right now it runs on the simulator, but that was only ever a stand-in for your real data. To go live, remove the simulator flow and point the query at your own `defects` table. Everything downstream keeps working, because the dashboard only ever reads from that one query. Your defects don't live in PostgreSQL? That's fine too. FlowFuse connects to MySQL, MongoDB, InfluxDB, and more, as our [database integration guides](/node-red/database/) show.
+Right now it runs on the simulator, but that was only ever a stand-in for your real data. To go live, remove the simulator flow and point the query at your own `defects` table. Everything downstream keeps working, because the dashboard only ever reads from that one query. Your defects don't live in PostgreSQL? That's fine too. FlowFuse connects to MySQL, MongoDB, InfluxDB, and more, as our [database integration guides](/docs/node-red/database/) show.
 
 That's the real point. FlowFuse lets you build the exact application your floor needs quickly, without deep engineering knowledge or writing code, wired to the systems you already run instead of forcing your process to fit a fixed tool. This tutorial happened to build defect tracking, but the same approach covers the full range of [manufacturing dashboards](/blog/2026/08/manufacturing-dashboard-examples/), production monitoring, OEE, and the wider quality picture. See how manufacturers are already putting it to work on our [automotive solutions page](/industries/automotive/).
