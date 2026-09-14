@@ -39,10 +39,14 @@ This is scoped to `.njk` on purpose and does not extend to `.md`: new content in
 ### Production build order
 
 ```
-clean:nuxt → build:js:nuxt → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
+clean:nuxt → build:js:nuxt → blueprints → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
 ```
 
 The `docs-source` Nuxt module runs automatically during `prod:nuxt` and calls `nuxt/lib/docs-sync.mjs` to resolve `docs/` from `flowfuse/flowfuse` (see **Local docs development** below). 11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
+
+The `blueprints` step resolves `src/blueprints/` from `FlowFuse/blueprint-library` (private) via `nuxt/lib/blueprints-sync.mjs` — same local → sibling → clone precedence as docs, but the clone step authenticates with a minted GitHub App installation token (`GH_BOT_APP_ID`/`GH_BOT_APP_KEY`) since that repo isn't public. Netlify deploys straight from `main`; there is no `live` branch anymore.
+
+`GH_BOT_APP_KEY` is stored in Netlify as the PEM private key **Base64-encoded** (Netlify's env var UI rejects multiline values) — `nuxt/lib/github-app-token.mjs` decodes it before use. Rotating the key means re-encoding the new PEM to Base64 before saving it, not pasting the PEM in directly.
 
 ## Dev commands
 
