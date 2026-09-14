@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { isFuturePost } from '~/composables/useBlogList'
 
+// Ported from src/_includes/explore-more-content.njk: the blog / webinar / newsletter
+// row. Named for the thank-you pages when it was extracted for them; the homepage renders
+// the same row, so it is named for what it is.
 const props = defineProps<{
     readingResources?: string
     collectionName?: string
@@ -8,7 +11,7 @@ const props = defineProps<{
     hubspotReference: string
 }>()
 
-const { data: blogPosts } = await useAsyncData(`thank-you-blog-${props.collectionName || 'all'}`, async () => {
+const { data: blogPosts } = await useAsyncData(`explore-more-blog-${props.collectionName || 'all'}`, async () => {
     const all = await queryCollection('blog')
         .select('path', 'title', 'date', 'tags')
         .order('date', 'DESC')
@@ -20,7 +23,7 @@ const { data: blogPosts } = await useAsyncData(`thank-you-blog-${props.collectio
 
 // Mirrors explore-more-content.njk: takes the single latest-dated webinar overall
 // (not "next upcoming or most recent past"), then checks if that one date is in the future.
-const { data: webinar } = await useAsyncData('thank-you-webinar', async () => {
+const { data: webinar } = await useAsyncData('explore-more-webinar', async () => {
     const all = await queryCollection('webinars')
         .select('path', 'title', 'date', 'time')
         .order('date', 'DESC')
@@ -32,12 +35,16 @@ const { data: webinar } = await useAsyncData('thank-you-webinar', async () => {
 const webinarIsUpcoming = computed(() => webinar.value && new Date(webinar.value.date) >= new Date())
 
 const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
+
+// The site sets trailingSlash: true, so an internal link without one takes a redirect on
+// every click. queryCollection paths carry no trailing slash, hence appending it here
+// rather than linking webinar.path directly.
 </script>
 
 <template>
   <div>
     <template v-if="readingResources === 'stories'">
-      <ThankYouStoriesBlock />
+      <ExploreMoreStories />
       <h4 class="mt-20 w-full text-center text-gray-500 pt-12 border-t">
         Learn more about how FlowFuse helps with your industrial data applications
       </h4>
@@ -66,7 +73,7 @@ const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
 
       <div v-if="webinar" class="w-full my-2 grid grid-cols-1 pb-4">
         <div class="pb-2 md:pb-0">
-          <a :href="webinar.path" class="md:min-w-[40%] max-w-[448px] mx-auto mb-4 aspect-video block overflow-hidden rounded-lg cursor-pointer">
+          <a :href="`${webinar.path}/`" class="md:min-w-[40%] max-w-[448px] mx-auto mb-4 aspect-video block overflow-hidden rounded-lg cursor-pointer">
             <img :src="'/images/home/webinar.png'" alt="Image of hands typing on laptop working on Node-RED flows" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
           </a>
           <h3 class="text-xl font-bold pb-3">
@@ -86,7 +93,7 @@ const blogListUrl = computed(() => `/blog/${props.collectionName || ''}`)
         </div>
         <CtaCustom
           :label="webinarIsUpcoming ? 'Register Now' : 'Watch Webinar'"
-          :href="webinar.path"
+          :href="`${webinar.path}/`"
           destination-key="latestWebinar"
           position="webinar"
           :variant="downloadFollowUp ? 'primary' : 'primary-outlined'"
