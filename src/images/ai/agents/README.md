@@ -11,8 +11,22 @@ Each tab in the "connect your own agent" section renders `client.logo` when it i
 | `gemini.svg` | Gemini | Google's own CDN, the Gemini sparkle used by Gemini's product surfaces. |
 | _(none)_ | Local and Custom Agents | Not a brand mark by design. The repo icon `components/icons/server-stack.svg` is inlined instead of linked as a file, so it inherits `currentColor` and turns white when the tab is active. |
 
-All marks are used unmodified, at their own aspect ratio, in a 16px-tall slot beside the
-agent's name. None is altered in colour or proportion.
+All marks sit in a 16px-tall slot beside the agent's name, at their own aspect ratio. None is
+altered in colour or proportion.
+
+One has had its canvas cropped. `chatgpt.svg` came out of the brand kit with the symbol inset in
+the middle 50% of a 716x716 canvas, which is clear space meant for standalone use. Inline beside a
+label that padding reads as a shrunken logo: the artwork filled half the slot while every other
+mark filled 84% to 100% of it. Its `viewBox` is now `179 179 357 357`, a square crop to the ink.
+The artwork itself is untouched, in its own colour and proportion; only the empty margin is gone.
+
+Check this before adding a mark, because nothing in the CSS reveals it. Render the file and
+measure the ink against the canvas:
+
+    rsvg-convert -w 200 -h 200 -b none <file>.svg -o /tmp/m.png
+    magick /tmp/m.png -alpha extract -threshold 5% -format "%@\n" info:
+
+A result much smaller than 200x200 means the file carries clear space that has to be cropped.
 
 To add or replace one, drop the file here and set the path on that client:
 
