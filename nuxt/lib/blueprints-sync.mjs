@@ -156,11 +156,36 @@ function writeBlueprintMarkdown ({ sourceRoot, srcPath, destPath, inputRelDir })
     writeFileSync(destPath, body)
 }
 
+// Removes only the entries under destDir that no longer exist in the source - never
+// submit.njk (this repo's own "Submit Your Own" page, not something blueprint-library
+// provides) and never an entry copyTree/writeBlueprints is about to repopulate anyway.
+// Deliberately narrower than docs-sync.mjs's full wipe: the rest of copyTree already
+// overwrites every file in place on each sync (11ty sees a cheap "changed" event), so
+// wiping unaffected entries too would turn that into a delete+recreate of the entire tree
+// on every sync - noisy for 11ty's watcher and briefly 404s a page mid-rebuild for no reason.
+function clearOrphans (destDir, currentNames) {
+    if (!existsSync(destDir)) return
+    for (const entry of readdirSync(destDir, { withFileTypes: true })) {
+        if (entry.name === 'submit.njk' || currentNames.has(entry.name)) continue
+        rmSync(join(destDir, entry.name), { recursive: true, force: true })
+    }
+}
+
+// The name an entry lands under once copied - directories are lower-cased and a README
+// becomes that section's index, same transforms copyTree itself applies below.
+function destinationName (entry) {
+    return entry.isDirectory() ? entry.name.toLowerCase() : entry.name.replace(/README/, 'index')
+}
+
 function copyTree (srcDir, destDir, sourceRoot, inputRelDir) {
     mkdirSync(destDir, { recursive: true })
-    for (const entry of readdirSync(srcDir, { withFileTypes: true })) {
-        if (entry.name.startsWith('.')) continue
+    const entries = readdirSync(srcDir, { withFileTypes: true }).filter(entry => !entry.name.startsWith('.'))
+    // Prunes at every level copyTree recurses into - a single file removed from an
+    // otherwise-unchanged blueprint (an old screenshot, a renamed README) is caught here
+    // too, not just a whole blueprint folder disappearing.
+    clearOrphans(destDir, new Set(entries.map(destinationName)))
 
+    for (const entry of entries) {
         const srcPath = join(srcDir, entry.name)
         if (entry.isDirectory()) {
             const lowerCaseName = entry.name.toLowerCase()
@@ -177,43 +202,22 @@ function copyTree (srcDir, destDir, sourceRoot, inputRelDir) {
     }
 }
 
-// Removes only the entries under destDir that no longer exist in the source - never
-// submit.njk (this repo's own "Submit Your Own" page, not something blueprint-library
-// provides) and never an entry copyTree is about to repopulate anyway. Deliberately
-// narrower than docs-sync.mjs's full wipe: copyTree already overwrites every file in
-// place on each sync (11ty sees a cheap "changed" event), so wiping unaffected blueprints
-// too would turn that into a delete+recreate of the entire tree on every sync - noisy for
-// 11ty's watcher and briefly 404s a page mid-rebuild for no reason.
-function clearOrphans (destDir, currentNames) {
-    if (!existsSync(destDir)) return
-    for (const entry of readdirSync(destDir, { withFileTypes: true })) {
-        if (entry.name === 'submit.njk' || currentNames.has(entry.name)) continue
-        rmSync(join(destDir, entry.name), { recursive: true, force: true })
-    }
-}
-
-function directoryNames (dir) {
-    return readdirSync(dir, { withFileTypes: true })
-        .filter(entry => entry.isDirectory() && !entry.name.startsWith('.'))
-}
-
 /**
  * Populate src/blueprints from `dir` (one category folder per top-level entry, one
  * blueprint per folder below that) and return the manifest describing what was published.
- * Pruned one level at a time - at the category level and again inside each still-current
- * category - since that's the actual unit that gets renamed or removed upstream, without
- * having to fully tree-diff every nested asset to catch it.
+ * The top-level category list is pruned here, since `dir` itself also holds files
+ * (LICENSE, README.md) that copyTree would otherwise treat as content to copy; everything
+ * below a category is pruned by copyTree itself as it recurses.
  */
 function writeBlueprints ({ dir, websiteRoot, kind, ref }) {
     const destRoot = join(websiteRoot, 'src', 'blueprints')
-    const categories = directoryNames(dir)
+    const categories = readdirSync(dir, { withFileTypes: true })
+        .filter(entry => entry.isDirectory() && !entry.name.startsWith('.'))
     clearOrphans(destRoot, new Set(categories.map(entry => entry.name)))
 
     for (const category of categories) {
         const categorySrcDir = join(dir, category.name)
-        const categoryDestDir = join(destRoot, basename(categorySrcDir))
-        clearOrphans(categoryDestDir, new Set(directoryNames(categorySrcDir).map(entry => entry.name)))
-        copyTree(categorySrcDir, categoryDestDir, dir, join('blueprints', basename(categorySrcDir)))
+        copyTree(categorySrcDir, join(destRoot, basename(categorySrcDir)), dir, join('blueprints', basename(categorySrcDir)))
     }
 
     return {
