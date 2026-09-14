@@ -12,18 +12,28 @@ const repo = join(dirname(fileURLToPath(import.meta.url)), '..', '..')
 const chrome = JSON.parse(readFileSync(join(repo, 'src/_data/chrome.json'), 'utf8'))
 
 const navLinks = chrome.header.dropdowns.flatMap(d => d.columns.flatMap(c => c.links))
+// A "Start building" row is either a reserved CTA destination (no href of its
+// own - ctaDestinations.json holds it) or an ordinary page link.
+const startBuildingLinks = chrome.header.startBuilding.items.filter(i => i.href)
 const footerLinks = [
     ...chrome.footer.sections.flatMap(s => s.groups.flatMap(g => g.links)),
     ...chrome.footer.company.grid.flatMap(g => g.links),
     ...chrome.footer.company.trailing.links,
 ]
-const allLinks = [...navLinks, ...chrome.header.direct, ...footerLinks]
+// A dropdown that has a landing page is a link as well as a panel trigger.
+const dropdownLandingLinks = chrome.header.dropdowns.filter(d => d.href)
+const allLinks = [...navLinks, ...chrome.header.direct, ...dropdownLandingLinks,
+    ...startBuildingLinks, ...footerLinks]
+
+// Every row that draws an icon, whichever list it came from - the two guards
+// below are about the icon set, not about where the link points.
+const iconRows = [...navLinks, ...chrome.header.startBuilding.items]
 
 test('every icon key resolves to an icon file', () => {
-    for (const { icon, label } of navLinks) {
-        assert.ok(icon, `${label} has no icon`)
+    for (const { icon, label, cta } of iconRows) {
+        assert.ok(icon, `${label || cta} has no icon`)
         assert.ok(existsSync(join(repo, `src/_includes/components/icons/${icon}.svg`)),
-            `${label} points at a missing icon: ${icon}.svg`)
+            `${label || cta} points at a missing icon: ${icon}.svg`)
     }
 })
 
@@ -31,9 +41,9 @@ test('every icon key is in the Nuxt icon map', () => {
     // Eleventy loads icons off disk by name, Nuxt needs an explicit import.
     const map = readFileSync(join(repo, 'nuxt/utils/navIcons.ts'), 'utf8')
     const covered = new Set([...map.matchAll(/^\s*'([^']+)':/gm)].map(m => m[1]))
-    for (const { icon, label } of navLinks) {
+    for (const { icon, label, cta } of iconRows) {
         assert.ok(covered.has(icon),
-            `${label} uses icon "${icon}" - add it to nuxt/utils/navIcons.ts`)
+            `${label || cta} uses icon "${icon}" - add it to nuxt/utils/navIcons.ts`)
     }
 })
 
@@ -103,28 +113,128 @@ test('every utility class in the data file is a plain literal', () => {
     }
 })
 
-test('every dropdown column reserves enough grid rows for its links', () => {
-    // The row counts are the one part of this file that has to agree with the
-    // number of links beside it. A sub-menu is grid-rows-subgrid with row-span-N,
-    // so once it holds more than N links the rest spill into implicit rows and
-    // shove the following column out of its alignment. Slack is harmless, a
-    // shortfall is not, so this asserts the floor rather than an exact match.
+test('every dropdown column is placed in its own column track', () => {
+    // The panel is two rows - one for the eyebrows, one for the lists - and one
+    // track per column. Each list then lays its own links out inside its single
+    // cell. It used to be one shared row per link across every column, which
+    // meant a tall row in one column set the spacing of the plain link beside
+    // it, so a two-link column got stretched to the height of a six-row one.
+    // A column that is placed in the wrong track silently lands on top of
+    // another one, so the track numbers are checked rather than assumed.
     for (const dd of chrome.header.dropdowns) {
-        const megaRows = dd.megaClasses.match(/grid-rows-\[repeat\((\d+),auto\)\]/)
-        assert.ok(megaRows, `${dd.label} has no explicit mega row count`)
-        let tallest = 0
-        for (const col of dd.columns) {
-            const span = col.listClasses.match(/row-span-\[?(\d+)\]?/)
-            assert.ok(span, `${dd.label} > ${col.title} has no row-span`)
-            assert.ok(Number(span[1]) >= col.links.length,
-                `${dd.label} > ${col.title} spans ${span[1]} rows but has `
-                + `${col.links.length} links - raise its row-span in src/_data/chrome.json`)
-            // A column occupies its title row plus one row per link.
-            tallest = Math.max(tallest, 1 + col.links.length)
+        // The row template lives in style.css, deliberately: an arbitrary
+        // Tailwind value written in this JSON is not extracted, so a class here
+        // would compile to nothing and the panel would lose its rows silently.
+        assert.doesNotMatch(dd.megaClasses, /grid-rows-/,
+            `${dd.label} declares grid rows as a class; put them in style.css`)
+        dd.columns.forEach((col, i) => {
+            const track = i + 1
+            assert.match(col.listClasses, new RegExp(`md:col-start-${track}\\b`),
+                `${dd.label} > "${col.title}" is column ${track} but its list is not in that track`)
+            assert.match(col.titleGrid, new RegExp(`md:col-start-${track}\\b`),
+                `${dd.label} > "${col.title}" is column ${track} but its eyebrow is not in that track`)
+            // A column with no eyebrow has nothing above its list, so the list
+            // takes both rows; one with an eyebrow starts on the second.
+            const expected = col.title ? 'md:row-start-2' : 'md:row-start-1 md:row-span-2'
+            assert.ok(col.listClasses.includes(expected),
+                `${dd.label} > "${col.title}" should place its list with "${expected}"`)
+        })
+    }
+})
+
+test('every Start building row names exactly one destination', () => {
+    // The menu is the header's primary action and each row is one way to get a
+    // first instance running, so a row that resolves to nothing (or to two
+    // things) is a dead primary action rather than a cosmetic slip. A `cta` row
+    // deliberately carries no label or href: ctaDestinations.json owns that
+    // row's copy, URL and PostHog event, which is what keeps every sign-up
+    // click on a single event name across both renderers.
+    const ctaDestinations = JSON.parse(
+        readFileSync(join(repo, 'src/_data/ctaDestinations.json'), 'utf8'))
+    const items = chrome.header.startBuilding.items
+    assert.ok(items.length > 0, 'the Start building menu has no rows')
+    assert.ok(chrome.header.startBuilding.label, 'the Start building menu has no trigger label')
+    for (const item of items) {
+        if (item.cta) {
+            assert.ok(!item.href && !item.label,
+                `Start building row "${item.cta}" also sets a label or href - `
+                + 'a cta row takes both from src/_data/ctaDestinations.json')
+            assert.ok(ctaDestinations[item.cta],
+                `Start building row names cta "${item.cta}", which is not in `
+                + 'src/_data/ctaDestinations.json')
+        } else {
+            assert.ok(item.href && item.label,
+                `Start building row ${JSON.stringify(item)} needs both a label and an href`)
         }
-        assert.ok(Number(megaRows[1]) >= tallest,
-            `${dd.label} declares ${megaRows[1]} mega rows but its tallest column needs `
-            + `${tallest} - raise the repeat() count in src/_data/chrome.json`)
+    }
+})
+
+test('the Start building menu is rendered by both renderers', () => {
+    // Two independent templates draw this menu, and the Eleventy one is an
+    // include rather than a component import, so nothing but a check like this
+    // notices if one of them is dropped and the header quietly loses its
+    // primary action on half the site.
+    const eleventy = readFileSync(join(repo, 'src/_includes/layouts/base.njk'), 'utf8')
+    const nuxtHeader = readFileSync(join(repo, 'nuxt/components/AppHeader.vue'), 'utf8')
+    // Once for the desktop CTA cluster, once for the mobile drawer.
+    assert.equal(eleventy.match(/components\/nav-start-building\.njk/g)?.length, 2)
+    assert.equal(nuxtHeader.match(/<NavStartBuilding/g)?.length, 2)
+})
+
+test('a dropdown landing page is not one of its own panel links', () => {
+    // The trigger and the row would then be two ways to the same page sitting a
+    // few pixels apart, which reads as a mistake rather than a shortcut. The
+    // Platform panel is the exception and states it: /product/ is the first row
+    // of its Overview column on purpose, because that column IS the product
+    // list and dropping the row would hide the overview from the panel.
+    const allowed = new Set(['Platform'])
+    for (const dd of chrome.header.dropdowns) {
+        if (!dd.href || allowed.has(dd.label)) continue
+        const clash = dd.columns.flatMap(c => c.links).find(l => l.href === dd.href)
+        assert.ok(!clash, `${dd.label} links to ${dd.href}, which is also its `
+            + `"${clash?.label}" row - drop one of the two`)
+    }
+})
+
+test('a described row keeps its description a plain one-liner', () => {
+    // Descriptions render as text, not markup, and sit on one nav row: a long
+    // one wraps past the two lines the row reserves and pushes the panel taller
+    // than the rows beside it.
+    for (const { label, description } of navLinks) {
+        if (description === undefined) continue
+        assert.equal(typeof description, 'string', `${label} has a non-string description`)
+        assert.ok(!/[<>]/.test(description), `${label}'s description contains markup`)
+        assert.ok(description.length <= 80,
+            `${label}'s description is ${description.length} chars - keep it under 80`)
+    }
+})
+
+test('a data-filled column declares a source and carries no static links', () => {
+    // The Blog panel's first column is the latest posts, which cannot live in
+    // this file. A column either lists its links here or names a data file, and
+    // doing both would mean the rows in the two renderers depended on which one
+    // the template happened to prefer.
+    const generated = JSON.parse(
+        readFileSync(join(repo, 'src/_data/latestPosts.json'), 'utf8'))
+    let sourced = 0
+    for (const dd of chrome.header.dropdowns) {
+        for (const col of dd.columns) {
+            if (!col.source) continue
+            sourced++
+            assert.equal(col.source, 'latestPosts',
+                `${dd.label} > "${col.title}" names an unknown source "${col.source}"`)
+            assert.equal(col.links.length, 0,
+                `${dd.label} > "${col.title}" is filled from ${col.source} but also lists links`)
+            assert.ok(col.title,
+                `${dd.label} > "${col.title}" needs a heading: a reader cannot tell what a list of `
+                + 'headlines is without one')
+        }
+    }
+    assert.equal(sourced, 1, 'expected exactly one data-filled column (the Blog panel)')
+    assert.ok(generated.posts.length > 0, 'src/_data/latestPosts.json has no posts')
+    for (const post of generated.posts) {
+        assert.ok(post.label && post.href, `a generated post is missing a label or href: ${JSON.stringify(post)}`)
+        assert.match(post.href, /^\/blog\/.+\/$/, `${post.label} has an unexpected blog URL: ${post.href}`)
     }
 })
 

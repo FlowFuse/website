@@ -326,6 +326,9 @@ export default defineNuxtConfig({
                 // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
                 // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
                 { src: '/js/nav-tracking.js', defer: true },
+                // Dropdown panel anchoring + the menu-to-menu view transition.
+                // Source is src/js/nav-panels.js; copied the same way as nav-tracking.js.
+                { src: '/js/nav-panels.js', defer: true },
                 // Opens sign-up in a small popup window on desktop/tablet.
                 // Source is src/js/signup-popup.js; copied the same way as nav-tracking.js.
                 { src: '/js/signup-popup.js', defer: true },

@@ -1,14 +1,12 @@
 <script setup>
 import { onMounted } from 'vue'
-import navHighlights from '../../src/_data/navHighlights.json'
 // Shared with the Eleventy layout, which reads the same file as an 11ty _data
 // global. Edit the nav or footer there and both renderers follow.
 import chrome from '../../src/_data/chrome.json'
-
-const hl = (key) => {
-    const entry = navHighlights[key]
-    return { ...entry, image: entry.image || '/images/og-blog.jpg' }
-}
+// The Blog panel's first column is the latest posts. Generated from src/blog by
+// scripts/build_latest_posts.mjs and imported here rather than queried, so this
+// header and the Eleventy one always show the same rows in the same order.
+import latestPosts from '../../src/_data/latestPosts.json'
 
 const resolveHref = useResolveHref()
 
@@ -50,7 +48,7 @@ onMounted(() => {
     })
 
     // Mobile nav: dropdown sections expand on tap, not hover
-    document.querySelectorAll('header .ff-nav-dropdown > span').forEach((trigger) => {
+    document.querySelectorAll('header .ff-nav-dropdown > span, header .ff-nav-dropdown > a.ff-nav-trigger').forEach((trigger) => {
         trigger.addEventListener('click', (e) => {
             if (window.innerWidth < 768) {
                 e.preventDefault()
@@ -159,14 +157,26 @@ onMounted(() => {
       <!-- Nav -->
       <ul id="nav-content" class="">
         <li v-for="dd in chrome.header.dropdowns" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :data-nav-section="dd.label">
-          <span class="flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+          <!-- A dropdown with a landing page is a link as well as a trigger, so
+               the section itself is reachable and not only the pages under it.
+               Same inner markup either way, so one set of CSS rules covers both;
+               under md the tap handler above suppresses the navigation and
+               expands the section instead. -->
+          <component :is="dd.href ? 'a' : 'span'" :href="dd.href ? resolveHref(dd.href) : undefined" class="ff-nav-trigger flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></component>
           <ul :class="dd.megaClasses">
-            <li class="mega-highlight"><a :href="hl(dd.highlight).link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl(dd.highlight).title }}</span><span class="mega-highlight-media"><img :src="hl(dd.highlight).image" alt="" loading="lazy"></span></a></li>
-            <template v-for="col in dd.columns" :key="col.title">
-              <li class="pl-3 title border-l-2 border-gray-200" :class="col.titleGrid"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
+            <template v-for="(col, colIndex) in dd.columns" :key="col.title">
+              <!-- A column can go without an eyebrow (the Product tiers: the
+                   dropdown above already names them). Skip the element rather
+                   than render an empty one, or it holds a blank row open at the
+                   top of the column. -->
+              <li v-if="col.title" class="pl-3 title border-l-2 border-gray-200" :class="[colIndex === 0 ? 'ff-nav-col--primary' : 'ff-nav-col--rest', col.titleGrid]"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
               <li class="contents">
-                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="col.listClasses">
-                  <li v-for="item in col.links" :key="item.label" :class="{ 'nav-indent': item.indent }"><a class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
+                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="[colIndex === 0 ? 'ff-nav-col--primary' : 'ff-nav-col--rest', col.listClasses]">
+                  <!-- A described row is a grid rather than a flex line: the icon
+                       spans both rows on the left, the label and the description
+                       stack beside it. Only the product tiers carry one, so the
+                       plain row keeps its simpler box. -->
+                  <li v-for="item in (col.source === 'latestPosts' ? latestPosts.posts : col.links)" :key="item.label" :class="{ 'nav-indent': item.indent }"><a :class="item.description ? 'ff-nav-row--described' : ['flex items-center gap-2', { 'ff-nav-post': col.source === 'latestPosts' }]" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span><span v-if="item.description" class="ff-nav-desc">{{ item.description }}</span></a></li>
                 </ul>
               </li>
             </template>
@@ -175,6 +185,11 @@ onMounted(() => {
 
         <!-- Direct links -->
         <li v-for="item in chrome.header.direct" :key="item.label" :class="item.classes"><a class="flex items-center gap-2" :href="item.href"><span class="ff-nav-label">{{ item.label }}</span></a></li>
+
+        <!-- Mobile copy of the Start building menu: the CTA cluster below is
+             hidden under md, so the drawer is where these three rows live on a
+             phone. -->
+        <NavStartBuilding class="md:hidden" />
 
         <!-- More overflow (populated by JS) -->
         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">
@@ -185,7 +200,11 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-        <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
+        <!-- Primary action: a menu, not a single link, because a first instance
+             can start on Cloud, on the visitor's own edge hardware, or from the
+             AI agent they already use, and only the first of the three used to
+             be advertised here. -->
+        <NavStartBuilding class="hidden md:flex" />
         <li class="flex">
           <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
         </li>

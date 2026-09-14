@@ -48,6 +48,12 @@ const props = withDefaults(defineProps<{
     // via the Computed tab - it's not plain text, it just has no visible
     // background/border).
     padded?: boolean
+    // Only meaningful for variant="nav-text" - a leading icon from the same set
+    // src/_data/chrome.json names, for a nav-text CTA that sits as one row of a
+    // nav panel (the "Start building" menu's Cloud row) and has to match the
+    // icon rows beside it. Distinct from `icon` above, which is a Nuxt UI
+    // trailing-icon name on a real button. Mirrors cta-button.njk's `navIcon`.
+    navIcon?: string
     // For documentation/gallery usage (e.g. the handbook's live CTA examples)
     // - looks and behaves identically, but doesn't navigate anywhere and never
     // calls capture(), so clicking an example button can't send a real
@@ -123,8 +129,11 @@ const showUppercase = computed(() => props.uppercase ?? !isNavTextVariant.value)
 const uiOverrides = computed(() => {
     if (isNavTextVariant.value) {
         const padding = props.padded ? 'px-3 py-4' : 'p-0'
+        // A nav-icon row lays its icon and label out the way every other nav
+        // panel row does, so the two renderers draw the same row.
+        const row = props.navIcon ? ' flex items-center gap-2' : ''
         // font-normal (400): matches the Eleventy nav link's inherited weight.
-        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-normal no-underline ${padding}` }
+        return { base: `${showUppercase.value ? 'uppercase' : 'normal-case'} font-normal no-underline ${padding}${row}` }
     }
     // Same metrics as a real button (bold, uppercase, text-base, 8px/16px
     // padding) since a ghost button IS one visually - it just has no
@@ -155,13 +164,17 @@ function onClick () {
     :ui="uiOverrides"
     @click="onClick"
   >
-    <!-- The main nav's "Free Trial" (.ff-nav-freetrial) keys its rest color
-         and animated hover underline off a `.ff-nav-label` child span - see
-         src/css/style.css's `.ff-website header .ff-nav-freetrial .ff-nav-label`
-         rules. UButton's default slot would otherwise render the label as a
-         bare text node, so those rules silently never match. Scoped to
-         nav-text since it's the only variant `.ff-nav-label` styling reaches. -->
-    <span v-if="isNavTextVariant" class="ff-nav-label">{{ label }}</span>
+    <!-- Every header nav label keys its color, hover underline and padding
+         reset off a `.ff-nav-label` child span - see the `.ff-website header
+         .ff-nav-label` and `.ff-nav-startbuilding` rules in src/css/style.css.
+         UButton's default slot would otherwise render the label as a bare text
+         node, so those rules silently never match, which is what a nav-text CTA
+         inside the header (the "Start building" menu's Cloud row) depends on.
+         Scoped to nav-text since it's the only variant that styling reaches. -->
+    <template v-if="isNavTextVariant">
+      <NavIcon v-if="navIcon" :name="navIcon" />
+      <span class="ff-nav-label">{{ label }}</span>
+    </template>
     <template v-else>{{ label }}</template>
   </UButton>
 </template>

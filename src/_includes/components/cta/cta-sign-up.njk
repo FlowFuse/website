@@ -14,12 +14,15 @@
   `ctaDestinations` isn't a parameter: it's a Nunjucks global (see
   .eleventy.js), so it doesn't need one.
 #}
-{% macro ctaSignUp(site, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='') %}
+{% macro ctaSignUp(site, variant, position, color=none, icon=false, uppercase=none, padded=false, extraClass='', navIcon='') %}
 {#- Copy varies by placement, per the PostHog CTA analysis referenced in
-    CtaSignUp.vue: "Free Trial" in the nav, "Try it out" everywhere else.
+    CtaSignUp.vue: "Free Trial" in the nav, "From FlowFuse Cloud" as a row of
+    the header's "Start building" menu, "Try it out" everywhere else.
     Fixed lookup, not a caller-supplied prop, so callers can't reintroduce
     arbitrary copy variants - only `position` decides. -#}
 {%- set dest = ctaDestinations.signUp -%}
-{%- set label = dest.navLabel if position in dest.navPositions else dest.label -%}
-{{ ctaButton(dest.event, site.appURL ~ dest.hrefSuffix, label, variant, position, color, icon, uppercase, padded, extraClass) }}
+{%- if position in dest.menuPositions -%}{%- set label = dest.menuLabel -%}
+{%- elif position in dest.navPositions -%}{%- set label = dest.navLabel -%}
+{%- else -%}{%- set label = dest.label -%}{%- endif -%}
+{{ ctaButton(dest.event, site.appURL ~ dest.hrefSuffix, label, variant, position, color, icon, uppercase, padded, extraClass, navIcon) }}
 {%- endmacro %}
