@@ -22,9 +22,9 @@ const METRICS = [
 ]
 
 const PROBLEMS = [
-    { svgPath: 'arrow-path', title: 'Every solution starts from scratch', description: 'Operational logic stays local. The same problem gets solved differently at every site, by every team, every time.' },
-    { svgPath: 'link-slash', title: "Your core systems don't cover everything", description: 'MES, ERP, and SCADA solve standard problems well. The workflows in the gaps (quality gates, shift handovers, custom validation) fall back to custom code and manual workarounds.' },
-    { svgPath: 'building-office-2', title: "What works on one line won't scale to fifty", description: 'A working solution on one machine requires rebuilding from scratch for the next site. There is no system to standardize, deploy, and govern what works' },
+    { svgPath: 'i-heroicons-arrow-path', title: 'Every solution starts from scratch', description: 'Operational logic stays local. The same problem gets solved differently at every site, by every team, every time.' },
+    { svgPath: 'i-heroicons-link-slash', title: "Your core systems don't cover everything", description: 'MES, ERP, and SCADA solve standard problems well. The workflows in the gaps (quality gates, shift handovers, custom validation) fall back to custom code and manual workarounds.' },
+    { svgPath: 'i-heroicons-building-office-2', title: "What works on one line won't scale to fifty", description: 'A working solution on one machine requires rebuilding from scratch for the next site. There is no system to standardize, deploy, and govern what works' },
 ]
 
 const CAPABILITIES = [
@@ -135,8 +135,8 @@ useSchemaOrg([
                       </p>
                       <div class="flex flex-col mt-12">
                           <div class="m-auto flex gap-4 items-center justify-center flex-row">
-                              <CtaBookDemo variant="highlight" position="hero" class="flex flex-col mb-6" />
-                              <CtaSignUp variant="ghost" color="white" position="hero" icon="i-lucide-arrow-right" class="flex flex-col mb-6" />
+                              <CtaBookDemo variant="highlight" position="hero" />
+                              <CtaSignUp variant="ghost" color="white" position="hero" icon="i-lucide-arrow-right" />
                           </div>
                       </div>
                   </div>
@@ -186,7 +186,7 @@ useSchemaOrg([
                   <div class="flex flex-col items-center sm:items-start">
                       <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
                           <div class="w-8 h-8 m-auto sm:m-0 text-red-400">
-                              <SiteArt :name="section.svgPath" />
+                              <Icon :name="section.svgPath" class="w-full h-full" />
                           </div>
                           <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
                               <p class="w-full font-semibold md:m-0 text-gray-600">
@@ -256,7 +256,7 @@ useSchemaOrg([
                   </p>
                   <NuxtLink :to="item.linkHref" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center mt-3">
                       {{ item.linkText }}
-                      <SiteArt name="arrow-long-right" />
+                      <Icon name="i-heroicons-arrow-long-right-solid" class="w-6 h-6" />
                   </NuxtLink>
               </div>
           </div>
@@ -330,7 +330,7 @@ useSchemaOrg([
                   <div class="flex flex-col gap-8">
                       <div class="flex items-center gap-3">
                           <div class="w-8 h-8 shrink-0 text-red-400">
-                              <SiteArt name="bolt" />
+                              <Icon name="i-heroicons-bolt" class="w-full h-full" />
                           </div>
                           <p class="text-red-400 text-2xl font-medium m-0">AI accelerates the build</p>
                       </div>
@@ -338,14 +338,14 @@ useSchemaOrg([
                   </div>
                   <a href="/ai/" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6">
                       <span class="group-hover:underline">Learn more about FlowFuse AI</span>
-                      <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><SiteArt name="arrow-long-right" /></span>
+                      <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><Icon name="i-heroicons-arrow-long-right-solid" /></span>
                   </a>
               </div>
               <div class="border-2 border-red-200 rounded-lg p-6 flex flex-col justify-between bg-gradient-to-tl from-red-50/50 to-transparent">
                   <div class="flex flex-col gap-8">
                       <div class="flex items-center gap-3">
                           <div class="w-8 h-8 shrink-0 text-red-400">
-                              <SiteArt name="shield-check" />
+                              <Icon name="i-heroicons-shield-check" class="w-full h-full" />
                           </div>
                           <p class="text-red-400 text-2xl font-medium m-0">FlowFuse governs the result</p>
                       </div>
@@ -359,7 +359,7 @@ useSchemaOrg([
                        PostHog as this one-off style. -->
                   <NuxtLink to="/book-demo/" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6" @click="capture('cta-book-demo', { position: 'ai', variant: 'text' })">
                       <span class="group-hover:underline">Book a demo</span>
-                      <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><SiteArt name="arrow-long-right" /></span>
+                      <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><Icon name="i-heroicons-arrow-long-right-solid" /></span>
                   </NuxtLink>
               </div>
           </div>
