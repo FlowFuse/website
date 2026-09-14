@@ -251,64 +251,17 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
           Most plants aren&rsquo;t short of data. <span class="text-indigo-600">They&rsquo;re short of a closed loop.</span>
         </h2>
 
-        <!-- The opening beat runs full width and the two consequences sit beside
-             each other, so neither column is left with a hole under it. -->
-        <p class="max-w-4xl text-lg text-gray-500 font-light m-0">
-          Your machines produce more signal than they ever have. The PLC knows the cycle time. The
-          drive knows the current draw. The vision system knows the reject rate. All of it exists,
-          somewhere, in a format someone chose years ago. What doesn&rsquo;t exist is one place to
-          look at it &mdash; and one place to do something about it.
+        <p class="max-w-3xl text-lg text-gray-500 font-light m-0">
+          Every improvement you want is a loop: a signal, the context that makes it mean something,
+          and an action that changes what the machine does next. Most plants close that loop in the
+          cloud, in someone&rsquo;s head, or in next month&rsquo;s report &mdash; which is how a
+          bearing climbs for six weeks and still fails at 2:47 on a Tuesday.
         </p>
 
-        <div class="grid md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mt-8">
-          <p class="m-0 text-gray-500 font-light">
-            So the work goes sideways. An engineer drives to a pumping station to read a gauge. A
-            torque spec change means reprogramming fifteen controllers by hand, across five lines,
-            with a USB stick. One production unit reports runtime and downtime to the MES; the unit
-            next door reports nothing, because nobody has built it yet and nobody has the time.
-          </p>
-          <p class="m-0 text-gray-500 font-light">
-            It holds until it doesn&rsquo;t. A bearing gives up at 2:47 on a Tuesday. The vibration
-            had been climbing for six weeks. Nobody was watching that number, because watching it
-            would have meant building something, and building something would have meant a project.
-          </p>
-        </div>
-
-        <h3 class="mt-14 mb-6 text-2xl font-medium text-gray-900 text-center w-full md:text-left">
-          Every improvement you want is a loop. <span class="text-indigo-600">The edge is where it closes.</span>
-        </h3>
-
-        <div class="grid md:grid-cols-2 gap-6 md:gap-10 max-w-5xl">
-          <div class="flex flex-col gap-4 text-gray-500 font-light">
-            <p class="m-0">Signal. Context. Action. That&rsquo;s the whole shape of it.</p>
-            <p class="m-0">
-              A motor draws 2.3 amps &mdash; that&rsquo;s a <strong class="font-medium text-gray-700">signal</strong>,
-              and on its own it means nothing. It becomes useful when you know which line, which recipe,
-              which shift, and what the last four weeks looked like: that&rsquo;s
-              <strong class="font-medium text-gray-700">context</strong>. And it only pays for itself when
-              somebody, or something, changes what the machine does next. That&rsquo;s
-              <strong class="font-medium text-gray-700">action</strong>.
-            </p>
-          </div>
-          <div class="flex flex-col gap-4 text-gray-500 font-light">
-            <p class="m-0">
-              Most industrial architectures close that loop in the cloud, or in a person&rsquo;s head, or
-              in next month&rsquo;s report. Which means the loop is measured in hours, or days, or a site
-              visit. A historian tells you what happened. A dashboard tells you what&rsquo;s happening.
-              Neither one lets you change anything.
-            </p>
-            <p class="m-0 text-gray-700">
-              FlowFuse closes it where the machine is. The flow reading the PLC, the logic deciding what
-              it means, and the editor you change that logic in are the same thing, running on the same
-              device, behind the same login.
-            </p>
-          </div>
-        </div>
-
-        <!-- Loop diagram. Full width rather than beside the copy: at half width it
-             renders about 700px across and reads as an aside, when it is the
-             section's argument. Inline SVG so it inherits the page's type and
-             needs no library at runtime. -->
+        <!-- Loop diagram. This section is heading, one paragraph, diagram, one
+             line: the picture carries the argument, so it runs full width rather
+             than sitting beside copy that would repeat it. Inline SVG so it
+             inherits the page's type and needs no library at runtime. -->
         <figure class="m-0 mt-10 md:mt-12 rounded-xl border border-gray-200 bg-gray-50 px-4 py-8 md:px-14 md:py-12">
           <svg
             viewBox="0 0 720 320"
@@ -374,8 +327,8 @@ const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
         </figure>
 
         <p class="mt-10 text-xl md:text-2xl font-light text-gray-800 max-w-3xl m-0">
-          The gap isn&rsquo;t between your machines and the cloud. It&rsquo;s between noticing
-          something and <span class="text-indigo-600">being able to do anything about it.</span>
+          A historian tells you what happened. A dashboard tells you what&rsquo;s happening.
+          <span class="text-indigo-600">FlowFuse closes the loop where the machine is.</span>
         </p>
       </div>
     </section>
