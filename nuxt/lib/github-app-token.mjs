@@ -6,12 +6,18 @@ import { createAppAuth } from '@octokit/auth-app'
 
 /**
  * Mint an installation access token (valid ~1 hour) for the GitHub App installed on
- * `owner/repo`. Uses the same App credentials (GH_BOT_APP_ID / GH_BOT_APP_KEY) the
- * `Build Site` Actions workflow already uses to push blueprint updates, so Netlify's
- * production build can clone the private blueprint-library repo the same way.
+ * `owner/repo` (GH_BOT_APP_ID / GH_BOT_APP_KEY - a dedicated App with read-only access to
+ * blueprint-library, installed in the FlowFuse org), so Netlify's production build can
+ * clone the private repo without a long-lived PAT.
+ *
+ * Netlify's env var UI doesn't accept multiline values, so the PEM is stored there
+ * Base64-encoded and decoded back to real PEM text here. A raw, already-PEM key decodes
+ * to garbage that createAppAuth would reject anyway, so this never silently double-reads
+ * a key that was somehow stored unencoded.
  */
 export async function mintInstallationToken ({ appId, privateKey, owner, repo }) {
-    const auth = createAppAuth({ appId, privateKey })
+    const pem = Buffer.from(privateKey, 'base64').toString('utf8')
+    const auth = createAppAuth({ appId, privateKey: pem })
 
     // auth-app only mints installation tokens by id, so look the installation up first
     // using app-level (JWT) auth - the same two-step flow GitHub's REST API requires.
