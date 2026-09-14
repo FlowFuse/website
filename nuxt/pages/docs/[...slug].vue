@@ -97,7 +97,7 @@ const surround = computed(() => {
           <!-- Breadcrumbs + Search bar -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
-              <Breadcrumbs :items="breadcrumbItems" />
+              <Breadcrumbs v-if="breadcrumbItems.length > 1" :items="breadcrumbItems" />
             </div>
             <div class="w-full mb-1">
               <AlgoliaSearch index-filter="category:docs" placeholder="Search in Docs..." source-id="docs" />
