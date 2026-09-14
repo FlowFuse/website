@@ -363,6 +363,23 @@ No `plan` param on the 11ty side — that's only used on the pricing table, whic
 
 Every hand-written `<a class="ff-btn ...">` pointing at one of the five destinations has been migrated to these macros — there should be no new ones. A link to a URL outside the five fixed destinations (e.g. `/ai/`) is not part of this system and stays hand-written.
 
+## Icons
+
+**Stock icons:** use `<UIcon name="i-heroicons-x" />` or `<UIcon name="i-lucide-x" />` (`@iconify-json/heroicons`/`@iconify-json/lucide` are already installed). Always `<UIcon>`, never bare `<Icon>` — same component, `UIcon` is just the codebase convention.
+
+`<UIcon>` renders as a masked `<span>`, not an `<svg>` — no intrinsic aspect ratio, so give it an explicit size (`w-6 h-6`) rather than `w-full h-full`.
+
+**FlowFuse's own custom icon art** lives as raw SVGs in `src/_includes/components/icons/*.svg`:
+- **Header/nav:** `nuxt/utils/navIcons.ts` + `NavIcon.vue`, which renders a real inline `<svg>` — needed because the header's CSS targets `<path>` elements directly, which a `<UIcon>` span doesn't have.
+- **Everywhere else:** a one-off SFC under `nuxt/components/icons/` (e.g. `GithubIcon.vue`) with the SVG pasted into the template:
+  ```vue
+  <!-- nuxt/components/icons/GithubIcon.vue -->
+  <template>
+    <svg class="fill-current" viewBox="0 0 24 24"><path d="..." /></svg>
+  </template>
+  ```
+  Nuxt auto-imports it by folder + filename, used directly like any other component: `<IconsGithubIcon class="h-5" />` (see `AppFooter.vue`).
+
 ## Naming conventions
 
 - All slugs: **kebab-case**
