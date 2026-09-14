@@ -81,6 +81,6 @@ watch(() => route.path, () => { open.value = false })
    without reading the words. Applied to every link so the existing nesting
    keeps its relative steps. */
 :deep([data-slot="link"]) {
-    padding-left: 1.125rem;
+    padding-left: 1.75rem;
 }
 </style>

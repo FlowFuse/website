@@ -17,5 +17,11 @@ const items = computed((): NavigationMenuItem[] => [
 </script>
 
 <template>
-  <SidebarNav :items="items" label="Documentation" />
+  <!-- pt matches the content column's pt-8 so the first nav item lines up
+       with the top of the page body rather than sitting above it. Below lg the
+       wrapper gets out of the way (display: contents) so SidebarNav's own root is
+       the grid/flex item its sticky and order rules address. -->
+  <div class="pt-6 max-lg:contents">
+    <SidebarNav :items="items" label="Documentation" />
+  </div>
 </template>
