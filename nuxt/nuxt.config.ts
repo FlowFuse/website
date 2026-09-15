@@ -63,6 +63,17 @@ function collectWebinarRoutes(dir: string, basePath: string): string[] {
     return routes
 }
 
+// A data collection whose every entry is a page, routed by its `slug` field.
+function collectSlugRoutes (dir: string, basePath: string): string[] {
+    return readEntries(dir).map(entry => `${basePath}/${entry.slug}/`)
+}
+
+function readEntries (dir: string): Array<Record<string, any>> {
+    return readdirSync(dir)
+        .filter(file => file.endsWith('.yml'))
+        .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
+}
+
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
 // so their routes aren't discoverable from @nuxt/content page paths either. Derive them from
 // each file's `tierId` field rather than the filename, since that's the field the page route
@@ -157,6 +168,16 @@ export default defineNuxtConfig({
     // @nuxt/fonts is a transitive dep of @nuxt/ui; disable all provider downloads
     // so it never fetches font files at build time (which exhausts Netlify's memory).
     fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
+
+    // Scans .vue/.md/.yml/etc for literal icon names (i-heroicons-x, i-lucide-x) so they're
+    // pre-bundled client-side instead of falling back to a live Iconify API call during
+    // prerender - the actual cause of the "[Icon] failed to load icon" warnings.
+    //
+    // globInclude repeats the scanner's own default (**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml})
+    // and adds a pattern for dotfiles: glob's `*` never matches a leading dot, so
+    // nuxt/content/handbook/**/.navigation.yml (where each department's nav icon lives) is
+    // otherwise invisible to the scan - those icons kept warning even with scan on.
+    icon: { clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } } },
 
     site: {
         url: site.baseURL,
@@ -263,7 +284,15 @@ export default defineNuxtConfig({
             // field on the collections instead.
             '/api/__sitemap__/content-urls',
         ],
-        urls: blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+        urls: [
+            ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+            // /vs/<slug>/ is one [slug].vue over a `data` collection, so the module's
+            // static-route discovery cannot see it and content-urls.get.ts cannot either
+            // (it keys on `path`, which a data collection has no equivalent of). The three
+            // pages left sitemap-legacy.xml when their .njk files were deleted, so without
+            // this they are in neither sitemap.
+            ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
+        ],
         exclude: ['/_studio/**', '/api/**'],
     },
 
@@ -417,6 +446,8 @@ export default defineNuxtConfig({
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
+
+                    ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
@@ -503,6 +534,10 @@ export default defineNuxtConfig({
             repo: 'website',
             branch: 'main',
             branchStrategy: 'feature-branch',
+            // The Nuxt app is the `nuxt` npm workspace inside the website repo, not the repo
+            // root, so @nuxt/content's `content/handbook/...` paths need this prefix to match
+            // the real path Studio commits to via the GitHub Contents API.
+            rootDir: 'nuxt',
         }
     },
 
