@@ -75,7 +75,7 @@ useSeoMeta({
           <div class="ff-certify-list">
             <div class="ff-item">
               <div class="ff-line-container sm:invisible"><div class="ff-line" /></div>
-              <div class="ff-certify-list-icon"><Icon name="i-heroicons-chat-bubble-bottom-center-text" class="w-6 h-6" /></div>
+              <div class="ff-certify-list-icon"><UIcon name="i-heroicons-chat-bubble-bottom-center-text" class="w-6 h-6" /></div>
               <div class="ff-line-container"><div class="ff-line" /></div>
               <div class="font-light sm:row-span-3 col-span-3 sm:col-auto my-auto pt-6 sm:pt-0">In a joint meeting, we will discuss marketing activities on a case-by-case basis.</div>
             </div>
