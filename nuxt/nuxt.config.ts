@@ -177,7 +177,14 @@ export default defineNuxtConfig({
     // and adds a pattern for dotfiles: glob's `*` never matches a leading dot, so
     // nuxt/content/handbook/**/.navigation.yml (where each department's nav icon lives) is
     // otherwise invisible to the scan - those icons kept warning even with scan on.
-    icon: { clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } } },
+    icon: {
+        clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } },
+        // Eight glyphs the landing pages use have no Heroicons equivalent: the UNS mark, the
+        // layered cube, the pin pair, pulse, snowflake, target-view and the diagonal arrows.
+        // As a collection they reach <UIcon> by name like any other icon, so the .yml content
+        // names them the same way it names a Heroicon and no resolver component is needed.
+        customCollections: [{ prefix: 'ff', dir: join(__dirname, 'assets/icons') }],
+    },
 
     site: {
         url: site.baseURL,
@@ -292,6 +299,17 @@ export default defineNuxtConfig({
             // pages left sitemap-legacy.xml when their .njk files were deleted, so without
             // this they are in neither sitemap.
             ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
+        ],
+        urls: [
+            ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+            // /landing/<slug>/ is one [slug].vue over a `data` collection, so the module's
+            // static-route discovery cannot see it, and content-urls.get.ts cannot either
+            // (it keys on `path`, which a data collection has no equivalent of). Without
+            // this they are in neither sitemap, having left sitemap-legacy.xml when their
+            // .njk files were deleted. `skipIndex` entries stay out, as they are noindex.
+            ...readEntries(join(__dirname, 'content/landing'))
+                .filter(entry => !entry.skipIndex)
+                .map(entry => ({ loc: `/landing/${entry.slug}/` })),
         ],
         exclude: ['/_studio/**', '/api/**'],
     },
@@ -438,6 +456,10 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The four campaign pages with their own layout are .vue files, linked only from off-site campaigns.
+                    '/landing/tulip/',
+                    '/landing/plc/',
+                    '/landing/factory-efficiency/',
                     // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
@@ -448,6 +470,8 @@ export default defineNuxtConfig({
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
 
                     ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
+
+                    ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback

@@ -20,7 +20,7 @@ const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
 // /about, /blueprints, /careers, /community, /events
-// /free-consultation, /industries, /landing, /node-red, /partners, /platform,
+// /free-consultation, /industries, /node-red, /partners, /platform,
 // /use-cases, /webinars
 
 // New pages should never grow that fallback set: nuxt/lib/legacy-pages.test.mjs fails
