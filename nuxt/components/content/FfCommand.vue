@@ -22,7 +22,13 @@ const props = withDefaults(defineProps<{
     // default: the docs say "substitute your own platform address" in prose, and a
     // self-hosted reader otherwise copies an address that is not theirs.
     hostSwap?: boolean
-}>(), { event: undefined, position: undefined, stacked: false, hostSwap: false })
+    // Lets the block wrap instead of holding one line. The stacked block keeps an
+    // address on a single line on purpose, because a wrapped address is harder to
+    // read than one you scroll. A sentence is the opposite: nowrap sizes the block
+    // to the whole sentence, which pushes it out of its column and past the edge of
+    // the card. Stated per use rather than guessed from the content's length.
+    wrap?: boolean
+}>(), { event: undefined, position: undefined, stacked: false, hostSwap: false, wrap: false })
 
 const capture = useCapture()
 const copied = ref(false)
@@ -167,7 +173,7 @@ onUnmounted(() => clearTimeout(resetTimer))
       </div>
     </div>
 
-    <div class="ff-command" :class="{ 'ff-command--stacked': stacked }">
+    <div class="ff-command" :class="{ 'ff-command--stacked': stacked, 'ff-command--wrap': wrap }">
       <code class="ff-command__text">{{ shownCommand }}</code>
       <!-- Stacked uses the site's own button classes rather than the chip styling,
            so it is the same object as the CTAs it sits beside. -->
