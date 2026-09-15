@@ -39,10 +39,14 @@ This is scoped to `.njk` on purpose and does not extend to `.md`: new content in
 ### Production build order
 
 ```
-clean:nuxt → build:js:nuxt → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
+clean:nuxt → build:js:nuxt → blueprints → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
 ```
 
 The `docs-source` Nuxt module runs automatically during `prod:nuxt` and calls `nuxt/lib/docs-sync.mjs` to resolve `docs/` from `flowfuse/flowfuse` (see **Local docs development** below). 11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
+
+The `blueprints` step resolves `src/blueprints/` from `FlowFuse/blueprint-library` (private) via `nuxt/lib/blueprints-sync.mjs` — same local → sibling → clone precedence as docs, but the clone step authenticates with a minted GitHub App installation token (`GH_BOT_APP_ID`/`GH_BOT_APP_KEY`) since that repo isn't public. Netlify deploys straight from `main`; there is no `live` branch anymore.
+
+`GH_BOT_APP_KEY` is stored in Netlify as the PEM private key **Base64-encoded** (Netlify's env var UI rejects multiline values) — `nuxt/lib/github-app-token.mjs` decodes it before use. Rotating the key means re-encoding the new PEM to Base64 before saving it, not pasting the PEM in directly.
 
 ## Dev commands
 
@@ -362,6 +366,23 @@ No `plan` param on the 11ty side — that's only used on the pricing table, whic
 `ctaSignUp`/`ctaSignIn` take `site` as their first argument (`site.appURL` for the href) instead of reading it from the calling template's context — Nunjucks macros don't inherit the caller's context unless explicitly imported `with context`, and passing `site` explicitly avoids relying on that import mode everywhere the macro is used.
 
 Every hand-written `<a class="ff-btn ...">` pointing at one of the five destinations has been migrated to these macros — there should be no new ones. A link to a URL outside the five fixed destinations (e.g. `/ai/`) is not part of this system and stays hand-written.
+
+## Icons
+
+**Stock icons:** use `<UIcon name="i-heroicons-x" />` or `<UIcon name="i-lucide-x" />` (`@iconify-json/heroicons`/`@iconify-json/lucide` are already installed). Always `<UIcon>`, never bare `<Icon>` — same component, `UIcon` is just the codebase convention.
+
+`<UIcon>` renders as a masked `<span>`, not an `<svg>` — no intrinsic aspect ratio, so give it an explicit size (`w-6 h-6`) rather than `w-full h-full`.
+
+**FlowFuse's own custom icon art** lives as raw SVGs in `src/_includes/components/icons/*.svg`:
+- **Header/nav:** `nuxt/utils/navIcons.ts` + `NavIcon.vue`, which renders a real inline `<svg>` — needed because the header's CSS targets `<path>` elements directly, which a `<UIcon>` span doesn't have.
+- **Everywhere else:** a one-off SFC under `nuxt/components/icons/` (e.g. `GithubIcon.vue`) with the SVG pasted into the template:
+  ```vue
+  <!-- nuxt/components/icons/GithubIcon.vue -->
+  <template>
+    <svg class="fill-current" viewBox="0 0 24 24"><path d="..." /></svg>
+  </template>
+  ```
+  Nuxt auto-imports it by folder + filename, used directly like any other component: `<IconsGithubIcon class="h-5" />` (see `AppFooter.vue`).
 
 ## Naming conventions
 

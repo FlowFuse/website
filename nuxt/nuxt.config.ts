@@ -169,6 +169,16 @@ export default defineNuxtConfig({
     // so it never fetches font files at build time (which exhausts Netlify's memory).
     fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
 
+    // Scans .vue/.md/.yml/etc for literal icon names (i-heroicons-x, i-lucide-x) so they're
+    // pre-bundled client-side instead of falling back to a live Iconify API call during
+    // prerender - the actual cause of the "[Icon] failed to load icon" warnings.
+    //
+    // globInclude repeats the scanner's own default (**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml})
+    // and adds a pattern for dotfiles: glob's `*` never matches a leading dot, so
+    // nuxt/content/handbook/**/.navigation.yml (where each department's nav icon lives) is
+    // otherwise invisible to the scan - those icons kept warning even with scan on.
+    icon: { clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } } },
+
     site: {
         url: site.baseURL,
         name: 'FlowFuse',
@@ -528,6 +538,10 @@ export default defineNuxtConfig({
             repo: 'website',
             branch: 'main',
             branchStrategy: 'feature-branch',
+            // The Nuxt app is the `nuxt` npm workspace inside the website repo, not the repo
+            // root, so @nuxt/content's `content/handbook/...` paths need this prefix to match
+            // the real path Studio commits to via the GitHub Contents API.
+            rootDir: 'nuxt',
         }
     },
 

@@ -50,7 +50,7 @@ const host = computed(() => normaliseHost(typed.value))
 
 const shownCommand = computed(() => {
     if (!props.hostSwap || !host.value) return props.command
-    return props.command.replace(/^(https?:\/\/)[^/\s]+/i, `$1${host.value}`)
+    return props.command.replace(/(https?:\/\/)[^/\s]+/i, `$1${host.value}`)
 })
 
 function remember () {
