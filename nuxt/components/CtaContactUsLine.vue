@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // src/_includes/contact-us-cta-line.njk - the one-line band under the Blueprint Library
-// grid and in the blueprint detail sidebar.
+// grid and in the blueprint detail sidebar. A text band with an inline link, not a
+// button, so it does not go through cta/CtaButton.vue like the other Cta* components.
 </script>
 
 <template>

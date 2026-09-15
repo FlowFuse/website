@@ -28,7 +28,7 @@ const { entries, totalPages } = useBlueprintList(() => props.page)
           <BlueprintCard v-for="entry in entries" :key="entry.path" :entry="entry" />
         </ul>
         <Pagination base-path="/blueprints" :page="page" :total-pages="totalPages" />
-        <ContactUsCtaLine />
+        <CtaContactUsLine />
       </div>
     </div>
   </div>

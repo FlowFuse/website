@@ -81,7 +81,7 @@ useSeoMeta({
             >Deploy <SiteArt name="rocket-launch" /></a>
             <h3 class="mb-3">Author:</h3>
             <BlueprintCompanyTile :company="author" />
-            <ContactUsCtaLine />
+            <CtaContactUsLine />
           </div>
         </div>
       </div>
