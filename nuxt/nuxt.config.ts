@@ -169,6 +169,16 @@ export default defineNuxtConfig({
     // so it never fetches font files at build time (which exhausts Netlify's memory).
     fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
 
+    // Scans .vue/.md/.yml/etc for literal icon names (i-heroicons-x, i-lucide-x) so they're
+    // pre-bundled client-side instead of falling back to a live Iconify API call during
+    // prerender - the actual cause of the "[Icon] failed to load icon" warnings.
+    //
+    // globInclude repeats the scanner's own default (**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml})
+    // and adds a pattern for dotfiles: glob's `*` never matches a leading dot, so
+    // nuxt/content/handbook/**/.navigation.yml (where each department's nav icon lives) is
+    // otherwise invisible to the scan - those icons kept warning even with scan on.
+    icon: { clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } } },
+
     site: {
         url: site.baseURL,
         name: 'FlowFuse',
@@ -342,6 +352,23 @@ export default defineNuxtConfig({
                 { name: 'theme-color', content: '#ffffff' },
             ],
             script: [
+                // Studio's GitHub sign-in comes back to /__nuxt_studio/auth/github with
+                // ?code=&iss=&state=, and that handler finishes by redirecting to the page you
+                // asked to edit. This host appends the request's own query string to every
+                // relative redirect Location (/_studio?zzz=1 already arrives at
+                // /__nuxt_studio/auth/github?zzz=1), so those three land on the page URL too.
+                // Sign-in has completed by then and nothing reads them, but they leave a spent
+                // authorization code in the URL bar and in browser history, and `state` is
+                // unique per sign-in, so every landing also reports its own $current_url to
+                // PostHog (init has no property denylist) instead of the page's real URL.
+                //
+                // Inline and in <head> on purpose: it has to run before the PostHog snippet,
+                // which is appended at the end of <body> (nuxt/server/plugins/analytics.ts),
+                // and before Nuxt boots so the router starts from the cleaned URL. `iss` is
+                // GitHub's own issuer, so this only fires on a GitHub OAuth callback landing.
+                {
+                    textContent: "(function(){try{var u=new URL(location.href),p=u.searchParams;if(!p.get('code')||p.get('iss')!=='https://github.com/login/oauth')return;p.delete('code');p.delete('state');p.delete('iss');var q=p.toString();history.replaceState(history.state,'',u.pathname+(q?'?'+q:'')+u.hash)}catch(e){}})()",
+                },
                 // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
                 // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
                 { src: '/js/nav-tracking.js', defer: true },
@@ -436,8 +463,6 @@ export default defineNuxtConfig({
                     '/industries/building-materials',
                     '/industries/energy-utilities',
                     '/industries/industrial-machinery',
-                    // First page migrated out of /use-cases/; the rest are still on 11ty.
-                    '/use-cases/edge-connectivity/',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
@@ -529,6 +554,10 @@ export default defineNuxtConfig({
             repo: 'website',
             branch: 'main',
             branchStrategy: 'feature-branch',
+            // The Nuxt app is the `nuxt` npm workspace inside the website repo, not the repo
+            // root, so @nuxt/content's `content/handbook/...` paths need this prefix to match
+            // the real path Studio commits to via the GitHub Contents API.
+            rootDir: 'nuxt',
         }
     },
 
