@@ -1,5 +1,6 @@
 ---
 title: "Demo Apps"
+description: "Review FlowFuse's approach to Demo Apps, including the principles, processes, roles, and practical guidance used across the company."
 navigation:
   order: 13.7
   icon: i-lucide-layout-grid

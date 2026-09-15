@@ -1,5 +1,6 @@
 ---
 title: "Information Security Policy and Acceptable Use Policy"
+description: "Read FlowFuse's information security and acceptable use policy for protecting employees, partners, systems, and company data."
 ---
 
 # Information Security Policy and Acceptable Use Policy

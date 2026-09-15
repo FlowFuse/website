@@ -1,5 +1,6 @@
 ---
 title: "Proof of Value"
+description: "Learn how FlowFuse runs the Proof of Value stage of its sales process, including its purpose, preparation, roles, and expected outcomes."
 navigation:
   order: 4
 ---

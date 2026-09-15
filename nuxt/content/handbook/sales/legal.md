@@ -1,5 +1,6 @@
 ---
 title: "Legal"
+description: "Review FlowFuse's approach to Legal, including the principles, processes, roles, and practical guidance used across the company."
 navigation:
   order: 21
 ---

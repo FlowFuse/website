@@ -1,3 +1,7 @@
+---
+title: "Customer Stories"
+description: "Review FlowFuse's approach to Customer Stories, including the principles, processes, roles, and practical guidance used across the company."
+---
 
 # Customer Stories
 

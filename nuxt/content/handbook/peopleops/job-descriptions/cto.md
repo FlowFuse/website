@@ -1,5 +1,6 @@
 ---
 title: "CTO"
+description: "Explore the CTO role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # CTO

@@ -1,5 +1,6 @@
 ---
 title: "Principles"
+description: "Explore the principles that guide FlowFuse product strategy, decision-making, and the evolution of its open-source, enterprise-ready platform."
 ---
 
 ## Product Principles

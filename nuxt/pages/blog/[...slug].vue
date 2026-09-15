@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
+import { BLOG_TAG_TOPICS, BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
 import { getAllBlogPosts } from '../../utils/sharedContent'
 // Handed to ContentRenderer explicitly below. Nuxt Content resolves a markdown component tag
 // against a registry it builds while parsing, and reaches it through an async loader. These
@@ -108,6 +108,17 @@ const breadcrumbItems = computed(() => [
     { label: pageTitle.value },
 ])
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
+
+const BLOG_ROOT_TOPIC = 'industrial automation and Node-RED'
+const BLOG_INDEX_DESCRIPTION = 'Explore FlowFuse articles on Node-RED, industrial automation, MQTT, UNS, dashboards, AI, and scalable industrial applications.'
+const listingDescription = computed(() => {
+    const { tag, page: pageNumber } = routeInfo.value
+    if (!tag && pageNumber === 1) return BLOG_INDEX_DESCRIPTION
+    const topic = tag ? BLOG_TAG_TOPICS[tag] : BLOG_ROOT_TOPIC
+    return pageNumber === 1
+        ? `Explore FlowFuse articles about ${topic}, with practical guides, technical insights, examples, and updates for industrial teams.`
+        : `Browse page ${pageNumber} of FlowFuse's ${topic} articles for practical guidance, product insights, technical tutorials, and industry updates.`
+})
 const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 const absoluteImage = computed(() => heroImage.value.startsWith('http') ? heroImage.value : `https://flowfuse.com${heroImage.value}`)
@@ -123,8 +134,8 @@ useHead({
 
 useSeoMeta({
     title: seoTitle,
-    description: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
-    ogDescription: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
+    description: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : listingDescription.value),
+    ogDescription: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : listingDescription.value),
     ogImage: computed(() => routeInfo.value.kind === 'post' ? absoluteImage.value : undefined),
     ogUrl: canonicalUrl,
     ogType: computed(() => routeInfo.value.kind === 'post' ? 'article' : 'website'),

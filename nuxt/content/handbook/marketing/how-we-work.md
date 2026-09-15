@@ -1,5 +1,6 @@
 ---
 title: "How we work"
+description: "Review FlowFuse's approach to How we work, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # How the marketing team works at FlowFuse

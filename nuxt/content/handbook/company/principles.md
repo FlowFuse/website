@@ -1,5 +1,6 @@
 ---
 title: "Principles"
+description: "Explore FlowFuse's company principles, including the values that guide its remote culture, communication, decisions, and relationships."
 ---
 
 # Principles

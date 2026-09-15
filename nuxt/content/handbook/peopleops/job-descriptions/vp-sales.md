@@ -1,5 +1,6 @@
 ---
 title: "VP of Sales"
+description: "Explore the VP of Sales role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # VP of Sales

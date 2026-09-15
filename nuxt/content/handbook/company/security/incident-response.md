@@ -1,5 +1,6 @@
 ---
 title: "Incident Response Plan"
+description: "Read FlowFuse's Incident Response Plan and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Incident Response Plan

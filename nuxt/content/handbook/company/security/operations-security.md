@@ -1,5 +1,6 @@
 ---
 title: "Operations Security Policy"
+description: "Read FlowFuse's Operations Security Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Operations Security Policy

@@ -1,5 +1,6 @@
 ---
 title: "Platform Ops"
+description: "Review FlowFuse's approach to Platform Ops, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Platform Ops

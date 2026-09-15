@@ -1,5 +1,6 @@
 ---
 title: "Product Swimlanes"
+description: "Review FlowFuse's approach to Product Swimlanes, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Product Swimlanes

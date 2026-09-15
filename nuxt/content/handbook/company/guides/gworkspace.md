@@ -1,5 +1,6 @@
 ---
 title: "Google Workspace"
+description: "Review FlowFuse's approach to Google Workspace, including the principles, processes, roles, and practical guidance used across the company."
 ---
 # Google Workspace
 

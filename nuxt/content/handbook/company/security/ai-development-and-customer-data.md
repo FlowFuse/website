@@ -1,5 +1,6 @@
 ---
 title: "AI Development and Customer Data Policy"
+description: "Read FlowFuse's AI Development and Customer Data Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # AI Development and Customer Data Policy

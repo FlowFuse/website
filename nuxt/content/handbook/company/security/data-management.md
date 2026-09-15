@@ -1,5 +1,6 @@
 ---
 title: "Data Management Policy"
+description: "Read FlowFuse's Data Management Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Data Management Policy

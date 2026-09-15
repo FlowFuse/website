@@ -1,5 +1,6 @@
 ---
 title: "Tools"
+description: "Review FlowFuse's approach to Tools, including the principles, processes, roles, and practical guidance used across the company."
 ---
 # Tools
 

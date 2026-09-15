@@ -1,5 +1,6 @@
 ---
 title: "Business Continuity & Disaster Recovery Policy"
+description: "Read FlowFuse's business continuity and disaster recovery policy for protecting services, restoring operations, and responding to major disruptions."
 ---
 
 # Business Continuity & Disaster Recovery Policy

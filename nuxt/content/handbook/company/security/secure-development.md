@@ -1,5 +1,6 @@
 ---
 title: "Secure Development Policy"
+description: "Read FlowFuse's Secure Development Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Secure Development Policy

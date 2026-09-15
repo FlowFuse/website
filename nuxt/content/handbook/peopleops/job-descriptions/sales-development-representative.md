@@ -1,5 +1,6 @@
 ---
 title: "Sales Development Representative (SDR)"
+description: "Explore the Sales Development Representative (SDR) role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Sales Development Representative

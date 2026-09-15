@@ -1,5 +1,6 @@
 ---
 title: "Asset Management Policy"
+description: "Read FlowFuse's Asset Management Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Asset Management Policy
