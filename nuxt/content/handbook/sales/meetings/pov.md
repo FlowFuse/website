@@ -28,7 +28,7 @@ and the workbook's **Plan** tab:
 
 | Arc | Sales stage | What happens |
 |------|-------------|--------------|
-| **Pre-PoV** | [Solution](/handbook/sales/meetings/solution/) (stage 3) | The gates are produced — use case and value understood, apps and success criteria defined, plan agreed, FlowFuse available (see the [Pre-PoV checklist](#pre-pov-checklist)). A PoV should not start until they are. |
+| **Pre-PoV** | [Solution](/handbook/sales/meetings/solution/) (stage 3) | The gates are produced — use case and value understood, apps and success criteria defined, plan agreed, confidentiality settled, FlowFuse available (see the [Pre-PoV checklist](#pre-pov-checklist)). A PoV should not start until they are. |
 | **PoV** | Validate (stage 4) | Prove each scoping criterion. Completed installation and technical validation are the exit criteria. |
 | **Post-PoV** | Moving to Commit (stage 5) and Closing | A successful PoV feeds the business case, Economic Buyer alignment and paper process that carry the deal to close. |
 
@@ -49,9 +49,9 @@ of the same plan.
 
 ### Pre-PoV checklist
 
-Before a PoV starts, five things must be true. The first four are the output of
+Before a PoV starts, six things must be true. The first five are the output of
 the [Solution](/handbook/sales/meetings/solution/) stage (stage 3) — they are
-produced there, not during the PoV — and the fifth is getting access. They are
+produced there, not during the PoV — and the sixth is getting access. They are
 also the gates tracked in the workbook's **Plan** tab. Starting a PoV before they
 are met is the most common way one stalls.
 
@@ -59,7 +59,8 @@ are met is the most common way one stalls.
 2. **The apps are defined.** The app or apps that will solve the use case are identified and follow FlowFuse's app delivery methods, so the PoV showcases FlowFuse as an app-building platform — not a test of Node-RED.
 3. **Success criteria are well defined.** Each criterion has a concrete, agreed pass signal, so "success" is not open to interpretation when the PoV ends.
 4. **The plan is agreed with the customer.** Tasks, owners and dates are agreed jointly, not just internally.
-5. **FlowFuse is available to test.** The customer has either installed FlowFuse (self-hosted) or signed up for a Cloud trial — set up as the [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/) during the Solution stage. For a self-hosted install this is more than "installed": the environment must be able to reach the hosts FlowFuse needs — in particular to **install and update nodes and packages** — with any firewall change requested *and proven* before the PoV starts, not discovered mid-PoV. See [Networking requirements](/docs/install/networking-requirements/).
+5. **Confidentiality is settled.** Either an NDA is in place, or the customer has been asked and said one isn't needed. The gate is that the question was *put to them and answered* — the answer just has to be captured somewhere the team can find it later: on a recorded call, in an email, or noted on the workbook's **Overview** tab. Ask it outright — *"do we need an NDA before we can talk openly about your environment?"* — rather than waiting for it to surface. A PoV is not a feature test: proving value means discussing the incumbent solution, running a gap analysis against it and working the customer's real use cases, and none of that can happen while either side has to stay vague. Starting a PoV that then has to pause for signatures costs weeks of the time-box, and the conversations that move the deal are exactly the ones that get deferred. If an NDA *is* needed, route it through the AE and the [NDA process](/handbook/sales/legal/#non-disclosure-agreement-nda) — turnaround depends on the customer's internal signing process, so start it in Solution, not at kickoff.
+6. **FlowFuse is available to test.** The customer has either installed FlowFuse (self-hosted) or signed up for a Cloud trial — set up as the [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/) during the Solution stage. For a self-hosted install this is more than "installed": the environment must be able to reach the hosts FlowFuse needs — in particular to **install and update nodes and packages** — with any firewall change requested *and proven* before the PoV starts, not discovered mid-PoV. See [Networking requirements](/docs/install/networking-requirements/).
 
 ### PoV meetings
 
