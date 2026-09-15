@@ -177,7 +177,14 @@ export default defineNuxtConfig({
     // and adds a pattern for dotfiles: glob's `*` never matches a leading dot, so
     // nuxt/content/handbook/**/.navigation.yml (where each department's nav icon lives) is
     // otherwise invisible to the scan - those icons kept warning even with scan on.
-    icon: { clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } } },
+    icon: {
+        clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } },
+        // Eight glyphs the landing pages use have no Heroicons equivalent: the UNS mark, the
+        // layered cube, the pin pair, pulse, snowflake, target-view and the diagonal arrows.
+        // As a collection they reach <UIcon> by name like any other icon, so the .yml content
+        // names them the same way it names a Heroicon and no resolver component is needed.
+        customCollections: [{ prefix: 'ff', dir: join(__dirname, 'assets/icons') }],
+    },
 
     site: {
         url: site.baseURL,
