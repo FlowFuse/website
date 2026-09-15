@@ -111,7 +111,9 @@ useSchemaOrg([
                   improve their processes continuously.
                 </p>
                 <p>
-                  <NuxtLink to="/platform/security/#certifications" class="text-indigo-600 hover:text-indigo-800 font-medium">See our security certifications</NuxtLink>
+                  <!-- Plain <a>, not <NuxtLink>: /platform/security/ is still an 11ty page, so
+                       client-side routing would fall through to pages/[...slug].vue and 404. -->
+                  <a href="/platform/security/#certifications" class="text-indigo-600 hover:text-indigo-800 font-medium">See our security certifications</a>
                 </p>
               </div>
               <div class="md:w-1/2 m-auto max-w-[370px] md:max-w-none">
