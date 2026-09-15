@@ -352,6 +352,23 @@ export default defineNuxtConfig({
                 { name: 'theme-color', content: '#ffffff' },
             ],
             script: [
+                // Studio's GitHub sign-in comes back to /__nuxt_studio/auth/github with
+                // ?code=&iss=&state=, and that handler finishes by redirecting to the page you
+                // asked to edit. This host appends the request's own query string to every
+                // relative redirect Location (/_studio?zzz=1 already arrives at
+                // /__nuxt_studio/auth/github?zzz=1), so those three land on the page URL too.
+                // Sign-in has completed by then and nothing reads them, but they leave a spent
+                // authorization code in the URL bar and in browser history, and `state` is
+                // unique per sign-in, so every landing also reports its own $current_url to
+                // PostHog (init has no property denylist) instead of the page's real URL.
+                //
+                // Inline and in <head> on purpose: it has to run before the PostHog snippet,
+                // which is appended at the end of <body> (nuxt/server/plugins/analytics.ts),
+                // and before Nuxt boots so the router starts from the cleaned URL. `iss` is
+                // GitHub's own issuer, so this only fires on a GitHub OAuth callback landing.
+                {
+                    textContent: "(function(){try{var u=new URL(location.href),p=u.searchParams;if(!p.get('code')||p.get('iss')!=='https://github.com/login/oauth')return;p.delete('code');p.delete('state');p.delete('iss');var q=p.toString();history.replaceState(history.state,'',u.pathname+(q?'?'+q:'')+u.hash)}catch(e){}})()",
+                },
                 // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
                 // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
                 { src: '/js/nav-tracking.js', defer: true },
