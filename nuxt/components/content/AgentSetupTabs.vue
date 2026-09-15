@@ -46,7 +46,7 @@ const CLIENTS = [
         name: 'FlowFuse Expert',
         builtIn: true,
         step1Title: 'Sign in to FlowFuse',
-        step1Body: 'A hosted instance has Expert already in the editor. Nothing to add, no connector, no token.',
+        step1Body: 'A hosted instance has the FlowFuse Expert already in the editor. Nothing to add, no connector, no token.',
         step2Title: 'Or start with the Device Agent',
         step2Body: 'Already running Node-RED on your own hardware? Connect it as a remote instance and Expert works there in the same way.',
         step2Label: 'Install the Device Agent',
