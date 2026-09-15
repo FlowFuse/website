@@ -3,8 +3,9 @@
 // same classes from src/css/style.css.
 //
 // What the port changes on purpose:
-//  - The protocol/use-case glyphs were {% include %}d raw with no wrapper, so they
-//    resolve through <SiteArt>.
+//  - The protocol/use-case glyphs are <UIcon>. They were {% include %}d raw with no
+//    wrapper, filling the wrapper box through the svg's intrinsic ratio; a masked <span>
+//    has none, so each one carries the wrapper's size itself.
 //  - faq.njk becomes <BlogFaq> plus useSchemaOrg. One answer carried an inline <a> under
 //    `| safe`; it is a markdown link now, which BlogFaq renders after escaping.
 //  - The CTA macros become their components.
@@ -14,7 +15,7 @@
 
 const PROTOCOLS = [
     {
-        icon: "globe-alt",
+        icon: "i-heroicons-globe-alt",
         title: "OPC UA",
         description: "The IIoT standard. Connect to any OPC UA-enabled PLC, Siemens, Allen-Bradley, Beckhoff, and more, with built-in security and structured data models.",
         links: [
@@ -25,7 +26,7 @@ const PROTOCOLS = [
         ]
     },
     {
-        icon: "wifi",
+        icon: "i-heroicons-wifi",
         title: "MQTT",
         description: "Publish PLC tag data to any MQTT broker, AWS IoT, Azure IoT Hub, HiveMQ, or the built-in FlowFuse MQTT Broker. The foundation of a Unified Namespace.",
         links: [
@@ -36,7 +37,7 @@ const PROTOCOLS = [
         ]
     },
     {
-        icon: "chip",
+        icon: "i-heroicons-cpu-chip",
         title: "EtherNet/IP",
         description: "Native Allen-Bradley / Rockwell communication. Read and write tags on ControlLogix and CompactLogix PLCs without a gateway.",
         links: [
@@ -47,7 +48,7 @@ const PROTOCOLS = [
         ]
     },
     {
-        icon: "server-stack",
+        icon: "i-heroicons-server-stack",
         title: "Siemens S7 Protocol",
         description: "Direct S7comm connectivity to Siemens S7-300, S7-400, S7-1200, and S7-1500 PLCs. Read DB blocks, Merkers, I/O, and more.",
         links: [
@@ -58,7 +59,7 @@ const PROTOCOLS = [
         ]
     },
     {
-        icon: "arrows-pointing-out",
+        icon: "i-heroicons-arrows-pointing-out",
         title: "Modbus TCP / RTU",
         description: "The universal open protocol. Connect legacy PLCs, drives, meters, and sensors that speak Modbus, over Ethernet or serial.",
         links: [
@@ -69,7 +70,7 @@ const PROTOCOLS = [
         ]
     },
     {
-        icon: "squares-plus",
+        icon: "i-heroicons-squares-plus",
         title: "5,000+ Community Nodes",
         description: "Beyond the basics: PROFINET, BACnet, DNP3, IEC 61850, Mitsubishi MC Protocol, Omron FINS, Beckhoff TwinCAT ADS, and more, all available as open-source community nodes.",
         links: [
@@ -385,7 +386,7 @@ useSchemaOrg([
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                   <div v-for="protocol in PROTOCOLS" :key="protocol.title" class="bg-white rounded-lg border border-gray-100 p-6 drop-shadow-sm flex flex-col">
                       <div class="w-8 h-8 text-indigo-600 mb-4">
-                          <SiteArt :name="protocol.icon" />
+                          <UIcon :name="protocol.icon" class="w-8 h-8" />
                       </div>
                       <h4 class="mt-0 mb-2 text-gray-800">{{ protocol.title }}</h4>
                       <p class="text-gray-600 font-light flex-grow">{{ protocol.description }}</p>
@@ -406,7 +407,7 @@ useSchemaOrg([
 
                   <div class="flex gap-6 items-start">
                       <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
-                          <SiteArt name="circle-stack" />
+                          <UIcon name="i-heroicons-circle-stack" class="w-10 h-10" />
                       </div>
                       <div>
                           <h4 class="mt-0 mb-2">PLC Data Logging</h4>
@@ -419,7 +420,7 @@ useSchemaOrg([
 
                   <div class="flex gap-6 items-start">
                       <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
-                          <SiteArt name="computer-desktop" />
+                          <UIcon name="i-heroicons-computer-desktop" class="w-10 h-10" />
                       </div>
                       <div>
                           <h4 class="mt-0 mb-2">Web HMI & Dashboards</h4>
@@ -432,7 +433,7 @@ useSchemaOrg([
 
                   <div class="flex gap-6 items-start">
                       <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
-                          <SiteArt name="cloud" />
+                          <UIcon name="i-heroicons-cloud" class="w-10 h-10" />
                       </div>
                       <div>
                           <h4 class="mt-0 mb-2">PLC to Cloud Integration</h4>
@@ -445,7 +446,7 @@ useSchemaOrg([
 
                   <div class="flex gap-6 items-start">
                       <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
-                          <SiteArt name="link" />
+                          <UIcon name="i-heroicons-link" class="w-10 h-10" />
                       </div>
                       <div>
                           <h4 class="mt-0 mb-2">PLC to MES / ERP Integration</h4>
@@ -458,7 +459,7 @@ useSchemaOrg([
 
                   <div class="flex gap-6 items-start">
                       <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
-                          <SiteArt name="bell-alert" />
+                          <UIcon name="i-heroicons-bell-alert" class="w-10 h-10" />
                       </div>
                       <div>
                           <h4 class="mt-0 mb-2">Alarm Management</h4>
@@ -470,7 +471,7 @@ useSchemaOrg([
 
                   <div class="flex gap-6 items-start">
                       <div class="w-10 h-10 text-indigo-600 flex-shrink-0 mt-1">
-                          <SiteArt name="wifi" />
+                          <UIcon name="i-heroicons-wifi" class="w-10 h-10" />
                       </div>
                       <div>
                           <h4 class="mt-0 mb-2">Unified Namespace (UNS)</h4>

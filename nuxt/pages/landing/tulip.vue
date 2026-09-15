@@ -10,7 +10,8 @@
 //  - The "Latest Customer Stories" grid read collections.stories directly, sorted by date
 //    and took three. It queries the `stories` collection for the same three.
 //  - The problem illustrations under components/icons/large/ are standalone art with no
-//    currentColor, so they are public images; the smaller glyphs stay inlined <SiteArt>.
+//    currentColor, so they are public images; the smaller glyphs are <UIcon>. The diagonal
+//    arrows have no Heroicons equivalent and come from the local `ff` collection.
 //  - `skipIndex` kept this campaign page out of 11ty's sitemap; it is a robots noindex
 //    here, which is what that was for.
 
@@ -48,9 +49,9 @@ const CONNECT_BULLETS = [
 ]
 
 const SECTIONS = [
-    { svgPath: 'arrows-pointing-out', title: 'Connect Everything', description: CONNECT_BULLETS },
-    { svgPath: 'puzzle-piece', title: 'Integrate Legacy Equipment', description: CONNECT_BULLETS },
-    { svgPath: 'check-circle', title: 'Optimized for Tulip Users', description: CONNECT_BULLETS },
+    { svgPath: 'i-heroicons-arrows-pointing-out', title: 'Connect Everything', description: CONNECT_BULLETS },
+    { svgPath: 'i-heroicons-puzzle-piece', title: 'Integrate Legacy Equipment', description: CONNECT_BULLETS },
+    { svgPath: 'i-heroicons-check-circle', title: 'Optimized for Tulip Users', description: CONNECT_BULLETS },
 ]
 
 const HOW = {
@@ -61,10 +62,10 @@ const HOW = {
 }
 
 const HOW_FEATURES = [
-    { svgPath: 'user-group', title: 'Team collaboration and version control' },
-    { svgPath: 'lock-closed', title: 'Secure deployment across edge and cloud' },
-    { svgPath: 'arrows', title: 'High availability and disaster recovery' },
-    { svgPath: 'lifebuoy', title: 'Enterprise support and professional services' },
+    { svgPath: 'i-heroicons-user-group', title: 'Team collaboration and version control' },
+    { svgPath: 'i-heroicons-lock-closed', title: 'Secure deployment across edge and cloud' },
+    { svgPath: 'i-ff-arrows', title: 'High availability and disaster recovery' },
+    { svgPath: 'i-heroicons-lifebuoy', title: 'Enterprise support and professional services' },
 ]
 
 const STORIES_HEADING = {
@@ -148,7 +149,7 @@ useHead({ meta: [{ name: 'robots', content: 'noindex' }] })
               <div v-for="section in SECTIONS" :key="section.title" class="container relative w-full max-md:max-w-md mx-auto">
                 <div class="flex flex-col items-center sm:items-start">
                   <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                    <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600"><SiteArt :name="section.svgPath" /></div>
+                    <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600"><UIcon :name="section.svgPath" class="w-8 h-8" /></div>
                     <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
                       <h5 class="w-full md:m-0 font-medium">
                         <div class="text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</div>
@@ -176,7 +177,7 @@ useHead({ meta: [{ name: 'robots', content: 'noindex' }] })
               <h4 class="md:w-[203px] text-xl max-md:mb-6 max-md:text-center" v-html="HOW.subtitle" />
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                 <div v-for="item in HOW_FEATURES" :key="item.title" class="bg-indigo-50 border border-white rounded-md flex flex-row items-center gap-4 p-4">
-                  <div class="w-8 h-8 text-indigo-600"><SiteArt :name="item.svgPath" /></div>
+                  <div class="w-8 h-8 text-indigo-600"><UIcon :name="item.svgPath" class="w-8 h-8" /></div>
                   <div class="text-gray-600">{{ item.title }}</div>
                 </div>
               </div>
@@ -216,7 +217,7 @@ useHead({ meta: [{ name: 'robots', content: 'noindex' }] })
               :to="STORIES_HEADING.url"
               class="w-full font-light text-center md:text-left hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md mx-auto mb-20"
           >
-            {{ STORIES_HEADING.urlText }} <SiteArt name="chevron-right-sm" />
+            {{ STORIES_HEADING.urlText }} <UIcon name="i-heroicons-chevron-right" class="w-4 h-4" />
           </NuxtLink>
         </div>
 

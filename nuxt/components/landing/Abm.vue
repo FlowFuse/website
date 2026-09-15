@@ -2,8 +2,8 @@
 // layouts/abm-landing.njk. Four account-based-marketing landing pages shared it, all of
 // them pure frontmatter, so the whole layout is this one component.
 //
-// The section glyphs were {% include %}d raw with no wrapper, so they resolve through
-// <SiteArt>. testimonials.njk and social-proof.njk become <TestimonialCarousel> and
+// The section glyphs are <UIcon>, named in full by the .yml. testimonials.njk and
+// social-proof.njk become <TestimonialCarousel> and
 // <SocialProof>, both shared with the homepage.
 
 defineProps<{
@@ -71,7 +71,7 @@ defineProps<{
           <div v-for="benefit in page.solution.benefits" :key="benefit.title" class="relative w-full max-md:max-w-md mx-auto">
             <div class="flex flex-col items-center sm:items-start">
               <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600"><SiteArt :name="benefit.svgPath" /></div>
+                <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600"><UIcon :name="benefit.svgPath" class="w-8 h-8" /></div>
                 <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
                   <h5 class="w-full md:m-0">
                     <div class="text-xl font-medium text-gray-600 text-center sm:text-left">{{ benefit.title }}</div>
@@ -142,10 +142,10 @@ defineProps<{
             </div>
             <template v-if="i < page.how.steps.length - 1">
               <div class="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 text-gray-500">
-                <SiteArt name="chevron-right" />
+                <UIcon name="i-heroicons-chevron-right" class="w-5 h-5" />
               </div>
               <div class="sm:hidden absolute left-1/2 -translate-x-1/2 -bottom-7 text-gray-500">
-                <SiteArt name="chevron-down" />
+                <UIcon name="i-heroicons-chevron-down" class="w-5 h-5" />
               </div>
             </template>
           </div>
@@ -163,7 +163,7 @@ defineProps<{
               :key="feature.title"
               class="flex items-center gap-3 p-4 border border-indigo-200 rounded-lg bg-white hover:border-indigo-300 transition-colors"
           >
-            <div class="flex-shrink-0 text-indigo-600 w-6"><SiteArt :name="feature.svgPath" /></div>
+            <div class="flex-shrink-0 text-indigo-600 w-6"><UIcon :name="feature.svgPath" class="w-6 h-6" /></div>
             <span class="text-gray-700">{{ feature.title }}</span>
           </div>
         </div>

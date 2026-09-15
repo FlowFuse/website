@@ -2,8 +2,9 @@
 // layouts/landing-comparison.njk. Three gated-brief landing pages shared it, all of them
 // pure frontmatter, so the whole layout is this one component.
 //
-// The card glyphs were {% include %}d raw with no wrapper, so they resolve through
-// <SiteArt>; hs-form.njk becomes <HubSpotForm>. The two hero buttons ran an inline
+// The card glyphs are <UIcon>: the .yml names each one as a full icon name, Heroicons for
+// the stock ones and the local `ff` collection for the glyphs with no Heroicons equivalent.
+// hs-form.njk becomes <HubSpotForm>. The two hero buttons ran an inline
 // onclick that both scrolled to the form and fired the download event; that is one
 // handler here, and it keeps the same event name and reference.
 
@@ -75,7 +76,7 @@ function onBriefClick(event: Event) {
             <ul class="px-8 py-6 space-y-10">
               <li v-for="item in page.leftCard.items" :key="item.text" class="flex items-start gap-3">
                 <div class="w-8 h-8 min-w-[2rem] rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
-                  <div class="w-5 h-5 text-gray-700"><SiteArt :name="item.icon" /></div>
+                  <div class="w-5 h-5 text-gray-700"><UIcon :name="item.icon" class="w-5 h-5" /></div>
                 </div>
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span class="text-base leading-snug pt-1" v-html="item.text" />
@@ -91,7 +92,7 @@ function onBriefClick(event: Event) {
             <ul class="px-8 py-6 space-y-10">
               <li v-for="item in page.rightCard.items" :key="item.text" class="flex items-start gap-3">
                 <div class="w-8 h-8 min-w-[2rem] rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
-                  <div class="w-5 h-5 text-white m-auto"><SiteArt :name="item.icon" /></div>
+                  <div class="w-5 h-5 text-white m-auto"><UIcon :name="item.icon" class="w-5 h-5" /></div>
                 </div>
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <span class="text-base leading-snug pt-1" v-html="item.text" />
@@ -108,7 +109,7 @@ function onBriefClick(event: Event) {
           <div class="w-full md:w-1/2 rounded-xl p-8 bg-gradient-to-b from-indigo-50 to-transparent">
             <div class="flex items-center gap-3 mb-5">
               <div class="w-8 h-8 min-w-[2rem] rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                <div class="w-5 h-5 text-indigo-600"><SiteArt name="light-bulb" /></div>
+                <div class="w-5 h-5 text-indigo-600"><UIcon name="i-heroicons-light-bulb" class="w-5 h-5" /></div>
               </div>
               <h3 class="text-indigo-600 font-medium text-xl m-0">Key takeaway</h3>
             </div>
@@ -121,7 +122,7 @@ function onBriefClick(event: Event) {
           <div id="form" class="w-full md:w-1/2 pt-8">
             <div class="flex items-center gap-3 mb-5">
               <div class="w-8 h-8 min-w-[2rem] rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                <div class="w-4 h-4 text-indigo-600"><SiteArt name="document-text" /></div>
+                <div class="w-4 h-4 text-indigo-600"><UIcon name="i-heroicons-document-text" class="w-4 h-4" /></div>
               </div>
               <h3 class="font-medium text-xl m-0 text-gray-900">{{ page.form.title }}</h3>
             </div>
