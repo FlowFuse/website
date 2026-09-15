@@ -12,7 +12,7 @@ description: |-
 Clear and consistent messaging serves as a cornerstone for our company to
 achieve growth and a bigger market presence. The messaging framework is
 essential for the company to communicate its value, purpose, and
-differentiation, to in turn effectively acquire and retain our customer base.
+differentiation, to in turn effectively acquire and retain our customer base. THIS IS A TEST
 
 Consistency of messaging is important; with our growing company we’ve got
 limited resources and thus it’s imperative to make a significant impact quickly.
@@ -51,18 +51,38 @@ our software being grass-roots.
 
 ### Ideal Customer Profile (ICP)
 
-FlowFuse appeals to a broad range of customers, many of which do not fall into
-our 'ICP'. That's not to say FlowFuse shouldn't cater to this audience, but does
+FlowFuse attracts customers from all verticals and sizes due to the breadth of Node-RED. However, our ICP remains focused on industrials in both Mid-market and Enterprise. The firmographics below are a guideline:
 
-1. Manufacturing or industrial company
-   1. Tier 1: Automotive, Pharma, Renewable energy
-   2. Tier 2: Electronics, Semiconductor, Chemical, Oil & Gas
-   3. Tier 3: Food & Beverage, Mining, Water & Wastewater
-2. Greater than $500 million in annual revenue. The need to have sufficiently
-   large budgets to purchase FlowFuse.
-3. Greater than 500 employees. The company needs to be large enough to have
-   internal IT and/or OT people on staff.
-4. Established Digitalization strategy
+1. Firmographic tiers
+
+Both tiers require multi-site accounts with a corporate buying committee.
+
+                Mid-Market	           Enterprise
+Employees	      500+	                 5,000+
+Revenue	        $500M+	               $1B+
+ASP	            $10k–99k/year	         $100k+
+Sales cycle	    ~100 days	              ~200 days
+
+2. Discrete manufacturers
+
+FlowFuse targets discrete manufacturing — companies producing distinct, countable units (as opposed to continuous/batch process manufacturing).
+
+3. Primary verticals — actively hunted:
+
+Automotive
+Industrial Machinery
+Building Materials
+Energy
+
+Secondary verticals — we serve these industries and have active customers, but do not actively hunt for business here:
+
+Aerospace Components
+Aviation & Aerospace
+Electronics & Appliances
+Renewables
+Semiconductors
+Food & Beverage
+Life Sciences
 
 See also the description of
 [our market](/handbook/company/strategy/#the-market).
