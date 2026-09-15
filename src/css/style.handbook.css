@@ -7,9 +7,13 @@
     @apply flex flex-col-reverse lg:grid lg:max-w-screen-xl 2xl:max-w-[1920px] 2xl:grid-cols-[300px,minmax(0,1fr),270px];
 }
 
+/* No text-transform here: labels render as the docs authors wrote them. Capitalising every
+   word made a section named after its directory look like a word ("install" -> "Install"),
+   which is no longer how any label is produced, and it mangled the rest: "Upgrading the
+   Node-RED version" became "Upgrading The Node-RED Version", and Bosch Rexroth's ctrlX
+   became CtrlX. 42 of the sidebar's 117 labels were altered this way. */
 .handbook-nav {
     border-right: 1px solid right;
-    text-transform: capitalize;
     --nav-weight: 500;
     --nav-color: var(--color-gray-700);
     --nav-bg: transparent;
