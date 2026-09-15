@@ -7,8 +7,10 @@
 //    same files, which is the team/ directory only: useTeam() also merges guests/, whose
 //    former-staff entries still carry an `order`.
 //  - The social glyphs were {% include %}d partials; components/icons/ already has Vue
-//    components for GitHub, LinkedIn and Twitter, so those are reused. The mail and RSS
-//    links use <UIcon>.
+//    components for GitHub, LinkedIn and Twitter, so those are reused. Mail and RSS gained
+//    components of their own, carrying the same paths the partials had: <UIcon> renders a
+//    masked <span>, which has no intrinsic aspect ratio and laid the mail link out 36px
+//    wide against the 20px the others get.
 //  - values.njk and benefits.njk each had exactly one caller, this page, so they are the
 //    two const grids below rather than components.
 //  - The frontmatter's `meta.organization` block was rendered by jsonld.njk as a
@@ -57,17 +59,15 @@ useSeoMeta({
     twitterSite: '@FlowFuseinc',
 })
 
+// app.vue declares the sitewide identity and this resolves to the same #identity node,
+// so only the fields it does not already carry belong here. Repeating name, url, logo and
+// sameAs did not create a second node, but it did overwrite url with the www host and
+// concatenate sameAs into a list holding GitHub twice and LinkedIn and Twitter in two
+// spellings each. The old njk also declared the logo as 396x215; the file is 529x287.
 useSchemaOrg([
     defineOrganization({
-        name: 'FlowFuse',
         legalName: 'FlowFuse Inc',
-        url: 'https://www.flowfuse.com',
         description: META_DESCRIPTION,
-        logo: {
-            url: 'https://flowfuse.com/handbook/images/logos/ff-logo--square--dark.png',
-            width: 396,
-            height: 215,
-        },
         foundingDate: '2021',
         founder: [{ name: "Nick O'Leary" }],
         address: {
@@ -77,13 +77,6 @@ useSchemaOrg([
             postalCode: '94120',
             addressCountry: 'US',
         },
-        sameAs: [
-            'https://www.linkedin.com/company/flowfuse',
-            'https://www.facebook.com/FlowFuse/',
-            'https://twitter.com/flowfuseinc',
-            'https://github.com/FlowFuse',
-            'https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g',
-        ],
     }),
 ])
 </script>
@@ -179,7 +172,7 @@ useSchemaOrg([
                 <div class="socials">
                   <span v-if="member.email">
                     <a :href="`mailto:${member.email}`" :aria-label="`Email ${member.name}`">
-                      <UIcon name="i-lucide-mail" class="w-5 h-5" />
+                      <IconsMailIcon class="w-5 h-5" />
                     </a>
                   </span>
                   <span v-if="member.twitter">
@@ -199,7 +192,7 @@ useSchemaOrg([
                   </span>
                   <span v-if="member.blog">
                     <a target="_blank" rel="noopener" :href="member.blog" :aria-label="`${member.name}'s blog`">
-                      <UIcon name="i-lucide-rss" class="w-5 h-5" />
+                      <IconsRssIcon class="w-5 h-5" />
                     </a>
                   </span>
                 </div>
@@ -221,7 +214,7 @@ useSchemaOrg([
           </div>
           <div class="flex flex-wrap justify-center mt-12 md:mt-20">
             <div v-for="value in VALUES" :key="value.title" class="company-value">
-              <img :src="value.image" :alt="value.alt" width="128" loading="lazy" class="w-full h-auto">
+              <img :src="value.image" :alt="value.alt" loading="lazy">
               <h3>{{ value.title }}</h3>
             </div>
           </div>
@@ -259,7 +252,7 @@ useSchemaOrg([
           </div>
           <div class="flex flex-wrap justify-center mt-12 md:mt-20">
             <div v-for="benefit in BENEFITS" :key="benefit.title" class="company-value">
-              <img :src="benefit.image" :alt="benefit.alt" width="128" loading="lazy" class="w-full h-auto">
+              <img :src="benefit.image" :alt="benefit.alt" loading="lazy">
               <h3>{{ benefit.title }}</h3>
             </div>
           </div>
