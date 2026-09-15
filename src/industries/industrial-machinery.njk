@@ -1,0 +1,27 @@
+---
+# The industrial machinery industry page itself lives in Nuxt:
+# nuxt/pages/industries/industrial-machinery.vue. It was built there so it could embed
+# the ROI calculator, which is a Vue component (see the comment at the top of that file).
+#
+# This stub stays behind for one reason: the card grid on /industries/
+# (src/industries.njk) is still 11ty and builds itself from the `industry`
+# collection, so the entry below is what keeps industrial machinery on that page.
+#   permalink: false  - 11ty writes no HTML, so nothing lands in nuxt/public/ to
+#                       shadow the Nuxt route, but the page stays in collections.
+#   migratedUrl       - `url` is false under `permalink: false`; src/industries.njk
+#                       reads this instead when it's set.
+#   skipIndex         - keeps it out of sitemap-legacy.xml; Nuxt's own sitemap
+#                       picks the real page up from its static route.
+# Delete this file once /industries/ itself is migrated to Nuxt.
+permalink: false
+migratedUrl: /industries/industrial-machinery/
+skipIndex: true
+meta:
+  title: "Industrial Machinery Manufacturing Applications | FlowFuse"
+  description: "Connect CNC machines, PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps machinery, tooling, and precision component manufacturers monitor, automate, and standardize production across sites in real time."
+hero:
+  # TODO(image): placeholder, reused from the Walter customer story. Replace with a
+  # dedicated photo at src/images/industries/industrial-machinery.jpg.
+  image: "/images/stories/walter.png"
+  imageAlt: "Machining operation on an industrial machinery production floor"
+---
