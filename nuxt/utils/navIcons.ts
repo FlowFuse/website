@@ -13,6 +13,7 @@ import iAirplane from '../../src/_includes/components/icons/airplane.svg?raw'
 import iArrowRight from '../../src/_includes/components/icons/arrow-right.svg?raw'
 import iArrowTrendingUp from '../../src/_includes/components/icons/arrow-trending-up.svg?raw'
 import iArrowsRightLeft from '../../src/_includes/components/icons/arrows-right-left.svg?raw'
+import iBolt from '../../src/_includes/components/icons/bolt.svg?raw'
 import iBookOpen from '../../src/_includes/components/icons/book-open.svg?raw'
 import iBuildingLibrary from '../../src/_includes/components/icons/building-library.svg?raw'
 import iBuildingOffice2 from '../../src/_includes/components/icons/building-office-2.svg?raw'
@@ -68,6 +69,7 @@ export const navIcons: Record<string, string> = {
     'arrow-right': iArrowRight,
     'arrow-trending-up': iArrowTrendingUp,
     'arrows-right-left': iArrowsRightLeft,
+    'bolt': iBolt,
     'book-open': iBookOpen,
     'building-library': iBuildingLibrary,
     'building-office-2': iBuildingOffice2,

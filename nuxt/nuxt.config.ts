@@ -460,6 +460,9 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     '/industries/automotive',
+                    '/industries/building-materials',
+                    '/industries/energy-utilities',
+                    '/industries/industrial-machinery',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
