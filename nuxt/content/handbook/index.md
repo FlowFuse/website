@@ -38,7 +38,7 @@ shared in this handbook.
 
 The handbook can be edited by anyone at FlowFuse using **Nuxt Studio**, our CMS. Click **"Edit this page"** on any handbook page to open the editor, make your changes, and submit them for review. No Git knowledge required.
 
-Engineers and others comfortable with Git can also contribute directly via pull-request on [GitHub](https://github.com/FlowFuse/website/tree/main/src/handbook).
+Engineers and others comfortable with Git can also contribute directly via pull-request on [GitHub](https://github.com/FlowFuse/website/tree/main/nuxt/content/handbook).
 
 The handbook is here for the whole company to help maintain. **Contributions are welcome and strongly encouraged**.
 
