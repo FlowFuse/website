@@ -50,6 +50,18 @@ meta:
             <h2 class="max-md:text-center">By <span class="text-indigo-600">architecture</span></h2>
             <p class="mt-4 max-w-3xl text-gray-600">How FlowFuse is deployed and where it sits in your stack. Architectures are the technical evaluator's entry point; the use cases above are what gets built on them.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                {# Edge Connectivity has migrated to Nuxt (nuxt/pages/use-cases/edge-connectivity.vue),
+                   so it is no longer in the 11ty `use-case` collection this loop reads. Listed
+                   explicitly so it keeps its card here; remove this block once /use-cases/ itself
+                   moves to Nuxt and the listing is built from a source that can see both. #}
+                <a href="/use-cases/edge-connectivity/" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                    <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">Edge Connectivity</h3>
+                    <p class="m-0 text-gray-600 text-sm flex-grow">See what every machine is doing, and change it without a site visit.</p>
+                    <span class="mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
+                        View architecture
+                        <span class="w-4 h-4">{% include "components/icons/arrow-right.svg" %}</span>
+                    </span>
+                </a>
                 {% for uc in collections["use-case"] | sort(false, true, "data.title") %}
                 {% if not uc.data.values %}
                 <a href="{{ uc.url }}" class="group hover:no-underline flex flex-col gap-3 rounded-xl border border-gray-200 p-6 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">

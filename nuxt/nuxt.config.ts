@@ -169,16 +169,6 @@ export default defineNuxtConfig({
     // so it never fetches font files at build time (which exhausts Netlify's memory).
     fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
 
-    // Scans .vue/.md/.yml/etc for literal icon names (i-heroicons-x, i-lucide-x) so they're
-    // pre-bundled client-side instead of falling back to a live Iconify API call during
-    // prerender - the actual cause of the "[Icon] failed to load icon" warnings.
-    //
-    // globInclude repeats the scanner's own default (**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml})
-    // and adds a pattern for dotfiles: glob's `*` never matches a leading dot, so
-    // nuxt/content/handbook/**/.navigation.yml (where each department's nav icon lives) is
-    // otherwise invisible to the scan - those icons kept warning even with scan on.
-    icon: { clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } } },
-
     site: {
         url: site.baseURL,
         name: 'FlowFuse',
@@ -443,6 +433,8 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     '/industries/automotive',
+                    // First page migrated out of /use-cases/; the rest are still on 11ty.
+                    '/use-cases/edge-connectivity/',
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
