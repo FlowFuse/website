@@ -1,6 +1,9 @@
----
+# Lifted verbatim from src/use-cases/shop-floor-communication.njk (11ty), which had no template body: the whole
+# page was frontmatter read by layouts/use-case.njk. Rendered now by
+# pages/use-cases/[slug].vue through the components in components/use-case/.
+slug: shop-floor-communication
 title: "Shop Floor Communication"
-meta:
+seoMeta:
   title: "Shop Floor Communication | Use Cases | FlowFuse"
   description: "Andon, alerts and escalations that reach the right people in seconds: from machine events to team channels, displays and phones. Built on Node-RED, managed with FlowFuse."
 problem: "The line stopped four minutes ago. The person who can fix it will find out when someone walks over."
@@ -96,4 +99,3 @@ aiBuildLayer:
 closingCta:
   heading: "Close the gap between event and action"
   description: "Talk to an expert about connected andon and escalation, or route your first event today."
----

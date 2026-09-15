@@ -21,7 +21,7 @@ const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
 // /about, /blueprints, /careers, /community, /events
 // /free-consultation, /industries, /landing, /node-red, /partners, /platform,
-// /use-cases, /webinars
+// /webinars
 
 // New pages should never grow that fallback set: nuxt/lib/legacy-pages.test.mjs fails
 // `npm test` if a PR adds a new .njk file under src/ that doesn't already exist on main,
@@ -48,8 +48,8 @@ export default defineEventHandler(async (event) => {
     // proxy them to 11ty in dev even though /changelog and /blog are Nuxt-handled prefixes.
     if (/^\/(changelog|blog)\/\d{4}\/\d{2}\/images\//.test(normalised)) return proxyRequest(event, `http://localhost:8080${path}`)
 
-    // Same story for src/resources/images/** (whitepaper/ebook cover images, referenced
-    // from still-11ty pages like use-cases/uns.njk) - /resources is otherwise a Nuxt prefix.
+    // Same story for src/resources/images/** (whitepaper/ebook cover images whose files
+    // still live in the 11ty tree) - /resources is otherwise a Nuxt prefix.
     if (normalised.startsWith('/resources/images/')) return proxyRequest(event, `http://localhost:8080${path}`)
 
     // The documentation below /node-red/ moved into /docs/, and every old URL now 301s
