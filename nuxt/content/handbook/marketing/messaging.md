@@ -12,7 +12,7 @@ description: |-
 Clear and consistent messaging serves as a cornerstone for our company to
 achieve growth and a bigger market presence. The messaging framework is
 essential for the company to communicate its value, purpose, and
-differentiation, to in turn effectively acquire and retain our customer base. THIS IS A TEST
+differentiation, to in turn effectively acquire and retain our customer base.
 
 Consistency of messaging is important; with our growing company we’ve got
 limited resources and thus it’s imperative to make a significant impact quickly.
@@ -51,38 +51,41 @@ our software being grass-roots.
 
 ### Ideal Customer Profile (ICP)
 
-FlowFuse attracts customers from all verticals and sizes due to the breadth of Node-RED. However, our ICP remains focused on industrials in both Mid-market and Enterprise. The firmographics below are a guideline:
+FlowFuse attracts customers from all verticals and sizes due to the breadth of Node-RED. However, our ICP remains focused on industrials in both Mid-market and Enterprise. The firmographics below are a guideline.
 
-1. Firmographic tiers
+#### Firmographic tiers
 
 Both tiers require multi-site accounts with a corporate buying committee.
 
-                Mid-Market	           Enterprise
-Employees	      500+	                 5,000+
-Revenue	        $500M+	               $1B+
-ASP	            $10k–99k/year	         $100k+
-Sales cycle	    ~100 days	              ~200 days
+|  | Mid-Market | Enterprise |
+|--------|--------|--------|
+| Employees | 500+ | 5,000+ |
+| Revenue | $500M+ | $1B+ |
+| ASP | $10k–99k/year | $100k+ |
+| Sales cycle | ~100 days | ~200 days |
 
-2. Discrete manufacturers
+#### Discrete manufacturers
 
 FlowFuse targets discrete manufacturing — companies producing distinct, countable units (as opposed to continuous/batch process manufacturing).
 
-3. Primary verticals — actively hunted:
+#### Primary verticals — actively hunted:
 
-Automotive
-Industrial Machinery
-Building Materials
-Energy
+##### Primary - Actively Hunted
 
-Secondary verticals — we serve these industries and have active customers, but do not actively hunt for business here:
+* Automotive
+* Industrial Machinery
+* Building Materials
+* Energy
 
-Aerospace Components
-Aviation & Aerospace
-Electronics & Appliances
-Renewables
-Semiconductors
-Food & Beverage
-Life Sciences
+##### Secondary - Inbound only
+
+* Aerospace Components
+* Aviation & Aerospace
+* Electronics & Appliances
+* Renewables
+* Semiconductors
+* Food & Beverage
+* Life Sciences
 
 See also the description of
 [our market](/handbook/company/strategy/#the-market).
