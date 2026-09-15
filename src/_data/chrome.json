@@ -134,7 +134,7 @@
                     {
                         "title": "By Industry",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-[9] xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-[12] xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -175,6 +175,21 @@
                                 "label": "Aviation & Aerospace",
                                 "href": "/industries/aviation-aerospace/",
                                 "icon": "airplane"
+                            },
+                            {
+                                "label": "Building Materials",
+                                "href": "/industries/building-materials/",
+                                "icon": "building-office-2"
+                            },
+                            {
+                                "label": "Industrial Machinery",
+                                "href": "/industries/industrial-machinery/",
+                                "icon": "wrench-screwdriver"
+                            },
+                            {
+                                "label": "Energy & Utilities",
+                                "href": "/industries/energy-utilities/",
+                                "icon": "bolt"
                             },
                             {
                                 "label": "See all industries",
@@ -223,7 +238,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(12,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(13,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "solutions"
             },
             {
@@ -543,6 +558,18 @@
                             {
                                 "label": "Aviation & Aerospace",
                                 "href": "/industries/aviation-aerospace/"
+                            },
+                            {
+                                "label": "Building Materials",
+                                "href": "/industries/building-materials/"
+                            },
+                            {
+                                "label": "Industrial Machinery",
+                                "href": "/industries/industrial-machinery/"
+                            },
+                            {
+                                "label": "Energy & Utilities",
+                                "href": "/industries/energy-utilities/"
                             },
                             {
                                 "label": "See all industries",
