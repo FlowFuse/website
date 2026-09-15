@@ -7,7 +7,7 @@ As a manufacturing iPaaS provider, AI and feature development needs to be consta
 
 Two outputs are required from this program:
 
-1. Footage we can put in front of prospects and users, showing the platform being used end to end.
+1. Footage as _input_ for cleanly recorded demo's we can put in front of prospects and users, showing the platform being used end to end.
 2. GitHub issues for **every** point of friction found. With it, the AI engineering team can rank what to fix now, next month, and later.
 
 ## Recording and Filming
