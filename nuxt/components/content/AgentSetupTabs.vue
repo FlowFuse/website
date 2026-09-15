@@ -81,15 +81,6 @@ const CLIENTS = [
         step2Label: 'Open Claude',
         step2Url: 'https://claude.ai/',
     },
-    {
-        id: 'gemini',
-        logo: '/images/ai/agents/gemini.svg',
-        name: 'Gemini',
-        step2Title: 'Settings & help, Connected Apps, Add a custom app',
-        step2Body: 'Paste the URL there. This runs in Gemini Spark, which Google currently limits to personal accounts in the US, so it is not available everywhere yet.',
-        step2Label: 'Open Gemini',
-        step2Url: 'https://gemini.google.com/',
-    },
     // A coding agent installs the connector into itself, so its tab is the prompt
     // and nothing else. No flags, no config file, and nothing that goes stale when
     // a client changes how remote servers are added. Claude Code documents an

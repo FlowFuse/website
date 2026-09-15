@@ -1,9 +1,7 @@
 # Agent marks for the /ai connector tabs
 
 Each tab in the "connect your own agent" section renders `client.logo` when it is set in
-`nuxt/components/content/AgentSetupTabs.vue`, and falls back to the agent's name as text when it is
-not. That component is the single source for every surface that shows the tabs: the `/ai` page, the
-changelog entry, the blog post and the third-party-agents docs page.
+`src/ai.njk`, and falls back to the agent's name as text when it is not.
 
 | File | Tab | Source |
 | --- | --- | --- |
@@ -34,10 +32,9 @@ A result much smaller than 200x200 means the file carries clear space that has t
 
 To add or replace one, drop the file here and set the path on that client:
 
-```js
-    {
-        id: 'claude',
-        logo: '/images/ai/agents/claude.svg',
+```yaml
+        - id: "claude"
+          logo: "/images/ai/agents/claude.svg"
 ```
 
 Leave `logo` unset until the file exists. Setting it early renders a broken image, whereas
