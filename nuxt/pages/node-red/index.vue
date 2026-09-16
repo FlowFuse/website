@@ -23,16 +23,16 @@ const route = useRoute()
 const capture = useCapture()
 
 const LOW_CODE = [
-    { svgPath: 'light-bulb', title: 'Flow Based Programming', description: 'Node-RED’s visual programming makes it easy for non-developers to build robust applications.' },
-    { svgPath: 'puzzle-piece', title: 'Digital Services Integration', description: 'Node-RED facilitates seamless integration with a wide array of digital services, including protocols (OPC-UA, Modbus, Siemens S7), databases, APIs, and devices. <a href="/integrations/">Browse the full integrations catalog</a>.' },
-    { svgPath: 'document-chart-bar', title: 'Data Visualization', description: '<a href="/platform/dashboard/">Node-RED Dashboard</a> makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.' },
+    { svgPath: 'i-heroicons-light-bulb', title: 'Flow Based Programming', description: 'Node-RED’s visual programming makes it easy for non-developers to build robust applications.' },
+    { svgPath: 'i-heroicons-puzzle-piece', title: 'Digital Services Integration', description: 'Node-RED facilitates seamless integration with a wide array of digital services, including protocols (OPC-UA, Modbus, Siemens S7), databases, APIs, and devices. <a href="/integrations/">Browse the full integrations catalog</a>.' },
+    { svgPath: 'i-heroicons-document-chart-bar', title: 'Data Visualization', description: '<a href="/platform/dashboard/">Node-RED Dashboard</a> makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.' },
 ]
 
 const WHY = [
-    { iconPath: 'shield-check', title: 'Enhanced Security', description: 'Security and compliance guardrails ensure adherence to security protocols.' },
-    { iconPath: 'user-group', title: 'Seamless Collaboration', description: 'Cloud-based solutions and dev-ops pipelines streamline development with user-friendly interfaces and safeguard against errors.' },
-    { iconPath: 'arrows-pointing-out', title: 'Scalable Architecture ', description: 'Start small and scale to thousands of self–built and self–maintained applications. Reduce reliance on point solutions and vendor lock-in.' },
-    { iconPath: 'academic-cap', title: 'Expert Support', description: 'Get access to our dedicated support team who are creators and experts in Node-RED, ready to assist you at every step.' },
+    { iconPath: 'i-heroicons-shield-check', title: 'Enhanced Security', description: 'Security and compliance guardrails ensure adherence to security protocols.' },
+    { iconPath: 'i-heroicons-user-group', title: 'Seamless Collaboration', description: 'Cloud-based solutions and dev-ops pipelines streamline development with user-friendly interfaces and safeguard against errors.' },
+    { iconPath: 'i-heroicons-arrows-pointing-out', title: 'Scalable Architecture ', description: 'Start small and scale to thousands of self–built and self–maintained applications. Reduce reliance on point solutions and vendor lock-in.' },
+    { iconPath: 'i-heroicons-academic-cap', title: 'Expert Support', description: 'Get access to our dedicated support team who are creators and experts in Node-RED, ready to assist you at every step.' },
 ]
 
 const DEPLOYMENT = [
@@ -170,7 +170,7 @@ useSchemaOrg([
                           <div class="flex flex-col items-center sm:items-start">
                               <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
                                   <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
-                                      <SiteArt :name="section.svgPath" />
+                                      <UIcon :name="section.svgPath" class="w-full h-full" />
                                   </div>
                                   <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
                                       <h5 class="w-full md:m-0">
@@ -219,7 +219,7 @@ useSchemaOrg([
           </li>
       </ul>
       <a href="/customer-stories/" class="w-full font-light text-center md:text-left hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md mx-auto mb-20">
-          See more customer stories <SiteArt name="chevron-right-sm" />
+          See more customer stories <UIcon name="i-heroicons-chevron-right" class="w-4 h-4 shrink-0" />
       </a>
   </div>
 
@@ -231,7 +231,7 @@ useSchemaOrg([
                   <div v-for="section in WHY" :key="section.title" class="w-full mt-4 md:mt-0 flex flex-col justify-between">
                       <div>
                           <div class="flex max-sm:w-full justify-center sm:justify-start mt-3 mb-2 w-8 h-8">
-                              <SiteArt :name="section.iconPath" />
+                              <UIcon :name="section.iconPath" class="w-full h-full" />
                           </div>
                           <h4 class="flex justify-center sm:justify-start font-semibold">{{ section.title }}</h4>
                           <p class="font-light mt-6">{{ section.description }}</p>
@@ -245,7 +245,7 @@ useSchemaOrg([
   <div v-if="certifiedNodes?.length" class="w-full pb-20 pt-16">
       <div class="max-w-screen-lg m-auto px-6">
           <span class="certified-eyebrow">
-              <SiteArt name="certified-node" />
+              <IntegrationsCertifiedIcon />
               <span>FlowFuse Certified</span>
           </span>
           <h2 class="max-md:text-center">
@@ -268,7 +268,7 @@ useSchemaOrg([
                       <span class="flex items-center gap-3 mb-2">
                           <span class="font-semibold text-lg text-gray-900">{{ node.name }}</span>
                           <span class="certified-pill">
-                              <SiteArt name="certified-node" />
+                              <IntegrationsCertifiedIcon />
                               <span>{{ node.collectionLabel }}</span>
                           </span>
                       </span>
