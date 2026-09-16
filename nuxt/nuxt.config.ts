@@ -465,6 +465,8 @@ export default defineNuxtConfig({
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
 
                     ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
+
+                    '/about/',
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
