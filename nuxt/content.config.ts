@@ -409,10 +409,6 @@ export default defineContentConfig({
                 cta: z.object({
                     title: z.string(),
                     description: z.string().optional(),
-                    // The .njk carried these but the layout never read them: it renders the
-                    // shared Book-a-demo CTA, whose copy and href come from the registry.
-                    buttonText: z.string().optional(),
-                    buttonLink: z.string().optional(),
                 }),
             })
         }),

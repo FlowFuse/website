@@ -10,7 +10,7 @@ const { data: all } = await useAsyncData('industry-use-cases', () =>
 const matching = computed(() =>
     (all.value || [])
         .filter(uc => uc.industries?.includes(props.slug))
-        .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()))
+        .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase(), 'en'))
 )
 </script>
 

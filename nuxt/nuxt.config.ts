@@ -286,21 +286,13 @@ export default defineNuxtConfig({
         ],
         urls: [
             ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
-            // /vs/<slug>/ is one [slug].vue over a `data` collection, so the module's
-            // static-route discovery cannot see it and content-urls.get.ts cannot either
-            // (it keys on `path`, which a data collection has no equivalent of). The three
-            // pages left sitemap-legacy.xml when their .njk files were deleted, so without
-            // this they are in neither sitemap.
+            // /vs/<slug>/ and /industries/<slug>/ are each one [slug].vue over a `data`
+            // collection, so the module's static-route discovery cannot see them and
+            // content-urls.get.ts cannot either (it keys on `path`, which a data collection
+            // has no equivalent of). Both sets left sitemap-legacy.xml when their source
+            // files were deleted, so without this they are in neither sitemap.
+            // /industries/automotive/ has its own .vue file and is discovered normally.
             ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
-        ],
-        urls: [
-            ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
-            // /industries/<slug>/ is one [slug].vue over a `data` collection, so the
-            // module's static-route discovery cannot see it, and content-urls.get.ts cannot
-            // either (it keys on `path`, which a data collection has no equivalent of).
-            // Without this the seven pages are in neither sitemap, having left
-            // sitemap-legacy.xml when their .md files moved. /industries/automotive/ has its
-            // own .vue file, so that one is discovered normally.
             ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries').map(loc => ({ loc })),
         ],
         exclude: ['/_studio/**', '/api/**'],

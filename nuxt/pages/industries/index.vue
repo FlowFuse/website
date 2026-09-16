@@ -37,7 +37,7 @@ const cards = computed(() => {
     }))
     // `| sort(false, true, "data.meta.title")`: case-insensitive, ascending.
     return [...fromCollection, AUTOMOTIVE]
-        .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase()))
+        .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase(), 'en'))
 })
 
 useSeoMeta({
