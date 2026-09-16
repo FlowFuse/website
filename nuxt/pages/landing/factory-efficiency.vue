@@ -8,11 +8,11 @@
 //    reference.
 //  - The section illustrations under components/icons/large/ are standalone art with no
 //    currentColor, so they are public images rather than inlined SVG.
-//  - hs-form.njk becomes <HubSpotForm>, and smooth-scroll.njk becomes useScrollToAnchor.
+//  - hs-form.njk becomes <HubSpotForm>. smooth-scroll.njk is dropped: the anchor keeps
+//    its href and the site-wide scroll-behavior: smooth in style.css animates it.
 //  - `skipIndex` kept this campaign page out of 11ty's sitemap; it is a robots noindex
 //    here, which is what that was for.
 
-const scrollToAnchor = useScrollToAnchor()
 const capture = useCapture()
 
 const TITLE = 'Transform Your Factory’s Efficiency and Profitability with FlowFuse'
@@ -49,8 +49,7 @@ const HUBSPOT = {
     reference: 'factory-efficiency-landing',
 }
 
-function onDownloadClick(event: Event) {
-    scrollToAnchor(event, 'form')
+function onDownloadClick() {
     capture('download', { reference: HERO.buttonReference })
 }
 

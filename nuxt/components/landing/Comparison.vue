@@ -27,11 +27,9 @@ const props = defineProps<{
     }
 }>()
 
-const scrollToAnchor = useScrollToAnchor()
 const capture = useCapture()
 
-function onBriefClick(event: Event) {
-    scrollToAnchor(event, 'form')
+function onBriefClick() {
     capture(props.page.hubspot.cta, { reference: props.page.hubspot.reference })
 }
 </script>

@@ -15,7 +15,6 @@
 //  - `skipIndex` kept this campaign page out of 11ty's sitemap; it is a robots noindex
 //    here, which is what that was for.
 
-const scrollToAnchor = useScrollToAnchor()
 const capture = useCapture()
 
 const META_DESCRIPTION = 'Tulip is only as powerful as the data you feed it. FlowFuse connects legacy machines, edge devices, ERPs, and any industrial system, giving Tulip the complete picture it needs to optimize your operations.'
@@ -81,8 +80,7 @@ const { data: stories } = await useAsyncData('tulip-stories', () =>
         .order('date', 'DESC').limit(3).all()
 )
 
-function onDemoClick(event: Event) {
-    scrollToAnchor(event, 'form')
+function onDemoClick() {
     capture('download', { reference: HERO.buttonReference })
 }
 
