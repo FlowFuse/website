@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // "01 Customer pain" from layouts/use-case.njk.
-// The .njk pulled card icons with {% include "components/icons/<name>.svg" %}; the same
-// glyphs come from the icon sets already installed here, mapped in useCaseIcon().
+// The .njk pulled card icons with {% include "components/icons/<name>.svg" %}; content
+// now names the Iconify glyph directly, so <UIcon> resolves it with nothing in between.
 defineProps<{
     block: {
         heading: string
@@ -22,7 +22,7 @@ defineProps<{
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
         <div v-for="card in block.cards" :key="card.title" class="rounded-xl bg-gray-50 border border-gray-200 p-6 flex flex-col gap-3">
           <div class="w-9 h-9 bg-white rounded-lg border border-gray-200 flex items-center justify-center text-red-500">
-            <UIcon :name="useCaseIcon(card.icon)" class="w-5 h-5" />
+            <UIcon v-if="card.icon" :name="card.icon" class="w-5 h-5" />
           </div>
           <h4 class="m-0 text-gray-800">{{ card.title }}</h4>
           <p class="m-0 text-gray-600 text-sm">{{ card.detail }}</p>
