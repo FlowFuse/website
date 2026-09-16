@@ -63,7 +63,7 @@ useSeoMeta({
       <div class="container flex flex-col md:flex-row m-auto text-left max-lg:px-6 md:max-w-screen-lg gap-8 items-stretch">
         <div class="ff-prose min-w-0">
           <NuxtLink to="/blueprints/" class="inline-flex align-center gap-1 mb-4">
-            <SiteArt name="chevron-left" />
+            <UIcon name="i-heroicons-chevron-left" class="w-5 h-5 shrink-0" />
             Back to Blueprints Library
           </NuxtLink>
           <div class="prose w-full flex-grow">
@@ -78,7 +78,7 @@ useSeoMeta({
                 class="ff-btn ff-btn--primary flex gap-2 mb-6 mt-4 uppercase"
                 target="_blank"
                 rel="noopener"
-            >Deploy <SiteArt name="rocket-launch" /></a>
+            >Deploy <UIcon name="i-heroicons-rocket-launch" class="size-6 shrink-0" /></a>
             <h3 class="mb-3">Author:</h3>
             <BlueprintCompanyTile :company="author" />
             <CtaContactUsLine />

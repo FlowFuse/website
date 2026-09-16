@@ -50,7 +50,7 @@ const imageAlt = computed(() => props.entry.image ? `Image representing ${props.
             class="ff-btn ff-btn--primary-outlined flex gap-2"
             target="_blank"
             rel="noopener"
-        >DEPLOY <SiteArt name="rocket-launch" /></a>
+        >DEPLOY <UIcon name="i-heroicons-rocket-launch" class="size-6 shrink-0" /></a>
       </div>
     </div>
   </li>
