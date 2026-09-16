@@ -15,13 +15,15 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // left once its one referring blog post pointed at /contact-us/ instead) - but they stay
 // listed so their 301s in nuxt/redirects.ts are served by Nitro in dev rather than being
 // proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs']
+// /node-red is the same case one level down: the documentation below it moved into /docs
+// and every old URL now 301s from nuxt/redirects-node-red.ts, so those requests have to
+// reach Nitro rather than 11ty. Its own index is a Nuxt page now too, so the prefix covers
+// both and the carve-out that used to keep /node-red itself on 11ty is gone.
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/use-cases', '/industries', '/platform', '/partners', '/events', '/landing', '/blueprints', '/node-red']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
-// /about, /blueprints, /careers, /community, /events
-// /free-consultation, /industries, /landing, /node-red, /partners, /platform,
-// /use-cases, /webinars
+// /about, /careers, /community
 
 // New pages should never grow that fallback set: nuxt/lib/legacy-pages.test.mjs fails
 // `npm test` if a PR adds a new .njk file under src/ that doesn't already exist on main,
@@ -52,18 +54,10 @@ export default defineEventHandler(async (event) => {
     // from still-11ty pages like use-cases/uns.njk) - /resources is otherwise a Nuxt prefix.
     if (normalised.startsWith('/resources/images/')) return proxyRequest(event, `http://localhost:8080${path}`)
 
-    // The documentation below /node-red/ moved into /docs/, and every old URL now 301s
-    // from nuxt/redirects-node-red.ts. Those are Nitro route rules, so the request has to
-    // reach Nitro in dev rather than being proxied to 11ty, which no longer has the pages.
-    // /node-red itself is deliberately excluded and keeps falling through to 11ty: it is
-    // still a marketing page there, which is why the redirect map is explicit paths rather
-    // than a splat.
-    if (normalised !== '/node-red' && normalised.startsWith('/node-red/')) return
-
-    // src/vs/images/** are still 11ty-owned files: they only reach nuxt/public/ through the
-    // passthrough in a production build, so dev has to ask 11ty for them even though /vs is
-    // a Nuxt prefix now.
-    if (/^\/vs\/images\//.test(normalised)) {
+    // src/{vs,events,landing,whitepaper}/images/** and src/events/hm25-invite.ics are still
+    // 11ty-owned files: they only reach nuxt/public/ through the passthrough in a production
+    // build, so dev has to ask 11ty for them even though those are Nuxt prefixes now.
+    if (/^\/(vs|events|landing|whitepaper)\/images\//.test(normalised) || normalised === '/events/hm25-invite.ics') {
         return proxyRequest(event, `http://localhost:8080${path}`)
     }
 
