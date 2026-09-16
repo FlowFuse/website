@@ -15,7 +15,7 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // left once its one referring blog post pointed at /contact-us/ instead) - but they stay
 // listed so their 301s in nuxt/redirects.ts are served by Nitro in dev rather than being
 // proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
@@ -55,6 +55,12 @@ export default defineEventHandler(async (event) => {
     // through the passthrough in a production build, so dev has to ask 11ty for them even
     // though /landing is a Nuxt prefix now.
     if (normalised.startsWith('/landing/images/')) {
+        return proxyRequest(event, `http://localhost:8080${path}`)
+    }
+
+    // And for src/whitepaper/images/** - the covers these pages link to. /whitepaper is
+    // itself a Nuxt prefix, so without this dev answers from Nuxt and the images 404.
+    if (normalised.startsWith('/whitepaper/images/')) {
         return proxyRequest(event, `http://localhost:8080${path}`)
     }
 
