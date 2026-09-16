@@ -7,7 +7,8 @@
 //    `description` HTML fragment moving into the slot as ordinary template markup.
 //  - faq.njk becomes <BlogFaq> plus useSchemaOrg, so the FAQ answers are escaped rather
 //    than interpolated into a JSON string by hand.
-//  - smooth-scroll.njk's global function and inline onclick become useScrollToAnchor.
+//  - smooth-scroll.njk's global function and inline onclick are dropped: the site-wide
+//    `scroll-behavior: smooth` in style.css already animates a plain in-page anchor.
 //  - The CTA macros become <CtaBookDemo> and <CtaSignUp>. The two hand-written
 //    ff-btn links that were not CTAs keep their own markup; the "INSTALL NOW" one keeps
 //    its inline capture('cta-install') event, routed through useCapture.
@@ -17,7 +18,6 @@
 //    /resources/** - assets owned by sections still on 11ty. They stay where they are and
 //    move wholesale at teardown; the page's own art is copied into nuxt/public/images/,
 //    which is where the already-ported pages keep theirs.
-const scrollToAnchor = useScrollToAnchor()
 const capture = useCapture()
 
 const FEATURES = [
@@ -87,7 +87,7 @@ useSchemaOrg([
       <div class="w-full flex justify-center mt-6">
         <div class="mx-auto text-center flex flex-row gap-8">
           <CtaBookDemo variant="highlight" position="hero" class="inline-block shadow" />
-          <a href="#whitepapers" class="inline-block ff-btn ff-btn--primary-outlined shadow uppercase" @click="scrollToAnchor($event, 'whitepapers')">Read Whitepaper</a>
+          <a href="#whitepapers" class="inline-block ff-btn ff-btn--primary-outlined shadow uppercase">Read Whitepaper</a>
         </div>
       </div>
 
