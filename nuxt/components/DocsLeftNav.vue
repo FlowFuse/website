@@ -17,5 +17,5 @@ const items = computed((): NavigationMenuItem[] => [
 </script>
 
 <template>
-  <SidebarNav :items="items" />
+  <SidebarNav :items="items" label="Documentation" />
 </template>

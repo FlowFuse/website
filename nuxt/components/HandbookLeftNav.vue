@@ -42,5 +42,5 @@ const navItems = computed((): NavigationMenuItem[] => {
 </script>
 
 <template>
-  <SidebarNav :items="navItems" />
+  <SidebarNav :items="navItems" label="Handbook" />
 </template>
