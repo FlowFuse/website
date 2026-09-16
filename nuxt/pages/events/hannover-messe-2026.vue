@@ -7,11 +7,12 @@
 //
 // What the port changes on purpose:
 //  - Two "jump to section" links used an inline onclick calling scrollIntoView; both go
-//    through useScrollToAnchor, the same helper smooth-scroll.njk's pages use.
-//  - The section glyphs were {% include %}d raw, so they become <SiteArt>.
+//    natively: both anchors already carry the href they scroll to, and the site-wide
+//    scroll-behavior: smooth in style.css animates the jump.
+//  - The section glyphs were {% include %}d raw; they are stock Heroicons, so they
+//    become <UIcon>, each carrying its own size since the mask span has no ratio.
 //  - The book-a-demo button was a Nunjucks macro rendering a hand-written ff-btn link to
 //    /book-demo, so it fired no event. It is <CtaBookDemo>.
-const scrollToAnchor = useScrollToAnchor()
 
 const HERO = {
     image: '/events/images/hm26/hm-26-hero.png',
@@ -153,10 +154,9 @@ useSeoMeta({
                 <a
                     class="inline-flex items-center gap-1.5 text-base font-semibold uppercase text-indigo-600 hover:text-indigo-800 whitespace-nowrap no-underline hover:no-underline"
                     href="#special-sessions"
-                    @click="scrollToAnchor($event, 'special-sessions')"
                 >
                   VIEW EVENTS
-                  <SiteArt name="arrow-small-down" />
+                  <UIcon name="i-heroicons-arrow-small-down-20-solid" class="w-5 h-5 shrink-0" />
                 </a>
               </div>
             </div>
@@ -227,10 +227,9 @@ useSeoMeta({
                   v-if="session.secondaryCta && session.secondaryCtaTarget"
                   class="inline-flex items-center justify-center gap-1.5 text-base font-semibold uppercase text-indigo-600 hover:text-indigo-800 w-full md:w-auto no-underline hover:no-underline"
                   :href="session.secondaryCtaTarget"
-                  @click="scrollToAnchor($event, 'flowfuse-talks-agenda')"
               >
                 {{ session.secondaryCta }}
-                <SiteArt name="arrow-small-down" />
+                <UIcon name="i-heroicons-arrow-small-down-20-solid" class="w-5 h-5 shrink-0" />
               </a>
             </div>
           </div>
@@ -244,7 +243,7 @@ useSeoMeta({
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
           <div v-for="day in AGENDA.days" :key="day.dateLabel" class="flex flex-col gap-3">
             <div class="flex items-center gap-2 text-sm font-medium">
-              <div class="w-5"><SiteArt name="calendar" /></div>
+              <UIcon name="i-heroicons-calendar" class="w-5 h-5 shrink-0" />
               <span>{{ day.dateLabel }}</span>
             </div>
             <a
@@ -255,7 +254,7 @@ useSeoMeta({
             >
               <div class="w-full flex flex-row justify-between">
                 <p class="m-0 pr-5 text-xs font-medium text-indigo-200">{{ talk.time }}</p>
-                <div class="w-5 text-indigo-200"><SiteArt name="arrow-top-right-on-square" /></div>
+                <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-5 h-5 shrink-0 text-indigo-200" />
               </div>
               <h3 class="text-[18px] leading-[1.25] mt-2 mb-3 text-white">{{ talk.title }}</h3>
               <p class="m-0 text-sm text-indigo-200">{{ talk.speaker }}</p>
