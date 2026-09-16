@@ -15,7 +15,7 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // left once its one referring blog post pointed at /contact-us/ instead) - but they stay
 // listed so their 301s in nuxt/redirects.ts are served by Nitro in dev rather than being
 // proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/events']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
@@ -51,6 +51,13 @@ export default defineEventHandler(async (event) => {
     // Same story for src/resources/images/** (whitepaper/ebook cover images, referenced
     // from still-11ty pages like use-cases/uns.njk) - /resources is otherwise a Nuxt prefix.
     if (normalised.startsWith('/resources/images/')) return proxyRequest(event, `http://localhost:8080${path}`)
+
+    // Same story for src/events/images/** and the .ics the Hannover page links: 11ty-owned
+    // files that only reach nuxt/public/ through the passthrough in a production build, so
+    // dev has to ask 11ty for them even though /events is a Nuxt prefix now.
+    if (normalised.startsWith('/events/images/') || normalised === '/events/hm25-invite.ics') {
+        return proxyRequest(event, `http://localhost:8080${path}`)
+    }
 
     // The documentation below /node-red/ moved into /docs/, and every old URL now 301s
     // from nuxt/redirects-node-red.ts. Those are Nitro route rules, so the request has to
