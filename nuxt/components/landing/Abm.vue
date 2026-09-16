@@ -5,6 +5,14 @@
 // The section glyphs are <UIcon>, named in full by the .yml. testimonials.njk and
 // social-proof.njk become <TestimonialCarousel> and
 // <SocialProof>, both shared with the homepage.
+//
+// The hero CTAs drop the `inline` and `flex flex-col` from the .njk's extraClass. Those
+// were written against a different DOM: cta-button.njk put the label and the arrow inside
+// one <span class="inline-flex items-center gap-2">, so the <a> had a single child and
+// neither class changed what was drawn. UButton renders the label and its trailing-icon as
+// siblings, so `flex flex-col` stacks them and `inline` drops the flex context that
+// centres the arrow. Carrying the strings over verbatim was faithful to the source and
+// wrong on the page.
 
 defineProps<{
     page: {
@@ -39,8 +47,8 @@ defineProps<{
               </ul>
             </div>
             <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:items-start md:justify-start md:m-0">
-              <CtaBookDemo variant="primary" position="hero" class="inline min-h-[40px]" />
-              <CtaSignUp variant="ghost" position="hero" icon="i-lucide-arrow-right" class="inline" />
+              <CtaBookDemo variant="primary" position="hero" class="min-h-[40px]" />
+              <CtaSignUp variant="ghost" position="hero" icon="i-lucide-arrow-right" />
             </div>
           </div>
           <div class="md:w-2/5 flex-grow relative">
@@ -50,7 +58,7 @@ defineProps<{
           </div>
           <div class="flex flex-col sm:flex-row md:hidden gap-3">
             <CtaBookDemo variant="primary" position="hero-mobile" class="w-full mt-12 min-h-[40px]" />
-            <CtaSignUp variant="ghost" position="hero-mobile" icon="i-lucide-arrow-right" class="flex flex-col w-full m-auto sm:mt-12" />
+            <CtaSignUp variant="ghost" position="hero-mobile" icon="i-lucide-arrow-right" class="w-full m-auto sm:mt-12" />
           </div>
         </div>
       </div>
