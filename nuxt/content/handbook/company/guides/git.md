@@ -10,9 +10,9 @@ There are two ways to contribute changes to the handbook: **Nuxt Studio** (recom
 Nuxt Studio is a browser-based CMS. You do not need to install anything or know Git to use it.
 
 1. Navigate to any handbook page.
-2. Click **"Edit this page"** in the right sidebar.
-3. Sign in with your GitHub account.
-4. Make your changes in the editor — Studio shows a live preview as you type.
+2. Click **"Sign in to edit"** in the right sidebar and sign in with your GitHub account.
+3. You land back on the page. Studio's control is now in the bottom-left corner of every handbook page.
+4. Open the editor from that control and make your changes. Studio shows a live preview as you type.
 5. When ready, click **Save** / **Submit for review**. Studio will open a pull-request on GitHub on your behalf.
 6. Ask a colleague to review the pull-request. Once approved and merged, your changes go live.
 
@@ -28,7 +28,7 @@ If you are comfortable with Git and the command line, you can contribute directl
 
 1. Check out the latest `main` branch.
 2. Create a new branch with a descriptive `kebab-case` name.
-3. Edit files under `src/handbook/` (the source of truth for handbook content).
+3. Edit files under `nuxt/content/handbook/` (the source of truth for handbook content).
 4. Commit your changes and push the branch.
 5. Open a Pull Request on GitHub and assign a reviewer.
 6. Once approved, the reviewer merges the PR.
