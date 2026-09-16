@@ -31,10 +31,11 @@ diving into the messaging.
 
 ## Product Pillars Alignment
 
-Our core product messaging should reflect FlowFuse’s three product pillars: 
-* Operational Scaling; delivering consistency at scale instead of one-off “snowflake” projects
-* System Agility; extending and adapting rigid vendor systems without rip-and-replace
-* Event-Driven Data Bridge; acting as a lightweight, event-based bridge that intelligently 
+Our core product messaging should reflect FlowFuse’s three product pillars:
+
+- Operational Scaling; delivering consistency at scale instead of one-off “snowflake” projects
+- System Agility; extending and adapting rigid vendor systems without rip-and-replace
+- Event-Driven Data Bridge; acting as a lightweight, event-based bridge that intelligently
 routes data between the shop floor and the top floor.
 
 ## Audience
@@ -57,12 +58,12 @@ FlowFuse attracts customers from all verticals and sizes due to the breadth of N
 
 Both tiers require multi-site accounts with a corporate buying committee.
 
-|  | Mid-Market | Enterprise |
-|--------|--------|--------|
-| Employees | 500+ | 5,000+ |
-| Revenue | $500M+ | $1B+ |
-| ASP | $10k–99k/year | $100k+ |
-| Sales cycle | ~100 days | ~200 days |
+|             | Mid-Market    | Enterprise |
+| ----------- | ------------- | ---------- |
+| Employees   | 500+          | 5,000+     |
+| Revenue     | $500M+        | $1B+       |
+| ASP         | $10k–99k/year | $100k+     |
+| Sales cycle | ~100 days     | ~200 days  |
 
 #### Discrete manufacturers
 
@@ -72,20 +73,20 @@ FlowFuse targets discrete manufacturing — companies producing distinct, counta
 
 ##### Primary - Actively Hunted
 
-* Automotive
-* Industrial Machinery
-* Building Materials
-* Energy
+- Automotive
+- Industrial Machinery
+- Building Materials
+- Energy
 
 ##### Secondary - Inbound only
 
-* Aerospace Components
-* Aviation & Aerospace
-* Electronics & Appliances
-* Renewables
-* Semiconductors
-* Food & Beverage
-* Life Sciences
+- Aerospace Components
+- Aviation & Aerospace
+- Electronics & Appliances
+- Renewables
+- Semiconductors
+- Food & Beverage
+- Life Sciences
 
 See also the description of
 [our market](/handbook/company/strategy/#the-market).
@@ -96,11 +97,13 @@ FlowFuse is the open-source Industrial Application Platform.
 
 ### Tagline
 
-:site-value{path="messaging.tagLine"}
+::site-value{path="messaging.tagLine"}
+::
 
 ### FlowFuse in one sentence - Under 150 characters
 
-:site-value{path="messaging.subtitle"}
+::site-value{path="messaging.subtitle"}
+::
 
 ### About FlowFuse - Short form
 
@@ -115,45 +118,29 @@ to innovate and unlock new value in industrial automation.
 
 ## FlowFuse in-depth
 
-FlowFuse is the industrial platform built for speed, intelligence, and operational 
-confidence—enabling organizations to orchestrate their most critical applications, data, 
-and automation at scale with consistency rather than one-off project “snowflakes.” Founded 
-in 2021 by Nick O’Leary, the visionary behind Node-RED, FlowFuse takes the best of low-code 
+FlowFuse is the industrial platform built for speed, intelligence, and operational
+confidence—enabling organizations to orchestrate their most critical applications, data,
+and automation at scale with consistency rather than one-off project “snowflakes.” Founded
+in 2021 by Nick O’Leary, the visionary behind Node-RED, FlowFuse takes the best of low-code
 integration and supercharges it with enterprise governance, robust security, and built-in AI.
 
-FlowFuse’s platform puts advanced automation and artificial intelligence at the heart of 
-industrial innovation—empowering teams to connect any machine or system, unify diverse data 
-streams, and deploy automated logic and visualizations in record time. By acting as a low-code 
-agility layer on top of existing MES, SCADA, and other vendor systems, FlowFuse turns rigid 
+FlowFuse’s platform puts advanced automation and artificial intelligence at the heart of
+industrial innovation—empowering teams to connect any machine or system, unify diverse data
+streams, and deploy automated logic and visualizations in record time. By acting as a low-code
+agility layer on top of existing MES, SCADA, and other vendor systems, FlowFuse turns rigid
 software into a flexible business asset that can be extended and adapted without rip-and-replace.
 
-With our AI-driven FlowFuse Expert, domain experts and engineers can transform, structure, and 
-analyze industrial data—simply and intuitively—accelerating solution development beyond traditional 
-approaches. Security and reliability are never compromised: from audit trails and access controls to 
-blueprint-driven deployments and version automation, FlowFuse is engineered for mission-critical, 
-production environments. Whether you choose cloud, self-hosted, or hybrid, FlowFuse gives you complete 
+With our AI-driven FlowFuse Expert, domain experts and engineers can transform, structure, and
+analyze industrial data—simply and intuitively—accelerating solution development beyond traditional
+approaches. Security and reliability are never compromised: from audit trails and access controls to
+blueprint-driven deployments and version automation, FlowFuse is engineered for mission-critical,
+production environments. Whether you choose cloud, self-hosted, or hybrid, FlowFuse gives you complete
 control while driving the agility you need to lead the market.
 
-By blending trusted open-source roots with relentless product innovation and a clear focus on tangible 
-outcomes, FlowFuse becomes a lightweight, event-based bridge between the shop floor and the top 
-floor—triggering data movement, transformation, and storage only when real-world events occur, and 
-avoiding the “dump everything to the cloud” cost trap. This makes FlowFuse the competitive advantage 
+By blending trusted open-source roots with relentless product innovation and a clear focus on tangible
+outcomes, FlowFuse becomes a lightweight, event-based bridge between the shop floor and the top
+floor—triggering data movement, transformation, and storage only when real-world events occur, and
+avoiding the “dump everything to the cloud” cost trap. This makes FlowFuse the competitive advantage
 for industrial teams ready to deliver results faster, more securely, and smarter than ever before.
 
-## Selection Criteria: Our messaging commandments
-
-This captures how we believe an ICP team is thinking about how to choose their next generation software platform for digitalizing their industrial process. This captures the following questions and our answers.
-
-These are the FlowFuse Messaging Commandments. 
-Every message that comes out from the team has to stick to one or many of these commandments. Otherwise it is wrong, because it’s not really helping sales. 
-
-1. Connect all your machines and assets in my industrial process to make it _fully observable_.
-   - FlowFuse can be extended with over 5,000 plug-ins for collecting data from any machine, protocol, ERP, MES, or other services.
-   - FlowFuse enables scalable agent deployment to unify data from any source or protocol across the industrial edge.
-  
-2. Convert all data across any protocol so separate systems work as a cohesive unit.
-   - FlowFuse unifies separate systems and industrial protocols on a single, low-code platform.
-   - Accelerated by an AI assistant, FlowFuse makes it faster than ever to build and deploy logic for real-time data transport between any source and destination.
-
-3. Easy tag and store data collected in any data platform
-   - Transform raw data into a structured and unified information model with our AI-assisted low-code tools. Simply describe the data transformation you need in plain English, and our platform will help generate the necessary logic, from SQL queries to JavaScript functions.
+##
