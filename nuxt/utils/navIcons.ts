@@ -14,8 +14,6 @@ import iArrowRight from '../../src/_includes/components/icons/arrow-right.svg?ra
 import iArrowTrendingUp from '../../src/_includes/components/icons/arrow-trending-up.svg?raw'
 import iArrowsPointingOut from '../../src/_includes/components/icons/arrows-pointing-out.svg?raw'
 import iArrowsRightLeft from '../../src/_includes/components/icons/arrows-right-left.svg?raw'
-import iBellAlert from '../../src/_includes/components/icons/bell-alert.svg?raw'
-import iBolt from '../../src/_includes/components/icons/bolt.svg?raw'
 import iBookOpen from '../../src/_includes/components/icons/book-open.svg?raw'
 import iBuildingLibrary from '../../src/_includes/components/icons/building-library.svg?raw'
 import iBuildingOffice2 from '../../src/_includes/components/icons/building-office-2.svg?raw'
@@ -26,18 +24,10 @@ import iCertificate from '../../src/_includes/components/icons/certificate.svg?r
 import iChart from '../../src/_includes/components/icons/chart.svg?raw'
 
 import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
-
-import iClipboardDocumentCheck from '../../src/_includes/components/icons/clipboard-document-check.svg?raw'
-import iClock from '../../src/_includes/components/icons/clock.svg?raw'
+import iLink from '../../src/_includes/components/icons/link.svg?raw'
 import iChat from '../../src/_includes/components/icons/chat.svg?raw'
 
 import iCubeTransparent from '../../src/_includes/components/icons/cube-transparent.svg?raw'
-
-import iComputerDesktop from '../../src/_includes/components/icons/computer-desktop.svg?raw'
-import iDocumentCheck from '../../src/_includes/components/icons/document-check.svg?raw'
-import iFactory from '../../src/_includes/components/icons/factory.svg?raw'
-import iGlobeAlt from '../../src/_includes/components/icons/globe-alt.svg?raw'
-import iLink from '../../src/_includes/components/icons/link.svg?raw'
 import iChatBubbleLeftRightSm from '../../src/_includes/components/icons/chat-bubble-left-right-sm.svg?raw'
 import iCheckBadge from '../../src/_includes/components/icons/check-badge.svg?raw'
 import iChip from '../../src/_includes/components/icons/chip.svg?raw'
@@ -60,7 +50,6 @@ import iPower from '../../src/_includes/components/icons/power.svg?raw'
 import iPresentation from '../../src/_includes/components/icons/presentation.svg?raw'
 import iPulse from '../../src/_includes/components/icons/pulse.svg?raw'
 import iPuzzlePiece from '../../src/_includes/components/icons/puzzle-piece.svg?raw'
-import iRectangleStack from '../../src/_includes/components/icons/rectangle-stack.svg?raw'
 import iRocketLaunch from '../../src/_includes/components/icons/rocket-launch.svg?raw'
 import iScreen from '../../src/_includes/components/icons/screen.svg?raw'
 import iServerStack from '../../src/_includes/components/icons/server-stack.svg?raw'
@@ -82,8 +71,6 @@ export const navIcons: Record<string, string> = {
     'arrow-trending-up': iArrowTrendingUp,
     'arrows-pointing-out': iArrowsPointingOut,
     'arrows-right-left': iArrowsRightLeft,
-    'bell-alert': iBellAlert,
-    'bolt': iBolt,
     'book-open': iBookOpen,
     'building-library': iBuildingLibrary,
     'building-office-2': iBuildingOffice2,
@@ -95,15 +82,10 @@ export const navIcons: Record<string, string> = {
     'chat': iChat,
 
     'cloud': iCloud,
-    'cube-transparent': iCubeTransparent,
-
-    'clipboard-document-check': iClipboardDocumentCheck,
-    'clock': iClock,
-    'computer-desktop': iComputerDesktop,
-    'document-check': iDocumentCheck,
-    'factory': iFactory,
-    'globe-alt': iGlobeAlt,
+    // /vs/litmus/ and /vs/kepware/ (merged in #5783) name these two keys in their
+    // content, but they were never added here, so NavIcon rendered nothing for them.
     'link': iLink,
+    'cube-transparent': iCubeTransparent,
     'chat-bubble-left-right-sm': iChatBubbleLeftRightSm,
     'check-badge': iCheckBadge,
     'chip': iChip,
@@ -126,7 +108,6 @@ export const navIcons: Record<string, string> = {
     'presentation': iPresentation,
     'pulse': iPulse,
     'puzzle-piece': iPuzzlePiece,
-    'rectangle-stack': iRectangleStack,
     'rocket-launch': iRocketLaunch,
     'screen': iScreen,
     'server-stack': iServerStack,
