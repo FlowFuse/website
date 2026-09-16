@@ -4,8 +4,8 @@
 //
 // What the port changes on purpose:
 //  - The step glyphs were {% include %}d raw inside .ff-certify-list-icon. They are all
-//    stock Heroicons, so they become <Icon> from the installed set. .ff-certify-list-icon
-//    is w-[24px] with no height of its own, and <Icon> renders a masked <span> with no
+//    stock Heroicons, so they become <UIcon> from the installed set. .ff-certify-list-icon
+//    is w-[24px] with no height of its own, and <UIcon> renders a masked <span> with no
 //    intrinsic ratio, so each one is sized w-6 h-6 rather than left to fill the box.
 //  - ctaContactUs becomes <CtaContactUs>.
 //  - The Documentation link was written as "/../docs/device-agent/introduction/", which
@@ -42,7 +42,7 @@ useSeoMeta({
               <div class="ff-line-container" :class="{ 'sm:invisible': i === 0 }">
                 <div class="ff-line" />
               </div>
-              <div class="ff-certify-list-icon"><Icon :name="step.icon" class="w-6 h-6" /></div>
+              <div class="ff-certify-list-icon"><UIcon :name="step.icon" class="w-6 h-6" /></div>
               <div class="ff-line-container">
                 <div class="ff-line" :class="{ 'sm:hidden': i === TECHNICAL_STEPS.length - 1 }" />
               </div>
@@ -81,7 +81,7 @@ useSeoMeta({
             </div>
             <div class="ff-item ff-certified">
               <div class="ff-line-container"><div class="ff-line" /></div>
-              <div class="ff-certify-list-icon"><Icon name="i-heroicons-check-badge" class="w-6 h-6" /></div>
+              <div class="ff-certify-list-icon"><UIcon name="i-heroicons-check-badge" class="w-6 h-6" /></div>
               <div class="ff-line-container"><div class="ff-line sm:hidden" /></div>
               <div class="font-light sm:row-span-3 col-span-3 my-auto pt-6 sm:pt-0">Upon successful technical qualification, you will be granted the right to use the "FlowFuse Certified" logo.</div>
               <div class="w-[86px] col-span-3 sm:row-span-3 m-auto pt-6 sm:pt-0">
