@@ -56,7 +56,7 @@ useSchemaOrg([
 // The Cloud address. Self-hosted platforms answer on their own domain, so the block
 // takes one (host-swap) rather than telling the reader in prose to edit what they
 // have just copied.
-const CODING_NOTE = 'Command-line and editor agents such as Claude Code, Cursor, Visual Studio Code and Gemini CLI connect to the same URL.'
+const CODING_NOTE = 'Other command-line and editor agents, such as Cursor, Visual Studio Code and Gemini CLI, connect to the same URL.'
 
 const GOVERNANCE = {
     title: 'AI Governance you can <span class="text-indigo-600">prove</span>',

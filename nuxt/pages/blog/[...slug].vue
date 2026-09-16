@@ -89,7 +89,14 @@ const recommendedPosts = computed(() => (allPosts.value || []).filter(post => !i
 const relatedHeading = computed(() => relatedPosts.value.length ? 'Related Articles:' : 'Recommended Articles:')
 const postsToShow = computed(() => relatedPosts.value.length ? relatedPosts.value : recommendedPosts.value)
 
-const formattedDate = computed(() => page.value ? new Date(page.value.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
+const displayDate = computed(() => {
+    if (!page.value) return null
+    const published = new Date(page.value.date)
+    const updated = page.value.lastUpdated ? new Date(page.value.lastUpdated) : null
+    return updated && updated > published ? updated : published
+})
+const isUpdated = computed(() => !!page.value?.lastUpdated && displayDate.value > new Date(page.value.date))
+const formattedDate = computed(() => displayDate.value ? displayDate.value.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
 const heroImage = computed(() => page.value?.image || '/images/og-blog.jpg')
 const tldrList = computed(() => Array.isArray(page.value?.tldr) ? page.value?.tldr : null)
 const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.value?.tldr : null)
@@ -132,7 +139,7 @@ if (routeInfo.value.kind === 'post') {
             description: pageDescription,
             image: absoluteImage,
             datePublished: computed(() => page.value ? new Date(page.value.date).toISOString() : undefined),
-            dateModified: computed(() => page.value ? new Date(page.value.lastUpdated || page.value.date).toISOString() : undefined),
+            dateModified: computed(() => displayDate.value?.toISOString()),
             // Each Person's @id is their /blog/author/{slug}/ page, so the article and the
             // author page resolve to the same entity in the graph.
             author: computed(() => authorMembers.value.length
@@ -194,8 +201,8 @@ if (routeInfo.value.kind === 'post') {
           </template>
           <span v-else class="font-medium">FlowFuse</span>
           <span class="text-gray-300">|</span>
-          <time :datetime="new Date(page.lastUpdated || page.date).toISOString()">
-            {{ page.lastUpdated ? 'Updated ' : '' }}{{ formattedDate }}
+          <time :datetime="displayDate.toISOString()">
+            {{ isUpdated ? 'Updated ' : '' }}{{ formattedDate }}
           </time>
           <span class="text-gray-300">|</span>
           <span>{{ readingTime }} min read</span>
