@@ -57,7 +57,6 @@ that have no business relevance.
 - Free trials that didn't convert
 - Tradeshow follow-up
 - Case study downloads
-- Contact Us forms
 
 The SDR does not respond to "Book a Demo" form submissions — these are routed
 directly to the AE.
