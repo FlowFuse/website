@@ -11,7 +11,22 @@ import type { NitroRouteRules } from 'nitropack'
 import { nodeRedRedirects } from './redirects-node-red'
 
 export const redirects: Record<string, NitroRouteRules> = {
+    // src/careers.njk was a page whose only content was a <script> calling
+    // location.replace(site.jobBoard). A real redirect instead: no blank page while the
+    // script runs, and it works with JavaScript disabled. 302 rather than 301 because the
+    // board's address is not a permanent property of this URL.
+    '/careers/': { redirect: { to: 'https://boards.greenhouse.io/flowfuse', statusCode: 302 } },
     ...nodeRedRedirects,
+    // The seven sector pages under /industries/ were retired. They were live and
+    // indexed, so the URLs 301 to the listing rather than 404ing.
+    // /industries/automotive/ stays a page.
+    '/industries/aerospace-components/': { redirect: { to: '/industries/', statusCode: 301 } },
+    '/industries/aviation-aerospace/': { redirect: { to: '/industries/', statusCode: 301 } },
+    '/industries/electronics-appliances/': { redirect: { to: '/industries/', statusCode: 301 } },
+    '/industries/food-beverage/': { redirect: { to: '/industries/', statusCode: 301 } },
+    '/industries/life-sciences/': { redirect: { to: '/industries/', statusCode: 301 } },
+    '/industries/renewables/': { redirect: { to: '/industries/', statusCode: 301 } },
+    '/industries/semiconductors/': { redirect: { to: '/industries/', statusCode: 301 } },
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
@@ -186,4 +201,17 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/application-guide/node-red/overview/': { redirect: { to: '/docs/node-red-guide/', statusCode: 301 } },
     '/application-guide/node-red/patterns/': { redirect: { to: '/docs/node-red-guide/patterns/', statusCode: 301 } },
     '/application-guide/node-red/worked-examples/': { redirect: { to: '/docs/node-red-guide/worked-examples/', statusCode: 301 } },
+
+    // /community/newsletter/ was an orphan page: nothing on the site links to it, its
+    // archive of past issues hadn't been updated since November 2023, and the sign-up
+    // form it hosted is duplicated elsewhere (src/_includes/explore-more-content.njk,
+    // nuxt/components/ThankYouExploreMore.vue). Removed rather than ported.
+    '/community/newsletter/': { redirect: { to: '/blog/', statusCode: 301 } },
+
+    // /free-consultation/ was also an orphan: its one referring link
+    // (src/blog/2024/03/low-code-is-better.md) now points at /contact-us/ instead, and
+    // nothing else on the site linked to it. Removed rather than ported; redirected to
+    // /contact-us/ (the nearest live equivalent) for anyone with an old bookmark or an
+    // indexed link.
+    '/free-consultation/': { redirect: { to: '/contact-us/', statusCode: 301 } },
 }
