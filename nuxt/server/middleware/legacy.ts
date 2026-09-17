@@ -15,11 +15,11 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // left once its one referring blog post pointed at /contact-us/ instead) - but they stay
 // listed so their 301s in nuxt/redirects.ts are served by Nitro in dev rather than being
 // proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases', '/events']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases', '/partners', '/events']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
-// /blueprints, /careers, /community, /free-consultation, /industries, /node-red, /partners, /platform, /webinars
+// /blueprints, /careers, /community, /free-consultation, /industries, /node-red, /platform, /webinars
 
 // New pages should never grow that fallback set: nuxt/lib/legacy-pages.test.mjs fails
 // `npm test` if a PR adds a new .njk file under src/ that doesn't already exist on main,
