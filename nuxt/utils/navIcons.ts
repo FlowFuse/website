@@ -13,6 +13,7 @@ import iAcademicCap from '../../src/_includes/components/icons/academic-cap.svg?
 import iAirplane from '../../src/_includes/components/icons/airplane.svg?raw'
 import iArrowRight from '../../src/_includes/components/icons/arrow-right.svg?raw'
 import iArrowTrendingUp from '../../src/_includes/components/icons/arrow-trending-up.svg?raw'
+import iArrowsPointingOut from '../../src/_includes/components/icons/arrows-pointing-out.svg?raw'
 import iArrowsRightLeft from '../../src/_includes/components/icons/arrows-right-left.svg?raw'
 import iBookOpen from '../../src/_includes/components/icons/book-open.svg?raw'
 import iBuildingLibrary from '../../src/_includes/components/icons/building-library.svg?raw'
@@ -24,6 +25,7 @@ import iCertificate from '../../src/_includes/components/icons/certificate.svg?r
 import iChart from '../../src/_includes/components/icons/chart.svg?raw'
 
 import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
+import iLink from '../../src/_includes/components/icons/link.svg?raw'
 import iCodeblock from '../../src/_includes/components/icons/codeblock.svg?raw'
 import iChat from '../../src/_includes/components/icons/chat.svg?raw'
 
@@ -72,6 +74,7 @@ export const navIcons: Record<string, string> = {
     'airplane': iAirplane,
     'arrow-right': iArrowRight,
     'arrow-trending-up': iArrowTrendingUp,
+    'arrows-pointing-out': iArrowsPointingOut,
     'arrows-right-left': iArrowsRightLeft,
     'book-open': iBookOpen,
     'building-library': iBuildingLibrary,
@@ -84,6 +87,9 @@ export const navIcons: Record<string, string> = {
     'chat': iChat,
 
     'cloud': iCloud,
+    // /vs/litmus/ and /vs/kepware/ (merged in #5783) name these two keys in their
+    // content, but they were never added here, so NavIcon rendered nothing for them.
+    'link': iLink,
     'cube-transparent': iCubeTransparent,
     'codeblock': iCodeblock,
     'data': iData,
