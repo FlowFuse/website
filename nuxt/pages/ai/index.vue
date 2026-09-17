@@ -372,22 +372,6 @@ onUnmounted(() => {
               class="ff-cap-item"
               :class="ii === 0 ? 'pb-10' : 'mt-10 pt-10 pb-10 border-t border-indigo-100'"
             >
-              <!-- MEDIA WELL: a short clip of the capability in the product where one
-                   exists, the schematic where it does not. The schematic's own
-                   strength was that all eleven shared a three-column layout, which is
-                   also why the section showed the same picture eleven times and never
-                   the product. A capability that has shipped can show itself.
-
-                   Three capabilities keep the schematic, because there is nothing
-                   honest to show yet: agent blueprints have never been captured, and
-                   the two Connect items are demonstrated by the full recording further
-                   up the page rather than by a second clip of the same flow.
-
-                   Same treatment as that recording: autoplaying muted loop, WebM only.
-                   No controls here, unlike the demo - these run 4 seconds rather than
-                   57, so there is nothing to pause. Browsers pause an offscreen muted
-                   autoplay by themselves, so no observer and no preload hint. The
-                   poster is the first paint before playback starts. -->
               <div class="ff-cap-well" :class="item.clip ? 'ff-cap-well--clip' : ''">
                 <video
                   v-if="item.clip"
