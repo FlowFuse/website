@@ -49,12 +49,22 @@ const githubEditUrl = computed(() => {
     return `https://github.com/FlowFuse/website/edit/main/nuxt/content/${stem}.md`
 })
 
-// Studio mounts its editor on whichever page you are viewing once you have a session, so
-// this link only has to carry you through sign-in and back. `?redirect=` is the parameter
-// Studio's own keyboard shortcut uses. Docs pages keep their GitHub link, since that
-// markdown lives in FlowFuse/flowfuse and Studio is configured for this repository.
+// Studio mounts itself on whichever page you are viewing once you have a session, and its
+// own control in the bottom-left corner is the only thing that can open the editor: the
+// Studio app registers a `nuxt-studio` custom element and exposes no API, event or
+// shortcut a link could call. So this link can only carry you through sign-in, and it is
+// worth showing only when you are signed out. `?redirect=` is the parameter Studio's own
+// keyboard shortcut uses. Docs pages keep their GitHub link, since that markdown lives in
+// FlowFuse/flowfuse and Studio is configured for this repository.
 const studioRoute = useRuntimeConfig().public.studio?.route || '/_studio'
 const studioEditUrl = computed(() => `${studioRoute}?redirect=${encodeURIComponent(route.path)}`)
+
+// `studio-session-check` is the same non-httpOnly cookie Studio's own client plugin reads
+// before it fetches the session, so this resolves on first paint with no flash of the
+// wrong link. It can outlive a dead session by one page load, and Studio's session
+// endpoint clears it on the next request, so the GitHub link below is always offered.
+const studioSessionCheck = useCookie('studio-session-check')
+const isStudioSignedIn = computed(() => String(studioSessionCheck.value) === 'true')
 
 const breadcrumbItems = computed(() => {
     // findPageBreadcrumb excludes the current page unless told otherwise - `current: true`
@@ -121,8 +131,10 @@ defineOgImage('Default', {
                the static HTML. -->
           <ClientOnly>
             <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
-              <a :href="studioEditUrl">Edit this page</a>
-              <span class="px-1" aria-hidden="true">·</span>
+              <template v-if="!isStudioSignedIn">
+                <a :href="studioEditUrl">Sign in to edit</a>
+                <span class="px-1" aria-hidden="true">·</span>
+              </template>
               <a :href="githubEditUrl" target="_blank" rel="noopener">GitHub</a>
             </div>
           </ClientOnly>
