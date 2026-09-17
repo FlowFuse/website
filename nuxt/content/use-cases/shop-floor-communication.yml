@@ -1,6 +1,9 @@
----
+# Lifted verbatim from src/use-cases/shop-floor-communication.njk (11ty), which had no template body: the whole
+# page was frontmatter read by layouts/use-case.njk. Rendered now by
+# pages/use-cases/[slug].vue through the components in components/use-case/.
+slug: shop-floor-communication
 title: "Shop Floor Communication"
-meta:
+seoMeta:
   title: "Shop Floor Communication | Use Cases | FlowFuse"
   description: "Andon, alerts and escalations that reach the right people in seconds: from machine events to team channels, displays and phones. Built on Node-RED, managed with FlowFuse."
 problem: "The line stopped four minutes ago. The person who can fix it will find out when someone walks over."
@@ -14,16 +17,16 @@ customerPain:
     - "Machines know the moment something needs attention. Getting that moment to a human still relies on stack lights someone must see, radios someone must answer, and walks across the floor."
     - "Escalation is informal: if the first person is busy, the event waits. Response times are unmeasured because nobody records when the call for help actually started."
   cards:
-    - icon: "bell-alert"
+    - icon: "i-heroicons-bell-alert"
       title: "Alarms without an audience"
       detail: "Stack lights and local alarms help only whoever happens to be nearby."
-    - icon: "chat-bubble-left-right-sm"
+    - icon: "i-heroicons-chat-bubble-left-right"
       title: "Events never reach team channels"
       detail: "The tools people actually watch, phones, Teams, Slack, displays, are disconnected from the machines."
-    - icon: "arrow-path"
+    - icon: "i-heroicons-arrow-path"
       title: "No escalation path"
       detail: "If the first responder is occupied, nothing routes the event to the next person."
-    - icon: "clock"
+    - icon: "i-heroicons-clock"
       title: "Response time is invisible"
       detail: "Without timestamps from event to acknowledgment, response cannot be measured or improved."
 
@@ -96,4 +99,3 @@ aiBuildLayer:
 closingCta:
   heading: "Close the gap between event and action"
   description: "Talk to an expert about connected andon and escalation, or route your first event today."
----
