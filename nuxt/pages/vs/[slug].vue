@@ -96,7 +96,7 @@ useSeoMeta({
                 :href="migrationExpertHref"
                 @click="onMigrationExpertClick"
             >{{ page.hero.buttonText }}</a>
-            <CtaSignUp variant="ghost" position="hero-mobile" icon="i-lucide-arrow-right" class="flex flex-col w-full m-auto sm:mt-12" />
+            <CtaSignUp variant="ghost" position="hero-mobile" icon="i-lucide-arrow-right" class="w-full m-auto sm:mt-12" />
           </div>
         </div>
       </div>

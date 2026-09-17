@@ -122,8 +122,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
     eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
     eleventyConfig.addLayoutAlias('nohero', 'layouts/nohero.njk');
-    eleventyConfig.addLayoutAlias('solution', 'layouts/solution.njk');
-    eleventyConfig.addLayoutAlias('use-case', 'layouts/use-case.njk');
     eleventyConfig.addLayoutAlias('catalog', 'layouts/catalog.njk');
     eleventyConfig.addLayoutAlias('redirect', 'layouts/redirect.njk');
 
