@@ -1,6 +1,5 @@
 ---
 title: "Contributing"
-description: "Review FlowFuse's approach to Contributing, including the principles, processes, roles, and practical guidance used across the company."
 originalPath: development/contributing.md
 updated: git modified
 ---

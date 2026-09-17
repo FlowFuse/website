@@ -1,6 +1,5 @@
 ---
 title: "Human Resources Security Policy"
-description: "Read FlowFuse's Human Resources Security Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Human Resources Security Policy

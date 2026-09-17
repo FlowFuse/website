@@ -1,6 +1,5 @@
 ---
 title: "Fullstack Engineer"
-description: "Explore the Fullstack Engineer role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Fullstack Engineer

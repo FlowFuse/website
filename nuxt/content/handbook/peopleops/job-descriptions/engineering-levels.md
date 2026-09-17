@@ -1,6 +1,5 @@
 ---
 title: "Engineering Levels"
-description: "Explore the Engineering Levels role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # FlowFuse Engineering Levels

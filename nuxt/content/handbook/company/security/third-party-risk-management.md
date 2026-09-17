@@ -1,6 +1,5 @@
 ---
 title: "Third-Party Risk Management Policy"
-description: "Read FlowFuse's Third-Party Risk Management Policy and learn how its controls and responsibilities protect company data, systems, people, and operations."
 ---
 
 # Third-Party Risk Management Policy

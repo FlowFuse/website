@@ -1,6 +1,5 @@
 ---
 title: "FF Tables"
-description: "Review FlowFuse's approach to FF Tables, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Setting up a local FF Tables test environment

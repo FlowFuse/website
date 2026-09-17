@@ -1,6 +1,5 @@
 ---
 title: "Product Manager"
-description: "Explore the Product Manager role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Product Manager

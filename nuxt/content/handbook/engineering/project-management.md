@@ -1,6 +1,5 @@
 ---
 title: "Project Management"
-description: "Review FlowFuse's approach to Project Management, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Project Management

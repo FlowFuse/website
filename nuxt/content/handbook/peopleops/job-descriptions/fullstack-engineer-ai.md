@@ -1,6 +1,5 @@
 ---
 title: "Fullstack Engineer (AI-Focused)"
-description: "Explore the Fullstack Engineer (AI-Focused) role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Fullstack Engineer (AI-Focused)

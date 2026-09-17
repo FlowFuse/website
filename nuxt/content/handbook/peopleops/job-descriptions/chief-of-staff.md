@@ -1,6 +1,5 @@
 ---
 title: "Chief of Staff"
-description: "Explore the Chief of Staff role at FlowFuse, including its responsibilities, experience requirements, and impact on the company."
 ---
 
 # Chief of Staff

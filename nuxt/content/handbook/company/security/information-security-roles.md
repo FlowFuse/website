@@ -1,6 +1,5 @@
 ---
 title: "Information Security Roles and Responsibilities"
-description: "Review FlowFuse's information security roles and responsibilities for protecting systems, data, equipment, and company operations."
 ---
 
 # Information Security Roles and Responsibilities

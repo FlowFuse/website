@@ -1,6 +1,5 @@
 ---
 title: Blog
-description: "Review FlowFuse's approach to Blog, including the principles, processes, roles, and practical guidance used across the company."
 ---
 
 # Blog
