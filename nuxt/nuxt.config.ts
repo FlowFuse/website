@@ -492,6 +492,10 @@ export default defineNuxtConfig({
                     '/events/proveit-2026/',
                     '/events/hannover-messe-2026/',
                     '/events/hannover-messe-2025/',
+                    // /industries/automotive/ is its own .vue file, so Nuxt finds that
+                    // itself; the listing needs naming because nothing the crawler parses
+                    // links to it yet.
+                    '/industries/',
                     // The four campaign pages with their own layout are .vue files, linked only from off-site campaigns.
                     '/landing/tulip/',
                     '/landing/plc/',
