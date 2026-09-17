@@ -199,8 +199,8 @@ Laptop deprecation is considered to be 25% per calendar year from purchase. The
 buy-back price is calculated as the original cost paid by FlowFuse price minus
 the deprecation. The buy-back price is subject to approval by the CEO.
 
-For example, if you have a laptop that was purchased for $2,000 and you have had
-it for 1.5 years (1 full calendar year), the buy-back price would be $1,500.
+For example, if you have a laptop that was purchased for \$2,000 and you have had
+it for 1.5 years (1 full calendar year), the buy-back price would be \$1,500.
 
 ## Education & Conferences
 
