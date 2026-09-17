@@ -451,6 +451,12 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    /* The grid stretches every card to the tallest in its row, but the headshot keeps its
+       aspect ratio and .member-info its natural height, so a card whose role fits on one
+       line used to stop short of the row and leave the bottom open. Laying the card out as
+       a column lets .member-info take up that slack. */
+    display: flex;
+    flex-direction: column;
 }
 
 .team-headshot img {
@@ -500,6 +506,7 @@
 
 .member-info {
     position: relative;
+    flex: 1 1 auto;
     border-color: var(--color-indigo-200);
     background-color: white;
     text-align: center;
