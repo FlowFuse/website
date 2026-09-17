@@ -497,6 +497,11 @@ export default defineNuxtConfig({
                     '/landing/tulip/',
                     '/landing/plc/',
                     '/landing/factory-efficiency/',
+                    // The partner pages are .vue files; only the listing is linked from the nav.
+                    '/partners/',
+                    '/partners/certify-hardware/',
+                    '/partners/ctrlx/',
+                    '/partners/referral-sign-up/',
                     // The six architecture pages are .vue files with no listing that links to them all, so the crawler never reaches them.
                     '/use-cases/data-integration/',
                     '/use-cases/edge-connectivity/',
