@@ -3,7 +3,7 @@ title: "5 Whys Analysis Template: Free Download"
 metaTitle: "5 Whys Template: Free Download (2026)"
 subtitle: "Download a free 5 Whys template for documenting root cause analysis, corrective actions, and verification."
 description: "Download a free 5 Whys root cause analysis template and learn how to fill it out, from defining the problem and asking why to identifying the root cause and tracking corrective actions."
-date: 2026-09-10
+date: 2026-09-17
 authors: ["sumit-shinde"]
 image: /blog/2026/09/images/5-why-template.png
 tags:
@@ -59,7 +59,7 @@ The team fills in the problem statement with the exact count, shift, and defect 
 
 The template makes this process repeatable across shifts and lines without each team reinventing the format.
 
-## Keep the Template Consistent, Not Complicated
+## Keep the Template Simple
 
 A 5 Whys template should stay simple enough to fill out during the analysis itself, not after the fact from memory.
 
