@@ -1,4 +1,5 @@
-// Icon markup for the marketing nav, keyed exactly as src/_data/chrome.json spells it.
+// Icon markup for the marketing nav, keyed exactly as src/_data/chrome.json spells it,
+// plus the handful of keys page content asks for by name through <NavIcon>.
 //
 // These are the same files Eleventy's `navoption` shortcode reads, so both
 // renderers draw the identical glyph from one source. The imports are listed
@@ -25,9 +26,13 @@ import iChart from '../../src/_includes/components/icons/chart.svg?raw'
 
 import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
 import iLink from '../../src/_includes/components/icons/link.svg?raw'
+import iCodeblock from '../../src/_includes/components/icons/codeblock.svg?raw'
 import iChat from '../../src/_includes/components/icons/chat.svg?raw'
 
 import iCubeTransparent from '../../src/_includes/components/icons/cube-transparent.svg?raw'
+import iData from '../../src/_includes/components/icons/data.svg?raw'
+import iDatabase from '../../src/_includes/components/icons/database.svg?raw'
+import iLock from '../../src/_includes/components/icons/lock.svg?raw'
 import iChatBubbleLeftRightSm from '../../src/_includes/components/icons/chat-bubble-left-right-sm.svg?raw'
 import iCheckBadge from '../../src/_includes/components/icons/check-badge.svg?raw'
 import iChip from '../../src/_includes/components/icons/chip.svg?raw'
@@ -86,6 +91,10 @@ export const navIcons: Record<string, string> = {
     // content, but they were never added here, so NavIcon rendered nothing for them.
     'link': iLink,
     'cube-transparent': iCubeTransparent,
+    'codeblock': iCodeblock,
+    'data': iData,
+    'database': iDatabase,
+    'lock': iLock,
     'chat-bubble-left-right-sm': iChatBubbleLeftRightSm,
     'check-badge': iCheckBadge,
     'chip': iChip,
