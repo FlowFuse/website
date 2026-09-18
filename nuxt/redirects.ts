@@ -17,16 +17,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     // board's address is not a permanent property of this URL.
     '/careers/': { redirect: { to: 'https://boards.greenhouse.io/flowfuse', statusCode: 302 } },
     ...nodeRedRedirects,
-    // The seven sector pages under /industries/ were retired. They were live and
-    // indexed, so the URLs 301 to the listing rather than 404ing.
-    // /industries/automotive/ stays a page.
-    '/industries/aerospace-components/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/aviation-aerospace/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/electronics-appliances/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/food-beverage/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/life-sciences/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/renewables/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/semiconductors/': { redirect: { to: '/industries/', statusCode: 301 } },
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },

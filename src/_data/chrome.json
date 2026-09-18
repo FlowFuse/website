@@ -134,7 +134,7 @@
                     {
                         "title": "By Industry",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-[9] xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-[2] xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Automotive",
