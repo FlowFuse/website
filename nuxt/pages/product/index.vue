@@ -10,61 +10,22 @@
 // device-agent). A second overview at /platform/ would re-split what those
 // redirects joined, and the nav's "Platform" menu already points here.
 //
-// The brief, from sales: a demo has done its job if the viewer leaves with two
-// things, how FlowFuse distributes code and what the major components are. The
-// homepage speaks in industry terms (edge devices, hosted cloud, one app on
-// every site); this page is one level down and speaks in ours, and the docs go
-// deeper still. So the spine is the Application Guide's - Build, Deliver, Run,
-// Connect, Govern - with every stage linking into the guide or the docs page
-// that owns it, and the commercial packaging (Edge/Hub/Fleet) sitting after
-// it, once "what is it" has been answered and "which one am I" is the live
-// question.
+// A landing page, not a manual. The homepage speaks in industry terms (edge
+// devices, hosted cloud, one app on every site); this page is one level down
+// and speaks in ours, and the docs go deeper still - so every stage below
+// states its point in a line or two and then links out to the guide or the
+// docs page that owns it, rather than explaining it here. The spine is the
+// Application Guide's: Build, Deliver, Run, Connect, Govern, with the
+// commercial packaging (Edge/Hub/Fleet) after it, once "what is it" has been
+// answered and "which one am I" is the live question.
 useSeoMeta({
     title: 'The FlowFuse Platform',
-    description: 'What the FlowFuse platform is made of and how the pieces fit together: the major components, the two ways it distributes application code, where applications run, and which of Edge, Hub and Fleet fits your team.',
+    description: 'How FlowFuse builds, delivers, runs, connects and governs industrial applications on Node-RED, from the edge to the cloud, and which of Edge, Hub and Fleet fits your team.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',
 })
 
 const capture = useCapture()
-
-// The same nodes the Application Guide's Foundations page draws, so the two
-// pages cannot drift into showing different architectures. Rendered live by
-// <ArchDiagram> rather than pointing at one of the orphaned SVG exports left
-// in nuxt/public/images/application-guide/ by the retired microsite.
-const BIG_PICTURE = {
-    nodes: [
-        { id: 'users', label: 'Users', sub: 'operators & teams', accent: 'slate', many: true, span: 2, col: 2, row: 1 },
-        { id: 'hosted', label: 'Hosted Instance', sub: 'one or many · cloud or your server', accent: 'indigo', many: true, col: 1, row: 2 },
-        { id: 'dash', label: 'Dashboard', sub: 'live operator UI', accent: 'blue', col: 2, row: 2 },
-        { id: 'broker', label: 'Team Broker', sub: 'MQTT message bus', accent: 'teal', col: 3, row: 2 },
-        { id: 'tables', label: 'FlowFuse Tables', sub: 'shared SQL database', accent: 'green', col: 4, row: 2 },
-        { id: 'remote', label: 'Remote Instance', sub: 'one per device, across sites', accent: 'slate', many: true, span: 2, col: 2, row: 3 },
-    ],
-    groups: [
-        { id: 'platform', label: 'FlowFuse Platform - runs and connects your instances', accent: 'indigo', nodes: ['hosted', 'dash', 'broker', 'tables'] },
-        { id: 'agent', label: 'Device Agent - bridges platform to the edge', accent: 'red', nodes: ['remote'] },
-    ],
-    edges: [
-        { from: 'users', to: 'platform', label: 'access' },
-        { from: 'agent', to: 'platform', label: 'managed by' },
-    ],
-}
-
-// The component roll-call, as labelled tiles rather than prose. Every entry
-// goes somewhere: an existing product page or the docs page that defines it.
-// No entry without a destination, which is the check that keeps this list from
-// growing into marketing vocabulary.
-const COMPONENTS = [
-    { label: 'Hosted Instances', icon: 'i-lucide-cloud', note: 'Node-RED runtimes on FlowFuse infrastructure or your own server.', to: '/docs/user/concepts/' },
-    { label: 'Remote Instances', icon: 'i-lucide-cpu', note: 'The same runtime on your edge hardware, via the Device Agent.', to: '/platform/device-agent/' },
-    { label: 'Dashboards', icon: 'i-lucide-layout-dashboard', note: 'The operator-facing UI, built from the same flows.', to: '/platform/dashboard/' },
-    { label: 'Team Broker', icon: 'i-lucide-radio', note: 'A managed MQTT bus that ties sites together.', to: '/docs/user/teambroker/' },
-    { label: 'FlowFuse Tables', icon: 'i-lucide-database', note: 'One shared operational data store.', to: '/docs/user/ff-tables/' },
-    { label: 'Snapshots', icon: 'i-lucide-camera', note: 'A versioned, restorable point in time for an application.', to: '/docs/user/snapshots/' },
-    { label: 'Pipelines', icon: 'i-lucide-git-branch', note: 'Promote a snapshot from development to production.', to: '/docs/user/devops-pipelines/' },
-    { label: 'Team Library', icon: 'i-lucide-library', note: 'Flows, subflows and nodes shared across the team.', to: '/docs/user/shared-library/' },
-]
 
 // Declared rather than inferred so `diagrams` can be optional: only the Deliver
 // stage draws one, and reading `item.diagrams` off an inferred union of five
@@ -95,10 +56,10 @@ const STAGES: Stage[] = [
         heading: 'Build.',
         summary: 'One editor, one runtime. Standard Node-RED, so the flows stay yours and the skills already exist.',
         items: [
-            { name: 'Node-RED', detail: 'The open runtime and flow editor underneath everything. FlowFuse runs standard Node-RED, which is what keeps an application portable and the foundation yours.', to: '/node-red/' },
-            { name: 'FlowFuse Expert', detail: 'Describe what you need and get starting flows, Function node code, SQL and dashboard UI in the editor, plus a plain-language explanation of any flow you inherited.', to: '/ai/' },
-            { name: 'Blueprints', detail: 'Working starting points for common industrial problems, deployable as they are and then adapted, instead of starting from a blank canvas.', to: '/blueprints/' },
-            { name: 'FlowFuse Dashboard', detail: 'The operator-facing interface, built from the same flows rather than bolted on from a separate tool, so the UI and the logic ship together.', to: '/platform/dashboard/' },
+            { name: 'Node-RED', detail: 'The open runtime and editor underneath everything, unforked, so an application stays portable and the foundation stays yours.', to: '/node-red/' },
+            { name: 'FlowFuse Expert', detail: 'AI in the editor: starting flows, Function code, SQL and dashboard UI, plus plain-language explanations of flows you inherited.', to: '/ai/' },
+            { name: 'Blueprints', detail: 'Working starting points for common industrial problems, instead of a blank canvas.', to: '/blueprints/' },
+            { name: 'FlowFuse Dashboard', detail: 'The operator interface, built from the same flows, so the UI and the logic ship together.', to: '/platform/dashboard/' },
         ],
     },
     {
@@ -130,10 +91,10 @@ const STAGES: Stage[] = [
             },
         ],
         items: [
-            { name: 'Whole app', detail: 'Capture the application as a snapshot and promote that exact snapshot through development, staging and production, and out to a device group. Each target supplies its own environment variables, so one artifact runs at every site without an edit.', to: '/docs/application-guide/app-delivery-methods/' },
-            { name: 'Pieces', detail: 'Publish the parts worth standardising, subflows and custom nodes, as packages into a library your teams install from. Local teams keep ownership of their own application while the central team still controls the parts that matter.', to: '/docs/user/shared-library/' },
-            { name: 'Hardware apps', detail: 'The three shapes an application takes on a device: a sealed Packaged App identical everywhere, a Configurable App tuned by a per-site config file, or an Edge Building Block wired into flows the site owns.', to: '/docs/application-guide/app-delivery-methods/hardware-apps/' },
-            { name: 'Software apps', detail: 'The three shapes it takes on an instance: a headless Packaged App, a user-facing Data-Driven App backed by a store, or a Shared Building Block many instances embed.', to: '/docs/application-guide/app-delivery-methods/software-apps/' },
+            { name: 'Whole app', detail: 'Promote one snapshot through development, staging and production, and out to a device group. Each target brings its own environment variables, so one artifact runs everywhere unedited.', to: '/docs/application-guide/app-delivery-methods/' },
+            { name: 'Pieces', detail: 'Publish subflows and custom nodes as packages your teams install from, so the centre owns what must be standard and each site owns the rest.', to: '/docs/user/shared-library/' },
+            { name: 'Hardware apps', detail: 'The three shapes on a device: a sealed Packaged App, a Configurable App tuned per site, or an Edge Building Block.', to: '/docs/application-guide/app-delivery-methods/hardware-apps/' },
+            { name: 'Software apps', detail: 'The three shapes on an instance: a headless Packaged App, a Data-Driven App, or a Shared Building Block.', to: '/docs/application-guide/app-delivery-methods/software-apps/' },
         ],
     },
     {
@@ -143,10 +104,10 @@ const STAGES: Stage[] = [
         heading: 'Run.',
         summary: 'The same runtime next to the equipment, on-prem and in the cloud, addressed as a fleet rather than one machine at a time.',
         items: [
-            { name: 'Hosted Instances', detail: 'Managed Node-RED on FlowFuse infrastructure or on your own server, with the platform handling the runtime so your team handles the application.', to: '/docs/user/concepts/' },
-            { name: 'Remote Instances', detail: 'The Device Agent runs the same applications on edge hardware, including networks with no inbound access, so a plant behind a firewall is still a deployment target.', to: '/platform/device-agent/' },
-            { name: 'Device groups', detail: 'Devices addressed as a fleet, so the target of a deployment can be a hundred machines rather than one, and a rollback is one action rather than a hundred.', to: '/docs/user/device-groups/' },
-            { name: 'OT, IT and IIoT architectures', detail: 'The worked layouts for each: edge with the server in IT or a DMZ, air-gapped sites, on-prem and per-site cloud hosting, and a Unified Namespace across every site.', to: '/docs/application-guide/architectures/' },
+            { name: 'Hosted Instances', detail: 'Managed Node-RED on our infrastructure or your own server, so your team handles the application, not the runtime.', to: '/docs/user/concepts/' },
+            { name: 'Remote Instances', detail: 'The same applications on edge hardware, including networks with no inbound access, so a plant behind a firewall is still a target.', to: '/platform/device-agent/' },
+            { name: 'Device groups', detail: 'Deploy to a hundred machines as one target, and roll back the same way.', to: '/docs/user/device-groups/' },
+            { name: 'OT, IT and IIoT architectures', detail: 'Worked layouts for edge, DMZ, air-gapped, on-prem and multi-site cloud.', to: '/docs/application-guide/architectures/' },
         ],
     },
     {
@@ -156,10 +117,10 @@ const STAGES: Stage[] = [
         heading: 'Connect.',
         summary: 'What the application reads and writes. Two data services are built into every install, and anything else is exposed to the fleet the same way.',
         items: [
-            { name: 'Team Broker and UNS', detail: 'A managed MQTT broker in every install, so a Unified Namespace does not start with procuring infrastructure. Edge publishes once and many subscribe, across sites.', to: '/docs/user/teambroker/' },
-            { name: 'FlowFuse Tables', detail: 'A relational store built in and exposed to every instance, for applications that need to keep state rather than pass it on.', to: '/docs/user/ff-tables/' },
-            { name: 'Integrations', detail: 'Industrial protocols and enterprise systems, from OPC UA and Modbus through to ERPs, databases and cloud APIs.', to: '/integrations/' },
-            { name: 'Project Nodes', detail: 'Instance-to-instance messaging without standing up a broker or opening a port, which is also how you expose any other store or service to the fleet.', to: '/docs/user/projectnodes/' },
+            { name: 'Team Broker and UNS', detail: 'A managed MQTT broker in every install, so a Unified Namespace does not start with procuring infrastructure.', to: '/docs/user/teambroker/' },
+            { name: 'FlowFuse Tables', detail: 'A relational store built in and reachable from every instance, for applications that keep state rather than pass it on.', to: '/docs/user/ff-tables/' },
+            { name: 'Integrations', detail: 'OPC UA and Modbus through to ERPs, databases and cloud APIs.', to: '/integrations/' },
+            { name: 'Project Nodes', detail: 'Instance-to-instance messaging without standing up a broker or opening a port.', to: '/docs/user/projectnodes/' },
         ],
     },
     {
@@ -169,10 +130,10 @@ const STAGES: Stage[] = [
         heading: 'Govern.',
         summary: 'One place to say who may do what, and to show afterwards what actually happened.',
         items: [
-            { name: 'Role-based access control', detail: 'Who can edit, who can deploy, who can only look, per team and per application, enforced by the platform on every call rather than by convention.', to: '/docs/user/role-based-access-control/' },
-            { name: 'Single sign-on', detail: 'SAML and LDAP against the identity provider you already run, so joining and leaving the platform follows joining and leaving the company.', to: '/docs/admin/sso/' },
-            { name: 'Audit logs', detail: 'A record of who changed and deployed what, at team and instance level, which is the part that turns a claim about control into evidence.', to: '/docs/user/logs/' },
-            { name: 'Self-hosted and certified', detail: 'SOC 2 Type 1 and Type 2, with a self-hosted option for sites where nothing may leave the perimeter.', to: '/platform/security/' },
+            { name: 'Role-based access control', detail: 'Who can edit, deploy, or only look, per team and per application, enforced on every call.', to: '/docs/user/role-based-access-control/' },
+            { name: 'Single sign-on', detail: 'SAML and LDAP against the identity provider you already run.', to: '/docs/admin/sso/' },
+            { name: 'Audit logs', detail: 'Who changed and deployed what, at team and instance level. The part that turns a claim into evidence.', to: '/docs/user/logs/' },
+            { name: 'Self-hosted and certified', detail: 'SOC 2 Type 1 and Type 2, with a self-hosted option where nothing may leave the perimeter.', to: '/platform/security/' },
         ],
     },
 ]
@@ -225,22 +186,21 @@ const TIER_ITEMS = TIERS.map(tier => ({ ...tier, slug: tier.id, id: `tier-${tier
 // The four doors out. Deliberately not a fifth: the closing CTA below is the
 // sales path, and these four are the self-directed ones.
 const NEXT = [
-    { name: 'Documentation.', detail: 'Reference and how-to for every component on this page.', action: 'Read the docs', icon: 'i-lucide-book-open', to: '/docs/' },
-    { name: 'Application guide.', detail: 'The decisions behind an application, before you build it.', action: 'Open the guide', icon: 'i-lucide-compass', to: '/docs/application-guide/' },
-    { name: 'Blueprints.', detail: 'Working applications for common industrial problems.', action: 'Browse blueprints', icon: 'i-lucide-layout-template', to: '/blueprints/' },
-    { name: 'Professional services.', detail: 'Our engineers on your first application, with you.', action: 'See services', icon: 'i-lucide-users', to: '/professional-services/' },
+    { name: 'Documentation', detail: 'Reference and how-to for everything on this page.', action: 'Read the docs', icon: 'i-lucide-book-open', to: '/docs/' },
+    { name: 'Application guide', detail: 'The decisions behind an application, before you build it.', action: 'Open the guide', icon: 'i-lucide-compass', to: '/docs/application-guide/' },
+    { name: 'Blueprints', detail: 'Working applications for common industrial problems.', action: 'Browse blueprints', icon: 'i-lucide-layout-template', to: '/blueprints/' },
+    { name: 'Professional services', detail: 'Our engineers on your first application, with you.', action: 'See services', icon: 'i-lucide-users', to: '/professional-services/' },
 ]
 </script>
 
 <template>
   <div class="w-full bg-white">
-    <!-- HERO: eyebrow, one claim, the canonical one-sentence definition. The
+    <!-- HERO: one claim, then the canonical one-sentence definition. The
          definition sentence is the Application Guide's own, verbatim, because
          sales quotes it and two versions of it would be one too many. -->
     <section class="w-full border-b border-gray-200 px-6">
       <div class="mx-auto max-w-screen-lg py-16 sm:py-24">
-        <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">Platform</p>
-        <h1 class="mt-8 mb-0 max-w-4xl text-5xl font-medium leading-[1.05] tracking-tight text-gray-900 md:text-6xl lg:text-7xl">Build it once. Run it everywhere.</h1>
+        <h1 class="mt-0 mb-0 max-w-4xl text-5xl font-medium leading-[1.05] tracking-tight text-gray-900 md:text-6xl lg:text-7xl">Build it once. Run it everywhere.</h1>
         <p class="mt-8 max-w-2xl text-lg text-gray-600">
           FlowFuse is an application platform for building, deploying and managing industrial applications on Node-RED, across IT, OT and IIoT, from the edge to the cloud, governed from one place.
         </p>
@@ -251,7 +211,7 @@ const NEXT = [
       </div>
     </section>
 
-    <!-- WHY: the three differentiators, kept short so the architecture is still
+    <!-- WHY: the three differentiators, kept short so the five stages are still
          the first substantial thing an evaluator reads. -->
     <section class="w-full border-b border-gray-200 px-6 py-16 sm:py-24">
       <div class="mx-auto max-w-screen-lg">
@@ -261,57 +221,15 @@ const NEXT = [
       </div>
     </section>
 
-    <!-- OVERVIEW: the two takeaways, then the architecture and the component
-         roll-call that back them. The diagram sits on a flat brand panel so the
-         page has one moment of colour before the stages, which are all rules
-         and type. -->
-    <section class="w-full border-b border-gray-200 bg-gray-50 px-6 py-16 sm:py-24">
-      <div class="mx-auto max-w-screen-lg">
-        <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">Overview</p>
-        <h2 class="mt-6 max-w-3xl tracking-tight">
-          Two things to take away.
-        </h2>
-        <p class="mt-6 max-w-2xl text-gray-600">
-          How application code is distributed across your sites, and the major components that carry it. Everything below is one of those two.
-        </p>
-
-        <div class="mt-12 bg-indigo-600 p-4 sm:p-10">
-          <div class="ff-diagram-plain overflow-x-auto bg-white p-4 sm:p-8">
-            <ArchDiagram :nodes="BIG_PICTURE.nodes" :groups="BIG_PICTURE.groups" :edges="BIG_PICTURE.edges" />
-          </div>
-          <p class="m-0 mt-4 text-sm text-indigo-100">
-            Where each piece sits: instances running your applications, the Device Agent bridging the platform to the edge, and the broker and database every instance can reach.
-          </p>
-        </div>
-
-        <!-- Labelled tiles rather than prose, one hairline grid so the roll-call
-             reads as one platform. Grid gap of 1px over a gray background is
-             what draws the rules, so no per-tile borders to keep aligned. -->
-        <div class="mt-12 grid grid-cols-1 gap-px border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
-          <a
-            v-for="component in COMPONENTS"
-            :key="component.label"
-            :href="component.to"
-            class="group flex flex-col gap-3 bg-white p-6 no-underline hover:bg-indigo-50/60 hover:no-underline"
-            @click="capture('cta-platform-component', { position: 'platform-components', component: component.label })"
-          >
-            <UIcon :name="component.icon" class="size-5 text-indigo-600" aria-hidden="true" />
-            <span class="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-gray-900">{{ component.label }}</span>
-            <span class="text-sm text-gray-600">{{ component.note }}</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- STAGES: the five, behind the sticky contents list. One template per
          stage id rather than a single `#item` slot, because ScrollSpySections
          renders `<slot :name="item.id">` - a slot named `item` is never looked
          up and every stage would render empty.
 
          Wider than the page's other sections (screen-xl, not screen-lg): this
-         one carries three columns at lg - the contents rail, the pinned stage
-         header, and the scrolling content - and at screen-lg the delivery
-         diagrams end up in a ~440px column, which is narrower than they draw. -->
+         one carries three columns at xl - the contents rail, the pinned stage
+         header, and the scrolling content - and in a screen-lg container the
+         delivery diagrams end up in a ~440px column, narrower than they draw. -->
     <section class="w-full border-b border-gray-200 px-6 py-16 sm:py-24">
       <div class="mx-auto max-w-screen-xl">
         <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">How it works</p>
@@ -367,7 +285,7 @@ const NEXT = [
                      pinned header, so the column needs the length. gap-px over a
                      gray ground draws the rules, as with the component tiles. -->
                 <div class="grid grid-cols-1 gap-px border border-gray-200 bg-gray-200">
-                  <div v-for="entry in item.items" :key="entry.name" class="flex flex-col gap-3 bg-white p-6 sm:p-8">
+                  <div v-for="entry in item.items" :key="entry.name" class="flex flex-col gap-3 bg-white p-6">
                     <span class="text-xl font-medium text-gray-900">{{ entry.name }}</span>
                     <p class="m-0 flex-1 text-gray-600">{{ entry.detail }}</p>
                     <a
