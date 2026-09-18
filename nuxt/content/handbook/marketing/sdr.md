@@ -1,5 +1,11 @@
 ---
-title: "Sales Development Representative (SDR)"
+title: Sales Development Representative (SDR)
+description: |-
+  The SDR works leads — inbound and outbound — toward a booked meeting. The role
+  sits organizationally within the Marketing department, as the SDR output
+  (meetings attended and qualified) depends on marketing's lead generation and
+  activation work. See the SDR job description
+  for the full role definition.
 ---
 
 # Sales Development Representative (SDR)
@@ -21,13 +27,14 @@ increases with the SDR's running meeting count for that month, up to a cap.
 **This formula applies from October 2026 onwards.**
 
 Variables
+
 - $n$: the sequence number of the meeting within the month (1 for the
-  SDR's first qualifying meeting that month, 2 for the second, and so on)
+SDR's first qualifying meeting that month, 2 for the second, and so on)
 - $b(n)$: the bonus earned for that meeting
 - $C$: Cap (the maximum bonus payable for a single meeting)
 - $B$: Bonus (the full bonus earned for hitting quota)
 - $M$: Meetings to full bonus (the number of meetings required to earn $B$,
-  i.e. quota)
+i.e. quota)
 
 ### Formula
 
@@ -53,6 +60,7 @@ that have no business relevance.
 ##### SDR Focus Areas
 
 **Warm outreach:**
+
 - Webinar follow-up
 - Free trials that didn't convert
 - Tradeshow follow-up
@@ -62,6 +70,7 @@ The SDR does not respond to "Book a Demo" form submissions — these are routed
 directly to the AE.
 
 **Cold outbound:**
+
 - Cold calling
 
 ###### SDR Credit
@@ -71,7 +80,8 @@ they worked re-enters the sales funnel through another method within that
 window.
 
 **Examples:**
+
 1. An SDR follows up on a webinar lead, and that lead submits a "Book a Demo"
-   form within 45 days.
+form within 45 days.
 2. An SDR calls a cold lead, and that lead submits a "Book a Demo" form within
-   45 days.
+45 days.
