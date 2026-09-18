@@ -158,6 +158,28 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
+        // Copied into nuxt/content/blueprints by modules/blueprints-source.ts from the
+        // separate FlowFuse/blueprint-library repository - see nuxt/lib/blueprints-sync.mjs.
+        // One file per blueprint, at <category>/<slug>.md, so the path is the route.
+        blueprints: defineCollection({
+            type: 'page',
+            source: 'blueprints/**/*.md',
+            schema: z.object({
+                description: z.string().optional(),
+                // Site-absolute by the time it lands here; the sync rewrites the
+                // blueprint-relative path the README authors.
+                image: z.string().optional(),
+                tags: z.array(z.string()).optional(),
+                // The id app.flowfuse.com deploys from. Optional so a new blueprint without
+                // one still builds; its Deploy button is then hidden rather than broken.
+                blueprintId: z.string().optional(),
+                // A partner slug resolved by nuxt/lib/blueprint-display.mjs. Unset means FlowFuse.
+                author: z.string().optional(),
+                // When the source README last changed, from the library's git history.
+                // Feeds the sitemap's lastmod the way docs' `updated` does.
+                updated: z.string().optional(),
+            })
+        }),
         // Source files stay at src/customer-stories/ (11ty's historical location) rather than
         // being copied into nuxt/content/ - keeps this migration a content-config-only change.
         // The directory data file (src/customer-stories/customer-stories.json) sets
