@@ -178,7 +178,7 @@ function selectClient (id: string) {
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
         <div v-else class="ff-agent-step__cta">
-          <FfCommand :command="client.step1Command || ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap />
+          <FfCommand :command="client.step1Command || ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap :wrap="Boolean(client.step1Command)" />
         </div>
       </div>
 

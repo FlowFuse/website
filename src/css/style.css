@@ -522,6 +522,21 @@ dl.message-properties > dd {
     @apply rounded-lg p-4;
 }
 
+/* A sentence, not an address. The stacked block holds one line on purpose, which is
+   right for something you read left to right and paste. For a prompt it is wrong
+   twice over: nowrap sizes the block to the whole sentence, so it pushes out of its
+   column and past the card's edge, and the half you cannot see is the half that
+   tells you what the prompt does.
+
+   word-break goes back to normal, overriding the base rule's break-all, so words
+   stay whole; overflow-wrap lets the address break if it has to. */
+.ff-command--stacked.ff-command--wrap .ff-command__text {
+    white-space: pre-wrap;
+    overflow-x: visible;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
 /* Self-hosted address control. Under the block, not inside it: the block is what you
    copy, and this changes what that is. Closed by default as a single line of link
    text, because most readers are on Cloud and the address is already right for them. */
