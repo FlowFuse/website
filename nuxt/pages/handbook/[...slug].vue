@@ -49,6 +49,23 @@ const githubEditUrl = computed(() => {
     return `https://github.com/FlowFuse/website/edit/main/nuxt/content/${stem}.md`
 })
 
+// Studio mounts itself on whichever page you are viewing once you have a session, and its
+// own control in the bottom-left corner is the only thing that can open the editor: the
+// Studio app registers a `nuxt-studio` custom element and exposes no API, event or
+// shortcut a link could call. So this link can only carry you through sign-in, and it is
+// worth showing only when you are signed out. `?redirect=` is the parameter Studio's own
+// keyboard shortcut uses. Docs pages keep their GitHub link, since that markdown lives in
+// FlowFuse/flowfuse and Studio is configured for this repository.
+const studioRoute = useRuntimeConfig().public.studio?.route || '/_studio'
+const studioEditUrl = computed(() => `${studioRoute}?redirect=${encodeURIComponent(route.path)}`)
+
+// `studio-session-check` is the same non-httpOnly cookie Studio's own client plugin reads
+// before it fetches the session, so this resolves on first paint with no flash of the
+// wrong link. It can outlive a dead session by one page load, and Studio's session
+// endpoint clears it on the next request, so the GitHub link below is always offered.
+const studioSessionCheck = useCookie('studio-session-check')
+const isStudioSignedIn = computed(() => String(studioSessionCheck.value) === 'true')
+
 const breadcrumbItems = computed(() => {
     // findPageBreadcrumb excludes the current page unless told otherwise - `current: true`
     // includes it so it can be the last, unlinked crumb below.
@@ -108,9 +125,19 @@ defineOgImage('Default', {
       <div class="lg right-nav">
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
           <HandbookToc :links="page?.body?.toc?.links" />
-          <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
-            <a :href="githubEditUrl" target="_blank" rel="noopener">Edit this page</a>
-          </div>
+          <!-- Client-only, as pages/docs/[...slug].vue does with its own edit link: /_studio is
+               a server route with no prerendered file, so hyperlink (the build's link checker,
+               which cannot be told to ignore a path) reads it as a broken link when it is in
+               the static HTML. -->
+          <ClientOnly>
+            <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
+              <template v-if="!isStudioSignedIn">
+                <a :href="studioEditUrl">Sign in to edit</a>
+                <span class="px-1" aria-hidden="true">·</span>
+              </template>
+              <a :href="githubEditUrl" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </ClientOnly>
         </div>
       </div>
 
