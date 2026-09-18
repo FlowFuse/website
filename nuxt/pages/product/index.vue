@@ -195,18 +195,27 @@ const NEXT = [
 
 <template>
   <div class="w-full bg-white">
-    <!-- HERO: one claim, then the canonical one-sentence definition. The
-         definition sentence is the Application Guide's own, verbatim, because
-         sales quotes it and two versions of it would be one too many. -->
+    <!-- HERO: the page's original one, copy and product shot both, kept through
+         the merge rather than replaced. The screenshot is the only image above
+         the fold, so it loads eager while everything below stays lazy. -->
     <section class="w-full border-b border-gray-200 px-6">
       <div class="mx-auto max-w-screen-lg py-16 sm:py-24">
-        <h1 class="mt-0 mb-0 max-w-4xl text-5xl font-medium leading-[1.05] tracking-tight text-gray-900 md:text-6xl lg:text-7xl">Build it once. Run it everywhere.</h1>
-        <p class="mt-8 max-w-2xl text-lg text-gray-600">
-          FlowFuse is an application platform for building, deploying and managing industrial applications on Node-RED, across IT, OT and IIoT, from the edge to the cloud, governed from one place.
-        </p>
-        <div class="mt-10 flex flex-wrap items-center gap-4">
-          <CtaBookDemo variant="highlight" position="hero" />
-          <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
+        <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <div class="text-center lg:text-left">
+            <h1 class="m-0 text-4xl font-medium md:text-5xl">
+              Build, deploy, and govern industrial applications - <span class="text-red-600">in record time</span>
+            </h1>
+            <p class="mt-6 max-w-xl mx-auto text-lg lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
+            <div class="mt-8 flex flex-row flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <CtaBookDemo variant="highlight" position="hero" />
+              <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
+            </div>
+          </div>
+          <div class="w-full">
+            <div class="rounded-lg border-2 border-red-100 shadow-2xl">
+              <img src="/images/product/flowfuse-ui.png" alt="FlowFuse Features" class="h-full w-full rounded-lg object-cover" loading="eager">
+            </div>
+          </div>
         </div>
       </div>
     </section>
