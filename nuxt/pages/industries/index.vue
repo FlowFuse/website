@@ -3,13 +3,17 @@
 // classes from src/css/style.css.
 //
 // What the port changes on purpose:
-//  - collections["industry"] listed every file under src/industries/. Marketing retired
-//    the seven sector pages, so /industries/automotive/ is the only one left and the
-//    listing is the single card below rather than a collection query. The retired URLs
-//    301 to this page from redirects.ts.
+//  - collections["industry"] becomes the `industries` data collection plus the one
+//    hand-written page. src/industries/industries.json tagged every file in that
+//    directory, so automotive.njk was on the listing too even though it used its own
+//    layout; AUTOMOTIVE below keeps it there.
 //  - The CTA macros become <CtaContactUs> and <CtaSignUp>.
+const { data: industries } = await useAsyncData('industries-listing', () =>
+    queryCollection('industriesLegacy').select('slug', 'seoMeta', 'hero').all()
+)
 
-// /industries/automotive/ is a hand-written page, so its card copy is declared here.
+// /industries/automotive/ is a hand-written page, not a collection entry, so its card
+// copy is declared here. It reads from the same fields the collection cards use.
 const AUTOMOTIVE = {
     slug: 'automotive',
     title: 'Automotive Manufacturing Applications | FlowFuse',
@@ -23,7 +27,18 @@ function cardTitle(title: string) {
     return title.replace(' | FlowFuse', '').replace('| FlowFuse', '')
 }
 
-const cards = [AUTOMOTIVE]
+const cards = computed(() => {
+    const fromCollection = (industries.value || []).map(industry => ({
+        slug: industry.slug,
+        title: industry.seoMeta.title,
+        description: industry.seoMeta.description,
+        image: industry.hero?.image,
+        imageAlt: industry.hero?.imageAlt,
+    }))
+    // `| sort(false, true, "data.meta.title")`: case-insensitive, ascending.
+    return [...fromCollection, AUTOMOTIVE]
+        .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase(), 'en'))
+})
 
 useSeoMeta({
     title: 'Industries',
