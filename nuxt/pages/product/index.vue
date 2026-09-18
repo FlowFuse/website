@@ -384,30 +384,6 @@ const NEXT = [
          this component still get the default copy. -->
     <EnterpriseSecurity description="Those controls, independently audited. FlowFuse holds SOC 2 Type I and Type II certification, reassessed annually, for the security reviews large manufacturers run before a platform goes anywhere near production." />
 
-    <!-- BUILD WHAT'S NEXT: the self-directed doors out, on the page's one dark
-         band so it reads as an end rather than a sixth stage. Vertical rules
-         between the four, drawn by the same gap-px trick over gray-700. -->
-    <section class="w-full bg-gray-900 px-6 py-16 sm:py-24">
-      <div class="mx-auto max-w-screen-lg">
-        <h2 class="mt-0 max-w-2xl tracking-tight text-white">Build what&rsquo;s next.</h2>
-        <div class="mt-12 grid grid-cols-1 gap-px border border-gray-700 bg-gray-700 sm:grid-cols-2 lg:grid-cols-4">
-          <div v-for="door in NEXT" :key="door.name" class="flex flex-col gap-4 bg-gray-900 p-6">
-            <UIcon :name="door.icon" class="size-5 text-gray-400" aria-hidden="true" />
-            <span class="text-2xl font-medium tracking-tight text-white">{{ door.name }}</span>
-            <p class="m-0 flex-1 text-sm text-gray-400">{{ door.detail }}</p>
-            <a
-              :href="door.to"
-              class="inline-flex w-fit items-center gap-2 bg-gray-800 px-4 py-2 text-sm font-semibold text-white no-underline hover:bg-gray-700 hover:no-underline"
-              @click="capture('cta-platform-next', { position: 'platform-next', door: door.name })"
-            >
-              {{ door.action }}
-              <UIcon name="i-lucide-arrow-right" class="size-4" aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CLOSING CTA: the same block that closes /ai/, so the pages end the same
          way rather than each inventing a sign-off. -->
     <div class="w-full px-6 py-12 sm:py-16">
