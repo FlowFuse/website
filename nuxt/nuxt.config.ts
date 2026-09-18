@@ -520,6 +520,7 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     '/industries/automotive',
+                    '/industries/industrial-machinery',
                     ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',

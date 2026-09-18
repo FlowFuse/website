@@ -3,24 +3,17 @@
 // classes from src/css/style.css.
 //
 // What the port changes on purpose:
-//  - collections["industry"] becomes the `industries` data collection plus the one
-//    hand-written page. src/industries/industries.json tagged every file in that
-//    directory, so automotive.njk was on the listing too even though it used its own
-//    layout; AUTOMOTIVE below keeps it there.
+//  - collections["industry"] becomes two data collections merged into one card grid:
+//    industriesLegacy (the seven restored pages, transitional) and industries (the
+//    automotive-page template, starting with automotive itself and industrial-machinery).
+//    Once industriesLegacy is retired this page only needs the second query.
 //  - The CTA macros become <CtaContactUs> and <CtaSignUp>.
-const { data: industries } = await useAsyncData('industries-listing', () =>
+const { data: legacyIndustries } = await useAsyncData('industries-legacy-listing', () =>
     queryCollection('industriesLegacy').select('slug', 'seoMeta', 'hero').all()
 )
-
-// /industries/automotive/ is a hand-written page, not a collection entry, so its card
-// copy is declared here. It reads from the same fields the collection cards use.
-const AUTOMOTIVE = {
-    slug: 'automotive',
-    title: 'Automotive Manufacturing Applications | FlowFuse',
-    description: 'Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time.',
-    image: '/images/industries/automotive.jpg',
-    imageAlt: 'Aerial view of an automotive manufacturing plant floor',
-}
+const { data: templateIndustries } = await useAsyncData('industries-listing', () =>
+    queryCollection('industries').select('slug', 'seoMeta', 'listingImage', 'listingImageAlt').all()
+)
 
 // The .njk stripped the brand suffix off meta.title for the card heading.
 function cardTitle(title: string) {
@@ -28,15 +21,22 @@ function cardTitle(title: string) {
 }
 
 const cards = computed(() => {
-    const fromCollection = (industries.value || []).map(industry => ({
+    const fromLegacy = (legacyIndustries.value || []).map(industry => ({
         slug: industry.slug,
         title: industry.seoMeta.title,
         description: industry.seoMeta.description,
         image: industry.hero?.image,
         imageAlt: industry.hero?.imageAlt,
     }))
+    const fromTemplate = (templateIndustries.value || []).map(industry => ({
+        slug: industry.slug,
+        title: industry.seoMeta.title,
+        description: industry.seoMeta.description,
+        image: industry.listingImage,
+        imageAlt: industry.listingImageAlt,
+    }))
     // `| sort(false, true, "data.meta.title")`: case-insensitive, ascending.
-    return [...fromCollection, AUTOMOTIVE]
+    return [...fromLegacy, ...fromTemplate]
         .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase(), 'en'))
 })
 

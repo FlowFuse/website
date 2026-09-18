@@ -1,8 +1,7 @@
 <script setup lang="ts">
 // The hero band from pages/industries/automotive.vue: eyebrow badge, accent heading,
-// buttons, a customer-quote card, an optional SocialProof line, the metrics grid, and an
-// optional customer-story bridge that renders below the metrics (not above — that keeps
-// this layout fixed across every page built on this template).
+// buttons, a customer-quote card, and an optional SocialProof line. The metrics grid and
+// customer-story bridge live in industry-page/Metrics.vue, rendered right after this.
 defineProps<{
     hero: {
         eyebrow: string
@@ -18,8 +17,6 @@ defineProps<{
             imageAlt: string
         }
     }
-    metrics: Array<{ number: string, text: string }>
-    metricsBridge?: { heading: string, description: string, linkText: string, linkHref: string }
     socialProof?: string
 }>()
 </script>
@@ -55,25 +52,14 @@ defineProps<{
           </div>
         </div>
       </div>
-      <div v-if="socialProof" class="max-w-screen-lg mx-auto mt-16 text-center">
+      <div class="max-w-screen-lg mx-auto mt-16 text-center">
         <div class="mx-auto text-center -mt-0.5 -mb-10">
-          <SocialProof :eyebrow="socialProof" />
-        </div>
-      </div>
-      <div class="max-w-md sm:max-w-screen-lg mx-auto mt-16 pb-10">
-        <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
-          <div v-for="metric in metrics" :key="metric.number" class="w-full h-full rounded-lg bg-red-50/70 pb-3 px-6 pt-6">
-            <h3 class="text-5xl font-semibold text-red-400">{{ metric.number }}</h3>
-            <p class="mt-0 font-normal leading-6">{{ metric.text }}</p>
-          </div>
-        </div>
-        <div v-if="metricsBridge" class="max-w-2xl mx-auto mt-6 text-center">
-          <h3 class="text-gray-700 mb-2">{{ metricsBridge.heading }}</h3>
-          <p class="text-gray-600 m-0">{{ metricsBridge.description }}</p>
-          <a :href="metricsBridge.linkHref" class="inline-flex items-center gap-1.5 text-blue-600 hover:underline mt-2">
-            {{ metricsBridge.linkText }}
-            <UIcon name="i-heroicons-arrow-long-right" class="w-4 h-4 shrink-0" />
-          </a>
+          <!-- No `socialProof`: falls back to SocialProof's own generic default line,
+               same as any other page that doesn't pass `eyebrow`. `?? undefined`
+               matters here — an absent optional @nuxt/content field comes through as
+               `null`, and SocialProof's own `withDefaults` only substitutes for
+               `undefined`, not `null`. -->
+          <SocialProof :eyebrow="socialProof ?? undefined" eyebrow-bg="indigo" />
         </div>
       </div>
     </div>

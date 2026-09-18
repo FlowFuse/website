@@ -2,6 +2,8 @@
 # is the first entry in the template it defined. No copy changes.
 slug: automotive
 industryName: "Automotive"
+listingImage: "/images/industries/automotive.jpg"
+listingImageAlt: "Aerial view of an automotive manufacturing plant floor"
 seoMeta:
   title: "Automotive Manufacturing Applications"
   description: "Connect PLCs, SCADA, MES, and plant IT systems in one place. FlowFuse helps teams monitor, automate, and standardize production workflows across plants in real time."

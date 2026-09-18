@@ -20,7 +20,7 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
 </script>
 
 <template>
-  <section class="w-full relative py-20 px-6 overflow-hidden">
+  <section class="w-full relative pb-20 pt-14 px-6 overflow-hidden">
     <div class="absolute inset-x-0 top-0 h-[400px] md:h-[561px] solution-section-bg-flipped" aria-hidden="true" />
     <div class="relative z-10">
       <div class="max-w-screen-lg mx-auto max-md:text-center mb-28 md:mt-10">

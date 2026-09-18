@@ -8,8 +8,8 @@ defineProps<{ heading: string, description: string }>()
 <template>
   <section class="w-full py-16 px-6">
     <div class="max-w-screen-lg mx-auto">
-      <div class="max-w-3xl max-md:mx-auto max-md:text-center">
-        <h2 class="text-gray-700 mb-4">{{ heading }}</h2>
+      <div class="max-md:mx-auto max-md:text-center">
+        <h2 class="text-gray-700 mb-4" v-html="heading" />
         <p class="text-gray-600 m-0">{{ description }}</p>
       </div>
       <div class="mt-10">

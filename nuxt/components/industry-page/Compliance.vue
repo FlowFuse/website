@@ -9,7 +9,7 @@ defineProps<{ industryName: string, description: string, items: ComplianceItem[]
 <template>
   <section class="w-full py-16 md:py-24 px-6 bg-radial-[ellipse_60%_70%_at_center_bottom] from-blue-200/30 to-blue-200/0">
     <div class="max-w-screen-lg mx-auto">
-      <div class="max-w-2xl mb-12">
+      <div class="mb-12">
         <h2 class="text-gray-700 mb-2">{{ industryName }} <span class="text-indigo-600">Compliance &amp; Standards</span></h2>
         <p class="text-xl font-medium mt-0 mb-4">The Data Your Audit Asks For, In One Place</p>
         <p class="text-gray-600">{{ description }}</p>

@@ -47,12 +47,9 @@ useSchemaOrg([
 
 <template>
   <div class="w-full">
-    <IndustryPageHero
-        :hero="page.hero"
-        :metrics="page.metrics"
-        :metrics-bridge="page.metricsBridge"
-        :social-proof="page.socialProof"
-    />
+    <IndustryPageHero :hero="page.hero" :social-proof="page.socialProof" />
+
+    <IndustryPageMetrics :metrics="page.metrics" :metrics-bridge="page.metricsBridge" />
 
     <IndustryPageRoi :heading="page.roi.heading" :description="page.roi.description" />
 

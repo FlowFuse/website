@@ -540,6 +540,10 @@ export default defineContentConfig({
                 // automotive.vue these were "Automotive" and "Automotive Manufacturing"
                 // respectively, never the same string.
                 industryName: z.string(),
+                // The /industries/ listing card's thumbnail — distinct from hero.quote.image,
+                // which is the customer headshot inside the page's own hero band.
+                listingImage: z.string(),
+                listingImageAlt: z.string().optional(),
                 seoMeta: z.object({
                     title: z.string(),
                     description: z.string(),
@@ -568,9 +572,12 @@ export default defineContentConfig({
                     number: z.string(),
                     text: z.string(),
                 })),
-                // A customer-story bridge (heading + description + link) that renders below
-                // the metrics grid, not above it — the hero's layout stays fixed either way.
+                // A customer-story bridge: heading + description above the metrics grid,
+                // link below it (right-aligned) — not above the grid the way the doc had it,
+                // so the hero's layout stays fixed whether or not a page sets this.
                 metricsBridge: z.object({
+                    // Carries inline <span class="text-indigo-600"> markup, rendered with
+                    // v-html for the same reason hero.heading is.
                     heading: z.string(),
                     description: z.string(),
                     linkText: z.string(),
