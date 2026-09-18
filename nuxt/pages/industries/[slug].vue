@@ -21,7 +21,7 @@ const route = useRoute()
 const slug = String(route.params.slug)
 
 const { data: page } = await useAsyncData(`industry-${slug}`, () =>
-    queryCollection('industries').where('slug', '=', slug).first()
+    queryCollection('industriesLegacy').where('slug', '=', slug).first()
 )
 
 if (!page.value) {

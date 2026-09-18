@@ -9,7 +9,7 @@
 //    layout; AUTOMOTIVE below keeps it there.
 //  - The CTA macros become <CtaContactUs> and <CtaSignUp>.
 const { data: industries } = await useAsyncData('industries-listing', () =>
-    queryCollection('industries').select('slug', 'seoMeta', 'hero').all()
+    queryCollection('industriesLegacy').select('slug', 'seoMeta', 'hero').all()
 )
 
 // /industries/automotive/ is a hand-written page, not a collection entry, so its card

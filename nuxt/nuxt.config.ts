@@ -316,7 +316,7 @@ export default defineNuxtConfig({
             // Without this the seven pages are in neither sitemap, having left
             // sitemap-legacy.xml when their .md files moved. /industries/automotive/ has its
             // own .vue file, so that one is discovered normally.
-            ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries').map(loc => ({ loc })),
+            ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries').map(loc => ({ loc })),
             // /landing/<slug>/ is one [slug].vue over a `data` collection, so the module's
             // static-route discovery cannot see it, and content-urls.get.ts cannot either
             // (it keys on `path`, which a data collection has no equivalent of). Without
@@ -520,7 +520,7 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     '/industries/automotive',
-                    ...collectSlugRoutes(join(__dirname, 'content/industries'), '/industries'),
+                    ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),

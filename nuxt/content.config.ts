@@ -528,9 +528,13 @@ export default defineContentConfig({
         // the same shape as the operational use-cases. /industries/automotive/ is not here:
         // it had a bespoke markup body and stays a hand-written Vue page, which is why the
         // listing merges this collection with that one entry.
-        industries: defineCollection({
+        //
+        // Named industriesLegacy, not industries: these seven pages are transitional and
+        // due to be deleted once the automotive-page template covers them (or their
+        // replacements). `industries` is reserved for that template's own collection.
+        industriesLegacy: defineCollection({
             type: 'data',
-            source: 'industries/*.yml',
+            source: 'industries-legacy/*.yml',
             schema: z.object({
                 slug: z.string(),
                 // Named seoMeta rather than meta because `meta` is reserved by
