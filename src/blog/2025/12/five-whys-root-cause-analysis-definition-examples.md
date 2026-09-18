@@ -4,7 +4,7 @@ title: "5 Whys Root Cause Analysis: Definition, Steps & Example"
 subtitle: "The Toyota technique for finding what actually caused a problem, not just its symptom."
 description: "The 5 Whys root cause analysis method: how it works, the original Toyota example, and mistakes to avoid."
 date: 2025-12-22
-lastUpdated: 2026-09-10
+lastUpdated: 2026-09-18
 authors: ["sumit-shinde"]
 image: /blog/2025/12/images/5-why-root-cause-analysis.png
 tags:

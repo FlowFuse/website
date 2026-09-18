@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDocsNavTree, findDocsBreadcrumb } from '~/composables/useDocsNav'
+import { useDocsNavTree, findDocsBreadcrumb, findDocsSurround } from '~/composables/useDocsNav'
 import { docsPageTitle } from '~/lib/docs-page-title.mjs'
 
 definePageMeta({ layout: 'default' })
@@ -21,12 +21,10 @@ if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-// Handle redirect pages
-if (page.value.layout === 'redirect' && page.value.redirect?.to) {
-    const target = page.value.redirect.to
-    const isExternal = target.startsWith('http://') || target.startsWith('https://')
-    throw navigateTo(target, { redirectCode: 301, external: isExternal })
-}
+// No redirect handling here: modules/docs-source.ts turns `layout: redirect` frontmatter
+// into a Nitro route rule at build time, so those URLs never reach this component. Doing it
+// here meant the prerenderer wrote a `<meta http-equiv="refresh">` stub served with a 200
+// instead of a 301.
 
 // The order is asserted in nuxt/lib/docs-page-title.mjs, which explains why it is that
 // order. It decides the <title> of every page under /docs and getting it wrong shows up
@@ -69,6 +67,21 @@ const breadcrumbItems = computed(() => {
         ...(i === withRoot.length - 1 ? {} : { to: crumb.path }),
     }))
 })
+
+// Previous and next page in sidebar reading order, so a reader finishing a page has
+// somewhere to go. Order comes from the same tree the sidebar renders, rather than from
+// queryCollectionItemSurroundings, which reads in collection order and would disagree with
+// the nav on every page. The group name rides along as the card's description, because the
+// sequence runs straight through the manual and the last page of one group leads into the
+// first of the next.
+const surround = computed(() => {
+    const [previous, next] = findDocsSurround(navGroups.value ?? [], route.path)
+    return [previous, next].map(entry => entry && ({
+        path: entry.path,
+        title: entry.title,
+        description: entry.group,
+    }))
+})
 </script>
 
 <template>
@@ -99,6 +112,7 @@ const breadcrumbItems = computed(() => {
               <FeatureTierBadges :plans="plans" />
               <ContentRenderer v-if="page" :value="page" />
             </div>
+            <UContentSurround :surround="surround" class="not-prose mb-10" />
           </div>
         </div>
       </div>

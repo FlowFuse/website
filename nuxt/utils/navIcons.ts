@@ -1,4 +1,5 @@
-// Icon markup for the marketing nav, keyed exactly as src/_data/chrome.json spells it.
+// Icon markup for the marketing nav, keyed exactly as src/_data/chrome.json spells it,
+// plus the handful of keys page content asks for by name through <NavIcon>.
 //
 // These are the same files Eleventy's `navoption` shortcode reads, so both
 // renderers draw the identical glyph from one source. The imports are listed
@@ -12,6 +13,7 @@ import iAcademicCap from '../../src/_includes/components/icons/academic-cap.svg?
 import iAirplane from '../../src/_includes/components/icons/airplane.svg?raw'
 import iArrowRight from '../../src/_includes/components/icons/arrow-right.svg?raw'
 import iArrowTrendingUp from '../../src/_includes/components/icons/arrow-trending-up.svg?raw'
+import iArrowsPointingOut from '../../src/_includes/components/icons/arrows-pointing-out.svg?raw'
 import iArrowsRightLeft from '../../src/_includes/components/icons/arrows-right-left.svg?raw'
 import iBookOpen from '../../src/_includes/components/icons/book-open.svg?raw'
 import iBuildingLibrary from '../../src/_includes/components/icons/building-library.svg?raw'
@@ -21,7 +23,16 @@ import iCar from '../../src/_includes/components/icons/car.svg?raw'
 import iCase from '../../src/_includes/components/icons/case.svg?raw'
 import iCertificate from '../../src/_includes/components/icons/certificate.svg?raw'
 import iChart from '../../src/_includes/components/icons/chart.svg?raw'
+
+import iCloud from '../../src/_includes/components/icons/cloud.svg?raw'
+import iLink from '../../src/_includes/components/icons/link.svg?raw'
+import iCodeblock from '../../src/_includes/components/icons/codeblock.svg?raw'
 import iChat from '../../src/_includes/components/icons/chat.svg?raw'
+
+import iCubeTransparent from '../../src/_includes/components/icons/cube-transparent.svg?raw'
+import iData from '../../src/_includes/components/icons/data.svg?raw'
+import iDatabase from '../../src/_includes/components/icons/database.svg?raw'
+import iLock from '../../src/_includes/components/icons/lock.svg?raw'
 import iChatBubbleLeftRightSm from '../../src/_includes/components/icons/chat-bubble-left-right-sm.svg?raw'
 import iCheckBadge from '../../src/_includes/components/icons/check-badge.svg?raw'
 import iChip from '../../src/_includes/components/icons/chip.svg?raw'
@@ -63,6 +74,7 @@ export const navIcons: Record<string, string> = {
     'airplane': iAirplane,
     'arrow-right': iArrowRight,
     'arrow-trending-up': iArrowTrendingUp,
+    'arrows-pointing-out': iArrowsPointingOut,
     'arrows-right-left': iArrowsRightLeft,
     'book-open': iBookOpen,
     'building-library': iBuildingLibrary,
@@ -73,6 +85,16 @@ export const navIcons: Record<string, string> = {
     'certificate': iCertificate,
     'chart': iChart,
     'chat': iChat,
+
+    'cloud': iCloud,
+    // /vs/litmus/ and /vs/kepware/ (merged in #5783) name these two keys in their
+    // content, but they were never added here, so NavIcon rendered nothing for them.
+    'link': iLink,
+    'cube-transparent': iCubeTransparent,
+    'codeblock': iCodeblock,
+    'data': iData,
+    'database': iDatabase,
+    'lock': iLock,
     'chat-bubble-left-right-sm': iChatBubbleLeftRightSm,
     'check-badge': iCheckBadge,
     'chip': iChip,
