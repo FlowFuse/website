@@ -5,7 +5,7 @@ subtitle: "Download a free fishbone diagram template for sorting causes into cat
 description: "Download a free Ishikawa fishbone diagram template and learn what to put in each category, how to write specific causes, and how to verify the top suspects."
 date: 2026-09-17
 authors: ["sumit-shinde"]
-image: /blog/2026/09/images/ishikawa-fishbone-diagram-template.png
+image: /blog/2026/09/images/fishbone-diagram-template.png
 tags:
   - posts
   - flowfuse
