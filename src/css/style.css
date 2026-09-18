@@ -3575,7 +3575,7 @@ lite-youtube::before {
     padding-bottom: 0;
 }
 
-/* Media well: the frame around each capability's schematic. */
+/* Media well: the frame around each capability's schematic or clip. */
 .ff-cap-well {
     /* Matches the diagram's 720x150 viewBox, so the frame hugs the drawing instead
        of leaving a 16:9 box mostly empty. Full column width - the drawing is wide
@@ -3586,6 +3586,13 @@ lite-youtube::before {
     background-color: var(--color-white);
     border: 1px solid var(--color-indigo-100);
     border-radius: 0.5rem;
+}
+
+/* A screen recording is 16:9. Letterboxing one into the schematic's 4.8:1 band
+   would crop away most of the interface, which is the only reason it is there, so
+   the well takes the clip's shape when it holds one. */
+.ff-cap-well--clip {
+    aspect-ratio: 16 / 9;
 }
 
 .ff-cap-icon svg {

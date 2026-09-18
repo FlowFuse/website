@@ -84,10 +84,10 @@ const CAPABILITY_GROUPS = [
         eyebrow: 'Build',
         subtitle: 'FlowFuse Expert turns intent into working industrial applications, right in the editor.',
         items: [
-            { name: 'AI-assisted engineering', diagram: 'assisted-engineering', description: `Generate and edit <a href="/node-red/" class="${LINK}">Node-RED</a> flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up. It works inline in the editor your team already uses, so there is no separate tool to context-switch into. That turns unfamiliar or inherited flows into something the whole team can read and maintain.` },
-            { name: 'Prompt-to-app', diagram: 'prompt-to-app', description: 'Describe the application you need and FlowFuse Expert agentically builds the starting flows and logic directly in your workspace. You begin from a working draft instead of a blank canvas, then refine it like any other flow. Everything it creates stays inside the platform, so the same permissions and review apply from the first node.' },
+            { name: 'AI-assisted engineering', diagram: 'assisted-engineering', clip: 'ai-assisted-engineering', clipAlt: 'FlowFuse Expert writing Function node JavaScript inline in the Node-RED editor', description: `Generate and edit <a href="/node-red/" class="${LINK}">Node-RED</a> flows, Function node JavaScript, SQL queries and dashboard UI from plain language, and ask Expert to explain any existing flow so any engineer can pick it up. It works inline in the editor your team already uses, so there is no separate tool to context-switch into. That turns unfamiliar or inherited flows into something the whole team can read and maintain.` },
+            { name: 'Prompt-to-app', diagram: 'prompt-to-app', clip: 'prompt-to-app', clipAlt: 'FlowFuse Expert assembling an application on the Node-RED workspace from a prompt', description: 'Describe the application you need and FlowFuse Expert agentically builds the starting flows and logic directly in your workspace. You begin from a working draft instead of a blank canvas, then refine it like any other flow. Everything it creates stays inside the platform, so the same permissions and review apply from the first node.' },
             { name: 'Build your own AI agents', diagram: 'build-agents', description: `Start from an agent blueprint, like the <a href="/blueprints/ai/llm-chat-agent/" class="${LINK}">LLM chat agent</a> or <a href="/blueprints/ai/rag-chat-agent/" class="${LINK}">RAG chat agent</a>, to stand up a task-specific AI agent grounded in your own data, tools and context. It gives you a proven structure to adapt rather than wiring an agent up from scratch. With MCP servers you can give the agent access to anything, including your RAG applications. Because it runs on the platform, the agent operates within the access you grant it.` },
-            { name: 'Built-in product knowledge', diagram: 'product-knowledge', description: 'A chat assistant with answers grounded in FlowFuse and Node-RED documentation, so guidance comes from the product, not stale wikis. Ask how a node works or how to approach a build and get an answer without leaving your workspace. It shortens the path from question to working flow for new and experienced users alike.' },
+            { name: 'Built-in product knowledge', diagram: 'product-knowledge', clip: 'built-in-product-knowledge', clipAlt: 'Asking FlowFuse Expert about the flow currently open in the editor', description: 'A chat assistant with answers grounded in FlowFuse and Node-RED documentation, so guidance comes from the product, not stale wikis. Ask how a node works or how to approach a build and get an answer without leaving your workspace. It shortens the path from question to working flow for new and experienced users alike.' },
         ],
     },
     {
@@ -96,10 +96,10 @@ const CAPABILITY_GROUPS = [
         eyebrow: 'Operate',
         subtitle: 'AI that acts inside your flows and answers questions about live operations, always behind your controls.',
         items: [
-            { name: 'Governed autonomous operations', diagram: 'governed-operations', externalNote: 'For external agents, approval cards do not apply. The access you granted is the control, enforced on every call.', description: 'Platform Automations let AI act on live systems, with every write behind an approval card, session-scoped and fully audited. A person approves, edits or rejects each proposed change before it reaches a machine. Nothing runs outside the permissions and RBAC that already govern your teams.' },
-            { name: 'Ask your plant anything', diagram: 'ask-your-plant', externalNote: 'For external agents, whether they can reach the MCP servers you build in your own flows depends on the agent.', description: 'In Insights mode, ask questions in natural language and get answers grounded in live machine state, alarms and logs. Operators and engineers can check what is happening on the floor without building a report or querying a database by hand. Table and MQTT-broker reading are coming soon.' },
-            { name: 'Automated visual inspection', diagram: 'visual-inspection', description: `Run <a href="/docs/flowfuse-nodes/ai/onxx/" class="${LINK}">ONNX</a> vision models inside flows next to the machine, with camera ingest over <a href="/docs/flowfuse-nodes/edge/rtsp/" class="${LINK}">RTSP</a>, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant.` },
-            { name: 'Use any model within flows', diagram: 'any-model', description: `<a href="/docs/flowfuse-nodes/ai/llm-nodes/" class="${LINK}">Certified LLM nodes</a> bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control.` },
+            { name: 'Governed autonomous operations', diagram: 'governed-operations', clip: 'governed-autonomous-operations', clipAlt: 'An approval card holding a proposed write until a person approves it', externalNote: 'For external agents, approval cards do not apply. The access you granted is the control, enforced on every call.', description: 'Platform Automations let AI act on live systems, with every write behind an approval card, session-scoped and fully audited. A person approves, edits or rejects each proposed change before it reaches a machine. Nothing runs outside the permissions and RBAC that already govern your teams.' },
+            { name: 'Ask your plant anything', diagram: 'ask-your-plant', clip: 'ask-your-plant-anything', clipAlt: 'Insights mode answering a question about live machine state', externalNote: 'For external agents, whether they can reach the MCP servers you build in your own flows depends on the agent.', description: 'In Insights mode, ask questions in natural language and get answers grounded in live machine state, alarms and logs. Operators and engineers can check what is happening on the floor without building a report or querying a database by hand. Table and MQTT-broker reading are coming soon.' },
+            { name: 'Automated visual inspection', diagram: 'visual-inspection', clip: 'automated-visual-inspection', clipAlt: 'An ONNX vision node running inference on a camera feed inside a flow', description: `Run <a href="/docs/flowfuse-nodes/ai/onxx/" class="${LINK}">ONNX</a> vision models inside flows next to the machine, with camera ingest over <a href="/docs/flowfuse-nodes/edge/rtsp/" class="${LINK}">RTSP</a>, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant.` },
+            { name: 'Use any model within flows', diagram: 'any-model', clip: 'use-any-model-within-flows', clipAlt: 'An ONNX model node configured inside a flow', description: `<a href="/docs/flowfuse-nodes/ai/llm-nodes/" class="${LINK}">Certified LLM nodes</a> bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control.` },
         ],
     },
     {
@@ -118,7 +118,7 @@ const CAPABILITY_GROUPS = [
         eyebrow: 'Expose',
         subtitle: 'The other direction. Your flows become tools that an agent can call as part of its work.',
         items: [
-            { name: 'AI that uses your tools', diagram: 'your-tools', externalNote: 'Anyone can build them. For external agents, whether they can call them depends on the agent.', description: `Build your own <a href="/docs/flowfuse-nodes/mcp/" class="${LINK}">MCP servers</a> and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register.` },
+            { name: 'AI that uses your tools', diagram: 'your-tools', clip: 'ai-that-uses-your-tools', clipAlt: 'Per-tool permissions controlling what an agent is allowed to call', externalNote: 'Anyone can build them. For external agents, whether they can call them depends on the agent.', description: `Build your own <a href="/docs/flowfuse-nodes/mcp/" class="${LINK}">MCP servers</a> and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register.` },
         ],
     },
 ]
@@ -372,11 +372,22 @@ onUnmounted(() => {
               class="ff-cap-item"
               :class="ii === 0 ? 'pb-10' : 'mt-10 pt-10 pb-10 border-t border-indigo-100'"
             >
-              <!-- MEDIA WELL: the capability's schematic, one shared three-column
-                   layout across all of them, so the section reads as one platform
-                   rather than eleven unrelated pictures. -->
-              <div class="ff-cap-well">
-                <AiCapabilityDiagram :kind="item.diagram" />
+              <div class="ff-cap-well" :class="item.clip ? 'ff-cap-well--clip' : ''">
+                <video
+                  v-if="item.clip"
+                  class="block w-full h-full object-cover"
+                  :poster="`/images/ai/capabilities/${item.clip}-poster.jpg`"
+                  width="1280"
+                  height="720"
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  :aria-label="item.clipAlt"
+                >
+                  <source :src="`/images/ai/capabilities/${item.clip}.webm`" type="video/webm">
+                </video>
+                <AiCapabilityDiagram v-else :kind="item.diagram" />
               </div>
               <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mt-5">
                 <span class="text-xl font-medium text-gray-900">{{ item.name }}</span>
