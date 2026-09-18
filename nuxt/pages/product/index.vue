@@ -15,20 +15,20 @@
 // and speaks in ours, and the docs go deeper still - so every stage below
 // states its point in a line or two and then links out to the guide or the
 // docs page that owns it, rather than explaining it here. The spine is the
-// Application Guide's: Build, Deliver, Run, Connect, Govern, with the
+// Application Guide's, collapsed to three: Build, Deploy, Govern, with the
 // commercial packaging (Edge/Hub/Fleet) after it, once "what is it" has been
 // answered and "which one am I" is the live question.
 useSeoMeta({
     title: 'The FlowFuse Platform',
-    description: 'How FlowFuse builds, delivers, runs, connects and governs industrial applications on Node-RED, from the edge to the cloud, and which of Edge, Hub and Fleet fits your team.',
+    description: 'How FlowFuse builds, deploys and governs industrial applications on Node-RED, from the edge to the cloud, and which of Edge, Hub and Fleet fits your team.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',
 })
 
 const capture = useCapture()
 
-// Declared rather than inferred so `diagrams` can be optional: only the Deliver
-// stage draws one, and reading `item.diagrams` off an inferred union of five
+// Declared rather than inferred so `diagrams` can be optional: only the Deploy
+// stage draws one, and reading `item.diagrams` off an inferred union of three
 // differently-shaped literals is a type error.
 interface StageDiagram {
     caption: string
@@ -45,29 +45,34 @@ interface Stage {
     items: { name: string, detail: string, to: string }[]
 }
 
-// The five stages. Order is the order a team meets them: build something, get
-// it to every place that should run it, decide where that runs, wire it to the
-// data, then hold all of it to a policy.
+// Three stages, in the order a team meets them: make the application, get it
+// to every place that should run it, then hold all of it to a policy. Deliver
+// and Run were separate once and are now one Deploy - "where does it land"
+// and "where does it run" are the same question to a reader - and the old
+// Connect stage is gone: the Unified Namespace, data integration and edge
+// connectivity it pointed at are already the "Built on this platform" links
+// under the products below, and saying both was saying it twice.
 const STAGES: Stage[] = [
     {
         id: 'build',
         label: 'Build',
         icon: 'i-lucide-pencil-ruler',
         heading: 'Build.',
-        summary: 'One editor, one runtime. Standard Node-RED, so the flows stay yours and the skills already exist.',
+        summary: 'One editor, one runtime, connected to what you already run. Standard Node-RED, so the flows stay yours and the skills already exist.',
         items: [
             { name: 'Node-RED', detail: 'The open runtime and editor underneath everything, unforked, so an application stays portable and the foundation stays yours.', to: '/node-red/' },
             { name: 'FlowFuse Expert', detail: 'AI in the editor: starting flows, Function code, SQL and dashboard UI, plus plain-language explanations of flows you inherited.', to: '/ai/' },
             { name: 'Blueprints', detail: 'Working starting points for common industrial problems, instead of a blank canvas.', to: '/blueprints/' },
+            { name: 'Integrations', detail: 'OPC UA and Modbus through to ERPs, databases and cloud APIs, with a managed MQTT broker in every install.', to: '/integrations/' },
             { name: 'FlowFuse Dashboard', detail: 'The operator interface, built from the same flows, so the UI and the logic ship together.', to: '/platform/dashboard/' },
         ],
     },
     {
-        id: 'deliver',
-        label: 'Deliver',
+        id: 'deploy',
+        label: 'Deploy',
         icon: 'i-lucide-package-check',
-        heading: 'Deliver.',
-        summary: 'Two ways code moves. Promote a whole application, or publish the parts worth standardising. This is the decision that makes an estate scale or not.',
+        heading: 'Deploy.',
+        summary: 'Two ways code moves, and every place it can land. Promote a whole application or publish the parts worth standardising, then run it in the cloud, on your own servers, or next to the equipment.',
         diagrams: [
             {
                 caption: 'Whole app: one snapshot promoted to every target, each supplying its own configuration.',
@@ -93,34 +98,8 @@ const STAGES: Stage[] = [
         items: [
             { name: 'Whole app', detail: 'Promote one snapshot through development, staging and production, and out to a device group. Each target brings its own environment variables, so one artifact runs everywhere unedited.', to: '/docs/application-guide/app-delivery-methods/' },
             { name: 'Pieces', detail: 'Publish subflows and custom nodes as packages your teams install from, so the centre owns what must be standard and each site owns the rest.', to: '/docs/user/shared-library/' },
-            { name: 'Hardware apps', detail: 'The three shapes on a device: a sealed Packaged App, a Configurable App tuned per site, or an Edge Building Block.', to: '/docs/application-guide/app-delivery-methods/hardware-apps/' },
-            { name: 'Software apps', detail: 'The three shapes on an instance: a headless Packaged App, a Data-Driven App, or a Shared Building Block.', to: '/docs/application-guide/app-delivery-methods/software-apps/' },
-        ],
-    },
-    {
-        id: 'run',
-        label: 'Run',
-        icon: 'i-lucide-server',
-        heading: 'Run.',
-        summary: 'The same runtime next to the equipment, on-prem and in the cloud, addressed as a fleet rather than one machine at a time.',
-        items: [
-            { name: 'Hosted Instances', detail: 'Managed Node-RED on our infrastructure or your own server, so your team handles the application, not the runtime.', to: '/docs/user/concepts/' },
-            { name: 'Remote Instances', detail: 'The same applications on edge hardware, including networks with no inbound access, so a plant behind a firewall is still a target.', to: '/platform/device-agent/' },
+            { name: 'Hosted and remote instances', detail: 'Managed Node-RED on our infrastructure or your own server, and the same applications on edge hardware, including networks with no inbound access.', to: '/platform/device-agent/' },
             { name: 'Device groups', detail: 'Deploy to a hundred machines as one target, and roll back the same way.', to: '/docs/user/device-groups/' },
-            { name: 'OT, IT and IIoT architectures', detail: 'Worked layouts for edge, DMZ, air-gapped, on-prem and multi-site cloud.', to: '/docs/application-guide/architectures/' },
-        ],
-    },
-    {
-        id: 'connect',
-        label: 'Connect',
-        icon: 'i-lucide-share-2',
-        heading: 'Connect.',
-        summary: 'What the application reads and writes. Two data services are built into every install, and anything else is exposed to the fleet the same way.',
-        items: [
-            { name: 'Team Broker and UNS', detail: 'A managed MQTT broker in every install, so a Unified Namespace does not start with procuring infrastructure.', to: '/docs/user/teambroker/' },
-            { name: 'FlowFuse Tables', detail: 'A relational store built in and reachable from every instance, for applications that keep state rather than pass it on.', to: '/docs/user/ff-tables/' },
-            { name: 'Integrations', detail: 'OPC UA and Modbus through to ERPs, databases and cloud APIs.', to: '/integrations/' },
-            { name: 'Project Nodes', detail: 'Instance-to-instance messaging without standing up a broker or opening a port.', to: '/docs/user/projectnodes/' },
         ],
     },
     {
@@ -138,7 +117,7 @@ const STAGES: Stage[] = [
     },
 ]
 
-// The commercial packaging, after the five stages have said what the thing is.
+// The commercial packaging, after the three stages have said what the thing is.
 // These are the three routes into /product/{tier}/ and, from there, pricing.
 const TIERS = [
     {
@@ -220,7 +199,7 @@ const NEXT = [
       </div>
     </section>
 
-    <!-- WHY: the three differentiators, kept short so the five stages are still
+    <!-- WHY: the three differentiators, kept short so the three stages are still
          the first substantial thing an evaluator reads. -->
     <section class="w-full border-b border-gray-200 px-6 py-16 sm:py-24">
       <div class="mx-auto max-w-screen-lg">
@@ -230,7 +209,7 @@ const NEXT = [
       </div>
     </section>
 
-    <!-- STAGES: the five, behind the sticky contents list. One template per
+    <!-- STAGES: the three, behind the sticky contents list. One template per
          stage id rather than a single `#item` slot, because ScrollSpySections
          renders `<slot :name="item.id">` - a slot named `item` is never looked
          up and every stage would render empty.
@@ -247,7 +226,7 @@ const NEXT = [
         <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">How it works</p>
         <h2 class="mt-6 max-w-3xl tracking-tight">From a flow in an editor to the same application at every site.</h2>
         <p class="mt-6 max-w-2xl text-gray-600">
-          Five stages, in the order a team meets them. Each one links into the guide or the documentation that owns it.
+          Three stages, in the order a team meets them. Each one links into the guide or the documentation that owns it.
         </p>
 
         <ScrollSpySections
@@ -356,7 +335,23 @@ const NEXT = [
               </div>
             </div>
           </template>
-        </ScrollSpySections>      
+        </ScrollSpySections>
+
+        <!-- The use-case and integration pages this platform underwrites. Kept
+             as a link strip rather than its own section: the stages above
+             already say what Connect means, so this is internal routing, not a
+             second explanation. -->
+        <div class="mt-20 border-t border-gray-200 pt-10">
+          <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">Built on this platform</p>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <NuxtLink
+              v-for="cap in CAPABILITIES"
+              :key="cap.to"
+              :to="cap.to"
+              class="inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 no-underline transition-colors duration-150 hover:border-indigo-600 hover:bg-indigo-50 hover:text-indigo-600 hover:no-underline"
+            >{{ cap.label }}</NuxtLink>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -367,6 +362,30 @@ const NEXT = [
          instead of saying the same four things twice. Other pages that mount
          this component still get the default copy. -->
     <EnterpriseSecurity description="Those controls, independently audited. FlowFuse holds SOC 2 Type I and Type II certification, reassessed annually, for the security reviews large manufacturers run before a platform goes anywhere near production." />
+
+    <!-- BUILD WHAT'S NEXT: the self-directed doors out, on the page's one dark
+         band so it reads as an end rather than a sixth stage. Vertical rules
+         between the four, drawn by the same gap-px trick over gray-700. -->
+    <section class="w-full bg-gray-900 px-6 py-16 sm:py-24">
+      <div class="mx-auto max-w-screen-lg">
+        <h2 class="mt-0 max-w-2xl tracking-tight text-white">Build what&rsquo;s next.</h2>
+        <div class="mt-12 grid grid-cols-1 gap-px border border-gray-700 bg-gray-700 sm:grid-cols-2 lg:grid-cols-4">
+          <div v-for="door in NEXT" :key="door.name" class="flex flex-col gap-4 bg-gray-900 p-6">
+            <UIcon :name="door.icon" class="size-5 text-gray-400" aria-hidden="true" />
+            <span class="text-2xl font-medium tracking-tight text-white">{{ door.name }}</span>
+            <p class="m-0 flex-1 text-sm text-gray-400">{{ door.detail }}</p>
+            <a
+              :href="door.to"
+              class="inline-flex w-fit items-center gap-2 bg-gray-800 px-4 py-2 text-sm font-semibold text-white no-underline hover:bg-gray-700 hover:no-underline"
+              @click="capture('cta-platform-next', { position: 'platform-next', door: door.name })"
+            >
+              {{ door.action }}
+              <UIcon name="i-lucide-arrow-right" class="size-4" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- CLOSING CTA: the same block that closes /ai/, so the pages end the same
          way rather than each inventing a sign-off. -->
