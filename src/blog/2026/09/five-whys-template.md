@@ -5,7 +5,7 @@ subtitle: "Download a free 5 Whys template for documenting root cause analysis, 
 description: "Download a free 5 Whys root cause analysis template and learn how to fill it out, from defining the problem and asking why to identifying the root cause and tracking corrective actions."
 date: 2026-09-18
 authors: ["sumit-shinde"]
-image: /blog/2026/09/images/5-whys-template.png
+image: /blog/2026/09/images/5-why-template.png
 tags:
   - posts
   - flowfuse
