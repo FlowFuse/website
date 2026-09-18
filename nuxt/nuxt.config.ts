@@ -488,6 +488,11 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The platform pages are .vue files with no listing to crawl from.
+                    '/platform/security/',
+                    '/platform/device-agent/',
+                    '/platform/why-flowfuse/',
+                    '/platform/dashboard/',
                     // /industries/automotive/ is its own .vue file, so Nuxt finds that
                     // itself; the listing needs naming because nothing the crawler parses
                     // links to it yet.

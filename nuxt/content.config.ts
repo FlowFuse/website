@@ -364,6 +364,16 @@ export default defineContentConfig({
 
             })
         }),
+        // Long-form prose pages under /platform/. Separate from the `pages` collection
+        // above because that one is rendered by [...slug].vue, which routeRules mark
+        // noindex; /platform/security/ is a linked, indexable page.
+        platformPages: defineCollection({
+            type: 'page',
+            source: 'platform/*.md',
+            schema: z.object({
+                title: z.string(),
+            })
+        }),
         // The /landing/ pages that were pure 11ty frontmatter. Two shapes, both routed
         // through pages/landing/[slug].vue and told apart by `kind`:
         //  - abm         (layouts/abm-landing.njk) - problem/solution/how/features
