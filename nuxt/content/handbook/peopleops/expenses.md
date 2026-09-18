@@ -72,7 +72,7 @@ company, you can claim back the money through
 Before approving an expense in Deel, please verify:
 - The receipt is a final Proof of Payment (not a quote)
 - That the attachment is an invoice and not a screenshot
-- Asset purchases >$500 are logged in the [Asset](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit?gid=0#gid=0) Tracker. If not, flag with operations
+- Asset purchases >$500 are logged in the [Asset](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit?gid=0#gid=0) Tracker. Demo, evaluation, and testing hardware is logged at any value. If not, flag with operations
 - The description clearly states the business justification
 - For expenses >$250, ensure the CEO is looped in for co-approval
 
@@ -184,6 +184,13 @@ recorded. This is done in
 and shared with the Finance team. Send details of the purchase to your manager
 so it can be recorded.
 
+Company-purchased hardware that is not home office equipment is recorded in the
+same sheet regardless of its value. This includes devices used for demos and 
+testing Certified Nodes. Hardware you buy personally
+is not a company asset and is not recorded. See the
+[Asset Management Policy](/handbook/company/security/asset-management/) for how
+the inventory is maintained.
+
 ### Return of equipment
 
 When a team member leaves the company, they will be required to return any
@@ -199,8 +206,8 @@ Laptop deprecation is considered to be 25% per calendar year from purchase. The
 buy-back price is calculated as the original cost paid by FlowFuse price minus
 the deprecation. The buy-back price is subject to approval by the CEO.
 
-For example, if you have a laptop that was purchased for $2,000 and you have had
-it for 1.5 years (1 full calendar year), the buy-back price would be $1,500.
+For example, if you have a laptop that was purchased for \$2,000 and you have had
+it for 1.5 years (1 full calendar year), the buy-back price would be \$1,500.
 
 ## Education & Conferences
 

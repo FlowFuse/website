@@ -15,7 +15,7 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // left once its one referring blog post pointed at /contact-us/ instead) - but they stay
 // listed so their 301s in nuxt/redirects.ts are served by Nitro in dev rather than being
 // proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases', '/partners', '/industries', '/node-red']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases', '/partners', '/industries', '/blueprints', '/node-red']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
