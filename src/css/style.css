@@ -997,6 +997,27 @@ h4:hover .header-anchor::before {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
     }
 
+    /* The header pins itself to the top of the viewport, so anything else that wants to
+       pin below it has to know how tall it is. Its height is set by the padding steps in
+       the rule above plus a fixed-height logo row, so the three values track those steps.
+       Published here rather than copied into each consumer (currently SidebarNav.vue, the
+       docs and handbook section nav on narrow screens). */
+    .ff-website {
+        --ff-header-height: 72px;
+    }
+
+    @media (min-width: 640px) {
+        .ff-website {
+            --ff-header-height: 88px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .ff-website {
+            --ff-header-height: 56px;
+        }
+    }
+
     /* Subtle wave sweeping left-to-right THROUGH the logo's own fill on hover:
        each logo path takes a horizontal gradient (declared inside the SVG) whose
        stops shift colour in staggered sequence, so the colour flows across the
