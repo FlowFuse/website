@@ -226,10 +226,13 @@ const NEXT = [
          renders `<slot :name="item.id">` - a slot named `item` is never looked
          up and every stage would render empty.
 
-         Wider than the page's other sections (screen-xl, not screen-lg): this
-         one carries three columns at xl - the contents rail, the pinned stage
+         screen-xl, not the screen-lg the rest of the page uses: this section
+         carries three columns at xl - the contents rail, the pinned stage
          header, and the scrolling content - and in a screen-lg container the
-         delivery diagrams end up in a ~440px column, narrower than they draw. -->
+         delivery diagrams end up in a ~390px column, narrower than they draw.
+         PACKAGING below is widened to match, so the two sticky contents rails
+         line up with each other rather than stepping in by ~128px. The two are
+         a matched pair: change one width and change the other. -->
     <section class="w-full border-b border-gray-200 px-6 py-16 sm:py-24">
       <div class="mx-auto max-w-screen-xl">
         <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">How it works</p>
@@ -306,9 +309,10 @@ const NEXT = [
     </section>
 
     <!-- PACKAGING: which of the three you are, once the platform itself has
-         been explained. The route on from here is /product/{tier}/ and pricing. -->
+         been explained. The route on from here is /product/{tier}/ and pricing.
+         screen-xl to match STAGES above - see the note there. -->
     <section class="w-full border-b border-gray-200 px-6 py-16 sm:py-24">
-      <div class="mx-auto max-w-screen-lg">
+      <div class="mx-auto max-w-screen-xl">
         <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">Products</p>
         <h2 class="mt-6 max-w-3xl tracking-tight">Find the product for <span class="text-indigo-600">how you work</span>.</h2>
         <p class="mt-6 max-w-2xl text-gray-600">
