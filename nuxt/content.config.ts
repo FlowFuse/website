@@ -524,6 +524,101 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
+        // The template lifted from automotive.vue. Every industry page built on it (starting
+        // with automotive itself, then industrial-machinery) is a data entry here plus a thin
+        // pages/industries/<slug>.vue wrapper — same split as the industriesLegacy collection
+        // below, just a different, richer set of bands (quote card, metrics, ROI calculator,
+        // zigzag applications, compliance grid) than the seven legacy pages have.
+        industries: defineCollection({
+            type: 'data',
+            source: 'industries/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                // The short industry name used by the compliance heading ("X Compliance &
+                // Standards") and the use-cases heading ("Use cases in X"). Distinct from
+                // hero.eyebrow, which carries the fuller "X Manufacturing" framing — on
+                // automotive.vue these were "Automotive" and "Automotive Manufacturing"
+                // respectively, never the same string.
+                industryName: z.string(),
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }),
+                hero: z.object({
+                    eyebrow: z.string(),
+                    // A NavIcon registry key (nuxt/utils/navIcons.ts).
+                    eyebrowIcon: z.string(),
+                    // Carries inline <span class="text-red-600"> markup, rendered with
+                    // v-html — static content in this repo, not anything a visitor can set.
+                    heading: z.string(),
+                    description: z.string(),
+                    quote: z.object({
+                        text: z.string(),
+                        author: z.string(),
+                        role: z.string(),
+                        company: z.string(),
+                        image: z.string(),
+                        imageAlt: z.string(),
+                    }),
+                }),
+                // The "N+ manufacturers in M countries..." SocialProof line. Not every page
+                // has an aggregate stat like this yet.
+                socialProof: z.string().optional(),
+                metrics: z.array(z.object({
+                    number: z.string(),
+                    text: z.string(),
+                })),
+                // A customer-story bridge (heading + description + link) that renders below
+                // the metrics grid, not above it — the hero's layout stays fixed either way.
+                metricsBridge: z.object({
+                    heading: z.string(),
+                    description: z.string(),
+                    linkText: z.string(),
+                    linkHref: z.string(),
+                }).optional(),
+                roi: z.object({
+                    heading: z.string(),
+                    description: z.string(),
+                }),
+                applications: z.object({
+                    heading: z.string(),
+                    description: z.string(),
+                    items: z.array(z.object({
+                        title: z.string(),
+                        description: z.string(),
+                        linkText: z.string(),
+                        linkHref: z.string(),
+                        image: z.string(),
+                        imageAlt: z.string(),
+                        variant: z.enum(['indigo', 'red', 'mixed']),
+                    })),
+                }),
+                compliance: z.object({
+                    // The "The Data Your Audit Asks For, In One Place" subtitle is fixed
+                    // copy shared by every page, not declared here.
+                    description: z.string(),
+                    items: z.array(z.object({
+                        title: z.string(),
+                        text: z.string(),
+                        linkText: z.string(),
+                        linkHref: z.string(),
+                        // A UIcon name. Falls back to <IconsCertificateIcon> when absent.
+                        icon: z.string().optional(),
+                    })),
+                }),
+                // No useCases field: the "Use cases in X" band is dynamic, the same
+                // industriesLegacy-template query against the useCases collection's own
+                // `industries[]` field — not page data that has to be kept in sync by hand.
+                faqs: z.array(z.object({
+                    question: z.string(),
+                    answer: z.string(),
+                })),
+                closingCta: z.object({
+                    heading: z.string(),
+                    description: z.string(),
+                }),
+            })
+        }),
         // The seven industry pages were pure 11ty frontmatter read by layouts/industry.njk,
         // the same shape as the operational use-cases. /industries/automotive/ is not here:
         // it had a bespoke markup body and stays a hand-written Vue page, which is why the

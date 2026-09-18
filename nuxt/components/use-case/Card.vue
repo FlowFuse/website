@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // The cross-link card shared by the /use-cases/ listing, components/use-case-links.njk,
-// and components/industry-use-cases.njk (now IndustryMatchingUseCases.vue) — one look
+// and components/industry-use-cases.njk (now IndustryPageUseCases.vue) — one look
 // across all three call sites.
 withDefaults(defineProps<{
     to: string

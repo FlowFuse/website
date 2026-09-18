@@ -1,6 +1,10 @@
 <script setup lang="ts">
 // components/industry-use-cases.njk: every use-case whose `industries[]` names this
 // industry. The mapping's source of truth is the Use Cases Asana project (Industry field).
+//
+// Lives here, not under components/industry/, because both templates use it: the
+// industriesLegacy [slug].vue AND this one (industry-page/Template.vue). industry/ is
+// due for deletion once the seven legacy pages go; this component has to survive that.
 const props = defineProps<{ slug: string, displayName: string }>()
 
 const { data: all } = await useAsyncData('industry-use-cases', () =>

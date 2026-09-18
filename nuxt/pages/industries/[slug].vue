@@ -61,7 +61,7 @@ useSeoMeta({
 
     <IndustryUseCaseTiles :use-cases="page.useCases" />
 
-    <IndustryMatchingUseCases :slug="slug" :display-name="displayName" />
+    <IndustryPageUseCases :slug="slug" :display-name="displayName" />
 
     <div class="w-full py-12 px-6">
       <div class="max-w-screen-lg mx-auto">
