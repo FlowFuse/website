@@ -519,6 +519,8 @@ export default defineNuxtConfig({
 
                     ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
 
+                    '/node-red/',
+
                     '/about/',
 
                     ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
