@@ -134,47 +134,12 @@
                     {
                         "title": "By Industry",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-[9] xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-[2] xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Automotive",
                                 "href": "/industries/automotive/",
                                 "icon": "car"
-                            },
-                            {
-                                "label": "Food & Beverage",
-                                "href": "/industries/food-beverage/",
-                                "icon": "food-beverage"
-                            },
-                            {
-                                "label": "Life Sciences",
-                                "href": "/industries/life-sciences/",
-                                "icon": "shield-check"
-                            },
-                            {
-                                "label": "Electronics & Appliances",
-                                "href": "/industries/electronics-appliances/",
-                                "icon": "power"
-                            },
-                            {
-                                "label": "Renewables",
-                                "href": "/industries/renewables/",
-                                "icon": "wind-turbine"
-                            },
-                            {
-                                "label": "Semiconductors",
-                                "href": "/industries/semiconductors/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "Aerospace Components",
-                                "href": "/industries/aerospace-components/",
-                                "icon": "cog-6-tooth"
-                            },
-                            {
-                                "label": "Aviation & Aerospace",
-                                "href": "/industries/aviation-aerospace/",
-                                "icon": "airplane"
                             },
                             {
                                 "label": "See all industries",
@@ -515,34 +480,6 @@
                             {
                                 "label": "Automotive",
                                 "href": "/industries/automotive/"
-                            },
-                            {
-                                "label": "Food & Beverage",
-                                "href": "/industries/food-beverage/"
-                            },
-                            {
-                                "label": "Life Sciences",
-                                "href": "/industries/life-sciences/"
-                            },
-                            {
-                                "label": "Electronics & Appliances",
-                                "href": "/industries/electronics-appliances/"
-                            },
-                            {
-                                "label": "Renewables",
-                                "href": "/industries/renewables/"
-                            },
-                            {
-                                "label": "Semiconductors",
-                                "href": "/industries/semiconductors/"
-                            },
-                            {
-                                "label": "Aerospace Components",
-                                "href": "/industries/aerospace-components/"
-                            },
-                            {
-                                "label": "Aviation & Aerospace",
-                                "href": "/industries/aviation-aerospace/"
                             },
                             {
                                 "label": "See all industries",
