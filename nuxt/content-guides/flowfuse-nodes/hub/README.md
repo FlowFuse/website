@@ -30,6 +30,7 @@ This section is expanding. We are actively working to bring more Hub Certified N
 This section lists the **Hub Certified Nodes** documented in FlowFuse:
 
 - [Redis](/docs/flowfuse-nodes/hub/redis/): A FlowFuse-certified package that lets you connect to Redis, store and retrieve data, publish and subscribe to messages, execute commands, and integrate Redis into your flows.
+- [Kafka](/docs/flowfuse-nodes/hub/kafka/):  A FlowFuse-certified package that lets you connect to Apache Kafka, send and receive messages, run consumer groups, commit or roll back messages by hand, manage topics, and read offsets from your flows.
 
 <div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
 

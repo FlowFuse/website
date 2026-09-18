@@ -58,10 +58,12 @@ to = "https://flowfuse.com/:splat"
 status = 301
 force = true
 
+# `netlify dev` in front of the Nuxt dev server, for exercising the Netlify function
+# locally. The normal dev loop is `npm run dev` on its own.
 [dev]
-port = 8080
-framework = "#static"
-command = "npx @11ty/eleventy --quiet --watch"
+command = "npm run dev"
+targetPort = 3000
+framework = "#custom"
 autoLaunch = false
 
 [build]
@@ -94,6 +96,16 @@ from = "/blog/2026/03/Rethinking-Edge-AIs-Core-Orchestration/"
 to = "/blog/2026/03/rethinking-edge-ais-core-orchestration/"
 status = 301
 
+# One webinar was authored with a space in its filename, so 11ty published it at a URL
+# carrying %20. @nuxt/content slugifies that space to a hyphen, so the file has been
+# renamed to match and the published URL redirects here. This cannot live in
+# nuxt/redirects.ts either: Nitro matches route rules on the decoded path, where the
+# space is a literal one.
+[[redirects]]
+from = "/webinars/2025/live-from-the-shop-floor-scaling-from-digital%20to-smart-with-flowfuse-and-revolution-pi/"
+to = "/webinars/2025/live-from-the-shop-floor-scaling-from-digital-to-smart-with-flowfuse-and-revolution-pi/"
+status = 301
+
 [[redirects]]
 from = "/*"
 to = "/.netlify/functions/server"
@@ -116,8 +128,6 @@ ignore = "exit 0"
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [
-    "nuxt/public/img", # Eleventy Image Disk Cache
-    ".cache/images", # Eleventy image processing cache
     "nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image", # nuxt-og-image's resolved font URLs + converted TTFs
     "nuxt/node_modules/.cache/nuxt/.nuxt/cache/og-image-render" # nuxt-og-image's rendered-image build cache
   ]
