@@ -36,7 +36,7 @@ SDR's first qualifying meeting that month, 2 for the second, and so on)
 - $M$: Meetings to full bonus (the number of meetings required to earn $B$,
 i.e. quota)
 
-### Formula
+### First Meetings Bonus Formula
 
 $$
 b(n) = \min\left( C,\ B \cdot \frac{e^{1/M} - 1}{e - 1} \cdot e^{(n-1)/M} \right)
