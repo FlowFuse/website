@@ -356,23 +356,7 @@ const NEXT = [
               </div>
             </div>
           </template>
-        </ScrollSpySections>
-
-        <!-- The use-case and integration pages this platform underwrites. Kept
-             as a link strip rather than its own section: the stages above
-             already say what Connect means, so this is internal routing, not a
-             second explanation. -->
-        <div class="mt-20 border-t border-gray-200 pt-10">
-          <p class="m-0 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-gray-400">Built on this platform</p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <NuxtLink
-              v-for="cap in CAPABILITIES"
-              :key="cap.to"
-              :to="cap.to"
-              class="inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 no-underline transition-colors duration-150 hover:border-indigo-600 hover:bg-indigo-50 hover:text-indigo-600 hover:no-underline"
-            >{{ cap.label }}</NuxtLink>
-          </div>
-        </div>
+        </ScrollSpySections>      
       </div>
     </section>
 
