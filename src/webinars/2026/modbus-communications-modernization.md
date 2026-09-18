@@ -21,9 +21,9 @@ Modbus Communications is a 47-year-old protocol that still runs a huge share of 
 ## What This Modbus Communications Recording Covers
 
 - [The origin story](#why-modbus-communications-still-run-the-modern-factory-floor): how Modicon invented Modbus, gave it away royalty-free, and accidentally guaranteed its immortality.
-- [The honest scorecard](#honest-scorecard): where Modbus beats OPC UA and MQTT on simplicity and ubiquity, and where it loses.
-- [The keep, bridge, or replace decision framework](#decision-framework), and why bridging wins by default.
-- [A live demo](#live-demo) bridging Modbus registers into a unified namespace and dashboard with FlowFuse and Node-RED.
+- [The honest scorecard](#the-honest-scorecard-modbus-vs-opc-ua-and-mqtt): where Modbus beats OPC UA and MQTT on simplicity and ubiquity, and where it loses.
+- [The keep, bridge, or replace decision framework](#keep-bridge-or-replace-the-decision-framework), and why bridging wins by default.
+- [A live demo](#live-demo-bridging-modbus-data-with-flowfuse-and-node-red) bridging Modbus registers into a unified namespace and dashboard with FlowFuse and Node-RED.
 - The live Q&A, where attendees brought their own Modbus-at-scale dilemmas.
 
 ## Why Modbus Communications Still Run the Modern Factory Floor
@@ -32,15 +32,15 @@ If the world ended tomorrow, two things would persist: cockroaches and Modbus. I
 
 In the recording, Mandeep traces Modbus Communications back to its 1968 origins at Bedford Associates and Schneider's Modicon platform, and shows how a 1979 connectivity protocol ended up becoming an open, royalty-free standard that never really left. It's a short watch, and it reframes the "isn't this too old?" question most engineers start with.
 
-## The Honest Scorecard: Modbus vs. OPC UA and MQTT {#honest-scorecard}
+## The Honest Scorecard: Modbus vs. OPC UA and MQTT
 
 Kristopher and Mandeep put Modbus, OPC UA, and MQTT side by side and score them honestly, no protocol tribalism. Watch for the page-count comparison alone (spoiler: one spec is a lot longer than the other), it's a good gut check for how much complexity you actually need for the problem in front of you.
 
-## Keep, Bridge, or Replace: The Decision Framework {#decision-framework}
+## Keep, Bridge, or Replace: The Decision Framework
 
 This is the core of the session: a practical framework for deciding when to leave a Modbus device alone, when it's actually worth replacing, and why bridging is the default answer more often than not. If you've got a mixture of legacy devices and a growing list of systems that want their data, this is the part of the recording worth pausing and rewinding. It pairs well with our guide on [bridging Modbus to MQTT and a unified namespace](/blog/2024/12/publishing-modbus-data-to-uns/), which walks through the same pattern in more technical detail.
 
-## Live Demo: Bridging Modbus Data with FlowFuse and Node-RED {#live-demo}
+## Live Demo: Bridging Modbus Data with FlowFuse and Node-RED
 
 Around the halfway mark, Kristopher switches over to a live demo in FlowFuse and Node-RED: raw Modbus registers going in one end, and a named, typed, dashboarded data stream coming out the other. If you'd rather follow along with a written walkthrough afterward, our [Using Modbus with FlowFuse](/blog/2025/09/using-modbus-with-flowfuse/) guide covers the same setup step by step.
 
