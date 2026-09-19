@@ -237,6 +237,49 @@ tldr:
 
 The block renders with an indigo left border and a "TL;DR" label. It is optional — omit it if the article is short or the introduction already serves as a clear summary.
 
+### FAQ
+
+Add a `meta.faq` array to render an FAQ accordion at the end of the article body and emit `FAQPage` structured data, so the questions are eligible for Google's FAQ rich results.
+
+```yaml
+---
+meta:
+  faq:
+    - question: "How do I do X?"
+      answer: "Do the thing."
+    - question: "What about Y?"
+      answer: "Here's the answer, with an optional [link](/docs/some-page)."
+---
+```
+
+Answers render as plain text — the only markup supported is `[label](url)` links. Only add questions the post already answers and that a reader would genuinely search for on their own; don't invent questions just to trigger the schema.
+
+### How-To Schema
+
+Add a `meta.howto` object to emit `HowTo` structured data for a post that walks through a sequential process. This only adds the JSON-LD — it doesn't change the rendered article, so the step text should still exist in the article's own headings/body.
+
+```yaml
+---
+meta:
+  howto:
+    name: "How to do the thing"        # optional, falls back to metaTitle/title
+    description: "Short description"  # optional, falls back to the meta description
+    totalTime: "PT30M"                 # optional, ISO 8601 duration
+    tool:
+      - "Node-RED"
+    steps:
+      - name: "Step 1 name"
+        text: "What to do in this step."
+        url: "step-1-heading-id"       # optional, anchors to a heading in the article
+      - name: "Step 2 name"
+        text: "What to do in this step."
+---
+```
+
+As with FAQ above, write this under `meta:` in the raw frontmatter.
+
+Only add this to posts that are genuinely a step-by-step how-to (tutorials, setup guides) — not comparison, explainer, or news posts. Google only shows HowTo rich results for real procedural content.
+
 ### CTA
 
 The CTA renders a call-to-action block at the end of the article body, just before the closing content.
