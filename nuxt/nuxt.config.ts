@@ -495,6 +495,10 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The event pages are .vue files with no listing to crawl from.
+                    '/events/proveit-2026/',
+                    '/events/hannover-messe-2026/',
+                    '/events/hannover-messe-2025/',
                     // /industries/ plus the seven entries served by
                     // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
                     // file, so Nuxt finds that itself.
