@@ -70,6 +70,33 @@
         "url": "https://www.g2.com/sellers/flowfuse"
       }
     }
+    {% if tags and 'industry' in tags %}
+    ,
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site.baseURL }}{{ page.url }}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.baseURL }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Industries",
+          "item": "{{ site.baseURL }}/industries/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ hero.eyebrow | safe }}",
+          "item": "{{ site.baseURL }}{{ page.url }}"
+        }
+      ]
+    }
+    {% endif %}
     {% if type == "post" %}
     ,
     {
@@ -119,10 +146,10 @@
         {% for item in meta.faq %}
         {
           "@type": "Question",
-          "name": "{{ item.question }}",
+          "name": {{ item.question | dump | safe }},
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "{{ item.answer }}"
+            "text": {{ item.answer | dump | safe }}
           }
         }{% if not loop.last %},{% endif %}
         {% endfor %}
@@ -134,8 +161,8 @@
     {
       "@type": "HowTo",
       "@id": "{{ site.baseURL }}{{ page.url }}#howto",
-      "name": "{{ meta.howto.name or title }}",
-      "description": "{{ meta.howto.description or description }}",
+      "name": {{ (meta.howto.name or title) | dump | safe }},
+      "description": {{ (meta.howto.description or description) | dump | safe }},
       {% if meta.howto.totalTime %}"totalTime": "{{ meta.howto.totalTime }}",{% endif %}
       {% if meta.howto.tool %}
       "tool": [
@@ -149,8 +176,8 @@
         {
           "@type": "HowToStep",
           "position": {{ loop.index }},
-          "name": "{{ s.name }}",
-          "text": "{{ s.text }}"
+          "name": {{ s.name | dump | safe }},
+          "text": {{ s.text | dump | safe }}
           {% if s.url %},"url": "{{ site.baseURL }}{{ page.url }}#{{ s.url }}"{% endif %}
         }{% if not loop.last %},{% endif %}
         {% endfor %}
