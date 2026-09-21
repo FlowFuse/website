@@ -8,9 +8,9 @@ type ProductFilter = 'all' | CertifiedCollection
 
 useSeoMeta({
     title: 'Industrial Adapters & Connectors',
-    description: 'Certified industrial drivers and adapters for OPC UA, Modbus, and MQTT, plus connectors for the databases, APIs, and cloud services running the rest of your stack.',
-    ogDescription: 'Certified industrial drivers and adapters for OPC UA, Modbus, and MQTT, plus connectors for the databases, APIs, and cloud services running the rest of your stack.',
-    keywords: 'industrial drivers, industrial adapters, iiot adapters, connectors, opc ua adapter, mqtt adapter, modbus adapter',
+    description: 'Certified industrial connectors and adapters for OPC UA, Modbus, and MQTT, plus connectors for the databases, APIs, and cloud services running the rest of your stack.',
+    ogDescription: 'Certified industrial connectors and adapters for OPC UA, Modbus, and MQTT, plus connectors for the databases, APIs, and cloud services running the rest of your stack.',
+    keywords: 'industrial connectors, industrial adapters, iiot adapters, connectors, opc ua adapter, mqtt adapter, modbus adapter',
     ogUrl: 'https://flowfuse.com/integrations/',
     twitterSite: '@FlowFuseinc',
 })

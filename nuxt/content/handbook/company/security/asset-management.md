@@ -20,7 +20,11 @@ This policy applies to all organizational assets owned or managed by FlowFuse, i
 
 ### Inventory of Assets
 
-Identify all assets that store, process, or transmit confidential information, and maintain an up-to-date inventory of these assets.
+Identify all assets that store, process, or transmit confidential information, and maintain an up-to-date inventory of these assets in the [Asset Tracker](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit?gid=570844366#gid=570844366).
+
+The inventory covers company-purchased hardware that is not assigned to an individual as home office equipment, including devices used for demos and testing Certified Nodes. Record this hardware in the Asset Tracker regardless of its purchase value. See [Asset purchases](/handbook/peopleops/expenses/#asset-purchases-over-500) for how purchases are recorded.
+
+Hardware bought personally by a team member is not a FlowFuse asset and is not recorded in the inventory.
 
 ### Ownership of Assets
 
