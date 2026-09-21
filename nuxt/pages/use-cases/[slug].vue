@@ -63,10 +63,7 @@ useSeoMeta({
     <UseCaseComparison v-if="page.comparison" :block="page.comparison" />
     <UseCaseAiBuildLayer v-if="page.aiBuildLayer" :block="page.aiBuildLayer" :slug="slug" />
 
-    <!-- "Common in these industries" is hidden until the new industry pages are live.
-         The component and the `industries:` field in the content stay in place, so
-         restoring it is putting this one line back:
-         <UseCaseIndustryChips :industries="page.industries" /> -->
+    <UseCaseIndustryChips :industries="page.industries" />
 
     <UseCaseClosingCta
         :heading="page.closingCta?.heading"
