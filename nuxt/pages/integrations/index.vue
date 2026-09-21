@@ -144,7 +144,7 @@ function chipClass (active: boolean, disabled = false) {
 
         <section class="container m-auto md:max-w-6xl px-4 pt-16">
             <h2>Browse the catalogue</h2>
-            <p class="mt-1.5 text-gray-500">The full FlowFuse library — certified drivers and adapters, recommended picks, and thousands of Node-RED community nodes.</p>
+            <p class="mt-1.5 text-gray-500">The full FlowFuse library — certified adapters and connectors, recommended picks, and thousands of Node-RED community nodes.</p>
         </section>
 
         <!-- Toolbar -->
