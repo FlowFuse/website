@@ -55,7 +55,8 @@ An off-the-shelf MES is the fastest path to solid routing, dispatch, and out-of-
 
 There are plenty of strong MES platforms on the market, from comprehensive systems like [Siemens Opcenter Execution](https://www.siemens.com/en-us/products/opcenter/execution/) and [Rockwell's Plex](https://www.rockwellautomation.com/en-us/products/software/factorytalk/operationsuite/mes/plex-mes.html), to composable, build-your-own-app platforms like [Tulip](https://tulip.co/). Manufacturers running these don't need to rip them out to close the gaps this blog covers. In practice, manufacturers have implemented FlowFuse alongside deployments like these to extend their functionality, which is what the next option is about.
 
-<!-- TODO: inline image from Yndira -->
+::cta-image{src="/blog/2026/09/images/extend-the-capablities-of-mes.png" alt="FlowFuse Extends capablities of your mes cta" cta="demo"}
+::
 
 ### When Building a Custom MES Is Right
 
