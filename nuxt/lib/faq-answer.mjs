@@ -56,6 +56,8 @@ function renderBlock (paragraph) {
     return inline(lines.join(' '))
 }
 
+export { inline }
+
 export function renderFaqAnswer (answer) {
     if (!answer) return []
     return answer
