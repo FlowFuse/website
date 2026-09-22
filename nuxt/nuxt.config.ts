@@ -161,7 +161,7 @@ const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, '../src
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', './modules/blueprints-source', 'nuxt-llms'],
 
     // Captured at build time (Netlify sets CONTEXT during the build, but passes only URL,
     // SITE_NAME and SITE_ID to the deployed Function at runtime), then baked in via
@@ -310,6 +310,13 @@ export default defineNuxtConfig({
             // pages left sitemap-legacy.xml when their .njk files were deleted, so without
             // this they are in neither sitemap.
             ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
+            // /industries/<slug>/ is one [slug].vue over a `data` collection, so the
+            // module's static-route discovery cannot see it, and content-urls.get.ts cannot
+            // either (it keys on `path`, which a data collection has no equivalent of).
+            // Without this the seven pages are in neither sitemap, having left
+            // sitemap-legacy.xml when their .md files moved. /industries/automotive/ has its
+            // own .vue file, so that one is discovered normally.
+            ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries').map(loc => ({ loc })),
             // /landing/<slug>/ is one [slug].vue over a `data` collection, so the module's
             // static-route discovery cannot see it, and content-urls.get.ts cannot either
             // (it keys on `path`, which a data collection has no equivalent of). Without
@@ -488,9 +495,13 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
-                    // /industries/automotive/ is its own .vue file, so Nuxt finds that
-                    // itself; the listing needs naming because nothing the crawler parses
-                    // links to it yet.
+                    // The event pages are .vue files with no listing to crawl from.
+                    '/events/proveit-2026/',
+                    '/events/hannover-messe-2026/',
+                    '/events/hannover-messe-2025/',
+                    // /industries/ plus the seven entries served by
+                    // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
+                    // file, so Nuxt finds that itself.
                     '/industries/',
                     // The four campaign pages with their own layout are .vue files, linked only from off-site campaigns.
                     '/landing/tulip/',
@@ -513,6 +524,8 @@ export default defineNuxtConfig({
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     '/industries/automotive',
+                    '/industries/industrial-machinery',
+                    ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
                     ...collectWebinarRoutes(join(__dirname, '../src/webinars'), '/webinars'),
