@@ -40,6 +40,8 @@ that all participants of the meeting have access to the presentation slides.
 Confirm attendance of all participants of the invite, or their respective
 representatives prior to the scheduled meeting.
 
+For Cota Capital, keep Allison Chapman, the venture firm's administrator, in the loop on all board meetings and board requests.
+
 ## Board Meeting Attendees
 
 Each quarterly board meeting should include the following representatives. Before sending invites,
