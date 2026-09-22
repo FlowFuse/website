@@ -109,7 +109,7 @@ const breadcrumbItems = computed(() => [
 ])
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
 
-const BLOG_ROOT_TOPIC = 'industrial automation and Node-RED'
+const BLOG_ROOT_TOPIC = 'industrial operations'
 const BLOG_INDEX_DESCRIPTION = 'Explore FlowFuse articles on industrial automation, MQTT, UNS, dashboards, AI, and Node-RED, for scalable industrial applications.'
 const listingDescription = computed(() => {
     const { tag, page: pageNumber } = routeInfo.value
