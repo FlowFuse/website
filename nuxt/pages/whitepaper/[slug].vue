@@ -11,9 +11,9 @@ if (!page.value) {
 }
 
 useHead({
-    title: page.value.meta?.title,
+    title: page.value.title,
     meta: [
-        { name: 'description', content: page.value.meta?.description ?? '' },
+        { name: 'description', content: page.value.description ?? '' },
     ]
 })
 </script>
@@ -24,7 +24,7 @@ useHead({
       <div class="ff-prose whitepaper w-full flex flex-col md:flex-row md:gap-10 mt-3 pb-4 md:pb-12">
         <div class="sm:1/3 md:w-1/2 flex-grow">
           <div class="ff-image-cover ff-image-rounded w-full h-full mb-6">
-            <img :src="page.image" :alt="`Image representing ${page.meta?.title}`">
+            <img :src="page.image" :alt="`Image representing ${page.title}`">
           </div>
         </div>
         <div class="main-content prose sm:2/3 md:w-1/2">

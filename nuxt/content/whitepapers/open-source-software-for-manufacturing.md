@@ -1,7 +1,6 @@
 ---
-meta:
-  title: "Open Source Software for Manufacturing"
-  description: "Explore how open-source industrial software gives manufacturers more flexibility, transparency, and control over digital transformation."
+title: "Open Source Software for Manufacturing"
+description: "Explore how open-source industrial software gives manufacturers more flexibility, transparency, and control over digital transformation."
 image: /images/whitepapers/whitepaper-oss-manufacturing.jpg
 thumbnail: /images/publications/Whitepaper_Open-Source-in-Manufacturing.png
 hubspot:

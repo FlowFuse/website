@@ -1,7 +1,6 @@
 ---
-meta:
-  title: "UNS - Decoupling data producers and consumers"
-  description: "Learn how a Unified Namespace decouples industrial data producers and consumers to create flexible, scalable manufacturing systems."
+title: "UNS - Decoupling data producers and consumers"
+description: "Learn how a Unified Namespace decouples industrial data producers and consumers to create flexible, scalable manufacturing systems."
 image: /images/whitepapers/uns.png
 thumbnail: /images/publications/whitepaper_uns.png
 hubspot:

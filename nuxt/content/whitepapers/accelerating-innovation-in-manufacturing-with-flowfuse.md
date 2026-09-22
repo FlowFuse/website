@@ -1,7 +1,6 @@
 ---
-meta:
-  title: "Accelerating Innovation in Manufacturing with FlowFuse"
-  description: "Learn how FlowFuse helps manufacturers connect siloed systems, use open standards, and scale industrial innovation with low-code tools."
+title: "Accelerating Innovation in Manufacturing with FlowFuse"
+description: "Learn how FlowFuse helps manufacturers connect siloed systems, use open standards, and scale industrial innovation with low-code tools."
 image: /images/whitepapers/whitepaper-manufacturing.png
 thumbnail: /images/publications/Whitepaper_Accelerating-Innovation-in-Manufacturing-with-FlowFuse.png
 hubspot:

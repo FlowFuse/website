@@ -1,7 +1,6 @@
 ---
-meta:
-  title: "Accelerating Industrial Innovation with Low-Code Platforms"
-  description: "Learn how low-code platforms empower industrial engineers to build solutions faster, reduce IT bottlenecks, and accelerate innovation."
+title: "Accelerating Industrial Innovation with Low-Code Platforms"
+description: "Learn how low-code platforms empower industrial engineers to build solutions faster, reduce IT bottlenecks, and accelerate innovation."
 image: /images/whitepapers/low-code-whitepaper.png
 thumbnail: /images/publications/Whitepaper_Accelerating-Industrial-Innovation-With-Low-Code-Platforms.png
 hubspot:
