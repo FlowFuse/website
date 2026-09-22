@@ -1,8 +1,9 @@
 ---
-title: "Announcing Node-RED Con 2026: Call for Papers Now Open"
-subtitle: "The community conference returns on November 3, themed around Node-RED at the Edge of Intelligence."
-description: "Node-RED Con 2026 takes place November 3, 2026, proudly sponsored by FlowFuse. The Call for Papers is open until July 31."
+title: "Node-RED Con 2026: Node-RED at the Edge of Intelligence"
+subtitle: "The community conference is on November 3 — the programme is set and registration is free."
+description: "Node-RED Con 2026 takes place November 3, 2026, proudly sponsored by FlowFuse. Registration is now open — free and online."
 date: 2026-06-29
+lastUpdated: 2026-09-21
 authors: ["flowfuse"]
 image: /blog/2026/06/images/node-red-con-2026.png
 cta:
@@ -16,44 +17,22 @@ tags:
 - node-red
 ---
 
-Node-RED Con is back. The community conference returns on **Tuesday, 
-November 3, 2026**, free, online, and open to everyone. FlowFuse is proud 
-to sponsor this year's event alongside the OpenJS Foundation.
+Node-RED Con is back. The community conference returns on **Tuesday, November 3, 2026**, free, online, and open to everyone. FlowFuse is proud to sponsor this year's event alongside the OpenJS Foundation.
+
+Last year's event brought together 1,700+ registrants and 1,100+ live attendees from 35+ countries.
 
 This year's theme is **Node-RED at the Edge of Intelligence**.
 
 <!--more-->
 
-## The Call for Papers is open
+## The programme is set
 
-The conference agenda is built entirely from community submissions. The 
-organizing team is looking for talks across three formats:
+The Call for Papers received a strong response from the community. The organizing team has selected talks across three formats:
 
-- **Full Talks & Demos (25–30 mins):** Technical talks, case studies, and 
-practical demonstrations aligned with this year's theme. Submissions are 
-particularly encouraged in these areas: real-world Node-RED deployments in 
-production, AI integration (LLMs, agents, MCP), edge computing architectures, 
-industrial use cases (PLCs, SCADA, OPC-UA, MQTT), and using AI tools to build 
-and manage flows.
-- **Lightning Talks (8–10 mins):** Fun, cool, or inspiring projects built with 
-Node-RED, no matter how unconventional. IoT/IIoT and AI projects are 
-encouraged, but any project you're proud of is welcome.
-- **Panelists:** Experts with strong opinions and experience in industrial 
-automation, AI in industrial environments, IoT security, or the future of 
-low-code development.
+- **Full Talks & Demos:** Real-world Node-RED deployments in production — from smart textile factories and commercial real estate to industrial HMIs and edge AI pipelines.
+- **Lightning Talks:** Focused, fast-paced sessions on Node-RED projects worth sharing — including real-time OEE monitoring, mobile alerting from industrial systems, and MQTT data normalization with LLMs.
+- **Panel Discussion:** Experts sharing strong opinions on the future of Node-RED in industrial automation and AI-driven environments.
 
-[Submit your talk](https://nrcon.nodered.org/) **CFP closes Friday, July 31, 2026.**
+## Registration is now open
 
-## Why speak
-
-Node-RED Con 2025 welcomed 1,700+ registered and 1,100+ attendees from 35+ 
-countries. Sessions averaged 350+ live viewers, with the most-watched talks 
-drawing over 600 concurrent attendees. All sessions are recorded and published: 
-the [Node-RED Con 2025 playlist](https://www.youtube.com/playlist?list=PLyNBB9VCLmo2yvFdVZOv41NUEzuw-CAZX) 
-has accumulated 3,100+ views and is still growing.
-
-## Stay in the loop
-
-Want to be notified when registration opens? Sign up below.
-
-::HubSpotForm{formId="9a447b67-0957-4f40-90e9-69db1ab9c70a" cta="cta-node-red-con-2026" reference="article"}
+Head to [nrcon.nodered.org](https://nrcon.nodered.org) to learn more, or [register here](https://events.zoom.us/ev/Ag_xPefs5sgZrJ1NFahdYqv-WfvhdtzQOkVaQMrJcPZQilHl_XXW~ApY0XoKxnhY-LrVkmWioZBCf7qE7qIdXM6LHUUBlsgeZTfnxHmWbFi7rosxSUgMyLxKrm4IXZTcAqmX-3hj-YZWstQ) to secure your spot. Join the live event on November 3, ask your questions, be part of the conversation — this only happens once a year, and you won't want to miss what the community has built.
