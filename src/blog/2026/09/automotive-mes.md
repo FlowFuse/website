@@ -2,7 +2,7 @@
 title: "Automotive MES: Buy, Build, or Extend What You Have"
 metaTitle: "Automotive MES Guide: Buy, Build, or Extend What You Have"
 description: "Automotive MES: should you buy, build, or extend it? See how FlowFuse helps multi-site manufacturers close automotive MES gaps without a costly full rebuild."
-date: 2026-09-21
+date: 2026-09-22
 authors: ["joyce"]
 image: /blog/2026/09/images/mes-buy-vs-build-vs-extend.png
 tags:
