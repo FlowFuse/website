@@ -99,6 +99,8 @@ Follow these steps to create a quote.
    - Adjust fields for Term and discount/fee/tax as needed.
    - Add Add-on line items for purchases that exceed features that are included
      with the Plan.
+   - Enterprise Support line item should automatically be added to the Quote once you create it. There is an active HubSpot workflow supporting this automation.
+     - Enterprise Support line item can be removed and replaced by a higher tier Premium Level Support for upsell purposes.
 5. Set Signature and Payment settings as needed. Ensure a countersignature is
    required from either the CEO or Head of GTM.
 6. In the Template and Details section, choose the appropriate Quote Template
@@ -183,6 +185,7 @@ as evidenced by a PO or signed quote, is the sole determinant.
    - Start date
    - Renewal date
    - Are line items recurring, or not?
+   - Is there a line item for Support?
    - Is an MSA agreed upon, and stored in the Google Drive?
 1. Create the
    [subscription](/handbook/operations/billing/#creating-a-subscription)
