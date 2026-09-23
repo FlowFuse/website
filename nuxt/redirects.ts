@@ -65,6 +65,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/team/': { redirect: { to: '/about/', statusCode: 301 } },
     '/team': { redirect: { to: '/about/', statusCode: 301 } },
     '/docs/user/assistant/': { redirect: { to: '/docs/user/expert/', statusCode: 301 } },
+    '/docs/flowfuse-nodes/ai/onxx/': { redirect: { to: '/docs/flowfuse-nodes/ai/onnx/', statusCode: 301 } },
     '/handbook/development/': { redirect: { to: '/handbook/engineering/', statusCode: 301 } },
     '/handbook/development/tools/': { redirect: { to: '/handbook/engineering/tools/', statusCode: 301 } },
     '/handbook/development/support/': { redirect: { to: '/handbook/engineering/support/', statusCode: 301 } },
