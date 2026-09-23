@@ -112,7 +112,7 @@ AI is only one part of an AI application in manufacturing. To put a model into p
 
 An AI application needs data, which comes from sources including [machines and PLCs](/landing/plc/), sensors, [MES](/use-cases/mes/), [SCADA](/use-cases/scada/), [databases](/docs/node-red/database/), [cameras](/blog/2026/06/process-rtsp-camera-feeds-at-the-edge/), and more.
 
-Industrial connectivity software gathers this data and makes it available to the AI application. [FlowFuse connects industrial equipment and routes this data through the application](/use-cases/data-integration/), which is essential for processing it.
+Industrial connectivity software gathers this data and makes it available to the AI application. [FlowFuse connects industrial equipment and routes this data through the application](/use-cases/data-integration/), which is essential for processing it. Its [built-in MQTT broker](/docs/user/teambroker/) can also act as the central hub where this data is published and made available to the AI application and other systems.
 
 ### Edge and Cloud Computing
 
@@ -136,7 +136,7 @@ FlowFuse can connect to databases already in use in the manufacturing environmen
 
 Finally, for an AI application to have an effect, its results need to reach the people and systems that can act on them. That could be a dashboard showing predicted demand, an alert indicating a machine is about to fail, or a maintenance task created automatically when an anomaly is detected.
 
-FlowFuse provides a visual application development environment for building these applications and workflows and connecting them to industrial data. [FlowFuse Expert](/docs/user/expert/) can also generate applications from natural language descriptions. FlowFuse also runs an MCP server that [lets external AI services such as Claude, OpenAI, and Gemini connect to FlowFuse](/blog/2026/09/industrial-ai-agent), and [FlowFuse MCP nodes](/docs/flowfuse-nodes/mcp/) can expose data and application capabilities so AI assistants and agents can interact with manufacturing data and applications.
+FlowFuse provides a visual application development environment for building these applications and workflows and connecting them to industrial data. FlowFuse also integrates with AI agents, allowing [FlowFuse Expert](/docs/user/expert/) and a coding agent of your choice to interact with the platform and build applications and data workflows through its MCP server and [MCP nodes](/docs/flowfuse-nodes/mcp/). This is how [external AI services such as Claude, OpenAI, and Gemini connect to FlowFuse](/blog/2026/09/industrial-ai-agent/) to work with manufacturing data and applications.
 
 Not every application needs the full stack; it depends on the problem you're solving. At minimum, you need industrial data connectivity, somewhere to run the model, and the model itself. Beyond that, some applications also need data storage, dashboards, workflows, or AI assistants before the results can actually close the loop.
 
