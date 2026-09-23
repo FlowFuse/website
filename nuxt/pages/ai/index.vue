@@ -56,7 +56,7 @@ useSchemaOrg([
 // The Cloud address. Self-hosted platforms answer on their own domain, so the block
 // takes one (host-swap) rather than telling the reader in prose to edit what they
 // have just copied.
-const CODING_NOTE = 'Command-line and editor agents such as Claude Code, Cursor, Visual Studio Code and Gemini CLI connect to the same URL.'
+const CODING_NOTE = 'Other command-line and editor agents, such as Cursor, Visual Studio Code and Gemini CLI, connect to the same URL.'
 
 const GOVERNANCE = {
     title: 'AI Governance you can <span class="text-indigo-600">prove</span>',
@@ -98,8 +98,8 @@ const CAPABILITY_GROUPS = [
         items: [
             { name: 'Governed autonomous operations', diagram: 'governed-operations', externalNote: 'For external agents, approval cards do not apply. The access you granted is the control, enforced on every call.', description: 'Platform Automations let AI act on live systems, with every write behind an approval card, session-scoped and fully audited. A person approves, edits or rejects each proposed change before it reaches a machine. Nothing runs outside the permissions and RBAC that already govern your teams.' },
             { name: 'Ask your plant anything', diagram: 'ask-your-plant', externalNote: 'For external agents, whether they can reach the MCP servers you build in your own flows depends on the agent.', description: 'In Insights mode, ask questions in natural language and get answers grounded in live machine state, alarms and logs. Operators and engineers can check what is happening on the floor without building a report or querying a database by hand. Table and MQTT-broker reading are coming soon.' },
-            { name: 'Automated visual inspection', diagram: 'visual-inspection', description: `Run <a href="/node-red/flowfuse/ai/onxx/" class="${LINK}">ONNX</a> vision models inside flows next to the machine, with camera ingest over <a href="/node-red/flowfuse/edge/rtsp/" class="${LINK}">RTSP</a>, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant.` },
-            { name: 'Use any model within flows', diagram: 'any-model', description: `<a href="/node-red/flowfuse/ai/llm-nodes/" class="${LINK}">Certified LLM nodes</a> bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control.` },
+            { name: 'Automated visual inspection', diagram: 'visual-inspection', description: `Run <a href="/docs/flowfuse-nodes/ai/onxx/" class="${LINK}">ONNX</a> vision models inside flows next to the machine, with camera ingest over <a href="/docs/flowfuse-nodes/edge/rtsp/" class="${LINK}">RTSP</a>, for inference that works offline and keeps data on your network. Detection results flow into the same logic as any other signal, so you can trigger alerts or actions from what the model sees. Running at the edge means no round trip to the cloud and no image data leaving the plant.` },
+            { name: 'Use any model within flows', diagram: 'any-model', description: `<a href="/docs/flowfuse-nodes/ai/llm-nodes/" class="${LINK}">Certified LLM nodes</a> bring OpenAI, Anthropic, Gemini or local models via Ollama into any flow with your own keys. Choose the provider that fits each task, or keep everything on local models when data cannot leave your network. Because you supply the keys, model access and spend stay under your control.` },
         ],
     },
     {
@@ -118,7 +118,7 @@ const CAPABILITY_GROUPS = [
         eyebrow: 'Expose',
         subtitle: 'The other direction. Your flows become tools that an agent can call as part of its work.',
         items: [
-            { name: 'AI that uses your tools', diagram: 'your-tools', externalNote: 'Anyone can build them. For external agents, whether they can call them depends on the agent.', description: `Build your own <a href="/node-red/flowfuse/mcp/" class="${LINK}">MCP servers</a> and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register.` },
+            { name: 'AI that uses your tools', diagram: 'your-tools', externalNote: 'Anyone can build them. For external agents, whether they can call them depends on the agent.', description: `Build your own <a href="/docs/flowfuse-nodes/mcp/" class="${LINK}">MCP servers</a> and let Insights-mode agents call your tools and services as part of a workflow. Wrap an internal API or system as a tool once, then let agents use it wherever it fits. The agent stays inside the workflow you designed, calling only the tools you register.` },
         ],
     },
 ]
@@ -229,6 +229,14 @@ onUnmounted(() => {
                 <span class="mt-2 block text-sm font-semibold text-indigo-600">See the documentation &rarr;</span>
               </span>
             </a>
+
+            <!-- What to ask once the picker above has you connected. Placed after the
+                 docs note rather than between it and the picker, so the note stays
+                 attached to the steps it belongs to, and the three read in order:
+                 how to connect, where to read more, what to say first.
+                 surface="ai" keeps these copies separable in PostHog from the same
+                 component on the blog post. -->
+            <PromptCarousel surface="ai" />
           </div>
         </div>
       </div>
@@ -260,9 +268,9 @@ onUnmounted(() => {
          the capabilities band, which reads as the card floating low in a gap rather
          than as a section change. Doubling is for boundaries that also change
          background, the way the capabilities band does. -->
-    <section class="ff-ai-demo w-full px-6 pt-12 sm:pt-16 pb-0">
+    <section class="ff-ai-demo w-full px-6 pb-12 sm:pb-16 pt-24">
       <div class="md:max-w-screen-lg m-auto">
-        <h2 class="max-md:text-center">Connect and build <span class="text-indigo-600">faster than ever</span></h2>
+        <h2 class="max-md:text-center">Connect and build <span class="text-red-600">faster than ever</span></h2>
         <p class="mt-3 text-gray-600 max-w-3xl">
           Connect in seconds and start building. Use natural-language to leverage your company-sanctioned AI in a secure and governed way.
         </p>
@@ -273,7 +281,7 @@ onUnmounted(() => {
              bordered / shadowed treatment the product page gives its hero shot.
              A plain div rather than a figure now the caption is gone - a figure with
              nothing to caption is just a wrapper. -->
-        <div class="mt-8 overflow-hidden rounded-lg border-2 border-indigo-100 shadow-2xl">
+        <div class="mt-8 overflow-hidden rounded-lg border-2 border-red-100 shadow-2xl">
           <video
             class="block w-full"
             poster="/images/ai/demo-external-agents-poster.jpg"
@@ -294,7 +302,7 @@ onUnmounted(() => {
 
     <!-- GOVERNANCE: the control plane every AI action runs through. Path-neutral,
          which is what lets it sit above the picker rather than under Expert. -->
-    <div class="ff-ai-governance w-full px-6 py-12 sm:py-16">
+    <div class="ff-ai-governance w-full px-6 py-12 sm:py-16 sm:pb-32">
       <div class="md:max-w-screen-lg m-auto ff-blue-card pt-12 pb-12 px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto">
           <!-- eslint-disable-next-line vue/no-v-html -->

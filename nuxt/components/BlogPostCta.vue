@@ -51,7 +51,7 @@ function onCtaClick (event: MouseEvent) {
 </script>
 
 <template>
-  <div class="ff-blue-card blog-post-cta p-8 sm:p-12 m-auto max-w-prose">
+  <div class="ff-blue-card blog-post-cta p-8 sm:p-12 m-auto">
     <div class="flex flex-col gap-6 sm:gap-8 text-center sm:text-left">
       <h3 class="mt-0 mb-0 !text-3xl text-indigo-800">{{ cta?.title || currentCta.title }}</h3>
       <p class="mt-0 mb-0 max-w-4xl mx-auto sm:mx-0 leading-relaxed">{{ cta?.description || currentCta.description }}</p>

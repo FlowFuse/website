@@ -14,7 +14,7 @@ In [Part 1](/blog/2025/05/building-andon-task-manager-with-ff/), we introduced t
 
 <!--more-->
 
-In this part 2, we move from planning to implementation. The focus now shifts to building the actual system using [FlowFuse Dashboard](https://dashboard.flowfuse.com) (Node-RED Dashboard 2.0), hosted on the FlowFuse platform. We will begin by developing the **Lines view** for regular users, along with a line selection menu. The Department View and Admin interface will follow in a later part of the series.
+In this part 2, we move from planning to implementation. The focus now shifts to building the actual system using [FlowFuse Dashboard](/platform/dashboard/) (Node-RED Dashboard 2.0), hosted on the FlowFuse platform. We will begin by developing the **Lines view** for regular users, along with a line selection menu. The Department View and Admin interface will follow in a later part of the series.
 
 ## Getting Started
 

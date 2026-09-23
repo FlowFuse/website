@@ -13,9 +13,9 @@ if (!page.value) {
 const coverImage = computed(() => page.value?.coverImage ?? page.value?.image)
 
 useHead({
-    title: page.value.meta.title,
+    title: page.value.title,
     meta: [
-        { name: 'description', content: page.value.meta?.description ?? '' },
+        { name: 'description', content: page.value.description ?? '' },
     ]
 })
 </script>

@@ -40,7 +40,7 @@ Fortunately, Node-RED provides support for a wide range of industrial protocols,
 
 By leveraging Node-RED, you can collect data from these legacy systems, process and transform the data using low-code workflows, and then seamlessly send it to the cloud via modern protocols such as MQTT, Kafka, AMQP, and more.
 
-In our example, Node-RED can directly collect metrics from sensor using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/platform/device-agent/), This agent enables you to remotely monitor, manage, and build Node-RED flows securely through the FlowFuse platform remotely. [See here](/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
+In our example, Node-RED can directly collect metrics from sensor using [I2C](https://flows.nodered.org/node/node-red-contrib-i2c) on the Raspberry Pi. This approach simplifies the process by eliminating the need for additional communication layers. To run Node-RED on the Raspberry Pi, we use [FlowFuse Device Agent](/platform/device-agent/), This agent enables you to remotely monitor, manage, and build Node-RED flows securely through the FlowFuse platform remotely. [See here](/docs/node-red/hardware/) for more details on how to set up and run FlowFuse Device Agent on different devices. 
 
 ### Step 2: Transform and Process the Collected metrics
 
@@ -60,7 +60,7 @@ Raw data from the ADXL345 sensor might look like this:
 [26,0,244,255,37,255]  
 ```  
 
-Using a [Function node](/node-red/core-nodes/function/) in Node-RED, we can convert this into a human-readable format.
+Using a [Function node](/docs/node-red/core-nodes/function/) in Node-RED, we can convert this into a human-readable format.
 
 ![Function node: Transforming Raw Data into Readable Format](./images/function-node.png){data-zoomable}
 _Function node: Transforming Raw Data into Readable Format_
@@ -80,7 +80,7 @@ While this is more readable, it can still be challenging to monitor changes in v
 ![Change node: Calculating Magnitude](./images/change-node-calculating-magnitude.png){data-zoomable}
 _Change node: Calculating Magnitude_
 
-After calculating the Magnitude using a [Change node](/node-red/core-nodes/change/), the data might look like this:
+After calculating the Magnitude using a [Change node](/docs/node-red/core-nodes/function/change/), the data might look like this:
 
 ```json
 {
@@ -160,7 +160,7 @@ While Sparkplug B provides a standardized topic model, its hierarchy may not alw
 
 ### Step 5: Sending Collected metrics to UNS
 
-With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/node-red/core-nodes/mqtt-in/) node to send the transformed data to the broker.
+With your topic naming convention chosen, it’s time to send the data to the UNS. In Node-RED, we will use the [MQTT Out](/docs/node-red/core-nodes/network/mqtt-in/) node to send the transformed data to the broker.
 
 1. Drag an MQTT out node into your flow.  
 2. Configure the node to connect to the FlowFuse MQTT Broker using the client credentials generated earlier.

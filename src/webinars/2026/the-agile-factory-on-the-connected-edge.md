@@ -25,8 +25,8 @@ In this session, Rhythm Agarwal (Senior Manufacturing Test Engineer at Aperia) a
 ## How Aperia Replaced Traditional PLCs with Edge Applications
 
 - **Extends the shop floor, doesn't replace it.** Smart fixtures run on FlowFuse instead of a PLC, so existing equipment keeps working, just connected.
-- **Speaks every protocol.** Sensors, scanners, and actuators connect over [MODBUS-TCP](/node-red/protocol/modbus/), [RS-232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), and [raw TCP](/node-red/core-nodes/tcp-in/), all feeding into one data flow.
-- **Logs data the moment it happens.** Every station writes to a shared [MongoDB](/node-red/database/mongodb/) backend in real time, not on a delay.
+- **Speaks every protocol.** Sensors, scanners, and actuators connect over [MODBUS-TCP](/docs/node-red/protocol/modbus/), [RS-232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), and [raw TCP](/docs/node-red/core-nodes/network/tcp-in/), all feeding into one data flow.
+- **Logs data the moment it happens.** Every station writes to a shared [MongoDB](/docs/node-red/database/mongodb/) backend in real time, not on a delay.
 - **One fix, applied everywhere.** Code changes roll out to entire device groups from a single pipeline, with full version control, not machine by machine.
 
 ## Three Manufacturing Applications Built on the Edge

@@ -59,7 +59,7 @@ To create your first subscription:
 
 1. Drag an Inject node onto your canvas. This will trigger the subscription to start.
 
-> Note: This article uses Inject nodes for manual triggering to illustrate key concepts. In production, it is advisable to create interactive dashboards with FlowFuse Dashboard to enable effective monitoring and control. For more information on designing operator interfaces, please refer to [this article](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/).
+> Note: This article uses Inject nodes for manual triggering to illustrate key concepts. In production, it is advisable to create interactive dashboards with [FlowFuse Dashboard](/platform/dashboard/) to enable effective monitoring and control. For more information on designing operator interfaces, please refer to [this article](/blog/2023/07/how-to-build-a-opc-client-dashboard-in-node-red/).
 
 2. Add an OpcUa-Item node. Double-click it and enter the NodeId of the tag you want to monitor, like `ns=2;i=2007`. Select the correct data type for your tag.
 

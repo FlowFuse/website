@@ -101,11 +101,16 @@ onUnmounted(() => {
       <!-- The release label lives in a column beside its own entries rather than in a
            separate rail, so it lines up with the entries it belongs to, and sticks while
            you read through them. Two columns per release, not one list plus one nav. -->
+      <!-- -scroll-mt-7 cancels the label column's pt-7 below, so a deep link such as
+           /changelog/#release-3-0 rests with the release label itself just under the
+           header, at the site-wide 75px inset, rather than the section box that starts
+           28px above it. That also tucks the previous release's sticky label behind the
+           header, instead of leaving it poking out above the release you asked for. -->
       <section
         v-for="group in visibleGroups"
         :id="anchorId(group.release)"
         :key="group.release"
-        class="flex"
+        class="flex -scroll-mt-7"
       >
         <!-- pt-7 so the label lines up with the first entry's title rather than sitting
              above it: each entry carries `my-2 py-6` before its title, which this column

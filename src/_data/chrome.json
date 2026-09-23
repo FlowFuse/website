@@ -134,7 +134,7 @@
                     {
                         "title": "By Industry",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-[9] xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-[3] xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -142,39 +142,9 @@
                                 "icon": "car"
                             },
                             {
-                                "label": "Food & Beverage",
-                                "href": "/industries/food-beverage/",
-                                "icon": "food-beverage"
-                            },
-                            {
-                                "label": "Life Sciences",
-                                "href": "/industries/life-sciences/",
-                                "icon": "shield-check"
-                            },
-                            {
-                                "label": "Electronics & Appliances",
-                                "href": "/industries/electronics-appliances/",
-                                "icon": "power"
-                            },
-                            {
-                                "label": "Renewables",
-                                "href": "/industries/renewables/",
-                                "icon": "wind-turbine"
-                            },
-                            {
-                                "label": "Semiconductors",
-                                "href": "/industries/semiconductors/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "Aerospace Components",
-                                "href": "/industries/aerospace-components/",
+                                "label": "Industrial Machinery",
+                                "href": "/industries/industrial-machinery/",
                                 "icon": "cog-6-tooth"
-                            },
-                            {
-                                "label": "Aviation & Aerospace",
-                                "href": "/industries/aviation-aerospace/",
-                                "icon": "airplane"
                             },
                             {
                                 "label": "See all industries",
@@ -211,44 +181,9 @@
                         "listClasses": "row-span-[9] md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
-                                "label": "Redis",
-                                "href": "/node-red/flowfuse/hub/redis/",
-                                "icon": "circle-stack"
-                            },
-                            {
                                 "label": "OPC UA",
                                 "href": "/integrations/opcua/",
                                 "icon": "server-stack"
-                            },
-                            {
-                                "label": "RTSP",
-                                "href": "/node-red/flowfuse/edge/rtsp/",
-                                "icon": "camera"
-                            },
-                            {
-                                "label": "EtherNet/IP",
-                                "href": "/node-red/flowfuse/edge/cip-suite/",
-                                "icon": "share"
-                            },
-                            {
-                                "label": "MQTT",
-                                "href": "/node-red/flowfuse/mqtt/",
-                                "icon": "wifi"
-                            },
-                            {
-                                "label": "ONNX",
-                                "href": "/node-red/flowfuse/ai/onxx/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "LLM Nodes",
-                                "href": "/node-red/flowfuse/ai/llm-nodes/",
-                                "icon": "sparkles"
-                            },
-                            {
-                                "label": "MCP",
-                                "href": "/node-red/flowfuse/mcp/",
-                                "icon": "puzzle-piece"
                             },
                             {
                                 "label": "See all integrations",
@@ -298,7 +233,7 @@
                         "links": [
                             {
                                 "label": "Guides",
-                                "href": "/application-guide/",
+                                "href": "/docs/application-guide/",
                                 "icon": "book-open"
                             },
                             {
@@ -327,12 +262,17 @@
                     {
                         "title": "Customers",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-2 md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
                                 "label": "Customer Stories",
                                 "href": "/customer-stories/",
                                 "icon": "presentation"
+                            },
+                            {
+                                "label": "ROI Calculator",
+                                "href": "/resources/roi-calculator/",
+                                "icon": "arrow-trending-up"
                             }
                         ]
                     }
@@ -547,32 +487,8 @@
                                 "href": "/industries/automotive/"
                             },
                             {
-                                "label": "Food & Beverage",
-                                "href": "/industries/food-beverage/"
-                            },
-                            {
-                                "label": "Life Sciences",
-                                "href": "/industries/life-sciences/"
-                            },
-                            {
-                                "label": "Electronics & Appliances",
-                                "href": "/industries/electronics-appliances/"
-                            },
-                            {
-                                "label": "Renewables",
-                                "href": "/industries/renewables/"
-                            },
-                            {
-                                "label": "Semiconductors",
-                                "href": "/industries/semiconductors/"
-                            },
-                            {
-                                "label": "Aerospace Components",
-                                "href": "/industries/aerospace-components/"
-                            },
-                            {
-                                "label": "Aviation & Aerospace",
-                                "href": "/industries/aviation-aerospace/"
+                                "label": "Industrial Machinery",
+                                "href": "/industries/industrial-machinery/"
                             },
                             {
                                 "label": "See all industries",
@@ -601,36 +517,8 @@
                         "title": "By Integration",
                         "links": [
                             {
-                                "label": "Redis",
-                                "href": "/node-red/flowfuse/hub/redis/"
-                            },
-                            {
                                 "label": "OPC UA",
                                 "href": "/integrations/opcua/"
-                            },
-                            {
-                                "label": "RTSP",
-                                "href": "/node-red/flowfuse/edge/rtsp/"
-                            },
-                            {
-                                "label": "EtherNet/IP",
-                                "href": "/node-red/flowfuse/edge/cip-suite/"
-                            },
-                            {
-                                "label": "MQTT",
-                                "href": "/node-red/flowfuse/mqtt/"
-                            },
-                            {
-                                "label": "ONNX",
-                                "href": "/node-red/flowfuse/ai/onxx/"
-                            },
-                            {
-                                "label": "LLM Nodes",
-                                "href": "/node-red/flowfuse/ai/llm-nodes/"
-                            },
-                            {
-                                "label": "MCP",
-                                "href": "/node-red/flowfuse/mcp/"
                             },
                             {
                                 "label": "See all integrations",
@@ -670,7 +558,7 @@
                         "links": [
                             {
                                 "label": "Guides",
-                                "href": "/application-guide/"
+                                "href": "/docs/application-guide/"
                             },
                             {
                                 "label": "Docs",

@@ -13,7 +13,7 @@ The MQTT-Broker config node in Node-RED is used to define the connection setting
   - **MQTT V3.1.1 (legacy)**
   - **MQTT V3.1.1**
   - **MQTT V5**
-- **Use TLS**: Enabling this option node will use TLS, for more information TLS refer to [TLS node docs](/node-red/core-nodes/tls/)
+- **Use TLS**: Enabling this option node will use TLS, for more information TLS refer to [TLS node docs](/docs/node-red/core-nodes/network/tls/)
 - **Client ID**: The client identifier to use when connecting to the broker. If left blank, a random ID will be generated.
 - **Keep Alive**: This setting defines the interval (in seconds) at which the MQTT client sends a "keep alive" message to the broker to maintain the connection. It ensures that the connection remains active even if there is no other data being transmitted. If you set this to 0, the client will not send keep-alive messages.
 - **Session**:

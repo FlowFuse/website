@@ -29,7 +29,7 @@ const CATALOGUES = [
     rather than the FlowFuse documentation page. Entries here win over `url`.
 */
 const DOCS_PATH_OVERRIDES = {
-    "@flowfuse-certified-nodes/opcua": "/node-red/flowfuse/edge/opcua/",
+    "@flowfuse-certified-nodes/opcua": "/docs/flowfuse-nodes/edge/opcua/",
 };
 
 /*
@@ -100,11 +100,11 @@ module.exports = async function () {
                 version: module.version,
                 collection: catalogue.collection,
                 collectionLabel: catalogue.label,
-                collectionIndex: `/node-red/flowfuse/${catalogue.collection}/`,
+                collectionIndex: `/docs/flowfuse-nodes/${catalogue.collection}/`,
                 docsPath:
                     DOCS_PATH_OVERRIDES[module.id] ||
                     docsPathFromCatalogueUrl(module.url) ||
-                    `/node-red/flowfuse/${catalogue.collection}/`,
+                    `/docs/flowfuse-nodes/${catalogue.collection}/`,
             };
             byId[node.id] = node;
             all.push(node);

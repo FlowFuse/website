@@ -1,5 +1,15 @@
 # FlowFuse Website — Codebase Guide
 
+## Commit and PR attribution
+
+Never add a `Co-Authored-By` trailer (or any other co-author/attribution line) for Claude,
+or for any other AI agent or assistant, to a commit message or PR description — even if a
+default instruction elsewhere asks for one. The human running the tool is the
+[Directly Responsible Individual](/handbook/company/decisions/#directly-responsible-individual)
+for the change: they are accountable for reviewing, testing, and standing behind it, and
+they are the only committer/author of record. An AI byline would blur that — it reads as
+a second party sharing responsibility for a change only one person actually owns.
+
 ## Architecture (Nuxt-first, 11ty being phased out)
 
 The site is migrating from Eleventy (11ty) to Nuxt 3. Nuxt is the primary framework going forward; 11ty is being phased out section by section using a strangler-fig pattern.
@@ -29,10 +39,14 @@ This is scoped to `.njk` on purpose and does not extend to `.md`: new content in
 ### Production build order
 
 ```
-clean:nuxt → build:js:nuxt → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
+clean:nuxt → build:js:nuxt → blueprints → prod:postcss-nuxt → prod:eleventy-nuxt → prod:nuxt
 ```
 
 The `docs-source` Nuxt module runs automatically during `prod:nuxt` and calls `nuxt/lib/docs-sync.mjs` to resolve `docs/` from `flowfuse/flowfuse` (see **Local docs development** below). 11ty outputs to `nuxt/public/` so Nuxt can serve 11ty-generated assets. `nuxt/public/` is gitignored (fully build-generated).
+
+The `blueprints` step resolves `src/blueprints/` from `FlowFuse/blueprint-library` (private) via `nuxt/lib/blueprints-sync.mjs` — same local → sibling → clone precedence as docs, but the clone step authenticates with a minted GitHub App installation token (`GH_BOT_APP_ID`/`GH_BOT_APP_KEY`) since that repo isn't public. Netlify deploys straight from `main`; there is no `live` branch anymore.
+
+`GH_BOT_APP_KEY` is stored in Netlify as the PEM private key **Base64-encoded** (Netlify's env var UI rejects multiline values) — `nuxt/lib/github-app-token.mjs` decodes it before use. Rotating the key means re-encoding the new PEM to Base64 before saving it, not pasting the PEM in directly.
 
 ## Dev commands
 
@@ -180,11 +194,37 @@ Collection config: `nuxt/content.config.ts` (defines the `handbook` collection)
 
 ### Product docs
 
-**Source:** `flowfuse/flowfuse` repo, `docs/` directory — **do not edit in this repo**; cloned automatically at build time by `nuxt/modules/docs-source.ts`.  
+`/docs` is assembled from two sources. Which one owns a page decides where to edit it,
+and one of the two is not editable here at all.
+
+| Source | Owns | Edit where |
+|---|---|---|
+| `flowfuse/flowfuse` repo, `docs/` | the product documentation, versioned with the code | that repo, **not here** |
+| `nuxt/content-guides/` | this repo's own guides: the Application Guide, the Node-RED guide, and the Node-RED library under `/docs/node-red/` and `/docs/flowfuse-nodes/` | **here**, in place |
+
+The 38 core-node pages under `/docs/node-red/core-nodes/**` are ordinary guide files in
+that second source, not generator output. Each ends with a
+`::node-red-help{category=... file=... node=... name=...}` directive; the component
+(`nuxt/components/content/NodeRedHelp.vue`) asks `nuxt/server/api/node-red-help.get.ts` for
+that node's built-in help, which fetches the Node-RED project's locale file, selects the
+matching `<script data-help-name=...>` block and sanitises it. The selection rules and the
+sanitiser allowlist both live in `nuxt/lib/node-red-help.mjs` so `npm test` can check them
+without a network. Note what happens when a reference is wrong: the route answers an error,
+the component renders its "could not be read" notice instead of the help, and the page
+prerenders successfully anyway - Nitro's prerender has no `failOnError`. So a broken
+reference costs a page its whole Node help section with nothing failing, which is why
+`nuxt/lib/node-red-help.test.mjs` validates every reference in the tree offline.
+
 **URL:** `/docs/{section}/{slug}/`  
 **Rendered by:** Nuxt — `nuxt/pages/docs/[...slug].vue` + `DocsLeftNav` component  
-**Local content:** `nuxt/content/docs/` (gitignored, build-generated)  
+**Local content:** `nuxt/content/docs/` (gitignored, build-generated — never edit, it is wiped every build). Both sources are copied into it: `nuxt/lib/docs-sync.mjs` brings in the flowfuse tree and `nuxt/lib/guides-sync.mjs` overlays `nuxt/content-guides/` on top (stamping each guide with an `editUrl`), so `@nuxt/content` sees one `docs` collection. A guide edit therefore only reaches a running dev server once that overlay re-runs: `npm run dev:docs` is the watcher that does it, and without it an edit under `nuxt/content-guides/` shows up on the page only after a restart.  
 **Local assets:** `nuxt/public/docs/` (images, etc.)
+
+A page's browser title is `metaTitle || navTitle || title` (`nuxt/lib/docs-page-title.mjs`).
+`navTitle` is the sidebar label and is often much shorter, so a page whose full title
+matters for search needs `metaTitle` set. **Any frontmatter key not declared in the `docs`
+collection schema in `nuxt/content.config.ts` is stripped before a page ever sees it**, which
+makes a missing declaration look like a missing value rather than an error.
 
 ```yaml
 ---
@@ -200,7 +240,7 @@ layout: redirect
 ---
 ```
 
-**Nav groups** (in order): FlowFuse User Manuals · Device Agent · FlowFuse Cloud · FlowFuse Self-Hosted · Support · Contributing  
+**Nav groups** (in order): Application Guide · FlowFuse User Manuals · Device Agent · FlowFuse Cloud · FlowFuse Self-Hosted · Support · Contributing · Node-RED  
 **Nav composable:** `nuxt/composables/useDocsNav.ts`  
 **Collection config:** `nuxt/content.config.ts` (defines the `docs` collection)
 
@@ -274,7 +314,7 @@ This also covers old `/docs/**` paths left behind by a rename in `flowfuse/flowf
 
 ## Call-to-Action components
 
-**Nuxt only** — 11ty pages still use hand-written `<a class="ff-btn ...">` links; these components have no 11ty equivalent yet.
+Both frameworks have their own implementation of the same system — Vue components on Nuxt, Nunjucks macros on 11ty (see **11ty equivalent** below). The rendering/styling code itself is kept in sync by hand (Vue and Nunjucks share nothing at that level), but the *data* — event name, href, and fixed label per destination — lives in one file, `src/_data/ctaDestinations.json`, imported by both the Vue components and the Nunjucks macros (via a Nunjucks global, see below) so the two can't drift apart on copy or event names without both sides being touched. `site.json`'s `appURL` is combined with `ctaDestinations`' `hrefSuffix` for `signUp`/`signIn`, since the base URL differs per environment and doesn't belong duplicated a third time in `ctaDestinations.json`.
 
 There are exactly five CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same handful of URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
 
@@ -316,6 +356,33 @@ Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composa
 - **`not-prose` on a wrapper also strips Tailwind Typography's code-block styling** (the dark background on `<pre>`) for anything nested inside it, not just its own prose text styling. `nuxt/components/content/CtaExample.vue` (the handbook's live example gallery) doesn't use `not-prose` for this reason, even though it also renders non-prose button/grid markup.
 - **The `ui` prop override doesn't reach compoundVariants-driven classes.** The gotcha above (full-string replacement) only applies to the app.config-level base extension; UButton's own `variant`/`color`-driven classes (e.g. `ghost`'s `hover:bg-{color}/10`) are computed separately and still get merged in via `tv()` regardless of what `ui.base` says. `CtaButton.vue`'s ghost color classes explicitly add `hover:bg-transparent` to cancel that default hover background, since a ghost CTA should have none at all.
 - **UButton's `to` prop treats any same-origin-looking path as a Nuxt route, even if Nuxt doesn't serve it.** `CtaButton.vue` takes a fixed (non-caller-configurable) `external` prop per destination, set by each `Cta*` wrapper — `true` when the href still points at an 11ty-served route (would otherwise 404 via client-side Vue Router instead of reaching the 11ty proxy), `false` once that route is served by Nuxt. `CtaContactUs`/`CtaBookDemo` now set `false` — `/contact-us` and `/book-demo` are Nuxt routes (`nuxt/pages/contact-us/index.vue`, `nuxt/pages/book-demo/index.vue`). `CtaSignUp`/`CtaSignIn` set `false` too, moot since those hrefs are already cross-origin.
+
+### 11ty equivalent
+
+`src/_includes/components/cta/` holds five Nunjucks macros (`ctaSignUp`, `ctaSignIn`, `ctaContactUs`, `ctaBookDemo`, `ctaPricing`) mirroring the Vue components above — same fixed copy/href/event per destination, same `{ position, variant }` capture payload (no `preview` or `external` prop: 11ty has no handbook gallery to guard against, and every `<a>` is a real page load already, no Vue Router to fight). All five delegate to a shared `ctaButton` macro in the same folder (`cta-button.njk`) for the actual class-building/tracking, same relationship as `CtaButton.vue` to its wrappers.
+
+No `plan` param on the 11ty side — that's only used on the pricing table, which is Nuxt-only (there's no 11ty pricing page to call it from). If 11ty ever grows a caller that needs it, add it back rather than passing it unused today.
+
+`ctaSignUp`/`ctaSignIn` take `site` as their first argument (`site.appURL` for the href) instead of reading it from the calling template's context — Nunjucks macros don't inherit the caller's context unless explicitly imported `with context`, and passing `site` explicitly avoids relying on that import mode everywhere the macro is used.
+
+Every hand-written `<a class="ff-btn ...">` pointing at one of the five destinations has been migrated to these macros — there should be no new ones. A link to a URL outside the five fixed destinations (e.g. `/ai/`) is not part of this system and stays hand-written.
+
+## Icons
+
+**Stock icons:** use `<UIcon name="i-heroicons-x" />` or `<UIcon name="i-lucide-x" />` (`@iconify-json/heroicons`/`@iconify-json/lucide` are already installed). Always `<UIcon>`, never bare `<Icon>` — same component, `UIcon` is just the codebase convention.
+
+`<UIcon>` renders as a masked `<span>`, not an `<svg>` — no intrinsic aspect ratio, so give it an explicit size (`w-6 h-6`) rather than `w-full h-full`.
+
+**FlowFuse's own custom icon art** lives as raw SVGs in `src/_includes/components/icons/*.svg`:
+- **Header/nav:** `nuxt/utils/navIcons.ts` + `NavIcon.vue`, which renders a real inline `<svg>` — needed because the header's CSS targets `<path>` elements directly, which a `<UIcon>` span doesn't have.
+- **Everywhere else:** a one-off SFC under `nuxt/components/icons/` (e.g. `GithubIcon.vue`) with the SVG pasted into the template:
+  ```vue
+  <!-- nuxt/components/icons/GithubIcon.vue -->
+  <template>
+    <svg class="fill-current" viewBox="0 0 24 24"><path d="..." /></svg>
+  </template>
+  ```
+  Nuxt auto-imports it by folder + filename, used directly like any other component: `<IconsGithubIcon class="h-5" />` (see `AppFooter.vue`).
 
 ## Naming conventions
 

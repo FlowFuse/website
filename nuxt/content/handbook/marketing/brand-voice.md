@@ -73,6 +73,16 @@ Whether writing an email, blog post, tweet, UI message, or sales pitch:
 - **Sound human.** Write like someone who’s been in the room — and understands.
 
 ## Terminology & Style Guidelines
+### FlowFuse Components
+When we discuss components of FlowFuse - for instance, our dashboard solution, artificial intelligence features, etc. - they should always be attached to FlowFuse. Examples include (but are not limited to):
+
+- FlowFuse Dashboard
+- FlowFuse Expert
+- FlowFuse Edge
+- FlowFuse Hub
+- FlowFuse Fleet
+
+The product or component in question should not be orphaned from FlowFuse. Don't say "the Expert" - say "the FlowFuse Expert".
 
 ### Node-RED
 

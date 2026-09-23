@@ -49,7 +49,7 @@ Variables in Node-RED serve as containers for storing and managing data througho
 
 Node-RED offers three primary variable categories:
 
-**Message variables** travel with the message object as it flows through your nodes. The most common example is `msg.payload`, which carries the primary data between nodes. For a deeper dive into message handling, see the [Understanding Node-RED Messages](/node-red/getting-started/node-red-messages/) guide.
+**Message variables** travel with the message object as it flows through your nodes. The most common example is `msg.payload`, which carries the primary data between nodes. For a deeper dive into message handling, see the [Understanding Node-RED Messages](/docs/node-red/getting-started/node-red-messages/) guide.
 
 **Context variables** store application state at different levels, node, flow, or global scope. They persist data that needs to be accessed across multiple message events, making them ideal for tracking counters, storing configuration, or maintaining state.
 

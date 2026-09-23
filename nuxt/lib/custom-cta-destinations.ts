@@ -49,7 +49,7 @@ export const CUSTOM_CTA_DESTINATIONS = {
     },
     // href varies - always the single most-recently-dated webinar (past or
     // upcoming), never the general webinars listing (see
-    // ThankYouExploreMore.vue's query). Named for that destination, not for
+    // ExploreMoreContent.vue's query). Named for that destination, not for
     // the fact that it's shown as a post-conversion suggestion.
     latestWebinar: {
         event: 'cta-latest-webinar',
@@ -64,7 +64,7 @@ export const CUSTOM_CTA_DESTINATIONS = {
     // Event name preserved from the hand-written capture() call this replaces
     // on the OPC UA integration page (see the note above on migrated events).
     opcuaCertifiedNodeDocs: {
-        href: '/node-red/flowfuse/edge/opcua/',
+        href: '/docs/flowfuse-nodes/edge/opcua/',
         event: 'cta-certified-opcua-node',
     },
 } as const

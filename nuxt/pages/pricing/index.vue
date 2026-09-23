@@ -51,7 +51,7 @@ useSchemaOrg([
 
 <template>
   <div class="w-full px-6">
-    <div class="max-w-5xl mx-auto py-16 px-4">
+    <div class="max-w-5xl mx-auto pt-16 px-4">
         <h1 class="text-center"><span class="text-indigo-600">FlowFuse</span> Pricing</h1>
         <h2 class="text-center text-gray-500 text-2xl -mt-3 mb-10">Choose the product that fits your team</h2>
         <p class="text-center text-lg max-w-2xl mx-auto mb-16">Whether you’re connecting one plant or standardizing across hundreds of business systems, FlowFuse has a product for you.</p>
@@ -73,9 +73,45 @@ useSchemaOrg([
         </UPricingPlan>
         </UPricingPlans>
 
-        <SocialProof class="mt-16" />
+        <section class="mt-16 rounded-lg border border-indigo-100 bg-radial-[at_bottom_right] from-indigo-50 to-white p-6 sm:p-8">
+            <h3 class="text-xl font-semibold text-gray-900">Self-hosted deployments</h3>
+            <p class="mt-2 text-gray-600 max-w-3xl">FlowFuse is available in two ways. Pick the hosting model that fits your environment - and start building immediately.</p>
+            <div class="mt-6 grid gap-6 sm:grid-cols-2">
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                        <UIcon name="i-lucide-cloud" class="size-5 shrink-0 text-indigo-600" />
+                        <h4 class="text-lg font-semibold text-gray-900">FlowFuse Cloud</h4>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-600 grow">Fully managed and maintained by us. Nothing to install, nothing to patch - start building in minutes.</p>
+                    <CtaSignUp variant="primary" position="pricing-hosting-cloud" class="mt-4 self-start" />
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                        <UIcon name="i-lucide-server" class="size-5 shrink-0 text-indigo-600" />
+                        <h4 class="text-lg font-semibold text-gray-900">Self-hosted / on-premise</h4>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-600 grow">Run FlowFuse on your own infrastructure with Docker or Kubernetes - on-premise, in your private cloud, or fully air-gapped. See the <a href="/docs/install/introduction/" class="text-indigo-600 font-semibold hover:underline">installation docs</a>.</p>
+                    <CtaContactUs variant="primary-outlined" position="pricing-hosting-self-hosted" class="mt-4 self-start" />
+                </div>
+            </div>
+        </section>
 
-        <h2 id="comparison" class="text-center mt-28 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
+        <SocialProof class="mt-16" />
+    </div>
+  </div>
+
+  <div id="roi" class="w-full bg-indigo-50/50 py-16">
+    <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-center mb-3">What FlowFuse <span class="text-indigo-600">pays back</span></h2>
+        <p class="text-center text-lg text-gray-500 max-w-2xl mx-auto mb-10">Put your team’s numbers in to see what recovered engineering time, faster deployment and avoided downtime are worth against the price of the platform.</p>
+        <RoiCalculator compact />
+        <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/resources/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
+    </div>
+  </div>
+
+  <div class="w-full px-6">
+    <div class="max-w-5xl mx-auto pb-16 px-4">
+        <h2 id="comparison" class="text-center mt-14 mb-10"><span class="text-indigo-600">FlowFuse</span> Comparison</h2>
         <UPricingTable
         v-if="featureCatalog"
         class="mt-16"

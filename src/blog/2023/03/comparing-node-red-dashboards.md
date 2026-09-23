@@ -22,7 +22,7 @@ Dashboards are a great feature of Node-RED, allowing you to easily expose data v
     <p><strong>UPDATE:</strong> Since this article was published, it's worth noting a couple of important updates:</p>
     <ul>
         <li>FlexDash is no longer maintained and supported.</li>
-        <li><a href="https://dashboard.flowfuse.com">Node-RED Dashboard 2.0</a> has been released, which is a new, modern dashboard stack for Node-RED, and offers all of the benefits of the original "Node-RED Dashboard", plus more.</li>
+        <li><a href="/platform/dashboard/">Node-RED Dashboard 2.0</a> has been released, which is a new, modern dashboard stack for Node-RED, and offers all of the benefits of the original "Node-RED Dashboard", plus more.</li>
     </ul>
 </div>
 
@@ -175,7 +175,7 @@ After using FlexDash over the past couple of weeks and finding it to be already 
 
 ### Dashboard - third place
 
-***Important Update: New Generation of Node-RED Dashboard Released:*** *A new generation of the outdated and unmaintained Node-RED Dashboard has been released to replace it. Introducing [Node-RED Dashboard 2.0](https://dashboard.flowfuse.com/), built on Vue.js, offering significantly more versatility than its predecessor. This new dashboard, managed by FlowFuse, is designed to allow full customization, addressing the limitations of the previous version.* 
+***Important Update: New Generation of Node-RED Dashboard Released:*** *A new generation of the outdated and unmaintained Node-RED Dashboard has been released to replace it. Introducing [Node-RED Dashboard 2.0](/platform/dashboard/), built on Vue.js, offering significantly more versatility than its predecessor. This new dashboard, managed by FlowFuse, is designed to allow full customization, addressing the limitations of the previous version.* 
 
 *Node-RED Dashboard 2.0 retains most of the widgets and concepts from the old version, so transitioning from Node-RED Dashboard 1.0 to 2.0 is easy. For a full feature comparison you can check out the [Migration Guide](https://dashboard.flowfuse.com/user/migration.html).
 

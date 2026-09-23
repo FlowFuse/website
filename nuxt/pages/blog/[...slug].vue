@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
+import { BLOG_TAG_TOPICS, BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
 import { getAllBlogPosts } from '../../utils/sharedContent'
 // Handed to ContentRenderer explicitly below. Nuxt Content resolves a markdown component tag
 // against a registry it builds while parsing, and reaches it through an async loader. These
@@ -89,7 +89,14 @@ const recommendedPosts = computed(() => (allPosts.value || []).filter(post => !i
 const relatedHeading = computed(() => relatedPosts.value.length ? 'Related Articles:' : 'Recommended Articles:')
 const postsToShow = computed(() => relatedPosts.value.length ? relatedPosts.value : recommendedPosts.value)
 
-const formattedDate = computed(() => page.value ? new Date(page.value.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
+const displayDate = computed(() => {
+    if (!page.value) return null
+    const published = new Date(page.value.date)
+    const updated = page.value.lastUpdated ? new Date(page.value.lastUpdated) : null
+    return updated && updated > published ? updated : published
+})
+const isUpdated = computed(() => !!page.value?.lastUpdated && displayDate.value > new Date(page.value.date))
+const formattedDate = computed(() => displayDate.value ? displayDate.value.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '')
 const heroImage = computed(() => page.value?.image || '/images/og-blog.jpg')
 const tldrList = computed(() => Array.isArray(page.value?.tldr) ? page.value?.tldr : null)
 const tldrText = computed(() => typeof page.value?.tldr === 'string' ? page.value?.tldr : null)
@@ -101,6 +108,17 @@ const breadcrumbItems = computed(() => [
     { label: pageTitle.value },
 ])
 const pageDescription = computed(() => page.value?.description || page.value?.meta?.description || '')
+
+const BLOG_ROOT_TOPIC = 'Industrial IoT and operations'
+const BLOG_INDEX_DESCRIPTION = 'Explore FlowFuse articles on industrial automation, MQTT, UNS, dashboards, AI, and Node-RED, for scalable industrial applications.'
+const listingDescription = computed(() => {
+    const { tag, page: pageNumber } = routeInfo.value
+    if (!tag && pageNumber === 1) return BLOG_INDEX_DESCRIPTION
+    const topic = tag ? BLOG_TAG_TOPICS[tag] : BLOG_ROOT_TOPIC
+    return pageNumber === 1
+        ? `Explore FlowFuse articles about ${topic}, with practical guides, technical insights, examples, and updates for industrial teams.`
+        : `Browse page ${pageNumber} of FlowFuse's ${topic} articles for practical guidance, product insights, technical tutorials, and industry updates.`
+})
 const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 const absoluteImage = computed(() => heroImage.value.startsWith('http') ? heroImage.value : `https://flowfuse.com${heroImage.value}`)
@@ -116,8 +134,8 @@ useHead({
 
 useSeoMeta({
     title: seoTitle,
-    description: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
-    ogDescription: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : ''),
+    description: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : listingDescription.value),
+    ogDescription: computed(() => routeInfo.value.kind === 'post' ? pageDescription.value : listingDescription.value),
     ogImage: computed(() => routeInfo.value.kind === 'post' ? absoluteImage.value : undefined),
     ogUrl: canonicalUrl,
     ogType: computed(() => routeInfo.value.kind === 'post' ? 'article' : 'website'),
@@ -132,7 +150,7 @@ if (routeInfo.value.kind === 'post') {
             description: pageDescription,
             image: absoluteImage,
             datePublished: computed(() => page.value ? new Date(page.value.date).toISOString() : undefined),
-            dateModified: computed(() => page.value ? new Date(page.value.lastUpdated || page.value.date).toISOString() : undefined),
+            dateModified: computed(() => displayDate.value?.toISOString()),
             // Each Person's @id is their /blog/author/{slug}/ page, so the article and the
             // author page resolve to the same entity in the graph.
             author: computed(() => authorMembers.value.length
@@ -194,8 +212,8 @@ if (routeInfo.value.kind === 'post') {
           </template>
           <span v-else class="font-medium">FlowFuse</span>
           <span class="text-gray-300">|</span>
-          <time :datetime="new Date(page.lastUpdated || page.date).toISOString()">
-            {{ page.lastUpdated ? 'Updated ' : '' }}{{ formattedDate }}
+          <time :datetime="displayDate.toISOString()">
+            {{ isUpdated ? 'Updated ' : '' }}{{ formattedDate }}
           </time>
           <span class="text-gray-300">|</span>
           <span>{{ readingTime }} min read</span>

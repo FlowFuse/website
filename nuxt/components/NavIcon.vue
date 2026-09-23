@@ -5,9 +5,12 @@
 // carries the sizing class, leaving the file's own <svg> nested inside. This
 // reproduces that exactly, so a given icon key renders identically whichever
 // renderer served the page.
-const props = withDefaults(defineProps<{ name?: string, solid?: boolean }>(), {
+const props = withDefaults(defineProps<{ name?: string, solid?: boolean, size?: 'sm' | 'lg' }>(), {
     name: '',
     solid: false,
+    // `navoption` (nav and footer) wraps icons at ff-icon-sm; `ffIconLg`, which page
+    // content used, is the same wrapper at ff-icon-lg. One prop covers both shortcodes.
+    size: 'sm',
 })
 
 const markup = computed(() => {
@@ -23,8 +26,8 @@ const markup = computed(() => {
 <template>
     <svg
         v-if="markup"
-        class="ff-icon ff-icon-sm"
-        :class="{ 'ff-icon--solid': solid }"
+        class="ff-icon"
+        :class="[`ff-icon-${size}`, { 'ff-icon--solid': solid }]"
         fill="none"
         viewBox="0 0 24 24"
         v-html="markup"

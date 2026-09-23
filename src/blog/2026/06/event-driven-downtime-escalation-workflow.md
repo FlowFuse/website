@@ -81,11 +81,11 @@ flowchart TD
 
 Here's what that looks like built in [FlowFuse](/):
 
-- **Catch the stop signal:** Most PLCs expose machine state through [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) or [Modbus](/node-red/protocol/modbus/), and FlowFuse has nodes for both. Point one at the right tag, and the moment the state flips to stopped, it lands in your flow as a timestamped message.
+- **Catch the stop signal:** Most PLCs expose machine state through [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) or [Modbus](/docs/node-red/protocol/modbus/), and FlowFuse has nodes for both. Point one at the right tag, and the moment the state flips to stopped, it lands in your flow as a timestamped message.
 
 - **Track how long it's been down:** A couple of [timer nodes](/blog/2025/12/node-red-timer/) mark the passage of time: past two minutes, past ten, whatever windows fit your line.
 
-- **Branch by severity:** A switch node routes the message: short stops go straight to a [database](/blog/2025/08/getting-started-with-flowfuse-tables/); longer ones also notify the supervisor over [email](/node-red/notification/email/) or [Telegram](/node-red/notification/telegram/); and if it's still unresolved at the next threshold, maintenance gets the same message, escalating further up if needed.
+- **Branch by severity:** A switch node routes the message: short stops go straight to a [database](/blog/2025/08/getting-started-with-flowfuse-tables/); longer ones also notify the supervisor over [email](/docs/node-red/notification/email/) or [Telegram](/docs/node-red/notification/telegram/); and if it's still unresolved at the next threshold, maintenance gets the same message, escalating further up if needed.
 
 - **Close the record:** When the "running" message comes through, a final node writes the resolution time back into that record: start, every escalation, and end, all filled in by the flow itself.
 

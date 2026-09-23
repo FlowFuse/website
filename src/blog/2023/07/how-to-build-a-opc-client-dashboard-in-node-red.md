@@ -67,7 +67,7 @@ meta:
       answer: "The complete flow source code for all four objectives, browsing, reading, writing, and events, is included inline within the article, ready to import directly into Node-RED."
 tldr: "This part of the OPC UA series shows how to build an interactive Node-RED dashboard that connects to a third-party OPC UA server to browse the address space, read and write values, and display alarms and events. Complete flow source code is provided, making it a practical starting point for production OPC UA client applications."
 ---
-This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/node-red/protocol/opc-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
+This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/docs/node-red/protocol/opc-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
 In this article, we show how to build an OPC Client in Node-RED that communicates with a 3rd party OPC UA Server and utilizes an interactive dashboard.
 <!--more-->
 
@@ -288,7 +288,7 @@ So, you've successfully built your Node-RED application, congratulations! But no
 
 Enter [FlowFuse](/), a cloud-based platform designed to add production-grade features to your Node-RED applications. With FlowFuse, you can seamlessly integrate advanced security measures, scale your application as needed, and collaborate effortlessly with your team. It simplifies management and deployment, turning your Node-RED project into a robust, scalable solution.
 
-If you're interested in learning how to use Node-RED for professional use cases, check out our eBook: [Ultimate Beginner's Guide to Professionals](/ebooks/beginner-guide-to-a-professional-nodered/). For additional resources, visit our [Node-RED Learning Resources section](/node-red/core-nodes/), where you can explore integrations with different protocols, messaging services, databases, hardware, and much more.
+If you're interested in learning how to use Node-RED for professional use cases, check out our eBook: [Ultimate Beginner's Guide to Professionals](/ebooks/beginner-guide-to-a-professional-nodered/). For additional resources, visit our [Node-RED Learning Resources section](/docs/node-red/core-nodes/), where you can explore integrations with different protocols, messaging services, databases, hardware, and much more.
 
 ## Conclusion
 
