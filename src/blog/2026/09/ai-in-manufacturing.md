@@ -112,7 +112,7 @@ AI is only one part of an AI application in manufacturing. To put a model into p
 
 An AI application needs data, which comes from sources including [machines and PLCs](/landing/plc/), sensors, [MES](/use-cases/mes/), [SCADA](/use-cases/scada/), [databases](/docs/node-red/database/), [cameras](/blog/2026/06/process-rtsp-camera-feeds-at-the-edge/), and more.
 
-Industrial connectivity software gathers this data and makes it available to the AI application. [FlowFuse connects industrial equipment and routes this data through the application](/use-cases/data-integration/), which is essential for processing it.
+Industrial connectivity software gathers this data and makes it available to the AI application. [FlowFuse connects industrial equipment and routes this data through the application](/use-cases/data-integration/), which is essential for processing it. Its [built-in MQTT broker](/docs/user/teambroker/) can also act as the central hub where this data is published and made available to the AI application and other systems.
 
 ### Edge and Cloud Computing
 
