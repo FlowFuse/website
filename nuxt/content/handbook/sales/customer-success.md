@@ -236,7 +236,7 @@ customer direct to a repo for a 3rd party node question.
 
 All paying customers get a Standard Support SLA by default. A faster, Enterprise-level SLA can be purchased and negotiated as an upgrade.
 
-- Standard Support (Old Pro Support)
+- Standard Support (Legacy -- Pro  Tier Support)
   - Support available 24 × 5 (Monday to Friday, UTC-2 timezone)
   - First Response SLA: Next business day (within 24 hours)
   - Support tickets can be submitted at [our Support Form](/support/)
