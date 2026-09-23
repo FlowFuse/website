@@ -124,7 +124,7 @@ Edge AI is useful where inference needs to happen with low latency and without a
 
 The AI component itself depends on the use case, since it needs to be trained to perform a particular task such as predicting demand, detecting anomalies, or optimizing a process.
 
-Various AI and machine learning software can implement these functions. For example, FlowFuse can run an ONNX machine learning model on an edge device using the [ONNX node](/docs/flowfuse-nodes/ai/onxx/).
+Various AI and machine learning software can implement these functions. For example, FlowFuse can run an ONNX machine learning model on an edge device using the [ONNX node](/docs/flowfuse-nodes/ai/onnx/).
 
 ### Data Storage
 
