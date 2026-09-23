@@ -5,7 +5,7 @@ subtitle: "Explore use cases of AI in manufacturing, the software involved, and 
 description: "Learn the main use cases for AI in manufacturing, the software stack needed to run them, and how to implement AI in a production environment."
 date: 2026-09-23
 authors: ["sumit-shinde"]
-image: /blog/2026/09/images/ai-in-manufacturing.png
+image: /blog/2026/09/images/ai-in-manufacturing-tile.png
 tags:
   - flowfuse
   - ai
