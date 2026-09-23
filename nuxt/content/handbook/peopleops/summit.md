@@ -82,6 +82,7 @@ Past summits have been held in the following locations:
 - Utrecht, Netherlands
 - Barcelona, Spain
 - Winchester, UK
+- Athens, Greece
 
 We have employees all over the world. Consider the average travel time for each of them,
 and the logistics they have to undergo in order to get to the summit. There is a balance
