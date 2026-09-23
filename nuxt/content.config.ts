@@ -706,6 +706,8 @@ export default defineContentConfig({
             type: 'page',
             source: 'ebooks/*.md',
             schema: z.object({
+                title: z.string(),
+                description: z.string().optional(),
                 contentTitle: z.string().optional(),
                 usecase: z.array(z.string()).optional(),
                 image: z.string(),
@@ -713,10 +715,6 @@ export default defineContentConfig({
                 coverImage: z.string().optional(),
                 secondaryImage: z.string().optional(),
                 tertiaryImage: z.string().optional(),
-                meta: z.object({
-                    title: z.string(),
-                    description: z.string().optional(),
-                }),
                 hubspot: z.object({
                     formId: z.string(),
                     cta: z.string().optional(),
@@ -729,10 +727,8 @@ export default defineContentConfig({
             type: 'page',
             source: 'whitepapers/*.md',
             schema: z.object({
-                meta: z.object({
-                    title: z.string(),
-                    description: z.string().optional(),
-                }),
+                title: z.string(),
+                description: z.string().optional(),
                 image: z.string(),
                 thumbnail: z.string(),
                 hubspot: z.object({
