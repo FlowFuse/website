@@ -34,7 +34,7 @@ applications:
       image: "/images/industries/building-materials/connect-mixed-plant-systems.png"
       imageAlt: "Screenshot of a Node-RED flow in FlowFuse reading Siemens S7, Allen-Bradley, OPC UA, and Modbus devices and publishing the data to plant topics"
       variant: "indigo"
-    - title: "Bring Your Own AI to the Fabrication Line"
+    - title: "Bring your own AI to the fabrication line"
       description: "Use [FlowFuse Expert](/docs/user/expert/), or connect the AI tool your company already approved — ChatGPT, Copilot, Claude, or another MCP-compatible client — directly to that same data, since FlowFuse can act as an MCP server. No policy exception needed to stand up an AI pilot on machine data."
       linkText: "Read how to connect an industrial AI agent to FlowFuse"
       linkHref: "/blog/2026/09/industrial-ai-agent/"
