@@ -466,7 +466,8 @@ dl.message-properties > dd {
     @apply p-1.5 sm:p-3 md:p-4;
 }
 
-.ff-terminal-frame__screen img {
+.ff-terminal-frame__screen img,
+.ff-terminal-frame__screen video {
     @apply block w-full h-auto rounded;
 }
 

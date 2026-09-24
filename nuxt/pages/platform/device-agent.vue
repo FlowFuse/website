@@ -192,9 +192,11 @@ useSchemaOrg([
           </div>
           <div class="flex justify-center">
             <TerminalFrame
-                src="/images/device-agent/terminal-install.gif"
-                alt="The FlowFuse Device Agent installer running in a terminal, opening a browser to register the machine"
+                src="/images/device-agent/terminal-install.webm"
+                alt="Animation of the FlowFuse Device Agent installer running in a terminal, opening a browser to register the machine"
                 :width="500"
+                :video-width="1000"
+                :video-height="582"
             />
           </div>
         </div>
