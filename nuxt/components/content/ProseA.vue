@@ -1,23 +1,20 @@
 <template>
-    <UiProseA :href="href" :target="target" @click="onClick">
+    <CtaLink v-if="destination" :destination="destination" :href="href" :target="target" position="inline-link" prose>
+        <slot />
+    </CtaLink>
+    <UiProseA v-else :href="href" :target="target">
         <slot />
     </UiProseA>
 </template>
 
 <script setup lang="ts">
 import UiProseA from '@nuxt/ui/components/prose/A.vue'
-import { ctaDestinationForHref } from '../../lib/cta-destinations'
-import { useCapture } from '../../composables/useCapture'
+import { ctaDestinationKey } from '../../lib/cta-destinations'
 
 const props = defineProps<{
     href?: string
     target?: string
 }>()
 
-const capture = useCapture()
-const destination = computed(() => ctaDestinationForHref(props.href))
-
-function onClick () {
-    if (destination.value) capture(destination.value.event, { position: 'inline-link' })
-}
+const destination = computed(() => ctaDestinationKey(props.href))
 </script>

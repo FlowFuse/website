@@ -48,15 +48,16 @@ export const CTA_DESTINATIONS = {
     },
 } as const
 
-const DESTINATION_BY_HREF = new Map(
-    Object.values(CTA_DESTINATIONS).map(dest => [normalizeHref(new URL(dest.href, site.baseURL).href), dest]),
+const DESTINATION_KEY_BY_HREF = new Map(
+    (Object.keys(CTA_DESTINATIONS) as (keyof typeof CTA_DESTINATIONS)[])
+        .map(key => [normalizeHref(new URL(CTA_DESTINATIONS[key].href, site.baseURL).href), key]),
 )
 
-export function ctaDestinationForHref (href?: string) {
+export function ctaDestinationKey (href?: string) {
     if (!href?.match(/^(https?:)?\//)) return undefined
     try {
         const url = new URL(href, site.baseURL)
-        return DESTINATION_BY_HREF.get(normalizeHref(url.origin + url.pathname))
+        return DESTINATION_KEY_BY_HREF.get(normalizeHref(url.origin + url.pathname))
     } catch {
         return undefined
     }

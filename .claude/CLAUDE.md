@@ -341,17 +341,23 @@ This exists because a raw `event` prop would let two different `CtaCustom` insta
 - `destinationKey` is required and its TS type is `keyof typeof CUSTOM_CTA_DESTINATIONS` — there's no way to point `CtaCustom` at a URL without first adding an entry to that file, by design.
 - Like the five fixed components, `CtaCustom` throws a descriptive error (same convention as `CtaImage.vue`'s invalid-`cta` check) if pointed at one of the five *reserved* destinations' hrefs — use the matching fixed component instead.
 
-`nav-text` is deliberately not called `text` — it's the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar) specifically, not a general-purpose inline link. A future `text` variant (styled like a normal paragraph link — the site's blue-700, underline-on-hover convention) is reserved for that.
+`nav-text` is deliberately not called `text` — it's the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar) specifically, not a general-purpose inline link. Inline links are `CtaLink` (see **Inline links** below), not a `CtaButton` variant.
 
 There's no `size` prop — every real-button variant's padding/font-size is hardcoded to match `.ff-btn` exactly (see the Computed-tab note in the gotchas below), so a size knob would only ever have affected icon dimensions. It was removed once confirmed nothing used a non-default value.
 
 Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`, `cta-pricing`.
 
-### Inline links in markdown
+### Inline links
 
-Inline links keep free-form text (it has to fit the sentence), so they aren't `Cta*` buttons. Instead, every markdown link on a Nuxt content page renders through `nuxt/components/content/ProseA.vue` (a wrapper around Nuxt UI's own `ProseA`, so styling is unchanged), and when its href is one of the five destinations it fires that destination's event with `{ position: 'inline-link' }`. Matching is `ctaDestinationForHref()` in `cta-destinations.ts`: trailing slash, query string and hash are ignored, and `https://flowfuse.com/...` counts the same as a relative path. So `[FlowFuse Cloud](site:appURL)`, `[try it for free](cta:signUp)` and a hand-typed `https://app.flowfuse.com/account/create?code=...` are all tracked with no markup change. `cta:<key>` (resolved by `nuxt/utils/remark-site-links.ts`) is still the preferred way to write the href.
+A link inside a sentence keeps free-form text (it has to fit the prose), so it isn't one of the five buttons. It is `nuxt/components/CtaLink.vue`: `destination` is a `CTA_DESTINATIONS` key, and the href and event come from there. Text goes in the slot. It fires `capture(event, { position, variant: 'text' })` and renders a class-less link, so it takes the page's default link CSS unless the caller passes a class. An optional `href` keeps a query string or hash (`?code=...`, `?subject=...`), and it throws if that href points at a different destination.
 
-This uses the destination events, not `blog-cta`: inline links also appear on changelog, webinar, handbook and docs pages, where a `Blog: <title>` reference would be wrong, and PostHog already records the page URL. `CtaImage`'s `blog-cta` is unaffected. Links to `CUSTOM_CTA_DESTINATIONS` hrefs are not matched.
+```vue
+<CtaLink destination="bookDemo" position="methodology">book a demo</CtaLink>
+```
+
+Markdown needs no markup for this: `nuxt/components/content/ProseA.vue` renders every markdown link, and when `ctaDestinationKey()` (in `cta-destinations.ts`) matches the href, it renders `<CtaLink position="inline-link" prose>` instead of Nuxt UI's `ProseA`. `prose` keeps Nuxt UI's prose link styling. Matching ignores the trailing slash, the query string and the hash, and `https://flowfuse.com/...` counts the same as a relative path. So `[FlowFuse Cloud](site:appURL)`, `[try it for free](cta:signUp)` and a hand-typed `https://app.flowfuse.com/account/create?code=...` are all tracked. `cta:<key>` (resolved by `nuxt/utils/remark-site-links.ts`) is still the preferred way to write the href.
+
+These are the destination events, not `blog-cta`: inline links also appear on changelog, webinar, handbook and docs pages, where a `Blog: <title>` reference would be wrong, and PostHog already records the page URL. `CtaImage`'s `blog-cta` is unaffected. Hrefs from `CUSTOM_CTA_DESTINATIONS` aren't matched. FAQ answers (`nuxt/lib/faq-answer.mjs`, rendered with `v-html`) can't hold a component, so their links aren't tracked.
 
 ### Gotchas already solved here (don't re-discover them)
 
