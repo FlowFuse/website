@@ -2,7 +2,7 @@
 // "The problem, and what it costs" band from automotive.vue. The calculator itself and
 // the "open the full calculator" link are identical on every page, so they stay fixed
 // here rather than becoming per-page data.
-defineProps<{ heading: string, description: string }>()
+defineProps<{ heading: string, description: string, disclaimer?: string }>()
 </script>
 
 <template>
@@ -13,7 +13,7 @@ defineProps<{ heading: string, description: string }>()
         <p class="text-gray-600 m-0">{{ description }}</p>
       </div>
       <div class="mt-10">
-        <RoiCalculator compact />
+        <RoiCalculator compact :disclaimer="disclaimer" />
       </div>
       <p class="text-center text-sm text-gray-500 mt-8">Want to tune every assumption and see the research behind it? <a href="/resources/roi-calculator/" class="text-indigo-600 font-semibold hover:underline">Open the full ROI calculator</a>.</p>
     </div>

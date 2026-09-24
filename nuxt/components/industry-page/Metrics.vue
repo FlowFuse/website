@@ -4,7 +4,7 @@
 // of industry-page/Hero.vue so the hero band and this one can change independently.
 defineProps<{
     metrics: Array<{ number: string, text: string }>
-    metricsBridge?: { heading: string, description: string, linkText: string, linkHref: string }
+    metricsBridge?: { heading: string, description: string, linkText?: string, linkHref?: string }
 }>()
 </script>
 
@@ -28,7 +28,7 @@ defineProps<{
           <p class="mt-0 font-normal leading-6">{{ metric.text }}</p>
         </div>
       </div>
-      <div v-if="metricsBridge" class="text-right mt-8">
+      <div v-if="metricsBridge?.linkHref" class="text-right mt-8">
         <a :href="metricsBridge.linkHref" class="inline-flex items-center gap-1.5 text-blue-600 hover:underline">
           {{ metricsBridge.linkText }}
           <UIcon name="i-heroicons-arrow-long-right" class="w-4 h-4 shrink-0" />

@@ -563,7 +563,7 @@ export default defineContentConfig({
                         company: z.string(),
                         image: z.string(),
                         imageAlt: z.string(),
-                    }),
+                    }).optional(),
                 }),
                 // The "N+ manufacturers in M countries..." SocialProof line. Not every page
                 // has an aggregate stat like this yet.
@@ -580,12 +580,13 @@ export default defineContentConfig({
                     // v-html for the same reason hero.heading is.
                     heading: z.string(),
                     description: z.string(),
-                    linkText: z.string(),
-                    linkHref: z.string(),
+                    linkText: z.string().optional(),
+                    linkHref: z.string().optional(),
                 }).optional(),
                 roi: z.object({
                     heading: z.string(),
                     description: z.string(),
+                    disclaimer: z.string().optional(),
                 }),
                 applications: z.object({
                     heading: z.string(),
@@ -601,8 +602,8 @@ export default defineContentConfig({
                     })),
                 }),
                 compliance: z.object({
-                    // The "The Data Your Audit Asks For, In One Place" subtitle is fixed
-                    // copy shared by every page, not declared here.
+                    heading: z.string().optional(),
+                    subtitle: z.string().optional(),
                     description: z.string(),
                     items: z.array(z.object({
                         title: z.string(),
@@ -616,6 +617,7 @@ export default defineContentConfig({
                 // No useCases field: the "Use cases in X" band is dynamic, the same
                 // industriesLegacy-template query against the useCases collection's own
                 // `industries[]` field — not page data that has to be kept in sync by hand.
+                useCaseDescriptions: z.record(z.string(), z.string()).optional(),
                 faqs: z.array(z.object({
                     question: z.string(),
                     answer: z.string(),

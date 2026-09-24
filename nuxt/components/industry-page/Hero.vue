@@ -8,14 +8,14 @@ defineProps<{
         eyebrowIcon: string
         heading: string
         description: string
-        quote: {
+        quote?: {
             text: string
             author: string
             role: string
             company: string
             image: string
             imageAlt: string
-        }
+        } | null
     }
     socialProof?: string
 }>()
@@ -24,8 +24,8 @@ defineProps<{
 <template>
   <section class="w-full relative">
     <div class="px-6 pt-16 md:pt-20">
-      <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-stretch">
-        <div class="max-md:text-center md:flex md:flex-col md:justify-center">
+      <div class="max-w-screen-lg mx-auto grid gap-12 items-stretch" :class="{ 'md:grid-cols-2': hero.quote }">
+        <div class="max-md:text-center md:flex md:flex-col md:justify-center" :class="{ 'max-w-3xl': !hero.quote }">
           <div class="mb-4 max-md:flex max-md:justify-center">
             <span class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 industry-eyebrow-icon text-gray-800">
               <span class="w-5 h-5 inline-flex items-center shrink-0"><NavIcon :name="hero.eyebrowIcon" /></span>
@@ -40,7 +40,7 @@ defineProps<{
             <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
           </div>
         </div>
-        <div class="w-full md:flex md:items-center">
+        <div v-if="hero.quote" class="w-full md:flex md:items-center">
           <div class="relative w-full md:pt-6 max-md:mt-10">
             <div class="relative rounded-lg border border-indigo-200 p-6 pt-28 bg-indigo-50/50">
               <div class="absolute -top-14 left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 w-36 h-36 rounded-full bg-red-200 border-4 border-white shadow-lg overflow-hidden ff-image-cover">

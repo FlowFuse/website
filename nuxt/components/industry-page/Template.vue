@@ -12,21 +12,24 @@ const props = defineProps<{
             eyebrowIcon: string
             heading: string
             description: string
-            quote: { text: string, author: string, role: string, company: string, image: string, imageAlt: string }
+            quote?: { text: string, author: string, role: string, company: string, image: string, imageAlt: string } | null
         }
         socialProof?: string
         metrics: Array<{ number: string, text: string }>
-        metricsBridge?: { heading: string, description: string, linkText: string, linkHref: string }
-        roi: { heading: string, description: string }
+        metricsBridge?: { heading: string, description: string, linkText?: string, linkHref?: string }
+        roi: { heading: string, description: string, disclaimer?: string }
         applications: {
             heading: string
             description: string
             items: Array<{ title: string, description: string, linkText: string, linkHref: string, image: string, imageAlt: string, variant: 'indigo' | 'red' | 'mixed' }>
         }
         compliance: {
+            heading?: string
+            subtitle?: string
             description: string
             items: Array<{ title: string, text: string, linkText: string, linkHref: string, icon?: string }>
         }
+        useCaseDescriptions?: Record<string, string>
         faqs: Array<{ question: string, answer: string }>
         closingCta: { heading: string, description: string }
     }
@@ -51,7 +54,7 @@ useSchemaOrg([
 
     <IndustryPageMetrics :metrics="page.metrics" :metrics-bridge="page.metricsBridge" />
 
-    <IndustryPageRoi :heading="page.roi.heading" :description="page.roi.description" />
+    <IndustryPageRoi :heading="page.roi.heading" :description="page.roi.description" :disclaimer="page.roi.disclaimer" />
 
     <IndustryPageApplications
         :heading="page.applications.heading"
@@ -63,13 +66,15 @@ useSchemaOrg([
 
     <IndustryPageCompliance
         :industry-name="page.industryName"
+        :heading="page.compliance.heading ?? undefined"
+        :subtitle="page.compliance.subtitle ?? undefined"
         :description="page.compliance.description"
         :items="page.compliance.items"
     />
 
     <!-- Dynamic, not page data: every use-case whose own `industries[]` field names this
          slug shows up here. Shared with the industriesLegacy [slug].vue's own band. -->
-    <IndustryPageUseCases :slug="page.slug" :display-name="page.industryName" />
+    <IndustryPageUseCases :slug="page.slug" :display-name="page.industryName" :descriptions="page.useCaseDescriptions" />
 
     <div class="w-full px-6 pt-20 pb-10">
       <div class="max-w-screen-lg mx-auto">

@@ -5,7 +5,7 @@
 // Lives here, not under components/industry/, because both templates use it: the
 // industriesLegacy [slug].vue AND this one (industry-page/Template.vue). industry/ is
 // due for deletion once the seven legacy pages go; this component has to survive that.
-const props = defineProps<{ slug: string, displayName: string }>()
+const props = defineProps<{ slug: string, displayName: string, descriptions?: Record<string, string> }>()
 
 const { data: all } = await useAsyncData('industry-use-cases', () =>
     queryCollection('useCases').select('slug', 'title', 'problem', 'industries').all()
@@ -29,7 +29,7 @@ const matching = computed(() =>
             :key="uc.slug"
             :to="`/use-cases/${uc.slug}/`"
             :title="uc.title"
-            :problem="uc.problem"
+            :problem="descriptions?.[uc.slug] ?? uc.problem"
         />
       </div>
     </div>
