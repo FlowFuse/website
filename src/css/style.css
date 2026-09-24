@@ -466,7 +466,8 @@ dl.message-properties > dd {
     @apply p-1.5 sm:p-3 md:p-4;
 }
 
-.ff-terminal-frame__screen img {
+.ff-terminal-frame__screen img,
+.ff-terminal-frame__screen video {
     @apply block w-full h-auto rounded;
 }
 
@@ -3453,6 +3454,9 @@ lite-youtube::before {
     height: 1rem;
     width: 1rem;
     flex: none;
+}
+.ff-agent-tab--active .ff-agent-tab__mark--mono {
+    filter: brightness(0) invert(1);
 }
 
 .ff-agent-panel {
