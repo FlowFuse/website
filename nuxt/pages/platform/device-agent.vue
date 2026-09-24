@@ -184,10 +184,7 @@ useSchemaOrg([
         <!-- Hero: /product/edge/ (product/[tier].vue) -->
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <div class="text-center md:text-left">
-            <div class="mb-8 flex justify-center md:justify-start">
-              <img src="/images/ff-logo-device-agent-light.svg" alt="FlowFuse Device Agent" width="225" loading="eager">
-            </div>
-            <h1 class="text-4xl md:max-w-md font-medium">Edge Device Management for <span class="whitespace-nowrap text-red-600">Node-RED</span></h1>
+            <h1 class="text-4xl md:text-5xl md:leading-13 md:max-w-md font-medium">Edge Device Management for <span class="whitespace-nowrap text-red-600">Node-RED</span></h1>
             <p class="mt-8 max-w-xl mx-auto md:mx-0">The FlowFuse Device Agent runs <span class="whitespace-nowrap">Node-RED</span> on your edge hardware and connects it to FlowFuse. Open the editor anywhere, push the same flows to every machine in a group, and roll back between snapshots without a site visit, a VPN request, or a single inbound port.</p>
           </div>
           <div class="flex justify-center">
