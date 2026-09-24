@@ -3,13 +3,14 @@ import UiProseA from '@nuxt/ui/components/prose/A.vue'
 import { CTA_DESTINATIONS, ctaDestinationKey } from '../lib/cta-destinations'
 import { useCapture } from '../composables/useCapture'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     destination: keyof typeof CTA_DESTINATIONS
     position: string
+    variant?: 'text' | 'image'
     href?: string
     target?: string
     prose?: boolean
-}>()
+}>(), { variant: 'text' })
 
 const dest = computed(() => {
     const match = CTA_DESTINATIONS[props.destination]
@@ -21,7 +22,7 @@ const linkHref = computed(() => props.href || dest.value.href)
 const capture = useCapture()
 
 function onClick () {
-    capture(dest.value.event, { position: props.position, variant: 'text' })
+    capture(dest.value.event, { position: props.position, variant: props.variant })
 }
 </script>
 

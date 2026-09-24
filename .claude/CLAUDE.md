@@ -139,7 +139,7 @@ Tag options are defined in `src/_data/blogTags.json`. Future-dated posts are exc
 
 - `cta` is required on every instance, one of `sign-up` | `demo` | `contact` | `pricing` — no fallback to the post's frontmatter `cta.type` (that one only drives `BlogPostCta` at the end of the article). An invalid value throws a descriptive error at render time instead of a bare `Cannot read properties of undefined`.
 - `position` isn't a prop — it's hardcoded to `'inline-image'`, since every instance shares the same placement semantics.
-- Fires the same `blog-cta` event as `BlogPostCta` (not a dedicated `cta-sign-up`/`cta-book-demo`/etc. event) — `cta_type` alone distinguishes the destination, so both the end-of-article CTA and inline image CTAs land in one PostHog series, filterable by `cta_type`/`position`.
+- Renders through `CtaLink` (see **Inline links** under Call-to-Action components), so its href and destination event (`cta-book-demo`, etc., with `variant: 'image'`) come from `CTA_DESTINATIONS`. It also fires `blog-cta` with `cta_type`, the same as `BlogPostCta` does alongside its button's event. Image CTAs therefore land in both the destination's `cta-*` series and the single blog series, filterable by `cta_type`/`position`.
 - The article title can't be passed as a prop from markdown (MDC only forwards literal `{...}` attributes), so `nuxt/pages/blog/[...slug].vue` does `provide('blogPostTitle', pageTitle)` and the component `inject()`s it — the only reason this indirection exists here and not on `BlogPostCta`.
 
 ---
@@ -349,7 +349,7 @@ Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composa
 
 ### Inline links
 
-A link inside a sentence keeps free-form text (it has to fit the prose), so it isn't one of the five buttons. It is `nuxt/components/CtaLink.vue`: `destination` is a `CTA_DESTINATIONS` key, and the href and event come from there. Text goes in the slot. It fires `capture(event, { position, variant: 'text' })` and renders a class-less link, so it takes the page's default link CSS unless the caller passes a class. An optional `href` keeps a query string or hash (`?code=...`, `?subject=...`), and it throws if that href points at a different destination.
+A link inside a sentence keeps free-form text (it has to fit the prose), so it isn't one of the five buttons. It is `nuxt/components/CtaLink.vue`: `destination` is a `CTA_DESTINATIONS` key, and the href and event come from there. Text goes in the slot. It fires `capture(event, { position, variant })` (`variant` is `text`, or `image` when `CtaImage` wraps an image in it) and renders a class-less link, so it takes the page's default link CSS unless the caller passes a class. An optional `href` keeps a query string or hash (`?code=...`, `?subject=...`), and it throws if that href points at a different destination.
 
 ```vue
 <CtaLink destination="bookDemo" position="methodology">book a demo</CtaLink>
@@ -357,7 +357,7 @@ A link inside a sentence keeps free-form text (it has to fit the prose), so it i
 
 Markdown needs no markup for this: `nuxt/components/content/ProseA.vue` renders every markdown link, and when `ctaDestinationKey()` (in `cta-destinations.ts`) matches the href, it renders `<CtaLink position="inline-link" prose>` instead of Nuxt UI's `ProseA`. `prose` keeps Nuxt UI's prose link styling. Matching ignores the trailing slash, the query string and the hash, and `https://flowfuse.com/...` counts the same as a relative path. So `[FlowFuse Cloud](site:appURL)`, `[try it for free](cta:signUp)` and a hand-typed `https://app.flowfuse.com/account/create?code=...` are all tracked. `cta:<key>` (resolved by `nuxt/utils/remark-site-links.ts`) is still the preferred way to write the href.
 
-These are the destination events, not `blog-cta`: inline links also appear on changelog, webinar, handbook and docs pages, where a `Blog: <title>` reference would be wrong, and PostHog already records the page URL. `CtaImage`'s `blog-cta` is unaffected. Hrefs from `CUSTOM_CTA_DESTINATIONS` aren't matched. FAQ answers (`nuxt/lib/faq-answer.mjs`, rendered with `v-html`) can't hold a component, so their links aren't tracked.
+These are the destination events, not `blog-cta`: inline links also appear on changelog, webinar, handbook and docs pages, where a `Blog: <title>` reference would be wrong, and PostHog already records the page URL. Hrefs from `CUSTOM_CTA_DESTINATIONS` aren't matched. FAQ answers (`nuxt/lib/faq-answer.mjs`, rendered with `v-html`) can't hold a component, so their links aren't tracked.
 
 ### Gotchas already solved here (don't re-discover them)
 
