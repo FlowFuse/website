@@ -6,8 +6,8 @@
 //  - The protocol/use-case glyphs are <UIcon>. They were {% include %}d raw with no
 //    wrapper, filling the wrapper box through the svg's intrinsic ratio; a masked <span>
 //    has none, so each one carries the wrapper's size itself.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg. One answer carried an inline <a> under
-//    `| safe`; it is a markdown link now, which BlogFaq renders after escaping.
+//  - faq.njk becomes <Faq> plus useSchemaOrg. One answer carried an inline <a> under
+//    `| safe`; it is a markdown link now, which Faq renders after escaping.
 //  - The CTA macros become their components.
 //  - This page has both `metaTitle` and `meta.title`; base.njk's precedence put
 //    metaTitle first, so that is the title, rendered as "… | FlowFuse" rather than
@@ -525,7 +525,7 @@ useSchemaOrg([
               <h2 class="max-md:text-center -mb-12">
                   Frequently Asked <span class="text-indigo-600">Questions</span>
               </h2>
-              <BlogFaq :faq="FAQ" variant="page" />
+              <Faq :faq="FAQ" variant="page" />
           </div>
       </div>
 

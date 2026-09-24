@@ -5,7 +5,7 @@
 // noted per section below. If a second use-case page adopts this structure, lift it into
 // components/use-case-page/ + a .yml the way industry-page/ was.
 //
-// Copy strings support the same `[label](url)` / **bold** subset as BlogFaq's answers,
+// Copy strings support the same `[label](url)` / **bold** subset as Faq's answers,
 // rendered through <InlineMarkdown>.
 
 // `before` is optional: only the two results that are a change (1 → 130+, 15 → 1) have
@@ -310,7 +310,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto">
         <h2 class="mb-1 text-center md:text-left">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
         <div class="-mt-20">
-          <BlogFaq :faq="FAQ" variant="page" />
+          <Faq :faq="FAQ" variant="page" />
         </div>
       </div>
     </section>

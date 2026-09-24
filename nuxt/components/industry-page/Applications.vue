@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // The zigzag "Applications for X Manufacturing" band from automotive.vue.
-// Supports the same `[label](url)` inline-link subset as BlogFaq's answers.
+// Supports the same `[label](url)` inline-link subset as Faq's answers.
 
 type Item = {
     title: string
