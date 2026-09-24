@@ -1,5 +1,8 @@
 <script setup lang="ts">
 // The zigzag "Applications for X Manufacturing" band from automotive.vue.
+// Supports the same `[label](url)` inline-link subset as BlogFaq's answers.
+import { inline } from '../../lib/faq-answer.mjs'
+
 type Item = {
     title: string
     description: string
@@ -55,7 +58,8 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
                 <img :src="item.image" :alt="item.imageAlt" loading="lazy">
               </div>
             </div>
-            <p class="text-gray-500 m-0">{{ item.description }}</p>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <p class="text-gray-500 m-0" v-html="inline(item.description)" />
             <a :href="item.linkHref" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center">
               {{ item.linkText }}
               <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />

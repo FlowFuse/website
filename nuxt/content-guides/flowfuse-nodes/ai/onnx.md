@@ -1,13 +1,13 @@
 ---
-title: ONXX
-metaTitle: "ONXX"
-navTitle: ONXX
+title: ONNX
+metaTitle: "ONNX"
+navTitle: ONNX
 navOrder: 50
 meta:
   description: The ONNX node allows you to perform AI inference directly in Node-RED using ONNX models, supporting image, object, and numeric predictions without external AI services.
 ---
 
-# ONXX
+# ONNX
 
 The **ONNX** node allows you to perform AI inference directly in **Node-RED** using **ONNX models**.
 It can run a wide range of pre-trained or custom models, including image classification, object detection, and numeric prediction tasks.
