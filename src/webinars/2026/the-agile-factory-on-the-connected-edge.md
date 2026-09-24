@@ -63,4 +63,4 @@ Controls Engineers, IIoT Solutions Architects, and Manufacturing Operations Mana
 
 ## Want to see how this applies to your shop floor?
 
-[Talk to our team](/book-demo) about your specific edge connectivity and PLC-replacement challenges, or explore the [Edge Connectivity](/use-cases/edge-connectivity/) use case to see how FlowFuse builds, deploys, and governs operational applications across every plant and production line, distributed to the edge.
+[Talk to our team](/book-demo) about your specific edge connectivity and PLC-replacement challenges, or explore the [Edge Connectivity](/use-cases/remote-device-management/) use case to see how FlowFuse builds, deploys, and governs operational applications across every plant and production line, distributed to the edge.

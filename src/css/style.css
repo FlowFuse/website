@@ -46,6 +46,10 @@
     --text-page-h1--line-height: 3rem;
     --text-post-h4: 1.25rem;
     --shadow-nav: 0px 10px 20px #11182766;
+    /* Layered "lift" shadow for hover cards (after ramp.com): denser near the card and
+       fading as it spreads, which reads as floating where one shadow reads as flat. Falls
+       down-right. Used as after:shadow-lift and faded in by opacity, not transitioned. */
+    --shadow-lift: 125px 175px 86px 0px rgb(0 0 0 / 0.01), 70px 99px 73px 0px rgb(0 0 0 / 0.05), 31px 44px 54px 0px rgb(0 0 0 / 0.09), 8px 11px 30px 0px rgb(0 0 0 / 0.10);
 }
 
 @layer base {

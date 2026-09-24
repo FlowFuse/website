@@ -29,7 +29,9 @@ const ITALIC = /\*([^*\n]+)\*/g
 
 function inline (text) {
     return escapeHtml(text)
-        .replace(LINK, '<a href="$2" class="text-indigo-600 hover:underline">$1</a>')
+        // No class: the link takes whatever the page's CSS gives an <a> where it lands -
+        // Tailwind Typography's link style inside .prose (BlogFaq), `main a` elsewhere.
+        .replace(LINK, '<a href="$2">$1</a>')
         .replace(BOLD, '<strong>$1</strong>')
         .replace(ITALIC, '<em>$1</em>')
 }

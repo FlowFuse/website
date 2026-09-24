@@ -12,11 +12,11 @@ test('escapes markup so placeholders stay literal', () => {
 test('renders site-absolute and http links', () => {
     assert.deepEqual(
         renderFaqAnswer('see the [pricing page](/pricing)'),
-        ['see the <a href="/pricing" class="text-indigo-600 hover:underline">pricing page</a>'],
+        ['see the <a href="/pricing">pricing page</a>'],
     )
     assert.deepEqual(
         renderFaqAnswer('[device-agent](https://github.com/FlowFuse/device-agent)'),
-        ['<a href="https://github.com/FlowFuse/device-agent" class="text-indigo-600 hover:underline">device-agent</a>'],
+        ['<a href="https://github.com/FlowFuse/device-agent">device-agent</a>'],
     )
 })
 
@@ -55,7 +55,7 @@ test('renders an unordered list when every line is a bullet', () => {
 test('renders an ordered list, and links inside items', () => {
     assert.deepEqual(
         renderFaqAnswer('1. go to [pricing](/pricing)\n2. pick a plan'),
-        ['<ol><li>go to <a href="/pricing" class="text-indigo-600 hover:underline">pricing</a></li><li>pick a plan</li></ol>'],
+        ['<ol><li>go to <a href="/pricing">pricing</a></li><li>pick a plan</li></ol>'],
     )
 })
 
