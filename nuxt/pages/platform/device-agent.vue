@@ -45,9 +45,7 @@ const FIXES = [
         icon: 'i-heroicons-shield-check',
         title: 'Security has to sign it off before anything goes to the plant',
         paragraphs: [
-            'IT and security teams need to know what an edge machine connects to before allowing it onto the network.',
-            'The Device Agent uses outbound connections to FlowFuse, with no inbound ports required for remote management. The required hosts and connectivity are documented for review.',
-            'The Device Agent is <a href="https://github.com/FlowFuse/device-agent">Apache-2.0 open source</a>, so your team can inspect how it works. With a self-hosted FlowFuse deployment, devices connect to your own FlowFuse server.',
+            'IT and security teams need to know what an edge machine connects to before allowing it onto the network. The Device Agent is <a href="https://github.com/FlowFuse/device-agent">Apache-2.0 open source</a>, so your team can inspect how it works. It uses outbound connections to FlowFuse, with no inbound ports required for remote management.',
         ],
     },
 ]
