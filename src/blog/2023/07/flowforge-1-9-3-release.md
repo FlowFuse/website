@@ -50,7 +50,7 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 
 ## Upgrading FlowFuse
 
-[FlowFuse Cloud]({{ site.appURL }}) is already running 1.9.3.
+[FlowFuse Cloud](site:appURL) is already running 1.9.3.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading your FlowFuse instance](/docs/upgrade/).

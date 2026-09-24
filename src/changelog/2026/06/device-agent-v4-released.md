@@ -22,7 +22,7 @@ The Device Agent installer and official Docker image now default to Node.js 22. 
 
 ::caution
 **Breaking change:** The Device Agent Docker image tagged `latest` now uses a Node.js 22 base image. If you do not pin your container image to a specific version tag, review your deployment configuration before upgrading.
-{% endcaution %}
+::
 
 We also continue to build, and tag, containers for a range of Node.js versions - 18, 20, 22 and 24.
 
@@ -31,12 +31,12 @@ If you use the Device Agent installer, it will now default to Node.js 22. Existi
 ## Containers now run as an unprivileged user
 
 The Device Agent Docker container no longer runs as the root user. Following best practices, processes inside the container now execute as an unprivileged user.
-::
 
+::caution
 **Breaking change:** If your container deployment mounts volumes or relies on file permissions set for the root user, you'll need to update those permissions to match the new unprivileged user.
 
 More details are available in the [Device Agent readme](https://github.com/FlowFuse/device-agent/tree/edf987872b7c93170b5ced56061b211619e7e106#docker).
-{% endcaution %}
+::
 
 This is a security hardening change with no functional impact on normal Device Agent operation.
 
