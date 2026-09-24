@@ -1,88 +1,91 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 
-import { isListBlock, renderFaqAnswer } from './faq-answer.mjs'
+import { parseFaqAnswer, parseInline } from './faq-answer.mjs'
 
-test('escapes markup so placeholders stay literal', () => {
-    assert.deepEqual(renderFaqAnswer('use <ip> here'), ['use &lt;ip&gt; here'])
-    assert.deepEqual(renderFaqAnswer('<script>alert(1)</script>'), ['&lt;script&gt;alert(1)&lt;/script&gt;'])
-    assert.deepEqual(renderFaqAnswer('a & b'), ['a &amp; b'])
+const text = value => ({ type: 'text', value })
+const p = (...children) => ({ type: 'p', children })
+
+test('markup stays literal text, for Vue to escape', () => {
+    assert.deepEqual(parseFaqAnswer('use <ip> here'), [p(text('use <ip> here'))])
+    assert.deepEqual(parseFaqAnswer('<script>alert(1)</script>'), [p(text('<script>alert(1)</script>'))])
 })
 
-test('renders site-absolute and http links', () => {
-    assert.deepEqual(
-        renderFaqAnswer('see the [pricing page](/pricing)'),
-        ['see the <a href="/pricing">pricing page</a>'],
-    )
-    assert.deepEqual(
-        renderFaqAnswer('[device-agent](https://github.com/FlowFuse/device-agent)'),
-        ['<a href="https://github.com/FlowFuse/device-agent">device-agent</a>'],
-    )
+test('parses site-absolute and http links', () => {
+    assert.deepEqual(parseInline('see the [pricing page](/pricing)'), [
+        text('see the '),
+        { type: 'link', href: '/pricing', children: [text('pricing page')] },
+    ])
+    assert.deepEqual(parseInline('[device-agent](https://github.com/FlowFuse/device-agent)'), [
+        { type: 'link', href: 'https://github.com/FlowFuse/device-agent', children: [text('device-agent')] },
+    ])
 })
 
 test('leaves a non-http, non-absolute link target as text', () => {
-    assert.deepEqual(renderFaqAnswer('[x](javascript:alert(1))'), ['[x](javascript:alert(1))'])
+    assert.deepEqual(parseInline('[x](javascript:alert(1))'), [text('[x](javascript:alert(1))')])
 })
 
-test('renders bold and italic', () => {
-    assert.deepEqual(renderFaqAnswer('save you *a lot* of clicking'), ['save you <em>a lot</em> of clicking'])
-    assert.deepEqual(renderFaqAnswer('**Fleet Mode** deploys'), ['<strong>Fleet Mode</strong> deploys'])
+test('parses bold and italic', () => {
+    assert.deepEqual(parseInline('save you *a lot* of clicking'), [
+        text('save you '), { type: 'em', children: [text('a lot')] }, text(' of clicking'),
+    ])
+    assert.deepEqual(parseInline('**Fleet Mode** deploys'), [
+        { type: 'strong', children: [text('Fleet Mode')] }, text(' deploys'),
+    ])
+})
+
+test('nests links and emphasis either way round', () => {
+    assert.deepEqual(parseInline('**see [docs](/docs/)**'), [
+        { type: 'strong', children: [text('see '), { type: 'link', href: '/docs/', children: [text('docs')] }] },
+    ])
+    assert.deepEqual(parseInline('[**docs**](/docs/)'), [
+        { type: 'link', href: '/docs/', children: [{ type: 'strong', children: [text('docs')] }] },
+    ])
+})
+
+test('an asterisk inside a URL is not emphasis', () => {
+    assert.deepEqual(parseInline('[x](/a*b*c)'), [{ type: 'link', href: '/a*b*c', children: [text('x')] }])
 })
 
 test('an unclosed marker stays text rather than swallowing the answer', () => {
-    assert.deepEqual(renderFaqAnswer('2 * 3 is six'), ['2 * 3 is six'])
+    assert.deepEqual(parseInline('2 * 3 is six'), [text('2 * 3 is six')])
 })
 
 test('a blank line starts a new paragraph', () => {
-    assert.deepEqual(
-        renderFaqAnswer('First point.\n\nSecond point.'),
-        ['First point.', 'Second point.'],
-    )
+    assert.deepEqual(parseFaqAnswer('First point.\n\nSecond point.'), [p(text('First point.')), p(text('Second point.'))])
 })
 
-test('empty input renders no paragraphs', () => {
-    assert.deepEqual(renderFaqAnswer(''), [])
-    assert.deepEqual(renderFaqAnswer(undefined), [])
+test('empty input parses to no blocks', () => {
+    assert.deepEqual(parseFaqAnswer(''), [])
+    assert.deepEqual(parseFaqAnswer(undefined), [])
 })
 
-test('renders an unordered list when every line is a bullet', () => {
-    assert.deepEqual(
-        renderFaqAnswer('- first\n- second'),
-        ['<ul><li>first</li><li>second</li></ul>'],
-    )
+test('parses an unordered list when every line is a bullet', () => {
+    assert.deepEqual(parseFaqAnswer('- first\n- second'), [{ type: 'ul', items: [[text('first')], [text('second')]] }])
 })
 
-test('renders an ordered list, and links inside items', () => {
-    assert.deepEqual(
-        renderFaqAnswer('1. go to [pricing](/pricing)\n2. pick a plan'),
-        ['<ol><li>go to <a href="/pricing">pricing</a></li><li>pick a plan</li></ol>'],
-    )
+test('parses an ordered list, and links inside items', () => {
+    assert.deepEqual(parseFaqAnswer('1. go to [pricing](/pricing)\n2. pick a plan'), [{
+        type: 'ol',
+        items: [
+            [text('go to '), { type: 'link', href: '/pricing', children: [text('pricing')] }],
+            [text('pick a plan')],
+        ],
+    }])
 })
 
 test('a paragraph that only partly looks like a list stays a paragraph', () => {
-    assert.deepEqual(
-        renderFaqAnswer('Here is why:\n- because'),
-        ['Here is why: - because'],
-    )
+    assert.deepEqual(parseFaqAnswer('Here is why:\n- because'), [p(text('Here is why: - because'))])
 })
 
 test('joins the wrapped lines of a paragraph with spaces', () => {
-    assert.deepEqual(
-        renderFaqAnswer('one line\nwrapped onto another'),
-        ['one line wrapped onto another'],
-    )
+    assert.deepEqual(parseFaqAnswer('one line\nwrapped onto another'), [p(text('one line wrapped onto another'))])
 })
 
-test('a list and a paragraph in one answer render as separate blocks', () => {
-    assert.deepEqual(
-        renderFaqAnswer('Uses include:\n\n- monitoring\n- alerting\n\nAnd more.'),
-        ['Uses include:', '<ul><li>monitoring</li><li>alerting</li></ul>', 'And more.'],
-    )
-})
-
-test('isListBlock marks only list blocks', () => {
-    assert.equal(isListBlock('<ul><li>x</li></ul>'), true)
-    assert.equal(isListBlock('<ol><li>x</li></ol>'), true)
-    assert.equal(isListBlock('plain text'), false)
-    assert.equal(isListBlock('<strong>bold</strong> text'), false)
+test('a list and a paragraph in one answer parse as separate blocks', () => {
+    assert.deepEqual(parseFaqAnswer('Uses include:\n\n- monitoring\n- alerting\n\nAnd more.'), [
+        p(text('Uses include:')),
+        { type: 'ul', items: [[text('monitoring')], [text('alerting')]] },
+        p(text('And more.')),
+    ])
 })

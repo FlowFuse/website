@@ -395,6 +395,10 @@ These are the destination events, not `blog-cta`: inline links also appear on ch
 
 Keep that art out of `nuxt/assets/icons/`. That directory is the `ff` Nuxt Icon collection (`<UIcon name="i-ff-pin" />`), which parses every file in it at build time and fails the build on a bare `<path>` fragment, which several of the nav icons are.
 
+## FAQs
+
+Every FAQ on the site renders through `nuxt/components/BlogFaq.vue`, including `/pricing/` (answers in `nuxt/content/faq/pricing.yml`). Answers are plain text with a small markdown subset (`[label](url)`, `**bold**`, `*italic*`, blank-line paragraphs, `-`/`1.` lists), never HTML. `nuxt/lib/faq-answer.mjs` parses them into nodes, not HTML strings, and `nuxt/components/InlineMarkdown.vue` renders those nodes. Vue escapes the text, so literal placeholders like `<ip>` stay literal. The same component renders one-line copy with that subset, e.g. `<InlineMarkdown :text="item.description" />`. Don't render these strings with `v-html`.
+
 ## Naming conventions
 
 - All slugs: **kebab-case**

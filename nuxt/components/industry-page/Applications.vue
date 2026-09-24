@@ -1,7 +1,6 @@
 <script setup lang="ts">
 // The zigzag "Applications for X Manufacturing" band from automotive.vue.
 // Supports the same `[label](url)` inline-link subset as BlogFaq's answers.
-import { inline } from '../../lib/faq-answer.mjs'
 
 type Item = {
     title: string
@@ -63,14 +62,12 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
             <!-- A blank line in the source splits the description into separate paragraphs,
                  same convention as BlogFaq's answers (faq-answer.mjs's own blank-line rule) -
                  for a trailing aside that shouldn't run into the main copy. -->
-            <!-- eslint-disable-next-line vue/no-v-html -->
             <p
                 v-for="(paragraph, i) in item.description.split(/\n\n+/)"
                 :key="i"
                 class="text-gray-500 m-0"
                 :class="{ 'mt-3': i > 0 }"
-                v-html="inline(paragraph)"
-            />
+            ><InlineMarkdown :text="paragraph" /></p>
             <a :href="item.linkHref" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center">
               {{ item.linkText }}
               <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />

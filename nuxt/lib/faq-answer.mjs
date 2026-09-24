@@ -1,76 +1,70 @@
-// Renders one FAQ answer into a list of HTML blocks. Kept free of Nuxt and Vue imports so
-// it can be unit tested with `node --test`; <BlogFaq> is the only caller.
+// Parses one FAQ answer into blocks of inline nodes, which <BlogFaq> and <InlineMarkdown>
+// render. Kept free of Nuxt and Vue imports so it can be unit tested with `node --test`.
 //
-// Answers are authored as plain text, and any literal "<...>" in them - "<ip>", "<img>"
-// and similar placeholders in the docs-derived answers - must stay literal. So the whole
-// string is escaped first, and only a small markdown subset is enabled afterwards, which
-// means a URL or a label cannot reintroduce markup.
-//
-// The subset covers what the 11ty answers expressed with raw tags under `| safe`:
+// The output is data, not HTML: Vue escapes text as it renders it, so literal "<...>" in an
+// answer - "<ip>", "<img>" and similar placeholders in the docs-derived answers - stays
+// literal.
 //
 //   [label](url)     inline link, http(s) or site-absolute only
-//   **bold**         <strong>
-//   *italic*         <em>
-//   blank line       a new paragraph (the .njk answers used <p> tags)
-//   "- item" lines   an unordered list (the .njk answers used <ul><li>)
-//   "1. item" lines  an ordered list (the .njk answers used <ol><li>)
-const ESCAPE_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }
-
-function escapeHtml (text) {
-    return text.replace(/[&<>"]/g, char => ESCAPE_MAP[char])
-}
+//   **bold**         strong
+//   *italic*         em
+//   blank line       a new paragraph
+//   "- item" lines   an unordered list
+//   "1. item" lines  an ordered list
 
 // url is http(s) or site-absolute. Anything else - javascript:, data:, protocol-relative -
 // is left as text.
-const LINK = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s/)][^\s)]*|\/)\)/g
+const LINK = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s/)][^\s)]*|\/)\)/
 // Non-greedy and single-line, so an unclosed marker in prose does not swallow the rest.
-const BOLD = /\*\*([^*\n]+)\*\*/g
-const ITALIC = /\*([^*\n]+)\*/g
+const BOLD = /\*\*([^*\n]+)\*\*/
+const ITALIC = /\*([^*\n]+)\*/
 
-function inline (text) {
-    return escapeHtml(text)
-        // No class: the link takes whatever the page's CSS gives an <a> where it lands -
-        // Tailwind Typography's link style inside .prose (BlogFaq), `main a` elsewhere.
-        .replace(LINK, '<a href="$2">$1</a>')
-        .replace(BOLD, '<strong>$1</strong>')
-        .replace(ITALIC, '<em>$1</em>')
+// Earliest match wins; on a tie, the order here.
+const MARKERS = [['link', LINK], ['strong', BOLD], ['em', ITALIC]]
+
+export function parseInline (text) {
+    const nodes = []
+    let rest = text
+    while (rest) {
+        let found
+        for (const [type, pattern] of MARKERS) {
+            const match = pattern.exec(rest)
+            if (match && (!found || match.index < found.match.index)) found = { type, match }
+        }
+        if (!found) {
+            nodes.push({ type: 'text', value: rest })
+            break
+        }
+        const { type, match } = found
+        if (match.index) nodes.push({ type: 'text', value: rest.slice(0, match.index) })
+        nodes.push(type === 'link'
+            ? { type, href: match[2], children: parseInline(match[1]) }
+            : { type, children: parseInline(match[1]) })
+        rest = rest.slice(match.index + match[0].length)
+    }
+    return nodes
 }
 
 const UNORDERED_ITEM = /^[-*]\s+(.*)$/
 const ORDERED_ITEM = /^\d+[.)]\s+(.*)$/
 
-function renderList (lines, ordered) {
-    const tag = ordered ? 'ol' : 'ul'
-    const pattern = ordered ? ORDERED_ITEM : UNORDERED_ITEM
-    const items = lines
-        .map(line => line.match(pattern)?.[1])
-        .filter(item => item !== undefined)
-        .map(item => `<li>${inline(item)}</li>`)
-    return `<${tag}>${items.join('')}</${tag}>`
-}
-
-// A paragraph made entirely of list-item lines renders as a list; anything else renders as
-// a paragraph with its lines joined, which is how the source wrapped long answers.
-function renderBlock (paragraph) {
+// A paragraph made entirely of list-item lines is a list; anything else is a paragraph with
+// its lines joined, which is how the source wrapped long answers.
+function parseBlock (paragraph) {
     const lines = paragraph.split('\n').map(line => line.trim()).filter(Boolean)
-    if (lines.length && lines.every(line => UNORDERED_ITEM.test(line))) return renderList(lines, false)
-    if (lines.length && lines.every(line => ORDERED_ITEM.test(line))) return renderList(lines, true)
-    return inline(lines.join(' '))
+    for (const [type, pattern] of [['ul', UNORDERED_ITEM], ['ol', ORDERED_ITEM]]) {
+        if (lines.length && lines.every(line => pattern.test(line))) {
+            return { type, items: lines.map(line => parseInline(line.match(pattern)[1])) }
+        }
+    }
+    return { type: 'p', children: parseInline(lines.join(' ')) }
 }
 
-export { inline }
-
-export function renderFaqAnswer (answer) {
+export function parseFaqAnswer (answer) {
     if (!answer) return []
     return answer
         .split(/\n\s*\n/)
         .map(paragraph => paragraph.trim())
         .filter(Boolean)
-        .map(renderBlock)
-}
-
-// A block that is a list must not be wrapped in <p>, which is invalid; <BlogFaq> asks
-// this rather than sniffing the markup itself.
-export function isListBlock (block) {
-    return block.startsWith('<ul>') || block.startsWith('<ol>')
+        .map(parseBlock)
 }
