@@ -23,7 +23,6 @@ metrics:
 roi:
   heading: "<span class='text-indigo-600'>Put a cost</span> on configuration and data gaps"
   description: "Each order can combine a different size, material, finish, glass package, hardware set, or other product option. When order context, machine data, and work instructions do not meet at the station, teams lose time to changeovers or rework. See what it's costing you:"
-  disclaimer: "Estimates depend on your inputs and assumptions. They are not guaranteed savings."
 applications:
   heading: "Applications for building materials manufacturing"
   description: "Manufacture windows, doors, or other configurable building components? Build applications that connect mixed plant systems with the order, configuration, instruction, and quality context for each unit."
@@ -81,9 +80,6 @@ compliance:
       text: "Capture and route available test and inspection results with the product, order, and configuration they support. FlowFuse can help make those records retrievable, but it does not certify a product or replace the manufacturer's ENERGY STAR, NFRC, local code, or other applicable program."
       linkText: "Generate reports from captured production data"
       linkHref: "/blog/2025/05/how-to-generate-pdf-reports-using-node-red/"
-useCaseDescriptions:
-  production-monitoring: "See counts, cycle time, changeover time, work-in-process, and quality signals with the order and configuration context your operation needs."
-  data-integration: "Connect equipment, scans, order data, ERP, databases, and reporting systems so each workflow can use the same operational context."
 faqs:
   - question: "How does FlowFuse support high-mix, low-volume manufacturing?"
     answer: "In high-mix, low-volume assembly, a window or door can need a different size, glass package, frame, hardware set, or finish from the unit before it. Build workflows that load the requirements for the identified unit, guide the operator, check component scans, and record measurements. Reuse the workflow while changing its approved configuration data. This same high-mix, low-volume pattern shows up differently in [Industrial Machinery](/industries/industrial-machinery/), where it's a job-shop and precision-machining problem rather than an assemble-to-order one."

@@ -586,7 +586,6 @@ export default defineContentConfig({
                 roi: z.object({
                     heading: z.string(),
                     description: z.string(),
-                    disclaimer: z.string().optional(),
                 }),
                 applications: z.object({
                     heading: z.string(),
@@ -617,7 +616,6 @@ export default defineContentConfig({
                 // No useCases field: the "Use cases in X" band is dynamic, the same
                 // industriesLegacy-template query against the useCases collection's own
                 // `industries[]` field — not page data that has to be kept in sync by hand.
-                useCaseDescriptions: z.record(z.string(), z.string()).optional(),
                 faqs: z.array(z.object({
                     question: z.string(),
                     answer: z.string(),

@@ -3,10 +3,7 @@
 // truncated teaser embedded on /pricing/. `compact` drops the three category cards and
 // runs them on their defaults, so the numbers on both surfaces come from one model and
 // cannot drift apart.
-const props = withDefaults(defineProps<{ compact?: boolean, disclaimer?: string }>(), {
-    compact: false,
-    disclaimer: 'Directional estimate for comparison, not a quote. Every input is yours to change.',
-})
+const props = withDefaults(defineProps<{ compact?: boolean }>(), { compact: false })
 
 // window.capture is injected by the site's analytics script — guarded because it's absent outside production.
 function capture (eventName?: string, payload?: Record<string, unknown>) {
@@ -252,7 +249,7 @@ const faultFields = [
         <CtaSignUp variant="highlight" :position="ctaPosition" />
         <CtaBookDemo variant="ghost" color="white" icon="i-lucide-arrow-right" :position="ctaPosition" />
       </div>
-      <p class="text-xs text-indigo-200 mt-4 leading-snug">{{ disclaimer }}</p>
+      <p class="text-xs text-indigo-200 mt-4 leading-snug">Directional estimate for comparison, not a quote. Every input is yours to change.</p>
     </div>
   </div>
 </template>
