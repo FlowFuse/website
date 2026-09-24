@@ -216,7 +216,6 @@ useSchemaOrg([
             <p class="text-sm leading-5 text-gray-700 opacity-90 m-0">
               <span class="font-semibold text-blue-700">{{ result.company }}</span> {{ result.text }}
             </p>
-            <span class="text-sm text-blue-700 -mt-6 md:hidden">{{ result.linkText }}</span>
             <div class="hidden md:flex absolute inset-0 rounded-lg items-center justify-center text-center px-6 bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
               <span class="text-sm font-medium text-gray-900">{{ splitLinkText(result).before }}<span class="text-indigo-600">{{ result.linkName }}</span>{{ splitLinkText(result).after }}</span>
             </div>

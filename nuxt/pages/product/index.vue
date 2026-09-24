@@ -44,7 +44,7 @@ const CAPABILITIES = [
     { label: 'Unified Namespace', to: '/use-cases/uns/' },
     { label: 'MES', to: '/use-cases/mes/' },
     { label: 'SCADA', to: '/use-cases/scada/' },
-    { label: 'Edge Connectivity', to: '/use-cases/remote-device-management/' },
+    { label: 'Remote Device Management', to: '/use-cases/remote-device-management/' },
     { label: 'Data Integration', to: '/use-cases/data-integration/' },
 ]
 // ScrollSpySections needs each item's nav-anchor id up front, distinct from
