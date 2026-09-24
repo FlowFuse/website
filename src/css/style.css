@@ -3454,6 +3454,9 @@ lite-youtube::before {
     width: 1rem;
     flex: none;
 }
+.ff-agent-tab--active .ff-agent-tab__mark--mono {
+    filter: brightness(0) invert(1);
+}
 
 .ff-agent-panel {
     display: grid;

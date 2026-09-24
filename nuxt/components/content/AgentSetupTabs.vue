@@ -66,6 +66,7 @@ const CLIENTS = [
     {
         id: 'chatgpt',
         logo: '/images/ai/agents/chatgpt.svg',
+        logoMono: true,
         name: 'ChatGPT',
         step2Title: 'Settings, Apps & Connectors, Advanced settings',
         step2Body: 'Turn on developer mode there, then add FlowFuse by URL. Developer mode needs a paid plan, so it is not on the free tier.',
@@ -100,6 +101,7 @@ const CLIENTS = [
     {
         id: 'codex',
         logo: '/images/ai/agents/chatgpt.svg',
+        logoMono: true,
         name: 'Codex',
         step1Title: 'Copy the prompt',
         step1Body: 'This is the whole setup.',
@@ -157,7 +159,7 @@ function selectClient (id: string) {
         @click="selectClient(client.id)"
       >
         <UIcon v-if="client.icon" :name="client.icon" class="ff-agent-tab__glyph" aria-hidden="true" />
-        <img v-else-if="client.logo" :src="client.logo" alt="" aria-hidden="true">
+        <img v-else-if="client.logo" :src="client.logo" :class="{ 'ff-agent-tab__mark--mono': client.logoMono }" alt="" aria-hidden="true">
         <span>{{ client.name }}</span>
       </button>
     </div>
