@@ -7,7 +7,7 @@ seoMeta:
   title: "Shop Floor Communication | Use Cases | FlowFuse"
   description: "Andon, alerts and escalations that reach the right people in seconds: from machine events to team channels, displays and phones. Built on Node-RED, managed with FlowFuse."
 problem: "The line stopped four minutes ago. The person who can fix it will find out when someone walks over."
-industries: ["automotive", "food-beverage", "aviation-aerospace", "electronics-appliances"]
+industries: ["automotive", "food-beverage", "aviation-aerospace", "electronics-appliances", "industrial-machinery"]
 values: ["labor-operational-efficiency"]
 architecture: "edge-connectivity"
 

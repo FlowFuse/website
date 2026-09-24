@@ -77,7 +77,7 @@ const moved: Record<string, string> = {
     '/node-red/flowfuse/ai/image-classification/': '/docs/flowfuse-nodes/ai/image-classification/',
     '/node-red/flowfuse/ai/llm-nodes/': '/docs/flowfuse-nodes/ai/llm-nodes/',
     '/node-red/flowfuse/ai/object-detection/': '/docs/flowfuse-nodes/ai/object-detection/',
-    '/node-red/flowfuse/ai/onxx/': '/docs/flowfuse-nodes/ai/onxx/',
+    '/node-red/flowfuse/ai/onxx/': '/docs/flowfuse-nodes/ai/onnx/',
     '/node-red/flowfuse/edge/': '/docs/flowfuse-nodes/edge/',
     '/node-red/flowfuse/edge/cip-suite/': '/docs/flowfuse-nodes/edge/cip-suite/',
     '/node-red/flowfuse/edge/modbus/': '/docs/flowfuse-nodes/edge/modbus/',
