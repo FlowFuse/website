@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { parseFaqAnswer } from '../lib/faq-answer.mjs'
 
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
     faq: Array<{ question: string, answer: string }>
     /**
      * How much room the block takes above the first question.
@@ -15,6 +15,8 @@ withDefaults(defineProps<{
 }>(), {
     variant: 'post',
 })
+
+const answers = computed(() => props.faq.map(item => parseFaqAnswer(item.answer)))
 
 const openIndex = ref<number | null>(null)
 function toggle(i: number) {
@@ -43,7 +45,7 @@ function toggle(i: number) {
             </button>
           </h3>
           <div v-show="openIndex === i" class="px-6 mt-6">
-            <template v-for="(block, b) in parseFaqAnswer(item.answer)" :key="b">
+            <template v-for="(block, b) in answers[i]" :key="b">
               <p v-if="block.type === 'p'"><InlineMarkdown :nodes="block.children" /></p>
               <component :is="block.type" v-else>
                 <li v-for="(li, l) in block.items" :key="l"><InlineMarkdown :nodes="li" /></li>
