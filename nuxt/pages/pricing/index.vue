@@ -14,11 +14,6 @@ const tableTiers = computed(() => (plans.value ?? []).map(p => ({
   bestFitFor: p.bestFitFor,
 })))
 
-const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
-  label: item.question,
-  content: item.answer,
-})))
-
 const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
   .map(section => ({ ...section, features: section.features.filter(onPricing) }))
   .filter(section => section.features.length > 0))
@@ -168,18 +163,7 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto pb-16 px-4">
         <div v-if="faq" class="mt-20 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
-        <UAccordion
-            :items="faqAccordionItems"
-            :ui="{
-                trigger: 'text-lg font-medium text-gray-900 py-4 hover:text-indigo-600 transition-colors duration-200',
-                body: 'text-base text-gray-700 pb-4',
-                label: 'text-start break-words',
-            }"
-        >
-            <template #body="{ item }">
-            <div class="prose max-w-none" v-html="item.content" />
-            </template>
-        </UAccordion>
+        <BlogFaq :faq="faq.items" />
         </div>
     </div>
   </div>
