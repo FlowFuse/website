@@ -18,7 +18,7 @@ metrics:
     text: "Industrial protocols and systems supported out of the box"
   - number: "5,000+"
     text: "Open-source Node-RED plug-ins available for devices, data, and services"
-  - number: "Type I and II"
+  - number: "Type I & II"
     text: "SOC 2 audits completed by FlowFuse"
 roi:
   heading: "<span class='text-indigo-600'>Put a cost</span> on configuration and data gaps"
