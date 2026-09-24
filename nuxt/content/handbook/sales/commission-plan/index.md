@@ -46,6 +46,8 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **“Salesperson”** means an employee of the Company who works in the position identified in Exhibit A.
 
+**"Solution Sale"** means a New Business Qualifying Sale in which Professional Services Revenue is sold concurrently with, and as part of the same Agreement as, a New Business platform (ARR) transaction. A sale of Professional Services Revenue alone, or Professional Services Revenue attached to an existing account without a concurrent New Business ARR component, does not constitute a Solution Sale.
+
 ## 3. Effective Date
 
 Duration of Plan:  The Plan is effective as of term outlined in Exhibit A (“Plan Term”), unless earlier revoked or modified in writing by the Company.
@@ -214,7 +216,7 @@ Salesperson is authorized to sell the following products and/or services, unless
 Except as otherwise stated herein, quota credit will be based on the following:
 1. Net new Annual Recurring Revenue (ARR) generated from New Business deals within the Salesperson’s authorized territory or accounts; plus
 2. Five percent (5%) of any Non-Recurring Revenue (NRR), excluding Professional Services Revenue, associated with the New Business transaction; plus
-3. Ten percent (10%) of any Professional Services Revenue associated with the New Business transaction.
+3. Ten percent (10%) of any Professional Services Revenue sold as a part of a Solution Sale. Professional Services Revenue sold outside of a Solution Sale receives quota credit per item 2 above (standard NRR treatment), not this item.
 
 Quota credit for upsells and renewals will continue to be based on Incremental ARR only.
 
@@ -226,16 +228,16 @@ Bookings completed through partners will receive a 20% uplift in the value of th
 
 Commission will be calculated based on the Commissionable Value of each Qualifying Sale, defined as:
 
-Incremental ARR + 5% of Non-Recurring Revenue (excluding Professional Services Revenue). Professional Services Revenue is commissioned separately at the rate set forth in the table below.
+Incremental ARR + 5% of Non-Recurring Revenue (excluding Professional Services Revenue sold as part of a Solution Sale). Professional Services Revenue sold as part of a Solution Sale is commissioned separately at the Solution Sale rate set forth in the table below. Professional Services Revenue sold outside of a Solution Sales (standalone, or attached to an existing account) is treated as standard Non-Recurring Revenue and commissioned per the formula above.
 
 The Base Rate and Accelerated Rate listed in the table below apply directly to this Commissionable Value. All commissions are earned only upon recognition of a Qualifying Sale according to the terms of this Plan.
 
-If a multi-year contract includes non-recurring components, only the ARR portion is recognized annually for quota credit and commission. The Non-Recurring Revenue component (excluding Professional Services Revenue) is recognized once at the time of booking, at the 5% rate defined above. Professional Services Revenue is recognized once at the time of booking, at the rate defined in the table above.
+If a multi-year contract includes non-recurring components, only the ARR portion is recognized annually for quota credit and commission. The Non-Recurring Revenue component (excluding Professional Services Revenue sold as part of a Solution Sale) is recognized once at the time of booking, at the 5% rate defined above. Professional Services Revenue sold as part of a Solution Sale is recognized once at the time of booking, at the rate defined in the table above.
 
 | Transaction Type | Base Rate | Accelerated Rate |
 | :---: | :---: | ----- |
 | All FlowFuse License Transactions |  |  |
-| Professional Services Revenue |  |  |
+| Professional Services Revenue (sold as part of a Solution Sale) |  |  |
 
 Notes: Commissions will be paid on multi-year deals at the base rate according to the multi-year guidelines in sections 10 & 11\.
 
