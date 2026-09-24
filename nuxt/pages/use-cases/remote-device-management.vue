@@ -144,7 +144,7 @@ function splitLinkText (result: { linkText: string, linkName: string }) {
 
 useSeoMeta({
     title: 'Remote Device Management for Industrial Equipment',
-    description: 'Remote device management for every machine on the floor. See, edit, and deploy Node-RED across your fleet.',
+    description: 'Remote device management for every machine in the field. See, edit, and deploy Node-RED across your fleet.',
     ogImage: 'https://flowfuse.com/images/solutions/og-solutions-device-management.jpg',
     ogUrl: 'https://flowfuse.com/use-cases/remote-device-management/',
     twitterSite: '@FlowFuseinc',
@@ -163,7 +163,7 @@ useSchemaOrg([
       <!-- Hero: two-column layout from product/[tier].vue -->
       <section class="max-w-screen-lg mx-auto pt-16 md:pt-32 grid md:grid-cols-2 gap-12 items-center">
         <div class="text-center md:text-left">
-          <h1 class="text-4xl md:text-[42px] md:leading-10 font-medium m-0">Remote device management <span class="text-red-600">for every machine on the floor</span></h1>
+          <h1 class="text-4xl md:text-[42px] md:leading-10 font-medium m-0">Remote device management <span class="text-red-600">for every machine in the field</span></h1>
           <p class="mt-10 text-gray-700 leading-relaxed max-w-md mx-auto md:mx-0">
             FlowFuse runs Node-RED next to your <NuxtLink to="/landing/plc/">PLCs</NuxtLink> and governs it from one place with remote device management, editing, <NuxtLink to="/docs/user/snapshots/">snapshots</NuxtLink>, and fleet-wide controls.
           </p>
