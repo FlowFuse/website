@@ -31,3 +31,4 @@ To get started:
 *FlowFuse Expert fixed, deployed and verified output.*
 
 This feature is available to all FlowFuse teams on FlowFuse Cloud now and Self Hosted from FlowFuse v3.1.
+FlowFuse is fully integrated with AI Agents. See [what agents can do](/docs/user/mcp/) and how to [connect your own agent](/docs/user/expert/third-party-agents/).
