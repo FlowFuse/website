@@ -3,6 +3,7 @@ import { join, basename } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
+import remarkSiteLinks from './utils/remark-site-links'
 import { BLOG_TAGS } from './composables/useBlogList'
 import { redirects } from './redirects'
 import site from '../src/_data/site.json'
@@ -530,6 +531,7 @@ export default defineNuxtConfig({
                     '/ai',
                     '/industries/automotive',
                     '/industries/industrial-machinery',
+                    '/industries/building-materials',
                     ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
@@ -649,6 +651,7 @@ export default defineNuxtConfig({
                     searchDepth: 4,
                 },
                 remarkPlugins: {
+                    'site-links': { instance: remarkSiteLinks },
                     'handbook-links': { instance: remarkHandbookLinks },
                     'docs-links': { instance: remarkDocsLinks },
                     'remark-math': {},

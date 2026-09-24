@@ -35,4 +35,4 @@ You get a clearer understanding of both the technology and the deployment patter
 
 If you're responsible for industrial data pipelines, AI initiatives, or enterprise Node-RED environments, this session is designed for you.
 
-Want to apply this approach in your own environment? [Book a demo](/book-demo/) or [try it for free]({% include "sign-up-url.njk" %}).
+Want to apply this approach in your own environment? [Book a demo](/book-demo/) or [try it for free](cta:signUp).

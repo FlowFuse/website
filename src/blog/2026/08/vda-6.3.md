@@ -115,7 +115,7 @@ Specific downgrade rules can also affect the classification when serious weaknes
 
 Auditors compare documented requirements with what is happening on the production floor.
 
-They may check control plans against the current process, FMEA and [control plan](/blog/2026/08/control-plans) linkage, [SPC](/blog/2026/08/statistical-process-control) data and capability values such as Cp and Cpk, reaction plans for out-of-control conditions, operator training records, corrective actions and their effectiveness, and production and inspection records.
+They may check control plans against the current process, FMEA and [control plan](/blog/2026/08/control-plans) linkage, [SPC](/blog/2026/08/statistical-process-control) data and capability values such as Cp and Cpk, reaction plans for out-of-control conditions, operator training records, corrective actions and their effectiveness, and production and inspection records. Much of this, including the PFMEA, control plan, measurement system analysis, and capability studies, first appears in the supplier's [PPAP](/blog/2026/09/ppap/) submission, so auditors often check whether the process still matches what was approved.
 
 The main risk is a gap between documentation and actual production. When production data is spread across different machines and systems, it can be difficult to connect that data back to the documented process and demonstrate that the required controls were followed.
 

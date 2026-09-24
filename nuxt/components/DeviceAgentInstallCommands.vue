@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Ported from src/_includes/components/device-agent-install-commands.njk, shared by
-// /platform/device-agent/ and /node-red/.
+// Ported from src/_includes/components/device-agent-install-commands.njk, for /node-red/.
+// /platform/device-agent/ used to share it and has its own <DeviceAgentInstallTabs> now.
 //
 // Both commands are byte-identical to docs/device-agent/quickstart.md: get.sh and
 // get.ps1 only download the installer, so the run step is part of the command. Keep them

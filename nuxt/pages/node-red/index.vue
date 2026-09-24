@@ -11,8 +11,7 @@
 //    while the site was mid-migration. It reads /api/certified-nodes now, which derives
 //    the list from the catalogue Nuxt already fetches for /integrations/. That data file
 //    goes away with 11ty.
-//  - components/device-agent-install-commands.njk becomes
-//    <DeviceAgentInstallCommands>, shared with /platform/device-agent/.
+//  - components/device-agent-install-commands.njk becomes <DeviceAgentInstallCommands>.
 //  - The customer-stories grid read collections.stories sorted by date; it queries the
 //    `stories` collection for the same three.
 //  - faq.njk becomes <BlogFaq> plus useSchemaOrg. Two answers carried <ol>/<ul> lists and
@@ -147,7 +146,7 @@ useSchemaOrg([
 
       <!--Install commands, directly under the hero. This is the second of the two routes
           the hero names: TRY IT NOW signs you up for a hosted editor, this one runs
-          Node-RED on hardware you already have. Shared with /platform/device-agent/.-->
+          Node-RED on hardware you already have.-->
       <div id="install-node-red-from-your-terminal" class="w-full scroll-mt-24 pb-16">
           <div class="max-w-screen-lg mx-auto px-6">
               <DeviceAgentInstallCommands heading="Or install Node-RED on your own machine" />
