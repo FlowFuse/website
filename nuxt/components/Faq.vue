@@ -46,9 +46,9 @@ function toggle(i: number) {
           </h3>
           <div v-show="openIndex === i" class="px-6 mt-6">
             <template v-for="(block, b) in answers[i]" :key="b">
-              <p v-if="block.type === 'p'"><InlineMarkdown :nodes="block.children" /></p>
+              <p v-if="block.type === 'p'"><InlineMarkdown :nodes="block.children" position="faq" /></p>
               <component :is="block.type" v-else>
-                <li v-for="(li, l) in block.items" :key="l"><InlineMarkdown :nodes="li" /></li>
+                <li v-for="(li, l) in block.items" :key="l"><InlineMarkdown :nodes="li" position="faq" /></li>
               </component>
             </template>
           </div>

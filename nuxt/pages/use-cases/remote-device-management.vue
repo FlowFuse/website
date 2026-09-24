@@ -233,7 +233,7 @@ useSchemaOrg([
           <div v-for="item in VISIBILITY" :key="item.title" class="max-md:text-center">
             <UIcon :name="item.icon" class="w-8 h-8 text-indigo-600" />
             <p class="text-xl font-semibold text-gray-600 mt-3 mb-0">{{ item.title }}</p>
-            <p class="font-light text-gray-700 leading-relaxed mt-6 mb-0"><InlineMarkdown :text="item.text" /></p>
+            <p class="font-light text-gray-700 leading-relaxed mt-6 mb-0"><InlineMarkdown :text="item.text" position="visibility" /></p>
           </div>
         </div>
         <ProseNote class="mt-16">
@@ -266,7 +266,7 @@ useSchemaOrg([
             <div :class="index !== STEPS.length - 1 ? 'pb-10 sm:pb-16' : ''">
               <span class="block font-semibold text-gray-500 mb-1 text-center sm:text-left">Step {{ index + 1 }}</span>
               <h4 class="mt-0 mb-4 text-xl font-semibold text-indigo-600 text-center sm:text-left">{{ step.title }}</h4>
-              <p class="font-light text-gray-700 leading-relaxed mb-0"><InlineMarkdown :text="step.text" /></p>
+              <p class="font-light text-gray-700 leading-relaxed mb-0"><InlineMarkdown :text="step.text" position="connectivity" /></p>
             </div>
           </div>
         </div>
@@ -285,7 +285,7 @@ useSchemaOrg([
               <UIcon :name="item.icon" class="w-8 h-8 text-indigo-600" />
               <p class="text-lg font-semibold text-gray-600 m-0">{{ item.title }}</p>
             </div>
-            <p class="text-sm leading-5 font-light text-gray-700 m-0"><InlineMarkdown :text="item.text" /></p>
+            <p class="text-sm leading-5 font-light text-gray-700 m-0"><InlineMarkdown :text="item.text" position="intelligence-at-the-edge" /></p>
           </div>
         </div>
       </div>

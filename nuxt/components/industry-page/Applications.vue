@@ -67,7 +67,7 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
                 :key="i"
                 class="text-gray-500 m-0"
                 :class="{ 'mt-3': i > 0 }"
-            ><InlineMarkdown :text="paragraph" /></p>
+            ><InlineMarkdown :text="paragraph" position="applications" /></p>
             <a :href="item.linkHref" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center">
               {{ item.linkText }}
               <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />
