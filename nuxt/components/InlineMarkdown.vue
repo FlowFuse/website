@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { parseInline } from '../lib/faq-answer.mjs'
+import { parseInline } from '../lib/inline-markdown.mjs'
 
 type InlineNode =
     | { type: 'text', value: string }
