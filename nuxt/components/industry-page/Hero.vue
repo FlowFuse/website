@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // The hero band from pages/industries/automotive.vue: eyebrow badge, accent heading,
-// buttons, a customer-quote card, and an optional SocialProof line. The metrics grid and
-// customer-story bridge live in industry-page/Metrics.vue, rendered right after this.
+// buttons, a customer-quote card or an image, and an optional SocialProof line. The metrics
+// grid and customer-story bridge live in industry-page/Metrics.vue, rendered right after this.
 defineProps<{
     hero: {
         eyebrow: string
@@ -55,8 +55,8 @@ defineProps<{
             </div>
           </div>
         </div>
-        <div v-else-if="hero.image" class="w-full md:flex md:items-center max-md:mt-4">
-          <img :src="hero.image.src" :alt="hero.image.alt" class="w-full rounded-lg border border-gray-200 shadow-sm object-cover aspect-[4/3]" loading="eager">
+        <div v-else-if="hero.image" class="w-full ff-image-cover ff-image-rounded">
+          <img :src="hero.image.src" :alt="hero.image.alt" loading="eager">
         </div>
       </div>
       <div class="max-w-screen-lg mx-auto mt-16 text-center">

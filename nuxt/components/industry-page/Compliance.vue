@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// The compliance grid from automotive.vue. "The Data Your Audit Asks For, In One Place"
-// is fixed copy shared by every page built on this template, not page-specific data.
+// The compliance grid from automotive.vue. The heading and "The Data Your Audit Asks For,
+// In One Place" subtitle are defaults a page can override with its own.
 interface ComplianceItem { title: string, text: string, linkText: string, linkHref: string, icon?: string }
 
 defineProps<{ industryName: string, heading?: string, subtitle?: string, description: string, items: ComplianceItem[] }>()
