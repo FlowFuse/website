@@ -15,7 +15,7 @@
 //    /platform/why-flowfuse/. Carrying that forward knowingly would be worse than the
 //    change, so the title and description now describe this page.
 const VIDEO_ID = 'n9HhZCh0Ndg'
-const VIDEO_STYLE = `width: 472px; overflow: hidden; background-image: url('https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg'); background-size: cover; background-position: center;`
+const VIDEO_STYLE = `width: 472px; height: 266px; overflow: hidden; background-image: url('https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg'); background-size: cover; background-position: center;`
 
 const QUOTES = [
     { icon: 'i-heroicons-building-office-2', copy: 'My Node-RED flows are no longer side projects – they run real operations.' },
