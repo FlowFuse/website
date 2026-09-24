@@ -17,16 +17,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     // board's address is not a permanent property of this URL.
     '/careers/': { redirect: { to: 'https://boards.greenhouse.io/flowfuse', statusCode: 302 } },
     ...nodeRedRedirects,
-    // The seven sector pages under /industries/ were retired. They were live and
-    // indexed, so the URLs 301 to the listing rather than 404ing.
-    // /industries/automotive/ stays a page.
-    '/industries/aerospace-components/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/aviation-aerospace/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/electronics-appliances/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/food-beverage/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/life-sciences/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/renewables/': { redirect: { to: '/industries/', statusCode: 301 } },
-    '/industries/semiconductors/': { redirect: { to: '/industries/', statusCode: 301 } },
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
     '/handbook/engineering/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
@@ -75,6 +65,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/team/': { redirect: { to: '/about/', statusCode: 301 } },
     '/team': { redirect: { to: '/about/', statusCode: 301 } },
     '/docs/user/assistant/': { redirect: { to: '/docs/user/expert/', statusCode: 301 } },
+    '/docs/flowfuse-nodes/ai/onxx/': { redirect: { to: '/docs/flowfuse-nodes/ai/onnx/', statusCode: 301 } },
     '/handbook/development/': { redirect: { to: '/handbook/engineering/', statusCode: 301 } },
     '/handbook/development/tools/': { redirect: { to: '/handbook/engineering/tools/', statusCode: 301 } },
     '/handbook/development/support/': { redirect: { to: '/handbook/engineering/support/', statusCode: 301 } },

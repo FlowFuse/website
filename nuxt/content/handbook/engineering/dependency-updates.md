@@ -18,12 +18,13 @@ The triage rotation is owned by the engineering team. One engineer takes the slo
 
 Work through Dependabot PRs in this order:
 
-1. **Wait at least 12 hours after a version is published before merging.** Compromised or broken releases are usually flagged within that window. Merging immediately after publish removes that safety margin.
-2. **Check for an active npm advisory or breach report on the package.** Look at the package's npm page and the GitHub advisory database before approving. If anything is open against that version, hold the PR until it clears.
-3. **Read the release notes for each bump.** Confirm there are no breaking changes that affect how we use the package. Patch and minor bumps still occasionally ship behavior changes worth knowing about.
-4. **Merge the safe, small bumps first.** Patch and minor updates with a contained diff and clean release notes go in early. Leave anything with an unusually large diff for closer review.
-5. **CI must pass before merging — no exceptions.** A red build on a dependency PR is the signal that something needs investigation, not a bypass.
-6. **Check all repositories.** - Dependabot is active in all our repositiories. 
+1. Check the "Security & Quality" tab for each repository, the "Vulnerabilities" tab will list outstanding dependencies with CVEs by priority order. Please review these first and see if Dependabot can be prompted to create a fix or if there may be a manual approach.
+2. **Wait at least 12 hours after a version is published before merging.** Compromised or broken releases are usually flagged within that window. Merging immediately after publish removes that safety margin.
+3. **Check for an active npm advisory or breach report on the package.** Look at the package's npm page and the GitHub advisory database before approving. If anything is open against that version, hold the PR until it clears.
+4. **Read the release notes for each bump.** Confirm there are no breaking changes that affect how we use the package. Patch and minor bumps still occasionally ship behavior changes worth knowing about.
+5. **Merge the safe, small bumps first.** Patch and minor updates with a contained diff and clean release notes go in early. Leave anything with an unusually large diff for closer review.
+6. **CI must pass before merging — no exceptions.** A red build on a dependency PR is the signal that something needs investigation, not a bypass.
+7. **Check all repositories.** - Dependabot is active in all our repositiories. 
 
 ## Major version bumps
 
