@@ -174,7 +174,7 @@ useSchemaOrg([
                                   </div>
                                   <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
                                       <h5 class="w-full md:m-0">
-                                          <div class="text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</div>
+                                          <span class="block text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</span>
                                       </h5>
                                   </div>
                               </div>
