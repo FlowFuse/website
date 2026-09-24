@@ -113,8 +113,8 @@
                                 "icon": "screen"
                             },
                             {
-                                "label": "Edge Connectivity",
-                                "href": "/use-cases/edge-connectivity/",
+                                "label": "Remote Device Management",
+                                "href": "/use-cases/remote-device-management/",
                                 "icon": "chip"
                             },
                             {
@@ -463,8 +463,8 @@
                                 "href": "/use-cases/scada/"
                             },
                             {
-                                "label": "Edge Connectivity",
-                                "href": "/use-cases/edge-connectivity/"
+                                "label": "Remote Device Management",
+                                "href": "/use-cases/remote-device-management/"
                             },
                             {
                                 "label": "Data Integration",

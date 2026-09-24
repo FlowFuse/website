@@ -495,6 +495,11 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The platform pages are .vue files with no listing to crawl from.
+                    '/platform/security/',
+                    '/platform/device-agent/',
+                    '/platform/why-flowfuse/',
+                    '/platform/dashboard/',
                     // The event pages are .vue files with no listing to crawl from.
                     '/events/proveit-2026/',
                     '/events/hannover-messe-2026/',
@@ -514,7 +519,7 @@ export default defineNuxtConfig({
                     '/partners/referral-sign-up/',
                     // The six architecture pages are .vue files with no listing that links to them all, so the crawler never reaches them.
                     '/use-cases/data-integration/',
-                    '/use-cases/edge-connectivity/',
+                    '/use-cases/remote-device-management/',
                     '/use-cases/it-ot-middleware/',
                     '/use-cases/mes/',
                     '/use-cases/scada/',
