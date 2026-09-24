@@ -14,5 +14,5 @@ Agents can now install FlowFuse-scoped plugins and certified nodes on their own 
 
 We vet FlowFuse-scoped plugins and certified nodes ourselves, which is what makes this safe to automate. Every other package still goes through the palette manager for you to approve, so an agent never puts code you haven't chosen into a running instance. You stay in control of exactly what runs.
 
-This feature is available to all FlowFuse teams on FlowFuse Cloud now and Self Hosted from FlowFuse v3.1.
+This feature is available to all FlowFuse teams on FlowFuse Cloud now and Self Hosted from FlowFuse v3.1. Which certified nodes an agent can install depends on your license.
 FlowFuse is fully integrated with AI Agents. See [what agents can do](/docs/user/mcp/) and how to [connect your own agent](/docs/user/expert/third-party-agents/).
