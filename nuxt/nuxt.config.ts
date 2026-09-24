@@ -514,7 +514,7 @@ export default defineNuxtConfig({
                     '/partners/referral-sign-up/',
                     // The six architecture pages are .vue files with no listing that links to them all, so the crawler never reaches them.
                     '/use-cases/data-integration/',
-                    '/use-cases/edge-connectivity/',
+                    '/use-cases/remote-device-management/',
                     '/use-cases/it-ot-middleware/',
                     '/use-cases/mes/',
                     '/use-cases/scada/',

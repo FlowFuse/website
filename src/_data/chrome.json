@@ -114,7 +114,7 @@
                             },
                             {
                                 "label": "Edge Connectivity",
-                                "href": "/use-cases/edge-connectivity/",
+                                "href": "/use-cases/remote-device-management/",
                                 "icon": "chip"
                             },
                             {
@@ -464,7 +464,7 @@
                             },
                             {
                                 "label": "Edge Connectivity",
-                                "href": "/use-cases/edge-connectivity/"
+                                "href": "/use-cases/remote-device-management/"
                             },
                             {
                                 "label": "Data Integration",
