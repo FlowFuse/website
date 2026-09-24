@@ -495,6 +495,11 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The platform pages are .vue files with no listing to crawl from.
+                    '/platform/security/',
+                    '/platform/device-agent/',
+                    '/platform/why-flowfuse/',
+                    '/platform/dashboard/',
                     // The event pages are .vue files with no listing to crawl from.
                     '/events/proveit-2026/',
                     '/events/hannover-messe-2026/',
@@ -523,7 +528,6 @@ export default defineNuxtConfig({
                     // Nuxt prerender crawler never parses, so it has to be listed explicitly
                     // or the route is missing from nuxt/dist and every link to it breaks.
                     '/ai',
-                    '/platform/device-agent/',
                     '/industries/automotive',
                     '/industries/industrial-machinery',
                     ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
