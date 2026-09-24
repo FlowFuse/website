@@ -52,4 +52,4 @@ Join Kristopher Sandoval (Product Marketing), Jamie Strusz (Engineering), Drew G
 
 ## Who should attend this FlowFuse product launch webinar?
 
-This webinar is ideal for Controls Engineers, OT and IIoT Solutions Architects, Plant Operations Managers, and the central IT and enterprise architecture teams who have to sign off on what they build. If you're evaluating FlowFuse for the first time, you can [sign up for a free trial](cta:signUp) with no credit card.
+This webinar is ideal for Controls Engineers, OT and IIoT Solutions Architects, Plant Operations Managers, and the central IT and enterprise architecture teams who have to sign off on what they build. If you're evaluating FlowFuse for the first time, you can [sign up for a free trial]({% include "sign-up-url.njk" %}) with no credit card.

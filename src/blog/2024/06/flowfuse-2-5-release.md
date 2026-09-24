@@ -46,7 +46,7 @@ Branding and accessibility are crucial, and with FlowFuse 2.5, you can now deplo
 
 You can view everything included in 2.5 on the [Github Release page](https://github.com/FlowFuse/flowfuse/releases/tag/v2.5.0).
 
-We also regularly release updates to [FlowFuse Cloud](site:appURL) in between our monthly releases. You can follow the updates as they are made via our [ChangeLog](/changelog).
+We also regularly release updates to [FlowFuse Cloud]({{ site.appURL }}) in between our monthly releases. You can follow the updates as they are made via our [ChangeLog](/changelog).
 
 ## What's next?
 
@@ -67,7 +67,7 @@ If you'd rather use our hosted offering: [Get started for free](https://app.flow
 
 ## Upgrading FlowFuse
 
-[FlowFuse Cloud](site:appURL) is already running 2.5.
+[FlowFuse Cloud]({{ site.appURL }}) is already running 2.5.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading your FlowFuse instance](/docs/upgrade/).

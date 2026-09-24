@@ -168,7 +168,11 @@ This is a **warning** callout. Use it for something the reader should be careful
 This is a **caution** callout. Use it for potential data loss, security risks, or irreversible actions.
 ::
 
-### Syntax
+### Which syntax to use
+
+Since we're in the middle of a migration from 11ty to Nuxt, there are two syntaxes available, pick the one you need according to the location of the files.
+
+**Handbook pages** (`nuxt/content/handbook/`):
 
 ```md
 ::note
@@ -182,4 +186,20 @@ Content here.
 ::caution
 Content here.
 ::
+```
+
+**Docs, blog, and changelog pages** (`src/docs/`, `src/blog/`, `src/changelog/`):
+
+```
+{% note %}
+Content here.
+{% endnote %}
+
+{% warning %}
+Content here.
+{% endwarning %}
+
+{% caution %}
+Content here.
+{% endcaution %}
 ```

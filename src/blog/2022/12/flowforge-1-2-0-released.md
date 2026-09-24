@@ -77,7 +77,7 @@ with the coupon **FF12** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud](site:appURL) is already running 1.2. To use
+[FlowFuse Cloud]({{ site.appURL }}) is already running 1.2. To use
 persistent context you'll need to upgrade your projects stack.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
