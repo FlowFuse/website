@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { createJiti } from 'jiti'
 
 const jiti = createJiti(import.meta.url)
-const { ctaDestinationKey } = await jiti.import('./cta-destinations.ts')
+const { ctaDestinationKey, ctaQuery, withCtaQuery } = await jiti.import('./cta-destinations.ts')
 const nuxtDir = fileURLToPath(new URL('..', import.meta.url))
 
 test('matches every way of writing a destination URL', () => {
@@ -28,6 +28,19 @@ test('does not match other URLs', () => {
     for (const href of ['/pricing/#comparison', '/pricing/request-quote/', 'https://app.flowfuse.com/team/x/', 'pricing/', './pricing.md', '#pricing', '/', 'https://www.mongodb.com/pricing', undefined]) {
         assert.equal(ctaDestinationKey(href), undefined, String(href))
     }
+})
+
+test('adds a query to a destination without touching the path', () => {
+    assert.equal(withCtaQuery('/contact-us/', { subject: 'FlowFuse Expert for Self-Hosted' }), '/contact-us/?subject=FlowFuse%20Expert%20for%20Self-Hosted')
+    assert.equal(withCtaQuery('https://app.flowfuse.com/account/create', { code: 'RELEASE11', utm_source: 'blog' }), 'https://app.flowfuse.com/account/create?code=RELEASE11&utm_source=blog')
+    assert.equal(withCtaQuery('/pricing/', {}), '/pricing/')
+    assert.equal(withCtaQuery('/pricing/'), '/pricing/')
+})
+
+test('reads the query back out of a link, so rebuilding it gives the same URL', () => {
+    const href = '/contact-us/?subject=FlowFuse%20Expert%20Application%20Building'
+    assert.deepEqual(ctaQuery(href), { subject: 'FlowFuse Expert Application Building' })
+    assert.equal(withCtaQuery('/contact-us/', ctaQuery(href)), href)
 })
 
 test('no custom CTA destination points at one of the five reserved destinations', async () => {

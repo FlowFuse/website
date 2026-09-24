@@ -61,3 +61,14 @@ export function ctaDestinationKey (href?: string) {
         return undefined
     }
 }
+
+export type CtaQuery = Record<string, string>
+
+export function withCtaQuery (href: string, query?: CtaQuery) {
+    const search = Object.entries(query ?? {}).map(([name, value]) => `${encodeURIComponent(name)}=${encodeURIComponent(value)}`).join('&')
+    return search ? `${href}?${search}` : href
+}
+
+export function ctaQuery (href: string): CtaQuery {
+    return Object.fromEntries(new URL(href, site.baseURL).searchParams)
+}

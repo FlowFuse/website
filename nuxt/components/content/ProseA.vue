@@ -1,5 +1,5 @@
 <template>
-    <CtaLink v-if="destination" :destination="destination" :href="href" :target="target" position="inline-link" prose>
+    <CtaLink v-if="destination" :destination="destination" :query="query" :target="target" position="inline-link" prose>
         <slot />
     </CtaLink>
     <UiProseA v-else :href="href" :target="target">
@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import UiProseA from '@nuxt/ui/components/prose/A.vue'
-import { ctaDestinationKey } from '../../lib/cta-destinations'
+import { ctaDestinationKey, ctaQuery } from '../../lib/cta-destinations'
 
 const props = defineProps<{
     href?: string
@@ -17,4 +17,5 @@ const props = defineProps<{
 }>()
 
 const destination = computed(() => ctaDestinationKey(props.href))
+const query = computed(() => destination.value ? ctaQuery(props.href!) : undefined)
 </script>

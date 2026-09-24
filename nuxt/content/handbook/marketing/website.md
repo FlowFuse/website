@@ -144,7 +144,7 @@ Contact Us vs. Book a Demo: these two CTAs carry different intent signals and sh
 
 If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
-**Inline links are tracked too.** A link inside a sentence can use whatever wording fits the text: "sign up for a free trial", "contact us", and so on. If it points at one of the five destinations above, it reports the same analytics event as the matching button, with `inline-link` as its position, on every Nuxt page. To avoid typing the URL, write the destination's name instead: `[try it for free](cta:signUp)`. The names are `signUp`, `signIn`, `contactUs`, `bookDemo` and `pricing`. In a `.vue` page, the same link is `<CtaLink destination="signUp" position="...">try it for free</CtaLink>`.
+**Inline links are tracked too.** A link inside a sentence can use whatever wording fits the text: "sign up for a free trial", "contact us", and so on. If it points at one of the five destinations above, it reports the same analytics event as the matching button, with `inline-link` as its position, on every Nuxt page. To avoid typing the URL, write the destination's name instead: `[try it for free](cta:signUp)`, with parameters if the link needs them: `[contact us](cta:contactUs?subject=Certified%20Nodes)`. The names are `signUp`, `signIn`, `contactUs`, `bookDemo` and `pricing`. In a `.vue` page, the same link is `<CtaLink destination="signUp" position="...">try it for free</CtaLink>`.
 
 **These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
 
@@ -233,6 +233,7 @@ The dark card above is just to make the white text visible in this doc, use `col
 | `plan`     | No       | Which pricing plan the button belongs to, if relevant (e.g. `edge`, `hub`, `fleet`) — also shows up in analytics                              |
 | `color`    | No       | Only for `variant="ghost"`: `primary`, `highlight`, or `white` — which text color to use, since a ghost button has no background to imply one |
 | `icon`     | No       | An icon name to show after the button text, e.g. `i-lucide-arrow-right`                                                                       |
+| `query`    | No       | URL parameters added to the link, e.g. `:query='{"subject": "Certified Nodes"}'` or utm properties. The destination, button text and tracking stay the same |
 
 ### One-off links (`CtaCustom`)
 
