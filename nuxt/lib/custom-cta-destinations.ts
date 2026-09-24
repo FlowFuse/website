@@ -76,8 +76,8 @@ export const CUSTOM_CTA_DESTINATIONS = {
 // Self-check, run when this module loads: a second entry must not reuse a URL another
 // entry already registered, and no entry may point at one of the five reserved
 // destinations (cta-destinations.ts), matched with ctaDestinationKey - the same rule
-// CtaCustom, CtaLink and ProseA use, so a query string, hash or absolute flowfuse.com
-// URL doesn't slip past. nuxt/lib/cta-destinations.test.mjs loads this module, so a bad
+// CtaCustom, CtaLink and ProseA use, so a query string or absolute flowfuse.com URL
+// doesn't slip past. A hash is a section of the page and counts as its own destination. nuxt/lib/cta-destinations.test.mjs loads this module, so a bad
 // entry fails `npm test`.
 const hrefOwners = new Map<string, string>()
 for (const [key, dest] of Object.entries(CUSTOM_CTA_DESTINATIONS)) {

@@ -55,6 +55,7 @@ export function ctaDestinationKey (href?: string) {
     if (!href?.match(/^(https?:)?\//)) return undefined
     try {
         const url = new URL(href, site.baseURL)
+        if (url.hash) return undefined
         return DESTINATION_KEY_BY_HREF.get(normalizeHref(url.origin + url.pathname))
     } catch {
         return undefined
