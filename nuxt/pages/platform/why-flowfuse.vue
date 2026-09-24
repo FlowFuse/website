@@ -103,7 +103,7 @@ useSchemaOrg([
             <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6">
               <div class="flex-grow relative hidden lg:block">
                 <div class="ff-image-cover left ff-image-rounded w-full h-full">
-                  <img src="/images/why-flowfuse/from-prototype-to-production.png" alt="Shop floor office" width="496" class="w-full h-auto">
+                  <NuxtImg src="/images/why-flowfuse/from-prototype-to-production.png" alt="Shop floor office" :width="496" format="webp" loading="lazy" class="w-full h-auto" />
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
