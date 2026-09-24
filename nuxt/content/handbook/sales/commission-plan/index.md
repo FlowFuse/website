@@ -22,7 +22,7 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **“Chargeback”** means the Company’s recovery of previously paid but unearned incentive payments from a Salesperson.
 
-**“Commissionable Value”** means the amount upon which a Salesperson's commission is calculated. For all Qualifying Sales, the Commissionable Value is: Commissionable Value = Incremental ARR + (5% × Non-Recurring Revenue, excluding Professional Services Revenue). Professional Services Revenue is commissioned separately as set forth in Exhibit A, Section 8.
+**“Commissionable Value”** means the amount upon which a Salesperson's commission is calculated. For all Qualifying Sales, the Commissionable Value is: Commissionable Value = Incremental ARR + (5% × Non-Recurring Revenue, excluding Professional Services Revenue sold as a part of a Solution Sale). Professional Services Revenue sold as a part of a Solution Sale is commissioned separately as set forth in Exhibit A, Section 8. Professional Services Revenue sold outside of a Solution Sale is included within Non-Recurring Revenue for purposes of this formula. 
 
 **“Company”** or “**FlowFuse**” means FlowFuse Inc and any of its affiliates, subsidiaries, successors, or assigns.
 
@@ -215,8 +215,8 @@ Salesperson is authorized to sell the following products and/or services, unless
 
 Except as otherwise stated herein, quota credit will be based on the following:
 1. Net new Annual Recurring Revenue (ARR) generated from New Business deals within the Salesperson’s authorized territory or accounts; plus
-2. Five percent (5%) of any Non-Recurring Revenue (NRR), excluding Professional Services Revenue, associated with the New Business transaction; plus
-3. Ten percent (10%) of any Professional Services Revenue sold as a part of a Solution Sale. Professional Services Revenue sold outside of a Solution Sale receives quota credit per item 2 above (standard NRR treatment), not this item.
+2. Five percent (5%) of any Non-Recurring Revenue (NRR), excluding Professional Services Revenue sold as part of a Solution Sale, associated with the New Business transaction; plus
+3. Ten percent (10%) of any Professional Services Revenue sold as a part of a Solution Sale.
 
 Quota credit for upsells and renewals will continue to be based on Incremental ARR only.
 
