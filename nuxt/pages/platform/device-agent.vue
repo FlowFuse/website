@@ -146,7 +146,7 @@ const FAQ = [
     },
     {
         question: 'What\'s the difference between "Fleet Mode" and "Developer Mode"',
-        answer: '"Fleet Mode" allows you to deploy a single Snapshot to multiple devices at once. The Device will have a "Target Snapshot", and whenever that is set, your device will automatically update.\n\n"Developer Mode" on the other hand opens a tunnel to your device, allowing you to edit the flows on that device directly. This is useful for debugging flows, or testing new flows on live hardware, before distributing them out to the rest of our',
+        answer: '"Fleet Mode" allows you to deploy a single Snapshot to multiple devices at once. The Device will have a "Target Snapshot", and whenever that is set, your device will automatically update.\n\n"Developer Mode" on the other hand opens a tunnel to your device, allowing you to edit the flows on that device directly. This is useful for debugging flows, or testing new flows on live hardware, before distributing them out to the rest of your fleet.',
     },
     {
         question: 'What are the system requirements for the Device Agent? Will it run on my hardware?',
@@ -245,10 +245,14 @@ useSchemaOrg([
 
     <!-- How it works: /integrations/opcua/ ("From OPC UA to insight, step by step") -->
     <section class="w-full px-6 py-20 md:py-24">
-      <div class="max-w-screen-lg mx-auto md:flex md:gap-16 md:items-start">
-        <div class="mb-12 md:mb-0 md:w-1/3 md:shrink-0 md:sticky! md:top-24 md:self-start max-md:text-center">
+      <div class="max-w-screen-lg mx-auto md:flex md:gap-12 md:items-start">
+        <div class="mb-12 md:mb-0 md:w-[373px] md:shrink-0 md:sticky! md:top-24 md:self-start max-md:text-center">
           <h2 class="mt-0 mb-0">How the Device Agent Works</h2>
           <p class="font-light text-gray-700 mt-6 mb-0">Three steps take you from a machine sitting on a bench to a <span class="whitespace-nowrap">Node-RED</span> application running in production.</p>
+          <NuxtLink to="/docs/device-agent/install/overview/" class="mt-3 inline-flex items-center gap-1.5">
+            Learn how to install the FlowFuse Device Agent
+            <UIcon name="i-heroicons-arrow-long-right-20-solid" class="w-5 h-5 shrink-0" />
+          </NuxtLink>
         </div>
         <div class="max-w-screen-md mx-auto md:mx-0">
           <div v-for="(step, index) in STEPS" :key="step.title" class="flex flex-col sm:flex-row gap-3 sm:gap-6">
@@ -267,7 +271,6 @@ useSchemaOrg([
               <p v-for="(paragraph, p) in step.paragraphs" :key="p" class="font-light text-gray-600" :class="p === step.paragraphs.length - 1 ? 'mb-0' : ''" v-html="paragraph" />
             </div>
           </div>
-          <p class="font-light text-gray-600 mt-12 mb-0 max-sm:text-center">See the <a href="/docs/device-agent/install/overview/">Device Agent documentation</a> for Docker, Kubernetes, and bulk installation options.</p>
         </div>
       </div>
     </section>
