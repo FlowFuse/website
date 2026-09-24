@@ -43,7 +43,7 @@ test('reads the query back out of a link, so rebuilding it gives the same URL', 
     assert.equal(withCtaQuery('/contact-us/', ctaQuery(href)), href)
 })
 
-test('no custom CTA destination points at one of the five reserved destinations', async () => {
+test('custom CTA registry has no duplicate URLs and none of the five reserved destinations', async () => {
     await jiti.import('./custom-cta-destinations.ts')
 })
 
