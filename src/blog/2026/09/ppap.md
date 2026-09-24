@@ -13,7 +13,7 @@ cta:
   title: "Stop Rebuilding PPAP Data in Spreadsheets"
   description: "See how FlowFuse captures dimensional, test, and capability data from your gauges and inspection systems as parts are produced, ready for every submission at every plant."
 tldr:
-  - "PPAP proves repeatability: It shows that a supplier's production process can meet requirements on each run, not just on a single sample."
+  - "PPAP provides evidence of a consistent process: It shows that a supplier's production process can consistently meet requirements during production, not just on a single sample."
   - "The 18 elements are interconnected: Design records define requirements, process controls define how the part is made, and data prove it. The PSW ties them together."
   - "The submission level depends on the customer: The customer's requirements set the level, with Level 3 common for new part introductions."
 meta:
@@ -92,7 +92,7 @@ The PSW, product samples, and limited supporting data are submitted.
 
 ### PPAP Level 3
 
-The PSW, product samples, and the complete supporting data package are submitted. This is the default level unless the customer specifies otherwise, and the most common one for new parts, since it gives the customer the full package without an on-site review.
+The PSW, product samples, and the complete supporting data package are submitted. Level 3 is commonly requested for new part introductions because it gives the customer the complete supporting data package without an on-site review.
 
 ### PPAP Level 4
 
@@ -106,7 +106,7 @@ The PSW, product samples, and complete supporting data are reviewed at the suppl
 
 The sample parts and data in a PPAP are pulled from a significant production run. Unless the customer specifies otherwise, the AIAG PPAP manual defines this as one to eight hours of production totaling at least 300 consecutive parts, made at the production site with the production tooling, gauging, materials, process, and operators.
 
-Initial process studies are typically calculated from this run. The customary acceptance threshold is a Ppk of 1.67 or higher. Results between 1.33 and 1.67 may be accepted depending on the customer, and results below 1.33 generally do not meet the acceptance criteria. Many customers set their own thresholds in customer-specific requirements.
+Initial process studies are typically calculated from this run. Customer-specific requirements determine the acceptance criteria for these studies. Common capability criteria use thresholds such as a Cpk or Ppk of 1.33 or 1.67, depending on the characteristic and the customer.
 
 ## What The Part Submission Warrant Includes
 
@@ -123,7 +123,7 @@ The PSW is the summary document the customer signs off on, and a separate PSW is
 
 ## PPAP Approval Status
 
-After the submission is reviewed, the customer records one of [three dispositions](https://arxiv.org/html/2607.04924):
+After the submission is reviewed, the customer records one of three dispositions defined in the [AIAG PPAP manual](https://www.aiag.org/training-and-resources/manuals/details/PPAP-4):
 
 - **Approved:** The part and process meet the customer's requirements, and the supplier is authorized to ship production quantities.
 - **Interim approval:** Shipment is permitted for a limited time or quantity while open issues are resolved, typically under an action plan agreed with the customer. Full approval is still required.
@@ -131,7 +131,7 @@ After the submission is reviewed, the customer records one of [three disposition
 
 ## When Is PPAP Required?
 
-PPAP is required whenever something could change how a part is made or how it performs. Each customer sets its own triggers in its supplier manual, but most fall under a few categories.
+PPAP may be required when a change could affect how a part is made or how it performs. Each customer defines its specific submission triggers in its supplier manual, but most fall under a few categories.
 
 The most common trigger is a new part, meaning a part number the supplier has never produced for that customer. An engineering or design change, such as a new drawing revision, tolerance, or material specification, also requires approval before the changed part ships.
 
@@ -143,6 +143,6 @@ The supplier is expected to notify the customer before making any of these chang
 
 ## Final Thoughts
 
-PPAP boils down to proven repeatability: documented proof that a process can produce the same part every time. Approval is commonly followed by a [safe launch](/blog/2026/08/safe-launch/) period, where the customer checks that proof against full production.
+PPAP boils down to documented evidence that a production process can consistently meet requirements at production rates. Approval is commonly followed by a [safe launch](/blog/2026/08/safe-launch/) period, where the customer checks that proof against full production.
 
 For manufacturers running several plants, most of the work goes into gathering that evidence. Dimensional results, test data, and capability studies sit in gauges, inspection systems, and [MES](/blog/2025/06/what-is-mes/) platforms, and are typically copied into spreadsheets by hand before each submission. With FlowFuse, teams capture those measurements during production, [tied to each part](/blog/2026/08/automotive-traceability/). Once the pipeline is established, FlowFuse lets them roll it out to other plants and secure and manage every deployment from one place.
