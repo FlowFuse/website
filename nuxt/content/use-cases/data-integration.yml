@@ -5,3 +5,4 @@
 slug: data-integration
 title: "FlowFuse for Data Integration"
 problem: "Collect, transform, and route data from any industrial source to any destination, without writing integration code from scratch."
+industries: ["energy-utilities"]

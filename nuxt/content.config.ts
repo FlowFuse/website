@@ -559,7 +559,7 @@ export default defineContentConfig({
                     quote: z.object({
                         text: z.string(),
                         author: z.string(),
-                        role: z.string(),
+                        role: z.string().optional(),
                         company: z.string(),
                         image: z.string(),
                         imageAlt: z.string(),
@@ -603,6 +603,8 @@ export default defineContentConfig({
                 compliance: z.object({
                     // The "The Data Your Audit Asks For, In One Place" subtitle is fixed
                     // copy shared by every page, not declared here.
+                    heading: z.string().optional(),
+                    subheading: z.string().optional(),
                     description: z.string(),
                     items: z.array(z.object({
                         title: z.string(),

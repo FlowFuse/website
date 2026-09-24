@@ -12,7 +12,7 @@ const props = defineProps<{
             eyebrowIcon: string
             heading: string
             description: string
-            quote: { text: string, author: string, role: string, company: string, image: string, imageAlt: string }
+            quote: { text: string, author: string, role?: string, company: string, image: string, imageAlt: string }
         }
         socialProof?: string
         metrics: Array<{ number: string, text: string }>
@@ -24,6 +24,8 @@ const props = defineProps<{
             items: Array<{ title: string, description: string, linkText: string, linkHref: string, image: string, imageAlt: string, variant: 'indigo' | 'red' | 'mixed' }>
         }
         compliance: {
+            heading?: string
+            subheading?: string
             description: string
             items: Array<{ title: string, text: string, linkText: string, linkHref: string, icon?: string }>
         }
@@ -63,6 +65,8 @@ useSchemaOrg([
 
     <IndustryPageCompliance
         :industry-name="page.industryName"
+        :heading="page.compliance.heading ?? undefined"
+        :subheading="page.compliance.subheading ?? undefined"
         :description="page.compliance.description"
         :items="page.compliance.items"
     />
