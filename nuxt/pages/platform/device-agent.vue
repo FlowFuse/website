@@ -148,7 +148,7 @@ const FAQ = [
     },
     {
         question: 'What are the system requirements for the Device Agent? Will it run on my hardware?',
-        answer: 'Device Agent supports NodeJS 14 and above, and is designed to work with a wide range of devices. If you\'re unsure if your device is supported, please do get in touch.',
+        answer: 'Device Agent supports Node.js 18, 20, 22, and 24, and is designed to work with a wide range of devices. If you\'re unsure if your device is supported, please do get in touch.',
     },
     {
         question: 'Can I run the Device Agent as a service?',
