@@ -52,7 +52,7 @@ const DESTINATION_KEY_BY_HREF = new Map(
 )
 
 export function ctaDestinationKey (href?: string) {
-    if (!href?.match(/^(https?:)?\//)) return undefined
+    if (!href?.match(/^(https?:)?\//i)) return undefined
     try {
         const url = new URL(href, site.baseURL)
         if (url.hash) return undefined
@@ -72,9 +72,9 @@ export function withCtaQuery (href: string, query?: CtaQuery) {
 }
 
 export function ctaQuery (href: string): CtaQuery {
-    const query: CtaQuery = {}
+    const query: CtaQuery = Object.create(null)
     for (const [name, value] of new URL(href, site.baseURL).searchParams) {
         query[name] = name in query ? [query[name]].flat().concat(value) : value
     }
-    return query
+    return { ...query }
 }

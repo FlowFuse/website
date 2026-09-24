@@ -20,6 +20,7 @@ test('matches every way of writing a destination URL', () => {
         'https://flowfuse.com/contact-us/': 'contactUs',
         'http://flowfuse.com/pricing/': 'pricing',
         'http://app.flowfuse.com': 'signIn',
+        'HTTPS://flowfuse.com/pricing/': 'pricing',
         '/book-demo/?utm_source=blog': 'bookDemo',
         '/pricing': 'pricing',
     }
@@ -49,6 +50,11 @@ test('keeps every value of a repeated query parameter', () => {
     const href = '/contact-us/?tag=one&tag=two&tag=three'
     assert.deepEqual(ctaQuery(href), { tag: ['one', 'two', 'three'] })
     assert.equal(withCtaQuery('/contact-us/', ctaQuery(href)), href)
+})
+
+test('a parameter named like a built-in object property round-trips unchanged', () => {
+    const href = '/pricing/?toString=a&constructor=b&__proto__=c'
+    assert.equal(withCtaQuery('/pricing/', ctaQuery(href)), href)
 })
 
 test('custom CTA registry has no duplicate URLs and none of the five reserved destinations', async () => {
