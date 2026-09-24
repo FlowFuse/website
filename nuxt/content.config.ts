@@ -564,6 +564,10 @@ export default defineContentConfig({
                         image: z.string(),
                         imageAlt: z.string(),
                     }).optional(),
+                    image: z.object({
+                        src: z.string(),
+                        alt: z.string(),
+                    }).optional(),
                 }),
                 // The "N+ manufacturers in M countries..." SocialProof line. Not every page
                 // has an aggregate stat like this yet.

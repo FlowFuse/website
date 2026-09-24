@@ -1,7 +1,7 @@
 slug: building-materials
 industryName: "Building Materials"
-listingImage: "/images/industries/automotive.jpg"
-listingImageAlt: "Aerial view of a manufacturing plant floor"
+listingImage: "/images/industries/building-materials/hero.jpg"
+listingImageAlt: "Worker in safety glasses inspecting a window frame on the shop floor"
 seoMeta:
   title: "Window and door manufacturing software"
   description: "Connect window and door manufacturing software and equipment. Build apps for high-mix production, changeovers, and unit traceability with FlowFuse."
@@ -10,6 +10,9 @@ hero:
   eyebrowIcon: "building-office-2"
   heading: "Connect systems for <span class='text-red-600'>window and door manufacturing</span>"
   description: "FlowFuse is a platform for building and managing industrial applications with Node-RED. Connect your window and door manufacturing software, plant equipment, and production data to build workflows for high-mix assembly, changeovers, and unit traceability across sites."
+  image:
+    src: "/images/industries/building-materials/hero.jpg"
+    alt: "Worker in safety glasses inspecting a window frame on the shop floor"
 metricsBridge:
   heading: "Extend production applications <span class='text-red-600'>across different plants</span>"
   description: "Build and test an integration or production application, then reuse its logic across plants with site-specific configuration. FlowFuse helps teams manage application versions and deployments while accommodating the equipment, interfaces, and production processes at each facility."
@@ -62,22 +65,22 @@ compliance:
   items:
     - title: "Order and revision control"
       icon: "i-heroicons-document-check"
-      text: "Use the unit's unique identifier to retrieve its order configuration and approved instruction revision. Record which revision guided each operation, and preserve the earlier version when requirements change."
+      text: "Pull each unit's order configuration and approved instruction revision, and record which revision guided each operation."
       linkText: "Build work instructions for each configuration"
       linkHref: "/blog/2026/07/digital-work-instruction/"
     - title: "Measure and verify changeovers"
       icon: "i-heroicons-arrows-right-left"
-      text: "Capture changeover start and completion to measure setup losses between configurations. Check materials, tools, fixtures, and machine settings against the next configuration, and record confirmations or exceptions before restarting production."
+      text: "Measure setup losses and check materials, tools, and settings against the next configuration before restarting."
       linkText: "Explore poka-yoke workflows"
       linkHref: "/blog/2025/09/poka-yoke-mistake-proofing/"
     - title: "Unit traceability and rework"
       icon: "i-heroicons-qr-code"
-      text: "Retain the recorded size, glass, frame, hardware, finish, and applicable component or lot identifiers for each unique unit. Link configuration revisions, substitutions, and rework to that history so a field issue can be investigated against what was built."
+      text: "Keep each unit's as-built glass, frame, hardware, and lot history, including substitutions and rework."
       linkText: "Explore reporting on captured defects"
       linkHref: "/blog/2026/07/defect-and-quality-monitoring/"
     - title: "Testing and certification records"
       icon: "i-heroicons-document-text"
-      text: "Capture and route available test and inspection results with the product, order, and configuration they support. FlowFuse can help make those records retrievable, but it does not certify a product or replace the manufacturer's ENERGY STAR, NFRC, local code, or other applicable program."
+      text: "Keep test and inspection results with the unit they support, easy to retrieve for certification reviews."
       linkText: "Generate reports from captured production data"
       linkHref: "/blog/2025/05/how-to-generate-pdf-reports-using-node-red/"
 faqs:
@@ -95,4 +98,4 @@ faqs:
     answer: "Build Node-RED workflows that connect your ERP or [MES](/use-cases/mes/) to plant equipment, scanners, and operator inputs through available interfaces. Retrieve approved order and configuration data, link production, inspection, and rework events to each unique unit, and write records to the agreed destination. Your ERP or MES continues to handle the functions assigned to it, such as planning, inventory, or scheduling. Define record ownership and exception handling; the integrations, capture logic, and traceability views are configured for your production process."
 closingCta:
   heading: "Bring your production challenge"
-  description: "Every building products manufacturer runs a different mix of configurations, equipment, plants, and quality checks. Start with the workflow where order context and production data need to meet, then see how FlowFuse can help your team build an application it can maintain and extend."
+  description: "Start with the workflow where order context and production data need to meet, and see how FlowFuse can help your team build it."

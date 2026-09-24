@@ -13,6 +13,7 @@ const props = defineProps<{
             heading: string
             description: string
             quote?: { text: string, author: string, role: string, company: string, image: string, imageAlt: string } | null
+            image?: { src: string, alt: string } | null
         }
         socialProof?: string
         metrics: Array<{ number: string, text: string }>

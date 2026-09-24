@@ -16,6 +16,10 @@ defineProps<{
             image: string
             imageAlt: string
         } | null
+        image?: {
+            src: string
+            alt: string
+        } | null
     }
     socialProof?: string
 }>()
@@ -24,8 +28,8 @@ defineProps<{
 <template>
   <section class="w-full relative">
     <div class="px-6 pt-16 md:pt-20">
-      <div class="max-w-screen-lg mx-auto grid gap-12 items-stretch" :class="{ 'md:grid-cols-2': hero.quote }">
-        <div class="max-md:text-center md:flex md:flex-col md:justify-center" :class="{ 'max-w-3xl': !hero.quote }">
+      <div class="max-w-screen-lg mx-auto grid gap-12 items-stretch" :class="{ 'md:grid-cols-2': hero.quote || hero.image }">
+        <div class="max-md:text-center md:flex md:flex-col md:justify-center" :class="{ 'max-w-3xl': !hero.quote && !hero.image }">
           <div class="mb-4 max-md:flex max-md:justify-center">
             <span class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 industry-eyebrow-icon text-gray-800">
               <span class="w-5 h-5 inline-flex items-center shrink-0"><NavIcon :name="hero.eyebrowIcon" /></span>
@@ -50,6 +54,9 @@ defineProps<{
               <p class="text-gray-500 text-right mt-4 mb-0">{{ hero.quote.author }}, {{ hero.quote.role }}, <span class="font-semibold text-gray-600">{{ hero.quote.company }}</span></p>
             </div>
           </div>
+        </div>
+        <div v-else-if="hero.image" class="w-full md:flex md:items-center max-md:mt-4">
+          <img :src="hero.image.src" :alt="hero.image.alt" class="w-full rounded-lg border border-gray-200 shadow-sm object-cover aspect-[4/3]" loading="eager">
         </div>
       </div>
       <div class="max-w-screen-lg mx-auto mt-16 text-center">
