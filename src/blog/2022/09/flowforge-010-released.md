@@ -66,7 +66,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud]({{ site.appURL }}) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version to make sure you get all the latest changes.
+[FlowFuse Cloud](site:appURL) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version to make sure you get all the latest changes.
 
 If you installed a previous version of FlowFuse and want to upgrade, our documentation provides a
 guide for [upgrading FlowFuse on a local server](/docs/upgrade/#upgrading-flowfuse).
