@@ -432,7 +432,7 @@ onUnmounted(() => {
         <h2 class="mb-8">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
         <!-- The shared accordion, same as the blog and customer stories. It carries
              the #faqs anchor itself, so the wrapper above no longer sets one. -->
-        <BlogFaq :faq="FAQ" />
+        <Faq :faq="FAQ" />
       </div>
     </div>
   </div>

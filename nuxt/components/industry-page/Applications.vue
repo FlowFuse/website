@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // The zigzag "Applications for X Manufacturing" band from automotive.vue.
-// Supports the same `[label](url)` inline-link subset as BlogFaq's answers.
+// Supports the same `[label](url)` inline-link subset as Faq's answers.
 
 type Item = {
     title: string
@@ -60,7 +60,7 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
               </div>
             </div>
             <!-- A blank line in the source splits the description into separate paragraphs,
-                 same convention as BlogFaq's answers (faq-answer.mjs's own blank-line rule) -
+                 same convention as Faq's answers (faq-answer.mjs's own blank-line rule) -
                  for a trailing aside that shouldn't run into the main copy. -->
             <p
                 v-for="(paragraph, i) in item.description.split(/\n\n+/)"

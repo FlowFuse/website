@@ -259,7 +259,7 @@ if (routeInfo.value.kind === 'post') {
 
           <div v-if="page.structuredData?.faq?.length" class="prose mt-12">
             <h2 class="mb-1">Frequently Asked Questions</h2>
-            <BlogFaq :faq="page.structuredData.faq" />
+            <Faq :faq="page.structuredData.faq" />
           </div>
 
           <BlogAuthorCard v-for="(author, i) in authorMembers" :key="i" :author="author" />

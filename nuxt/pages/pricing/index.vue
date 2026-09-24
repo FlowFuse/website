@@ -163,7 +163,7 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto pb-16 px-4">
         <div v-if="faq" class="mt-20 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
-        <BlogFaq :faq="faq.items" />
+        <Faq :faq="faq.items" />
         </div>
     </div>
   </div>

@@ -335,7 +335,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto">
         <h2 class="mb-1 text-center md:text-left">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
         <div class="-mt-20">
-          <BlogFaq :faq="FAQ_DISPLAY" variant="page" />
+          <Faq :faq="FAQ_DISPLAY" variant="page" />
         </div>
       </div>
     </div>

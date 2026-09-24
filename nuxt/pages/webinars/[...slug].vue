@@ -7,10 +7,10 @@
 //    <LiteYoutube> and <HubSpotForm>, already shared with the blog and the ebook pages.
 //  - {% renderTeamMember people[host] %} becomes useAuthorMembers + <TeamCardSmall>, the
 //    same resolution the blog byline uses, instead of an 11ty shortcode over a global.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg. The 11ty partial interpolated answers
+//  - faq.njk becomes <Faq> plus useSchemaOrg. The 11ty partial interpolated answers
 //    into a JSON string by hand; defineQuestion escapes them properly. faq.njk rendered
 //    answers with `| safe`, so a few carried raw <a> tags; those are markdown links now,
-//    because BlogFaq escapes HTML on purpose (existing answers contain literal "<ip>"
+//    because Faq escapes HTML on purpose (existing answers contain literal "<ip>"
 //    placeholders that must not become markup).
 //  - The registration form's "is this still upcoming" test was the dateInFuture filter
 //    (spacetime, today counts as future). isUpcoming below keeps that boundary exactly.
@@ -129,7 +129,7 @@ if (faq.value.length) {
             <div class="prose">
               <h2 class="mb-1">Frequently Asked Questions</h2>
             </div>
-            <BlogFaq :faq="faq" />
+            <Faq :faq="faq" />
           </div>
         </div>
 

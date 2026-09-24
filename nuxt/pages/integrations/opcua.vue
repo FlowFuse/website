@@ -548,7 +548,7 @@ const faq = [
             Frequently asked <span class="text-indigo-600">questions</span>
           </h2>
         </div>
-        <BlogFaq :faq="faq" />
+        <Faq :faq="faq" />
       </div>
     </div>
 

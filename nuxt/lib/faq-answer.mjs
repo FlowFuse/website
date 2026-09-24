@@ -1,4 +1,4 @@
-// Parses one FAQ answer into blocks of inline nodes, which <BlogFaq> and <InlineMarkdown>
+// Parses one FAQ answer into blocks of inline nodes, which <Faq> and <InlineMarkdown>
 // render. Kept free of Nuxt and Vue imports so it can be unit tested with `node --test`.
 //
 // The output is data, not HTML: Vue escapes text as it renders it, so literal "<...>" in an
