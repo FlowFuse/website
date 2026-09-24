@@ -144,6 +144,8 @@ Contact Us vs. Book a Demo: these two CTAs carry different intent signals and sh
 
 If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
+**Inline links are tracked too.** A link inside a sentence can use whatever wording fits the text: "sign up for a free trial", "contact us", and so on. If it points at one of the five destinations above, it reports the same analytics event as the matching button, with `inline-link` as its position, on every Nuxt page. To avoid typing the URL, write the destination's name instead: `[try it for free](cta:signUp)`. The names are `signUp`, `signIn`, `contactUs`, `bookDemo` and `pricing`.
+
 **These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
 
 ### Choosing a style

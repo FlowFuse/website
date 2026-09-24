@@ -47,3 +47,17 @@ export const CTA_DESTINATIONS = {
         label: 'View Pricing',
     },
 } as const
+
+const DESTINATION_BY_HREF = new Map(
+    Object.values(CTA_DESTINATIONS).map(dest => [normalizeHref(new URL(dest.href, site.baseURL).href), dest]),
+)
+
+export function ctaDestinationForHref (href?: string) {
+    if (!href?.match(/^(https?:)?\//)) return undefined
+    try {
+        const url = new URL(href, site.baseURL)
+        return DESTINATION_BY_HREF.get(normalizeHref(url.origin + url.pathname))
+    } catch {
+        return undefined
+    }
+}

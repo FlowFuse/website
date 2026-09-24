@@ -347,6 +347,12 @@ There's no `size` prop — every real-button variant's padding/font-size is hard
 
 Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composables/useCapture.ts`, which wraps the global `window.capture()` from `src/_includes/analytics/body.html` (shared with 11ty, no-ops without analytics consent). Event names: `cta-sign-up`, `cta-sign-in`, `cta-contact-us`, `cta-book-demo`, `cta-pricing`.
 
+### Inline links in markdown
+
+Inline links keep free-form text (it has to fit the sentence), so they aren't `Cta*` buttons. Instead, every markdown link on a Nuxt content page renders through `nuxt/components/content/ProseA.vue` (a wrapper around Nuxt UI's own `ProseA`, so styling is unchanged), and when its href is one of the five destinations it fires that destination's event with `{ position: 'inline-link' }`. Matching is `ctaDestinationForHref()` in `cta-destinations.ts`: trailing slash, query string and hash are ignored, and `https://flowfuse.com/...` counts the same as a relative path. So `[FlowFuse Cloud](site:appURL)`, `[try it for free](cta:signUp)` and a hand-typed `https://app.flowfuse.com/account/create?code=...` are all tracked with no markup change. `cta:<key>` (resolved by `nuxt/utils/remark-site-links.ts`) is still the preferred way to write the href.
+
+This uses the destination events, not `blog-cta`: inline links also appear on changelog, webinar, handbook and docs pages, where a `Blog: <title>` reference would be wrong, and PostHog already records the page URL. `CtaImage`'s `blog-cta` is unaffected. Links to `CUSTOM_CTA_DESTINATIONS` hrefs are not matched.
+
 ### Gotchas already solved here (don't re-discover them)
 
 - **Vue auto-defaults unspecified `boolean` props to `false`, not `undefined`.** Any prop typed as `boolean` in a type-only `defineProps<{...}>()` needs `withDefaults(defineProps<...>(), { theProp: undefined })` if the code distinguishes "not passed" from "explicitly false" (e.g. via `??`) — otherwise the `??` fallback never triggers, since `false ?? x` is `false`.
