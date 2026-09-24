@@ -43,6 +43,12 @@ test('reads the query back out of a link, so rebuilding it gives the same URL', 
     assert.equal(withCtaQuery('/contact-us/', ctaQuery(href)), href)
 })
 
+test('keeps every value of a repeated query parameter', () => {
+    const href = '/contact-us/?tag=one&tag=two&tag=three'
+    assert.deepEqual(ctaQuery(href), { tag: ['one', 'two', 'three'] })
+    assert.equal(withCtaQuery('/contact-us/', ctaQuery(href)), href)
+})
+
 test('custom CTA registry has no duplicate URLs and none of the five reserved destinations', async () => {
     await jiti.import('./custom-cta-destinations.ts')
 })
