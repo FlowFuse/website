@@ -18,6 +18,8 @@ test('matches every way of writing a destination URL', () => {
         '/contact-us': 'contactUs',
         '/contact-us/?subject=Certified%20Nodes': 'contactUs',
         'https://flowfuse.com/contact-us/': 'contactUs',
+        'http://flowfuse.com/pricing/': 'pricing',
+        'http://app.flowfuse.com': 'signIn',
         '/book-demo/?utm_source=blog': 'bookDemo',
         '/pricing': 'pricing',
     }
@@ -25,7 +27,7 @@ test('matches every way of writing a destination URL', () => {
 })
 
 test('does not match other URLs', () => {
-    for (const href of ['/pricing/#comparison', '/pricing/request-quote/', 'https://app.flowfuse.com/team/x/', 'pricing/', './pricing.md', '#pricing', '/', 'https://www.mongodb.com/pricing', undefined]) {
+    for (const href of ['/pricing/#comparison', '/pricing/request-quote/', 'https://app.flowfuse.com/team/x/', 'pricing/', './pricing.md', '#pricing', '/', 'https://www.mongodb.com/pricing', 'https://example.com/contact-us/', undefined]) {
         assert.equal(ctaDestinationKey(href), undefined, String(href))
     }
 })
