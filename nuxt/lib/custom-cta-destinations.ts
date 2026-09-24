@@ -1,4 +1,4 @@
-import { CTA_DESTINATIONS, normalizeHref } from './cta-destinations'
+import { CTA_DESTINATIONS, ctaDestinationKey, normalizeHref } from './cta-destinations'
 
 // Registry for one-off CTA destinations that aren't one of the five reserved
 // ones (see cta-destinations.ts) but still deserve one fixed PostHog event -
@@ -73,32 +73,22 @@ export const CUSTOM_CTA_DESTINATIONS = {
     },
 } as const
 
-// Self-check, run once when this module loads (so at build/dev-start time,
-// before any page renders and regardless of whether anything uses the new
-// entry yet): CtaCustom's own checks stop a *caller* from mismatching an
-// href and a key, but nothing stopped a second entry from being added HERE
-// with the same href as an existing one - reuse the existing key instead of
-// adding a new one for a URL already registered.
-//
-// Also checked against the five RESERVED destinations (cta-destinations.ts):
-// without this, adding a custom entry whose href duplicates e.g. bookDemo's
-// would load fine and only fail later, if and when some page actually
-// rendered a <CtaCustom> with that key - CtaCustom's own render-time guard
-// would still catch it then, but only for a key that's actually used
-// somewhere, not the instant the bad entry is registered.
-//
-// Uses the same normalizeHref CtaCustom.vue uses for its own
-// reserved-destination check - without it, "/book-demo/" and "/book-demo"
-// would count as different URLs and slip past this check.
-const hrefOwners = new Map<string, string>(
-    Object.values(CTA_DESTINATIONS).map(dest => [normalizeHref(dest.href), dest.component]),
-)
+// Self-check, run when this module loads: a second entry must not reuse a URL another
+// entry already registered, and no entry may point at one of the five reserved
+// destinations (cta-destinations.ts), matched with ctaDestinationKey - the same rule
+// CtaCustom, CtaLink and ProseA use, so a query string, hash or absolute flowfuse.com
+// URL doesn't slip past. nuxt/lib/cta-destinations.test.mjs loads this module, so a bad
+// entry fails `npm test`.
+const hrefOwners = new Map<string, string>()
 for (const [key, dest] of Object.entries(CUSTOM_CTA_DESTINATIONS)) {
     if (!('href' in dest) || !dest.href) continue
-    const normalizedHref = normalizeHref(dest.href)
-    const owner = hrefOwners.get(normalizedHref)
+    const reserved = ctaDestinationKey(dest.href)
+    if (reserved) {
+        throw new Error(`custom-cta-destinations.ts: "${key}" points at "${dest.href}", one of the five reserved CTA destinations - use <${CTA_DESTINATIONS[reserved].component}> or <CtaLink destination="${reserved}"> instead.`)
+    }
+    const owner = hrefOwners.get(normalizeHref(dest.href))
     if (owner) {
         throw new Error(`custom-cta-destinations.ts: "${dest.href}" is registered under both "${owner}" and "${key}" - reuse "${owner}" instead of adding a second key for the same URL.`)
     }
-    hrefOwners.set(normalizedHref, key)
+    hrefOwners.set(normalizeHref(dest.href), key)
 }
