@@ -233,7 +233,7 @@ we track and editorialized information from the CEO on company performance.
 For transparency, the company includes financial performance data from
 QuickBooks, and reports on 3 key metrics: ARR, Burn, and Runway.
 
-Additional metrics available to report on:
+Additional metrics available to report on and can be found [here](https://docs.google.com/spreadsheets/d/1Ur6GUTlzMPZbWsQGcrsn-OSY1zuFwm54u0dkwXeTtoI/edit?gid=1094745051#gid=1094745051):
 - State of the Union metrics
 - ARR numbers broken down by stage
 - Funnel metrics on pipeline 
