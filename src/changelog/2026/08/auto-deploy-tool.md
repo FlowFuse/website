@@ -12,7 +12,7 @@ issues:
 
 When an AI agent edits a flow, whether it's FlowFuse's own Expert or a third-party tool connected over MCP, the change used to sit staged until you clicked Deploy yourself. You can now let agents deploy their own changes directly, so the flow goes live the moment the agent finishes, with no manual step in between.
 
-It's off by default. Turn it on for a team under **Team Settings > Danger > AI Flow Deploy**, and every agent working on that team's instances, first-party or third-party, can deploy what it changes. Turn it off and agents go back to staging changes for you to review and deploy yourself, and that takes effect immediately, no instance restart needed.
+It's off by default. Turn it on for a team under **Team Settings > Danger > AI Flow Deploy**, and every agent working on that team's instances, FlowFuse Expert or your own Agent, can deploy what it changes. Turn it off and agents go back to staging changes for you to review and deploy yourself, and that takes effect immediately, no instance restart needed.
 
 This also makes an agent far more useful for debugging. Ask it to add a debug node, make the change you're chasing, and deploy, and it can read the debug output straight back and tell you what happened, all in one pass. No stopping mid-conversation for you to click Deploy before it can even see whether the fix worked.
 
