@@ -60,7 +60,7 @@ const VISIBILITY = [
         text: 'Instance state and last seen. CPU and memory over time. Agent and Node-RED versions. [Device groups](/docs/user/device-groups/) by site or line.',
     },
     {
-        icon: 'i-heroicons-clock',
+        icon: 'i-lucide-history',
         title: 'What changed, and who changed it',
         text: '[Audit log](/docs/user/logs/#audit-log) across the team. [Snapshot comparison](/docs/user/snapshots/#comparing-snapshots). [Version history](/docs/user/snapshots/#timeline-view). Attribution on every deployment.',
     },
@@ -248,7 +248,7 @@ useSchemaOrg([
          UA to insight, step by step") -->
     <section class="w-full px-6 pt-20 pb-24">
       <div class="max-w-screen-lg mx-auto md:flex md:gap-12 md:items-start">
-        <div class="mb-12 md:mb-0 md:w-[373px] md:shrink-0 md:sticky! md:top-24 md:self-start md:pt-5 max-md:text-center">
+        <div class="mb-12 md:mb-0 md:w-[373px] md:shrink-0 md:sticky! md:top-24 md:self-start max-md:text-center">
           <p class="text-gray-500 text-sm font-semibold uppercase m-0">Connectivity</p>
           <h2 class="mt-3 mb-0">Fix one machine. <span class="text-indigo-600">Deploy to all of them.</span></h2>
           <p class="font-light text-gray-700 leading-relaxed mt-6 mb-0">This is where a monitoring tool stops and remote device management keeps going.</p>
