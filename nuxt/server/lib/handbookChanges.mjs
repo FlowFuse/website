@@ -4,10 +4,12 @@
 // week (Monday start), newest week first, so the team can review "last week's
 // changes" at the Monday review.
 //
-// The handbook used to live under `src/handbook` (11ty) and now lives under
-// `nuxt/content/handbook` (@nuxt/content). Both prefixes are scanned so the
-// full history survives the Nuxt migration; both map onto the same
-// `/handbook/...` URLs the live site serves.
+// The handbook used to live under `src/handbook` (11ty), then under
+// `nuxt/content/handbook` (@nuxt/content), and moves to `content/handbook` once
+// the Nuxt app leaves its subdirectory. Every prefix is scanned so the full history
+// survives each move; all of them map onto the same `/handbook/...` URLs the live
+// site serves. A commit that only moves a page between two of them is skipped, so a
+// move does not list every page as renamed.
 //
 // This module deliberately depends only on Node built-ins so it can be
 // imported by the Nitro server route AND executed standalone for verification.
@@ -21,9 +23,10 @@ const REPO_URL = 'https://github.com/FlowFuse/website'
 // subjects, so subjects containing spaces or pipes parse cleanly.
 const SEP = '\x01'
 
-// Path prefixes that count as handbook content. Order matters only for display
-// labels; both fold onto the same handbook-relative path.
-const HANDBOOK_PREFIXES = ['nuxt/content/handbook/', 'src/handbook/']
+// Path prefixes that count as handbook content, newest location first. They are
+// history, not the current layout, so a move adds one rather than rewriting them.
+// All fold onto the same handbook-relative path.
+const HANDBOOK_PREFIXES = ['content/handbook/', 'nuxt/content/handbook/', 'src/handbook/']
 // Where the CURRENT version of a page lives, used for title lookups.
 const CONTENT_ROOT = 'nuxt/content/handbook'
 
@@ -40,6 +43,13 @@ export function toHandbookRel (path) {
     if (!(rel.endsWith('.md') || rel.endsWith('.njk'))) return null
     if (basename(rel) === 'handbook.json') return null
     return rel
+}
+
+/** True when a rename status only moves a page from one handbook prefix to another. */
+export function isRelocation (status, fromPath, toPath) {
+    if (!status.startsWith('R')) return false
+    const rel = toHandbookRel(toPath)
+    return rel !== null && rel === toHandbookRel(fromPath)
 }
 
 /** Map a handbook-relative file path to the URL the site serves (trailing slash, like the rest of the handbook). */
@@ -150,7 +160,7 @@ export function getHandbookChanges (repoRoot = process.cwd()) {
         output = execFileSync('git', [
             'log', '--no-merges', '-M', '--name-status', '--date=short',
             `--pretty=format:${SEP}%H${SEP}%ad${SEP}%s`,
-            '--', 'nuxt/content/handbook', 'src/handbook'
+            '--', ...HANDBOOK_PREFIXES.map(prefix => prefix.slice(0, -1))
         ], { cwd: repoRoot, maxBuffer: 64 * 1024 * 1024 }).toString()
     } catch (err) {
         // Never break the build/render if git is unavailable.
@@ -171,6 +181,7 @@ export function getHandbookChanges (repoRoot = process.cwd()) {
             const parts = line.split('\t')
             const status = parts[0]
             const path = status.startsWith('R') || status.startsWith('C') ? parts[2] : parts[1]
+            if (isRelocation(status, parts[1], path)) continue
             if (path) cur.files.push({ status, path })
         }
     }
