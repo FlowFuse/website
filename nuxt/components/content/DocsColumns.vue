@@ -26,9 +26,24 @@
 }
 
 @media (min-width: 1024px) {
+    /* The row gap matches FfExpertAsk's own: a subgrid with a different gap spreads the
+       difference into its rows, and the box would stand 4px taller than the card. */
     .ff-docs-columns {
         grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-        align-items: start;
+        grid-template-rows: auto auto;
+        gap: 1rem 1.5rem;
+    }
+
+    /* The first block spans both rows and hands them to its own children (subgrid): its
+       first child shares the top row with the second column, so the two boxes are the same
+       height, and whatever follows it (the Expert box's prompts) sits in the row below. */
+    .ff-docs-columns > :deep(:first-child) {
+        grid-row: 1 / span 2;
+        grid-template-rows: subgrid;
+    }
+
+    .ff-docs-columns > :deep(:not(:first-child)) {
+        grid-row: 1;
     }
 }
 
