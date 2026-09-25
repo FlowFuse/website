@@ -16,7 +16,7 @@ sitemap:
 
 The event banner at the top of the website can display more than one event or announcement.
 
-To add or update an event, you'll need to modify the [following file](https://github.com/FlowFuse/website/blob/main/src/_data/events.yaml). The information should be formatted as follows for each banner:
+To add or update an event, you'll need to modify the [following file](https://github.com/FlowFuse/website/blob/main/nuxt/data/events.yaml). The information should be formatted as follows for each banner:
 
 ```text
 - type: "Webinar"
@@ -101,32 +101,7 @@ For short, silent, looping animations that would otherwise be a GIF, check a `.w
 
 Meta keywords are a type of HTML metadata that describe the topics covered by a page. **Major search engines (Google, Bing) have not used meta keywords as a ranking signal since 2009** — setting them has no effect on search visibility or rankings.
 
-They are still output in the HTML on 11ty-served pages and may be used by site-search tools (such as Algolia) or other non-Google indexers, but they should not be treated as an SEO lever.
-
-### Default Keywords
-
-By default, each 11ty-served webpage on the FlowFuse website includes a set of predefined keywords: :site-value{path="messaging.keywords"}. These default keywords are relevant to the overall theme of the website.
-
-### Priority of Keywords
-
-On 11ty-served pages, meta keywords are populated in this priority order:
-
-1. **Meta Keywords:** Keywords specified in the front matter under `meta.keywords`.
-2. **Keywords:** If no `meta.keywords` are found, the `keywords` front matter field is used.
-3. [**Tags:**](/handbook/marketing/content-strategy/blog/#tags) If neither field is set, the page's tags are used.
-4. **Default Keywords:** Always appended as a fallback.
-
-### Adding Meta Keywords
-
-To specify meta keywords for a page, include them in the front matter:
-
-```yaml
----
-title: Example Page
-meta:
-  keywords: flowfuse, flows, manufacturing
----
-```
+A few pages still set them, in the page's own `.vue` file (`keywords` in its `useSeoMeta` call), and they may be used by site-search tools (such as Algolia) or other non-Google indexers, but they should not be treated as an SEO lever. A `keywords` or `meta.keywords` field in a markdown page's front matter is not read.
 
 ## Call-to-Action Buttons
 
@@ -144,7 +119,7 @@ Contact Us vs. Book a Demo: these two CTAs carry different intent signals and sh
 
 If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
-**These components only exist on Nuxt-rendered pages** (`nuxt/pages/`, `nuxt/content/`), part of the site is still served by Eleventy and doesn't have access to them yet. On an Eleventy page, a CTA is still a hand-written `<a class="ff-btn ...">` link.
+They are available on every page: in `.vue` pages under `nuxt/pages/`, and in markdown under `nuxt/content/`.
 
 ### Choosing a style
 
@@ -275,17 +250,9 @@ In many cases, this helps keep changes focused and iterations small when the pag
 
 For design-related considerations, see the [Design Review process](/handbook/design/process/#design-review).
 
-## New Pages Must Be Built in Nuxt
+## Where Files Go
 
-The site is migrating from Eleventy (11ty) to Nuxt, section by section, as 11ty is phased out. Any brand-new page (a landing page, a campaign page, etc.) needs to be built in Nuxt, never as a new page in the old 11ty system, even if it looks like the fastest way to copy an existing 11ty page's pattern.
-
-A test in the site's automated test suite catches this automatically: a pull request that adds any brand-new `.njk` file (the file type 11ty page templates are built with) fails the PR's required checks until it's moved to Nuxt. Editing an existing `.njk` page is unaffected; this only catches genuinely new pages.
-
-This only looks at `.njk` files, so it never affects the markdown and images you add day to day. New blog posts, webinars, blueprints, changelog entries, and customer stories are all `.md` files (plus their images), not `.njk`. Keep publishing those as normal.
-
-That also means a brand-new page built as a `.md` file reusing an existing 11ty layout (rather than a new `.njk`) will not fail this check. The rule above still applies to it: build it in Nuxt. The test is a safety net for the most common case, not a substitute for following the rule.
-
-If a page truly needs to ship on 11ty before its Nuxt equivalent exists, a member of the GitHub "admin" team can merge anyway via "Merge without waiting for requirements to be met".
+The whole site is built with Nuxt. Markdown content lives in `nuxt/content/` (blog posts in `nuxt/content/blog/`, changelog entries in `nuxt/content/changelog/`), and everything served as a file, images included, lives in `nuxt/public/` at the path it is served from. The old `src/` folder is gone: a file added there is never published, and the site's automated tests fail a pull request that adds one.
 
 ## Pull Request Scope
 

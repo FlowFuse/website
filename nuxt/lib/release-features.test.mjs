@@ -171,7 +171,7 @@ test('injectReleaseFeatures leaves a body alone when nothing resolves or a headi
 })
 
 test('every release blog features entry names a catalog feature that exists', () => {
-    const blogDir = join(here, '..', '..', 'src', 'blog')
+    const blogDir = join(here, '..', 'content', 'blog')
     const ids = new Set(allFeatures(catalog).map(feature => feature.id))
     const posts = []
     const walk = (dir) => {
@@ -190,7 +190,7 @@ test('every release blog features entry names a catalog feature that exists', ()
         try { frontmatter = jsYaml.load(match[1]) } catch { continue }
         for (const entry of frontmatter?.features ?? []) {
             for (const id of [entry.id ?? []].flat()) {
-                if (!ids.has(id)) broken.push(`${post.split('/src/')[1]}: ${id}`)
+                if (!ids.has(id)) broken.push(`${post.split('/content/')[1]}: ${id}`)
             }
         }
     }

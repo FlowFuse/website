@@ -36,7 +36,7 @@ if (!page.value) {
 const capture = useCapture()
 const resolveHref = useResolveHref()
 
-// hero.buttonLink and cta.linkHref are "site:" pointers into src/_data/site.json, so the
+// hero.buttonLink and cta.linkHref are "site:" pointers into nuxt/data/site.json, so the
 // meeting-booker URL the three pages share lives in one place.
 const migrationExpertHref = computed(() => resolveHref(page.value?.hero.buttonLink))
 

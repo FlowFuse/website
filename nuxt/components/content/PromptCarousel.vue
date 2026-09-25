@@ -9,7 +9,7 @@
 // wall of near-identical paragraphs that a reader scrolls past; one at a time, with
 // the next one's edge visible, is something they read and copy.
 //
-// Styling comes from the .ff-prompts-* rules in src/css/style.css, not from utility
+// Styling comes from the .ff-prompts-* rules in nuxt/assets/css/style.css, not from utility
 // classes on the elements. That is forced, same as AgentSetupTabs: this renders
 // inside .prose on the blog post, and the site's prose rules are unlayered, which
 // outranks Tailwind's @layer utilities whatever the specificity. As utilities,

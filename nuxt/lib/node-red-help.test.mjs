@@ -130,7 +130,7 @@ test('the sanitiser keeps the classes that carry meaning rather than styling', (
     // marks an OPTIONAL message property with `<dt class="optional">` and a type (rather
     // than more prose) with `<span class="property-type">`. Both render as plain text
     // without the class, so an optional property became indistinguishable from a required
-    // one. The live Eleventy pages keep both, so dropping them was a regression.
+    // one. The Eleventy pages these replaced kept both, so dropping them was a regression.
     const html = sanitiseHelp(
         '<dl class="message-properties">'
         + '<dt class="optional">template <span class="property-type">string</span></dt>'

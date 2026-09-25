@@ -1,4 +1,4 @@
-import site from '../../src/_data/site.json'
+import site from '../data/site.json'
 
 // Mirrors the "resolveHref" Eleventy filter: an href of "site:<key>" is a
 // pointer into site.json rather than a literal URL, so values like the job

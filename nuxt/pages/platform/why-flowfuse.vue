@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/platform/why-flowfuse.njk (11ty), which this replaces. Same page, same
-// copy, same classes from src/css/style.css.
+// copy, same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The two hand-written <lite-youtube> elements become <LiteYoutube>, shared with the

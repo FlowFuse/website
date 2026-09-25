@@ -60,7 +60,7 @@ const categories = computed(() => [
 ])
 const maxCat = computed(() => Math.max(1, ...categories.value.map(c => c.value)))
 
-// The site-wide range-input reset (src/css/style.css) paints the whole track one flat
+// The site-wide range-input reset (nuxt/assets/css/style.css) paints the whole track one flat
 // color, so `accent-color` has no effect once -webkit-appearance is stripped. Building
 // the "traveled vs remaining" look needs an explicit two-stop gradient instead, split at
 // the field's current percentage. Colors are the theme's own CSS variables (Tailwind v4
@@ -267,7 +267,7 @@ const faultFields = [
 .badge { @apply inline-grid place-items-center w-6 h-6 rounded-full text-xs mr-2 align-middle font-semibold; }
 .chip { @apply text-xs bg-white/15 text-white rounded-full py-1 px-3 font-semibold; }
 
-/* Per-category thumb color, overriding the site-wide indigo reset (src/css/style.css).
+/* Per-category thumb color, overriding the site-wide indigo reset (nuxt/assets/css/style.css).
    Tailwind has no utility for vendor pseudo-elements, so this is the one part of this
    component that can't move to a class. Hover variants are needed too: the global rule's
    `input[type="range"]::-webkit-slider-thumb:hover` selector is otherwise more specific

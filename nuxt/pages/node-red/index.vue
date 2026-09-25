@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/node-red/index.njk (11ty), which this replaces. Same page, same copy,
-// same classes from src/css/style.css.
+// same classes from nuxt/assets/css/style.css.
 //
 // The rest of /node-red/ (the core-node reference and the hardware guides) already moved
 // into /docs/; this was the last page left under that prefix.

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/webinars.njk (11ty), which this replaces. Same page, same copy, same
-// classes from src/css/style.css.
+// classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - collections.event became queryCollection('webinars'). The 11ty collection was built

@@ -24,7 +24,7 @@ const planList = computed(() => Array.isArray(props.plans)
 const badges = computed(() => planBadges(planList.value))
 
 // window.capture is injected by the site's analytics script (see
-// src/_includes/analytics/body.html) and is a no-op wrapper around
+// nuxt/server/assets/analytics/body.html) and is a no-op wrapper around
 // posthog.capture - it's absent outside production, hence the guard.
 function onBadgeClick (plan: string) {
     if (typeof (window as any).capture === 'function') {
