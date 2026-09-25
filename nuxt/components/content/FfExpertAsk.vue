@@ -57,10 +57,7 @@ function track () {
     <div class="ai-chat-box">
       <div class="textarea-wrapper ff-expert-ask__card relative mb-4 rounded-lg overflow-hidden">
         <div class="ff-expert-ask__brand">
-          <span class="ff-expert-ask__wordmark" role="img" aria-label="FlowFuse">
-            <FlowFuseWordmark uid="expert-ask" />
-          </span>
-          <span class="ff-expert-ask__product">Expert</span>
+          <DocsExpertBrand uid="expert-ask" />
         </div>
         <div class="relative h-32 p-4 pb-12">
           <textarea
@@ -100,29 +97,12 @@ function track () {
 </template>
 
 <style scoped>
+/* Same padding as the modal header, so the brand flies between matching spots. */
 .ff-expert-ask__brand {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
     padding: 0.75rem 1rem;
     border-bottom: 1px solid transparent;
     background:
         linear-gradient(#fff, #fff) padding-box,
         linear-gradient(90deg, #f87171, #f472b6, #a78bfa) border-box;
-}
-
-.ff-expert-ask__wordmark {
-    display: inline-block;
-    width: 7rem;
-    height: 1.25rem;
-    line-height: 0;
-}
-
-.ff-expert-ask__product {
-    font-size: 1.125rem;
-    line-height: 1;
-    font-weight: 600;
-    color: #374151;
-    margin-top: 0.125rem;
 }
 </style>

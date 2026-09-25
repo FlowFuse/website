@@ -452,6 +452,14 @@ function ffExpertInit() {
     // The entry box the modal morphed out of, if it did. Closing morphs back into it.
     let morphedFrom = null;
 
+    // While the entry box morphs into the modal's input area, its brand (if it has one, as the
+    // docs box does) flies into the modal header's. Returns [inBox, inModal], or nulls.
+    function brandPair(homeWrapper) {
+        const inBox = homeWrapper ? homeWrapper.querySelector('[data-ff-expert-brand]') : null;
+        const inModal = inBox ? modal.querySelector('[data-ff-expert-brand]') : null;
+        return inBox && inModal ? [inBox, inModal] : [null, null];
+    }
+
     function openModal(userText, opts = {}) {
         const morph = opts.morph !== false;
         // Generate new session ID for this chat session
@@ -479,11 +487,15 @@ function ffExpertInit() {
             morphedFrom = homeTextareaWrapper;
             // Target the entire input area div that contains textarea and footer text
             const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
+            const [boxBrand, modalBrand] = brandPair(homeTextareaWrapper);
 
 
             // Set transition name on home wrapper BEFORE starting transition (for "before" snapshot)
             if (homeTextareaWrapper) {
                 homeTextareaWrapper.style.viewTransitionName = 'morphing-content';
+            }
+            if (boxBrand) {
+                boxBrand.style.viewTransitionName = 'ff-expert-brand';
             }
 
             // Use View Transitions API for smooth morphing
@@ -507,6 +519,10 @@ function ffExpertInit() {
                     if (modalInputSection) {
                         modalInputSection.style.viewTransitionName = 'morphing-content';
                     }
+                    if (boxBrand) {
+                        boxBrand.style.viewTransitionName = '';
+                        modalBrand.style.viewTransitionName = 'ff-expert-brand';
+                    }
 
                 });
 
@@ -522,6 +538,9 @@ function ffExpertInit() {
                 }
                 if (modalInputSection) {
                     modalInputSection.style.viewTransitionName = '';
+                }
+                if (modalBrand) {
+                    modalBrand.style.viewTransitionName = '';
                 }
 
                 // Move focus into the modal for accessibility
@@ -589,6 +608,7 @@ function ffExpertInit() {
         const homeTextareaWrapper = morphedFrom && morphedFrom.isConnected ? morphedFrom : null;
         morphedFrom = null;
         const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
+        const [boxBrand, modalBrand] = brandPair(homeTextareaWrapper);
 
         // Check if View Transitions API is supported
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
@@ -596,12 +616,19 @@ function ffExpertInit() {
             if (modalInputSection) {
                 modalInputSection.style.viewTransitionName = 'morphing-content';
             }
+            if (modalBrand) {
+                modalBrand.style.viewTransitionName = 'ff-expert-brand';
+            }
 
             // Use View Transitions for smooth reverse morph
             const transition = document.startViewTransition(() => {
                 // Remove transition name from modal
                 if (modalInputSection) {
                     modalInputSection.style.viewTransitionName = '';
+                }
+                if (modalBrand) {
+                    modalBrand.style.viewTransitionName = '';
+                    boxBrand.style.viewTransitionName = 'ff-expert-brand';
                 }
 
                 // Hide modal
@@ -620,6 +647,9 @@ function ffExpertInit() {
                 document.body.style.overflow = '';
                 if (homeTextareaWrapper) {
                     homeTextareaWrapper.style.viewTransitionName = '';
+                }
+                if (boxBrand) {
+                    boxBrand.style.viewTransitionName = '';
                 }
 
                 // Reset modal state

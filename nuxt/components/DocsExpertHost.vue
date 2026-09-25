@@ -19,12 +19,7 @@ onMounted(() => {
     <div class="bg-white rounded-none md:rounded-lg shadow-xl w-full max-w-4xl h-full md:h-full flex flex-col relative">
       <div class="ai-chat-box">
         <div class="textarea-wrapper modal-header flex items-center justify-between px-4 py-3 rounded-t-none md:rounded-t-lg h-auto rounded-b-none mb-0">
-          <div class="flex items-center gap-1">
-            <div class="w-24 h-6">
-              <FlowFuseWordmark uid="expert-modal" />
-            </div>
-            <h2 id="ai-expert-modal-title" class="text-base font-semibold text-gray-700 -mb-1">Expert</h2>
-          </div>
+          <DocsExpertBrand uid="expert-modal" heading-id="ai-expert-modal-title" />
           <button id="close-modal" type="button" class="text-gray-500 hover:text-gray-600" aria-label="Close dialog">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
