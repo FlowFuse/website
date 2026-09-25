@@ -54,6 +54,9 @@ export default defineContentConfig({
                 meta: z.object({
                     description: z.string().optional(),
                 }).optional(),
+                // A contents page that lays itself out (the docs home): no sidebar, no
+                // table of contents, the full page width. Read by pages/docs/[...slug].vue.
+                landing: z.boolean().optional(),
                 // No `sitemap` schema field here on purpose - @nuxtjs/sitemap's own
                 // @nuxt/content integration only accepts *plain* onUrl/filter functions
                 // (it re-splices their source text into a generated file with no closure

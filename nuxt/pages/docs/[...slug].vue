@@ -34,6 +34,10 @@ const pageTitle = computed(() => docsPageTitle(page.value, slugParts.value))
 // Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
 const plans = useDocsPlans(contentPath)
 
+// A contents page such as the docs home lays itself out from its own components, so it
+// gets the full width: no sidebar, no table of contents, no previous and next cards.
+const isLanding = computed(() => (page.value as { landing?: boolean } | null)?.landing === true)
+
 // /docs is assembled from two repos, so "Edit this page" has to point at whichever one
 // owns the page. Guides overlaid from this repo carry a ready-made `editUrl` (stamped by
 // nuxt/lib/guides-sync.mjs); everything else came from FlowFuse/flowfuse and is addressed
@@ -85,7 +89,18 @@ const surround = computed(() => {
 </script>
 
 <template>
-  <div class="w-full pl-6">
+  <!-- Not wrapped in .prose: every block on a landing page is a component that styles
+       itself, and Tailwind Typography's unlayered rules would fight them. -->
+  <div v-if="isLanding" class="ff-docs-landing w-full max-w-6xl mx-auto px-6 lg:px-10 pt-8 pb-24 text-left">
+    <!-- The docs home has no trail to show: it would be the single word Docs. -->
+    <Breadcrumbs v-if="slugParts.length" :items="breadcrumbItems" />
+    <ContentRenderer v-if="page" :value="page" />
+  </div>
+
+  <!-- lg:pr-6 mirrors the header's own padding, so the two centre alike and the sidebar
+       search lines up under the logo at every width (with pl-6 alone they parted by 12px
+       between 1280 and 1536, where both stop at the same max width). -->
+  <div v-else class="w-full pl-6 lg:pr-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->
@@ -94,13 +109,10 @@ const surround = computed(() => {
       <!-- Main content area -->
       <div class="px-10 pt-8">
         <div class="w-full">
-          <!-- Breadcrumbs + Search bar -->
+          <!-- Breadcrumbs -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
               <Breadcrumbs :items="breadcrumbItems" />
-            </div>
-            <div class="w-full mb-1">
-              <AlgoliaSearch index-filter="category:docs" placeholder="Search in Docs..." source-id="docs" />
             </div>
           </div>
         </div>
@@ -119,13 +131,18 @@ const surround = computed(() => {
 
       <!-- Right sidebar: TOC -->
       <div class="lg right-nav">
-        <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
-          <HandbookToc :links="page?.body?.toc?.links" />
-          <div v-if="page?.updated" class="text-xs pb-1 text-right mt-4 text-gray-500 max-lg:hidden">
+        <!-- On wide screens the column never runs past the bottom of the window: a long table
+             of contents scrolls inside itself, so the lines under it stay in view.
+             "On this page" lines up with the sidebar's search text and the breadcrumb: the
+             column starts where the search field does (mt-6), and pt-2.5 is half of the
+             field's 40px less one 20px line. -->
+        <div class="sticky top-20 w-full mt-4 md:mt-6 px-8 lg:flex lg:flex-col lg:max-h-[calc(100vh-7.5rem)]">
+          <HandbookToc :links="page?.body?.toc?.links" :ui="{ root: 'lg:min-h-0', container: 'lg:pt-2.5' }" />
+          <div v-if="page?.updated" class="text-xs pb-1 text-right mt-4 text-gray-500 max-lg:hidden shrink-0">
             Updated: <RelativeTime :value="page.updated" />
           </div>
           <ClientOnly>
-            <div v-if="editHref" class="text-xs pb-1 text-right italic max-lg:hidden">
+            <div v-if="editHref" class="text-xs pb-1 text-right italic max-lg:hidden shrink-0">
               <a :href="editHref" target="_blank" rel="noopener">Edit this page</a>
             </div>
           </ClientOnly>
