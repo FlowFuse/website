@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Nav and footer icons, drawn from the SVG files in nuxt/assets/icons/.
+// Nav and footer icons, drawn from the SVG files in nuxt/assets/nav-icons/.
 //
 // Each icon file is wrapped in an outer <svg> that carries the sizing class, leaving
 // the file's own <svg> nested inside. That is the markup Eleventy's `navoption`

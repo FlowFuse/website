@@ -70,7 +70,8 @@ nuxt/
 ├── data/              # JSON/YAML the app imports directly (site, nav, team, guests)
 ├── assets/
 │   ├── css/           # Tailwind entry point and the stylesheets it imports
-│   ├── icons/         # FlowFuse's own SVG art: the nav icons and the `ff:` icon collection
+│   ├── icons/         # The `ff` icon collection (i-ff-* names), complete SVG files only
+│   ├── nav-icons/     # FlowFuse's own icon art behind <NavIcon> and the nav, some of it bare <path> fragments
 │   └── js/            # cookieconsent-config.js, bundled by build:js:nuxt
 ├── public/            # Served as-is: images, downloads, favicons (tracked)
 ├── modules/           # docs-source.ts, blueprints-source.ts
@@ -363,7 +364,7 @@ Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composa
 
 `<UIcon>` renders as a masked `<span>`, not an `<svg>` — no intrinsic aspect ratio, so give it an explicit size (`w-6 h-6`) rather than `w-full h-full`.
 
-**FlowFuse's own custom icon art** lives as raw SVGs in `nuxt/assets/icons/*.svg`:
+**FlowFuse's own custom icon art** lives as raw SVGs in `nuxt/assets/nav-icons/*.svg`:
 - **Header/nav:** `nuxt/utils/navIcons.ts` + `NavIcon.vue`, which renders a real inline `<svg>` — needed because the header's CSS targets `<path>` elements directly, which a `<UIcon>` span doesn't have.
 - **Everywhere else:** a one-off SFC under `nuxt/components/icons/` (e.g. `GithubIcon.vue`) with the SVG pasted into the template:
   ```vue
@@ -373,6 +374,8 @@ Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composa
   </template>
   ```
   Nuxt auto-imports it by folder + filename, used directly like any other component: `<IconsGithubIcon class="h-5" />` (see `AppFooter.vue`).
+
+Keep that art out of `nuxt/assets/icons/`. That directory is the `ff` Nuxt Icon collection (`<UIcon name="i-ff-pin" />`), which parses every file in it at build time and fails the build on a bare `<path>` fragment, which several of the nav icons are.
 
 ## Naming conventions
 

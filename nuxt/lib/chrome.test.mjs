@@ -22,7 +22,7 @@ const allLinks = [...navLinks, ...chrome.header.direct, ...footerLinks]
 test('every icon key resolves to an icon file', () => {
     for (const { icon, label } of navLinks) {
         assert.ok(icon, `${label} has no icon`)
-        assert.ok(existsSync(join(repo, `nuxt/assets/icons/${icon}.svg`)),
+        assert.ok(existsSync(join(repo, `nuxt/assets/nav-icons/${icon}.svg`)),
             `${label} points at a missing icon: ${icon}.svg`)
     }
 })
