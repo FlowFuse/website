@@ -99,7 +99,8 @@ const surround = computed(() => {
           <!-- Breadcrumbs -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
-              <Breadcrumbs v-if="breadcrumbItems.length > 1" :items="breadcrumbItems" />
+              <!-- On /docs itself this is the one unlinked "Docs" crumb, so every page opens the same way. -->
+              <Breadcrumbs :items="breadcrumbItems" />
             </div>
           </div>
         </div>
@@ -118,17 +119,19 @@ const surround = computed(() => {
 
       <!-- Right sidebar: TOC -->
       <div class="lg right-nav">
-        <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
+        <!-- On wide screens the column never runs past the bottom of the window: a long table
+             of contents scrolls inside itself, so the Expert button under it stays in view. -->
+        <div class="sticky top-20 w-full mt-4 md:mt-6 px-8 lg:flex lg:flex-col lg:max-h-[calc(100vh-7.5rem)]">
+          <HandbookToc :links="page?.body?.toc?.links" :ui="{ root: 'lg:min-h-0' }" />
           <!-- Hidden while the page's own Expert question box is on screen. -->
-          <div v-if="!expertInlineVisible" class="max-lg:hidden mb-6">
+          <div v-if="!expertInlineVisible" class="max-lg:hidden mt-2 shrink-0">
             <DocsExpertButton variant="toc" position="docs-toc" />
           </div>
-          <HandbookToc :links="page?.body?.toc?.links" />
-          <div v-if="page?.updated" class="text-xs pb-1 text-right mt-4 text-gray-500 max-lg:hidden">
+          <div v-if="page?.updated" class="text-xs pb-1 text-right mt-4 text-gray-500 max-lg:hidden shrink-0">
             Updated: <RelativeTime :value="page.updated" />
           </div>
           <ClientOnly>
-            <div v-if="editHref" class="text-xs pb-1 text-right italic max-lg:hidden">
+            <div v-if="editHref" class="text-xs pb-1 text-right italic max-lg:hidden shrink-0">
               <a :href="editHref" target="_blank" rel="noopener">Edit this page</a>
             </div>
           </ClientOnly>

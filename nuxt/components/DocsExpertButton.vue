@@ -1,9 +1,10 @@
 <script setup lang="ts">
 // Opens the FlowFuse Expert conversation from anywhere on a docs page.
 //
-// `toc` is the branded call to action in the right-hand column. `compact` matches the
-// Expert button in the FlowFuse app header (the FlowFuse mark and "Expert" inside a
-// slowly turning gradient border), for the site header on narrow screens.
+// Both variants follow the Expert button in the FlowFuse app header: the FlowFuse mark and
+// a label inside a slowly turning gradient border. `toc` is the full-width "Ask Expert"
+// under the table of contents; `compact` is the smaller "Expert" for the site header on
+// narrow screens.
 const props = withDefaults(defineProps<{
     variant?: 'toc' | 'compact'
     position?: string
@@ -27,20 +28,11 @@ function open () {
     type="button"
     class="ff-expert-btn"
     :class="[`ff-expert-btn--${variant}`, { 'ff-expert-btn--icon': iconOnly }]"
-    :aria-label="variant === 'compact' ? 'Ask FlowFuse Expert' : undefined"
+    aria-label="Ask FlowFuse Expert"
     @click="open"
   >
-    <template v-if="variant === 'toc'">
-      <span>Ask</span>
-      <span class="ff-expert-btn__wordmark" aria-label="FlowFuse" role="img">
-        <FlowFuseWordmark uid="expert-toc" />
-      </span>
-      <span>Expert</span>
-    </template>
-    <template v-else>
-      <img :src="'/images/ff-minimal-red.svg'" alt="" class="ff-expert-btn__mark">
-      <span class="ff-expert-btn__label">Expert</span>
-    </template>
+    <img :src="'/images/ff-minimal-red.svg'" alt="" class="ff-expert-btn__mark">
+    <span class="ff-expert-btn__label">{{ variant === 'toc' ? 'Ask Expert' : 'Expert' }}</span>
   </button>
 </template>
 
@@ -119,16 +111,14 @@ function open () {
 .ff-expert-btn--toc {
     width: 100%;
     justify-content: center;
+    gap: 0.5rem;
     padding: 0.625rem 0.75rem;
     font-size: 0.95rem;
     line-height: 1.25rem;
 }
 
-.ff-expert-btn__wordmark {
-    display: inline-block;
-    width: 5.5rem;
-    height: 1rem;
-    line-height: 0;
+.ff-expert-btn--toc .ff-expert-btn__mark {
+    margin-left: 0;
 }
 
 @keyframes ff-expert-swirl {
