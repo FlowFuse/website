@@ -158,6 +158,28 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
+        // Copied into nuxt/content/blueprints by modules/blueprints-source.ts from the
+        // separate FlowFuse/blueprint-library repository - see nuxt/lib/blueprints-sync.mjs.
+        // One file per blueprint, at <category>/<slug>.md, so the path is the route.
+        blueprints: defineCollection({
+            type: 'page',
+            source: 'blueprints/**/*.md',
+            schema: z.object({
+                description: z.string().optional(),
+                // Site-absolute by the time it lands here; the sync rewrites the
+                // blueprint-relative path the README authors.
+                image: z.string().optional(),
+                tags: z.array(z.string()).optional(),
+                // The id app.flowfuse.com deploys from. Optional so a new blueprint without
+                // one still builds; its Deploy button is then hidden rather than broken.
+                blueprintId: z.string().optional(),
+                // A partner slug resolved by nuxt/lib/blueprint-display.mjs. Unset means FlowFuse.
+                author: z.string().optional(),
+                // When the source README last changed, from the library's git history.
+                // Feeds the sitemap's lastmod the way docs' `updated` does.
+                updated: z.string().optional(),
+            })
+        }),
         // Source files stay at src/customer-stories/ (11ty's historical location) rather than
         // being copied into nuxt/content/ - keeps this migration a content-config-only change.
         // The directory data file (src/customer-stories/customer-stories.json) sets
@@ -185,9 +207,11 @@ export default defineContentConfig({
                 hubspot: z.object({
                     formId: z.string(),
                 }),
-                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
-                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, same
-                // shim the blog collection uses, so existing story files don't need editing.
+                // Story frontmatter writes "structuredData:" directly, unlike the blog and
+                // webinars, whose files still say "meta:" and go through the rewrite hook in
+                // nuxt.config.ts. The name matters either way: `meta` is reserved by
+                // @nuxt/content (it holds the <!--more--> excerpt) and a collection that
+                // declares its own `meta` field silently loses everything under it.
                 structuredData: z.object({
                     // Falls back to "Frequently Asked Questions" (the blog's fixed heading)
                     // when unset - only set this when a story wants its own FAQ heading.
@@ -220,10 +244,13 @@ export default defineContentConfig({
                 }),
             })
         }),
-        // ThankYouStoriesBlock.vue also queries this `stories` collection - no separate one needed.
+        // ExploreMoreStories.vue also queries this `stories` collection - no separate one needed.
         // Source files stay at src/webinars/ (still served by 11ty, see LEGACY_PREFIXES
         // in nuxt/server/middleware/legacy.ts) - only queried for the "Latest/Upcoming
         // Webinar" tile on the thank-you pages, so no `sitemap` field either.
+        // Source files stay at src/webinars/ (11ty's historical location) rather than being
+        // copied into nuxt/content/, same as blog/changelog/customer-stories above.
+        // Rendered by pages/webinars/[...slug].vue; listed by pages/webinars/index.vue.
         webinars: defineCollection({
             type: 'page',
             source: {
@@ -231,14 +258,470 @@ export default defineContentConfig({
                 include: 'webinars/**/*.md',
             },
             schema: z.object({
+                subtitle: z.string().optional(),
+                description: z.string().optional(),
+                // Overrides the <title> when set, same precedence as the blog.
+                metaTitle: z.string().optional(),
                 date: z.coerce.date(),
                 time: z.string().optional(),
+                // Minutes. Rendered as "45 mins" / "1h 30m".
+                duration: z.number().optional(),
+                image: z.string().optional(),
+                // YouTube id. When set it replaces the hero image with the embed.
+                video: z.string().optional(),
+                // src/_data/{team,guests} basenames, resolved through useAuthorMembers.
+                hosts: z.array(z.string()).optional(),
+                hubspot: z.object({
+                    // Registration form, shown only while the webinar is still upcoming.
+                    formId: z.string().nullable().optional(),
+                    // Slide download, shown once the recording is published. Nullable
+                    // because most entries write the key with no value, which YAML
+                    // parses as null rather than omitting the key.
+                    downloadFormId: z.string().nullable().optional(),
+                }).optional(),
+                // Raw frontmatter still writes this as "meta:" - the content:file:beforeParse
+                // hook in nuxt.config.ts rewrites it to "structuredData:" before parsing, the
+                // same shim the blog collection uses. `meta` itself is reserved by
+                // @nuxt/content (it holds the <!--more--> excerpt), so a declared `meta`
+                // field is silently replaced and everything under it is lost.
+                structuredData: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                    faq: z.array(z.object({
+                        question: z.string(),
+                        answer: z.string(),
+                    })).optional(),
+                }).optional(),
+
+            })
+        }),
+        // The three competitor comparison pages. They shared the same seven sections with
+        // per-page copy, so they are one collection rendered by pages/vs/[slug].vue.
+        vsPages: defineCollection({
+            type: 'data',
+            source: 'vs/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                // Display name, used in the table column and the section headings.
+                competitor: z.string(),
+                // Drives the hero border, the section icon badges and the table heading.
+                accent: z.enum(['orange', 'red', 'indigo']),
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }),
+                heroTitle: z.string(),
+                heroImage: z.string(),
+                heroImageAlt: z.string(),
+                hero: z.object({
+                    buttonText: z.string(),
+                    buttonLink: z.string(),
+                    // PostHog `reference` prop on the migration-expert button.
+                    buttonReference: z.string(),
+                }),
+                // The two tinted cards under the hero. /vs/kepware/ has none.
+                cards: z.array(z.object({
+                    title: z.string(),
+                    content: z.string(),
+                })).optional(),
+                sectionTitle: z.string(),
+                sectionIntro: z.string().optional(),
+                sections: z.array(z.object({
+                    // A NavIcon registry key.
+                    svgPath: z.string(),
+                    title: z.string(),
+                    description: z.string(),
+                })),
+                tableHeading: z.string(),
+                columnFlowFuse: z.string(),
+                columnCompetitor: z.string(),
+                table: z.array(z.object({
+                    feature: z.string(),
+                    flowFuse: z.string(),
+                    // Keyed by the competitor's own name in the .njk; one key here so one
+                    // renderer can read every page.
+                    competitor: z.string(),
+                })),
+                switch: z.object({
+                    title: z.string(),
+                    content: z.array(z.string()),
+                    // The .njk carried cta/ctaUrl here but rendered the same
+                    // migration-expert button as the hero, so neither was read.
+                    cta: z.string().optional(),
+                    ctaUrl: z.string().optional(),
+                }),
+                socialProofText: z.string(),
+                cta: z.object({
+                    title: z.string(),
+                    content: z.string(),
+                    // The closing line ends on a link to the same meeting booker the hero
+                    // button uses, so it is a field resolved through useResolveHref rather
+                    // than an <a> pasted into the prose. linkSuffix carries the full stop.
+                    linkText: z.string(),
+                    linkHref: z.string(),
+                    linkSuffix: z.string().optional(),
+                }),
+
+            })
+        }),
+        // Long-form prose pages under /platform/. Separate from the `pages` collection
+        // above because that one is rendered by [...slug].vue, which routeRules mark
+        // noindex; /platform/security/ is a linked, indexable page.
+        platformPages: defineCollection({
+            type: 'page',
+            source: 'platform/*.md',
+            schema: z.object({
+                title: z.string(),
+            })
+        }),
+        // The /landing/ pages that were pure 11ty frontmatter. Two shapes, both routed
+        // through pages/landing/[slug].vue and told apart by `kind`:
+        //  - abm         (layouts/abm-landing.njk) - problem/solution/how/features
+        //  - comparison  (layouts/landing-comparison.njk) - two cards and a gated brief
+        // /landing/plc/, /tulip/ and /factory-efficiency/ had markup bodies and stay
+        // hand-written Vue pages.
+        landingPages: defineCollection({
+            type: 'data',
+            source: 'landing/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                kind: z.enum(['abm', 'comparison']),
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string().optional(),
+                }),
+                // The comparison briefs are campaign landing pages, kept out of the sitemap.
+                skipIndex: z.boolean().optional(),
+
+                // --- abm ---------------------------------------------------------------
+                heroTitle: z.string().optional(),
+                image: z.string().optional(),
+                imageDescription: z.string().optional(),
+                values: z.array(z.string()).optional(),
+                problem: z.object({
+                    title: z.string(),
+                    description: z.array(z.string()),
+                }).optional(),
+                solution: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                    benefits: z.array(z.object({
+                        svgPath: z.string(),
+                        title: z.string(),
+                        description: z.string(),
+                    })),
+                }).optional(),
+                testimonialsTitle: z.string().optional(),
+                useCases: z.object({
+                    title: z.string(),
+                    image: z.string(),
+                    imgAlt: z.string(),
+                    case: z.array(z.object({ title: z.string(), description: z.string() })),
+                }).optional(),
+                how: z.object({
+                    title: z.string(),
+                    steps: z.array(z.object({ title: z.string(), description: z.string() })),
+                }).optional(),
+                features: z.object({
+                    title: z.string(),
+                    features: z.array(z.object({ svgPath: z.string(), title: z.string() })),
+                }).optional(),
+                ctaSection: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }).optional(),
+
+                // --- comparison --------------------------------------------------------
+                hubspot: z.object({
+                    formId: z.string(),
+                    cta: z.string(),
+                    reference: z.string(),
+                }).optional(),
+                hero: z.object({
+                    headline: z.string(),
+                    headlineHighlight: z.string(),
+                    intro1: z.string(),
+                    intro2: z.string(),
+                    image: z.string(),
+                    imageAlt: z.string(),
+                    buttonText: z.string(),
+                }).optional(),
+                leftCard: z.object({
+                    title: z.string(),
+                    items: z.array(z.object({ icon: z.string(), text: z.string() })),
+                }).optional(),
+                rightCard: z.object({
+                    title: z.string(),
+                    items: z.array(z.object({ icon: z.string(), text: z.string() })),
+                }).optional(),
+                takeaway: z.object({
+                    para1: z.string(),
+                    para2: z.string(),
+                }).optional(),
+                form: z.object({ title: z.string() }).optional(),
+            })
+        }),
+        // The two operational use-cases (the ones carrying `values:`) were pure 11ty
+        // frontmatter with no template body - layouts/use-case.njk rendered a fixed set of
+        // optional blocks from it. That is a data collection, rendered by
+        // pages/use-cases/[slug].vue through the components in components/use-case/.
+        // The six architecture pages had real markup bodies and stay hand-written Vue
+        // pages; they appear on the listing via useCaseArchitectures in that page.
+        useCases: defineCollection({
+            type: 'data',
+            source: 'use-cases/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                title: z.string(),
+                problem: z.string(),
+                // SEO only. Named seoMeta rather than meta because `meta` is reserved by
+                // @nuxt/content and a declared `meta` field is silently replaced.
+                seoMeta: z.object({
+                    title: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
+                // Industry lens slugs, rendered as the context band near the page foot.
+                industries: z.array(z.string()).optional(),
+                // Value-pillar slugs. Presence of this is what puts a page under
+                // "Operational use cases" rather than "By architecture" on the listing.
+                values: z.array(z.string()).optional(),
+                architecture: z.string().optional(),
+                customerPain: z.object({
+                    heading: z.string(),
+                    intro: z.array(z.string()).optional(),
+                    cards: z.array(z.object({
+                        icon: z.string().optional(),
+                        title: z.string(),
+                        detail: z.string(),
+                    })).optional(),
+                }).optional(),
+                outcomeFirst: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    dimensions: z.array(z.object({
+                        label: z.string(),
+                        title: z.string(),
+                        detail: z.string(),
+                    })).optional(),
+                }).optional(),
+                whyItMatters: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    points: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                }).optional(),
+                competition: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    traps: z.array(z.object({
+                        label: z.string(),
+                        title: z.string(),
+                        detail: z.string(),
+                    })).optional(),
+                }).optional(),
+                comparison: z.object({
+                    without: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    with: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                }).optional(),
+                aiBuildLayer: z.object({
+                    heading: z.string().optional(),
+                    intro: z.string().optional(),
+                    steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    note: z.string().optional(),
+                }).optional(),
+                closingCta: z.object({
+                    heading: z.string().optional(),
+                    description: z.string().optional(),
+                }).optional(),
+            })
+        }),
+        // The template lifted from automotive.vue. Every industry page built on it (starting
+        // with automotive itself, then industrial-machinery) is a data entry here plus a thin
+        // pages/industries/<slug>.vue wrapper — same split as the industriesLegacy collection
+        // below, just a different, richer set of bands (quote card, metrics, ROI calculator,
+        // zigzag applications, compliance grid) than the seven legacy pages have.
+        industries: defineCollection({
+            type: 'data',
+            source: 'industries/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                // The short industry name used by the compliance heading ("X Compliance &
+                // Standards") and the use-cases heading ("Use cases in X"). Distinct from
+                // hero.eyebrow, which carries the fuller "X Manufacturing" framing — on
+                // automotive.vue these were "Automotive" and "Automotive Manufacturing"
+                // respectively, never the same string.
+                industryName: z.string(),
+                // The /industries/ listing card's thumbnail — distinct from hero.quote.image,
+                // which is the customer headshot inside the page's own hero band.
+                listingImage: z.string(),
+                listingImageAlt: z.string().optional(),
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }),
+                hero: z.object({
+                    eyebrow: z.string(),
+                    // A NavIcon registry key (nuxt/utils/navIcons.ts).
+                    eyebrowIcon: z.string(),
+                    // Carries inline <span class="text-red-600"> markup, rendered with
+                    // v-html — static content in this repo, not anything a visitor can set.
+                    heading: z.string(),
+                    description: z.string(),
+                    quote: z.object({
+                        text: z.string(),
+                        author: z.string(),
+                        role: z.string().optional(),
+                        company: z.string(),
+                        image: z.string(),
+                        imageAlt: z.string(),
+                    }).optional(),
+                    image: z.object({
+                        src: z.string(),
+                        alt: z.string(),
+                    }).optional(),
+                }),
+                // The "N+ manufacturers in M countries..." SocialProof line. Not every page
+                // has an aggregate stat like this yet.
+                socialProof: z.string().optional(),
+                metrics: z.array(z.object({
+                    number: z.string(),
+                    text: z.string(),
+                })),
+                // A customer-story bridge: heading + description above the metrics grid,
+                // link below it (right-aligned) — not above the grid the way the doc had it,
+                // so the hero's layout stays fixed whether or not a page sets this.
+                metricsBridge: z.object({
+                    // Carries inline <span class="text-indigo-600"> markup, rendered with
+                    // v-html for the same reason hero.heading is.
+                    heading: z.string(),
+                    description: z.string(),
+                    linkText: z.string().optional(),
+                    linkHref: z.string().optional(),
+                }).optional(),
+                roi: z.object({
+                    heading: z.string(),
+                    description: z.string(),
+                }),
+                applications: z.object({
+                    heading: z.string(),
+                    description: z.string(),
+                    items: z.array(z.object({
+                        title: z.string(),
+                        description: z.string(),
+                        linkText: z.string(),
+                        linkHref: z.string(),
+                        image: z.string(),
+                        imageAlt: z.string(),
+                        variant: z.enum(['indigo', 'red', 'mixed']),
+                    })),
+                }),
+                compliance: z.object({
+                    heading: z.string().optional(),
+                    subtitle: z.string().optional(),
+                    description: z.string(),
+                    items: z.array(z.object({
+                        title: z.string(),
+                        text: z.string(),
+                        linkText: z.string(),
+                        linkHref: z.string(),
+                        // A UIcon name. Falls back to <IconsCertificateIcon> when absent.
+                        icon: z.string().optional(),
+                    })),
+                }),
+                // No useCases field: the "Use cases in X" band is dynamic, the same
+                // industriesLegacy-template query against the useCases collection's own
+                // `industries[]` field — not page data that has to be kept in sync by hand.
+                faqs: z.array(z.object({
+                    question: z.string(),
+                    answer: z.string(),
+                })),
+                closingCta: z.object({
+                    heading: z.string(),
+                    description: z.string(),
+                }),
+            })
+        }),
+        // The seven industry pages were pure 11ty frontmatter read by layouts/industry.njk,
+        // the same shape as the operational use-cases. /industries/automotive/ is not here:
+        // it had a bespoke markup body and stays a hand-written Vue page, which is why the
+        // listing merges this collection with that one entry.
+        //
+        // Named industriesLegacy, not industries: these seven pages are transitional and
+        // due to be deleted once the automotive-page template covers them (or their
+        // replacements). `industries` is reserved for that template's own collection.
+        industriesLegacy: defineCollection({
+            type: 'data',
+            source: 'industries-legacy/*.yml',
+            schema: z.object({
+                slug: z.string(),
+                // Named seoMeta rather than meta because `meta` is reserved by
+                // @nuxt/content and a declared `meta` field is silently replaced.
+                seoMeta: z.object({
+                    title: z.string(),
+                    description: z.string(),
+                }),
+                metaTitle: z.string().optional(),
+                hero: z.object({
+                    eyebrow: z.string().optional(),
+                    // A NavIcon registry key. The .njk named an SVG path under
+                    // src/_includes/; the lift rewrote those to keys.
+                    eyebrowIcon: z.string().optional(),
+                    heading: z.string(),
+                    description: z.string().optional(),
+                    image: z.string(),
+                    imageAlt: z.string().optional(),
+                    subCta: z.string().optional(),
+                }),
+                // Overrides the default "The Problem Today" heading.
+                problemTitle: z.string().optional(),
+                problems: z.array(z.string()),
+                problemImage: z.string(),
+                solution: z.object({
+                    title: z.string(),
+                    benefits: z.array(z.object({
+                        svgPath: z.string().optional(),
+                        text: z.string(),
+                    })).optional(),
+                }),
+                solutionImage: z.string(),
+                outcomes: z.object({
+                    title: z.string(),
+                    subtitle: z.string().optional(),
+                    items: z.array(z.object({
+                        svgPath: z.string().optional(),
+                        title: z.string(),
+                        description: z.string(),
+                    })).optional(),
+                }),
+                // Either a flat `items` list or the same tiles under `groups`.
+                useCases: z.object({
+                    title: z.string(),
+                    items: z.array(z.object({
+                        image: z.string(),
+                        imageAlt: z.string().optional(),
+                        description: z.string(),
+                    })).optional(),
+                    groups: z.array(z.object({
+                        label: z.string(),
+                        items: z.array(z.object({
+                            image: z.string(),
+                            imageAlt: z.string().optional(),
+                            description: z.string(),
+                        })),
+                    })).optional(),
+                }),
+                socialProofText: z.string().optional(),
+                cta: z.object({
+                    title: z.string(),
+                    description: z.string().optional(),
+                }),
             })
         }),
         ebooks: defineCollection({
             type: 'page',
             source: 'ebooks/*.md',
             schema: z.object({
+                title: z.string(),
+                description: z.string().optional(),
                 contentTitle: z.string().optional(),
                 usecase: z.array(z.string()).optional(),
                 image: z.string(),
@@ -246,10 +729,6 @@ export default defineContentConfig({
                 coverImage: z.string().optional(),
                 secondaryImage: z.string().optional(),
                 tertiaryImage: z.string().optional(),
-                meta: z.object({
-                    title: z.string(),
-                    description: z.string().optional(),
-                }),
                 hubspot: z.object({
                     formId: z.string(),
                     cta: z.string().optional(),
@@ -262,10 +741,8 @@ export default defineContentConfig({
             type: 'page',
             source: 'whitepapers/*.md',
             schema: z.object({
-                meta: z.object({
-                    title: z.string(),
-                    description: z.string().optional(),
-                }),
+                title: z.string(),
+                description: z.string().optional(),
                 image: z.string(),
                 thumbnail: z.string(),
                 hubspot: z.object({

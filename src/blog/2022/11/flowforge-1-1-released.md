@@ -95,7 +95,7 @@ with the coupon **RELEASE11** to get your first project free for a month.
 
 ### Upgrading FlowFuse
 
-[FlowFuse Cloud]({{ site.appURL }}) is already running 1.1. To use
+[FlowFuse Cloud](site:appURL) is already running 1.1. To use
 persisted files you'll need to upgrade your projects stack. You'll be prompted
 to do so on the project page.
 

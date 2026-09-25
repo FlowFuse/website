@@ -72,7 +72,7 @@ Contained parts need distinct marking, usually a containment label or coloured t
 
 ## From Customer Containment to Exiting CS1 and CS2 for Good
 
-Passing containment inspections is only half the work. To exit CS1 or CS2 status permanently, a supplier has to show the automaker that the root cause has been identified and corrected, not just contained. That shift from reactive inspection to lasting correction happens across three areas.
+Passing containment inspections is only half the work. To exit CS1 or CS2 status permanently, a supplier has to show the automaker that the root cause has been identified and corrected, not just contained. If the correction changes the process, tooling, or a sub-supplier, the automaker may also require a new [PPAP](/blog/2026/09/ppap/) submission before the change is approved. That shift from reactive inspection to lasting correction happens across three areas.
 
 ### Connecting Containment Data to Root Cause
 

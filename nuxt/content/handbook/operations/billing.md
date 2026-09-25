@@ -50,7 +50,7 @@ To generate a subscription, the corresponding deal and quote must first be in pl
 1. Add the corresponding products, start and end date per product line, discounts to reflect their first invoice as agreed in the order form.
    - If they require a PO number, add the PO number on the Deal. 
 1. For customers outside of North America, add the customer's VAT idenfication number to the Invoice Comments section. This number can normally be found through Internet search or requesting from the customer directly. 
-1. Make sure both ACH and Credit Card options are checked for payment.
+1. Make sure only ACH option is checked for payment. (Credit Card options can be checked manually by the CSM for super small accounts that don't have any other ways to pay) 
 1. It will prompt to send the invoice automatically to the billing contact you designated, change date of send if needed.
 1. Finalize this manual invoice, then void the automatically created one from the subscription conversion and send an email to accounting.
 1. If you need to void the invoice, send an email with the invoice number and reason to our accounting team through Slack for their administration.

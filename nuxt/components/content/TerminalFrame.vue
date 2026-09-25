@@ -6,7 +6,18 @@
             <span class="ff-terminal-frame__dot ff-terminal-frame__dot--expand" />
         </div>
         <div class="ff-terminal-frame__screen">
-            <img :src="src" :alt="alt" loading="lazy">
+            <video
+                v-if="src.endsWith('.webm')"
+                autoplay
+                loop
+                muted
+                playsinline
+                :aria-label="alt"
+                :width="videoWidth"
+                :height="videoHeight"
+                preload="none"
+            ><source :src="src" type="video/webm" /></video>
+            <img v-else :src="src" :alt="alt" loading="lazy">
         </div>
     </div>
 </template>
@@ -27,6 +38,8 @@ withDefaults(defineProps<{
     src: string
     alt?: string
     width?: number
+    videoWidth?: number
+    videoHeight?: number
 }>(), {
     alt: '',
     width: 1000,

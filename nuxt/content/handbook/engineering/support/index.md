@@ -10,7 +10,7 @@ Support tickets can be opened via the [FlowFuse Support Portal](/support). FlowF
 
 ## SLAs
 
-All paying FlowFuse customers get a Standard Support SLA by default; a faster Enterprise-level SLA can be purchased and negotiated as an upgrade. See the [SLA definitions](/handbook/sales/customer-success/#sla) for the current response-time commitments. Initial responses to support tickets must be sent within the applicable SLA time frame.
+All customers on a paid FlowFuse subscription get an Enterprise Support SLA by default; a faster Premium-level SLA can be purchased and negotiated as an upgrade. See the [SLA definitions](/handbook/sales/customer-success/#sla) for the current response-time commitments. Initial responses to support tickets must be sent within the applicable SLA time frame. This applies only to customers on our current product line, sold through the sales process, and does not apply to legacy or self-service subscriptions. 
 
 ## Triage Duty
 

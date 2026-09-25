@@ -5,14 +5,13 @@ navigation:
   order: 23
 ---
 
-**Superseded.** This version has been replaced by the [Subscription Agreement 1.6](/handbook/sales/subscription-agreement-1.6/) and is kept here only because it's still referenced by existing contracts and quotes. Do not link new customers to this page.
+::warning
+**Superseded — do not use for new deals.** This version has been replaced by the [Subscription Agreement 1.6](/handbook/sales/subscription-agreement-1.6/). Use 1.6 for all new quotes and renewals. This page is kept only as a reference copy for existing contracts and quotes that already cite version 1.5 by name — do not link new customers to it.
+::
 
-Below is the FlowFuse subscription agreement that applies to few Edge, Hub, and Fleet tier customers buying annual subscriptions, and most customers on the legacy Enterprise Platform. If you'd like to make alterations for your organization, please download the .docx file in the following form and initiate the legal part of the negotiation through your account executive.
+Below is the FlowFuse subscription agreement that applies to few Edge, Hub, and Fleet tier customers buying annual subscriptions, and most customers on the legacy Enterprise Platform.
 
 Note alterations to the following agreement are only accepted on the Enterprise tier.
-
-::HubSpotForm{formId="f5a6441c-63a5-4a4a-b676-87aab37df998" cta="subscription-agreement" reference="subscription-agreement"}
-::
 
 ## Subscription Agreement
 

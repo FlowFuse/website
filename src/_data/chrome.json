@@ -113,8 +113,8 @@
                                 "icon": "screen"
                             },
                             {
-                                "label": "Edge Connectivity",
-                                "href": "/use-cases/edge-connectivity/",
+                                "label": "Remote Device Management",
+                                "href": "/use-cases/remote-device-management/",
                                 "icon": "chip"
                             },
                             {
@@ -134,7 +134,7 @@
                     {
                         "title": "By Industry",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-[9] xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-[5] xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -142,39 +142,19 @@
                                 "icon": "car"
                             },
                             {
-                                "label": "Food & Beverage",
-                                "href": "/industries/food-beverage/",
-                                "icon": "food-beverage"
-                            },
-                            {
-                                "label": "Life Sciences",
-                                "href": "/industries/life-sciences/",
-                                "icon": "shield-check"
-                            },
-                            {
-                                "label": "Electronics & Appliances",
-                                "href": "/industries/electronics-appliances/",
-                                "icon": "power"
-                            },
-                            {
-                                "label": "Renewables",
-                                "href": "/industries/renewables/",
-                                "icon": "wind-turbine"
-                            },
-                            {
-                                "label": "Semiconductors",
-                                "href": "/industries/semiconductors/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "Aerospace Components",
-                                "href": "/industries/aerospace-components/",
+                                "label": "Industrial Machinery",
+                                "href": "/industries/industrial-machinery/",
                                 "icon": "cog-6-tooth"
                             },
                             {
-                                "label": "Aviation & Aerospace",
-                                "href": "/industries/aviation-aerospace/",
-                                "icon": "airplane"
+                                "label": "Building Materials",
+                                "href": "/industries/building-materials/",
+                                "icon": "building-office-2"
+                            },
+                            {
+                                "label": "Energy and Utilities",
+                                "href": "/industries/energy-utilities/",
+                                "icon": "bolt"
                             },
                             {
                                 "label": "See all industries",
@@ -493,8 +473,8 @@
                                 "href": "/use-cases/scada/"
                             },
                             {
-                                "label": "Edge Connectivity",
-                                "href": "/use-cases/edge-connectivity/"
+                                "label": "Remote Device Management",
+                                "href": "/use-cases/remote-device-management/"
                             },
                             {
                                 "label": "Data Integration",
@@ -517,32 +497,16 @@
                                 "href": "/industries/automotive/"
                             },
                             {
-                                "label": "Food & Beverage",
-                                "href": "/industries/food-beverage/"
+                                "label": "Industrial Machinery",
+                                "href": "/industries/industrial-machinery/"
                             },
                             {
-                                "label": "Life Sciences",
-                                "href": "/industries/life-sciences/"
+                                "label": "Building Materials",
+                                "href": "/industries/building-materials/"
                             },
                             {
-                                "label": "Electronics & Appliances",
-                                "href": "/industries/electronics-appliances/"
-                            },
-                            {
-                                "label": "Renewables",
-                                "href": "/industries/renewables/"
-                            },
-                            {
-                                "label": "Semiconductors",
-                                "href": "/industries/semiconductors/"
-                            },
-                            {
-                                "label": "Aerospace Components",
-                                "href": "/industries/aerospace-components/"
-                            },
-                            {
-                                "label": "Aviation & Aerospace",
-                                "href": "/industries/aviation-aerospace/"
+                                "label": "Energy and Utilities",
+                                "href": "/industries/energy-utilities/"
                             },
                             {
                                 "label": "See all industries",

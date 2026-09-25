@@ -34,6 +34,30 @@ the specific apps, success criteria and plan that will be proven.
 To validate the solution to the problem the customer is experiencing, FlowFuse will
 aid in a [PoV](/handbook/sales/meetings/pov/).
 
+## Post-meeting HubSpot updates
+
+Every sales call must be reflected in HubSpot before you move on to the next
+task — the pipeline, forecast, and compensation calculations (e.g. the SDR
+[First Meetings Bonus Formula](/handbook/marketing/sdr/#first-meetings-bonus-formula),
+which counts meetings attended and qualified, not merely booked) all depend on
+records being current, not on what happened in the call itself.
+
+After each meeting:
+
+- Log the meeting/call activity against the contact, and mark whether the
+  prospect actually attended and was qualified — a booked-but-no-show or
+  disqualified meeting should not read as a completed one.
+- Update `Lead status` and, where applicable, lifecycle stage per the
+  definitions in [HubSpot: Lead Status](/handbook/sales/hubspot/#lead-status).
+- If the meeting qualifies the prospect from MQL to SQL, answer the
+  [MQL-to-SQL qualifying questions](/handbook/sales/hubspot/#from-mql-to-sql-qualifying-questions)
+  and open the deal, per [Deal Management](/handbook/sales/hubspot/#deal-management).
+- For an existing deal, update the deal stage, amount fields, and close date
+  to reflect what you learned, per
+  [Deal Amount Fields](/handbook/sales/hubspot/#deal-amount-fields).
+- Add a short note summarizing outcome and next steps — link the Fathom
+  recording/summary if one exists (see below).
+
 ## Using Fathom Notetaker
 
 Fathom Notetaker is an AI-powered tool we use to record, transcribe, and summarize meetings efficiently. This guide will help beginners get started with Fathom, ensuring you can focus on collaboration rather than manual note-taking.

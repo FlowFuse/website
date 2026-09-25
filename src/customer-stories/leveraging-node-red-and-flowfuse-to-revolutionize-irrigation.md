@@ -43,7 +43,7 @@ Before implementing Node-RED and FlowFuse, PIDD grappled with operational challe
 
 #### Node-RED and FlowFuse Solution
 
-Recognizing the need for a technological overhaul, PIDD embraced Node-RED, a flow-based development tool, while using FlowFuse to help manage their [edge and cloud devices](/use-cases/edge-connectivity/). This combination served as a bridge between diverse devices, including Raspberry Pis, PLCs, and more. FlowFuse played a crucial role in securely exposing and controlling these devices through web interfaces. [Walter faces a similar challenge connecting machines across its global production sites](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/), and uses FlowFuse device agents to do it.
+Recognizing the need for a technological overhaul, PIDD embraced Node-RED, a flow-based development tool, while using FlowFuse to help manage their [edge and cloud devices](/use-cases/remote-device-management/). This combination served as a bridge between diverse devices, including Raspberry Pis, PLCs, and more. FlowFuse played a crucial role in securely exposing and controlling these devices through web interfaces. [Walter faces a similar challenge connecting machines across its global production sites](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/), and uses FlowFuse device agents to do it.
 
 ![PIDD Overview](./images/stories/pidd-view.png "PIDD Overview"){data-zoomable}
 
