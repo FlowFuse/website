@@ -2,7 +2,7 @@
 // Inline image-as-CTA for blog markdown: ::cta-image{...}
 // `cta` is separate from the frontmatter `cta` (only used by BlogPostCta).
 import { useCapture } from '../../composables/useCapture'
-import site from '../../../src/_data/site.json'
+import type { CTA_DESTINATIONS } from '../../lib/cta-destinations'
 
 const props = defineProps<{
     src: string
@@ -25,11 +25,11 @@ const POSITION = 'inline-image'
 // Same event as BlogPostCta - cta_type distinguishes the destination, same as there.
 const EVENT = 'blog-cta'
 
-const DESTINATIONS: Record<string, { href: string, external: boolean }> = {
-    'sign-up': { href: `${site.appURL}/account/create`, external: false },
-    demo: { href: '/book-demo/', external: true },
-    contact: { href: '/contact-us/', external: true },
-    pricing: { href: '/pricing', external: true },
+const DESTINATIONS: Record<string, keyof typeof CTA_DESTINATIONS> = {
+    'sign-up': 'signUp',
+    demo: 'bookDemo',
+    contact: 'contactUs',
+    pricing: 'pricing',
 }
 
 const destination = computed(() => {
@@ -52,7 +52,7 @@ function onClick () {
 </script>
 
 <template>
-  <a class="mb-4 block" :href="destination.href" @click="onClick">
+  <CtaLink :destination="destination" :position="POSITION" variant="image" class="mb-4 block" @click="onClick">
     <NuxtImg :src="src" :alt="alt" />
-  </a>
+  </CtaLink>
 </template>

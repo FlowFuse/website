@@ -4,10 +4,12 @@
 // directly outside that folder — event name, href, and copy are fixed per
 // destination on purpose, so this component only ever handles *how it looks*.
 import { useCapture } from '~/composables/useCapture'
+import { withCtaQuery, type CtaQuery } from '~/lib/cta-destinations'
 
 const props = withDefaults(defineProps<{
     event: string
     href: string
+    query?: CtaQuery
     // Whether `href` points at a route Nuxt actually serves. NuxtLink/UButton's
     // `to` otherwise treats any same-origin-looking path as an internal Vue
     // Router route, so a destination still on 11ty (e.g. /contact-us/,
@@ -145,7 +147,7 @@ function onClick () {
 
 <template>
   <UButton
-    :to="preview ? undefined : href"
+    :to="preview ? undefined : withCtaQuery(href, query)"
     :external="external"
     :target="target"
     :color="uiVariant.color"
