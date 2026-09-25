@@ -19,7 +19,8 @@ const isDocs = computed(() => route.path === '/docs' || route.path.startsWith('/
       </div>
     </div>
     <AppFooter />
-    <!-- FlowFuse Expert's conversation, opened from the docs pages' question box, sidebar and header. -->
+    <!-- FlowFuse Expert's conversation, opened from Ask Docs and from a page's own question box. -->
     <DocsExpertHost v-if="isDocs" />
+    <DocsAskFab v-if="isDocs" />
   </div>
 </template>

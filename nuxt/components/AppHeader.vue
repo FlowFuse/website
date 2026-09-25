@@ -189,8 +189,8 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-        <!-- Docs search and Expert, on tablets, where the docs sidebar is folded away. -->
-        <li v-if="isDocs" class="lg:hidden mr-1"><DocsHeaderActions icon-only /></li>
+        <!-- Docs search, on tablets, where the docs sidebar is folded away. -->
+        <li v-if="isDocs" class="lg:hidden mr-1"><DocsHeaderActions /></li>
         <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
         <li class="flex">
           <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
@@ -210,8 +210,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Docs pages add search and Expert to the phone header, so the square logo holds on a
-   little longer before the wordmark takes its place. */
+/* Docs pages add search to the phone header, so the square logo holds on a little longer
+   before the wordmark takes its place (without this the wordmark touches the search button
+   at 420 to 440px). */
 @media (min-width: 420px) and (max-width: 519px) {
     .ff-header--docs .ff-logo-link--wordmark {
         display: none;

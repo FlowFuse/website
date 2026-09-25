@@ -1,11 +1,6 @@
 <script setup lang="ts">
-// Docs search and FlowFuse Expert for the site header, where the docs sidebar and the
-// right-hand column are not on screen. AppHeader shows it below lg, on docs pages only.
-defineProps<{
-    /** Show Expert as the FlowFuse mark alone. */
-    iconOnly?: boolean
-}>()
-
+// Docs search for the site header, where the docs sidebar is not on screen. AppHeader shows
+// it below lg, on docs pages only. FlowFuse Expert is the Ask Docs button (DocsAskFab).
 const route = useRoute()
 const isDocs = computed(() => route.path === '/docs' || route.path.startsWith('/docs/'))
 
@@ -27,7 +22,6 @@ function openSearch () {
         <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
       </svg>
     </button>
-    <DocsExpertButton variant="compact" position="docs-header" :icon-only="iconOnly" />
   </div>
 </template>
 
