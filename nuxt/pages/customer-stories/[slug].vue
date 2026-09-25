@@ -119,7 +119,7 @@ useSchemaOrg([
 
             <div v-if="page.structuredData?.faq?.length" class="prose">
               <ProseH2>{{ page.structuredData.faqTitle || 'Frequently Asked Questions' }}</ProseH2>
-              <BlogFaq :faq="page.structuredData.faq" />
+              <Faq :faq="page.structuredData.faq" />
             </div>
           </div>
 

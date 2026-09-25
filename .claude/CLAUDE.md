@@ -384,6 +384,10 @@ Every hand-written `<a class="ff-btn ...">` pointing at one of the five destinat
   ```
   Nuxt auto-imports it by folder + filename, used directly like any other component: `<IconsGithubIcon class="h-5" />` (see `AppFooter.vue`).
 
+## FAQs
+
+Every FAQ on the site renders through `nuxt/components/Faq.vue`, including `/pricing/` (answers in `nuxt/content/faq/pricing.yml`). Answers are plain text with a small markdown subset (`[label](url)`, `**bold**`, `*italic*`, blank-line paragraphs, `-`/`1.` lists), never HTML. `nuxt/lib/faq-answer.mjs` splits an answer into paragraphs and lists, `nuxt/lib/inline-markdown.mjs` parses the text inside them into nodes (not HTML strings), and `nuxt/components/InlineMarkdown.vue` renders those nodes. Vue escapes the text, so literal placeholders like `<ip>` stay literal. Page copy outside FAQs that uses the inline part of the subset renders through the same component, e.g. `<InlineMarkdown :text="item.description" />`. Don't render these strings with `v-html`.
+
 ## Naming conventions
 
 - All slugs: **kebab-case**

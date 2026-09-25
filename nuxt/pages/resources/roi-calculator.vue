@@ -164,7 +164,7 @@ useSchemaOrg([
     <section class="w-full px-6 pt-10">
       <div class="max-w-screen-lg mx-auto pb-18">
         <h2 class="mb-8"><span class="text-indigo-600">ROI questions</span> industrial teams ask</h2>
-        <BlogFaq :faq="faqs" />
+        <Faq :faq="faqs" />
       </div>
     </section>
 

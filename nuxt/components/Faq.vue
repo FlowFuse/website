@@ -1,10 +1,7 @@
 <script setup lang="ts">
-// The answer renderer moved to nuxt/lib/faq-answer.mjs so it can be unit tested and so
-// the escaping rules live in one place; it also gained *italic*, **bold** and blank-line
-// paragraphs, which the 11ty pages expressed with raw <i> and <p> tags under `| safe`.
-import { isListBlock, renderFaqAnswer } from '../lib/faq-answer.mjs'
+import { parseFaqAnswer } from '../lib/faq-answer.mjs'
 
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
     faq: Array<{ question: string, answer: string }>
     /**
      * How much room the block takes above the first question.
@@ -18,6 +15,8 @@ withDefaults(defineProps<{
 }>(), {
     variant: 'post',
 })
+
+const answers = computed(() => props.faq.map(item => parseFaqAnswer(item.answer)))
 
 const openIndex = ref<number | null>(null)
 function toggle(i: number) {
@@ -46,12 +45,11 @@ function toggle(i: number) {
             </button>
           </h3>
           <div v-show="openIndex === i" class="px-6 mt-6">
-            <template v-for="(block, b) in renderFaqAnswer(item.answer)" :key="b">
-              <!-- A <ul>/<ol> cannot sit inside a <p>, so a list block renders bare.
-                   eslint-disable-next-line vue/no-v-html -->
-              <div v-if="isListBlock(block)" class="ff-faq-list" v-html="block" />
-              <!-- eslint-disable-next-line vue/no-v-html -->
-              <p v-else v-html="block" />
+            <template v-for="(block, b) in answers[i]" :key="b">
+              <p v-if="block.type === 'p'"><InlineMarkdown :nodes="block.children" /></p>
+              <component :is="block.type" v-else>
+                <li v-for="(li, l) in block.items" :key="l"><InlineMarkdown :nodes="li" /></li>
+              </component>
             </template>
           </div>
         </div>

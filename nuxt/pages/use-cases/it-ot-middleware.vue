@@ -5,7 +5,7 @@
 // What the port changes on purpose:
 //  - layouts/solution.njk's hero becomes <UseCaseSolutionHero>, with the frontmatter
 //    `description` HTML fragment moving into the slot as ordinary template markup.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg, so the FAQ answers are escaped rather
+//  - faq.njk becomes <Faq> plus useSchemaOrg, so the FAQ answers are escaped rather
 //    than interpolated into a JSON string by hand.
 //  - smooth-scroll.njk's global function and inline onclick are dropped: the site-wide
 //    `scroll-behavior: smooth` in style.css already animates a plain in-page anchor.
@@ -154,7 +154,7 @@ useSchemaOrg([
               <h2 class="max-md:text-center -mb-12">
                 Frequently Asked <span class="text-indigo-600">Questions</span>
               </h2>
-              <BlogFaq :faq="FAQ" variant="page" />
+              <Faq :faq="FAQ" variant="page" />
             </div>
           </div>
         </div>
