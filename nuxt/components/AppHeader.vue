@@ -161,7 +161,7 @@ onMounted(() => {
       <!-- Mobile hamburger -->
       <div class="flex items-center gap-2 md:hidden relative z-20">
         <DocsHeaderActions />
-        <CtaBookDemo variant="primary" position="header-mobile" class="whitespace-nowrap" />
+        <CtaBookDemo variant="primary" position="header-mobile" class="ff-header-demo-mobile whitespace-nowrap" />
         <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
           <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -220,34 +220,49 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Docs pages show "Docs" beside the logo. Below xl that pair is the square mark and
-   "Docs": with the wordmark, the menus came within 16px of "Docs" at 1100px, and the
-   square keeps at least 70px between them from there up. From xl, where the header
-   centres its menus, the wordmark has room (about 100px). */
+/* Docs pages show "Docs" beside the logo. Below xl that pair is the mark alone and
+   "Docs": with the whole wordmark, the menus came within 16px of "Docs" at 1100px. The
+   mark is the wordmark itself, cropped to its first 28px, rather than the separate square
+   logo, which is drawn larger and in a lighter red: the logo keeps one shape, colour and
+   size at every width, and only its lettering comes and goes. */
+.ff-header--docs .ff-logo-link--square {
+    display: none;
+}
+
+.ff-header--docs .ff-logo-link--wordmark {
+    display: flex;
+}
+
 @media (max-width: 1279px) {
     .ff-header--docs .ff-logo-link--wordmark {
-        display: none;
+        width: 28px;
+        overflow: hidden;
     }
 
-    .ff-header--docs .ff-logo-link--square {
-        display: block;
+    .ff-header--docs .ff-logo-link--wordmark svg {
+        width: 160px;
+        max-width: none;
+        flex-shrink: 0;
     }
 }
 
 /* Beside the wordmark, "Docs" reads as one lockup with it, measured at 4x zoom:
-   - weight 700, whose stems (4px at this size) match the wordmark's (3.9px);
+   - weight 600: its stems (3.5px at this size) sit just under the wordmark's (3.9px), close
+     enough to belong to it, a step lighter so it does not compete (700 matched the stems
+     but read too heavy, 400 too thin);
    - 29px, which splits Heebo's proportions against the wordmark's: capitals 0.6px taller
      (20.6 against 20) and lowercase 0.4px shorter (15.6 against 16);
    - the same baseline: with line-height 1, centred on the 32px logo box, the line sits 1px
      high, hence the nudge.
-   Grey, so the brand colour still leads. */
+   Grey, so the brand colour still leads. The same size at every width, beside the mark
+   alone as beside the whole wordmark. */
 .ff-docs-brand-label {
     position: relative;
     top: 1px;
     margin-left: 0.625rem;
     font-size: 29px;
     line-height: 1;
-    font-weight: 700;
+    font-weight: 600;
     color: #374151;
     white-space: nowrap;
     text-decoration: none;
@@ -257,14 +272,12 @@ onMounted(() => {
     color: #4f46e5;
 }
 
-/* Beside the square mark the label is a size down. The tablet header is the tightest (the
-   nav, docs search, Free Trial and Book a demo share one row), and at 768px a larger label
-   pushed Book a demo past the edge. */
-@media (max-width: 1279px) {
-    .ff-docs-brand-label {
-        top: 0;
-        margin-left: 0.5rem;
-        font-size: 1.25rem;
+/* On a phone narrower than 390px the docs header has no room for the mark, "Docs", search,
+   Book a demo and the menu at once ("Docs" touched the search at 360 and 375px, and the row
+   overflowed at 320px), so Book a demo gives way there. From 390px it fits. */
+@media (max-width: 389px) {
+    .ff-header--docs .ff-header-demo-mobile {
+        display: none;
     }
 }
 </style>
