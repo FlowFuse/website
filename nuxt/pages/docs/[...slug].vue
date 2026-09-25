@@ -92,7 +92,8 @@ const surround = computed(() => {
   <!-- Not wrapped in .prose: every block on a landing page is a component that styles
        itself, and Tailwind Typography's unlayered rules would fight them. -->
   <div v-if="isLanding" class="ff-docs-landing w-full max-w-6xl mx-auto px-6 lg:px-10 pt-8 pb-24 text-left">
-    <Breadcrumbs :items="breadcrumbItems" />
+    <!-- The docs home has no trail to show: it would be the single word Docs. -->
+    <Breadcrumbs v-if="slugParts.length" :items="breadcrumbItems" />
     <ContentRenderer v-if="page" :value="page" />
   </div>
 
@@ -108,7 +109,6 @@ const surround = computed(() => {
           <!-- Breadcrumbs -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
-              <!-- On /docs itself this is the one unlinked "Docs" crumb, so every page opens the same way. -->
               <Breadcrumbs :items="breadcrumbItems" />
             </div>
           </div>
