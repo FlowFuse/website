@@ -998,8 +998,11 @@ h4:hover .header-anchor::before {
         font-weight: 400;
     }
 
+    /* The grey line under the header is a shadow, not a border, so it adds nothing to the
+       height that --ff-header-height below has to match. */
     .ff-website .ff-header {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
+        box-shadow: 0 1px 0 var(--color-gray-200);
     }
 
     /* The header pins itself to the top of the viewport, so anything else that wants to
