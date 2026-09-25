@@ -34,6 +34,10 @@ const pageTitle = computed(() => docsPageTitle(page.value, slugParts.value))
 // Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
 const plans = useDocsPlans(contentPath)
 
+// A contents page such as the docs home lays itself out from its own components, so it
+// gets the full width: no sidebar, no table of contents, no previous and next cards.
+const isLanding = computed(() => (page.value as { landing?: boolean } | null)?.landing === true)
+
 // /docs is assembled from two repos, so "Edit this page" has to point at whichever one
 // owns the page. Guides overlaid from this repo carry a ready-made `editUrl` (stamped by
 // nuxt/lib/guides-sync.mjs); everything else came from FlowFuse/flowfuse and is addressed
@@ -85,7 +89,14 @@ const surround = computed(() => {
 </script>
 
 <template>
-  <div class="w-full pl-6">
+  <!-- Not wrapped in .prose: every block on a landing page is a component that styles
+       itself, and Tailwind Typography's unlayered rules would fight them. -->
+  <div v-if="isLanding" class="ff-docs-landing w-full max-w-6xl mx-auto px-6 lg:px-10 pt-8 pb-24 text-left">
+    <Breadcrumbs :items="breadcrumbItems" />
+    <ContentRenderer v-if="page" :value="page" />
+  </div>
+
+  <div v-else class="w-full pl-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->
