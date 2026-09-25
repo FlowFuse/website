@@ -11,11 +11,14 @@ const props = withDefaults(defineProps<{
     detached?: boolean
     /** Open it with Cmd+K / Ctrl+K and from a `ff-docs-search:open` window event. Needs `detached`. */
     shortcut?: boolean
+    /** `lg` is the taller search field of a landing page's hero. Needs `detached`. */
+    size?: 'md' | 'lg'
 }>(), {
     placeholder: 'Search...',
     sourceId: 'content',
     detached: false,
     shortcut: false,
+    size: 'md',
 })
 
 const isMac = ref(true)
@@ -169,7 +172,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="ff-algolia" :class="{ 'ff-algolia--detached': detached }">
+  <div class="ff-algolia" :class="{ 'ff-algolia--detached': detached, 'ff-algolia--lg': detached && size === 'lg' }">
     <div ref="searchContainer" id="algolia-search" :class="detached ? '' : 'border border-gray-200 rounded'"></div>
     <kbd v-if="detached && shortcut" class="ff-algolia__kbd" aria-hidden="true">{{ isMac ? '⌘' : 'Ctrl' }} K</kbd>
   </div>
@@ -197,6 +200,13 @@ onMounted(async () => {
 
 .ff-algolia--detached :deep(#algolia-search .aa-DetachedSearchButton:hover) {
     border-color: #a5b4fc;
+}
+
+.ff-algolia--lg :deep(#algolia-search .aa-DetachedSearchButton) {
+    height: 3rem;
+    padding-left: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
 .ff-algolia__kbd {
