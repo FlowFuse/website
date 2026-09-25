@@ -50,7 +50,7 @@ As a national transmission system operator, Energinet operates under regulatory 
 - Operational transparency - Clear ownership and accountability for all systems supporting grid operations
 - Business continuity - Rapid recovery capability if any component fails
 
-The operational requirement was clear: establish a governed orchestration layer that could reliably collect data from [SCADA systems](/use-cases/scada/) and modern [IoT deployments](/use-cases/edge-connectivity/), transform it appropriately for different operational systems, and deliver it to time-series databases, monitoring platforms, and analytical tools - all while meeting the governance standards expected of critical national infrastructure.
+The operational requirement was clear: establish a governed orchestration layer that could reliably collect data from [SCADA systems](/use-cases/scada/) and modern [IoT deployments](/use-cases/remote-device-management/), transform it appropriately for different operational systems, and deliver it to time-series databases, monitoring platforms, and analytical tools - all while meeting the governance standards expected of critical national infrastructure.
 
 The decision criteria weren't technical - they were operational: Could a solution provide the reliability, governance, and lifecycle management required for a system that supports Denmark's energy security?
 

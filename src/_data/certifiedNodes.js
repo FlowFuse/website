@@ -43,6 +43,7 @@ const NAME_OVERRIDES = {
     "@flowfuse-certified-nodes/opcua": "OPC UA",
     "@flowfuse-certified-nodes/rtsp": "RTSP",
     "@flowfuse-certified-nodes/cip-suite": "CIP Suite",
+    "@flowfuse-certified-nodes/ffcn-kafka": "Kafka",
 };
 
 // Last resort when there is neither an override nor a catalogue `name`:

@@ -58,6 +58,13 @@ const CONTENT_SOURCES: ContentSource[] = [
         filter: entry => entry.layout !== 'redirect',
     },
     { collection: 'handbook', fileRoot: 'nuxt/content' },
+    {
+        collection: 'blueprints',
+        // Already git-derived once, at sync time, against the blueprint-library repo this
+        // content came from - not this repo's history.
+        lastmod: entry => stringField(entry, 'updated'),
+        images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
+    },
     { collection: 'changelog', fileRoot: 'src' },
     {
         collection: 'blog',

@@ -71,9 +71,28 @@ async function fetchCatalogueFeed (
     try {
         const data = await ofetch<CertifiedCatalogueResponse>(url)
         return (data.modules ?? []).map(m => normalizeCatalogueModule(m, tier, collection))
-    } catch {
+    } catch (error) {
+        // An empty list degrades to a hidden section rather than a broken page, which is
+        // what the .njk did too. /node-red/ is prerendered now, so that hidden section
+        // stays hidden until the next deploy - say which feed failed in the build log
+        // rather than leave a missing page section as the only evidence.
+        console.warn(`[integrations] catalogue feed ${url} is unavailable:`, error instanceof Error ? error.message : error)
         return []
     }
+}
+
+/*
+    Just the two FlowFuse Certified catalogues, each entry tagged with the one collection
+    it came from. fetchCatalogue() below merges these with the npm catalogue and the
+    flowfuse-nodes feed, and tags that last group `certified` too - so filtering its
+    result by tier returns more than these two feeds hold. /node-red/ lists exactly these,
+    which is what src/_data/certifiedNodes.js fetched before it was retired.
+*/
+export function fetchCertifiedCatalogues (): Promise<IntegrationCatalogEntry[][]> {
+    return Promise.all([
+        fetchCatalogueFeed(CERTIFIED_HUB_API, 'certified', 'hub'),
+        fetchCatalogueFeed(CERTIFIED_EDGE_API, 'certified', 'edge')
+    ])
 }
 
 export async function fetchCatalogue (): Promise<IntegrationCatalogEntry[]> {
