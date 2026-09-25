@@ -99,6 +99,10 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/solutions/uns/': { redirect: { to: '/use-cases/uns/', statusCode: 301 } },
     '/certified-nodes/': { redirect: { to: '/integrations/?certified=1', statusCode: 301 } },
     '/certified-nodes/**': { redirect: { to: '/integrations/?certified=1', statusCode: 301 } },
+    // 11ty copied every `images/` directory under src/ to the output, including the one in
+    // its template tree, so these industry illustrations were also served from this path.
+    // The same files are at /images/industries/.
+    '/_includes/images/industries/**': { redirect: { to: '/images/industries/**', statusCode: 301 } },
     '/docs/install/local/': { redirect: { to: '/docs/install/introduction/', statusCode: 301 } },
     '/docs/install/email_providers/': { redirect: { to: '/docs/install/email-providers/', statusCode: 301 } },
     '/docs/admin/user_management/': { redirect: { to: '/docs/admin/user-management/', statusCode: 301 } },
