@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // One option in a ::docs-choices list: a row that opens to a short explanation, then its
 // links. Two at most: the first is the option's main call to action and reads as a button,
-// the second a secondary action that reads as a plain link. A third choice would make the
-// reader weigh options inside an option.
+// the second reads as a plain link and leads to the page that explains the option, for the
+// reader who wants to learn more before starting. A third choice would make the reader
+// weigh options inside an option.
 defineProps<{
     label: string
     icon?: string
