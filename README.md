@@ -127,7 +127,7 @@ Every build resolves blueprints in this order, and logs which one it used:
 | 3 | A clone, authenticated with a minted GitHub App installation token (`GH_BOT_APP_ID`/`GH_BOT_APP_KEY`) | Nothing above applied, and those env vars are set. This is what Netlify production deploys use — `blueprint-library` is private, so this can't clone anonymously the way docs does. |
 | 4 | Skipped | Nothing above applied. Matches the previous behaviour for contributors without access to the private repo. |
 
-`npm run blueprints` runs that resolution on its own, writing `nuxt/content/blueprints` and `nuxt/public/blueprints`, both gitignored. `npm run dev` re-runs it whenever the resolved source changes (`scripts/watch_blueprints.js`), but only when it found a source to watch in the first place — no sibling checkout means no watching.
+`npm run blueprints` runs that resolution on its own, writing `nuxt/content/blueprints` and `nuxt/public/blueprints`, both gitignored. `npm run dev` re-runs it whenever the resolved source changes (`scripts/watch_blueprints.mjs`), but only when it found a source to watch in the first place — no sibling checkout means no watching.
 
 ## llms.txt
 

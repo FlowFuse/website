@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require("fs/promises");
-const path = require("path");
-const algoliasearch = require("algoliasearch");
-const site = require("../nuxt/data/site.json");
-const {
+import fs from "node:fs/promises";
+import path from "node:path";
+import algoliasearch from "algoliasearch";
+import {
     isSearchUrl,
     extractHeadingRecords,
     decodeEntities,
@@ -18,7 +17,9 @@ const {
     extractMetaKeywords,
     extractDateFromJsonLd,
     extractArticleSection,
-} = require("../lib/search-index");
+} from "../nuxt/lib/search-index.mjs";
+
+const site = JSON.parse(await fs.readFile(new URL("../nuxt/data/site.json", import.meta.url), "utf8"));
 
 const BATCH_SIZE = 1000;
 const MAX_RECORD_BYTES = 9800;
