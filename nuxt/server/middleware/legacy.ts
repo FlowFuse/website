@@ -15,11 +15,11 @@ const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 // left once its one referring blog post pointed at /contact-us/ instead) - but they stay
 // listed so their 301s in nuxt/redirects.ts are served by Nitro in dev rather than being
 // proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases', '/partners', '/industries', '/blueprints', '/events', '/platform']
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases', '/partners', '/industries', '/blueprints', '/events', '/platform', '/node-red']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
-// /careers, /community, /events, /free-consultation, /node-red, /platform, /webinars
+// /careers, /community, /events, /free-consultation, /platform, /webinars
 
 // New pages should never grow that fallback set: nuxt/lib/legacy-pages.test.mjs fails
 // `npm test` if a PR adds a new .njk file under src/ that doesn't already exist on main,
@@ -54,10 +54,8 @@ export default defineEventHandler(async (event) => {
     // The documentation below /node-red/ moved into /docs/, and every old URL now 301s
     // from nuxt/redirects-node-red.ts. Those are Nitro route rules, so the request has to
     // reach Nitro in dev rather than being proxied to 11ty, which no longer has the pages.
-    // /node-red itself is deliberately excluded and keeps falling through to 11ty: it is
-    // still a marketing page there, which is why the redirect map is explicit paths rather
-    // than a splat.
-    if (normalised !== '/node-red' && normalised.startsWith('/node-red/')) return
+    // /node-red itself is a Nuxt page now, so the whole prefix is listed above and the
+    // carve-out that used to keep just that path on 11ty is gone.
 
     // src/vs/images/** are still 11ty-owned files: they only reach nuxt/public/ through the
     // passthrough in a production build, so dev has to ask 11ty for them even though /vs is

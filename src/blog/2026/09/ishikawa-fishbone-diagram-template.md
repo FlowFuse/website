@@ -18,7 +18,7 @@ tldr: "Download a free fishbone (Ishikawa) diagram template to sort possible cau
 
 A [fishbone diagram](/blog/2026/07/ishikawa-fishbone-diagram/) template gives your team a fish shape to draw on instead of a blank whiteboard, so the session starts with brainstorming instead of formatting.
 
-Unlike a [5 Whys](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/) template, which documents one causal chain going deep, a fishbone template holds several categories side by side going wide. That shape is the whole point: it's built for the moment you don't yet know where a problem lives.
+Unlike a [5 Whys](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/) template, which documents one causal chain going deep, a fishbone template holds several categories side by side going wide. That shape is the whole point: it's built for the moment you don't yet know where a problem lives. If you're not sure which method fits your problem, see [5 Whys vs. fishbone diagram](/blog/2026/09/5-whys-vs-fishbone-diagram/).
 
 *Download the free template below and use it the next time your team needs to brainstorm causes across categories, not drill into one.*
 

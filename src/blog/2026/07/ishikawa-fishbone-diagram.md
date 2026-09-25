@@ -132,7 +132,7 @@ The fishbone rarely works alone, and it's easy to reach for the wrong tool. Here
 | **[5 Whys](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/)** | Goes deep. Drills a single cause chain, asking "why" until you hit something fixable rather than another symptom. | After the fishbone, on the two or three branches you think are strongest. | It's a single thread. Drill the wrong cause and you'll reach a confident, well-reasoned, wrong answer. |
 | **[Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/)** | Ranks. Sorts candidate causes by frequency or impact so you fix the vital few, not the trivial many. | You can count occurrences and need to decide where to act first. | Needs data you may not have early on, and only ranks what you already thought to measure. |
 
-The sequence is: fishbone to find suspects, 5 Whys to reach the root of the best ones, Pareto to decide which roots are worth fixing first. They're not competitors. They're a pipeline.
+The sequence is: fishbone to find suspects, 5 Whys to reach the root of the best ones, Pareto to decide which roots are worth fixing first. They're not competitors. They're a pipeline. For a closer look at the first two, including when one is enough on its own, see our [5 Whys vs. fishbone diagram comparison](/blog/2026/09/5-whys-vs-fishbone-diagram/).
 
 ## Fishbone Diagram Template
 

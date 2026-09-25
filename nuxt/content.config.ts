@@ -569,7 +569,7 @@ export default defineContentConfig({
                     quote: z.object({
                         text: z.string(),
                         author: z.string(),
-                        role: z.string(),
+                        role: z.string().optional(),
                         company: z.string(),
                         image: z.string(),
                         imageAlt: z.string(),

@@ -11,7 +11,7 @@ defineProps<{
         quote?: {
             text: string
             author: string
-            role: string
+            role?: string
             company: string
             image: string
             imageAlt: string
@@ -51,7 +51,7 @@ defineProps<{
                 <img :src="hero.quote.image" :alt="hero.quote.imageAlt" loading="eager">
               </div>
               <p class="italic text-gray-600 font-medium m-0">&ldquo;{{ hero.quote.text }}&rdquo;</p>
-              <p class="text-gray-500 text-right mt-4 mb-0">{{ hero.quote.author }}, {{ hero.quote.role }}, <span class="font-semibold text-gray-600">{{ hero.quote.company }}</span></p>
+              <p class="text-gray-500 text-right mt-4 mb-0">{{ hero.quote.author }}, <template v-if="hero.quote.role">{{ hero.quote.role }}, </template><span class="font-semibold text-gray-600">{{ hero.quote.company }}</span></p>
             </div>
           </div>
         </div>

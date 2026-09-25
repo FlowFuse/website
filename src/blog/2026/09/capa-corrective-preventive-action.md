@@ -66,6 +66,8 @@ A few methods cover most cases:
 - **[Fishbone (Ishikawa) diagram](/blog/2026/07/ishikawa-fishbone-diagram/):** Maps potential causes across categories such as people, methods, materials, and equipment. It's useful when a problem may have several contributing causes.
 - **Fault tree analysis:** Works backward from a failure, breaking it into the combination of conditions that had to be present for it to occur. It's commonly used for complex or safety-critical processes; NASA's [Fault Tree Handbook](https://s3vi.ndc.nasa.gov/ssri-kb/static/resources/Fault%20Tree%20Handbook_NASA.pdf) is a widely cited reference for the method.
 
+The 5 Whys and fishbone diagram are often used together; this [comparison of the two](/blog/2026/09/5-whys-vs-fishbone-diagram/) explains when each one fits.
+
 The investigation should draw on multiple sources of evidence, including process records, operator interviews, maintenance logs, and inspection results. A problem can have more than one contributing cause, so addressing only one may not prevent recurrence.
 
 ## Corrective Action vs. Preventive Action: Comparison
