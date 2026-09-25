@@ -1,5 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+// Runs once per page that carries the widget. It is also exposed as window.ffExpertInit,
+// because a page rendered by Nuxt mounts the widget after DOMContentLoaded has fired, and
+// mounts it again after client-side navigation.
+function ffExpertInit() {
     const modal = document.getElementById('ai-expert-modal');
+    if (!modal) return;
     const closeBtn = document.getElementById('close-modal');
     const tellMeHowBtn = document.getElementById('tell-me-how-btn');
     const chatMessages = document.getElementById('chat-messages');
@@ -145,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (tellMeHowBtn) {
         tellMeHowBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const textarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+            const textarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
             const userText = textarea ? textarea.value : '';
             const promptText = userText.trim();
             openModal(promptText);
@@ -194,14 +198,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle prompt pill clicks
-    document.addEventListener('click', function(e) {
+    if (window.__ffExpertPillClick) document.removeEventListener('click', window.__ffExpertPillClick);
+    window.__ffExpertPillClick = function(e) {
         if (e.target.classList.contains('prompt-pill') && e.target.dataset.prompt) {
             e.preventDefault();
             const promptText = e.target.dataset.prompt;
             if (typeof capture === 'function') capture('expert-prompt-pill-clicked', { prompt_title: e.target.textContent.trim(), page: location.pathname });
             openModal(promptText);
         }
-    });
+    };
+    document.addEventListener('click', window.__ffExpertPillClick);
 
     const prompts = [
         {
@@ -468,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
 
             // Get elements for transition
-            const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+            const homeTextarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
             const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
             // Target the entire input area div that contains textarea and footer text
             const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
@@ -548,7 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             // Fallback for browsers without View Transitions support
-            const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+            const homeTextarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
             const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
 
 
@@ -575,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeModal() {
-        const homeTextarea = document.querySelector('textarea[aria-label="Describe your workflow"]');
+        const homeTextarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
         const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
         const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
 
@@ -1505,6 +1511,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add click handler for flow copy buttons & code blocks
+    if (window.__ffExpertFlowClick) document.removeEventListener('click', window.__ffExpertFlowClick);
+    window.__ffExpertFlowClick = flowInteractionHandler;
     document.addEventListener('click', flowInteractionHandler);
 
 
@@ -1562,4 +1570,11 @@ document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('message', messageHandler);
         }
     });
-});
+}
+
+window.ffExpertInit = ffExpertInit;
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ffExpertInit);
+} else {
+    ffExpertInit();
+}
