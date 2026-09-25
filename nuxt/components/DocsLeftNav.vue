@@ -25,9 +25,29 @@ const items = computed((): NavigationMenuItem[] => [
   <div class="pt-6 max-lg:contents">
     <!-- Below lg the header carries a search button instead. This stays mounted there, hidden,
          because that button opens this component's dialog. -->
-    <div class="max-lg:hidden mb-4 pr-2">
+    <div class="ff-docs-left-nav__search max-lg:hidden pr-2">
       <AlgoliaSearch index-filter="category:docs" placeholder="Search in Docs..." source-id="docs" detached shortcut />
     </div>
-    <SidebarNav :items="items" label="Documentation" />
+    <SidebarNav :items="items" label="Documentation" class="ff-docs-left-nav__nav" />
   </div>
 </template>
+
+<style scoped>
+/* The first group heading sits under the search field level with the page title: its
+   capitals start where the title's do (the 36px h1's cap top is 23px lower than this
+   label's would be straight under the field). Nuxt UI pads every label to separate it from
+   the group above; the first has no group above, so it loses that padding. */
+@media (min-width: 1024px) {
+    .ff-docs-left-nav__search {
+        margin-bottom: 23px;
+    }
+
+    .ff-docs-left-nav__nav {
+        padding-top: 0;
+    }
+
+    .ff-docs-left-nav__nav :deep(nav > ul > li:first-child > [data-slot="label"]) {
+        padding-top: 0;
+    }
+}
+</style>
