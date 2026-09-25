@@ -5,3 +5,4 @@
 slug: scada
 title: "FlowFuse for SCADA"
 problem: "Modernize SCADA with low-code flows that connect legacy hardware, stream real-time data, and drive dashboards and alerts from a single platform."
+industries: ["energy-utilities"]
