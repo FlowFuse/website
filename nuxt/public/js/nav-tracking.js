@@ -16,9 +16,8 @@
  * zone and section come from `data-nav-zone` / `data-nav-section` attributes
  * rather than styling classes, so the instrumentation survives a restyle.
  *
- * Served at /js/nav-tracking.js on both stacks from this single source: 11ty
- * passes it through, and the Nuxt build copies the 11ty output into
- * nuxt/public/ (see the prod:eleventy-nuxt script).
+ * Served as-is from nuxt/public/js/, and loaded by app.head.script in
+ * nuxt/nuxt.config.ts.
  */
 (function () {
     'use strict'

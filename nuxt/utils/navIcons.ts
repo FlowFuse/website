@@ -5,7 +5,7 @@
 // directory would inline all of it (~137 KB, including large unused art) into the
 // client bundle.
 //
-// Adding a nav entry with a new icon means adding one line here. nuxt/lib/chrome.test.mjs
+// Adding a nav entry with a new icon means adding its import and its map entry here. nuxt/lib/chrome.test.mjs
 // fails if chrome.json names a key this map does not cover, so CI will tell you.
 
 import iAcademicCap from '../assets/nav-icons/academic-cap.svg?raw'

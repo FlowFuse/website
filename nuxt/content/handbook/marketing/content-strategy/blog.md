@@ -350,7 +350,7 @@ Additionally, the tags you assign to your content will be output as [meta keywor
 
 ### Adding Images
 
-Images can be added into the respective `/blog/<year>/<month>/images` folder.
+Images go in `nuxt/public/blog/<year>/<month>/images/`, the same year and month as the post.
 
 The image can then be referenced in the markdown file like so:
 

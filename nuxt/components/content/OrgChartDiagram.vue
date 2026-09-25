@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-// TODO: replace with queryCollection('team').order('order', 'ASC').all() once src/_data/team/ is migrated to a Nuxt content collection
+// TODO: replace with queryCollection('team').order('order', 'ASC').all() once nuxt/data/team/ is migrated to a Nuxt content collection
 const teamModules = import.meta.glob('../../data/team/*.json', { eager: true, import: 'default' })
 const team = Object.values(teamModules).sort((a, b) => a.order - b.order)
 

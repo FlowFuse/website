@@ -1006,11 +1006,9 @@ h4:hover .header-anchor::before {
        stops shift colour in staggered sequence, so the colour flows across the
        letterforms rather than a block passing over them.
 
-       Both front ends are driven from here. The 11ty includes
-       (components/flowfuse-wordmark*.njk, components/flowfuse-square.svg) and the
-       Nuxt components (AppHeader.vue, AppFooter.vue) each carry the gradient, and
-       Nuxt links this same stylesheet via nuxt.config.ts, so one rule set covers
-       both. Keep the gradients at five stops or the stagger below goes uneven.
+       AppHeader.vue and AppFooter.vue each carry the gradient, and nuxt.config.ts
+       links this stylesheet, so one rule set covers both. Keep the gradients at five
+       stops or the stagger below goes uneven.
 
        The colours are custom properties because the three marks rest on different
        fills: brand orange for the wordmark, a lighter red for the tablet square
@@ -2799,7 +2797,7 @@ lite-youtube::before {
 }
 
 /* Mega highlight card: an image-only promo slot at the left of every mega
-   dropdown (configured in src/_data/navHighlights.json). From 860px up the panel
+   dropdown (configured in nuxt/data/navHighlights.json). From 860px up the panel
    gains a leading track for the card and the three category columns shift one
    track to the right, so the card always owns a column of its own and can never
    squash or collide with the links. Three bands, each with the widest card its
@@ -2823,8 +2821,7 @@ lite-youtube::before {
    track 1 now belongs to the card, which would otherwise push group 1 into the
    first free cell of an already occupied column. Keyed on DOM order (the card,
    then a title plus a link list per group) rather than on those utility classes,
-   because the 11ty header and the Vue header share the DOM shape and this one
-   stylesheet drives both: no markup change on either side. Only grid-row-START is
+   so the rule needs no markup change in the header. Only grid-row-START is
    set on the link lists, never the grid-row shorthand, because their row-span-*
    and grid-rows-subgrid come from the markup and must survive. */
 @media (min-width: 860px) {
@@ -3145,8 +3142,7 @@ lite-youtube::before {
 }
 
 /* De-emphasize "See all ..." index links in the mega panels and footer.
-   Keyed on the index-page hrefs so the shared stylesheet covers both the
-   11ty and Vue headers without markup changes. */
+   Keyed on the index-page hrefs so it needs no markup changes. */
 /* Rest colour is carried by the inner .ff-nav-label span (the arrow icon uses
    the anchor's currentColor), so both must be de-emphasized. */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
@@ -3679,12 +3675,11 @@ lite-youtube::before {
     border-radius: 0.5rem;
 }
 
-/* Top utility bar. Shared by the Eleventy include (top-utility-bar.njk) and the
-   Nuxt component (AppUtilityBar.vue) so the two cannot drift: these rules used
-   to live in an inline <style> in the Eleventy include only, which left the
-   Nuxt bar without the hover underline. Deliberately unlayered, so the hover
-   rule outranks the hover:no-underline utility on the links. The announce rules
-   set the initial rotation state before the rotation script runs. */
+/* Top utility bar (AppUtilityBar.vue). These rules once lived in an inline <style>
+   in the Eleventy include only, which left the Nuxt bar without the hover underline.
+   Deliberately unlayered, so the hover rule outranks the hover:no-underline utility
+   on the links. The announce rules set the initial rotation state before the rotation
+   script runs. */
 .ff-utility-announce > .ff-utility-item { display: none; }
 .ff-utility-announce > .ff-utility-item:first-child { display: inline-flex; }
 .ff-utility-bar a:hover { text-decoration: underline; text-underline-offset: 2px; }

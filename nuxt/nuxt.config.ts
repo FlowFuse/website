@@ -339,7 +339,8 @@ export default defineNuxtConfig({
     linkChecker: {
         failOnError: true,
         // trailing-slash: every URL on this site ends in one, by design (site.trailingSlash)
-        // no-error-response: too many false positives from links this build cannot resolve
+        // no-error-response: skipped while 11ty pages were absent from this build's output;
+        // not re-checked since they all moved to Nuxt
         skipInspections: ['trailing-slash', 'no-error-response'],
         // By default the module re-inspects every prerendered page once the build finishes,
         // and that pass has grown with the page count: 4m34s over 251 routes on 28 Jul,
@@ -512,9 +513,8 @@ export default defineNuxtConfig({
                     '/use-cases/mes/',
                     '/use-cases/scada/',
                     '/use-cases/uns/',
-                    // /ai was only linked from pages the prerender crawler did not parse,
-                    // so it is listed explicitly; harmless now that they are all Nuxt
-                    // or the route is missing from nuxt/dist and every link to it breaks.
+                    // crawlLinks is off, so a .vue page is prerendered only if it is listed here.
+                    // Without this /ai is missing from nuxt/dist and every link to it breaks.
                     '/ai',
                     '/industries/automotive',
                     '/industries/industrial-machinery',

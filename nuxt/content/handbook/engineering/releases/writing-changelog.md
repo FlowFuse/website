@@ -116,7 +116,7 @@ That said, every post should answer four questions:
 
 ### Screenshots
 
-Include a screenshot for any visual change. Put it in an `images/` folder beside the post and reference it like this:
+Include a screenshot for any visual change. Put it in `nuxt/public/changelog/YYYY/MM/images/`, the same year and month as the post, and reference it like this:
 
 ```markdown
 ![Alt text](./images/image.png)

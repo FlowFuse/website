@@ -1,6 +1,6 @@
 // Logo filenames for the social-proof carousel, mirroring the `homeLogos`
 // Eleventy collection. Uses import.meta.glob (like useTeam.ts) instead of a
-// runtime readdirSync, which fails once deployed (no src/ in the function bundle).
+// runtime readdirSync, which fails once deployed (nuxt/public/ is not in the function bundle).
 const logoModules = import.meta.glob('../public/images/home-logos/*.{png,svg}')
 
 const logoFiles = Object.keys(logoModules).map(path => path.split('/').pop() as string)

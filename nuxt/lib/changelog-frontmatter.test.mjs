@@ -1,4 +1,4 @@
-// Validates the frontmatter of every changelog entry in src/changelog/.
+// Validates the frontmatter of every changelog entry in nuxt/content/changelog/.
 //
 // These entries are hand-authored by engineering and product (see the handbook,
 // Writing Changelog Posts), and the listing page groups them by release. A wrong or

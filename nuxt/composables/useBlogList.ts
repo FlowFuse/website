@@ -22,7 +22,7 @@ export const BLOG_TAG_TOPICS: Record<string, string> = {
     tips: 'Node-RED tips',
 }
 
-// Mirrors .eleventy.js's DEV_MODE_POSTS: future-dated posts are hidden outside production,
+// Mirrors what .eleventy.js's DEV_MODE_POSTS did: future-dated posts are hidden in production only,
 // so deploy previews and dev can still preview scheduled posts. The flag is baked at build
 // time (see nuxt.config.ts) rather than read from process.env here: a scheduled post gets no
 // prerendered file, so its URL is served by the Netlify function, where process.env.CONTEXT

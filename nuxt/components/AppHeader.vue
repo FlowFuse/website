@@ -1,8 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import navHighlights from '../data/navHighlights.json'
-// Shared with the Eleventy layout, which reads the same file as an 11ty _data
-// global. Edit the nav or footer there and both renderers follow.
+// The nav and footer links live in nuxt/data/chrome.json; edit them there.
 import chrome from '../data/chrome.json'
 
 const hl = (key) => {

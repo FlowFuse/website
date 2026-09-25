@@ -1,7 +1,7 @@
-// Guards on src/_data/chrome.json, the shared marketing nav and footer.
+// Guards on nuxt/data/chrome.json, the shared marketing nav and footer.
 //
-// The file is rendered by two independent templates, so the things that can drift
-// are checked here rather than left to a reviewer noticing.
+// The file is rendered by two independent components (AppHeader.vue and AppFooter.vue),
+// so the things that can drift are checked here rather than left to a reviewer noticing.
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
@@ -28,7 +28,7 @@ test('every icon key resolves to an icon file', () => {
 })
 
 test('every icon key is in the Nuxt icon map', () => {
-    // Eleventy loads icons off disk by name, Nuxt needs an explicit import.
+    // navIcons.ts imports each icon explicitly, so a key missing there renders nothing.
     const map = readFileSync(join(repo, 'nuxt/utils/navIcons.ts'), 'utf8')
     const covered = new Set([...map.matchAll(/^\s*'([^']+)':/gm)].map(m => m[1]))
     for (const { icon, label } of navLinks) {
@@ -67,7 +67,8 @@ test('no nav or footer link points at a redirected path', () => {
 })
 
 test('both Tailwind builds resolve an @source onto the data file', () => {
-    // There are two independent Tailwind builds: src/css/style.css for Eleventy and
+    // There are two independent Tailwind builds: nuxt/assets/css/style.css, which
+    // prod:postcss-nuxt compiles to nuxt/public/css/style.css, and
     // nuxt/assets/css/theme.css for the Nuxt bundle, which only scans nuxt/ and is
     // loaded second. A utility that exists in one build but not the other loses to
     // any lower-breakpoint rule the later sheet does have. Dropping either @source

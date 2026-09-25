@@ -1,5 +1,5 @@
 /* Skips the preflight reset (unlike the "tailwindcss" shorthand) — it would
-   duplicate the one src/css/style.css already serves for both 11ty and Nuxt. */
+   duplicate the one assets/css/style.css already serves as /css/style.css. */
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 @import "@nuxt/ui";
@@ -28,7 +28,7 @@
     --ui-text-highlighted: var(--color-gray-700);
 }
 
-/* Same base heading sizes as src/css/style.css (11ty). Declared here, not just
+/* Same base heading sizes as assets/css/style.css. Declared here, not just
    there, because Tailwind v4's Preflight (imported above) loads after that
    legacy stylesheet in <head> and wins equal-specificity ties on h1-h5.
    Wrapped in @layer base so inline inline classes (which
