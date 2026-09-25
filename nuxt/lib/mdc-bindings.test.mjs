@@ -1,15 +1,13 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
-import { dirname, join, relative } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { join, relative } from 'node:path'
 
 import { findFiles } from './find-files.mjs'
 import { GUIDES_SOURCE } from './guides-sync.mjs'
 import { isDirectory } from './meta-title-length.mjs'
 import { bindableMustaches, unclosedMdcBlocks } from './mdc-bindings.mjs'
-
-const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..')
+import { REPO_ROOT } from './repo-root.mjs'
 
 // The trees this repository owns and always has in a checkout. FlowFuse/flowfuse's own
 // docs go through the same MDC pipeline and the same function checks them, but they are

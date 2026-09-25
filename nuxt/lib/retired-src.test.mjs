@@ -4,11 +4,8 @@
 // merges cleanly into src/blog/, and the only sign is a page that never appears.
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { dirname, join } from 'node:path'
 import { test } from 'node:test'
-import { fileURLToPath } from 'node:url'
-
-const repo = join(dirname(fileURLToPath(import.meta.url)), '..', '..')
+import { REPO_ROOT as repo } from './repo-root.mjs'
 
 test('nothing is tracked under src/', (t) => {
     let tracked

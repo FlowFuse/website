@@ -1,10 +1,11 @@
 import { defineNuxtModule, useLogger } from '@nuxt/kit'
-import { dirname } from 'node:path'
 
 // Lives in nuxt/lib/, not alongside this file: Nuxt auto-registers everything in
 // nuxt/modules/ as a Nuxt module, so a plain helper there fails the build.
 // @ts-ignore untyped module, kept as plain JS so `node --test` can run it directly
 import { syncBlueprints } from '../lib/blueprints-sync.mjs'
+// @ts-ignore same
+import { findRepoRoot } from '../lib/repo-root.mjs'
 import { BLUEPRINTS_PAGE_SIZE } from '../composables/useBlueprintList'
 
 const logger = useLogger('blueprints-source')
@@ -13,7 +14,7 @@ export default defineNuxtModule({
     meta: { name: 'blueprints-source' },
     async setup (_options, nuxt) {
         const nuxtRoot = nuxt.options.rootDir
-        const repoRoot = dirname(nuxtRoot)
+        const repoRoot = findRepoRoot(nuxtRoot)
 
         const { entries } = await syncBlueprints({ repoRoot, nuxtRoot, logger })
 

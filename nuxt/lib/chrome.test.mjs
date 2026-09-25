@@ -6,9 +6,8 @@ import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { test } from 'node:test'
-import { fileURLToPath } from 'node:url'
+import { REPO_ROOT as repo } from './repo-root.mjs'
 
-const repo = join(dirname(fileURLToPath(import.meta.url)), '..', '..')
 const chrome = JSON.parse(readFileSync(join(repo, 'nuxt/data/chrome.json'), 'utf8'))
 
 const navLinks = chrome.header.dropdowns.flatMap(d => d.columns.flatMap(c => c.links))
