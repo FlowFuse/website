@@ -1,7 +1,5 @@
 .DS_Store
-_site
 node_modules
-src/handbook/media
 nuxt/content/docs/
 # Synced from FlowFuse/blueprint-library by nuxt/modules/blueprints-source.ts. The
 # Build Site workflow force-adds this tree to the `live` branch that Netlify deploys,
@@ -12,9 +10,6 @@ nuxt/content/blueprints/
 .vscode/
 
 .env
-
-# Cache for assets
-.cache
 
 # Local Netlify folder
 .netlify

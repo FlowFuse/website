@@ -17,8 +17,8 @@ interface TeamMember {
     blog?: string
 }
 
-const teamModules = import.meta.glob('../../src/_data/team/*.json', { eager: true, import: 'default' })
-const guestModules = import.meta.glob('../../src/_data/guests/*.json', { eager: true, import: 'default' })
+const teamModules = import.meta.glob('../data/team/*.json', { eager: true, import: 'default' })
+const guestModules = import.meta.glob('../data/guests/*.json', { eager: true, import: 'default' })
 
 function keyFor(path: string): string {
     return path.split('/').pop()!.replace(/\.json$/, '')

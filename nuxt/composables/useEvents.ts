@@ -1,5 +1,5 @@
 import { parse as parseYaml } from 'yaml'
-import eventsRaw from '../../src/_data/events.yaml?raw'
+import eventsRaw from '../data/events.yaml?raw'
 
 export interface SiteEvent {
     type: string
