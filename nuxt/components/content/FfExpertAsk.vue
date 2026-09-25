@@ -73,14 +73,16 @@ function track () {
 </template>
 
 <style scoped>
-/* The box fills whatever height it is given, so beside a taller card (DocsColumns) the two
-   stand the same height. */
+/* The box fills whatever width and height it is given, so beside a taller card
+   (DocsColumns) the two stand the same height and the box spans its column. */
 .ff-expert-ask {
     display: flex;
 }
 
 .ff-expert-ask__box {
     display: flex;
+    flex: 1;
+    min-width: 0;
 }
 
 .ff-expert-ask__card {
