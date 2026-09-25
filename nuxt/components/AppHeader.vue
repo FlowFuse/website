@@ -220,10 +220,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Docs pages show "Docs" beside the logo. Below lg that pair is the square mark and
-   "Docs", on phones and tablets alike; the wordmark and "Docs" would crowd out the search
-   and Book a demo buttons. */
-@media (max-width: 1023px) {
+/* Docs pages show "Docs" beside the logo. Below xl that pair is the square mark and
+   "Docs": with the wordmark, the menus came within 16px of "Docs" at 1100px, and the
+   square keeps at least 70px between them from there up. From xl, where the header
+   centres its menus, the wordmark has room (about 100px). */
+@media (max-width: 1279px) {
     .ff-header--docs .ff-logo-link--wordmark {
         display: none;
     }
@@ -233,18 +234,20 @@ onMounted(() => {
     }
 }
 
-/* Beside the wordmark, "Docs" reads as one lockup with it: its capitals are as tall as the
-   wordmark's (20px, and Heebo's cap height is 0.711em, so 28px) and it sits on the same
-   baseline. With line-height 1 and centred on the 32px logo box, a 28px line puts its
-   baseline 1px above the wordmark's, hence the nudge. Lighter and grey, so the brand still
-   leads. */
+/* Beside the wordmark, "Docs" reads as one lockup with it, measured at 4x zoom:
+   - weight 700, whose stems (4px at this size) match the wordmark's (3.9px);
+   - 29px, which splits Heebo's proportions against the wordmark's: capitals 0.6px taller
+     (20.6 against 20) and lowercase 0.4px shorter (15.6 against 16);
+   - the same baseline: with line-height 1, centred on the 32px logo box, the line sits 1px
+     high, hence the nudge.
+   Grey, so the brand colour still leads. */
 .ff-docs-brand-label {
     position: relative;
     top: 1px;
     margin-left: 0.625rem;
-    font-size: 1.75rem;
+    font-size: 29px;
     line-height: 1;
-    font-weight: 400;
+    font-weight: 700;
     color: #374151;
     white-space: nowrap;
     text-decoration: none;
@@ -255,9 +258,9 @@ onMounted(() => {
 }
 
 /* Beside the square mark the label is a size down. The tablet header is the tightest (the
-   nav, docs search, Free Trial and Book a demo share one row), and at 768px the larger label
+   nav, docs search, Free Trial and Book a demo share one row), and at 768px a larger label
    pushed Book a demo past the edge. */
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
     .ff-docs-brand-label {
         top: 0;
         margin-left: 0.5rem;
