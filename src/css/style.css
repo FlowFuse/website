@@ -46,6 +46,10 @@
     --text-page-h1--line-height: 3rem;
     --text-post-h4: 1.25rem;
     --shadow-nav: 0px 10px 20px #11182766;
+    /* Layered "lift" shadow for hover cards (after ramp.com): denser near the card and
+       fading as it spreads, which reads as floating where one shadow reads as flat. Falls
+       down-right. Used as after:shadow-lift and faded in by opacity, not transitioned. */
+    --shadow-lift: 125px 175px 86px 0px rgb(0 0 0 / 0.01), 70px 99px 73px 0px rgb(0 0 0 / 0.05), 31px 44px 54px 0px rgb(0 0 0 / 0.09), 8px 11px 30px 0px rgb(0 0 0 / 0.10);
 }
 
 @layer base {
@@ -462,7 +466,8 @@ dl.message-properties > dd {
     @apply p-1.5 sm:p-3 md:p-4;
 }
 
-.ff-terminal-frame__screen img {
+.ff-terminal-frame__screen img,
+.ff-terminal-frame__screen video {
     @apply block w-full h-auto rounded;
 }
 
@@ -520,6 +525,21 @@ dl.message-properties > dd {
     overflow-x: auto;
     overscroll-behavior-x: contain;
     @apply rounded-lg p-4;
+}
+
+/* A sentence, not an address. The stacked block holds one line on purpose, which is
+   right for something you read left to right and paste. For a prompt it is wrong
+   twice over: nowrap sizes the block to the whole sentence, so it pushes out of its
+   column and past the card's edge, and the half you cannot see is the half that
+   tells you what the prompt does.
+
+   word-break goes back to normal, overriding the base rule's break-all, so words
+   stay whole; overflow-wrap lets the address break if it has to. */
+.ff-command--stacked.ff-command--wrap .ff-command__text {
+    white-space: pre-wrap;
+    overflow-x: visible;
+    word-break: normal;
+    overflow-wrap: anywhere;
 }
 
 /* Self-hosted address control. Under the block, not inside it: the block is what you
@@ -3434,6 +3454,9 @@ lite-youtube::before {
     height: 1rem;
     width: 1rem;
     flex: none;
+}
+.ff-agent-tab--active .ff-agent-tab__mark--mono {
+    filter: brightness(0) invert(1);
 }
 
 .ff-agent-panel {

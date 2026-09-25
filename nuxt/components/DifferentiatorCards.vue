@@ -48,7 +48,7 @@ withDefaults(defineProps<{
       :key="diff.heading"
       class="rounded-lg bg-gradient-to-br from-indigo-50/50 to-red-50/50 p-6 pt-8 flex flex-col gap-4 text-center md:text-left"
     >
-      <Icon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
+      <UIcon :name="diff.icon" class="w-6 h-6 text-indigo-600 mx-auto md:mx-0" />
       <h3 class="text-xl font-semibold text-indigo-600">{{ diff.heading }}</h3>
       <p v-if="diff.lead" class="font-medium leading-snug m-0 -mb-6">{{ diff.lead }}</p>
       <p class="mb-0" :class="descriptionClass" v-html="diff.description" />

@@ -11,6 +11,11 @@ import type { NitroRouteRules } from 'nitropack'
 import { nodeRedRedirects } from './redirects-node-red'
 
 export const redirects: Record<string, NitroRouteRules> = {
+    // src/careers.njk was a page whose only content was a <script> calling
+    // location.replace(site.jobBoard). A real redirect instead: no blank page while the
+    // script runs, and it works with JavaScript disabled. 302 rather than 301 because the
+    // board's address is not a permanent property of this URL.
+    '/careers/': { redirect: { to: 'https://boards.greenhouse.io/flowfuse', statusCode: 302 } },
     ...nodeRedRedirects,
     '/handbook/product/': { redirect: { to: '/handbook/engineering/product/', statusCode: 301 } },
     '/handbook/product/blueprints/': { redirect: { to: '/handbook/engineering/blueprints/', statusCode: 301 } },
@@ -43,7 +48,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/unified-namespace/': { redirect: { to: '/use-cases/uns/', statusCode: 301 } },
     '/solutions/manufacturing/': { redirect: { to: '/use-cases/it-ot-middleware/', statusCode: 301 } },
     '/platform/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
-    '/solutions/device-management/': { redirect: { to: '/use-cases/edge-connectivity/', statusCode: 301 } },
+    '/solutions/device-management/': { redirect: { to: '/use-cases/remote-device-management/', statusCode: 301 } },
     '/blueprints/manufacturing/andon-task/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
     '/email-signature/': { redirect: { to: '/handbook/design/branding/#email-signature', statusCode: 301 } },
     '/landing/technology-migration-1/': { redirect: { to: '/vs/kepware/', statusCode: 301 } },
@@ -60,6 +65,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/team/': { redirect: { to: '/about/', statusCode: 301 } },
     '/team': { redirect: { to: '/about/', statusCode: 301 } },
     '/docs/user/assistant/': { redirect: { to: '/docs/user/expert/', statusCode: 301 } },
+    '/docs/flowfuse-nodes/ai/onxx/': { redirect: { to: '/docs/flowfuse-nodes/ai/onnx/', statusCode: 301 } },
     '/handbook/development/': { redirect: { to: '/handbook/engineering/', statusCode: 301 } },
     '/handbook/development/tools/': { redirect: { to: '/handbook/engineering/tools/', statusCode: 301 } },
     '/handbook/development/support/': { redirect: { to: '/handbook/engineering/support/', statusCode: 301 } },
@@ -85,7 +91,8 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/handbook/development/releases/process/': { redirect: { to: '/handbook/engineering/releases/process/', statusCode: 301 } },
     '/handbook/development/releases/digital-ocean/': { redirect: { to: '/handbook/engineering/releases/digital-ocean/', statusCode: 301 } },
     '/solutions/data-integration/': { redirect: { to: '/use-cases/data-integration/', statusCode: 301 } },
-    '/solutions/edge-connectivity/': { redirect: { to: '/use-cases/edge-connectivity/', statusCode: 301 } },
+    '/solutions/edge-connectivity/': { redirect: { to: '/use-cases/remote-device-management/', statusCode: 301 } },
+    '/use-cases/edge-connectivity/': { redirect: { to: '/use-cases/remote-device-management/', statusCode: 301 } },
     '/solutions/it-ot-middleware/': { redirect: { to: '/use-cases/it-ot-middleware/', statusCode: 301 } },
     '/solutions/mes/': { redirect: { to: '/use-cases/mes/', statusCode: 301 } },
     '/solutions/scada/': { redirect: { to: '/use-cases/scada/', statusCode: 301 } },
@@ -99,6 +106,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/legal/terms/': { redirect: { to: '/terms/', statusCode: 301 } },
     '/book-a-demo/': { redirect: { to: '/book-demo/', statusCode: 301 } },
+    '/roi/': { redirect: { to: '/resources/roi-calculator/', statusCode: 301 } },
     '/education/': { redirect: { to: '/docs/node-red/', statusCode: 301 } },
     '/handbook/marketing/education/': { redirect: { to: '/handbook/marketing/', statusCode: 301 } },
     '/handbook/sales/org/account-executives/': { redirect: { to: '/handbook/sales/sales-team/', statusCode: 301 } },
@@ -185,4 +193,17 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/application-guide/node-red/overview/': { redirect: { to: '/docs/node-red-guide/', statusCode: 301 } },
     '/application-guide/node-red/patterns/': { redirect: { to: '/docs/node-red-guide/patterns/', statusCode: 301 } },
     '/application-guide/node-red/worked-examples/': { redirect: { to: '/docs/node-red-guide/worked-examples/', statusCode: 301 } },
+
+    // /community/newsletter/ was an orphan page: nothing on the site links to it, its
+    // archive of past issues hadn't been updated since November 2023, and the sign-up
+    // form it hosted is duplicated elsewhere (src/_includes/explore-more-content.njk,
+    // nuxt/components/ThankYouExploreMore.vue). Removed rather than ported.
+    '/community/newsletter/': { redirect: { to: '/blog/', statusCode: 301 } },
+
+    // /free-consultation/ was also an orphan: its one referring link
+    // (src/blog/2024/03/low-code-is-better.md) now points at /contact-us/ instead, and
+    // nothing else on the site linked to it. Removed rather than ported; redirected to
+    // /contact-us/ (the nearest live equivalent) for anyone with an old bookmark or an
+    // indexed link.
+    '/free-consultation/': { redirect: { to: '/contact-us/', statusCode: 301 } },
 }

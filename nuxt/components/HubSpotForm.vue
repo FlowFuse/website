@@ -14,6 +14,12 @@ const props = withDefaults(defineProps<{
     compact: false,
 })
 
+// HubSpot's onFormSubmitted, which fires once the submission has gone through (as opposed
+// to onFormSubmit, which fires on the attempt and is what `cta` tracks). The Dashboard 1.0
+// importer on /platform/dashboard/ gates its conversion on this, the way hs-form.njk's
+// `onFormSubmitted` hook did.
+const emit = defineEmits<{ submitted: [] }>()
+
 const containerId = `hs-form-${props.formId.replace(/-/g, '')}`
 const region = props.region ?? 'eu1'
 const portalId = props.portalId ?? '26586079'
@@ -54,6 +60,7 @@ onMounted(async () => {
                     }
                 }
             } : {}),
+            onFormSubmitted: () => emit('submitted'),
         })
     } catch {
         showFallback.value = true

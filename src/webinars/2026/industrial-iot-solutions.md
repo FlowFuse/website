@@ -10,13 +10,13 @@ meta:
             Industrial IoT (IIoT) is the use of connected sensors and devices to collect data from industrial operations and feed it into software for monitoring and real-time action. FlowFuse is the platform that runs on top of that data: the flows that connect it, the dashboards that display it, and the governance that keeps it under control.
         - question: "What's the difference between FlowFuse Hub, Edge, and Fleet?"
           answer: >
-            Hub integrates enterprise systems and <a href="/docs/node-red/core-nodes/network/http-request/">APIs</a> for IT teams. Edge connects <a href="/landing/plc/">PLCs</a> and machines across sites for OT teams. Fleet manages <a href="/node-red/">Node-RED</a> across thousands of distributed devices. All three run on the same platform; the difference is which deployment shape each one is built for.
+            Hub integrates enterprise systems and [APIs](/docs/node-red/core-nodes/network/http-request/) for IT teams. Edge connects [PLCs](/landing/plc/) and machines across sites for OT teams. Fleet manages [Node-RED](/node-red/) across thousands of distributed devices. All three run on the same platform; the difference is which deployment shape each one is built for.
         - question: "How do I know which industrial IoT solution is right for my setup?"
           answer: >
-            It comes down to where your applications live: a data center (<a href="/product/hub/">Hub</a>), a plant floor (<a href="/product/edge/">Edge</a>), or thousands of field devices (<a href="/product/fleet/">Fleet</a>). We'll walk through all three live in the webinar and help map your specific setup to one of them. Bring your architecture and we'll sort it live in the Q&A.
+            It comes down to where your applications live: a data center ([Hub](/product/hub/)), a plant floor ([Edge](/product/edge/)), or thousands of field devices ([Fleet](/product/fleet/)). We'll walk through all three live in the webinar and help map your specific setup to one of them. Bring your architecture and we'll sort it live in the Q&A.
         - question: "Can I build real-time dashboards with FlowFuse?"
           answer: >
-            Yes. <a href="/platform/dashboard/">FlowFuse Dashboard</a> ships with five <a href="https://dashboard.flowfuse.com/nodes/config/ui-theme.html">built-in themes</a>, all WCAG AA contrast-compliant, so dark mode stays legible instead of washed out. <a href="https://dashboard.flowfuse.com/nodes/widgets/ui-chart">Charts</a> render live instead of leaving empty boxes, and tables show readable dates instead of raw epoch numbers, on top of smaller fixes that keep labels and gauges inside their cards at narrow widths. We'll demo it during the webinar,
+            Yes. [FlowFuse Dashboard](/platform/dashboard/) ships with five [built-in themes](https://dashboard.flowfuse.com/nodes/config/ui-theme.html), all WCAG AA contrast-compliant, so dark mode stays legible instead of washed out. [Charts](https://dashboard.flowfuse.com/nodes/widgets/ui-chart) render live instead of leaving empty boxes, and tables show readable dates instead of raw epoch numbers, on top of smaller fixes that keep labels and gauges inside their cards at narrow widths. We'll demo it during the webinar,
         - question: "Do I need to already use FlowFuse to attend?"
           answer: >
             No. The webinar works for both first-time evaluators and current customers. If you're new, you'll leave knowing which product to trial and how to start. If you already run FlowFuse, you'll leave knowing what's changed and which workarounds you get to delete.
@@ -25,7 +25,7 @@ date: 2026-09-29
 time: 17:00 CET (11:00am ET)
 duration: 60
 video:
-hosts: ["kristopher-sandoval", "jamie-strusz", "drew-gatti"]
+hosts: ["kristopher-sandoval", "drew-gatti"]
 hubspot:
     formId: 203e22c0-4c24-467d-b8fc-645160fa31f0
     downloadFormId:
@@ -40,7 +40,7 @@ Picture your average day. Maybe it looks like a plant losing millions of dollars
 
 Every one of those problems is real and until now, all of them got handed the same generic platform and told to make it fit. That changes today. We're launching three industrial IoT solutions: FlowFuse Hub, FlowFuse Edge, and FlowFuse Fleet — each built around one of those real jobs, not a tier or a bundle.
 
-Join Kristopher Sandoval (Product Marketing), Jamie Strusz (Engineering), Drew Gatti (Solutions Engineering), live to see all three in action, find out which one is yours, and leave knowing exactly how to start — today, in a 30-day trial, or as an upgrade from what you're already running.
+Join Kristopher Sandoval (Product Marketing) and Drew Gatti (Solutions Engineering), live to see all three in action, find out which one is yours, and leave knowing exactly how to start — today, in a 30-day trial, or as an upgrade from what you're already running.
 
 ## Which industrial IoT solution fits my setup?
 
@@ -52,4 +52,4 @@ Join Kristopher Sandoval (Product Marketing), Jamie Strusz (Engineering), Drew G
 
 ## Who should attend this FlowFuse product launch webinar?
 
-This webinar is ideal for Controls Engineers, OT and IIoT Solutions Architects, Plant Operations Managers, and the central IT and enterprise architecture teams who have to sign off on what they build. If you're evaluating FlowFuse for the first time, you can [sign up for a free trial]({% include "sign-up-url.njk" %}) with no credit card.
+This webinar is ideal for Controls Engineers, OT and IIoT Solutions Architects, Plant Operations Managers, and the central IT and enterprise architecture teams who have to sign off on what they build. If you're evaluating FlowFuse for the first time, you can [sign up for a free trial](cta:signUp) with no credit card.

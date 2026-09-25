@@ -76,7 +76,14 @@ The same critical controls can therefore be checked regularly by people with dif
 
 Consider an automotive assembly station where a component must be tightened to a defined torque.
 
-During a Layer 1 audit, the supervisor checks the fastening process and finds that the torque tool is set outside the approved range.
+1. **Select the process.** Start with a high-risk operation such as one with customer complaints, scrap, rework, safety exposure, or critical process parameters. A [Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/) is a useful way to identify the stations causing the largest share of defects.
+2. **Create the checklist.** Use the [PFMEA](https://www.aiag.org/quality/automotive-core-tools/fmea), control plan, work instructions, and recent quality issues. Ten to fifteen objective questions is usually enough.
+3. **Define the schedule.** Decide which layer audits each area and how often.
+4. **Train the auditors.** Auditors should observe the process, ask factual questions, and record evidence rather than opinions.
+5. **Perform the audit at the station.** Watch the operation and record answers while standing at the workstation.
+6. **Correct immediate issues.** Fix simple problems during the audit whenever possible.
+7. **Assign [corrective actions](/blog/2026/09/capa-corrective-preventive-action/).** Give each finding an owner and a due date.
+8. **Verify closure.** Confirm that the action was completed and remains effective during the next audit cycle.
 
 The supervisor corrects the setting and records the finding. During a later Layer 2 audit, the area manager checks the same control and confirms that the tool is still being used within the required range.
 

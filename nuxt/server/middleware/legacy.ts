@@ -4,22 +4,22 @@ import { defineEventHandler, proxyRequest } from 'h3'
 // Extend this list as pages are migrated. Trailing slashes are matched automatically.
 // Note: /sitemap-legacy.xml is deliberately NOT listed here — it only exists in
 // nuxt/public/ after a production build, so in dev it must keep proxying to 11ty's _site/.
-const NUXT_ROUTES = new Set(['/ai', '/terms', '/privacy-policy', '/integrations', '/sitemap.xml', '/robots.txt', '/llms.txt', '/llms-full.txt', '/contact-us', '/book-demo', '/support', '/professional-services', '/dashboard/tags-and-canvas-feedback'])
+const NUXT_ROUTES = new Set(['/', '/about', '/ai', '/terms', '/privacy-policy', '/integrations', '/sitemap.xml', '/robots.txt', '/llms.txt', '/llms-full.txt', '/contact-us', '/book-demo', '/support', '/professional-services', '/dashboard/tags-and-canvas-feedback'])
 
 // Path prefixes handled by Nuxt. Used for dynamic routes like /integrations/{id}.
 const NUXT_ROUTE_PREFIXES = ['/integrations/', '/raw/']
 
 // Route prefixes handled by Nuxt (all paths starting with these are served by Nuxt).
-// /application-guide no longer has pages of its own - the guides moved under /docs - but it
-// stays listed so its 301s in nuxt/redirects.ts are served by Nitro in dev rather than
-// being proxied to 11ty, which has nothing there either.
-const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources']
+// /application-guide and /free-consultation no longer have pages of their own (the guides
+// moved under /docs, /free-consultation was retired outright - it had no internal links
+// left once its one referring blog post pointed at /contact-us/ instead) - but they stay
+// listed so their 301s in nuxt/redirects.ts are served by Nitro in dev rather than being
+// proxied to 11ty, which has nothing there either.
+const NUXT_PREFIXES = ['/handbook', '/ebooks', '/whitepaper', '/pricing', '/docs', '/changelog', '/application-guide', '/blog', '/product', '/customer-stories', '/thank-you', '/resources', '/webinars', '/free-consultation', '/vs', '/landing', '/use-cases', '/partners', '/industries', '/blueprints', '/events', '/platform']
 
 // Top-level routes still on 11ty, not yet ported to Nuxt (everything not listed above
 // already falls through to the 11ty proxy by default). Remove entries here as they migrate:
-// / (homepage), /about, /blueprints, /careers, /community, /events,
-// /free-consultation, /industries, /landing, /node-red, /partners, /platform,
-// /use-cases, /vs, /webinars
+// /careers, /community, /events, /free-consultation, /node-red, /platform, /webinars
 
 // New pages should never grow that fallback set: nuxt/lib/legacy-pages.test.mjs fails
 // `npm test` if a PR adds a new .njk file under src/ that doesn't already exist on main,
@@ -46,10 +46,11 @@ export default defineEventHandler(async (event) => {
     // proxy them to 11ty in dev even though /changelog and /blog are Nuxt-handled prefixes.
     if (/^\/(changelog|blog)\/\d{4}\/\d{2}\/images\//.test(normalised)) return proxyRequest(event, `http://localhost:8080${path}`)
 
-    // Same story for src/resources/images/** (whitepaper/ebook cover images, referenced
-    // from still-11ty pages like use-cases/uns.njk) - /resources is otherwise a Nuxt prefix.
+    // Same story for src/resources/images/** (whitepaper/ebook cover images whose files
+    // still live in the 11ty tree) - /resources is otherwise a Nuxt prefix.
     if (normalised.startsWith('/resources/images/')) return proxyRequest(event, `http://localhost:8080${path}`)
 
+// 
     // The documentation below /node-red/ moved into /docs/, and every old URL now 301s
     // from nuxt/redirects-node-red.ts. Those are Nitro route rules, so the request has to
     // reach Nitro in dev rather than being proxied to 11ty, which no longer has the pages.
@@ -57,6 +58,13 @@ export default defineEventHandler(async (event) => {
     // still a marketing page there, which is why the redirect map is explicit paths rather
     // than a splat.
     if (normalised !== '/node-red' && normalised.startsWith('/node-red/')) return
+
+    // src/vs/images/** are still 11ty-owned files: they only reach nuxt/public/ through the
+    // passthrough in a production build, so dev has to ask 11ty for them even though /vs is
+    // a Nuxt prefix now.
+    if (/^\/vs\/images\//.test(normalised)) {
+        return proxyRequest(event, `http://localhost:8080${path}`)
+    }
 
     // Let Nuxt handle migrated path prefixes
     if (NUXT_PREFIXES.some(prefix => normalised === prefix || normalised.startsWith(prefix + '/'))) return

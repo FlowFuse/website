@@ -66,6 +66,7 @@ const CLIENTS = [
     {
         id: 'chatgpt',
         logo: '/images/ai/agents/chatgpt.svg',
+        logoMono: true,
         name: 'ChatGPT',
         step2Title: 'Settings, Apps & Connectors, Advanced settings',
         step2Body: 'Turn on developer mode there, then add FlowFuse by URL. Developer mode needs a paid plan, so it is not on the free tier.',
@@ -80,6 +81,35 @@ const CLIENTS = [
         step2Body: 'Where custom connectors are available on your plan, add one and paste the URL. On Team and Enterprise an owner adds it once for everyone.',
         step2Label: 'Open Claude',
         step2Url: 'https://claude.ai/',
+    },
+    // A coding agent installs the connector into itself, so its tab is the prompt
+    // and nothing else. No flags, no config file, and nothing that goes stale when
+    // a client changes how remote servers are added. Claude Code documents an
+    // `mcp add`; Codex documents only its config file and UI. Asking works on both.
+    {
+        id: 'claude-code',
+        logo: '/images/ai/agents/claude.svg',
+        name: 'Claude Code',
+        step1Title: 'Copy the prompt',
+        step1Body: 'This is the whole setup.',
+        step1Command: 'Add the FlowFuse MCP tool at https://app.flowfuse.com/mcp. Then ask me to complete the sign-in in the browser that opens.',
+        step2Title: 'Paste it into Claude Code',
+        step2Body: 'It adds the connector itself, then asks you to finish signing in.',
+        step2Label: 'See the documentation',
+        step2Url: '/docs/user/expert/third-party-agents/',
+    },
+    {
+        id: 'codex',
+        logo: '/images/ai/agents/chatgpt.svg',
+        logoMono: true,
+        name: 'Codex',
+        step1Title: 'Copy the prompt',
+        step1Body: 'This is the whole setup.',
+        step1Command: 'Add the FlowFuse MCP tool at https://app.flowfuse.com/mcp. Then ask me to complete the sign-in in the browser that opens.',
+        step2Title: 'Paste it into Codex',
+        step2Body: 'It adds the connector itself, then asks you to finish signing in.',
+        step2Label: 'See the documentation',
+        step2Url: '/docs/user/expert/third-party-agents/',
     },
     {
         id: 'local',
@@ -129,7 +159,7 @@ function selectClient (id: string) {
         @click="selectClient(client.id)"
       >
         <UIcon v-if="client.icon" :name="client.icon" class="ff-agent-tab__glyph" aria-hidden="true" />
-        <img v-else-if="client.logo" :src="client.logo" alt="" aria-hidden="true">
+        <img v-else-if="client.logo" :src="client.logo" :class="{ 'ff-agent-tab__mark--mono': client.logoMono }" alt="" aria-hidden="true">
         <span>{{ client.name }}</span>
       </button>
     </div>
@@ -144,13 +174,13 @@ function selectClient (id: string) {
       class="ff-agent-panel"
     >
       <div class="ff-agent-step">
-        <p class="ff-agent-step__title"><span class="ff-agent-step__num">01</span>{{ client.builtIn ? client.step1Title : STEP1.title }}</p>
-        <p class="ff-agent-step__body">{{ client.builtIn ? client.step1Body : STEP1.description }}</p>
+        <p class="ff-agent-step__title"><span class="ff-agent-step__num">01</span>{{ client.step1Title || STEP1.title }}</p>
+        <p class="ff-agent-step__body">{{ client.step1Body || STEP1.description }}</p>
         <div v-if="client.builtIn" class="ff-agent-step__cta">
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
         <div v-else class="ff-agent-step__cta">
-          <FfCommand :command="ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap />
+          <FfCommand :command="client.step1Command || ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap :wrap="Boolean(client.step1Command)" />
         </div>
       </div>
 
