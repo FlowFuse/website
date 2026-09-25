@@ -59,8 +59,6 @@ useHead({
 // Same key+handler DocsLeftNav uses, so useAsyncData dedupes into one fetch per request.
 const { data: navGroups } = await useDocsNavTree()
 
-const expertInlineVisible = useExpertInlineVisible()
-
 const breadcrumbItems = computed(() => {
     const crumbs = findDocsBreadcrumb(navGroups.value ?? [], route.path)
     const withRoot = [{ title: 'Docs', path: '/docs' }, ...crumbs]
@@ -120,13 +118,12 @@ const surround = computed(() => {
       <!-- Right sidebar: TOC -->
       <div class="lg right-nav">
         <!-- On wide screens the column never runs past the bottom of the window: a long table
-             of contents scrolls inside itself, so the Expert button under it stays in view. -->
+             of contents scrolls inside itself, so the lines under it stay in view.
+             "On this page" lines up with the sidebar's search text and the breadcrumb: the
+             column starts where the search field does (mt-6), and pt-2.5 is half of the
+             field's 40px less one 20px line. -->
         <div class="sticky top-20 w-full mt-4 md:mt-6 px-8 lg:flex lg:flex-col lg:max-h-[calc(100vh-7.5rem)]">
-          <HandbookToc :links="page?.body?.toc?.links" :ui="{ root: 'lg:min-h-0' }" />
-          <!-- Hidden while the page's own Expert question box is on screen. -->
-          <div v-if="!expertInlineVisible" class="max-lg:hidden mt-2 shrink-0">
-            <DocsExpertButton variant="toc" position="docs-toc" />
-          </div>
+          <HandbookToc :links="page?.body?.toc?.links" :ui="{ root: 'lg:min-h-0', container: 'lg:pt-2.5' }" />
           <div v-if="page?.updated" class="text-xs pb-1 text-right mt-4 text-gray-500 max-lg:hidden shrink-0">
             Updated: <RelativeTime :value="page.updated" />
           </div>
