@@ -50,4 +50,11 @@ const items = computed((): NavigationMenuItem[] => [
         padding-top: 0;
     }
 }
+
+/* Group headings start on the same left edge as the search field and the logo above it;
+   Nuxt UI insets labels to line up with link text, but ours are headings over indented
+   links. */
+.ff-docs-left-nav__nav :deep([data-slot="label"]) {
+    padding-left: 0;
+}
 </style>
