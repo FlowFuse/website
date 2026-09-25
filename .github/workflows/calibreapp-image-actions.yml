@@ -25,4 +25,8 @@ jobs:
           # For non-Pull Requests, run in compressOnly mode and we'll PR after.
           compressOnly: ${{ github.event_name != 'pull_request' }}
           pngQuality: '100'
-          ignorePaths: 'nuxt/**'
+          # Every tracked image is under nuxt/public/ now, and production builds skip Nuxt
+          # Image (build:nuxt:skip-images), so this is the only compression they get. The
+          # synced trees (nuxt/public/docs, nuxt/public/blueprints) are gitignored and never
+          # appear in a pull request.
+          ignorePaths: 'node_modules/**'
