@@ -97,7 +97,10 @@ const surround = computed(() => {
     <ContentRenderer v-if="page" :value="page" />
   </div>
 
-  <div v-else class="w-full pl-6">
+  <!-- lg:pr-6 mirrors the header's own padding, so the two centre alike and the sidebar
+       search lines up under the logo at every width (with pl-6 alone they parted by 12px
+       between 1280 and 1536, where both stop at the same max width). -->
+  <div v-else class="w-full pl-6 lg:pr-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->
