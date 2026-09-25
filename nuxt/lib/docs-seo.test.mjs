@@ -36,16 +36,34 @@ test('falls back to the H1 title, then the last slug segment, then Documentation
     assert.equal(docsSeo(null, '/docs', []).heading, 'Documentation')
 })
 
-test('reads the description from nested meta, where docs-sync writes it', () => {
-    const seo = docsSeo(page({ meta: { description: 'Explore comprehensive documentation for FlowFuse.' } }), '/docs', [])
+test('reads the written description from structuredData, where the frontmatter meta: block lands', () => {
+    // The beforeParse hook renames "meta:" before @nuxt/content parses the file, because
+    // a declared `meta` field is overwritten with the parser's own leftovers.
+    const seo = docsSeo(page({ structuredData: { description: 'Explore comprehensive documentation for FlowFuse.' } }), '/docs', [])
     assert.equal(seo.description, 'Explore comprehensive documentation for FlowFuse.')
 })
 
+test('the written description wins over the lead paragraph', () => {
+    const seo = docsSeo(page({ structuredData: { description: 'Written.' }, description: 'First paragraph under the H1.' }), '/docs', [])
+    assert.equal(seo.description, 'Written.')
+})
+
+test('falls back to the lead paragraph @nuxt/content takes from under the H1', () => {
+    const seo = docsSeo(page({ navTitle: 'Custom Hostnames', description: 'Serve an instance on your own domain.' }), '/docs/user/custom-hostnames', ['user', 'custom-hostnames'])
+    assert.equal(seo.description, 'Serve an instance on your own domain.')
+})
+
+test('ignores a nested meta description, which @nuxt/content never delivers', () => {
+    // Guards the rename: reading `meta` again would compile and silently emit nothing.
+    assert.equal(docsSeo(page({ meta: { description: 'Lost at parse time.' } }), '/docs', []).description, undefined)
+})
+
 test('leaves the description undefined rather than empty when a page has none', () => {
-    // Most synced docs pages carry no description at all. An empty string would put
-    // <meta name="description" content=""> on the page, which is worse than no tag.
+    // A page that opens with a component or a list, not a paragraph, gets no lead
+    // description. An empty string would put <meta name="description" content=""> on
+    // the page, which is worse than no tag.
     assert.equal(docsSeo(page({ navTitle: 'Custom Hostnames' }), '/docs/user/custom-hostnames', ['user', 'custom-hostnames']).description, undefined)
-    assert.equal(docsSeo(page({ meta: { description: '' } }), '/docs', []).description, undefined)
+    assert.equal(docsSeo(page({ structuredData: { description: '' }, description: '' }), '/docs', []).description, undefined)
 })
 
 test('canonical url is absolute on the production host', () => {
