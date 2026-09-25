@@ -83,7 +83,13 @@ onMounted(async () => {
         // An empty media query matches every width, so the input is always a button that
         // opens the dialog: centred on wide screens, full screen on narrow ones (the theme's
         // --aa-detached-modal-media-query decides which).
-        ...(props.detached ? { detachedMediaQuery: '' } : {}),
+        // The dialog carries its own class, so its styles below leave the other searches'
+        // phone dialogs alone. Its close button reads "Close" to a screen reader and shows an X.
+        ...(props.detached ? {
+            detachedMediaQuery: '',
+            classNames: { detachedContainer: 'ff-search-dialog' },
+            translations: { detachedCancelButtonText: 'Close' },
+        } : {}),
         getSources ({ query }: { query: string }) {
             if (query !== prevQuery) {
                 prevQuery = query
@@ -174,11 +180,13 @@ onMounted(async () => {
     position: relative;
 }
 
-/* The search button reads as a search field, with the shortcut shown at its right edge. */
-.ff-algolia--detached :deep(.aa-DetachedSearchButton) {
+/* The search button reads as a search field, with the shortcut shown at its right edge.
+   The id is in the selector because src/css/algolia-theme.css strips the border and padding
+   from `#algolia-search .aa-DetachedSearchButton`, and an id outranks the classes alone. */
+.ff-algolia--detached :deep(#algolia-search .aa-DetachedSearchButton) {
     width: 100%;
     height: 2.5rem;
-    padding-right: 4rem;
+    padding: 0 4rem 0 0.5rem;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     background: #fff;
@@ -187,7 +195,7 @@ onMounted(async () => {
     cursor: pointer;
 }
 
-.ff-algolia--detached :deep(.aa-DetachedSearchButton:hover) {
+.ff-algolia--detached :deep(#algolia-search .aa-DetachedSearchButton:hover) {
     border-color: #a5b4fc;
 }
 
@@ -209,9 +217,57 @@ onMounted(async () => {
 </style>
 
 <style>
-/* The dialog is appended to <body>, outside this component, so this is not scoped. It only
-   exists for a detached search, which only the docs use. */
-.aa-DetachedContainer--modal {
+/* The dialog is appended to <body>, outside this component, so this is not scoped. */
+.ff-search-dialog.aa-DetachedContainer--modal {
     top: 12vh;
+}
+
+/* The input sits flat in the dialog header, above the header's own divider: no box and no
+   focus ring around it, since the caret already shows where typing goes. */
+.ff-search-dialog .aa-Form,
+.ff-search-dialog .aa-Form:focus-within {
+    border: 0;
+    box-shadow: none;
+}
+
+.ff-search-dialog .aa-SubmitIcon {
+    color: #6b7280;
+}
+
+/* The close X is the only X in the header, so the input's own clear button stays out. */
+.ff-search-dialog .aa-ClearButton {
+    display: none;
+}
+
+.ff-search-dialog .aa-DetachedCancelButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: auto 0 auto 0.25rem;
+    padding: 0;
+    border-radius: 6px;
+    color: #374151;
+    /* The word stays for screen readers; the X below is what shows. */
+    font-size: 0;
+}
+
+.ff-search-dialog .aa-DetachedCancelButton::before {
+    content: '';
+    width: 1.25rem;
+    height: 1.25rem;
+    background: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.ff-search-dialog .aa-DetachedCancelButton:hover {
+    background: #f3f4f6;
+}
+
+.ff-search-dialog .aa-DetachedCancelButton:focus-visible {
+    outline: 2px solid #4f46e5;
+    outline-offset: 2px;
 }
 </style>
