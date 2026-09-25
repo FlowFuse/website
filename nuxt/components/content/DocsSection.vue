@@ -68,17 +68,26 @@ const anchor = computed(() => props.id || props.title.toLowerCase().replace(/[^a
     gap: 1rem;
 }
 
+/* Cards that follow a two-column block (the Expert box and its neighbour) keep their
+   distance from it. */
+.ff-docs-section__body > :deep(.ff-docs-columns + .grid) {
+    margin-top: 1.5rem;
+}
+
 /* Without a lead line the cards would sit right under the heading. */
 .ff-docs-section__body > :deep(.grid:first-child) {
     margin-top: 2rem;
 }
 
-/* Cards hold a line or two, not an article: tighter than Nuxt UI's default card. */
-.ff-docs-section__body > :deep(.grid > div) {
+/* Cards hold a line or two, not an article: tighter than Nuxt UI's default card. The same
+   for a card in a card-group and one beside the Expert box in docs-columns. */
+.ff-docs-section__body > :deep(.grid > div),
+.ff-docs-section__body > :deep(.ff-docs-columns > .group) {
     padding: 1.25rem;
 }
 
-.ff-docs-section__body > :deep(.grid > div p) {
+.ff-docs-section__body > :deep(.grid > div p),
+.ff-docs-section__body > :deep(.ff-docs-columns > .group p) {
     margin: 0;
     font-size: 0.9375rem;
     line-height: 1.5;
