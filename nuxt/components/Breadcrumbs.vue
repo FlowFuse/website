@@ -27,10 +27,11 @@ const displayItems = computed(() => props.items.map((item, index) => ({
 </script>
 
 <template>
+  <!-- No `capitalize`: every crumb is an authored page title, so capitalising each word only
+       mangles them, the same way it did in the sidebar. -->
   <UBreadcrumb
     :items="displayItems"
     color="neutral"
-    class="capitalize"
     :ui="{ link: 'text-sm' }"
   >
     <template #separator>
