@@ -5,8 +5,8 @@
 // source glob that matches nothing, just leaves that section out. The lastmod it adds
 // comes from lib/git-lastmod.mjs, which returns nothing when `git log` fails (no .git in
 // the build, say), so every page silently loses its date. Neither fails a build, and the
-// sitemap still looks fine at a glance. nuxt.config.ts runs this against /sitemap.xml at
-// prerender time and fails the build on any problem it reports.
+// sitemap still looks fine at a glance. nuxt.config.ts runs this against the rendered
+// /sitemap.xml in the sitemap:prerender:done hook and fails the build on any problem.
 
 // Top-level path of each section content-urls.get.ts publishes. The blueprints are left
 // out: a build without access to the private library has none, by design.

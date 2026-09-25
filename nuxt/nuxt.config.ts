@@ -630,16 +630,14 @@ export default defineNuxtConfig({
         },
         // Fail the build when /sitemap.xml comes out missing a content section, or with no
         // dates on a section that takes them from git. Neither fails it otherwise; see
-        // lib/sitemap-coverage.mjs. Marking the route as errored is what fails it, since
-        // prerender runs with failOnError.
-        'nitro:init' (nitro) {
-            nitro.hooks.hook('prerender:generate', (route) => {
-                if (route.route !== '/sitemap.xml' || route.error || !route.contents) return
-                const problems = sitemapProblems(route.contents)
-                if (problems.length) {
-                    route.error = Object.assign(new Error(`[sitemap] ${problems.join('; ')}`), { statusCode: 500 })
-                }
-            })
+        // lib/sitemap-coverage.mjs. @nuxtjs/sitemap renders the file itself once
+        // prerendering is done, outside the route loop that prerender:generate sees, and
+        // hands it over here. A throw from this hook fails the build.
+        'sitemap:prerender:done' ({ sitemaps }) {
+            const problems = sitemaps
+                .filter(sitemap => sitemap.name === '/sitemap.xml')
+                .flatMap(sitemap => sitemapProblems(sitemap.content))
+            if (problems.length) throw new Error(`[sitemap] ${problems.join('; ')}`)
         }
     },
 
