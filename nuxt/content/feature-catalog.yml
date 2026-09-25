@@ -327,7 +327,7 @@ sections:
         tiers: { edge: true, hub: true, fleet: true }
       - id: certified-nodes-it
         title: Certified Nodes - IT
-        description: "IT certified node bundle includes: Redis, MQTT, HTTP Request, AI nodes (Gemini, Claude, ChatGPT, Ollama), MCP Server"
+        description: "IT certified node bundle includes: Redis, Kafka, MQTT, HTTP Request, AI nodes (Gemini, Claude, ChatGPT, Ollama), MCP Server"
         docsLink: /blog/2025/07/certified-nodes-v2/
         tiers: { edge: false, hub: true, fleet: true }
       - id: certified-nodes-ot
