@@ -1,6 +1,6 @@
 @layer vendor, theme, base, components, utilities;
 
-@config "../../../tailwind.config.js";
+@config "../../tailwind.config.js";
 @import "tailwindcss";
 /* Utility classes for the nav and footer live in this data file rather than in
    a template, so name it explicitly: automatic source detection skips JSON. */
