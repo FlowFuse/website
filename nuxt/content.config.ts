@@ -50,7 +50,11 @@ export default defineContentConfig({
                 redirect: z.object({
                     to: z.string(),
                 }).optional(),
-                meta: z.object({
+                // Frontmatter writes this as "meta:", which @nuxt/content reserves; the
+                // content:file:beforeParse hook in nuxt.config.ts renames it first, as it
+                // does for the blog and webinars. Declared as `meta`, every page's
+                // description was silently dropped.
+                structuredData: z.object({
                     description: z.string().optional(),
                 }).optional(),
                 // No `sitemap` schema field here on purpose - @nuxtjs/sitemap's own
