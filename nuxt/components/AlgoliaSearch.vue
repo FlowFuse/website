@@ -7,9 +7,33 @@ const props = withDefaults(defineProps<{
     indexFilter?: string
     placeholder?: string
     sourceId?: string
+    /** Render a search button that opens the results in a dialog, at every screen width. */
+    detached?: boolean
+    /** Open it with Cmd+K / Ctrl+K and from a `ff-docs-search:open` window event. Needs `detached`. */
+    shortcut?: boolean
 }>(), {
     placeholder: 'Search...',
     sourceId: 'content',
+    detached: false,
+    shortcut: false,
+})
+
+const isMac = ref(true)
+
+function openDialog () {
+    searchContainer.value?.querySelector<HTMLElement>('.aa-DetachedSearchButton')?.click()
+}
+
+function onKeydown (e: KeyboardEvent) {
+    if ((e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        openDialog()
+    }
+}
+
+onBeforeUnmount(() => {
+    window.removeEventListener('keydown', onKeydown)
+    window.removeEventListener('ff-docs-search:open', openDialog)
 })
 
 const searchContainer = ref<HTMLElement>()
@@ -56,6 +80,10 @@ onMounted(async () => {
     autocomplete({
         container: searchContainer.value!,
         placeholder: props.placeholder,
+        // An empty media query matches every width, so the input is always a button that
+        // opens the dialog: centred on wide screens, full screen on narrow ones (the theme's
+        // --aa-detached-modal-media-query decides which).
+        ...(props.detached ? { detachedMediaQuery: '' } : {}),
         getSources ({ query }: { query: string }) {
             if (query !== prevQuery) {
                 prevQuery = query
@@ -81,9 +109,9 @@ onMounted(async () => {
                         return html`
                             <a href="#" data-href="${item.url}" class="aa-ItemWrapper">
                                 <div class="aa-ItemContent">
-                                    <div class="aa-ItemIcon aa-ItemIcon--alignTop">
+                                    ${item.image ? html`<div class="aa-ItemIcon aa-ItemIcon--alignTop">
                                         <img src="#" data-src="${item.image}" alt="${item.name}" width="40" height="40" />
-                                    </div>
+                                    </div>` : ''}
                                     <div class="aa-ItemContentBody">
                                         <div class="aa-ItemContentTitle">
                                             ${components.Highlight({ hit: item, attribute: ['hierarchy', 'lvl0'] })}
@@ -125,9 +153,65 @@ onMounted(async () => {
             }
         }
     })
+
+    if (props.detached && props.shortcut) {
+        isMac.value = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)
+        window.addEventListener('keydown', onKeydown)
+        window.addEventListener('ff-docs-search:open', openDialog)
+    }
 })
 </script>
 
 <template>
-  <div ref="searchContainer" id="algolia-search" class="border border-gray-200 rounded"></div>
+  <div class="ff-algolia" :class="{ 'ff-algolia--detached': detached }">
+    <div ref="searchContainer" id="algolia-search" :class="detached ? '' : 'border border-gray-200 rounded'"></div>
+    <kbd v-if="detached && shortcut" class="ff-algolia__kbd" aria-hidden="true">{{ isMac ? '⌘' : 'Ctrl' }} K</kbd>
+  </div>
 </template>
+
+<style scoped>
+.ff-algolia--detached {
+    position: relative;
+}
+
+/* The search button reads as a search field, with the shortcut shown at its right edge. */
+.ff-algolia--detached :deep(.aa-DetachedSearchButton) {
+    width: 100%;
+    height: 2.5rem;
+    padding-right: 4rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 0.875rem;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.ff-algolia--detached :deep(.aa-DetachedSearchButton:hover) {
+    border-color: #a5b4fc;
+}
+
+.ff-algolia__kbd {
+    position: absolute;
+    top: 50%;
+    right: 0.625rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-family: inherit;
+    font-size: 0.7rem;
+    line-height: 1;
+    color: #6b7280;
+    padding: 0.25rem 0.375rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    background: #f9fafb;
+}
+</style>
+
+<style>
+/* The dialog is appended to <body>, outside this component, so this is not scoped. It only
+   exists for a detached search, which only the docs use. */
+.aa-DetachedContainer--modal {
+    top: 12vh;
+}
+</style>
