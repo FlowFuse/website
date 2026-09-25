@@ -70,12 +70,12 @@ compliance:
   items:
     - title: "Business continuity and recovery"
       icon: "i-heroicons-arrow-path"
-      text: "Restore approved logic after a failed change or infrastructure event with snapshots and managed application versions."
+      text: "Use snapshots, managed application versions, and recovery procedures so teams can restore approved logic after a failed change or infrastructure event."
       linkText: "Version and restore flows with snapshots"
       linkHref: "/blog/2024/09/node-red-version-control-with-snapshots/"
     - title: "Controlled change management"
       icon: "i-heroicons-arrows-right-left"
-      text: "Separate development and production, review changes, and promote tested versions instead of editing critical flows directly."
+      text: "Separate development and production, review changes, and promote tested application versions instead of editing critical flows without a controlled path."
       linkText: "Set up DevOps pipelines"
       linkHref: "/docs/user/devops-pipelines/"
     - title: "Operational accountability"
@@ -85,7 +85,7 @@ compliance:
       linkHref: "/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/"
     - title: "Operational records for reporting"
       icon: "i-heroicons-document-chart-bar"
-      text: "Route normalized operational data to the historian, database, or reporting system your organization already uses."
+      text: "Route normalized operational data to the historian, database, reporting service, or other system of record your organization uses."
       linkText: "Store and report historical data with FlowFuse Tables"
       linkHref: "/blog/2025/08/time-series-dashboard-flowfuse-postgresql/"
 faqs:
