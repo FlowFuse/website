@@ -11,6 +11,13 @@ dist/
 /public/docs/
 # Synced from FlowFuse/blueprint-library by modules/blueprints-source.ts
 /public/blueprints/
+# Left in existing checkouts by the retired Eleventy build, which wrote its output into
+# public/. Nothing writes these any more.
+/public/img/
+/public/_includes/
+/public/sitemap-legacy.xml
+/public/js/ai-expert-modal.js
+/public/js/hm-promo-banner.js
 
 # Dependencies (hoisted to workspace root)
 node_modules/

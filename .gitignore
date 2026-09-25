@@ -1,10 +1,13 @@
 .DS_Store
 node_modules
 nuxt/content/docs/
-# Synced from FlowFuse/blueprint-library by nuxt/modules/blueprints-source.ts. The
-# Build Site workflow force-adds this tree to the `live` branch that Netlify deploys,
-# because the library is private and cannot be cloned from a build.
+# Synced from FlowFuse/blueprint-library by nuxt/modules/blueprints-source.ts.
 nuxt/content/blueprints/
+
+# Left in existing checkouts by the retired Eleventy build: its output and its
+# eleventy-fetch cache. Nothing writes these any more.
+_site
+.cache
 
 # Local development config
 .vscode/
