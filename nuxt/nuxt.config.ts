@@ -636,9 +636,9 @@ export default defineNuxtConfig({
             repo: 'website',
             branch: 'main',
             branchStrategy: 'feature-branch',
-            // The Nuxt app is the `nuxt` npm workspace inside the website repo, not the repo
-            // root, so @nuxt/content's `content/handbook/...` paths need this prefix to match
-            // the real path Studio commits to via the GitHub Contents API.
+            // The Nuxt app lives in the website repo's `nuxt/` directory, not the repo root,
+            // so @nuxt/content's `content/handbook/...` paths need this prefix to match the
+            // real path Studio commits to via the GitHub Contents API.
             rootDir: 'nuxt',
         }
     },
