@@ -4,7 +4,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
-import { resolveSource, syncDocsPath } from './docs-sync.mjs'
+import { resolveSource, syncDocs, syncDocsPath } from './docs-sync.mjs'
 
 const repoRoot = '/repo/website'
 
@@ -98,6 +98,40 @@ test('a README becomes the index page of its section', (t) => {
 
     assert.ok(existsSync(fx.content('cloud', 'index.md')))
     assert.ok(!existsSync(fx.content('cloud', 'README.md')))
+})
+
+// The portal home is this repo's page (nuxt/content-guides/README.md); the README at the
+// root of the flowfuse docs tree is only that repo's own readme.
+test('the root README of the flowfuse docs is not written as the portal home', (t) => {
+    const fx = fixture(t)
+    writeFileSync(join(fx.docsDir, 'README.md'), '# FlowFuse docs\n')
+
+    syncDocsPath({ docsDir: fx.docsDir, nuxtRoot: fx.nuxtRoot, relPath: 'README.md' })
+
+    assert.ok(!existsSync(fx.content('index.md')))
+})
+
+test('syncing the root README leaves the portal home in place', (t) => {
+    const fx = fixture(t)
+    writeFileSync(fx.content('index.md'), 'the website home\n')
+
+    syncDocsPath({ docsDir: fx.docsDir, nuxtRoot: fx.nuxtRoot, relPath: 'README.md' })
+
+    assert.equal(readFileSync(fx.content('index.md'), 'utf8'), 'the website home\n')
+})
+
+test('a full sync copies every page but the root README', async (t) => {
+    const fx = fixture(t)
+    writeFileSync(join(fx.docsDir, 'README.md'), '# FlowFuse docs\n')
+    writeFileSync(join(fx.docsDir, 'cloud', 'README.md'), '# Cloud\n')
+    writeFileSync(join(fx.docsDir, 'cloud', 'billing.md'), '# Billing\n')
+    const silent = { info () {}, warn () {} }
+
+    await syncDocs({ repoRoot: join(fx.nuxtRoot, '..'), nuxtRoot: fx.nuxtRoot, env: { FLOWFUSE_DOCS_LOCAL: fx.docsDir }, logger: silent })
+
+    assert.ok(!existsSync(fx.content('index.md')))
+    assert.ok(existsSync(fx.content('cloud', 'index.md')))
+    assert.ok(existsSync(fx.content('cloud', 'billing.md')))
 })
 
 test('a non-markdown file is copied to the public tree unchanged', (t) => {
