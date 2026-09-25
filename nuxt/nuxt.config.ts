@@ -6,6 +6,7 @@ import remarkDocsLinks from './utils/remark-docs-links'
 import remarkSiteLinks from './utils/remark-site-links'
 import { BLOG_TAGS } from './composables/useBlogList'
 import { redirects } from './redirects'
+import { sitemapProblems } from './lib/sitemap-coverage.mjs'
 import site from '../src/_data/site.json'
 
 // Collect all handbook routes from content files for SSG prerendering
@@ -626,6 +627,19 @@ export default defineNuxtConfig({
             nitroConfig.prerender = nitroConfig.prerender || {}
             nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
             console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)
+        },
+        // Fail the build when /sitemap.xml comes out missing a content section, or with no
+        // dates on a section that takes them from git. Neither fails it otherwise; see
+        // lib/sitemap-coverage.mjs. Marking the route as errored is what fails it, since
+        // prerender runs with failOnError.
+        'nitro:init' (nitro) {
+            nitro.hooks.hook('prerender:generate', (route) => {
+                if (route.route !== '/sitemap.xml' || route.error || !route.contents) return
+                const problems = sitemapProblems(route.contents)
+                if (problems.length) {
+                    route.error = Object.assign(new Error(`[sitemap] ${problems.join('; ')}`), { statusCode: 500 })
+                }
+            })
         }
     },
 
