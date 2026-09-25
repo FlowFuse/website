@@ -134,7 +134,7 @@
                     {
                         "title": "By Industry",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-[4] xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-[5] xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -145,6 +145,11 @@
                                 "label": "Industrial Machinery",
                                 "href": "/industries/industrial-machinery/",
                                 "icon": "cog-6-tooth"
+                            },
+                            {
+                                "label": "Building Materials",
+                                "href": "/industries/building-materials/",
+                                "icon": "building-office-2"
                             },
                             {
                                 "label": "Energy and Utilities",
@@ -494,6 +499,10 @@
                             {
                                 "label": "Industrial Machinery",
                                 "href": "/industries/industrial-machinery/"
+                            },
+                            {
+                                "label": "Building Materials",
+                                "href": "/industries/building-materials/"
                             },
                             {
                                 "label": "Energy and Utilities",

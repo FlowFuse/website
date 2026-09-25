@@ -3,6 +3,7 @@ import { join, basename } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
+import remarkSiteLinks from './utils/remark-site-links'
 import { BLOG_TAGS } from './composables/useBlogList'
 import { redirects } from './redirects'
 import site from '../src/_data/site.json'
@@ -495,6 +496,11 @@ export default defineNuxtConfig({
                     '/pricing/request-quote/',
                     // The homepage itself: nothing links to it that the crawler starts from.
                     '/',
+                    // The platform pages are .vue files with no listing to crawl from.
+                    '/platform/security/',
+                    '/platform/device-agent/',
+                    '/platform/why-flowfuse/',
+                    '/platform/dashboard/',
                     // The event pages are .vue files with no listing to crawl from.
                     '/events/proveit-2026/',
                     '/events/hannover-messe-2026/',
@@ -525,6 +531,7 @@ export default defineNuxtConfig({
                     '/ai',
                     '/industries/automotive',
                     '/industries/industrial-machinery',
+                    '/industries/building-materials',
                     '/industries/energy-utilities',
                     ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
@@ -643,6 +650,7 @@ export default defineNuxtConfig({
                     searchDepth: 4,
                 },
                 remarkPlugins: {
+                    'site-links': { instance: remarkSiteLinks },
                     'handbook-links': { instance: remarkHandbookLinks },
                     'docs-links': { instance: remarkDocsLinks },
                     'remark-math': {},

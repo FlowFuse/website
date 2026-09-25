@@ -12,6 +12,9 @@ const INDUSTRY_LABELS: Record<string, string> = {
     'renewables': 'Renewables',
     'semiconductors': 'Semiconductors',
     'electronics-appliances': 'Electronics & Appliances',
+    'industrial-machinery': 'Industrial Machinery',
+    'building-materials': 'Building Materials',
+    'energy-utilities': 'Energy and Utilities',
 }
 </script>
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-// The compliance grid from automotive.vue. "The Data Your Audit Asks For, In One Place"
-// is fixed copy shared by every page built on this template, not page-specific data.
+// The compliance grid from automotive.vue. The heading and "The Data Your Audit Asks For,
+// In One Place" subtitle are defaults a page can override with its own.
 interface ComplianceItem { title: string, text: string, linkText: string, linkHref: string, icon?: string }
 
-defineProps<{ industryName: string, heading?: string, subheading?: string, description: string, items: ComplianceItem[] }>()
+defineProps<{ industryName: string, heading?: string, subtitle?: string, description: string, items: ComplianceItem[] }>()
 </script>
 
 <template>
@@ -13,7 +13,7 @@ defineProps<{ industryName: string, heading?: string, subheading?: string, descr
         <!-- eslint-disable-next-line vue/no-v-html -->
         <h2 v-if="heading" class="text-gray-700 mb-2" v-html="heading" />
         <h2 v-else class="text-gray-700 mb-2">{{ industryName }} <span class="text-indigo-600">Compliance &amp; Standards</span></h2>
-        <p class="text-xl font-medium mt-0 mb-4">{{ subheading || 'The Data Your Audit Asks For, In One Place' }}</p>
+        <p class="text-xl font-medium mt-0 mb-4">{{ subtitle || 'The Data Your Audit Asks For, In One Place' }}</p>
         <p class="text-gray-600">{{ description }}</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

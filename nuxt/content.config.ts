@@ -364,6 +364,16 @@ export default defineContentConfig({
 
             })
         }),
+        // Long-form prose pages under /platform/. Separate from the `pages` collection
+        // above because that one is rendered by [...slug].vue, which routeRules mark
+        // noindex; /platform/security/ is a linked, indexable page.
+        platformPages: defineCollection({
+            type: 'page',
+            source: 'platform/*.md',
+            schema: z.object({
+                title: z.string(),
+            })
+        }),
         // The /landing/ pages that were pure 11ty frontmatter. Two shapes, both routed
         // through pages/landing/[slug].vue and told apart by `kind`:
         //  - abm         (layouts/abm-landing.njk) - problem/solution/how/features
@@ -563,7 +573,11 @@ export default defineContentConfig({
                         company: z.string(),
                         image: z.string(),
                         imageAlt: z.string(),
-                    }),
+                    }).optional(),
+                    image: z.object({
+                        src: z.string(),
+                        alt: z.string(),
+                    }).optional(),
                 }),
                 // The "N+ manufacturers in M countries..." SocialProof line. Not every page
                 // has an aggregate stat like this yet.
@@ -580,8 +594,8 @@ export default defineContentConfig({
                     // v-html for the same reason hero.heading is.
                     heading: z.string(),
                     description: z.string(),
-                    linkText: z.string(),
-                    linkHref: z.string(),
+                    linkText: z.string().optional(),
+                    linkHref: z.string().optional(),
                 }).optional(),
                 roi: z.object({
                     heading: z.string(),
@@ -601,10 +615,8 @@ export default defineContentConfig({
                     })),
                 }),
                 compliance: z.object({
-                    // The "The Data Your Audit Asks For, In One Place" subtitle is fixed
-                    // copy shared by every page, not declared here.
                     heading: z.string().optional(),
-                    subheading: z.string().optional(),
+                    subtitle: z.string().optional(),
                     description: z.string(),
                     items: z.array(z.object({
                         title: z.string(),
