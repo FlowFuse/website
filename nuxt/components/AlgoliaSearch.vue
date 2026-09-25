@@ -23,7 +23,18 @@ const props = withDefaults(defineProps<{
 
 const isMac = ref(true)
 
+// Autocomplete arrives from a CDN after the page has rendered. Until it has mounted, a
+// detached search shows a stand-in button of the same size, so the field is there from the
+// first paint instead of popping in; a click or Cmd+K before then opens the dialog as soon
+// as it can.
+const ready = ref(false)
+let openWhenReady = false
+
 function openDialog () {
+    if (!ready.value) {
+        openWhenReady = true
+        return
+    }
     searchContainer.value?.querySelector<HTMLElement>('.aa-DetachedSearchButton')?.click()
 }
 
@@ -42,6 +53,12 @@ onBeforeUnmount(() => {
 const searchContainer = ref<HTMLElement>()
 
 onMounted(async () => {
+    if (props.detached && props.shortcut) {
+        isMac.value = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)
+        window.addEventListener('keydown', onKeydown)
+        window.addEventListener('ff-docs-search:open', openDialog)
+    }
+
     const loadScript = (src: string, integrity?: string): Promise<void> =>
         new Promise((resolve, reject) => {
             if (document.querySelector(`script[src="${src}"]`)) { resolve(); return }
@@ -163,10 +180,14 @@ onMounted(async () => {
         }
     })
 
-    if (props.detached && props.shortcut) {
-        isMac.value = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)
-        window.addEventListener('keydown', onKeydown)
-        window.addEventListener('ff-docs-search:open', openDialog)
+    ready.value = true
+    if (openWhenReady) {
+        openWhenReady = false
+        // Autocomplete renders its button a frame or two after it is set up.
+        for (let i = 0; i < 30 && !searchContainer.value?.querySelector('.aa-DetachedSearchButton'); i++) {
+            await new Promise(resolve => requestAnimationFrame(resolve))
+        }
+        openDialog()
     }
 })
 </script>
@@ -174,6 +195,12 @@ onMounted(async () => {
 <template>
   <div class="ff-algolia" :class="{ 'ff-algolia--detached': detached, 'ff-algolia--lg': detached && size === 'lg' }">
     <div ref="searchContainer" id="algolia-search" :class="detached ? '' : 'border border-gray-200 rounded'"></div>
+    <button v-if="detached && !ready" type="button" class="ff-algolia__standin" @click="openDialog">
+      <svg class="ff-algolia__standin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+      </svg>
+      <span>{{ placeholder }}</span>
+    </button>
     <kbd v-if="detached && shortcut" class="ff-algolia__kbd" aria-hidden="true">{{ isMac ? '⌘' : 'Ctrl' }} K</kbd>
   </div>
 </template>
@@ -200,6 +227,38 @@ onMounted(async () => {
 
 .ff-algolia--detached :deep(#algolia-search .aa-DetachedSearchButton:hover) {
     border-color: #a5b4fc;
+}
+
+/* Stands in for the search button until autocomplete has mounted (see `ready`). */
+.ff-algolia__standin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 4rem 0 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-align: left;
+    cursor: pointer;
+}
+
+.ff-algolia__standin-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #777;
+    flex-shrink: 0;
+}
+
+.ff-algolia--lg .ff-algolia__standin {
+    height: 3rem;
+    padding-left: 1.25rem;
+    gap: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
 .ff-algolia--lg :deep(#algolia-search .aa-DetachedSearchButton) {
