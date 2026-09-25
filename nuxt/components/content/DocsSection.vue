@@ -84,6 +84,63 @@ const anchor = computed(() => props.id || props.title.toLowerCase().replace(/[^a
     line-height: 1.5;
 }
 
+/* A card that leads somewhere opens with a paragraph holding only a link: that link is the
+   card's title and covers the whole card.
+
+     ::::card{icon="i-lucide-life-buoy"}
+     [Troubleshooting](/docs/troubleshooting/)
+
+     Every troubleshooting guide in one place.
+     ::::
+
+   Not Nuxt UI's `to` attribute, because the flowfuse docs link check reads markdown links
+   only and misreads a URL inside an attribute. Not a #title slot either: inside these
+   wrapper components MDC attaches a nested card's #title to the wrapper instead. */
+.ff-docs-section__body :deep(.group:has(> div > p:first-child > a:only-child)) {
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.ff-docs-section__body :deep(.group:has(> div > p:first-child > a:only-child):hover) {
+    border-color: #a5b4fc;
+    background: #f5f7ff;
+}
+
+.ff-docs-section__body :deep(.group:has(> div > p:first-child > a:only-child:focus-visible)) {
+    outline: 2px solid #4f46e5;
+    outline-offset: 2px;
+}
+
+.ff-docs-section__body :deep(.group > div > p:first-child:has(> a:only-child)) {
+    margin: 0 0 0.25rem;
+}
+
+.ff-docs-section__body :deep(.group > div > p:first-child > a:only-child) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: #111827;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 0;
+    text-decoration: none;
+}
+
+.ff-docs-section__body :deep(.group > div > p:first-child > a:only-child:focus-visible) {
+    outline: none;
+}
+
+.ff-docs-section__body :deep(.group > div > p:first-child > a:only-child::after) {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.ff-docs-section__body :deep(.group > div > p:first-child > a:only-child .iconify) {
+    width: 0.875rem;
+    height: 0.875rem;
+    color: #9ca3af;
+}
+
 /* The numbered stages of a ::steps journey. Nuxt UI wraps each step heading's text in an
    anchor link, which the site's link colour would turn blue. */
 .ff-docs-section__body :deep(h3) {
