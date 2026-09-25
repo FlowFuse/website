@@ -224,7 +224,7 @@ useHead({ meta: [{ name: 'robots', content: 'noindex' }] })
             <h2 class="mb-8 max-md:text-center">Ready to Make the Wiser Decision?</h2>
             <p>See how FlowFuse can connect ALL your data sources to Tulip. Book your demo now.</p>
             <div class="my-10">
-              <HubSpotMeetings :data-src="MEETINGS_SRC" />
+              <HubSpotMeetings :data-src="MEETINGS_SRC" position="landing-tulip" />
             </div>
           </div>
         </div>

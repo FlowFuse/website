@@ -12,13 +12,14 @@
 // The panel below is therefore not an error state: it is what a visitor who has not
 // accepted analytics sees, and it gives them a way to book anyway. It is rendered
 // unhidden and replaced once the embed is up, which is what the .njk did.
-const props = defineProps<{ dataSrc: string }>()
+const props = defineProps<{ dataSrc: string, position: string }>()
 
+const capture = useCapture()
 const embedded = ref(false)
 
 type ConsentWindow = Window & {
     _ffLoadMeetings?: (() => void) | null
-    CookieConsent?: { showPreferences: () => void }
+    CookieConsent?: { showPreferences: () => void, acceptedCategory?: (category: string) => boolean }
 }
 
 function showCookiePreferences() {
@@ -39,15 +40,55 @@ function loadEmbed() {
 }
 
 // Registered for cookieconsent-config.js to call on accept, exactly as the .njk did.
-// It also calls it on load when consent is already stored, so an existing acceptance is
-// covered without this component reading cookies itself.
 onMounted(() => {
-    ;(window as ConsentWindow)._ffLoadMeetings = loadEmbed
+    const win = window as ConsentWindow
+    win._ffLoadMeetings = loadEmbed
+    // cookieconsent-config.js's onConsent also calls _ffLoadMeetings on every page load
+    // when consent is already stored, but that script can run before this component has
+    // mounted and registered the callback above, silently dropping the call. Covering it
+    // here too closes that race regardless of which one runs first.
+    if (win.CookieConsent?.acceptedCategory?.('analytics')) loadEmbed()
 })
 
 onUnmounted(() => {
     ;(window as ConsentWindow)._ffLoadMeetings = null
 })
+
+// The scheduler is a cross-origin iframe, so a completed booking is otherwise invisible
+// to this page's analytics. HubSpot doesn't document this postMessage contract, but a
+// real test booking confirmed the shape below, including the booker's contact - richer
+// than the `{ meetingBookSucceeded: true }` boolean HubSpot itself documents elsewhere.
+const meetingsOrigin = new URL(props.dataSrc).origin
+
+type MeetingBookedMessage = {
+    meetingBookSucceeded?: boolean
+    meetingsPayload?: {
+        bookingResponse?: {
+            postResponse?: {
+                contact?: { email?: string, name?: string }
+            }
+        }
+    }
+}
+
+type PosthogWindow = Window & {
+    posthog?: { identify: (distinctId: string, properties?: Record<string, unknown>) => void }
+}
+
+function handleMeetingMessage(event: MessageEvent) {
+    if (event.origin !== meetingsOrigin) return
+    const data = event.data as MeetingBookedMessage
+    if (!data?.meetingBookSucceeded) return
+
+    const contact = data.meetingsPayload?.bookingResponse?.postResponse?.contact
+    if (contact?.email) {
+        ;(window as PosthogWindow).posthog?.identify(contact.email, { email: contact.email, name: contact.name })
+    }
+    capture('hubspot-meeting-booked', { position: props.position })
+}
+
+onMounted(() => window.addEventListener('message', handleMeetingMessage))
+onUnmounted(() => window.removeEventListener('message', handleMeetingMessage))
 </script>
 
 <template>
