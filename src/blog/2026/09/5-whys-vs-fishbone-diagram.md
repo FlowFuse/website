@@ -1,6 +1,6 @@
 ---
 title: "5 Whys vs. Fishbone Diagram: Which Is Right for You?"
-metaTitle: "5 Whys vs Fishbone Diagram: Differences & When to Use Each"
+metaTitle: "5 Whys vs Fishbone Diagram: Key Differences"
 subtitle: "How the two root cause analysis methods differ, when to use each one, and how to combine them."
 description: "Compare 5 Whys and the Fishbone (Ishikawa) Diagram for root cause analysis: key differences, when to use each method, and how to use them together."
 date: 2026-09-25
