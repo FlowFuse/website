@@ -5,16 +5,11 @@ function ffExpertInit() {
     const modal = document.getElementById('ai-expert-modal');
     if (!modal) return;
     const closeBtn = document.getElementById('close-modal');
-    const tellMeHowBtn = document.getElementById('tell-me-how-btn');
     const chatMessages = document.getElementById('chat-messages');
     const modalInput = document.getElementById('modal-input');
     let transferPayload = []
     let flowsStore = {}
 
-    // Debug: Check if button was found
-    if (!tellMeHowBtn) {
-        console.error('FlowFuse Expert: Tell Me How button not found!');
-    }
 
     // Message storage array
     let messages = [];
@@ -145,16 +140,17 @@ function ffExpertInit() {
         }
     });
 
-    // Open modal
-    if (tellMeHowBtn) {
-        tellMeHowBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const textarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
-            const userText = textarea ? textarea.value : '';
-            const promptText = userText.trim();
-            openModal(promptText);
-        });
-    }
+    // Open modal. Delegated, so an entry box that mounts after init still opens it.
+    if (window.__ffExpertAskClick) document.removeEventListener('click', window.__ffExpertAskClick);
+    window.__ffExpertAskClick = function(e) {
+        if (!e.target.closest || !e.target.closest('#tell-me-how-btn')) return;
+        e.preventDefault();
+        const textarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
+        const userText = textarea ? textarea.value : '';
+        const promptText = userText.trim();
+        openModal(promptText);
+    };
+    document.addEventListener('click', window.__ffExpertAskClick);
 
     // Close modal
     if (closeBtn) {
@@ -453,7 +449,11 @@ function ffExpertInit() {
         })
     }
 
-    function openModal(userText) {
+    // The entry box the modal morphed out of, if it did. Closing morphs back into it.
+    let morphedFrom = null;
+
+    function openModal(userText, opts = {}) {
+        const morph = opts.morph !== false;
         // Generate new session ID for this chat session
         sessionId = crypto.randomUUID();
         transferPayload = []
@@ -474,8 +474,9 @@ function ffExpertInit() {
         if (document.startViewTransition && typeof document.startViewTransition === 'function') {
 
             // Get elements for transition
-            const homeTextarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
+            const homeTextarea = morph ? document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]') : null;
             const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
+            morphedFrom = homeTextareaWrapper;
             // Target the entire input area div that contains textarea and footer text
             const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
 
@@ -489,11 +490,13 @@ function ffExpertInit() {
             try {
                 const transition = document.startViewTransition(() => {
 
-                    // Remove transition name from home wrapper
-                    homeTextareaWrapper.style.viewTransitionName = '';
+                    if (homeTextareaWrapper) {
+                        // Remove transition name from home wrapper
+                        homeTextareaWrapper.style.viewTransitionName = '';
 
-                    // Hide the home wrapper
-                    homeTextareaWrapper.style.display = 'none';
+                        // Hide the home wrapper
+                        homeTextareaWrapper.style.display = 'none';
+                    }
 
                     // Move modal to document.body and show it
                     document.body.appendChild(modal);
@@ -554,8 +557,9 @@ function ffExpertInit() {
             }
         } else {
             // Fallback for browsers without View Transitions support
-            const homeTextarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
+            const homeTextarea = morph ? document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]') : null;
             const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
+            morphedFrom = homeTextareaWrapper;
 
 
             // Hide home textarea to avoid duplication
@@ -581,8 +585,9 @@ function ffExpertInit() {
     }
 
     function closeModal() {
-        const homeTextarea = document.querySelector('textarea[data-ff-expert-input], textarea[aria-label="Describe your workflow"]');
-        const homeTextareaWrapper = homeTextarea ? homeTextarea.closest('.textarea-wrapper') : null;
+        // Only morph back into the entry box if the modal came out of it, and it is still here.
+        const homeTextareaWrapper = morphedFrom && morphedFrom.isConnected ? morphedFrom : null;
+        morphedFrom = null;
         const modalInputSection = modal.querySelector('.p-4.bg-white.rounded-b-none.md\\:rounded-b-lg');
 
         // Check if View Transitions API is supported
@@ -798,7 +803,7 @@ function ffExpertInit() {
         const messageBubble = messageDiv.querySelector('div:last-child');
 
         // Animate the typing of the welcome message
-        const welcomeText = 'Hello! I am here to help you get started with FlowFuse and Node-RED. Please tell me what you are hoping to achieve.';
+        const welcomeText = modal.dataset.welcome || 'Hello! I am here to help you get started with FlowFuse and Node-RED. Please tell me what you are hoping to achieve.';
         const words = welcomeText.split(' ');
         let currentText = '';
 
@@ -1521,6 +1526,11 @@ function ffExpertInit() {
     if (clearConversationBtn) {
         clearConversationBtn.addEventListener('click', clearConversation);
     }
+
+    // Open the conversation from anywhere on the page, without morphing from the entry box.
+    window.ffExpertOpen = function(text) {
+        openModal((text || '').trim(), { morph: false });
+    };
 
     let target
     let messageHandler
