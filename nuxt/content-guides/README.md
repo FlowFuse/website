@@ -21,34 +21,35 @@ Build industrial applications, then deploy and run them from cloud to edge.
 FlowFuse runs the platform for you. Sign up, then build your applications and deploy them from your browser, with nothing to install. The quickest way to try FlowFuse.
 
 - [Get started on FlowFuse Cloud](/docs/user/introduction/)
-- [Sign up](https://app.flowfuse.com/account/create)
+- [About FlowFuse Cloud](/docs/cloud/introduction/)
 ::::
 
 ::::docs-choice{label="Your own edge hardware, with the Device Agent" icon="i-lucide-cpu"}
 Run your applications on your own machines at the edge, from an industrial PC to a Raspberry Pi, and manage them all from FlowFuse. The Device Agent connects each machine as a remote instance, to FlowFuse Cloud or to a self-hosted platform.
 
 - [Connect your first machine](/docs/device-agent/quickstart/)
-- [Other ways to install](/docs/device-agent/install/overview/)
+- [About the Device Agent](/docs/device-agent/introduction/)
 ::::
 
 ::::docs-choice{label="FlowFuse Self-Hosted" icon="i-lucide-server"}
 Run the whole platform, and the applications on it, on your own infrastructure: on premises or in your own cloud, with Docker or Kubernetes. Talk to our sales team first: they help you choose the right licence and plan the installation with you.
 
 - [Contact sales](/contact-us/)
-- [Choose how to install](/docs/install/introduction/)
+- [About self-hosting](/docs/install/introduction/)
 ::::
 
 ::::docs-choice{label="Your AI agent" icon="i-lucide-bot"}
 Connect Claude, ChatGPT, Copilot or another agent to FlowFuse over MCP. It can manage your teams and applications, and build and edit their flows, within the access you grant it.
 
 - [Connect your agent](/docs/user/expert/third-party-agents/)
+- [About FlowFuse MCP](/docs/user/mcp/)
 ::::
 
 ::::docs-choice{label="Not sure yet? Talk to us" icon="i-lucide-messages-square" open}
 Tell us about the applications you want to build, and the sites and machines they run on. We work out with you which setup fits, then help you get it running. To understand the platform first, the Application Guide explains how FlowFuse applications are shaped.
 
 - [Book a call](/book-demo/)
-- [Read the Application Guide](/docs/application-guide/)
+- [About FlowFuse applications](/docs/application-guide/)
 ::::
 :::
 ::
