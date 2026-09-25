@@ -126,6 +126,9 @@ onMounted(() => {
   <header id="ff-header" class="ff-header" :class="{ 'ff-header--docs': isDocs }" data-nav-zone="header">
     <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
 
+      <!-- One cell for the brand, so the xl grid (1fr auto 1fr) keeps three columns when
+           docs pages add their Docs label beside the logo. -->
+      <div class="ff-brand flex items-center shrink-0">
       <!-- Wordmark: visible from 420px up on mobile and on desktop, hidden on tablet -->
       <a class="ff-logo-link ff-logo-link--wordmark hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row" href="/" aria-label="FlowFuse Home" style="font-family:'Baloo 2', sans-serif">
         <!-- Five stops feed the staggered hover wave in style.css (ff-logo-wave). -->
@@ -149,6 +152,11 @@ onMounted(() => {
           <path d="M79.8514 37.7939V25.1958C70.4201 24.8808 60.9888 27.0855 52.1863 30.8649C42.4407 34.6444 33.3238 40.3135 22.9494 41.2584C15.4044 41.8883 7.54501 41.5733 0 41.5733V54.4864H8.48814C12.2606 54.4864 16.0331 54.4864 19.8057 54.8013C32.695 55.1163 43.6982 62.9901 55.6445 67.0845C63.1895 70.234 71.6776 71.1789 79.8514 71.1789V58.5807C76.0789 58.5807 72.3064 58.2658 68.5338 57.6359C60.0457 55.7462 52.1863 51.6518 44.0126 48.1873C54.387 43.778 65.0757 37.7939 76.7076 37.7939H79.8514Z" fill="white"/>
         </svg>
       </a>
+
+      <!-- On docs pages the logo reads "FlowFuse Docs": the logo still goes to the site,
+           "Docs" goes to the docs home. -->
+      <a v-if="isDocs" href="/docs/" class="ff-docs-brand-label">Docs</a>
+      </div>
 
       <!-- Mobile hamburger -->
       <div class="flex items-center gap-2 md:hidden relative z-20">
@@ -191,7 +199,9 @@ onMounted(() => {
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
         <!-- Docs search, on tablets, where the docs sidebar is folded away. -->
         <li v-if="isDocs" class="lg:hidden mr-1"><DocsHeaderActions /></li>
-        <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
+        <!-- On docs pages Free Trial gives way to the search and the "Docs" label on tablets,
+             where the row has no other room: the menus cannot fold into More. -->
+        <li class="hidden md:flex" :class="{ 'md:hidden lg:flex': isDocs }"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
         <li class="flex">
           <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
         </li>
@@ -210,16 +220,48 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Docs pages add search to the phone header, so the square logo holds on a little longer
-   before the wordmark takes its place (without this the wordmark touches the search button
-   at 420 to 440px). */
-@media (min-width: 420px) and (max-width: 519px) {
+/* Docs pages show "Docs" beside the logo. Below lg that pair is the square mark and
+   "Docs", on phones and tablets alike; the wordmark and "Docs" would crowd out the search
+   and Book a demo buttons. */
+@media (max-width: 1023px) {
     .ff-header--docs .ff-logo-link--wordmark {
         display: none;
     }
 
     .ff-header--docs .ff-logo-link--square {
         display: block;
+    }
+}
+
+/* Beside the wordmark, "Docs" reads as one lockup with it: its capitals are as tall as the
+   wordmark's (20px, and Heebo's cap height is 0.711em, so 28px) and it sits on the same
+   baseline. With line-height 1 and centred on the 32px logo box, a 28px line puts its
+   baseline 1px above the wordmark's, hence the nudge. Lighter and grey, so the brand still
+   leads. */
+.ff-docs-brand-label {
+    position: relative;
+    top: 1px;
+    margin-left: 0.625rem;
+    font-size: 1.75rem;
+    line-height: 1;
+    font-weight: 400;
+    color: #374151;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.ff-docs-brand-label:hover {
+    color: #4f46e5;
+}
+
+/* Beside the square mark the label is a size down. The tablet header is the tightest (the
+   nav, docs search, Free Trial and Book a demo share one row), and at 768px the larger label
+   pushed Book a demo past the edge. */
+@media (max-width: 1023px) {
+    .ff-docs-brand-label {
+        top: 0;
+        margin-left: 0.5rem;
+        font-size: 1.25rem;
     }
 }
 </style>
