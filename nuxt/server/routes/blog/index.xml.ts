@@ -15,15 +15,12 @@ const CTA_IMAGE_DESTINATIONS: Record<string, string> = {
 }
 
 // Mirrors nuxt/components/BlogPostCta.vue's CTA_VARIANTS and fixed Cta*
-// button labels (see CtaSignUp/CtaBookDemo/CtaContactUs) - every post ends
-// with this block, defaulting to 'sign-up' when frontmatter `cta` is unset
-// or names an unrecognised type.
+// button labels (see CtaBookDemo/CtaContactUs/CtaPricing) - every post ends
+// with this block, defaulting to 'demo' when frontmatter `cta` is unset, asks
+// for sign-up, or names an unrecognised type. As on the page, a sign-up post's
+// own title/description is dropped, since it pitches a sign-up it no longer links.
+const END_CTA_SIGNUP_TYPES = new Set(['sign-up', 'signup'])
 const END_CTA_VARIANTS: Record<string, { title: string, description: string, label: string }> = {
-    'sign-up': {
-        title: 'Start building with your own industrial data',
-        description: 'Connect your systems, automate workflows, and see what’s possible in your environment.',
-        label: 'Try it out',
-    },
     demo: {
         title: 'See how FlowFuse works in real environments',
         description: 'Walk through real use cases and see how teams connect systems, automate workflows, and deploy at scale.',
@@ -42,10 +39,11 @@ const END_CTA_VARIANTS: Record<string, { title: string, description: string, lab
 }
 
 function buildEndCta(entry: { cta?: { type?: string, title?: string, description?: string } | null }): string {
-    const type = entry.cta?.type && END_CTA_VARIANTS[entry.cta.type] ? entry.cta.type : 'sign-up'
+    const type = entry.cta?.type && END_CTA_VARIANTS[entry.cta.type] ? entry.cta.type : 'demo'
     const variant = END_CTA_VARIANTS[type]
-    const title = entry.cta?.title || variant.title
-    const description = entry.cta?.description || variant.description
+    const ownCopy = END_CTA_SIGNUP_TYPES.has(entry.cta?.type ?? '') ? null : entry.cta
+    const title = ownCopy?.title || variant.title
+    const description = ownCopy?.description || variant.description
     const href = CTA_IMAGE_DESTINATIONS[type]
     return `<p><strong>${escapeXml(title)}</strong></p><p>${escapeXml(description)}</p><p><a href="${escapeXml(absoluteUrl(href))}">${escapeXml(variant.label)}</a></p>`
 }

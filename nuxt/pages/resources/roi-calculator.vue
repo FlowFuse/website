@@ -174,7 +174,6 @@ useSchemaOrg([
         <div class="rounded-xl px-6 md:px-9 py-8 md:py-12 flex flex-col items-center gap-6 text-center ff-get-started-bg">
           <h2 class="text-white font-medium max-w-2xl">Stop paying for the work your team keeps redoing</h2>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
-            <CtaSignUp variant="highlight" position="roi-final" />
             <CtaBookDemo variant="ghost" color="white" icon="i-lucide-arrow-right" position="roi-final" />
           </div>
         </div>

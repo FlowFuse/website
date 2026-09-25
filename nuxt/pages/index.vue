@@ -136,7 +136,6 @@ useSchemaOrg([
                       <div class="flex flex-col mt-12">
                           <div class="m-auto flex gap-4 items-center justify-center flex-row">
                               <CtaBookDemo variant="highlight" position="hero" />
-                              <CtaSignUp variant="ghost" color="white" position="hero" icon="i-lucide-arrow-right" />
                           </div>
                       </div>
                   </div>
@@ -222,7 +221,6 @@ useSchemaOrg([
           <p>Whether you're extending an existing system, standardizing a proven solution across sites, or connecting OT and IT data flows, FlowFuse gives your team the platform to <strong>build once and run everywhere</strong>.</p>
           <div class="flex gap-4 items-center max-md:justify-center flex-wrap mt-6">
               <CtaBookDemo variant="primary" position="secondary" />
-              <CtaSignUp variant="ghost" position="secondary" icon="i-lucide-arrow-right" />
           </div>
       </div>
   </div>
@@ -380,7 +378,7 @@ useSchemaOrg([
       <!-- Get Started -->
       <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
           <p class="text-white text-5xl font-medium m-0">Get Started with FlowFuse</p>
-          <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Book a demo to see how, or start a free trial and build it yourself.</p>
+          <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Book a demo and we will show you how.</p>
           <CtaBookDemo variant="highlight" position="get-started" />
       </div>
       <!-- FF Content -->

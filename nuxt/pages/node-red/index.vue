@@ -122,9 +122,9 @@ useSchemaOrg([
               <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
               <p class="md:mb-6">Ready to <span class="font-semibold">get started building with Node-RED</span>? There are two ways in.</p>
               <div class="max-md:hidden md:mb-10">
-                  <CtaSignUp variant="primary" position="nodered" class="min-h-[40px] md:inline" />
+                  <CtaBookDemo variant="primary" position="nodered" class="min-h-[40px] md:inline" />
                   <p class="font-light mt-3 mb-0">
-                      Nothing to install, you get an editor in the browser. Or
+                      See FlowFuse's hosted Node-RED editor with our team. Or
                       <a href="#install-node-red-from-your-terminal" @click="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
                       with one command.
                   </p>
@@ -134,9 +134,9 @@ useSchemaOrg([
               <img src="/images/pseudo-editor.png" alt="Node-RED pseudo UI" width="500" class="w-full h-auto">
           </div>
           <div class="md:hidden w-full max-w-md m-auto">
-              <CtaSignUp variant="primary" position="nodered-mobile" class="flex flex-col w-full" />
+              <CtaBookDemo variant="primary" position="nodered-mobile" class="flex flex-col w-full" />
               <p class="font-light mt-3 mb-0 text-center">
-                  Nothing to install, you get an editor in the browser. Or
+                  See FlowFuse's hosted Node-RED editor with our team. Or
                   <a href="#install-node-red-from-your-terminal" @click="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
                   with one command.
               </p>
@@ -145,7 +145,7 @@ useSchemaOrg([
   </div>
 
       <!--Install commands, directly under the hero. This is the second of the two routes
-          the hero names: TRY IT NOW signs you up for a hosted editor, this one runs
+          the hero names: BOOK A DEMO walks you through the hosted editor, this one runs
           Node-RED on hardware you already have.-->
       <div id="install-node-red-from-your-terminal" class="w-full scroll-mt-24 pb-16">
           <div class="max-w-screen-lg mx-auto px-6">

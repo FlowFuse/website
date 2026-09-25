@@ -75,15 +75,15 @@ useSchemaOrg([
 
         <section class="mt-16 rounded-lg border border-indigo-100 bg-radial-[at_bottom_right] from-indigo-50 to-white p-6 sm:p-8">
             <h3 class="text-xl font-semibold text-gray-900">Self-hosted deployments</h3>
-            <p class="mt-2 text-gray-600 max-w-3xl">FlowFuse is available in two ways. Pick the hosting model that fits your environment - and start building immediately.</p>
+            <p class="mt-2 text-gray-600 max-w-3xl">FlowFuse is available in two ways. Pick the hosting model that fits your environment.</p>
             <div class="mt-6 grid gap-6 sm:grid-cols-2">
                 <div class="flex flex-col">
                     <div class="flex items-center gap-2">
                         <UIcon name="i-lucide-cloud" class="size-5 shrink-0 text-indigo-600" />
                         <h4 class="text-lg font-semibold text-gray-900">FlowFuse Cloud</h4>
                     </div>
-                    <p class="mt-2 text-sm text-gray-600 grow">Fully managed and maintained by us. Nothing to install, nothing to patch - start building in minutes.</p>
-                    <CtaSignUp variant="primary" position="pricing-hosting-cloud" class="mt-4 self-start" />
+                    <p class="mt-2 text-sm text-gray-600 grow">Fully managed and maintained by us. Nothing to install, nothing to patch.</p>
+                    <CtaBookDemo variant="primary" position="pricing-hosting-cloud" class="mt-4 self-start" />
                 </div>
                 <div class="flex flex-col">
                     <div class="flex items-center gap-2">

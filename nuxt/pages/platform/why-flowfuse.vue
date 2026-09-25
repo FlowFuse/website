@@ -8,7 +8,7 @@
 //  - The four quote glyphs were {% include %}d raw at w-16 with no ff-icon wrapper, so
 //    they resolve through <UIcon> against the installed heroicons set.
 //  - faq.njk becomes <BlogFaq> plus useSchemaOrg.
-//  - The CTA macros become <CtaBookDemo> and <CtaSignUp>.
+//  - The CTA macro becomes <CtaBookDemo>.
 //  - The <title> and meta description are FIXED here. This page's frontmatter carried
 //    MES's meta block verbatim, so production serves
 //    "FlowFuse for your own MES • FlowFuse" and the MES description on
@@ -83,7 +83,6 @@ useSchemaOrg([
               </div>
               <div class="flex gap-3 max-md:mx-auto max-sm:flex-col max-md:justify-center">
                 <CtaBookDemo variant="primary" position="primary" class="min-h-[40px]" />
-                <CtaSignUp variant="ghost" position="primary" icon="i-lucide-arrow-right" class="min-h-[40px]" />
               </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[550px] ff-image-rounded rounded-lg drop-shadow-lg w-full">
