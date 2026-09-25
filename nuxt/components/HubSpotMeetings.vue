@@ -71,20 +71,37 @@ type MeetingBookedMessage = {
     }
 }
 
+// Also undocumented: the iframe posts { height: N } on every internal screen change, to let
+// the parent resize the container. The value itself is meaningless (varies by viewport and
+// which fields render), but a NEW value is a reasonable proxy for "moved to a different
+// screen inside the embed" - so it's tracked as a step count, not as the height itself.
+type MeetingResizeMessage = { height?: number }
+
 type PosthogWindow = Window & {
     posthog?: { identify: (distinctId: string, properties?: Record<string, unknown>) => void }
 }
 
+let stepCount = 0
+let lastHeight: number | null = null
+
 function handleMeetingMessage(event: MessageEvent) {
     if (event.origin !== meetingsOrigin) return
-    const data = event.data as MeetingBookedMessage
-    if (!data?.meetingBookSucceeded) return
+    const data = event.data as MeetingBookedMessage & MeetingResizeMessage
 
-    const contact = data.meetingsPayload?.bookingResponse?.postResponse?.contact
-    if (contact?.email) {
-        ;(window as PosthogWindow).posthog?.identify(contact.email, { email: contact.email, name: contact.name })
+    if (data?.meetingBookSucceeded) {
+        const contact = data.meetingsPayload?.bookingResponse?.postResponse?.contact
+        if (contact?.email) {
+            ;(window as PosthogWindow).posthog?.identify(contact.email, { email: contact.email, name: contact.name })
+        }
+        capture('hubspot-meeting-booked', { position: props.position })
+        return
     }
-    capture('hubspot-meeting-booked', { position: props.position })
+
+    if (typeof data?.height === 'number' && data.height !== lastHeight) {
+        lastHeight = data.height
+        stepCount += 1
+        capture('hubspot-meeting-step-progressed', { position: props.position, step: stepCount })
+    }
 }
 
 onMounted(() => window.addEventListener('message', handleMeetingMessage))
@@ -93,7 +110,11 @@ onUnmounted(() => window.removeEventListener('message', handleMeetingMessage))
 
 <template>
   <div>
-    <div class="meetings-iframe-container -mb-20 md:-mb-6" :data-src="props.dataSrc" />
+    <!-- The negative margin only makes sense once the real iframe is loaded: it tucks away
+         HubSpot's own excess bottom whitespace. Applied while empty (fallback state), it
+         pulls the fallback panel up into this container's parent's overflow-hidden and
+         clips its top edge instead. -->
+    <div class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="props.dataSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
       <p class="text-indigo-200">30-minute session with our team.</p>
