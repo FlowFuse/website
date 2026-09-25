@@ -12,6 +12,9 @@ const hl = (key) => {
 
 const resolveHref = useResolveHref()
 
+const route = useRoute()
+const isDocs = computed(() => route.path === '/docs' || route.path.startsWith('/docs/'))
+
 onMounted(() => {
     const navToggle = document.getElementById('nav-toggle')
     if (navToggle) {
@@ -120,17 +123,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <header id="ff-header" class="ff-header" data-nav-zone="header">
+  <header id="ff-header" class="ff-header" :class="{ 'ff-header--docs': isDocs }" data-nav-zone="header">
     <nav class="relative w-full flex items-center justify-between xl:grid xl:grid-cols-header mx-auto max-screen-none lg:max-w-screen-xl 2xl:max-w-[1920px]">
 
       <!-- Wordmark: visible from 420px up on mobile and on desktop, hidden on tablet -->
-      <a class="ff-logo-link hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row" href="/" aria-label="FlowFuse Home" style="font-family:'Baloo 2', sans-serif">
+      <a class="ff-logo-link ff-logo-link--wordmark hidden min-[420px]:flex md:hidden lg:flex no-underline hover:no-underline font-bold h-8 w-40 flex-row" href="/" aria-label="FlowFuse Home" style="font-family:'Baloo 2', sans-serif">
         <!-- Five stops feed the staggered hover wave in style.css (ff-logo-wave). -->
         <FlowFuseWordmark uid="header" color="#DA3D0B" />
       </a>
 
       <!-- Square icon: visible below 420px and on tablet -->
-      <a class="ff-logo-link w-8 h-8 block min-[420px]:hidden md:block lg:hidden shrink-0" href="/" aria-label="FlowFuse Home">
+      <a class="ff-logo-link ff-logo-link--square w-8 h-8 block min-[420px]:hidden md:block lg:hidden shrink-0" href="/" aria-label="FlowFuse Home">
         <svg class="ff-wave-square" enable-background="new 0 0 79.4 79.4" viewBox="0 0 79.4 79.4" xmlns="http://www.w3.org/2000/svg">
           <!-- Rests on #ED4E4E, so ff-wave-square rebases the wave in style.css. -->
           <defs>
@@ -149,7 +152,8 @@ onMounted(() => {
 
       <!-- Mobile hamburger -->
       <div class="flex items-center gap-2 md:hidden relative z-20">
-        <CtaBookDemo variant="primary" position="header-mobile" />
+        <DocsHeaderActions />
+        <CtaBookDemo variant="primary" position="header-mobile" class="whitespace-nowrap" />
         <button id="nav-toggle" class="text-gray-700 flex items-center text-red-hero">
           <svg class="burger fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           <svg class="close fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -185,6 +189,8 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
+        <!-- Docs search and Expert, on tablets, where the docs sidebar is folded away. -->
+        <li v-if="isDocs" class="lg:hidden mr-1"><DocsHeaderActions icon-only /></li>
         <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
         <li class="flex">
           <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
@@ -202,3 +208,17 @@ onMounted(() => {
     </div>
   </header>
 </template>
+
+<style scoped>
+/* Docs pages add search and Expert to the phone header, so the square logo holds on a
+   little longer before the wordmark takes its place. */
+@media (min-width: 420px) and (max-width: 519px) {
+    .ff-header--docs .ff-logo-link--wordmark {
+        display: none;
+    }
+
+    .ff-header--docs .ff-logo-link--square {
+        display: block;
+    }
+}
+</style>
