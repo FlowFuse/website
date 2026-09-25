@@ -569,11 +569,15 @@ export default defineContentConfig({
                     quote: z.object({
                         text: z.string(),
                         author: z.string(),
-                        role: z.string(),
+                        role: z.string().optional(),
                         company: z.string(),
                         image: z.string(),
                         imageAlt: z.string(),
-                    }),
+                    }).optional(),
+                    image: z.object({
+                        src: z.string(),
+                        alt: z.string(),
+                    }).optional(),
                 }),
                 // The "N+ manufacturers in M countries..." SocialProof line. Not every page
                 // has an aggregate stat like this yet.
@@ -590,8 +594,8 @@ export default defineContentConfig({
                     // v-html for the same reason hero.heading is.
                     heading: z.string(),
                     description: z.string(),
-                    linkText: z.string(),
-                    linkHref: z.string(),
+                    linkText: z.string().optional(),
+                    linkHref: z.string().optional(),
                 }).optional(),
                 roi: z.object({
                     heading: z.string(),
@@ -611,8 +615,8 @@ export default defineContentConfig({
                     })),
                 }),
                 compliance: z.object({
-                    // The "The Data Your Audit Asks For, In One Place" subtitle is fixed
-                    // copy shared by every page, not declared here.
+                    heading: z.string().optional(),
+                    subtitle: z.string().optional(),
                     description: z.string(),
                     items: z.array(z.object({
                         title: z.string(),

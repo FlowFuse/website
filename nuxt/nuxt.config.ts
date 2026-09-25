@@ -531,6 +531,8 @@ export default defineNuxtConfig({
                     '/ai',
                     '/industries/automotive',
                     '/industries/industrial-machinery',
+                    '/industries/building-materials',
+                    '/industries/energy-utilities',
                     ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',

@@ -126,7 +126,7 @@ The exact contents and format of an FAI report depend on the applicable customer
 
 ## FAI vs. PPAP
 
-FAI and Production Part Approval Process (PPAP) both help verify that manufactured parts meet requirements, but they serve different purposes. PPAP is defined in the [PPAP manual published by AIAG](https://www.aiag.org/training-and-resources/manuals), and most North American OEMs name that manual directly in their customer-specific requirements.
+FAI and [Production Part Approval Process (PPAP)](/blog/2026/09/ppap/) both help verify that manufactured parts meet requirements, but they serve different purposes. PPAP is defined in the [PPAP manual published by AIAG](https://www.aiag.org/training-and-resources/manuals), and most North American OEMs name that manual directly in their customer-specific requirements.
 
 |                             | FAI                                                   | PPAP                                                                                |
 | --------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------- |
