@@ -25,7 +25,7 @@ date: 2026-09-29
 time: 17:00 CET (11:00am ET)
 duration: 60
 video:
-hosts: ["kristopher-sandoval", "jamie-strusz", "drew-gatti"]
+hosts: ["kristopher-sandoval", "drew-gatti"]
 hubspot:
     formId: 203e22c0-4c24-467d-b8fc-645160fa31f0
     downloadFormId:
@@ -40,7 +40,7 @@ Picture your average day. Maybe it looks like a plant losing millions of dollars
 
 Every one of those problems is real and until now, all of them got handed the same generic platform and told to make it fit. That changes today. We're launching three industrial IoT solutions: FlowFuse Hub, FlowFuse Edge, and FlowFuse Fleet — each built around one of those real jobs, not a tier or a bundle.
 
-Join Kristopher Sandoval (Product Marketing), Jamie Strusz (Engineering), Drew Gatti (Solutions Engineering), live to see all three in action, find out which one is yours, and leave knowing exactly how to start — today, in a 30-day trial, or as an upgrade from what you're already running.
+Join Kristopher Sandoval (Product Marketing) and Drew Gatti (Solutions Engineering), live to see all three in action, find out which one is yours, and leave knowing exactly how to start — today, in a 30-day trial, or as an upgrade from what you're already running.
 
 ## Which industrial IoT solution fits my setup?
 
