@@ -84,8 +84,35 @@ const name = inject<string>('ff-docs-choices-name', 'ff-docs-choices')
     transform: rotate(180deg);
 }
 
+/* Opening and closing animate the content's height (to its natural size, which
+   interpolate-size on DocsChoices allows) with a short fade. A browser without
+   ::details-content drops these rules and simply opens the option. */
+.ff-docs-choice::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 0.25s ease, content-visibility 0.25s allow-discrete;
+}
+
+.ff-docs-choice[open]::details-content {
+    block-size: auto;
+}
+
 .ff-docs-choice__body {
     padding: 0 0.25rem 1.125rem 2.25rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.ff-docs-choice[open] .ff-docs-choice__body {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ff-docs-choice::details-content,
+    .ff-docs-choice__body,
+    .ff-docs-choice__chevron {
+        transition: none;
+    }
 }
 
 .ff-docs-choice__body :deep(p) {

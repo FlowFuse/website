@@ -55,11 +55,13 @@ defineProps<{
     margin-top: 2.5rem;
 }
 
+/* Top-aligned, not centred: the aside can change height (the ways-in list opens and closes),
+   and a centred heading would move with it. */
 @media (min-width: 1024px) {
     .ff-docs-hero {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 4rem;
-        align-items: center;
+        align-items: start;
     }
 }
 
