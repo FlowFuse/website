@@ -13,8 +13,8 @@ const toAbsoluteUrl = (event: Parameters<typeof getSiteConfig>[0], path: string)
     (path.startsWith('http') ? path : `${getSiteConfig(event).url}${path}`)
 
 // Runs at prerender time (during `nuxt generate`), inside the git checkout, so walking up
-// from cwd to find `.git` is robust whether the build is invoked from the repo root or the
-// `nuxt/` workspace - unlike at request time in the deployed function, where no .git exists.
+// from cwd to find `.git` is robust wherever in the checkout the build is invoked from -
+// unlike at request time in the deployed function, where no .git exists.
 function findRepoRoot (start: string): string {
     let dir = start
     for (let i = 0; i < 6; i++) {

@@ -88,7 +88,7 @@ test('the whole guides tree lands in the docs content tree, stamped with an edit
 
         assert.equal(count, 3)
         const index = readFileSync(join(contentDocsDir, 'application-guide/index.md'), 'utf8')
-        assert.match(index, /editUrl: https:\/\/github\.com\/FlowFuse\/website\/edit\/main\/nuxt\/content-guides\/application-guide\/README\.md/)
+        assert.ok(index.includes(`editUrl: https://github.com/FlowFuse/website/edit/main/${GUIDES_SOURCE}/application-guide/README.md\n`))
         assert.match(index, /title: Guide/)
         assert.ok(readFileSync(join(contentDocsDir, 'application-guide/architectures/it.md'), 'utf8'))
         assert.equal(readFileSync(join(publicDocsDir, 'application-guide/diagram.svg'), 'utf8'), '<svg/>')
