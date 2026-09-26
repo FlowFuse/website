@@ -22,7 +22,7 @@ The product function defines what we build and why.
 
 - [Product Overview](./product/) - how product management works
 - [Feedback](./product/feedback.md) - how we collect and process feedback
-- [Shop-Floor Demos](./product/shop-floor-demos.md) - recording rules and scripts for shop-floor monitoring demos
+- [Shop-Floor Demos](./product/shop-floor-demos.md) - recording rules for shop-floor monitoring demos, run against a marketing-provided script
 - [Pricing Principles](./product/pricing.md) - how we decide feature tiers
 
 ## General
