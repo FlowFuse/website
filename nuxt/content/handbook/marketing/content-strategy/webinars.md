@@ -129,7 +129,7 @@ Every webinar should be treated as a **content flywheel**, not a one-off event â
 
 ## Creating a Webinar Page
 
-Webinar pages follow a fixed structure, you can see plenty of examples [here](https://github.com/FlowFuse/website/tree/main/src/webinars) in our website repository. Importantly, they must define the following properties at the top of the `.md` file:
+Webinar pages follow a fixed structure, you can see plenty of examples [here](https://github.com/FlowFuse/website/tree/main/nuxt/content/webinars) in our website repository. Importantly, they must define the following properties at the top of the `.md` file:
 
 ### Properties
 
@@ -142,7 +142,7 @@ Webinar pages follow a fixed structure, you can see plenty of examples [here](ht
 | `date` | The date that the webinar will take place
 | `time` | The time that the webinar will take place, in both GMT & ET
 | `duration` | How long, in minutes with the webinar last for
-| `hosts` | A list of the webinar hosts, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/src/_data/team). If they're not part of the FlowFuse team, then you can find a list of guests in [here](https://github.com/FlowFuse/website/tree/main/src/_data/guests), feel free to add any guest you need and remember to add the headshot image in the images/team [folder](https://github.com/FlowFuse/website/tree/main/src/images/team) following the same name convention as the rest of the files.
+| `hosts` | A list of the webinar hosts, the names need to be formatted inline with the file names found [here](https://github.com/FlowFuse/website/tree/main/nuxt/data/team). If they're not part of the FlowFuse team, then you can find a list of guests in [here](https://github.com/FlowFuse/website/tree/main/nuxt/data/guests), feel free to add any guest you need and remember to add the headshot image in the images/team [folder](https://github.com/FlowFuse/website/tree/main/nuxt/public/images/team) following the same name convention as the rest of the files.
 | `hubspot.formId` | The formId from HubSpot to handle the event registration
 
 ### Example

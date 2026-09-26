@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/_includes/layouts/webinar.njk (11ty), which this replaces. Same page,
-// same copy, same classes from src/css/style.css.
+// same copy, same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The hand-written <lite-youtube> element and the hs-form.njk include become

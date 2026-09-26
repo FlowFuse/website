@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/partners/certify-hardware.njk (11ty), which this replaces. Same page,
-// same copy, same classes from src/css/style.css.
+// same copy, same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The step glyphs were {% include %}d raw inside .ff-certify-list-icon. They are all

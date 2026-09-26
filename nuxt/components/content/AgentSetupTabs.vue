@@ -5,7 +5,7 @@
 // changelog entry and the third-party-agents docs page need the same steps /ai has,
 // and hand-copying them into each surface is how they drift apart.
 //
-// Styling comes from the .ff-agent-* rules in src/css/style.css, which nuxt.config.ts
+// Styling comes from the .ff-agent-* rules in nuxt/assets/css/style.css, which nuxt.config.ts
 // links on every Nuxt page, rather than from utility classes on the elements. That is
 // forced: this renders inside .prose on the changelog and docs pages, and the site's
 // prose rules are unlayered, which outranks Tailwind's @layer utilities whatever the

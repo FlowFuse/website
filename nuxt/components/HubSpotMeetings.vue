@@ -5,10 +5,10 @@
 // (site.meetings.salesRoundRobin); dataSrc overrides it for a campaign-specific one.
 //
 // The embed is gated on analytics consent and MUST STAY THAT WAY: window._ffLoadMeetings is
-// what src/js/cookieconsent-config.js calls once the visitor accepts, or on a later page
-// load where consent is already stored - the latter is also checked directly on mount,
+// what nuxt/assets/js/cookieconsent-config.js calls once the visitor accepts, or on a later
+// page load where consent is already stored - the latter is also checked directly on mount,
 // since that call can otherwise race this component's own mount and get silently dropped.
-import site from '../../src/_data/site.json'
+import site from '../data/site.json'
 import { parseMeetingMessage } from '../lib/hubspot-meeting-message.mjs'
 
 const props = defineProps<{ position: string, dataSrc?: string }>()

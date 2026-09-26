@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // src/_includes/blueprints/ - the `renderCompanyTile` shortcode from .eleventy.js, whose
 // only two callers were the blueprint card and the blueprint layout. The .company-tile
-// classes it emitted are still styled by src/css/style.css.
+// classes it emitted are still styled by nuxt/assets/css/style.css.
 //
 // The shortcode interpolated the company's fields straight into an HTML string. These come
 // from a data file rather than page content, but they are still values from another

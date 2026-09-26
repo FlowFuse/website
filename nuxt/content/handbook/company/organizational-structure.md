@@ -13,7 +13,7 @@ This page provides an overview of FlowFuse's organizational structure and report
 
 ## Reporting Structure
 
-The organizational structure is automatically generated from team member data files located in `src/_data/team/`. Each team member's JSON file includes a `reports_to` field that indicates their direct manager.
+The organizational structure is automatically generated from team member data files located in `nuxt/data/team/`. Each team member's JSON file includes a `reports_to` field that indicates their direct manager.
 
 ### Executive Leadership
 

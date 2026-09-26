@@ -1,5 +1,5 @@
 import { CTA_DESTINATIONS, normalizeHref } from './cta-destinations'
-import site from '../../src/_data/site.json'
+import site from '../data/site.json'
 
 // Registry for one-off CTA destinations that aren't one of the five reserved
 // ones (see cta-destinations.ts) but still deserve one fixed PostHog event -

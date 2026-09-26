@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/blueprints/submit.njk (11ty), which this replaces. Same page, same copy,
-// same classes from src/css/style.css.
+// same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The .njk used 11ty pagination (size 3) purely to slice three blueprints for the

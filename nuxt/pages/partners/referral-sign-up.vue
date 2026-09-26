@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/partners/referral-sign-up.njk (11ty), which this replaces. Same page,
-// same copy, same classes from src/css/style.css.
+// same copy, same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - hs-form.njk becomes <HubSpotForm>, keeping the same form id, cta event and
