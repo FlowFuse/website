@@ -7,7 +7,7 @@
 //    industriesLegacy (the seven restored pages, transitional) and industries (the
 //    automotive-page template, starting with automotive itself and industrial-machinery).
 //    Once industriesLegacy is retired this page only needs the second query.
-//  - The CTA macros become <CtaContactUs> and <CtaSignUp>.
+//  - The CTA macro becomes <CtaContactUs>.
 const { data: legacyIndustries } = await useAsyncData('industries-legacy-listing', () =>
     queryCollection('industriesLegacy').select('slug', 'seoMeta', 'hero').all()
 )
@@ -92,10 +92,9 @@ useSeoMeta({
     <div class="w-full px-6 py-20">
       <div class="ff-blue-card max-md:max-w-xl md:max-w-screen-lg mx-auto pt-12 pb-10 text-center">
         <h3 class="mb-4 w-full text-center">See it in your plant</h3>
-        <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">Talk to an expert, or get started with FlowFuse today.</p>
+        <p class="text-gray-600 mb-8 max-w-xl mx-auto text-center">Talk to an expert about your plant.</p>
         <div class="flex flex-wrap gap-4 justify-center">
           <CtaContactUs variant="highlight" position="footer" class="min-h-[40px]" />
-          <CtaSignUp variant="primary-outlined" position="footer" class="min-h-[40px]" />
         </div>
       </div>
     </div>

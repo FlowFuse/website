@@ -133,7 +133,6 @@ useSeoMeta({
         <h2 class="text-white font-medium m-0 max-w-2xl">Join hundreds of global organizations building, governing, and deploying operational applications.</h2>
         <div class="flex flex-col sm:flex-row gap-4 items-center">
           <CtaBookDemo variant="highlight" :position="`${tierId}-final`" />
-          <CtaSignUp variant="ghost" color="white" icon="i-lucide-arrow-right" :position="`${tierId}-final`" />
         </div>
       </div>
     </div>

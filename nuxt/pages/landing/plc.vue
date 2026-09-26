@@ -271,7 +271,6 @@ useSchemaOrg([
                       </p>
                       <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                           <CtaContactUs variant="primary" position="primary" class="min-h-[40px]" />
-                          <CtaSignUp variant="primary-outlined" position="primary" class="min-h-[40px]" />
                       </div>
                   </div>
                   <div class="md:w-2/5 flex-grow relative">
@@ -560,11 +559,10 @@ useSchemaOrg([
               <div class="ff-blue-card">
                   <h4 class="mb-6 w-full text-center">Ready to unlock your PLC data?</h4>
                   <p class="text-center text-gray-600 mb-8">
-                      Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack, in a live demo or a free trial.
+                      Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack, in a live demo.
                   </p>
                   <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
                       <CtaBookDemo variant="primary" position="secondary" class="min-h-[40px]" />
-                      <CtaSignUp variant="primary-outlined" position="secondary" class="min-h-[40px]" />
                   </div>
               </div>
           </div>
