@@ -94,7 +94,15 @@ export function writeGuideFile ({ guidesDir, repoRoot, contentDocsDir, publicDoc
     const sourcePath = `${GUIDES_SOURCE}/${relPath}`
     // Argument array, not a shell string: the path comes from filenames on disk, so
     // interpolating it into a shell command would be an injection path.
-    const updated = gitOutput(repoRoot, ['log', '-1', '--pretty=format:%ci', '--', sourcePath])
+    //
+    // The newest commit that added or changed the file, followed back through renames. A
+    // move that leaves the file untouched (-M100% makes it an R100) is filtered out, so
+    // moving the guides tree does not stamp every guide with the date of the move. A move
+    // that also edited the file is not detected as a rename at 100%, so it shows up as an
+    // add and dates the file, as an edit should.
+    const updated = gitOutput(repoRoot, [
+        'log', '-1', '--follow', '-M100%', '--diff-filter=AM', '--pretty=format:%ci', '--', sourcePath,
+    ])
 
     const raw = readFileSync(srcPath, 'utf8')
     writeFileSync(destPath, injectFrontmatter(raw, {
