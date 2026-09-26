@@ -3,12 +3,11 @@
 # Start with a catch all for the handbook
 /nuxt/content/handbook/ @ZJvandeWeg
 /nuxt/content/handbook/design @Yndira-E
-/nuxt/content/handbook/development @knolleary
 /nuxt/content/handbook/marketing @FlowFuse/marketing
 /nuxt/content/handbook/sales @MichaelBDavis
 
 # Customer department
-/nuxt/content/handbook/customer-success.md @Esmewieringa
+/nuxt/content/handbook/sales/customer-success.md @Esmewieringa
 
 # Security Polices
 /nuxt/content/handbook/company/security/information-security.md @ZJvandeWeg
