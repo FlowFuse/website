@@ -16,7 +16,6 @@
 //    here, which is what that was for.
 
 const capture = useCapture()
-const resolveHref = useResolveHref()
 
 const META_DESCRIPTION = 'Tulip is only as powerful as the data you feed it. FlowFuse connects legacy machines, edge devices, ERPs, and any industrial system, giving Tulip the complete picture it needs to optimize your operations.'
 
@@ -73,8 +72,6 @@ const STORIES_HEADING = {
     url: '/customer-stories/',
     urlText: 'See more customer stories',
 }
-
-const MEETINGS_SRC = `${resolveHref('site:meetings.salesRoundRobin')}?embed=true`
 
 const { data: stories } = await useAsyncData('tulip-stories', () =>
     queryCollection('stories').select('path', 'title', 'image', 'logo', 'story', 'date')
@@ -225,7 +222,7 @@ useHead({ meta: [{ name: 'robots', content: 'noindex' }] })
             <h2 class="mb-8 max-md:text-center">Ready to Make the Wiser Decision?</h2>
             <p>See how FlowFuse can connect ALL your data sources to Tulip. Book your demo now.</p>
             <div class="my-10">
-              <HubSpotMeetings :data-src="MEETINGS_SRC" position="landing-tulip" />
+              <HubSpotMeetings position="form" />
             </div>
           </div>
         </div>

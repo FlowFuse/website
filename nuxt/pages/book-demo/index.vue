@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const resolveHref = useResolveHref()
-const meetingsSrc = `${resolveHref('site:meetings.salesRoundRobin')}?embed=true`
-
 const highlights = [
     '<span class="font-semibold">5→1</span> systems unified into one platform, like <a href="/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge">Walter Tools</a>',
     '<span class="font-semibold">3-5X</span> faster deployment, like <a href="/customer-stories/node-red-building-management">Power Workplace</a>',
@@ -24,7 +21,7 @@ useSeoMeta({
     description="See how you'd build, deploy, and govern operational applications across your own plants and production lines."
     :highlights="highlights"
   >
-    <HubSpotMeetings :data-src="meetingsSrc" position="book-demo" />
+    <HubSpotMeetings position="hero" />
   </MqlContactPage>
 
   <div class="container m-auto max-w-5xl px-6 pb-20">
