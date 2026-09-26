@@ -1,8 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
-import { dirname, join, relative } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { join, relative } from 'node:path'
 
 import { findFiles } from './find-files.mjs'
 import { GUIDES_SOURCE } from './guides-sync.mjs'
@@ -10,8 +9,8 @@ import { isDirectory } from './meta-title-length.mjs'
 import {
     extractHelp, helpRefsIn, helpUrlFor, isSafeHelpRef, sanitiseHelp, unclaimedHelpNames,
 } from './node-red-help.mjs'
+import { REPO_ROOT } from './repo-root.mjs'
 
-const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..')
 const GUIDES_DIR = join(REPO_ROOT, GUIDES_SOURCE)
 
 const block = (name, body) => `<script type="text/html" data-help-name="${name}">${body}</script>`

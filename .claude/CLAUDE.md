@@ -22,7 +22,7 @@ path in a comment names what a page used to be, not a file that still exists.
   other repositories at build time (product docs, the Blueprint Library)
 - **Files served as-is**: `nuxt/public/`, a tracked asset tree rather than build output
 - **CSS**: two Tailwind v4 builds on every page: `nuxt/assets/css/style.css`, compiled by PostCSS to `nuxt/public/css/style.css`, and `nuxt/assets/css/theme.css`, bundled by Nuxt and loaded second
-- **Search**: Algolia (`scripts/index-algolia.js`), indexed from the built output
+- **Search**: Algolia (`scripts/index-algolia.mjs`), indexed from the built output
 - **Hosting**: Netlify, from `nuxt/dist`
 
 ### Production build order
@@ -81,8 +81,7 @@ nuxt/
 ├── composables/
 ├── utils/
 └── pages/
-scripts/               # sync_docs.mjs, sync_blueprints.mjs, their watchers, index-algolia.js
-lib/                   # search-index.js, shared with scripts/index-algolia.js
+scripts/               # sync_docs.mjs, sync_blueprints.mjs, their watchers, index-algolia.mjs
 ```
 
 ---

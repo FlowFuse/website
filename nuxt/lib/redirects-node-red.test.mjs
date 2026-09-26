@@ -10,12 +10,11 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { join } from 'node:path'
 
 import { GUIDES_SOURCE, listGuideFiles } from './guides-sync.mjs'
+import { REPO_ROOT as repoRoot } from './repo-root.mjs'
 
-const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
 const read = rel => readFileSync(join(repoRoot, rel), 'utf8')
 
 const withSlashes = path => '/' + path.split('/').filter(Boolean).join('/') + '/'

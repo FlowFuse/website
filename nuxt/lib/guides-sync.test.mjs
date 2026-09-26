@@ -1,4 +1,5 @@
 import { test } from 'node:test'
+import { execFileSync } from 'node:child_process'
 import assert from 'node:assert/strict'
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -10,6 +11,7 @@ import {
     injectFrontmatter,
     listGuideFiles,
     syncGuides,
+    writeGuideFile,
 } from './guides-sync.mjs'
 
 const silent = { info: () => {}, warn: () => {}, error: () => {} }
@@ -88,7 +90,7 @@ test('the whole guides tree lands in the docs content tree, stamped with an edit
 
         assert.equal(count, 3)
         const index = readFileSync(join(contentDocsDir, 'application-guide/index.md'), 'utf8')
-        assert.match(index, /editUrl: https:\/\/github\.com\/FlowFuse\/website\/edit\/main\/nuxt\/content-guides\/application-guide\/README\.md/)
+        assert.ok(index.includes(`editUrl: https://github.com/FlowFuse/website/edit/main/${GUIDES_SOURCE}/application-guide/README.md\n`))
         assert.match(index, /title: Guide/)
         assert.ok(readFileSync(join(contentDocsDir, 'application-guide/architectures/it.md'), 'utf8'))
         assert.equal(readFileSync(join(publicDocsDir, 'application-guide/diagram.svg'), 'utf8'), '<svg/>')
@@ -135,6 +137,41 @@ test('listGuideFiles walks nested directories and skips dotfiles', () => {
             listGuideFiles(join(root, GUIDES_SOURCE)).sort(),
             ['a.md', join('nested', 'b.md')]
         )
+    } finally {
+        cleanup()
+    }
+})
+
+test('updated is the last change to a guide, not the commit that moved it', () => {
+    const { root, contentDocsDir, publicDocsDir, cleanup } = scratch()
+    const git = (date, ...args) => execFileSync('git', args, {
+        cwd: root,
+        env: { ...process.env, GIT_AUTHOR_DATE: date, GIT_COMMITTER_DATE: date },
+        stdio: ['ignore', 'pipe', 'ignore'],
+    })
+    const commit = (date, message) => git(date, '-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', message)
+    try {
+        git('2026-01-01T00:00:00Z', 'init', '-q')
+        write(join(root, 'old', 'a.md'), '# A\n')
+        write(join(root, 'old', 'b.md'), '# B\n')
+        git('2026-01-01T00:00:00Z', 'add', '-A')
+        commit('2026-01-01T00:00:00Z', 'add')
+        write(join(root, 'old', 'a.md'), '# A, edited\n')
+        git('2026-02-01T00:00:00Z', 'add', '-A')
+        commit('2026-02-01T00:00:00Z', 'edit a')
+        // Move the tree to where GUIDES_SOURCE says the guides live now, editing b on the way.
+        mkdirSync(dirname(join(root, GUIDES_SOURCE)), { recursive: true })
+        git('2026-03-01T00:00:00Z', 'mv', 'old', GUIDES_SOURCE)
+        write(join(root, GUIDES_SOURCE, 'b.md'), '# B, edited while moving\n')
+        git('2026-03-01T00:00:00Z', 'add', '-A')
+        commit('2026-03-01T00:00:00Z', 'move')
+
+        const updated = relPath => {
+            const dest = writeGuideFile({ guidesDir: join(root, GUIDES_SOURCE), repoRoot: root, contentDocsDir, publicDocsDir, relPath })
+            return readFileSync(dest, 'utf8').match(/^updated: (\S+)/m)?.[1]
+        }
+        assert.equal(updated('a.md'), '2026-02-01', 'a pure move keeps the date of the last edit')
+        assert.equal(updated('b.md'), '2026-03-01', 'a move that also edited the file counts as the edit')
     } finally {
         cleanup()
     }

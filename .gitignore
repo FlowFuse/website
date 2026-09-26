@@ -1,21 +1,39 @@
 .DS_Store
 node_modules
-nuxt/content/docs/
-# Synced from FlowFuse/blueprint-library by nuxt/modules/blueprints-source.ts.
-nuxt/content/blueprints/
-
-# Left in existing checkouts by the retired Eleventy build: its output and its
-# eleventy-fetch cache. Nothing writes these any more.
-_site
-.cache
-
-# Local development config
-.vscode/
-
 .env
+
+# Nuxt build output
+nuxt/.nuxt/
+nuxt/.output/
+nuxt/dist/
+nuxt/.data/
 
 # Local Netlify folder
 .netlify
 
+# Synced at build time by nuxt/modules/docs-source.ts (from FlowFuse/flowfuse) and
+# nuxt/modules/blueprints-source.ts (from FlowFuse/blueprint-library).
+nuxt/content/docs/
+nuxt/public/docs/
+nuxt/content/blueprints/
+nuxt/public/blueprints/
+
+# nuxt/public/ is a tracked asset tree. Only these parts of it are generated during a build:
+nuxt/public/css/
+nuxt/public/js/cc.min.js
+nuxt/public/js/flowrenderer.min.js
+
+# Left in existing checkouts by the retired Eleventy build: its output, its eleventy-fetch
+# cache, and what it wrote into nuxt/public/. Nothing writes these any more.
+_site
+.cache
+nuxt/public/img/
+nuxt/public/_includes/
+nuxt/public/sitemap-legacy.xml
+nuxt/public/js/ai-expert-modal.js
+nuxt/public/js/hm-promo-banner.js
+
+# Local development config
+.vscode/
 
 deno.lock
