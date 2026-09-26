@@ -73,8 +73,6 @@ const STORIES_HEADING = {
     urlText: 'See more customer stories',
 }
 
-const MEETINGS_SRC = 'https://meetings-eu1.hubspot.com/michael-davis/round-robin-michael-omar-kasheef?embed=true'
-
 const { data: stories } = await useAsyncData('tulip-stories', () =>
     queryCollection('stories').select('path', 'title', 'image', 'logo', 'story', 'date')
         .order('date', 'DESC').limit(3).all()
@@ -224,7 +222,7 @@ useHead({ meta: [{ name: 'robots', content: 'noindex' }] })
             <h2 class="mb-8 max-md:text-center">Ready to Make the Wiser Decision?</h2>
             <p>See how FlowFuse can connect ALL your data sources to Tulip. Book your demo now.</p>
             <div class="my-10">
-              <HubSpotMeetings :data-src="MEETINGS_SRC" />
+              <HubSpotMeetings position="form" />
             </div>
           </div>
         </div>

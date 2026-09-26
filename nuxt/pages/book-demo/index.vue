@@ -21,7 +21,7 @@ useSeoMeta({
     description="See how you'd build, deploy, and govern operational applications across your own plants and production lines."
     :highlights="highlights"
   >
-    <HubSpotMeetings data-src="https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team?embed=true" />
+    <HubSpotMeetings position="hero" />
   </MqlContactPage>
 
   <div class="container m-auto max-w-5xl px-6 pb-20">
