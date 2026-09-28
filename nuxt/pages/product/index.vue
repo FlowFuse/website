@@ -58,7 +58,7 @@ const STAGES: Stage[] = [
         label: 'Build',
         icon: 'i-lucide-pencil-ruler',
         heading: 'Build.',
-        summary: 'One editor, one runtime, connected to what you already run. Standard Node-RED, so the flows stay yours and the skills already exist.',
+        summary: 'Build in one editor and one runtime that connect to the systems you already use.',
         items: [
             { name: 'Node-RED', detail: 'The open runtime and editor underneath everything, unforked, so an application stays portable and the foundation stays yours.', to: '/node-red/' },
             { name: 'FlowFuse Expert', detail: 'AI in the editor: starting flows, Function code, SQL and dashboard UI, plus plain-language explanations of flows you inherited.', to: '/ai/' },
