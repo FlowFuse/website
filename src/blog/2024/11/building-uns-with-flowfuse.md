@@ -30,7 +30,7 @@ This article will show you how to build your UNS using FlowFuse, step by step.
 
 ## Building a UNS with Real-Time Sensor Data
 
-This section explains how to set up a Unified Namespace (UNS) using FlowFuse, a Raspberry Pi, and an ADXL345 sensor. The Raspberry Pi collects data from the sensor, which we collect and process in Node-RED, calculate vibration magnitude, format it, and send it to the UNS using standardized topic names.
+This section explains how to set up a [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) (UNS) using FlowFuse, a Raspberry Pi, and an ADXL345 sensor. The Raspberry Pi collects data from the sensor, which we collect and process in Node-RED, calculate vibration magnitude, format it, and send it to the UNS using standardized topic names.
 
 ### Step 1: Collect Metrics from Devices
 
@@ -137,7 +137,7 @@ _FlowFuse Interface for creating MQTT Client_
 
 The key to building a successful UNS is organizing your data with a clear and consistent naming convention. A well-designed convention ensures data is accessible and understandable across systems and users, simplifying communication and integration.
 
-**ISA-95** is a standard for industrial systems encompassing various manufacturing and communication aspects. However, when it comes to communication, ISA-95 often relies on point-to-point (P2P) connections between systems and devices. These connections can introduce complexity, delays, and other challenges.
+**[ISA-95](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/)** is a standard for industrial systems encompassing various manufacturing and communication aspects. However, when it comes to communication, ISA-95 often relies on point-to-point (P2P) connections between systems and devices. These connections can introduce complexity, delays, and other challenges.
 
 While we are building a UNS to address the problems and limitations we observed with point-to-point communication, we can still leverage key elements of ISA-95 that remain valuable for improving production efficiency. One of the central aspects of ISA-95 is its equipment hierarchical model, which links various layers of a factory, from physical devices to enterprise systems. By adapting this model to your data architecture, you can simplify data access and management across the entire system.
 
@@ -146,7 +146,7 @@ _ISA-95 : Equipment Hierarchical Model_
 
 For example, following an ISA-95-based equipment hierarchy to define your topic naming convention allows you to access data from devices, sensors, or any other source without knowing their specific addresses or tags, such as for a PLC. With clarity and ease, this logical structure enables you to retrieve relevant information from different system layers (e.g., from control systems to MES or ERP).
 
-Example topic structure based on ISA-95 equipment model hierarchy:
+Example [topic structure](/blog/2025/01/designing-topic-hierarchy-for-your-uns/) based on ISA-95 equipment model hierarchy:
 
 `Plant1/Area3/Line4/Cell2/DeviceA`
 

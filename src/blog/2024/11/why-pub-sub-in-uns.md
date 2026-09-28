@@ -54,7 +54,7 @@ Unlike point-to-point systems, the Pub/Sub model allows for flexible communicati
 
 ### Event-driven and Asynchronous Communication
 
-The Pub/Sub model is particularly well-suited for event-driven architectures, where systems react to changes in data rather than periodically polling for updates. This is important in environments where responsiveness is key, such as in predictive maintenance, supply chain optimization, or automated decision-making.
+The Pub/Sub model is particularly well-suited for [event-driven architectures](/blog/2026/02/what-is-event-driven-architecture-in-manufacturing/), where systems react to changes in data rather than periodically polling for updates. This is important in environments where responsiveness is key, such as in [predictive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/), supply chain optimization, or automated decision-making.
 
 For instance, a predictive maintenance system can subscribe to real-time sensor data from machines in a UNS. When the system detects an anomaly (e.g., a machine vibration out of normal parameters), it can immediately trigger an alert or maintenance action. This type of asynchronous communication is more efficient and scalable than synchronous polling or direct communication between producers and consumers.
 

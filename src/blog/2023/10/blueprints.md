@@ -17,7 +17,7 @@ Starting today, FlowFuse Blueprints are available on FlowFuse Cloud. Additionall
 
 ## FlowFuse Blueprints
 
-FlowFuse Blueprints aim to make the Node-RED experience more accessible for newcomers, while also offering a treasure trove of fresh ideas for seasoned Node-RED users. When setting up a new Node-RED instance, you now have the option to choose a blueprint tailored for specific use cases. For example, our "ANDON Operator Terminal" blueprint can be selected, and it will automatically configure the Node-RED instance, sparing you the need to start from scratch. While these templates are powerful out-of-the-box, they're also fully customizable, allowing you to tweak them to suit your unique requirements. Ultimately, blueprints speed up the learning curve for new users and expedite the solution-building process for experienced ones.
+FlowFuse Blueprints aim to make the Node-RED experience more accessible for newcomers, while also offering a treasure trove of fresh ideas for seasoned Node-RED users. When setting up a new Node-RED instance, you now have the option to choose a blueprint tailored for specific use cases. For example, our "[ANDON](/blog/2025/05/building-andon-task-manager-with-ff/) Operator Terminal" blueprint can be selected, and it will automatically configure the Node-RED instance, sparing you the need to start from scratch. While these templates are powerful out-of-the-box, they're also fully customizable, allowing you to tweak them to suit your unique requirements. Ultimately, blueprints speed up the learning curve for new users and expedite the solution-building process for experienced ones.
 
 ### How to use Blueprints?
 
@@ -36,5 +36,5 @@ The Performance Overview Dashboard Blueprint provides a real-time snapshot of ke
 ![Performance Overview Screenshot](./images/performance-dashboard.png)
 
 ### OEE Calculator
-If automatic calculations are not feasible, the OEE Calculator Blueprint enables end-users to manually input production data to compute the Overall Equipment Effectiveness (OEE) for a given machine.
+If automatic calculations are not feasible, the [OEE](/blog/2025/04/what-is-an-oee-dashboard/) Calculator Blueprint enables end-users to manually input production data to compute the Overall Equipment Effectiveness (OEE) for a given machine.
 ![OEE Calculator Screenshot](./images/dashboard-data.png)

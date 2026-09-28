@@ -105,7 +105,7 @@ Look at the hardware building blocks available, and recognise which one matches 
 | **Configurable App**    | The same application, but with site-specific settings.                        |
 | **Edge Building Block** | Reusable functionality that you assemble into larger edge solutions.          |
 
-This application talks directly to machines, PLCs, and sensors, so we're dealing with a hardware component.
+This application talks directly to machines, [PLCs](/blog/2025/12/what-is-plc/), and sensors, so we're dealing with a hardware component.
 
 It also needs adapting to the equipment at each site rather than deploying unchanged everywhere. That rules out a Packaged App and points us towards an **Edge Building Block**.
 

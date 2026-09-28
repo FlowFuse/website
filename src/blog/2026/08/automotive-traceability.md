@@ -94,7 +94,7 @@ None of these datasets should sit in isolation. The goal is to establish relatio
 
 ## Why Connecting the Factory Is the Hard Part
 
-The information traceability requires comes from systems that nobody designed to work together. A PLC holds machine states and process values. A scanner identifies the part. A vision system produces an inspection result. An MES manages production information while a database holds historical records. Each works fine on its own.
+The information traceability requires comes from systems that nobody designed to work together. A [PLC](/blog/2025/12/what-is-plc/) holds machine states and process values. A scanner identifies the part. A vision system produces an inspection result. An MES manages production information while a database holds historical records. Each works fine on its own.
 
 A tightening controller may report that an operation finished at 10:42:13 with a torque value of 42 Nm. A scanner may have identified the part as `BRK-10482` moments earlier. The traceability system has to establish that those two events belong together, which means treating machine connectivity, timestamps, identifiers, and storage as one workflow rather than five separate projects.
 
@@ -113,7 +113,7 @@ _A scan opens the context; the tightening result lands against the part that was
 
 Notice that the values arrive from two different systems. The identifier lives in the station controller, the torque and the verdict live in the tightening controller, and neither one means much without the other. That record is far more useful than an isolated 42.1 Nm reading, because the identifier supplies the context. A FlowFuse workflow handles the logic directly: take the identifier, collect the values from the relevant equipment, transform them into the required structure, and route the record to its destination.
 
-The same identity check also enables error-proofing. If a part reaches station 5 without a passing record from station 4, the workflow blocks the operation instead of adding another entry to a history nobody reads until a recall. Traceability that only records is a reporting system. Traceability that interlocks stations stops defects from moving down the line.
+The same identity check also enables [error-proofing](/blog/2025/09/poka-yoke-mistake-proofing/). If a part reaches station 5 without a passing record from station 4, the workflow blocks the operation instead of adding another entry to a history nobody reads until a recall. Traceability that only records is a reporting system. Traceability that interlocks stations stops defects from moving down the line.
 
 ## Building Part Genealogy
 

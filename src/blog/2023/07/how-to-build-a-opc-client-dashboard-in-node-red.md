@@ -67,7 +67,7 @@ meta:
       answer: "The complete flow source code for all four objectives, browsing, reading, writing, and events, is included inline within the article, ready to import directly into Node-RED."
 tldr: "This part of the OPC UA series shows how to build an interactive Node-RED dashboard that connects to a third-party OPC UA server to browse the address space, read and write values, and display alarms and events. Complete flow source code is provided, making it a practical starting point for production OPC UA client applications."
 ---
-This article is the third and final part of our OPC UA content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/docs/node-red/protocol/opc-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
+This article is the third and final part of our [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) content series. In the [first article](/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/), we cover some OPC UA fundamentals and walk through an example OPC UA Server flow. In the [second article](/docs/node-red/protocol/opc-ua/), we built a SSL-secured OPC UA server using data from an Allen Bradley PLC as a source. 
 In this article, we show how to build an OPC Client in Node-RED that communicates with a 3rd party OPC UA Server and utilizes an interactive dashboard.
 <!--more-->
 
@@ -161,7 +161,7 @@ So looking deeper into the payload of our global browse from the `OPC UA Browser
 As shown above, element 2 in the array returned from the global browse corresponds to the `Simulation` folder.  And we are interested in two important values in this data-structure - the `NodeId`, which is topic an OPC Client uses to point specific OPC values, and the `browseName`, which is the name we see visually when we try to identify an OPC topic.  We can now use this logic to parse out this useful information using a change node.
 
 ![simulation-folder.png](./images/opc-ua-3/simulation-folder.png){data-zoomable}
-This change node is grabbing the `nodeId` and `browseName` .  The `nodeId` is stored in a context variable for later use, while the `browseName` is used as the payload to be displayed on our dashboard.  
+This change node is grabbing the `nodeId` and `browseName` .  The `nodeId` is stored in a [context variable](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/) for later use, while the `browseName` is used as the payload to be displayed on our dashboard.  
 
 The rest of the flow follows this same pattern, to end up with a folder structure that we can display on our dashboard that matches the structure on our OPC Server
 

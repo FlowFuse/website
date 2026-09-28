@@ -69,7 +69,7 @@ Statistical process control only works if it has a steady stream of accurate dat
 
 ### Where SPC Data Actually Comes From
 
-Process data for SPC charts typically comes from PLCs, edge devices, and sensors tracking variables like temperature, torque, or dimensional tolerances. Pulling that data into a usable chart requires IT/OT connectivity that moves it securely from the shop floor to wherever it is analyzed, without brittle point-to-point integrations that break every time equipment changes. FlowFuse provides that layer. It reads from PLCs, sensors, and MES over OPC UA, MQTT, or Modbus, so the chart updates from live process data rather than from manual entry.
+Process data for SPC charts typically comes from PLCs, edge devices, and sensors tracking variables like temperature, torque, or dimensional tolerances. Pulling that data into a usable chart requires IT/OT connectivity that moves it securely from the shop floor to wherever it is analyzed, without brittle point-to-point integrations that break every time equipment changes. FlowFuse provides that layer. It reads from PLCs, sensors, and MES over OPC UA, MQTT, or [Modbus](/blog/2023/05/integrating-modbus-with-node-red/), so the chart updates from live process data rather than from manual entry.
 
 ### Deploying SPC Across Multiple Sites Without Rebuilding
 
@@ -93,7 +93,7 @@ SPC software should connect directly to the data sources already on your shop fl
 
 ### SPC Alongside Other Root Cause Tools
 
-Control charts show you when a process has drifted, but they do not always explain why. Pairing SPC with other root cause analysis tools helps close that gap. For a breakdown of one commonly used tool for identifying the biggest contributors to a quality issue, see [Pareto Chart & Diagram for Manufacturing](/blog/2025/08/pareto-chart-manufacturing-guide/).
+Control charts show you when a process has drifted, but they do not always explain why. Pairing SPC with other [root cause analysis](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/) tools helps close that gap. For a breakdown of one commonly used tool for identifying the biggest contributors to a quality issue, see [Pareto Chart & Diagram for Manufacturing](/blog/2025/08/pareto-chart-manufacturing-guide/).
 
 ## Final Thoughts
 

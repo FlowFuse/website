@@ -20,7 +20,7 @@ Whether you're connecting a single sensor or building a comprehensive industrial
 
 ## Understanding Modbus RTU Basics
 
-Modbus RTU operates on a **master–slave system**. Unlike its TCP counterpart, it runs over serial connections (RS485/RS422/RS232), making it extremely reliable in environments where network connectivity may be unstable. The protocol has been battle-tested in harsh conditions for decades, which is why it is still used in everything from simple temperature sensors to complex PLCs.  
+Modbus RTU operates on a **master–slave system**. Unlike its TCP counterpart, it runs over [serial connections](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/) (RS485/RS422/RS232), making it extremely reliable in environments where network connectivity may be unstable. The protocol has been battle-tested in harsh conditions for decades, which is why it is still used in everything from simple temperature sensors to complex [PLCs](/blog/2025/12/what-is-plc/).  
 
 In a FlowFuse setup, the instance acts as the master, initiating all communication. Devices such as sensors, meters, and controllers act as slaves, responding only when addressed. Each slave has a unique address from 1 to 247, with 0 reserved for broadcast messages. Communication follows a simple pattern: the master sends a request, the addressed slave responds, and the master processes the response before moving to the next device.
 

@@ -145,7 +145,7 @@ Throughout this guide, we’ve interacted with an exporter which is running loca
 
 While OpenTelemetry excels at tracing and optimizing Node-RED flows, FlowFuse offers a powerful solution for managing and monitoring Node-RED instances. It streamlines the creation, deployment, and management of instances, allowing you to deploy your applications with a single click and minimizing deployment complexity and errors.
 
-FlowFuse also boosts collaboration and security through features like team management, role-based access control, multi-factor authentication, and snapshot recovery. These capabilities ensure effective management, secure access, and easy recovery from changes, making FlowFuse an essential tool for optimizing and overseeing your Node-RED deployments.
+FlowFuse also boosts collaboration and security through features like team management, [role-based access control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/), multi-factor authentication, and snapshot recovery. These capabilities ensure effective management, secure access, and easy recovery from changes, making FlowFuse an essential tool for optimizing and overseeing your Node-RED deployments.
 
 ## Conclusion
 

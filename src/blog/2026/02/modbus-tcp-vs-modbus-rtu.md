@@ -16,7 +16,7 @@ cta:
 tldr: "Modbus RTU and Modbus TCP share the same data model but make entirely different assumptions about the network, failure modes, and latency. RTU failures are loud and physical while TCP failures tend to degrade silently, and TCP's exposure on Ethernet introduces security risks that serial never had choosing between them requires understanding these tradeoffs, not just swapping protocols."
 ---
 
-Modbus shipped in 1979. It has outlasted every protocol that was meant to replace it, survived the transition from relay logic to microprocessors and modern SCADA systems, and is still running production lines today. That kind of longevity does not happen by accident. It exists because the protocol is simple, deterministic, and unambiguous, at least in its original form, a point I have discussed in more detail in a [separate article](/blog/2026/01/why-modbus-still-exist/).
+[Modbus](/blog/2023/05/integrating-modbus-with-node-red/) shipped in 1979. It has outlasted every protocol that was meant to replace it, survived the transition from relay logic to microprocessors and modern SCADA systems, and is still running production lines today. That kind of longevity does not happen by accident. It exists because the protocol is simple, deterministic, and unambiguous, at least in its original form, a point I have discussed in more detail in a [separate article](/blog/2026/01/why-modbus-still-exist/).
 
 <!--more-->
 
@@ -26,7 +26,7 @@ That gap is what most people miss. And it is exactly what this post is about.
 
 ## They Are Not the Same Protocol in Different Clothes
 
-Modbus RTU runs over serial. That sounds simple until you consider what serial actually means in practice: one master, multiple slaves, one conversation at a time. The master initiates every transaction, the slave responds, and nothing else happens on the wire until that exchange completes.
+[Modbus RTU](/blog/2025/09/using-modbus-with-flowfuse/) runs over serial. That sounds simple until you consider what serial actually means in practice: one master, multiple slaves, one conversation at a time. The master initiates every transaction, the slave responds, and nothing else happens on the wire until that exchange completes.
 
 The physical layer is almost always RS-485 in industrial installations, a differential pair that can run hundreds of meters, tolerate significant electrical noise, and connect up to 247 devices on a single bus.
 
@@ -51,7 +51,7 @@ Modbus TCP removes the baud rate ceiling and adds pipelining. A well-configured 
 
 ![Chart comparing Modbus RTU polling latency with Modbus TCP network latency](./images/modbus-rtu-tcp-latency.png "Chart comparing Modbus RTU polling latency with Modbus TCP network latency")
 
-The catch is that Ethernet latency is not flat. It varies with network load, switch queue depth, and the TCP stack on the device side. Most of the time the numbers look excellent. Under the wrong conditions, they do not. A PLC with a modest embedded TCP stack, hit with traffic from a network scan or a broadcast storm, can stretch its response time by an order of magnitude. RTU would have delivered the same response time it always does.
+The catch is that Ethernet latency is not flat. It varies with network load, switch queue depth, and the TCP stack on the device side. Most of the time the numbers look excellent. Under the wrong conditions, they do not. A [PLC](/blog/2025/12/what-is-plc/) with a modest embedded TCP stack, hit with traffic from a network scan or a broadcast storm, can stretch its response time by an order of magnitude. RTU would have delivered the same response time it always does.
 
 RTU offers better worst-case latency. TCP offers better average latency. In industrial control, worst-case is usually what you design for.
 

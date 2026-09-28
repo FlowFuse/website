@@ -83,7 +83,7 @@ If you work in manufacturing, you likely have gigabytes of data in CSV files, te
 
 <!--more-->
 
-PLCs log directly to CSV through proprietary software. Legacy SCADA systems write flat files. Custom applications generate daily reports. These systems are reliable, but they weren't built to integrate with MQTT brokers or databases.
+[PLCs](/blog/2025/12/what-is-plc/) log directly to CSV through proprietary software. Legacy [SCADA](/blog/2026/08/what-is-scada/) systems write flat files. Custom applications generate daily reports. These systems are reliable, but they weren't built to integrate with MQTT brokers or databases.
 
 If you're using FlowFuse to log data, you can send to MQTT and databases as data flows through FlowFuse. But if your CSV files come from PLCs, SCADA systems, or other external tools, you need to read and ingest them after they're written.
 
@@ -205,7 +205,7 @@ Now we'll publish the parsed CSV data to an MQTT broker for real-time distributi
 
 2. By default, the client automatically created for your instance only has **subscribe** permissions. Click **Configure Access Control** next to the server in the node configuration window. This will redirect you to the platform’s broker client management page, filtered to show the client associated with this instance. Click the **Edit** button, enable both **Publish** and **Subscribe** actions, and then restart your instance.
 
-3. Set the **topic** following ISA-95 hierarchy:
+3. Set the **topic** following [ISA-95](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/) hierarchy:
 
 ```
 company/site/area/line/cell/device/measurement

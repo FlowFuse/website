@@ -110,7 +110,7 @@ Rates and timeouts are two settings, but step back and there's a simple idea und
 
 ## Match the protocol to the data, not the other way around
 
-Even with a driver to itself, none of the protocols a runtime reaches a PLC or device through at this level, the northbound, supervisory layer, are real-time by design. That's true of Modbus TCP, OPC UA, MQTT, and EtherNet/IP's explicit messaging alike. They were built to move data reliably between a supervisory system and a controller, not to guarantee it lands inside a fixed time window. So there's no protocol to crown the winner here, only ones better or worse suited to the job in front of you.
+Even with a driver to itself, none of the protocols a runtime reaches a PLC or device through at this level, the northbound, supervisory layer, are real-time by design. That's true of [Modbus TCP](/blog/2026/02/modbus-tcp-vs-modbus-rtu/), [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), MQTT, and [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/)'s explicit messaging alike. They were built to move data reliably between a supervisory system and a controller, not to guarantee it lands inside a fixed time window. So there's no protocol to crown the winner here, only ones better or worse suited to the job in front of you.
 
 Start with what each one is built for:
 

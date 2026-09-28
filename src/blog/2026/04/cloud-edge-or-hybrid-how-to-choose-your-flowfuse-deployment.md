@@ -37,7 +37,7 @@ FlowFuse supports three deployment models: cloud-hosted instances, Remote Instan
 - Your data sources are cloud-based: SaaS APIs, external databases, third-party platforms
 - Your workflows don't have hard latency requirements
 - No compliance constraint requires processing to stay on-premises
-- Your data sources do not include plant-floor equipment on OPC-UA, Modbus, or similar protocols - those require a device on the local network regardless of where your logic runs
+- Your data sources do not include plant-floor equipment on [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), [Modbus](/blog/2023/05/integrating-modbus-with-node-red/), or similar protocols - those require a device on the local network regardless of where your logic runs
 
 It's also the fastest and cheapest starting point. Instances run in minutes, nothing to install, and the operational overhead is near zero. No hardware to procure, no OS to patch, no physical failures to debug. You can migrate workloads to the edge later when the need becomes clear.
 
@@ -51,7 +51,7 @@ Beyond connectivity, latency is the other hard constraint. A cloud round-trip ty
 
 [Remote Instances](/docs/device-agent/register/) run on hardware you control, whether that's an industrial PC, a gateway at the production line, or a compatible gateway device, via the FlowFuse Device Agent. Workflow execution happens entirely on-device, independent of network state.
 
-Deployment works through snapshots: build and test logic on a development instance, capture a snapshot, then mark it as the target for one or more remote devices. On first deployment, the Device Agent installs Node-RED along with the required dependencies, then runs the snapshot locally. Subsequent snapshot updates replace the running flows without reinstalling the runtime. If the device is offline when you push an update, it receives the snapshot on next reconnect.
+Deployment works through [snapshots](/blog/2024/09/node-red-version-control-with-snapshots/): build and test logic on a development instance, capture a snapshot, then mark it as the target for one or more remote devices. On first deployment, the Device Agent installs Node-RED along with the required dependencies, then runs the snapshot locally. Subsequent snapshot updates replace the running flows without reinstalling the runtime. If the device is offline when you push an update, it receives the snapshot on next reconnect.
 
 **This is the right model when:**
 

@@ -12,7 +12,7 @@ tags:
    - kafka
 ---
 
-Kafka is one of the most powerful technologies enabling seamless data communication. Many individuals are utilizing it alongside Node-RED for real-time data exchange in their IoT and IIoT applications. However, some users are encountering difficulties in obtaining assistance with Kafka-related queries.
+[Kafka](/blog/2025/12/kafka-vs-mqtt/) is one of the most powerful technologies enabling seamless data communication. Many individuals are utilizing it alongside Node-RED for real-time data exchange in their IoT and IIoT applications. However, some users are encountering difficulties in obtaining assistance with Kafka-related queries.
 
 <!--more-->
 

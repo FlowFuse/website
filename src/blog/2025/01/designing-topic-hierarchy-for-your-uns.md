@@ -88,7 +88,7 @@ By organizing your topics around these components, you’re setting up a structu
 
 Next, remember that MQTT topics are hierarchical, so think of them like a tree. At the top of the tree, you’ll have the broadest categories (like plants or regions). As you go down, you’ll get more specific, with production lines, machines, and then individual data points like sensor readings. The key is to keep things logical so that you can locate the data you need quickly. This organization lets you promptly expand your system later by adding new plants, lines, or machines without disrupting the entire structure.
 
-The concept of structuring topics logically and hierarchically draws from a well-known framework in manufacturing: ISA-95. ISA-95 is a standard that defines a hierarchical model for organizing and managing manufacturing systems. It divides operations from the company level to individual machines, providing a clear structure for system management.
+The concept of structuring topics logically and hierarchically draws from a well-known framework in manufacturing: [ISA-95](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/). ISA-95 is a standard that defines a hierarchical model for organizing and managing manufacturing systems. It divides operations from the company level to individual machines, providing a clear structure for system management.
 
 ![ISA-95 Equipment Hierarchy Model](./images/isa-95-equipement-model.png){data-zoomable}
 _ISA-95 Equipment Hierarchy Model_
@@ -111,7 +111,7 @@ At this level, you're dealing with specific machines and sensors. The topic name
 
 - **Level 1 – Control Devices and Systems**
 
-This level represents the control systems that operate the machinery and manage the data flow. These systems include PLCs, SCADA systems, or other control devices that manage real-time operations.
+This level represents the control systems that operate the machinery and manage the data flow. These systems include [PLCs](/blog/2025/12/what-is-plc/), [SCADA](/blog/2026/08/what-is-scada/) systems, or other control devices that manage real-time operations.
 
 Example Topics:
 
@@ -139,7 +139,7 @@ Here, you might aggregate data from several control devices (like PLCs) and prov
 
 - **Level 3 – Manufacturing Operations Management**
 
-This level encompasses managing the overall production process, such as scheduling, production orders, and resource management. This is often where MES (Manufacturing Execution Systems) comes into play.
+This level encompasses managing the overall production process, such as scheduling, production orders, and resource management. This is often where [MES](/blog/2025/06/what-is-mes/) (Manufacturing Execution Systems) comes into play.
 
 Example Topics:
 

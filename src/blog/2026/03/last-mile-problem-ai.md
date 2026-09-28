@@ -47,7 +47,7 @@ And the buyer approves it, because the buyer is looking at the numbers on the ri
 
 It is not small.
 
-The integration work in a real industrial environment is not a technical footnote. It is the project. Connecting an AI model to a plant means touching systems that the OT team has kept stable for a decade and does not want anyone near. It means translating between protocols that were never designed to talk to each other. It means getting IT and OT into the same room, agreeing on data ownership, network access, security boundaries, and update procedures for infrastructure that both teams think belongs to the other.
+The integration work in a real industrial environment is not a technical footnote. It is the project. Connecting an AI model to a plant means touching systems that the OT team has kept stable for a decade and does not want anyone near. It means translating between protocols that were never designed to talk to each other. It means getting [IT and OT](/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/) into the same room, agreeing on data ownership, network access, security boundaries, and update procedures for infrastructure that both teams think belongs to the other.
 
 None of that is in the proposal. All of it determines whether the proposal was worth signing.
 
@@ -57,7 +57,7 @@ Pilot purgatory feels like a neutral state. The project is not cancelled. Progre
 
 It is not neutral.
 
-Every month an AI model sits in staging is a month of decisions made on instinct instead of intelligence. A predictive maintenance model that never reached the floor did not just fail to deliver value. It failed to prevent every unplanned downtime event it would have caught. Every quality escape the anomaly detector would have flagged. Every maintenance window scheduled too late or too early because the optimization model was still "ongoing."
+Every month an AI model sits in staging is a month of decisions made on instinct instead of intelligence. A [predictive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/) model that never reached the floor did not just fail to deliver value. It failed to prevent every unplanned downtime event it would have caught. Every quality escape the anomaly detector would have flagged. Every maintenance window scheduled too late or too early because the optimization model was still "ongoing."
 
 That cost does not appear in any project report. It is invisible precisely because the thing that would have measured it never got deployed. But it is real, and it compounds.
 
@@ -89,7 +89,7 @@ The answer is not a better model. It is not a bigger data science team. It is no
 
 It is infrastructure. Built deliberately, before the model needs it, designed for the environment it will actually run in.
 
-That means starting with connectivity that meets the plant where it is, not where the vendor deck imagines it to be. Real plants run Modbus, OPC-UA, Siemens S7, proprietary historian formats, and protocols that were old before most current software engineers started their careers. The integration layer has to speak all of it, fluently, without requiring the OT team to replace equipment that is working perfectly and will continue working perfectly for another decade.
+That means starting with connectivity that meets the plant where it is, not where the vendor deck imagines it to be. Real plants run Modbus, OPC-UA, [Siemens S7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/), proprietary historian formats, and protocols that were old before most current software engineers started their careers. The integration layer has to speak all of it, fluently, without requiring the OT team to replace equipment that is working perfectly and will continue working perfectly for another decade.
 
 It means edge execution that does not depend on the cloud. A prediction that requires a round trip to a cloud inference endpoint is a prediction that fails the moment the network hiccups, which in a manufacturing environment is not a rare event. Intelligence needs to run close to the equipment it is monitoring, locally, with enough resilience to keep functioning when connectivity is degraded and enough security to satisfy the IT team that approved it onto the network.
 

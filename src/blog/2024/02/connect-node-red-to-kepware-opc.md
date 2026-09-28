@@ -11,7 +11,7 @@ tags:
     - opcua
 ---
 
-KepserverEX, often referred to as Kepware, is an OPC server that has been the important tool many manufacturing companies have used on their digital transformation journey.  It plays an important role for many to extract data from PLCs, Programmable Logic Controllers, without having to directly interact with them.
+[KepserverEX](/blog/2026/01/kepware-opcua-better-alternative/), often referred to as Kepware, is an OPC server that has been the important tool many manufacturing companies have used on their digital transformation journey.  It plays an important role for many to extract data from PLCs, Programmable Logic Controllers, without having to directly interact with them.
 
 <!--more-->
 

@@ -67,7 +67,7 @@ meta:
 tldr: "A defensible OPC UA architecture is a handful of decisions, each closing a known attack vector. Use Reverse Connect and network segmentation so the server accepts no inbound connections and the firewall stays closed. Force SignAndEncrypt with a modern policy and remove the deprecated Basic128Rsa15 and Basic256 ciphers. Make the trust list enforce and turn off 'auto-accept all certificates.' Issue one certificate per instance from a company CA, automated through a GDS at scale. Layer user authentication and RBAC on top of application authentication. Keep auditing on and watched, patch the stack and gateways, then test that what you configured is what is actually running."
 ---
 
-In [Part 1](/blog/2026/05/opc-ua-security-attack-vectors/), we watched how threat actors actually exploit OPC UA. None of it was broken cryptography. It was disabled trust lists, anonymous logins, dead ciphers nobody removed, and servers Shodan finds on the open internet. The protocol shipped with the tools to stop every one. The attacks worked because the tools were switched off.
+In [Part 1](/blog/2026/05/opc-ua-security-attack-vectors/), we watched how threat actors actually exploit [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/). None of it was broken cryptography. It was disabled trust lists, anonymous logins, dead ciphers nobody removed, and servers Shodan finds on the open internet. The protocol shipped with the tools to stop every one. The attacks worked because the tools were switched off.
 
 This is the part where we switch them on, not as a checklist, but as an architecture where each decision closes a specific vector from Part 1. The order matters, because the cheapest fixes close the widest holes.
 
@@ -98,7 +98,7 @@ OPC UA has a protocol feature built for exactly this, and most "best practices" 
 
 Why this matters architecturally: the server sits in the production zone behind a firewall with **no inbound ports open**. From the firewall's perspective the traffic is outbound, the one direction it already permits. A SCADA client or edge gateway in the DMZ listens on a single port; each downstream server connects out to it. You get bidirectional OPC UA communication while the production-network firewall stays completely closed to the outside.
 
-This is the structural fix that makes Part 1's exposure problem disappear rather than merely guarding it. Layer it inside normal defense in depth, the zone-and-conduit segmentation IEC 62443 calls for:
+This is the structural fix that makes Part 1's exposure problem disappear rather than merely guarding it. Layer it inside normal defense in depth, the zone-and-conduit segmentation [IEC 62443](/blog/2026/05/nis2-iec-62443-manufacturers/) calls for:
 
 - **Segment the network.** Control network separate from enterprise, firewalls between zones. A typical layout: `SignAndEncrypt` from the enterprise zone (historians, MES, ERP), through a DMZ of edge gateways and protocol bridges, down to a plant floor where PLCs and HMIs sit on isolated VLANs.
 - **Put a security gateway in the DMZ.** A gateway can terminate Reverse Connect on both sides and act as the single, aggregating access point to the plant, the only door, and one you control.
@@ -155,7 +155,7 @@ User authentication options, weakest to strongest:
 - **Username / password**, fine, but only over a `SignAndEncrypt` endpoint, or you've just shipped credentials in plaintext.
 - **User X.509 certificate**, strongest, and the natural fit for machine-to-machine.
 
-Then constrain what an authenticated identity can do. Implement **role-based access control from day one.** Running every application with administrator rights is the oversized blast radius Part 1 warned about, one compromise and the attacker owns the read-and-write path to the process. Assign read, write, and browse separately, per role, least privilege. If a server can't enforce granular access itself, put a gateway in front that can.
+Then constrain what an authenticated identity can do. Implement **[role-based access control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/) from day one.** Running every application with administrator rights is the oversized blast radius Part 1 warned about, one compromise and the attacker owns the read-and-write path to the process. Assign read, write, and browse separately, per role, least privilege. If a server can't enforce granular access itself, put a gateway in front that can.
 
 ## Manage certificates like infrastructure, not a one-time chore
 

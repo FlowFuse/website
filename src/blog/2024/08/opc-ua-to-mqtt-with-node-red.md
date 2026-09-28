@@ -64,7 +64,7 @@ meta:
 tldr: "This guide demonstrates how to connect an OPC UA server to an MQTT broker using Node-RED, allowing industrial machine data to flow into modern IoT systems. It covers installing node-red-contrib-opcua, reading multiple OPC UA node values, aggregating them with a join node, and publishing the result to MQTT. A reverse bridging pattern for sending MQTT commands back to OPC UA is also covered."
 ---
 
-Have you ever found yourself trying to connect old industrial systems with new IoT tools? This is a common scenario when trying to digitally transform while setting up your Unified Name Space. Maybe you have machinery that uses OPC UA, but your data is sent through MQTT. How do you make these systems work together smoothly?  
+Have you ever found yourself trying to connect old industrial systems with new IoT tools? This is a common scenario when trying to digitally transform while setting up your Unified Name Space. Maybe you have machinery that uses [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), but your data is sent through MQTT. How do you make these systems work together smoothly?  
 
 <!--more-->
 
@@ -167,7 +167,7 @@ _Video showing the successful bridging of OPC UA data to MQTT_
 
 ## Bridging MQTT Data to OPC UA
 
-In addition to bridging data from OPC UA to MQTT, you might also need to send data from MQTT back to an OPC UA server. This is often required in scenarios where external systems, such as Manufacturing Execution Systems (MES), need to update or control machinery settings.
+In addition to bridging data from OPC UA to MQTT, you might also need to send data from MQTT back to an OPC UA server. This is often required in scenarios where external systems, such as [Manufacturing Execution Systems](/blog/2025/06/what-is-mes/) (MES), need to update or control machinery settings.
 
 For example, an MES can send commands or configuration changes via MQTT, which then need to be applied to an OPC UA-controlled machine.
 

@@ -47,7 +47,7 @@ cta:
 tldr: "Build a FlowFuse application that captures machine stop and start events over MQTT, logs them to a database, lets operators assign a downtime reason from a dashboard, and displays live KPI cards summarizing downtime across the floor."
 ---
 
-Production lines in manufacturing and automotive facilities experience planned and unplanned downtime every day. Tracking when a machine stops, how long it stays down, and why it happened helps production and maintenance teams identify recurring issues and improve operations.
+Production lines in manufacturing and [automotive facilities](/industries/automotive/) experience planned and unplanned downtime every day. Tracking when a machine stops, how long it stays down, and why it happened helps production and maintenance teams identify recurring issues and improve operations.
 
 <!--more-->
 
@@ -60,7 +60,7 @@ _The finished dashboard: KPI cards on top, unresolved stoppages below._
 
 You can interact with the live demo here: :live-demo-link{href="https://cheerful-western-sandpiper-1404.flowfuse.cloud/dashboard/downtime-events" label="Try the Machine Downtime Tracking Demo"}.
 
-By the end, you'll have a foundation you can extend into OEE, production reporting, maintenance dashboards, or MES integrations.
+By the end, you'll have a foundation you can extend into [OEE](/blog/2025/04/what-is-an-oee-dashboard/), production reporting, maintenance dashboards, or [MES](/blog/2025/06/what-is-mes/) integrations.
 
 ## What You'll Need
 

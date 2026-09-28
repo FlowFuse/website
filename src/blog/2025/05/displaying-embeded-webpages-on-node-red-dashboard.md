@@ -135,4 +135,4 @@ FlowFuse dashboards offer great flexibility, making it easy to embed external co
 If you're interested in learning more about embedding webpages or enhancing your FlowFuse dashboards, check out the following blogs:
 
 - [Mapping Location on Dashboard](/blog/2024/05/mapping-location-on-dashboard-2/): In this article, we dive into how you can embed location maps into your FlowFuse dashboard. Learn how to map locations, track real-time data, and make your dashboards more interactive and informative.
-- [Generating PDF Reports with Node-RED and FlowFuse](#): This guide explains how to generate PDF reports directly with Node-RED and FlowFuse and how to preview these reports within your FlowFuse dashboards.
+- [Generating PDF Reports with Node-RED and FlowFuse](/blog/2025/05/how-to-generate-pdf-reports-using-node-red/): This guide explains how to generate PDF reports directly with Node-RED and FlowFuse and how to preview these reports within your FlowFuse dashboards.

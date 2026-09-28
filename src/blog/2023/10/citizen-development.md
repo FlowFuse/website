@@ -11,7 +11,7 @@ tags:
     - flowfuse
     - citizen-development
 ---
-In the early days when I was working as a solution architect, I found myself in a peculiar position, observing an intriguing relationship between Operational Technology (OT) and Information Technology (IT) departments. While OT departments struggled to develop digital solutions, the IT departments held an unspoken authority in this domain, leading to a paradoxical dynamic that often seemed to hinder rather than facilitate progress.
+In the early days when I was working as a solution architect, I found myself in a peculiar position, observing an intriguing relationship between [Operational Technology](/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/) (OT) and Information Technology (IT) departments. While OT departments struggled to develop digital solutions, the IT departments held an unspoken authority in this domain, leading to a paradoxical dynamic that often seemed to hinder rather than facilitate progress.
 
 <!--more-->
 
