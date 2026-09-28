@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/use-cases.njk (11ty), which this replaces. Same page, same copy, same
-// classes from src/css/style.css.
+// classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - collections["use-case"] becomes the `useCases` data collection. Whether an entry

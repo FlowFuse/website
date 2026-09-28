@@ -1,26 +1,26 @@
 # Please note the _last matching rule_ is used
 
 # Start with a catch all for the handbook
-/src/handbook/ @ZJvandeWeg
-/src/handbook/design @Yndira-E
-/src/handbook/development @knolleary
-/src/handbook/marketing @FlowFuse/marketing
-/src/handbook/sales @MichaelBDavis
+/nuxt/content/handbook/ @ZJvandeWeg
+/nuxt/content/handbook/design @Yndira-E
+/nuxt/content/handbook/development @knolleary
+/nuxt/content/handbook/marketing @FlowFuse/marketing
+/nuxt/content/handbook/sales @MichaelBDavis
 
 # Customer department
-/src/handbook/customer-success.md @Esmewieringa
+/nuxt/content/handbook/customer-success.md @Esmewieringa
 
 # Security Polices
-/src/handbook/company/security/information-security.md @ZJvandeWeg
-/src/handbook/company/security/access-control.md @knolleary
-/src/handbook/company/security/data-management.md @ZJvandeWeg
-/src/handbook/company/security/secure-development.md @knolleary
+/nuxt/content/handbook/company/security/information-security.md @ZJvandeWeg
+/nuxt/content/handbook/company/security/access-control.md @knolleary
+/nuxt/content/handbook/company/security/data-management.md @ZJvandeWeg
+/nuxt/content/handbook/company/security/secure-development.md @knolleary
 
 # Change in values need sign off from both the CEO and CTO
-/src/handbook/company/values.md @knolleary @ZJvandeWeg
+/nuxt/content/handbook/company/values.md @knolleary @ZJvandeWeg
 
 # Package-lock.json (engineering team)
 /package-lock.json @FlowFuse/engineering  @Yndira-E
 
 # Changelog posts (tech writer required, product as backup)
-/handbook/engineering/releases/writing-changelog @FlowFuse/marketing  @FlowFuse/product @FlowFuse/engineering
+/nuxt/content/handbook/engineering/releases/writing-changelog.md @FlowFuse/marketing  @FlowFuse/product @FlowFuse/engineering

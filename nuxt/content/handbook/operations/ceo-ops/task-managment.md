@@ -34,6 +34,36 @@ Each workday, review all open tasks. Run through the following checks:
 5. **Flag tasks that need time blocked.** If a task requires focused CEO time (e.g. writing, reviewing, a decision), create a [calendar event](./calendar-management.md) for it and link the task in the event description.
 6. **Surface urgent or high-priority items.** Any task that is overdue, at risk, or requires an imminent CEO decision should be flagged in the daily touch-base.
 
+## Deal Desk review
+
+Deals stall on the CEO more often than on anything else — a pricing approval, a
+redline, or a signature that nobody has chased. The daily brief therefore always
+covers the [Deal Desk Asana project](https://app.asana.com/read-only/Deal-Desk/1213818720452348/35b84534fdbe0d38d02d16cf84565538/list)
+explicitly, rather than leaving those tasks to surface through the general task
+review.
+
+Every workday, before compiling the briefing, open the Deal Desk project and pull
+**every task due today or tomorrow**, regardless of who it is assigned to. Walk
+the CEO through each one in the brief. For each task, state:
+
+* The counterparty and the deal it belongs to.
+* What is being asked for — pricing/discount approval, legal or redline review,
+  an NDA, or a signature (see [Deal Approval Process](/handbook/sales/engagements/#deal-approval-process-deal-desk)
+  and [Legal](/handbook/sales/legal/) for what each type involves).
+* Whether the CEO is the one who has to act, or whether it is waiting on someone
+  else — and if the latter, who and since when.
+* The decision or action needed today, phrased so the CEO can answer it in the
+  brief itself.
+
+Nothing due today or tomorrow is omitted because it looks routine or because it
+already appeared in yesterday's brief — a task that has been repeated three days
+running is itself the thing worth flagging. Tasks already past their due date are
+escalated alongside them.
+
+Record the CEO's response on the Asana task the same day, and reschedule or close
+it accordingly, so the Deal Desk stays the source of truth for where each deal
+stands.
+
 ## Scheduling and timelines
 
 A task on the list without a realistic timeline creates noise. When reviewing

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/use-cases/uns.njk (11ty), which this replaces. Same page, same copy,
-// same classes from src/css/style.css.
+// same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The five feature icons were {% include %}d straight from
@@ -13,9 +13,8 @@
 //  - The "From Data Source to Application:" heading used </br>, which is not a tag. It is
 //    a <br> here, which is what it was reaching for.
 //  - The reading-list and resources thumbnails point at /blog/**, /whitepaper/** and
-//    /resources/** - assets owned by sections still on 11ty. They stay where they are and
-//    move wholesale at teardown; the page's own art is copied into nuxt/public/images/,
-//    which is where the already-ported pages keep theirs.
+//    /resources/** - assets owned by those sections, in nuxt/public/ at the same paths.
+//    The page's own art is in nuxt/public/images/.
 const FEATURES = [
     { icon: 'i-heroicons-circle-stack', title: 'Break down data silos', description: 'Access data from any source, regardless of its format or location and make it available through a central hub. ' },
     { icon: 'i-heroicons-eye', title: 'Gain real-time visibility', description: 'Monitor your operations with interactive visual dashboards.' },

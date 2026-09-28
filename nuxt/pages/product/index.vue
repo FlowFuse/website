@@ -152,7 +152,7 @@ const CAPABILITIES = [
     { label: 'Unified Namespace', to: '/use-cases/uns/' },
     { label: 'MES', to: '/use-cases/mes/' },
     { label: 'SCADA', to: '/use-cases/scada/' },
-    { label: 'Remote Device Management', to: '/remote-device-management/' },
+    { label: 'Remote Device Management', to: '/use-cases/remote-device-management/' },
     { label: 'Data Integration', to: '/use-cases/data-integration/' },
 ]
 

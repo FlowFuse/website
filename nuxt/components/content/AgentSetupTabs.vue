@@ -5,7 +5,7 @@
 // changelog entry and the third-party-agents docs page need the same steps /ai has,
 // and hand-copying them into each surface is how they drift apart.
 //
-// Styling comes from the .ff-agent-* rules in src/css/style.css, which nuxt.config.ts
+// Styling comes from the .ff-agent-* rules in nuxt/assets/css/style.css, which nuxt.config.ts
 // links on every Nuxt page, rather than from utility classes on the elements. That is
 // forced: this renders inside .prose on the changelog and docs pages, and the site's
 // prose rules are unlayered, which outranks Tailwind's @layer utilities whatever the
@@ -66,6 +66,7 @@ const CLIENTS = [
     {
         id: 'chatgpt',
         logo: '/images/ai/agents/chatgpt.svg',
+        logoMono: true,
         name: 'ChatGPT',
         step2Title: 'Settings, Apps & Connectors, Advanced settings',
         step2Body: 'Turn on developer mode there, then add FlowFuse by URL. Developer mode needs a paid plan, so it is not on the free tier.',
@@ -100,6 +101,7 @@ const CLIENTS = [
     {
         id: 'codex',
         logo: '/images/ai/agents/chatgpt.svg',
+        logoMono: true,
         name: 'Codex',
         step1Title: 'Copy the prompt',
         step1Body: 'This is the whole setup.',
@@ -157,7 +159,7 @@ function selectClient (id: string) {
         @click="selectClient(client.id)"
       >
         <UIcon v-if="client.icon" :name="client.icon" class="ff-agent-tab__glyph" aria-hidden="true" />
-        <img v-else-if="client.logo" :src="client.logo" alt="" aria-hidden="true">
+        <img v-else-if="client.logo" :src="client.logo" :class="{ 'ff-agent-tab__mark--mono': client.logoMono }" alt="" aria-hidden="true">
         <span>{{ client.name }}</span>
       </button>
     </div>

@@ -40,6 +40,8 @@ that all participants of the meeting have access to the presentation slides.
 Confirm attendance of all participants of the invite, or their respective
 representatives prior to the scheduled meeting.
 
+For Cota Capital, keep Allison Chapman, the venture firm's administrator, in the loop on all board meetings and board requests.
+
 ## Board Meeting Attendees
 
 Each quarterly board meeting should include the following representatives. Before sending invites,
@@ -231,7 +233,7 @@ we track and editorialized information from the CEO on company performance.
 For transparency, the company includes financial performance data from
 QuickBooks, and reports on 3 key metrics: ARR, Burn, and Runway.
 
-Additional metrics available to report on:
+Additional metrics available to report on and can be found [here](https://docs.google.com/spreadsheets/d/1Ur6GUTlzMPZbWsQGcrsn-OSY1zuFwm54u0dkwXeTtoI/edit?gid=1094745051#gid=1094745051):
 - State of the Union metrics
 - ARR numbers broken down by stage
 - Funnel metrics on pipeline 

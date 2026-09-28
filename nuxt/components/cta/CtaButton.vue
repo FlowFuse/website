@@ -10,10 +10,10 @@ const props = withDefaults(defineProps<{
     href: string
     // Whether `href` points at a route Nuxt actually serves. NuxtLink/UButton's
     // `to` otherwise treats any same-origin-looking path as an internal Vue
-    // Router route, so a destination still on 11ty (e.g. /contact-us/,
-    // /book-demo/) 404s on click instead of navigating - it never reaches the
-    // server-side proxy that would have served it. Fixed per destination by
-    // each Cta* wrapper, not caller-configurable.
+    // Router route, so a path Nuxt has no page for 404s on click instead of
+    // reaching the server. All five Cta* wrappers pass false, since Nuxt serves
+    // every one of their destinations; CtaCustom is what links off-site. Fixed
+    // per destination by each wrapper, not caller-configurable.
     external: boolean
     label: string
     variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
@@ -157,7 +157,7 @@ function onClick () {
   >
     <!-- The main nav's "Free Trial" (.ff-nav-freetrial) keys its rest color
          and animated hover underline off a `.ff-nav-label` child span - see
-         src/css/style.css's `.ff-website header .ff-nav-freetrial .ff-nav-label`
+         nuxt/assets/css/style.css's `.ff-website header .ff-nav-freetrial .ff-nav-label`
          rules. UButton's default slot would otherwise render the label as a
          bare text node, so those rules silently never match. Scoped to
          nav-text since it's the only variant `.ff-nav-label` styling reaches. -->

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/use-cases/data-integration.njk (11ty), which this replaces. Same page,
-// same copy, same classes from src/css/style.css.
+// same copy, same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - layouts/solution.njk's hero becomes <UseCaseSolutionHero>, with the frontmatter

@@ -5,7 +5,7 @@
 //
 // The auto-advance stops on interaction, as it did, and also stops when the component
 // unmounts - the .njk's setInterval had no teardown because 11ty pages never unmount.
-import testimonials from '../../src/_data/testimonials.json'
+import testimonials from '../data/testimonials.json'
 
 withDefaults(defineProps<{
     hideReadMore?: boolean

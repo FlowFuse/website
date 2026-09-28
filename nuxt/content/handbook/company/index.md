@@ -22,7 +22,7 @@ and contains department agnostic details.
 
 ### Mailing address
 
-As a registering company we have to provide our address to customers and suppliers when they specifically request that information. For all day to day communications we should make it clear that by far the most practical way to contact us is via support@flowfuse.com.
+As a registering company we have to provide our address to customers and suppliers when they specifically request that information. For all day to day communications we should make it clear that by far the most practical way to contact us is via contact@flowfuse.com.
 
 ```
 FlowFuse Inc

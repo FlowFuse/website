@@ -18,8 +18,8 @@ function posixResolve(base: string, rel: string): string {
     return '/' + out.filter(Boolean).join('/')
 }
 
-// Anchors whose markdown lives outside nuxt/content/ but whose pages are still
-// served at a matching, trailing-slash Nuxt route (e.g. /changelog/YYYY/MM/slug/).
+// Sections whose pages are served at a trailing-slash route matching the markdown's
+// path under nuxt/content/ (e.g. /changelog/YYYY/MM/slug/).
 const ANCHORS = ['/handbook/', '/changelog/', '/blog/']
 
 // Converts relative image/link URLs in handbook/changelog/blog markdown to absolute paths.

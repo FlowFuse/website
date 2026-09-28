@@ -114,8 +114,8 @@ const ALLOWED_TAGS = [
 // because the class is the only thing that says WHICH of two visually identical items is
 // which: upstream writes `<dt class="optional">` to mark an optional message property, and
 // `<span class="property-type">` to mark a type rather than more prose. Stripping those
-// stripped meaning, not styling - the live Eleventy pages keep them, so this was a
-// regression the move would have shipped. It cannot execute anything.
+// stripped meaning, not styling - the Eleventy pages these replaced kept them, so this
+// was a regression the move would have shipped. It cannot execute anything.
 //
 // `style` is deliberately NOT allowed. Upstream's only use of it is a single malformed
 // `<table style="outline-width:#888 solid thin">` on the Range node; letting arbitrary

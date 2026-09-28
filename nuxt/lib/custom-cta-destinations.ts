@@ -67,6 +67,10 @@ export const CUSTOM_CTA_DESTINATIONS = {
         href: '/docs/flowfuse-nodes/edge/opcua/',
         event: 'cta-certified-opcua-node',
     },
+    deviceAgentInstall: {
+        href: '/platform/device-agent/#install-from-your-terminal',
+        event: 'cta-device-agent-install',
+    },
 } as const
 
 // Self-check, run once when this module loads (so at build/dev-start time,

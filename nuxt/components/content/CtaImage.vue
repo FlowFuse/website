@@ -2,7 +2,7 @@
 // Inline image-as-CTA for blog markdown: ::cta-image{...}
 // `cta` is separate from the frontmatter `cta` (only used by BlogPostCta).
 import { useCapture } from '../../composables/useCapture'
-import site from '../../../src/_data/site.json'
+import site from '../../data/site.json'
 
 const props = defineProps<{
     src: string
