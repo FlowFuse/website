@@ -107,7 +107,7 @@ const STAGES: Stage[] = [
         label: 'Govern',
         icon: 'i-lucide-shield-check',
         heading: 'Govern.',
-        summary: 'One place to say who may do what, and to show afterwards what actually happened.',
+        summary: 'Control who can do what, and prove what happened afterward.',
         items: [
             { name: 'Role-based access control', detail: 'Who can edit, deploy, or only look, per team and per application, enforced on every call.', to: '/docs/user/role-based-access-control/' },
             { name: 'Single sign-on', detail: 'SAML and LDAP against the identity provider you already run.', to: '/docs/admin/sso/' },
