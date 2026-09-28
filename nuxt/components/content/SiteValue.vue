@@ -1,7 +1,7 @@
 <template>{{ value }}</template>
 
 <script setup>
-import site from '../../../src/_data/site.json'
+import site from '../../data/site.json'
 
 const props = defineProps({
   path: { type: String, required: true }

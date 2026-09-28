@@ -1,10 +1,10 @@
 <script setup lang="ts">
-// Nav and footer icons, drawn from the same SVG files Eleventy renders.
+// Nav and footer icons, drawn from the SVG files in nuxt/assets/nav-icons/.
 //
-// Eleventy's `navoption` shortcode wraps each icon file in an outer <svg> that
-// carries the sizing class, leaving the file's own <svg> nested inside. This
-// reproduces that exactly, so a given icon key renders identically whichever
-// renderer served the page.
+// Each icon file is wrapped in an outer <svg> that carries the sizing class. Most files
+// are complete SVGs and end up nested inside it; a few are bare <path> fragments that
+// rely on the outer viewBox. That is the markup Eleventy's `navoption` shortcode
+// produced, kept so the icons render as they always have.
 const props = withDefaults(defineProps<{ name?: string, solid?: boolean, size?: 'sm' | 'lg' }>(), {
     name: '',
     solid: false,

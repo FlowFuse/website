@@ -1,5 +1,5 @@
 import { queryCollection } from '@nuxt/content/server'
-import site from '../../../../src/_data/site.json'
+import site from '../../../data/site.json'
 // @ts-ignore untyped module
 import { planBadges } from '../../../lib/feature-catalog.mjs'
 // @ts-ignore untyped module

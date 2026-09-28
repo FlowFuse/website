@@ -1,5 +1,5 @@
 // Thin wrapper around the global `capture()` injected by the site's analytics
-// script (see src/_includes/analytics/body.html), which itself no-ops when
+// script (see nuxt/server/assets/analytics/body.html), which itself no-ops when
 // PostHog isn't loaded (no analytics consent). Guarded here too so components
 // can call this during SSR/tests without a `window`.
 export function useCapture () {

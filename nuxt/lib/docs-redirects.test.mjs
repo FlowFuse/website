@@ -33,7 +33,7 @@ test('the key is the route verbatim, so docs-source can reuse it to skip prerend
 
 test('an off-site target is a 301 like any other', () => {
     // docs/community-support.md points at the Node-RED forum, and docs/admin/licensing.md
-    // at /pricing/, which is still served by Eleventy. Neither is a docs page.
+    // at /pricing/. Neither is a docs page.
     const rules = docsRedirectRules([
         redirectPage('/docs/community-support/', 'https://discourse.nodered.org/c/vendors/flowfuse/24'),
     ])

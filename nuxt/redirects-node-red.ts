@@ -86,6 +86,7 @@ const moved: Record<string, string> = {
     '/node-red/flowfuse/flowfuse-tables/': '/docs/flowfuse-nodes/flowfuse-tables/',
     '/node-red/flowfuse/flowfuse-tables/query/': '/docs/flowfuse-nodes/flowfuse-tables/query/',
     '/node-red/flowfuse/hub/': '/docs/flowfuse-nodes/hub/',
+    '/node-red/flowfuse/hub/kafka/': '/docs/flowfuse-nodes/hub/kafka/',
     '/node-red/flowfuse/hub/redis/': '/docs/flowfuse-nodes/hub/redis/',
     '/node-red/flowfuse/mcp/': '/docs/flowfuse-nodes/mcp/',
     '/node-red/flowfuse/mcp/mcp-prompt/': '/docs/flowfuse-nodes/mcp/mcp-prompt/',

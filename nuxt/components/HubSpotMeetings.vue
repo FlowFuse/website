@@ -4,7 +4,7 @@
 // panel that stands in for it.
 //
 // The embed is gated on analytics consent and MUST STAY THAT WAY. The .njk defined
-// `window._ffLoadMeetings`, and src/js/cookieconsent-config.js calls it only once the
+// `window._ffLoadMeetings`, and nuxt/assets/js/cookieconsent-config.js calls it only once the
 // visitor accepts; until then the embed is never injected. This registers the same global
 // rather than loading on mount, so declining analytics still means no third-party
 // scheduler script.

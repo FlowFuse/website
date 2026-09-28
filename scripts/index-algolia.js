@@ -3,7 +3,7 @@
 const fs = require("fs/promises");
 const path = require("path");
 const algoliasearch = require("algoliasearch");
-const site = require("../src/_data/site.json");
+const site = require("../nuxt/data/site.json");
 const {
     isSearchUrl,
     extractHeadingRecords,

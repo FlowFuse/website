@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/events/hannover-messe-2026.njk (11ty), which this replaces. Same page,
-// same copy, same classes from src/css/style.css.
+// same copy, same classes from nuxt/assets/css/style.css.
 //
 // layouts/base.njk added only the header and footer, so this page is its own body. The
 // frontmatter blocks nothing else read become the consts below.

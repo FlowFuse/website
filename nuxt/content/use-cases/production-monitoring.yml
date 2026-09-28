@@ -7,7 +7,7 @@ seoMeta:
   title: "Production Monitoring | Use Cases | FlowFuse"
   description: "Real-time visibility into what your production lines are actually doing. Build the monitoring app your operation needs with FlowFuse and Node-RED: connect any protocol, deploy at the edge or in the cloud, and roll out across sites."
 problem: "Your operation is running. You just can't see it clearly enough, until something breaks."
-industries: ["automotive", "food-beverage", "life-sciences", "aviation-aerospace", "aerospace-components", "renewables", "semiconductors", "electronics-appliances", "industrial-machinery"]
+industries: ["automotive", "food-beverage", "life-sciences", "aviation-aerospace", "aerospace-components", "renewables", "semiconductors", "electronics-appliances", "industrial-machinery", "building-materials"]
 values: ["production-performance"]
 
 aiBuildLayer:

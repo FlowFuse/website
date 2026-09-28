@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/platform/dashboard.njk (11ty), which this replaces. Same page, same
-// copy, same classes from src/css/style.css.
+// copy, same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The live theme preview and the Dashboard 1.0 importer become
