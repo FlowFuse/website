@@ -40,7 +40,7 @@ onMounted(() => {
 const productUrls: Record<string, string> = {
     'Node-RED': '/node-red/',
     'FlowFuse Dashboard': '/platform/dashboard/',
-    FlowFuse: '/platform/features/',
+    FlowFuse: '/product/',
     'FlowFuse Device Agent': '/docs/hardware/introduction/#device-agent-hardware',
     'FlowFuse Project Nodes': '/docs/user/projectnodes/#flowfuse-project-nodes',
 }
