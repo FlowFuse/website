@@ -184,7 +184,7 @@ const NEXT = [
             <h1 class="m-0 text-4xl font-medium md:text-5xl">
               Build, deploy, and govern industrial applications - <span class="text-red-600">in record time</span>
             </h1>
-            <p class="mt-6 max-w-xl mx-auto text-lg lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
+            <p class="mt-6 max-w-xl mx-auto text-lg lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only Integration Platform As A Service (iPaaS) with industrial AI and governance.</p>
             <div class="mt-8 flex flex-row flex-wrap items-center justify-center gap-4 lg:justify-start">
               <CtaBookDemo variant="highlight" position="hero" />
               <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
