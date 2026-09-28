@@ -34,7 +34,7 @@ Manufacturers lose $50 billion a year to unplanned downtime. Here's what that ac
 
 The problem was never detection. Factories have had sensors for decades. It was interpretation. A temperature spike means nothing without knowing what's normal for that machine, on that material, at that feed rate. Threshold-based alarms can't know that. A model trained on months of operational data from that specific machine can.
 
-Predictive maintenance learns the baseline and watches for drift. Bearing wear shows up as a frequency shift in vibration data. Spindle imbalance leaves a signature in motor current. None of these are visible on the floor, but all of them are readable in the data, 24 to 72 hours before failure.
+[Predictive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/) learns the baseline and watches for drift. Bearing wear shows up as a frequency shift in vibration data. Spindle imbalance leaves a signature in motor current. None of these are visible on the floor, but all of them are readable in the data, 24 to 72 hours before failure.
 
 Harley-Davidson has been running vibration-based predictive maintenance on plant equipment for longer than most manufacturers realize. But you don't need that scale. We built an [AI vibration anomaly detector for industrial motors](/blog/2026/02/motor-anomaly-detector-ai/) using an autoencoder trained on healthy vibration data, running inference directly in Node-RED. The model learns what normal looks like. When that changes, you get a warning with time to act.
 

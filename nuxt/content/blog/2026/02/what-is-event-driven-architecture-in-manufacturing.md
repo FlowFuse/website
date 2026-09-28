@@ -43,7 +43,7 @@ This is what real-time responsiveness looks like in practice. Faster issue detec
 
 ## The Structural Limits of Traditional Manufacturing Systems
 
-Traditional manufacturing systems operate on request-response models. The MES queries the ERP for inventory counts. SCADA polls sensors at fixed intervals. Quality systems run batch processes to aggregate data. Each system asks for what it needs, when it needs it. This worked when manufacturing moved slowly. It breaks down in modern production environments.
+Traditional manufacturing systems operate on request-response models. The [MES](/blog/2025/06/what-is-mes/) queries the ERP for inventory counts. [SCADA](/blog/2026/08/what-is-scada/) polls sensors at fixed intervals. Quality systems run batch processes to aggregate data. Each system asks for what it needs, when it needs it. This worked when manufacturing moved slowly. It breaks down in modern production environments.
 
 The waste is structural. Nearly 99 out of every 100 polling requests return no new information, and polling models consume orders of magnitude more server resources than event-driven alternatives to maintain the same data freshness. Bandwidth and processing power are spent confirming that nothing has changed.
 
@@ -81,7 +81,7 @@ Quality compounds the same way. The 1-10-100 rule of manufacturing quality state
 
 Integration debt follows the same logic. Enterprise-level manufacturing software implementations routinely take many months to multiple years. Every new capability your team wants requires a project. EDA changes the economics entirely. New systems subscribe to the broker. Existing systems stay untouched. What once consumed quarters now requires configuration.
 
-And when something does go wrong, you have a complete timestamped record of everything that happened on the floor. Not reconstructed timelines. Root cause analysis that took days takes hours. Audits have a chain of custody by default.
+And when something does go wrong, you have a complete timestamped record of everything that happened on the floor. Not reconstructed timelines. [Root cause analysis](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/) that took days takes hours. Audits have a chain of custody by default.
 
 The factories pulling ahead right now aren't the most automated. They're the ones where information moves as fast as production does. Every minute that gap exists, it has a cost. EDA removes it.
 
@@ -89,7 +89,7 @@ The factories pulling ahead right now aren't the most automated. They're the one
 
 The hardware is already there. Sensors, [PLCs](/blog/2025/12/what-is-plc/), [SCADA systems](/use-cases/scada/). All running. EDA doesn't replace them. It changes how they communicate.
 
-You need an event broker and something that connects to legacy systems. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) for shop floor devices. Kafka for enterprise loads. [Node-RED](/node-red/) to bridge the gap. That's the stack.
+You need an event broker and something that connects to legacy systems. [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/) for shop floor devices. [Kafka](/blog/2025/12/kafka-vs-mqtt/) for enterprise loads. [Node-RED](/node-red/) to bridge the gap. That's the stack.
 
 The real work is defining what counts as an event. A sensor produces tens of thousands of readings per day. Broadcasting all of them is noise. The event is when temperature crosses a threshold, stays abnormal, or trends wrong. Exceptions, not data points.
 

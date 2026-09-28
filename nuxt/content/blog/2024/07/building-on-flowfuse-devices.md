@@ -44,12 +44,12 @@ Then, we have to consider that this functionality needs to be deployed out to th
 
 ## Architecture
 
-Let's consider an example architecture set in an automotive plant:
+Let's consider an example architecture set in an [automotive plant](/industries/automotive/):
 
 ![Diagram showing the architecture of a "Device Monitoring" use case in an automotive plant.](./images/device-monitoring-architecture.png){data-zoomable}
 _Diagram showing an example architecture of a "Device Monitoring" use case in an automotive plant._
 
-- **Laser Welding Machine:** Here we have a small system built around a single piece of laser welding hardware. The hardware is connected to a PLC via local network, and the PLC is connected to a local server. Each component here can have Node-RED installed, managed by FlowFuse and accessible via the Device Agent. Node-RED would enable extraction of data from the hardware, and provide a local, bespoke, Dashboard on a nearby PC for monitoring the hardware.
+- **Laser Welding Machine:** Here we have a small system built around a single piece of laser welding hardware. The hardware is connected to a [PLC](/blog/2025/12/what-is-plc/) via local network, and the PLC is connected to a local server. Each component here can have Node-RED installed, managed by FlowFuse and accessible via the Device Agent. Node-RED would enable extraction of data from the hardware, and provide a local, bespoke, Dashboard on a nearby PC for monitoring the hardware.
 - **Body Shop:** Here we have several piece of machinery, each with the "FlowFuse Device Agent" installed. This allows us to manage the Node-RED deployments on these machines remotely from FlowFuse, and easily extract data from the machines for analysis.
 - **Plant:** We have multiple servers running at the Planet-level, generally one for each "Shop", each with their own Device Agent installed, again for easy remote management and deployment of Node-RED, e.g. Dashboards that provide a single HMI for monitoring hardware across a full shop. Here, we also have our instance of FlowFuse. This is the central point for managing all of our Node-RED deployments across the factory floor.
 - **Company IT Dept:** The general IT department of the company would provide multiple servers and services, accessible to a range of departments and the plant. Node-RED could act as a bridge between the Plant and the Company IT Dept, allowing us to easily extract data from the Plant and send it to the Company IT Dept, and vice-versa.
@@ -58,10 +58,10 @@ _Diagram showing an example architecture of a "Device Monitoring" use case in an
 This diagram also demonstrates a sample of the rich ecosystem of communication protocols that Node-RED can support:
 
 - **TCP:** Read and process data from from bespoke and custom devices
-- **EtherNet/IP:** Collect data from Allen Bradley and other EtherNet/IP devices
+- **[EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/):** Collect data from Allen Bradley and other EtherNet/IP devices
 - **MQTT:**  Modern devices and factory generated IIoT data
 - **OPC-UA:**  Communicate with newer PLCs and OPC Servers 
-- **Modbus:**  Data collection from existing Modbus enabled devices like Temperature Probes, Invertors, Encoders
+- **[Modbus](/blog/2023/05/integrating-modbus-with-node-red/):**  Data collection from existing Modbus enabled devices like Temperature Probes, Invertors, Encoders
 - **MC Protocol:**  Gather data from Mitsubishi PLCs
 - **FINS:**  Gather data from OMRON PLCs
 - **Siemens S7:**   Gather data from Siemens PLCs using the S7 Protocol

@@ -11,7 +11,7 @@ tags:
     - unified-namespace
 ---
 
-In the realm of industrial manufacturing, the concept of a Unified Namespace (UNS) emerges as a pivotal instrument for enhanced communication within a manufacturing network framework. Predicated on an event-driven architectural model, this approach advocates for the universal accessibility of data, irrespective of the immediate presence of a data consumer. 
+In the realm of industrial manufacturing, the concept of a [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) (UNS) emerges as a pivotal instrument for enhanced communication within a manufacturing network framework. Predicated on an event-driven architectural model, this approach advocates for the universal accessibility of data, irrespective of the immediate presence of a data consumer. 
 <!--more-->
 This paradigm allows for a flexible role allocation within the network, where nodes can dynamically switch between being data producers and consumers, contingent upon the fluctuating requirements of the system at any specific juncture. For those unfamiliar with UNS, I recommend revisiting my [previous article](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/) on the subject.
 
@@ -25,7 +25,7 @@ This article aims to explain the process of data modeling for your UNS, highligh
 
 ## Step 1 - Connection to your Operational Technology (OT) equipment
 
-The journey begins with establishing connections to OT equipment, which may include Programmable Logic Controllers (PLCs), Historian databases, and sensors. It is essential to facilitate compatibility with a diverse array of protocols. In this context, Node-RED emerges as a pivotal tool, bolstered by its expansive community-generated catalog featuring over 4500 nodes.
+The journey begins with establishing connections to OT equipment, which may include [Programmable Logic Controllers (PLCs)](/blog/2025/12/what-is-plc/), Historian databases, and sensors. It is essential to facilitate compatibility with a diverse array of protocols. In this context, Node-RED emerges as a pivotal tool, bolstered by its expansive community-generated catalog featuring over 4500 nodes.
 
 In my example, the focus is on integration with a RevolutionPi. To achieve this, the FlowFuse Device Agent was deployed on a RevolutionPi (see our [documentation](/docs/hardware/raspbian/)), and specific RevolutionPi nodes were installed. These nodes enable direct interaction with all interfaces of the PLC and are available through the [Node-RED library](https://flows.nodered.org/node/node-red-contrib-revpi-nodes). Subsequent steps involved acquiring temperature data directly from the PLC.
 
@@ -84,7 +84,7 @@ The FlowFuse Team Library acts as my schema registry within my organization, all
 
 ## Step 3 - Building your Topic Hierarchy
 
-Your topic hierarchy should reflect your physical plant structure or align with existing asset naming systems. This approach improves data visibility and eases navigation for OT engineers. Many enterprises opt for the [ISA-95 part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i) model to structure their topics.
+Your [topic hierarchy](/blog/2025/01/designing-topic-hierarchy-for-your-uns/) should reflect your physical plant structure or align with existing asset naming systems. This approach improves data visibility and eases navigation for OT engineers. Many enterprises opt for the [ISA-95 part 2](https://www.isa.org/products/ansi-isa-95-00-02-2018-enterprise-control-system-i) model to structure their topics.
 
 In our example, we follow the structure of: Enterprise/Site/Line1/StationA
 
@@ -92,7 +92,7 @@ In our example, we follow the structure of: Enterprise/Site/Line1/StationA
 
 ## Step 4 - Connection to your Unified Namespace
 
-Finally, transfer your data to the UNS, using protocols like MQTT or Kafka, depending on your UNS setup. While MQTT can handle up to 256 MB per payload, Kafka's default is 1MB, expandable to 10MB. These capacities suffice for most data types. In our example, we'll employ MQTT.
+Finally, transfer your data to the UNS, using protocols like MQTT or [Kafka](/blog/2025/12/kafka-vs-mqtt/), depending on your UNS setup. While MQTT can handle up to 256 MB per payload, Kafka's default is 1MB, expandable to 10MB. These capacities suffice for most data types. In our example, we'll employ MQTT.
 
 ## Conclusion
 

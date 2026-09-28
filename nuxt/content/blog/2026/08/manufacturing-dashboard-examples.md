@@ -59,7 +59,7 @@ A manufacturing dashboard brings machine data, production metrics, downtime, and
 
 <!--more-->
 
-This guide covers what manufacturing dashboards do, the metrics they should track, and five dashboard examples, for production, OEE, downtime, quality, and calibration, built with [FlowFuse](/).
+This guide covers what manufacturing dashboards do, the metrics they should track, and five dashboard examples, for production, [OEE](/blog/2025/04/what-is-an-oee-dashboard/), downtime, quality, and calibration, built with [FlowFuse](/).
 
 ## What Is a Manufacturing Dashboard?
 
@@ -73,7 +73,7 @@ That's also what separates a good dashboard from a cluttered one: it doesn't try
 
 Production problems get expensive when they stay invisible. A machine that stops, a line falling behind target, or a defect that goes unnoticed can quietly erode throughput, cost, and delivery schedules before anyone catches it.
 
-A shared dashboard closes that gap. Operators see production status as it happens, supervisors track performance across the line, and maintenance teams spot equipment issues sooner. The value isn't the dashboard itself; it's the time saved between a problem occurring and someone responding to it. That's the shift FlowFuse is built to support: turning raw factory data into faster decisions on the floor, whether the source is an MES system or a SCADA historian.
+A shared dashboard closes that gap. Operators see production status as it happens, supervisors track performance across the line, and maintenance teams spot equipment issues sooner. The value isn't the dashboard itself; it's the time saved between a problem occurring and someone responding to it. That's the shift FlowFuse is built to support: turning raw factory data into faster decisions on the floor, whether the source is an MES system or a [SCADA](/blog/2026/08/what-is-scada/) historian.
 
 Knowing dashboards matter is one thing. Knowing what belongs on them is another, and that comes down to the metrics behind the view.
 
@@ -101,7 +101,7 @@ Dashboards work best when they're designed around a specific decision, not a gen
 
 ### 1. Production Dashboard (Andon Live)
 
-A production dashboard answers one question in real time: is the line hitting its target? FlowFuse's **Andon Live Dashboard** gives operators and supervisors a shop-floor view of actual output against target, shift progress, and current line status, so a gap can be caught and addressed before it grows.
+A production dashboard answers one question in real time: is the line hitting its target? FlowFuse's **[Andon](/blog/2025/05/building-andon-task-manager-with-ff/) Live Dashboard** gives operators and supervisors a shop-floor view of actual output against target, shift progress, and current line status, so a gap can be caught and addressed before it grows.
 
 The same live data is useful during a [run at rate](/blog/2026/08/run-at-rate/), when a team needs to verify that the line can sustain its required output before launch.
 

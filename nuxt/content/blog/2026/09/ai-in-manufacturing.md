@@ -55,7 +55,7 @@ At a high level, AI can help manufacturers **predict** what may happen, **detect
 
 ### Predictive Maintenance
 
-Equipment availability is one of the most critical metrics in manufacturing, and unplanned downtime is costly. Predictive maintenance uses AI to estimate when a machine is likely to fail, so maintenance can be scheduled before it does.
+Equipment availability is one of the most critical metrics in manufacturing, and unplanned downtime is costly. [Predictive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/) uses AI to estimate when a machine is likely to fail, so maintenance can be scheduled before it does.
 
 The model analyzes machine data over time to find patterns associated with equipment degradation. For example, it might analyze vibration, temperature, and current data from a motor to detect changes that predict a bearing is starting to wear. Maintenance teams can use that signal to investigate early, order parts in advance, and schedule the work during planned downtime rather than after a breakdown.
 
@@ -124,7 +124,7 @@ Edge AI is useful where inference needs to happen with low latency and without a
 
 The AI component itself depends on the use case, since it needs to be trained to perform a particular task such as predicting demand, detecting anomalies, or optimizing a process.
 
-Various AI and machine learning software can implement these functions. For example, FlowFuse can run an ONNX machine learning model on an edge device using the [ONNX node](/docs/flowfuse-nodes/ai/onnx/).
+Various AI and machine learning software can implement these functions. For example, FlowFuse can run an [ONNX](/blog/2025/10/custom-onnx-model/) machine learning model on an edge device using the [ONNX node](/docs/flowfuse-nodes/ai/onnx/).
 
 ### Data Storage
 
@@ -136,7 +136,7 @@ FlowFuse can connect to databases already in use in the manufacturing environmen
 
 Finally, for an AI application to have an effect, its results need to reach the people and systems that can act on them. That could be a dashboard showing predicted demand, an alert indicating a machine is about to fail, or a maintenance task created automatically when an anomaly is detected.
 
-FlowFuse provides a visual application development environment for building these applications and workflows and connecting them to industrial data. FlowFuse also integrates with AI agents, allowing [FlowFuse Expert](/docs/user/expert/) and a coding agent of your choice to interact with the platform and build applications and data workflows through its MCP server and [MCP nodes](/docs/flowfuse-nodes/mcp/). This is how [external AI services such as Claude, OpenAI, and Gemini connect to FlowFuse](/blog/2026/09/industrial-ai-agent/) to work with manufacturing data and applications.
+FlowFuse provides a visual application development environment for building these applications and workflows and connecting them to industrial data. FlowFuse also integrates with AI agents, allowing [FlowFuse Expert](/docs/user/expert/) and a coding agent of your choice to interact with the platform and build applications and data workflows through its [MCP](/blog/2025/10/building-mcp-server-using-flowfuse/) server and [MCP nodes](/docs/flowfuse-nodes/mcp/). This is how [external AI services such as Claude, OpenAI, and Gemini connect to FlowFuse](/blog/2026/09/industrial-ai-agent/) to work with manufacturing data and applications.
 
 Not every application needs the full stack; it depends on the problem you're solving. At minimum, you need industrial data connectivity, somewhere to run the model, and the model itself. Beyond that, some applications also need data storage, dashboards, workflows, or AI assistants before the results can actually close the loop.
 

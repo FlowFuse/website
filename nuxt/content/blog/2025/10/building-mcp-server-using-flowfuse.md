@@ -23,7 +23,7 @@ This article explains how to build an MCP server with FlowFuse and connect AI to
 
 The Model Context Protocol (MCP) is an open standard that enables AI assistants to access data and execute actions across external systems.
 
-MCP works through three key components. Resources give AI visibility into your operations through read-only access to sensor data, database records, SCADA tags, and equipment logs. This real-time information helps AI understand what's actually happening on your factory floor or in your IIoT environment.
+MCP works through three key components. Resources give AI visibility into your operations through read-only access to sensor data, database records, [SCADA](/blog/2026/08/what-is-scada/) tags, and equipment logs. This real-time information helps AI understand what's actually happening on your factory floor or in your IIoT environment.
 
 Tools let AI perform specific actions in your systems. These might include adjusting equipment parameters, triggering maintenance alerts, or generating operational reports. Each tool clearly defines what it needs as input and what it will produce as output, which keeps operations predictable and safe.
 
@@ -250,7 +250,7 @@ In this example, the flow includes a tool that triggers a POST request to the ma
 
 Below is the flow that includes the Resource we created to monitor production lines and the Tool that sends a POST request.
 
-*Note: The flow uses the FlowFuse Query node and FlowFuse tables, which are only available on the Enterprise tier. If you do not have Enterprise, you can use other data sources instead, such as HTTP Request, OPC UA, or other database nodes.*
+*Note: The flow uses the FlowFuse Query node and [FlowFuse tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which are only available on the Enterprise tier. If you do not have Enterprise, you can use other data sources instead, such as HTTP Request, OPC UA, or other database nodes.*
 
 ::render-flow{:height="300"}
 ```json

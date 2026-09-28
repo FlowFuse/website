@@ -27,7 +27,7 @@ cta:
 tldr: "Software-defined manufacturing (SDM) shifts how factories improve: instead of changing hardware, manufacturers build and evolve software that connects, orchestrates, and adapts existing equipment. FlowFuse provides the platform to build, deploy, and manage these industrial applications with version control and GitOps-based deployments, letting manufacturers start small and expand without large-scale modernization projects."
 ---
 
-For a long time, improving a manufacturing process meant touching the equipment itself. Need another inspection step? An engineer reprograms the PLC on-site. Need more production data? Install another system. Want a new workflow? That often meant modifying equipment, bringing in a vendor, or scheduling downtime.
+For a long time, improving a manufacturing process meant touching the equipment itself. Need another inspection step? An engineer reprograms the [PLC](/blog/2025/12/what-is-plc/) on-site. Need more production data? Install another system. Want a new workflow? That often meant modifying equipment, bringing in a vendor, or scheduling downtime.
 
 <!--more-->
 
@@ -45,7 +45,7 @@ Manufacturing isn't the first industry to move this way. Networking became softw
 
 Manufacturing follows a similar pattern, with one important difference: factories still depend on deterministic control, safety systems, and equipment that may stay in production for twenty years or longer. Those systems aren't going away, but what runs around them increasingly is software rather than hardware.
 
-Software sits above those systems, connecting them, exchanging data between them, and coordinating what happens around the production process. That's increasingly important because factory data no longer stays inside the plant. Maintenance teams, quality systems, MES platforms, ERP software, historians, cloud services, and sometimes AI applications all need it. Adding a dashboard, connecting a new machine, or automating a maintenance process has become more of a software project than a hardware one. The equipment stays where it is; the software around it keeps evolving.
+Software sits above those systems, connecting them, exchanging data between them, and coordinating what happens around the production process. That's increasingly important because factory data no longer stays inside the plant. Maintenance teams, quality systems, [MES](/blog/2025/06/what-is-mes/) platforms, ERP software, historians, cloud services, and sometimes AI applications all need it. Adding a dashboard, connecting a new machine, or automating a maintenance process has become more of a software project than a hardware one. The equipment stays where it is; the software around it keeps evolving.
 
 ## Why Traditional Manufacturing Software Starts to Struggle
 
@@ -81,13 +81,13 @@ This is the role FlowFuse plays.
 
 Rather than being another manufacturing application, FlowFuse provides the platform that manufacturers use to build, deploy, and operate industrial applications throughout their lifecycle. It creates a common operating model for software running across the factory, whether that software connects equipment, collects production data, orchestrates workflows, or integrates with enterprise systems.
 
-As more applications are introduced, that consistency becomes increasingly valuable. Teams can standardize how applications are developed, deploy them reliably to edge devices, manage changes through version control and GitOps, track every deployment with audit logs, control access through role-based permissions, and operate applications across multiple sites from a single platform.
+As more applications are introduced, that consistency becomes increasingly valuable. Teams can standardize how applications are developed, deploy them reliably to edge devices, manage changes through version control and [GitOps](/blog/2026/07/gitops-for-manufacturing/), track every deployment with audit logs, control access through role-based permissions, and operate applications across multiple sites from a single platform.
 
 The result is that software scales with the business instead of becoming another maintenance burden. Once an application proves its value, it can be reused, adapted, and continuously improved without rebuilding the entire solution for every production line or facility.
 
 [Arch Systems](/customer-stories/scaling-manufacturing-automation-with-flowfuse/) experienced this challenge as its manufacturing platform expanded across customer sites. Connecting more than 100 production databases and MES systems manually was slowing every deployment. By building reusable integration components and deploying them through FlowFuse, Arch standardized its rollout process and propagated changes across production environments from a single platform.
 
-That same approach extends to existing development practices. FlowFuse DevOps Pipelines support GitHub, GitLab, Bitbucket, Gitea, and other Git servers, allowing manufacturers to adopt GitOps workflows without changing the infrastructure they already use.
+That same approach extends to existing development practices. FlowFuse DevOps Pipelines support GitHub, GitLab, Bitbucket, Gitea, and other [Git](/blog/2026/01/how-to-integrate-node-red-with-git/) servers, allowing manufacturers to adopt GitOps workflows without changing the infrastructure they already use.
 
 Software-defined manufacturing isn't simply about writing software for factories. It's about creating a repeatable way to operate software as it becomes part of everyday manufacturing. FlowFuse provides the platform that turns individual software projects into a scalable software-defined manufacturing environment.
 

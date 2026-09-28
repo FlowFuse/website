@@ -55,7 +55,7 @@ Operators need more than buttons to control machines - they also need visibility
 
 <!--more-->
 
-In this tutorial, you'll connect FlowFuse to a Siemens S7 PLC, build an operator dashboard to control a motor and stack light, and automatically track the runtime of each device. By the end, you'll have a dashboard that not only sends commands to the PLC but also displays live operating time for every connected device.
+In this tutorial, you'll connect FlowFuse to a Siemens S7 [PLC](/blog/2025/12/what-is-plc/), build an operator dashboard to control a motor and stack light, and automatically track the runtime of each device. By the end, you'll have a dashboard that not only sends commands to the PLC but also displays live operating time for every connected device.
 
 <lite-youtube
   videoid="kiOufj0ghxg"
@@ -347,7 +347,7 @@ At this point, every Hourglass node is continuously tracking the runtime of its 
 
 ## Displaying the Runtime
 
-We'll use **UI Template** widgets to build a simple HMI-style runtime display for each device.
+We'll use **UI Template** widgets to build a simple [HMI](/blog/2025/11/building-hmi-for-equipment-control/)-style runtime display for each device.
 
 ### Create the Runtime Display
 

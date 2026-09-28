@@ -41,7 +41,7 @@ In the short term, this means helping to accelerate the plans already in place f
 the Open Source project. Getting the 2.0 release done in the next few weeks, working on
 long-standing features such as the Test framework and Flow Debugger.
 
-Alongside that we'll also be building a platform around Node-RED that will make it easier
+Alongside that we'll also be building a platform around [Node-RED](/node-red/) that will make it easier
 to adopt at scale and integrate into existing enterprise environments.
 
 Node-RED remains a fully open source project, with its home at the OpenJS Foundation

@@ -18,7 +18,7 @@ If you've been using Node-RED in production, you already know the pain points. F
 
 <!--more-->
 
-Traditional Node-RED doesn't have answers to these questions. But modern software development has solved these problems decades ago with version control and DevOps pipelines.
+Traditional Node-RED doesn't have answers to these questions. But modern software development has solved these problems decades ago with version control and [DevOps pipelines](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/).
 
 That's the gap FlowFuse fills.
 
@@ -26,7 +26,7 @@ That's the gap FlowFuse fills.
 
 FlowFuse is a platform built specifically for running Node-RED at scale. It handles deployment, management, security, team collaboration, and more so you can focus on building flows instead of managing infrastructure.
 
-Every FlowFuse can automatically create snapshots whenever flows are deployed. These snapshots let you track changes over time and roll back when needed. You can also create manual snapshots to mark important milestones.
+Every FlowFuse can automatically create [snapshots](/blog/2024/09/node-red-version-control-with-snapshots/) whenever flows are deployed. These snapshots let you track changes over time and roll back when needed. You can also create manual snapshots to mark important milestones.
 
 The real power comes from DevOps pipeline stages. You set up stages like development, staging, and production, then push snapshots through them. Make changes in dev, test in staging, promote to production. Everything's tracked and auditable.
 

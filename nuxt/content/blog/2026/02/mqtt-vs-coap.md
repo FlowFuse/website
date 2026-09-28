@@ -33,7 +33,7 @@ The MQTT vs CoAP debate is mostly noise. One protocol assumes you have infrastru
 
 <!--more-->
 
-MQTT dominates because it solved the hard problem: coordinating thousands of devices through centralized brokers with persistent connections, pub/sub semantics, and delivery guarantees. CoAP survived because some deployments can't afford that solution, not as a tradeoff, but as a physical impossibility. Battery-powered sensors often can't afford long-lived TCP connections (or frequent reconnects), depending on duty cycle, radio, and power budget. Microcontrollers with 16KB RAM can't run MQTT stacks. Mesh networks at the edge can't reach brokers reliably.
+MQTT dominates because it solved the hard problem: coordinating thousands of devices through centralized brokers with persistent connections, [pub/sub](/blog/2024/11/why-pub-sub-in-uns/) semantics, and delivery guarantees. CoAP survived because some deployments can't afford that solution, not as a tradeoff, but as a physical impossibility. Battery-powered sensors often can't afford long-lived TCP connections (or frequent reconnects), depending on duty cycle, radio, and power budget. Microcontrollers with 16KB RAM can't run MQTT stacks. Mesh networks at the edge can't reach brokers reliably.
 
 These aren't competing protocols. They're answers to incompatible constraints. MQTT requires infrastructure you can reach and connections you can sustain. CoAP requires neither. Pick MQTT for constrained devices, and watch batteries drain in months instead of years. Pick CoAP for cloud-coordinated fleets, and rebuild pub/sub patterns badly.
 
@@ -94,7 +94,7 @@ These CoAP advantages are real. But if we stop here, we miss the bigger picture.
 
 The pub/sub model is a fundamental decoupling mechanism that enables capabilities difficult or impossible with request/response.
 
-Consider industrial telemetry. Thousands of sensors publishing measurements. Multiple backend systems consuming that data: a time-series database for analysis, a rules engine for alerts, a machine learning pipeline for predictive maintenance, a dashboard for operators.
+Consider industrial telemetry. Thousands of sensors publishing measurements. Multiple backend systems consuming that data: a time-series database for analysis, a rules engine for alerts, a machine learning pipeline for [predictive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/), a dashboard for operators.
 
 With MQTT, adding a new consumer is trivial. Subscribe to the topics. The sensors don't know you exist. They don't need reconfiguration or firmware updates. The decoupling is complete.
 

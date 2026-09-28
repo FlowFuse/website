@@ -51,7 +51,7 @@ That question exposes the limitations of standalone Node-RED:
 ::cta-image{src="/images/cta/book-a-demo.png" alt="Walk through your FlowFuse setup with our team - book a demo" cta="demo"}
 ::
 
-You need to deploy to 50 sites across three continents without manual setup at each location. Five engineers need to work on improvements without conflicts. You need alerts when any instance goes down because downtime stops production and costs money. Your security team requires SSO integration, role-based access control, and audit trails. You need to push updates to all sites at once, not travel to each location over weeks. When someone deploys a breaking change on Friday afternoon, you need to roll it back in seconds.
+You need to deploy to 50 sites across three continents without manual setup at each location. Five engineers need to work on improvements without conflicts. You need alerts when any instance goes down because downtime stops production and costs money. Your security team requires SSO integration, [role-based access control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/), and audit trails. You need to push updates to all sites at once, not travel to each location over weeks. When someone deploys a breaking change on Friday afternoon, you need to roll it back in seconds.
 
 This is where Node-RED ends and FlowFuse begins.
 
@@ -65,7 +65,7 @@ FlowFuse doesn't replace Node-RED. You use the same visual editor, nodes, and fl
 
 Standard Node-RED leaves authentication to you, typically basic auth or custom middleware. For personal projects, this suffices. Production environments controlling industrial systems need more.
 
-FlowFuse provides role-based access control (RBAC) to define who edits flows versus who views them. Single Sign-On via SAML, LDAP, and OIDC integrates with your existing identity systems. Audit logs capture every deployment with details on who made changes and when. Database credentials and API tokens are managed through encrypted secrets storage, keeping them out of flow exports and version control.
+FlowFuse provides role-based access control (RBAC) to define who edits flows versus who views them. Single Sign-On via SAML, [LDAP](/blog/2024/07/how-to-setup-sso-ldap-for-the-node-red/), and OIDC integrates with your existing identity systems. Audit logs capture every deployment with details on who made changes and when. Database credentials and API tokens are managed through encrypted secrets storage, keeping them out of flow exports and version control.
 
 For supply chain security, FlowFuse generates a Software Bill of Materials (SBOM) listing every node and dependency across your instances. Security teams can scan for vulnerabilities and track what needs updating.
 
@@ -73,7 +73,7 @@ For supply chain security, FlowFuse generates a Software Bill of Materials (SBOM
 
 Node-RED was built for individual developers. When two people edit the same instance, the last save wins. No version history exists. No way to review changes before deployment. No rollback option.
 
-FlowFuse enables multi-user teams working on shared projects with proper permissions. Every deployment creates a snapshot, a complete record of your flows at that point in time. Compare snapshots to track changes or restore previous versions when deployments break production.
+FlowFuse enables multi-user teams working on shared projects with proper permissions. Every deployment creates a [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/), a complete record of your flows at that point in time. Compare snapshots to track changes or restore previous versions when deployments break production.
 
 ### Remote Device Management
 

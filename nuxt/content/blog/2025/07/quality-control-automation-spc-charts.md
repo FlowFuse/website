@@ -86,7 +86,7 @@ First, we need two nodes for SPC monitoring.
 
 ### Step 2: Simulate Your Machine Data
 
-In production, you'd connect to your PLC. For now, let's simulate a bearing measurement around 10mm nominal.
+In production, you'd connect to your [PLC](/blog/2025/12/what-is-plc/). For now, let's simulate a bearing measurement around 10mm nominal.
 
 1. Drag an **inject** node onto your canvas. This is your "sensor."
 
@@ -314,7 +314,7 @@ Time to connect your actual machines. The approach depends on what equipment you
 
 For modern PLCs - anything from the last decade like Siemens S7-1200/1500, Allen-Bradley ControlLogix, or Omron NX - you'll use OPC UA. It's already built into these PLCs. Enable it in the configuration, install `node-red-contrib-opcua` from the FlowFuse palette, and point it at your PLC. The endpoint looks like `opc.tcp://192.168.1.100:4840`. Browse for your measurement tags and connect them to your SPC flow. [Full OPC UA guide here](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 
-Older equipment speaks Modbus TCP. Check your manual's appendix for the register map. Install `node-red-contrib-modbus`, configure it with your device's IP address and the register holding your measurement (like 40001 for holding registers). Almost every industrial device from the last 30 years supports this. [Modbus tutorial here](/docs/node-red/protocol/modbus/).
+Older equipment speaks [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) TCP. Check your manual's appendix for the register map. Install `node-red-contrib-modbus`, configure it with your device's IP address and the register holding your measurement (like 40001 for holding registers). Almost every industrial device from the last 30 years supports this. [Modbus tutorial here](/docs/node-red/protocol/modbus/).
 
 For everything else, get creative. Old gauges with RS-232 ports work fine with a USB adapter and the serial node - [see our serial port guide](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/). Machines that dump CSV files can be monitored with the watch node. Manual measurements need just a simple dashboard form, one input field, one submit button. Don't overcomplicate it.
 

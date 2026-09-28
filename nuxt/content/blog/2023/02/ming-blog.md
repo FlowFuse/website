@@ -12,7 +12,7 @@ tags:
     - community
 ---
 
-The folks at Balena have created a bundle they call the [MING stack](https://hub.balena.io/organizations/marc6/apps/MING), (Mosquitto/MQTT, InfluxDB, Node-RED and Grafana) which first appeared back in [2019](https://forums.balena.io/t/ming-an-iot-sensor-stack-mosquitto-influxdb-nodered-grafana/36540). It is an interesting way to look at the IoT tech stack and a pattern I have seen used many times. 
+The folks at Balena have created a bundle they call the [MING stack](https://hub.balena.io/organizations/marc6/apps/MING), (Mosquitto/MQTT, [InfluxDB](/blog/2026/02/mqtt-influxdb-tutorial/), Node-RED and Grafana) which first appeared back in [2019](https://forums.balena.io/t/ming-an-iot-sensor-stack-mosquitto-influxdb-nodered-grafana/36540). It is an interesting way to look at the IoT tech stack and a pattern I have seen used many times. 
 
 <!--more-->
 
@@ -20,8 +20,8 @@ In the early days of the web, the [LAMP stack](https://en.wikipedia.org/wiki/LAM
 
 Can the IoT industry benefit from a MING stack? There is a fair amount of complexity building IoT systems. Therefore, having defined architecture patterns might help reduce some of the confusion. In fact, MING does bring together the key open source components of an IoT system:
 
-* [Mosquitto](https://mosquitto.org/) is the popular open source MQTT broker. MQTT has become the default protocol for IoT communications. The MQTT pub/sub protocol solves a lot for the communication challenges for IoT applications. In fact, I would define the M as being MQTT since there are a lot of MQTT broker implementations available.
-* [InfluxDB](https://www.influxdata.com/) is the popular open source time series database. Many IoT use cases are based on analyzing trends from different IoT devices. The classic examples is preventive maintenance of factory equipment. Having a time series database in your IoT architecture to record trending information will solve a lot of your data problems.
+* [Mosquitto](https://mosquitto.org/) is the popular open source MQTT broker. MQTT has become the default protocol for IoT communications. The MQTT [pub/sub](/blog/2024/11/why-pub-sub-in-uns/) protocol solves a lot for the communication challenges for IoT applications. In fact, I would define the M as being MQTT since there are a lot of MQTT broker implementations available.
+* [InfluxDB](https://www.influxdata.com/) is the popular open source time series database. Many IoT use cases are based on analyzing trends from different IoT devices. The classic examples is [preventive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/) of factory equipment. Having a time series database in your IoT architecture to record trending information will solve a lot of your data problems.
 * [Node-RED](/node-red/) is the popular low-code development environment that helps create flows of data. IoT systems are often pulling data from many different sources. The data needs to be filtered, analysed or transformed before being forward to another service. Node-RED has a large community of data nodes that makes it easy to collect data from a wide variety of sources. For instance in the industrial world, Node-RED nodes are available for OPC-UA, Modbus, S7, MQTT, various PLC platforms like Opto22, etc, etc.
 * Finally [Grafana](https://grafana.com/) is a popular open source visualization platform. Real time monitoring of IoT data is often the first applications deployed for IoT systems. Having graphing and dashboard technology available in your architecture makes perfect sense. 
 

@@ -41,7 +41,7 @@ This is where **low-code platforms**, like **FlowFuse** built on **Node-RED**, c
 
 Using a low-code platform, an engineer can visually build flows and logic without needing to write large amounts of custom code. This approach dramatically accelerates development and reduces complexity.
 
-For example, connecting to devices becomes as simple as dragging and dropping pre-built nodes. You can pull data from a solar panel using Modbus, a battery using a REST API, and even fetch weather forecasts, all within the same interface.
+For example, connecting to devices becomes as simple as dragging and dropping pre-built nodes. You can pull data from a solar panel using [Modbus](/blog/2023/05/integrating-modbus-with-node-red/), a battery using a REST API, and even fetch weather forecasts, all within the same interface.
 
 Once the data is collected, standardizing it is straightforward. JSON, CSV, Change, and function nodes allow you to reformat disparate data streams into a single, consistent structure that the VPP can understand.
 
@@ -55,7 +55,7 @@ Beyond integration, **FlowFuse** provides the centralized control and management
 
 Need to onboard new assets? You can do it from the same platform, without custom scripts or separate tools. This is what makes it possible to scale from managing **100 devices to 10,000**, in a structured, reliable way.
 
-FlowFuse is also designed with **industrial-grade security** and management capabilities, essential for critical infrastructure environments. Role-based access control, audit logs, and deployment workflows are all built in.
+FlowFuse is also designed with **industrial-grade security** and management capabilities, essential for critical infrastructure environments. [Role-based access control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/), audit logs, and deployment workflows are all built in.
 
 And importantly, FlowFuse supports **collaborative development**. No more siloed knowledge stuck with one engineer. Teams can work together in a controlled environment, making development faster and more sustainable.
 

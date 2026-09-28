@@ -85,7 +85,7 @@ The factors rarely pull in the same direction. A workload that demands low laten
 
 ## The Hierarchy and Where Each Workload Belongs
 
-The architecture that resolves the edge-vs-cloud question is a five-level hierarchy, one the manufacturing industry already knows. It maps directly to the ISA-95 functional model that has guided industrial operations for decades.
+The architecture that resolves the edge-vs-cloud question is a five-level hierarchy, one the manufacturing industry already knows. It maps directly to the [ISA-95](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/) functional model that has guided industrial operations for decades.
 
 Each level handles a different class of decisions, at a different speed, with a different scope of data.
 
@@ -118,4 +118,4 @@ The technology to do this exists. The frameworks are mature, the hardware is pro
 
 Define the decision. Map it to the hierarchy. Build the infrastructure that decision requires. Then train the model.
 
-That sequence is what industrial AI at scale actually looks like, and [FlowFuse]() is the platform built to run it. From connecting machines and collecting data, to transforming and visualizing it in real time, to running model inference directly in the flow with ONNX nodes, wiring live plant data into AI agents with MCP, and letting operators query their operations in plain language with Expert Insights. One platform. Every level of the hierarchy.
+That sequence is what industrial AI at scale actually looks like, and [FlowFuse](/) is the platform built to run it. From connecting machines and collecting data, to transforming and visualizing it in real time, to running model inference directly in the flow with [ONNX](/blog/2025/10/custom-onnx-model/) nodes, wiring live plant data into AI agents with [MCP](/blog/2025/10/building-mcp-server-using-flowfuse/), and letting operators query their operations in plain language with Expert Insights. One platform. Every level of the hierarchy.

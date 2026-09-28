@@ -74,7 +74,7 @@ The cost is not just operational. It is strategic. Every ungoverned device is a 
 
 Shared ownership is not a committee. It is not a cross-functional task force that meets monthly and produces a governance document nobody reads. Those things exist in organizations where the ownership question got escalated instead of answered.
 
-Real shared ownership starts with accepting that IT and OT are not fighting over the same thing. They have different jobs at the edge and the jobs are genuinely complementary. IT owns the infrastructure layer: security, patch state, remote access, monitoring, compliance. OT owns the operational layer: what runs, when it runs, what it touches, what the consequences of changing it are. The seam between those two layers is where decisions get made together, not where one team overrules the other.
+Real shared ownership starts with accepting that [IT and OT](/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/) are not fighting over the same thing. They have different jobs at the edge and the jobs are genuinely complementary. IT owns the infrastructure layer: security, patch state, remote access, monitoring, compliance. OT owns the operational layer: what runs, when it runs, what it touches, what the consequences of changing it are. The seam between those two layers is where decisions get made together, not where one team overrules the other.
 
 In practice this means a few concrete things.
 

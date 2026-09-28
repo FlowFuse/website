@@ -54,7 +54,7 @@ cta:
   description: "See how FlowFuse helps teams standardize, deploy, and maintain industrial data integrations from a single platform. Talk to us about your setup."
 ---
 
-[Arch Systems](https://archsys.io/) builds an AI copilot for manufacturers, and to power it the company connects more than 100 factory databases into a single analytics platform. Each one lives in a different production environment. Each one speaks to a different MES. Across them sits a tangle of diverse APIs and databases that rarely share conventions. Connecting any single database was never hard. Connecting the hundredth without rebuilding the work from scratch is the problem worth solving.
+[Arch Systems](https://archsys.io/) builds an AI copilot for manufacturers, and to power it the company connects more than 100 factory databases into a single analytics platform. Each one lives in a different production environment. Each one speaks to a different [MES](/blog/2025/06/what-is-mes/). Across them sits a tangle of diverse APIs and databases that rarely share conventions. Connecting any single database was never hard. Connecting the hundredth without rebuilding the work from scratch is the problem worth solving.
 
 That copilot reads dashboards, synthesizes production data, and hands operators and engineers prescriptive guidance in real time, no infrastructure overhaul required. But a copilot is only as good as the data feeding it. In a factory, that data sits in the least cooperative layer of the stack: the gap between the shop floor and enterprise IT, where MES systems, databases, and APIs rarely agree on anything.
 
@@ -72,7 +72,7 @@ For a company whose entire job is onboarding manufacturers, that ceiling sets th
 
 Arch stopped treating each integration as a project. They started treating it as a template.
 
-Working in FlowFuse's low-code environment, the team built standardized, reusable subflows that automate job creation in Arch React. The subflow is the unit of work: a packaged, parameterized piece of logic that does one job the same way on every deployment. Onboarding a new customer shifted from building an integration to deploying a known-good template and adjusting the edges. Do the engineering once. Configure everything after that.
+Working in FlowFuse's low-code environment, the team built standardized, reusable [subflows](/blog/2024/09/how-to-use-subflow-in-node-red/) that automate job creation in Arch React. The subflow is the unit of work: a packaged, parameterized piece of logic that does one job the same way on every deployment. Onboarding a new customer shifted from building an integration to deploying a known-good template and adjusting the edges. Do the engineering once. Configure everything after that.
 
 Beneath that layer, MQTT brokers connect straight to the MES systems and open a reliable path for live production data. The flows take the stream, filter it, and generate tasks automatically from the processed production data. The architecture responds to production events immediately, which is what turns raw shop-floor activity into real-time insight.
 

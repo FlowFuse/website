@@ -23,7 +23,7 @@ competitiveness.
 <!--more-->
 
 Yet, on the other hand, a starkly different narrative is heard from the factory
-floor. Despite the commitment of many IT and OT teams, paired with colossal
+floor. Despite the commitment of many [IT and OT](/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/) teams, paired with colossal
 investment, the path to digitalization is proving to be unexpectedly slow. About
 70% of digital transformation projects are (self-reported!)
 [considered failures](https://www.myhubintranet.com/digital-transformation-statistics/).
@@ -75,9 +75,9 @@ industrial sector as a whole back from progress.
 
 Innovation has always driven industrial automation forward. The transition from
 mechanical systems to electrical relay logic in the early 20th century, and then
-to the maturing of Programmable Logic Controller (PLC) in the 1960s, transformed
+to the maturing of [Programmable Logic Controller (PLC)](/blog/2025/12/what-is-plc/) in the 1960s, transformed
 the factory floor. PLCs, followed by Supervisory Control and Data Acquisition
-(SCADA) and Distributed Control Systems (DCS), brought control, reliability, and
+([SCADA](/blog/2026/08/what-is-scada/)) and Distributed Control Systems (DCS), brought control, reliability, and
 programmability to industrial processes. These technologies were the engines of
 the Third Industrial Revolution. Industrial automation was leading the way in
 what was possible with digital systems, and combining these systems with one

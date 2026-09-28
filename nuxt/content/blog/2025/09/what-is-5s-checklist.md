@@ -61,7 +61,7 @@ While each work environment requires specific evaluation criteria, certain funda
 
 ### Standardize
 
-* Are work instructions current, accessible, and consistently followed?
+* Are [work instructions](/blog/2026/07/digital-work-instruction/) current, accessible, and consistently followed?
 * Do similar workstations follow identical organizational principles?
 * Are all team members trained on current 5S standards?
 * Are procedures regularly reviewed and updated?

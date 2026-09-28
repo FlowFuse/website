@@ -12,7 +12,7 @@ tags:
     - dashboard
 ---
 
-Node-RED makes it easy to create HMI (Human Machine Interfaces) using [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard).
+Node-RED makes it easy to create [HMI](/blog/2025/11/building-hmi-for-equipment-control/) (Human Machine Interfaces) using [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard).
 
 <!--more-->
 

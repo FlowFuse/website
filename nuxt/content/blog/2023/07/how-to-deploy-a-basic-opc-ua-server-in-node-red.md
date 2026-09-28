@@ -65,7 +65,7 @@ meta:
 tldr: "This first installment in an OPC UA series explains the OPC UA information model how devices are represented as structured node objects rather than raw register values and walks through deploying a working OPC UA server flow in Node-RED using the node-red-contrib-opcua package. Understanding the information model and address-space hierarchy is the key prerequisite before building OPC UA clients or integrations."
 ---
 
-This article is the first part of a series of OPC-UA content.  Here, we will explain some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walk through and deploy an example OPC-UA Server.  
+This article is the first part of a series of [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) content.  Here, we will explain some basic concepts of OPC-UA as they apply to building a server in Node-RED, then walk through and deploy an example OPC-UA Server.  
 
 <!--more-->
 
@@ -73,7 +73,7 @@ This article is the first part of a series of OPC-UA content.  Here, we will exp
 
 Open Platform Communications Unified Architecture (OPC UA) is an open, platform independent communication framework frequently utilized in industrial automation, and is considered one of the key protocol standards for Industry 4.0 and Industrial IoT (IIoT).  The standard is developed and maintained by a consortium called the OPC Foundation, with recognizable industry names such as Siemens, Honeywell, Microsoft, Beckhoff, SAP, Yokogawa, ABB, Rockwell, and Schneider Electric.
 
-Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems spanning the entirety of the automation pyramid.  
+Because of OPC-UA’s wide industry acceptance, it is increasingly becoming natively supported on devices and systems spanning the entirety of the [automation pyramid](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/).  
 
 !["Automation Pyramid"](./images/opc-ua-1/automation-pyramid.jpg "Automation Pyramid")
 *Image reference - [imagecontroltips.com](https://www.motioncontroltips.com/what-is-opc-ua-and-how-does-it-compare-with-industrial-ethernet/)*
@@ -119,7 +119,7 @@ With some background on OPC-UA and how information is modeled in mind, we can ta
 Deploying the example flow yields the following result - 
 
 ![Compact Server Flow](./images/opc-ua-1/compact-server-flow.png "Compact Server Flow")
-- an inject node is trigging the function `set flow context Inputs` at a one second interval, which creates 7 randomly generated float values and stores them as flow context variables, `isoInput2` - `isoInput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
+- an inject node is trigging the function `set flow context Inputs` at a one second interval, which creates 7 randomly generated float values and stores them as [flow context](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/) variables, `isoInput2` - `isoInput8` (isolated inputs).  The values will change to a new random number each time the node is injected.
 
 ```javascript 
 flow.set('isoInput2', Math.random() + 12.0)

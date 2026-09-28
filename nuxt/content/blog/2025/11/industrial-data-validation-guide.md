@@ -77,7 +77,7 @@ Below is a short video demonstration of the data validation gateway we'll be bui
 
 ## The Problem with Trusting Your Data
 
-Most industrial applications assume incoming data is valid, temperature sensors send numbers between 0-100°C, MQTT messages contain properly formatted JSON, PLC status codes follow documented formats. There's usually no validation checking if these assumptions hold true.
+Most industrial applications assume incoming data is valid, temperature sensors send numbers between 0-100°C, MQTT messages contain properly formatted JSON, [PLC](/blog/2025/12/what-is-plc/) status codes follow documented formats. There's usually no validation checking if these assumptions hold true.
 
 This works until it doesn't. Sensors drift out of calibration. Network issues corrupt packets. Firmware updates change data formats without warning. When these things happen, bad data flows straight through unchecked.
 

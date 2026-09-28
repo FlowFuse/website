@@ -13,7 +13,7 @@ tags:
 
 Over the past few months we've held a lot of product discovery sessions and a topic
 which keeps coming up is "HA Node-RED". All software will have failures, with
-HA (high availability) the intent is to allow the workload to be processed
+HA ([high availability](/blog/2023/05/bringing-high-availability-to-node-red/)) the intent is to allow the workload to be processed
 regardless. There's quite a few considerations which are often not covered
 during product discovery calls, I'm going to discuss some of those points in this article.
 
@@ -29,7 +29,7 @@ might be extra hardware, engineering hours, as well as organizational challenges
 For now, let's focus on the first two.
 
 Let's start with defining the goal; reduce the impact of a Node-RED instance
-being unresponsive for an arbitrary reason. In many use-cases the MTTR (Mean Time To
+being unresponsive for an arbitrary reason. In many use-cases the [MTTR](/blog/2025/12/mttf-vs-mtbf-vs-mttr/) (Mean Time To
 Recovery) is what's measured. When for example a hardware failure takes down the instance and the time to 
 detection is zero, it will likely still take a few hours to recover. Most of
 the recovery work is also manual, and knowledge on how to recover is usually 

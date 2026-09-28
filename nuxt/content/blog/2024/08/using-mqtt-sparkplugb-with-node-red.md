@@ -48,7 +48,7 @@ Connected devices can generate a lot of data, but without a standardized format,
 
 MQTT Sparkplug B is an open-source specification governed by the [Eclipse Foundation Specification Process (EFSP)](https://www.eclipse.org/projects/efsp/). It defines a standardized MQTT topic namespace and payload format specifically designed for Industrial IoT (IIoT), with particular focus on real-time [SCADA](/use-cases/scada/), control systems, and [HMI](/blog/2025/11/building-hmi-for-equipment-control/) solutions.
 
-At its core, Sparkplug B extends MQTT 3.1.1 by adding structured topic namespace conventions, Google Protocol Buffer encoded payloads, state-aware birth and death certificates, metric aliasing for bandwidth optimization, and store-and-forward capabilities for intermittent connectivity. These additions transform MQTT from a simple messaging protocol into a complete industrial communication framework.
+At its core, Sparkplug B extends MQTT 3.1.1 by adding structured topic namespace conventions, Google Protocol Buffer encoded payloads, state-aware birth and death certificates, metric aliasing for bandwidth optimization, and [store-and-forward](/blog/2025/11/store-and-forward-edge-data-buffering/) capabilities for intermittent connectivity. These additions transform MQTT from a simple messaging protocol into a complete industrial communication framework.
 
 ### The Industrial Integration Problem
 
@@ -80,7 +80,7 @@ The edge node monitors broker connectivity and automatically publishes `NBIRTH` 
 
 The primary application concept allows edge nodes to adapt their behavior based on application state. A designated primary application publishes STATE messages indicating its operational status. Edge nodes subscribe to these STATE messages and adjust their reporting frequency or metrics based on whether the primary application is online.
 
-For example, an edge node might publish data every second when the primary SCADA application is connected but reduce to every 60 seconds when no primary application is available. This adaptive behavior conserves bandwidth and broker resources while ensuring data availability when needed.
+For example, an edge node might publish data every second when the primary [SCADA](/blog/2026/08/what-is-scada/) application is connected but reduce to every 60 seconds when no primary application is available. This adaptive behavior conserves bandwidth and broker resources while ensuring data availability when needed.
 
 ### Command and Control Flow
 
@@ -95,7 +95,7 @@ Command messages use the same Protocol Buffer format as data messages but flow i
 
 Now that we have an overview of Sparkplug B and its role in standardizing data formats, it’s time to dive deeper into how this protocol structures its payloads and topics. Understanding these details will give you insight into how Sparkplug B efficiently manages data in complex industrial environments and will assist you in implementing it effectively in your own projects.
 
-Sparkplug B utilizes Google Protocol Buffers (Protobufs) for encoding its messages. Protobufs offer a compact and fast way to serialize structured data, preserving MQTT's lightweight nature while introducing a robust framework for handling complex data.
+Sparkplug B utilizes Google [Protocol Buffers](/blog/2025/11/optimize-industrial-data-protocol-buffers/) (Protobufs) for encoding its messages. Protobufs offer a compact and fast way to serialize structured data, preserving MQTT's lightweight nature while introducing a robust framework for handling complex data.
 
 ### The MQTT Sparkplug Specification for IIoT
 
