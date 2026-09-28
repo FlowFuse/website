@@ -42,7 +42,7 @@ This guide explains what an LPA is, how the layers work, and how manufacturers u
 
 A **Layered Process Audit (LPA)** is a structured, process-focused audit in which personnel at different levels of an organization systematically verify that critical manufacturing processes, controls, and work practices conform to defined requirements and standards.
 
-Instead of inspecting finished parts, an LPA checks the process itself. An auditor observes the operation and verifies selected controls such as machine settings, standard work, tooling, materials, or error-proofing.
+Instead of inspecting finished parts, an LPA checks the process itself. An auditor observes the operation and verifies selected controls such as machine settings, standard work, tooling, materials, or [error-proofing](/blog/2025/09/poka-yoke-mistake-proofing/).
 
 The **layers** are different levels of management. A supervisor may check a process daily, an area manager weekly, and plant leadership monthly.
 

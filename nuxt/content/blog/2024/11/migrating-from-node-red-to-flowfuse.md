@@ -50,7 +50,7 @@ On the other hand, if your use case involves monitoring or collecting metrics, s
 
 ### Creating a Cloud Instance
 
-The FlowFuse snapshot feature, available through the `@flowfuse/nr-tools-plugin` for self-managed Node-RED (a plugin that allows you to create snapshots from a self-managed Node-RED instance to the FlowFuse platform), However, it does not support direct device snapshots. Instead, you must first create a snapshot for the Cloud Instance and then assign it as the target for your device.
+The FlowFuse [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) feature, available through the `@flowfuse/nr-tools-plugin` for self-managed Node-RED (a plugin that allows you to create snapshots from a self-managed Node-RED instance to the FlowFuse platform), However, it does not support direct device snapshots. Instead, you must first create a snapshot for the Cloud Instance and then assign it as the target for your device.
 
 1. Navigate to the FlowFuse platform and log in to your account.
 2. Select the application under which you want to manage your Node-RED instance. You can either choose the default application created with your account or click the "Create Application" button to create a new one.

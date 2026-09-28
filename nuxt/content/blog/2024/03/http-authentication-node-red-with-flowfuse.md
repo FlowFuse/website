@@ -13,7 +13,7 @@ tags:
     - api
 ---
 
-Citizen development empowers employees to create digital solutions. However, it requires guardrails to ensure data security, operational stability, and compliance. These guardrails are what FlowFuse provides to the Node-RED community to level up their deployments. FlowFuse offers many different security measures for authentication and authorization, which all apply to different scenarios. 
+[Citizen development](/blog/2023/10/citizen-development/) empowers employees to create digital solutions. However, it requires guardrails to ensure data security, operational stability, and compliance. These guardrails are what FlowFuse provides to the Node-RED community to level up their deployments. FlowFuse offers many different security measures for authentication and authorization, which all apply to different scenarios. 
 
 In this post we’ll take a look at most of them, specifically for HTTP traffic. We’ll discuss the trade-offs for auditabliltiy, convenience to use as either machine or human, among other factors.
 
@@ -30,7 +30,7 @@ Personal access tokens (PATs) are an essential component of FlowFuse, allowing u
 
 ## FlowFuse Authentication: Seamless Integration
 
-FlowFuse authentication offers a seamless and secure way for users to access dashboards and other resources that are typically accessed through a browser. It leverages single sign-on (SSO) and SAML 2.0, reducing the management burden for organizations. 
+FlowFuse authentication offers a seamless and secure way for users to access dashboards and other resources that are typically accessed through a browser. It leverages single sign-on (SSO) and [SAML](/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/) 2.0, reducing the management burden for organizations. 
 
 For users this is convenient as they can access multiple applications and resources using a single set of credentials, eliminating the need to remember and manage multiple passwords.
 

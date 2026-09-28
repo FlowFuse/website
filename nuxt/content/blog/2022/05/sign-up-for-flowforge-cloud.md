@@ -10,7 +10,7 @@ tags:
     - news
 ---
 
-FlowFuse wants to enable everyone to build workflows in Node-RED. Since announcing
+FlowFuse wants to enable everyone to build workflows in [Node-RED](/node-red/). Since announcing
 [FlowFuse Cloud](https://flowforge.com/blog/2022/02/announcing-flowforge-cloud/)
 two months ago we've had a waiting list for users to sign up to. That allowed us
 to control the pace we were bringing new users onto the platform, learning what

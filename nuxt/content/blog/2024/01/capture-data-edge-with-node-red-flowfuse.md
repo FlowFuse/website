@@ -62,4 +62,4 @@ This will launch the Device Agent and connect it to your FlowFuse instance. The 
 
 Now the agent is running, the FlowFuse platform will show it has contacted back to the platform and is ready to do some work. First, add it to the application and start the developer mode. That enables the device editor and provides you secure access to the editor anywhere in the world for everyone in the FlowFuse team with the right access role.
 
-When the development is done, be sure to create a snapshot of the developed flows to create a point-in-time backup, or to roll the snapshot out to many other devices later.
+When the development is done, be sure to create a [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) of the developed flows to create a point-in-time backup, or to roll the snapshot out to many other devices later.

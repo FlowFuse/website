@@ -43,7 +43,7 @@ By using these strategies, you can optimize MQTT performance and ensure that you
 
 ## Ensuring Reliable Data Delivery with MQTT’s QoS Levels
 
-In industrial environments, the accuracy and timeliness of data transmission are crucial for maintaining operational efficiency and safety. MQTT’s publish-subscribe model is designed for lightweight, real-time messaging, but it’s important to understand how to leverage its features to ensure the reliability and integrity of the data flow.
+In industrial environments, the accuracy and timeliness of data transmission are crucial for maintaining operational efficiency and safety. MQTT’s [publish-subscribe](/blog/2024/11/why-pub-sub-in-uns/) model is designed for lightweight, real-time messaging, but it’s important to understand how to leverage its features to ensure the reliability and integrity of the data flow.
 
 While the protocol is generally robust, in some cases, challenges such as network disruptions or temporary communication failures can occur. These can lead to issues such as message loss or delivery out of order. Fortunately, MQTT provides built-in mechanisms to address these challenges and ensure that messages reach their intended destination reliably.
 

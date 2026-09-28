@@ -48,11 +48,11 @@ Setting up FlowFuse correctly is essential for seamless operation:
 Deploying the FlowFuse instance brings everything together:
 1. Navigate to your FlowFuse application created earlier.
 2. Go to your devices and you should now see your newly provisioned devices from balena.
-3. If this is your first time setting up your fleet, the device will not have a snapshot. You will need to deploy a snapshot. Follow these [instructions](/docs/user/snapshots/#create-a-snapshot) to do so. Ensure that you select **Set Target Snapshot**.
+3. If this is your first time setting up your fleet, the device will not have a [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/). You will need to deploy a snapshot. Follow these [instructions](/docs/user/snapshots/#create-a-snapshot) to do so. Ensure that you select **Set Target Snapshot**.
 4. Once complete, the FlowFuse instance will deploy to your device(s).
 
 ## Integrating InfluxDB (Optional)
-Integrating InfluxDB enables effective data storage and management:
+Integrating [InfluxDB](/blog/2026/02/mqtt-influxdb-tutorial/) enables effective data storage and management:
 1. Similar to the previous steps, navigate to this [Github repository](https://github.com/mpous/flowfuse-agent-influx-balena/tree/main?tab=readme-ov-file) and click **Deploy with balena**.
 2. This time, instead of creating a new fleet, select **Use an existing fleet instead**.
 3. Choose your fleet for deployment and select **Deploy to fleet**.

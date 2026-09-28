@@ -36,7 +36,7 @@ meta:
 tldr: "OPC UA is the vendor-neutral standard for connecting PLCs, SCADA systems, HMIs, and enterprise applications. This tutorial shows how to use Node-RED and FlowFuse to connect to any OPC UA server, discover Node IDs with the OPC UA Browser node, and read and write live values from industrial equipment."
 ---
 
-If you’ve ever tried to connect industrial equipment from different vendors, you know how frustrating it can be, a mess of incompatible protocols, proprietary software, and confusing drivers. Your Siemens PLC speaks one language, your Allen-Bradley controller another, and that Modbus sensor? Yet another protocol entirely.
+If you’ve ever tried to connect industrial equipment from different vendors, you know how frustrating it can be, a mess of incompatible protocols, proprietary software, and confusing drivers. Your Siemens [PLC](/blog/2025/12/what-is-plc/) speaks one language, your Allen-Bradley controller another, and that [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) sensor? Yet another protocol entirely.
 
 <!--more-->
 
@@ -46,7 +46,7 @@ OPC UA (Open Platform Communications Unified Architecture) is the industry-stand
 
 This hands-on guide walks you through building your first **OPC UA integration** using **Node-RED** and **FlowFuse**:
 
-* **Connect** to any OPC UA server, Kepware, MatrikonOPC, or built-in PLC servers
+* **Connect** to any OPC UA server, [Kepware](/blog/2026/01/kepware-opcua-better-alternative/), MatrikonOPC, or built-in PLC servers
 * **Browse** available tags and discover Node IDs from your equipment
 * **Read** real-time values from PLCs, sensors, and industrial devices
 * **Write** control signals and setpoints back to your systems

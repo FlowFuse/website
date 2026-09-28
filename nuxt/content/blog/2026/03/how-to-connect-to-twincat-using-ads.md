@@ -54,7 +54,7 @@ meta:
       answer: "The most common cause is that your FlowFuse device and the TwinCAT machine are not on the same network as the interface TwinCAT's AMS Net ID is bound to. Verify the AMS Net ID under About TwinCAT System, confirm the route exists with Flags 0, and enable Allow Half Open if the PLC runtime is slow to initialize."
 ---
 
-ADS is the protocol TwinCAT uses internally, between its own runtime, its HMI, and its PLC and NC tasks, and Beckhoff exposes it for external tools too. That means connecting to a TwinCAT PLC over ADS gives you direct read and write access to its variables, no additional licensing or middleware required, over the same channel TwinCAT already relies on.
+ADS is the protocol TwinCAT uses internally, between its own runtime, its HMI, and its [PLC](/blog/2025/12/what-is-plc/) and NC tasks, and Beckhoff exposes it for external tools too. That means connecting to a TwinCAT PLC over ADS gives you direct read and write access to its variables, no additional licensing or middleware required, over the same channel TwinCAT already relies on.
 
 <!--more-->
 

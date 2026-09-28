@@ -12,9 +12,9 @@ tags:
     - community
 ---
 
-Industrial systems generate valuable data, but legacy protocols like Modbus or non-IIoT standards often make it hard to use. Bridging this gap is essential to connect traditional systems with the modern Industrial Internet of Things (IIoT).  
+Industrial systems generate valuable data, but legacy protocols like [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) or non-IIoT standards often make it hard to use. Bridging this gap is essential to connect traditional systems with the modern Industrial Internet of Things (IIoT).  
 
-Whether it’s Modbus registers, serial communication without a protocol, or standards like Siemens S7 and Mitsubishi MC-Protocol, the challenge lies in making sense of this raw information. With tools like Node-RED and the node-red-contrib-buffer-parser, you can turn complex, outdated data streams into usable formats that power IIoT innovation. 
+Whether it’s Modbus registers, serial communication without a protocol, or standards like Siemens S7 and Mitsubishi MC-Protocol, the challenge lies in making sense of this raw information. With tools like Node-RED and the node-red-contrib-[buffer-parser](/blog/2025/12/node-red-buffer-parser-industrial-data/), you can turn complex, outdated data streams into usable formats that power IIoT innovation. 
 
 
 <!--more-->
@@ -56,7 +56,7 @@ Here's a quick overview of how it works:
 
 1. **Data Conversion**: With the buffer parser, you can easily convert the 16-bit unsigned data into more meaningful formats. Whether you need to translate it into Float, Long, String, or even extract specific bits, this tool makes the process straightforward.
 
-1. **Publishing to MQTT, influxDB, a dashboard, an IIoT system**: Once your data is in a usable format, Node-RED enables you to publish it to many places. MQTT (Message Queuing Telemetry Transport), a popular protocol for IIoT communication is a perfect example. This makes your data accessible to other IIoT systems and applications for further analysis and action.
+1. **Publishing to MQTT, [influxDB](/blog/2026/02/mqtt-influxdb-tutorial/), a dashboard, an IIoT system**: Once your data is in a usable format, Node-RED enables you to publish it to many places. MQTT (Message Queuing Telemetry Transport), a popular protocol for IIoT communication is a perfect example. This makes your data accessible to other IIoT systems and applications for further analysis and action.
 
 ### Unlocking the Potential of Legacy Data
 

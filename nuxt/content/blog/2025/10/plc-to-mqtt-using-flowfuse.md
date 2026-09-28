@@ -65,7 +65,7 @@ meta:
 tldr: "This tutorial shows how to publish PLC data to MQTT using FlowFuse and Node-RED without expensive gateways or consultants. You extract data from any PLC protocol (Modbus, OPC UA, EtherNet/IP, Siemens S7, and more) using pre-built connectors, transform and contextualize it into consistent JSON with Change, Function, or community nodes, then publish it to the built-in FlowFuse MQTT broker using an ISA-95 topic hierarchy with proper access controls. FlowFuse's edge-first architecture keeps firewalls closed to inbound traffic, letting plant engineers ship production flows in under an hour."
 ---
 
-Getting PLC data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand, flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
+Getting [PLC](/blog/2025/12/what-is-plc/) data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand, flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
 
 <!--more-->
 
@@ -80,7 +80,7 @@ This guide cuts through that complexity. You'll learn how to connect PLCs using 
 
 Before diving into the solution, it's worth understanding why this is so difficult.
 
-First, there's the proprietary protocols. Factory floors have PLCs from different manufacturers, each speaking their own language: Modbus, OPC-UA, Ethernet/IP, Profinet, FINS, etc. Getting data out means dealing with all of them at once, maintaining multiple drivers and troubleshooting different failure modes.
+First, there's the proprietary protocols. Factory floors have PLCs from different manufacturers, each speaking their own language: [Modbus](/blog/2023/05/integrating-modbus-with-node-red/), [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), Ethernet/IP, Profinet, FINS, etc. Getting data out means dealing with all of them at once, maintaining multiple drivers and troubleshooting different failure modes.
 
 Then there's the networking challenge. Factory networks weren't built for internet connectivity. Isolated subnets, strict firewalls, and security-conscious IT departments mean getting approval for gateways (whether edge devices or software platforms) involves security reviews and architecture decisions that can drag on for months.
 
@@ -189,7 +189,7 @@ _Enabling FlowFuse MQTT Broker_
 
 1. Drag a **FlowFuse MQTT Out** node onto your canvas.
 2. Open the node configuration. It will automatically pick up its configuration.
-3. Set the topic following ISA-95 hierarchy:
+3. Set the topic following [ISA-95](/blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/) hierarchy:
 
 ```
 company/site/area/line/cell/device/measurement

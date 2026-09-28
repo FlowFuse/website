@@ -114,7 +114,7 @@ its out-bound connections when it becomes the active instance. In real terms,
 that means the Node-RED flows should only be started when the instance becomes
 active.
 
-With our goal to minimize the Mean Time To Recovery (MTTR), we need to find a
+With our goal to minimize the Mean Time To Recovery ([MTTR](/blog/2025/12/mttf-vs-mtbf-vs-mttr/)), we need to find a
 way to get that spare instance running as quickly as possible; if it takes just
 as long to start the spare instance as it does to restart the failed primary
 instance, then it isn’t much of an improvement.

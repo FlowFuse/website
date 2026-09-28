@@ -50,7 +50,7 @@ The goal is to asking high-level questions, such as:
 ## Text: The New Language of Control
 
 Removing code, often a complex layer, can be now achieved because of Large Language
-Models (LLMs) and the Model Context Protocol (MCP).
+Models (LLMs) and the [Model Context Protocol](/blog/2025/10/building-mcp-server-using-flowfuse/) (MCP).
 
 LLMs, like ChatGPT, predict the next word in a sentence, allowing humans to
 query systems using **natural language** rather than complex code. 
@@ -84,7 +84,7 @@ with machines and the shop floor for IoT use cases. Node-RED acts as the shell
 that connects proprietary and legacy machine protocols (OT side) to the modern MCP structure.
 
 If a manufacturing facility wants to allow an LLM to control a physical device,
-Node-RED can integrate the machine (e.g., a Siemens S7 stack light) and wrap the
+Node-RED can integrate the machine (e.g., a [Siemens S7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) stack light) and wrap the
 control logic in an MCP tool. The LLM requests an action
 (e.g., "turn the stack light green"), the MCP tool sends the action through
 Node-RED's established adapters, and the action is executed.

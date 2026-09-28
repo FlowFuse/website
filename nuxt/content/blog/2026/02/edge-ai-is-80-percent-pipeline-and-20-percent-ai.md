@@ -20,7 +20,7 @@ The model is the easy part. I know that is not what you were told. But it is tru
 
 <!--more-->
 
-Edge AI is infrastructure work. Unglamorous, load-bearing, invisible-until-it-breaks infrastructure work with a neural network sitting on top of it like a trophy on a foundation nobody inspected. The 20% is the trophy. The 80% is everything underneath it.
+[Edge AI](/blog/2026/03/edge-ai-vs-cloud-ai-in-iiot/) is infrastructure work. Unglamorous, load-bearing, invisible-until-it-breaks infrastructure work with a neural network sitting on top of it like a trophy on a foundation nobody inspected. The 20% is the trophy. The 80% is everything underneath it.
 
 Most Edge AI projects do not fail because the model was wrong. They fail because nobody budgeted for the plumbing, nobody respected the plumbing, and everybody assumed the plumbing would figure itself out.
 
@@ -40,7 +40,7 @@ Your plant has PLCs from three different vendors. A historian configured in 2009
 
 Before a single inference runs at the edge, someone has to collect and normalize data from all of that. Protocol translation. Context tagging. Historian integration. That work is months of engineering. It is almost never scoped. And when it surfaces, it is always described as a surprise, even though everyone in the plant knew it was there.
 
-This is why [Node-RED](/node-red/) matters in manufacturing in a way that nothing else quite does. It was built for exactly this problem: connecting things that were never designed to talk to each other. Modbus, OPC-UA, Siemens S7, MQTT. Thousands of community-built nodes covering the full reality of what is on the factory floor, not the idealized version. Your OT engineers, the people who actually understand the equipment, can build integration flows without waiting for scarce software developers. The domain knowledge that has been locked in people's heads for years can finally become logic that runs.
+This is why [Node-RED](/node-red/) matters in manufacturing in a way that nothing else quite does. It was built for exactly this problem: connecting things that were never designed to talk to each other. [Modbus](/blog/2023/05/integrating-modbus-with-node-red/), OPC-UA, Siemens S7, MQTT. Thousands of community-built nodes covering the full reality of what is on the factory floor, not the idealized version. Your OT engineers, the people who actually understand the equipment, can build integration flows without waiting for scarce software developers. The domain knowledge that has been locked in people's heads for years can finally become logic that runs.
 
 But Node-RED alone is a development tool. Running it in production, across a fleet of edge devices in multiple facilities, is a different problem entirely. And that gap, between a working flow on one machine and a reliable, managed, auditable deployment across your entire operation, is precisely where most IIoT projects quietly fall apart.
 

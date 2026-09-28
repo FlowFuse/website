@@ -15,11 +15,11 @@ cta:
   description: If you want a single platform to reliably connect OPC UA servers, devices, and data systems, and make that data usable by both people and AI, FlowFuse provides the foundation.
 ---
 
-OPC UA servers store everything. Finding anything takes hours.
+[OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) servers store everything. Finding anything takes hours.
 
 <!--more-->
 
-Your historian has six months of production data across 847 variables. Wednesday's batch failed quality checks. The root cause is in there, a sensor drift, a temperature anomaly, something that happened before the failure became visible. But variables are named `ns=2;s=Device1.PLC.DB1.Temp_Sensor_3`. The namespace structure was designed for PLC efficiency, not human investigation.
+Your historian has six months of production data across 847 variables. Wednesday's batch failed quality checks. The root cause is in there, a sensor drift, a temperature anomaly, something that happened before the failure became visible. But variables are named `ns=2;s=Device1.PLC.DB1.Temp_Sensor_3`. The namespace structure was designed for [PLC](/blog/2025/12/what-is-plc/) efficiency, not human investigation.
 
 So you click through hierarchies. Cross-reference documentation that's two firmware versions out of date. Export data to Excel. Build correlation matrices. Check timing against process logs. Four hours later, you find it.
 
@@ -102,7 +102,7 @@ The value in industrial data was never about collection, it was always about the
 
 This isn't about replacing people with automation. It's about making the data infrastructure you already built actually useful for the decisions it was meant to inform. Your team still interprets results, makes judgment calls, and takes action. The AI just handles the mechanical work of data access and analysis.
 
-And it's not limited to OPC UA. FlowFuse's MCP approach works the same way across any industrial system, MQTT brokers, Modbus devices, SQL databases, REST APIs, whatever protocols you're running. Same natural language interface, same investigation capabilities, different underlying systems. The infrastructure you have becomes the infrastructure you can actually use.
+And it's not limited to OPC UA. FlowFuse's MCP approach works the same way across any industrial system, MQTT brokers, [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) devices, SQL databases, REST APIs, whatever protocols you're running. Same natural language interface, same investigation capabilities, different underlying systems. The infrastructure you have becomes the infrastructure you can actually use.
 
 For [what an OPC UA server actually exposes](/integrations/opcua/#what-is-opc-ua), and how FlowFuse connects to it as a client, see the FlowFuse OPC UA overview. For a complete guide to connecting PLCs via OPC UA, EtherNet/IP, Siemens S7, and Modbus to MQTT, cloud, and enterprise systems, see the [FlowFuse PLC integration overview](/landing/plc/).
 

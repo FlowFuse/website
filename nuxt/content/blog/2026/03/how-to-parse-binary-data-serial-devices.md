@@ -55,7 +55,7 @@ Your device is sending bytes. You don't know what they mean. The device manual i
 
 <!--more-->
 
-This is the situation most engineers hit when they connect a legacy serial device for the first time. The serial connection works. The bytes arrive. But nothing tells you what those bytes represent, and there is no standard to fall back on the way there is with Modbus.
+This is the situation most engineers hit when they connect a legacy serial device for the first time. The serial connection works. The bytes arrive. But nothing tells you what those bytes represent, and there is no standard to fall back on the way there is with [Modbus](/blog/2023/05/integrating-modbus-with-node-red/).
 
 This article gives you a repeatable method for decoding binary output from any serial device. We'll use an industrial weighing scale as the example. By the end, you'll know exactly how to approach your own device, regardless of what it sends.
 

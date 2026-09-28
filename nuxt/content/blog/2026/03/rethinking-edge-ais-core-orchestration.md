@@ -19,7 +19,7 @@ Every week, another vendor promises "AI on the edge" with glossy demos and yet a
 ## Why AI Deployments Fail When You Forget About Connectivity
 
 Manufacturers that have already modernized their SCADA or rolled out cloud data lakes, lake houses, and other lake-based properties, are often surprised by how fragile their "AI initiative" becomes once it touches the factory floor.
-It is no secret that data is trapped in proprietary PLCs and vendor‑locked SCADA systems, with IT and OT speaking different languages or protocols, and every site maintaining its own patchwork of scripts, gateways, and one‑off integrations.
+It is no secret that data is trapped in proprietary [PLCs](/blog/2025/12/what-is-plc/) and vendor‑locked SCADA systems, with [IT and OT](/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/) speaking different languages or protocols, and every site maintaining its own patchwork of scripts, gateways, and one‑off integrations.
 So what happens? You end up with predictable problems: fragile, one-off connections, IT changes that take half a year, OT changes that have impact on data semantics but go unnoticed and AI projects that look great on paper but never actually run in the real world at scale.
 The fundamental issue lies in the deep divide between Information Technology (IT) and Operational Technology (OT). Shop floor teams are often left in the dark about how their data is leveraged by upstream systems, while IT teams struggle to grasp the operational significance underlying the tags and signals they process. This unbridged gap ensures that every AI initiative remains an expensive, custom-built, and inherently brittle undertaking.
 
@@ -27,7 +27,7 @@ The fundamental issue lies in the deep divide between Information Technology (IT
 
 A different architecture is emerging: a unified, future-proof connectivity layer that sits between machines, plant networks, enterprise systems, and AI services. This layer becomes the common ground where IT and OT share a unified model of metrics from assets, other events, and decisions made, ensuring that neither side operates in a vacuum. And I have to say that I’m proud of stating that FlowFuse is at the forefront of this innovation. 
 In this new paradigm we’re facing, edge devices run a consistent runtime, such as open-source Node‑RED, so that connectivity, transformation, and control logic look the same on every line, every site, and every device family.
-AI is then wired directly into this connective tissue via emerging AI standards like Model Context Protocol (MCP) and other native AI nodes, turning the connectivity fabric into a living "nerve system" where agents can safely read, reason, and act on live operational data.
+AI is then wired directly into this connective tissue via emerging AI standards like [Model Context Protocol](/blog/2025/10/building-mcp-server-using-flowfuse/) (MCP) and other native AI nodes, turning the connectivity fabric into a living "nerve system" where agents can safely read, reason, and act on live operational data.
 
 ## OK but… what "Future-Proof" means at the edge?
 

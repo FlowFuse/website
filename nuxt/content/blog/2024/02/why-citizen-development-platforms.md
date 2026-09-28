@@ -29,7 +29,7 @@ Reports and Dashboards are often created by a BI teams that have to take informa
 
 - Visual Interfaces: Drag-and-drop functionality and pre-built components eliminate the need for complex coding, allowing users to focus on logic and functionality.
 - Integration Capabilities: Seamless connection with existing data sources and systems ensures that citizen-built applications integrate seamlessly into the overall workflow. Plus, the ability to create custom integrations.
-- Governance and Security: IT governance establishes guardrails while empowering users, ensuring data security and application stability through features like Role Based Access Control and SSO integration.
+- Governance and Security: IT governance establishes guardrails while empowering users, ensuring data security and application stability through features like [Role Based Access Control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/) and SSO integration.
 - Collaboration Tools: Built-in collaboration features enable teams to share ideas, iterate on solutions, and ensure knowledge transfer.
 - Reseliency: Backup management.
 

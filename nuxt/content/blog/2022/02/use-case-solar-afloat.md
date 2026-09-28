@@ -16,7 +16,7 @@ energy. Within the company he is part of the engineering effort on the
 [Gömbhal](https://www.sbp.de/en/news/goembhal-sbp-sonnes-pioneering-floating-pv-system/)
 project, creating a floatation device for solar panels.
 
-In this post, he shares his experiences of using Node-RED.
+In this post, he shares his experiences of using [Node-RED](/node-red/).
 
 <!--more-->
 

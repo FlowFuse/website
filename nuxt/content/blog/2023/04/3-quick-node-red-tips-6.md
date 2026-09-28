@@ -18,7 +18,7 @@ There is usually more than one way to complete a given task in software, and Nod
 
 ### 1. Subflows
 
-Subflows are a great way to reuse sections of your flows. Once you have created a subflow, it can easily be dropped into your workspace one or more times.
+[Subflows](/blog/2024/09/how-to-use-subflow-in-node-red/) are a great way to reuse sections of your flows. Once you have created a subflow, it can easily be dropped into your workspace one or more times.
 
 #### Why use subflows?
 

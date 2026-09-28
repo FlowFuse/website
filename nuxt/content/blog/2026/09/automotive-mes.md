@@ -31,7 +31,7 @@ meta:
 
 ## What Automotive MES Actually Does
 
-A Manufacturing Execution System (MES) sits between two systems every plant already runs. ERP plans production at the scale of days and weeks: what to build, how much, by when. SCADA supervises the equipment below it, collecting tag data from PLCs in real time. MES is the layer in between, taking the ERP plan, dispatching it as work orders, and tracking execution as it happens.
+A Manufacturing Execution System (MES) sits between two systems every plant already runs. ERP plans production at the scale of days and weeks: what to build, how much, by when. [SCADA](/blog/2026/08/what-is-scada/) supervises the equipment below it, collecting tag data from PLCs in real time. MES is the layer in between, taking the ERP plan, dispatching it as work orders, and tracking execution as it happens.
 
 <!--more-->
 
@@ -39,7 +39,7 @@ A Manufacturing Execution System (MES) sits between two systems every plant alre
 
 For most of MES's history, the entire stack shipped as one tightly coupled platform (hence the term ‘monolith’). Changing any piece meant touching the whole system: a vendor engagement and months of lead time for custom configurations.
 
-That model is breaking down for the same reason why automotive plants are hard to standardize in the first place. Every plant, product line, and OEM contract has its own quality requirements, downtime taxonomy, and mix of legacy equipment. The industry's response has been a shift toward modular, composable MES architecture that breaks routing, quality, genealogy, and downtime tracking into pieces that can be built or replaced independently. Extending an existing MES, the third option here, is that same shift applied to a plant that already has a working MES and no interest in replacing it just to get modularity.
+That model is breaking down for the same reason why automotive plants are hard to standardize in the first place. Every plant, product line, and OEM contract has its own quality requirements, downtime taxonomy, and mix of legacy equipment. The industry's response has been a shift toward modular, composable MES architecture that breaks routing, quality, genealogy, and [downtime tracking](/blog/2026/07/build-downtime-logger/) into pieces that can be built or replaced independently. Extending an existing MES, the third option here, is that same shift applied to a plant that already has a working MES and no interest in replacing it just to get modularity.
 
 ## Why Automotive Manufacturing Makes MES Decisions Harder
 
@@ -51,7 +51,7 @@ None of this is unique to any specific manufacturer. It's the normal condition o
 
 ### When Buying an Off-the-Shelf MES Is Right
 
-An off-the-shelf MES is the fastest path to solid routing, dispatch, and out-of-box error-proofing. It's right when a plant runs a standardized process, has no system yet, and needs core execution running quickly. Cost varies a lot by architecture and market: on-premise systems typically run \$120,000 to \$600,000 upfront, plus around 20% of license cost annually in maintenance, with six to eighteen months before going live, while cloud-native platforms start in the low thousands per month ([Symestic, 2026](https://www.symestic.com/en-us/blog/mes-system-prices-2026)). In the UK, a cloud MES typically runs £6,000 to £15,000 a year with a 90-day go-live, against £75,000 to £150,000 to implement on-premise and three-year totals of £120,000 to £450,000 ([TotalControlPro, 2025](https://totalcontrolpro.com/guides/the-end-of-the-production-black-box-how-much-does-a-modern-mes-really-cost/)).
+An off-the-shelf MES is the fastest path to solid routing, dispatch, and out-of-box [error-proofing](/blog/2025/09/poka-yoke-mistake-proofing/). It's right when a plant runs a standardized process, has no system yet, and needs core execution running quickly. Cost varies a lot by architecture and market: on-premise systems typically run \$120,000 to \$600,000 upfront, plus around 20% of license cost annually in maintenance, with six to eighteen months before going live, while cloud-native platforms start in the low thousands per month ([Symestic, 2026](https://www.symestic.com/en-us/blog/mes-system-prices-2026)). In the UK, a cloud MES typically runs £6,000 to £15,000 a year with a 90-day go-live, against £75,000 to £150,000 to implement on-premise and three-year totals of £120,000 to £450,000 ([TotalControlPro, 2025](https://totalcontrolpro.com/guides/the-end-of-the-production-black-box-how-much-does-a-modern-mes-really-cost/)).
 
 There are plenty of strong MES platforms on the market, from comprehensive systems like [Siemens Opcenter Execution](https://www.siemens.com/en-us/products/opcenter/execution/) and [Rockwell's Plex](https://www.rockwellautomation.com/en-us/products/software/factorytalk/operationsuite/mes/plex-mes.html), to composable, build-your-own-app platforms like [Tulip](https://tulip.co/). Manufacturers running these don't need to rip them out to close the gaps this blog covers. In practice, manufacturers have implemented FlowFuse alongside deployments like these to extend their functionality, which is what the next option is about.
 

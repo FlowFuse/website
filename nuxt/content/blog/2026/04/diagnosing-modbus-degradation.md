@@ -17,7 +17,7 @@ cta:
 tldr: "Modbus degradation rarely announces itself it shows up as stale values, slower-than-expected poll cycles, and vague operator complaints. RS-485 serial and Modbus TCP fail through different mechanisms (CRC errors vs. connection table exhaustion), and the four metrics to monitor are transaction success rate, response time, CRC error count, and poll cycle completion time."
 ---
 
-Modbus doesn't fail loudly. It drifts, and by the time operators notice, you've already lost the easy fix.
+[Modbus](/blog/2023/05/integrating-modbus-with-node-red/) doesn't fail loudly. It drifts, and by the time operators notice, you've already lost the easy fix.
 
 It shows up as slightly stale values, a poll cycle that's somehow three times slower than configured, operators filing tickets about data that "seems off." Never a hard fault. Never a clear cause.
 
@@ -27,7 +27,7 @@ The [previous article](/blog/2026/04/modbus-polling-best-practices/) covered set
 
 ## Serial and TCP Fail Through Different Mechanisms
 
-Modbus RTU and Modbus TCP share the same application protocol. The similarity ends there.
+[Modbus RTU](/blog/2025/09/using-modbus-with-flowfuse/) and [Modbus TCP](/blog/2026/02/modbus-tcp-vs-modbus-rtu/) share the same application protocol. The similarity ends there.
 
 ![Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths](./images/modbus-rtu-and-tcp-physical-layer-image.png)
 *Comparison of Modbus RTU on RS-485 and Modbus TCP over Ethernet, showing shared serial bus versus network-based communication paths*

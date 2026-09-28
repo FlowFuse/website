@@ -55,7 +55,7 @@ meta:
 tldr: "Siemens S7-1200 and S7-1500 PLCs use optimized data blocks by default, which rearrange variable memory layouts at compile time making traditional S7 protocol nodes that rely on fixed byte offsets unreliable. The solution is OPC UA, which reads variables by symbolic name rather than memory address; this guide shows step-by-step how to enable the OPC UA server in TIA Portal and read optimized data block variables reliably by name."
 ---
 
-When working with Siemens S7-1200 and S7-1500 PLCs, you’ll notice that TIA Portal creates optimized data blocks by default. Unlike the classic S7-300/400 controllers, optimized blocks do not use fixed memory offsets. Instead, the PLC compiler reorganizes the data internally for better performance and memory efficiency. This architectural change often creates confusion when trying to read PLC data from external systems.
+When working with [Siemens S7-1200](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/) and S7-1500 [PLCs](/blog/2025/12/what-is-plc/), you’ll notice that TIA Portal creates optimized data blocks by default. Unlike the classic S7-300/400 controllers, optimized blocks do not use fixed memory offsets. Instead, the PLC compiler reorganizes the data internally for better performance and memory efficiency. This architectural change often creates confusion when trying to read PLC data from external systems.
 
 <!--more-->
 

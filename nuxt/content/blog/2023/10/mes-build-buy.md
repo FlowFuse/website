@@ -13,13 +13,13 @@ tags:
 
 ---
 
-Manufacturing companies often struggle to choose between building custom MES solutions or buying ready-made software. Both options have their strengths, but they can fall short of providing the flexibility and control engineers need. A hybrid approach, combining the best of both worlds, is changing the game. In this article, we’ll explore how Node-RED and FlowFuse make it easier to create MES systems that are efficient, adaptable, and perfectly suited to your needs.
+Manufacturing companies often struggle to choose between building custom [MES](/blog/2025/06/what-is-mes/) solutions or buying ready-made software. Both options have their strengths, but they can fall short of providing the flexibility and control engineers need. A hybrid approach, combining the best of both worlds, is changing the game. In this article, we’ll explore how Node-RED and FlowFuse make it easier to create MES systems that are efficient, adaptable, and perfectly suited to your needs.
 
 <!--more-->
 
 ## The Hybrid Approach: A Best of Both Worlds Strategy
 
-Much like the practice of outsourcing machine installation while specifying detailed requirements, a hybrid approach to MES systems leverages the expertise of SI companies while retaining control over critical aspects of system design. This approach recognizes that automation engineers possess valuable insights into the unique needs of their manufacturing processes. They can specify crucial details such as wire coloring schemes, downtime conventions, Andon board standards, PLC types, and even the code used on PLCs.
+Much like the practice of outsourcing machine installation while specifying detailed requirements, a hybrid approach to MES systems leverages the expertise of SI companies while retaining control over critical aspects of system design. This approach recognizes that automation engineers possess valuable insights into the unique needs of their manufacturing processes. They can specify crucial details such as wire coloring schemes, downtime conventions, Andon board standards, [PLC](/blog/2025/12/what-is-plc/) types, and even the code used on PLCs.
 
 
 ## Node-RED: The MES Code's Best Friend
