@@ -71,7 +71,7 @@ Managing software on a single gateway is straightforward. Managing it across doz
 
 Without a consistent deployment process, software gradually drifts apart. A configuration is changed during troubleshooting but never documented. An engineer fixes an issue directly on a production device because it's the quickest way to restore operations. Each change makes sense in isolation, but over time identical production lines no longer run identical applications, and proving what was deployed, and when, means piecing together information from multiple systems or relying on people's memory.
 
-Software engineering teams faced these same challenges years ago. Rather than treating running systems as the source of truth, they moved to a process where every change is made in a development environment, stored in a Git repository, reviewed before deployment, and promoted into production through a controlled workflow.
+Software engineering teams faced these same challenges years ago. Rather than treating running systems as the source of truth, they moved to a process where every change is made in a development environment, stored in a [Git](/blog/2026/01/how-to-integrate-node-red-with-git/) repository, reviewed before deployment, and promoted into production through a controlled workflow.
 
 This approach is commonly known as GitOps. Despite the name, GitOps isn't really about Git. It's about making software deployments predictable, repeatable, and traceable. The Git repository becomes the record of the application versions that should be running. Every change has a history, every deployment follows the same approval process, and every production environment receives the version that was reviewed, not whatever happened to be changed directly on a device.
 
@@ -83,7 +83,7 @@ GitOps provides the process, but manufacturers also need a platform that can app
 
 FlowFuse is an industrial application platform that helps manufacturers build, deploy, monitor, and manage applications running across industrial edge devices, centrally rather than gateway by gateway.
 
-DevOps Pipelines extend that platform by bringing a GitOps workflow to industrial applications.
+[DevOps Pipelines](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) extend that platform by bringing a GitOps workflow to industrial applications.
 
 ![FlowFuse DevOps Pipeline showing a development stage, staging stage, and Git stage for pushing changes, and a second pipeline with a Git stage pushing deployments through multiple edge device groups across different regions."](./images/gitops-pipeline.png)
 _FlowFuse DevOps Pipeline showing a development stage, staging stage, and Git stage for pushing changes, and a second pipeline with a Git stage pushing deployments through multiple edge device groups across different regions."_
@@ -103,7 +103,7 @@ Getting started is straightforward: create a pipeline, add a Git Repository stag
 A typical deployment process looks like this:
 
 1. An engineer develops and tests a new application version in a FlowFuse development instance.
-2. They create a DevOps Pipeline, starting with the development instance as the source snapshot. Additional stages, such as a staging instance, can be added if required.
+2. They create a DevOps Pipeline, starting with the development instance as the source [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/). Additional stages, such as a staging instance, can be added if required.
 3. A Git Repository stage is added to push the application snapshot to the organization's Git repository.
 4. The change is reviewed and approved using the team's existing Git workflow (for example, through a pull request).
 5. For deployment, another DevOps Pipeline starts with the Git Repository stage as the source and deploys the approved version to the target Hosted instance, Edge Device, or Edge Group.

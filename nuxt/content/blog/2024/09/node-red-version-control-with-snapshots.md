@@ -30,7 +30,7 @@ Using **version control** for Node-RED flows can introduce complexity and effort
 
 - **Flows**: The flow, including all nodes and config nodes of your Node-RED flows.
 - **Credentials**: Any sensitive information used within flows using config nodes.
-- **Environment Variables**: Environment variables you have used or defined within that Node-RED instance.
+- **[Environment Variables](/blog/2023/01/environment-variables-in-node-red/)**: Environment variables you have used or defined within that Node-RED instance.
 - **Packages**: The packages you have installed, including 3rd party contribution nodes and Node.js packages.
 - **Runtime Settings**: The configurations that govern the behavior of your Node-RED runtime.
 

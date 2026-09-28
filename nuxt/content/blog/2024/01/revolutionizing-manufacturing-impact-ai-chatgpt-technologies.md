@@ -37,7 +37,7 @@ AI's learning and adaptability make it suitable for customizing production, allo
 
 ### Transforming the Workforce
 
-AI in manufacturing necessitates skilled workers to operate and maintain these systems, altering job roles and responsibilities.
+[AI in manufacturing](/blog/2026/09/ai-in-manufacturing/) necessitates skilled workers to operate and maintain these systems, altering job roles and responsibilities.
 
 ## Pros and Cons of AI and ChatGPT in Manufacturing
 

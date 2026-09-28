@@ -105,7 +105,7 @@ Preventive action follows a similar structure, but starts with a potential failu
 
 2. **Assess and prioritize risk.** Evaluate likelihood and severity to determine which risks require action.
 
-3. **Implement the preventive measure.** This might mean changing a maintenance schedule, modifying a process, updating work instructions, or adding mistake-proofing.
+3. **Implement the preventive measure.** This might mean changing a maintenance schedule, modifying a process, updating [work instructions](/blog/2026/07/digital-work-instruction/), or adding mistake-proofing.
 
 4. **Monitor the result.** Track the relevant process or risk indicator to determine whether the preventive measure achieved its intended result.
 

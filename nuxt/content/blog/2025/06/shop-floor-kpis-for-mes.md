@@ -71,7 +71,7 @@ The following flow powers this dashboard:
 ![OEE Dashboard Flow](./images/oee-dashboard-flow.png){data-zoomable}  
 _OEE Dashboard Flow_
 
-Each node in this flow performs a specific task: retrieving data, transforming it, applying OEE formulas, and delivering results to the dashboard. The entire process is automated and repeatable, providing a real-time view of equipment performance and production health.
+Each node in this flow performs a specific task: retrieving data, transforming it, applying [OEE](/blog/2025/04/what-is-an-oee-dashboard/) formulas, and delivering results to the dashboard. The entire process is automated and repeatable, providing a real-time view of equipment performance and production health.
 
 #### Build Your First KPI Flow
 

@@ -12,7 +12,7 @@ tags:
     - community
 ---
 
-In [part 1 of this series](/blog/2023/09/modernize-your-legacy-industrial-data/), I introduced the topic of working with legacy industrial data from the likes of Modbus and older, non IIoT protocols and putting it to work in an IIoT world. We looked at some of the challenges and how Node-RED with `node-red-contrib-buffer-parser` node can help. 
+In [part 1 of this series](/blog/2023/09/modernize-your-legacy-industrial-data/), I introduced the topic of working with legacy industrial data from the likes of [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) and older, non IIoT protocols and putting it to work in an IIoT world. We looked at some of the challenges and how Node-RED with `node-red-contrib-buffer-parser` node can help. 
 
 In this article, I will dive a little deeper into the topic and discuss some of the finer details. I hope to demonstrate a smarter approach that can make a huge difference to data accuracy, performance and maintainability while significantly reducing developer time. Not only that, ending with a no-code solution.
 
@@ -22,7 +22,7 @@ In this article, I will dive a little deeper into the topic and discuss some of 
 
 In order to convert the legacy data to a format more suited to IIoT we first need to _grab_ that data.
 
-Node-RED has core nodes that can help you and many more contribution nodes exist that provide access to a wide range of industrial devices. To give you an idea, `node-red-contrib-modbus`, `node-red-contrib-s7comm`, `node-red-contrib-omron-fins`, `node-red-contrib-mcprotocol`, `node-red-contrib-df1` and `node-red-contrib-cip-st-ethernet-ip` are just some of the PLC data access nodes available.
+Node-RED has core nodes that can help you and many more contribution nodes exist that provide access to a wide range of industrial devices. To give you an idea, `node-red-contrib-modbus`, `node-red-contrib-s7comm`, `node-red-contrib-omron-fins`, `node-red-contrib-mcprotocol`, `node-red-contrib-df1` and `node-red-contrib-cip-st-ethernet-ip` are just some of the [PLC](/blog/2025/12/what-is-plc/) data access nodes available.
 
 But getting the data is just the beginning, it's the methods and considerations you need to make that can make the difference between success and failure. Read on...
 

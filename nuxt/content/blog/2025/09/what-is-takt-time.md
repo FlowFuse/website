@@ -136,7 +136,7 @@ In an ideal lean environment: **Cycle Time should sit at roughly 90–95% of Tak
 
 **Line balancing and capacity planning.** Workstations with mismatched cycle times create bottlenecks: slow stations cause downstream waiting, fast ones cause upstream waiting, and both build up work-in-process that hides quality problems. Takt time gives every station the same target to balance against. For example, on a three-station line where Station 2's 3.5-minute cycle time bottlenecks Stations 1 (1.5 min) and 3 (2.0 min), rebalancing to a 2.5-minute takt time redistributes work so each station lands close to 2.3–2.4 minutes, and the bottleneck largely disappears. The same gap between current cycle time and takt time also quantifies staffing needs, equipment investment cases, and capacity expansion decisions.
 
-**Continuous improvement and safety.** The gap between current cycle time and takt time gives kaizen and process-improvement efforts a concrete target: measure, find root causes, implement fixes, re-measure against takt time, repeat. It also protects quality and safety: production pushed to maximum speed rather than a sustainable, demand-matched pace tends to sacrifice quality checks and proper technique, and manufacturers moving to takt-time-based pacing typically see fewer defects and safety incidents as a result.
+**Continuous improvement and safety.** The gap between current cycle time and takt time gives kaizen and process-improvement efforts a concrete target: measure, find [root causes](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/), implement fixes, re-measure against takt time, repeat. It also protects quality and safety: production pushed to maximum speed rather than a sustainable, demand-matched pace tends to sacrifice quality checks and proper technique, and manufacturers moving to takt-time-based pacing typically see fewer defects and safety incidents as a result.
 
 ## Implementing Takt Time Monitoring with FlowFuse
 
@@ -144,7 +144,7 @@ Understanding takt time in theory is one thing; putting it into practice require
 
 ### Step 1: Connect to Your Data Sources
 
-FlowFuse supports connections to industrial systems through its library of [protocol](/docs/node-red/protocol/) and [database](/docs/node-red/database/) nodes, pulling customer orders from your [ERP system](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/), production schedules from MES, and real-time counts from PLCs.
+FlowFuse supports connections to industrial systems through its library of [protocol](/docs/node-red/protocol/) and [database](/docs/node-red/database/) nodes, pulling customer orders from your [ERP system](/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/), production schedules from [MES](/blog/2025/06/what-is-mes/), and real-time counts from [PLCs](/blog/2025/12/what-is-plc/).
 
 For this demo, simulate customer orders with an Inject node:
 
@@ -200,7 +200,7 @@ Here's the complete flow:
 - **Accurate Data:** Base calculations on actual production time, including breaks, changeovers, and realistic downtime, using real customer demand, and update regularly.
 - **Leadership Commitment:** Leaders must support implementation visibly, allocate resources, and communicate the benefits clearly.
 - **Gradual Deployment:** Start with a pilot line, train operators thoroughly, stabilize, and expand gradually rather than rolling out across all lines at once.
-- **Lean Integration:** Combine takt time with value stream mapping, standardized work, and 5S to reduce waste and improve process capability.
+- **Lean Integration:** Combine takt time with value stream mapping, standardized work, and [5S](/blog/2025/09/what-is-5s-checklist/) to reduce waste and improve process capability.
 - **Visual Management:** Use visible displays showing calculated takt time and production status at a glance so operators can react quickly.
 - **Problem Response:** Establish escalation procedures, keep critical spares and maintenance nearby, and train operators in basic troubleshooting.
 - **Continuous Refinement:** Review takt time regularly, track performance against it, and share lessons learned across deployments.

@@ -38,7 +38,7 @@ Optimistic predictions followed. The expectation in many quarters was that by th
 
 None of that happened.
 
-The [Modbus TCP market was valued at $1.35 billion in 2024 and is projected to reach $2.55 billion by 2032](https://www.futuremarketreport.com/industry-report/modbus-communication-module-market). That isn't legacy drag. That's active investment. New Modbus devices are being designed, manufactured, purchased, and installed in 2026, not as fallback options, but as deliberate first choices. Meanwhile, OPC UA adoption, while genuinely growing, remains concentrated in specific layers of the automation stack: SCADA systems, MES integrations, and IT/OT gateways. At the field device level, Modbus still dominates.
+The [Modbus TCP market was valued at $1.35 billion in 2024 and is projected to reach $2.55 billion by 2032](https://www.futuremarketreport.com/industry-report/modbus-communication-module-market). That isn't legacy drag. That's active investment. New Modbus devices are being designed, manufactured, purchased, and installed in 2026, not as fallback options, but as deliberate first choices. Meanwhile, OPC UA adoption, while genuinely growing, remains concentrated in specific layers of the automation stack: [SCADA](/blog/2026/08/what-is-scada/) systems, MES integrations, and IT/OT gateways. At the field device level, Modbus still dominates.
 
 ::cta-image{src="/images/cta/aperia-book-demo.png" alt="Aperia Technologies stopped reprogramming controllers station by station with FlowFuse - book a demo" cta="demo"}
 ::

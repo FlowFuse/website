@@ -12,7 +12,7 @@ tags:
     - unified-namespace
 ---
 
-At FlowFuse, we're convinced of the Unified Namespace (UNS) architecture for IoT cases. It's a powerful tool that can make information much more readily available and easy to consume. However, as with any architecture, there are times when it's not the best choice. In this blog post, we'll discuss when to use the UNS and when to consider other options.
+At FlowFuse, we're convinced of the [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) (UNS) architecture for IoT cases. It's a powerful tool that can make information much more readily available and easy to consume. However, as with any architecture, there are times when it's not the best choice. In this blog post, we'll discuss when to use the UNS and when to consider other options.
 
 <!--more-->
 

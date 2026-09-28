@@ -37,7 +37,7 @@ Now you know where you stand. The rest of this article explains how integration 
 
 Most engineering work leaves a trail. Pull requests, code reviews, commit messages, test cases. Software teams have spent decades building habits and tooling that make their work legible to others. Integration work tends to skip all of that.
 
-A flow gets built by one person to solve a specific problem: connect a PLC to a database, route sensor data to a dashboard, translate one protocol into another. It works, it gets deployed, and then it runs quietly in the background while everyone moves on. The person who built it moves on too, to the next urgent problem, the next system, the next deadline.
+A flow gets built by one person to solve a specific problem: connect a [PLC](/blog/2025/12/what-is-plc/) to a database, route sensor data to a dashboard, translate one protocol into another. It works, it gets deployed, and then it runs quietly in the background while everyone moves on. The person who built it moves on too, to the next urgent problem, the next system, the next deadline.
 
 !["Illustration of an integration flow acting as a black box between PLCs, databases, and dashboards, highlighting that knowledge about the connections is concentrated in a single person."](./images/integration-systems-black-box.png "Illustration of an integration flow acting as a black box between PLCs, databases, and dashboards, highlighting that knowledge about the connections is concentrated in a single person.")
 

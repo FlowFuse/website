@@ -29,7 +29,7 @@ For more information on how to create a DevOps pipeline, refer to [How to Build 
 
 ## Setting Environment Variables for Development Instance
 
-For this guide, environment variables will be the key tool to ensure each pipeline stage connects to the correct MQTT broker without manual intervention, allowing for a smooth deployment process.
+For this guide, [environment variables](/blog/2023/01/environment-variables-in-node-red/) will be the key tool to ensure each pipeline stage connects to the correct MQTT broker without manual intervention, allowing for a smooth deployment process.
 
 Since the development remote instance is where the flow will be built and tested, start by adding the necessary environment variables for its MQTT configuration. Setting these up first ensures the flow runs as expected before deploying it to other pipeline stages.
 

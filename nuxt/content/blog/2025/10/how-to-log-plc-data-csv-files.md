@@ -11,7 +11,7 @@ tags:
     - plc
 ---
 
-CSV files have been recording manufacturing data since the mid-1980s, over 40 years of continuous use across every industry. Logging to databases like InfluxDB, TimescaleDB, or PostgreSQL is excellent for real-time analytics, complex queries, and large-scale operations. But many organizations still rely on CSV files for good reasons: regulatory compliance, legacy system integration, offline analysis, or simply because it's the format their teams know and trust. If you're reading this, you're likely one of them and need a reliable solution.
+CSV files have been recording manufacturing data since the mid-1980s, over 40 years of continuous use across every industry. Logging to databases like [InfluxDB](/blog/2026/02/mqtt-influxdb-tutorial/), TimescaleDB, or PostgreSQL is excellent for real-time analytics, complex queries, and large-scale operations. But many organizations still rely on CSV files for good reasons: regulatory compliance, legacy system integration, offline analysis, or simply because it's the format their teams know and trust. If you're reading this, you're likely one of them and need a reliable solution.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ The truth is, most manufacturers use both for distinct purposes. CSVs remain the
 Meanwhile, databases handle real-time monitoring and automated alerts, cross-functional analytics, high-frequency sensor queries, and dynamic relationships across materials and equipment.
 
 This isn't an either/or choice. It's a dual-track system where databases provide operational speed and CSVs provide the permanence layer, ensuring your compliance records and critical data outlive any technology stack.
-This guide shows how to implement PLC data logging with **FlowFuse** in a way that keeps running, stable, resilient, and production-ready.
+This guide shows how to implement [PLC](/blog/2025/12/what-is-plc/) data logging with **FlowFuse** in a way that keeps running, stable, resilient, and production-ready.
 
 <video autoplay loop muted playsinline aria-label="Video showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file." width="3024" height="1474" preload="none"><source src="/blog/2025/10/images/plc-to-csv.webm" type="video/webm" /></video>
 _Video showing FlowFuse collecting data from a PLC using OPC UA and logging it to a CSV file._
@@ -41,7 +41,7 @@ Before logging data, you need a stable connection to your PLC. FlowFuse uses Nod
 
 The right protocol depends on what your PLC supports.
 
-Modern PLCs typically offer open standards like OPC UA, Modbus TCP, or EtherNet/IP. These protocols work across different manufacturers and give you the most flexibility.
+Modern PLCs typically offer open standards like OPC UA, [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) TCP, or EtherNet/IP. These protocols work across different manufacturers and give you the most flexibility.
 
 If your PLC supports OPC UA, that is likely your best option. It is becoming the common language across industrial equipment, Siemens, Rockwell, Schneider, and most other manufacturers support it. This is also the option I used in the demo I prepared for this article. For more information on how to use OPC UA with your PLC, you can refer to [this article](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/).
 

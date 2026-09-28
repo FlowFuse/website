@@ -28,7 +28,7 @@ There's a better way. You deploy the capabilities you need now, get them live in
 
 ## Why the All-or-Nothing Model Is Broken
 
-The monolithic MES was designed for a different world. Stable product lines. Infrequent change. A standard process that ran untouched for a decade. That made sense in the early 2000s.
+The monolithic [MES](/blog/2025/06/what-is-mes/) was designed for a different world. Stable product lines. Infrequent change. A standard process that ran untouched for a decade. That made sense in the early 2000s.
 
 It doesn't make sense anymore.
 
@@ -44,7 +44,7 @@ What if you didn't buy a complete system? What if you deployed the specific capa
 
 That's not an MES anymore. It's something better. It's a manufacturing stack built by and for your operation.
 
-Here's how it works: your OEE tracking lives independently from your quality control system. Your batch scheduling is separate from your ERP integration. When a machine fault signal arrives, it routes simultaneously to OEE logging-which alerts the operator-and to quality review-which flags the batch and automatically creates a work order in your ERP. Two different outcomes from one signal. Two independent systems. Zero manual coordination.
+Here's how it works: your [OEE](/blog/2025/04/what-is-an-oee-dashboard/) tracking lives independently from your quality control system. Your batch scheduling is separate from your ERP integration. When a machine fault signal arrives, it routes simultaneously to OEE logging-which alerts the operator-and to quality review-which flags the batch and automatically creates a work order in your ERP. Two different outcomes from one signal. Two independent systems. Zero manual coordination.
 
 When you need to update one capability, you update it. When you need to replace one, you replace it. When a new requirement emerges, you build it. The rest of your stack stays untouched.
 

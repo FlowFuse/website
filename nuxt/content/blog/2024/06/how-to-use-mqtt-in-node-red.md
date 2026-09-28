@@ -204,7 +204,7 @@ Match QoS to your use case. Don't default everything to QoS 2 just to be safe, y
 
 ### Design Your Topic Hierarchy Properly
 
-Your topic structure determines how easy it is to filter, subscribe, and scale your system. A hierarchical approach mirrors your physical setup and makes wildcards useful.
+Your [topic structure](/blog/2025/01/designing-topic-hierarchy-for-your-uns/) determines how easy it is to filter, subscribe, and scale your system. A hierarchical approach mirrors your physical setup and makes wildcards useful.
 
 **Structure topics from general to specific:**
 

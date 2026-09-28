@@ -20,7 +20,7 @@ tags:
 ---
 
 Frequently in industrial automation, there's a need for two devices that use different protocols to communicate with each other, requiring protocol conversion.  
-In this tutorial, we present a mock scenario where Node-RED is used to enable an Allen Bradley PLC, which uses ethernet/IP, to communicate with a Siemens PLC, which uses S7, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using FlowFuse or Node-RED for the first time.
+In this tutorial, we present a mock scenario where Node-RED is used to enable an Allen Bradley [PLC](/blog/2025/12/what-is-plc/), which uses [ethernet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/), to communicate with a Siemens PLC, which uses S7, using a no-code solution. This example is geared toward beginners and assumes that the end-user knows how to use PLCs, but may be using FlowFuse or Node-RED for the first time.
 
 <!--more-->
 
@@ -200,7 +200,7 @@ Depending on how noisy the REAL data is, which is common with unfiltered 4-20mA 
 In the example above, we arbitrarily applied a 3% [deadband](/docs/node-red/core-nodes/function/filter/)
 to the `Robot_Position` value, which means that the value must change by greater than or equal to 3% compared to the last input value, or else the data will be discarded before being sent to the stacklight PLC.
 
-You can adjust the deadband to find the right balance for your particular application.
+You can adjust the [deadband](/blog/2026/04/stop-noisy-sensor-data-deadband-filter-flowfuse/) to find the right balance for your particular application.
 
 We can see the effect the deadband filter had by adding debug nodes before and after the filter.
 

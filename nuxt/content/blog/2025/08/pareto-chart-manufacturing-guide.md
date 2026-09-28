@@ -152,7 +152,7 @@ The key is specificity. Generic "defect" tracking will not reveal actionable ins
 2. **Equipment Maintenance**
    Traditional maintenance schedules treat all equipment equally, but Pareto analysis reveals this approach wastes resources. Manufacturing studies show that bearing wear and sensor failures often account for nearly 50% of all equipment failure occurrences. By identifying which specific components cause the most downtime, teams can shift from time-based maintenance to condition monitoring on critical equipment.
 
-The lesson: focus your predictive maintenance budget where failures hurt most.
+The lesson: focus your [predictive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/) budget where failures hurt most.
 
 3. **Supply Chain Intelligence**
    When supplier issues multiply, Pareto diagrams cut through the noise. Manufacturing teams tracking supplier-caused delays often discover that a small fraction of suppliers cause the majority of production stoppages. This data-driven insight enables targeted negotiations for backup agreements and buffer stock arrangements with critical suppliers.

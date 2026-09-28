@@ -13,7 +13,7 @@ tags:
     - node-red
 ---
 
-Every new dashboard is met with the fast-following request, “can we save this data and somehow look back on it?”  Yes, you can, and let’s use InfluxDB to make it happen!
+Every new dashboard is met with the fast-following request, “can we save this data and somehow look back on it?”  Yes, you can, and let’s use [InfluxDB](/blog/2026/02/mqtt-influxdb-tutorial/) to make it happen!
 
 <!--more-->
 
@@ -34,7 +34,7 @@ Here is a screenshot of the simple Node-RED flow to create that dashboard.  We w
 
 ## Capturing serial port data
 
-The live view is fed by data coming from a simple scale with a serial interface.  This [Brecknell LPS-150](https://www.brecknellscales.com/wp-content/uploads/2022/09/LPS-Series_u_en_fr_501724-1.pdf) scale will auto power-on, remembers the last tare setting, and continuously sends its reading via RS-232, so it is a great unit to use for unattended IoT projects.
+The live view is fed by data coming from a simple scale with a serial interface.  This [Brecknell LPS-150](https://www.brecknellscales.com/wp-content/uploads/2022/09/LPS-Series_u_en_fr_501724-1.pdf) scale will auto power-on, remembers the last tare setting, and continuously sends its reading via [RS-232](/blog/2025/07/connect-legacy-equipment-serial-flowfuse/), so it is a great unit to use for unattended IoT projects.
 
 On the Node-RED side, a serial node can be configured to capture this incoming data.  If your device running Node-RED doesn’t have an RS-232 port, there are many variations of RS-232-to-USB cables to help you connect.  This scale is sending data at a very high-speed interval so it is important to use a “delay” node before the rest of your flow gets bogged down.
 

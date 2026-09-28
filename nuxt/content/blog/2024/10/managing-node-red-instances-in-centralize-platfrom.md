@@ -40,7 +40,7 @@ Managing multiple Node-RED instances can quickly become complicated as operation
 
 6. **Scaling:** As applications grow in complexity, scaling Node-RED instances becomes necessary. This requires expertise in server management and the ability to handle multiple instances efficiently.
 
-7. **Ensuring High Availability:** In production environments, keeping all Node-RED instances running smoothly and avoiding downtime is essential which also requires high technical exepertise
+7. **Ensuring [High Availability](/blog/2023/05/bringing-high-availability-to-node-red/):** In production environments, keeping all Node-RED instances running smoothly and avoiding downtime is essential which also requires high technical exepertise
 
 A centralized platform is essential to handle deployment, configuration, and management efficiently, providing a visual interface to maintain and update instances.
 
@@ -53,7 +53,7 @@ FlowFuse is a powerful platform designed to simplify the management of multiple 
 ![Centralized Node-RED Management](./images/instances.png)  
 *Image showing how multiple Node-RED instances are organized and managed under one roof.*
 
-With FlowFuse, you can organize your Node-RED instances into teams for improved collaboration, allowing seamless teamwork on projects without the need to navigate between different instance locations physically. You can create as many teams as needed, ensuring that instances are organized based on the team members assigned to them. Additionally, you can ensure that each member has the correct permissions they require through role-based access control (RBAC), providing precise management of access and responsibilities.
+With FlowFuse, you can organize your Node-RED instances into teams for improved collaboration, allowing seamless teamwork on projects without the need to navigate between different instance locations physically. You can create as many teams as needed, ensuring that instances are organized based on the team members assigned to them. Additionally, you can ensure that each member has the correct permissions they require through [role-based access control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/) (RBAC), providing precise management of access and responsibilities.
 
 ![Immersive Editor](./images/imersive-editor.png)  
 *Image showing how FlowFuse's immersive editor simplifies managing settings and configuration within the Node-RED editor.*
@@ -73,7 +73,7 @@ You can efficiently [monitor logs](/docs/user/logs/#logs) for each instance and 
 ![Logs](./images/log.png)  
 *Image showing the Node-RED instance logs.*
 
-FlowFuse also allows you to quickly add [high availability](/docs/user/high-availability/) features to your instances, ensuring smooth and efficient operation of your production applications. The platform includes an auto-snapshot feature that lets you recover from accidental changes to flows, ensuring you always have a backup of your application.
+FlowFuse also allows you to quickly add [high availability](/docs/user/high-availability/) features to your instances, ensuring smooth and efficient operation of your production applications. The platform includes an auto-[snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) feature that lets you recover from accidental changes to flows, ensuring you always have a backup of your application.
 
 ![High availability](./images/high-availablity.png)  
 *Image showing the feature that allows to enable high availability for instances*

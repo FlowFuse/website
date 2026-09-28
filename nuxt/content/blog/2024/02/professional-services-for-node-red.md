@@ -19,7 +19,7 @@ Professional services come in many different forms. Anything from setup and conf
 
 Node-RED is multifaceted, and Professional Services (PS) can apply to many use cases.  We will break it down into three categories that will help identify whether PS (Professional Services) is right for you. Those categories will be setup, flow development, and node development. Each takes a different skill set and has different levels of complexity.
 
-Before we jump into things, we need to understand the value proposition of Node-RED. Why Node-RED? Node-RED is a tool that makes Citizen Development a reality. It should be treated that way throughout the development journey regardless of Professional Services or not. Following standard procedures that minimize complexity, for example: reducing the use of function nodes when other nodes would be more ideal. Don’t overcomplicate things that don’t need to be or better said by this quote.
+Before we jump into things, we need to understand the value proposition of Node-RED. Why Node-RED? Node-RED is a tool that makes [Citizen Development](/blog/2023/10/citizen-development/) a reality. It should be treated that way throughout the development journey regardless of Professional Services or not. Following standard procedures that minimize complexity, for example: reducing the use of function nodes when other nodes would be more ideal. Don’t overcomplicate things that don’t need to be or better said by this quote.
 
 > Easy things should be easy, and hard things should be possible. 
 -Larry Wall

@@ -28,7 +28,7 @@ There are a few things already merged and ready to be released in the first beta
 
 ### More auto-complete
 
-Node-RED already has simple auto-complete on `msg` fields in the editor. We've now extended that to also work with `flow`/`global` context inputs as well as the `env` type for accessing environment variables.
+Node-RED already has simple auto-complete on `msg` fields in the editor. We've now extended that to also work with `flow`/`global` context inputs as well as the `env` type for accessing [environment variables](/blog/2023/01/environment-variables-in-node-red/).
 
 ![Node-RED editor autocompleting properties](./images/nr4-auto-complete.png "Node-RED editor autocompleting properties")
 

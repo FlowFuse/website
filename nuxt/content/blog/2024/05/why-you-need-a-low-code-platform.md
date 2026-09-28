@@ -51,7 +51,7 @@ Domain experts often find themselves needing to develop solutions but learning a
 
 FlowFuse is your solution to solving Shadow-IT and paving the way for your [Citizen Development](/blog/2024/02/why-citizen-development-platforms/) journey. All the reasons why Node-RED hasn’t been sanctioned within organizations have nothing to do with its ability to execute but more with its lack of scalability, easy-to-use security, and manageability. Enter FlowFuse, developed by the same people who developed your go-to low-code solution. FlowFuse addresses exactly the problems that put it in the Shadow-IT realm.
 
-With security and scalability top of mind, FlowFuse allows IT teams to manage their Node-RED deployments with features like Role-Based Access Control (RBAC), remote management of Node-RED runtimes, and backup and recovery of Node-RED deployments called Snapshots. These are just a few of the features that elevate an already widely used solution, making it ready for enterprise networks.
+With security and scalability top of mind, FlowFuse allows IT teams to manage their Node-RED deployments with features like [Role-Based Access Control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/) (RBAC), remote management of Node-RED runtimes, and backup and recovery of Node-RED deployments called Snapshots. These are just a few of the features that elevate an already widely used solution, making it ready for enterprise networks.
 
 ### Low-code platform success in the real world
 

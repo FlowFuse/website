@@ -87,7 +87,7 @@ Before you start building, get these ready:
 
 Before we build anything, let's walk through what the app does and how the pieces fit together. There are three pages, and one idea holding them together.
 
-1. **Home.** After logging in, the application uses the operator's username to retrieve only the work orders assigned to them from the ERP or MES. It displays their station, production summary, the highest-priority work order, and the remaining queue. Selecting **Start Work Order** opens the instructions.
+1. **Home.** After logging in, the application uses the operator's username to retrieve only the work orders assigned to them from the ERP or [MES](/blog/2025/06/what-is-mes/). It displays their station, production summary, the highest-priority work order, and the remaining queue. Selecting **Start Work Order** opens the instructions.
 2. **Instructions.** Operators follow step-by-step instructions with images, checklists, and target cycle times. They can progress through each step, complete the operation, or report an issue at any time.
 3. **Report Issue.** Operators can quickly log defects by selecting the issue type, severity, affected part, and description, with the issue automatically linked to the current work order.
 
@@ -236,7 +236,7 @@ Deploy and open the dashboard. The signed-in operator's name and avatar appear i
 
 Greeting the operator is the visible half. The other half is making their identity available to every function node, not just the widgets.
 
-You might reach for a single shared global here, `global.set('user', msg._client.user, 'persistent')` on connect, then read it everywhere. **Don't.** Global context is one store for the whole flow, not one per session, so if two operators are connected at once, whichever connects last overwrites the identity for everyone, and function nodes start attributing the wrong operator's actions to the wrong person.
+You might reach for a single shared global here, `global.set('user', msg._client.user, 'persistent')` on connect, then read it everywhere. **Don't.** [Global context](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/) is one store for the whole flow, not one per session, so if two operators are connected at once, whichever connects last overwrites the identity for everyone, and function nodes start attributing the wrong operator's actions to the wrong person.
 
 Instead, read `msg._client.user` off each message for "who is acting right now," and use the username only as a durable storage key for saved state. A shared global is still handy as a bootstrap fallback for the very first tick of a page, before any client-tagged message has round-tripped.
 

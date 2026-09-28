@@ -11,7 +11,7 @@ tags:
     - unified-namespace
 ---
 
-When starting to roll out a new data distribution architecture for the unified namespace (UNS), one of the first questions you'll ask is, "What broker should I select for my UNS? The broker must implement a publish-subscribe (pub-sub) pattern, though that leaves plenty of options.
+When starting to roll out a new data distribution architecture for the [unified namespace](/blog/2023/12/introduction-to-unified-namespace/) (UNS), one of the first questions you'll ask is, "What broker should I select for my UNS? The broker must implement a [publish-subscribe](/blog/2024/11/why-pub-sub-in-uns/) (pub-sub) pattern, though that leaves plenty of options.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Currently, there are two protocols that are front runners for becoming the de fa
 
 First and foremost, MQTT has been designed to enable IoT use cases. The main design objectives were to be lightweight to enable low-bandwidth communication, enable low-power devices, and handle unreliable networks. MQTT enables a large number of data producers and consumers to collaborate.
 
-Kafka is designed as an event streaming platform. Its initial adoption was mostly for data brokers between microservices all part of the same web backend for large sites like LinkedIn. When communicating data between servers or just a few data centers around the world, there’s less of a concern around the reliability of the connection or to enable constrained devices to participate in the shift towards a unified namespace.
+[Kafka](/blog/2025/12/kafka-vs-mqtt/) is designed as an event streaming platform. Its initial adoption was mostly for data brokers between microservices all part of the same web backend for large sites like LinkedIn. When communicating data between servers or just a few data centers around the world, there’s less of a concern around the reliability of the connection or to enable constrained devices to participate in the shift towards a unified namespace.
 
 Generally, MQTT is more often seen deployed in practice as data distribution architecture.
 

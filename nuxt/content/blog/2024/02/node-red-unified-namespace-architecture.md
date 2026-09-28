@@ -11,7 +11,7 @@ tags:
     - unified-namespace
 ---
 
-As we embark on the journey toward a more interconnected industrial environment, the emergence of a Unified Namespace (UNS) as the fundamental framework for facilitating communication among various systems and devices has become a focal point of discussion. I've often been queried about the role of Node-RED in a UNS architecture. To illuminate this, let's delve into an exemplary UNS architecture, underlining the classic use cases for Node-RED within this framework.
+As we embark on the journey toward a more interconnected industrial environment, the emergence of a [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) (UNS) as the fundamental framework for facilitating communication among various systems and devices has become a focal point of discussion. I've often been queried about the role of Node-RED in a UNS architecture. To illuminate this, let's delve into an exemplary UNS architecture, underlining the classic use cases for Node-RED within this framework.
 
 <!--more-->
 
@@ -35,7 +35,7 @@ Within this bifurcated architecture, we have two general categories of actors: I
 **Indirect Consumer/Producers**:
 These actors cannot natively communicate with our UNS broker. The communication barrier could be due to protocol differences, such as not using MQTT, or payload structures incompatible with your UNS's schema. This is a common challenge in manufacturing, especially in "brownfield" scenarios where legacy machines and equipment from various eras must be integrated.
 
-In such cases, Node-RED shines as a middleware for protocol conversion and data contextualization. Take, for example, the topic hierarchy in UNS based on location for context. A raw sensor reading might lack necessary details like measurement units or message versions. Node-RED steps in to enrich this data, ensuring compatibility with the UNS. In our [concrete architecture example](/blog/2023/12/unified-namespace-data-modelling/), we have an indirect PLC producer. With Node-RED, we can convert and contextualize the data from this PLC for the UNS, ensuring smooth communication and effective integration.
+In such cases, Node-RED shines as a middleware for protocol conversion and data contextualization. Take, for example, the [topic hierarchy](/blog/2025/01/designing-topic-hierarchy-for-your-uns/) in UNS based on location for context. A raw sensor reading might lack necessary details like measurement units or message versions. Node-RED steps in to enrich this data, ensuring compatibility with the UNS. In our [concrete architecture example](/blog/2023/12/unified-namespace-data-modelling/), we have an indirect PLC producer. With Node-RED, we can convert and contextualize the data from this PLC for the UNS, ensuring smooth communication and effective integration.
 
 **Direct Consumer/Producers**:
 Contrastingly, direct actors can interact with the UNS out of the box. Modern industrial equipment usually falls into this category, equipped to speak the language of the UNS directly. However, the challenge remains not just in protocol communication but also in data contextualization. Merely speaking the same language is not enough; the data must also carry the correct context to be fully understood and utilized.
@@ -44,7 +44,7 @@ Contrastingly, direct actors can interact with the UNS out of the box. Modern in
 
 ## Harnessing Node-RED for Actionable Insights
 
-Node-RED's prowess extends beyond middleware capabilities; it can also derive actionable insights. Our example architecture includes Dashboards for both the Human Machine Interface on the Shopfloor and an OEE Dashboard in the Service Layer. These dashboards engage with the UNS, calculating KPIs directly within Node-RED. For manufacturing applications, our [Blueprint Library](/blueprints/) serves as a robust starting point, offering one-click deployment to your Node-RED managed instance.
+Node-RED's prowess extends beyond middleware capabilities; it can also derive actionable insights. Our example architecture includes Dashboards for both the [Human Machine Interface](/blog/2025/11/building-hmi-for-equipment-control/) on the Shopfloor and an OEE Dashboard in the Service Layer. These dashboards engage with the UNS, calculating KPIs directly within Node-RED. For manufacturing applications, our [Blueprint Library](/blueprints/) serves as a robust starting point, offering one-click deployment to your Node-RED managed instance.
 Node-RED emerges not just as a translator between machines and UNS but as an interpreter and analyst, generating real-time insights that drive decision-making and operational efficiency. The role of Node-RED in UNS architecture, therefore, is not ancillary; it is central to realizing the vision of a connected, intelligent industrial ecosystem.
 
 ![Andon Live Dashboard](https://flowfuse.com/img/ANDON-Screenshot-D4DBvWieJZ-650.avif)

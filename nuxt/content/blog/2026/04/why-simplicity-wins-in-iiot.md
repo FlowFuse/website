@@ -31,7 +31,7 @@ The cost shows up in three places. None of them are in the project budget.
 
 **Downtime that should take minutes takes hours.**
 
-A simple system fails in a way that matches its architecture. A Modbus timeout is diagnosable by anyone who understands the protocol. A failure inside a multi-layer stack, where data moves through a gateway, a middleware service, a message broker, and a cloud connector before it reaches its destination, has no obvious entry point. Every layer is a candidate. Every layer requires different tooling to inspect. And while the team works through them one at a time, production waits.
+A simple system fails in a way that matches its architecture. A [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) timeout is diagnosable by anyone who understands the protocol. A failure inside a multi-layer stack, where data moves through a gateway, a middleware service, a message broker, and a cloud connector before it reaches its destination, has no obvious entry point. Every layer is a candidate. Every layer requires different tooling to inspect. And while the team works through them one at a time, production waits.
 
 The failure itself is often minor. The diagnostic time is what costs. And diagnostic time scales directly with architectural complexity, not with the severity of the fault.
 
@@ -77,7 +77,7 @@ A well-matched architecture is not a polite term for cheap. It is not a consolat
 
 In practice it looks like this.
 
-A facility has forty legacy devices on the floor. PLCs, drives, meters, sensors, most of them speaking Modbus, some speaking older serial protocols, none of them going anywhere soon because they're running processes that haven't changed and won't change. The facility needs that data upstream: a cloud historian, a SCADA system, an analytics platform the operations team has been waiting two years to get real data into.
+A facility has forty legacy devices on the floor. PLCs, drives, meters, sensors, most of them speaking Modbus, some speaking older serial protocols, none of them going anywhere soon because they're running processes that haven't changed and won't change. The facility needs that data upstream: a cloud historian, a [SCADA](/blog/2026/08/what-is-scada/) system, an analytics platform the operations team has been waiting two years to get real data into.
 
 The over-engineered answer replaces the devices, or layers a complex middleware platform across all of them, or implements a protocol migration that requires specialist involvement at every stage and produces an architecture the in-house team can monitor but not truly operate.
 

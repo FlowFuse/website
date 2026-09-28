@@ -231,7 +231,7 @@ _OEE Dashboard with proper styling, theme on smaller screen_
 
 Currently, the dashboard is configured for a single production line. To support multiple lines, you must adjust your flows and dashboard structure to handle each line separately while keeping a consistent layout and theme.
 
-The tool that makes this manageable is the subflow: one reusable definition, many instances, each configured through environment variables. If subflows are new to you, our guide on [how to create and use subflows](/blog/2024/09/how-to-use-subflow-in-node-red/) covers the basics before you apply them here.
+The tool that makes this manageable is the subflow: one reusable definition, many instances, each configured through [environment variables](/blog/2023/01/environment-variables-in-node-red/). If subflows are new to you, our guide on [how to create and use subflows](/blog/2024/09/how-to-use-subflow-in-node-red/) covers the basics before you apply them here.
 
 ### Follow these steps:
 
@@ -263,7 +263,7 @@ Once deployed, you will have a separate page ready for your new production line.
 
 Now that you have built a complete OEE dashboard using simulated factory data and learned how to reuse it for all your production lines, the next step is to connect it to your real factory environment.
 
-To make the dashboard truly useful in a live setting, you must understand how to integrate it with your data sources. Most commonly, the OEE dashboard relies on static or retained data, such as values stored in a database. First, determine whether your factory uses a relational database like MySQL or PostgreSQL, a NoSQL database like MongoDB, or a time-series database like InfluxDB.
+To make the dashboard truly useful in a live setting, you must understand how to integrate it with your data sources. Most commonly, the OEE dashboard relies on static or retained data, such as values stored in a database. First, determine whether your factory uses a relational database like MySQL or PostgreSQL, a NoSQL database like MongoDB, or a time-series database like [InfluxDB](/blog/2026/02/mqtt-influxdb-tutorial/).
 
 ### Then:
 

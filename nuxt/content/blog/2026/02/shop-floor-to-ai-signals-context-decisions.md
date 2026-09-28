@@ -47,7 +47,7 @@ This isn't an AI problem. It's an architecture problem that AI just makes imposs
 
 ### Layer One: The Signal Layer
 
-Raw data accumulates here. PLCs, SCADA, historians, MES systems, all generating measurements at rates human cognition was never designed to process. Temperature, pressure, flow, current draw, RPM, torque, position. Millisecond timestamps. Perfect fidelity. Absolutely zero meaning.
+Raw data accumulates here. PLCs, [SCADA](/blog/2026/08/what-is-scada/), historians, [MES](/blog/2025/06/what-is-mes/) systems, all generating measurements at rates human cognition was never designed to process. Temperature, pressure, flow, current draw, RPM, torque, position. Millisecond timestamps. Perfect fidelity. Absolutely zero meaning.
 
 The signal layer has no concept of importance. When a conveyor motor pulls 2.3 amps, that's just a number in a database. The system doesn't know if this represents peak efficiency or the warning sign of a dying gearbox.
 
@@ -131,7 +131,7 @@ That enriched information is then published into a shared MQTT-based Namespace. 
 
 Through [FlowFuse MCP nodes](/docs/flowfuse-nodes/mcp/), AI systems connect directly to the namespace, querying live operational context instead of pulling raw time-series data from isolated historians and attempting to reconstruct meaning after the fact.
 
-[FlowFuse AI Expert](/ai/) operates on the same MCP-backed context layer. Operators and engineers can ask questions in natural language (*"Is Line 3 behaving normally?"*, *"Have we seen this vibration pattern before?"*, *"What changed before the last failure?"*) and receive answers grounded in the live Unified Namespace.
+[FlowFuse AI Expert](/ai/) operates on the same [MCP](/blog/2025/10/building-mcp-server-using-flowfuse/)-backed context layer. Operators and engineers can ask questions in natural language (*"Is Line 3 behaving normally?"*, *"Have we seen this vibration pattern before?"*, *"What changed before the last failure?"*) and receive answers grounded in the live Unified Namespace.
 
 To learn how to build your own Unified Namespace with FlowFuse, [see our comprehensive guide](/blog/2024/11/building-uns-with-flowfuse/).
 

@@ -13,7 +13,7 @@ tags:
     - scaling node-red
 ---
 
-FlowFuse is a Software as a Service (SaaS) platform designed to enhance the experience and capabilities of Node-RED for its users. By focusing on scalability, security, and Dev Ops, FlowFuse aims to remove some of the technical barriers associated with using Node-RED, making it easier for citizen developers to automate tasks, process data, and create applications. In this blog post, we will discuss the differences between a FlowFuse instance and a FlowFuse device instance while highlighting how FlowFuse addresses scalability challenges in Node-RED deployments.
+FlowFuse is a Software as a Service (SaaS) platform designed to enhance the experience and capabilities of Node-RED for its users. By focusing on scalability, security, and Dev Ops, FlowFuse aims to remove some of the technical barriers associated with using Node-RED, making it easier for [citizen developers](/blog/2023/10/citizen-development/) to automate tasks, process data, and create applications. In this blog post, we will discuss the differences between a FlowFuse instance and a FlowFuse device instance while highlighting how FlowFuse addresses scalability challenges in Node-RED deployments.
 
 <!--more-->
 
