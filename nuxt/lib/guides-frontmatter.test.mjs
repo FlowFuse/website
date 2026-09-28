@@ -3,13 +3,12 @@ import assert from 'node:assert/strict'
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
 
 import { findDuplicateSiblingNavTitles, findPagesWithUnreachableTitle } from './guides-frontmatter.mjs'
 import { GUIDES_SOURCE } from './guides-sync.mjs'
 import { isDirectory } from './meta-title-length.mjs'
+import { REPO_ROOT as repoRoot } from './repo-root.mjs'
 
-const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
 const guidesDir = join(repoRoot, GUIDES_SOURCE)
 
 function scratch (files) {

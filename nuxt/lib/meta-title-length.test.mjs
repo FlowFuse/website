@@ -1,11 +1,10 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { fileURLToPath } from 'node:url'
-import { dirname, join } from 'node:path'
+import { join } from 'node:path'
 
 import { MAX_META_TITLE_LENGTH, findOverlongMetaTitles, isDirectory } from './meta-title-length.mjs'
+import { REPO_ROOT as repoRoot } from './repo-root.mjs'
 
-const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '../..')
 const blogDir = join(repoRoot, 'nuxt/content/blog')
 const changelogDir = join(repoRoot, 'nuxt/content/changelog')
 

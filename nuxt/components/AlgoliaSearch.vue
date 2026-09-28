@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Algolia autocomplete over the shared `prod_netlify` index. The index is built by
-// scripts/index-algolia.js, which scans nuxt/dist after the Nuxt build and derives
+// scripts/index-algolia.mjs, which scans nuxt/dist after the Nuxt build and derives
 // `category` from the first path segment, so /handbook/* and /docs/* are both covered.
 const props = withDefaults(defineProps<{
     /** Algolia filter expression, e.g. `category:docs`. Omit to search everything. */

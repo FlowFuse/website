@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+
 function decodeEntities(text = "") {
     return text
         .replace(/&nbsp;/gi, " ")
@@ -306,8 +309,6 @@ function toUnixTimestampSeconds(value) {
 }
 
 async function listHtmlFiles(rootDir) {
-    const fs = require("fs");
-    const path = require("path");
     const files = [];
     async function walk(currentDir) {
         const entries = await fs.promises.readdir(currentDir, { withFileTypes: true });
@@ -325,7 +326,6 @@ async function listHtmlFiles(rootDir) {
 }
 
 function outputPathToUrl(outputRoot, outputPath) {
-    const path = require("path");
     const rel = path.relative(outputRoot, outputPath).replace(/\\/g, "/");
     if (!rel.endsWith(".html")) return "";
     if (rel === "index.html") return "/";
@@ -349,7 +349,7 @@ function extractArticleSection(html) {
     return extractMetaTag(html, 'property=["\\\']article:section["\\\']').trim();
 }
 
-module.exports = {
+export {
     isSearchPage,
     isSearchUrl,
     extractHeadingRecords,

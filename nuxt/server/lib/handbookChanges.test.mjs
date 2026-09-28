@@ -7,7 +7,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { getHandbookChanges, toHandbookRel, relToUrl, mondayOf, prsFromCommits } from './handbookChanges.mjs'
+import { getHandbookChanges, toHandbookRel, relToUrl, mondayOf, prsFromCommits, isRelocation } from './handbookChanges.mjs'
 
 // --- pure helpers -----------------------------------------------------------
 
@@ -48,6 +48,7 @@ test('prsFromCommits dedupes a single commit shared across pages and sorts newes
 })
 
 test('toHandbookRel keeps tracked handbook pages and strips the prefix', () => {
+    assert.equal(toHandbookRel('content/handbook/company/values.md'), 'company/values.md')
     assert.equal(toHandbookRel('nuxt/content/handbook/company/values.md'), 'company/values.md')
     assert.equal(toHandbookRel('src/handbook/company/values.md'), 'company/values.md')
     assert.equal(toHandbookRel('src/handbook/engineering/product/features.njk'), 'engineering/product/features.njk')
@@ -58,6 +59,14 @@ test('toHandbookRel rejects non-handbook, non-page and excluded files', () => {
     assert.equal(toHandbookRel('nuxt/content/handbook/company/diagram.png'), null) // image
     assert.equal(toHandbookRel('nuxt/content/handbook/handbook.json'), null) // config
     assert.equal(toHandbookRel('src/handbook/data.json'), null) // other json
+})
+
+test('isRelocation recognises a page moved between handbook prefixes', () => {
+    assert.equal(isRelocation('R100', 'nuxt/content/handbook/company/values.md', 'content/handbook/company/values.md'), true)
+    assert.equal(isRelocation('R087', 'src/handbook/company/values.md', 'nuxt/content/handbook/company/values.md'), true, 'edited while moving')
+    assert.equal(isRelocation('R100', 'content/handbook/company/values.md', 'content/handbook/company/principles.md'), false, 'a real rename')
+    assert.equal(isRelocation('M', 'content/handbook/company/values.md', undefined), false)
+    assert.equal(isRelocation('R100', 'nuxt/content/ebooks/a.md', 'content/ebooks/a.md'), false, 'not handbook')
 })
 
 test('relToUrl maps file paths to trailing-slash handbook URLs', () => {
@@ -165,27 +174,27 @@ test('the actual latest handbook commit appears in the most recent week', () => 
     const log = execFileSync('git', [
         'log', '--no-merges', '-M', '--name-status', '--date=short',
         `--pretty=format:${RECORD}%H%x1f%ad%x1f%s`,
-        '--', 'nuxt/content/handbook', 'src/handbook'
+        '--', 'content/handbook', 'nuxt/content/handbook', 'src/handbook'
     ], { cwd: process.cwd(), maxBuffer: 64 * 1024 * 1024 }).toString()
 
+    // A commit that only moves pages between handbook prefixes is skipped by the module,
+    // so it is left out here too, or the move itself would be "the latest change".
     const parsed = log.split(RECORD).filter(chunk => chunk.trim()).map(chunk => {
-        const [header, ...files] = chunk.split('\n').filter(Boolean)
+        const [header, ...fileLines] = chunk.split('\n').filter(Boolean)
         const [sha, date, subject] = header.split('\x1f')
-        return { sha, date, subject, files }
-    })
-    assert.ok(parsed.length > 0, 'git reports at least one handbook commit')
+        const urls = fileLines.map(line => line.split('\t'))
+            .filter(parts => !isRelocation(parts[0], parts[1], parts[2]))
+            .map(parts => parts[0].startsWith('R') || parts[0].startsWith('C') ? parts[2] : parts[1])
+            .map(toHandbookRel).filter(Boolean).map(relToUrl)
+        return { sha, date, subject, urls }
+    }).filter(commit => commit.urls.length > 0)
+    assert.ok(parsed.length > 0, 'git reports at least one commit touching a tracked handbook page')
 
     // Ties on the same date are fine: any commit from that date lands in the same week,
     // and the per-page assertions below only need one of them.
     const newest = parsed.reduce((a, b) => (b.date > a.date ? b : a))
-    const { sha, date, subject } = newest
-    const fileLines = newest.files
+    const { sha, date, subject, urls } = newest
     const prMatch = subject.match(/\(#(\d+)\)\s*$/)
-    const files = fileLines.map(line => line.split('\t')).map(parts =>
-        parts[0].startsWith('R') || parts[0].startsWith('C') ? parts[2] : parts[1]
-    )
-    const urls = files.map(toHandbookRel).filter(Boolean).map(relToUrl)
-    assert.ok(urls.length > 0, 'the latest handbook commit touches at least one tracked page')
 
     const weeks = getHandbookChanges(process.cwd())
     const recent = weeks[0]

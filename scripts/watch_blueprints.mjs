@@ -1,5 +1,5 @@
-const nodemon = require('nodemon');
-const { existsSync } = require('fs');
+import nodemon from 'nodemon';
+import { existsSync } from 'node:fs';
 
 const pathToBlueprints = '../blueprint-library';
 

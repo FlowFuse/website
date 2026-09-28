@@ -1,6 +1,6 @@
 import { defineNuxtModule, extendRouteRules, useLogger } from '@nuxt/kit'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
-import { join, basename, dirname } from 'node:path'
+import { join, basename } from 'node:path'
 
 // Lives in nuxt/lib/, not alongside this file: Nuxt auto-registers everything in
 // nuxt/modules/ as a Nuxt module, so a plain helper there fails the build.
@@ -10,6 +10,8 @@ import { syncDocs } from '../lib/docs-sync.mjs'
 import { syncGuides } from '../lib/guides-sync.mjs'
 // @ts-ignore same
 import { docsRedirectRules, prerenderableRoutes } from '../lib/docs-redirects.mjs'
+// @ts-ignore same
+import { findRepoRoot } from '../lib/repo-root.mjs'
 
 const logger = useLogger('docs-source')
 
@@ -34,7 +36,7 @@ export default defineNuxtModule({
         const nuxtRoot = nuxt.options.rootDir
         const contentDocsDir = join(nuxtRoot, 'content', 'docs')
 
-        const repoRoot = dirname(nuxtRoot)
+        const repoRoot = findRepoRoot(nuxtRoot)
 
         // Order matters: syncDocs wipes content/docs before writing, so the guides overlaid
         // from this repo have to land after it, not before.

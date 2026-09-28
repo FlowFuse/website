@@ -1,6 +1,6 @@
 @layer vendor, theme, base, components, utilities;
 
-@config "../../../tailwind.config.js";
+@config "../../tailwind.config.js";
 @import "tailwindcss";
 /* Utility classes for the nav and footer live in this data file rather than in
    a template, so name it explicitly: automatic source detection skips JSON. */
@@ -117,8 +117,8 @@
 @import "./roadmap.css";
 @import "./zoom-style.css";
 @import "./node-red-style.css";
-@import "../../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css" layer(vendor);
-@import "../../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css" layer(components);
+@import "@flowforge/forge-ui-components/dist/forge-ui-components.css" layer(vendor);
+@import "vanilla-cookieconsent/dist/cookieconsent.css" layer(components);
 
 /* forge-ui-components resets bare h1-h3 for its own standalone docs site.
    Neutralize within the vendor layer itself (source order wins ties inside
