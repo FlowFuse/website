@@ -63,7 +63,7 @@ that have no business relevance.
 
 - Webinar follow-up
 - Free trials that didn't convert
-- Tradeshow follow-up
+- Tradeshow and event follow-up (see [Events](/handbook/marketing/events/#after-the-event))
 - Case study downloads
 
 The SDR does not respond to "Book a Demo" form submissions — these are routed
