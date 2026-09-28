@@ -72,7 +72,7 @@ const STAGES: Stage[] = [
         label: 'Deploy',
         icon: 'i-lucide-package-check',
         heading: 'Deploy.',
-        summary: 'Two ways code moves, and every place it can land. Promote a whole application or publish the parts worth standardising, then run it in the cloud, on your own servers, or next to the equipment.',
+        summary: 'Promote the whole application or publish the pieces worth standardizing. Run it in the cloud, on-premise, or on the edge.',
         diagrams: [
             {
                 caption: 'Whole app: one snapshot promoted to every target, each supplying its own configuration.',
