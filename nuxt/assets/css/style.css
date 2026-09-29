@@ -111,11 +111,8 @@
 @import "./style.handbook.css";
 @import "./style.catalog.css";
 @import "./style.components.css";
-@import "./style.animations.css";
 @import "./style.docs.css";
 @import "./algolia-theme.css";
-@import "./roadmap.css";
-@import "./zoom-style.css";
 @import "./node-red-style.css";
 @import "../../../node_modules/@flowforge/forge-ui-components/dist/forge-ui-components.css" layer(vendor);
 @import "../../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css" layer(components);
@@ -999,6 +996,27 @@ h4:hover .header-anchor::before {
 
     .ff-website .ff-header {
         @apply bg-white w-full px-6 py-4 sm:py-6 md:py-0 top-0 z-50 sticky;
+    }
+
+    /* The header pins itself to the top of the viewport, so anything else that wants to
+       pin below it has to know how tall it is. Its height is set by the padding steps in
+       the rule above plus a fixed-height logo row, so the three values track those steps.
+       Published here rather than copied into each consumer (currently SidebarNav.vue, the
+       docs and handbook section nav on narrow screens). */
+    .ff-website {
+        --ff-header-height: 72px;
+    }
+
+    @media (min-width: 640px) {
+        .ff-website {
+            --ff-header-height: 88px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .ff-website {
+            --ff-header-height: 56px;
+        }
     }
 
     /* Subtle wave sweeping left-to-right THROUGH the logo's own fill on hover:

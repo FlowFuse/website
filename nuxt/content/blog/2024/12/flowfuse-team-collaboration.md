@@ -81,7 +81,7 @@ FlowFuse provides robust version control features that make it easier to manage 
 
 To view the version history, navigate to your Node-RED Instance view and switch to the 'Version History' tab. Here, you’ll find two key sections:
 
-- Timeline: This section displays a timeline of who deployed, what is updated, and for which flow and when. Each deployment automatically creates a snapshot of your Node-RED instance. You can easily roll back to any previous version by clicking the three-dot icon on the right and selecting Restore Snapshot. You also have the option to compare the current version of your Node-RED instance with previous snapshots, download it, and more.
+- Timeline: This section displays a timeline of who deployed, what is updated, and for which flow and when. Each deployment automatically creates a [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) of your Node-RED instance. You can easily roll back to any previous version by clicking the three-dot icon on the right and selecting Restore Snapshot. You also have the option to compare the current version of your Node-RED instance with previous snapshots, download it, and more.
 
 ![A screenshot displaying the version history timeline in FlowFuse, showing deployment snapshots and the ability to track and roll back changes in Node-RED instances.](./images/version-history-timeline.jpeg){data-zoomable}
 _A version history timeline shows deployment and changes made in flows, making it easy to track updates and revert to previous versions._
@@ -95,7 +95,7 @@ This version control functionality allows you to manage and recover Node-RED ins
 
 ## Shared Flow Library
 
-When working on projects, it's common to develop reusable flows that can save time and effort for the entire team. For example, you might create a flow to calculate Overall Equipment Efficiency (OEE) or other valuable flows that can be reused across multiple projects.
+When working on projects, it's common to develop reusable flows that can save time and effort for the entire team. For example, you might create a flow to calculate Overall Equipment Efficiency ([OEE](/blog/2025/04/what-is-an-oee-dashboard/)) or other valuable flows that can be reused across multiple projects.
 
 FlowFuse makes this process easy with the [Shared Flow Library](/docs/user/shared-library/). This feature allows owners and members to export significant flows and store them in a shared library, making them available to all team members. Once a flow is added to the library, anyone within the same team can import and use it in any Node-RED instance whenever needed.
 

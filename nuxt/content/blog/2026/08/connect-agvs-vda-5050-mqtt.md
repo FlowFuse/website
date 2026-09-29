@@ -61,7 +61,7 @@ If you run AGVs from more than one vendor, you already know the problem. Each ve
 
 <!--more-->
 
-Two fleets under separate control can't share an intersection. So you either accept deadlocks, or you split the floor into separate lanes and waste space. Each fleet manager also needs its own link to your ERP, MES, or WMS. Adding a vehicle from a new vendor means [another integration project](/blog/2024/11/why-point-to-point-connection-is-dead/). And because no single system sees all the work, one vendor's AGVs sit idle while the other's are backed up.
+Two fleets under separate control can't share an intersection. So you either accept deadlocks, or you split the floor into separate lanes and waste space. Each fleet manager also needs its own link to your ERP, [MES](/blog/2025/06/what-is-mes/), or WMS. Adding a vehicle from a new vendor means [another integration project](/blog/2024/11/why-point-to-point-connection-is-dead/). And because no single system sees all the work, one vendor's AGVs sit idle while the other's are backed up.
 
 VDA 5050 solves that. FlowFuse gives you somewhere to build the master control system that uses it.
 
@@ -82,7 +82,7 @@ A master control system that speaks VDA 5050 can drive vehicles from different m
 
 The standard fixes the message contract, not the vehicle. How an AGV avoids obstacles or plans its path is still up to the manufacturer. What you get is a shared order format and a shared status format.
 
-If you already run [Sparkplug B](/blog/2026/06/mqtt-vs-sparkplug-b/) on the same broker, the two solve different problems. Sparkplug standardizes telemetry from any device. VDA 5050 standardizes a command-and-report contract for one class of device, so it says what an order looks like as well as what a status message looks like.
+If you already run [Sparkplug B](/blog/2026/06/mqtt-vs-sparkplug-b/) on the same broker, the two solve different problems. [Sparkplug](/blog/2024/08/using-mqtt-sparkplugb-with-node-red/) standardizes telemetry from any device. VDA 5050 standardizes a command-and-report contract for one class of device, so it says what an order looks like as well as what a status message looks like.
 
 Safety stays out of scope. Emergency stops and person detection live on the vehicle and follow standards like ISO 3691-4. VDA 5050 reports safety state. It does not implement it.
 

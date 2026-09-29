@@ -138,7 +138,7 @@ FAI and [Production Part Approval Process (PPAP)](/blog/2026/09/ppap/) both help
 | Process capability          | Not the main focus                                    | May be required                                                                     |
 | Measurement system analysis | May be applicable                                     | May be required                                                                     |
 
-FAI primarily demonstrates that the inspected part conforms to the defined design requirements. PPAP provides broader evidence that the supplier's production process and supporting quality systems are capable of consistently producing conforming parts. AIAG publishes the supporting core tool manuals, including MSA and SPC, that PPAP submissions draw on.
+FAI primarily demonstrates that the inspected part conforms to the defined design requirements. PPAP provides broader evidence that the supplier's production process and supporting quality systems are capable of consistently producing conforming parts. AIAG publishes the supporting core tool manuals, including MSA and [SPC](/blog/2026/08/statistical-process-control/), that PPAP submissions draw on.
 
 FAI can support a PPAP submission, but it does not replace PPAP when a customer requires it. PPAP approval also isn't the end of the story — most OEMs require a [safe launch](/blog/2026/08/safe-launch/) monitoring period once production starts.
 

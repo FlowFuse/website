@@ -71,7 +71,7 @@ Ask why they don't use the FlowFuse Expert built into the platform, and the answ
 
 ## What changed in FlowFuse 3.0
 
-FlowFuse now acts as an MCP server. Your own AI agent connects to it as a client and because the AI agent is yours, so is the choice of model it uses.
+FlowFuse now acts as an [MCP](/blog/2025/10/building-mcp-server-using-flowfuse/) server. Your own AI agent connects to it as a client and because the AI agent is yours, so is the choice of model it uses.
 
 That means the AI agent your company already approved can work the platform directly: look at your teams and applications, check what your instances are doing, read runtime logs, query your [FlowFuse Tables](/docs/flowfuse-nodes/flowfuse-tables/) data, create applications and instances, and build and edit the flows inside your instances.
 
@@ -93,7 +93,7 @@ You choose read access or editing rights. Read access is useful on its own: what
 
 And there are things nobody can grant. An industrial AI agent working through FlowFuse can't delete an instance, an application, a snapshot, or a team. That is because those tools don't exist. Lastly, deploying a Node-RED flow is, for now, still done by you manually as well.
 
-Two things run underneath all of it. The role-based access control that already governs your teams affects the industrial agent too, so it can't reach past what your own account reaches. And every action it takes lands in the audit log attributed to you and marked `via MCP`, so "what the AI did last Tuesday" is a question with an answer.
+Two things run underneath all of it. The [role-based access control](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/) that already governs your teams affects the industrial agent too, so it can't reach past what your own account reaches. And every action it takes lands in the audit log attributed to you and marked `via MCP`, so "what the AI did last Tuesday" is a question with an answer.
 
 Most agents will prompt you and ask before they act. This logic belongs to the agent itself rather than to FlowFuse, so it looks different in each one, but in practice you see the tool call before it runs, so you retain visibility and control.
 

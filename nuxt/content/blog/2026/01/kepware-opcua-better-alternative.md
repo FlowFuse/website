@@ -39,7 +39,7 @@ $15,000 for the initial license seemed reasonable. Then came additional tags for
 
 Here's what actually happened: Kepware didn't win on technical merit. It won on timing and driver ubiquity.
 
-In the early 2000s, industrial connectivity was genuinely hard. Proprietary PLC protocols. Sparse documentation. Vendors actively hostile to third-party integration. Kepware invested aggressively in driver development, by 2010, if a PLC existed in North America, Kepware almost certainly supported it. That created a network effect system integrators couldn't ignore. Standardization followed. Equipment vendors tested against it. PTC's $100 million acquisition in 2016 cemented the strategy.
+In the early 2000s, industrial connectivity was genuinely hard. Proprietary [PLC](/blog/2025/12/what-is-plc/) protocols. Sparse documentation. Vendors actively hostile to third-party integration. Kepware invested aggressively in driver development, by 2010, if a PLC existed in North America, Kepware almost certainly supported it. That created a network effect [system integrators](/blog/2026/01/what-is-system-integrator/) couldn't ignore. Standardization followed. Equipment vendors tested against it. PTC's $100 million acquisition in 2016 cemented the strategy.
 
 You didn't get tricked. Lock-in happened through entirely normal operations.
 

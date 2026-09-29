@@ -16,7 +16,7 @@ tags:
 There is usually more than one way to complete a given task in software, and Node-RED is no exception. In each of this series of blog posts, we are going to share three useful tips to save yourself time when working on your flows.
 <!--more-->
 
-In this Node-RED Tips article, we are going to focus on [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard). Dashboard is a great tool for creating HMI (Human Machine Interfaces), it's also the most popular custom node for Node-RED with thousands of downloads per week.
+In this Node-RED Tips article, we are going to focus on [Node-RED Dashboard](https://flows.nodered.org/node/node-red-dashboard). Dashboard is a great tool for creating [HMI](/blog/2025/11/building-hmi-for-equipment-control/) (Human Machine Interfaces), it's also the most popular custom node for Node-RED with thousands of downloads per week.
 
 ### 1. Responsive layouts (almost)
 

@@ -163,7 +163,7 @@ Before we begin, ensure you have the following custom nodes installed:
 ```
 ::
 
-Using the FlowFuse Static Assets service is highly beneficial when you want to display images in Node-RED dashboards, as it saves time compared to alternative solutions. However, it’s important to note that moving Node-RED instances through a DevOps pipeline currently does not support handling static assets. This feature is expected in future updates. If you want to manage images effectively within your Node-RED dashboards, consider the alternative solutions discussed in this blog, ensuring that the movement of instances does not affect the usage of these assets.
+Using the FlowFuse Static Assets service is highly beneficial when you want to display images in Node-RED dashboards, as it saves time compared to alternative solutions. However, it’s important to note that moving Node-RED instances through a [DevOps pipeline](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) currently does not support handling static assets. This feature is expected in future updates. If you want to manage images effectively within your Node-RED dashboards, consider the alternative solutions discussed in this blog, ensuring that the movement of instances does not affect the usage of these assets.
 
 ## Why not just store them in Node-RED's host operating system?
 

@@ -131,7 +131,7 @@ _A preview of the Subflow environment properties_
 
 ### Setting Added Environment Variables in the Nodes
 
-Now that we have added properties for the Subflow (which are environment variables), we need to use them in the relevant nodes, such as the HTTP request node, which will require an API and the max-retry setting.
+Now that we have added properties for the Subflow (which are [environment variables](/blog/2023/01/environment-variables-in-node-red/)), we need to use them in the relevant nodes, such as the HTTP request node, which will require an API and the max-retry setting.
 
 1. Double-click on the **HTTP request** node, set the environment variable as `${your_env_name}` into the URL feild, and click **Done** to save.
 

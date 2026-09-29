@@ -70,7 +70,7 @@ Legacy industrial devices communicate in bytes. Your temperature sensor doesn't 
 
 <!--more-->
 
-This is what makes working with legacy PLCs and Modbus sensors challenging. You're not dealing with modern APIs that return JSON. You're dealing with raw binary data where byte 3 might be temperature and byte 4 might be humidity, and if you read them in the wrong order, everything breaks.
+This is what makes working with legacy [PLCs](/blog/2025/12/what-is-plc/) and [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) sensors challenging. You're not dealing with modern APIs that return JSON. You're dealing with raw binary data where byte 3 might be temperature and byte 4 might be humidity, and if you read them in the wrong order, everything breaks.
 
 Node-RED's Buffer Parser node solves this problem. Instead of writing JavaScript to manually decode every buffer, you configure it once visually and it handles the conversion automatically. In this article, we'll learn how to use this node effectively.
 

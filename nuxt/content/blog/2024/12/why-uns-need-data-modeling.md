@@ -97,7 +97,7 @@ For example, PLCs may use one protocol, while SCADA systems or MES may rely on e
 
 This is where data modeling becomes essential. It creates a standard structure for organizing and labeling data, ensuring that different systems can "speak the same language" and integrate seamlessly.
 
-For example, in a predictive maintenance system, sensor data such as temperature and vibration can be used to predict potential machine failures. With the right data model, this sensor data can be directly linked to your CMMS (Computerized Maintenance Management System), regardless of how many sensors are involved or added over time. Since engineers understand the standardized data structure, they can easily integrate the CMMS with minimal effort. This integration automatically triggers maintenance alerts and work orders, helping to prevent downtime without requiring manual intervention.
+For example, in a [predictive maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/) system, sensor data such as temperature and vibration can be used to predict potential machine failures. With the right data model, this sensor data can be directly linked to your CMMS (Computerized Maintenance Management System), regardless of how many sensors are involved or added over time. Since engineers understand the standardized data structure, they can easily integrate the CMMS with minimal effort. This integration automatically triggers maintenance alerts and work orders, helping to prevent downtime without requiring manual intervention.
 
 ### 4. Enables Easy Access and Time Savings
 
@@ -119,7 +119,7 @@ With all these benefits in mind, the next step is to consider how to implement d
 
 ## Leverage FlowFuse for Effective Data Modeling in Your UNS
 
-[FlowFuse](/) makes building and managing a Unified Namespace (UNS) simple and efficient. It connects IT and OT systems, streamlines workflows, and transforms raw data into meaningful insights. With FlowFuse, you can:  
+[FlowFuse](/) makes building and managing a [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) (UNS) simple and efficient. It connects [IT and OT](/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/) systems, streamlines workflows, and transforms raw data into meaningful insights. With FlowFuse, you can:  
 
 - **Connect**: Integrate various services, hardware, and APIs effortlessly.  
 - **Collect**: Aggregate data from machines, sensors, and other sources.  

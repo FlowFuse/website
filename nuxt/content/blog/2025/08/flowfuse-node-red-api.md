@@ -134,7 +134,7 @@ Once triggered, the debug panel will show your user information as shown below w
 
 ## Automating DevOps Pipelines with the FlowFuse API
 
-One of the most powerful features of the FlowFuse API is its ability to integrate directly with CI/CD pipelines. This makes it possible to trigger builds, deployments, or pipeline stages automatically, either from scripts or directly within Node-RED flows, reducing manual effort and accelerating development cycles.
+One of the most powerful features of the FlowFuse API is its ability to integrate directly with CI/CD pipelines. This makes it possible to trigger builds, deployments, or [pipeline stages](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) automatically, either from scripts or directly within Node-RED flows, reducing manual effort and accelerating development cycles.
 
 To trigger a pipeline stage, you will use the following endpoint:
 

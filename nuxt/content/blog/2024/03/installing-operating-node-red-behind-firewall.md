@@ -19,7 +19,7 @@ is deployed in their organization. This network configuration is a fact of life 
 
 ## Node-RED installation with a firewall
 
-Generally, the standard install procedure for Node-RED requires a connection to the NPM servers that host the package. Due to NPM’s unaudited nature, IT is unlikely to agree to a permanent exception to the firewall to allow access to it. However, there are a couple of actions one can take to install Node-RED anyway.
+Generally, the standard install procedure for Node-RED requires a connection to the NPM servers that host the package. Due to NPM’s unaudited nature, IT is unlikely to agree to a permanent exception to the firewall to allow access to it. However, there are a couple of actions one can take to [install Node-RED](/blog/2025/09/installing-node-red/) anyway.
 
 First, ask for a temporary exception. Node-RED is installed in a few minutes, so if there’s a set time schedule an exception can be made there’s a regular method available again through collaboration with the network administrator. The second option is leveraging vendor specific package managers. As these are vetted repositories, it’s not uncommon that these gates in the firewall have been created and opened to you. Some vendors supply repositories for major package managers like `apt-get` on Debian/Ubuntu-based systems, or there’s a marketplace approach to install Node-RED like for example the [Rexroth CtrlX with Node-RED in it](https://developer.community.boschrexroth.com/t5/Store-and-How-to/FlowFuse-Node-RED/ba-p/82135). Lastly, you could consider downloading the NPM package beforehand and transferring it to your machine within the network. NPM allows the installation of local packages, which in turn allows you to create applications with Node-RED. This is generally a shadow IT action, and not recommended unless it’s approved.
 
@@ -31,7 +31,7 @@ Consider installing third party nodes to connect your Node-RED instance to virtu
 
 Installing these packages would typically still require you to obtain files from NPM. With FlowFuse however, a cache can be built with only vetted nodes – All other nodes remain unavailable.
 
-Once Node-RED is installed and the initial development has been completed, FlowFuse aims to reduce the maintenance burden on both IT and OT teams too. In the same package cache aforementioned, Node-RED versions can be added. Updating Node-RED to the latest version becomes a job of just a few clicks. Updating your Node-RED instances, even behind a firewall, is imperative, as virtually all breaches are the result of daisy-chaining multiple security vulnerabilities into a high to critical event.
+Once Node-RED is installed and the initial development has been completed, FlowFuse aims to reduce the maintenance burden on both [IT and OT](/blog/2025/09/it-vs-ot-difference-between-information-technology-and-operational-technology/) teams too. In the same package cache aforementioned, Node-RED versions can be added. Updating Node-RED to the latest version becomes a job of just a few clicks. Updating your Node-RED instances, even behind a firewall, is imperative, as virtually all breaches are the result of daisy-chaining multiple security vulnerabilities into a high to critical event.
 
 ## Wrap up
 

@@ -70,7 +70,7 @@ _FlowFuse Expert creating realistic test data for manufacturing dashboards, comp
 
 [FlowFuse Dashboard](/platform/dashboard/) widgets cover most UI needs, but manufacturing can often demand more. Custom visualizations for specific KPIs can be build in Dashboard with the ["Template"](https://dashboard.flowfuse.com/nodes/widgets/ui-template) node, where developers can write their own Vue.js templates. 
 
-Developing custom components to match your HMI design standards takes CSS expertise. Whether you're building new widgets or styling existing ones, you're suddenly in web development territory, far from where most automation engineers want to be.
+Developing custom components to match your [HMI](/blog/2025/11/building-hmi-for-equipment-control/) design standards takes CSS expertise. Whether you're building new widgets or styling existing ones, you're suddenly in web development territory, far from where most automation engineers want to be.
 
 Take a [Pareto Chart](https://en.wikipedia.org/wiki/Pareto_chart) for defect analysis as an example, essential for quality teams but not available as a standard Dashboard widget. Building it requires Vue.js knowledge, Chart.js integration, and responsive design skills.
 

@@ -88,7 +88,7 @@ The implementation has three stages: setting up hardware to collect vibration da
 
 ## Part 1: Hardware and Data Requirements
 
-This guide assumes you already have a vibration sensor publishing batches of acceleration readings across X, Y, and Z axes at regular intervals. The examples were built using an ESP32 wired to an ADXL345 accelerometer. If your hardware differs, the rest of the steps remain unchanged as long as your sensor publishes the same payload format.
+This guide assumes you already have a vibration sensor publishing batches of acceleration readings across X, Y, and Z axes at regular intervals. The examples were built using an [ESP32](/blog/2024/11/esp32-with-node-red/) wired to an ADXL345 accelerometer. If your hardware differs, the rest of the steps remain unchanged as long as your sensor publishes the same payload format.
 
 ### Expected Payload Format
 
@@ -398,7 +398,7 @@ The model now knows what healthy looks like. This section builds the Node-RED fl
 
 ### Installing the AI Nodes
 
-FlowFuse provides a dedicated AI nodes package for Node-RED that includes ONNX runtime support.
+FlowFuse provides a dedicated AI nodes package for Node-RED that includes [ONNX](/blog/2025/10/custom-onnx-model/) runtime support.
 
 > **Note:** These nodes are only available to FlowFuse users. If you don't have an account, [get started here](https://app.flowfuse.com/account/create) and follow the steps to [run the device agent](/blog/2025/09/installing-node-red/).
 

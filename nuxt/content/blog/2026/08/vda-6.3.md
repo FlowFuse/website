@@ -33,7 +33,7 @@ cta:
   description: "Bring data from machines, PLCs, and industrial systems into one place to make process information easier to access and monitor."
 ---
 
-VDA 6.3 audits assess whether automotive processes are consistently controlled and capable of meeting requirements. For suppliers, the challenge is not just following procedures but being able to demonstrate how processes perform with reliable evidence.
+VDA 6.3 audits assess whether [automotive](/industries/automotive/) processes are consistently controlled and capable of meeting requirements. For suppliers, the challenge is not just following procedures but being able to demonstrate how processes perform with reliable evidence.
 
 <!--more-->
 

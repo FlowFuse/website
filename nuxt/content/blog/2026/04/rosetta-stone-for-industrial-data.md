@@ -37,7 +37,7 @@ A typical production line generates more operational data in a single shift than
 
 And almost none of it is being read.
 
-Not because the data does not exist. Because it exists in forms that cannot speak to each other. A PLC stores fault history in a proprietary register format that only its own software understands. A SCADA system captures the same event three seconds later under a different identifier in a different schema. A maintenance platform has a ticket opened two days earlier flagging an anomaly on the same line. An edge gateway has been forwarding raw telemetry upstream for months that no analytics tool has ever been configured to consume.
+Not because the data does not exist. Because it exists in forms that cannot speak to each other. A [PLC](/blog/2025/12/what-is-plc/) stores fault history in a proprietary register format that only its own software understands. A [SCADA](/blog/2026/08/what-is-scada/) system captures the same event three seconds later under a different identifier in a different schema. A maintenance platform has a ticket opened two days earlier flagging an anomaly on the same line. An edge gateway has been forwarding raw telemetry upstream for months that no analytics tool has ever been configured to consume.
 
 !["Diagram showing a motor overheating event represented differently across four systems: a PLC register value, a SCADA alarm, a CMMS work order, and an edge gateway telemetry stream, illustrating fragmented factory data with no shared reference point."](./images/one-event-four-diffrent-records.png)
 _Diagram showing a motor overheating event represented differently across four systems: a PLC register value, a SCADA alarm, a CMMS work order, and an edge gateway telemetry stream, illustrating fragmented factory data with no shared reference point._
@@ -95,7 +95,7 @@ It did not make one inscription readable. It made every inscription readable, in
 
 This is the dimension of the factory problem that most IIoT conversations miss, because most IIoT conversations stop at connectivity. Connect this machine to that system. Get this data into that dashboard. Valuable, narrowly. But still bilateral. Still one connection at a time. The geometry has not changed.
 
-A Unified Namespace changes the geometry permanently.
+A [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) changes the geometry permanently.
 
 When every system in a factory maps to a shared data model published through a common broker, the value does not accumulate linearly. It compounds. A quality defect on line 3 is no longer four disconnected records across four systems. It is one event, described from four angles, readable from a single location, correlatable in minutes rather than days. A maintenance anomaly flagged two days before a failure is not a ticket in one system and an alarm in another. It is a pattern visible across the entire operational picture, searchable historically, usable for prediction. In [automotive manufacturing](/industries/automotive/), where the same downtime code needs to mean the same thing on every line in every plant, that shared reference point is what turns twelve local definitions into one benchmark everyone can actually compare against.
 

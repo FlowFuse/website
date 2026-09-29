@@ -37,7 +37,7 @@ cta:
   description: "Explore how FlowFuse helps you build, scale, and manage MES capabilities around your existing systems."
 ---
 
-Ask three people on the same shop floor whether an order is on track and you might get three different answers. One is looking at a whiteboard. Another is checking an hour-old spreadsheet. The plans live in the ERP system, while machines run under SCADA and PLC control—but the layer connecting the two is often missing. That gap is where a manufacturing execution system belongs.
+Ask three people on the same shop floor whether an order is on track and you might get three different answers. One is looking at a whiteboard. Another is checking an hour-old spreadsheet. The plans live in the ERP system, while machines run under [SCADA](/blog/2026/08/what-is-scada/) and [PLC](/blog/2025/12/what-is-plc/) control—but the layer connecting the two is often missing. That gap is where a manufacturing execution system belongs.
 
 <!--more-->
 
@@ -74,7 +74,7 @@ An MES applies raw machine data to the production plan: which order is running, 
 
 ### How data moves between the two systems
 
-MES and SCADA depend on a steady, two-way flow of data. SCADA reports machine and sensor states upward; MES sends work instructions, recipes, and quality parameters back down as supervisory setpoints. The MES never sits inside the control loop—interlocks and safety logic stay in the PLC.
+MES and SCADA depend on a steady, two-way flow of data. SCADA reports machine and sensor states upward; MES sends [work instructions](/blog/2026/07/digital-work-instruction/), recipes, and quality parameters back down as supervisory setpoints. The MES never sits inside the control loop—interlocks and safety logic stay in the PLC.
 
 When data moves through brittle custom integrations, a change to a machine or protocol can ripple through the whole system. Publishing data once to a broker, such as through [MQTT with Sparkplug B](/blog/2024/08/using-mqtt-sparkplugb-with-node-red/), gives each layer a consistent way to subscribe to the information it needs.
 

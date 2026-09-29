@@ -11,7 +11,7 @@ tags:
    - mes
 ---
 
-Collecting factory data for your MES is just the first step. If that data isn't properly organized, cleaned, and stored, it's a jumbled mess, leading to missed opportunities and wasted investments. Disorganized information prevents your MES from quickly finding, understanding, and comparing crucial data, directly impacting production, increasing errors, and hindering confident decision-making.
+Collecting factory data for your [MES](/blog/2025/06/what-is-mes/) is just the first step. If that data isn't properly organized, cleaned, and stored, it's a jumbled mess, leading to missed opportunities and wasted investments. Disorganized information prevents your MES from quickly finding, understanding, and comparing crucial data, directly impacting production, increasing errors, and hindering confident decision-making.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Now that we understand the importance of data structuring, let's explore how to 
 
 Here are some straightforward ways we get data structred:
 
-* **Making a Plan for Your Data (Data Modeling):** This is like drawing a simple map for your data. It helps you decide exactly what pieces of information you'll collect (like machine temperature, how many items are made, or who operated the machine) and how they connect to each other. This keeps everything neat and consistent. For example, a data model might say that every "production run" must have a "start time" and an "end time." This makes sure your MES always gets the full picture and avoids confusing or incomplete information. On an [automotive](/industries/automotive/) line, that might mean every changeover event carries the same machine ID, line ID, and torque value, in the same units, no matter which plant it happened in.
+* **Making a Plan for Your Data ([Data Modeling](/blog/2023/12/unified-namespace-data-modelling/)):** This is like drawing a simple map for your data. It helps you decide exactly what pieces of information you'll collect (like machine temperature, how many items are made, or who operated the machine) and how they connect to each other. This keeps everything neat and consistent. For example, a data model might say that every "production run" must have a "start time" and an "end time." This makes sure your MES always gets the full picture and avoids confusing or incomplete information. On an [automotive](/industries/automotive/) line, that might mean every changeover event carries the same machine ID, line ID, and torque value, in the same units, no matter which plant it happened in.
 
 * **Speaking the Same Language (Standardizing):** Imagine if everyone in your factory used different words for the same thing. It would be confusing! Standardizing means always using the same names, units, and formats everywhere. For example, if you measure temperature, always use Celsius. If one machine sends "TempC" and another just "Temperature," standardizing ensures both are read as "Temperature in Celsius." This prevents your MES from getting confused by different terms for the same data.
 
@@ -146,7 +146,7 @@ Once your factory data is structured and validated, you need a smart place to st
 
 Here are the main types of storage typically used for factory data:
 
-* **Time-Series Databases (TSDBs):** Perfect for constantly changing data like sensor readings (temperature, machine speed). They handle massive updates efficiently, ideal for spotting trends over time. Think of them as a super-efficient diary recording every moment. **InfluxDB** and **TimescaleDB** are good examples.
+* **Time-Series Databases (TSDBs):** Perfect for constantly changing data like sensor readings (temperature, machine speed). They handle massive updates efficiently, ideal for spotting trends over time. Think of them as a super-efficient diary recording every moment. **[InfluxDB](/blog/2026/02/mqtt-influxdb-tutorial/)** and **TimescaleDB** are good examples.
 
 * **Standard Databases (SQL Databases):** Best for structured information with clear connections, such as production orders, material usage per batch, or quality check results. They keep data organized and ensure correct links between pieces of information, like a well-organized spreadsheet. You'll often see **PostgreSQL** or **MySQL** used here.
 

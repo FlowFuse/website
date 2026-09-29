@@ -91,7 +91,7 @@ In this section, we will learn how to create a flow that monitors CPU performanc
 ```
 ::
 
-By utilizing environment variables, this flow becomes reusable, allowing you to copy and paste flow to monitor multple instances.
+By utilizing [environment variables](/blog/2023/01/environment-variables-in-node-red/), this flow becomes reusable, allowing you to copy and paste flow to monitor multple instances.
 
 ### Receiving Data to Monitor and Visualize
 

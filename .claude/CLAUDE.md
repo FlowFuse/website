@@ -375,7 +375,7 @@ Click tracking: `capture(event, { position, variant, plan? })` via `nuxt/composa
   ```
   Nuxt auto-imports it by folder + filename, used directly like any other component: `<IconsGithubIcon class="h-5" />` (see `AppFooter.vue`).
 
-`NavIcon` also draws icons that page content names, such as a hero's `eyebrowIcon`. Eight glyphs exist in both folders (arrows, layers, pin, pin-slash, pulse, snowflake, target-view, uns); four of them differ only in sizing attributes, so an art change needs making in both.
+`NavIcon` also draws icons that page content names, such as a hero's `eyebrowIcon`. Two glyphs exist in both folders (pulse, uns), so an art change to either needs making in both.
 
 Keep that art out of `nuxt/assets/icons/`. That directory is the `ff` Nuxt Icon collection (`<UIcon name="i-ff-pin" />`), which parses every file in it at build time and fails the build on a bare `<path>` fragment, which several of the nav icons are.
 

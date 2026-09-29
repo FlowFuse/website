@@ -53,7 +53,7 @@ Industrial networks fail quietly. A saturated uplink, a flapping interface, or a
 
 <!--more-->
 
-SNMP exists precisely to prevent that. Decades proven, it remains the most reliable protocol for extracting health telemetry from switches, routers, PLCs, and RTUs. No agents, no overhead, runs on everything.
+SNMP exists precisely to prevent that. Decades proven, it remains the most reliable protocol for extracting health telemetry from switches, routers, [PLCs](/blog/2025/12/what-is-plc/), and RTUs. No agents, no overhead, runs on everything.
 
 The gap has always been implementation. Most teams either over-engineer it with heavyweight NMS platforms or under-engineer it with brittle scripts. Neither is acceptable when network visibility is an uptime and safety concern.
 

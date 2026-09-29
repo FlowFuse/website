@@ -13,7 +13,7 @@ tags:
 As part of our preparations for FlowFuse 1.0 we have been testing various real world scenarios to see where we can add to our documentation and where we might be able to improve our releases to make the install process easier for users. As a benefit of that testing we have been able to hone these installation processes and we wanted to share one of those with you today.
 <!--more-->
 
-In this first of three articles, we are going to run through the process for installing FlowFuse on Google Cloud Platform (GCP) within a virtual machine (VM) using Docker.
+In this first of three articles, we are going to run through the process for installing FlowFuse on Google Cloud Platform (GCP) within a virtual machine (VM) using Docker. If you'd rather run FlowFuse locally on a Windows machine, see our guide to [Docker on Windows](/docs/install/docker/windows-docker-ce/).
 
 We have set ourselves the goal of delivering a production environment. We want this installation benefit from:
 

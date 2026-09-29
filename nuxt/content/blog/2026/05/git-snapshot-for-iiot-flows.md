@@ -16,7 +16,7 @@ cta:
 
 Approving a logic change you cannot fully see is not MOC. It is a signature on a description.
 
-Here is the problem that creates, and how FlowFuse snapshot comparison solves it.
+Here is the problem that creates, and how FlowFuse [snapshot](/blog/2024/09/node-red-version-control-with-snapshots/) comparison solves it.
 
 <!--more-->
 
