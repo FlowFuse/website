@@ -7,6 +7,7 @@ const props = defineProps<{
 const { entries, totalPages } = useBlogList(props.tag ?? null, props.page)
 
 const featured = computed(() => props.page === 1 ? entries.value[0] : null)
+const featuredPath = computed(() => featured.value ? withTrailingSlash(featured.value.path) : '')
 const rest = computed(() => props.page === 1 ? entries.value.slice(1) : entries.value)
 const basePath = computed(() => props.tag ? `/blog/${props.tag}` : '/blog')
 
@@ -27,7 +28,7 @@ const featuredDate = computed(() => featured.value ? new Date(featured.value.dat
     <BlogTagNav :active-tag="tag" />
     <ul class="flex flex-wrap">
       <li v-if="featured" class="w-full mt-2 px-2 pb-4">
-        <NuxtLink :to="featured.path" class="w-full flex flex-col group hover:no-underline">
+        <NuxtLink :to="featuredPath" class="w-full flex flex-col group hover:no-underline">
           <div class="md:w-3/4 pr-2">
             <time class="block text-xs text-gray-500">{{ featuredDate }}</time>
             <h2 class="mb-0 text-xl font-medium group-hover:underline">{{ featured.title }}</h2>

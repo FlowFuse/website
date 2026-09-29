@@ -108,7 +108,7 @@ const CAPABILITY_GROUPS = [
         eyebrow: 'Connect',
         subtitle: 'The agent your company already approved, working your platform and building in Node-RED. Your agent, your model, on a boundary you set.',
         items: [
-            { name: 'Bring your own AI agent', diagram: 'bring-your-agent', description: 'Point Microsoft Copilot, ChatGPT, Claude or a local model at FlowFuse, sign in, and it can query your teams and instances and build Node-RED applications for you. Where company policy only permits an approved AI agent, this is how that agent reaches your operations, instead of nobody getting AI on the platform at all.' },
+            { name: 'Bring your own AI agent', diagram: 'bring-your-agent', description: `Point Microsoft Copilot, ChatGPT, Claude or a local model at FlowFuse, sign in, and it can <a href="/docs/user/mcp/" class="${LINK}">query your teams and instances and build Node-RED applications</a> for you. Where company policy only permits an approved AI agent, this is how that agent reaches your operations, instead of nobody getting AI on the platform at all.` },
             { name: 'You decide what it reaches', diagram: 'you-decide', description: 'Signing in asks which teams the agent may act on and whether it may make changes at all. FlowFuse holds you to that on every call, so a read-only grant is refused whatever the agent tries. Nothing an agent reaches can delete an instance, an application, a snapshot or a team, and deploying stays yours.' },
         ],
     },
