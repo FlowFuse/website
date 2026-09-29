@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const route = useRoute()
+const isDocs = computed(() => route.path === '/docs' || route.path.startsWith('/docs/'))
+</script>
+
 <template>
   <div class="font-sans ff-website leading-normal tracking-normal gradient text-gray-500 min-h-screen flex flex-col">
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -14,5 +19,8 @@
       </div>
     </div>
     <AppFooter />
+    <!-- FlowFuse Expert's conversation, opened from Ask Docs and from a page's own question box. -->
+    <DocsExpertHost v-if="isDocs" />
+    <DocsAskFab v-if="isDocs" />
   </div>
 </template>
