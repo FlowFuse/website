@@ -32,8 +32,7 @@ const STEP1 = {
     description: 'You will paste this into your agent in the next step.',
 }
 const STEP3 = {
-    title: 'Sign in and choose what it reaches',
-    description: 'Which teams the agent may act on, and whether it has editing rights or read access only.',
+    title: 'Select teams and permissions',
 }
 
 // A client renders `logo` as a brand mark when set, `icon` as our own glyph when not.
@@ -78,11 +77,11 @@ const CLIENTS = [
         logo: '/images/ai/agents/claude.svg',
         name: 'Claude',
         step1Title: 'Open the FlowFuse connector',
-        step1Body: 'FlowFuse is listed in the Claude connector directory.',
+        step1Body: 'The official FlowFuse MCP connector is available in Claude.',
         step1Label: 'Connect to Claude',
         step1Url: 'https://claude.ai/directory/flowfuse',
         step2Title: 'Choose Connect to Claude',
-        step2Body: 'Claude takes you to FlowFuse to sign in. On Team and Enterprise an owner adds it once for everyone.',
+        step2Body: 'Claude opens FlowFuse. On Team and Enterprise an owner adds it once for everyone.',
     },
     // A coding agent installs the connector into itself, so its tab is the prompt
     // and nothing else. No flags, no config file, and nothing that goes stale when
@@ -217,7 +216,7 @@ function selectClient (id: string) {
 
       <div class="ff-agent-step">
         <p class="ff-agent-step__title"><span class="ff-agent-step__num">03</span>{{ client.step3Title || STEP3.title }}</p>
-        <p class="ff-agent-step__body">{{ client.step3Body || STEP3.description }}</p>
+        <p v-if="client.step3Body" class="ff-agent-step__body">{{ client.step3Body }}</p>
       </div>
     </div>
   </div>
