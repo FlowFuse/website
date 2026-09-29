@@ -39,12 +39,12 @@ const { data, error } = await useFetch<{ html: string }>('/api/node-red-help', {
     </div>
 
     <template v-else>
-      <div class="ff-callout ff-callout--info">
+      <ProseNote>
         <p>
           This is the {{ label }} node's built-in help, mirrored from the Node-RED project.
           It is the same text the editor shows in its Info sidebar.
         </p>
-      </div>
+      </ProseNote>
 
       <!-- Third-party HTML. Sanitised server-side against an allowlist before it gets here. -->
       <div v-html="data?.html" />
