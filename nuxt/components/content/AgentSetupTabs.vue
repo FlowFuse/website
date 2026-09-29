@@ -77,10 +77,12 @@ const CLIENTS = [
         id: 'claude',
         logo: '/images/ai/agents/claude.svg',
         name: 'Claude',
-        step2Title: 'Add a custom connector',
-        step2Body: 'Where custom connectors are available on your plan, add one and paste the URL. On Team and Enterprise an owner adds it once for everyone.',
-        step2Label: 'Open Claude',
-        step2Url: 'https://claude.ai/',
+        step1Title: 'Open the FlowFuse connector',
+        step1Body: 'FlowFuse is listed in the Claude connector directory.',
+        step1Label: 'Connect to Claude',
+        step1Url: 'https://claude.ai/directory/flowfuse',
+        step2Title: 'Choose Connect to Claude',
+        step2Body: 'Claude takes you to FlowFuse to sign in. On Team and Enterprise an owner adds it once for everyone.',
     },
     // A coding agent installs the connector into itself, so its tab is the prompt
     // and nothing else. No flags, no config file, and nothing that goes stale when
@@ -179,6 +181,18 @@ function selectClient (id: string) {
         <div v-if="client.builtIn" class="ff-agent-step__cta">
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
+        <div v-else-if="client.step1Url" class="ff-agent-step__cta">
+          <CtaCustom
+            :label="client.step1Label"
+            :href="client.step1Url"
+            destination-key="agentSetupClientOpen"
+            :position="pos(client.id)"
+            external
+            target="_blank"
+            variant="primary"
+            class="w-full"
+          />
+        </div>
         <div v-else class="ff-agent-step__cta">
           <FfCommand :command="client.step1Command || ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap :wrap="Boolean(client.step1Command)" />
         </div>
@@ -187,7 +201,7 @@ function selectClient (id: string) {
       <div class="ff-agent-step">
         <p class="ff-agent-step__title"><span class="ff-agent-step__num">02</span>{{ client.step2Title }}</p>
         <p class="ff-agent-step__body">{{ client.step2Body }}</p>
-        <div class="ff-agent-step__cta">
+        <div v-if="client.step2Url" class="ff-agent-step__cta">
           <CtaCustom
             :label="client.step2Label"
             :href="client.step2Url"
