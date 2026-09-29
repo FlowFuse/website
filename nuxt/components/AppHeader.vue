@@ -220,7 +220,7 @@ onMounted(() => {
 
 <style scoped>
 /* Docs pages show "Docs" beside the logo. Below xl that pair is the mark alone and
-   "Docs": with the whole wordmark, the menus came within 16px of "Docs" at 1100px. The
+   "Docs": with the whole wordmark, the menus come within about 28px of "Docs" at 1100px. The
    mark is the wordmark itself, cropped to its first 28px, rather than the separate square
    logo, which is drawn larger and in a lighter red: the logo keeps one shape, colour and
    size at every width, and only its lettering comes and goes. */
@@ -245,24 +245,20 @@ onMounted(() => {
     }
 }
 
-/* Beside the wordmark, "Docs" reads as one lockup with it, measured at 4x zoom:
-   - weight 600: its stems (3.5px at this size) sit just under the wordmark's (3.9px), close
-     enough to belong to it, a step lighter so it does not compete (700 matched the stems
-     but read too heavy, 400 too thin);
-   - 29px, which splits Heebo's proportions against the wordmark's: capitals 0.6px taller
-     (20.6 against 20) and lowercase 0.4px shorter (15.6 against 16);
-   - the same baseline: with line-height 1, centred on the 32px logo box, the line sits 1px
-     high, hence the nudge.
-   Grey, so the brand colour still leads. The same size at every width, beside the mark
-   alone as beside the whole wordmark. */
+/* "Docs" sits high beside the logo, small, like a superscript. At the wordmark's own size
+   it read as a second logo on every docs page; this says where you are without competing
+   with it. The 4px drop puts the top of its capital level with the wordmark's (measured at
+   4x zoom), rather than floating above it. Grey, so the brand colour still leads, and the
+   same size at every width. */
 .ff-docs-brand-label {
-    position: relative;
-    top: 1px;
-    margin-left: 0.625rem;
-    font-size: 29px;
+    align-self: flex-start;
+    margin-top: 4px;
+    margin-left: 0.25rem;
+    font-size: 0.8125rem;
     line-height: 1;
     font-weight: 600;
-    color: #374151;
+    letter-spacing: 0.02em;
+    color: #6b7280;
     white-space: nowrap;
     text-decoration: none;
 }
@@ -271,10 +267,10 @@ onMounted(() => {
     color: #4f46e5;
 }
 
-/* On a phone narrower than 390px the docs header has no room for the mark, "Docs", search,
-   Book a demo and the menu at once ("Docs" touched the search at 360 and 375px, and the row
-   overflowed at 320px), so Book a demo gives way there. From 390px it fits. */
-@media (max-width: 389px) {
+/* On a phone narrower than 360px the docs header has no room for the mark, "Docs", search,
+   Book a demo and the menu at once ("Docs" touches the search at 320px), so Book a demo
+   gives way there. From 360px it fits, with 20px to spare. */
+@media (max-width: 359px) {
     .ff-header--docs .ff-header-demo-mobile {
         display: none;
     }
