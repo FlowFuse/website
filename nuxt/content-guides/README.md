@@ -218,21 +218,16 @@ Walkthroughs and recorded talks.
 :::
 ::
 
-::docs-section{eyebrow="Help" title="Ask a question" cols="3"}
-Ask FlowFuse Expert, which answers from these docs, the blog and more. Or put your question to our support team, the community, or the troubleshooting guides.
+::docs-section{eyebrow="Help" title="Ask a question" cols="2"}
+Put your question to our support team, the community, or the troubleshooting guides.
 
-:::docs-columns
-::::ff-expert-ask
-::::
-
+:::card-group
 ::::card{icon="i-lucide-headset"}
 [Talk to our support team :icon{name="i-lucide-arrow-up-right"}](/support/)
 
 Search the Help Center or submit a ticket. For Cloud and Enterprise customers.
 ::::
-:::
 
-:::card-group
 ::::card{icon="i-lucide-bug"}
 [Debugging Node-RED](/docs/debugging/)
 

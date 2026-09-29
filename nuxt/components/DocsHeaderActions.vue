@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Docs search for the site header, where the docs sidebar is not on screen. AppHeader shows
-// it below lg, on docs pages only. FlowFuse Expert is the Ask Docs button (DocsAskFab).
+// it below lg, on docs pages only.
 const route = useRoute()
 const isDocs = computed(() => route.path === '/docs' || route.path.startsWith('/docs/'))
 
