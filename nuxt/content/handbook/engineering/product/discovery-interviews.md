@@ -4,13 +4,13 @@ title: "Continuous Discovery Interviews"
 
 # Continuous Discovery Interviews
 
-Product and engineering talk to customers every week, in short conversations about one real, recent experience. This page covers why we do it, the two ways an interview happens, and how to run one. It follows Teresa Torres' *Continuous Discovery Habits*, and is the practice behind [Gathering evidence](./methodology.md#gathering-evidence).
+Product and engineering should talk to customers every week, in short conversations about at least one real, recent experience to figure out answers to specific questions or hyptheses. This page covers why we do it, the two ways an interview happens, and how to run one. It is the practice behind [Gathering evidence](./methodology.md#gathering-evidence).
 
-These interviews are separate from the sales [Discovery Call](/handbook/sales/meetings/discovery/), which qualifies a deal. In an interview we only learn. We do not sell, and we do not promise features.
+These interviews have a separate intention from the sales [Discovery Call](/handbook/sales/meetings/discovery/), which qualifies a deal. In an interview we only learn. We do not sell, and we do not promise features.
 
 ## What we aim for
 
-- **At least two interviews a week per product team.** Torres sets one a week as the floor. A habit that runs every week is easier to keep than one that starts and stops.
+- **At least two interviews a week per product team.** At least one a week as the floor. A habit that runs every week is easier to keep than one that starts and stops.
 - **A specific story.** We ask "Tell me about the last time you…", never "Would you use…?". Asked what they want, people describe their ideal selves. A recent story shows what actually happened, and that is what we can design for. It is also the rung-3 evidence an opportunity needs (see [Evidence](./methodology.md#evidence-how-we-know-an-opportunity-is-real)).
 - **The need behind a request.** When a customer asks for a feature, we ask "If you had that, what would it do for you?" and capture the need.
 
@@ -22,12 +22,12 @@ For sales, a feature request usually arrives without the reason behind it. The s
 
 ## Who takes part
 
-Torres recommends that product managers, designers and engineers interview together. Each hears different things in the same story, and no one person becomes the only voice of the customer. So engineers join interviews as well as product.
+Recommended that product teams interview together. Each hears different things in the same story, and no one person becomes the only voice of the customer. So engineers join interviews as well as product.
 
-We also keep the number of people from FlowFuse small, so the call stays a conversation and a sales call stays about the customer:
+When we join in on sales calls for discovery we should keep the number of people from FlowFuse small, so the call stays a conversation and a sales call stays about the customer and their potential deal first:
 
 - **End of a sales call:** one person from product or engineering joins, next to the rep.
-- **Dedicated call:** at most two of us. One interviews, the other listens and asks follow-up questions.
+- **Dedicated call:** at most three of us. One leads the interview, the other listens and asks follow-up questions.
 
 We rotate who joins and who leads. The rest of the team learns from the recording and the snapshot.
 
@@ -69,7 +69,6 @@ Let the customer talk about what matters most to them. Calls are recorded and tr
 
 ## After the call
 
-- The same day, write a one-page interview snapshot: a memorable quote, quick facts about the customer, the story, and the needs in their own words.
 - Add the story as evidence on the opportunity it supports on the [FlowFuse/product](https://github.com/FlowFuse/product) board, linking the moment in the Fathom recording.
 - When a fix ships, the customer hears about it, from their rep or from us.
 
@@ -78,4 +77,3 @@ Let the customer talk about what matters most to them. Calls are recorded and tr
 - [Customer interviews: how to recruit, what to ask, and how to synthesize](https://www.producttalk.org/2022/12/customer-interviews/)
 - [Story-based customer interviews uncover much-needed context](https://www.producttalk.org/2024/04/story-based-customer-interviews/)
 - [Automate your recruiting](https://www.producttalk.org/glossary-discovery-automate-your-recruiting/)
-- [Continuous discovery fuels innovation at Sauce Labs](https://www.producttalk.org/2024/01/innovation-sauce-labs/)
