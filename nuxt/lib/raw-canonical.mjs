@@ -12,6 +12,14 @@
 // Anything that could end the <...> of the header value or start a new header.
 const UNSAFE = /[<>"\s]/
 
+const decode = (segment) => {
+    try {
+        return decodeURIComponent(segment)
+    } catch {
+        return segment
+    }
+}
+
 /**
  * @param {string} pathname the request path, e.g. /raw/docs/user/mcp.md
  * @param {string} siteUrl e.g. https://flowfuse.com
@@ -22,8 +30,11 @@ export function rawMarkdownCanonical (pathname, siteUrl) {
     const match = /^\/raw\/(.+)\.md$/.exec(pathname.split('?')[0])
     if (!match || UNSAFE.test(match[1])) return null
 
+    // Netlify decodes the path before the function sees it, so a slug with a reserved
+    // character arrives as "flowfuse+llm" where the sitemap has "flowfuse%2Bllm". Decoding
+    // and re-encoding each segment gives the sitemap's spelling whichever form came in.
+    let path = '/' + match[1].split('/').map(segment => encodeURIComponent(decode(segment))).join('/')
     // Same mapping as the route handler: a trailing /index is the section's own page.
-    let path = '/' + match[1]
     if (path.endsWith('/index')) path = path.slice(0, -'/index'.length)
 
     // Every page on the site ends in a slash (site.trailingSlash), so the canonical does too.

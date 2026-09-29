@@ -14,11 +14,15 @@ test('a trailing /index is the section page itself, as the route handler reads i
     assert.equal(rawMarkdownCanonical('/raw/index.md', SITE), 'https://flowfuse.com/')
 })
 
-test('the percent-encoding of the request survives, so it matches the sitemap url', () => {
-    assert.equal(
-        rawMarkdownCanonical('/raw/blog/2025/11/flowfuse%2Bllm%2Bmcp-equals-text-driven-operations.md', SITE),
-        'https://flowfuse.com/blog/2025/11/flowfuse%2Bllm%2Bmcp-equals-text-driven-operations/',
-    )
+test('a reserved character comes out percent-encoded, as the sitemap spells the url', () => {
+    const expected = 'https://flowfuse.com/blog/2025/11/flowfuse%2Bllm%2Bmcp-equals-text-driven-operations/'
+    assert.equal(rawMarkdownCanonical('/raw/blog/2025/11/flowfuse%2Bllm%2Bmcp-equals-text-driven-operations.md', SITE), expected)
+    // Netlify hands the function the decoded path, so the same request arrives with a "+".
+    assert.equal(rawMarkdownCanonical('/raw/blog/2025/11/flowfuse+llm+mcp-equals-text-driven-operations.md', SITE), expected)
+})
+
+test('a malformed escape is encoded like any other character rather than throwing', () => {
+    assert.equal(rawMarkdownCanonical('/raw/docs/a%zz.md', SITE), 'https://flowfuse.com/docs/a%25zz/')
 })
 
 test('a query string is not part of the canonical', () => {
