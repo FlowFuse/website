@@ -41,7 +41,7 @@ We rotate who joins and who leads. The rest of the team learns from the recordin
 | --- | --- | --- |
 | Length | 5 to 20 minutes | 20 to 30 minutes |
 | Who's there | The customer, the rep and one of us | The customer and up to three of us |
-| How it starts | The rep spots a trigger and adds us to the call | The customer books our weekly slot, after an ask in the product, an email or our booking link |
+| How it starts | The rep spots a trigger and adds us to the call | We invite the customer into our weekly slot |
 | Sales' part | Agree the order of the call with us beforehand, hand over, then listen | Not needed |
 | Our part | One story in the time we get, then the rep hears what we learned | One story |
 
@@ -60,9 +60,9 @@ Ahead of the call, the rep and whoever joins from product or engineering agree h
 
 ### A dedicated call
 
-We keep a standing weekly slot that customers book themselves, so nobody has to coordinate each interview. We recruit directly, with an ask in the product, an email, or our booking link. A rep can also point a customer our way: "Our product team talks to customers every week about how they work. Here's a link to book 20 minutes with them."
+We keep a defined weekly slot for these interviews. How we fill it is up to the team, for example through a rep or by reaching out ourselves.
 
-We talk to a mix of people: new and long-time users, active and quiet accounts, customers who recently left, prospects, and people like our customers.
+Over time, aim for a mix of people, such as new and long-time users, active and quiet accounts, customers who recently left, prospects, and people like our customers.
 
 ## Running the interview
 
