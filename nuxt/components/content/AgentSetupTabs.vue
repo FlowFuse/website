@@ -210,6 +210,11 @@ function selectClient (id: string) {
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
         <div v-else class="ff-agent-step__cta">
+          <div v-if="client.selfHosted && !selfHosted" class="ff-command__host">
+            <button type="button" class="ff-command__host-toggle" @click="chooseSelfHosted(client.id)">
+              Self-hosted? Use your own address
+            </button>
+          </div>
           <CtaCustom
             v-if="client.step1Url"
             :label="client.step1Label"
@@ -222,14 +227,6 @@ function selectClient (id: string) {
             class="w-full"
           />
           <FfCommand v-else :command="client.step1Command || ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked :host-swap="client.hostSwap !== false" :wrap="Boolean(client.step1Command)" />
-          <button
-            v-if="client.selfHosted && !selfHosted"
-            type="button"
-            class="mt-3 text-left text-sm text-indigo-700 underline underline-offset-2 hover:text-indigo-900"
-            @click="chooseSelfHosted(client.id)"
-          >
-            Self-hosted?
-          </button>
         </div>
       </div>
 

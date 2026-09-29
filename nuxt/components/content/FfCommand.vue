@@ -149,6 +149,11 @@ onUnmounted(() => clearTimeout(resetTimer))
         @click="editing = true"
       >Self-hosted? Use your own address</button>
       <div v-else class="ff-command__host-field">
+        <button
+          type="button"
+          class="ff-command__host-reset"
+          @click="useCloud"
+        >Use FlowFuse Cloud</button>
         <input
           :value="typed"
           type="text"
@@ -160,11 +165,6 @@ onUnmounted(() => clearTimeout(resetTimer))
           aria-label="Your FlowFuse address"
           @input="onHostInput"
         >
-        <button
-          type="button"
-          class="ff-command__host-reset"
-          @click="useCloud"
-        >Use FlowFuse Cloud</button>
       </div>
     </div>
 
