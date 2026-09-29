@@ -284,17 +284,17 @@ onUnmounted(() => {
         <div class="mt-8 overflow-hidden rounded-lg border-2 border-red-100 shadow-2xl">
           <video
             class="block w-full"
-            poster="/images/ai/demo-external-agents-poster.jpg"
-            width="1600"
-            height="1056"
+            poster="/images/ai/demo-claude-connector-poster.jpg"
+            width="1562"
+            height="1080"
             autoplay
             loop
             muted
             playsinline
             controls
-            aria-label="Screen recording: Claude adds FlowFuse as a custom MCP connector, signs in, is granted full access to one team, and then provisions a Node-RED instance from the OEE blueprint."
+            aria-label="Screen recording: Claude adds the FlowFuse connector from its connector directory, signs in, is granted access on the FlowFuse consent screen, and then answers which instances are running, listing five hosted Node-RED instances."
           >
-            <source src="/images/ai/demo-external-agents.webm" type="video/webm">
+            <source src="/images/ai/demo-claude-connector.webm" type="video/webm">
           </video>
         </div>
       </div>
