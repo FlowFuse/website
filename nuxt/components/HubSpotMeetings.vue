@@ -4,17 +4,18 @@
 // (site.meetings.salesRoundRobin); dataSrc overrides it for a campaign-specific one.
 //
 // Consent-gated and MUST STAY THAT WAY: listens for vanilla-cookieconsent's own
-// cc:onConsent/cc:onChange DOM events (dispatched independent of its config-callback
-// option), plus a direct check on mount for consent already stored from an earlier visit,
-// since that event can otherwise fire before this component mounts.
+// cc:onConsent/cc:onChange DOM events, plus a direct check on mount for consent already
+// stored from an earlier visit, since that event can otherwise fire before this mounts.
 import site from '../data/site.json'
 import { parseMeetingMessage } from '../lib/hubspot-meeting-message.mjs'
+import { createMeetingTracker } from '../lib/hubspot-meeting-tracker.mjs'
 
 const props = defineProps<{ position: string, dataSrc?: string }>()
 
 const capture = useCapture()
 const identify = useIdentify()
 const embedded = ref(false)
+const tracker = createMeetingTracker()
 
 const meetingsSrc = (() => {
     const url = new URL(props.dataSrc ?? site.meetings.salesRoundRobin)
@@ -26,7 +27,6 @@ const meetingsOrigin = new URL(meetingsSrc).origin
 type EmbedWindow = Window & {
     CookieConsent?: { showPreferences: () => void, acceptedCategory?: (category: string) => boolean }
     hbspt?: { meetings?: { create: (selector: string) => unknown } }
-    posthog?: { capture: (event: string, props?: Record<string, unknown>, options?: Record<string, unknown>) => void }
 }
 
 function showCookiePreferences() {
@@ -46,62 +46,46 @@ function loadEmbed() {
     }
     // A later mount (e.g. browser back/forward) gets a fresh, empty container the
     // already-loaded script never scans for on its own - this re-runs that scan. If hbspt
-    // itself isn't there (e.g. blocked), stay on the fallback rather than claim success
-    // with nothing to show for it.
-    if (!win.hbspt?.meetings?.create) return
-    win.hbspt.meetings.create('.meetings-iframe-container')
-    embedded.value = true
+    // isn't ready yet (script tag present but still loading, on a fast nav right after an
+    // earlier mount added it), wait for its load event and retry once.
+    if (win.hbspt?.meetings?.create) {
+        win.hbspt.meetings.create('.meetings-iframe-container')
+        embedded.value = true
+        return
+    }
+    existing.addEventListener('load', loadEmbed, { once: true })
 }
-
-// stepCount is a rough proxy for progress, not a real step index or click count - the
-// embed's resize messages can fire more than once per click, or zero times per click (e.g.
-// a window resize) - so it rides as a property on the outcome event, not an event of its own.
-let booked = false
-let stepCount = 0
-let lastHeight: number | null = null
-let reported = false
 
 function handleMeetingMessage(event: MessageEvent) {
     if (event.origin !== meetingsOrigin) return
     const parsed = parseMeetingMessage(event.data)
 
     if (parsed.type === 'booked') {
-        if (booked) return
-        booked = true
+        if (!tracker.recordBooked()) return
         if (parsed.email) identify(parsed.email, { name: parsed.name ?? undefined })
-        capture('hubspot-meeting-booked', { position: props.position, step_count: stepCount })
+        capture('hubspot-meeting-booked', { position: props.position, step_count: tracker.stepCount })
         return
     }
 
-    if (parsed.type === 'resize' && parsed.height !== lastHeight) {
-        lastHeight = parsed.height
-        stepCount += 1
-    }
+    if (parsed.type === 'resize') tracker.recordResize(parsed.height)
 }
 
-// step 1 is the embed's own first render (email-entry screen), automatic on load - not
-// something the visitor did. > 1 means they got past it.
-//
-// Bypasses useCapture()/window.capture() here: PostHog batches captures and flushes the
-// batch on its own pagehide listener, registered well before this component ever mounts, so
-// a capture queued by ours (registered later) arrives after that flush already ran and is
-// stranded - transport: sendBeacon alone doesn't fix that, since it only changes how a
-// request is sent, not when; send_instantly skips the batch queue entirely.
+// Bypasses useCapture()'s normal call here only for the options argument, not the function
+// itself: any capture() call carrying an options object (this one, or none at all) already
+// skips PostHog's batch queue - only a call with an explicit _batchKey gets batched. What
+// send_instantly actually adds is preferSyncCompression: without it, compression can be
+// async and the page may close before that promise settles, dropping the request.
 function reportAbandonment() {
-    if (reported || booked || stepCount <= 1) return
-    reported = true
-    ;(window as EmbedWindow).posthog?.capture(
+    if (!tracker.recordAbandonment()) return
+    capture(
         'hubspot-meeting-abandoned',
-        { position: props.position, step_count: stepCount },
+        { position: props.position, step_count: tracker.stepCount },
         { transport: 'sendBeacon', send_instantly: true }
     )
 }
 
-// A bfcache restore (pageshow with persisted) resumes this exact JS state rather than
-// remounting, so a departure that already reported stays reportable if the visitor leaves
-// again without booking.
 function onPageshow(event: Event) {
-    if ((event as PageTransitionEvent).persisted) reported = false
+    if ((event as PageTransitionEvent).persisted) tracker.resumeFromBfcache()
 }
 
 function loadEmbedIfConsented() {

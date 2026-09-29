@@ -32,9 +32,9 @@
     window.addEventListener &&
             window.addEventListener('onpagehide' in self ? 'pagehide' : 'unload', emitPageLeave)
 
-    function capture (eventName, props) {
+    function capture (eventName, props, options) {
         if (window.posthog) {
-            posthog.capture(eventName, props);
+            posthog.capture(eventName, props, options);
         }
     }
 </script>
