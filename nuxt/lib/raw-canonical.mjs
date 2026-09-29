@@ -1,0 +1,31 @@
+// Maps a /raw/<path>.md request to the html page it is a copy of, for a canonical Link
+// header. Free of Nuxt imports so `node --test` runs it directly; the middleware in
+// nuxt/server/middleware/raw-canonical.ts only sets the header.
+//
+// @nuxt/content serves every page of a page-type collection a second time, as markdown at
+// /raw/<path>.md, and llms.txt links to those copies. The copies carry the same
+// `X-Robots-Tag: index, follow` as the html, so to a search engine every doc, post and
+// changelog entry has an indexable twin competing with it. Google honours
+// `Link: <url>; rel="canonical"` on non-html responses, which folds the twin into the page
+// while leaving the markdown readable for the agents llms.txt is for.
+
+// Anything that could end the <...> of the header value or start a new header.
+const UNSAFE = /[<>"\s]/
+
+/**
+ * @param {string} pathname the request path, e.g. /raw/docs/user/mcp.md
+ * @param {string} siteUrl e.g. https://flowfuse.com
+ * @returns {string | null} e.g. https://flowfuse.com/docs/user/mcp/, or null when the
+ *   path is not a raw markdown url
+ */
+export function rawMarkdownCanonical (pathname, siteUrl) {
+    const match = /^\/raw\/(.+)\.md$/.exec(pathname.split('?')[0])
+    if (!match || UNSAFE.test(match[1])) return null
+
+    // Same mapping as the route handler: a trailing /index is the section's own page.
+    let path = '/' + match[1]
+    if (path.endsWith('/index')) path = path.slice(0, -'/index'.length)
+
+    // Every page on the site ends in a slash (site.trailingSlash), so the canonical does too.
+    return `${siteUrl.replace(/\/$/, '')}${path}/`
+}
