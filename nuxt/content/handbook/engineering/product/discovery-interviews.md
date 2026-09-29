@@ -8,6 +8,10 @@ Product and engineering should talk to customers every week, in short conversati
 
 These interviews have a separate intention from the sales [Discovery Call](/handbook/sales/meetings/discovery/), which qualifies a deal. In an interview we only learn. We do not sell, and we do not promise features.
 
+| Cadence | Length | What we collect | Formats |
+| --- | --- | --- | --- |
+| At least two a week per product team | 5 to 30 minutes | A specific, recent story | The end of a sales call, or a dedicated call |
+
 ## What we aim for
 
 - **At least two interviews a week per product team.** At least one a week as the floor. A habit that runs every week is easier to keep than one that starts and stops.
@@ -33,9 +37,15 @@ We rotate who joins and who leads. The rest of the team learns from the recordin
 
 ## Two ways an interview happens
 
-### At the end of a sales call
+| | End of a sales call | Dedicated call |
+| --- | --- | --- |
+| Length | 5 to 20 minutes | 20 to 30 minutes |
+| Who's there | The customer, the rep and one of us | The customer and up to three of us |
+| How it starts | The rep spots a trigger and adds us to the call | The customer books our weekly slot, after an ask in the product, an email or our booking link |
+| Sales' part | Leave time at the end, hand over, then listen | Not needed |
+| Our part | One story in the time we get, then the rep hears what we learned | One story |
 
-5 to 20 minutes, with the customer, the rep and one of us.
+### At the end of a sales call
 
 The rep spots a trigger and adds us to the call. Calls to flag:
 
@@ -49,8 +59,6 @@ We keep this list current as our focus changes.
 The rep leaves time at the end, hands over, and then listens. For example: "Before we wrap up, my colleague from our product team would like a few minutes to hear about the last time you ran into this." We collect one story in the time we get, and afterwards the rep hears what we learned.
 
 ### A dedicated call
-
-20 to 30 minutes, with the customer and up to three of us. No rep is needed.
 
 We keep a standing weekly slot that customers book themselves, so nobody has to coordinate each interview. We recruit directly, with an ask in the product, an email, or our booking link. A rep can also point a customer our way: "Our product team talks to customers every week about how they work. Here's a link to book 20 minutes with them."
 
