@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // FlowFuse Expert, embedded in a page: a question box that opens the Expert conversation.
 //
-// The conversation itself is src/js/ai-expert-modal.js, the script the old /ai/ page used,
+// The conversation itself is nuxt/public/js/ai-expert-modal.js, the script the old /ai/ page used,
 // driving the modal that DocsExpertHost renders in the layout. The script listens for the
 // #tell-me-how-btn button and morphs this card (the .textarea-wrapper holding the
 // data-ff-expert-input textarea) into the modal. Keep those hooks as they are.

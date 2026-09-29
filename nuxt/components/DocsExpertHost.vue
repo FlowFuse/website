@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // The FlowFuse Expert conversation modal, rendered once for every docs page by the layout.
-// src/js/ai-expert-modal.js drives it (see nuxt/composables/useDocsExpert.ts). The element ids
+// nuxt/public/js/ai-expert-modal.js drives it (see nuxt/composables/useDocsExpert.ts). The element ids
 // and the classes that script selects on are load-bearing: keep them as they are.
 onMounted(() => {
     mountDocsExpert().catch(() => {})

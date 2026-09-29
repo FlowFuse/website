@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // "FlowFuse Expert", the same in the page's question box (FfExpertAsk) and in the header of
 // the conversation modal (DocsExpertHost). When the box morphs into the modal,
-// src/js/ai-expert-modal.js finds both by data-ff-expert-brand and flies the box's one up
+// nuxt/public/js/ai-expert-modal.js finds both by data-ff-expert-brand and flies the box's one up
 // into the modal header, so the two have to stay the same size.
 defineProps<{
     uid: string
