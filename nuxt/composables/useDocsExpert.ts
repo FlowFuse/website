@@ -1,6 +1,6 @@
 // FlowFuse Expert on the docs pages.
 //
-// The conversation is src/js/ai-expert-modal.js, shared with the Eleventy site. It binds to
+// The conversation is nuxt/public/js/ai-expert-modal.js, the script the Eleventy site used. It binds to
 // the modal that DocsExpertHost renders once in the layout, and exposes window.ffExpertOpen
 // so any button on the page can open it. The embedded question box (FfExpertAsk) needs no
 // call from here: the script listens for its button and prompt pills itself.
