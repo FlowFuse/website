@@ -15,11 +15,9 @@ This is a **FlowFuse Certified Node**. Unlike community nodes, which vary in qua
 
 ## Get the Certified Node in FlowFuse
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The Modbus package is not available by default. It is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
-
-</div></div>
+::
 
 ### Installation steps
 
@@ -33,11 +31,9 @@ The Modbus package is not available by default. It is part of the FlowFuse Edge 
 
 The Modbus nodes then appear in your palette, ready to drag onto the canvas.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 If your device or hosted instance was already running before Modbus was enabled for your team, it won't show the package in the Install tab search. Restart the instance or device first, then repeat the steps above.
-
-</div></div>
+::
 
 ## What is Modbus?
 
@@ -49,11 +45,9 @@ Modbus is one of the oldest and most widely supported industrial communication p
 
 Modbus-Client also offers TELNET and C701 modes for TCP-to-serial gateways.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Modbus now uses **client** for the device making requests and **server** for the device answering them. Older device manuals and tools use **master** and **slave** for the same two roles — a Modbus master is a client, a Modbus slave is a server. This package follows the newer terminology, so the FlowFuse instance is the client and the PLC, meter, or drive it polls is the server.
-
-</div></div>
+::
 
 Every Modbus device exposes its data as one of four addressable table types, and every read or write targets one of them:
 
@@ -64,21 +58,17 @@ Every Modbus device exposes its data as one of four addressable table types, and
 | Holding Registers | 3 | 6, 16 | Read/write, 16-bit | `4xxxx` / `40001+` | Setpoints, configuration, read/write process values |
 | Input Registers | 4 | — | Read-only, 16-bit | `3xxxx` / `30001+` | Read-only measurements — sensor readings |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 **Register addressing** Addresses in this package are raw, zero-based protocol addresses. Device manuals often number the same register differently. A manual that lists a holding register as `40001` (or `4x0001`, or `400001` on devices with more than 9,999 registers) is describing the register at address `0`. Other manuals number within the table starting at `1`, so their "register 1" is also address `0`. Check which convention your device's register map uses before entering an address — an off-by-one here is the most common cause of reading the wrong value, and an address one past the end of the table returns Illegal Data Address.
-
-</div></div>
+::
 
 A device is also identified by a **Unit ID** (also called station address, or slave ID in older documentation), which matters when several logical devices share one connection — for example several RTU devices on the same RS-485 bus, or several logical devices behind one TCP gateway.
 
 On a serial bus, valid device addresses are **1–247**. Address **0 is the broadcast address** — a write sent to unit 0 goes to every device on the bus and none of them reply, so a read addressed to unit 0 will always time out. Addresses 248–255 are reserved. Native Modbus TCP devices often ignore the unit ID altogether (`0`, `1`, and `255` are all common), but it matters as soon as a gateway sits in front of serial devices.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Modbus itself moves only raw bits and 16-bit words — the protocol carries no data-type information. A read returns an **array** of booleans (coils/discrete inputs) or **raw 16-bit register values, each `0`–`65535`,** (input/holding registers). Anything larger or more structured — 32-bit integers, floating-point values, scaled measurements — spans multiple registers: the device packs it across them, and you reconstruct it in your flow. See [Decoding register values](#decoding-register-values) for how to do this.
-
-</div></div>
+::
 
 ## Use case
 
@@ -119,11 +109,9 @@ Each node performs one Modbus operation and reuses the shared connection you con
 | Modbus-Server | Runs a buffer-backed Modbus TCP server inside Node-RED, so it responds to reads and writes from an external Modbus client — useful for testing and simulation. |
 | Modbus-Queue-Info | Reports (and can reset) the internal request queue depth for a connection, useful for spotting a device that can't keep up with the configured poll rate. |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 All nodes that share the same Modbus-Client connection share one underlying socket/serial port and are queued through it in order, so a device is never sent two requests at once. A busy queue (see Modbus-Queue-Info) usually means the poll rate is faster than the device can respond to.
-
-</div></div>
+::
 
 ## Configure a Modbus Client Connection
 
@@ -140,17 +128,13 @@ Every node in this package uses a **Modbus-Client** configuration node to commun
    - **Reconnect Timeout** — Default: `2000` ms
 5. Click **Done**, then **Deploy** the flow.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The connection is shared. Changing its parameters affects every node that uses it, and you must redeploy the flow for connection changes to take effect. To change the endpoint at runtime without redeploying, see [Modbus-Flex-Connector](#modbus-flex-connector).
+::
 
-</div></div>
-
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Keep host/IP addresses and serial port paths in FlowFuse Environment Variables (your instance's **Settings → Environment**) rather than hard-coding them in the connection, so the same flow can be promoted across instances that reach the device differently.
-
-</div></div>
+::
 
 ## Modbus-Read
 
@@ -170,11 +154,9 @@ Each poll emits a message carrying the raw values on `msg.payload` (an array of 
 [Modbus-Read] (polls every 1000ms)  →  [function / buffer-parser]  →  [Debug]
 ```
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Set the poll rate no faster than the device can reliably answer. A rate that outpaces the device causes requests to back up in the queue, check [Modbus-Queue-Info](#modbus-queue-info) if reads start arriving late or with gaps.
-
-</div></div>
+::
 
 ## Modbus-Getter and Modbus-Flex-Getter
 
@@ -194,11 +176,9 @@ Modbus-Flex-Sequencer reads several configured ranges in order through a single 
 - **Modbus-Write** — the target table (Coils or Holding Registers), address, and quantity are fixed on the node; the value(s) to write come from the incoming message. Uses write function codes FC 5/6 (single coil/register) and FC 15/16 (multiple).
 - **Modbus-Flex-Write** — the table, address, and value(s) are all taken from the incoming message, so a single node can write to different coils/registers depending on what triggers it.
 
-<div class="ff-callout ff-callout--warning"><p class="ff-callout__title">Warning</p><div class="ff-callout__content">
-
+::warning
 Writes to production equipment change real-world state. Gate write nodes behind validation or an operator confirmation step before deploying to a live instance.
-
-</div></div>
+::
 
 ## Modbus-Flex-Fc
 
@@ -232,21 +212,17 @@ There are a few common approaches:
 - **A buffer-parser node** — a dedicated parsing node (such as `node-red-contrib-buffer-parser`) accepts the values array directly, so you don't have to deal with the Buffer question at all. It lets you declare each field's type and endianness in configuration rather than in code, which is convenient when a single response contains many differently-typed fields.
 - **The package's built-in IO mapping** — a **Modbus-IO-Config** node holds a JSON file that maps IEC-style addresses (`%QW0`, `%IX8.0`, and so on) to names, where the first character of each name selects the data type (`i` integer, `w` word, `u` unsigned, `b` boolean, `f`/`r` float, and so on). A read node can attach that mapping to its output, and **Modbus-Response-Filter** narrows the result down to the named fields a downstream node needs. This is convenient when your address list originates from a PLC export.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Choose the data type and word order that matches how the device packs its data, which is usually documented in the device's Modbus register map. If a decoded value looks wildly wrong (for example a temperature reading in the millions), the most common cause is a word-order mismatch on a multi-register value. Try the other byte/word order before assuming the device or wiring is at fault.
-
-</div></div>
+::
 
 ## Modbus-Response
 
 The Modbus-Response node displays the status and content of a Modbus response in the editor. Placed downstream of a read node, it is an inspection/diagnostic aid that shows what came back, which is helpful while building and debugging a flow.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Modbus-Response is for **display and inspection** — it does not convert raw registers into typed values. To turn raw registers into integers, floats, or scaled measurements, decode them in your flow as described in [Decoding register values](#decoding-register-values).
-
-</div></div>
+::
 
 ## Modbus-Server
 
@@ -257,11 +233,9 @@ This is primarily useful for:
 - **Testing flows without hardware** — stand up a server so a Modbus-Read/Write flow can be built and verified before real hardware is available.
 - **Local integration testing** — exercise read and write paths end to end against a server running in the same instance.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The in-package Modbus-Server is a **buffer-backed server for demos and tests**. It is not intended to replicate a specific device's complete register-map behaviour. For more elaborate simulation needs, a dedicated Modbus simulation tool is a better fit.
-
-</div></div>
+::
 
 ## Modbus-Queue-Info
 
