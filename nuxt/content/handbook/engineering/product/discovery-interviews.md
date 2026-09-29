@@ -42,7 +42,7 @@ We rotate who joins and who leads. The rest of the team learns from the recordin
 | Length | 5 to 20 minutes | 20 to 30 minutes |
 | Who's there | The customer, the rep and one of us | The customer and up to three of us |
 | How it starts | The rep spots a trigger and adds us to the call | The customer books our weekly slot, after an ask in the product, an email or our booking link |
-| Sales' part | Leave time at the end, hand over, then listen | Not needed |
+| Sales' part | Agree the order of the call with us beforehand, hand over, then listen | Not needed |
 | Our part | One story in the time we get, then the rep hears what we learned | One story |
 
 ### At the end of a sales call
@@ -56,7 +56,7 @@ The rep spots a trigger and adds us to the call. Calls to flag:
 
 We keep this list current as our focus changes.
 
-The rep leaves time at the end, hands over, and then listens. For example: "Before we wrap up, my colleague from our product team would like a few minutes to hear about the last time you ran into this." We collect one story in the time we get, and afterwards the rep hears what we learned.
+Ahead of the call, the rep and whoever joins from product or engineering agree how to run it, including when to hand over. The rep then hands over and listens. For example: "Before we wrap up, my colleague from our product team would like a few minutes to hear about the last time you ran into this." We collect one story in the time we get, and afterwards the rep hears what we learned.
 
 ### A dedicated call
 
