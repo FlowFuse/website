@@ -4,7 +4,7 @@ title: "Continuous Discovery Interviews"
 
 # Continuous Discovery Interviews
 
-Product and engineering should talk to customers every week, in short conversations about at least one real, recent experience to figure out answers to specific questions or hyptheses. This page covers why we do it, the two ways an interview happens, and how to run one. It is the practice behind [Gathering evidence](./methodology.md#gathering-evidence).
+Product and engineering should talk to customers every week, in short conversations about at least one real, recent experience to figure out answers to specific questions or hypotheses. This page covers why we do it, the two ways an interview happens, and how to run one. It is the practice behind [Gathering evidence](./methodology.md#gathering-evidence).
 
 These interviews have a separate intention from the sales [Discovery Call](/handbook/sales/meetings/discovery/), which qualifies a deal. In an interview we only learn. We do not sell, and we do not promise features.
 
@@ -16,20 +16,20 @@ These interviews have a separate intention from the sales [Discovery Call](/hand
 
 ## Why it helps
 
-For product and engineering, stories show what customers do rather than what they say they would do. Regular conversations surface needs nobody thought to ask about, and when our focus changes, the next interviews are already booked.
+For product and engineering, stories show what customers do rather than what they say they would do. Regular conversations surface needs nobody thought to ask about, and keep our picture of customers current, which goes out of date the longer we go without talking to them. When our focus changes, the next interviews are already booked.
 
-For sales, a feature request usually arrives without the reason behind it. The story shows what the customer is trying to get done, and sometimes that the product already covers it, which can move a deal forward. Customers tend to enjoy these conversations, since they are about their own work.
+For sales, a feature request usually arrives without the reason behind it. The story shows what the customer is trying to get done, and sometimes that the product already covers it, which can move a deal forward. Different customers often ask for different features that share one need, so the story can point to one solution that covers several requests. Customers tend to enjoy these conversations, since they are about their own work.
 
 ## Who takes part
 
-Recommended that product teams interview together. Each hears different things in the same story, and no one person becomes the only voice of the customer. So engineers join interviews as well as product.
+Product teams interview together. Each person hears different things in the same story, and no one person becomes the only voice of the customer. So engineers join interviews as well as product.
 
 When we join in on sales calls for discovery we should keep the number of people from FlowFuse small, so the call stays a conversation and a sales call stays about the customer and their potential deal first:
 
 - **End of a sales call:** one person from product or engineering joins, next to the rep.
-- **Dedicated call:** at most three of us. One leads the interview, the other listens and asks follow-up questions.
+- **Dedicated call:** at most three of us. One leads the interview, the others listen and ask follow-up questions.
 
-We rotate who joins and who leads. The rest of the team learns from the recording and the snapshot.
+We rotate who joins and who leads. The rest of the team learns from the recording.
 
 ## Two ways an interview happens
 
@@ -50,7 +50,7 @@ The rep leaves time at the end, hands over, and then listens. For example: "Befo
 
 ### A dedicated call
 
-20 to 30 minutes, with the customer and one or two of us. No rep is needed.
+20 to 30 minutes, with the customer and up to three of us. No rep is needed.
 
 We keep a standing weekly slot that customers book themselves, so nobody has to coordinate each interview. We recruit directly, with an ask in the product, an email, or our booking link. A rep can also point a customer our way: "Our product team talks to customers every week about how they work. Here's a link to book 20 minutes with them."
 
