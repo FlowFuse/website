@@ -17,9 +17,16 @@ const identify = useIdentify()
 const embedded = ref(false)
 const tracker = createMeetingTracker()
 
+// HubSpot's own meetings-booked report can break bookings down by utm_source/utm_medium/
+// campaign, but has no idea which page or placement an embed sits on unless told - hence
+// these, derived rather than a prop, so they can't drift from where the embed actually is.
 const meetingsSrc = (() => {
     const url = new URL(props.dataSrc ?? site.meetings.salesRoundRobin)
     url.searchParams.set('embed', 'true')
+    url.searchParams.set('utm_source', 'website')
+    url.searchParams.set('utm_medium', 'embedded_calendar')
+    const pageSlug = useRoute().path.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'home'
+    url.searchParams.set('utm_campaign', `${pageSlug}-${props.position}`)
     return url.toString()
 })()
 const meetingsOrigin = new URL(meetingsSrc).origin
