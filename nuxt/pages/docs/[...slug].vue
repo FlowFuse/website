@@ -73,11 +73,12 @@ const breadcrumbItems = computed(() => {
 // queryCollectionItemSurroundings, which reads in collection order and would disagree with
 // the nav on every page. The group name rides along as the card's description, because the
 // sequence runs straight through the manual and the last page of one group leads into the
-// first of the next.
+// first of the next. Nav paths carry no trailing slash, so it is added for the link, as
+// the sidebar and breadcrumbs do.
 const surround = computed(() => {
     const [previous, next] = findDocsSurround(navGroups.value ?? [], route.path)
     return [previous, next].map(entry => entry && ({
-        path: entry.path,
+        path: withTrailingSlash(entry.path),
         title: entry.title,
         description: entry.group,
     }))
