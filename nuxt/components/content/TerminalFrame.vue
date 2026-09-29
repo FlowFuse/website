@@ -6,7 +6,18 @@
             <span class="ff-terminal-frame__dot ff-terminal-frame__dot--expand" />
         </div>
         <div class="ff-terminal-frame__screen">
-            <img :src="src" :alt="alt" loading="lazy">
+            <video
+                v-if="src.endsWith('.webm')"
+                autoplay
+                loop
+                muted
+                playsinline
+                :aria-label="alt"
+                :width="videoWidth"
+                :height="videoHeight"
+                preload="none"
+            ><source :src="src" type="video/webm" /></video>
+            <img v-else :src="src" :alt="alt" loading="lazy">
         </div>
     </div>
 </template>
@@ -15,7 +26,7 @@
 /*
     MDC counterpart of the `terminalFrame` 11ty shortcode. Blog and changelog posts
     render through @nuxt/content, which does not process Nunjucks, so a shortcode
-    used there ships as literal text. Both renderers link the same compiled
+    used there ships as literal text. Every page links the same compiled
     /css/style.css, so .ff-terminal-frame gives identical chrome either way.
 
     A plain <img> rather than <NuxtImg>: the image CDN re-encodes what it is given
@@ -27,6 +38,8 @@ withDefaults(defineProps<{
     src: string
     alt?: string
     width?: number
+    videoWidth?: number
+    videoHeight?: number
 }>(), {
     alt: '',
     width: 1000,

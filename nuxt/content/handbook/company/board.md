@@ -40,6 +40,8 @@ that all participants of the meeting have access to the presentation slides.
 Confirm attendance of all participants of the invite, or their respective
 representatives prior to the scheduled meeting.
 
+For Cota Capital, keep Allison Chapman, the venture firm's administrator, in the loop on all board meetings and board requests.
+
 ## Board Meeting Attendees
 
 Each quarterly board meeting should include the following representatives. Before sending invites,
@@ -226,12 +228,12 @@ under the correct year.
 
 ## Monthly Investor Updates
 
-FlowFuse investors get a monthly update sent to them through Carta, which
-contains the KPIs we track and editorialized information from the CEO on company
-performance. For transparency, the company includes financial performance data
-from QuickBooks, and reports on 3 key metrics: ARR, Burn, and Runway.
+FlowFuse investors get a monthly update sent by email, which contains the KPIs
+we track and editorialized information from the CEO on company performance.
+For transparency, the company includes financial performance data from
+QuickBooks, and reports on 3 key metrics: ARR, Burn, and Runway.
 
-Additional metrics available to report on:
+Additional metrics available to report on and can be found [here](https://docs.google.com/spreadsheets/d/1Ur6GUTlzMPZbWsQGcrsn-OSY1zuFwm54u0dkwXeTtoI/edit?gid=1094745051#gid=1094745051):
 - State of the Union metrics
 - ARR numbers broken down by stage
 - Funnel metrics on pipeline 
@@ -239,10 +241,27 @@ Additional metrics available to report on:
 - Product metrics
 You can find the KPIs updated here on a monthly basis (LINK TBC)
 
-The subject is structured as: `FlowFuse <Month> <Year> Update`, for example:
-`FlowFuse May 2025 Update`.
+The subject is structured as: `FlowFuse investor update — <Month> <Year>`, for example:
+`FlowFuse investor update — May 2025`.
 
-This update should be sent on the 10th of every month, unless there is a delay in the financial review with the controller.
+This update is sent once the month's financials have closed.
+
+KPIs come from the "Ops Plan FlowFuse" Google Sheet, actuals rows, in the
+column for the closed month:
+- ARR = Total cARR = Self-Service ARR + Sales-Led ARR
+- Burn 3m AVG = the 3mo AVG Burn row for that month
+- Runway until = Cash at Hand / 3m AVG burn, as the sheet computes it
+
+The 3-month average can be distorted by a single cash-positive or cash-heavy
+month. When it is, call out the monthly components (not just the 3m average)
+in the KPI line.
+
+If a previously reported ARR figure has since been restated (e.g. after the
+books close), say so explicitly in the update rather than leaving investors
+to reconcile two different numbers for the same month.
+
+Full-year and quarterly financials are available on request by replying to
+the update.
 
 The template to use:
 
@@ -259,6 +278,8 @@ KPIs (Per end of May)
 [Topic one]
 [Topic two]
 [Topic three]
+
+Full-year and quarterly financials are available on request — just reply to this email.
 
 Best,
 

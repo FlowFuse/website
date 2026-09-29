@@ -63,11 +63,11 @@ and import the CSV just downloaded from HubSpot into the "All Deals" sheet.
 "File" -> "Import" -> "Upload" -> "Replace Current Sheet".
 
 Now "All Deals" have been listed, that adds all the deal closers to the "Team"
-tab. Fill out all the cells for team members with their yearly quota, etc.
-
-You will need to visually inspect that the names to ensure that the mapping 
-from team member to "Deal Closers" is correct. This may be a little bit more
-difficult in months where not everyone closes a deal.
+tab. Column A (Name) should be automatically updated from the "All Deals" sheet. 
+You can fill in Column B to D if you have the information at hand. 
+Column E (Commission %) should be automatically filled in from "Check" sheet. Please double check if this rate has changed in the recent months before proceeding. 
+Column F (Withholdings) should be filled in only if we find deals that haven't been paid by the customer. Or else, enter 0. 
+Column G (Deal Closers apply) should match the information from Column A for all team members outside of the manager. For the manager, fill in the cell with the manager's name and all the other team members that have closed a deal in that current month. This may be a little bit more difficult in months where not everyone closes a deal.
 
 You will also need to update the template if any new sales folks have started
 in the last month.
@@ -130,6 +130,12 @@ If the employee agrees to the commission, process the payment in Deel as USD pay
 Sign into Deel and browse to the profile of the commission receiver. For contractors
 the commission is a **Payment Adjustment**, and mark it as a **commission** payment not as a bonus.
 For EOR team members, you'll need to add an item under "Payments and Submissions" manually.
+For PEO team members, include them in the next regular payroll cycle. 
+1. Go to Payroll in the left navigation menu and select Payroll cycles.
+2. Under the Active tab, locate the relevant pay period and click Review on the cycle row. If the most active payroll is already completed, go to the upcoming payroll cycle. 
+3. In the employee pay review table, find the employee, click the three dots, and click "add item"
+4. Pick commission from the drop-down and enter the amount. 
+5. Complete the review steps and select Submit Report before the cut-off date (5 days prior to payday).
 
 In both cases be explicit about this being a bonus or commission for achievements for a certain 
 time period and what the achievement was.

@@ -1,0 +1,7 @@
+# Listing metadata only. The page itself is pages/use-cases/mes.vue - this one
+# had a real markup body in src/use-cases/mes.njk, so it did not lift into data the way the
+# two operational use-cases did. Kept here so /use-cases/ still builds its cards from
+# one place rather than a hand-maintained list.
+slug: mes
+title: "FlowFuse for MES"
+problem: "Build exactly the MES your operation needs, compose modular execution, tracking, and reporting flows without a monolithic vendor platform."

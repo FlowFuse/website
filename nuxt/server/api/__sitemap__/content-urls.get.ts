@@ -58,20 +58,27 @@ const CONTENT_SOURCES: ContentSource[] = [
         filter: entry => entry.layout !== 'redirect',
     },
     { collection: 'handbook', fileRoot: 'nuxt/content' },
-    { collection: 'changelog', fileRoot: 'src' },
+    {
+        collection: 'blueprints',
+        // Already git-derived once, at sync time, against the blueprint-library repo this
+        // content came from - not this repo's history.
+        lastmod: entry => stringField(entry, 'updated'),
+        images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
+    },
+    { collection: 'changelog', fileRoot: 'nuxt/content' },
     {
         collection: 'blog',
-        fileRoot: 'src',
+        fileRoot: 'nuxt/content',
         // Prefer the author-set `lastUpdated` frontmatter field - the same one the blog
         // page itself uses for its "Updated" date and JSON-LD dateModified - over the git
         // history date, so an editorial update date isn't silently overridden by whatever
         // last touched the file (a repo-wide lint fix, a typo pass elsewhere, etc).
-        lastmod: entry => stringField(entry, 'lastUpdated') ?? getGitLastmod(REPO_ROOT, `src/${entry.stem}.md`),
+        lastmod: entry => stringField(entry, 'lastUpdated') ?? getGitLastmod(REPO_ROOT, `nuxt/content/${entry.stem}.md`),
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
     {
         collection: 'stories',
-        fileRoot: 'src',
+        fileRoot: 'nuxt/content',
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
     {

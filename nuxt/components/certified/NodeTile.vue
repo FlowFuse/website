@@ -2,11 +2,11 @@
 /*
     Certified connector tile, shared by the /pricing/ and /integrations/ showcases.
 
-    `href` is the node's documentation page, which lives under /node-red/ and is
-    served by Eleventy, not by Nuxt. That is why this is a plain <a> and not a
-    <NuxtLink>: vue-router would resolve the path against the Nuxt route table,
-    find nothing, and render the Nuxt 404 instead of requesting the page. A tile
-    with no target stays a <div> rather than becoming a link that goes nowhere.
+    `href` is the node's documentation page (certifiedHref in utils/integrations-ui.ts):
+    the publisher's docs URL, which can be on another site, or else the collection
+    index under /docs/flowfuse-nodes/. That is why this is a plain <a> and not a
+    <NuxtLink>. A tile with no target stays a <div> rather than becoming a link that
+    goes nowhere.
 
     Callers attach their own click handler (for analytics); with a single root
     element it lands on the tile itself.

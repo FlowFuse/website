@@ -1,5 +1,0 @@
-[
-    "Node-RED’s <strong>visual programming</strong> makes it possible for non-developers to build real applications.",
-    "A <strong>large library of nodes and flows</strong> make it trivial to connect different types of analog and digital services, including industrial protocols (OPC-UA, Modbus, Siemens S7), databases, weather services, etc.",
-    "Node-RED dashboard makes it <strong>easy to visualize data in dashboards</strong>. Unlike other dashboards, <a href=\"/blog/2023/03/comparinig-dashboards\" target=\"_blank\">Node-RED dashboards</a> can include action and events that respond to the data"
-]

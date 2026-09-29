@@ -36,16 +36,8 @@ const svg = computed(() => buildDiagramSvg({ layout: 'flow', align: props.align,
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-/* On desktop the guide pages drop the right-hand TOC, so diagrams break out of
-   the text column into that reclaimed width (~50% larger). Text stays narrow. */
-@media (min-width: 1024px) {
-    .ag-diagram {
-        max-width: none;
-        margin-left: -24px;
-        margin-right: -290px;
-    }
-}
-@media (min-width: 1536px) {
-    .ag-diagram { margin-right: -300px; }
-}
+/* Deliberately no desktop breakout. Besides colliding with the docs TOC, this rule
+   was unscoped and keyed on a class ArchDiagram also uses, so whether an arch diagram
+   widened depended on whether a flow diagram happened to be on the same page (only
+   then was this stylesheet injected). Both now follow the content column. */
 </style>

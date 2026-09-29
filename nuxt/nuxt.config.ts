@@ -3,9 +3,11 @@ import { join, basename } from 'node:path'
 import { parse as parseYaml } from 'yaml'
 import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
+import remarkSiteLinks from './utils/remark-site-links'
 import { BLOG_TAGS } from './composables/useBlogList'
 import { redirects } from './redirects'
-import site from '../src/_data/site.json'
+import { sitemapProblems } from './lib/sitemap-coverage.mjs'
+import site from './data/site.json'
 
 // Collect all handbook routes from content files for SSG prerendering
 function collectHandbookRoutes(dir: string, basePath: string): string[] {
@@ -40,20 +42,49 @@ function collectChangelogRoutes(dir: string, basePath: string): { routes: string
     return { routes, entryCount }
 }
 
-// The Application Guide pages are markdown (`applicationGuideDoc`, a `page` collection).
-// Their routes are largely discoverable by @nuxt/content, but we keep an explicit prerender
-// list for the section index + each page. File names are <slug>.md and match the `slug` field.
-function collectApplicationGuideRoutes(dir: string): string[] {
-    const routes = ['/application-guide/']
-    for (const guide of readdirSync(dir)) {
-        const guideDir = join(dir, guide)
-        if (!statSync(guideDir).isDirectory()) continue
-        for (const file of readdirSync(guideDir)) {
-            if (!file.endsWith('.md')) continue
-            routes.push(`/application-guide/${guide}/${basename(file, '.md').replace(/^\d+-/, '')}/`)
+// Webinars are one .md per file under nuxt/content/webinars/<year>/, sourced by the
+// `webinars` collection, so their routes come from the tree rather than from a field.
+//
+// `<slug>/index.md` is the directory's own page, not a page called "index". One webinar is
+// authored that way (2025/simplifying-opc-ua), because it shipped a flow export alongside
+// its markdown, and naming that route wrong is a prerender 404 rather than a missing page.
+//
+// A year directory contributes no route of its own (there is no /webinars/2025/ page),
+// while a webinar directory holding index.md does.
+function collectWebinarRoutes(dir: string, basePath: string): string[] {
+    const routes: string[] = []
+    for (const file of readdirSync(dir)) {
+        const fullPath = join(dir, file)
+        if (statSync(fullPath).isDirectory()) {
+            routes.push(...collectWebinarRoutes(fullPath, `${basePath}/${file}`))
+        } else if (file.endsWith('.md')) {
+            const slug = basename(file, '.md')
+            routes.push(slug === 'index' ? `${basePath}/` : `${basePath}/${slug}/`)
         }
     }
     return routes
+}
+
+// A data collection whose every entry is a page, routed by its `slug` field.
+function collectSlugRoutes (dir: string, basePath: string): string[] {
+    return readEntries(dir).map(entry => `${basePath}/${entry.slug}/`)
+}
+
+function readEntries (dir: string): Array<Record<string, any>> {
+    return readdirSync(dir)
+        .filter(file => file.endsWith('.yml'))
+        .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
+}
+
+// The two operational use-cases render through pages/use-cases/[slug].vue, so their
+// routes are not discoverable from the page tree. They are the entries carrying `values:`;
+// the rest of the collection is listing metadata for pages that have their own .vue file.
+function collectUseCaseRoutes (dir: string): string[] {
+    return readdirSync(dir)
+        .filter(file => file.endsWith('.yml'))
+        .map(file => parseYaml(readFileSync(join(dir, file), 'utf8')))
+        .filter(entry => Array.isArray(entry.values) && entry.values.length)
+        .map(entry => `/use-cases/${entry.slug}/`)
 }
 
 // The product tier pages (/product/[tier]/) are a `data` collection (see content.config.ts),
@@ -70,8 +101,8 @@ function collectProductRoutes (dir: string): string[] {
     return routes
 }
 
-// Same idea as collectApplicationGuideRoutes above, for customer stories (flat
-// src/customer-stories/ dir, see content.config.ts).
+// Same idea as collectProductRoutes above, for customer stories (flat
+// nuxt/content/customer-stories/ dir, see content.config.ts).
 function collectStoryRoutes(dir: string): string[] {
     const routes = ['/customer-stories/']
     for (const file of readdirSync(dir)) {
@@ -105,7 +136,7 @@ function collectBlogFiles(dir: string, basePath: string): Array<{ route: string,
 // `authors` values that mean "no individual author" - they have no data file by design.
 const ORG_AUTHOR_SLUGS = new Set(['-', 'FlowFuse', 'flowfuse', 'flowfuseteam'])
 
-// Author pages are rendered by pages/blog/author/[slug].vue from src/_data/{team,guests}
+// Author pages are rendered by pages/blog/author/[slug].vue from nuxt/data/{team,guests}
 // rather than from an @nuxt/content collection, so neither prerendering nor the sitemap
 // can discover them - enumerate the authors who both have a data file and a published post.
 function collectAuthorRoutes(blogFiles: Array<{ authors: string[] }>, dataDirs: string[]): string[] {
@@ -115,7 +146,7 @@ function collectAuthorRoutes(blogFiles: Array<{ authors: string[] }>, dataDirs: 
     // Anything left is either a former team member or a typo - surface it in the build log.
     const missing = [...withPosts].filter(slug => !known.has(slug) && !ORG_AUTHOR_SLUGS.has(slug)).sort()
     if (missing.length) {
-        console.warn(`[blog] ${missing.length} author slug(s) in blog frontmatter have no data file in src/_data/{team,guests}; these posts fall back to the "FlowFuse" byline and get no author page: ${missing.join(', ')}`)
+        console.warn(`[blog] ${missing.length} author slug(s) in blog frontmatter have no data file in nuxt/data/{team,guests}; these posts fall back to the "FlowFuse" byline and get no author page: ${missing.join(', ')}`)
     }
 
     return [...withPosts].filter(slug => known.has(slug)).sort().map(slug => `/blog/author/${slug}/`)
@@ -126,19 +157,22 @@ function paginatedListingRoutes(basePath: string, entryCount: number): string[] 
     return [`${basePath}/`, ...Array.from({ length: pageCount - 1 }, (_, i) => `${basePath}/${i + 2}/`)]
 }
 
-const blogFiles = collectBlogFiles(join(__dirname, '../src/blog'), '/blog')
-const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, '../src/_data/team'), join(__dirname, '../src/_data/guests')])
+const blogFiles = collectBlogFiles(join(__dirname, 'content/blog'), '/blog')
+const blogAuthorRoutes = collectAuthorRoutes(blogFiles, [join(__dirname, 'data/team'), join(__dirname, 'data/guests')])
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', 'nuxt-llms'],
+    modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-studio', '@nuxt/image', './modules/docs-source', './modules/blueprints-source', 'nuxt-llms'],
 
-    // Captured at build time (Netlify sets CONTEXT during the build, not necessarily
-    // in the deployed Function's runtime), then baked into the server bundle via
-    // runtimeConfig so analytics.ts doesn't depend on a process.env read at request time.
+    // Captured at build time (Netlify sets CONTEXT during the build, but passes only URL,
+    // SITE_NAME and SITE_ID to the deployed Function at runtime), then baked in via
+    // runtimeConfig so nothing depends on a process.env read at request time. Under `public`
+    // so the blog's scheduled-post check reads the same value everywhere it runs.
     runtimeConfig: {
-        isProductionContext: process.env.CONTEXT === 'production'
+        public: {
+            isProductionContext: process.env.CONTEXT === 'production'
+        }
     },
 
     css: ['~/assets/css/theme.css'],
@@ -148,6 +182,23 @@ export default defineNuxtConfig({
     // so it never fetches font files at build time (which exhausts Netlify's memory).
     fonts: { providers: { google: false, bunny: false, fontshare: false, adobe: false } },
 
+    // Scans .vue/.md/.yml/etc for literal icon names (i-heroicons-x, i-lucide-x) so they're
+    // pre-bundled client-side instead of falling back to a live Iconify API call during
+    // prerender - the actual cause of the "[Icon] failed to load icon" warnings.
+    //
+    // globInclude repeats the scanner's own default (**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml})
+    // and adds a pattern for dotfiles: glob's `*` never matches a leading dot, so
+    // nuxt/content/handbook/**/.navigation.yml (where each department's nav icon lives) is
+    // otherwise invisible to the scan - those icons kept warning even with scan on.
+    icon: {
+        clientBundle: { scan: { globInclude: ['**/*.{vue,jsx,tsx,md,mdc,mdx,yml,yaml}', '**/.*.{yml,yaml}'] } },
+        // Eight glyphs the landing pages use have no Heroicons equivalent: the UNS mark, the
+        // layered cube, the pin pair, pulse, snowflake, target-view and the diagonal arrows.
+        // As a collection they reach <UIcon> by name like any other icon, so the .yml content
+        // names them the same way it names a Heroicon and no resolver component is needed.
+        customCollections: [{ prefix: 'ff', dir: join(__dirname, 'assets/icons') }],
+    },
+
     site: {
         url: site.baseURL,
         name: 'FlowFuse',
@@ -156,10 +207,8 @@ export default defineNuxtConfig({
         trailingSlash: true,
     },
 
-    // Only covers content already served by Nuxt. The handbook is deliberately excluded
-    // (internal company content, not product documentation) - see README.md. Everything
-    // still on the legacy Eleventy site (customer-stories, use-cases, platform, etc.) isn't
-    // visible to @nuxt/content, so it's absent here too until those pages are migrated.
+    // Covers the @nuxt/content collections. The handbook is deliberately excluded
+    // (internal company content, not product documentation) - see README.md.
     llms: {
         domain: site.baseURL,
         title: 'FlowFuse',
@@ -168,10 +217,6 @@ export default defineNuxtConfig({
             title: 'FlowFuse - Full Documentation',
             description: 'Complete FlowFuse documentation, blog, changelog, and resources in a single markdown document.',
         },
-        notes: [
-            'This file only covers pages served by the Nuxt frontend. Some sections of flowfuse.com are still served by a legacy Eleventy site not represented here.',
-        ],
-
         // /raw/<path>.md, the per-page markdown endpoint the links below point at, is served
         // by @nuxt/content's own llms feature rather than by nuxt-llms, and it searches every
         // page-type collection by default. That included the handbook, so the exclusion above
@@ -216,7 +261,7 @@ export default defineNuxtConfig({
                     { title: 'Home', href: `${site.baseURL}/`, description: 'FlowFuse platform overview' },
                     { title: 'Pricing', href: `${site.baseURL}/pricing/`, description: 'Plans and pricing information' },
                     { title: 'Integrations', href: `${site.baseURL}/integrations/`, description: 'Supported integrations and connectors' },
-                    { title: 'Application Guide', href: `${site.baseURL}/application-guide/`, description: 'Patterns for building FlowFuse applications' },
+                    { title: 'Application Guide', href: `${site.baseURL}/docs/application-guide/`, description: 'Patterns for building FlowFuse applications' },
                     { title: 'Create an account', href: `${site.appURL}/account/create`, description: 'Start a free trial' },
                     { title: 'Terms of Service', href: `${site.baseURL}/terms/` },
                     { title: 'Privacy Policy', href: `${site.baseURL}/privacy-policy/` },
@@ -253,7 +298,34 @@ export default defineNuxtConfig({
             // field on the collections instead.
             '/api/__sitemap__/content-urls',
         ],
-        urls: blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+        urls: [
+            ...blogAuthorRoutes.map(loc => ({ loc, priority: 0.6 })),
+            // /vs/<slug>/ is one [slug].vue over a `data` collection, so the module's
+            // static-route discovery cannot see it and content-urls.get.ts cannot either
+            // (it keys on `path`, which a data collection has no equivalent of), so without
+            // this the three pages are missing from the sitemap.
+            ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs').map(loc => ({ loc })),
+            // /industries/<slug>/ is one [slug].vue over a `data` collection, so the
+            // module's static-route discovery cannot see it, and content-urls.get.ts cannot
+            // either (it keys on `path`, which a data collection has no equivalent of).
+            // Without this the seven pages are missing from the sitemap.
+            // /industries/automotive/ has its own .vue file, so that one is discovered normally.
+            ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries').map(loc => ({ loc })),
+            // /landing/<slug>/ is one [slug].vue over a `data` collection, so the module's
+            // static-route discovery cannot see it, and content-urls.get.ts cannot either
+            // (it keys on `path`, which a data collection has no equivalent of). Without
+            // this they are missing from the sitemap. `skipIndex` entries stay out, as they
+            // are noindex.
+            ...readEntries(join(__dirname, 'content/landing'))
+                .filter(entry => !entry.skipIndex)
+                .map(entry => ({ loc: `/landing/${entry.slug}/` })),
+            // The two operational use-cases render through pages/use-cases/[slug].vue over a
+            // `data` collection, so the module's static-route discovery cannot see them, and
+            // content-urls.get.ts cannot either (it keys on `path`, which a data collection
+            // has no equivalent of). Without this they are missing from the sitemap. The six
+            // architecture pages have their own .vue files and are discovered normally.
+            ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')).map(loc => ({ loc })),
+        ],
         exclude: ['/_studio/**', '/api/**'],
     },
 
@@ -262,15 +334,14 @@ export default defineNuxtConfig({
             { userAgent: ['*'], allow: ['/'] },
             { userAgent: ['Algolia Crawler'], allow: ['/'] },
         ],
-        // sitemap.xml covers Nuxt-native pages; sitemap-legacy.xml (generated by 11ty,
-        // served as a static file from nuxt/public/) covers everything still on 11ty.
-        sitemap: [`${site.baseURL}/sitemap.xml`, `${site.baseURL}/sitemap-legacy.xml`],
+        sitemap: [`${site.baseURL}/sitemap.xml`],
     },
 
     linkChecker: {
         failOnError: true,
-        // trailing-slash: 11ty pages use trailing slashes intentionally
-        // no-error-response: links to 11ty pages return 404 in the Nuxt-only static output
+        // trailing-slash: every URL on this site ends in one, by design (site.trailingSlash)
+        // no-error-response: skipped while 11ty pages were absent from this build's output;
+        // not re-checked since they all moved to Nuxt
         skipInspections: ['trailing-slash', 'no-error-response'],
         // By default the module re-inspects every prerendered page once the build finishes,
         // and that pass has grown with the page count: 4m34s over 251 routes on 28 Jul,
@@ -313,11 +384,26 @@ export default defineNuxtConfig({
                 { name: 'theme-color', content: '#ffffff' },
             ],
             script: [
-                // Explicit nav-click tracking. Source is src/js/nav-tracking.js;
-                // prod:eleventy-nuxt copies the 11ty output into nuxt/public/.
+                // Studio's GitHub sign-in comes back to /__nuxt_studio/auth/github with
+                // ?code=&iss=&state=, and that handler finishes by redirecting to the page you
+                // asked to edit. This host appends the request's own query string to every
+                // relative redirect Location (/_studio?zzz=1 already arrives at
+                // /__nuxt_studio/auth/github?zzz=1), so those three land on the page URL too.
+                // Sign-in has completed by then and nothing reads them, but they leave a spent
+                // authorization code in the URL bar and in browser history, and `state` is
+                // unique per sign-in, so every landing also reports its own $current_url to
+                // PostHog (init has no property denylist) instead of the page's real URL.
+                //
+                // Inline and in <head> on purpose: it has to run before the PostHog snippet,
+                // which is appended at the end of <body> (nuxt/server/plugins/analytics.ts),
+                // and before Nuxt boots so the router starts from the cleaned URL. `iss` is
+                // GitHub's own issuer, so this only fires on a GitHub OAuth callback landing.
+                {
+                    textContent: "(function(){try{var u=new URL(location.href),p=u.searchParams;if(!p.get('code')||p.get('iss')!=='https://github.com/login/oauth')return;p.delete('code');p.delete('state');p.delete('iss');var q=p.toString();history.replaceState(history.state,'',u.pathname+(q?'?'+q:'')+u.hash)}catch(e){}})()",
+                },
+                // Explicit nav-click tracking. Served straight from nuxt/public/js/.
                 { src: '/js/nav-tracking.js', defer: true },
                 // Opens sign-up in a small popup window on desktop/tablet.
-                // Source is src/js/signup-popup.js; copied the same way as nav-tracking.js.
                 { src: '/js/signup-popup.js', defer: true },
             ]
         }
@@ -365,23 +451,23 @@ export default defineNuxtConfig({
             {
                 baseName: 'analytics',
                 // Nitro resolves this dir against nitro.srcDir (Nuxt's serverDir, i.e. nuxt/server),
-                // not against the nuxt/ root — so this needs one more level up than it looks like.
-                dir: '../../src/_includes/analytics'
+                // not against the nuxt/ root.
+                dir: 'assets/analytics'
             },
             {
                 baseName: 'team',
-                dir: '../src/_data/team'
+                dir: '../data/team'
             },
             {
                 baseName: 'guests',
-                dir: '../src/_data/guests'
+                dir: '../data/guests'
             }
         ],
         prerender: {
             routes: (() => {
                 // The changelog listing is a single page now (grouped by release, revealed
                 // as you scroll), so there are no /changelog/<n>/ pages to enumerate.
-                const changelog = collectChangelogRoutes(join(__dirname, '../src/changelog'), '/changelog')
+                const changelog = collectChangelogRoutes(join(__dirname, 'content/changelog'), '/changelog')
 
                 const blogListingRoutes = paginatedListingRoutes('/blog', blogFiles.length)
                 const blogTagRoutes = BLOG_TAGS.flatMap(tag =>
@@ -396,11 +482,63 @@ export default defineNuxtConfig({
                     '/pricing',
                     '/resources/roi-calculator',
                     '/product',
-                    // /ai is only linked from 11ty-generated HTML (nav, homepage), which the
-                    // Nuxt prerender crawler never parses, so it has to be listed explicitly
-                    // or the route is missing from nuxt/dist and every link to it breaks.
+                    '/pricing/request-quote/',
+                    // The homepage itself: nothing links to it that the crawler starts from.
+                    '/',
+                    // The platform pages are .vue files with no listing to crawl from.
+                    '/platform/security/',
+                    '/platform/device-agent/',
+                    '/platform/why-flowfuse/',
+                    '/platform/dashboard/',
+                    // The event pages are .vue files with no listing to crawl from.
+                    '/events/proveit-2026/',
+                    '/events/hannover-messe-2026/',
+                    '/events/hannover-messe-2025/',
+                    // /industries/ plus the seven entries served by
+                    // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
+                    // file, so Nuxt finds that itself.
+                    '/industries/',
+                    // The four campaign pages with their own layout are .vue files, linked only from off-site campaigns.
+                    '/landing/tulip/',
+                    '/landing/plc/',
+                    '/landing/factory-efficiency/',
+                    // The partner pages are .vue files; only the listing is linked from the nav.
+                    '/partners/',
+                    '/partners/certify-hardware/',
+                    '/partners/ctrlx/',
+                    '/partners/referral-sign-up/',
+                    // The six architecture pages are .vue files with no listing that links to them all, so the crawler never reaches them.
+                    '/use-cases/data-integration/',
+                    '/use-cases/remote-device-management/',
+                    '/use-cases/it-ot-middleware/',
+                    '/use-cases/mes/',
+                    '/use-cases/scada/',
+                    '/use-cases/uns/',
+                    // crawlLinks is off, so a .vue page is prerendered only if it is listed here.
+                    // Without this /ai is missing from nuxt/dist and every link to it breaks.
                     '/ai',
+                    '/industries/automotive',
+                    '/industries/industrial-machinery',
+                    '/industries/building-materials',
+                    '/industries/energy-utilities',
+                    ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
+                    '/webinars/',
+                    ...collectWebinarRoutes(join(__dirname, 'content/webinars'), '/webinars'),
+
+                    ...collectSlugRoutes(join(__dirname, 'content/vs'), '/vs'),
+
+                    '/node-red/',
+
+                    '/about/',
+
+                    ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
+
+                    // /use-cases/ plus the two entries served by pages/use-cases/[slug].vue.
+                    // The six architecture pages are their own .vue files, so Nuxt finds
+                    // those itself; only the dynamic route needs enumerating.
+                    '/use-cases/',
+                    ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')),
                     // Without this, @nuxtjs/sitemap only bakes /sitemap.xml statically when
                     // isNuxtGenerate() is true, which checks for nitro.static/preset "static" -
                     // the netlify preset here is hybrid (prerendered pages + a fallback
@@ -429,7 +567,6 @@ export default defineNuxtConfig({
                     '/whitepaper/accelerating-innovation-in-manufacturing-with-flowfuse/',
                     '/whitepaper/accelerating-industrial-innovation-with-low-code-platforms/',
                     '/resources/publications/',
-                    ...collectApplicationGuideRoutes(join(__dirname, 'content/application-guide')),
                     '/changelog/index.xml',
                     '/changelog/',
                     ...changelog.routes,
@@ -439,7 +576,7 @@ export default defineNuxtConfig({
                     ...blogFiles.map(f => f.route),
                     ...blogAuthorRoutes,
                     ...collectHandbookRoutes(join(__dirname, 'content/handbook'), '/handbook'),
-                    ...collectStoryRoutes(join(__dirname, '../src/customer-stories')),
+                    ...collectStoryRoutes(join(__dirname, 'content/customer-stories')),
                 ]
             })(),
             crawlLinks: false,
@@ -453,8 +590,12 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        // `meta` is reserved by @nuxt/content - it holds the <!--more--> excerpt - so a
+        // collection that declares its own `meta` schema field silently loses everything
+        // under it. These collections' frontmatter still writes "meta:", so rewrite the key
+        // to "structuredData:" before parsing rather than editing hundreds of content files.
         'content:file:beforeParse' ({ file, collection }) {
-            if (collection.name !== 'blog') return
+            if (!['blog', 'webinars'].includes(collection.name)) return
             file.body = file.body.replace(
                 /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
                 (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')
@@ -473,6 +614,17 @@ export default defineNuxtConfig({
             nitroConfig.prerender = nitroConfig.prerender || {}
             nitroConfig.prerender.routes = [...new Set([...(nitroConfig.prerender.routes || []), ...routes])]
             console.log(`[nuxt] enumerated ${routes.length} /integrations/{id}/ routes for prerender`)
+        },
+        // Fail the build when /sitemap.xml comes out missing a content section, or with no
+        // dates on a section that takes them from git. Neither fails it otherwise; see
+        // lib/sitemap-coverage.mjs. @nuxtjs/sitemap renders the file itself once
+        // prerendering is done, outside the route loop that prerender:generate sees, and
+        // hands it over here. A throw from this hook fails the build.
+        'sitemap:prerender:done' ({ sitemaps }) {
+            const problems = sitemaps
+                .filter(sitemap => sitemap.name === '/sitemap.xml')
+                .flatMap(sitemap => sitemapProblems(sitemap.content))
+            if (problems.length) throw new Error(`[sitemap] ${problems.join('; ')}`)
         }
     },
 
@@ -484,6 +636,10 @@ export default defineNuxtConfig({
             repo: 'website',
             branch: 'main',
             branchStrategy: 'feature-branch',
+            // The Nuxt app is the `nuxt` npm workspace inside the website repo, not the repo
+            // root, so @nuxt/content's `content/handbook/...` paths need this prefix to match
+            // the real path Studio commits to via the GitHub Contents API.
+            rootDir: 'nuxt',
         }
     },
 
@@ -495,6 +651,7 @@ export default defineNuxtConfig({
                     searchDepth: 4,
                 },
                 remarkPlugins: {
+                    'site-links': { instance: remarkSiteLinks },
                     'handbook-links': { instance: remarkHandbookLinks },
                     'docs-links': { instance: remarkDocsLinks },
                     'remark-math': {},
@@ -533,6 +690,4 @@ export default defineNuxtConfig({
             colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error', 'highlight']
         }
     },
-    // Dev proxying to 11ty is handled by server/middleware/legacy.ts
-    // to allow per-route exclusions as pages are migrated.
 })

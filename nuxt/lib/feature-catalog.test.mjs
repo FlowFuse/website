@@ -204,7 +204,7 @@ test('catalog feature ids are unique', () => {
 })
 
 test('every catalog changelog url points at a changelog post that exists', () => {
-    const changelogDir = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'src', 'changelog')
+    const changelogDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'content', 'changelog')
     const posts = new Set()
     const walk = (dir, prefix) => {
         for (const entry of readdirSync(dir, { withFileTypes: true })) {

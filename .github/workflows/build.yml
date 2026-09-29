@@ -1,51 +1,20 @@
 name: Build Site
 on:
+  # FlowFuse/flowfuse's `Publish Documentation` workflow dispatches this by name after a
+  # docs PR merges to main, since a docs change there doesn't push anything to this repo
+  # for Netlify to notice on its own.
   workflow_dispatch:
-  push:
-    branches:
-      - main
   schedule:
+    # Blueprint-library changes don't push here either, so rebuild periodically to pick
+    # those up even if nothing else triggers a deploy in between.
     - cron: "30 9 * * *"
     - cron: "5 16 * * 3,4"
 jobs:
-  build_deploy:
+  trigger_rebuild:
     if: ${{ github.repository == 'FlowFuse/website' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Check out website repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          path: 'website'
-      - name: Generate a token
-        id: generate_token
-        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
-        with:
-          client-id: ${{ secrets.GH_BOT_APP_ID }}
-          private-key: ${{ secrets.GH_BOT_APP_KEY }}
-          owner: ${{ github.repository_owner }}
-      - name: Check out FlowFuse/blueprint-library repository (to access the blueprints)
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          repository: 'FlowFuse/blueprint-library'
-          ref: main
-          path: 'blueprint-library'
-          token: ${{ steps.generate_token.outputs.token }}
-      - name: Install jq
-        run: sudo apt-get -qy install jq
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 24
-          cache: 'npm'
-          cache-dependency-path: './website/package-lock.json'
-      - run: npm run blueprints
-        working-directory: 'website'
-      - name: Commit Latest Blueprints
-        run: |
-          cd ./website
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add src/blueprints/* -A -f
-          git commit -a -m "Bot: update blueprints"
-      - name: Push to 'live' branch
-        run: git push --force origin HEAD:live
-        working-directory: './website'
+      - name: Trigger a Netlify production rebuild
+        run: curl --fail --silent --show-error -X POST "$NETLIFY_BUILD_HOOK"
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}

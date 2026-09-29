@@ -45,7 +45,7 @@ function onSelect (p: 'all' | CertifiedCollection) {
     <section class="container m-auto md:max-w-6xl px-4">
         <CertifiedShowcaseCard>
             <template #header>
-                <CertifiedShowcaseHeader intro="Choosing a node from a README is a gamble. Every Certified Node is vetted, owned by a named maintainer, and patched by FlowFuse — bundled with the product that fits your job." />
+                <CertifiedShowcaseHeader intro="Anyone can publish a Node-RED node. FlowFuse Certified nodes — the adapters and connectors below — are different: vetted, owned by a named maintainer, and patched by FlowFuse, then bundled straight into Hub or Edge, whichever fits your job." />
             </template>
 
             <div class="flex items-center justify-between gap-4 flex-wrap mb-5">

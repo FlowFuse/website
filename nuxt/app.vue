@@ -8,6 +8,8 @@ useSchemaOrg([
             'https://twitter.com/FlowFuseinc',
             'https://github.com/FlowFuse',
             'https://www.linkedin.com/company/flowfuse/',
+            'https://www.facebook.com/FlowFuse/',
+            'https://www.youtube.com/channel/UCbBzP8NZbv3WDtlt4UouA-g',
         ],
     }),
     defineWebSite({ name: 'FlowFuse' }),

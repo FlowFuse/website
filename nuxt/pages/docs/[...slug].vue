@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useDocsNavTree, findDocsBreadcrumb } from '~/composables/useDocsNav'
+import { useDocsNavTree, findDocsBreadcrumb, findDocsSurround } from '~/composables/useDocsNav'
+import { docsPageTitle } from '~/lib/docs-page-title.mjs'
 
 definePageMeta({ layout: 'default' })
 
@@ -20,17 +21,30 @@ if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-// Handle redirect pages
-if (page.value.layout === 'redirect' && page.value.redirect?.to) {
-    const target = page.value.redirect.to
-    const isExternal = target.startsWith('http://') || target.startsWith('https://')
-    throw navigateTo(target, { redirectCode: 301, external: isExternal })
-}
+// No redirect handling here: modules/docs-source.ts turns `layout: redirect` frontmatter
+// into a Nitro route rule at build time, so those URLs never reach this component. Doing it
+// here meant the prerenderer wrote a `<meta http-equiv="refresh">` stub served with a 200
+// instead of a 301.
 
-const pageTitle = computed(() => page.value?.navTitle || page.value?.title || slugParts.value.at(-1) || 'Documentation')
+// The order is asserted in nuxt/lib/docs-page-title.mjs, which explains why it is that
+// order. It decides the <title> of every page under /docs and getting it wrong shows up
+// nowhere except in the rendered title, so it is not left inline as a bare expression.
+const pageTitle = computed(() => docsPageTitle(page.value, slugParts.value))
 
 // Empty on most docs pages: only the ones a catalog feature names as its docsLink get badges.
 const plans = useDocsPlans(contentPath)
+
+// /docs is assembled from two repos, so "Edit this page" has to point at whichever one
+// owns the page. Guides overlaid from this repo carry a ready-made `editUrl` (stamped by
+// nuxt/lib/guides-sync.mjs); everything else came from FlowFuse/flowfuse and is addressed
+// by its path within that repo's docs/ tree.
+const editHref = computed(() => {
+    const source = page.value as { editUrl?: string, originalPath?: string } | null
+    if (source?.editUrl) return source.editUrl
+    return source?.originalPath
+        ? `https://github.com/FlowFuse/flowfuse/edit/main/docs/${source.originalPath}`
+        : undefined
+})
 
 useHead({
     title: pageTitle,
@@ -51,6 +65,21 @@ const breadcrumbItems = computed(() => {
     return withRoot.map((crumb, i) => ({
         label: crumb.title,
         ...(i === withRoot.length - 1 ? {} : { to: crumb.path }),
+    }))
+})
+
+// Previous and next page in sidebar reading order, so a reader finishing a page has
+// somewhere to go. Order comes from the same tree the sidebar renders, rather than from
+// queryCollectionItemSurroundings, which reads in collection order and would disagree with
+// the nav on every page. The group name rides along as the card's description, because the
+// sequence runs straight through the manual and the last page of one group leads into the
+// first of the next.
+const surround = computed(() => {
+    const [previous, next] = findDocsSurround(navGroups.value ?? [], route.path)
+    return [previous, next].map(entry => entry && ({
+        path: entry.path,
+        title: entry.title,
+        description: entry.group,
     }))
 })
 </script>
@@ -83,6 +112,7 @@ const breadcrumbItems = computed(() => {
               <FeatureTierBadges :plans="plans" />
               <ContentRenderer v-if="page" :value="page" />
             </div>
+            <UContentSurround :surround="surround" class="not-prose mb-10" />
           </div>
         </div>
       </div>
@@ -95,9 +125,8 @@ const breadcrumbItems = computed(() => {
             Updated: <RelativeTime :value="page.updated" />
           </div>
           <ClientOnly>
-            <div v-if="page?.originalPath" class="text-xs pb-1 text-right italic max-lg:hidden">
-              <a :href="`https://github.com/FlowFuse/flowfuse/edit/main/docs/${page.originalPath}`"
-                target="_blank" rel="noopener">Edit this page</a>
+            <div v-if="editHref" class="text-xs pb-1 text-right italic max-lg:hidden">
+              <a :href="editHref" target="_blank" rel="noopener">Edit this page</a>
             </div>
           </ClientOnly>
         </div>

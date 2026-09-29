@@ -4,21 +4,20 @@ const props = defineProps<{
     title: string
 }>()
 
-onMounted(() => {
-    if (!document.querySelector('script[src*="lite-yt-embed"]')) {
-        const script = document.createElement('script')
-        script.async = true
-        script.src = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js'
-        document.head.appendChild(script)
-    }
-    if (!document.querySelector('link[href*="lite-yt-embed"]')) {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css'
-        link.crossOrigin = 'anonymous'
-        link.referrerPolicy = 'no-referrer'
-        document.head.appendChild(link)
-    }
+// Register stylesheet and script via useHead so they're present in the initial SSR HTML.
+// This ensures the lite-youtube-embed layout/poster CSS is applied before hydration,
+// preventing layout shift on pages like /platform/why-flowfuse.
+useHead({
+    link: [{
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.css',
+        crossorigin: 'anonymous',
+        referrerpolicy: 'no-referrer',
+    }],
+    script: [{
+        src: 'https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.2.0/src/lite-yt-embed.min.js',
+        async: true,
+    }],
 })
 </script>
 

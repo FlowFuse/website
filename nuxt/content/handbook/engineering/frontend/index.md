@@ -10,3 +10,4 @@ A collection of how-to's and best practice guides for FlowFuse's front-end devel
 - [Services](./services.md)
 - [Testing](./testing.md)
 - [Layouts](./layouts.md)
+- [UI Conventions and Style Guide](./ui-conventions/)

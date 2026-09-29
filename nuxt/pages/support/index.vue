@@ -7,14 +7,10 @@ useSeoMeta({
 
 <template>
   <div class="w-full">
-    <div class="hero container m-auto text-center flex flex-wrap pt-6 px-6 pb-12 md:flex-nowrap md:max-w-4xl md:pt-12">
-      <div class="mx-auto max-w-screen-xl md:max-w-xl">
-        <h1>Help Center</h1>
-        <p class="lead-p m-auto mt-3">
-          Search through our extensive range of resources, knowledge base, or reach out to our dedicated support team by submitting a ticket.
-        </p>
-      </div>
-    </div>
+    <PageHero
+        title="Help Center"
+        description="Search through our extensive range of resources, knowledge base, or reach out to our dedicated support team by submitting a ticket."
+    />
     <div class="text-left max-w-full">
       <div class="w-full pt-10 md:pt-8 px-0 ff-prose">
         <div class="text-center mb-8">

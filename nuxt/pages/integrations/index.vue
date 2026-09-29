@@ -6,7 +6,14 @@ import { nodeProducts } from '../../utils/integrations-ui'
 type CatalogueNode = IntegrationCatalogEntry & { _idLc: string }
 type ProductFilter = 'all' | CertifiedCollection
 
-useHead({ title: 'Integrations' })
+useSeoMeta({
+    title: 'Industrial Adapters & Connectors',
+    description: 'Certified industrial connectors and adapters for OPC UA, Modbus, and MQTT, plus connectors for the databases, APIs, and cloud services running the rest of your stack.',
+    ogDescription: 'Certified industrial connectors and adapters for OPC UA, Modbus, and MQTT, plus connectors for the databases, APIs, and cloud services running the rest of your stack.',
+    keywords: 'industrial connectors, industrial adapters, iiot adapters, connectors, opc ua adapter, mqtt adapter, modbus adapter',
+    ogUrl: 'https://flowfuse.com/integrations/',
+    twitterSite: '@FlowFuseinc',
+})
 
 const route = useRoute()
 const router = useRouter()
@@ -136,8 +143,8 @@ function chipClass (active: boolean, disabled = false) {
         />
 
         <section class="container m-auto md:max-w-6xl px-4 pt-16">
-            <h2>Browse all integrations</h2>
-            <p class="mt-1.5 text-gray-500">The full Node-RED library — FlowFuse certified, recommended, and thousands of community nodes.</p>
+            <h2>Browse the catalog</h2>
+            <p class="mt-1.5 text-gray-500">The full FlowFuse library — certified adapters and connectors, recommended picks, and thousands of Node-RED community nodes.</p>
         </section>
 
         <!-- Toolbar -->

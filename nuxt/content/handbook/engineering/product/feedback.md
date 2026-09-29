@@ -57,6 +57,10 @@ LinkedIn provides a valuable platform for gathering feedback. Creating polls on 
 
 The Product Manager should set up a minimum of one poll every six months, to collect feedback based on the upcoming strategic issues.
 
+### Shop-Floor Demos
+
+Recorded, unedited demos of the platform being used end to end on real shop-floor hardware, filmed by selected engineers and non-engineers from across the company. Every point of friction found becomes a GitHub issue. See [Shop-Floor Demos](./shop-floor-demos.md) for the recording rules and the application scripts to build.
+
 ### Node-RED Community
 
 We are privileged to be part of a vibrant community such as Node-RED, where our product organization can constantly learn and understand user challenges and solutions, as well as the reasons behind the adoption or non-adoption of FlowFuse. This ongoing communication is critical for our growth and improvement.

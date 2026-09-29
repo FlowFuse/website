@@ -10,6 +10,8 @@
         "preview": "nuxt preview"
     },
     "dependencies": {
+        "@iconify-json/heroicons": "^1.2.3",
+        "@iconify-json/lucide": "^1.2.123",
         "@resvg/resvg-js": "^2.6.2",
         "@takumi-rs/core": "^1.8.4",
         "markdown-it": "^14.2.0",
@@ -22,8 +24,6 @@
         "unstorage": "^1.17.5"
     },
     "devDependencies": {
-        "@iconify-json/heroicons": "^1.2.3",
-        "@iconify-json/lucide": "^1.2.123",
         "@nuxt/content": "^3.13.0",
         "@nuxt/image": "^2.0.0",
         "@nuxt/ui": "^4.8.2",

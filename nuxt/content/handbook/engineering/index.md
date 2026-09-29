@@ -22,6 +22,7 @@ The product function defines what we build and why.
 
 - [Product Overview](./product/) - how product management works
 - [Feedback](./product/feedback.md) - how we collect and process feedback
+- [Shop-Floor Demos](./product/shop-floor-demos.md) - recording rules and scripts for shop-floor monitoring demos
 - [Pricing Principles](./product/pricing.md) - how we decide feature tiers
 
 ## General
@@ -49,9 +50,11 @@ These pages help you setup additional infrastructure for local development.
 
 A collection of how-tos and best practice guides for FlowFuse's front-end development.
 
+- [UI Conventions and Style Guide](./frontend/ui-conventions/) - the conventions we follow when building platform UI
 - [Data Attributes](./frontend/data-attributes.md)
 - [Services](./frontend/services.md)
 - [Testing](./frontend/testing.md)
+- [Layouts](./frontend/layouts.md)
 
 ## Operations
 
