@@ -11,6 +11,8 @@ meta:
 
 This document lists and explains the **MCP nodes** available in FlowFuse. MCP (Model Context Protocol) nodes extend Node-RED to integrate AI models, tools, and resources through the Model Context Protocol framework. Each node helps you connect, configure, and manage AI interactions directly from Node-RED.
 
+> **Note:** These nodes build MCP servers inside your flows. To connect an AI agent to FlowFuse itself, so it can operate the platform and build flows, see the [FlowFuse MCP Server](/docs/user/mcp/).
+
 ## Video introduction
 
 <lite-youtube videoid="troUvaF8V68" params="rel=0" style="width: 100%; height: 480px; margin-top: 20px; margin-bottom: 20px;" title="YouTube video player with FlowFuse introduction video to MCP server nodes"></lite-youtube>
