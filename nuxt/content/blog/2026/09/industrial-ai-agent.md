@@ -116,7 +116,7 @@ It's one address. Everyone still signs in with their own FlowFuse account, and s
 We're also working on removing the question at all.
 
 ::note
-**Coming soon:** FlowFuse in the Microsoft Copilot, Claude and ChatGPT connector directories. No custom connector, no admin request. FlowFuse Cloud only.
+**Now available:** FlowFuse is listed in the [Claude connector directory](https://claude.ai/directory/flowfuse). Choose Connect to Claude and sign in. **Coming soon:** the Microsoft Copilot and ChatGPT directories. FlowFuse Cloud only.
 ::
 
 ## Where to start
