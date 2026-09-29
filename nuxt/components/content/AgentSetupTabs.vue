@@ -81,7 +81,7 @@ const CLIENTS = [
         step1Label: 'Connect to Claude',
         step1Url: 'https://claude.ai/directory/flowfuse',
         step2Title: 'Choose Connect to Claude',
-        step2Body: 'Claude opens FlowFuse. On Team and Enterprise an owner adds it once for everyone.',
+        step2Body: 'Claude opens FlowFuse. Self-hosted platforms add a custom connector with their own address, https://<your-flowfuse.domain>/mcp. On Team and Enterprise an owner adds it once for everyone.',
     },
     // A coding agent installs the connector into itself, so its tab is the prompt
     // and nothing else. No flags, no config file, and nothing that goes stale when
