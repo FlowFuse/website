@@ -156,7 +156,7 @@ onUnmounted(() => clearTimeout(resetTimer))
           autocomplete="off"
           spellcheck="false"
           class="ff-command__host-input"
-          placeholder="flowfuse.example.com"
+          placeholder="your-domain.com"
           aria-label="Your FlowFuse address"
           @input="onHostInput"
         >
