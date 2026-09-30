@@ -39,8 +39,9 @@ Secondly, the demo is building an application as described later on this page. I
 
 1. Install OBS, ensure you can record your screen and audio (see also OBS settings below).
 2. Turn on "Do Not Disturb". Ensure your notifications are off, chat and mail closed, no customer names, tokens, or credentials visible at any point. Nothing is edited afterwards, so anything on screen is published.
-3. A fresh team, empty, on the tier a customer would have. No pre-existing instances, no library content you made earlier.
-4. A data source ready. Do not use random or simulated values — step through the hard part of connecting to the data source. Use real hardware with protocols like:
+3. A fresh team, empty, on the tier a customer would have. Request a new team in the [engineering channel](https://flowfuse.slack.com/archives/C032Q63FGG1) on Slack.
+4. Access to the FlowFuse certified nodes for that team. Check the team has access before you start recording. If it doesn't, request it through the [certified nodes process](../ops/certified-nodes.md#enroll-customers), then post in the engineering channel that you have requested it.
+5. A data source ready. Do not use random or simulated values — step through the hard part of connecting to the data source. Use real hardware with protocols like:
    1. Modbus TCP
    2. OPC-UA
    3. MQTT + legacy protocol
@@ -57,6 +58,7 @@ The settings to work with:
 - Microphone on a separate audio track. Narration is required.
 - Check free disk space is above 20 GB before starting.
 - Record, do not stream.
+- If you add a webcam video source to record yourself, it sits on top of the screen capture. Move or resize it so it does not hide anything important on screen, such as the input box of FlowFuse Expert or any other AI assistant you use: every prompt you type must be readable in the recording. Check the layout in the OBS preview with the assistant open before you start.
 
 ### Post-demo action items
 
