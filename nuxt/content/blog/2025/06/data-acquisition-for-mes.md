@@ -12,7 +12,7 @@ tags:
    - mes
 ---
 
-A Manufacturing Execution System (MES) is the central control system of a factory. To work properly, it needs a steady stream of real-time data from machines and systems on the factory floor. This data is essential for running operations smoothly. But in most factories, the hardest part is getting this data to the MES.
+A [Manufacturing Execution System](/blog/2025/06/what-is-mes/) (MES) is the central control system of a factory. To work properly, it needs a steady stream of real-time data from machines and systems on the factory floor. This data is essential for running operations smoothly. But in most factories, the hardest part is getting this data to the MES.
 
 <!--more-->
 
@@ -36,7 +36,7 @@ Once the system gets all this information, it does more than just track numbers.
 
 This critical operational data doesn't live in one place; it's generated across a diverse and complex digital ecosystem.
 
-A vast amount comes directly from shop floor equipment, the PLCs that orchestrate your machines, the thousands of sensors measuring every variable, and the Historians that diligently archive past performance. Then you have your core business systems. The ERP provides the what and why through production orders, while Quality (QCS) and Maintenance (CMMS) systems add essential layers of inspection and machine health data.
+A vast amount comes directly from shop floor equipment, the [PLCs](/blog/2025/12/what-is-plc/) that orchestrate your machines, the thousands of sensors measuring every variable, and the Historians that diligently archive past performance. Then you have your core business systems. The ERP provides the what and why through production orders, while Quality (QCS) and Maintenance (CMMS) systems add essential layers of inspection and machine health data.
 
 Each of these sources speaks its own digital language. A single factory floor is a cacophony of `Modbus`, `OPC UA`, `EtherNet/IP`, and `MQTT`, etc all running simultaneously. This mix of protocols defines the communication architecture of the operation.
 
@@ -57,7 +57,7 @@ Every new piece of equipment demands expensive, custom-coded integrations that a
 
 It's frustrating to know the data is there but be unable to reach it. FlowFuse was built to solve this exact problem by acting as a data acquisition layer for your factory. It creates reliable pathways for information to get from your various machines and systems directly to your MES.
 
-The power of FlowFuse lies in its foundation on the vast Node-RED ecosystem. This gives you immediate access to a library of over 5,000 pre-built connectors, or "nodes" ready to communicate with a massive array of industrial protocols. This eliminates the need for expensive, time-consuming custom code. The library includes robust nodes for standards like Modbus, OPC UA, and MQTT, as well as for specific controllers from Siemens, Mitsubishi, Omron, and more.
+The power of FlowFuse lies in its foundation on the vast Node-RED ecosystem. This gives you immediate access to a library of over 5,000 pre-built connectors, or "nodes" ready to communicate with a massive array of industrial protocols. This eliminates the need for expensive, time-consuming custom code. The library includes robust nodes for standards like [Modbus](/blog/2023/05/integrating-modbus-with-node-red/), [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), and MQTT, as well as for specific controllers from Siemens, Mitsubishi, Omron, and more.
 
 Following are some of the most commonly used protocol nodes:
 

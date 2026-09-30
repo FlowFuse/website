@@ -38,7 +38,7 @@ The Connectivity Layer is the foundation of your UNS ecosystem. It’s what coll
 
 **How FlowFuse Helps:**
 
-This is where FlowFuse comes in. Built on the powerful Node-RED platform, FlowFuse takes the complexity out of connecting devices. Whether you're dealing with legacy systems (think Modbus or OPC-UA) or the latest IoT devices (like MQTT or HTTP), FlowFuse ensures that everything can speak the same language. It connects your old and new technologies, effortlessly streaming data into your UNS.
+This is where FlowFuse comes in. Built on the powerful Node-RED platform, FlowFuse takes the complexity out of connecting devices. Whether you're dealing with legacy systems (think [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) or [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)) or the latest IoT devices (like MQTT or HTTP), FlowFuse ensures that everything can speak the same language. It connects your old and new technologies, effortlessly streaming data into your UNS.
 
 With more than 5,000 available community contributed nodes, FlowFuse helps bridge the gap between old and new technologies. For example, if you have machines that use Modbus and new sensors using MQTT, FlowFuse can help them all send data into your UNS without any issues.
 
@@ -58,7 +58,7 @@ For instance, imagine temperature readings coming from multiple devices, with so
 
 #### **3. Message Broker**
 
-In UNS), the Message Broker is the central hub where your data resides until it’s accessed or consumed by other systems. It ensures that data flows smoothly between devices and applications, using a publish-subscribe (pub-sub) model. Systems "subscribe" to topics and receive automatic updates whenever new data is published, keeping everything in sync and up to date.
+In UNS), the Message Broker is the central hub where your data resides until it’s accessed or consumed by other systems. It ensures that data flows smoothly between devices and applications, using a [publish-subscribe](/blog/2024/11/why-pub-sub-in-uns/) (pub-sub) model. Systems "subscribe" to topics and receive automatic updates whenever new data is published, keeping everything in sync and up to date.
 
 The Message Broker must support the pub-sub model, which is a core requirement for the UNS. For more information on why this model is essential, please read our article on why UNS needs pub-sub. The pub-sub model decouples producers (publishers) from consumers (subscribers), meaning they don’t need to be directly connected or even aware of each other. This decoupling enhances flexibility and scalability. Additionally, it makes the UNS event-driven, eliminating the need for constant polling. Systems only receive data when it’s relevant, boosting efficiency and responsiveness.
 

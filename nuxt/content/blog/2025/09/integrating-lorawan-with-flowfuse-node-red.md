@@ -102,7 +102,7 @@ Let's add some processing to extract and format the received data. This approach
 
 1. Drag a Change node and set `msg.payload` to `msg.payload.uplink_message.frm_payload`
 2. Drag a base64 node and set the action to "Decode" (converts Base64 string to Buffer)
-3. Drag the buffer parser node and configure elements based on your data format
+3. Drag the [buffer parser](/blog/2025/12/node-red-buffer-parser-industrial-data/) node and configure elements based on your data format
 4. Click the "+" button to add each element and fill in the following fields for each data point you want to extract:
 
 **Example Configuration for Temperature/Humidity Sensor:**

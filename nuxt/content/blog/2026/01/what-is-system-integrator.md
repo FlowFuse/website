@@ -52,7 +52,7 @@ A system integrator is a partner that takes separate pieces of technology (from 
 
 But that definition doesn't capture the scope. The work spans two worlds that don't naturally speak to each other.
 
-On one side, you have operational technology (OT): the physical equipment that runs your factory. Robots, PLCs, conveyors, sensors, vision systems, SCADA systems. On the other side, you have information technology (IT): the software that runs your business. ERP systems, MES platforms, databases, analytics tools.
+On one side, you have operational technology (OT): the physical equipment that runs your factory. Robots, [PLCs](/blog/2025/12/what-is-plc/), conveyors, sensors, vision systems, [SCADA](/blog/2026/08/what-is-scada/) systems. On the other side, you have information technology (IT): the software that runs your business. ERP systems, [MES](/blog/2025/06/what-is-mes/) platforms, databases, analytics tools.
 
 System integrators connect both. And that's where things get complicated.
 
@@ -60,7 +60,7 @@ System integrators connect both. And that's where things get complicated.
 
 The work begins with understanding the actual problem. A line keeps jamming because two machines won't sync. Production data sits trapped in SCADA and can't reach your ERP for scheduling decisions. Quality defects have no connection to process parameters. These aren't isolated issues: they're integration failures.
 
-A system integrator walks your plant with a specific lens. They document what equipment you're running, which protocols each device speaks, where IT and OT systems touch or fail to. They identify the gaps: a PLC speaking Modbus trying to feed a cloud platform, an MES that can't pull real-time SCADA status, a quality database disconnected from traceability. They map not just what's broken, but why, and what fixing it actually requires.
+A system integrator walks your plant with a specific lens. They document what equipment you're running, which protocols each device speaks, where IT and OT systems touch or fail to. They identify the gaps: a PLC speaking [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) trying to feed a cloud platform, an MES that can't pull real-time SCADA status, a quality database disconnected from traceability. They map not just what's broken, but why, and what fixing it actually requires.
 
 ### Architecture and Design
 
@@ -88,7 +88,7 @@ Most people who work with system integrators understand what they do at a high l
 
 The real complexity comes from operating across multiple domains simultaneously. A single project might require technical breadth across both factory floor protocols (Modbus, Profinet, EtherNet/IP) and enterprise systems (REST APIs, SQL databases, message queues). Understanding when to use edge computing versus cloud processing. Balancing real-time control requirements with data analytics needs.
 
-Different industries have different requirements. Food processing needs washdown-rated equipment and FDA compliance. Automotive requires high-speed deterministic networks and traceability. Pharmaceuticals demand validation documentation and 21 CFR Part 11 compliance. An integrator can't just transplant solutions between industries: domain expertise matters.
+Different industries have different requirements. Food processing needs washdown-rated equipment and FDA compliance. [Automotive](/industries/automotive/) requires high-speed deterministic networks and traceability. Pharmaceuticals demand validation documentation and 21 CFR Part 11 compliance. An integrator can't just transplant solutions between industries: domain expertise matters.
 
 Modern factories still run equipment from the 1990s alongside brand-new IoT sensors. Integration means making 30-year-old systems participate in Industry 4.0 initiatives without replacing everything (because replacing everything isn't an option). Legacy systems present unique challenges that require both historical knowledge and modern techniques.
 

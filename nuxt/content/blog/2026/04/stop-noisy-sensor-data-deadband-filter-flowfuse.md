@@ -57,7 +57,7 @@ Before getting started, you will need the following:
 
 ## Collecting sensor data with FlowFuse
 
-Before you can filter anything, you need data flowing in. In industrial environments that means connecting to whatever is already on the floor. PLCs, sensors, drives, and controllers that speak dozens of different protocols, many of them decades old.
+Before you can filter anything, you need data flowing in. In industrial environments that means connecting to whatever is already on the floor. [PLCs](/blog/2025/12/what-is-plc/), sensors, drives, and controllers that speak dozens of different protocols, many of them decades old.
 
 This is where FlowFuse earns its place. It connects to virtually any industrial data source out of the box. OPC-UA, Modbus, MQTT, Siemens S7, BACnet, and more. No custom drivers, no middleware. Whether your data lives on a modern IIoT sensor or a legacy PLC that has been running since the 1990s, FlowFuse can reach it.
 

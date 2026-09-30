@@ -230,7 +230,7 @@ It is not sufficient.
 
 But UNS doesn't eliminate protocol choice. It relocates it.
 
-Your OPC UA machines still speak OPC UA. Edge gateways consume that semantic data, translate it to MQTT Sparkplug, and publish to the UNS broker. Protocol choice happens at the edge. Your MES connects via OPC UA when it needs semantic precision, subscribes via MQTT when it just needs telemetry. Same downstream system, different protocols for different needs.
+Your OPC UA machines still speak OPC UA. Edge gateways consume that semantic data, translate it to MQTT Sparkplug, and publish to the UNS broker. Protocol choice happens at the edge. Your [MES](/blog/2025/06/what-is-mes/) connects via OPC UA when it needs semantic precision, subscribes via MQTT when it just needs telemetry. Same downstream system, different protocols for different needs.
 
 UNS centralizes data flow. It doesn't centralize protocol decisions; those still happen at every connection point based on the same factors: semantic requirements, bandwidth constraints, scale characteristics, native support.
 
@@ -256,7 +256,7 @@ Let the infrastructure decide. Gigabit plant ethernet makes protocol overhead le
 
 **3. Native protocol support**
 
-Work with your equipment, not against it. Siemens PLCs, Rockwell controllers, and Schneider drives speak OPC UA natively. AWS IoT expects MQTT. HiveMQ clusters scale MQTT efficiently. Leveraging native support reduces integration complexity.
+Work with your equipment, not against it. Siemens [PLCs](/blog/2025/12/what-is-plc/), Rockwell controllers, and Schneider drives speak OPC UA natively. AWS IoT expects MQTT. HiveMQ clusters scale MQTT efficiently. Leveraging native support reduces integration complexity.
 
 **4. Scale characteristics**
 

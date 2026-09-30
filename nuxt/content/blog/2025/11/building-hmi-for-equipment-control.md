@@ -52,7 +52,7 @@ Most factory HMIs are still stuck in one place. Dedicated panels mounted next to
 
 Web-based HMIs change that. Build your interface once in FlowFuse, and it runs anywhere, desktop, tablet, phone. Your operators can monitor and control equipment from wherever they need to be.
 
-This tutorial walks you through building a simple motor control interface: two buttons and a status display. You will learn how to connect to PLCs, build HMI dashboards, and enable remote access. From there, you can scale up to production lines with multiple sensors and actuators, live charts, gauges, sliders, and interactive controls.
+This tutorial walks you through building a simple motor control interface: two buttons and a status display. You will learn how to connect to [PLCs](/blog/2025/12/what-is-plc/), build HMI dashboards, and enable remote access. From there, you can scale up to production lines with multiple sensors and actuators, live charts, gauges, sliders, and interactive controls.
 
 Here's what you'll build:
 
@@ -70,7 +70,7 @@ Before beginning, ensure you have:
 
 Your PLC already controls your equipment. It reads sensors, executes logic, and switches outputs. That doesn't change.
 
-FlowFuse sits between operators and the PLC. It runs on an edge device connected to the same network as your PLC. FlowFuse communicates with the PLC using Modbus, OPC UA, EtherNet/IP, S7, or whatever protocol your PLC speaks.
+FlowFuse sits between operators and the PLC. It runs on an edge device connected to the same network as your PLC. FlowFuse communicates with the PLC using [Modbus](/blog/2023/05/integrating-modbus-with-node-red/), OPC UA, EtherNet/IP, S7, or whatever protocol your PLC speaks.
 
 Inside FlowFuse, nodes handle the PLC communication and data transformation while dashboard nodes let you build the HMI. These nodes create buttons, gauges, charts, and status displays. FlowFuse serves this interface as a webpage that any browser can access.
 

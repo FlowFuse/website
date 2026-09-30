@@ -210,4 +210,5 @@ export const redirects: Record<string, NitroRouteRules> = {
     // /contact-us/ (the nearest live equivalent) for anyone with an old bookmark or an
     // indexed link.
     '/free-consultation/': { redirect: { to: '/contact-us/', statusCode: 301 } },
+    '/industries-legacy/renewables': { redirect: { to: '/industries/energy-utilities/', statusCode: 301 } },
 }

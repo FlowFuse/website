@@ -28,7 +28,7 @@ A good checklist is focused rather than comprehensive. It should cover the contr
 
 ## What Should Be on an LPA Checklist?
 
-LPA questions should come from the controls that are important to the process. Useful sources include the PFMEA, control plan, work instructions, previous audit findings, customer complaints, and recurring scrap or rework.
+LPA questions should come from the controls that are important to the process. Useful sources include the PFMEA, [control plan](/blog/2026/08/control-plans/), [work instructions](/blog/2026/07/digital-work-instruction/), previous audit findings, customer complaints, and recurring scrap or rework.
 
 Depending on the process, a checklist might cover:
 
@@ -36,7 +36,7 @@ Depending on the process, a checklist might cover:
 - **Materials:** Is the correct material being used at the station?
 - **Equipment:** Is the machine parameter within the approved range?
 - **Tooling:** Is the torque tool within its required calibration period?
-- **Error-proofing:** Is the poka-yoke device active?
+- **Error-proofing:** Is the [poka-yoke](/blog/2025/09/poka-yoke-mistake-proofing/) device active?
 - **Traceability:** Is the required batch or serial number recorded?
 
 Not every checklist needs all of these areas. Select the controls that are most relevant to the process being audited.
@@ -55,7 +55,7 @@ The goal is to make each question **objective and observable**, rather than depe
 
 ## LPA Checklist Example
 
-Consider an automotive assembly station where a component is fastened using a torque-controlled tool.
+Consider an [automotive](/industries/automotive/) assembly station where a component is fastened using a torque-controlled tool.
 
 The checklist might verify that the current work instruction is being used, the correct component is at the station, the torque tool is within its approved range, and the error-proofing system is active.
 

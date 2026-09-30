@@ -34,7 +34,7 @@ meta:
 tldr: "Bridging Modbus to MQTT with Node-RED solves the OT/IT integration gap by translating the Modbus master-slave polling model into an MQTT publish-subscribe architecture. The guide walks through reading Modbus holding registers, transforming raw register values into human-readable metrics, and publishing them to a Unified Namespace via FlowFuse's integrated MQTT broker."
 ---
 
-Converting Modbus to MQTT unlocks the value trapped in legacy industrial equipment. Industrial facilities worldwide face a persistent challenge: their Modbus-based sensors, PLCs, and controllers generate valuable operational data, but that data remains isolated in local control networks, unable to feed modern cloud analytics, remote dashboards, or predictive maintenance systems.
+Converting [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) to MQTT unlocks the value trapped in legacy industrial equipment. Industrial facilities worldwide face a persistent challenge: their Modbus-based sensors, PLCs, and controllers generate valuable operational data, but that data remains isolated in local control networks, unable to feed modern cloud analytics, remote dashboards, or predictive maintenance systems.
 
 <!--more-->
 
@@ -43,7 +43,7 @@ Converting Modbus to MQTT unlocks the value trapped in legacy industrial equipme
 
 We've built Modbus to MQTT bridges for manufacturing plants ranging from small production lines to enterprise-scale facilities, and the root problem is always the same protocol mismatch. Modbus requires a master-slave architecture with polling, one device requests data, another responds. MQTT enables publish-subscribe messaging, devices push data to a central broker where any authorized application can subscribe. These are fundamentally incompatible communication patterns.
 
-The proven solution is protocol bridging with Node-RED. This guide shows you how to build a reliable Modbus to MQTT gateway that reads holding registers from your devices, transforms raw sensor readings into human-readable formats, and publishes structured data to a Unified Namespace using FlowFuse's integrated MQTT broker. You'll bridge the OT/IT gap and enable cloud integration, real-time monitoring, and data-driven decision-making across your operations.
+The proven solution is protocol bridging with Node-RED. This guide shows you how to build a reliable Modbus to MQTT gateway that reads holding registers from your devices, transforms raw sensor readings into human-readable formats, and publishes structured data to a [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) using FlowFuse's integrated MQTT broker. You'll bridge the OT/IT gap and enable cloud integration, real-time monitoring, and data-driven decision-making across your operations.
 
 ## Why Bridge Modbus to MQTT?
 
@@ -76,7 +76,7 @@ Before you start, make sure you have:
 
 ### Step 1: Collect Data from Modbus Devices
 
-The first step is to collect data from your Modbus devices. To do this, you'll need to run Node-RED on your Device. If your Modbus device communicates via a serial port, Node-RED will need access to that port, which you can manage with the appropriate configuration. If you're using Modbus TCP and both Node-RED and your Modbus device are on the same network, the connection is straightforward.
+The first step is to collect data from your Modbus devices. To do this, you'll need to run Node-RED on your Device. If your Modbus device communicates via a serial port, Node-RED will need access to that port, which you can manage with the appropriate configuration. If you're using [Modbus TCP](/blog/2026/02/modbus-tcp-vs-modbus-rtu/) and both Node-RED and your Modbus device are on the same network, the connection is straightforward.
 
 **Step 1.1: Running the FlowFuse device agent on your edge device**
 

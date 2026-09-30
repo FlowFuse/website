@@ -16,11 +16,11 @@ cta:
 tldr: "OPC UA ships with real authentication, signing, and encryption, but attackers rarely touch it. They exploit the gap between 'built in' and 'turned on': anonymous access, trust lists that don't enforce certificates, deprecated ciphers that were never removed, and internet-exposed servers Shodan finds for free. The protocol gives you the tools to close every vector. The question is whether they're switched on."
 ---
 
-Threat actors don't break OPC UA's cryptography. They walk through the security it left switched off. The attacks that work in the field are disabled trust lists, anonymous logins left on, dead ciphers that were never removed, and servers sitting on the open internet. This post breaks down how attackers actually exploit OPC UA, vector by vector.
+Threat actors don't break [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)'s cryptography. They walk through the security it left switched off. The attacks that work in the field are disabled trust lists, anonymous logins left on, dead ciphers that were never removed, and servers sitting on the open internet. This post breaks down how attackers actually exploit OPC UA, vector by vector.
 
 <!--more-->
 
-That's the irony. Unlike most industrial protocols, OPC UA ships with real security: authentication, signing, and encryption built into the spec. It's what finally let your Siemens PLC, your Allen-Bradley controller, and your SCADA system speak the same language. But "built in" and "turned on" are different things, and attackers live in that gap.
+That's the irony. Unlike most industrial protocols, OPC UA ships with real security: authentication, signing, and encryption built into the spec. It's what finally let your Siemens [PLC](/blog/2025/12/what-is-plc/), your Allen-Bradley controller, and your [SCADA](/blog/2026/08/what-is-scada/) system speak the same language. But "built in" and "turned on" are different things, and attackers live in that gap.
 
 ## What OPC UA is, and why its security is different
 

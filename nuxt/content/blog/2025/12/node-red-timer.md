@@ -131,7 +131,7 @@ _Hourglass node output message showing elapsed time in multiple formats_
 
 The `elapsed` object provides multiple formats: a human-readable string, total milliseconds, and broken-down time components. This flexibility supports different display requirements and calculation needs.
 
-This basic example demonstrates the pattern. In production applications, replace the inject nodes with actual process triggers, **machine status signals** from PLCs or MQTT messages from sensors. The **hourglass node output** then connects to databases for logging, dashboards for visualization, or notification systems for alerts when thresholds are exceeded.
+This basic example demonstrates the pattern. In production applications, replace the inject nodes with actual process triggers, **machine status signals** from [PLCs](/blog/2025/12/what-is-plc/) or MQTT messages from sensors. The **hourglass node output** then connects to databases for logging, dashboards for visualization, or notification systems for alerts when thresholds are exceeded.
 
 Below is the complete flow.
 

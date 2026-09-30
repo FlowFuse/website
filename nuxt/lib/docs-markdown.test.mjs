@@ -2,12 +2,11 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 
 import {
-    convertCallouts,
+    assertNoNunjucks,
     injectFrontmatter,
     joinHtmlBlocks,
     processMarkdown,
     stripInlineScripts,
-    stripTemplateEngineOverride,
 } from './docs-markdown.mjs'
 
 test('joinHtmlBlocks drops blank lines inside a top-level html block', () => {
@@ -64,16 +63,37 @@ test('stripInlineScripts leaves indented scripts in code samples alone', () => {
     assert.equal(stripInlineScripts(input), input)
 })
 
-test('convertCallouts rewrites note, warning and critical shortcodes', () => {
-    const out = convertCallouts('{% note %}\nBe careful.\n{% endnote %}')
-
-    assert.match(out, /ff-callout--note/)
-    assert.match(out, /<p class="ff-callout__title">Note<\/p>/)
-    assert.match(out, /\n\nBe careful\.\n\n/)
+test('assertNoNunjucks fails on a leftover tag and names the source line', () => {
+    assert.throws(
+        () => assertNoNunjucks('# Title\n\n{% include "hubspot/hs-form.njk" %}\n', 'install/introduction.md'),
+        /docs\/install\/introduction\.md:3 has a Nunjucks tag/,
+    )
+    assert.throws(() => assertNoNunjucks('{% note %}\nBe careful.\n{% endnote %}', 'x.md'), /x\.md:1/)
 })
 
-test('convertCallouts strips leftover nunjucks tags', () => {
-    assert.equal(convertCallouts('{% set x = 1 %}\ntext').trim(), 'text')
+test('assertNoNunjucks allows tags inside fenced code and inline code', () => {
+    const input = [
+        'Write `{% raw %}` to escape.',
+        '',
+        '```njk',
+        '{% set x = 1 %}',
+        '```',
+        '',
+        '~~~~',
+        '```',
+        '{% if x %}',
+        '~~~~',
+        '',
+        '::note',
+        'MDC is fine.',
+        '::',
+    ].join('\n')
+
+    assert.doesNotThrow(() => assertNoNunjucks(input, 'x.md'))
+})
+
+test('assertNoNunjucks checks again after a fence closes', () => {
+    assert.throws(() => assertNoNunjucks('```\n{% a %}\n```\n{% b %}\n', 'x.md'), /x\.md:4/)
 })
 
 test('injectFrontmatter adds provenance to existing frontmatter', () => {
@@ -89,15 +109,14 @@ test('injectFrontmatter creates frontmatter when the file has none', () => {
     assert.match(out, /---\nbody$/)
 })
 
-test('stripTemplateEngineOverride removes the eleventy-only field', () => {
-    assert.equal(stripTemplateEngineOverride('a\ntemplateEngineOverride: njk,md\nb\n'), 'a\nb\n')
+test('processMarkdown passes MDC callouts through unchanged', () => {
+    const out = processMarkdown('::note\nSee the [docs](/docs/).\n::\n', 'x.md', '', '')
+
+    assert.match(out, /---\n::note\nSee the \[docs\]\(\/docs\/\)\.\n::\n$/)
 })
 
-test('processMarkdown keeps callout bodies parseable as markdown', () => {
-    // joinHtmlBlocks must not eat the blank lines convertCallouts inserts.
-    const out = processMarkdown('{% note %}\nSee the [docs](/docs/).\n{% endnote %}', 'x.md', '', '')
-
-    assert.match(out, /ff-callout__content">\n\nSee the \[docs\]\(\/docs\/\)\.\n\n<\/div>/)
+test('processMarkdown fails on a leftover nunjucks tag', () => {
+    assert.throws(() => processMarkdown('---\ntitle: x\n---\n{% note %}\nx\n{% endnote %}\n', 'a.md', '', ''), /docs\/a\.md:4/)
 })
 
 test('processMarkdown fixes a realistic card grid end to end', () => {

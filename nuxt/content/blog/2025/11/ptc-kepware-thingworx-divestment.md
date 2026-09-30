@@ -17,7 +17,7 @@ tags:
 
 
 
-The news of PTC selling Kepware and ThingWorx to TPG for $600 million has caused a significant impact across the industrial automation sector. For anyone working in manufacturing, OT data integration, or industrial IoT, this divestment raises important questions about the future direction of these widely-used platforms, and what it means for organizations relying on them.
+The news of PTC selling [Kepware](/blog/2026/01/kepware-opcua-better-alternative/) and ThingWorx to TPG for $600 million has caused a significant impact across the industrial automation sector. For anyone working in manufacturing, OT data integration, or industrial IoT, this divestment raises important questions about the future direction of these widely-used platforms, and what it means for organizations relying on them.
 <!--more-->
 
 But here's the thing: this isn't an isolated event. Back in July 2024, there were rumors that Autodesk might acquire PTC for $20+ billion. Those talks ultimately fell through when Autodesk walked away from the deal. Now, just months later, PTC has decided to divest two of its major industrial IoT assets. The pattern is clear: PTC is refocusing its strategy.
@@ -52,7 +52,7 @@ For organizations evaluating their options, the differences between FlowFuse and
 
 - Zero vendor lock-in: With FlowFuse, your flows are portable. You can run them anywhere (cloud, on-premises, or at the edge). Kepware ties you to their licensing model and roadmap.
 
-- Integration flexibility: Node-RED's 5,000+ community-contributed nodes mean you can connect to virtually anything (MQTT, OPC-UA, REST APIs, SQL databases, cloud services, and more). Kepware's integrations are often limited to proprietary or custom connectors.
+- Integration flexibility: Node-RED's 5,000+ community-contributed nodes mean you can connect to virtually anything (MQTT, [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), REST APIs, SQL databases, cloud services, and more). Kepware's integrations are often limited to proprietary or custom connectors.
 
 - Transparent pricing: FlowFuse offers use-based, transparent pricing that scales with your needs. Kepware's licensing model is tiered, often creating cost barriers as you grow.
 
@@ -65,7 +65,7 @@ You can explore these differences in detail at [flowfuse.com/vs/kepware](/vs/kep
 
 ## Connect to Anything, Collect Everything
 
-Node-RED has over 5,000 community-contributed nodes, covering virtually every industrial protocol, database, cloud service, and API you can imagine. Whether you need to pull data from a Siemens S7 PLC, a Modbus device, an OPC UA server, push it to AWS IoT Core, Azure, or your own database, transform it in real-time, and visualize it on a custom dashboard. Node-RED can do it all.
+Node-RED has over 5,000 community-contributed nodes, covering virtually every industrial protocol, database, cloud service, and API you can imagine. Whether you need to pull data from a [Siemens S7 PLC](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/), a Modbus device, an OPC UA server, push it to AWS IoT Core, Azure, or your own database, transform it in real-time, and visualize it on a custom dashboard. Node-RED can do it all.
 
 And because it's open source, if a connector doesn't exist, you or the community can build it. This level of connectivity is unmatched. Kepware is powerful for protocol translation, sure, but it's primarily focused on moving data from OT systems to IT systems. Node-RED, by contrast, is a full data orchestration platform. You're not just collecting data, you're transforming, routing, analyzing, and acting on it, all in one place.
 

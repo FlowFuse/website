@@ -62,7 +62,7 @@ MQTT is everywhere in industrial setups. It has been the default for moving sens
 
 The catch is that it doesn't really tell you anything about the data itself. Say a broker gets a message on `plant1/line4/temp` with a value of `72`. Is that Celsius? Fahrenheit? Is the device still running, or did it go offline a few hours ago and that's just the last number it sent? MQTT won't tell you. It moves the bytes and the rest is up to you, which means everyone ends up handling it their own way.
 
-That's the problem Sparkplug B tries to solve. It adds the structure that plain MQTT leaves out, so your data actually makes sense to something like a SCADA system without you having to write custom code for every device.
+That's the problem Sparkplug B tries to solve. It adds the structure that plain MQTT leaves out, so your data actually makes sense to something like a [SCADA](/blog/2026/08/what-is-scada/) system without you having to write custom code for every device.
 
 So do you need one, the other, or both? That's what this post is about.
 
@@ -100,7 +100,7 @@ That freedom is why MQTT spread, and it's also where the strain comes from once 
 
 The first strain is payload bloat. JSON is easy to read, which is why people reach for it, but it isn't efficient. A single temperature reading written as `{"sensorId":32,"sensorValue":24.5}` is around 36 bytes when the actual data is a handful. That feels like nothing until you're pushing thousands of tags a second, and then it adds up fast.
 
-The second is structure, or the lack of it. MQTT doesn't define any topic layout, so every integration team invents its own conventions. One group publishes temperature to `line2/temp`, another to `plant/line5/sensors/temperature/value`, and a contractor wires up something nobody can explain later. [Walker Reynolds](https://www.eclipse.org/community/eclipse_newsletter/2021/february/1.php), the systems integrator who popularized the Unified Namespace idea, summed up the trade-off:
+The second is structure, or the lack of it. MQTT doesn't define any topic layout, so every integration team invents its own conventions. One group publishes temperature to `line2/temp`, another to `plant/line5/sensors/temperature/value`, and a contractor wires up something nobody can explain later. [Walker Reynolds](https://www.eclipse.org/community/eclipse_newsletter/2021/february/1.php), the systems integrator who popularized the [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) idea, summed up the trade-off:
 
 > Yes, MQTT is flexible, you can basically publish any payload to any topic, but this can create a mess in the topic namespace.
 

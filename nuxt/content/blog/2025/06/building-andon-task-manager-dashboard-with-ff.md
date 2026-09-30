@@ -87,7 +87,7 @@ As discussed in the planning section, only the admin role will have the ability 
 1. Import the provided demo flow.  
 2. **Deploy** the flow.
 
-This will store demo lines and departments in the global context as `global.lines` if not already present.
+This will store demo lines and departments in the [global context](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/) as `global.lines` if not already present.
 
 ### Build Line Selection Menu
 

@@ -72,7 +72,7 @@ meta:
 tldr: "Read and write Siemens S7-1200/1500 data from Node-RED over ISO-on-TCP (port 102). Enable PUT/GET communication and disable optimized block access on your data blocks first, then configure an S7 endpoint with the PLC's IP, rack, and slot, map TIA Portal addresses to the node's format, and use s7-in to read and s7-out to write."
 ---
 
-Siemens S7 PLCs are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
+Siemens S7 [PLCs](/blog/2025/12/what-is-plc/) are a staple in industrial automation, powering everything from basic control functions to complex, large-scale processes. However, integrating these PLCs with other systems for remote monitoring or data sharing can present challenges.
 
 <!--more-->
 
@@ -101,7 +101,7 @@ _Providing complete access to the PLC_
 ![Untick 'Optimized Block Access'.](./images/optimized-block-access.png){data-zoomable}
 _Untick 'Optimized Block Access.'_
 
-3. Install Node-RED on the device that will communicate with the S7 PLC. You cannot install Node-RED directly on the S7 PLC, as PLCs are typically controllers, not computers. For example, you can use a device like the Revolutionary Pi to connect and transfer data across systems. Use the [FlowFuse Device Agent](/platform/device-agent/) to install Node-RED on your device. 
+3. [Install Node-RED](/blog/2025/09/installing-node-red/) on the device that will communicate with the S7 PLC. You cannot install Node-RED directly on the S7 PLC, as PLCs are typically controllers, not computers. For example, you can use a device like the Revolutionary Pi to connect and transfer data across systems. Use the [FlowFuse Device Agent](/platform/device-agent/) to install Node-RED on your device. 
 
 - Why FlowFuse Device Agent? It allows you to manage Node-RED remotely, enabling control, monitoring, and flow creation without the need for on-site visits. FlowFuse also offers a suite of enterprise-grade features such as collaboration, device management, and DevOps pipelines, which are essential in industrial environments. These features help streamline operations and ensure scalability in complex automation systems. [Sign up for free](https://app.flowfuse.com/account/create) to get started.
 
@@ -261,7 +261,7 @@ _Configuring S7-in Node to Read data from plc_
 
 You can add a "Debug" node to the `s7-in` node's output to verify that the data is being read correctly.
 
-Once you see the printed data, you might be surprised, or perhaps you already expected this: since the word data type we're reading is not directly available in Node.js or Node-RED, we'll receive it as an integer. But don't worry, you can convert it into the format that suits your needs using node-red-contrib-buffer-parser. In this integer scenario, you'll need to shift the bits or extract individual values to match your desired output, such as isolating specific bits to represent different statuses or control points. The flow provided at the end demonstrates the implementation of this conversion.
+Once you see the printed data, you might be surprised, or perhaps you already expected this: since the word data type we're reading is not directly available in Node.js or Node-RED, we'll receive it as an integer. But don't worry, you can convert it into the format that suits your needs using node-red-contrib-[buffer-parser](/blog/2025/12/node-red-buffer-parser-industrial-data/). In this integer scenario, you'll need to shift the bits or extract individual values to match your desired output, such as isolating specific bits to represent different statuses or control points. The flow provided at the end demonstrates the implementation of this conversion.
 
 Now that you have the desired format for your output data, you may want to build a dashboard interface with LEDs, gauges, or charts to monitor and visualize the data you've retrieved. You can use the FlowFuse Dashboard, as suggested earlier.
 

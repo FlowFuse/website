@@ -22,6 +22,6 @@ Yesterday the first beta of Node-RED 3.0 was [released](https://discourse.nodere
 <video autoplay loop muted playsinline aria-label="Selecting the beta Stack" width="954" height="730" preload="none"><source src="/blog/2022/05/images/beta_stack.webm" type="video/webm" /></video>
 
 
-FlowFuse is the best way to run multiple Node-RED instances at different versions. Beta releases are exciting to try out, but you don't want to risk your production applications with an early upgrade. FlowFuse makes it easy to create a new project to try things out.
+FlowFuse is the best way to run multiple [Node-RED](/node-red/) instances at different versions. Beta releases are exciting to try out, but you don't want to risk your production applications with an early upgrade. FlowFuse makes it easy to create a new project to try things out.
 
 We'll continue to update the stack choice with each beta when they are released.

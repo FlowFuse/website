@@ -90,7 +90,7 @@ Once your pipeline is set up, you can run it to deploy your changes across each 
 
 2. After clicking, the deployment automatically progresses to the next stage on the right. Since each pair of stages operates independently, you need to click the "Run" button for each stage to continue the deployment.
 
-Pressing the "Run Pipeline" button for the current stage creates a new snapshot that includes all settings, environment variables, and flows for that stage. This snapshot is then copied and deployed to the next stage, but any existing environment variable keys in the target stage will remain unchanged.
+Pressing the "Run Pipeline" button for the current stage creates a new snapshot that includes all settings, [environment variables](/blog/2023/01/environment-variables-in-node-red/), and flows for that stage. This snapshot is then copied and deployed to the next stage, but any existing environment variable keys in the target stage will remain unchanged.
 
 When creating a pipeline, you can include only one Device Group, and it must be in the final stage. This ensures all changes are fully tested and verified before reaching production, guaranteeing a safe and reliable deployment.
 

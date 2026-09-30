@@ -19,7 +19,7 @@ Have you ever needed to send a CSV file to your Node-RED instance? This file can
 
 Often times it is necessary to update lookup tables in a SQL database, but you don't necessarily want to give access to everyone to edit the database, nor do you want to have to do it all yourself. This can often be seen when new products are introduced into a manufacturing facility. It may not be often, but enough that it warrants its own application. This process will guide you in a way that will enable your teammates to upload the files to the system themselves.
 
-Furthermore, on the management layer of most companies, Excel and Google Sheets are the go-to tools to perform data collection tasks. Getting management involved in processes might require you to build an import feature for them. Asking your manager to "Save as" CSV is much easier than teaching them SQL!
+Furthermore, on the management layer of most companies, Excel and [Google Sheets](/blog/2024/06/interacting-with-google-sheet-from-node-red/) are the go-to tools to perform data collection tasks. Getting management involved in processes might require you to build an import feature for them. Asking your manager to "Save as" CSV is much easier than teaching them SQL!
 
 ## 2 Ways to send a file to Node-RED
 

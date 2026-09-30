@@ -64,7 +64,7 @@ Find a device management system that works with all of them. A flexible platform
 
 Automation is essential for boosting manufacturing efficiency. device management platforms with built-in DevOps tools integrate easily with production systems. They automate tasks like device setup, configuration, and software updates, helping reduce downtime and speed up troubleshooting.
 
-DevOps pipelines allow you to create workflows tailored to your needs, automating updates and maintenance for IIoT devices. This means your platform can push updates without interrupting production, reducing the need for manual work.
+[DevOps pipelines](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/) allow you to create workflows tailored to your needs, automating updates and maintenance for IIoT devices. This means your platform can push updates without interrupting production, reducing the need for manual work.
 
 With the flexibility to create custom DevOps pipelines, you can manage devices more efficiently, save time, minimize errors, and keep everything aligned with production requirements.
 

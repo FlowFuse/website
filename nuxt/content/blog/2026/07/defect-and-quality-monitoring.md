@@ -59,7 +59,7 @@ In this tutorial, you'll build a defect tracking and quality monitoring dashboar
 
 You can interact with the live demo here: :live-demo-link{href="https://defect-monitoring-dashboard.flowfuse.cloud/dashboard/defects" label="Try the Quality Monitoring Dashboard"}.
 
-By the end, you'll have a foundation you can extend into broader production monitoring or OEE tracking, or a plant-wide quality report.
+By the end, you'll have a foundation you can extend into broader production monitoring or [OEE](/blog/2025/04/what-is-an-oee-dashboard/) tracking, or a plant-wide quality report.
 
 ## What You'll Need
 

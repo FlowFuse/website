@@ -8,7 +8,7 @@ const route = useRoute()
 const { data: navGroups } = await useDocsNavTree()
 
 const items = computed((): NavigationMenuItem[] => [
-    { label: 'Documentation', to: '/docs' },
+    { label: 'Documentation', to: '/docs/' },
     ...(navGroups.value ?? []).flatMap(group => [
         { type: 'label', label: group.name } satisfies NavigationMenuItem,
         ...buildNavigationMenuItems(group.children, route.path),
@@ -17,5 +17,5 @@ const items = computed((): NavigationMenuItem[] => [
 </script>
 
 <template>
-  <SidebarNav :items="items" />
+  <SidebarNav :items="items" label="Documentation" />
 </template>

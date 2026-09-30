@@ -57,7 +57,7 @@ But here's the part I keep coming back to: the machine already knows it stopped.
 
 ## How It Works: Detect, Escalate, Record
 
-The process begins the instant a machine stops, not when a person notices. A sensor or PLC detects the halt and generates an event, timestamped to the second. That event is passed to a rules layer, which holds the core logic of the system, evaluating the duration of the stoppage against predefined thresholds to decide what happens next.
+The process begins the instant a machine stops, not when a person notices. A sensor or [PLC](/blog/2025/12/what-is-plc/) detects the halt and generates an event, timestamped to the second. That event is passed to a rules layer, which holds the core logic of the system, evaluating the duration of the stoppage against predefined thresholds to decide what happens next.
 
 If the stoppage is brief, under two minutes, say, it's logged as a routine changeover and nothing further happens. Cross that threshold, and the event escalates to the line supervisor. Still unresolved after the next interval, and maintenance gets the same alert. Past that point, it climbs further up the management chain. Each escalation fires automatically, based purely on whether the previous step was closed out in time, with every handoff timestamped as it happens. No one has to remember to log anything.
 

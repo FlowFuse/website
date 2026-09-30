@@ -12,7 +12,7 @@ tags:
     - unified-namespace
 ---
 
-A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle-marian-raphael-demme/), in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the Unified Namespace (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks, and update my article.
+A few years ago, I wrote an [article](https://www.linkedin.com/pulse/iiot-circle-marian-raphael-demme/), in German, detailing my understanding of how the Automation Pyramid, a widely adopted reference model for the IT landscape of manufacturing firms, is essentially hindering digital transformation. Now, as conversations around the [Unified Namespace](/blog/2023/12/introduction-to-unified-namespace/) (UNS) and particular frameworks continue to evolve, I revisit my earlier notions, review the latest updates to reference frameworks, and update my article.
 <!--more-->
 
 ::cta-image{src="/blog/2023/08/images/auto-pyramid-cta-1.png" alt="Talk to our team about replacing point-to-point wiring with certified OPC-UA and Modbus connections - no custom drivers" cta="demo"}
@@ -71,7 +71,7 @@ Unified Namespace organizes data using a semantic hierarchy, similar to a meticu
 
 ### The Pub-Sub Approach
 
-The Publish-Subscribe (Pub-Sub) model facilitates communication that decouples the sender (publisher) from the receiver (subscriber), providing an efficient communication protocol to avoid one-to-one connections. It offers flexibility and scalability as it allows for one-to-many and many-to-one communications, enabling data to flow freely between systems.
+The [Publish-Subscribe](/blog/2024/11/why-pub-sub-in-uns/) (Pub-Sub) model facilitates communication that decouples the sender (publisher) from the receiver (subscriber), providing an efficient communication protocol to avoid one-to-one connections. It offers flexibility and scalability as it allows for one-to-many and many-to-one communications, enabling data to flow freely between systems.
 
 ## A Necessity for Open Source
 

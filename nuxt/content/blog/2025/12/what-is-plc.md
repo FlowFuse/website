@@ -105,7 +105,7 @@ Open a PLC cabinet and you will find a metal assembly on a DIN rail, covered in 
 
 **5. Output modules.** Drive the physical world. When the program decides a motor should run, the output module closes a relay, switches a transistor, or sends an analog signal to a drive. Digital outputs handle contactors, solenoids, and indicators. Analog outputs set valve positions and drive speed references.
 
-**6. Communication interface.** Connects the PLC to everything else: HMIs, SCADA systems, other PLCs, drives, remote I/O, and IT systems. This is usually an Ethernet port plus one or more fieldbus ports, and it is where most of the difficulty in modern automation projects lives.
+**6. Communication interface.** Connects the PLC to everything else: [HMIs](/blog/2025/11/building-hmi-for-equipment-control/), [SCADA](/blog/2026/08/what-is-scada/) systems, other PLCs, drives, remote I/O, and IT systems. This is usually an Ethernet port plus one or more fieldbus ports, and it is where most of the difficulty in modern automation projects lives.
 
 **7. Programming device.** The laptop and vendor software you use to write, download, and debug the program. It also provides online monitoring, so you can watch logic execute live while the machine runs.
 
@@ -181,7 +181,7 @@ Micro PLCs handle very small tasks, typically 8 to 20 I/O points: a single conve
 
 Compact PLCs integrate the CPU, I/O, and power supply into one fixed unit, usually covering 10 to 100 I/O points. They suit packaging machines, pump stations, and HVAC plant. Many accept a limited number of add-on I/O modules, but once you exhaust that expansion you are looking at a modular platform instead.
 
-**Examples:** Siemens S7-1200, Rockwell Micro800, Schneider Modicon M221
+**Examples:** [Siemens S7-1200](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/), Rockwell Micro800, Schneider Modicon M221
 
 ### Modular PLCs
 
@@ -231,7 +231,7 @@ PLCs control processes where reliability is not negotiable. They are invisible b
 
 **Water treatment** plants manage pumps, chemical dosing, and filtration against flow and quality sensors. These systems commonly run 20 to 30 years, absorbing daily demand swings automatically.
 
-**Power substations** use PLCs for load monitoring, breaker control, and grid coordination, adjusting within milliseconds as generation and demand shift. The same controllers run inverter and turbine skids across [renewable generation sites](/industries/renewables/), where output varies by the minute.
+**Power substations** use PLCs for load monitoring, breaker control, and grid coordination, adjusting within milliseconds as generation and demand shift. The same controllers run inverter and turbine skids across [renewable generation sites](/industries/energy-utilities//), where output varies by the minute.
 
 **Refineries and chemical plants** manage temperatures, pressures, and emergency shutdown sequences in environments where a control failure is a safety event.
 

@@ -19,7 +19,7 @@ Need to get a file into Node-RED, but don't want to over complicate things.  Thi
 
 Often times it is necessary to update lookup tables in a SQL database, but you don't necessarily want to give access to everyone to edit the database, nor do you want to have to do it all yourself. This can often be seen when new products are introduced into a manufacturing facility. It may not be often, but enough that it warrants its own application. This process will guide you in a way that will enable your teammates to upload the files to the system themselves.
 
-Furthermore, on the management layer of most companies, Excel and Google Sheets are the go-to tools to perform data collection tasks. Getting management involved in processes might require you to build an import feature for them. Asking your manager to "Save as" CSV is much easier than teaching them SQL!
+Furthermore, on the management layer of most companies, Excel and [Google Sheets](/blog/2024/06/interacting-with-google-sheet-from-node-red/) are the go-to tools to perform data collection tasks. Getting management involved in processes might require you to build an import feature for them. Asking your manager to "Save as" CSV is much easier than teaching them SQL!
 
 
 ### Node-RED Dashboard (FlowFuse)
@@ -33,7 +33,7 @@ This simple flow allows the user to visualize data from a CSV in the [Node-RED D
 2. Import Flow - to import the flow into your Node-RED instance follow these [instructions](/blog/2023/03/3-quick-node-red-tips-5/#_1-copy-and-share-your-flows-using-export-and-import). 
 3. Access Dashboard - To access the dashboard, navigate to the `https://<flowfuse-instance-name>.flowfuse.cloud/dashboard`.
 
-This dashboard is currently configured to take in CSV files and transform them into a single message that is sent to the table for visualization.  Simultaneously the data from the import is stored locally in the flow context.  From there, the button can be used to trigger the sending of the data from the flow context to the next destination.  In this case, it is a simple debug node.
+This dashboard is currently configured to take in CSV files and transform them into a single message that is sent to the table for visualization.  Simultaneously the data from the import is stored locally in the [flow context](/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/).  From there, the button can be used to trigger the sending of the data from the flow context to the next destination.  In this case, it is a simple debug node.
 
 <iframe width="100%" height="225px" src="https://flows.nodered.org/flow/8c505039ac1b8dbed2bee1e22ee2975a/share?height=100" allow="clipboard-read; clipboard-write" style="border: none;"></iframe>
 

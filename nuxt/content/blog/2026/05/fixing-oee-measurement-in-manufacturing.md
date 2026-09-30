@@ -18,7 +18,7 @@ cta:
   description: Tell us what PLCs and protocols you are working with. We will show you how FlowFuse pulls the data and what an honest OEE dashboard looks like on your line.
 ---
 
-"85% is called world-class OEE" gets repeated in every plant manager meeting. In reality, only [3-6% of manufacturers ever reach that level](https://oxmaint.com/industries/steel-plant/oee-benchmarks-by-manufacturing-industry), and most operate much closer to [60%](https://manufacturingleadgeneration.com/manufacturing-quality-statistics/).
+"85% is called world-class [OEE](/blog/2025/04/what-is-an-oee-dashboard/)" gets repeated in every plant manager meeting. In reality, only [3-6% of manufacturers ever reach that level](https://oxmaint.com/industries/steel-plant/oee-benchmarks-by-manufacturing-industry), and most operate much closer to [60%](https://manufacturingleadgeneration.com/manufacturing-quality-statistics/).
 
 A pharma plant running at 72% under FDA validation rules is probably outperforming the automotive line bragging about 84%, but the quarterly review never frames it that way.
 
@@ -41,7 +41,7 @@ Speed losses are worse. A line running at 85% of rated speed all shift logs zero
 
 Put it together and [manual OEE is often overestimated by 10-25%](https://www.jitbase.com/blog/en/blog/how-to-effectively-track-the-oee-of-your-machine-tools). The dashboard says 78%. The real number is closer to 60%. Decisions get made on the 78%.
 
-The fix is structural. PLCs already know when a line stopped, how long it ran below rated speed, and how many parts came off. Connecting [FlowFuse](/) to the PLC over OPC-UA, Modbus, S7, or EtherNet/IP pulls that data straight off the machine. The operator's job changes from logging the stop to classifying the cause. [FlowFuse's OEE Dashboard blueprint](/blueprints/manufacturing/oee-dashboard/) gives you the calculation and visualisation layer on top of that, one of [several manufacturing dashboard patterns](/blog/2026/08/manufacturing-dashboard-examples/) built on the same connected data.
+The fix is structural. [PLCs](/blog/2025/12/what-is-plc/) already know when a line stopped, how long it ran below rated speed, and how many parts came off. Connecting [FlowFuse](/) to the PLC over [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), Modbus, S7, or [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) pulls that data straight off the machine. The operator's job changes from logging the stop to classifying the cause. [FlowFuse's OEE Dashboard blueprint](/blueprints/manufacturing/oee-dashboard/) gives you the calculation and visualisation layer on top of that, one of [several manufacturing dashboard patterns](/blog/2026/08/manufacturing-dashboard-examples/) built on the same connected data.
 
 ## Everyone calculates OEE differently
 
@@ -65,7 +65,7 @@ Without that, OEE comparisons across plants are not comparing performance. They 
 
 Put a target on a metric and attach it to performance reviews, and the metric stops measuring reality. It starts measuring how well people produce the number.
 
-Stops under a certain length stop getting logged. Changeovers get coded as planned instead of unplanned. Difficult products get pushed to the next shift. Maintenance gets scheduled during "non-production" windows so it does not count. The number improves. The process does not.
+Stops under a certain length stop getting logged. Changeovers get coded as planned instead of unplanned. Difficult products get pushed to the next shift. Maintenance gets scheduled during "non-production" windows so it does not count. [TEEP](/blog/2025/12/what-is-teep/) closes that loophole by measuring against every calendar hour, not just scheduled production time. The number improves. The process does not.
 
 [Publishing shift rankings and punishing low performers creates fear, data manipulation, and gaming. Operators learn to hide problems rather than expose them](https://oxmaint.com/industries/steel-plant/common-oee-mistakes-in-manufacturing).
 
