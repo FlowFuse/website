@@ -59,7 +59,7 @@ The Product Manager should set up a minimum of one poll every six months, to col
 
 ### Shop-Floor Demos
 
-Recorded, unedited demos of the platform being used end to end on real shop-floor hardware, filmed by selected engineers and non-engineers from across the company. Every point of friction found becomes a GitHub issue. See [Shop-Floor Demos](./shop-floor-demos.md) for the recording rules and the application scripts to build.
+Recorded, unedited demos of a marketing-scripted end-customer journey through the platform, filmed by a handful of employees from across the company regardless of role. Every point of friction found becomes a GitHub issue. See [Shop-Floor Demos](./shop-floor-demos.md) for the recording rules.
 
 ### Node-RED Community
 
