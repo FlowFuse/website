@@ -3,7 +3,7 @@ title: "Industrial IoT Solutions, Reimagined"
 subtitle: "Introducing FlowFuse Hub, Edge, and Fleet: three new industrial IoT solutions"
 meta:
     title: "Industrial IoT Solutions: Hub, Edge, and Fleet"
-    description: FlowFuse launches three new industrial IoT solutions built for IT, OT, and managing Node-RED at scale. Join this live webinar and find which one is yours.
+    description: FlowFuse launched three new industrial IoT solutions built for IT, OT, and managing Node-RED at scale. Watch the recording and find which one is yours.
     faq:
         - question: "What is industrial IoT?"
           answer: >
@@ -13,10 +13,10 @@ meta:
             Hub integrates enterprise systems and [APIs](/docs/node-red/core-nodes/network/http-request/) for IT teams. Edge connects [PLCs](/landing/plc/) and machines across sites for OT teams. Fleet manages [Node-RED](/node-red/) across thousands of distributed devices. All three run on the same platform; the difference is which deployment shape each one is built for.
         - question: "How do I know which industrial IoT solution is right for my setup?"
           answer: >
-            It comes down to where your applications live: a data center ([Hub](/product/hub/)), a plant floor ([Edge](/product/edge/)), or thousands of field devices ([Fleet](/product/fleet/)). We'll walk through all three live in the webinar and help map your specific setup to one of them. Bring your architecture and we'll sort it live in the Q&A.
+            It comes down to where your applications live: a data center ([Hub](/product/hub/)), a plant floor ([Edge](/product/edge/)), or thousands of field devices ([Fleet](/product/fleet/)). We walked through all three live and helped map attendee setups to one of them in the Q&A. Watch the recording, then [reach out](/contact-us) with your architecture and we'll help you sort it.
         - question: "Can I build real-time dashboards with FlowFuse?"
           answer: >
-            Yes. [FlowFuse Dashboard](/platform/dashboard/) ships with five [built-in themes](https://dashboard.flowfuse.com/nodes/config/ui-theme.html), all WCAG AA contrast-compliant, so dark mode stays legible instead of washed out. [Charts](https://dashboard.flowfuse.com/nodes/widgets/ui-chart) render live instead of leaving empty boxes, and tables show readable dates instead of raw epoch numbers, on top of smaller fixes that keep labels and gauges inside their cards at narrow widths. We'll demo it during the webinar,
+            Yes. [FlowFuse Dashboard](/platform/dashboard/) ships with five [built-in themes](https://dashboard.flowfuse.com/nodes/config/ui-theme.html), all WCAG AA contrast-compliant, so dark mode stays legible instead of washed out. [Charts](https://dashboard.flowfuse.com/nodes/widgets/ui-chart) render live instead of leaving empty boxes, and tables show readable dates instead of raw epoch numbers, on top of smaller fixes that keep labels and gauges inside their cards at narrow widths. We demoed it during the webinar — watch the recording to see it.
         - question: "Do I need to already use FlowFuse to attend?"
           answer: >
             No. The webinar works for both first-time evaluators and current customers. If you're new, you'll leave knowing which product to trial and how to start. If you already run FlowFuse, you'll leave knowing what's changed and which workarounds you get to delete.
@@ -24,7 +24,7 @@ image: /images/webinars/industrial-iot-solutions.jpg
 date: 2026-09-29
 time: 17:00 CET (11:00am ET)
 duration: 60
-video:
+video: eLIvLA3MOQo
 hosts: ["kristopher-sandoval", "drew-gatti"]
 hubspot:
     formId: 203e22c0-4c24-467d-b8fc-645160fa31f0
@@ -32,24 +32,28 @@ hubspot:
 ---
 There are days where you keep eleven plants from drifting apart. Or you keep SAP and the warehouse in sync at two in the morning. Or you ship an improvement to three thousand devices you'll never physically touch.
 
-Those are three different jobs, with three different definitions of a bad day. This webinar launches the industrial IoT solutions built for each one — [Hub](/product/hub/), [Edge](/product/edge/), and [Fleet](/product/fleet/) — live, so you can see which one is yours.
+Those are three different jobs, with three different definitions of a bad day. This webinar launched the industrial IoT solutions built for each one — [Hub](/product/hub/), [Edge](/product/edge/), and [Fleet](/product/fleet/). Watch the recording and see which one is yours.
 
 <!--more-->
 
 Picture your average day. Maybe it looks like a plant losing millions of dollars to downtime nobody saw coming. Maybe its thousands of irrigation devices spread across a state, each one needing an update you can't drive out and deliver by hand.
 
-Every one of those problems is real and until now, all of them got handed the same generic platform and told to make it fit. That changes today. We're launching three industrial IoT solutions: FlowFuse Hub, FlowFuse Edge, and FlowFuse Fleet — each built around one of those real jobs, not a tier or a bundle.
+Every one of those problems is real and until now, all of them got handed the same generic platform and told to make it fit. That changed with this launch. We introduced three industrial IoT solutions: FlowFuse Hub, FlowFuse Edge, and FlowFuse Fleet — each built around one of those real jobs, not a tier or a bundle.
 
-Join Kristopher Sandoval (Product Marketing) and Drew Gatti (Solutions Engineering), live to see all three in action, find out which one is yours, and leave knowing exactly how to start — today, in a 30-day trial, or as an upgrade from what you're already running.
+Watch Kristopher Sandoval (Product Marketing) and Drew Gatti (Solutions Engineering) walk through all three in action, find out which one is yours, and leave knowing exactly how to start — today, in a 30-day trial, or as an upgrade from what you're already running.
 
 ## Which industrial IoT solution fits my setup?
 
-- FlowFuse Hub integrates [enterprise systems](/landing/enterprise-integration/) and [APIs](/docs/node-red/core-nodes/network/http-request/), FlowFuse Edge connects [PLCs](/landing/plc/) and machines across sites, FlowFuse Fleet manages [Node-RED](/node-red/) across thousands of devices. We'll map your setup to one of the three, live.
+- FlowFuse Hub integrates [enterprise systems](/landing/enterprise-integration/) and [APIs](/docs/node-red/core-nodes/network/http-request/), FlowFuse Edge connects [PLCs](/landing/plc/) and machines across sites, FlowFuse Fleet manages [Node-RED](/node-red/) across thousands of devices. Watch the recording to see us map real attendee setups to one of the three.
 - Build faster with Industrial AI: [FlowFuse Expert](/docs/user/expert/) opens its [MCP server](/blog/2025/10/building-mcp-server-using-flowfuse/) to 3rd party agents, such as Cursor, Claude Code, Gemini CLI, and even in-house agents. Any MCP-speaking agent works. Point your AI agent at your FlowFuse instance and it builds, debugs, and fixes flows directly.
 - See what's running, everywhere: [role-based access control](/docs/user/role-based-access-control/), [audit logging](/docs/user/logs/#audit-log), and [one place to manage every instance and device](/blog/2024/10/managing-node-red-instances-in-centralize-platfrom/), no matter which product you run.
 - Read a [dashboard](/platform/dashboard/) at a glance: new [built-in themes](https://dashboard.flowfuse.com/nodes/config/ui-theme.html) with WCAG AA contrast, [charts](https://dashboard.flowfuse.com/nodes/widgets/ui-chart) that render instead of leaving empty boxes, and readable dates instead of raw timestamps.
-- Live Q&A: This is the best part! Bring your hard questions and let's talk about it live.
+- Live Q&A: Attendees asked about pricing across products as you scale, combining capabilities into a custom plan, and where FlowFuse Cloud is headed. Watch the recording to hear the answers.
 
-## Who should attend this FlowFuse product launch webinar?
+## Who should watch this FlowFuse product launch webinar?
 
-This webinar is ideal for Controls Engineers, OT and IIoT Solutions Architects, Plant Operations Managers, and the central IT and enterprise architecture teams who have to sign off on what they build. If you're evaluating FlowFuse for the first time, you can [sign up for a free trial](cta:signUp) with no credit card.
+This webinar is ideal for Controls Engineers, OT and IIoT Solutions Architects, Plant Operations Managers, and the central IT and enterprise architecture teams who have to sign off on what they build. 
+
+## See it on your setup
+
+You've seen how Hub, Edge, and Fleet map to real deployments. The fastest way to find out which one is yours is to walk through your own architecture with us. [Reach out to our team](/book-demo) and we'll map your setup — no generic pitch, just your problem and the fastest path through it.
