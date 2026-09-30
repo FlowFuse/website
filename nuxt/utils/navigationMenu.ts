@@ -1,4 +1,5 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { withTrailingSlash } from './withTrailingSlash'
 
 // Shared by Handbook/Docs/Application Guide left navs: turns a generic {title, path,
 // children} tree into the NavigationMenuItem[] shape UNavigationMenu (vertical,
@@ -26,7 +27,7 @@ export function buildNavigationMenuItems(nodes: MenuTreeNode[], currentPath: str
         const children = node.children?.length ? buildNavigationMenuItems(node.children, currentPath) : undefined
         return {
             label: node.title,
-            ...(node.link === false ? {} : { to: node.path }),
+            ...(node.link === false ? {} : { to: withTrailingSlash(node.path) }),
             icon: node.icon,
             defaultOpen: children ? isOrContains(node.path, currentPath) : undefined,
             children,

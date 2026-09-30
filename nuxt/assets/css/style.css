@@ -554,6 +554,11 @@ dl.message-properties > dd {
     color: var(--color-indigo-600);
 }
 
+.ff-command__host-reset {
+    flex-basis: 100%;
+    text-align: left;
+}
+
 .ff-command__host-toggle:hover,
 .ff-command__host-reset:hover {
     color: var(--color-indigo-800);

@@ -32,8 +32,7 @@ const STEP1 = {
     description: 'You will paste this into your agent in the next step.',
 }
 const STEP3 = {
-    title: 'Sign in and choose what it reaches',
-    description: 'Which teams the agent may act on, and whether it has editing rights or read access only.',
+    title: 'Select teams and permissions',
 }
 
 // A client renders `logo` as a brand mark when set, `icon` as our own glyph when not.
@@ -77,12 +76,24 @@ const CLIENTS = [
         id: 'claude',
         logo: '/images/ai/agents/claude.svg',
         name: 'Claude',
-        step2Title: 'Add a custom connector',
-        step2Body: 'Where custom connectors are available on your plan, add one and paste the URL. On Team and Enterprise an owner adds it once for everyone.',
-        step2Label: 'Open Claude',
-        step2Url: 'https://claude.ai/',
+        step1Title: 'Open the FlowFuse connector',
+        step1Body: 'The official FlowFuse MCP connector is available in Claude.',
+        step1Label: 'Connect to Claude',
+        step1Url: 'https://claude.ai/directory/flowfuse',
+        step2Title: 'Choose Connect to Claude',
+        step2Body: 'Claude opens FlowFuse. On Team and Enterprise an owner adds it once for everyone.',
+        selfHosted: {
+            step1Title: 'Copy the FlowFuse connector URL',
+            step1Body: 'You will paste this into Claude in the next step.',
+            step1Url: null,
+            step1Command: 'https://your-domain.com/mcp',
+            step2Title: 'Add a custom connector',
+            step2Body: 'Where custom connectors are available on your plan, add one and paste the URL. On Team and Enterprise an owner adds it once for everyone.',
+            step2Label: 'Open Claude',
+            step2Url: 'https://claude.ai/',
+        },
     },
-    // A coding agent installs the connector into itself, so its tab is the prompt
+    // Off Cloud, a coding agent installs the connector into itself, so its tab is the prompt
     // and nothing else. No flags, no config file, and nothing that goes stale when
     // a client changes how remote servers are added. Claude Code documents an
     // `mcp add`; Codex documents only its config file and UI. Asking works on both.
@@ -90,13 +101,22 @@ const CLIENTS = [
         id: 'claude-code',
         logo: '/images/ai/agents/claude.svg',
         name: 'Claude Code',
-        step1Title: 'Copy the prompt',
-        step1Body: 'This is the whole setup.',
-        step1Command: 'Add the FlowFuse MCP tool at https://app.flowfuse.com/mcp. Then ask me to complete the sign-in in the browser that opens.',
-        step2Title: 'Paste it into Claude Code',
-        step2Body: 'It adds the connector itself, then asks you to finish signing in.',
+        step1Title: 'Open the MCP list',
+        step1Body: 'Run this in Claude Code.',
+        step1Command: '/mcp',
+        hostSwap: false,
+        step2Title: 'Select FlowFuse and choose Authenticate',
+        step2Body: 'Find it under Show unused connectors.',
         step2Label: 'See the documentation',
         step2Url: '/docs/user/expert/third-party-agents/',
+        selfHosted: {
+            step1Title: 'Copy the prompt',
+            step1Body: 'This is the whole setup.',
+            step1Command: 'Add the FlowFuse MCP tool at https://your-domain.com/mcp. Then ask me to complete the sign-in in the browser that opens.',
+            hostSwap: true,
+            step2Title: 'Paste it into Claude Code',
+            step2Body: 'It adds the connector itself, then asks you to finish signing in.',
+        },
     },
     {
         id: 'codex',
@@ -122,7 +142,12 @@ const CLIENTS = [
     },
 ]
 
-const clients = computed(() => props.excludeExpert ? CLIENTS.filter(client => !client.builtIn) : CLIENTS)
+const selfHosted = useState('ff-command-host-editing', () => false)
+
+const clients = computed(() => {
+    const list = props.excludeExpert ? CLIENTS.filter(client => !client.builtIn) : CLIENTS
+    return list.map(client => (selfHosted.value && client.selfHosted) ? { ...client, ...client.selfHosted } : client)
+})
 
 // Prefix only off the /ai page, so the positions that page already reports to
 // PostHog keep their current values and its existing insights stay valid.
@@ -136,6 +161,11 @@ const activeClient = ref(clients.value[0].id)
 watch(clients, (list) => {
     if (!list.some(client => client.id === activeClient.value)) activeClient.value = list[0].id
 })
+
+function chooseSelfHosted (id: string) {
+    selfHosted.value = true
+    capture('cta-ai-self-hosted-toggle', { position: pos(id) })
+}
 
 function selectClient (id: string) {
     activeClient.value = id
@@ -180,14 +210,30 @@ function selectClient (id: string) {
           <CtaSignUp variant="primary" :position="`${surface}-tab-expert`" class="w-full" />
         </div>
         <div v-else class="ff-agent-step__cta">
-          <FfCommand :command="client.step1Command || ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked host-swap :wrap="Boolean(client.step1Command)" />
+          <div v-if="client.selfHosted && !selfHosted" class="ff-command__host">
+            <button type="button" class="ff-command__host-toggle" @click="chooseSelfHosted(client.id)">
+              Self-hosted? Use your own address
+            </button>
+          </div>
+          <CtaCustom
+            v-if="client.step1Url"
+            :label="client.step1Label"
+            :href="client.step1Url"
+            destination-key="agentSetupClientOpen"
+            :position="pos(client.id)"
+            external
+            target="_blank"
+            variant="primary"
+            class="w-full"
+          />
+          <FfCommand v-else :command="client.step1Command || ENDPOINT" event="cta-copy-mcp-endpoint" :position="pos(client.id)" stacked :host-swap="client.hostSwap !== false" :wrap="Boolean(client.step1Command)" />
         </div>
       </div>
 
       <div class="ff-agent-step">
         <p class="ff-agent-step__title"><span class="ff-agent-step__num">02</span>{{ client.step2Title }}</p>
         <p class="ff-agent-step__body">{{ client.step2Body }}</p>
-        <div class="ff-agent-step__cta">
+        <div v-if="client.step2Url" class="ff-agent-step__cta">
           <CtaCustom
             :label="client.step2Label"
             :href="client.step2Url"
@@ -203,7 +249,7 @@ function selectClient (id: string) {
 
       <div class="ff-agent-step">
         <p class="ff-agent-step__title"><span class="ff-agent-step__num">03</span>{{ client.step3Title || STEP3.title }}</p>
-        <p class="ff-agent-step__body">{{ client.step3Body || STEP3.description }}</p>
+        <p v-if="client.step3Body" class="ff-agent-step__body">{{ client.step3Body }}</p>
       </div>
     </div>
   </div>

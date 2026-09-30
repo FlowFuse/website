@@ -17,11 +17,9 @@ The CIP Suite connects FlowFuse flows to industrial control systems across the f
 
 This is a **FlowFuse Certified Node**. Unlike community nodes, which vary in quality and can go unmaintained without warning, FlowFuse vets Certified Nodes for quality, security, and support, and maintains them on an ongoing basis. [Read more about Certified Nodes](/blog/2025/07/certified-nodes-v2/). It is built on the [st-ethernet-ip](https://www.npmjs.com/package/st-ethernet-ip) protocol driver.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The CIP Suite is not available by default. It is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
-
-</div></div>
+::
 
 ## What is EtherNet/IP?
 
@@ -79,11 +77,9 @@ Only the source and sink nodes are protocol-specific. The transform stages of a 
 
 Because this suite is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering, make sure your account has access before installing. Contact our [sales team](/contact-us/) if you don't.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
-
-</div></div>
+::
 
 ### Install via the Palette Manager (recommended)
 

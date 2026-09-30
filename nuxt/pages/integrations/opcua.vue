@@ -327,7 +327,7 @@ function toggleFaq (i: number) {
             </div>
           </div>
         </div>
-        <SocialProof class="mt-12" eyebrow-bg="red" />
+        <SocialProof class="mt-12" />
       </div>
     </div>
 

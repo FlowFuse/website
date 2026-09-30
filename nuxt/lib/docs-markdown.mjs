@@ -17,9 +17,6 @@ const BLOCK_TAGS = new Set(['div', 'table', 'ul', 'ol', 'section', 'figure', 'de
  * A block runs from a column-0 opening tag to its matching column-0 closing tag. Nested
  * tags are always indented in this content, so a column-0 close is unambiguous. An opener
  * with no matching close is left untouched rather than swallowing the rest of the file.
- *
- * Must run before callout conversion, which deliberately inserts blank lines so markdown
- * inside a callout body still parses.
  */
 export function joinHtmlBlocks (content) {
     const lines = content.split('\n')
@@ -68,24 +65,37 @@ export function stripInlineScripts (content) {
     return content.replace(/^<script[\s\S]*?<\/script>[ \t]*\n?/gm, '')
 }
 
-/** Drop the Eleventy-only frontmatter field that Nunjucks needed. */
-export function stripTemplateEngineOverride (content) {
-    return content.replace(/^templateEngineOverride:[^\n]*\n/m, '')
-}
+/**
+ * Fail on a Nunjucks tag left in the docs.
+ *
+ * The upstream docs were written for Eleventy, which ran them through Nunjucks. @nuxt/content
+ * does not, and callouts and components are MDC now (`::note`, `::HubSpotForm{...}`). This
+ * used to strip leftover tags, which removed the installation form from
+ * docs/install/introduction.md without anyone noticing, so a tag now fails the build and
+ * names the line. Tags inside fenced code blocks and inline code are examples and stay.
+ */
+export function assertNoNunjucks (content, originalPath) {
+    const lines = content.split('\n')
+    let fence = null
 
-/** Convert Eleventy callout shortcodes to the markup styled by style.docs.css. */
-export function convertCallouts (content) {
-    const callout = (kind, title) => [
-        new RegExp(`\\{%-?\\s*${kind}\\s*-?%\\}([\\s\\S]*?)\\{%-?\\s*end${kind}\\s*-?%\\}`, 'g'),
-        (_, body) => `<div class="ff-callout ff-callout--${kind}"><p class="ff-callout__title">${title}</p><div class="ff-callout__content">\n\n${body.trim()}\n\n</div></div>`,
-    ]
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i]
 
-    return content
-        .replace(...callout('note', 'Note'))
-        .replace(...callout('warning', 'Warning'))
-        .replace(...callout('critical', 'Critical'))
-        // Strip remaining Nunjucks tags (set, include, if, for, etc.)
-        .replace(/\{%[^%]*%\}\n?/g, '')
+        if (fence) {
+            if (fence.test(line)) fence = null
+            continue
+        }
+
+        const opener = /^\s*(`{3,}|~{3,})/.exec(line)
+        if (opener) {
+            fence = new RegExp(`^\\s*${opener[1][0] === '`' ? '`' : '~'}{${opener[1].length},}\\s*$`)
+            continue
+        }
+
+        if (line.replace(/`[^`]*`/g, '').includes('{%')) {
+            throw new Error(`docs/${originalPath}:${i + 1} has a Nunjucks tag, which @nuxt/content does not render. Use MDC instead (e.g. ::note). Line: ${line.trim()}`)
+        }
+    }
 }
 
 /** Prepend build-time provenance to the page frontmatter. */
@@ -98,9 +108,9 @@ export function injectFrontmatter (content, originalPath, updated, version) {
 }
 
 export function processMarkdown (content, originalPath, updated, version) {
+    // Before injectFrontmatter, so the reported line number is the source file's.
+    assertNoNunjucks(content, originalPath)
     let out = injectFrontmatter(content, originalPath, updated, version)
-    out = stripTemplateEngineOverride(out)
     out = stripInlineScripts(out)
-    out = joinHtmlBlocks(out)
-    return convertCallouts(out)
+    return joinHtmlBlocks(out)
 }
