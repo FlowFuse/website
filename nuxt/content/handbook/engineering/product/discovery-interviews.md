@@ -85,3 +85,4 @@ Let the customer talk about what matters most to them. Calls are recorded and tr
 - [Customer interviews: how to recruit, what to ask, and how to synthesize](https://www.producttalk.org/2022/12/customer-interviews/)
 - [Story-based customer interviews uncover much-needed context](https://www.producttalk.org/2024/04/story-based-customer-interviews/)
 - [Automate your recruiting](https://www.producttalk.org/glossary-discovery-automate-your-recruiting/)
+- [Platform teams signal work](https://sujithjay.com/inventing-work#continuous-discovery)
