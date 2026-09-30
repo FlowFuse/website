@@ -14,6 +14,13 @@ test('a trailing /index is the section page itself, as the route handler reads i
     assert.equal(rawMarkdownCanonical('/raw/index.md', SITE), 'https://flowfuse.com/')
 })
 
+test('a raw whitepaper points at the singular /whitepaper/ route its page is served at', () => {
+    assert.equal(
+        rawMarkdownCanonical('/raw/whitepapers/open-source-software-for-manufacturing.md', SITE),
+        'https://flowfuse.com/whitepaper/open-source-software-for-manufacturing/'
+    )
+})
+
 test('a reserved character comes out percent-encoded, as the sitemap spells the url', () => {
     const expected = 'https://flowfuse.com/blog/2025/11/flowfuse%2Bllm%2Bmcp-equals-text-driven-operations/'
     assert.equal(rawMarkdownCanonical('/raw/blog/2025/11/flowfuse%2Bllm%2Bmcp-equals-text-driven-operations.md', SITE), expected)

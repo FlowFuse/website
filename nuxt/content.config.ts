@@ -731,7 +731,8 @@ export default defineContentConfig({
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
                 // Content lives under /whitepapers/* but the page route is singular
-                // (/whitepaper/[slug].vue) - content-urls.get.ts rewrites the sitemap loc.
+                // (/whitepaper/[slug].vue) - lib/content-page-path.mjs maps one to the
+                // other, for the sitemap loc and the /raw canonical.
             }),
         }),
         plans: defineCollection({

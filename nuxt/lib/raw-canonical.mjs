@@ -9,6 +9,8 @@
 // `Link: <url>; rel="canonical"` on non-html responses, which folds the twin into the page
 // while leaving the markdown readable for the agents llms.txt is for.
 
+import { contentPagePath } from './content-page-path.mjs'
+
 // Anything that could end the <...> of the header value or start a new header.
 const UNSAFE = /[<>"\s]/
 
@@ -36,6 +38,8 @@ export function rawMarkdownCanonical (pathname, siteUrl) {
     let path = '/' + match[1].split('/').map(segment => encodeURIComponent(decode(segment))).join('/')
     // Same mapping as the route handler: a trailing /index is the section's own page.
     if (path.endsWith('/index')) path = path.slice(0, -'/index'.length)
+    // /raw/whitepapers/<slug>.md is a copy of /whitepaper/<slug>/, as the sitemap has it.
+    path = contentPagePath(path)
 
     // Every page on the site ends in a slash (site.trailingSlash), so the canonical does too.
     return `${siteUrl.replace(/\/$/, '')}${path}/`
