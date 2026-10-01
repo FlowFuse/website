@@ -81,7 +81,7 @@ Most plants run a mix of legacy PLCs, older MES installations, and newer edge ha
 
 ## Six Sigma SPC And Modern SPC Software: Choosing The Right Tools
 
-Statistical process control does not exist in isolation. It works alongside broader quality methodologies and depends on the right software to make the data usable at scale. Choosing how SPC fits into your quality program and which tools support it are two separate decisions that shape how much value you get from the practice.
+Statistical process control does not exist in isolation. It works alongside [broader quality methodologies](/blog/2026/10/automotive-quality-control/) and depends on the right software to make the data usable at scale. Choosing how SPC fits into your quality program and which tools support it are two separate decisions that shape how much value you get from the practice.
 
 ### SPC's Role In Six Sigma Methodology
 
