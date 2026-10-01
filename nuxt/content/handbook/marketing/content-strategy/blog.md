@@ -301,11 +301,19 @@ Besides the end-of-article CTA above, you can drop a clickable, tracked image an
 ```
 
 - `src` and `alt` are required, same as any other blog image.
-- `cta` is required on every instance and also sets where the image links to — there's no separate URL to configure. Same four fixed destinations as `cta.type` above:
+- `cta` is required on every instance and also sets where the image links to. The same four fixed destinations as `cta.type` above need no URL:
   - `demo` - links to `/book-demo`
   - `contact` - links to `/contact-us`
   - `pricing` - links to `/pricing`
   - `sign-up` - links to the hosted sign-up URL
+- For any other destination, such as a blueprint, another relevant blog post, a docs page, or a product page, use `cta="custom"` with an `href`:
+
+  ```mdc
+  ::cta-image{src="/blog/2025/12/images/my-image.png" alt="Browse the FlowFuse Blueprint Library" cta="custom" href="/blueprints/"}
+  ::
+  ```
+
+  `href` is only accepted with `cta="custom"`, and a custom `href` can't point at one of the four fixed destinations — use its `cta` value instead, so those clicks stay grouped together in PostHog. The same goes for the sign-in URL. A query string or the full `https://flowfuse.com/...` form still counts as the fixed destination. Breaking either rule fails the build's tests and names the file. Custom clicks are reported with `cta_type: custom` and the `href` they link to.
 
   There is no default. `cta` here is independent of the front matter `cta.type` above — a single article can have several `CtaImage` blocks, each pointing at a different destination.
 

@@ -2,12 +2,13 @@
 // Inline image-as-CTA for blog markdown: ::cta-image{...}
 // `cta` is separate from the frontmatter `cta` (only used by BlogPostCta).
 import { useCapture } from '../../composables/useCapture'
-import type { CTA_DESTINATIONS } from '../../lib/cta-destinations'
+import { CTA_IMAGE_DESTINATIONS, ctaImageError } from '../../lib/cta-image'
 
 const props = defineProps<{
     src: string
     alt: string
-    cta: 'sign-up' | 'demo' | 'contact' | 'pricing'
+    cta: 'sign-up' | 'demo' | 'contact' | 'pricing' | 'custom'
+    href?: string
     /**
      * What the event's `reference` should say, for a page that is not a blog post.
      *
@@ -25,17 +26,10 @@ const POSITION = 'inline-image'
 // Same event as BlogPostCta - cta_type distinguishes the destination, same as there.
 const EVENT = 'blog-cta'
 
-const DESTINATIONS: Record<string, keyof typeof CTA_DESTINATIONS> = {
-    'sign-up': 'signUp',
-    demo: 'bookDemo',
-    contact: 'contactUs',
-    pricing: 'pricing',
-}
-
 const destination = computed(() => {
-    const match = DESTINATIONS[props.cta]
-    if (!match) throw new Error(`CtaImage: invalid cta "${props.cta}" - must be one of: ${Object.keys(DESTINATIONS).join(', ')}`)
-    return match
+    const error = ctaImageError(props.cta, props.href)
+    if (error) throw new Error(`CtaImage: ${error}`)
+    return props.cta === 'custom' ? undefined : CTA_IMAGE_DESTINATIONS[props.cta]
 })
 const capture = useCapture()
 
@@ -47,12 +41,16 @@ function onClick () {
         reference: props.reference || `Blog: ${postTitle?.value || ''}`,
         position: POSITION,
         cta_type: props.cta,
+        ...(!destination.value && { href: props.href }),
     })
 }
 </script>
 
 <template>
-  <CtaLink :destination="destination" :position="POSITION" variant="image" class="mb-4 block" @click="onClick">
+  <CtaLink v-if="destination" :destination="destination" :position="POSITION" variant="image" class="mb-4 block" @click="onClick">
     <NuxtImg :src="src" :alt="alt" />
   </CtaLink>
+  <ULink v-else :href="href" raw class="mb-4 block" @click="onClick">
+    <NuxtImg :src="src" :alt="alt" />
+  </ULink>
 </template>
