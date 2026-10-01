@@ -55,26 +55,26 @@ const STEPS = [
         label: 'Step one',
         icon: 'i-heroicons-command-line',
         title: 'Install and provision',
-        paragraphs: [
+        text: [
             'Run the installer on the machine. It installs the required components, registers the machine with your FlowFuse team, and configures the Device Agent as a service so it starts again after a reboot.',
-            'For larger deployments, use <a href="/docs/device-agent/register/#bulk-registration">bulk registration options</a> to provision multiple devices.',
+            'For larger deployments, use [bulk registration options](/docs/device-agent/register/#bulk-registration) to provision multiple devices.',
         ],
     },
     {
         label: 'Step two',
         icon: 'i-heroicons-wrench-screwdriver',
         title: 'Build and test against the real hardware',
-        paragraphs: [
-            'Developer Mode opens that device\'s <span class="whitespace-nowrap">Node-RED</span> editor through FlowFuse. Build against the real PLC, sensors, and network, then take a snapshot when the application is ready.',
+        text: [
+            'Developer Mode opens that device\'s Node‑RED editor through FlowFuse. Build against the real PLC, sensors, and network, then take a snapshot when the application is ready.',
         ],
     },
     {
         label: 'Step three',
         icon: 'i-heroicons-rocket-launch',
         title: 'Deploy the version you tested',
-        paragraphs: [
+        text: [
             'Set that snapshot as the target for one device or a group of hundreds. Devices update to the assigned version and stay there until you assign another target.',
-            'Use <a href="/docs/user/devops-pipelines/">DevOps pipelines</a> to move changes from development through testing and into production.',
+            'Use [DevOps pipelines](/docs/user/devops-pipelines/) to move changes from development through testing and into production.',
         ],
     },
 ]
@@ -169,10 +169,6 @@ const FAQ_DISPLAY = FAQ.map(item => ({
     answer: item.answer.replaceAll('Node-RED', 'Node\u2011RED'),
 }))
 
-useSchemaOrg([
-    defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion(item)),
-])
 </script>
 
 <template>
@@ -241,37 +237,13 @@ useSchemaOrg([
       </div>
     </div>
 
-    <!-- How it works: /integrations/opcua/ ("From OPC UA to insight, step by step") -->
-    <section class="w-full px-6 py-20 md:py-24">
-      <div class="max-w-screen-lg mx-auto md:flex md:gap-12 md:items-start">
-        <div class="mb-12 md:mb-0 md:w-[373px] md:shrink-0 md:sticky! md:top-24 md:self-start max-md:text-center">
-          <h2 class="mt-0 mb-0">How the Device Agent Works</h2>
-          <p class="font-light text-gray-700 mt-6 mb-0">Three steps take you from a machine sitting on a bench to a <span class="whitespace-nowrap">Node-RED</span> application running in production.</p>
-          <NuxtLink to="/docs/device-agent/install/overview/" class="mt-3 inline-flex items-center gap-1.5">
-            Learn how to install the FlowFuse Device Agent
-            <UIcon name="i-heroicons-arrow-long-right-20-solid" class="w-5 h-5 shrink-0" />
-          </NuxtLink>
-        </div>
-        <div class="max-w-screen-md mx-auto md:mx-0">
-          <div v-for="(step, index) in STEPS" :key="step.title" class="flex flex-col sm:flex-row gap-3 sm:gap-6">
-            <div class="flex items-center gap-3 sm:flex-col sm:items-center sm:gap-0">
-              <div class="ff-line h-px flex-1 sm:hidden" />
-              <span class="flex items-center h-7 shrink-0 sm:mt-6">
-                <UIcon :name="step.icon" class="w-6 h-6 text-indigo-600" />
-              </span>
-              <div class="ff-line h-px flex-1 sm:hidden" />
-              <div v-if="index !== STEPS.length - 1" class="ff-line hidden sm:block w-px flex-1 mt-3 -mb-3 bg-gray-300" />
-            </div>
-            <div :class="index !== STEPS.length - 1 ? 'pb-10 sm:pb-12' : ''">
-              <span class="block text-sm leading-5 font-semibold text-gray-500 mb-1 text-center sm:text-left">{{ step.label }}</span>
-              <h3 class="mt-0 mb-4 sm:mb-2 text-xl leading-7 font-semibold text-indigo-600 text-center sm:text-left">{{ step.title }}</h3>
-              <!-- eslint-disable-next-line vue/no-v-html -->
-              <p v-for="(paragraph, p) in step.paragraphs" :key="p" class="font-light text-gray-600" :class="p === step.paragraphs.length - 1 ? 'mb-0' : ''" v-html="paragraph" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- How it works -->
+    <StepList
+        heading="How the Device Agent Works"
+        intro="Three steps take you from a machine sitting on a bench to a Node‑RED application running in production."
+        :link="{ label: 'Learn how to install the FlowFuse Device Agent', href: '/docs/device-agent/install/overview/' }"
+        :steps="STEPS"
+    />
 
     <!-- Where it runs: /product/edge/ ("What's Included") -->
     <section class="w-full px-6 pb-24">
@@ -330,14 +302,6 @@ useSchemaOrg([
       </div>
     </section>
 
-    <!-- FAQ: homepage -->
-    <div class="w-full px-6 pt-20 bg-indigo-50/50 mt-24">
-      <div class="max-w-screen-lg mx-auto">
-        <h2 class="mb-1 text-center md:text-left">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
-        <div class="-mt-20">
-          <BlogFaq :faq="FAQ_DISPLAY" variant="page" />
-        </div>
-      </div>
-    </div>
+    <FaqSection :items="FAQ_DISPLAY" :schema-items="FAQ" background="indigo" class="mt-24" />
   </div>
 </template>

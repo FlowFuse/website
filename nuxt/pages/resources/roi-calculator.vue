@@ -78,10 +78,6 @@ useSeoMeta({
   twitterSite: '@FlowFuseinc',
 })
 
-useSchemaOrg([
-  defineWebPage({ '@type': 'FAQPage' }),
-  ...faqs.map(item => defineQuestion(item)),
-])
 </script>
 
 <template>
@@ -161,12 +157,7 @@ useSchemaOrg([
     </section>
 
     <!-- ============================ FAQ ============================ -->
-    <section class="w-full px-6 pt-10">
-      <div class="max-w-screen-lg mx-auto pb-18">
-        <h2 class="mb-8"><span class="text-indigo-600">ROI questions</span> industrial teams ask</h2>
-        <BlogFaq :faq="faqs" />
-      </div>
-    </section>
+    <FaqSection :items="faqs" heading="==ROI questions== industrial teams ask" />
 
     <!-- ============================ CLOSING CTA ============================ -->
     <div class="w-full px-6 pb-16">

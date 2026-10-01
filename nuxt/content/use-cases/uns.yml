@@ -1,7 +1,64 @@
-# Listing metadata only. The page itself is pages/use-cases/uns.vue - this one
-# had a real markup body in src/use-cases/uns.njk, so it did not lift into data the way the
-# two operational use-cases did. Kept here so /use-cases/ still builds its cards from
-# one place rather than a hand-maintained list.
+# Ported from src/use-cases/uns.njk (11ty). Rendered by pages/use-cases/[slug].vue from
+# the `sections` list below.
 slug: uns
 title: "FlowFuse for UNS"
 problem: "Adopt a Unified Namespace without ripping out existing infrastructure. FlowFuse connects producers and consumers through MQTT with low-code flows."
+seoMeta:
+  title: "FlowFuse for the Unified Namespace"
+  description: "FlowFuse simplifies UNS adoption for manufacturing companies by providing a user-friendly, low-code platform for deploying and using data from a UNS."
+  image: /images/solutions/flowfuse-uns.png
+  keywords: "FlowFuse, UNS, Unified Namespace, manufacturing, data, data integration, data management, data visualization, data analysis, data-driven decisions, data silos, real-time data, collaboration, Node-RED, MQTT Broker, low-code, open-source, rapid implementation, seamless integration"
+
+sections:
+  - type: hero
+    layout: split
+    heading: "FlowFuse for the ==Unified Namespace=="
+    text: "FlowFuse simplifies UNS adoption for manufacturing companies by providing a user-friendly, low-code platform for deploying and using data from a UNS."
+    image: { src: /images/solutions/ff-uns.png, alt: "FlowFuse connected to many industrial devices", width: 400 }
+    ctas:
+      - { cta: contact-us, variant: primary }
+      - { cta: sign-up }
+
+  - type: features
+    heading: "Unlock the power of your ==real-time data=="
+    intro: "IT and data professionals are often challenged by the complexities of accessing and analyzing data scattered across disparate systems in manufacturing environments. UNS offers a solution to these challenges by providing a standardized way to access and utilize real-time data across your entire manufacturing operation."
+    lead: "With FlowFuse adopting UNS has never been faster or easier"
+    items:
+      - { icon: i-heroicons-circle-stack, title: "Break down data silos", text: "Access data from any source, regardless of its format or location and make it available through a central hub." }
+      - { icon: i-heroicons-eye, title: "Gain real-time visibility", text: "Monitor your operations with interactive visual dashboards." }
+      - { icon: i-heroicons-bolt, title: "Make faster, data-driven decisions", text: "Analyze data from across your organization to identify gaps and optimize processes." }
+      - { icon: i-heroicons-lock-closed, title: "Replace point-to-point connections", text: "Seamlessly share data across your entire operation." }
+      - { icon: i-heroicons-arrows-pointing-out, title: "Improved collaboration", text: "Adapt data across different systems with minimal data loss or loss of context." }
+
+  - type: prose
+    heading: "From Data Source to Application:\n==Streamline Your UNS Workflows with FlowFuse=="
+    body:
+      - image: { src: /images/solutions/flowfuse-uns.png, alt: "FlowFuse UNS Workflow" }
+
+  - type: features
+    background: indigo
+    heading: "The FlowFuse !!Advantage!!"
+    items:
+      - { title: "Built-in adaptation layer", text: "Leverage FlowFuse's low-code platform to transform and make your data available for UNS." }
+      - { title: "End-to-end UNS platform", text: "Everything you need to connect, manage, visualize and analyze your data in one place." }
+      - { title: "Seamless integration", text: "Built-in MQTT Broker ready to use alongside your FlowFuse applications with robust enterprise-grade features of the FlowFuse Platform." }
+      - { title: "Rapid implementation", text: "Get up and running quickly on FlowFuse Cloud." }
+      - { title: "Open-source", text: "Avoid vendor lock-in." }
+      - { title: "Low-Code", text: "Empowering your teams to build custom solutions with ease." }
+
+  - type: cta
+    heading: "Ready to simplify your UNS journey and unlock the power of your industrial data?"
+
+  - type: resources
+    heading: "Learn about UNS"
+    columns:
+      - items:
+          - { title: "Introduction to UNS", href: /blog/2023/12/introduction-to-unified-namespace/, image: /blog/2023/12/images/introduction-to-uns.png, alt: "Graphics depicting a unified namespace." }
+          - { title: "From ISA 95 towards the UNS", href: /blog/2023/08/isa-95-automation-pyramid-to-unified-namespace/, image: /blog/2023/08/images/UNS/UNS-Headline.svg, alt: "Graphics depicting the UNS related to the automation pyramid." }
+          - { title: "Node-RED: The perfect adapter and middleware for the UNS", href: /blog/2024/02/node-red-perfect-adapter-middleware-uns/, image: /blog/2024/02/images/node-red-for-uns.png, alt: "Node-RED and the UNS" }
+          - { title: "Building a Unified Namespace (UNS) with FlowFuse", href: /blog/2024/11/building-uns-with-flowfuse/, image: /blog/2024/11/images/building-uns-with-flowfuse.png, alt: "Graphics depicting a Unified Namespace with FlowFuse." }
+      - items:
+          - { lead: "Free whitepaper:", title: "UNS - Decoupling data producers and consumers", href: /whitepaper/uns-decoupling-data-producers-and-consumers/, image: /resources/images/whitepaper_uns.png, alt: "Graphics depicting the cover of the Whitepaper." }
+          - { title: "Data Modeling: The Key to a Successful Unified Namespace", href: /blog/2024/12/why-uns-need-data-modeling/, image: /blog/2024/12/images/data-modeling-uns.png, alt: "Graphics depicting unified namespace data modeling." }
+          - { title: "Selecting your UNS Broker", href: /blog/2024/01/unified-namespace-what-broker/, image: /blog/2024/01/images/broker-for-uns.png, alt: "Graphics displaying different broker logos." }
+          - { title: "Unified Namespace: When to Use It, and When to Choose Something Else", href: /blog/2024/01/unified-namespace-when-not-to-use/, image: /blog/2024/01/images/when-not-to-use-the-uns.png, alt: "Graphics depicting unified namespace data modeling using FlowFuse." }

@@ -1,8 +1,60 @@
-# Listing metadata only. The page itself is pages/use-cases/data-integration.vue - this one
-# had a real markup body in src/use-cases/data-integration.njk, so it did not lift into data the way the
-# two operational use-cases did. Kept here so /use-cases/ still builds its cards from
-# one place rather than a hand-maintained list.
+# Ported from src/use-cases/data-integration.njk (11ty). Rendered by
+# pages/use-cases/[slug].vue from the `sections` list below.
 slug: data-integration
 title: "FlowFuse for Data Integration"
 industries: ["building-materials", "energy-utilities"]
 problem: "Collect, transform, and route data from any industrial source to any destination, without writing integration code from scratch."
+seoMeta:
+  image: /images/solutions/og-solutions-data-integration.jpg
+
+sections:
+  - type: hero
+    layout: pictogram
+    text: "Data integration can be a challenging task, especially when dealing with multiple data formats, protocols, and sources. FlowFuse's low-code industrial application platform allows anyone to collect data from multiple sources, apply the data, and update, store, and transmit data to a new service."
+    image: { src: /images/pictograms/data_integration_blue.png, alt: "" }
+    ctas:
+      - { cta: contact-us }
+
+  - type: features
+    centered: true
+    heading: "Challenges of Data Integration"
+    image: { src: /images/solutions/data-integration.png, alt: "" }
+    items:
+      - { navIcon: data, solid: true, text: "Data comes from different sources, including internal IT systems (ERP, CRM, SCM), IoT devices, external data services (weather, foreign exchange, etc.)" }
+      - { navIcon: codeblock, text: "Data is accessible in a wide variety of formats, including CSV files, REST Api, XML, YAML, MQTT." }
+      - { navIcon: lock, text: "Access to data is often gated by IT departments making it slow and timing consuming for departments to get access to new integrated data." }
+      - { navIcon: database, text: "Data needs to be stored in different formats and databases." }
+      - { navIcon: chart, text: "Data needs to be visualized and communicated back to a user." }
+
+  - type: features
+    layout: panel
+    columns: 1
+    heading: "Why FlowFuse is the !!Data Integration Solution!!"
+    items:
+      - title: "Accessible for Anyone"
+        text: "FlowFuse’s low-code visual environment makes it easy for non-programmers to integrate data from different sources without needing to know how to code. This enables all kinds of departments to work on their own data integration projects without requiring support from IT."
+      - title: "Real-Time Data Visualisation"
+        text: "FlowFuse makes it easy to create real-time data visualizations and dashboards. Data can be filtered, transformed and analyzed through event-driven flows to get real-time insights into your business."
+      - title: "Support for Different Data Formats"
+        text: "FlowFuse supports parsing a wide range of formats including: **csv**, **html**, **json**, **xml** and **yaml**. Additional data formats are available through FlowFuse’s support for over 5,000 open-source plug-ins."
+
+  - type: features
+    centered: true
+    heading: "FlowFuse Improves Data Integration"
+    items:
+      - image: /images/pictograms/community_blue.png
+        title: "Collaborative Development"
+        text:
+          - "FlowFuse makes it possible for teams to collaborate on the same flows and applications."
+          - "Team members can share instances to make for quicker and more efficient development, with full version control and audit trails built in."
+      - image: /images/pictograms/node_catalog_blue.png
+        title: "Managed Application Service"
+        text: "We run your instances so you don’t have to worry about the production reliability of your industrial applications."
+      - image: /images/pictograms/bias_for_action_blue.png
+        title: "Software Delivery Pipelines"
+        text: "FlowFuse allows you to create snapshots of your instances so you can create software delivery pipelines for development, test, and production. You can revert to a previous version of a snapshot to rollback any changes."
+
+  - type: cta
+    heading: "Discover how FlowFuse can power your Data Integration."
+    ctas:
+      - { cta: contact-us }

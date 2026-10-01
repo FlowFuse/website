@@ -7,7 +7,7 @@
 //    blog. Both render the same video, one for each breakpoint, as the .njk did.
 //  - The four quote glyphs were {% include %}d raw at w-16 with no ff-icon wrapper, so
 //    they resolve through <UIcon> against the installed heroicons set.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg.
+//  - faq.njk becomes <FaqSection>, which also emits the FAQPage data.
 //  - The CTA macros become <CtaBookDemo> and <CtaSignUp>.
 //  - The <title> and meta description are FIXED here. This page's frontmatter carried
 //    MES's meta block verbatim, so production serves
@@ -52,10 +52,6 @@ useSeoMeta({
     twitterSite: '@FlowFuseinc',
 })
 
-useSchemaOrg([
-    defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
-])
 </script>
 
 <template>
@@ -164,12 +160,9 @@ useSchemaOrg([
               </tbody>
             </table>
           </div>
-          <h2 class="max-md:text-center -mb-12">
-            Frequently Asked <span class="text-indigo-600">Questions</span>
-          </h2>
-          <BlogFaq :faq="FAQ" variant="page" />
         </div>
       </div>
+      <FaqSection :items="FAQ" />
     </div>
   </div>
 </template>

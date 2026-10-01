@@ -7,7 +7,7 @@
 //    inline script that queried the DOM and ran two timers with no teardown.
 //  - testimonials.njk becomes <TestimonialCarousel>, explore-more-content.njk becomes
 //    <ExploreMoreContent> (renamed from ThankYouExploreMore, since this page renders it
-//    too), social-proof.njk becomes <SocialProof> and faq.njk becomes <BlogFaq>.
+//    too), social-proof.njk becomes <SocialProof> and faq.njk becomes <FaqSection>.
 //  - cta-get-started.njk was a four-line partial reading a `cta` object the caller set;
 //    it is the markup at the foot of this page.
 //  - site.messaging.heroTagLine and .subtitle came from src/_data/site.json, which Nuxt
@@ -108,10 +108,6 @@ useSeoMeta({
     twitterSite: '@FlowFuseinc',
 })
 
-useSchemaOrg([
-    defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
-])
 </script>
 
 <template>
@@ -366,15 +362,7 @@ useSchemaOrg([
       </div>
   </div>
 
-  <!-- FAQ Section -->
-  <div class="w-full px-6 pt-20 bg-indigo-50/50 mb-10">
-      <div class="max-w-screen-lg mx-auto">
-          <h2 class="mb-1">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
-          <div class="-mt-20">
-              <BlogFaq :faq="FAQ" variant="page" />
-          </div>
-      </div>
-  </div>
+  <FaqSection :items="FAQ" background="indigo" class="mb-10" />
 
   <div class="pb-10 md:pb-12 pt-14 px-6">
       <!-- Get Started -->
