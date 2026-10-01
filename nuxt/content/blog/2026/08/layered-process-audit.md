@@ -48,7 +48,7 @@ The **layers** are different levels of management. A supervisor may check a proc
 
 The layers are not different stages of production. They are different levels of oversight.
 
-LPAs are widely used in [automotive manufacturing](/industries/automotive/) and other industries where consistent process control is important. They complement formal process and product audits rather than replacing them.
+LPAs are widely used in [automotive manufacturing](/industries/automotive/) and other industries where consistent process control is important. They complement formal process and product audits rather than replacing them, as one layer of a wider [automotive quality control](/blog/2026/10/automotive-quality-control/) system.
 
 ## How Do LPA Layers Work?
 
