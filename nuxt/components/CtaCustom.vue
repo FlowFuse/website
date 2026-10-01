@@ -29,7 +29,7 @@
 // descriptive error" convention as CtaImage.vue's invalid-cta check (see
 // CLAUDE.md).
 import CtaButton from './cta/CtaButton.vue'
-import { CTA_DESTINATIONS, normalizeHref } from '../lib/cta-destinations'
+import { CTA_DESTINATIONS, ctaDestinationKey } from '../lib/cta-destinations'
 import { CUSTOM_CTA_DESTINATIONS } from '../lib/custom-cta-destinations'
 
 const props = withDefaults(defineProps<{
@@ -93,7 +93,10 @@ const HREF = computed(() => {
 
 const EVENT = computed(() => destination.value.event)
 
-const collision = computed(() => Object.values(CTA_DESTINATIONS).find(dest => normalizeHref(dest.href) === normalizeHref(HREF.value)))
+const collision = computed(() => {
+    const key = ctaDestinationKey(HREF.value)
+    return key && CTA_DESTINATIONS[key]
+})
 if (collision.value) {
     throw new Error(`CtaCustom cannot point at "${HREF.value}" - use <${collision.value.component}> instead, so PostHog keeps grouping this destination under one event name.`)
 }

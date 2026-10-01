@@ -595,7 +595,7 @@ export default defineNuxtConfig({
         // under it. These collections' frontmatter still writes "meta:", so rewrite the key
         // to "structuredData:" before parsing rather than editing hundreds of content files.
         'content:file:beforeParse' ({ file, collection }) {
-            if (!['blog', 'webinars'].includes(collection.name)) return
+            if (!['blog', 'webinars', 'docs'].includes(collection.name)) return
             file.body = file.body.replace(
                 /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
                 (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')

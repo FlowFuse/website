@@ -50,7 +50,11 @@ export default defineContentConfig({
                 redirect: z.object({
                     to: z.string(),
                 }).optional(),
-                meta: z.object({
+                // Frontmatter writes this as "meta:", which @nuxt/content reserves; the
+                // content:file:beforeParse hook in nuxt.config.ts renames it first, as it
+                // does for the blog and webinars. Declared as `meta`, every page's
+                // description was silently dropped.
+                structuredData: z.object({
                     description: z.string().optional(),
                 }).optional(),
                 // No `sitemap` schema field here on purpose - @nuxtjs/sitemap's own
@@ -731,7 +735,8 @@ export default defineContentConfig({
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
                 // Content lives under /whitepapers/* but the page route is singular
-                // (/whitepaper/[slug].vue) - content-urls.get.ts rewrites the sitemap loc.
+                // (/whitepaper/[slug].vue) - lib/content-page-path.mjs maps one to the
+                // other, for the sitemap loc and the /raw canonical.
             }),
         }),
         plans: defineCollection({

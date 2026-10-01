@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { queryCollection } from '@nuxt/content/server'
 import { getGitLastmod } from '../../../lib/git-lastmod.mjs'
+import { contentPagePath } from '../../../lib/content-page-path.mjs'
 
 // docs/handbook/changelog/blog/ebooks/whitepapers deliberately carry no `sitemap` schema
 // field in content.config.ts - @nuxtjs/sitemap's @nuxt/content integration re-splices
@@ -94,7 +95,7 @@ const CONTENT_SOURCES: ContentSource[] = [
         images: entry => ['image', 'thumbnail']
             .map(key => stringField(entry, key))
             .filter((path): path is string => Boolean(path)),
-        rewriteLoc: loc => loc.replace(/^\/whitepapers\//, '/whitepaper/'),
+        rewriteLoc: contentPagePath,
     },
 ]
 
