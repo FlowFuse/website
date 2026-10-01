@@ -11,8 +11,6 @@ function capture (eventName?: string, props?: Record<string, unknown>) {
   }
 }
 
-const DEMO_URL = '/book-demo/'
-
 const evidence = [
   { stat: '~20% of the work-week', claim: 'is lost searching for internal information.', source: 'McKinsey Global Institute — The Social Economy (2012)', url: 'https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy' },
   { stat: '17.3 hrs / week', claim: 'of developer time goes to maintenance & technical debt — ~42% of the week.', source: 'Stripe — The Developer Coefficient (2018)', url: 'https://stripe.com/files/reports/the-developer-coefficient.pdf' },
@@ -154,7 +152,7 @@ useSchemaOrg([
             <p><b>1 · Waste elimination.</b> Engineers lose ~20% of the week <a class="text-indigo-600 hover:underline" href="/use-cases/uns/">finding information</a> (McKinsey). We recover the share you set (default 30%): <code>engineers × salary × 0.20 × recovery</code>.</p>
             <p><b>2 · Speed to deploy.</b> Building from scratch and hand-deploying is labor you can reclaim with <a class="text-indigo-600 hover:underline" href="/blueprints/">reuse</a> and <a class="text-indigo-600 hover:underline" href="/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/">pipelines</a>: <code>(apps × hrs/app × reuse% + deploys × hrs/deploy × pipeline%) × hourly rate</code>. Reuse gains are grounded in Lim (40–57%); deployment automation in DORA.</p>
             <p><b>3 · Fault tolerance.</b> <a class="text-indigo-600 hover:underline" href="/blog/2025/12/mttf-vs-mtbf-vs-mttr/">Slow recovery</a> means idle machines and engineers: <code>incidents × downtime hrs × cost/hr × avoided%</code>. The $125k/hr industry average (ABB) is the ceiling; we default far lower.</p>
-            <p><b>Net &amp; payback.</b> A representative FlowFuse package cost is subtracted from gross savings to show net savings, an ROI multiple, and a payback window. It’s an estimate for comparison — see <a href="/pricing/">FlowFuse pricing</a> for what each product includes, or <a :href="DEMO_URL">book a demo</a> for an exact quote.</p>
+            <p><b>Net &amp; payback.</b> A representative FlowFuse package cost is subtracted from gross savings to show net savings, an ROI multiple, and a payback window. It’s an estimate for comparison — see <CtaLink destination="pricing" position="methodology">FlowFuse pricing</CtaLink> for what each product includes, or <CtaLink destination="bookDemo" position="methodology">book a demo</CtaLink> for an exact quote.</p>
           </div>
         </div>
       </div>
