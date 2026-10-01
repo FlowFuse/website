@@ -516,7 +516,7 @@ export default defineContentConfig({
         // with automotive itself, then industrial-machinery) is a data entry here plus a thin
         // pages/industries/<slug>.vue wrapper — same split as the industriesLegacy collection
         // below, just a different, richer set of bands (quote card, metrics, ROI calculator,
-        // zigzag applications, compliance grid) than the seven legacy pages have.
+        // zigzag applications, compliance grid) than the legacy pages have.
         industries: defineCollection({
             type: 'data',
             source: 'industries/*.yml',
@@ -618,14 +618,16 @@ export default defineContentConfig({
                 }),
             })
         }),
-        // The seven industry pages were pure 11ty frontmatter read by layouts/industry.njk,
+        // These industry pages were pure 11ty frontmatter read by layouts/industry.njk,
         // the same shape as the operational use-cases. /industries/automotive/ is not here:
         // it had a bespoke markup body and stays a hand-written Vue page, which is why the
         // listing merges this collection with that one entry.
         //
-        // Named industriesLegacy, not industries: these seven pages are transitional and
-        // due to be deleted once the automotive-page template covers them (or their
+        // Named industriesLegacy, not industries: these pages are transitional and due to
+        // be deleted once the automotive-page template covers them (or their
         // replacements). `industries` is reserved for that template's own collection.
+        // Started at seven; aerospace-components and aviation-aerospace were the first
+        // pair merged onto the template, at /industries/aviation-aerospace/.
         industriesLegacy: defineCollection({
             type: 'data',
             source: 'industries-legacy/*.yml',

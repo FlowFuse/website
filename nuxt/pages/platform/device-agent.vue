@@ -298,7 +298,7 @@ useSchemaOrg([
       </div>
     </section>
 
-    <!-- What sits behind it: /industries/aerospace-components/ ("Use Cases") -->
+    <!-- What sits behind it: /industries/aviation-aerospace/ ("Use Cases") -->
     <section class="w-full py-16 px-6 comparison-section-bg">
       <div class="max-w-screen-lg mx-auto">
         <h2 class="max-md:text-center">OT Device Management and IoT Fleet Management</h2>
