@@ -494,7 +494,7 @@ export default defineNuxtConfig({
                     '/events/proveit-2026/',
                     '/events/hannover-messe-2026/',
                     '/events/hannover-messe-2025/',
-                    // /industries/ plus the seven entries served by
+                    // /industries/ plus the remaining entries served by
                     // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
                     // file, so Nuxt finds that itself.
                     '/industries/',
@@ -521,6 +521,7 @@ export default defineNuxtConfig({
                     '/industries/industrial-machinery',
                     '/industries/building-materials',
                     '/industries/energy-utilities',
+                    '/industries/aviation-aerospace',
                     ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
