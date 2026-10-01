@@ -71,6 +71,10 @@ export const CUSTOM_CTA_DESTINATIONS = {
         href: '/platform/device-agent/#install-from-your-terminal',
         event: 'cta-device-agent-install',
     },
+    lpaChecklistTemplate: {
+        href: '/blog/2026/09/layered-process-audit-checklist-template/',
+        event: 'cta-lpa-checklist-download',
+    },
 } as const
 
 // Self-check, run when this module loads: a second entry must not reuse a URL another

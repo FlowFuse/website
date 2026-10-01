@@ -126,6 +126,9 @@ The traceability records determine how far the containment has to extend. If the
 
 Consider a hypothetical example. A customer reports loose fasteners on an assembly. The investigation finds that the nutrunner at one station drifted over two shifts, and several readings fell below the lower torque limit before a technician serviced the tool. The station logged each result, but the not-OK signal wasn't interlocked with the conveyor, so nothing stopped the failed assemblies from continuing down the line with the rest of production.
 
+::cta-image{src="/blog/2026/10/images/automotive-quality-control-lpa-cta.png" alt="Download the free layered process audit checklist template" cta="custom" destination-key="lpaChecklistTemplate"}
+::
+
 [Error-proofing (poka-yoke)](/blog/2025/09/poka-yoke-mistake-proofing/) is meant to close exactly this kind of gap: a control that depends on someone noticing a logged value is weaker than one that physically prevents the part from moving on.
 
 If the plant only knows that the suspect assemblies came off that line sometime in the past week, it may have to hold all of that output, sort warehouse and in-transit stock, and ask the customer to sort its own inventory as well. If each torque reading is stored with a serial number and timestamp, the quality engineer can see where the drift began and hold only the serial numbers built at that station until the tool was corrected. An SPC chart on the same readings would have shown the downward trend before the first out-of-limit part was built, and the Control Plan's reaction plan should have triggered a tool check at that point.
