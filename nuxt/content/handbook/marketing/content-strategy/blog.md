@@ -301,7 +301,7 @@ Besides the end-of-article CTA above, you can drop a clickable, tracked image an
 ```
 
 - `src` and `alt` are required, same as any other blog image.
-- `cta` is required on every instance and also sets where the image links to. The same four fixed destinations as `cta.type` below need no URL:
+- `cta` is required on every instance and also sets where the image links to. The same four fixed destinations as `cta.type` above need no URL:
   - `demo` - links to `/book-demo`
   - `contact` - links to `/contact-us`
   - `pricing` - links to `/pricing`
