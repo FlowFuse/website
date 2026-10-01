@@ -62,6 +62,9 @@ Controlling the process means managing the factors that can affect whether a par
 3. **In-process control.** Process variation is monitored so deviations are detected and corrected before a large amount of nonconforming product is made.
 4. **Final inspection and audit.** Completed parts are tested against requirements, and audits check that the process and its controls are being followed. Many OEMs require [layered process audits](/blog/2026/08/layered-process-audit/), where supervisors and managers check critical controls on the floor on a fixed schedule.
 
+::cta-image{src="/blog/2026/10/images/automotive-quality-control-lpa-cta.png" alt="Download the free layered process audit checklist template" cta="custom" destination-key="lpaChecklistTemplate"}
+::
+
 Supplier quality carries more weight than its place on the list suggests, because a defect in a purchased component becomes the plant's defect once it is built in. Suppliers submit their own [PPAP](/blog/2026/09/ppap/) before their parts are approved, and each shipment typically arrives with a certificate of conformance. Incoming inspection is usually scaled to supplier risk: a new supplier or one with a recent quality problem gets more checks than one with a long clean record. The supplier's lot numbers matter as much as the inspection itself, since they are what make incoming material traceable once it enters production.
 
 ### Automotive Quality Tools at a Glance
@@ -125,9 +128,6 @@ Typical [containment actions](/blog/2026/08/containment-action/) include stoppin
 The traceability records determine how far the containment has to extend. If the problem can be narrowed to a machine, tool, material lot, or production window, the hold can be limited to that population. Without that information, every part produced in the suspect timeframe has to be treated as suspect, which means more stock on hold, more sorting, and possible shipment delays.
 
 Consider a hypothetical example. A customer reports loose fasteners on an assembly. The investigation finds that the nutrunner at one station drifted over two shifts, and several readings fell below the lower torque limit before a technician serviced the tool. The station logged each result, but the not-OK signal wasn't interlocked with the conveyor, so nothing stopped the failed assemblies from continuing down the line with the rest of production.
-
-::cta-image{src="/blog/2026/10/images/automotive-quality-control-lpa-cta.png" alt="Download the free layered process audit checklist template" cta="custom" destination-key="lpaChecklistTemplate"}
-::
 
 [Error-proofing (poka-yoke)](/blog/2025/09/poka-yoke-mistake-proofing/) is meant to close exactly this kind of gap: a control that depends on someone noticing a logged value is weaker than one that physically prevents the part from moving on.
 
