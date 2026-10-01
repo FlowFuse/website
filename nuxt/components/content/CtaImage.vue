@@ -54,7 +54,7 @@ function onClick () {
   <CtaLink v-if="destination" :destination="destination" :position="POSITION" :variant="VARIANT" class="mb-4 block" @click="onClick">
     <NuxtImg :src="src" :alt="alt" />
   </CtaLink>
-  <ULink v-else :href="custom?.href" raw class="mb-4 block" @click="onClick">
+  <ULink v-else :href="custom?.href" external raw class="mb-4 block" @click="onClick">
     <NuxtImg :src="src" :alt="alt" />
   </ULink>
 </template>

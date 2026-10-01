@@ -309,13 +309,13 @@ Besides the end-of-article CTA above, you can drop a clickable, tracked image an
 - For any other destination, such as a blueprint, another relevant blog post, a docs page, or a product page, use `cta="custom"` with a `destination-key`:
 
   ```mdc
-  ::cta-image{src="/blog/2025/12/images/my-image.png" alt="Browse the FlowFuse Blueprint Library" cta="custom" destination-key="blueprintLibrary"}
+  ::cta-image{src="/blog/2025/12/images/my-image.png" alt="Read the OPC UA node docs" cta="custom" destination-key="opcuaCertifiedNodeDocs"}
   ::
   ```
 
   The `destination-key` names an entry in `nuxt/lib/custom-cta-destinations.ts`, which holds the link and the PostHog event for that destination. If the page you want to link to isn't there yet, add an entry with its `href` and an `event` first (for example `blueprintLibrary: { href: '/blueprints/', event: 'cta-blueprint-library' }`), or ask the web team to. That file rejects the four fixed destinations and any URL that already has an entry, so a destination is always tracked under one event. A wrong or missing `destination-key` fails the build's tests and names the file. Custom clicks are reported with that destination's own event, plus `blog-cta` with `cta_type: custom` and the `destination_key`.
 
-  There is no default. `cta` here is independent of the front matter `cta.type` above — a single article can have several `CtaImage` blocks, each pointing at a different destination.
+There is no default. `cta` here is independent of the front matter `cta.type` above — a single article can have several `CtaImage` blocks, each pointing at a different destination.
 
 Tracking is automatic and fires the same `blog-cta` event as the end-of-article CTA, with the same `reference` (the article title) and a `cta_type` property set to the destination. What tells the two apart is `position`: every `CtaImage` click sends `position: "inline-image"`, while the end-of-article CTA doesn't send `position` at all — so in PostHog you can filter `blog-cta` events by `position = inline-image` to isolate inline image clicks specifically, or leave it unfiltered to see both together.
 
