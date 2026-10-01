@@ -6,29 +6,31 @@ import { fileURLToPath } from 'node:url'
 import { createJiti } from 'jiti'
 
 const jiti = createJiti(import.meta.url)
-const { ctaImageError } = await jiti.import('./cta-image.ts')
+const { ctaImageError, customCtaImageDestination } = await jiti.import('./cta-image.ts')
 const nuxtDir = fileURLToPath(new URL('..', import.meta.url))
 
-test('accepts the four fixed destinations without an href', () => {
+test('accepts the four fixed destinations without a destination-key', () => {
     for (const cta of ['sign-up', 'demo', 'contact', 'pricing']) assert.equal(ctaImageError(cta), undefined, cta)
 })
 
-test('accepts a custom href that is not a reserved destination', () => {
-    for (const href of ['/blueprints/', '/blog/2026/09/layered-process-audit-checklist-template/', '/pricing/#comparison', 'https://example.com/contact-us/']) {
-        assert.equal(ctaImageError('custom', href), undefined, href)
-    }
+test('accepts a custom destination-key with a fixed href in the registry', () => {
+    for (const key of ['homepage', 'communityForum', 'deviceAgentInstall']) assert.equal(ctaImageError('custom', key), undefined, key)
 })
 
-test('rejects a custom href that is a reserved destination', () => {
-    assert.match(ctaImageError('custom', '/book-demo/?utm_source=blog'), /use cta="demo"/)
-    assert.match(ctaImageError('custom', 'https://flowfuse.com/pricing'), /use cta="pricing"/)
-    assert.match(ctaImageError('custom', 'https://app.flowfuse.com/account/create'), /use cta="sign-up"/)
-    assert.match(ctaImageError('custom', 'https://app.flowfuse.com'), /reserved "signIn"/)
+test('the registry supplies the link and event for a custom destination', () => {
+    assert.deepEqual(customCtaImageDestination('homepage'), { href: '/', event: 'cta-homepage' })
+    assert.equal(customCtaImageDestination('latestWebinar'), undefined)
+    assert.equal(customCtaImageDestination('notAKey'), undefined)
 })
 
-test('rejects a missing href, an href on a fixed destination, and an unknown cta', () => {
-    assert.match(ctaImageError('custom'), /requires an href/)
-    assert.match(ctaImageError('demo', '/blueprints/'), /use cta="custom"/)
+test('rejects a custom destination-key that is missing, unregistered, or dynamic', () => {
+    assert.match(ctaImageError('custom'), /requires a destination-key/)
+    assert.match(ctaImageError('custom', 'notAKey'), /isn't in lib\/custom-cta-destinations.ts/)
+    assert.match(ctaImageError('custom', 'latestWebinar'), /no fixed href/)
+})
+
+test('rejects a destination-key on a fixed destination and an unknown cta', () => {
+    assert.match(ctaImageError('demo', 'homepage'), /use cta="custom"/)
     assert.match(ctaImageError('book-demo'), /invalid cta/)
 })
 
@@ -45,7 +47,7 @@ test('every ::cta-image in content is valid', () => {
     const offenders = files.flatMap((file) => {
         const body = readFileSync(file, 'utf8').replace(/^[ \t]*(`{3,}|~{3,})[^\n]*\n[\s\S]*?^[ \t]*\1/gm, '')
         return [...body.matchAll(/::cta-image\{([^}]*)\}/g)].flatMap(([, attrs]) => {
-            const error = ctaImageError(attribute(attrs, 'cta') ?? '', attribute(attrs, 'href'))
+            const error = ctaImageError(attribute(attrs, 'cta') ?? '', attribute(attrs, 'destination-key'))
             return error ? [`${relative(nuxtDir, file)}: ${error}`] : []
         })
     })
