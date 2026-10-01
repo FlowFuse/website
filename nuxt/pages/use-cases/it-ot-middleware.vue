@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/use-cases/it-ot-middleware.njk (11ty), which this replaces. Same page,
-// same copy, same classes from src/css/style.css.
+// same copy, same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - layouts/solution.njk's hero becomes <UseCaseSolutionHero>, with the frontmatter
@@ -15,9 +15,8 @@
 //  - The three deployment-card headings carried a stray </br>, which is not a tag.
 //    They are plain headings here.
 //  - The reading-list and resources thumbnails point at /blog/**, /whitepaper/** and
-//    /resources/** - assets owned by sections still on 11ty. They stay where they are and
-//    move wholesale at teardown; the page's own art is copied into nuxt/public/images/,
-//    which is where the already-ported pages keep theirs.
+//    /resources/** - assets owned by those sections, in nuxt/public/ at the same paths.
+//    The page's own art is in nuxt/public/images/.
 const capture = useCapture()
 
 const FEATURES = [

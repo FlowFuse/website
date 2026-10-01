@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/industries.njk (11ty), which this replaces. Same page, same copy, same
-// classes from src/css/style.css.
+// classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - collections["industry"] becomes two data collections merged into one card grid:
@@ -12,30 +12,25 @@ const { data: legacyIndustries } = await useAsyncData('industries-legacy-listing
     queryCollection('industriesLegacy').select('slug', 'seoMeta', 'hero').all()
 )
 const { data: templateIndustries } = await useAsyncData('industries-listing', () =>
-    queryCollection('industries').select('slug', 'seoMeta', 'listingImage', 'listingImageAlt').all()
+  queryCollection('industries').select('slug', 'seoMeta', 'hero', 'listingImage', 'listingImageAlt').all()
 )
-
-// The .njk stripped the brand suffix off meta.title for the card heading.
-function cardTitle(title: string) {
-    return title.replace(' | FlowFuse', '').replace('| FlowFuse', '')
-}
 
 const cards = computed(() => {
     const fromLegacy = (legacyIndustries.value || []).map(industry => ({
         slug: industry.slug,
-        title: industry.seoMeta.title,
+    title: industry.hero?.eyebrow || industry.seoMeta.title,
         description: industry.seoMeta.description,
         image: industry.hero?.image,
         imageAlt: industry.hero?.imageAlt,
     }))
     const fromTemplate = (templateIndustries.value || []).map(industry => ({
         slug: industry.slug,
-        title: industry.seoMeta.title,
+    title: industry.hero.eyebrow || industry.seoMeta.title,
         description: industry.seoMeta.description,
         image: industry.listingImage,
         imageAlt: industry.listingImageAlt,
     }))
-    // `| sort(false, true, "data.meta.title")`: case-insensitive, ascending.
+  // Keep the alphabetical order based on the title visitors see on each card.
     return [...fromLegacy, ...fromTemplate]
         .sort((a, b) => a.title.toLowerCase().localeCompare(b.title.toLowerCase(), 'en'))
 })
@@ -51,7 +46,7 @@ useSeoMeta({
 <template>
   <div class="w-full">
     <div class="w-full px-6 bg-[radial-gradient(ellipse_120%_140%_at_50%_-20%,theme(colors.indigo.50)_0%,theme(colors.white)_60%)]">
-      <div class="max-w-screen-lg mx-auto py-16 sm:py-24 text-center">
+      <div class="max-w-screen-lg mx-auto py-16 sm:pt-24 sm:pb-8 text-center">
         <p class="uppercase text-sm font-semibold text-indigo-500 mb-4">Industries</p>
         <h1 class="m-auto max-w-3xl font-medium">Built for the way <span class="text-indigo-600">your industry</span> operates</h1>
         <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
@@ -74,10 +69,10 @@ useSeoMeta({
               class="group hover:no-underline flex flex-col rounded-xl border border-gray-200 bg-white overflow-hidden hover:border-indigo-300 hover:shadow-sm transition-all"
           >
             <div v-if="card.image" class="aspect-[16/9] w-full ff-image-cover bg-gray-100">
-              <img :src="card.image" :alt="card.imageAlt || cardTitle(card.title)" width="560" loading="lazy" class="w-full h-auto">
+              <img :src="card.image" :alt="card.imageAlt || card.title" width="560" loading="lazy" class="w-full h-auto">
             </div>
             <div class="flex flex-col gap-3 p-6">
-              <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ cardTitle(card.title) }}</h3>
+              <h3 class="m-0 text-gray-800 group-hover:text-indigo-600 transition-colors">{{ card.title }}</h3>
               <p class="m-0 text-gray-600 text-sm flex-grow">{{ card.description }}</p>
               <span class="mt-2 text-indigo-600 text-sm font-semibold flex items-center gap-2">
                 View industry

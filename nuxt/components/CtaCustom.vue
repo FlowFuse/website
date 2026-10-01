@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<{
     // `external` prop. Unlike the five reserved components (which each know
     // their own destination), CtaCustom can't infer this, so it defaults to
     // the safer choice: a full page load always works, while defaulting to
-    // `false` could 404 a link to a still-11ty page via client-side routing.
+    // `false` could 404 a link to a path Nuxt has no page for via client-side routing.
     external?: boolean
     // For a link to an actual external site, where opening in the current
     // tab would navigate the visitor away - not needed for `external`, which

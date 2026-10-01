@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import blogTags from '../../src/_data/blogTags.json'
+import blogTags from '../data/blogTags.json'
 
 defineProps<{
     activeTag?: string | null

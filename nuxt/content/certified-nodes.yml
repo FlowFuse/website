@@ -20,6 +20,10 @@ bundles:
             abbr: RE
             description: In-memory cache and fast key/value store.
             url: /docs/flowfuse-nodes/hub/redis/
+          - name: Kafka
+            abbr: KA
+            description: Send and receive messages, run consumer groups, and manage topics on Apache Kafka.
+            url: /docs/flowfuse-nodes/hub/kafka/
           - name: MQTT
             abbr: MQ
             description: Lightweight pub/sub messaging for IoT and event-driven flows.

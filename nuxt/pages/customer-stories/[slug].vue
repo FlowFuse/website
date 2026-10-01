@@ -17,7 +17,7 @@ const { data: allStories } = await useAsyncData(
 
 const otherStories = computed(() => (allStories.value || []).filter(item => item.path !== page.value?.path))
 
-// Prefer resolving the quote byline from src/_data/team|guests/*.json (name/title/headshot)
+// Prefer resolving the quote byline from nuxt/data/team|guests/*.json (name/title/headshot)
 // when `quoteAuthorSlug` is set; not every quoted person has a JSON entry, so fall back to
 // the manual quoteAuthor/quoteRole/quoteAvatar fields on `story`.
 const quoteAuthorMember = computed(() => useTeamMember(page.value?.story?.quoteAuthorSlug))
@@ -40,7 +40,7 @@ onMounted(() => {
 const productUrls: Record<string, string> = {
     'Node-RED': '/node-red/',
     'FlowFuse Dashboard': '/platform/dashboard/',
-    FlowFuse: '/platform/features/',
+    FlowFuse: '/product/',
     'FlowFuse Device Agent': '/docs/hardware/introduction/#device-agent-hardware',
     'FlowFuse Project Nodes': '/docs/user/projectnodes/#flowfuse-project-nodes',
 }

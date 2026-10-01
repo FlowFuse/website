@@ -12,7 +12,7 @@ const props = defineProps<{
             eyebrowIcon: string
             heading: string
             description: string
-            quote?: { text: string, author: string, role: string, company: string, image: string, imageAlt: string } | null
+            quote?: { text: string, author: string, role?: string, company: string, image: string, imageAlt: string } | null
             image?: { src: string, alt: string } | null
         }
         socialProof?: string

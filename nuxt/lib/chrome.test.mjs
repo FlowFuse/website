@@ -1,7 +1,7 @@
-// Guards on src/_data/chrome.json, the shared marketing nav and footer.
+// Guards on nuxt/data/chrome.json, the shared marketing nav and footer.
 //
-// The file is rendered by two independent templates, so the things that can drift
-// are checked here rather than left to a reviewer noticing.
+// The file is rendered by two independent components (AppHeader.vue and AppFooter.vue),
+// so the things that can drift are checked here rather than left to a reviewer noticing.
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
@@ -9,7 +9,7 @@ import { test } from 'node:test'
 import { fileURLToPath } from 'node:url'
 
 const repo = join(dirname(fileURLToPath(import.meta.url)), '..', '..')
-const chrome = JSON.parse(readFileSync(join(repo, 'src/_data/chrome.json'), 'utf8'))
+const chrome = JSON.parse(readFileSync(join(repo, 'nuxt/data/chrome.json'), 'utf8'))
 
 const navLinks = chrome.header.dropdowns.flatMap(d => d.columns.flatMap(c => c.links))
 const footerLinks = [
@@ -22,13 +22,13 @@ const allLinks = [...navLinks, ...chrome.header.direct, ...footerLinks]
 test('every icon key resolves to an icon file', () => {
     for (const { icon, label } of navLinks) {
         assert.ok(icon, `${label} has no icon`)
-        assert.ok(existsSync(join(repo, `src/_includes/components/icons/${icon}.svg`)),
+        assert.ok(existsSync(join(repo, `nuxt/assets/nav-icons/${icon}.svg`)),
             `${label} points at a missing icon: ${icon}.svg`)
     }
 })
 
 test('every icon key is in the Nuxt icon map', () => {
-    // Eleventy loads icons off disk by name, Nuxt needs an explicit import.
+    // navIcons.ts imports each icon explicitly, so a key missing there renders nothing.
     const map = readFileSync(join(repo, 'nuxt/utils/navIcons.ts'), 'utf8')
     const covered = new Set([...map.matchAll(/^\s*'([^']+)':/gm)].map(m => m[1]))
     for (const { icon, label } of navLinks) {
@@ -67,7 +67,8 @@ test('no nav or footer link points at a redirected path', () => {
 })
 
 test('both Tailwind builds resolve an @source onto the data file', () => {
-    // There are two independent Tailwind builds: src/css/style.css for Eleventy and
+    // There are two independent Tailwind builds: nuxt/assets/css/style.css, which
+    // prod:postcss-nuxt compiles to nuxt/public/css/style.css, and
     // nuxt/assets/css/theme.css for the Nuxt bundle, which only scans nuxt/ and is
     // loaded second. A utility that exists in one build but not the other loses to
     // any lower-breakpoint rule the later sheet does have. Dropping either @source
@@ -77,15 +78,15 @@ test('both Tailwind builds resolve an @source onto the data file', () => {
     // says nothing when the path misses, so check where each one actually lands
     // rather than that the line reads plausibly. A wrong number of ../ steps is
     // the failure this is here to catch.
-    const target = join(repo, 'src/_data/chrome.json')
-    for (const css of ['src/css/style.css', 'nuxt/assets/css/theme.css']) {
+    const target = join(repo, 'nuxt/data/chrome.json')
+    for (const css of ['nuxt/assets/css/style.css', 'nuxt/assets/css/theme.css']) {
         const text = readFileSync(join(repo, css), 'utf8')
-        const declared = text.match(/@source\s+"([^"]*_data\/chrome\.json)"/)
-        assert.ok(declared, `${css} must declare @source for src/_data/chrome.json`)
+        const declared = text.match(/@source\s+"([^"]*chrome\.json)"/)
+        assert.ok(declared, `${css} must declare @source for nuxt/data/chrome.json`)
         const landed = resolve(dirname(join(repo, css)), declared[1])
         assert.equal(landed, target,
             `${css} declares @source "${declared[1]}", which resolves to ${landed} `
-            + 'instead of src/_data/chrome.json, so that build scans nothing')
+            + 'instead of nuxt/data/chrome.json, so that build scans nothing')
     }
 })
 
@@ -118,13 +119,13 @@ test('every dropdown column reserves enough grid rows for its links', () => {
             assert.ok(span, `${dd.label} > ${col.title} has no row-span`)
             assert.ok(Number(span[1]) >= col.links.length,
                 `${dd.label} > ${col.title} spans ${span[1]} rows but has `
-                + `${col.links.length} links - raise its row-span in src/_data/chrome.json`)
+                + `${col.links.length} links - raise its row-span in nuxt/data/chrome.json`)
             // A column occupies its title row plus one row per link.
             tallest = Math.max(tallest, 1 + col.links.length)
         }
         assert.ok(Number(megaRows[1]) >= tallest,
             `${dd.label} declares ${megaRows[1]} mega rows but its tallest column needs `
-            + `${tallest} - raise the repeat() count in src/_data/chrome.json`)
+            + `${tallest} - raise the repeat() count in nuxt/data/chrome.json`)
     }
 })
 

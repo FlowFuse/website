@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/use-cases/mes.njk (11ty), which this replaces. Same page, same copy,
-// same classes from src/css/style.css.
+// same classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The page's frontmatter carried markup (heading spans, inline links) that the .njk

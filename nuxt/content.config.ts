@@ -1,4 +1,3 @@
-import { join } from 'node:path'
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const tierValue = z.object({
@@ -51,7 +50,11 @@ export default defineContentConfig({
                 redirect: z.object({
                     to: z.string(),
                 }).optional(),
-                meta: z.object({
+                // Frontmatter writes this as "meta:", which @nuxt/content reserves; the
+                // content:file:beforeParse hook in nuxt.config.ts renames it first, as it
+                // does for the blog and webinars. Declared as `meta`, every page's
+                // description was silently dropped.
+                structuredData: z.object({
                     description: z.string().optional(),
                 }).optional(),
                 // No `sitemap` schema field here on purpose - @nuxtjs/sitemap's own
@@ -76,14 +79,9 @@ export default defineContentConfig({
                 }).optional(),
             })
         }),
-        // Source files stay at src/changelog/ (11ty's historical location) rather than
-        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
         changelog: defineCollection({
             type: 'page',
-            source: {
-                cwd: join(__dirname, '../src'),
-                include: 'changelog/**/*.md',
-            },
+            source: 'changelog/**/*.md',
             schema: z.object({
                 description: z.string().optional(),
                 subtitle: z.string().optional(),
@@ -98,14 +96,9 @@ export default defineContentConfig({
                 release: z.string().regex(/^\d+\.\d+$/),
             })
         }),
-        // Source files stay at src/blog/ (11ty's historical location) rather than
-        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
         blog: defineCollection({
             type: 'page',
-            source: {
-                cwd: join(__dirname, '../src'),
-                include: 'blog/**/*.md',
-            },
+            source: 'blog/**/*.md',
             schema: z.object({
                 subtitle: z.string().optional(),
                 description: z.string().optional(),
@@ -180,18 +173,11 @@ export default defineContentConfig({
                 updated: z.string().optional(),
             })
         }),
-        // Source files stay at src/customer-stories/ (11ty's historical location) rather than
-        // being copied into nuxt/content/ - keeps this migration a content-config-only change.
-        // The directory data file (src/customer-stories/customer-stories.json) sets
-        // `permalink: false` so 11ty keeps these in `collections.stories` (still read by a
-        // few live 11ty pages - src/landing/tulip.njk, src/node-red/index.njk,
-        // src/_includes/stories-block.njk) without also writing output files for them.
+        // Named `stories` rather than `customer-stories`: several pages query it by that
+        // name (the listing, the landing pages, ExploreMoreStories.vue).
         stories: defineCollection({
             type: 'page',
-            source: {
-                cwd: join(__dirname, '../src'),
-                include: 'customer-stories/**/*.md',
-            },
+            source: 'customer-stories/**/*.md',
             schema: z.object({
                 description: z.string().optional(),
                 image: z.string().optional(),
@@ -228,7 +214,7 @@ export default defineContentConfig({
                     logo: z.string().optional(),
                     quote: z.string().optional(),
                     // Byline for `quote`. Preferred: `quoteAuthorSlug` names a file in
-                    // src/_data/team/ or src/_data/guests/ (resolved via useTeamMember) so
+                    // nuxt/data/team/ or nuxt/data/guests/ (resolved via useTeamMember) so
                     // name/title/headshot come from that JSON. Not every quoted person has
                     // one, so quoteAuthor/quoteRole/quoteAvatar remain as a manual fallback -
                     // quoteRole is job title only, `brand` above supplies the company name
@@ -245,18 +231,10 @@ export default defineContentConfig({
             })
         }),
         // ExploreMoreStories.vue also queries this `stories` collection - no separate one needed.
-        // Source files stay at src/webinars/ (still served by 11ty, see LEGACY_PREFIXES
-        // in nuxt/server/middleware/legacy.ts) - only queried for the "Latest/Upcoming
-        // Webinar" tile on the thank-you pages, so no `sitemap` field either.
-        // Source files stay at src/webinars/ (11ty's historical location) rather than being
-        // copied into nuxt/content/, same as blog/changelog/customer-stories above.
         // Rendered by pages/webinars/[...slug].vue; listed by pages/webinars/index.vue.
         webinars: defineCollection({
             type: 'page',
-            source: {
-                cwd: join(__dirname, '../src'),
-                include: 'webinars/**/*.md',
-            },
+            source: 'webinars/**/*.md',
             schema: z.object({
                 subtitle: z.string().optional(),
                 description: z.string().optional(),
@@ -269,7 +247,7 @@ export default defineContentConfig({
                 image: z.string().optional(),
                 // YouTube id. When set it replaces the hero image with the embed.
                 video: z.string().optional(),
-                // src/_data/{team,guests} basenames, resolved through useAuthorMembers.
+                // nuxt/data/{team,guests} basenames, resolved through useAuthorMembers.
                 hosts: z.array(z.string()).optional(),
                 hubspot: z.object({
                     // Registration form, shown only while the webinar is still upcoming.
@@ -569,7 +547,7 @@ export default defineContentConfig({
                     quote: z.object({
                         text: z.string(),
                         author: z.string(),
-                        role: z.string(),
+                        role: z.string().optional(),
                         company: z.string(),
                         image: z.string(),
                         imageAlt: z.string(),
@@ -663,7 +641,7 @@ export default defineContentConfig({
                 hero: z.object({
                     eyebrow: z.string().optional(),
                     // A NavIcon registry key. The .njk named an SVG path under
-                    // src/_includes/; the lift rewrote those to keys.
+                    // 11ty's include tree; the lift rewrote those to keys.
                     eyebrowIcon: z.string().optional(),
                     heading: z.string(),
                     description: z.string().optional(),
@@ -757,7 +735,8 @@ export default defineContentConfig({
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
                 // Content lives under /whitepapers/* but the page route is singular
-                // (/whitepaper/[slug].vue) - content-urls.get.ts rewrites the sitemap loc.
+                // (/whitepaper/[slug].vue) - lib/content-page-path.mjs maps one to the
+                // other, for the sitemap loc and the /raw canonical.
             }),
         }),
         plans: defineCollection({

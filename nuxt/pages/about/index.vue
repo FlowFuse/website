@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Ported from src/about.njk (11ty), which this replaces. Same page, same copy, same
-// classes from src/css/style.css.
+// classes from nuxt/assets/css/style.css.
 //
 // What the port changes on purpose:
 //  - The team grid read the `team` global and sorted by `order`. It uses useStaff(), the
@@ -104,8 +104,6 @@ useSchemaOrg([
                   improve their processes continuously.
                 </p>
                 <p>
-                  <!-- Plain <a>, not <NuxtLink>: /platform/security/ is still an 11ty page, so
-                       client-side routing would fall through to pages/[...slug].vue and 404. -->
                   <a href="/platform/security/#certifications" class="text-indigo-600 hover:text-indigo-800 font-medium">See our security certifications</a>
                 </p>
               </div>

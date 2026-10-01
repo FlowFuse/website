@@ -16,7 +16,7 @@ withDefaults(defineProps<{
     // book-demo) rely on the default size; the ROI calculator's descriptions run much
     // longer and need a smaller size, which a parent-level class can't reach — Vue's
     // attrs fallthrough only lands on this component's root, not this nested <p>, and
-    // a legacy global `p { font-size: 1rem }` rule (src/css/style.css) blocks simple
+    // a legacy global `p { font-size: 1rem }` rule (nuxt/assets/css/style.css) blocks simple
     // inheritance from an ancestor too.
     descriptionClass?: string
 }>(), {

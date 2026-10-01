@@ -1,4 +1,4 @@
-import site from '../../src/_data/site.json'
+import site from '../data/site.json'
 
 // A trailing slash shouldn't make two otherwise identical URLs count as different destinations.
 export const normalizeHref = (href: string) => href.replace(/\/+$/, '')

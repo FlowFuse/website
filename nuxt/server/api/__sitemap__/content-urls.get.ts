@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { queryCollection } from '@nuxt/content/server'
 import { getGitLastmod } from '../../../lib/git-lastmod.mjs'
+import { contentPagePath } from '../../../lib/content-page-path.mjs'
 
 // docs/handbook/changelog/blog/ebooks/whitepapers deliberately carry no `sitemap` schema
 // field in content.config.ts - @nuxtjs/sitemap's @nuxt/content integration re-splices
@@ -65,20 +66,20 @@ const CONTENT_SOURCES: ContentSource[] = [
         lastmod: entry => stringField(entry, 'updated'),
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
-    { collection: 'changelog', fileRoot: 'src' },
+    { collection: 'changelog', fileRoot: 'nuxt/content' },
     {
         collection: 'blog',
-        fileRoot: 'src',
+        fileRoot: 'nuxt/content',
         // Prefer the author-set `lastUpdated` frontmatter field - the same one the blog
         // page itself uses for its "Updated" date and JSON-LD dateModified - over the git
         // history date, so an editorial update date isn't silently overridden by whatever
         // last touched the file (a repo-wide lint fix, a typo pass elsewhere, etc).
-        lastmod: entry => stringField(entry, 'lastUpdated') ?? getGitLastmod(REPO_ROOT, `src/${entry.stem}.md`),
+        lastmod: entry => stringField(entry, 'lastUpdated') ?? getGitLastmod(REPO_ROOT, `nuxt/content/${entry.stem}.md`),
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
     {
         collection: 'stories',
-        fileRoot: 'src',
+        fileRoot: 'nuxt/content',
         images: entry => [stringField(entry, 'image')].filter((path): path is string => Boolean(path)),
     },
     {
@@ -94,7 +95,7 @@ const CONTENT_SOURCES: ContentSource[] = [
         images: entry => ['image', 'thumbnail']
             .map(key => stringField(entry, key))
             .filter((path): path is string => Boolean(path)),
-        rewriteLoc: loc => loc.replace(/^\/whitepapers\//, '/whitepaper/'),
+        rewriteLoc: contentPagePath,
     },
 ]
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getAllBlogPosts } from '~/utils/sharedContent'
 // Ported from src/ai.njk (11ty), which this replaces. Same page, same copy, same
-// classes from src/css/style.css, which nuxt.config.ts already links here.
+// classes from nuxt/assets/css/style.css, which nuxt.config.ts already links here.
 //
 // What the port changes on purpose:
 //  - The two hand-rolled DOM scripts (agent tabs, showcase rotation) become
@@ -108,7 +108,7 @@ const CAPABILITY_GROUPS = [
         eyebrow: 'Connect',
         subtitle: 'The agent your company already approved, working your platform and building in Node-RED. Your agent, your model, on a boundary you set.',
         items: [
-            { name: 'Bring your own AI agent', diagram: 'bring-your-agent', description: 'Point Microsoft Copilot, ChatGPT, Claude or a local model at FlowFuse, sign in, and it can query your teams and instances and build Node-RED applications for you. Where company policy only permits an approved AI agent, this is how that agent reaches your operations, instead of nobody getting AI on the platform at all.' },
+            { name: 'Bring your own AI agent', diagram: 'bring-your-agent', description: `Point Microsoft Copilot, ChatGPT, Claude or a local model at FlowFuse, sign in, and it can <a href="/docs/user/mcp/" class="${LINK}">query your teams and instances and build Node-RED applications</a> for you. Where company policy only permits an approved AI agent, this is how that agent reaches your operations, instead of nobody getting AI on the platform at all.` },
             { name: 'You decide what it reaches', diagram: 'you-decide', description: 'Signing in asks which teams the agent may act on and whether it may make changes at all. FlowFuse holds you to that on every call, so a read-only grant is refused whatever the agent tries. Nothing an agent reaches can delete an instance, an application, a snapshot or a team, and deploying stays yours.' },
         ],
     },
@@ -284,17 +284,17 @@ onUnmounted(() => {
         <div class="mt-8 overflow-hidden rounded-lg border-2 border-red-100 shadow-2xl">
           <video
             class="block w-full"
-            poster="/images/ai/demo-external-agents-poster.jpg"
-            width="1600"
-            height="1056"
+            poster="/images/ai/demo-claude-connector-poster.jpg"
+            width="1562"
+            height="1080"
             autoplay
             loop
             muted
             playsinline
             controls
-            aria-label="Screen recording: Claude adds FlowFuse as a custom MCP connector, signs in, is granted full access to one team, and then provisions a Node-RED instance from the OEE blueprint."
+            aria-label="Screen recording: Claude adds the FlowFuse connector from its connector directory, signs in, is granted access on the FlowFuse consent screen, and then answers which instances are running, listing five hosted Node-RED instances."
           >
-            <source src="/images/ai/demo-external-agents.webm" type="video/webm">
+            <source src="/images/ai/demo-claude-connector.webm" type="video/webm">
           </video>
         </div>
       </div>

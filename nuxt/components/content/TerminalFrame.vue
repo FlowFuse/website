@@ -26,7 +26,7 @@
 /*
     MDC counterpart of the `terminalFrame` 11ty shortcode. Blog and changelog posts
     render through @nuxt/content, which does not process Nunjucks, so a shortcode
-    used there ships as literal text. Both renderers link the same compiled
+    used there ships as literal text. Every page links the same compiled
     /css/style.css, so .ff-terminal-frame gives identical chrome either way.
 
     A plain <img> rather than <NuxtImg>: the image CDN re-encodes what it is given

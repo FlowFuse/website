@@ -2,8 +2,7 @@
 import { onMounted } from 'vue'
 import { useEvents } from '~/composables/useEvents'
 
-// Mirrors src/_includes/components/top-utility-bar.njk (11ty); keep both
-// files in sync when editing.
+// Ported from src/_includes/components/top-utility-bar.njk (11ty).
 const events = useEvents()
 
 onMounted(() => {
