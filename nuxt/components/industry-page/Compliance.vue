@@ -3,7 +3,12 @@
 // In One Place" subtitle are defaults a page can override with its own.
 interface ComplianceItem { title: string, text: string, linkText: string, linkHref: string, icon?: string }
 
-defineProps<{ industryName: string, heading?: string, subtitle?: string, description: string, items: ComplianceItem[] }>()
+const props = defineProps<{ industryName: string, heading?: string, subtitle?: string, description: string, items: ComplianceItem[] }>()
+
+// lg:grid-cols-4 always, except with exactly 3 items (aviation-aerospace), where a fixed
+// 4-column grid leaves the row looking like it's missing a card instead of just being
+// narrower. Capped at 4: a 5th+ item still wraps onto a second row of four.
+const lgCols = props.items.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
 </script>
 
 <template>
@@ -16,7 +21,7 @@ defineProps<{ industryName: string, heading?: string, subtitle?: string, descrip
         <p class="text-xl font-medium mt-0 mb-4">{{ subtitle || 'The Data Your Audit Asks For, In One Place' }}</p>
         <p class="text-gray-600">{{ description }}</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5" :class="lgCols">
         <a
             v-for="item in items"
             :key="item.title"
