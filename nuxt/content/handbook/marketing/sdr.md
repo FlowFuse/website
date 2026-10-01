@@ -66,7 +66,7 @@ When you log a call, pick the outcome that best matches what happened. Using the
 -Left Live Message: You left a message with someone other than the prospect.
 -Left Voicemail: You recorded and left a voicemail for the prospect.
 -Meeting Booked: you connected with the prospect, and they booked a meeting with an AE.
--No Answer: The prospect didn't answer, and you didn't leave a message. |
+-No Answer: The prospect didn't answer, and you didn't leave a message.
 -wrong Number: The number doesn't belong to the assigned contact. |
 
 **Examples**
