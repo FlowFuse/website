@@ -50,6 +50,8 @@ Material, labor, and machine time have already been invested, and a defect that 
 
 A problem detected and contained earlier has less impact on production and on the customer. Quality teams often cite the 1-10-100 rule: a defect that costs 1 to prevent costs 10 to correct inside the plant and 100 once it reaches the customer. The ratios are a rule of thumb, not measured data, but the principle is why quality control has to extend beyond final inspection to the process that produces the part.
 
+::cta-image{src="/blog/2026/10/images/automotive-quality-control-cta.png" alt="Catch quality problems at the station, not at final inspection - try FlowFuse" cta="sign-up"}
+
 ## Structure of the Automotive Quality System
 
 Controlling the process means managing the factors that can affect whether a part meets its requirements. These controls span the production lifecycle, from planning and incoming materials to manufacturing and final inspection. They include:
@@ -109,6 +111,8 @@ For a torque station, a combined record might look like this:
 That one record answers which part, which tool, which fastener lot, and when, which is exactly what containment needs to draw a boundary.
 
 Traceability is only as useful as the connections between its records. Collecting more data does not help if nothing ties it to the part.
+
+::cta-image{src="/blog/2026/10/images/automotive-quality-cta-2.png" alt="Build a live quality and traceability dashboard with a single plain-English prompt - book a FlowFuse demo" cta="demo"}
 
 ## Containing the Problem
 
