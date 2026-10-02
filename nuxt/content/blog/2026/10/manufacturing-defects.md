@@ -1,5 +1,5 @@
 ---
-title: "Manufacturing Defects: Aren’t Just One Thing"
+title: "Manufacturing Defects: One Weld Crack, Four Ways to Classify It"
 metaTitle: "Manufacturing Defects: Types, Causes & Prevention"
 subtitle: "Understand the different types of manufacturing defects, what causes them, and how to prevent them."
 description: "Learn how manufacturing defects are classified, what causes them, and how early detection, root cause analysis, and process improvements can help prevent defects from recurring."
