@@ -7,6 +7,7 @@ useSeoMeta({
 
 <template>
   <MqlContactPage
+    social-proof-placement="left"
     title="Help Us Build <span class='text-indigo-600'>Tags and Canvas</span> for FlowFuse Dashboard"
     description="We're early in designing two additions to FlowFuse Dashboard. Tags hold live state server-side, so a page shows real data the moment it opens instead of waiting on the next message. Canvas is a new page type you draw on, so your dashboard can look like your actual process instead of a grid of widgets."
   >
@@ -17,7 +18,7 @@ useSeoMeta({
     </template>
 
     <div class="border border-indigo-200 rounded-xl p-6 bg-white shadow-sm overflow-hidden">
-      <HubSpotForm form-id="7d7335cc-8520-4aa1-9193-ccf65938d6b6" cta="cta-contact-us" reference="dashboard-feedback" />
+      <HubSpotForm form-id="7d7335cc-8520-4aa1-9193-ccf65938d6b6" cta="cta-dashboard-feedback" reference="dashboard-feedback" />
     </div>
   </MqlContactPage>
 </template>
