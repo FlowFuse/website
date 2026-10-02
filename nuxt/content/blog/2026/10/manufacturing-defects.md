@@ -44,7 +44,7 @@ The important question, then, isn't simply whether a defect exists. It's underst
 Let's break it down.
 
 ::cta-image{src="/blog/2026/10/images/manufacturing-defect-cta-1.png" alt="Find out why products are defective before they ship - connect machine and sensor data with FlowFuse" cta="sign-up"}
-
+::
 ## Types of Manufacturing Defects
 
 Manufacturing defects can take several forms depending on what is wrong with the product. A defect may involve its dimensions, material, surface, assembly, function, or cleanliness.
@@ -156,6 +156,7 @@ A [fishbone diagram](/blog/2026/07/ishikawa-fishbone-diagram/) helps teams explo
 The goal is not simply to remove the defective product. It is to identify and address the process condition that produced it.
 
 ::cta-image{src="/blog/2026/10/images/fishbone-diagram-template-cta-dark.png" alt="Free download: fishbone diagram template with pre-built 6M branches to trace defects back to their root cause" cta="custom" destination-key="fishboneTemplate"}
+::
 
 ### Prevent Defects From Recurring
 
