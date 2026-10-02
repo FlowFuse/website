@@ -17,25 +17,12 @@ const identify = useIdentify()
 const embedded = ref(false)
 const tracker = createMeetingTracker()
 
-const utmDefaults = (): Record<string, string> => ({
-    utm_source: 'website',
-    utm_medium: 'embedded_calendar',
-    utm_campaign: `${useRoute().path.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'home'}-${props.position}`,
-})
-
-function buildSrc(withUtm: boolean) {
+const meetingsSrc = (() => {
     const url = new URL(props.dataSrc ?? site.meetings.salesRoundRobin)
     url.searchParams.set('embed', 'true')
-    if (withUtm) {
-        for (const [key, value] of Object.entries(utmDefaults())) {
-            if (!url.searchParams.has(key)) url.searchParams.set(key, value)
-        }
-    }
     return url.toString()
-}
-
-const meetingsSrc = ref(buildSrc(true))
-const meetingsOrigin = new URL(meetingsSrc.value).origin
+})()
+const meetingsOrigin = new URL(meetingsSrc).origin
 
 type EmbedWindow = Window & {
     CookieConsent?: { showPreferences: () => void, acceptedCategory?: (category: string) => boolean }
@@ -102,7 +89,6 @@ function loadEmbedIfConsented() {
 }
 
 onMounted(() => {
-    if (/[?&]utm_/.test(window.location.search)) meetingsSrc.value = buildSrc(false)
     loadEmbedIfConsented()
     window.addEventListener('cc:onConsent', loadEmbedIfConsented)
     window.addEventListener('cc:onChange', loadEmbedIfConsented)
