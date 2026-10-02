@@ -97,7 +97,7 @@ An LPA can be straightforward when it focuses on the controls that matter most.
 
 ### Identify the Process
 
-Start with a process where regular verification is valuable, such as one with recurring defects, high scrap or rework, customer complaints, or critical process parameters. A [Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/) can help identify where problems are concentrated.
+Start with a process where regular verification is valuable, such as one with [recurring defects](/blog/2026/10/manufacturing-defects/), high scrap or rework, customer complaints, or critical process parameters. A [Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/) can help identify where problems are concentrated.
 
 ### Define What to Verify
 

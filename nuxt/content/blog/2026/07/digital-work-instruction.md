@@ -89,7 +89,7 @@ Before we build anything, let's walk through what the app does and how the piece
 
 1. **Home.** After logging in, the application uses the operator's username to retrieve only the work orders assigned to them from the ERP or [MES](/blog/2025/06/what-is-mes/). It displays their station, production summary, the highest-priority work order, and the remaining queue. Selecting **Start Work Order** opens the instructions.
 2. **Instructions.** Operators follow step-by-step instructions with images, checklists, and target cycle times. They can progress through each step, complete the operation, or report an issue at any time.
-3. **Report Issue.** Operators can quickly log defects by selecting the issue type, severity, affected part, and description, with the issue automatically linked to the current work order.
+3. **Report Issue.** Operators can quickly log [defects](/blog/2026/10/manufacturing-defects/) by selecting the issue type, severity, affected part, and description, with the issue automatically linked to the current work order.
 
 The logged-in username acts as the application's lookup key. It retrieves the operator's assigned work orders and stores their active work order and current step, allowing them to resume exactly where they left off, even on shared production stations.
 

@@ -127,7 +127,7 @@ A Pareto diagram combines the best of both worlds, the immediate clarity of a ba
 ![Pareto diagram showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart-image.png){data-zoomable}
 _Pareto diagram showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
 
-Look at this real Pareto diagram from a manufacturing facility. The bars show different types of defects found in one month, arranged from most common (scratches) to least common (other defects).
+Look at this real Pareto diagram from a manufacturing facility. The bars show different [types of defects](/blog/2026/10/manufacturing-defects/) found in one month, arranged from most common (scratches) to least common (other defects).
 
 Here's the key insight: See where the orange line crosses the 80% mark? It happens after just three defect types, scratches, cracks, and color issues. This means:
 

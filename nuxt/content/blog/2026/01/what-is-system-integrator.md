@@ -58,7 +58,7 @@ System integrators connect both. And that's where things get complicated.
 
 ### Discovery and Diagnosis
 
-The work begins with understanding the actual problem. A line keeps jamming because two machines won't sync. Production data sits trapped in SCADA and can't reach your ERP for scheduling decisions. Quality defects have no connection to process parameters. These aren't isolated issues: they're integration failures.
+The work begins with understanding the actual problem. A line keeps jamming because two machines won't sync. Production data sits trapped in SCADA and can't reach your ERP for scheduling decisions. [Quality defects](/blog/2026/10/manufacturing-defects/) have no connection to process parameters. These aren't isolated issues: they're integration failures.
 
 A system integrator walks your plant with a specific lens. They document what equipment you're running, which protocols each device speaks, where IT and OT systems touch or fail to. They identify the gaps: a PLC speaking [Modbus](/blog/2023/05/integrating-modbus-with-node-red/) trying to feed a cloud platform, an MES that can't pull real-time SCADA status, a quality database disconnected from traceability. They map not just what's broken, but why, and what fixing it actually requires.
 
