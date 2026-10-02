@@ -17,19 +17,25 @@ const identify = useIdentify()
 const embedded = ref(false)
 const tracker = createMeetingTracker()
 
-// HubSpot's own meetings-booked report can break bookings down by utm_source/utm_medium/
-// campaign, but has no idea which page or placement an embed sits on unless told - hence
-// these, derived rather than a prop, so they can't drift from where the embed actually is.
-const meetingsSrc = (() => {
+const utmDefaults = (): Record<string, string> => ({
+    utm_source: 'website',
+    utm_medium: 'embedded_calendar',
+    utm_campaign: `${useRoute().path.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'home'}-${props.position}`,
+})
+
+function buildSrc(withUtm: boolean) {
     const url = new URL(props.dataSrc ?? site.meetings.salesRoundRobin)
     url.searchParams.set('embed', 'true')
-    url.searchParams.set('utm_source', 'website')
-    url.searchParams.set('utm_medium', 'embedded_calendar')
-    const pageSlug = useRoute().path.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'home'
-    url.searchParams.set('utm_campaign', `${pageSlug}-${props.position}`)
+    if (withUtm) {
+        for (const [key, value] of Object.entries(utmDefaults())) {
+            if (!url.searchParams.has(key)) url.searchParams.set(key, value)
+        }
+    }
     return url.toString()
-})()
-const meetingsOrigin = new URL(meetingsSrc).origin
+}
+
+const meetingsSrc = ref(buildSrc(true))
+const meetingsOrigin = new URL(meetingsSrc.value).origin
 
 type EmbedWindow = Window & {
     CookieConsent?: { showPreferences: () => void, acceptedCategory?: (category: string) => boolean }
@@ -77,11 +83,7 @@ function handleMeetingMessage(event: MessageEvent) {
     if (parsed.type === 'resize') tracker.recordResize(parsed.height)
 }
 
-// Bypasses useCapture()'s normal call here only for the options argument, not the function
-// itself: any capture() call carrying an options object (this one, or none at all) already
-// skips PostHog's batch queue - only a call with an explicit _batchKey gets batched. What
-// send_instantly actually adds is preferSyncCompression: without it, compression can be
-// async and the page may close before that promise settles, dropping the request.
+// send_instantly makes PostHog compress synchronously, the only kind that finishes during unload.
 function reportAbandonment() {
     if (!tracker.recordAbandonment()) return
     capture(
@@ -100,6 +102,7 @@ function loadEmbedIfConsented() {
 }
 
 onMounted(() => {
+    if (/[?&]utm_/.test(window.location.search)) meetingsSrc.value = buildSrc(false)
     loadEmbedIfConsented()
     window.addEventListener('cc:onConsent', loadEmbedIfConsented)
     window.addEventListener('cc:onChange', loadEmbedIfConsented)
