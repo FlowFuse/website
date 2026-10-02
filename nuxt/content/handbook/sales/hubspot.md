@@ -107,7 +107,7 @@ An Expansion deal represents incremental ARR from an existing customer. The AE o
 - All three amount fields (Amount, ACV, ARR) carry the incremental value of the expansion only, never the customer's total contract or total ARR.
 - **In-term expansion** (mid-contract): create the deal when the customer confirms an active interest in additional capacity, users, or products: an engaged buyer and a realistic close date, not a hope.
 - **Expansion at renewal**: create a separate expansion deal carrying only the ARR delta, with its close date aligned to the renewal date. This keeps renewal and expansion performance separately measurable.
-  - **Under $10k ARR**: fold the increase directly into the renewal deal's own Incremental ARR instead — the CSM owns it, and no separate AE-owned deal is opened in the Sales pipeline. This matches how [Customer Success commission](/handbook/sales/customer-success/#when-transactions-are-credited) already credits "Expansion (Renewal)" to the CSM.
+  - **Under $10k ARR**: fold the increase directly into the renewal deal's own Incremental ARR instead — the CSM owns it, and no separate AE-owned deal is opened in the Sales pipeline. This matches how the [Customer Success bonus](/handbook/sales/customer-success/#when-transactions-are-credited) already credits "Expansion (Renewal)" to the CSM.
   - **$10k ARR or more**: open a separate expansion deal in the Sales pipeline, owned by the AE, as above. The renewal deal's own Incremental ARR then reflects only the renewal itself (often $0).
 - **Expansion contingent on a pilot**: create the deal at pilot kickoff, following [Pilot and Expansion Deals](#pilot-and-expansion-deals).
 
