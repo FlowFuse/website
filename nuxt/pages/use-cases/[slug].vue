@@ -1,18 +1,8 @@
 <script setup lang="ts">
-// Ported from src/_includes/layouts/use-case.njk (11ty), which this replaces.
-//
-// The .njk was a content-driven layout: a fixed set of optional blocks, each rendered
-// only when its frontmatter key was present. That maps onto a data collection plus one
-// component per block, so this file is just resolution and ordering.
-//
-// Only the two operational use-cases (production-monitoring, shop-floor-communication)
-// come through here - they had no template body at all. The six architecture pages had
-// real markup and are hand-written Vue pages alongside this one; Nuxt matches those
-// static routes ahead of this dynamic one, and the guard below makes that explicit
-// rather than load-bearing-by-accident.
-//
-// The .njk's legacy `gap`/`workflow`/`outcomes` fall-back skeleton is not ported: no
-// remaining page used it, and it rendered visible "Placeholder copy" text.
+// Every /use-cases/<slug>/ page. A use case is one content/use-cases/<slug>.yml entry: its
+// listing metadata plus an ordered `sections` list, each entry rendered by the component
+// its `type` names below. No use case has a .vue file of its own, so adding one, or
+// moving a band, is a YAML change. The schema lives in content.config.ts (`useCases`).
 const route = useRoute()
 const slug = String(route.params.slug)
 
@@ -24,20 +14,49 @@ if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Use case not found' })
 }
 
-// The .njk assembled this list by testing each block in turn, and numbered the entries
-// by position, so a page missing a block does not leave a gap in the numbering.
-const navItems = computed(() => {
-    const p = page.value
-    if (!p) return []
-    return [
-        p.customerPain && { id: 'customer-pain', label: 'Customer Pain' },
-        p.outcomeFirst && { id: 'outcome-first', label: 'Outcome First' },
-        p.whyItMatters && { id: 'why-it-matters', label: 'Why It Matters' },
-        p.competition && { id: 'competition', label: 'Why Off-the-Shelf Fails' },
-        p.comparison && { id: 'with-without', label: 'With / Without FlowFuse' },
-        p.aiBuildLayer && { id: 'ai-build-layer', label: 'Build It With AI' },
-    ].filter(Boolean) as Array<{ id: string, label: string }>
-})
+// The numbered sections from layouts/use-case.njk. Each one carries an anchor and a
+// section-nav label; its number is its position among them, so a page that leaves one
+// out does not leave a gap.
+const NUMBERED: Record<string, { id: string, label: string }> = {
+    pain: { id: 'customer-pain', label: 'Customer Pain' },
+    outcomes: { id: 'outcome-first', label: 'Outcome First' },
+    whyItMatters: { id: 'why-it-matters', label: 'Why It Matters' },
+    competition: { id: 'competition', label: 'Why Off-the-Shelf Fails' },
+    comparison: { id: 'with-without', label: 'With / Without FlowFuse' },
+    aiBuildLayer: { id: 'ai-build-layer', label: 'Build It With AI' },
+}
+
+const COMPONENTS: Record<string, ReturnType<typeof resolveComponent>> = {
+    pain: resolveComponent('UseCasePain'),
+    outcomes: resolveComponent('UseCaseOutcomes'),
+    whyItMatters: resolveComponent('UseCaseWhyItMatters'),
+    competition: resolveComponent('UseCaseCompetition'),
+    comparison: resolveComponent('UseCaseComparison'),
+    aiBuildLayer: resolveComponent('UseCaseAiBuildLayer'),
+    prose: resolveComponent('UseCaseProse'),
+    features: resolveComponent('UseCaseFeatures'),
+    results: resolveComponent('UseCaseResults'),
+    resources: resolveComponent('UseCaseResources'),
+}
+
+const sections = computed(() => page.value?.sections || [])
+
+const navItems = computed(() =>
+    sections.value.filter(s => s.type in NUMBERED).map(s => NUMBERED[s.type]!)
+)
+
+// Only the numbered sections take a number, and only the AI build layer the slug (for
+// its CTA's tracking props); passing either to the rest would fall through as an HTML
+// attribute on their root element.
+function propsFor(section: { type: string }) {
+    const props: Record<string, unknown> = { block: section }
+    if (section.type in NUMBERED) {
+        const index = navItems.value.findIndex(item => item.id === NUMBERED[section.type]!.id)
+        props.number = String(index + 1).padStart(2, '0')
+    }
+    if (section.type === 'aiBuildLayer') props.slug = slug
+    return props
+}
 
 const seoTitle = computed(() => page.value?.seoMeta?.title || page.value?.title)
 const seoDescription = computed(() => page.value?.seoMeta?.description || page.value?.problem || '')
@@ -46,28 +65,38 @@ useSeoMeta({
     title: seoTitle,
     description: seoDescription,
     ogDescription: seoDescription,
-    ogUrl: computed(() => `https://flowfuse.com/use-cases/${slug}/`),
+    ogImage: computed(() => page.value?.seoMeta?.image ? `https://flowfuse.com${page.value.seoMeta.image}` : undefined),
+    keywords: computed(() => page.value?.seoMeta?.keywords),
+    ogUrl: `https://flowfuse.com/use-cases/${slug}/`,
     twitterSite: '@FlowFuseinc',
 })
 </script>
 
 <template>
   <div v-if="page" class="w-full">
-    <UseCaseHero :title="page.title" :problem="page.problem" />
-    <UseCaseSectionNav :items="navItems" />
-
-    <UseCasePain v-if="page.customerPain" :block="page.customerPain" />
-    <UseCaseOutcomes v-if="page.outcomeFirst" :block="page.outcomeFirst" />
-    <UseCaseWhyItMatters v-if="page.whyItMatters" :block="page.whyItMatters" />
-    <UseCaseCompetition v-if="page.competition" :block="page.competition" />
-    <UseCaseComparison v-if="page.comparison" :block="page.comparison" />
-    <UseCaseAiBuildLayer v-if="page.aiBuildLayer" :block="page.aiBuildLayer" :slug="slug" />
-
-    <UseCaseIndustryChips :industries="page.industries" />
-
-    <UseCaseClosingCta
-        :heading="page.closingCta?.heading"
-        :description="page.closingCta?.description"
-    />
+    <template v-for="(section, i) in sections" :key="i">
+      <UseCaseHero v-if="section.type === 'hero'" :hero="section" :title="page.title" :problem="page.problem" />
+      <UseCaseSectionNav v-else-if="section.type === 'sectionNav'" :items="navItems" />
+      <UseCaseIndustryChips v-else-if="section.type === 'industries'" :industries="page.industries" />
+      <UseCaseDeploymentOptions v-else-if="section.type === 'deploymentOptions'" />
+      <FaqSection v-else-if="section.type === 'faq'" :items="section.items" :heading="section.heading" />
+      <StepList
+          v-else-if="section.type === 'steps'"
+          :eyebrow="section.eyebrow"
+          :heading="section.heading"
+          :intro="section.intro"
+          :link="section.link"
+          :steps="section.steps"
+      />
+      <!-- A card with no copy of its own gets the line layouts/use-case.njk defaulted to. -->
+      <ClosingCta
+          v-else-if="section.type === 'cta'"
+          :layout="section.layout"
+          :heading="section.heading || 'See it on your operations'"
+          :description="section.description || (section.layout === 'banner' ? undefined : 'Talk to an expert, or get started with FlowFuse today.')"
+          :ctas="section.ctas"
+      />
+      <component :is="COMPONENTS[section.type]" v-else v-bind="propsFor(section)" />
+    </template>
   </div>
 </template>

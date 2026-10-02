@@ -14,7 +14,7 @@
 //  - components/device-agent-install-commands.njk becomes <DeviceAgentInstallCommands>.
 //  - The customer-stories grid read collections.stories sorted by date; it queries the
 //    `stories` collection for the same three.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg. Two answers carried <ol>/<ul> lists and
+//  - faq.njk becomes <FaqSection>, which also emits the FAQPage data. Two answers carried <ol>/<ul> lists and
 //    several carried inline links, all under `| safe`; they are markdown now, which
 //    BlogFaq escapes around. Its renderer gained list support for this.
 
@@ -98,10 +98,6 @@ useSeoMeta({
     twitterSite: '@FlowFuseinc',
 })
 
-useSchemaOrg([
-    defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
-])
 </script>
 
 <template>
@@ -338,12 +334,6 @@ useSchemaOrg([
               </div>
           </div>
       </div>
-      <!-- Frequently Asked Questions -->
-      <div class="md:text-left max-md:max-w-md mx-auto pt-24 md:pt-16 text-left">
-          <h2 class="max-md:text-center -mb-12">
-              Frequently Asked <span class="text-indigo-600">Questions</span>
-          </h2>
-          <BlogFaq :faq="FAQ" variant="page" />
-      </div>
   </div>
+  <FaqSection :items="FAQ" />
 </template>

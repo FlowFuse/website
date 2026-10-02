@@ -3,6 +3,8 @@
 // <a class="ff-btn"> with an inline capture() call; this keeps the same event name and
 // props but routes it through useCapture like every other Nuxt CTA.
 const props = defineProps<{
+    // Its position among the numbered sections, matching the section nav ("01").
+    number: string
     block: {
         heading?: string
         intro?: string
@@ -22,7 +24,7 @@ function ordinal(index: number) {
 <template>
   <div id="ai-build-layer" class="w-full py-16 sm:py-24 px-6 bg-gray-50 border-y border-gray-100 scroll-mt-16">
     <div class="max-w-screen-lg mx-auto">
-      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">06 · Build it with AI</p>
+      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ number }} · Build it with AI</p>
       <h2 class="max-md:text-center">{{ block.heading || 'From described to deployed, with the FlowFuse Expert' }}</h2>
       <p v-if="block.intro" class="mt-4 max-w-3xl text-gray-600">{{ block.intro }}</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">

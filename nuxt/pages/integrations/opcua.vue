@@ -206,28 +206,24 @@ const useCases = [
 
 const steps = [
     {
-        number: '1',
         icon: 'i-heroicons-link',
         title: 'Connect or Build',
-        description: 'Browse and connect to an existing OPC UA server as a client. On self-hosted FlowFuse, model your own address space and expose it as a server, from the same canvas.',
+        text: 'Browse and connect to an existing OPC UA server as a client. On self-hosted FlowFuse, model your own address space and expose it as a server, from the same canvas.',
     },
     {
-        number: '2',
         icon: 'i-heroicons-shield-check',
         title: 'Secure the Session',
-        description: 'Set Security Policy to SignAndEncrypt, then add the client certificate to the server\'s trusted list so the secure handshake succeeds.',
+        text: 'Set Security Policy to SignAndEncrypt, then add the client certificate to the server\'s trusted list so the secure handshake succeeds.',
     },
     {
-        number: '3',
         icon: 'i-heroicons-arrows-right-left',
         title: 'Bridge Other Protocols',
-        description: 'Wire in Modbus, EtherNet/IP, or Siemens S7 nodes alongside OPC UA on the same canvas, for the plants that aren\'t running OPC UA end to end.',
+        text: 'Wire in Modbus, EtherNet/IP, or Siemens S7 nodes alongside OPC UA on the same canvas, for the plants that aren\'t running OPC UA end to end.',
     },
     {
-        number: '4',
         icon: 'i-heroicons-chart-bar',
         title: 'Visualize, Route & Scale',
-        description: 'Wire the results into a live dashboard, forward data to MQTT, a time-series database, or a cloud platform. Then push the flow to one edge device or a thousand with one click.',
+        text: 'Wire the results into a live dashboard, forward data to MQTT, a time-series database, or a cloud platform. Then push the flow to one edge device or a thousand with one click.',
     },
 ]
 
@@ -235,40 +231,40 @@ const resourceGroups = [
     {
         group: 'Start here',
         items: [
-            { title: 'OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment', image: '/blog/2025/07/images/opcua-tutorial.png', alt: 'Reading and writing PLC tags over OPC UA in a Node-RED flow', url: '/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/' },
-            { title: 'OPC UA Tutorial: Advanced Monitoring with Subscriptions, Alarms & History', image: '/blog/2025/08/images/advanced-opcua-real-time-subscriptions-alarms-historical-data.png', alt: 'Subscriptions, alarms, and historical reads in an OPC UA flow', url: '/blog/2025/08/advanced-opcua-real-time-subscriptions-alarms-historical-data/' },
-            { title: 'How to Deploy a Basic OPC UA Server in Node-RED', image: '/blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png', alt: 'An OPC UA server running inside a Node-RED flow', url: '/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/' },
+            { title: 'OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment', image: '/blog/2025/07/images/opcua-tutorial.png', alt: 'Reading and writing PLC tags over OPC UA in a Node-RED flow', href: '/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/' },
+            { title: 'OPC UA Tutorial: Advanced Monitoring with Subscriptions, Alarms & History', image: '/blog/2025/08/images/advanced-opcua-real-time-subscriptions-alarms-historical-data.png', alt: 'Subscriptions, alarms, and historical reads in an OPC UA flow', href: '/blog/2025/08/advanced-opcua-real-time-subscriptions-alarms-historical-data/' },
+            { title: 'How to Deploy a Basic OPC UA Server in Node-RED', image: '/blog/2023/07/images/opc-ua-1/opc-ua-1-title-image.png', alt: 'An OPC UA server running inside a Node-RED flow', href: '/blog/2023/07/how-to-deploy-a-basic-opc-ua-server-in-node-red/' },
         ],
     },
     {
         group: 'Secure it',
         items: [
-            { title: 'OPC UA Security: How Threat Actors Exploit Industrial Protocol Vulnerabilities', image: '/blog/2026/05/images/opcua-security-blog.png', alt: 'Common OPC UA misconfigurations that attackers target', url: '/blog/2026/05/opc-ua-security-attack-vectors/' },
-            { title: 'OPC UA Security: How to Establish a Defensible Architecture', image: '/blog/2026/06/images/opc-ua-security.png', alt: 'A defensible OPC UA architecture with Reverse Connect and managed certificates', url: '/blog/2026/06/opc-ua-security-best-practices/' },
+            { title: 'OPC UA Security: How Threat Actors Exploit Industrial Protocol Vulnerabilities', image: '/blog/2026/05/images/opcua-security-blog.png', alt: 'Common OPC UA misconfigurations that attackers target', href: '/blog/2026/05/opc-ua-security-attack-vectors/' },
+            { title: 'OPC UA Security: How to Establish a Defensible Architecture', image: '/blog/2026/06/images/opc-ua-security.png', alt: 'A defensible OPC UA architecture with Reverse Connect and managed certificates', href: '/blog/2026/06/opc-ua-security-best-practices/' },
         ],
     },
     {
         group: 'Compare and migrate',
         items: [
-            { title: 'MQTT vs OPC UA: Why This Question Never Has a Straight Answer', image: '/blog/2026/01/images/opcua-vs-mqtt.png', alt: 'Where MQTT and OPC UA each fit in an industrial architecture', url: '/blog/2026/01/opcua-vs-mqtt/' },
-            { title: 'Why OPC UA Is Not Replacing Modbus (Yet)', image: '/blog/2026/03/images/opcua-is-not-replacing-modbus-yet.png', alt: 'Why Modbus still ships on new field devices', url: '/blog/2026/03/why-opcua-is-not-replacing-modbus-yet/' },
-            { title: 'Beyond Kepware: Why Modern Industrial Connectivity Demands a Second Look', image: '/blog/2026/01/images/kepware-alternative.png', alt: 'Alternatives to per-tag OPC UA gateway licensing', url: '/blog/2026/01/kepware-opcua-better-alternative/' },
+            { title: 'MQTT vs OPC UA: Why This Question Never Has a Straight Answer', image: '/blog/2026/01/images/opcua-vs-mqtt.png', alt: 'Where MQTT and OPC UA each fit in an industrial architecture', href: '/blog/2026/01/opcua-vs-mqtt/' },
+            { title: 'Why OPC UA Is Not Replacing Modbus (Yet)', image: '/blog/2026/03/images/opcua-is-not-replacing-modbus-yet.png', alt: 'Why Modbus still ships on new field devices', href: '/blog/2026/03/why-opcua-is-not-replacing-modbus-yet/' },
+            { title: 'Beyond Kepware: Why Modern Industrial Connectivity Demands a Second Look', image: '/blog/2026/01/images/kepware-alternative.png', alt: 'Alternatives to per-tag OPC UA gateway licensing', href: '/blog/2026/01/kepware-opcua-better-alternative/' },
         ],
     },
     {
         group: 'Put the data to work',
         items: [
-            { title: 'Historical Data Logging with OPC UA and InfluxDB', image: '/blog/2026/06/images/opcua-to-influxdb.png', alt: 'Logging OPC UA values into an InfluxDB time-series database', url: '/blog/2026/06/opcua-to-influxdb/' },
-            { title: 'Connect Node-RED to KepServerEX OPC Server', image: '/blog/2024/02/images/node-red-to-kepware.png', alt: 'A Node-RED client session against a KepServerEX OPC UA server', url: '/blog/2024/02/connect-node-red-to-kepware-opc/' },
+            { title: 'Historical Data Logging with OPC UA and InfluxDB', image: '/blog/2026/06/images/opcua-to-influxdb.png', alt: 'Logging OPC UA values into an InfluxDB time-series database', href: '/blog/2026/06/opcua-to-influxdb/' },
+            { title: 'Connect Node-RED to KepServerEX OPC Server', image: '/blog/2024/02/images/node-red-to-kepware.png', alt: 'A Node-RED client session against a KepServerEX OPC UA server', href: '/blog/2024/02/connect-node-red-to-kepware-opc/' },
         ],
     },
 ]
 
 const webinars = [
-    { title: 'MQTT vs OPC UA: The Industrial Data Showdown', image: '/images/webinars/webinar-mqtt-vs-opc-ua.jpg', alt: 'MQTT vs OPC UA industrial data showdown webinar', url: '/webinars/2026/mqtt-vs-opc-ua-industrial-data-showdown/' },
-    { title: 'Making Industry Work – Leveraging OPC UA at Scale', image: '/images/webinars/making-industry-work-leveraging-opc-ua-at-scale.jpg', alt: 'Leveraging OPC UA at scale webinar', url: '/webinars/2026/making-industry-work-leveraging-opc-ua-at-scale/' },
-    { title: 'Simplifying OPC UA: Implement Scalable Information Models with FlowFuse', image: '/images/webinars/simplifying-opc-ua.jpg', alt: 'Simplifying OPC UA webinar', url: '/webinars/2025/simplifying-opc-ua/' },
-    { title: 'Getting Started with OPC-UA and Node-RED', image: '/images/webinars/getting-started-with-opc-ua-and-node-red-webinar-august.jpg', alt: 'Getting started with OPC-UA and Node-RED webinar', url: '/webinars/2023/getting-started-opcua-node-red/' },
+    { title: 'MQTT vs OPC UA: The Industrial Data Showdown', image: '/images/webinars/webinar-mqtt-vs-opc-ua.jpg', alt: 'MQTT vs OPC UA industrial data showdown webinar', href: '/webinars/2026/mqtt-vs-opc-ua-industrial-data-showdown/' },
+    { title: 'Making Industry Work – Leveraging OPC UA at Scale', image: '/images/webinars/making-industry-work-leveraging-opc-ua-at-scale.jpg', alt: 'Leveraging OPC UA at scale webinar', href: '/webinars/2026/making-industry-work-leveraging-opc-ua-at-scale/' },
+    { title: 'Simplifying OPC UA: Implement Scalable Information Models with FlowFuse', image: '/images/webinars/simplifying-opc-ua.jpg', alt: 'Simplifying OPC UA webinar', href: '/webinars/2025/simplifying-opc-ua/' },
+    { title: 'Getting Started with OPC-UA and Node-RED', image: '/images/webinars/getting-started-with-opc-ua-and-node-red-webinar-august.jpg', alt: 'Getting started with OPC-UA and Node-RED webinar', href: '/webinars/2023/getting-started-opcua-node-red/' },
 ]
 
 // Answers include internal links, rendered with v-html below - BlogFaq.vue interpolates
@@ -520,32 +516,7 @@ function toggleFaq (i: number) {
     </div>
 
     <!-- How it works -->
-    <div class="w-full py-20 md:py-24 px-6">
-      <div class="max-w-screen-lg mx-auto md:flex md:gap-16 md:items-start">
-        <h2 class="mb-12 md:mb-0 md:w-1/3 md:shrink-0 md:sticky! md:top-24 md:self-start"><span class="text-indigo-600">From OPC UA to insight,</span> step by step</h2>
-        <div class="max-w-screen-md mx-auto md:mx-0">
-          <div v-for="(step, index) in steps" :key="step.number" class="flex flex-col sm:flex-row gap-3 sm:gap-6">
-            <div class="flex items-center gap-3 sm:flex-col sm:items-center sm:gap-0">
-              <!-- Mobile: icon flanked by two short horizontal lines (hidden past
-                   the first/last step), matching /partners/certify-hardware/'s
-                   mobile layout. Desktop: single vertical line below the icon,
-                   offset with mt-7 so the icon lines up with the title instead
-                   of the "Step N" label above it. -->
-              <div class="ff-line h-px flex-1 sm:hidden" />
-              <UIcon :name="step.icon" class="w-6 h-6 text-indigo-600 shrink-0 sm:mt-7" />
-              <div class="ff-line h-px flex-1 sm:hidden" />
-              <div v-if="index !== steps.length - 1" class="ff-line hidden sm:block w-px flex-1 my-4 bg-gray-300" />
-            </div>
-            <div :class="index !== steps.length - 1 ? 'pb-10 sm:pb-12' : ''">
-              <span class="block text-sm font-semibold text-gray-500 mb-1 text-center sm:text-left">Step {{ step.number }}</span>
-              <h4 class="mt-0 mb-4 sm:mb-2 text-indigo-600 text-center sm:text-left">{{ step.title }}</h4>
-              <p class="font-light text-gray-600 mb-0">{{ step.description }}</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+    <StepList heading="<span class='text-indigo-600'>From OPC UA to insight,</span> step by step" :steps="steps" />
 
     <!-- FAQ -->
     <div class="w-full bg-indigo-50/50 py-20 md:py-20 px-6">
@@ -588,16 +559,7 @@ function toggleFaq (i: number) {
         <h2 class="mb-8">OPC UA <span class="text-indigo-600">guides and webinars</span></h2>
         <div v-for="group in resourceGroups" :key="group.group" class="mb-12 last:mb-0">
           <h3 class="mb-3 text-sm font-semibold uppercase">{{ group.group }}</h3>
-          <div class="ff-nodered-resources grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a v-for="resource in group.items" :key="resource.url" class="h-full" :href="resource.url">
-              <li class="h-full">
-                <div class="w-2/5 max-md:aspect-video ff-image-cover ff-image-left-rounded h-full">
-                  <img :src="resource.image" :alt="resource.alt" loading="lazy">
-                </div>
-                <label class="w-3/5 font-light">{{ resource.title }}</label>
-              </li>
-            </a>
-          </div>
+          <ResourceList :items="group.items" />
         </div>
         <a href="/blog/opcua/" class="flex items-center justify-end gap-1.5 text-blue-600 hover:underline">
           See all OPC UA articles
@@ -605,16 +567,7 @@ function toggleFaq (i: number) {
         </a>
         <div class="mt-12 py-12 border-t border-gray-200">
           <h3 class="mb-3 text-sm font-semibold uppercase">Webinars</h3>
-          <div class="ff-nodered-resources grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a v-for="webinar in webinars" :key="webinar.url" class="h-full" :href="webinar.url">
-              <li class="h-full">
-                <div class="w-2/5 max-md:aspect-video ff-image-cover ff-image-left-rounded h-full">
-                  <img :src="webinar.image" :alt="webinar.alt" loading="lazy">
-                </div>
-                <label class="w-3/5 font-light">{{ webinar.title }}</label>
-              </li>
-            </a>
-          </div>
+          <ResourceList :items="webinars" />
         </div>
         <a href="/webinars/" class="flex items-center justify-end gap-1.5 text-blue-600 hover:underline">
           See all webinars

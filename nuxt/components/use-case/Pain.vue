@@ -3,6 +3,8 @@
 // The .njk pulled card icons with {% include "components/icons/<name>.svg" %}; content
 // now names the Iconify glyph directly, so <UIcon> resolves it with nothing in between.
 defineProps<{
+    // Its position among the numbered sections, matching the section nav ("01").
+    number: string
     block: {
         heading: string
         intro?: string[]
@@ -14,7 +16,7 @@ defineProps<{
 <template>
   <div id="customer-pain" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
     <div class="max-w-screen-lg mx-auto">
-      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">01 · Customer pain</p>
+      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ number }} · Customer pain</p>
       <h2 class="max-md:text-center"><span class="text-red-600">{{ block.heading }}</span></h2>
       <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
         <p v-for="(paragraph, i) in block.intro" :key="i" class="text-gray-600 m-0">{{ paragraph }}</p>

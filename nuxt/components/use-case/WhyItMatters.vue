@@ -1,6 +1,8 @@
 <script setup lang="ts">
 // "03 Why this is important" from layouts/use-case.njk.
 defineProps<{
+    // Its position among the numbered sections, matching the section nav ("01").
+    number: string
     block: {
         heading: string
         intro?: string
@@ -16,7 +18,7 @@ function ordinal(index: number) {
 <template>
   <div id="why-it-matters" class="w-full bg-[radial-gradient(ellipse_120%_120%_at_50%_120%,theme(colors.indigo.600)_0%,theme(colors.indigo.900)_100%)] py-16 sm:py-24 px-6 scroll-mt-16">
     <div class="max-w-screen-lg mx-auto">
-      <p class="uppercase text-xs font-semibold text-indigo-300 mb-2">03 · Why this is important</p>
+      <p class="uppercase text-xs font-semibold text-indigo-300 mb-2">{{ number }} · Why this is important</p>
       <h2 class="text-white max-md:text-center">{{ block.heading }}</h2>
       <p v-if="block.intro" class="mt-4 max-w-3xl text-indigo-100 font-light">{{ block.intro }}</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">

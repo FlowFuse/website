@@ -42,10 +42,6 @@ useSeoMeta({
     twitterSite: '@FlowFuseinc',
 })
 
-useSchemaOrg([
-    defineWebPage({ '@type': 'FAQPage' }),
-    ...props.page.faqs.map(item => defineQuestion(item)),
-])
 </script>
 
 <template>
@@ -76,13 +72,14 @@ useSchemaOrg([
          slug shows up here. Shared with the industriesLegacy [slug].vue's own band. -->
     <IndustryPageUseCases :slug="page.slug" :display-name="page.industryName" />
 
-    <div class="w-full px-6 pt-20 pb-10">
-      <div class="max-w-screen-lg mx-auto">
-        <h2 class="mb-1 text-center md:text-left">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
-        <BlogFaq :faq="page.faqs" />
-      </div>
-    </div>
+    <FaqSection :items="page.faqs" />
 
-    <IndustryPageCta :heading="page.closingCta.heading" :description="page.closingCta.description" />
+    <ClosingCta
+        layout="banner"
+        :heading="page.closingCta.heading"
+        :description="page.closingCta.description"
+        :ctas="[{ cta: 'book-demo' }]"
+        position="final-cta"
+    />
   </div>
 </template>

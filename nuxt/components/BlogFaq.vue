@@ -4,20 +4,11 @@
 // paragraphs, which the 11ty pages expressed with raw <i> and <p> tags under `| safe`.
 import { isListBlock, renderFaqAnswer } from '../lib/faq-answer.mjs'
 
-withDefaults(defineProps<{
+// Inside an article it sits under the post's own heading; on a marketing page
+// <FaqSection> supplies the heading, the band and the FAQPage structured data.
+defineProps<{
     faq: Array<{ question: string, answer: string }>
-    /**
-     * How much room the block takes above the first question.
-     *
-     * faq.njk had exactly these two modes: `post` inside an article, `page` everywhere a
-     * marketing page pairs it with its own <h2>. Those pages set a negative bottom margin
-     * on that heading, which only reads correctly against the taller spacing, so a page
-     * rendering this in post mode pulls its first question up over its own heading.
-     */
-    variant?: 'post' | 'page'
-}>(), {
-    variant: 'post',
-})
+}>()
 
 const openIndex = ref<number | null>(null)
 function toggle(i: number) {
@@ -26,8 +17,8 @@ function toggle(i: number) {
 </script>
 
 <template>
-  <div id="faqs" class="w-full" :class="variant === 'page' ? 'py-16' : 'py-4'">
-    <div class="m-auto w-full ff-prose" :class="{ 'mt-12': variant === 'page' }">
+  <div id="faqs" class="w-full py-4">
+    <div class="m-auto w-full ff-prose">
       <div class="prose max-w-none">
         <div v-for="(item, i) in faq" :key="i" class="w-full py-4" :class="{ 'border-b': i !== faq.length - 1 }">
           <h3 class="not-prose m-0">

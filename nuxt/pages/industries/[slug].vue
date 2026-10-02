@@ -71,6 +71,11 @@ useSeoMeta({
       </div>
     </div>
 
-    <IndustryCta :cta="page.cta" />
+    <ClosingCta
+        :heading="page.cta.title"
+        :description="page.cta.description"
+        :ctas="[{ cta: 'book-demo' }]"
+        position="cta"
+    />
   </div>
 </template>
