@@ -6,7 +6,6 @@
 // `schemaItems` is for a page whose displayed copy is altered for layout only, so search
 // engines still get the plain text: device-agent shows "Node‑RED" with a non-breaking
 // hyphen. `schema: false` is for a page that emits its FAQPage some other way.
-import { richText } from '../lib/rich-text.mjs'
 
 const props = withDefaults(defineProps<{
     items: Array<{ question: string, answer: string }>
@@ -15,7 +14,7 @@ const props = withDefaults(defineProps<{
     schema?: boolean
     schemaItems?: Array<{ question: string, answer: string }>
 }>(), {
-    heading: 'Frequently Asked ==Questions==',
+    heading: 'Frequently Asked <span class="text-indigo-600">Questions</span>',
     background: 'white',
     schema: true,
     schemaItems: undefined,
@@ -35,7 +34,7 @@ if (props.schema && props.items.length) {
   <section class="w-full px-6 py-16" :class="BACKGROUNDS[background]">
     <div class="max-w-screen-lg mx-auto">
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <h2 class="mb-4 max-md:text-center" v-html="richText(heading)" />
+      <h2 class="mb-4 max-md:text-center" v-html="heading" />
       <BlogFaq :faq="items" />
     </div>
   </section>

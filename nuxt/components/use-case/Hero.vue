@@ -7,7 +7,6 @@
 //    one indigo glow from the top-right corner (remote-device-management).
 // `heading` and `text` fall back to the page's own title and problem, which is what the
 // operational pages show.
-import { richText } from '../../lib/rich-text.mjs'
 
 type Image = { src: string, alt: string, width?: number }
 
@@ -28,10 +27,10 @@ const props = defineProps<{
 
 // The centered band shows the page title in the indigo accent, as layouts/use-case.njk did.
 const heading = computed(() => {
-    if (props.hero.heading) return richText(props.hero.heading)
-    return richText(props.hero.layout === 'centered' ? `==${props.title}==` : props.title)
+    if (props.hero.heading) return props.hero.heading
+    return props.hero.layout === 'centered' ? `<span class="text-indigo-600">${props.title}</span>` : props.title
 })
-const text = computed(() => richText(props.hero.text || props.problem))
+const text = computed(() => props.hero.text || props.problem)
 const ctas = computed(() => props.hero.ctas || [{ cta: 'book-demo' }])
 const maxWidth = (image?: Image) => image?.width ? `${image.width}px` : undefined
 </script>

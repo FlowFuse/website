@@ -464,8 +464,9 @@ export default defineContentConfig({
         // Every /use-cases/<slug>/ page, rendered by pages/use-cases/[slug].vue. A page is
         // its listing metadata plus an ordered `sections` list; each entry's `type` picks
         // one component in components/use-case/, so a page is laid out entirely here and
-        // no use case has a .vue file of its own. Copy fields go through lib/rich-text.mjs
-        // (links, bold, ==indigo== and !!red!! accents), never raw HTML.
+        // no use case has a .vue file of its own. Copy fields are HTML, rendered with v-html
+        // (accent spans, links, <strong>, <br>), the same as content/industries/*.yml. FAQ
+        // answers are the exception: <BlogFaq> renders those as markdown.
         useCases: defineCollection({
             type: 'data',
             source: 'use-cases/*.yml',

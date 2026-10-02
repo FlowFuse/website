@@ -29,14 +29,14 @@ sections:
   - type: features
     layout: panel
     columns: 1
-    heading: "Why FlowFuse is the !!Data Integration Solution!!"
+    heading: "Why FlowFuse is the <span class='text-red-600'>Data Integration Solution</span>"
     items:
       - title: "Accessible for Anyone"
         text: "FlowFuse’s low-code visual environment makes it easy for non-programmers to integrate data from different sources without needing to know how to code. This enables all kinds of departments to work on their own data integration projects without requiring support from IT."
       - title: "Real-Time Data Visualisation"
         text: "FlowFuse makes it easy to create real-time data visualizations and dashboards. Data can be filtered, transformed and analyzed through event-driven flows to get real-time insights into your business."
       - title: "Support for Different Data Formats"
-        text: "FlowFuse supports parsing a wide range of formats including: **csv**, **html**, **json**, **xml** and **yaml**. Additional data formats are available through FlowFuse’s support for over 5,000 open-source plug-ins."
+        text: "FlowFuse supports parsing a wide range of formats including: <strong>csv</strong>, <strong>html</strong>, <strong>json</strong>, <strong>xml</strong> and <strong>yaml</strong>. Additional data formats are available through FlowFuse’s support for over 5,000 open-source plug-ins."
 
   - type: features
     centered: true

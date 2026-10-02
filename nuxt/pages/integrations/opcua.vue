@@ -516,7 +516,7 @@ function toggleFaq (i: number) {
     </div>
 
     <!-- How it works -->
-    <StepList heading="==From OPC UA to insight,== step by step" :steps="steps" />
+    <StepList heading="<span class='text-indigo-600'>From OPC UA to insight,</span> step by step" :steps="steps" />
 
     <!-- FAQ -->
     <div class="w-full bg-indigo-50/50 py-20 md:py-20 px-6">

@@ -9,7 +9,6 @@
 //  - cards: items on translucent white cards (meant for the gradient background).
 //  - panel: the whole list inside one bordered indigo panel.
 //  - alternating: one item per row, pictogram flipping sides.
-import { richText } from '../../lib/rich-text.mjs'
 
 const props = defineProps<{
     block: {
@@ -61,8 +60,8 @@ const paragraphs = (text?: string | string[]) => (Array.isArray(text) ? text : t
           :class="layout === 'panel' ? 'm-auto text-center sm:text-left p-8 max-w-md sm:max-w-screen-lg bg-indigo-50 rounded-lg border-[3px] border-indigo-200 drop-shadow-xl' : ''"
       >
         <p v-if="block.eyebrow" class="text-gray-500 text-sm font-semibold uppercase m-0 max-md:text-center">{{ block.eyebrow }}</p>
-        <h2 v-if="block.heading" class="max-md:text-center" :class="block.eyebrow ? 'mt-3 mb-0' : 'mb-0'" v-html="richText(block.heading)" />
-        <p v-if="block.intro" class="mt-6 mb-0 max-w-3xl max-md:text-center" :class="{ 'mx-auto': block.centered }" v-html="richText(block.intro)" />
+        <h2 v-if="block.heading" class="max-md:text-center" :class="block.eyebrow ? 'mt-3 mb-0' : 'mb-0'" v-html="block.heading" />
+        <p v-if="block.intro" class="mt-6 mb-0 max-w-3xl max-md:text-center" :class="{ 'mx-auto': block.centered }" v-html="block.intro" />
 
         <div v-if="block.image" class="mx-auto mt-10" :style="{ maxWidth: block.image.width ? `${block.image.width}px` : undefined }">
           <img :src="block.image.src" :alt="block.image.alt" :width="block.image.width || 1024" loading="lazy" class="w-full h-auto">
@@ -79,15 +78,15 @@ const paragraphs = (text?: string | string[]) => (Array.isArray(text) ? text : t
               <img :src="item.image" alt="" width="128" loading="lazy" class="w-full h-auto">
             </div>
             <div>
-              <h4 v-if="item.title" v-html="richText(item.title)" />
-              <p v-for="(paragraph, p) in paragraphs(item.text)" :key="p" v-html="richText(paragraph)" />
+              <h4 v-if="item.title" v-html="item.title" />
+              <p v-for="(paragraph, p) in paragraphs(item.text)" :key="p" v-html="paragraph" />
             </div>
           </div>
         </div>
 
         <div v-else class="grid gap-x-12 gap-y-12 mt-12 text-left" :class="COLUMNS[block.columns || 3]">
           <div v-if="block.lead" class="flex flex-col justify-center w-full max-md:max-w-md mx-auto sm:bg-indigo-50 rounded-lg sm:p-7">
-            <h3 class="text-center w-full sm:text-left text-3xl text-gray-500 font-light leading-snug m-0" v-html="richText(block.lead)" />
+            <h3 class="text-center w-full sm:text-left text-3xl text-gray-500 font-light leading-snug m-0" v-html="block.lead" />
           </div>
           <div
               v-for="(item, i) in block.items"
@@ -105,13 +104,13 @@ const paragraphs = (text?: string | string[]) => (Array.isArray(text) ? text : t
               <img :src="item.image" alt="" width="128" loading="lazy" class="w-full h-auto">
             </div>
             <div>
-              <h3 v-if="item.title" class="text-xl font-semibold text-gray-600 m-0" v-html="richText(item.title)" />
+              <h3 v-if="item.title" class="text-xl font-semibold text-gray-600 m-0" v-html="item.title" />
               <p
                   v-for="(paragraph, p) in paragraphs(item.text)"
                   :key="p"
                   class="font-light text-gray-700 leading-relaxed mb-0"
                   :class="item.title ? 'mt-4' : 'mt-0'"
-                  v-html="richText(paragraph)"
+                  v-html="paragraph"
               />
             </div>
           </div>
@@ -119,7 +118,7 @@ const paragraphs = (text?: string | string[]) => (Array.isArray(text) ? text : t
       </div>
 
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <ProseNote v-if="block.note" class="mt-16"><span v-html="richText(block.note)" /></ProseNote>
+      <ProseNote v-if="block.note" class="mt-16"><span v-html="block.note" /></ProseNote>
     </div>
   </section>
 </template>

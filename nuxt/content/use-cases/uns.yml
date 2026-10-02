@@ -12,7 +12,7 @@ seoMeta:
 sections:
   - type: hero
     layout: split
-    heading: "FlowFuse for the ==Unified Namespace=="
+    heading: "FlowFuse for the <span class='text-indigo-600 inline-block'>Unified Namespace</span>"
     text: "FlowFuse simplifies UNS adoption for manufacturing companies by providing a user-friendly, low-code platform for deploying and using data from a UNS."
     image: { src: /images/solutions/ff-uns.png, alt: "FlowFuse connected to many industrial devices", width: 400 }
     ctas:
@@ -20,7 +20,7 @@ sections:
       - { cta: sign-up }
 
   - type: features
-    heading: "Unlock the power of your ==real-time data=="
+    heading: "Unlock the power of your <span class='text-indigo-600'>real-time data</span>"
     intro: "IT and data professionals are often challenged by the complexities of accessing and analyzing data scattered across disparate systems in manufacturing environments. UNS offers a solution to these challenges by providing a standardized way to access and utilize real-time data across your entire manufacturing operation."
     lead: "With FlowFuse adopting UNS has never been faster or easier"
     items:
@@ -31,13 +31,13 @@ sections:
       - { icon: i-heroicons-arrows-pointing-out, title: "Improved collaboration", text: "Adapt data across different systems with minimal data loss or loss of context." }
 
   - type: prose
-    heading: "From Data Source to Application:\n==Streamline Your UNS Workflows with FlowFuse=="
+    heading: "From Data Source to Application:<br> <span class='text-indigo-600'>Streamline Your UNS Workflows with FlowFuse</span>"
     body:
       - image: { src: /images/solutions/flowfuse-uns.png, alt: "FlowFuse UNS Workflow" }
 
   - type: features
     background: indigo
-    heading: "The FlowFuse !!Advantage!!"
+    heading: "The FlowFuse <span class='text-red-600'>Advantage</span>"
     items:
       - { title: "Built-in adaptation layer", text: "Leverage FlowFuse's low-code platform to transform and make your data available for UNS." }
       - { title: "End-to-end UNS platform", text: "Everything you need to connect, manage, visualize and analyze your data in one place." }

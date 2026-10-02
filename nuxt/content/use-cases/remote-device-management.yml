@@ -11,8 +11,8 @@ seoMeta:
 sections:
   - type: hero
     layout: feature
-    heading: "Remote device management !!for every machine in the field!!"
-    text: "FlowFuse runs Node-RED next to your [PLCs](/landing/plc/) and governs it from one place with remote device management, editing, [snapshots](/docs/user/snapshots/), and fleet-wide controls."
+    heading: "Remote device management <span class='text-red-600'>for every machine in the field</span>"
+    text: "FlowFuse runs Node-RED next to your <a href='/landing/plc/'>PLCs</a> and governs it from one place with remote device management, editing, <a href='/docs/user/snapshots/'>snapshots</a>, and fleet-wide controls."
     image: { src: /images/use-cases/edge-connectivity.jpg, alt: "Machines on a factory shop floor" }
     ctas:
       - { cta: book-demo }
@@ -25,7 +25,7 @@ sections:
 
   - type: results
     eyebrow: "Results"
-    heading: "!!Customer results!! with remote device management"
+    heading: "<span class='text-red-500'>Customer results</span> with remote device management"
     items:
       - before: "1"
         after: "130+"
@@ -62,25 +62,25 @@ sections:
     background: gray
     columns: 2
     eyebrow: "Visibility"
-    heading: "See and manage ==every remote device from one place=="
+    heading: "See and manage <span class='text-indigo-600'>every remote device from one place</span>"
     items:
       - icon: i-heroicons-cpu-chip
         title: "Every device, one view"
-        text: "Instance state and last seen. CPU and memory over time. Agent and Node-RED versions. [Device groups](/docs/user/device-groups/) by site or line."
+        text: "Instance state and last seen. CPU and memory over time. Agent and Node-RED versions. <a href='/docs/user/device-groups/'>Device groups</a> by site or line."
       - icon: i-lucide-history
         title: "What changed, and who changed it"
-        text: "[Audit log](/docs/user/logs/#audit-log) across the team. [Snapshot comparison](/docs/user/snapshots/#comparing-snapshots). [Version history](/docs/user/snapshots/#timeline-view). Attribution on every deployment."
+        text: "<a href='/docs/user/logs/#audit-log'>Audit log</a> across the team. <a href='/docs/user/snapshots/#comparing-snapshots'>Snapshot comparison</a>. <a href='/docs/user/snapshots/#timeline-view'>Version history</a>. Attribution on every deployment."
       - icon: i-heroicons-lifebuoy
         title: "When something goes wrong"
-        text: "[Node-RED logs](/docs/user/logs/#node-red-logs) without SSH. Health checks and auto-restart. Diagnostic emails with the logs attached. Structured JSON logs for Loki or Elastic."
+        text: "<a href='/docs/user/logs/#node-red-logs'>Node-RED logs</a> without SSH. Health checks and auto-restart. Diagnostic emails with the logs attached. Structured JSON logs for Loki or Elastic."
       - icon: i-heroicons-signal
         title: "Reach a machine you can't touch"
         text: "Open the editor from your browser. Developer Mode tunnel for live debugging. Restart a device remotely. Outbound-only — no inbound ports."
-    note: "The [FlowFuse Device Agent](/platform/device-agent/) runs your flows on remote devices and keeps them connected to FlowFuse for centralized monitoring and management."
+    note: "The <a href='/platform/device-agent/'>FlowFuse Device Agent</a> runs your flows on remote devices and keeps them connected to FlowFuse for centralized monitoring and management."
 
   - type: steps
     eyebrow: "Connectivity"
-    heading: "Fix one machine. ==Deploy to all of them.=="
+    heading: "Fix one machine. <span class='text-indigo-600'>Deploy to all of them.</span>"
     intro: "This is where a monitoring tool stops and remote device management keeps going."
     link: { label: "Learn how to install the FlowFuse Device Agent", href: /docs/device-agent/install/overview/ }
     steps:
@@ -92,23 +92,23 @@ sections:
         text: "Capture the working state as a versioned snapshot you can compare, promote and roll back."
       - icon: i-heroicons-rocket-launch
         title: "Roll It Out"
-        text: "Push that snapshot to the device group through a [pipeline](/docs/user/devops-pipelines/) — every filler on every line, or every site in the region."
+        text: "Push that snapshot to the device group through a <a href='/docs/user/devops-pipelines/'>pipeline</a> — every filler on every line, or every site in the region."
 
   - type: features
     layout: cards
     background: gradient
     eyebrow: "Intelligence at the Edge"
-    heading: "Once the loop is closed, ==intelligence is a node, not a project=="
+    heading: "Once the loop is closed, <span class='text-indigo-600'>intelligence is a node, not a project</span>"
     items:
       - icon: i-heroicons-cpu-chip
         title: "Run the model where the data is"
-        text: "Drop a trained [ONNX model](/blog/2025/10/custom-onnx-model/) into a flow and run inference on the device. No round trip, no inference bill, no data leaving the plant."
+        text: "Drop a trained <a href='/blog/2025/10/custom-onnx-model/'>ONNX model</a> into a flow and run inference on the device. No round trip, no inference bill, no data leaving the plant."
       - icon: i-heroicons-chat-bubble-left-right
         title: "Ask the factory a question"
-        text: "[FlowFuse Expert](/docs/user/expert/) Insights Mode connects to the MCP servers in your instances, so you can query live state in plain language instead of building a report for it."
+        text: "<a href='/docs/user/expert/'>FlowFuse Expert</a> Insights Mode connects to the MCP servers in your instances, so you can query live state in plain language instead of building a report for it."
       - icon: i-heroicons-bolt
         title: "Allow an agent to act"
-        text: "Expose your flows to our [MCP integration](/changelog/2025/10/mcp-nodes/) so Copilot, Claude or your own AI agent can read live operational state and act on it, inside the role-based access control you already run. Read-only stays read-only. Every action is logged."
+        text: "Expose your flows to our <a href='/changelog/2025/10/mcp-nodes/'>MCP integration</a> so Copilot, Claude or your own AI agent can read live operational state and act on it, inside the role-based access control you already run. Read-only stays read-only. Every action is logged."
 
   - type: cta
     layout: banner

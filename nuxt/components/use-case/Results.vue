@@ -4,7 +4,6 @@
 // analysis". `before` is optional: only a result that is a change (1 → 130+) has one.
 // `company` is separate from `text` because the whole card is the link, so the name is
 // styled like one rather than being a second <a> nested inside the first.
-import { richText } from '../../lib/rich-text.mjs'
 
 defineProps<{
     block: {
@@ -38,7 +37,7 @@ function splitLinkText(item: { linkText: string, linkName: string }) {
     <div class="max-w-screen-lg mx-auto relative">
       <p v-if="block.eyebrow" class="text-gray-500 text-sm font-semibold uppercase m-0 max-md:text-center">{{ block.eyebrow }}</p>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <h2 class="mt-3 mb-0 max-md:text-center" v-html="richText(block.heading)" />
+      <h2 class="mt-3 mb-0 max-md:text-center" v-html="block.heading" />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
         <NuxtLink
             v-for="item in block.items"

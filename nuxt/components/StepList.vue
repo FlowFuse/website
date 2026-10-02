@@ -3,13 +3,13 @@
 // to insight, step by step" band on /integrations/opcua/, and /platform/device-agent/
 // and /use-cases/remote-device-management/ each carried a copy before this.
 //
-// Each step's `label` defaults to "Step <n>". All copy goes through lib/rich-text.mjs, so
-// it can carry links and accents but not raw HTML.
+// Each step's `label` defaults to "Step <n>". Headings, intro and step text are HTML
+// strings (links, accent spans), rendered with v-html: they come from this repo's own
+// pages and YAML, never from a visitor.
 //
 // On mobile the icon sits between two short horizontal lines; from sm up there is a
 // single vertical line below it, offset so the icon lines up with the title rather than
 // the label above it.
-import { richText } from '../lib/rich-text.mjs'
 
 defineProps<{
     heading: string
@@ -28,8 +28,8 @@ const paragraphs = (text: string | string[]) => (Array.isArray(text) ? text : [t
     <div class="max-w-screen-lg mx-auto md:flex md:gap-12 md:items-start">
       <div class="mb-12 md:mb-0 md:w-[373px] md:shrink-0 md:sticky! md:top-24 md:self-start max-md:text-center">
         <p v-if="eyebrow" class="text-gray-500 text-sm font-semibold uppercase mt-0 mb-3">{{ eyebrow }}</p>
-        <h2 class="mt-0 mb-0" v-html="richText(heading)" />
-        <p v-if="intro" class="font-light text-gray-700 leading-relaxed mt-6 mb-0" v-html="richText(intro)" />
+        <h2 class="mt-0 mb-0" v-html="heading" />
+        <p v-if="intro" class="font-light text-gray-700 leading-relaxed mt-6 mb-0" v-html="intro" />
         <NuxtLink v-if="link" :to="link.href" class="mt-3 inline-flex items-center gap-1.5">
           {{ link.label }}
           <UIcon name="i-heroicons-arrow-long-right-20-solid" class="w-5 h-5 shrink-0" />
@@ -51,7 +51,7 @@ const paragraphs = (text: string | string[]) => (Array.isArray(text) ? text : [t
                 :key="p"
                 class="font-light text-gray-600"
                 :class="p === paragraphs(step.text).length - 1 ? 'mb-0' : ''"
-                v-html="richText(paragraph)"
+                v-html="paragraph"
             />
           </div>
         </div>

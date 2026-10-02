@@ -155,7 +155,7 @@ useSeoMeta({
     </section>
 
     <!-- ============================ FAQ ============================ -->
-    <FaqSection :items="faqs" heading="==ROI questions== industrial teams ask" />
+    <FaqSection :items="faqs" heading="<span class='text-indigo-600'>ROI questions</span> industrial teams ask" />
 
     <!-- ============================ CLOSING CTA ============================ -->
     <div class="w-full px-6 pb-16">

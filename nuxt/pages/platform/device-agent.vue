@@ -57,7 +57,7 @@ const STEPS = [
         title: 'Install and provision',
         text: [
             'Run the installer on the machine. It installs the required components, registers the machine with your FlowFuse team, and configures the Device Agent as a service so it starts again after a reboot.',
-            'For larger deployments, use [bulk registration options](/docs/device-agent/register/#bulk-registration) to provision multiple devices.',
+            'For larger deployments, use <a href="/docs/device-agent/register/#bulk-registration">bulk registration options</a> to provision multiple devices.',
         ],
     },
     {
@@ -65,7 +65,7 @@ const STEPS = [
         icon: 'i-heroicons-wrench-screwdriver',
         title: 'Build and test against the real hardware',
         text: [
-            'Developer Mode opens that device\'s Node‑RED editor through FlowFuse. Build against the real PLC, sensors, and network, then take a snapshot when the application is ready.',
+            'Developer Mode opens that device\'s <span class="whitespace-nowrap">Node-RED</span> editor through FlowFuse. Build against the real PLC, sensors, and network, then take a snapshot when the application is ready.',
         ],
     },
     {
@@ -74,7 +74,7 @@ const STEPS = [
         title: 'Deploy the version you tested',
         text: [
             'Set that snapshot as the target for one device or a group of hundreds. Devices update to the assigned version and stay there until you assign another target.',
-            'Use [DevOps pipelines](/docs/user/devops-pipelines/) to move changes from development through testing and into production.',
+            'Use <a href="/docs/user/devops-pipelines/">DevOps pipelines</a> to move changes from development through testing and into production.',
         ],
     },
 ]
@@ -240,7 +240,7 @@ const FAQ_DISPLAY = FAQ.map(item => ({
     <!-- How it works -->
     <StepList
         heading="How the Device Agent Works"
-        intro="Three steps take you from a machine sitting on a bench to a Node‑RED application running in production."
+        intro="Three steps take you from a machine sitting on a bench to a <span class='whitespace-nowrap'>Node-RED</span> application running in production."
         :link="{ label: 'Learn how to install the FlowFuse Device Agent', href: '/docs/device-agent/install/overview/' }"
         :steps="STEPS"
     />
