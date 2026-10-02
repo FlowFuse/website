@@ -1,58 +1,77 @@
 <script setup lang="ts">
-// src/_includes/hubspot/hs-book-meeting.njk plus the non-form branch of
-// hubspot/consent-fallback.njk: the HubSpot meetings scheduler, with the "choose a time"
-// panel that stands in for it.
+// The HubSpot meetings scheduler, with a "choose a time" panel that stands in for it when
+// analytics consent hasn't been given yet. Defaults to the shared sales calendar
+// (site.meetings.salesRoundRobin); dataSrc overrides it for a campaign-specific one.
 //
-// The embed is gated on analytics consent and MUST STAY THAT WAY. The .njk defined
-// `window._ffLoadMeetings`, and nuxt/assets/js/cookieconsent-config.js calls it only once the
-// visitor accepts; until then the embed is never injected. This registers the same global
-// rather than loading on mount, so declining analytics still means no third-party
-// scheduler script.
-//
-// The panel below is therefore not an error state: it is what a visitor who has not
-// accepted analytics sees, and it gives them a way to book anyway. It is rendered
-// unhidden and replaced once the embed is up, which is what the .njk did.
-const props = defineProps<{ dataSrc: string }>()
+// Consent-gated and MUST STAY THAT WAY: listens for vanilla-cookieconsent's own
+// cc:onConsent/cc:onChange DOM events, plus a direct check on mount for consent already
+// stored from an earlier visit, since that event can otherwise fire before this mounts.
+import site from '../data/site.json'
+
+const props = defineProps<{ dataSrc?: string }>()
 
 const embedded = ref(false)
 
-type ConsentWindow = Window & {
-    _ffLoadMeetings?: (() => void) | null
-    CookieConsent?: { showPreferences: () => void }
+const meetingsSrc = (() => {
+    const url = new URL(props.dataSrc ?? site.meetings.salesRoundRobin)
+    url.searchParams.set('embed', 'true')
+    return url.toString()
+})()
+
+type EmbedWindow = Window & {
+    CookieConsent?: { showPreferences: () => void, acceptedCategory?: (category: string) => boolean }
+    hbspt?: { meetings?: { create: (selector: string) => unknown } }
 }
 
 function showCookiePreferences() {
-    ;(window as ConsentWindow).CookieConsent?.showPreferences()
+    ;(window as EmbedWindow).CookieConsent?.showPreferences()
 }
 
 function loadEmbed() {
     if (embedded.value) return
+    const win = window as EmbedWindow
     const existing = document.querySelector('script[src*="MeetingsEmbedCode.js"]')
     if (!existing) {
         const script = document.createElement('script')
         script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
         script.onload = () => { embedded.value = true }
         document.head.appendChild(script)
-    } else {
-        embedded.value = true
+        return
     }
+    // A later mount (e.g. browser back/forward) gets a fresh, empty container the
+    // already-loaded script never scans for on its own - this re-runs that scan. If hbspt
+    // isn't ready yet (script tag present but still loading, on a fast nav right after an
+    // earlier mount added it), wait for its load event and retry once.
+    if (win.hbspt?.meetings?.create) {
+        win.hbspt.meetings.create('.meetings-iframe-container')
+        embedded.value = true
+        return
+    }
+    existing.addEventListener('load', loadEmbed, { once: true })
 }
 
-// Registered for cookieconsent-config.js to call on accept, exactly as the .njk did.
-// It also calls it on load when consent is already stored, so an existing acceptance is
-// covered without this component reading cookies itself.
+function loadEmbedIfConsented() {
+    if ((window as EmbedWindow).CookieConsent?.acceptedCategory?.('analytics')) loadEmbed()
+}
+
 onMounted(() => {
-    ;(window as ConsentWindow)._ffLoadMeetings = loadEmbed
+    loadEmbedIfConsented()
+    window.addEventListener('cc:onConsent', loadEmbedIfConsented)
+    window.addEventListener('cc:onChange', loadEmbedIfConsented)
 })
 
 onUnmounted(() => {
-    ;(window as ConsentWindow)._ffLoadMeetings = null
+    window.removeEventListener('cc:onConsent', loadEmbedIfConsented)
+    window.removeEventListener('cc:onChange', loadEmbedIfConsented)
 })
 </script>
 
 <template>
   <div>
-    <div class="meetings-iframe-container -mb-20 md:-mb-6" :data-src="props.dataSrc" />
+    <!-- The negative margin only makes sense once the real iframe is loaded, to tuck away
+         HubSpot's own excess bottom whitespace - applied while empty, it pulls the fallback
+         panel up into this container's parent's overflow-hidden and clips its top edge. -->
+    <div class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
       <p class="text-indigo-200">30-minute session with our team.</p>
