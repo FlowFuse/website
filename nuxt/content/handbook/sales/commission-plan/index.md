@@ -22,7 +22,7 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **“Chargeback”** means the Company’s recovery of previously paid but unearned incentive payments from a Salesperson.
 
-**“Commissionable Value”** means the amount upon which a Salesperson’s commission is calculated. For all Qualifying Sales, the Commissionable Value is: Commissionable Value = Incremental ARR + (5% × Non-Recurring Revenue)
+**“Commissionable Value”** means the amount upon which a Salesperson's commission is calculated. For all Qualifying Sales, the Commissionable Value is: Commissionable Value = Incremental ARR + (5% × Non-Recurring Revenue, excluding Professional Services Revenue sold as a part of a Solution Sale). Professional Services Revenue sold as a part of a Solution Sale is commissioned separately as set forth in Exhibit A, Section 8. Professional Services Revenue sold outside of a Solution Sale is included within Non-Recurring Revenue for purposes of this formula. 
 
 **“Company”** or “**FlowFuse**” means FlowFuse Inc and any of its affiliates, subsidiaries, successors, or assigns.
 
@@ -36,6 +36,8 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **"Incremental ARR"** means the incremental Annual Recurring Revenue generated from a sale. For new business, this is the total Annual Recurring Revenue (ARR) of the first contract. For upsells and renewals, this refers onlly to the increase in the annual recurring revenue relative to the prior contract.
 
+**"Professional Services Revenue"** means revenue from Professional Services sold by the Salesperson, including implementation, configuration, integration, training, and other paid services delivered in connection with a platform or solution sale.
+
 **“Recoverable Draw”** is a Draw Payment offset by Earned Commissions.  Once Commissions are calculated, there will be a true up to recover the Draw Payment and pay the balance due (if any). If the value of the Draw Payment exceeds the Earned Commissions, the Company reserves the right to continue to deduct the value of Draw Payments from future Commissions until the full Draw Payment amount is recovered. This is referred to as a negative carry forward balance.
 
 **“Non-Recoverable Draw”** is a Draw Payment offset by Earned Commissions.  However, if the Non-Recoverable Draw Payment exceeds the value of Earned Commissions, the difference is not recovered by the Company. If Earned Commissions exceed the value of the Non-Recoverable Draw, the Company will pay the greater of the two.
@@ -43,6 +45,8 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 **"Non-Recurring Revenue"** means revenue from one-time or non-renewing products or services, including but not limited to professional services, onboarding fees, training packages, and any other non-subscription charges.
 
 **“Salesperson”** means an employee of the Company who works in the position identified in Exhibit A.
+
+**"Solution Sale"** means a New Business Qualifying Sale in which Professional Services Revenue is sold concurrently with, and as part of the same Agreement as, a New Business platform (ARR) transaction. A sale of Professional Services Revenue alone, or Professional Services Revenue attached to an existing account without a concurrent New Business ARR component, does not constitute a Solution Sale.
 
 ## 3. Effective Date
 
@@ -211,7 +215,8 @@ Salesperson is authorized to sell the following products and/or services, unless
 
 Except as otherwise stated herein, quota credit will be based on the following:
 1. Net new Annual Recurring Revenue (ARR) generated from New Business deals within the Salesperson’s authorized territory or accounts; plus
-2. Five percent (5%) of any Non-Recurring Revenue (NRR) associated with the New Business transaction.
+2. Five percent (5%) of any Non-Recurring Revenue (NRR), excluding Professional Services Revenue sold as part of a Solution Sale, associated with the New Business transaction; plus
+3. Ten percent (10%) of any Professional Services Revenue sold as a part of a Solution Sale.
 
 Quota credit for upsells and renewals will continue to be based on Incremental ARR only.
 
@@ -223,15 +228,16 @@ Bookings completed through partners will receive a 20% uplift in the value of th
 
 Commission will be calculated based on the Commissionable Value of each Qualifying Sale, defined as:
 
-Incremental ARR + 5% of Non-Recurring Revenue
+Incremental ARR + 5% of Non-Recurring Revenue (excluding Professional Services Revenue sold as part of a Solution Sale). Professional Services Revenue sold as part of a Solution Sale is commissioned separately at the Solution Sale rate set forth in the table below. Professional Services Revenue sold outside of a Solution Sales (standalone, or attached to an existing account) is treated as standard Non-Recurring Revenue and commissioned per the formula above.
 
 The Base Rate and Accelerated Rate listed in the table below apply directly to this Commissionable Value. All commissions are earned only upon recognition of a Qualifying Sale according to the terms of this Plan.
 
-If a multi-year contract includes non-recurring components, only the ARR portion is recognized annually for quota credit and commission. The Non-Recurring Revenue component is recognized once at the time of booking, at the 5% rate defined above.
+If a multi-year contract includes non-recurring components, only the ARR portion is recognized annually for quota credit and commission. The Non-Recurring Revenue component (excluding Professional Services Revenue sold as part of a Solution Sale) is recognized once at the time of booking, at the 5% rate defined above. Professional Services Revenue sold as part of a Solution Sale is recognized once at the time of booking, at the rate defined in the table above.
 
 | Transaction Type | Base Rate | Accelerated Rate |
 | :---: | :---: | ----- |
 | All FlowFuse License Transactions |  |  |
+| Professional Services Revenue (sold as part of a Solution Sale) |  |  |
 
 Notes: Commissions will be paid on multi-year deals at the base rate according to the multi-year guidelines in sections 10 & 11\.
 
