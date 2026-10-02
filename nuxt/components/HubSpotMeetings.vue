@@ -1,19 +1,22 @@
+<script lang="ts">
+let retainedIframe: HTMLIFrameElement | null = null
+</script>
+
 <script setup lang="ts">
 // The HubSpot meetings scheduler, with a "choose a time" panel that stands in for it when
-// analytics consent hasn't been given yet. Defaults to the shared sales calendar
-// (site.meetings.salesRoundRobin); dataSrc overrides it for a campaign-specific one.
+// analytics consent hasn't been given yet. Always the shared sales calendar
+// (site.meetings.salesRoundRobin).
 //
 // Consent-gated and MUST STAY THAT WAY: listens for vanilla-cookieconsent's own
 // cc:onConsent/cc:onChange DOM events, plus a direct check on mount for consent already
 // stored from an earlier visit, since that event can otherwise fire before this mounts.
 import site from '../data/site.json'
 
-const props = defineProps<{ dataSrc?: string }>()
-
 const embedded = ref(false)
+const container = ref<HTMLElement>()
 
 const meetingsSrc = (() => {
-    const url = new URL(props.dataSrc ?? site.meetings.salesRoundRobin)
+    const url = new URL(site.meetings.salesRoundRobin)
     url.searchParams.set('embed', 'true')
     return url.toString()
 })()
@@ -39,9 +42,15 @@ function loadEmbed() {
         return
     }
     // A later mount (e.g. browser back/forward) gets a fresh, empty container the
-    // already-loaded script never scans for on its own - this re-runs that scan. If hbspt
-    // isn't ready yet (script tag present but still loading, on a fast nav right after an
-    // earlier mount added it), wait for its load event and retry once.
+    // already-loaded script never scans for on its own. Re-attach the iframe it created for
+    // the earlier mount: calling create() again would register another pair of window
+    // listeners per visit, pointing at iframes that are gone. If hbspt isn't ready yet
+    // (script tag present but still loading), wait for its load event and retry once.
+    if (retainedIframe && container.value && !container.value.querySelector('iframe')) {
+        container.value.appendChild(retainedIframe)
+        embedded.value = true
+        return
+    }
     if (win.hbspt?.meetings?.create) {
         win.hbspt.meetings.create('.meetings-iframe-container')
         embedded.value = true
@@ -60,6 +69,10 @@ onMounted(() => {
     window.addEventListener('cc:onChange', loadEmbedIfConsented)
 })
 
+onBeforeUnmount(() => {
+    retainedIframe = container.value?.querySelector('iframe') ?? retainedIframe
+})
+
 onUnmounted(() => {
     window.removeEventListener('cc:onConsent', loadEmbedIfConsented)
     window.removeEventListener('cc:onChange', loadEmbedIfConsented)
@@ -71,7 +84,7 @@ onUnmounted(() => {
     <!-- The negative margin only makes sense once the real iframe is loaded, to tuck away
          HubSpot's own excess bottom whitespace - applied while empty, it pulls the fallback
          panel up into this container's parent's overflow-hidden and clips its top edge. -->
-    <div class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
+    <div ref="container" class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
       <p class="text-indigo-200">30-minute session with our team.</p>

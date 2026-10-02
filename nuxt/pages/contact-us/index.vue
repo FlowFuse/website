@@ -1,12 +1,12 @@
 <script setup lang="ts">
-const resolveHref = useResolveHref()
+import site from '../../data/site.json'
 
 const otherChannels = [
     {
         title: 'Want to talk it through live?',
         description: 'Book a session and we\'ll go through your setup together.',
         buttonText: 'Book a session',
-        buttonLink: resolveHref('site:meetings.salesRoundRobin'),
+        buttonLink: site.meetings.salesRoundRobin,
         icon: 'calendar',
     },
     {
