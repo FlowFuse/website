@@ -3,9 +3,11 @@
 // PostHog isn't loaded (no analytics consent). Guarded here too so components
 // can call this during SSR/tests without a `window`.
 export function useCapture () {
-    return function capture (event: string, props?: Record<string, unknown>) {
+    return function capture (event: string, props?: Record<string, unknown>, options?: Record<string, unknown>) {
         if (typeof window === 'undefined') return
-        const win = window as unknown as { capture?: (event: string, props?: Record<string, unknown>) => void }
-        if (typeof win.capture === 'function') win.capture(event, props)
+        const win = window as unknown as {
+            capture?: (event: string, props?: Record<string, unknown>, options?: Record<string, unknown>) => void
+        }
+        if (typeof win.capture === 'function') win.capture(event, props, options)
     }
 }

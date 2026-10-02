@@ -1,10 +1,12 @@
 <script setup lang="ts">
+const resolveHref = useResolveHref()
+
 const otherChannels = [
     {
         title: 'Want to talk it through live?',
         description: 'Book a session and we\'ll go through your setup together.',
         buttonText: 'Book a session',
-        buttonLink: 'https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team',
+        buttonLink: resolveHref('site:meetings.salesRoundRobin'),
         icon: 'calendar',
     },
     {
