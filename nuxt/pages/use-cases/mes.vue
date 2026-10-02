@@ -6,7 +6,7 @@
 //  - The page's frontmatter carried markup (heading spans, inline links) that the .njk
 //    printed with `| safe`. That markup is written directly in this template instead, so
 //    nothing interpolates an HTML string at render time.
-//  - The three CTA macros become <CtaContactUs>, <CtaSignUp> and <CtaBookDemo>.
+//  - The CTA macros become <CtaContactUs> and <CtaBookDemo>.
 //  - The .njk closed the banner heading with a stray </span> that had no opening tag;
 //    browsers dropped it, and it is simply gone here.
 //  - Production renders TWO <h1> on this page: layouts/page.njk emits one from `title`
@@ -49,7 +49,6 @@ useSeoMeta({
               </div>
               <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                 <CtaContactUs variant="primary" position="primary" class="min-h-[40px]" />
-                <CtaSignUp variant="primary-outlined" position="primary" class="min-h-[40px]" />
               </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[550px]">
@@ -140,7 +139,6 @@ useSeoMeta({
           <h4 class="mb-6 w-full text-center">Ready to build the MES your business needs?</h4>
           <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
             <CtaBookDemo variant="primary" position="secondary" class="min-h-[40px]" />
-            <CtaSignUp variant="primary-outlined" position="secondary" class="min-h-[40px]" />
           </div>
         </div>
       </div>

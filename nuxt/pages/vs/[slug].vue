@@ -82,7 +82,6 @@ useSeoMeta({
                   :href="migrationExpertHref"
                   @click="onMigrationExpertClick"
               >{{ page.hero.buttonText }}</a>
-              <CtaSignUp variant="ghost" position="hero" icon="i-lucide-arrow-right" class="inline-flex items-center" />
             </div>
           </div>
           <div class="md:w-1/2 flex-grow relative">
@@ -96,7 +95,6 @@ useSeoMeta({
                 :href="migrationExpertHref"
                 @click="onMigrationExpertClick"
             >{{ page.hero.buttonText }}</a>
-            <CtaSignUp variant="ghost" position="hero-mobile" icon="i-lucide-arrow-right" class="w-full m-auto sm:mt-12" />
           </div>
         </div>
       </div>

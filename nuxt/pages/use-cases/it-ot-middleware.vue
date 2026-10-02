@@ -9,7 +9,7 @@
 //    than interpolated into a JSON string by hand.
 //  - smooth-scroll.njk's global function and inline onclick are dropped: the site-wide
 //    `scroll-behavior: smooth` in style.css already animates a plain in-page anchor.
-//  - The CTA macros become <CtaBookDemo> and <CtaSignUp>. The two hand-written
+//  - The CTA macros become <CtaBookDemo>. The two hand-written
 //    ff-btn links that were not CTAs keep their own markup; the "INSTALL NOW" one keeps
 //    its inline capture('cta-install') event, routed through useCapture.
 //  - The three deployment-card headings carried a stray </br>, which is not a tag.
@@ -199,11 +199,11 @@ useSchemaOrg([
                 <div>
                   <div class="title pb-4"><h4 class="text-indigo-600">FlowFuse Cloud</h4></div>
                   <p class="mb-0 text-left">
-                    The easiest way to start building industrial applications. No installation required! Simply sign up
-                    and gain immediate access to the editor.
+                    The easiest way to build industrial applications. No installation required, hosted and
+                    maintained by the FlowFuse team.
                   </p>
                 </div>
-                <CtaSignUp variant="primary-outlined" position="manufacturing" class="md:self-end align-baseline w-full mt-3" />
+                <CtaBookDemo variant="primary-outlined" position="manufacturing" class="md:self-end align-baseline w-full mt-3" />
               </div>
               <div class="deployment-card white-bg">
                 <div>

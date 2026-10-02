@@ -13,8 +13,8 @@
 //  - The three tutorial <lite-youtube> elements become <LiteYoutube>.
 //  - The hero and footer CTAs were hand-written <a class="ff-btn"> links, so the footer
 //    "Book a Demo" fired capture('cta-book-demo') from an inline onclick and the others
-//    fired nothing. They are <CtaBookDemo>, <CtaPricing> and <CtaSignUp> now, which is
-//    where those three destinations' copy and events are defined.
+//    fired nothing. They are <CtaBookDemo> and <CtaPricing> now, which is
+//    where those destinations' copy and events are defined.
 const RESOURCES = [
     { url: '/blog/2024/03/dashboard-getting-started/', title: 'Getting started with FlowFuse Dashboard', image: '/blog/2024/03/images/getting-started-with-dashboard-2.png' },
     { url: '/webinars/2024/node-red-dashboard-multi-user/', title: 'Multi-user dashboards: a screen per person', image: '/images/webinars/multi-user-dashboard-with-node-red-dashboard-2-0-webinar-2024-february.jpg' },
@@ -294,7 +294,6 @@ useSeoMeta({
           </p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="dashboard-footer" uppercase />
-            <CtaSignUp variant="ghost" position="dashboard-footer" color="white" uppercase />
           </div>
         </div>
       </div>

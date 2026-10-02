@@ -318,7 +318,6 @@ function toggleFaq (i: number) {
             </p>
             <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
               <CtaBookDemo variant="highlight" position="opcua-hero" />
-              <CtaSignUp variant="ghost" position="opcua-hero" icon="i-lucide-arrow-right" />
             </div>
           </div>
           <div class="md:w-1/2 flex-grow relative max-md:mt-12">
@@ -628,10 +627,9 @@ function toggleFaq (i: number) {
       <div class="max-w-screen-lg mx-auto">
         <div class="rounded-xl px-6 md:px-9 py-8 md:py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
           <h2 class="text-white font-medium">Ready to build an OPC UA client or server the right way?</h2>
-          <p class="text-indigo-50 font-light text-xl max-w-3xl mt-0">No per-tag licensing. No Security Policy left at None. Connect to any OPC UA server, host your own, and bridge both to Modbus, MQTT, or a historian without extra middleware. See it live, or start free.</p>
+          <p class="text-indigo-50 font-light text-xl max-w-3xl mt-0">No per-tag licensing. No Security Policy left at None. Connect to any OPC UA server, host your own, and bridge both to Modbus, MQTT, or a historian without extra middleware. See it live.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="opcua-final" />
-            <CtaSignUp variant="ghost" color="white" icon="i-lucide-arrow-right" position="opcua-final" />
           </div>
         </div>
       </div>

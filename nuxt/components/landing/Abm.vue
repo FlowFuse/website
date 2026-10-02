@@ -48,7 +48,6 @@ defineProps<{
             </div>
             <div class="md:mt-3 gap-4 hidden md:flex md:flex-row md:items-start md:justify-start md:m-0">
               <CtaBookDemo variant="primary" position="hero" class="min-h-[40px]" />
-              <CtaSignUp variant="ghost" position="hero" icon="i-lucide-arrow-right" />
             </div>
           </div>
           <div class="md:w-2/5 flex-grow relative">
@@ -58,7 +57,6 @@ defineProps<{
           </div>
           <div class="flex flex-col sm:flex-row md:hidden gap-3">
             <CtaBookDemo variant="primary" position="hero-mobile" class="w-full mt-12 min-h-[40px]" />
-            <CtaSignUp variant="ghost" position="hero-mobile" icon="i-lucide-arrow-right" class="w-full m-auto sm:mt-12" />
           </div>
         </div>
       </div>
@@ -184,7 +182,6 @@ defineProps<{
         <p class="text-center">{{ page.ctaSection.description }}</p>
         <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center mt-8">
           <CtaBookDemo variant="primary" position="secondary" class="min-h-[40px]" />
-          <CtaSignUp variant="primary-outlined" position="secondary" class="min-h-[40px]" />
         </div>
       </div>
     </div>

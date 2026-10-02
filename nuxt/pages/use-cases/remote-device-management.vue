@@ -169,7 +169,6 @@ useSchemaOrg([
           </p>
           <div class="mt-12 flex flex-row flex-wrap gap-4 items-center justify-center md:justify-start">
             <CtaBookDemo variant="highlight" position="hero" />
-            <CtaSignUp variant="ghost" position="hero" icon="i-lucide-arrow-right" />
           </div>
         </div>
         <div class="rounded-xl border-2 border-red-100 overflow-hidden shadow-[20px_20px_40px_0_rgba(0,0,0,0.25)] aspect-[3/2]">
@@ -303,7 +302,6 @@ useSchemaOrg([
           <p class="text-indigo-50 font-light text-xl max-w-3xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="final-cta" />
-            <CtaSignUp variant="ghost" color="white" position="final-cta" icon="i-lucide-arrow-right" />
           </div>
         </div>
       </div>

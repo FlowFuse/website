@@ -8,7 +8,7 @@
 //    declares `values:`, which is the same test the .njk made.
 //  - The repeated card markup becomes <UseCaseCard>, shared with the cross-link band that
 //    components/use-case-links.njk used to render.
-//  - The CTA macros become <CtaContactUs> and <CtaSignUp>, and the closing band is the
+//  - The CTA macro becomes <CtaContactUs>, and the closing band is the
 //    shared <UseCaseClosingCta> the use-case pages also end on.
 const { data: useCases } = await useAsyncData('use-cases-listing', () =>
     queryCollection('useCases').select('slug', 'title', 'problem', 'values').all()
@@ -90,7 +90,7 @@ useSeoMeta({
 
     <UseCaseClosingCta
         heading="See it on your workflow"
-        description="Talk to an expert, or get started with FlowFuse today."
+        description="Talk to an expert about your workflow."
         lead="contact-us"
     />
   </div>

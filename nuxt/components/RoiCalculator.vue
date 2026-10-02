@@ -246,7 +246,6 @@ const faultFields = [
       </div>
 
       <div class="mt-6 flex flex-col sm:flex-row gap-3">
-        <CtaSignUp variant="highlight" :position="ctaPosition" />
         <CtaBookDemo variant="ghost" color="white" icon="i-lucide-arrow-right" :position="ctaPosition" />
       </div>
       <p class="text-xs text-indigo-200 mt-4 leading-snug">Directional estimate for comparison, not a quote. Every input is yours to change.</p>

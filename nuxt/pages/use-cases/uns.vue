@@ -6,7 +6,7 @@
 //  - The five feature icons were {% include %}d straight from
 //    src/_includes/components/icons/ with no ff-icon wrapper, so they are plain Heroicons
 //    at w-8 h-8. They resolve through <UIcon> against the installed heroicons set here.
-//  - The three CTA macros become <CtaContactUs>, <CtaSignUp> and <CtaBookDemo>.
+//  - The CTA macros become <CtaContactUs> and <CtaBookDemo>.
 //  - Production renders TWO <h1> ("FlowFuse for UNS" from layouts/page.njk's `nohero`
 //    branch, then the page's own "FlowFuse for the Unified Namespace"). Only the page's
 //    own heading survives here.
@@ -77,7 +77,6 @@ useSeoMeta({
               </div>
               <div class="flex gap-3 max-md:max-w-sm max-md:mx-auto max-sm:flex-col max-md:justify-center">
                 <CtaContactUs variant="primary" position="primary" class="min-h-[40px]" />
-                <CtaSignUp variant="primary-outlined" position="primary" class="min-h-[40px]" />
               </div>
             </div>
             <div class="flex max-md:hidden justify-center m-auto max-w-[400px]">
@@ -152,7 +151,6 @@ useSeoMeta({
           <h4 class="mb-6 w-full text-center">Ready to simplify your UNS journey and unlock the power of your industrial data?</h4>
           <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
             <CtaBookDemo variant="primary" position="secondary" class="min-h-[40px]" />
-            <CtaSignUp variant="primary-outlined" position="secondary" class="min-h-[40px]" />
           </div>
         </div>
 
