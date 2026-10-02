@@ -1,13 +1,22 @@
 <script setup lang="ts">
 // The HubSpot meetings scheduler, with a "choose a time" panel that stands in for it when
-// analytics consent hasn't been given yet.
+// analytics consent hasn't been given yet. Defaults to the shared sales calendar
+// (site.meetings.salesRoundRobin); dataSrc overrides it for a campaign-specific one.
 //
 // Consent-gated and MUST STAY THAT WAY: listens for vanilla-cookieconsent's own
 // cc:onConsent/cc:onChange DOM events, plus a direct check on mount for consent already
 // stored from an earlier visit, since that event can otherwise fire before this mounts.
-const props = defineProps<{ dataSrc: string }>()
+import site from '../data/site.json'
+
+const props = defineProps<{ dataSrc?: string }>()
 
 const embedded = ref(false)
+
+const meetingsSrc = (() => {
+    const url = new URL(props.dataSrc ?? site.meetings.salesRoundRobin)
+    url.searchParams.set('embed', 'true')
+    return url.toString()
+})()
 
 type EmbedWindow = Window & {
     CookieConsent?: { showPreferences: () => void, acceptedCategory?: (category: string) => boolean }
@@ -62,7 +71,7 @@ onUnmounted(() => {
     <!-- The negative margin only makes sense once the real iframe is loaded, to tuck away
          HubSpot's own excess bottom whitespace - applied while empty, it pulls the fallback
          panel up into this container's parent's overflow-hidden and clips its top edge. -->
-    <div class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="props.dataSrc" />
+    <div class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
       <p class="text-indigo-200">30-minute session with our team.</p>
