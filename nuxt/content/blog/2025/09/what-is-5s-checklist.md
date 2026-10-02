@@ -79,7 +79,7 @@ Companies that implement 5S checklists consistently report dramatic improvements
 
 Safety improvements often exceed expectations. When everything has a proper place and workspaces stay clean, accident rates can drop. Spills get noticed and cleaned immediately instead of becoming slip hazards. Tools don't get left in walkways where someone might trip.
 
-Quality improvements follow naturally from better organization. Clean, well-organized environments make it easier to spot problems before they become defects. When workers aren't rushed or frustrated from searching for materials, they make fewer mistakes. The predictability of well-organized processes reduces variability in outcomes.
+Quality improvements follow naturally from better organization. Clean, well-organized environments make it easier to spot problems before they become [defects](/blog/2026/10/manufacturing-defects/). When workers aren't rushed or frustrated from searching for materials, they make fewer mistakes. The predictability of well-organized processes reduces variability in outcomes.
 
 Perhaps surprisingly, employee engagement often increases significantly. Teams take pride in maintaining organized workspaces, especially when they participate in regular evaluations and see their scores improve over time. The checklist process gives everyone a voice in work area improvement.
 

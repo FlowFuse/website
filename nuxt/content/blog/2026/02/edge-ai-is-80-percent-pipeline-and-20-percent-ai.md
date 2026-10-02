@@ -50,7 +50,7 @@ The OT engineer who has spent fifteen years learning one plant's quirks is not g
 
 FlowFuse starts from that same premise and takes it further, into the territory Node-RED was never designed to handle alone.
 
-Take what happens when you want to put a model in production. You have a data scientist who trained something useful, a predictive maintenance model, an anomaly detector, a vision system for defect classification. The model is accurate. It works on their laptop. And then there is the question of where it actually lives, how OT can interact with it, what happens when it needs to be retrained, and who owns it when something goes wrong at 2 a.m. on a Saturday.
+Take what happens when you want to put a model in production. You have a data scientist who trained something useful, a predictive maintenance model, an anomaly detector, a vision system for [defect classification](/blog/2026/10/manufacturing-defects/). The model is accurate. It works on their laptop. And then there is the question of where it actually lives, how OT can interact with it, what happens when it needs to be retrained, and who owns it when something goes wrong at 2 a.m. on a Saturday.
 
 In most deployments, nobody has a good answer to any of those questions. The model ends up in a container somewhere that only the data scientist understands, connected to the plant by a fragile handshake that no one wants to touch. The OT team treats it like a black box because it is a black box.
 

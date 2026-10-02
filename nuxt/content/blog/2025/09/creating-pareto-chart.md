@@ -98,7 +98,7 @@ To view the dashboard, click the **Open Dashboard** button in the top-right corn
 ![Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line.](./images/pareto-chart.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing with bars for scratches, cracks, color issues, and other defects, alongside a cumulative percentage line._
 
-The chart visualizes defect types using bars. The cumulative line and the 80% threshold indicate the cutoff point: bars to the left of this intersection represent the vital few defects that contribute most to the total, and these are the areas where you should focus your improvement efforts.
+The chart visualizes [defect types](/blog/2026/10/manufacturing-defects/) using bars. The cumulative line and the 80% threshold indicate the cutoff point: bars to the left of this intersection represent the vital few defects that contribute most to the total, and these are the areas where you should focus your improvement efforts.
 
 ![Pareto Chart showing defect categories in manufacturing. The bars on the left, highlighted with a red box, represent the vital few defects](./images/pareto-chart-decoded.png){data-zoomable}
 _Pareto Chart showing defect categories in manufacturing. The bars on the left, highlighted with a red box, represent the vital few defects_

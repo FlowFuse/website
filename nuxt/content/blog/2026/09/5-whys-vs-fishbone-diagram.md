@@ -79,7 +79,7 @@ For a deeper explanation, see our guide to [5 Whys root cause analysis](/blog/20
 
 A Fishbone Diagram helps a team organize the different factors that could be contributing to a problem.
 
-For example, imagine that surface defects on a production line have suddenly increased. The team might investigate:
+For example, imagine that [surface defects](/blog/2026/10/manufacturing-defects/) on a production line have suddenly increased. The team might investigate:
 
 - Machine settings
 - Incoming material
