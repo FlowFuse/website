@@ -88,17 +88,13 @@ The OPC UA nodes then appear in your palette, ready to drag onto the canvas.
 
 !["The OPC UA nodes in the Node-RED palette"](./images/opcua/node-palette.png "The OPC UA nodes in the Node-RED palette"){data-zoomable}
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
+::
 
-</div></div>
-
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Keep endpoint URLs, usernames, and passwords in FlowFuse Environment Variables (your instance's **Settings → Environment**) rather than hard-coding them in nodes. This keeps credentials out of your flow JSON and lets you promote the same flow across instances.
-
-</div></div>
+::
 
 ## 3. The Node Set
 
@@ -118,17 +114,13 @@ Each node performs one OPC UA operation and reuses the shared connection you con
 | History Read | Retrieve raw, modified, or aggregated historical data over a time range. |
 | File Operation | Read, write, append, or size files on servers implementing the FileType interface. |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Properties of the input message take precedence over a node's own configuration. Configure a node statically, or drive it dynamically from upstream messages.
+::
 
-</div></div>
-
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Each node reports its state in the editor with a coloured status dot, grey (not connected), blue (operation in progress), green (success), red (failure), and on some nodes (such as History Read) yellow (partial success or quality issues). Watch it alongside the debug sidebar when wiring up a flow.
-
-</div></div>
+::
 
 ## 4. NodeIds and How to Address Data
 
@@ -152,11 +144,9 @@ Clicking the browse (`...`) button opens the live address space, so you can pick
 
 !["Browsing the live server address space to select a NodeId"](./images/opcua/use-node-browser-to-select-node-id.png "Browsing the live server address space to select a NodeId"){data-zoomable}
 
-<div class="ff-callout ff-callout--warning"><p class="ff-callout__title">Warning</p><div class="ff-callout__content">
-
+::warning
 Namespace indexes are not guaranteed stable across servers. If you move a flow between servers, prefer browse paths or the namespace alias table over hard-coded numeric namespace indexes.
-
-</div></div>
+::
 
 ### Browse path syntax
 
@@ -178,11 +168,9 @@ Every browse path starts with a reference-type separator and then a sequence of 
 | BadNoMatch | The full path does not exist on the server, or a namespace index is wrong. |
 | BadReferenceTypeIdInvalid | A reference type name in the path is unknown or not namespace-qualified. |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Browse paths are convenient and portable, but resolution has a cost. For variables you read or write frequently, resolve the path once and use the returned NodeId, or use the verified-browse-path format that caches the NodeId alongside the path.
-
-</div></div>
+::
 
 ## 5. Configure a Connection
 
@@ -200,11 +188,9 @@ Every OPC UA node depends on a connection defined by the **OPC UA Client** confi
 4. Click **Save**, then **Done**.
 5. Click **Deploy**, then open the debug sidebar to confirm data flows.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The connection is shared. Changing its parameters affects every node that uses it, and you must redeploy the flow for connection changes to take effect.
-
-</div></div>
+::
 
 ### Connection editor areas
 
@@ -227,21 +213,17 @@ The connection is shared. Changing its parameters affects every node that uses i
 
   !["A connection rejected with BadUserAccessDenied"](./images/opcua/endpoint-verification-user-access-denied.png "A connection rejected with BadUserAccessDenied"){data-zoomable}
 
-<div class="ff-callout ff-callout--warning"><p class="ff-callout__title">Warning</p><div class="ff-callout__content">
-
+::warning
 A username and password sent over message security mode `None` travel in cleartext. Combine credentials with at least `Sign` mode.
-
-</div></div>
+::
 
 ### Certificate trust
 
 Secure connections rely on mutual certificate trust. By default the client side automatically accepts the server's certificate, so the step that usually needs action is the reverse: **the server must trust the client's certificate**. For a `Sign` or `SignAndEncrypt` connection, download the client certificate from the connection editor (in PEM or DER format) and add it to your OPC UA server's trusted list, otherwise the server refuses the connection.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Auto-accepting the server certificate is convenient but means the client does not verify the server's identity. To enforce server-certificate validation, set `rejectUnauthorized` to `true` in the connection node's global settings. The client then refuses any server whose certificate is not already in its trusted store, so you must add the server's certificate to the client side first.
-
-</div></div>
+::
 
 Client and server nodes in your instance share one PKI store. On FlowFuse it lives under `<instance working directory>/opcua-for-flow-fuse/PKI`. For trust decisions to survive restarts and redeploys, that directory must be on persistent storage, see [Hosting an OPC UA server](#_16-hosting-an-opc-ua-server) for the storage details, which apply to client connections too.
 
@@ -266,11 +248,9 @@ The Read node fetches data on demand, it acts only when it receives an input mes
 3. `msg.payload`
 4. The node's configured NodeId
 
-<div class="ff-callout ff-callout--warning"><p class="ff-callout__title">Warning</p><div class="ff-callout__content">
-
+::warning
 A default Inject node sets `msg.payload` to a timestamp, which silently overrides the node's configured NodeId (priority rule 3). To use the node's own configuration, ensure the Inject node does **not** set `msg.nodeId`, `msg.topic`, or `msg.payload`.
-
-</div></div>
+::
 
 ### Message properties
 
@@ -391,11 +371,9 @@ A Write returns the original `payload` and `nodeId` plus the result: `statusCode
 | BadNotWritable | Variable is read-only. |
 | BadConnectionClosed | Connection was lost during the write. |
 
-<div class="ff-callout ff-callout--warning"><p class="ff-callout__title">Warning</p><div class="ff-callout__content">
-
+::warning
 Writes to production equipment change real-world state. Gate write nodes behind validation or an operator confirmation step before deploying to a live instance.
-
-</div></div>
+::
 
 ## 8. Extension Object
 
@@ -473,11 +451,9 @@ The Monitor node subscribes to variables and emits a message whenever a value ch
 - **Notification behaviour**, a monitored item notifies only when the value actually changes (per the OPC UA spec), and once at monitoring start: the initial value is always reported.
 - **Resilience**, the Monitor node reconnects automatically after a connection loss and re-establishes its subscription and monitored items, resuming without manual intervention.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Each notification carries `msg.sequenceNumber`. Watch it for gaps to detect dropped notifications, for example when a server-side queue overflows under a heavy change rate.
-
-</div></div>
+::
 
 ### NodeId source (priority order)
 
@@ -537,11 +513,9 @@ Example, stop monitoring:
 msg.payload = [];
 ```
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Injecting an empty array releases the monitored items but leaves the now-empty subscription in place on the connection, so it is the right way to pause and resume a stream. To tear the session down completely, disconnect the connection instead.
-
-</div></div>
+::
 
 ### Deadband filtering
 
@@ -553,11 +527,9 @@ Injecting an empty array releases the monitored items but leaves the now-empty s
 | Absolute | Report only when `abs(new − lastReported) > value`. |
 | Percent | Report only when the change exceeds a percentage of the variable's EURange. Requires the variable to expose an EURange property. |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Deadband compares against the last reported value, not the last sampled value. The initial value is always reported. Use Absolute when a variable has no EURange, Percent silently does nothing without one.
-
-</div></div>
+::
 
 ## 11. Monitor Event
 
@@ -596,11 +568,9 @@ Where Clause:  (empty)
 Select Clause: EventId,EventType,SourceName,Time,Message,Severity
 ```
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 If no events arrive, verify the server supports events (read the object's `EventNotifier` attribute, a non-zero value means it emits events), point the NodeId at an event-generating object (try `i=2253`), and clear the Where Clause. If too many arrive, tighten the Where Clause by type and severity, or point at specific equipment instead of the Server object.
-
-</div></div>
+::
 
 ## 12. Browse
 
@@ -666,11 +636,9 @@ The output type sets what each leaf variable returns:
 - **excludeEmpty**, set `msg.excludeEmpty = true` to drop branches that contain no variables, for cleaner output.
 - **Depth**, Explore follows the full hierarchy under the start node (default maximum depth 10). Rather than a depth setting, control scope by choosing a more specific start NodeId: roughly 2–3 levels for one piece of equipment, 4–6 for a production line, 7–10 for a whole plant.
 
-<div class="ff-callout ff-callout--warning"><p class="ff-callout__title">Warning</p><div class="ff-callout__content">
-
+::warning
 Starting Explore at the Objects folder (`ns=0;i=85`) or another root node traverses the entire server and can return a very large structure. Start from a specific NodeId (or `/Server/ServerStatus` if you are just getting your bearings) and expand scope deliberately.
-
-</div></div>
+::
 
 Example, exploring `/Server/ServerStatus` with output type `NodeId` returns a nested object whose leaves are the NodeIds of each variable:
 
@@ -694,11 +662,9 @@ Explore a subtree once to discover all its variables, then feed that structure s
 [Inject]  →  [Explore]  →  [Monitor]  →  [Debug]
 ```
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Address spaces rarely change, so cache the Explore result (with a timestamp) and reuse it rather than re-exploring on every deploy. Re-explore periodically only if your server adds or removes variables at runtime.
-
-</div></div>
+::
 
 ## 14. History Read
 
@@ -750,11 +716,9 @@ msg.startTime = "2024-11-20T08:00:00Z";  msg.endTime = "2024-11-20T17:00:00Z"; /
 | BadTimestampsToReturnInvalid | Invalid timestamp specification. |
 | BadMaxAgeInvalid | Invalid time range specified. |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Keep time ranges and `numValuesPerNode` bounded, prefer aggregation to thin large ranges for charts, and verify the server supports history before relying on it. For very long ranges, chunk the request into smaller windows.
-
-</div></div>
+::
 
 ## 15. File Operation
 
@@ -799,27 +763,23 @@ msg.payload = "appended log line\n";   // WriteAppend mode
 | BadNodeIdUnknown | File not found, for WriteAppend, create it first with Write. |
 | BadNotWritable / BadUserAccessDenied | File is read-only or your account lacks permission. |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Use the Browse node to discover available File objects, and the Read node to inspect file metadata such as `Size`, `OpenCount`, and `UserWritable`. Garbled text usually means the wrong encoding, try a different one.
-
-</div></div>
+::
 
 ## 16. Hosting an OPC UA Server
 
 On **self-hosted FlowFuse**, the certified node can run an OPC UA server inside your instance using only Function nodes, no `settings.js` edit, no external module declaration, no extra npm install.
 
-<div class="ff-callout ff-callout--caution"><p class="ff-callout__title">Caution</p><div class="ff-callout__content">
+::caution
 Server hosting is **not supported on FlowFuse Cloud**, Cloud exposes HTTP/HTTPS only and cannot expose the arbitrary TCP port (`opc.tcp://`) a server needs. Use a self-hosted FlowFuse instance and ensure the chosen port is reachable through your container and network configuration.
-</div></div>
+::
 
 When the palette loads, it publishes a bootstrap helper in the Node-RED global context. Retrieve it and destructure `{ bootstrap, opcua }`: `bootstrap` carries the server helpers and `opcua` re-exports the full `node-opcua` namespace. This works even with `functionExternalModules: false`.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 `global.get("sterfive")` below is the literal runtime key the certified node exposes. Keep it exactly as written in your Function nodes, or the code will not find the helper.
-
-</div></div>
+::
 
 ### Basic pattern
 
@@ -865,11 +825,9 @@ handle.exposed.temperature.setValueFromSource({
 });
 ```
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Keep the handle in flow context, never in a local `const`/`let`, a Function node's body re-runs on every message. Prefix context keys with `$` (e.g. `$opcuaHandle`) and avoid the bare key `opcua` (it collides with other vendors), dotted keys (Node-RED reads them as nested paths), and colon-separated keys. Put construction-time options (`port`, `nodesets`, security, `users`) only in the Boot node, never in the Update node.
-
-</div></div>
+::
 
 ### Key `bootstrapServer` options
 
@@ -889,11 +847,9 @@ Keep the handle in flow context, never in a local `const`/`let`, a Function node
 | `onPopulate` | Callback run once when a new server is built, add your variables, objects, and methods here. |
 | `forceRebuild` | Set `true` to rebuild without a config change (e.g. after editing the trust store). |
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The server's identity is a config hash of `port`, `endpoint`, `applicationName`, `productUri`, `nodesets`, `securityPolicies`, `securityModes`, `allowAnonymous`, and `users`. Change any of these and the next deploy rebuilds the server (re-running `onPopulate`). `onPopulate` and `forceRebuild` are excluded from the hash, so editing `onPopulate` alone does not trigger a rebuild, use `forceRebuild: true` if you need one.
-
-</div></div>
+::
 
 ### Adding methods
 
@@ -983,11 +939,9 @@ Beyond roughly five servers per instance, prefer separate processes; the event l
 
 Authentication is declarative through the `users` array. Each entry has a username, a password, and roles. The helper bcrypt-hashes clear-text passwords at boot and maps role names to their NodeIds; a value already in bcrypt form (`$2a$`/`$2b$`/`$2y$` prefix) is passed through verbatim. The `users` array controls only session activation, per-node authorization comes from each variable's access-level attributes combined with role mapping. Set `allowAnonymous: false` to refuse anonymous sessions. The helpers `bootstrap.ensureBcryptHash(plain)` and `bootstrap.isBcryptHash(hash)` are available for tooling.
 
-<div class="ff-callout ff-callout--warning"><p class="ff-callout__title">Warning</p><div class="ff-callout__content">
-
+::warning
 If you omit `users`, the helper installs a default test set (`root/secret`, `gdsadmin/admingds`, `user1/password1`, `user2/password2`) intended only for development. Always set your own `users` for any instance reachable beyond your development machine.
-
-</div></div>
+::
 
 ### Security, certificates, and PKI storage
 
@@ -995,11 +949,9 @@ Enable secure endpoints with `securityPolicies` and `securityModes`; the server 
 
 On FlowFuse, the node stores its PKI (its own certificate, the trusted list, and the rejected list) under `<instance working directory>/opcua-for-flow-fuse/PKI`. For this to survive restarts and redeploys, that directory must be on persistent storage: on container-based FlowFuse (Cloud, Kubernetes, Docker) this is the persistent volume mounted at `/data/storage`; on the FlowFuse Device Agent the working directory is on the device's local filesystem. If you re-trust a server's certificate after every deploy, your PKI directory is not landing on persistent storage.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Username/password over `MessageSecurityMode.None` travels in cleartext. Combine credentials with at least Sign mode. Disabling `SecurityPolicy.None` entirely can break naive clients that probe without security first.
-
-</div></div>
+::
 
 ### Lifecycle, diagnostics, and stopping
 

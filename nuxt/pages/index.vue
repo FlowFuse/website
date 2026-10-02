@@ -13,7 +13,6 @@
 //  - site.messaging.heroTagLine and .subtitle came from src/_data/site.json, which Nuxt
 //    still imports for its own config. They are literals here, so the page reads as the
 //    page.
-const capture = useCapture()
 
 const METRICS = [
     { number: '50%', text: 'Reduction in scrap rate with real-time operational monitoring' },
@@ -351,16 +350,10 @@ useSchemaOrg([
                       </div>
                       <p class="text-gray-700 font-light m-0">Speed without governance creates new debt. FlowFuse provides the production layer where AI-assisted work becomes visible, versioned, secure, and reusable, across the enterprise.</p>
                   </div>
-                  <!-- No plain-text-link variant exists in the shared Cta* system (CLAUDE.md
-                       reserves `text` for that), and ghost is too heavy (bold/uppercase/button
-                       padding) for this inline sentence-style link. Hand-written until that
-                       variant exists, but firing the same event and props the real
-                       CtaBookDemo would, tagged variant="text" so it is identifiable in
-                       PostHog as this one-off style. -->
-                  <NuxtLink to="/book-demo/" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6" @click="capture('cta-book-demo', { position: 'ai', variant: 'text' })">
+                  <CtaLink destination="bookDemo" position="ai" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6">
                       <span class="group-hover:underline">Book a demo</span>
                       <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><UIcon name="i-heroicons-arrow-long-right-solid" /></span>
-                  </NuxtLink>
+                  </CtaLink>
               </div>
           </div>
       </div>

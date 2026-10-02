@@ -8,16 +8,21 @@ interface BreadcrumbItem {
 
 const props = defineProps<{ items: BreadcrumbItem[] }>()
 
+const normalizedItems = computed(() => props.items.map(item => ({
+    ...item,
+    ...(item.to ? { to: withTrailingSlash(item.to) } : {}),
+})))
+
 useSchemaOrg([
     defineBreadcrumb({
-        itemListElement: props.items.map(item => ({
+        itemListElement: normalizedItems.value.map(item => ({
             name: item.label,
             ...(item.to ? { item: item.to } : {}),
         })),
     }),
 ])
 
-const displayItems = computed(() => props.items.map((item, index) => ({
+const displayItems = computed(() => normalizedItems.value.map((item, index) => ({
     ...item,
     ui: {
         ...(item.to ? { link: 'hover:text-indigo-600' } : {}),

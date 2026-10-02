@@ -40,7 +40,7 @@ This article covers what PPAP is, its 18 elements, the submission level requirem
 
 PPAP is the [Production Part Approval Process](https://www.aiag.org/training-and-resources/manuals/details/PPAP-4), a structured process that shows a supplier's production process can meet the customer's engineering and quality requirements on each run, not just on a single sample.
 
-The Automotive Industry Action Group publishes PPAP as one of its [Quality Core Tools](https://www.aiag.org/expertise-areas/quality/quality-core-tools), alongside [APQP](https://www.aiag.org/training-and-resources/manuals/details/APQP-3), FMEA, MSA, and [SPC](/blog/2026/08/statistical-process-control/).
+The Automotive Industry Action Group publishes PPAP as one of its [Quality Core Tools](https://www.aiag.org/expertise-areas/quality/quality-core-tools), alongside [APQP](https://www.aiag.org/training-and-resources/manuals/details/APQP-3), FMEA, MSA, and [SPC](/blog/2026/08/statistical-process-control/). Together they form the backbone of [automotive quality control](/blog/2026/10/automotive-quality-control/).
 
 PPAP is most associated with [automotive manufacturing](/industries/automotive/), though other industries use similar part approval processes with different requirements.
 

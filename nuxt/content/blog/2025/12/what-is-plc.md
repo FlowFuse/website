@@ -231,7 +231,7 @@ PLCs control processes where reliability is not negotiable. They are invisible b
 
 **Water treatment** plants manage pumps, chemical dosing, and filtration against flow and quality sensors. These systems commonly run 20 to 30 years, absorbing daily demand swings automatically.
 
-**Power substations** use PLCs for load monitoring, breaker control, and grid coordination, adjusting within milliseconds as generation and demand shift. The same controllers run inverter and turbine skids across [renewable generation sites](/industries/renewables/), where output varies by the minute.
+**Power substations** use PLCs for load monitoring, breaker control, and grid coordination, adjusting within milliseconds as generation and demand shift. The same controllers run inverter and turbine skids across [renewable generation sites](/industries/energy-utilities//), where output varies by the minute.
 
 **Refineries and chemical plants** manage temperatures, pressures, and emergency shutdown sequences in environments where a control failure is a safety event.
 

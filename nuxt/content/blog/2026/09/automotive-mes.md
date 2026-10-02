@@ -39,7 +39,7 @@ A Manufacturing Execution System (MES) sits between two systems every plant alre
 
 For most of MES's history, the entire stack shipped as one tightly coupled platform (hence the term ‘monolith’). Changing any piece meant touching the whole system: a vendor engagement and months of lead time for custom configurations.
 
-That model is breaking down for the same reason why automotive plants are hard to standardize in the first place. Every plant, product line, and OEM contract has its own quality requirements, downtime taxonomy, and mix of legacy equipment. The industry's response has been a shift toward modular, composable MES architecture that breaks routing, quality, genealogy, and [downtime tracking](/blog/2026/07/build-downtime-logger/) into pieces that can be built or replaced independently. Extending an existing MES, the third option here, is that same shift applied to a plant that already has a working MES and no interest in replacing it just to get modularity.
+That model is breaking down for the same reason why automotive plants are hard to standardize in the first place. Every plant, product line, and OEM contract has its own [quality requirements](/blog/2026/10/automotive-quality-control/), downtime taxonomy, and mix of legacy equipment. The industry's response has been a shift toward modular, composable MES architecture that breaks routing, quality, genealogy, and [downtime tracking](/blog/2026/07/build-downtime-logger/) into pieces that can be built or replaced independently. Extending an existing MES, the third option here, is that same shift applied to a plant that already has a working MES and no interest in replacing it just to get modularity.
 
 ## Why Automotive Manufacturing Makes MES Decisions Harder
 

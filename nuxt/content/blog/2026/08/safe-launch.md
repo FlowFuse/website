@@ -33,7 +33,7 @@ cta:
   description: "Talk to us about connecting inspection points, escalation criteria, and containment reporting so you can prove your safe launch program held up and exit with confidence."
 ---
 
-*PPAP approval feels like the finish line. For most suppliers, it is the point at which the customer starts watching most closely.* Different OEMs give this period different names. GM calls it GP-12, or early production containment. Ford and others call it safe launch. The requirement is broadly the same: a defined window of additional inspection sitting on top of your normal process controls, starting at first production shipment and ending only when the customer says so.
+*PPAP approval feels like the finish line. For most suppliers, it is the point at which the customer starts watching most closely.* Different OEMs give this period different names. GM calls it GP-12, or early production containment. Ford and others call it safe launch. The requirement is broadly the same: a defined window of additional inspection sitting on top of your [normal process controls](/blog/2026/10/automotive-quality-control/), starting at first production shipment and ending only when the customer says so.
 
 <!--more-->
 

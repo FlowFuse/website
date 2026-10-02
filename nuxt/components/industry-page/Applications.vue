@@ -11,6 +11,7 @@ type Item = {
     image: string
     imageAlt: string
     variant: 'indigo' | 'red' | 'mixed'
+    id?: string
 }
 
 defineProps<{ heading: string, description: string, items: Item[] }>()
@@ -34,8 +35,9 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
       <div class="md:max-w-screen-lg mx-auto">
         <div
             v-for="(item, index) in items"
+            :id="item.id"
             :key="item.title"
-            class="max-md:text-center md:flex md:flex-row gap-8 items-center m-auto mb-14 md:mb-20"
+            class="max-md:text-center md:flex md:flex-row gap-8 items-center m-auto mb-14 md:mb-20 scroll-mt-20"
             :class="{ 'md:flex-row-reverse': index % 2 === 1 }"
         >
           <!-- Image (desktop): full-size screenshot offset over a colored panel -->
@@ -58,8 +60,17 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
                 <img :src="item.image" :alt="item.imageAlt" loading="lazy">
               </div>
             </div>
+            <!-- A blank line in the source splits the description into separate paragraphs,
+                 same convention as BlogFaq's answers (faq-answer.mjs's own blank-line rule) -
+                 for a trailing aside that shouldn't run into the main copy. -->
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <p class="text-gray-500 m-0" v-html="inline(item.description)" />
+            <p
+                v-for="(paragraph, i) in item.description.split(/\n\n+/)"
+                :key="i"
+                class="text-gray-500 m-0"
+                :class="{ 'mt-3': i > 0 }"
+                v-html="inline(paragraph)"
+            />
             <a :href="item.linkHref" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center">
               {{ item.linkText }}
               <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />

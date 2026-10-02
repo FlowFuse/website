@@ -210,4 +210,11 @@ export const redirects: Record<string, NitroRouteRules> = {
     // /contact-us/ (the nearest live equivalent) for anyone with an old bookmark or an
     // indexed link.
     '/free-consultation/': { redirect: { to: '/contact-us/', statusCode: 301 } },
+    '/industries-legacy/renewables': { redirect: { to: '/industries/energy-utilities/', statusCode: 301 } },
+
+    // The Aerospace Components and Aviation & Aerospace industry pages were merged into
+    // one (two LPs for the same buyer didn't make sense): /industries/aviation-aerospace/
+    // is the surviving page, with component-manufacturing content folded into its
+    // Applications section.
+    '/industries/aerospace-components/': { redirect: { to: '/industries/aviation-aerospace/', statusCode: 301 } },
 }
