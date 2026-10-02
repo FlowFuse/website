@@ -72,7 +72,11 @@ export default defineContentConfig({
                 redirect: z.object({
                     to: z.string(),
                 }).optional(),
-                meta: z.object({
+                // Frontmatter writes this as "meta:", which @nuxt/content reserves; the
+                // content:file:beforeParse hook in nuxt.config.ts renames it first, as it
+                // does for the blog and webinars. Declared as `meta`, every page's
+                // description was silently dropped.
+                structuredData: z.object({
                     description: z.string().optional(),
                 }).optional(),
                 // No `sitemap` schema field here on purpose - @nuxtjs/sitemap's own
@@ -670,7 +674,7 @@ export default defineContentConfig({
         // with automotive itself, then industrial-machinery) is a data entry here plus a thin
         // pages/industries/<slug>.vue wrapper — same split as the industriesLegacy collection
         // below, just a different, richer set of bands (quote card, metrics, ROI calculator,
-        // zigzag applications, compliance grid) than the seven legacy pages have.
+        // zigzag applications, compliance grid) than the legacy pages have.
         industries: defineCollection({
             type: 'data',
             source: 'industries/*.yml',
@@ -744,6 +748,10 @@ export default defineContentConfig({
                         image: z.string(),
                         imageAlt: z.string(),
                         variant: z.enum(['indigo', 'red', 'mixed']),
+                        // Anchor id for the item's wrapping element, so an old URL (a
+                        // retired page folded into this one) or another page's inline
+                        // link can deep-link straight to this card.
+                        id: z.string().optional(),
                     })),
                 }),
                 compliance: z.object({
@@ -772,14 +780,16 @@ export default defineContentConfig({
                 }),
             })
         }),
-        // The seven industry pages were pure 11ty frontmatter read by layouts/industry.njk,
+        // These industry pages were pure 11ty frontmatter read by layouts/industry.njk,
         // the same shape as the operational use-cases. /industries/automotive/ is not here:
         // it had a bespoke markup body and stays a hand-written Vue page, which is why the
         // listing merges this collection with that one entry.
         //
-        // Named industriesLegacy, not industries: these seven pages are transitional and
-        // due to be deleted once the automotive-page template covers them (or their
+        // Named industriesLegacy, not industries: these pages are transitional and due to
+        // be deleted once the automotive-page template covers them (or their
         // replacements). `industries` is reserved for that template's own collection.
+        // Started at seven; aerospace-components and aviation-aerospace were the first
+        // pair merged onto the template, at /industries/aviation-aerospace/.
         industriesLegacy: defineCollection({
             type: 'data',
             source: 'industries-legacy/*.yml',
@@ -889,7 +899,8 @@ export default defineContentConfig({
                 formTitle: z.string().optional(),
                 formSubtitle: z.string().optional(),
                 // Content lives under /whitepapers/* but the page route is singular
-                // (/whitepaper/[slug].vue) - content-urls.get.ts rewrites the sitemap loc.
+                // (/whitepaper/[slug].vue) - lib/content-page-path.mjs maps one to the
+                // other, for the sitemap loc and the /raw canonical.
             }),
         }),
         plans: defineCollection({

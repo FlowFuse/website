@@ -2,7 +2,7 @@
 # pages/use-cases/[slug].vue from the `sections` list below.
 slug: data-integration
 title: "FlowFuse for Data Integration"
-industries: ["building-materials", "energy-utilities"]
+industries: ["building-materials", "energy-utilities", "aviation-aerospace"]
 problem: "Collect, transform, and route data from any industrial source to any destination, without writing integration code from scratch."
 seoMeta:
   image: /images/solutions/og-solutions-data-integration.jpg

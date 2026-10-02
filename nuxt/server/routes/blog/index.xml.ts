@@ -4,9 +4,10 @@ import site from '../../../data/site.json'
 import { planBadges } from '../../../lib/feature-catalog.mjs'
 // @ts-ignore untyped module
 import { resolveReleaseFeatures, injectReleaseFeatures } from '../../../lib/release-features.mjs'
+import { customCtaImageDestination } from '../../../lib/cta-image'
 
-// Mirrors nuxt/components/content/CtaImage.vue's DESTINATIONS map - kept in
-// sync manually since the feed can't import a .vue component's script setup.
+// Mirrors the hrefs behind nuxt/lib/cta-image.ts's CTA_IMAGE_DESTINATIONS - kept in
+// sync manually. cta="custom" resolves through customCtaImageDestination instead.
 const CTA_IMAGE_DESTINATIONS: Record<string, string> = {
     'sign-up': `${site.appURL}/account/create`,
     demo: '/book-demo/',
@@ -125,7 +126,9 @@ function minimarkToHtml(node: MinimarkNode): string {
     if (tag === 'cta-image' && props) {
         const src = typeof props.src === 'string' ? props.src : ''
         const alt = typeof props.alt === 'string' ? props.alt : ''
-        const href = CTA_IMAGE_DESTINATIONS[props.cta as string]
+        const href = props.cta === 'custom'
+            ? customCtaImageDestination(props['destination-key'] as string | undefined)?.href
+            : CTA_IMAGE_DESTINATIONS[props.cta as string]
         const img = `<img src="${escapeXml(absoluteUrl(src))}" alt="${escapeXml(alt)}"/>`
         return href ? `<a href="${escapeXml(absoluteUrl(href))}">${img}</a>` : img
     }

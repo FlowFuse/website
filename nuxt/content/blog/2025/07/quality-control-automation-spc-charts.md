@@ -39,7 +39,7 @@ This guide shows you exactly how to build a real-time SPC system using FlowFuse.
 
 ## Why Traditional Quality Control Falls Short                   
 
-Most manufacturers still rely on end-of-line inspection. Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:
+Most manufacturers still rely on [end-of-line inspection](/blog/2026/10/automotive-quality-control/). Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:
 
 **Problem 1: You're always too late**
 When inspection finds a defect, you've already invested in material, machine time, labor, and energy. That investment is now scrap. Worse, how many parts did you make between when the problem started and when you caught it?
