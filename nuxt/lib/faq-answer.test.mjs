@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 
-import { parseFaqAnswer } from './faq-answer.mjs'
+import { faqAnswerText, parseFaqAnswer } from './faq-answer.mjs'
 
 const text = value => ({ type: 'text', value })
 const p = (...children) => ({ type: 'p', children })
@@ -43,4 +43,13 @@ test('a list and a paragraph in one answer parse as separate blocks', () => {
         { type: 'ul', items: [[text('monitoring')], [text('alerting')]] },
         p(text('And more.')),
     ])
+})
+
+test('faqAnswerText drops markup and keeps link labels, one line per paragraph or item', () => {
+    assert.equal(
+        faqAnswerText('Please [Contact Us](/contact-us/) for **volume** pricing.\n\nUses include:\n\n- *monitoring*\n- alerting'),
+        'Please Contact Us for volume pricing.\n\nUses include:\n\nmonitoring\nalerting',
+    )
+    assert.equal(faqAnswerText('use <ip> here'), 'use <ip> here')
+    assert.equal(faqAnswerText(''), '')
 })

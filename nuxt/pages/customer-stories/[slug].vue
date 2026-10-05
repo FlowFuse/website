@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
+
 const route = useRoute()
 const slug = route.params.slug as string
 
@@ -75,7 +77,7 @@ useSeoMeta({
 useSchemaOrg([
     computed(() => page.value?.structuredData?.faq?.length ? {
         '@type': 'FAQPage',
-        mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+        mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: faqAnswerText(item.answer) } })),
     } : undefined),
 ])
 </script>

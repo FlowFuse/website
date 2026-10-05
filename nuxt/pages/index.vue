@@ -13,6 +13,7 @@
 //  - site.messaging.heroTagLine and .subtitle came from src/_data/site.json, which Nuxt
 //    still imports for its own config. They are literals here, so the page reads as the
 //    page.
+import { faqAnswerText } from '../lib/faq-answer.mjs'
 
 const METRICS = [
     { number: '50%', text: 'Reduction in scrap rate with real-time operational monitoring' },
@@ -109,7 +110,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

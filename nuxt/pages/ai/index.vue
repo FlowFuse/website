@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getAllBlogPosts } from '~/utils/sharedContent'
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 // Ported from src/ai.njk (11ty), which this replaces. Same page, same copy, same
 // classes from nuxt/assets/css/style.css, which nuxt.config.ts already links here.
 //
@@ -50,7 +51,7 @@ const FAQ = [
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 
 // The Cloud address. Self-hosted platforms answer on their own domain, so the block

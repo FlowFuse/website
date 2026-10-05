@@ -15,6 +15,7 @@
 //  - The registration form's "is this still upcoming" test was the dateInFuture filter
 //    (spacetime, today counts as future). isUpcoming below keeps that boundary exactly.
 import { shortDate } from '../../lib/short-date.mjs'
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const route = useRoute()
 const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug
@@ -80,7 +81,7 @@ const faq = computed(() => page.value?.structuredData?.faq || [])
 if (faq.value.length) {
     useSchemaOrg([
         defineWebPage({ '@type': 'FAQPage' }),
-        ...faq.value.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+        ...faq.value.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
     ])
 }
 </script>

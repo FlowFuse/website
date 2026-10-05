@@ -30,3 +30,12 @@ export function parseFaqAnswer (answer) {
         .filter(Boolean)
         .map(parseBlock)
 }
+
+// The same answer as plain text, for FAQ structured data (JSON-LD): a link keeps only its label,
+// and each paragraph and list item goes on its own line.
+export function faqAnswerText (answer) {
+    const text = nodes => nodes.map(node => node.type === 'text' ? node.value : text(node.children)).join('')
+    return parseFaqAnswer(answer)
+        .map(block => block.type === 'p' ? text(block.children) : block.items.map(text).join('\n'))
+        .join('\n\n')
+}

@@ -17,6 +17,8 @@
 //  - The reading-list and resources thumbnails point at /blog/**, /whitepaper/** and
 //    /resources/** - assets owned by those sections, in nuxt/public/ at the same paths.
 //    The page's own art is in nuxt/public/images/.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
+
 const capture = useCapture()
 
 const FEATURES = [
@@ -65,7 +67,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

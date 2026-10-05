@@ -7,6 +7,7 @@
 //
 // Copy strings support the same `[label](url)` / **bold** subset as Faq's answers,
 // rendered through <InlineMarkdown>.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 // `before` is optional: only the two results that are a change (1 → 130+, 15 → 1) have
 // one. `company` is pulled out of `text` because the whole card is the link, so the name
@@ -151,7 +152,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion(item)),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

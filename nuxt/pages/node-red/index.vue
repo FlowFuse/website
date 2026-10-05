@@ -17,6 +17,7 @@
 //  - faq.njk becomes <Faq> plus useSchemaOrg. Two answers carried <ol>/<ul> lists and
 //    several carried inline links, all under `| safe`; they are markdown now, which
 //    Faq escapes around. Its renderer gained list support for this.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const route = useRoute()
 const capture = useCapture()
@@ -100,7 +101,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

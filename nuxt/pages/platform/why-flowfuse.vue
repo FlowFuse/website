@@ -14,6 +14,8 @@
 //    "FlowFuse for your own MES • FlowFuse" and the MES description on
 //    /platform/why-flowfuse/. Carrying that forward knowingly would be worse than the
 //    change, so the title and description now describe this page.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
+
 const VIDEO_ID = 'n9HhZCh0Ndg'
 const VIDEO_STYLE = `width: 472px; height: 266px; overflow: hidden; background-image: url('https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg'); background-size: cover; background-position: center;`
 
@@ -54,7 +56,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

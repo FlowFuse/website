@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // Ported from src/platform/device-agent.njk (11ty).
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const FIXES = [
     {
@@ -171,7 +172,7 @@ const FAQ_DISPLAY = FAQ.map(item => ({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion(item)),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

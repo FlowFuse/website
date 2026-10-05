@@ -12,6 +12,7 @@
 //  - This page has both `metaTitle` and `meta.title`; base.njk's precedence put
 //    metaTitle first, so that is the title, rendered as "… | FlowFuse" rather than
 //    "… • FlowFuse" - which is what the metaTitle branch did.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const PROTOCOLS = [
     {
@@ -249,7 +250,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

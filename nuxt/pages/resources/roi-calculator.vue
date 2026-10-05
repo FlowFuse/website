@@ -2,6 +2,7 @@
 // The calculator itself lives in components/RoiCalculator.vue, shared with the
 // truncated embed on /pricing/. This page wraps it with the framing, the evidence
 // and the methodology.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 // window.capture is injected by the site's analytics script — guarded because it's absent outside production.
 function capture (eventName?: string, props?: Record<string, unknown>) {
@@ -78,7 +79,7 @@ useSeoMeta({
 
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
-  ...faqs.map(item => defineQuestion(item)),
+  ...faqs.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 

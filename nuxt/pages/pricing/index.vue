@@ -2,6 +2,7 @@
 // Shared with the badge lookups, so "has a row here" and "may badge elsewhere" cannot drift.
 // @ts-ignore untyped module
 import { onPricing } from '../../lib/feature-catalog.mjs'
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const { data: plans } = await useAsyncData('plans', () => queryCollection('plans').order('order', 'ASC').all())
 const { data: featureCatalog } = await useAsyncData('featureCatalog', () => queryCollection('featureCatalog').first())
@@ -37,10 +38,7 @@ useSeoMeta({
 
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
-  ...(faq.value?.items ?? []).map(item => defineQuestion({
-    question: item.question,
-    answer: item.answer,
-  })),
+  ...(faq.value?.items ?? []).map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 
