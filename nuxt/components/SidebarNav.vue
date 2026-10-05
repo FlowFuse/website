@@ -29,9 +29,10 @@ watch(() => route.path, () => { open.value = false })
   <!-- -ml-6 cancels the pl-6 the page wrapper puts on this column so the bar and its
        borders run edge to edge; px-6 puts the text back where it was. The bar sits flush
        under the header both at rest and while stuck, so border-t reads as the header's
-       own dividing line and border-b separates the bar from the article. -->
+       own dividing line and border-b separates the bar from the article. No
+       `capitalize`: labels are authored titles and render as written. -->
   <div
-    class="lg:pt-2 text-sm capitalize max-lg:order-1 max-lg:sticky max-lg:z-30
+    class="lg:pt-2 text-sm max-lg:order-1 max-lg:sticky max-lg:z-30
            max-lg:top-(--ff-header-height) max-lg:-ml-6 max-lg:px-6 max-lg:bg-white
            max-lg:border-t max-lg:border-b"
   >
