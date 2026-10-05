@@ -27,6 +27,16 @@ Discovery is also where you begin to place the customer in a **zone** — Node-R
 maturity against operational maturity — which shapes how the rest of the engagement
 runs (see the [Customer Adoption Maturity Model](https://docs.google.com/document/d/1AICvYVRnVcAnY9rpcjjJMyOVqJRQQ3OFyMLD5aHP4Yo/edit)). There are dedicated Z2 and Z4 discovery playbooks for this.
 
+## Qualifying questions
+
+These questions decide whether a prospect moves from MQL to SQL. A deal is only
+opened once they have been answered.
+
+- Does the prospect and company fit the target industry / company size / role?
+- Are they working on an initiative related to connecting systems, industrial data, or operational workflows?
+- Can they describe a specific problem, use case or goal they’re trying to address?
+- Are they open to a meeting to explore their use case in more detail?
+
 ## Next step
 
 The next step depends on the outcome of the call, but usually results in a more
@@ -35,5 +45,5 @@ relevant content to follow up on at an appropriate time in the future.
 
 Before moving on, complete the
 [Post-meeting HubSpot updates](/handbook/sales/meetings/#post-meeting-hubspot-updates) —
-logging the call, updating lead status, and answering the MQL-to-SQL
-qualifying questions if this call qualifies the prospect.
+logging the call, updating lead status, and answering the
+[qualifying questions](#qualifying-questions) if this call qualifies the prospect.

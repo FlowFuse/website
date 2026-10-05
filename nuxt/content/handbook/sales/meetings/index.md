@@ -50,7 +50,7 @@ After each meeting:
 - Update `Lead status` and, where applicable, lifecycle stage per the
   definitions in [HubSpot: Lead Status](/handbook/sales/hubspot/#lead-status).
 - If the meeting qualifies the prospect from MQL to SQL, answer the
-  [MQL-to-SQL qualifying questions](/handbook/sales/hubspot/#from-mql-to-sql-qualifying-questions)
+  [MQL-to-SQL qualifying questions](/handbook/sales/meetings/discovery/#qualifying-questions)
   and open the deal, per [Deal Management](/handbook/sales/hubspot/#deal-management).
 - For an existing deal, update the deal stage, amount fields, and close date
   to reflect what you learned, per
