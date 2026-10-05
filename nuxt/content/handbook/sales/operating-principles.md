@@ -2,7 +2,7 @@
 title: "Commercial Team Operating Principles"
 navigation:
   order: 6
-description: "Professional standards and expectations for the FlowFuse Commercial Organization."
+description: "Professional standards and expectations for the FlowFuse Sales organization."
 ---
 
 # Commercial Team Operating Principles
@@ -12,7 +12,7 @@ The Commercial Team Operating Principles define how FlowFuse team members conduc
 ## Purpose
 
 These principles outline the professional behaviors, standards, and habits required to represent FlowFuse effectively.
-They apply to all members of the Commercial Organization and complement related pages in this handbook, including Discovery, Follow-Up, SPICED, and CRM Requirements.
+They apply to all members of the Sales organization and complement related pages in this handbook, including Discovery, Follow-Up, SPICED, and CRM Requirements.
 For the team's operating rhythm and escalation routing, see [Working Norms](./working-norms.md).
 
 ## Professional Presence
@@ -74,7 +74,7 @@ Timely follow-up maintains momentum and demonstrates reliability:
 
 ## Internal Collaboration
 
-The Commercial Organization operates as a single team. Expectations:
+The Sales organization operates as a single team. Expectations:
 
 * Ask for help early to avoid delays later in the cycle
 * Use shared Slack channels for visibility

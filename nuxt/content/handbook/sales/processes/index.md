@@ -4,7 +4,7 @@ title: "Processes"
 
 # Processes
 
-This page is a navigation index for the core processes and methodologies used across the Commercial Organization.
+This page is a navigation index for the core processes and methodologies used across the Sales organization.
 Each process is owned by a specific function, with other functions contributing as needed.
 
 ---

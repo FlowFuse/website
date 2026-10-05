@@ -14,7 +14,7 @@ within Sales, accountable for opportunity progression and commercial outcomes.
 ## Purpose
 
 The Account Executives at FlowFuse are responsible for leading customer-facing commercial engagements from initial qualification through contract execution.
-Account Executives own opportunity progression, commercial outcomes, and deal accountability, while working in close collaboration with other functions across the Commercial Organization.
+Account Executives own opportunity progression, commercial outcomes, and deal accountability, while working in close collaboration with other functions across the Sales organization.
 
 Account Executives at FlowFuse are not a transactional function. They operate as the primary orchestrators of complex, multi-stakeholder buying processes and are accountable for guiding customers toward informed, high-confidence decisions.
 
@@ -55,7 +55,7 @@ Each process defines meeting goals, exit criteria, and collaboration points with
 
 ## Collaboration Model
 
-Account Executives operate in close partnership with other functions in the Commercial Organization:
+Account Executives operate in close partnership with other functions in the Sales organization:
 
 - **Solution Engineering**
   Supports technical discovery, demos, and proof-of-concept delivery.
