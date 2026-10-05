@@ -38,14 +38,12 @@ function loadEmbed() {
         const script = document.createElement('script')
         script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
         script.onload = () => { embedded.value = true }
+        script.onerror = () => script.remove()
         document.head.appendChild(script)
         return
     }
-    // A later mount (e.g. browser back/forward) gets a fresh, empty container the
-    // already-loaded script never scans for on its own. Re-attach the iframe it created for
-    // the earlier mount: calling create() again would register another pair of window
-    // listeners per visit, pointing at iframes that are gone. If hbspt isn't ready yet
-    // (script tag present but still loading), wait for its load event and retry once.
+    // HubSpot's script only scans for containers once, so a later mount re-attaches the
+    // earlier iframe: create() again would leak a pair of window listeners per visit.
     if (retainedIframe && container.value && !container.value.querySelector('iframe')) {
         container.value.appendChild(retainedIframe)
         embedded.value = true
@@ -81,9 +79,7 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <!-- The negative margin only makes sense once the real iframe is loaded, to tuck away
-         HubSpot's own excess bottom whitespace - applied while empty, it pulls the fallback
-         panel up into this container's parent's overflow-hidden and clips its top edge. -->
+    <!-- Negative margin only once the iframe is up: on the empty container it clips the fallback. -->
     <div ref="container" class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
