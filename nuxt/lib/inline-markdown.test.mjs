@@ -66,6 +66,12 @@ test('an unclosed marker stays text rather than swallowing the rest', () => {
     assert.deepEqual(parseInline('2 * 3 is six'), [text('2 * 3 is six')])
 })
 
+test('an asterisk with a space on its inner side is not emphasis', () => {
+    assert.deepEqual(parseInline('2 * 3 * 4'), [text('2 * 3 * 4')])
+    assert.deepEqual(parseInline('a ** b ** c'), [text('a ** b ** c')])
+    assert.deepEqual(parseInline('*a *b'), [text('*a *b')])
+})
+
 test('empty input parses to no nodes', () => {
     assert.deepEqual(parseInline(''), [])
 })
