@@ -1,6 +1,6 @@
 ---
-title: "CQI-9 Heat Treat System Assessment: What Auditors Look For"
-metaTitle: "A Practical Guide To Passing Your CQI-9 Heat Treat Audit"
+title: "CQI-9 Heat Treat Audit: A Drifting Thermocouple Can Fail the Whole Furnace"
+metaTitle: "CQI-9 Heat Treat Audit: A Practical Guide"
 subtitle: "The process tables, job audits, and calibration records a CQI-9 heat treat assessment reviews, and how CQI-9 fits into the AIAG special process family."
 description: "FlowFuse breaks down what a CQI-9 heat treat system assessment reviews, from process tables and job audits to the calibration records auditors verify."
 date: 2026-10-05
@@ -46,7 +46,7 @@ This article breaks down what a CQI-9 heat treat system assessment reviews, whic
 
 A CQI-9 heat treat audit does not stop at final part inspection. Auditors walk through process tables for the specific method in use, whether that is carburizing, nitriding, or induction hardening, and check that documented parameters match what the equipment is actually running. Job audits follow individual parts through the process to confirm that time, temperature, and atmosphere controls hold up in practice, not just on paper. The assessment itself was developed by the [Automotive Industry Action Group](https://www.aiag.org/) with input from OEMs, Tier 1 suppliers, and heat treat and calibration companies, specifically to give the industry one common way to audit these processes rather than a different checklist at every plant.
 
-Instrumentation gets equal scrutiny. Auditors expect to see system accuracy tests and temperature uniformity surveys performed on schedule, with records that trace back to specific furnaces and dates. For automotive manufacturers running the same heat treat process across multiple sites, maintaining consistent production and quality records becomes part of the broader challenge of meeting audit and [traceability](/blog/2026/08/automotive-traceability/) requirements. FlowFuse connects to furnace controllers and PLCs over protocols such as OPC UA and Modbus. It logs each setpoint and actual reading against the furnace ID and a timestamp, so a job audit can compare what ran with what the process table says. It can do this across [automotive](/industries/automotive/) plants that run different equipment.
+Instrumentation gets equal scrutiny. Auditors expect to see system accuracy tests and temperature uniformity surveys performed on schedule, with records that trace back to specific furnaces and dates. For automotive manufacturers running the same heat treat process across multiple sites, maintaining consistent production and quality records becomes part of the broader challenge of meeting audit and [traceability](/blog/2026/08/automotive-traceability/) requirements. FlowFuse connects to furnace controllers and PLCs over protocols such as [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) and [Modbus](/docs/node-red/protocol/modbus/). It logs each setpoint and actual reading against the furnace ID and a timestamp, so a job audit can compare what ran with what the process table says. It can do this across [automotive](/industries/automotive/) plants that run different equipment.
 
 This scope is narrower than it might first appear. A CQI-11 plating assessment centers on coating thickness and adhesion, while CQI-9 stays focused on thermal process control from furnace load to final output.
 
