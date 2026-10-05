@@ -1,22 +1,12 @@
 <script setup lang="ts">
-// The HubSpot meetings scheduler, with a "choose a time" panel that stands in for it when
-// analytics consent hasn't been given yet. Always the shared sales calendar
-// (site.meetings.salesRoundRobin).
-//
-// Consent-gated and MUST STAY THAT WAY: listens for vanilla-cookieconsent's own
-// cc:onConsent/cc:onChange DOM events, plus a direct check on mount for consent already
-// stored from an earlier visit, since that event can otherwise fire before this mounts.
-// Withdrawing consent removes the embed again.
-//
-// HubSpot's script only scans for containers once, when it loads, so each mount asks it for
-// an iframe in this component's own container. The fallback stays up until that iframe is
-// actually in the container, which HubSpot inserts some time after create() returns.
+// HubSpot meetings scheduler, loaded only with analytics consent. MUST STAY THAT WAY.
 import site from '../data/site.json'
 
 const SCRIPT_SRC = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
 
 const embedded = ref(false)
 const container = ref<HTMLElement>()
+const containerKey = ref(0)
 const containerId = `hs-meetings-${useId()}`
 
 const meetingsSrc = (() => {
@@ -32,6 +22,7 @@ type EmbedWindow = Window & {
 
 let observer: MutationObserver | undefined
 let pendingScript: HTMLScriptElement | undefined
+let requested = false
 
 function showCookiePreferences() {
     ;(window as EmbedWindow).CookieConsent?.showPreferences()
@@ -45,7 +36,9 @@ function stopWaitingForScript() {
 function createEmbed() {
     stopWaitingForScript()
     const create = (window as EmbedWindow).hbspt?.meetings?.create
-    if (create && container.value) create(`#${CSS.escape(containerId)}`)
+    if (!create || !container.value) return
+    requested = true
+    create(`#${CSS.escape(containerId)}`)
 }
 
 function loadEmbed() {
@@ -58,7 +51,6 @@ function loadEmbed() {
     if (!script) {
         const injected = document.createElement('script')
         injected.src = SCRIPT_SRC
-        // Dropped on failure so the next mount tries again.
         injected.onerror = () => injected.remove()
         document.head.appendChild(injected)
         script = injected
@@ -69,9 +61,13 @@ function loadEmbed() {
     script.addEventListener('load', createEmbed, { once: true })
 }
 
+// A new container makes an iframe HubSpot inserts late land in the detached old one.
 function removeEmbed() {
     stopWaitingForScript()
-    container.value?.replaceChildren()
+    if (!requested) return
+    requested = false
+    embedded.value = false
+    containerKey.value++
 }
 
 function hasAnalyticsConsent() {
@@ -79,14 +75,17 @@ function hasAnalyticsConsent() {
 }
 
 function syncWithConsent() {
-    if (hasAnalyticsConsent()) loadEmbed()
-    else removeEmbed()
+    if (!hasAnalyticsConsent()) removeEmbed()
+    else nextTick(() => { if (hasAnalyticsConsent()) loadEmbed() })
 }
+
+watch(container, (el) => {
+    observer?.disconnect()
+    if (el) observer?.observe(el, { childList: true })
+}, { flush: 'post' })
 
 onMounted(() => {
     observer = new MutationObserver(() => {
-        // HubSpot can insert the iframe after consent was withdrawn.
-        if (!hasAnalyticsConsent()) container.value?.replaceChildren()
         embedded.value = !!container.value?.querySelector('iframe')
     })
     if (container.value) observer.observe(container.value, { childList: true })
@@ -105,8 +104,7 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <!-- Negative margin only once the iframe is up: on the empty container it clips the fallback. -->
-    <div :id="containerId" ref="container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
+    <div :id="containerId" :key="containerKey" ref="container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
       <p class="text-indigo-200">30-minute session with our team.</p>
