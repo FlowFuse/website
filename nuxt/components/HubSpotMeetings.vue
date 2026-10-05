@@ -1,5 +1,17 @@
 <script lang="ts">
 let retainedIframe: HTMLIFrameElement | null = null
+
+// HubSpot bakes the page URL and query string into the iframe's src when it creates it, so
+// a retained iframe gets them rewritten for the page it is re-attached on.
+function retargetIframe(iframe: HTMLIFrameElement) {
+    const marker = '&parentPageUrl='
+    const at = iframe.src.indexOf(marker)
+    if (at === -1) return false
+    const { origin, pathname, search } = window.location
+    const src = `${iframe.src.slice(0, at)}${marker}${origin}${pathname}${search ? `&${search.slice(1)}` : ''}`
+    if (iframe.src !== src) iframe.src = src
+    return true
+}
 </script>
 
 <script setup lang="ts">
@@ -43,7 +55,8 @@ function loadEmbed() {
         return
     }
     // HubSpot's script only scans for containers once, so a later mount re-attaches the
-    // earlier iframe: create() again would leak a pair of window listeners per visit.
+    // earlier iframe: create() again would leak window listeners per visit.
+    if (retainedIframe && !retargetIframe(retainedIframe)) retainedIframe = null
     if (retainedIframe && container.value && !container.value.querySelector('iframe')) {
         container.value.appendChild(retainedIframe)
         embedded.value = true
