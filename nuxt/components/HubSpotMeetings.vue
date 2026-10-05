@@ -1,19 +1,3 @@
-<script lang="ts">
-let retainedIframe: HTMLIFrameElement | null = null
-
-// HubSpot bakes the page URL and query string into the iframe's src when it creates it, so
-// a retained iframe gets them rewritten for the page it is re-attached on.
-function retargetIframe(iframe: HTMLIFrameElement) {
-    const marker = '&parentPageUrl='
-    const at = iframe.src.indexOf(marker)
-    if (at === -1) return false
-    const { origin, pathname, search } = window.location
-    const src = `${iframe.src.slice(0, at)}${marker}${origin}${pathname}${search ? `&${search.slice(1)}` : ''}`
-    if (iframe.src !== src) iframe.src = src
-    return true
-}
-</script>
-
 <script setup lang="ts">
 // The HubSpot meetings scheduler, with a "choose a time" panel that stands in for it when
 // analytics consent hasn't been given yet. Always the shared sales calendar
@@ -22,10 +6,18 @@ function retargetIframe(iframe: HTMLIFrameElement) {
 // Consent-gated and MUST STAY THAT WAY: listens for vanilla-cookieconsent's own
 // cc:onConsent/cc:onChange DOM events, plus a direct check on mount for consent already
 // stored from an earlier visit, since that event can otherwise fire before this mounts.
+// Withdrawing consent removes the embed again.
+//
+// HubSpot's script only scans for containers once, when it loads, so each mount asks it for
+// an iframe in this component's own container. The fallback stays up until that iframe is
+// actually in the container, which HubSpot inserts some time after create() returns.
 import site from '../data/site.json'
+
+const SCRIPT_SRC = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
 
 const embedded = ref(false)
 const container = ref<HTMLElement>()
+const containerId = `hs-meetings-${useId()}`
 
 const meetingsSrc = (() => {
     const url = new URL(site.meetings.salesRoundRobin)
@@ -38,62 +30,77 @@ type EmbedWindow = Window & {
     hbspt?: { meetings?: { create: (selector: string) => unknown } }
 }
 
+let observer: MutationObserver | undefined
+let pendingScript: HTMLScriptElement | undefined
+
 function showCookiePreferences() {
     ;(window as EmbedWindow).CookieConsent?.showPreferences()
 }
 
-function loadEmbed() {
-    if (embedded.value) return
-    const win = window as EmbedWindow
-    const existing = document.querySelector('script[src*="MeetingsEmbedCode.js"]')
-    if (!existing) {
-        const script = document.createElement('script')
-        script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
-        script.onload = () => { embedded.value = true }
-        script.onerror = () => script.remove()
-        document.head.appendChild(script)
-        return
-    }
-    // HubSpot's script only scans for containers once, so a later mount re-attaches the
-    // earlier iframe: create() again would leak window listeners per visit.
-    if (retainedIframe && !retargetIframe(retainedIframe)) retainedIframe = null
-    if (retainedIframe && container.value && !container.value.querySelector('iframe')) {
-        container.value.appendChild(retainedIframe)
-        embedded.value = true
-        return
-    }
-    if (win.hbspt?.meetings?.create) {
-        win.hbspt.meetings.create('.meetings-iframe-container')
-        embedded.value = true
-        return
-    }
-    existing.addEventListener('load', loadEmbed, { once: true })
+function stopWaitingForScript() {
+    pendingScript?.removeEventListener('load', createEmbed)
+    pendingScript = undefined
 }
 
-function loadEmbedIfConsented() {
+function createEmbed() {
+    stopWaitingForScript()
+    const create = (window as EmbedWindow).hbspt?.meetings?.create
+    if (create && container.value) create(`#${CSS.escape(containerId)}`)
+}
+
+function loadEmbed() {
+    if (!container.value || container.value.querySelector('iframe')) return
+    if ((window as EmbedWindow).hbspt?.meetings?.create) {
+        createEmbed()
+        return
+    }
+    let script = document.querySelector<HTMLScriptElement>(`script[src="${SCRIPT_SRC}"]`)
+    if (!script) {
+        const injected = document.createElement('script')
+        injected.src = SCRIPT_SRC
+        // Dropped on failure so the next mount tries again.
+        injected.onerror = () => injected.remove()
+        document.head.appendChild(injected)
+        script = injected
+    }
+    if (pendingScript === script) return
+    stopWaitingForScript()
+    pendingScript = script
+    script.addEventListener('load', createEmbed, { once: true })
+}
+
+function removeEmbed() {
+    stopWaitingForScript()
+    container.value?.replaceChildren()
+}
+
+function syncWithConsent() {
     if ((window as EmbedWindow).CookieConsent?.acceptedCategory?.('analytics')) loadEmbed()
+    else removeEmbed()
 }
 
 onMounted(() => {
-    loadEmbedIfConsented()
-    window.addEventListener('cc:onConsent', loadEmbedIfConsented)
-    window.addEventListener('cc:onChange', loadEmbedIfConsented)
-})
-
-onBeforeUnmount(() => {
-    retainedIframe = container.value?.querySelector('iframe') ?? retainedIframe
+    observer = new MutationObserver(() => {
+        embedded.value = !!container.value?.querySelector('iframe')
+    })
+    if (container.value) observer.observe(container.value, { childList: true })
+    syncWithConsent()
+    window.addEventListener('cc:onConsent', syncWithConsent)
+    window.addEventListener('cc:onChange', syncWithConsent)
 })
 
 onUnmounted(() => {
-    window.removeEventListener('cc:onConsent', loadEmbedIfConsented)
-    window.removeEventListener('cc:onChange', loadEmbedIfConsented)
+    observer?.disconnect()
+    stopWaitingForScript()
+    window.removeEventListener('cc:onConsent', syncWithConsent)
+    window.removeEventListener('cc:onChange', syncWithConsent)
 })
 </script>
 
 <template>
   <div>
     <!-- Negative margin only once the iframe is up: on the empty container it clips the fallback. -->
-    <div ref="container" class="meetings-iframe-container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
+    <div :id="containerId" ref="container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
       <p class="text-indigo-200">30-minute session with our team.</p>
