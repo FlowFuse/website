@@ -15,8 +15,8 @@
 //  - The customer-stories grid read collections.stories sorted by date; it queries the
 //    `stories` collection for the same three.
 //  - faq.njk becomes <Faq> plus useSchemaOrg. Two answers carried <ol>/<ul> lists and
-//    several carried inline links, all under `| safe`; they are markdown now, which
-//    Faq escapes around. Its renderer gained list support for this.
+//    several carried inline links, all under `| safe`; they are markdown now, since Faq
+//    renders answer text as text, not HTML. Its parser gained list support for this.
 import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const route = useRoute()

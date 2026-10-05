@@ -10,8 +10,8 @@
 //  - faq.njk becomes <Faq> plus useSchemaOrg. The 11ty partial interpolated answers
 //    into a JSON string by hand; defineQuestion escapes them properly. faq.njk rendered
 //    answers with `| safe`, so a few carried raw <a> tags; those are markdown links now,
-//    because Faq escapes HTML on purpose (existing answers contain literal "<ip>"
-//    placeholders that must not become markup).
+//    because Faq renders answer text as text, not HTML (existing answers contain literal
+//    "<ip>" placeholders that must not become markup).
 //  - The registration form's "is this still upcoming" test was the dateInFuture filter
 //    (spacetime, today counts as future). isUpcoming below keeps that boundary exactly.
 import { shortDate } from '../../lib/short-date.mjs'
