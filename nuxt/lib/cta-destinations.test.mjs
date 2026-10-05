@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { createJiti } from 'jiti'
 
 const jiti = createJiti(import.meta.url)
-const { ctaDestinationKey, ctaQuery, withCtaQuery } = await jiti.import('./cta-destinations.ts')
+const { ctaDestinationKey, ctaLink, ctaQuery, withCtaQuery } = await jiti.import('./cta-destinations.ts')
 const nuxtDir = fileURLToPath(new URL('..', import.meta.url))
 
 test('matches every way of writing a destination URL', () => {
@@ -55,6 +55,12 @@ test('keeps every value of a repeated query parameter', () => {
 test('a parameter named like a built-in object property round-trips unchanged', () => {
     const href = '/pricing/?toString=a&constructor=b&__proto__=c'
     assert.equal(withCtaQuery('/pricing/', ctaQuery(href)), href)
+})
+
+test('ctaLink gives the destination and query of a destination link, and nothing for any other', () => {
+    assert.deepEqual(ctaLink('/contact-us/?subject=Certified%20Nodes'), { destination: 'contactUs', query: { subject: 'Certified Nodes' } })
+    assert.deepEqual(ctaLink('/pricing'), { destination: 'pricing', query: {} })
+    for (const href of ['/docs/', '/pricing/#comparison', 'https://community.flowfuse.com/', undefined]) assert.equal(ctaLink(href), undefined, String(href))
 })
 
 test('custom CTA registry has no duplicate URLs and none of the five reserved destinations', async () => {

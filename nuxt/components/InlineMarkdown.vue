@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { parseInline } from '../lib/inline-markdown.mjs'
-import { ctaDestinationKey, ctaQuery } from '../lib/cta-destinations'
+import { ctaLink } from '../lib/cta-destinations'
 
 type InlineNode =
     | { type: 'text', value: string }
@@ -14,6 +14,7 @@ const props = defineProps<{
 }>()
 
 const list = computed<InlineNode[]>(() => props.nodes ?? parseInline(props.text ?? ''))
+const ctas = computed(() => list.value.map(node => node.type === 'link' ? ctaLink(node.href) : undefined))
 </script>
 
 <template>
@@ -21,7 +22,7 @@ const list = computed<InlineNode[]>(() => props.nodes ?? parseInline(props.text 
     <template v-if="node.type === 'text'">{{ node.value }}</template>
     <strong v-else-if="node.type === 'strong'"><InlineMarkdown :nodes="node.children" :position="position" /></strong>
     <em v-else-if="node.type === 'em'"><InlineMarkdown :nodes="node.children" :position="position" /></em>
-    <CtaLink v-else-if="ctaDestinationKey(node.href)" :destination="ctaDestinationKey(node.href)!" :query="ctaQuery(node.href)" :position="position"><InlineMarkdown :nodes="node.children" :position="position" /></CtaLink>
+    <CtaLink v-else-if="ctas[i]" :destination="ctas[i]!.destination" :query="ctas[i]!.query" :position="position"><InlineMarkdown :nodes="node.children" :position="position" /></CtaLink>
     <a v-else :href="node.href"><InlineMarkdown :nodes="node.children" :position="position" /></a>
   </template>
 </template>
