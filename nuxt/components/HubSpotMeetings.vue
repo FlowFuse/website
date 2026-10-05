@@ -1,58 +1,110 @@
 <script setup lang="ts">
-// src/_includes/hubspot/hs-book-meeting.njk plus the non-form branch of
-// hubspot/consent-fallback.njk: the HubSpot meetings scheduler, with the "choose a time"
-// panel that stands in for it.
-//
-// The embed is gated on analytics consent and MUST STAY THAT WAY. The .njk defined
-// `window._ffLoadMeetings`, and nuxt/assets/js/cookieconsent-config.js calls it only once the
-// visitor accepts; until then the embed is never injected. This registers the same global
-// rather than loading on mount, so declining analytics still means no third-party
-// scheduler script.
-//
-// The panel below is therefore not an error state: it is what a visitor who has not
-// accepted analytics sees, and it gives them a way to book anyway. It is rendered
-// unhidden and replaced once the embed is up, which is what the .njk did.
-const props = defineProps<{ dataSrc: string }>()
+// HubSpot meetings scheduler, loaded only with analytics consent. MUST STAY THAT WAY.
+import site from '../data/site.json'
+
+const SCRIPT_SRC = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
 
 const embedded = ref(false)
+const container = ref<HTMLElement>()
+const containerKey = ref(0)
+const containerId = `hs-meetings-${useId()}`
 
-type ConsentWindow = Window & {
-    _ffLoadMeetings?: (() => void) | null
-    CookieConsent?: { showPreferences: () => void }
+const meetingsSrc = (() => {
+    const url = new URL(site.meetings.salesRoundRobin)
+    url.searchParams.set('embed', 'true')
+    return url.toString()
+})()
+
+type EmbedWindow = Window & {
+    CookieConsent?: { showPreferences: () => void, acceptedCategory?: (category: string) => boolean }
+    hbspt?: { meetings?: { create: (selector: string) => unknown } }
 }
 
+let observer: MutationObserver | undefined
+let pendingScript: HTMLScriptElement | undefined
+let requested = false
+
 function showCookiePreferences() {
-    ;(window as ConsentWindow).CookieConsent?.showPreferences()
+    ;(window as EmbedWindow).CookieConsent?.showPreferences()
+}
+
+function stopWaitingForScript() {
+    pendingScript?.removeEventListener('load', createEmbed)
+    pendingScript = undefined
+}
+
+function createEmbed() {
+    stopWaitingForScript()
+    const create = (window as EmbedWindow).hbspt?.meetings?.create
+    if (!create || !container.value) return
+    requested = true
+    create(`#${CSS.escape(containerId)}`)
 }
 
 function loadEmbed() {
-    if (embedded.value) return
-    const existing = document.querySelector('script[src*="MeetingsEmbedCode.js"]')
-    if (!existing) {
-        const script = document.createElement('script')
-        script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js'
-        script.onload = () => { embedded.value = true }
-        document.head.appendChild(script)
-    } else {
-        embedded.value = true
+    if (!container.value || container.value.querySelector('iframe')) return
+    if ((window as EmbedWindow).hbspt?.meetings?.create) {
+        createEmbed()
+        return
     }
+    let script = document.querySelector<HTMLScriptElement>(`script[src="${SCRIPT_SRC}"]`)
+    if (!script) {
+        const injected = document.createElement('script')
+        injected.src = SCRIPT_SRC
+        injected.onerror = () => injected.remove()
+        document.head.appendChild(injected)
+        script = injected
+    }
+    if (pendingScript === script) return
+    stopWaitingForScript()
+    pendingScript = script
+    script.addEventListener('load', createEmbed, { once: true })
 }
 
-// Registered for cookieconsent-config.js to call on accept, exactly as the .njk did.
-// It also calls it on load when consent is already stored, so an existing acceptance is
-// covered without this component reading cookies itself.
+// A new container makes an iframe HubSpot inserts late land in the detached old one.
+function removeEmbed() {
+    stopWaitingForScript()
+    if (!requested) return
+    requested = false
+    embedded.value = false
+    containerKey.value++
+}
+
+function hasAnalyticsConsent() {
+    return !!(window as EmbedWindow).CookieConsent?.acceptedCategory?.('analytics')
+}
+
+function syncWithConsent() {
+    if (!hasAnalyticsConsent()) removeEmbed()
+    else nextTick(() => { if (hasAnalyticsConsent()) loadEmbed() })
+}
+
+watch(container, (el) => {
+    observer?.disconnect()
+    if (el) observer?.observe(el, { childList: true })
+}, { flush: 'post' })
+
 onMounted(() => {
-    ;(window as ConsentWindow)._ffLoadMeetings = loadEmbed
+    observer = new MutationObserver(() => {
+        embedded.value = !!container.value?.querySelector('iframe')
+    })
+    if (container.value) observer.observe(container.value, { childList: true })
+    syncWithConsent()
+    window.addEventListener('cc:onConsent', syncWithConsent)
+    window.addEventListener('cc:onChange', syncWithConsent)
 })
 
 onUnmounted(() => {
-    ;(window as ConsentWindow)._ffLoadMeetings = null
+    observer?.disconnect()
+    stopWaitingForScript()
+    window.removeEventListener('cc:onConsent', syncWithConsent)
+    window.removeEventListener('cc:onChange', syncWithConsent)
 })
 </script>
 
 <template>
   <div>
-    <div class="meetings-iframe-container -mb-20 md:-mb-6" :data-src="props.dataSrc" />
+    <div :id="containerId" :key="containerKey" ref="container" :class="{ '-mb-20 md:-mb-6': embedded }" :data-src="meetingsSrc" />
     <div v-if="!embedded" class="ff-hubspot-consent-fallback text-center border bg-indigo-900 rounded-lg px-6 pt-8 pb-4">
       <h4 class="text-white font-medium">Choose a time to talk</h4>
       <p class="text-indigo-200">30-minute session with our team.</p>
