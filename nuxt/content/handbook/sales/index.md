@@ -84,7 +84,7 @@ rules.
 - [Forecast Review](./forecast-review.md)
 - [Sales Deck](./sales-deck.md) and [Pricing Decks](./pricing-decks.md)
 - [HubSpot](./hubspot.md) — CRM lifecycle stages and conventions
-- [Legal](./legal.md) and [Sales Compensation Plan](./commission-plan/)
+- [Legal](./legal.md) and [Sales Compensation Plan](./commission-plan/) ([how commissions are paid out](/handbook/operations/commission-payment/#processing-sales-commission))
 - [Deal Board](https://app-eu1.hubspot.com/contacts/26586079/objects/0-3/views/all/board)
 - [Sales playbook (internal)](https://docs.google.com/document/d/1Jrt5sNg46wngQ5UAii8sbN94PTlIAscOWrFcOhSVNPE/edit){rel="nofollow"}
 - [SPICED Sales Framework](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU)
