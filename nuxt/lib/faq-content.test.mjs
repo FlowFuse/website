@@ -19,3 +19,8 @@ test('FAQ structured data gets the answer as plain text', () => {
     const offenders = offendingLines(filesIn(nuxtDir, '.vue'), line => line.includes('defineQuestion(') && !line.includes('faqAnswerText('))
     assert.deepEqual(offenders, [], 'Pass faqAnswerText(item.answer) from lib/faq-answer.mjs to defineQuestion, so the JSON-LD carries no markdown.')
 })
+
+test('no page still renders the retired <BlogFaq>', () => {
+    const offenders = offendingLines(filesIn(nuxtDir, '.vue'), line => line.includes('<BlogFaq'))
+    assert.deepEqual(offenders, [], 'BlogFaq was renamed to Faq. An unknown component renders nothing and the build still passes, so that FAQ would be empty.')
+})
