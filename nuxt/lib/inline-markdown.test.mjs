@@ -42,6 +42,22 @@ test('nests links and emphasis either way round', () => {
     ])
 })
 
+test('nests bold and italic either way round', () => {
+    assert.deepEqual(parseInline('*a **b** c*'), [
+        { type: 'em', children: [text('a '), { type: 'strong', children: [text('b')] }, text(' c')] },
+    ])
+    assert.deepEqual(parseInline('**a *b* c**'), [
+        { type: 'strong', children: [text('a '), { type: 'em', children: [text('b')] }, text(' c')] },
+    ])
+    assert.deepEqual(parseInline('***x***'), [{ type: 'strong', children: [{ type: 'em', children: [text('x')] }] }])
+})
+
+test('two bold spans in one line stay separate', () => {
+    assert.deepEqual(parseInline('**a** and **b**'), [
+        { type: 'strong', children: [text('a')] }, text(' and '), { type: 'strong', children: [text('b')] },
+    ])
+})
+
 test('an asterisk inside a URL is not emphasis', () => {
     assert.deepEqual(parseInline('[x](/a*b*c)'), [{ type: 'link', href: '/a*b*c', children: [text('x')] }])
 })

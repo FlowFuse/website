@@ -12,9 +12,10 @@
 // url is http(s) or site-absolute. Anything else - javascript:, data:, protocol-relative -
 // is left as text.
 const LINK = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s/)][^\s)]*|\/)\)/
-// Non-greedy and single-line, so an unclosed marker in prose does not swallow the rest.
-const BOLD = /\*\*([^*\n]+)\*\*/
-const ITALIC = /\*([^*\n]+)\*/
+// Single-line, so an unclosed marker in prose does not swallow the rest. Each one may contain
+// the other, so "*a **b** c*" and "**a *b* c**" nest.
+const BOLD = /\*\*((?:\*[^*\n]+\*|[^*\n])+)\*\*/
+const ITALIC = /\*((?:\*\*[^*\n]+\*\*|[^*\n])+)\*/
 
 // Earliest match wins; on a tie, the order here.
 const MARKERS = [['link', LINK], ['strong', BOLD], ['em', ITALIC]]
