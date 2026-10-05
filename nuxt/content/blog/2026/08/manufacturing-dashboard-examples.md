@@ -136,7 +136,7 @@ That shift, from reviewing downtime after a shift to tracking it in real time, i
 
 ### 4. Quality Dashboard (Defect & Quality Monitoring)
 
-Quality losses need the same treatment. A quality dashboard shows where defects are happening and what's driving them. FlowFuse's **Defect & Quality Monitoring Dashboard** combines defect data, production information, and quality KPIs, including defect trends, defect categories, first-pass yield, cost of poor quality, and a Pareto breakdown of causes, into one view.
+Quality losses need the same treatment. A quality dashboard shows where [defects](/blog/2026/10/manufacturing-defects/) are happening and what's driving them. FlowFuse's **Defect & Quality Monitoring Dashboard** combines defect data, production information, and quality KPIs, including defect trends, defect categories, first-pass yield, cost of poor quality, and a Pareto breakdown of causes, into one view.
 
 ![FlowFuse defect and quality monitoring dashboard with a Pareto chart of defect types, a root cause breakdown, severity and disposition splits, and SLA resolution times](./images/flowfuse-defect-monitoring-dashboard.png)
 *FlowFuse defect and quality monitoring dashboard with a Pareto chart of defect types, a root cause breakdown, severity and disposition splits, and SLA resolution times*

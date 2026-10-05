@@ -69,7 +69,7 @@ For example, an AI-powered [motor anomaly detector built with FlowFuse](/blog/20
 
 ### Quality Inspection
 
-The same pattern recognition can be used to inspect product quality. AI-powered vision systems can detect defects, variations, or other characteristics that are hard to catch consistently through manual inspection.
+The same pattern recognition can be used to inspect product quality. AI-powered vision systems can detect [defects](/blog/2026/10/manufacturing-defects/), variations, or other characteristics that are hard to catch consistently through manual inspection.
 
 For example, a camera can capture each product as it exits a conveyor while a vision model checks for surface defects. The results can be used to sort defective products and reveal recurring issues that point back to a particular machine, tool, or material batch.
 

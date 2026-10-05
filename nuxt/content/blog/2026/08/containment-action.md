@@ -37,7 +37,7 @@ cta:
 
 <!--more-->
 
-Controlled shipping is what happens when the automaker stops taking that on trust. It is a formal status assigned after a defect reaches a customer plant, and it comes in two levels. CS1 requires the supplier to add its own inspection layer before shipment, document it, and report on it. CS2 adds an independent third party on top of CS1. The supplier keeps running its own containment; the third party verifies it, at the supplier's cost.
+Controlled shipping is what happens when the automaker stops taking that on trust. It is a formal status assigned after a [defect](/blog/2026/10/manufacturing-defects/) reaches a customer plant, and it comes in two levels. CS1 requires the supplier to add its own inspection layer before shipment, document it, and report on it. CS2 adds an independent third party on top of CS1. The supplier keeps running its own containment; the third party verifies it, at the supplier's cost.
 
 Both are survivable. What makes them hard is not the inspection itself. It is proving, shipment after shipment and site after site, that the inspection actually happened the way you said it did. Most [MES](/blog/2025/06/what-is-mes/) platforms handle single-site nonconformance well. Producing one consistent containment record across several plants on a two-week timeline is where they tend to fall short.
 

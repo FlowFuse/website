@@ -76,6 +76,10 @@ export const CUSTOM_CTA_DESTINATIONS = {
         href: '/blog/2026/09/layered-process-audit-checklist-template/',
         event: 'cta-lpa-checklist-download',
     },
+    fishboneTemplate: {
+        href: '/blog/2026/09/ishikawa-fishbone-diagram-template/',
+        event: 'cta-fishbone-template-download',
+    },
 } as const
 
 // Self-check, run when this module loads: a second entry must not reuse a URL another

@@ -36,7 +36,7 @@ meta:
 
 <!--more-->
 
-It is often simplified to final inspection: check the finished part and flag the defects. In practice, quality control covers identifying process risks, controlling critical characteristics, verifying measurements, and maintaining the traceability needed to investigate deviations.
+It is often simplified to final inspection: check the finished part and flag the [defects](/blog/2026/10/manufacturing-defects/). In practice, quality control covers identifying process risks, controlling critical characteristics, verifying measurements, and maintaining the traceability needed to investigate deviations.
 
 Quality issues do not always get caught before a vehicle reaches the customer. [J.D. Power's 2025 U.S. Initial Quality Study](https://www.jdpower.com/sites/default/files/file/2025-06/2025063%20U.S.%20IQS.pdf) surveyed 92,694 owners of 2025 model-year vehicles and found an industry average of 192 problems per 100 vehicles within the first 90 days of ownership, only slightly better than 194 the year before. The count includes design complaints, such as infotainment systems that are difficult to use, as well as defects and malfunctions. Every one of those issues reached an owner after the vehicle left the plant.
 
