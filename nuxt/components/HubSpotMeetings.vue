@@ -74,13 +74,19 @@ function removeEmbed() {
     container.value?.replaceChildren()
 }
 
+function hasAnalyticsConsent() {
+    return !!(window as EmbedWindow).CookieConsent?.acceptedCategory?.('analytics')
+}
+
 function syncWithConsent() {
-    if ((window as EmbedWindow).CookieConsent?.acceptedCategory?.('analytics')) loadEmbed()
+    if (hasAnalyticsConsent()) loadEmbed()
     else removeEmbed()
 }
 
 onMounted(() => {
     observer = new MutationObserver(() => {
+        // HubSpot can insert the iframe after consent was withdrawn.
+        if (!hasAnalyticsConsent()) container.value?.replaceChildren()
         embedded.value = !!container.value?.querySelector('iframe')
     })
     if (container.value) observer.observe(container.value, { childList: true })
