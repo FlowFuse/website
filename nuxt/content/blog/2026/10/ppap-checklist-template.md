@@ -135,6 +135,6 @@ None of these gaps show up by checking that each document exists. They appear wh
 
 ## Collecting PPAP Data From Production
 
-Many of the checks above depend on production data: run-at-rate counts, process parameters, gauge status, dimensional results, and capability. In most plants, those numbers are exported from the CMM, SPC system, PLCs, and [MES](/blog/2025/06/what-is-mes/), then copied into a workbook. Each copy is a chance for the package to drift from what the line produced.
+Many of the checks above depend on production data: run-at-rate counts, process parameters, gauge status, dimensional results, and capability. In most plants, those numbers are exported from the CMM, [SPC](/blog/2025/07/quality-control-automation-spc-charts/) system, [PLCs](/landing/plc/), and [MES](/blog/2025/06/what-is-mes/), then copied into a workbook. Each copy is a chance for the package to drift from what the line produced.
 
 [FlowFuse](/) connects to those sources directly, so the values in the submission come from the run itself and stay [tied to each part](/blog/2026/08/automotive-traceability/). After approval, through [safe launch](/blog/2026/08/safe-launch/) and beyond, the same connections keep special characteristics monitored and alert the team when capability starts to slip. Quality engineers can spend more of their time on the parts of the package that need judgement: the FMEAs and the control plan.
