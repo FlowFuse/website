@@ -50,7 +50,7 @@ Instrumentation gets equal scrutiny. Auditors expect to see system accuracy test
 
 This scope is narrower than it might first appear. A CQI-11 plating assessment centers on coating thickness and adhesion, while CQI-9 stays focused on thermal process control from furnace load to final output.
 
-::cta-image{src="/blog/2026/10/images/cqi-9-lpa-cta.png" alt="Free download: layered process audit checklist template covering standard work, equipment and tooling, error-proofing, and traceability" cta="custom" destination-key="lpaChecklistTemplate"}
+::cta-image{src="/blog/2026/10/images/cqi-9-lpa-cta-img.png" alt="Free download: layered process audit checklist template covering standard work, equipment and tooling, error-proofing, and traceability" cta="custom" destination-key="lpaChecklistTemplate"}
 ::
 
 ## Instrumentation, Calibration, And Documentation Auditors Scrutinize
