@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Docs or handbook search for the site header, where the section's sidebar is not on
-// screen. AppHeader shows it below lg, on docs and handbook pages only.
+// screen. AppHeader shows it below lg, on docs and handbook pages only. FlowFuse Expert is the
+// Ask Docs button (DocsAskFab).
 const route = useRoute()
 const section = computed(() => {
     if (route.path === '/docs' || route.path.startsWith('/docs/')) return 'documentation'

@@ -16,7 +16,6 @@ dist/
 /public/img/
 /public/_includes/
 /public/sitemap-legacy.xml
-/public/js/ai-expert-modal.js
 /public/js/hm-promo-banner.js
 
 # Dependencies (hoisted to workspace root)
