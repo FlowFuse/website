@@ -382,6 +382,7 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
                 { name: 'theme-color', content: '#ffffff' },
+                { name: 'google-site-verification', content: 'KQ654UVVaVEEdt8WzyAWmMFW5CwTW9gNp6LdZOiYiAc' },
             ],
             script: [
                 // Studio's GitHub sign-in comes back to /__nuxt_studio/auth/github with
