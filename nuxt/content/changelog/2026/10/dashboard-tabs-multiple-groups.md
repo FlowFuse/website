@@ -1,7 +1,7 @@
 ---
 title: Multiple Groups per Tab in Dashboard
 description: Dashboard pages using the Tabs layout can now show several groups in a single tab.
-date: 2026-10-22 12:00:00
+date: 2026-10-06 12:00:00
 release: "3.2"
 authors: ["noley-holland"]
 tags:
