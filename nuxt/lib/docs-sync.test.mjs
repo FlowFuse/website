@@ -100,7 +100,7 @@ test('a README becomes the index page of its section', (t) => {
     assert.ok(!existsSync(fx.content('cloud', 'README.md')))
 })
 
-// The portal home is this repo's page (nuxt/content-guides/README.md); the README at the
+// The portal home is this repo's page (nuxt/content-guides/index.md); the README at the
 // root of the flowfuse docs tree is only that repo's own readme.
 test('the root README of the flowfuse docs is not written as the portal home', (t) => {
     const fx = fixture(t)

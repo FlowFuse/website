@@ -100,8 +100,8 @@ function gitOutput (cwd, args) {
  * The README at the root of the flowfuse docs tree is that repository's own readme for its
  * docs folder, not the portal's home page. /docs spans more than the flowfuse docs (the
  * guides and the Node-RED library come from this repo), so its home is this repo's
- * nuxt/content-guides/README.md, which guides-sync overlays as index.md. This file is
- * therefore never copied, and syncing it neither writes nor removes the home page.
+ * nuxt/content-guides/index.md. This file is therefore never copied, and syncing it
+ * neither writes nor removes the home page.
  */
 export const FLOWFUSE_DOCS_README = 'README.md'
 
