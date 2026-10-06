@@ -2495,18 +2495,21 @@ html.ff-section-transition::view-transition-new(root) {
     animation-duration: 0.3s;
 }
 
-/* From one page's field to another's, the moving box draws the border, and the fields leave
-   theirs out of the snapshots: two borders of different sizes would show as a box in a box.
-   Into the dialog and back the field keeps its own border, which fades with it, since the
-   dialog's search box has none. */
-html.ff-section-transition::view-transition-group(ff-search) {
+/* While the field moves, the moving box draws the frame, and the field and the search dialog
+   leave theirs out of the snapshots: two frames of different sizes would show as a box in a
+   box. <html> carries the class from just before a transition until it has finished. */
+html.ff-search-transition::view-transition-group(ff-search) {
     box-sizing: border-box;
     border: 1px solid #d1d5db;
 }
 
-html.ff-section-transition .ff-algolia--detached #algolia-search .aa-DetachedSearchButton,
-html.ff-section-transition .ff-algolia--detached .ff-algolia__standin {
+html.ff-search-transition .ff-algolia--detached #algolia-search .aa-DetachedSearchButton,
+html.ff-search-transition .ff-algolia--detached .ff-algolia__standin {
     border-color: transparent;
+}
+
+html.ff-search-transition .ff-search-dialog {
+    box-shadow: none;
 }
 
 /* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */

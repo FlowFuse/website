@@ -16,8 +16,9 @@ const props = withDefaults(defineProps<{
     /** `lg` is the taller search field of a landing page's hero. Needs `detached`. */
     size?: 'md' | 'lg'
     /**
-     * Move the field with a view transition: into the dialog's search box when it opens and
-     * back when it closes, and between pages that turn view transitions on. Needs `detached`.
+     * Move the field with a view transition: it grows into the search dialog when that opens
+     * and back when it closes, and moves between pages that turn view transitions on. Needs
+     * `detached`.
      */
     morph?: boolean
 }>(), {
@@ -58,12 +59,12 @@ const isMac = ref(true)
 const ready = ref(false)
 let openWhenReady = false
 
-// The field and the dialog's search box take turns carrying the shared view-transition-name,
-// so the browser animates one into the other. Autocomplete adds and removes the dialog in an
+// The field and the floating dialog take turns carrying the shared view-transition-name, so
+// the browser grows one into the other; only the dimmed backdrop fades in around it. Autocomplete adds and removes the dialog in an
 // animation frame, and frames do not run while a transition holds the page, so the dialog is
 // opened (unseen) before the transition starts and only hidden inside it; it is removed after.
-// <html> carries `ff-search-opening` / `ff-search-closing` for that (styles below); the
-// moving box itself is styled in assets/css/style.css.
+// <html> carries `ff-search-opening` / `ff-search-closing` for that (styles below), and
+// `ff-search-transition` while the field moves (assets/css/style.css draws its frame).
 function setNames (field: string, box: HTMLElement | null, boxName: string) {
     root.value!.style.viewTransitionName = field
     if (box) box.style.viewTransitionName = boxName
@@ -73,16 +74,18 @@ async function openWithMorph (button: HTMLElement) {
     const html = document.documentElement
     html.classList.add('ff-search-opening')
     press(button)
-    const box = await waitFor(() => document.querySelector<HTMLElement>('.ff-search-dialog .aa-Form'))
+    const box = await waitFor(() => document.querySelector<HTMLElement>('.ff-search-dialog'))
     if (!box) {
         html.classList.remove('ff-search-opening')
         return
     }
+    html.classList.add('ff-search-transition')
     const transition = document.startViewTransition(() => {
         html.classList.remove('ff-search-opening')
         setNames('none', box, SEARCH_TRANSITION_NAME)
     })
     transition.finished.catch(() => {}).finally(() => {
+        html.classList.remove('ff-search-transition')
         setNames(SEARCH_TRANSITION_NAME, box, '')
     })
 }
@@ -90,11 +93,13 @@ async function openWithMorph (button: HTMLElement) {
 function closeWithMorph (box: HTMLElement, cancel: HTMLElement) {
     const html = document.documentElement
     setNames('none', box, SEARCH_TRANSITION_NAME)
+    html.classList.add('ff-search-transition')
     const transition = document.startViewTransition(() => {
         html.classList.add('ff-search-closing')
         setNames(SEARCH_TRANSITION_NAME, box, '')
     })
     transition.finished.catch(() => {}).finally(async () => {
+        html.classList.remove('ff-search-transition')
         press(cancel)
         await waitFor(() => !document.querySelector('.ff-search-dialog'))
         html.classList.remove('ff-search-closing')
@@ -128,12 +133,11 @@ function onDialogClose (e: Event) {
     const target = e.target as Element
     const closing = (e.type === 'click' && (target.closest('.aa-DetachedCancelButton') || target.classList.contains('aa-DetachedOverlay')))
         || (e.type === 'keydown' && (e as KeyboardEvent).key === 'Escape')
-    const box = dialog.querySelector<HTMLElement>('.aa-Form')
     const cancel = dialog.querySelector<HTMLElement>('.aa-DetachedCancelButton')
-    if (!closing || !box || !cancel) return
+    if (!closing || !cancel) return
     e.preventDefault()
     e.stopImmediatePropagation()
-    closeWithMorph(box, cancel)
+    closeWithMorph(dialog, cancel)
 }
 
 function onKeydown (e: KeyboardEvent) {
