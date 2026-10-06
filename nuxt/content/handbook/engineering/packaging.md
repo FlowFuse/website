@@ -78,10 +78,13 @@ All repositories must have the Project Automation workflow added, including non-
 by adding `.github/workflows/project-automation.yml` ([template](https://raw.githubusercontent.com/FlowFuse/.github/refs/heads/main/.github/workflows/project-automation.yml)).
 This workflow will ensure any opened issues are automatically added to the [Product board](https://github.com/orgs/FlowFuse/projects/3) where it can be triaged and prioritised.
 
-#### Release Publish
+#### Prepare and Publish a Release
 
 For any repositories that contain modules to be published to public npm, they should also
-have a copy of `.github/workflows/release-publish.yml` ([template](https://raw.githubusercontent.com/FlowFuse/flowfuse/refs/heads/main/.github/workflows/release-publish.yml)).
+have a copy of `.github/workflows/release-please.yml` ([template](https://raw.githubusercontent.com/FlowFuse/nr-assistant/refs/heads/main/.github/workflows/release-please.yaml)) and `.github/workflows/release-publish.yml` ([template](https://raw.githubusercontent.com/FlowFuse/flowfuse/refs/heads/main/.github/workflows/release-publish.yml)).
+
+The `release-please` tool that is used by the `Prepare release` workflow requires also a configuration file, typically `.release-please-config.json`, to define how releases should be managed for the repository, and the manifest file that holds the version information for the module. Since the tool relies on the Conventional Commits specification, the ["Lint Pull Request Title"](#pull-request-title-linting) workflow needs to be set as a required check in the repository to ensure commit messages follow the Conventional Commits format.
+A complete example of this implementation can be found in the [following pull request](https://github.com/FlowFuse/node-red-dashboard/pull/2275).
 
 For modules being published to the Certified Nodes npm registry this `release-publish.yml` file should be edited to point to the `https://registry.flowfuse.com` registry and to make use of the correct token.
 
@@ -93,6 +96,10 @@ tag.
 Note that each repository may have slightly different pre-publish requirements - for
 example if there is a build step or not. You may need to customise the workflow
 to match what is needed.
+
+#### Pull Request Title Linting
+
+To ensure that all pull requests follow the Conventional Commits specification, the "Lint Pull Request Title" workflow should be added to the repository. This is typically done by adding `.github/workflows/lint-pr-title.yml` ([template](https://raw.githubusercontent.com/FlowFuse/nr-assistant/refs/heads/main/.github/workflows/lint-pr-title.yaml)) to the repository. This workflow will check the title of each pull request and enforce the required format. As mentioned in the previous paragraph, it should be set as a required check for each pull request in the repository to ensure commit messages follow the Conventional Commits format.
 
 #### Static Application Security Testing
 
