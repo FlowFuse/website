@@ -13,6 +13,9 @@ const resolveHref = useResolveHref()
 
 const route = useRoute()
 const isDocs = computed(() => route.path === '/docs' || route.path.startsWith('/docs/'))
+// Docs and handbook pages put their search in the sidebar, which folds away below lg; the
+// header carries a search button there instead.
+const hasSectionSearch = computed(() => isDocs.value || route.path === '/handbook' || route.path.startsWith('/handbook/'))
 
 onMounted(() => {
     const navToggle = document.getElementById('nav-toggle')
@@ -196,11 +199,11 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-        <!-- Docs search, on tablets, where the docs sidebar is folded away. -->
-        <li v-if="isDocs" class="lg:hidden mr-1"><DocsHeaderActions /></li>
-        <!-- On docs pages Free Trial gives way to the search and the "Docs" label on tablets,
-             where the row has no other room: the menus cannot fold into More. -->
-        <li class="hidden md:flex" :class="{ 'md:hidden lg:flex': isDocs }"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
+        <!-- Docs or handbook search, on tablets, where the section's sidebar is folded away. -->
+        <li v-if="hasSectionSearch" class="lg:hidden mr-1"><DocsHeaderActions /></li>
+        <!-- On docs and handbook pages Free Trial gives way to the search (and on docs the "Docs"
+             label) on tablets, where the row has no other room: the menus cannot fold into More. -->
+        <li class="hidden md:flex" :class="{ 'md:hidden lg:flex': hasSectionSearch }"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
         <li class="flex">
           <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
         </li>

@@ -2,7 +2,9 @@
 import { useDocsNavTree, findDocsBreadcrumb, findDocsSurround } from '~/composables/useDocsNav'
 import { docsSeo } from '~/lib/docs-seo.mjs'
 
-definePageMeta({ layout: 'default' })
+// A view transition between docs pages carries the search field from the docs home's hero
+// into the sidebar and back (plugins/section-view-transitions.client.ts).
+definePageMeta({ layout: 'default', viewTransition: true })
 
 const route = useRoute()
 const slugParts = computed(() =>

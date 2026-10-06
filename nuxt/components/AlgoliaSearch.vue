@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { SEARCH_TRANSITION_NAME, canViewTransition, isInViewport } from '~/utils/viewTransition'
+
 // Algolia autocomplete over the shared `prod_netlify` index. The index is built by
 // scripts/index-algolia.js, which scans nuxt/dist after the Nuxt build and derives
 // `category` from the first path segment, so /handbook/* and /docs/* are both covered.
@@ -13,13 +15,39 @@ const props = withDefaults(defineProps<{
     shortcut?: boolean
     /** `lg` is the taller search field of a landing page's hero. Needs `detached`. */
     size?: 'md' | 'lg'
+    /**
+     * Move the field with a view transition: into the dialog's search box when it opens and
+     * back when it closes, and between pages that turn view transitions on. Needs `detached`.
+     */
+    morph?: boolean
 }>(), {
     placeholder: 'Search...',
     sourceId: 'content',
     detached: false,
     shortcut: false,
     size: 'md',
+    morph: false,
 })
+
+const root = ref<HTMLElement>()
+const canMorph = () => props.detached && props.morph && canViewTransition() && !!root.value && isInViewport(root.value)
+
+/** Resolves to what `find` returns once it returns something, or to null after about half a second. */
+async function waitFor<T> (find: () => T | null | undefined): Promise<T | null> {
+    for (let i = 0; i < 30; i++) {
+        const found = find()
+        if (found) return found
+        await new Promise(resolve => setTimeout(resolve, 16))
+    }
+    return null
+}
+
+// Our own clicks on autocomplete's buttons pass straight through the capturing listeners below.
+let passThrough = false
+function press (button: HTMLElement) {
+    passThrough = true
+    try { button.click() } finally { passThrough = false }
+}
 
 const isMac = ref(true)
 
@@ -30,12 +58,82 @@ const isMac = ref(true)
 const ready = ref(false)
 let openWhenReady = false
 
+// The field and the dialog's search box take turns carrying the shared view-transition-name,
+// so the browser animates one into the other. Autocomplete adds and removes the dialog in an
+// animation frame, and frames do not run while a transition holds the page, so the dialog is
+// opened (unseen) before the transition starts and only hidden inside it; it is removed after.
+// <html> carries `ff-search-opening` / `ff-search-closing` for that (styles below); the
+// moving box itself is styled in assets/css/style.css.
+function setNames (field: string, box: HTMLElement | null, boxName: string) {
+    root.value!.style.viewTransitionName = field
+    if (box) box.style.viewTransitionName = boxName
+}
+
+async function openWithMorph (button: HTMLElement) {
+    const html = document.documentElement
+    html.classList.add('ff-search-opening')
+    press(button)
+    const box = await waitFor(() => document.querySelector<HTMLElement>('.ff-search-dialog .aa-Form'))
+    if (!box) {
+        html.classList.remove('ff-search-opening')
+        return
+    }
+    const transition = document.startViewTransition(() => {
+        html.classList.remove('ff-search-opening')
+        setNames('none', box, SEARCH_TRANSITION_NAME)
+    })
+    transition.finished.catch(() => {}).finally(() => {
+        setNames(SEARCH_TRANSITION_NAME, box, '')
+    })
+}
+
+function closeWithMorph (box: HTMLElement, cancel: HTMLElement) {
+    const html = document.documentElement
+    setNames('none', box, SEARCH_TRANSITION_NAME)
+    const transition = document.startViewTransition(() => {
+        html.classList.add('ff-search-closing')
+        setNames(SEARCH_TRANSITION_NAME, box, '')
+    })
+    transition.finished.catch(() => {}).finally(async () => {
+        press(cancel)
+        await waitFor(() => !document.querySelector('.ff-search-dialog'))
+        html.classList.remove('ff-search-closing')
+    })
+}
+
 function openDialog () {
     if (!ready.value) {
         openWhenReady = true
         return
     }
-    searchContainer.value?.querySelector<HTMLElement>('.aa-DetachedSearchButton')?.click()
+    const button = searchContainer.value?.querySelector<HTMLElement>('.aa-DetachedSearchButton')
+    if (!button) return
+    if (canMorph()) openWithMorph(button)
+    else press(button)
+}
+
+// A click on the field itself opens the dialog through openDialog, so it can morph.
+function onFieldClick (e: MouseEvent) {
+    if (passThrough || !(e.target as Element).closest('.aa-DetachedSearchButton')) return
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    openDialog()
+}
+
+// Closing the dialog (its X, a click beside it, or Escape) morphs it back into the field.
+// Choosing a result leaves the page, so that is not caught here.
+function onDialogClose (e: Event) {
+    const dialog = document.querySelector<HTMLElement>('.ff-search-dialog')
+    if (passThrough || !dialog || !canMorph()) return
+    const target = e.target as Element
+    const closing = (e.type === 'click' && (target.closest('.aa-DetachedCancelButton') || target.classList.contains('aa-DetachedOverlay')))
+        || (e.type === 'keydown' && (e as KeyboardEvent).key === 'Escape')
+    const box = dialog.querySelector<HTMLElement>('.aa-Form')
+    const cancel = dialog.querySelector<HTMLElement>('.aa-DetachedCancelButton')
+    if (!closing || !box || !cancel) return
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    closeWithMorph(box, cancel)
 }
 
 function onKeydown (e: KeyboardEvent) {
@@ -48,11 +146,21 @@ function onKeydown (e: KeyboardEvent) {
 onBeforeUnmount(() => {
     window.removeEventListener('keydown', onKeydown)
     window.removeEventListener('ff-docs-search:open', openDialog)
+    searchContainer.value?.removeEventListener('click', onFieldClick, true)
+    document.removeEventListener('click', onDialogClose, true)
+    document.removeEventListener('keydown', onDialogClose, true)
 })
 
 const searchContainer = ref<HTMLElement>()
 
 onMounted(async () => {
+    if (props.detached && props.morph && root.value) {
+        root.value.style.viewTransitionName = SEARCH_TRANSITION_NAME
+        searchContainer.value?.addEventListener('click', onFieldClick, true)
+        document.addEventListener('click', onDialogClose, true)
+        document.addEventListener('keydown', onDialogClose, true)
+    }
+
     if (props.detached && props.shortcut) {
         isMac.value = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)
         window.addEventListener('keydown', onKeydown)
@@ -193,7 +301,12 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="ff-algolia" :class="{ 'ff-algolia--detached': detached, 'ff-algolia--lg': detached && size === 'lg' }">
+  <div
+    ref="root"
+    class="ff-algolia"
+    :class="{ 'ff-algolia--detached': detached, 'ff-algolia--lg': detached && size === 'lg' }"
+    :data-ff-search-morph="detached && morph ? '' : undefined"
+  >
     <div ref="searchContainer" id="algolia-search" :class="detached ? '' : 'border border-gray-200 rounded'"></div>
     <button v-if="detached && !ready" type="button" class="ff-algolia__standin" @click="openDialog">
       <svg class="ff-algolia__standin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -216,7 +329,8 @@ onMounted(async () => {
 .ff-algolia--detached :deep(#algolia-search .aa-DetachedSearchButton) {
     width: 100%;
     height: 2.5rem;
-    padding: 0 4rem 0 0.5rem;
+    /* Room on the right for the shortcut hint ("Ctrl K" is the wider one). */
+    padding: 0 3.5rem 0 0.5rem;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     background: #fff;
@@ -229,6 +343,16 @@ onMounted(async () => {
     border-color: #a5b4fc;
 }
 
+/* One line in a narrow sidebar: a placeholder too long for it ends in an ellipsis rather
+   than wrapping inside the field. */
+.ff-algolia--detached :deep(.aa-DetachedSearchButtonPlaceholder),
+.ff-algolia__standin span {
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 /* Stands in for the search button until autocomplete has mounted (see `ready`). */
 .ff-algolia__standin {
     display: flex;
@@ -236,7 +360,7 @@ onMounted(async () => {
     gap: 0.5rem;
     width: 100%;
     height: 2.5rem;
-    padding: 0 4rem 0 0.75rem;
+    padding: 0 3.5rem 0 0.75rem;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     background: #fff;
@@ -287,6 +411,28 @@ onMounted(async () => {
 
 <style>
 /* The dialog is appended to <body>, outside this component, so this is not scoped. */
+/* Opened unseen just before the field morphs into it, and hidden while it morphs back
+   (see openWithMorph and closeWithMorph). Opacity, not visibility, so its input can still
+   take focus. */
+html.ff-search-opening .aa-DetachedOverlay {
+    opacity: 0;
+}
+
+html.ff-search-closing .aa-DetachedOverlay {
+    display: none;
+}
+
+/* While the dialog is open the field has become its search box, so it is not also left behind
+   on the page. It shows again for the moments it morphs from and back to. */
+body.aa-Detached [data-ff-search-morph] {
+    visibility: hidden;
+}
+
+html.ff-search-opening body.aa-Detached [data-ff-search-morph],
+html.ff-search-closing body.aa-Detached [data-ff-search-morph] {
+    visibility: visible;
+}
+
 .ff-search-dialog.aa-DetachedContainer--modal {
     top: 12vh;
 }

@@ -2456,6 +2456,59 @@ lite-youtube::before {
     outline-offset: 3px;
 }
 
+/* Docs and handbook search: the field moves between the docs home's hero and a page's
+   sidebar, and into the search dialog and back (AlgoliaSearch.vue, `morph`). On a page
+   change the page itself swaps at once rather than cross-fading
+   (plugins/section-view-transitions.client.ts sets the class). */
+html.ff-section-transition::view-transition-old(root) {
+    display: none;
+}
+
+html.ff-section-transition::view-transition-new(root) {
+    animation: none;
+}
+
+/* The moving box carries the field's white, and its two snapshots ride inside it at their
+   real size, so the text cross-fades without stretching while the box changes shape. */
+::view-transition-group(ff-search) {
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 6px;
+    background: #fff;
+    overflow: clip;
+}
+
+::view-transition-old(ff-search),
+::view-transition-new(ff-search) {
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+    object-position: left center;
+}
+
+/* The old text is gone before the new one is fully in, so the two never read as one. */
+::view-transition-old(ff-search) {
+    animation-duration: 0.12s;
+}
+
+::view-transition-new(ff-search) {
+    animation-duration: 0.3s;
+}
+
+/* From one page's field to another's, the moving box draws the border, and the fields leave
+   theirs out of the snapshots: two borders of different sizes would show as a box in a box.
+   Into the dialog and back the field keeps its own border, which fades with it, since the
+   dialog's search box has none. */
+html.ff-section-transition::view-transition-group(ff-search) {
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+}
+
+html.ff-section-transition .ff-algolia--detached #algolia-search .aa-DetachedSearchButton,
+html.ff-section-transition .ff-algolia--detached .ff-algolia__standin {
+    border-color: transparent;
+}
+
 /* View transition names for 'morphing-content' are set dynamically via JavaScript for AI modal transitions */
 
 /* View Transition styles for smooth morphing */

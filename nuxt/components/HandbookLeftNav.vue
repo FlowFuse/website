@@ -42,5 +42,9 @@ const navItems = computed((): NavigationMenuItem[] => {
 </script>
 
 <template>
-  <SidebarNav :items="navItems" label="Handbook" />
+  <SidebarWithSearch :items="navItems" label="Handbook">
+    <template #search>
+      <AlgoliaSearch index-filter="category:handbook" placeholder="Search Handbook" source-id="handbook" detached shortcut morph />
+    </template>
+  </SidebarWithSearch>
 </template>

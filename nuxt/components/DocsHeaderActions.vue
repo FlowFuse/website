@@ -1,21 +1,25 @@
 <script setup lang="ts">
-// Docs search for the site header, where the docs sidebar is not on screen. AppHeader shows
-// it below lg, on docs pages only.
+// Docs or handbook search for the site header, where the section's sidebar is not on
+// screen. AppHeader shows it below lg, on docs and handbook pages only.
 const route = useRoute()
-const isDocs = computed(() => route.path === '/docs' || route.path.startsWith('/docs/'))
+const section = computed(() => {
+    if (route.path === '/docs' || route.path.startsWith('/docs/')) return 'documentation'
+    if (route.path === '/handbook' || route.path.startsWith('/handbook/')) return 'handbook'
+    return null
+})
 
 function openSearch () {
-    // AlgoliaSearch in the docs sidebar listens for this and opens its search dialog.
+    // The AlgoliaSearch in the section's sidebar listens for this and opens its search dialog.
     window.dispatchEvent(new CustomEvent('ff-docs-search:open'))
 }
 </script>
 
 <template>
-  <div v-if="isDocs" class="ff-docs-header-actions flex items-center gap-2">
+  <div v-if="section" class="ff-docs-header-actions flex items-center gap-2">
     <button
       type="button"
       class="ff-docs-header-actions__search"
-      aria-label="Search the documentation"
+      :aria-label="`Search the ${section}`"
       @click="openSearch"
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5" aria-hidden="true">

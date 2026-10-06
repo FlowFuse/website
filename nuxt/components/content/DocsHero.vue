@@ -37,6 +37,7 @@ defineProps<{
         size="lg"
         detached
         shortcut
+        morph
       />
       <div v-if="$slots.actions" class="ff-docs-hero__actions">
         <slot name="actions" />
