@@ -47,8 +47,8 @@ month. The per-meeting bonus ramps up exponentially with each additional
 meeting until it reaches the cap $C$ at the $M$-th meeting, after which every
 further meeting is paid at the cap.
 
-For payout timelines and submission requirements, see
-[Processing non-commission Bonuses](/handbook/operations/commission-payment/#processing-non-commission-bonuses).
+The process and tasks for paying out this bonus are described in the Operations
+handbook, under [Processing Bonuses](/handbook/operations/commission-payment/#processing-bonuses).
 
 #### CRM Hygiene
 

@@ -373,12 +373,14 @@ When a customer requests access to the FlowFuse Assistant, do the following:
    Check that each one comes back online properly, and assist customers with any
    issues that come up.
 
-## Customer Success Commission Structure
+## Customer Success Bonus Structure
 
-The Customer Success team is compensated under a quarterly commission plan that
-rewards retention and growth.
+The Customer Success team is compensated under a quarterly bonus plan that
+rewards the retention and growth of their total portfolio. This is a bonus, not a
+commission: it's based on the performance of the whole portfolio, rather than a
+percentage of the value of individual deals.
 
-### Commission Components
+### Bonus Components
 Payouts are based on one goal. Note that specific targets are subject to review at the start of each fiscal year or quarter.
 
 - Net Retention Revenue (NRR): Measured against a 115% NRR goal. (100% NRR = 0% payout; 115% NRR = 100% payout).
@@ -400,13 +402,14 @@ $$
 \text{Bonus} = \max \left( 0, B_{\text{target}} \times \frac{X - Y}{G - Y} \right)
 $$
 
-For payout timelines, submission requirements, and currency, see
-[Processing CSM Commission](/handbook/operations/commission-payment/#processing-csm-commission).
+The process and tasks for paying out this bonus, including timelines and
+currency, are described in the Operations handbook, under
+[Processing the CSM Bonus](/handbook/operations/commission-payment/#processing-the-csm-bonus).
 
 ### When Transactions are Credited
-Commission is credited based on the date the transaction is signed, or notice is given, ensuring CSMs are recognized in the quarter the outcome is determined.
+Transactions are credited towards the bonus based on the date the transaction is signed, or notice is given, ensuring CSMs are recognized in the quarter the outcome is determined.
 
-| Metric                | Credit Date for Commission   |
+| Metric                | Credit Date for Bonus        |
 | ----------------------| -----------------------------|
 | Churn                 | Notice/Cancellation Date     |
 | Expansion (In-Term)   | Signing Date                 |
@@ -414,4 +417,4 @@ Commission is credited based on the date the transaction is signed, or notice is
 | Renewal               | Signing Date                 |
 | Contraction           | Notice Date                  |
 
-**Example: If a renewal is signed in Q4 but the Effective Start Date is in Q1, the commission is earned in Q4.**
+**Example: If a renewal is signed in Q4 but the Effective Start Date is in Q1, it counts towards the Q4 bonus.**
