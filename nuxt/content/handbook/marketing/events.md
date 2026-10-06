@@ -103,7 +103,14 @@ As ideas, issues, or concerns come up, make sure you document immediately in the
 
 ### After the Event
 
-Sales and marketing follow up with leads per the pre-defined strategy. Hold the retrospective the week after.
+Leads captured at the event (lead scans, business cards, booth conversations) are
+followed up by the [SDR](/handbook/marketing/sdr/). Get every lead into
+[HubSpot](/handbook/sales/hubspot/) within a few days of the event, with notes on what
+was discussed, so the SDR can work them toward a meeting per the pre-defined leads
+strategy. Leads with an already agreed next step, such as a meeting booked at the booth,
+stay with the rep who agreed it.
+
+Hold the retrospective the week after.
 
 ---
 
@@ -115,4 +122,4 @@ Sales and marketing follow up with leads per the pre-defined strategy. Hold the 
 
 **Exchange cards:** When you hand one out, ask for one in return.
 
-**After the event:** Follow up with every contact you met. Thank them for the conversation, offer to answer any outstanding questions, and consider adding them to [HubSpot](/handbook/sales/hubspot/).
+**After the event:** Follow up with every contact you met. Thank them for the conversation, offer to answer any outstanding questions, and add them to [HubSpot](/handbook/sales/hubspot/) so the [SDR](/handbook/marketing/sdr/) can follow up.
