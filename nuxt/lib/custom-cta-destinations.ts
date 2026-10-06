@@ -80,6 +80,10 @@ export const CUSTOM_CTA_DESTINATIONS = {
         href: '/blog/2026/09/ishikawa-fishbone-diagram-template/',
         event: 'cta-fishbone-template-download',
     },
+    ppapChecklistTemplate: {
+        href: '/blog/2026/10/ppap-checklist-template/',
+        event: 'cta-ppap-checklist-download',
+    },
 } as const
 
 // Self-check, run when this module loads: a second entry must not reuse a URL another

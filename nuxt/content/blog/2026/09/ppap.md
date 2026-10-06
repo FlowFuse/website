@@ -121,6 +121,9 @@ The PSW is the summary document the customer signs off on, and a separate PSW is
 - A declaration signed by an authorized supplier representative, including the production rate from the significant production run
 - A customer disposition field recording the approval decision
 
+::cta-image{src="/blog/2026/10/images/ppap-checklist-cta.png" alt="Free download: PPAP submission checklist template covering the 18 PPAP elements, production run data, and capability studies" cta="custom" destination-key="ppapChecklistTemplate"}
+::
+
 ## PPAP Approval Status
 
 After the submission is reviewed, the customer records one of three dispositions defined in the [AIAG PPAP manual](https://www.aiag.org/training-and-resources/manuals/details/PPAP-4):
