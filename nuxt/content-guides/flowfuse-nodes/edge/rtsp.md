@@ -17,11 +17,9 @@ The node orchestrates `ffmpeg` to acquire and decode the video stream. By handli
 
 Extracted frames can either be emitted as messages into the flow or written directly to disk as a numbered sequence of PNG files. See [Operating modes](#operating-modes) for details.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The RTSP Video Feed node is not available by default. It is part of the FlowFuse Edge Certified Nodes catalogue, which is part of the **FlowFuse Edge** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
-
-</div></div>
+::
 
 ## Use case
 
@@ -62,11 +60,9 @@ If a prebuilt binary is not available for your platform, the node falls back to 
 ![Palette Manager open on the Install tab with the FlowFuse Edge Certified Nodes collection visible and the RTSP node's Install button highlighted](./images/rtsp/rtsp-edge-catalog.png)
 *Locating and installing the RTSP Video Feed node from the FlowFuse Edge Certified Nodes catalogue.*
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
-
-</div></div>
+::
 
 ## Configuration
 
@@ -103,11 +99,9 @@ The node emits each captured frame as a message at the configured FPS rate.
 
 The output can be wired to any node that accepts an image buffer, including [FlowFuse Dashboard widgets](/platform/dashboard/), [MQTT out nodes](/docs/flowfuse-nodes/mqtt/mqtt-out/), and [FlowFuse AI nodes](/docs/flowfuse-nodes/ai/).
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Every captured frame becomes a message in the flow. A high FPS value increases the number and size of messages being processed. Set FPS no higher than your use case requires.
-
-</div></div>
+::
 
 ### Output disabled
 

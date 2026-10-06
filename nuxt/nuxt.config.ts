@@ -382,6 +382,7 @@ export default defineNuxtConfig({
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
                 { name: 'theme-color', content: '#ffffff' },
+                { name: 'google-site-verification', content: 'KQ654UVVaVEEdt8WzyAWmMFW5CwTW9gNp6LdZOiYiAc' },
             ],
             script: [
                 // Studio's GitHub sign-in comes back to /__nuxt_studio/auth/github with
@@ -494,7 +495,7 @@ export default defineNuxtConfig({
                     '/events/proveit-2026/',
                     '/events/hannover-messe-2026/',
                     '/events/hannover-messe-2025/',
-                    // /industries/ plus the seven entries served by
+                    // /industries/ plus the remaining entries served by
                     // pages/industries/[slug].vue. /industries/automotive/ is its own .vue
                     // file, so Nuxt finds that itself.
                     '/industries/',
@@ -521,6 +522,7 @@ export default defineNuxtConfig({
                     '/industries/industrial-machinery',
                     '/industries/building-materials',
                     '/industries/energy-utilities',
+                    '/industries/aviation-aerospace',
                     ...collectSlugRoutes(join(__dirname, 'content/industries-legacy'), '/industries'),
                     ...collectProductRoutes(join(__dirname, 'content/products')),
                     '/webinars/',
@@ -560,6 +562,7 @@ export default defineNuxtConfig({
                     '/support',
                     '/professional-services',
                     '/dashboard/tags-and-canvas-feedback',
+                    '/trial-feedback',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
                     '/ebooks/ultimate-guide-to-building-applications-with-flowfuse-dashboard-for-node-red/',
                     '/whitepaper/uns-decoupling-data-producers-and-consumers/',
@@ -595,7 +598,7 @@ export default defineNuxtConfig({
         // under it. These collections' frontmatter still writes "meta:", so rewrite the key
         // to "structuredData:" before parsing rather than editing hundreds of content files.
         'content:file:beforeParse' ({ file, collection }) {
-            if (!['blog', 'webinars'].includes(collection.name)) return
+            if (!['blog', 'webinars', 'docs'].includes(collection.name)) return
             file.body = file.body.replace(
                 /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*/,
                 (block) => block.replace(/^meta:[ \t]*\r?$/m, 'structuredData:')

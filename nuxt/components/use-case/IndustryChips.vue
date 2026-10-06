@@ -8,7 +8,6 @@ const INDUSTRY_LABELS: Record<string, string> = {
     'food-beverage': 'Food & Beverage',
     'life-sciences': 'Life Sciences',
     'aviation-aerospace': 'Aviation & Aerospace',
-    'aerospace-components': 'Aerospace Components',
     'renewables': 'Renewables',
     'semiconductors': 'Semiconductors',
     'electronics-appliances': 'Electronics & Appliances',

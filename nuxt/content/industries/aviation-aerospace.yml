@@ -1,0 +1,104 @@
+# Built from the "FlowFuse - Aviation & Aerospace (Merged Industry Page) v2" doc
+# (consolidates the former aerospace-components page into this one), following the
+# automotive/industrial-machinery template section-for-section.
+#
+# Still missing: a hero customer quote. hero.image reuses the same listingImage asset in
+# its place, since Hero.vue only renders one or the other.
+#
+# "Quality Events and Containment" reuses automotive's quality-traceability screenshot
+# rather than a dedicated one, per the doc's own suggestion ("could use the same pic from
+# the Automotive page") - not a placeholder standing in for a missing asset.
+slug: aviation-aerospace
+industryName: "Aviation & Aerospace"
+listingImage: "/images/industries/aerospace/aerospace.jpg"
+listingImageAlt: "Two inspectors in high-visibility vests examining an aircraft fuselage panel with a tablet in a hangar, with a jet engine visible behind them"
+seoMeta:
+  title: "Aerospace Manufacturing Software for Traceability"
+  description: "Aerospace manufacturing software that connects ERP, MES, CMMs, and NDT systems, automates FAI and NCR workflows, and links process data to every part serial."
+hero:
+  eyebrow: "Aviation & Aerospace"
+  eyebrowIcon: "airplane"
+  heading: "Build the <span class='text-red-600'>traceability record</span> your AS9100 audit requires"
+  description: "Link data from ERP, MES, CMMs, NDT systems, and more to every part serial, on-premise or fully air-gapped."
+  image:
+    src: "/images/industries/aerospace/aerospace.jpg"
+    alt: "Two inspectors in high-visibility vests examining an aircraft fuselage panel with a tablet in a hangar, with a jet engine visible behind them"
+metrics:
+  - number: "400+"
+    text: "Aerospace and aviation applications built"
+  - number: "200+"
+    text: "Plants or production lines running FlowFuse"
+  - number: "40+"
+    text: "Industrial protocols and systems supported out of the box"
+roi:
+  heading: "<span class='text-indigo-600'>Put a number</span> on the cost of disconnected aerospace operations"
+  description: "Aerospace teams can quantify the value of recovering engineering time, deploying automation faster, and reducing the impact of production downtime. Use the calculator below to model the opportunity with your own numbers."
+applications:
+  heading: "Applications for Aerospace Manufacturing"
+  description: "See how FlowFuse supports aerospace manufacturers across system connectivity, AI on shop floor data, component compliance, and quality response."
+  items:
+    - title: "Connect Your Existing Aerospace Systems"
+      description: "No rip-and-replace. Connect CMMs, NDT systems, torque tools, curing ovens and autoclaves, machining centers, [PLCs](/landing/plc/), [SCADA](/blog/2026/08/what-is-scada/), [MES](/blog/2025/06/what-is-mes/), and aerospace ERP software using open industrial protocols. Bring shop-floor data collection into one platform and build the low-code applications your aerospace manufacturing operations need."
+      linkText: "See how FlowFuse connects your existing systems"
+      linkHref: "/use-cases/data-integration/"
+      image: "/images/industries/building-materials/connect-mixed-plant-systems.png"
+      imageAlt: "Screenshot of a Node-RED flow in FlowFuse reading Siemens S7, Allen-Bradley, OPC UA, and Modbus devices and publishing the data to plant topics"
+      variant: "indigo"
+    - title: "Bring Your Own AI to the Shop Floor"
+      description: "Use [FlowFuse Expert](/docs/user/expert/), or connect the AI tool your company already approved — ChatGPT, Copilot, Claude, or another MCP-compatible client — directly to that same data, since FlowFuse can act as an MCP server. No policy exception needed to stand up an AI pilot on machine data."
+      linkText: "Read how to connect an industrial AI agent to FlowFuse"
+      linkHref: "/blog/2026/09/industrial-ai-agent/"
+      image: "/images/industries/industrial-machinery/bring-your-ai.png"
+      imageAlt: "Screenshot of an AI chat interface showing supported AI tool logos and a prompt to build an MCP server exposing CNC machine data"
+      variant: "red"
+    - id: "aerospace-component-manufacturing"
+      title: "Aerospace Component Manufacturing"
+      description: "For Tier 2 and Tier 3 suppliers, the job isn't done when the part comes off the machine. FlowFuse assembles [AS9102 first article inspection](/blog/2026/09/first-pass-inspection-fpa/) data as each operation runs, keeps job travelers and digital work instructions on the current revision, checks NADCAP certification and customer approvals before job release, and has production context ready when a supplier corrective action request (SCAR) arrives.\n\nServing general industrial customers rather than aerospace primes?"
+      linkText: "See Industrial Machinery"
+      linkHref: "/industries/industrial-machinery/"
+      image: "/images/industries/aerospace/component-manufacturing.jpg"
+      imageAlt: "Screenshot of a digital work instruction showing a wing rib fixture-alignment step with a reference photo and a completion checklist"
+      variant: "mixed"
+    - title: "Quality Events and Containment"
+      description: "When a non-conformance occurs, the affected part, serial, work order, and process data should already be connected. FlowFuse routes quality events automatically, initiates holds with full part-serial context, and enforces disposition approval gates before release or scrap."
+      linkText: "Read how to build a defect and quality monitoring dashboard"
+      linkHref: "/blog/2026/07/defect-and-quality-monitoring/"
+      image: "/images/industries/automotive/4-quality-traceability.png"
+      imageAlt: "Screenshot of a quality traceability application"
+      variant: "indigo"
+compliance:
+  heading: "Aerospace <span class='text-indigo-600'>Compliance &amp; Standards</span>"
+  subtitle: "The Data Your AS9100 Audit Asks For, Connected to Production"
+  description: "FlowFuse helps ensure the data an auditor or a customer asks for exists, is connected to the part, and is queryable when they ask for it."
+  items:
+    - title: "AS9102 / First Article Inspection"
+      icon: "i-heroicons-clipboard-document-check"
+      text: "Asks for documented verification that a new or changed part meets every engineering requirement. FlowFuse captures the inspection and production data behind Forms 1, 2, and 3 as work happens."
+      linkText: "Learn about how FlowFuse supports First Article Inspection"
+      linkHref: "/blog/2026/09/first-pass-inspection-fpa/"
+    - title: "NCR and SCAR"
+      icon: "i-heroicons-shield-check"
+      text: "Asks for root cause and containment scope. FlowFuse preserves the production context around the event so investigations start with evidence."
+      linkText: "Learn about corrective and preventive action"
+      linkHref: "/blog/2026/09/capa-corrective-preventive-action/"
+    - title: "Engineering Change Notice (ECN)"
+      icon: "i-heroicons-arrow-path"
+      text: "Asks that approved changes reach every affected work order and station. FlowFuse propagates them with acknowledgment."
+      linkText: "Learn about GitOps for manufacturing"
+      linkHref: "/blog/2026/07/gitops-for-manufacturing/"
+faqs:
+  - question: "Can FlowFuse be deployed on-premise in an air-gapped environment?"
+    answer: "Yes. FlowFuse supports fully self-hosted installation inside your own infrastructure, including air-gapped environments with no outbound connectivity. See the [installation documentation](/docs/install/introduction/) and the [Security Statement](/platform/security/)."
+  - question: "Can FlowFuse enforce NADCAP and customer approval status?"
+    answer: "Yes. You can build approval checks into the production workflow that block a job from releasing when a NADCAP or customer approval is missing or expired, and trigger renewals before they lapse. See [Shop Floor Communication](/use-cases/shop-floor-communication/)."
+  - question: "Can FlowFuse link torque, weld, and NDT data to a part serial?"
+    answer: "Yes. Process data from torque tools, weld controllers, ovens, and NDT systems is captured via [OPC UA](/docs/flowfuse-nodes/edge/opcua/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), Atlas Copco Open Protocol, or file-based exports, and linked automatically to the part serial and work order. See [Production Monitoring](/use-cases/production-monitoring/)."
+  - question: "How does FlowFuse fit alongside our existing MES and ERP?"
+    answer: "FlowFuse works alongside your [MES](/use-cases/mes/) and [ERP](/landing/enterprise-integration/) rather than replacing them. It connects to both and lets you build the plant-specific workflows your MES doesn't cover, without a vendor change request. See [MES](/use-cases/mes/) and [IT/OT middleware](/use-cases/it-ot-middleware/)."
+  - question: "What is the difference between aerospace component manufacturing and OEM assembly?"
+    answer: "Component manufacturers make individual precision parts; OEMs own the build record for the complete assembly. For component suppliers, compliance centers on FAI, travelers, and special process approvals; for OEMs, on process data linkage, NCR containment, and engineering change. See [Aerospace Component Manufacturing](/industries/aviation-aerospace/#aerospace-component-manufacturing)."
+  - question: "Can we deploy the same validated workflow across several plants?"
+    answer: "Yes. Applications are versioned and deployed from a single controlled platform across cells, programs, and sites. See [Remote Device Management](/use-cases/remote-device-management/)."
+closingCta:
+  heading: "What aerospace production challenges can we help with?"
+  description: "Every aerospace manufacturer has different compliance, traceability, and operational challenges. FlowFuse lets you build the manufacturing applications your teams need using the systems already running your operation — from individual components to complete assemblies."

@@ -48,7 +48,7 @@ cta:
 tldr: "This tutorial builds a defect tracking and quality monitoring dashboard in FlowFuse. Defects live in one table, a single query computes every KPI in one pass, and the dashboard renders stat cards, a Pareto chart, trend and breakdown charts, an SLA table, and a status funnel, all filtering live by line, shift, and date range."
 ---
 
-Every production line produces defects. On their own they're easy to wave off, a bit of scrap here, an hour of rework there. But add them up and the cost is real, and that's the part most teams never see. The defects are sitting in a spreadsheet nobody sorts, or locked inside a quality system you can't get a live view out of. So the recurring problems stay invisible until someone runs a report, and by then the bad batch has already shipped.
+Every production line produces [defects](/blog/2026/10/manufacturing-defects/). On their own they're easy to wave off, a bit of scrap here, an hour of rework there. But add them up and the cost is real, and that's the part most teams never see. The defects are sitting in a spreadsheet nobody sorts, or locked inside a quality system you can't get a live view out of. So the recurring problems stay invisible until someone runs a report, and by then the bad batch has already shipped.
 
 <!--more-->
 

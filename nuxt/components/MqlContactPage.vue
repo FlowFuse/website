@@ -2,7 +2,7 @@
 // Ported from src/_includes/layouts/mql-contact.njk. The form/meeting embed
 // is passed via the default slot since the two consumers (contact-us,
 // book-demo) use different HubSpot embeds (form vs meetings calendar).
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
     eyebrow?: string
     title: string
     subtitle?: string
@@ -10,6 +10,7 @@ withDefaults(defineProps<{
     description: string
     highlights?: string[]
     socialProofTitle?: string | false
+    socialProofPlacement?: 'bottom' | 'left'
     otherChannels?: Array<{
         title: string
         description: string
@@ -23,13 +24,16 @@ withDefaults(defineProps<{
     subtitleIcon: undefined,
     highlights: undefined,
     socialProofTitle: undefined,
+    socialProofPlacement: 'bottom',
     otherChannels: undefined,
 })
+
+const socialProofLeft = computed(() => props.socialProofPlacement === 'left' && !props.otherChannels?.length)
 </script>
 
 <template>
   <div class="page container m-auto max-w-5xl px-6 pb-16 pt-16">
-    <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-x-12">
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-x-12" :class="{ 'md:grid-rows-[auto_1fr]': socialProofLeft }">
       <div class="order-1 text-center md:text-left md:col-start-1 md:row-start-1 min-w-0">
         <p v-if="eyebrow" class="text-indigo-500 mb-3 text-sm font-semibold uppercase">
           {{ eyebrow }}
@@ -76,7 +80,10 @@ withDefaults(defineProps<{
         </div>
       </div>
 
-      <div class="order-3 md:col-start-1 md:col-span-2 md:row-start-3 min-w-0 border-t border-gray-200 pt-6">
+      <div
+        class="order-3 min-w-0 border-t border-gray-200 pt-6"
+        :class="socialProofLeft ? 'md:col-start-1 md:row-start-2 md:self-start' : 'md:col-start-1 md:col-span-2 md:row-start-3'"
+      >
         <SocialProof :eyebrow="socialProofTitle" />
       </div>
     </div>

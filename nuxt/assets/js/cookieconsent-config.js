@@ -79,9 +79,6 @@ function applyAnalyticsConsent (options) {
     syncHubSpotConsent(accepted);
 
     if (accepted) {
-        if (typeof window._ffLoadMeetings === 'function') {
-            window._ffLoadMeetings();
-        }
         window._ffLoadChat = true;
         if (window.HubSpotConversations) {
             window.HubSpotConversations.widget.load();

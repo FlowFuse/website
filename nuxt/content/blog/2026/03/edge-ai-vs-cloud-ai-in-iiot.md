@@ -49,7 +49,7 @@ Think about what happens in the seconds after a sensor detects something abnorma
 
 This is the environment edge AI was built for. Manufacturing lines running at speed, assets in remote locations, facilities where network connectivity is inconsistent or restricted. In these situations, the model needs to live close to the source, processing data as it arrives and producing a result before the next event occurs.
 
-Quality inspection is one of the clearest examples. A vision system identifying surface defects, dimensional errors, or assembly faults on a fast-moving line has a window measured in milliseconds. The same logic applies to condition monitoring on rotating equipment, anomaly detection on process instrumentation, and real-time control adjustments based on live sensor feeds.
+Quality inspection is one of the clearest examples. A vision system identifying [surface defects, dimensional errors, or assembly faults](/blog/2026/10/manufacturing-defects/) on a fast-moving line has a window measured in milliseconds. The same logic applies to condition monitoring on rotating equipment, anomaly detection on process instrumentation, and real-time control adjustments based on live sensor feeds.
 
 Edge AI also matters where data cannot easily leave the facility. Regulatory requirements, network constraints, or simple operational practicality all create situations where keeping data local is not optional. Running the model at the edge removes the dependency entirely.
 

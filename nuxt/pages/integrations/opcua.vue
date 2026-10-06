@@ -355,7 +355,7 @@ function toggleFaq (i: number) {
             FlowFuse connects to OPC UA through a <strong>FlowFuse Certified Node</strong> built on <strong>node-opcua</strong> and maintained by <strong>Sterfive</strong>, the team behind that open-source stack. Certified Nodes are vetted for quality, security, and ongoing support, unlike community packages, which can go unmaintained without warning.
           </p>
           <p>
-            One node handles both directions: connect to third-party OPC UA servers as a client, or host your own server on self-hosted FlowFuse (not available on FlowFuse Cloud). Both sides share a single certificate store, so a trust decision made for one applies to the other. The node ships through the FlowFuse Edge Certified Nodes catalogue, <a href="/contact-us/" class="text-indigo-600 hover:underline">contact us</a> to enable it for your instance.
+            One node handles both directions: connect to third-party OPC UA servers as a client, or host your own server on self-hosted FlowFuse (not available on FlowFuse Cloud). Both sides share a single certificate store, so a trust decision made for one applies to the other. The node ships through the FlowFuse Edge Certified Nodes catalogue, <CtaLink destination="contactUs" position="mid-page" class="text-indigo-600 hover:underline">contact us</CtaLink> to enable it for your instance.
           </p>
         </div>
         <div class="mt-8">

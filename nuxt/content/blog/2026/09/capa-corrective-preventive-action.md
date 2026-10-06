@@ -29,7 +29,7 @@ Quality problems cost time and money, and quality teams need a structured way to
 
 <!--more-->
 
-It's a core part of quality management in standards such as [ISO 9001](https://www.iso.org/standard/62085.html) and [ISO 13485](https://www.iso.org/standard/59752.html), but determining whether an action actually worked can be difficult when teams rely on manually updated records. Connecting shop-floor data to quality workflows, with platforms like [FlowFuse](/), can give teams objective production data to support investigations and effectiveness checks.
+It's a core part of quality management in standards such as [ISO 9001](https://www.iso.org/standard/62085.html) and [ISO 13485](https://www.iso.org/standard/59752.html), and in [automotive quality control](/blog/2026/10/automotive-quality-control/) under IATF 16949, but determining whether an action actually worked can be difficult when teams rely on manually updated records. Connecting shop-floor data to quality workflows, with platforms like [FlowFuse](/), can give teams objective production data to support investigations and effectiveness checks.
 
 This article explains the difference between corrective and preventive action, how each process works, where CAPA systems break down, and how [FlowFuse supports CAPA](#how-flowfuse-supports-capa) with connected production data.
 

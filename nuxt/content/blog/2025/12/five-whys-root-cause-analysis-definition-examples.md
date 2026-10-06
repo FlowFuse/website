@@ -73,7 +73,7 @@ Our [5 Whys template](/blog/2026/09/five-whys-template/) provides a ready-made s
 
 ## When to Use the 5 Whys (and When Not To)
 
-The 5 Whys works best when a problem has a relatively straightforward causal chain. Common applications include equipment failures, quality defects, process bottlenecks, safety incidents, and customer complaints.
+The 5 Whys works best when a problem has a relatively straightforward causal chain. Common applications include equipment failures, [quality defects](/blog/2026/10/manufacturing-defects/), process bottlenecks, safety incidents, and customer complaints.
 
 It is less suitable when a problem has several independent or interacting causes. A major product recall involving design, materials, manufacturing, and distribution may require methods such as a [fishbone diagram](/blog/2026/07/ishikawa-fishbone-diagram/) or fault tree analysis to examine multiple pathways. Our [5 Whys vs. fishbone diagram](/blog/2026/09/5-whys-vs-fishbone-diagram/) guide covers how to choose between the two and how to combine them.
 

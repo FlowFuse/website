@@ -55,7 +55,7 @@ The goal is an answer that is **objective and traceable to evidence** (a log, a 
 
 Consider a line that produced 40 rejected units during a single shift.
 
-The team fills in the problem statement with the exact count, shift, and defect type rather than "quality issue on Line 3." Each why is answered with something checked on the floor, not a guess, until the chain reaches a worn sensor that was past its replacement interval. The corrective action gets an owner and a due date, and a follow-up entry on the template confirms the replacement held during the next production run.
+The team fills in the problem statement with the exact count, shift, and [defect type](/blog/2026/10/manufacturing-defects/) rather than "quality issue on Line 3." Each why is answered with something checked on the floor, not a guess, until the chain reaches a worn sensor that was past its replacement interval. The corrective action gets an owner and a due date, and a follow-up entry on the template confirms the replacement held during the next production run.
 
 The template makes this process repeatable across shifts and lines without each team reinventing the format.
 

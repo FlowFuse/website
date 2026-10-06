@@ -48,7 +48,7 @@ The **layers** are different levels of management. A supervisor may check a proc
 
 The layers are not different stages of production. They are different levels of oversight.
 
-LPAs are widely used in [automotive manufacturing](/industries/automotive/) and other industries where consistent process control is important. They complement formal process and product audits rather than replacing them.
+LPAs are widely used in [automotive manufacturing](/industries/automotive/) and other industries where consistent process control is important. They complement formal process and product audits rather than replacing them, as one layer of a wider [automotive quality control](/blog/2026/10/automotive-quality-control/) system.
 
 ## How Do LPA Layers Work?
 
@@ -97,7 +97,7 @@ An LPA can be straightforward when it focuses on the controls that matter most.
 
 ### Identify the Process
 
-Start with a process where regular verification is valuable, such as one with recurring defects, high scrap or rework, customer complaints, or critical process parameters. A [Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/) can help identify where problems are concentrated.
+Start with a process where regular verification is valuable, such as one with [recurring defects](/blog/2026/10/manufacturing-defects/), high scrap or rework, customer complaints, or critical process parameters. A [Pareto chart](/blog/2025/08/pareto-chart-manufacturing-guide/) can help identify where problems are concentrated.
 
 ### Define What to Verify
 

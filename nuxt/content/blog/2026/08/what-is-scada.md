@@ -17,7 +17,7 @@ meta:
     - question: "Is SCADA the same as an operational application?"
       answer: "No. SCADA monitors and controls equipment in real time, while an operational application is custom software built for a specific workflow, often using data pulled from SCADA."
     - question: "What industries use SCADA systems?"
-      answer: "SCADA is common in manufacturing, [energy](/industries/renewables/), water treatment, and utilities, including [automotive](/industries/automotive/), [semiconductors](/industries/semiconductors/), and [aerospace components](/industries/aerospace-components/)."
+      answer: "SCADA is common in manufacturing, [energy](/industries/energy-utilities//), water treatment, and utilities, including [automotive](/industries/automotive/), [semiconductors](/industries/semiconductors/), and [aerospace](/industries/aviation-aerospace/)."
     - question: "Can SCADA data be sent to cloud platforms?"
       answer: "Yes, but it usually requires a middleware layer to translate SCADA data into formats cloud platforms, MES, or ERP systems can use securely."
     - question: "Do all manufacturers need a full SCADA system?"

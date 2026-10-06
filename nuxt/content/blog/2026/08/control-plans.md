@@ -40,7 +40,7 @@ The solution is to connect control plan characteristics to production measuremen
 
 ## What a control plan specifies
 
-A control plan is a structured document that defines what needs to be controlled during production, how it should be measured, how often it should be checked, and what to do when a result is out of specification. It is typically developed as part of [APQP](https://www.aiag.org/training-and-resources/manuals/details/APQP-3) and maintained within an [IATF 16949](https://www.iatfglobaloversight.org/iatf-169492016/) quality system. It is also one of the 18 elements of a [PPAP](/blog/2026/09/ppap/) submission, where it shows the customer how the part will be controlled once production starts.
+A control plan is a structured document that defines what needs to be controlled during production, how it should be measured, how often it should be checked, and what to do when a result is out of specification. It is typically developed as part of [APQP](https://www.aiag.org/training-and-resources/manuals/details/APQP-3) and maintained within an [IATF 16949](https://www.iatfglobaloversight.org/iatf-169492016/) quality system, as one of the core tools of [automotive quality control](/blog/2026/10/automotive-quality-control/). It is also one of the 18 elements of a [PPAP](/blog/2026/09/ppap/) submission, where it shows the customer how the part will be controlled once production starts. Before submission, its step numbers and special characteristics should be [checked against the PFMEA and process flow diagram](/blog/2026/10/ppap-checklist-template/#special-characteristics-and-process-steps).
 
 For each process step, it defines:
 

@@ -23,11 +23,9 @@ Built on [ioredis](https://github.com/luin/ioredis), so anything ioredis support
 - Connections are pooled per config node, one connection is reused across every node pointed at the same server config, unless a node explicitly requests a dedicated (blocking) connection
 - TLS and Redis Cluster support
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 The Redis node is not available by default. It is part of the FlowFuse Hub Certified Nodes catalogue, which is part of the **FlowFuse Hub** offering. Please contact our sales team at [Contact us](/contact-us/) to learn more or to request access.
-
-</div></div>
+::
 
 ## Use case
 
@@ -48,11 +46,9 @@ Connections are pooled per config node, so pointing many nodes at the same serve
 3. Find the **FlowFuse Hub Certified Nodes** collection.
 4. Locate `@flowfuse-certified-nodes/redis` and click **Install**.
 
-<div class="ff-callout ff-callout--note"><p class="ff-callout__title">Note</p><div class="ff-callout__content">
-
+::note
 Newly installed nodes are picked up automatically, no restart needed. Restart is only required when you update a node that's already installed: restart any remote instance or hosted instance running the previous version.
-
-</div></div>
+::
 
 ## Nodes in this package
 

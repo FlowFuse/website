@@ -33,7 +33,7 @@ cta:
   description: "Talk to us about connecting inspection points, escalation criteria, and containment reporting so you can prove your safe launch program held up and exit with confidence."
 ---
 
-*PPAP approval feels like the finish line. For most suppliers, it is the point at which the customer starts watching most closely.* Different OEMs give this period different names. GM calls it GP-12, or early production containment. Ford and others call it safe launch. The requirement is broadly the same: a defined window of additional inspection sitting on top of your normal process controls, starting at first production shipment and ending only when the customer says so.
+*PPAP approval feels like the finish line. For most suppliers, it is the point at which the customer starts watching most closely.* Different OEMs give this period different names. GM calls it GP-12, or early production containment. Ford and others call it safe launch. The requirement is broadly the same: a defined window of additional inspection sitting on top of your [normal process controls](/blog/2026/10/automotive-quality-control/), starting at first production shipment and ending only when the customer says so.
 
 <!--more-->
 
@@ -41,7 +41,7 @@ cta:
 
 A safe launch program is a defined containment period that runs from the first production shipment. It usually follows [PPAP](/blog/2026/09/ppap/) approval, though a supplier operating under interim approval is often required to contain from day one. PPAP proves capability over a significant production run, typically 300 consecutive parts at production rate on production tooling. Safe launch proves the process holds that capability over months, across every shift, every operator, and a full tooling wear cycle. For manufacturers running [automotive manufacturing solutions](/industries/automotive/) across multiple plants, that distinction matters because failure modes at launch rarely match what showed up in validation.
 
-This is why safe launch exists as its own phase. A redundant inspection layer, tighter reaction limits, and faster escalation paths catch issues that a one-time approval cannot. In most programs this means 100% inspection of specified characteristics, carried out separately from the normal in-process checks, not a higher sampling rate. Without them, defects can reach hundreds of vehicles before anyone notices a trend, turning a manageable process shift into a costly field action.
+This is why safe launch exists as its own phase. A redundant inspection layer, tighter reaction limits, and faster escalation paths catch issues that a one-time approval cannot. In most programs this means 100% inspection of specified characteristics, carried out separately from the normal in-process checks, not a higher sampling rate. Without them, [defects](/blog/2026/10/manufacturing-defects/) can reach hundreds of vehicles before anyone notices a trend, turning a manageable process shift into a costly field action.
 
 ::cta-image{src="/blog/2026/08/images/safe-launch-cta-1.png" alt="See your safe launch containment data the way your customer does" cta="demo"}
 ::

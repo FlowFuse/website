@@ -40,7 +40,7 @@ This article covers what PPAP is, its 18 elements, the submission level requirem
 
 PPAP is the [Production Part Approval Process](https://www.aiag.org/training-and-resources/manuals/details/PPAP-4), a structured process that shows a supplier's production process can meet the customer's engineering and quality requirements on each run, not just on a single sample.
 
-The Automotive Industry Action Group publishes PPAP as one of its [Quality Core Tools](https://www.aiag.org/expertise-areas/quality/quality-core-tools), alongside [APQP](https://www.aiag.org/training-and-resources/manuals/details/APQP-3), FMEA, MSA, and [SPC](/blog/2026/08/statistical-process-control/).
+The Automotive Industry Action Group publishes PPAP as one of its [Quality Core Tools](https://www.aiag.org/expertise-areas/quality/quality-core-tools), alongside [APQP](https://www.aiag.org/training-and-resources/manuals/details/APQP-3), FMEA, MSA, and [SPC](/blog/2026/08/statistical-process-control/). Together they form the backbone of [automotive quality control](/blog/2026/10/automotive-quality-control/).
 
 PPAP is most associated with [automotive manufacturing](/industries/automotive/), though other industries use similar part approval processes with different requirements.
 
@@ -120,6 +120,9 @@ The PSW is the summary document the customer signs off on, and a separate PSW is
 - Whether dimensional, material and performance, appearance, and statistical results meet requirements
 - A declaration signed by an authorized supplier representative, including the production rate from the significant production run
 - A customer disposition field recording the approval decision
+
+::cta-image{src="/blog/2026/10/images/ppap-checklist-cta.png" alt="Free download: PPAP submission checklist template covering the 18 PPAP elements, production run data, and capability studies" cta="custom" destination-key="ppapChecklistTemplate"}
+::
 
 ## PPAP Approval Status
 

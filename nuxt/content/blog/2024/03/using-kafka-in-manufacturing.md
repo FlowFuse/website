@@ -68,7 +68,7 @@ As we explore the capabilities of Kafka, we realize that it goes beyond being ju
 
 **1. Manufacturing Operations Optimization:**
 - Real-time Production Monitoring: Kafka is used in manufacturing for continuous monitoring of production lines, equipment status, and inventory levels. This real-time visibility aids in optimizing production efficiency, reducing downtime, and enhancing overall supply chain management.
-- Quality Assurance and Yield Management: Companies utilize Kafka to monitor quality control metrics in real-time, enabling proactive measures to maintain product quality standards, minimize defects, and optimize production yield.
+- Quality Assurance and Yield Management: Companies utilize Kafka to monitor quality control metrics in real-time, enabling proactive measures to maintain product quality standards, minimize [defects](/blog/2026/10/manufacturing-defects/), and optimize production yield.
 
 **2. [Predictive Maintenance](/blog/2025/09/preventive-maintenance-equipment-failure/):** Organizations use Kafka to collect and analyze sensor data from machinery and equipment to predict potential failures. This helps them optimize scheduled maintenance tasks to prevent costly downtime and disruptions
 

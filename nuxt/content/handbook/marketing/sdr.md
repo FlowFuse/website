@@ -47,8 +47,8 @@ month. The per-meeting bonus ramps up exponentially with each additional
 meeting until it reaches the cap $C$ at the $M$-th meeting, after which every
 further meeting is paid at the cap.
 
-For payout timelines and submission requirements, see
-[Processing non-commission Bonuses](/handbook/operations/commission-payment/#processing-non-commission-bonuses).
+The process and tasks for paying out this bonus are described in the Operations
+handbook, under [Processing Bonuses](/handbook/operations/commission-payment/#processing-bonuses).
 
 #### CRM Hygiene
 
@@ -56,6 +56,34 @@ The SDR is responsible for keeping lifecycle stage and lead status current in
 HubSpot based on the outcome of each call. Lifecycle stage will be set to
 `Disqualified` and lead status will be set to `Unqualified` for all contacts
 that have no business relevance.
+
+##### Call Outcomes and Definitions
+
+When you log a call, pick the outcome that best matches what happened. Using the same definitions across the team keeps our reporting accurate.
+
+-Busy: The prospect answered but couldn't talk. They asked you to call back or said something like "I can't talk right now" or "It's a bad time."
+-Connected: The prospect you were trying to reach answered and talked with you. They answered at least basic questions, and you gathered some information.
+-Left Live Message: You left a message with someone other than the prospect.
+-Left Voicemail: You recorded and left a voicemail for the prospect.
+-Meeting Booked: you connected with the prospect, and they booked a meeting with an AE.
+-No Answer: The prospect didn't answer, and you didn't leave a message.
+-wrong Number: The number doesn't belong to the assigned contact.
+
+**Examples**
+
+Left Live Message
+- You call for Paul, Tom answers, and Tom offers to take a message for Paul.
+- A gatekeeper answers, and you leave a message with them about why you're calling.
+
+Wrong Number
+- You call for Paul but reach someone else's direct line.
+- You call for PepsiCo but reach a local bottling plant instead.
+
+Tips
+
+- Connected vs. Meeting Booked: If the prospect booked a meeting with an AE, log it as **Meeting Booked**, even though you also connected.
+- Busy vs. Connected: If the prospect picked up but couldn't talk and you didn't gather any information, log it as **Busy**.
+- Left Live Message vs. Left Voicemail: Use Left Live Message** when you spoke to a real person. Use Left Voicemail when you recorded a message.
 
 ##### SDR Focus Areas
 

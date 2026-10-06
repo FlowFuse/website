@@ -2,12 +2,14 @@
 // Inline image-as-CTA for blog markdown: ::cta-image{...}
 // `cta` is separate from the frontmatter `cta` (only used by BlogPostCta).
 import { useCapture } from '../../composables/useCapture'
-import site from '../../data/site.json'
+import type { CUSTOM_CTA_DESTINATIONS } from '../../lib/custom-cta-destinations'
+import { CTA_IMAGE_DESTINATIONS, ctaImageError, customCtaImageDestination } from '../../lib/cta-image'
 
 const props = defineProps<{
     src: string
     alt: string
-    cta: 'sign-up' | 'demo' | 'contact' | 'pricing'
+    cta: 'sign-up' | 'demo' | 'contact' | 'pricing' | 'custom'
+    destinationKey?: keyof typeof CUSTOM_CTA_DESTINATIONS
     /**
      * What the event's `reference` should say, for a page that is not a blog post.
      *
@@ -22,37 +24,37 @@ const props = defineProps<{
 }>()
 
 const POSITION = 'inline-image'
+const VARIANT = 'image'
 // Same event as BlogPostCta - cta_type distinguishes the destination, same as there.
 const EVENT = 'blog-cta'
 
-const DESTINATIONS: Record<string, { href: string, external: boolean }> = {
-    'sign-up': { href: `${site.appURL}/account/create`, external: false },
-    demo: { href: '/book-demo/', external: true },
-    contact: { href: '/contact-us/', external: true },
-    pricing: { href: '/pricing', external: true },
-}
-
 const destination = computed(() => {
-    const match = DESTINATIONS[props.cta]
-    if (!match) throw new Error(`CtaImage: invalid cta "${props.cta}" - must be one of: ${Object.keys(DESTINATIONS).join(', ')}`)
-    return match
+    const error = ctaImageError(props.cta, props.destinationKey)
+    if (error) throw new Error(`CtaImage: ${error}`)
+    return props.cta === 'custom' ? undefined : CTA_IMAGE_DESTINATIONS[props.cta]
 })
+const custom = computed(() => destination.value ? undefined : customCtaImageDestination(props.destinationKey))
 const capture = useCapture()
 
 // Provided by nuxt/pages/blog/[...slug].vue - avoids repeating the title per instance.
 const postTitle = inject<Ref<string> | undefined>('blogPostTitle', undefined)
 
 function onClick () {
+    if (custom.value) capture(custom.value.event, { position: POSITION, variant: VARIANT })
     capture(EVENT, {
         reference: props.reference || `Blog: ${postTitle?.value || ''}`,
         position: POSITION,
         cta_type: props.cta,
+        ...(custom.value && { destination_key: props.destinationKey }),
     })
 }
 </script>
 
 <template>
-  <a class="mb-4 block" :href="destination.href" @click="onClick">
+  <CtaLink v-if="destination" :destination="destination" :position="POSITION" :variant="VARIANT" class="mb-4 block" @click="onClick">
     <NuxtImg :src="src" :alt="alt" />
-  </a>
+  </CtaLink>
+  <ULink v-else :href="custom?.href" external raw class="mb-4 block" @click="onClick">
+    <NuxtImg :src="src" :alt="alt" />
+  </ULink>
 </template>
