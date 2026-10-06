@@ -129,6 +129,13 @@ const anchor = computed(() => props.id || props.title.toLowerCase().replace(/[^a
     outline: none;
 }
 
+/* The title underlines while its card is hovered or focused, as titles do on the blog and
+   blueprint cards. */
+.ff-docs-section__body :deep(.group:hover > div > p:first-child > a:only-child),
+.ff-docs-section__body :deep(.group > div > p:first-child > a:only-child:focus-visible) {
+    text-decoration: underline;
+}
+
 .ff-docs-section__body :deep(.group > div > p:first-child > a:only-child::after) {
     content: '';
     position: absolute;
@@ -158,6 +165,11 @@ const anchor = computed(() => props.id || props.title.toLowerCase().replace(/[^a
 .ff-docs-section__body :deep(h3 > a) {
     color: inherit;
     text-decoration: none;
+}
+
+.ff-docs-section__body :deep(h3 > a:hover),
+.ff-docs-section__body :deep(h3 > a:focus-visible) {
+    text-decoration: underline;
 }
 
 .ff-docs-section__body :deep(h3 + p) {
@@ -198,8 +210,10 @@ const anchor = computed(() => props.id || props.title.toLowerCase().replace(/[^a
     text-decoration: none;
 }
 
-.ff-docs-section__body :deep(.grid li a:hover) {
+.ff-docs-section__body :deep(.grid li a:hover),
+.ff-docs-section__body :deep(.grid li a:focus-visible) {
     color: #4f46e5;
+    text-decoration: underline;
 }
 
 .ff-docs-section__body :deep(.grid li a .iconify) {

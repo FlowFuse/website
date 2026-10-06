@@ -84,6 +84,13 @@ withDefaults(defineProps<{
     outline: none;
 }
 
+/* The label underlines while its tile is hovered or focused, as titles do on the blog and
+   blueprint cards. */
+.ff-docs-tiles :deep(li:hover a),
+.ff-docs-tiles :deep(li a:focus-visible) {
+    text-decoration: underline;
+}
+
 /* The link covers its whole tile. */
 .ff-docs-tiles :deep(li a::after) {
     content: '';
