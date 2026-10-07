@@ -2,6 +2,7 @@
 // Shared with the badge lookups, so "has a row here" and "may badge elsewhere" cannot drift.
 // @ts-ignore untyped module
 import { onPricing } from '../../lib/feature-catalog.mjs'
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const { data: plans } = await useAsyncData('plans', () => queryCollection('plans').order('order', 'ASC').all())
 const { data: featureCatalog } = await useAsyncData('featureCatalog', () => queryCollection('featureCatalog').first())
@@ -12,11 +13,6 @@ const tableTiers = computed(() => (plans.value ?? []).map(p => ({
   title: p.title,
   highlight: p.highlight,
   bestFitFor: p.bestFitFor,
-})))
-
-const faqAccordionItems = computed(() => (faq.value?.items ?? []).map(item => ({
-  label: item.question,
-  content: item.answer,
 })))
 
 const comparisonSections = computed(() => (featureCatalog.value?.sections ?? [])
@@ -42,10 +38,7 @@ useSeoMeta({
 
 useSchemaOrg([
   defineWebPage({ '@type': 'FAQPage' }),
-  ...(faq.value?.items ?? []).map(item => defineQuestion({
-    question: item.question,
-    answer: item.answer,
-  })),
+  ...(faq.value?.items ?? []).map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 
@@ -168,18 +161,7 @@ useSchemaOrg([
     <div class="max-w-5xl mx-auto pb-16 px-4">
         <div v-if="faq" class="mt-20 mx-auto">
         <h2 class="text-center mb-10" v-html="faq.title" />
-        <UAccordion
-            :items="faqAccordionItems"
-            :ui="{
-                trigger: 'text-lg font-medium text-gray-900 py-4 hover:text-indigo-600 transition-colors duration-200',
-                body: 'text-base text-gray-700 pb-4',
-                label: 'text-start break-words',
-            }"
-        >
-            <template #body="{ item }">
-            <div class="prose max-w-none" v-html="item.content" />
-            </template>
-        </UAccordion>
+        <Faq :faq="faq.items" />
         </div>
     </div>
   </div>

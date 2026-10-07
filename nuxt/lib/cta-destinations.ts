@@ -78,3 +78,9 @@ export function ctaQuery (href: string): CtaQuery {
     }
     return { ...query }
 }
+
+// What ProseA and InlineMarkdown pass to <CtaLink> for a link to one of the five destinations.
+export function ctaLink (href?: string) {
+    const destination = ctaDestinationKey(href)
+    return destination ? { destination, query: ctaQuery(href!) } : undefined
+}

@@ -2,6 +2,8 @@
 // The shared page body for every industry page built on the automotive.vue template.
 // A thin pages/industries/<slug>.vue queries its own `industries` collection entry and
 // renders it through this one component, so the band markup lives in exactly one place.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
+
 const props = defineProps<{
     page: {
         slug: string
@@ -44,7 +46,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...props.page.faqs.map(item => defineQuestion(item)),
+    ...props.page.faqs.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 
@@ -79,7 +81,7 @@ useSchemaOrg([
     <div class="w-full px-6 pt-20 pb-10">
       <div class="max-w-screen-lg mx-auto">
         <h2 class="mb-1 text-center md:text-left">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
-        <BlogFaq :faq="page.faqs" />
+        <Faq :faq="page.faqs" />
       </div>
     </div>
 

@@ -14,9 +14,10 @@
 //  - components/device-agent-install-commands.njk becomes <DeviceAgentInstallCommands>.
 //  - The customer-stories grid read collections.stories sorted by date; it queries the
 //    `stories` collection for the same three.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg. Two answers carried <ol>/<ul> lists and
-//    several carried inline links, all under `| safe`; they are markdown now, which
-//    BlogFaq escapes around. Its renderer gained list support for this.
+//  - faq.njk becomes <Faq> plus useSchemaOrg. Two answers carried <ol>/<ul> lists and
+//    several carried inline links, all under `| safe`; they are markdown now, since Faq
+//    renders answer text as text, not HTML. Its parser gained list support for this.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const route = useRoute()
 const capture = useCapture()
@@ -100,7 +101,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 
@@ -343,7 +344,7 @@ useSchemaOrg([
           <h2 class="max-md:text-center -mb-12">
               Frequently Asked <span class="text-indigo-600">Questions</span>
           </h2>
-          <BlogFaq :faq="FAQ" variant="page" />
+          <Faq :faq="FAQ" variant="page" />
       </div>
   </div>
 </template>
