@@ -19,8 +19,11 @@ for the full role definition.
 ## Bonus Structure
 
 The SDR is compensated under a monthly bonus plan tied to a single goal:
-`First Meetings`, defined as **meetings attended and qualified**. Note that
-specific targets are subject to review at the start of each month.
+`First Meetings`, defined as **meetings attended and qualified**. A meeting
+counts as qualified when the
+[qualifying questions](/handbook/sales/meetings/discovery/#qualifying-questions)
+can be answered. Note that specific targets are subject to review at the start
+of each month.
 
 Each qualifying First Meeting in the month earns a per-meeting bonus that
 increases with the SDR's running meeting count for that month, up to a cap.
@@ -47,8 +50,8 @@ month. The per-meeting bonus ramps up exponentially with each additional
 meeting until it reaches the cap $C$ at the $M$-th meeting, after which every
 further meeting is paid at the cap.
 
-For payout timelines and submission requirements, see
-[Processing non-commission Bonuses](/handbook/operations/commission-payment/#processing-non-commission-bonuses).
+The process and tasks for paying out this bonus are described in the Operations
+handbook, under [Processing Bonuses](/handbook/operations/commission-payment/#processing-bonuses).
 
 #### CRM Hygiene
 
@@ -91,7 +94,7 @@ Tips
 
 - Webinar follow-up
 - Free trials that didn't convert
-- Tradeshow follow-up
+- Tradeshow and event follow-up (see [Events](/handbook/marketing/events/#after-the-event))
 - Case study downloads
 
 The SDR does not respond to "Book a Demo" form submissions — these are routed
