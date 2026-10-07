@@ -1,6 +1,8 @@
 <script setup lang="ts">
 // "04 Why off-the-shelf doesn't work" from layouts/use-case.njk.
 defineProps<{
+    // Its position among the numbered sections, matching the section nav ("01").
+    number: string
     block: {
         heading: string
         intro?: string
@@ -12,7 +14,7 @@ defineProps<{
 <template>
   <div id="competition" class="w-full py-16 sm:py-24 px-6 bg-white scroll-mt-16">
     <div class="max-w-screen-lg mx-auto">
-      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">04 · Why off-the-shelf doesn't work</p>
+      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ number }} · Why off-the-shelf doesn't work</p>
       <h2 class="max-md:text-center">{{ block.heading }}</h2>
       <p v-if="block.intro" class="mt-4 max-w-3xl text-gray-600">{{ block.intro }}</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">

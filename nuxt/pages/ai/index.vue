@@ -9,7 +9,7 @@ import { getAllBlogPosts } from '~/utils/sharedContent'
 //  - The copy button becomes <FfCommand>, and the whole agent picker becomes
 //    <AgentSetupTabs>, both shared with the changelog and the docs page instead
 //    of markup plus a copy helper pasted per page.
-//  - jsonld.njk's meta.faq becomes useSchemaOrg, which escapes properly. The 11ty
+//  - jsonld.njk's meta.faq becomes <FaqSection>'s FAQPage data, which escapes properly. The 11ty
 //    partial interpolated answers straight into a JSON string.
 //  - Sign-up buttons become <CtaSignUp>, so the copy is the site's fixed "Try it
 //    out" and the event is the unified cta-sign-up. The .njk had bespoke labels
@@ -47,11 +47,6 @@ const FAQ = [
         answer: 'Every AI action runs through the same permissions and role-based access control that govern your teams, enforced on every call, so a read-only grant is refused whatever the agent tries. No agent can delete an instance, an application, a snapshot or a team, deploying stays with a person, and every action is logged and attributed in the audit log.',
     },
 ]
-
-useSchemaOrg([
-    defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
-])
 
 // The Cloud address. Self-hosted platforms answer on their own domain, so the block
 // takes one (host-swap) rather than telling the reader in prose to edit what they
@@ -425,15 +420,6 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <!-- FAQ: the questions are also emitted as FAQPage structured data by
-         useSchemaOrg above, off the same array. -->
-    <div class="w-full px-6 py-12 sm:py-16 bg-indigo-50/50">
-      <div class="max-w-screen-lg mx-auto">
-        <h2 class="mb-8">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
-        <!-- The shared accordion, same as the blog and customer stories. It carries
-             the #faqs anchor itself, so the wrapper above no longer sets one. -->
-        <BlogFaq :faq="FAQ" />
-      </div>
-    </div>
+    <FaqSection :items="FAQ" background="indigo" />
   </div>
 </template>

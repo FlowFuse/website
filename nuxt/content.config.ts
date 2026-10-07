@@ -15,6 +15,28 @@ const ctaButton = z.object({
     onclick: z.string().optional(),
 })
 
+// Shared by the use-case section schemas below. A button is one of the fixed CTA
+// destinations (see .claude/CLAUDE.md, "Call-to-Action components"), or a plain in-page
+// link such as "#whitepapers", which is navigation rather than a tracked CTA.
+const useCaseCta = z.union([
+    z.object({
+        cta: z.enum(['book-demo', 'contact-us', 'sign-up', 'pricing']),
+        variant: z.enum(['primary', 'primary-outlined', 'highlight', 'highlight-outlined', 'ghost']).optional(),
+        color: z.enum(['primary', 'highlight', 'white']).optional(),
+        icon: z.string().optional(),
+    }),
+    z.object({ label: z.string(), href: z.string() }),
+])
+
+const useCaseImage = z.object({
+    src: z.string(),
+    alt: z.string(),
+    // The widest the image renders, in px. Omitted, it fills its column.
+    width: z.number().optional(),
+    // A rounded white frame with a shadow, for screenshots.
+    framed: z.boolean().optional(),
+})
+
 export default defineContentConfig({
     collections: {
         // Rendered via pages/[...slug].vue, which sets `robots: noindex` on every page —
@@ -439,77 +461,214 @@ export default defineContentConfig({
                 form: z.object({ title: z.string() }).optional(),
             })
         }),
-        // The two operational use-cases (the ones carrying `values:`) were pure 11ty
-        // frontmatter with no template body - layouts/use-case.njk rendered a fixed set of
-        // optional blocks from it. That is a data collection, rendered by
-        // pages/use-cases/[slug].vue through the components in components/use-case/.
-        // The six architecture pages had real markup bodies and stay hand-written Vue
-        // pages; they appear on the listing via useCaseArchitectures in that page.
+        // Every /use-cases/<slug>/ page, rendered by pages/use-cases/[slug].vue. A page is
+        // its listing metadata plus an ordered `sections` list; each entry's `type` picks
+        // one component in components/use-case/, so a page is laid out entirely here and
+        // no use case has a .vue file of its own. Copy fields are HTML, rendered with v-html
+        // (accent spans, links, <strong>, <br>), the same as content/industries/*.yml. FAQ
+        // answers are the exception: <BlogFaq> renders those as markdown.
         useCases: defineCollection({
             type: 'data',
             source: 'use-cases/*.yml',
             schema: z.object({
                 slug: z.string(),
                 title: z.string(),
+                // The one-line summary on the /use-cases/ and industry-page cards, and the
+                // centered hero's text when it sets none of its own.
                 problem: z.string(),
                 // SEO only. Named seoMeta rather than meta because `meta` is reserved by
                 // @nuxt/content and a declared `meta` field is silently replaced.
                 seoMeta: z.object({
                     title: z.string().optional(),
                     description: z.string().optional(),
+                    keywords: z.string().optional(),
+                    image: z.string().optional(),
                 }).optional(),
-                // Industry lens slugs, rendered as the context band near the page foot.
+                // Industry lens slugs: the industry pages' "Use cases in X" band reads these,
+                // and an `industries` section renders them as chips.
                 industries: z.array(z.string()).optional(),
                 // Value-pillar slugs. Presence of this is what puts a page under
                 // "Operational use cases" rather than "By architecture" on the listing.
                 values: z.array(z.string()).optional(),
                 architecture: z.string().optional(),
-                customerPain: z.object({
-                    heading: z.string(),
-                    intro: z.array(z.string()).optional(),
-                    cards: z.array(z.object({
-                        icon: z.string().optional(),
-                        title: z.string(),
-                        detail: z.string(),
-                    })).optional(),
-                }).optional(),
-                outcomeFirst: z.object({
-                    heading: z.string(),
-                    intro: z.string().optional(),
-                    dimensions: z.array(z.object({
-                        label: z.string(),
-                        title: z.string(),
-                        detail: z.string(),
-                    })).optional(),
-                }).optional(),
-                whyItMatters: z.object({
-                    heading: z.string(),
-                    intro: z.string().optional(),
-                    points: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
-                }).optional(),
-                competition: z.object({
-                    heading: z.string(),
-                    intro: z.string().optional(),
-                    traps: z.array(z.object({
-                        label: z.string(),
-                        title: z.string(),
-                        detail: z.string(),
-                    })).optional(),
-                }).optional(),
-                comparison: z.object({
-                    without: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
-                    with: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
-                }).optional(),
-                aiBuildLayer: z.object({
-                    heading: z.string().optional(),
-                    intro: z.string().optional(),
-                    steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
-                    note: z.string().optional(),
-                }).optional(),
-                closingCta: z.object({
-                    heading: z.string().optional(),
-                    description: z.string().optional(),
-                }).optional(),
+                sections: z.array(z.discriminatedUnion('type', [
+                    z.object({
+                        type: z.literal('hero'),
+                        // centered: the operational pages' band. split: copy left, art
+                        // right. pictogram: centred title over a pictogram and text.
+                        // feature: copy left, a framed photo right, an optional quote below.
+                        layout: z.enum(['centered', 'split', 'pictogram', 'feature']),
+                        eyebrow: z.string().optional(),
+                        heading: z.string().optional(),
+                        subtitle: z.string().optional(),
+                        text: z.string().optional(),
+                        image: useCaseImage.optional(),
+                        ctas: z.array(useCaseCta).optional(),
+                        quote: z.object({
+                            text: z.string(),
+                            author: z.string(),
+                            role: z.string().optional(),
+                            avatar: z.string().optional(),
+                        }).optional(),
+                    }),
+                    // The sticky in-page nav, listing every numbered section below it.
+                    z.object({ type: z.literal('sectionNav') }),
+                    z.object({
+                        type: z.literal('pain'),
+                        heading: z.string(),
+                        intro: z.array(z.string()).optional(),
+                        cards: z.array(z.object({
+                            icon: z.string().optional(),
+                            title: z.string(),
+                            detail: z.string(),
+                        })).optional(),
+                    }),
+                    z.object({
+                        type: z.literal('outcomes'),
+                        heading: z.string(),
+                        intro: z.string().optional(),
+                        dimensions: z.array(z.object({
+                            label: z.string(),
+                            title: z.string(),
+                            detail: z.string(),
+                        })).optional(),
+                    }),
+                    z.object({
+                        type: z.literal('whyItMatters'),
+                        heading: z.string(),
+                        intro: z.string().optional(),
+                        points: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    }),
+                    z.object({
+                        type: z.literal('competition'),
+                        heading: z.string(),
+                        intro: z.string().optional(),
+                        traps: z.array(z.object({
+                            label: z.string(),
+                            title: z.string(),
+                            detail: z.string(),
+                        })).optional(),
+                    }),
+                    z.object({
+                        type: z.literal('comparison'),
+                        without: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                        with: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    }),
+                    z.object({
+                        type: z.literal('aiBuildLayer'),
+                        heading: z.string().optional(),
+                        intro: z.string().optional(),
+                        steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                        note: z.string().optional(),
+                    }),
+                    // Headings, paragraphs and images in reading order. `callout` sets the
+                    // heading and the first paragraph side by side in a bordered card.
+                    z.object({
+                        type: z.literal('prose'),
+                        heading: z.string().optional(),
+                        callout: z.boolean().optional(),
+                        body: z.array(z.union([
+                            z.string(),
+                            z.object({ image: useCaseImage }),
+                        ])),
+                    }),
+                    // A grid of items, each optionally led by an icon or pictogram.
+                    z.object({
+                        type: z.literal('features'),
+                        // grid: plain items. cards: items on translucent cards. panel: the
+                        // whole list inside one bordered indigo panel. alternating: one
+                        // item per row, pictogram flipping sides.
+                        layout: z.enum(['grid', 'cards', 'panel', 'alternating']).optional(),
+                        columns: z.number().int().min(1).max(3).optional(),
+                        background: z.enum(['white', 'gray', 'indigo', 'gradient']).optional(),
+                        centered: z.boolean().optional(),
+                        eyebrow: z.string().optional(),
+                        heading: z.string().optional(),
+                        intro: z.string().optional(),
+                        // A heading placed in the grid's first cell, as its own tile.
+                        lead: z.string().optional(),
+                        image: useCaseImage.optional(),
+                        items: z.array(z.object({
+                            // An Iconify name (i-heroicons-*, i-lucide-*) ...
+                            icon: z.string().optional(),
+                            // ... or one of FlowFuse's own glyphs (nuxt/utils/navIcons.ts) ...
+                            navIcon: z.string().optional(),
+                            solid: z.boolean().optional(),
+                            // ... or a pictogram image.
+                            image: z.string().optional(),
+                            title: z.string().optional(),
+                            text: z.union([z.string(), z.array(z.string())]).optional(),
+                        })),
+                        note: z.string().optional(),
+                    }),
+                    // Customer metric cards, each linking to its case study.
+                    z.object({
+                        type: z.literal('results'),
+                        eyebrow: z.string().optional(),
+                        heading: z.string(),
+                        items: z.array(z.object({
+                            before: z.string().optional(),
+                            after: z.string(),
+                            unit: z.string(),
+                            company: z.string(),
+                            text: z.string(),
+                            // The hover overlay; `linkName` is the part of it shown in indigo.
+                            linkText: z.string(),
+                            linkName: z.string(),
+                            href: z.string(),
+                        })),
+                    }),
+                    // A numbered vertical step list beside a sticky heading, rendered by <StepList>.
+                    z.object({
+                        type: z.literal('steps'),
+                        eyebrow: z.string().optional(),
+                        heading: z.string(),
+                        intro: z.string().optional(),
+                        link: z.object({ label: z.string(), href: z.string() }).optional(),
+                        steps: z.array(z.object({
+                            icon: z.string(),
+                            title: z.string(),
+                            text: z.string(),
+                        })),
+                    }),
+                    // Rendered by <FaqSection>, which also emits the FAQPage structured data.
+                    z.object({
+                        type: z.literal('faq'),
+                        heading: z.string().optional(),
+                        items: z.array(z.object({ question: z.string(), answer: z.string() })),
+                    }),
+                    // Thumbnail link lists (articles, case studies, whitepapers) in columns.
+                    z.object({
+                        type: z.literal('resources'),
+                        heading: z.string().optional(),
+                        columns: z.array(z.object({
+                            heading: z.string().optional(),
+                            // An anchor a hero link can point at, e.g. #whitepapers.
+                            id: z.string().optional(),
+                            items: z.array(z.object({
+                                title: z.string(),
+                                // A bold run before the title, e.g. "Free whitepaper:".
+                                lead: z.string().optional(),
+                                href: z.string(),
+                                image: z.string(),
+                                alt: z.string(),
+                            })),
+                        })),
+                    }),
+                    // FlowFuse Cloud / self-managed / edge cards. Product copy, not page copy,
+                    // so the component carries it.
+                    z.object({ type: z.literal('deploymentOptions') }),
+                    // Chips for the page's own `industries` list.
+                    z.object({ type: z.literal('industries') }),
+                    z.object({
+                        type: z.literal('cta'),
+                        // card: the light blue card. banner: the dark get-started gradient.
+                        layout: z.enum(['card', 'banner']).optional(),
+                        heading: z.string().optional(),
+                        description: z.string().optional(),
+                        ctas: z.array(useCaseCta).optional(),
+                    }),
+                ])),
             })
         }),
         // The template lifted from automotive.vue. Every industry page built on it (starting

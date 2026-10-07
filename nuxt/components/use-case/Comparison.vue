@@ -1,6 +1,8 @@
 <script setup lang="ts">
 // "05 With / without FlowFuse" from layouts/use-case.njk.
 defineProps<{
+    // Its position among the numbered sections, matching the section nav ("01").
+    number: string
     block: {
         without?: Array<{ title: string, detail: string }>
         with?: Array<{ title: string, detail: string }>
@@ -11,7 +13,7 @@ defineProps<{
 <template>
   <div id="with-without" class="w-full py-16 sm:py-24 px-6 comparison-section-bg scroll-mt-16">
     <div class="max-w-screen-lg mx-auto">
-      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">05 · With / without FlowFuse</p>
+      <p class="uppercase text-xs font-semibold text-indigo-400 mb-2">{{ number }} · With / without FlowFuse</p>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
         <div>
           <h3 class="text-gray-500 m-0">Without FlowFuse</h3>

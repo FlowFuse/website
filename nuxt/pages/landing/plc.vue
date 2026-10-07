@@ -6,7 +6,7 @@
 //  - The protocol/use-case glyphs are <UIcon>. They were {% include %}d raw with no
 //    wrapper, filling the wrapper box through the svg's intrinsic ratio; a masked <span>
 //    has none, so each one carries the wrapper's size itself.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg. One answer carried an inline <a> under
+//  - faq.njk becomes <FaqSection>, which also emits the FAQPage data. One answer carried an inline <a> under
 //    `| safe`; it is a markdown link now, which BlogFaq renders after escaping.
 //  - The CTA macros become their components.
 //  - This page has both `metaTitle` and `meta.title`; base.njk's precedence put
@@ -132,55 +132,55 @@ const RESOURCES = [
         title: "How to Connect Any PLC to MQTT in Under an Hour",
         image: "/blog/2025/10/images/plc-to-mqtt.png",
         alt: "PLC to MQTT integration diagram",
-        url: "/blog/2025/10/plc-to-mqtt-using-flowfuse/"
+        href: "/blog/2025/10/plc-to-mqtt-using-flowfuse/"
     },
     {
         title: "OPC UA Tutorial: Connect and Exchange Data with Industrial Equipment",
         image: "/blog/2025/07/images/opcua-tutorial.png",
         alt: "OPC UA tutorial illustration",
-        url: "/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/"
+        href: "/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/"
     },
     {
         title: "How to Log PLC Data to CSV Files",
         image: "/blog/2025/10/images/log-plc-data-to-csv.png",
         alt: "PLC data logging illustration",
-        url: "/blog/2025/10/how-to-log-plc-data-csv-files/"
+        href: "/blog/2025/10/how-to-log-plc-data-csv-files/"
     },
     {
         title: "Getting Started: Integrating Siemens S7 PLCs with Node-RED",
         image: "/blog/2025/01/images/s7-with-node-red.png",
         alt: "Siemens S7 PLC integration guide",
-        url: "/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/"
+        href: "/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/"
     },
     {
         title: "EtherNet/IP Integration: Communicating with Allen-Bradley PLCs",
         image: "/blog/2025/10/images/allen-bradly-plc.png",
         alt: "Allen-Bradley PLC with EtherNet/IP",
-        url: "/blog/2025/10/using-ethernet-ip-with-flowfuse/"
+        href: "/blog/2025/10/using-ethernet-ip-with-flowfuse/"
     },
     {
         title: "How to Connect to Beckhoff TwinCAT PLC Using ADS",
         image: "/blog/2026/03/images/backoff-twincat.png",
         alt: "Beckhoff TwinCAT ADS integration",
-        url: "/blog/2026/03/how-to-connect-to-twincat-using-ads/"
+        href: "/blog/2026/03/how-to-connect-to-twincat-using-ads/"
     },
     {
         title: "Building a Web HMI for Factory Equipment Control",
         image: "/blog/2025/11/images/building-a-web-hmi-for-factory.png",
         alt: "Web HMI dashboard for factory",
-        url: "/blog/2025/11/building-hmi-for-equipment-control/"
+        href: "/blog/2025/11/building-hmi-for-equipment-control/"
     },
     {
         title: "Store-and-Forward: Buffering PLC Data During Network Outages",
         image: "/blog/2025/11/images/store-and-forward.png",
         alt: "Store and forward edge buffering",
-        url: "/blog/2025/11/store-and-forward-edge-data-buffering/"
+        href: "/blog/2025/11/store-and-forward-edge-data-buffering/"
     },
     {
         title: "Fixing PLC Communication Latency: Where the Milliseconds Really Go",
         image: "/blog/2026/06/images/fixing-plc-communication.png",
         alt: "Diagnosing and fixing PLC communication latency",
-        url: "/blog/2026/06/plc-communication-latency-causes-and-fixes/"
+        href: "/blog/2026/06/plc-communication-latency-causes-and-fixes/"
     }
 ]
 
@@ -247,10 +247,6 @@ useSeoMeta({
     twitterSite: '@FlowFuseinc',
 })
 
-useSchemaOrg([
-    defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
-])
 </script>
 
 <template>
@@ -520,14 +516,7 @@ useSchemaOrg([
       <!-- ============================================================
            FAQ
       ============================================================ -->
-      <div class="w-full bg-gray-50 py-16 px-6">
-          <div class="max-w-screen-lg mx-auto">
-              <h2 class="max-md:text-center -mb-12">
-                  Frequently Asked <span class="text-indigo-600">Questions</span>
-              </h2>
-              <BlogFaq :faq="FAQ" variant="page" />
-          </div>
-      </div>
+      <FaqSection :items="FAQ" background="gray" />
 
       <!-- ============================================================
            BLOG RESOURCES
@@ -536,16 +525,7 @@ useSchemaOrg([
           <div class="max-w-screen-lg mx-auto">
               <h2 class="text-center mb-10">Learn More: <span class="text-indigo-600">PLC Integration Guides</span></h2>
 
-              <div class="ff-nodered-resources grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <NuxtLink v-for="resource in RESOURCES" :key="resource.url" class="h-full" :to="resource.url">
-                      <li class="h-full">
-                          <div class="w-2/5 max-md:aspect-video ff-image-cover ff-image-left-rounded h-full">
-                              <img :src="resource.image" :alt="resource.alt" width="208" loading="lazy" class="w-full h-auto">
-                          </div>
-                          <label class="w-3/5 font-light">{{ resource.title }}</label>
-                      </li>
-                  </NuxtLink>
-              </div>
+              <ResourceList :items="RESOURCES" />
               <div class="text-center mt-8">
                   <a href="/blog/plc/" class="ff-btn uppercase">See All PLC Articles →</a>
               </div>

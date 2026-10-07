@@ -1,7 +1,130 @@
-# Listing metadata only. The page itself is pages/use-cases/remote-device-management.vue
-# (formerly /use-cases/edge-connectivity/, which now redirects here). Its layout is a
-# hand-written page rather than data, but it is kept here so /use-cases/ still builds its
-# cards from one place rather than a hand-maintained list.
+# Formerly /use-cases/edge-connectivity/, which now 301s here (see redirects.ts). The
+# layout came from the Figma file (FF Website V3, node 7421:6134). Rendered by
+# pages/use-cases/[slug].vue from the `sections` list below.
 slug: remote-device-management
 title: "Remote Device Management for Industrial Equipment"
 problem: "FlowFuse runs Node-RED next to your PLCs and governs it from one place with remote device management, editing, snapshots, and fleet-wide controls."
+seoMeta:
+  description: "Remote device management for every machine in the field. See, edit, and deploy Node-RED across your fleet."
+  image: /images/solutions/og-solutions-device-management.jpg
+
+sections:
+  - type: hero
+    layout: feature
+    heading: "Remote device management <span class='text-red-600'>for every machine in the field</span>"
+    text: "FlowFuse runs Node-RED next to your <a href='/landing/plc/'>PLCs</a> and governs it from one place with remote device management, editing, <a href='/docs/user/snapshots/'>snapshots</a>, and fleet-wide controls."
+    image: { src: /images/use-cases/edge-connectivity.jpg, alt: "Machines on a factory shop floor" }
+    ctas:
+      - { cta: book-demo }
+      - { cta: sign-up, variant: ghost, icon: i-lucide-arrow-right }
+    quote:
+      text: "It's not just about connecting machines; it's about creating the foundation that makes everything else possible."
+      author: "Felix Reck"
+      role: "IT Application Manager, Walter"
+      avatar: /images/customer-headshots/felix-reck-walter-tools.png
+
+  - type: results
+    eyebrow: "Results"
+    heading: "<span class='text-red-500'>Customer results</span> with remote device management"
+    items:
+      - before: "1"
+        after: "130+"
+        unit: "instances"
+        company: "Walter Tools"
+        text: "scaled from a single Node-RED instance to over 130 across four continents and unified five separate machine-connectivity systems — with the same seven-person IT team."
+        linkText: "Read the case study with Walter Tools"
+        linkName: "Walter Tools"
+        href: /customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/
+      - before: "15"
+        after: "1"
+        unit: "deployment"
+        company: "Aperia Technologies"
+        text: "replaced a USB-stick walk across five lines with one device-group deployment, and freed 8–12 hours a day of idle end-of-line test equipment."
+        linkText: "Read the case study with Aperia Technologies"
+        linkName: "Aperia Technologies"
+        href: /customer-stories/aperia-technologies-plc-replacement/
+      - after: "½"
+        unit: "shift returned"
+        company: "Paloma Irrigation and Drainage District's"
+        text: "team spent half of every shift driving between remote pumping stations. Remote access and automated alerts ended the routine visits across 30,000 acres."
+        linkText: "Read the case study with Paloma Irrigation"
+        linkName: "Paloma Irrigation"
+        href: /customer-stories/leveraging-node-red-and-flowfuse-to-revolutionize-irrigation/
+      - after: "7,000 km"
+        unit: "of grid"
+        company: "Energinet"
+        text: "monitors substation health at hundreds of critical nodes across Denmark's transmission grid — 24/7, with a small operations team."
+        linkText: "Read the Energinet case study"
+        linkName: "Energinet"
+        href: /customer-stories/energinet-streamlining-critical-infrastructure-data-management/
+
+  - type: features
+    background: gray
+    columns: 2
+    eyebrow: "Visibility"
+    heading: "See and manage <span class='text-indigo-600'>every remote device from one place</span>"
+    items:
+      - icon: i-heroicons-cpu-chip
+        title: "Every device, one view"
+        text: "Instance state and last seen. CPU and memory over time. Agent and Node-RED versions. <a href='/docs/user/device-groups/'>Device groups</a> by site or line."
+      - icon: i-lucide-history
+        title: "What changed, and who changed it"
+        text: "<a href='/docs/user/logs/#audit-log'>Audit log</a> across the team. <a href='/docs/user/snapshots/#comparing-snapshots'>Snapshot comparison</a>. <a href='/docs/user/snapshots/#timeline-view'>Version history</a>. Attribution on every deployment."
+      - icon: i-heroicons-lifebuoy
+        title: "When something goes wrong"
+        text: "<a href='/docs/user/logs/#node-red-logs'>Node-RED logs</a> without SSH. Health checks and auto-restart. Diagnostic emails with the logs attached. Structured JSON logs for Loki or Elastic."
+      - icon: i-heroicons-signal
+        title: "Reach a machine you can't touch"
+        text: "Open the editor from your browser. Developer Mode tunnel for live debugging. Restart a device remotely. Outbound-only — no inbound ports."
+    note: "The <a href='/platform/device-agent/'>FlowFuse Device Agent</a> runs your flows on remote devices and keeps them connected to FlowFuse for centralized monitoring and management."
+
+  - type: steps
+    eyebrow: "Connectivity"
+    heading: "Fix one machine. <span class='text-indigo-600'>Deploy to all of them.</span>"
+    intro: "This is where a monitoring tool stops and remote device management keeps going."
+    link: { label: "Learn how to install the FlowFuse Device Agent", href: /docs/device-agent/install/overview/ }
+    steps:
+      - icon: i-heroicons-wrench-screwdriver
+        title: "Fix One"
+        text: "Open the Node-RED editor on the machine itself, from your browser, and change the flow on live hardware."
+      - icon: i-heroicons-camera
+        title: "Snapshot It"
+        text: "Capture the working state as a versioned snapshot you can compare, promote and roll back."
+      - icon: i-heroicons-rocket-launch
+        title: "Roll It Out"
+        text: "Push that snapshot to the device group through a <a href='/docs/user/devops-pipelines/'>pipeline</a> — every filler on every line, or every site in the region."
+
+  - type: features
+    layout: cards
+    background: gradient
+    eyebrow: "Intelligence at the Edge"
+    heading: "Once the loop is closed, <span class='text-indigo-600'>intelligence is a node, not a project</span>"
+    items:
+      - icon: i-heroicons-cpu-chip
+        title: "Run the model where the data is"
+        text: "Drop a trained <a href='/blog/2025/10/custom-onnx-model/'>ONNX model</a> into a flow and run inference on the device. No round trip, no inference bill, no data leaving the plant."
+      - icon: i-heroicons-chat-bubble-left-right
+        title: "Ask the factory a question"
+        text: "<a href='/docs/user/expert/'>FlowFuse Expert</a> Insights Mode connects to the MCP servers in your instances, so you can query live state in plain language instead of building a report for it."
+      - icon: i-heroicons-bolt
+        title: "Allow an agent to act"
+        text: "Expose your flows to our <a href='/changelog/2025/10/mcp-nodes/'>MCP integration</a> so Copilot, Claude or your own AI agent can read live operational state and act on it, inside the role-based access control you already run. Read-only stays read-only. Every action is logged."
+
+  - type: cta
+    layout: banner
+    heading: "Make your remote devices intelligent"
+    description: "Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit."
+    ctas:
+      - { cta: book-demo }
+      - { cta: sign-up, variant: ghost, color: white, icon: i-lucide-arrow-right }
+
+  - type: faq
+    items:
+      - question: "What is remote device management?"
+        answer: "Remote device management lets teams monitor, troubleshoot, update, and deploy application flows to devices without being physically present at the device."
+      - question: "What is a remote device management platform?"
+        answer: "Remote device management platform provides centralized tools for monitoring and managing devices across multiple machines, sites, or facilities."
+      - question: "Can FlowFuse manage Node-RED on remote devices?"
+        answer: "Yes. FlowFuse lets teams remotely monitor, edit, deploy, restart, and manage Node-RED instances running across their device fleet."
+      - question: "Can FlowFuse deploy changes to multiple remote devices?"
+        answer: "Yes. FlowFuse supports [device groups](/docs/user/device-groups/) and centralized deployments, allowing teams to roll out a tested flow or [snapshot](/docs/user/snapshots/) to multiple devices at once."
