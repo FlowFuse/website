@@ -6,12 +6,13 @@
 //  - The protocol/use-case glyphs are <UIcon>. They were {% include %}d raw with no
 //    wrapper, filling the wrapper box through the svg's intrinsic ratio; a masked <span>
 //    has none, so each one carries the wrapper's size itself.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg. One answer carried an inline <a> under
-//    `| safe`; it is a markdown link now, which BlogFaq renders after escaping.
+//  - faq.njk becomes <Faq> plus useSchemaOrg. One answer carried an inline <a> under
+//    `| safe`; it is a markdown link now, since Faq renders answer text as text, not HTML.
 //  - The CTA macros become their components.
 //  - This page has both `metaTitle` and `meta.title`; base.njk's precedence put
 //    metaTitle first, so that is the title, rendered as "… | FlowFuse" rather than
 //    "… • FlowFuse" - which is what the metaTitle branch did.
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const PROTOCOLS = [
     {
@@ -249,7 +250,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 
@@ -525,7 +526,7 @@ useSchemaOrg([
               <h2 class="max-md:text-center -mb-12">
                   Frequently Asked <span class="text-indigo-600">Questions</span>
               </h2>
-              <BlogFaq :faq="FAQ" variant="page" />
+              <Faq :faq="FAQ" variant="page" />
           </div>
       </div>
 

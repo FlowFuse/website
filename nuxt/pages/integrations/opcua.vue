@@ -271,8 +271,6 @@ const webinars = [
     { title: 'Getting Started with OPC-UA and Node-RED', image: '/images/webinars/getting-started-with-opc-ua-and-node-red-webinar-august.jpg', alt: 'Getting started with OPC-UA and Node-RED webinar', url: '/webinars/2023/getting-started-opcua-node-red/' },
 ]
 
-// Answers include internal links, rendered with v-html below - BlogFaq.vue interpolates
-// plain text only, so it can't be reused here without stripping those links.
 const faq = [
     {
         question: 'Is there a free OPC UA client?',
@@ -280,7 +278,7 @@ const faq = [
     },
     {
         question: 'Is OPC UA secure?',
-        answer: 'OPC UA builds security into the specification rather than bolting it on afterward: application authentication via X.509 certificates, user authentication, and message-level SignAndEncrypt for integrity and confidentiality. The problem in practice isn\'t the spec. Trust lists get left in "accept all" mode, self-signed certificates never get rotated, and Security Policy gets set to None for convenience during commissioning and never revisited. Our two-part guide covers both sides: <a href="/blog/2026/05/opc-ua-security-attack-vectors/">how attackers actually exploit these gaps</a> and <a href="/blog/2026/06/opc-ua-security-best-practices/">how to build a defensible architecture</a>.',
+        answer: 'OPC UA builds security into the specification rather than bolting it on afterward: application authentication via X.509 certificates, user authentication, and message-level SignAndEncrypt for integrity and confidentiality. The problem in practice isn\'t the spec. Trust lists get left in "accept all" mode, self-signed certificates never get rotated, and Security Policy gets set to None for convenience during commissioning and never revisited. Our two-part guide covers both sides: [how attackers actually exploit these gaps](/blog/2026/05/opc-ua-security-attack-vectors/) and [how to build a defensible architecture](/blog/2026/06/opc-ua-security-best-practices/).',
     },
     {
         question: 'Can FlowFuse act as both an OPC UA client and an OPC UA server?',
@@ -288,18 +286,13 @@ const faq = [
     },
     {
         question: 'Do I need Kepware or another OPC UA gateway product?',
-        answer: 'Not necessarily. Kepware and similar products became the default when building an OPC UA server or client from scratch was hard, but per-tag pricing scales badly and recent ownership changes have made long-term cost and support less predictable. FlowFuse can connect to an existing Kepware server as a client on any deployment (see our <a href="/blog/2024/02/connect-node-red-to-kepware-opc/">Kepware connection guide</a>), or replace it outright. See <a href="/blog/2026/01/kepware-opcua-better-alternative/">Beyond Kepware: Why Modern Industrial Connectivity Demands a Second Look</a>.',
+        answer: 'Not necessarily. Kepware and similar products became the default when building an OPC UA server or client from scratch was hard, but per-tag pricing scales badly and recent ownership changes have made long-term cost and support less predictable. FlowFuse can connect to an existing Kepware server as a client on any deployment (see our [Kepware connection guide](/blog/2024/02/connect-node-red-to-kepware-opc/)), or replace it outright. See [Beyond Kepware: Why Modern Industrial Connectivity Demands a Second Look](/blog/2026/01/kepware-opcua-better-alternative/).',
     },
     {
         question: 'Does FlowFuse work on-premises or in the cloud for OPC UA?',
         answer: 'Both. Run FlowFuse on FlowFuse Cloud, self-managed on your own infrastructure, or on the FlowFuse Device Agent at the edge, right next to the OPC UA servers you\'re connecting to. Many teams run the OPC UA client on an industrial PC inside the plant network, then forward selected data outward over MQTT, so nothing inside the plant has to accept inbound connections from outside it.',
     },
 ]
-
-const openFaqIndex = ref<number | null>(null)
-function toggleFaq (i: number) {
-    openFaqIndex.value = openFaqIndex.value === i ? null : i
-}
 </script>
 
 <template>
@@ -555,30 +548,7 @@ function toggleFaq (i: number) {
             Frequently asked <span class="text-indigo-600">questions</span>
           </h2>
         </div>
-        <div class="w-full ff-prose">
-          <div class="prose max-w-none">
-            <div v-for="(item, i) in faq" :key="i" class="w-full py-4" :class="{ 'border-b': i !== faq.length - 1 }">
-              <h3 class="not-prose m-0">
-                <button
-                    class="question flex flex-row justify-between items-center w-full m-0 p-0 gap-6 cursor-pointer text-left bg-transparent border-0 text-lg font-medium"
-                    type="button"
-                    :aria-expanded="openFaqIndex === i"
-                    @click="toggleFaq(i)"
-                >
-                  <span>{{ item.question }}</span>
-                  <UIcon
-                      name="i-heroicons-chevron-down"
-                      class="transition-transform ease-in-out duration-300 shrink-0"
-                      :class="{ 'rotate-180': openFaqIndex === i }"
-                  />
-                </button>
-              </h3>
-              <div v-show="openFaqIndex === i" class="px-6 mt-6">
-                <p v-html="item.answer" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Faq :faq="faq" />
       </div>
     </div>
 

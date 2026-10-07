@@ -7,6 +7,7 @@ import { getAllBlogPosts } from '../../utils/sharedContent'
 // even though it works in dev. Passing the components directly skips the registry entirely.
 import FeatureTierBadges from '../../components/content/FeatureTierBadges.vue'
 import FeatureReleaseLinks from '../../components/content/FeatureReleaseLinks.vue'
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 definePageMeta({ layout: 'default' })
 
@@ -159,7 +160,7 @@ if (routeInfo.value.kind === 'post') {
         }),
         computed(() => page.value?.structuredData?.faq?.length ? {
             '@type': 'FAQPage',
-            mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+            mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: faqAnswerText(item.answer) } })),
         } : undefined),
         computed(() => page.value?.structuredData?.howto ? defineHowTo({
             name: page.value.structuredData.howto.name || pageTitle.value,
@@ -259,7 +260,7 @@ if (routeInfo.value.kind === 'post') {
 
           <div v-if="page.structuredData?.faq?.length" class="prose mt-12">
             <h2 class="mb-1">Frequently Asked Questions</h2>
-            <BlogFaq :faq="page.structuredData.faq" />
+            <Faq :faq="page.structuredData.faq" />
           </div>
 
           <BlogAuthorCard v-for="(author, i) in authorMembers" :key="i" :author="author" />

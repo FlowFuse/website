@@ -7,12 +7,13 @@
 //    inline script that queried the DOM and ran two timers with no teardown.
 //  - testimonials.njk becomes <TestimonialCarousel>, explore-more-content.njk becomes
 //    <ExploreMoreContent> (renamed from ThankYouExploreMore, since this page renders it
-//    too), social-proof.njk becomes <SocialProof> and faq.njk becomes <BlogFaq>.
+//    too), social-proof.njk becomes <SocialProof> and faq.njk becomes <Faq>.
 //  - cta-get-started.njk was a four-line partial reading a `cta` object the caller set;
 //    it is the markup at the foot of this page.
 //  - site.messaging.heroTagLine and .subtitle came from src/_data/site.json, which Nuxt
 //    still imports for its own config. They are literals here, so the page reads as the
 //    page.
+import { faqAnswerText } from '../lib/faq-answer.mjs'
 
 const METRICS = [
     { number: '50%', text: 'Reduction in scrap rate with real-time operational monitoring' },
@@ -109,7 +110,7 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
-    ...FAQ.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>
 
@@ -364,7 +365,7 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto">
           <h2 class="mb-1">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
           <div class="-mt-20">
-              <BlogFaq :faq="FAQ" variant="page" />
+              <Faq :faq="FAQ" variant="page" />
           </div>
       </div>
   </div>

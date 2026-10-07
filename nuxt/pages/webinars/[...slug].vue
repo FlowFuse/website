@@ -7,14 +7,15 @@
 //    <LiteYoutube> and <HubSpotForm>, already shared with the blog and the ebook pages.
 //  - {% renderTeamMember people[host] %} becomes useAuthorMembers + <TeamCardSmall>, the
 //    same resolution the blog byline uses, instead of an 11ty shortcode over a global.
-//  - faq.njk becomes <BlogFaq> plus useSchemaOrg. The 11ty partial interpolated answers
+//  - faq.njk becomes <Faq> plus useSchemaOrg. The 11ty partial interpolated answers
 //    into a JSON string by hand; defineQuestion escapes them properly. faq.njk rendered
 //    answers with `| safe`, so a few carried raw <a> tags; those are markdown links now,
-//    because BlogFaq escapes HTML on purpose (existing answers contain literal "<ip>"
-//    placeholders that must not become markup).
+//    because Faq renders answer text as text, not HTML (existing answers contain literal
+//    "<ip>" placeholders that must not become markup).
 //  - The registration form's "is this still upcoming" test was the dateInFuture filter
 //    (spacetime, today counts as future). isUpcoming below keeps that boundary exactly.
 import { shortDate } from '../../lib/short-date.mjs'
+import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
 const route = useRoute()
 const slug = Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug
@@ -80,7 +81,7 @@ const faq = computed(() => page.value?.structuredData?.faq || [])
 if (faq.value.length) {
     useSchemaOrg([
         defineWebPage({ '@type': 'FAQPage' }),
-        ...faq.value.map(item => defineQuestion({ question: item.question, answer: item.answer })),
+        ...faq.value.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
     ])
 }
 </script>
@@ -129,7 +130,7 @@ if (faq.value.length) {
             <div class="prose">
               <h2 class="mb-1">Frequently Asked Questions</h2>
             </div>
-            <BlogFaq :faq="faq" />
+            <Faq :faq="faq" />
           </div>
         </div>
 

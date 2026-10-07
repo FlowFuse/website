@@ -9,7 +9,6 @@
 
 .handbook-nav {
     border-right: 1px solid right;
-    text-transform: capitalize;
     --nav-weight: 500;
     --nav-color: var(--color-gray-700);
     --nav-bg: transparent;
