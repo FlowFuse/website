@@ -2,12 +2,13 @@
 title: "How to Build a Manufacturing OEE Dashboard with FlowFuse"
 subtitle: A step-by-step build - collecting production data, calculating availability, performance, and quality, and assembling the dashboard.
 description: Build a manufacturing OEE dashboard step by step with FlowFuse. Covers collecting production and downtime data, calculating availability, performance, and quality, breaking OEE down by machine, and laying out the dashboard widgets.
-lastUpdated: 2026-08-07
+lastUpdated: 2026-10-07
 date: 2025-04-09
 usecase:
   - production-monitoring
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/oee-dashboard-buildig-ff-2.png
+video: dgwB7oFL_YY
 keywords: manufacturing oee dashboard, build oee dashboard, oee dashboard, machine oee dashboard, oee dashboard software, flowfuse oee dashboard
 tags:
    - flowfuse

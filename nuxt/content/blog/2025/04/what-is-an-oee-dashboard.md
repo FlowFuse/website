@@ -2,12 +2,13 @@
 title: "What Is an OEE Dashboard? KPIs, Metrics, and How to Plan One"
 subtitle: What OEE measures, how it is calculated, and how to decide what belongs on the dashboard before you build anything.
 description: An OEE dashboard tracks availability, performance, and quality in one view. Learn how OEE is calculated, how to choose machine, line, or factory scope, and which KPIs and visualizations to plan for.
-lastUpdated: 2026-08-07
+lastUpdated: 2026-10-07
 date: 2025-04-01
 usecase:
   - production-monitoring
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/building-oee-dashboard-part1.png
+video: dgwB7oFL_YY
 keywords: what is oee dashboard, oee kpi dashboard, oee dashboard, oee dashboard metrics, oee dashboard planning, flowfuse oee dashboard
 tags:
    - flowfuse

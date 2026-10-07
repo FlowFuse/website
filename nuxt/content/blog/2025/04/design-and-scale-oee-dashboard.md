@@ -2,12 +2,13 @@
 title: "How to Design and Scale an OEE Dashboard for Factory Screens"
 subtitle: Theme it for the shop floor, make it readable on every screen size, scale it across production lines, and connect it to your real factory data.
 description: Turn a working OEE dashboard into a factory-floor display with FlowFuse - dark theming for control rooms, responsive breakpoints, branded headers, multi-line scaling with subflows, and swapping simulated data for your real database.
-lastUpdated: 2026-08-07
+lastUpdated: 2026-10-07
 date: 2025-04-16
 usecase:
   - production-monitoring
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/oee-dashboard-building-3.png
+video: dgwB7oFL_YY
 keywords: oee dashboard design, oee dashboard screen, oee dashboard manufacturing screen, factory oee dashboard, custom oee dashboard, oee monitoring dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
