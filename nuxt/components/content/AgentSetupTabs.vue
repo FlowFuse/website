@@ -93,7 +93,7 @@ const CLIENTS = [
             step2Url: 'https://claude.ai/',
         },
     },
-    // Off Cloud, a coding agent installs the connector into itself, so its tab is the prompt
+    // A coding agent installs the connector into itself, so its tab is the prompt
     // and nothing else. No flags, no config file, and nothing that goes stale when
     // a client changes how remote servers are added. Claude Code documents an
     // `mcp add`; Codex documents only its config file and UI. Asking works on both.
@@ -101,22 +101,13 @@ const CLIENTS = [
         id: 'claude-code',
         logo: '/images/ai/agents/claude.svg',
         name: 'Claude Code',
-        step1Title: 'Open the MCP list',
-        step1Body: 'Run this in Claude Code.',
-        step1Command: '/mcp',
-        hostSwap: false,
-        step2Title: 'Select FlowFuse and choose Authenticate',
-        step2Body: 'Find it under Show unused connectors.',
+        step1Title: 'Copy the prompt',
+        step1Body: 'This is the whole setup.',
+        step1Command: 'Add the FlowFuse MCP tool at https://app.flowfuse.com/mcp. Then ask me to complete the sign-in in the browser that opens.',
+        step2Title: 'Paste it into Claude Code',
+        step2Body: 'It adds the connector itself, then asks you to finish signing in.',
         step2Label: 'See the documentation',
         step2Url: '/docs/user/expert/third-party-agents/',
-        selfHosted: {
-            step1Title: 'Copy the prompt',
-            step1Body: 'This is the whole setup.',
-            step1Command: 'Add the FlowFuse MCP tool at https://your-domain.com/mcp. Then ask me to complete the sign-in in the browser that opens.',
-            hostSwap: true,
-            step2Title: 'Paste it into Claude Code',
-            step2Body: 'It adds the connector itself, then asks you to finish signing in.',
-        },
     },
     {
         id: 'codex',
