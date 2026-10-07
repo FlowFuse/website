@@ -362,7 +362,15 @@ export default defineNuxtConfig({
         'docs-links': join(__dirname, 'utils/remark-docs-links'),
     },
 
+    // Registers Nuxt's view transition router hook. It stays off by default: only docs and
+    // handbook pages turn it on (definePageMeta), so their search field can move between the
+    // docs home and a docs page; see plugins/section-view-transitions.client.ts.
+    experimental: {
+        viewTransition: true,
+    },
+
     app: {
+        viewTransition: false,
         head: {
             // nuxt-seo-utils' default title template is `%s %separator %siteName`; the
             // separator defaults to '|' if unset. This makes every page's <title>/og:title

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { findPageBreadcrumb } from '@nuxt/content/utils'
 
-definePageMeta({ layout: 'default' })
+// As on docs pages: the sidebar search stays put while the page around it changes.
+definePageMeta({ layout: 'default', viewTransition: true })
 
 const route = useRoute()
 const slugParts = computed(() =>
@@ -91,7 +92,9 @@ defineOgImage('Default', {
 </script>
 
 <template>
-  <div class="light w-full pl-6">
+  <!-- lg:pr-6 mirrors the header's own padding, as on docs pages, so the sidebar search
+       lines up under the logo at every width. -->
+  <div class="light w-full pl-6 lg:pr-6">
     <div class="handbook ff-prose text-left pb-24 m-auto">
 
       <!-- Left navigation -->
@@ -100,13 +103,10 @@ defineOgImage('Default', {
       <!-- Main content area -->
       <div class="px-10 pt-8">
         <div class="w-full">
-          <!-- Breadcrumbs + Search bar -->
+          <!-- Breadcrumbs. The search sits at the top of the sidebar, as on docs pages. -->
           <div class="font-medium pb-1 flex flex-col gap-1">
             <div class="md:flex-1">
               <Breadcrumbs :items="breadcrumbItems" />
-            </div>
-            <div class="w-full mb-1">
-              <HandbookSearch />
             </div>
           </div>
         </div>
@@ -123,14 +123,16 @@ defineOgImage('Default', {
 
       <!-- Right sidebar: TOC -->
       <div class="lg right-nav">
-        <div class="sticky top-20 w-full mt-4 md:mt-6 px-8">
-          <HandbookToc :links="page?.body?.toc?.links" />
+        <!-- Laid out as on docs pages: on wide screens a long table of contents scrolls inside
+             itself, and "On this page" lines up with the sidebar search and the breadcrumb. -->
+        <div class="sticky top-20 w-full mt-4 md:mt-6 px-8 lg:flex lg:flex-col lg:max-h-[calc(100vh-7.5rem)]">
+          <HandbookToc :links="page?.body?.toc?.links" :ui="{ root: 'lg:min-h-0', container: 'lg:pt-2.5' }" />
           <!-- Client-only, as pages/docs/[...slug].vue does with its own edit link: /_studio is
                a server route with no prerendered file, so hyperlink (the build's link checker,
                which cannot be told to ignore a path) reads it as a broken link when it is in
                the static HTML. -->
           <ClientOnly>
-            <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden">
+            <div class="text-xs pb-1 text-right mb-4 italic max-lg:hidden shrink-0">
               <template v-if="!isStudioSignedIn">
                 <a :href="studioEditUrl">Sign in to edit</a>
                 <span class="px-1" aria-hidden="true">·</span>

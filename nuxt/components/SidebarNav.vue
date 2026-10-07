@@ -68,3 +68,20 @@ watch(() => route.path, () => { open.value = false })
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Group headers ("Get FlowFuse running") read as headers: body text size rather
+   than the caption size Nuxt UI defaults labels to. */
+:deep([data-slot="label"]) {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+}
+
+/* The pages under a header sit indented from it, so the grouping is visible
+   without reading the words. Applied to every link so the existing nesting
+   keeps its relative steps. Only a nav with headers (the docs) gets it: the
+   handbook's has none, so its links stay at the edge. */
+:deep(nav:has([data-slot="label"]) [data-slot="link"]) {
+    padding-left: 1.75rem;
+}
+</style>
