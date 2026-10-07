@@ -39,12 +39,11 @@ MQLs will be engaged by a Sales Representative, according with the appropriate g
 
 #### Lifecycle changes
 
-##### From MQL to SQL: Qualifying Questions
+##### From MQL to SQL
 
-- Does the prospect and company fit the target industry / company size / role?
-- Are they working on an initiative related to connecting systems, industrial data, or operational workflows?
-- Can they describe a specific problem, use case or goal they’re trying to address?
-- Are they open to a meeting to explore their use case in more detail?
+A contact moves from MQL to SQL once the
+[qualifying questions](/handbook/sales/meetings/discovery/#qualifying-questions)
+on the Discovery Meeting page have been answered.
 
 ### Lead Status
 
@@ -95,7 +94,7 @@ Update all three whenever the scope of the deal changes or estimates firm up.
 
 A New Business deal represents first revenue with a new customer.
 
-- Create the deal in the Sales pipeline once the [MQL-to-SQL qualifying questions](#from-mql-to-sql-qualifying-questions) have been answered. A call isn't required to open the deal, but the answers are — do not open a deal on the strength of a booked meeting alone. Once created, it enters at *1-Discovery*.
+- Create the deal in the Sales pipeline once the [MQL-to-SQL qualifying questions](/handbook/sales/meetings/discovery/#qualifying-questions) have been answered. A call isn't required to open the deal, but the answers are — do not open a deal on the strength of a booked meeting alone. Once created, it enters at *1-Discovery*.
 - The deal owner is the AE for the region.
 - Complete all three amount fields (Amount, ACV, ARR) for the contract being proposed.
 - One deal per buying process. If the prospect goes quiet, close the deal as lost and reopen a new one when they re-engage. Do not let deals idle with stale close dates.
@@ -107,7 +106,7 @@ An Expansion deal represents incremental ARR from an existing customer. The AE o
 - All three amount fields (Amount, ACV, ARR) carry the incremental value of the expansion only, never the customer's total contract or total ARR.
 - **In-term expansion** (mid-contract): create the deal when the customer confirms an active interest in additional capacity, users, or products: an engaged buyer and a realistic close date, not a hope.
 - **Expansion at renewal**: create a separate expansion deal carrying only the ARR delta, with its close date aligned to the renewal date. This keeps renewal and expansion performance separately measurable.
-  - **Under $10k ARR**: fold the increase directly into the renewal deal's own Incremental ARR instead — the CSM owns it, and no separate AE-owned deal is opened in the Sales pipeline. This matches how [Customer Success commission](/handbook/sales/customer-success/#when-transactions-are-credited) already credits "Expansion (Renewal)" to the CSM.
+  - **Under $10k ARR**: fold the increase directly into the renewal deal's own Incremental ARR instead — the CSM owns it, and no separate AE-owned deal is opened in the Sales pipeline. This matches how the [Customer Success bonus](/handbook/sales/customer-success/#when-transactions-are-credited) already credits "Expansion (Renewal)" to the CSM.
   - **$10k ARR or more**: open a separate expansion deal in the Sales pipeline, owned by the AE, as above. The renewal deal's own Incremental ARR then reflects only the renewal itself (often $0).
 - **Expansion contingent on a pilot**: create the deal at pilot kickoff, following [Pilot and Expansion Deals](#pilot-and-expansion-deals).
 

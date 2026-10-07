@@ -57,7 +57,9 @@ Important Note: To maintain equity and budget alignment across FlowFuse, no comp
 ## Sales Commissions
 
 FlowFuse pays out commissions to sales reps, the terms of which are to be found
-in the [Sales Compensation Plan](/handbook/sales/commission-plan/).
+in the [Sales Compensation Plan](/handbook/sales/commission-plan/). The process
+and tasks for paying them out are described in the Operations handbook, under
+[Processing Sales Commission](/handbook/operations/commission-payment/#processing-sales-commission).
 
 ## Performance Review
 
@@ -210,14 +212,16 @@ The baseline is only used to determine the growth and is not included in the att
 
 
 ## Bonus Review (End of Period)
-* Within 5 business days after period end, the employee sends a final MBO summary to the Manager covering:
+The process and tasks for paying out bonuses are described in the Operations
+handbook, under [Processing Bonuses](/handbook/operations/commission-payment/#processing-bonuses).
+
+* Within 5 business days after period end, the Chief of Staff and the Operations team verify the results against the agreed MBOs, covering:
   * Bonus period (quarter or dates)
   * Agreed MBO goals
   * Results achieved per goal
   * Completion status
   * Supporting artifacts or links
-* The Manager sends reminders at period end and 2 business days before the deadline, if needed.
-* The Manager reviews the submission and confirms:
+* The Manager reviews the verified results and confirms:
   * Thresholds met
   * Attainment percentage (if applicable)
   * Final bonus amount for CEO approval
@@ -234,15 +238,15 @@ Only results achieved within the defined period are considered, even if reportin
 
 ## Processing the Bonus Payment
 Once approved in writing by the CEO:
-* Process the bonus in Deel:
-  * Contractors: add as Bonuses and Incentives
-  * EOR employees: add under Payments and Submissions
+* Process the bonus in Deel, as described in
+  [Wiring the money](/handbook/operations/commission-payment/#wiring-the-money)
 
 * Clearly label the payment as a Bonus, including:
   * Performance period (e.g. “Q4 2025”)
   * Reason for payment (e.g. “Quarterly MBO attainment”)
 
-Bonuses are paid out in USD and in the next payroll cycle after approval.
+Bonuses are paid out in the next payroll cycle after approval, in the
+[payout currency](/handbook/operations/commission-payment/#currency-of-payout).
 
 ## Template Email — Bonus Confirmation to Employee
 

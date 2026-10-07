@@ -1,4 +1,5 @@
 import { CTA_DESTINATIONS, ctaDestinationKey, normalizeHref } from './cta-destinations'
+import site from '../data/site.json'
 
 // Registry for one-off CTA destinations that aren't one of the five reserved
 // ones (see cta-destinations.ts) but still deserve one fixed PostHog event -
@@ -33,7 +34,7 @@ import { CTA_DESTINATIONS, ctaDestinationKey, normalizeHref } from './cta-destin
 // `position`), not an attempt at an identical payload shape.
 export const CUSTOM_CTA_DESTINATIONS = {
     hubspotMeeting: {
-        href: 'https://meetings-eu1.hubspot.com/michael-davis/round-robin-sales-team',
+        href: site.meetings.salesRoundRobin,
         event: 'calendar_fallback_cta_clicked',
     },
     communityForum: {
@@ -78,6 +79,10 @@ export const CUSTOM_CTA_DESTINATIONS = {
     fishboneTemplate: {
         href: '/blog/2026/09/ishikawa-fishbone-diagram-template/',
         event: 'cta-fishbone-template-download',
+    },
+    ppapChecklistTemplate: {
+        href: '/blog/2026/10/ppap-checklist-template/',
+        event: 'cta-ppap-checklist-download',
     },
 } as const
 
