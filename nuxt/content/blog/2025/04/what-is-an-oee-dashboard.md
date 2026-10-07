@@ -8,7 +8,6 @@ usecase:
   - production-monitoring
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/building-oee-dashboard-part1.png
-video: dgwB7oFL_YY
 keywords: what is oee dashboard, oee kpi dashboard, oee dashboard, oee dashboard metrics, oee dashboard planning, flowfuse oee dashboard
 tags:
    - flowfuse
@@ -55,6 +54,14 @@ To effectively track this KPI, an OEE dashboard is built, but creating one can b
 With FlowFuse, it's possible to build a customized, OEE Dashboard, without writing any code, that can provide real-time production data based on your needs.
 
 In this first part of a three-part series on building an OEE dashboard with FlowFuse, we explain the concept of OEE, how it is calculated, and outline the basic plan for the dashboard. In that plan, we cover the scope of OEE calculation, key metrics, visualization strategies, and the expected design of the dashboard.
+
+Once the plan is clear, the build itself does not have to be the hard part. With AI in FlowFuse, you can describe the app you need and let an agent put it together. In the video below, that is how a complete OEE monitoring app running on real PLC data came together in 44 minutes.
+
+<lite-youtube
+  videoid="dgwB7oFL_YY"
+  style="height: auto; aspect-ratio: 16/9; background-image: url('https://i.ytimg.com/vi/dgwB7oFL_YY/maxresdefault.jpg'); background-size: cover; background-position: center;"
+  title="Industrial AI Agent Builds an OEE Monitoring App in 44 Minutes">
+</lite-youtube>
 
 Let’s get started!
 

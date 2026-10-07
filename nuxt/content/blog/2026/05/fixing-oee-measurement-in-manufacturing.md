@@ -9,7 +9,6 @@ usecase:
 keywords: 
 authors: ["sumit-shinde"]
 image: /blog/2026/05/images/oee-is-misleading.png
-video: dgwB7oFL_YY
 tags:
 - flowfuse
 tldr: "Most factories measure OEE incorrectly because they rely on manual logs, inconsistent definitions, and metrics that operators can game. Fix it by connecting directly to machine signals, standardizing how Availability, Performance, and Quality are calculated, and treating OEE as a diagnostic tool rather than a KPI to optimize for its own sake."
@@ -29,8 +28,13 @@ The formula is simple. Implementing it honestly almost never is. Definitions dri
 
 This article looks at where OEE typically goes wrong on the shop floor, in how data is captured, how it is defined, and how it gets used, and what to fix so the number starts matching reality.
 
-::cta-image{src="/blog/2026/05/images/oee-cta-1.png" alt="Talk to our team about automatically capturing small stops instead of relying on manual logs that miss them" cta="demo"}
-::
+Getting OEE right starts with an application you can trust, and building one is far easier than it used to be. With AI in FlowFuse, you describe what you need and an agent builds it. In the video below, one puts together a complete OEE monitoring app on real PLC data in 44 minutes.
+
+<lite-youtube
+  videoid="dgwB7oFL_YY"
+  style="height: auto; aspect-ratio: 16/9; background-image: url('https://i.ytimg.com/vi/dgwB7oFL_YY/maxresdefault.jpg'); background-size: cover; background-position: center;"
+  title="Industrial AI Agent Builds an OEE Monitoring App in 44 Minutes">
+</lite-youtube>
 
 ## Most OEE numbers are made up
 
@@ -43,6 +47,9 @@ Speed losses are worse. A line running at 85% of rated speed all shift logs zero
 Put it together and [manual OEE is often overestimated by 10-25%](https://www.jitbase.com/blog/en/blog/how-to-effectively-track-the-oee-of-your-machine-tools). The dashboard says 78%. The real number is closer to 60%. Decisions get made on the 78%.
 
 The fix is structural. [PLCs](/blog/2025/12/what-is-plc/) already know when a line stopped, how long it ran below rated speed, and how many parts came off. Connecting [FlowFuse](/) to the PLC over [OPC-UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), Modbus, S7, or [EtherNet/IP](/blog/2025/10/using-ethernet-ip-with-flowfuse/) pulls that data straight off the machine. The operator's job changes from logging the stop to classifying the cause. [FlowFuse's OEE Dashboard blueprint](/blueprints/manufacturing/oee-dashboard/) gives you the calculation and visualisation layer on top of that, one of [several manufacturing dashboard patterns](/blog/2026/08/manufacturing-dashboard-examples/) built on the same connected data.
+
+::cta-image{src="/blog/2026/05/images/oee-cta-1.png" alt="Talk to our team about automatically capturing small stops instead of relying on manual logs that miss them" cta="demo"}
+::
 
 ## Everyone calculates OEE differently
 

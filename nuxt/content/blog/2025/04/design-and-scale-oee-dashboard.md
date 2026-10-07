@@ -8,7 +8,6 @@ usecase:
   - production-monitoring
 authors: ["sumit-shinde"]
 image: /blog/2025/04/images/oee-dashboard-building-3.png
-video: dgwB7oFL_YY
 keywords: oee dashboard design, oee dashboard screen, oee dashboard manufacturing screen, factory oee dashboard, custom oee dashboard, oee monitoring dashboard, flowfuse oee dashboard
 tags:
    - flowfuse
@@ -57,6 +56,14 @@ In [Part 2 of this series](/blog/2025/04/build-manufacturing-oee-dashboard/), we
 This final part closes that gap. We will theme the dashboard, fix the layout so it holds up on tablets and smaller monitors, add branding to the header, scale it across multiple production lines with subflows, and finally swap the simulated data for your real database. We will finish with how to actually act on what the dashboard tells you.
 
 If you have not worked through [Part 1](/blog/2025/04/what-is-an-oee-dashboard/) and [Part 2](/blog/2025/04/build-manufacturing-oee-dashboard/), start there - this article assumes you already have the flow from Part 2 deployed.
+
+Everything in this series can also be built with AI in FlowFuse. Instead of wiring each piece yourself, you tell an agent what the dashboard needs to show and it does the building. Here is one putting together a complete OEE monitoring app on real PLC data in 44 minutes.
+
+<lite-youtube
+  videoid="dgwB7oFL_YY"
+  style="height: auto; aspect-ratio: 16/9; background-image: url('https://i.ytimg.com/vi/dgwB7oFL_YY/maxresdefault.jpg'); background-size: cover; background-position: center;"
+  title="Industrial AI Agent Builds an OEE Monitoring App in 44 Minutes">
+</lite-youtube>
 
 Let's get started!
 
