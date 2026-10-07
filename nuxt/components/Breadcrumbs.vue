@@ -35,7 +35,6 @@ const displayItems = computed(() => normalizedItems.value.map((item, index) => (
   <UBreadcrumb
     :items="displayItems"
     color="neutral"
-    class="capitalize"
     :ui="{ link: 'text-sm' }"
   >
     <template #separator>
