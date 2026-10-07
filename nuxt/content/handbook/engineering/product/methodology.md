@@ -59,7 +59,7 @@ We are honest about which state an opportunity is in rather than dressing up a h
 
 We gather evidence continuously, not in a once-a-quarter research push:
 
-- **Continuous interviews, often with sales.** The strongest opportunities come from specific past stories (rung 3), and sales calls are a steady source of them. We join or review sales conversations rather than running a separate research track, and listen for the moments where a customer recounts a real problem.
+- **Continuous interviews, often with sales.** The strongest opportunities come from specific past stories (rung 3), and sales calls are a steady source of them. We join or review sales conversations rather than running a separate research track, and listen for the moments where a customer recounts a real problem. [Continuous Discovery Interviews](./discovery-interviews.md) describes how we run them.
 - **Fathom for the qualitative record.** Customer calls are recorded in Fathom; we mine the transcripts for rung-3+ stories and link the exact moment as an opportunity's evidence. See [Feedback](./feedback.md) for the full set of channels.
 - **PostHog for behavioural metrics.** What customers actually do (rung 5) comes from product analytics in PostHog: adoption, activation, and the [metrics](./metrics.md) that show whether an objective is moving.
 

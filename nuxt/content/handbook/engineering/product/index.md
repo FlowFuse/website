@@ -39,6 +39,7 @@ The **[Product <> Leadership Sync](./methodology.md#product-meetings)** is where
 ## How product works
 
 - [Methodology](./methodology.md)
+- [Continuous Discovery Interviews](./discovery-interviews.md)
 - [Glossary](./glossary.md)
 - [Feedback](./feedback.md)
 - [Product Categories](./verticals.md)
