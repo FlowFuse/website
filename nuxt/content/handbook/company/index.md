@@ -45,7 +45,8 @@ checking account. Wiring instructions to be shared by the rep are found in
 
 Some larger clients might also require an account verification letter from the bank. To get it, you need to alert the BizOps team through Slack to get it for you. 
 
-**Steps to get an updated Account Verification Letter: **
+Steps to get an updated Account Verification Letter:
+
 1. Log in to our Bank Account
 2. Start a chat with customer support and request a new account verification letter. You will receive an email when they process your request.
 3. To retrieve the letter, log back into our bank account.  
