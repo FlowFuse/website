@@ -2,7 +2,7 @@
 title: "How to Build a Manufacturing OEE Dashboard with FlowFuse"
 subtitle: A step-by-step build - collecting production data, calculating availability, performance, and quality, and assembling the dashboard.
 description: Build a manufacturing OEE dashboard step by step with FlowFuse. Covers collecting production and downtime data, calculating availability, performance, and quality, breaking OEE down by machine, and laying out the dashboard widgets.
-lastUpdated: 2026-08-07
+lastUpdated: 2026-10-07
 date: 2025-04-09
 usecase:
   - production-monitoring
@@ -58,6 +58,13 @@ In this second part, we will focus on building the OEE dashboard interface using
 
 <!--more-->
 
+We will build this by hand with simulated data so you can see how every number is calculated, but it does not have to take that long. With AI in FlowFuse, an agent can do the heavy lifting for you. Here is one building a complete OEE monitoring app on real PLC data in 44 minutes.
+
+<lite-youtube
+  videoid="dgwB7oFL_YY"
+  style="height: auto; aspect-ratio: 16/9; background-image: url('https://i.ytimg.com/vi/dgwB7oFL_YY/maxresdefault.jpg'); background-size: cover; background-position: center;"
+  title="Industrial AI Agent Builds an OEE Monitoring App in 44 Minutes">
+</lite-youtube>
 
 ## Getting Started
 
