@@ -19,6 +19,6 @@ Not sure where to start? Pick one of the suggested prompts under the composer. E
 A conversation you start here follows you. Navigate away and it carries on in the Expert panel, right where you left off.
 
 ![The team overview with the Expert composer at the top, suggested prompts beneath it, and the instance lists and recent activity below](./images/expert-homepage.gif)
-*Asking a question from the team overview, heading back to the overview, then reopening the conversation from your recent history.*
+*Asking a question from the team overview, heading back to the overview, then reopening the conversation.*
 
 This feature is available to all FlowFuse teams with AI Features enabled on FlowFuse Cloud now and Self Hosted from FlowFuse v3.2.
