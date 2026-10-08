@@ -3,7 +3,7 @@ title: "Travel Booking"
 ---
 
 This page captures the CEO's travel preferences to guide the E.A. when booking
-flights, trains, and hotels. General employee travel policies — including what
+flights, trains, hotels, and rental cars. General employee travel policies — including what
 FlowFuse covers for flights and accommodation — are documented in the
 [Travel handbook](/handbook/peopleops/travel/).
 
@@ -62,6 +62,10 @@ In order, optimize for:
 - A quiet room. Request an interior-facing or courtyard room away from street noise.
 - A park or safe running route in the area is a plus.
 - Hotels that provide shaving products are preferred; traveling with shaving gear is inconvenient.
+
+## Rental cars
+
+Prefer Hertz as the rental car company.
 
 ## Booking Standards
 
