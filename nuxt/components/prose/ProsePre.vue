@@ -111,6 +111,15 @@ pre {
     max-width: 100%;
 }
 
+/* style.css paints `pre code` black and `.prose code` gives it right padding, both meant
+   for inline code. In a fence without a language shiki leaves the text bare in an inline
+   <code>, so each line got its own black box, and the padding gave the fence's trailing
+   newline a line box of its own: an empty extra line with a black stub. */
+.code-block pre code {
+    background: transparent;
+    padding: 0;
+}
+
 /* Keep code clear of the copy button in the top right corner. */
 .code-block pre {
     padding-right: 4.5rem;

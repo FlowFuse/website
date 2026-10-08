@@ -2,7 +2,7 @@
 
 # Start with a catch all for the handbook
 /nuxt/content/handbook/ @ZJvandeWeg
-/nuxt/content/handbook/design @Yndira-E
+/nuxt/content/handbook/design @FlowFuse/marketing
 /nuxt/content/handbook/marketing @FlowFuse/marketing
 /nuxt/content/handbook/sales @MichaelBDavis
 
@@ -19,7 +19,7 @@
 /nuxt/content/handbook/company/values.md @knolleary @ZJvandeWeg
 
 # Package-lock.json (engineering team)
-/package-lock.json @FlowFuse/engineering  @Yndira-E
+/package-lock.json @FlowFuse/engineering  @FlowFuse/marketing
 
 # Changelog posts (tech writer required, product as backup)
 /nuxt/content/handbook/engineering/releases/writing-changelog.md @FlowFuse/marketing  @FlowFuse/product @FlowFuse/engineering

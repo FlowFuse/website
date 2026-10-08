@@ -73,7 +73,7 @@ Guidelines for including images:
 
 If you need to include things other than images, e.g. Video or resource bundles (zip files), these should be uploaded to the `website-data` S3 bucket in the Production AWS account. The exceptions are YouTube videos and short WebM clips (see below) — both are embedded without an S3 upload.
 
-This can be done by [Ben](/about#ben-hardill), [Nick](/about#nick-oleary), [Piotr](/about#piotr-pawlowski) or [ZJ](/about#zeger-jan-van-de-weg).
+This can be done by [Ben](/about#ben-hardill), [Nick](/about#nick-oleary), or [ZJ](/about#zeger-jan-van-de-weg).
 
 A URL will be made available to include in the post.
 
