@@ -101,7 +101,7 @@ const SUPPORTED = [
             { label: 'Modbus', href: '/docs/flowfuse-nodes/edge/modbus/' },
             { label: 'OPC UA', href: '/integrations/opcua/' },
             { label: 'MQTT', href: '/blog/2024/06/how-to-use-mqtt-in-node-red/' },
-            { label: 'S7', href: '/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/' },
+            { label: 'S7', href: '/docs/flowfuse-nodes/edge/s7/' },
             { label: 'EtherNet/IP', href: '/blog/2025/10/using-ethernet-ip-with-flowfuse/' },
             { label: 'Serial', href: '/blog/2025/07/connect-legacy-equipment-serial-flowfuse/' },
             { label: 'REST', href: '/docs/node-red/integration-technologies/rest/' },
