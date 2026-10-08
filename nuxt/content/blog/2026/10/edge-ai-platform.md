@@ -96,11 +96,15 @@ Use these when you talk to vendors or run a trial. Ask for a demonstration rathe
 7. Can we manage hundreds of devices without a separate process for each?
 8. Does it support the whole application, or just the model?
 
-## How FlowFuse Handles This
+## How FlowFuse Covers the Whole Iceberg
 
-In [FlowFuse](/), your [model runs locally inside a Node-RED flow](/blog/2025/10/custom-onnx-model/) on the industrial PCs and gateways you already have. The same flow reads from cameras and PLCs, talks MQTT and [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), writes to your databases, and decides what to do when the model flags a problem. It all runs on site, so the line keeps going when the network drops and production data can stay in the plant.
+Everything this guide covers is what FlowFuse was built to handle. Models run inside [Node-RED flows](/blog/2025/10/custom-onnx-model/) on the gateways and industrial PCs already on your floor, using [ONNX](/docs/flowfuse-nodes/ai/onnx/), whether they predict bearing failures from vibration data or inspect parts through an [RTSP camera](/docs/flowfuse-nodes/edge/rtsp/). The same flow talks to PLCs over MQTT and [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/), writes to your databases, and keeps running offline, [buffering data](/blog/2025/11/store-and-forward-edge-data-buffering/) until the connection returns.
 
-When the application is ready, you version it and roll it out to one device or a hundred from one place. You can see which devices are online and what each one runs, roll back a bad update, and control who can change what. The flow you tested on one machine is the same one running across the fleet, and nobody has to walk the floor with a laptop to update it.
+From one place, you roll that flow out to one device or a hundred, see what each one runs, check logs remotely and [roll back](/blog/2024/09/node-red-version-control-with-snapshots/) a bad update, with [role-based access](/blog/2024/04/role-based-access-control-rbac-for-node-red-with-flowfuse/) controlling who can change what.
+
+Alongside that edge groundwork, AI helps you build and run these applications. [LLM nodes](/docs/flowfuse-nodes/ai/llm-nodes/) bring OpenAI, Anthropic, Gemini or a local Ollama model into any flow. [FlowFuse Expert](/blog/2026/05/flowfuse-expert-building-flows/), the assistant in the editor, turns a plain description into flows and dashboards, explains flows you inherited, and answers questions about live machine state. By default, nothing it builds goes live until you deploy it.
+
+If your company already uses Microsoft Copilot, ChatGPT or Claude, you can [connect it to FlowFuse](/blog/2026/09/industrial-ai-agent/) instead, limited to the teams and access level you choose. You can also [build your own MCP servers](/blog/2025/10/building-mcp-server-using-flowfuse/) so agents can query your plant data. Either way, AI follows the same role-based access as your team, can't delete anything, and every action is logged.
 
 ## Final Thoughts
 
