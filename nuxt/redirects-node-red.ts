@@ -83,6 +83,7 @@ const moved: Record<string, string> = {
     '/node-red/flowfuse/edge/modbus/': '/docs/flowfuse-nodes/edge/modbus/',
     '/node-red/flowfuse/edge/opcua/': '/docs/flowfuse-nodes/edge/opcua/',
     '/node-red/flowfuse/edge/rtsp/': '/docs/flowfuse-nodes/edge/rtsp/',
+    '/node-red/flowfuse/edge/s7/': '/docs/flowfuse-nodes/edge/s7/',
     '/node-red/flowfuse/flowfuse-tables/': '/docs/flowfuse-nodes/flowfuse-tables/',
     '/node-red/flowfuse/flowfuse-tables/query/': '/docs/flowfuse-nodes/flowfuse-tables/query/',
     '/node-red/flowfuse/hub/': '/docs/flowfuse-nodes/hub/',
