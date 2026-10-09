@@ -11,14 +11,6 @@ Each process is owned by a specific function, with other functions contributing 
 
 ## Sales-owned processes
 
-### Edge Connectivity Sales Process
-**Owning function:** Sales
-**Used when:** The customer is evaluating how to standardize or modernize edge connectivity across systems or sites.
-
-→ [View process](../edge-connect-process.md)
-
----
-
 ### Node-RED Scale Sales Process
 **Owning function:** Sales
 **Used when:** The customer is already using Node-RED and needs governance, security, and scale.
