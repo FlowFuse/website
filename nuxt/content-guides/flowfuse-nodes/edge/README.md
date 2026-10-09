@@ -28,6 +28,7 @@ This section lists the **Edge Certified Nodes** documented in FlowFuse:
 - [RTSP Video Feed](/docs/flowfuse-nodes/edge/rtsp/): Documentation for the FlowFuse RTSP Video Feed node, which connects to an RTSP camera stream and extracts still frames as PNG images for use in flows, dashboards, and local AI models.
 - [CIP Suite, EtherNet/IP Nodes](/docs/flowfuse-nodes/edge/cip-suite/): A suite of nodes for reading, writing, and monitoring data on Rockwell Automation and Allen-Bradley PLCs, and other CIP-capable devices, using the EtherNet/IP protocol.
 - [Modbus](/docs/flowfuse-nodes/edge/modbus/): A FlowFuse-certified package for reading and writing coils and registers over Modbus TCP, Modbus UDP (where supported), and Serial (RTU/ASCII), and for simulating a Modbus server, all from within your flows.
+- [Siemens S7 Nodes](/docs/flowfuse-nodes/edge/s7/): A suite of nodes for reading, writing, and monitoring data on Siemens S7-200, S7-300, S7-400, S7-1200, S7-1500 and LOGO! PLCs over the S7 protocol.
 - [OPC UA for FlowFuse - FlowFuse Certified Node](/docs/flowfuse-nodes/edge/opcua/): Connect a FlowFuse instance to industrial OPC UA servers: read, write, monitor, call methods, browse, read history, work with files, or host your own OPC UA server. A FlowFuse Certified Node.
 
 ::note
