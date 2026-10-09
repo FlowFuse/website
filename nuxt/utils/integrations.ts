@@ -35,7 +35,13 @@ function docPathFromCatalogueUrl (url: string | undefined): string | undefined {
 }
 
 const DOCS_URL_OVERRIDES: Record<string, string> = {
-    '@flowfuse-certified-nodes/opcua': '/docs/flowfuse-nodes/edge/opcua/'
+    '@flowfuse-certified-nodes/cip-suite': '/docs/flowfuse-nodes/edge/cip-suite/',
+    '@flowfuse-certified-nodes/ffcn-kafka': '/docs/flowfuse-nodes/hub/kafka/',
+    '@flowfuse-certified-nodes/modbus': '/docs/flowfuse-nodes/edge/modbus/',
+    '@flowfuse-certified-nodes/opcua': '/docs/flowfuse-nodes/edge/opcua/',
+    '@flowfuse-certified-nodes/redis': '/docs/flowfuse-nodes/hub/redis/',
+    '@flowfuse-certified-nodes/rtsp': '/docs/flowfuse-nodes/edge/rtsp/',
+    '@flowfuse-certified-nodes/s7': '/docs/flowfuse-nodes/edge/s7/'
 }
 
 function normalizeCatalogueModule (
