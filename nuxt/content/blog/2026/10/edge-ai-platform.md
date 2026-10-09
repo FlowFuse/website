@@ -44,9 +44,7 @@ This guide covers seven areas to evaluate before you choose, from the hardware o
 
 ## What Is an Edge AI Platform?
 
-An edge AI platform runs and manages AI applications close to where the data comes from. Some platforms only run models. Others also deploy applications, connect to devices and data sources, and manage software across a fleet.
-
-In a factory, that difference shows up fast. Running a model on a lab PC is easy. Running it around the clock alongside [PLCs](/landing/plc/), [cameras](/docs/flowfuse-nodes/edge/rtsp/), [databases](/docs/node-red/database/), and other applications is a different job, and it's the job you need the platform to do.
+An edge AI platform is the software that runs and manages AI applications close to where data is produced, on industrial PCs, gateways, and other devices on the factory floor. Its purpose is to let AI act on that data locally: taking in signals from [PLCs](/landing/plc/), [cameras](/docs/flowfuse-nodes/edge/rtsp/), and sensors, running the model, and passing the results to the machines, [databases](/docs/node-red/database/), and people that need them, without depending on a round trip to the cloud.
 
 ## What to Look For
 
