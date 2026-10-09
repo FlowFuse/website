@@ -10,6 +10,7 @@ type Item = {
     image: string
     imageAlt: string
     variant: 'indigo' | 'red' | 'mixed'
+    videoId?: string
     id?: string
 }
 
@@ -41,13 +42,20 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
         >
           <!-- Image (desktop): full-size screenshot offset over a colored panel -->
           <div class="max-md:hidden md:w-[45%]">
-            <div class="relative aspect-[430/289]">
+            <div class="relative" :class="item.videoId ? 'aspect-video' : 'aspect-[430/289]'">
               <div
                   class="absolute -top-5 w-full h-full rounded-lg bg-gradient-to-tl"
                   :class="[VARIANTS[item.variant].gradient, index % 2 === 0 ? '-left-5' : '-right-5']"
               />
               <div class="absolute inset-0 rounded-lg border-2 overflow-hidden ff-image-cover" :class="VARIANTS[item.variant].border">
-                <img :src="item.image" :alt="item.imageAlt" loading="lazy">
+                <LiteYoutube
+                    v-if="item.videoId"
+                    :videoid="item.videoId"
+                    :title="item.imageAlt"
+                    :poster="item.image"
+                    class="application-video"
+                />
+                <img v-else :src="item.image" :alt="item.imageAlt" loading="lazy">
               </div>
             </div>
           </div>
@@ -56,7 +64,14 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
             <h3 class="text-gray-700 text-3xl font-medium m-0">{{ item.title }}</h3>
             <div class="md:hidden rounded-xl w-full bg-gradient-to-tl max-w-[500px] mx-auto my-4 p-4" :class="VARIANTS[item.variant].mobileGradient">
               <div class="ff-image-rounded w-full border overflow-hidden" :class="VARIANTS[item.variant].mobileBorder">
-                <img :src="item.image" :alt="item.imageAlt" loading="lazy">
+                <LiteYoutube
+                    v-if="item.videoId"
+                    :videoid="item.videoId"
+                    :title="item.imageAlt"
+                    :poster="item.image"
+                    class="application-video"
+                />
+                <img v-else :src="item.image" :alt="item.imageAlt" loading="lazy">
               </div>
             </div>
             <!-- A blank line in the source splits the description into separate paragraphs,
@@ -78,3 +93,13 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
     </div>
   </section>
 </template>
+
+<style scoped>
+.application-video {
+    border-radius: 0;
+}
+
+.application-video :deep(.lty-playbtn) {
+    background-image: none;
+}
+</style>
