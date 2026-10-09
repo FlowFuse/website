@@ -1,7 +1,7 @@
 ---
 title: "Buyer's Guide: How to Evaluate an Edge AI Platform for Industrial Use"
 metaTitle: "Edge AI Platforms: How to Evaluate and Choose One"
-subtitle: "Running the model is the easy part. Here's what else to check, and the questions to ask vendors."
+subtitle: "8 questions to put to every vendor before an edge pilot becomes a production fleet"
 description: "How to evaluate an edge AI platform for industrial use: hardware, integration, offline operation, updates, monitoring, security, and scale."
 date: 2026-10-09
 authors: ["sumit-shinde"]
@@ -31,16 +31,18 @@ cta:
   description: Bring your model and your hardware. We'll show you how FlowFuse handles integration, offline operation, updates, and rollback across your fleet.
 ---
 
-Evaluating an edge AI platform usually starts with one question: can it run our model?
+Most edge AI platforms can run your model. The real test is what happens after the pilot.
 
 <!--more-->
 
-Almost any platform can. The real differences show up after the pilot. Now the model has to read data from PLCs and cameras, keep working through a network outage, take a retrained version without a site visit, and do all of it on fifty devices instead of one. A single-device pilot tests almost none of that, so most teams find the gaps after they've already committed.
+Can it pull data from a PLC, keep working through a network outage, and roll out updates across 50 devices without turning each deployment into a separate project?
+
+We see these challenges across industrial environments. FlowFuse runs in more than 120 plants across 20+ countries, and more than 200 teams use its AI features to build and run applications. The model is only one part of the equation. Data access, connectivity, deployment, and ongoing maintenance are what determine whether a pilot can scale.
 
 ::cta-image{src="/blog/2026/10/images/edge-ai-platform-cta.png" alt="Take edge AI from pilot to production with FlowFuse - book a demo" cta="demo"}
 ::
 
-This guide covers seven areas to evaluate before you choose, from the hardware on one device to running a full fleet. It ends with a [checklist](#questions-to-ask-before-you-choose) of questions to ask vendors, so you can compare platforms side by side.
+This guide covers what to evaluate before choosing an edge AI platform, along with the questions to ask every vendor, including us.
 
 ## What Is an Edge AI Platform?
 
