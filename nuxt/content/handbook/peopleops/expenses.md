@@ -72,9 +72,11 @@ company, you can claim back the money through
 Before approving an expense in Deel, please verify:
 - The receipt is a final Proof of Payment (not a quote)
 - That the attachment is an invoice and not a screenshot
-- Asset purchases >$500 are logged in the [Asset](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit?gid=0#gid=0) Tracker. Demo, evaluation, and testing hardware is logged at any value. If not, flag with operations
-- The description clearly states the business justification
-- For expenses >$250, ensure the CEO is looped in for co-approval
+- he description clearly states the business justification
+- For any expenses >$250, ensure the CEO is looped in for co-approval
+- Laptops and other personal asset purchases >$500 are logged in the [Laptop Tracker](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit?gid=0#gid=0) (BizOps and people managers have access). If not, flag with operations
+- Demo, evaluation, and testing hardware is logged in the [Hardware Asset Tracker](https://docs.google.com/spreadsheets/d/1l201Q2pHqnF1QvhPtCo600XotywJCcc2JNqyoxyrzj8/edit) at any value. If not, flag with operations
+
 
 ## Equipment
 
@@ -178,18 +180,15 @@ Comfort and reliability matter more than brand or style.
 
 ### Asset purchases over $500
 
-Any asset purchase over $500 (laptops, devices etc) needs to be centrally
-recorded. This is done in
-[this Google Sheet](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit#gid=0)
-and shared with the Finance team. Send details of the purchase to your manager
-so it can be recorded.
+Any personal asset purchase over $500 (laptops, headphones, etc.) needs to be centrally
+recorded. See [Inventory of Assets](/handbook/company/security/asset-management/#inventory-of-assets)
+for information on how and where to record the information.
 
-Company-purchased hardware that is not home office equipment is recorded in the
-same sheet regardless of its value. This includes devices used for demos and 
-testing Certified Nodes. Hardware you buy personally
-is not a company asset and is not recorded. See the
-[Asset Management Policy](/handbook/company/security/asset-management/) for how
-the inventory is maintained.
+Company-purchased hardware that is not home office equipment is recorded regardless 
+of its value. This includes devices used for demos, filming and photography, and 
+testing Certified Nodes. Hardware you buy personally and don't receive reimbursement for 
+is not a company asset and is not recorded. See [Inventory of Assets](/handbook/company/security/asset-management/#inventory-of-assets)
+for information on how and where to record the information.
 
 ### Return of equipment
 
