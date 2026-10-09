@@ -23,7 +23,7 @@ our product or go-to-market changes.
 -->
 
 The physical world must adopt tailor made software like digital companies have
-already done,  but connecting, moving, visualizing, and interacting with their data
+already done, but connecting, moving, visualizing, and interacting with their data
 from machines and assets is expensive and error-prone. The wide range of software systems,
 assets, machines, some new and some decades old, have made the challenge too big.
 As a result, most industrial equipment goes unmonitored and unoptimized, leaving
@@ -48,7 +48,7 @@ world's engineering workforce in every other discipline combined -- and
 that's before counting the technicians and operators who work alongside them
 and depend on the same software every day.
 
-### Achieving our Mission
+## How we get there
 
 At the core of FlowFuse is Node-RED, the Low-Code platform that allows many to
 build software with little or no coding knowledge. This enables anyone to be
@@ -59,17 +59,11 @@ primary contributor to Node-RED. Our product is the best way to run Node-RED at
 any scale.
 
 Furthermore, FlowFuse aims to make it a great experience to build, deploy, and
-maintain software -- especially for non-software engineers. Allowing complex
-things to be achieved. Two good examples are
-
-1. FlowFuse Dashboard - Allowing to build Dashboards and interactive
-   applications
-1. Project-Link - Linking Edge devices to the Cloud, enabling broadcasts and
-   point-to-point connections
+maintain software, especially for non-software engineers, allowing complex
+things to be achieved.
 
 A key differentiator for FlowFuse is our approach to licensing of our software.
-The core is open, free as in beer and as in speech. Our product is open for
-scrutiny, usage, improvements, for the world. While there's a subset of the
+The core is open for scrutiny, usage, and improvement, by the world. While there's a subset of the
 product proprietary licensed, the source is available to read. We believe that
 Open Source Software plays a key part in education, reducing vendor lock-in, and
 community building.
@@ -108,6 +102,13 @@ often Architects, Engineering Managers, and specialists in IT or OT.
    This complexity makes it difficult for teams to integrate and leverage data
    from different sources into a view of operations that can help identify
    optimizations.
+1. No Route to Governed Software: Software built by non-software engineers still
+   has to satisfy the organization's security, compliance, and operational
+   standards. Without a way to evidence what is running, where it is running,
+   and whether it is up to date, IT is left to either block the work or absorb
+   the risk on the organization's behalf. Engineers need to build and deploy in
+   a way that meets governance requirements without routing every change back
+   through IT.
 
 ## Why these problems are significant
 
@@ -142,6 +143,9 @@ with the tools they need to:
    providing a comprehensive user-friendly interface that allows engineers to
    focus on solving problems, not wrestling with technology. See also our
    [Messaging page](/handbook/marketing/messaging/).
+1. Govern What Gets Built: FlowFuse provides the access controls, audit trail,
+   and dependency visibility that let IT sign off on software it did not write,
+   without becoming a bottleneck to the people writing it.
 
 FlowFuse uses Open-Source technologies like Node-RED and MQTT to help our
 customers being successful in remedying their problems.
