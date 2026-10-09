@@ -143,15 +143,13 @@ numbers needed to verify it:
 | ----- | -------- | ------ |
 | [CSM bonus](#processing-the-csm-bonus) | Total portfolio performance (NRR), see [Customer Success Bonus Structure](/handbook/sales/customer-success/#customer-success-bonus-structure) | Quarterly |
 | SDR bonus | First Meetings, see [SDR Bonus Structure](/handbook/marketing/sdr/#bonus-structure) | Monthly |
-| [MBO bonus](#mbo-bonuses) | Goals agreed between the employee and their manager | Quarterly |
+| [MBO bonus](#mbo-bonuses) | Goals agreed between the employee and their manager, see [Bonus Calculation (MBO Attainment)](/handbook/peopleops/compensation/#bonus-calculation-mbo-attainment) | Quarterly |
 
 ### MBO Bonuses
 
-MBO bonuses are agreed upon between the employee and their manager.
-
-At the start of each quarter, the employee should send an email to both their manager and the CEO outlining the agreed goals and bonus structure. The manager must reply to that email confirming the agreement. This ensures that all parties have written confirmation of the goals and conditions.
-
-All goals must be achieved within the agreed quarter. Data or outcomes generated outside of the quarter will not be counted toward the results, even if reports need to be finalized or generated after the quarter has ended. Some reporting may require data collection after the quarter, but this does not extend the performance period.
+MBO bonuses are agreed upon between the employee and their manager. How MBOs
+are set and confirmed, and how attainment is calculated, is described in
+[Quarterly & Period-Based Bonuses (MBOs)](/handbook/peopleops/compensation/#quarterly-period-based-bonuses-mbos).
 
 When the quarter has ended, the Chief of Staff and the Operations team verify the
 achieved outcome against the agreed goals, and send the bonus calculation to the
