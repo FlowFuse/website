@@ -1,10 +1,10 @@
 ---
-title: "Commercial Organization"
+title: "Sales"
 ---
 
-# Commercial Organization
+# Sales
 
-The Commercial Organization owns how FlowFuse turns product capability into
+The Sales organization owns how FlowFuse turns product capability into
 realized customer value — from the first commercial conversation through
 adoption, expansion, and long-term success. It is more than a revenue function:
 it is a unified commercial team responsible for building customer relationships,
@@ -45,7 +45,7 @@ sustainably.
 
 ## Organizational structure
 
-The Commercial Organization is led by the **VP of Sales**, who oversees the five
+The Sales organization is led by the **VP of Sales**, who oversees the five
 functions. Each function has distinct responsibilities, but we operate as a
 single, collaborative department aligned around customer value and commercial
 growth, with strong cross-functional collaboration across Product, Marketing,
