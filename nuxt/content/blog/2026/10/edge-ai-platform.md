@@ -5,7 +5,7 @@ subtitle: "Running the model is the easy part. Here's what else to check, and th
 description: "How to evaluate an edge AI platform for industrial use: hardware, integration, offline operation, updates, monitoring, security, and scale."
 date: 2026-10-09
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/10/images/edge-ai-platform.png
 tags:
   - flowfuse
   - posts
@@ -36,6 +36,8 @@ Evaluating an edge AI platform usually starts with one question: can it run our 
 <!--more-->
 
 Almost any platform can. The real differences show up after the pilot. Now the model has to read data from PLCs and cameras, keep working through a network outage, take a retrained version without a site visit, and do all of it on fifty devices instead of one. A single-device pilot tests almost none of that, so most teams find the gaps after they've already committed.
+
+::cta-image{src="/blog/2026/10/images/edge-ai-platform-cta.png" alt="Take edge AI from pilot to production with FlowFuse - book a demo" cta="demo"}
 
 This guide covers seven areas to evaluate before you choose, from the hardware on one device to running a full fleet. It ends with a [checklist](#questions-to-ask-before-you-choose) of questions to ask vendors, so you can compare platforms side by side.
 
