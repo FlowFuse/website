@@ -69,6 +69,10 @@ bundles:
             abbr: EI
             description: Rockwell / Allen-Bradley industrial Ethernet protocol.
             url: /docs/flowfuse-nodes/edge/cip-suite/
+          - name: Siemens S7
+            abbr: S7
+            description: Read, write, and monitor Siemens S7 and LOGO! PLCs over S7comm.
+            url: /docs/flowfuse-nodes/edge/s7/
       - label: AI
         nodes:
           - name: AI nodes
