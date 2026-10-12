@@ -45,6 +45,9 @@ It sounds simple, and most of the time it is. The trouble is that a station can 
 
 So this post covers what EOL stations test and how they work, but most of it is about the part people skip: setting limits you can defend, checking that the station itself is telling the truth, and using the test data to catch problems early.
 
+::cta-image{src="/blog/2026/10/images/end-of-line-testing-cta.png" alt="See why units fail at end of line: track first-pass yield, retests, and readings drifting toward limits for every station - book a FlowFuse demo" cta="demo"}
+::
+
 ## What End of Line Testing Checks
 
 There isn't one standard EOL test. What you check depends on the product, how it's used, and how it tends to fail. Most test plans pull from four groups:
@@ -128,6 +131,9 @@ If you can only watch one, make it first-pass yield, because final acceptance hi
 The trends in the readings can warn you before anything fails at all. Say a motor's current draw creeps up a little every week. Every unit still passes, but something is adding mechanical resistance, and it's going to keep getting worse. Put that trend next to your retest rate, failures by step, and the maintenance history, and you can usually tell whether it's the product, the process, or the station.
 
 And when a defect does get out, start with two questions. Did the test cover that failure mode at all? If it did, were the method and limits good enough to catch it? [Root cause analysis](/blog/2025/12/five-whys-root-cause-analysis-definition-examples/) will help you figure out where the fix belongs.
+
+::cta-image{src="/blog/2026/10/images/fishbone-diagram-template-cta-light.png" alt="Free download: fishbone diagram template with pre-built 6M branches to trace defects back to their root cause" cta="custom" destination-key="fishboneTemplate"}
+::
 
 ## Connecting EOL Stations With FlowFuse
 
