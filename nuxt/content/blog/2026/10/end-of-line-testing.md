@@ -5,7 +5,7 @@ subtitle: "What EOL tests check, why good products fail and bad ones pass, and h
 description: "Learn what end of line (EOL) testing checks, how test stations make pass/fail decisions, common causes of failures, and how test data helps identify root causes."
 date: 2026-10-12
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/10/images/end-of-line-testing.png
 tags:
   - posts
   - flowfuse
