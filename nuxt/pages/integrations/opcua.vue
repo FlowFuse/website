@@ -113,8 +113,8 @@ const protocols = [
         icon: 'i-heroicons-server-stack',
         title: 'Siemens S7',
         description: 'Direct S7comm connectivity to S7-300, S7-400, S7-1200, and S7-1500 PLCs, for the many Siemens deployments that predate an OPC UA server.',
-        linkText: 'Siemens S7 integration guide',
-        url: '/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/',
+        linkText: 'Siemens S7 Certified Node',
+        url: '/docs/flowfuse-nodes/edge/s7/',
     },
     {
         icon: 'i-heroicons-wifi',

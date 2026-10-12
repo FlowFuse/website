@@ -6,8 +6,8 @@ navigation:
 
 # Solution Engineering
 
-The Solution Engineering function is the technical backbone of the Commercial
-Organization. Solution Engineers (SEs) act as trusted technical advisors across
+The Solution Engineering function is the technical backbone of the Sales
+organization. Solution Engineers (SEs) act as trusted technical advisors across
 the customer lifecycle — from first technical conversation through discovery,
 tailored demos, proof-of-value evaluations, onboarding, and ongoing architecture
 guidance. Where the Account Executive owns the commercial outcome, the Solution
@@ -47,7 +47,7 @@ partnership with the Account Executive who owns the commercial outcome.
 
 ## Collaboration Model
 
-Solution Engineers operate across the Commercial Organization:
+Solution Engineers operate across the Sales organization:
 
 - **Sales**
   Partner with the Account Executive on discovery, demos, and PoV scope; provide
