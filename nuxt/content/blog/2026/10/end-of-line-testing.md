@@ -1,5 +1,5 @@
 ---
-title: "End of Line Testing: The Last Chance to Catch Defects Before They Ship"
+title: "End of Line Testing: Your Final Defense Against Defects"
 metaTitle: "End of Line Testing: How EOL Testing Works"
 subtitle: "What EOL tests check, why good products fail and bad ones pass, and how test data helps find the root cause."
 description: "Learn what end of line (EOL) testing checks, how test stations make pass/fail decisions, common causes of failures, and how test data helps identify root causes."
