@@ -186,6 +186,15 @@ Bonuses will not be processed if MBOs are defined or changed after the period ha
 
 ### Bonus Calculation (MBO Attainment)
 
+Roles with a bonus or commission plan of their own have its formula on their
+role's page:
+
+* Sales reps: [Sales Compensation Plan](/handbook/sales/commission-plan/)
+* Customer Success: [NRR Bonus Formula](/handbook/sales/customer-success/#nrr-bonus-formula)
+* SDR: [First Meetings Bonus Formula](/handbook/marketing/sdr/#first-meetings-bonus-formula)
+
+Bonuses based on MBOs are calculated as described below.
+
 When an MBO is defined as a growth target, attainment is measured based on the proportion of growth achieved, not the absolute value reached.
 
 #### Definitions

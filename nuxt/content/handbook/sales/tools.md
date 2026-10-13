@@ -6,7 +6,7 @@ navigation:
 
 # Systems & Tools
 
-The Commercial Organization relies on an integrated set of systems to support our
+The Sales organization relies on an integrated set of systems to support our
 workflows across Sales, Solution Engineering, Customer Success, Sales
 Partnerships, and Professional Services. This page is the reference for what we
 use and what each tool is for. [HubSpot](/handbook/sales/hubspot/) is our source

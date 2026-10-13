@@ -4,20 +4,12 @@ title: "Processes"
 
 # Processes
 
-This page is a navigation index for the core processes and methodologies used across the Commercial Organization.
+This page is a navigation index for the core processes and methodologies used across the Sales organization.
 Each process is owned by a specific function, with other functions contributing as needed.
 
 ---
 
 ## Sales-owned processes
-
-### Edge Connectivity Sales Process
-**Owning function:** Sales
-**Used when:** The customer is evaluating how to standardize or modernize edge connectivity across systems or sites.
-
-→ [View process](../edge-connect-process.md)
-
----
 
 ### Node-RED Scale Sales Process
 **Owning function:** Sales

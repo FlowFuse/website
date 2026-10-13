@@ -8,6 +8,7 @@ const NAME_OVERRIDES = {
     '@flowfuse-certified-nodes/opcua': 'OPC UA',
     '@flowfuse-certified-nodes/rtsp': 'RTSP',
     '@flowfuse-certified-nodes/cip-suite': 'CIP Suite',
+    '@flowfuse-certified-nodes/s7': 'Siemens S7',
 }
 
 // Last resort when there is no override: "@flowfuse-certified-nodes/google-sheets"

@@ -332,7 +332,7 @@ sections:
         tiers: { edge: false, hub: true, fleet: true }
       - id: certified-nodes-ot
         title: Certified OT Connections - OPC-UA, Modbus, etc.
-        description: "OT certified node bundle includes: OPC-UA, Modbus TCP & RTU, RTSP, EtherNet/IP, AI nodes (Gemini, Claude, ChatGPT, Ollama), MCP Server"
+        description: "OT certified node bundle includes: OPC-UA, Modbus TCP & RTU, RTSP, EtherNet/IP, Siemens S7, AI nodes (Gemini, Claude, ChatGPT, Ollama), MCP Server"
         tiers: { edge: true, hub: false, fleet: false }
       - id: audit-log
         title: Audit Log

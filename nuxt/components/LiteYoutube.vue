@@ -2,6 +2,7 @@
 const props = defineProps<{
     videoid: string
     title: string
+    poster?: string
 }>()
 
 // Register stylesheet and script via useHead so they're present in the initial SSR HTML.
@@ -22,5 +23,10 @@ useHead({
 </script>
 
 <template>
-  <lite-youtube :videoid="videoid" params="rel=0" style="width: 100%; height: 480px;" :title="`${title} - YouTube video`" />
+  <lite-youtube
+      :videoid="videoid"
+      params="rel=0"
+      :style="{ width: '100%', height: '480px', backgroundImage: poster ? `url('${poster}')` : undefined }"
+      :title="`${title} - YouTube video`"
+  />
 </template>

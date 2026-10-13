@@ -6,7 +6,7 @@ navigation:
 
 # Working Norms
 
-The Commercial Organization operates as a distributed team across Sales, Solution
+The Sales organization operates as a distributed team across Sales, Solution
 Engineering, Customer Success, Professional Services, and Sales Partnerships.
 These norms cover the team's operating rhythm and how work escalates. For
 individual conduct standards — presence, preparation, follow-through, and ethics

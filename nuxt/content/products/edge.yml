@@ -24,7 +24,7 @@ fitNo:
 included:
   - title: "Connect the plant floor"
     chips:
-      - label: "Certified OT Connections (OPC-UA, Modbus, EtherNet/IP, RTSP)"
+      - label: "Certified OT Connections (OPC-UA, Modbus, EtherNet/IP, Siemens S7, RTSP)"
         href: "/integrations/?product=edge&certified=1"
       - label: "MQTT Broker"
         href: "/docs/user/teambroker/"

@@ -8,7 +8,7 @@ navigation:
 
 Effective onboarding and continuous development are how we build a high-performing,
 collaborative team. This page outlines how new team members get up to speed and
-how ongoing growth is supported across the Commercial Organization.
+how ongoing growth is supported across the Sales organization.
 
 ## Onboarding structure
 
@@ -53,5 +53,5 @@ maintained and assigned with Sales leadership and the relevant team leads.
 
 ---
 
-New to the team? Start with the [Commercial Organization overview](/handbook/sales/)
+New to the team? Start with the [Sales overview](/handbook/sales/)
 and the [Working Norms](/handbook/sales/working-norms/).

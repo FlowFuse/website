@@ -6,7 +6,7 @@ navigation:
 
 # Customer Journey Alignment
 
-The Commercial Organization coordinates across functions to guide prospects and
+The Sales organization coordinates across functions to guide prospects and
 customers through the entire lifecycle — from first awareness to long-term
 success. A shared understanding of the journey keeps us delivering the right
 value at the right time, with clear ownership at every stage.

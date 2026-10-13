@@ -54,6 +54,10 @@ const PROTOCOLS = [
         description: "Direct S7comm connectivity to Siemens S7-300, S7-400, S7-1200, and S7-1500 PLCs. Read DB blocks, Merkers, I/O, and more.",
         links: [
             {
+                text: "Siemens S7 Certified Node \u2192",
+                url: "/docs/flowfuse-nodes/edge/s7/"
+            },
+            {
                 text: "Siemens S7 Integration Guide \u2192",
                 url: "/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/"
             }
