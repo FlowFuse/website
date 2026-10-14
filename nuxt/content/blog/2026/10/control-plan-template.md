@@ -5,7 +5,7 @@ subtitle: "A process control plan template based on the AIAG Control Plan Manual
 description: "Download a free control plan template based on the AIAG Control Plan Reference Manual and IATF 16949. Learn how to write each row, set sample frequencies and write reaction plans that hold up."
 date: 2026-10-14
 authors: ["sumit-shinde"]
-image: 
+image: /blog/2026/10/images/control-plan-template.png
 tags:
   - posts
   - flowfuse
