@@ -51,7 +51,7 @@ For each process step, it defines:
 - **Reaction plan:** what happens when a result is outside the specified limits
 - **Special characteristic:** whether the characteristic has additional control requirements
 
-For example, a row might specify: bore diameter at Station 30, 25.00 mm ± 0.05 mm, measured with an in-line air gauge on every part, with CMM verification every 50 parts. An out-of-spec result requires the part to be rejected and the quality engineer notified.
+For example, a row might specify: bore diameter at Station 30, 25.00 mm ± 0.05 mm, measured with an in-line air gauge on every part, with CMM verification every 50 parts. An out-of-spec result requires the part to be rejected and the quality engineer notified. Our [control plan template](/blog/2026/10/control-plan-template/) uses the same row structure, with worked examples and a review checklist.
 
 ## Where the link breaks down
 
