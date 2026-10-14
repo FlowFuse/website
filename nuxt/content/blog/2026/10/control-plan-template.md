@@ -11,8 +11,8 @@ tags:
   - flowfuse
 cta:
   type: demo
-  title: "Your Control Plan Says Every 400 Parts. Can You Prove It?"
-  description: "See FlowFuse read your PLCs, gauges and weld controllers, check every reading against the right control plan row and alert the reaction plan owner the moment a check is missed or a limit is crossed."
+  title: "Your Control Plan Is Only as Good as the Data Behind It"
+  description: "Connect your shop-floor equipment with FlowFuse to collect process data, detect missed checks and out-of-limit readings, and give your team the evidence it needs to act before quality issues reach the customer."
 meta:
   faq:
     - question: "What should a control plan template include?"
