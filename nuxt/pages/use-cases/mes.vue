@@ -4,7 +4,7 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 const META_TITLE = 'Composable MES: Build Apps Around Your MES | FlowFuse'
 const META_DESCRIPTION = 'Build a composable MES with FlowFuse: AI-assisted, low-code apps and MES integration that work alongside the system you already run, without replacing it.'
 
-const AT_A_GLANCE = 'An MES is the system of record for orders, routing, genealogy, and validated records, and it should stay that way. Most software vendors want to become your system of everything. We don\'t. But somewhere there\'s always a machine that doesn\'t fit the standard, [a legacy device the MES can\'t talk to](/use-cases/shop-floor-communication/), or [an operator screen that takes three weeks to learn](/platform/dashboard/). FlowFuse is where your team builds, deploys, and manages those applications: the composable layer around your MES. Describe what you need in plain language, and AI builds the first version without touching the MES core.'
+const EXCEPTIONS = 'There\'s always a machine that doesn\'t fit the standard, [a legacy device the MES can\'t talk to](/use-cases/shop-floor-communication/), or [an operator screen that takes three weeks to learn](/platform/dashboard/). FlowFuse is where your team builds, deploys, and manages those applications: the composable layer around your MES.'
 
 const COMPARISON = [
     {
@@ -92,27 +92,6 @@ const QUOTES = [
     },
 ]
 
-const STATS = [
-    {
-        value: '130+',
-        title: 'Node-RED instances at Walter',
-        description: 'Feeding machine runtime and downtime data to the central MES, run by the same IT team.',
-        link: { to: '/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/', label: 'Read Walter\'s story' },
-    },
-    {
-        value: '100+',
-        title: 'Manufacturing databases connected',
-        description: 'MES integration automated across production environments.',
-        link: { to: '/customer-stories/scaling-manufacturing-automation-with-flowfuse/', label: 'Read Arch Systems\' story' },
-    },
-    {
-        value: '100s',
-        title: 'Applications built by 5 developers',
-        description: 'Measuring equipment efficiency, which a large US manufacturer\'s MES didn\'t cover.',
-        link: { to: '/customer-stories/manufacturing-digital-transformation/', label: 'Read the manufacturer\'s story' },
-    },
-]
-
 const FAQ = [
     {
         question: 'Is FlowFuse an MES alternative?',
@@ -195,12 +174,6 @@ useSchemaOrg([
     <section class="mes-gradient w-full px-6 pt-16 md:pt-20 pb-20">
       <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div class="max-md:text-center">
-          <div class="mb-4 max-md:flex max-md:justify-center">
-            <span class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-gray-800">
-              <UIcon name="i-lucide-blocks" class="w-5 h-5 text-indigo-600" />
-              <span class="font-medium">Composable MES</span>
-            </span>
-          </div>
           <h1 class="text-4xl md:text-5xl font-medium m-0">
             Keep your MES.
             <span class="block text-red-600">Make it composable.</span>
@@ -227,20 +200,35 @@ useSchemaOrg([
       </div>
     </section>
 
-    <section class="w-full px-6">
-      <div class="max-w-screen-lg mx-auto">
-        <SocialProof eyebrow="Trusted by 36,000+ users" eyebrow-bg="indigo" />
-      </div>
-    </section>
-
-    <section class="w-full px-6 pt-12 pb-20">
+    <section class="w-full px-6 py-20">
       <div class="max-w-screen-lg mx-auto">
         <h2 class="max-w-3xl">
-          Your MES runs production. FlowFuse handles <span class="text-indigo-600">everything that doesn't fit the template</span>.
+          MES integration <span class="text-indigo-600">without touching the core</span>.
         </h2>
         <p class="mt-4 mb-0 max-w-3xl text-gray-600">
-          <InlineMarkdown :text="AT_A_GLANCE" position="at-a-glance" />
+          FlowFuse connects to leading MES platforms over the interfaces they already expose:
+          <NuxtLink to="/docs/node-red/integration-technologies/rest/">APIs</NuxtLink>,
+          <NuxtLink to="/docs/node-red/database/">databases</NuxtLink>, file exchange, and
+          <NuxtLink to="/blog/2024/06/how-to-use-mqtt-in-node-red/">MQTT</NuxtLink>. Define who owns each record,
+          <NuxtLink to="/blog/2025/06/structuring-storing-data-mes-integration/">validate payloads</NuxtLink>, and
+          control any write-back to production systems.
         </p>
+        <ul class="mt-12 mb-0 p-0 list-none grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-center">
+          <li v-for="logo in MES_LOGOS" :key="logo.src" class="m-0 flex items-center justify-center">
+            <img
+                :src="logo.src"
+                :alt="logo.alt"
+                :title="logo.alt"
+                loading="lazy"
+                class="w-auto max-w-full mix-blend-luminosity opacity-70 saturate-0"
+                :class="logo.height"
+            >
+          </li>
+        </ul>
+        <NuxtLink to="/integrations/" class="mt-12 inline-flex items-center gap-1.5 text-blue-600 hover:underline">
+          See all integrations
+          <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />
+        </NuxtLink>
       </div>
     </section>
 
@@ -250,7 +238,8 @@ useSchemaOrg([
           Composable MES: Your MES + FlowFuse are <span class="text-indigo-600">better together</span>.
         </h2>
         <p class="mt-4 mb-0 max-w-3xl text-gray-600">
-          Your MES stays the system of record, and everything around it is built with FlowFuse.
+          Your MES is the system of record, and it should stay that way. Most software vendors want to become your
+          system of everything. We don't. Here's how the work splits.
         </p>
         <ul class="md:hidden mt-10 mb-0 px-6 py-8 list-none flex flex-col gap-12 rounded-lg border border-gray-200 bg-white">
           <li v-for="row in COMPARISON" :key="row.area" class="m-0">
@@ -287,15 +276,13 @@ useSchemaOrg([
       </div>
     </section>
 
-    <section class="w-full px-6 pt-20 pb-10">
+    <section class="w-full px-6 pt-20 pb-20">
       <div class="max-w-screen-lg mx-auto">
         <h2 class="max-w-3xl">
           Stop paying for change requests. <span class="text-indigo-600">Build the exceptions yourself</span>.
         </h2>
         <p class="mt-4 mb-0 max-w-3xl text-gray-600">
-          Use FlowFuse for MES integration, equipment connectivity, operator apps, and line-specific workflows your MES
-          wasn't built for, with a repeatable path from first build to every plant. One platform for the work around
-          your MES.
+          <InlineMarkdown :text="EXCEPTIONS" position="exceptions" />
         </p>
 
         <div class="mt-20 md:max-w-screen-lg mx-auto">
@@ -340,39 +327,7 @@ useSchemaOrg([
       </div>
     </section>
 
-    <section class="mes-gradient w-full px-6 py-20 mt-10">
-      <div class="max-w-screen-lg mx-auto">
-        <h2 class="max-w-3xl">
-          MES integration <span class="text-indigo-600">without touching the core</span>.
-        </h2>
-        <p class="mt-4 mb-0 max-w-3xl text-gray-600">
-          FlowFuse connects to leading MES platforms over the interfaces they already expose:
-          <NuxtLink to="/docs/node-red/integration-technologies/rest/">APIs</NuxtLink>,
-          <NuxtLink to="/docs/node-red/database/">databases</NuxtLink>, file exchange, and
-          <NuxtLink to="/blog/2024/06/how-to-use-mqtt-in-node-red/">MQTT</NuxtLink>. Define who owns each record,
-          <NuxtLink to="/blog/2025/06/structuring-storing-data-mes-integration/">validate payloads</NuxtLink>, and
-          control any write-back to production systems.
-        </p>
-        <ul class="mt-12 mb-0 p-0 list-none grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-center">
-          <li v-for="logo in MES_LOGOS" :key="logo.src" class="m-0 flex items-center justify-center">
-            <img
-                :src="logo.src"
-                :alt="logo.alt"
-                :title="logo.alt"
-                loading="lazy"
-                class="w-auto max-w-full mix-blend-luminosity opacity-70 saturate-0"
-                :class="logo.height"
-            >
-          </li>
-        </ul>
-        <NuxtLink to="/integrations/" class="mt-12 inline-flex items-center gap-1.5 text-blue-600 hover:underline">
-          See all integrations
-          <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />
-        </NuxtLink>
-      </div>
-    </section>
-
-    <section class="w-full px-6 py-20">
+    <section class="w-full px-6 py-20 bg-gray-50">
       <div class="max-w-screen-lg mx-auto grid lg:grid-cols-[1fr_590px] gap-10 lg:gap-16 items-center">
         <div class="max-lg:text-center">
           <p class="m-0 text-sm font-semibold uppercase tracking-wide text-indigo-600">From real conversations</p>
@@ -441,27 +396,6 @@ useSchemaOrg([
                 <UIcon name="i-heroicons-chevron-right" class="w-4 h-4" />
               </button>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="w-full px-6 pb-20">
-      <div class="max-w-screen-lg mx-auto">
-        <h2 class="max-md:text-center">Industrial teams use FlowFuse <span class="text-indigo-600">at scale</span>.</h2>
-        <p class="mt-4 mb-0 max-w-3xl text-gray-600 max-md:text-center">
-          See how teams are standardizing Node-RED applications, connecting operational data, and managing deployments
-          across real industrial environments.
-        </p>
-        <div class="mt-10 grid sm:grid-cols-3 gap-6 md:gap-12">
-          <div v-for="stat in STATS" :key="stat.value" class="flex flex-col rounded-lg bg-red-50/70 px-6 pt-6 pb-5">
-            <p class="m-0 text-5xl font-semibold text-red-400">{{ stat.value }}</p>
-            <p class="mt-4 mb-0 font-medium text-gray-700">{{ stat.title }}</p>
-            <p class="mt-1 mb-0 flex-1 text-gray-600">{{ stat.description }}</p>
-            <NuxtLink :to="stat.link.to" class="mt-4 inline-flex items-center gap-1.5 text-sm text-blue-600 hover:underline">
-              {{ stat.link.label }}
-              <UIcon name="i-heroicons-arrow-long-right" class="w-4 h-4 shrink-0" />
-            </NuxtLink>
           </div>
         </div>
       </div>
