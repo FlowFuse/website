@@ -46,7 +46,7 @@ const CAPABILITIES = [
         title: 'Describe it, and AI builds it with you',
         description: 'Tell FlowFuse\'s [built-in AI](/ai/) what the line needs, such as [live OEE](/blueprints/manufacturing/oee-dashboard/), [andon calls](/blueprints/manufacturing/andon-system/), or a [quality check](/blog/2026/07/defect-and-quality-monitoring/) at the machine. It builds the first version of the logic and the operator screens in [FlowFuse Dashboard](/platform/dashboard/), explains flows you inherited, and writes custom code. Nothing changes until your team approves it.',
         image: { src: '/images/use-cases/mes/torque-monitoring-video.webp', alt: 'Video: Building a Torque Monitoring App in 68 Minutes', width: 1280, height: 720 },
-        youtube: 'kPBLW-kMfsg',
+        youtube: 'dgwB7oFL_YY',
         variant: 'red',
         link: { to: '/ai/', label: 'Learn about FlowFuse AI and see how it builds apps' },
     },
