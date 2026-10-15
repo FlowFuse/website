@@ -3,5 +3,5 @@
 # two operational use-cases did. Kept here so /use-cases/ still builds its cards from
 # one place rather than a hand-maintained list.
 slug: mes
-title: "FlowFuse for MES"
-problem: "Build exactly the MES your operation needs, compose modular execution, tracking, and reporting flows without a monolithic vendor platform."
+title: "Composable MES"
+problem: "Keep your MES and build the integrations, operator apps, and line-specific workflows around it, one application at a time."
