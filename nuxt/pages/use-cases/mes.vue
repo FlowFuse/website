@@ -51,7 +51,7 @@ const CAPABILITIES = [
         link: { to: '/ai/', label: 'Learn about FlowFuse AI and see how it builds apps' },
     },
     {
-        title: 'Roll out across sites',
+        title: 'Reuse it across sites',
         description: 'Version applications, [promote them through pipelines](/docs/user/devops-pipelines/), and [deploy to every line and plant from one place](/use-cases/remote-device-management/).',
         image: { src: '/images/use-cases/mes/platform-home-card.webp', alt: 'FlowFuse home screen showing hosted and remote instances for packaging line monitoring, OEE and predictive maintenance apps', width: 1272, height: 855 },
         variant: 'indigo',
@@ -182,8 +182,8 @@ useSchemaOrg([
             <span class="block text-red-600">Make it composable.</span>
           </h1>
           <p class="mt-6 mb-0 text-gray-700">
-            We'll help you make it composable. FlowFuse works alongside your team to build the applications around
-            your MES, one costly problem at a time, on a foundation your team can run and extend.
+            FlowFuse engineers work alongside your team to deliver the first application, one costly problem at a time, 
+              and leave you a foundation your team can run and extend across every plant.
           </p>
           <div class="mt-8 flex gap-4 items-center max-md:justify-center flex-wrap">
             <CtaBookDemo variant="highlight" position="hero" />
@@ -208,7 +208,7 @@ useSchemaOrg([
           MES integration <span class="text-indigo-600">without touching the core</span>.
         </h2>
         <p class="mt-4 mb-0 max-w-3xl text-gray-600">
-          FlowFuse connects to leading MES platforms over the interfaces they already expose:
+          FlowFuse connects to MES platforms over the interfaces they already expose:
           <NuxtLink to="/docs/node-red/integration-technologies/rest/">APIs</NuxtLink>,
           <NuxtLink to="/docs/node-red/database/">databases</NuxtLink>, file exchange, and
           <NuxtLink to="/blog/2024/06/how-to-use-mqtt-in-node-red/">MQTT</NuxtLink>. Define who owns each record,
@@ -281,7 +281,7 @@ useSchemaOrg([
     <section class="w-full px-6 pt-20 pb-20">
       <div class="max-w-screen-lg mx-auto">
         <h2 class="max-w-3xl">
-          Customize your MES <span class="text-indigo-600">without touching the core</span>
+          Don't replace your MES. <span class="text-indigo-600">Build around it.</span>
         </h2>
         <p class="mt-4 mb-0 max-w-3xl text-gray-600">
           <InlineMarkdown :text="EXCEPTIONS" position="exceptions" />
@@ -335,7 +335,7 @@ useSchemaOrg([
           <p class="m-0 text-sm font-semibold uppercase tracking-wide text-indigo-600">From real conversations</p>
           <h2 class="mt-2">What manufacturers say about changing their MES</h2>
           <p class="mt-4 mb-0 text-gray-600">
-            From discovery calls with manufacturing teams. Names are withheld.
+            From discovery calls with manufacturing teams, shared anonymously.
           </p>
         </div>
         <div
@@ -416,8 +416,8 @@ useSchemaOrg([
     </section>
 
     <IndustryPageCta
-        heading="Keep your MES. Describe the app it's missing, and build it with FlowFuse."
-        description="Bring one real use case: a line that doesn't fit, a system the MES can't reach, or a screen operators avoid. We'll map where FlowFuse fits."
+        heading="Build the app your MES is missing."
+        description="Bring one real use case: a line that doesn't fit, a system the MES can't reach, or a screen operators avoid. We'll bring an engineer and work out the first step together."
     />
   </div>
 </template>
