@@ -59,6 +59,16 @@ useSchemaOrg([
 // have just copied.
 const CODING_NOTE = 'Other command-line and editor agents, such as Cursor, Visual Studio Code and Gemini CLI, connect to the same URL.'
 
+// What a connected agent actually builds, in place of the starter prompts this page
+// used to carry. The prompts carousel still lives on the blog post that embeds it.
+// `title` is the YouTube title, used for the embed's accessible name; `label` is the
+// shorter caption shown under each video.
+const BUILD_VIDEOS = [
+    { id: '2e8-CXt-RsM', label: 'Machine alerts in Slack, from legacy PLCs to new equipment', duration: '14 min', title: 'Machine Alerts in Slack, From Legacy PLCs to New Equipment I Built in 14 minutes' },
+    { id: 'dgwB7oFL_YY', label: 'An AI agent builds an OEE monitoring app', duration: '44 min', title: 'Industrial AI Agent Builds an OEE Monitoring App in 44 Minutes | FlowFuse + Claude MCP' },
+    { id: 'kPBLW-kMfsg', label: 'An AI agent builds a torque monitoring app', duration: '68 min', title: 'Industrial AI Agent Builds a Torque Monitoring App in 68 Minutes | FlowFuse + Claude MCP' },
+]
+
 const GOVERNANCE = {
     title: 'AI Governance you can <span class="text-indigo-600">prove</span>',
     subtitle: 'The control plane every AI action runs through, the same one that governs your teams.',
@@ -231,13 +241,36 @@ onUnmounted(() => {
               </span>
             </a>
 
-            <!-- What to ask once the picker above has you connected. Placed after the
-                 docs note rather than between it and the picker, so the note stays
-                 attached to the steps it belongs to, and the three read in order:
-                 how to connect, where to read more, what to say first.
-                 surface="ai" keeps these copies separable in PostHog from the same
-                 component on the blog post. -->
-            <PromptCarousel surface="ai" />
+            <!-- What a connected agent builds. Placed after the docs note rather than
+                 between it and the picker, so the note stays attached to the steps it
+                 belongs to, and the three read in order: how to connect, where to read
+                 more, what it looks like in practice. Carded with the same tinted
+                 header rail as the agent picker, so the two read as one family. -->
+            <section class="mt-8 mb-8 overflow-hidden rounded-xl border border-indigo-100 bg-white shadow-sm" aria-labelledby="ai-build-videos">
+              <div class="border-b border-indigo-100 bg-indigo-50/60 px-4 py-3">
+                <h2 id="ai-build-videos" class="m-0 font-mono text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-indigo-600">
+                  Watch it build
+                </h2>
+              </div>
+              <ul class="m-0 grid list-none grid-cols-1 gap-6 p-4 md:grid-cols-3 md:p-5">
+                <li v-for="video in BUILD_VIDEOS" :key="video.id" class="m-0 flex flex-col gap-3">
+                  <!-- height auto lets lite-youtube's own 16:9 ratio size the frame, in
+                       place of the component's fixed 480px, which suits a full-width
+                       blog hero but not a third of a column. -->
+                  <LiteYoutube
+                    :videoid="video.id"
+                    :title="video.title"
+                    :poster="`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`"
+                    class="overflow-hidden rounded-lg"
+                    style="height: auto; max-width: none; background-size: cover; background-position: center;"
+                  />
+                  <p class="m-0 text-sm font-medium text-gray-900">
+                    {{ video.label }}
+                    <span class="block mt-1 text-xs font-normal text-gray-500">{{ video.duration }}</span>
+                  </p>
+                </li>
+              </ul>
+            </section>
           </div>
         </div>
       </div>
