@@ -1,6 +1,6 @@
 ---
-title: "Control Plan Template: Free Download and How to Fill It In"
-metaTitle: "Control Plan Template: Free AIAG Download (2026)"
+title: "A Control Plan Template Your Shop Floor Will Actually Use"
+metaTitle: "Control Plan Template: Free Download and How to Fill It In"
 subtitle: "A process control plan template based on the AIAG Control Plan Manual, with example rows, a review checklist and a revision log."
 description: "Download a free control plan template based on the AIAG Control Plan Reference Manual and IATF 16949. Learn how to write each row, set sample frequencies and write reaction plans that hold up."
 date: 2026-10-14
