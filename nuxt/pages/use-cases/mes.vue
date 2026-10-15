@@ -96,20 +96,20 @@ const STATS = [
     {
         value: '130+',
         title: 'Node-RED instances at Walter',
-        description: 'Scaled across global locations with the same IT team.',
+        description: 'Feeding machine runtime and downtime data to the central MES, run by the same IT team.',
         link: { to: '/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/', label: 'Read Walter\'s story' },
     },
     {
         value: '100+',
         title: 'Manufacturing databases connected',
-        description: 'Standardized Node-RED flows process production data.',
+        description: 'MES integration automated across production environments.',
         link: { to: '/customer-stories/scaling-manufacturing-automation-with-flowfuse/', label: 'Read Arch Systems\' story' },
     },
     {
-        value: '7,000 km',
-        title: 'Denmark\'s high-voltage grid',
-        description: 'Operational data orchestration for critical infrastructure.',
-        link: { to: '/customer-stories/energinet-streamlining-critical-infrastructure-data-management/', label: 'Read Energinet\'s story' },
+        value: '100s',
+        title: 'Applications built by 5 developers',
+        description: 'Measuring equipment efficiency, which a large US manufacturer\'s MES didn\'t cover.',
+        link: { to: '/customer-stories/manufacturing-digital-transformation/', label: 'Read the manufacturer\'s story' },
     },
 ]
 
