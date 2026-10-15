@@ -49,6 +49,10 @@ _Screnshot of where to enter Certfied Nodes Token_
     - Add `.github/workflows/release-publish.yml` and the matching `CERTIFIED_NODES_PUBLISH_TOKEN` secret from 1Password.
 7. Publish the node to the FlowFuse registry.
 
+## Test Hardware
+
+A Siemens S7-1200 PLC is available for remote testing; see [Remote S7 PLC access](https://github.com/FlowFuse/engineering/wiki/Remote-S7-PLC-access) in the Engineering wiki.
+
 ## Updating the Catalog
 
 Once a node is published, it must be registered in the `ff-certified-nodes` Node-RED instance before it appears in customer instances or on the [Integrations page](/integrations). This instance lives in the `Internal Tools` Application on FlowFuse Cloud (`ff-certified-nodes.flowfuse.cloud`) and its editor has three flow tabs: **Authentication**, **catalog generator**, and **Usage**.

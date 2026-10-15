@@ -125,7 +125,7 @@ By connecting these systems, FlowFuse can help make the production data behind t
 
 ## Common reasons suppliers lose points
 
-Common findings include outdated control plans after process changes, missing links between FMEAs and control plans, capability values below requirements without an effective reaction plan, weak oversight of sub-suppliers, corrective actions closed without effectiveness evidence, training records that do not match the current process, and production data that cannot be traced to the relevant characteristic or operation.
+Common findings include [outdated control plans](/blog/2026/10/control-plan-template/#keeping-the-plan-current) after process changes, missing links between FMEAs and control plans, capability values below requirements without an effective reaction plan, weak oversight of sub-suppliers, corrective actions closed without effectiveness evidence, training records that do not match the current process, and production data that cannot be traced to the relevant characteristic or operation.
 
 These issues often develop when process changes are not reflected across documents, systems, and training records.
 
