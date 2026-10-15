@@ -73,6 +73,8 @@ const MES_LOGOS = [
     { src: '/images/mes-logos/aveva-logo.svg', alt: 'AVEVA MES', height: 'h-6' },
     { src: '/images/mes-logos/critical-manufacturing-logo.svg', alt: 'Critical Manufacturing MES', height: 'h-10' },
     { src: '/images/mes-logos/dassault-systemes-logo.svg', alt: 'Dassault Systèmes DELMIA Apriso', height: 'h-10' },
+    { src: '/images/mes-logos/ge-vernova-logo.svg', alt: 'GE Vernova Proficy', height: 'h-7' },
+    { src: '/images/mes-logos/tulip-logo.svg', alt: 'Tulip', height: 'h-8' },
 ]
 
 const QUOTES = [
@@ -213,7 +215,7 @@ useSchemaOrg([
           <NuxtLink to="/blog/2025/06/structuring-storing-data-mes-integration/">validate payloads</NuxtLink>, and
           control any write-back to production systems.
         </p>
-        <ul class="mt-12 mb-0 p-0 list-none grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-center">
+        <ul class="mt-12 mb-0 p-0 list-none grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 items-center">
           <li v-for="logo in MES_LOGOS" :key="logo.src" class="m-0 flex items-center justify-center">
             <img
                 :src="logo.src"
