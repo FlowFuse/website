@@ -89,8 +89,9 @@ const QUOTES = [
         company: 'Building-products manufacturer',
     },
     {
-        text: 'An important one for them is the product not becoming the one source of resource consumption. That\'s what MES typically does when you drop it into a shop floor.',
-        role: 'Manufacturing IT consultant',
+        text: 'We\'ve spent over 12 months implementing our MES, I\'m too scared to spend more time to customize it. But I need value now, so customizations have to be easy.',
+        role: 'Operations lead',
+        company: 'Automotive supplier',
     },
 ]
 
@@ -333,9 +334,9 @@ useSchemaOrg([
       <div class="max-w-screen-lg mx-auto grid lg:grid-cols-[1fr_590px] gap-10 lg:gap-16 items-center">
         <div class="max-lg:text-center">
           <p class="m-0 text-sm font-semibold uppercase tracking-wide text-indigo-600">From real conversations</p>
-          <h2 class="mt-2">Hear it from manufacturing teams living with an MES.</h2>
+          <h2 class="mt-2">What manufacturers say about changing their MES</h2>
           <p class="mt-4 mb-0 text-gray-600">
-            Anonymized excerpts from conversations with teams running or evaluating an MES.
+            From discovery calls with manufacturing teams. Names are withheld.
           </p>
         </div>
         <div
