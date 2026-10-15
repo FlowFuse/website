@@ -4,7 +4,7 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 const META_TITLE = 'Composable MES: Build Apps Around Your MES | FlowFuse'
 const META_DESCRIPTION = 'Build a composable MES with FlowFuse: AI-assisted, low-code apps and MES integration that work alongside the system you already run, without replacing it.'
 
-const EXCEPTIONS = 'There\'s always a machine that doesn\'t fit the standard, [a legacy device the MES can\'t talk to](/use-cases/shop-floor-communication/), or [an operator screen that takes three weeks to learn](/platform/dashboard/). FlowFuse is where your team builds, deploys, and manages those applications: the composable layer around your MES.'
+const EXCEPTIONS = 'There\'s always a machine that doesn\'t fit the standard, [a legacy device the MES can\'t talk to](/use-cases/shop-floor-communication/), or [an operator screen that takes three weeks to learn](/platform/dashboard/). We work with your team to build those customizations as applications around the MES, so its core stays standard, and your team can run and extend them across every plant.'
 
 const COMPARISON = [
     {
@@ -182,9 +182,8 @@ useSchemaOrg([
             <span class="block text-red-600">Make it composable.</span>
           </h1>
           <p class="mt-6 mb-0 text-gray-700">
-            You spent years and serious budget getting your MES live. We're not going to ask you to replace it. With
-            FlowFuse, your team can make it composable by building low-code industrial apps around it, or develop
-            manufacturing capabilities one application at a time.
+            We'll help you make it composable. FlowFuse works alongside your team to build the applications around
+            your MES, one costly problem at a time, on a foundation your team can run and extend.
           </p>
           <div class="mt-8 flex gap-4 items-center max-md:justify-center flex-wrap">
             <CtaBookDemo variant="highlight" position="hero" />
@@ -282,7 +281,7 @@ useSchemaOrg([
     <section class="w-full px-6 pt-20 pb-20">
       <div class="max-w-screen-lg mx-auto">
         <h2 class="max-w-3xl">
-          Stop paying for change requests. <span class="text-indigo-600">Build the exceptions yourself</span>.
+          Customize your MES <span class="text-indigo-600">without touching the core</span>
         </h2>
         <p class="mt-4 mb-0 max-w-3xl text-gray-600">
           <InlineMarkdown :text="EXCEPTIONS" position="exceptions" />
@@ -418,7 +417,7 @@ useSchemaOrg([
 
     <IndustryPageCta
         heading="Keep your MES. Describe the app it's missing, and build it with FlowFuse."
-        description="Bring one real use case: a line that doesn't fit, a system the MES can't reach, or a screen operators avoid. We'll map where FlowFuse fits. Or start a free trial, describe it to FlowFuse Expert, and see a first version yourself."
+        description="Bring one real use case: a line that doesn't fit, a system the MES can't reach, or a screen operators avoid. We'll map where FlowFuse fits."
     />
   </div>
 </template>
