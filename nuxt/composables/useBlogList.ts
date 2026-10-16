@@ -4,7 +4,7 @@ export const BLOG_PAGE_SIZE = 19
 
 // Matches the historical src/blog/*.njk tag-listing pages (blogTags.json controls
 // which of these show as nav buttons; 'tips' has a route but isn't in that button list).
-export const BLOG_TAGS = ['how-to', 'node-red', 'ai', 'uns', 'dashboard', 'flowfuse', 'releases', 'news', 'plc', 'mqtt', 'opcua', 'modbus', 'tips']
+export const BLOG_TAGS = ['how-to', 'node-red', 'ai', 'uns', 'dashboard', 'flowfuse', 'releases', 'news', 'plc', 'mqtt', 'opcua', 'modbus', 'templates', 'tips']
 
 export const BLOG_TAG_TOPICS: Record<string, string> = {
     'how-to': 'Node-RED how-to guides',
@@ -19,6 +19,7 @@ export const BLOG_TAG_TOPICS: Record<string, string> = {
     mqtt: 'MQTT and industrial messaging',
     opcua: 'OPC UA and industrial data',
     modbus: 'Modbus and industrial connectivity',
+    templates: 'free manufacturing templates and checklists',
     tips: 'Node-RED tips',
 }
 

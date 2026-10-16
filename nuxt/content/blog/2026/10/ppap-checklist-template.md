@@ -9,6 +9,7 @@ image: /blog/2026/10/images/ppap-checklist-template.png
 tags:
   - posts
   - flowfuse
+  - templates
 cta:
   type: contact
   title: "Build Your PPAP From the Data, Not Copies of It"

@@ -9,6 +9,7 @@ image: /blog/2026/09/images/layered-process-audit-checklist.png
 tags:
   - posts
   - flowfuse
+  - templates
 cta:
   type: contact
   title: "Build a Digital LPA with FlowFuse"
