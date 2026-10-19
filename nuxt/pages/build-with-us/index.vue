@@ -167,7 +167,7 @@ useSchemaOrg([
           <h2>More than one app: <span class="text-indigo-600">a foundation</span></h2>
           <p class="mt-3 text-gray-600">
             We call this a Foundation Partnership. The platform is
-            <a href="/platform/" :class="LINK">FlowFuse</a>, configured and extended around your operations, so the first application becomes the starting point for every plant after it.
+            <a href="/product/" :class="LINK">FlowFuse</a>, configured and extended around your operations, so the first application becomes the starting point for every plant after it.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mt-12">
