@@ -28,7 +28,7 @@ const END_CTA_VARIANTS: Record<string, { title: string, description: string, lab
     demo: {
         title: 'See how FlowFuse works in real environments',
         description: 'Walk through real use cases and see how teams connect systems, automate workflows, and deploy at scale.',
-        label: 'Book a Demo',
+        label: 'Talk to Us',
     },
     contact: {
         title: 'Discuss your use case with our team',
