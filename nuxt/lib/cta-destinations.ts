@@ -34,7 +34,7 @@ export const CTA_DESTINATIONS = {
         component: 'CtaBookDemo',
         event: 'cta-book-demo',
         href: '/book-demo/',
-        label: 'Book a Demo',
+        label: 'Talk to Us',
     },
     pricing: {
         component: 'CtaPricing',
