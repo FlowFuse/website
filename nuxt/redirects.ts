@@ -47,7 +47,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blog/2024/03/flowfuse-self-hosted-starter-resource-limits/': { redirect: { to: '/blog/2024/03/flowfuse-self-hosted-open-source-resource-limits/', statusCode: 301 } },
     '/unified-namespace/': { redirect: { to: '/use-cases/uns/', statusCode: 301 } },
     '/solutions/manufacturing/': { redirect: { to: '/use-cases/it-ot-middleware/', statusCode: 301 } },
-    '/platform/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/solutions/device-management/': { redirect: { to: '/use-cases/remote-device-management/', statusCode: 301 } },
     '/blueprints/manufacturing/andon-task/': { redirect: { to: '/blueprints/manufacturing/andon-system/', statusCode: 301 } },
     '/email-signature/': { redirect: { to: '/handbook/design/branding/#email-signature', statusCode: 301 } },
@@ -107,7 +106,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/docs/install/email_providers/': { redirect: { to: '/docs/install/email-providers/', statusCode: 301 } },
     '/docs/admin/user_management/': { redirect: { to: '/docs/admin/user-management/', statusCode: 301 } },
     '/docs/install/kubernetes/aws_terraform/': { redirect: { to: '/docs/install/kubernetes/aws-terraform/', statusCode: 301 } },
-    '/cloud/': { redirect: { to: 'https://app.flowfuse.com/account/create/', statusCode: 301 } },
     '/legal/terms/': { redirect: { to: '/terms/', statusCode: 301 } },
     '/book-a-demo/': { redirect: { to: '/book-demo/', statusCode: 301 } },
     '/roi/': { redirect: { to: '/resources/roi-calculator/', statusCode: 301 } },
@@ -119,7 +117,6 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-part-1/': { redirect: { to: '/blog/2025/04/what-is-an-oee-dashboard/', statusCode: 301 } },
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-2/': { redirect: { to: '/blog/2025/04/build-manufacturing-oee-dashboard/', statusCode: 301 } },
     '/blog/2025/04/building-oee-dashboard-with-flowfuse-part-3/': { redirect: { to: '/blog/2025/04/design-and-scale-oee-dashboard/', statusCode: 301 } },
-    '/sign-up/': { redirect: { to: 'https://app.flowfuse.com/account/create', statusCode: 301 } },
     '/blog/2025/12/what-is-mttf/': { redirect: { to: '/blog/2025/12/mttf-vs-mtbf-vs-mttr/', statusCode: 301 } },
 
     '/handbook/development/contributing/': { redirect: { to: '/handbook/engineering/contributing/', statusCode: 301 } },
@@ -142,6 +139,11 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/handbook/development/security/': { redirect: { to: '/handbook/engineering/security/', statusCode: 301 } },
     '/handbook/development/packaging/': { redirect: { to: '/handbook/engineering/packaging/', statusCode: 301 } },
     '/get-started/': { redirect: { to: '/', statusCode: 301 } },
+    // The self-serve free trial is retired. These used to send visitors straight to
+    // the app's sign-up form; they now land on the page explaining the new model.
+    '/sign-up/': { redirect: { to: '/build-with-us/', statusCode: 301 } },
+    '/cloud/': { redirect: { to: '/build-with-us/', statusCode: 301 } },
+    '/platform/cloud/': { redirect: { to: '/build-with-us/', statusCode: 301 } },
     '/blog/2024/07/calling-python-script-from-node-red/example.py': { redirect: { to: '/blog/2024/07/calling-python-script-from-node-red/', statusCode: 301 } },
     '/handbook/customer/sales/regions/': { redirect: { to: '/handbook/sales/regions/', statusCode: 301 } },
     '/handbook/sales/v2/edge-connect-process/': { redirect: { to: '/handbook/sales/processes/', statusCode: 301 } },
