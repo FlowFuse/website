@@ -248,7 +248,7 @@ To customize it, add a `cta` object to the front matter.
 #### CTA Type
 
 Set `cta.type` to one of the following values:
-- `demo` - renders the "Book a Demo" CTA and always links to `/book-demo`
+- `demo` - renders the "Talk to Us" CTA and always links to `/book-demo`
 - `contact` - renders the default "Contact Us" CTA and always links to `/contact-us`
 - `pricing` - renders the "Pricing" CTA and always links to `/pricing`
 - `sign-up` - renders the sign-up CTA and always links to the hosted sign-up URL
