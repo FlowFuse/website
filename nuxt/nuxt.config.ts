@@ -518,6 +518,9 @@ export default defineNuxtConfig({
                     // crawlLinks is off, so a .vue page is prerendered only if it is listed here.
                     // Without this /ai is missing from nuxt/dist and every link to it breaks.
                     '/ai',
+                    // Where the retired free trial's links now land (CtaSignUp, and the
+                    // /sign-up/ style redirects); missing here, every one of them is a 404.
+                    '/build-with-us/',
                     '/industries/automotive',
                     '/industries/industrial-machinery',
                     '/industries/building-materials',
