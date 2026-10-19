@@ -16,8 +16,8 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 //    out" and the event is the unified cta-sign-up. The .njk had bespoke labels
 //    ("Start a free trial", "GET STARTED") and reused cta-try-it-out.
 useSeoMeta({
-    title: 'AI for Industrial Applications: Governed AI for Industry',
-    description: 'The Industrial AI that does the work: FlowFuse Expert or your own agent builds the change and ships it to every site, behind your approvals and permissions.',
+    title: 'Enterprise AI Platform for Industrial Operations',
+    description: 'The enterprise AI platform for industrial operations: FlowFuse Expert or your own agent builds the change and ships it to every site, behind your approvals.',
     ogUrl: 'https://flowfuse.com/ai/',
     twitterSite: '@FlowFuseinc',
 })
@@ -37,12 +37,12 @@ const FAQ = [
         answer: 'AI for industrial applications means using AI to work with industrial data, equipment and processes. Common uses include helping engineers build automation applications, analysing machine data, inspecting products with computer vision, and allowing people or AI agents to interact with production systems. FlowFuse provides a platform for connecting these AI capabilities to industrial data and applications.',
     },
     {
-        question: 'How is AI used in industrial applications?',
-        answer: 'AI can support different parts of an industrial operation, from engineering and quality inspection to production monitoring and automation. For example, it can help generate application logic, analyse live machine data, identify defects from camera feeds, or let an AI agent interact with industrial systems. FlowFuse brings these capabilities into the same environment as the industrial applications and data they need to work with.',
+        question: 'What makes FlowFuse an enterprise AI platform?',
+        answer: 'FlowFuse gives every way you use AI one governed place to run: FlowFuse Expert for building applications, AI inside live flows, the agent your company already approved connected over MCP, and your own flows exposed as tools. All of them work under the Read, Write or Destructive access you grant team by team, and every action is recorded in the same audit log as your people, so adding AI does not add a separate system to secure.',
     },
     {
-        question: 'What are examples of AI for industrial applications?',
-        answer: 'Examples include AI-assisted engineering, automated visual inspection, natural-language access to production data, AI agents that interact with industrial systems, and AI models running locally at the edge. With FlowFuse, teams can use FlowFuse Expert to build and explain applications, connect external AI agents over MCP, run ONNX vision models, and use cloud or local LLMs within industrial workflows.',
+        question: 'How is AI used in manufacturing?',
+        answer: 'AI supports engineering, quality inspection, production monitoring and automation on the plant floor. It can help generate application logic, analyse live machine data, identify defects from camera feeds, or let an AI agent interact with production systems. Examples include AI-assisted engineering, automated visual inspection, natural-language access to production data and AI models running locally at the edge. FlowFuse brings these into the same environment as the industrial applications and data they need to work with.',
     },
     {
         question: 'How is FlowFuse different from other industrial AI?',
@@ -69,7 +69,7 @@ const FAQ = [
         answer: 'Some FlowFuse Expert features use the OpenAI API, so the context you choose to share, such as a flow, your palette or debug logs, is sent to OpenAI to answer the request. No FlowFuse data is used to train models, and OpenAI deletes API data after 30 days of abuse monitoring. See [data privacy](/docs/user/expert/#data-privacy) for details.',
     },
     {
-        question: 'Can I run industrial AI without sending data to the cloud?',
+        question: 'Can I run private, local AI without sending data to the cloud?',
         answer: 'Yes, for the AI that runs in your flows. You can self-host FlowFuse on your own infrastructure, including air-gapped sites, run ONNX vision models at the edge, and use the Ollama node against a local model with no API key. You can also connect an agent that runs on your own model. FlowFuse Expert itself uses a hosted model, so it needs an outbound connection.',
     },
     {
@@ -145,7 +145,7 @@ const REACH = [
 
 const CAPABILITY_INTRO = {
     title: 'Where AI fits in <span class="text-indigo-600">your operations</span>',
-    subtitle: 'Build, operate and connect AI on one governed platform.',
+    subtitle: 'Build, operate and connect AI on one governed enterprise AI platform.',
 }
 
 // NOTE: Predictive analytics and Edge ML are intentionally omitted from public
@@ -208,7 +208,7 @@ const GOVERNANCE = [
 const OWNERSHIP = [
     { icon: 'i-lucide-git-branch', title: 'Open at the core', description: 'Built on Node-RED and an Apache-2.0 core. Your flows are portable JSON.' },
     { icon: 'i-lucide-cog', title: 'Any vendor\'s equipment', description: 'Siemens, Rockwell, Schneider or a 20-year-old PLC. We sell no hardware, so we take no sides.' },
-    { icon: 'i-lucide-sparkles', title: 'Any model, any agent', description: 'Expert, Copilot, ChatGPT or Claude, or keep inference local with Ollama and ONNX.' },
+    { icon: 'i-lucide-sparkles', title: 'Any model, any agent', description: 'Expert, Copilot, ChatGPT or Claude, or run private AI locally with Ollama and ONNX.' },
     { icon: 'i-lucide-server', title: 'Runs where you do', description: 'FlowFuse Cloud in the EU, your own data centre, or fully air-gapped on-prem.' },
     { icon: 'i-lucide-eye', title: 'You choose the context', description: 'Expert only sees the flows, palette or logs you share with it.' },
     { icon: 'i-lucide-shield-off', title: 'Never used for training', description: 'No FlowFuse data trains third-party models. OpenAI deletes API data after 30 days.' },
@@ -235,7 +235,7 @@ const RESULTS = [
         <div class="sm:max-w-screen-lg mt-6 sm:mt-12 mx-auto">
           <div class="container m-auto text-left max-w-screen-lg">
             <div class="max-w-3xl mx-auto text-center">
-              <p class="m-0 mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">AI for industrial applications</p>
+              <p class="m-0 mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">Enterprise AI platform for industry</p>
               <h1 class="font-medium home m-auto text-gray-900 mb-6 max-w-2xl">
                 The Industrial AI that <span class="text-indigo-600">does the work.</span>
               </h1>
