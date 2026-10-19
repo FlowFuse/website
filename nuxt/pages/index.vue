@@ -352,7 +352,7 @@ useSchemaOrg([
                       <p class="text-gray-700 font-light m-0">Speed without governance creates new debt. FlowFuse provides the production layer where AI-assisted work becomes visible, versioned, secure, and reusable, across the enterprise.</p>
                   </div>
                   <CtaLink destination="bookDemo" position="ai" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6">
-                      <span class="group-hover:underline">Book a demo</span>
+                      <span class="group-hover:underline">Talk to us</span>
                       <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><UIcon name="i-heroicons-arrow-long-right-solid" /></span>
                   </CtaLink>
               </div>
