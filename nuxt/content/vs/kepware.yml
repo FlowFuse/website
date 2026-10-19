@@ -54,7 +54,7 @@ switch:
 cta:
     title: "Ready to Leave Kepware Behind?"
     content: "See how FlowFuse helps teams like yours modernize their industrial automation infrastructure, faster, more flexibly, and at lower cost."
-    linkText: "Book a Demo with a FlowFuse Expert"
+    linkText: "Talk to a FlowFuse Expert"
     linkHref: "site:meetings.salesRoundRobin"
     linkSuffix: "."
 tableHeading: "<span class='text-indigo-600'>FlowFuse and Kepware</span> at a Glance"
