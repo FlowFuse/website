@@ -109,7 +109,7 @@ The site has five main call-to-action destinations, each with **fixed copy** —
 
 | Component        | Goes to                           | Button text                                          |
 | ---------------- | --------------------------------- | ---------------------------------------------------- |
-| `<CtaSignUp>`    | `app.flowfuse.com/account/create` | "Free Trial" (nav) or "Try it out" (everywhere else) |
+| `<CtaSignUp>`    | `/build-with-us/` | "Build With Us" |
 | `<CtaSignIn>`    | `app.flowfuse.com`                | "Sign In"                                            |
 | `<CtaContactUs>` | `/contact-us/`                    | "Contact Us"                                         |
 | `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
@@ -164,7 +164,7 @@ Every component takes the same `variant` prop, which controls the look. Click "S
   :::
 ::
 
-There's also a `nav-text` variant — the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar). It's not meant for general use in page content, so it's not in this gallery; stick to the five variants above for anything outside the nav.
+There's also a `nav-text` variant — the plain, no-underline treatment used for "Sign In" (utility bar). It's not meant for general use in page content, so it's not in this gallery; stick to the five variants above for anything outside the nav.
 
 There's a sixth variant, `ghost`, for a button that reads like a solid one (bold, uppercase, same padding) but has no background or border. Because it has no background of its own, it needs a `color` to know what text color to use, and an `icon` to add a trailing icon:
 
