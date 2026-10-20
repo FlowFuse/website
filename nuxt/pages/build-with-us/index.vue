@@ -1,82 +1,66 @@
 <script setup lang="ts">
 import { faqAnswerText } from '../../lib/faq-answer.mjs'
-// Where the old self-serve "Free Trial" links now land. Enterprise teams told us a
-// trial isn't how they want to evaluate FlowFuse, so the default path is a
-// conversation with sales, after which FlowFuse engineers build the first
-// application alongside them (the Foundation Partnership). A trial is still
-// available through sales for teams that want one. The page explains the model
-// and ends in the sales team's meeting scheduler, the same embed /book-demo/ uses.
+// Where the old self-serve "Free Trial" links now land, presented as the FlowFuse
+// Solution Foundation. Enterprise teams told us a trial isn't how they want to
+// evaluate FlowFuse, so the default path is a conversation with sales; a trial is
+// still available through sales for teams that want one.
 //
-// Tone: this is a response to what customers asked for, not a fix for the
-// platform being hard to use. Keep copy on that side of the line.
+// Order follows the outcome, not the effort: operational problem -> deployed
+// capability -> reusable platform -> delivery model. Engineering help is how the
+// customer gets there, so it comes last and never leads; the platform has a clear
+// role from the first sentence. Keep copy on that side: this is a FlowFuse offering,
+// not systems-integrator work.
 //
-// No prices here on purpose: the Solution Foundation rates are still working
-// numbers, not an approved price list. Scope is described, cost is scoped on
-// the call. The number of Solutions the Foundation Fee includes is also not
-// settled (the sales deck gives one, one per Site, and two per Site), so the
-// page names the two Sites and leaves the Solution count to scoping.
-// When the customer pays relative to the pilot is likewise undecided, so the
-// page says the engineering is part of the license and not when it is bought.
+// The offer is still being defined, so no prices, durations or package sizes
+// (Sites, Solutions, engineering days) appear here. Add them once sales signs off.
 useSeoMeta({
-    title: 'Build Your First Application With FlowFuse Engineers',
-    description: 'Talk to our team, and FlowFuse engineers will build your first industrial application alongside you, then hand it over for your team to own and extend across your plants.',
+    title: 'FlowFuse Solution Foundation: Deploy Your First Solution',
+    description: 'Put FlowFuse to work on a critical manufacturing problem, and establish the integrations, data models and deployment patterns you can reuse at every plant.',
     ogUrl: 'https://flowfuse.com/build-with-us/',
     twitterSite: '@FlowFuseinc',
 })
 
 const LINK = 'text-indigo-600 hover:text-indigo-800 underline'
 
-// The visitor's side of the enterprise sales cycle: conversation, solution
-// shaping, the included engineering engagement, then rollout across plants.
+// What the first solution leaves the customer with.
+const OUTCOMES = [
+    { icon: 'i-lucide-circle-check-big', title: 'A working capability', description: 'An application that solves one critical manufacturing problem, connected to your own equipment, data and workflows.' },
+    { icon: 'i-lucide-shield-check', title: 'A governed platform', description: 'FlowFuse running in your environment, with the access control, audit trail and version history your operations need as they grow.' },
+    { icon: 'i-lucide-graduation-cap', title: 'The knowledge to extend both', description: 'Your engineers learn FlowFuse by building on it, with documentation and knowledge transfer so they can take it further themselves.' },
+]
+
+// What carries over from the first solution to the next plant.
+const FOUNDATION = [
+    { title: 'Integrations', description: 'Connections to your machines, historians and business systems, built once and reused at the next site.' },
+    { title: 'Data models', description: 'A shared structure for your operational data, so every plant speaks the same language.' },
+    { title: 'Deployment patterns', description: 'A tested way to roll an application out to new lines and plants without starting over.' },
+    { title: 'Governance', description: 'Roles, access and change control set up once, and applied everywhere the platform runs.' },
+]
+
+// The delivery model, from first call to the next plant.
 const STEPS = [
-    { icon: 'i-lucide-messages-square', title: 'Talk to our team', description: 'Tell us about the operational problem you want solved, the systems involved and who needs to be part of it. We confirm FlowFuse is the right fit before anything else happens.' },
-    { icon: 'i-lucide-ruler', title: 'Shape the solution', description: 'Together we agree the scope, build a conservative case for the value it delivers, and show you how FlowFuse addresses your use case on a live demo.' },
-    { icon: 'i-lucide-hammer', title: 'Build it together', description: 'As part of your license, FlowFuse engineers work alongside your team for 30 days to deliver a working first capability, with documentation and a plan for validating it in production.' },
-    { icon: 'i-lucide-factory', title: 'Prove it, then scale', description: 'Validate the results in production, then reuse what we built to roll it out to more sites and solve the next problem, with your own engineers, a partner or FlowFuse.' },
-]
-
-// What enterprise manufacturers asked for. The customer signals behind the model,
-// so it sits directly under the hero.
-const NEEDS = [
-    { icon: 'i-lucide-puzzle', title: 'A solution fitted to their operations', description: 'Built around their own equipment, systems and processes, not a generic template.' },
-    { icon: 'i-lucide-graduation-cap', title: 'Experienced engineers alongside them', description: 'People who have connected PLCs, historians, MES and ERP systems before, and know what production-ready looks like.' },
-    { icon: 'i-lucide-key-round', title: 'Something they own and can extend', description: 'Documentation, knowledge transfer and a foundation their own engineers can take to the next line and the next plant.' },
-]
-
-const PARTNERSHIP = [
-    { title: 'A first solution', description: 'We work with your manufacturing and technical teams on one agreed operational problem, with production use as the goal.' },
-    { title: 'A reusable foundation', description: 'Architecture, data models, governance and integration patterns built once, so the next deployment starts ahead.' },
-    { title: 'Your team owns it', description: 'Joint development, documentation and knowledge transfer leave your engineers able to extend it without us.' },
-    { title: 'Faster plant expansion', description: 'Each new plant reuses the foundation instead of repeating the engineering work from scratch.' },
-]
-
-const INCLUDED = [
-    { icon: 'i-lucide-calendar-check', title: 'An annual license', description: 'The FlowFuse platform for two Sites, with unlimited users.' },
-    { icon: 'i-lucide-layers', title: 'Solutions chosen per Site', description: 'Each Site picks the operational capabilities it runs. We agree which are included when we scope your license.' },
-    { icon: 'i-lucide-users', title: '30 days of engineering', description: 'FlowFuse engineers deliver a working initial capability within an agreed scope.' },
-    { icon: 'i-lucide-book-open-check', title: 'Everything to carry on', description: 'A reusable deployment package, operating documentation, knowledge transfer and a pilot validation plan.' },
+    { icon: 'i-lucide-messages-square', title: 'Talk to our team', description: 'Tell us about the operational problem you want solved, the systems involved and who needs to be part of it. We confirm FlowFuse is the right fit first.' },
+    { icon: 'i-lucide-ruler', title: 'Shape the solution', description: 'Together we agree the scope, build a conservative case for its value, and show you how FlowFuse addresses your use case.' },
+    { icon: 'i-lucide-hammer', title: 'Build it together', description: 'FlowFuse engineers work alongside your team to deliver the first solution, establishing the integrations, data models and deployment patterns as they go.' },
+    { icon: 'i-lucide-factory', title: 'Roll it out', description: 'Validate the results, then reuse the foundation at your next plant, with your own engineers, a partner or FlowFuse.' },
 ]
 
 const FAQ = [
     {
         question: 'Can I still get a free trial?',
-        answer: 'Yes, if a hands-on trial is the right next step for your team, talk to us and we can set one up. Most enterprise teams we speak with get more from building a first solution together, on their own equipment and data, so that is where we usually start.',
+        answer: 'Yes, if a hands-on trial is the right next step for your team, talk to us and we can set one up. Most enterprise teams we speak with get more from putting FlowFuse to work on a real problem, with their own equipment and data, so that is where we usually start.',
     },
     {
         question: 'What happens on the first call?',
         answer: 'We talk through the operational problem you want to solve, the equipment and systems involved, and who would be part of the project. If FlowFuse is a good fit, we agree the next step together, usually a session to scope the solution and its value.',
     },
     {
-        question: 'What is a Site, and what is a Solution?',
-        answer: 'A Site is a named operating facility, such as a plant. Buildings run as one integrated campus can count as a single Site, and the number of gateways or devices does not change the count.\n\nA Solution is a named, reusable operational capability that solves a defined business problem, for example machine alerting or OEE monitoring. The flows, integrations and dashboards that make it work are part of the Solution, not licensed separately.',
-    },
-    {
         question: 'Can our team maintain it without you?',
-        answer: 'Yes. The work is done jointly with your team and comes with documentation and knowledge transfer, so your engineers can maintain and extend it after the initial engagement. Later work can come from your own team, a partner or FlowFuse.',
+        answer: 'Yes. The work is done jointly with your team and comes with documentation and knowledge transfer, so your engineers can maintain and extend it themselves. Later work can come from your own team, a partner or FlowFuse.',
     },
     {
         question: 'How much does it cost?',
-        answer: 'Pricing depends on how many Sites and Solutions you need and the length of your commitment, and the initial engineering engagement is included in the annual license. We scope it with you once we understand the problem you want to solve.\n\nLooking for a standard product license instead? Edge, Hub and Fleet are still available on our [pricing page](/pricing/).',
+        answer: 'It depends on the scope of your first solution and how widely you plan to roll it out. We scope it with you once we understand the problem you want to solve.\n\nLooking for a standard product license instead? Edge, Hub and Fleet are still available on our [pricing page](/pricing/).',
     },
 ]
 
@@ -88,68 +72,83 @@ useSchemaOrg([
 
 <template>
   <div class="w-full">
-    <!-- HERO: most visitors arrive from an old "Free Trial" link, so this says
-         plainly what getting started looks like now. -->
-    <section class="w-full px-6 pt-12 md:pt-24 pb-12 sm:pb-16">
+    <!-- HERO: the outcome first, with FlowFuse doing the work in the first sentence. -->
+    <section class="w-full px-6 pt-12 md:pt-24 pb-10">
       <div class="max-w-3xl mx-auto text-center mt-6 sm:mt-12">
-        <p class="text-indigo-600 mb-4 text-sm font-semibold uppercase tracking-wide">A new way to get started</p>
+        <p class="text-indigo-600 mb-4 text-sm font-semibold uppercase tracking-wide">FlowFuse Solution Foundation</p>
         <h1 class="font-medium home text-gray-900 mb-6">
-          Your operations are unique. <span class="text-indigo-600">We'll build it with you.</span>
+          Deploy your first solution. <span class="text-indigo-600">Establish the foundation for every plant.</span>
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Our engineers work alongside your team to build your first industrial application around your own equipment and data, then hand over everything you need to own it and extend it across your plants.
+          Put FlowFuse to work on a critical manufacturing problem, connecting your equipment, data and workflows in a working application.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="#talk-to-us" class="ff-btn ff-btn--primary uppercase font-semibold no-underline">Talk to our team</a>
-          <a href="#how-it-works" class="text-indigo-600 font-medium inline-flex items-center gap-1 no-underline hover:underline">
-            See how it works
+          <a href="#talk-to-us" class="ff-btn ff-btn--primary uppercase font-semibold no-underline">Discuss your first solution</a>
+          <a href="#how-we-deliver" class="text-indigo-600 font-medium inline-flex items-center gap-1 no-underline hover:underline">
+            See how we deliver it
             <UIcon name="i-lucide-arrow-down" class="size-4" aria-hidden="true" />
           </a>
         </div>
       </div>
     </section>
 
-    <!-- WHAT WE HEARD: the customer signals behind the model, told before the
-         steps so they read as the answer to it. No top padding: the hero's
-         bottom padding already separates the two on the same background. -->
-    <section class="w-full px-6 pt-4 pb-12 sm:pb-16">
-      <div class="md:max-w-screen-lg m-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-        <div>
-          <p class="text-indigo-600 mb-3 text-sm font-semibold uppercase tracking-wide">What we heard</p>
-          <h2 class="m-0">Built around what <span class="text-indigo-600">manufacturers asked for</span></h2>
-          <p class="mt-6 text-gray-600">
-            Industrial operations keep getting more complex. The enterprise manufacturers we work with run a mix of legacy and modern equipment across many plants, with integration, data and governance needs that are specific to their business. No two look the same.
-          </p>
-          <p class="mt-4 text-gray-600">
-            They also told us they want to own what they build: a solution their own engineers understand, can maintain, and can extend to the next line and the next plant.
-          </p>
-          <p class="mt-4 text-gray-900 font-medium">
-            A self-serve trial isn't how those teams want to get started. So we're following their lead, and building the first solution alongside them.
-          </p>
+    <!-- TRIAL NOTE: most visitors arrive from an old "Free Trial" link. One short
+         answer to "where did it go?", then out of the way. -->
+    <section class="w-full px-6 pb-12 sm:pb-16">
+      <div class="max-w-3xl mx-auto flex items-start gap-4 rounded-lg border border-indigo-100 bg-indigo-50/50 p-5">
+        <UIcon name="i-lucide-info" class="size-6 flex-none text-indigo-600" aria-hidden="true" />
+        <p class="m-0 text-sm text-gray-600">
+          <span class="font-semibold text-gray-900">Looking for the free trial?</span>
+          Enterprise teams told us they would rather start with a real problem on their own equipment and data, so that is where getting started now begins. If a hands-on trial is still the right next step for you,
+          <a href="#talk-to-us" :class="LINK">just ask</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- OUTCOMES: what the first solution leaves the customer with. -->
+    <section class="w-full px-6 pb-12 sm:pb-16">
+      <div class="md:max-w-screen-lg m-auto">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2>What your first solution <span class="text-indigo-600">delivers</span></h2>
+          <p class="mt-3 text-gray-600">One problem solved, and everything in place to solve the next one.</p>
         </div>
-        <div class="rounded-xl border border-indigo-100 bg-white shadow-sm overflow-hidden">
-          <p class="m-0 border-b border-indigo-100 bg-indigo-50/60 px-5 py-3 font-mono text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-indigo-600">
-            What enterprise teams asked for
-          </p>
-          <ul class="m-0 list-none p-0">
-            <li v-for="(need, index) in NEEDS" :key="need.title" class="m-0 flex gap-4 px-5 py-5" :class="index > 0 ? 'border-t border-indigo-100' : ''">
-              <UIcon :name="need.icon" class="size-6 shrink-0 text-indigo-600 mt-0.5" aria-hidden="true" />
-              <div>
-                <p class="m-0 font-medium text-gray-900">{{ need.title }}</p>
-                <p class="m-0 mt-1 text-sm text-gray-600 font-light">{{ need.description }}</p>
-              </div>
-            </li>
-          </ul>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div v-for="item in OUTCOMES" :key="item.title" class="rounded-lg border border-indigo-100 bg-white p-6 shadow-sm flex flex-col gap-3">
+            <UIcon :name="item.icon" class="size-8 text-indigo-600" aria-hidden="true" />
+            <p class="font-medium text-gray-900 m-0">{{ item.title }}</p>
+            <p class="text-sm text-gray-600 font-light m-0">{{ item.description }}</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- HOW IT WORKS: the visitor's journey, four steps in order. -->
-    <section id="how-it-works" class="w-full px-6 py-12 sm:py-16 scroll-mt-16">
+    <!-- FOUNDATION: why this is a FlowFuse offering and not a one-off project. -->
+    <section class="w-full px-6 py-12 sm:py-16 bg-indigo-50/60 border-t border-gray-100">
+      <div class="md:max-w-screen-lg m-auto">
+        <div class="max-w-3xl">
+          <h2>Built once, <span class="text-indigo-600">reused at every plant</span></h2>
+          <p class="mt-3 text-gray-600">
+            The first solution isn't a one-off project. It's built on
+            <a href="/product/" :class="LINK">FlowFuse</a>, so what we establish together becomes the starting point for every line and plant after it, instead of engineering work repeated from scratch.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mt-12">
+          <div v-for="(item, index) in FOUNDATION" :key="item.title" class="border-t border-indigo-200 pt-6">
+            <p class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">0{{ index + 1 }}</p>
+            <h3 class="text-2xl font-medium text-gray-900 mt-3 mb-0">{{ item.title }}</h3>
+            <p class="text-gray-600 font-light mt-2 mb-0">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DELIVERY MODEL: how the customer gets those outcomes. "We build it with you"
+         is reassurance here, not the headline offer. -->
+    <section id="how-we-deliver" class="w-full px-6 py-12 sm:py-16 scroll-mt-16">
       <div class="md:max-w-screen-lg m-auto ff-blue-card pt-12 pb-12 px-6 md:px-10">
         <div class="text-center max-w-3xl mx-auto">
-          <h2>From first call to <span class="text-indigo-600">production</span></h2>
-          <p class="mt-3 text-gray-600">Every step has a clear purpose and an agreed next action, so you always know where the project stands.</p>
+          <h2>How we <span class="text-indigo-600">deliver it</span></h2>
+          <p class="mt-3 text-gray-600">We build the first solution with your team, so it fits your operations and your engineers know it inside out.</p>
         </div>
         <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 list-none p-0">
           <li v-for="(step, index) in STEPS" :key="step.title" class="m-0 flex flex-col gap-3">
@@ -161,46 +160,8 @@ useSchemaOrg([
             <p class="text-sm text-gray-600 font-light m-0">{{ step.description }}</p>
           </li>
         </ol>
-      </div>
-    </section>
-
-    <!-- FOUNDATION PARTNERSHIP: what the visitor ends up with. -->
-    <section class="w-full px-6 py-12 sm:py-16 bg-indigo-50/60 border-t border-gray-100">
-      <div class="md:max-w-screen-lg m-auto">
-        <div class="max-w-3xl">
-          <h2>More than one app: <span class="text-indigo-600">a foundation</span></h2>
-          <p class="mt-3 text-gray-600">
-            We call this a Foundation Partnership. The platform is
-            <a href="/product/" :class="LINK">FlowFuse</a>, configured and extended around your operations, so the first application becomes the starting point for every plant after it.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mt-12">
-          <div v-for="(item, index) in PARTNERSHIP" :key="item.title" class="border-t border-indigo-200 pt-6">
-            <p class="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600 m-0">0{{ index + 1 }}</p>
-            <h3 class="text-2xl font-medium text-gray-900 mt-3 mb-0">{{ item.title }}</h3>
-            <p class="text-gray-600 font-light mt-2 mb-0">{{ item.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INCLUDED: the shape of the package, without prices. -->
-    <section class="w-full px-6 py-12 sm:py-16">
-      <div class="md:max-w-screen-lg m-auto">
-        <div class="text-center max-w-3xl mx-auto">
-          <h2>What's <span class="text-indigo-600">included</span></h2>
-          <p class="mt-3 text-gray-600">A recurring platform license with the engineering to get your first solution running built in.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          <div v-for="item in INCLUDED" :key="item.title" class="rounded-lg border border-indigo-100 bg-white p-6 shadow-sm flex flex-col gap-3">
-            <UIcon :name="item.icon" class="size-8 text-indigo-600" aria-hidden="true" />
-            <p class="font-medium text-gray-900 m-0">{{ item.title }}</p>
-            <p class="text-sm text-gray-600 font-light m-0">{{ item.description }}</p>
-          </div>
-        </div>
-        <p class="mt-8 text-center text-sm text-gray-500">
-          Further implementation, extra Sites and extra Solutions are scoped and priced separately.
-          Prefer a standard product license? <CtaLink destination="pricing" position="included" :class="LINK">Edge, Hub and Fleet</CtaLink> are still available.
+        <p class="mt-10 mb-0 text-center text-sm text-gray-500">
+          Prefer a standard product license? <CtaLink destination="pricing" position="delivery" :class="LINK">Edge, Hub and Fleet</CtaLink> are still available.
         </p>
       </div>
     </section>
@@ -209,7 +170,7 @@ useSchemaOrg([
     <section id="talk-to-us" class="w-full px-6 py-12 sm:py-16 bg-indigo-50/50 border-t border-gray-100 scroll-mt-16">
       <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
         <div class="text-center md:text-left">
-          <h2>Start with <span class="text-indigo-600">one conversation</span></h2>
+          <h2>Discuss your <span class="text-indigo-600">first solution</span></h2>
           <p class="mt-3 text-gray-600">
             Pick a time with our team. Bring the problem you most want solved, and we'll tell you honestly whether FlowFuse is the right way to solve it.
           </p>
@@ -220,7 +181,7 @@ useSchemaOrg([
             </li>
             <li class="m-0 flex gap-2 text-gray-600 font-light">
               <UIcon name="i-lucide-check" class="size-5 shrink-0 mt-0.5 text-indigo-600" aria-hidden="true" />
-              Talk to people who build industrial applications
+              Talk to people who build industrial applications on FlowFuse
             </li>
             <li class="m-0 flex gap-2 text-gray-600 font-light">
               <UIcon name="i-lucide-check" class="size-5 shrink-0 mt-0.5 text-indigo-600" aria-hidden="true" />
