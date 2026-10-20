@@ -283,7 +283,7 @@ Full-year and quarterly financials are available on request — just reply to th
 
 Best,
 
-ZJ
+[CEO name]
 ```
 
 ## Major Investors

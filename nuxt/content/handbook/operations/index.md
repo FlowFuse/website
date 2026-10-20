@@ -47,7 +47,7 @@ FlowFuse uses [Earthclass Mail](https://www.earthclassmail.com/) to handle physi
 
 ## Email
 
-While there are a number of email aliases and google groups used throughout the organization, there is some activities across operations, people operations, and finance management that requires that activities be done with external parties. As a redundancy, rather than use a person's individual email (e.g. zj@), we use a google group to avoid the risk of information getting lost. For example, for some government filings, we use ops@.
+While there are a number of email aliases and google groups used throughout the organization, there is some activities across operations, people operations, and finance management that requires that activities be done with external parties. As a redundancy, rather than use a person's individual email (e.g. the CEO's own address), we use a google group to avoid the risk of information getting lost. For example, for some government filings, we use ops@.
 
 ## GitHub
 
