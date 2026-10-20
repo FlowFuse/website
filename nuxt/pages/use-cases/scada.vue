@@ -424,8 +424,8 @@ useSchemaOrg([
 
     <IndustryPageCta
         lead="build-with-us"
-        heading="Let's design a solution, together"
-        description="Bring one real use case: a device the SCADA can't reach, data another system keeps asking for, or a report someone still builds by hand. We'll bring an engineer and work out the first step together."
+        heading="Deliver your first operational solution"
+        description="Bring one real problem: a device the SCADA can't reach, data another system keeps asking for, or a report someone still builds by hand. We'll deliver it as a working application in production, on a platform your team runs and extends."
     >
       <p class="m-0 text-sm text-indigo-100">
         Thinking about replacing your SCADA entirely?
