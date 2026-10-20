@@ -1,0 +1,152 @@
+# Track C (Remote Equipment and Service Operations) solution page, "Remote energy system service"
+# in the Oct 2026 solution examples. Same block shape as production-monitoring.yml, plus the
+# solution-only `engagement` block, rendered by pages/use-cases/[slug].vue through the
+# components in components/use-case/.
+slug: remote-energy-management
+title: "Remote Energy Management"
+seoMeta:
+  title: "Remote Energy Management | Use Cases | FlowFuse"
+  description: "Diagnose faults at remote solar, battery and energy sites without a truck roll. FlowFuse engineers build the remote service workflow with your team on your first sites, then hand over a system you can roll out across the fleet."
+problem: "A site hundreds of miles away raises a fault. Often the only way to find out what actually went wrong is to send someone to look."
+industries: ["energy-utilities", "industrial-machinery"]
+values: ["labor-operational-efficiency"]
+architecture: "remote-device-management"
+
+customerPain:
+  heading: "Every unknown fault costs a truck roll."
+  intro:
+    - "Solar arrays, battery storage, inverters, chargers and microgrids sit in fields, on rooftops and at the end of long roads. When one of them stops performing, the alarm tells you something is wrong. It rarely tells you what."
+    - "So a technician drives out to diagnose a problem, then often drives out again with the right part. The asset sits degraded in the meantime, and the service team spends its week on the road instead of fixing things."
+    - "The pain grows with the fleet. An operator or installer responsible for hundreds of systems cannot keep visiting each one to find out what happened."
+  cards:
+    - icon: "i-heroicons-truck"
+      title: "Site visits just to diagnose"
+      detail: "The first trip only establishes what is wrong. The fix comes on the second, after someone orders the part."
+    - icon: "i-heroicons-bell-alert"
+      title: "Alarms without context"
+      detail: "A fault code arrives on its own: no recent readings, no operating history, no record of what changed before it tripped."
+    - icon: "i-heroicons-squares-2x2"
+      title: "Every site is a little different"
+      detail: "Mixed inverters, battery systems, meters and controllers, each with its own protocol and its own vendor portal to log into."
+    - icon: "i-heroicons-wrench-screwdriver"
+      title: "Updates mean another visit"
+      detail: "Changing the logic running on site, or fixing it, depends on someone with a laptop standing next to the cabinet."
+
+outcomeFirst:
+  heading: "Resolve remotely where you can. Arrive prepared when you can't."
+  intro: "We start from the outcome, not the software. Together we agree what a resolved fault looks like for your fleet, then build the workflow that gets there: from the moment a fault appears at the site to the moment it is closed."
+  dimensions:
+    - label: "Service"
+      title: "Diagnose before anyone gets in a truck"
+      detail: "Your service team gets the fault, the readings around it and remote access to the site's logic, so they can establish the cause from their desk."
+    - label: "Financial"
+      title: "Fewer wasted trips"
+      detail: "When a visit is necessary, the technician knows the cause and brings the right part. One trip instead of two."
+    - label: "Uptime"
+      title: "Shorten the time an asset sits degraded"
+      detail: "Faults reach the right person with context attached, so the response starts when the fault does, not at the next scheduled check."
+    - label: "Operational"
+      title: "See every site from one place"
+      detail: "Live output, state of charge, alarms and device health across the fleet, where the site exposes those signals."
+    - label: "Fleet"
+      title: "Roll out to hundreds of sites without visiting them"
+      detail: "Once the workflow is proven, push it to every compatible site and keep each site's own settings intact."
+    - label: "Ownership"
+      title: "A system your team runs"
+      detail: "You end up with a working service workflow your own engineers understand, operate and extend, not a black box or a standing consulting bill."
+
+whyItMatters:
+  heading: "Distributed energy grows faster than service teams do."
+  intro: "Each new site adds equipment to watch and another place a technician may have to drive to. Service capacity does not scale the same way."
+  points:
+    - title: "Site visits are the most expensive part of service"
+      detail: "Travel time, vehicle cost and lost technician hours add up long before anything gets repaired. A visit that only confirms what is wrong is the most expensive kind."
+    - title: "An underperforming asset loses money quietly"
+      detail: "A battery that stopped cycling or a string that dropped offline keeps costing output until someone notices and acts. Slow diagnosis stretches that window."
+    - title: "Fleets are mixed by design"
+      detail: "Sites built in different years use different inverters, batteries and controllers. A service approach that only works with one vendor's equipment leaves the rest of the fleet behind."
+    - title: "Remote logic needs controlled change"
+      detail: "The flows running on site control real equipment. Editing them by hand, one site at a time, with no record of what changed, is how a fix at one site becomes a fault at another."
+    - title: "Experienced technicians are hard to replace"
+      detail: "The people who can read a fault and know the cause are scarce. Build how they diagnose problems into the workflow, so the whole team benefits from it."
+
+competition:
+  heading: "Buying another tool hasn't fixed it."
+  intro: "Most service teams already have monitoring. What they lack is a working fault-to-fix workflow across their whole fleet, and the usual routes leave someone else to build it."
+  traps:
+    - label: "Trap 01"
+      title: "One portal per manufacturer"
+      detail: "The inverter portal shows the inverter. The battery portal shows the battery. The meter and the site controller live somewhere else. Your service team logs into five systems to piece one fault together."
+    - label: "Trap 02"
+      title: "Monitoring without a response"
+      detail: "A portal raises an alarm and stops there. Routing it to the right technician, attaching context and closing the loop are left to email and spreadsheets, and the fix still needs a visit."
+    - label: "Trap 03"
+      title: "A platform you still have to assemble"
+      detail: "Buy a software licence and you get the building blocks, not the result. Your engineers become the integration team, and the service workflow waits behind their other priorities."
+    - label: "Trap 04"
+      title: "A custom build you can't maintain"
+      detail: "An integrator builds something bespoke for the first site and moves on. By the fiftieth site, nobody knows which version is running where, and every change is a new project."
+
+comparison:
+  without:
+    - title: "Diagnosis happens on site"
+      detail: "A fault code arrives without context. The only way to learn the cause is to send someone to look."
+    - title: "Two trips per repair"
+      detail: "The first visit finds the problem. The second brings the part. The asset stays degraded in between."
+    - title: "Your team assembles it alone"
+      detail: "Licences and portals arrive. The workflow that connects them to your service team is still a project nobody has time for."
+    - title: "Every site rebuilt from scratch"
+      detail: "What works at one site does not transfer. Each rollout is a new project, and each site drifts from the last."
+    - title: "Dependent on whoever built it"
+      detail: "When the integrator leaves, so does the knowledge of how the system works and how to change it safely."
+  with:
+    - title: "Fault context where the service team works"
+      detail: "Node-RED flows at each site collect the readings around a fault and route the alarm, with that context attached, to the right team, ticket or channel."
+    - title: "Diagnose from the desk"
+      detail: "Open the Node-RED editor on a remote site from FlowFuse, inspect what is running and test a fix, without traveling to the cabinet."
+    - title: "Built with you, on your real equipment"
+      detail: "FlowFuse engineers work alongside your team on your actual inverters, batteries, meters and controllers, over Modbus, MQTT, OPC UA, REST and vendor APIs, without replacing what is installed."
+    - title: "One tested package across the fleet"
+      detail: "Group sites by type, promote tested snapshots through DevOps pipelines, and keep site-specific settings in environment variables. Local flows keep running through connectivity drops, and updates land when the site reconnects."
+    - title: "A system your team owns"
+      detail: "Every change is versioned and recoverable, documented, and handed over to engineers we have trained. Built on open Node-RED, the foundation stays yours."
+
+aiBuildLayer:
+  heading: "After handover, your team keeps building"
+  intro: "The FlowFuse Expert helps your engineers extend the workflow once it is theirs: add a new asset type, capture a new diagnostic rule, or ask the fleet a question in plain language."
+  steps:
+    - title: "Add new equipment fast"
+      detail: "Describe the device and the faults that matter; the Expert assembles the nodes and wiring for a collection and alerting starting point."
+    - title: "Capture how your best technician diagnoses"
+      detail: "Function Builder and inline completions turn diagnostic rules into flow logic; the flow explainer documents it so the next technician can follow it."
+    - title: "Ask your fleet what went wrong"
+      detail: "Expose site data through MCP tools and query it with Expert's Insights mode, or the AI agent your organization already uses: 'which battery sites tripped overnight, and what changed before they did?'"
+
+engagement:
+  heading: "We build the first system with you. Then we hand it over."
+  intro: "You are not buying a platform and a to-do list. FlowFuse engineers work alongside your service and operations teams on the faults that cost you the most site visits, and deliver a working remote service workflow on your first sites against acceptance criteria we agree up front. FlowFuse, the product underneath, is what makes it repeatable across the rest of your fleet."
+  steps:
+    - title: "Understand"
+      detail: "Your equipment, protocols, site networks, service process and the faults that drive the most visits."
+    - title: "Build"
+      detail: "The first fault-to-fix workflow, on your real sites and your real problems, not a demo rig."
+    - title: "Operationalize"
+      detail: "Development, test and production stages, access control, deployment standards and support."
+    - title: "Systematize"
+      detail: "A reusable package: what is common to every site, and what stays site-specific."
+    - title: "Transfer"
+      detail: "Train your team to run, extend and roll it out on their own."
+  keepHeading: "What you keep"
+  keep:
+    - title: "A working workflow on your first sites"
+      detail: "Live in production on the sites we agree, solving the problem we agreed to solve."
+    - title: "A package ready for the next site"
+      detail: "Tested and versioned, so each new site is a rollout rather than a rebuild."
+    - title: "Documentation and a validation plan"
+      detail: "How the system works, how to operate it, and how to measure it against the baseline you started from."
+    - title: "A team that can run it without us"
+      detail: "Your engineers know the system, own it and can extend it, with FlowFuse as the platform underneath."
+
+closingCta:
+  heading: "Start with the sites that cost you the most visits"
+  description: "Talk to us about building your first remote service workflow with FlowFuse engineers, on your equipment, with your team."
